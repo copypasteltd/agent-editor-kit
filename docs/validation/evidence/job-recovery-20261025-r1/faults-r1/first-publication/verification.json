@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "phase": "first-publication",
+  "cli_pid": 33920,
+  "worker": null,
+  "hard_stop_owner_only": true,
+  "worker_exit_confirmed": false,
+  "stop_and_recovery_seconds": 7.4031890999976895,
+  "journal_pending_before_stop": true,
+  "published_outputs_before_stop": 1,
+  "dry_run_metadata_unchanged": true,
+  "metadata_recovered_or_committed_preserved": true,
+  "unregistered_user_source_preserved": true,
+  "cleanup": {
+    "format": "agent-owned-job-workspace-v1",
+    "jobs": [
+      {
+        "job_id": "job-c0d3ac16c7a243b99cffd4b81ea6fea8",
+        "kind": "four-stem-separation",
+        "files": 18,
+        "workspace_bytes": 16946119,
+        "outputs": [
+          {
+            "path": "assets/derived/crash_first_publication_drums.wav",
+            "status": "owned_unreferenced",
+            "identity": {
+              "device": 6713111436524353518,
+              "inode": 34621422136096174,
+              "bytes": 2116892
+            },
+            "sha256": "sha256:146ed203e58e07e011991ef9b058ac748b9926e459ef485a15985d4cef128e79"
+          }
+        ],
+        "status": "cleaned",
+        "removed_outputs": [
+          "assets/derived/crash_first_publication_drums.wav"
+        ]
+      }
+    ],
+    "cleaned": 1,
+    "dry_run": false,
+    "legacy_unmanaged": "preserved"
+  },
+  "real_model_forwards": 2,
+  "barrier_injection": "pause only; actual installed model/DSP/publication/transaction unchanged"
+}

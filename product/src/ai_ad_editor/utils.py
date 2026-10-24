@@ -297,7 +297,11 @@ def run_process(
     command = list(args)
     if cancel_file is not None and cancel_file.exists():
         raise AppError("CANCELLED", "任务在启动前已被取消", exit_code=8, path=str(cancel_file), retryable=False)
+    from .native_process_job import NativeProcessJob
+    job = None
+    process = None
     try:
+        job = NativeProcessJob()
         process = subprocess.Popen(
             command,
             cwd=str(cwd) if cwd else None,
@@ -306,8 +310,14 @@ def run_process(
             errors="replace",
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
-            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0),
+            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0) | job.creationflags,
         )
+        try:
+            job.attach_and_resume(process)
+        except BaseException:
+            process.kill()
+            process.wait(timeout=5)
+            raise
         result: dict[str, str] = {}
 
         def collect() -> None:
@@ -320,6 +330,7 @@ def run_process(
         started = time.monotonic()
 
         def stop_process() -> None:
+            job.close()
             if process.poll() is None:
                 process.terminate()
                 try:
@@ -336,10 +347,17 @@ def run_process(
             if timeout is not None and time.monotonic() - started > timeout:
                 stop_process()
                 raise AppError("PROCESS_TIMEOUT", f"子进程超时: {command[0]}", exit_code=6, retryable=True, cause=result.get("stderr", "")[-2000:])
+            if process.poll() is not None:
+                # A departed child can leave descendants holding its pipes open.
+                # Closing our owned job ends those descendants before joining.
+                job.close()
             reader.join(timeout=0.1)
         return subprocess.CompletedProcess(command, process.returncode, result.get("stdout", ""), result.get("stderr", ""))
     except OSError as exc:
         raise AppError("PROCESS_START_FAILED", f"无法启动子进程: {command[0]}", exit_code=10, cause=str(exc)) from exc
+    finally:
+        if job is not None:
+            job.close()
 
 
 def assert_id(value: str, path: str) -> None:

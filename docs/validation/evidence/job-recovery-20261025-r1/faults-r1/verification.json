@@ -1,0 +1,249 @@
+{
+  "status": "passed",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.5\\final\\installed",
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\installed-r1\\中文 四轨工程",
+  "regular_cli_calls": 17,
+  "hard_stopped_cli_calls": 4,
+  "real_model_forwards": 6,
+  "native_windows": true,
+  "virtualization": false,
+  "taskkill_used": false,
+  "source_fallback": false,
+  "cases": [
+    {
+      "phase": "worker-loading",
+      "cli_pid": 19112,
+      "worker": {
+        "ProcessId": 6140,
+        "ParentProcessId": 19112,
+        "CommandLine": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\python.exe -I -B -u -X utf8 E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.5\\final\\installed\\site\\ai_ad_editor\\stem_separation_worker.py \"E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\installed-r1\\中文 四轨工程\\cache\\managed-jobs\\job-d32cd6afc5f747cf9caccd99830a2c06\\request.json\""
+      },
+      "hard_stop_owner_only": true,
+      "worker_exit_confirmed": true,
+      "stop_and_recovery_seconds": 7.365254299998924,
+      "journal_pending_before_stop": true,
+      "published_outputs_before_stop": 0,
+      "dry_run_metadata_unchanged": true,
+      "metadata_recovered_or_committed_preserved": true,
+      "unregistered_user_source_preserved": true,
+      "cleanup": {
+        "format": "agent-owned-job-workspace-v1",
+        "jobs": [
+          {
+            "job_id": "job-d32cd6afc5f747cf9caccd99830a2c06",
+            "kind": "four-stem-separation",
+            "files": 9,
+            "workspace_bytes": 2125198,
+            "outputs": [],
+            "status": "cleaned",
+            "removed_outputs": []
+          }
+        ],
+        "cleaned": 1,
+        "dry_run": false,
+        "legacy_unmanaged": "preserved"
+      },
+      "real_model_forwards": 0,
+      "barrier_injection": "none"
+    },
+    {
+      "phase": "first-publication",
+      "cli_pid": 33920,
+      "worker": null,
+      "hard_stop_owner_only": true,
+      "worker_exit_confirmed": false,
+      "stop_and_recovery_seconds": 7.4031890999976895,
+      "journal_pending_before_stop": true,
+      "published_outputs_before_stop": 1,
+      "dry_run_metadata_unchanged": true,
+      "metadata_recovered_or_committed_preserved": true,
+      "unregistered_user_source_preserved": true,
+      "cleanup": {
+        "format": "agent-owned-job-workspace-v1",
+        "jobs": [
+          {
+            "job_id": "job-c0d3ac16c7a243b99cffd4b81ea6fea8",
+            "kind": "four-stem-separation",
+            "files": 18,
+            "workspace_bytes": 16946119,
+            "outputs": [
+              {
+                "path": "assets/derived/crash_first_publication_drums.wav",
+                "status": "owned_unreferenced",
+                "identity": {
+                  "device": 6713111436524353518,
+                  "inode": 34621422136096174,
+                  "bytes": 2116892
+                },
+                "sha256": "sha256:146ed203e58e07e011991ef9b058ac748b9926e459ef485a15985d4cef128e79"
+              }
+            ],
+            "status": "cleaned",
+            "removed_outputs": [
+              "assets/derived/crash_first_publication_drums.wav"
+            ]
+          }
+        ],
+        "cleaned": 1,
+        "dry_run": false,
+        "legacy_unmanaged": "preserved"
+      },
+      "real_model_forwards": 2,
+      "barrier_injection": "pause only; actual installed model/DSP/publication/transaction unchanged"
+    },
+    {
+      "phase": "prepared-metadata",
+      "cli_pid": 9108,
+      "worker": null,
+      "hard_stop_owner_only": true,
+      "worker_exit_confirmed": false,
+      "stop_and_recovery_seconds": 7.021673100000044,
+      "journal_pending_before_stop": true,
+      "published_outputs_before_stop": 4,
+      "dry_run_metadata_unchanged": true,
+      "metadata_recovered_or_committed_preserved": true,
+      "unregistered_user_source_preserved": true,
+      "cleanup": {
+        "format": "agent-owned-job-workspace-v1",
+        "jobs": [
+          {
+            "job_id": "job-ff84e25fa6c34240ba860d7df65934c1",
+            "kind": "four-stem-separation",
+            "files": 15,
+            "workspace_bytes": 10596332,
+            "outputs": [
+              {
+                "path": "assets/derived/crash_prepared_metadata_drums.wav",
+                "status": "owned_unreferenced",
+                "identity": {
+                  "device": 6713111436524353518,
+                  "inode": 3096224744504028,
+                  "bytes": 2116892
+                },
+                "sha256": "sha256:146ed203e58e07e011991ef9b058ac748b9926e459ef485a15985d4cef128e79"
+              },
+              {
+                "path": "assets/derived/crash_prepared_metadata_bass.wav",
+                "status": "owned_unreferenced",
+                "identity": {
+                  "device": 6713111436524353518,
+                  "inode": 3096224744504029,
+                  "bytes": 2116892
+                },
+                "sha256": "sha256:89fbc9cbb3912f1d85195348aa106f6e4fd42d419f746cc3c9d37c2e79397f95"
+              },
+              {
+                "path": "assets/derived/crash_prepared_metadata_other.wav",
+                "status": "owned_unreferenced",
+                "identity": {
+                  "device": 6713111436524353518,
+                  "inode": 3096224744504030,
+                  "bytes": 2116892
+                },
+                "sha256": "sha256:1314addfc94031fa93cd8d04149cd0b9de498ba79d6d2efa287bba012b6f5ca5"
+              },
+              {
+                "path": "assets/derived/crash_prepared_metadata_vocals.wav",
+                "status": "owned_unreferenced",
+                "identity": {
+                  "device": 6713111436524353518,
+                  "inode": 3096224744504034,
+                  "bytes": 2116892
+                },
+                "sha256": "sha256:6fb0b6586b20b30e9e260e1ac6ef8ca335af79046e2392aed0e93a1ca77f9787"
+              }
+            ],
+            "status": "cleaned",
+            "removed_outputs": [
+              "assets/derived/crash_prepared_metadata_drums.wav",
+              "assets/derived/crash_prepared_metadata_bass.wav",
+              "assets/derived/crash_prepared_metadata_other.wav",
+              "assets/derived/crash_prepared_metadata_vocals.wav"
+            ]
+          }
+        ],
+        "cleaned": 1,
+        "dry_run": false,
+        "legacy_unmanaged": "preserved"
+      },
+      "real_model_forwards": 2,
+      "barrier_injection": "pause only; actual installed model/DSP/publication/transaction unchanged"
+    },
+    {
+      "phase": "committed-metadata",
+      "cli_pid": 33568,
+      "worker": null,
+      "hard_stop_owner_only": true,
+      "worker_exit_confirmed": false,
+      "stop_and_recovery_seconds": 8.297034300001542,
+      "journal_pending_before_stop": false,
+      "published_outputs_before_stop": 4,
+      "dry_run_metadata_unchanged": true,
+      "metadata_recovered_or_committed_preserved": true,
+      "unregistered_user_source_preserved": true,
+      "cleanup": {
+        "format": "agent-owned-job-workspace-v1",
+        "jobs": [
+          {
+            "job_id": "job-ea5620dc9c564d62986603ec97a8f954",
+            "kind": "four-stem-separation",
+            "files": 15,
+            "workspace_bytes": 10596337,
+            "outputs": [
+              {
+                "path": "assets/derived/crash_committed_metadata_drums.wav",
+                "status": "referenced_preserved",
+                "identity": {
+                  "device": 6713111436524353518,
+                  "inode": 3377699721214733,
+                  "bytes": 2116892
+                },
+                "sha256": "sha256:146ed203e58e07e011991ef9b058ac748b9926e459ef485a15985d4cef128e79"
+              },
+              {
+                "path": "assets/derived/crash_committed_metadata_bass.wav",
+                "status": "referenced_preserved",
+                "identity": {
+                  "device": 6713111436524353518,
+                  "inode": 3096224744504079,
+                  "bytes": 2116892
+                },
+                "sha256": "sha256:89fbc9cbb3912f1d85195348aa106f6e4fd42d419f746cc3c9d37c2e79397f95"
+              },
+              {
+                "path": "assets/derived/crash_committed_metadata_other.wav",
+                "status": "referenced_preserved",
+                "identity": {
+                  "device": 6713111436524353518,
+                  "inode": 3096224744504082,
+                  "bytes": 2116892
+                },
+                "sha256": "sha256:1314addfc94031fa93cd8d04149cd0b9de498ba79d6d2efa287bba012b6f5ca5"
+              },
+              {
+                "path": "assets/derived/crash_committed_metadata_vocals.wav",
+                "status": "referenced_preserved",
+                "identity": {
+                  "device": 6713111436524353518,
+                  "inode": 3096224744504083,
+                  "bytes": 2116892
+                },
+                "sha256": "sha256:6fb0b6586b20b30e9e260e1ac6ef8ca335af79046e2392aed0e93a1ca77f9787"
+              }
+            ],
+            "status": "cleaned",
+            "removed_outputs": []
+          }
+        ],
+        "cleaned": 1,
+        "dry_run": false,
+        "legacy_unmanaged": "preserved"
+      },
+      "real_model_forwards": 2,
+      "barrier_injection": "pause only; actual installed model/DSP/publication/transaction unchanged"
+    }
+  ],
+  "human_listening": false,
+  "full_G33_closed": false,
+  "generator_sha256": "sha256:819e708a159fc78a66340769a66b62e4dfe46329ed65511a198abf0f1db95549"
+}

@@ -11,13 +11,13 @@
 
 <!-- unified-skill-registration -->
 
-**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r5 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r5.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
+**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r6 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r6.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
 
 <!-- /unified-skill-registration -->
 
 <!-- community-materials-gpu -->
 
-**本机新增已安装扩展：CLI 0.1.6，GPU 配音/翻译与 359 项内置开源资源。** 公开 alpha.3 附件保持原版。外层只指定 `$agent-ffmpeg-local-editor`；本机登记 GPU 包后默认优先 GPU，明确返回实际设备/回退原因，保留 CPU 兼容。
+**本机新增已安装扩展：CLI 0.1.7，GPU 配音/翻译与 359 项内置开源资源。** 公开 alpha.3 附件保持原版。外层只指定 `$agent-ffmpeg-local-editor`；本机登记 GPU 包后默认优先 GPU，明确返回实际设备/回退原因，保留 CPU 兼容。
 
 [完整流程与边界](docs/product/COMMUNITY_MATERIALS.md) · [逐项素材目录](docs/product/COMMUNITY_MATERIAL_CATALOG.md) · [103 音色与实际试听范围](docs/product/COMMUNITY_VOICES.md) · [CPU 实测](docs/validation/evidence/community-materials-20261025-r1/cpu/verification.json) · [GPU 实测](docs/validation/evidence/community-materials-20261025-r1/gpu/verification.json)。
 
@@ -35,6 +35,25 @@ CPU 46 条、GPU 15 条为本轮独立实测。12 秒真实成片已完整解码
 
 <!-- /community-materials-gpu -->
 
+
+
+<!-- job-recovery-r1 -->
+
+## 本地 CLI 0.1.7：原生中断恢复与保留规则
+
+新四轨任务记录持久化工作目录与输出意图；共享 helper 管理原生子进程树。恢复先回滚待提交元数据，再检查归属：仅回收匹配身份/摘要且未引用的输出，保留提交后的四轨资产、活跃/变化/未知项和旧非管理缓存。
+
+```powershell
+& $avk project recover --project $project --cleanup-jobs --dry-run
+& $avk project recover --project $project --cleanup-jobs
+& $avk validate --project $project
+```
+
+已在真实安装版的 worker 启动、首个输出发布、元数据待提交与已提交四个位置强制结束 owner 并恢复；其中三个位置仅注入观察暂停，真实模型与恢复代码未替换。旧缓存、其他模型路径、断电/磁盘不足/长并发仍未全面验收，G33 不关闭。
+
+[Workflow / 完整使用流程](docs/product/JOB_RECOVERY.md) · [Actual validation / 实测](docs/validation/任务中断恢复实测_2026-10-25.md) · [C16 / actual output](docs/product/CASES.md#c16-job-recovery)
+
+<!-- /job-recovery-r1 -->
 
 <!-- independent-four-stems-r1 -->
 
@@ -196,7 +215,7 @@ flowchart LR
 |---|---|---|---|---|
 | F01 | Agent 调用协议 | 任务参数 → JSON 响应、退出码、错误、warning、产物与 provenance；能力与 schema 可查询。 | `version; doctor; capabilities; schema show` | Skill 组织任务，CLI 执行；没有后台云端 Agent 服务。 |
 | F02 | 可编辑项目 | 创建/检查 Agent Project，保存资产、序列、轨道、ticks 时钟、输出配置和权利引用。 | `project init/inspect` | 源媒体与项目元数据分离，移动工程后需重链并复核证据路径。 |
-| F03 | 事务、恢复与快照 | 写入前快照、恢复、迁移、锁和操作记录；中断后恢复项目元数据事务。 | `project snapshot/restore/migrate/recover; operation inspect` | 失败证据保留；快照不等于外部原始素材的完整备份。 |
+| F03 | 事务、恢复与快照 | 元数据事务/快照；原生子进程树归属；显式恢复四轨持久化工作目录和未提交输出。 | `project snapshot/restore/migrate/recover; operation inspect` | 已提交资产保留；变化/活跃/未知/旧缓存保留。仅受管四轨工作目录，不是完整媒体备份或模型续算。 |
 | F04 | 素材导入与重链 | 本地图片/视频/音频/字体 → 探测结果、稳定资产 ID、哈希和来源记录。 | `media ingest/relink` | 不抓取在线素材；导入不自动证明商业授权。 |
 | F05 | 代理、缩略图与波形 | 素材 → 轻量代理、图片缩略图、音频波形、可核查联系表。 | `media prepare/contact-sheet` | 联系表是抽样证据；不代表逐帧视觉理解。 |
 | F06 | 镜头、静音与高光分析 | 本地视频/音频 → 切镜、静音、节拍或启发式高光候选与时间证据。 | `media understand/highlights` | 高光是启发式候选，语义判断需要 Agent/已注册适配器复核。 |
@@ -606,6 +625,11 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R51 | CLI 0.1.6 固定安装与单一 Skill | 新 8-wheel 包、192 个产品 Python 文件逐字节相同；1 Skill/17 模块，真实入口 11 次 CLI，r5 kit 独立注册/只读核对 | [安装审计](docs/validation/evidence/four-stems-20261025-r1/installation/verification.json) · [r5 kit](docs/validation/evidence/four-stems-20261025-r1/kit-r1/verification.json)；2026-10-25，仍同一物理主机，无新公开 Release |
 | R52 | 四音轨可编辑混音案例 | 安装版真实渲染 6 秒/180 帧、48kHz/288,000 PCM 帧；与各轨求和最大差 0，工程包往返 PCM/解码画面相同 | [C15/实际无声 GIF](docs/product/CASES.md#c15-four-stems) · [响应](docs/validation/evidence/four-stems-20261025-r1/demo-r2/verification.json)；2026-10-25，公开原创数值图诊断，声音和包留本地；无人工听审 |
 | R53 | 最新完整目标差距评估 | 真实注册入口另 6 次只读核对；74 项声明：20 已实现/46 有限制/7 适配器/1 降级；38 组均有未关闭条件 | [编号差距](docs/product/GOAL_GAPS_20261025.md) · [原始响应/API](docs/validation/evidence/goal-gaps-20261025-r5/inventory.json)；2026-10-25，盘点 0 新推理/渲染；公开仍 alpha.3 / CLI 0.1.2 |
+| R54 | 原生生命周期与恢复回归 | 开发/安装版各 17 项专项通过；四轨各 15、旧双轨 22、CLI 122、离线 34 分别通过 | [全部范围与失败保留](docs/validation/任务中断恢复实测_2026-10-25.md)；2026-10-25，0 skip、执行前后冻结摘要一致，各套件不相加 |
+| R55 | 真实安装版强制中断 | 4 个模型任务仅强制结束 owner；另 17 次正常 CLI/6 次 GPU 前向；未提交输出回收，已提交四轨保留 | [4 阶段实际记录](docs/validation/evidence/job-recovery-20261025-r1/faults-r1/verification.json)；2026-10-25，三阶段有观察暂停；旧缓存/断电/磁盘/长并发未闭 |
+| R56 | CLI 0.1.7 真实推理与成片 | 开发 11 次 CLI/2 前向、安装版 16/4、统一入口另 11/2；成片另 9 次 CLI，6 秒/180 帧，混音最大差 0，工程包往返 PCM/画面相同 | [C16/GIF](docs/product/CASES.md#c16-job-recovery) · [实际成片](docs/validation/evidence/job-recovery-20261025-r1/demo-r1/verification.json)；2026-10-25，受控音频留本地，无自然质量或听审验收 |
+| R57 | 固定安装与单一 Skill r6 | 新 8-wheel 离线包、194 个产品 Python 文件逐字节相同；r6 79 文件，隔离注册/只读/恢复 dry-run 8 次进程调用 | [安装](docs/validation/evidence/job-recovery-20261025-r1/installation/verification.json) · [r6 kit](docs/validation/evidence/job-recovery-20261025-r1/kit-r1/verification.json)；2026-10-25，仍同一物理主机，未新建公开 Release |
+| R58 | 当前完整目标复核 | 实际统一入口另 6 次只读盘点；74 项声明与全部 38 组剩余条件保留 | [完整编号差距](docs/product/GOAL_GAPS_20261025.md) · [原始响应/API](docs/validation/evidence/goal-gaps-20261025-r6/inventory.json)；2026-10-25，0 新推理/渲染，公开 alpha.3 / CLI 0.1.2 |
 
 ## 当前边界与开发方向
 
@@ -617,7 +641,7 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 
 下一步以真实客户素材与最小可复现工程收集缺口，逐项补齐、实测、发布新版本；不覆盖既有发布包/摘要/标签。只按实际成功产物更新核验。
 
-**最新交付（R49–R53，2026-10-25）：** 本地 CLI 0.1.6 / alpha.4-local.4，r5 kit；74 项声明为 20 已实现、46 有限制、7 适配器、1 降级，不是完成率。G17 独立四轨实现已补，CPU/GPU/安装版/统一 Skill/混音往返通过受控核验；自然分离、去混响、人工听审与模型权利仍开放。强制结束留下临时缓存，故障恢复继续补齐。原 G15/G16/G20/G22/G26 失败未撤销，38 组均未全面关闭；公开仍为 alpha.3 / CLI 0.1.2。
+**最新交付（R54–R58，2026-10-25）：** 本地 CLI 0.1.7 / alpha.4-local.5、r6 kit，仍为 1 Skill/17 内部模块。部分 G33 原生进程/四轨工作目录/强制中断恢复已实现并实际验证；旧非管理缓存与完整故障矩阵仍开放。74 项声明为 20 已实现、46 有限制、7 适配器、1 降级，不是完成率。G15/G16/G20/G22/G26 原失败和全部 38 组关闭条件保留；公开仍 alpha.3 / CLI 0.1.2。
 
 ## 文档体系、来源与维护
 

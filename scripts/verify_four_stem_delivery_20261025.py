@@ -25,6 +25,7 @@ def main():
     parser.add_argument('--installed',type=Path,required=True)
     parser.add_argument('--evidence',type=Path,required=True)
     parser.add_argument('--run-evidence',type=Path,required=True)
+    parser.add_argument('--public-output',type=Path,help='new owned diagnostic media directory; demo only')
     args=parser.parse_args()
     args.run_evidence=args.run_evidence.resolve(strict=True)
     original=json.loads((args.run_evidence/'verification.json').read_text('utf-8'))
@@ -123,7 +124,8 @@ def main():
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
-    public=ROOT/'docs/assets/four-stems-20261025-r1'/evidence.name
+    public=(args.public_output or ROOT/'docs/assets/four-stems-20261025-r1'/evidence.name).resolve()
+    assert public.is_relative_to(ROOT/'docs/assets')
     public.mkdir(parents=True,exist_ok=False)
     figure,axis=plt.subplots(figsize=(12.8,7.2),dpi=100)
     figure.patch.set_facecolor('#101821');axis.set_facecolor('#101821')
@@ -138,7 +140,7 @@ def main():
     for index,(a,b) in enumerate(zip(cpu,gpu)):
         axis.text(index, max(a,b)+.6, f'{a:.2f} / {b:.2f}',ha='center',color='white',fontsize=16)
     axis.legend(facecolor='#e9edf0',loc='upper right',fontsize=11)
-    axis.set_title('agent editor kit 0.1.6 | 4 independent neural stems',color='white',fontsize=22,pad=24)
+    axis.set_title('agent editor kit '+original['version']['cli_version']+' | 4 independent neural stems',color='white',fontsize=22,pad=24)
     figure.text(.5,.045,'Actual installed model results | 6s controlled fixture | Natural quality and listening remain open',
                 ha='center',color='#d6e1e6',fontsize=13)
     figure.tight_layout(rect=(.02,.08,.98,.98)); image=public/'installed-metrics.png';figure.savefig(image);plt.close(figure)

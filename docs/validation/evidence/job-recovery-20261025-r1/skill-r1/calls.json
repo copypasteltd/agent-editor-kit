@@ -1,0 +1,204 @@
+[
+  {
+    "argv": [
+      "version"
+    ],
+    "exit_code": 0,
+    "command": "version",
+    "status": "succeeded",
+    "seconds": 2.100478500000463,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:c62af37e720e762750498cb8ec916779b84ad98e6886110c71e71f0dacc3f78f"
+  },
+  {
+    "argv": [
+      "project",
+      "init",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\skill-r1\\中文 四轨工程"
+    ],
+    "exit_code": 0,
+    "command": "project.init",
+    "status": "succeeded",
+    "seconds": 1.9368832999971346,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:83bce776923fda36d5658e99f9f16377c5725da8e114b2e71be542e8b9467f3b"
+  },
+  {
+    "argv": [
+      "media",
+      "ingest",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\skill-r1\\中文 四轨工程",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\frozen-fixture\\mixture.wav",
+      "--asset-id",
+      "controlled_mix",
+      "--evidence",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\frozen-fixture\\frozen.json"
+    ],
+    "exit_code": 0,
+    "command": "media.ingest",
+    "status": "succeeded",
+    "seconds": 2.2511935000002268,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:29e8cdc9bf86c96db656fbe3411810b5c9a20abe2537eb73472e8a541a293b00"
+  },
+  {
+    "argv": [
+      "audio",
+      "adapter",
+      "register",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\skill-r1\\中文 四轨工程",
+      "--adapter-id",
+      "four",
+      "--engine",
+      "torchaudio-hdemucs-four-stem-local-v1",
+      "--model-path",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\audio\\hdemucs_high_musdbhq_only.pt",
+      "--executable",
+      "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+      "--evidence",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\audio\\hdemucs_high_musdbhq_only.evidence.json",
+      "--device",
+      "auto",
+      "--threads",
+      "4",
+      "--segment-seconds",
+      "4",
+      "--overlap",
+      ".25"
+    ],
+    "exit_code": 0,
+    "command": "audio.adapter.register",
+    "status": "succeeded",
+    "seconds": 3.408940299999813,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:916c7cd6bdcee17b7b962f12480cf7861c165e6e3dce5bd69bf4a5e862839c08"
+  },
+  {
+    "argv": [
+      "audio",
+      "adapter",
+      "inspect",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\skill-r1\\中文 四轨工程",
+      "--adapter-id",
+      "four"
+    ],
+    "exit_code": 0,
+    "command": "audio.adapter.inspect",
+    "status": "succeeded",
+    "seconds": 2.9242546999994374,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:5cba62880198c63a03c1b829a41e957c7c6a5614c9506a552ca4b188a8036d89"
+  },
+  {
+    "argv": [
+      "audio",
+      "separate-stems",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\skill-r1\\中文 四轨工程",
+      "--asset-id",
+      "controlled_mix",
+      "--adapter-id",
+      "four",
+      "--prefix",
+      "auto",
+      "--device",
+      "auto",
+      "--apply",
+      "--sample-rate",
+      "44100",
+      "--dry-run"
+    ],
+    "exit_code": 0,
+    "command": "audio.separate-stems",
+    "status": "planned",
+    "seconds": 2.5994062999998278,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:27aee912d1d962d95e35ad7ff76bba9c9073ecce4c63b81be7ac0830748fc094"
+  },
+  {
+    "argv": [
+      "audio",
+      "separate-stems",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\skill-r1\\中文 四轨工程",
+      "--asset-id",
+      "controlled_mix",
+      "--adapter-id",
+      "four",
+      "--prefix",
+      "auto",
+      "--device",
+      "auto",
+      "--apply",
+      "--sample-rate",
+      "44100"
+    ],
+    "exit_code": 0,
+    "command": "audio.separate-stems",
+    "status": "succeeded",
+    "seconds": 13.483943500003079,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:ecba7baefe940e027dc85220fd24ad94fe77e13c92c6c6c1dae086026b580172"
+  },
+  {
+    "argv": [
+      "timeline",
+      "compose",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\skill-r1\\中文 四轨工程",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\skill-r1\\select-tracks.json"
+    ],
+    "exit_code": 0,
+    "command": "timeline.compose",
+    "status": "succeeded",
+    "seconds": 2.300814599999285,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:5ced6640532e8f096e9608217f9627c2d6aa36b21b31330bf96e8772c47c3822"
+  },
+  {
+    "argv": [
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\skill-r1\\中文 四轨工程"
+    ],
+    "exit_code": 0,
+    "command": "validate",
+    "status": "succeeded",
+    "seconds": 2.152528800001164,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:44444748cd36087416fd38b2f51d834f075601b715b041f0d5d110ff7bf34730"
+  },
+  {
+    "argv": [
+      "policy",
+      "audit",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\skill-r1\\中文 四轨工程"
+    ],
+    "exit_code": 0,
+    "command": "policy.audit",
+    "status": "succeeded",
+    "seconds": 2.101090699998167,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:2a59bdea35f43ab9394a18533d43e69fce98b7e44e1250a2936c6c5acbcbf08f"
+  },
+  {
+    "argv": [
+      "rights",
+      "check",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\skill-r1\\中文 四轨工程"
+    ],
+    "exit_code": 7,
+    "command": "rights.check",
+    "status": "failed",
+    "seconds": 2.3338404999994964,
+    "expected_exit_code": 7,
+    "stdout_sha256": "sha256:ac0955518f883e1471aec64adb0b8693ef60b17cb03e5e60c8a55e9f8995d83d"
+  }
+]

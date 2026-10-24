@@ -1,0 +1,204 @@
+[
+  {
+    "argv": [
+      "version"
+    ],
+    "exit_code": 0,
+    "command": "version",
+    "status": "succeeded",
+    "seconds": 1.6764824999991106,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:764ec735ce501a18c368210b28a2fe6220debd67dd3fdc307757bbf4c9935630"
+  },
+  {
+    "argv": [
+      "project",
+      "init",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程"
+    ],
+    "exit_code": 0,
+    "command": "project.init",
+    "status": "succeeded",
+    "seconds": 2.154030800000328,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:39157782e8ed85caab2feb1e9c28fd75ff0714b5ba6940ea6e989ecffe46b8f7"
+  },
+  {
+    "argv": [
+      "media",
+      "ingest",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\frozen-fixture\\mixture.wav",
+      "--asset-id",
+      "controlled_mix",
+      "--evidence",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\frozen-fixture\\frozen.json"
+    ],
+    "exit_code": 0,
+    "command": "media.ingest",
+    "status": "succeeded",
+    "seconds": 10.756918900002347,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:1d6f9e62dea4be82101ef42efa7f3e58b0182bd2cf5efde0884f18d1d3bba92e"
+  },
+  {
+    "argv": [
+      "audio",
+      "adapter",
+      "register",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程",
+      "--adapter-id",
+      "four",
+      "--engine",
+      "torchaudio-hdemucs-four-stem-local-v1",
+      "--model-path",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\audio\\hdemucs_high_musdbhq_only.pt",
+      "--executable",
+      "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+      "--evidence",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\audio\\hdemucs_high_musdbhq_only.evidence.json",
+      "--device",
+      "auto",
+      "--threads",
+      "4",
+      "--segment-seconds",
+      "4",
+      "--overlap",
+      ".25"
+    ],
+    "exit_code": 0,
+    "command": "audio.adapter.register",
+    "status": "succeeded",
+    "seconds": 29.786570200001734,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:0cfcfefb5ad32f308e7a04c54edd680fae7602db0b2207adee5d6595a3be41f0"
+  },
+  {
+    "argv": [
+      "audio",
+      "adapter",
+      "inspect",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程",
+      "--adapter-id",
+      "four"
+    ],
+    "exit_code": 0,
+    "command": "audio.adapter.inspect",
+    "status": "succeeded",
+    "seconds": 7.096249400001398,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:0d9669f2ce85b0070354ce7fa3d7b396b7dc54ba2e871af168443f2d00319a09"
+  },
+  {
+    "argv": [
+      "audio",
+      "separate-stems",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程",
+      "--asset-id",
+      "controlled_mix",
+      "--adapter-id",
+      "four",
+      "--prefix",
+      "cuda",
+      "--device",
+      "cuda",
+      "--apply",
+      "--sample-rate",
+      "44100",
+      "--dry-run"
+    ],
+    "exit_code": 0,
+    "command": "audio.separate-stems",
+    "status": "planned",
+    "seconds": 3.003210599999875,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:72ad9b5338a64765844f9f723df4f6b6157e9a625609cf6050be1c0706023e04"
+  },
+  {
+    "argv": [
+      "audio",
+      "separate-stems",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程",
+      "--asset-id",
+      "controlled_mix",
+      "--adapter-id",
+      "four",
+      "--prefix",
+      "cuda",
+      "--device",
+      "cuda",
+      "--apply",
+      "--sample-rate",
+      "44100"
+    ],
+    "exit_code": 0,
+    "command": "audio.separate-stems",
+    "status": "succeeded",
+    "seconds": 158.58787819999998,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:4e176fe808fac622c296863e7573cd1632db886045d40cf94770a2837550d03b"
+  },
+  {
+    "argv": [
+      "timeline",
+      "compose",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\select-tracks.json"
+    ],
+    "exit_code": 0,
+    "command": "timeline.compose",
+    "status": "succeeded",
+    "seconds": 7.907784400002129,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:5f6eaa20ded7ef1184f06ea0a9f90ad1f8d162fa321cff61a5ff8c3787b92b11"
+  },
+  {
+    "argv": [
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程"
+    ],
+    "exit_code": 0,
+    "command": "validate",
+    "status": "succeeded",
+    "seconds": 5.959852500000125,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:617aaa9dd9aaef86525a3d4015e0b455cf4e60e8b04c5cd0298156c33b5e2862"
+  },
+  {
+    "argv": [
+      "policy",
+      "audit",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程"
+    ],
+    "exit_code": 0,
+    "command": "policy.audit",
+    "status": "succeeded",
+    "seconds": 3.498414800000319,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:adf332c2270a2631f2f79409db0d5489dbaa1294942e60e4df381b558136783a"
+  },
+  {
+    "argv": [
+      "rights",
+      "check",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程"
+    ],
+    "exit_code": 7,
+    "command": "rights.check",
+    "status": "failed",
+    "seconds": 2.299323399998684,
+    "expected_exit_code": 7,
+    "stdout_sha256": "sha256:e8b16b56eeb57a33770a38d2980006f583583b7744771afdbcb581f76bb6c083"
+  }
+]

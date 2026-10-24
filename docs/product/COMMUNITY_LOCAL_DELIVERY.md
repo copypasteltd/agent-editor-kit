@@ -2,11 +2,11 @@
 
 [使用手册](COMMUNITY_MATERIALS.md) · [繁體中文](COMMUNITY_MATERIALS.zh-TW.md) · [English](COMMUNITY_MATERIALS.en.md)
 
-当前本机版本是 **`v0.1.0-alpha.4-local.4` / CLI 0.1.6**，正式安装在 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.4/final/installed/`。这是本地构建和验收记录；公开 GitHub Release 仍是 alpha.3 / CLI 0.1.2，原附件、标签和摘要不覆盖。
+当前本机版本是 **`v0.1.0-alpha.4-local.5` / CLI 0.1.7**，正式安装在 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.5/final/installed/`。这是本地构建和验收记录；公开 GitHub Release 仍是 alpha.3 / CLI 0.1.2，原附件、标签和摘要不覆盖。
 
 The current build is installed locally. Public alpha.3 downloads remain unchanged and do not contain the new voice, translation, material or GPU commands. The updated Skill kit must be paired with this matching local runtime bundle.
 
-本轮增加[独立四轨分离](FOUR_STEM_SEPARATION.md)，并保留[原生采集](NATIVE_CAPTURE.md)及精确声道关系修复；[新安装与专项](../validation/补齐实施首批实测_2026-10-25.md)分别记录。前一版本 `v0.1.0-alpha.4-local.1` 的 ZIP 与 SHA-256 `cf4e55f410582547d7fe56549d4594b4d8f0ee6aff8be24f77408c035fd74ead` 保留，旧 r2 kit 继续匹配旧包。
+本轮增加[原生任务恢复](JOB_RECOVERY.md)，保留[独立四轨分离](FOUR_STEM_SEPARATION.md)、[原生采集](NATIVE_CAPTURE.md)及精确声道关系修复。前一版本 `v0.1.0-alpha.4-local.1` 的 ZIP 与 SHA-256 `cf4e55f410582547d7fe56549d4594b4d8f0ee6aff8be24f77408c035fd74ead` 保留，旧 r2 kit 继续匹配旧包。
 
 ## 本机文件 / Local files
 
@@ -14,9 +14,9 @@ The current build is installed locally. Public alpha.3 downloads remain unchange
 
 | 内容 / Item | 路径 / Path | 校验 / Verification |
 |---|---|---|
-| 编译好的基础运行 ZIP / Application bundle | `local/agent-ffmpeg/v0.1.0-alpha.4-local.4/candidate-r1/bundle.zip` | SHA-256 `10ec4f490186f3f0c34ae52921aec0e8fd76e302d89252449b4e1651b68ecc71` |
-| 运行包清单 / Bundle manifest | ZIP 内 / inside ZIP: `manifest.json` | `sha256:8206db8867a0d0908153cfa00f425c469909fb07545102ec59dcdc8e007b5ba9` |
-| 单入口 Skill kit / Single-entry kit | `docs/skills/agent-editor-kit-community-unified-skill-r5.zip` | [独立包摘要 / Package digest](../skills/community-unified-skill-package-0.1.6.json) |
+| 编译好的基础运行 ZIP / Application bundle | `local/agent-ffmpeg/v0.1.0-alpha.4-local.5/candidate-r1/bundle.zip` | SHA-256 `12f0d076f1b0dd18f7438adf678a99354a0ce6fa1b10843f326ebc2a8d8251da` |
+| 运行包清单 / Bundle manifest | ZIP 内 / inside ZIP: `manifest.json` | `sha256:ae4daffd658d326df75d1b8c0540a3f193800f03528d0d38883a0767f73fa5a0` |
+| 单入口 Skill kit / Single-entry kit | `docs/skills/agent-editor-kit-community-unified-skill-r6.zip` | [独立包摘要 / Package digest](../skills/community-unified-skill-package-0.1.7.json) |
 | 四个模型 ZIP / Four model ZIPs | `local/agent-ffmpeg/community-model-archives-r2/` | 见下表及 / see table and `archives.json` |
 | 可移动模型安装 / Relocated model installation | `local/agent-ffmpeg/community-portable-r1/模型 包/` | 实际从四个 ZIP 安装；路径含中文与空格 / actually installed from all four ZIPs |
 | 当前调用配置 / Runtime configuration | `local/agent-ffmpeg/runtime.json` | 固定应用摘要、原生 Python、启动器摘要 / pinned app, native Python and launcher |
@@ -43,13 +43,13 @@ Requires native Windows x64, existing CPython 3.13 x64 and FFmpeg/ffprobe on PAT
 $aekPython = 'C:/Python313/python.exe'
 $aekSource = 'E:/dev/sandbox/AI广告剪辑'
 $aekHome = 'E:/tools/agent-editor-kit-gpu'
-$aekArchive = Join-Path $aekSource 'local/agent-ffmpeg/v0.1.0-alpha.4-local.4/candidate-r1/bundle.zip'
-$aekExpectedZip = '10ec4f490186f3f0c34ae52921aec0e8fd76e302d89252449b4e1651b68ecc71'
+$aekArchive = Join-Path $aekSource 'local/agent-ffmpeg/v0.1.0-alpha.4-local.5/candidate-r1/bundle.zip'
+$aekExpectedZip = '12f0d076f1b0dd18f7438adf678a99354a0ce6fa1b10843f326ebc2a8d8251da'
 if ((Get-FileHash -LiteralPath $aekArchive -Algorithm SHA256).Hash.ToLowerInvariant() -ne $aekExpectedZip) { throw 'Application archive hash mismatch' }
-Expand-Archive -LiteralPath (Join-Path $aekSource 'docs/skills/agent-editor-kit-community-unified-skill-r5.zip') -DestinationPath $aekHome
+Expand-Archive -LiteralPath (Join-Path $aekSource 'docs/skills/agent-editor-kit-community-unified-skill-r6.zip') -DestinationPath $aekHome
 Expand-Archive -LiteralPath $aekArchive -DestinationPath (Join-Path $aekHome 'bundle')
 Set-Location $aekHome
-& $aekPython -I -B -X utf8 ./bundle/install.py --bundle ./bundle --target ./local/agent-ffmpeg/installed --manifest-sha256 'sha256:8206db8867a0d0908153cfa00f425c469909fb07545102ec59dcdc8e007b5ba9' --timeout-seconds 600
+& $aekPython -I -B -X utf8 ./bundle/install.py --bundle ./bundle --target ./local/agent-ffmpeg/installed --manifest-sha256 'sha256:ae4daffd658d326df75d1b8c0540a3f193800f03528d0d38883a0767f73fa5a0' --timeout-seconds 600
 if ($LASTEXITCODE) { throw 'Native application installation failed' }
 ```
 
@@ -110,8 +110,8 @@ The registrar preserves unrelated same-name registrations. Existing users may ke
 
 [完整使用流程](SEMANTIC_RETRIEVAL.md) · [本轮完整实测](../validation/离线语义检索实测_2026-10-25.md)。
 CLI 0.1.5 开始交付该检索功能；对应旧包与[当时安装记录](../validation/evidence/semantic-20261025-r1/installation/verification.json)保留。
-当前基础 ZIP 为 302,621,841 字节；8 wheel、清单登记 47 文件，连同 manifest.json 共 48 个 ZIP 文件；产品 wheel 为 0.1.6。
-192 个产品 Python 文件与安装版逐字节摘要相同；[本次安装审计](../validation/evidence/four-stems-20261025-r1/installation/verification.json)。
+当前基础 ZIP 为 302,628,548 字节；8 wheel、清单登记 47 文件，连同 manifest.json 共 48 个 ZIP 文件；产品 wheel 为 0.1.7。
+194 个产品 Python 文件与安装版逐字节相同；[本次安装审计](../validation/evidence/job-recovery-20261025-r1/installation/verification.json)。
 同一 RTX 3060 主机验证 CUDA BF16 和 CPU float32。Torch/Transformers 及约 1.5GB SigLIP2 权重
 单独来自既有原生环境，不在基础 ZIP 或四个配音/翻译 ZIP 内；产品不隐式安装或下载。
 
@@ -160,3 +160,20 @@ The new runtime preserves historical bundles. Register model adapters explicitly
 rebuild/verify path-pinned semantic indexes when the implementation installation changes. No silent source fallback,
 model download or adapter migration is performed. Independent four-source weights/native dependencies remain separate,
 and clean-host upgrade/rollback acceptance is open.
+
+## CLI 0.1.7 原生中断恢复 / Native interruption recovery
+
+[完整使用与保留规则](JOB_RECOVERY.md) · [真实故障注入、回归与成片](../validation/任务中断恢复实测_2026-10-25.md)。
+新四轨任务持久化工作目录和输出意图，正常提交/回滚后清理；强制结束后先预览再执行
+`project recover --cleanup-jobs`。默认 `project recover` 仍只恢复元数据。此功能不删除旧非管理缓存，
+不提供模型断点续算，也不代表完整 G33 已关闭。
+
+旧 local.4 / CLI 0.1.6：`local/agent-ffmpeg/v0.1.0-alpha.4-local.4/candidate-r1/bundle.zip`，
+SHA-256 `10ec4f490186f3f0c34ae52921aec0e8fd76e302d89252449b4e1651b68ecc71`，
+manifest `sha256:8206db8867a0d0908153cfa00f425c469909fb07545102ec59dcdc8e007b5ba9`，
+[r5 kit](../skills/agent-editor-kit-community-unified-skill-r5.zip) 仍匹配旧包；历史核验原样保留。
+四轨完整性固定项由 8 个实现文件增为 12 个（加模型/Python/证据共 15 项），请明确重新登记 adapter。
+
+The current r6 kit contains one Skill and 17 internal modules, with a recovery reference and this matching
+runtime pin. Native lifetime tests, real installed hard-stop boundaries, normal CPU/GPU inference and
+editable delivery are recorded separately. Older unmanaged caches and historical evidence remain intact.

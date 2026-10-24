@@ -1,0 +1,5 @@
+{
+  "status": "failed",
+  "scope": "documentation audit harness",
+  "reason": "The audit ID regex excluded the existing F44 / M01 alias format and asserted only 43 F rows. Preserve the console failure; update the auditor to accept aliased IDs and rerun in a new directory. No product or historical feature rows were removed."
+}

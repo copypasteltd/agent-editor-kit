@@ -275,16 +275,20 @@ def project_transaction(root_value: str | Path, *, command: str):
     recovered = recover_pending_transaction(root)
     journal = prepare_project_transaction(root, command=command)
     info = {"active": True, "transaction_id": journal["transaction_id"], "recovered": bool(recovered.get("recovered")), "recovery": recovered}
-    try:
-        yield info
-    except BaseException as error:
-        failure_records = _capture_failed_operation_records(root, error)
-        recover_pending_transaction(root)
-        for path, data in failure_records:
-            _atomic_write_bytes(path, data)
-        raise
-    else:
-        commit_project_transaction(root, journal["transaction_id"])
+    from .job_workspaces import workspace_scope
+    with workspace_scope(root) as jobs:
+        try:
+            yield info
+            commit_project_transaction(root, journal["transaction_id"])
+        except BaseException as error:
+            failure_records = _capture_failed_operation_records(root, error)
+            recover_pending_transaction(root)
+            for path, data in failure_records:
+                _atomic_write_bytes(path, data)
+            info['job_cleanup'] = jobs.finish()
+            raise
+        else:
+            info['job_cleanup'] = jobs.finish()
 
 
 @contextmanager
@@ -351,7 +355,7 @@ def project_write_lock(root_value: str | Path, *, timeout: float = 0.0):
     retry from the structured ``PROJECT_WRITE_LOCKED`` response.
     """
     root = project_root(root_value)
-    if not project_file(root).exists():
+    if not project_file(root).exists() and not transaction_journal_file(root).exists():
         # Let the command handler return its normal project-not-found/schema
         # error without creating an operations directory as a side effect.
         yield {"path": str(write_lock_file(root)), "root": str(root), "acquired": False}

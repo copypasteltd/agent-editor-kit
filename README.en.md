@@ -11,13 +11,13 @@ This page includes functional modules, services/dependencies, installation/usage
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r5 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r5.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r6 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r6.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
 <!-- community-materials-gpu -->
 
-**Local installed extension: CLI 0.1.6, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
+**Local installed extension: CLI 0.1.7, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
 
 [Complete workflow and limits](docs/product/COMMUNITY_MATERIALS.en.md) · [Resource catalog](docs/product/COMMUNITY_MATERIAL_CATALOG.md) · [103 named voices and actual audition scope](docs/product/COMMUNITY_VOICES.md) · [CPU evidence](docs/validation/evidence/community-materials-20261025-r1/cpu/verification.json) · [GPU evidence](docs/validation/evidence/community-materials-20261025-r1/gpu/verification.json).
 
@@ -35,6 +35,25 @@ CPU 46 commands and GPU 15 commands are separate current tests. The real 12-seco
 
 <!-- /community-materials-gpu -->
 
+
+
+<!-- job-recovery-r1 -->
+
+## Local CLI 0.1.7: native interruption recovery
+
+Four-source jobs now retain durable workspace/publication records, while the shared helper owns native process trees. Explicit recovery restores pending metadata first, then removes only matching, unreferenced outputs. Committed stems, active/changed/unknown entries and legacy unmanaged caches are preserved.
+
+```powershell
+& $avk project recover --project $project --cleanup-jobs --dry-run
+& $avk project recover --project $project --cleanup-jobs
+& $avk validate --project $project
+```
+
+Four real installed model jobs were hard-stopped at worker startup, first publication, prepared metadata and committed metadata. Three boundaries use observation-only pauses; the model and recovery implementation are unchanged. Legacy caches, other workers, power loss, disk exhaustion and long concurrency remain unaccepted; G33 stays open.
+
+[Workflow / 完整使用流程](docs/product/JOB_RECOVERY.md) · [Actual validation / 实测](docs/validation/任务中断恢复实测_2026-10-25.md) · [C16 / actual output](docs/product/CASES.md#c16-job-recovery)
+
+<!-- /job-recovery-r1 -->
 
 <!-- independent-four-stems-r1 -->
 
@@ -196,7 +215,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 |---|---|---|---|---|
 | F01 | Agent command protocol | Task arguments → JSON responses, exit codes, errors, warnings, artifacts and provenance; queryable capabilities and schema. | `version; doctor; capabilities; schema show` | Skills guide the task; the CLI executes it. No hosted Agent service. |
 | F02 | Editable projects | Create/inspect Agent Projects with assets, sequences, tracks, tick clocks, output settings and rights references. | `project init/inspect` | Source media and metadata are separate; relocation requires relinking and evidence-path review. |
-| F03 | Transactions, recovery and snapshots | Pre-write snapshots, restore, migration, locks and operation records; recover interrupted metadata transactions. | `project snapshot/restore/migrate/recover; operation inspect` | Failure evidence remains. Metadata snapshots do not back up all external media. |
+| F03 | Transactions, recovery and snapshots | Metadata transactions/snapshots, native child-tree ownership and explicit recovery of durable four-source workspaces/uncommitted outputs. | `project snapshot/restore/migrate/recover; operation inspect` | Preserves committed assets and active/changed/unknown/legacy files. Owned four-source workspaces only; not a full media backup or inference resume. |
 | F04 | Media ingestion and relinking | Local images/video/audio/fonts → probe results, stable asset IDs, hashes and provenance. | `media ingest/relink` | No online-media fetching; ingestion does not establish commercial rights. |
 | F05 | Proxies, thumbnails and waveforms | Media → lightweight proxies, thumbnails, waveforms and auditable contact sheets. | `media prepare/contact-sheet` | Contact sheets are samples, not exhaustive visual understanding. |
 | F06 | Scene, silence and highlight analysis | Local video/audio → scene, silence, beat or heuristic highlight candidates and timing evidence. | `media understand/highlights` | Heuristic candidates require Agent or registered-adapter review for semantics. |
@@ -608,18 +627,23 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R51 | Pinned CLI 0.1.6 and one Skill | New eight-wheel bundle; 192 product Python files byte-identical; one Skill/17 modules, eleven actual-entry CLI calls, independent r5 registration/read-only checks | [Installation audit](docs/validation/evidence/four-stems-20261025-r1/installation/verification.json) · [r5 kit](docs/validation/evidence/four-stems-20261025-r1/kit-r1/verification.json); 2026-10-25, same physical host, no new public Release |
 | R52 | Editable four-track mixing case | Installed 6s/180-frame render, 48kHz/288,000 PCM frames; maximum error versus summed tracks zero, exact PCM/decoded pixels after package roundtrip | [C15/actual silent GIF](docs/product/CASES.md#c15-four-stems) · [Responses](docs/validation/evidence/four-stems-20261025-r1/demo-r2/verification.json); 2026-10-25, original numeric diagnostic public, audio/package local; no human listening |
 | R53 | Current complete-goal assessment | Six separate registered-entry read-only calls; 74 declarations: 20 implemented/46 limited/seven adapter-only/one degraded; all 38 groups retain unmet conditions | [Numbered gaps](docs/product/GOAL_GAPS_20261025.md) · [Raw inventory/API](docs/validation/evidence/goal-gaps-20261025-r5/inventory.json); 2026-10-25, assessment adds no inference/render; public remains alpha.3 / CLI 0.1.2 |
+| R54 | Native lifetime and recovery regressions | Development/installed 17 checks each; separate four-source 15 each, legacy two-source 22, CLI 122 and offline 34 pass | [Scope and retained failures](docs/validation/任务中断恢复实测_2026-10-25.md); 2026-10-25, zero skips, before/after hashes equal; overlapping suites are not summed |
+| R55 | Actual installed hard-stop recovery | Four model jobs stopped by terminating only the owner; 17 other CLI calls/six actual GPU forwards; abandoned outputs removed, committed tracks retained | [Four boundaries](docs/validation/evidence/job-recovery-20261025-r1/faults-r1/verification.json); 2026-10-25, three observation pauses; legacy caches/power loss/disk/concurrency remain open |
+| R56 | CLI 0.1.7 inference and editable delivery | Development 11 CLI/two forwards, installed 16/four, real Skill 11/two; separate nine-call render case, 6s/180 frames, mix error zero and exact PCM/pixel roundtrip | [C16/GIF](docs/product/CASES.md#c16-job-recovery) · [Actual render](docs/validation/evidence/job-recovery-20261025-r1/demo-r1/verification.json); 2026-10-25, controlled audio local only; no natural-quality/listening acceptance |
+| R57 | Pinned installation and single r6 Skill | New eight-wheel bundle; 194 product Python files byte-identical; 79-file r6 kit, eight isolated configure/register/read-only/dry-run process calls | [Installation](docs/validation/evidence/job-recovery-20261025-r1/installation/verification.json) · [Kit](docs/validation/evidence/job-recovery-20261025-r1/kit-r1/verification.json); 2026-10-25, same physical host, no new public Release |
+| R58 | Current full-goal review | Six additional real read-only Skill calls; 74 declarations and all 38 unmet group conditions retained | [Numbered gaps](docs/product/GOAL_GAPS_20261025.md) · [Raw responses/API](docs/validation/evidence/goal-gaps-20261025-r6/inventory.json); 2026-10-25, zero new inference/rendering, public alpha.3 / CLI 0.1.2 |
 
 ## Current limits and development direction
 
 The deliverable is an offline, editable and auditable Agent CLI workflow with explicit contracts. Openly licensed asset/template ecosystems, agreed AI/beauty/layout features, complete color processing, actual quality for supported draft profiles, broad natural-media acceptance and long-form resource performance remain open. Consumer GUI, accounts, cloud collaboration and arbitrary lossless private-draft interchange are outside current core acceptance. Later R113/R114 Float32 transition/runtime-closure candidates are not included in this release.
 
-The [2026-10-25 current goal-gap assessment](docs/product/GOAL_GAPS_20261025.md) updates 38 groups against local CLI 0.1.6: the single Skill, 359 resources, GPU TTS and English/Chinese translation are delivered within their documented limits; advanced AI, natural-media quality, complex combinations, performance/reliability and a new public package remain open. First address known alignment/audio failures, actual Agent tasks, human quality acceptance, long-form resources and clean-host installation; then expand content/templates and the remaining AI scope. The evidence does not establish an overall completion percentage. The [2026-10-24 assessment](docs/product/GOAL_GAPS_20261024.md) remains an alpha.3 historical snapshot.
+The [2026-10-25 current goal-gap assessment](docs/product/GOAL_GAPS_20261025.md) updates 38 groups against local CLI 0.1.7: the single Skill, 359 resources, GPU TTS and English/Chinese translation are delivered within their documented limits; advanced AI, natural-media quality, complex combinations, performance/reliability and a new public package remain open. First address known alignment/audio failures, actual Agent tasks, human quality acceptance, long-form resources and clean-host installation; then expand content/templates and the remaining AI scope. The evidence does not establish an overall completion percentage. The [2026-10-24 assessment](docs/product/GOAL_GAPS_20261024.md) remains an alpha.3 historical snapshot.
 
 Exact audio-channel relationship protection and native capture remain delivered within their documented scope. Extremely short-window pitch, precise alignment, actual camera/microphone recording and AV synchronization remain unaccepted. CLI 0.1.5 adds limited visual semantic retrieval; neither the 500 looks nor the 74 declarations establish an overall completion percentage.
 
 Use real client media and minimal reproducible projects to identify gaps, implement/check them individually and publish new versions without replacing prior bundles/digests/tags. Record actual successful artifacts rather than inferred completion.
 
-**Latest delivery (R45–R48, 2026-10-25):** local CLI 0.1.5 / alpha.4-local.3 has 74 declarations: 20 implemented, 45 limited, seven adapter-only and one degraded; these are not a completion percentage. G26 now has actual CPU/GPU comparisons, a pinned installed runtime/one Skill and editable roundtrip output. Negation, open-set rejection, natural actions/identity/audio recommendation, large libraries and persistent model reuse remain open. All 38 gap groups retain unmet conditions. Public release remains alpha.3 / CLI 0.1.2.
+**Latest delivery (R54–R58, 2026-10-25):** local CLI 0.1.7 / alpha.4-local.5 and r6 kit; one Skill / 17 internal modules. Bounded native process and four-source workspace recovery is implemented and tested. Legacy caches and the complete fault matrix remain open. The 74 declarations are 20 implemented, 46 limited, seven adapter-only and one degraded, not a completion percentage. Original G15/G16/G20/G22/G26 failures and all 38 closure conditions remain. Public alpha.3 retains CLI 0.1.2.
 
 ## Documentation, provenance and maintenance
 

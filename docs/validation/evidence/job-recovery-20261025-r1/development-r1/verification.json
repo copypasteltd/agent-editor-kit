@@ -1,0 +1,864 @@
+{
+  "created_at_utc": "2026-10-24T23:33:28.945706+00:00",
+  "mode": "explicit source development",
+  "version": {
+    "cli_version": "0.1.7",
+    "schema_version": "0.1.0",
+    "engine": "ffmpeg-local",
+    "runtime": "python+ffmpeg-local",
+    "network": "disabled",
+    "schema_validation": {
+      "ok": true,
+      "source": "bundled",
+      "schema_version": "0.1.0",
+      "draft": "2020-12",
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\agent-project.schema.json",
+      "bytes": 80758,
+      "sha256": "sha256:950cf9c3abe6c97bee65463d1e7afe6eafeb4fd35bf983364e01f37ec464892f",
+      "formats": [
+        "date-time"
+      ],
+      "external_reference_retrieval": "disabled",
+      "date_time_checker": "rfc3339-validator-0.1.4-python3-adaptation",
+      "leap_seconds_supported": false,
+      "executor": "jsonschema",
+      "dependencies": {
+        "jsonschema": "4.26.0",
+        "attrs": "25.4.0",
+        "jsonschema-specifications": "2025.9.1",
+        "referencing": "0.37.0",
+        "rpds-py": "2026.6.3"
+      }
+    }
+  },
+  "command": [
+    "C:\\Python313\\python.exe",
+    "-E",
+    "-B",
+    "-X",
+    "utf8",
+    "-c",
+    "import sys;sys.path.insert(0,sys.argv.pop(1));from ai_ad_editor.cli import main;raise SystemExit(main())",
+    "E:\\dev\\sandbox\\AI广告剪辑\\product\\src"
+  ],
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程",
+  "fixture_sha256": "sha256:50ce0ec902e7ce9e0b5a04cc7201530eaf1c82142eb6ca14e97797fce5d54f02",
+  "calls": [
+    {
+      "argv": [
+        "version"
+      ],
+      "exit_code": 0,
+      "command": "version",
+      "status": "succeeded",
+      "seconds": 1.6764824999991106,
+      "expected_exit_code": 0,
+      "stdout_sha256": "sha256:764ec735ce501a18c368210b28a2fe6220debd67dd3fdc307757bbf4c9935630"
+    },
+    {
+      "argv": [
+        "project",
+        "init",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程"
+      ],
+      "exit_code": 0,
+      "command": "project.init",
+      "status": "succeeded",
+      "seconds": 2.154030800000328,
+      "expected_exit_code": 0,
+      "stdout_sha256": "sha256:39157782e8ed85caab2feb1e9c28fd75ff0714b5ba6940ea6e989ecffe46b8f7"
+    },
+    {
+      "argv": [
+        "media",
+        "ingest",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\frozen-fixture\\mixture.wav",
+        "--asset-id",
+        "controlled_mix",
+        "--evidence",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\frozen-fixture\\frozen.json"
+      ],
+      "exit_code": 0,
+      "command": "media.ingest",
+      "status": "succeeded",
+      "seconds": 10.756918900002347,
+      "expected_exit_code": 0,
+      "stdout_sha256": "sha256:1d6f9e62dea4be82101ef42efa7f3e58b0182bd2cf5efde0884f18d1d3bba92e"
+    },
+    {
+      "argv": [
+        "audio",
+        "adapter",
+        "register",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程",
+        "--adapter-id",
+        "four",
+        "--engine",
+        "torchaudio-hdemucs-four-stem-local-v1",
+        "--model-path",
+        "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\audio\\hdemucs_high_musdbhq_only.pt",
+        "--executable",
+        "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+        "--evidence",
+        "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\audio\\hdemucs_high_musdbhq_only.evidence.json",
+        "--device",
+        "auto",
+        "--threads",
+        "4",
+        "--segment-seconds",
+        "4",
+        "--overlap",
+        ".25"
+      ],
+      "exit_code": 0,
+      "command": "audio.adapter.register",
+      "status": "succeeded",
+      "seconds": 29.786570200001734,
+      "expected_exit_code": 0,
+      "stdout_sha256": "sha256:0cfcfefb5ad32f308e7a04c54edd680fae7602db0b2207adee5d6595a3be41f0"
+    },
+    {
+      "argv": [
+        "audio",
+        "adapter",
+        "inspect",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程",
+        "--adapter-id",
+        "four"
+      ],
+      "exit_code": 0,
+      "command": "audio.adapter.inspect",
+      "status": "succeeded",
+      "seconds": 7.096249400001398,
+      "expected_exit_code": 0,
+      "stdout_sha256": "sha256:0d9669f2ce85b0070354ce7fa3d7b396b7dc54ba2e871af168443f2d00319a09"
+    },
+    {
+      "argv": [
+        "audio",
+        "separate-stems",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程",
+        "--asset-id",
+        "controlled_mix",
+        "--adapter-id",
+        "four",
+        "--prefix",
+        "cuda",
+        "--device",
+        "cuda",
+        "--apply",
+        "--sample-rate",
+        "44100",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "command": "audio.separate-stems",
+      "status": "planned",
+      "seconds": 3.003210599999875,
+      "expected_exit_code": 0,
+      "stdout_sha256": "sha256:72ad9b5338a64765844f9f723df4f6b6157e9a625609cf6050be1c0706023e04"
+    },
+    {
+      "argv": [
+        "audio",
+        "separate-stems",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程",
+        "--asset-id",
+        "controlled_mix",
+        "--adapter-id",
+        "four",
+        "--prefix",
+        "cuda",
+        "--device",
+        "cuda",
+        "--apply",
+        "--sample-rate",
+        "44100"
+      ],
+      "exit_code": 0,
+      "command": "audio.separate-stems",
+      "status": "succeeded",
+      "seconds": 158.58787819999998,
+      "expected_exit_code": 0,
+      "stdout_sha256": "sha256:4e176fe808fac622c296863e7573cd1632db886045d40cf94770a2837550d03b"
+    },
+    {
+      "argv": [
+        "timeline",
+        "compose",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\select-tracks.json"
+      ],
+      "exit_code": 0,
+      "command": "timeline.compose",
+      "status": "succeeded",
+      "seconds": 7.907784400002129,
+      "expected_exit_code": 0,
+      "stdout_sha256": "sha256:5f6eaa20ded7ef1184f06ea0a9f90ad1f8d162fa321cff61a5ff8c3787b92b11"
+    },
+    {
+      "argv": [
+        "validate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程"
+      ],
+      "exit_code": 0,
+      "command": "validate",
+      "status": "succeeded",
+      "seconds": 5.959852500000125,
+      "expected_exit_code": 0,
+      "stdout_sha256": "sha256:617aaa9dd9aaef86525a3d4015e0b455cf4e60e8b04c5cd0298156c33b5e2862"
+    },
+    {
+      "argv": [
+        "policy",
+        "audit",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程"
+      ],
+      "exit_code": 0,
+      "command": "policy.audit",
+      "status": "succeeded",
+      "seconds": 3.498414800000319,
+      "expected_exit_code": 0,
+      "stdout_sha256": "sha256:adf332c2270a2631f2f79409db0d5489dbaa1294942e60e4df381b558136783a"
+    },
+    {
+      "argv": [
+        "rights",
+        "check",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程"
+      ],
+      "exit_code": 7,
+      "command": "rights.check",
+      "status": "failed",
+      "seconds": 2.299323399998684,
+      "expected_exit_code": 7,
+      "stdout_sha256": "sha256:e8b16b56eeb57a33770a38d2980006f583583b7744771afdbcb581f76bb6c083"
+    }
+  ],
+  "controlled": {
+    "cuda": {
+      "scores": {
+        "drums": {
+          "si_sdr_db": 10.953429184106717,
+          "baseline_si_sdr_db": -4.884383548267906,
+          "improvement_db": 15.837812732374623,
+          "target_improvement_db": 3.0,
+          "passed": true
+        },
+        "bass": {
+          "si_sdr_db": 7.552110035834475,
+          "baseline_si_sdr_db": -4.882899619492748,
+          "improvement_db": 12.435009655327223,
+          "target_improvement_db": 3.0,
+          "passed": true
+        },
+        "other": {
+          "si_sdr_db": 1.7081306067188604,
+          "baseline_si_sdr_db": -4.535937640475642,
+          "improvement_db": 6.244068247194503,
+          "target_improvement_db": 3.0,
+          "passed": true
+        },
+        "vocals": {
+          "si_sdr_db": 10.391548606759955,
+          "baseline_si_sdr_db": -4.537331036314601,
+          "improvement_db": 14.928879643074556,
+          "target_improvement_db": 3.0,
+          "passed": true
+        }
+      },
+      "all_four_quality_passed": true,
+      "worker": {
+        "protocol": "agent-hdemucs-four-stems-v1",
+        "status": "succeeded",
+        "network": "disabled",
+        "blocked_network_events": [],
+        "request_sha256": "sha256:b6daa3fb7e385e85a67a865e575635ec1bb489dd6f4c7f1cc9c84acf77e7cd0f",
+        "adapter_sha256": "sha256:5d7dbdd810001ac57ba20721495607baace3d500724ff1c7c7b2fcee02766fb7",
+        "input_sha256": "sha256:3bc0dbe55026c63a83d5d221210a6d29515b32296ed946ef8c1160b7af20bf3f",
+        "source_sha256": "sha256:16a40517e3814cab5f78908c96175921b325397883da2ce88b16603d43c98c3f",
+        "samples": 264600,
+        "outputs": {
+          "drums": {
+            "sha256": "sha256:338ef14e00d6dc5ed3f8a626f91af796cf2f60e410afcd31fe3eb775e84a25c9",
+            "bytes": 2116800
+          },
+          "bass": {
+            "sha256": "sha256:c7c83ab5b73abdb660c730d02ee724ac1951120369a922e89e051db0e0503ec9",
+            "bytes": 2116800
+          },
+          "other": {
+            "sha256": "sha256:d724777dbd1d4653643cb00b197e0b8e866e4ca2e4f1d1e6f1f570971d932ebd",
+            "bytes": 2116800
+          },
+          "vocals": {
+            "sha256": "sha256:db0ea71629f6cb0c64c2b0a9c2289e8ae9e3c50d7d0395980359e035da8194db",
+            "bytes": 2116800
+          }
+        },
+        "metrics": {
+          "samples": 264600,
+          "channels": 2,
+          "segments": 2,
+          "model_calls": 2,
+          "normalization_mean": 0.0007542939309281519,
+          "normalization_std": 0.07833883216450445,
+          "peaks": {
+            "drums": 0.7279328107833862,
+            "bass": 0.2031366229057312,
+            "other": 0.12266964465379715,
+            "vocals": 0.36981022357940674
+          },
+          "raw_sum_max_abs_error": 0.286354074254632,
+          "raw_sum_rms_error": 0.0072324913844161514,
+          "input_rms": 0.07852854284621572,
+          "input_peak": 0.8999999761581421,
+          "source_order": [
+            "drums",
+            "bass",
+            "other",
+            "vocals"
+          ],
+          "estimate_method": "four_independent_model_sources",
+          "mixture_projection": "none",
+          "dc_method": "shared_source_mean_divided_by_four",
+          "silence_fast_path": false
+        },
+        "device": "cuda",
+        "device_index": 0,
+        "dtype": "float32",
+        "device_name": "NVIDIA GeForce RTX 3060",
+        "peak_cuda_bytes": 550677504,
+        "versions": {
+          "python": "3.13.14",
+          "numpy": "2.4.6",
+          "torch": "2.13.0+cu130",
+          "torchaudio": "2.11.0+cu130"
+        },
+        "module_paths": {
+          "numpy": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\numpy\\__init__.py",
+          "torch": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\__init__.py",
+          "torchaudio": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torchaudio\\__init__.py"
+        },
+        "elapsed_seconds": 133.435
+      },
+      "device_selection": {
+        "requested": "cuda",
+        "selected": "cuda",
+        "fallback_reason": null,
+        "gpu": {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 3060",
+          "driver": "595.95",
+          "total_mib": 12288,
+          "free_mib": 10553,
+          "compute_capability": "8.6"
+        },
+        "device_index": 0,
+        "minimum_free_mib": 2048,
+        "existing_gpu_processes_untouched": true
+      },
+      "assets": {
+        "drums": {
+          "id": "cuda_drums",
+          "kind": "audio",
+          "uri": "assets/derived/cuda_drums.wav",
+          "sha256": "sha256:146ed203e58e07e011991ef9b058ac748b9926e459ef485a15985d4cef128e79",
+          "probe": {
+            "duration_seconds": 6.0,
+            "duration_tick": 540000,
+            "format": "wav",
+            "format_long_name": "WAV / WAVE (Waveform Audio)",
+            "streams": [
+              {
+                "index": 0,
+                "codec_name": "pcm_f32le",
+                "codec_long_name": "PCM 32-bit floating point little-endian",
+                "codec_type": "audio",
+                "codec_tag_string": "[3][0][0][0]",
+                "codec_tag": "0x0003",
+                "sample_fmt": "flt",
+                "sample_rate": "44100",
+                "channels": 2,
+                "bits_per_sample": 32,
+                "initial_padding": 0,
+                "r_frame_rate": "0/0",
+                "avg_frame_rate": "0/0",
+                "time_base": "1/44100",
+                "duration_ts": 264600,
+                "duration": "6.000000",
+                "bit_rate": "2822400",
+                "disposition": {
+                  "default": 0,
+                  "dub": 0,
+                  "original": 0,
+                  "comment": 0,
+                  "lyrics": 0,
+                  "karaoke": 0,
+                  "forced": 0,
+                  "hearing_impaired": 0,
+                  "visual_impaired": 0,
+                  "clean_effects": 0,
+                  "attached_pic": 0,
+                  "timed_thumbnails": 0,
+                  "non_diegetic": 0,
+                  "captions": 0,
+                  "descriptions": 0,
+                  "metadata": 0,
+                  "dependent": 0,
+                  "still_image": 0,
+                  "multilayer": 0
+                }
+              }
+            ],
+            "video": {
+              "codec": null,
+              "width": null,
+              "height": null,
+              "pix_fmt": null,
+              "fps": null,
+              "color_space": null,
+              "duration_seconds": 0.0,
+              "start_time_seconds": 0.0
+            },
+            "audio": {
+              "codec": "pcm_f32le",
+              "sample_rate": 44100,
+              "channels": 2,
+              "duration_seconds": 6.0,
+              "start_time_seconds": 0.0
+            }
+          },
+          "rights_ref": "cuda_drums",
+          "source": {
+            "source_url": "local://E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程\\assets\\derived\\cuda_drums.wav",
+            "retrieved_at": "2026-10-24T23:33:01.678646Z",
+            "original_name": "cuda_drums.wav",
+            "derived_from": [
+              "controlled_mix"
+            ]
+          }
+        },
+        "bass": {
+          "id": "cuda_bass",
+          "kind": "audio",
+          "uri": "assets/derived/cuda_bass.wav",
+          "sha256": "sha256:89fbc9cbb3912f1d85195348aa106f6e4fd42d419f746cc3c9d37c2e79397f95",
+          "probe": {
+            "duration_seconds": 6.0,
+            "duration_tick": 540000,
+            "format": "wav",
+            "format_long_name": "WAV / WAVE (Waveform Audio)",
+            "streams": [
+              {
+                "index": 0,
+                "codec_name": "pcm_f32le",
+                "codec_long_name": "PCM 32-bit floating point little-endian",
+                "codec_type": "audio",
+                "codec_tag_string": "[3][0][0][0]",
+                "codec_tag": "0x0003",
+                "sample_fmt": "flt",
+                "sample_rate": "44100",
+                "channels": 2,
+                "bits_per_sample": 32,
+                "initial_padding": 0,
+                "r_frame_rate": "0/0",
+                "avg_frame_rate": "0/0",
+                "time_base": "1/44100",
+                "duration_ts": 264600,
+                "duration": "6.000000",
+                "bit_rate": "2822400",
+                "disposition": {
+                  "default": 0,
+                  "dub": 0,
+                  "original": 0,
+                  "comment": 0,
+                  "lyrics": 0,
+                  "karaoke": 0,
+                  "forced": 0,
+                  "hearing_impaired": 0,
+                  "visual_impaired": 0,
+                  "clean_effects": 0,
+                  "attached_pic": 0,
+                  "timed_thumbnails": 0,
+                  "non_diegetic": 0,
+                  "captions": 0,
+                  "descriptions": 0,
+                  "metadata": 0,
+                  "dependent": 0,
+                  "still_image": 0,
+                  "multilayer": 0
+                }
+              }
+            ],
+            "video": {
+              "codec": null,
+              "width": null,
+              "height": null,
+              "pix_fmt": null,
+              "fps": null,
+              "color_space": null,
+              "duration_seconds": 0.0,
+              "start_time_seconds": 0.0
+            },
+            "audio": {
+              "codec": "pcm_f32le",
+              "sample_rate": 44100,
+              "channels": 2,
+              "duration_seconds": 6.0,
+              "start_time_seconds": 0.0
+            }
+          },
+          "rights_ref": "cuda_bass",
+          "source": {
+            "source_url": "local://E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程\\assets\\derived\\cuda_bass.wav",
+            "retrieved_at": "2026-10-24T23:33:01.679007Z",
+            "original_name": "cuda_bass.wav",
+            "derived_from": [
+              "controlled_mix"
+            ]
+          }
+        },
+        "other": {
+          "id": "cuda_other",
+          "kind": "audio",
+          "uri": "assets/derived/cuda_other.wav",
+          "sha256": "sha256:1314addfc94031fa93cd8d04149cd0b9de498ba79d6d2efa287bba012b6f5ca5",
+          "probe": {
+            "duration_seconds": 6.0,
+            "duration_tick": 540000,
+            "format": "wav",
+            "format_long_name": "WAV / WAVE (Waveform Audio)",
+            "streams": [
+              {
+                "index": 0,
+                "codec_name": "pcm_f32le",
+                "codec_long_name": "PCM 32-bit floating point little-endian",
+                "codec_type": "audio",
+                "codec_tag_string": "[3][0][0][0]",
+                "codec_tag": "0x0003",
+                "sample_fmt": "flt",
+                "sample_rate": "44100",
+                "channels": 2,
+                "bits_per_sample": 32,
+                "initial_padding": 0,
+                "r_frame_rate": "0/0",
+                "avg_frame_rate": "0/0",
+                "time_base": "1/44100",
+                "duration_ts": 264600,
+                "duration": "6.000000",
+                "bit_rate": "2822400",
+                "disposition": {
+                  "default": 0,
+                  "dub": 0,
+                  "original": 0,
+                  "comment": 0,
+                  "lyrics": 0,
+                  "karaoke": 0,
+                  "forced": 0,
+                  "hearing_impaired": 0,
+                  "visual_impaired": 0,
+                  "clean_effects": 0,
+                  "attached_pic": 0,
+                  "timed_thumbnails": 0,
+                  "non_diegetic": 0,
+                  "captions": 0,
+                  "descriptions": 0,
+                  "metadata": 0,
+                  "dependent": 0,
+                  "still_image": 0,
+                  "multilayer": 0
+                }
+              }
+            ],
+            "video": {
+              "codec": null,
+              "width": null,
+              "height": null,
+              "pix_fmt": null,
+              "fps": null,
+              "color_space": null,
+              "duration_seconds": 0.0,
+              "start_time_seconds": 0.0
+            },
+            "audio": {
+              "codec": "pcm_f32le",
+              "sample_rate": 44100,
+              "channels": 2,
+              "duration_seconds": 6.0,
+              "start_time_seconds": 0.0
+            }
+          },
+          "rights_ref": "cuda_other",
+          "source": {
+            "source_url": "local://E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程\\assets\\derived\\cuda_other.wav",
+            "retrieved_at": "2026-10-24T23:33:01.679217Z",
+            "original_name": "cuda_other.wav",
+            "derived_from": [
+              "controlled_mix"
+            ]
+          }
+        },
+        "vocals": {
+          "id": "cuda_vocals",
+          "kind": "audio",
+          "uri": "assets/derived/cuda_vocals.wav",
+          "sha256": "sha256:6fb0b6586b20b30e9e260e1ac6ef8ca335af79046e2392aed0e93a1ca77f9787",
+          "probe": {
+            "duration_seconds": 6.0,
+            "duration_tick": 540000,
+            "format": "wav",
+            "format_long_name": "WAV / WAVE (Waveform Audio)",
+            "streams": [
+              {
+                "index": 0,
+                "codec_name": "pcm_f32le",
+                "codec_long_name": "PCM 32-bit floating point little-endian",
+                "codec_type": "audio",
+                "codec_tag_string": "[3][0][0][0]",
+                "codec_tag": "0x0003",
+                "sample_fmt": "flt",
+                "sample_rate": "44100",
+                "channels": 2,
+                "bits_per_sample": 32,
+                "initial_padding": 0,
+                "r_frame_rate": "0/0",
+                "avg_frame_rate": "0/0",
+                "time_base": "1/44100",
+                "duration_ts": 264600,
+                "duration": "6.000000",
+                "bit_rate": "2822400",
+                "disposition": {
+                  "default": 0,
+                  "dub": 0,
+                  "original": 0,
+                  "comment": 0,
+                  "lyrics": 0,
+                  "karaoke": 0,
+                  "forced": 0,
+                  "hearing_impaired": 0,
+                  "visual_impaired": 0,
+                  "clean_effects": 0,
+                  "attached_pic": 0,
+                  "timed_thumbnails": 0,
+                  "non_diegetic": 0,
+                  "captions": 0,
+                  "descriptions": 0,
+                  "metadata": 0,
+                  "dependent": 0,
+                  "still_image": 0,
+                  "multilayer": 0
+                }
+              }
+            ],
+            "video": {
+              "codec": null,
+              "width": null,
+              "height": null,
+              "pix_fmt": null,
+              "fps": null,
+              "color_space": null,
+              "duration_seconds": 0.0,
+              "start_time_seconds": 0.0
+            },
+            "audio": {
+              "codec": "pcm_f32le",
+              "sample_rate": 44100,
+              "channels": 2,
+              "duration_seconds": 6.0,
+              "start_time_seconds": 0.0
+            }
+          },
+          "rights_ref": "cuda_vocals",
+          "source": {
+            "source_url": "local://E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\development-r1\\中文 四轨工程\\assets\\derived\\cuda_vocals.wav",
+            "retrieved_at": "2026-10-24T23:33:01.679402Z",
+            "original_name": "cuda_vocals.wav",
+            "derived_from": [
+              "controlled_mix"
+            ]
+          }
+        }
+      },
+      "generated_tracks": {
+        "drums": {
+          "track_id": "track_cuda_drums",
+          "clip": {
+            "id": "clip_drums_20261024233301_f852d67b",
+            "asset_id": "cuda_drums",
+            "timeline_start_tick": 0,
+            "duration_tick": 540000,
+            "source_in_tick": 0,
+            "source_out_tick": 540000
+          }
+        },
+        "bass": {
+          "track_id": "track_cuda_bass",
+          "clip": {
+            "id": "clip_bass_20261024233301_edc2f76d",
+            "asset_id": "cuda_bass",
+            "timeline_start_tick": 0,
+            "duration_tick": 540000,
+            "source_in_tick": 0,
+            "source_out_tick": 540000
+          }
+        },
+        "other": {
+          "track_id": "track_cuda_other",
+          "clip": {
+            "id": "clip_other_20261024233301_7d510d4d",
+            "asset_id": "cuda_other",
+            "timeline_start_tick": 0,
+            "duration_tick": 540000,
+            "source_in_tick": 0,
+            "source_out_tick": 540000
+          }
+        },
+        "vocals": {
+          "track_id": "track_cuda_vocals",
+          "clip": {
+            "id": "clip_vocals_20261024233301_60ffc57e",
+            "asset_id": "cuda_vocals",
+            "timeline_start_tick": 0,
+            "duration_tick": 540000,
+            "source_in_tick": 0,
+            "source_out_tick": 540000
+          }
+        }
+      }
+    }
+  },
+  "cpu_gpu": {},
+  "natural": null,
+  "roundtrip": null,
+  "rights_check": {
+    "ok": false,
+    "target": "commercial_ad",
+    "checked": 5,
+    "required_records": 6,
+    "failures": [
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "controlled_mix",
+        "rights_ref": "controlled_mix",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "controlled_mix",
+        "rights_ref": "controlled_mix",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "cuda_drums",
+        "rights_ref": "cuda_drums",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "cuda_drums",
+        "rights_ref": "cuda_drums",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "cuda_bass",
+        "rights_ref": "cuda_bass",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "cuda_bass",
+        "rights_ref": "cuda_bass",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "cuda_other",
+        "rights_ref": "cuda_other",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "cuda_other",
+        "rights_ref": "cuda_other",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "cuda_vocals",
+        "rights_ref": "cuda_vocals",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "cuda_vocals",
+        "rights_ref": "cuda_vocals",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "audio_adapter_four",
+        "rights_ref": "audio_adapter_four",
+        "record_version": 1,
+        "context": "derived_dependency"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "audio_adapter_four",
+        "rights_ref": "audio_adapter_four",
+        "record_version": 1,
+        "context": "derived_dependency"
+      }
+    ],
+    "warnings": [],
+    "disposition_decisions": [],
+    "effective_disposition_decisions": []
+  },
+  "quality_all_controlled_passed": true,
+  "runtime_network": "disabled",
+  "public_audio_redistribution": false,
+  "human_listening": false,
+  "full_G17_closed": false
+}

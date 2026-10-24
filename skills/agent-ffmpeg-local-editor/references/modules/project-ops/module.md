@@ -11,3 +11,8 @@ Commands: `project snapshot/recover; media relink; queue`. Preserve sources/fail
 Inspect `project --help`, `media relink --help` and `queue --help`. Snapshot before substantial edits.
 Keep source hashes and explicit relink mappings. Inspect saved state before recovery or replay. Run queued jobs
 with explicit output paths and preserve cancellation/failure evidence; do not assume every command is idempotent.
+
+For interrupted four-source jobs, read [job-recovery](../../job-recovery.md).
+`project recover` stays metadata-only by default; `--cleanup-jobs --dry-run`
+previews owned stale workspaces before explicit cleanup. Preserve live, changed,
+unknown and legacy files; committed assets must remain editable.

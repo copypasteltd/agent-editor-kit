@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "cli_version": "0.1.7",
+  "release": "v0.1.0-alpha.4-local.5",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.5\\final\\installed",
+  "archive": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.5\\candidate-r1\\bundle.zip",
+  "archive_bytes": 302628548,
+  "archive_sha256": "sha256:12f0d076f1b0dd18f7438adf678a99354a0ce6fa1b10843f326ebc2a8d8251da",
+  "manifest_sha256": "sha256:ae4daffd658d326df75d1b8c0540a3f193800f03528d0d38883a0767f73fa5a0",
+  "bundle_manifest_files": 47,
+  "archive_files": 48,
+  "wheels": 8,
+  "source_python_files": 194,
+  "all_source_python_bytes_equal": true,
+  "tests": {
+    "contracts-r1": {
+      "methods": 17,
+      "skipped": 0,
+      "sha256": "sha256:1b060eeaeed418e5afd215848f4fb8dd604b52c9d37baa95bc6285df8e333ee1"
+    },
+    "four-stem-regression-r1": {
+      "methods": 15,
+      "skipped": 0,
+      "sha256": "sha256:fba317520b4286451fc2c0767e5f87468b18878a4c50e584a251ed13b7c4ca9d"
+    },
+    "two-stem-regression-r1": {
+      "methods": 22,
+      "skipped": 0,
+      "sha256": "sha256:7f479f7543e59ddf522241d820ba285a3f4a6a9ee18d20f994ba39c1e01e4e8c"
+    },
+    "cli-regression-r1": {
+      "methods": 122,
+      "skipped": 0,
+      "sha256": "sha256:928a3fc93c7f9c019703e5077309ca8518c71b6110397f1ffff5f744dfa27833"
+    },
+    "installed-contracts-r1": {
+      "methods": 17,
+      "skipped": 0,
+      "sha256": "sha256:974edfeac8206c5a20123e68294dbe2cd79fedb582f20dd8ecf3a2a08cde170e"
+    },
+    "installed-four-stem-regression-r2": {
+      "methods": 15,
+      "skipped": 0,
+      "sha256": "sha256:711fc91e0ccc98858fe087aa39e25b62586b61c8c1d5fb1d04e76f3f797328fc"
+    },
+    "installed-offline-r1": {
+      "methods": 34,
+      "skipped": 0,
+      "sha256": "sha256:16471ddc54251102867a055d0ff75c08f7a9ef85a6a93462ba0c63d1002369c9"
+    }
+  },
+  "native_windows": true,
+  "virtual_environment": false,
+  "new_model_forwards": 0,
+  "heavy_torch_environment_and_weights_bundled": false,
+  "public_release_unchanged": true,
+  "generator_sha256": "sha256:46418c1d33ab2c66a69e4b9286bc30d6714e4ed760ede1116e72bca96df02056"
+}

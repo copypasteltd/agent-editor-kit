@@ -1,0 +1,74 @@
+{
+  "protocol": "agent-hdemucs-four-stems-v1",
+  "status": "succeeded",
+  "network": "disabled",
+  "blocked_network_events": [],
+  "request_sha256": "sha256:e647091b243f2f1e7752917f30c81a3d15f9e1efef38ec5b684100b8391213ec",
+  "adapter_sha256": "sha256:08f2063dee11a70c23ae21a28ffd1b568deedae103157d137e9c8332b2e0ab3b",
+  "input_sha256": "sha256:3bc0dbe55026c63a83d5d221210a6d29515b32296ed946ef8c1160b7af20bf3f",
+  "source_sha256": "sha256:16a40517e3814cab5f78908c96175921b325397883da2ce88b16603d43c98c3f",
+  "samples": 264600,
+  "outputs": {
+    "drums": {
+      "sha256": "sha256:338ef14e00d6dc5ed3f8a626f91af796cf2f60e410afcd31fe3eb775e84a25c9",
+      "bytes": 2116800
+    },
+    "bass": {
+      "sha256": "sha256:c7c83ab5b73abdb660c730d02ee724ac1951120369a922e89e051db0e0503ec9",
+      "bytes": 2116800
+    },
+    "other": {
+      "sha256": "sha256:d724777dbd1d4653643cb00b197e0b8e866e4ca2e4f1d1e6f1f570971d932ebd",
+      "bytes": 2116800
+    },
+    "vocals": {
+      "sha256": "sha256:db0ea71629f6cb0c64c2b0a9c2289e8ae9e3c50d7d0395980359e035da8194db",
+      "bytes": 2116800
+    }
+  },
+  "metrics": {
+    "samples": 264600,
+    "channels": 2,
+    "segments": 2,
+    "model_calls": 2,
+    "normalization_mean": 0.0007542939309281519,
+    "normalization_std": 0.07833883216450445,
+    "peaks": {
+      "drums": 0.7279328107833862,
+      "bass": 0.2031366229057312,
+      "other": 0.12266964465379715,
+      "vocals": 0.36981022357940674
+    },
+    "raw_sum_max_abs_error": 0.286354074254632,
+    "raw_sum_rms_error": 0.0072324913844161514,
+    "input_rms": 0.07852854284621572,
+    "input_peak": 0.8999999761581421,
+    "source_order": [
+      "drums",
+      "bass",
+      "other",
+      "vocals"
+    ],
+    "estimate_method": "four_independent_model_sources",
+    "mixture_projection": "none",
+    "dc_method": "shared_source_mean_divided_by_four",
+    "silence_fast_path": false
+  },
+  "device": "cuda",
+  "device_index": 0,
+  "dtype": "float32",
+  "device_name": "NVIDIA GeForce RTX 3060",
+  "peak_cuda_bytes": 550677504,
+  "versions": {
+    "python": "3.13.14",
+    "numpy": "2.4.2",
+    "torch": "2.13.0+cu130",
+    "torchaudio": "2.11.0+cu130"
+  },
+  "module_paths": {
+    "numpy": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.5\\final\\installed\\site\\numpy\\__init__.py",
+    "torch": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\__init__.py",
+    "torchaudio": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torchaudio\\__init__.py"
+  },
+  "elapsed_seconds": 6.891
+}

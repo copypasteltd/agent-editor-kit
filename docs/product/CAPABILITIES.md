@@ -2,7 +2,7 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.6 / alpha.4-local.4。** Independent drums/bass/other/vocals, offline visual retrieval, GPU voice/translation, 359 resources, native capture; one Skill / 17 modules. Public alpha.3 remains CLI 0.1.2. [Installation](COMMUNITY_LOCAL_DELIVERY.md) · [Four-source workflow / 四轨 / 四軌](FOUR_STEM_SEPARATION.md) · [Actual evidence](../validation/独立四轨音源分离实测_2026-10-25.md) · [74 current declarations](four-stem-capabilities-cli-0.1.6.json) · [38 remaining groups](GOAL_GAPS_20261025.md).
+**Current local / 当前本机 / 目前本機：CLI 0.1.7 / alpha.4-local.5。** Native process ownership and four-source job recovery; independent stems, offline retrieval, GPU voice/translation, 359 resources and capture; one Skill / 17 modules. Public alpha.3 remains CLI 0.1.2. [Installation](COMMUNITY_LOCAL_DELIVERY.md) · [Recovery / 恢复 / 復原](JOB_RECOVERY.md) · [Actual evidence](../validation/任务中断恢复实测_2026-10-25.md) · [74 current declarations](job-recovery-capabilities-cli-0.1.7.json) · [38 remaining groups](GOAL_GAPS_20261025.md).
 
 <!-- /community-current -->
 
@@ -12,7 +12,7 @@
 |---|---|---|---|---|
 | F01 | Agent 调用协议 | 任务参数 → JSON 响应、退出码、错误、warning、产物与 provenance；能力与 schema 可查询。 | `version; doctor; capabilities; schema show` | Skill 组织任务，CLI 执行；没有后台云端 Agent 服务。 |
 | F02 | 可编辑项目 | 创建/检查 Agent Project，保存资产、序列、轨道、ticks 时钟、输出配置和权利引用。 | `project init/inspect` | 源媒体与项目元数据分离，移动工程后需重链并复核证据路径。 |
-| F03 | 事务、恢复与快照 | 写入前快照、恢复、迁移、锁和操作记录；中断后恢复项目元数据事务。 | `project snapshot/restore/migrate/recover; operation inspect` | 失败证据保留；快照不等于外部原始素材的完整备份。 |
+| F03 | 事务、恢复与快照 | 元数据事务/快照；原生子进程树归属；显式恢复四轨持久化工作目录和未提交输出。 | `project snapshot/restore/migrate/recover; operation inspect` | 已提交资产保留；变化/活跃/未知/旧缓存保留。仅受管四轨工作目录，不是完整媒体备份或模型续算。 |
 | F04 | 素材导入与重链 | 本地图片/视频/音频/字体 → 探测结果、稳定资产 ID、哈希和来源记录。 | `media ingest/relink` | 不抓取在线素材；导入不自动证明商业授权。 |
 | F05 | 代理、缩略图与波形 | 素材 → 轻量代理、图片缩略图、音频波形、可核查联系表。 | `media prepare/contact-sheet` | 联系表是抽样证据；不代表逐帧视觉理解。 |
 | F06 | 镜头、静音与高光分析 | 本地视频/音频 → 切镜、静音、节拍或启发式高光候选与时间证据。 | `media understand/highlights` | 高光是启发式候选，语义判断需要 Agent/已注册适配器复核。 |

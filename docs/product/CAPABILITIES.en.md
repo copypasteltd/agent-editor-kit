@@ -2,7 +2,7 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.6 / alpha.4-local.4。** Independent drums/bass/other/vocals, offline visual retrieval, GPU voice/translation, 359 resources, native capture; one Skill / 17 modules. Public alpha.3 remains CLI 0.1.2. [Installation](COMMUNITY_LOCAL_DELIVERY.md) · [Four-source workflow / 四轨 / 四軌](FOUR_STEM_SEPARATION.md) · [Actual evidence](../validation/独立四轨音源分离实测_2026-10-25.md) · [74 current declarations](four-stem-capabilities-cli-0.1.6.json) · [38 remaining groups](GOAL_GAPS_20261025.md).
+**Current local / 当前本机 / 目前本機：CLI 0.1.7 / alpha.4-local.5。** Native process ownership and four-source job recovery; independent stems, offline retrieval, GPU voice/translation, 359 resources and capture; one Skill / 17 modules. Public alpha.3 remains CLI 0.1.2. [Installation](COMMUNITY_LOCAL_DELIVERY.md) · [Recovery / 恢复 / 復原](JOB_RECOVERY.md) · [Actual evidence](../validation/任务中断恢复实测_2026-10-25.md) · [74 current declarations](job-recovery-capabilities-cli-0.1.7.json) · [38 remaining groups](GOAL_GAPS_20261025.md).
 
 <!-- /community-current -->
 
@@ -12,7 +12,7 @@
 |---|---|---|---|---|
 | F01 | Agent command protocol | Task arguments → JSON responses, exit codes, errors, warnings, artifacts and provenance; queryable capabilities and schema. | `version; doctor; capabilities; schema show` | Skills guide the task; the CLI executes it. No hosted Agent service. |
 | F02 | Editable projects | Create/inspect Agent Projects with assets, sequences, tracks, tick clocks, output settings and rights references. | `project init/inspect` | Source media and metadata are separate; relocation requires relinking and evidence-path review. |
-| F03 | Transactions, recovery and snapshots | Pre-write snapshots, restore, migration, locks and operation records; recover interrupted metadata transactions. | `project snapshot/restore/migrate/recover; operation inspect` | Failure evidence remains. Metadata snapshots do not back up all external media. |
+| F03 | Transactions, recovery and snapshots | Metadata transactions/snapshots, native child-tree ownership and explicit recovery of durable four-source workspaces/uncommitted outputs. | `project snapshot/restore/migrate/recover; operation inspect` | Preserves committed assets and active/changed/unknown/legacy files. Owned four-source workspaces only; not a full media backup or inference resume. |
 | F04 | Media ingestion and relinking | Local images/video/audio/fonts → probe results, stable asset IDs, hashes and provenance. | `media ingest/relink` | No online-media fetching; ingestion does not establish commercial rights. |
 | F05 | Proxies, thumbnails and waveforms | Media → lightweight proxies, thumbnails, waveforms and auditable contact sheets. | `media prepare/contact-sheet` | Contact sheets are samples, not exhaustive visual understanding. |
 | F06 | Scene, silence and highlight analysis | Local video/audio → scene, silence, beat or heuristic highlight candidates and timing evidence. | `media understand/highlights` | Heuristic candidates require Agent or registered-adapter review for semantics. |

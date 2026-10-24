@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "readmes": {
+    "README.md": {
+      "F": 50,
+      "S": 19,
+      "K": 17,
+      "R": 58,
+      "historical_R01_R53_verbatim": true,
+      "sha256": "sha256:bea36db224200dca44efbbe3cf0e02519ac7c343dd7b91f34ca130baa3ebc60a"
+    },
+    "README.en.md": {
+      "F": 50,
+      "S": 19,
+      "K": 17,
+      "R": 58,
+      "historical_R01_R53_verbatim": true,
+      "sha256": "sha256:c2923b4fd4d9d2d02625aa150a732591064dbd0777704bd1eb5e4ec61e6fcf5a"
+    },
+    "README.zh-TW.md": {
+      "F": 50,
+      "S": 19,
+      "K": 17,
+      "R": 58,
+      "historical_R01_R53_verbatim": true,
+      "sha256": "sha256:1d70748d10b3266187a1538861f790a6a6e813f70ee4a13055bb6f5ecbdb1499"
+    }
+  },
+  "goal_groups": 38,
+  "all_closure_conditions_preserved": true,
+  "local_markdown_targets_checked": 1653,
+  "new_missing_local_targets": [],
+  "inherited_missing_local_targets": [],
+  "source_python_files": 194,
+  "source_installed_bytes_equal": true,
+  "registered_skill_files": 62,
+  "registered_skills": 1,
+  "internal_modules": 17,
+  "kits": {
+    "0.1.6": {
+      "files": 77,
+      "bytes": 223064,
+      "sha256": "sha256:df68dd4a7172c811b78ea6f3bd796534ab168f175540199be883fed51a8e4600"
+    },
+    "0.1.7": {
+      "files": 79,
+      "bytes": 228867,
+      "sha256": "sha256:b6668d060de7c61f13896449072419eec5d6254bce52edc926fa1bae3e4d7b45"
+    }
+  },
+  "legacy_forced_stop_evidence_preserved": true,
+  "completed_new_workspaces_empty": true,
+  "full_goal_complete": false,
+  "new_model_forwards": 0,
+  "new_renders": 0,
+  "browser_ui": false,
+  "generator_sha256": "sha256:8f3e6523d39e4721a15850720171ad8b10e5a017a6740792d8a6d9c1ea52ad09"
+}

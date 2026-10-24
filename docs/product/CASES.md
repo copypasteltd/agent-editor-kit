@@ -448,3 +448,19 @@ The installed CLI retains four independent neural estimates and creates editable
 未完成自然分离/去混响/人工听审。自动完整解码、静态图检查、连续播放和听审分别记录；强制结束遗留临时目录的失败保留，不因正常取消或工程往返通过而关闭 G17/G33/G36。
 
 Natural separation quality, dereverberation and human listening remain open. Retained forced-termination cache residue is a separate recovery gap. This case does not close G17/G33/G36 or full CapCut parity.
+
+<a id="c16-job-recovery"></a>
+
+## C16：CLI 0.1.7 成片与强制中断恢复 / Installed output and interruption recovery
+
+当前固定安装版保留 CPU/GPU 四源预测；选择 CUDA 四轨，受控原音仅留本机。9 次实际 CLI 完成原创数值图、6 秒/180 帧成片、检查、工程往返和发布拒绝：混音最大差 0，往返 PCM/解码 RGB 相同。
+
+The current installed build renders a six-second numeric diagnostic with four editable CUDA tracks. Nine CLI calls verify rendering, package roundtrip and the expected rights-gate refusal. Audio stays local; this is not a natural listening-quality demonstration.
+
+![Actual CLI 0.1.7 silent diagnostic](../assets/job-recovery-20261025-r1/installed-diagnostic-silent.gif)
+
+[Original numeric PNG](../assets/job-recovery-20261025-r1/installed-metrics.png) · [Silent MP4](../assets/job-recovery-20261025-r1/installed-diagnostic-silent.mp4) · [Source/hash](../assets/job-recovery-20261025-r1/SOURCE.json) · [Actual render/roundtrip](../validation/evidence/job-recovery-20261025-r1/demo-r1/verification.json)。GIF 10fps/60 帧/6000ms，无声；不是中断过程录像。
+
+同一安装工程另在实际 worker 启动、第一输出、元数据待提交和已提交后四个位置强制结束 CLI：前三者恢复原元数据并回收未提交输出；最后保留提交后的 4 WAV/四轨，只清理工作目录。三个边界仅加入观察暂停，模型/DSP/恢复实现未替换；正常渲染流程未注入。
+
+[Four real hard-stop cases](../validation/evidence/job-recovery-20261025-r1/faults-r1/verification.json) · [Full report/retained failures](../validation/任务中断恢复实测_2026-10-25.md) · [Recovery workflow](JOB_RECOVERY.md)。旧非管理缓存保留；断电、磁盘不足、其他模型缓存、长并发、自然音频质量和人工听审仍开放，未关闭完整 G33/G36。

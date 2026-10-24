@@ -165,6 +165,7 @@ def build_parser() -> argparse.ArgumentParser:
     migrate.add_argument("--report", default=None, help="可选项目内迁移报告路径")
     recover = _leaf_common(ps.add_parser("recover", help="恢复上次中断的项目元数据事务"))
     recover.add_argument("--project", required=True)
+    recover.add_argument("--cleanup-jobs", action="store_true", help="恢复元数据后回收有归属证据的中断任务；保留在用、已引用、已改动和未知文件")
 
     diagnostics = subs.add_parser('diagnostics', help='检查及显式导出本地管道失败诊断')
     diagnostic_actions = diagnostics.add_subparsers(dest='action', required=True)
@@ -1412,14 +1413,26 @@ def command_project_migrate(args: argparse.Namespace) -> dict[str, Any]:
 
 
 def command_project_recover(args: argparse.Namespace) -> dict[str, Any]:
-    root, _ = load_project(args.project)
+    from .utils import project_root
+    from .job_workspaces import recover_workspaces
+    root = project_root(args.project)
     journal = root / "operations" / "project-transaction.json"
+    if not (root / 'project.json').exists() and not journal.exists():
+        raise AppError('PROJECT_NOT_FOUND', '项目或待恢复事务不存在', exit_code=3, path=str(root))
     if args.dry_run:
-        return _envelope("project.recover", args, status="planned", data={"project": str(root), "journal": str(journal), "pending": journal.exists()})
+        data = {"project": str(root), "journal": str(journal), "pending": journal.exists()}
+        if args.cleanup_jobs:
+            data['job_recovery'] = recover_workspaces(root, dry_run=True)
+            data['job_recovery']['metadata_rollback_pending'] = journal.exists()
+        return _envelope("project.recover", args, status="planned", data=data)
     recovery = recover_pending_transaction(root)
+    load_project(root)  # Verify the recovered project before interpreting asset references.
+    jobs = recover_workspaces(root) if args.cleanup_jobs else None
     operation_id = new_id("op")
-    _operation(root, operation_id, {"operation_id": operation_id, "command": "project.recover", "status": "succeeded", "recovery": recovery, "created_at": now_iso()})
-    return _envelope("project.recover", args, data={"project": str(root), "recovery": recovery}, operation_id=operation_id)
+    _operation(root, operation_id, {"operation_id": operation_id, "command": "project.recover", "status": "succeeded", "recovery": recovery, "job_recovery": jobs, "created_at": now_iso()})
+    data = {"project": str(root), "recovery": recovery}
+    if jobs is not None: data['job_recovery'] = jobs
+    return _envelope("project.recover", args, data=data, operation_id=operation_id)
 
 
 def command_media_ingest(args: argparse.Namespace) -> dict[str, Any]:
@@ -7243,6 +7256,11 @@ def main(argv: list[str] | None = None) -> int:
                     result = handler(args)
             if transaction.get("recovered"):
                 result.setdefault("warnings", []).append({"code": "PROJECT_TRANSACTION_RECOVERED", "message": "执行本次命令前已恢复上次中断的项目元数据事务", "transaction_id": transaction.get("recovery", {}).get("transaction_id"), "command": transaction.get("recovery", {}).get("command")})
+            cleanup = transaction.get('job_cleanup', [])
+            if cleanup:
+                result.setdefault('data', {})['job_cleanup'] = cleanup
+                if any(row.get('status') != 'cleaned' for row in cleanup):
+                    result.setdefault('warnings', []).append({'code':'JOB_WORKSPACE_PRESERVED', 'message':'部分任务工作目录保留；查看 job_cleanup 并显式 project recover --cleanup-jobs'})
 
         _print(result, args.format)
         return 0 if result.get("ok") else (7 if args.domain == "rights" or getattr(args, "publish", False) else 2)

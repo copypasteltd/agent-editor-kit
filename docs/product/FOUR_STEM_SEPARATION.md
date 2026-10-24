@@ -16,12 +16,12 @@ The existing two-source vocal/residual-accompaniment and approximate mid/side co
 
 | 项目 / Item | 实际要求 / Requirement |
 |---|---|
-| 本地运行 / Application | CLI 0.1.6；一个统一 Skill 的固定安装包 |
+| 本地运行 / Application | 当前 CLI 0.1.7；一个统一 Skill 的固定安装包；四轨从 0.1.6 开始提供 |
 | 四轨引擎 / Engine | `torchaudio-hdemucs-four-stem-local-v1`，显式项目登记 |
 | 模型 / Checkpoint | 已有兼容 `torchaudio.models.hdemucs_high` 的 `.pt/.pth` tensor state dict；严格载入，不执行自定义模型代码 |
 | 原生依赖 / Native runtime | 已有 Python `.exe`、NumPy、Torch、TorchAudio、FFmpeg/ffprobe；不创建虚拟环境，不启动 ComfyUI 服务 |
 | CPU/GPU | `auto/cpu/cuda`，GPU index 0–31；`auto` 优先有至少 2048MiB 空闲显存的 NVIDIA GPU，仅预检不足时显式回退；推理错误/OOM 不回退 |
-| 完整性 / Integrity | 模型、Python、证据与 8 个实现文件固定哈希；命令范围持读锁；原生 Python 模块版本/路径在 worker 响应中记录，完整操作系统与 Python 依赖闭包仍未打包 |
+| 完整性 / Integrity | 当前 0.1.7 固定模型、Python、证据与 12 个实现文件（共 15 项）；0.1.6 为 8 个实现文件。命令范围持读锁；原生 Python 模块版本/路径在 worker 响应中记录，完整操作系统与 Python 依赖闭包仍未打包 |
 | 权利 / Rights | 四条派生轨均依赖源素材与模型台账；登记成功不授予模型/声音/音乐商业许可 |
 
 模型架构、固定四源及 MUSDB-HQ 训练来源可核对 [TorchAudio 官方模型说明](https://docs.pytorch.org/audio/stable/generated/torchaudio.pipelines.HDEMUCS_HIGH_MUSDB.html)。

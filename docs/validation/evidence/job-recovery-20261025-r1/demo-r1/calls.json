@@ -1,0 +1,173 @@
+[
+  {
+    "argv": [
+      "media",
+      "ingest",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\installed-r1\\中文 四轨工程",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\job-recovery-20261025-r1\\installed-metrics.png",
+      "--asset-id",
+      "metrics_board",
+      "--creator",
+      "agent editor kit",
+      "--license-spdx",
+      "CC0-1.0",
+      "--verification-status",
+      "verified",
+      "--evidence",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\job-recovery-20261025-r1\\SOURCE.json"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "seconds": 1.7432005000009667,
+    "command": "media.ingest",
+    "status": "succeeded"
+  },
+  {
+    "argv": [
+      "timeline",
+      "compose",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\installed-r1\\中文 四轨工程",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\installed-r1\\demo-changes.json"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "seconds": 1.887087099999917,
+    "command": "timeline.compose",
+    "status": "succeeded"
+  },
+  {
+    "argv": [
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\installed-r1\\中文 四轨工程",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\installed-r1\\中文 四轨工程\\renders\\four-stem-mix.mkv",
+      "--container",
+      "mkv",
+      "--audio-codec",
+      "pcm_f32le",
+      "--width",
+      "640",
+      "--height",
+      "360"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "seconds": 6.056614299999637,
+    "command": "render",
+    "status": "succeeded"
+  },
+  {
+    "argv": [
+      "quality",
+      "check",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\installed-r1\\中文 四轨工程",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\installed-r1\\中文 四轨工程\\renders\\four-stem-mix.mkv",
+      "--width",
+      "640",
+      "--height",
+      "360",
+      "--require-audio"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "seconds": 1.4757309999986319,
+    "command": "quality.check",
+    "status": "succeeded"
+  },
+  {
+    "argv": [
+      "convert",
+      "export",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\installed-r1\\中文 四轨工程",
+      "--target-format",
+      "package",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\installed-r1\\demo-four-stems.aevpkg.zip"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "seconds": 2.3905549999981304,
+    "command": "convert.export",
+    "status": "succeeded"
+  },
+  {
+    "argv": [
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\installed-r1\\demo-four-stems.aevpkg.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\installed-r1\\演示往返 工程"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "seconds": 1.6177645999996457,
+    "command": "convert.import",
+    "status": "succeeded"
+  },
+  {
+    "argv": [
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\installed-r1\\演示往返 工程"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "seconds": 1.9055001000015181,
+    "command": "validate",
+    "status": "succeeded"
+  },
+  {
+    "argv": [
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\installed-r1\\演示往返 工程",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\installed-r1\\演示往返 工程\\renders\\four-stem-mix.mkv",
+      "--container",
+      "mkv",
+      "--audio-codec",
+      "pcm_f32le",
+      "--width",
+      "640",
+      "--height",
+      "360"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "seconds": 5.908118699997431,
+    "command": "render",
+    "status": "succeeded"
+  },
+  {
+    "argv": [
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\installed-r1\\中文 四轨工程",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\installed-r1\\中文 四轨工程\\renders\\must-not-publish.mkv",
+      "--container",
+      "mkv",
+      "--audio-codec",
+      "pcm_f32le",
+      "--width",
+      "640",
+      "--height",
+      "360",
+      "--publish"
+    ],
+    "exit_code": 7,
+    "expected_exit_code": 7,
+    "seconds": 2.2758163000034983,
+    "command": "render",
+    "status": "failed"
+  }
+]

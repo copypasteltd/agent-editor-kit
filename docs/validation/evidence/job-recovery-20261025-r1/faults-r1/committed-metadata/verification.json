@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "phase": "committed-metadata",
+  "cli_pid": 33568,
+  "worker": null,
+  "hard_stop_owner_only": true,
+  "worker_exit_confirmed": false,
+  "stop_and_recovery_seconds": 8.297034300001542,
+  "journal_pending_before_stop": false,
+  "published_outputs_before_stop": 4,
+  "dry_run_metadata_unchanged": true,
+  "metadata_recovered_or_committed_preserved": true,
+  "unregistered_user_source_preserved": true,
+  "cleanup": {
+    "format": "agent-owned-job-workspace-v1",
+    "jobs": [
+      {
+        "job_id": "job-ea5620dc9c564d62986603ec97a8f954",
+        "kind": "four-stem-separation",
+        "files": 15,
+        "workspace_bytes": 10596337,
+        "outputs": [
+          {
+            "path": "assets/derived/crash_committed_metadata_drums.wav",
+            "status": "referenced_preserved",
+            "identity": {
+              "device": 6713111436524353518,
+              "inode": 3377699721214733,
+              "bytes": 2116892
+            },
+            "sha256": "sha256:146ed203e58e07e011991ef9b058ac748b9926e459ef485a15985d4cef128e79"
+          },
+          {
+            "path": "assets/derived/crash_committed_metadata_bass.wav",
+            "status": "referenced_preserved",
+            "identity": {
+              "device": 6713111436524353518,
+              "inode": 3096224744504079,
+              "bytes": 2116892
+            },
+            "sha256": "sha256:89fbc9cbb3912f1d85195348aa106f6e4fd42d419f746cc3c9d37c2e79397f95"
+          },
+          {
+            "path": "assets/derived/crash_committed_metadata_other.wav",
+            "status": "referenced_preserved",
+            "identity": {
+              "device": 6713111436524353518,
+              "inode": 3096224744504082,
+              "bytes": 2116892
+            },
+            "sha256": "sha256:1314addfc94031fa93cd8d04149cd0b9de498ba79d6d2efa287bba012b6f5ca5"
+          },
+          {
+            "path": "assets/derived/crash_committed_metadata_vocals.wav",
+            "status": "referenced_preserved",
+            "identity": {
+              "device": 6713111436524353518,
+              "inode": 3096224744504083,
+              "bytes": 2116892
+            },
+            "sha256": "sha256:6fb0b6586b20b30e9e260e1ac6ef8ca335af79046e2392aed0e93a1ca77f9787"
+          }
+        ],
+        "status": "cleaned",
+        "removed_outputs": []
+      }
+    ],
+    "cleaned": 1,
+    "dry_run": false,
+    "legacy_unmanaged": "preserved"
+  },
+  "real_model_forwards": 2,
+  "barrier_injection": "pause only; actual installed model/DSP/publication/transaction unchanged"
+}

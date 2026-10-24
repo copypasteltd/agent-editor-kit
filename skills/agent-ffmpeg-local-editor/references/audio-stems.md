@@ -38,3 +38,8 @@ Full instructions and real successes/failures:
 The current validation checkpoint license is unverified and it is not bundled.
 Contract tests and controlled source metrics do not establish natural-music
 quality, dereverberation or human listening acceptance.
+
+CLI 0.1.7 holds the owned job lease through metadata commit/rollback and reports
+normal cleanup. After an interruption read [job-recovery](job-recovery.md) and
+preview explicit `project recover --cleanup-jobs`. Old unmanaged caches remain
+preserved. Re-register adapters explicitly after an implementation upgrade.

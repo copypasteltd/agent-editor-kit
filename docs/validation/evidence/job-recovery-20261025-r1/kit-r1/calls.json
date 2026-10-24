@@ -1,0 +1,163 @@
+[
+  {
+    "id": "configure",
+    "command": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-kit-r1\\独立工具 包\\scripts\\activate_community_runtime.py",
+      "--installed",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.5\\final\\installed",
+      "--packs",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-portable-r1\\模型 包",
+      "--voice-cuda-lib",
+      "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\lib",
+      "--translation-cuda-lib",
+      "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.4\\bin",
+      "--semantic-config",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\semantic-runtime.json"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "sha256:0f2e77c8bb183a00cd1ec8977f1998f41559e1692b761cfe2fbd1f884d1eb83f",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "register",
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-kit-r1\\独立工具 包\\register-agent-ffmpeg-local-skills.ps1",
+      "-SkillsDirectory",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-kit-r1\\isolated-discovery",
+      "-ReceiptPath",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\job-recovery-20261025-r1\\kit-r1\\registration.json"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "sha256:7768921563fba604ac8169c6c26d2a6293db238423ecee1911386abad5a4a74d",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "version",
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "sha256:52aafd3147e52f52d9b7efb0b65fe7bb29c4475e23faaf33813fced6f7b472c6",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "capabilities",
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "capabilities"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "sha256:d4992e20f667bc5a53523e1148bd323163e722fa860474c449f143ce029a7097",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "four-stems-help",
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "audio",
+      "separate-stems",
+      "--help"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "sha256:8cd4aaa63ac54ea2d45a3e6e03799b7d930b5af3b6fadddd01c40487ef4841ee",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "four-stems-dry-run",
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "audio",
+      "separate-stems",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\installed-r1\\中文 四轨工程",
+      "--asset-id",
+      "controlled_mix",
+      "--adapter-id",
+      "four",
+      "--prefix",
+      "kit_contract",
+      "--apply",
+      "--dry-run"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "sha256:d2a68505f3c1760268d034a49d37d1892bcad68b0c6283e6ff6600fbfcb9951f",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "recover-help",
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "project",
+      "recover",
+      "--help"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "sha256:cf884365245aef9e508d565bb4633ffe93503ed18bb6e900801e08d1dcecc457",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "recover-dry-run",
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "project",
+      "recover",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\installed-r1\\中文 四轨工程",
+      "--cleanup-jobs",
+      "--dry-run"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "sha256:1cc52df28cd16a0694a98a6483498eefbc95670b90fd3f0888f5fc5c7bef2700",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

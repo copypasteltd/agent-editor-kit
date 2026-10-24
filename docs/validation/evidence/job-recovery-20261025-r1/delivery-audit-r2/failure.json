@@ -1,0 +1,5 @@
+{
+  "status": "failed",
+  "scope": "documentation audit harness",
+  "reason": "The auditor compared a sha256:-prefixed digest with the raw 64-character runtime launcher digest. The formats differ; normalize that display prefix, keep this failed audit and rerun in a new directory. The installed launcher did not change."
+}

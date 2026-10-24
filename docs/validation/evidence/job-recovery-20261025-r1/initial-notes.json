@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "scope": "initial development console run",
+  "methods": 16,
+  "errors": 1,
+  "reason": "A test attempted to read the Windows byte-locked owner.lock while the live lease was held, raising PermissionError before the dry-run call. Exclude only the OS lease byte from byte-content snapshots, retain its size check and all user-file comparisons; product lifecycle tests passed. This console run has no frozen raw log and is not a final acceptance receipt."
+}

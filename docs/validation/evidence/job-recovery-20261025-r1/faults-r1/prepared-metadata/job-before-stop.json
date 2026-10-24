@@ -1,0 +1,46 @@
+{
+  "format": "agent-owned-job-workspace-v1",
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\job-recovery-20261025-r1\\installed-r1\\中文 四轨工程",
+  "job_id": "job-ff84e25fa6c34240ba860d7df65934c1",
+  "kind": "four-stem-separation",
+  "owner_pid": 9108,
+  "created_at": "2026-10-24T23:40:29.221492Z",
+  "outputs": [
+    {
+      "path": "assets/derived/crash_prepared_metadata_drums.wav",
+      "identity": {
+        "device": 6713111436524353518,
+        "inode": 3096224744504028,
+        "bytes": 2116892
+      },
+      "sha256": "sha256:146ed203e58e07e011991ef9b058ac748b9926e459ef485a15985d4cef128e79"
+    },
+    {
+      "path": "assets/derived/crash_prepared_metadata_bass.wav",
+      "identity": {
+        "device": 6713111436524353518,
+        "inode": 3096224744504029,
+        "bytes": 2116892
+      },
+      "sha256": "sha256:89fbc9cbb3912f1d85195348aa106f6e4fd42d419f746cc3c9d37c2e79397f95"
+    },
+    {
+      "path": "assets/derived/crash_prepared_metadata_other.wav",
+      "identity": {
+        "device": 6713111436524353518,
+        "inode": 3096224744504030,
+        "bytes": 2116892
+      },
+      "sha256": "sha256:1314addfc94031fa93cd8d04149cd0b9de498ba79d6d2efa287bba012b6f5ca5"
+    },
+    {
+      "path": "assets/derived/crash_prepared_metadata_vocals.wav",
+      "identity": {
+        "device": 6713111436524353518,
+        "inode": 3096224744504034,
+        "bytes": 2116892
+      },
+      "sha256": "sha256:6fb0b6586b20b30e9e260e1ac6ef8ca335af79046e2392aed0e93a1ca77f9787"
+    }
+  ]
+}

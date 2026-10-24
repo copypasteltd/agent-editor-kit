@@ -3,16 +3,15 @@ from __future__ import annotations
 
 import json
 import math
-import os
 from pathlib import Path
 import shutil
-import tempfile
 import time
 
 from .artifact_locks import artifact_entry, verification_scope
 from .errors import AppError, argument_error
 from .media import ffmpeg_path, probe_media
 from .policy import require_local_reference
+from .job_workspaces import managed_workspace
 from .stem_separation_dsp import ROLES
 from .utils import assert_id, atomic_write_json, now_iso, run_process, sha256_bytes, sha256_file
 
@@ -51,7 +50,7 @@ def settings(*, device='auto', threads=4, segment_seconds=6., overlap=.25):
 def implementation_files():
     return [Path(__file__).with_name(name) for name in ('stem_separation.py', 'stem_separation_worker.py',
         'stem_separation_dsp.py', 'stem_separation_cli.py', 'separation_dsp.py', 'demucs_worker.py',
-        'artifact_locks.py', 'community_device.py')]
+        'artifact_locks.py', 'community_device.py', 'job_workspaces.py', 'native_process_job.py', 'utils.py', 'project.py')]
 
 
 def manifest_hash(record):
@@ -134,7 +133,6 @@ def separate(root, source, destinations, *, adapter, sample_rate=RATE, device=No
     from .community_device import select
     rate = _validate_sample_rate(sample_rate) or RATE
     deadline, marker = execution(root, timeout=timeout, cancel_file=cancel_file, device=device, device_index=device_index)
-    created = []
     with verification_scope():
         if not verify_adapter(adapter)['ok']:
             raise AppError('MODEL_ADAPTER_HASH_INVALID', '四轨模型登记完整性检查失败', exit_code=10)
@@ -150,83 +148,73 @@ def separate(root, source, destinations, *, adapter, sample_rate=RATE, device=No
         if shutil.disk_usage(root).free < required:
             raise AppError('FOUR_STEM_DISK_BUDGET', '四轨分离磁盘余量不足', exit_code=6, cause=str(required))
         decision = select(device or adapter['settings']['device'], adapter['model_path'], minimum_mib=2048, device_index=device_index)
-        cache = root/'cache/four-stem-separation'; cache.mkdir(parents=True, exist_ok=True)
-        try:
-            with tempfile.TemporaryDirectory(prefix='hdemucs-', dir=cache) as raw:
-                job = Path(raw); pcm = job/'input.f32'; response = job/'response.json'
-                decoded = run_process([ffmpeg_path(),'-nostdin','-hide_banner','-loglevel','error','-protocol_whitelist','file,pipe','-n',
-                    '-i',str(source),'-vn','-ac','2','-ar',str(RATE),'-f','f32le',str(pcm)], timeout=remaining(deadline,marker), cancel_file=marker)
-                if decoded.returncode or not pcm.is_file() or not pcm.stat().st_size or pcm.stat().st_size % 8 or pcm.stat().st_size//8 > MAX_SECONDS*RATE:
-                    raise AppError('FOUR_STEM_DECODE_FAILED', '四轨输入解码失败或超过预算', exit_code=6, cause=decoded.stderr[-2000:])
-                count = pcm.stat().st_size//8
-                outputs = {role:job/(role+'.f32') for role in ROLES}
-                request = dict(protocol=PROTOCOL, network='disabled', adapter=adapter, input=str(pcm),
-                    input_sha256='sha256:'+sha256_file(pcm), source_sha256=source_entry['sha256'], samples=count,
-                    outputs={k:str(v) for k,v in outputs.items()}, response=str(response), runtime_root=str(job/'runtime'),
-                    device=decision['selected'], device_index=device_index, cancel_file=str(marker) if marker else None)
-                request['request_sha256'] = fingerprint(request)
-                request_path = job/'request.json'; atomic_write_json(request_path,request)
-                completed = run_process([adapter['executable'],'-I','-B','-u','-X','utf8',str(Path(__file__).with_name('stem_separation_worker.py')),str(request_path)],
-                                        timeout=remaining(deadline,marker), cancel_file=marker)
-                try:
-                    if response.stat().st_size > 1024**2: raise ValueError('Oversize response')
-                    payload = json.loads(response.read_text('utf-8'))
-                    if not isinstance(payload,dict): raise ValueError('Response must be object')
-                except (OSError,ValueError) as exc:
-                    raise AppError('FOUR_STEM_WORKER_FAILED', '四轨进程未返回有效响应', exit_code=6, cause=completed.stderr[-2000:]) from exc
-                expected = {k:request[k] for k in ('protocol','request_sha256','input_sha256','source_sha256','samples','device','device_index')}
-                if (completed.returncode or any(payload.get(k) != v for k,v in expected.items())
-                        or payload.get('status') != 'succeeded' or payload.get('network') != 'disabled'
-                        or payload.get('blocked_network_events') != [] or payload.get('adapter_sha256') != adapter['sha256']
-                        or set(payload.get('outputs',{})) != set(ROLES)):
-                    raise AppError('FOUR_STEM_WORKER_FAILED', '四轨进程协议或推理失败', exit_code=6, cause=json.dumps(payload,ensure_ascii=False)[-4000:])
-                metrics = payload.get('metrics') or {}
-                values = [metrics.get(key) for key in ('normalization_mean','normalization_std','raw_sum_max_abs_error','raw_sum_rms_error','input_rms','input_peak')]
-                peaks = metrics.get('peaks') or {}
-                if (metrics.get('samples') != count or metrics.get('channels') != 2 or metrics.get('source_order') != list(ROLES)
-                        or metrics.get('estimate_method') != 'four_independent_model_sources' or metrics.get('mixture_projection') != 'none'
-                        or set(peaks) != set(ROLES) or any(type(v) not in (int,float) or not math.isfinite(v) for v in [*values,*peaks.values()])
-                        or metrics['normalization_std'] <= 0 or min(*values[2:],*peaks.values()) < 0):
-                    raise AppError('FOUR_STEM_OUTPUT_INVALID', '四轨响应信号指标无效', exit_code=6)
-                target_samples = max(1,round(count*rate/RATE)); stems = {}
-                for role in ROLES:
-                    source_pcm = outputs[role]; details = payload['outputs'][role]
-                    if (not source_pcm.is_file() or source_pcm.stat().st_size != count*8 or details.get('bytes') != count*8
-                            or details.get('sha256') != 'sha256:'+sha256_file(source_pcm)):
-                        raise AppError('FOUR_STEM_OUTPUT_INVALID', '四轨输出字节或摘要不符', exit_code=6, path=role)
-                    encoded = job/(role+'.wav')
-                    result = run_process([ffmpeg_path(),'-nostdin','-hide_banner','-loglevel','error','-n','-f','f32le','-ar',str(RATE),'-ac','2',
-                        '-i',str(source_pcm),'-af',f'aresample={rate},apad=whole_len={target_samples},atrim=end_sample={target_samples}',
-                        '-ar',str(rate),'-c:a','pcm_f32le',str(encoded)], timeout=remaining(deadline,marker), cancel_file=marker)
-                    output_probe = probe_media(encoded) if result.returncode == 0 else {}
-                    audio = output_probe.get('audio') or {}
-                    if (audio.get('channels') != 2 or audio.get('sample_rate') != rate
-                            or abs(float(output_probe.get('duration_seconds') or 0)-target_samples/rate) > 2/rate):
-                        raise AppError('FOUR_STEM_OUTPUT_INVALID', '四轨 WAV 编码/时长/采样率无效', exit_code=6, path=role)
-                    # The public probe names the durable artifact, not its removed stage.
-                    if 'path' in output_probe: output_probe['path'] = str(destinations[role])
-                    stems[role] = dict(output=str(destinations[role]),role=role,sha256='sha256:'+sha256_file(encoded),
-                                       probe=output_probe,samples=target_samples)
-                if artifact_entry(source,'source') != source_entry or not verify_adapter(adapter)['ok']:
-                    raise AppError('FOUR_STEM_INTEGRITY_FAILED', '四轨输入或依赖发生变化', exit_code=10)
-                for role in ROLES:
-                    remaining(deadline,marker)
-                    destination = destinations[role]; destination.parent.mkdir(parents=True,exist_ok=True)
-                    # Exclusive creation preserves a competing pre-existing output.
-                    with destination.open('xb') as stream:
-                        created.append(destination)
-                        with (job/(role+'.wav')).open('rb') as original:
-                            while block := original.read(1024**2):
-                                remaining(deadline,marker); stream.write(block)
-                        stream.flush(); os.fsync(stream.fileno())
-                    if 'sha256:'+sha256_file(destination) != stems[role]['sha256']:
-                        raise AppError('FOUR_STEM_OUTPUT_INVALID','四轨复制完整性失败',exit_code=6,path=role)
+        with managed_workspace(root, 'four-stem-separation') as workspace:
+            job = workspace.path; pcm = job/'input.f32'; response = job/'response.json'
+            decoded = run_process([ffmpeg_path(),'-nostdin','-hide_banner','-loglevel','error','-protocol_whitelist','file,pipe','-n',
+                '-i',str(source),'-vn','-ac','2','-ar',str(RATE),'-f','f32le',str(pcm)], timeout=remaining(deadline,marker), cancel_file=marker)
+            if decoded.returncode or not pcm.is_file() or not pcm.stat().st_size or pcm.stat().st_size % 8 or pcm.stat().st_size//8 > MAX_SECONDS*RATE:
+                raise AppError('FOUR_STEM_DECODE_FAILED', '四轨输入解码失败或超过预算', exit_code=6, cause=decoded.stderr[-2000:])
+            count = pcm.stat().st_size//8
+            outputs = {role:job/(role+'.f32') for role in ROLES}
+            request = dict(protocol=PROTOCOL, network='disabled', adapter=adapter, input=str(pcm),
+                input_sha256='sha256:'+sha256_file(pcm), source_sha256=source_entry['sha256'], samples=count,
+                outputs={k:str(v) for k,v in outputs.items()}, response=str(response), runtime_root=str(job/'runtime'),
+                device=decision['selected'], device_index=device_index, cancel_file=str(marker) if marker else None)
+            request['request_sha256'] = fingerprint(request)
+            request_path = job/'request.json'; atomic_write_json(request_path,request)
+            completed = run_process([adapter['executable'],'-I','-B','-u','-X','utf8',str(Path(__file__).with_name('stem_separation_worker.py')),str(request_path)],
+                                    timeout=remaining(deadline,marker), cancel_file=marker)
+            try:
+                if response.stat().st_size > 1024**2: raise ValueError('Oversize response')
+                payload = json.loads(response.read_text('utf-8'))
+                if not isinstance(payload,dict): raise ValueError('Response must be object')
+            except (OSError,ValueError) as exc:
+                raise AppError('FOUR_STEM_WORKER_FAILED', '四轨进程未返回有效响应', exit_code=6, cause=completed.stderr[-2000:]) from exc
+            expected = {k:request[k] for k in ('protocol','request_sha256','input_sha256','source_sha256','samples','device','device_index')}
+            if (completed.returncode or any(payload.get(k) != v for k,v in expected.items())
+                    or payload.get('status') != 'succeeded' or payload.get('network') != 'disabled'
+                    or payload.get('blocked_network_events') != [] or payload.get('adapter_sha256') != adapter['sha256']
+                    or set(payload.get('outputs',{})) != set(ROLES)):
+                raise AppError('FOUR_STEM_WORKER_FAILED', '四轨进程协议或推理失败', exit_code=6, cause=json.dumps(payload,ensure_ascii=False)[-4000:])
+            metrics = payload.get('metrics') or {}
+            values = [metrics.get(key) for key in ('normalization_mean','normalization_std','raw_sum_max_abs_error','raw_sum_rms_error','input_rms','input_peak')]
+            peaks = metrics.get('peaks') or {}
+            if (metrics.get('samples') != count or metrics.get('channels') != 2 or metrics.get('source_order') != list(ROLES)
+                    or metrics.get('estimate_method') != 'four_independent_model_sources' or metrics.get('mixture_projection') != 'none'
+                    or set(peaks) != set(ROLES) or any(type(v) not in (int,float) or not math.isfinite(v) for v in [*values,*peaks.values()])
+                    or metrics['normalization_std'] <= 0 or min(*values[2:],*peaks.values()) < 0):
+                raise AppError('FOUR_STEM_OUTPUT_INVALID', '四轨响应信号指标无效', exit_code=6)
+            target_samples = max(1,round(count*rate/RATE)); stems = {}
+            for role in ROLES:
+                source_pcm = outputs[role]; details = payload['outputs'][role]
+                if (not source_pcm.is_file() or source_pcm.stat().st_size != count*8 or details.get('bytes') != count*8
+                        or details.get('sha256') != 'sha256:'+sha256_file(source_pcm)):
+                    raise AppError('FOUR_STEM_OUTPUT_INVALID', '四轨输出字节或摘要不符', exit_code=6, path=role)
+                encoded = job/(role+'.wav')
+                result = run_process([ffmpeg_path(),'-nostdin','-hide_banner','-loglevel','error','-n','-f','f32le','-ar',str(RATE),'-ac','2',
+                    '-i',str(source_pcm),'-af',f'aresample={rate},apad=whole_len={target_samples},atrim=end_sample={target_samples}',
+                    '-ar',str(rate),'-c:a','pcm_f32le',str(encoded)], timeout=remaining(deadline,marker), cancel_file=marker)
+                output_probe = probe_media(encoded) if result.returncode == 0 else {}
+                audio = output_probe.get('audio') or {}
+                if (audio.get('channels') != 2 or audio.get('sample_rate') != rate
+                        or abs(float(output_probe.get('duration_seconds') or 0)-target_samples/rate) > 2/rate):
+                    raise AppError('FOUR_STEM_OUTPUT_INVALID', '四轨 WAV 编码/时长/采样率无效', exit_code=6, path=role)
+                # The public probe names the durable artifact, not its removed stage.
+                if 'path' in output_probe: output_probe['path'] = str(destinations[role])
+                stems[role] = dict(output=str(destinations[role]),role=role,sha256='sha256:'+sha256_file(encoded),
+                                   probe=output_probe,samples=target_samples)
+            if artifact_entry(source,'source') != source_entry or not verify_adapter(adapter)['ok']:
+                raise AppError('FOUR_STEM_INTEGRITY_FAILED', '四轨输入或依赖发生变化', exit_code=10)
+            for role in ROLES:
                 remaining(deadline,marker)
-                return dict(engine=ENGINE,protocol=PROTOCOL,method='hdemucs-four-stems',network='disabled',
-                    source=str(source),source_sha256=source_entry['sha256'],adapter_id=adapter['adapter_id'],
-                    adapter_sha256=adapter['sha256'],checkpoint_sha256=adapter['model_sha256'],stems=stems,worker=payload,
-                    device_selection=decision,estimated_disk_bytes=required,
-                    warnings=[dict(code='FOUR_STEM_MODEL_REVIEW',message='四条均为独立模型估计；原始估计之和未强制等于原音，未独立归一化或限幅。需复核泄漏、伪影、峰值、听感和模型/素材许可。')])
-        except BaseException:
-            for path in created: path.unlink(missing_ok=True)
-            raise
+                destination = destinations[role]; destination.parent.mkdir(parents=True,exist_ok=True)
+                # Durable identity/hash intent precedes a same-volume exclusive rename.
+                workspace.publish(job/(role+'.wav'), destination)
+                if 'sha256:'+sha256_file(destination) != stems[role]['sha256']:
+                    raise AppError('FOUR_STEM_OUTPUT_INVALID','四轨复制完整性失败',exit_code=6,path=role)
+            remaining(deadline,marker)
+            return dict(engine=ENGINE,protocol=PROTOCOL,method='hdemucs-four-stems',network='disabled',
+                source=str(source),source_sha256=source_entry['sha256'],adapter_id=adapter['adapter_id'],
+                adapter_sha256=adapter['sha256'],checkpoint_sha256=adapter['model_sha256'],stems=stems,worker=payload,
+                device_selection=decision,estimated_disk_bytes=required,workspace_id=job.name,
+                warnings=[dict(code='FOUR_STEM_MODEL_REVIEW',message='四条均为独立模型估计；原始估计之和未强制等于原音，未独立归一化或限幅。需复核泄漏、伪影、峰值、听感和模型/素材许可。')])

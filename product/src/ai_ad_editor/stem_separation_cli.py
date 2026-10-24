@@ -125,7 +125,7 @@ def command(args, envelope):
                 snapshot=snapshot,report=str(report_path),separation=separation,generated_tracks=generated,validation=validation,
                 verification_scope=verification_summary()),warnings=separation['warnings'])
         except BaseException:
-            if separation:
-                for path in destinations.values(): path.unlink(missing_ok=True)
+            # Transaction-scoped workspaces remove only identity/hash-matching
+            # unreferenced outputs after metadata rollback, including hard-crash recovery.
             if report_path: report_path.unlink(missing_ok=True)
             raise

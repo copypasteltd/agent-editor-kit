@@ -822,7 +822,15 @@ def build_capability_manifest() -> dict[str, Any]:
                 "transaction_contract": "operations/project-transaction.json_journals_project_rights_lock_and_metadata_records_before_cooperating_cli_mutations;_prepared_journal_is_rolled_back_on_next_start_or_project_recover",
                 "failure_diagnostic_contract": "normal_exception_rollback_preserves_explicitly_referenced_versioned_failed_validation_JSON_and_failed_cancelled_partial_operation_records;_crash_recovery_does_not_infer_exception_diagnostics",
                 "transaction_scope": ["project.json", "rights-ledger.json", "project.lock.json", "assets/lut-library.json", "operations_metadata", "history_metadata", "validation_metadata", "exports_metadata"],
-                "limits": ["media_and_render_side_effect_files_are_reported_but_not_copied_or_deleted_by_recovery", "direct_external_json_editors_do_not_join_cli_lock_or_transaction", "cross_version_snapshot_migration_is_limited_to_known_legacy_shapes"],
+                "owned_job_recovery": {"command":"project recover --cleanup-jobs", "format":"agent-owned-job-workspace-v1",
+                    "features":["dry_run", "native_owner_lease", "four_stem_transaction_scoped_workspaces",
+                        "durable_publication_intent", "exclusive_same_volume_publish", "filesystem_identity_and_hash_check",
+                        "rollback_before_unreferenced_output_cleanup", "referenced_and_modified_outputs_preserved",
+                        "native_windows_suspended_child_job_assignment_before_application_code", "owned_descendants_end_on_owner_exit"],
+                    "limits":["managed_workspaces_currently_four_stem_only", "historical_unmanaged_cache_preserved",
+                        "up_to_256_jobs_and_10000_entries_per_workspace", "cooperating_local_filesystem_not_hostile_OS_sandbox",
+                        "job_object_assignment_failure_is_strict_no_unsupervised_fallback", "power_loss_and_disk_exhaustion_not_full_acceptance"]},
+                "limits": ["default_recovery_is_metadata_only;_unmanaged_media_render_and_cache_side_effects_remain_preserved", "direct_external_json_editors_do_not_join_cli_lock_or_transaction", "cross_version_snapshot_migration_is_limited_to_known_legacy_shapes"],
             },
             "timeline": {
                 "nested_freeze": {

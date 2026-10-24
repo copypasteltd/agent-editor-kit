@@ -2,7 +2,7 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.6 / alpha.4-local.4。** Independent drums/bass/other/vocals, offline visual retrieval, GPU voice/translation, 359 resources, native capture; one Skill / 17 modules. Public alpha.3 remains CLI 0.1.2. [Installation](COMMUNITY_LOCAL_DELIVERY.md) · [Four-source workflow / 四轨 / 四軌](FOUR_STEM_SEPARATION.md) · [Actual evidence](../validation/独立四轨音源分离实测_2026-10-25.md) · [74 current declarations](four-stem-capabilities-cli-0.1.6.json) · [38 remaining groups](GOAL_GAPS_20261025.md).
+**Current local / 当前本机 / 目前本機：CLI 0.1.7 / alpha.4-local.5。** Native process ownership and four-source job recovery; independent stems, offline retrieval, GPU voice/translation, 359 resources and capture; one Skill / 17 modules. Public alpha.3 remains CLI 0.1.2. [Installation](COMMUNITY_LOCAL_DELIVERY.md) · [Recovery / 恢复 / 復原](JOB_RECOVERY.md) · [Actual evidence](../validation/任务中断恢复实测_2026-10-25.md) · [74 current declarations](job-recovery-capabilities-cli-0.1.7.json) · [38 remaining groups](GOAL_GAPS_20261025.md).
 
 <!-- /community-current -->
 
@@ -12,7 +12,7 @@
 |---|---|---|---|---|
 | F01 | Agent 調用協議 | 任務參數 → JSON 響應、退出碼、錯誤、warning、產物與 provenance；能力與 schema 可查詢。 | `version; doctor; capabilities; schema show` | Skill 組織任務，CLI 執行；沒有後臺云端 Agent 服務。 |
 | F02 | 可編輯專案 | 創建/檢查 Agent Project，保存資產、序列、軌道、ticks 時鐘、輸出配置和權利引用。 | `project init/inspect` | 源媒體與專案元資料分離，移動工程後需重鏈並復核證據路徑。 |
-| F03 | 事務、恢復與快照 | 寫入前快照、恢復、遷移、鎖和操作記錄；中斷後恢復專案元資料事務。 | `project snapshot/restore/migrate/recover; operation inspect` | 失敗證據保留；快照不等於外部原始素材的完整備份。 |
+| F03 | 事務、恢復與快照 | 中繼資料事務/快照；原生子程序樹歸屬；明確復原四軌持久化暫存與未提交輸出。 | `project snapshot/restore/migrate/recover; operation inspect` | 保留已提交資產、變更/執行中/未知/舊快取。僅受管四軌暫存，並非完整媒體備份或模型續算。 |
 | F04 | 素材導入與重鏈 | 本地圖片/影片/音頻/字體 → 探測結果、穩定資產 ID、雜湊和來源記錄。 | `media ingest/relink` | 不抓取在線素材；導入不自動證明商業授權。 |
 | F05 | 代理、縮略圖與波形 | 素材 → 輕量代理、圖片縮略圖、音頻波形、可核查聯系表。 | `media prepare/contact-sheet` | 聯系表是抽樣證據；不代表逐影格視覺理解。 |
 | F06 | 鏡頭、靜音與高光分析 | 本地影片/音頻 → 切鏡、靜音、節拍或啟發式高光候選與時間證據。 | `media understand/highlights` | 高光是啟發式候選，語義判斷需要 Agent/已註冊適配器復核。 |

@@ -1,0 +1,111 @@
+[
+  {
+    "id": "version",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-X",
+      "utf8",
+      "local\\agent-ffmpeg\\v0.1.0-alpha.3\\installed\\run.py",
+      "version"
+    ],
+    "exit_code": 0,
+    "expected": 0,
+    "seconds": 2.789,
+    "stdout_sha256": "b1c62b423c4475216f3893f573ea98eb1ff0dfa990001b7ef83e25dcefd0d6ad"
+  },
+  {
+    "id": "doctor",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-X",
+      "utf8",
+      "local\\agent-ffmpeg\\v0.1.0-alpha.3\\installed\\run.py",
+      "doctor"
+    ],
+    "exit_code": 0,
+    "expected": 0,
+    "seconds": 2.3,
+    "stdout_sha256": "89dff4dc8e5f290d56465adc92b40906cce4c8b9b2cf50510d4b55a8575b0e38"
+  },
+  {
+    "id": "capabilities",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-X",
+      "utf8",
+      "local\\agent-ffmpeg\\v0.1.0-alpha.3\\installed\\run.py",
+      "capabilities"
+    ],
+    "exit_code": 0,
+    "expected": 0,
+    "seconds": 1.53,
+    "stdout_sha256": "e99304db386ffb452ce134e7b9e51d53edb30978bd74f1716a659ad557c07c5a"
+  },
+  {
+    "id": "look-list",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-X",
+      "utf8",
+      "local\\agent-ffmpeg\\v0.1.0-alpha.3\\installed\\run.py",
+      "look",
+      "list"
+    ],
+    "exit_code": 0,
+    "expected": 0,
+    "seconds": 1.446,
+    "stdout_sha256": "55fff2d9a2f7cbadc0ed9f335d3f7786b8c66d78179f6ef306933ac8433dd426"
+  },
+  {
+    "id": "look-search",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-X",
+      "utf8",
+      "local\\agent-ffmpeg\\v0.1.0-alpha.3\\installed\\run.py",
+      "look",
+      "list",
+      "--query",
+      "黑白"
+    ],
+    "exit_code": 0,
+    "expected": 0,
+    "seconds": 1.572,
+    "stdout_sha256": "47834c2c1bb57821dd20381787192e3d2233ceefb7aaca3c4d7a2205d3175269"
+  },
+  {
+    "id": "look-category",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-X",
+      "utf8",
+      "local\\agent-ffmpeg\\v0.1.0-alpha.3\\installed\\run.py",
+      "look",
+      "list",
+      "--category",
+      "cinema"
+    ],
+    "exit_code": 0,
+    "expected": 0,
+    "seconds": 1.535,
+    "stdout_sha256": "8c366a55d972925e68ff1f49522ab843a949eda9d27387f9ad76456fa3b21052"
+  }
+]

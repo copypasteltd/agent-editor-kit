@@ -1,0 +1,48 @@
+{
+  "look": {
+    "id": "t3-kodak-gold-200",
+    "name": "Kodak Gold 200",
+    "name_zh": "彩色负片 · Kodak Gold 200",
+    "category": "film-negative",
+    "tags": [
+      "彩色负片",
+      "t3",
+      "SDR",
+      "MIT",
+      "Kodak Gold 200"
+    ],
+    "recommended_strength": 1.0,
+    "grid_size": 33,
+    "lut": "luts/t3-kodak-gold-200.cube.gz",
+    "sha256": "0f7c91e14e0e8e2938e9a8aaca48e09b602eabaeb9a7cf5892a138af220a8399",
+    "packed_sha256": "3a4feb6a4e34683b101f31ce45d69d907d3e72b6a2abe0aec281996ca4b4972f",
+    "bytes": 1078189,
+    "transform_sha256": "b01a0f998daeff2f1f37ac9f8807646a5008a7e2764887a36f6d07a3e038a3bf",
+    "preview": "previews/t3-kodak-gold-200.webp",
+    "preview_sha256": "4ccd64a7f642826b7a5518dc6ad9f3eb55531f60211f26f8ff646c04597be1c7",
+    "source": {
+      "repository": "t3mujinpack/t3mujinpack",
+      "commit": "0b421f3e25209ed78253d1724a29cc6255c5e7fe",
+      "path": "haldcluts/t3mujinpack - Color Negative - Kodak Gold 200.png",
+      "sha256": "9c826805918965d7b2cb57e1035d63fd2e6dc154ba4de523b7e99c4cd640107c",
+      "git_blob": "9c928ec6cce36247c5a960d8d8b5f9681a570d98",
+      "grid_size": 144
+    },
+    "license": {
+      "spdx": "MIT",
+      "file": "licenses/t3-MIT.txt",
+      "sha256": "b1a3f6e97b17b4532ff92c34d6db4b1ad8edd3317096389e7617234d8221a576",
+      "creator": "João Almeida"
+    },
+    "normalization": {
+      "method": "native-depth-Hald-to-33-tetrahedral-v1",
+      "source_bit_depth": 8,
+      "sample_count": 8192,
+      "sampled_max_abs_rgb_error": 0.033399462832148,
+      "sampled_mean_abs_rgb_error": 0.0009067831074157165
+    }
+  },
+  "catalog_version": "1.0.0",
+  "license_notice": "assets/look-evidence/t3-kodak-gold-200/LICENSE.txt",
+  "conversion": "Creative LUT. See source commit, SHA-256, grid size and normalization measurements above."
+}

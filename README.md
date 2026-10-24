@@ -1,16 +1,14 @@
 # agent editor kit
 
-**面向 Agent 的本地视频编辑 CLI。** 用可编辑 JSON 时间线、固定能力契约和真实渲染证据，让 Agent 完成广告剪辑、模板变体、关键帧运镜与视频自动化。
+**面向 Agent 的本地视频编辑 CLI。** 使用可编辑 JSON 时间线、明确的能力契约和实际渲染证据完成广告剪辑与自动化。
 
-[简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [源码仓库](https://github.com/copypasteltd/agent-editor-kit) · [下载安装包](docs/releases/v0.1.0-alpha.2/artifacts/agent-video-kit-v0.1.0-alpha.2-cp313-win_amd64.zip) · [文档入口](docs/README.md) · [使用手册](docs/releases/v0.1.0-alpha.1/USAGE.md) · [Skill 详情](docs/local/INSTALLATION.md) · [完整案例](docs/releases/v0.1.0-alpha.1/CASES.md)
+[简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit) · [Download parts](docs/releases/v0.1.0-alpha.3/artifacts) · [Install](docs/releases/v0.1.0-alpha.3/USAGE.md) · [Documentation](docs/README.md)
 
-**历史首版：`v0.1.0-alpha.1`，已在原仓库发布的 Windows 本地 CLI 预览版。** 首版范围已收口为“离线安装、结构化编辑、预览/渲染、核验与交付”的闭环。完整剪映功能、素材生态及自然画质/听感等价仍属于后续目标。[发布判定与未关闭需求](docs/releases/v0.1.0-alpha.1/RELEASE.md)。
+**当前本地版本：v0.1.0-alpha.3，CLI 0.1.2，500 套内置风格。** 已安装到 E 盘并同步 17 个本地 Skill。下载全部分卷后合成普通 ZIP 安装；本轮未创建新的 GitHub Release，可用包随仓库提供。
 
-**本轮本地更新：`v0.1.0-alpha.2`，100 预设。** 新包保存在本仓库并已安装到 E 盘；可通过上方安装包链接获取，新仓库尚未创建对应 GitHub Release。产品名为 **agent editor kit**，后续代码与更新统一维护于新仓库。
+![Actual new-look video comparison](docs/assets/look500-20261024-r1/motion-comparison.gif)
 
-![实际成片：原视频与三套风格对比](docs/assets/look-presets-20261024-r1/motion-comparison.gif)
-
-上图由原视频与三套实际成片逐帧合成，为静音对照。[100 项完整目录](docs/local/LOOK_PRESETS.md) · [新本地安装包](docs/releases/v0.1.0-alpha.2/artifacts/agent-video-kit-v0.1.0-alpha.2-cp313-win_amd64.zip)。首版案例文档页的[响应回放](docs/assets/release-v0.1.0-alpha.1-r2/workflow.gif)、[录制](docs/assets/release-v0.1.0-alpha.1-r2/workflow.mp4)、[截图](docs/assets/release-v0.1.0-alpha.1-r2/desktop.png)保留为历史证据。产品本体为 CLI。 [每项实际作用、灰阶/肤色/三色测量](docs/local/LOOK_PRESET_DETAILS.md)。
+[500 numbered names and detailed effects](docs/local/LOOK_PRESETS.md) · [Functional filter README](docs/local/FILTERS.md) · [Original video](docs/assets/look500-20261024-r1/original.mp4) · [Verification](docs/validation/LOOK500_20261024.md).
 
 ## 方案与运行逻辑
 
@@ -44,61 +42,53 @@ Agent 通过 Skill 把创意转换成编辑计划，读取 `capabilities` 和 `s
 | F10 | 模型接口：转写/OCR/跟踪/抠像/修复等 | 本地模型注册与对应命令 | 模型和大型推理环境不随基础包分发；不是开箱全功能 AI |
 | F11 | 帧/区间预览、队列、取消、质量与 Scope | `preview` / `queue` / `quality` | 配额不等于峰值 RSS 或实时性能保证 |
 | F12 | 项目包、JSON、OTIO、MLT/明文草稿交换 | `convert import/export` | 目标格式支持程度不同；保留 Exact/Approximate/Unsupported/Failed 损失报告 |
-| F13 | 100 个离线 MIT 风格预设（alpha.2） | `look list/inspect/preview/apply` | 创意 SDR RGB；Hald 转换有采样误差，非官方品牌滤镜 |
+| F13 | 500 套具名离线风格（alpha.3） | `look list/inspect/preview/apply` | 逐项实际效果、预览、来源与 MIT/CC0/CC BY-SA 许可；创意 SDR RGB |
 
 精确参数以随包 `capabilities`、`schema show`、`COMMAND --help` 为准。[架构和完整使用逻辑](docs/releases/v0.1.0-alpha.1/USAGE.md)。明文草稿适配器只处理已有合法本地 JSON；不运行剪映，不读取私有在线资源，不保证全部字段或编辑效果无损往返。
 
-## 本机已安装并加载 Skills（2026-10-24）
 
-**本机已升级到 `v0.1.0-alpha.2`（CLI `0.1.1`）：100 个离线开源风格预设。** 覆盖黑白胶片 12、彩色负片 24、反转片 15、电影年代 8、风景 10、创意色彩 24、Lomo 5、红外 2。每个预设具备稳定 ID、独立 LUT、缩略图、来源和 MIT 许可，支持检索、预览、片段/全局应用及强度调节。[完整编号目录](docs/local/LOOK_PRESETS.md) · [使用与安装](docs/releases/v0.1.0-alpha.2/USAGE.md)。
+## 500 套风格与本地 Skill
 
-**当前实现复用 t3mujinpack 的 51 个 Hald 与 Striped Purple 的 49 个 CUBE。** 原始数据锁定提交并核验哈希；CUBE 保留原始网格，Hald 按原生位深转换为 33³ CUBE，记录转换误差。17 个本地 Skills 已同步更新并绑定新安装版。历史研究与单 LUT 小样保留在[来源评估](docs/research/OPEN_LOOK_LIBRARY_20261024.md)。
+500 个不同的数值风格：保留原 100 套 MIT，新增 Natron 267 套 CC BY-SA 与 FreshLUTs 133 套 CC0。计数含同系列上游曲线变体，不代表 500 个独立风格家族；运行强度和格式副本不重复计数。完整手册写明每套的名称/ID、真实灰阶/肤色/RGB 作用、场景、试用强度、来源许可和 PNG/MP4。
 
-![预设实际原图与输出对比](docs/assets/look-presets-20261024-r1/comparison.gif)
+| Category | Count |
+|---|---:|
+| `cinema` | 39 |
+| `creative` | 135 |
+| `landscape` | 10 |
+| `infrared` | 2 |
+| `lomography` | 5 |
+| `film-bw` | 37 |
+| `film-negative` | 112 |
+| `film-slide` | 41 |
+| `instant-consumer` | 54 |
+| `instant-pro` | 65 |
 
-[实际成片动态 GIF](docs/assets/look-presets-20261024-r1/motion-comparison.gif) · [100 个实际预览总览](docs/assets/look-presets-20261024-r1/contact-sheet.jpg) · [原始视频](docs/assets/look-presets-20261024-r1/original.mp4) · [逐个预览和成片](docs/local/LOOK_PRESETS.md) · [本轮验证记录](docs/validation/LOOK_PRESETS_20261024.md)。测试卡和声音均为合成素材；不是自然画面或完整剪映等价验收。
-
-**滤镜已支持：** 可登记本地 LUT（`.cube/.3dl/.csp/.dat`），使用黑白、复古棕、颗粒、暗角及调色等效果，并为支持的参数设置关键帧。目录共 46 项效果；各格式和渲染路径的强度/1D 支持不同。[滤镜加载方式、格式边界与历史对照 GIF](docs/local/FILTERS.md)。
-
-程序已从校验后的新本地 ZIP 安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.2/installed/`。17 个本地 Skill 已按最新要求注册为 **`$agent-ffmpeg-local-xxx`**，下一条消息可调用主入口 **`$agent-ffmpeg-local-editor`**。
+先 `look list` 选候选，用 `inspect` 读实际作用和许可，比较预览后应用到明确片段或全局。默认替换内置预设，`--append` 才叠加。仅创意 SDR 编码 RGB；颗粒、光晕和美颜属于其他效果。应用时复制每套许可和来源，项目包往返保留预设 ID。
 
 ```powershell
 $avk = 'E:/dev/sandbox/AI广告剪辑/skills/agent-ffmpeg-local-editor/scripts/run.ps1'
-& $avk doctor
-& $avk capabilities
 & $avk look list --query '黑白'
-& $avk look preview --id t3-kodak-gold-200 --output 'E:/video-work/gold-preview.png'
-& $avk look apply --project 'E:/video-work/my-ad' --id t3-kodak-gold-200 --global --strength 0.65
+& $avk look list --query 'CC0-1.0'
+& $avk look inspect --id fl-0000001-action-magenta-01
+& $avk look preview --id fl-0000001-action-magenta-01 --output 'E:/video-work/magenta-preview.png' --strength 0.65
+& $avk look apply --project 'E:/video-work/my-ad' --id fl-0000001-action-magenta-01 --global --strength 0.65 --dry-run
+& $avk look apply --project 'E:/video-work/my-ad' --id fl-0000001-action-magenta-01 --global --strength 0.65
 ```
 
-Skill 启动器核对发行版本、安装回执和启动文件摘要，以 `-I -S` 调用安装包。当前原生 Python 和 FFmpeg 已可用；安装目录为 221 MB，临时文件也在 E 盘。[安装位置、17 个入口与复现](docs/local/INSTALLATION.md) · [本地发行 ZIP](docs/releases/v0.1.0-alpha.2/artifacts/agent-video-kit-v0.1.0-alpha.2-cp313-win_amd64.zip)。
-
-首版历史安装完成 28 次案例命令，并经 Skill 入口完成 8 次命令，含实际渲染、中文空格路径与预期拒绝。[安装版原输入](docs/assets/local-install-20261024-r1/input.mp4) · [新成片](docs/assets/local-install-20261024-r1/field.mp4) · [新 GIF](docs/assets/local-install-20261024-r1/field.gif) · [模板变体](docs/assets/local-install-20261024-r1/variant.gif) · [原始响应与核验](docs/validation/evidence/local-install-20261024-r1/skills/verification.json)。具体范围见 R10–R12。
+**`$agent-ffmpeg-local-editor`** · 17 Skills · `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.3/installed/`. [Install and Skill details](docs/local/INSTALLATION.md).
 
 ## 安装
 
-首版验证平台为 **原生 Windows x64 + CPython 3.13**。已存在的 `ffmpeg`、`ffprobe` 必须在 `PATH`。发行包包含应用与 7 个依赖 wheel（含 NumPy、Pillow），安装时不联网、不创建虚拟环境、不修改全局 site-packages。Python、FFmpeg、Node、Chromium、CUDA 和模型权重均不随基础包分发。
+原生 Windows x64，已有 CPython 3.13 和 FFmpeg/ffprobe。8 个固定 wheel 包含应用、NumPy、Pillow；离线安装，不创建虚拟环境，不修改全局 site-packages。Python、FFmpeg 和模型环境不随包分发。
 
-```powershell
-# Existing native CPython 3.13 x64 and ffmpeg/ffprobe on PATH are required.
-# Extract the Windows release asset into E:\tools\agent-video-kit-v0.1.0-alpha.2.
-Set-Location E:\tools\agent-video-kit-v0.1.0-alpha.2
-$avkPython = 'C:\Python313\python.exe'
-# Copy the exact manifest digest from the release's version.json / SHA256SUMS.txt.
-$avkManifest = (Get-Content .\version.json -Raw | ConvertFrom-Json).manifest_sha256
-& $avkPython -I -B -X utf8 .\bundle\install.py --target E:\tools\avk-alpha2 --manifest-sha256 $avkManifest
-& $avkPython -I -S -B -X utf8 E:\tools\avk-alpha2\run.py doctor
-& $avkPython -I -S -B -X utf8 E:\tools\avk-alpha2\run.py capabilities
-```
-
-先用[安装包目录](docs/releases/v0.1.0-alpha.2/artifacts)中的 `SHA256SUMS.txt` 校验 ZIP 和 `version.json`；manifest 哈希用于检测包内容变化，**不是作者数字签名**。本版支持并验证的是指定 ABI；`pyproject` 的 Python 下限不代表其他 Python/操作系统已经验证。
-
-已有开发依赖时，可从源码执行 `./ai-ad-editor.ps1 doctor`。完整离线构建、安装、故障排查和回滚见[使用手册](docs/releases/v0.1.0-alpha.1/USAGE.md)。
+[Download all parts and read assembly/install commands](docs/releases/v0.1.0-alpha.3/USAGE.md). [SHA256SUMS](docs/releases/v0.1.0-alpha.3/artifacts/SHA256SUMS.txt). Hashes verify content, not publisher identity.
 
 ## 最短使用闭环
 
 ```powershell
-$avkRun = 'E:\tools\avk-alpha2\run.py'
+$avkPython = 'C:/Python313/python.exe'
+$avkRun = 'E:/tools/aek-alpha3-installed/run.py'
 $avkProject = 'E:\video-work\first-ad'
 & $avkPython -I -S -B -X utf8 $avkRun project init $avkProject --name 'First ad'
 & $avkPython -I -S -B -X utf8 $avkRun media ingest --project $avkProject --input E:\media\product.mp4
@@ -180,7 +170,9 @@ CLI 默认输出 JSON，Agent 应同时检查进程退出码、`ok`、`status`�
 | R19 | 安装版逐一实测 100 个预设 | **100 个预览 + 100 个成片；425 次隔离 CLI 调用，含 2 次预期拒绝** | [核验](docs/validation/evidence/look-presets-20261024-r1/installed/verification.json) · [动态 GIF](docs/assets/look-presets-20261024-r1/motion-comparison.gif)；逐片解码 12 帧/1 秒/480×300，预览与首帧各 100 个不同哈希，上游对照与包往返首帧像素通过；合成输入，未做自然素材/听审验收 |
 | R20 | 新仓库、产品名与三语 README | **简体中文 / 繁體中文 / English 完整入口；推送目标与文档检查通过** | [维护说明](docs/maintenance/REPOSITORY_AND_READMES.md) · [检查回执](docs/validation/evidence/readme-rebrand-20261024-r1/verification.json)；2026-10-24，仅文档链接、代码块、编号一致性与推送配置检查，0 新渲染；历史包名和哈希见维护说明 |
 | R21 | 100 预设逐项效果文档与数值分析 | **100 份详细解释；100 安装版 LUT 与 100 张既有原生 PNG 对照；2 张色块图** | [完整详情](docs/local/LOOK_PRESET_DETAILS.md) · [测量与检查](docs/validation/evidence/look-profiles-20261024-r1/verification.json)；2026-10-24，43,200,000 个通道值对照，最大误差 1 码值；场景/强度为建议，0 新成片、0 自然素材验收、0 产品回归 |
-
+| R22 | 500 风格目录与定向回归 | **500 个独立签名/预览；90 项通过** | [回归](docs/validation/evidence/look500-20261024-r1/regression-policy.json) · [构建](docs/validation/evidence/look500-sources-20261024-r1/compilation.json)；修复首轮项目包标记错误，保留失败记录；未重跑历史全量 |
+| R23 | 安装版 500 项实际输出 | **1,000 次安装版进程内 CLI 调用；500 PNG + 500 原生滤镜成片；25 项完整项目渲染** | [明确范围](docs/validation/evidence/look500-20261024-r1/installed/verification.json) · [GIF](docs/assets/look500-20261024-r1/motion-comparison.gif)；每片解码 12 帧，500 项上游对照；合成输入，未做自然素材/听审验收 |
+| R24 | 新包、Skill 与三语完整手册 | **17 个 Skill 格式通过；24 次入口调用；每种语言 500 份详情** | [安装](docs/validation/evidence/look500-20261024-r1/install/installation.json) · [Skill](docs/validation/evidence/look500-20261024-r1/skills/verification.json) · [文档](docs/validation/evidence/look500-20261024-r1/docs-verification.json)；E 盘原生安装，新增许可预设真实应用/渲染，1 次预期拒绝；保留旧包 |
 
 ## 已知限制与后续开发
 

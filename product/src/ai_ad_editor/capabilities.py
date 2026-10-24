@@ -730,9 +730,10 @@ def build_capability_manifest() -> dict[str, Any]:
                 "limits": ["no_vlm_embeddings", "no_content_understanding_without_local_model", "duplicate_detection_is_exact_hash_only", "visual_similarity_is_a_review_candidate_not_content_understanding", "incremental_refresh_trusts_file_stat_and_sidecar_signatures", "subtitle_sidecar_requires_matching_relative_stem"],
             },
             "look_presets": {
-                "status":"implemented_with_limits", "catalog_version":"1.0.0", "count":100,
+                "status":"implemented_with_limits", "catalog_version":"2.0.0", "count":500,
                 "commands":["look.list", "look.inspect", "look.preview", "look.apply"],
-                "features":["Chinese_English_search", "hash_verified_MIT_resources", "offline_previews",
+                "features":["Chinese_Traditional_Chinese_English_search", "hash_verified_per_resource_licenses", "offline_previews",
+                    "500_named_measured_descriptions", "MIT_CC0_CC_BY_SA_provenance", "alpha2_project_compatibility",
                     "clip_or_global_application", "replace_or_append", "static_strength_0_to_1",
                     "project_portable_LUT_license_provenance_and_rights", "dry_run", "idempotency"],
                 "limits":["creative_SDR_encoded_RGB_only", "upstream_camera_transfer_not_calibrated",

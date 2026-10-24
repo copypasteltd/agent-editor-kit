@@ -1189,7 +1189,7 @@ def build_parser() -> argparse.ArgumentParser:
     lut_inspect.add_argument("--project", required=True)
     lut_inspect.add_argument("--lut-id", required=True)
 
-    look = subs.add_parser('look', help='100 个离线开源风格预设')
+    look = subs.add_parser('look', help='500 个离线开源风格预设（含逐项说明与许可）')
     look_sub = look.add_subparsers(dest='action', required=True)
     look_list = _leaf_common(look_sub.add_parser('list', help='按中文/英文/类别搜索风格'))
     look_list.add_argument('--query', default='')

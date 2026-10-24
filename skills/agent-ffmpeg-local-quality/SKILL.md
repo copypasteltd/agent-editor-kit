@@ -1,16 +1,16 @@
 ---
 name: agent-ffmpeg-local-quality
-description: "Review locally rendered video, pixels, masks, audio, scopes and manifests. Compare previews of the 100 offline style/filter presets and verify their actual rendered output."
+description: "Review locally rendered video, pixels, masks, audio, scopes and manifests. Compare the 500 offline color looks using measured gray, skin and RGB profiles, then verify actual rendered output."
 ---
 
 # Agent FFmpeg Local / quality
 
-成片、像素、蒙版、Scope 与证据核验. Local release: `v0.1.0-alpha.2`.
+成片、像素、蒙版、Scope 与证据核验. Local release: `v0.1.0-alpha.3`.
 
 ## Installed runtime
 
 Use the installed release, not `ai-ad-editor.ps1` or `product/src`. The shared launcher pins
-`v0.1.0-alpha.2`, checks the installation receipt and launcher hash, and starts native Python with `-I -S`.
+`v0.1.0-alpha.3`, checks the installation receipt and launcher hash, and starts native Python with `-I -S`.
 
 ```powershell
 $avkSkills = if ($env:CODEX_HOME) { Join-Path $env:CODEX_HOME 'skills' } else { Join-Path $env:USERPROFILE '.codex/skills' }
@@ -43,4 +43,4 @@ does not establish natural quality or full CapCut parity.
 
 ## Offline look presets
 
-Use `look list`, `look inspect`, `look preview` and `look apply` for 100 installed MIT style presets. Read [the look workflow](../agent-ffmpeg-local-editor/references/looks.md) before choosing a target, strength or publication settings. These are creative SDR looks; they do not establish official branded-filter or CapCut equivalence.
+Use `look list`, `look inspect`, `look preview` and `look apply` for 500 named offline color looks. Inspect measured descriptions, original variants and the per-resource MIT, CC0 or CC-BY-SA license. Read [the look workflow](../agent-ffmpeg-local-editor/references/looks.md) before choosing target, strength or delivery. These are creative SDR looks; preview suggestions are not natural-footage acceptance.

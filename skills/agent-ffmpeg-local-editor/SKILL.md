@@ -1,16 +1,16 @@
 ---
 name: agent-ffmpeg-local-editor
-description: "Edit local advertising videos with the installed Agent Video Kit CLI, including 100 offline style/filter presets. Use for setup, look search, previews, editing, rendering and delivery."
+description: "Edit local advertising videos with the installed agent editor kit CLI, including 500 named offline style/filter presets with measured descriptions. Use for look search, previews, editing, rendering and delivery."
 ---
 
 # Agent FFmpeg Local / editor
 
-总入口：计划、项目创建与交付. Local release: `v0.1.0-alpha.2`.
+总入口：计划、项目创建与交付. Local release: `v0.1.0-alpha.3`.
 
 ## Installed runtime
 
 Use the installed release, not `ai-ad-editor.ps1` or `product/src`. The shared launcher pins
-`v0.1.0-alpha.2`, checks the installation receipt and launcher hash, and starts native Python with `-I -S`.
+`v0.1.0-alpha.3`, checks the installation receipt and launcher hash, and starts native Python with `-I -S`.
 
 ```powershell
 $avkSkills = if ($env:CODEX_HOME) { Join-Path $env:CODEX_HOME 'skills' } else { Join-Path $env:USERPROFILE '.codex/skills' }
@@ -43,4 +43,4 @@ to the corresponding `agent-ffmpeg-local-` Skills.
 
 ## Offline look presets
 
-Use `look list`, `look inspect`, `look preview` and `look apply` for 100 installed MIT style presets. Read [the look workflow](../agent-ffmpeg-local-editor/references/looks.md) before choosing a target, strength or publication settings. These are creative SDR looks; they do not establish official branded-filter or CapCut equivalence.
+Use `look list`, `look inspect`, `look preview` and `look apply` for 500 named offline color looks. Inspect measured descriptions, original variants and the per-resource MIT, CC0 or CC-BY-SA license. Read [the look workflow](../agent-ffmpeg-local-editor/references/looks.md) before choosing target, strength or delivery. These are creative SDR looks; preview suggestions are not natural-footage acceptance.

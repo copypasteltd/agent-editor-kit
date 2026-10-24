@@ -23,6 +23,9 @@ from .utils import atomic_write_json, ensure_inside, now_iso, sha256_file
 
 DATA = Path(__file__).with_name("look_data")
 MAX_CUBE_BYTES = 16 * 1024 * 1024
+CATALOG_VERSION = "2.0.0"
+LOOK_COUNT = 500
+PRESET_MARKERS = {"avk-looks-1.0.0", "aek-looks-2.0.0"}
 
 
 def _hash(data: bytes) -> str:
@@ -43,8 +46,9 @@ def catalog() -> dict[str, Any]:
     try:
         value = json.loads((DATA / "catalog.json").read_bytes())
         rows = value["records"]
-        if value["count"] != 100 or len(rows) != 100 or len({r["id"] for r in rows}) != 100:
-            raise ValueError("Expected 100 unique look IDs")
+        if (value["version"] != CATALOG_VERSION or value["count"] != LOOK_COUNT
+                or len(rows) != LOOK_COUNT or len({r["id"] for r in rows}) != LOOK_COUNT):
+            raise ValueError("Expected 500 unique look IDs in catalog 2.0.0")
         return value
     except (OSError, ValueError, KeyError, TypeError) as exc:
         raise AppError("LOOK_CATALOG_INVALID", "内置预设目录缺失或损坏", exit_code=2, cause=str(exc)) from exc
@@ -54,9 +58,12 @@ def list_looks(query: str = "", category: str | None = None) -> dict[str, Any]:
     value = catalog()
     query = query.casefold().strip()
     rows = [r for r in value["records"] if (not category or r["category"] == category)
-            and (not query or query in json.dumps([r["id"], r["name"], r["name_zh"], r["tags"]], ensure_ascii=False).casefold())]
-    return {"catalog_version":value["version"], "total":100, "count":len(rows), "looks":rows,
+            and (not query or query in json.dumps([r["id"], r["name"], r["name_zh"], r.get("name_zh_tw", ""),
+                r["tags"], r.get("description_zh", ""), r.get("description_en", ""),
+                r.get("suggested_use_zh", ""), r["license"]["spdx"]], ensure_ascii=False).casefold())]
+    return {"catalog_version":value["version"], "total":value["count"], "count":len(rows), "looks":rows,
             "categories":sorted({r["category"] for r in value["records"]}),
+            "license_counts":value["license_counts"],
             "color_contract":value["color_contract"], "network":"disabled"}
 
 
@@ -113,7 +120,7 @@ def plan_apply(project: dict[str, Any], look_id: str, strength: float, *, clip_i
     lut_id = "look_" + row["id"]
     effect = {"id":"preset_"+row["id"], "type":"lut3d", "enabled":True,
               "parameters":{"lut_id":lut_id, "intensity":strength, "interpolation":"tetrahedral"},
-              "source":{"look_catalog":"avk-looks-1.0.0", "look_id":row["id"]}}
+              "source":{"look_catalog":"aek-looks-"+CATALOG_VERSION, "look_id":row["id"]}}
     if global_scope:
         owner = settings
         field = "adjustments"
@@ -134,7 +141,7 @@ def plan_apply(project: dict[str, Any], look_id: str, strength: float, *, clip_i
     if not isinstance(effects, list):
         raise argument_error("目标效果字段必须为数组", field)
     def is_preset(item):
-        return isinstance(item, dict) and isinstance(item.get("source"), dict) and item["source"].get("look_catalog") == "avk-looks-1.0.0"
+        return isinstance(item, dict) and isinstance(item.get("source"), dict) and item["source"].get("look_catalog") in PRESET_MARKERS
     kept = effects[:] if append else [item for item in effects if not is_preset(item)]
     insertion = len(kept)
     if not append:
@@ -164,6 +171,9 @@ def install_in_project(root: Path, look_id: str, ledger: dict[str, Any]) -> dict
         path = root / name
         ensure_inside(root, path)
         if path.exists() and (not path.is_file() or path.read_bytes() != data):
+            if (name.endswith("/provenance.json") and path.is_file()
+                    and _hash(path.read_bytes()) == row.get("legacy_provenance_sha256")):
+                continue  # Preserve the exact released alpha.2 provenance bytes.
             raise AppError("LOOK_PROJECT_CONFLICT", "项目内预设/许可被修改；请保留并另建预设", exit_code=2, path=name)
     record = record_for(ledger, lut_id)
     if record and (record.get("sha256") != "sha256:"+row["sha256"] or record.get("verification_status") != "verified"
@@ -186,11 +196,11 @@ def install_in_project(root: Path, look_id: str, ledger: dict[str, Any]) -> dict
     if not record:
         record = add_record(ledger, {"asset_id":lut_id, "kind":"lut", "sha256":"sha256:"+row["sha256"],
             "source_url":"local://"+rel, "source_version":row["source"]["commit"], "retrieved_at":now_iso(),
-            "creator":row["license"]["creator"], "license_spdx":"MIT", "license_url":f"{evidence_rel}/LICENSE.txt",
-            "attribution":row["license"]["creator"]+"; MIT notice retained", "permitted_uses":["internal","commercial_ad","redistribution"],
-            "restrictions":["Retain MIT copyright and license notice"], "evidence":f"{evidence_rel}/provenance.json",
+            "creator":row["license"]["creator"], "license_spdx":row["license"]["spdx"], "license_url":f"{evidence_rel}/LICENSE.txt",
+            "attribution":row["license"]["creator"]+"; "+row["license"]["spdx"]+"; source and changes in provenance", "permitted_uses":["internal","commercial_ad","redistribution"],
+            "restrictions":row["license"].get("obligations", ["Retain source license notice"]), "evidence":f"{evidence_rel}/provenance.json",
             "verification_status":"verified", "verified_by":"bundled-open-look-hash-verification", "takedown_status":"clear",
-            "notes":"Repository-wide MIT notice and pinned source bytes verified; trademark names do not imply endorsement."})
+            "notes":"Pinned source bytes and bundled license evidence verified. Apply the per-resource license, including attribution/share-alike where specified. Trademark names do not imply endorsement."})
     return {"lut_id":lut_id, "uri":rel, "sha256":row["sha256"], "rights":record, "evidence":evidence_rel}
 
 

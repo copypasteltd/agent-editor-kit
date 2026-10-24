@@ -1,7 +1,9 @@
-# 100 offline style presets
+# 500 named offline style presets
 
 Use the pinned installed `$avk` launcher from SKILL.md. First read `capabilities`, `look list` and
-`look inspect --id ID`. Search supports Chinese, English, IDs and `--category`.
+`look inspect --id ID`. Search supports Simplified/Traditional Chinese, English, IDs, measured descriptions,
+license names and `--category`. Read `name_zh`, `description_zh` / `description_en`, `metrics`, suggested use,
+trial strength and `license.obligations`. Numbering is for browsing; commands use stable IDs.
 
 ```powershell
 & $avk look list --query '黑白'
@@ -14,7 +16,15 @@ Use the pinned installed `$avk` launcher from SKILL.md. First read `capabilities
 & $avk render --project 'E:/work/ad' --output 'E:/work/ad/renders/gold.mp4'
 ```
 
-- All 100 LUTs, previews and MIT notices are already installed; runtime downloads are unnecessary.
+- All 500 LUTs, previews and per-resource MIT, CC0 or CC-BY-SA notices are installed; no runtime downloads.
+- The first 100 `sp-` / `t3-` IDs and LUT bytes are preserved. New `nt-` / `fl-` IDs identify the source.
+  `curve-plus-N` / `curve-minus-N` preserves the upstream curve variant, not a runtime strength setting.
+  The count means 500 distinct numeric transforms, including related original variants, not 500 unrelated families.
+- CC-BY-SA resources require creator/source credit, retained license, indication of conversion and share-alike
+  redistribution of adapted LUT data/previews. Preserve copied evidence. The app's MIT license does not replace these terms.
+- `policy audit` recognizes source/license URLs and literal license text only in exact bundled provenance/rights
+  records. They are inert attribution, never download targets. Modified provenance and other endpoint/path fields
+  remain subject to the local-only policy.
 - `look preview` writes a new PNG, using a synthetic reference when `--input` is absent. Use a prepared SDR still.
 - `look apply` requires an existing video clip (`--clip-id`, optional `--sequence-id`) or explicit `--global`.
   Global affects every sequence through project settings. It does not refer to the currently selected clip.
@@ -27,6 +37,8 @@ Use the pinned installed `$avk` launcher from SKILL.md. First read `capabilities
 - Inspect the final decoded video and warnings. The synthetic preview is not natural-footage acceptance.
 - Creative SDR encoded RGB only. Float32, Log/HDR apply is explicitly refused; perform an explicit SDR conversion
   first when appropriate. The upstream creative assets do not specify calibrated camera transfer functions.
+- Source labels can be ambiguous: `fl-0000228-science-fiction-for-flog` has a Rec.709 uploader label and
+  FLog in the title. Use only as an experimental look on prepared SDR, never as a verified FLog conversion.
 - Community film names are upstream labels; no official Leica/CapCut filters or manufacturer endorsement is implied.
   This adds color looks, not spatial grain, glow, beauty, AI effects or complete proprietary feature parity.
 - Project-package export carries built-in IDs, LUT registry, LUT bytes and relative license evidence. Other assets'

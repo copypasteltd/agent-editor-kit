@@ -5,12 +5,12 @@ description: "Manage local Agent Projects, snapshots, recovery, migration, media
 
 # Agent FFmpeg Local / project-ops
 
-快照、恢复、重链和队列. Local release: `v0.1.0-alpha.2`.
+快照、恢复、重链和队列. Local release: `v0.1.0-alpha.3`.
 
 ## Installed runtime
 
 Use the installed release, not `ai-ad-editor.ps1` or `product/src`. The shared launcher pins
-`v0.1.0-alpha.2`, checks the installation receipt and launcher hash, and starts native Python with `-I -S`.
+`v0.1.0-alpha.3`, checks the installation receipt and launcher hash, and starts native Python with `-I -S`.
 
 ```powershell
 $avkSkills = if ($env:CODEX_HOME) { Join-Path $env:CODEX_HOME 'skills' } else { Join-Path $env:USERPROFILE '.codex/skills' }

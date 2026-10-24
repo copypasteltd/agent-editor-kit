@@ -1,0 +1,21 @@
+{
+  "sequence_id": "seq_main",
+  "operations": [
+    {
+      "op": "append_clip",
+      "track_id": "track_video_1",
+      "asset_id": "asset_20261024085113_0871a403",
+      "source_in_tick": 0,
+      "source_out_tick": 90000,
+      "duration_tick": 90000
+    },
+    {
+      "op": "append_clip",
+      "track_id": "track_audio_1",
+      "asset_id": "asset_20261024085113_0871a403",
+      "source_in_tick": 0,
+      "source_out_tick": 90000,
+      "duration_tick": 90000
+    }
+  ]
+}

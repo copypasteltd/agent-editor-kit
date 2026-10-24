@@ -282,7 +282,7 @@ def _package_luts(root: Path, project: dict[str, Any], files: dict[str, Path]) -
                     raise ValueError('LUT 必须是项目内实际文件，无法生成可移植项目包')
                 digest = sha256_file(path)
                 builtin = bool(lut_id and isinstance(value.get('source'), dict)
-                               and value['source'].get('look_catalog') == 'avk-looks-1.0.0')
+                               and value['source'].get('look_catalog') in {'avk-looks-1.0.0', 'aek-looks-2.0.0'})
                 relative = str(found[1]['uri']) if builtin else f'assets/luts/{digest}{path.suffix.lower()}'
                 files[relative] = path
                 if not builtin:

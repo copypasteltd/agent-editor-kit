@@ -1,0 +1,47 @@
+{
+  "status": "corrected",
+  "initial_build": "ID collision guard rejected a candidate build because upstream +/- suffixes were stripped; no catalog was published by the failed build.",
+  "correction": "Preserve model-plus and curve-plus/minus suffixes in source-qualified IDs.",
+  "removed_unreferenced_candidate_files": [
+    "luts/nt-instant-consumer-polaroid-px-100uv-cold.cube.gz",
+    "luts/nt-instant-consumer-polaroid-px-100uv-warm.cube.gz",
+    "luts/nt-instant-consumer-polaroid-px-680-cold-alt.cube.gz",
+    "luts/nt-instant-pro-fuji-fp-100c-alt.cube.gz",
+    "luts/nt-instant-pro-fuji-fp-100c-negative-alt.cube.gz",
+    "luts/nt-instant-pro-polaroid-669.cube.gz",
+    "luts/nt-instant-pro-polaroid-690.cube.gz",
+    "luts/nt-negative-new-kodak-tri-x-400.cube.gz",
+    "luts/nt-negative-old-fuji-neopan-1600.cube.gz",
+    "luts/nt-negative-old-kodak-portra-160-nc.cube.gz",
+    "luts/nt-negative-old-kodak-portra-160-vc.cube.gz",
+    "previews/nt-instant-consumer-polaroid-px-100uv-cold.webp",
+    "previews/nt-instant-consumer-polaroid-px-100uv-warm.webp",
+    "previews/nt-instant-consumer-polaroid-px-680-cold-alt.webp",
+    "previews/nt-instant-pro-fuji-fp-100c-alt.webp",
+    "previews/nt-instant-pro-fuji-fp-100c-negative-alt.webp",
+    "previews/nt-instant-pro-polaroid-669.webp",
+    "previews/nt-instant-pro-polaroid-690.webp",
+    "previews/nt-negative-new-kodak-tri-x-400.webp",
+    "previews/nt-negative-old-fuji-neopan-1600.webp",
+    "previews/nt-negative-old-kodak-portra-160-nc.webp",
+    "previews/nt-negative-old-kodak-portra-160-vc.webp"
+  ],
+  "initial_regression": "87 tests, 1 package roundtrip error: new catalog marker was not preserved by converter.",
+  "correction_regression": "Recognize released 1.0.0 and new 2.0.0 markers when preserving LUT IDs; rerun focused suite.",
+  "naming_candidate": {
+    "status": "preserved-and-replaced-before-publication",
+    "directory": "product/.runtime/look500-release-20261024/naming-candidate",
+    "reason": "18 monochrome negative-film labels corrected; IDs and LUT bytes unchanged. Partial batch interrupted; completed prior Skill check is not counted as the final verification."
+  },
+  "setup_failure": {
+    "evidence": "docs/validation/evidence/look500-20261024-r1/installed-setup-r0/failure.json",
+    "reason": "Verifier used relative input paths with a changed subprocess cwd. Resolve all three CLI paths before running native tools. No product failure or output video occurred."
+  },
+  "policy_candidate": {
+    "status": "rejected-by-full-project-audit-before-publication",
+    "reason": "Pinned provenance URLs and literal CC0 license text were treated as runtime URI references. Only exact matching bundled attribution fields and typed restrictions are now inert; all other fields remain strict.",
+    "full_native_color_checks_completed": 500,
+    "full_project_look_renders_before_audit": 25,
+    "repeat_final_installation_checks": true
+  }
+}

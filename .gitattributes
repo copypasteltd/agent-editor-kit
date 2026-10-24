@@ -1363,3 +1363,14 @@ scripts/verify_look_profile_docs.py text eol=lf
 docs/local/LOOK_PRESET_NOTES.json text eol=lf
 docs/validation/evidence/look-profiles-20261024-r1/** -text -whitespace
 docs/assets/look-profiles-20261024-r1/** -text -whitespace
+
+# Keep 500-look hashes and multipart archives stable across Windows checkouts.
+docs/releases/v0.1.0-alpha.3/artifacts/** -text -whitespace
+docs/releases/v0.1.0-alpha.3/*.md text eol=lf
+docs/validation/evidence/look500-20261024-r1/** -text -whitespace
+docs/validation/evidence/look500-sources-20261024-r1/** -text -whitespace
+docs/assets/look500-20261024-r1/** -text -whitespace
+docs/local/look-profiles/*.md text eol=lf
+docs/validation/LOOK500_20261024.md text eol=lf
+scripts/*look500*.py text eol=lf
+product/tests/fixtures/look-alpha2-gold-provenance.json -text -whitespace

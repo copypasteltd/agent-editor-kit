@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "type": "decoded-actual-project-video-comparison",
+  "inputs": [
+    {
+      "path": "docs/assets/look500-20261024-r1/original.mp4",
+      "sha256": "60f80fc40b77bf05a3284fbfda615e2f0c985738ae9b142dce1315739a1ced6a"
+    },
+    {
+      "path": "docs/assets/look500-20261024-r1/project-videos/nt-instant-consumer-polaroid-px-680-warm.mp4",
+      "sha256": "2e8a426bd20e2eca09bf9bf4072de4b94c4d54a2b1a165cb6416a6d6632847a4"
+    },
+    {
+      "path": "docs/assets/look500-20261024-r1/project-videos/fl-0000001-action-magenta-01.mp4",
+      "sha256": "6cac2e69ef6459c1ea1617bc2da30ab596a7518d4c1006f9e8f52096bfafadd8"
+    },
+    {
+      "path": "docs/assets/look500-20261024-r1/project-videos/fl-0000634-darkblue.mp4",
+      "sha256": "f19ba6e2192e02f07eaade274d5e237de4a988e007bc72ed4d96635195073ecd"
+    }
+  ],
+  "selected_looks": [
+    "nt-instant-consumer-polaroid-px-680-warm",
+    "fl-0000001-action-magenta-01",
+    "fl-0000634-darkblue"
+  ],
+  "strength": 1,
+  "source_frames_each": 12,
+  "source_fps": 12,
+  "mp4": {
+    "path": "motion-comparison.mp4",
+    "sha256": "e2a7de5c220f74769681ee795044b106f9ca74cd0833c08dfdee67992ee9cdb4",
+    "width": 960,
+    "height": 660,
+    "frames": 12,
+    "fps": 12,
+    "seconds": 1
+  },
+  "gif": {
+    "path": "motion-comparison.gif",
+    "sha256": "07762c1b05d6287deb808769e4e929bbcef49a264a30c7c2116d4f08c1f2bebd",
+    "width": 720,
+    "height": 495,
+    "frame_delay_ms": 80
+  },
+  "audio": "silent comparison; source/project video audio checked separately",
+  "synthetic_source": true,
+  "natural_footage_acceptance": false,
+  "human_listening": false,
+  "continuous_playback_review": false
+}

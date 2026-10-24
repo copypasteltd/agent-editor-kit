@@ -1,40 +1,27 @@
-# 本地发行包与 Agent FFmpeg Skills / Local package and Skills
+# 本地发行包与 17 个 Agent Skills / Local installation
 
-安装日期 / Local installation date: **2026-10-24 (Asia/Taipei)**。版本 / Release: **`v0.1.0-alpha.2`（CLI `0.1.1`）**。
+当前安装：**v0.1.0-alpha.3 / CLI 0.1.2 / catalog 2.0.0 / 500 looks**。日期：2026-10-24。
 
-本机已将新本地发行 ZIP 重新校验并离线安装到 E 盘；同步更新 17 个 `agent-ffmpeg-local-` Skill，主入口为 **`$agent-ffmpeg-local-editor`**。项目命令统一经安装版启动器运行。
-The new local ZIP was verified and installed on E:. Seventeen Skills use the requested `agent-ffmpeg-local-` prefix. Project commands use the installed release launcher.
+已从校验后的分卷合成 ZIP，在 E 盘离线安装并激活，17 个 `$agent-ffmpeg-local-` Skill 已绑定新 manifest；保留旧 alpha.1 / alpha.2 安装和不可变包。
+Native Windows installation, no container/WSL/virtual environment or global site-packages modification. Existing CPython 3.13 and FFmpeg/ffprobe required.
 
-
-**本轮升级 / Current upgrade:** 100 个 MIT 风格预设已随包安装，17 个 Skill 格式与联接检查通过，并从 Codex 发现路径实际执行 14 次命令（13 成功、1 预期拒绝），包括风格查询/预览/应用/成片。查看[新预设手册](../releases/v0.1.0-alpha.2/USAGE.md)、[100 项目录](LOOK_PRESETS.md)、[安装回执](../validation/evidence/look-presets-20261024-r1/install/installation.json)、[新 Skill 核验](../validation/evidence/look-presets-20261024-r1/skills/verification.json)。旧 alpha.1 安装目录保留，新版本配置备份在 `local/agent-ffmpeg/v0.1.0-alpha.2/runtime-before.json`。
-
-The new offline build and 100 looks are installed on E:. All 17 Skills are validated; 14 real discovery-launcher calls include a render and an expected refusal. The previous installation is retained. The new archive is 89,555,994 bytes; the observed installed directory including retained payload/runtime files is about 221 MB. [SHA256SUMS](../releases/v0.1.0-alpha.2/artifacts/SHA256SUMS.txt).
-
-## 位置与依赖 / Locations and prerequisites
-
-| 内容 / Item | 本机路径 / Local path |
+| Item | Path/value |
 |---|---|
-| 项目 / Repository | `E:/dev/sandbox/AI广告剪辑` |
-| 发行 ZIP / Release ZIP | `docs/releases/v0.1.0-alpha.2/artifacts/agent-video-kit-v0.1.0-alpha.2-cp313-win_amd64.zip` |
-| 解压后的完整发行包 / Extracted package | `local/agent-ffmpeg/v0.1.0-alpha.2/release/` |
-| 已安装程序与依赖 / Installed app and dependencies | `local/agent-ffmpeg/v0.1.0-alpha.2/installed/` |
-| 安装版原始入口 / Installed entry | `local/agent-ffmpeg/v0.1.0-alpha.2/installed/run.py` |
-| 本地运行绑定 / Runtime binding | `local/agent-ffmpeg/runtime.json` |
-| Skill 启动器 / Skill launcher | `skills/agent-ffmpeg-local-editor/scripts/run.ps1` |
-| 17 个 Skill 正文 / Skill sources | `skills/agent-ffmpeg-local-*/` |
-| Codex 发现目录 / Codex discovery | `C:/Users/carzy/.codex/skills/agent-ffmpeg-local-*`，目录联接 / directory junctions |
-| 安装、校验与注册映射 / Registration map | [agent-ffmpeg-local-install-manifest.json](../../agent-ffmpeg-local-install-manifest.json) |
-| 本轮可编辑样例 / Editable verification projects | `local/agent-ffmpeg/verification-20261024-r1/` |
+| Installed app | `E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.3\installed` |
+| Installed size, including current runtime files | 438,441,943 bytes |
+| Runtime config | `local/agent-ffmpeg/runtime.json` |
+| Main Skill | `$agent-ffmpeg-local-editor` |
+| Editable Skills | `skills/agent-ffmpeg-local-*/` on E: |
+| Discovery | `C:/Users/carzy/.codex/skills/` directory junctions to E: |
+| Registration manifest | [agent-ffmpeg-local-install-manifest.json](../../agent-ffmpeg-local-install-manifest.json) |
+| Full local ZIP | `E:\dev\sandbox\AI广告剪辑\product\.runtime\look500-release-20261024\reassembled\agent-editor-kit-v0.1.0-alpha.3-cp313-win_amd64.zip` |
+| Download parts | [alpha.3 artifacts](../releases/v0.1.0-alpha.3/artifacts) |
+| ZIP SHA-256 | `1a967e4def2afc14e9f110c6cad90e172ff457a77ef405cb83932f1f1187b968` |
+| Bundle manifest | `sha256:3bc0a74144953b97a769db01f3d2d863889da80f010d78ab7e4a2b4eedf1ceea` |
 
-除 Codex 发现目录的联接元数据外，本轮安装文件、依赖、临时目录与样例都在 E 盘。`local/` 被 Git 忽略，程序安装文件不会提交回仓库。
-Installed files, dependencies, temporary data and examples stay on E:. Only the small discovery junctions live in the existing Codex directory. `local/` is Git-ignored.
+[500 names and actual effects](LOOK_PRESETS.md) · [Filter workflow](FILTERS.md) · [Assembly/installation](../releases/v0.1.0-alpha.3/USAGE.md) · [Installation receipt](../validation/evidence/look500-20261024-r1/install/installation.json) · [17 formats and actual launcher calls](../validation/evidence/look500-20261024-r1/skills/verification.json).
 
-使用本机已有的 **Windows x64 CPython 3.13.1**（`C:/Python313/python.exe`）、**FFmpeg/ffprobe 8.1**（`PATH`）。发行包包含应用及 7 个固定依赖 wheel，含 NumPy、Pillow；安装目录有 **1,430 个文件，81,845,972 字节**。基础包不分发 Python、FFmpeg、Node/Chromium、CUDA 或模型权重。需要对应扩展功能时，显式登记已有本地依赖。
-The package contains eight pinned wheels, including the app, NumPy and Pillow. Existing native Python and FFmpeg are prerequisites; optional model/browser dependencies are not bundled. No virtual environment or global site-packages installation is used.
-
-ZIP SHA-256：`d306218ec889fd1cd591cd2536f651d58b13c23c2a7225b5b7fbadc4cfa6603a`。
-Bundle manifest：`sha256:ec7cb9216402c02726c8f53d1b305bb8e567b4b3d715a5793dc8000957420596`。
-摘要用于核验内容一致性，不是作者数字签名 / Hashes check content integrity, not publisher identity.
+Per-resource licenses: 100 MIT, 267 CC-BY-SA-4.0, 133 CC0-1.0. See the individual inspect response and project-local evidence. Suggested scenes/intensity are not natural-footage acceptance.
 
 ## 直接使用 / Use now
 
@@ -81,7 +68,7 @@ $avkProject = 'E:/dev/sandbox/AI广告剪辑/workspace/my-ad'
 & $avk quality check --project $avkProject --input "$avkProject/renders/ad.mp4"
 ```
 
-Agent 同时检查退出码、`ok`、`status`、`errors`、`warnings` 与 `artifacts`。音轨须显式编排。`render --publish` 只做本地权利门禁，不上传平台。完整参数和两条渲染路径的边界见[发行版使用手册](../releases/v0.1.0-alpha.2/USAGE.md)；新命名空间以本页及当前 Skill 正文为准。
+Agent 同时检查退出码、`ok`、`status`、`errors`、`warnings` 与 `artifacts`。音轨须显式编排。`render --publish` 只做本地权利门禁，不上传平台。完整参数和两条渲染路径的边界见[发行版使用手册](../releases/v0.1.0-alpha.3/USAGE.md)；新命名空间以本页及当前 Skill 正文为准。
 Check exit codes and all structured result fields. Author audio explicitly. `--publish` gates local rights without uploading. Consult the release manual for command/renderer contracts, applying the new Skill names below.
 
 ## 17 个入口 / Skill catalog
@@ -109,7 +96,7 @@ Check exit codes and all structured result fields. Author audio explicitly. `--p
 旧调用为 `$video-cut-旧名后缀`，仍保留以复现已有任务。新前缀的 `local-policy`、`local-models` 保留其领域后缀，因此名称含两次 `local`。三个营销 Skill 提供方案指导，两个通用媒体 Skill 也可直接使用已有 FFmpeg；项目命令统一用安装版。
 Legacy calls remain available separately for reproducibility. Marketing Skills are advisory, and the generic media Skills can use native FFmpeg. The 17 new registrations are not 17 newly implemented rendering engines or additional bundled AI models.
 
-新命名空间在本次 `main` 更新中提供；已公开的 `v0.1.0-alpha.1-skills.zip` 仍是当时的 17 个 `video-cut-` 入口，未覆盖发布附件。上游工作流和许可随相应新 Skill 的 `references/upstream/` 保留；[第三方通知](../releases/v0.1.0-alpha.2/THIRD_PARTY.md)继续适用。
+新命名空间在本次 `main` 更新中提供；已公开的 `v0.1.0-alpha.1-skills.zip` 仍是当时的 17 个 `video-cut-` 入口，未覆盖发布附件。上游工作流和许可随相应新 Skill 的 `references/upstream/` 保留；[第三方通知](../releases/v0.1.0-alpha.3/THIRD_PARTY.md)继续适用。
 The new namespace is supplied by this main-branch update. Published release assets retain their original legacy names and hashes. Credited upstream references and their licenses are retained.
 
 ## 重新安装与注册 / Install on another checkout
@@ -117,7 +104,7 @@ The new namespace is supplied by this main-branch update. Published release asse
 在项目根目录执行，目标和证据目录须是新路径 / Run at the repository root using fresh destinations:
 
 ```powershell
-& C:/Python313/python.exe -E -B -X utf8 scripts/install_look_release.py --activate `
+& C:/Python313/python.exe -E -B -X utf8 scripts/install_look500_release.py --activate `
   --evidence 'E:/dev/sandbox/AI广告剪辑/docs/validation/evidence/my-local-install'
 & C:/Python313/python.exe -E -B -X utf8 scripts/update_agent_ffmpeg_local_skills.py
 .\register-agent-ffmpeg-local-skills.ps1

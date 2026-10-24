@@ -1,18 +1,18 @@
 # agent editor kit 文档 / Documentation
 
-[简体中文](../README.md) · [繁體中文](../README.zh-TW.md) · [English](../README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit) · [Local package](releases/v0.1.0-alpha.2/artifacts/agent-video-kit-v0.1.0-alpha.2-cp313-win_amd64.zip)
+[简体中文](../README.md) · [繁體中文](../README.zh-TW.md) · [English](../README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit) · [Local package parts](releases/v0.1.0-alpha.3/artifacts)
 
-产品名称为 `agent editor kit`，后续代码维护于 `copypasteltd/agent-editor-kit`。原仓库公开首版是 `v0.1.0-alpha.1`；本机后续构建已升级到 `v0.1.0-alpha.2`（CLI `0.1.1`），新增 100 个离线风格预设和本地 Skill 更新。新仓库尚未发布对应 GitHub Release，可从上方本地包链接获取。完整剪映等价仍未验收。The product is now agent editor kit; all future updates go to the new repository. Complete READMEs are available in Simplified Chinese, Traditional Chinese and English; versioned manuals remain bilingual.
+当前为 **v0.1.0-alpha.3 / CLI 0.1.2 / 500 离线风格**，已安装并同步 17 个本地 Skill；完整剪映等价仍未验收。Current local build has 500 named looks, measured per-look profiles, individual licenses and installed native verification.
 
 | 阅读目标 / Goal | Document |
 |---|---|
 | 新仓库、产品名称与三语维护规则 / Repository, name and README languages | [Maintenance record](maintenance/REPOSITORY_AND_READMES.md) |
-| 100 预设完整编号、分类与实际预览 / Numbered look catalog | [100 looks](local/LOOK_PRESETS.md) |
-| 100 项实际色彩作用、灰阶/肤色/三色数值与场景建议 / Detailed measured profiles | [简体详情](local/LOOK_PRESET_DETAILS.md) · [繁體詳情](local/LOOK_PRESET_DETAILS.zh-TW.md) · [数据与核验](validation/evidence/look-profiles-20261024-r1/verification.json) |
-| 新包安装、检索、预览与应用 / Alpha.2 usage | [Alpha.2 manual](releases/v0.1.0-alpha.2/USAGE.md) |
-| 100 预设实测、单元回归、Skill 与项目包 / Current verification | [Look verification](validation/LOOK_PRESETS_20261024.md) |
+| 500 预设完整编号、分类与实际预览 / Numbered look catalog | [500 looks](local/LOOK_PRESETS.md) |
+| 历史 100 项实际色彩作用、灰阶/肤色/三色数值与场景建议 / Detailed measured profiles | [简体详情](local/LOOK_PRESET_DETAILS.md) · [繁體詳情](local/LOOK_PRESET_DETAILS.zh-TW.md) · [数据与核验](validation/evidence/look-profiles-20261024-r1/verification.json) |
+| 新包分卷安装、检索、预览与应用 / Alpha.3 usage | [Alpha.3 manual](releases/v0.1.0-alpha.3/USAGE.md) |
+| 500 预设实测、定向回归、Skill 与项目包 / Current verification | [500-look verification](validation/LOOK500_20261024.md) |
 | 本机正式安装、17 个新名称与实际 Skill 调用 / Installed app and new Skill namespace | [Local installation](local/INSTALLATION.md) |
-| 滤镜、LUT 格式、调色与关键帧 / Filters, LUTs and grading | [Filters](local/FILTERS.md) |
+| 500 套实际详情与功能性 README / Full profiles and filter workflow | [简体](local/FILTERS.md) · [繁體](local/FILTERS.zh-TW.md) · [English](local/FILTERS.en.md) |
 | 开源风格库来源、Star、许可、工程量与社区 LUT 实测 / Open looks: sources, licenses, effort and real probe | [Open look-library assessment](research/OPEN_LOOK_LIBRARY_20261024.md) |
 | 安装、结构、命令、渲染路径、故障与恢复 / Install and operate | [USAGE](releases/v0.1.0-alpha.1/USAGE.md) |
 | 发行时的 17 个旧名 Skill / Original release Skill names | [SKILLS](releases/v0.1.0-alpha.1/SKILLS.md) |

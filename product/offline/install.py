@@ -18,10 +18,10 @@ import time
 import zipfile
 from email.parser import BytesParser
 
-# The 100 hash-pinned, compressed creative LUTs make the application wheel
+# The 500 hash-pinned, compressed creative LUTs make the application wheel
 # larger than the first alpha. Keep a finite per-file bound; ZIP member and
 # expanded-wheel limits still apply independently.
-MAX_BYTES=96*1024**2
+MAX_BYTES=384*1024**2
 CORE_WHEELS={'ai-ad-editor','jsonschema','attrs','jsonschema-specifications','referencing','rpds-py'}
 RUNTIME_PROFILES={
     'core-v1':CORE_WHEELS,
@@ -124,7 +124,7 @@ def validate_bundle(bundle,expected_manifest):
                 item=safe_name(entry.filename.rstrip('/'))
                 if item.casefold() in seen or stat.S_ISLNK(entry.external_attr>>16):raise InstallError('WHEEL_INVALID','Duplicate/symlink wheel member')
                 seen.add(item.casefold());total+=entry.file_size
-                if total>128*1024**2:raise InstallError('WHEEL_INVALID','Oversized wheel')
+                if total>512*1024**2:raise InstallError('WHEEL_INVALID','Oversized wheel')
             metadata=[x for x in entries if x.filename.endswith('.dist-info/METADATA')]
             tags=[x for x in entries if x.filename.endswith('.dist-info/WHEEL')]
             if len(metadata)!=1 or len(tags)!=1:raise InstallError('WHEEL_INVALID','Missing wheel metadata')

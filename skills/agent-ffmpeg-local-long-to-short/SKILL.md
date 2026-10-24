@@ -5,12 +5,12 @@ description: "Turn a local talk, interview, course or recording into editable sh
 
 # Agent FFmpeg Local / long-to-short
 
-长视频、课程和口播转短片. Local release: `v0.1.0-alpha.2`.
+长视频、课程和口播转短片. Local release: `v0.1.0-alpha.3`.
 
 ## Installed runtime
 
 Use the installed release, not `ai-ad-editor.ps1` or `product/src`. The shared launcher pins
-`v0.1.0-alpha.2`, checks the installation receipt and launcher hash, and starts native Python with `-I -S`.
+`v0.1.0-alpha.3`, checks the installation receipt and launcher hash, and starts native Python with `-I -S`.
 
 ```powershell
 $avkSkills = if ($env:CODEX_HOME) { Join-Path $env:CODEX_HOME 'skills' } else { Join-Path $env:USERPROFILE '.codex/skills' }

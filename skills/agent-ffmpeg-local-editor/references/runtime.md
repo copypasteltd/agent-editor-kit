@@ -1,6 +1,6 @@
 # Installed-release runtime contract
 
-This namespace always calls the locally installed `v0.1.0-alpha.2` package, using the editor Skill's
+This namespace always calls the locally installed `v0.1.0-alpha.3` package, using the editor Skill's
 `scripts/run.ps1`. Other Skills share this launcher. The editable Skill source stays on E:; Codex reads
 Windows directory junctions. `local/agent-ffmpeg/runtime.json` selects the native Python and installed path.
 The launcher verifies the release pin, installation receipt and launcher digest, then runs the installed
@@ -10,11 +10,11 @@ These flags are not an operating-system network sandbox; do not invoke network t
 To install on another checkout with existing Windows CPython 3.13 x64 and FFmpeg/ffprobe on PATH:
 
 ```powershell
-& C:/Python313/python.exe -E -B -X utf8 scripts/install_look_release.py --activate --evidence E:/path/to/checkout/docs/validation/evidence/my-local-install
+& C:/Python313/python.exe -E -B -X utf8 scripts/install_look500_release.py --activate --evidence E:/path/to/checkout/docs/validation/evidence/my-local-install
 .\register-agent-ffmpeg-local-skills.ps1
 ```
 
-Run the install script in the repository; the pinned release ZIP is in `docs/releases/v0.1.0-alpha.2/artifacts/`.
+Run the install script in the repository; the pinned release ZIP parts are in `docs/releases/v0.1.0-alpha.3/artifacts/`.
 The installer preserves existing destinations. An unavailable installation requires repair/reinstallation,
 not a source fallback. The namespace manifest lists all 17 entries. Legacy `video-cut-` Skills are separate.
 
@@ -50,6 +50,6 @@ Return exact output paths, warnings, exit codes and error details. Verify actual
 static frames, continuous playback, automatic audio checks and human listening have separate acceptance.
 The alpha package does not provide complete CapCut parity.
 
-## 100 offline looks
+## 500 offline looks
 
 Read [looks.md](looks.md). `look apply` copies LUT/license/provenance into the project. Built-in preset evidence uses relative project paths; unrelated user media evidence still needs review after relocation.

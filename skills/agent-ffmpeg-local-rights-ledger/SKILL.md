@@ -1,16 +1,16 @@
 ---
 name: agent-ffmpeg-local-rights-ledger
-description: "Record source, license, creator and local evidence for media, fonts, templates, LUTs and models. Audit the 100 bundled MIT look presets and their project-local license evidence."
+description: "Record source, license, creator and local evidence for media, fonts, templates, LUTs and models. Inspect per-resource MIT, CC0 or CC-BY-SA obligations for the 500 bundled looks and project-local evidence."
 ---
 
 # Agent FFmpeg Local / rights-ledger
 
-素材、字体、模型与模板权利台账. Local release: `v0.1.0-alpha.2`.
+素材、字体、模型与模板权利台账. Local release: `v0.1.0-alpha.3`.
 
 ## Installed runtime
 
 Use the installed release, not `ai-ad-editor.ps1` or `product/src`. The shared launcher pins
-`v0.1.0-alpha.2`, checks the installation receipt and launcher hash, and starts native Python with `-I -S`.
+`v0.1.0-alpha.3`, checks the installation receipt and launcher hash, and starts native Python with `-I -S`.
 
 ```powershell
 $avkSkills = if ($env:CODEX_HOME) { Join-Path $env:CODEX_HOME 'skills' } else { Join-Path $env:USERPROFILE '.codex/skills' }
@@ -42,4 +42,4 @@ not a platform upload. When moving a project, rebind local license-evidence path
 
 ## Offline look presets
 
-Use `look list`, `look inspect`, `look preview` and `look apply` for 100 installed MIT style presets. Read [the look workflow](../agent-ffmpeg-local-editor/references/looks.md) before choosing a target, strength or publication settings. These are creative SDR looks; they do not establish official branded-filter or CapCut equivalence.
+Use `look list`, `look inspect`, `look preview` and `look apply` for 500 named offline color looks. Inspect measured descriptions, original variants and the per-resource MIT, CC0 or CC-BY-SA license. Read [the look workflow](../agent-ffmpeg-local-editor/references/looks.md) before choosing target, strength or delivery. These are creative SDR looks; preview suggestions are not natural-footage acceptance.

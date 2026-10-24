@@ -46,6 +46,12 @@ def build(output,wheelhouse):
         names.add(entry['name']);pinned.append(entry)
     if names!=INSTALLER['RUNTIME_PROFILES'][profile]-{'ai-ad-editor'}:
         raise ValueError('Incomplete '+profile+' pinned dependency wheelhouse; NumPy is required for media-analysis-v1')
+    # Setuptools can retain removed package-data files in product/build/lib.
+    # Rebuild this generated directory so a removed LUT is not redistributed.
+    generated=ROOT/'product/build'
+    INSTALLER['no_reparse'](generated)
+    if generated.resolve().parent!=(ROOT/'product').resolve():raise ValueError('Generated build directory escaped product')
+    if generated.exists():shutil.rmtree(generated)
     output.mkdir(parents=True);wheels=output/'wheels';wheels.mkdir()
     work=ROOT/'product/.runtime/offline-build';work.mkdir(parents=True,exist_ok=True)
     env=dict(os.environ);env.update(TEMP=str(work),TMP=str(work),TMPDIR=str(work),PIP_CONFIG_FILE=os.devnull,PIP_NO_INDEX='1',PIP_NO_CACHE_DIR='1',PIP_DISABLE_PIP_VERSION_CHECK='1',PYTHONDONTWRITEBYTECODE='1')

@@ -1,0 +1,64 @@
+{
+  "status": "passed",
+  "count": 500,
+  "license_counts": {
+    "MIT": 100,
+    "CC-BY-SA-4.0": 267,
+    "CC0-1.0": 133
+  },
+  "unique_transform_signatures": 500,
+  "signature_method": "17x17x17 tetrahedral samples rounded to 5 decimals, float32 little endian",
+  "unique_preview_hashes": 500,
+  "exclusions": [
+    {
+      "source": "instant_pro/polaroid_669.png",
+      "excluded": "same-17-grid-transform-at-5-decimals"
+    },
+    {
+      "source": "instant_pro/polaroid_690.png",
+      "excluded": "same-17-grid-transform-at-5-decimals"
+    },
+    {
+      "source": "negative_new/kodak_tri-x_400.png",
+      "excluded": "same-17-grid-transform-at-5-decimals"
+    },
+    {
+      "source": "negative_old/fuji_neopan_1600.png",
+      "excluded": "same-17-grid-transform-at-5-decimals"
+    },
+    {
+      "source": "negative_old/kodak_portra_160_nc.png",
+      "excluded": "same-17-grid-transform-at-5-decimals"
+    },
+    {
+      "source": "negative_old/kodak_portra_160_vc.png",
+      "excluded": "same-17-grid-transform-at-5-decimals"
+    }
+  ],
+  "existing_100_lut_bytes_preserved": true,
+  "packed_lut_bytes": 169060068,
+  "catalog_sha256": "4fcae888ec36c055c4e398aeec7f4e3431925f4d9b80eda8179043d378ee903c",
+  "naming_review": {
+    "corrected_monochrome_negative_prefixes": [
+      "nt-negative-new-fuji-ilford-hp5",
+      "nt-negative-new-fuji-ilford-hp5-curve-plus-2",
+      "nt-negative-new-fuji-ilford-hp5-curve-plus-1",
+      "nt-negative-new-fuji-ilford-hp5-curve-minus-1",
+      "nt-negative-new-kodak-tmax-3200",
+      "nt-negative-new-kodak-tmax-3200-curve-plus-2",
+      "nt-negative-new-kodak-tmax-3200-curve-plus-1",
+      "nt-negative-new-kodak-tmax-3200-curve-minus-1",
+      "nt-negative-new-kodak-tri-x-400-curve-plus-2",
+      "nt-negative-new-kodak-tri-x-400-curve-plus-1",
+      "nt-negative-new-kodak-tri-x-400-curve-minus-1",
+      "nt-negative-old-fuji-ilford-delta-3200",
+      "nt-negative-old-fuji-ilford-delta-3200-curve-plus-2",
+      "nt-negative-old-fuji-ilford-delta-3200-curve-plus-1",
+      "nt-negative-old-fuji-ilford-delta-3200-curve-minus-1",
+      "nt-negative-old-fuji-neopan-1600-curve-plus-2",
+      "nt-negative-old-fuji-neopan-1600-curve-plus-1",
+      "nt-negative-old-fuji-neopan-1600-curve-minus-1"
+    ],
+    "IDs_and_LUT_bytes_unchanged": true
+  }
+}

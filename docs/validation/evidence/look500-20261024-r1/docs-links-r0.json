@@ -1,0 +1,6 @@
+{
+  "status": "failed",
+  "scope": "First documentation link-check invocation only; no product failure",
+  "error": "README.md linked docs-verification.json before the running verifier had published that receipt",
+  "correction": "Defer only the verifier's own receipt links, publish after every other check succeeds, then read back the emitted report"
+}

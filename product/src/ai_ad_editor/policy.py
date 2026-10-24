@@ -194,6 +194,37 @@ def _ocr_observation_data_fields(value: Any, path: str = "$") -> set[str]:
     return result
 
 
+def _bundled_look_data_fields(value: Any, known: dict[str, Any], path: str = "$") -> set[str]:
+    """Recognize exact bundled provenance/rights text, never executable fields.
+
+    Source/license URLs document attribution. Only an exact catalog
+    record qualifies; changed/extra keys and arbitrary endpoints stay strict.
+    Rights restrictions are likewise matched to the pinned resource obligation.
+    """
+    result: set[str] = set()
+    if isinstance(value, dict):
+        look = value.get('look')
+        row = known.get(look.get('id')) if isinstance(look, dict) and isinstance(look.get('id'), str) else None
+        if (row is not None and look == row and value.get('catalog_version') == '2.0.0'
+                and value.get('license_notice') == f'assets/look-evidence/{row["id"]}/LICENSE.txt'):
+            result.update((path+'.look.source.source_url', path+'.look.license.url'))
+            result.update(path+'.look.'+name for name in ('name','name_zh','name_zh_tw'))
+            result.update(f'{path}.look.license.obligations[{i}]' for i in range(len(row['license'].get('obligations', []))))
+        asset_id = value.get('asset_id')
+        row = known.get(asset_id[5:]) if isinstance(asset_id, str) and asset_id.startswith('look_') else None
+        if (row is not None and value.get('kind') == 'lut' and value.get('sha256') == 'sha256:'+row['sha256']
+                and value.get('license_spdx') == row['license']['spdx'] and value.get('creator') == row['license']['creator']
+                and value.get('restrictions') == row['license'].get('obligations')
+                and value.get('source_url') == f'local://assets/luts/{asset_id}.cube'):
+            result.update(f'{path}.restrictions[{i}]' for i in range(len(row['license']['obligations'])))
+        for key, child in value.items():
+            result.update(_bundled_look_data_fields(child, known, f'{path}.{key}'))
+    elif isinstance(value, list):
+        for index, child in enumerate(value):
+            result.update(_bundled_look_data_fields(child, known, f'{path}[{index}]'))
+    return result
+
+
 def audit_local_tree(root: Path) -> dict[str, Any]:
     """Audit JSON/JSONL project artifacts without reading or contacting URLs."""
     root = root.expanduser().resolve()
@@ -201,6 +232,8 @@ def audit_local_tree(root: Path) -> dict[str, Any]:
         raise argument_error("本地审计目录不存在", str(root))
     findings: list[dict[str, Any]] = []
     scanned = 0
+    from .looks import catalog
+    known_looks = {row['id']:row for row in catalog()['records']}
     for path in sorted(root.rglob("*")):
         if not path.is_file() or path.suffix.casefold() not in {".json", ".jsonl"}:
             continue
@@ -216,8 +249,9 @@ def audit_local_tree(root: Path) -> dict[str, Any]:
         for payload in payloads:
             template_data = _html_template_data_fields(payload)
             observation_data = _ocr_observation_data_fields(payload)
+            look_data = _bundled_look_data_fields(payload, known_looks)
             for field, value in _walk_scalars(payload):
-                if field in observation_data:
+                if field in observation_data or field in look_data:
                     continue
                 kind = reference_kind(value)
                 if kind == 'remote' and field in template_data and '://' not in value and not URL_RE.search(value):

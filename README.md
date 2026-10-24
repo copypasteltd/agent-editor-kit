@@ -10,7 +10,7 @@
 
 ![实际成片：原视频与三套风格对比](docs/assets/look-presets-20261024-r1/motion-comparison.gif)
 
-上图由原视频与三套实际成片逐帧合成，为静音对照。[100 项完整目录](docs/local/LOOK_PRESETS.md) · [新本地安装包](docs/releases/v0.1.0-alpha.2/artifacts/agent-video-kit-v0.1.0-alpha.2-cp313-win_amd64.zip)。首版案例文档页的[响应回放](docs/assets/release-v0.1.0-alpha.1-r2/workflow.gif)、[录制](docs/assets/release-v0.1.0-alpha.1-r2/workflow.mp4)、[截图](docs/assets/release-v0.1.0-alpha.1-r2/desktop.png)保留为历史证据。产品本体为 CLI。
+上图由原视频与三套实际成片逐帧合成，为静音对照。[100 项完整目录](docs/local/LOOK_PRESETS.md) · [新本地安装包](docs/releases/v0.1.0-alpha.2/artifacts/agent-video-kit-v0.1.0-alpha.2-cp313-win_amd64.zip)。首版案例文档页的[响应回放](docs/assets/release-v0.1.0-alpha.1-r2/workflow.gif)、[录制](docs/assets/release-v0.1.0-alpha.1-r2/workflow.mp4)、[截图](docs/assets/release-v0.1.0-alpha.1-r2/desktop.png)保留为历史证据。产品本体为 CLI。 [每项实际作用、灰阶/肤色/三色测量](docs/local/LOOK_PRESET_DETAILS.md)。
 
 ## 方案与运行逻辑
 
@@ -179,6 +179,7 @@ CLI 默认输出 JSON，Agent 应同时检查进程退出码、`ok`、`status`�
 | R18 | 新本地包与 Skill 同步 | **8 wheels 离线安装；17 个 Skill 格式通过；14 次入口调用：13 成功 + 1 预期拒绝** | [安装](docs/validation/evidence/look-presets-20261024-r1/install/installation.json) · [Skill 核验](docs/validation/evidence/look-presets-20261024-r1/skills/verification.json)；E 盘原生安装，真实预览/应用/渲染，保留 alpha.1 |
 | R19 | 安装版逐一实测 100 个预设 | **100 个预览 + 100 个成片；425 次隔离 CLI 调用，含 2 次预期拒绝** | [核验](docs/validation/evidence/look-presets-20261024-r1/installed/verification.json) · [动态 GIF](docs/assets/look-presets-20261024-r1/motion-comparison.gif)；逐片解码 12 帧/1 秒/480×300，预览与首帧各 100 个不同哈希，上游对照与包往返首帧像素通过；合成输入，未做自然素材/听审验收 |
 | R20 | 新仓库、产品名与三语 README | **简体中文 / 繁體中文 / English 完整入口；推送目标与文档检查通过** | [维护说明](docs/maintenance/REPOSITORY_AND_READMES.md) · [检查回执](docs/validation/evidence/readme-rebrand-20261024-r1/verification.json)；2026-10-24，仅文档链接、代码块、编号一致性与推送配置检查，0 新渲染；历史包名和哈希见维护说明 |
+| R21 | 100 预设逐项效果文档与数值分析 | **100 份详细解释；100 安装版 LUT 与 100 张既有原生 PNG 对照；2 张色块图** | [完整详情](docs/local/LOOK_PRESET_DETAILS.md) · [测量与检查](docs/validation/evidence/look-profiles-20261024-r1/verification.json)；2026-10-24，43,200,000 个通道值对照，最大误差 1 码值；场景/强度为建议，0 新成片、0 自然素材验收、0 产品回归 |
 
 
 ## 已知限制与后续开发

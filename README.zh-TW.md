@@ -10,7 +10,7 @@
 
 ![實際成片：原影片與三套風格對比](docs/assets/look-presets-20261024-r1/motion-comparison.gif)
 
-上圖由原影片與三套實際成片逐影格合成，為靜音對照。[100 項完整目錄](docs/local/LOOK_PRESETS.md) · [新本機安裝包](docs/releases/v0.1.0-alpha.2/artifacts/agent-video-kit-v0.1.0-alpha.2-cp313-win_amd64.zip)。首版案例文件頁的[回應回放](docs/assets/release-v0.1.0-alpha.1-r2/workflow.gif)、[錄製](docs/assets/release-v0.1.0-alpha.1-r2/workflow.mp4)、[截圖](docs/assets/release-v0.1.0-alpha.1-r2/desktop.png)保留為歷史證據。產品本體為 CLI。
+上圖由原影片與三套實際成片逐影格合成，為靜音對照。[100 項完整目錄](docs/local/LOOK_PRESETS.md) · [新本機安裝包](docs/releases/v0.1.0-alpha.2/artifacts/agent-video-kit-v0.1.0-alpha.2-cp313-win_amd64.zip)。首版案例文件頁的[回應回放](docs/assets/release-v0.1.0-alpha.1-r2/workflow.gif)、[錄製](docs/assets/release-v0.1.0-alpha.1-r2/workflow.mp4)、[截圖](docs/assets/release-v0.1.0-alpha.1-r2/desktop.png)保留為歷史證據。產品本體為 CLI。 [每項實際作用、灰階/膚色/三色測量](docs/local/LOOK_PRESET_DETAILS.zh-TW.md)。
 
 ## 方案與執行邏輯
 
@@ -179,6 +179,7 @@ CLI 預設輸出 JSON，Agent 應同時檢查處理程序結束代碼、`ok`、`
 | R18 | 新本機包與 Skill 同步 | **8 wheels 離線安裝；17 個 Skill 格式通過；14 次入口呼叫：13 成功 + 1 預期拒絕** | [安裝](docs/validation/evidence/look-presets-20261024-r1/install/installation.json) · [Skill 核驗](docs/validation/evidence/look-presets-20261024-r1/skills/verification.json)；E 盤原生安裝，真實預覽/應用/渲染，保留 alpha.1 |
 | R19 | 安裝版逐一實測 100 個預設 | **100 個預覽 + 100 個成片；425 次隔離 CLI 呼叫，含 2 次預期拒絕** | [核驗](docs/validation/evidence/look-presets-20261024-r1/installed/verification.json) · [動態 GIF](docs/assets/look-presets-20261024-r1/motion-comparison.gif)；逐片解碼 12 影格/1 秒/480×300，預覽與第一影格各 100 個不同雜湊，上游對照與包往返第一影格像素通過；合成輸入，未做自然素材/聽審驗收 |
 | R20 | 新儲存庫、產品名與三語 README | **簡體中文 / 繁體中文 / English 完整入口；推送目標與文件檢查通過** | [維護說明](docs/maintenance/REPOSITORY_AND_READMES.md) · [檢查回執](docs/validation/evidence/readme-rebrand-20261024-r1/verification.json)；2026-10-24，僅文件連結、程式碼區塊、編號一致性與推送設定檢查，0 新渲染；歷史包名和雜湊見維護說明 |
+| R21 | 100 預設逐項效果文件與數值分析 | **100 份詳細解釋；100 安裝版 LUT 與 100 張既有原生 PNG 對照；2 張色塊圖** | [完整詳情](docs/local/LOOK_PRESET_DETAILS.zh-TW.md) · [測量與檢查](docs/validation/evidence/look-profiles-20261024-r1/verification.json)；2026-10-24，43,200,000 個通道值對照，最大誤差 1 碼值；場景/強度為建議，0 新成片、0 自然素材驗收、0 產品回歸 |
 
 
 ## 已知限制與後續開發

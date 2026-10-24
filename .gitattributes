@@ -1355,3 +1355,11 @@ docs/assets/look-presets-20261024-r1/** -text -whitespace
 docs/local/*.md text eol=lf
 docs/validation/LOOK_PRESETS_20261024.md text eol=lf
 docs/research/OPEN_LOOK_LIBRARY_20261024.md text eol=lf
+
+# Reproducible documentation-only LUT analysis, palettes and receipts.
+scripts/analyze_look_profiles.py text eol=lf
+scripts/build_look_profile_docs.py text eol=lf
+scripts/verify_look_profile_docs.py text eol=lf
+docs/local/LOOK_PRESET_NOTES.json text eol=lf
+docs/validation/evidence/look-profiles-20261024-r1/** -text -whitespace
+docs/assets/look-profiles-20261024-r1/** -text -whitespace

@@ -8,6 +8,7 @@
 |---|---|
 | 新仓库、产品名称与三语维护规则 / Repository, name and README languages | [Maintenance record](maintenance/REPOSITORY_AND_READMES.md) |
 | 100 预设完整编号、分类与实际预览 / Numbered look catalog | [100 looks](local/LOOK_PRESETS.md) |
+| 100 项实际色彩作用、灰阶/肤色/三色数值与场景建议 / Detailed measured profiles | [简体详情](local/LOOK_PRESET_DETAILS.md) · [繁體詳情](local/LOOK_PRESET_DETAILS.zh-TW.md) · [数据与核验](validation/evidence/look-profiles-20261024-r1/verification.json) |
 | 新包安装、检索、预览与应用 / Alpha.2 usage | [Alpha.2 manual](releases/v0.1.0-alpha.2/USAGE.md) |
 | 100 预设实测、单元回归、Skill 与项目包 / Current verification | [Look verification](validation/LOOK_PRESETS_20261024.md) |
 | 本机正式安装、17 个新名称与实际 Skill 调用 / Installed app and new Skill namespace | [Local installation](local/INSTALLATION.md) |

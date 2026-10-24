@@ -11,13 +11,13 @@ This page includes functional modules, services/dependencies, installation/usage
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r2 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r2.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r3 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r3.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
 <!-- community-materials-gpu -->
 
-**Local installed extension: CLI 0.1.3, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
+**Local installed extension: CLI 0.1.4, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
 
 [Complete workflow and limits](docs/product/COMMUNITY_MATERIALS.en.md) · [Resource catalog](docs/product/COMMUNITY_MATERIAL_CATALOG.md) · [103 named voices and actual audition scope](docs/product/COMMUNITY_VOICES.md) · [CPU evidence](docs/validation/evidence/community-materials-20261025-r1/cpu/verification.json) · [GPU evidence](docs/validation/evidence/community-materials-20261025-r1/gpu/verification.json).
 
@@ -28,10 +28,29 @@ This page includes functional modules, services/dependencies, installation/usage
 | F46 / M03 | Offline bidirectional translation, bilingual SRT, glossary | Cue order/milliseconds retained; translation and pronunciation need review |
 | F47 / G01 | CUDA voice/translation, auto/cpu/cuda, free-VRAM preflight | RTX 3060 tested; strict CUDA and explicit CPU fallback; optional NVIDIA runtime terms |
 | F48 / M04–M05 | Real BGM trim/loop/fades, speech/music mix and ducking | Preserved stems; no composition or automatic seam repair |
+| F49 / C01 | Native window/desktop/region/camera/microphone capture CLI, CPU/NVENC and cancellation | Actual owned-window evidence; camera/microphone, AV sync and long capture unaccepted |
 
 CPU 46 commands and GPU 15 commands are separate current tests. The real 12-second edit was fully decoded and package-round-tripped. Public examples omit speech whose publication rights remain unverified; local original stems and complete outputs remain available in delivery records. Human listening and full CapCut equivalence remain open.
 
 <!-- /community-materials-gpu -->
+
+<!-- native-capture-r1 -->
+
+## Local CLI 0.1.4: capture and audio fixes
+
+The new package retains GPU speech/translation and all 359 resources. See the [capture workflow and limits](docs/product/NATIVE_CAPTURE.md), [actual CPU MP4](docs/assets/native-capture-20261025-r1/cpu-window.mp4), [GPU MP4/GIF](docs/assets/native-capture-20261025-r1/preview.gif) and [implementation evidence](docs/validation/补齐实施首批实测_2026-10-25.md). Configure the matching runtime through the [local installation guide](docs/product/COMMUNITY_LOCAL_DELIVERY.md), then use the same Skill. R3 now preserves proven exact copied/inverted/silent source-channel relationships. General stereo phase, four-millisecond pitch quality and human listening remain open.
+
+```powershell
+& $avk project init './workspace/capture-demo'
+& $avk capture devices
+& $avk capture record --project './workspace/capture-demo' --kind window --window-title 'Your application title' --duration-seconds 5 --encoder auto --asset-id take-01 --dry-run
+& $avk capture record --project './workspace/capture-demo' --kind window --window-title 'Your application title' --duration-seconds 5 --encoder auto --asset-id take-01
+& $avk validate --project './workspace/capture-demo'
+```
+
+![Native capture — generated test pattern](docs/assets/native-capture-20261025-r1/preview.gif)
+
+<!-- /native-capture-r1 -->
 
 ## Public alpha.3: download and render your first video
 
@@ -195,6 +214,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | S14 | Local speech/translation | Native model workers | Four optional pinned CPU/CUDA packs; 103 voice mappings and OPUS text/subtitles | `voice / translate / model-pack` | Three audition voices generated; human review remains separate |
 | S15 | BGM preparation and mixing | Native FFmpeg audio | Explicit trim/loop/fades, independent voice/music stems and ducking | `music prepare/mix` | No composition, voice truncation or seam-repair promise |
 | S16 | GPU compatibility | Native NVIDIA libraries | `auto/cpu/cuda`, free-VRAM check, explicit provider/fallback | `gpu inspect; --device` | RTX 3060 tested; optional NVIDIA/Intel terms preserved |
+| S17 | Native Windows capture | FFmpeg gdigrab / DirectShow | Explicit source/device IDs, finite duration, full decode and asset registration | `capture devices/record` | Actual CPU/GPU window test; camera/microphone/AV sync pending |
 
 **Observed local environment:** this update’s doctor sees native Python 3.13.1, FFmpeg/ffprobe 8.1 and Node; this does not establish registration of every model/browser adapter. doctor merely discovers Docker/WSL executable paths and does not run them. This project uses native tools without invoking Docker/WSL/virtual environments.
 
@@ -513,12 +533,16 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R36 | Real registered Skill with GPU defaults | 11 actual CLI calls; one discovery entry, default CUDA speech/translation and explicit CPU | [Evidence](docs/validation/evidence/community-materials-20261025-r1/skill/verification.json); installed runtime only |
 | R37 | Corrected presentation and public example | Eight follow-up layout calls, no new inference; 14 separate public-example calls; both decode 360 frames | [Layout](docs/validation/evidence/community-materials-20261025-r1/cpu/presentation-correction/verification.json) · [MP4/GIF](docs/assets/community-materials-20261025-r2/verification.json); first cropped-text case retained, no human listening |
 | R38 | Current full-goal reassessment | Six successful installed read-only CLI calls; 71 declarations, with the previous 68 unchanged and three bounded community groups added; 38 gap groups updated | [Gap table, Chinese with English scope](docs/product/GOAL_GAPS_20261025.md) · [Raw responses](docs/validation/evidence/goal-gaps-20261025-r1/inventory.json); 2026-10-25, no fresh renders/inference; prior failures, human review and advanced-AI gaps remain open |
+| R39 | Exact channel relationships and audio regression | Separate 23-method targeted and 168-method broader passes; another 23-method installed pass. Targeted/broader scopes overlap and are not added | [Evidence](docs/validation/补齐实施首批实测_2026-10-25.md); 2026-10-25, real R3 antiphase retains L+R=0; 4ms pitch/general phase/listening remain open |
+| R40 | Native capture CLI | 10 contract tests; 10 development CLI calls and separately 10 installed calls; actual CPU/NVENC captures are 2s/30 frames each, with cancellation/existing output/missing window checks | [Workflow and MP4/GIF](docs/product/NATIVE_CAPTURE.md); 2026-10-25, owned test window only; no camera/microphone or AV-sync acceptance |
+| R41 | Native Qwen alignment candidate | Two actual CUDA BF16 forwards; original/independent maximum errors 220ms/161ms both fail the unchanged 66.6667ms gate | [Independent score](docs/validation/evidence/implementation-20261025-r1/native-aligner-research/quality.json); 2026-10-25, failure preserved; not registered as a production alignment engine |
+| R42 | CLI 0.1.4 native installation and unified Skill | New local bundle, eight wheels, four existing model packs verified and actual discovery entry checked; previous archives/public assets preserved | [Delivery and hashes](docs/product/COMMUNITY_LOCAL_DELIVERY.md) · [Entry evidence](docs/validation/evidence/implementation-20261025-r1/skill/verification.json); 2026-10-25, same host; full goal remains incomplete |
 
 ## Current limits and development direction
 
 The deliverable is an offline, editable and auditable Agent CLI workflow with explicit contracts. Openly licensed asset/template ecosystems, agreed AI/beauty/layout features, complete color processing, actual quality for supported draft profiles, broad natural-media acceptance and long-form resource performance remain open. Consumer GUI, accounts, cloud collaboration and arbitrary lossless private-draft interchange are outside current core acceptance. Later R113/R114 Float32 transition/runtime-closure candidates are not included in this release.
 
-The [2026-10-25 current goal-gap assessment](docs/product/GOAL_GAPS_20261025.md) updates 38 groups against local CLI 0.1.3: the single Skill, 359 resources, GPU TTS and English/Chinese translation are delivered within their documented limits; advanced AI, natural-media quality, complex combinations, performance/reliability and a new public package remain open. First address known alignment/audio failures, actual Agent tasks, human quality acceptance, long-form resources and clean-host installation; then expand content/templates and the remaining AI scope. The evidence does not establish an overall completion percentage. The [2026-10-24 assessment](docs/product/GOAL_GAPS_20261024.md) remains an alpha.3 historical snapshot.
+The [2026-10-25 current goal-gap assessment](docs/product/GOAL_GAPS_20261025.md) updates 38 groups against local CLI 0.1.4: the single Skill, 359 resources, GPU TTS and English/Chinese translation are delivered within their documented limits; advanced AI, natural-media quality, complex combinations, performance/reliability and a new public package remain open. First address known alignment/audio failures, actual Agent tasks, human quality acceptance, long-form resources and clean-host installation; then expand content/templates and the remaining AI scope. The evidence does not establish an overall completion percentage. The [2026-10-24 assessment](docs/product/GOAL_GAPS_20261024.md) remains an alpha.3 historical snapshot.
 
 Use real client media and minimal reproducible projects to identify gaps, implement/check them individually and publish new versions without replacing prior bundles/digests/tags. Record actual successful artifacts rather than inferred completion.
 

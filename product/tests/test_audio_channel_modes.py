@@ -68,10 +68,14 @@ class AudioChannelModeTests(unittest.TestCase):
         self.assertTrue(all(a+b==0 for a,b in zip(values[::2],values[1::2])))
         self.assertFalse(job['execution']['stereo_phase_accepted'])
 
-    def test_apart_phase_tradeoff_remains_visible(self):
-        self.material('antiphase');self.prepare();self.set_mode('apart');output,_,_=self.render();values=decode(output)
-        # R3's documented apart mode is not a mono-compatibility guarantee.
-        self.assertGreater(max(abs(a+b) for a,b in zip(values[::2],values[1::2])),.001)
+    def test_apart_preserves_proven_exact_antiphase_without_muting_audio(self):
+        self.material('antiphase');self.prepare();self.set_mode('apart');output,job,_=self.render();values=decode(output)
+        self.assertGreater(max(abs(value) for value in values),.01)
+        self.assertTrue(all(a+b==0 for a,b in zip(values[::2],values[1::2])))
+        proof=job['execution']['exact_channel_links']
+        self.assertEqual(proof['links'],[{'channel':1,'reference':0,'gain':-1}])
+        self.assertGreater(proof['engine_output_max_abs_change'][0]['maximum'],.001)
+        self.assertFalse(proof['arbitrary_stereo_phase_accepted'])
 
     def test_left_only_input_keeps_right_channel_exactly_silent(self):
         self.material('left-only');self.prepare()

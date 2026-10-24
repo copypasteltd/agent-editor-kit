@@ -1,0 +1,40 @@
+{
+  "args": [
+    "gpu",
+    "inspect"
+  ],
+  "exit_code": 0,
+  "result": {
+    "ok": true,
+    "command": "gpu.inspect",
+    "request_id": "req_20261024191843_6a9a9733",
+    "operation_id": null,
+    "status": "succeeded",
+    "data": {
+      "available": true,
+      "gpus": [
+        {
+          "index": 0,
+          "name": "NVIDIA GeForce RTX 3060",
+          "driver": "595.95",
+          "total_mib": 12288,
+          "free_mib": 10212,
+          "compute_capability": "8.6"
+        }
+      ],
+      "reason": null
+    },
+    "artifacts": [],
+    "warnings": [],
+    "errors": [],
+    "provenance": {
+      "cli_version": "0.1.4",
+      "schema_version": "0.1.0",
+      "engine_version": "ffmpeg-local",
+      "started_at": "2026-10-24T19:18:43.798008Z",
+      "finished_at": "2026-10-24T19:18:43.798018Z",
+      "network": "disabled"
+    }
+  },
+  "stderr": ""
+}

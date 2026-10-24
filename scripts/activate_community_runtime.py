@@ -41,7 +41,7 @@ def main():
     installed, packs = args.installed.resolve(strict=True), args.packs.resolve(strict=True)
     manifest = json.loads((ROOT / 'agent-ffmpeg-local-install-manifest.json').read_bytes())
     receipt = json.loads((installed / 'receipt.json').read_bytes())
-    if manifest['release'] != 'v0.1.0-alpha.4-local.1' or receipt['manifest_sha256'] != manifest['manifest_sha256']:
+    if receipt['manifest_sha256'] != manifest['manifest_sha256']:
         raise ValueError('Installed application does not match this reviewed Skill kit')
     for row in manifest['files']:
         path = ROOT / row['path']

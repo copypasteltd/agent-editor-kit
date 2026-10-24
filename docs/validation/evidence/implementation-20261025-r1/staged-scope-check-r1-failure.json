@@ -1,0 +1,6 @@
+{
+  "status": "audit_script_failed",
+  "reason": "The initial audit assumed Python modules at the archive root. The native wheel uses .data/purelib/.",
+  "product_failure": false,
+  "previous_check_was_a_pass": false
+}

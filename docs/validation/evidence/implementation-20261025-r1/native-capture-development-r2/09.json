@@ -1,0 +1,49 @@
+{
+  "args": [
+    "capture",
+    "record",
+    "--project",
+    "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\implementation-capture-20261025-r2",
+    "--kind",
+    "window",
+    "--window-title",
+    "aek-generated-capture-2b1bd0f915414af2bb431bff04aed1e8",
+    "--duration-seconds",
+    "2",
+    "--fps",
+    "15",
+    "--cancel-file",
+    "cancel-running",
+    "--asset-id",
+    "cancelled-running"
+  ],
+  "exit_code": 8,
+  "result": {
+    "ok": false,
+    "command": "capture.record",
+    "request_id": "req_20261024190315_38f290fd",
+    "operation_id": null,
+    "status": "failed",
+    "data": {},
+    "artifacts": [],
+    "warnings": [],
+    "errors": [
+      {
+        "code": "CANCELLED",
+        "message": "任务在启动前已被取消",
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\implementation-capture-20261025-r2\\cancel-running",
+        "retryable": false
+      }
+    ],
+    "provenance": {
+      "cli_version": "0.1.4",
+      "schema_version": "0.1.0",
+      "engine_version": "ffmpeg-local",
+      "started_at": "2026-10-24T19:03:15.226486Z",
+      "finished_at": "2026-10-24T19:03:15.226502Z",
+      "network": "disabled"
+    }
+  },
+  "stderr": "",
+  "seconds": 1.213
+}

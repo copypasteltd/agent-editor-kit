@@ -1,0 +1,33 @@
+{
+  "args": [
+    "project",
+    "init",
+    "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\implementation-capture-20261025-r3"
+  ],
+  "exit_code": 0,
+  "result": {
+    "ok": true,
+    "command": "project.init",
+    "request_id": "req_20261024191059_9e19ebb7",
+    "operation_id": null,
+    "status": "succeeded",
+    "data": {
+      "project": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\implementation-capture-20261025-r3\\project.json",
+      "root": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\implementation-capture-20261025-r3",
+      "project_id": "proj_20261024191059_63b33098"
+    },
+    "artifacts": [],
+    "warnings": [],
+    "errors": [],
+    "provenance": {
+      "cli_version": "0.1.4",
+      "schema_version": "0.1.0",
+      "engine_version": "ffmpeg-local",
+      "started_at": "2026-10-24T19:10:59.532321Z",
+      "finished_at": "2026-10-24T19:10:59.532327Z",
+      "network": "disabled"
+    }
+  },
+  "stderr": "",
+  "seconds": 0.156
+}

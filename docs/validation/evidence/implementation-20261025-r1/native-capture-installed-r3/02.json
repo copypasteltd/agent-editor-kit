@@ -1,0 +1,65 @@
+{
+  "args": [
+    "capture",
+    "devices"
+  ],
+  "exit_code": 0,
+  "result": {
+    "ok": true,
+    "command": "capture.devices",
+    "request_id": "req_20261024191059_33495881",
+    "operation_id": null,
+    "status": "succeeded",
+    "data": {
+      "engine": "ffmpeg-windows-capture-v1",
+      "platform": "win32",
+      "devices": [
+        {
+          "name": "麦克风 (4- Star Y360)",
+          "kind": "audio",
+          "alternative_name": "@device_cm_{33D9A762-90C8-11D0-BD43-00A0C911CE86}\\wave_{6C362C64-4F31-4C1B-AF9D-E7F2D82E64B1}",
+          "id": "device_4f76336b6b5a836cdd19"
+        },
+        {
+          "name": "麦克风 (Steam Streaming Microphone)",
+          "kind": "audio",
+          "alternative_name": "@device_cm_{33D9A762-90C8-11D0-BD43-00A0C911CE86}\\wave_{C588A8B5-A5CD-403C-87CA-A6F45F9265F4}",
+          "id": "device_3983fefa79ccda3d1699"
+        },
+        {
+          "name": "麦克风 (SplitCam Audio Mixer)",
+          "kind": "audio",
+          "alternative_name": "@device_cm_{33D9A762-90C8-11D0-BD43-00A0C911CE86}\\wave_{E0C1DE6E-EC40-41B3-AD67-22E939B08827}",
+          "id": "device_ca73e2337a2c6acce6e3"
+        },
+        {
+          "name": "麦克风 (ToDesk Virtual Audio)",
+          "kind": "audio",
+          "alternative_name": "@device_cm_{33D9A762-90C8-11D0-BD43-00A0C911CE86}\\wave_{EB8C2D53-3B8A-4205-87E2-48238A931FF1}",
+          "id": "device_b2cb7c9442d2357acbd9"
+        }
+      ],
+      "screen_backends": [
+        "gdigrab-desktop",
+        "gdigrab-window-title"
+      ],
+      "camera_count": 0,
+      "microphone_count": 4,
+      "network": "disabled",
+      "capture_started": false
+    },
+    "artifacts": [],
+    "warnings": [],
+    "errors": [],
+    "provenance": {
+      "cli_version": "0.1.4",
+      "schema_version": "0.1.0",
+      "engine_version": "ffmpeg-local",
+      "started_at": "2026-10-24T19:10:59.725351Z",
+      "finished_at": "2026-10-24T19:10:59.725359Z",
+      "network": "disabled"
+    }
+  },
+  "stderr": "",
+  "seconds": 0.193
+}

@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "staged_paths_before_this_receipt": 117,
+  "staged_skill_files_match_manifest": 59,
+  "changed_source_files_match_built_wheel": {
+    "product/src/ai_ad_editor/__init__.py": "ai_ad_editor-0.1.4.data/purelib/ai_ad_editor/__init__.py",
+    "product/src/ai_ad_editor/audio_channel_links.py": "ai_ad_editor-0.1.4.data/purelib/ai_ad_editor/audio_channel_links.py",
+    "product/src/ai_ad_editor/audio_stretch.py": "ai_ad_editor-0.1.4.data/purelib/ai_ad_editor/audio_stretch.py",
+    "product/src/ai_ad_editor/capabilities.py": "ai_ad_editor-0.1.4.data/purelib/ai_ad_editor/capabilities.py",
+    "product/src/ai_ad_editor/capture.py": "ai_ad_editor-0.1.4.data/purelib/ai_ad_editor/capture.py",
+    "product/src/ai_ad_editor/cli.py": "ai_ad_editor-0.1.4.data/purelib/ai_ad_editor/cli.py"
+  },
+  "generated_workspace_and_models_unstaged": true,
+  "prior_public_release_paths_unchanged": true,
+  "largest_staged_file_bytes": 491078,
+  "generator_sha256": "86e9215f2bb56552df6622eac16e77256e82ab852f4ce3dfa1dec2efdf18a0a9"
+}

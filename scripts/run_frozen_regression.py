@@ -22,6 +22,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', type=Path, required=True, help='new JSON evidence path; adjacent .log is retained')
     parser.add_argument('--pattern', default='test*.py')
+    parser.add_argument('--installed', type=Path, help='test an explicit native installed release with -I -S, never source fallback')
     parser.add_argument('--html-runtime', type=Path, default=os.environ.get('AI_AD_EDITOR_TEST_HTML_RUNTIME'),
                         help='explicit existing native Node/playwright-core/Chromium JSON; never downloads')
     parser.add_argument('--rubberband', type=Path, default=os.environ.get('AI_AD_EDITOR_TEST_RUBBERBAND'),
@@ -34,6 +35,19 @@ def main():
     before = frozen()
     record = {'started_at_utc': datetime.now(timezone.utc).isoformat(), 'pattern': args.pattern, 'frozen_before': before,
               'native_windows': sys.platform == 'win32', 'virtualization': False}
+    module_root = ROOT/'product/src'
+    installed_files = []
+    if args.installed:
+        installed = args.installed.resolve(strict=True)
+        module_root = installed/'site'
+        if not all(p.is_file() for p in (installed/'receipt.json', installed/'run.py', module_root/'ai_ad_editor/__init__.py')):
+            parser.error('--installed requires a complete explicit installed release')
+        installed_files = [p for p in (module_root/'ai_ad_editor').rglob('*')
+                           if p.is_file() and p.suffix in {'.py', '.mjs', '.json', '.c', '.dll', '.txt'}]
+        installed_files += [installed/'receipt.json', installed/'run.py']
+        record['installed_release'] = {'directory': str(installed),
+             'manifest_sha256': json.loads((installed/'receipt.json').read_bytes())['manifest_sha256'],
+             'frozen_before': {str(p.relative_to(installed)): sha(p) for p in sorted(installed_files)}}
     if args.rubberband:
         binary = args.rubberband.resolve(strict=True)
         paths = [binary, binary.with_name('COPYING.txt'), binary.with_name('sndfile.dll')]
@@ -46,12 +60,14 @@ def main():
     bootstrap = ('import sys,unittest;sys.path.insert(0,sys.argv.pop(1));'
                  'from ai_ad_editor.runtime import configure_local_runtime;configure_local_runtime();'
                  'unittest.main(module=None)')
-    command = [sys.executable, '-E', '-B', '-X', 'utf8', '-c', bootstrap, str(ROOT/'product/src'),
+    command = [sys.executable, *(['-I', '-S'] if args.installed else ['-E']), '-B', '-X', 'utf8', '-c', bootstrap, str(module_root),
                'discover', '-s', str(ROOT/'product/tests'), '-p', args.pattern, '-v']
     env = dict(os.environ)
     env.update(TEMP=str(ROOT/'product/.runtime/temp'), TMP=str(ROOT/'product/.runtime/temp'),
                TMPDIR=str(ROOT/'product/.runtime/temp'), PYTHONDONTWRITEBYTECODE='1',
-               PYTHONPATH=str(ROOT/'product/src'))
+               PYTHONPATH=str(module_root))
+    if args.installed:
+        env['AI_AD_EDITOR_RUNTIME_DIR'] = str(installed/'runtime')
     if args.rubberband:
         env['AI_AD_EDITOR_TEST_RUBBERBAND'] = str(binary)
     if args.html_runtime:
@@ -72,9 +88,14 @@ def main():
                   log_sha256=sha(log), methods=int(match[1]) if match else None,
                   suite_seconds=float(match[2]) if match else None,
                   skipped=len(re.findall(r'\.\.\. skipped ', text)), terminal_ok=bool(re.search(r'\bOK\s*$', text)))
+    if args.installed:
+        info = record['installed_release']
+        info['frozen_after'] = {str(p.relative_to(installed)): sha(p) for p in sorted(installed_files)}
+        info['frozen_equal'] = info['frozen_before'] == info['frozen_after']
+        record['frozen_equal'] = record['frozen_equal'] and info['frozen_equal']
     save()
     print(json.dumps({k: record[k] for k in ('exit_code', 'methods', 'suite_seconds', 'skipped', 'frozen_equal', 'terminal_ok')}))
-    return 0 if result.returncode == 0 and record['terminal_ok'] and before == after else 1
+    return 0 if result.returncode == 0 and record['terminal_ok'] and record['frozen_equal'] else 1
 
 if __name__ == '__main__':
     raise SystemExit(main())

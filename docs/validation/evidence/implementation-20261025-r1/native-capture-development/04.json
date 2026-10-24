@@ -1,0 +1,392 @@
+{
+  "args": [
+    "capture",
+    "record",
+    "--project",
+    "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\implementation-capture-20261025-r1",
+    "--kind",
+    "window",
+    "--window-title",
+    "aek-generated-capture-de9535744ed144aa8ab16273dab9ae6e",
+    "--duration-seconds",
+    "2",
+    "--fps",
+    "15",
+    "--asset-id",
+    "cpu-window",
+    "--encoder",
+    "libx264"
+  ],
+  "exit_code": 0,
+  "result": {
+    "ok": true,
+    "command": "capture.record",
+    "request_id": "req_20261024190144_e2dcbb51",
+    "operation_id": "op_20261024190144_eefe3fcc",
+    "status": "succeeded",
+    "data": {
+      "asset": {
+        "id": "cpu-window",
+        "kind": "video",
+        "uri": "assets/captures/cpu-window/capture.mp4",
+        "sha256": "sha256:e5c4482d6d2155f150026fb177ee402d3630ce34dbf309fb319ec8fe79c54394",
+        "probe": {
+          "duration_seconds": 2.0,
+          "duration_tick": 180000,
+          "format": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "h264",
+              "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+              "profile": "High",
+              "codec_type": "video",
+              "codec_tag_string": "avc1",
+              "codec_tag": "0x31637661",
+              "mime_codec_string": "avc1.640015",
+              "width": 484,
+              "height": 282,
+              "coded_width": 484,
+              "coded_height": 282,
+              "has_b_frames": 2,
+              "pix_fmt": "yuv420p",
+              "level": 21,
+              "chroma_location": "left",
+              "field_order": "progressive",
+              "is_avc": "true",
+              "nal_length_size": "4",
+              "id": "0x1",
+              "r_frame_rate": "15/1",
+              "avg_frame_rate": "15/1",
+              "time_base": "1/15360",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 30720,
+              "duration": "2.000000",
+              "bit_rate": "391600",
+              "bits_per_raw_sample": "8",
+              "nb_frames": "30",
+              "extradata_size": 45,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "language": "und",
+                "handler_name": "VideoHandler",
+                "encoder": "Lavc62.28.100 libx264"
+              }
+            }
+          ],
+          "video": {
+            "codec": "h264",
+            "width": 484,
+            "height": 282,
+            "pix_fmt": "yuv420p",
+            "fps": "15/1",
+            "color_space": null,
+            "duration_seconds": 2.0,
+            "start_time_seconds": 0.0
+          },
+          "audio": {
+            "codec": null,
+            "sample_rate": 0,
+            "channels": 0,
+            "duration_seconds": 0.0,
+            "start_time_seconds": 0.0
+          }
+        },
+        "rights_ref": "cpu-window",
+        "source": {
+          "source_url": "local://assets/captures/cpu-window/SOURCE.json",
+          "source_version": "ffmpeg-windows-capture-v1",
+          "retrieved_at": "2026-10-24T19:01:44.440786Z",
+          "original_name": "capture.mp4"
+        }
+      },
+      "rights": {
+        "asset_id": "cpu-window",
+        "kind": "video",
+        "sha256": "sha256:e5c4482d6d2155f150026fb177ee402d3630ce34dbf309fb319ec8fe79c54394",
+        "source_url": "local://assets/captures/cpu-window/SOURCE.json",
+        "source_version": "ffmpeg-windows-capture-v1",
+        "creator": "local capture",
+        "license_spdx": "LicenseRef-UNVERIFIED",
+        "license_url": "",
+        "attribution": "",
+        "permitted_uses": [
+          "internal"
+        ],
+        "restrictions": [],
+        "evidence": "assets/captures/cpu-window/SOURCE.json",
+        "verification_status": "unverified",
+        "verified_by": "",
+        "takedown_status": "clear",
+        "retrieved_at": "2026-10-24T19:01:44.440831Z",
+        "notes": "Capture does not grant rights to screen, camera, speech or underlying content.",
+        "record_id": "rights_20261024190144_fa01f465",
+        "record_version": 1,
+        "active": true,
+        "recorded_at": "2026-10-24T19:01:44.448838Z",
+        "permitted_channels": []
+      },
+      "generated_clip": null,
+      "report": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\implementation-capture-20261025-r1\\validation\\community_op_20261024190144_eefe3fcc.json",
+      "snapshot": {
+        "snapshot_id": "snap_20261024190144_4b67ba2a",
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\implementation-capture-20261025-r1\\history\\snap_20261024190144_4b67ba2a.json",
+        "label": "before-capture-record",
+        "created_at": "2026-10-24T19:01:44.442274Z"
+      },
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "warnings": [
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "cpu-window",
+            "rights_ref": "cpu-window",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "cpu-window",
+            "rights_ref": "cpu-window",
+            "record_version": 1,
+            "context": "project_asset"
+          }
+        ],
+        "rights": {
+          "ok": true,
+          "target": "commercial_ad",
+          "checked": 1,
+          "required_records": 1,
+          "failures": [],
+          "warnings": [
+            {
+              "status": "unverified",
+              "code": "RIGHTS_STATUS_BLOCKED",
+              "message": "状态 unverified 不允许发布",
+              "asset_id": "cpu-window",
+              "rights_ref": "cpu-window",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "code": "RIGHTS_USE_NOT_PERMITTED",
+              "message": "记录未允许目标用途: commercial_ad",
+              "asset_id": "cpu-window",
+              "rights_ref": "cpu-window",
+              "record_version": 1,
+              "context": "project_asset"
+            }
+          ],
+          "disposition_decisions": [],
+          "effective_disposition_decisions": []
+        },
+        "schema_engine": "jsonschema",
+        "asset_count": 1,
+        "sequence_count": 1
+      },
+      "operation_id": "op_20261024190144_eefe3fcc",
+      "network": "disabled",
+      "capture": {
+        "engine": "ffmpeg-windows-capture-v1",
+        "kind": "window",
+        "duration_seconds": 2.0,
+        "fps": 15,
+        "requested_encoder": "libx264",
+        "selected_encoder": "libx264",
+        "cpu_fallback_reason": null,
+        "camera": null,
+        "microphone": null,
+        "window_title": "aek-generated-capture-de9535744ed144aa8ab16273dab9ae6e",
+        "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\implementation-capture-20261025-r1\\assets\\captures\\cpu-window\\capture.mp4",
+        "network": "disabled",
+        "av_sync_review_required": false,
+        "rights_verified": false,
+        "started_at_utc": "2026-10-24T19:01:41.361740+00:00",
+        "completed_at_utc": "2026-10-24T19:01:44.410640+00:00",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "full_decode": true,
+        "probe": {
+          "duration_seconds": 2.0,
+          "duration_tick": 180000,
+          "format": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "h264",
+              "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+              "profile": "High",
+              "codec_type": "video",
+              "codec_tag_string": "avc1",
+              "codec_tag": "0x31637661",
+              "mime_codec_string": "avc1.640015",
+              "width": 484,
+              "height": 282,
+              "coded_width": 484,
+              "coded_height": 282,
+              "has_b_frames": 2,
+              "pix_fmt": "yuv420p",
+              "level": 21,
+              "chroma_location": "left",
+              "field_order": "progressive",
+              "is_avc": "true",
+              "nal_length_size": "4",
+              "id": "0x1",
+              "r_frame_rate": "15/1",
+              "avg_frame_rate": "15/1",
+              "time_base": "1/15360",
+              "start_pts": 0,
+              "start_time": "0.000000",
+              "duration_ts": 30720,
+              "duration": "2.000000",
+              "bit_rate": "391600",
+              "bits_per_raw_sample": "8",
+              "nb_frames": "30",
+              "extradata_size": 45,
+              "disposition": {
+                "default": 1,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              },
+              "tags": {
+                "language": "und",
+                "handler_name": "VideoHandler",
+                "encoder": "Lavc62.28.100 libx264"
+              }
+            }
+          ],
+          "video": {
+            "codec": "h264",
+            "width": 484,
+            "height": 282,
+            "pix_fmt": "yuv420p",
+            "fps": "15/1",
+            "color_space": null,
+            "duration_seconds": 2.0,
+            "start_time_seconds": 0.0
+          },
+          "audio": {
+            "codec": null,
+            "sample_rate": 0,
+            "channels": 0,
+            "duration_seconds": 0.0,
+            "start_time_seconds": 0.0
+          }
+        },
+        "attempts": [
+          {
+            "encoder": "libx264",
+            "returncode": 0,
+            "stderr": "",
+            "command": [
+              "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+              "-hide_banner",
+              "-loglevel",
+              "warning",
+              "-nostdin",
+              "-n",
+              "-thread_queue_size",
+              "512",
+              "-f",
+              "gdigrab",
+              "-framerate",
+              "15",
+              "-draw_mouse",
+              "0",
+              "-offset_x",
+              "0",
+              "-offset_y",
+              "0",
+              "-i",
+              "title=aek-generated-capture-de9535744ed144aa8ab16273dab9ae6e",
+              "-t",
+              "2.0",
+              "-map",
+              "0:v:0",
+              "-vf",
+              "pad=ceil(iw/2)*2:ceil(ih/2)*2",
+              "-r",
+              "15",
+              "-fps_mode",
+              "cfr",
+              "-c:v",
+              "libx264",
+              "-pix_fmt",
+              "yuv420p",
+              "-preset",
+              "veryfast",
+              "-crf",
+              "20",
+              "-threads",
+              "2",
+              "-an",
+              "-movflags",
+              "+faststart",
+              "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\implementation-capture-20261025-r1\\cache\\capture\\run_20261024190140_49e30076\\libx264.mp4"
+            ]
+          }
+        ]
+      }
+    },
+    "artifacts": [],
+    "warnings": [
+      {
+        "code": "CAPTURE_REVIEW_REQUIRED",
+        "message": "检查采集画面/声音、音画同步与内容权利"
+      }
+    ],
+    "errors": [],
+    "provenance": {
+      "cli_version": "0.1.4",
+      "schema_version": "0.1.0",
+      "engine_version": "ffmpeg-local",
+      "started_at": "2026-10-24T19:01:44.868982Z",
+      "finished_at": "2026-10-24T19:01:44.868990Z",
+      "network": "disabled"
+    }
+  },
+  "stderr": "",
+  "seconds": 4.504
+}

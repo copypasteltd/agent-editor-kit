@@ -7,7 +7,7 @@ description: "Edit and deliver local videos with agent editor kit: multitrack ed
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.1` / CLI `0.1.3`.
+The current local runtime is `v0.1.0-alpha.4-local.2` / CLI `0.1.4`.
 The published alpha.3 downloads retain CLI 0.1.2 and their original scope.
 
 ## Runtime and common workflow
@@ -62,6 +62,9 @@ media. Add other modules when the request needs them. For example:
   and license, record the chosen target, then test it on the client's footage.
 - Local AI task: local-models plus the relevant media module; require existing
   registered dependencies and check actual inference artifacts.
+- Native window/screen/camera/microphone capture: read
+  [native-capture.md](references/native-capture.md), select an explicit source,
+  record for a finite duration, then edit the returned asset ID normally.
 - Voice, translation or music: read [community-materials.md](references/community-materials.md).
   The configured `auto` device prefers GPU for speech/translation, reports the
   actual provider and explicitly records CPU fallback. Preserve source stems.

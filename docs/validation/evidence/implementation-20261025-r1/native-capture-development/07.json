@@ -1,0 +1,48 @@
+{
+  "args": [
+    "capture",
+    "record",
+    "--project",
+    "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\implementation-capture-20261025-r1",
+    "--kind",
+    "window",
+    "--window-title",
+    "aek-generated-capture-de9535744ed144aa8ab16273dab9ae6e-missing",
+    "--duration-seconds",
+    "1",
+    "--encoder",
+    "libx264",
+    "--asset-id",
+    "missing"
+  ],
+  "exit_code": 6,
+  "result": {
+    "ok": false,
+    "command": "capture.record",
+    "request_id": "req_20261024190150_1267d1f2",
+    "operation_id": null,
+    "status": "failed",
+    "data": {},
+    "artifacts": [],
+    "warnings": [],
+    "errors": [
+      {
+        "code": "CAPTURE_INPUT_FAILED",
+        "message": "原生采集失败；诊断和部分文件保留在 cache/capture",
+        "path": null,
+        "retryable": false,
+        "cause": "[in#0 @ 000001f5d9efae80] Can't find window 'aek-generated-capture-de9535744ed144aa8ab16273dab9ae6e-missing', aborting.\n[in#0 @ 000001f5d9efac40] Error opening input: I/O error\nError opening input file title=aek-generated-capture-de9535744ed144aa8ab16273dab9ae6e-missing.\nError opening input files: I/O error\n"
+      }
+    ],
+    "provenance": {
+      "cli_version": "0.1.4",
+      "schema_version": "0.1.0",
+      "engine_version": "ffmpeg-local",
+      "started_at": "2026-10-24T19:01:50.340207Z",
+      "finished_at": "2026-10-24T19:01:50.340220Z",
+      "network": "disabled"
+    }
+  },
+  "stderr": "",
+  "seconds": 1.107
+}

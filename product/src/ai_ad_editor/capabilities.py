@@ -25,6 +25,17 @@ def build_capability_manifest() -> dict[str, Any]:
         "engine": {"id": ENGINE_ID, "version": VERSION, "runtime": "python+ffmpeg-local", "network": "disabled"},
         "ffmpeg": {"version": ffmpeg_version()},
         "capabilities": {
+            'native_capture': {
+                'status': 'implemented_with_limits', 'engine': 'ffmpeg-windows-capture-v1',
+                'commands': ['capture.devices', 'capture.record'],
+                'sources': ['explicit_window_title', 'desktop_or_region', 'explicit_dshow_camera', 'explicit_dshow_microphone'],
+                'features': ['bounded_native_windows_recording', 'stable_current_device_ids',
+                             'optional_explicit_audio_input', 'cpu_or_nvenc_video_encoding',
+                             'auto_records_cpu_fallback', 'cancellation_and_preserved_diagnostics',
+                             'complete_output_decode_before_asset_registration', 'local_source_evidence'],
+                'limits': ['windows_gdigrab_and_dshow_build_required', 'no_implicit_microphone_or_camera',
+                           'device_modes_and_permissions_must_be_available', 'av_sync_and_natural_recording_need_review',
+                           'not_a_capture_of_all_windows_or_a_background_monitor', 'capture_does_not_grant_content_rights']},
             'community_materials': {
                 'status': 'implemented_with_limits', 'catalog_version': community_resources['catalog_version'],
                 'commands': ['materials.list', 'materials.inspect', 'materials.verify', 'materials.ingest'],

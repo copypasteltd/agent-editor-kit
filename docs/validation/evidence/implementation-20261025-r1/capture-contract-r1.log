@@ -1,0 +1,15 @@
+test_camera_and_microphone_have_explicit_valid_requests (test_capture.CaptureContractTests.test_camera_and_microphone_have_explicit_valid_requests) ... ok
+test_cancelled_cli_does_not_enumerate_or_publish (test_capture.CaptureContractTests.test_cancelled_cli_does_not_enumerate_or_publish) ... ok
+test_cli_never_selects_a_microphone_implicitly (test_capture.CaptureContractTests.test_cli_never_selects_a_microphone_implicitly) ... ok
+test_dshow_audio_is_mapped_to_second_input_for_video_and_first_for_audio (test_capture.CaptureContractTests.test_dshow_audio_is_mapped_to_second_input_for_video_and_first_for_audio) ... ok
+test_duplicate_hardware_identity_is_not_accepted (test_capture.CaptureContractTests.test_duplicate_hardware_identity_is_not_accepted) ... ok
+test_empty_hardware_inventory_does_not_claim_a_camera (test_capture.CaptureContractTests.test_empty_hardware_inventory_does_not_claim_a_camera) ... ok
+test_invalid_or_ambiguous_requests_fail_before_capture (test_capture.CaptureContractTests.test_invalid_or_ambiguous_requests_fail_before_capture) ... ok
+test_missing_dshow_backend_is_an_error (test_capture.CaptureContractTests.test_missing_dshow_backend_is_an_error) ... ok
+test_unicode_device_ids_are_stable_and_bound_to_kind_and_path (test_capture.CaptureContractTests.test_unicode_device_ids_are_stable_and_bound_to_kind_and_path) ... ok
+test_window_title_is_one_literal_argument (test_capture.CaptureContractTests.test_window_title_is_one_literal_argument) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.529s
+
+OK

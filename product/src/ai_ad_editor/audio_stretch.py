@@ -14,6 +14,7 @@ import sys
 import tempfile
 
 from .artifact_locks import artifact_entry, verification_scope
+from .audio_channel_links import POLICY as CHANNEL_LINK_POLICY
 from .errors import AppError
 from .media import ffmpeg_path
 from .policy import resolve_local_path
@@ -128,6 +129,8 @@ def plan(root: Path, engine: dict, asset: dict, source: Path, start: float, end:
            'source_context': context,
            'source_audio_clock': 'native-decoded-audio-interval-clock-v1',
            'native_audio_clock_implementation':artifact_entry(Path(__file__).with_name('native_audio_clock.py'),'audio-clock-implementation'),
+           'channel_link_policy': CHANNEL_LINK_POLICY,
+           'channel_links_implementation': artifact_entry(Path(__file__).with_name('audio_channel_links.py'), 'audio-channel-links-implementation'),
            'reverse_after_stretch': bool(reverse), 'implementation_sha256': implementation,
            'ffmpeg': artifact_entry(Path(ffmpeg_path()).resolve(), 'audio-stretch-ffmpeg')}
     key = hashlib.sha256(json.dumps(job, sort_keys=True, separators=(',', ':')).encode('utf-8')).hexdigest()
@@ -235,7 +238,7 @@ def _decode_clocked_source(root,job,context,destination,cancel_file):
 def execute(root: Path, job: dict, temp_dir: Path, *, cancel_file: Path | None = None) -> dict:
     """Study/process once per whole clip, and preserve immutable derived bytes."""
     with verification_scope():
-        for expected in [*job['engine']['artifacts'], job['ffmpeg'],job['native_audio_clock_implementation'],
+        for expected in [*job['engine']['artifacts'], job['ffmpeg'],job['native_audio_clock_implementation'],job['channel_links_implementation'],
                          {'path': job['source'], 'sha256': job['source_sha256']}]:
             actual = artifact_entry(Path(expected['path']), 'audio-stretch-execution')
             if actual['sha256'] != expected['sha256']:
@@ -265,8 +268,13 @@ def execute(root: Path, job: dict, temp_dir: Path, *, cancel_file: Path | None =
                 selected_input=work/'selected-input.wav'
                 _canonical_pcm(source,selected_input,before,start_frame=context['source_head_frames'],frames=job['source_frames'])
                 before=inspect_pcm(selected_input)
-            # Keep the V26 centre/mono-compatible default. Native "apart"
-            # favours per-channel spectra but does not preserve stereo phase.
+            # R3's general stereo-phase tradeoff remains explicit. Exact source
+            # copies/inversions are a stronger invariant and can be restored
+            # without guessing a correlation or changing independent channels.
+            from .audio_channel_links import detect_links, canonical_linked_pcm
+            if job.get('channel_link_policy') != CHANNEL_LINK_POLICY:
+                raise _error('AUDIO_CHANNEL_LINKS_INVALID', '离线计划的声道关系策略无效')
+            channel_links = detect_links(source, context_input, cancel_file=cancel_file)
             channel_mode=job['engine'].get('channel_mode', 'together')
             if channel_mode not in ('together', 'apart'):
                 raise _error('AUDIO_STRETCH_CONFIG_INVALID', '离线计划的 channel_mode 无效')
@@ -283,7 +291,11 @@ def execute(root: Path, job: dict, temp_dir: Path, *, cancel_file: Path | None =
             if cancel_file is not None and cancel_file.exists():
                 raise AppError('CANCELLED', '离线伸缩结束后任务已取消', exit_code=8, path=str(cancel_file))
             raw_output=after;canonical=work/'canonical.wav'
-            _canonical_pcm(result,canonical,raw_output,start_frame=context['output_head_frames'],frames=job['target_frames'])
+            if channel_links['links']:
+                channel_links = canonical_linked_pcm(result, canonical, raw_output, channel_links,
+                    start_frame=context['output_head_frames'], frames=job['target_frames'], cancel_file=cancel_file)
+            else:
+                _canonical_pcm(result,canonical,raw_output,start_frame=context['output_head_frames'],frames=job['target_frames'])
             after=inspect_pcm(canonical)
             if any(a and not b for a,b in zip(before['nonzero_samples'],after['nonzero_samples'])):
                 raise AppError('AUDIO_STRETCH_CONTENT_LOST', '离线伸缩将非零输入声道变为全静音', exit_code=6)
@@ -300,7 +312,9 @@ def execute(root: Path, job: dict, temp_dir: Path, *, cancel_file: Path | None =
                 raise AppError('AUDIO_STRETCH_HASH_MISMATCH', '离线音频缓存加锁时字节变化', exit_code=6, path=str(output))
             return {'status':'succeeded','decode_command':decode,'command':command,'channel_mode':channel_mode,
                     'decode_stderr':decoded.stderr,'engine_stderr':processed.stderr,
-                    'input_pcm':before,'engine_raw_output_pcm':raw_output,'output_pcm':after,'canonicalization':'float32-pcm-bytes-preserved-no-wall-time-metadata','time_map_utf8':mapping_text,
+                    'input_pcm':before,'engine_raw_output_pcm':raw_output,'output_pcm':after,
+                    'canonicalization':('float32-pcm-exact-channel-links-no-wall-time-metadata' if channel_links['links'] else 'float32-pcm-bytes-preserved-no-wall-time-metadata'),
+                    'exact_channel_links':channel_links,'time_map_utf8':mapping_text,
                     'source_context':context,'context_input_pcm':context_input,
                     'native_audio_clock':native_clock,'source_clock_bound':source_bound,
                     'engine_time_map':engine_anchors,'time_map_sha256':'sha256:'+hashlib.sha256(mapping_text.encode('ascii')).hexdigest(),

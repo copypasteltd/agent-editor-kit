@@ -1429,3 +1429,14 @@ docs/maintenance/COMMUNITY_DOCS_20261025.md text eol=lf
 docs/skills/community-unified-skill-package.json text eol=lf
 docs/validation/evidence/goal-gaps-20261025-r1/** -text -whitespace
 scripts/assess_goal_gaps_20261025.py text eol=lf
+
+# Preserve first implementation evidence, source snapshots and real capture bytes.
+docs/validation/evidence/implementation-20261025-r1/** -text -whitespace
+docs/assets/native-capture-20261025-r1/** -text -whitespace
+sources/alignment-20261025/** -text -whitespace
+skills/agent-ffmpeg-local-editor/references/native-capture.md text eol=lf
+scripts/*capture*20261025.py text eol=lf
+scripts/*qwen*20261025.py text eol=lf
+scripts/*implementation*20261025.py text eol=lf
+scripts/verify_current_skill_20261025.py text eol=lf
+docs/validation/补齐实施首批实测_2026-10-25.md text eol=lf

@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "test_scopes_overlap_do_not_sum": true,
+  "tests": {
+    "audio-channel-tests-r1": 23,
+    "audio-regression-r1": 168,
+    "capture-contract-r1": 10,
+    "installed-channel-tests-r1": 23
+  },
+  "separate_cli_scopes": {
+    "native-capture-development-r2": 10,
+    "native-capture-installed-r3": 10,
+    "skill": 11
+  },
+  "qwen_failed_original_gates_preserved": true,
+  "readme_ids": {
+    "F": 49,
+    "S": 17,
+    "K": 17,
+    "R": 42
+  },
+  "three_readme_commands_identical": true,
+  "local_links_checked": 1331,
+  "stable_gap_groups": 38,
+  "old_archives_unchanged": true,
+  "skill_count": 1,
+  "module_count": 17,
+  "release": "v0.1.0-alpha.4-local.2",
+  "generator_sha256": "30d53177c3b743c8ac65bbbae08ca639eb96c51a1653d4d6edd9e4c006cad357",
+  "complete_capcut_goal_accepted": false
+}

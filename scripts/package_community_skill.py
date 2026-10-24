@@ -12,10 +12,13 @@ ROOT = Path(__file__).resolve().parents[1]
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--output', type=Path, required=True)
+    p.add_argument('--archive-name', default='agent-editor-kit-community-unified-skill-r2.zip')
     a = p.parse_args()
     out = a.output.resolve()
     if out.exists() or not out.is_relative_to(ROOT):
         raise ValueError('Select a new owned output directory')
+    if Path(a.archive_name).name != a.archive_name or not a.archive_name.endswith('.zip'):
+        raise ValueError('Use a local ZIP basename')
     manifest = json.loads((ROOT / 'agent-ffmpeg-local-install-manifest.json').read_bytes())
     files = {}
     for row in manifest['files']:
@@ -52,19 +55,19 @@ def main():
             return match[1] + 'https://github.com/copypasteltd/agent-editor-kit/blob/main/' + relative + (mark + fragment if mark else '') + ')'
         files[name] = re.sub(r'(!?\[[^\]]*\]\()([^\n)]+)\)', link, files[name].decode('utf8')).encode('utf8')
     files['KIT-FILES.json'] = (json.dumps(dict(format='agent-community-single-skill-v1',
-        release=manifest['release'], cli_version='0.1.3', skill_count=1, module_count=17,
+        release=manifest['release'], cli_version=manifest['cli_version'], skill_count=1, module_count=17,
         files=[dict(path=name, bytes=len(data), sha256=hashlib.sha256(data).hexdigest())
                for name, data in sorted(files.items())]), ensure_ascii=False, indent=2) + '\n').encode('utf8')
     assert [name for name in files if Path(name).name == 'SKILL.md'] == ['skills/agent-ffmpeg-local-editor/SKILL.md']
     out.mkdir(parents=True)
-    archive = out / 'agent-editor-kit-community-unified-skill-r2.zip'
+    archive = out / a.archive_name
     with zipfile.ZipFile(archive, 'x') as zipped:
         for name, data in sorted(files.items()):
             info = zipfile.ZipInfo(name, (2026, 10, 25, 0, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = 0o100644 << 16
             zipped.writestr(info, data)
-    report = dict(format='agent-community-single-skill-package-v1', release=manifest['release'], cli_version='0.1.3',
+    report = dict(format='agent-community-single-skill-package-v1', release=manifest['release'], cli_version=manifest['cli_version'],
         archive=str(archive), bytes=archive.stat().st_size, sha256=hashlib.sha256(archive.read_bytes()).hexdigest(),
         files=len(files), skill_count=1, module_count=17, base_application_and_model_archives_separate=True)
     (out / 'package.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf8')

@@ -13,4 +13,8 @@ and `quality golden` help for requested comparisons. Retain reports, manifests a
 Separate automatic decode/PCM checks, static review, continuous playback and human listening. A passed encode
 does not establish natural quality or full CapCut parity.
 
+R3 now preserves sample-exact copied, inverted or silent source-channel
+relationships and records its proof/change manifest. This does not accept
+arbitrary stereo phase or the known four-millisecond stretch pitch failures.
+
 For looks and client choices, read [looks](../../looks.md) and [actual visual selection](../../client-look-selection.md).

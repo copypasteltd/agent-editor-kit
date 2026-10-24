@@ -1,0 +1,121 @@
+{
+  "repository": "Qwen/Qwen3-ForcedAligner-0.6B-hf",
+  "revision": "053506a54ad1c9deea6105050330d7c500b9f098",
+  "source": "official ModelScope Qwen organization",
+  "metadata_sha256": "003d509636e02b86b33d78420240bd71d5ec684bc79167061f1a6817228e46b9",
+  "development_network": true,
+  "runtime_downloads": false,
+  "weights_executed": false,
+  "files": [
+    {
+      "file": ".gitattributes",
+      "expected_bytes": 2129,
+      "sha256": "0aefab68978f25d82421f2039b23711121eb624b23fac3376f941aab386c05be",
+      "source_url": "https://modelscope.cn/api/v1/models/Qwen/Qwen3-ForcedAligner-0.6B-hf/repo?Revision=053506a54ad1c9deea6105050330d7c500b9f098&FilePath=.gitattributes",
+      "attempts": [
+        {
+          "offset": 0
+        }
+      ],
+      "status": "verified"
+    },
+    {
+      "file": "README.md",
+      "expected_bytes": 9419,
+      "sha256": "30de8315ece609b239c719539336b99188a2a92aef89a1fdcd60b11e40abd063",
+      "source_url": "https://modelscope.cn/api/v1/models/Qwen/Qwen3-ForcedAligner-0.6B-hf/repo?Revision=053506a54ad1c9deea6105050330d7c500b9f098&FilePath=README.md",
+      "attempts": [
+        {
+          "offset": 0
+        }
+      ],
+      "status": "verified"
+    },
+    {
+      "file": "chat_template.jinja",
+      "expected_bytes": 551,
+      "sha256": "59b5ae119bda7c00089bba5f49af775791ea67c7aeb7d2b828cddda9463121bf",
+      "source_url": "https://modelscope.cn/api/v1/models/Qwen/Qwen3-ForcedAligner-0.6B-hf/repo?Revision=053506a54ad1c9deea6105050330d7c500b9f098&FilePath=chat_template.jinja",
+      "attempts": [
+        {
+          "offset": 0
+        }
+      ],
+      "status": "verified"
+    },
+    {
+      "file": "config.json",
+      "expected_bytes": 248029,
+      "sha256": "82ac390b36a8f80c5a0c4e202367debd149e5d8c30abe4cf5eed439101b1c5ce",
+      "source_url": "https://modelscope.cn/api/v1/models/Qwen/Qwen3-ForcedAligner-0.6B-hf/repo?Revision=053506a54ad1c9deea6105050330d7c500b9f098&FilePath=config.json",
+      "attempts": [
+        {
+          "offset": 0
+        }
+      ],
+      "status": "verified"
+    },
+    {
+      "file": "configuration.json",
+      "expected_bytes": 63,
+      "sha256": "0657e261c850f8d368b4da948a15279089f3484d40c152cc07fb4e9d1727ca3d",
+      "source_url": "https://modelscope.cn/api/v1/models/Qwen/Qwen3-ForcedAligner-0.6B-hf/repo?Revision=053506a54ad1c9deea6105050330d7c500b9f098&FilePath=configuration.json",
+      "attempts": [
+        {
+          "offset": 0
+        }
+      ],
+      "status": "verified"
+    },
+    {
+      "file": "processor_config.json",
+      "expected_bytes": 487,
+      "sha256": "bc0b230081b44e629dd5b9045b78495615c1831b4b9f4cffe97bd37e82a6156a",
+      "source_url": "https://modelscope.cn/api/v1/models/Qwen/Qwen3-ForcedAligner-0.6B-hf/repo?Revision=053506a54ad1c9deea6105050330d7c500b9f098&FilePath=processor_config.json",
+      "attempts": [
+        {
+          "offset": 0
+        }
+      ],
+      "status": "verified"
+    },
+    {
+      "file": "tokenizer.json",
+      "expected_bytes": 11429842,
+      "sha256": "cadfb9cbd9ff8f4e309075ec6a71b063295ff796afb4b5dbc0fd2873fbb301f2",
+      "source_url": "https://modelscope.cn/api/v1/models/Qwen/Qwen3-ForcedAligner-0.6B-hf/repo?Revision=053506a54ad1c9deea6105050330d7c500b9f098&FilePath=tokenizer.json",
+      "attempts": [
+        {
+          "offset": 0
+        }
+      ],
+      "status": "verified"
+    },
+    {
+      "file": "tokenizer_config.json",
+      "expected_bytes": 998,
+      "sha256": "945e980986de2ca7768f3326bfdbb4fbea3406f972b8ae0be233089f2b253c11",
+      "source_url": "https://modelscope.cn/api/v1/models/Qwen/Qwen3-ForcedAligner-0.6B-hf/repo?Revision=053506a54ad1c9deea6105050330d7c500b9f098&FilePath=tokenizer_config.json",
+      "attempts": [
+        {
+          "offset": 0
+        }
+      ],
+      "status": "verified"
+    },
+    {
+      "file": "model.safetensors",
+      "expected_bytes": 1835545960,
+      "sha256": "00568245ceca5af1991d28562a75fe1ddc9bfeb041c27fda66947ea05c47fb86",
+      "source_url": "https://modelscope.cn/api/v1/models/Qwen/Qwen3-ForcedAligner-0.6B-hf/repo?Revision=053506a54ad1c9deea6105050330d7c500b9f098&FilePath=model.safetensors",
+      "attempts": [
+        {
+          "offset": 0
+        }
+      ],
+      "status": "verified"
+    }
+  ],
+  "status": "downloaded_verified",
+  "generator_sha256": "42dbb3b8336bf117edb027cf48a62ec1665edbd7bfee7111b15872c836c6951e"
+}

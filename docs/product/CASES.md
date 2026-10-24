@@ -389,3 +389,13 @@ MP4 与原蒙版均为 8 fps、32 帧；GIF 保留全部 32 帧，帧时长交�
 [原输入 MP4](../assets/readme-20261016/two-surfaces-input.mp4) · [完整对照 MP4](../assets/readme-20261016/two-surfaces-comparison.mp4)
 
 研究数组没有原始播放时钟，公开动画统一按 5 fps 展示，每组 2.4 秒；PSNR 在原始无损数组上计算，GIF/MP4 不用于指标计算。已完成全部媒体解码和抽帧目检，尚未做连续播放/听审。复现命令、素材哈希、检查边界与维护规则见[演示核验记录](../validation/README功能核验与实测演示_2026-10-16.md)。
+
+## CLI 0.1.4 原生采集案例 / Native capture case
+
+自身动态测试窗口 → CPU/NVENC 各 2 秒/30 帧 → 完整解码、画面变化 → 可编辑资产与来源记录。开发版/安装版各 10 次命令。
+
+Owned animated test window → two-second/30-frame CPU and NVENC recordings → complete decode and moving pixels → editable local assets and provenance. Ten development calls and ten separate installed calls.
+
+![Actual GPU capture](../assets/native-capture-20261025-r1/preview.gif)
+
+[步骤、原始 MP4 与未验边界 / Workflow, source outputs and limits](NATIVE_CAPTURE.md) · [完整证据 / Evidence](../validation/补齐实施首批实测_2026-10-25.md)。摄像头、麦克风、音画同步与连续人工观看仍待验收 / Camera, microphone, AV sync and continuous human viewing remain unaccepted.

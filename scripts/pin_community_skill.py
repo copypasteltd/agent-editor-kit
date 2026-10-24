@@ -16,11 +16,14 @@ def sha(path):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--bundle', type=Path, required=True)
+    p.add_argument('--release', default='v0.1.0-alpha.4-local.1')
     a = p.parse_args()
     bundle = a.bundle.resolve(strict=True)
     base = json.loads((bundle / 'manifest.json').read_bytes())
-    assert next(r for r in base['wheels'] if r['name'] == 'ai-ad-editor')['version'] == '0.1.3'
-    digest, release = 'sha256:' + sha(bundle / 'manifest.json'), 'v0.1.0-alpha.4-local.1'
+    version = next(r for r in base['wheels'] if r['name'] == 'ai-ad-editor')['version']
+    if not re.fullmatch(r'v[0-9]+\.[0-9]+\.[0-9]+[A-Za-z0-9.-]*', a.release):
+        raise ValueError('Release name must be a safe version identifier')
+    digest, release = 'sha256:' + sha(bundle / 'manifest.json'), a.release
     entry = ROOT / 'skills/agent-ffmpeg-local-editor'
     launcher = entry / 'scripts/run.py'
     text = launcher.read_text('utf8')
@@ -32,7 +35,7 @@ def main():
     manifest_path = ROOT / 'agent-ffmpeg-local-install-manifest.json'
     manifest = json.loads(manifest_path.read_bytes())
     assert manifest['skill_count'] == 1 and manifest['module_count'] == 17
-    manifest.update(release=release, manifest_sha256=digest, cli_version='0.1.3',
+    manifest.update(release=release, manifest_sha256=digest, cli_version=version,
                     material_count=359, named_voice_count=103, optional_model_pack_count=4)
     manifest['skills'][0]['skill_md_sha256'] = sha(entry / 'SKILL.md')
     manifest['skills'][0]['purpose_zh'] = '唯一入口：17 项内部模块、GPU 配音/翻译、素材/配乐与已安装版交付'

@@ -1231,6 +1231,8 @@ def build_parser() -> argparse.ArgumentParser:
     policy_audit.add_argument("--project", required=True)
     from .community_cli import add_parser as add_community_parser
     add_community_parser(subs, _leaf_common)
+    from .capture import add_parser as add_capture_parser
+    add_capture_parser(subs, _leaf_common)
     return parser
 
 
@@ -7192,6 +7194,8 @@ COMMANDS: dict[tuple[str, str | None], Callable[[argparse.Namespace], dict[str, 
 
 from .community_cli import COMMAND_KEYS as COMMUNITY_COMMAND_KEYS, command as community_command
 COMMANDS.update({key: (lambda args: community_command(args, _envelope)) for key in COMMUNITY_COMMAND_KEYS})
+from .capture import command as capture_command
+COMMANDS.update({("capture", action): (lambda args: capture_command(args, _envelope)) for action in ("devices", "record")})
 
 
 def main(argv: list[str] | None = None) -> int:

@@ -1,0 +1,202 @@
+{
+  "results": [
+    {
+      "result_path": "docs\\validation\\evidence\\implementation-20261025-r1\\native-aligner-research\\result.json",
+      "result_sha256": "06f164871698cfd70107116c39acf282a81bf83534d847a437f4434813f69676",
+      "model_forward_calls": 2,
+      "cases": [
+        {
+          "fixture": "ctc-alignment-20261018",
+          "max_error_samples": 3520.0,
+          "max_error_ms": 220.0,
+          "passed": false,
+          "words": [
+            {
+              "text": "RED",
+              "reference_start_sample": 8000,
+              "reference_end_sample": 17996,
+              "candidate_start_sample": 11520.0,
+              "candidate_end_sample": 16640.0,
+              "start_error_samples": 3520.0,
+              "end_error_samples": -1356.0,
+              "start_error_ms": 220.0,
+              "end_error_ms": -84.75,
+              "start_passed": false,
+              "end_passed": false
+            },
+            {
+              "text": "BLUE",
+              "reference_start_sample": 25996,
+              "reference_end_sample": 39749,
+              "candidate_start_sample": 29440.0,
+              "candidate_end_sample": 37120.0,
+              "start_error_samples": 3444.0,
+              "end_error_samples": -2629.0,
+              "start_error_ms": 215.25,
+              "end_error_ms": -164.3125,
+              "start_passed": false,
+              "end_passed": false
+            },
+            {
+              "text": "GREEN",
+              "reference_start_sample": 47749,
+              "reference_end_sample": 58925,
+              "candidate_start_sample": 51200.0,
+              "candidate_end_sample": 57600.0,
+              "start_error_samples": 3451.0,
+              "end_error_samples": -1325.0,
+              "start_error_ms": 215.6875,
+              "end_error_ms": -82.8125,
+              "start_passed": false,
+              "end_passed": false
+            },
+            {
+              "text": "RED",
+              "reference_start_sample": 66925,
+              "reference_end_sample": 76921,
+              "candidate_start_sample": 70400.0,
+              "candidate_end_sample": 75520.0,
+              "start_error_samples": 3475.0,
+              "end_error_samples": -1401.0,
+              "start_error_ms": 217.1875,
+              "end_error_ms": -87.5625,
+              "start_passed": false,
+              "end_passed": false
+            },
+            {
+              "text": "BLUE",
+              "reference_start_sample": 84921,
+              "reference_end_sample": 98674,
+              "candidate_start_sample": 88320.0,
+              "candidate_end_sample": 96000.0,
+              "start_error_samples": 3399.0,
+              "end_error_samples": -2674.0,
+              "start_error_ms": 212.4375,
+              "end_error_ms": -167.125,
+              "start_passed": false,
+              "end_passed": false
+            },
+            {
+              "text": "GREEN",
+              "reference_start_sample": 106674,
+              "reference_end_sample": 117850,
+              "candidate_start_sample": 110080.0,
+              "candidate_end_sample": 116480.0,
+              "start_error_samples": 3406.0,
+              "end_error_samples": -1370.0,
+              "start_error_ms": 212.875,
+              "end_error_ms": -85.625,
+              "start_passed": false,
+              "end_passed": false
+            }
+          ],
+          "truth_is_authored_blocks_not_phonetic_labels": true
+        },
+        {
+          "fixture": "boundary-heldout-20261018",
+          "max_error_samples": 2576.0,
+          "max_error_ms": 161.0,
+          "passed": false,
+          "words": [
+            {
+              "text": "LOCAL",
+              "reference_start_sample": 4800,
+              "reference_end_sample": 16332,
+              "candidate_start_sample": 5120.0,
+              "candidate_end_sample": 14080.0,
+              "start_error_samples": 320.0,
+              "end_error_samples": -2252.0,
+              "start_error_ms": 20.0,
+              "end_error_ms": -140.75,
+              "start_passed": true,
+              "end_passed": false
+            },
+            {
+              "text": "VIDEO",
+              "reference_start_sample": 19532,
+              "reference_end_sample": 31504,
+              "candidate_start_sample": 19200.0,
+              "candidate_end_sample": 29440.0,
+              "start_error_samples": -332.0,
+              "end_error_samples": -2064.0,
+              "start_error_ms": -20.75,
+              "end_error_ms": -129.0,
+              "start_passed": true,
+              "end_passed": false
+            },
+            {
+              "text": "EDITOR",
+              "reference_start_sample": 37104,
+              "reference_end_sample": 48341,
+              "candidate_start_sample": 39680.0,
+              "candidate_end_sample": 46080.0,
+              "start_error_samples": 2576.0,
+              "end_error_samples": -2261.0,
+              "start_error_ms": 161.0,
+              "end_error_ms": -141.3125,
+              "start_passed": false,
+              "end_passed": false
+            },
+            {
+              "text": "KEEPS",
+              "reference_start_sample": 52341,
+              "reference_end_sample": 63080,
+              "candidate_start_sample": 52480.0,
+              "candidate_end_sample": 61440.0,
+              "start_error_samples": 139.0,
+              "end_error_samples": -1640.0,
+              "start_error_ms": 8.6875,
+              "end_error_ms": -102.5,
+              "start_passed": true,
+              "end_passed": false
+            },
+            {
+              "text": "EVERY",
+              "reference_start_sample": 69480,
+              "reference_end_sample": 80474,
+              "candidate_start_sample": 71680.0,
+              "candidate_end_sample": 79360.0,
+              "start_error_samples": 2200.0,
+              "end_error_samples": -1114.0,
+              "start_error_ms": 137.5,
+              "end_error_ms": -69.625,
+              "start_passed": false,
+              "end_passed": false
+            },
+            {
+              "text": "ORIGINAL",
+              "reference_start_sample": 85274,
+              "reference_end_sample": 100870,
+              "candidate_start_sample": 87040.0,
+              "candidate_end_sample": 98560.0,
+              "start_error_samples": 1766.0,
+              "end_error_samples": -2310.0,
+              "start_error_ms": 110.375,
+              "end_error_ms": -144.375,
+              "start_passed": false,
+              "end_passed": false
+            },
+            {
+              "text": "WORD",
+              "reference_start_sample": 103270,
+              "reference_end_sample": 110785,
+              "candidate_start_sample": 103680.0,
+              "candidate_end_sample": 110080.0,
+              "start_error_samples": 410.0,
+              "end_error_samples": -705.0,
+              "start_error_ms": 25.625,
+              "end_error_ms": -44.0625,
+              "start_passed": true,
+              "end_passed": true
+            }
+          ],
+          "truth_is_authored_blocks_not_phonetic_labels": true
+        }
+      ],
+      "passed_both_fixtures": false
+    }
+  ],
+  "unchanged_max_error_seconds": 0.06666666666666667,
+  "scoring": "integer signed samples; all starts and ends; no padding/shift or outlier deletion",
+  "generator_sha256": "de8712371d230c60c066420073873fb77578b58f1c117f12da074bf86030e9f8"
+}

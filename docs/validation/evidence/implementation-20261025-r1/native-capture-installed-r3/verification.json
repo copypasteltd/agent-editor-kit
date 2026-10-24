@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "development_source_only": false,
+  "installed_release_tested": true,
+  "actual_module": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.2\\final\\installed\\site\\ai_ad_editor\\__init__.py",
+  "commands": 10,
+  "outputs": [
+    {
+      "asset_id": "cpu-window",
+      "encoder": "libx264",
+      "file": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\implementation-capture-20261025-r3\\assets\\captures\\cpu-window\\capture.mp4",
+      "sha256": "56a7abee510c9ccb41ad08eb9416df581b9a8353da4fa16378cbb2990dab34fd",
+      "frames": 30,
+      "changing_pixels": true,
+      "full_decode": true
+    },
+    {
+      "asset_id": "gpu-window",
+      "encoder": "h264_nvenc",
+      "file": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\implementation-capture-20261025-r3\\assets\\captures\\gpu-window\\capture.mp4",
+      "sha256": "a34d62ceb53184127dc0d07c42020996b2e9c06aa62e7fcc54a2617a8e2e1ca8",
+      "frames": 30,
+      "changing_pixels": true,
+      "full_decode": true
+    }
+  ],
+  "frozen_equal": true,
+  "unrelated_windows_captured": false,
+  "microphone_opened": false,
+  "camera_opened": false,
+  "av_sync_accepted": false,
+  "human_viewing_accepted": false,
+  "source": "FFmpeg testsrc2 in this script owned window",
+  "generator_sha256": "a2baae7a2e3b3e5ac24dc919bbc04c4365c328a7aa2461550fbe333ae83bda3f"
+}

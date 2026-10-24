@@ -1,0 +1,47 @@
+{
+  "args": [
+    "capture",
+    "record",
+    "--project",
+    "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\implementation-capture-20261025-r3",
+    "--kind",
+    "window",
+    "--window-title",
+    "aek-generated-capture-5dacbab595c9400f9cd487dcf1c6128c",
+    "--duration-seconds",
+    "2",
+    "--fps",
+    "15",
+    "--asset-id",
+    "cpu-window"
+  ],
+  "exit_code": 2,
+  "result": {
+    "ok": false,
+    "command": "capture.record",
+    "request_id": "req_20261024191109_4e74e406",
+    "operation_id": null,
+    "status": "failed",
+    "data": {},
+    "artifacts": [],
+    "warnings": [],
+    "errors": [
+      {
+        "code": "ARGUMENT_INVALID",
+        "message": "资产 ID 已存在: cpu-window",
+        "path": "asset_id",
+        "retryable": false
+      }
+    ],
+    "provenance": {
+      "cli_version": "0.1.4",
+      "schema_version": "0.1.0",
+      "engine_version": "ffmpeg-local",
+      "started_at": "2026-10-24T19:11:09.360681Z",
+      "finished_at": "2026-10-24T19:11:09.360689Z",
+      "network": "disabled"
+    }
+  },
+  "stderr": "",
+  "seconds": 0.363
+}

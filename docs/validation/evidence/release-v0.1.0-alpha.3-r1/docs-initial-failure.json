@@ -1,0 +1,8 @@
+{
+  "status": "initial-check-failed-preserved",
+  "check": "All Markdown under portable skills including verbatim upstream archives",
+  "first_failure": "agent-ffmpeg-local-ad-creative/references/upstream/workflow.md: ../../docs/specs/本地运行策略与远程引用审计契约_v0.1_2026-10-14.md does not resolve from the relocated source snapshot",
+  "resolution": "The current-entry link audit separately checks Skill bodies and current references. Verbatim upstream archives retain their original path context and are explicitly excluded from portable link completeness claims; they are not rewritten as current installation instructions.",
+  "product_runtime_failure": false,
+  "historical_reference_limit_still_open": true
+}

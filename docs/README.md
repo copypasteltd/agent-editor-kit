@@ -6,6 +6,8 @@
 
 | 阅读目标 / Goal | Document |
 |---|---|
+| 当前 alpha.3 预发布下载、安装、Skill 注册与首次视频 / Current release and first render | [Release](https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3) · [简体上手](releases/v0.1.0-alpha.3/QUICKSTART.md) · [繁體上手](releases/v0.1.0-alpha.3/QUICKSTART.zh-TW.md) · [English](releases/v0.1.0-alpha.3/QUICKSTART.en.md) |
+| alpha.3 发行范围、新目录安装与可执行示例 / Release scope and fresh-directory checks | [Scope](releases/v0.1.0-alpha.3/RELEASE.md) · [Release notes](releases/v0.1.0-alpha.3/RELEASE-NOTES.md) · [Native verification](validation/evidence/release-v0.1.0-alpha.3-r1/verification.json) |
 | 距离完整目标的 38 组差距、已有能力、已知失败与收口顺序 / Goal gaps and acceptance order | [2026-10-24 差距评估](product/GOAL_GAPS_20261024.md) · [Installed inventory](validation/evidence/goal-gaps-20261024-r1/inventory.json) |
 | 当前完整功能与本地服务模块、安装版全部能力字段 / Complete functional and service modules | [简体](product/CAPABILITIES.md) · [繁體](product/CAPABILITIES.zh-TW.md) · [English](product/CAPABILITIES.en.md) |
 | 46 效果算子与 12 运镜的具体参数、范围、后端 / Full effect and motion parameters | [简体](product/EFFECTS.md) · [繁體](product/EFFECTS.zh-TW.md) · [English](product/EFFECTS.en.md) |

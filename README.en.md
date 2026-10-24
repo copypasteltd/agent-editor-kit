@@ -4,9 +4,61 @@
 
 [简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit) · [Docs](docs/README.md)
 
-**Usable local build: v0.1.0-alpha.3 · CLI 0.1.2 · 500 looks · 17 local Skills.** Installation has been exercised on native Windows/CPython 3.13 x64. This update expands documentation/examples without changing the release bundle. Alpha.3 is supplied as repository archive parts, without a separate new GitHub Release. Complete Jianying/CapCut parity remains an unaccepted development target.
+**Release: v0.1.0-alpha.3 prerelease · CLI 0.1.2 · 500 looks · 17 local Skills.** Downloads provide a complete runtime ZIP, Agent kit, optional gallery and checksums. The verified runtime bytes are unchanged; portable installation and a runnable example are added. Complete Jianying/CapCut parity remains an unaccepted development target.
 
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
+
+## Download and render your first video
+
+**Requirements: Windows x64, existing CPython 3.13 x64 and FFmpeg/ffprobe on PATH.** The basic workflow needs no model, Node or browser. Installation uses no Docker, WSL, virtual environment or global pip. Adjust the Python path for your installation.
+
+| Download | Purpose |
+|---|---|
+| [agent-editor-kit-v0.1.0-alpha.3-cp313-win_amd64.zip](https://github.com/copypasteltd/agent-editor-kit/releases/download/v0.1.0-alpha.3/agent-editor-kit-v0.1.0-alpha.3-cp313-win_amd64.zip) | Required: app and eight pinned wheels, about 196 MB. |
+| [agent-editor-kit-v0.1.0-alpha.3-agent-kit.zip](https://github.com/copypasteltd/agent-editor-kit/releases/download/v0.1.0-alpha.3/agent-editor-kit-v0.1.0-alpha.3-agent-kit.zip) | Required: offline installer, 17 Skills, registration, guides and runnable example. |
+| [agent-editor-kit-v0.1.0-alpha.3-gallery.zip](https://github.com/copypasteltd/agent-editor-kit/releases/download/v0.1.0-alpha.3/agent-editor-kit-v0.1.0-alpha.3-gallery.zip) | Optional: original, 500 real look samples, offline selection page and client-board assets. |
+| [SHA256SUMS.txt](https://github.com/copypasteltd/agent-editor-kit/releases/download/v0.1.0-alpha.3/SHA256SUMS.txt) | Verify downloads; the installer also enforces the runtime ZIP hash. |
+
+**1. Install.** Download both required ZIPs to `E:/Downloads/` and choose a new tool directory. Leave the runtime ZIP intact for the installer to validate and extract.
+
+```powershell
+$avkPython = 'C:/Python313/python.exe'
+$avkHome = 'E:/tools/agent-editor-kit-alpha3'
+$avkArchive = 'E:/Downloads/agent-editor-kit-v0.1.0-alpha.3-cp313-win_amd64.zip'
+Expand-Archive -LiteralPath 'E:/Downloads/agent-editor-kit-v0.1.0-alpha.3-agent-kit.zip' -DestinationPath $avkHome
+Set-Location $avkHome
+& $avkPython -I -B -X utf8 ./install.py --archive $avkArchive
+```
+
+**2. Register Skills and inspect support.** After installation returns `ok: true`, register the Skills. Conflicting directories are preserved. Existing repository installations can keep their current launcher. Open a new conversation if the client has not discovered the Skills yet.
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./register-agent-ffmpeg-local-skills.ps1
+$avk = Join-Path $avkHome 'skills/agent-ffmpeg-local-editor/scripts/run.ps1'
+& $avk version
+& $avk doctor
+& $avk capabilities
+& $avk schema show
+```
+
+**3. Run the example.** No extra media is needed. Included CC0 artwork and synthetic audio pass through actual editing, motion, a look, preview, render, quality checks and project-package export/import. The output directory must not already exist.
+
+```powershell
+& $avkPython -I -B -X utf8 ./run-example.py --output 'E:/video-work/aek-first-demo'
+```
+
+Outputs include editable `project/project.json`, `project/renders/demo.mp4` (6 seconds, 360×640, 30 fps, 180 frames and audio), `demo.aevpkg.zip`, `restored/`, per-command responses and `verification.json`. This demonstrates installation and the editing chain; natural-media quality and listening remain separate acceptance work.
+
+**4. Edit your own media with an Agent.** Supply media paths, goals, duration, canvas and audio intent. The Agent checks actual support and provenance before creating a timeline, previews and delivery.
+
+```text
+$agent-ffmpeg-local-editor Make a 15-second vertical ad from E:/media/product.mp4.
+Inspect support and media first, explicitly retain source audio, show look candidates, then deliver previews, video, quality reports and an editable project package.
+```
+
+**5. Add the optional gallery.** Extract `gallery.zip` into the same `$avkHome` and open `docs/assets/looks-n002-20261024-r1/index.html`, or use the Skill helper below to export a candidate board. Close unused browser tabs afterwards.
+
+[Release](https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3) · [Full installation and workflow](docs/releases/v0.1.0-alpha.3/QUICKSTART.en.md) · [Scope and limits](docs/releases/v0.1.0-alpha.3/RELEASE.md)
 
 ## See real output: 500 looks on one supplied still
 
@@ -16,7 +68,7 @@ Every tile below comes from the supplied N002 still processed by the installed C
 
 [**Open the interactive 500-look gallery**](docs/assets/looks-n002-20261024-r1/index.html) · [Numbered samples](docs/local/FILTER_GALLERY.en.md) · [Measured profiles](docs/local/LOOK_PRESETS.en.md) · [Original PNG](docs/assets/looks-n002-20261024-r1/source.png) · [Sources/licenses](docs/assets/looks-n002-20261024-r1/SOURCE_AND_LICENSES.md)
 
-The gallery supports three languages, number/name/ID/description search, category/license filters, an original-image split, shortlisting and JSON export. It loads 40 thumbnails per page and a full-size image for the active look. GitHub does not execute repository HTML; download the checkout and open the HTML locally, without a server or network.
+The gallery supports three languages, number/name/ID/description search, category/license filters, an original-image split, shortlisting and JSON export. It loads 40 thumbnails per page and a full-size image for the active look. GitHub does not execute repository HTML; extract the optional gallery ZIP and open the HTML locally, without a server or network.
 
 **Sample contract:** 1672×940 source, strength 1.0 and tetrahedral interpolation throughout. All 500 full-size lossless WebPs exactly match decoded CLI PNG RGB; the 500 thumbnails are resized WebP. No color profile is embedded in the source, so this is an encoded-SDR-RGB trial rather than camera/HDR calibration. The user supplied the image and requested these examples; it is not declared MIT/CC0.
 
@@ -181,8 +233,9 @@ Sources/licenses: Striped Purple 49 + t3mujinpack 51 (MIT), Natron 267 (CC BY-SA
 **Client workflow:** show the original plus 3–6 relevant actual samples, identifying number, name, stable ID, strength, color change and license. Clients can filter/export candidates or give numbers. Render selected strengths on the actual target media, record final ID/strength/clip-or-global scope, then dry-run/apply. The split slider changes the original comparison region and does not simulate strength.
 
 ```powershell
-$avk = 'E:/dev/sandbox/AI广告剪辑/skills/agent-ffmpeg-local-editor/scripts/run.ps1'
-$aekGallery = 'E:/dev/sandbox/AI广告剪辑/skills/agent-ffmpeg-local-editor/scripts/look_gallery.py'
+$avkHome = 'E:/tools/agent-editor-kit-alpha3'
+$avk = Join-Path $avkHome 'skills/agent-ffmpeg-local-editor/scripts/run.ps1'
+$aekGallery = Join-Path $avkHome 'skills/agent-ffmpeg-local-editor/scripts/look_gallery.py'
 & 'C:/Python313/python.exe' -I -S -B -X utf8 $aekGallery --query '黑白' --limit 6
 & 'C:/Python313/python.exe' -I -S -B -X utf8 $aekGallery --ids t3-fuji-superia-800 nt-bw-agfa-apx-100 fl-0000634-darkblue --output 'E:/video-work/client-look-options'
 & $avk look inspect --id t3-fuji-superia-800
@@ -193,7 +246,7 @@ $aekGallery = 'E:/dev/sandbox/AI广告剪辑/skills/agent-ffmpeg-local-editor/sc
 
 Use a new output directory and replace `clip_1` with an actual clip ID. The helper writes only `board.jpg` and `selection.json`, without project edits; samples are at 100%. `look apply` replaces built-in looks in scope while preserving manual effects; stacking requires `--append`, and `--global` affects every sequence. Static strength mixes encoded RGB. Prepare Float32/Log/HDR through a separate color contract before creative SDR looks.
 
-## Installation, bundle contents and local loading
+## Multipart fallback, bundle contents and repository installation
 
 Prerequisites: native Windows x64, existing CPython 3.13 and FFmpeg/ffprobe. Eight pinned wheels contain the app, NumPy, Pillow and schema dependencies, installed offline to a target folder without a virtual environment or global site-packages changes. Python, FFmpeg, Node/Chromium, model weights and commercial fonts/music are not bundled.
 
@@ -223,12 +276,13 @@ $avk = 'E:/dev/sandbox/AI广告剪辑/skills/agent-ffmpeg-local-editor/scripts/r
 & $avk COMMAND --help
 ```
 
-The Skill launcher checks the installation receipt and launcher hash, then invokes the pinned release with `-I -S`; missing installation fails without silent source fallback. N002 images and the gallery are checkout documentation assets, not a changed release bundle; downloading only the runtime ZIP does not include this complete gallery.
+The Skill launcher checks the installation receipt and launcher hash, then invokes the pinned release with `-I -S`; missing installation fails without silent source fallback. N002 samples and selection assets are a separate optional gallery ZIP. Extract it into the Agent kit home for the Skill helper to use. The runtime ZIP itself is unchanged.
 
 ## Commands and project structure: start to delivery
 
 ```powershell
-$avk = 'E:/dev/sandbox/AI广告剪辑/skills/agent-ffmpeg-local-editor/scripts/run.ps1'
+$avkHome = 'E:/tools/agent-editor-kit-alpha3'
+$avk = Join-Path $avkHome 'skills/agent-ffmpeg-local-editor/scripts/run.ps1'
 $aekProject = 'E:/video-work/first-ad'
 & $avk project init $aekProject --name 'First ad'
 & $avk media ingest --project $aekProject --input 'E:/media/product.mp4'
@@ -313,6 +367,14 @@ $agent-ffmpeg-local-quality 对实际输出、manifest 和 Scope 复核，分别
 | H06 / V49 | Actual offline CTC: model-timed captions; 258.1875 ms boundary error fails the 66.6667 ms gate. | [Input audio](docs/assets/ctc-alignment-20261018/input.wav) · [Output](docs/assets/ctc-alignment-20261018/result.mp4) · [GIF](docs/assets/ctc-alignment-20261018/comparison.gif) |
 | H07 / V53 | Magnetic primary-track reorder: A/B/C/D → C/A/B/D with linked audio and author constraints. | [Input](docs/assets/magnetic-reorder-v53-r5-20261018/source-preview.mp4) · [Output](docs/assets/magnetic-reorder-v53-r5-20261018/MR01.mp4) · [GIF](docs/assets/magnetic-reorder-v53-r5-20261018/reorder-before-after.gif) |
 
+### C08: from downloaded kit to actual delivery
+
+This release is installed into a fresh E-drive path with Chinese characters/spaces, registers 17 Skills, then runs 20 actual CLI calls: two CC0 images and synthetic audio → motion and a 0.65-strength look → video/quality checks → project-package export, import and restored validation.
+
+[MP4](docs/assets/release-v0.1.0-alpha.3-r1/demo.mp4) · [GIF](docs/assets/release-v0.1.0-alpha.3-r1/demo.gif) · [Changes](docs/validation/evidence/release-v0.1.0-alpha.3-r1/demo/changes.json) · [Commands](docs/validation/evidence/release-v0.1.0-alpha.3-r1/demo/commands.json) · [Verification](docs/validation/evidence/release-v0.1.0-alpha.3-r1/verification.json)
+
+![Actual portable Agent kit example](docs/assets/release-v0.1.0-alpha.3-r1/demo.gif)
+
 Actual desktop screenshot of the selection page, with original comparison and shortlist export:
 
 ![Actual offline look selection page](docs/assets/looks-n002-20261024-r1/gallery-desktop.png)
@@ -329,7 +391,7 @@ Dated actual keyframe/camera/mask/title/transition/audio composition:
 
 ![Actual CLI feature demonstration](docs/assets/readme-20261016/cli-showcase.gif)
 
-[**Complete casebook: all restored functional demos, inputs/outputs, metrics and failures**](docs/product/CASES.md) · [Release reproduction steps](docs/releases/v0.1.0-alpha.1/CASES.md). New executions here are N002 still looks and selection-document tools; other cases retain their dates and are not counted as new inference/regression. Experimental temporal repair remains separately labeled unintegrated/unaccepted.
+[**Complete casebook: all restored functional demos, inputs/outputs, metrics and failures**](docs/product/CASES.md) · [Release reproduction steps](docs/releases/v0.1.0-alpha.1/CASES.md). N002 gallery and this fresh-directory installation example retain separate evidence. Other cases keep their dates and are not counted as new inference/regression. Experimental temporal repair remains separately labeled unintegrated/unaccepted.
 
 ## Troubleshooting, recovery and delivery
 
@@ -377,6 +439,7 @@ R01–R24 retain their original versions/dates; R25–R28 record the N002 galler
 | R27 | Skill client selection and local registration | 17 Skill format/junction checks; actual shortlist board, search and refusal protection. | [Skill workflow receipt](docs/validation/evidence/looks-n002-20261024-r1/skill-verification.json) · No timeline edits; sample strength 1.0. |
 | R28 | Complete three-language docs and sample links | Modules/services/Skills/cases/500 samples, capability fields and local-link checks. | [Documentation receipt](docs/validation/evidence/looks-n002-20261024-r1/docs-verification.json) · Historical 2,930-test full kernel suite not rerun. |
 | R29 | Goal gaps and installed inventory | 4 successful installed read-only CLI calls; 68 capability contracts match the manual; 38 gap groups have explicit acceptance conditions. | [Assessment](docs/product/GOAL_GAPS_20261024.md) · [Inventory](docs/validation/evidence/goal-gaps-20261024-r1/inventory.json) · Zero renders/inference in this assessment; prior accuracy failures and open acceptance remain. |
+| R30 | Portable Agent kit installation and complete example | Native E-drive installation in a Chinese/spaced path; 17 Skills registered; 20 actual CLI calls edit, render, check quality and round-trip a project package. | [Release gate](docs/validation/evidence/release-v0.1.0-alpha.3-r1/verification.json) · [Demo video](docs/assets/release-v0.1.0-alpha.3-r1/demo.mp4) · 6 seconds/180 frames fully decoded; no full kernel rerun, model inference or listening review. |
 
 ## Current limits and development direction
 

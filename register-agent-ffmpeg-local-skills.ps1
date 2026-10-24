@@ -13,7 +13,7 @@ $canonicalRoot = [IO.Path]::GetFullPath((Join-Path $projectRoot 'skills')).TrimE
 $discoveryRoot = [IO.Path]::GetFullPath($SkillsDirectory)
 $runtimePath = Join-Path $projectRoot $manifest.runtime_config
 if (-not (Test-Path -LiteralPath $runtimePath -PathType Leaf)) {
-    throw 'Install the local release first with scripts/install_agent_ffmpeg_local.py'
+    throw 'Install the matching local release first. The downloaded Agent kit provides install.py --archive <runtime.zip>; repository users can follow the alpha.3 quickstart.'
 }
 $runtime = Get-Content -LiteralPath $runtimePath -Raw -Encoding utf8 | ConvertFrom-Json
 if ($runtime.release -ne $manifest.release -or $runtime.manifest_sha256 -ne $manifest.manifest_sha256) {

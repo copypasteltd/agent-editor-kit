@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-10-24T12:39:17.482362+00:00",
+  "readmes": [
+    {
+      "path": "README.md",
+      "bytes": 59495,
+      "sha256": "b4e134ace981a5a572afafe524c817ff265d74fcce0f43c8e6ab5ba7b860c04e",
+      "F": 43,
+      "S": 12,
+      "K": 17,
+      "R": 30
+    },
+    {
+      "path": "README.zh-TW.md",
+      "bytes": 59785,
+      "sha256": "c9205cce9a50fa8fa351341802b5ba21c53c1169207bdfe5a4a3436b386b44cc",
+      "F": 43,
+      "S": 12,
+      "K": 17,
+      "R": 30
+    },
+    {
+      "path": "README.en.md",
+      "bytes": 63391,
+      "sha256": "e073705af4b3d5188d368a5b17bb55732ae78b50bde0e5782ae3092464274f17",
+      "F": 43,
+      "S": 12,
+      "K": 17,
+      "R": 30
+    }
+  ],
+  "local_markdown_links_checked": 1052,
+  "portable_skill_links_resolve_with_optional_gallery": 39,
+  "upstream_archives_excluded_from_portable_link_claim": [
+    "skills/agent-ffmpeg-local-ad-creative/references/upstream/references/creative-frameworks.md",
+    "skills/agent-ffmpeg-local-ad-creative/references/upstream/references/platform-specs.md",
+    "skills/agent-ffmpeg-local-ad-creative/references/upstream/workflow.md",
+    "skills/agent-ffmpeg-local-campaign-analytics/references/upstream/assets/ab_test_template.md",
+    "skills/agent-ffmpeg-local-campaign-analytics/references/upstream/assets/campaign_report_template.md",
+    "skills/agent-ffmpeg-local-campaign-analytics/references/upstream/assets/channel_comparison_template.md",
+    "skills/agent-ffmpeg-local-campaign-analytics/references/upstream/references/attribution-models-guide.md",
+    "skills/agent-ffmpeg-local-campaign-analytics/references/upstream/references/campaign-metrics-benchmarks.md",
+    "skills/agent-ffmpeg-local-campaign-analytics/references/upstream/references/funnel-optimization-framework.md",
+    "skills/agent-ffmpeg-local-campaign-analytics/references/upstream/workflow.md",
+    "skills/agent-ffmpeg-local-ffmpeg/references/upstream/reference.md",
+    "skills/agent-ffmpeg-local-ffmpeg/references/upstream/workflow.md",
+    "skills/agent-ffmpeg-local-video-content-strategist/references/upstream/workflow.md",
+    "skills/agent-ffmpeg-local-video-edit/references/upstream/references/operations.md",
+    "skills/agent-ffmpeg-local-video-edit/references/upstream/workflow.md"
+  ],
+  "upstream_archive_limit": "Verbatim historical references retain their original relative-path context. Current installed-release contracts take precedence. An initial broader link check found an inherited ../../docs/specs policy link that does not resolve from the relocated upstream archive.",
+  "powershell_blocks_identical_across_three_readmes": true,
+  "powershell_blocks_identical_across_three_guides": true,
+  "workflow_native_windows_and_exact_tag": true,
+  "python_sources_compiled": [
+    "scripts/release_alpha3/install.py",
+    "scripts/release_alpha3/run-example.py",
+    "scripts/package_alpha3_public.py",
+    "scripts/publish_alpha3_release.py",
+    "scripts/verify_alpha3_publication.py",
+    "scripts/verify_alpha3_native.py",
+    "scripts/verify_alpha3_gallery_portable.py",
+    "scripts/verify_alpha3_docs.py",
+    "scripts/readme_release_workflow.py",
+    "scripts/build_product_readmes.py"
+  ],
+  "native_receipt_and_demo_media_verified": true,
+  "published": false,
+  "historical_receipts_rewritten": false,
+  "historical_kernel_suite_rerun": false
+}

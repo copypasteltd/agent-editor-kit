@@ -1,0 +1,29 @@
+{
+  "sequence_id": "seq_main",
+  "operations": [
+    {
+      "op": "append_clip",
+      "track_id": "track_video_1",
+      "asset_id": "asset_20261024121954_687bf406",
+      "source_in_tick": 0,
+      "source_out_tick": 270000,
+      "duration_tick": 270000
+    },
+    {
+      "op": "append_clip",
+      "track_id": "track_video_1",
+      "asset_id": "asset_20261024122002_27e5752e",
+      "source_in_tick": 0,
+      "source_out_tick": 270000,
+      "duration_tick": 270000
+    },
+    {
+      "op": "append_clip",
+      "track_id": "track_audio_1",
+      "asset_id": "asset_20261024122009_1671cd41",
+      "source_in_tick": 0,
+      "source_out_tick": 540000,
+      "duration_tick": 540000
+    }
+  ]
+}

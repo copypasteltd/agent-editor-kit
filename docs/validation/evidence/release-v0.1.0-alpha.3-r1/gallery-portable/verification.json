@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "gallery_archive_sha256": "c9c45d735bfb7db2c3058147b91df0399599abffc6f5bfcdfc09accff66d68f3",
+  "extracted_members": 1026,
+  "source_sha256_verified": true,
+  "full_previews_verified": 500,
+  "thumbnails_verified": 500,
+  "helper_calls": [
+    {
+      "name": "search",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "utf8",
+        "product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\skills\\agent-ffmpeg-local-editor\\scripts\\look_gallery.py",
+        "--query",
+        "黑白",
+        "--limit",
+        "6"
+      ],
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "name": "board",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "utf8",
+        "product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\skills\\agent-ffmpeg-local-editor\\scripts\\look_gallery.py",
+        "--ids",
+        "t3-fuji-superia-800",
+        "nt-bw-agfa-apx-100",
+        "fl-0000634-darkblue",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\release-v0.1.0-alpha.3-r1\\gallery-portable\\client-board"
+      ],
+      "exit_code": 0,
+      "ok": true
+    }
+  ],
+  "new_model_inferences": 0,
+  "new_look_renders": 0,
+  "browser_invoked": false,
+  "virtualization_invoked": false,
+  "runtime_network_downloads": 0
+}

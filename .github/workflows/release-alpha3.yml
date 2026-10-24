@@ -1,0 +1,57 @@
+name: Publish agent editor kit alpha.3
+
+on:
+  push:
+    tags:
+      - v0.1.0-alpha.3
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: agent-editor-kit-alpha3-release
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: windows-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out the exact reviewed release tag
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: refs/tags/v0.1.0-alpha.3
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.gitattributes
+            /LICENSE
+            /agent-ffmpeg-local-install-manifest.json
+            /register-agent-ffmpeg-local-skills.ps1
+            /skills/agent-ffmpeg-local-*/**
+            /scripts/release_alpha3/**
+            /scripts/package_alpha3_public.py
+            /scripts/assemble_look500_release.py
+            /scripts/publish_alpha3_release.py
+            /docs/releases/v0.1.0-alpha.3/**
+            /docs/local/FILTER_GALLERY*.md
+            /docs/assets/looks-n002-20261024-r1/**
+            /docs/assets/release-v0.1.0-alpha.1-r2/input/card-1.png
+            /docs/assets/release-v0.1.0-alpha.1-r2/input/card-2.png
+            /docs/assets/release-v0.1.0-alpha.1-r2/input/pulse.wav
+            /docs/assets/release-v0.1.0-alpha.1-r2/LICENSE.txt
+      - name: Reproduce and validate the reviewed downloads
+        shell: pwsh
+        run: |
+          python scripts/package_alpha3_public.py --output "$env:RUNNER_TEMP/aek-alpha3-assets" --check-lock docs/releases/v0.1.0-alpha.3/public/assets.lock.json
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Upload and publish the prerelease
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          $releaseCommit = git rev-parse HEAD
+          python scripts/publish_alpha3_release.py --assets "$env:RUNNER_TEMP/aek-alpha3-assets" --lock docs/releases/v0.1.0-alpha.3/public/assets.lock.json --commit $releaseCommit --publish
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

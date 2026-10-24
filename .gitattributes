@@ -1390,3 +1390,17 @@ scripts/readme_product_content.py text eol=lf
 
 # Preserve exact bytes in the installed-inventory and goal-gap audit receipts.
 docs/validation/evidence/goal-gaps-20261024-r1/** -text -whitespace
+
+# Reproducible alpha.3 public downloads, native bootstrap and publication records.
+scripts/release_alpha3/*.py text eol=lf
+scripts/package_alpha3_public.py text eol=lf
+scripts/publish_alpha3_release.py text eol=lf
+scripts/verify_alpha3_publication.py text eol=lf
+scripts/verify_alpha3_native.py text eol=lf
+scripts/verify_alpha3_gallery_portable.py text eol=lf
+scripts/verify_alpha3_docs.py text eol=lf
+scripts/readme_release_workflow.py text eol=lf
+.github/workflows/release-alpha3.yml text eol=lf
+docs/releases/v0.1.0-alpha.3/public/** -text -whitespace
+docs/validation/evidence/release-v0.1.0-alpha.3-r1/** -text -whitespace
+docs/assets/release-v0.1.0-alpha.3-r1/** -text -whitespace

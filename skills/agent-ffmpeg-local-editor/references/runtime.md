@@ -3,6 +3,12 @@
 This namespace always calls the locally installed `v0.1.0-alpha.3` package, using the editor Skill's
 `scripts/run.ps1`. Other Skills share this launcher. The editable Skill source stays on E:; Codex reads
 Windows directory junctions. `local/agent-ffmpeg/runtime.json` selects the native Python and installed path.
+
+Public release downloads and fresh-machine instructions are at
+[alpha.3 quickstart](https://github.com/copypasteltd/agent-editor-kit/blob/v0.1.0-alpha.3/docs/releases/v0.1.0-alpha.3/QUICKSTART.en.md).
+Download the runtime ZIP plus Agent kit ZIP, extract the kit, run its `install.py --archive <runtime.zip>`,
+then register its 17 Skills. The optional gallery ZIP extracts into the same kit directory. `run-example.py`
+exercises an actual six-second edit/render/check/package workflow using included CC0 inputs.
 The launcher verifies the release pin, installation receipt and launcher digest, then runs the installed
 `run.py` with `-I -S -B -X utf8`. It sets temporary/runtime paths on E: and offline model environment flags.
 These flags are not an operating-system network sandbox; do not invoke network tools or providers.

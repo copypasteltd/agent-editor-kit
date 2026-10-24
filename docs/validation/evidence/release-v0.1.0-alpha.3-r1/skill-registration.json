@@ -1,0 +1,186 @@
+{
+  "format": "agent-ffmpeg-local-skills-v1",
+  "status": "registered",
+  "created_at_utc": "2026-10-24T04:24:59.808288+08:00",
+  "release": "v0.1.0-alpha.3",
+  "manifest_sha256": "sha256:3bc0a74144953b97a769db01f3d2d863889da80f010d78ab7e4a2b4eedf1ceea",
+  "runtime_config": "local/agent-ffmpeg/runtime.json",
+  "project_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit",
+  "codex_skills_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\discovery-r1",
+  "skill_count": 17,
+  "skills": [
+    {
+      "name": "agent-ffmpeg-local-editor",
+      "purpose_zh": "总入口：计划、项目创建与交付",
+      "legacy_name": "video-cut-agent-editor",
+      "legacy_skill_sha256": "79f2a933caae08c832edf0ef9fd83108057cbabd2c5a5eabf1e387cc4dded168",
+      "skill_md_sha256": "c8a5fe829ab73f826ea4c568afefae1e074dcf64e234e73c4a19a2f16902d344",
+      "canonical_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\skills\\agent-ffmpeg-local-editor",
+      "registration_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\discovery-r1\\agent-ffmpeg-local-editor",
+      "registration_verified": true
+    },
+    {
+      "name": "agent-ffmpeg-local-timeline",
+      "purpose_zh": "时间线、关键帧、运镜、转场、嵌套",
+      "legacy_name": "video-cut-timeline",
+      "legacy_skill_sha256": "7365a05c0f6ad4c842a07ba4c9f384c2512eae227831a01fe82e6c461a31a722",
+      "skill_md_sha256": "bd482280a9ba3b2b5eff6ec8f7190e0867961759f374ff305c4d9e5e442376ab",
+      "canonical_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\skills\\agent-ffmpeg-local-timeline",
+      "registration_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\discovery-r1\\agent-ffmpeg-local-timeline",
+      "registration_verified": true
+    },
+    {
+      "name": "agent-ffmpeg-local-quality",
+      "purpose_zh": "成片、像素、蒙版、Scope 与证据核验",
+      "legacy_name": "video-cut-quality",
+      "legacy_skill_sha256": "9e23fa20773624c067eaebb4551d0287f3dc41dc7ebade663bcd8e91e8978e72",
+      "skill_md_sha256": "708b99f4aad6a4cd65b4c3c09aebb7ef248877481c63f8148f633e9078716a0e",
+      "canonical_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\skills\\agent-ffmpeg-local-quality",
+      "registration_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\discovery-r1\\agent-ffmpeg-local-quality",
+      "registration_verified": true
+    },
+    {
+      "name": "agent-ffmpeg-local-project-ops",
+      "purpose_zh": "快照、恢复、重链和队列",
+      "legacy_name": "video-cut-project-ops",
+      "legacy_skill_sha256": "f5687c42232d96000084de24341b85741968e95e8f6d1d2dd5a5e2e72ebec43f",
+      "skill_md_sha256": "1e9cc5431a56004733f6684a88ffc57f26cfabf74ecdc4acbc7646c342acd54f",
+      "canonical_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\skills\\agent-ffmpeg-local-project-ops",
+      "registration_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\discovery-r1\\agent-ffmpeg-local-project-ops",
+      "registration_verified": true
+    },
+    {
+      "name": "agent-ffmpeg-local-local-policy",
+      "purpose_zh": "离线运行与远程引用审计",
+      "legacy_name": "video-cut-local-policy",
+      "legacy_skill_sha256": "60e754f410cbb3242e0bc30eb95dce169ebc96180ed57683139447c632d022b5",
+      "skill_md_sha256": "2909a538b0ff0826d396d131ded42940867f3f2b257d49b1fd4fdee472d11f1a",
+      "canonical_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\skills\\agent-ffmpeg-local-local-policy",
+      "registration_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\discovery-r1\\agent-ffmpeg-local-local-policy",
+      "registration_verified": true
+    },
+    {
+      "name": "agent-ffmpeg-local-rights-ledger",
+      "purpose_zh": "素材、字体、模型与模板权利台账",
+      "legacy_name": "video-cut-rights-ledger",
+      "legacy_skill_sha256": "a310b3d5f0da42a740eac39f0e241fe3df46678ae80203f045ef8e45ffcf5679",
+      "skill_md_sha256": "07f20a9b43930b49f217416ca702d2d797854d0f958e9f4809f8d43e61d19c24",
+      "canonical_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\skills\\agent-ffmpeg-local-rights-ledger",
+      "registration_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\discovery-r1\\agent-ffmpeg-local-rights-ledger",
+      "registration_verified": true
+    },
+    {
+      "name": "agent-ffmpeg-local-local-models",
+      "purpose_zh": "显式登记并运行已有离线模型",
+      "legacy_name": "video-cut-local-models",
+      "legacy_skill_sha256": "2927ba9004c6a0d680f4c8251ff3485d3c3290fa3284a0670cbed151b222464c",
+      "skill_md_sha256": "198b654ed9d1903dc2464816f8ad4220df9e17fe0141634eeed83d28a23b29a3",
+      "canonical_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\skills\\agent-ffmpeg-local-local-models",
+      "registration_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\discovery-r1\\agent-ffmpeg-local-local-models",
+      "registration_verified": true
+    },
+    {
+      "name": "agent-ffmpeg-local-video-understand",
+      "purpose_zh": "镜头、静音、帧证据与转写",
+      "legacy_name": "video-cut-video-understand",
+      "legacy_skill_sha256": "1e2d25cad71af01310ec51373b21b09251ab5ee18bdd08d60face38d1e23ba53",
+      "skill_md_sha256": "d3ccd302a9277fc6876d4f5074f6ee54950544171fe4777adc1caee0b21fb312",
+      "canonical_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\skills\\agent-ffmpeg-local-video-understand",
+      "registration_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\discovery-r1\\agent-ffmpeg-local-video-understand",
+      "registration_verified": true
+    },
+    {
+      "name": "agent-ffmpeg-local-template-library",
+      "purpose_zh": "模板变量、素材索引和片段组复用",
+      "legacy_name": "video-cut-template-library",
+      "legacy_skill_sha256": "95e5f6bc6c164f23f24ce1959ba9bb774b26e85f23ed46756310824377837943",
+      "skill_md_sha256": "c7aeed858ed7e8f66f6543b23aeaece36ba37e26fa4497f61f41dad2648f4c4a",
+      "canonical_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\skills\\agent-ffmpeg-local-template-library",
+      "registration_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\discovery-r1\\agent-ffmpeg-local-template-library",
+      "registration_verified": true
+    },
+    {
+      "name": "agent-ffmpeg-local-long-to-short",
+      "purpose_zh": "长视频、课程和口播转短片",
+      "legacy_name": "video-cut-long-to-short",
+      "legacy_skill_sha256": "93c0b32f9e62a9c113b0b1378e16f5a49e0823eef697b6341f9170fd9a36c088",
+      "skill_md_sha256": "6bc37c18217ca81f7873ce21bdc220c81336b0e7c40bf36148251af5641af4fb",
+      "canonical_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\skills\\agent-ffmpeg-local-long-to-short",
+      "registration_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\discovery-r1\\agent-ffmpeg-local-long-to-short",
+      "registration_verified": true
+    },
+    {
+      "name": "agent-ffmpeg-local-screen-demo",
+      "purpose_zh": "录屏锚点、缩放与产品演示",
+      "legacy_name": "video-cut-screen-demo",
+      "legacy_skill_sha256": "7f8f34cdb7ac5f30477efb64fc7c73eff351d4f17b50fe3d8206ef46ad32ad4e",
+      "skill_md_sha256": "bbc465395c24c9c25a8a0dce231e22611e213aeb2412fdb5fa4e274e984cab1a",
+      "canonical_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\skills\\agent-ffmpeg-local-screen-demo",
+      "registration_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\discovery-r1\\agent-ffmpeg-local-screen-demo",
+      "registration_verified": true
+    },
+    {
+      "name": "agent-ffmpeg-local-reference-remake",
+      "purpose_zh": "参考片结构复刻与原创素材替换",
+      "legacy_name": "video-cut-reference-remake",
+      "legacy_skill_sha256": "9bd74bf45b5af5796244eb7ba79f9bac772c30bb0e9a931c97c5f7237226e882",
+      "skill_md_sha256": "385bddaa7e0598cdeadd7caffd80247aae7ac90f931b750a3db1f712ec6eca3d",
+      "canonical_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\skills\\agent-ffmpeg-local-reference-remake",
+      "registration_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\discovery-r1\\agent-ffmpeg-local-reference-remake",
+      "registration_verified": true
+    },
+    {
+      "name": "agent-ffmpeg-local-ffmpeg",
+      "purpose_zh": "本地 FFmpeg 格式和媒体处理",
+      "legacy_name": "video-cut-ffmpeg",
+      "legacy_skill_sha256": "544724e259c4314689dc2f8f7a6e146455d97cf6f9c3825856f420e44f41d03f",
+      "skill_md_sha256": "eb40aafd7ad10f82e8b6970449d3b4639129e5d692f7e900fe36f58c88c73f5d",
+      "canonical_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\skills\\agent-ffmpeg-local-ffmpeg",
+      "registration_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\discovery-r1\\agent-ffmpeg-local-ffmpeg",
+      "registration_verified": true
+    },
+    {
+      "name": "agent-ffmpeg-local-video-edit",
+      "purpose_zh": "修剪、拼接、变速与压缩",
+      "legacy_name": "video-cut-video-edit",
+      "legacy_skill_sha256": "a49b64fc5ad50778ccaf92b568b1a57dbb86c53a076dd7031519798de15ad340",
+      "skill_md_sha256": "8bd3dd336652d57832fa4883bb9cb1e93831725ee5059134c81a7562b2efd7e8",
+      "canonical_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\skills\\agent-ffmpeg-local-video-edit",
+      "registration_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\discovery-r1\\agent-ffmpeg-local-video-edit",
+      "registration_verified": true
+    },
+    {
+      "name": "agent-ffmpeg-local-ad-creative",
+      "purpose_zh": "广告文案、Hook 和创意变体",
+      "legacy_name": "video-cut-ad-creative",
+      "legacy_skill_sha256": "b06bfe7d7b0174c97ddef1d3b14e25909817577d3c8ce4f564b706da3953618a",
+      "skill_md_sha256": "24a6aec0a66ed3469802c86582af27322d8626f3dc674447c7ca9eb9b11b952f",
+      "canonical_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\skills\\agent-ffmpeg-local-ad-creative",
+      "registration_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\discovery-r1\\agent-ffmpeg-local-ad-creative",
+      "registration_verified": true
+    },
+    {
+      "name": "agent-ffmpeg-local-video-content-strategist",
+      "purpose_zh": "内容定位、脚本与渠道策略",
+      "legacy_name": "video-cut-video-content-strategist",
+      "legacy_skill_sha256": "c4682504fa1f62ee99977afdf8e8ee02e96dc1c35b7bee24222623a8bdf817b4",
+      "skill_md_sha256": "c5ca8ed4986f94938789c239422f1ae94df6fec276c740bbde22d5cfb7fc419f",
+      "canonical_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\skills\\agent-ffmpeg-local-video-content-strategist",
+      "registration_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\discovery-r1\\agent-ffmpeg-local-video-content-strategist",
+      "registration_verified": true
+    },
+    {
+      "name": "agent-ffmpeg-local-campaign-analytics",
+      "purpose_zh": "依据本地数据分析投放与变体",
+      "legacy_name": "video-cut-campaign-analytics",
+      "legacy_skill_sha256": "b2c774e064aa2117596bfbe7c74e8735313fb6f8f1f3280b7561d754d56adf16",
+      "skill_md_sha256": "da31e25b3e641f80367075cdb4e72be99be2c89c332556d8ba58ec419fffd46b",
+      "canonical_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\skills\\agent-ffmpeg-local-campaign-analytics",
+      "registration_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\discovery-r1\\agent-ffmpeg-local-campaign-analytics",
+      "registration_verified": true
+    }
+  ],
+  "look_catalog_version": "2.0.0",
+  "look_count": 500,
+  "registered_at_utc": "2026-10-24T12:20:21.4109094Z"
+}

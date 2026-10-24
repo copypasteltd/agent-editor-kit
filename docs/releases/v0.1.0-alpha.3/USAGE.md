@@ -3,6 +3,8 @@
 本地原生 Windows x64 / CPython 3.13。CLI `0.1.2`，风格目录 `2.0.0`。本版把内置风格从 100 扩展到 500，并保留原 100 套的稳定 ID 和 LUT 字节。
 Native Windows release with 500 offline creative SDR looks. Existing 100 IDs and LUT bytes are preserved.
 
+公开发行的推荐流程见 [简体快速上手](QUICKSTART.md)、[繁體快速上手](QUICKSTART.zh-TW.md)和 [English quickstart](QUICKSTART.en.md)：直接下载运行 ZIP 与 Agent kit，安装、注册 17 个 Skill，再执行随包示例。以下保留分卷备用安装和底层滤镜操作说明。The public release supplies a direct ZIP and an Agent kit; multipart assembly below is the fallback route.
+
 ## 下载与安装 / Download and install
 
 下载 [artifacts/](artifacts/) 中全部 `.partNN`、`parts.json`、`assemble.py`、`version.json`、`SHA256SUMS.txt` 到同一目录。分卷只是二进制分块；须先合成普通 ZIP，再解压。每卷不超过 64 MiB。基础包不包含 Python、FFmpeg 或模型。

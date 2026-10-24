@@ -13,6 +13,7 @@ from urllib.parse import unquote
 
 from build_look_profile_docs import traditional
 from readme_product_content import MODULES, SERVICES, SKILLS
+from readme_release_workflow import quickstart
 
 ROOT = Path(__file__).resolve().parents[1]
 DOC = ROOT / 'docs/product'
@@ -135,10 +136,11 @@ The following restored demonstrations retain their original dates, V IDs, metric
         text += pick('**面向 Agent 的开源、本地视频编辑 CLI。** 从结构化编辑计划到可编辑工程、预览、成片、质量报告和可恢复交付；保留每一步的真实输出与来源。',
                      '**An open-source local video-editing CLI for Agents.** Turn structured plans into editable projects, previews, video, quality reports and recoverable deliveries, retaining real artifacts and provenance.')+'\n\n'
         text += '[简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit) · [Docs](docs/README.md)\n\n'
-        text += pick('**可用本地版：v0.1.0-alpha.3 · CLI 0.1.2 · 500 套风格 · 17 个本地 Skill。** 基础包已在原生 Windows/CPython 3.13 x64 安装实测。本轮更新完整文档与样例，不修改发行包；alpha.3 提供仓库分卷包，尚未另建 GitHub Release。完整剪映等价仍是开发目标，尚未验收。',
-                     '**Usable local build: v0.1.0-alpha.3 · CLI 0.1.2 · 500 looks · 17 local Skills.** Installation has been exercised on native Windows/CPython 3.13 x64. This update expands documentation/examples without changing the release bundle. Alpha.3 is supplied as repository archive parts, without a separate new GitHub Release. Complete Jianying/CapCut parity remains an unaccepted development target.')+'\n\n'
+        text += pick('**发行版本：v0.1.0-alpha.3 预发布版 · CLI 0.1.2 · 500 套风格 · 17 个本地 Skill。** 提供完整运行 ZIP、Agent kit、可选图册及校验摘要。运行内核保持原已验包字节；新增可移植安装和可执行示例。完整剪映等价仍是开发目标，尚未验收。',
+                     '**Release: v0.1.0-alpha.3 prerelease · CLI 0.1.2 · 500 looks · 17 local Skills.** Downloads provide a complete runtime ZIP, Agent kit, optional gallery and checksums. The verified runtime bytes are unchanged; portable installation and a runnable example are added. Complete Jianying/CapCut parity remains an unaccepted development target.')+'\n\n'
         text += pick('本页包含完整功能模块、服务与依赖、安装与使用逻辑、Skill 输入输出、真实案例和核验表。长篇原始验收日志继续留档，功能说明与案例入口恢复到首页。',
                      'This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.')+'\n\n'
+        text += quickstart(pick, suffix)
         text += pick('## 先看实际效果：同一母图的 500 套滤镜','## See real output: 500 looks on one supplied still')+'\n\n'
         text += pick('以下每一格都来自用户提供的 N002 母图，经已安装 CLI 实际处理。原图 + 11 套示例只是入口；全部 500 套均有独立样例和详情。',
                      'Every tile below comes from the supplied N002 still processed by the installed CLI. The original plus eleven looks are an entry point; all 500 have individual samples and profiles.')+'\n\n'
@@ -146,7 +148,7 @@ The following restored demonstrations retain their original dates, V IDs, metric
         text += pick(f'[**打开全部 500 套交互选型页**]({G}/index.html) · [全部编号样例](docs/local/FILTER_GALLERY{suffix}.md) · [逐项实际效果](docs/local/LOOK_PRESETS{suffix}.md) · [原始 PNG]({G}/source.png) · [来源与许可]({G}/SOURCE_AND_LICENSES.md)\n\n',
                      f'[**Open the interactive 500-look gallery**]({G}/index.html) · [Numbered samples](docs/local/FILTER_GALLERY{suffix}.md) · [Measured profiles](docs/local/LOOK_PRESETS{suffix}.md) · [Original PNG]({G}/source.png) · [Sources/licenses]({G}/SOURCE_AND_LICENSES.md)\n\n')
         text += pick('选型页支持简体/繁体/英文、编号/名称/ID/描述搜索、类别与许可筛选、原图滑杆、候选勾选和 JSON 导出。每页仅加载 40 张小图，选中时再加载原尺寸大图。GitHub 文件页不执行 HTML，请下载仓库后直接双击该 HTML；无需服务或联网。',
-                     'The gallery supports three languages, number/name/ID/description search, category/license filters, an original-image split, shortlisting and JSON export. It loads 40 thumbnails per page and a full-size image for the active look. GitHub does not execute repository HTML; download the checkout and open the HTML locally, without a server or network.')+'\n\n'
+                     'The gallery supports three languages, number/name/ID/description search, category/license filters, an original-image split, shortlisting and JSON export. It loads 40 thumbnails per page and a full-size image for the active look. GitHub does not execute repository HTML; extract the optional gallery ZIP and open the HTML locally, without a server or network.')+'\n\n'
         text += pick('**样例口径：** 原图 1672×940，统一强度 1.0、四面体插值；500 张原尺寸无损 WebP 与实际 CLI PNG 的解码 RGB 逐像素一致，500 张小图为缩放的 WebP。母图没有嵌入色彩配置，按编码 SDR RGB 试片，不推断为相机/HDR 校准。母图使用依据为用户本次提供与展示指令，未将其标为 MIT/CC0。',
                      '**Sample contract:** 1672×940 source, strength 1.0 and tetrahedral interpolation throughout. All 500 full-size lossless WebPs exactly match decoded CLI PNG RGB; the 500 thumbnails are resized WebP. No color profile is embedded in the source, so this is an encoded-SDR-RGB trial rather than camera/HDR calibration. The user supplied the image and requested these examples; it is not declared MIT/CC0.')+'\n\n'
         text += pick('## 产品方案与完整执行逻辑','## Architecture and complete execution logic')+'\n\n'
@@ -215,8 +217,9 @@ flowchart LR
         text += pick('**面向客户的流程：** Agent 先展示原图 + 3–6 套符合需求的实际样例，并写清编号、名称、稳定 ID、强度、色彩变化与许可；客户可在选型页筛选并导出候选，或直接报编号。Agent 再对真实目标素材生成选定强度预览，记录最终 ID、强度与片段/全局作用域，再 dry-run/apply。对照滑杆只改变原图显示区域，不模拟滤镜强度。',
                      '**Client workflow:** show the original plus 3–6 relevant actual samples, identifying number, name, stable ID, strength, color change and license. Clients can filter/export candidates or give numbers. Render selected strengths on the actual target media, record final ID/strength/clip-or-global scope, then dry-run/apply. The split slider changes the original comparison region and does not simulate strength.')+'\n\n'
         text += '''```powershell
-$avk = 'E:/dev/sandbox/AI广告剪辑/skills/agent-ffmpeg-local-editor/scripts/run.ps1'
-$aekGallery = 'E:/dev/sandbox/AI广告剪辑/skills/agent-ffmpeg-local-editor/scripts/look_gallery.py'
+$avkHome = 'E:/tools/agent-editor-kit-alpha3'
+$avk = Join-Path $avkHome 'skills/agent-ffmpeg-local-editor/scripts/run.ps1'
+$aekGallery = Join-Path $avkHome 'skills/agent-ffmpeg-local-editor/scripts/look_gallery.py'
 & 'C:/Python313/python.exe' -I -S -B -X utf8 $aekGallery --query '黑白' --limit 6
 & 'C:/Python313/python.exe' -I -S -B -X utf8 $aekGallery --ids t3-fuji-superia-800 nt-bw-agfa-apx-100 fl-0000634-darkblue --output 'E:/video-work/client-look-options'
 & $avk look inspect --id t3-fuji-superia-800
@@ -228,7 +231,7 @@ $aekGallery = 'E:/dev/sandbox/AI广告剪辑/skills/agent-ffmpeg-local-editor/sc
 '''
         text += pick('上例输出目录必须是新目录；`clip_1` 应替换为真实片段 ID。helper 只输出 `board.jpg` 与 `selection.json`，不改工程；样例均为 100% 强度。`look apply` 默认替换该作用域的内置风格并保留手工效果，`--append` 才叠加；`--global` 作用于全部序列。静态强度混合的是编码 RGB。仅创意 SDR，Float32/Log/HDR 应先按独立色彩契约准备。',
                      'Use a new output directory and replace `clip_1` with an actual clip ID. The helper writes only `board.jpg` and `selection.json`, without project edits; samples are at 100%. `look apply` replaces built-in looks in scope while preserving manual effects; stacking requires `--append`, and `--global` affects every sequence. Static strength mixes encoded RGB. Prepare Float32/Log/HDR through a separate color contract before creative SDR looks.')+'\n\n'
-        text += pick('## 安装、包内容与本机加载','## Installation, bundle contents and local loading')+'\n\n'
+        text += pick('## 分卷备用安装、包内容与仓库本机入口','## Multipart fallback, bundle contents and repository installation')+'\n\n'
         text += pick('基础环境：原生 Windows x64、已有 CPython 3.13、FFmpeg/ffprobe。发行包含 8 个固定 wheel（应用、NumPy、Pillow 及 schema 依赖），采用目标目录离线安装，不创建虚拟环境、不改全局 site-packages。Python、FFmpeg、Node/Chromium、模型权重、商业字体/音乐不包含在基础包。',
                      'Prerequisites: native Windows x64, existing CPython 3.13 and FFmpeg/ffprobe. Eight pinned wheels contain the app, NumPy, Pillow and schema dependencies, installed offline to a target folder without a virtual environment or global site-packages changes. Python, FFmpeg, Node/Chromium, model weights and commercial fonts/music are not bundled.')+'\n\n'
         text += pick('[下载所有分卷与元数据](docs/releases/v0.1.0-alpha.3/artifacts/) · [安装手册](docs/releases/v0.1.0-alpha.3/USAGE.md) · [摘要](docs/releases/v0.1.0-alpha.3/artifacts/SHA256SUMS.txt)。分卷不是独立 ZIP；先合成后解压。哈希验证内容一致性，不是发布者签名。',
@@ -259,11 +262,12 @@ $avk = 'E:/dev/sandbox/AI广告剪辑/skills/agent-ffmpeg-local-editor/scripts/r
 ```
 
 '''
-        text += pick('Skill 启动器验证本地安装回执与 launcher 哈希，再以 `-I -S` 调用固定发行版；安装缺失时明确报错，不静默回退源码。500 套 N002 展示图片和选型页属于仓库文档资源，未改写已发布的运行包；仅下载运行 ZIP 不会自动获得本次完整图册。',
-                     'The Skill launcher checks the installation receipt and launcher hash, then invokes the pinned release with `-I -S`; missing installation fails without silent source fallback. N002 images and the gallery are checkout documentation assets, not a changed release bundle; downloading only the runtime ZIP does not include this complete gallery.')+'\n\n'
+        text += pick('Skill 启动器验证本地安装回执与 launcher 哈希，再以 `-I -S` 调用固定发行版；安装缺失时明确报错，不静默回退源码。500 套 N002 展示图片和选型页单独提供在可选图册 ZIP；解压到 Agent kit 的工具目录即可供 Skill helper 使用。运行 ZIP 本身保持不变。',
+                     'The Skill launcher checks the installation receipt and launcher hash, then invokes the pinned release with `-I -S`; missing installation fails without silent source fallback. N002 samples and selection assets are a separate optional gallery ZIP. Extract it into the Agent kit home for the Skill helper to use. The runtime ZIP itself is unchanged.')+'\n\n'
         text += pick('## 从零到交付的命令与工程结构','## Commands and project structure: start to delivery')+'\n\n'
         text += '''```powershell
-$avk = 'E:/dev/sandbox/AI广告剪辑/skills/agent-ffmpeg-local-editor/scripts/run.ps1'
+$avkHome = 'E:/tools/agent-editor-kit-alpha3'
+$avk = Join-Path $avkHome 'skills/agent-ffmpeg-local-editor/scripts/run.ps1'
 $aekProject = 'E:/video-work/first-ad'
 & $avk project init $aekProject --name 'First ad'
 & $avk media ingest --project $aekProject --input 'E:/media/product.mp4'
@@ -328,14 +332,18 @@ $agent-ffmpeg-local-quality 对实际输出、manifest 和 Scope 复核，分别
             ['H06 / V49',pick('真实离线 CTC：模型时间驱动字幕，边界偏差 258.1875 ms，未通过 66.6667 ms 门槛。','Actual offline CTC: model-timed captions; 258.1875 ms boundary error fails the 66.6667 ms gate.'),'[Input audio](docs/assets/ctc-alignment-20261018/input.wav) · [Output](docs/assets/ctc-alignment-20261018/result.mp4) · [GIF](docs/assets/ctc-alignment-20261018/comparison.gif)'],
             ['H07 / V53',pick('磁吸主轨重排：A/B/C/D → C/A/B/D，保持关联音画与作者约束。','Magnetic primary-track reorder: A/B/C/D → C/A/B/D with linked audio and author constraints.'),'[Input](docs/assets/magnetic-reorder-v53-r5-20261018/source-preview.mp4) · [Output](docs/assets/magnetic-reorder-v53-r5-20261018/MR01.mp4) · [GIF](docs/assets/magnetic-reorder-v53-r5-20261018/reorder-before-after.gif)']]
         text += table(pick(['编号','场景与实测范围','原始文件、输出与证据'],['ID','Scenario and actual scope','Original/output/evidence']),case_rows)+'\n'
+        text += pick('### C08：从下载包首次安装到实际交付','### C08: from downloaded kit to actual delivery')+'\n\n'
+        text += pick('本次在新的 E 盘中文/空格路径安装 Agent kit，注册 17 个 Skill，再执行随包示例的 20 次实际 CLI：两张 CC0 图片 + 合成音 → 运镜与 0.65 强度风格 → 实际视频/质检 → 工程包导出、导入和恢复验证。',
+                     'This release is installed into a fresh E-drive path with Chinese characters/spaces, registers 17 Skills, then runs 20 actual CLI calls: two CC0 images and synthetic audio → motion and a 0.65-strength look → video/quality checks → project-package export, import and restored validation.')+'\n\n'
+        text += '[MP4](docs/assets/release-v0.1.0-alpha.3-r1/demo.mp4) · [GIF](docs/assets/release-v0.1.0-alpha.3-r1/demo.gif) · [Changes](docs/validation/evidence/release-v0.1.0-alpha.3-r1/demo/changes.json) · [Commands](docs/validation/evidence/release-v0.1.0-alpha.3-r1/demo/commands.json) · [Verification](docs/validation/evidence/release-v0.1.0-alpha.3-r1/verification.json)\n\n![Actual portable Agent kit example](docs/assets/release-v0.1.0-alpha.3-r1/demo.gif)\n\n'
         text += pick('本轮实际选型页桌面截图，支持原图对照与候选导出：','Actual desktop screenshot of the selection page, with original comparison and shortlist export:')+'\n\n'+f'![Actual offline look selection page]({G}/gallery-desktop.png)\n\n'
         text += pick('下面是实际 CLI 渲染的 FIELD 广告；所有源卡片、音频、编辑 JSON、响应与流信息见案例手册。GIF 无声，原 MP4 可检查音轨。',
                      'Below is the actual CLI-rendered FIELD ad. The casebook retains source cards/audio, edit JSON, responses and stream data. GIF is silent; inspect the MP4 for audio.')+'\n\n'
         text += '![Actual rendered FIELD ad](docs/assets/release-v0.1.0-alpha.1-r2/field.gif)\n\n'
         text += pick('已保留的 HTML 动效源码与时间线合成实测：','Dated execution of editable HTML motion and timeline compositing:')+'\n\n![Actual HTML motion and composition](docs/assets/html-motion-20261018/native-comparison.gif)\n\n'
         text += pick('关键帧、运镜、动态蒙版、标题、转场和音频组合的既有实际演示：','Dated actual keyframe/camera/mask/title/transition/audio composition:')+'\n\n![Actual CLI feature demonstration](docs/assets/readme-20261016/cli-showcase.gif)\n\n'
-        text += pick('[**完整案例册：恢复全部既有功能演示、输入/输出、指标与失败**](docs/product/CASES.md) · [首版完整复现步骤](docs/releases/v0.1.0-alpha.1/CASES.md)。本轮只新增 N002 静态滤镜和选型文档工具实测，其他案例保留日期，不累计为新模型或新回归。研究性的时序修复仍单列为未集成/未验收。',
-                     '[**Complete casebook: all restored functional demos, inputs/outputs, metrics and failures**](docs/product/CASES.md) · [Release reproduction steps](docs/releases/v0.1.0-alpha.1/CASES.md). New executions here are N002 still looks and selection-document tools; other cases retain their dates and are not counted as new inference/regression. Experimental temporal repair remains separately labeled unintegrated/unaccepted.')+'\n\n'
+        text += pick('[**完整案例册：恢复全部既有功能演示、输入/输出、指标与失败**](docs/product/CASES.md) · [首版完整复现步骤](docs/releases/v0.1.0-alpha.1/CASES.md)。N002 图册与本次新目录安装示例分别保留核验记录；其他案例保留日期，不累计为本次新模型或新回归。研究性的时序修复仍单列为未集成/未验收。',
+                     '[**Complete casebook: all restored functional demos, inputs/outputs, metrics and failures**](docs/product/CASES.md) · [Release reproduction steps](docs/releases/v0.1.0-alpha.1/CASES.md). N002 gallery and this fresh-directory installation example retain separate evidence. Other cases keep their dates and are not counted as new inference/regression. Experimental temporal repair remains separately labeled unintegrated/unaccepted.')+'\n\n'
         text += pick('## 故障、恢复与交付注意点','## Troubleshooting, recovery and delivery')+'\n\n'
         text += table(pick(['现象','处理方式'],['Symptom','Action']),[
             [pick('缺少 FFmpeg / 模型 / 浏览器','Missing FFmpeg/model/browser'),pick('先 doctor/inspect，提供已有原生依赖；不自动联网下载或改用不声明的后端。','Run doctor/inspect and supply existing native dependencies; no automatic download or undeclared fallback.')],
@@ -356,6 +364,7 @@ $agent-ffmpeg-local-quality 对实际输出、manifest 和 Scope 复核，分别
             ['R28',pick('三语完整文档与样例链接','Complete three-language docs and sample links'),pick('功能/服务/Skill/案例/500 项图册、能力字段与本地链接核对。','Modules/services/Skills/cases/500 samples, capability fields and local-link checks.'),'[Documentation receipt](docs/validation/evidence/looks-n002-20261024-r1/docs-verification.json) · '+pick('未重跑历史 2,930 项内核全量。','Historical 2,930-test full kernel suite not rerun.')],
             ['R29',pick('完整目标差距与安装版核对','Goal gaps and installed inventory'),pick('4 次安装版只读 CLI 成功；68 项能力声明与手册一致；38 组差距分别列出收口条件。','4 successful installed read-only CLI calls; 68 capability contracts match the manual; 38 gap groups have explicit acceptance conditions.'),'[Assessment](docs/product/GOAL_GAPS_20261024.md) · [Inventory](docs/validation/evidence/goal-gaps-20261024-r1/inventory.json) · '+pick('本轮 0 渲染/0 推理；既有精度失败与未验收项保留。','Zero renders/inference in this assessment; prior accuracy failures and open acceptance remain.')]
         ]
+        new_rows.append(['R30',pick('可移植 Agent kit 安装与完整示例','Portable Agent kit installation and complete example'),pick('原生 E 盘中文/空格路径安装；17 个 Skill 注册；20 次真实 CLI 完成剪辑、渲染、质检与工程包往返。','Native E-drive installation in a Chinese/spaced path; 17 Skills registered; 20 actual CLI calls edit, render, check quality and round-trip a project package.'),'[Release gate](docs/validation/evidence/release-v0.1.0-alpha.3-r1/verification.json) · [Demo video](docs/assets/release-v0.1.0-alpha.3-r1/demo.mp4) · '+pick('6 秒/180 帧完整解码；未重跑内核全量或模型推理，未做听审。','6 seconds/180 frames fully decoded; no full kernel rerun, model inference or listening review.')])
         text += '\n'.join('| '+' | '.join(row)+' |' for row in new_rows)+'\n\n'
         text += pick('## 当前边界与开发方向','## Current limits and development direction')+'\n\n'
         text += pick('当前可交付的是有明确契约、离线可运行、可编辑、可复查的 Agent CLI 闭环。完整开源素材/模板生态、约定的 AI 特效/美颜/排版、完整色彩管线、指定草稿版本的真实转换质量、广泛自然视听和长片资源性能仍需开发与验收。消费级 GUI、账号、云协作及任意私有版本无损转换不属于当前内核收口门槛。后续 Float32 转场/运行时闭包候选 R113/R114 未随本版提供。',

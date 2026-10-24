@@ -1,0 +1,236 @@
+{
+  "status": "passed-with-open-product-limits",
+  "checked_at_utc": "2026-10-24T12:25:38.011539+00:00",
+  "release": "v0.1.0-alpha.3",
+  "installation": {
+    "ok": true,
+    "release": "v0.1.0-alpha.3",
+    "installed_directory": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\local\\agent-ffmpeg\\v0.1.0-alpha.3\\installed",
+    "runtime_config": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\local\\agent-ffmpeg\\runtime.json",
+    "runtime_archive_sha256": "1a967e4def2afc14e9f110c6cad90e172ff457a77ef405cb83932f1f1187b968",
+    "network_downloads": 0,
+    "virtual_environments_created": 0,
+    "next": "Run register-agent-ffmpeg-local-skills.ps1; then run-example.py --output a-new-directory"
+  },
+  "native_path_has_chinese_and_spaces": true,
+  "skills": [
+    {
+      "name": "agent-ffmpeg-local-editor",
+      "junction_verified": true,
+      "skill_sha256": "c8a5fe829ab73f826ea4c568afefae1e074dcf64e234e73c4a19a2f16902d344"
+    },
+    {
+      "name": "agent-ffmpeg-local-timeline",
+      "junction_verified": true,
+      "skill_sha256": "bd482280a9ba3b2b5eff6ec8f7190e0867961759f374ff305c4d9e5e442376ab"
+    },
+    {
+      "name": "agent-ffmpeg-local-quality",
+      "junction_verified": true,
+      "skill_sha256": "708b99f4aad6a4cd65b4c3c09aebb7ef248877481c63f8148f633e9078716a0e"
+    },
+    {
+      "name": "agent-ffmpeg-local-project-ops",
+      "junction_verified": true,
+      "skill_sha256": "1e9cc5431a56004733f6684a88ffc57f26cfabf74ecdc4acbc7646c342acd54f"
+    },
+    {
+      "name": "agent-ffmpeg-local-local-policy",
+      "junction_verified": true,
+      "skill_sha256": "2909a538b0ff0826d396d131ded42940867f3f2b257d49b1fd4fdee472d11f1a"
+    },
+    {
+      "name": "agent-ffmpeg-local-rights-ledger",
+      "junction_verified": true,
+      "skill_sha256": "07f20a9b43930b49f217416ca702d2d797854d0f958e9f4809f8d43e61d19c24"
+    },
+    {
+      "name": "agent-ffmpeg-local-local-models",
+      "junction_verified": true,
+      "skill_sha256": "198b654ed9d1903dc2464816f8ad4220df9e17fe0141634eeed83d28a23b29a3"
+    },
+    {
+      "name": "agent-ffmpeg-local-video-understand",
+      "junction_verified": true,
+      "skill_sha256": "d3ccd302a9277fc6876d4f5074f6ee54950544171fe4777adc1caee0b21fb312"
+    },
+    {
+      "name": "agent-ffmpeg-local-template-library",
+      "junction_verified": true,
+      "skill_sha256": "c7aeed858ed7e8f66f6543b23aeaece36ba37e26fa4497f61f41dad2648f4c4a"
+    },
+    {
+      "name": "agent-ffmpeg-local-long-to-short",
+      "junction_verified": true,
+      "skill_sha256": "6bc37c18217ca81f7873ce21bdc220c81336b0e7c40bf36148251af5641af4fb"
+    },
+    {
+      "name": "agent-ffmpeg-local-screen-demo",
+      "junction_verified": true,
+      "skill_sha256": "bbc465395c24c9c25a8a0dce231e22611e213aeb2412fdb5fa4e274e984cab1a"
+    },
+    {
+      "name": "agent-ffmpeg-local-reference-remake",
+      "junction_verified": true,
+      "skill_sha256": "385bddaa7e0598cdeadd7caffd80247aae7ac90f931b750a3db1f712ec6eca3d"
+    },
+    {
+      "name": "agent-ffmpeg-local-ffmpeg",
+      "junction_verified": true,
+      "skill_sha256": "eb40aafd7ad10f82e8b6970449d3b4639129e5d692f7e900fe36f58c88c73f5d"
+    },
+    {
+      "name": "agent-ffmpeg-local-video-edit",
+      "junction_verified": true,
+      "skill_sha256": "8bd3dd336652d57832fa4883bb9cb1e93831725ee5059134c81a7562b2efd7e8"
+    },
+    {
+      "name": "agent-ffmpeg-local-ad-creative",
+      "junction_verified": true,
+      "skill_sha256": "24a6aec0a66ed3469802c86582af27322d8626f3dc674447c7ca9eb9b11b952f"
+    },
+    {
+      "name": "agent-ffmpeg-local-video-content-strategist",
+      "junction_verified": true,
+      "skill_sha256": "c5ca8ed4986f94938789c239422f1ae94df6fec276c740bbde22d5cfb7fc419f"
+    },
+    {
+      "name": "agent-ffmpeg-local-campaign-analytics",
+      "junction_verified": true,
+      "skill_sha256": "da31e25b3e641f80367075cdb4e72be99be2c89c332556d8ba58ec419fffd46b"
+    }
+  ],
+  "registered_skill_queries": [
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "product\\.runtime\\public-alpha3-20261024\\discovery-r1\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "version"
+      ],
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "product\\.runtime\\public-alpha3-20261024\\discovery-r1\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "doctor"
+      ],
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "product\\.runtime\\public-alpha3-20261024\\discovery-r1\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "capabilities"
+      ],
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "product\\.runtime\\public-alpha3-20261024\\discovery-r1\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "look",
+        "inspect",
+        "--id",
+        "t3-kodak-gold-200"
+      ],
+      "exit_code": 0,
+      "ok": true
+    }
+  ],
+  "demo": {
+    "ok": true,
+    "release": "v0.1.0-alpha.3",
+    "cli_commands": 20,
+    "video": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\demo-r1\\project\\renders\\demo.mp4",
+    "video_sha256": "bbbf6d2e398b50d4e4622a254315fc0ea871120fa63cdeccb52a7573f6934fd0",
+    "frames": 180,
+    "fps": "30/1",
+    "width": 360,
+    "height": 640,
+    "seconds": 6,
+    "full_decode_passed": true,
+    "project": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\demo-r1\\project\\project.json",
+    "package": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\public-alpha3-20261024\\demo-r1\\demo.aevpkg.zip",
+    "new_model_inferences": 0,
+    "continuous_playback_review": false,
+    "listening_review": false,
+    "natural_quality_acceptance": false,
+    "input_license": "CC0-1.0"
+  },
+  "actual_cli_calls": 20,
+  "additional_registered_launcher_queries": 4,
+  "expected_refusals": [
+    {
+      "case": "wrong-runtime",
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\install.py",
+        "--archive",
+        "docs\\validation\\evidence\\release-v0.1.0-alpha.3-r1\\wrong-runtime.zip"
+      ],
+      "exit_code": 2,
+      "status": "failed-preserved",
+      "existing_outputs_unchanged": true
+    },
+    {
+      "case": "existing-demo",
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-B",
+        "-X",
+        "utf8",
+        "product\\.runtime\\public-alpha3-20261024\\native check 中文\\agent-kit\\run-example.py",
+        "--output",
+        "product\\.runtime\\public-alpha3-20261024\\demo-r1"
+      ],
+      "exit_code": 2,
+      "status": "failed-preserved",
+      "existing_outputs_unchanged": true
+    }
+  ],
+  "initial_orchestration_failure": {
+    "operation": "exec_command with not-yet-created workdir",
+    "installer_started": false,
+    "resolution": "Extract from an existing parent, then Set-Location into the new Agent kit"
+  },
+  "network_downloads_in_product_flow": 0,
+  "new_model_inferences": 0,
+  "virtualization_invoked": false,
+  "browser_invoked": false,
+  "historical_2930_suite_rerun": false,
+  "clean_second_host_test": false,
+  "full_capcut_parity_accepted": false,
+  "listening_review": false,
+  "natural_footage_acceptance": false,
+  "open_limits": [
+    "Native Windows CPython 3.13 x64 only",
+    "Existing native FFmpeg/ffprobe required",
+    "Optional models and browser adapters are not installed by this kit",
+    "Historical quality failures remain open; see goal-gap assessment"
+  ]
+}

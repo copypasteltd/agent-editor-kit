@@ -8,7 +8,7 @@
 
 [简体中文](../README.md) · [繁體中文](../README.zh-TW.md) · [English](../README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit) · [Local package parts](releases/v0.1.0-alpha.3/artifacts)
 
-当前运行内核为 **v0.1.0-alpha.3 / CLI 0.1.2 / 500 离线风格**，本机注册已合并为 **1 个 Skill / 17 项内部模块**；完整剪映等价仍未验收。The installed runtime is unchanged; `$agent-ffmpeg-local-editor` is the single entry, with 17 internal task references.
+当前本机安装为 **v0.1.0-alpha.4-local.1 / CLI 0.1.3 / GPU 配音与翻译 / 359 项资源**；公开预发布仍为 **alpha.3 / CLI 0.1.2**。500 套风格与 **1 个 Skill / 17 项内部模块**继续保留，完整剪映等价仍未验收。Local CLI 0.1.3 includes the community/GPU extension; published alpha.3 downloads retain CLI 0.1.2. Use the matching application, kit and model pins.
 
 | 阅读目标 / Goal | Document |
 |---|---|
@@ -16,7 +16,8 @@
 | 当前 alpha.3 预发布下载、安装、Skill 注册与首次视频 / Current release and first render | [Release](https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3) · [简体上手](releases/v0.1.0-alpha.3/QUICKSTART.md) · [繁體上手](releases/v0.1.0-alpha.3/QUICKSTART.zh-TW.md) · [English](releases/v0.1.0-alpha.3/QUICKSTART.en.md) |
 | alpha.3 发行范围、新目录安装与可执行示例 / Release scope and fresh-directory checks | [Scope](releases/v0.1.0-alpha.3/RELEASE.md) · [Release notes](releases/v0.1.0-alpha.3/RELEASE-NOTES.md) · [Native verification](validation/evidence/release-v0.1.0-alpha.3-r1/verification.json) |
 | alpha.3 的 GitHub 发布与 10 个附件逐项下载核对 / Current publication and ten download hashes | [Publication receipt](validation/evidence/release-v0.1.0-alpha.3-r1/publication.json) · [Reproduction](validation/evidence/release-v0.1.0-alpha.3-r1/git-reproduction.json) |
-| 距离完整目标的 38 组差距、已有能力、已知失败与收口顺序 / Goal gaps and acceptance order | [2026-10-24 差距评估](product/GOAL_GAPS_20261024.md) · [Installed inventory](validation/evidence/goal-gaps-20261024-r1/inventory.json) |
+| 当前 CLI 0.1.3 的 38 组差距、已交付扩展与剩余质量/AI/性能工作 / Current full-goal assessment | [2026-10-25 最新评估](product/GOAL_GAPS_20261025.md) · [6 次安装版只读核对](validation/evidence/goal-gaps-20261025-r1/inventory.json) |
+| alpha.3 历史目标评估 / Historical alpha.3 assessment | [2026-10-24 差距评估](product/GOAL_GAPS_20261024.md) · [Installed inventory](validation/evidence/goal-gaps-20261024-r1/inventory.json) |
 | 当前完整功能与本地服务模块、安装版全部能力字段 / Complete functional and service modules | [简体](product/CAPABILITIES.md) · [繁體](product/CAPABILITIES.zh-TW.md) · [English](product/CAPABILITIES.en.md) |
 | 46 效果算子与 12 运镜的具体参数、范围、后端 / Full effect and motion parameters | [简体](product/EFFECTS.md) · [繁體](product/EFFECTS.zh-TW.md) · [English](product/EFFECTS.en.md) |
 | 一个 Skill 内部 17 项模块的输入输出、依赖与职责 / Current internal task modules | [简体](product/SKILLS.md) · [繁體](product/SKILLS.zh-TW.md) · [English](product/SKILLS.en.md) |

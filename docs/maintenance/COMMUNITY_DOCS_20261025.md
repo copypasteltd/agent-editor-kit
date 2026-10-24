@@ -40,3 +40,9 @@ For a new application/model build:
 The current audit checks only local filesystem links; it does not silently open
 browsers, create virtual environments, download models, or certify legal/semantic
 acceptance. If a browser is separately used, close its unused tabs afterwards.
+
+## 同日目标差距评估增量
+
+当前评估为 `docs/product/GOAL_GAPS_20261025.md`；6 次固定安装版只读 CLI、GitHub 发行查询和文档检查保存在 `docs/validation/evidence/goal-gaps-20261025-r1/`。本次仅补充三语 README 的 R38 和当前差距入口，不修改产品内核、Skill、模型或已有发行附件。
+
+`audit_community_delivery.py` 的 R37 计数是素材/GPU 阶段快照约束；不要为了让历史脚本通过而删除后续 README 行。当前文档校验以本次 `documentation-check.json` 为准，原 R1/R2/R3 证据保留其日期和范围。

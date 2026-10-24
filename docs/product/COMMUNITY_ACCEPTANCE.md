@@ -64,3 +64,5 @@ The measured warm-generation improvement excludes hashing, process startup and m
 | P07 | 将本地扩展另行发布为新的公开 Release | 本轮仅安装本地包并更新 main；alpha.3 标签/附件/摘要保留原版 |
 
 本轮范围内的实现与离线交付已完成；人工听审、翻译语义接受和上述总产品差距作为后续验收项单独保留。
+
+完整产品的现状与 G01–G38 收口条件见 [2026-10-25 目标差距评估](GOAL_GAPS_20261025.md)。本页仍仅记录素材与 GPU 扩展的阶段性验收。

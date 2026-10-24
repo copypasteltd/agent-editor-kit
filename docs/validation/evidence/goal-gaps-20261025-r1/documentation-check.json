@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "checked_at_taipei": "2026-10-25T02:17:29.422624+08:00",
+  "fresh_installed_read_only_calls": 6,
+  "fresh_renders": 0,
+  "fresh_model_inferences": 0,
+  "gap_ids": 38,
+  "readme_rows": {
+    "F": 48,
+    "S": 16,
+    "K": 17,
+    "R": 38
+  },
+  "readmes_not_shortened": true,
+  "readme_powershell_blocks_identical": true,
+  "local_links_checked": 774,
+  "broken_local_links": [],
+  "new_script_ast": "passed",
+  "public_release": "v0.1.0-alpha.3",
+  "documents": [
+    {
+      "path": "README.md",
+      "bytes": 68564,
+      "sha256": "0d54f8547ceecb60e9f9eed51c79025633abd313626face084f3a8bab8b47515"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "bytes": 68944,
+      "sha256": "c32138045d5e4776558bcd2e5da76746297229ab0b879ee41e045f3c09efb16a"
+    },
+    {
+      "path": "README.en.md",
+      "bytes": 73756,
+      "sha256": "117cfa3cc2021f71d7724b82b3a61668e47d42cdaca39d21370f0569b22af7ab"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 7639,
+      "sha256": "8b9f922d381d65b145c21b57f873e5a7624896fb7b2fe306107c0d28c085efec"
+    },
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "bytes": 22904,
+      "sha256": "7c6829e0d0d572267e91cdc516592d934c8fb0f4c2673c5c47b626b87f42e879"
+    },
+    {
+      "path": "docs/product/GOAL_GAPS_20261024.md",
+      "bytes": 23019,
+      "sha256": "01ed32b799962f4df0778bce3e44729d5c73181fd9ede6d536f41f305183ed7a"
+    },
+    {
+      "path": "docs/product/COMMUNITY_ACCEPTANCE.md",
+      "bytes": 9896,
+      "sha256": "ff4b8a5510238023e8adb6cec1d3da6a7e53aa49ecded7e51d9c7893f56bdd4a"
+    },
+    {
+      "path": "docs/maintenance/COMMUNITY_DOCS_20261025.md",
+      "bytes": 3282,
+      "sha256": "c1e7aded7688e8df620a9171f88048ff237dc328235ae4874b22c2d5e36ebca2"
+    }
+  ]
+}

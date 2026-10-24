@@ -1,0 +1,305 @@
+{
+  "status": "passed_read_only_inventory",
+  "checked_at_taipei": "2026-10-25T02:00:46.021822+08:00",
+  "source_commit": "eb756b285f6eaaeba5d2cb8598b21103696ba563",
+  "runtime": {
+    "release": "v0.1.0-alpha.4-local.1",
+    "python": "C:\\Python313\\python.exe",
+    "installed_directory": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.1\\final\\installed",
+    "manifest_sha256": "sha256:f2ecd56dd5167fa25556ac8a5f79e51d85182c7fc432d6e4846ab1a6755cb3ee",
+    "launcher_sha256": "322dda3168534b883be4b2d18509624060e4db99afc9f5bde91602c0f638755e",
+    "native_only": true,
+    "community_config": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-runtime.json"
+  },
+  "registered_skill": "agent-ffmpeg-local-editor",
+  "internal_modules": 17,
+  "calls": [
+    {
+      "name": "version",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "version"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 9.575401,
+      "stdout_sha256": "65b2c67a0f4d59df99d5cda910afa56db2168a9eb3ccabdae268be73242c5877",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "doctor",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "doctor"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 3.6562310999999568,
+      "stdout_sha256": "bcfc2a2a421e47b71054dc860b1aa3d3fb68c3eae10f46e5dc33fa074db2cd8e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "capabilities",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "capabilities"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 1.779412499999978,
+      "stdout_sha256": "e76f167aa552c2b3607fe3b4b78b2ffb55b0819ebb20620dd02e9579f795bd63",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "schema",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "schema",
+        "show"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 1.713190099999963,
+      "stdout_sha256": "c8467be8da325a5d65b01951180c3fd6a0de97a55434adbeaa9a935ce62ed5b3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "gpu",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "gpu",
+        "inspect"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 1.699653000000012,
+      "stdout_sha256": "4589099d900c7d29e2a6817b96ea362f33eae3f212f5e885634e61d50bbee3af",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "packs",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "model-pack",
+        "list"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 1.6210480999999959,
+      "stdout_sha256": "42c2a8201a687c4cc19e03cfb463c4976f66591c045d0f673ee2f20a31f94940",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "capability_count": 71,
+  "capability_status_counts": {
+    "implemented_with_limits": 43,
+    "implemented": 20,
+    "degraded": 1,
+    "local_adapter_only": 7
+  },
+  "previous_alpha3_capabilities": 68,
+  "unchanged_alpha3_capabilities": 68,
+  "changed_alpha3_capabilities": [],
+  "added_capabilities": [
+    "community_materials",
+    "community_music",
+    "community_voice_translation"
+  ],
+  "material_counts": {
+    "music": 44,
+    "jingle": 85,
+    "sfx": 228,
+    "font": 2
+  },
+  "voice_catalog_shape": [
+    "engine",
+    "model_id",
+    "source_url",
+    "voices"
+  ],
+  "existing_evidence": [
+    {
+      "path": "docs/validation/evidence/community-materials-20261025-r1/cpu/verification.json",
+      "sha256": "e52fc3b645afc9a09979ae5f42498d6e2d4b626c6bd3d373d42a07dd5dff1411",
+      "status": "passed-with-open-review-limits",
+      "commands": 46,
+      "reexecuted_in_this_assessment": false
+    },
+    {
+      "path": "docs/validation/evidence/community-materials-20261025-r1/gpu/verification.json",
+      "sha256": "4ae0fd853ba04ce3fc6194ca0de9800b091fcf4ece61ce1a2ae43dff492148a4",
+      "status": "passed-with-review-limits",
+      "commands": 15,
+      "reexecuted_in_this_assessment": false
+    },
+    {
+      "path": "docs/validation/evidence/community-materials-20261025-r1/portable/verification.json",
+      "sha256": "33a9a2c306f816dff7015d13a757a5cfc22f8fa87105992621f21c58cc51cd96",
+      "status": "passed",
+      "commands": 8,
+      "reexecuted_in_this_assessment": false
+    },
+    {
+      "path": "docs/validation/evidence/community-materials-20261025-r1/skill/verification.json",
+      "sha256": "0faf0fb3f7fcea6833f25b3a8b286b4d044d39ff52775cb5fe94081b0d73aff7",
+      "status": "passed-with-review-limits",
+      "commands": 11,
+      "reexecuted_in_this_assessment": false
+    },
+    {
+      "path": "docs/validation/evidence/community-materials-20261025-r1/kit/verification.json",
+      "sha256": "9f32847010faf2e40da804db92abc16f00151bf2bc1bacd2eb3287cea4cab947",
+      "status": "passed",
+      "commands": [
+        {
+          "id": "configure",
+          "argv": [
+            "C:\\Python313\\python.exe",
+            "-I",
+            "-B",
+            "-u",
+            "-X",
+            "utf8",
+            "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-kit-native-r1\\独立工具 包\\scripts\\activate_community_runtime.py",
+            "--installed",
+            "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.1\\final\\installed",
+            "--packs",
+            "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-portable-r1\\模型 包",
+            "--voice-cuda-lib",
+            "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\lib",
+            "--translation-cuda-lib",
+            "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.4\\bin"
+          ],
+          "exit_code": 0
+        },
+        {
+          "id": "register-isolated-discovery",
+          "argv": [
+            "powershell.exe",
+            "-NoProfile",
+            "-ExecutionPolicy",
+            "Bypass",
+            "-File",
+            "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-kit-native-r1\\独立工具 包\\register-agent-ffmpeg-local-skills.ps1",
+            "-SkillsDirectory",
+            "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-kit-native-r1\\isolated-discovery",
+            "-ReceiptPath",
+            "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-kit-native-r1\\registration.json"
+          ],
+          "exit_code": 0
+        },
+        {
+          "id": "version",
+          "argv": [
+            "powershell.exe",
+            "-NoProfile",
+            "-ExecutionPolicy",
+            "Bypass",
+            "-File",
+            "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-kit-native-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+            "version"
+          ],
+          "exit_code": 0
+        },
+        {
+          "id": "init",
+          "argv": [
+            "powershell.exe",
+            "-NoProfile",
+            "-ExecutionPolicy",
+            "Bypass",
+            "-File",
+            "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-kit-native-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+            "project",
+            "init",
+            "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-kit-native-r1\\demo"
+          ],
+          "exit_code": 0
+        },
+        {
+          "id": "translate-auto",
+          "argv": [
+            "powershell.exe",
+            "-NoProfile",
+            "-ExecutionPolicy",
+            "Bypass",
+            "-File",
+            "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-kit-native-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+            "translate",
+            "text",
+            "--project",
+            "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-kit-native-r1\\demo",
+            "--from",
+            "en",
+            "--to",
+            "zh-Hant",
+            "--text",
+            "Keep the background music.",
+            "--output",
+            "exports/auto.txt"
+          ],
+          "exit_code": 0
+        }
+      ],
+      "reexecuted_in_this_assessment": false
+    },
+    {
+      "path": "docs/validation/evidence/community-materials-20261025-r1/cpu/presentation-correction/verification.json",
+      "sha256": "e3f95f73711ba9a0fe4cb09f773d5c4b4c7ef2447edc8922f591dc9768bdb7dd",
+      "status": "passed-with-review-limits",
+      "commands": 8,
+      "reexecuted_in_this_assessment": false
+    }
+  ],
+  "public_release_check": {
+    "url": "https://api.github.com/repos/copypasteltd/agent-editor-kit/releases?per_page=10",
+    "status": "checked",
+    "latest_published_tag": "v0.1.0-alpha.3",
+    "latest_published_url": "https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3",
+    "latest_is_prerelease": true,
+    "response_sha256": "85c0c79378e4caf5ae8fd76815ec224ff1c9f3534fda09a08c0933b6f75121c6"
+  },
+  "fresh_render_count": 0,
+  "fresh_model_inference_count": 0,
+  "historical_full_regression_rerun": false,
+  "human_listening_performed": false,
+  "new_capcut_market_audit": false,
+  "overall_completion_percentage_established": false,
+  "scope": "Frozen project baseline versus installed CLI declarations and prior evidence; not full CapCut acceptance."
+}

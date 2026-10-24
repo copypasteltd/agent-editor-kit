@@ -1,0 +1,312 @@
+{
+  "ok": true,
+  "command": "motion.list",
+  "request_id": "req_20261024102320_51690442",
+  "operation_id": null,
+  "status": "succeeded",
+  "data": {
+    "catalog_version": "0.1.0",
+    "source": "local-catalog",
+    "engine": "timeline-keyframes",
+    "network": "disabled",
+    "count": 12,
+    "presets": [
+      {
+        "id": "zoom_in",
+        "aliases": [
+          "push_in"
+        ],
+        "category": "scale",
+        "description": "在片段区间内平滑放大画面。",
+        "engine": "timeline-keyframes",
+        "source": "local-catalog",
+        "license": "project-code",
+        "properties": [
+          "transform.scale"
+        ],
+        "parameters": {
+          "amount": {
+            "type": "number",
+            "default": 0.15,
+            "minimum": 0.0,
+            "maximum": 1.0,
+            "description": "相对缩放增量"
+          }
+        },
+        "limits": []
+      },
+      {
+        "id": "zoom_out",
+        "aliases": [
+          "pull_out"
+        ],
+        "category": "scale",
+        "description": "从放大状态平滑回到原始缩放。",
+        "engine": "timeline-keyframes",
+        "source": "local-catalog",
+        "license": "project-code",
+        "properties": [
+          "transform.scale"
+        ],
+        "parameters": {
+          "amount": {
+            "type": "number",
+            "default": 0.15,
+            "minimum": 0.0,
+            "maximum": 1.0,
+            "description": "相对缩放增量"
+          }
+        },
+        "limits": []
+      },
+      {
+        "id": "pan_left",
+        "aliases": [
+          "slide_left"
+        ],
+        "category": "position",
+        "description": "沿 X 轴从右向左平移。",
+        "engine": "timeline-keyframes",
+        "source": "local-catalog",
+        "license": "project-code",
+        "properties": [
+          "transform.position.x"
+        ],
+        "parameters": {
+          "amount": {
+            "type": "number",
+            "default": 0.15,
+            "minimum": 0.0,
+            "maximum": 1.0,
+            "description": "归一化位移范围"
+          }
+        },
+        "limits": []
+      },
+      {
+        "id": "pan_right",
+        "aliases": [
+          "slide_right"
+        ],
+        "category": "position",
+        "description": "沿 X 轴从左向右平移。",
+        "engine": "timeline-keyframes",
+        "source": "local-catalog",
+        "license": "project-code",
+        "properties": [
+          "transform.position.x"
+        ],
+        "parameters": {
+          "amount": {
+            "type": "number",
+            "default": 0.15,
+            "minimum": 0.0,
+            "maximum": 1.0,
+            "description": "归一化位移范围"
+          }
+        },
+        "limits": []
+      },
+      {
+        "id": "pan_up",
+        "aliases": [
+          "slide_up"
+        ],
+        "category": "position",
+        "description": "沿 Y 轴从下向上平移。",
+        "engine": "timeline-keyframes",
+        "source": "local-catalog",
+        "license": "project-code",
+        "properties": [
+          "transform.position.y"
+        ],
+        "parameters": {
+          "amount": {
+            "type": "number",
+            "default": 0.15,
+            "minimum": 0.0,
+            "maximum": 1.0,
+            "description": "归一化位移范围"
+          }
+        },
+        "limits": []
+      },
+      {
+        "id": "pan_down",
+        "aliases": [
+          "slide_down"
+        ],
+        "category": "position",
+        "description": "沿 Y 轴从上向下平移。",
+        "engine": "timeline-keyframes",
+        "source": "local-catalog",
+        "license": "project-code",
+        "properties": [
+          "transform.position.y"
+        ],
+        "parameters": {
+          "amount": {
+            "type": "number",
+            "default": 0.15,
+            "minimum": 0.0,
+            "maximum": 1.0,
+            "description": "归一化位移范围"
+          }
+        },
+        "limits": []
+      },
+      {
+        "id": "ken_burns",
+        "aliases": [
+          "kenburns"
+        ],
+        "category": "compound",
+        "description": "同时平移和缩放的照片式镜头运动。",
+        "engine": "timeline-keyframes",
+        "source": "local-catalog",
+        "license": "project-code",
+        "properties": [
+          "transform.scale",
+          "transform.position.x",
+          "transform.position.y"
+        ],
+        "parameters": {
+          "amount": {
+            "type": "number",
+            "default": 0.15,
+            "minimum": 0.0,
+            "maximum": 1.0,
+            "description": "缩放及位移强度"
+          }
+        },
+        "limits": []
+      },
+      {
+        "id": "rotate_in",
+        "aliases": [
+          "rotate_left"
+        ],
+        "category": "rotation",
+        "description": "从指定角度平滑旋转回零度。",
+        "engine": "timeline-keyframes",
+        "source": "local-catalog",
+        "license": "project-code",
+        "properties": [
+          "transform.rotation"
+        ],
+        "parameters": {
+          "degrees": {
+            "type": "number",
+            "default": 8.0,
+            "minimum": -360.0,
+            "maximum": 360.0,
+            "description": "起始旋转角度"
+          }
+        },
+        "limits": []
+      },
+      {
+        "id": "rotate_out",
+        "aliases": [
+          "rotate_right"
+        ],
+        "category": "rotation",
+        "description": "从零度平滑旋转到指定角度。",
+        "engine": "timeline-keyframes",
+        "source": "local-catalog",
+        "license": "project-code",
+        "properties": [
+          "transform.rotation"
+        ],
+        "parameters": {
+          "degrees": {
+            "type": "number",
+            "default": 8.0,
+            "minimum": -360.0,
+            "maximum": 360.0,
+            "description": "结束旋转角度"
+          }
+        },
+        "limits": []
+      },
+      {
+        "id": "fade_in",
+        "aliases": [
+          "opacity_in"
+        ],
+        "category": "opacity",
+        "description": "在片段区间内从透明渐入。",
+        "engine": "timeline-keyframes",
+        "source": "local-catalog",
+        "license": "project-code",
+        "properties": [
+          "transform.opacity"
+        ],
+        "parameters": {},
+        "limits": [
+          "opacity_is_composited_as_a_transform_keyframe"
+        ]
+      },
+      {
+        "id": "fade_out",
+        "aliases": [
+          "opacity_out"
+        ],
+        "category": "opacity",
+        "description": "在片段区间内渐出到透明。",
+        "engine": "timeline-keyframes",
+        "source": "local-catalog",
+        "license": "project-code",
+        "properties": [
+          "transform.opacity"
+        ],
+        "parameters": {},
+        "limits": [
+          "opacity_is_composited_as_a_transform_keyframe"
+        ]
+      },
+      {
+        "id": "shake",
+        "aliases": [],
+        "category": "position",
+        "description": "生成交替位置点的轻微抖动。",
+        "engine": "timeline-keyframes",
+        "source": "local-catalog",
+        "license": "project-code",
+        "properties": [
+          "transform.position.x"
+        ],
+        "parameters": {
+          "amount": {
+            "type": "number",
+            "default": 0.15,
+            "minimum": 0.0,
+            "maximum": 1.0,
+            "description": "抖动范围"
+          },
+          "points": {
+            "type": "integer",
+            "default": 8,
+            "minimum": 2,
+            "maximum": 64,
+            "description": "关键帧点数"
+          }
+        },
+        "limits": [
+          "uses_deterministic_linear_keyframes"
+        ]
+      }
+    ]
+  },
+  "artifacts": [],
+  "warnings": [],
+  "errors": [],
+  "provenance": {
+    "cli_version": "0.1.2",
+    "schema_version": "0.1.0",
+    "engine_version": "ffmpeg-local",
+    "started_at": "2026-10-24T10:23:20.661914Z",
+    "finished_at": "2026-10-24T10:23:20.661920Z",
+    "network": "disabled"
+  }
+}

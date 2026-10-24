@@ -1,0 +1,699 @@
+{
+  "release": "v0.1.0-alpha.3",
+  "modules": [
+    [
+      "Agent 调用协议",
+      "Agent command protocol",
+      "任务参数 → JSON 响应、退出码、错误、warning、产物与 provenance；能力与 schema 可查询。",
+      "Task arguments → JSON responses, exit codes, errors, warnings, artifacts and provenance; queryable capabilities and schema.",
+      "version; doctor; capabilities; schema show",
+      "Skill 组织任务，CLI 执行；没有后台云端 Agent 服务。",
+      "Skills guide the task; the CLI executes it. No hosted Agent service."
+    ],
+    [
+      "可编辑项目",
+      "Editable projects",
+      "创建/检查 Agent Project，保存资产、序列、轨道、ticks 时钟、输出配置和权利引用。",
+      "Create/inspect Agent Projects with assets, sequences, tracks, tick clocks, output settings and rights references.",
+      "project init/inspect",
+      "源媒体与项目元数据分离，移动工程后需重链并复核证据路径。",
+      "Source media and metadata are separate; relocation requires relinking and evidence-path review."
+    ],
+    [
+      "事务、恢复与快照",
+      "Transactions, recovery and snapshots",
+      "写入前快照、恢复、迁移、锁和操作记录；中断后恢复项目元数据事务。",
+      "Pre-write snapshots, restore, migration, locks and operation records; recover interrupted metadata transactions.",
+      "project snapshot/restore/migrate/recover; operation inspect",
+      "失败证据保留；快照不等于外部原始素材的完整备份。",
+      "Failure evidence remains. Metadata snapshots do not back up all external media."
+    ],
+    [
+      "素材导入与重链",
+      "Media ingestion and relinking",
+      "本地图片/视频/音频/字体 → 探测结果、稳定资产 ID、哈希和来源记录。",
+      "Local images/video/audio/fonts → probe results, stable asset IDs, hashes and provenance.",
+      "media ingest/relink",
+      "不抓取在线素材；导入不自动证明商业授权。",
+      "No online-media fetching; ingestion does not establish commercial rights."
+    ],
+    [
+      "代理、缩略图与波形",
+      "Proxies, thumbnails and waveforms",
+      "素材 → 轻量代理、图片缩略图、音频波形、可核查联系表。",
+      "Media → lightweight proxies, thumbnails, waveforms and auditable contact sheets.",
+      "media prepare/contact-sheet",
+      "联系表是抽样证据；不代表逐帧视觉理解。",
+      "Contact sheets are samples, not exhaustive visual understanding."
+    ],
+    [
+      "镜头、静音与高光分析",
+      "Scene, silence and highlight analysis",
+      "本地视频/音频 → 切镜、静音、节拍或启发式高光候选与时间证据。",
+      "Local video/audio → scene, silence, beat or heuristic highlight candidates and timing evidence.",
+      "media understand/highlights",
+      "高光是启发式候选，语义判断需要 Agent/已注册适配器复核。",
+      "Heuristic candidates require Agent or registered-adapter review for semantics."
+    ],
+    [
+      "智能粗剪与广告计划",
+      "Rough cuts and ad plans",
+      "经检查的静音/文本片段或广告 brief → 编辑计划 → 可编辑粗剪。",
+      "Reviewed silence/transcript segments or an ad brief → edit plan → editable rough cut.",
+      "media smart-cut; ad plan/apply",
+      "计划与实际 apply 分开；不承诺自动导演效果或投放表现。",
+      "Planning and applying are separate; no automatic directing or campaign-performance guarantee."
+    ],
+    [
+      "节拍剪辑与多机同步",
+      "Beat cuts and multicamera sync",
+      "节拍锚点/本地多机音轨 → 剪切或 offset/显式 affine 时钟及切机计划。",
+      "Beat anchors/local camera audio → cuts or offset/explicit affine clocks and switch plans.",
+      "media beat-cut/multicam",
+      "低置信度、覆盖不足、非线性漂移需拒绝/显式处理；不自动添加音轨。",
+      "Low confidence, coverage shortfalls and nonlinear drift require refusal or explicit treatment; audio tracks remain explicit."
+    ],
+    [
+      "多轨基础剪辑",
+      "Multitrack editing",
+      "编辑 JSON → 加轨、插入、更新、拆分、删除、时长/位置修改与画幅设置。",
+      "Edit JSON → tracks, insertion, updates, split/delete, duration/placement edits and canvas settings.",
+      "timeline compose/edit",
+      "遵守轨道锁、整数 ticks、资产时长与实际能力契约。",
+      "Track locks, integer ticks, asset duration and advertised contracts apply."
+    ],
+    [
+      "范围与输出窗口编辑",
+      "Range and output-window edits",
+      "明确区间 → 裁切/删除/波纹等范围编辑，保留作者时间与源映射。",
+      "Explicit ranges → trim/delete/ripple edits while preserving author time and source mapping.",
+      "timeline edit",
+      "复杂变速与嵌套的组合需按具体契约检查，不推断所有组合均可用。",
+      "Check contracts for complex retiming/nesting combinations rather than assuming universal support."
+    ],
+    [
+      "源句柄、滑移与滑动",
+      "Source handles, slip and slide",
+      "源入出点与邻接片段 → 可逆源编辑、源句柄转场和剪口调整。",
+      "Source in/out points and neighbors → reversible source edits, handle transitions and cut adjustments.",
+      "timeline edit/transition",
+      "源句柄不足会报错；不以静默复制帧替代。",
+      "Insufficient source handles are reported rather than silently inventing coverage."
+    ],
+    [
+      "磁吸、主轨与关联音画",
+      "Magnetic tracks and linked edits",
+      "主轨块重排、关联 ID、音画附着 → 结构化编辑并保持相对关系。",
+      "Primary-track block reordering, linked IDs and attached audio → structured edits preserving relationships.",
+      "timeline edit",
+      "锁、边界和关联选择规则会阻止不明确编辑；不是拖拽式 GUI。",
+      "Locks, boundaries and link-selection rules constrain ambiguous edits."
+    ],
+    [
+      "复合与嵌套序列",
+      "Compound and nested sequences",
+      "子序列 → 独立画布合成、父变换/透明度、嵌套时钟与定格。",
+      "Child sequences → independent canvases, parent transforms/opacity, nested clocks and freezes.",
+      "timeline compose/edit",
+      "独立空间不代表独立色彩/帧率；部分组级空间转场未接受。",
+      "Independent spatial canvases do not imply independent color/fps; some group spatial transitions remain unsupported."
+    ],
+    [
+      "变速、倒放与定格",
+      "Retiming, reverse and freeze",
+      "显式速度/曲线/Bezier/定格点 → 视频时钟与音频映射。",
+      "Explicit speed/curves/Bezier/freeze points → video clocks and audio mapping.",
+      "timeline edit; render",
+      "变速音频后端各有边界；可选 Rubber Band R3 需要已有原生工具。",
+      "Audio-retime backends differ; optional Rubber Band R3 requires existing native tools."
+    ],
+    [
+      "关键帧与缓动",
+      "Keyframes and easing",
+      "位置、锚点、缩放、旋转、透明度、裁切、蒙版、音量/声像 → 逐帧动画。",
+      "Position, anchor, scale, rotation, opacity, crop, masks, volume and pan → frame-evaluated animation.",
+      "timeline compose; schema show",
+      "hold/linear/ease_in/ease_out/ease_in_out/bezier；枚举/布尔值不推断为连续动画。",
+      "hold/linear/ease_in/ease_out/ease_in_out/bezier; enum/boolean channels are not assumed continuous."
+    ],
+    [
+      "12 套运镜预设",
+      "12 camera/motion presets",
+      "推拉、上下左右平移、Ken Burns、旋入/旋出、淡入/淡出、shake → 可编辑关键帧。",
+      "Push/pull, four pan directions, Ken Burns, rotation, fades and shake → editable keyframes.",
+      "motion list/inspect/apply",
+      "参数有界；是明确关键帧预设，不是 AI 三维相机或全部商业运镜库。",
+      "Bounded keyframe presets, not AI 3D cameras or an entire commercial motion library."
+    ],
+    [
+      "转场与剪口效果",
+      "Transitions and cut effects",
+      "相邻片段与源句柄 → 淡化、擦除、滑动、黑/白场、圆形等已声明转场。",
+      "Adjacent clips and handles → declared fades, wipes, slides, black/white fades, circular and other transitions.",
+      "timeline transition; capabilities",
+      "以默认渲染路径和具体层级为准；Float32 后续转场候选未随本版提供。",
+      "Support depends on renderer and layer context; later Float32 transition candidates are not bundled."
+    ],
+    [
+      "几何蒙版与逐帧修正",
+      "Geometric masks and frame corrections",
+      "矩形/圆/椭圆/路径/多边形 → 反选、羽化、动画、编码蒙版与修正。",
+      "Rectangles/circles/ellipses/paths/polygons → inversion, feathering, animation, encoded masks and corrections.",
+      "timeline compose; media mask-edit; quality mask",
+      "路径点数和采样受限；几何通过不等于语义分割/身份正确。",
+      "Point topology and sampling are bounded; geometric checks do not prove semantic identity."
+    ],
+    [
+      "图层合成与混合",
+      "Layer compositing and blending",
+      "多轨视觉层 → normal/multiply/screen/overlay/difference/addition/softlight/hardlight。",
+      "Visual layers → normal/multiply/screen/overlay/difference/addition/softlight/hardlight.",
+      "timeline compose; capabilities",
+      "默认路径主要为编码 8-bit RGB；不宣称线性光/HDR 合成等价。",
+      "The default path mainly uses encoded 8-bit RGB, without general linear-light/HDR equivalence."
+    ],
+    [
+      "46 个效果处理算子",
+      "46 processing operators",
+      "模糊/锐化、降噪、色调、曲线、HSL、色键、暗角、颗粒等 → 可配置效果链。",
+      "Blur/sharpen, denoise, tone, curves, HSL, keying, vignette, noise and more → configurable chains.",
+      "effects list/inspect",
+      "可动画参数与实际后端逐项查询；46 算子与 500 成品 LUT 是不同统计。",
+      "Inspect animated parameters and backends individually; 46 operators and 500 LUT looks are separate inventories."
+    ],
+    [
+      "500 套离线风格",
+      "500 offline looks",
+      "名称/ID/类别/许可检索 → 详情、图片预览、片段或全局应用与来源副本。",
+      "Name/ID/category/license search → details, still previews, clip/global application and provenance copies.",
+      "look list/inspect/preview/apply",
+      "500 个不同数值变换含同系列曲线；SDR 创意映射，不是 500 个独立家族。",
+      "500 distinct transforms include related curve variants; creative SDR mapping, not 500 unrelated families."
+    ],
+    [
+      "自定义 LUT 与色彩自动化",
+      "Custom LUTs and color automation",
+      "本地 .cube/.3dl/.csp/.dat → 登记、检查；支持的 3D LUT 强度与色彩参数按契约动画。",
+      "Local .cube/.3dl/.csp/.dat → registration/inspection; supported 3D LUT strength and color channels follow automation contracts.",
+      "lut register/list/inspect; effects inspect",
+      "格式登记不等于所有路径都完整解析；完整 CUBE 才有对应强度/浮点支持。",
+      "Registration does not imply complete parsing on every path; full CUBE data is required for the corresponding intensity/float features."
+    ],
+    [
+      "显式 Float32 像素路径",
+      "Explicit Float32 pixel pipeline",
+      "声明输入/工作/输出信号、顺序与预算 → 原生浮点色彩、LUT/shaper、选定空间处理和 surface。",
+      "Declared source/working/output signals, ordering and budgets → float color, LUT/shaper, selected spatial processing and surfaces.",
+      "render; preview; surface export/inspect",
+      "必须显式选择 float32-native-v1；能力子集，拒绝不支持项，非完整 HDR/ICC 管线。",
+      "Explicit float32-native-v1 selection; a bounded subset that refuses unsupported features, not a complete HDR/ICC pipeline."
+    ],
+    [
+      "字幕、文字与分段",
+      "Subtitles, text and segmentation",
+      "SRT/VTT/ASS/SSA/TTML 或文字 → 规范化、分段、双语、文字层、逐字高亮和文字动画。",
+      "SRT/VTT/ASS/SSA/TTML or text → normalization, segmentation, bilingual text, layers, word highlighting and text animation.",
+      "subtitle validate/normalize/segment; timeline compose",
+      "字体需本地可用；复杂排版、双向 shaping 与部分动画/时钟有明确近似或拒绝。",
+      "Fonts must exist locally; complex layout, bidi shaping and some clock/animation combinations have explicit approximations or refusals."
+    ],
+    [
+      "离线转写与字词对齐",
+      "Offline transcription and alignment",
+      "音频 + 已有 Whisper/CTC 模型/校正文 → 转写、字幕、字词时码与 CER 评估。",
+      "Audio + existing Whisper/CTC weights/corrected text → transcripts, captions, word/character timings and CER evaluation.",
+      "asr adapter; subtitle transcribe/align/evaluate",
+      "基础包不带权重；转写段时间不等于精确逐字对齐，既有 CTC 自然精度门槛未通过。",
+      "Weights are not bundled; segment timestamps are not precise word alignment, and the dated CTC quality gate failed."
+    ],
+    [
+      "多轨音频与总线",
+      "Multitrack audio and buses",
+      "显式音轨 → 混音、总线、音量/声像、静音/solo、淡化、EQ、压缩、降噪、响度与闪避。",
+      "Explicit audio tracks → mixing/buses, volume/pan, mute/solo, fades, EQ, compression, denoise, loudness and ducking.",
+      "audio extract; timeline compose; quality check",
+      "视频资产有声音不代表时间线自动出声；自动 PCM/LUFS 检查不代替听审。",
+      "A video containing sound does not automatically author an audio track; PCM/LUFS checks do not replace listening."
+    ],
+    [
+      "本地语音合成",
+      "Local speech synthesis",
+      "已有本地 flite 或登记 SoulX 权重/授权参考声 → WAV 资产与可选音轨。",
+      "Existing flite or registered SoulX weights/authorized voice references → WAV assets and optional audio tracks.",
+      "tts adapter/voice; tts synthesize",
+      "flite 取决于 FFmpeg 构建且限 ASCII 英文；SoulX 需 CUDA/原生依赖，非基础包自带配音库。",
+      "flite depends on the FFmpeg build and is ASCII-English only; SoulX needs CUDA/native dependencies, not bundled voices."
+    ],
+    [
+      "声道近似与模型分离",
+      "Channel approximation and model separation",
+      "音频 → center/side 近似，或已有 HDemucs 适配器的人声/伴奏 stem。",
+      "Audio → center/side approximations, or vocal/accompaniment stems via an existing HDemucs adapter.",
+      "audio separate; audio adapter",
+      "mid/side 不是 AI 人声分离；真正模型分离需权重、环境与许可。",
+      "Mid/side is not AI vocal separation; model separation needs weights, runtime and rights."
+    ],
+    [
+      "跟踪、绑定与重构图",
+      "Tracking, binding and reframing",
+      "模板/模型/已编码蒙版轨迹 → 文字/贴纸锚定、裁切与主体重构图关键帧。",
+      "Template/model/encoded-mask tracks → anchored text/stickers, crop and subject-reframe keyframes.",
+      "media track/track-bind/reframe",
+      "多目标须明确对象；置信度/蒙版不等于身份保证，支持的变换与时钟需检查。",
+      "Choose the object explicitly; confidence/masks do not guarantee identity, and supported transforms/clocks must be checked."
+    ],
+    [
+      "OCR 锚点与人脸修饰",
+      "OCR anchors and face retouch",
+      "已有 PP-OCR/OpenSeeFace 模型 → OCR 框/文字、锚点运镜、人脸点位与受限修饰。",
+      "Existing PP-OCR/OpenSeeFace models → text polygons, anchor camera keys, landmarks and bounded retouch.",
+      "ocr adapter/scan/anchors; face adapter/scan/retouch",
+      "已有 ONNX CPU 环境与权重；不是完整 UI 行为识别、美妆、瘦身或脸部生成。",
+      "Existing ONNX CPU runtime and weights; not full UI action detection, makeup, body sculpting or face generation."
+    ],
+    [
+      "人像抠像与对象分割",
+      "Human matting and object segmentation",
+      "已有 RVM/SAM2 + 提示点/框 → 透明视频、对象 mask 和可编辑派生资产。",
+      "Existing RVM/SAM2 + points/boxes → alpha video, object masks and editable derived assets.",
+      "media adapter; media matting",
+      "RVM 人像与 SAM2 对象分割不同；概率 mask 不是物理发丝 matte，需检查运动/遮挡。",
+      "RVM human matting and SAM2 segmentation differ; probability masks are not physical hair mattes and require motion/occlusion review."
+    ],
+    [
+      "修复、生成编辑与扩画",
+      "Inpainting, generative edits and outpainting",
+      "已有 LaMa/VACE + 蒙版/提示 → 修复或扩大画布，保留来源与可重放 recipe。",
+      "Existing LaMa/VACE + masks/prompts → repairs or expanded canvases with provenance and replayable recipes.",
+      "media inpaint/outpaint; media adapter",
+      "LaMa 逐帧不保证时序；VACE 需 CUDA 且仅窗口联合；自然纹理/时序质量未普遍验收。",
+      "Framewise LaMa has no temporal guarantee; VACE needs CUDA and joint windows only; broad natural texture/temporal quality remains unaccepted."
+    ],
+    [
+      "HTML/CSS/SVG/Canvas 动效",
+      "HTML/CSS/SVG/Canvas motion",
+      "受信任本地源码/素材/字体 → 可编辑模板控件、透明标题、逐笔描线、布局诊断与时间线合成。",
+      "Trusted local source/assets/fonts → editable controls, alpha titles, stroke motion, layout diagnostics and timeline compositing.",
+      "motion html-*; motion stroke-source",
+      "另需已有 Node/Playwright/Chromium；非任意网页沙箱，不自动下载浏览器。",
+      "Requires existing Node/Playwright/Chromium; not an arbitrary-page sandbox and does not download a browser."
+    ],
+    [
+      "参数模板与批量变体",
+      "Parameterized templates and variants",
+      "本地 JSON 模板 + 类型变量 → 可编辑项目变体、批量输入与模板快照。",
+      "Local JSON templates + typed variables → editable variants, batch inputs and template snapshots.",
+      "template apply/batch",
+      "支持 asset/color/enum 等类型；复杂条件图和表达式执行未实现。",
+      "Includes asset/color/enum types; complex conditional graphs and expression evaluation are pending."
+    ],
+    [
+      "素材索引与片段组复用",
+      "Asset indexing and reusable fragments",
+      "素材目录/已编辑片段 → 检索、重复/相似检查、跨项目片段组与依赖闭包。",
+      "Asset folders/edited clips → search, duplicates/similarity, cross-project fragments and dependency closure.",
+      "library index/search/duplicates/similar; fragment",
+      "用户自建资源库，未内置商业素材订阅/正版音乐库存。",
+      "User-owned libraries; no bundled commercial stock subscription or licensed-music catalog."
+    ],
+    [
+      "帧、区间与缓存预览",
+      "Frame/range preview and caching",
+      "工程 + 明确帧/区间 → PNG/短视频/缓存与可验证采样证据。",
+      "Projects + explicit frames/ranges → PNG/short video/cache and verifiable sample evidence.",
+      "preview frame/range; cache; preview cache-*",
+      "预览不是完整成片核验；色彩路径与缓存签名需一致。",
+      "Preview does not validate the entire delivery; renderer/color path and cache signatures must match."
+    ],
+    [
+      "输出、编码与硬件探测",
+      "Delivery, encoding and hardware probes",
+      "工程 → MP4/WebM/MKV、编码/像素/音频配置、透明输出与 manifest。",
+      "Projects → MP4/WebM/MKV, codec/pixel/audio configuration, alpha output and manifests.",
+      "render",
+      "编码器取决于本地 FFmpeg；硬件实际探测，CPU 效果未整体 GPU 化，无实时/4K 性能保证。",
+      "Codecs depend on local FFmpeg; hardware is probed, CPU effects are not globally GPU-ported, and real-time/4K performance is not guaranteed."
+    ],
+    [
+      "持久队列、重试与取消",
+      "Persistent queues, retry and cancel",
+      "冻结项目快照 → 本地排队、有限 worker、显式重试/取消与串行元数据提交。",
+      "Frozen snapshots → local jobs, bounded workers, explicit retry/cancel and serialized metadata commits.",
+      "queue enqueue/list/inspect/run/cancel",
+      "默认串行；并发需满足门禁，不是分布式云渲染服务。",
+      "Sequential by default; concurrency has gates and is not distributed cloud rendering."
+    ],
+    [
+      "成片、Scope 与 golden 核验",
+      "Output, scopes and golden checks",
+      "实际编码文件 → 音画/帧率/画幅/时长、响度/黑场、色彩 Scope、蒙版和 golden 差异报告。",
+      "Actual encoded files → stream/fps/canvas/duration, loudness/black frames, scopes, masks and golden differences.",
+      "quality check/scopes/mask/golden",
+      "自动检查、静态目检、连续播放、人工听审分别记录；不等于商业成片质量认证。",
+      "Automatic checks, static review, playback and listening are recorded separately, without general creative-quality certification."
+    ],
+    [
+      "权利台账与本地策略",
+      "Rights ledger and local policy",
+      "素材/字体/LUT/模型/模板证据 → 依赖台账、变更历史、影响/撤回与发布门禁。",
+      "Media/font/LUT/model/template evidence → dependency ledger, history, impact/retraction and publish gates.",
+      "rights; policy audit; render --publish",
+      "--publish 只检查本地权利，不上传；台账不自动裁定版权。",
+      "--publish checks local rights without uploading; the ledger does not adjudicate copyright."
+    ],
+    [
+      "项目与时间线交换",
+      "Project and timeline interchange",
+      "Agent JSON/package、OTIO、Kdenlive MLT、已有合法明文草稿 → 导入/导出与损失报告。",
+      "Agent JSON/package, OTIO, Kdenlive MLT and lawful local plaintext drafts → import/export and loss reports.",
+      "convert import/export",
+      "Exact/Approximate/Unsupported/Failed 逐项报告；明文草稿不调用剪映，不解密或下载专有资源。",
+      "Per-feature Exact/Approximate/Unsupported/Failed reports; plaintext drafts neither run Jianying nor decrypt/fetch proprietary resources."
+    ],
+    [
+      "管道诊断与错误交付",
+      "Pipeline diagnostics and failure artifacts",
+      "失败操作 → 有界日志、diagnostic manifest、显式导出和可复查错误信息。",
+      "Failed operations → bounded logs, diagnostic manifests, explicit exports and inspectable errors.",
+      "diagnostics list/show/export; operation inspect",
+      "失败/拒绝不是成功渲染；包含本地路径的诊断需按交付范围处理。",
+      "A failure/refusal is not a successful render; review local-path information before sharing diagnostics."
+    ],
+    [
+      "创意、内容与投放分析",
+      "Creative, content and campaign guidance",
+      "用户提供的产品、受众、参考片或投放表 → 脚本、结构、变体建议与分析。",
+      "Supplied products, audiences, references or campaign tables → scripts, structure, variant suggestions and analysis.",
+      "ad plan/apply; advisory Skills",
+      "策略 Skill 不提供广告平台连接、自动投放、实时数据或效果保证。",
+      "Advisory Skills do not supply ad-platform connectors, automatic buying, live data or performance guarantees."
+    ]
+  ],
+  "services": [
+    [
+      "本地 Agent 工具服务",
+      "Local Agent tool interface",
+      "原生进程/JSON",
+      "Native process/JSON",
+      "Python 3.13 + 已安装包；Agent 可通过命令行或 Skill 调用。",
+      "Python 3.13 + installed package; callable by an Agent shell or Skill.",
+      "version / capabilities / schema show",
+      "不内置 SaaS、HTTP API 或 MCP server；可由调用方自行封装。",
+      "No built-in SaaS, HTTP API or MCP server; callers may wrap the CLI."
+    ],
+    [
+      "项目与操作存储",
+      "Project and operation storage",
+      "本地文件/事务",
+      "Local files/transactions",
+      "Agent Project、快照、锁、操作与恢复记录。",
+      "Agent Projects, snapshots, locks, operations and recovery records.",
+      "project / operation",
+      "不是多人云协作数据库。",
+      "Not a multiuser cloud collaboration database."
+    ],
+    [
+      "媒体处理与默认渲染",
+      "Media processing and default rendering",
+      "随功能调用",
+      "On-demand processing",
+      "已有 FFmpeg/ffprobe，素材均来自本地。",
+      "Existing FFmpeg/ffprobe and local media.",
+      "media / timeline / render",
+      "实际编码器/滤镜可用性取决于当前 FFmpeg。",
+      "Codec/filter availability depends on the installed FFmpeg build."
+    ],
+    [
+      "显式浮点像素内核",
+      "Explicit float pixel engine",
+      "选择性启用",
+      "Explicit opt-in",
+      "NumPy 与声明的 signal/预算；与默认管线分开检查。",
+      "NumPy and declared signals/budgets; checked separately from the default pipeline.",
+      "surface / render / preview",
+      "子集实现，非通用 FFmpeg 或剪映内核的完整替代。",
+      "A supported subset, not a complete replacement for every FFmpeg/Jianying operation."
+    ],
+    [
+      "字幕与语音",
+      "Captions and speech",
+      "基础解析 + 可选模型",
+      "Base parsing + optional models",
+      "字幕文件解析可直接用；Whisper/CTC/SoulX 需已有注册环境。",
+      "Subtitle parsing is direct; Whisper/CTC/SoulX need registered existing runtimes.",
+      "subtitle / asr / tts",
+      "无默认云转写/配音供应商。",
+      "No default cloud transcription or voice provider."
+    ],
+    [
+      "视觉 AI 与修复",
+      "Visual AI and repair",
+      "可选本地适配器",
+      "Optional local adapters",
+      "RVM/SAM2/LaMa/VACE/跟踪/OCR/人脸的各自原生依赖与权重。",
+      "Per-adapter native dependencies and weights for RVM/SAM2/LaMa/VACE/tracking/OCR/faces.",
+      "media adapter / ocr / face",
+      "基础包无模型权重，未配置不能声明已执行。",
+      "No bundled model weights; an unconfigured adapter is not an executed capability."
+    ],
+    [
+      "HTML 动效生成",
+      "HTML motion rendering",
+      "可选本地运行时",
+      "Optional local runtime",
+      "明确登记已有 Node、Playwright、Chromium、模板、图片和字体。",
+      "Explicitly registered existing Node, Playwright, Chromium, templates, images and fonts.",
+      "motion html-*",
+      "不依赖 OpenFilm 在线服务；不自动安装浏览器。",
+      "No OpenFilm online service dependency or automatic browser installation."
+    ],
+    [
+      "资源、模板与风格目录",
+      "Assets, templates and looks",
+      "随包目录 + 用户库",
+      "Bundled catalog + user libraries",
+      "500 LUT 随包；素材、字体、音乐、模板由用户登记或自建。",
+      "500 bundled LUTs; media, fonts, music and templates are registered/provided by users.",
+      "look / lut / template / library / fragment",
+      "不存在完整商业素材/模板订阅库。",
+      "No complete commercial stock/template subscription library."
+    ],
+    [
+      "本地渲染队列与缓存",
+      "Local render queue and cache",
+      "持久作业文件",
+      "Persistent job files",
+      "单进程默认串行，明确条件下有限本地 worker 与缓存。",
+      "Single-process sequential default, with gated bounded local workers and caches.",
+      "queue / preview / cache",
+      "无跨机器调度、云渲染或远端计费服务。",
+      "No cross-machine orchestration, cloud rendering or remote billing."
+    ],
+    [
+      "质量检查与诊断",
+      "Quality checks and diagnostics",
+      "本地产物服务",
+      "Local artifact checks",
+      "FFmpeg 解码/Scope、PNG/JSON 报告、golden、失败诊断。",
+      "FFmpeg decode/scopes, PNG/JSON reports, goldens and failure diagnostics.",
+      "quality / diagnostics",
+      "客观检查与主观质量验收分开。",
+      "Objective checks and subjective acceptance remain distinct."
+    ],
+    [
+      "权利与交换服务",
+      "Rights and interchange",
+      "本地证据与文件交换",
+      "Local evidence and file exchange",
+      "台账/策略/包哈希/损失报告，不调用专有编辑器。",
+      "Ledger/policy/package hashes/loss reports without invoking a proprietary editor.",
+      "rights / policy / convert",
+      "不自动授予第三方素材/模型商业权利。",
+      "Does not grant commercial rights to third-party media/models."
+    ],
+    [
+      "创意与运营支持",
+      "Creative and campaign assistance",
+      "Agent 任务指导",
+      "Agent task guidance",
+      "依赖调用方提供业务信息与数据，产出脚本/建议/分析。",
+      "Uses supplied business information and data to produce scripts/suggestions/analysis.",
+      "17 agent-ffmpeg-local-* Skills",
+      "不包含广告平台账号接入、投放或自动采集数据。",
+      "No ad-account integration, buying or automatic data collection."
+    ]
+  ],
+  "skills": [
+    [
+      "editor",
+      "项目总入口与交付",
+      "Editing and delivery entrypoint",
+      "brief + 本地素材 → 计划、可编辑工程、成片、manifest",
+      "brief + local media → plan, project, video, manifest",
+      "project init; timeline compose; look; render",
+      "按能力路由，包含滤镜客户选型；需要基础 CLI。",
+      "Routes by capability, including client look selection; needs the base CLI."
+    ],
+    [
+      "timeline",
+      "时间线、关键帧与运镜",
+      "Timeline, keys and motion",
+      "编辑 JSON → 多轨/运镜/转场/嵌套",
+      "Edit JSON → tracks/motion/transitions/nesting",
+      "timeline compose/edit; motion apply",
+      "明确目标轨道/片段与作者时钟。",
+      "Explicit track/clip targets and author clocks."
+    ],
+    [
+      "quality",
+      "成片与像素核验",
+      "Output and pixel review",
+      "成片 + manifest + 参考 → 报告/Scope/差异",
+      "Video + manifest + reference → reports/scopes/differences",
+      "quality check/scopes/mask/golden",
+      "区分目检/播放/听审；支持滤镜样例选型复核。",
+      "Separate static review/playback/listening; review look selections."
+    ],
+    [
+      "project-ops",
+      "工程运维、恢复与队列",
+      "Project operations, recovery and queues",
+      "工程 + 作业 → 快照/恢复/重链/运行结果",
+      "Projects + jobs → snapshots/recovery/relink/results",
+      "project snapshot/recover; media relink; queue",
+      "保留旧源与失败；不是云任务调度器。",
+      "Preserve sources/failures; not a cloud scheduler."
+    ],
+    [
+      "local-policy",
+      "本地执行约束",
+      "Local execution policy",
+      "工程引用 → 审计/结构化拒绝",
+      "Project references → audit/structured refusal",
+      "policy audit",
+      "运行时禁止远程引用；不推断为 OS 沙箱。",
+      "Remote references refused; not an OS sandbox."
+    ],
+    [
+      "rights-ledger",
+      "素材与模型权利证据",
+      "Media and model rights evidence",
+      "来源/许可/本地证据 → 台账/影响/门禁",
+      "Source/license/local evidence → ledger/impact/gates",
+      "rights list/check/update/impact",
+      "分别处理母图与 LUT 许可；不自动认定版权。",
+      "Treat image and LUT rights separately; no automatic legal determination."
+    ],
+    [
+      "local-models",
+      "已有离线模型登记",
+      "Existing offline model registration",
+      "原生环境 + 权重/哈希/许可 → 适配器与推理产物",
+      "Native runtime + weights/hashes/licenses → adapters/artifacts",
+      "media adapter; asr adapter; ocr; face; tts",
+      "无权重下载；先核对能力/环境，再调用。",
+      "No weight downloads; check capability/runtime before execution."
+    ],
+    [
+      "video-understand",
+      "镜头/静音与视频证据",
+      "Scene/silence and video evidence",
+      "本地视频/音频 → 分析 JSON、帧、字幕候选",
+      "Local video/audio → analysis JSON, frames, caption candidates",
+      "media understand/contact-sheet; subtitle transcribe",
+      "启发式与模型语义能力分开说明。",
+      "Distinguish heuristics from model semantics."
+    ],
+    [
+      "template-library",
+      "模板与片段组复用",
+      "Templates and reusable fragments",
+      "模板/变量/素材库 → 可编辑变体与索引",
+      "Templates/variables/library → editable variants/index",
+      "template apply/batch; library; fragment",
+      "用户自有素材，按资源许可复用。",
+      "User-provided assets and per-resource licenses."
+    ],
+    [
+      "long-to-short",
+      "长视频转短片",
+      "Long video to short clips",
+      "本地课程/口播 + 核对文本 → 粗剪与短片工程",
+      "Local lesson/talk + reviewed text → rough cuts/short projects",
+      "media highlights/smart-cut; timeline compose",
+      "候选段需复核，不声称全自动语义导演。",
+      "Review candidate segments; no autonomous semantic-director claim."
+    ],
+    [
+      "screen-demo",
+      "录屏与锚点运镜",
+      "Screen demos and camera anchors",
+      "录屏 + 操作锚点 → 放大/回全景/字幕演示",
+      "Recording + action anchors → zoom/return/caption demo",
+      "timeline compose; ocr anchors; preview range",
+      "OCR 需要已有模型，文本框不等于可点击控件。",
+      "OCR needs existing models; text boxes are not clickable-control bounds."
+    ],
+    [
+      "reference-remake",
+      "参考片节奏与布局重建",
+      "Reference pacing/layout remake",
+      "本地参考 + 原创替换素材 → 可编辑重制",
+      "Local reference + replacement assets → editable remake",
+      "media understand; timeline compose",
+      "重建结构，不自动获取或授权参考素材。",
+      "Rebuild structure; no automatic acquisition or rights grant."
+    ],
+    [
+      "ffmpeg",
+      "原生音视频工具",
+      "Native media tools",
+      "本地文件 + 参数 → 转码/缩放/提取/压缩",
+      "Local files + settings → conversion/resize/extraction/compression",
+      "native ffmpeg / ffprobe",
+      "直接原生工具；先检查编解码器。",
+      "Native tools; inspect codec availability."
+    ],
+    [
+      "video-edit",
+      "通用视频剪切流程",
+      "General video-edit workflows",
+      "本地文件 + 剪辑要求 → 修剪/拼接/叠加结果",
+      "Local files + edit instructions → trims/concat/overlays",
+      "native ffmpeg; installed CLI",
+      "复杂可编辑项目交给 timeline/editor。",
+      "Use timeline/editor for complex editable projects."
+    ],
+    [
+      "ad-creative",
+      "广告创意与变体",
+      "Ad creative and variants",
+      "产品/受众/证据 → hook/文案/脚本/变体",
+      "Product/audience/evidence → hooks/copy/scripts/variants",
+      "advisory; ad plan",
+      "策略任务说明，不自带媒体生成模型。",
+      "Advisory instructions without bundled media-generation models."
+    ],
+    [
+      "video-content-strategist",
+      "视频内容策略",
+      "Video content strategy",
+      "目标/受众/提供的参考 → 内容定位/系列/脚本",
+      "Goals/audience/supplied references → direction/series/scripts",
+      "advisory Skill",
+      "不自带实时趋势、平台账号或抓取器。",
+      "No live trends, platform accounts or crawler."
+    ],
+    [
+      "campaign-analytics",
+      "提供数据的投放分析",
+      "Supplied campaign-data analysis",
+      "本地投放表 → ROAS/CPA/漏斗/建议",
+      "Local campaign tables → ROAS/CPA/funnel/suggestions",
+      "advisory Skill",
+      "无广告平台连接；指标依赖原始数据与归因假设。",
+      "No ad-platform connector; metrics depend on data/attribution assumptions."
+    ]
+  ],
+  "numbering": "Documentation groups, not independent algorithm counts or completion scores."
+}

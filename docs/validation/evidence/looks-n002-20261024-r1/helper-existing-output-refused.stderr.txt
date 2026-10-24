@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\skills\agent-ffmpeg-local-editor\scripts\look_gallery.py", line 106, in <module>
+    main()
+    ~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\skills\agent-ffmpeg-local-editor\scripts\look_gallery.py", line 93, in main
+    target.mkdir(parents=True, exist_ok=False)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\pathlib\_local.py", line 722, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+FileExistsError: [WinError 183] 当文件已存在时，无法创建该文件。: 'E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\looks-n002-20261024-r1\\client-shortlist-example'

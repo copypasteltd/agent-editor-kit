@@ -1,0 +1,19 @@
+{
+  "reviewer": "assistant static image inspection",
+  "reviewed": [
+    "gallery-desktop.png",
+    "gallery-mobile.png",
+    "selection-board.jpg",
+    "client-shortlist-example/board.jpg"
+  ],
+  "observations": [
+    "Original/comparison split and stable ID/strength labels visible on desktop.",
+    "Distinct neutral-film, monochrome, warm/teal and cold treatments visible on the supplied image.",
+    "Shortlist board includes original, actual images, stable IDs and per-LUT licenses.",
+    "Mobile layout fits viewport; the full-page capture is a long gallery, not a video-editor GUI."
+  ],
+  "all_500_manual_aesthetic_acceptance": false,
+  "continuous_playback": false,
+  "human_listening": false,
+  "new_video_rendering": false
+}

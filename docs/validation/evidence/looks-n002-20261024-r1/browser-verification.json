@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "checks": [
+    "initial page has 40 cards",
+    "full catalog has 500 records",
+    "original dimensions preserved",
+    "pagination reaches number 041",
+    "stable ID search selects one look",
+    "compare uses selected actual image",
+    "comparison split moves",
+    "shortlist retains two stable IDs",
+    "downloaded shortlist has expected schema/source/IDs",
+    "category filter finds 37",
+    "license filter finds 133",
+    "English controls",
+    "Traditional Chinese controls",
+    "empty results explain recovery",
+    "clear removes only selection",
+    "mobile has no horizontal overflow",
+    "keyboard focus available",
+    "no page script errors",
+    "no remote requests"
+  ],
+  "browser": "existing native Microsoft Edge via existing Playwright",
+  "network_requests": [],
+  "errors": [],
+  "owned_tabs_closed": true
+}

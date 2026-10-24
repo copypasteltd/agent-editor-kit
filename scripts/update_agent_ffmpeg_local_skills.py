@@ -23,7 +23,7 @@ def main():
     text=re.sub(r"^RELEASE = .*$", "RELEASE = "+repr(TAG), text, flags=re.M)
     launcher.write_text(text,encoding="utf-8",newline="\n")
     descriptions={
-        "agent-ffmpeg-local-editor":"Edit local advertising videos with the installed agent editor kit CLI, including 500 named offline style/filter presets with measured descriptions. Use for look search, previews, editing, rendering and delivery.",
+        "agent-ffmpeg-local-editor":"Edit local advertising videos with the installed agent editor kit CLI. Search 500 named looks, present actual filter previews and client comparison boards, then edit, render and deliver local projects.",
         "agent-ffmpeg-local-timeline":"Compose local video timelines, keyframes, camera presets, transitions, masks and speed curves. Apply 500 named built-in color looks to explicit clips or global adjustments using the installed CLI.",
         "agent-ffmpeg-local-quality":"Review locally rendered video, pixels, masks, audio, scopes and manifests. Compare the 500 offline color looks using measured gray, skin and RGB profiles, then verify actual rendered output.",
         "agent-ffmpeg-local-rights-ledger":"Record source, license, creator and local evidence for media, fonts, templates, LUTs and models. Inspect per-resource MIT, CC0 or CC-BY-SA obligations for the 500 bundled looks and project-local evidence."
@@ -38,7 +38,11 @@ def main():
             section=(marker+"\n\nUse `look list`, `look inspect`, `look preview` and `look apply` for 500 named offline color looks. "
                      "Inspect measured descriptions, original variants and the per-resource MIT, CC0 or CC-BY-SA license. "
                      "Read [the look workflow](../agent-ffmpeg-local-editor/references/looks.md) before choosing target, strength or delivery. "
-                     "These are creative SDR looks; preview suggestions are not natural-footage acceptance.\n")
+                     "These are creative SDR looks; preview suggestions are not natural-footage acceptance.\n\n"
+                     "For human-facing filter selection, read [client-look-selection.md](../agent-ffmpeg-local-editor/references/client-look-selection.md). "
+                     "It maps all 500 real N002 samples to stable IDs and exports a small labeled original/candidate board with `scripts/look_gallery.py`. "
+                     "Show actual images, number/name/ID, strength and license; record the chosen ID/strength/scope, then trial the target media before applying. "
+                     "The samples are strength 1.0; image rights are separate from LUT rights. The runtime ZIP alone does not include the checkout gallery.\n")
             if marker in text:text=text.split(marker,1)[0].rstrip()+"\n\n"+section
             else:text+='\n'+section
         path.write_text(text,encoding="utf-8",newline="\n")

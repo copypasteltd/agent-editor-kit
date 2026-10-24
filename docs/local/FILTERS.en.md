@@ -27,6 +27,19 @@ $avk = 'E:/dev/sandbox/AI广告剪辑/skills/agent-ffmpeg-local-editor/scripts/r
 & $avk look apply --project 'E:/video-work/my-ad' --id fl-0000001-action-magenta-01 --global --strength 0.65
 ```
 
+
+<!-- N002-GALLERY-START -->
+
+## N002 supplied still: all 500 real samples and client selection
+
+![Original and actual styles](../assets/looks-n002-20261024-r1/selection-board.jpg)
+
+[All 500 supplied-image samples](FILTER_GALLERY.en.md) · [Interactive gallery](../assets/looks-n002-20261024-r1/index.html) · [Client Skill workflow](../../skills/agent-ffmpeg-local-editor/references/client-look-selection.md)
+
+Every look is actually executed on the supplied 1672×940 still at strength 1.0, with original, full-size lossless file, thumbnail and stable ID. Agents can export client boards/JSON, then preview chosen strengths on target media before explicit clip/global application. Source-image and LUT rights remain separate.
+
+<!-- N002-GALLERY-END -->
+
 ## Complete names and detailed profiles
 
 [500 numbered looks with actual effects](LOOK_PRESETS.en.md). Each has a source-qualified ID and original title. New localized titles include measured tone hints. All 500 include seven gray, three skin and three RGB swatches, gray Y′ code values, middle-span ratio, suggested use/intensity, cautions, author/source/license, conversion error, digest, PNG and video.

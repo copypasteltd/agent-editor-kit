@@ -1,0 +1,132 @@
+[
+  {
+    "id": "helper-search",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\skills\\agent-ffmpeg-local-editor\\scripts\\look_gallery.py",
+      "--query",
+      "黑白",
+      "--limit",
+      "6"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0
+  },
+  {
+    "id": "helper-board",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\skills\\agent-ffmpeg-local-editor\\scripts\\look_gallery.py",
+      "--ids",
+      "t3-fuji-superia-800",
+      "nt-bw-agfa-apx-100",
+      "fl-0000634-darkblue",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\looks-n002-20261024-r1\\client-shortlist-example"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0
+  },
+  {
+    "id": "helper-existing-output-refused",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\skills\\agent-ffmpeg-local-editor\\scripts\\look_gallery.py",
+      "--ids",
+      "t3-fuji-superia-800",
+      "nt-bw-agfa-apx-100",
+      "fl-0000634-darkblue",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\looks-n002-20261024-r1\\client-shortlist-example"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1
+  },
+  {
+    "id": "helper-unknown-id-refused",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\skills\\agent-ffmpeg-local-editor\\scripts\\look_gallery.py",
+      "--ids",
+      "not-a-look",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\looks-n002-20261024-r1\\invalid-shortlist"
+    ],
+    "exit_code": 2,
+    "expected_exit_code": 2
+  },
+  {
+    "id": "registered-version",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0
+  },
+  {
+    "id": "registered-inspect",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "look",
+      "inspect",
+      "--id",
+      "t3-fuji-superia-800"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0
+  },
+  {
+    "id": "registered-preview",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "look",
+      "preview",
+      "--id",
+      "t3-fuji-superia-800",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\looks-n002-20261024-r1\\source.png",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\looks-n002-20261024-r1\\registered-preview.png",
+      "--strength",
+      "1"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0
+  }
+]

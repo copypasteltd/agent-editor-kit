@@ -76,6 +76,12 @@ def main():
                 if not english and row.get('editorial_notes_zh'):book+=['补充选型说明：'+row['editorial_notes_zh']+'\n']
                 if look=='fl-0000228-science-fiction-for-flog':
                     book += [('Input-domain ambiguity: the uploader label is Rec.709 while the title mentions FLog. Use only as an experimental creative comparison on prepared SDR, not a verified camera-log conversion.' if english else '输入域歧义：上传者标签为 Rec.709，但标题提及 FLog；仅在已准备的 SDR 素材上做实验创意比较，不能作为已验证的相机 Log 转换。')+'\n']
+                supplied_name=f'{row["number"]:03}-{look}.webp'
+                supplied=ROOT/'docs/assets/looks-n002-20261024-r1/full'/supplied_name
+                if supplied.is_file():
+                    book += [('**Supplied N002 still: actual output at strength 1.0.**' if english else '**用户提供的 N002 母图：强度 1.0 的实际输出。**')+'\n',
+                        f'![N002 {row["number"]:03} {look}](../../assets/looks-n002-20261024-r1/thumbs/{supplied_name})\n',
+                        f'[Full-size lossless 1672×940](../../assets/looks-n002-20261024-r1/full/{supplied_name}) · [Original source](../../assets/looks-n002-20261024-r1/source.png) · [All 500 supplied-image samples](../FILTER_GALLERY{suffix}.md)\n']
                 book+=['| Input swatch | Input RGB | Actual output RGB |\n|---|---|---|']
                 for key,s in m['samples'].items():book.append(f'| `{key}` | `{s["input"]}` | `{s["output"]}` |')
                 norm=row['normalization']

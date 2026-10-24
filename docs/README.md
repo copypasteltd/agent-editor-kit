@@ -6,6 +6,12 @@
 
 | 阅读目标 / Goal | Document |
 |---|---|
+| 当前完整功能与本地服务模块、安装版全部能力字段 / Complete functional and service modules | [简体](product/CAPABILITIES.md) · [繁體](product/CAPABILITIES.zh-TW.md) · [English](product/CAPABILITIES.en.md) |
+| 46 效果算子与 12 运镜的具体参数、范围、后端 / Full effect and motion parameters | [简体](product/EFFECTS.md) · [繁體](product/EFFECTS.zh-TW.md) · [English](product/EFFECTS.en.md) |
+| 当前 17 个新命名 Skill 的输入输出、依赖与职责 / Current Skill details | [简体](product/SKILLS.md) · [繁體](product/SKILLS.zh-TW.md) · [English](product/SKILLS.en.md) |
+| N002 母图的全部 500 套实际滤镜样例、原图与客户选型 / All supplied-image previews | [交互图册](assets/looks-n002-20261024-r1/index.html) · [简体说明](local/FILTER_GALLERY.md) · [繁體說明](local/FILTER_GALLERY.zh-TW.md) · [English](local/FILTER_GALLERY.en.md) |
+| 恢复的全部演示与原输入/输出/失败记录 / Restored full demonstration casebook | [Complete cases](product/CASES.md) |
+| README 缩减原因、恢复范围与维护方式 / README reduction and restoration | [Restoration record](maintenance/README_RESTORATION_20261024.md) |
 | 新仓库、产品名称与三语维护规则 / Repository, name and README languages | [Maintenance record](maintenance/REPOSITORY_AND_READMES.md) |
 | 500 预设完整编号、分类与实际预览 / Numbered look catalog | [500 looks](local/LOOK_PRESETS.md) |
 | 历史 100 项实际色彩作用、灰阶/肤色/三色数值与场景建议 / Detailed measured profiles | [简体详情](local/LOOK_PRESET_DETAILS.md) · [繁體詳情](local/LOOK_PRESET_DETAILS.zh-TW.md) · [数据与核验](validation/evidence/look-profiles-20261024-r1/verification.json) |

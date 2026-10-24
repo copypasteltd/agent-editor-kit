@@ -1,153 +1,352 @@
 # agent editor kit
 
-**Local video editing CLI for Agents.** Editable JSON timelines, explicit contracts and actual render evidence.
+**An open-source local video-editing CLI for Agents.** Turn structured plans into editable projects, previews, video, quality reports and recoverable deliveries, retaining real artifacts and provenance.
 
-[简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit) · [Download parts](docs/releases/v0.1.0-alpha.3/artifacts) · [Install](docs/releases/v0.1.0-alpha.3/USAGE.md) · [Documentation](docs/README.md)
+[简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit) · [Docs](docs/README.md)
 
-**Current local release: v0.1.0-alpha.3, CLI 0.1.2, 500 built-in looks.** Installed on E:, with all 17 local Skills updated. Download every binary part and reassemble the ordinary ZIP. No new GitHub Release was created; the tested package is committed with this repository.
+**Usable local build: v0.1.0-alpha.3 · CLI 0.1.2 · 500 looks · 17 local Skills.** Installation has been exercised on native Windows/CPython 3.13 x64. This update expands documentation/examples without changing the release bundle. Alpha.3 is supplied as repository archive parts, without a separate new GitHub Release. Complete Jianying/CapCut parity remains an unaccepted development target.
 
-![Actual new-look video comparison](docs/assets/look500-20261024-r1/motion-comparison.gif)
+This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
-[500 numbered names and detailed effects](docs/local/LOOK_PRESETS.en.md) · [Functional filter README](docs/local/FILTERS.en.md) · [Original video](docs/assets/look500-20261024-r1/original.mp4) · [Verification](docs/validation/LOOK500_20261024.md).
+## See real output: 500 looks on one supplied still
 
-## Architecture and operation
+Every tile below comes from the supplied N002 still processed by the installed CLI. The original plus eleven looks are an entry point; all 500 have individual samples and profiles.
+
+![Original N002 and actual filter outputs](docs/assets/looks-n002-20261024-r1/selection-board.jpg)
+
+[**Open the interactive 500-look gallery**](docs/assets/looks-n002-20261024-r1/index.html) · [Numbered samples](docs/local/FILTER_GALLERY.en.md) · [Measured profiles](docs/local/LOOK_PRESETS.en.md) · [Original PNG](docs/assets/looks-n002-20261024-r1/source.png) · [Sources/licenses](docs/assets/looks-n002-20261024-r1/SOURCE_AND_LICENSES.md)
+
+The gallery supports three languages, number/name/ID/description search, category/license filters, an original-image split, shortlisting and JSON export. It loads 40 thumbnails per page and a full-size image for the active look. GitHub does not execute repository HTML; download the checkout and open the HTML locally, without a server or network.
+
+**Sample contract:** 1672×940 source, strength 1.0 and tetrahedral interpolation throughout. All 500 full-size lossless WebPs exactly match decoded CLI PNG RGB; the 500 thumbnails are resized WebP. No color profile is embedded in the source, so this is an encoded-SDR-RGB trial rather than camera/HDR calibration. The user supplied the image and requested these examples; it is not declared MIT/CC0.
+
+## Architecture and complete execution logic
 
 ```mermaid
 flowchart LR
-  A[Agent + agent-ffmpeg-local Skills] --> B[CLI / JSON responses]
-  B --> C[Agent Project + Rights Ledger]
-  C --> D[Validate / plan / preview]
-  D --> E[FFmpeg graph or explicit Float32]
-  E --> F[Video + manifest + quality report]
-  G[Existing local models] --> C
+  A[Human brief / media / selected look IDs] --> B[Agent + local Skills]
+  B --> C[CLI JSON + capabilities + schema]
+  C --> D[Editable project / transactions / rights]
+  D --> E[Validate + preview + reviewed plan]
+  E --> F[Default FFmpeg graph]
+  E --> G[Explicit supported Float32 path]
+  H[Existing local AI / HTML adapters] --> D
+  F --> I[Video + manifest + quality + package]
+  G --> I
 ```
 
-The shipped implementation is a Python CLI, Agent Project schema and FFmpeg, with an explicitly selected native Float32 processing path. Concat informed earlier research; this release is this repository's Python implementation. Reused OpenFilm subtitle segmentation, frame-clock and HTML motion/template modules retain their provenance and licenses. No OpenFilm online service is required.
+The implementation is **Python CLI + Agent Project schema + FFmpeg**, with an explicitly selected Float32 subset. Concat was an early architecture research candidate; the release is not a Concat binary with its GUI deleted. Adopted OpenFilm caption segmentation, frame-clock and HTML/template work retains provenance/licenses and needs no OpenFilm online service.
 
-An Agent uses Skills to turn a brief into an edit plan, reads `capabilities` and `schema show`, then invokes the CLI. Projects retain assets, authored sequences, a Rights Ledger, snapshots and operations. Outputs include manifests and quality reports. The default renderer uses the existing FFmpeg graph. `settings.pixel_pipeline.engine = "float32-native-v1"`, with complete source/signal/budget declarations, explicitly selects its advertised subset; unsupported effects must be refused. The two paths have different coverage.
+1. Read version/doctor/capabilities/schema to determine actual local support and dependencies.
+2. Turn the brief into a plan covering assets, canvas, duration, cuts, audio, captions, motion, looks and delivery evidence.
+3. Create an owned project, ingest local media, and author edit JSON using actual asset IDs and integer ticks; add audio explicitly.
+4. Apply transactional compose/edit/apply operations with snapshots, validate, then preview important frames/ranges.
+5. For selection, show the original and a small candidate set, record final IDs/strength/scope and trial them on target media.
+6. Render to a new project-owned path, inspect the encoded output, manifest, warnings, A/V and rights, then export the project package.
 
-## Included capabilities
+## 43 functional documentation modules
 
-| # | Capability | Entry point | Release boundary |
-|---|---|---|---|
-| F01 | Projects, transactions, snapshots, recovery, relinking | `project` / `media relink` | Local projects with operation evidence |
-| F02 | Ingest, probes, scenes/silence, thumbnails/waveforms | `media ingest/understand/prepare` | Local files; semantic tasks need explicit adapters |
-| F03 | Multitrack, trim/split, range and linked edits, nesting | `timeline compose/edit` | Integer author ticks, clocks, locks and transactions |
-| F04 | Keyframes, scale/pan/rotation, camera presets, effects | `effects list` + edit JSON | Advertised properties; not CapCut's full preset catalog |
-| F05 | Source-handle transitions, speed curves, reverse, freeze | Timeline contracts | Implemented default-render combinations; newer Float32 transition candidates excluded |
-| F06 | Masks, composition, color, HSL, LUT/1D shapers | Effects / `lut` / `surface` | Explicit Float32 source/working/delivery signals; no complete HDR/ICC claim |
-| F07 | Subtitles, segmentation, word highlighting, HTML motion | `subtitle` / `motion` / timeline | Some commands need existing Node/Chromium |
-| F08 | Audio extraction/mixing/buses/ducking, multicam sync | `audio` / audio tracks / `media multicam` | Author audio explicitly; perceptual audio review is separate |
-| F09 | Template variables/batches, fragments, asset indexing | `template` / `fragment` / `library` | Existing local assets; no subscription library |
-| F10 | Optional ASR/OCR/tracking/matting/repair adapters | Model registration and related commands | Weights and large inference runtimes are not bundled |
-| F11 | Frame/range previews, queues, cancellation, scopes | `preview` / `queue` / `quality` | Budgets are not peak-RSS or real-time guarantees |
-| F12 | Project packages, JSON, OTIO, MLT/plain draft exchange | `convert import/export` | Format-specific Exact/Approximate/Unsupported/Failed reports |
-| F13 | 500 named offline looks (alpha.3) | `look list/inspect/preview/apply` | Per-look measurements, preview, source and MIT/CC0/CC-BY-SA license; creative SDR RGB |
+IDs locate documentation groups with dependencies/overlap; they are not 43 independent kernels or a completion score. The table describes behavior, commands and limits. The [complete machine capability manual](docs/product/CAPABILITIES.en.md) retains every field.
 
-Use bundled `capabilities`, `schema show` and `COMMAND --help` for the exact supported contract. Plain draft adapters operate on existing authorized local JSON, do not run CapCut, and do not promise lossless compatibility with every proprietary effect. [Detailed manual](docs/releases/v0.1.0-alpha.1/USAGE.md).
+| ID | Module | Behavior and input → output | Entry | Dependency/limit |
+|---|---|---|---|---|
+| F01 | Agent command protocol | Task arguments → JSON responses, exit codes, errors, warnings, artifacts and provenance; queryable capabilities and schema. | `version; doctor; capabilities; schema show` | Skills guide the task; the CLI executes it. No hosted Agent service. |
+| F02 | Editable projects | Create/inspect Agent Projects with assets, sequences, tracks, tick clocks, output settings and rights references. | `project init/inspect` | Source media and metadata are separate; relocation requires relinking and evidence-path review. |
+| F03 | Transactions, recovery and snapshots | Pre-write snapshots, restore, migration, locks and operation records; recover interrupted metadata transactions. | `project snapshot/restore/migrate/recover; operation inspect` | Failure evidence remains. Metadata snapshots do not back up all external media. |
+| F04 | Media ingestion and relinking | Local images/video/audio/fonts → probe results, stable asset IDs, hashes and provenance. | `media ingest/relink` | No online-media fetching; ingestion does not establish commercial rights. |
+| F05 | Proxies, thumbnails and waveforms | Media → lightweight proxies, thumbnails, waveforms and auditable contact sheets. | `media prepare/contact-sheet` | Contact sheets are samples, not exhaustive visual understanding. |
+| F06 | Scene, silence and highlight analysis | Local video/audio → scene, silence, beat or heuristic highlight candidates and timing evidence. | `media understand/highlights` | Heuristic candidates require Agent or registered-adapter review for semantics. |
+| F07 | Rough cuts and ad plans | Reviewed silence/transcript segments or an ad brief → edit plan → editable rough cut. | `media smart-cut; ad plan/apply` | Planning and applying are separate; no automatic directing or campaign-performance guarantee. |
+| F08 | Beat cuts and multicamera sync | Beat anchors/local camera audio → cuts or offset/explicit affine clocks and switch plans. | `media beat-cut/multicam` | Low confidence, coverage shortfalls and nonlinear drift require refusal or explicit treatment; audio tracks remain explicit. |
+| F09 | Multitrack editing | Edit JSON → tracks, insertion, updates, split/delete, duration/placement edits and canvas settings. | `timeline compose/edit` | Track locks, integer ticks, asset duration and advertised contracts apply. |
+| F10 | Range and output-window edits | Explicit ranges → trim/delete/ripple edits while preserving author time and source mapping. | `timeline edit` | Check contracts for complex retiming/nesting combinations rather than assuming universal support. |
+| F11 | Source handles, slip and slide | Source in/out points and neighbors → reversible source edits, handle transitions and cut adjustments. | `timeline edit/transition` | Insufficient source handles are reported rather than silently inventing coverage. |
+| F12 | Magnetic tracks and linked edits | Primary-track block reordering, linked IDs and attached audio → structured edits preserving relationships. | `timeline edit` | Locks, boundaries and link-selection rules constrain ambiguous edits. |
+| F13 | Compound and nested sequences | Child sequences → independent canvases, parent transforms/opacity, nested clocks and freezes. | `timeline compose/edit` | Independent spatial canvases do not imply independent color/fps; some group spatial transitions remain unsupported. |
+| F14 | Retiming, reverse and freeze | Explicit speed/curves/Bezier/freeze points → video clocks and audio mapping. | `timeline edit; render` | Audio-retime backends differ; optional Rubber Band R3 requires existing native tools. |
+| F15 | Keyframes and easing | Position, anchor, scale, rotation, opacity, crop, masks, volume and pan → frame-evaluated animation. | `timeline compose; schema show` | hold/linear/ease_in/ease_out/ease_in_out/bezier; enum/boolean channels are not assumed continuous. |
+| F16 | 12 camera/motion presets | Push/pull, four pan directions, Ken Burns, rotation, fades and shake → editable keyframes. | `motion list/inspect/apply` | Bounded keyframe presets, not AI 3D cameras or an entire commercial motion library. |
+| F17 | Transitions and cut effects | Adjacent clips and handles → declared fades, wipes, slides, black/white fades, circular and other transitions. | `timeline transition; capabilities` | Support depends on renderer and layer context; later Float32 transition candidates are not bundled. |
+| F18 | Geometric masks and frame corrections | Rectangles/circles/ellipses/paths/polygons → inversion, feathering, animation, encoded masks and corrections. | `timeline compose; media mask-edit; quality mask` | Point topology and sampling are bounded; geometric checks do not prove semantic identity. |
+| F19 | Layer compositing and blending | Visual layers → normal/multiply/screen/overlay/difference/addition/softlight/hardlight. | `timeline compose; capabilities` | The default path mainly uses encoded 8-bit RGB, without general linear-light/HDR equivalence. |
+| F20 | 46 processing operators | Blur/sharpen, denoise, tone, curves, HSL, keying, vignette, noise and more → configurable chains. | `effects list/inspect` | Inspect animated parameters and backends individually; 46 operators and 500 LUT looks are separate inventories. |
+| F21 | 500 offline looks | Name/ID/category/license search → details, still previews, clip/global application and provenance copies. | `look list/inspect/preview/apply` | 500 distinct transforms include related curve variants; creative SDR mapping, not 500 unrelated families. |
+| F22 | Custom LUTs and color automation | Local .cube/.3dl/.csp/.dat → registration/inspection; supported 3D LUT strength and color channels follow automation contracts. | `lut register/list/inspect; effects inspect` | Registration does not imply complete parsing on every path; full CUBE data is required for the corresponding intensity/float features. |
+| F23 | Explicit Float32 pixel pipeline | Declared source/working/output signals, ordering and budgets → float color, LUT/shaper, selected spatial processing and surfaces. | `render; preview; surface export/inspect` | Explicit float32-native-v1 selection; a bounded subset that refuses unsupported features, not a complete HDR/ICC pipeline. |
+| F24 | Subtitles, text and segmentation | SRT/VTT/ASS/SSA/TTML or text → normalization, segmentation, bilingual text, layers, word highlighting and text animation. | `subtitle validate/normalize/segment; timeline compose` | Fonts must exist locally; complex layout, bidi shaping and some clock/animation combinations have explicit approximations or refusals. |
+| F25 | Offline transcription and alignment | Audio + existing Whisper/CTC weights/corrected text → transcripts, captions, word/character timings and CER evaluation. | `asr adapter; subtitle transcribe/align/evaluate` | Weights are not bundled; segment timestamps are not precise word alignment, and the dated CTC quality gate failed. |
+| F26 | Multitrack audio and buses | Explicit audio tracks → mixing/buses, volume/pan, mute/solo, fades, EQ, compression, denoise, loudness and ducking. | `audio extract; timeline compose; quality check` | A video containing sound does not automatically author an audio track; PCM/LUFS checks do not replace listening. |
+| F27 | Local speech synthesis | Existing flite or registered SoulX weights/authorized voice references → WAV assets and optional audio tracks. | `tts adapter/voice; tts synthesize` | flite depends on the FFmpeg build and is ASCII-English only; SoulX needs CUDA/native dependencies, not bundled voices. |
+| F28 | Channel approximation and model separation | Audio → center/side approximations, or vocal/accompaniment stems via an existing HDemucs adapter. | `audio separate; audio adapter` | Mid/side is not AI vocal separation; model separation needs weights, runtime and rights. |
+| F29 | Tracking, binding and reframing | Template/model/encoded-mask tracks → anchored text/stickers, crop and subject-reframe keyframes. | `media track/track-bind/reframe` | Choose the object explicitly; confidence/masks do not guarantee identity, and supported transforms/clocks must be checked. |
+| F30 | OCR anchors and face retouch | Existing PP-OCR/OpenSeeFace models → text polygons, anchor camera keys, landmarks and bounded retouch. | `ocr adapter/scan/anchors; face adapter/scan/retouch` | Existing ONNX CPU runtime and weights; not full UI action detection, makeup, body sculpting or face generation. |
+| F31 | Human matting and object segmentation | Existing RVM/SAM2 + points/boxes → alpha video, object masks and editable derived assets. | `media adapter; media matting` | RVM human matting and SAM2 segmentation differ; probability masks are not physical hair mattes and require motion/occlusion review. |
+| F32 | Inpainting, generative edits and outpainting | Existing LaMa/VACE + masks/prompts → repairs or expanded canvases with provenance and replayable recipes. | `media inpaint/outpaint; media adapter` | Framewise LaMa has no temporal guarantee; VACE needs CUDA and joint windows only; broad natural texture/temporal quality remains unaccepted. |
+| F33 | HTML/CSS/SVG/Canvas motion | Trusted local source/assets/fonts → editable controls, alpha titles, stroke motion, layout diagnostics and timeline compositing. | `motion html-*; motion stroke-source` | Requires existing Node/Playwright/Chromium; not an arbitrary-page sandbox and does not download a browser. |
+| F34 | Parameterized templates and variants | Local JSON templates + typed variables → editable variants, batch inputs and template snapshots. | `template apply/batch` | Includes asset/color/enum types; complex conditional graphs and expression evaluation are pending. |
+| F35 | Asset indexing and reusable fragments | Asset folders/edited clips → search, duplicates/similarity, cross-project fragments and dependency closure. | `library index/search/duplicates/similar; fragment` | User-owned libraries; no bundled commercial stock subscription or licensed-music catalog. |
+| F36 | Frame/range preview and caching | Projects + explicit frames/ranges → PNG/short video/cache and verifiable sample evidence. | `preview frame/range; cache; preview cache-*` | Preview does not validate the entire delivery; renderer/color path and cache signatures must match. |
+| F37 | Delivery, encoding and hardware probes | Projects → MP4/WebM/MKV, codec/pixel/audio configuration, alpha output and manifests. | `render` | Codecs depend on local FFmpeg; hardware is probed, CPU effects are not globally GPU-ported, and real-time/4K performance is not guaranteed. |
+| F38 | Persistent queues, retry and cancel | Frozen snapshots → local jobs, bounded workers, explicit retry/cancel and serialized metadata commits. | `queue enqueue/list/inspect/run/cancel` | Sequential by default; concurrency has gates and is not distributed cloud rendering. |
+| F39 | Output, scopes and golden checks | Actual encoded files → stream/fps/canvas/duration, loudness/black frames, scopes, masks and golden differences. | `quality check/scopes/mask/golden` | Automatic checks, static review, playback and listening are recorded separately, without general creative-quality certification. |
+| F40 | Rights ledger and local policy | Media/font/LUT/model/template evidence → dependency ledger, history, impact/retraction and publish gates. | `rights; policy audit; render --publish` | --publish checks local rights without uploading; the ledger does not adjudicate copyright. |
+| F41 | Project and timeline interchange | Agent JSON/package, OTIO, Kdenlive MLT and lawful local plaintext drafts → import/export and loss reports. | `convert import/export` | Per-feature Exact/Approximate/Unsupported/Failed reports; plaintext drafts neither run Jianying nor decrypt/fetch proprietary resources. |
+| F42 | Pipeline diagnostics and failure artifacts | Failed operations → bounded logs, diagnostic manifests, explicit exports and inspectable errors. | `diagnostics list/show/export; operation inspect` | A failure/refusal is not a successful render; review local-path information before sharing diagnostics. |
+| F43 | Creative, content and campaign guidance | Supplied products, audiences, references or campaign tables → scripts, structure, variant suggestions and analysis. | `ad plan/apply; advisory Skills` | Advisory Skills do not supply ad-platform connectors, automatic buying, live data or performance guarantees. |
 
+## Supported service modules and dependencies
 
-## Installed looks and local Skills
+“Service” here means a local processing module or adapter. The base package supplies the CLI, projects and rendering; models, browser runtimes, fonts and user assets follow the conditions below.
 
-500 distinct numeric looks: 100 existing MIT, 267 Natron CC-BY-SA and 133 FreshLUTs CC0. The count includes related original curve variants, not 500 unrelated families; runtime strengths and format copies are excluded. All names/IDs, actual gray/skin/RGB effects, scenes, trial strength, source/license and PNG/video are listed in the complete manual.
+| ID | Service module | Execution | Needs/provides | Entry | Scope |
+|---|---|---|---|---|---|
+| S01 | Local Agent tool interface | Native process/JSON | Python 3.13 + installed package; callable by an Agent shell or Skill. | `version / capabilities / schema show` | No built-in SaaS, HTTP API or MCP server; callers may wrap the CLI. |
+| S02 | Project and operation storage | Local files/transactions | Agent Projects, snapshots, locks, operations and recovery records. | `project / operation` | Not a multiuser cloud collaboration database. |
+| S03 | Media processing and default rendering | On-demand processing | Existing FFmpeg/ffprobe and local media. | `media / timeline / render` | Codec/filter availability depends on the installed FFmpeg build. |
+| S04 | Explicit float pixel engine | Explicit opt-in | NumPy and declared signals/budgets; checked separately from the default pipeline. | `surface / render / preview` | A supported subset, not a complete replacement for every FFmpeg/Jianying operation. |
+| S05 | Captions and speech | Base parsing + optional models | Subtitle parsing is direct; Whisper/CTC/SoulX need registered existing runtimes. | `subtitle / asr / tts` | No default cloud transcription or voice provider. |
+| S06 | Visual AI and repair | Optional local adapters | Per-adapter native dependencies and weights for RVM/SAM2/LaMa/VACE/tracking/OCR/faces. | `media adapter / ocr / face` | No bundled model weights; an unconfigured adapter is not an executed capability. |
+| S07 | HTML motion rendering | Optional local runtime | Explicitly registered existing Node, Playwright, Chromium, templates, images and fonts. | `motion html-*` | No OpenFilm online service dependency or automatic browser installation. |
+| S08 | Assets, templates and looks | Bundled catalog + user libraries | 500 bundled LUTs; media, fonts, music and templates are registered/provided by users. | `look / lut / template / library / fragment` | No complete commercial stock/template subscription library. |
+| S09 | Local render queue and cache | Persistent job files | Single-process sequential default, with gated bounded local workers and caches. | `queue / preview / cache` | No cross-machine orchestration, cloud rendering or remote billing. |
+| S10 | Quality checks and diagnostics | Local artifact checks | FFmpeg decode/scopes, PNG/JSON reports, goldens and failure diagnostics. | `quality / diagnostics` | Objective checks and subjective acceptance remain distinct. |
+| S11 | Rights and interchange | Local evidence and file exchange | Ledger/policy/package hashes/loss reports without invoking a proprietary editor. | `rights / policy / convert` | Does not grant commercial rights to third-party media/models. |
+| S12 | Creative and campaign assistance | Agent task guidance | Uses supplied business information and data to produce scripts/suggestions/analysis. | `17 agent-ffmpeg-local-* Skills` | No ad-account integration, buying or automatic data collection. |
+
+**Observed local environment:** this update’s doctor sees native Python 3.13.1, FFmpeg/ffprobe 8.1 and Node; this does not establish registration of every model/browser adapter. doctor merely discovers Docker/WSL executable paths and does not run them. This project uses native tools without invoking Docker/WSL/virtual environments.
+
+### What the optional AI modules actually provide
+
+| Stack | Capability and prerequisite | Commands |
+|---|---|---|
+| Whisper / CTC | Transcription/captions/corrected-text alignment/CER; existing weights/native runtime required. | asr adapter; subtitle transcribe/align/evaluate |
+| flite / SoulX | Basic English speech or authorized-reference voice synthesis; SoulX requires existing CUDA BF16 runtime. | tts adapter/voice/synthesize |
+| HDemucs | Vocal/accompaniment separation, distinct from model-free mid/side approximation. | audio adapter; audio separate |
+| Tracking / YOLOv10 ONNX | Template/native ONNX/command-JSON tracking for binding/reframing; explicitly choose objects. | media adapter/track/track-bind/reframe |
+| PP-OCRv4 / OpenSeeFace | OCR polygons/camera anchors, 66-point faces and bounded retouch; existing ONNX CPU dependencies. | ocr; face |
+| RVM / SAM2 | Human soft-alpha matting / prompted object segmentation; review models, prompts, cuts and masks. | media adapter; media matting |
+| LaMa / VACE | Framewise repair / CUDA joint-window generative edits and outpainting, retaining temporal/texture acceptance limits. | media inpaint/outpaint |
+
+These interfaces do not mean the base bundle contains the weights. A historical model execution does not establish configuration of the current project; inspect its registry and results. Model, voice and media licenses are separate from software MIT.
+
+## 46 effect operators and 12 motion presets
+
+| Effect category | Actual discoverable operators |
+|---|---|
+| blur | `avgblur`, `blur`, `box_blur`, `smartblur` |
+| color | `brightness`, `color_balance`, `color`, `color_contrast`, `color_levels`, `color_temperature`, `color_wheel`, `contrast`, `curves`, `exposure`, `gamma`, `hsl`, `histeq`, `hue`, `lut3d`, `rgb_curves`, `selective_hsl`, `saturation` |
+| keying | `chroma_key` |
+| repair | `deband`, `deflicker`, `deshake`, `dctdnoiz`, `gradfun`, `hqdn3d` |
+| overlay | `draw_box` |
+| stylize | `edgedetect`, `grayscale`, `invert`, `noise`, `posterize`, `sepia`, `solarize`, `threshold`, `vignette` |
+| motion | `frame_interpolation` |
+| transform | `hflip`, `vflip` |
+| distortion | `lens_correction` |
+| detail | `sharpen` |
+| temporal | `tblend`, `tmix` |
+
+12 motion presets: `zoom_in`, `zoom_out`, `pan_left`, `pan_right`, `pan_up`, `pan_down`, `ken_burns`, `rotate_in`, `rotate_out`, `fade_in`, `fade_out`, `shake`.
+
+See [every effect’s parameters](docs/product/EFFECTS.en.md) for defaults, bounds, keyframe support and backend. LUTs map color; grain, vignette, blur, geometry, masks and AI repair are separate operations and are not automatically added by selecting a look.
+
+## 500 looks: names, detail and client selection
+
+001–100 retain `sp-`/`t3-`; 101–500 use source prefixes `nt-`/`fl-`. Names retain upstream film/style/curve variants; stable IDs are the command identifiers. The 500 distinct transforms include related upstream curves and do not count strength/format copies or imply 500 unrelated families.
 
 | Category | Count |
-|---|---:|
-| `cinema` | 39 |
-| `creative` | 135 |
-| `landscape` | 10 |
-| `infrared` | 2 |
-| `lomography` | 5 |
-| `film-bw` | 37 |
-| `film-negative` | 112 |
-| `film-slide` | 41 |
-| `instant-consumer` | 54 |
-| `instant-pro` | 65 |
+|---|---|
+| cinema | 39 |
+| creative | 135 |
+| film-bw | 37 |
+| film-negative | 112 |
+| film-slide | 41 |
+| infrared | 2 |
+| instant-consumer | 54 |
+| instant-pro | 65 |
+| landscape | 10 |
+| lomography | 5 |
 
-Select with `look list`, read measured descriptions and license with `inspect`, compare previews, then apply to an explicit clip or global scope. Replace is default; append is explicit. Creative encoded SDR RGB only; LUTs do not generate grain, glow or beauty effects. Per-resource terms and project evidence are preserved.
+Each profile includes original/localized names, ID/category, measured gray/skin/RGB values, trial use/strength, cautions, creator, source commit, conversion error, LUT hash/license, this N002 sample and dated synthetic-card PNG/video.
+
+| Numbers | Profiles and supplied-image samples |
+|---|---|
+| 001–100 | [Profiles](docs/local/look-profiles/001-100.en.md) · [N002 samples](docs/local/filter-gallery/001-100.en.md) |
+| 101–200 | [Profiles](docs/local/look-profiles/101-200.en.md) · [N002 samples](docs/local/filter-gallery/101-200.en.md) |
+| 201–300 | [Profiles](docs/local/look-profiles/201-300.en.md) · [N002 samples](docs/local/filter-gallery/201-300.en.md) |
+| 301–400 | [Profiles](docs/local/look-profiles/301-400.en.md) · [N002 samples](docs/local/filter-gallery/301-400.en.md) |
+| 401–500 | [Profiles](docs/local/look-profiles/401-500.en.md) · [N002 samples](docs/local/filter-gallery/401-500.en.md) |
+
+Sources/licenses: Striped Purple 49 + t3mujinpack 51 (MIT), Natron 267 (CC BY-SA 4.0), FreshLUTs 133 (CC0). Natron Hald-to-CUBE approximation is disclosed per entry. Community film/product names are not official Leica/CapCut/manufacturer algorithms. `fl-0000228-science-fiction-for-flog` has an ambiguous Rec.709 label versus FLog title; use only for experimental creative comparison, not verified camera-log conversion.
+
+**Client workflow:** show the original plus 3–6 relevant actual samples, identifying number, name, stable ID, strength, color change and license. Clients can filter/export candidates or give numbers. Render selected strengths on the actual target media, record final ID/strength/clip-or-global scope, then dry-run/apply. The split slider changes the original comparison region and does not simulate strength.
 
 ```powershell
 $avk = 'E:/dev/sandbox/AI广告剪辑/skills/agent-ffmpeg-local-editor/scripts/run.ps1'
-& $avk look list --query '黑白'
-& $avk look list --query 'CC0-1.0'
-& $avk look inspect --id fl-0000001-action-magenta-01
-& $avk look preview --id fl-0000001-action-magenta-01 --output 'E:/video-work/magenta-preview.png' --strength 0.65
-& $avk look apply --project 'E:/video-work/my-ad' --id fl-0000001-action-magenta-01 --global --strength 0.65 --dry-run
-& $avk look apply --project 'E:/video-work/my-ad' --id fl-0000001-action-magenta-01 --global --strength 0.65
+$aekGallery = 'E:/dev/sandbox/AI广告剪辑/skills/agent-ffmpeg-local-editor/scripts/look_gallery.py'
+& 'C:/Python313/python.exe' -I -S -B -X utf8 $aekGallery --query '黑白' --limit 6
+& 'C:/Python313/python.exe' -I -S -B -X utf8 $aekGallery --ids t3-fuji-superia-800 nt-bw-agfa-apx-100 fl-0000634-darkblue --output 'E:/video-work/client-look-options'
+& $avk look inspect --id t3-fuji-superia-800
+& $avk look preview --id t3-fuji-superia-800 --input 'E:/media/client-frame.png' --output 'E:/video-work/client-strength-065.png' --strength 0.65
+& $avk look apply --project 'E:/video-work/my-ad' --id t3-fuji-superia-800 --clip-id clip_1 --strength 0.65 --dry-run
+& $avk look apply --project 'E:/video-work/my-ad' --id t3-fuji-superia-800 --clip-id clip_1 --strength 0.65
 ```
 
-**`$agent-ffmpeg-local-editor`** · 17 Skills · `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.3/installed/`. [Install and Skill details](docs/local/INSTALLATION.md).
+Use a new output directory and replace `clip_1` with an actual clip ID. The helper writes only `board.jpg` and `selection.json`, without project edits; samples are at 100%. `look apply` replaces built-in looks in scope while preserving manual effects; stacking requires `--append`, and `--global` affects every sequence. Static strength mixes encoded RGB. Prepare Float32/Log/HDR through a separate color contract before creative SDR looks.
 
-## Installation
+## Installation, bundle contents and local loading
 
-Native Windows x64 + existing CPython 3.13 and FFmpeg/ffprobe. Eight pinned wheels include the app, NumPy and Pillow. Installation is offline, creates no virtual environment and leaves global site-packages unchanged. Python, FFmpeg and model runtimes are separate prerequisites.
+Prerequisites: native Windows x64, existing CPython 3.13 and FFmpeg/ffprobe. Eight pinned wheels contain the app, NumPy, Pillow and schema dependencies, installed offline to a target folder without a virtual environment or global site-packages changes. Python, FFmpeg, Node/Chromium, model weights and commercial fonts/music are not bundled.
 
-[Download all parts and read assembly/install commands](docs/releases/v0.1.0-alpha.3/USAGE.md). [SHA256SUMS](docs/releases/v0.1.0-alpha.3/artifacts/SHA256SUMS.txt). Hashes verify content, not publisher identity.
-
-## Minimal workflow
+[Download all parts/metadata](docs/releases/v0.1.0-alpha.3/artifacts/) · [Installation manual](docs/releases/v0.1.0-alpha.3/USAGE.md) · [Checksums](docs/releases/v0.1.0-alpha.3/artifacts/SHA256SUMS.txt). Parts are not standalone ZIPs: assemble before extracting. Hashes verify content, not publisher signatures.
 
 ```powershell
 $avkPython = 'C:/Python313/python.exe'
-$avkRun = 'E:/tools/aek-alpha3-installed/run.py'
-$avkProject = 'E:\video-work\first-ad'
-& $avkPython -I -S -B -X utf8 $avkRun project init $avkProject --name 'First ad'
-& $avkPython -I -S -B -X utf8 $avkRun media ingest --project $avkProject --input E:\media\product.mp4
-# Inspect returned data.asset.id, then put that ID in changes.json.
-& $avkPython -I -S -B -X utf8 $avkRun timeline compose --project $avkProject --input E:\video-work\changes.json
-& $avkPython -I -S -B -X utf8 $avkRun validate --project $avkProject
-& $avkPython -I -S -B -X utf8 $avkRun preview frame --project $avkProject --frame 0
-& $avkPython -I -S -B -X utf8 $avkRun render --project $avkProject --output E:\video-work\first-ad\renders\ad.mp4
-& $avkPython -I -S -B -X utf8 $avkRun quality check --project $avkProject --input E:\video-work\first-ad\renders\ad.mp4
+# Run from the directory containing every .partNN and the supplied metadata.
+& $avkPython -I -B -X utf8 ./assemble.py --output E:/tools/agent-editor-kit-alpha3.zip
+Expand-Archive E:/tools/agent-editor-kit-alpha3.zip E:/tools/agent-editor-kit-alpha3
+Set-Location E:/tools/agent-editor-kit-alpha3
+$avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha256
+& $avkPython -I -B -X utf8 ./bundle/install.py --target E:/tools/aek-alpha3-installed --manifest-sha256 $avkManifest
+& $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-Ingested rights default to unverified. Provide local license/provenance evidence before a commercial delivery, then run `rights check` and `render --publish`. **`--publish` is a local rights gate; it does not upload media.** The source and edit JSON in this example are supplied by you. [Reproducible cases](docs/releases/v0.1.0-alpha.1/CASES.md) include generated inputs, actual IDs, all commands and complete responses.
-
-Agents must inspect the process exit code plus JSON `ok`, `status`, `errors`, `warnings` and `artifacts`. A dry plan is not a render. Use `--idempotency-key` only for commands implementing it; command-specific semantics remain authoritative.
-
-## Real cases
-
-| Case | Input → output | Complete artifacts |
-|---|---|---|
-| C01 / FIELD vertical ad | Original fictional-product cards + synthetic pulse → 6 s, 360×640 MP4 | [Input](docs/assets/release-v0.1.0-alpha.1-r2/input.mp4) · [Output](docs/assets/release-v0.1.0-alpha.1-r2/field.mp4) · [GIF](docs/assets/release-v0.1.0-alpha.1-r2/field.gif) · [Edit JSON](docs/validation/evidence/release-v0.1.0-alpha.1-r2/changes.json) · [Response](docs/validation/evidence/release-v0.1.0-alpha.1-r2/render.stdout.json) |
-| C02 / Template variant | Parameterized template + replacement card → 3 s variant | [Template](docs/validation/evidence/release-v0.1.0-alpha.1-r2/template.json) · [Variables](docs/validation/evidence/release-v0.1.0-alpha.1-r2/variables.json) · [Output](docs/assets/release-v0.1.0-alpha.1-r2/variant.mp4) · [GIF](docs/assets/release-v0.1.0-alpha.1-r2/variant.gif) |
-| C03 / Float32 color chain | Dated V112 synthetic source → 1D LUT/shaper and 3D LUT | [Input](docs/assets/float-shaper-20261023-installed-r1/original.mp4) · [Output](docs/assets/float-shaper-20261023-installed-r1/edited.mp4) · [Comparison](docs/assets/float-shaper-20261023-installed-r1/formal-comparison.gif) · [Receipt](docs/validation/evidence/float-shaper-20261023-lab/installed-r1/verification.json) |
-| C04 / Delivery and refusal | Package export/import/validation and a rejected remote reference | [Export](docs/validation/evidence/release-v0.1.0-alpha.1-r2/export-package.stdout.json) · [Restored validation](docs/validation/evidence/release-v0.1.0-alpha.1-r2/restored-validate.stdout.json) · [Refusal](docs/validation/evidence/release-v0.1.0-alpha.1-r2/remote-refused.stdout.json) |
-
-![Actual rendered advertising case](docs/assets/release-v0.1.0-alpha.1-r2/field.gif)
-
-These new assets are locally generated graphics and synthetic audio, with zero new model inferences. C03 is dated historical evidence. GIFs carry no sound; automated decoding, static review, continuous playback and human listening are reported separately. [Provenance, hashes, inputs and reproduction](docs/releases/v0.1.0-alpha.1/CASES.md).
-
-## 17 installed-release Agent Skills
-
-| # | Skill | Purpose |
-|---|---|---|
-| 1 | `$agent-ffmpeg-local-editor` | Route editing work, initialize projects and deliver outputs |
-| 2 | `$agent-ffmpeg-local-timeline` | Author timelines, keyframes, camera moves, transitions and nesting |
-| 3 | `$agent-ffmpeg-local-quality` | Review pixels, masks, scopes and render evidence |
-| 4 | `$agent-ffmpeg-local-project-ops` | Manage snapshots, recovery, relinking and render queues |
-| 5 | `$agent-ffmpeg-local-local-policy` | Audit local-only execution and remote references |
-| 6 | `$agent-ffmpeg-local-rights-ledger` | Record and check media, font, model and template rights |
-| 7 | `$agent-ffmpeg-local-local-models` | Register and run existing offline model adapters |
-| 8 | `$agent-ffmpeg-local-video-understand` | Analyze scenes, silence, frame evidence and transcripts |
-| 9 | `$agent-ffmpeg-local-template-library` | Apply templates, index assets and reuse edited clip groups |
-| 10 | `$agent-ffmpeg-local-long-to-short` | Turn talks or lessons into reviewed short clips |
-| 11 | `$agent-ffmpeg-local-screen-demo` | Edit screen demos with action anchors and zooms |
-| 12 | `$agent-ffmpeg-local-reference-remake` | Rebuild reference pacing and layout using replacement assets |
-| 13 | `$agent-ffmpeg-local-ffmpeg` | Perform general local FFmpeg media operations |
-| 14 | `$agent-ffmpeg-local-video-edit` | Trim, concatenate, resize and compress local media |
-| 15 | `$agent-ffmpeg-local-ad-creative` | Plan ad copy, hooks and creative variants |
-| 16 | `$agent-ffmpeg-local-video-content-strategist` | Plan content direction, scripts and channel strategy |
-| 17 | `$agent-ffmpeg-local-campaign-analytics` | Analyze supplied campaign data |
+This host already has `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.3/installed/`. The 17 Skills’ bodies/scripts live in `skills/`, with Codex discovery junctions under `C:/Users/carzy/.codex/skills/`. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
-.\register-agent-ffmpeg-local-skills.ps1
+Set-Location 'E:/dev/sandbox/AI广告剪辑'
+./register-agent-ffmpeg-local-skills.ps1
+$avk = 'E:/dev/sandbox/AI广告剪辑/skills/agent-ffmpeg-local-editor/scripts/run.ps1'
+& $avk version
+& $avk doctor
+& $avk capabilities
+& $avk schema show
+& $avk COMMAND --help
 ```
 
-Install the local release before registration. Windows junctions expose Skill sources on E: to Codex while preserving unrelated conflicts. New names become discoverable on the next turn. Legacy `video-cut-` entries and published ZIP assets remain unchanged; the new namespace ships with this main-branch update. Skills provide guidance without extra models or subscription assets. [Current Skill details and setup](docs/local/INSTALLATION.md) · [Original release-name catalog](docs/releases/v0.1.0-alpha.1/SKILLS.md).
+The Skill launcher checks the installation receipt and launcher hash, then invokes the pinned release with `-I -S`; missing installation fails without silent source fallback. N002 images and the gallery are checkout documentation assets, not a changed release bundle; downloading only the runtime ZIP does not include this complete gallery.
 
-## Verification
+## Commands and project structure: start to delivery
 
-| ID | Check | Observed result | Evidence and limits |
+```powershell
+$avk = 'E:/dev/sandbox/AI广告剪辑/skills/agent-ffmpeg-local-editor/scripts/run.ps1'
+$aekProject = 'E:/video-work/first-ad'
+& $avk project init $aekProject --name 'First ad'
+& $avk media ingest --project $aekProject --input 'E:/media/product.mp4'
+# Read returned data.asset.id; author changes.json using actual IDs and source ranges.
+& $avk timeline compose --project $aekProject --input 'E:/video-work/changes.json'
+& $avk validate --project $aekProject
+& $avk rights check --project $aekProject
+& $avk policy audit --project $aekProject
+& $avk preview frame --project $aekProject --frame 0
+& $avk render --project $aekProject --output 'E:/video-work/first-ad/renders/ad.mp4'
+& $avk quality check --project $aekProject --input 'E:/video-work/first-ad/renders/ad.mp4'
+& $avk convert export --help
+```
+
+Media/changes.json paths are placeholders requiring real files and IDs. Default author timebase is 90,000 ticks/second and display rate 30/1; source time, author time, frame number and native PTS differ. Video tracks do not automatically add audio; author audio tracks explicitly. See the [executed ad edit JSON](docs/validation/evidence/release-v0.1.0-alpha.1-r2/changes.json).
+
+```text
+project/
+  project.json         # editable settings, assets, sequences and tracks
+  rights-ledger.json   # source, license and dependency evidence
+  assets/              # imported/derived assets, LUTs and notices
+  history/             # snapshots
+  operations/          # operations, diagnostics and render queue
+  renders/             # delivered files and manifests
+  cache/               # disposable derived previews/analysis
+```
+
+Responses contain `ok/command/request_id/operation_id/status/data/artifacts/warnings/errors/provenance`. Check exit status and response, not merely file existence. A dry run is a plan rather than a render; idempotency applies only to advertised writes.
+
+Imported rights default to unverified; supply actual source/license/evidence before commercial delivery and `rights check`/`render --publish`. `--publish` is a local gate, not a platform upload. Interchange reports Exact/Approximate/Unsupported/Failed losses and cannot promise lossless plaintext-draft effects.
+
+## 17 local Skills: responsibility, inputs/outputs and limits
+
+| ID | Skill | Responsibility | Input → output | Commands | Dependency/limit |
+|---|---|---|---|---|---|
+| K01 | [`$agent-ffmpeg-local-editor`](skills/agent-ffmpeg-local-editor/SKILL.md) | Editing and delivery entrypoint | brief + local media → plan, project, video, manifest | `project init; timeline compose; look; render` | Routes by capability, including client look selection; needs the base CLI. |
+| K02 | [`$agent-ffmpeg-local-timeline`](skills/agent-ffmpeg-local-timeline/SKILL.md) | Timeline, keys and motion | Edit JSON → tracks/motion/transitions/nesting | `timeline compose/edit; motion apply` | Explicit track/clip targets and author clocks. |
+| K03 | [`$agent-ffmpeg-local-quality`](skills/agent-ffmpeg-local-quality/SKILL.md) | Output and pixel review | Video + manifest + reference → reports/scopes/differences | `quality check/scopes/mask/golden` | Separate static review/playback/listening; review look selections. |
+| K04 | [`$agent-ffmpeg-local-project-ops`](skills/agent-ffmpeg-local-project-ops/SKILL.md) | Project operations, recovery and queues | Projects + jobs → snapshots/recovery/relink/results | `project snapshot/recover; media relink; queue` | Preserve sources/failures; not a cloud scheduler. |
+| K05 | [`$agent-ffmpeg-local-local-policy`](skills/agent-ffmpeg-local-local-policy/SKILL.md) | Local execution policy | Project references → audit/structured refusal | `policy audit` | Remote references refused; not an OS sandbox. |
+| K06 | [`$agent-ffmpeg-local-rights-ledger`](skills/agent-ffmpeg-local-rights-ledger/SKILL.md) | Media and model rights evidence | Source/license/local evidence → ledger/impact/gates | `rights list/check/update/impact` | Treat image and LUT rights separately; no automatic legal determination. |
+| K07 | [`$agent-ffmpeg-local-local-models`](skills/agent-ffmpeg-local-local-models/SKILL.md) | Existing offline model registration | Native runtime + weights/hashes/licenses → adapters/artifacts | `media adapter; asr adapter; ocr; face; tts` | No weight downloads; check capability/runtime before execution. |
+| K08 | [`$agent-ffmpeg-local-video-understand`](skills/agent-ffmpeg-local-video-understand/SKILL.md) | Scene/silence and video evidence | Local video/audio → analysis JSON, frames, caption candidates | `media understand/contact-sheet; subtitle transcribe` | Distinguish heuristics from model semantics. |
+| K09 | [`$agent-ffmpeg-local-template-library`](skills/agent-ffmpeg-local-template-library/SKILL.md) | Templates and reusable fragments | Templates/variables/library → editable variants/index | `template apply/batch; library; fragment` | User-provided assets and per-resource licenses. |
+| K10 | [`$agent-ffmpeg-local-long-to-short`](skills/agent-ffmpeg-local-long-to-short/SKILL.md) | Long video to short clips | Local lesson/talk + reviewed text → rough cuts/short projects | `media highlights/smart-cut; timeline compose` | Review candidate segments; no autonomous semantic-director claim. |
+| K11 | [`$agent-ffmpeg-local-screen-demo`](skills/agent-ffmpeg-local-screen-demo/SKILL.md) | Screen demos and camera anchors | Recording + action anchors → zoom/return/caption demo | `timeline compose; ocr anchors; preview range` | OCR needs existing models; text boxes are not clickable-control bounds. |
+| K12 | [`$agent-ffmpeg-local-reference-remake`](skills/agent-ffmpeg-local-reference-remake/SKILL.md) | Reference pacing/layout remake | Local reference + replacement assets → editable remake | `media understand; timeline compose` | Rebuild structure; no automatic acquisition or rights grant. |
+| K13 | [`$agent-ffmpeg-local-ffmpeg`](skills/agent-ffmpeg-local-ffmpeg/SKILL.md) | Native media tools | Local files + settings → conversion/resize/extraction/compression | `native ffmpeg / ffprobe` | Native tools; inspect codec availability. |
+| K14 | [`$agent-ffmpeg-local-video-edit`](skills/agent-ffmpeg-local-video-edit/SKILL.md) | General video-edit workflows | Local files + edit instructions → trims/concat/overlays | `native ffmpeg; installed CLI` | Use timeline/editor for complex editable projects. |
+| K15 | [`$agent-ffmpeg-local-ad-creative`](skills/agent-ffmpeg-local-ad-creative/SKILL.md) | Ad creative and variants | Product/audience/evidence → hooks/copy/scripts/variants | `advisory; ad plan` | Advisory instructions without bundled media-generation models. |
+| K16 | [`$agent-ffmpeg-local-video-content-strategist`](skills/agent-ffmpeg-local-video-content-strategist/SKILL.md) | Video content strategy | Goals/audience/supplied references → direction/series/scripts | `advisory Skill` | No live trends, platform accounts or crawler. |
+| K17 | [`$agent-ffmpeg-local-campaign-analytics`](skills/agent-ffmpeg-local-campaign-analytics/SKILL.md) | Supplied campaign-data analysis | Local campaign tables → ROAS/CPA/funnel/suggestions | `advisory Skill` | No ad-platform connector; metrics depend on data/attribution assumptions. |
+
+Typical routing: creative/content strategy → editor → understanding → timeline/template → quality → project operations. Rights/policy check relevant dependencies; local-models is used when actual inference is needed. The editor presents/records look choices and quality reviews the target-media result.
+
+```text
+$agent-ffmpeg-local-editor 用本地素材做 6 秒竖屏广告，保留工程、音轨、权利证据和成片核验。
+$agent-ffmpeg-local-editor 用 N002 图册向客户展示暖色胶片、黑白、冷色电影各两套；给编号/ID/强度/许可和对照板，等客户选型后再试目标素材。
+$agent-ffmpeg-local-timeline 给 clip_1 添加可编辑推近和关键帧，预览首中末帧。
+$agent-ffmpeg-local-template-library 用提供的本地产品图和变量生成一个可编辑模板变体。
+$agent-ffmpeg-local-quality 对实际输出、manifest 和 Scope 复核，分别说明自动检查、目检、播放和听审。
+```
+
+[Current full Skill manual](docs/product/SKILLS.en.md) · [Client selection workflow](skills/agent-ffmpeg-local-editor/references/client-look-selection.md) · [Registration/install](docs/local/INSTALLATION.md). Skills are task instructions, without additional model/stock subscriptions or automatic ad-platform access.
+
+## Complete cases, original inputs, actual output and GIFs
+
+| ID | Scenario and actual scope | Original/output/evidence |
+|---|---|---|
+| C01 | Six-second FIELD ad: original cards + synthetic audio → 360×640/30 fps/180 frames. | [Input](docs/assets/release-v0.1.0-alpha.1-r2/input.mp4) · [MP4](docs/assets/release-v0.1.0-alpha.1-r2/field.mp4) · [GIF](docs/assets/release-v0.1.0-alpha.1-r2/field.gif) · [JSON](docs/validation/evidence/release-v0.1.0-alpha.1-r2/changes.json) |
+| C02 | Three-second template variant: real asset/duration variables → editable silent output. | [Template](docs/validation/evidence/release-v0.1.0-alpha.1-r2/template.json) · [Variables](docs/validation/evidence/release-v0.1.0-alpha.1-r2/variables.json) · [MP4](docs/assets/release-v0.1.0-alpha.1-r2/variant.mp4) · [GIF](docs/assets/release-v0.1.0-alpha.1-r2/variant.gif) |
+| C03 | Dated Float32 1D/shaper + 3D LUT color-chain, source-clock and independent-preview execution. | [Input](docs/assets/float-shaper-20261023-installed-r1/original.mp4) · [Output](docs/assets/float-shaper-20261023-installed-r1/edited.mp4) · [GIF](docs/assets/float-shaper-20261023-installed-r1/formal-comparison.gif) |
+| C04 | Package export/restore and actual remote-reference refusal, with complete CLI responses. | [Export](docs/validation/evidence/release-v0.1.0-alpha.1-r2/export-package.stdout.json) · [Restored validation](docs/validation/evidence/release-v0.1.0-alpha.1-r2/restored-validate.stdout.json) · [Refusal](docs/validation/evidence/release-v0.1.0-alpha.1-r2/remote-refused.stdout.json) |
+| C05 | New N002 × 500: 500 installed previews with 500 full-size lossless pixel matches. | [Source](docs/assets/looks-n002-20261024-r1/source.png) · [Gallery](docs/assets/looks-n002-20261024-r1/index.html) · [All samples](docs/local/FILTER_GALLERY.en.md) · [GIF](docs/assets/looks-n002-20261024-r1/look-selection.gif) |
+| C06 | Client board: original plus selected stable IDs, names, licenses and returnable selection.json. | [Board](docs/assets/looks-n002-20261024-r1/client-shortlist-example/board.jpg) · [JSON](docs/assets/looks-n002-20261024-r1/client-shortlist-example/selection.json) |
+| C07 | Real gallery: desktop/mobile screenshots, actual interaction recording and assertions. | [Desktop](docs/assets/looks-n002-20261024-r1/gallery-desktop.png) · [Mobile](docs/assets/looks-n002-20261024-r1/gallery-mobile.png) · [WebM](docs/assets/looks-n002-20261024-r1/gallery-walkthrough.webm) |
+| H01 / V35 | Source-handle transitions: authored input, actual two-cut result and independent pixel reference. | [Input](docs/assets/source-transitions-20261017/authored-input.mp4) · [Output](docs/assets/source-transitions-20261017/C01-actual.mp4) · [GIF](docs/assets/source-transitions-20261017/comparison.gif) |
+| H02 / V41 | Native HTML motion: editable source, alpha titles and timeline composition with an existing browser runtime. | [Source](docs/assets/html-motion-20261018/source.mp4) · [HTML](docs/assets/html-motion-20261018/template/index.html) · [Output](docs/assets/html-motion-20261018/S03-timeline.mp4) · [GIF](docs/assets/html-motion-20261018/native-comparison.gif) |
+| H03 / V43 | Frame mask corrections: selected/clear errors corrected; geometry passes while natural LaMa repair still smears. | [Source](docs/assets/mask-edits-20261018/source.mp4) · [Before](docs/assets/mask-edits-20261018/mask-input.mov) · [After](docs/assets/mask-edits-20261018/mask-edited.mov) · [GIF](docs/assets/mask-edits-20261018/comparison.gif) |
+| H04 / V37 | Cross-project fragments: transitions, captions, LUTs, child sequences and linked dependencies. | [Input](docs/assets/fragments-20261018/source-a.mp4) · [Output](docs/assets/fragments-20261018/C01-actual.mp4) · [GIF](docs/assets/fragments-20261018/comparison.gif) |
+| H05 / V34 | Caption segmentation/bilingual text: authored timings, actual output and reference; not an ASR demonstration. | [Input](docs/assets/subtitle-segments-20261017/source.mp4) · [Output](docs/assets/subtitle-segments-20261017/S01-segmented.mp4) · [GIF](docs/assets/subtitle-segments-20261017/comparison.gif) |
+| H06 / V49 | Actual offline CTC: model-timed captions; 258.1875 ms boundary error fails the 66.6667 ms gate. | [Input audio](docs/assets/ctc-alignment-20261018/input.wav) · [Output](docs/assets/ctc-alignment-20261018/result.mp4) · [GIF](docs/assets/ctc-alignment-20261018/comparison.gif) |
+| H07 / V53 | Magnetic primary-track reorder: A/B/C/D → C/A/B/D with linked audio and author constraints. | [Input](docs/assets/magnetic-reorder-v53-r5-20261018/source-preview.mp4) · [Output](docs/assets/magnetic-reorder-v53-r5-20261018/MR01.mp4) · [GIF](docs/assets/magnetic-reorder-v53-r5-20261018/reorder-before-after.gif) |
+
+Actual desktop screenshot of the selection page, with original comparison and shortlist export:
+
+![Actual offline look selection page](docs/assets/looks-n002-20261024-r1/gallery-desktop.png)
+
+Below is the actual CLI-rendered FIELD ad. The casebook retains source cards/audio, edit JSON, responses and stream data. GIF is silent; inspect the MP4 for audio.
+
+![Actual rendered FIELD ad](docs/assets/release-v0.1.0-alpha.1-r2/field.gif)
+
+Dated execution of editable HTML motion and timeline compositing:
+
+![Actual HTML motion and composition](docs/assets/html-motion-20261018/native-comparison.gif)
+
+Dated actual keyframe/camera/mask/title/transition/audio composition:
+
+![Actual CLI feature demonstration](docs/assets/readme-20261016/cli-showcase.gif)
+
+[**Complete casebook: all restored functional demos, inputs/outputs, metrics and failures**](docs/product/CASES.md) · [Release reproduction steps](docs/releases/v0.1.0-alpha.1/CASES.md). New executions here are N002 still looks and selection-document tools; other cases retain their dates and are not counted as new inference/regression. Experimental temporal repair remains separately labeled unintegrated/unaccepted.
+
+## Troubleshooting, recovery and delivery
+
+| Symptom | Action |
+|---|---|
+| Missing FFmpeg/model/browser | Run doctor/inspect and supply existing native dependencies; no automatic download or undeclared fallback. |
+| Output exists / outside project | Choose a new absolute project-owned path; preserve earlier results/failures. |
+| Project locked/interrupted | Inspect operations/queue, cancel or recover through supported commands; do not blindly remove locks. |
+| Publish gate blocks | Supply actual per-media/font/LUT/model license and local evidence, then recheck rights. |
+| Unsupported effect/float combination | Read the capability contract and revise the reviewed plan/renderer, without silent degradation. |
+| Gallery without runtime | The gallery can be browsed offline; new strengths and project edits require the pinned CLI installation. |
+
+## Functional verification and release evidence
+
+R01–R24 retain their original versions/dates and were not rerun merely for this README rewrite; “this run” in retained rows refers to that row’s original version/date. R25–R28 cover this update. Counts are not added or used to claim complete CapCut parity.
+
+| # | Verification | Actual result | Evidence and scope |
 |---|---|---|---|
 | R01 | Baseline full regression | **2,930 passed; 0 skipped**, 6991.508 s | [2026-10-23 receipt](docs/validation/evidence/float-shaper-20261023-lab/full-r1.json); this release rechecks identical 331 frozen inputs, rather than claiming a new full run  Frozen alpha.1 scope only; the new code has the separate checks below. |
 | R02 | Previous V112 fresh installation | **118 methods; 197 product resources** | [Receipt](docs/validation/evidence/float-shaper-20261023-lab/installed-r1/verification.json); overlaps the full suite, not additive |
@@ -173,17 +372,24 @@ Install the local release before registration. Windows junctions expose Skill so
 | R22 | 500-look catalog and focused regression | **500 unique signatures/previews; 90 tests passed** | [Regression](docs/validation/evidence/look500-20261024-r1/regression-policy.json) · [Sources](docs/validation/evidence/look500-sources-20261024-r1/compilation.json); initial package-marker failure corrected; full historical suite not rerun |
 | R23 | Installed 500-look real execution | **1,000 installed in-process CLI calls; 500 PNGs + 500 native filter videos; 25 selected project renders** | [Exact scope](docs/validation/evidence/look500-20261024-r1/installed/verification.json) · [GIF](docs/assets/look500-20261024-r1/motion-comparison.gif); each native video decodes 12 frames; 500 upstream comparisons; synthetic input, no natural-footage/listening acceptance |
 | R24 | New package, Skills and three-language manual | **17 Skill formats; 24 launcher calls; 500 detailed profiles per language** | [Installation](docs/validation/evidence/look500-20261024-r1/install/installation.json) · [Skills](docs/validation/evidence/look500-20261024-r1/skills/verification.json) · [Docs](docs/validation/evidence/look500-20261024-r1/docs-verification.json); native E: install, real new-license previews/renders, one expected refusal; old packages retained |
+| R25 | Actual N002 outputs for every look | 500 installed CLI executions; 500 full-size lossless images + 500 thumbnails, with 500 unique pixel hashes. | [Render receipt](docs/validation/evidence/looks-n002-20261024-r1/render-verification.json) · Source hash unchanged; no new video/inference or general natural-video quality acceptance. |
+| R26 | Gallery, screenshots and actual recording | Native-browser interaction, three languages, search/filter/export/mobile checks pass. | [Browser receipt](docs/validation/evidence/looks-n002-20261024-r1/browser-verification.json) · Zero remote requests; all owned test tabs closed. |
+| R27 | Skill client selection and local registration | 17 Skill format/junction checks; actual shortlist board, search and refusal protection. | [Skill workflow receipt](docs/validation/evidence/looks-n002-20261024-r1/skill-verification.json) · No timeline edits; sample strength 1.0. |
+| R28 | Complete three-language docs and sample links | Modules/services/Skills/cases/500 samples, capability fields and local-link checks. | [Documentation receipt](docs/validation/evidence/looks-n002-20261024-r1/docs-verification.json) · Historical 2,930-test full kernel suite not rerun. |
 
-## Limitations and next milestones
+## Current limits and development direction
 
-This alpha supports reproducible local workflows in the stated environment. Full CapCut effect/transition/library coverage, broad natural-media picture and audio quality, HDR/ICC, long-form peak memory and interactive performance, other platforms/ABIs and universal lossless draft compatibility remain unaccepted.
+The deliverable is an offline, editable and auditable Agent CLI workflow with explicit contracts. Complete commercial stock/template ecosystems, all CapCut AI/beauty/layout features, cross-machine jobs, complete HDR/ICC, arbitrary lossless draft interchange, broad natural-footage quality and real-time performance need further development/acceptance. Later R113/R114 Float32 transition/runtime-closure candidates are not part of this release merely because research documents exist.
 
-Next priorities are renderer capability consistency, natural-media playback and perceptual review, performance/cancellation/recovery, then broader templates and model coverage. R113/R114 Float32 transition/runtime-closure candidates and later adjustment experiments are excluded. [Release scope, gates, risks and roadmap](docs/releases/v0.1.0-alpha.1/RELEASE.md).
+Use real client media and minimal reproducible projects to identify gaps, implement/check them individually and publish new versions without replacing prior bundles/digests/tags. Record actual successful artifacts rather than inferred completion.
 
-## Documentation, contributions and licensing
+## Documentation, provenance and maintenance
 
-- [Manual](docs/releases/v0.1.0-alpha.1/USAGE.md), [Skills](docs/local/INSTALLATION.md), [cases](docs/releases/v0.1.0-alpha.1/CASES.md), [release notes](docs/releases/v0.1.0-alpha.1/RELEASE.md), and [all documentation](docs/README.md). Release-specific guides are bilingual; older research/specifications are primarily Chinese.
-- [Product baseline](docs/产品需求与开发路线基线_2026-10-12.md), [system architecture](docs/architecture/系统边界与模块契约_v0.1_2026-10-13.md), and [machine-readable schema](docs/specs/agent-project.schema.json).
-- [Complete historical numbered verification log](docs/releases/v0.1.0-alpha.1/history/README.zh.pre-release.md) and [historical index](docs/releases/v0.1.0-alpha.1/history/docs-index.pre-release.md). Dated counts are retained rather than added together.
-- Original code/documentation is [MIT licensed](LICENSE). Vendored projects, Skills, models, fonts and media retain their separate terms. [Third-party notices](docs/releases/v0.1.0-alpha.1/THIRD_PARTY.md). The Rights Ledger records evidence and gates work; it does not automatically establish legal clearance.
-- Issues should include version, a minimal shareable project, actual command/error, manifests and tool versions. Changes maintain `main`, all three READMEs and evidence. See the manual for the native frozen-regression entrypoint.
+- [Current capability manual](docs/product/CAPABILITIES.en.md) · [Effect parameters](docs/product/EFFECTS.en.md) · [Skills](docs/product/SKILLS.en.md) · [Complete demonstrations](docs/product/CASES.md).
+- [Filter workflow](docs/local/FILTERS.en.md) · [500 profiles](docs/local/LOOK_PRESETS.en.md) · [N002 gallery guide](docs/local/FILTER_GALLERY.en.md) · [Installed setup](docs/local/INSTALLATION.md).
+- [Alpha.3 usage](docs/releases/v0.1.0-alpha.3/USAGE.md) · [Base workflow](docs/releases/v0.1.0-alpha.1/USAGE.md) · [Release scope](docs/releases/v0.1.0-alpha.1/RELEASE.md).
+- [Requirements/roadmap](docs/产品需求与开发路线基线_2026-10-12.md) · [Architecture](docs/architecture/系统边界与模块契约_v0.1_2026-10-13.md) · [JSON schema](docs/specs/agent-project.schema.json).
+- [Historical numbered acceptance](docs/releases/v0.1.0-alpha.1/history/README.zh.pre-release.md) · [Historical document catalog](docs/releases/v0.1.0-alpha.1/history/docs-index.pre-release.md) · [README restoration record](docs/maintenance/README_RESTORATION_20261024.md).
+- [Software MIT](LICENSE) · [Base third-party notices](docs/releases/v0.1.0-alpha.1/THIRD_PARTY.md) · [500 LUT notices](docs/releases/v0.1.0-alpha.3/THIRD_PARTY.md) · [Supplied-image rights](docs/assets/looks-n002-20261024-r1/SOURCE_AND_LICENSES.md).
+
+Own code is MIT; third-party Skills, models, fonts, LUTs and media retain their own terms. Inclusion does not make the supplied image MIT/CC0. Report issues with version, minimal project, actual commands/errors and manifest. Functional updates maintain all three READMEs on main and use normal pushes after verification.

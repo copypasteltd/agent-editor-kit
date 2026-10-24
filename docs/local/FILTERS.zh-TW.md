@@ -4,6 +4,19 @@
 
 當前安裝版為 **v0.1.0-alpha.3 / CLI 0.1.2 / 目錄 2.0.0**。500 套均隨包離線安裝，Agent 可以檢索、讀取實際效果、預覽並應用到片段或全局。原 100 套的 ID 和 LUT 位元組保持兼容。
 
+
+<!-- N002-GALLERY-START -->
+
+## N002 母圖：全部 500 套實際樣例與客戶選型
+
+![Original and actual styles](../assets/looks-n002-20261024-r1/selection-board.jpg)
+
+[All 500 supplied-image samples](FILTER_GALLERY.zh-TW.md) · [Interactive gallery](../assets/looks-n002-20261024-r1/index.html) · [Client Skill workflow](../../skills/agent-ffmpeg-local-editor/references/client-look-selection.md)
+
+每套統一以用戶提供的 1672×940 母圖、強度 1.0 實際運行，提供原圖、全尺寸無損圖、小圖與穩定 ID。Agent 可導出客戶候選板和 JSON，再對目標素材重新預覽選定強度，最後應用到明確片段或全局。原圖與 LUT 各自權利分開記錄。
+
+<!-- N002-GALLERY-END -->
+
 ## 功能與使用邏輯
 
 | # | 功能 | 實際行為 |

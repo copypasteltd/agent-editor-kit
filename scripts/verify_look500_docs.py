@@ -10,7 +10,8 @@ from urllib.parse import unquote
 import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
-EVIDENCE=ROOT/'docs/validation/evidence/look500-20261024-r1'
+# Keep the original 500-look receipt immutable; compatibility checks now target the expanded manuals.
+EVIDENCE=ROOT/'docs/validation/evidence/looks-n002-20261024-r1'
 
 
 def sha(path):
@@ -34,7 +35,7 @@ def main():
     other=[*(ROOT/'docs/releases/v0.1.0-alpha.3').glob('*.md'),ROOT/'docs/README.md',ROOT/'docs/validation/LOOK500_20261024.md']
     paths=root_docs+local_docs+other
     link_count=0
-    report_path=EVIDENCE/'docs-verification.json'
+    report_path=EVIDENCE/'look500-compatibility.json'
     self_report_links=0
     for path in paths:
         text=path.read_text('utf-8')
@@ -62,10 +63,10 @@ def main():
     fences=[]
     for path in root_docs:
         text=path.read_text('utf-8')
-        assert re.findall(r'^\| (R\d+) \|',text,re.M)==[f'R{i:02}' for i in range(1,25)],path
+        assert re.findall(r'^\| (R\d+) \|',text,re.M)==[f'R{i:02}' for i in range(1,29)],path
         verification_table=re.search(r'^\| R01 \|[^\n]*(?:\n\| R\d+ \|[^\n]*)*',text,re.M)
-        assert verification_table and len(verification_table.group().splitlines())==24,('Verification rows must form one table',path)
-        assert re.findall(r'^\| (F\d+) \|',text,re.M)==[f'F{i:02}' for i in range(1,14)],path
+        assert verification_table and len(verification_table.group().splitlines())==28,('Verification rows must form one table',path)
+        assert re.findall(r'^\| (F\d+) \|',text,re.M)==[f'F{i:02}' for i in range(1,44)],path
         fences.append(re.findall(r'```[^\n]*\n([\s\S]*?)```',text))
     assert fences[0]==fences[1]==fences[2],'README commands changed during translation'
     data=catalog_path.parent
@@ -88,7 +89,7 @@ def main():
         'license_counts':dict(Counter(r['license']['spdx'] for r in rows)),
         'existing_100_ids_lut_preview_hashes_preserved':True,'alpha2_zip_unchanged':True,
         'installed_luts':len(installed_luts),'binary_parts':len(pieces['parts']),
-        'readme_function_rows':13,'readme_verification_rows':24,'readme_code_blocks_identical':True,
+        'readme_function_rows':43,'readme_verification_rows':28,'readme_code_blocks_identical':True,
         'self_report_links_published_after_checks':self_report_links,
         'files':{p.relative_to(ROOT).as_posix():sha(p) for p in paths}}
     report_path.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')

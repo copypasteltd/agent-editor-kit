@@ -1,0 +1,28 @@
+{
+  "schema": "aek-look-shortlist-v1",
+  "release": "v0.1.0-alpha.3",
+  "catalog_version": "2.0.0",
+  "source_sha256": "babaa64ce3434a23133c41a1d2b4fad384a5e6707546b527508d4731ba83ab4b",
+  "source": "N002.png",
+  "preview_strength": 1,
+  "selection_state": "candidates; not project application",
+  "looks": [
+    {
+      "number": 1,
+      "id": "sp-1910s",
+      "name": "电影 · 1910s",
+      "license": "MIT",
+      "preview": "full/001-sp-1910s.webp",
+      "preview_strength": 1
+    },
+    {
+      "number": 500,
+      "id": "fl-0000634-darkblue",
+      "name": "创意色彩 · DARK.BLUE｜冷色 · 中灰近原值 · 中段跨度接近原值",
+      "license": "CC0-1.0",
+      "preview": "full/500-fl-0000634-darkblue.webp",
+      "preview_strength": 1
+    }
+  ],
+  "next_step": "Render reviewed candidates and strengths on the actual target media before applying to an explicit clip or global scope."
+}

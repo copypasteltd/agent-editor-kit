@@ -1,0 +1,9 @@
+{
+  "status": "failed",
+  "stage": "documentation link extraction",
+  "file": "skills/agent-ffmpeg-local-editor/references/client-look-selection.md",
+  "target": "/absolute/path/to/board.jpg",
+  "cause": "The first link checker treated Markdown image syntax inside an inline code example as a real link.",
+  "correction": "Use the existing Markdown parser's actual link/image tokens, excluding inline code and code fences. Preserve real file and anchor checks.",
+  "product_render_failure": false
+}

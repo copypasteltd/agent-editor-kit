@@ -1,0 +1,75 @@
+{
+  "schema": "aek-look-shortlist-v1",
+  "release": "v0.1.0-alpha.3",
+  "catalog_version": "2.0.0",
+  "source_sha256": "babaa64ce3434a23133c41a1d2b4fad384a5e6707546b527508d4731ba83ab4b",
+  "preview_strength": 1.0,
+  "selection_state": "candidates; not project application",
+  "board": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\looks-n002-20261024-r1\\client-shortlist-example\\board.jpg",
+  "looks": [
+    {
+      "number": 70,
+      "id": "t3-fuji-superia-800",
+      "name": "Fuji Superia 800",
+      "name_zh": "彩色负片 · Fuji Superia 800",
+      "category": "film-negative",
+      "summary_zh": "冷色 · 提亮中灰 · 中段拉开",
+      "license": {
+        "spdx": "MIT",
+        "file": "licenses/t3-MIT.txt",
+        "sha256": "b1a3f6e97b17b4532ff92c34d6db4b1ad8edd3317096389e7617234d8221a576",
+        "creator": "João Almeida",
+        "obligations": [
+          "Retain MIT copyright and license notice."
+        ]
+      },
+      "strength": 1.0,
+      "full_sha256": "47fd89a87fb29c5c0c4dbae188585575dec6fb6541ca9b8189c3338cad9f445d",
+      "preview": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\looks-n002-20261024-r1\\full\\070-t3-fuji-superia-800.webp"
+    },
+    {
+      "number": 101,
+      "id": "nt-bw-agfa-apx-100",
+      "name": "Agfa Apx 100",
+      "name_zh": "黑白胶片 · Agfa Apx 100｜黑白 · 提亮中灰 · 中段拉开",
+      "category": "film-bw",
+      "summary_zh": "黑白 · 提亮中灰 · 中段拉开",
+      "license": {
+        "spdx": "CC-BY-SA-4.0",
+        "file": "licenses/CC-BY-SA-4.0.txt",
+        "sha256": "ad0d10edfb1933c2c17f3296570189afcacf2b2e86ac4ec8078a4ba52e232195",
+        "creator": "Pat David",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "obligations": [
+          "Credit the named creator and source; retain the CC-BY-SA-4.0 notice and indicate changes.",
+          "Redistributed adapted LUT data and thumbnails must use CC-BY-SA-4.0 or a compatible license; no additional restrictions."
+        ]
+      },
+      "strength": 1.0,
+      "full_sha256": "cb5e0defda2f76638731f421598dae78512e1f4f6ca1c4ebee8e1cc7377430ee",
+      "preview": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\looks-n002-20261024-r1\\full\\101-nt-bw-agfa-apx-100.webp"
+    },
+    {
+      "number": 500,
+      "id": "fl-0000634-darkblue",
+      "name": "DARK.BLUE",
+      "name_zh": "创意色彩 · DARK.BLUE｜冷色 · 中灰近原值 · 中段跨度接近原值",
+      "category": "creative",
+      "summary_zh": "冷色 · 中灰近原值 · 中段跨度接近原值",
+      "license": {
+        "spdx": "CC0-1.0",
+        "file": "licenses/CC0-1.0.txt",
+        "sha256": "637a68eb0b6c80a5772bc52394ef1564b7903f37f977c097cf8be1e9f87c3283",
+        "creator": "lvannoeun@gmail.com",
+        "url": "https://freshluts.com/termsandconditions",
+        "obligations": [
+          "CC0: no attribution condition; source and creator retained for provenance."
+        ]
+      },
+      "strength": 1.0,
+      "full_sha256": "7b15cf5659fffed02636fb4cd3bf2261695b077de924631ef4f85f0545cf5d84",
+      "preview": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\looks-n002-20261024-r1\\full\\500-fl-0000634-darkblue.webp"
+    }
+  ],
+  "next_step": "Choose the final ID and render reviewed strengths on the target media before applying to an explicit clip or global scope."
+}

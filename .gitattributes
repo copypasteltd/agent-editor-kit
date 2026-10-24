@@ -1374,3 +1374,16 @@ docs/local/look-profiles/*.md text eol=lf
 docs/validation/LOOK500_20261024.md text eol=lf
 scripts/*look500*.py text eol=lf
 product/tests/fixtures/look-alpha2-gold-provenance.json -text -whitespace
+
+# Keep the complete product manuals and supplied-image verification portable.
+docs/product/*.md text eol=lf
+docs/product/*.json text eol=lf
+docs/local/FILTER_GALLERY*.md text eol=lf
+docs/local/filter-gallery/*.md text eol=lf
+docs/maintenance/README_RESTORATION_20261024.md text eol=lf
+docs/validation/README_AND_FILTER_GALLERY_20261024.md text eol=lf
+docs/validation/evidence/looks-n002-20261024-r1/** -text -whitespace
+scripts/*n002*.py text eol=lf
+scripts/verify_n002_gallery.cjs text eol=lf
+scripts/build_product_readmes.py text eol=lf
+scripts/readme_product_content.py text eol=lf

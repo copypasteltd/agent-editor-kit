@@ -1,0 +1,98 @@
+/* Exercise the real offline gallery in an existing native Edge runtime; close every owned tab. */
+'use strict';
+const fs = require('fs');
+const path = require('path');
+const {pathToFileURL} = require('url');
+const {chromium} = require('C:/Users/carzy/.codex/skills/binance-square/node_modules/playwright-core');
+const ROOT = path.resolve(__dirname, '..');
+const assets = path.join(ROOT, 'docs/assets/looks-n002-20261024-r1');
+const evidence = path.join(ROOT, 'docs/validation/evidence/looks-n002-20261024-r1');
+const work = path.join(ROOT, 'product/.runtime/looks-n002-20261024-r1');
+const assert = (condition, message) => {if (!condition) throw Error(message);};
+
+async function main() {
+  let browser, context;
+  const report = {status:'running',checks:[],browser:'existing native Microsoft Edge via existing Playwright',network_requests:[],errors:[],owned_tabs_closed:false};
+  const check = (name, value=true) => {assert(value,name);report.checks.push(name);};
+  try {
+    browser = await chromium.launch({channel:'msedge',headless:true,args:['--disable-background-networking','--disable-component-update','--disable-gpu']});
+    context = await browser.newContext({viewport:{width:1440,height:1080},recordVideo:{dir:path.join(work,'browser-recording'),size:{width:1440,height:1080}},acceptDownloads:true});
+    await context.route('**/*',route => {const url=route.request().url();if(/^https?:/.test(url)){report.network_requests.push(url);return route.abort();}return route.continue();});
+    const page = await context.newPage();
+    page.on('pageerror', error => report.errors.push(String(error)));
+    const url=pathToFileURL(path.join(assets,'index.html')).href;
+    await page.goto(url,{waitUntil:'load'});
+    await page.locator('.card').first().waitFor();
+    check('initial page has 40 cards',await page.locator('.card').count()===40);
+    check('full catalog has 500 records',await page.evaluate(()=>DATA.length)===500);
+    await page.locator('#filtered').evaluate(async img=>{await img.decode();});
+    check('original dimensions preserved',await page.locator('#filtered').evaluate(img=>img.naturalWidth===1672&&img.naturalHeight===940));
+    await page.screenshot({path:path.join(assets,'gallery-desktop.png')});
+    await page.locator('#next').click();
+    check('pagination reaches number 041',(await page.locator('.card .meta').first().innerText()).startsWith('041'));
+    const last='fl-0000634-darkblue';
+    await page.locator('#search').fill(last);
+    check('stable ID search selects one look',await page.locator('.card').count()===1);
+    await page.locator('.card .buttons button').first().click();
+    check('compare uses selected actual image',(await page.locator('#active-id').innerText())===last);
+    await page.locator('#filtered').evaluate(async img=>{await img.decode();});
+    await page.locator('#wipe').fill('27');
+    await page.locator('#wipe').dispatchEvent('input');
+    check('comparison split moves',await page.locator('#divider').evaluate(x=>x.style.left==='27%'));
+    await page.locator('#pick-active').click();
+    await page.locator('#search').fill('sp-1910s');
+    await page.locator('.card .buttons button').nth(1).click();
+    await page.locator('#search').fill('');
+    await page.locator('#only-selected').check();
+    check('shortlist retains two stable IDs',await page.locator('.card').count()===2);
+    const [download]=await Promise.all([page.waitForEvent('download'),page.locator('#download').click()]);
+    const target=path.join(evidence,'downloaded-shortlist.json');
+    await download.saveAs(target);
+    const shortlist=JSON.parse(fs.readFileSync(target,'utf8'));
+    check('downloaded shortlist has expected schema/source/IDs',shortlist.schema==='aek-look-shortlist-v1'&&shortlist.looks.length===2&&shortlist.source_sha256==='babaa64ce3434a23133c41a1d2b4fad384a5e6707546b527508d4731ba83ab4b'&&shortlist.looks.some(r=>r.id===last));
+    await page.locator('#only-selected').uncheck();
+    await page.locator('#category').selectOption('film-bw');
+    check('category filter finds 37',await page.evaluate(()=>filtered().length)===37);
+    await page.locator('#category').selectOption('');
+    await page.locator('#license').selectOption('CC0-1.0');
+    check('license filter finds 133',await page.evaluate(()=>filtered().length)===133);
+    await page.locator('#language').selectOption('en');
+    check('English controls',(await page.locator('#download').innerText())==='Download shortlist JSON');
+    await page.locator('#language').selectOption('tw');
+    check('Traditional Chinese controls',(await page.locator('#download').innerText())==='下載候選 JSON');
+    await page.locator('#language').selectOption('zh');
+    await page.locator('#license').selectOption('');
+    await page.locator('#search').fill('nothing-matches-this-id');
+    check('empty results explain recovery',await page.locator('.empty').count()===1);
+    await page.locator('#search').fill('');
+    await page.locator('#clear').click();
+    check('clear removes only selection',await page.evaluate(()=>selected.size===0&&DATA.length===500));
+    await page.locator('#search').fill('sp-1910s');
+    await page.locator('.card .buttons button').first().click();
+    await page.locator('#search').fill('');
+    await page.locator('#filtered').evaluate(async img=>{await img.decode();});
+    await page.locator('#wipe').fill('50');await page.locator('#wipe').dispatchEvent('input');
+    await page.evaluate(()=>window.scrollTo(0,0));
+    await page.screenshot({path:path.join(assets,'gallery-desktop.png')});
+    await page.setViewportSize({width:390,height:844});
+    await page.screenshot({path:path.join(assets,'gallery-mobile.png'),fullPage:true});
+    check('mobile has no horizontal overflow',await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+    await page.keyboard.press('Tab');
+    check('keyboard focus available',await page.evaluate(()=>document.activeElement.tagName!=='BODY'));
+    check('no page script errors',report.errors.length===0);
+    check('no remote requests',report.network_requests.length===0);
+    const video=page.video();
+    await page.close();
+    await context.close();context=null;
+    await video.saveAs(path.join(assets,'gallery-walkthrough.webm'));
+    await browser.close();browser=null;
+    report.owned_tabs_closed=true;report.status='passed';
+  } catch(error) {report.status='failed';report.failure=String(error);throw error;}
+  finally {
+    if(context) await context.close();if(browser) await browser.close();
+    report.owned_tabs_closed=true;
+    fs.writeFileSync(path.join(evidence,'browser-verification.json'),JSON.stringify(report,null,2)+'\n');
+    console.log(JSON.stringify(report));
+  }
+}
+main().catch(error=>{console.error(error);process.exitCode=1;});

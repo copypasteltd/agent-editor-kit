@@ -1,5 +1,10 @@
 # 500 named offline style presets
 
+For customer-facing visual selection, read [client-look-selection.md](client-look-selection.md).
+All 500 actual N002 examples, full-size lossless previews and the searchable offline gallery are mapped by
+stable ID. Use the helper to export a small original/candidate board and selection JSON. These are actual
+strength-1.0 still outputs; generate new previews for other strengths or the customer's target footage.
+
 Use the pinned installed `$avk` launcher from SKILL.md. First read `capabilities`, `look list` and
 `look inspect --id ID`. Search supports Simplified/Traditional Chinese, English, IDs, measured descriptions,
 license names and `--category`. Read `name_zh`, `description_zh` / `description_en`, `metrics`, suggested use,

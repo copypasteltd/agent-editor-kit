@@ -4,6 +4,19 @@
 
 当前安装版为 **v0.1.0-alpha.3 / CLI 0.1.2 / 目录 2.0.0**。500 套均随包离线安装，Agent 可以检索、读取实际效果、预览并应用到片段或全局。原 100 套的 ID 和 LUT 字节保持兼容。
 
+
+<!-- N002-GALLERY-START -->
+
+## N002 母图：全部 500 套实际样例与客户选型
+
+![Original and actual styles](../assets/looks-n002-20261024-r1/selection-board.jpg)
+
+[All 500 supplied-image samples](FILTER_GALLERY.md) · [Interactive gallery](../assets/looks-n002-20261024-r1/index.html) · [Client Skill workflow](../../skills/agent-ffmpeg-local-editor/references/client-look-selection.md)
+
+每套统一以用户提供的 1672×940 母图、强度 1.0 实际运行，提供原图、全尺寸无损图、小图与稳定 ID。Agent 可导出客户候选板和 JSON，再对目标素材重新预览选定强度，最后应用到明确片段或全局。原图与 LUT 各自权利分开记录。
+
+<!-- N002-GALLERY-END -->
+
 ## 功能与使用逻辑
 
 | # | 功能 | 实际行为 |

@@ -1,0 +1,364 @@
+# 完整演示案例与原始证据 / Complete demonstrations and source evidence
+
+[简体中文](../../README.md) · [繁體中文](../../README.zh-TW.md) · [English](../../README.en.md)
+
+## C01–C04：广告、模板、浮点色彩与可恢复交付 / Ads, templates, float color and delivery
+
+[完整步骤、输入、编辑 JSON、实际响应、输出、GIF、音频和复现脚本](../releases/v0.1.0-alpha.1/CASES.md)。这些为已保留的发行案例，不计作本轮新执行。
+The release casebook retains inputs, edit JSON, actual responses, output, GIF/audio and reproduction scripts. These are dated executions, not new runs in this documentation update.
+
+## C05：N002 母图 × 500 套滤镜 / Supplied still × all 500 looks
+
+本轮使用正式安装版 CLI 逐项执行 500 次预览。母图为用户提供的 1672×940 RGB PNG，原始字节不变；每套均使用四面体插值、强度 1.0。500 张无损 WebP 与 CLI PNG 解码 RGB 逐像素相同。小图和对照板仅用于浏览。
+This update actually executes all 500 previews on the supplied still in the installed CLI, with tetrahedral interpolation and strength 1.0. Every full-size lossless WebP matches the decoded CLI PNG exactly. Thumbnails and boards are browsing aids.
+
+[原始 PNG](../assets/looks-n002-20261024-r1/source.png) · [交互选型页](../assets/looks-n002-20261024-r1/index.html) · [全部编号图册](../local/FILTER_GALLERY.md) · [500 次 CLI 记录](../validation/evidence/looks-n002-20261024-r1/render-verification.json) · [样例/许可清单](../assets/looks-n002-20261024-r1/manifest.json)
+
+![Original and eleven actual looks](../assets/looks-n002-20261024-r1/selection-board.jpg)
+
+下面 GIF 是实际静态滤镜样例的切换，不是新视频渲染或模型推理。Below is an animation of actual still previews, not a new video render or model inference.
+
+![Actual still-preview sequence](../assets/looks-n002-20261024-r1/look-selection.gif)
+
+## C06：客户候选对照板 / Client shortlist board
+
+Skill 的 `look_gallery.py` 可按稳定 ID 导出原图 + 1–12 套样例、完整 ID、许可和 `selection.json`；不修改时间线。客户选型后再按目标素材重新试片和应用。
+The Skill helper exports the original plus 1–12 selected looks with stable IDs, licenses and selection.json, without editing a project. Render reviewed candidates on the target media before application.
+
+[实际对照板](../assets/looks-n002-20261024-r1/client-shortlist-example/board.jpg) · [实际候选 JSON](../assets/looks-n002-20261024-r1/client-shortlist-example/selection.json) · [Skill](../../skills/agent-ffmpeg-local-editor/SKILL.md)
+
+## C07：真实选型页、截图与操作录像 / Real selection page, screenshots and recording
+
+原生 Microsoft Edge 实际打开本地 HTML，检查分页、搜索、分类/许可、原图滑杆、勾选、JSON 下载、中英繁切换、空结果和手机布局；全部测试页面已关闭，无外部请求。
+Native Edge opens the actual offline HTML to check pagination, search, category/license filters, comparison split, selection, JSON download, three languages, empty results and mobile layout. All owned test pages are closed; no remote requests.
+
+[桌面截图](../assets/looks-n002-20261024-r1/gallery-desktop.png) · [手机截图](../assets/looks-n002-20261024-r1/gallery-mobile.png) · [实际操作录屏 WebM](../assets/looks-n002-20261024-r1/gallery-walkthrough.webm) · [浏览器检查](../validation/evidence/looks-n002-20261024-r1/browser-verification.json)
+
+这是选型文档页，不是视频剪辑 GUI。This is a documentation/selection page, not an editing GUI.
+
+## H 系列：全部既有功能演示 / Complete dated functional demonstrations
+
+以下恢复原演示说明及输入/输出链接，保留原日期、V 编号、指标和失败边界。它们不是本轮重跑结果。研究段落仍明确标注未集成或未达到质量门槛。GIF 不包含声音；听审与自动采样是不同记录。
+The following restored demonstrations retain their original dates, V IDs, metrics, input/output links and failure limits. They were not rerun in this update. Research remains labeled as unintegrated or below quality gates; GIFs are silent and listening differs from automatic sample checks.
+
+## 实测演示素材
+
+V53 实际主轨重排：左为 A/B/C/D，右为 CLI 输出 C/A/B/D，帧号和关联配音逐项核对。五组独立纯切 RGB、独立 Alpha 差 0；115.2 万原 PCM 采样帧差 0。复杂作者/转场使用重排前完整块参考，分别计数。9 时刻静帧，未连续播放/听审。 [原视频](../assets/magnetic-reorder-v53-r5-20261018/source-frames.mkv)、[原输入 MP4](../assets/magnetic-reorder-v53-r5-20261018/source-preview.mp4)、[原 WAV](../assets/magnetic-reorder-v53-r5-20261018/source-audio.wav)、[实际 MP4](../assets/magnetic-reorder-v53-r5-20261018/MR01.mp4)、[无损成片](../assets/magnetic-reorder-v53-r5-20261018/MR01.mkv)、[全部数据与失败](../validation/主轨磁吸重排与关联附着实测_2026-10-18.md)。
+
+![V53 实际主轨重排前后](../assets/magnetic-reorder-v53-r5-20261018/reorder-before-after.gif)
+
+V52 实际交付对照：原覆盖率、固定 V51 成片与当前无损 VP9。Alpha 一个灰阶差由全像素测量确定；GIF 是实际解码结果的棋盘投影。只做 8 时刻静帧检查，未连续播放或听审。 [原透明源](../assets/delivery-precision-20261018/source-ramp.mkv)、[原源预览](../assets/delivery-precision-20261018/source-checkerboard.mp4)、[原 WAV](../assets/delivery-precision-20261018/source-audio.wav)、[当前 WebM](../assets/delivery-precision-20261018/DP01-vp9-freeze.webm)、[全部数据/失败](../validation/透明视频交付与音画端点实测_2026-10-18.md)。
+
+![V52 透明交付实际对照](../assets/delivery-precision-20261018/alpha-before-after.gif)
+
+4.01 秒作者区间的实际 MP4：10 fps 下 41 帧显示到 4.1 秒，音轨元数据 4.01 秒；AAC 解码多出 32 采样帧的填充另行报告。结尾留黑和计数/字幕叠置为诊断布局，未作为自然广告排版验收。 [实际 MP4](../assets/delivery-precision-20261018/DP09-fractional-mp4.mp4)。
+
+![V52 非整帧时长实际 MP4](../assets/delivery-precision-20261018/fractional-mp4.gif)
+
+V51 实际 CLI 输出：子运镜和字幕随复合片段暂停，父透明度继续。诊断文字与原片计数叠置，自然广告排版未验；仅四时刻静态目检，未连续播放/听审。 [原 A](../assets/nested-freeze-v51-final-20261018/source-a.mp4)、[原 B](../assets/nested-freeze-v51-final-20261018/source-b.mp4)、[实际 MP4](../assets/nested-freeze-v51-final-20261018/NF06.mp4)、[全部样例/透明编码失败](../validation/复合片段定格与完整音画时钟实测_2026-10-18.md)。
+
+![V51 复合定格实际成片](../assets/nested-freeze-v51-final-20261018/NF06.gif)
+
+**V49 本地 CTC 对齐（精度未达标）**：左为原创波形输入，右为真实模型时间驱动的字幕；1280×720、30 fps、236 帧。GIF 79 帧/7,900 ms，无音频。逐帧高亮与模型时码一致，但词块边界偏差达 258.1875 ms，未通过 66.6667 ms 门槛。
+
+![离线 CTC 实际对齐前后](../assets/ctc-alignment-20261018/comparison.gif)
+
+[原视频](../assets/ctc-alignment-20261018/input.mp4) · [原声音](../assets/ctc-alignment-20261018/input.wav) · [原文](../assets/ctc-alignment-20261018/transcript.txt) · [真实成片](../assets/ctc-alignment-20261018/result.mp4) · [原始词块/来源](../assets/ctc-alignment-20261018/input-provenance.json) · [实际安装包](../assets/ctc-alignment-20261018/agent-video-kit-cp313-win_amd64.zip) · [实测/全部失败](../validation/离线CTC字词强制对齐实测_2026-10-18.md)
+
+**V48 OpenFilm 描线复用**：左为原创背景，右为实际 CLI 编码的逐笔 A/I；384×216、12 fps、36 帧/3 秒。GIF 实际 16 帧/2,970 ms，无声，停留帧已合并；原输入为显式笔画和时间，无自动字体或语音对齐。
+
+![实际逐笔描线](../assets/stroke-motion-verified-20261018/comparison.gif)
+
+[原视频](../assets/stroke-motion-verified-20261018/source.mp4) · [原笔画](../assets/stroke-motion-verified-20261018/authored-plan.json) · [实际成片](../assets/stroke-motion-verified-20261018/result.mp4) · [可编辑源码](../assets/stroke-motion-verified-20261018/editable-source.zip) · [更新安装包](../assets/stroke-motion-verified-20261018/agent-video-kit-cp313-win_amd64.zip) · [实测/失败](../validation/离线逐笔描线动效实测_2026-10-18.md)
+
+**V47 安装版实际剪辑**：左为源 1–4 秒，右为关联音画滑移后的 2–5 秒；各 30 帧/10 fps/3 秒，非周期立体声逐采样验证；GIF 无音频。原视频、原音频、编码结果和实测发行 ZIP均可复查。
+
+![V47 安装版剪辑前后](../assets/offline-release-final-20261018/comparison.gif)
+
+[原视频](../assets/offline-release-final-20261018/source-a.mp4) · [原音频探针](../assets/offline-release-final-20261018/sound-a.wav) · [实际结果](../assets/offline-release-final-20261018/after.mp4) · [已测试离线发行包](../assets/offline-release-final-20261018/agent-video-kit-cp313-win_amd64.zip) · [安装/边界/证据](../validation/离线发行与随包Schema实测_2026-10-18.md)
+
+**V46 布局诊断与修复**：左为后段标题完全出框，中为 CTA 容器裁切，右为修复。实际三列输出使用新原创完整字体；旧字体的系统 fallback 仅发布诊断元数据。每列 384×216、12 帧/6 fps/2 秒；GIF 768×144、12 帧/2 秒，无音频。
+
+![V46 完全出框、容器裁切与修复](../assets/html-quality-20261018/comparison.gif)
+
+[出框视频](../assets/html-quality-20261018/outside.mp4) · [裁切视频](../assets/html-quality-20261018/clip.mp4) · [修复视频](../assets/html-quality-20261018/fixed.mp4) · [联系表](../assets/html-quality-20261018/contact.png) · [诊断/失败/来源](../validation/HTML文字布局与字体覆盖实测_2026-10-18.md)
+
+**V45 离线模板控件**：左为原模板，中为换品牌色/图片/文案，右为 null 撤销后重建。三列为实际同帧输出；原片 384×216、12 帧/6 fps/2 秒；GIF 768×144、12 帧/2 秒，无音频。
+
+![V45 原模板、覆盖与恢复](../assets/html-template-20261018/comparison.gif)
+
+[原模板视频](../assets/html-template-20261018/original.mp4) · [修改后视频](../assets/html-template-20261018/changed.mp4) · [恢复视频](../assets/html-template-20261018/restored.mp4) · [实际联系表](../assets/html-template-20261018/contact.png) · [来源/逐帧证据](../validation/离线HTML模板控件与覆盖恢复实测_2026-10-18.md)
+
+### V44 研究：真正多帧修复与独立背景真值
+
+一个原创双表面受控样本的门槛通过，**自然镜头仍未验收、未接入产品**。图中依次为原输入、实际 LaMa、实际 FGT、独立背景真值；GIF 为半尺寸/64 色展示，评分来自实际解码 RGBA。
+
+![FGT 研究对照，受控通过但自然质量未验收](../assets/fgt-temporal-20261018/comparison.gif)
+
+[完整 MP4](../assets/fgt-temporal-20261018/comparison.mp4)、[原输入无损视频](../assets/fgt-temporal-20261018/source-lossless.mp4)、[实际 FGT 无损视频](../assets/fgt-temporal-20261018/final-lossless.mp4)、[真值无损视频](../assets/fgt-temporal-20261018/truth-lossless.mp4)、[失败/许可/实测](../validation/开源FGT时序修复候选实测_2026-10-18.md)。私有自然像素留本地，只公开标量与摘要。
+
+
+### V43 产品：可编辑蒙版修正与真实修复输入
+
+16 帧原创样例的缺臂、部分帧缺腿、圆点/角落误选由正式 CLI 修正，含第 8 帧切镜；输出与独立像素真值一致。GIF 为 2 秒、无音频。自然样例 5/5 旧点通过，但真实 LaMa 背景仍涂抹，私有自然视频不公开。
+
+![蒙版修正实际对照](../assets/mask-edits-20261018/comparison.gif)
+
+[原片](../assets/mask-edits-20261018/source.mp4) · [原蒙版](../assets/mask-edits-20261018/mask-input.mov) · [实际蒙版](../assets/mask-edits-20261018/mask-edited.mov) · [对照 MP4](../assets/mask-edits-20261018/comparison.mp4) · [可编辑工程包](../assets/mask-edits-20261018/editable-project.zip) · [复现/全部结果/失败](../validation/本地蒙版笔刷与关键帧修正实测_2026-10-18.md)。
+
+### V42 研究：质量未通过，未进入正式修复内核
+
+三组原创输入公开，保留参考、失败 v1、v3 和遮挡前真值。旧双表面的 v3 与参考相等；新增运动场景仍退步，不能以 GIF 或检查通过数宣称画质提升。每组 12 帧、12 fps、1 秒，无音频；无损 NUT 回读/PTS 与独立指标复核通过，未连续播放或听审。
+
+![V42 未集成研究：输入、参考、失败 v1、v3、真值](../assets/coherent-reference-20261018/two_surfaces-comparison.gif)
+
+[双表面原输入](../assets/coherent-reference-20261018/two_surfaces-input.mp4) · [双运动/切镜原输入](../assets/coherent-reference-20261018/two_motion_cut-input.mp4) · [实际双运动 GIF](../assets/coherent-reference-20261018/two_motion_cut-comparison.gif) · [非刚性/曝光原输入](../assets/coherent-reference-20261018/elastic_exposure-input.mp4) · [实际非刚性 GIF](../assets/coherent-reference-20261018/elastic_exposure-comparison.gif) · [复现 CLI/指标与失败](../validation/空间与时序一致参考选择实测_2026-10-18.md)
+
+
+**正式产品 CLI V41：保留动效源码，生成透明标题并叠入时间线。** 左列为原创底图输入，右列为真实产品时间线成片；SVG 商品、文字、CSS 动画与 Canvas 标记均由本地 Chromium 逐帧生成。
+
+![原始输入与实际原生时间线成片](../assets/html-motion-20261018/native-comparison.gif)
+
+[原输入 PNG](../assets/html-motion-20261018/source.png) · [原输入 MP4](../assets/html-motion-20261018/source.mp4) · [HTML/清单](../assets/html-motion-20261018/template/index.html) · [SVG 原素材](../assets/html-motion-20261018/template/bottle.svg) · [透明原文件 NUT](../assets/html-motion-20261018/S01-alpha.nut) · [实际产品 MP4](../assets/html-motion-20261018/S03-timeline.mp4) · [实际产品 MKV](../assets/html-motion-20261018/S03-timeline.mkv) · [改参预览](../assets/html-motion-20261018/S02-preview.mp4) · [可重建工程包](../assets/html-motion-20261018/editable-project.zip) · [五组/失败/复现](../validation/离线HTML动效源码与透明合成实测_2026-10-18.md)。
+
+自制 CC0 背景、几何商品和原创像素字体；原片/主输出 640×360、12 fps、24 帧、2 秒。双列 GIF **960×270、12 帧/2000 ms**，无声；主 MKV 另有自动生成的精确静音流。96 成功 HTML 输入帧、192 乱序重绘与 24 原生时间线主帧分计，S03 与独立 alpha/RGB 合成最大差 3、均值 0.476496。78 文件/6,332,822 字节、10 视频/1 静音音频流复解码；两组三时刻静态目检，未连续播放/听审。绿色块为几何核验标记；未验中文长标题、照片广告或自然美学。[来源/30 原始 CLI](../assets/html-motion-20261018/verification.json)、[媒体审计](../validation/evidence/html-motion-media-final-20261018.json)、[原 MKV 错位成片](../assets/html-motion-clock-failure-20261018/S03-timeline.mkv)、[失败与原冻结源码](../validation/evidence/html-motion-development-20261018/verification.json)。MIT 只授权复用代码，源码/字体/图片权利继续分别登记。
+
+
+**正式产品 CLI V40：真实扩展输入范围，并联动音频延长滚动剪口。** 左列固定 V39 手工作者工程，右列本轮实际输出；上行 S02 双侧外扩，下行 S07 关联 roll。
+
+![真实源外扩与关联滚动剪口对照](../assets/source-edits-20261018/comparison.gif)
+
+[原视频](../assets/source-edits-20261018/source-a.mp4) · [原声](../assets/source-edits-20261018/sound-a.wav) · [外扩前原片](../assets/source-edits-20261018/S02-original.mp4) · [外扩实际输出](../assets/source-edits-20261018/S02-actual.mp4) · [关联 slip](../assets/source-edits-20261018/S01-actual.mp4) · [滚动剪口](../assets/source-edits-20261018/S07-actual.mp4) · [滑动片段](../assets/source-edits-20261018/S08-actual.mp4) · [曲线倒放](../assets/source-edits-20261018/S05-actual.mp4) · [无损有声 MKV](../assets/source-edits-20261018/S02-actual.mkv) · [九组/复现/原失败](../validation/真实源外扩与关联Slip实测_2026-10-18.md)。
+
+既有自制 CC0 输入、0 新模型推理；**301 文件/64,117,582 字节**，56 视频/55 音频流复解码。505 主帧/2,424,000 立体声采样帧完全相同；同产品手工参照不独立验收渲染算法。两组额外核对 100 个直接源帧身份。GIF 480×272、20 帧/4 秒、无声；各组输出预览 MP4 使用 AAC，对照 comparison.mp4 无声，有声无损核对使用 MKV/PCM。四时刻计数/位置条目检一致，边缘计数局部裁切；无连续播放/听审。79 次为两原生 worker 的真实 CLI main 调用，26 次 wheel CLI 另起独立进程；临时 run-state 快照不是完成状态，以 verification 为准。[输入/SHA/全部原 CLI](../assets/source-edits-20261018/verification.json)、[媒体复核](../validation/evidence/source-media-audit-20261018.json)、[静态记录](../validation/evidence/source-static-review-20261018.json)、[原开发记录](../validation/evidence/source-development-20261018/verification.json)。
+
+**历史产品 CLI V39：覆盖复杂作者片段，并联动音频滑动中间片段。** 左列固定 V38 完整作者的明确选区/拼接，右列本轮实际输出；上行 R02 覆盖，下行 R06 滑动。
+
+![专业范围编辑原片选区与实际输出](../assets/range-edits-20261018/comparison.gif)
+
+[原输入视频](../assets/range-edits-20261018/source-a.mp4) · [原声](../assets/range-edits-20261018/sound-a.wav) · [覆盖前原片](../assets/range-edits-20261018/R02-original.mp4) · [覆盖后实际输出](../assets/range-edits-20261018/R02-actual.mp4) · [滑动前原片](../assets/range-edits-20261018/R06-original.mp4) · [滑动后输出](../assets/range-edits-20261018/R06-actual.mp4) · [关联滚动剪口](../assets/range-edits-20261018/R05-actual.mp4) · [字幕骑乘](../assets/range-edits-20261018/R08-actual.mp4) · [无损有声 MKV](../assets/range-edits-20261018/R06-actual.mkv) · [八组/复现/原失败](../validation/专业范围编辑与滚滑剪口实测_2026-10-18.md)。
+
+自制 CC0 输入，0 新模型推理；**269 文件/36,175,156 字节**，45 视频/45 音频流复解码。340 主帧和 1,632,000 立体声采样帧逐项完全相同；同产品参照不独立验收渲染质量。GIF 480×272、20 帧/4 秒、无声；AAC 为预览，PCM 检查用无损 MKV。抽查 0/12/24/38 帧及 CTA 前后图形；边缘计数有局部裁切，低栅格字幕不可推定自然排版；无连续播放或听审。[输入/SHA/73 原始 CLI](../assets/range-edits-20261018/verification.json)、[媒体复核](../validation/evidence/range-media-audit-20261018.json)、[静态记录](../validation/evidence/range-static-review-20261018.json)、[开发原失败](../validation/evidence/range-development-20261018/verification.json)。
+
+**历史产品 CLI V38：在倒放、曲线变速和定格之后，保真裁切与删除中段。** 左列固定 V37 原片的明确选区，右列新 CLI 实际输出；上行删中段，下行定格内裁切。
+
+![裁切前固定原片选区与真实输出](../assets/clip-windows-20261018/comparison.gif)
+
+[原视频](../assets/clip-windows-20261018/source-a.mp4) · [原声](../assets/clip-windows-20261018/sound-a.wav) · [完整曲线倒放原片](../assets/clip-windows-20261018/C02-original.mp4) · [删中段实际输出](../assets/clip-windows-20261018/C02-actual.mp4) · [定格原片](../assets/clip-windows-20261018/C03-original.mp4) · [定格内裁切](../assets/clip-windows-20261018/C03-actual.mp4) · [多轨黑边](../assets/clip-windows-20261018/C09-actual.mp4) · [无损有声 MKV](../assets/clip-windows-20261018/C02-actual.mkv) · [九组/复现/原失败](../validation/输出窗口裁切与作者时钟实测_2026-10-18.md)。
+
+输入为自制 CC0 计数器、声音和原创网格字体；不含商业字体或新模型推理。九组 300 新主帧、1,440,000 立体声采样帧与固定旧版原片选区全相同，参照仍使用同一产品渲染器。公开 **202 文件/28,282,096 字节**，35 视频/35 音频流复解码；GIF 480×272、20 编码帧/2000 ms、无声。静态抽查第 0/10/19 对照帧；低分辨率样例中部分边缘计数字符被裁，未验广告字幕排版/自然质量，无连续播放或听审。[来源/SHA/54 原始 CLI](../assets/clip-windows-20261018/verification.json)、[媒体审计](../validation/evidence/windows-media-audit-20261018.json)、[静态记录](../validation/evidence/windows-static-review-20261018.json)、[开发原失败](../validation/evidence/windows-development-20261018/verification.json)。
+
+**正式产品 CLI V37：把转场、字幕、LUT 和子序列保存成可编辑组，再跨项目插入。** 左列固定 V36 手工参照，右列实际片段组输出；上行为全组，下行为单选自动补全。
+
+![可复用片段组的固定参照与实际输出](../assets/fragments-20261018/comparison.gif)
+
+[原视频 A](../assets/fragments-20261018/source-a.mp4) · [原视频 B](../assets/fragments-20261018/source-b.mp4) · [原声](../assets/fragments-20261018/sound-a.wav) · [完整组 MP4](../assets/fragments-20261018/C01-actual.mp4) · [单选自动补全 MP4](../assets/fragments-20261018/C02-actual.mp4) · [重复实例](../assets/fragments-20261018/C04-actual.mp4) · [竖屏目标](../assets/fragments-20261018/C05-actual.mp4) · [继续编辑字幕](../assets/fragments-20261018/C06-actual.mp4) · [有声无损 MKV](../assets/fragments-20261018/C01-actual.mkv) · [库版本文件](../assets/fragments-20261018/library) · [六组/五项拒绝/复现](../validation/可复用片段组库与跨项目插入实测_2026-10-18.md)。
+
+原输入自制 CC0，240×136/10 fps/80 帧/8 秒；原创网格字体、字幕与 LUT 一并公开，无商业字体文件或新模型。六组 340 新主帧、1,632,000 立体声采样帧与固定 V36 手工原作者工程完全一致；340 参考帧另计。公开 **86 文件/44,949,051 字节**、34 视频/33 音频流复解码；GIF 480×272、20 编码帧/4000 ms，另抽对照 MP4 三帧静态目检；低分辨率 CTA 偏小，未验广告字幕可读性；未连续播放或听审。[来源/SHA/原始 CLI](../assets/fragments-20261018/verification.json)、[媒体审计](../validation/evidence/fragments-media-audit-20261018.json)、[原失败/说明](../validation/evidence/fragments-development-20261018/verification.json)。
+
+**正式产品 CLI V36：先完成子级转场，再做父级变速。** 三列为无转场父级输入 / 新版实际输出 / 独立源混合参照；四行依次为裁切、倒放、曲线、子级透明度。
+
+![输入、实际嵌套转场与独立参考](../assets/nested-transitions-20261018/comparison.gif)
+
+[原视频 A](../assets/nested-transitions-20261018/source-a.mp4) · [原视频 B](../assets/nested-transitions-20261018/source-b.mp4) · [原声](../assets/nested-transitions-20261018/sound-a.wav) · [无转场输入](../assets/nested-transitions-20261018/C03-input.mp4) · [倒放成片](../assets/nested-transitions-20261018/C03-actual.mp4) · [二倍速成片](../assets/nested-transitions-20261018/C04-actual.mp4) · [曲线成片](../assets/nested-transitions-20261018/C05-actual.mp4) · [有声无损 MKV](../assets/nested-transitions-20261018/C03-actual.mkv) · [对照 MP4](../assets/nested-transitions-20261018/comparison.mp4) · [22 组、失败与复现](../validation/嵌套转场与父级重映射实测_2026-10-18.md)。
+
+原片自制 CC0、240×136/10 fps/80 帧/8 秒；对照 720×544/40 帧/4 秒、无声，GIF **20 编码帧/4000 ms**。920 新主帧、440 无转场输入和 720 固定子级参照帧分计，另有 40 固定旧版兼容帧。22 组全部按固定子级和解析父时钟核对；其中 12 组/520 帧另有独立源 RGB 参照，六组/144 万立体声采样帧有独立 PCM，变速其余组仅验长度/有限性。[112 文件来源/SHA](../assets/nested-transitions-20261018/verification.json)、[复解码审计](../validation/evidence/nested-transitions-media-audit-20261018.json)、[首中末静帧目检](../validation/evidence/nested-transitions-static-review-20261018.json)。未连续播放或听审，0 新模型推理；[二倍速原失败](../validation/evidence/nested-transitions-development-20261018/C04-before.mkv)及开发原日志保留。
+
+**正式产品 CLI V35：真实源句柄、双剪口、改长/擦除、剪口白场和倒放 2 倍。** 两列为作者输入 / 实际 CLI 输出，四行依次 C01–C04；片段源帧号可见，作者剪口与总长不变。全部素材为程序自制 CC0，无模型/外部字体。
+
+![真实源句柄转场的作者输入与实际输出](../assets/source-transitions-20261017/comparison.gif)
+
+[原片 A](../assets/source-transitions-20261017/source-a.mp4) · [原片 B](../assets/source-transitions-20261017/source-b.mp4) · [原片 C](../assets/source-transitions-20261017/source-c.mp4) · [原声音源](../assets/source-transitions-20261017/sound-a.wav) · [编辑前](../assets/source-transitions-20261017/authored-input.mp4) · [双剪口成片 MP4](../assets/source-transitions-20261017/C01-actual.mp4) · [原始无损 MKV](../assets/source-transitions-20261017/C01-actual.mkv) · [独立像素参考](../assets/source-transitions-20261017/C01-independent-reference.mp4) · [倒放 2 倍成片](../assets/source-transitions-20261017/C04-actual.mp4) · [对照 MP4](../assets/source-transitions-20261017/comparison.mp4) · [十五组实测与四项开发记录](../validation/真实源句柄转场与可逆编辑实测_2026-10-17.md) · [来源/SHA](../assets/source-transitions-20261017/verification.json)。
+
+十五组成片各 60 帧/6 秒；900 新帧、432 万新立体声采样帧。四组全像素独立参考最大 RGB 差 1.8，十五组无损 PCM 独立包络参考差 0；其余类型只验实际执行、窗外和恢复。GIF 480×544、30 帧/6 秒、5 fps；对照 MP4 60 帧/10 fps，无声。已目检第 0/20/59 张静帧，未连续播放/听审；AAC 仅预览，不替代无损采样证据。[原白场失败成片](../assets/source-transitions-development-20261017/C03-actual.mp4)仍保留，修正后在作者剪口达到白场。自然广告画质与完整剪映功能继续未验。
+
+**历史正式产品 CLI V34：中文/英文字幕分段、双语与局部回写。** 三列为整句作者输入 / CLI 实际输出 / 手工文字和时钟参考。原片与音频由本地程序构造，人工标记、非 ASR；下面的真实 Whisper 测试另计。参考使用同一渲染器。
+
+![字幕分段、双语及局部回写的四组实际成片](../assets/subtitle-segments-20261017/comparison.gif)
+
+[自制原片](../assets/subtitle-segments-20261017/source.mp4) · [原声](../assets/subtitle-segments-20261017/tone.wav) · [中文输出](../assets/subtitle-segments-20261017/S01-segmented.mp4) · [双语输出](../assets/subtitle-segments-20261017/S02-segmented.mp4) · [局部回写输出](../assets/subtitle-segments-20261017/S03-segmented.mp4) · [对照 MP4](../assets/subtitle-segments-20261017/comparison.mp4) · [四组及真实 ASR 实测](../validation/本地字幕分段与双语回写实测_2026-10-17.md) · [来源/SHA](../assets/subtitle-segments-20261017/verification.json)。4×48=192 新帧；编辑前后解码 PCM 一致。真实 Whisper 是一次新 CPU 推理、5 原句→9 字幕、CER 2%，沿用既有中文语料，时间仍为估算，未核验权利的音视频只留本地。GIF 24 秒/48 帧，已看三张静帧，未连续播放或听审。
+
+**历史正式产品 CLI V33：关联剪辑、同步锁与主轨联动。** 三列依次为编辑前作者输入 / CLI 实际输出 / 手工时间线参考。四行展示同步删除、字幕跟随、保留音量的冲突换轨和连续移位 SRT；参考视频使用同一渲染器，音频另做独立 PCM 求和。
+
+![编辑前、CLI 关联编辑及手工参考](../assets/linked-edit-20261017/comparison.gif)
+
+[自制原片](../assets/linked-edit-20261017/source.mp4) · [编辑前](../assets/linked-edit-20261017/L01-input.mp4) · [同步删除成片](../assets/linked-edit-20261017/L01-after.mp4) · [冲突换轨成片](../assets/linked-edit-20261017/L05-after.mp4) · [字幕成片](../assets/linked-edit-20261017/L07-after.mp4) · [三列 MP4](../assets/linked-edit-20261017/comparison.mp4) · [九组与失败](../validation/关联剪辑与主轨联动真实音画实测_2026-10-17.md)。
+
+公开 175 文件及来源/SHA，原片/每组为 240×136、8 fps、40 帧/5 秒；三列预览 720×980、40 帧/5 秒，无声，GIF **20 编码帧/5000 ms**。360 新输出帧、360 输入、360 手工参考和 40 固定 V32 控制帧分计；216 万新立体声采样帧最大误差 0。59 视频/69 音频已重新解码，首/中/末图静态目检，**未连续播放或听审**。原声与无损 MKV 有声，AAC MP4 仅供播放。[字体/CC0 来源](../assets/linked-edit-20261017/fixture-provenance.json)、[包与原始 CLI 记录](../validation/关联剪辑与主轨联动真实音画实测_2026-10-17.md#3-原片gif工程及复现)、[完整证据](../validation/evidence/linked-edit-20261017.json)。主轨磁吸重排、源边缘裁切及完整剪映等价未验收。
+
+**历史正式产品 CLI V32：高频缩小与透明面积采样。** 从左至右为固定 V31 / 当前默认双线性 / 显式 area / 独立单元重叠参考。三像素黑/黑/白纹理的三倍缩小均值误差由 85 降为 0；九组最大 RGB 差 4（门槛 4）。
+
+![固定 V31、默认、面积及独立参考](../assets/sequence-sampling-20261017/comparison-readable.gif)
+
+[真实输入 PNG](../assets/sequence-sampling-20261017/S01-source.png) · [源预览 MP4](../assets/sequence-sampling-20261017/S01-source.mp4) · [旧版](../assets/sequence-sampling-20261017/S01-before.mp4) · [area 成片](../assets/sequence-sampling-20261017/S01-area.mp4) · [四列 MP4](../assets/sequence-sampling-20261017/comparison-readable.mp4) · [九组原输入/全部成片/失败](../validation/序列面积采样与工作配额实测_2026-10-17.md)。实际输入为自制 CC0 PNG，源预览 MP4 是黑底展示；软 Alpha 原输入见 S07 PNG。各组视频 16 帧/8 fps/2 秒；预览 768×588、无声，GIF **8 编码帧/2000 ms**。144 area 帧、144 旧帧、144 默认控制与 144 参考分计；45 视频重新解码、27 路预期静音核对，103 文件 SHA/来源见[机器证据](../validation/evidence/sequence-sampling-20261017.json)。静态查看首末帧，**未连续播放或听审**；一般旋转只验源轴矩形核，配额不是进程 RSS 上界。原跨列标题预览与开发夹具失败保留。
+
+**正式产品 CLI V31：独立竖屏子画布与父级投影。** 左至右为固定 V30 / 新版实际解码 / 独立空间参考；四行展示 fit、fill 后旋转、锚点动画与父蒙版。九组分别通过声明门槛，C01–C08 最大 RGB 差 2，继承控制逐字节一致。
+
+![固定 V30、新版实际与独立空间参考](../assets/sequence-canvas-20261017/comparison.gif)
+
+[自制原输入](../assets/sequence-canvas-20261017/source-portrait.mp4) · [旧版实际](../assets/sequence-canvas-20261017/C01-before.mp4) · [新版实际](../assets/sequence-canvas-20261017/C01-after.mp4) · [独立参考](../assets/sequence-canvas-20261017/C01-reference.mp4) · [三列对照 MP4](../assets/sequence-canvas-20261017/comparison.mp4) · [九组编号、失败与复现](../validation/独立序列画布与原生坐标投影实测_2026-10-17.md)。
+
+预览 960×920；MP4 12 fps、24 帧/2 秒，无音轨；GIF **12 编码帧/2000 ms**，降低帧率和调色板仅供展示。原输入 CC0，24 帧/12 fps/2 秒，字体许可及全部 SHA-256 见[来源](../assets/sequence-canvas-20261017/fixture-provenance.json)和[63 文件清单](../validation/evidence/sequence-canvas-20261017.json)。216 新主帧中 168 帧有独立空间参考，24 帧只验局部字形投影，24 帧只验继承兼容；24 单独子级帧另计，0 新模型推理。已机器逐帧/静音复核、静态目检首末帧，**未连续播放或听审**；[错误参考与开发失败](../validation/独立序列画布与原生坐标投影实测_2026-10-17.md#5-失败记录与参考修正)保留，不证明任意高频细节/自然画质或完整剪映等价。
+
+**历史正式产品 CLI V30：分段变速的实际音频与完整尾部。** 三列为原始输入 / 固定 V29 / V30 真实解码，上下分开显示 L/R。T01 内部零采样帧 82→0，六组 DC 完整有效区间均通过；自然声音与听感仍未验收。
+
+![原始 DC、固定 V29 与 V30 实际解码对照](../assets/audio-tempo-context-20261017/comparison.gif)
+
+[原视频](../assets/audio-tempo-context-20261017/source.mp4) · [DC 原声](../assets/audio-tempo-context-20261017/dc.wav) · [旧失败 MP4](../assets/audio-tempo-context-20261017/T01-before.mp4) · [当前 MP4](../assets/audio-tempo-context-20261017/T01-after.mp4) · [无损 MKV](../assets/audio-tempo-context-20261017/T01-after.mkv) · [解码 WAV](../assets/audio-tempo-context-20261017/T01-after.wav) · [三列预览 MP4](../assets/audio-tempo-context-20261017/comparison.mp4) · [完整尾部对照](../assets/audio-tempo-context-20261017/slow-tail-comparison.png) · [11 组编号、来源与复现](../validation/分段音频上下文与完整尾部实测_2026-10-17.md)。
+
+预览 960×544；MP4 12 fps、36 帧/3 秒，GIF **18 编码帧/3000 ms**，均无声；原 WAV/正式成片有声。自制 CC0，0 新模型推理，[来源与 SHA-256](../assets/audio-tempo-context-20261017/fixture-provenance.json)。396 个新视频帧及 1,584,000 个新立体声采样帧完成声明范围的自动检查；目检首末/慢速尾部静态图，**未连续播放或听审**。这不等于全部采样与独立高质量变速参考相等；AAC MP4 仅供播放。另公开[开发版尾部缺样](../assets/audio-tempo-context-20261017/development-context-only-T05.mkv)、[错误参考截图](../assets/audio-tempo-context-20261017/development-preview-invalid-reference.png)与[失败说明](../assets/audio-tempo-context-20261017/development-verification.json)。
+
+**历史 V29 正式产品 CLI：分层混音与逐采样核验。** 左至右为固定 V28 / 新版实际解码 / 独立参考 PCM；上下独立显示 L/R 通道。12 组无损采样检查通过，旧版 11 组失败、1 正控制；自然声音与听感仍未验收。
+
+![固定 V28、新版实际与参考的分层混音对照](../assets/audio-buses-20261017/comparison.gif)
+
+[原视频](../assets/audio-buses-20261017/source.mp4) · [A 原声](../assets/audio-buses-20261017/tone_a.wav) · [B 原声](../assets/audio-buses-20261017/tone_b.wav) · [旧包络失败 MP4](../assets/audio-buses-20261017/B04-before.mp4) · [新包络 MP4](../assets/audio-buses-20261017/B04-after.mp4) · [无损新 MKV](../assets/audio-buses-20261017/B04-after.mkv) · [参考 WAV](../assets/audio-buses-20261017/B04-reference.wav) · [三列预览 MP4](../assets/audio-buses-20261017/comparison.mp4) · [12 组编号、原始日志与复现](../validation/分层音频总线与真实采样实测_2026-10-17.md)。
+
+预览 960×1074；MP4 12 fps、24 帧/2 秒，GIF **12 编码帧/2000 ms**，均无声；正式成片/WAV 有声。源素材为自制双声道正弦波和移动帧码，[CC0 来源/许可](../assets/audio-buses-20261017/fixture-provenance.json)。全部 1,152,000 新采样帧及 288 新视频帧已自动检查，并目检预览首末图，**未连续播放或听审**。MKV float PCM 用于精度验收，AAC MP4 仅供播放。另公开[非线性 atempo DC 失败](../assets/audio-buses-20261017/dc-diagnostic-retimed-plain.mkv)及[采样诊断](../assets/audio-buses-20261017/dc-diagnostic-verification.json)；该 V29 历史输出保留；V30 对同字节输入的受控重验已消除检查区 82 个零采样帧，通用音高/相位与听感仍开放。旧多轨工程音量可能因关闭自动归一化而变化，未自动加限制器。
+
+补充 [S01 容器内部画面静音对照](../assets/audio-buses-20261017/S01-verification.json)：只有子容器提供画面时，静音/有声版 24 帧逐像素一致，静音 PCM 为零、有声 PCM 与原 WAV 一致；10 次额外 CLI 与主批次分计。[有声 MP4](../assets/audio-buses-20261017/S01-audible.mp4) · [静音 MP4](../assets/audio-buses-20261017/S01-muted.mp4)。
+
+**历史 V28 正式产品 CLI：子序列先合成，再处理父级。** 左至右为固定 V27 / 新版实际视频 / 独立参考，展示重叠 opacity、父枢轴、父 mask 和整组旋转。14 组全部像素最大 RGB 差 3；原视频和旧失败成片同时公开。
+
+![固定 V27、新版隔离合成与独立参考](../assets/sequence-compositing-20261017/comparison.gif)
+
+[原红色视频](../assets/sequence-compositing-20261017/source-red.mp4) · [原蓝色视频](../assets/sequence-compositing-20261017/source-blue.mp4) · [旧重叠失败](../assets/sequence-compositing-20261017/G01-before.mp4) · [新重叠成片](../assets/sequence-compositing-20261017/G01-after.mp4) · [完整旋转成片](../assets/sequence-compositing-20261017/G11-after.mp4) · [三列 MP4](../assets/sequence-compositing-20261017/comparison.mp4) · [14 组原片/新旧/参考与复现](../validation/嵌套序列隔离合成与逐帧像素实测_2026-10-17.md)。
+
+MP4 960×920、12 fps、24 帧/2 秒；GIF 同尺寸、**12 编码帧/2000 ms**，平均 6 fps，均无声。输入是自制移动图形，非自然广告。已做全帧检查和首末静态图目检，**未连续播放或听审**。[来源/许可](../assets/sequence-compositing-20261017/fixture-provenance.json)、102 文件 SHA-256 与原日志保留。另公开[开发动态栅格失败](../assets/sequence-compositing-20261017/development-raster-before.mp4)和[同源修复](../assets/sequence-compositing-20261017/development-raster-after.mp4)，57 帧补充回归单独计数；其“修复前”是开发中实现，不是固定 V27。
+
+**历史 V27 正式产品 CLI：R3 声道策略，音高失败保留。** 左至右为原片 / 固定 V26 together / V27 apart；下方绿色/蓝色是实际左右声道 PCM，原音频横轴 4 ms、成片横轴 250 ms，幅度同尺度。两种模式均未通过极短音高门槛。
+
+![原片、together 与 apart 的实际左右声道对照](../assets/audio-channel-modes-20261017/waveform-comparison.gif)
+
+[原视频](../assets/audio-channel-modes-20261017/source.mp4) · [原双音](../assets/audio-channel-modes-20261017/stereo-tones.wav) · [原反相](../assets/audio-channel-modes-20261017/antiphase.wav) · [together 实际成片](../assets/audio-channel-modes-20261017/after-tiny-forward-together.mp4) · [apart 实际成片](../assets/audio-channel-modes-20261017/after-tiny-forward-apart.mp4) · [apart 无损 WAV](../assets/audio-channel-modes-20261017/after-tiny-forward-apart.wav) · [普通慢放通过样例](../assets/audio-channel-modes-20261017/after-scalar-slow-apart.mp4) · [反相失败成片](../assets/audio-channel-modes-20261017/after-antiphase-apart.mp4) · [对照 MP4](../assets/audio-channel-modes-20261017/waveform-comparison.mp4) · [20 组结果与复现](../validation/R3声道策略与立体声权衡实测_2026-10-17.md)。
+
+预览 MP4 1536×548、24 fps、24 帧/1 秒；GIF 1152×411、**24 编码帧/1000 ms**，预览无声，正式成片/WAV 有声。波形按列抽样，音高由完整 PCM 另算。全帧/PCM 自动检查、首末静态图目检已做，未连续播放或听审；[来源/许可](../assets/audio-channel-modes-20261017/fixture-provenance.json)及 153 份公开文件 SHA-256 保留。极短双音主峰 together 约 797.24/797.24 Hz，apart 375/819.95 Hz；8 组极短音高失败、1 组 apart 反相混合失败仍属未通过内容。
+
+**历史 V26 正式产品 CLI：本地 R3 整段离线音频变速。** 左至右为原片、固定 V25、显式本地 R3 的实际视频；下方为真实解码的左声道波形，原音频横轴 4 ms、成片横轴 250 ms，幅度同尺度。音高和双声道另行检查。
+
+![原片、V25 静音与 R3 有声但音高失败的真实对照](../assets/offline-audio-stretch-20261017/waveform-comparison.gif)
+
+[原视频](../assets/offline-audio-stretch-20261017/source.mp4) · [原双声道音频](../assets/offline-audio-stretch-20261017/stereo-tones.wav) · [前轮原脉冲](../assets/offline-audio-stretch-20261017/pulses.wav) · [旧版静音成片](../assets/offline-audio-stretch-20261017/before-tiny-forward.mp4) · [R3 实际成片，音高失败](../assets/offline-audio-stretch-20261017/after-tiny-forward.mp4) · [无损 WAV](../assets/offline-audio-stretch-20261017/after-tiny-forward.wav) · [普通慢放通过样例](../assets/offline-audio-stretch-20261017/after-scalar-slow.mp4) · [波形 MP4](../assets/offline-audio-stretch-20261017/waveform-comparison.mp4) · [八组结果与复现](../validation/离线音频伸缩与真实采样实测_2026-10-17.md)。
+
+预览 MP4 为 1536×470、24 fps、24 帧/1 秒；GIF 为 1152×353、24 编码帧/1000 ms。预览无声，正式 MP4/WAV 带实际音频。全部双声道采样/视频已自动核对，首末帧和波形已静态目检，未连续播放或听审；[来源与许可](../assets/offline-audio-stretch-20261017/fixture-provenance.json)、命令和全部输出 SHA-256 保留，0 新模型推理。
+
+**未通过：4 组极短音高。** 原脉冲正/倒放主峰约 386.72 Hz（原 400 Hz），双声道样例两路约 797.24 Hz（原 400/800 Hz），超过 ±5 Hz 门槛。采样数和非静音通过不能关闭这些交付失败；未配置 R3 继续默认 atempo，瞬态/相位/听感待验收。
+
+**历史 V25 正式产品 CLI：嵌套倒放首尾帧修复。** 左列按独立作者时钟从原视频选择真实源帧（作者留白为黑）；中、右列分别为固定旧版和本轮 CLI 实际成片。第 50/51 帧此前仅剩文字，本轮恢复原视频背景。
+
+![原源帧、旧版与首尾帧修复实际成片](../assets/nested-frame-coverage-20261017/nested-frame-comparison.gif)
+
+[原视频](../assets/nested-frame-coverage-20261017/source.mp4) · [原音频](../assets/nested-frame-coverage-20261017/pulses.wav) · [分数帧率输入](../assets/nested-frame-coverage-20261017/source-fractional.mp4) · [旧版失败](../assets/nested-frame-coverage-20261017/before-retained-typing-tail.mp4) · [修复后成片](../assets/nested-frame-coverage-20261017/after-retained-typing-tail.mp4) · [三列 MP4](../assets/nested-frame-coverage-20261017/nested-frame-comparison.mp4) · [10 组编号表和复现](../validation/嵌套视频帧区间与结束时钟实测_2026-10-17.md)。
+
+三列预览 MP4 为 1536×332、24 fps、52 帧/2.166667 秒；GIF 为 1152×249、**45 个编码帧、2170 ms**，52 个显示时隙的相邻相同画面已合并。预览无声，正式成片保留实际音轨。自动全帧/PCM 检查及 0/26/51 接触表、尾帧静态目检已做，未连续播放或听审；[来源/字体许可](../assets/nested-frame-coverage-20261017/fixture-provenance.json)、命令、probe 和全部 85 份公开文件 SHA-256 保留，0 新模型推理。
+
+**未通过：[4 毫秒正放音频](../assets/nested-frame-coverage-20261017/after-tiny-forward.mp4)与[倒放音频](../assets/nested-frame-coverage-20261017/after-tiny-reverse.mp4)** 拉伸到 250 毫秒后解码全静音，质量 CLI 返回 `OUTPUT_TRUE_PEAK_UNAVAILABLE`。两组视频帧正确，整体交付失败；原生 `atempo` 探针为 0 输出样本，该轮补静音或更换滤镜的诊断不算修复。V26 已接入显式 R3，同源脉冲恢复声音仍未通过音高门槛。
+
+**历史 V24 正式产品 CLI：文字动画、高亮与原生打字机，3 秒。** 左至右为原视频 / 固定旧版实际输出 / 新版实际输出。文字基于完整段落居中，逐字显示时保持锚点和行基线；普通/激活文字同步更新。
+
+![原片、实际旧版与原生打字机高亮组合](../assets/text-animation-20261017/text-animation-comparison.gif)
+
+[原视频](../assets/text-animation-20261017/source.mp4) · [原音频](../assets/text-animation-20261017/pulses.wav) · [旧版失败](../assets/text-animation-20261017/before-typing-center.mp4) · [新版实际成片](../assets/text-animation-20261017/after-typing-center.mp4) · [整段普通对照](../assets/text-animation-20261017/full-typing-center.mp4) · [三列 MP4](../assets/text-animation-20261017/text-animation-comparison.mp4) · [12 组编号表和复现](../validation/文字动画高亮组合与原生打字机实测_2026-10-17.md)。
+
+预览 MP4 1536×332、24 fps、72 帧/3 秒；GIF 1152×249、72 帧、40/50 ms 合计 3000 ms，无声。50 份正式渲染变体有实际脉冲音轨。自动全帧/PCM 检查、0/36/71 帧接触表静态目检已做，未连续播放或听审；[来源/字体许可](../assets/text-animation-20261017/fixture-provenance.json)与逐文件 SHA-256 保留。0 新模型推理。
+
+**V24 历史失败（V25 已另行复验修复，原证据保留）：[裁切倒放实际成片](../assets/text-animation-20261017/after-typing-nested-trim.mp4)** 末尾第 50/51 帧背景视频消失，文字显示仍正确；该组交付未通过。另保留 [29.97 fps 首次发布拒绝](../validation/evidence/text-animation-initial-media-20261017.log)，最终样例明确设为 90 帧/3.003 秒，不宣称任意时长均可发布。
+
+**历史 V23 正式产品 CLI：文字颜色与透明度，3 秒。** 左至右为原视频 / 固定旧版实际输出 / 新版实际输出 / 数值公式参考。修复半透明文字过暗、alpha 重复相乘；第四列是独立计算的参考图，不是 CLI 成片。
+
+![文字颜色透明度实际前后对照](../assets/text-paint-20261016/text-paint-comparison.gif)
+
+[原视频](../assets/text-paint-20261016/source.mp4) · [原音频](../assets/text-paint-20261016/pulses.wav) · [旧版失败](../assets/text-paint-20261016/before-styled.mp4) · [新版实际成片](../assets/text-paint-20261016/after-styled.mp4) · [不透明字面覆盖率对照](../assets/text-paint-20261016/fontcolor-styled.mp4) · [空白底片](../assets/text-paint-20261016/blank-styled.mp4) · [四列 MP4](../assets/text-paint-20261016/text-paint-comparison.mp4) · [九组编号误差表、全部对照和复现](../validation/文字颜色透明度与实际合成实测_2026-10-16.md)。
+
+预览 MP4 为 2048×332、24 fps、72 帧/3 秒；GIF 为 1536×249、72 帧，40/50 ms 帧时长合计 3000 ms，两者无声。39 份正式渲染变体带真实脉冲音轨；逐帧/PCM 自动核对及接触表 0/36/71 帧静态目检已做，未做连续播放或听审。素材/字体许可与 SHA-256 见[来源记录](../assets/text-paint-20261016/fixture-provenance.json)。
+
+**历史 V22 正式产品 CLI：逐字高亮原生排版，3 秒。** 左至右为原视频 / 固定旧版 / 新版实际输出；相同整段字形只切换颜色，修复错位残字、重复词居中和多行串色。
+
+![真实 CLI：原视频、逐字高亮排版修复前后](../assets/word-layout-20261016/word-layout-comparison.gif)
+
+[原视频](../assets/word-layout-20261016/source.mp4) · [原音频](../assets/word-layout-20261016/pulses.wav) · [旧输出](../assets/word-layout-20261016/before-inline.mp4) · [新输出](../assets/word-layout-20261016/after-inline.mp4) · [普通字幕对照](../assets/word-layout-20261016/reference-inline.mp4) · [对照 MP4](../assets/word-layout-20261016/word-layout-comparison.mp4) · [九组全部视频与复现](../validation/逐字高亮原生排版与真实成片实测_2026-10-16.md)。
+
+原片和对照均 72 帧/24 fps/3 秒，GIF 72 帧、40/50 ms、合计 3 秒，无声；27 份正式变体带实际脉冲音轨。独立逐词复核覆盖 632 个新主帧和 632 个普通字幕对照帧。公开自制 CC0 输入、两种字体独立许可、原始日志及 SHA-256；CJK 只验四字。已抽帧目检 0/36/71 和部分第 40 帧，未连续播放/听审。
+
+[开发失败多行](../assets/word-layout-failures-20261016/failed-multiline.mp4) · [开发失败换行](../assets/word-layout-failures-20261016/failed-wrap.mp4) · [失败与当前抽帧](../assets/word-layout-failures-20261016/failed-vs-current.png)。两次失败各有 15/40 帧词状态不匹配；R/G 轮廓仍可通过，因此保留逐词核对和失败媒体，最终九组已重验通过。
+
+**历史 V21 正式产品 CLI：嵌套字幕原时钟，约 2.46 秒。** 左至右：原片前缀 / 固定旧版本 / V21 CLI，黄色为激活词。该轮时间对应通过、字形仍偏移；原失败画面保留，后续排版修复见 V22。
+
+![真实 CLI：原视频、嵌套字幕时钟修复前后](../assets/subtitle-clock-20261016/subtitle-clock-comparison.gif)
+
+[原视频](../assets/subtitle-clock-20261016/source.mp4) · [原音频](../assets/subtitle-clock-20261016/pulses.wav) · [原 SRT](../assets/subtitle-clock-20261016/clip-cues.srt) · [旧输出](../assets/subtitle-clock-20261016/before-words-inline.mp4) · [新输出](../assets/subtitle-clock-20261016/after-words-inline.mp4) · [对照 MP4](../assets/subtitle-clock-20261016/subtitle-clock-comparison.mp4) · [八组全部成片/复现与失败](../validation/嵌套字幕与文字动画原时钟实测_2026-10-16.md)。
+
+原片 72 帧/24 fps/3 秒；对照 59 帧/2.458333 秒，GIF 59 帧/40–50 ms/2.460 秒，无声。左列仅原片前 59 帧。105 次正式 CLI 含 20 次渲染、12 次质量；448 主帧与 288 校准帧分别核对。静态目检 0/29/58 帧，无连续播放/听审；自制 CC0 媒体与 DejaVu 字体许可证分开记录，未分发字体。
+
+
+**正式产品 CLI：速度 easing/Bezier 与原动画时钟。** 左至右为原片前缀 / 旧版线性化 / 新版实际曲线；各帧保留可读源帧号。
+
+![真实 CLI：原视频、速度 easing 修复前后](../assets/speed-easing-20261016/speed-easing-comparison.gif)
+
+[完整原视频](../assets/speed-easing-20261016/source.mp4) · [原始 WAV](../assets/speed-easing-20261016/pulses.wav) · [旧成片](../assets/speed-easing-20261016/before-forward.mp4) · [新成片](../assets/speed-easing-20261016/after-forward.mp4) · [Bezier 动画新成片](../assets/speed-easing-20261016/after-animated.mp4) · [对比 MP4](../assets/speed-easing-20261016/speed-easing-comparison.mp4) · [全部七组、复现与边界](../validation/速度Easing与Bezier原时钟实测_2026-10-16.md)。
+
+完整源视频 72 帧、3 秒、24 fps；演示源面板只取前 59 帧。对比 MP4 为 59 帧、2.458333 秒；GIF 同 59 帧、40/50 ms 量化后为 **2.460 秒**，无声，不能说时长完全一致。十四份实际前后成片含脉冲音轨。已静态目检 0/29/58 帧，未连续播放或听审。额外三帧 PTS 诊断确认了长时低速数值修复，原失败记录保留。素材/字体许可、独立积分、源码/媒体摘要分别保留；不把受控零源帧误差推广为整体剪映等效。
+
+**正式产品 CLI：嵌套变速与倒放的源时钟修复。** 左至右为原视频前缀 / 旧版 / 新版；源帧号可直接核对。旧版从本地固定 Git 提交真实运行。
+
+![真实 CLI：原视频、嵌套变速修复前后](../assets/nested-time-20261016/nested-time-comparison.gif)
+
+[完整原视频](../assets/nested-time-20261016/source.mp4) · [原始脉冲 WAV](../assets/nested-time-20261016/pulses.wav) · [旧成片](../assets/nested-time-20261016/before-forward.mp4) · [新成片](../assets/nested-time-20261016/after-forward.mp4) · [关键帧缩放新成片](../assets/nested-time-20261016/after-animated.mp4) · [对比 MP4](../assets/nested-time-20261016/nested-time-comparison.mp4) · [全部五组前后成片、复现和边界](../validation/嵌套变速倒放与关键帧时钟实测_2026-10-16.md)。
+
+完整源视频 72 帧、24 fps、3 秒；对比面板只用前 33 帧。对比 MP4 为 33 帧、1.375 秒，GIF 同 33 帧、40/50 ms 量化后为 **1.380 秒**，无声；十份实际前后成片含脉冲音轨。自制素材与字体许可分别保留，0 新模型实测推理。已静态目检 0/16/32 帧，未连续播放或听审。全组最大源帧误差≤1，不能将主样例零误差推广到全部视频。
+
+**正式产品 CLI：动态裁切、旋转与独立文字的透明合成修复，4 秒。** 上排为原背景 / 旧实现 / 新实现；下排为原 RGBA / 旧白底 / 新白底核验。白图层和白字叠白底应保持白色，另有深底可见性对照，未以删除图层通过核验。
+
+![真实 CLI：动态裁切、仿射与文字透明合成前后](../assets/alpha-geometry-20261016/alpha-geometry-comparison.gif)
+
+[原视频](../assets/alpha-geometry-20261016/source.mp4) · [原 RGBA](../assets/alpha-geometry-20261016/marker-black.png) · [旧组合成片](../assets/alpha-geometry-20261016/before-combined.mp4) · [新组合成片](../assets/alpha-geometry-20261016/after-combined.mp4) · [旧白底核验](../assets/alpha-geometry-20261016/before-white.mp4) · [新白底核验](../assets/alpha-geometry-20261016/after-white.mp4) · [完整对照 MP4](../assets/alpha-geometry-20261016/alpha-geometry-comparison.mp4) · [全部输入/输出、复现与失败边界](../validation/仿射动态裁切与文字透明合成实测_2026-10-16.md)。
+
+原视频和六份实际成片均为 32 帧、8 fps、4 秒；GIF 为 32 帧、120/130 ms 交替、4 秒，无声。旧版固定本地 Git 提交真实执行。背景/RGBA 自制 CC0，字体采用有独立许可证的本地 DejaVuSans，未分发字体二进制。已静态目检 0/16/31 帧，未据此声明连续播放/听审或整体剪映质量通过。
+
+
+**正式产品 CLI：透明标签缩放修复，4 秒。** 左至右为原视频、旧实现、新实现；下方放大窗来自实际解码像素。两份原标签仅全透明 RGB 不同，旧版从本地固定 Git 提交执行，没有用新代码模拟旧效果。
+
+![真实 CLI：原视频、透明边缘修复前后](../assets/alpha-resize-20261016/alpha-resampling-comparison.gif)
+
+[原视频](../assets/alpha-resize-20261016/source.mp4) · [原黑标签](../assets/alpha-resize-20261016/marker-black.png) · [原绿标签](../assets/alpha-resize-20261016/marker-green.png) · [旧黑标签成片](../assets/alpha-resize-20261016/before-black.mp4) · [新黑标签成片](../assets/alpha-resize-20261016/after-black.mp4) · [旧绿标签成片](../assets/alpha-resize-20261016/before-green.mp4) · [新绿标签成片](../assets/alpha-resize-20261016/after-green.mp4) · [完整对照 MP4](../assets/alpha-resize-20261016/alpha-resampling-comparison.mp4) · [复现和失败边界](../validation/透明素材缩放边缘与标签精度实测_2026-10-16.md)。
+
+原视频和实际 MP4 均为 32 帧、8 fps、4 秒；GIF 为 32 帧、120/130 ms 交替、总 4 秒，无声。自制 CC0 素材、10 次真实 CLI、SHA-256 和媒体探测见[本批机器记录](../assets/alpha-resize-20261016/evidence.json)。自然人物原片权利未核验，只公开测量记录；标签门槛通过不代表蒙版语义或整体剪映质量通过。
+
+
+以下为实际输出的本地媒体，均随仓库提交。GIF 无声并降低色数便于预览，部分演示降低帧率；MP4 保留展示帧率，多轨合成组包含实际渲染音频。所有公开输入为本地合成素材；未确认发布权利的自然人物视频仅保留实测记录。
+
+**正式产品 CLI：蒙版驱动锚定、变换后重算与竖屏，4 秒。** 从左到右：原视频 / 跟随标签 / 源缩放旋转后重新绑定 / 自动竖屏。选区为自制几何，未调用分割模型。
+
+![实际 CLI：蒙版驱动标签、缩放旋转重算与竖屏重构图](../assets/mask-track-20261016/mask-tracking-comparison.gif)
+
+[原视频](../assets/mask-track-20261016/source.mp4) · [原 alpha 蒙版](../assets/mask-track-20261016/selected-mask.mov) · [横屏输出](../assets/mask-track-20261016/bound.mp4) · [变换后输出](../assets/mask-track-20261016/bound-transformed.mp4) · [竖屏输出](../assets/mask-track-20261016/portrait.mp4) · [对照 MP4](../assets/mask-track-20261016/mask-tracking-comparison.mp4) · [16 次调用/逐帧测量与摘要](../assets/mask-track-20261016/evidence.json)
+
+原输入和 MP4 均为 16 fps、64 帧；GIF 间隔取样 32 帧、平均 8 fps、4 秒、无声。已修复透明标签黑色补边，修复前[实际成片](../assets/mask-track-20261016/before-alpha-fix-bound.mp4)和[抽帧](../assets/mask-track-20261016/before-alpha-fix-contact-frame-32.png)同样保留。自然 SAM2 选区手腕仍漏选，补边修复时标签最大 4.10 px 超过 3 px；后续 V17 预乘 alpha 缩放已将同一样例降至 2.07 px，原失败保留，详情见[实测和复现](../validation/本地蒙版驱动锚定与重构图实测_2026-10-16.md)。
+
+**正式蒙版核验：漏选失败与补全几何通过，4 秒。** 从左到右：完整输入 / 漏选蒙版 / 恢复几何的样例。核验报告来自实际产品 CLI；恢复几何由脚本完成，未调用修复模型。
+
+![实际蒙版核验：第 12 帧漏选检查失败，完整几何检查通过](../assets/mask-review-20261016/mask-review-comparison.gif)
+
+[完整原蒙版 MOV](../assets/mask-review-20261016/mask-full.mov) · [漏选原蒙版 MOV](../assets/mask-review-20261016/mask-under-test.mov) · [对照 MP4](../assets/mask-review-20261016/mask-review-comparison.mp4) · [检查点 JSON](../assets/mask-review-20261016/expectations.json) · [失败报告](../assets/mask-review-20261016/under-test-report.json) · [通过报告](../assets/mask-review-20261016/full-report.json)
+
+MP4 与原蒙版均为 8 fps、32 帧；GIF 保留全部 32 帧，帧时长交替 120/130 ms，总计 4 秒。自然场景另有真实 SAM2 修正记录：目标是男孩（对象 2），女孩（对象 1）应保留；修正后女孩前臂误选消除，男孩手腕仍漏选。该自然样例继续失败，源与衍生画面因发布权利未核验而不公开，见[逐点实测和未通过项](../validation/本地蒙版范围与正负检查点实测_2026-10-16.md)。
+
+**正式产品 CLI：多轨与运镜合成，5.5 秒。** 图形和音频由脚本生成，编辑、合成、编码由产品 CLI 执行。
+
+![正式 CLI 实际渲染：运镜、交叉淡化、动态蒙版、标题图层和音频](../assets/readme-20261016/cli-showcase.gif)
+
+[原视频 A](../assets/readme-20261016/source-a.mp4) · [原视频 B](../assets/readme-20261016/source-b.mp4) · [原音频](../assets/readme-20261016/source-audio.wav) · [实际成片 MP4（含音频）](../assets/readme-20261016/cli-showcase.mp4) · [可导入项目包](../assets/readme-20261016/cli-showcase.aevpkg.zip)
+
+**研究对照：独立平移表面，12 帧。** 从左到右：遮挡输入 / 回退填充 / 前序光流 / 当前参考选择 / 未遮挡真值。
+
+![研究对照：平移表面的输入、回退、前序、当前与真值](../assets/readme-20261016/translation-comparison.gif)
+
+[原输入 MP4](../assets/readme-20261016/translation-input.mp4) · [完整对照 MP4](../assets/readme-20261016/translation-comparison.mp4)
+
+**研究对照：独立运动与形变的双表面，12 帧。** 保留当前方法相对前序略退化的样例，列顺序同上。
+
+![研究对照：双表面样例，当前合计指标略低于前序](../assets/readme-20261016/two-surfaces-comparison.gif)
+
+[原输入 MP4](../assets/readme-20261016/two-surfaces-input.mp4) · [完整对照 MP4](../assets/readme-20261016/two-surfaces-comparison.mp4)
+
+研究数组没有原始播放时钟，公开动画统一按 5 fps 展示，每组 2.4 秒；PSNR 在原始无损数组上计算，GIF/MP4 不用于指标计算。已完成全部媒体解码和抽帧目检，尚未做连续播放/听审。复现命令、素材哈希、检查边界与维护规则见[演示核验记录](../validation/README功能核验与实测演示_2026-10-16.md)。

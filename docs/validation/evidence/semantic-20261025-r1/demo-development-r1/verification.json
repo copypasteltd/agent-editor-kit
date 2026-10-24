@@ -1,0 +1,82 @@
+{
+  "status": "passed-with-review-limits",
+  "development_source_only": true,
+  "installed": null,
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-demo-development-r1\\project",
+  "response_sha256": "d2b9b0bd9957d8df243802f77803f1466d063ca897e112ace21b1ceebae3a292",
+  "started_at_utc": "2026-10-24T21:02:48.401575+00:00",
+  "commands": 11,
+  "duration_seconds": 3,
+  "frames": 90,
+  "fps": "30",
+  "dimensions": [
+    640,
+    360
+  ],
+  "full_video_decode": true,
+  "package_roundtrip_decoded_pixels_equal": true,
+  "publish_gate_executed": false,
+  "human_continuous_viewing": false,
+  "human_listening": false,
+  "audio_included": true,
+  "natural_moving_action_benchmark": false,
+  "automatic_event_extent_inferred": false,
+  "files": [
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-development-r1/candidate-to-output.png",
+      "bytes": 975325,
+      "sha256": "b9c7295c37b004d9e576629c7d0b7aee1a94a8a74f1e79f3c25b60131e60087d"
+    },
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-development-r1/editable-project.aevpkg.zip",
+      "bytes": 11519269,
+      "sha256": "29a3be5357a6db576f3556356b9d6db0ae64abec428bfb854dd2778e979d9907"
+    },
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-development-r1/editable-project.aevpkg.zip.conversion-report.json",
+      "bytes": 980,
+      "sha256": "6481df0a356385010aa0603e1b8711731de0a56be690f70d82bc5fa7e7573ac6"
+    },
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-development-r1/NOTICE.txt",
+      "bytes": 421,
+      "sha256": "d6615c0778ea2df6813f1345100c79ffe8f6d16183c07b1efee2049d369af80e"
+    },
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-development-r1/output-1.png",
+      "bytes": 248798,
+      "sha256": "71fe56dabb81b3d6f30683f3263bcac63137e539df3350e667e48370e1c89c71"
+    },
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-development-r1/output-2.png",
+      "bytes": 319438,
+      "sha256": "44e95bfa60bb4c057f0e166660cf2f011b30cb966d4e747e7b85bf7a39ddcfef"
+    },
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-development-r1/output-3.png",
+      "bytes": 187844,
+      "sha256": "32023bad394cbc982735a81cb06a05d8f6a198ca567216463f1c6dd6dfd35d62"
+    },
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-development-r1/selected-hits.json",
+      "bytes": 5297,
+      "sha256": "d53ad9ebac60cf35ced5a8ffc3db23a74284eafac579eb99807ce5cee5226044"
+    },
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-development-r1/semantic-cut.gif",
+      "bytes": 424851,
+      "sha256": "49ee1e12916294647321589580c4771f42a4f9207ce03feb64bf27f8ba3d3b01"
+    },
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-development-r1/semantic-cut.mp4",
+      "bytes": 185883,
+      "sha256": "3aa1d54a32fcaf2755ffcf554e11821fb04fc25cf3e2440e3e5548e97518fea9"
+    },
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-development-r1/SOURCE.json",
+      "bytes": 11025,
+      "sha256": "b6ca0a8e2e64abffc8bff66c2a62f5277f471d60736a26794bb0445014dd69d2"
+    }
+  ],
+  "generator_sha256": "6bd3ef4c2b195b9363ae1e6a9d4c66d5bb1ef8b9446d3c4c31af31e3d0ef07ef"
+}

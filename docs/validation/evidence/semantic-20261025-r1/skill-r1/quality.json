@@ -1,0 +1,1478 @@
+{
+  "queries": [
+    {
+      "id": "q01",
+      "text": "a cup of coffee on a wooden table",
+      "group": "positive",
+      "top1_relevant": true,
+      "recall_at_3": 1.0,
+      "expected_asset_ids": [
+        "asset_b4",
+        "asset_v1"
+      ],
+      "top_hits": [
+        {
+          "asset_id": "asset_b4",
+          "sample_seconds": 0.0,
+          "score": 0.13429911,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_v1",
+          "sample_seconds": 1.0,
+          "score": 0.13262388,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_g5",
+          "sample_seconds": 0.0,
+          "score": 0.02085582,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": -0.01217006,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_c2",
+          "sample_seconds": 0.0,
+          "score": -0.01386136,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_i1",
+          "sample_seconds": 0.0,
+          "score": -0.01386136,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_h6",
+          "sample_seconds": 0.0,
+          "score": -0.02591148,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_f8",
+          "sample_seconds": 0.0,
+          "score": -0.03043415,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_a7",
+          "sample_seconds": 0.0,
+          "score": -0.0444492,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_d9",
+          "sample_seconds": 0.0,
+          "score": -0.04662601,
+          "relevant": false
+        }
+      ],
+      "open_set_candidate_returned": null
+    },
+    {
+      "id": "q02",
+      "text": "木桌上的一杯咖啡",
+      "group": "positive",
+      "top1_relevant": true,
+      "recall_at_3": 1.0,
+      "expected_asset_ids": [
+        "asset_b4",
+        "asset_v1"
+      ],
+      "top_hits": [
+        {
+          "asset_id": "asset_b4",
+          "sample_seconds": 0.0,
+          "score": 0.11323069,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_v1",
+          "sample_seconds": 0.0,
+          "score": 0.10992034,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_g5",
+          "sample_seconds": 0.0,
+          "score": 0.03681047,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": 0.03505737,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_f8",
+          "sample_seconds": 0.0,
+          "score": 0.03019244,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_a7",
+          "sample_seconds": 0.0,
+          "score": 0.028817,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_c2",
+          "sample_seconds": 0.0,
+          "score": 0.02782687,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_i1",
+          "sample_seconds": 0.0,
+          "score": 0.02782687,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_h6",
+          "sample_seconds": 0.0,
+          "score": 0.01201465,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_d9",
+          "sample_seconds": 0.0,
+          "score": -0.00238269,
+          "relevant": false
+        }
+      ],
+      "open_set_candidate_returned": null
+    },
+    {
+      "id": "q03",
+      "text": "a close-up photograph of a cat",
+      "group": "positive",
+      "top1_relevant": true,
+      "recall_at_3": 1.0,
+      "expected_asset_ids": [
+        "asset_c2",
+        "asset_i1",
+        "asset_v1"
+      ],
+      "top_hits": [
+        {
+          "asset_id": "asset_c2",
+          "sample_seconds": 0.0,
+          "score": 0.15478325,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_i1",
+          "sample_seconds": 0.0,
+          "score": 0.15478325,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_v1",
+          "sample_seconds": 3.0,
+          "score": 0.1527862,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": 0.07385938,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_g5",
+          "sample_seconds": 0.0,
+          "score": 0.06229086,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_f8",
+          "sample_seconds": 0.0,
+          "score": 0.03344694,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_a7",
+          "sample_seconds": 0.0,
+          "score": 0.02383014,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_h6",
+          "sample_seconds": 0.0,
+          "score": 0.01531803,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_b4",
+          "sample_seconds": 0.0,
+          "score": -0.00111664,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_d9",
+          "sample_seconds": 0.0,
+          "score": -0.01962712,
+          "relevant": false
+        }
+      ],
+      "open_set_candidate_returned": null
+    },
+    {
+      "id": "q04",
+      "text": "一只猫的近距离照片",
+      "group": "positive",
+      "top1_relevant": true,
+      "recall_at_3": 1.0,
+      "expected_asset_ids": [
+        "asset_c2",
+        "asset_i1",
+        "asset_v1"
+      ],
+      "top_hits": [
+        {
+          "asset_id": "asset_c2",
+          "sample_seconds": 0.0,
+          "score": 0.11749298,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_i1",
+          "sample_seconds": 0.0,
+          "score": 0.11749298,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_v1",
+          "sample_seconds": 3.0,
+          "score": 0.11535359,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": 0.09475299,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_g5",
+          "sample_seconds": 0.0,
+          "score": 0.07759879,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_h6",
+          "sample_seconds": 0.0,
+          "score": 0.07563066,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_a7",
+          "sample_seconds": 0.0,
+          "score": 0.07423886,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_f8",
+          "sample_seconds": 0.0,
+          "score": 0.06897655,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_b4",
+          "sample_seconds": 0.0,
+          "score": 0.03935108,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_d9",
+          "sample_seconds": 0.0,
+          "score": 0.03239929,
+          "relevant": false
+        }
+      ],
+      "open_set_candidate_returned": null
+    },
+    {
+      "id": "q05",
+      "text": "a woman wearing an astronaut spacesuit",
+      "group": "positive",
+      "top1_relevant": true,
+      "recall_at_3": 1.0,
+      "expected_asset_ids": [
+        "asset_d9",
+        "asset_v1"
+      ],
+      "top_hits": [
+        {
+          "asset_id": "asset_v1",
+          "sample_seconds": 5.0,
+          "score": 0.14789172,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_d9",
+          "sample_seconds": 0.0,
+          "score": 0.14378212,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_g5",
+          "sample_seconds": 0.0,
+          "score": 0.01488687,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_a7",
+          "sample_seconds": 0.0,
+          "score": 0.01385887,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": -0.00611506,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_h6",
+          "sample_seconds": 0.0,
+          "score": -0.00643061,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_c2",
+          "sample_seconds": 0.0,
+          "score": -0.02183018,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_i1",
+          "sample_seconds": 0.0,
+          "score": -0.02183018,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_b4",
+          "sample_seconds": 0.0,
+          "score": -0.04386815,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_f8",
+          "sample_seconds": 0.0,
+          "score": -0.04869892,
+          "relevant": false
+        }
+      ],
+      "open_set_candidate_returned": null
+    },
+    {
+      "id": "q06",
+      "text": "穿宇航服的女性宇航员",
+      "group": "positive",
+      "top1_relevant": true,
+      "recall_at_3": 1.0,
+      "expected_asset_ids": [
+        "asset_d9",
+        "asset_v1"
+      ],
+      "top_hits": [
+        {
+          "asset_id": "asset_v1",
+          "sample_seconds": 5.0,
+          "score": 0.12976953,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_d9",
+          "sample_seconds": 0.0,
+          "score": 0.11519457,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_g5",
+          "sample_seconds": 0.0,
+          "score": 0.02995925,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_a7",
+          "sample_seconds": 0.0,
+          "score": 0.02986216,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": 0.00560708,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_h6",
+          "sample_seconds": 0.0,
+          "score": 0.00132373,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_c2",
+          "sample_seconds": 0.0,
+          "score": -0.00509088,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_i1",
+          "sample_seconds": 0.0,
+          "score": -0.00509088,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_f8",
+          "sample_seconds": 0.0,
+          "score": -0.01075837,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_b4",
+          "sample_seconds": 0.0,
+          "score": -0.02546134,
+          "relevant": false
+        }
+      ],
+      "open_set_candidate_returned": null
+    },
+    {
+      "id": "q07",
+      "text": "a photographer standing behind a camera",
+      "group": "positive",
+      "top1_relevant": true,
+      "recall_at_3": 1.0,
+      "expected_asset_ids": [
+        "asset_a7"
+      ],
+      "top_hits": [
+        {
+          "asset_id": "asset_a7",
+          "sample_seconds": 0.0,
+          "score": 0.12499708,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_v1",
+          "sample_seconds": 4.0,
+          "score": 0.0256036,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_d9",
+          "sample_seconds": 0.0,
+          "score": 0.02210169,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_g5",
+          "sample_seconds": 0.0,
+          "score": 0.02134267,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": 0.00339864,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_c2",
+          "sample_seconds": 0.0,
+          "score": -0.00521157,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_i1",
+          "sample_seconds": 0.0,
+          "score": -0.00521157,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_h6",
+          "sample_seconds": 0.0,
+          "score": -0.0307312,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_b4",
+          "sample_seconds": 0.0,
+          "score": -0.04979513,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_f8",
+          "sample_seconds": 0.0,
+          "score": -0.05715431,
+          "relevant": false
+        }
+      ],
+      "open_set_candidate_returned": null
+    },
+    {
+      "id": "q08",
+      "text": "站在相机后面的摄影师",
+      "group": "positive",
+      "top1_relevant": true,
+      "recall_at_3": 1.0,
+      "expected_asset_ids": [
+        "asset_a7"
+      ],
+      "top_hits": [
+        {
+          "asset_id": "asset_a7",
+          "sample_seconds": 0.0,
+          "score": 0.10978157,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_g5",
+          "sample_seconds": 0.0,
+          "score": 0.07587678,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": 0.06708021,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_c2",
+          "sample_seconds": 0.0,
+          "score": 0.05940633,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_i1",
+          "sample_seconds": 0.0,
+          "score": 0.05940633,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_v1",
+          "sample_seconds": 3.0,
+          "score": 0.05754298,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_b4",
+          "sample_seconds": 0.0,
+          "score": 0.03741302,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_d9",
+          "sample_seconds": 0.0,
+          "score": 0.03733889,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_h6",
+          "sample_seconds": 0.0,
+          "score": 0.03536921,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_f8",
+          "sample_seconds": 0.0,
+          "score": 0.02680328,
+          "relevant": false
+        }
+      ],
+      "open_set_candidate_returned": null
+    },
+    {
+      "id": "q09",
+      "text": "a close-up texture of grass",
+      "group": "positive",
+      "top1_relevant": true,
+      "recall_at_3": 1.0,
+      "expected_asset_ids": [
+        "asset_e3"
+      ],
+      "top_hits": [
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": 0.14079288,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_f8",
+          "sample_seconds": 0.0,
+          "score": 0.07011794,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_g5",
+          "sample_seconds": 0.0,
+          "score": 0.05981769,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_c2",
+          "sample_seconds": 0.0,
+          "score": 0.03754232,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_i1",
+          "sample_seconds": 0.0,
+          "score": 0.03754232,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_v1",
+          "sample_seconds": 3.0,
+          "score": 0.03285616,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_h6",
+          "sample_seconds": 0.0,
+          "score": 0.03252476,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_a7",
+          "sample_seconds": 0.0,
+          "score": 0.01047273,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_b4",
+          "sample_seconds": 0.0,
+          "score": -0.02175033,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_d9",
+          "sample_seconds": 0.0,
+          "score": -0.03821512,
+          "relevant": false
+        }
+      ],
+      "open_set_candidate_returned": null
+    },
+    {
+      "id": "q10",
+      "text": "草地的纹理",
+      "group": "positive",
+      "top1_relevant": true,
+      "recall_at_3": 1.0,
+      "expected_asset_ids": [
+        "asset_e3"
+      ],
+      "top_hits": [
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": 0.14412379,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_f8",
+          "sample_seconds": 0.0,
+          "score": 0.09711078,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_g5",
+          "sample_seconds": 0.0,
+          "score": 0.06464273,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_a7",
+          "sample_seconds": 0.0,
+          "score": 0.04965789,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_h6",
+          "sample_seconds": 0.0,
+          "score": 0.04945789,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_c2",
+          "sample_seconds": 0.0,
+          "score": 0.03426018,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_i1",
+          "sample_seconds": 0.0,
+          "score": 0.03426018,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_v1",
+          "sample_seconds": 2.0,
+          "score": 0.02477846,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_b4",
+          "sample_seconds": 0.0,
+          "score": 0.01207303,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_d9",
+          "sample_seconds": 0.0,
+          "score": -0.01665328,
+          "relevant": false
+        }
+      ],
+      "open_set_candidate_returned": null
+    },
+    {
+      "id": "q11",
+      "text": "small gray stones and gravel",
+      "group": "positive",
+      "top1_relevant": true,
+      "recall_at_3": 1.0,
+      "expected_asset_ids": [
+        "asset_f8"
+      ],
+      "top_hits": [
+        {
+          "asset_id": "asset_f8",
+          "sample_seconds": 0.0,
+          "score": 0.14725515,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": 0.0941849,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_g5",
+          "sample_seconds": 0.0,
+          "score": 0.0381389,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_h6",
+          "sample_seconds": 0.0,
+          "score": 0.00749713,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_c2",
+          "sample_seconds": 0.0,
+          "score": -0.00453647,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_i1",
+          "sample_seconds": 0.0,
+          "score": -0.00453647,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_v1",
+          "sample_seconds": 3.0,
+          "score": -0.00803397,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_b4",
+          "sample_seconds": 0.0,
+          "score": -0.03097924,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_a7",
+          "sample_seconds": 0.0,
+          "score": -0.04288151,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_d9",
+          "sample_seconds": 0.0,
+          "score": -0.05276359,
+          "relevant": false
+        }
+      ],
+      "open_set_candidate_returned": null
+    },
+    {
+      "id": "q12",
+      "text": "灰色碎石和小石子",
+      "group": "positive",
+      "top1_relevant": true,
+      "recall_at_3": 1.0,
+      "expected_asset_ids": [
+        "asset_f8"
+      ],
+      "top_hits": [
+        {
+          "asset_id": "asset_f8",
+          "sample_seconds": 0.0,
+          "score": 0.15252742,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": 0.09820744,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_g5",
+          "sample_seconds": 0.0,
+          "score": 0.0690089,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_h6",
+          "sample_seconds": 0.0,
+          "score": 0.03715913,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_c2",
+          "sample_seconds": 0.0,
+          "score": 0.02079366,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_i1",
+          "sample_seconds": 0.0,
+          "score": 0.02079366,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_v1",
+          "sample_seconds": 3.0,
+          "score": 0.01303176,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_a7",
+          "sample_seconds": 0.0,
+          "score": 0.00833752,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_b4",
+          "sample_seconds": 0.0,
+          "score": -0.00522924,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_d9",
+          "sample_seconds": 0.0,
+          "score": -0.01697423,
+          "relevant": false
+        }
+      ],
+      "open_set_candidate_returned": null
+    },
+    {
+      "id": "q13",
+      "text": "a clock face with numbers and hands",
+      "group": "positive",
+      "top1_relevant": true,
+      "recall_at_3": 1.0,
+      "expected_asset_ids": [
+        "asset_g5"
+      ],
+      "top_hits": [
+        {
+          "asset_id": "asset_g5",
+          "sample_seconds": 0.0,
+          "score": 0.07591314,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": 0.04130791,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_h6",
+          "sample_seconds": 0.0,
+          "score": 0.02741698,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_v1",
+          "sample_seconds": 2.0,
+          "score": 0.01854224,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_c2",
+          "sample_seconds": 0.0,
+          "score": 0.01824102,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_i1",
+          "sample_seconds": 0.0,
+          "score": 0.01824102,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_f8",
+          "sample_seconds": 0.0,
+          "score": 0.01599567,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_b4",
+          "sample_seconds": 0.0,
+          "score": -0.00262429,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_a7",
+          "sample_seconds": 0.0,
+          "score": -0.01395303,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_d9",
+          "sample_seconds": 0.0,
+          "score": -0.02845718,
+          "relevant": false
+        }
+      ],
+      "open_set_candidate_returned": null
+    },
+    {
+      "id": "q14",
+      "text": "带数字和指针的钟表",
+      "group": "positive",
+      "top1_relevant": true,
+      "recall_at_3": 1.0,
+      "expected_asset_ids": [
+        "asset_g5"
+      ],
+      "top_hits": [
+        {
+          "asset_id": "asset_g5",
+          "sample_seconds": 0.0,
+          "score": 0.05369178,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_a7",
+          "sample_seconds": 0.0,
+          "score": 0.03755735,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": 0.03212509,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_f8",
+          "sample_seconds": 0.0,
+          "score": 0.02757709,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_h6",
+          "sample_seconds": 0.0,
+          "score": 0.02515794,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_v1",
+          "sample_seconds": 5.0,
+          "score": 0.01519348,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_d9",
+          "sample_seconds": 0.0,
+          "score": 0.01353674,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_c2",
+          "sample_seconds": 0.0,
+          "score": 0.00726097,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_i1",
+          "sample_seconds": 0.0,
+          "score": 0.00726097,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_b4",
+          "sample_seconds": 0.0,
+          "score": -0.00373166,
+          "relevant": false
+        }
+      ],
+      "open_set_candidate_returned": null
+    },
+    {
+      "id": "q15",
+      "text": "distant galaxies and stars in deep space",
+      "group": "positive",
+      "top1_relevant": true,
+      "recall_at_3": 1.0,
+      "expected_asset_ids": [
+        "asset_h6"
+      ],
+      "top_hits": [
+        {
+          "asset_id": "asset_h6",
+          "sample_seconds": 0.0,
+          "score": 0.12249758,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_g5",
+          "sample_seconds": 0.0,
+          "score": 0.03353115,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": -0.00162341,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_d9",
+          "sample_seconds": 0.0,
+          "score": -0.00958801,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_v1",
+          "sample_seconds": 5.0,
+          "score": -0.01480858,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_f8",
+          "sample_seconds": 0.0,
+          "score": -0.03245258,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_c2",
+          "sample_seconds": 0.0,
+          "score": -0.04196669,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_i1",
+          "sample_seconds": 0.0,
+          "score": -0.04196669,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_a7",
+          "sample_seconds": 0.0,
+          "score": -0.04347113,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_b4",
+          "sample_seconds": 0.0,
+          "score": -0.07474512,
+          "relevant": false
+        }
+      ],
+      "open_set_candidate_returned": null
+    },
+    {
+      "id": "q16",
+      "text": "深空中的星系和星星",
+      "group": "positive",
+      "top1_relevant": true,
+      "recall_at_3": 1.0,
+      "expected_asset_ids": [
+        "asset_h6"
+      ],
+      "top_hits": [
+        {
+          "asset_id": "asset_h6",
+          "sample_seconds": 0.0,
+          "score": 0.1195628,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_g5",
+          "sample_seconds": 0.0,
+          "score": 0.05394394,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": 0.0418523,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_v1",
+          "sample_seconds": 5.0,
+          "score": 0.04121117,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_f8",
+          "sample_seconds": 0.0,
+          "score": 0.0322528,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_d9",
+          "sample_seconds": 0.0,
+          "score": 0.02892385,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_a7",
+          "sample_seconds": 0.0,
+          "score": 0.02808255,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_c2",
+          "sample_seconds": 0.0,
+          "score": 0.00712769,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_i1",
+          "sample_seconds": 0.0,
+          "score": 0.00712769,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_b4",
+          "sample_seconds": 0.0,
+          "score": -0.0175516,
+          "relevant": false
+        }
+      ],
+      "open_set_candidate_returned": null
+    },
+    {
+      "id": "q17",
+      "text": "a cat, not a cup of coffee",
+      "group": "negation",
+      "top1_relevant": true,
+      "recall_at_3": 1.0,
+      "expected_asset_ids": [
+        "asset_c2",
+        "asset_i1",
+        "asset_v1"
+      ],
+      "top_hits": [
+        {
+          "asset_id": "asset_v1",
+          "sample_seconds": 2.0,
+          "score": 0.11562234,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_c2",
+          "sample_seconds": 0.0,
+          "score": 0.11082003,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_i1",
+          "sample_seconds": 0.0,
+          "score": 0.11082003,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_b4",
+          "sample_seconds": 0.0,
+          "score": 0.08657685,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_g5",
+          "sample_seconds": 0.0,
+          "score": 0.06033867,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": 0.05980782,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_a7",
+          "sample_seconds": 0.0,
+          "score": 0.03755501,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_f8",
+          "sample_seconds": 0.0,
+          "score": 0.03599806,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_h6",
+          "sample_seconds": 0.0,
+          "score": 0.02492557,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_d9",
+          "sample_seconds": 0.0,
+          "score": -0.01368566,
+          "relevant": false
+        }
+      ],
+      "open_set_candidate_returned": null
+    },
+    {
+      "id": "q18",
+      "text": "一只猫，不是一杯咖啡",
+      "group": "negation",
+      "top1_relevant": false,
+      "recall_at_3": 0.3333333333333333,
+      "expected_asset_ids": [
+        "asset_c2",
+        "asset_i1",
+        "asset_v1"
+      ],
+      "top_hits": [
+        {
+          "asset_id": "asset_b4",
+          "sample_seconds": 0.0,
+          "score": 0.10998559,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_v1",
+          "sample_seconds": 0.0,
+          "score": 0.10809484,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_c2",
+          "sample_seconds": 0.0,
+          "score": 0.08749028,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_i1",
+          "sample_seconds": 0.0,
+          "score": 0.08749028,
+          "relevant": true
+        },
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": 0.05072567,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_g5",
+          "sample_seconds": 0.0,
+          "score": 0.04761522,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_a7",
+          "sample_seconds": 0.0,
+          "score": 0.04104528,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_f8",
+          "sample_seconds": 0.0,
+          "score": 0.03684213,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_h6",
+          "sample_seconds": 0.0,
+          "score": 0.0363554,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_d9",
+          "sample_seconds": 0.0,
+          "score": 0.00761737,
+          "relevant": false
+        }
+      ],
+      "open_set_candidate_returned": null
+    },
+    {
+      "id": "q19",
+      "text": "an underwater shark swimming beside coral",
+      "group": "out_of_domain",
+      "top1_relevant": null,
+      "recall_at_3": null,
+      "expected_asset_ids": [],
+      "top_hits": [
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": -0.01032311,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_g5",
+          "sample_seconds": 0.0,
+          "score": -0.02123708,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_f8",
+          "sample_seconds": 0.0,
+          "score": -0.0366676,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_c2",
+          "sample_seconds": 0.0,
+          "score": -0.06536197,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_i1",
+          "sample_seconds": 0.0,
+          "score": -0.06536197,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_v1",
+          "sample_seconds": 2.0,
+          "score": -0.06552133,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_h6",
+          "sample_seconds": 0.0,
+          "score": -0.07401569,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_d9",
+          "sample_seconds": 0.0,
+          "score": -0.09863443,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_a7",
+          "sample_seconds": 0.0,
+          "score": -0.09966848,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_b4",
+          "sample_seconds": 0.0,
+          "score": -0.10543306,
+          "relevant": false
+        }
+      ],
+      "open_set_candidate_returned": true
+    },
+    {
+      "id": "q20",
+      "text": "水下珊瑚旁边游动的鲨鱼",
+      "group": "out_of_domain",
+      "top1_relevant": null,
+      "recall_at_3": null,
+      "expected_asset_ids": [],
+      "top_hits": [
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": 0.01411478,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_f8",
+          "sample_seconds": 0.0,
+          "score": -0.00043102,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_g5",
+          "sample_seconds": 0.0,
+          "score": -0.00883723,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_h6",
+          "sample_seconds": 0.0,
+          "score": -0.0355662,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_c2",
+          "sample_seconds": 0.0,
+          "score": -0.03890266,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_i1",
+          "sample_seconds": 0.0,
+          "score": -0.03890266,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_v1",
+          "sample_seconds": 2.0,
+          "score": -0.04267155,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_a7",
+          "sample_seconds": 0.0,
+          "score": -0.04713516,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_d9",
+          "sample_seconds": 0.0,
+          "score": -0.04866949,
+          "relevant": false
+        },
+        {
+          "asset_id": "asset_b4",
+          "sample_seconds": 0.0,
+          "score": -0.05290895,
+          "relevant": false
+        }
+      ],
+      "open_set_candidate_returned": true
+    }
+  ],
+  "positive_queries": 16,
+  "positive_top1": 1.0,
+  "positive_mean_recall_at_3": 1.0,
+  "negation_successes": 1,
+  "out_of_domain_queries_with_candidates": 2,
+  "caveat": "Small familiar static-image set; no calibrated open-set rejection, unseen-training or natural-action acceptance."
+}

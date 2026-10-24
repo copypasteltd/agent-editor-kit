@@ -11,13 +11,13 @@
 
 <!-- unified-skill-registration -->
 
-**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r3 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r3.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
+**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r4 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r4.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
 
 <!-- /unified-skill-registration -->
 
 <!-- community-materials-gpu -->
 
-**本機新增已安裝擴充套件：CLI 0.1.4，GPU 配音/翻譯與 359 項內建開源資源。** 公開 alpha.3 附件保持原版。外層只指定 `$agent-ffmpeg-local-editor`；本機登記 GPU 包後預設優先 GPU，明確返回實際裝置/回退原因，保留 CPU 相容。
+**本機新增已安裝擴充套件：CLI 0.1.5，GPU 配音/翻譯與 359 項內建開源資源。** 公開 alpha.3 附件保持原版。外層只指定 `$agent-ffmpeg-local-editor`；本機登記 GPU 包後預設優先 GPU，明確返回實際裝置/回退原因，保留 CPU 相容。
 
 [完整流程與邊界](docs/product/COMMUNITY_MATERIALS.zh-TW.md) · [逐項素材目錄](docs/product/COMMUNITY_MATERIAL_CATALOG.md) · [103 音色與實際試聽範圍](docs/product/COMMUNITY_VOICES.md) · [CPU 實測](docs/validation/evidence/community-materials-20261025-r1/cpu/verification.json) · [GPU 實測](docs/validation/evidence/community-materials-20261025-r1/gpu/verification.json)。
 
@@ -29,10 +29,34 @@
 | F47 / G01 | CUDA 配音/翻譯、auto/cpu/cuda、視訊記憶體預檢 | RTX 3060 實測，嚴格 CUDA/CPU 回退分明，NVIDIA 依賴許可另列 |
 | F48 / M04–M05 | 真實 BGM 擷取/迴圈/淡入淡出、配音混合和閃避 | 保留原分軌，不代表作曲或自動接縫修復 |
 | F49 / C01 | 原生視窗/螢幕/區域/攝影機/麥克風擷取 CLI，CPU/NVENC 編碼和取消 | 實測自身測試視窗；攝影機/麥克風、聯合音畫同步及長錄製待驗 |
+| F50 / V01 | 離線圖文語義索引、中文/英文/參考圖查詢、預覽與可編輯時間點，auto/cpu/cuda | 小型靜態圖集實測；否定/庫外拒識/自然動作/音訊推薦仍未完成 |
 
 CPU 46 條、GPU 15 條為本輪獨立實測。12 秒真實成片已完整解碼、工程往返。未確認釋出權利的生成配音不隨公共頁面再分發，本地原始分軌/完整成片見交付記錄。人工聽審與完整剪映等價仍未完成。
 
 <!-- /community-materials-gpu -->
+
+<!-- semantic-retrieval-r1 -->
+
+## 本機 CLI 0.1.5：按描述或參考圖檢索素材
+
+使用既有離線 SigLIP2 模型，對選定圖片與影片採樣畫面建立向量索引；按中文、英文或本機參考圖返回候選預覽、來源時間與可編輯引用。仍使用一個 `$agent-ffmpeg-local-editor`。
+
+基礎 ZIP 不含 Torch 或約 1.5GB 權重。先按本機交付設定既有原生環境，讀取 runtime.json 的 semantic_config，明確登記至工程後再建立索引；不隱式下載。
+
+[Workflow / 登记与命令](docs/product/SEMANTIC_RETRIEVAL.md) · [Validation / 实测](docs/validation/离线语义检索实测_2026-10-25.md) · [All 20 queries / 全部结果](docs/assets/semantic-20261025-r1/all-query-results.png)
+
+```powershell
+# Existing project, registered local adapter and ingested source IDs required.
+& $avk semantic index --project $project --index-id campaign-v1 --adapter-id siglip2 --all-visual-assets --sample-interval-seconds 2 --device auto
+& $avk semantic search --project $project --index-id campaign-v1 --query '木桌上的一杯咖啡' --limit 5 --device auto
+& $avk semantic search --project $project --index-id campaign-v1 --image $referenceImage --kind image --device cpu
+```
+
+在預先凍結的小樣本中，開發版 CPU/GPU 的 16 條常規查詢首選及 mean asset recall@3 均為 1.0；安裝版真實 Skill 另驗相同 20 條文字與 CPU 參考圖。中文否定誤選咖啡，兩條庫外鯊魚查詢仍返回草地；尚無可靠拒識、動作理解或自動導演。
+
+![All frozen queries, including failures](docs/assets/semantic-20261025-r1/all-query-results.png)
+
+<!-- /semantic-retrieval-r1 -->
 
 <!-- native-capture-r1 -->
 
@@ -142,7 +166,7 @@ flowchart LR
 5. 若需要選型，展示原圖與少量候選，記錄最終 ID/強度/作用域；在目標素材上復試。
 6. 渲染至工程內新路徑，檢查實際編碼文件、manifest、warning、音畫與權利，再導出專案包。
 
-## 43 個基礎功能模塊，以及上方 F44–F48 擴充
+## 43 個基礎功能模塊，以及上方 F44–F50 擴充
 
 編號用於定位文件；各模塊有依賴與交叉，不是“43 個獨立內核”或完成率。下表直接寫明行為、入口與限制；[完整機器能力清單及每項契約](docs/product/CAPABILITIES.zh-TW.md)保留全部字段。
 
@@ -215,6 +239,7 @@ flowchart LR
 | S15 | 配樂準備與混音 | 原生 FFmpeg 音訊 | 顯式擷取/迴圈/淡化、獨立人聲/配樂、閃避 | `music prepare/mix` | 不作曲、不靜默裁人聲、不承諾接縫修復 |
 | S16 | GPU 相容服務 | 原生 NVIDIA 執行庫 | auto/cpu/cuda、視訊記憶體預檢、實際 provider/回退 | `gpu inspect; --device` | RTX 3060 實測，NVIDIA/Intel 依賴許可另列 |
 | S17 | 原生 Windows 擷取 | FFmpeg gdigrab / DirectShow | 明確來源、裝置 ID、有限時長、完整解碼與素材登記 | `capture devices/record` | 真實視窗 CPU/GPU 已驗；攝影機/麥克風/同步未驗 |
+| S18 | 圖文語義檢索 | 明確登記的原生 SigLIP2 worker | 既有 Torch/Transformers/模型；實際 GPU/CPU、來源/預覽/向量完整性 | `semantic adapter-register/index/search/verify` | 冷啟動與大庫效能未收口；分數不是機率 |
 
 **本機查詢與交付狀態：** 本輪 doctor 檢測到原生 Python 3.13.1、FFmpeg/ffprobe 8.1 和 Node；這不證明每個模型或瀏覽器適配器均已註冊。doctor 只查到系統存在 Docker/WSL 可執行路徑，沒有運行它們。本專案始終使用原生工具，不調度 Docker/WSL/虛擬環境。
 
@@ -376,7 +401,7 @@ project/
 | K05 | [`local-policy`](skills/agent-ffmpeg-local-editor/references/modules/local-policy/module.md) | 本地執行約束 | 工程引用 → 審計/結構化拒絕 | `policy audit` | 運行時禁止遠程引用；不推斷為 OS 沙箱。 |
 | K06 | [`rights-ledger`](skills/agent-ffmpeg-local-editor/references/modules/rights-ledger/module.md) | 素材與模型權利證據 | 來源/許可/本地證據 → 臺賬/影響/門禁 | `rights list/check/update/impact` | 分別處理母圖與 LUT 許可；不自動認定版權。 |
 | K07 | [`local-models`](skills/agent-ffmpeg-local-editor/references/modules/local-models/module.md) | 已有離線模型登記 | 原生環境 + 權重/雜湊/許可 → 適配器與推理產物 | `media adapter; asr adapter; ocr; face; tts` | 無權重下載；先核對能力/環境，再調用。 |
-| K08 | [`video-understand`](skills/agent-ffmpeg-local-editor/references/modules/video-understand/module.md) | 鏡頭/靜音與影片證據 | 本地影片/音頻 → 分析 JSON、影格、字幕候選 | `media understand/contact-sheet; subtitle transcribe` | 啟發式與模型語義能力分開說明。 |
+| K08 | [`video-understand`](skills/agent-ffmpeg-local-editor/references/modules/video-understand/module.md) | 鏡頭/靜音、圖文語義檢索與影片證據 | 本機影片/圖片/描述/參考圖 → 分析、預覽、來源時間與候選 | `media understand/contact-sheet; subtitle transcribe; semantic index/search` | [檢索說明](skills/agent-ffmpeg-local-editor/references/semantic-retrieval.md)；採樣點不定義片段長度，候選需複核。 |
 | K09 | [`template-library`](skills/agent-ffmpeg-local-editor/references/modules/template-library/module.md) | 模板與片段組復用 | 模板/變量/素材庫 → 可編輯變體與索引 | `template apply/batch; library; fragment` | 用戶自有素材，按資源許可復用。 |
 | K10 | [`long-to-short`](skills/agent-ffmpeg-local-editor/references/modules/long-to-short/module.md) | 長影片轉短片 | 本地課程/口播 + 核對文本 → 粗剪與短片工程 | `media highlights/smart-cut; timeline compose` | 候選段需復核，不聲稱全自動語義導演。 |
 | K11 | [`screen-demo`](skills/agent-ffmpeg-local-editor/references/modules/screen-demo/module.md) | 錄屏與錨點運鏡 | 錄屏 + 操作錨點 → 放大/回全景/字幕演示 | `timeline compose; ocr anchors; preview range` | OCR 需要已有模型，文本框不等於可點擊控件。 |
@@ -400,6 +425,14 @@ $agent-ffmpeg-local-editor 对实际输出、manifest 和 Scope 复核，分别�
 [當前完整 Skill 手冊](docs/product/SKILLS.zh-TW.md) · [客戶選型工作流](skills/agent-ffmpeg-local-editor/references/client-look-selection.md) · [註冊與本地安裝](docs/local/INSTALLATION.md)。Skill 是任務指導，不自帶額外模型/素材訂閱，也不自動連接廣告平臺。
 
 ## 完整案例、原輸入、實際輸出與 GIF
+
+### C14：實際檢索候選 → 可編輯片段 → 安裝版成片
+
+從凍結查詢的真實返回中，明確選擇貓、咖啡、太空人三個影片候選，保留原排名及來源時間；每段以明確規則指定 1 秒。安裝版 11 次 CLI 完成工程、字幕、渲染、質檢、工程包匯出/匯入及重渲染：3 秒、640×360、30fps/90 幀，往返解碼畫面相同。輸入為自然靜態圖片組成的序列，不能推論自然運動或廣告品質；音軌與人工視聽範圍另列。
+
+![Actual installed candidate-to-edit output](docs/assets/semantic-20261025-r1/demo-installed-r1-workflow/semantic-cut.gif)
+
+[Input MP4](docs/assets/semantic-20261025-r1/asset_v1.mp4) · [Output MP4](docs/assets/semantic-20261025-r1/demo-installed-r1-workflow/semantic-cut.mp4) · [Candidate/output board](docs/assets/semantic-20261025-r1/demo-installed-r1-workflow/candidate-to-output.png) · [Editable package](docs/assets/semantic-20261025-r1/demo-installed-r1-workflow/editable-project.aevpkg.zip) · [Full case](docs/product/CASES.md#c14-semantic-retrieval)
 
 <!-- community-cases -->
 
@@ -537,18 +570,22 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R42 | CLI 0.1.4 原生離線安裝與統一 Skill | 新本機套件、8 wheel、4 個既有模型包校驗，實際註冊入口核對；舊套件/公開附件保留 | [交付與摘要](docs/product/COMMUNITY_LOCAL_DELIVERY.md) · [入口記錄](docs/validation/evidence/implementation-20261025-r1/skill/verification.json)；2026-10-25，仍為同一主機，完整目標未完成 |
 | R43 | 目前目標差距再次複核 | 真實註冊入口 6 次唯讀調用通過；CLI 0.1.4，72 項能力聲明：20 已實現、44 有限制、7 需本地適配器、1 降級；38 組均有待關閉條件 | [最新差距表](docs/product/GOAL_GAPS_20261025.md) · [本次回應](docs/validation/evidence/goal-gaps-20261025-r2/inventory.json) · [證據複核](docs/validation/evidence/goal-gaps-20261025-r2/review.json)；2026-10-25，0 新渲染/推論/聽審；G26 向量檢索尚未交付，公開套件仍為 alpha.3 |
 | R44 | 最新目標差距與開發候選分層複核 | 真實註冊入口另 6 次唯讀調用通過，安裝版仍為 CLI 0.1.4 / 72 項聲明；開發候選 25 項契約測試、13 次準備命令另列，GPU 索引 2 次實際前向不冒充檢索品質 | [38 組差距](docs/product/GOAL_GAPS_20261025.md) · [新核對](docs/validation/evidence/goal-gaps-20261025-r3/inventory.json) · [證據邊界](docs/validation/evidence/goal-gaps-20261025-r3/review.json) · [開發索引](docs/validation/evidence/goal-gaps-20261025-r3/candidate-progress.json)；2026-10-25，無新增安裝版渲染/推論或人工聽審；公開套件仍為 alpha.3，G01–G38 均有未關閉條件 |
+| R45 | 真實圖文語義相關性 | 開發索引 2 次 CUDA 圖像前向；5 次查詢 CLI 共 11 次前向；CPU/GPU 常規 16 條 top-1/mean recall@3 均 1.0，6 時間點、參考圖、同圖改名與唯讀門禁通過 | [全部 20 條評分](docs/validation/evidence/semantic-20261025-r1/development-r1/queries/quality.json) · [失敗亦展示](docs/assets/semantic-20261025-r1/all-query-results.png)；2026-10-25，中文否定錯選、2 條庫外未拒識；非自然動作/未見訓練集驗收 |
+| R46 | 檢索契約、異常與回歸 | 開發 25 項與安裝版另 25 項契約測試；CLI 122 項、離線策略 34 項分別通過；8 次實際異常 CLI、存活 worker 取消約 0.21 秒並退出 | [本輪實測](docs/validation/离线语义检索实测_2026-10-25.md)；2026-10-25，範圍重疊不相加；取消僅驗啟動/完整性階段 |
+| R47 | CLI 0.1.5 固定安裝與單一 Skill | 新 8-wheel 包及全部產品 Python 原始碼位元核對；4 既有模型包重驗；真實註冊入口 9 次 CLI，包含實際 GPU 批量文字與 CPU 參考圖；r4 kit 獨立入口另驗 | [安裝摘要](docs/product/COMMUNITY_LOCAL_DELIVERY.md) · [入口實測](docs/validation/evidence/semantic-20261025-r1/skill-r1/verification.json)；2026-10-25，單台實體主機，不冒充公開新 Release |
+| R48 | 檢索候選的可編輯案例 | 開發版 11 次 CLI、安裝版另 11 次 CLI；3 秒/90 幀實際渲染、完整解碼、工程往返像素相同 | [實際 MP4/GIF/工程包](docs/product/CASES.md#c14-semantic-retrieval) · [安裝證據](docs/validation/evidence/semantic-20261025-r1/installed-r1/demo/verification.json)；2026-10-25，靜態圖片序列、明確選 1 秒，非自動事件邊界/自然動作或人工聽審 |
 
 ## 當前邊界與開發方向
 
 當前可交付的是有明確契約、離線可運行、可編輯、可復查的 Agent CLI 閉環。完整開源素材/模板生態、約定的 AI 特效/美顏/排版、完整色彩管線、指定草稿版本的真實轉換品質、廣泛自然視聽和長片資源性能仍需開發與驗收。消費級 GUI、賬號、云協作及任意私有版本無損轉換不屬於當前內核收口門檻。後續 Float32 轉場/運行時閉包候選 R113/R114 未隨本版提供。
 
-[2026-10-25 目前完整目標差距表](docs/product/GOAL_GAPS_20261025.md)依本機 CLI 0.1.4 更新 38 組差距，明確列出單一 Skill、359 項資源、GPU 配音/中英翻譯已交付，以及進階 AI、自然視聽、複雜組合、效能可靠性和新版公開套件仍待完成。優先處理真實素材品質、字詞對齊和音訊既有失敗、Agent 實際任務、長片資源與乾淨主機安裝；隨後擴充內容與範本及完整 AI 範圍。目前沒有足夠依據給出整體完成百分比。[2026-10-24 評估](docs/product/GOAL_GAPS_20261024.md)保留為 alpha.3 的歷史快照。
+[2026-10-25 目前完整目標差距表](docs/product/GOAL_GAPS_20261025.md)依本機 CLI 0.1.5 更新 38 組差距，明確列出單一 Skill、359 項資源、GPU 配音/中英翻譯已交付，以及進階 AI、自然視聽、複雜組合、效能可靠性和新版公開套件仍待完成。優先處理真實素材品質、字詞對齊和音訊既有失敗、Agent 實際任務、長片資源與乾淨主機安裝；隨後擴充內容與範本及完整 AI 範圍。目前沒有足夠依據給出整體完成百分比。[2026-10-24 評估](docs/product/GOAL_GAPS_20261024.md)保留為 alpha.3 的歷史快照。
 
-本次 R43 再次核對安裝版，確認聲道關係保護與原生擷取已交付；極短窗音高、精確對齊、攝影機/麥克風實際錄製和音畫同步仍待驗收。語義向量檢索僅有開發準備，未計作可用功能。500 套風格和 72 項能力聲明都不作為整體完成率。
+
 
 下一步以真實客戶素材與最小可復現工程收集缺口，逐項補齊、實測、發布新版本；不覆蓋既有發布包/摘要/標籤。只按實際成功產物更新核驗。
 
-**最新複核（R44，2026-10-25 04:38 台北）：** 目前可用的是 Agent 編輯 CLI 底座；完整剪映水準仍缺進階 AI、複雜組合與自然視聽驗收、內容範本生態、Agent 自主任務成功率和穩定交付。G26 候選已實作圖文索引/查詢 CLI，並在 RTX 3060 上為 10 個素材產生 15 條索引（14 張去重圖、2 次實際前向）；相關性、CPU/GPU 對照和安裝/Skill 交付尚未驗收。開發索引全階段約 306 秒，含完整性核驗、程序/模型載入及校驗，實際模型推論約 26 秒；不能據此宣稱即時檢索或跨命令模型重用。安裝版仍為 CLI 0.1.4，完整 38 組差距繼續開放，不給出未經建立的整體完成率。
+**最新交付（R45–R48，2026-10-25）：** 本機升級 CLI 0.1.5 / alpha.4-local.3；73 項能力聲明為 20 已實作、45 有限制、7 本機適配器、1 降級，不是完成率。G26 圖文檢索已完成實際 CPU/GPU 對照、固定安裝包與統一 Skill 調用、可編輯成片往返；否定/庫外拒識、自然動作/身份/音訊推薦、大庫與模型常駐仍缺。完整 38 組差距均保留未關閉條件；公開發行仍為 alpha.3 / CLI 0.1.2。
 
 ## 文件體系、來源與維護
 

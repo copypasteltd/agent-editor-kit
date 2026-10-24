@@ -1,0 +1,190 @@
+{
+  "status": "passed",
+  "checks": {
+    "frozen_truth_and_sources": true,
+    "real_cli_receipts_and_raw_streams": {
+      "development-r1/setup": 13,
+      "development-r1/index": 2,
+      "development-r1/queries": 5,
+      "development-controls-r1/controls": 8,
+      "installed-r1/setup": 13,
+      "installed-r1/index": 2,
+      "skill-r1": 9,
+      "demo-development-r1": 11,
+      "demo-installed-r1-workflow": 11
+    },
+    "newly_observed_stderr_digests": [
+      {
+        "path": "docs/validation/evidence/semantic-20261025-r1/demo-development-r1/01.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scope": "Current audit digest; original demonstration receipt pinned stdout only"
+      },
+      {
+        "path": "docs/validation/evidence/semantic-20261025-r1/demo-development-r1/02.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scope": "Current audit digest; original demonstration receipt pinned stdout only"
+      },
+      {
+        "path": "docs/validation/evidence/semantic-20261025-r1/demo-development-r1/03.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scope": "Current audit digest; original demonstration receipt pinned stdout only"
+      },
+      {
+        "path": "docs/validation/evidence/semantic-20261025-r1/demo-development-r1/04.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scope": "Current audit digest; original demonstration receipt pinned stdout only"
+      },
+      {
+        "path": "docs/validation/evidence/semantic-20261025-r1/demo-development-r1/05.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scope": "Current audit digest; original demonstration receipt pinned stdout only"
+      },
+      {
+        "path": "docs/validation/evidence/semantic-20261025-r1/demo-development-r1/06.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scope": "Current audit digest; original demonstration receipt pinned stdout only"
+      },
+      {
+        "path": "docs/validation/evidence/semantic-20261025-r1/demo-development-r1/07.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scope": "Current audit digest; original demonstration receipt pinned stdout only"
+      },
+      {
+        "path": "docs/validation/evidence/semantic-20261025-r1/demo-development-r1/08.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scope": "Current audit digest; original demonstration receipt pinned stdout only"
+      },
+      {
+        "path": "docs/validation/evidence/semantic-20261025-r1/demo-development-r1/09.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scope": "Current audit digest; original demonstration receipt pinned stdout only"
+      },
+      {
+        "path": "docs/validation/evidence/semantic-20261025-r1/demo-development-r1/10.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scope": "Current audit digest; original demonstration receipt pinned stdout only"
+      },
+      {
+        "path": "docs/validation/evidence/semantic-20261025-r1/demo-development-r1/11.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scope": "Current audit digest; original demonstration receipt pinned stdout only"
+      },
+      {
+        "path": "docs/validation/evidence/semantic-20261025-r1/demo-installed-r1-workflow/01.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scope": "Current audit digest; original demonstration receipt pinned stdout only"
+      },
+      {
+        "path": "docs/validation/evidence/semantic-20261025-r1/demo-installed-r1-workflow/02.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scope": "Current audit digest; original demonstration receipt pinned stdout only"
+      },
+      {
+        "path": "docs/validation/evidence/semantic-20261025-r1/demo-installed-r1-workflow/03.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scope": "Current audit digest; original demonstration receipt pinned stdout only"
+      },
+      {
+        "path": "docs/validation/evidence/semantic-20261025-r1/demo-installed-r1-workflow/04.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scope": "Current audit digest; original demonstration receipt pinned stdout only"
+      },
+      {
+        "path": "docs/validation/evidence/semantic-20261025-r1/demo-installed-r1-workflow/05.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scope": "Current audit digest; original demonstration receipt pinned stdout only"
+      },
+      {
+        "path": "docs/validation/evidence/semantic-20261025-r1/demo-installed-r1-workflow/06.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scope": "Current audit digest; original demonstration receipt pinned stdout only"
+      },
+      {
+        "path": "docs/validation/evidence/semantic-20261025-r1/demo-installed-r1-workflow/07.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scope": "Current audit digest; original demonstration receipt pinned stdout only"
+      },
+      {
+        "path": "docs/validation/evidence/semantic-20261025-r1/demo-installed-r1-workflow/08.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scope": "Current audit digest; original demonstration receipt pinned stdout only"
+      },
+      {
+        "path": "docs/validation/evidence/semantic-20261025-r1/demo-installed-r1-workflow/09.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scope": "Current audit digest; original demonstration receipt pinned stdout only"
+      },
+      {
+        "path": "docs/validation/evidence/semantic-20261025-r1/demo-installed-r1-workflow/10.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scope": "Current audit digest; original demonstration receipt pinned stdout only"
+      },
+      {
+        "path": "docs/validation/evidence/semantic-20261025-r1/demo-installed-r1-workflow/11.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scope": "Current audit digest; original demonstration receipt pinned stdout only"
+      }
+    ],
+    "regressions_frozen_and_separate": [
+      25,
+      25,
+      122,
+      34
+    ],
+    "all_20_queries_failures_retained": true,
+    "installed_python_files_match": 188,
+    "installed_pin_one_skill_17_modules_73_declarations": true,
+    "r4_kit_pinned_and_independently_exercised": true,
+    "historical_bundles_unchanged": true,
+    "media_hashes_roundtrip_silent_pcm_static_review": true,
+    "docs": {
+      "readmes": [
+        {
+          "path": "README.md",
+          "ids": {
+            "F": 50,
+            "S": 18,
+            "K": 17,
+            "R": 48
+          },
+          "historical_R01_R44_unchanged": true,
+          "sha256": "608f011e9c1979591dffa48d4d70893c05bbb641ea4f6c2dacab68a1f5d6b909"
+        },
+        {
+          "path": "README.en.md",
+          "ids": {
+            "F": 50,
+            "S": 18,
+            "K": 17,
+            "R": 48
+          },
+          "historical_R01_R44_unchanged": true,
+          "sha256": "2b04202ab478c6106f493ec9f877ec38122d8560ba05457a094b923ae79ce39a"
+        },
+        {
+          "path": "README.zh-TW.md",
+          "ids": {
+            "F": 50,
+            "S": 18,
+            "K": 17,
+            "R": 48
+          },
+          "historical_R01_R44_unchanged": true,
+          "sha256": "bb44464bf43cad1a335ba424f2b694cd4d2cefe7e249ab6397324852bd060d7c"
+        }
+      ],
+      "local_links": 1619,
+      "broken": [],
+      "powershell_blocks_identical": true,
+      "gap_groups": 38
+    },
+    "helper_syntax": 13,
+    "new_raw_files": {
+      "count": 287,
+      "bytes": 33782119,
+      "maximum_bytes": 11519282
+    }
+  },
+  "created_at_utc": "2026-10-24T21:46:21.889491+00:00",
+  "generator_sha256": "a7953e712a1a3054e394da93eb9461c7cb82ae301827be65cfd703bb1a935027"
+}

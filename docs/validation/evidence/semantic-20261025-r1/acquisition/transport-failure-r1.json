@@ -1,0 +1,25 @@
+{
+  "file": "tokenizer.model",
+  "expected_bytes": 4241003,
+  "sha256": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2",
+  "source_url": "https://modelscope.cn/api/v1/models/google/siglip2-base-patch16-224/repo?Revision=e8632ce825c01c31e138f83852c01b643941c2fe&FilePath=tokenizer.model",
+  "last_changed_revision": "153facb840ceec16916cc7ec0e3bf8757d95f7e3",
+  "attempts": [
+    {
+      "offset": 0,
+      "error": "ValueError('Incomplete pinned response')"
+    },
+    {
+      "offset": 132,
+      "error": "<HTTPError 416: 'Requested Range Not Satisfiable'>"
+    },
+    {
+      "offset": 132,
+      "error": "<HTTPError 416: 'Requested Range Not Satisfiable'>"
+    },
+    {
+      "offset": 132,
+      "error": "<HTTPError 416: 'Requested Range Not Satisfiable'>"
+    }
+  ]
+}

@@ -2,8 +2,8 @@
   "format": "agent-ffmpeg-local-skills-v2",
   "status": "reviewed",
   "registration_mode": "single",
-  "release": "v0.1.0-alpha.4-local.2",
-  "manifest_sha256": "sha256:fd418d94461b57423072fb730959e36cb39264fd48a96be26dc297fe52b59897",
+  "release": "v0.1.0-alpha.4-local.3",
+  "manifest_sha256": "sha256:29583211d5cf376f51c295b419ba7bdaaf9f46fa5314820fcc6e180f47a4f95f",
   "runtime_config": "local/agent-ffmpeg/runtime.json",
   "skill_count": 1,
   "module_count": 17,
@@ -12,8 +12,8 @@
   "skills": [
     {
       "name": "agent-ffmpeg-local-editor",
-      "purpose_zh": "唯一入口：17 项内部模块、GPU 配音/翻译、素材/配乐与已安装版交付",
-      "skill_md_sha256": "b2627a078343ed7cad0a4755f93e4d5a73e6ae19ab84febe3417d6d0540b44a5"
+      "purpose_zh": "唯一入口：17 项内部模块、离线图文检索、GPU 配音/翻译、素材/配乐与已安装版交付",
+      "skill_md_sha256": "fc1d7de980d08c9a8b619d2e5cbce11faf879c3762bc5f2d801b2e5f249ea93e"
     }
   ],
   "modules": [
@@ -434,8 +434,8 @@
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/modules/video-understand/module.md",
-      "bytes": 651,
-      "sha256": "7e7a280fa0ed0da0f9fc0bcb2aa20c4cdacb36e6694038b7503699632ca8bc5a"
+      "bytes": 1146,
+      "sha256": "bf3bc1cfc9162ec9e8df0c6b7dfb6a9ec98d23f8b3ebe8f5469735599955ce70"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/native-capture.md",
@@ -444,8 +444,13 @@
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
-      "bytes": 4622,
-      "sha256": "1f0b6a6b436b53e7baf64f87878416d689753df4afa2de6861daa1e21a3cf8af"
+      "bytes": 5141,
+      "sha256": "ed3cf5602ade6cd40aba957c03d47a45c87b1e129d7843a922fc39d7fb3a31ec"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/semantic-retrieval.md",
+      "bytes": 5031,
+      "sha256": "164919a96929f80069b389858072a3b8a85eb0d18b557e9baf097ef398f24f10"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/scripts/look_gallery.py",
@@ -460,12 +465,12 @@
     {
       "path": "skills/agent-ffmpeg-local-editor/scripts/run.py",
       "bytes": 2295,
-      "sha256": "ae6fc1efc0e1b14bbc7330abded8444d2d5795d43f6ee0381d5c871d75c11384"
+      "sha256": "6fd8e1e0da5ded93a095354e164f8dde73c57498717ed380e15fafda2a009920"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
-      "bytes": 6270,
-      "sha256": "b2627a078343ed7cad0a4755f93e4d5a73e6ae19ab84febe3417d6d0540b44a5"
+      "bytes": 6739,
+      "sha256": "fc1d7de980d08c9a8b619d2e5cbce11faf879c3762bc5f2d801b2e5f249ea93e"
     }
   ],
   "retired_skills": [
@@ -534,7 +539,7 @@
       "skill_md_sha256": "da31e25b3e641f80367075cdb4e72be99be2c89c332556d8ba58ec419fffd46b"
     }
   ],
-  "cli_version": "0.1.4",
+  "cli_version": "0.1.5",
   "material_count": 359,
   "named_voice_count": 103,
   "optional_model_pack_count": 4

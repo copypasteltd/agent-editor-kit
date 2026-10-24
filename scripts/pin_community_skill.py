@@ -38,7 +38,7 @@ def main():
     manifest.update(release=release, manifest_sha256=digest, cli_version=version,
                     material_count=359, named_voice_count=103, optional_model_pack_count=4)
     manifest['skills'][0]['skill_md_sha256'] = sha(entry / 'SKILL.md')
-    manifest['skills'][0]['purpose_zh'] = '唯一入口：17 项内部模块、GPU 配音/翻译、素材/配乐与已安装版交付'
+    manifest['skills'][0]['purpose_zh'] = '唯一入口：17 项内部模块、离线图文检索、GPU 配音/翻译、素材/配乐与已安装版交付'
     manifest['files'] = [dict(path=f.relative_to(ROOT).as_posix(), bytes=f.stat().st_size, sha256=sha(f))
                          for f in sorted(entry.rglob('*')) if f.is_file()]
     assert sum(Path(r['path']).name == 'SKILL.md' for r in manifest['files']) == 1

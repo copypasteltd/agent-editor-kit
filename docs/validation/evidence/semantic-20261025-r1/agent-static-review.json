@@ -1,0 +1,22 @@
+{
+  "reviewer": "agent-static-visual-inspection",
+  "files": [
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-installed-r1-workflow/candidate-to-output.png",
+      "sha256": "7c2521f28b5c7f249d69c4ec20d86d7e84b19c56853ff0b6abdd7fc76cb6dfde"
+    },
+    {
+      "path": "docs/assets/semantic-20261025-r1/all-query-results.png",
+      "sha256": "86c654e755c1e366b6966f31b37b9c863432d2543346da8e0ec78381660315ba"
+    }
+  ],
+  "findings": [
+    "All 20 queries and retained negation/OOD failures visible",
+    "Cat, coffee and astronaut candidates match the three edited still excerpts",
+    "Installed lower labels readable inside frame; no static clipping observed",
+    "Clock source is intrinsically blurred; matching it does not recover visible numbers"
+  ],
+  "human_continuous_playback": false,
+  "human_listening": false,
+  "natural_action_acceptance": false
+}

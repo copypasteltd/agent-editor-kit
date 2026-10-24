@@ -1,0 +1,327 @@
+{
+  "started_at_utc": "2026-10-24T21:33:18.322739+00:00",
+  "release": "v0.1.0-alpha.4-local.3",
+  "cli_version": "0.1.5",
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-installed-r1",
+  "registered_skills": [
+    "agent-ffmpeg-local-editor"
+  ],
+  "internal_modules": 17,
+  "source_fallback": false,
+  "native_windows": true,
+  "virtualization": false,
+  "truth_sha256": "72bad6009500eddc9e34e4ff55e968c8b2ae56344cf382df110ab04c78f4023e",
+  "human_viewing_accepted": false,
+  "human_listening_accepted": false,
+  "status": "passed-with-quality-limits",
+  "commands": 9,
+  "gates": {
+    "positive_top1": true,
+    "positive_recall_at_3": true,
+    "cpu_reference_image": true,
+    "project_and_rights_unchanged": true
+  },
+  "frozen_equal": true,
+  "positive_top1": 1.0,
+  "positive_mean_recall_at_3": 1.0,
+  "negation_successes": 1,
+  "out_of_domain_queries_with_candidates": 2,
+  "gpu_inference": {
+    "selection": {
+      "requested": "auto",
+      "selected": "cuda",
+      "fallback_reason": null,
+      "gpu": {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3060",
+        "driver": "595.95",
+        "total_mib": 12288,
+        "free_mib": 10393,
+        "compute_capability": "8.6"
+      },
+      "device_index": 0,
+      "minimum_free_mib": 3072,
+      "existing_gpu_processes_untouched": true
+    },
+    "attempts": [
+      {
+        "device": "cuda",
+        "status": "succeeded",
+        "response": {
+          "protocol": "agent-semantic-embedding-v1",
+          "status": "succeeded",
+          "network": "disabled",
+          "blocked_network_events": [],
+          "request_sha256": "sha256:686e67b3c3d209e604f24edd1f70acc45f44864a74a78fc33b8f4b9ec3217bb0",
+          "versions": {
+            "torch": "2.13.0+cu130",
+            "transformers": "5.14.1",
+            "numpy": "2.4.2",
+            "PIL": "12.1.0",
+            "tokenizers": "0.22.2",
+            "safetensors": "0.8.0",
+            "siglip": "bundled-with-transformers",
+            "python": "3.13.14"
+          },
+          "module_paths": {
+            "torch": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\__init__.py",
+            "transformers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\__init__.py",
+            "numpy": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.3\\final\\installed\\site\\numpy\\__init__.py",
+            "PIL": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.3\\final\\installed\\site\\PIL\\__init__.py",
+            "tokenizers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\tokenizers\\__init__.py",
+            "safetensors": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\safetensors\\__init__.py",
+            "siglip": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\models\\siglip\\modeling_siglip.py"
+          },
+          "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-installed-r1\\cache\\semantic-jobs\\job_20261024213446_c0c235fe\\inference-cuda\\features.f32",
+          "output_sha256": "sha256:f73e13717927523d2375c93c95d067a6011a159338c8a1c5bdced41ab2318a6d",
+          "rows": 20,
+          "dimension": 768,
+          "dtype": "float32-little-endian",
+          "item_ids": [
+            "q01",
+            "q02",
+            "q03",
+            "q04",
+            "q05",
+            "q06",
+            "q07",
+            "q08",
+            "q09",
+            "q10",
+            "q11",
+            "q12",
+            "q13",
+            "q14",
+            "q15",
+            "q16",
+            "q17",
+            "q18",
+            "q19",
+            "q20"
+          ],
+          "task": "text",
+          "adapter_sha256": "sha256:413907e7c4df66c6c98cdbecc5482b26f9a26e4c5d23764be650780b81c36f5c",
+          "device": "cuda",
+          "device_index": 0,
+          "actual_device": "NVIDIA GeForce RTX 3060",
+          "model_dtype": "torch.bfloat16",
+          "load_seconds": 43.062605,
+          "inference_seconds": 0.234578,
+          "peak_cuda_allocated_bytes": 785155072,
+          "peak_cuda_reserved_bytes": 803209216,
+          "model_loads": 1,
+          "model_forward_calls": 3,
+          "batch_size": 8,
+          "image_sizes": [],
+          "model_loading_keys_verified": true,
+          "text_normalization": "lowercase; max_length=64; no truncation",
+          "model_reuse_scope": "complete current batch only; no persistent model service",
+          "elapsed_seconds": 131.101995
+        }
+      }
+    ],
+    "job": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-installed-r1\\cache\\semantic-jobs\\job_20261024213446_c0c235fe",
+    "response": {
+      "protocol": "agent-semantic-embedding-v1",
+      "status": "succeeded",
+      "network": "disabled",
+      "blocked_network_events": [],
+      "request_sha256": "sha256:686e67b3c3d209e604f24edd1f70acc45f44864a74a78fc33b8f4b9ec3217bb0",
+      "versions": {
+        "torch": "2.13.0+cu130",
+        "transformers": "5.14.1",
+        "numpy": "2.4.2",
+        "PIL": "12.1.0",
+        "tokenizers": "0.22.2",
+        "safetensors": "0.8.0",
+        "siglip": "bundled-with-transformers",
+        "python": "3.13.14"
+      },
+      "module_paths": {
+        "torch": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\__init__.py",
+        "transformers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\__init__.py",
+        "numpy": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.3\\final\\installed\\site\\numpy\\__init__.py",
+        "PIL": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.3\\final\\installed\\site\\PIL\\__init__.py",
+        "tokenizers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\tokenizers\\__init__.py",
+        "safetensors": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\safetensors\\__init__.py",
+        "siglip": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\models\\siglip\\modeling_siglip.py"
+      },
+      "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-installed-r1\\cache\\semantic-jobs\\job_20261024213446_c0c235fe\\inference-cuda\\features.f32",
+      "output_sha256": "sha256:f73e13717927523d2375c93c95d067a6011a159338c8a1c5bdced41ab2318a6d",
+      "rows": 20,
+      "dimension": 768,
+      "dtype": "float32-little-endian",
+      "item_ids": [
+        "q01",
+        "q02",
+        "q03",
+        "q04",
+        "q05",
+        "q06",
+        "q07",
+        "q08",
+        "q09",
+        "q10",
+        "q11",
+        "q12",
+        "q13",
+        "q14",
+        "q15",
+        "q16",
+        "q17",
+        "q18",
+        "q19",
+        "q20"
+      ],
+      "task": "text",
+      "adapter_sha256": "sha256:413907e7c4df66c6c98cdbecc5482b26f9a26e4c5d23764be650780b81c36f5c",
+      "device": "cuda",
+      "device_index": 0,
+      "actual_device": "NVIDIA GeForce RTX 3060",
+      "model_dtype": "torch.bfloat16",
+      "load_seconds": 43.062605,
+      "inference_seconds": 0.234578,
+      "peak_cuda_allocated_bytes": 785155072,
+      "peak_cuda_reserved_bytes": 803209216,
+      "model_loads": 1,
+      "model_forward_calls": 3,
+      "batch_size": 8,
+      "image_sizes": [],
+      "model_loading_keys_verified": true,
+      "text_normalization": "lowercase; max_length=64; no truncation",
+      "model_reuse_scope": "complete current batch only; no persistent model service",
+      "elapsed_seconds": 131.101995
+    }
+  },
+  "cpu_reference_inference": {
+    "selection": {
+      "requested": "cpu",
+      "selected": "cpu",
+      "fallback_reason": null
+    },
+    "attempts": [
+      {
+        "device": "cpu",
+        "status": "succeeded",
+        "response": {
+          "protocol": "agent-semantic-embedding-v1",
+          "status": "succeeded",
+          "network": "disabled",
+          "blocked_network_events": [],
+          "request_sha256": "sha256:cc6cd716356b51955ff030dbcddd2bb380841613397dd51524f952655d86d315",
+          "versions": {
+            "torch": "2.13.0+cu130",
+            "transformers": "5.14.1",
+            "numpy": "2.4.2",
+            "PIL": "12.1.0",
+            "tokenizers": "0.22.2",
+            "safetensors": "0.8.0",
+            "siglip": "bundled-with-transformers",
+            "python": "3.13.14"
+          },
+          "module_paths": {
+            "torch": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\__init__.py",
+            "transformers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\__init__.py",
+            "numpy": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.3\\final\\installed\\site\\numpy\\__init__.py",
+            "PIL": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.3\\final\\installed\\site\\PIL\\__init__.py",
+            "tokenizers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\tokenizers\\__init__.py",
+            "safetensors": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\safetensors\\__init__.py",
+            "siglip": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\models\\siglip\\modeling_siglip.py"
+          },
+          "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-installed-r1\\cache\\semantic-jobs\\job_20261024213725_45528cfa\\inference-cpu\\features.f32",
+          "output_sha256": "sha256:fd31e0a8b2f56ef7c0c4979ee4bed0e6552f9b92643374c433a7b50c51686f83",
+          "rows": 1,
+          "dimension": 768,
+          "dtype": "float32-little-endian",
+          "item_ids": [
+            "reference"
+          ],
+          "task": "image",
+          "adapter_sha256": "sha256:413907e7c4df66c6c98cdbecc5482b26f9a26e4c5d23764be650780b81c36f5c",
+          "device": "cpu",
+          "device_index": 0,
+          "actual_device": "cpu",
+          "model_dtype": "torch.float32",
+          "load_seconds": 0.708733,
+          "inference_seconds": 1.940526,
+          "peak_cuda_allocated_bytes": null,
+          "peak_cuda_reserved_bytes": null,
+          "model_loads": 1,
+          "model_forward_calls": 1,
+          "batch_size": 8,
+          "image_sizes": [
+            [
+              361,
+              240
+            ]
+          ],
+          "model_loading_keys_verified": true,
+          "text_normalization": "lowercase; max_length=64; no truncation",
+          "model_reuse_scope": "complete current batch only; no persistent model service",
+          "elapsed_seconds": 69.356406
+        }
+      }
+    ],
+    "job": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-installed-r1\\cache\\semantic-jobs\\job_20261024213725_45528cfa",
+    "response": {
+      "protocol": "agent-semantic-embedding-v1",
+      "status": "succeeded",
+      "network": "disabled",
+      "blocked_network_events": [],
+      "request_sha256": "sha256:cc6cd716356b51955ff030dbcddd2bb380841613397dd51524f952655d86d315",
+      "versions": {
+        "torch": "2.13.0+cu130",
+        "transformers": "5.14.1",
+        "numpy": "2.4.2",
+        "PIL": "12.1.0",
+        "tokenizers": "0.22.2",
+        "safetensors": "0.8.0",
+        "siglip": "bundled-with-transformers",
+        "python": "3.13.14"
+      },
+      "module_paths": {
+        "torch": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\__init__.py",
+        "transformers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\__init__.py",
+        "numpy": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.3\\final\\installed\\site\\numpy\\__init__.py",
+        "PIL": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.3\\final\\installed\\site\\PIL\\__init__.py",
+        "tokenizers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\tokenizers\\__init__.py",
+        "safetensors": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\safetensors\\__init__.py",
+        "siglip": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\models\\siglip\\modeling_siglip.py"
+      },
+      "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-installed-r1\\cache\\semantic-jobs\\job_20261024213725_45528cfa\\inference-cpu\\features.f32",
+      "output_sha256": "sha256:fd31e0a8b2f56ef7c0c4979ee4bed0e6552f9b92643374c433a7b50c51686f83",
+      "rows": 1,
+      "dimension": 768,
+      "dtype": "float32-little-endian",
+      "item_ids": [
+        "reference"
+      ],
+      "task": "image",
+      "adapter_sha256": "sha256:413907e7c4df66c6c98cdbecc5482b26f9a26e4c5d23764be650780b81c36f5c",
+      "device": "cpu",
+      "device_index": 0,
+      "actual_device": "cpu",
+      "model_dtype": "torch.float32",
+      "load_seconds": 0.708733,
+      "inference_seconds": 1.940526,
+      "peak_cuda_allocated_bytes": null,
+      "peak_cuda_reserved_bytes": null,
+      "model_loads": 1,
+      "model_forward_calls": 1,
+      "batch_size": 8,
+      "image_sizes": [
+        [
+          361,
+          240
+        ]
+      ],
+      "model_loading_keys_verified": true,
+      "text_normalization": "lowercase; max_length=64; no truncation",
+      "model_reuse_scope": "complete current batch only; no persistent model service",
+      "elapsed_seconds": 69.356406
+    }
+  },
+  "actual_demo_query_response": "08.stdout.json",
+  "generator_sha256": "b0420a1c8779e92896a6afbc82ef466a017622b48b63b0e859818909fee2f526",
+  "finished_at_utc": "2026-10-24T21:38:36.074343+00:00"
+}

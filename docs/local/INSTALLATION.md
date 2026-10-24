@@ -2,13 +2,13 @@
 
 <!-- community-current -->
 
-当前本机已更新到 **CLI 0.1.3 / GPU 配音与翻译 / 359 项内置资源 / 单一 Skill**。以下原安装/差距记录按其原版本保留。 [新增完整流程](../product/COMMUNITY_MATERIALS.md) · [本地离线交付](../product/COMMUNITY_LOCAL_DELIVERY.md) · [本轮验收与剩余差距](../product/COMMUNITY_ACCEPTANCE.md)
+当前本机已更新到 **CLI 0.1.5 / alpha.4-local.3 / 离线图文检索 / GPU 配音与翻译 / 359 项资源 / 单一 Skill**。以下安装记录按其历史版本保留。 [当前离线交付与摘要](../product/COMMUNITY_LOCAL_DELIVERY.md) · [检索使用流程](../product/SEMANTIC_RETRIEVAL.md) · [当前 38 组差距](../product/GOAL_GAPS_20261025.md)
 
 <!-- /community-current -->
 
 **当前注册方式：1 个 `$agent-ffmpeg-local-editor` 入口，17 项内部模块。** 本机已从原 17 个入口迁移；[统一 kit、新目录安装与迁移说明](../skills/UNIFIED_SKILL.md)。新注册回执见[实际核验](../validation/evidence/unified-skill-20261024-r1/verification.json)。下方保留原 alpha.3 内核安装和当时 17 个入口的历史核验，不代表当前仍注册 17 个 Skill。
 
-当前安装：**v0.1.0-alpha.3 / CLI 0.1.2 / catalog 2.0.0 / 500 looks**。日期：2026-10-24。
+以下历史安装：**v0.1.0-alpha.3 / CLI 0.1.2 / catalog 2.0.0 / 500 looks**。日期：2026-10-24。
 
 已从校验后的分卷合成 ZIP，在 E 盘离线安装并激活，17 个 `$agent-ffmpeg-local-` Skill 已绑定新 manifest；保留旧 alpha.1 / alpha.2 安装和不可变包。
 Native Windows installation, no container/WSL/virtual environment or global site-packages modification. Existing CPython 3.13 and FFmpeg/ffprobe required.

@@ -1,0 +1,117 @@
+[
+  {
+    "argv": [
+      "ffmpeg",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-demo-development-r1\\project\\renders\\semantic-cut.mp4",
+      "-map",
+      "0:v:0",
+      "-f",
+      "framemd5",
+      "-"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "ffmpeg",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-demo-development-r1\\restored\\renders\\restored.mp4",
+      "-map",
+      "0:v:0",
+      "-f",
+      "framemd5",
+      "-"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "ffprobe",
+      "-v",
+      "error",
+      "-count_frames",
+      "-show_streams",
+      "-show_format",
+      "-of",
+      "json",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-demo-development-r1\\project\\renders\\semantic-cut.mp4"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "ffmpeg",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-demo-development-r1\\project\\renders\\semantic-cut.mp4",
+      "-filter_complex",
+      "[0:v]fps=8,scale=480:-1:flags=lanczos,split[a][b];[a]palettegen[p];[b][p]paletteuse=dither=sierra2_4a",
+      "-an",
+      "-loop",
+      "0",
+      "-n",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\semantic-20261025-r1\\demo-development-r1\\semantic-cut.gif"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "ffmpeg",
+      "-nostdin",
+      "-v",
+      "error",
+      "-ss",
+      "0.5",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-demo-development-r1\\project\\renders\\semantic-cut.mp4",
+      "-frames:v",
+      "1",
+      "-n",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\semantic-20261025-r1\\demo-development-r1\\output-1.png"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "ffmpeg",
+      "-nostdin",
+      "-v",
+      "error",
+      "-ss",
+      "1.5",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-demo-development-r1\\project\\renders\\semantic-cut.mp4",
+      "-frames:v",
+      "1",
+      "-n",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\semantic-20261025-r1\\demo-development-r1\\output-2.png"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "ffmpeg",
+      "-nostdin",
+      "-v",
+      "error",
+      "-ss",
+      "2.5",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-demo-development-r1\\project\\renders\\semantic-cut.mp4",
+      "-frames:v",
+      "1",
+      "-n",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\semantic-20261025-r1\\demo-development-r1\\output-3.png"
+    ],
+    "exit_code": 0
+  }
+]

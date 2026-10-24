@@ -1,0 +1,26 @@
+{
+  "phase": "queries",
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-development-r1",
+  "development_source_only": true,
+  "installed_release_tested": false,
+  "truth_sha256": "72bad6009500eddc9e34e4ff55e968c8b2ae56344cf382df110ab04c78f4023e",
+  "started_at_utc": "2026-10-24T20:52:31.395977+00:00",
+  "quality_gates": {
+    "gpu_positive_top1": true,
+    "gpu_positive_recall_at_3": true,
+    "cpu_positive_top1": true,
+    "cpu_positive_recall_at_3": true,
+    "video_timestamp": true,
+    "image_query": true,
+    "renamed_duplicate": true,
+    "project_unchanged": true
+  },
+  "quality_all_gates_passed": true,
+  "status": "passed",
+  "commands": 5,
+  "frozen_equal": true,
+  "finished_at_utc": "2026-10-24T21:07:17.176134+00:00",
+  "generator_sha256": "3493182ae38b3851a6f20409e3ea8ed8e45a98a085614acab6872f00522eb27e",
+  "human_viewing_accepted": false,
+  "human_listening_accepted": false
+}

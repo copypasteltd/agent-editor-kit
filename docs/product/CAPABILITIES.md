@@ -2,7 +2,7 @@
 
 <!-- community-current -->
 
-**当前本机扩展：CLI 0.1.3。** GPU 配音/翻译、359 项内置资源与离线模型包已安装实测；以下 alpha.3 内容保留为历史 CLI 0.1.2 基线。 [Details](COMMUNITY_MATERIALS.md) · [Local delivery](COMMUNITY_LOCAL_DELIVERY.md) · [Current installed capabilities](community-capabilities.json)
+**Current local / 当前本机 / 目前本機：CLI 0.1.5 / alpha.4-local.3。** Offline visual semantic retrieval, GPU voice/translation, 359 resources, native capture and one Skill / 17 modules. Public alpha.3 stays CLI 0.1.2. [Installation](COMMUNITY_LOCAL_DELIVERY.md) · [Semantic workflow](SEMANTIC_RETRIEVAL.md) · [Current declarations](semantic-capabilities-cli-0.1.5.json) · [All 38 gaps](GOAL_GAPS_20261025.md).
 
 <!-- /community-current -->
 
@@ -3724,3 +3724,10 @@
   ]
 }
 ```
+
+
+## CLI 0.1.5 / F50 / S18 / K08: visual semantic retrieval
+
+[Complete workflow / 完整流程](SEMANTIC_RETRIEVAL.md) · [Skill reference](../../skills/agent-ffmpeg-local-editor/references/semantic-retrieval.md) · [Actual output](CASES.md#c14-semantic-retrieval).
+
+Explicit local SigLIP2 image/video-sample embeddings; Chinese/English/reference-image search; native PTS, previews, editable source points, integrity and auto/cpu/cuda. 16 positive queries pass on this small familiar set; Chinese negation and both open-set queries fail expected selection/rejection. No natural-action, cross-shot identity, audio matching or large-library acceptance. One sampled point does not define clip duration.

@@ -1,0 +1,30 @@
+test_cancelled_index_keeps_project_and_never_embeds (test_semantic.SemanticIndexIntegrityTests.test_cancelled_index_keeps_project_and_never_embeds) ... ok
+test_cli_requires_explicit_source_and_query_choices (test_semantic.SemanticIndexIntegrityTests.test_cli_requires_explicit_source_and_query_choices) ... ok
+test_dry_run_does_not_create_outputs_or_load_model (test_semantic.SemanticIndexIntegrityTests.test_dry_run_does_not_create_outputs_or_load_model) ... ok
+test_duplicate_index_does_not_overwrite_existing_outputs (test_semantic.SemanticIndexIntegrityTests.test_duplicate_index_does_not_overwrite_existing_outputs) ... ok
+test_index_failure_removes_unregistered_derivatives (test_semantic.SemanticIndexIntegrityTests.test_index_failure_removes_unregistered_derivatives) ... ok
+test_ingested_copy_is_independent_of_later_external_original_edits (test_semantic.SemanticIndexIntegrityTests.test_ingested_copy_is_independent_of_later_external_original_edits) ... ok
+test_manifest_corruption_is_rejected (test_semantic.SemanticIndexIntegrityTests.test_manifest_corruption_is_rejected) ... ok
+test_preview_corruption_is_rejected (test_semantic.SemanticIndexIntegrityTests.test_preview_corruption_is_rejected) ... ok
+test_registered_index_is_verified_and_queries_preserve_project_and_rights (test_semantic.SemanticIndexIntegrityTests.test_registered_index_is_verified_and_queries_preserve_project_and_rights) ... ok
+test_source_corruption_is_rejected (test_semantic.SemanticIndexIntegrityTests.test_source_corruption_is_rejected) ... ok
+test_stale_adapter_is_rejected (test_semantic.SemanticIndexIntegrityTests.test_stale_adapter_is_rejected) ... ok
+test_vector_corruption_is_rejected (test_semantic.SemanticIndexIntegrityTests.test_vector_corruption_is_rejected) ... ok
+test_asset_dedup_kind_threshold_and_deterministic_ties (test_semantic.SemanticMathTests.test_asset_dedup_kind_threshold_and_deterministic_ties) ... ok
+test_auto_cuda_failure_is_preserved_and_explicit_cpu_retry_is_reported (test_semantic.SemanticMathTests.test_auto_cuda_failure_is_preserved_and_explicit_cpu_retry_is_reported) ... ok
+test_cosine_has_negative_scores_and_is_not_probability (test_semantic.SemanticMathTests.test_cosine_has_negative_scores_and_is_not_probability) ... ok
+test_integrity_failure_never_retries_cpu (test_semantic.SemanticMathTests.test_integrity_failure_never_retries_cpu) ... ok
+test_invalid_rank_controls_refuse (test_semantic.SemanticMathTests.test_invalid_rank_controls_refuse) ... ok
+test_late_video_start_excludes_audio_only_prefix (test_semantic.SemanticMathTests.test_late_video_start_excludes_audio_only_prefix) ... ok
+test_query_answers_extra_fields_duplicates_and_empty_text_are_rejected (test_semantic.SemanticMathTests.test_query_answers_extra_fields_duplicates_and_empty_text_are_rejected) ... ok
+test_sampling_budget_never_silently_truncates (test_semantic.SemanticMathTests.test_sampling_budget_never_silently_truncates) ... ok
+test_strict_json_and_local_input_boundaries (test_semantic.SemanticMathTests.test_strict_json_and_local_input_boundaries) ... ok
+test_unit_vector_validation_rejects_nonfinite_zero_wrong_shape_and_norm (test_semantic.SemanticMathTests.test_unit_vector_validation_rejects_nonfinite_zero_wrong_shape_and_norm) ... ok
+test_unknown_last_duration_is_an_error (test_semantic.SemanticMathTests.test_unknown_last_duration_is_an_error) ... ok
+test_vfr_nonzero_container_origin_and_held_frame_bins (test_semantic.SemanticMathTests.test_vfr_nonzero_container_origin_and_held_frame_bins) ... ok
+test_real_cfr_vfr_and_nonzero_pts_match_decoded_frames (test_semantic.SemanticNativeClockTests.test_real_cfr_vfr_and_nonzero_pts_match_decoded_frames) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 7.588s
+
+OK

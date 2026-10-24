@@ -1,0 +1,183 @@
+[
+  {
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.545754,
+    "stdout_sha256": "46aed75bf80305fc0b9a2bf7cecacbf62e73c3af3dc3fee16fbc5b9124d3c04c",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "response_ok": true,
+    "response_status": "succeeded"
+  },
+  {
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "doctor"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.826588,
+    "stdout_sha256": "ad8291d179e9eecff8da5969ca991c437596777dbe5902b65c6a6cc6d2025c41",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "response_ok": true,
+    "response_status": "succeeded"
+  },
+  {
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "capabilities"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.257105,
+    "stdout_sha256": "cca1f94016578b9ec03e0d66803f461865a55bddfbf30d67e0a2fb2d69b69d64",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "response_ok": true,
+    "response_status": "succeeded"
+  },
+  {
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "schema",
+      "show"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.240591,
+    "stdout_sha256": "42c85f0b4b48da70676b632017c5b112503d0338d2008856a1cb4f7c8374d758",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "response_ok": true,
+    "response_status": "succeeded"
+  },
+  {
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "gpu",
+      "inspect"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.32555,
+    "stdout_sha256": "915625c165a80c64ac5df80c663b410551466b3d60af4f03cee510d2920f0c74",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "response_ok": true,
+    "response_status": "succeeded"
+  },
+  {
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "model-pack",
+      "list"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.028604,
+    "stdout_sha256": "a18ccb03d92d655926d0371fd7d472d3657f8c96ec4048e6a14a63c2d65dba9c",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "response_ok": true,
+    "response_status": "succeeded"
+  },
+  {
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "semantic",
+      "index-list",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-installed-r1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.192692,
+    "stdout_sha256": "d3fdf77e75e744b1dfb660b861f0841e67ecc141c2c19eb88edabc5ebbd99b3e",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "response_ok": true,
+    "response_status": "succeeded"
+  },
+  {
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "semantic",
+      "search",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-installed-r1",
+      "--index-id",
+      "natural-gpu",
+      "--queries-file",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\semantic-20261025-r1\\skill-r1\\queries.json",
+      "--limit",
+      "10",
+      "--device",
+      "auto"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 203.988257,
+    "stdout_sha256": "ab261da1c1f6da01b58905d0a99356cff3913193a8982a86da3f6ccfba587c40",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "response_ok": true,
+    "response_status": "succeeded"
+  },
+  {
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "semantic",
+      "search",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-installed-r1",
+      "--index-id",
+      "natural-gpu",
+      "--image",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\semantic-20261025-r1\\reference-crop.png",
+      "--kind",
+      "image",
+      "--device",
+      "cpu"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 97.082899,
+    "stdout_sha256": "9842e02af0cfafd4d3f451faf021dec937dbd6a5f02336cfff167891eaba201f",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "response_ok": true,
+    "response_status": "succeeded"
+  }
+]

@@ -1,0 +1,12 @@
+{"call": 1, "command": "project.init", "status": "succeeded"}
+{"call": 2, "command": "media.ingest", "status": "succeeded"}
+{"call": 3, "command": "materials.ingest", "status": "succeeded"}
+{"call": 4, "command": "timeline.compose", "status": "succeeded"}
+{"call": 5, "command": "validate", "status": "succeeded"}
+{"call": 6, "command": "render", "status": "succeeded"}
+{"call": 7, "command": "quality.check", "status": "succeeded"}
+{"call": 8, "command": "convert.export", "status": "succeeded"}
+{"call": 9, "command": "convert.import", "status": "succeeded"}
+{"call": 10, "command": "validate", "status": "succeeded"}
+{"call": 11, "command": "render", "status": "succeeded"}
+{"status": "passed-with-review-limits", "commands": 11, "frames": 90}

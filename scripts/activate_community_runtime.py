@@ -35,6 +35,7 @@ def main():
     parser.add_argument('--packs', type=Path, required=True)
     parser.add_argument('--voice-cuda-lib', type=Path)
     parser.add_argument('--translation-cuda-lib', type=Path)
+    parser.add_argument('--semantic-config', type=Path, help='existing local semantic-model profile; preserve a prior profile when omitted')
     args = parser.parse_args()
     if sys.platform != 'win32' or sys.version_info[:2] != (3, 13) or sys.prefix != sys.base_prefix or platform.machine().lower() not in {'amd64', 'x86_64'}:
         raise ValueError('Use native Windows CPython 3.13 x64')
@@ -78,6 +79,20 @@ def main():
             config[task]['cuda_library_directory'] = str(library)
     directory = ROOT / 'local/agent-ffmpeg'
     runtime_path, community_path = directory / 'runtime.json', directory / 'community-runtime.json'
+    semantic_config = args.semantic_config
+    if semantic_config is None and runtime_path.exists():
+        previous_runtime = json.loads(runtime_path.read_bytes())
+        if previous_runtime.get('semantic_config'):
+            semantic_config = Path(previous_runtime['semantic_config'])
+    if semantic_config is not None:
+        semantic_config = semantic_config.resolve(strict=True)
+        profile = json.loads(semantic_config.read_bytes())
+        if profile.get('format') != 'agent-local-semantic-runtime-v1':
+            raise ValueError('Unsupported semantic runtime profile; previous configuration is preserved')
+        for key in ('python_executable', 'model_path', 'evidence'):
+            local = Path(profile[key])
+            if not local.is_absolute() or str(local).startswith('\\\\') or not local.exists():
+                raise ValueError('Semantic profile requires existing absolute local paths')
     for path in (runtime_path, community_path):
         if path.exists():
             (evidence / ('previous-' + path.name)).write_bytes(path.read_bytes())
@@ -85,10 +100,13 @@ def main():
     runtime = dict(release=manifest['release'], python=sys.executable, installed_directory=str(installed),
                    manifest_sha256=manifest['manifest_sha256'], launcher_sha256=sha(installed / 'run.py'),
                    native_only=True, community_config=str(community_path))
+    if semantic_config is not None:
+        runtime['semantic_config'] = str(semantic_config)
     write_json(runtime_path, runtime)
     report = dict(status='configured', release=runtime['release'], installed=str(installed),
                   community_config=str(community_path), verified_packs=verified, previous_config_preserved=True,
                   native_windows=True, network=False, virtual_environment=False, evidence=str(evidence))
+    report['semantic_config'] = str(semantic_config) if semantic_config else None
     write_json(evidence / 'verification.json', report)
     print(json.dumps(report, ensure_ascii=False), flush=True)
 

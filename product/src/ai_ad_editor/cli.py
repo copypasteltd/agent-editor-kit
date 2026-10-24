@@ -1233,6 +1233,8 @@ def build_parser() -> argparse.ArgumentParser:
     add_community_parser(subs, _leaf_common)
     from .capture import add_parser as add_capture_parser
     add_capture_parser(subs, _leaf_common)
+    from .semantic_cli import add_parser as add_semantic_parser
+    add_semantic_parser(subs, _leaf_common)
     return parser
 
 
@@ -7033,6 +7035,7 @@ def command_diagnostics(args):
 
 
 _READ_ONLY_PROJECT_COMMANDS = {
+    *(('semantic', action) for action in ('adapter-list','adapter-inspect','index-list','verify','search')),
     ('surface','inspect'),
     ('diagnostics', 'list'), ('diagnostics', 'show'), ('diagnostics', 'export'),
     ("project", "inspect"),
@@ -7196,6 +7199,8 @@ from .community_cli import COMMAND_KEYS as COMMUNITY_COMMAND_KEYS, command as co
 COMMANDS.update({key: (lambda args: community_command(args, _envelope)) for key in COMMUNITY_COMMAND_KEYS})
 from .capture import command as capture_command
 COMMANDS.update({("capture", action): (lambda args: capture_command(args, _envelope)) for action in ("devices", "record")})
+from .semantic_cli import ACTIONS as SEMANTIC_ACTIONS, command as semantic_command
+COMMANDS.update({('semantic', action): (lambda args: semantic_command(args, _envelope)) for action in SEMANTIC_ACTIONS})
 
 
 def main(argv: list[str] | None = None) -> int:

@@ -1,0 +1,115 @@
+{
+  "repository": "google/siglip2-base-patch16-224",
+  "revision": "e8632ce825c01c31e138f83852c01b643941c2fe",
+  "metadata_sha256": "2881b7ca04c1975eaf5869d416fa4f69b539cdaf23336d2398aee676eedf5701",
+  "source": "Google organization on ModelScope",
+  "development_network": true,
+  "runtime_downloads": false,
+  "weights_executed": false,
+  "files": [
+    {
+      "file": ".gitattributes",
+      "expected_bytes": 2127,
+      "sha256": "088e25d6bceaa8943f4f292006210358292349cc36e7578f80c62fce75535f46",
+      "source_url": "https://modelscope.cn/api/v1/models/google/siglip2-base-patch16-224/repo?Revision=e8632ce825c01c31e138f83852c01b643941c2fe&FilePath=.gitattributes",
+      "last_changed_revision": "e8632ce825c01c31e138f83852c01b643941c2fe",
+      "attempts": [],
+      "status": "verified"
+    },
+    {
+      "file": "README.md",
+      "expected_bytes": 3375,
+      "sha256": "39ac3705d62af9ffa1a14675b8ccb220a75f2d81acd530e564a3b1e3dfe418d8",
+      "source_url": "https://modelscope.cn/api/v1/models/google/siglip2-base-patch16-224/repo?Revision=e8632ce825c01c31e138f83852c01b643941c2fe&FilePath=README.md",
+      "last_changed_revision": "e8632ce825c01c31e138f83852c01b643941c2fe",
+      "attempts": [],
+      "status": "verified"
+    },
+    {
+      "file": "config.json",
+      "expected_bytes": 253,
+      "sha256": "fe8b5fe6d5734360678fd71c11c21e1ea3364bd8598d34295d9206335973ffd7",
+      "source_url": "https://modelscope.cn/api/v1/models/google/siglip2-base-patch16-224/repo?Revision=e8632ce825c01c31e138f83852c01b643941c2fe&FilePath=config.json",
+      "last_changed_revision": "e8632ce825c01c31e138f83852c01b643941c2fe",
+      "attempts": [],
+      "status": "verified"
+    },
+    {
+      "file": "configuration.json",
+      "expected_bytes": 88,
+      "sha256": "3c27023c83c97b0324f731af506213972ce59102c13e38bc67c15fa22c8d1769",
+      "source_url": "https://modelscope.cn/api/v1/models/google/siglip2-base-patch16-224/repo?Revision=e8632ce825c01c31e138f83852c01b643941c2fe&FilePath=configuration.json",
+      "last_changed_revision": "e8632ce825c01c31e138f83852c01b643941c2fe",
+      "attempts": [],
+      "status": "verified"
+    },
+    {
+      "file": "preprocessor_config.json",
+      "expected_bytes": 394,
+      "sha256": "9b36b57ebaf20f09bf4c22100ccc21877ea6bfe5aead0c00c59f8af8ccefacfc",
+      "source_url": "https://modelscope.cn/api/v1/models/google/siglip2-base-patch16-224/repo?Revision=e8632ce825c01c31e138f83852c01b643941c2fe&FilePath=preprocessor_config.json",
+      "last_changed_revision": "e8632ce825c01c31e138f83852c01b643941c2fe",
+      "attempts": [],
+      "status": "verified"
+    },
+    {
+      "file": "special_tokens_map.json",
+      "expected_bytes": 636,
+      "sha256": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351",
+      "source_url": "https://modelscope.cn/api/v1/models/google/siglip2-base-patch16-224/repo?Revision=e8632ce825c01c31e138f83852c01b643941c2fe&FilePath=special_tokens_map.json",
+      "last_changed_revision": "e8632ce825c01c31e138f83852c01b643941c2fe",
+      "attempts": [],
+      "status": "verified"
+    },
+    {
+      "file": "tokenizer.json",
+      "expected_bytes": 34363039,
+      "sha256": "cb9140fae3ac5122c972d37adf83e1248471a38147ad76f8215c8872c6fd8322",
+      "source_url": "https://modelscope.cn/api/v1/models/google/siglip2-base-patch16-224/repo?Revision=e8632ce825c01c31e138f83852c01b643941c2fe&FilePath=tokenizer.json",
+      "last_changed_revision": "e8632ce825c01c31e138f83852c01b643941c2fe",
+      "attempts": [],
+      "status": "verified"
+    },
+    {
+      "file": "tokenizer.model",
+      "expected_bytes": 4241003,
+      "sha256": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2",
+      "source_url": "https://modelscope.cn/api/v1/models/google/siglip2-base-patch16-224/repo?Revision=153facb840ceec16916cc7ec0e3bf8757d95f7e3&FilePath=tokenizer.model",
+      "last_changed_revision": "153facb840ceec16916cc7ec0e3bf8757d95f7e3",
+      "attempts": [
+        {
+          "offset": 0
+        }
+      ],
+      "status": "verified"
+    },
+    {
+      "file": "tokenizer_config.json",
+      "expected_bytes": 47164,
+      "sha256": "14afe629fe4959b9e0d51e1852b8d9f7ad074f90a1a7125a4fcdd17f06e78fc8",
+      "source_url": "https://modelscope.cn/api/v1/models/google/siglip2-base-patch16-224/repo?Revision=e8632ce825c01c31e138f83852c01b643941c2fe&FilePath=tokenizer_config.json",
+      "last_changed_revision": "e8632ce825c01c31e138f83852c01b643941c2fe",
+      "attempts": [
+        {
+          "offset": 0
+        }
+      ],
+      "status": "verified"
+    },
+    {
+      "file": "model.safetensors",
+      "expected_bytes": 1500800904,
+      "sha256": "612923381c76ec5a9bed335d1c48827e3f2e506ac31b044b63b2031fadee6a0b",
+      "source_url": "https://modelscope.cn/api/v1/models/google/siglip2-base-patch16-224/repo?Revision=153facb840ceec16916cc7ec0e3bf8757d95f7e3&FilePath=model.safetensors",
+      "last_changed_revision": "153facb840ceec16916cc7ec0e3bf8757d95f7e3",
+      "attempts": [
+        {
+          "offset": 0
+        }
+      ],
+      "status": "verified"
+    }
+  ],
+  "status": "downloaded_verified",
+  "generator_sha256": "141351ea3d82e5ff08d02854ed89b0afbdb17c011c6a0259db690e92a07dad7a"
+}

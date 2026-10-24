@@ -1,0 +1,61 @@
+[
+  {
+    "command": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.3\\final\\installed\\run.py",
+      "semantic",
+      "index",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-installed-r1",
+      "--index-id",
+      "natural-gpu",
+      "--adapter-id",
+      "siglip2",
+      "--all-visual-assets",
+      "--sample-interval-seconds",
+      "1",
+      "--device",
+      "cuda",
+      "--batch-size",
+      "8"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 217.230468,
+    "stdout_sha256": "ff74dad5fb6b169bde5685af3ae63eca6b29fa75d37b4779cfa8822ada9a13ed",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "expected_error": null,
+    "response_ok": true,
+    "response_status": "succeeded"
+  },
+  {
+    "command": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.3\\final\\installed\\run.py",
+      "semantic",
+      "verify",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-installed-r1",
+      "--index-id",
+      "natural-gpu"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 51.957582,
+    "stdout_sha256": "8c62e353f366bd846a7ae3e84d5d093fa4d337ab0141f05ef975ecd2ac40a898",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "expected_error": null,
+    "response_ok": true,
+    "response_status": "succeeded"
+  }
+]

@@ -33,7 +33,8 @@ def main():
     if not guide.exists():
         raise ValueError('Write the actual local package/installation guide before packaging')
     for name in ('COMMUNITY_LOCAL_DELIVERY.md', 'COMMUNITY_MATERIALS.md', 'COMMUNITY_MATERIALS.en.md',
-                 'COMMUNITY_MATERIALS.zh-TW.md', 'COMMUNITY_MATERIAL_CATALOG.md', 'COMMUNITY_VOICES.md', 'COMMUNITY_ACCEPTANCE.md'):
+                 'COMMUNITY_MATERIALS.zh-TW.md', 'COMMUNITY_MATERIAL_CATALOG.md', 'COMMUNITY_VOICES.md', 'COMMUNITY_ACCEPTANCE.md',
+                 'SEMANTIC_RETRIEVAL.md'):
         path = ROOT / 'docs/product' / name
         files[path.relative_to(ROOT).as_posix()] = path.read_bytes()
     # Keep the Skill inventory byte-identical; externalize only documentation

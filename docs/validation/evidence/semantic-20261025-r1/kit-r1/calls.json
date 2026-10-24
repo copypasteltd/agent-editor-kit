@@ -1,0 +1,103 @@
+[
+  {
+    "id": "configure",
+    "command": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\semantic-kit-r1\\独立工具 包\\scripts\\activate_community_runtime.py",
+      "--installed",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.3\\final\\installed",
+      "--packs",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-portable-r1\\模型 包",
+      "--voice-cuda-lib",
+      "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\lib",
+      "--translation-cuda-lib",
+      "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.4\\bin",
+      "--semantic-config",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\semantic-runtime.json"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "be618802594fae288a1e5fb376640fbe58d8c9c12d974f63434c0caf707a2e6f",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli": false
+  },
+  {
+    "id": "register",
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\semantic-kit-r1\\独立工具 包\\register-agent-ffmpeg-local-skills.ps1",
+      "-SkillsDirectory",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\semantic-kit-r1\\isolated-discovery",
+      "-ReceiptPath",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\semantic-20261025-r1\\kit-r1\\registration.json"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "c59268978395b272e0d3c560e59942513df5cf240658f238f7ecfb32992d42a0",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli": false
+  },
+  {
+    "id": "version",
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\semantic-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "733b5fcc6ef5f5265d4d509c21df3d7889a1adce0ab23561b87707d954072bee",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli": true
+  },
+  {
+    "id": "index-list",
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\semantic-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "semantic",
+      "index-list",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-installed-r1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "bec799966a03e46f1b5d9a742da2d68ab88014bbef9bcff60c989d362475e0e6",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli": true
+  },
+  {
+    "id": "verify-index",
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\semantic-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "semantic",
+      "verify",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-installed-r1",
+      "--index-id",
+      "natural-gpu"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "1f3070f0141d75130d0aa6e3c19e431739cf2b16f287f9c36d12ca9e0c5e9c02",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli": true
+  }
+]

@@ -11,13 +11,13 @@
 
 <!-- unified-skill-registration -->
 
-**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r3 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r3.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
+**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r4 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r4.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
 
 <!-- /unified-skill-registration -->
 
 <!-- community-materials-gpu -->
 
-**本机新增已安装扩展：CLI 0.1.4，GPU 配音/翻译与 359 项内置开源资源。** 公开 alpha.3 附件保持原版。外层只指定 `$agent-ffmpeg-local-editor`；本机登记 GPU 包后默认优先 GPU，明确返回实际设备/回退原因，保留 CPU 兼容。
+**本机新增已安装扩展：CLI 0.1.5，GPU 配音/翻译与 359 项内置开源资源。** 公开 alpha.3 附件保持原版。外层只指定 `$agent-ffmpeg-local-editor`；本机登记 GPU 包后默认优先 GPU，明确返回实际设备/回退原因，保留 CPU 兼容。
 
 [完整流程与边界](docs/product/COMMUNITY_MATERIALS.md) · [逐项素材目录](docs/product/COMMUNITY_MATERIAL_CATALOG.md) · [103 音色与实际试听范围](docs/product/COMMUNITY_VOICES.md) · [CPU 实测](docs/validation/evidence/community-materials-20261025-r1/cpu/verification.json) · [GPU 实测](docs/validation/evidence/community-materials-20261025-r1/gpu/verification.json)。
 
@@ -29,10 +29,34 @@
 | F47 / G01 | CUDA 配音/翻译、auto/cpu/cuda、显存预检 | RTX 3060 实测，严格 CUDA/CPU 回退分明，NVIDIA 依赖许可另列 |
 | F48 / M04–M05 | 真实 BGM 截取/循环/淡入淡出、配音混合和闪避 | 保留原分轨，不代表作曲或自动接缝修复 |
 | F49 / C01 | 原生窗口/屏幕/区域/摄像头/麦克风采集 CLI，CPU/NVENC 编码和取消 | 实测自身测试窗口；相机/麦克风、联合音画同步及长录制待验 |
+| F50 / V01 | 离线图文语义索引、中文/英文/参考图查询、预览与可编辑时间点，auto/cpu/cuda | 小型静态图集实测；否定/库外拒识/自然动作/音频推荐仍未完成 |
 
 CPU 46 条、GPU 15 条为本轮独立实测。12 秒真实成片已完整解码、工程往返。未确认发布权利的生成配音不随公共页面再分发，本地原始分轨/完整成片见交付记录。人工听审与完整剪映等价仍未完成。
 
 <!-- /community-materials-gpu -->
+
+<!-- semantic-retrieval-r1 -->
+
+## 本地 CLI 0.1.5：按描述或参考图检索素材
+
+使用已有离线 SigLIP2 模型，对选定图片和视频采样帧建立向量索引；按中文、英文或本地参考图返回候选预览、源时间和可编辑引用。仍使用一个 `$agent-ffmpeg-local-editor`。
+
+基础 ZIP 不含 Torch 或约 1.5GB 权重。先按本地交付配置已有原生环境，读取 runtime.json 的 semantic_config，明确登记到工程，再建立索引；不隐式下载。
+
+[Workflow / 登记与命令](docs/product/SEMANTIC_RETRIEVAL.md) · [Validation / 实测](docs/validation/离线语义检索实测_2026-10-25.md) · [All 20 queries / 全部结果](docs/assets/semantic-20261025-r1/all-query-results.png)
+
+```powershell
+# Existing project, registered local adapter and ingested source IDs required.
+& $avk semantic index --project $project --index-id campaign-v1 --adapter-id siglip2 --all-visual-assets --sample-interval-seconds 2 --device auto
+& $avk semantic search --project $project --index-id campaign-v1 --query '木桌上的一杯咖啡' --limit 5 --device auto
+& $avk semantic search --project $project --index-id campaign-v1 --image $referenceImage --kind image --device cpu
+```
+
+在预先冻结的小样本中，开发版 CPU/GPU 的 16 条常规查询首选及 mean asset recall@3 均为 1.0；安装版真实 Skill 另验相同 20 条文本与 CPU 参考图。中文否定误选咖啡，两条库外鲨鱼查询仍返回草地；不是可靠拒识、动作理解或自动导演。
+
+![All frozen queries, including failures](docs/assets/semantic-20261025-r1/all-query-results.png)
+
+<!-- /semantic-retrieval-r1 -->
 
 <!-- native-capture-r1 -->
 
@@ -142,7 +166,7 @@ flowchart LR
 5. 若需要选型，展示原图与少量候选，记录最终 ID/强度/作用域；在目标素材上复试。
 6. 渲染至工程内新路径，检查实际编码文件、manifest、warning、音画与权利，再导出项目包。
 
-## 43 个基础功能模块，以及上方 F44–F48 扩展
+## 43 个基础功能模块，以及上方 F44–F50 扩展
 
 编号用于定位文档；各模块有依赖与交叉，不是“43 个独立内核”或完成率。下表直接写明行为、入口与限制；[完整机器能力清单及每项契约](docs/product/CAPABILITIES.md)保留全部字段。
 
@@ -215,6 +239,7 @@ flowchart LR
 | S15 | 配乐准备与混音 | 原生 FFmpeg 音频 | 显式截取/循环/淡化、独立人声/配乐、闪避 | `music prepare/mix` | 不作曲、不静默裁人声、不承诺接缝修复 |
 | S16 | GPU 兼容服务 | 原生 NVIDIA 运行库 | auto/cpu/cuda、显存预检、实际 provider/回退 | `gpu inspect; --device` | RTX 3060 实测，NVIDIA/Intel 依赖许可另列 |
 | S17 | 原生 Windows 采集 | FFmpeg gdigrab / DirectShow | 明确来源、设备 ID、有限时长、完整解码与素材登记 | `capture devices/record` | 真实窗口 CPU/GPU 已验；相机/麦克风/同步未验 |
+| S18 | 图文语义检索 | 显式登记的原生 SigLIP2 worker | 已有 Torch/Transformers/模型；实际 GPU/CPU、源/预览/向量完整性 | `semantic adapter-register/index/search/verify` | 冷启动和大库性能未收口；分数不是概率 |
 
 **本机查询与交付状态：** 本轮 doctor 检测到原生 Python 3.13.1、FFmpeg/ffprobe 8.1 和 Node；这不证明每个模型或浏览器适配器均已注册。doctor 只查到系统存在 Docker/WSL 可执行路径，没有运行它们。本项目始终使用原生工具，不调度 Docker/WSL/虚拟环境。
 
@@ -376,7 +401,7 @@ project/
 | K05 | [`local-policy`](skills/agent-ffmpeg-local-editor/references/modules/local-policy/module.md) | 本地执行约束 | 工程引用 → 审计/结构化拒绝 | `policy audit` | 运行时禁止远程引用；不推断为 OS 沙箱。 |
 | K06 | [`rights-ledger`](skills/agent-ffmpeg-local-editor/references/modules/rights-ledger/module.md) | 素材与模型权利证据 | 来源/许可/本地证据 → 台账/影响/门禁 | `rights list/check/update/impact` | 分别处理母图与 LUT 许可；不自动认定版权。 |
 | K07 | [`local-models`](skills/agent-ffmpeg-local-editor/references/modules/local-models/module.md) | 已有离线模型登记 | 原生环境 + 权重/哈希/许可 → 适配器与推理产物 | `media adapter; asr adapter; ocr; face; tts` | 无权重下载；先核对能力/环境，再调用。 |
-| K08 | [`video-understand`](skills/agent-ffmpeg-local-editor/references/modules/video-understand/module.md) | 镜头/静音与视频证据 | 本地视频/音频 → 分析 JSON、帧、字幕候选 | `media understand/contact-sheet; subtitle transcribe` | 启发式与模型语义能力分开说明。 |
+| K08 | [`video-understand`](skills/agent-ffmpeg-local-editor/references/modules/video-understand/module.md) | 镜头/静音、图文语义检索与视频证据 | 本地视频/图片/描述/参考图 → 分析、预览、源时间与候选 | `media understand/contact-sheet; subtitle transcribe; semantic index/search` | [检索说明](skills/agent-ffmpeg-local-editor/references/semantic-retrieval.md)；采样点不定义片段时长，候选需复核。 |
 | K09 | [`template-library`](skills/agent-ffmpeg-local-editor/references/modules/template-library/module.md) | 模板与片段组复用 | 模板/变量/素材库 → 可编辑变体与索引 | `template apply/batch; library; fragment` | 用户自有素材，按资源许可复用。 |
 | K10 | [`long-to-short`](skills/agent-ffmpeg-local-editor/references/modules/long-to-short/module.md) | 长视频转短片 | 本地课程/口播 + 核对文本 → 粗剪与短片工程 | `media highlights/smart-cut; timeline compose` | 候选段需复核，不声称全自动语义导演。 |
 | K11 | [`screen-demo`](skills/agent-ffmpeg-local-editor/references/modules/screen-demo/module.md) | 录屏与锚点运镜 | 录屏 + 操作锚点 → 放大/回全景/字幕演示 | `timeline compose; ocr anchors; preview range` | OCR 需要已有模型，文本框不等于可点击控件。 |
@@ -400,6 +425,14 @@ $agent-ffmpeg-local-editor 对实际输出、manifest 和 Scope 复核，分别�
 [当前完整 Skill 手册](docs/product/SKILLS.md) · [客户选型工作流](skills/agent-ffmpeg-local-editor/references/client-look-selection.md) · [注册与本地安装](docs/local/INSTALLATION.md)。Skill 是任务指导，不自带额外模型/素材订阅，也不自动连接广告平台。
 
 ## 完整案例、原输入、实际输出与 GIF
+
+### C14：实际检索候选 → 可编辑片段 → 安装版成片
+
+冻结查询的真实返回中，明确选择猫、咖啡、宇航员三个视频候选，保留其原排名和源时间；每段人工规则指定 1 秒。安装版 11 次 CLI 完成工程、字幕、渲染、质检、工程包导出/导入和重渲染：3 秒、640×360、30fps/90 帧，往返解码画面相同。输入为自然静态图组成的序列，不能推断自然运动或广告质量；音轨与人工视听范围单列。
+
+![Actual installed candidate-to-edit output](docs/assets/semantic-20261025-r1/demo-installed-r1-workflow/semantic-cut.gif)
+
+[Input MP4](docs/assets/semantic-20261025-r1/asset_v1.mp4) · [Output MP4](docs/assets/semantic-20261025-r1/demo-installed-r1-workflow/semantic-cut.mp4) · [Candidate/output board](docs/assets/semantic-20261025-r1/demo-installed-r1-workflow/candidate-to-output.png) · [Editable package](docs/assets/semantic-20261025-r1/demo-installed-r1-workflow/editable-project.aevpkg.zip) · [Full case](docs/product/CASES.md#c14-semantic-retrieval)
 
 <!-- community-cases -->
 
@@ -537,18 +570,22 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R42 | CLI 0.1.4 原生离线安装与统一 Skill | 新本地包、8 wheel、4 既有模型包校验，实际注册入口核对；旧包/公开附件保留 | [交付与摘要](docs/product/COMMUNITY_LOCAL_DELIVERY.md) · [本轮入口记录](docs/validation/evidence/implementation-20261025-r1/skill/verification.json)；2026-10-25，仍为同一主机，完整目标未完成 |
 | R43 | 当前目标差距再次复核 | 真实注册入口 6 次只读调用通过；CLI 0.1.4，72 项能力声明：20 已实现、44 有限制、7 需本地适配器、1 降级；38 组均有待关闭条件 | [最新差距表](docs/product/GOAL_GAPS_20261025.md) · [本次响应](docs/validation/evidence/goal-gaps-20261025-r2/inventory.json) · [证据复核](docs/validation/evidence/goal-gaps-20261025-r2/review.json)；2026-10-25，0 新渲染/推理/听审；G26 向量检索尚未交付，公开包仍为 alpha.3 |
 | R44 | 最新目标差距与开发候选分层复核 | 真实注册入口另 6 次只读调用通过，安装版仍为 CLI 0.1.4 / 72 项声明；开发候选 25 项契约测试、13 次准备命令另列，GPU 索引 2 次实际前向不冒充检索质量 | [38 组差距](docs/product/GOAL_GAPS_20261025.md) · [新核对](docs/validation/evidence/goal-gaps-20261025-r3/inventory.json) · [证据边界](docs/validation/evidence/goal-gaps-20261025-r3/review.json) · [开发索引](docs/validation/evidence/goal-gaps-20261025-r3/candidate-progress.json)；2026-10-25，无新增安装版渲染/推理或人工听审；公开包仍为 alpha.3，G01–G38 均有未关闭条件 |
+| R45 | 真实图文语义相关性 | 开发索引 2 次 CUDA 图像前向；5 次查询 CLI 共 11 次前向；CPU/GPU 常规 16 条 top-1/mean recall@3 均 1.0，6 时间点、参考图、同图改名与只读门禁通过 | [全部 20 条评分](docs/validation/evidence/semantic-20261025-r1/development-r1/queries/quality.json) · [失败也展示](docs/assets/semantic-20261025-r1/all-query-results.png)；2026-10-25，中文否定错选、2 条库外未拒识；非自然动作/未见训练集验收 |
+| R46 | 检索契约、异常与回归 | 开发 25 项和安装版另 25 项契约测试；CLI 122 项、离线策略 34 项分别通过；8 次实际异常 CLI、存活 worker 取消约 0.21 秒并退出 | [本轮实测](docs/validation/离线语义检索实测_2026-10-25.md)；2026-10-25，测试范围有重叠，不相加；取消仅验启动/完整性阶段 |
+| R47 | CLI 0.1.5 固定安装与单一 Skill | 新 8-wheel 包及全部产品 Python 源字节核对；4 既有模型包重验；真实注册入口 9 次 CLI，包含实际 GPU 批量文本和 CPU 参考图；r4 kit 独立入口另验 | [安装摘要](docs/product/COMMUNITY_LOCAL_DELIVERY.md) · [入口实测](docs/validation/evidence/semantic-20261025-r1/skill-r1/verification.json)；2026-10-25，单台物理主机，不冒充公开新 Release |
+| R48 | 检索候选的可编辑案例 | 开发版 11 次 CLI、安装版另 11 次 CLI；3 秒/90 帧实际渲染、完整解码、工程往返像素相同 | [实际 MP4/GIF/工程包](docs/product/CASES.md#c14-semantic-retrieval) · [安装证据](docs/validation/evidence/semantic-20261025-r1/installed-r1/demo/verification.json)；2026-10-25，静态图序列、明确选 1 秒，非自动事件边界/自然动作或人工听审 |
 
 ## 当前边界与开发方向
 
 当前可交付的是有明确契约、离线可运行、可编辑、可复查的 Agent CLI 闭环。完整开源素材/模板生态、约定的 AI 特效/美颜/排版、完整色彩管线、指定草稿版本的真实转换质量、广泛自然视听和长片资源性能仍需开发与验收。消费级 GUI、账号、云协作及任意私有版本无损转换不属于当前内核收口门槛。后续 Float32 转场/运行时闭包候选 R113/R114 未随本版提供。
 
-[2026-10-25 当前完整目标差距表](docs/product/GOAL_GAPS_20261025.md)按本地 CLI 0.1.4 更新 38 组差距，明确单一 Skill、359 项资源、GPU 配音/中英翻译已交付，以及高级 AI、自然视听、复杂组合、性能可靠性和新公开包仍待完成。优先关闭真实素材质量、字词对齐和音频历史失败、Agent 实际任务、长片资源与干净主机安装；随后扩充内容与模板及完整 AI 范围。当前没有足够依据给出整体完成百分比。[2026-10-24 评估](docs/product/GOAL_GAPS_20261024.md)保留为 alpha.3 的历史快照。
+[2026-10-25 当前完整目标差距表](docs/product/GOAL_GAPS_20261025.md)按本地 CLI 0.1.5 更新 38 组差距，明确单一 Skill、359 项资源、GPU 配音/中英翻译已交付，以及高级 AI、自然视听、复杂组合、性能可靠性和新公开包仍待完成。优先关闭真实素材质量、字词对齐和音频历史失败、Agent 实际任务、长片资源与干净主机安装；随后扩充内容与模板及完整 AI 范围。当前没有足够依据给出整体完成百分比。[2026-10-24 评估](docs/product/GOAL_GAPS_20261024.md)保留为 alpha.3 的历史快照。
 
-本次 R43 再次核对安装版，确认声道关系保护与原生采集已交付；极短窗音高、精确对齐、相机/麦克风实际录制和音画同步仍待验收。语义向量检索仅有开发准备，未计作可用功能。500 套风格和 72 项能力声明都不作为总体完成率。
+
 
 下一步以真实客户素材与最小可复现工程收集缺口，逐项补齐、实测、发布新版本；不覆盖既有发布包/摘要/标签。只按实际成功产物更新核验。
 
-**最新复核（R44，2026-10-25 04:38 台北）：** 当前可用的是 Agent 编辑 CLI 底座；完整剪映水准还缺高级 AI、复杂组合与自然视听验收、内容模板生态、Agent 自主任务成功率和稳定交付。G26 候选已实现图文索引/查询 CLI，并在 RTX 3060 上为 10 个素材生成 15 条索引（14 张去重图、2 次实际前向）；相关性、CPU/GPU 对照和安装/Skill 交付尚未验收。开发索引全阶段约 306 秒，含完整性核验、进程/模型加载及校验，实际模型推理约 26 秒；不能据此宣称实时检索或跨命令模型复用。安装版仍为 CLI 0.1.4，完整 38 组差距继续开放，不给出未经建立的总体完成率。
+**最新交付（R45–R48，2026-10-25）：** 本机升级 CLI 0.1.5 / alpha.4-local.3；73 项能力声明为 20 已实现、45 有限制、7 本地适配器、1 降级，不是完成率。G26 图文检索已完成实际 CPU/GPU 对照、固定安装包与统一 Skill 调用、可编辑成片往返；否定/库外拒识、自然动作/身份/音频推荐、大库与模型常驻仍缺。完整 38 组差距均保留未关闭条件；公开发行仍为 alpha.3 / CLI 0.1.2。
 
 ## 文档体系、来源与维护
 

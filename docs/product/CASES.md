@@ -399,3 +399,28 @@ Owned animated test window → two-second/30-frame CPU and NVENC recordings → 
 ![Actual GPU capture](../assets/native-capture-20261025-r1/preview.gif)
 
 [步骤、原始 MP4 与未验边界 / Workflow, source outputs and limits](NATIVE_CAPTURE.md) · [完整证据 / Evidence](../validation/补齐实施首批实测_2026-10-25.md)。摄像头、麦克风、音画同步与连续人工观看仍待验收 / Camera, microphone, AV sync and continuous human viewing remain unaccepted.
+
+
+<a id="c14-semantic-retrieval"></a>
+
+## C14：检索候选 → 可编辑成片 / Retrieval to editable output
+
+冻结查询的真实返回中，明确选择猫、咖啡、宇航员三个视频候选，保留其原排名和源时间；每段人工规则指定 1 秒。安装版 11 次 CLI 完成工程、字幕、渲染、质检、工程包导出/导入和重渲染：3 秒、640×360、30fps/90 帧，往返解码画面相同。输入为自然静态图组成的序列，不能推断自然运动或广告质量；音轨与人工视听范围单列。
+
+Explicitly select cat, coffee and astronaut video candidates from actual frozen-query responses, preserving overall returned ranks and source times. Author one second per clip. Eleven installed CLI calls build the project/captions, render, check, export/import and rerender: 3s, 640×360, 30fps/90 frames, with identical decoded roundtrip pixels. The input is a sequence of natural stills, not an acceptance test for natural motion or ad quality; audio and human review are recorded separately.
+
+
+![Actual installed output](../assets/semantic-20261025-r1/demo-installed-r1-workflow/semantic-cut.gif)
+
+| 输入/输出 / Artifact | 路径 / Evidence |
+|---|---|
+| 原序列 / Original sequence | [6s/72-frame input MP4](../assets/semantic-20261025-r1/asset_v1.mp4) · [image sources/licenses](../assets/semantic-20261025-r1/SOURCE.json) · [notices](../assets/semantic-20261025-r1/NOTICE.txt) |
+| 实际安装版输出 / Installed output | [MP4](../assets/semantic-20261025-r1/demo-installed-r1-workflow/semantic-cut.mp4) · [candidate/output board](../assets/semantic-20261025-r1/demo-installed-r1-workflow/candidate-to-output.png) |
+| 可编辑内容 / Editable delivery | [project package](../assets/semantic-20261025-r1/demo-installed-r1-workflow/editable-project.aevpkg.zip) · [actual selected hits/ranks](../assets/semantic-20261025-r1/demo-installed-r1-workflow/selected-hits.json) |
+| 原始响应与逐帧校验 / CLI and decode | [11 calls](../validation/evidence/semantic-20261025-r1/demo-installed-r1-workflow/calls.json) · [verification](../validation/evidence/semantic-20261025-r1/installed-r1/demo/verification.json) |
+| 不筛掉的失败 / All query failures retained | [all 20 results](../assets/semantic-20261025-r1/all-query-results.png) · [full scoring](../validation/evidence/semantic-20261025-r1/skill-r1/quality.json) |
+
+复现 / Reproduce: `scripts/verify_semantic_20261025.py --run <new-run> --phase setup --installed <installed>`，
+同一新 run 运行 index，再以实际查询响应执行 `--phase demo --demo-response <actual-response.json>`。
+不要重用已有输出目录。完整生成器与原始命令以对应 evidence 下的 executed-generator.py/calls.json 为准。
+发布门禁未执行；NASA 形象不作产品背书。静态查看、自动解码、连续人工播放和听审分别记录。

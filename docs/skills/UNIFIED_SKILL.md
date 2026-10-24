@@ -2,7 +2,7 @@
 
 <!-- community-current -->
 
-**当前本机扩展：CLI 0.1.3。** GPU 配音/翻译、359 项内置资源与离线模型包已安装实测；以下 alpha.3 内容保留为历史 CLI 0.1.2 基线。 [Workflow](../product/COMMUNITY_MATERIALS.md) · [Local installation](../product/COMMUNITY_LOCAL_DELIVERY.md)
+**当前本机：CLI 0.1.5 / alpha.4-local.3，一个 Skill / 17 内部模块。** 已加入离线图文语义检索、GPU 配音/翻译、359 项资源及原生采集。使用 [r4 kit](agent-editor-kit-community-unified-skill-r4.zip) 与[匹配的本地包](../product/COMMUNITY_LOCAL_DELIVERY.md)，K08 按需读取[检索流程](../product/SEMANTIC_RETRIEVAL.md)。以下 alpha.3/r1 流程是保留的 CLI 0.1.2 历史基线；当前版本、依赖和使用范围以匹配交付手册为准。
 
 <!-- /community-current -->
 

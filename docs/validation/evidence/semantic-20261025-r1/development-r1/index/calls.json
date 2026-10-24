@@ -1,0 +1,63 @@
+[
+  {
+    "command": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "-c",
+      "import sys;sys.path.insert(0,sys.argv.pop(1));from ai_ad_editor.cli import main;raise SystemExit(main())",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\src",
+      "semantic",
+      "index",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-development-r1",
+      "--index-id",
+      "natural-gpu",
+      "--adapter-id",
+      "siglip2",
+      "--all-visual-assets",
+      "--sample-interval-seconds",
+      "1",
+      "--device",
+      "cuda",
+      "--batch-size",
+      "8"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 268.47125,
+    "stdout_sha256": "57b5fe678f3453d16963210dd1ffc131d6e330408beb428f3e58c97aa8efba49",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "expected_error": null,
+    "response_ok": true,
+    "response_status": "succeeded"
+  },
+  {
+    "command": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "-c",
+      "import sys;sys.path.insert(0,sys.argv.pop(1));from ai_ad_editor.cli import main;raise SystemExit(main())",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\src",
+      "semantic",
+      "verify",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-development-r1",
+      "--index-id",
+      "natural-gpu"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 37.635951,
+    "stdout_sha256": "7d3e4df2f624417f0a4b1b8a6791a793b384a031cd1e7645b4f3c7d761255086",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "expected_error": null,
+    "response_ok": true,
+    "response_status": "succeeded"
+  }
+]

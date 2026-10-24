@@ -2,7 +2,7 @@
 
 <!-- community-current -->
 
-**當前本機擴充套件：CLI 0.1.3。** GPU 配音/翻譯、359 項內建資源與離線模型包已安裝實測；以下 alpha.3 內容保留為歷史 CLI 0.1.2 基線。 [Workflow](../product/COMMUNITY_MATERIALS.zh-TW.md) · [Local installation](../product/COMMUNITY_LOCAL_DELIVERY.md)
+**目前本機：CLI 0.1.5 / alpha.4-local.3，一個 Skill / 17 內部模組。** 已加入離線圖文語義檢索、GPU 配音/翻譯、359 項資源及原生擷取。使用 [r4 kit](agent-editor-kit-community-unified-skill-r4.zip) 與[相符的本機套件](../product/COMMUNITY_LOCAL_DELIVERY.md)，K08 按需讀取[檢索流程](../product/SEMANTIC_RETRIEVAL.md)。下方 alpha.3/r1 流程保留為 CLI 0.1.2 歷史基線；目前版本、依賴及使用範圍以相符交付手冊為準。
 
 <!-- /community-current -->
 

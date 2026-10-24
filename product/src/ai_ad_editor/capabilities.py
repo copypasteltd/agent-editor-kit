@@ -25,6 +25,22 @@ def build_capability_manifest() -> dict[str, Any]:
         "engine": {"id": ENGINE_ID, "version": VERSION, "runtime": "python+ffmpeg-local", "network": "disabled"},
         "ffmpeg": {"version": ffmpeg_version()},
         "capabilities": {
+            'visual_semantic_retrieval': {
+                'status':'implemented_with_limits','engine':'transformers-siglip-local-v1',
+                'protocol':'agent-semantic-embedding-v1','index_format':'agent-visual-semantic-index-v1',
+                'commands':['semantic adapter-register/adapter-list/adapter-inspect','semantic index/index-list/verify/search'],
+                'input_kinds':['project_image','project_video','text_query','local_reference_image'],
+                'devices':['auto','cpu','cuda'],'dimension':768,'text_token_limit':64,'silent_truncation':False,
+                'maximum_assets':512,'maximum_rows':4096,'maximum_queries':128,'maximum_batch_size':32,
+                'score':'cosine_similarity_not_probability','source_clock':'original_native_PTS_relative_to_container_origin',
+                'integrity':['model','selected_native_runtime_components','product_implementation','source_media','preview','vectors','manifest'],
+                'limits':['requires_existing_registered_native_Python_Torch_Transformers_Pillow_and_local_SigLIP_safetensors',
+                    'fixed_768_dimension_224px_64token_base_profile_only','sampled_frames_do_not_prove_actions_or_identity',
+                    'model_reuse_within_current_batch_only','no_open_set_abstention_or_calibrated_probability',
+                    'no_audio_embeddings_or_music_recommendation','no_implicit_download_or_remote_code',
+                    'relocated_or_changed_adapter_requires_explicit_registration_and_index_rebuild',
+                    'OS_DLL_closure_long_library_performance_and_broad_advertising_quality_unaccepted'],
+            },
             'native_capture': {
                 'status': 'implemented_with_limits', 'engine': 'ffmpeg-windows-capture-v1',
                 'commands': ['capture.devices', 'capture.record'],

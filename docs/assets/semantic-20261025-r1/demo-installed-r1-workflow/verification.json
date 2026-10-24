@@ -1,0 +1,82 @@
+{
+  "status": "passed-with-review-limits",
+  "development_source_only": false,
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.3\\final\\installed",
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-20261025-demo-installed-r1-workflow\\project",
+  "response_sha256": "ab261da1c1f6da01b58905d0a99356cff3913193a8982a86da3f6ccfba587c40",
+  "started_at_utc": "2026-10-24T21:39:03.455582+00:00",
+  "commands": 11,
+  "duration_seconds": 3,
+  "frames": 90,
+  "fps": "30",
+  "dimensions": [
+    640,
+    360
+  ],
+  "full_video_decode": true,
+  "package_roundtrip_decoded_pixels_equal": true,
+  "publish_gate_executed": false,
+  "human_continuous_viewing": false,
+  "human_listening": false,
+  "audio_included": true,
+  "natural_moving_action_benchmark": false,
+  "automatic_event_extent_inferred": false,
+  "files": [
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-installed-r1-workflow/candidate-to-output.png",
+      "bytes": 975723,
+      "sha256": "7c2521f28b5c7f249d69c4ec20d86d7e84b19c56853ff0b6abdd7fc76cb6dfde"
+    },
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-installed-r1-workflow/editable-project.aevpkg.zip",
+      "bytes": 11519282,
+      "sha256": "a6db54c4e1d74ca1a94fe0ff9e6584797f384e8a635b70532d5ccf39dedf2a93"
+    },
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-installed-r1-workflow/editable-project.aevpkg.zip.conversion-report.json",
+      "bytes": 1001,
+      "sha256": "b908d7cb93181744adc9e2476ffb2e3701e321ef78a6fa64e62d7afc76334562"
+    },
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-installed-r1-workflow/NOTICE.txt",
+      "bytes": 421,
+      "sha256": "d6615c0778ea2df6813f1345100c79ffe8f6d16183c07b1efee2049d369af80e"
+    },
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-installed-r1-workflow/output-1.png",
+      "bytes": 250546,
+      "sha256": "bc526c995e605a4e011316eda685643b310d2d723dbe93da6ce955d79ca5963e"
+    },
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-installed-r1-workflow/output-2.png",
+      "bytes": 316942,
+      "sha256": "1cbce7f19ee5ff555fed4c4b6f7ce6d4be8be6df12f10bb49d7fc7c4a96e3ee9"
+    },
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-installed-r1-workflow/output-3.png",
+      "bytes": 190307,
+      "sha256": "dd840a1d644378b49ec94776c8a3c13fb16a05e5f940a2ecd9e1e8d4bb2ffb2d"
+    },
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-installed-r1-workflow/selected-hits.json",
+      "bytes": 5609,
+      "sha256": "7185f582e3e904a4052b576e2ab3405b776fd94142fed551dccde473ff16bf47"
+    },
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-installed-r1-workflow/semantic-cut.gif",
+      "bytes": 321995,
+      "sha256": "dd4a9eb1ba7ed48db176645760623134d80db9a80877323f33fae4f4cb4b973b"
+    },
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-installed-r1-workflow/semantic-cut.mp4",
+      "bytes": 187140,
+      "sha256": "64a98f7cdc33fd3c622118f7002d1bfab0ca26390a7df006afce624489403dfd"
+    },
+    {
+      "path": "docs/assets/semantic-20261025-r1/demo-installed-r1-workflow/SOURCE.json",
+      "bytes": 11025,
+      "sha256": "b6ca0a8e2e64abffc8bff66c2a62f5277f471d60736a26794bb0445014dd69d2"
+    }
+  ],
+  "generator_sha256": "e439754b85f76ec29c9feb1a7dd737cb1d204982deac823e400ae6f29698a89e"
+}

@@ -1,0 +1,25 @@
+{
+  "status": "decoded",
+  "command": [
+    "ffmpeg",
+    "-nostdin",
+    "-v",
+    "error",
+    "-i",
+    "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\semantic-20261025-r1\\demo-installed-r1-workflow\\semantic-cut.mp4",
+    "-map",
+    "0:a:0",
+    "-f",
+    "s16le",
+    "-acodec",
+    "pcm_s16le",
+    "-"
+  ],
+  "exit_code": 0,
+  "media_sha256": "64a98f7cdc33fd3c622118f7002d1bfab0ca26390a7df006afce624489403dfd",
+  "decoded_s16_values": 288768,
+  "decoded_peak_abs": 0,
+  "silent_pcm": true,
+  "human_listening": false,
+  "interpretation": "The renderer adds an audio stream; actual decoded PCM is checked, no content-quality listening claim."
+}

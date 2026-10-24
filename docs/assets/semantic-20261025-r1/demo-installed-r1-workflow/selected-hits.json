@@ -1,0 +1,160 @@
+{
+  "response_sha256": "ab261da1c1f6da01b58905d0a99356cff3913193a8982a86da3f6ccfba587c40",
+  "selected": [
+    {
+      "query": {
+        "id": "q03",
+        "text": "a close-up photograph of a cat"
+      },
+      "label": "Cat / 猫",
+      "hit": {
+        "native_frame_index": 36,
+        "native_pts": 36864,
+        "native_time_base": "1/12288",
+        "container_start_seconds": "0",
+        "sample_seconds": 3.0,
+        "sample_seconds_rational": "3",
+        "requested_seconds": [
+          3.0
+        ],
+        "preview_sha256": "sha256:e7aeb7c03a94fd7e561dd743da3abbcdee276e1b6ad6d39ba4bdff0fc038f4c9",
+        "preview_probe": {
+          "duration_seconds": 0,
+          "video": {
+            "codec": "png",
+            "width": 512,
+            "height": 288,
+            "pix_fmt": "rgb24"
+          }
+        },
+        "asset_id": "asset_v1",
+        "kind": "video",
+        "source_uri": "assets/asset_v1_asset_v1.mp4",
+        "source_sha256": "sha256:c1e87d4979010dace0c416f1d1f405fd353aae98adcc36d365d39762719e7652",
+        "rights_ref": "asset_v1",
+        "preview_asset_id": "sem_96f9753190736f7968b04f36_frame_0012",
+        "preview_uri": "assets/semantic/96f9753190736f7968b04f36/frames0009/000003.png",
+        "row": 12,
+        "score": 0.1527862,
+        "score_kind": "cosine_similarity_not_probability",
+        "review_required": true,
+        "rights_verification_status": "verified",
+        "editable_reference": {
+          "asset_id": "asset_v1",
+          "source_seek_seconds": 3.0,
+          "source_in_tick": 270000,
+          "point_sample_only": true,
+          "duration_requires_review": true
+        }
+      },
+      "returned_rank": 3,
+      "selection_policy": "first_ranked_video_in_actual_returned_candidates",
+      "duration_seconds": 1.0,
+      "range_policy": "authored_one_second_after_returned_point_not_inferred_event_extent"
+    },
+    {
+      "query": {
+        "id": "q01",
+        "text": "a cup of coffee on a wooden table"
+      },
+      "label": "Coffee / 咖啡",
+      "hit": {
+        "native_frame_index": 12,
+        "native_pts": 12288,
+        "native_time_base": "1/12288",
+        "container_start_seconds": "0",
+        "sample_seconds": 1.0,
+        "sample_seconds_rational": "1",
+        "requested_seconds": [
+          1.0
+        ],
+        "preview_sha256": "sha256:2e5a878d17df7287f72d5adeec37bc18ff6add4444a410bc8ae8d3991708ae56",
+        "preview_probe": {
+          "duration_seconds": 0,
+          "video": {
+            "codec": "png",
+            "width": 512,
+            "height": 288,
+            "pix_fmt": "rgb24"
+          }
+        },
+        "asset_id": "asset_v1",
+        "kind": "video",
+        "source_uri": "assets/asset_v1_asset_v1.mp4",
+        "source_sha256": "sha256:c1e87d4979010dace0c416f1d1f405fd353aae98adcc36d365d39762719e7652",
+        "rights_ref": "asset_v1",
+        "preview_asset_id": "sem_96f9753190736f7968b04f36_frame_0010",
+        "preview_uri": "assets/semantic/96f9753190736f7968b04f36/frames0009/000001.png",
+        "row": 10,
+        "score": 0.13262388,
+        "score_kind": "cosine_similarity_not_probability",
+        "review_required": true,
+        "rights_verification_status": "verified",
+        "editable_reference": {
+          "asset_id": "asset_v1",
+          "source_seek_seconds": 1.0,
+          "source_in_tick": 90000,
+          "point_sample_only": true,
+          "duration_requires_review": true
+        }
+      },
+      "returned_rank": 2,
+      "selection_policy": "first_ranked_video_in_actual_returned_candidates",
+      "duration_seconds": 1.0,
+      "range_policy": "authored_one_second_after_returned_point_not_inferred_event_extent"
+    },
+    {
+      "query": {
+        "id": "q05",
+        "text": "a woman wearing an astronaut spacesuit"
+      },
+      "label": "Astronaut / 宇航员",
+      "hit": {
+        "native_frame_index": 60,
+        "native_pts": 61440,
+        "native_time_base": "1/12288",
+        "container_start_seconds": "0",
+        "sample_seconds": 5.0,
+        "sample_seconds_rational": "5",
+        "requested_seconds": [
+          5.0
+        ],
+        "preview_sha256": "sha256:be7ead705fe9066d082f3a9fe21ec44a61848dea7f261fbc9010234e1ed70ef8",
+        "preview_probe": {
+          "duration_seconds": 0,
+          "video": {
+            "codec": "png",
+            "width": 512,
+            "height": 288,
+            "pix_fmt": "rgb24"
+          }
+        },
+        "asset_id": "asset_v1",
+        "kind": "video",
+        "source_uri": "assets/asset_v1_asset_v1.mp4",
+        "source_sha256": "sha256:c1e87d4979010dace0c416f1d1f405fd353aae98adcc36d365d39762719e7652",
+        "rights_ref": "asset_v1",
+        "preview_asset_id": "sem_96f9753190736f7968b04f36_frame_0014",
+        "preview_uri": "assets/semantic/96f9753190736f7968b04f36/frames0009/000005.png",
+        "row": 14,
+        "score": 0.14789172,
+        "score_kind": "cosine_similarity_not_probability",
+        "review_required": true,
+        "rights_verification_status": "verified",
+        "editable_reference": {
+          "asset_id": "asset_v1",
+          "source_seek_seconds": 5.0,
+          "source_in_tick": 450000,
+          "point_sample_only": true,
+          "duration_requires_review": true
+        }
+      },
+      "returned_rank": 1,
+      "selection_policy": "first_ranked_video_in_actual_returned_candidates",
+      "duration_seconds": 1.0,
+      "range_policy": "authored_one_second_after_returned_point_not_inferred_event_extent"
+    }
+  ],
+  "candidate_review_required": true,
+  "automatic_human_acceptance": false
+}

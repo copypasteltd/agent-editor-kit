@@ -1,13 +1,13 @@
 ---
 name: agent-ffmpeg-local-editor
-description: "Edit and deliver local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, GPU voice/translation, licensed music/SFX, captions and quality checks. Also use for ad planning, reference remakes, long-to-short clips, screen demos or supplied campaign data that feeds an edit."
+description: "Edit and deliver local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, offline visual semantic search, GPU voice/translation, licensed music/SFX, captions and quality checks. Also use for ad planning, reference remakes, long-to-short clips, screen demos or supplied campaign data that feeds an edit."
 ---
 
 # agent editor kit / unified local Skill
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.2` / CLI `0.1.4`.
+The current local runtime is `v0.1.0-alpha.4-local.3` / CLI `0.1.5`.
 The published alpha.3 downloads retain CLI 0.1.2 and their original scope.
 
 ## Runtime and common workflow
@@ -41,7 +41,7 @@ an explicit audio track. Planning-only requests do not require rendering.
 | K05 | Local execution policy / 本地执行约束 | [local-policy](references/modules/local-policy/module.md) |
 | K06 | Media and model rights evidence / 素材与模型权利证据 | [rights-ledger](references/modules/rights-ledger/module.md) |
 | K07 | Existing offline model registration / 已有离线模型登记 | [local-models](references/modules/local-models/module.md) |
-| K08 | Scene/silence and video evidence / 镜头/静音与视频证据 | [video-understand](references/modules/video-understand/module.md) |
+| K08 | Scene/silence, visual semantic search and video evidence / 镜头、静音、图文语义检索与视频证据 | [video-understand](references/modules/video-understand/module.md) |
 | K09 | Templates and reusable fragments / 模板与片段组复用 | [template-library](references/modules/template-library/module.md) |
 | K10 | Long video to short clips / 长视频转短片 | [long-to-short](references/modules/long-to-short/module.md) |
 | K11 | Screen demos and camera anchors / 录屏与锚点运镜 | [screen-demo](references/modules/screen-demo/module.md) |
@@ -62,6 +62,11 @@ media. Add other modules when the request needs them. For example:
   and license, record the chosen target, then test it on the client's footage.
 - Local AI task: local-models plus the relevant media module; require existing
   registered dependencies and check actual inference artifacts.
+- Find footage from a description or reference image: read
+  [semantic-retrieval.md](references/semantic-retrieval.md). Use an explicit local
+  adapter/index and show returned previews, source times and scores. Review the
+  clip duration separately; negation and queries with no matching asset remain
+  unreliable. Read the full 20-query failure gallery before promising selection quality.
 - Native window/screen/camera/microphone capture: read
   [native-capture.md](references/native-capture.md), select an explicit source,
   record for a finite duration, then edit the returned asset ID normally.

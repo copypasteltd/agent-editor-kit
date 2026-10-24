@@ -2,7 +2,7 @@
 
 <!-- community-current -->
 
-**Current local extension: CLI 0.1.3.** GPU speech/translation, 359 bundled resources and offline model packs are installed and verified. The alpha.3 sections below remain the historical CLI 0.1.2 baseline.  [Workflow](../product/COMMUNITY_MATERIALS.en.md) · [Local installation](../product/COMMUNITY_LOCAL_DELIVERY.md)
+**Current local: CLI 0.1.5 / alpha.4-local.3, one Skill / 17 internal modules.** Offline visual semantic retrieval, GPU voice/translation, 359 resources and native capture are available within documented limits. Use the [r4 kit](agent-editor-kit-community-unified-skill-r4.zip) with its [matching local runtime](../product/COMMUNITY_LOCAL_DELIVERY.md); K08 reads the [retrieval workflow](../product/SEMANTIC_RETRIEVAL.md) as needed. The alpha.3/r1 procedure below is preserved as the CLI 0.1.2 historical baseline; use the matching delivery guide for current versions and dependencies.
 
 <!-- /community-current -->
 

@@ -1,6 +1,6 @@
 # Installed-release runtime contract
 
-This namespace calls the locally installed `v0.1.0-alpha.4-local.2` / CLI 0.1.4
+This namespace calls the locally installed `v0.1.0-alpha.4-local.3` / CLI 0.1.5
 package using this Skill's `scripts/run.ps1`. Its 17 modules share the launcher.
 The editable Skill source stays on E:; Codex reads
 Windows directory junctions. `local/agent-ffmpeg/runtime.json` selects the native Python and installed path.
@@ -69,3 +69,12 @@ before inference, including CPU retries. No implicit source or network fallback.
 ## 500 offline looks
 
 Read [looks.md](looks.md). `look apply` copies LUT/license/provenance into the project. Built-in preset evidence uses relative project paths; unrelated user media evidence still needs review after relocation.
+
+## Offline visual semantic retrieval
+
+Read [semantic-retrieval.md](semantic-retrieval.md). The optional `semantic_config`
+field in runtime.json points to an existing local model profile. It is metadata
+for explicit per-project adapter registration, not automatic model execution.
+The base application does not include Torch or SigLIP2 weights. Report missing
+paths; do not download dependencies or fall back to source. CUDA/CPU choices,
+native runtime hashes and actual inference attempts are recorded by the product.

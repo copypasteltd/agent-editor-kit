@@ -2,7 +2,7 @@
 
 [使用手册](COMMUNITY_MATERIALS.md) · [繁體中文](COMMUNITY_MATERIALS.zh-TW.md) · [English](COMMUNITY_MATERIALS.en.md)
 
-当前本机版本是 **`v0.1.0-alpha.4-local.2` / CLI 0.1.4**，正式安装在 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.2/final/installed/`。这是本地构建和验收记录；公开 GitHub Release 仍是 alpha.3 / CLI 0.1.2，原附件、标签和摘要不覆盖。
+当前本机版本是 **`v0.1.0-alpha.4-local.3` / CLI 0.1.5**，正式安装在 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.3/final/installed/`。这是本地构建和验收记录；公开 GitHub Release 仍是 alpha.3 / CLI 0.1.2，原附件、标签和摘要不覆盖。
 
 The current build is installed locally. Public alpha.3 downloads remain unchanged and do not contain the new voice, translation, material or GPU commands. The updated Skill kit must be paired with this matching local runtime bundle.
 
@@ -14,9 +14,9 @@ The current build is installed locally. Public alpha.3 downloads remain unchange
 
 | 内容 / Item | 路径 / Path | 校验 / Verification |
 |---|---|---|
-| 编译好的基础运行 ZIP / Application bundle | `local/agent-ffmpeg/v0.1.0-alpha.4-local.2/agent-editor-kit-v0.1.0-alpha.4-local.2-cp313-win_amd64.zip` | SHA-256 `4e406058e082d1c9d778e9c4665f307d5027f17542c6fabfbc9d8d72ac0a2333` |
-| 运行包清单 / Bundle manifest | ZIP 内 / inside ZIP: `manifest.json` | `sha256:fd418d94461b57423072fb730959e36cb39264fd48a96be26dc297fe52b59897` |
-| 单入口 Skill kit / Single-entry kit | `docs/skills/agent-editor-kit-community-unified-skill-r3.zip` | [独立包摘要 / Package digest](../skills/community-unified-skill-package-0.1.4.json) |
+| 编译好的基础运行 ZIP / Application bundle | `local/agent-ffmpeg/v0.1.0-alpha.4-local.3/candidate-r1/bundle.zip` | SHA-256 `804cac8e45d62b4440fb39423126a86d650e415e37ed3f9b7db724b65a2a62cd` |
+| 运行包清单 / Bundle manifest | ZIP 内 / inside ZIP: `manifest.json` | `sha256:29583211d5cf376f51c295b419ba7bdaaf9f46fa5314820fcc6e180f47a4f95f` |
+| 单入口 Skill kit / Single-entry kit | `docs/skills/agent-editor-kit-community-unified-skill-r4.zip` | [独立包摘要 / Package digest](../skills/community-unified-skill-package-0.1.5.json) |
 | 四个模型 ZIP / Four model ZIPs | `local/agent-ffmpeg/community-model-archives-r2/` | 见下表及 / see table and `archives.json` |
 | 可移动模型安装 / Relocated model installation | `local/agent-ffmpeg/community-portable-r1/模型 包/` | 实际从四个 ZIP 安装；路径含中文与空格 / actually installed from all four ZIPs |
 | 当前调用配置 / Runtime configuration | `local/agent-ffmpeg/runtime.json` | 固定应用摘要、原生 Python、启动器摘要 / pinned app, native Python and launcher |
@@ -43,13 +43,13 @@ Requires native Windows x64, existing CPython 3.13 x64 and FFmpeg/ffprobe on PAT
 $aekPython = 'C:/Python313/python.exe'
 $aekSource = 'E:/dev/sandbox/AI广告剪辑'
 $aekHome = 'E:/tools/agent-editor-kit-gpu'
-$aekArchive = Join-Path $aekSource 'local/agent-ffmpeg/v0.1.0-alpha.4-local.2/agent-editor-kit-v0.1.0-alpha.4-local.2-cp313-win_amd64.zip'
-$aekExpectedZip = '4e406058e082d1c9d778e9c4665f307d5027f17542c6fabfbc9d8d72ac0a2333'
+$aekArchive = Join-Path $aekSource 'local/agent-ffmpeg/v0.1.0-alpha.4-local.3/candidate-r1/bundle.zip'
+$aekExpectedZip = '804cac8e45d62b4440fb39423126a86d650e415e37ed3f9b7db724b65a2a62cd'
 if ((Get-FileHash -LiteralPath $aekArchive -Algorithm SHA256).Hash.ToLowerInvariant() -ne $aekExpectedZip) { throw 'Application archive hash mismatch' }
-Expand-Archive -LiteralPath (Join-Path $aekSource 'docs/skills/agent-editor-kit-community-unified-skill-r3.zip') -DestinationPath $aekHome
+Expand-Archive -LiteralPath (Join-Path $aekSource 'docs/skills/agent-editor-kit-community-unified-skill-r4.zip') -DestinationPath $aekHome
 Expand-Archive -LiteralPath $aekArchive -DestinationPath (Join-Path $aekHome 'bundle')
 Set-Location $aekHome
-& $aekPython -I -B -X utf8 ./bundle/install.py --bundle ./bundle --target ./local/agent-ffmpeg/installed --manifest-sha256 'sha256:fd418d94461b57423072fb730959e36cb39264fd48a96be26dc297fe52b59897' --timeout-seconds 600
+& $aekPython -I -B -X utf8 ./bundle/install.py --bundle ./bundle --target ./local/agent-ffmpeg/installed --manifest-sha256 'sha256:29583211d5cf376f51c295b419ba7bdaaf9f46fa5314820fcc6e180f47a4f95f' --timeout-seconds 600
 if ($LASTEXITCODE) { throw 'Native application installation failed' }
 ```
 
@@ -104,3 +104,32 @@ The registrar preserves unrelated same-name registrations. Existing users may ke
 [本轮 CPU](../validation/evidence/community-materials-20261025-r1/cpu/verification.json) · [GPU](../validation/evidence/community-materials-20261025-r1/gpu/verification.json) · [可移动安装与拒绝](../validation/evidence/community-materials-20261025-r1/portable/verification.json) · [单入口实际调用](../validation/evidence/community-materials-20261025-r1/skill/verification.json) · [验收与未完成项](COMMUNITY_ACCEPTANCE.md)。
 
 这些记录区分真实生成、解码、静态目检、连续播放和人类听审。不把三音色生成或 103 条映射当成全部音色的质量验收。
+
+
+## CLI 0.1.5 离线图文语义检索 / Offline visual semantic retrieval
+
+[完整使用流程](SEMANTIC_RETRIEVAL.md) · [本轮完整实测](../validation/离线语义检索实测_2026-10-25.md)。
+新基础 ZIP 为 302,607,251 字节；8 wheel / 47 文件，产品 wheel 版本 0.1.5。
+全部产品 Python 文件与安装版逐字节摘要相同；[原生安装记录](../validation/evidence/semantic-20261025-r1/installation/verification.json)。
+同一 RTX 3060 主机验证 CUDA BF16 和 CPU float32。Torch/Transformers 及约 1.5GB SigLIP2 权重
+单独来自既有原生环境，不在基础 ZIP 或四个配音/翻译 ZIP 内；产品不隐式安装或下载。
+
+现有工作区的 `local/agent-ffmpeg/semantic-runtime.json` 记录本机绝对路径、模型摘要和许可依据，
+`runtime.json` 的 `semantic_config` 指向该文件。Agent 对新工程仍须明确 `semantic adapter-register`。
+换主机应创建包含实际 `python_executable`、`model_path`、`evidence`、`creator`、`license_spdx`、
+`verification_status` 与 `format: agent-local-semantic-runtime-v1` 的本地 JSON，再传给激活脚本；
+不得复制不可用的绝对路径，登记时由产品重新检查依赖和字节。
+
+```powershell
+# The JSON and all referenced native paths must already exist.
+& $aekPython -I -B -X utf8 ./scripts/activate_community_runtime.py --installed ./local/agent-ffmpeg/installed --packs $aekPacks --voice-cuda-lib $aekVoiceCuda --translation-cuda-lib $aekTranslationCuda --semantic-config $aekSemanticProfile
+```
+
+This optional profile supports explicit registration; it does not activate model inference or download files.
+The base archive and four speech/translation packs remain separate. Clean-host acceptance is still open.
+
+历史 CLI 0.1.4 / local.2：
+`local/agent-ffmpeg/v0.1.0-alpha.4-local.2/agent-editor-kit-v0.1.0-alpha.4-local.2-cp313-win_amd64.zip`，
+SHA-256 `4e406058e082d1c9d778e9c4665f307d5027f17542c6fabfbc9d8d72ac0a2333`，
+manifest `sha256:fd418d94461b57423072fb730959e36cb39264fd48a96be26dc297fe52b59897`；
+[r3 kit](../skills/agent-editor-kit-community-unified-skill-r3.zip) 继续对应旧包，旧标签/附件未改。

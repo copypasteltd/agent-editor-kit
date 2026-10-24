@@ -1448,3 +1448,11 @@ scripts/audit_goal_review_20261025_r2.py text eol=lf
 # Latest read-only assessment and copied candidate receipts retain their original bytes.
 docs/validation/evidence/goal-gaps-20261025-r3/** -text -whitespace
 scripts/review_goal_gaps_20261025_r3.py text eol=lf
+
+# Semantic model provenance, frozen queries, native failures and actual media hashes.
+sources/semantic-20261025/** -text -whitespace
+docs/validation/evidence/semantic-20261025-r1/** -text -whitespace
+docs/assets/semantic-20261025-r1/** -text -whitespace
+docs/specs/离线语义素材检索契约_v0.1_2026-10-25.md -text -whitespace
+docs/validation/离线语义检索实测_2026-10-25.md text eol=lf
+docs/skills/community-unified-skill-package-0.1.5.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

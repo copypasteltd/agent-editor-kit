@@ -1,0 +1,202 @@
+{
+  "status": "passed",
+  "files_compared": 39,
+  "scope": "All 39 staged files before this receipt; candidate product code remains unstaged.",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "working_sha256": "6fc1304475971f47e7f136d23875a7bb62ffd5cc67064ac45b28e3647e0996ac",
+      "staged_sha256": "6fc1304475971f47e7f136d23875a7bb62ffd5cc67064ac45b28e3647e0996ac"
+    },
+    {
+      "path": "README.en.md",
+      "working_sha256": "6d877600359ffcf8c2525134da1eeb10560cdd434514f5b32edb983949a53ed4",
+      "staged_sha256": "6d877600359ffcf8c2525134da1eeb10560cdd434514f5b32edb983949a53ed4"
+    },
+    {
+      "path": "README.md",
+      "working_sha256": "a31c1a4523a5f56b823cf6dd4c2348012d92ba143c0b1a8050484f06afddfa43",
+      "staged_sha256": "a31c1a4523a5f56b823cf6dd4c2348012d92ba143c0b1a8050484f06afddfa43"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "working_sha256": "b619b07fe2a7e793236bce1239319aed7c7323f1a9266fb6e18898482410d5fd",
+      "staged_sha256": "b619b07fe2a7e793236bce1239319aed7c7323f1a9266fb6e18898482410d5fd"
+    },
+    {
+      "path": "docs/README.md",
+      "working_sha256": "ee723ee8e6ed8b98fff83c03a2aa79ccabcab5bea8a8a95c8675113f8bd47cd6",
+      "staged_sha256": "ee723ee8e6ed8b98fff83c03a2aa79ccabcab5bea8a8a95c8675113f8bd47cd6"
+    },
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "working_sha256": "30cbb186075322f65c5382e8f643984ec740fd808c557c54f259cfb8fd9538c7",
+      "staged_sha256": "30cbb186075322f65c5382e8f643984ec740fd808c557c54f259cfb8fd9538c7"
+    },
+    {
+      "path": "docs/product/IMPLEMENTATION_PLAN_20261025.md",
+      "working_sha256": "b8d7dbac9aee9a171a217181b61af0dd3e4ad987ac986728b9705d84cfce5bac",
+      "staged_sha256": "b8d7dbac9aee9a171a217181b61af0dd3e4ad987ac986728b9705d84cfce5bac"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/calls.json",
+      "working_sha256": "4a20be4bf2d893c7df3e429df411bb78597a09db5db212e8e167bed49d401833",
+      "staged_sha256": "4a20be4bf2d893c7df3e429df411bb78597a09db5db212e8e167bed49d401833"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/candidate-contract-tests.json",
+      "working_sha256": "07f86dd2fea13253ca04194d2218d0f402ca59f9bee900aee1f97b32b976387b",
+      "staged_sha256": "07f86dd2fea13253ca04194d2218d0f402ca59f9bee900aee1f97b32b976387b"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/candidate-contract-tests.log",
+      "working_sha256": "ef067fd970a26b209de783ec4fa47f692d69632ae64870fff0b0e7696fd03d91",
+      "staged_sha256": "ef067fd970a26b209de783ec4fa47f692d69632ae64870fff0b0e7696fd03d91"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/candidate-index-calls.json",
+      "working_sha256": "01e3bab5f4df6f37600b352987f2c2ca74b294635f777c01ffb7d3531cbe5302",
+      "staged_sha256": "01e3bab5f4df6f37600b352987f2c2ca74b294635f777c01ffb7d3531cbe5302"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/candidate-index-verify.stderr.txt",
+      "working_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/candidate-index-verify.stdout.json",
+      "working_sha256": "7d3e4df2f624417f0a4b1b8a6791a793b384a031cd1e7645b4f3c7d761255086",
+      "staged_sha256": "7d3e4df2f624417f0a4b1b8a6791a793b384a031cd1e7645b4f3c7d761255086"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/candidate-index.json",
+      "working_sha256": "139a92ba0d6f9a075a8c2e711c88444debdb02783f12851f2403c7610316c463",
+      "staged_sha256": "139a92ba0d6f9a075a8c2e711c88444debdb02783f12851f2403c7610316c463"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/candidate-index.stderr.txt",
+      "working_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/candidate-index.stdout.json",
+      "working_sha256": "57b5fe678f3453d16963210dd1ffc131d6e330408beb428f3e58c97aa8efba49",
+      "staged_sha256": "57b5fe678f3453d16963210dd1ffc131d6e330408beb428f3e58c97aa8efba49"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/candidate-progress.json",
+      "working_sha256": "cae9c5bdae735b18f0078f262048753cc0431da21f9336ba7d37b079b5805388",
+      "staged_sha256": "cae9c5bdae735b18f0078f262048753cc0431da21f9336ba7d37b079b5805388"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/candidate-setup-calls.json",
+      "working_sha256": "b404ce440aa8e2b8589ff4e1dd158e3c17a97f1525e7812d4f0e3657d2548713",
+      "staged_sha256": "b404ce440aa8e2b8589ff4e1dd158e3c17a97f1525e7812d4f0e3657d2548713"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/candidate-setup.json",
+      "working_sha256": "730fefbbd8c14f1902df91906cedd24e056b53d93342a4cd95a897fca0bfe08e",
+      "staged_sha256": "730fefbbd8c14f1902df91906cedd24e056b53d93342a4cd95a897fca0bfe08e"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/documentation-verification-r1.json",
+      "working_sha256": "606790dafb5dfd137edaf7ece40a7650f0d400468d196057146fd60d69708b01",
+      "staged_sha256": "606790dafb5dfd137edaf7ece40a7650f0d400468d196057146fd60d69708b01"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/documentation-verification.json",
+      "working_sha256": "0cdf9034ce9c2d578ce56def00b592c64e33d56d47c33fd028e7c38028037b20",
+      "staged_sha256": "0cdf9034ce9c2d578ce56def00b592c64e33d56d47c33fd028e7c38028037b20"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/github-releases.json",
+      "working_sha256": "85c0c79378e4caf5ae8fd76815ec224ff1c9f3534fda09a08c0933b6f75121c6",
+      "staged_sha256": "85c0c79378e4caf5ae8fd76815ec224ff1c9f3534fda09a08c0933b6f75121c6"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/inventory.json",
+      "working_sha256": "dbbafcdb7877297b5aba02abe0501b36e8d25da8c04da06930f0509d58e4798d",
+      "staged_sha256": "dbbafcdb7877297b5aba02abe0501b36e8d25da8c04da06930f0509d58e4798d"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/logs/capabilities.stderr.txt",
+      "working_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/logs/capabilities.stdout.json",
+      "working_sha256": "cf99b01b79b7a068bafe67a1b194cd79997ed11dcc555d6a28fdcc087d5361ef",
+      "staged_sha256": "cf99b01b79b7a068bafe67a1b194cd79997ed11dcc555d6a28fdcc087d5361ef"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/logs/doctor.stderr.txt",
+      "working_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/logs/doctor.stdout.json",
+      "working_sha256": "771660810b69f801159e5b6c9af3a509aee767e08dee2a76c50d84258cd8d8c4",
+      "staged_sha256": "771660810b69f801159e5b6c9af3a509aee767e08dee2a76c50d84258cd8d8c4"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/logs/gpu.stderr.txt",
+      "working_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/logs/gpu.stdout.json",
+      "working_sha256": "2a644f7179e3cdb4f77b922635e7d46b6e6c6688505e27ac6f13ac1488329111",
+      "staged_sha256": "2a644f7179e3cdb4f77b922635e7d46b6e6c6688505e27ac6f13ac1488329111"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/logs/packs.stderr.txt",
+      "working_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/logs/packs.stdout.json",
+      "working_sha256": "ab4b0fc3b3b5548ac34f4a21823e92762f45d262c43e2c8b839179fb8c2112b7",
+      "staged_sha256": "ab4b0fc3b3b5548ac34f4a21823e92762f45d262c43e2c8b839179fb8c2112b7"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/logs/schema.stderr.txt",
+      "working_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/logs/schema.stdout.json",
+      "working_sha256": "4a0af30887530260d4d3bdf6e83f0ac60c3c2d873a773782bf2c32bc3ed8ccc1",
+      "staged_sha256": "4a0af30887530260d4d3bdf6e83f0ac60c3c2d873a773782bf2c32bc3ed8ccc1"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/logs/version.stderr.txt",
+      "working_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/logs/version.stdout.json",
+      "working_sha256": "e0762e9fda6a39c01981f08fa44dec0744dde76272c65f99eb70a30a6a75352c",
+      "staged_sha256": "e0762e9fda6a39c01981f08fa44dec0744dde76272c65f99eb70a30a6a75352c"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r3/review.json",
+      "working_sha256": "e8f747aa8bd1c73216d63a2ad86603402c4805978e7849e97acbc4f2b9571a10",
+      "staged_sha256": "e8f747aa8bd1c73216d63a2ad86603402c4805978e7849e97acbc4f2b9571a10"
+    },
+    {
+      "path": "scripts/record_semantic_progress_for_review_20261025_r3.py",
+      "working_sha256": "7aff01c25f729f0c9909fedb60fba45c133991ead95154bbdf25ed8da5395f05",
+      "staged_sha256": "7aff01c25f729f0c9909fedb60fba45c133991ead95154bbdf25ed8da5395f05"
+    },
+    {
+      "path": "scripts/review_goal_gaps_20261025_r3.py",
+      "working_sha256": "b1a905a776305ad5b5b304f1e7e26491beb7a95be3b062fe196dd719f15bf306",
+      "staged_sha256": "b1a905a776305ad5b5b304f1e7e26491beb7a95be3b062fe196dd719f15bf306"
+    },
+    {
+      "path": "scripts/sync_goal_review_20261025_r3.py",
+      "working_sha256": "6508a1412fe40e6eb12acecc3e1f71d717b05dc1075946b0899f76d850e9ab43",
+      "staged_sha256": "6508a1412fe40e6eb12acecc3e1f71d717b05dc1075946b0899f76d850e9ab43"
+    }
+  ]
+}

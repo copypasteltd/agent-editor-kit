@@ -536,6 +536,7 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R41 | Qwen 原生格式边界候选 | CUDA BF16 实际 2 次前向，原/独立样例最大误差 220ms / 161ms，均未过 66.6667ms | [独立评分](docs/validation/evidence/implementation-20261025-r1/native-aligner-research/quality.json)；2026-10-25，失败保留、未接入正式对齐引擎 |
 | R42 | CLI 0.1.4 原生离线安装与统一 Skill | 新本地包、8 wheel、4 既有模型包校验，实际注册入口核对；旧包/公开附件保留 | [交付与摘要](docs/product/COMMUNITY_LOCAL_DELIVERY.md) · [本轮入口记录](docs/validation/evidence/implementation-20261025-r1/skill/verification.json)；2026-10-25，仍为同一主机，完整目标未完成 |
 | R43 | 当前目标差距再次复核 | 真实注册入口 6 次只读调用通过；CLI 0.1.4，72 项能力声明：20 已实现、44 有限制、7 需本地适配器、1 降级；38 组均有待关闭条件 | [最新差距表](docs/product/GOAL_GAPS_20261025.md) · [本次响应](docs/validation/evidence/goal-gaps-20261025-r2/inventory.json) · [证据复核](docs/validation/evidence/goal-gaps-20261025-r2/review.json)；2026-10-25，0 新渲染/推理/听审；G26 向量检索尚未交付，公开包仍为 alpha.3 |
+| R44 | 最新目标差距与开发候选分层复核 | 真实注册入口另 6 次只读调用通过，安装版仍为 CLI 0.1.4 / 72 项声明；开发候选 25 项契约测试、13 次准备命令另列，GPU 索引 2 次实际前向不冒充检索质量 | [38 组差距](docs/product/GOAL_GAPS_20261025.md) · [新核对](docs/validation/evidence/goal-gaps-20261025-r3/inventory.json) · [证据边界](docs/validation/evidence/goal-gaps-20261025-r3/review.json) · [开发索引](docs/validation/evidence/goal-gaps-20261025-r3/candidate-progress.json)；2026-10-25，无新增安装版渲染/推理或人工听审；公开包仍为 alpha.3，G01–G38 均有未关闭条件 |
 
 ## 当前边界与开发方向
 
@@ -546,6 +547,8 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 本次 R43 再次核对安装版，确认声道关系保护与原生采集已交付；极短窗音高、精确对齐、相机/麦克风实际录制和音画同步仍待验收。语义向量检索仅有开发准备，未计作可用功能。500 套风格和 72 项能力声明都不作为总体完成率。
 
 下一步以真实客户素材与最小可复现工程收集缺口，逐项补齐、实测、发布新版本；不覆盖既有发布包/摘要/标签。只按实际成功产物更新核验。
+
+**最新复核（R44，2026-10-25 04:38 台北）：** 当前可用的是 Agent 编辑 CLI 底座；完整剪映水准还缺高级 AI、复杂组合与自然视听验收、内容模板生态、Agent 自主任务成功率和稳定交付。G26 候选已实现图文索引/查询 CLI，并在 RTX 3060 上为 10 个素材生成 15 条索引（14 张去重图、2 次实际前向）；相关性、CPU/GPU 对照和安装/Skill 交付尚未验收。开发索引全阶段约 306 秒，含完整性核验、进程/模型加载及校验，实际模型推理约 26 秒；不能据此宣称实时检索或跨命令模型复用。安装版仍为 CLI 0.1.4，完整 38 组差距继续开放，不给出未经建立的总体完成率。
 
 ## 文档体系、来源与维护
 

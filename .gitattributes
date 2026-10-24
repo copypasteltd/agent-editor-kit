@@ -1444,3 +1444,7 @@ docs/validation/补齐实施首批实测_2026-10-25.md text eol=lf
 # Preserve exact raw responses and hashes from the current goal reassessment.
 docs/validation/evidence/goal-gaps-20261025-r2/** -text -whitespace
 scripts/audit_goal_review_20261025_r2.py text eol=lf
+
+# Latest read-only assessment and copied candidate receipts retain their original bytes.
+docs/validation/evidence/goal-gaps-20261025-r3/** -text -whitespace
+scripts/review_goal_gaps_20261025_r3.py text eol=lf

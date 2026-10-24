@@ -1,0 +1,61 @@
+{
+  "status": "development_index_verified",
+  "recorded_at_utc": "2026-10-24T20:47:37.106311+00:00",
+  "source_evidence": [
+    {
+      "source": "docs/validation/evidence/semantic-20261025-r1/development-r1/index/verification.json",
+      "copy": "candidate-index.json",
+      "sha256": "139a92ba0d6f9a075a8c2e711c88444debdb02783f12851f2403c7610316c463"
+    },
+    {
+      "source": "docs/validation/evidence/semantic-20261025-r1/development-r1/index/calls.json",
+      "copy": "candidate-index-calls.json",
+      "sha256": "01e3bab5f4df6f37600b352987f2c2ca74b294635f777c01ffb7d3531cbe5302"
+    },
+    {
+      "source": "docs/validation/evidence/semantic-20261025-r1/development-r1/index/01.stdout.json",
+      "copy": "candidate-index.stdout.json",
+      "sha256": "57b5fe678f3453d16963210dd1ffc131d6e330408beb428f3e58c97aa8efba49"
+    },
+    {
+      "source": "docs/validation/evidence/semantic-20261025-r1/development-r1/index/01.stderr.txt",
+      "copy": "candidate-index.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "docs/validation/evidence/semantic-20261025-r1/development-r1/index/02.stdout.json",
+      "copy": "candidate-index-verify.stdout.json",
+      "sha256": "7d3e4df2f624417f0a4b1b8a6791a793b384a031cd1e7645b4f3c7d761255086"
+    },
+    {
+      "source": "docs/validation/evidence/semantic-20261025-r1/development-r1/index/02.stderr.txt",
+      "copy": "candidate-index-verify.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "installed_or_skill_delivered": false,
+  "relevance_quality_accepted": false,
+  "source_assets": 10,
+  "index_rows": 15,
+  "unique_images_encoded": 14,
+  "actual_image_forward_calls": 2,
+  "device": "cuda",
+  "model_dtype": "torch.bfloat16",
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "model_loads": 1,
+  "load_seconds": 43.056758,
+  "inference_seconds": 26.283294,
+  "worker_total_seconds": 180.186608,
+  "peak_cuda_allocated_bytes": 808215040,
+  "whole_phase_seconds": 306.263889,
+  "runtime_includes_integrity_hashing_and_startup": true,
+  "limitations": [
+    "No text/image query relevance accepted",
+    "No CPU/GPU retrieval comparison yet",
+    "Still images and a still-image montage, not natural moving actions",
+    "No persistent model service; no installed or public delivery",
+    "No human viewing/listening acceptance"
+  ],
+  "complete_G26": false,
+  "generator_sha256": "7aff01c25f729f0c9909fedb60fba45c133991ead95154bbdf25ed8da5395f05"
+}

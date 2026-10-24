@@ -1,0 +1,147 @@
+{
+  "status": "reviewed",
+  "checked_at_utc": "2026-10-24T20:45:10.379735+00:00",
+  "source_commit": "f5135c8d0e010204bbf30825b754e6c0787719b4",
+  "inventory_sha256": "dbbafcdb7877297b5aba02abe0501b36e8d25da8c04da06930f0509d58e4798d",
+  "candidate_evidence_copies": [
+    {
+      "source": "docs/validation/evidence/semantic-20261025-r1/contract-tests-r2.json",
+      "copy": "candidate-contract-tests.json",
+      "bytes": 87964,
+      "sha256": "07f86dd2fea13253ca04194d2218d0f402ca59f9bee900aee1f97b32b976387b",
+      "reexecuted": false
+    },
+    {
+      "source": "docs/validation/evidence/semantic-20261025-r1/contract-tests-r2.log",
+      "copy": "candidate-contract-tests.log",
+      "bytes": 3811,
+      "sha256": "ef067fd970a26b209de783ec4fa47f692d69632ae64870fff0b0e7696fd03d91",
+      "reexecuted": false
+    },
+    {
+      "source": "docs/validation/evidence/semantic-20261025-r1/development-r1/setup/verification.json",
+      "copy": "candidate-setup.json",
+      "bytes": 709,
+      "sha256": "730fefbbd8c14f1902df91906cedd24e056b53d93342a4cd95a897fca0bfe08e",
+      "reexecuted": false
+    },
+    {
+      "source": "docs/validation/evidence/semantic-20261025-r1/development-r1/setup/calls.json",
+      "copy": "candidate-setup-calls.json",
+      "bytes": 15144,
+      "sha256": "b404ce440aa8e2b8589ff4e1dd158e3c17a97f1525e7812d4f0e3657d2548713",
+      "reexecuted": false
+    }
+  ],
+  "candidate_files": [
+    {
+      "path": "product/src/ai_ad_editor/semantic_contract.py",
+      "sha256": "5386bf154bd2f8ee492c4e371dbf8b6fede0ff9253e75af0092b2dc873e3da0a",
+      "exists_in_installed_package": false,
+      "equals_tested_source": true
+    },
+    {
+      "path": "product/src/ai_ad_editor/semantic_sampling.py",
+      "sha256": "ada9d120cf7a702c1590a16be6c90a6378be3f606a60460431bb8c9a318820e1",
+      "exists_in_installed_package": false,
+      "equals_tested_source": true
+    },
+    {
+      "path": "product/src/ai_ad_editor/semantic_worker.py",
+      "sha256": "c7d516667e50d8f23a1e23f537a5bf493ea5b1f15a0cd483d58e0763029d2411",
+      "exists_in_installed_package": false,
+      "equals_tested_source": true
+    },
+    {
+      "path": "product/src/ai_ad_editor/semantic.py",
+      "sha256": "7b17e53d48effd14b633ce263cba29c554ee6919d60e015dbf7128faac590de2",
+      "exists_in_installed_package": false,
+      "equals_tested_source": true
+    },
+    {
+      "path": "product/src/ai_ad_editor/semantic_cli.py",
+      "sha256": "4a31e51ad7c9783660dbc3b280af3c019ae52a5bd162a3b694c1e946046ba5da",
+      "exists_in_installed_package": false,
+      "equals_tested_source": true
+    }
+  ],
+  "candidate_semantic": {
+    "contract_tests_passed": 25,
+    "setup_commands_passed": 13,
+    "test_scope": "Contract/integrity tests include mocked embeddings; setup performs no model forward.",
+    "installed": false,
+    "delivered_via_skill": false,
+    "relevance_accepted": false,
+    "complete_G26": false,
+    "separate_live_inference_is_not_this_read_only_assessment": true
+  },
+  "historical_alignment": {
+    "threshold_ms": 66.66666666666667,
+    "maximum_errors_ms": [
+      220.0,
+      161.0
+    ],
+    "passed": false,
+    "rerun": false
+  },
+  "gap_group_ids": [
+    "G01",
+    "G02",
+    "G03",
+    "G04",
+    "G05",
+    "G06",
+    "G07",
+    "G08",
+    "G09",
+    "G10",
+    "G11",
+    "G12",
+    "G13",
+    "G14",
+    "G15",
+    "G16",
+    "G17",
+    "G18",
+    "G19",
+    "G20",
+    "G21",
+    "G22",
+    "G23",
+    "G24",
+    "G25",
+    "G26",
+    "G27",
+    "G28",
+    "G29",
+    "G30",
+    "G31",
+    "G32",
+    "G33",
+    "G34",
+    "G35",
+    "G36",
+    "G37",
+    "G38"
+  ],
+  "fully_closed_gap_groups": [],
+  "public_release": {
+    "url": "https://api.github.com/repos/copypasteltd/agent-editor-kit/releases?per_page=10",
+    "status": "checked",
+    "latest_published_tag": "v0.1.0-alpha.3",
+    "latest_published_url": "https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3",
+    "latest_is_prerelease": true,
+    "response_sha256": "85c0c79378e4caf5ae8fd76815ec224ff1c9f3534fda09a08c0933b6f75121c6"
+  },
+  "overall_completion_percentage_established": false,
+  "fresh_installed_read_only_calls": 6,
+  "fresh_model_forwards": 0,
+  "fresh_renders": 0,
+  "human_listening": false,
+  "human_quality_acceptance": false,
+  "historical_full_regression_rerun": false,
+  "new_competitor_feature_audit": false,
+  "browser_tabs_opened": 0,
+  "virtualization_used": false,
+  "generator_sha256": "b1a905a776305ad5b5b304f1e7e26491beb7a95be3b062fe196dd719f15bf306"
+}

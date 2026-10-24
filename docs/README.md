@@ -1,11 +1,12 @@
-# Agent Video Kit 文档 / Documentation
+# agent editor kit 文档 / Documentation
 
-[中文 README](../README.md) · [English README](../README.en.md) · [Release](https://github.com/Tonscriptions/agent-video-kit/releases/tag/v0.1.0-alpha.1)
+[简体中文](../README.md) · [繁體中文](../README.zh-TW.md) · [English](../README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit) · [Local package](releases/v0.1.0-alpha.2/artifacts/agent-video-kit-v0.1.0-alpha.2-cp313-win_amd64.zip)
 
-公开首版是 `v0.1.0-alpha.1`；本机后续构建已升级到 `v0.1.0-alpha.2`（CLI `0.1.1`），新增 100 个离线风格预设和本地 Skill 更新。完整剪映等价仍未验收。The public release remains alpha.1; the current local build is alpha.2 with 100 offline looks. New onboarding is bilingual.
+产品名称为 `agent editor kit`，后续代码维护于 `copypasteltd/agent-editor-kit`。原仓库公开首版是 `v0.1.0-alpha.1`；本机后续构建已升级到 `v0.1.0-alpha.2`（CLI `0.1.1`），新增 100 个离线风格预设和本地 Skill 更新。新仓库尚未发布对应 GitHub Release，可从上方本地包链接获取。完整剪映等价仍未验收。The product is now agent editor kit; all future updates go to the new repository. Complete READMEs are available in Simplified Chinese, Traditional Chinese and English; versioned manuals remain bilingual.
 
 | 阅读目标 / Goal | Document |
 |---|---|
+| 新仓库、产品名称与三语维护规则 / Repository, name and README languages | [Maintenance record](maintenance/REPOSITORY_AND_READMES.md) |
 | 100 预设完整编号、分类与实际预览 / Numbered look catalog | [100 looks](local/LOOK_PRESETS.md) |
 | 新包安装、检索、预览与应用 / Alpha.2 usage | [Alpha.2 manual](releases/v0.1.0-alpha.2/USAGE.md) |
 | 100 预设实测、单元回归、Skill 与项目包 / Current verification | [Look verification](validation/LOOK_PRESETS_20261024.md) |

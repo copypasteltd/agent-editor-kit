@@ -1,12 +1,12 @@
-# Agent Video Kit
+# agent editor kit
 
 **面向 Agent 的本地视频编辑 CLI。** 用可编辑 JSON 时间线、固定能力契约和真实渲染证据，让 Agent 完成广告剪辑、模板变体、关键帧运镜与视频自动化。
 
-[English](README.en.md) · [下载首版](https://github.com/Tonscriptions/agent-video-kit/releases/tag/v0.1.0-alpha.1) · [文档入口](docs/README.md) · [使用手册](docs/releases/v0.1.0-alpha.1/USAGE.md) · [Skill 详情](docs/local/INSTALLATION.md) · [完整案例](docs/releases/v0.1.0-alpha.1/CASES.md)
+[简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [源码仓库](https://github.com/copypasteltd/agent-editor-kit) · [下载安装包](docs/releases/v0.1.0-alpha.2/artifacts/agent-video-kit-v0.1.0-alpha.2-cp313-win_amd64.zip) · [文档入口](docs/README.md) · [使用手册](docs/releases/v0.1.0-alpha.1/USAGE.md) · [Skill 详情](docs/local/INSTALLATION.md) · [完整案例](docs/releases/v0.1.0-alpha.1/CASES.md)
 
-**当前发布：`v0.1.0-alpha.1`，Windows 本地 CLI 预览版。** 首版范围已收口为“离线安装、结构化编辑、预览/渲染、核验与交付”的闭环。完整剪映功能、素材生态及自然画质/听感等价仍属于后续目标。[发布判定与未关闭需求](docs/releases/v0.1.0-alpha.1/RELEASE.md)。
+**历史首版：`v0.1.0-alpha.1`，已在原仓库发布的 Windows 本地 CLI 预览版。** 首版范围已收口为“离线安装、结构化编辑、预览/渲染、核验与交付”的闭环。完整剪映功能、素材生态及自然画质/听感等价仍属于后续目标。[发布判定与未关闭需求](docs/releases/v0.1.0-alpha.1/RELEASE.md)。
 
-**本轮本地更新：`v0.1.0-alpha.2`，100 预设。** 新包保存在本仓库并已安装到 E 盘；尚未创建新的 GitHub Release，公开首版链接仍指向 alpha.1。
+**本轮本地更新：`v0.1.0-alpha.2`，100 预设。** 新包保存在本仓库并已安装到 E 盘；可通过上方安装包链接获取，新仓库尚未创建对应 GitHub Release。产品名为 **agent editor kit**，后续代码与更新统一维护于新仓库。
 
 ![实际成片：原视频与三套风格对比](docs/assets/look-presets-20261024-r1/motion-comparison.gif)
 
@@ -91,7 +91,7 @@ $avkManifest = (Get-Content .\version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:\tools\avk-alpha2\run.py capabilities
 ```
 
-先用发布页的 `SHA256SUMS.txt` 校验 ZIP 和 `version.json`；manifest 哈希用于检测包内容变化，**不是作者数字签名**。本版支持并验证的是指定 ABI；`pyproject` 的 Python 下限不代表其他 Python/操作系统已经验证。
+先用[安装包目录](docs/releases/v0.1.0-alpha.2/artifacts)中的 `SHA256SUMS.txt` 校验 ZIP 和 `version.json`；manifest 哈希用于检测包内容变化，**不是作者数字签名**。本版支持并验证的是指定 ABI；`pyproject` 的 Python 下限不代表其他 Python/操作系统已经验证。
 
 已有开发依赖时，可从源码执行 `./ai-ad-editor.ps1 doctor`。完整离线构建、安装、故障排查和回滚见[使用手册](docs/releases/v0.1.0-alpha.1/USAGE.md)。
 
@@ -178,6 +178,7 @@ CLI 默认输出 JSON，Agent 应同时检查进程退出码、`ok`、`status`�
 | R17 | alpha.2 预设库与定向回归 | **100 个独立色彩变换；83 项测试通过** | [原始日志](docs/validation/evidence/look-presets-20261024-r1/unit-tests.txt)；目录/许可/哈希、Hald 原生位深与色轴、应用语义、事务、项目包、LUT 与离线安装器回归；未重跑 2,930 项全量 |
 | R18 | 新本地包与 Skill 同步 | **8 wheels 离线安装；17 个 Skill 格式通过；14 次入口调用：13 成功 + 1 预期拒绝** | [安装](docs/validation/evidence/look-presets-20261024-r1/install/installation.json) · [Skill 核验](docs/validation/evidence/look-presets-20261024-r1/skills/verification.json)；E 盘原生安装，真实预览/应用/渲染，保留 alpha.1 |
 | R19 | 安装版逐一实测 100 个预设 | **100 个预览 + 100 个成片；425 次隔离 CLI 调用，含 2 次预期拒绝** | [核验](docs/validation/evidence/look-presets-20261024-r1/installed/verification.json) · [动态 GIF](docs/assets/look-presets-20261024-r1/motion-comparison.gif)；逐片解码 12 帧/1 秒/480×300，预览与首帧各 100 个不同哈希，上游对照与包往返首帧像素通过；合成输入，未做自然素材/听审验收 |
+| R20 | 新仓库、产品名与三语 README | **简体中文 / 繁體中文 / English 完整入口；推送目标与文档检查通过** | [维护说明](docs/maintenance/REPOSITORY_AND_READMES.md) · [检查回执](docs/validation/evidence/readme-rebrand-20261024-r1/verification.json)；2026-10-24，仅文档链接、代码块、编号一致性与推送配置检查，0 新渲染；历史包名和哈希见维护说明 |
 
 
 ## 已知限制与后续开发
@@ -192,4 +193,4 @@ CLI 默认输出 JSON，Agent 应同时检查进程退出码、`ok`、`status`�
 - [产品需求与路线基线](docs/产品需求与开发路线基线_2026-10-12.md)、[系统架构](docs/architecture/系统边界与模块契约_v0.1_2026-10-13.md)、[机器可读 schema](docs/specs/agent-project.schema.json)。
 - [发布前完整编号核验历史](docs/releases/v0.1.0-alpha.1/history/README.zh.pre-release.md)、[历史文档索引](docs/releases/v0.1.0-alpha.1/history/docs-index.pre-release.md)、[全部文档](docs/README.md)。旧测试不累计为新增能力。
 - 自有代码和文档按 [MIT](LICENSE) 分发；第三方快照、Skill、模型、字体、媒体保留各自许可，见[第三方通知](docs/releases/v0.1.0-alpha.1/THIRD_PARTY.md)。权利台账是证据记录与门禁，不是自动法律认定。
-- 提交问题时附版本、最小可公开工程、实际命令/错误、manifest 与工具版本。功能更新维护 `main`、中英 README 与证据；原生回归入口为 `scripts/run_frozen_regression.py`，使用说明见手册。
+- 提交问题时附版本、最小可公开工程、实际命令/错误、manifest 与工具版本。功能更新维护 `main`、简体中文/繁體中文/English 三份 README 与证据；原生回归入口为 `scripts/run_frozen_regression.py`，使用说明见手册。

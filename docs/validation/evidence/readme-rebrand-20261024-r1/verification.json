@@ -1,0 +1,1360 @@
+{
+  "status": "passed",
+  "date_utc": "2026-10-24T00:01:07.759388+00:00",
+  "product_name": "agent editor kit",
+  "repository": "git@github.com:copypasteltd/agent-editor-kit.git",
+  "branch": "main",
+  "origin_fetch_verified": true,
+  "single_origin_push_destination_verified": true,
+  "destination_main_before_push": "f76995ce0791cc093baff047167b5774005593ea",
+  "destination_is_ancestor": true,
+  "phase": "pre-commit documentation checks; actual push completion is verified separately",
+  "push_helper_powershell_ast": "passed",
+  "push_helper_sha256": "d0713a346cfe4789edb6304c36587000873dd6e7c1e36b600ace4db5f269b641",
+  "push_helper_dry_run": {
+    "exit_code": 0,
+    "head": "3b6a969fc9218f21a52f73d6af3e88f21f9c148f",
+    "observed_output": "To github.com:copypasteltd/agent-editor-kit.git\n   f76995ce..3b6a969f  main -> main",
+    "actual_ref_update": false
+  },
+  "readmes": [
+    {
+      "path": "README.md",
+      "sha256": "b4e06f6f6e6ddb37effce7f64c896c84fa8987311ba409fa7f07eaec31848045",
+      "features": 13,
+      "cases": 4,
+      "skills": 17,
+      "numbered_checks": 20,
+      "tables": 4,
+      "code_blocks": 5,
+      "headings": 11
+    },
+    {
+      "path": "README.zh-TW.md",
+      "sha256": "19fef891e79c59b75337c5bfd371a1eaa877f271873e5cddd88496a5f89b924f",
+      "features": 13,
+      "cases": 4,
+      "skills": 17,
+      "numbered_checks": 20,
+      "tables": 4,
+      "code_blocks": 5,
+      "headings": 11
+    },
+    {
+      "path": "README.en.md",
+      "sha256": "5df4af6c1185aaef68fa2710f775b3b462799eeff4e4b81583aeabb01455cd2d",
+      "features": 13,
+      "cases": 4,
+      "skills": 17,
+      "numbered_checks": 20,
+      "tables": 4,
+      "code_blocks": 5,
+      "headings": 11
+    }
+  ],
+  "all_three_code_blocks_identical": true,
+  "traditional_inline_code_and_link_targets_preserved": true,
+  "traditional_translation": "Windows LCMapStringEx zh-TW plus reviewed Taiwan terminology",
+  "local_links_checked": 323,
+  "local_links": [
+    {
+      "document": "README.md",
+      "target": "README.md"
+    },
+    {
+      "document": "README.md",
+      "target": "README.zh-TW.md"
+    },
+    {
+      "document": "README.md",
+      "target": "README.en.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/releases/v0.1.0-alpha.2/artifacts/agent-video-kit-v0.1.0-alpha.2-cp313-win_amd64.zip"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/README.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/releases/v0.1.0-alpha.1/USAGE.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/local/INSTALLATION.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/releases/v0.1.0-alpha.1/CASES.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/releases/v0.1.0-alpha.1/RELEASE.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/look-presets-20261024-r1/motion-comparison.gif"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/local/LOOK_PRESETS.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/releases/v0.1.0-alpha.2/artifacts/agent-video-kit-v0.1.0-alpha.2-cp313-win_amd64.zip"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/workflow.gif"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/workflow.mp4"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/desktop.png"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/releases/v0.1.0-alpha.1/USAGE.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/local/LOOK_PRESETS.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/releases/v0.1.0-alpha.2/USAGE.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/research/OPEN_LOOK_LIBRARY_20261024.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/look-presets-20261024-r1/comparison.gif"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/look-presets-20261024-r1/motion-comparison.gif"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/look-presets-20261024-r1/contact-sheet.jpg"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/look-presets-20261024-r1/original.mp4"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/local/LOOK_PRESETS.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/LOOK_PRESETS_20261024.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/local/FILTERS.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/local/INSTALLATION.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/releases/v0.1.0-alpha.2/artifacts/agent-video-kit-v0.1.0-alpha.2-cp313-win_amd64.zip"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/local-install-20261024-r1/input.mp4"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/local-install-20261024-r1/field.mp4"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/local-install-20261024-r1/field.gif"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/local-install-20261024-r1/variant.gif"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/local-install-20261024-r1/skills/verification.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/releases/v0.1.0-alpha.2/artifacts"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/releases/v0.1.0-alpha.1/USAGE.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/releases/v0.1.0-alpha.1/CASES.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/input.mp4"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/field.mp4"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/field.gif"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/changes.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/render.stdout.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/template.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/variables.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/variant.mp4"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/variant.gif"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/float-shaper-20261023-installed-r1/original.mp4"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/float-shaper-20261023-installed-r1/edited.mp4"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/float-shaper-20261023-installed-r1/formal-comparison.gif"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/float-shaper-20261023-lab/installed-r1/verification.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/export-package.stdout.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/restored-validate.stdout.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/remote-refused.stdout.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/field.gif"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/releases/v0.1.0-alpha.1/CASES.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/local/INSTALLATION.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/releases/v0.1.0-alpha.1/SKILLS.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/float-shaper-20261023-lab/full-r1.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/float-shaper-20261023-lab/installed-r1/verification.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/release-verification.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/verification.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/remote-refused.stdout.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/browser-verification.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/release-verification.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r1/failure.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/publication.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/installation-receipt.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/local-install-20261024-r1/installation/installation.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/local-install-20261024-r1/skills/verification.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/local-install-20261024-r1/cases/verification.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/local-install-20261024-r1/field.gif"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/local-install-20261024-r1/review.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/filter-capabilities-20261024-r1/verification.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/local/FILTERS.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/filter-library-20261024-r1/inventory.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/research/OPEN_LOOK_LIBRARY_20261024.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/lut-research-20261024-r1/upstreams.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/lut-research-20261024-r1/probe/verification.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/lut-research-20261024-r1/comparison.gif"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/look-presets-20261024-r1/unit-tests.txt"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/look-presets-20261024-r1/install/installation.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/look-presets-20261024-r1/skills/verification.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/look-presets-20261024-r1/installed/verification.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/assets/look-presets-20261024-r1/motion-comparison.gif"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/maintenance/REPOSITORY_AND_READMES.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/validation/evidence/readme-rebrand-20261024-r1/verification.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/releases/v0.1.0-alpha.1/RELEASE.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/releases/v0.1.0-alpha.1/USAGE.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/releases/v0.1.0-alpha.1/SKILLS.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/releases/v0.1.0-alpha.1/CASES.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/releases/v0.1.0-alpha.1/RELEASE.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/产品需求与开发路线基线_2026-10-12.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/architecture/系统边界与模块契约_v0.1_2026-10-13.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/specs/agent-project.schema.json"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/releases/v0.1.0-alpha.1/history/README.zh.pre-release.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/releases/v0.1.0-alpha.1/history/docs-index.pre-release.md"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/README.md"
+    },
+    {
+      "document": "README.md",
+      "target": "LICENSE"
+    },
+    {
+      "document": "README.md",
+      "target": "docs/releases/v0.1.0-alpha.1/THIRD_PARTY.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "README.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "README.zh-TW.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "README.en.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/releases/v0.1.0-alpha.2/artifacts/agent-video-kit-v0.1.0-alpha.2-cp313-win_amd64.zip"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/README.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/releases/v0.1.0-alpha.1/USAGE.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/local/INSTALLATION.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/releases/v0.1.0-alpha.1/CASES.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/releases/v0.1.0-alpha.1/RELEASE.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/look-presets-20261024-r1/motion-comparison.gif"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/local/LOOK_PRESETS.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/releases/v0.1.0-alpha.2/artifacts/agent-video-kit-v0.1.0-alpha.2-cp313-win_amd64.zip"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/workflow.gif"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/workflow.mp4"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/desktop.png"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/releases/v0.1.0-alpha.1/USAGE.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/local/LOOK_PRESETS.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/releases/v0.1.0-alpha.2/USAGE.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/research/OPEN_LOOK_LIBRARY_20261024.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/look-presets-20261024-r1/comparison.gif"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/look-presets-20261024-r1/motion-comparison.gif"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/look-presets-20261024-r1/contact-sheet.jpg"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/look-presets-20261024-r1/original.mp4"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/local/LOOK_PRESETS.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/LOOK_PRESETS_20261024.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/local/FILTERS.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/local/INSTALLATION.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/releases/v0.1.0-alpha.2/artifacts/agent-video-kit-v0.1.0-alpha.2-cp313-win_amd64.zip"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/local-install-20261024-r1/input.mp4"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/local-install-20261024-r1/field.mp4"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/local-install-20261024-r1/field.gif"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/local-install-20261024-r1/variant.gif"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/local-install-20261024-r1/skills/verification.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/releases/v0.1.0-alpha.2/artifacts"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/releases/v0.1.0-alpha.1/USAGE.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/releases/v0.1.0-alpha.1/CASES.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/input.mp4"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/field.mp4"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/field.gif"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/changes.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/render.stdout.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/template.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/variables.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/variant.mp4"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/variant.gif"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/float-shaper-20261023-installed-r1/original.mp4"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/float-shaper-20261023-installed-r1/edited.mp4"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/float-shaper-20261023-installed-r1/formal-comparison.gif"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/float-shaper-20261023-lab/installed-r1/verification.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/export-package.stdout.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/restored-validate.stdout.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/remote-refused.stdout.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/field.gif"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/releases/v0.1.0-alpha.1/CASES.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/local/INSTALLATION.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/releases/v0.1.0-alpha.1/SKILLS.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/float-shaper-20261023-lab/full-r1.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/float-shaper-20261023-lab/installed-r1/verification.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/release-verification.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/verification.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/remote-refused.stdout.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/browser-verification.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/release-verification.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r1/failure.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/publication.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/installation-receipt.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/local-install-20261024-r1/installation/installation.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/local-install-20261024-r1/skills/verification.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/local-install-20261024-r1/cases/verification.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/local-install-20261024-r1/field.gif"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/local-install-20261024-r1/review.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/filter-capabilities-20261024-r1/verification.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/local/FILTERS.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/filter-library-20261024-r1/inventory.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/research/OPEN_LOOK_LIBRARY_20261024.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/lut-research-20261024-r1/upstreams.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/lut-research-20261024-r1/probe/verification.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/lut-research-20261024-r1/comparison.gif"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/look-presets-20261024-r1/unit-tests.txt"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/look-presets-20261024-r1/install/installation.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/look-presets-20261024-r1/skills/verification.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/look-presets-20261024-r1/installed/verification.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/assets/look-presets-20261024-r1/motion-comparison.gif"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/maintenance/REPOSITORY_AND_READMES.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/validation/evidence/readme-rebrand-20261024-r1/verification.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/releases/v0.1.0-alpha.1/RELEASE.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/releases/v0.1.0-alpha.1/USAGE.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/releases/v0.1.0-alpha.1/SKILLS.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/releases/v0.1.0-alpha.1/CASES.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/releases/v0.1.0-alpha.1/RELEASE.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/产品需求与开发路线基线_2026-10-12.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/architecture/系统边界与模块契约_v0.1_2026-10-13.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/specs/agent-project.schema.json"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/releases/v0.1.0-alpha.1/history/README.zh.pre-release.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/releases/v0.1.0-alpha.1/history/docs-index.pre-release.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/README.md"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "LICENSE"
+    },
+    {
+      "document": "README.zh-TW.md",
+      "target": "docs/releases/v0.1.0-alpha.1/THIRD_PARTY.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "README.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "README.zh-TW.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "README.en.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/releases/v0.1.0-alpha.2/artifacts/agent-video-kit-v0.1.0-alpha.2-cp313-win_amd64.zip"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/README.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/releases/v0.1.0-alpha.1/USAGE.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/local/INSTALLATION.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/releases/v0.1.0-alpha.1/CASES.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/releases/v0.1.0-alpha.1/RELEASE.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/look-presets-20261024-r1/motion-comparison.gif"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/local/LOOK_PRESETS.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/releases/v0.1.0-alpha.2/artifacts/agent-video-kit-v0.1.0-alpha.2-cp313-win_amd64.zip"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/workflow.gif"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/workflow.mp4"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/desktop.png"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/releases/v0.1.0-alpha.1/USAGE.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/local/LOOK_PRESETS.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/releases/v0.1.0-alpha.2/USAGE.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/research/OPEN_LOOK_LIBRARY_20261024.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/look-presets-20261024-r1/comparison.gif"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/look-presets-20261024-r1/motion-comparison.gif"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/look-presets-20261024-r1/contact-sheet.jpg"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/look-presets-20261024-r1/original.mp4"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/local/LOOK_PRESETS.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/LOOK_PRESETS_20261024.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/local/FILTERS.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/local/INSTALLATION.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/releases/v0.1.0-alpha.2/artifacts/agent-video-kit-v0.1.0-alpha.2-cp313-win_amd64.zip"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/local-install-20261024-r1/input.mp4"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/local-install-20261024-r1/field.mp4"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/local-install-20261024-r1/field.gif"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/local-install-20261024-r1/variant.gif"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/local-install-20261024-r1/skills/verification.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/releases/v0.1.0-alpha.2/artifacts"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/releases/v0.1.0-alpha.1/CASES.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/input.mp4"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/field.mp4"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/field.gif"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/changes.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/render.stdout.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/template.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/variables.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/variant.mp4"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/variant.gif"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/float-shaper-20261023-installed-r1/original.mp4"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/float-shaper-20261023-installed-r1/edited.mp4"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/float-shaper-20261023-installed-r1/formal-comparison.gif"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/float-shaper-20261023-lab/installed-r1/verification.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/export-package.stdout.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/restored-validate.stdout.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/remote-refused.stdout.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/release-v0.1.0-alpha.1-r2/field.gif"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/releases/v0.1.0-alpha.1/CASES.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/local/INSTALLATION.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/releases/v0.1.0-alpha.1/SKILLS.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/float-shaper-20261023-lab/full-r1.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/float-shaper-20261023-lab/installed-r1/verification.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/release-verification.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/verification.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/remote-refused.stdout.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/browser-verification.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/release-verification.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r1/failure.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/publication.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/release-v0.1.0-alpha.1-r2/installation-receipt.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/local-install-20261024-r1/installation/installation.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/local-install-20261024-r1/skills/verification.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/local-install-20261024-r1/cases/verification.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/local-install-20261024-r1/field.gif"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/local-install-20261024-r1/review.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/filter-capabilities-20261024-r1/verification.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/local/FILTERS.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/filter-library-20261024-r1/inventory.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/research/OPEN_LOOK_LIBRARY_20261024.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/lut-research-20261024-r1/upstreams.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/lut-research-20261024-r1/probe/verification.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/lut-research-20261024-r1/comparison.gif"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/look-presets-20261024-r1/unit-tests.txt"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/look-presets-20261024-r1/install/installation.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/look-presets-20261024-r1/skills/verification.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/look-presets-20261024-r1/installed/verification.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/assets/look-presets-20261024-r1/motion-comparison.gif"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/maintenance/REPOSITORY_AND_READMES.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/validation/evidence/readme-rebrand-20261024-r1/verification.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/releases/v0.1.0-alpha.1/RELEASE.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/releases/v0.1.0-alpha.1/USAGE.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/local/INSTALLATION.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/releases/v0.1.0-alpha.1/CASES.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/releases/v0.1.0-alpha.1/RELEASE.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/README.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/产品需求与开发路线基线_2026-10-12.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/architecture/系统边界与模块契约_v0.1_2026-10-13.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/specs/agent-project.schema.json"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/releases/v0.1.0-alpha.1/history/README.zh.pre-release.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/releases/v0.1.0-alpha.1/history/docs-index.pre-release.md"
+    },
+    {
+      "document": "README.en.md",
+      "target": "LICENSE"
+    },
+    {
+      "document": "README.en.md",
+      "target": "docs/releases/v0.1.0-alpha.1/THIRD_PARTY.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "../README.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "../README.zh-TW.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "../README.en.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "releases/v0.1.0-alpha.2/artifacts/agent-video-kit-v0.1.0-alpha.2-cp313-win_amd64.zip"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "maintenance/REPOSITORY_AND_READMES.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "local/LOOK_PRESETS.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "releases/v0.1.0-alpha.2/USAGE.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "validation/LOOK_PRESETS_20261024.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "local/INSTALLATION.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "local/FILTERS.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "research/OPEN_LOOK_LIBRARY_20261024.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "releases/v0.1.0-alpha.1/USAGE.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "releases/v0.1.0-alpha.1/SKILLS.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "releases/v0.1.0-alpha.1/CASES.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "releases/v0.1.0-alpha.1/RELEASE.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "releases/v0.1.0-alpha.1/THIRD_PARTY.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "demo/index.html"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "产品需求与开发路线基线_2026-10-12.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "architecture/系统边界与模块契约_v0.1_2026-10-13.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "specs/agent-project.schema.json"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "validation/evidence/float-shaper-20261023-lab/full-r1.json"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "validation/evidence/release-v0.1.0-alpha.1-r2/release-verification.json"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "validation/evidence/release-v0.1.0-alpha.1-r2/publication.json"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "releases/v0.1.0-alpha.1/history/README.zh.pre-release.md"
+    },
+    {
+      "document": "docs/README.md",
+      "target": "releases/v0.1.0-alpha.1/history/docs-index.pre-release.md"
+    },
+    {
+      "document": "docs/maintenance/REPOSITORY_AND_READMES.md",
+      "target": "../../README.md"
+    },
+    {
+      "document": "docs/maintenance/REPOSITORY_AND_READMES.md",
+      "target": "../../README.zh-TW.md"
+    },
+    {
+      "document": "docs/maintenance/REPOSITORY_AND_READMES.md",
+      "target": "../../README.en.md"
+    },
+    {
+      "document": "docs/maintenance/REPOSITORY_AND_READMES.md",
+      "target": "../README.md"
+    },
+    {
+      "document": "docs/maintenance/REPOSITORY_AND_READMES.md",
+      "target": "../validation/evidence/readme-rebrand-20261024-r1/verification.json"
+    }
+  ],
+  "installed_package_sha256": "8910c3d26bba78133ee7177018da5ea2fcefda59eb995965ba34a8fd308d177f",
+  "runtime_rendering_code_changed": false,
+  "new_renders": 0,
+  "new_model_inferences": 0,
+  "historical_regression_tests_rerun": false,
+  "browser_sessions_used": 0,
+  "virtualization_used": false
+}

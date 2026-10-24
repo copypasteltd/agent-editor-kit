@@ -1321,6 +1321,10 @@ skills/video-cut-timeline/** -text whitespace=cr-at-eol
 skills/video-cut-quality/** -text whitespace=cr-at-eol
 .github/workflows/first-release.yml text eol=lf
 README.en.md text eol=lf
+README.zh-TW.md text eol=lf
+git-auto-push.ps1 text eol=lf
+docs/maintenance/REPOSITORY_AND_READMES.md text eol=lf
+docs/validation/evidence/readme-rebrand-20261024-r1/** -text -whitespace
 docs/releases/v0.1.0-alpha.1/*.md text eol=lf
 docs/demo/index.html text eol=lf
 # Preserve reviewed installer/Skill/evidence bytes on Windows.

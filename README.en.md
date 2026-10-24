@@ -1,12 +1,12 @@
-# Agent Video Kit
+# agent editor kit
 
 **A local video editing CLI for Agents.** Editable JSON timelines, explicit capability contracts and real render evidence for advertising edits, template variants, keyframes and video automation.
 
-[简体中文](README.md) · [Download](https://github.com/Tonscriptions/agent-video-kit/releases/tag/v0.1.0-alpha.1) · [Documentation](docs/README.md) · [Manual](docs/releases/v0.1.0-alpha.1/USAGE.md) · [Skills](docs/local/INSTALLATION.md) · [Complete cases](docs/releases/v0.1.0-alpha.1/CASES.md)
+[简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [Source](https://github.com/copypasteltd/agent-editor-kit) · [Download package](docs/releases/v0.1.0-alpha.2/artifacts/agent-video-kit-v0.1.0-alpha.2-cp313-win_amd64.zip) · [Documentation](docs/README.md) · [Manual](docs/releases/v0.1.0-alpha.1/USAGE.md) · [Skills](docs/local/INSTALLATION.md) · [Complete cases](docs/releases/v0.1.0-alpha.1/CASES.md)
 
-**Release: `v0.1.0-alpha.1` — a native Windows CLI preview.** This milestone closes offline installation, structured editing, previews, rendering, checks and delivery. Full CapCut feature coverage, its asset ecosystem and perceptual equivalence remain future goals. [Release decision and open requirements](docs/releases/v0.1.0-alpha.1/RELEASE.md).
+**Historical release: `v0.1.0-alpha.1`, the native Windows CLI preview published in the original repository.** This milestone closes offline installation, structured editing, previews, rendering, checks and delivery. Full CapCut feature coverage, its asset ecosystem and perceptual equivalence remain future goals. [Release decision and open requirements](docs/releases/v0.1.0-alpha.1/RELEASE.md).
 
-**Current local update: `v0.1.0-alpha.2`, 100 presets.** The new package is stored in this repository and installed on E:. No new GitHub Release has been created; the public release link still targets alpha.1.
+**Current local update: `v0.1.0-alpha.2`, 100 presets.** The package is stored in this repository and installed on E:. Use the package link above; there is no corresponding GitHub Release in the new repository. The product name is **agent editor kit**, and all future code updates go to the new source repository.
 
 ![Actual original/three-look video comparison](docs/assets/look-presets-20261024-r1/motion-comparison.gif)
 
@@ -91,7 +91,7 @@ $avkManifest = (Get-Content .\version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:\tools\avk-alpha2\run.py capabilities
 ```
 
-Verify the ZIP and `version.json` against `SHA256SUMS.txt` on the release page first. A manifest digest detects changed contents; it is **not an author signature**. Other ABIs and platforms are unverified even where package metadata allows a lower Python version.
+First verify the ZIP and `version.json` against `SHA256SUMS.txt` in the [package directory](docs/releases/v0.1.0-alpha.2/artifacts). A manifest digest detects changed contents; it is **not an author signature**. Other ABIs and platforms are unverified even where package metadata allows a lower Python version.
 
 With development dependencies already installed, `./ai-ad-editor.ps1 doctor` runs from a source checkout. See the manual for offline builds, dependency troubleshooting, recovery and rollback.
 
@@ -102,7 +102,7 @@ $avkRun = 'E:\tools\avk-alpha2\run.py'
 $avkProject = 'E:\video-work\first-ad'
 & $avkPython -I -S -B -X utf8 $avkRun project init $avkProject --name 'First ad'
 & $avkPython -I -S -B -X utf8 $avkRun media ingest --project $avkProject --input E:\media\product.mp4
-# Use the returned data.asset.id in a locally authored changes.json.
+# Inspect returned data.asset.id, then put that ID in changes.json.
 & $avkPython -I -S -B -X utf8 $avkRun timeline compose --project $avkProject --input E:\video-work\changes.json
 & $avkPython -I -S -B -X utf8 $avkRun validate --project $avkProject
 & $avkPython -I -S -B -X utf8 $avkRun preview frame --project $avkProject --frame 0
@@ -178,6 +178,7 @@ Install the local release before registration. Windows junctions expose Skill so
 | R17 | Alpha.2 look catalog and targeted regressions | **100 distinct transforms; 83 methods passed** | [Tests](docs/validation/evidence/look-presets-20261024-r1/unit-tests.txt); catalog/assets, native-depth Hald axes, apply semantics, transactions, package portability, LUT and offline installer regressions; no new full 2,930-method run |
 | R18 | New local package and registered Skills | **Eight wheels installed; 17 Skills validated; 14 real launcher calls: 13 successes + one expected refusal** | [Install](docs/validation/evidence/look-presets-20261024-r1/install/installation.json) · [Skill receipt](docs/validation/evidence/look-presets-20261024-r1/skills/verification.json); E: installation, real look preview/apply/render, retained alpha.1 |
 | R19 | All-100 installed native rendering | **100 previews + 100 videos; 425 isolated CLI calls, two expected refusals** | [Receipt](docs/validation/evidence/look-presets-20261024-r1/installed/verification.json) · [GIF](docs/assets/look-presets-20261024-r1/motion-comparison.gif); every video decodes to 12 frames / 1 s / 480×300; 100 distinct preview/frame hashes; upstream comparisons and package first-frame pixels checked; synthetic inputs, no natural-footage/listening acceptance |
+| R20 | New repository, product name and three README languages | **Complete Simplified Chinese / Traditional Chinese / English READMEs; push destination and documentation checks passed** | [Maintenance](docs/maintenance/REPOSITORY_AND_READMES.md) · [Receipt](docs/validation/evidence/readme-rebrand-20261024-r1/verification.json); 2026-10-24, documentation links, code blocks, numbered coverage and push configuration only; zero new renders; historical package names/hashes explained in the maintenance record |
 
 
 ## Limitations and next milestones
@@ -192,4 +193,4 @@ Next priorities are renderer capability consistency, natural-media playback and 
 - [Product baseline](docs/产品需求与开发路线基线_2026-10-12.md), [system architecture](docs/architecture/系统边界与模块契约_v0.1_2026-10-13.md), and [machine-readable schema](docs/specs/agent-project.schema.json).
 - [Complete historical numbered verification log](docs/releases/v0.1.0-alpha.1/history/README.zh.pre-release.md) and [historical index](docs/releases/v0.1.0-alpha.1/history/docs-index.pre-release.md). Dated counts are retained rather than added together.
 - Original code/documentation is [MIT licensed](LICENSE). Vendored projects, Skills, models, fonts and media retain their separate terms. [Third-party notices](docs/releases/v0.1.0-alpha.1/THIRD_PARTY.md). The Rights Ledger records evidence and gates work; it does not automatically establish legal clearance.
-- Issues should include version, a minimal shareable project, actual command/error, manifests and tool versions. Changes maintain `main`, both READMEs and evidence. See the manual for the native frozen-regression entrypoint.
+- Issues should include version, a minimal shareable project, actual command/error, manifests and tool versions. Changes maintain `main`, all three READMEs and evidence. See the manual for the native frozen-regression entrypoint.

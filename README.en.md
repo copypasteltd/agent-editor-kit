@@ -408,6 +408,10 @@ Dated actual keyframe/camera/mask/title/transition/audio composition:
 
 R01–R24 retain their original versions/dates; R25–R28 record the N002 gallery and full-manual restoration; R29 records this goal-gap assessment and read-only installed inventory. Each row keeps its evidence date. Historical checks were not rerun for documentation updates; counts are not added or used to claim complete CapCut parity.
 
+R30 records portable installation and the full example; separate receipts retain optional-gallery extraction and reproducibility of all ten attachments from Git files. [Gallery check](docs/validation/evidence/release-v0.1.0-alpha.3-r1/gallery-portable/verification.json) · [Reproduction](docs/validation/evidence/release-v0.1.0-alpha.3-r1/git-reproduction.json).
+
+R31 records the public GitHub prerelease and actual download/hash verification of all ten attachments.
+
 | # | Verification | Actual result | Evidence and scope |
 |---|---|---|---|
 | R01 | Baseline full regression | **2,930 passed; 0 skipped**, 6991.508 s | [2026-10-23 receipt](docs/validation/evidence/float-shaper-20261023-lab/full-r1.json); this release rechecks identical 331 frozen inputs, rather than claiming a new full run  Frozen alpha.1 scope only; the new code has the separate checks below. |
@@ -440,6 +444,7 @@ R01–R24 retain their original versions/dates; R25–R28 record the N002 galler
 | R28 | Complete three-language docs and sample links | Modules/services/Skills/cases/500 samples, capability fields and local-link checks. | [Documentation receipt](docs/validation/evidence/looks-n002-20261024-r1/docs-verification.json) · Historical 2,930-test full kernel suite not rerun. |
 | R29 | Goal gaps and installed inventory | 4 successful installed read-only CLI calls; 68 capability contracts match the manual; 38 gap groups have explicit acceptance conditions. | [Assessment](docs/product/GOAL_GAPS_20261024.md) · [Inventory](docs/validation/evidence/goal-gaps-20261024-r1/inventory.json) · Zero renders/inference in this assessment; prior accuracy failures and open acceptance remain. |
 | R30 | Portable Agent kit installation and complete example | Native E-drive installation in a Chinese/spaced path; 17 Skills registered; 20 actual CLI calls edit, render, check quality and round-trip a project package. | [Release gate](docs/validation/evidence/release-v0.1.0-alpha.3-r1/verification.json) · [Demo video](docs/assets/release-v0.1.0-alpha.3-r1/demo.mp4) · 6 seconds/180 frames fully decoded; no full kernel rerun, model inference or listening review. |
+| R31 | GitHub prerelease and all attachment downloads | Alpha.3 prerelease is public; native Windows publication workflow succeeds; all 10 attachments are actually downloaded and SHA-256 checked. | [Release](https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3) · [Publication receipt](docs/validation/evidence/release-v0.1.0-alpha.3-r1/publication.json) · Original runtime ZIP unchanged; complete CapCut and natural-media acceptance remain open. |
 
 ## Current limits and development direction
 

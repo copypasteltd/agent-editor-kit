@@ -36,6 +36,15 @@ Native Edge opens the actual offline HTML to check pagination, search, category/
 
 这是选型文档页，不是视频剪辑 GUI。This is a documentation/selection page, not an editing GUI.
 
+## C08：alpha.3 可移植安装与首次完整成片 / Portable installation and first full render
+
+本次从 Agent kit 安装到新的 E 盘中文/空格路径，注册 17 个 Skill；随包脚本执行 20 次真实 CLI，产出 6 秒/360×640/30 fps/180 帧含音轨视频、可编辑工程、工程包与恢复校验。另有注册入口查询、预期拒绝、图册解包与候选板核验。输入为 CC0 虚构产品图和合成音频，GIF 无声；不计作新模型推理、自然画质或听审验收。
+The downloaded Agent kit installs into a fresh Chinese/spaced E-drive path and registers 17 Skills. Its script makes 20 actual CLI calls and delivers a six-second 360×640/30 fps/180-frame video with audio, editable project, package and restored validation. Separate checks cover registered-launcher queries, expected refusals, gallery extraction and a client board. CC0 fictional artwork/synthetic audio are used; the GIF is silent. This is not model inference, natural-footage quality or listening acceptance.
+
+[完整三语上手 / Quickstart](../releases/v0.1.0-alpha.3/QUICKSTART.md) · [原输入 / Inputs](../assets/release-v0.1.0-alpha.3-r1/input/) · [实际 MP4](../assets/release-v0.1.0-alpha.3-r1/demo.mp4) · [编辑 JSON](../validation/evidence/release-v0.1.0-alpha.3-r1/demo/changes.json) · [20 次命令](../validation/evidence/release-v0.1.0-alpha.3-r1/demo/commands.json) · [核验](../validation/evidence/release-v0.1.0-alpha.3-r1/verification.json) · [图册核验](../validation/evidence/release-v0.1.0-alpha.3-r1/gallery-portable/verification.json)
+
+![Actual portable Agent kit demo](../assets/release-v0.1.0-alpha.3-r1/demo.gif)
+
 ## H 系列：全部既有功能演示 / Complete dated functional demonstrations
 
 以下恢复原演示说明及输入/输出链接，保留原日期、V 编号、指标和失败边界。它们不是本轮重跑结果。研究段落仍明确标注未集成或未达到质量门槛。GIF 不包含声音；听审与自动采样是不同记录。

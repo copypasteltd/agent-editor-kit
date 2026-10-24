@@ -55,6 +55,11 @@ def main():
             assert len(rows[locale]) == 24
         save(history, {'source_commit': '1aa13905739bbb45e2d8708af7773e707098ef49', 'rows': rows})
     history_rows = json.loads(history.read_bytes())['rows']
+    publication_path = ROOT / 'docs/validation/evidence/release-v0.1.0-alpha.3-r1/publication.json'
+    published = publication_path.exists()
+    if published:
+        publication = json.loads(publication_path.read_bytes())
+        assert publication['status'] == 'published-and-download-verified' and len(publication['assets']) == 10
     cap_response = json.loads((ROOT / 'product/.runtime/readme-capabilities-20261024.json').read_text('utf-8-sig'))
     doctor = json.loads((ROOT / 'product/.runtime/readme-doctor-20261024.json').read_text('utf-8-sig'))
     effect_response = json.loads((ROOT / 'product/.runtime/readme-effects-20261024.json').read_text('utf-8-sig'))
@@ -118,6 +123,17 @@ Native Edge opens the actual offline HTML to check pagination, search, category/
 The following restored demonstrations retain their original dates, V IDs, metrics, input/output links and failure limits. They were not rerun in this update. Research remains labeled as unintegrated or below quality gates; GIFs are silent and listening differs from automatic sample checks.
 
 '''
+    current_case = '''## C08：alpha.3 可移植安装与首次完整成片 / Portable installation and first full render
+
+本次从 Agent kit 安装到新的 E 盘中文/空格路径，注册 17 个 Skill；随包脚本执行 20 次真实 CLI，产出 6 秒/360×640/30 fps/180 帧含音轨视频、可编辑工程、工程包与恢复校验。另有注册入口查询、预期拒绝、图册解包与候选板核验。输入为 CC0 虚构产品图和合成音频，GIF 无声；不计作新模型推理、自然画质或听审验收。
+The downloaded Agent kit installs into a fresh Chinese/spaced E-drive path and registers 17 Skills. Its script makes 20 actual CLI calls and delivers a six-second 360×640/30 fps/180-frame video with audio, editable project, package and restored validation. Separate checks cover registered-launcher queries, expected refusals, gallery extraction and a client board. CC0 fictional artwork/synthetic audio are used; the GIF is silent. This is not model inference, natural-footage quality or listening acceptance.
+
+[完整三语上手 / Quickstart](../releases/v0.1.0-alpha.3/QUICKSTART.md) · [原输入 / Inputs](../assets/release-v0.1.0-alpha.3-r1/input/) · [实际 MP4](../assets/release-v0.1.0-alpha.3-r1/demo.mp4) · [编辑 JSON](../validation/evidence/release-v0.1.0-alpha.3-r1/demo/changes.json) · [20 次命令](../validation/evidence/release-v0.1.0-alpha.3-r1/demo/commands.json) · [核验](../validation/evidence/release-v0.1.0-alpha.3-r1/verification.json) · [图册核验](../validation/evidence/release-v0.1.0-alpha.3-r1/gallery-portable/verification.json)
+
+![Actual portable Agent kit demo](../assets/release-v0.1.0-alpha.3-r1/demo.gif)
+
+'''
+    cases = cases.replace('## H 系列：', current_case + '## H 系列：', 1)
     cases += repair_links(demonstration, archived, cases_path)
     cases_path.write_text(cases.rstrip()+'\n', encoding='utf-8', newline='\n')
 
@@ -356,6 +372,11 @@ $agent-ffmpeg-local-quality 对实际输出、manifest 和 Scope 复核，分别
         text += pick('## 功能核验与发布证据','## Functional verification and release evidence')+'\n\n'
         text += pick('R01–R24 保留对应版本/日期核验；R25–R28 记录 N002 图册与完整文档恢复；R29 记录本次目标差距及安装版只读核对。各行按原证据日期理解，历史核验未因文档更新重跑；计数不相加，也不据此宣称完整剪映等价。',
                      'R01–R24 retain their original versions/dates; R25–R28 record the N002 gallery and full-manual restoration; R29 records this goal-gap assessment and read-only installed inventory. Each row keeps its evidence date. Historical checks were not rerun for documentation updates; counts are not added or used to claim complete CapCut parity.')+'\n\n'
+        text += pick('R30 记录本次可移植安装与完整示例；图册独立解包及 10 个附件从 Git 文件重建一致性另有原始回执。',
+                     'R30 records portable installation and the full example; separate receipts retain optional-gallery extraction and reproducibility of all ten attachments from Git files.')+' [Gallery check](docs/validation/evidence/release-v0.1.0-alpha.3-r1/gallery-portable/verification.json) · [Reproduction](docs/validation/evidence/release-v0.1.0-alpha.3-r1/git-reproduction.json).\n\n'
+        if published:
+            text += pick('R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希核对。',
+                         'R31 records the public GitHub prerelease and actual download/hash verification of all ten attachments.')+'\n\n'
         text += '| # | '+pick('核验 | 实际结果 | 证据与边界','Verification | Actual result | Evidence and scope')+' |\n|---|---|---|---|\n'+'\n'.join(history_rows[locale])+'\n'
         new_rows = [
             ['R25',pick('N002 全部滤镜的真实产出','Actual N002 outputs for every look'),pick('500 次安装版 CLI；500 全尺寸无损图 + 500 小图，500 个独立像素哈希。','500 installed CLI executions; 500 full-size lossless images + 500 thumbnails, with 500 unique pixel hashes.'), '[Render receipt](docs/validation/evidence/looks-n002-20261024-r1/render-verification.json) · '+pick('原图哈希不变；无新视频/模型推理，不是全自然视频质量验收。','Source hash unchanged; no new video/inference or general natural-video quality acceptance.')],
@@ -365,6 +386,8 @@ $agent-ffmpeg-local-quality 对实际输出、manifest 和 Scope 复核，分别
             ['R29',pick('完整目标差距与安装版核对','Goal gaps and installed inventory'),pick('4 次安装版只读 CLI 成功；68 项能力声明与手册一致；38 组差距分别列出收口条件。','4 successful installed read-only CLI calls; 68 capability contracts match the manual; 38 gap groups have explicit acceptance conditions.'),'[Assessment](docs/product/GOAL_GAPS_20261024.md) · [Inventory](docs/validation/evidence/goal-gaps-20261024-r1/inventory.json) · '+pick('本轮 0 渲染/0 推理；既有精度失败与未验收项保留。','Zero renders/inference in this assessment; prior accuracy failures and open acceptance remain.')]
         ]
         new_rows.append(['R30',pick('可移植 Agent kit 安装与完整示例','Portable Agent kit installation and complete example'),pick('原生 E 盘中文/空格路径安装；17 个 Skill 注册；20 次真实 CLI 完成剪辑、渲染、质检与工程包往返。','Native E-drive installation in a Chinese/spaced path; 17 Skills registered; 20 actual CLI calls edit, render, check quality and round-trip a project package.'),'[Release gate](docs/validation/evidence/release-v0.1.0-alpha.3-r1/verification.json) · [Demo video](docs/assets/release-v0.1.0-alpha.3-r1/demo.mp4) · '+pick('6 秒/180 帧完整解码；未重跑内核全量或模型推理，未做听审。','6 seconds/180 frames fully decoded; no full kernel rerun, model inference or listening review.')])
+        if published:
+            new_rows.append(['R31',pick('GitHub 预发布与全部附件下载核对','GitHub prerelease and all attachment downloads'),pick('alpha.3 预发布已公开；原生 Windows 发布任务成功；10 个附件逐项实际下载并比对 SHA-256。','Alpha.3 prerelease is public; native Windows publication workflow succeeds; all 10 attachments are actually downloaded and SHA-256 checked.'),'[Release](https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3) · [Publication receipt](docs/validation/evidence/release-v0.1.0-alpha.3-r1/publication.json) · '+pick('原运行 ZIP 不变；不代表完整剪映或自然视听门禁关闭。','Original runtime ZIP unchanged; complete CapCut and natural-media acceptance remain open.')])
         text += '\n'.join('| '+' | '.join(row)+' |' for row in new_rows)+'\n\n'
         text += pick('## 当前边界与开发方向','## Current limits and development direction')+'\n\n'
         text += pick('当前可交付的是有明确契约、离线可运行、可编辑、可复查的 Agent CLI 闭环。完整开源素材/模板生态、约定的 AI 特效/美颜/排版、完整色彩管线、指定草稿版本的真实转换质量、广泛自然视听和长片资源性能仍需开发与验收。消费级 GUI、账号、云协作及任意私有版本无损转换不属于当前内核收口门槛。后续 Float32 转场/运行时闭包候选 R113/R114 未随本版提供。',

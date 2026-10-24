@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "scope": "audit harness",
+  "reason": "Expected F01-F50 sorted in page order, but existing page intentionally lists F44-F50 extensions before the F01-F43 base table. No missing or duplicate feature IDs. Retry sorts the same exact ID list; no document content changed to satisfy the harness.",
+  "new_model_forwards": 0,
+  "new_renders": 0
+}

@@ -1,0 +1,20 @@
+test_bad_protocol_shape_network_hash_device_and_metrics_roll_back (test_stem_separation.FourSourceCLITests.test_bad_protocol_shape_network_hash_device_and_metrics_roll_back) ... ok
+test_default_gpu_preference_and_readonly_dry_run (test_stem_separation.FourSourceCLITests.test_default_gpu_preference_and_readonly_dry_run) ... ok
+test_four_independent_assets_tracks_samples_rights_and_source_preserved (test_stem_separation.FourSourceCLITests.test_four_independent_assets_tracks_samples_rights_and_source_preserved) ... ok
+test_gpu_auto_preflight_fallback_is_reported (test_stem_separation.FourSourceCLITests.test_gpu_auto_preflight_fallback_is_reported) ... ok
+test_idempotent_replay_does_not_repeat_model (test_stem_separation.FourSourceCLITests.test_idempotent_replay_does_not_repeat_model) ... ok
+test_inflight_cancel_cleanup_and_gpu_selection_fail_without_fallback (test_stem_separation.FourSourceCLITests.test_inflight_cancel_cleanup_and_gpu_selection_fail_without_fallback) ... ok
+test_late_encode_and_metadata_failure_clean_four_outputs (test_stem_separation.FourSourceCLITests.test_late_encode_and_metadata_failure_clean_four_outputs) ... ok
+test_output_id_source_or_model_tampering_stop_before_inference (test_stem_separation.FourSourceCLITests.test_output_id_source_or_model_tampering_stop_before_inference) ... ok
+test_package_roundtrip_keeps_four_editable_tracks_without_weights (test_stem_separation.FourSourceCLITests.test_package_roundtrip_keeps_four_editable_tracks_without_weights) ... ok
+test_precancel_and_invalid_execution_never_start_worker (test_stem_separation.FourSourceCLITests.test_precancel_and_invalid_execution_never_start_worker) ... ok
+test_all_model_sources_tail_dc_and_high_peaks_are_preserved (test_stem_separation.FourSourceDSPTests.test_all_model_sources_tail_dc_and_high_peaks_are_preserved) ... ok
+test_antiphase_keeps_finite_shared_normalization (test_stem_separation.FourSourceDSPTests.test_antiphase_keeps_finite_shared_normalization) ... ok
+test_bad_shape_nan_and_exception_clean_all_partial_files (test_stem_separation.FourSourceDSPTests.test_bad_shape_nan_and_exception_clean_all_partial_files) ... ok
+test_malformed_nonfinite_and_existing_output_preserved (test_stem_separation.FourSourceDSPTests.test_malformed_nonfinite_and_existing_output_preserved) ... ok
+test_silence_skips_model_and_closes_windows_mappings (test_stem_separation.FourSourceDSPTests.test_silence_skips_model_and_closes_windows_mappings) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 23.280s
+
+OK

@@ -1,0 +1,105 @@
+{
+  "status": "passed",
+  "mode": "actual installed controls",
+  "calls": [
+    {
+      "argv": [
+        "audio",
+        "separate-stems",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\installed-r1\\中文 四轨工程",
+        "--asset-id",
+        "controlled_mix",
+        "--adapter-id",
+        "four",
+        "--device",
+        "cuda",
+        "--prefix",
+        "cpu"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "seconds": 8.20695060000071,
+      "command": "audio.separate-stems",
+      "status": "failed"
+    },
+    {
+      "argv": [
+        "audio",
+        "separate-stems",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\installed-r1\\中文 四轨工程",
+        "--asset-id",
+        "controlled_mix",
+        "--adapter-id",
+        "four",
+        "--device",
+        "cuda",
+        "--prefix",
+        "bad_device",
+        "--device-index",
+        "31"
+      ],
+      "exit_code": 10,
+      "expected_exit_code": 10,
+      "seconds": 4.72873299999992,
+      "command": "audio.separate-stems",
+      "status": "failed"
+    },
+    {
+      "argv": [
+        "audio",
+        "separate-stems",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\installed-r1\\中文 四轨工程",
+        "--asset-id",
+        "controlled_mix",
+        "--adapter-id",
+        "four",
+        "--device",
+        "cuda",
+        "--prefix",
+        "pre_cancel",
+        "--cancel-file",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\four-stems-20261025-r1\\controls-r3\\pre-cancel"
+      ],
+      "exit_code": 8,
+      "expected_exit_code": 8,
+      "seconds": 2.2600832999996783,
+      "command": "audio.separate-stems",
+      "status": "failed"
+    }
+  ],
+  "cancellation": {
+    "cli_pid": 20476,
+    "worker": {
+      "ProcessId": 31720,
+      "ParentProcessId": 20476,
+      "CommandLine": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\python.exe -I -B -u -X utf8 E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.4\\final\\installed\\site\\ai_ad_editor\\stem_separation_worker.py \"E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\installed-r1\\中文 四轨工程\\cache\\four-stem-separation\\hdemucs-xnsxty8f\\request.json\""
+    },
+    "worker_live_before_cancel": true,
+    "seconds_to_worker": 3.5889318000008643,
+    "scope": "actual worker startup/integrity cancellation; no GPU-kernel or host-hash latency claim",
+    "exit_code": 8,
+    "cancel_ack_seconds": 0.4193087999992713,
+    "worker_exited": true,
+    "project_ledger_registry_unchanged": true,
+    "temporary_pcm_and_partial_outputs_cleaned": true,
+    "preexisting_job_directories_preserved": [
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\installed-r1\\中文 四轨工程\\cache\\four-stem-separation\\hdemucs-fql2zn03"
+    ]
+  },
+  "metadata_before": {
+    "project.json": "sha256:07b993a7dc1f6f62789def01bbc91997d53d9071227c68dbbaebf0f4f650d823",
+    "project.lock.json": "sha256:458a0d443ed3a60c427f7effe63538e2abd45350b93a4739d1ee6892e1da4e6d",
+    "rights-ledger.json": "sha256:a1c9430354416ba37bc40b07dd2ea42ae3266a46f270789659a34fed9186c34c",
+    "models/audio-adapters.json": "sha256:1c0be79454513a25629968c00a686638c6584de953bc1572808036dac5f79902"
+  },
+  "metadata_after": {
+    "project.json": "sha256:07b993a7dc1f6f62789def01bbc91997d53d9071227c68dbbaebf0f4f650d823",
+    "project.lock.json": "sha256:458a0d443ed3a60c427f7effe63538e2abd45350b93a4739d1ee6892e1da4e6d",
+    "rights-ledger.json": "sha256:a1c9430354416ba37bc40b07dd2ea42ae3266a46f270789659a34fed9186c34c",
+    "models/audio-adapters.json": "sha256:1c0be79454513a25629968c00a686638c6584de953bc1572808036dac5f79902"
+  },
+  "generator_sha256": "sha256:fc6efc6a74c8cca4f89568ff0df11c2ddb8a5c3e7f8802006523b9e294d8ae8e"
+}

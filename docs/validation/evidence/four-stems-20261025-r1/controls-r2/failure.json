@@ -1,0 +1,85 @@
+{
+  "status": "failed",
+  "error": "Worker request must belong to the verified child",
+  "calls": [
+    {
+      "argv": [
+        "audio",
+        "separate-stems",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\installed-r1\\中文 四轨工程",
+        "--asset-id",
+        "controlled_mix",
+        "--adapter-id",
+        "four",
+        "--device",
+        "cuda",
+        "--prefix",
+        "cpu"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "seconds": 15.786424499998247,
+      "command": "audio.separate-stems",
+      "status": "failed"
+    },
+    {
+      "argv": [
+        "audio",
+        "separate-stems",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\installed-r1\\中文 四轨工程",
+        "--asset-id",
+        "controlled_mix",
+        "--adapter-id",
+        "four",
+        "--device",
+        "cuda",
+        "--prefix",
+        "bad_device",
+        "--device-index",
+        "31"
+      ],
+      "exit_code": 10,
+      "expected_exit_code": 10,
+      "seconds": 3.1095323999979883,
+      "command": "audio.separate-stems",
+      "status": "failed"
+    },
+    {
+      "argv": [
+        "audio",
+        "separate-stems",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\installed-r1\\中文 四轨工程",
+        "--asset-id",
+        "controlled_mix",
+        "--adapter-id",
+        "four",
+        "--device",
+        "cuda",
+        "--prefix",
+        "pre_cancel",
+        "--cancel-file",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\four-stems-20261025-r1\\controls-r2\\pre-cancel"
+      ],
+      "exit_code": 8,
+      "expected_exit_code": 8,
+      "seconds": 2.916359000002558,
+      "command": "audio.separate-stems",
+      "status": "failed"
+    }
+  ],
+  "cancellation": {
+    "cli_pid": 13388,
+    "worker": {
+      "ProcessId": 19560,
+      "ParentProcessId": 13388,
+      "CommandLine": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\python.exe -I -B -u -X utf8 E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.4\\final\\installed\\site\\ai_ad_editor\\stem_separation_worker.py \"E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\installed-r1\\中文 四轨工程\\cache\\four-stem-separation\\hdemucs-5n8epoqu\\request.json\""
+    },
+    "worker_live_before_cancel": true,
+    "seconds_to_worker": 4.799430299997766,
+    "scope": "actual worker startup/integrity cancellation; no GPU-kernel or host-hash latency claim"
+  },
+  "generator_sha256": "sha256:1cc7a7b2f965155ea9e9e8fbc9f5a6f8df641ee830a285b663f0053ac3052757"
+}

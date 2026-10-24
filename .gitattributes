@@ -1456,3 +1456,14 @@ docs/assets/semantic-20261025-r1/** -text -whitespace
 docs/specs/离线语义素材检索契约_v0.1_2026-10-25.md -text -whitespace
 docs/validation/离线语义检索实测_2026-10-25.md text eol=lf
 docs/skills/community-unified-skill-package-0.1.5.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Independent four-source raw receipts, executed generators and media hashes.
+docs/validation/evidence/four-stems-20261025-r1/** -text -whitespace
+docs/validation/evidence/goal-gaps-20261025-r4/** -text -whitespace
+docs/validation/evidence/goal-gaps-20261025-r5/** -text -whitespace
+docs/assets/four-stems-20261025-r1/** -text -whitespace
+docs/product/four-stem-capabilities-cli-0.1.6.json -text -whitespace
+docs/skills/community-unified-skill-package-0.1.6.json -text -whitespace
+scripts/*four_stem*20261025.py text eol=lf
+scripts/assess_goal_gaps_20261025_r4.py text eol=lf
+docs/validation/独立四轨音源分离实测_2026-10-25.md text eol=lf

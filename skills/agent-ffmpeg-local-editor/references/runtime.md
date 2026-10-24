@@ -1,6 +1,6 @@
 # Installed-release runtime contract
 
-This namespace calls the locally installed `v0.1.0-alpha.4-local.3` / CLI 0.1.5
+This namespace calls the locally installed `v0.1.0-alpha.4-local.4` / CLI 0.1.6
 package using this Skill's `scripts/run.ps1`. Its 17 modules share the launcher.
 The editable Skill source stays on E:; Codex reads
 Windows directory junctions. `local/agent-ffmpeg/runtime.json` selects the native Python and installed path.
@@ -78,3 +78,10 @@ for explicit per-project adapter registration, not automatic model execution.
 The base application does not include Torch or SigLIP2 weights. Report missing
 paths; do not download dependencies or fall back to source. CUDA/CPU choices,
 native runtime hashes and actual inference attempts are recorded by the product.
+
+## Four-source audio separation
+
+Read [audio-stems.md](audio-stems.md). The separate four-source HDemucs engine
+requires an existing compatible checkpoint and native Torch/TorchAudio runtime.
+It preserves four neural estimates and can create four editable audio tracks.
+The base application/Skill kit does not include this checkpoint or heavy runtime.

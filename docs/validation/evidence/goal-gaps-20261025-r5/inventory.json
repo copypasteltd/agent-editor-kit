@@ -1,0 +1,135 @@
+{
+  "checked_at_utc": "2026-10-24T22:45:27.427197+00:00",
+  "scope": "six actual read-only unified Skill calls; no new rendering/inference/listening",
+  "calls": [
+    {
+      "argv": [
+        "version"
+      ],
+      "exit_code": 0,
+      "command": "version",
+      "status": "succeeded"
+    },
+    {
+      "argv": [
+        "doctor"
+      ],
+      "exit_code": 0,
+      "command": "doctor",
+      "status": "succeeded"
+    },
+    {
+      "argv": [
+        "capabilities"
+      ],
+      "exit_code": 0,
+      "command": "capabilities",
+      "status": "succeeded"
+    },
+    {
+      "argv": [
+        "schema",
+        "show"
+      ],
+      "exit_code": 0,
+      "command": "schema.show",
+      "status": "succeeded"
+    },
+    {
+      "argv": [
+        "gpu",
+        "inspect"
+      ],
+      "exit_code": 0,
+      "command": "gpu.inspect",
+      "status": "succeeded"
+    },
+    {
+      "argv": [
+        "model-pack",
+        "list"
+      ],
+      "exit_code": 0,
+      "command": "model-pack.list",
+      "status": "succeeded"
+    }
+  ],
+  "runtime": {
+    "release": "v0.1.0-alpha.4-local.4",
+    "python": "C:\\Python313\\python.exe",
+    "installed_directory": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.4\\final\\installed",
+    "manifest_sha256": "sha256:8206db8867a0d0908153cfa00f425c469909fb07545102ec59dcdc8e007b5ba9",
+    "launcher_sha256": "322dda3168534b883be4b2d18509624060e4db99afc9f5bde91602c0f638755e",
+    "native_only": true,
+    "community_config": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-runtime.json",
+    "semantic_config": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\semantic-runtime.json"
+  },
+  "version": {
+    "cli_version": "0.1.6",
+    "schema_version": "0.1.0",
+    "engine": "ffmpeg-local",
+    "runtime": "python+ffmpeg-local",
+    "network": "disabled",
+    "schema_validation": {
+      "ok": true,
+      "source": "bundled",
+      "schema_version": "0.1.0",
+      "draft": "2020-12",
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.4\\final\\installed\\site\\ai_ad_editor\\agent-project.schema.json",
+      "bytes": 80758,
+      "sha256": "sha256:950cf9c3abe6c97bee65463d1e7afe6eafeb4fd35bf983364e01f37ec464892f",
+      "formats": [
+        "date-time"
+      ],
+      "external_reference_retrieval": "disabled",
+      "date_time_checker": "rfc3339-validator-0.1.4-python3-adaptation",
+      "leap_seconds_supported": false,
+      "executor": "jsonschema",
+      "dependencies": {
+        "jsonschema": "4.26.0",
+        "attrs": "25.4.0",
+        "jsonschema-specifications": "2025.9.1",
+        "referencing": "0.37.0",
+        "rpds-py": "2026.6.3"
+      }
+    }
+  },
+  "capability_count": 74,
+  "statuses": {
+    "implemented_with_limits": 46,
+    "implemented": 20,
+    "degraded": 1,
+    "local_adapter_only": 7
+  },
+  "skill_count": 1,
+  "internal_modules": 17,
+  "goal_groups": 38,
+  "all_groups_retain_open_conditions": true,
+  "github_release_api": {
+    "url": "https://api.github.com/repos/copypasteltd/agent-editor-kit/releases?per_page=10",
+    "http_status": 200,
+    "error": null
+  },
+  "public_releases": [
+    {
+      "tag_name": "v0.1.0-alpha.3",
+      "prerelease": true,
+      "draft": false,
+      "published_at": "2026-10-24T12:52:48Z",
+      "html_url": "https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3"
+    }
+  ],
+  "new_model_calls": 0,
+  "new_renders": 0,
+  "human_listening": false,
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "original_failure_gates_preserved": [
+    "G15: 66.6667ms alignment",
+    "G16: short-window +/-5Hz",
+    "G20/G22 natural failures",
+    "G26 negation/OOD"
+  ],
+  "generator_sha256": "7c20ad13e6843250056f9db4232d389372f60e5edb02440842f6cd6dab52a2e0"
+}

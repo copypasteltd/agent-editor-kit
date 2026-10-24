@@ -424,3 +424,27 @@ Explicitly select cat, coffee and astronaut video candidates from actual frozen-
 同一新 run 运行 index，再以实际查询响应执行 `--phase demo --demo-response <actual-response.json>`。
 不要重用已有输出目录。完整生成器与原始命令以对应 evidence 下的 executed-generator.py/calls.json 为准。
 发布门禁未执行；NASA 形象不作产品背书。静态查看、自动解码、连续人工播放和听审分别记录。
+
+<a id="c15-four-stems"></a>
+
+## C15：独立四轨 → 可编辑混音 / Four independent stems to editable mixing
+
+明确登记本地 HDemucs 四源 adapter；真实安装版分别保存鼓、贝斯、其他乐器、人声的神经预测，并以 `--apply` 建立四条音轨。示例明确选择 CUDA 轨，其他实验轨静音；原输入保留。原创数值图作为视频画面。
+
+The installed CLI retains four independent neural estimates and creates editable tracks. The case explicitly selects the CUDA tracks and mutes other experimental tracks, preserving the original input. An original numeric board supplies the picture; it is a diagnostic display, not a music-quality demonstration.
+
+![Actual installed silent numeric diagnostic](../assets/four-stems-20261025-r1/demo-r2/installed-diagnostic-silent.gif)
+
+| 项目 / Item | 实际结果与边界 / Result and limit |
+|---|---|
+| 输入 / Input | 6 秒/44.1kHz 受控中文语音＋独立合成鼓/贝斯/和弦；另 6 秒 CC0 音乐仅验执行。受控语音和模型权利未核验，原音不公开 / Controlled speech/synthetic sources plus a separate CC0 music excerpt; source/model rights remain unverified |
+| 分离 / Separation | 开发 18 次 CLI/6 模型前向，安装版另 18/6，真实 Skill 11/2；CPU/GPU 每源改善≥3dB，other 绝对 SI-SDR 仅约 1.71dB / Controlled improvement passes; low absolute other score retained |
+| 实际成片 / Actual edit | 本地 MKV：640×360、30fps、6 秒/180 帧，48kHz 双声道 float PCM/288,000 样本帧 / Local audiovisual output |
+| 混音与往返 / Mixing and roundtrip | 与逐轨重采样求和最大差 0；工程包导入后重渲染 PCM 相同、全部解码 RGB 摘要相同 / Exact comparison verifies engineering preservation, not natural listening quality |
+| 本地原音与工程 / Local audio/package | `local/agent-ffmpeg/four-stems-20261025-r1/installed-r1/中文 四轨工程/renders/four-stem-mix.mkv`；同 run 下 `demo-four-stems.aevpkg.zip`。发布门禁按预期拒绝 / Kept local; publication correctly denied |
+| 可公开内容 / Public artifacts | [原创 PNG](../assets/four-stems-20261025-r1/demo-r2/installed-metrics.png)、[无声 MP4](../assets/four-stems-20261025-r1/demo-r2/installed-diagnostic-silent.mp4)、GIF 10fps/60 帧/6000ms，无音频；[来源](../assets/four-stems-20261025-r1/demo-r2/SOURCE.json) / Silent numeric diagnostic only |
+| 原始响应 / Raw records | [实际安装版渲染与校验](../validation/evidence/four-stems-20261025-r1/demo-r2/verification.json) · [完整实测/保留失败](../validation/独立四轨音源分离实测_2026-10-25.md) · [使用流程](FOUR_STEM_SEPARATION.md) |
+
+未完成自然分离/去混响/人工听审。自动完整解码、静态图检查、连续播放和听审分别记录；强制结束遗留临时目录的失败保留，不因正常取消或工程往返通过而关闭 G17/G33/G36。
+
+Natural separation quality, dereverberation and human listening remain open. Retained forced-termination cache residue is a separate recovery gap. This case does not close G17/G33/G36 or full CapCut parity.

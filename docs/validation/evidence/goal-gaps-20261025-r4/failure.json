@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "kind": "assessment harness",
+  "actual_readonly_skill_calls": 6,
+  "reason": "GitHub CLI gh was absent from PATH after the six local calls; rerun uses the official HTTPS release API directly",
+  "new_inference": 0,
+  "new_render": 0
+}

@@ -2,7 +2,7 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.5 / alpha.4-local.3。** Offline visual semantic retrieval, GPU voice/translation, 359 resources, native capture and one Skill / 17 modules. Public alpha.3 stays CLI 0.1.2. [Installation](COMMUNITY_LOCAL_DELIVERY.md) · [Semantic workflow](SEMANTIC_RETRIEVAL.md) · [Current declarations](semantic-capabilities-cli-0.1.5.json) · [All 38 gaps](GOAL_GAPS_20261025.md).
+**Current local / 当前本机 / 目前本機：CLI 0.1.6 / alpha.4-local.4。** Independent drums/bass/other/vocals, offline visual retrieval, GPU voice/translation, 359 resources, native capture; one Skill / 17 modules. Public alpha.3 remains CLI 0.1.2. [Installation](COMMUNITY_LOCAL_DELIVERY.md) · [Four-source workflow / 四轨 / 四軌](FOUR_STEM_SEPARATION.md) · [Actual evidence](../validation/独立四轨音源分离实测_2026-10-25.md) · [74 current declarations](four-stem-capabilities-cli-0.1.6.json) · [38 remaining groups](GOAL_GAPS_20261025.md).
 
 <!-- /community-current -->
 
@@ -37,7 +37,7 @@
 | F25 | 離線轉寫與字詞對齊 | 音頻 + 已有 Whisper/CTC 模型/校正文 → 轉寫、字幕、字詞時碼與 CER 評估。 | `asr adapter; subtitle transcribe/align/evaluate` | 基礎包不帶權重；轉寫段時間不等於精確逐字對齊，既有 CTC 自然精度門檻未通過。 |
 | F26 | 多軌音頻與總線 | 顯式音軌 → 混音、總線、音量/聲像、靜音/solo、淡化、EQ、壓縮、降噪、響度與閃避。 | `audio extract; timeline compose; quality check` | 影片資產有聲音不代表時間線自動出聲；自動 PCM/LUFS 檢查不代替聽審。 |
 | F27 | 本地語音合成 | 已有本地 flite 或登記 SoulX 權重/授權參考聲 → WAV 資產與可選音軌。 | `tts adapter/voice; tts synthesize` | flite 取決於 FFmpeg 構建且限 ASCII 英文；SoulX 需 CUDA/原生依賴，非基礎包自帶配音庫。 |
-| F28 | 聲道近似與模型分離 | 音頻 → center/side 近似，或已有 HDemucs 適配器的人聲/伴奏 stem。 | `audio separate; audio adapter` | mid/side 不是 AI 人聲分離；真正模型分離需權重、環境與許可。 |
+| F28 | 獨立四軌與雙軌分離 | 鼓/貝斯/其他樂器/人聲 → 四個 float WAV 與可編輯音軌；保留雙軌和 mid/side。 | `audio separate-stems; audio separate; audio adapter` | 另供原生 Torch/權重，已實測 CPU/GPU；自然品質/聽審/模型權利待驗。 |
 | F29 | 跟蹤、綁定與重構圖 | 模板/模型/已編碼蒙版軌跡 → 文字/貼紙錨定、裁切與主體重構圖關鍵影格。 | `media track/track-bind/reframe` | 多目標須明確對象；置信度/蒙版不等於身份保證，支持的變換與時鐘需檢查。 |
 | F30 | OCR 錨點與人臉修飾 | 已有 PP-OCR/OpenSeeFace 模型 → OCR 框/文字、錨點運鏡、人臉點位與受限修飾。 | `ocr adapter/scan/anchors; face adapter/scan/retouch` | 已有 ONNX CPU 環境與權重；不是完整 UI 行為識別、美妝、瘦身或臉部生成。 |
 | F31 | 人像摳像與對象分割 | 已有 RVM/SAM2 + 提示點/框 → 透明影片、對象 mask 和可編輯派生資產。 | `media adapter; media matting` | RVM 人像與 SAM2 對象分割不同；概率 mask 不是物理發絲 matte，需檢查運動/遮擋。 |

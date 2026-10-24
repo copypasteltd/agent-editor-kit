@@ -1,0 +1,39 @@
+usage: ai-ad-editor audio separate-stems [-h] [--format {json,text}]
+                                         [--request-id REQUEST_ID]
+                                         [--idempotency-key IDEMPOTENCY_KEY]
+                                         [--dry-run] [--no-network]
+                                         [--progress {none,jsonl}]
+                                         --project PROJECT --asset-id ASSET_ID
+                                         --adapter-id ADAPTER_ID
+                                         [--prefix PREFIX]
+                                         [--sample-rate SAMPLE_RATE]
+                                         [--device {auto,cpu,cuda}]
+                                         [--device-index DEVICE_INDEX]
+                                         [--timeout-seconds TIMEOUT_SECONDS]
+                                         [--cancel-file CANCEL_FILE]
+                                         [--sequence-id SEQUENCE_ID]
+                                         [--timeline-start-seconds TIMELINE_START_SECONDS]
+                                         [--apply]
+
+options:
+  -h, --help            show this help message and exit
+  --format {json,text}  输出格式
+  --request-id REQUEST_ID
+  --idempotency-key IDEMPOTENCY_KEY
+  --dry-run
+  --no-network
+  --progress {none,jsonl}
+  --project PROJECT
+  --asset-id ASSET_ID   已有本地音频或视频资产
+  --adapter-id ADAPTER_ID
+                        torchaudio-hdemucs-four-stem-local-v1 适配器
+  --prefix PREFIX       派生资产/音轨 ID 前缀；已有 ID 和文件不覆盖
+  --sample-rate SAMPLE_RATE
+  --device {auto,cpu,cuda}
+                        默认沿用登记设备；auto 优先 GPU，仅预检不足时回退 CPU
+  --device-index DEVICE_INDEX
+  --timeout-seconds TIMEOUT_SECONDS
+  --cancel-file CANCEL_FILE
+  --sequence-id SEQUENCE_ID
+  --timeline-start-seconds TIMELINE_START_SECONDS
+  --apply               新建四条独立音轨，原轨道和原音保留

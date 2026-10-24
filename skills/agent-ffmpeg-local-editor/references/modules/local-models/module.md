@@ -4,13 +4,16 @@
 
 Native runtime + weights/hashes/licenses → adapters/artifacts
 
-Commands: `media adapter; asr adapter; ocr; face; tts; voice; translate; gpu; model-pack`.
+Commands: `media adapter; audio adapter; audio separate-stems; asr adapter; ocr; face; tts; voice; translate; gpu; model-pack`.
 No weight downloads; check capability/runtime before execution.
 
 For the installed community speech/translation packs, read
 [community-materials.md](../../community-materials.md). Prefer configured GPU
 with `--device auto`, inspect the actual provider and retain explicit CPU fallback
 or strict CUDA errors. General adapters still require their own registration.
+For independent drums/bass/other/vocals, read [audio-stems.md](../../audio-stems.md).
+Use the dedicated four-source engine; the older vocal/residual-accompaniment
+adapter does not implicitly become a four-source adapter.
 
 ## Workflow
 

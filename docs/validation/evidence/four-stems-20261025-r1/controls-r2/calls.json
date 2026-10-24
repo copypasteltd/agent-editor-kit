@@ -1,0 +1,69 @@
+[
+  {
+    "argv": [
+      "audio",
+      "separate-stems",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\installed-r1\\中文 四轨工程",
+      "--asset-id",
+      "controlled_mix",
+      "--adapter-id",
+      "four",
+      "--device",
+      "cuda",
+      "--prefix",
+      "cpu"
+    ],
+    "exit_code": 2,
+    "expected_exit_code": 2,
+    "seconds": 15.786424499998247,
+    "command": "audio.separate-stems",
+    "status": "failed"
+  },
+  {
+    "argv": [
+      "audio",
+      "separate-stems",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\installed-r1\\中文 四轨工程",
+      "--asset-id",
+      "controlled_mix",
+      "--adapter-id",
+      "four",
+      "--device",
+      "cuda",
+      "--prefix",
+      "bad_device",
+      "--device-index",
+      "31"
+    ],
+    "exit_code": 10,
+    "expected_exit_code": 10,
+    "seconds": 3.1095323999979883,
+    "command": "audio.separate-stems",
+    "status": "failed"
+  },
+  {
+    "argv": [
+      "audio",
+      "separate-stems",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\installed-r1\\中文 四轨工程",
+      "--asset-id",
+      "controlled_mix",
+      "--adapter-id",
+      "four",
+      "--device",
+      "cuda",
+      "--prefix",
+      "pre_cancel",
+      "--cancel-file",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\four-stems-20261025-r1\\controls-r2\\pre-cancel"
+    ],
+    "exit_code": 8,
+    "expected_exit_code": 8,
+    "seconds": 2.916359000002558,
+    "command": "audio.separate-stems",
+    "status": "failed"
+  }
+]

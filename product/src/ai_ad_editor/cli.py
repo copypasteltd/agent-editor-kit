@@ -102,6 +102,7 @@ from .multicam import MULTICAM_SYNC_VERSION, build_switch_segments, new_multicam
 from .audio_tools import AUDIO_EXTRACT_VERSION, extract_audio, inspect_audio_source
 from .audio_separation import AUDIO_SEPARATION_ENGINE, AUDIO_SEPARATION_VERSION, separate_command_json, separate_mid_side
 from .local_separation import DEMUCS_ENGINE, separate_native
+from .stem_separation import ENGINE as FOUR_STEM_ENGINE
 from .local_matting import MATTING_ENGINE, prepare_plan as prepare_matting_plan, matte_native
 from .local_segmentation import SEGMENTATION_ENGINE, load_prompts as load_segmentation_prompts
 from .local_inpainting import INPAINT_ENGINE, prepare_mask as prepare_inpaint_mask, normalize_options as inpaint_options
@@ -496,6 +497,8 @@ def build_parser() -> argparse.ArgumentParser:
     separate.add_argument("--verification-status", choices=("unverified", "verified", "restricted"), default="unverified")
     separate.add_argument("--evidence", default="")
     separate.add_argument("--creator", default="unknown")
+    from .stem_separation_cli import add_parser as add_stem_parser
+    add_stem_parser(aus, _leaf_common)
     adapter = _leaf_common(aus.add_parser("adapter", help="注册或检查本地音频模型适配器"))
     aas = adapter.add_subparsers(dest="adapter_action", required=True)
     adapter_register = _leaf_common(aas.add_parser("register", help="登记本地模型/执行器路径与哈希"))
@@ -510,7 +513,7 @@ def build_parser() -> argparse.ArgumentParser:
     adapter_register.add_argument("--verification-status", choices=("unverified", "verified", "restricted"), default="unverified")
     adapter_register.add_argument("--evidence", default="")
     adapter_register.add_argument("--creator", default="unknown")
-    adapter_register.add_argument("--device", choices=("cpu", "cuda"), default="cpu", help="HDemucs 原生设备，无自动回退")
+    adapter_register.add_argument("--device", choices=("auto", "cpu", "cuda"), default=None, help="双轨默认 cpu；四轨默认 auto，优先 GPU；显式 cuda 无回退")
     adapter_register.add_argument("--threads", type=int, default=4)
     adapter_register.add_argument("--segment-seconds", type=float, default=6.0)
     adapter_register.add_argument("--overlap", type=float, default=0.25)
@@ -1902,7 +1905,7 @@ def command_audio_adapter_register(args: argparse.Namespace) -> dict[str, Any]:
         verification_status=args.verification_status,
         evidence=evidence,
         root=root,
-        native_options={'device':args.device,'threads':args.threads,'segment_seconds':args.segment_seconds,'overlap':args.overlap} if args.engine == DEMUCS_ENGINE else None,
+        native_options={'device':args.device or ('auto' if args.engine == FOUR_STEM_ENGINE else 'cpu'),'threads':args.threads,'segment_seconds':args.segment_seconds,'overlap':args.overlap} if args.engine in {DEMUCS_ENGINE, FOUR_STEM_ENGINE} else None,
     )
     if args.dry_run:
         return _envelope("audio.adapter.register", args, status="planned", data={"registry": str(registry_path(root)), "adapter": adapter_record, "rights": rights_record})
@@ -7201,6 +7204,8 @@ from .capture import command as capture_command
 COMMANDS.update({("capture", action): (lambda args: capture_command(args, _envelope)) for action in ("devices", "record")})
 from .semantic_cli import ACTIONS as SEMANTIC_ACTIONS, command as semantic_command
 COMMANDS.update({('semantic', action): (lambda args: semantic_command(args, _envelope)) for action in SEMANTIC_ACTIONS})
+from .stem_separation_cli import command as stem_separation_command
+COMMANDS[('audio', 'separate-stems')] = lambda args: stem_separation_command(args, _envelope)
 
 
 def main(argv: list[str] | None = None) -> int:

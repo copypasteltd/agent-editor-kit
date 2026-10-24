@@ -1,0 +1,348 @@
+[
+  {
+    "argv": [
+      "version"
+    ],
+    "exit_code": 0,
+    "command": "version",
+    "status": "succeeded",
+    "seconds": 1.547640799999499,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:91a181479b86bffc2d118e2c66d49255ba09f8c6fa1f2c9cb4a1a67720ec1020"
+  },
+  {
+    "argv": [
+      "project",
+      "init",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\development-r1\\中文 四轨工程"
+    ],
+    "exit_code": 0,
+    "command": "project.init",
+    "status": "succeeded",
+    "seconds": 1.3712933999995585,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:761ff370625b290ec4918b634b66caeb8b8cf0666676542b98be402ba41f0456"
+  },
+  {
+    "argv": [
+      "media",
+      "ingest",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\development-r1\\中文 四轨工程",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\frozen-fixture\\mixture.wav",
+      "--asset-id",
+      "controlled_mix",
+      "--evidence",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\frozen-fixture\\frozen.json"
+    ],
+    "exit_code": 0,
+    "command": "media.ingest",
+    "status": "succeeded",
+    "seconds": 1.5163296999999147,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:b26cb5b3570871d0a7259b63cec49c835e5c22d3559473513082a2af53e51e76"
+  },
+  {
+    "argv": [
+      "audio",
+      "adapter",
+      "register",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\development-r1\\中文 四轨工程",
+      "--adapter-id",
+      "four",
+      "--engine",
+      "torchaudio-hdemucs-four-stem-local-v1",
+      "--model-path",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\audio\\hdemucs_high_musdbhq_only.pt",
+      "--executable",
+      "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+      "--evidence",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\audio\\hdemucs_high_musdbhq_only.evidence.json",
+      "--device",
+      "auto",
+      "--threads",
+      "4",
+      "--segment-seconds",
+      "4",
+      "--overlap",
+      ".25"
+    ],
+    "exit_code": 0,
+    "command": "audio.adapter.register",
+    "status": "succeeded",
+    "seconds": 2.776521399999183,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:ddfd0d0ef007aa2b7c7a0376db8ea38365f7ebef7d7729d8cdfec38da12435bd"
+  },
+  {
+    "argv": [
+      "audio",
+      "adapter",
+      "inspect",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\development-r1\\中文 四轨工程",
+      "--adapter-id",
+      "four"
+    ],
+    "exit_code": 0,
+    "command": "audio.adapter.inspect",
+    "status": "succeeded",
+    "seconds": 6.624110799999471,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:6d75e2127cca7ec1e4fd0d950b52af8cec0db006a43dda2084e03b22e02dfa9c"
+  },
+  {
+    "argv": [
+      "audio",
+      "separate-stems",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\development-r1\\中文 四轨工程",
+      "--asset-id",
+      "controlled_mix",
+      "--adapter-id",
+      "four",
+      "--prefix",
+      "cpu",
+      "--device",
+      "cpu",
+      "--apply",
+      "--sample-rate",
+      "44100",
+      "--dry-run"
+    ],
+    "exit_code": 0,
+    "command": "audio.separate-stems",
+    "status": "planned",
+    "seconds": 7.532873300000574,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:789512e49f6e0a3bc8581e7e9aefa9f39f8840dd0458905c5495234bed823cf2"
+  },
+  {
+    "argv": [
+      "audio",
+      "separate-stems",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\development-r1\\中文 四轨工程",
+      "--asset-id",
+      "controlled_mix",
+      "--adapter-id",
+      "four",
+      "--prefix",
+      "cpu",
+      "--device",
+      "cpu",
+      "--apply",
+      "--sample-rate",
+      "44100"
+    ],
+    "exit_code": 0,
+    "command": "audio.separate-stems",
+    "status": "succeeded",
+    "seconds": 179.74120680000124,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:edafcf53429451bbfab135090fb889cd29de2678cef41c6b5143c967bd0330d8"
+  },
+  {
+    "argv": [
+      "audio",
+      "separate-stems",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\development-r1\\中文 四轨工程",
+      "--asset-id",
+      "controlled_mix",
+      "--adapter-id",
+      "four",
+      "--prefix",
+      "cuda",
+      "--device",
+      "cuda",
+      "--apply",
+      "--sample-rate",
+      "44100",
+      "--dry-run"
+    ],
+    "exit_code": 0,
+    "command": "audio.separate-stems",
+    "status": "planned",
+    "seconds": 3.555518999999549,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:9c5a222060fce92d1395dc00f49de638213c52143e9d49bfe1f08e350cfed946"
+  },
+  {
+    "argv": [
+      "audio",
+      "separate-stems",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\development-r1\\中文 四轨工程",
+      "--asset-id",
+      "controlled_mix",
+      "--adapter-id",
+      "four",
+      "--prefix",
+      "cuda",
+      "--device",
+      "cuda",
+      "--apply",
+      "--sample-rate",
+      "44100"
+    ],
+    "exit_code": 0,
+    "command": "audio.separate-stems",
+    "status": "succeeded",
+    "seconds": 25.100371200000154,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:80fefd5faed321f8ea50e67b775efa144b18af46adbc4fea31f958116201a49b"
+  },
+  {
+    "argv": [
+      "media",
+      "ingest",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\development-r1\\中文 四轨工程",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\frozen-fixture\\natural-music.wav",
+      "--asset-id",
+      "natural_music",
+      "--license-spdx",
+      "CC0-1.0",
+      "--verification-status",
+      "verified",
+      "--evidence",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\frozen-fixture\\frozen.json"
+    ],
+    "exit_code": 0,
+    "command": "media.ingest",
+    "status": "succeeded",
+    "seconds": 3.238703600000008,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:7b78f20cd027120a0c3fdf4bf24c59ee758ada0f893c114bc2256634913dc41a"
+  },
+  {
+    "argv": [
+      "audio",
+      "separate-stems",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\development-r1\\中文 四轨工程",
+      "--asset-id",
+      "natural_music",
+      "--adapter-id",
+      "four",
+      "--prefix",
+      "natural",
+      "--device",
+      "auto"
+    ],
+    "exit_code": 0,
+    "command": "audio.separate-stems",
+    "status": "succeeded",
+    "seconds": 11.831391699999585,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:9b6908191b72a5e3fa29ecc049c5b603c0e91883583e84e363890fe02f8490de"
+  },
+  {
+    "argv": [
+      "timeline",
+      "compose",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\development-r1\\中文 四轨工程",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\development-r1\\select-tracks.json"
+    ],
+    "exit_code": 0,
+    "command": "timeline.compose",
+    "status": "succeeded",
+    "seconds": 1.7718879999993078,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:dba43d77e195eebba17a1d66744ff5ed88d1c803a210b31ddea441b28db3fc4a"
+  },
+  {
+    "argv": [
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\development-r1\\中文 四轨工程"
+    ],
+    "exit_code": 0,
+    "command": "validate",
+    "status": "succeeded",
+    "seconds": 1.7350393000015174,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:7f693ab077d0d638245f88ba568f0f9c89ca50a59cbb608adc9c68f5cd98f30c"
+  },
+  {
+    "argv": [
+      "policy",
+      "audit",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\development-r1\\中文 四轨工程"
+    ],
+    "exit_code": 0,
+    "command": "policy.audit",
+    "status": "succeeded",
+    "seconds": 1.8575551999983873,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:15490b8c12fbb885eb779cc1037196c83473e6ae2d410d3a75736865c6e9e3f6"
+  },
+  {
+    "argv": [
+      "rights",
+      "check",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\development-r1\\中文 四轨工程"
+    ],
+    "exit_code": 7,
+    "command": "rights.check",
+    "status": "failed",
+    "seconds": 1.442340300000069,
+    "expected_exit_code": 7,
+    "stdout_sha256": "sha256:a7a99fa8a06332dfc3445caa51c799fff675611df26442e1e71507341f1b2a52"
+  },
+  {
+    "argv": [
+      "convert",
+      "export",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\development-r1\\中文 四轨工程",
+      "--target-format",
+      "package",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\development-r1\\four-stems.aevpkg.zip"
+    ],
+    "exit_code": 0,
+    "command": "convert.export",
+    "status": "succeeded",
+    "seconds": 2.808310000000347,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:91fdbf86a298a23a354d788b0a0d08fef5a7d00aaecfad7c951f10c44e92cfc4"
+  },
+  {
+    "argv": [
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\development-r1\\four-stems.aevpkg.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\development-r1\\往返 工程"
+    ],
+    "exit_code": 0,
+    "command": "convert.import",
+    "status": "succeeded",
+    "seconds": 1.6291835000010906,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:0c637c6aeef19ab205b636161786322b24b7335e5f1a2eb36a0a8069dd17e109"
+  },
+  {
+    "argv": [
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\four-stems-20261025-r1\\development-r1\\往返 工程"
+    ],
+    "exit_code": 0,
+    "command": "validate",
+    "status": "succeeded",
+    "seconds": 1.6348520999999892,
+    "expected_exit_code": 0,
+    "stdout_sha256": "sha256:a98b77cbe2c16c9c7e41cc280bed3502b970b0fe86cfc5108c9e2fda08a5385c"
+  }
+]

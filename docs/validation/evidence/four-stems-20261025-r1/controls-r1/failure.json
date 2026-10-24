@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "kind": "validation harness failure",
+  "reason": "PowerShell native console stdout was not UTF-8; decoding child-process metadata raised UnicodeDecodeError before a cancellation marker was created",
+  "cleanup": "The original harness finally block terminated only its own test CLI tree. The raw generator and first three expected rejections are retained.",
+  "product_cancellation_accepted": false
+}

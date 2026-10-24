@@ -1,0 +1,113 @@
+{
+  "created_at_utc": "2026-10-24T22:20:55.234682+00:00",
+  "samples": 264600,
+  "sample_rate": 44100,
+  "seed": 20261025,
+  "fixture_kind": "controlled existing Chinese speech plus independently synthesized drums/bass/chords; not natural multitrack truth",
+  "speech_source": {
+    "path": "workspace/separation-smoke-20261016-b/reference-vocals.wav",
+    "sha256": "sha256:4811ef64bf3fbb17f8d82953b4045d9c109478f873c5e885cd19b0a0989f6721",
+    "rights": "unverified; internal validation only"
+  },
+  "natural_music": {
+    "record": {
+      "id": "oga-mindstream",
+      "name": "MindStream",
+      "name_zh": "配乐 / MindStream",
+      "name_zh_tw": "配樂 / MindStream",
+      "kind": "music",
+      "category": "ambient",
+      "tags": [
+        "music",
+        "BGM",
+        "ambient",
+        "背景音乐",
+        "背景音樂",
+        "techno",
+        "chill",
+        "loop"
+      ],
+      "collection_id": "oga-mindstream",
+      "path": "audio/oga-mindstream.mp3",
+      "bytes": 10756137,
+      "sha256": "50e3306a36eabead31dc702bb7654ff935351d19b9ef40421e89b4e037f92bb9",
+      "original": {
+        "member": "DST-MindStream.mp3",
+        "sha256": "50e3306a36eabead31dc702bb7654ff935351d19b9ef40421e89b4e037f92bb9",
+        "bytes": 10756137
+      },
+      "transformation": {
+        "mode": "byte-copy"
+      },
+      "media": {
+        "duration_seconds": 268.852225,
+        "codec": "mp3",
+        "sample_rate": 44100,
+        "channels": 2
+      }
+    },
+    "collection": {
+      "id": "oga-mindstream",
+      "name": "MindStream",
+      "creator": "DST",
+      "source_url": "https://opengameart.org/content/mindstream",
+      "archive_name": "DST-MindStream.mp3",
+      "archive_sha256": "50e3306a36eabead31dc702bb7654ff935351d19b9ef40421e89b4e037f92bb9",
+      "license": {
+        "spdx": "CC0-1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "creator": "DST",
+        "attribution": "MindStream by DST; CC0-1.0; https://opengameart.org/content/mindstream",
+        "obligations": []
+      },
+      "notice_path": "licenses/oga-mindstream.txt",
+      "notice_sha256": "b99760e3c18eeefefd80e48f235fb1d8b346a57b20a81643ce3f79c9ff7ec059",
+      "evidence_path": "sources/oga-mindstream.html",
+      "evidence_sha256": "08f88cecc50d66e65b37fe4ac755279af9301955c79b5b0d557d2f8fe82f3519"
+    },
+    "source_start_seconds": 20,
+    "duration_seconds": 6,
+    "ground_truth_stems": false,
+    "rights": "input CC0; model license remains unverified"
+  },
+  "gates": {
+    "all_four_stem_si_sdr_improvement_db_min": 3.0,
+    "cpu_gpu_max_abs_error_max": 0.005,
+    "cpu_gpu_rms_error_max": 0.0001,
+    "raw_sum": "diagnostic only: unprojected independent estimates",
+    "natural_quality": "no per-stem truth; no quality acceptance or human listening inferred"
+  },
+  "files": {
+    "bass.wav": {
+      "sha256": "sha256:a9f93ca7b8841f85d6a8e23275d0bbc67c1e4dab54962454caec1fe33222c0bc",
+      "bytes": 2116892
+    },
+    "drums.wav": {
+      "sha256": "sha256:216ccffcf98a04833089f2c396cd7bd6b5aa784f9c7e8c12b3dee139cc551eff",
+      "bytes": 2116892
+    },
+    "mixture.wav": {
+      "sha256": "sha256:16a40517e3814cab5f78908c96175921b325397883da2ce88b16603d43c98c3f",
+      "bytes": 2116892
+    },
+    "natural-music.wav": {
+      "sha256": "sha256:0ae409fd833638cd0577b334002ee123aff3afd9dbb9efb84863ac04ae3e1f11",
+      "bytes": 2116892
+    },
+    "other.wav": {
+      "sha256": "sha256:afd531fd2a9a963e4ae64b5120fb0fc519e09938fa7f0822b76499b77c95c72c",
+      "bytes": 2116892
+    },
+    "vocals.wav": {
+      "sha256": "sha256:ad1135265ad80a51e9810503c98d1827c2bd56dc08c3ea2b108b9a28c7abbc78",
+      "bytes": 2116892
+    }
+  },
+  "model": {
+    "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\audio\\hdemucs_high_musdbhq_only.pt",
+    "sha256": "sha256:85ce4420e0852344b816487b4c4bb821bd406376b93bf684b2b76aa56404c46a",
+    "evidence_sha256": "sha256:9d12f80c28e35df6907ef374c74174f691604d9bd39264bf053230e4b72d19b2",
+    "license_status": "unverified"
+  },
+  "public_audio_redistribution": false
+}

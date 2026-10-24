@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "baseline_commit": "20f676b1a4df59a18f2e95a01b0eee3616ce2b3a",
+  "readmes": [
+    {
+      "path": "README.md",
+      "sha256": "sha256:70da70236126a3b0678d54b4bab349b2fda16a159a73f5ffa31faa930a9cf8ab",
+      "historical_rows_unchanged": 48,
+      "verification_rows": 53,
+      "feature_rows": 50,
+      "service_rows": 19,
+      "module_rows": 17
+    },
+    {
+      "path": "README.zh-TW.md",
+      "sha256": "sha256:fac07cb160cd07325e7fbfd6d210494694419d700f0d99faa9a7909360d45dd4",
+      "historical_rows_unchanged": 48,
+      "verification_rows": 53,
+      "feature_rows": 50,
+      "service_rows": 19,
+      "module_rows": 17
+    },
+    {
+      "path": "README.en.md",
+      "sha256": "sha256:5ceacb75a608cea4e57af3a002d4b42aed83de66d6c983db47ff3322abb123b2",
+      "historical_rows_unchanged": 48,
+      "verification_rows": 53,
+      "feature_rows": 50,
+      "service_rows": 19,
+      "module_rows": 17
+    }
+  ],
+  "full_goal_gap_groups": 38,
+  "original_close_conditions_unchanged": true,
+  "checked_documents": 15,
+  "existing_local_link_targets": 1587,
+  "pinned_skill_files": 61,
+  "kit_bytes_match_live_skill": true,
+  "public_media_hashes_match": true,
+  "public_source_model_audio_redistributed": false,
+  "model_forwards": 0,
+  "new_renders": 0,
+  "historical_tests_rerun": false,
+  "all_goal_groups_still_open": true,
+  "generator_sha256": "sha256:7198d164de115e252c28639336c7fbf20018bd3c5d97b070ea6259dfb234933d"
+}

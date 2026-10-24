@@ -1,0 +1,24 @@
+{
+  "protocol": "agent-community-cpu-v1",
+  "ok": true,
+  "task": "translate",
+  "provider": "cuda",
+  "elapsed_seconds": 1.8565952999924775,
+  "network": "disabled",
+  "engine_version": "4.8.3",
+  "backend": "CUDA",
+  "native_executable": false,
+  "pair": "zh-en",
+  "output": [
+    "Keep the sound, subtitles and background music."
+  ],
+  "input_token_counts": [
+    10
+  ],
+  "scores": [
+    -0.5362215638160706
+  ],
+  "compute_type": "int8_float16",
+  "target_language": "en",
+  "beam_size": 4
+}

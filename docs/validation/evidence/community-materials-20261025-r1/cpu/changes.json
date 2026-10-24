@@ -1,0 +1,118 @@
+{
+  "sequence_id": "seq_main",
+  "operations": [
+    {
+      "op": "append_clip",
+      "track_id": "track_video_1",
+      "asset_id": "asset_card",
+      "source_in_tick": 0,
+      "source_out_tick": 1080000,
+      "duration_tick": 1080000
+    },
+    {
+      "op": "append_clip",
+      "track_id": "track_audio_1",
+      "asset_id": "asset_mix_duck",
+      "source_in_tick": 0,
+      "source_out_tick": 1080000,
+      "duration_tick": 1080000
+    },
+    {
+      "op": "add_track",
+      "track_id": "track_sfx",
+      "kind": "audio"
+    },
+    {
+      "op": "add_track",
+      "track_id": "track_subtitle_1",
+      "kind": "subtitle"
+    },
+    {
+      "op": "append_clip",
+      "track_id": "track_sfx",
+      "asset_id": "asset_sfx",
+      "source_in_tick": 0,
+      "source_out_tick": 9000,
+      "duration_tick": 9000,
+      "timeline_start_tick": 720000
+    },
+    {
+      "op": "append_clip",
+      "track_id": "track_subtitle_1",
+      "generator": {
+        "type": "text"
+      },
+      "source_in_tick": 0,
+      "source_out_tick": 261000,
+      "duration_tick": 261000,
+      "timeline_start_tick": 18000,
+      "subtitle": {
+        "text": "从本地素材开始，生成可编辑的视频。\nGenerates an edited video starting with local material.",
+        "style": {
+          "font_asset_id": "asset_font_sc",
+          "fontsize": 69,
+          "fontcolor": "#FFFFFF",
+          "max_width": 930,
+          "line_spacing": 12,
+          "x": "(w-text_w)/2",
+          "y": "h-text_h-350",
+          "borderw": 6,
+          "bordercolor": "#111111"
+        }
+      }
+    },
+    {
+      "op": "append_clip",
+      "track_id": "track_subtitle_1",
+      "generator": {
+        "type": "text"
+      },
+      "source_in_tick": 0,
+      "source_out_tick": 378000,
+      "duration_tick": 378000,
+      "timeline_start_tick": 279000,
+      "subtitle": {
+        "text": "原声、字幕和配乐均可独立调整。\nThe original sound, subtitles and choreography can be adjusted independently.",
+        "style": {
+          "font_asset_id": "asset_font_sc",
+          "fontsize": 69,
+          "fontcolor": "#FFFFFF",
+          "max_width": 930,
+          "line_spacing": 12,
+          "x": "(w-text_w)/2",
+          "y": "h-text_h-350",
+          "borderw": 6,
+          "bordercolor": "#111111"
+        }
+      }
+    },
+    {
+      "op": "add_track",
+      "track_id": "track_title_tc",
+      "kind": "subtitle"
+    },
+    {
+      "op": "append_clip",
+      "track_id": "track_title_tc",
+      "generator": {
+        "type": "text"
+      },
+      "source_in_tick": 0,
+      "source_out_tick": 1080000,
+      "duration_tick": 1080000,
+      "subtitle": {
+        "text": "本機離線配音 · 字幕翻譯 · 配樂",
+        "style": {
+          "font_asset_id": "asset_font_tc",
+          "fontsize": 60,
+          "max_width": 930,
+          "fontcolor": "#FFFFFF",
+          "x": "(w-text_w)/2",
+          "y": "225",
+          "borderw": 3,
+          "bordercolor": "#111111"
+        }
+      }
+    }
+  ]
+}

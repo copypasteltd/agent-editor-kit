@@ -1,0 +1,26 @@
+{
+  "checked_at_utc": "2026-10-24T14:11:36.157938+00:00",
+  "development_network_only": true,
+  "results": [
+    {
+      "status": "downloaded",
+      "id": "opus-en-zh",
+      "name": "opus-en-zh-20200717.zip",
+      "url": "https://object.pouta.csc.fi/Tatoeba-MT-models/eng-zho/opus-2020-07-17.zip",
+      "source": "https://huggingface.co/Helsinki-NLP/opus-mt-en-zh",
+      "license": "Apache-2.0",
+      "bytes": 288947487,
+      "sha256": "ab90e5583fa3ec46d8c5c50f106cbd65221978cd052c7e2059981439325ae24b",
+      "publisher_hash_verified": false
+    },
+    {
+      "status": "failed-preserved",
+      "id": "opus-zh-en",
+      "name": "opus-zh-en-20200717.zip",
+      "url": "https://object.pouta.csc.fi/Tatoeba-MT-models/zho-eng/opus-2020-07-17.zip",
+      "source": "https://huggingface.co/Helsinki-NLP/opus-mt-zh-en",
+      "license": "CC-BY-4.0",
+      "error": "The read operation timed out"
+    }
+  ]
+}

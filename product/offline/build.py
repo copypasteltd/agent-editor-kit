@@ -57,7 +57,7 @@ def build(output,wheelhouse):
     env=dict(os.environ);env.update(TEMP=str(work),TMP=str(work),TMPDIR=str(work),PIP_CONFIG_FILE=os.devnull,PIP_NO_INDEX='1',PIP_NO_CACHE_DIR='1',PIP_DISABLE_PIP_VERSION_CHECK='1',PYTHONDONTWRITEBYTECODE='1')
     command=[sys.executable,'-I','-B','-m','pip','wheel','--no-index','--no-deps','--no-build-isolation','--wheel-dir',str(wheels),str(ROOT/'product')]
     with (output/'build.log').open('wb') as stream:
-        result=subprocess.run(command,cwd=work,env=env,stdout=stream,stderr=subprocess.STDOUT,timeout=180)
+        result=subprocess.run(command,cwd=work,env=env,stdout=stream,stderr=subprocess.STDOUT,timeout=900)
     if result.returncode:raise RuntimeError((output/'build.log').read_text(encoding='utf-8',errors='replace'))
     product=next(wheels.glob('*.whl'))
     with zipfile.ZipFile(product) as archive:

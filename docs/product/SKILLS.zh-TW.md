@@ -1,5 +1,11 @@
 # 一個本地 Skill、17 項內部模塊詳情
 
+<!-- community-current -->
+
+**當前本機擴充套件：CLI 0.1.3。** GPU 配音/翻譯、359 項內建資源與離線模型包已安裝實測；以下 alpha.3 內容保留為歷史 CLI 0.1.2 基線。 [Workflow](COMMUNITY_MATERIALS.zh-TW.md) · [Local installation](COMMUNITY_LOCAL_DELIVERY.md)
+
+<!-- /community-current -->
+
 <!-- unified-skill-registration -->
 
 只註冊 `$agent-ffmpeg-local-editor`。K01–K17 是按需讀取的內部模塊，原獨立名稱只用於追溯，調用時無需再指定。 [Guide](../skills/UNIFIED_SKILL.zh-TW.md)
@@ -16,7 +22,7 @@
 | K04 | [`project-ops`](../../skills/agent-ffmpeg-local-editor/references/modules/project-ops/module.md) | 工程運維、恢復與隊列 | 工程 + 作業 → 快照/恢復/重鏈/運行結果 | `project snapshot/recover; media relink; queue` | 保留舊源與失敗；不是云任務調度器。 |
 | K05 | [`local-policy`](../../skills/agent-ffmpeg-local-editor/references/modules/local-policy/module.md) | 本地執行約束 | 工程引用 → 審計/結構化拒絕 | `policy audit` | 運行時禁止遠程引用；不推斷為 OS 沙箱。 |
 | K06 | [`rights-ledger`](../../skills/agent-ffmpeg-local-editor/references/modules/rights-ledger/module.md) | 素材與模型權利證據 | 來源/許可/本地證據 → 臺賬/影響/門禁 | `rights list/check/update/impact` | 分別處理母圖與 LUT 許可；不自動認定版權。 |
-| K07 | [`local-models`](../../skills/agent-ffmpeg-local-editor/references/modules/local-models/module.md) | 已有離線模型登記 | 原生環境 + 權重/雜湊/許可 → 適配器與推理產物 | `media adapter; asr adapter; ocr; face; tts` | 無權重下載；先核對能力/環境，再調用。 |
+| K07 | [`local-models`](../../skills/agent-ffmpeg-local-editor/references/modules/local-models/module.md) | 已有離線模型登記 | 原生環境 + 權重/雜湊/許可 → 適配器與推理產物 | `media adapter; asr adapter; ocr; face; tts; voice; translate; gpu` | 無權重下載；先核對能力/環境，再調用。 |
 | K08 | [`video-understand`](../../skills/agent-ffmpeg-local-editor/references/modules/video-understand/module.md) | 鏡頭/靜音與影片證據 | 本地影片/音頻 → 分析 JSON、影格、字幕候選 | `media understand/contact-sheet; subtitle transcribe` | 啟發式與模型語義能力分開說明。 |
 | K09 | [`template-library`](../../skills/agent-ffmpeg-local-editor/references/modules/template-library/module.md) | 模板與片段組復用 | 模板/變量/素材庫 → 可編輯變體與索引 | `template apply/batch; library; fragment` | 用戶自有素材，按資源許可復用。 |
 | K10 | [`long-to-short`](../../skills/agent-ffmpeg-local-editor/references/modules/long-to-short/module.md) | 長影片轉短片 | 本地課程/口播 + 核對文本 → 粗剪與短片工程 | `media highlights/smart-cut; timeline compose` | 候選段需復核，不聲稱全自動語義導演。 |
@@ -106,7 +112,7 @@ brief + 本地素材 → 計劃、可編輯工程、成片、manifest
 
 原生環境 + 權重/雜湊/許可 → 適配器與推理產物
 
-`media adapter; asr adapter; ocr; face; tts`
+`media adapter; asr adapter; ocr; face; tts; voice; translate; gpu`
 
 無權重下載；先核對能力/環境，再調用。
 

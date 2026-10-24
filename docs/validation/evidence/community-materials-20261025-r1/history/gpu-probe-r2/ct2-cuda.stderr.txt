@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\.runtime\materials-20261024\gpu-probe-r2\ct2-cuda.py", line 14, in <module>
+    start=time.perf_counter();r=engine.translate_batch(batch,beam_size=4,return_scores=True);print(json.dumps(dict(provider="cuda",run=i,seconds=time.perf_counter()-start,output=[target.decode(x.hypotheses[0]) for x in r],compute_type=engine.compute_type,load_plus_elapsed=time.perf_counter()-t)),flush=True)
+                                ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Library cublas64_12.dll is not found or cannot be loaded

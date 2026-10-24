@@ -1,5 +1,13 @@
 # Unified Skill: one entry, 17 task modules
 
+<!-- community-current -->
+
+**Current local extension: CLI 0.1.3.** GPU speech/translation, 359 bundled resources and offline model packs are installed and verified. The alpha.3 sections below remain the historical CLI 0.1.2 baseline.  [Workflow](../product/COMMUNITY_MATERIALS.en.md) · [Local installation](../product/COMMUNITY_LOCAL_DELIVERY.md)
+
+<!-- /community-current -->
+
+## Archived alpha.3 / r1 instructions
+
 [简体中文](UNIFIED_SKILL.md) · [繁體中文](UNIFIED_SKILL.zh-TW.md) · [Detailed modules](../product/SKILLS.en.md)
 
 Invoke **`$agent-ffmpeg-local-editor`** for all supported workflows. The Skill reads relevant internal references for timeline editing, filters, captions, audio, local models, quality, delivery, creative planning and supplied campaign data. Its folder includes the attributed helper scripts, templates and licenses; it does not depend on separately registered specialist Skills.

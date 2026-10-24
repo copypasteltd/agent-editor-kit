@@ -1,0 +1,28 @@
+{
+  "status": "verified-local-build",
+  "release": "v0.1.0-alpha.4-local.1",
+  "cli_version": "0.1.3",
+  "public_release_unchanged": "v0.1.0-alpha.3",
+  "application_archive": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.1\\agent-editor-kit-v0.1.0-alpha.4-local.1-cp313-win_amd64.zip",
+  "bytes": 302575302,
+  "sha256": "cf4e55f410582547d7fe56549d4594b4d8f0ee6aff8be24f77408c035fd74ead",
+  "manifest_sha256": "sha256:f2ecd56dd5167fa25556ac8a5f79e51d85182c7fc432d6e4846ab1a6755cb3ee",
+  "native_windows": true,
+  "virtualization": false,
+  "base_bundle_wheels": 8,
+  "bundled_materials": 359,
+  "optional_model_packs": 4,
+  "registered_skills": 1,
+  "internal_modules": 17,
+  "tests_separate": {
+    "cpu": 46,
+    "gpu": 15,
+    "portable": 8,
+    "skill": 11,
+    "corrected_layout": 8,
+    "public_demo": 14
+  },
+  "generated_speech_publication": false,
+  "human_listening": false,
+  "complete_capcut_parity": false
+}

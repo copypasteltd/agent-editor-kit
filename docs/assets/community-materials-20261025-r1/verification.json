@@ -1,0 +1,37 @@
+{
+  "status": "passed-with-review-limits",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.1\\final\\installed",
+  "commands": 14,
+  "video_seconds": 12,
+  "video_frames": 360,
+  "fps": "30/1",
+  "dimensions": [
+    360,
+    640
+  ],
+  "full_decode": true,
+  "publish_gate_passed": true,
+  "generated_speech_in_public_media": false,
+  "human_listening": false,
+  "continuous_playback": false,
+  "source_music_id": "oga-gt-rpg-01-juhani-junkala-gt-ice-hearts-frozen-fire",
+  "files": [
+    {
+      "path": "docs/assets/community-materials-20261025-r1/community-resources.mp4",
+      "bytes": 385982,
+      "sha256": "e9ec3476ba895f48384e74e80cdf11507b3f1f517ac7184af5805204d133f40e"
+    },
+    {
+      "path": "docs/assets/community-materials-20261025-r1/community-resources.gif",
+      "bytes": 146169,
+      "sha256": "eb729d9b1ffd9ed0bd406ef7047caa2fda103d947e3123224fb2ac4db0f7ad7c"
+    },
+    {
+      "path": "docs/assets/community-materials-20261025-r1/preview.png",
+      "bytes": 73489,
+      "sha256": "be910941cefffa168199adfa27523b64c34821e559a8ab8ea0545501b1409cbb"
+    }
+  ],
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\public-demo-r1\\public project",
+  "work": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\public-demo-r1"
+}

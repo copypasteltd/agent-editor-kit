@@ -1,0 +1,36 @@
+{
+  "status": "passed-with-review-limits",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.1\\final\\installed",
+  "commands": 15,
+  "gpu": {
+    "available": true,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3060",
+        "driver": "595.95",
+        "total_mib": 12288,
+        "free_mib": 6191,
+        "compute_capability": "8.6"
+      }
+    ],
+    "reason": null
+  },
+  "cuda_voice": true,
+  "cuda_translation": true,
+  "gpu_subtitle_time_preserved": true,
+  "auto_gpu_preferred": true,
+  "explicit_cpu": true,
+  "unavailable_device_fallback": true,
+  "failed_gpu_worker_fallback": true,
+  "strict_cuda_failure": true,
+  "source_fallback": false,
+  "native_windows": true,
+  "virtualization": false,
+  "network": false,
+  "voice_output": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-gpu-r2\\GPU 本地可编辑工程\\assets\\community-audio\\asset_voice_cuda.wav",
+  "voice_output_sha256": "0ffc167c6f3e60ae3e1257dba89316d4935d9df10850c33819e9e7d8b8f92c82",
+  "human_listening": false,
+  "human_translation_acceptance": false,
+  "all_gpu_faster_claim": false
+}

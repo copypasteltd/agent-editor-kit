@@ -304,12 +304,13 @@ def _stamp(value: float) -> str:
     return f"{hours:02d}:{minutes:02d}:{seconds:02d},{milliseconds:03d}"
 
 
-def cues_to_srt(cues: Iterable[dict[str, Any]]) -> str:
+def cues_to_srt(cues: Iterable[dict[str, Any]], *, preserve_order: bool = False) -> str:
     lines: list[str] = []
-    for index, cue in enumerate(sorted(cues, key=lambda item: (float(item.get("start", 0)), float(item.get("end", 0)))), start=1):
+    ordered = cues if preserve_order else sorted(cues, key=lambda item: (float(item.get("start", 0)), float(item.get("end", 0))))
+    for index, cue in enumerate(ordered, start=1):
         lines.extend([str(index), f"{_stamp(float(cue.get('start', 0)))} --> {_stamp(float(cue.get('end', 0)))}", str(cue.get("text", "")).strip(), ""])
     return "\n".join(lines)
 
 
-def write_srt_file(path: Path, cues: Iterable[dict[str, Any]]) -> None:
-    atomic_write_text(path, cues_to_srt(cues))
+def write_srt_file(path: Path, cues: Iterable[dict[str, Any]], *, preserve_order: bool = False) -> None:
+    atomic_write_text(path, cues_to_srt(cues, preserve_order=preserve_order))

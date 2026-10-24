@@ -1,5 +1,11 @@
 # agent editor kit 文档 / Documentation
 
+<!-- community-current -->
+
+当前本机已更新到 **CLI 0.1.3 / GPU 配音与翻译 / 359 项内置资源 / 单一 Skill**。以下原安装/差距记录按其原版本保留。 [新增完整流程](product/COMMUNITY_MATERIALS.md) · [本地离线交付](product/COMMUNITY_LOCAL_DELIVERY.md) · [本轮验收与剩余差距](product/COMMUNITY_ACCEPTANCE.md)
+
+<!-- /community-current -->
+
 [简体中文](../README.md) · [繁體中文](../README.zh-TW.md) · [English](../README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit) · [Local package parts](releases/v0.1.0-alpha.3/artifacts)
 
 当前运行内核为 **v0.1.0-alpha.3 / CLI 0.1.2 / 500 离线风格**，本机注册已合并为 **1 个 Skill / 17 项内部模块**；完整剪映等价仍未验收。The installed runtime is unchanged; `$agent-ffmpeg-local-editor` is the single entry, with 17 internal task references.

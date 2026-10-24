@@ -1,0 +1,77 @@
+{
+  "sequence_id": "seq_main",
+  "operations": [
+    {
+      "op": "update_sequence",
+      "sequence_id": "seq_main",
+      "patch": {
+        "canvas": {
+          "width": 360,
+          "height": 640
+        }
+      }
+    },
+    {
+      "op": "update_clip",
+      "track_id": "track_subtitle_1",
+      "clip_id": "clip_20261024165151_87c13aa5",
+      "patch": {
+        "subtitle": {
+          "text": "从本地素材开始，生成可编辑的视频。\nGenerates an edited video starting with local material.",
+          "style": {
+            "font_asset_id": "asset_font_sc",
+            "fontsize": 23,
+            "fontcolor": "#FFFFFF",
+            "max_width": 310,
+            "line_spacing": 4,
+            "x": "(w-text_w)/2",
+            "y": "h-text_h-117",
+            "borderw": 2,
+            "bordercolor": "#111111"
+          }
+        }
+      }
+    },
+    {
+      "op": "update_clip",
+      "track_id": "track_subtitle_1",
+      "clip_id": "clip_20261024165151_35426b35",
+      "patch": {
+        "subtitle": {
+          "text": "原声、字幕和配乐均可独立调整。\nThe original sound, subtitles and choreography can be adjusted independently.",
+          "style": {
+            "font_asset_id": "asset_font_sc",
+            "fontsize": 23,
+            "fontcolor": "#FFFFFF",
+            "max_width": 310,
+            "line_spacing": 4,
+            "x": "(w-text_w)/2",
+            "y": "h-text_h-117",
+            "borderw": 2,
+            "bordercolor": "#111111"
+          }
+        }
+      }
+    },
+    {
+      "op": "update_clip",
+      "track_id": "track_title_tc",
+      "clip_id": "clip_20261024165151_1a4def77",
+      "patch": {
+        "subtitle": {
+          "text": "本機離線配音 · 字幕翻譯 · 配樂",
+          "style": {
+            "font_asset_id": "asset_font_tc",
+            "fontsize": 20,
+            "max_width": 310,
+            "fontcolor": "#FFFFFF",
+            "x": "(w-text_w)/2",
+            "y": "75",
+            "borderw": 1,
+            "bordercolor": "#111111"
+          }
+        }
+      }
+    }
+  ]
+}

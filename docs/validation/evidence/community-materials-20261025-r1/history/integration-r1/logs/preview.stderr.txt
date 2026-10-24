@@ -1,0 +1,5 @@
+usage: ai-ad-editor [-h] [--format {json,text}] [--request-id REQUEST_ID]
+                    [--idempotency-key IDEMPOTENCY_KEY] [--dry-run]
+                    [--no-network] [--progress {none,jsonl}]
+                    {project,diagnostics,media,audio,ad,subtitle,asr,ocr,face,tts,effects,motion,timeline,validate,rights,preview,cache,render,surface,queue,quality,convert,template,library,fragment,lut,look,schema,doctor,operation,version,capabilities,policy,materials,voice,translate,model-pack,music} ...
+ai-ad-editor: error: unrecognized arguments: --width 360

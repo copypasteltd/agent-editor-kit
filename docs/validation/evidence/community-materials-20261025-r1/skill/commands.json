@@ -1,0 +1,214 @@
+[
+  {
+    "id": "version",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "ok": true,
+    "seconds": 4.2280064999940805
+  },
+  {
+    "id": "capabilities",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "capabilities"
+    ],
+    "exit_code": 0,
+    "ok": true,
+    "seconds": 5.074554499995429
+  },
+  {
+    "id": "gpu",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "gpu",
+      "inspect"
+    ],
+    "exit_code": 0,
+    "ok": true,
+    "seconds": 4.014048999990337
+  },
+  {
+    "id": "init",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "project",
+      "init",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-skill-demo-r1"
+    ],
+    "exit_code": 0,
+    "ok": true,
+    "seconds": 5.151769799995236
+  },
+  {
+    "id": "voice-auto",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "voice",
+      "synthesize",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-skill-demo-r1",
+      "--voice",
+      "zf_001",
+      "--text",
+      "先预览视频，再导出工程。",
+      "--asset-id",
+      "asset_voice_auto"
+    ],
+    "exit_code": 0,
+    "ok": true,
+    "seconds": 17.532859400031157
+  },
+  {
+    "id": "translation-auto",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "translate",
+      "text",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-skill-demo-r1",
+      "--from",
+      "zh-Hans",
+      "--to",
+      "en",
+      "--text",
+      "先预览视频，再导出工程。",
+      "--output",
+      "exports/auto.txt"
+    ],
+    "exit_code": 0,
+    "ok": true,
+    "seconds": 6.329907099949196
+  },
+  {
+    "id": "explicit-cpu",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "translate",
+      "text",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-skill-demo-r1",
+      "--device",
+      "cpu",
+      "--from",
+      "en",
+      "--to",
+      "zh-Hans",
+      "--text",
+      "Keep the background music.",
+      "--output",
+      "exports/cpu.txt"
+    ],
+    "exit_code": 0,
+    "ok": true,
+    "seconds": 4.851055199978873
+  },
+  {
+    "id": "resources",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "materials",
+      "list",
+      "--kind",
+      "sfx",
+      "--limit",
+      "2"
+    ],
+    "exit_code": 0,
+    "ok": true,
+    "seconds": 2.0533833000226878
+  },
+  {
+    "id": "voices",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "voice",
+      "list"
+    ],
+    "exit_code": 0,
+    "ok": true,
+    "seconds": 2.000168400001712
+  },
+  {
+    "id": "validate",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-skill-demo-r1"
+    ],
+    "exit_code": 0,
+    "ok": true,
+    "seconds": 2.004369400034193
+  },
+  {
+    "id": "policy",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "policy",
+      "audit",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-skill-demo-r1"
+    ],
+    "exit_code": 0,
+    "ok": true,
+    "seconds": 1.7558619999908842
+  }
+]

@@ -1,0 +1,3 @@
+{"version": "4.8.3", "devices": 1, "supported": ["float16", "float32", "int8_float32", "bfloat16", "int8_bfloat16", "int8_float16", "int8"]}
+{"provider": "cuda", "run": 0, "seconds": 0.3791731999954209, "output": ["Keep the sound, subtitles and background music."], "compute_type": "int8_float16", "load_plus_elapsed": 0.6680968999862671}
+{"provider": "cuda", "run": 1, "seconds": 0.03675959998508915, "output": ["Keep the sound, subtitles and background music."], "compute_type": "int8_float16", "load_plus_elapsed": 0.7049949999782257}

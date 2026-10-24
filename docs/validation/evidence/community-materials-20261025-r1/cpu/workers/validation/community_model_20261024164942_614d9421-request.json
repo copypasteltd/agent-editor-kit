@@ -1,0 +1,18 @@
+{
+  "protocol": "agent-community-cpu-v1",
+  "task": "voice",
+  "pack": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-portable-r1\\模型 包\\kokoro-zh-en-int8",
+  "base_site": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.1\\final\\installed\\site",
+  "payload": {
+    "text": "从本地素材开始，生成可编辑的视频。原声、字幕和配乐均可独立调整。",
+    "voice_id": "zf_001",
+    "speaker_id": 3,
+    "speed": 1.0,
+    "threads": 2,
+    "output": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\可编辑示例 project\\assets\\community-audio\\asset_voice_zh.wav",
+    "device": "cpu",
+    "device_index": 0,
+    "cuda_library_directory": null
+  },
+  "response": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\可编辑示例 project\\validation\\community_model_20261024164942_614d9421-response.json"
+}

@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "evidence_origin": "Recorded from the actual native unittest tool result in this session",
+  "installed_site": "local/agent-ffmpeg/v0.1.0-alpha.4-local.1/final/installed/site",
+  "test_suite": "test_subtitle_segments.SubtitleSegmentPureTests",
+  "tests_run": 22,
+  "failures": 0,
+  "errors": 0,
+  "exit_code": 0,
+  "test_runner_seconds": 4.506,
+  "native_windows": true,
+  "new_model_inference": false,
+  "historical_full_suite_rerun": false,
+  "scope": [
+    "CJK and English segmentation",
+    "source punctuation and original word onset preservation",
+    "integer non-millisecond and large tick precision",
+    "Unicode non-BMP, combining and ZWJ handling",
+    "SRT and bilingual timing",
+    "explicit supplied translation and refusal boundaries",
+    "actual existing Node worker and source digest behavior"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "models": [
+    {
+      "pair": "zh-en",
+      "archive": "opus-zh-en-20200717-r2.zip",
+      "actual_license": "CC-BY-4.0",
+      "license_sha256": "945fbcb37deca05bccd7c3ca0e261679f1f5373515504fdbad68f6f3cf6f49b9",
+      "license_in_model_card": "CC-BY-4.0",
+      "model_card_used_as_redistribution_license": false
+    },
+    {
+      "pair": "en-zh",
+      "archive": "opus-en-zh-20200717.zip",
+      "actual_license": "CC-BY-4.0",
+      "license_sha256": "945fbcb37deca05bccd7c3ca0e261679f1f5373515504fdbad68f6f3cf6f49b9",
+      "license_in_model_card": "Apache-2.0",
+      "model_card_used_as_redistribution_license": false
+    }
+  ],
+  "authority": "LICENSE inside the official downloaded original weights archive"
+}

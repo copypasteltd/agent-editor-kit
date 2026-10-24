@@ -1,0 +1,54 @@
+{
+  "downloads": [
+    {
+      "id": "intel-openmp",
+      "name": "intel_openmp-2025.3.0-py2.py3-none-win_amd64.whl",
+      "url": "https://files.pythonhosted.org/packages/79/69/05addedd727061b61a85b4fd989754edb628b5be1cd5d161727f98cf4d86/intel_openmp-2025.3.0-py2.py3-none-win_amd64.whl",
+      "sha256": "8ff899d01a41b92ffe0e618b221ea633127d16df726086082d381c431c31339d",
+      "source": "https://pypi.org/project/intel-openmp/2025.3.0/",
+      "bytes": 32083814,
+      "publisher_hash_verified": true,
+      "notices": [
+        {
+          "wheel_path": "intel_openmp-2025.3.0.dist-info/LICENSE.txt",
+          "path": "vendor-notices/ctranslate2-4.8.3-win/intel-openmp/LICENSE.txt",
+          "sha256": "febfb69a5b058f55892dc7f341108a9ca29d50e9fe85723a57eebbb826436958"
+        }
+      ]
+    },
+    {
+      "id": "mkl",
+      "name": "mkl-2025.3.0-py2.py3-none-win_amd64.whl",
+      "url": "https://files.pythonhosted.org/packages/75/0e/b863a60889643e21d5d8d6b619f913703257878979b1df22d344a56276d0/mkl-2025.3.0-py2.py3-none-win_amd64.whl",
+      "sha256": "2dbf81b016150c2ce418d80707dcce11d0e3c56f20e1d54813174e7665405561",
+      "source": "https://pypi.org/project/mkl/2025.3.0/",
+      "bytes": 155530420,
+      "publisher_hash_verified": true,
+      "notices": [
+        {
+          "wheel_path": "mkl-2025.3.0.dist-info/LICENSE.txt",
+          "path": "vendor-notices/ctranslate2-4.8.3-win/mkl/LICENSE.txt",
+          "sha256": "7721633d0ddff43fae25ebfd405f8166a0ce730cbcec44f2f3ad9d5eb8ac9a6f"
+        }
+      ]
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/oneapi-src/oneDNN/v3.1.1/LICENSE",
+      "path": "vendor-notices/ctranslate2-4.8.3-win/oneDNN-3.1.1/LICENSE",
+      "bytes": 11521,
+      "sha256": "dd12452e1ae11e3282271aa5895d8175296b83e936a027209f9399d26a407d0f"
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/oneapi-src/oneDNN/v3.1.1/THIRD-PARTY-PROGRAMS",
+      "path": "vendor-notices/ctranslate2-4.8.3-win/oneDNN-3.1.1/THIRD-PARTY-PROGRAMS",
+      "bytes": 29825,
+      "sha256": "9117585dfc6b5cd0fafc063312f28a86ec82eb97bf68316dcefcaaa7fc11428e"
+    }
+  ],
+  "runtime_install": false,
+  "global_changes": false,
+  "libiomp5md_sha256": "982233366b0afcda1e0f55a0b134097e35b779613f54ddb69e685e6cd06b755f",
+  "official_wheel_dll_matches": true,
+  "version_source": "CTranslate2 4.8.3 python/tools/prepare_build_environment_windows.sh",
+  "mkl_note": "Upstream Windows build script selects oneAPI 2025.3; preserve the corresponding MKL wheel notices for the linked numerical code."
+}

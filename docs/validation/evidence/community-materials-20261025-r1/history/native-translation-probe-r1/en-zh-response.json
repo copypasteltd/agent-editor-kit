@@ -1,0 +1,27 @@
+{
+  "protocol": "agent-community-cpu-v1",
+  "ok": true,
+  "task": "translate",
+  "provider": "cpu",
+  "elapsed_seconds": 4.101318999979412,
+  "network": "disabled",
+  "engine_version": "4.8.3",
+  "backend": "Ruy",
+  "native_executable": true,
+  "pair": "en-zh",
+  "output": [
+    "保留原來的演講、字幕和背景音樂。",
+    "保持背景音樂。"
+  ],
+  "input_token_counts": [
+    13,
+    6
+  ],
+  "scores": [
+    -0.655249,
+    -0.557688
+  ],
+  "compute_type": "int8",
+  "target_language": "zh-Hant",
+  "beam_size": 4
+}

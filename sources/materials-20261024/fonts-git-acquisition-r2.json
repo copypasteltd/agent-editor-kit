@@ -1,0 +1,22 @@
+{
+  "source": "https://github.com/google/fonts",
+  "commit": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "method": "native SSH partial clone and sparse checkout",
+  "files": [
+    {
+      "path": "ofl/notosanssc/NotoSansSC[wght].ttf",
+      "bytes": 17772300,
+      "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "git_blob": "fb0637bafbcd804fe32152370a1225990745b4bc",
+      "git_blob_matches": true
+    },
+    {
+      "path": "ofl/notosanstc/NotoSansTC[wght].ttf",
+      "bytes": 11941968,
+      "sha256": "864727d210d54f2537bbe23b3a839436c3992af72de9322af5270897246bd44f",
+      "git_blob": "82943579ad39c281212df8f14ac999824694a6ab",
+      "git_blob_matches": true
+    }
+  ],
+  "browser_invoked": false
+}

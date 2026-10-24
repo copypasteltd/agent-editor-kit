@@ -1,0 +1,1607 @@
+{
+  "schema_version": "0.1.0",
+  "project": {
+    "id": "proj_20261024164918_b3fffc51",
+    "name": "Community voice, translation and music",
+    "created_at": "2026-10-24T16:49:18.089795Z",
+    "updated_at": "2026-10-24T16:55:05.690281Z",
+    "creator": "ai-ad-editor",
+    "source_revision": "local"
+  },
+  "settings": {
+    "timebase": {
+      "ticks_per_second": 90000,
+      "display_fps": {
+        "num": 30,
+        "den": 1
+      }
+    },
+    "canvas": {
+      "width": 1080,
+      "height": 1920,
+      "pixel_aspect": {
+        "num": 1,
+        "den": 1
+      }
+    },
+    "color": {
+      "primaries": "bt709",
+      "transfer": "bt709",
+      "matrix": "bt709",
+      "range": "limited"
+    },
+    "audio": {
+      "sample_rate": 48000,
+      "channels": 2
+    },
+    "output": {
+      "container": "mp4",
+      "video": {
+        "codec": "libx264",
+        "preset": "medium",
+        "crf": 18,
+        "pixel_format": "yuv420p"
+      },
+      "audio": {
+        "codec": "aac",
+        "bitrate": "192k"
+      }
+    },
+    "adjustments": [
+      {
+        "id": "preset_t3-kodak-gold-200_0",
+        "type": "lut3d",
+        "enabled": true,
+        "parameters": {
+          "lut_id": "look_t3-kodak-gold-200",
+          "intensity": 0.5,
+          "interpolation": "tetrahedral"
+        },
+        "source": {
+          "look_catalog": "aek-looks-2.0.0",
+          "look_id": "t3-kodak-gold-200"
+        }
+      }
+    ]
+  },
+  "assets": [
+    {
+      "id": "asset_music",
+      "kind": "audio",
+      "uri": "assets/community/asset_music/oga-gt-rpg-01-juhani-junkala-gt-ice-hearts-frozen-fire.mp3",
+      "sha256": "sha256:a6e0641dc888e64a9173f0c430761338a55ee762bea9bb6b5f956311e8011225",
+      "probe": {
+        "duration_seconds": 79.2555,
+        "duration_tick": 7132995,
+        "format": "mp3",
+        "format_long_name": "MP2/3 (MPEG audio layer 2/3)",
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "mp3",
+            "codec_long_name": "MP3 (MPEG audio layer 3)",
+            "codec_type": "audio",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "mp4a.40.34",
+            "sample_fmt": "fltp",
+            "sample_rate": "44100",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/14112000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 1118453616,
+            "duration": "79.255500",
+            "bit_rate": "160000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "video": {
+          "codec": null,
+          "width": null,
+          "height": null,
+          "pix_fmt": null,
+          "fps": null,
+          "color_space": null,
+          "duration_seconds": 0.0,
+          "start_time_seconds": 0.0
+        },
+        "audio": {
+          "codec": "mp3",
+          "sample_rate": 44100,
+          "channels": 2,
+          "duration_seconds": 79.2555,
+          "start_time_seconds": 0.0
+        }
+      },
+      "rights_ref": "asset_music",
+      "source": {
+        "source_url": "local://assets/community/asset_music/SOURCE.txt",
+        "source_version": "1.0.0",
+        "original_name": "oga-gt-rpg-01-juhani-junkala-gt-ice-hearts-frozen-fire.mp3",
+        "retrieved_at": "2026-10-24T16:49:21.286227Z",
+        "community_material_id": "oga-gt-rpg-01-juhani-junkala-gt-ice-hearts-frozen-fire"
+      }
+    },
+    {
+      "id": "asset_jingle",
+      "kind": "audio",
+      "uri": "assets/community/asset_jingle/kenney-music-jingles-jingles-hit00.ogg",
+      "sha256": "sha256:e23d8c9e971a4e34484bc834a3ec1d560811ec6f5edd5efa2c61e583c18c504a",
+      "probe": {
+        "duration_seconds": 0.284104,
+        "duration_tick": 25569,
+        "format": "ogg",
+        "format_long_name": "Ogg",
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "vorbis",
+            "codec_long_name": "Vorbis",
+            "codec_type": "audio",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "vorbis",
+            "sample_fmt": "fltp",
+            "sample_rate": "44100",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/44100",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 12529,
+            "duration": "0.284104",
+            "bit_rate": "160000",
+            "extradata_size": 4303,
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "Software": "FL Studio 11",
+              "track": "3",
+              "TITLE": "3"
+            }
+          }
+        ],
+        "video": {
+          "codec": null,
+          "width": null,
+          "height": null,
+          "pix_fmt": null,
+          "fps": null,
+          "color_space": null,
+          "duration_seconds": 0.0,
+          "start_time_seconds": 0.0
+        },
+        "audio": {
+          "codec": "vorbis",
+          "sample_rate": 44100,
+          "channels": 2,
+          "duration_seconds": 0.284104,
+          "start_time_seconds": 0.0
+        }
+      },
+      "rights_ref": "asset_jingle",
+      "source": {
+        "source_url": "local://assets/community/asset_jingle/SOURCE.txt",
+        "source_version": "1.0.0",
+        "original_name": "kenney-music-jingles-jingles-hit00.ogg",
+        "retrieved_at": "2026-10-24T16:49:24.483575Z",
+        "community_material_id": "kenney-music-jingles-jingles-hit00"
+      }
+    },
+    {
+      "id": "asset_sfx",
+      "kind": "audio",
+      "uri": "assets/community/asset_sfx/kenney-interface-sounds-confirmation-001.ogg",
+      "sha256": "sha256:063564703b6094d70718a3e787a55cc9141611e4ecd6b6637f8828f79b4a8c3a",
+      "probe": {
+        "duration_seconds": 0.289841,
+        "duration_tick": 26086,
+        "format": "ogg",
+        "format_long_name": "Ogg",
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "vorbis",
+            "codec_long_name": "Vorbis",
+            "codec_type": "audio",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "vorbis",
+            "sample_fmt": "fltp",
+            "sample_rate": "44100",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bits_per_sample": 0,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/44100",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 12782,
+            "duration": "0.289841",
+            "bit_rate": "239920",
+            "extradata_size": 4130,
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "video": {
+          "codec": null,
+          "width": null,
+          "height": null,
+          "pix_fmt": null,
+          "fps": null,
+          "color_space": null,
+          "duration_seconds": 0.0,
+          "start_time_seconds": 0.0
+        },
+        "audio": {
+          "codec": "vorbis",
+          "sample_rate": 44100,
+          "channels": 1,
+          "duration_seconds": 0.289841,
+          "start_time_seconds": 0.0
+        }
+      },
+      "rights_ref": "asset_sfx",
+      "source": {
+        "source_url": "local://assets/community/asset_sfx/SOURCE.txt",
+        "source_version": "1.0.0",
+        "original_name": "kenney-interface-sounds-confirmation-001.ogg",
+        "retrieved_at": "2026-10-24T16:49:28.962541Z",
+        "community_material_id": "kenney-interface-sounds-confirmation-001"
+      }
+    },
+    {
+      "id": "asset_font_sc",
+      "kind": "font",
+      "uri": "assets/community/asset_font_sc/noto-sans-sc-variable.ttf",
+      "sha256": "sha256:a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "probe": {
+        "duration_seconds": 0.0,
+        "duration_tick": 0,
+        "format": "ttf",
+        "format_long_name": "local font",
+        "streams": [],
+        "font": {
+          "family": "Noto Sans SC",
+          "style": "Thin",
+          "face_index": 0,
+          "engine": "pillow-freetype"
+        },
+        "video": {
+          "codec": null
+        },
+        "audio": {
+          "codec": null,
+          "sample_rate": 0,
+          "channels": 0
+        }
+      },
+      "rights_ref": "asset_font_sc",
+      "source": {
+        "source_url": "local://assets/community/asset_font_sc/SOURCE.txt",
+        "source_version": "1.0.0",
+        "original_name": "noto-sans-sc-variable.ttf",
+        "retrieved_at": "2026-10-24T16:49:32.702095Z",
+        "community_material_id": "noto-sans-sc-variable"
+      }
+    },
+    {
+      "id": "asset_font_tc",
+      "kind": "font",
+      "uri": "assets/community/asset_font_tc/noto-sans-tc-variable.ttf",
+      "sha256": "sha256:864727d210d54f2537bbe23b3a839436c3992af72de9322af5270897246bd44f",
+      "probe": {
+        "duration_seconds": 0.0,
+        "duration_tick": 0,
+        "format": "ttf",
+        "format_long_name": "local font",
+        "streams": [],
+        "font": {
+          "family": "Noto Sans TC",
+          "style": "Thin",
+          "face_index": 0,
+          "engine": "pillow-freetype"
+        },
+        "video": {
+          "codec": null
+        },
+        "audio": {
+          "codec": null,
+          "sample_rate": 0,
+          "channels": 0
+        }
+      },
+      "rights_ref": "asset_font_tc",
+      "source": {
+        "source_url": "local://assets/community/asset_font_tc/SOURCE.txt",
+        "source_version": "1.0.0",
+        "original_name": "noto-sans-tc-variable.ttf",
+        "retrieved_at": "2026-10-24T16:49:37.003790Z",
+        "community_material_id": "noto-sans-tc-variable"
+      }
+    },
+    {
+      "id": "asset_voice_zh",
+      "kind": "audio",
+      "uri": "assets/community-audio/asset_voice_zh.wav",
+      "sha256": "sha256:70befb63965a4899d7fb24929f6b4d86793bf2f6b019308771613ecc0bc60ebd",
+      "probe": {
+        "duration_seconds": 6.873,
+        "duration_tick": 618570,
+        "format": "wav",
+        "format_long_name": "WAV / WAVE (Waveform Audio)",
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_s16le",
+            "codec_long_name": "PCM signed 16-bit little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[1][0][0][0]",
+            "codec_tag": "0x0001",
+            "sample_fmt": "s16",
+            "sample_rate": "24000",
+            "channels": 1,
+            "bits_per_sample": 16,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/24000",
+            "duration_ts": 164952,
+            "duration": "6.873000",
+            "bit_rate": "384000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "video": {
+          "codec": null,
+          "width": null,
+          "height": null,
+          "pix_fmt": null,
+          "fps": null,
+          "color_space": null,
+          "duration_seconds": 0.0,
+          "start_time_seconds": 0.0
+        },
+        "audio": {
+          "codec": "pcm_s16le",
+          "sample_rate": 24000,
+          "channels": 1,
+          "duration_seconds": 6.873,
+          "start_time_seconds": 0.0
+        }
+      },
+      "rights_ref": "asset_voice_zh",
+      "source": {
+        "source_url": "local://assets/community-audio/asset_voice_zh-SOURCE.txt",
+        "source_version": "kokoro-sherpa-cpu-v1",
+        "retrieved_at": "2026-10-24T16:50:04.636155Z",
+        "original_name": "asset_voice_zh.wav",
+        "derived_from": [
+          "model_kokoro_bda158581637"
+        ],
+        "generation": {
+          "voice_id": "zf_001",
+          "speed": 1.0,
+          "text_sha256": "c9d90ad7c3a6450c6dc3ea3d686991b54c55207ec2c0380daab9fa3e0be5b30a",
+          "model_pack_manifest_sha256": "5df1e69b62cb023489b131b238a765fec9581afc37fb21840fd3c3f77faaa29e"
+        }
+      }
+    },
+    {
+      "id": "asset_voice_en",
+      "kind": "audio",
+      "uri": "assets/community-audio/asset_voice_en.wav",
+      "sha256": "sha256:895d5821212b37f41c388cd2e98c653750d180f90dff141c8c0b3cb6b61f1a09",
+      "probe": {
+        "duration_seconds": 3.366417,
+        "duration_tick": 302978,
+        "format": "wav",
+        "format_long_name": "WAV / WAVE (Waveform Audio)",
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_s16le",
+            "codec_long_name": "PCM signed 16-bit little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[1][0][0][0]",
+            "codec_tag": "0x0001",
+            "sample_fmt": "s16",
+            "sample_rate": "24000",
+            "channels": 1,
+            "bits_per_sample": 16,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/24000",
+            "duration_ts": 80794,
+            "duration": "3.366417",
+            "bit_rate": "384000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "video": {
+          "codec": null,
+          "width": null,
+          "height": null,
+          "pix_fmt": null,
+          "fps": null,
+          "color_space": null,
+          "duration_seconds": 0.0,
+          "start_time_seconds": 0.0
+        },
+        "audio": {
+          "codec": "pcm_s16le",
+          "sample_rate": 24000,
+          "channels": 1,
+          "duration_seconds": 3.366417,
+          "start_time_seconds": 0.0
+        }
+      },
+      "rights_ref": "asset_voice_en",
+      "source": {
+        "source_url": "local://assets/community-audio/asset_voice_en-SOURCE.txt",
+        "source_version": "kokoro-sherpa-cpu-v1",
+        "retrieved_at": "2026-10-24T16:50:27.076867Z",
+        "original_name": "asset_voice_en.wav",
+        "derived_from": [
+          "model_kokoro_bda158581637"
+        ],
+        "generation": {
+          "voice_id": "af_maple",
+          "speed": 1.15,
+          "text_sha256": "0a402300cc07ef99b394dc9965984a3b8204a34588db68d47e8b8533d9bb0187",
+          "model_pack_manifest_sha256": "5df1e69b62cb023489b131b238a765fec9581afc37fb21840fd3c3f77faaa29e"
+        }
+      }
+    },
+    {
+      "id": "asset_voice_male",
+      "kind": "audio",
+      "uri": "assets/community-audio/asset_voice_male.wav",
+      "sha256": "sha256:da5cbdfce884f742cbab0127ef05d5681664a9862855f4828a56549c03b364a0",
+      "probe": {
+        "duration_seconds": 3.628417,
+        "duration_tick": 326558,
+        "format": "wav",
+        "format_long_name": "WAV / WAVE (Waveform Audio)",
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_s16le",
+            "codec_long_name": "PCM signed 16-bit little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[1][0][0][0]",
+            "codec_tag": "0x0001",
+            "sample_fmt": "s16",
+            "sample_rate": "24000",
+            "channels": 1,
+            "bits_per_sample": 16,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/24000",
+            "duration_ts": 87082,
+            "duration": "3.628417",
+            "bit_rate": "384000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "video": {
+          "codec": null,
+          "width": null,
+          "height": null,
+          "pix_fmt": null,
+          "fps": null,
+          "color_space": null,
+          "duration_seconds": 0.0,
+          "start_time_seconds": 0.0
+        },
+        "audio": {
+          "codec": "pcm_s16le",
+          "sample_rate": 24000,
+          "channels": 1,
+          "duration_seconds": 3.628417,
+          "start_time_seconds": 0.0
+        }
+      },
+      "rights_ref": "asset_voice_male",
+      "source": {
+        "source_url": "local://assets/community-audio/asset_voice_male-SOURCE.txt",
+        "source_version": "kokoro-sherpa-cpu-v1",
+        "retrieved_at": "2026-10-24T16:51:02.337713Z",
+        "original_name": "asset_voice_male.wav",
+        "derived_from": [
+          "model_kokoro_bda158581637"
+        ],
+        "generation": {
+          "voice_id": "zm_009",
+          "speed": 0.9,
+          "text_sha256": "d987c98c16549681f518f10983eef95448a0b3c8a3520a8f1d0e953b51daefa8",
+          "model_pack_manifest_sha256": "5df1e69b62cb023489b131b238a765fec9581afc37fb21840fd3c3f77faaa29e"
+        }
+      }
+    },
+    {
+      "id": "asset_bed",
+      "kind": "audio",
+      "uri": "assets/community-audio/asset_bed.wav",
+      "sha256": "sha256:717480f446d604e3978313025cbd3f1ddfe62c217ba1ac17317515d0b65ab867",
+      "probe": {
+        "duration_seconds": 12.0,
+        "duration_tick": 1080000,
+        "format": "wav",
+        "format_long_name": "WAV / WAVE (Waveform Audio)",
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_s16le",
+            "codec_long_name": "PCM signed 16-bit little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[1][0][0][0]",
+            "codec_tag": "0x0001",
+            "sample_fmt": "s16",
+            "sample_rate": "48000",
+            "channels": 2,
+            "bits_per_sample": 16,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "duration_ts": 576000,
+            "duration": "12.000000",
+            "bit_rate": "1536000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "video": {
+          "codec": null,
+          "width": null,
+          "height": null,
+          "pix_fmt": null,
+          "fps": null,
+          "color_space": null,
+          "duration_seconds": 0.0,
+          "start_time_seconds": 0.0
+        },
+        "audio": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "channels": 2,
+          "duration_seconds": 12.0,
+          "start_time_seconds": 0.0
+        }
+      },
+      "rights_ref": "asset_bed",
+      "source": {
+        "source_url": "local://assets/community-audio/asset_bed-SOURCE.txt",
+        "source_version": "community-audio-ffmpeg-v1",
+        "retrieved_at": "2026-10-24T16:51:04.648360Z",
+        "original_name": "asset_bed.wav",
+        "derived_from": [
+          "asset_music"
+        ]
+      }
+    },
+    {
+      "id": "asset_loop",
+      "kind": "audio",
+      "uri": "assets/community-audio/asset_loop.wav",
+      "sha256": "sha256:c3f81415b0f5739e6df2155bb2a149196a8de62551f37d6790af535dc7f4d9b2",
+      "probe": {
+        "duration_seconds": 4.0,
+        "duration_tick": 360000,
+        "format": "wav",
+        "format_long_name": "WAV / WAVE (Waveform Audio)",
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_s16le",
+            "codec_long_name": "PCM signed 16-bit little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[1][0][0][0]",
+            "codec_tag": "0x0001",
+            "sample_fmt": "s16",
+            "sample_rate": "48000",
+            "channels": 2,
+            "bits_per_sample": 16,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "duration_ts": 192000,
+            "duration": "4.000000",
+            "bit_rate": "1536000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "video": {
+          "codec": null,
+          "width": null,
+          "height": null,
+          "pix_fmt": null,
+          "fps": null,
+          "color_space": null,
+          "duration_seconds": 0.0,
+          "start_time_seconds": 0.0
+        },
+        "audio": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "channels": 2,
+          "duration_seconds": 4.0,
+          "start_time_seconds": 0.0
+        }
+      },
+      "rights_ref": "asset_loop",
+      "source": {
+        "source_url": "local://assets/community-audio/asset_loop-SOURCE.txt",
+        "source_version": "community-audio-ffmpeg-v1",
+        "retrieved_at": "2026-10-24T16:51:07.503902Z",
+        "original_name": "asset_loop.wav",
+        "derived_from": [
+          "asset_jingle"
+        ]
+      }
+    },
+    {
+      "id": "asset_mix_plain",
+      "kind": "audio",
+      "uri": "assets/community-audio/asset_mix_plain.wav",
+      "sha256": "sha256:b51e97b576977581f080c6ae8f7cb1b719f2b5ccceba6bb224da6f1c548e8da2",
+      "probe": {
+        "duration_seconds": 12.0,
+        "duration_tick": 1080000,
+        "format": "wav",
+        "format_long_name": "WAV / WAVE (Waveform Audio)",
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_s16le",
+            "codec_long_name": "PCM signed 16-bit little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[1][0][0][0]",
+            "codec_tag": "0x0001",
+            "sample_fmt": "s16",
+            "sample_rate": "48000",
+            "channels": 2,
+            "bits_per_sample": 16,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "duration_ts": 576000,
+            "duration": "12.000000",
+            "bit_rate": "1536000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "video": {
+          "codec": null,
+          "width": null,
+          "height": null,
+          "pix_fmt": null,
+          "fps": null,
+          "color_space": null,
+          "duration_seconds": 0.0,
+          "start_time_seconds": 0.0
+        },
+        "audio": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "channels": 2,
+          "duration_seconds": 12.0,
+          "start_time_seconds": 0.0
+        }
+      },
+      "rights_ref": "asset_mix_plain",
+      "source": {
+        "source_url": "local://assets/community-audio/asset_mix_plain-SOURCE.txt",
+        "source_version": "community-audio-ffmpeg-v1",
+        "retrieved_at": "2026-10-24T16:51:11.071637Z",
+        "original_name": "asset_mix_plain.wav",
+        "derived_from": [
+          "asset_voice_zh",
+          "asset_bed"
+        ]
+      }
+    },
+    {
+      "id": "asset_mix_duck",
+      "kind": "audio",
+      "uri": "assets/community-audio/asset_mix_duck.wav",
+      "sha256": "sha256:7b747380bc3fbe154c5364a6a07f8c2f731a0547faf31b53db936e945771292d",
+      "probe": {
+        "duration_seconds": 12.0,
+        "duration_tick": 1080000,
+        "format": "wav",
+        "format_long_name": "WAV / WAVE (Waveform Audio)",
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_s16le",
+            "codec_long_name": "PCM signed 16-bit little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[1][0][0][0]",
+            "codec_tag": "0x0001",
+            "sample_fmt": "s16",
+            "sample_rate": "48000",
+            "channels": 2,
+            "bits_per_sample": 16,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "duration_ts": 576000,
+            "duration": "12.000000",
+            "bit_rate": "1536000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "video": {
+          "codec": null,
+          "width": null,
+          "height": null,
+          "pix_fmt": null,
+          "fps": null,
+          "color_space": null,
+          "duration_seconds": 0.0,
+          "start_time_seconds": 0.0
+        },
+        "audio": {
+          "codec": "pcm_s16le",
+          "sample_rate": 48000,
+          "channels": 2,
+          "duration_seconds": 12.0,
+          "start_time_seconds": 0.0
+        }
+      },
+      "rights_ref": "asset_mix_duck",
+      "source": {
+        "source_url": "local://assets/community-audio/asset_mix_duck-SOURCE.txt",
+        "source_version": "community-audio-ffmpeg-v1",
+        "retrieved_at": "2026-10-24T16:51:13.366478Z",
+        "original_name": "asset_mix_duck.wav",
+        "derived_from": [
+          "asset_voice_zh",
+          "asset_bed"
+        ]
+      }
+    },
+    {
+      "id": "asset_card",
+      "kind": "image",
+      "uri": "assets/asset_card_card-1.png",
+      "sha256": "sha256:a2fa4b3a76409f1bac0d0d4b4bd99a890281a75d296f685c6be7442295df539a",
+      "probe": {
+        "duration_seconds": 0.0,
+        "duration_tick": 0,
+        "format": "png_pipe",
+        "format_long_name": "piped png sequence",
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "png",
+            "codec_long_name": "PNG (Portable Network Graphics) image",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "width": 360,
+            "height": 640,
+            "coded_width": 360,
+            "coded_height": 640,
+            "has_b_frames": 0,
+            "pix_fmt": "rgb24",
+            "level": -99,
+            "color_range": "pc",
+            "color_space": "gbr",
+            "r_frame_rate": "25/1",
+            "avg_frame_rate": "25/1",
+            "time_base": "1/25",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "video": {
+          "codec": "png",
+          "width": 360,
+          "height": 640,
+          "pix_fmt": "rgb24",
+          "fps": "25/1",
+          "color_space": "gbr",
+          "duration_seconds": 0.0,
+          "start_time_seconds": 0.0
+        },
+        "audio": {
+          "codec": null,
+          "sample_rate": 0,
+          "channels": 0,
+          "duration_seconds": 0.0,
+          "start_time_seconds": 0.0
+        }
+      },
+      "rights_ref": "asset_card",
+      "source": {
+        "source_url": "local://community-demo/field-art",
+        "retrieved_at": "2026-10-24T16:51:48.816116Z",
+        "original_name": "card-1.png"
+      }
+    }
+  ],
+  "sequences": [
+    {
+      "id": "seq_main",
+      "name": "Main",
+      "duration_tick": 1080000,
+      "tracks": [
+        {
+          "id": "track_video_1",
+          "kind": "video",
+          "order": 0,
+          "muted": false,
+          "locked": false,
+          "clips": [
+            {
+              "id": "clip_20261024165151_c371bb67",
+              "timeline_start_tick": 0,
+              "duration_tick": 1080000,
+              "source_in_tick": 0,
+              "source_out_tick": 1080000,
+              "asset_id": "asset_card"
+            }
+          ]
+        },
+        {
+          "id": "track_audio_1",
+          "kind": "audio",
+          "order": 0,
+          "muted": false,
+          "locked": false,
+          "clips": [
+            {
+              "id": "clip_20261024165151_fd3fc1a9",
+              "timeline_start_tick": 0,
+              "duration_tick": 1080000,
+              "source_in_tick": 0,
+              "source_out_tick": 1080000,
+              "asset_id": "asset_mix_duck"
+            }
+          ]
+        },
+        {
+          "id": "track_sfx",
+          "kind": "audio",
+          "order": 1,
+          "muted": false,
+          "locked": false,
+          "clips": [
+            {
+              "id": "clip_20261024165151_818c23fe",
+              "timeline_start_tick": 720000,
+              "duration_tick": 9000,
+              "source_in_tick": 0,
+              "source_out_tick": 9000,
+              "asset_id": "asset_sfx"
+            }
+          ]
+        },
+        {
+          "id": "track_subtitle_1",
+          "kind": "subtitle",
+          "order": 2,
+          "muted": false,
+          "locked": false,
+          "clips": [
+            {
+              "id": "clip_20261024165151_87c13aa5",
+              "timeline_start_tick": 18000,
+              "duration_tick": 261000,
+              "source_in_tick": 0,
+              "source_out_tick": 261000,
+              "generator": {
+                "type": "text"
+              },
+              "subtitle": {
+                "text": "从本地素材开始，生成可编辑的视频。\nGenerates an edited video starting with local material.",
+                "style": {
+                  "font_asset_id": "asset_font_sc",
+                  "fontsize": 69,
+                  "fontcolor": "#FFFFFF",
+                  "max_width": 930,
+                  "line_spacing": 12,
+                  "x": "(w-text_w)/2",
+                  "y": "h-text_h-350",
+                  "borderw": 6,
+                  "bordercolor": "#111111"
+                }
+              }
+            },
+            {
+              "id": "clip_20261024165151_35426b35",
+              "timeline_start_tick": 279000,
+              "duration_tick": 378000,
+              "source_in_tick": 0,
+              "source_out_tick": 378000,
+              "generator": {
+                "type": "text"
+              },
+              "subtitle": {
+                "text": "原声、字幕和配乐均可独立调整。\nThe original sound, subtitles and choreography can be adjusted independently.",
+                "style": {
+                  "font_asset_id": "asset_font_sc",
+                  "fontsize": 69,
+                  "fontcolor": "#FFFFFF",
+                  "max_width": 930,
+                  "line_spacing": 12,
+                  "x": "(w-text_w)/2",
+                  "y": "h-text_h-350",
+                  "borderw": 6,
+                  "bordercolor": "#111111"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "track_title_tc",
+          "kind": "subtitle",
+          "order": 3,
+          "muted": false,
+          "locked": false,
+          "clips": [
+            {
+              "id": "clip_20261024165151_1a4def77",
+              "timeline_start_tick": 0,
+              "duration_tick": 1080000,
+              "source_in_tick": 0,
+              "source_out_tick": 1080000,
+              "generator": {
+                "type": "text"
+              },
+              "subtitle": {
+                "text": "本機離線配音 · 字幕翻譯 · 配樂",
+                "style": {
+                  "font_asset_id": "asset_font_tc",
+                  "fontsize": 60,
+                  "max_width": 930,
+                  "fontcolor": "#FFFFFF",
+                  "x": "(w-text_w)/2",
+                  "y": "225",
+                  "borderw": 3,
+                  "bordercolor": "#111111"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "markers": []
+    }
+  ],
+  "templates": [],
+  "outputs": [
+    {
+      "id": "output_20261024165505_d2881aa2",
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\可编辑示例 project\\renders\\community-demo.mp4",
+      "container": "mp4",
+      "profile": "custom",
+      "canvas": {
+        "width": 360,
+        "height": 640,
+        "pixel_aspect": {
+          "num": 1,
+          "den": 1
+        }
+      },
+      "video": {
+        "codec": "libx264",
+        "preset": "medium",
+        "crf": 18,
+        "pixel_format": "yuv420p"
+      },
+      "audio": {
+        "codec": "aac",
+        "bitrate": "192k"
+      },
+      "target_platform": "generic"
+    }
+  ],
+  "provenance": {
+    "cli_version": "0.1.3",
+    "engine_version": "ffmpeg-local",
+    "model_versions": [],
+    "input_hashes": [],
+    "change_log": [
+      {
+        "operation_id": "op_20261024164921_c1e189b1",
+        "command": "materials.ingest",
+        "asset_id": "asset_music",
+        "at": "2026-10-24T16:49:21.832303Z",
+        "snapshot_id": "snap_20261024164921_94ed3834",
+        "report": "validation/community_op_20261024164921_c1e189b1.json"
+      },
+      {
+        "operation_id": "op_20261024164925_66264bfd",
+        "command": "materials.ingest",
+        "asset_id": "asset_jingle",
+        "at": "2026-10-24T16:49:25.020002Z",
+        "snapshot_id": "snap_20261024164924_be23c2fb",
+        "report": "validation/community_op_20261024164925_66264bfd.json"
+      },
+      {
+        "operation_id": "op_20261024164929_a1c8db63",
+        "command": "materials.ingest",
+        "asset_id": "asset_sfx",
+        "at": "2026-10-24T16:49:29.731626Z",
+        "snapshot_id": "snap_20261024164929_8a4dbc8c",
+        "report": "validation/community_op_20261024164929_a1c8db63.json"
+      },
+      {
+        "operation_id": "op_20261024164933_37cf5882",
+        "command": "materials.ingest",
+        "asset_id": "asset_font_sc",
+        "at": "2026-10-24T16:49:33.531231Z",
+        "snapshot_id": "snap_20261024164932_e58bc211",
+        "report": "validation/community_op_20261024164933_37cf5882.json"
+      },
+      {
+        "operation_id": "op_20261024164937_1a0e6b68",
+        "command": "materials.ingest",
+        "asset_id": "asset_font_tc",
+        "at": "2026-10-24T16:49:37.622868Z",
+        "snapshot_id": "snap_20261024164937_b4d87fb2",
+        "report": "validation/community_op_20261024164937_1a0e6b68.json"
+      },
+      {
+        "operation_id": "op_20261024165005_89275986",
+        "command": "voice.synthesize",
+        "asset_id": "asset_voice_zh",
+        "at": "2026-10-24T16:50:05.214420Z",
+        "snapshot_id": "snap_20261024165004_df07bbd2",
+        "report": "validation/community_op_20261024165005_89275986.json"
+      },
+      {
+        "operation_id": "op_20261024165027_0dec2342",
+        "command": "voice.synthesize",
+        "asset_id": "asset_voice_en",
+        "at": "2026-10-24T16:50:27.650885Z",
+        "snapshot_id": "snap_20261024165027_627291a7",
+        "report": "validation/community_op_20261024165027_0dec2342.json"
+      },
+      {
+        "operation_id": "op_20261024165102_74ce5629",
+        "command": "voice.synthesize",
+        "asset_id": "asset_voice_male",
+        "at": "2026-10-24T16:51:02.624749Z",
+        "snapshot_id": "snap_20261024165102_59ade73c",
+        "report": "validation/community_op_20261024165102_74ce5629.json"
+      },
+      {
+        "operation_id": "op_20261024165104_4544947d",
+        "command": "music.prepare",
+        "asset_id": "asset_bed",
+        "at": "2026-10-24T16:51:04.912291Z",
+        "snapshot_id": "snap_20261024165104_916936c5",
+        "report": "validation/community_op_20261024165104_4544947d.json"
+      },
+      {
+        "operation_id": "op_20261024165107_59f39141",
+        "command": "music.prepare",
+        "asset_id": "asset_loop",
+        "at": "2026-10-24T16:51:07.804673Z",
+        "snapshot_id": "snap_20261024165107_369911ca",
+        "report": "validation/community_op_20261024165107_59f39141.json"
+      },
+      {
+        "operation_id": "op_20261024165111_31ae1603",
+        "command": "music.mix",
+        "asset_id": "asset_mix_plain",
+        "at": "2026-10-24T16:51:11.343974Z",
+        "snapshot_id": "snap_20261024165111_f6683aec",
+        "report": "validation/community_op_20261024165111_31ae1603.json"
+      },
+      {
+        "operation_id": "op_20261024165113_dcca2bc2",
+        "command": "music.mix",
+        "asset_id": "asset_mix_duck",
+        "at": "2026-10-24T16:51:13.636199Z",
+        "snapshot_id": "snap_20261024165113_19c016cc",
+        "report": "validation/community_op_20261024165113_dcca2bc2.json"
+      },
+      {
+        "operation_id": "op_20261024165148_c54fa19a",
+        "command": "media.ingest",
+        "asset_id": "asset_card",
+        "at": "2026-10-24T16:51:48.816883Z"
+      },
+      {
+        "operation_id": "op_20261024165152_8a9b0583",
+        "command": "timeline.compose",
+        "input": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\changes.json",
+        "at": "2026-10-24T16:51:52.776275Z",
+        "changes": [
+          {
+            "op": "append_clip",
+            "track_id": "track_video_1",
+            "clip": {
+              "id": "clip_20261024165151_c371bb67",
+              "timeline_start_tick": 0,
+              "duration_tick": 1080000,
+              "source_in_tick": 0,
+              "source_out_tick": 1080000,
+              "asset_id": "asset_card"
+            }
+          },
+          {
+            "op": "append_clip",
+            "track_id": "track_audio_1",
+            "clip": {
+              "id": "clip_20261024165151_fd3fc1a9",
+              "timeline_start_tick": 0,
+              "duration_tick": 1080000,
+              "source_in_tick": 0,
+              "source_out_tick": 1080000,
+              "asset_id": "asset_mix_duck"
+            }
+          },
+          {
+            "op": "add_track",
+            "sequence_id": "seq_main",
+            "track": {
+              "id": "track_sfx",
+              "kind": "audio",
+              "order": 1,
+              "muted": false,
+              "locked": false,
+              "clips": [
+                {
+                  "id": "clip_20261024165151_818c23fe",
+                  "timeline_start_tick": 720000,
+                  "duration_tick": 9000,
+                  "source_in_tick": 0,
+                  "source_out_tick": 9000,
+                  "asset_id": "asset_sfx"
+                }
+              ]
+            }
+          },
+          {
+            "op": "add_track",
+            "sequence_id": "seq_main",
+            "track": {
+              "id": "track_subtitle_1",
+              "kind": "subtitle",
+              "order": 2,
+              "muted": false,
+              "locked": false,
+              "clips": [
+                {
+                  "id": "clip_20261024165151_87c13aa5",
+                  "timeline_start_tick": 18000,
+                  "duration_tick": 261000,
+                  "source_in_tick": 0,
+                  "source_out_tick": 261000,
+                  "generator": {
+                    "type": "text"
+                  },
+                  "subtitle": {
+                    "text": "从本地素材开始，生成可编辑的视频。\nGenerates an edited video starting with local material.",
+                    "style": {
+                      "font_asset_id": "asset_font_sc",
+                      "fontsize": 69,
+                      "fontcolor": "#FFFFFF",
+                      "max_width": 930,
+                      "line_spacing": 12,
+                      "x": "(w-text_w)/2",
+                      "y": "h-text_h-350",
+                      "borderw": 6,
+                      "bordercolor": "#111111"
+                    }
+                  }
+                },
+                {
+                  "id": "clip_20261024165151_35426b35",
+                  "timeline_start_tick": 279000,
+                  "duration_tick": 378000,
+                  "source_in_tick": 0,
+                  "source_out_tick": 378000,
+                  "generator": {
+                    "type": "text"
+                  },
+                  "subtitle": {
+                    "text": "原声、字幕和配乐均可独立调整。\nThe original sound, subtitles and choreography can be adjusted independently.",
+                    "style": {
+                      "font_asset_id": "asset_font_sc",
+                      "fontsize": 69,
+                      "fontcolor": "#FFFFFF",
+                      "max_width": 930,
+                      "line_spacing": 12,
+                      "x": "(w-text_w)/2",
+                      "y": "h-text_h-350",
+                      "borderw": 6,
+                      "bordercolor": "#111111"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "op": "append_clip",
+            "track_id": "track_sfx",
+            "clip": {
+              "id": "clip_20261024165151_818c23fe",
+              "timeline_start_tick": 720000,
+              "duration_tick": 9000,
+              "source_in_tick": 0,
+              "source_out_tick": 9000,
+              "asset_id": "asset_sfx"
+            }
+          },
+          {
+            "op": "append_clip",
+            "track_id": "track_subtitle_1",
+            "clip": {
+              "id": "clip_20261024165151_87c13aa5",
+              "timeline_start_tick": 18000,
+              "duration_tick": 261000,
+              "source_in_tick": 0,
+              "source_out_tick": 261000,
+              "generator": {
+                "type": "text"
+              },
+              "subtitle": {
+                "text": "从本地素材开始，生成可编辑的视频。\nGenerates an edited video starting with local material.",
+                "style": {
+                  "font_asset_id": "asset_font_sc",
+                  "fontsize": 69,
+                  "fontcolor": "#FFFFFF",
+                  "max_width": 930,
+                  "line_spacing": 12,
+                  "x": "(w-text_w)/2",
+                  "y": "h-text_h-350",
+                  "borderw": 6,
+                  "bordercolor": "#111111"
+                }
+              }
+            }
+          },
+          {
+            "op": "append_clip",
+            "track_id": "track_subtitle_1",
+            "clip": {
+              "id": "clip_20261024165151_35426b35",
+              "timeline_start_tick": 279000,
+              "duration_tick": 378000,
+              "source_in_tick": 0,
+              "source_out_tick": 378000,
+              "generator": {
+                "type": "text"
+              },
+              "subtitle": {
+                "text": "原声、字幕和配乐均可独立调整。\nThe original sound, subtitles and choreography can be adjusted independently.",
+                "style": {
+                  "font_asset_id": "asset_font_sc",
+                  "fontsize": 69,
+                  "fontcolor": "#FFFFFF",
+                  "max_width": 930,
+                  "line_spacing": 12,
+                  "x": "(w-text_w)/2",
+                  "y": "h-text_h-350",
+                  "borderw": 6,
+                  "bordercolor": "#111111"
+                }
+              }
+            }
+          },
+          {
+            "op": "add_track",
+            "sequence_id": "seq_main",
+            "track": {
+              "id": "track_title_tc",
+              "kind": "subtitle",
+              "order": 3,
+              "muted": false,
+              "locked": false,
+              "clips": [
+                {
+                  "id": "clip_20261024165151_1a4def77",
+                  "timeline_start_tick": 0,
+                  "duration_tick": 1080000,
+                  "source_in_tick": 0,
+                  "source_out_tick": 1080000,
+                  "generator": {
+                    "type": "text"
+                  },
+                  "subtitle": {
+                    "text": "本機離線配音 · 字幕翻譯 · 配樂",
+                    "style": {
+                      "font_asset_id": "asset_font_tc",
+                      "fontsize": 60,
+                      "max_width": 930,
+                      "fontcolor": "#FFFFFF",
+                      "x": "(w-text_w)/2",
+                      "y": "225",
+                      "borderw": 3,
+                      "bordercolor": "#111111"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "op": "append_clip",
+            "track_id": "track_title_tc",
+            "clip": {
+              "id": "clip_20261024165151_1a4def77",
+              "timeline_start_tick": 0,
+              "duration_tick": 1080000,
+              "source_in_tick": 0,
+              "source_out_tick": 1080000,
+              "generator": {
+                "type": "text"
+              },
+              "subtitle": {
+                "text": "本機離線配音 · 字幕翻譯 · 配樂",
+                "style": {
+                  "font_asset_id": "asset_font_tc",
+                  "fontsize": 60,
+                  "max_width": 930,
+                  "fontcolor": "#FFFFFF",
+                  "x": "(w-text_w)/2",
+                  "y": "225",
+                  "borderw": 3,
+                  "bordercolor": "#111111"
+                }
+              }
+            }
+          }
+        ],
+        "before_snapshot_id": "snap_20261024165152_5f720d54"
+      },
+      {
+        "operation_id": "op_20261024165207_3913b639",
+        "command": "look.apply",
+        "look_id": "t3-kodak-gold-200",
+        "before_snapshot_id": "snap_20261024165206_34b40fa8",
+        "at": "2026-10-24T16:52:07.025773Z"
+      },
+      {
+        "command": "render",
+        "at": "2026-10-24T16:55:05.690267Z",
+        "output": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\可编辑示例 project\\renders\\community-demo.mp4",
+        "manifest": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\可编辑示例 project\\renders\\community-demo.mp4.manifest.json"
+      }
+    ]
+  }
+}

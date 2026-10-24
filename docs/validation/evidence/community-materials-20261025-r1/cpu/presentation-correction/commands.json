@@ -1,0 +1,172 @@
+[
+  {
+    "id": "compose",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.1\\final\\installed\\run.py",
+      "timeline",
+      "compose",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\可编辑示例 project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\presentation-correction\\layout.json"
+    ],
+    "exit_code": 0,
+    "ok": true
+  },
+  {
+    "id": "validate",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.1\\final\\installed\\run.py",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\可编辑示例 project"
+    ],
+    "exit_code": 0,
+    "ok": true
+  },
+  {
+    "id": "preview",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.1\\final\\installed\\run.py",
+      "preview",
+      "frame",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\可编辑示例 project",
+      "--frame",
+      "90",
+      "--height",
+      "640"
+    ],
+    "exit_code": 0,
+    "ok": true
+  },
+  {
+    "id": "render",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.1\\final\\installed\\run.py",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\可编辑示例 project",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\可编辑示例 project\\renders\\community-demo-reviewed.mp4"
+    ],
+    "exit_code": 0,
+    "ok": true
+  },
+  {
+    "id": "quality",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.1\\final\\installed\\run.py",
+      "quality",
+      "check",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\可编辑示例 project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\可编辑示例 project\\renders\\community-demo-reviewed.mp4",
+      "--width",
+      "360",
+      "--height",
+      "640",
+      "--require-audio"
+    ],
+    "exit_code": 0,
+    "ok": true
+  },
+  {
+    "id": "export",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.1\\final\\installed\\run.py",
+      "convert",
+      "export",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\可编辑示例 project",
+      "--target-format",
+      "package",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\presentation-correction\\reviewed.aevpkg.zip"
+    ],
+    "exit_code": 0,
+    "ok": true
+  },
+  {
+    "id": "import",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.1\\final\\installed\\run.py",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\presentation-correction\\reviewed.aevpkg.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\presentation-correction\\restored"
+    ],
+    "exit_code": 0,
+    "ok": true
+  },
+  {
+    "id": "restored-validate",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.1\\final\\installed\\run.py",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\presentation-correction\\restored"
+    ],
+    "exit_code": 0,
+    "ok": true
+  }
+]

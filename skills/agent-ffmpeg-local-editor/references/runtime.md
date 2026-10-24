@@ -1,26 +1,25 @@
 # Installed-release runtime contract
 
-This namespace always calls the locally installed `v0.1.0-alpha.3` package, using the editor Skill's
-`scripts/run.ps1`. Other Skills share this launcher. The editable Skill source stays on E:; Codex reads
+This namespace calls the locally installed `v0.1.0-alpha.4-local.1` / CLI 0.1.3
+package using this Skill's `scripts/run.ps1`. Its 17 modules share the launcher.
+The editable Skill source stays on E:; Codex reads
 Windows directory junctions. `local/agent-ffmpeg/runtime.json` selects the native Python and installed path.
 
-Public release downloads and fresh-machine instructions are at
-[alpha.3 quickstart](https://github.com/copypasteltd/agent-editor-kit/blob/v0.1.0-alpha.3/docs/releases/v0.1.0-alpha.3/QUICKSTART.en.md).
-Download the runtime ZIP plus Agent kit ZIP, extract the kit, run its `install.py --archive <runtime.zip>`,
-then register its 17 Skills. The optional gallery ZIP extracts into the same kit directory. `run-example.py`
-exercises an actual six-second edit/render/check/package workflow using included CC0 inputs.
+The current native local build, offline packs, hashes and fresh-directory procedure
+are recorded in [local delivery](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/COMMUNITY_LOCAL_DELIVERY.md).
+The public alpha.3 archive/kit remains CLI 0.1.2 with its historical scope; do not
+combine its installer or manifest with the new Skill. The 500-look gallery remains
+usable as a separate offline selection reference. Historical six-second examples
+and their original runtime pins remain unchanged.
 The launcher verifies the release pin, installation receipt and launcher digest, then runs the installed
 `run.py` with `-I -S -B -X utf8`. It sets temporary/runtime paths on E: and offline model environment flags.
 These flags are not an operating-system network sandbox; do not invoke network tools or providers.
 
-To install on another checkout with existing Windows CPython 3.13 x64 and FFmpeg/ffprobe on PATH:
-
-```powershell
-& C:/Python313/python.exe -E -B -X utf8 scripts/install_look500_release.py --activate --evidence E:/path/to/checkout/docs/validation/evidence/my-local-install
-.\register-agent-ffmpeg-local-skills.ps1
-```
-
-Run the install script in the repository; the pinned release ZIP parts are in `docs/releases/v0.1.0-alpha.3/artifacts/`.
+Use the matching local bundle with the native Windows CPython 3.13 installer,
+then install each explicitly supplied model archive against its catalog pin.
+Record the native Python, installation receipt/launcher hashes and model paths
+in local runtime configuration before running the registrar. See the delivery
+guide for the exact verified command and hashes. No virtual environment is used.
 The installer preserves existing destinations. An unavailable installation requires repair/reinstallation,
 not a source fallback. The namespace manifest registers only `$agent-ffmpeg-local-editor`; its 17 modules are internal references. The registrar retires only this checkout's 16 previous specialist junctions. Legacy `video-cut-` Skills are separate.
 
@@ -55,6 +54,17 @@ are optional existing dependencies, not bundled base features.
 Return exact output paths, warnings, exit codes and error details. Verify actual decoded files and manifests;
 static frames, continuous playback, automatic audio checks and human listening have separate acceptance.
 The alpha package does not provide complete CapCut parity.
+
+## GPU speech and translation
+
+Read [community-materials.md](community-materials.md). Optional
+`community_config` in runtime.json points to an existing local JSON with `voice`
+and `translation` objects, each containing `cpu_pack`, `gpu_pack` and
+`cuda_library_directory`. The launcher sets `AEK_COMMUNITY_DEVICE_CONFIG` only
+for its child process. GPU packs stay separate from the base application.
+`auto` prefers a supported GPU with enough free memory and reports fallback;
+`cuda` is strict. Do not stop other GPU workloads. Model integrity checks apply
+before inference, including CPU retries. No implicit source or network fallback.
 
 ## 500 offline looks
 

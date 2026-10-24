@@ -1,0 +1,350 @@
+{
+  "status": "passed",
+  "method": "Subtract the same resampled voice stem from unclipped PCM mixes; 250 ms windows",
+  "active_windows": 27,
+  "median_active_music_reduction_db": -8.586216000181894,
+  "plain_peak": 0.37188720703125,
+  "ducked_peak": 0.2939453125,
+  "voice_peak": 0.2853202223777771,
+  "limiter_limit": 0.95,
+  "output_frames": 576000,
+  "human_listening": false,
+  "windows": [
+    {
+      "start_seconds": 0.0,
+      "voice_rms": 0.06645400077104568,
+      "plain_music_rms": 0.017006310880465548,
+      "ducked_music_rms": 0.009662493475620934,
+      "reduction_db": -4.910418003350577
+    },
+    {
+      "start_seconds": 0.25,
+      "voice_rms": 0.07670099288225174,
+      "plain_music_rms": 0.03834104914191831,
+      "ducked_music_rms": 0.00830591770303299,
+      "reduction_db": -13.285527375582056
+    },
+    {
+      "start_seconds": 0.5,
+      "voice_rms": 0.05062967911362648,
+      "plain_music_rms": 0.038917535606054945,
+      "ducked_music_rms": 0.010528933958707562,
+      "reduction_db": -11.355218595696643
+    },
+    {
+      "start_seconds": 0.75,
+      "voice_rms": 0.05068190023303032,
+      "plain_music_rms": 0.0353239102780886,
+      "ducked_music_rms": 0.01218086377092864,
+      "reduction_db": -9.247813737280207
+    },
+    {
+      "start_seconds": 1.0,
+      "voice_rms": 0.040214430540800095,
+      "plain_music_rms": 0.032112980120936,
+      "ducked_music_rms": 0.012895758994047324,
+      "reduction_db": -7.9246740470423305
+    },
+    {
+      "start_seconds": 1.25,
+      "voice_rms": 0.04232139512896538,
+      "plain_music_rms": 0.03314212156867539,
+      "ducked_music_rms": 0.011565923863546174,
+      "reduction_db": -9.143999538489492
+    },
+    {
+      "start_seconds": 1.5,
+      "voice_rms": 0.040046945214271545,
+      "plain_music_rms": 0.02388241996375581,
+      "ducked_music_rms": 0.009631009797139534,
+      "reduction_db": -7.888130126788587
+    },
+    {
+      "start_seconds": 1.75,
+      "voice_rms": 0.049723539501428604,
+      "plain_music_rms": 0.029719323424039726,
+      "ducked_music_rms": 0.022279030870695923,
+      "reduction_db": -2.502852459814424
+    },
+    {
+      "start_seconds": 2.0,
+      "voice_rms": 0.06646501272916794,
+      "plain_music_rms": 0.027710582741857094,
+      "ducked_music_rms": 0.006863893175935579,
+      "reduction_db": -12.121502860431864
+    },
+    {
+      "start_seconds": 2.25,
+      "voice_rms": 0.04983564838767052,
+      "plain_music_rms": 0.022012960803215596,
+      "ducked_music_rms": 0.008419191218470843,
+      "reduction_db": -8.348161737057012
+    },
+    {
+      "start_seconds": 2.5,
+      "voice_rms": 0.06301340460777283,
+      "plain_music_rms": 0.02820906975668083,
+      "ducked_music_rms": 0.0071920647319231165,
+      "reduction_db": -11.870703543560069
+    },
+    {
+      "start_seconds": 2.75,
+      "voice_rms": 0.04669769108295441,
+      "plain_music_rms": 0.020451585086424487,
+      "ducked_music_rms": 0.006285218086470703,
+      "reduction_db": -10.248132435629282
+    },
+    {
+      "start_seconds": 3.0,
+      "voice_rms": 0.0467349998652935,
+      "plain_music_rms": 0.019286557848476427,
+      "ducked_music_rms": 0.007119348667338245,
+      "reduction_db": -8.65628922741848
+    },
+    {
+      "start_seconds": 3.25,
+      "voice_rms": 0.04138999804854393,
+      "plain_music_rms": 0.025247754236586886,
+      "ducked_music_rms": 0.010263269124479016,
+      "reduction_db": -7.818740738582553
+    },
+    {
+      "start_seconds": 3.5,
+      "voice_rms": 0.031590647995471954,
+      "plain_music_rms": 0.02908156562778703,
+      "ducked_music_rms": 0.01453328829588305,
+      "reduction_db": -6.025077893506433
+    },
+    {
+      "start_seconds": 3.75,
+      "voice_rms": 0.06265595555305481,
+      "plain_music_rms": 0.034672214058290664,
+      "ducked_music_rms": 0.02680448161247954,
+      "reduction_db": -2.2354832530095647
+    },
+    {
+      "start_seconds": 4.0,
+      "voice_rms": 0.05865498259663582,
+      "plain_music_rms": 0.027168675266697175,
+      "ducked_music_rms": 0.007401910897557782,
+      "reduction_db": -11.294492201179335
+    },
+    {
+      "start_seconds": 4.25,
+      "voice_rms": 0.04416566714644432,
+      "plain_music_rms": 0.029805546057994365,
+      "ducked_music_rms": 0.011895050194268255,
+      "reduction_db": -7.978616076287103
+    },
+    {
+      "start_seconds": 4.5,
+      "voice_rms": 0.06398317217826843,
+      "plain_music_rms": 0.02529128227244751,
+      "ducked_music_rms": 0.006050425304619954,
+      "reduction_db": -12.423698899452978
+    },
+    {
+      "start_seconds": 4.75,
+      "voice_rms": 0.039497893303632736,
+      "plain_music_rms": 0.03038268501963692,
+      "ducked_music_rms": 0.011306165835439062,
+      "reduction_db": -8.586216000181894
+    },
+    {
+      "start_seconds": 5.0,
+      "voice_rms": 0.03642144799232483,
+      "plain_music_rms": 0.05839230830222633,
+      "ducked_music_rms": 0.02574947293823759,
+      "reduction_db": -7.111745993798845
+    },
+    {
+      "start_seconds": 5.25,
+      "voice_rms": 0.06261729449033737,
+      "plain_music_rms": 0.029993677211988486,
+      "ducked_music_rms": 0.008099934977700623,
+      "reduction_db": -11.370963615027849
+    },
+    {
+      "start_seconds": 5.5,
+      "voice_rms": 0.04143257439136505,
+      "plain_music_rms": 0.025718724415460963,
+      "ducked_music_rms": 0.010323261402791477,
+      "reduction_db": -7.928650005970203
+    },
+    {
+      "start_seconds": 5.75,
+      "voice_rms": 0.039757274091243744,
+      "plain_music_rms": 0.055010631812763985,
+      "ducked_music_rms": 0.02405026779205728,
+      "reduction_db": -7.186534330138098
+    },
+    {
+      "start_seconds": 6.0,
+      "voice_rms": 0.0554191917181015,
+      "plain_music_rms": 0.03321377008541175,
+      "ducked_music_rms": 0.010082848354779928,
+      "reduction_db": -10.354698791051986
+    },
+    {
+      "start_seconds": 6.25,
+      "voice_rms": 0.037540629506111145,
+      "plain_music_rms": 0.02876520395729444,
+      "ducked_music_rms": 0.013640821673822625,
+      "reduction_db": -6.480538525245782
+    },
+    {
+      "start_seconds": 6.5,
+      "voice_rms": 0.03532703220844269,
+      "plain_music_rms": 0.02230856446771059,
+      "ducked_music_rms": 0.007823584934989573,
+      "reduction_db": -9.101316461027992
+    },
+    {
+      "start_seconds": 6.75,
+      "voice_rms": 7.364239718299359e-05,
+      "plain_music_rms": 0.01978112612731904,
+      "ducked_music_rms": 0.0181281749790223,
+      "reduction_db": -0.7579385518289565
+    },
+    {
+      "start_seconds": 7.0,
+      "voice_rms": 0.0,
+      "plain_music_rms": 0.019734579220297404,
+      "ducked_music_rms": 0.019734579220297404,
+      "reduction_db": 0.0
+    },
+    {
+      "start_seconds": 7.25,
+      "voice_rms": 0.0,
+      "plain_music_rms": 0.037802355574575196,
+      "ducked_music_rms": 0.037802355574575196,
+      "reduction_db": 0.0
+    },
+    {
+      "start_seconds": 7.5,
+      "voice_rms": 0.0,
+      "plain_music_rms": 0.046219205658024606,
+      "ducked_music_rms": 0.046219205658024606,
+      "reduction_db": 0.0
+    },
+    {
+      "start_seconds": 7.75,
+      "voice_rms": 0.0,
+      "plain_music_rms": 0.02435767729862251,
+      "ducked_music_rms": 0.02435767729862251,
+      "reduction_db": 0.0
+    },
+    {
+      "start_seconds": 8.0,
+      "voice_rms": 0.0,
+      "plain_music_rms": 0.018671294234940523,
+      "ducked_music_rms": 0.018671294234940523,
+      "reduction_db": 0.0
+    },
+    {
+      "start_seconds": 8.25,
+      "voice_rms": 0.0,
+      "plain_music_rms": 0.04963145914815359,
+      "ducked_music_rms": 0.04963145914815359,
+      "reduction_db": 0.0
+    },
+    {
+      "start_seconds": 8.5,
+      "voice_rms": 0.0,
+      "plain_music_rms": 0.03227342352941949,
+      "ducked_music_rms": 0.03227342352941949,
+      "reduction_db": 0.0
+    },
+    {
+      "start_seconds": 8.75,
+      "voice_rms": 0.0,
+      "plain_music_rms": 0.023448868199863748,
+      "ducked_music_rms": 0.023448868199863748,
+      "reduction_db": 0.0
+    },
+    {
+      "start_seconds": 9.0,
+      "voice_rms": 0.0,
+      "plain_music_rms": 0.021040585005375773,
+      "ducked_music_rms": 0.021040585005375773,
+      "reduction_db": 0.0
+    },
+    {
+      "start_seconds": 9.25,
+      "voice_rms": 0.0,
+      "plain_music_rms": 0.025630639961310472,
+      "ducked_music_rms": 0.025630639961310472,
+      "reduction_db": 0.0
+    },
+    {
+      "start_seconds": 9.5,
+      "voice_rms": 0.0,
+      "plain_music_rms": 0.02828374396187426,
+      "ducked_music_rms": 0.02828374396187426,
+      "reduction_db": 0.0
+    },
+    {
+      "start_seconds": 9.75,
+      "voice_rms": 0.0,
+      "plain_music_rms": 0.04253658805276917,
+      "ducked_music_rms": 0.04253658805276917,
+      "reduction_db": 0.0
+    },
+    {
+      "start_seconds": 10.0,
+      "voice_rms": 0.0,
+      "plain_music_rms": 0.06107536846817262,
+      "ducked_music_rms": 0.06107536846817262,
+      "reduction_db": 0.0
+    },
+    {
+      "start_seconds": 10.25,
+      "voice_rms": 0.0,
+      "plain_music_rms": 0.037380016187897686,
+      "ducked_music_rms": 0.037380016187897686,
+      "reduction_db": 0.0
+    },
+    {
+      "start_seconds": 10.5,
+      "voice_rms": 0.0,
+      "plain_music_rms": 0.028483741898627776,
+      "ducked_music_rms": 0.028483741898627776,
+      "reduction_db": 0.0
+    },
+    {
+      "start_seconds": 10.75,
+      "voice_rms": 0.0,
+      "plain_music_rms": 0.027920850545647687,
+      "ducked_music_rms": 0.027920850545647687,
+      "reduction_db": 0.0
+    },
+    {
+      "start_seconds": 11.0,
+      "voice_rms": 0.0,
+      "plain_music_rms": 0.025771800582890546,
+      "ducked_music_rms": 0.025771800582890546,
+      "reduction_db": 0.0
+    },
+    {
+      "start_seconds": 11.25,
+      "voice_rms": 0.0,
+      "plain_music_rms": 0.019811056412358002,
+      "ducked_music_rms": 0.019811056412358002,
+      "reduction_db": 0.0
+    },
+    {
+      "start_seconds": 11.5,
+      "voice_rms": 0.0,
+      "plain_music_rms": 0.010709396206122537,
+      "ducked_music_rms": 0.010709396206122537,
+      "reduction_db": 0.0
+    },
+    {
+      "start_seconds": 11.75,
+      "voice_rms": 0.0,
+      "plain_music_rms": 0.004314042087799605,
+      "ducked_music_rms": 0.004314042087799605,
+      "reduction_db": 0.0
+    }
+  ]
+}

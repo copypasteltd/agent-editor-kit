@@ -1,0 +1,364 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-10-24T17:19:03.001404+00:00",
+  "local_links": 1497,
+  "readme_commands_identical": true,
+  "functional_modules": 48,
+  "service_modules": 16,
+  "internal_modules": 17,
+  "registered_skills": 1,
+  "readme_verification_rows": 37,
+  "kit_files": 72,
+  "material_files": 359,
+  "source_fallback": false,
+  "original_public_artifacts_unchanged": true,
+  "actual_tests_separate": {
+    "cpu": 46,
+    "gpu": 15,
+    "portable": 8,
+    "skill": 11,
+    "cpu/presentation-correction": 8
+  },
+  "new_inference_in_audit": false,
+  "documents": [
+    {
+      "path": "README.md",
+      "bytes": 67435,
+      "sha256": "77802807f28feebe657ecde3aa7e248399e80b08ef3db469e58af30e178120ee"
+    },
+    {
+      "path": "README.en.md",
+      "bytes": 72412,
+      "sha256": "6ee026e3e7f2301376b634a8fb0703f7384df14653a7c9662da5f55afe4cb777"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "bytes": 67803,
+      "sha256": "d9bfd6c8bfa5fe57d81f0ac86770025a6d01d182f72fbfe6c32ad91f038fc7a4"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 7317,
+      "sha256": "6b19028c8ec120a67c66dc31018ad7619d19eeb2d7d41628e92145ecaca0cbef"
+    },
+    {
+      "path": "docs/local/INSTALLATION.md",
+      "bytes": 15171,
+      "sha256": "bf471540ce8fe2b7c1aaedc91bafe880bf7c15b1555f5992b862d131a97706fd"
+    },
+    {
+      "path": "docs/product/CASES.md",
+      "bytes": 65152,
+      "sha256": "663a59b311fb400e5a24fd5c4913d98a32fa9b177c9b4fd23bcd18c00296db63"
+    },
+    {
+      "path": "docs/product/GOAL_GAPS_20261024.md",
+      "bytes": 22810,
+      "sha256": "0ecda2a39c22b016a1423f8c8a2ef76885be9314056689cb7f704343cd48798a"
+    },
+    {
+      "path": "docs/product/COMMUNITY_ACCEPTANCE.md",
+      "bytes": 9727,
+      "sha256": "34c5cf1eccb3f044759c3546e923b73e95b7fa520475a89286f444acb835d637"
+    },
+    {
+      "path": "docs/product/COMMUNITY_LOCAL_DELIVERY.md",
+      "bytes": 9859,
+      "sha256": "3f4021d07cafc62611cb3e2ec7b7dc564f2b51c3e97a8a732a87adc8d48d880f"
+    },
+    {
+      "path": "docs/product/COMMUNITY_MATERIALS.en.md",
+      "bytes": 10413,
+      "sha256": "9c9ab249ac23b73741720232241547878c2c4c9061619749a616108a96f4e99a"
+    },
+    {
+      "path": "docs/product/COMMUNITY_MATERIALS.md",
+      "bytes": 10175,
+      "sha256": "97cb7453322d859a7851a0dbdb158c5a778c6894c630c7d2cdd071a19b1a3ca8"
+    },
+    {
+      "path": "docs/product/COMMUNITY_MATERIALS.zh-TW.md",
+      "bytes": 10202,
+      "sha256": "f884cad81c6f372aba48f97036a73d52f91ae619149c9cd5768798e8c8838559"
+    },
+    {
+      "path": "docs/product/COMMUNITY_MATERIAL_CATALOG.md",
+      "bytes": 94640,
+      "sha256": "4a94e1d01d9f60cfc565265a7ed0ef915fb6fef1954c8f2ab073560794a850d3"
+    },
+    {
+      "path": "docs/product/COMMUNITY_VOICES.md",
+      "bytes": 9299,
+      "sha256": "82e8932abeb3696f1195e53fd3d66223d12ae99d95cce036a307d111c0465b7a"
+    },
+    {
+      "path": "docs/product/SKILLS.en.md",
+      "bytes": 11906,
+      "sha256": "4d4448be5598436d338a3c5ed28c33e3d755f265bc68edf93b50d1a916854ec8"
+    },
+    {
+      "path": "docs/product/SKILLS.md",
+      "bytes": 11438,
+      "sha256": "6eda3086cd4ade83086a12484b89382fb415e6928736f815b7925ef365fc640d"
+    },
+    {
+      "path": "docs/product/SKILLS.zh-TW.md",
+      "bytes": 11480,
+      "sha256": "6ff04649ca70397c5d1a1691265ec3f0332ef4f426a8ab3e482719326c681ebf"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.en.md",
+      "bytes": 134435,
+      "sha256": "2429d837f019fcb32f5b957924c67d2c2daf532d782d2ac2fbbfd15e635108db"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.md",
+      "bytes": 132825,
+      "sha256": "c003da7bc57ee55811aa0a17a013bb8d34940aea29c05b5d498be4e64a8e5173"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.zh-TW.md",
+      "bytes": 132891,
+      "sha256": "ec51383623151590bf839fa0201bad2a91761d2578b77f4ada83cd120c4b6f08"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.en.md",
+      "bytes": 6007,
+      "sha256": "ecdd77015494278a2fe64afa8b37dd96ce59ad810ff2c0b159a8e4311a103548"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.md",
+      "bytes": 6291,
+      "sha256": "4bcb0e8283c0fd8af85a8203011efc1d18752d3b81dce2dd3ee9d172e78668b0"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.zh-TW.md",
+      "bytes": 6312,
+      "sha256": "bb19e73b77a8fa83fce363e823ab2be628e36c2c2a27b44db868143a5c115819"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
+      "bytes": 6061,
+      "sha256": "98bbfc948c8eac4fa7dc44b9e2d5ecf64235138d57ebb4d4a2da1dc6d8bd4e9d"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/client-look-selection.md",
+      "bytes": 4767,
+      "sha256": "9c224b82dad0e949326b958a4111dca4a19a1b8f733752fd01faf53db82bb7ff"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/community-materials.md",
+      "bytes": 5559,
+      "sha256": "e64c863a3ebc161885fb829d6eea9b1dc79590429aef15e79bb36aa3296129b2"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/looks.md",
+      "bytes": 4670,
+      "sha256": "2d1372a65afc434271048f4421b60cea6a115bf9685b5bcaf4703f8458af11a6"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
+      "bytes": 4622,
+      "sha256": "f4fe9711164299bafa274d8ae306574903f666590af96a5526bc98fa420c4024"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/module.md",
+      "bytes": 952,
+      "sha256": "4dc5ef3a95f8eedf7e6a25695c8ddd32b69c236158c085db9fcc81993637c8fe"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/module.md",
+      "bytes": 976,
+      "sha256": "f28f24ebd8e2d9d05773a75690caeb9c4dff9307c1e3b0c1ba3f0a2e1e0376f9"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/editor/module.md",
+      "bytes": 855,
+      "sha256": "6af33ea312d3f6e427505f987356f27b9f5451959a6da157477a08e255772cd9"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ffmpeg/module.md",
+      "bytes": 964,
+      "sha256": "e0318cf1530dc78007cf42412d82f70e15aa8f16bbd93080ed39957c2c349039"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/local-models/module.md",
+      "bytes": 1073,
+      "sha256": "9b6140ed0d3635150c54a6394e4045c6af2760e8e219d4ca1ad23fb126d9e891"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/local-policy/module.md",
+      "bytes": 562,
+      "sha256": "8609b553745050fb2cfd683b4a005efaccb7d9980f7569bcf26f0c441cb6922b"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/long-to-short/module.md",
+      "bytes": 662,
+      "sha256": "a33c44e0a8bbf4a6b24157778a529cba98295b82cd943c02358abcb250eca0d8"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/project-ops/module.md",
+      "bytes": 632,
+      "sha256": "1ffc6bb7605de2b5e9919993731e260bdd7ae7ba104b616bd5420440cd6bf01d"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/quality/module.md",
+      "bytes": 836,
+      "sha256": "508cf784a003139158b610d9a0f9bbffdd2fa87a13f0973155ea9fe2c9e80cb7"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/reference-remake/module.md",
+      "bytes": 643,
+      "sha256": "2d104be2522df2053fd8037d379f36b3177707da5f702679cc37f46abf92faec"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/rights-ledger/module.md",
+      "bytes": 777,
+      "sha256": "4ef1ec27a9db42d018e10a9635be01bb208a897051b218c7f7a4e31729f79343"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/screen-demo/module.md",
+      "bytes": 740,
+      "sha256": "37084fb35a5285c862b2a13cf780ec87be92279e95838336db67739807190014"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/template-library/module.md",
+      "bytes": 649,
+      "sha256": "8975560bf80d56934dd2061a27e42181e5ad0ab8ed258c8eed080320fb1c9b1f"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/timeline/module.md",
+      "bytes": 762,
+      "sha256": "f5ab0c61d7b9494e755b6f005be5575a9defedc7fa2c13cd23f6f1c740d76fa3"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-content-strategist/module.md",
+      "bytes": 882,
+      "sha256": "fabb47181169d2acbe44b7036b74c3448824cac7516e824c5824be577b909ab8"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-edit/module.md",
+      "bytes": 873,
+      "sha256": "17848982a48cbe2e848187ff10fc2e420ec438b5b3311ce8657e7e437258373a"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-understand/module.md",
+      "bytes": 651,
+      "sha256": "7e7a280fa0ed0da0f9fc0bcb2aa20c4cdacb36e6694038b7503699632ca8bc5a"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-edit/references/upstream/workflow.md",
+      "bytes": 3589,
+      "sha256": "a49b64fc5ad50778ccaf92b568b1a57dbb86c53a076dd7031519798de15ad340"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-edit/references/upstream/references/operations.md",
+      "bytes": 9188,
+      "sha256": "2463a5298822520657e9c63d6bb1caaf4c99cf769d479737a0e078cb538e525b"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-content-strategist/references/upstream/workflow.md",
+      "bytes": 11974,
+      "sha256": "6410439fb3505954dac38adb82f2b0601edbc790775e62741f2892f7ca080bea"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ffmpeg/references/upstream/reference.md",
+      "bytes": 4845,
+      "sha256": "750659d2c3d0c3571c4437895e9f7940e09d5debccf400f59a0ca0ae779960f4"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ffmpeg/references/upstream/workflow.md",
+      "bytes": 13906,
+      "sha256": "7e7d5c5d4d42cd383b5811840721be7b11a7e213c33dfdbd927ee576f3f79757"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/workflow.md",
+      "bytes": 8783,
+      "sha256": "ad2367f6f7a9807976f5ade0c56b8332b667fe96a5634532091dc73d08df88a5"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/assets/ab_test_template.md",
+      "bytes": 3640,
+      "sha256": "a3b1529104389ddfab4e92357f61102d353a4585038bd611353aff2c5e3fa720"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/assets/campaign_report_template.md",
+      "bytes": 4024,
+      "sha256": "448ef109e333b351b0fbc2b2a087352d6abc89d125620585e6518b6aa91e631c"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/assets/channel_comparison_template.md",
+      "bytes": 4974,
+      "sha256": "5c6b30fccafa570192907ad7ff83f1d4b16b83519ab06ceccadbfa195fae69ba"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/references/attribution-models-guide.md",
+      "bytes": 9598,
+      "sha256": "7909ca8534cf68bab00c1f2e2035fa3b6b0dbfd6fb94da2db88948b8616058e5"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/references/campaign-metrics-benchmarks.md",
+      "bytes": 8991,
+      "sha256": "5f83037ed8d13db1febfa5490ad3f21698043057ad859a70c323912091e30cd7"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/references/funnel-optimization-framework.md",
+      "bytes": 10949,
+      "sha256": "9a95040212cf0df227ec40079da50db34b909b7f4ca7ad5c3711a6d0f517d612"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/workflow.md",
+      "bytes": 11656,
+      "sha256": "a246751f9b62bf478ddf0e0d8326f8f00a8c67fe9bfb1045dd311be50130915b"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/references/creative-frameworks.md",
+      "bytes": 10046,
+      "sha256": "f45bb278e6b5f6e44498dfc52f46d23b785bc0b662e0743b873b02daf3842a0d"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/references/platform-specs.md",
+      "bytes": 6568,
+      "sha256": "c8369e4c2a2e7517da2b8c511193b193dd6d008dfccac946cd739d3a19f9b4b5"
+    }
+  ],
+  "parsed_python_scripts": [
+    "product/src/ai_ad_editor/community_audio.py",
+    "product/src/ai_ad_editor/community_cli.py",
+    "product/src/ai_ad_editor/community_device.py",
+    "product/src/ai_ad_editor/community_models.py",
+    "product/src/ai_ad_editor/community_worker.py",
+    "product/src/ai_ad_editor/material_catalog.py",
+    "product/src/ai_ad_editor/material_project.py",
+    "scripts/acquire_material_community_sources.py",
+    "scripts/acquire_material_gpu_sources.py",
+    "scripts/acquire_material_vendor_notices.py",
+    "scripts/activate_community_runtime.py",
+    "scripts/audit_community_delivery.py",
+    "scripts/benchmark_community_voice_gpu.py",
+    "scripts/build_community_gpu_packs.py",
+    "scripts/build_community_materials.py",
+    "scripts/build_community_model_pack.py",
+    "scripts/build_community_public_demo.py",
+    "scripts/build_material_translation_native.py",
+    "scripts/convert_material_translation.py",
+    "scripts/correct_community_demo_layout.py",
+    "scripts/document_community_materials.py",
+    "scripts/install_community_pack.py",
+    "scripts/materialize_regression_fixtures.py",
+    "scripts/measure_community_ducking.py",
+    "scripts/package_community_models.py",
+    "scripts/package_community_skill.py",
+    "scripts/pin_community_packs.py",
+    "scripts/pin_community_skill.py",
+    "scripts/prepare_material_native_engines.py",
+    "scripts/probe_material_voice.py",
+    "scripts/resume_material_download.py",
+    "scripts/stage_community_evidence.py",
+    "scripts/verify_community_gpu.py",
+    "scripts/verify_community_native.py",
+    "scripts/verify_community_portable.py",
+    "scripts/verify_community_skill.py",
+    "scripts/verify_community_skill_kit.py"
+  ]
+}

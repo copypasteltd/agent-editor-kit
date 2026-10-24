@@ -1,0 +1,115 @@
+{
+  "sequence_id": "seq_main",
+  "operations": [
+    {
+      "op": "append_clip",
+      "track_id": "track_video_1",
+      "asset_id": "asset_art",
+      "source_in_tick": 0,
+      "source_out_tick": 1080000,
+      "duration_tick": 1080000
+    },
+    {
+      "op": "append_clip",
+      "track_id": "track_audio_1",
+      "asset_id": "asset_bed",
+      "source_in_tick": 0,
+      "source_out_tick": 1080000,
+      "duration_tick": 1080000
+    },
+    {
+      "op": "add_track",
+      "track_id": "track_sfx",
+      "kind": "audio"
+    },
+    {
+      "op": "append_clip",
+      "track_id": "track_sfx",
+      "asset_id": "asset_sfx",
+      "source_in_tick": 0,
+      "source_out_tick": 9000,
+      "duration_tick": 9000,
+      "timeline_start_tick": 720000
+    },
+    {
+      "op": "add_track",
+      "track_id": "track_text",
+      "kind": "subtitle"
+    },
+    {
+      "op": "append_clip",
+      "track_id": "track_text",
+      "generator": {
+        "type": "text"
+      },
+      "source_in_tick": 0,
+      "source_out_tick": 360000,
+      "duration_tick": 360000,
+      "timeline_start_tick": 0,
+      "subtitle": {
+        "text": "359 项真实资源\nBGM · 短乐 · 音效 · 字体",
+        "style": {
+          "font_asset_id": "asset_sc",
+          "fontsize": 75,
+          "fontcolor": "#FFFFFF",
+          "max_width": 930,
+          "line_spacing": 20,
+          "x": "(w-text_w)/2",
+          "y": "h-text_h-350",
+          "borderw": 5,
+          "bordercolor": "#111111"
+        }
+      }
+    },
+    {
+      "op": "append_clip",
+      "track_id": "track_text",
+      "generator": {
+        "type": "text"
+      },
+      "source_in_tick": 0,
+      "source_out_tick": 360000,
+      "duration_tick": 360000,
+      "timeline_start_tick": 360000,
+      "subtitle": {
+        "text": "本機離線編輯\n獨立音軌 · 可編輯字幕",
+        "style": {
+          "font_asset_id": "asset_tc",
+          "fontsize": 75,
+          "fontcolor": "#FFFFFF",
+          "max_width": 930,
+          "line_spacing": 20,
+          "x": "(w-text_w)/2",
+          "y": "h-text_h-350",
+          "borderw": 5,
+          "bordercolor": "#111111"
+        }
+      }
+    },
+    {
+      "op": "append_clip",
+      "track_id": "track_text",
+      "generator": {
+        "type": "text"
+      },
+      "source_in_tick": 0,
+      "source_out_tick": 360000,
+      "duration_tick": 360000,
+      "timeline_start_tick": 720000,
+      "subtitle": {
+        "text": "实际成片 / Actual output\n12s · 360 × 640 · 30fps",
+        "style": {
+          "font_asset_id": "asset_sc",
+          "fontsize": 75,
+          "fontcolor": "#FFFFFF",
+          "max_width": 930,
+          "line_spacing": 20,
+          "x": "(w-text_w)/2",
+          "y": "h-text_h-350",
+          "borderw": 5,
+          "bordercolor": "#111111"
+        }
+      }
+    }
+  ]
+}

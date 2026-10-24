@@ -1417,3 +1417,13 @@ docs/validation/evidence/release-v0.1.0-alpha.3-r1/** -text -whitespace
 docs/assets/release-v0.1.0-alpha.3-r1/** -text -whitespace
 # Relocated upstream resources retain original license/template bytes, including spaces.
 skills/agent-ffmpeg-local-editor/references/modules/*/references/upstream/** -text -whitespace
+
+# Community media, original notices and installed receipts use byte-level hashes.
+product/src/ai_ad_editor/material_data/** -text -whitespace
+sources/materials-20261024/** -text -whitespace
+docs/validation/evidence/community-materials-20261025-r1/** -text -whitespace
+docs/assets/community-materials-20261025-*/** -text -whitespace
+scripts/*community*.py text eol=lf
+scripts/*material*.py text eol=lf
+docs/maintenance/COMMUNITY_DOCS_20261025.md text eol=lf
+docs/skills/community-unified-skill-package.json text eol=lf

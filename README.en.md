@@ -4,20 +4,36 @@
 
 [简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit) · [Docs](docs/README.md)
 
-**Release: v0.1.0-alpha.3 prerelease · CLI 0.1.2 · 500 looks · 1 unified Skill / 17 internal modules.** Downloads provide a complete runtime ZIP, Agent kit, optional gallery and checksums. The verified runtime bytes are unchanged; portable installation and a runnable example are added. Complete Jianying/CapCut parity remains an unaccepted development target.
+**Public release: v0.1.0-alpha.3 prerelease · CLI 0.1.2 · 500 looks · 1 unified Skill / 17 internal modules.** Downloads provide a complete runtime ZIP, Agent kit, optional gallery and checksums. The verified runtime bytes are unchanged; portable installation and a runnable example are added. Complete Jianying/CapCut parity remains an unaccepted development target.
 
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
 <!-- unified-skill-registration -->
 
-**Registration is consolidated: use only `$agent-ffmpeg-local-editor`.** Its 17 internal modules cover editing, looks, models, quality, creative planning and supplied data, loading details as needed.
-
-This host uses one entry; [unified Skill kit](https://github.com/copypasteltd/agent-editor-kit/raw/refs/heads/main/docs/skills/agent-editor-kit-unified-skill-r1.zip) · [Install, migrate and invoke](docs/skills/UNIFIED_SKILL.en.md). Original alpha.3 attachments retain the split 17-entry layout; the new kit uses the same verified runtime.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r2 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r2.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
-## Download and render your first video
+<!-- community-materials-gpu -->
+
+**Local installed extension: CLI 0.1.3, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
+
+[Complete workflow and limits](docs/product/COMMUNITY_MATERIALS.en.md) · [Resource catalog](docs/product/COMMUNITY_MATERIAL_CATALOG.md) · [103 named voices and actual audition scope](docs/product/COMMUNITY_VOICES.md) · [CPU evidence](docs/validation/evidence/community-materials-20261025-r1/cpu/verification.json) · [GPU evidence](docs/validation/evidence/community-materials-20261025-r1/gpu/verification.json).
+
+| Extension | Actual implementation | Limits |
+|---|---|---|
+| F44 / M01 | 44 BGM, 85 jingles, 228 unique SFX, 2 OFL Noto fonts | Source licenses/attribution remain separate; no stock subscription |
+| F45 / M02 | Chinese/English speech, 103 named voices, text files/speed/WAV | Three voices generated for audition; no cloning or universal voice-quality approval |
+| F46 / M03 | Offline bidirectional translation, bilingual SRT, glossary | Cue order/milliseconds retained; translation and pronunciation need review |
+| F47 / G01 | CUDA voice/translation, auto/cpu/cuda, free-VRAM preflight | RTX 3060 tested; strict CUDA and explicit CPU fallback; optional NVIDIA runtime terms |
+| F48 / M04–M05 | Real BGM trim/loop/fades, speech/music mix and ducking | Preserved stems; no composition or automatic seam repair |
+
+CPU 46 commands and GPU 15 commands are separate current tests. The real 12-second edit was fully decoded and package-round-tripped. Public examples omit speech whose publication rights remain unverified; local original stems and complete outputs remain available in delivery records. Human listening and full CapCut equivalence remain open.
+
+<!-- /community-materials-gpu -->
+
+## Public alpha.3: download and render your first video
 
 **Requirements: Windows x64, existing CPython 3.13 x64 and FFmpeg/ffprobe on PATH.** The basic workflow needs no model, Node or browser. Installation uses no Docker, WSL, virtual environment or global pip. Adjust the Python path for your installation.
 
@@ -107,7 +123,7 @@ The implementation is **Python CLI + Agent Project schema + FFmpeg**, with an ex
 5. For selection, show the original and a small candidate set, record final IDs/strength/scope and trial them on target media.
 6. Render to a new project-owned path, inspect the encoded output, manifest, warnings, A/V and rights, then export the project package.
 
-## 43 functional documentation modules
+## 43 base functional modules, plus F44–F48 above
 
 IDs locate documentation groups with dependencies/overlap; they are not 43 independent kernels or a completion score. The table describes behavior, commands and limits. The [complete machine capability manual](docs/product/CAPABILITIES.en.md) retains every field.
 
@@ -174,7 +190,11 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | S09 | Local render queue and cache | Persistent job files | Single-process sequential default, with gated bounded local workers and caches. | `queue / preview / cache` | No cross-machine orchestration, cloud rendering or remote billing. |
 | S10 | Quality checks and diagnostics | Local artifact checks | FFmpeg decode/scopes, PNG/JSON reports, goldens and failure diagnostics. | `quality / diagnostics` | Objective checks and subjective acceptance remain distinct. |
 | S11 | Rights and interchange | Local evidence and file exchange | Ledger/policy/package hashes/loss reports without invoking a proprietary editor. | `rights / policy / convert` | Does not grant commercial rights to third-party media/models. |
-| S12 | Creative and campaign assistance | Agent task guidance | Uses supplied business information and data to produce scripts/suggestions/analysis. | `17 agent-ffmpeg-local-* Skills` | No ad-account integration, buying or automatic data collection. |
+| S12 | Creative and campaign assistance | Agent task guidance | Uses supplied business information and data to produce scripts/suggestions/analysis. | `$agent-ffmpeg-local-editor` / K01–K17 | No ad-account integration, buying or automatic data collection. |
+| S13 | Bundled community resources | Offline catalog | 359 source/license-pinned music/jingle/SFX/font files | `materials list/inspect/verify/ingest` | Per-resource rights; no commercial stock subscription |
+| S14 | Local speech/translation | Native model workers | Four optional pinned CPU/CUDA packs; 103 voice mappings and OPUS text/subtitles | `voice / translate / model-pack` | Three audition voices generated; human review remains separate |
+| S15 | BGM preparation and mixing | Native FFmpeg audio | Explicit trim/loop/fades, independent voice/music stems and ducking | `music prepare/mix` | No composition, voice truncation or seam-repair promise |
+| S16 | GPU compatibility | Native NVIDIA libraries | `auto/cpu/cuda`, free-VRAM check, explicit provider/fallback | `gpu inspect; --device` | RTX 3060 tested; optional NVIDIA/Intel terms preserved |
 
 **Observed local environment:** this update’s doctor sees native Python 3.13.1, FFmpeg/ffprobe 8.1 and Node; this does not establish registration of every model/browser adapter. doctor merely discovers Docker/WSL executable paths and does not run them. This project uses native tools without invoking Docker/WSL/virtual environments.
 
@@ -363,6 +383,16 @@ $agent-ffmpeg-local-editor 对实际输出、manifest 和 Scope 复核，分别�
 
 ## Complete cases, original inputs, actual output and GIFs
 
+<!-- community-cases -->
+
+**C10–C12: actual local extension cases.** C10 retains three speech WAVs, bilingual captions, BGM/ducked stems, an editable project and a corrected 12-second video locally. C11 actually invokes the registered Skill with default GPU speech/translation, while retaining explicit CPU. C12 is the publishable music/SFX/font example below; the GIF is silent and the MP4 includes licensed music/SFX. Generated speech is kept in local review records.
+
+![Actual community resource edit](docs/assets/community-materials-20261025-r2/community-resources.gif)
+
+[MP4](docs/assets/community-materials-20261025-r2/community-resources.mp4) · [Original art](docs/assets/release-v0.1.0-alpha.3-r1/input/card-1.png) · [Sources/licenses](docs/assets/community-materials-20261025-r2/SOURCE_AND_LICENSES.md) · [Steps and limits](docs/product/COMMUNITY_MATERIALS.en.md) · [Acceptance and remaining product gaps](docs/product/COMMUNITY_ACCEPTANCE.md).
+
+<!-- /community-cases -->
+
 | ID | Scenario and actual scope | Original/output/evidence |
 |---|---|---|
 | C01 | Six-second FIELD ad: original cards + synthetic audio → 360×640/30 fps/180 frames. | [Input](docs/assets/release-v0.1.0-alpha.1-r2/input.mp4) · [MP4](docs/assets/release-v0.1.0-alpha.1-r2/field.mp4) · [GIF](docs/assets/release-v0.1.0-alpha.1-r2/field.gif) · [JSON](docs/validation/evidence/release-v0.1.0-alpha.1-r2/changes.json) |
@@ -431,6 +461,12 @@ Dated actual keyframe/camera/mask/title/transition/audio composition:
 
 ## Functional verification and release evidence
 
+<!-- community-supplementary-checks -->
+
+Additional checks stay separate: [22 existing subtitle regression tests](docs/validation/evidence/community-materials-20261025-r1/subtitle-regression.json) pass against the installed package; [five actual calls from the extracted small kit](docs/validation/evidence/community-materials-20261025-r1/kit/verification.json) verify its own configuration, isolated registration and default CUDA translation. These are not additional voices or a full historical regression rerun.
+
+<!-- /community-supplementary-checks -->
+
 R01–R24 retain their original versions/dates; R25–R28 record the N002 gallery and full-manual restoration; R29 records this goal-gap assessment and read-only installed inventory. Each row keeps its evidence date. Historical checks were not rerun for documentation updates; counts are not added or used to claim complete CapCut parity.
 
 R30 records portable installation and the full example; separate receipts retain optional-gallery extraction and reproducibility of all ten attachments from Git files. [Gallery check](docs/validation/evidence/release-v0.1.0-alpha.3-r1/gallery-portable/verification.json) · [Reproduction](docs/validation/evidence/release-v0.1.0-alpha.3-r1/git-reproduction.json).
@@ -471,6 +507,11 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R30 | Portable Agent kit installation and complete example | Native E-drive installation in a Chinese/spaced path; 17 Skills registered; 20 actual CLI calls edit, render, check quality and round-trip a project package. | [Release gate](docs/validation/evidence/release-v0.1.0-alpha.3-r1/verification.json) · [Demo video](docs/assets/release-v0.1.0-alpha.3-r1/demo.mp4) · 6 seconds/180 frames fully decoded; no full kernel rerun, model inference or listening review. |
 | R31 | GitHub prerelease and all attachment downloads | Alpha.3 prerelease is public; native Windows publication workflow succeeds; all 10 attachments are actually downloaded and SHA-256 checked. | [Release](https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3) · [Publication receipt](docs/validation/evidence/release-v0.1.0-alpha.3-r1/publication.json) · Original runtime ZIP unchanged; complete CapCut and natural-media acceptance remain open. |
 | R32 | Unified Skill and actual registration migration | **One entry / 17 modules; native fresh-directory installation, 17→1 migration, repeat registration and four expected refusals pass; the demo runs 20 CLI calls and fully decodes 180 frames.** | [Verification](docs/validation/evidence/unified-skill-20261024-r1/verification.json) · [Guide](docs/skills/UNIFIED_SKILL.en.md) · 2026-10-24; zero new model inference, no independent Agent behavior benchmark or listening review; historical 17-Skill receipts are retained. |
+| R33 | Installed community/CPU extension | 46 actual commands; 359 assets, three generated voices, 12 s / 360 decoded frames, subtitle timing and package round trip | [Evidence](docs/validation/evidence/community-materials-20261025-r1/cpu/verification.json); human listening/semantic acceptance open |
+| R34 | Installed CUDA extension | 15 actual commands; GPU voice and translation, strict failure, CPU/worker fallback | [Evidence](docs/validation/evidence/community-materials-20261025-r1/gpu/verification.json); RTX 3060 only, cold/warm times separate |
+| R35 | Portable model installation | Four actual model ZIPs; eight install/refusal calls in a Chinese/spaced path | [Evidence](docs/validation/evidence/community-materials-20261025-r1/portable/verification.json); original files preserved, failed staging cleaned |
+| R36 | Real registered Skill with GPU defaults | 11 actual CLI calls; one discovery entry, default CUDA speech/translation and explicit CPU | [Evidence](docs/validation/evidence/community-materials-20261025-r1/skill/verification.json); installed runtime only |
+| R37 | Corrected presentation and public example | Eight follow-up layout calls, no new inference; 14 separate public-example calls; both decode 360 frames | [Layout](docs/validation/evidence/community-materials-20261025-r1/cpu/presentation-correction/verification.json) · [MP4/GIF](docs/assets/community-materials-20261025-r2/verification.json); first cropped-text case retained, no human listening |
 
 ## Current limits and development direction
 

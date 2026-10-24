@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\scripts\install_community_pack.py", line 105, in <module>
+    main()
+    ~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\scripts\install_community_pack.py", line 73, in main
+    raise ValueError('Archive has missing, extra or duplicate files')
+ValueError: Archive has missing, extra or duplicate files

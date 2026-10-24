@@ -1,0 +1,12 @@
+
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.1\final\installed\site\ai_ad_editor\community_worker.py", line 147, in <module>
+    main()
+    ~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.1\final\installed\site\ai_ad_editor\community_worker.py", line 41, in main
+    preload = [ctypes.WinDLL(str(Path(directory) / name)) for name in ('cublasLt64_12.dll', 'cublas64_12.dll')]
+               ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\ctypes\__init__.py", line 390, in __init__
+    self._handle = _dlopen(self._name, mode)
+                   ~~~~~~~^^^^^^^^^^^^^^^^^^
+FileNotFoundError: Could not find module 'E:\dev\sandbox\AI广告剪辑\product\.runtime\materials-20261024\integration-gpu-r2\missing-cuda-libraries\cublasLt64_12.dll' (or one of its dependencies). Try using the full path with constructor syntax.

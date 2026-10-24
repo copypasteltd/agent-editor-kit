@@ -2,6 +2,24 @@
 
 [简体中文](../../README.md) · [繁體中文](../../README.zh-TW.md) · [English](../../README.en.md)
 
+## C10–C12：配音、翻译、配乐与 GPU / Voice, translation, music and GPU
+
+当前本机 CLI 0.1.3 真实执行；公开 alpha.3 仍保留原运行包。完整命令和限制见[简体中文](COMMUNITY_MATERIALS.md)、[繁體中文](COMMUNITY_MATERIALS.zh-TW.md)、[English](COMMUNITY_MATERIALS.en.md)；安装包与哈希见[本地交付](COMMUNITY_LOCAL_DELIVERY.md)。
+
+| 案例 | 输入 → 实际输出 | 证据与限制 |
+|---|---|---|
+| C10 | 本地文案 + 2 cue SRT + CC0 图片 + GT BGM + Kenney 音效 + Noto 简繁字体 → 3 种真实音色 WAV、译文、双语字幕、独立分轨/闪避、12 秒可编辑工程/成片和工程包往返 | [CPU 46 条命令](../validation/evidence/community-materials-20261025-r1/cpu/verification.json)；[排版修正 8 条命令](../validation/evidence/community-materials-20261025-r1/cpu/presentation-correction/verification.json)；完整配音成片留在本机，未做听审/语义接受 |
+| C11 | 已安装 GPU 包 + RTX 3060 → 实际 CUDA 配音/翻译、繁体字幕、严格错误、CPU 指定与 auto 回退；统一 Skill 默认 GPU | [GPU 15 条命令](../validation/evidence/community-materials-20261025-r1/gpu/verification.json)；[真实注册入口 11 条](../validation/evidence/community-materials-20261025-r1/skill/verification.json)；只测试本机 NVIDIA，cold/warm 分别记录 |
+| C12 | 可公开 CC0 图片、CC-BY 音乐、CC0 音效、OFL 字体、MIT LUT → 12 秒 360×640 / 30fps / 360 帧 MP4 与无声 GIF | [14 条 CLI](../assets/community-materials-20261025-r2/verification.json)；发布权利门禁与完整解码通过，无生成配音；[来源/许可](../assets/community-materials-20261025-r2/SOURCE_AND_LICENSES.md) |
+
+![Actual resource edit](../assets/community-materials-20261025-r2/community-resources.gif)
+
+[MP4](../assets/community-materials-20261025-r2/community-resources.mp4) · [PNG](../assets/community-materials-20261025-r2/preview.png) · [原始图片](../assets/release-v0.1.0-alpha.3-r1/input/card-1.png) · [复现脚本](../../scripts/build_community_public_demo.py)。
+
+首次排版因作者画布与输出画布混用而溢出，原始失败仍保留：[问题记录](../assets/community-materials-20261025-r1/KNOWN_ISSUE.md)。修正使用目标 sequence canvas，再按相同像素坐标设置字幕；自动解码通过不等于排版可用。内部配音例编码帧与预览平均 RGB 差约 1.34/255，不代表质量评分。自动音频测量、静态目检、连续播放和听审分别记录。
+
+The current cases actually use the installed CLI. Local speech/mixed outputs are retained without public redistribution while their project-context rights and human review remain open. The public MP4 includes credited music/SFX; its GIF is silent. The first cropped-text case is preserved; the corrected example uses a matching author/output raster. These counts are not combined with historical regression totals or used to claim CapCut equivalence.
+
 ## C01–C04：广告、模板、浮点色彩与可恢复交付 / Ads, templates, float color and delivery
 
 [完整步骤、输入、编辑 JSON、实际响应、输出、GIF、音频和复现脚本](../releases/v0.1.0-alpha.1/CASES.md)。这些为已保留的发行案例，不计作本轮新执行。

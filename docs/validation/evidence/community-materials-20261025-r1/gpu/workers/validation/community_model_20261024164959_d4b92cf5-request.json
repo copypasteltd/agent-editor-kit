@@ -1,0 +1,20 @@
+{
+  "protocol": "agent-community-cpu-v1",
+  "task": "translate",
+  "pack": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-portable-r1\\模型 包\\opus-zh-en-cpu-int8",
+  "base_site": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.1\\final\\installed\\site",
+  "payload": {
+    "pair": "en-zh",
+    "texts": [
+      "Keep the background music."
+    ],
+    "source_language": "en",
+    "target_language": "zh-Hans",
+    "threads": 2,
+    "beam_size": 4,
+    "device": "cpu",
+    "device_index": 0,
+    "cuda_library_directory": null
+  },
+  "response": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-gpu-r2\\GPU 本地可编辑工程\\validation\\community_model_20261024164959_d4b92cf5-response.json"
+}

@@ -1,0 +1,20 @@
+{
+  "protocol": "agent-community-cpu-v1",
+  "task": "translate",
+  "pack": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-portable-r1\\模型 包\\opus-zh-en-cpu-int8",
+  "base_site": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.1\\final\\installed\\site",
+  "payload": {
+    "pair": "zh-en",
+    "texts": [
+      "保留原声、字幕和背景音乐。"
+    ],
+    "source_language": "zh-Hans",
+    "target_language": "en",
+    "threads": 2,
+    "beam_size": 4,
+    "device": "cpu",
+    "device_index": 0,
+    "cuda_library_directory": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.4\\bin"
+  },
+  "response": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-gpu-r2\\GPU 本地可编辑工程\\validation\\community_model_20261024165014_562edf1c-response.json"
+}

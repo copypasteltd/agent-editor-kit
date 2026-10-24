@@ -18,11 +18,49 @@ def build_capability_manifest() -> dict[str, Any]:
     local_effect_ids = [item["id"] for item in local_effects["effects"]]
     numeric_effects = [item for item in local_effects['effects'] if item.get('keyframe_engine') == 'native-color-command-cfr-v1']
     numeric_color_effects = [item for item in numeric_effects if item['category'] == 'color']
+    from .material_catalog import catalog as community_catalog
+    community_resources = community_catalog()
     return {
         "manifest_version": "0.1.0",
         "engine": {"id": ENGINE_ID, "version": VERSION, "runtime": "python+ffmpeg-local", "network": "disabled"},
         "ffmpeg": {"version": ffmpeg_version()},
         "capabilities": {
+            'community_materials': {
+                'status': 'implemented_with_limits', 'catalog_version': community_resources['catalog_version'],
+                'commands': ['materials.list', 'materials.inspect', 'materials.verify', 'materials.ingest'],
+                'counts': community_resources['counts'],
+                'features': ['bundled_real_audio_and_fonts', 'stable_ids_and_three_language_search',
+                             'source_archive_and_individual_file_hashes', 'copied_local_rights_and_attribution_evidence',
+                             'explicit_optional_audio_track_apply'],
+                'limits': ['source_licenses_remain_separate_from_product_code',
+                           'attribution_and_font_redistribution_conditions_survive_import',
+                           'not_a_commercial_stock_subscription_or_unlimited_music_catalog']},
+            'community_voice_translation': {
+                'status': 'implemented_with_limits', 'provider': 'native_windows_cpu_or_explicit_cuda',
+                'commands': ['model-pack.list', 'model-pack.verify', 'voice.list', 'voice.synthesize',
+                             'translate.text', 'translate.subtitles', 'gpu.inspect'],
+                'voices': 103, 'voice_engine': 'kokoro-sherpa-cpu-v1',
+                'translation_engine': 'opus-ctranslate2-ruy-cpu-v1',
+                'device_selection': ['auto', 'cpu', 'cuda'],
+                'gpu_packs': ['kokoro-zh-en-cuda13', 'opus-zh-en-cuda12-int8'],
+                'features': ['hash_pinned_optional_local_model_packs', 'isolated_cpython313_without_site_startup',
+                             'chinese_english_named_voice_and_speed', 'natural_duration_24k_mono_wav',
+                             'chinese_english_bidirectional_translation', 'explicit_simplified_traditional_conversion',
+                             'srt_cue_order_and_millisecond_timing_preservation', 'bilingual_subtitles',
+                             'explicit_glossary_post_edits_or_refusal'],
+                'limits': ['weights_not_in_base_package', 'no_runtime_downloads', 'cpython313_windows_x64_packs',
+                           'no_voice_cloning', 'no_asr_or_precise_word_alignment_added',
+                           'translation_not_a_semantic_accuracy_guarantee', 'subtitle_style_flattened_to_srt',
+                           'glossary_is_not_constrained_decoding', 'output_and_text_rights_need_review']},
+            'community_music': {
+                'status': 'implemented_with_limits', 'engine': 'community-audio-ffmpeg-v1',
+                'commands': ['music.prepare', 'music.mix'],
+                'features': ['explicit_source_asset_and_rights_parents', 'trim_and_opt_in_loop',
+                             'gain_and_fade_in_out', 'speech_music_sidechain_ducking', 'preserved_original_stems',
+                             'exact_requested_48k_stereo_pcm_sample_count', 'sample_peak_and_rms_metrics'],
+                'limits': ['looping_does_not_repair_seams', 'not_music_generation_or_composition',
+                           'not_human_listening_or_true_peak_loudness_acceptance',
+                           'no_silent_voice_truncation_or_source_overwrite']},
             'timeline_native_float_keyer': {
                 'status':'implemented_with_limits','protocol':'explicit-signal-author-clock-continuous-float32-color-key-v1',
                 'selection':'settings.pixel_pipeline.engine=float32-native-v1',

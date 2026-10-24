@@ -1,0 +1,117 @@
+{
+  "info": {
+    "author": "Intel Corporation",
+    "author_email": "scripting@intel.com",
+    "bugtrack_url": null,
+    "classifiers": [
+      "Development Status :: 5 - Production/Stable",
+      "Intended Audience :: Developers",
+      "Intended Audience :: Education",
+      "Intended Audience :: Other Audience",
+      "Intended Audience :: Science/Research",
+      "Intended Audience :: System Administrators",
+      "License :: Other/Proprietary License",
+      "Operating System :: POSIX :: Linux",
+      "Topic :: Software Development :: Libraries"
+    ],
+    "description": "Intel OpenMP* Runtime Library x86_64 dynamic libraries for Linux*. Intel OpenMP* Runtime Library provides OpenMP API specification support in Intel® C Compiler, Intel® C++ Compiler and Intel® Fortran Compiler. It helps to improve performance by creating multithreaded software using shared memory and running on multi-core processor systems.\n\n",
+    "description_content_type": null,
+    "docs_url": null,
+    "download_url": null,
+    "downloads": {
+      "last_day": -1,
+      "last_month": -1,
+      "last_week": -1
+    },
+    "dynamic": null,
+    "home_page": "https://www.intel.com/content/www/us/en/developer/tools/oneapi/dpc-compiler.html",
+    "keywords": null,
+    "license": "Intel End User License Agreement for Developer Tools",
+    "license_expression": null,
+    "license_files": null,
+    "maintainer": null,
+    "maintainer_email": null,
+    "name": "intel-openmp",
+    "package_url": "https://pypi.org/project/intel-openmp/",
+    "platform": null,
+    "project_url": "https://pypi.org/project/intel-openmp/",
+    "project_urls": {
+      "Homepage": "https://www.intel.com/content/www/us/en/developer/tools/oneapi/dpc-compiler.html"
+    },
+    "provides_extra": null,
+    "release_url": "https://pypi.org/project/intel-openmp/2025.3.0/",
+    "requires_dist": [
+      "intel-cmplr-lib-ur==2025.3.0"
+    ],
+    "requires_python": null,
+    "summary": "Intel® OpenMP* Runtime Library",
+    "version": "2025.3.0",
+    "yanked": false,
+    "yanked_reason": null
+  },
+  "last_serial": 42320103,
+  "ownership": {
+    "organization": null,
+    "roles": [
+      {
+        "role": "Owner",
+        "user": "IntelAutomationEngineering"
+      },
+      {
+        "role": "Owner",
+        "user": "sat-bot"
+      }
+    ]
+  },
+  "urls": [
+    {
+      "comment_text": "",
+      "core-metadata": {
+        "sha256": "0106ce53eb7cfbc2e3684de455b703eb5adc747d2c0284e4632816490b9b9ef8"
+      },
+      "digests": {
+        "blake2b_256": "6a8768241d0b532f0e41d5b2928b640b00f9bb48945df9921df1d878f42c1d38",
+        "md5": "81ed5f7b1a8632891fb221ef3d7d14e2",
+        "sha256": "948d9d6a22ed7643305a717c2ac2678bae8c11adafd5e4d30f903cf9933b4a60"
+      },
+      "downloads": -1,
+      "filename": "intel_openmp-2025.3.0-py2.py3-none-manylinux_2_28_x86_64.whl",
+      "has_sig": false,
+      "md5_digest": "81ed5f7b1a8632891fb221ef3d7d14e2",
+      "packagetype": "bdist_wheel",
+      "python_version": "py2.py3",
+      "requires_python": null,
+      "size": 74331543,
+      "upload_time": "2025-10-22T17:59:28",
+      "upload_time_iso_8601": "2025-10-22T17:59:28.770724Z",
+      "url": "https://files.pythonhosted.org/packages/6a/87/68241d0b532f0e41d5b2928b640b00f9bb48945df9921df1d878f42c1d38/intel_openmp-2025.3.0-py2.py3-none-manylinux_2_28_x86_64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": "",
+      "core-metadata": {
+        "sha256": "f8453be77c68c4eb7dc50446bdc34c7fb0b29bb411fd82edc9f852a3dd05ff7f"
+      },
+      "digests": {
+        "blake2b_256": "796905addedd727061b61a85b4fd989754edb628b5be1cd5d161727f98cf4d86",
+        "md5": "f27905466e68655d78fc0e3b3d5bebbe",
+        "sha256": "8ff899d01a41b92ffe0e618b221ea633127d16df726086082d381c431c31339d"
+      },
+      "downloads": -1,
+      "filename": "intel_openmp-2025.3.0-py2.py3-none-win_amd64.whl",
+      "has_sig": false,
+      "md5_digest": "f27905466e68655d78fc0e3b3d5bebbe",
+      "packagetype": "bdist_wheel",
+      "python_version": "py2.py3",
+      "requires_python": null,
+      "size": 32083814,
+      "upload_time": "2025-10-22T18:00:51",
+      "upload_time_iso_8601": "2025-10-22T18:00:51.397898Z",
+      "url": "https://files.pythonhosted.org/packages/79/69/05addedd727061b61a85b4fd989754edb628b5be1cd5d161727f98cf4d86/intel_openmp-2025.3.0-py2.py3-none-win_amd64.whl",
+      "yanked": false,
+      "yanked_reason": null
+    }
+  ],
+  "vulnerabilities": []
+}

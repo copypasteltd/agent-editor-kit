@@ -1,0 +1,20 @@
+{
+  "status": "verified-local-build",
+  "release": "v0.1.0-alpha.4-local.1",
+  "cli_version": "0.1.3",
+  "cpu_and_gpu_installed": "local/agent-ffmpeg/v0.1.0-alpha.4-local.1/final/installed",
+  "optional_numerical_notices_preserved": true,
+  "cpu_commands": 46,
+  "gpu_commands": 15,
+  "portable_installation_commands": 8,
+  "single_registered_skill_commands": 11,
+  "layout_correction_commands": 8,
+  "public_demo_commands": 14,
+  "public_release_unchanged": "v0.1.0-alpha.3",
+  "remaining_quality_acceptance": [
+    "human listening",
+    "semantic translation acceptance",
+    "other GPU platforms and sustained workload benchmarks",
+    "full CapCut equivalence"
+  ]
+}

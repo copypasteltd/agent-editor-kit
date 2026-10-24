@@ -1,0 +1,18 @@
+{
+  "protocol": "agent-community-cpu-v1",
+  "task": "voice",
+  "pack": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-portable-r1\\模型 包\\kokoro-zh-en-cuda13",
+  "base_site": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.1\\final\\installed\\site",
+  "payload": {
+    "text": "本地显卡配音测试，保留原声与独立字幕。",
+    "voice_id": "zf_001",
+    "speaker_id": 3,
+    "speed": 1.0,
+    "threads": 2,
+    "output": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-gpu-r2\\GPU 本地可编辑工程\\assets\\community-audio\\asset_voice_cuda.wav",
+    "device": "cuda",
+    "device_index": 0,
+    "cuda_library_directory": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\lib"
+  },
+  "response": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-gpu-r2\\GPU 本地可编辑工程\\validation\\community_model_20261024164845_a8fdc301-response.json"
+}

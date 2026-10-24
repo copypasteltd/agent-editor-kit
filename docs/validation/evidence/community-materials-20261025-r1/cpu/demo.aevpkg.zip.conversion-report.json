@@ -1,0 +1,33 @@
+{
+  "report_version": "0.1.0",
+  "direction": "export",
+  "source_format": "agent-project/0.1.0",
+  "target_format": "agent-project-package/0.1.0",
+  "created_at": "2026-10-24T16:55:10.000866Z",
+  "items": [
+    {
+      "capability": "project-package",
+      "status": "Exact",
+      "source": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\可编辑示例 project",
+      "target": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\demo.aevpkg.zip",
+      "detail": "项目、登记权利和本地素材已写入自包含 ZIP"
+    },
+    {
+      "capability": "lut-resources",
+      "status": "Mapped",
+      "source": "local paths / lut_id",
+      "target": "assets/luts/",
+      "detail": "1 个引用改写为包内内容寻址路径；关键帧及 LUT 原字节保留，缓存不打包"
+    }
+  ],
+  "warnings": [
+    {
+      "capability": "package-excluded-runtime",
+      "status": "Approximate",
+      "source": "project runtime",
+      "target": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\demo.aevpkg.zip",
+      "detail": "renders/cache/operations/history 未打包"
+    }
+  ],
+  "failures": []
+}

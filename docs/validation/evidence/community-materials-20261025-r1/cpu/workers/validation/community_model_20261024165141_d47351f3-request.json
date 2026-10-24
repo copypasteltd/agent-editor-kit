@@ -1,0 +1,22 @@
+{
+  "protocol": "agent-community-cpu-v1",
+  "task": "translate",
+  "pack": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-portable-r1\\模型 包\\opus-zh-en-cpu-int8",
+  "base_site": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.1\\final\\installed\\site",
+  "payload": {
+    "pair": "zh-en",
+    "texts": [
+      "保留背景音乐。",
+      "请先预览视频。",
+      "再导出工程。"
+    ],
+    "source_language": "zh-Hans",
+    "target_language": "en",
+    "threads": 2,
+    "beam_size": 4,
+    "device": "cpu",
+    "device_index": 0,
+    "cuda_library_directory": null
+  },
+  "response": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\可编辑示例 project\\validation\\community_model_20261024165141_d47351f3-response.json"
+}

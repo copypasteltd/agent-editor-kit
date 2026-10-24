@@ -1,5 +1,13 @@
 # 統一 Skill：一個入口、17 項能力
 
+<!-- community-current -->
+
+**當前本機擴充套件：CLI 0.1.3。** GPU 配音/翻譯、359 項內建資源與離線模型包已安裝實測；以下 alpha.3 內容保留為歷史 CLI 0.1.2 基線。 [Workflow](../product/COMMUNITY_MATERIALS.zh-TW.md) · [Local installation](../product/COMMUNITY_LOCAL_DELIVERY.md)
+
+<!-- /community-current -->
+
+## alpha.3 / r1 歷史流程（以下原文保留）
+
 [简体中文](UNIFIED_SKILL.md) · [English](UNIFIED_SKILL.en.md) · [完整模塊](../product/SKILLS.zh-TW.md)
 
 外層只需指定 **`$agent-ffmpeg-local-editor`**。它根據實際任務讀取內部模塊，不再要求分別調用 timeline、quality、local-models 等 16 個專用 Skill。全部模塊與上游輔助腳本、模板、來源和許可都包含在該 Skill 目錄內。

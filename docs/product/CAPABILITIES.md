@@ -1,5 +1,11 @@
 # 当前功能模块与服务清单
 
+<!-- community-current -->
+
+**当前本机扩展：CLI 0.1.3。** GPU 配音/翻译、359 项内置资源与离线模型包已安装实测；以下 alpha.3 内容保留为历史 CLI 0.1.2 基线。 [Details](COMMUNITY_MATERIALS.md) · [Local delivery](COMMUNITY_LOCAL_DELIVERY.md) · [Current installed capabilities](community-capabilities.json)
+
+<!-- /community-current -->
+
 [README](../../README.md) · [Machine response](capabilities.json) · [Module data](module-catalog.json)
 
 | 编号 | 功能模块 | 具体行为与输入 → 输出 | 入口 | 依赖/边界 |
@@ -61,7 +67,11 @@
 | S09 | 本地渲染队列与缓存 | 持久作业文件 | 单进程默认串行，明确条件下有限本地 worker 与缓存。 | `queue / preview / cache` | 无跨机器调度、云渲染或远端计费服务。 |
 | S10 | 质量检查与诊断 | 本地产物服务 | FFmpeg 解码/Scope、PNG/JSON 报告、golden、失败诊断。 | `quality / diagnostics` | 客观检查与主观质量验收分开。 |
 | S11 | 权利与交换服务 | 本地证据与文件交换 | 台账/策略/包哈希/损失报告，不调用专有编辑器。 | `rights / policy / convert` | 不自动授予第三方素材/模型商业权利。 |
-| S12 | 创意与运营支持 | Agent 任务指导 | 依赖调用方提供业务信息与数据，产出脚本/建议/分析。 | `17 agent-ffmpeg-local-* Skills` | 不包含广告平台账号接入、投放或自动采集数据。 |
+| S12 | 创意与运营支持 | Agent 任务指导 | 依赖调用方提供业务信息与数据，产出脚本/建议/分析。 | `$agent-ffmpeg-local-editor` / K01–K17 | 不包含广告平台账号接入、投放或自动采集数据。 |
+| S13 | 内置社区素材服务 | 离线目录 | 359 项有来源/许可的 BGM、短乐、音效、字体 | `materials list/inspect/verify/ingest` | 逐项权利，不是商业素材订阅库 |
+| S14 | 本地配音/翻译 | 原生模型 worker | 4 个可选 CPU/CUDA 包，103 音色映射和 OPUS 文本/字幕 | `voice / translate / model-pack` | 实际生成 3 音色试听文件，人工验收另列 |
+| S15 | 配乐准备与混音 | 原生 FFmpeg 音频 | 显式截取/循环/淡化、独立人声/配乐、闪避 | `music prepare/mix` | 不作曲、不静默裁人声、不承诺接缝修复 |
+| S16 | GPU 兼容服务 | 原生 NVIDIA 运行库 | auto/cpu/cuda、显存预检、实际 provider/回退 | `gpu inspect; --device` | RTX 3060 实测，NVIDIA/Intel 依赖许可另列 |
 
 ## 完整安装版能力字段
 

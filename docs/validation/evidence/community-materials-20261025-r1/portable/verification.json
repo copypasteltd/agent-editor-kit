@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.1\\final\\installed",
+  "native_windows": true,
+  "virtual_environment": false,
+  "network": false,
+  "commands": 8,
+  "installed_packs": 4,
+  "pack_directory": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-portable-r1\\模型 包",
+  "chinese_and_spaced_path": true,
+  "existing_target_preserved": true,
+  "wrong_hash_refused": true,
+  "extra_unsafe_members_refused": true,
+  "changed_file_refused": true,
+  "failed_staging_removed": true,
+  "original_archive_and_installed_manifest_unchanged": true,
+  "pins": [
+    {
+      "id": "kokoro-zh-en-int8",
+      "manifest_sha256": "5df1e69b62cb023489b131b238a765fec9581afc37fb21840fd3c3f77faaa29e",
+      "archive_sha256": "1b970731deea9df5194c9ea6d9c072ee074c753ba5d0ee42f266c069ad1de553"
+    },
+    {
+      "id": "opus-zh-en-cpu-int8",
+      "manifest_sha256": "95d8b0953de8fb65cc93815d646a034c9a794226aff28f76b8693bf41d04c2be",
+      "archive_sha256": "65d045735deccb170f12d4db0df8fa0ad79b2c88d326fc00b004393958953e58"
+    },
+    {
+      "id": "kokoro-zh-en-cuda13",
+      "manifest_sha256": "fb46a9cfc9823f4cb18d1c669a145e2fec772e39e0e32f1a7a68eae18cc4d987",
+      "archive_sha256": "87bc0691310db90a9d1cda9992d869089dfe73ea2331d988683e7457e02dfa08"
+    },
+    {
+      "id": "opus-zh-en-cuda12-int8",
+      "manifest_sha256": "eda65efa7fa83be5f1bd01dab3c5b6278aaa897cd747d82549b135f74a0838d4",
+      "archive_sha256": "35084c7c17093f62bf0aff6479d1c67d4c11860bdae88238e89f584441c82d0f"
+    }
+  ]
+}

@@ -8,8 +8,8 @@ from pathlib import Path
 import subprocess
 import sys
 
-MANIFEST = 'sha256:3bc0a74144953b97a769db01f3d2d863889da80f010d78ab7e4a2b4eedf1ceea'
-RELEASE = 'v0.1.0-alpha.3'
+MANIFEST = 'sha256:f2ecd56dd5167fa25556ac8a5f79e51d85182c7fc432d6e4846ab1a6755cb3ee'
+RELEASE = 'v0.1.0-alpha.4-local.1'
 
 
 def launch():
@@ -29,6 +29,8 @@ def launch():
     env.update(TMP=str(temporary), TEMP=str(temporary), TMPDIR=str(temporary),
                AI_AD_EDITOR_RUNTIME_DIR=str(installed / 'runtime'),
                HF_HUB_OFFLINE='1', TRANSFORMERS_OFFLINE='1', HF_HUB_DISABLE_TELEMETRY='1')
+    if config.get('community_config'):
+        env['AEK_COMMUNITY_DEVICE_CONFIG'] = str(Path(config['community_config']).resolve(strict=True))
     command = [sys.executable, '-I', '-S', '-B', '-X', 'utf8', str(launcher), *sys.argv[2:]]
     # The CLI writes its JSON directly. No shell, re-parsing or source fallback.
     return subprocess.run(command, env=env, stdout=sys.stdout, stderr=sys.stderr,

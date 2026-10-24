@@ -1,0 +1,23 @@
+{
+  "status": "passed-with-review-limits",
+  "commands": 8,
+  "actual_new_model_inferences": 0,
+  "original_video_preserved": true,
+  "original_video_sha256": "0fa113386d690cf94141bf110f23940e1cad2ca83d408826614829d4f23ca515",
+  "stems_unchanged": true,
+  "video": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\可编辑示例 project\\renders\\community-demo-reviewed.mp4",
+  "video_sha256": "b7c31dcf3136a97f315db75a45a3c5a4b43d79201494ee839c3c9dff94a68f4e",
+  "frames": 360,
+  "dimensions": [
+    360,
+    640
+  ],
+  "full_decode": true,
+  "package_roundtrip": true,
+  "preview_encoded_frame_mean_absolute_rgb_error": 1.344525462962963,
+  "preview": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\可编辑示例 project\\cache\\timeline-previews\\075305010298b7092cbf46cb9cac63614ad7715217bdf12523ae433193379cfd\\frame.png",
+  "poster": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\materials-20261024\\integration-r4\\presentation-correction\\encoded-frame-90.png",
+  "human_listening": false,
+  "continuous_playback": false,
+  "known_boundary": "Render width/height changes the composition raster; author pixel-based text in the intended sequence canvas."
+}

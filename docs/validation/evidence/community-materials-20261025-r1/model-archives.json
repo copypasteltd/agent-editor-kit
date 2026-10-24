@@ -1,0 +1,41 @@
+{
+  "format": "agent-community-model-archives-v1",
+  "packs": [
+    {
+      "id": "kokoro-zh-en-int8",
+      "archive": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-model-archives-r1\\kokoro-zh-en-int8.zip",
+      "bytes": 151369628,
+      "sha256": "1b970731deea9df5194c9ea6d9c072ee074c753ba5d0ee42f266c069ad1de553",
+      "manifest_sha256": "5df1e69b62cb023489b131b238a765fec9581afc37fb21840fd3c3f77faaa29e",
+      "files": 47,
+      "local_only": true
+    },
+    {
+      "id": "opus-zh-en-cpu-int8",
+      "archive": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-model-archives-r1\\opus-zh-en-cpu-int8.zip",
+      "bytes": 150959533,
+      "sha256": "a84e0811905adfd4643e40d41d2617bf84538587135f28b76badfc7cc0fba3fb",
+      "manifest_sha256": "b483a1d84214c22eb5117fd48f993131d1750f234f00f11d7728e786cf8a6410",
+      "files": 116,
+      "local_only": true
+    },
+    {
+      "id": "kokoro-zh-en-cuda13",
+      "archive": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-model-archives-r1\\kokoro-zh-en-cuda13.zip",
+      "bytes": 583062292,
+      "sha256": "87bc0691310db90a9d1cda9992d869089dfe73ea2331d988683e7457e02dfa08",
+      "manifest_sha256": "fb46a9cfc9823f4cb18d1c669a145e2fec772e39e0e32f1a7a68eae18cc4d987",
+      "files": 47,
+      "local_only": true
+    },
+    {
+      "id": "opus-zh-en-cuda12-int8",
+      "archive": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-model-archives-r1\\opus-zh-en-cuda12-int8.zip",
+      "bytes": 168607738,
+      "sha256": "d0e381ca4e4073ddcf63bd77c1a61a095d59047715fc7effc20ce7e7ad28a0f8",
+      "manifest_sha256": "5de197813a08f9aee01e32063e87cde1ef4ce312da26fd8cd56772d9ecc18b1c",
+      "files": 147,
+      "local_only": true
+    }
+  ]
+}

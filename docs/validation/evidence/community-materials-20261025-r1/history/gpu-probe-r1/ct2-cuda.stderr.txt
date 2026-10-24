@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\.runtime\materials-20261024\gpu-probe-r1\ct2-cuda.py", line 9, in <module>
+    source=spm.SentencePieceProcessor(model_file=str(model/"source.spm"));target=spm.SentencePieceProcessor(model_file=str(model/"target.spm"))
+  File "E:\dev\sandbox\AI广告剪辑\product\.runtime\materials-20261024\ct2-cpu-r1\sentencepiece\__init__.py", line 163, in __init__
+    self.Load(model_file=model_file, model_proto=model_proto)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\.runtime\materials-20261024\ct2-cpu-r1\sentencepiece\__init__.py", line 209, in Load
+    return self.LoadFromFile(model_file)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\.runtime\materials-20261024\ct2-cpu-r1\sentencepiece\__init__.py", line 213, in LoadFromFile
+    return self._processor.LoadFromFile(filename)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+RuntimeError: NOT_FOUND: "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\community-packs-r2\opus-zh-en-cpu-int8\models\zh-en\source.spm": No such file or directory Error #2

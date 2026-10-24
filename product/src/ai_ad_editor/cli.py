@@ -1229,6 +1229,8 @@ def build_parser() -> argparse.ArgumentParser:
     policy_sub = policy.add_subparsers(dest="action", required=True)
     policy_audit = _leaf_common(policy_sub.add_parser("audit", help="审计项目产物中的远程/闭源引用"))
     policy_audit.add_argument("--project", required=True)
+    from .community_cli import add_parser as add_community_parser
+    add_community_parser(subs, _leaf_common)
     return parser
 
 
@@ -7187,6 +7189,9 @@ COMMANDS: dict[tuple[str, str | None], Callable[[argparse.Namespace], dict[str, 
     ("capabilities", None): command_capabilities,
     ("policy", "audit"): command_policy_audit,
 }
+
+from .community_cli import COMMAND_KEYS as COMMUNITY_COMMAND_KEYS, command as community_command
+COMMANDS.update({key: (lambda args: community_command(args, _envelope)) for key in COMMUNITY_COMMAND_KEYS})
 
 
 def main(argv: list[str] | None = None) -> int:

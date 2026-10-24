@@ -1,0 +1,27 @@
+{
+  "protocol": "agent-community-cpu-v1",
+  "ok": true,
+  "task": "translate",
+  "provider": "cpu",
+  "elapsed_seconds": 5.703617599996505,
+  "network": "disabled",
+  "engine_version": "4.8.3",
+  "backend": "Ruy",
+  "native_executable": true,
+  "pair": "zh-en",
+  "output": [
+    "Generates an edited video starting with local material.",
+    "The original sound, subtitles and choreography can be adjusted independently."
+  ],
+  "input_token_counts": [
+    12,
+    12
+  ],
+  "scores": [
+    -0.561568,
+    -0.636283
+  ],
+  "compute_type": "int8",
+  "target_language": "en",
+  "beam_size": 4
+}

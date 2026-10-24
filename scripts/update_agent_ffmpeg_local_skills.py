@@ -16,6 +16,8 @@ def main():
         raise ValueError("Install and activate the reviewed alpha.3 build first")
     manifest_path=ROOT/"agent-ffmpeg-local-install-manifest.json"
     manifest=json.loads(manifest_path.read_bytes())
+    if manifest.get('registration_mode') == 'single':
+        raise ValueError('The split updater is historical. Maintain the unified Skill and refresh its reviewed file inventory before packaging.')
     editor=ROOT/"skills/agent-ffmpeg-local-editor"
     launcher=editor/"scripts/run.py"
     text=launcher.read_text("utf-8")

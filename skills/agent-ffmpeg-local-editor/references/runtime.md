@@ -22,7 +22,7 @@ To install on another checkout with existing Windows CPython 3.13 x64 and FFmpeg
 
 Run the install script in the repository; the pinned release ZIP parts are in `docs/releases/v0.1.0-alpha.3/artifacts/`.
 The installer preserves existing destinations. An unavailable installation requires repair/reinstallation,
-not a source fallback. The namespace manifest lists all 17 entries. Legacy `video-cut-` Skills are separate.
+not a source fallback. The namespace manifest registers only `$agent-ffmpeg-local-editor`; its 17 modules are internal references. The registrar retires only this checkout's 16 previous specialist junctions. Legacy `video-cut-` Skills are separate.
 
 ## Project workflow
 

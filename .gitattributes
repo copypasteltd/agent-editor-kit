@@ -26,6 +26,17 @@ scripts/collect_vace_retry_rejection.py -text
 scripts/sync_audio_source_context_documents.py -text
 scripts/audit_audio_source_context_release.py -text
 .gitattributes text eol=lf
+# Single-entry Skill inventory and native migration receipts preserve exact bytes.
+docs/validation/evidence/unified-skill-20261024-r1/** -text -whitespace
+docs/skills/*.zip -text
+docs/skills/*.json -text
+scripts/register_unified_skill.ps1 -text
+scripts/consolidate_agent_ffmpeg_skills.py text eol=lf
+scripts/package_unified_skill.py text eol=lf
+scripts/readme_unified_skill.py text eol=lf
+scripts/verify_unified_skill.py text eol=lf
+scripts/audit_unified_skill_delivery.py text eol=lf
+docs/skills/*.md text eol=lf
 .gitignore text eol=lf
 docs/validation/evidence/openfilm-batch-reuse-20261020-v70/** -text -whitespace
 docs/assets/openfilm-batch-reuse-20261020-v70*/** -text -whitespace
@@ -1404,3 +1415,5 @@ scripts/readme_release_workflow.py text eol=lf
 docs/releases/v0.1.0-alpha.3/public/** -text -whitespace
 docs/validation/evidence/release-v0.1.0-alpha.3-r1/** -text -whitespace
 docs/assets/release-v0.1.0-alpha.3-r1/** -text -whitespace
+# Relocated upstream resources retain original license/template bytes, including spaces.
+skills/agent-ffmpeg-local-editor/references/modules/*/references/upstream/** -text -whitespace

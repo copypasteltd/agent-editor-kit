@@ -1,0 +1,238 @@
+{
+  "status": "built",
+  "source_namespace": "agent-ffmpeg-local-skills-v1",
+  "registered_skill_count": 1,
+  "internal_module_count": 17,
+  "source_snapshot": "docs/validation/evidence/unified-skill-20261024-r1/source-instructions.json",
+  "source_snapshot_sha256": "1859c01bb6bdc536eb1e61820cb01438e2ee766673966ecbf452649f12c3be81",
+  "relocated_resources": [
+    {
+      "source": "skills/agent-ffmpeg-local-ffmpeg/references/upstream/agents/openai.yaml",
+      "source_sha256": "46523706ec3796ad723136cc22cab866560c4837de44e022393e752f3a30835a",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ffmpeg/references/upstream/agents/openai.yaml",
+      "sha256": "46523706ec3796ad723136cc22cab866560c4837de44e022393e752f3a30835a",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-ffmpeg/references/upstream/LICENSE",
+      "source_sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ffmpeg/references/upstream/LICENSE",
+      "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-ffmpeg/references/upstream/reference.md",
+      "source_sha256": "750659d2c3d0c3571c4437895e9f7940e09d5debccf400f59a0ca0ae779960f4",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ffmpeg/references/upstream/reference.md",
+      "sha256": "750659d2c3d0c3571c4437895e9f7940e09d5debccf400f59a0ca0ae779960f4",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-ffmpeg/references/upstream/workflow.md",
+      "source_sha256": "544724e259c4314689dc2f8f7a6e146455d97cf6f9c3825856f420e44f41d03f",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ffmpeg/references/upstream/workflow.md",
+      "sha256": "7e7d5c5d4d42cd383b5811840721be7b11a7e213c33dfdbd927ee576f3f79757",
+      "changes": [
+        "Rebind inherited missing separation contract to the local-models module"
+      ]
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-video-edit/references/upstream/agents/openai.yaml",
+      "source_sha256": "5bf3dd4472ad6157f54fc6b24c36bd11d8c850f363f9f157cc8a40bde3594bbf",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-edit/references/upstream/agents/openai.yaml",
+      "sha256": "5bf3dd4472ad6157f54fc6b24c36bd11d8c850f363f9f157cc8a40bde3594bbf",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-video-edit/references/upstream/LICENSE",
+      "source_sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-edit/references/upstream/LICENSE",
+      "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-video-edit/references/upstream/references/operations.md",
+      "source_sha256": "2463a5298822520657e9c63d6bb1caaf4c99cf769d479737a0e078cb538e525b",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-edit/references/upstream/references/operations.md",
+      "sha256": "2463a5298822520657e9c63d6bb1caaf4c99cf769d479737a0e078cb538e525b",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-video-edit/references/upstream/workflow.md",
+      "source_sha256": "a49b64fc5ad50778ccaf92b568b1a57dbb86c53a076dd7031519798de15ad340",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-edit/references/upstream/workflow.md",
+      "sha256": "a49b64fc5ad50778ccaf92b568b1a57dbb86c53a076dd7031519798de15ad340",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-ad-creative/references/upstream/agents/openai.yaml",
+      "source_sha256": "5eb800b7dc15a26e98dda06a0599897f21fe51cf7d6035d0692508d52934ad15",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/agents/openai.yaml",
+      "sha256": "5eb800b7dc15a26e98dda06a0599897f21fe51cf7d6035d0692508d52934ad15",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-ad-creative/references/upstream/LICENSE",
+      "source_sha256": "a20126646f93d32a8989c3cf4772d59194f405034f7babe7daebeac22b8ab151",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/LICENSE",
+      "sha256": "a20126646f93d32a8989c3cf4772d59194f405034f7babe7daebeac22b8ab151",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-ad-creative/references/upstream/references/creative-frameworks.md",
+      "source_sha256": "f45bb278e6b5f6e44498dfc52f46d23b785bc0b662e0743b873b02daf3842a0d",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/references/creative-frameworks.md",
+      "sha256": "f45bb278e6b5f6e44498dfc52f46d23b785bc0b662e0743b873b02daf3842a0d",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-ad-creative/references/upstream/references/platform-specs.md",
+      "source_sha256": "c8369e4c2a2e7517da2b8c511193b193dd6d008dfccac946cd739d3a19f9b4b5",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/references/platform-specs.md",
+      "sha256": "c8369e4c2a2e7517da2b8c511193b193dd6d008dfccac946cd739d3a19f9b4b5",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-ad-creative/references/upstream/scripts/ad_copy_validator.py",
+      "source_sha256": "9e33e1aec4c040b6a334ec3eaf179877a580b2feaef52b2bf2a721adc0aa6c53",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/scripts/ad_copy_validator.py",
+      "sha256": "9e33e1aec4c040b6a334ec3eaf179877a580b2feaef52b2bf2a721adc0aa6c53",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-ad-creative/references/upstream/workflow.md",
+      "source_sha256": "b06bfe7d7b0174c97ddef1d3b14e25909817577d3c8ce4f564b706da3953618a",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/workflow.md",
+      "sha256": "a246751f9b62bf478ddf0e0d8326f8f00a8c67fe9bfb1045dd311be50130915b",
+      "changes": [
+        "Rebind inherited broken project-policy link to the shared runtime contract"
+      ]
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-video-content-strategist/references/upstream/agents/openai.yaml",
+      "source_sha256": "b74f612c445e8a4e2131e53aaf559dc2487d6c8b2b0078e2118bf109b9f7d919",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-content-strategist/references/upstream/agents/openai.yaml",
+      "sha256": "b74f612c445e8a4e2131e53aaf559dc2487d6c8b2b0078e2118bf109b9f7d919",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-video-content-strategist/references/upstream/LICENSE",
+      "source_sha256": "a20126646f93d32a8989c3cf4772d59194f405034f7babe7daebeac22b8ab151",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-content-strategist/references/upstream/LICENSE",
+      "sha256": "a20126646f93d32a8989c3cf4772d59194f405034f7babe7daebeac22b8ab151",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-video-content-strategist/references/upstream/workflow.md",
+      "source_sha256": "c4682504fa1f62ee99977afdf8e8ee02e96dc1c35b7bee24222623a8bdf817b4",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-content-strategist/references/upstream/workflow.md",
+      "sha256": "6410439fb3505954dac38adb82f2b0601edbc790775e62741f2892f7ca080bea",
+      "changes": [
+        "Rebind inherited broken project-policy link to the shared runtime contract"
+      ]
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-campaign-analytics/references/upstream/agents/openai.yaml",
+      "source_sha256": "1c3f47e151b72e3bac8151ea22058acde737e9ca74377551d5928e696585dd52",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/agents/openai.yaml",
+      "sha256": "1c3f47e151b72e3bac8151ea22058acde737e9ca74377551d5928e696585dd52",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-campaign-analytics/references/upstream/assets/ab_test_template.md",
+      "source_sha256": "a3b1529104389ddfab4e92357f61102d353a4585038bd611353aff2c5e3fa720",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/assets/ab_test_template.md",
+      "sha256": "a3b1529104389ddfab4e92357f61102d353a4585038bd611353aff2c5e3fa720",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-campaign-analytics/references/upstream/assets/campaign_report_template.md",
+      "source_sha256": "448ef109e333b351b0fbc2b2a087352d6abc89d125620585e6518b6aa91e631c",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/assets/campaign_report_template.md",
+      "sha256": "448ef109e333b351b0fbc2b2a087352d6abc89d125620585e6518b6aa91e631c",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-campaign-analytics/references/upstream/assets/channel_comparison_template.md",
+      "source_sha256": "5c6b30fccafa570192907ad7ff83f1d4b16b83519ab06ceccadbfa195fae69ba",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/assets/channel_comparison_template.md",
+      "sha256": "5c6b30fccafa570192907ad7ff83f1d4b16b83519ab06ceccadbfa195fae69ba",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-campaign-analytics/references/upstream/assets/expected_output.json",
+      "source_sha256": "5214cc084d57938e4b92ba592305355597e9f2298c76520ace8d46d4a325c4d7",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/assets/expected_output.json",
+      "sha256": "5214cc084d57938e4b92ba592305355597e9f2298c76520ace8d46d4a325c4d7",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-campaign-analytics/references/upstream/assets/sample_campaign_data.json",
+      "source_sha256": "6e8604e35126d012d34272e9de8094a1f69e9f21b9ab2c1054ee0c52ab061156",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/assets/sample_campaign_data.json",
+      "sha256": "6e8604e35126d012d34272e9de8094a1f69e9f21b9ab2c1054ee0c52ab061156",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-campaign-analytics/references/upstream/LICENSE",
+      "source_sha256": "a20126646f93d32a8989c3cf4772d59194f405034f7babe7daebeac22b8ab151",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/LICENSE",
+      "sha256": "a20126646f93d32a8989c3cf4772d59194f405034f7babe7daebeac22b8ab151",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-campaign-analytics/references/upstream/references/attribution-models-guide.md",
+      "source_sha256": "7909ca8534cf68bab00c1f2e2035fa3b6b0dbfd6fb94da2db88948b8616058e5",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/references/attribution-models-guide.md",
+      "sha256": "7909ca8534cf68bab00c1f2e2035fa3b6b0dbfd6fb94da2db88948b8616058e5",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-campaign-analytics/references/upstream/references/campaign-metrics-benchmarks.md",
+      "source_sha256": "5f83037ed8d13db1febfa5490ad3f21698043057ad859a70c323912091e30cd7",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/references/campaign-metrics-benchmarks.md",
+      "sha256": "5f83037ed8d13db1febfa5490ad3f21698043057ad859a70c323912091e30cd7",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-campaign-analytics/references/upstream/references/funnel-optimization-framework.md",
+      "source_sha256": "9a95040212cf0df227ec40079da50db34b909b7f4ca7ad5c3711a6d0f517d612",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/references/funnel-optimization-framework.md",
+      "sha256": "9a95040212cf0df227ec40079da50db34b909b7f4ca7ad5c3711a6d0f517d612",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-campaign-analytics/references/upstream/scripts/attribution_analyzer.py",
+      "source_sha256": "cc01b84dcd0d2d0659dbb4603ea8499a129d43c38ea5bcf727d12399af74f3e5",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/scripts/attribution_analyzer.py",
+      "sha256": "cc01b84dcd0d2d0659dbb4603ea8499a129d43c38ea5bcf727d12399af74f3e5",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-campaign-analytics/references/upstream/scripts/campaign_roi_calculator.py",
+      "source_sha256": "503809b68fc7754cc903e633dbcc8da87d147e8b61160f1b399c445cb94f5782",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/scripts/campaign_roi_calculator.py",
+      "sha256": "503809b68fc7754cc903e633dbcc8da87d147e8b61160f1b399c445cb94f5782",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-campaign-analytics/references/upstream/scripts/funnel_analyzer.py",
+      "source_sha256": "c9d31b4142512aa31e5965ebe7d6222893e78b19f653fbcc3f404e4122fe0463",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/scripts/funnel_analyzer.py",
+      "sha256": "c9d31b4142512aa31e5965ebe7d6222893e78b19f653fbcc3f404e4122fe0463",
+      "changes": []
+    },
+    {
+      "source": "skills/agent-ffmpeg-local-campaign-analytics/references/upstream/workflow.md",
+      "source_sha256": "b2c774e064aa2117596bfbe7c74e8735313fb6f8f1f3280b7561d754d56adf16",
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/workflow.md",
+      "sha256": "ad2367f6f7a9807976f5ade0c56b8332b667fe96a5634532091dc73d08df88a5",
+      "changes": [
+        "Rebind inherited broken project-policy link to the shared runtime contract"
+      ]
+    }
+  ],
+  "original_specialist_sources_preserved": true,
+  "runtime_modified": false,
+  "runtime_release": "v0.1.0-alpha.3"
+}

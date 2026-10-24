@@ -1,4 +1,4 @@
 interface:
-  display_name: "Agent FFmpeg Local Editor"
-  short_description: "Build and deliver local video edits"
-  default_prompt: "Use $agent-ffmpeg-local-editor to edit advertising videos or assemble a local Agent Project using the installed agent editor kit CLI."
+  display_name: "agent editor kit"
+  short_description: "One entry for 17 local video workflows"
+  default_prompt: "Use $agent-ffmpeg-local-editor to plan, edit, preview and deliver a local video, selecting the relevant internal task modules."

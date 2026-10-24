@@ -4,9 +4,18 @@
 
 [简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit) · [Docs](docs/README.md)
 
-**Release: v0.1.0-alpha.3 prerelease · CLI 0.1.2 · 500 looks · 17 local Skills.** Downloads provide a complete runtime ZIP, Agent kit, optional gallery and checksums. The verified runtime bytes are unchanged; portable installation and a runnable example are added. Complete Jianying/CapCut parity remains an unaccepted development target.
+**Release: v0.1.0-alpha.3 prerelease · CLI 0.1.2 · 500 looks · 1 unified Skill / 17 internal modules.** Downloads provide a complete runtime ZIP, Agent kit, optional gallery and checksums. The verified runtime bytes are unchanged; portable installation and a runnable example are added. Complete Jianying/CapCut parity remains an unaccepted development target.
 
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
+
+
+<!-- unified-skill-registration -->
+
+**Registration is consolidated: use only `$agent-ffmpeg-local-editor`.** Its 17 internal modules cover editing, looks, models, quality, creative planning and supplied data, loading details as needed.
+
+This host uses one entry; [unified Skill kit](https://github.com/copypasteltd/agent-editor-kit/raw/refs/heads/main/docs/skills/agent-editor-kit-unified-skill-r1.zip) · [Install, migrate and invoke](docs/skills/UNIFIED_SKILL.en.md). Original alpha.3 attachments retain the split 17-entry layout; the new kit uses the same verified runtime.
+
+<!-- /unified-skill-registration -->
 
 ## Download and render your first video
 
@@ -15,7 +24,7 @@ This page includes functional modules, services/dependencies, installation/usage
 | Download | Purpose |
 |---|---|
 | [agent-editor-kit-v0.1.0-alpha.3-cp313-win_amd64.zip](https://github.com/copypasteltd/agent-editor-kit/releases/download/v0.1.0-alpha.3/agent-editor-kit-v0.1.0-alpha.3-cp313-win_amd64.zip) | Required: app and eight pinned wheels, about 196 MB. |
-| [agent-editor-kit-v0.1.0-alpha.3-agent-kit.zip](https://github.com/copypasteltd/agent-editor-kit/releases/download/v0.1.0-alpha.3/agent-editor-kit-v0.1.0-alpha.3-agent-kit.zip) | Required: offline installer, 17 Skills, registration, guides and runnable example. |
+| [agent-editor-kit-unified-skill-r1.zip](https://github.com/copypasteltd/agent-editor-kit/raw/refs/heads/main/docs/skills/agent-editor-kit-unified-skill-r1.zip) | Required: offline installer, one Skill with 17 internal modules, registration and runnable example. |
 | [agent-editor-kit-v0.1.0-alpha.3-gallery.zip](https://github.com/copypasteltd/agent-editor-kit/releases/download/v0.1.0-alpha.3/agent-editor-kit-v0.1.0-alpha.3-gallery.zip) | Optional: original, 500 real look samples, offline selection page and client-board assets. |
 | [SHA256SUMS.txt](https://github.com/copypasteltd/agent-editor-kit/releases/download/v0.1.0-alpha.3/SHA256SUMS.txt) | Verify downloads; the installer also enforces the runtime ZIP hash. |
 
@@ -23,9 +32,9 @@ This page includes functional modules, services/dependencies, installation/usage
 
 ```powershell
 $avkPython = 'C:/Python313/python.exe'
-$avkHome = 'E:/tools/agent-editor-kit-alpha3'
+$avkHome = 'E:/tools/agent-editor-kit-unified'
 $avkArchive = 'E:/Downloads/agent-editor-kit-v0.1.0-alpha.3-cp313-win_amd64.zip'
-Expand-Archive -LiteralPath 'E:/Downloads/agent-editor-kit-v0.1.0-alpha.3-agent-kit.zip' -DestinationPath $avkHome
+Expand-Archive -LiteralPath 'E:/Downloads/agent-editor-kit-unified-skill-r1.zip' -DestinationPath $avkHome
 Set-Location $avkHome
 & $avkPython -I -B -X utf8 ./install.py --archive $avkArchive
 ```
@@ -58,7 +67,9 @@ Inspect support and media first, explicitly retain source audio, show look candi
 
 **5. Add the optional gallery.** Extract `gallery.zip` into the same `$avkHome` and open `docs/assets/looks-n002-20261024-r1/index.html`, or use the Skill helper below to export a candidate board. Close unused browser tabs afterwards.
 
-[Release](https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3) · [Full installation and workflow](docs/releases/v0.1.0-alpha.3/QUICKSTART.en.md) · [Scope and limits](docs/releases/v0.1.0-alpha.3/RELEASE.md)
+[Release](https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3) · [Full installation and workflow](docs/skills/UNIFIED_SKILL.en.md) · [Scope and limits](docs/releases/v0.1.0-alpha.3/RELEASE.md)
+
+The new kit consolidates Skill organization and uses the same alpha.3 runtime. Its checksum is in the [package record](docs/skills/unified-skill-package.json); the original release’s 17-Skill kit remains immutable.
 
 ## See real output: 500 looks on one supplied still
 
@@ -233,7 +244,7 @@ Sources/licenses: Striped Purple 49 + t3mujinpack 51 (MIT), Natron 267 (CC BY-SA
 **Client workflow:** show the original plus 3–6 relevant actual samples, identifying number, name, stable ID, strength, color change and license. Clients can filter/export candidates or give numbers. Render selected strengths on the actual target media, record final ID/strength/clip-or-global scope, then dry-run/apply. The split slider changes the original comparison region and does not simulate strength.
 
 ```powershell
-$avkHome = 'E:/tools/agent-editor-kit-alpha3'
+$avkHome = 'E:/tools/agent-editor-kit-unified'
 $avk = Join-Path $avkHome 'skills/agent-ffmpeg-local-editor/scripts/run.ps1'
 $aekGallery = Join-Path $avkHome 'skills/agent-ffmpeg-local-editor/scripts/look_gallery.py'
 & 'C:/Python313/python.exe' -I -S -B -X utf8 $aekGallery --query '黑白' --limit 6
@@ -255,15 +266,15 @@ Prerequisites: native Windows x64, existing CPython 3.13 and FFmpeg/ffprobe. Eig
 ```powershell
 $avkPython = 'C:/Python313/python.exe'
 # Run from the directory containing every .partNN and the supplied metadata.
-& $avkPython -I -B -X utf8 ./assemble.py --output E:/tools/agent-editor-kit-alpha3.zip
-Expand-Archive E:/tools/agent-editor-kit-alpha3.zip E:/tools/agent-editor-kit-alpha3
-Set-Location E:/tools/agent-editor-kit-alpha3
+& $avkPython -I -B -X utf8 ./assemble.py --output E:/tools/agent-editor-kit-unified.zip
+Expand-Archive E:/tools/agent-editor-kit-unified.zip E:/tools/agent-editor-kit-unified
+Set-Location E:/tools/agent-editor-kit-unified
 $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha256
 & $avkPython -I -B -X utf8 ./bundle/install.py --target E:/tools/aek-alpha3-installed --manifest-sha256 $avkManifest
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host already has `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.3/installed/`. The 17 Skills’ bodies/scripts live in `skills/`, with Codex discovery junctions under `C:/Users/carzy/.codex/skills/`. Re-register after relocation; unrelated conflicting directories are preserved.
+This host already has `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.3/installed/`. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -281,7 +292,7 @@ The Skill launcher checks the installation receipt and launcher hash, then invok
 ## Commands and project structure: start to delivery
 
 ```powershell
-$avkHome = 'E:/tools/agent-editor-kit-alpha3'
+$avkHome = 'E:/tools/agent-editor-kit-unified'
 $avk = Join-Path $avkHome 'skills/agent-ffmpeg-local-editor/scripts/run.ps1'
 $aekProject = 'E:/video-work/first-ad'
 & $avk project init $aekProject --name 'First ad'
@@ -314,36 +325,38 @@ Responses contain `ok/command/request_id/operation_id/status/data/artifacts/warn
 
 Imported rights default to unverified; supply actual source/license/evidence before commercial delivery and `rights check`/`render --publish`. `--publish` is a local gate, not a platform upload. Interchange reports Exact/Approximate/Unsupported/Failed losses and cannot promise lossless plaintext-draft effects.
 
-## 17 local Skills: responsibility, inputs/outputs and limits
+## One Skill, 17 internal modules: responsibility, inputs/outputs and limits
 
-| ID | Skill | Responsibility | Input → output | Commands | Dependency/limit |
+K01–K17 are internal modules, not separate registrations. Describe the outcome; the entry selects the relevant planning, analysis, timeline, template, quality and delivery references.
+
+| ID | Internal module | Responsibility | Input → output | Commands | Dependency/limit |
 |---|---|---|---|---|---|
 | K01 | [`$agent-ffmpeg-local-editor`](skills/agent-ffmpeg-local-editor/SKILL.md) | Editing and delivery entrypoint | brief + local media → plan, project, video, manifest | `project init; timeline compose; look; render` | Routes by capability, including client look selection; needs the base CLI. |
-| K02 | [`$agent-ffmpeg-local-timeline`](skills/agent-ffmpeg-local-timeline/SKILL.md) | Timeline, keys and motion | Edit JSON → tracks/motion/transitions/nesting | `timeline compose/edit; motion apply` | Explicit track/clip targets and author clocks. |
-| K03 | [`$agent-ffmpeg-local-quality`](skills/agent-ffmpeg-local-quality/SKILL.md) | Output and pixel review | Video + manifest + reference → reports/scopes/differences | `quality check/scopes/mask/golden` | Separate static review/playback/listening; review look selections. |
-| K04 | [`$agent-ffmpeg-local-project-ops`](skills/agent-ffmpeg-local-project-ops/SKILL.md) | Project operations, recovery and queues | Projects + jobs → snapshots/recovery/relink/results | `project snapshot/recover; media relink; queue` | Preserve sources/failures; not a cloud scheduler. |
-| K05 | [`$agent-ffmpeg-local-local-policy`](skills/agent-ffmpeg-local-local-policy/SKILL.md) | Local execution policy | Project references → audit/structured refusal | `policy audit` | Remote references refused; not an OS sandbox. |
-| K06 | [`$agent-ffmpeg-local-rights-ledger`](skills/agent-ffmpeg-local-rights-ledger/SKILL.md) | Media and model rights evidence | Source/license/local evidence → ledger/impact/gates | `rights list/check/update/impact` | Treat image and LUT rights separately; no automatic legal determination. |
-| K07 | [`$agent-ffmpeg-local-local-models`](skills/agent-ffmpeg-local-local-models/SKILL.md) | Existing offline model registration | Native runtime + weights/hashes/licenses → adapters/artifacts | `media adapter; asr adapter; ocr; face; tts` | No weight downloads; check capability/runtime before execution. |
-| K08 | [`$agent-ffmpeg-local-video-understand`](skills/agent-ffmpeg-local-video-understand/SKILL.md) | Scene/silence and video evidence | Local video/audio → analysis JSON, frames, caption candidates | `media understand/contact-sheet; subtitle transcribe` | Distinguish heuristics from model semantics. |
-| K09 | [`$agent-ffmpeg-local-template-library`](skills/agent-ffmpeg-local-template-library/SKILL.md) | Templates and reusable fragments | Templates/variables/library → editable variants/index | `template apply/batch; library; fragment` | User-provided assets and per-resource licenses. |
-| K10 | [`$agent-ffmpeg-local-long-to-short`](skills/agent-ffmpeg-local-long-to-short/SKILL.md) | Long video to short clips | Local lesson/talk + reviewed text → rough cuts/short projects | `media highlights/smart-cut; timeline compose` | Review candidate segments; no autonomous semantic-director claim. |
-| K11 | [`$agent-ffmpeg-local-screen-demo`](skills/agent-ffmpeg-local-screen-demo/SKILL.md) | Screen demos and camera anchors | Recording + action anchors → zoom/return/caption demo | `timeline compose; ocr anchors; preview range` | OCR needs existing models; text boxes are not clickable-control bounds. |
-| K12 | [`$agent-ffmpeg-local-reference-remake`](skills/agent-ffmpeg-local-reference-remake/SKILL.md) | Reference pacing/layout remake | Local reference + replacement assets → editable remake | `media understand; timeline compose` | Rebuild structure; no automatic acquisition or rights grant. |
-| K13 | [`$agent-ffmpeg-local-ffmpeg`](skills/agent-ffmpeg-local-ffmpeg/SKILL.md) | Native media tools | Local files + settings → conversion/resize/extraction/compression | `native ffmpeg / ffprobe` | Native tools; inspect codec availability. |
-| K14 | [`$agent-ffmpeg-local-video-edit`](skills/agent-ffmpeg-local-video-edit/SKILL.md) | General video-edit workflows | Local files + edit instructions → trims/concat/overlays | `native ffmpeg; installed CLI` | Use timeline/editor for complex editable projects. |
-| K15 | [`$agent-ffmpeg-local-ad-creative`](skills/agent-ffmpeg-local-ad-creative/SKILL.md) | Ad creative and variants | Product/audience/evidence → hooks/copy/scripts/variants | `advisory; ad plan` | Advisory instructions without bundled media-generation models. |
-| K16 | [`$agent-ffmpeg-local-video-content-strategist`](skills/agent-ffmpeg-local-video-content-strategist/SKILL.md) | Video content strategy | Goals/audience/supplied references → direction/series/scripts | `advisory Skill` | No live trends, platform accounts or crawler. |
-| K17 | [`$agent-ffmpeg-local-campaign-analytics`](skills/agent-ffmpeg-local-campaign-analytics/SKILL.md) | Supplied campaign-data analysis | Local campaign tables → ROAS/CPA/funnel/suggestions | `advisory Skill` | No ad-platform connector; metrics depend on data/attribution assumptions. |
+| K02 | [`timeline`](skills/agent-ffmpeg-local-editor/references/modules/timeline/module.md) | Timeline, keys and motion | Edit JSON → tracks/motion/transitions/nesting | `timeline compose/edit; motion apply` | Explicit track/clip targets and author clocks. |
+| K03 | [`quality`](skills/agent-ffmpeg-local-editor/references/modules/quality/module.md) | Output and pixel review | Video + manifest + reference → reports/scopes/differences | `quality check/scopes/mask/golden` | Separate static review/playback/listening; review look selections. |
+| K04 | [`project-ops`](skills/agent-ffmpeg-local-editor/references/modules/project-ops/module.md) | Project operations, recovery and queues | Projects + jobs → snapshots/recovery/relink/results | `project snapshot/recover; media relink; queue` | Preserve sources/failures; not a cloud scheduler. |
+| K05 | [`local-policy`](skills/agent-ffmpeg-local-editor/references/modules/local-policy/module.md) | Local execution policy | Project references → audit/structured refusal | `policy audit` | Remote references refused; not an OS sandbox. |
+| K06 | [`rights-ledger`](skills/agent-ffmpeg-local-editor/references/modules/rights-ledger/module.md) | Media and model rights evidence | Source/license/local evidence → ledger/impact/gates | `rights list/check/update/impact` | Treat image and LUT rights separately; no automatic legal determination. |
+| K07 | [`local-models`](skills/agent-ffmpeg-local-editor/references/modules/local-models/module.md) | Existing offline model registration | Native runtime + weights/hashes/licenses → adapters/artifacts | `media adapter; asr adapter; ocr; face; tts` | No weight downloads; check capability/runtime before execution. |
+| K08 | [`video-understand`](skills/agent-ffmpeg-local-editor/references/modules/video-understand/module.md) | Scene/silence and video evidence | Local video/audio → analysis JSON, frames, caption candidates | `media understand/contact-sheet; subtitle transcribe` | Distinguish heuristics from model semantics. |
+| K09 | [`template-library`](skills/agent-ffmpeg-local-editor/references/modules/template-library/module.md) | Templates and reusable fragments | Templates/variables/library → editable variants/index | `template apply/batch; library; fragment` | User-provided assets and per-resource licenses. |
+| K10 | [`long-to-short`](skills/agent-ffmpeg-local-editor/references/modules/long-to-short/module.md) | Long video to short clips | Local lesson/talk + reviewed text → rough cuts/short projects | `media highlights/smart-cut; timeline compose` | Review candidate segments; no autonomous semantic-director claim. |
+| K11 | [`screen-demo`](skills/agent-ffmpeg-local-editor/references/modules/screen-demo/module.md) | Screen demos and camera anchors | Recording + action anchors → zoom/return/caption demo | `timeline compose; ocr anchors; preview range` | OCR needs existing models; text boxes are not clickable-control bounds. |
+| K12 | [`reference-remake`](skills/agent-ffmpeg-local-editor/references/modules/reference-remake/module.md) | Reference pacing/layout remake | Local reference + replacement assets → editable remake | `media understand; timeline compose` | Rebuild structure; no automatic acquisition or rights grant. |
+| K13 | [`ffmpeg`](skills/agent-ffmpeg-local-editor/references/modules/ffmpeg/module.md) | Native media tools | Local files + settings → conversion/resize/extraction/compression | `native ffmpeg / ffprobe` | Native tools; inspect codec availability. |
+| K14 | [`video-edit`](skills/agent-ffmpeg-local-editor/references/modules/video-edit/module.md) | General video-edit workflows | Local files + edit instructions → trims/concat/overlays | `native ffmpeg; installed CLI` | Use timeline/editor for complex editable projects. |
+| K15 | [`ad-creative`](skills/agent-ffmpeg-local-editor/references/modules/ad-creative/module.md) | Ad creative and variants | Product/audience/evidence → hooks/copy/scripts/variants | `advisory; ad plan` | Advisory instructions without bundled media-generation models. |
+| K16 | [`video-content-strategist`](skills/agent-ffmpeg-local-editor/references/modules/video-content-strategist/module.md) | Video content strategy | Goals/audience/supplied references → direction/series/scripts | `advisory Skill` | No live trends, platform accounts or crawler. |
+| K17 | [`campaign-analytics`](skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/module.md) | Supplied campaign-data analysis | Local campaign tables → ROAS/CPA/funnel/suggestions | `advisory Skill` | No ad-platform connector; metrics depend on data/attribution assumptions. |
 
 Typical routing: creative/content strategy → editor → understanding → timeline/template → quality → project operations. Rights/policy check relevant dependencies; local-models is used when actual inference is needed. The editor presents/records look choices and quality reviews the target-media result.
 
 ```text
 $agent-ffmpeg-local-editor 用本地素材做 6 秒竖屏广告，保留工程、音轨、权利证据和成片核验。
 $agent-ffmpeg-local-editor 用 N002 图册向客户展示暖色胶片、黑白、冷色电影各两套；给编号/ID/强度/许可和对照板，等客户选型后再试目标素材。
-$agent-ffmpeg-local-timeline 给 clip_1 添加可编辑推近和关键帧，预览首中末帧。
-$agent-ffmpeg-local-template-library 用提供的本地产品图和变量生成一个可编辑模板变体。
-$agent-ffmpeg-local-quality 对实际输出、manifest 和 Scope 复核，分别说明自动检查、目检、播放和听审。
+$agent-ffmpeg-local-editor 给 clip_1 添加可编辑推近和关键帧，预览首中末帧。
+$agent-ffmpeg-local-editor 用提供的本地产品图和变量生成一个可编辑模板变体。
+$agent-ffmpeg-local-editor 对实际输出、manifest 和 Scope 复核，分别说明自动检查、目检、播放和听审。
 ```
 
 [Current full Skill manual](docs/product/SKILLS.en.md) · [Client selection workflow](skills/agent-ffmpeg-local-editor/references/client-look-selection.md) · [Registration/install](docs/local/INSTALLATION.md). Skills are task instructions, without additional model/stock subscriptions or automatic ad-platform access.
@@ -366,6 +379,18 @@ $agent-ffmpeg-local-quality 对实际输出、manifest 和 Scope 复核，分别
 | H05 / V34 | Caption segmentation/bilingual text: authored timings, actual output and reference; not an ASR demonstration. | [Input](docs/assets/subtitle-segments-20261017/source.mp4) · [Output](docs/assets/subtitle-segments-20261017/S01-segmented.mp4) · [GIF](docs/assets/subtitle-segments-20261017/comparison.gif) |
 | H06 / V49 | Actual offline CTC: model-timed captions; 258.1875 ms boundary error fails the 66.6667 ms gate. | [Input audio](docs/assets/ctc-alignment-20261018/input.wav) · [Output](docs/assets/ctc-alignment-20261018/result.mp4) · [GIF](docs/assets/ctc-alignment-20261018/comparison.gif) |
 | H07 / V53 | Magnetic primary-track reorder: A/B/C/D → C/A/B/D with linked audio and author constraints. | [Input](docs/assets/magnetic-reorder-v53-r5-20261018/source-preview.mp4) · [Output](docs/assets/magnetic-reorder-v53-r5-20261018/MR01.mp4) · [GIF](docs/assets/magnetic-reorder-v53-r5-20261018/reorder-before-after.gif) |
+
+<!-- unified-skill-demo -->
+
+### C09: actual delivery through the unified Skill kit
+
+This update installs the unified kit offline in a fresh E-drive path with Chinese characters/spaces, registers one entry, then runs 20 real CLI calls for a six-second 360×640/30 fps/180-frame video with audio, quality checks and package recovery. Separate receipts cover four expected refusals, 17→1 migration and repeat registration; there is no new model inference. The GIF is a reduced silent preview of the new MP4 (48 frames/6.01 seconds), not an editing-GUI recording. A still was reviewed; continuous playback and listening were not reviewed.
+
+[MP4](docs/assets/unified-skill-20261024-r1/demo.mp4) · [GIF](docs/assets/unified-skill-20261024-r1/demo.gif) · [Inputs](docs/assets/release-v0.1.0-alpha.1-r2/input/) · [Commands](docs/validation/evidence/unified-skill-20261024-r1/native-r2/demo-commands.json) · [Verification](docs/validation/evidence/unified-skill-20261024-r1/verification.json) · [Media hashes](docs/assets/unified-skill-20261024-r1/manifest.json)
+
+![Actual unified Skill kit demo](docs/assets/unified-skill-20261024-r1/demo.gif)
+
+<!-- /unified-skill-demo -->
 
 ### C08: from downloaded kit to actual delivery
 
@@ -445,6 +470,7 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R29 | Goal gaps and installed inventory | 4 successful installed read-only CLI calls; 68 capability contracts match the manual; 38 gap groups have explicit acceptance conditions. | [Assessment](docs/product/GOAL_GAPS_20261024.md) · [Inventory](docs/validation/evidence/goal-gaps-20261024-r1/inventory.json) · Zero renders/inference in this assessment; prior accuracy failures and open acceptance remain. |
 | R30 | Portable Agent kit installation and complete example | Native E-drive installation in a Chinese/spaced path; 17 Skills registered; 20 actual CLI calls edit, render, check quality and round-trip a project package. | [Release gate](docs/validation/evidence/release-v0.1.0-alpha.3-r1/verification.json) · [Demo video](docs/assets/release-v0.1.0-alpha.3-r1/demo.mp4) · 6 seconds/180 frames fully decoded; no full kernel rerun, model inference or listening review. |
 | R31 | GitHub prerelease and all attachment downloads | Alpha.3 prerelease is public; native Windows publication workflow succeeds; all 10 attachments are actually downloaded and SHA-256 checked. | [Release](https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3) · [Publication receipt](docs/validation/evidence/release-v0.1.0-alpha.3-r1/publication.json) · Original runtime ZIP unchanged; complete CapCut and natural-media acceptance remain open. |
+| R32 | Unified Skill and actual registration migration | **One entry / 17 modules; native fresh-directory installation, 17→1 migration, repeat registration and four expected refusals pass; the demo runs 20 CLI calls and fully decodes 180 frames.** | [Verification](docs/validation/evidence/unified-skill-20261024-r1/verification.json) · [Guide](docs/skills/UNIFIED_SKILL.en.md) · 2026-10-24; zero new model inference, no independent Agent behavior benchmark or listening review; historical 17-Skill receipts are retained. |
 
 ## Current limits and development direction
 

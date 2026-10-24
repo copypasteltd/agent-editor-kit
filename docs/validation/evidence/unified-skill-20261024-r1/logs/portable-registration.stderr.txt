@@ -1,0 +1,9 @@
+Get-FileHash : 无法将“Get-FileHash”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。请检查名称的拼写，如果包括路径，请确
+保路径正确，然后再试一次。
+所在位置 E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\unified-native-r1 中文\portable kit 中文\scripts\register_unified
+_skill.ps1:34 字符: 6
++     (Get-FileHash -LiteralPath (Join-Path $runtime.installed_director ...
++      ~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Get-FileHash:String) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 

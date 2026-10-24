@@ -1,0 +1,84 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-10-24T15:19:41.942614+00:00",
+  "registered_skills": 1,
+  "internal_modules": 17,
+  "kit_files": 71,
+  "kit_sha256": "0650e83b2ac23004a631347ab2ea54ec819e338faa2d191c9e307da91ae4d950",
+  "preserved_specialist_sources": 16,
+  "local_document_links_checked": 807,
+  "readme_command_blocks_match": true,
+  "guide_command_blocks_match": true,
+  "readme_functional_groups": 43,
+  "readme_service_groups": 12,
+  "readme_verification_rows": 32,
+  "documents": [
+    {
+      "path": "README.md",
+      "bytes": 62675,
+      "sha256": "0e1e42b97ef064ffc287be651c3af6a81f8ef6b28b943c58db68ff35768e715d"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "bytes": 62989,
+      "sha256": "8f13c5b6f9d70f42379719e9643366742011896a390395fdd48e7093f3834961"
+    },
+    {
+      "path": "README.en.md",
+      "bytes": 67207,
+      "sha256": "9a13e15a8dc88b705e18bf7ca316bf7fd3cc741a0a28f7ff688d945e1d2358ba"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 6926,
+      "sha256": "d1f54e3f3bb0ab293d15da02c085751ad5b5cc57a3ba6f59b6a41d8b91516c34"
+    },
+    {
+      "path": "docs/local/INSTALLATION.md",
+      "bytes": 14771,
+      "sha256": "a11c6024961e5913c421e02525a02d76ff18ca73f9d07ff0329bb8ed819603b5"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.en.md",
+      "bytes": 5589,
+      "sha256": "e32ac808852f4bdce95ac0096621f4ebe353757b4ac6e176e7589178304b0b59"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.md",
+      "bytes": 5899,
+      "sha256": "7420f90ce1511d2151481df0eda4d482e4910be296f5eb5c4184d19cb5d3cb73"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.zh-TW.md",
+      "bytes": 5908,
+      "sha256": "9cfeac22422a9fbcee7c3866a073de1f848c307039870f33b74a64cf8b43cd73"
+    },
+    {
+      "path": "docs/product/SKILLS.en.md",
+      "bytes": 11503,
+      "sha256": "d712311b8871f2fe546306e6241e0c467c21f505a323b45b12f21b9269a217bb"
+    },
+    {
+      "path": "docs/product/SKILLS.md",
+      "bytes": 11076,
+      "sha256": "ef586c5dc397389d3d85d97d7849d917f5ca7695abbce73dbacb4c61c3c6b86d"
+    },
+    {
+      "path": "docs/product/SKILLS.zh-TW.md",
+      "bytes": 11106,
+      "sha256": "398cc659124e0941d6a28bfa3202bacfcb2c366eceb790ca8dce549504641bfc"
+    }
+  ],
+  "compiled_scripts": [
+    "consolidate_agent_ffmpeg_skills.py",
+    "package_unified_skill.py",
+    "verify_unified_skill.py",
+    "readme_unified_skill.py",
+    "audit_unified_skill_delivery.py",
+    "readme_release_workflow.py",
+    "build_product_readmes.py",
+    "update_agent_ffmpeg_local_skills.py"
+  ],
+  "independent_agent_behavior_test": false,
+  "new_inference": false
+}

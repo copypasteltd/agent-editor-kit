@@ -2,6 +2,10 @@
 
 
 def quickstart(pick, suffix):
+    from pathlib import Path
+    import json
+    manifest_path = Path(__file__).resolve().parents[1] / 'agent-ffmpeg-local-install-manifest.json'
+    single = json.loads(manifest_path.read_bytes()).get('registration_mode') == 'single'
     release = 'https://github.com/copypasteltd/agent-editor-kit/releases'
     download = release + '/download/v0.1.0-alpha.3/'
     prefix = 'agent-editor-kit-v0.1.0-alpha.3-'
@@ -58,4 +62,15 @@ $avk = Join-Path $avkHome 'skills/agent-ffmpeg-local-editor/scripts/run.ps1'
     text += pick('**5. 按需安装图册。** 将可选 `gallery.zip` 解压到同一个 `$avkHome`，打开 `docs/assets/looks-n002-20261024-r1/index.html`；也可用下方 Skill helper 输出候选对照板。使用完关闭不用的浏览器标签。',
                  '**5. Add the optional gallery.** Extract `gallery.zip` into the same `$avkHome` and open `docs/assets/looks-n002-20261024-r1/index.html`, or use the Skill helper below to export a candidate board. Close unused browser tabs afterwards.') + '\n\n'
     text += '[Release](' + release + '/tag/v0.1.0-alpha.3) · [' + pick('完整安装与使用流程', 'Full installation and workflow') + '](docs/releases/v0.1.0-alpha.3/QUICKSTART' + suffix + '.md) · [' + pick('范围与限制', 'Scope and limits') + '](docs/releases/v0.1.0-alpha.3/RELEASE.md)\n\n'
+    if single:
+        old = prefix + 'agent-kit.zip'
+        new = 'agent-editor-kit-unified-skill-r1.zip'
+        url = 'https://github.com/copypasteltd/agent-editor-kit/raw/refs/heads/main/docs/skills/' + new
+        text = text.replace('[' + old + '](' + download + old + ')', '[' + new + '](' + url + ')')
+        text = text.replace(old, new).replace('E:/tools/agent-editor-kit-alpha3', 'E:/tools/agent-editor-kit-unified')
+        text = text.replace('离线安装入口、17 个 Skill、注册脚本、指南和可运行示例。', '离线安装入口、1 个统一 Skill、17 项内部模块、注册脚本与可运行示例。')
+        text = text.replace('offline installer, 17 Skills, registration, guides and runnable example.', 'offline installer, one Skill with 17 internal modules, registration and runnable example.')
+        text = text.replace('](docs/releases/v0.1.0-alpha.3/QUICKSTART' + suffix + '.md)', '](docs/skills/UNIFIED_SKILL' + suffix + '.md)')
+        text += pick('统一 kit 是本轮新增的 Skill 组织包，使用同一个 alpha.3 内核。新 kit 的摘要见 [包清单](docs/skills/unified-skill-package.json)；原 Release 的 17 Skill kit 不覆盖。',
+                     'The new kit consolidates Skill organization and uses the same alpha.3 runtime. Its checksum is in the [package record](docs/skills/unified-skill-package.json); the original release’s 17-Skill kit remains immutable.') + '\n\n'
     return text

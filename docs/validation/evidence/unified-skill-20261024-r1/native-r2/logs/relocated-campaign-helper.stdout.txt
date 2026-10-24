@@ -1,0 +1,88 @@
+{
+  "portfolio_summary": {
+    "total_campaigns": 1,
+    "total_spend": 100,
+    "total_revenue": 400,
+    "total_profit": 300,
+    "portfolio_roi_pct": 300.0,
+    "portfolio_roas": 4.0,
+    "total_impressions": 10000,
+    "total_clicks": 100,
+    "total_leads": 20,
+    "total_customers": 10,
+    "blended_ctr_pct": 1.0,
+    "blended_cpl": 5.0,
+    "blended_cpa": 10.0,
+    "underperforming_campaigns": [],
+    "top_performer": "Synthetic arithmetic check",
+    "channel_summary": {
+      "paid_social": {
+        "spend": 100,
+        "revenue": 400,
+        "roi_pct": 300.0,
+        "roas": 4.0,
+        "leads": 20,
+        "customers": 10
+      }
+    }
+  },
+  "campaigns": [
+    {
+      "name": "Synthetic arithmetic check",
+      "channel": "paid_social",
+      "metrics": {
+        "spend": 100,
+        "revenue": 400,
+        "profit": 300,
+        "roi_pct": 300.0,
+        "roas": 4.0,
+        "cpa": 10.0,
+        "cpl": 5.0,
+        "cac": 10.0,
+        "ctr_pct": 1.0,
+        "cvr_pct": 50.0,
+        "cpc": 1.0,
+        "cpm": 10.0,
+        "lead_conversion_rate_pct": 20.0,
+        "impressions": 10000,
+        "clicks": 100,
+        "leads": 20,
+        "customers": 10
+      },
+      "assessments": {
+        "ctr": {
+          "value": 1.0,
+          "benchmark_range": {
+            "low": 0.5,
+            "target": 1.2,
+            "high": 3.0
+          },
+          "assessment": "below_target"
+        },
+        "roas": {
+          "value": 4.0,
+          "benchmark_range": {
+            "low": 1.5,
+            "target": 3.0,
+            "high": 6.0
+          },
+          "assessment": "good"
+        },
+        "cpa": {
+          "value": 10.0,
+          "benchmark_range": {
+            "low": 15.0,
+            "target": 40.0,
+            "high": 100.0
+          },
+          "assessment": "excellent"
+        }
+      },
+      "flags": [],
+      "recommendations": [
+        "Improve ad creative and targeting to increase CTR",
+        "Campaign performing well; consider scaling budget"
+      ]
+    }
+  ]
+}

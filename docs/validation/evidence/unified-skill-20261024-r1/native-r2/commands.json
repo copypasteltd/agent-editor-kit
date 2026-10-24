@@ -1,0 +1,337 @@
+[
+  {
+    "id": "quick-validate",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-E",
+      "-B",
+      "-X",
+      "utf8",
+      "C:\\Users\\carzy\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+      "E:\\dev\\sandbox\\AI广告剪辑\\skills\\agent-ffmpeg-local-editor"
+    ],
+    "exit_code": 0,
+    "expected_success": true,
+    "seconds": 0.143
+  },
+  {
+    "id": "portable-install",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-B",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\portable kit 中文\\install.py",
+      "--archive",
+      "product\\.runtime\\public-alpha3-20261024\\final-r1\\agent-editor-kit-v0.1.0-alpha.3-cp313-win_amd64.zip"
+    ],
+    "exit_code": 0,
+    "expected_success": true,
+    "seconds": 19.76
+  },
+  {
+    "id": "portable-registration",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\portable kit 中文\\register-agent-ffmpeg-local-skills.ps1",
+      "-SkillsDirectory",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\portable discovery",
+      "-ReceiptPath",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\unified-skill-20261024-r1\\native-r2\\portable-registration.json"
+    ],
+    "exit_code": 0,
+    "expected_success": true,
+    "seconds": 0.574
+  },
+  {
+    "id": "portable-repeat",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\portable kit 中文\\register-agent-ffmpeg-local-skills.ps1",
+      "-SkillsDirectory",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\portable discovery",
+      "-ReceiptPath",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\unified-skill-20261024-r1\\native-r2\\portable-repeat.json"
+    ],
+    "exit_code": 0,
+    "expected_success": true,
+    "seconds": 0.574
+  },
+  {
+    "id": "registered-version",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\portable discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "expected_success": true,
+    "seconds": 1.797
+  },
+  {
+    "id": "registered-doctor",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\portable discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "doctor"
+    ],
+    "exit_code": 0,
+    "expected_success": true,
+    "seconds": 2.3
+  },
+  {
+    "id": "registered-capabilities",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\portable discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "capabilities"
+    ],
+    "exit_code": 0,
+    "expected_success": true,
+    "seconds": 1.708
+  },
+  {
+    "id": "registered-look",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\portable discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "look",
+      "inspect",
+      "--id",
+      "t3-kodak-gold-200"
+    ],
+    "exit_code": 0,
+    "expected_success": true,
+    "seconds": 1.962
+  },
+  {
+    "id": "portable-demo",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-B",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\portable kit 中文\\run-example.py",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\demo"
+    ],
+    "exit_code": 0,
+    "expected_success": true,
+    "seconds": 42.341
+  },
+  {
+    "id": "migration-fixture",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\migration\\create-junctions.ps1",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\migration\\junction-plan.json"
+    ],
+    "exit_code": 0,
+    "expected_success": true,
+    "seconds": 0.389
+  },
+  {
+    "id": "migrate-17-to-1",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\migration\\register-agent-ffmpeg-local-skills.ps1",
+      "-SkillsDirectory",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\migration\\discovery",
+      "-ReceiptPath",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\unified-skill-20261024-r1\\native-r2\\migrate-17-to-1.json"
+    ],
+    "exit_code": 0,
+    "expected_success": true,
+    "seconds": 0.788
+  },
+  {
+    "id": "migrate-repeat",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\migration\\register-agent-ffmpeg-local-skills.ps1",
+      "-SkillsDirectory",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\migration\\discovery",
+      "-ReceiptPath",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\unified-skill-20261024-r1\\native-r2\\migrate-repeat.json"
+    ],
+    "exit_code": 0,
+    "expected_success": true,
+    "seconds": 0.549
+  },
+  {
+    "id": "refuse-foreign-conflict",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\foreign-conflict\\register-agent-ffmpeg-local-skills.ps1",
+      "-SkillsDirectory",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\foreign-conflict\\discovery",
+      "-ReceiptPath",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\unified-skill-20261024-r1\\native-r2\\refuse-foreign-conflict.json"
+    ],
+    "exit_code": 1,
+    "expected_success": false,
+    "seconds": 0.747
+  },
+  {
+    "id": "refuse-tampered-reference",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\tampered-reference\\register-agent-ffmpeg-local-skills.ps1",
+      "-SkillsDirectory",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\tampered-reference\\discovery",
+      "-ReceiptPath",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\unified-skill-20261024-r1\\native-r2\\refuse-tampered-reference.json"
+    ],
+    "exit_code": 1,
+    "expected_success": false,
+    "seconds": 0.654
+  },
+  {
+    "id": "refuse-wrong-runtime",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\wrong-runtime\\register-agent-ffmpeg-local-skills.ps1",
+      "-SkillsDirectory",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\wrong-runtime\\discovery",
+      "-ReceiptPath",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\unified-skill-20261024-r1\\native-r2\\refuse-wrong-runtime.json"
+    ],
+    "exit_code": 1,
+    "expected_success": false,
+    "seconds": 0.497
+  },
+  {
+    "id": "edited-specialist-fixture",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\edited-specialist\\create-junctions.ps1",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\edited-specialist\\junction-plan.json"
+    ],
+    "exit_code": 0,
+    "expected_success": true,
+    "seconds": 0.394
+  },
+  {
+    "id": "refuse-edited-specialist",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\edited-specialist\\register-agent-ffmpeg-local-skills.ps1",
+      "-SkillsDirectory",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\edited-specialist\\discovery",
+      "-ReceiptPath",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\unified-skill-20261024-r1\\native-r2\\refuse-edited-specialist.json"
+    ],
+    "exit_code": 1,
+    "expected_success": false,
+    "seconds": 0.936
+  },
+  {
+    "id": "relocated-campaign-helper",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\portable kit 中文\\skills\\agent-ffmpeg-local-editor\\references\\modules\\campaign-analytics\\references\\upstream\\scripts\\campaign_roi_calculator.py",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\unified-native-r2 中文\\campaign.json",
+      "--format",
+      "json"
+    ],
+    "exit_code": 0,
+    "expected_success": true,
+    "seconds": 0.1
+  },
+  {
+    "id": "host-registration",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\register-agent-ffmpeg-local-skills.ps1",
+      "-SkillsDirectory",
+      "C:\\Users\\carzy\\.codex\\skills",
+      "-ReceiptPath",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\unified-skill-20261024-r1\\native-r2\\host-registration.json"
+    ],
+    "exit_code": 0,
+    "expected_success": true,
+    "seconds": 0.56
+  },
+  {
+    "id": "host-registered-version",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "expected_success": true,
+    "seconds": 4.415
+  }
+]

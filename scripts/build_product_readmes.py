@@ -430,7 +430,9 @@ $agent-ffmpeg-local-quality 对实际输出、manifest 和 Scope 复核，分别
         skill_manual += pick('本机 17 个目录均为 E 盘源文件到 Codex 发现路径的联接。运行包与图册是分离交付：仅安装 wheel 并不自动包含图册。helper 只读已经渲染的样例，导出新对照板；最终编辑调用固定 CLI 并保存工程快照。',
                              'All 17 local registrations are junctions to E-drive canonical files. Runtime and gallery are separate: wheels alone do not include the gallery. The helper reads rendered samples and exports a new comparison board; final edits use the pinned CLI with snapshots.')+'\n'
         (DOC/('SKILLS'+suffix+'.md')).write_text(translate(skill_manual),encoding='utf-8',newline='\n')
-    print(json.dumps({'status':'generated','readmes':3,'functional_groups':len(MODULES),'service_groups':len(SERVICES),'skills':len(SKILLS),'machine_capabilities':len(capabilities),'effects':len(effects),'motions':len(motions),'restored_demo_images':len(re.findall(r'!\[', demonstration))},ensure_ascii=False))
+    from readme_unified_skill import update as update_unified_skill
+    update_unified_skill()
+    print(json.dumps({'status':'generated','readmes':3,'functional_groups':len(MODULES),'service_groups':len(SERVICES),'skill_modules':len(SKILLS),'machine_capabilities':len(capabilities),'effects':len(effects),'motions':len(motions),'restored_demo_images':len(re.findall(r'!\[', demonstration))},ensure_ascii=False))
 
 
 if __name__ == '__main__':

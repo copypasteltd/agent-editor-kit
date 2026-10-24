@@ -1,4 +1,6 @@
-# 本地发行包与 17 个 Agent Skills / Local installation
+# 本地发行包与统一 Agent Skill / Local installation
+
+**当前注册方式：1 个 `$agent-ffmpeg-local-editor` 入口，17 项内部模块。** 本机已从原 17 个入口迁移；[统一 kit、新目录安装与迁移说明](../skills/UNIFIED_SKILL.md)。新注册回执见[实际核验](../validation/evidence/unified-skill-20261024-r1/verification.json)。下方保留原 alpha.3 内核安装和当时 17 个入口的历史核验，不代表当前仍注册 17 个 Skill。
 
 当前安装：**v0.1.0-alpha.3 / CLI 0.1.2 / catalog 2.0.0 / 500 looks**。日期：2026-10-24。
 

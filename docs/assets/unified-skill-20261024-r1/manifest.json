@@ -1,0 +1,42 @@
+{
+  "source": "Actual unified kit demo; not a historical MP4 copied as a new render",
+  "input_license": "CC0-1.0",
+  "input_directory": "docs/assets/release-v0.1.0-alpha.1-r2/input/",
+  "render_receipt": "docs/validation/evidence/unified-skill-20261024-r1/native-r2/demo-verification.json",
+  "files": [
+    {
+      "path": "demo.mp4",
+      "bytes": 227589,
+      "sha256": "bbbf6d2e398b50d4e4622a254315fc0ea871120fa63cdeccb52a7573f6934fd0",
+      "width": 360,
+      "height": 640,
+      "frames": 180,
+      "duration_seconds": 6.0,
+      "nominal_fps": "30/1",
+      "has_audio": true
+    },
+    {
+      "path": "demo.gif",
+      "bytes": 290679,
+      "sha256": "dfd9240b4733da9d99eb5cbac1d0e5f979f4d0c0c53e39caf61820a550139d03",
+      "width": 180,
+      "height": 320,
+      "frames": 48,
+      "duration_seconds": 6.01,
+      "nominal_fps": "8/1",
+      "has_audio": false
+    },
+    {
+      "path": "frame.png",
+      "bytes": 73145,
+      "sha256": "8a174b7e19617e7bb0dd3ff29da87c67dcc9968e77d66158998b4bd93b5e792f"
+    }
+  ],
+  "automatic_full_decode_passed": true,
+  "still_reviewed": "frame.png at 1.5 seconds: readable title/body/footer, fictional desk-lamp artwork; no unexpected clipping observed.",
+  "continuous_playback_review": false,
+  "human_listening_review": false,
+  "new_model_inferences": 0,
+  "gif_audio": false,
+  "gif_nominal_fps_note": "8 fps request uses centisecond GIF timing; actual duration 6.01 seconds, 48 frames."
+}

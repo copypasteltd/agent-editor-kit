@@ -2,17 +2,18 @@
 
 [简体中文](../README.md) · [繁體中文](../README.zh-TW.md) · [English](../README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit) · [Local package parts](releases/v0.1.0-alpha.3/artifacts)
 
-当前为 **v0.1.0-alpha.3 / CLI 0.1.2 / 500 离线风格**，已安装并同步 17 个本地 Skill；完整剪映等价仍未验收。Current local build has 500 named looks, measured per-look profiles, individual licenses and installed native verification.
+当前运行内核为 **v0.1.0-alpha.3 / CLI 0.1.2 / 500 离线风格**，本机注册已合并为 **1 个 Skill / 17 项内部模块**；完整剪映等价仍未验收。The installed runtime is unchanged; `$agent-ffmpeg-local-editor` is the single entry, with 17 internal task references.
 
 | 阅读目标 / Goal | Document |
 |---|---|
+| 一个入口调用全部能力、新 kit 安装与旧注册迁移 / Unified entry, installation and migration | [简体](skills/UNIFIED_SKILL.md) · [繁體](skills/UNIFIED_SKILL.zh-TW.md) · [English](skills/UNIFIED_SKILL.en.md) · [实际核验](validation/evidence/unified-skill-20261024-r1/verification.json) |
 | 当前 alpha.3 预发布下载、安装、Skill 注册与首次视频 / Current release and first render | [Release](https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3) · [简体上手](releases/v0.1.0-alpha.3/QUICKSTART.md) · [繁體上手](releases/v0.1.0-alpha.3/QUICKSTART.zh-TW.md) · [English](releases/v0.1.0-alpha.3/QUICKSTART.en.md) |
 | alpha.3 发行范围、新目录安装与可执行示例 / Release scope and fresh-directory checks | [Scope](releases/v0.1.0-alpha.3/RELEASE.md) · [Release notes](releases/v0.1.0-alpha.3/RELEASE-NOTES.md) · [Native verification](validation/evidence/release-v0.1.0-alpha.3-r1/verification.json) |
 | alpha.3 的 GitHub 发布与 10 个附件逐项下载核对 / Current publication and ten download hashes | [Publication receipt](validation/evidence/release-v0.1.0-alpha.3-r1/publication.json) · [Reproduction](validation/evidence/release-v0.1.0-alpha.3-r1/git-reproduction.json) |
 | 距离完整目标的 38 组差距、已有能力、已知失败与收口顺序 / Goal gaps and acceptance order | [2026-10-24 差距评估](product/GOAL_GAPS_20261024.md) · [Installed inventory](validation/evidence/goal-gaps-20261024-r1/inventory.json) |
 | 当前完整功能与本地服务模块、安装版全部能力字段 / Complete functional and service modules | [简体](product/CAPABILITIES.md) · [繁體](product/CAPABILITIES.zh-TW.md) · [English](product/CAPABILITIES.en.md) |
 | 46 效果算子与 12 运镜的具体参数、范围、后端 / Full effect and motion parameters | [简体](product/EFFECTS.md) · [繁體](product/EFFECTS.zh-TW.md) · [English](product/EFFECTS.en.md) |
-| 当前 17 个新命名 Skill 的输入输出、依赖与职责 / Current Skill details | [简体](product/SKILLS.md) · [繁體](product/SKILLS.zh-TW.md) · [English](product/SKILLS.en.md) |
+| 一个 Skill 内部 17 项模块的输入输出、依赖与职责 / Current internal task modules | [简体](product/SKILLS.md) · [繁體](product/SKILLS.zh-TW.md) · [English](product/SKILLS.en.md) |
 | N002 母图的全部 500 套实际滤镜样例、原图与客户选型 / All supplied-image previews | [交互图册](assets/looks-n002-20261024-r1/index.html) · [简体说明](local/FILTER_GALLERY.md) · [繁體說明](local/FILTER_GALLERY.zh-TW.md) · [English](local/FILTER_GALLERY.en.md) |
 | 恢复的全部演示与原输入/输出/失败记录 / Restored full demonstration casebook | [Complete cases](product/CASES.md) |
 | README 缩减原因、恢复范围与维护方式 / README reduction and restoration | [Restoration record](maintenance/README_RESTORATION_20261024.md) |

@@ -4,7 +4,7 @@
 - 项目文档、评估报告、需求、架构、路线图、验收记录和研究结论统一放在 `E:/dev/sandbox/AI广告剪辑/docs/`；根目录仅保留工作区约束、脚本、安装清单和运行配置。
 - 严禁调度本地 Docker、WSL、容器或其他虚拟化环境；使用原生 Windows 工具。
 - 使用浏览器完成调用后，关闭所有不用的 tab，释放内存。
-- 本地发行包的 Skills 按最新要求使用 `agent-ffmpeg-local-` 前缀，主入口为 `$agent-ffmpeg-local-editor`。既有 `video-cut-` 入口保留用于旧版复现；新增本地安装入口不得再使用旧前缀。
+- 本地只注册一个统一 Skill：`$agent-ffmpeg-local-editor`。17 项能力按需读取其 `references/modules/` 下的内部说明；后续扩展优先增加内部模块，不再注册新的专用 Skill。旧拆分源和既有 `video-cut-` 入口保留用于历史复现。
 - 可编辑技能正文、脚本与资源保存在 `skills/`；`C:/Users/carzy/.codex/skills/` 中的对应项是 Windows 目录联接，供 Codex 发现技能。
 - 原始仓库快照与 ZIP 保存在 `sources/`，版本、来源与安装映射见 `video-cut-install-manifest.json`。
 - 正式本地安装保存在被 Git 忽略的 `local/agent-ffmpeg/`；新命名空间的注册清单为 `agent-ffmpeg-local-install-manifest.json`。安装从已校验发行 ZIP 离线执行，Skill 必须调用该安装版，不能静默回落到源码入口。

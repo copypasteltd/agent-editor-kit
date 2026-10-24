@@ -1,0 +1,15 @@
+# 时间线、关键帧、运镜、转场、嵌套 / timeline
+
+[Unified entry](../../../SKILL.md) · [Shared runtime](../../runtime.md)
+
+Edit JSON → tracks/motion/transitions/nesting
+
+Commands: `timeline compose/edit; motion apply`. Explicit track/clip targets and author clocks.
+
+## Workflow
+
+Inspect `schema show`, `effects list` and `timeline compose --help`. Author an edit JSON with integer ticks,
+source ranges, explicit tracks and audio. Use `timeline compose` or `timeline edit` only with supported operations.
+Use `preview frame` or `preview range` to inspect actual results before rendering. Keep native PTS and nested clocks.
+
+For looks and client choices, read [looks](../../looks.md) and [actual visual selection](../../client-look-selection.md).

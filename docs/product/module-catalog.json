@@ -695,5 +695,12 @@
       "No ad-platform connector; metrics depend on data/attribution assumptions."
     ]
   ],
-  "numbering": "Documentation groups, not independent algorithm counts or completion scores."
+  "numbering": "Documentation groups, not independent algorithm counts or completion scores.",
+  "skill_registration": {
+    "mode": "single",
+    "entry": "agent-ffmpeg-local-editor",
+    "registered_skill_count": 1,
+    "internal_module_count": 17,
+    "manifest": "agent-ffmpeg-local-install-manifest.json"
+  }
 }

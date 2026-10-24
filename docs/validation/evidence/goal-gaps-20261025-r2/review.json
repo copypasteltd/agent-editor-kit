@@ -1,0 +1,151 @@
+{
+  "status": "evidence_reviewed",
+  "checked_at_utc": "2026-10-24T19:59:34.119065+00:00",
+  "source_commit": "61c7e5326061e70aa3458b9129ed6b8466b71ecb",
+  "inventory_sha256": "4e1bd71166b0addeab452a096164b00fc24147b74813514e961dee50ab7240c6",
+  "historical_evidence": [
+    {
+      "path": "docs/validation/evidence/implementation-20261025-r1/audio-channel-tests-r1.json",
+      "sha256": "91d21040f59b3ba5f78ffbc67f86528253de01c35423b4f8adb052245f2ca7e4",
+      "status": null,
+      "methods": 23,
+      "commands": null,
+      "reexecuted_in_this_review": false
+    },
+    {
+      "path": "docs/validation/evidence/implementation-20261025-r1/audio-regression-r1.json",
+      "sha256": "827c3858191a1b776dbacf59801a707416da15f7e3df29603a4ceaea7e736331",
+      "status": null,
+      "methods": 168,
+      "commands": null,
+      "reexecuted_in_this_review": false
+    },
+    {
+      "path": "docs/validation/evidence/implementation-20261025-r1/installed-channel-tests-r1.json",
+      "sha256": "1785d777ee6eb949107a4dd4ae7bf58f17e5871ece63afde9cac84938b081755",
+      "status": null,
+      "methods": 23,
+      "commands": null,
+      "reexecuted_in_this_review": false
+    },
+    {
+      "path": "docs/validation/evidence/implementation-20261025-r1/native-capture-installed-r3/verification.json",
+      "sha256": "7166d9f7c1f7dc832f0cc48fd509b241effa720180d48b6596fb1116a65e798d",
+      "status": "passed",
+      "methods": null,
+      "commands": 10,
+      "reexecuted_in_this_review": false
+    },
+    {
+      "path": "docs/validation/evidence/implementation-20261025-r1/native-aligner-research/quality.json",
+      "sha256": "f67486aa560d072bac0b2dc57c87be3cfcd285b6b251461a7883a84d8eba2d62",
+      "status": null,
+      "methods": null,
+      "commands": null,
+      "reexecuted_in_this_review": false
+    },
+    {
+      "path": "docs/validation/evidence/implementation-20261025-r1/skill/verification.json",
+      "sha256": "320165bf58dc8616bc034a753f5aeca65e9166da1100b4029b2b800daa5b5ecd",
+      "status": "passed",
+      "methods": null,
+      "commands": 11,
+      "reexecuted_in_this_review": false
+    }
+  ],
+  "alignment": {
+    "threshold_ms": 66.66666666666667,
+    "maximum_errors_ms": [
+      220.0,
+      161.0
+    ],
+    "passed": false,
+    "reference_kind": "authored word blocks, not human phonetic annotation",
+    "rerun_in_this_review": false
+  },
+  "semantic_development": {
+    "files": [
+      {
+        "path": "product/src/ai_ad_editor/semantic_contract.py",
+        "exists_in_working_tree": true,
+        "sha256": "66ab2932e0a81cf3fed15c0db38c67693e9d43e90b9ad19eec37fde57fa33498",
+        "exists_in_installed_package": false
+      },
+      {
+        "path": "product/src/ai_ad_editor/semantic.py",
+        "exists_in_working_tree": false,
+        "sha256": null,
+        "exists_in_installed_package": false
+      },
+      {
+        "path": "product/src/ai_ad_editor/semantic_worker.py",
+        "exists_in_working_tree": false,
+        "sha256": null,
+        "exists_in_installed_package": false
+      },
+      {
+        "path": "product/src/ai_ad_editor/semantic_cli.py",
+        "exists_in_working_tree": false,
+        "sha256": null,
+        "exists_in_installed_package": false
+      }
+    ],
+    "acquisition_receipt_sha256": "17df4f72f535c5f26ea42938f7beed15849de2856fb00ca5e8c63bf59bd17ec3",
+    "acquisition_state": "downloaded_verified",
+    "receipt_committed_at_review": false,
+    "product_index_and_search_implemented": false,
+    "relevance_benchmark_executed": false,
+    "included_in_installed_capabilities": false,
+    "scope": "Development preparation only; the acquisition and partial source are not this documentation delivery."
+  },
+  "gap_group_ids": [
+    "G01",
+    "G02",
+    "G03",
+    "G04",
+    "G05",
+    "G06",
+    "G07",
+    "G08",
+    "G09",
+    "G10",
+    "G11",
+    "G12",
+    "G13",
+    "G14",
+    "G15",
+    "G16",
+    "G17",
+    "G18",
+    "G19",
+    "G20",
+    "G21",
+    "G22",
+    "G23",
+    "G24",
+    "G25",
+    "G26",
+    "G27",
+    "G28",
+    "G29",
+    "G30",
+    "G31",
+    "G32",
+    "G33",
+    "G34",
+    "G35",
+    "G36",
+    "G37",
+    "G38"
+  ],
+  "fully_closed_gap_groups": [],
+  "group_count_is_not_a_completion_percentage": true,
+  "fresh_renders": 0,
+  "fresh_model_inferences": 0,
+  "human_listening": false,
+  "historical_regression_reexecuted": false,
+  "new_competitor_feature_audit": false,
+  "browser_tabs_opened": 0,
+  "virtualization_used": false,
+  "generator_sha256": "3e90ebada7f92376486799f34227e997da1b98330187215517b59620bd497a20"
+}

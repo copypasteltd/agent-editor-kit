@@ -1440,3 +1440,7 @@ scripts/*qwen*20261025.py text eol=lf
 scripts/*implementation*20261025.py text eol=lf
 scripts/verify_current_skill_20261025.py text eol=lf
 docs/validation/补齐实施首批实测_2026-10-25.md text eol=lf
+
+# Preserve exact raw responses and hashes from the current goal reassessment.
+docs/validation/evidence/goal-gaps-20261025-r2/** -text -whitespace
+scripts/audit_goal_review_20261025_r2.py text eol=lf

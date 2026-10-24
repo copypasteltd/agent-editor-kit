@@ -1387,3 +1387,6 @@ scripts/*n002*.py text eol=lf
 scripts/verify_n002_gallery.cjs text eol=lf
 scripts/build_product_readmes.py text eol=lf
 scripts/readme_product_content.py text eol=lf
+
+# Preserve exact bytes in the installed-inventory and goal-gap audit receipts.
+docs/validation/evidence/goal-gaps-20261024-r1/** -text -whitespace

@@ -1,0 +1,61 @@
+{
+  "schema": "agent-editor-kit-goal-gap-doc-check-v1",
+  "recorded_at": "2026-10-24T11:40:47.571264+00:00",
+  "status": "passed",
+  "scope": "Current README/report links, row IDs, retained historical rows, command examples and inventory source hashes. Not a kernel or media test.",
+  "markdown_files": 5,
+  "local_links_checked": 562,
+  "report_gap_groups": 38,
+  "readmes": [
+    {
+      "path": "README.md",
+      "bytes": 54454,
+      "lines": 398,
+      "sha256": "sha256:c4e4f89f268e5b4f65f23295e77c61c1cd0cfdf440ed4b61fb60f5552b2f6316",
+      "historical_R01_R28_unchanged": true,
+      "command_blocks_unchanged": true,
+      "numbered_rows": {
+        "F": 43,
+        "S": 12,
+        "K": 17,
+        "R": 29
+      }
+    },
+    {
+      "path": "README.zh-TW.md",
+      "bytes": 54729,
+      "lines": 398,
+      "sha256": "sha256:b1df2b4472b4ad4abfd08abfded5098441c6486ff9c77d2b6ac1262c5a5fa1cb",
+      "historical_R01_R28_unchanged": true,
+      "command_blocks_unchanged": true,
+      "numbered_rows": {
+        "F": 43,
+        "S": 12,
+        "K": 17,
+        "R": 29
+      }
+    },
+    {
+      "path": "README.en.md",
+      "bytes": 58053,
+      "lines": 398,
+      "sha256": "sha256:9663c1d9ad44a788a51959932cf3aa60c3abed5054c2e46a3463883a8ece2893",
+      "historical_R01_R28_unchanged": true,
+      "command_blocks_unchanged": true,
+      "numbered_rows": {
+        "F": 43,
+        "S": 12,
+        "K": 17,
+        "R": 29
+      }
+    }
+  ],
+  "three_language_command_blocks_identical": true,
+  "inventory_sha256": "sha256:150b2e7f0fd72ce122a9655a616b96a1c1cdc25952326e194f7b5d0fc4ab67d0",
+  "report_sha256": "sha256:f19ec3aa341dc34b390b7ac3a4af2fb64d96f84af963fcc7d12c7d19b0b447ef",
+  "new_renders": 0,
+  "new_model_inference": 0,
+  "historical_full_suite_rerun": false,
+  "browser_invoked": false,
+  "virtualization_invoked": false
+}

@@ -6,6 +6,7 @@
 
 | 阅读目标 / Goal | Document |
 |---|---|
+| 距离完整目标的 38 组差距、已有能力、已知失败与收口顺序 / Goal gaps and acceptance order | [2026-10-24 差距评估](product/GOAL_GAPS_20261024.md) · [Installed inventory](validation/evidence/goal-gaps-20261024-r1/inventory.json) |
 | 当前完整功能与本地服务模块、安装版全部能力字段 / Complete functional and service modules | [简体](product/CAPABILITIES.md) · [繁體](product/CAPABILITIES.zh-TW.md) · [English](product/CAPABILITIES.en.md) |
 | 46 效果算子与 12 运镜的具体参数、范围、后端 / Full effect and motion parameters | [简体](product/EFFECTS.md) · [繁體](product/EFFECTS.zh-TW.md) · [English](product/EFFECTS.en.md) |
 | 当前 17 个新命名 Skill 的输入输出、依赖与职责 / Current Skill details | [简体](product/SKILLS.md) · [繁體](product/SKILLS.zh-TW.md) · [English](product/SKILLS.en.md) |

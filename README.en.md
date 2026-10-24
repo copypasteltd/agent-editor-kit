@@ -344,7 +344,7 @@ Dated actual keyframe/camera/mask/title/transition/audio composition:
 
 ## Functional verification and release evidence
 
-R01–R24 retain their original versions/dates and were not rerun merely for this README rewrite; “this run” in retained rows refers to that row’s original version/date. R25–R28 cover this update. Counts are not added or used to claim complete CapCut parity.
+R01–R24 retain their original versions/dates; R25–R28 record the N002 gallery and full-manual restoration; R29 records this goal-gap assessment and read-only installed inventory. Each row keeps its evidence date. Historical checks were not rerun for documentation updates; counts are not added or used to claim complete CapCut parity.
 
 | # | Verification | Actual result | Evidence and scope |
 |---|---|---|---|
@@ -376,10 +376,13 @@ R01–R24 retain their original versions/dates and were not rerun merely for thi
 | R26 | Gallery, screenshots and actual recording | Native-browser interaction, three languages, search/filter/export/mobile checks pass. | [Browser receipt](docs/validation/evidence/looks-n002-20261024-r1/browser-verification.json) · Zero remote requests; all owned test tabs closed. |
 | R27 | Skill client selection and local registration | 17 Skill format/junction checks; actual shortlist board, search and refusal protection. | [Skill workflow receipt](docs/validation/evidence/looks-n002-20261024-r1/skill-verification.json) · No timeline edits; sample strength 1.0. |
 | R28 | Complete three-language docs and sample links | Modules/services/Skills/cases/500 samples, capability fields and local-link checks. | [Documentation receipt](docs/validation/evidence/looks-n002-20261024-r1/docs-verification.json) · Historical 2,930-test full kernel suite not rerun. |
+| R29 | Goal gaps and installed inventory | 4 successful installed read-only CLI calls; 68 capability contracts match the manual; 38 gap groups have explicit acceptance conditions. | [Assessment](docs/product/GOAL_GAPS_20261024.md) · [Inventory](docs/validation/evidence/goal-gaps-20261024-r1/inventory.json) · Zero renders/inference in this assessment; prior accuracy failures and open acceptance remain. |
 
 ## Current limits and development direction
 
-The deliverable is an offline, editable and auditable Agent CLI workflow with explicit contracts. Complete commercial stock/template ecosystems, all CapCut AI/beauty/layout features, cross-machine jobs, complete HDR/ICC, arbitrary lossless draft interchange, broad natural-footage quality and real-time performance need further development/acceptance. Later R113/R114 Float32 transition/runtime-closure candidates are not part of this release merely because research documents exist.
+The deliverable is an offline, editable and auditable Agent CLI workflow with explicit contracts. Openly licensed asset/template ecosystems, agreed AI/beauty/layout features, complete color processing, actual quality for supported draft profiles, broad natural-media acceptance and long-form resource performance remain open. Consumer GUI, accounts, cloud collaboration and arbitrary lossless private-draft interchange are outside current core acceptance. Later R113/R114 Float32 transition/runtime-closure candidates are not included in this release.
+
+The [2026-10-24 goal-gap assessment](docs/product/GOAL_GAPS_20261024.md) lists 38 gap groups, current support and acceptance conditions. First close natural-media quality, known alignment/audio failures, complex edit combinations, long-form resources and clean-host installation; then build the asset/template ecosystem and remaining AI scope. The evidence does not establish an overall completion percentage.
 
 Use real client media and minimal reproducible projects to identify gaps, implement/check them individually and publish new versions without replacing prior bundles/digests/tags. Record actual successful artifacts rather than inferred completion.
 

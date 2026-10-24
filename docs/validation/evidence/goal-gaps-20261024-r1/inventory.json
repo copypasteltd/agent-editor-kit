@@ -1,0 +1,199 @@
+{
+  "schema": "agent-editor-kit-goal-gap-audit-v1",
+  "recorded_at": "2026-10-24T19:38:06.126080+08:00",
+  "reviewed_commit": "860379de87d4e26ebfcb58fa404a8de683dc2201",
+  "scope": "Read-only installed inventory and frozen-goal document assessment; not a render/model/quality benchmark.",
+  "inventory_ok": true,
+  "overall_goal_accepted": false,
+  "release": "v0.1.0-alpha.3",
+  "cli_version": "0.1.2",
+  "commands": [
+    {
+      "argv": [
+        "version"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "warnings": [],
+      "response": "docs/validation/evidence/goal-gaps-20261024-r1/version.json",
+      "sha256": "sha256:9fd3ea18496da54677a6d7ea4bd7176e7203f6833f404b629ba1fc23ed7e58f2"
+    },
+    {
+      "argv": [
+        "doctor"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "warnings": [],
+      "response": "docs/validation/evidence/goal-gaps-20261024-r1/doctor.json",
+      "sha256": "sha256:591eafbc5fdff40c590770b414ab3b454f0df18bf292ce21c04502cf6ad73b24"
+    },
+    {
+      "argv": [
+        "capabilities"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "warnings": [],
+      "response": "docs/validation/evidence/goal-gaps-20261024-r1/capabilities.json",
+      "sha256": "sha256:eab6771dd0a25db456f3fdc4822b9f3e146a4737918ccb15b2148944ebce9fd3"
+    },
+    {
+      "argv": [
+        "schema",
+        "show"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "warnings": [],
+      "response": "docs/validation/evidence/goal-gaps-20261024-r1/schema.json",
+      "sha256": "sha256:adc04833930501ac1806ee6ae2e5d2945516de4f4237f578762d0ef0ddd31bfa"
+    }
+  ],
+  "command_count": 4,
+  "capability_contract_count": 68,
+  "contract_status_counts": {
+    "implemented_with_limits": 40,
+    "implemented": 20,
+    "degraded": 1,
+    "local_adapter_only": 7
+  },
+  "contract_status_counts_are_completion_percentages": false,
+  "capability_contracts_match_documented_response": true,
+  "effect_operator_count_from_existing_response": 46,
+  "motion_preset_count": 12,
+  "look_count": 500,
+  "look_catalog_version": "2.0.0",
+  "gap_group_count": 38,
+  "gap_ids": [
+    "G01",
+    "G02",
+    "G03",
+    "G04",
+    "G05",
+    "G06",
+    "G07",
+    "G08",
+    "G09",
+    "G10",
+    "G11",
+    "G12",
+    "G13",
+    "G14",
+    "G15",
+    "G16",
+    "G17",
+    "G18",
+    "G19",
+    "G20",
+    "G21",
+    "G22",
+    "G23",
+    "G24",
+    "G25",
+    "G26",
+    "G27",
+    "G28",
+    "G29",
+    "G30",
+    "G31",
+    "G32",
+    "G33",
+    "G34",
+    "G35",
+    "G36",
+    "G37",
+    "G38"
+  ],
+  "report": "docs/product/GOAL_GAPS_20261024.md",
+  "report_sha256": "sha256:f19ec3aa341dc34b390b7ac3a4af2fb64d96f84af963fcc7d12c7d19b0b447ef",
+  "source_documents": [
+    {
+      "path": "docs/产品需求与开发路线基线_2026-10-12.md",
+      "sha256": "sha256:856d8d51945060d5422d5a61009f2d062786ddceaa2314b5c7449e3672bc2e6b"
+    },
+    {
+      "path": "docs/Concat与剪映功能差异矩阵_2026-10-12.md",
+      "sha256": "sha256:e8626770d5a15ca931ea82fa09096f9e462ea2de7473fefd8cc39dc2f9f964ae"
+    },
+    {
+      "path": "docs/product/capabilities.json",
+      "sha256": "sha256:ef5205b54ff55af0b0b1d7867df4c7ed4629283b7e15b6f11980f93d8a648a63"
+    },
+    {
+      "path": "docs/product/effects.json",
+      "sha256": "sha256:785c4d58fa2b4ccec252cff42917c73e49b58ebd32d2a63a4bf9837ea5018a81"
+    },
+    {
+      "path": "docs/releases/v0.1.0-alpha.1/RELEASE.md",
+      "sha256": "sha256:edec5b826a11f3104c97b9525d7dc8f4ee5a1cf6628ddbce6f6a1c5cd54ee404"
+    },
+    {
+      "path": "docs/validation/能力覆盖与验收矩阵_v0.1_2026-10-13.md",
+      "sha256": "sha256:c8877b790422e88c2ccaf75a5f3cb6c2c42553eb0f07e993057de234dc67eda4"
+    },
+    {
+      "path": "docs/validation/性能预算与设备基线_v0.1_2026-10-13.md",
+      "sha256": "sha256:e3585f1cc4d4640cf4af84ad76f1001d9bafbe18432341571365a5ab8d34ae0c"
+    },
+    {
+      "path": "docs/validation/离线CTC字词强制对齐实测_2026-10-18.md",
+      "sha256": "sha256:ccd15dec348992bc65b6c8ef4c45d98fd49204144ca79e69db276f089fe27d19"
+    },
+    {
+      "path": "docs/validation/R3声道策略与立体声权衡实测_2026-10-17.md",
+      "sha256": "sha256:989a0f07d9e2751ee8824d151680add49884c42c4cbff3caaefffb7934d5e87f"
+    },
+    {
+      "path": "docs/validation/evidence/looks-n002-20261024-r1/render-verification.json",
+      "sha256": "sha256:59f76e6ae7ca078f27454fea6c166134939d60735044a296f1af9051004d254f"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
+      "sha256": "sha256:c8a5fe829ab73f826ea4c568afefae1e074dcf64e234e73c4a19a2f16902d344"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
+      "sha256": "sha256:160e77c3ff223c0456ee90878d6beec649c9af09c8a1bf1db0668e4930d99a42"
+    }
+  ],
+  "new_render_count": 0,
+  "new_model_inference_count": 0,
+  "historical_full_suite_rerun": false,
+  "broad_natural_video_quality_accepted": false,
+  "continuous_playback_performed": false,
+  "listening_performed": false,
+  "current_capcut_product_newly_researched": false,
+  "browser_invoked": false,
+  "virtualization_invoked": false,
+  "project_or_source_media_modified": false,
+  "retained_historical_failures": [
+    {
+      "area": "CTC boundary timing",
+      "measured_ms": 258.1875,
+      "gate_ms": 66.6667,
+      "accepted": false
+    },
+    {
+      "area": "R3 ultra-short pitch and apart mono compatibility",
+      "accepted": false
+    },
+    {
+      "area": "SAM2 natural mask omission and repair temporal/structural quality",
+      "accepted": false
+    }
+  ],
+  "not_acceptance_requirements": [
+    "consumer GUI",
+    "mobile UI",
+    "accounts/billing",
+    "cloud collaboration",
+    "distributed farm",
+    "MCP/HTTP server",
+    "arbitrary lossless private draft interchange"
+  ]
+}

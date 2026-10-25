@@ -50,11 +50,17 @@ After applying, ordinary keys and the embedded recipe travel with the editable
 project package; the original standalone JSON is not needed for rendering.
 Keep normal preview/render/pixel review and source-rights checks.
 
-CLI 0.1.17 automatically reuses pure fixed-canvas affine parameters per scanline.
+Since CLI 0.1.17, the runtime automatically reuses pure fixed-canvas affine parameters per scanline.
 It retains the float premultiplied bilinear sampler; no new option is needed.
 Composition is CPU; NVENC accelerates encoding only. For performance-sensitive
 delivery, render the real target duration/canvas instead of extrapolating a
 small graphic. The [paired timing and actual preview](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/AFFINE_RENDERING.md)
 record the same source/project/codec and bounded child-process CPU affinity.
-Separate dynamic crop/fit sequence projection and full 4K/long-form acceptance
-remain open. This optimization does not certify natural motion aesthetics.
+CLI 0.1.19 also reuses pure dynamic crop/fit and child-sequence crop/fit/TRS
+parameters for both bilinear and area sampling. Use the existing render command;
+no quality reduction or new cache switch is needed. For area sampling, request
+`--sequence-sampling area --sequence-memory-mib 1024` explicitly when overriding
+authored settings. The working-raster admission quota is not total process RSS.
+See the [combination case and workflow](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/PROJECTION_RENDERING.md).
+Show actual previews and retain the selected sampler/canvas in delivery records.
+Full 4K/long-form and natural-motion quality acceptance remain open.

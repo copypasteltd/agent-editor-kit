@@ -9,9 +9,26 @@
 本页包含完整功能模块、服务与依赖、安装与使用逻辑、Skill 输入输出、真实案例和核验表。长篇原始验收日志继续留档，功能说明与案例入口恢复到首页。
 
 
-<!-- affine-scanline-current -->
+<!-- projection-scanline-current -->
 
-**CLI 0.1.17 / alpha.4-local.15 / r17 kit** · 208 product Python files · 1 Skill / 17 modules. 固定画布旋转/缩放自动复用扫描行参数；同工程三轮中位数 95.03 → 30.27 秒（3.14×），六次全部120帧及PCM相同。CPU合成，GPU编码仍显式选择。
+**CLI 0.1.19 / alpha.4-local.17 / r20 kit** · 1 Skill / 17 modules. 动态裁切及嵌套crop/fit/TRS支持扫描行复用，双线性/面积采样保持精度；同组合工程三轮中位数327.62→88.41秒（3.71×），六次120帧及PCM相同。
+
+[Install / 固定0.1.19](docs/releases/CLI_0.1.19_LOCAL.md) · [Workflow / 使用流程](docs/product/PROJECTION_RENDERING.md) · [C27](docs/product/CASES.md#c27-projection-scanline) · [Evidence](docs/validation/裁切与序列投影实测_2026-10-26.md)
+
+```powershell
+& $avk validate --project $project
+& $avk render --project $project --sequence-sampling area --sequence-memory-mib 1024 --output $output --hardware-encode auto
+```
+
+![Actual installed output / silent](docs/assets/projection-scanline-20261026-r2/projection.gif)
+
+CPU合成；GPU编码单独选择。本次为384×216/4秒组合实测，完整4K/长片和自然质量继续验收。
+
+<!-- /projection-scanline-current -->
+
+<!-- affine-scanline-history -->
+
+**Historical / 历史 / 歷史：CLI 0.1.17 / alpha.4-local.15 / r17 kit** · 208 product Python files · 1 Skill / 17 modules. 固定画布旋转/缩放自动复用扫描行参数；同工程三轮中位数 95.03 → 30.27 秒（3.14×），六次全部120帧及PCM相同。CPU合成，GPU编码仍显式选择。
 
 [Workflow / 使用流程](docs/product/AFFINE_RENDERING.md) · [C26](docs/product/CASES.md#c26-affine-scanline) · [Evidence](docs/validation/仿射扫描行复用实测_2026-10-25.md)
 
@@ -19,7 +36,7 @@
 
 相同640×360/30fps/4秒素材与编码设置，子进程统一使用4个逻辑CPU；动态crop/fit投影、完整4K/长片和自然素材质量继续验收。
 
-<!-- /affine-scanline-current -->
+<!-- /affine-scanline-history -->
 
 <!-- motion-pack-history -->
 
@@ -90,13 +107,13 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r17 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r17.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
+**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r20 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r20.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
 
 <!-- /unified-skill-registration -->
 
 <!-- community-materials-gpu -->
 
-**本机新增已安装扩展：CLI 0.1.16，GPU 配音/翻译与 359 项内置开源资源。** 公开 alpha.3 附件保持原版。外层只指定 `$agent-ffmpeg-local-editor`；本机登记 GPU 包后默认优先 GPU，明确返回实际设备/回退原因，保留 CPU 兼容。
+**本机新增已安装扩展：CLI 0.1.19，GPU 配音/翻译与 359 项内置开源资源。** 公开 alpha.3 附件保持原版。外层只指定 `$agent-ffmpeg-local-editor`；本机登记 GPU 包后默认优先 GPU，明确返回实际设备/回退原因，保留 CPU 兼容。
 
 [完整流程与边界](docs/product/COMMUNITY_MATERIALS.md) · [逐项素材目录](docs/product/COMMUNITY_MATERIAL_CATALOG.md) · [103 音色与实际试听范围](docs/product/COMMUNITY_VOICES.md) · [CPU 实测](docs/validation/evidence/community-materials-20261025-r1/cpu/verification.json) · [GPU 实测](docs/validation/evidence/community-materials-20261025-r1/gpu/verification.json)。
 
@@ -582,7 +599,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.15/final-r1/installed/`，CLI 0.1.17；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
+本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.17/final-r1/installed/`，CLI 0.1.19；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -904,18 +921,25 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R129 | 2026-10-25 时钟与CLI回归 | 安装版嵌套时钟及122项CLI通过，0skip；未重跑全部历史套件 | [Evidence](docs/validation/evidence/affine-scanline-20261025-r1/tests/cli-installed-r1/verification.json) |
 | R130 | 2026-10-25 保留失败与范围 | 测量脚本编码名称失败保留；CPU优化，仅固定画布仿射，完整4K/长片/自然质量未验收 | [Evidence](docs/validation/evidence/affine-scanline-20261025-r1/benchmark-r1/verification.json) |
 | R131 | 2026-10-25 kit与完整文档 | r17 kit独立登记/调用通过；三语README、C26和实测同步，124历史行及38原关闭条件保持 | [Evidence](docs/validation/evidence/affine-scanline-20261025-r1/final-delivery-r2/verification.json) |
+| R132 | 2026-10-26 固定安装 | CLI0.1.19/local.17，208产品文件与固定ZIP安装版相同 | [Evidence](docs/validation/evidence/projection-scanline-20261026-r1/installation-final-r1/verification.json) |
+| R133 | 2026-10-26 裁切与寄存器压力 | 13项安装版专项通过；新增全部裁切/变换通道同时动画，旧12项记录保留 | [Evidence](docs/validation/evidence/projection-scanline-20261026-r1/tests/projection-final-r1/verification.json) |
+| R134 | 2026-10-26 序列/透明/时钟回归 | 63项序列、45项时钟、17项透明、8项仿射及122项CLI分别通过，0skip | [Evidence](docs/validation/evidence/projection-scanline-20261026-r1/tests/sequence-final-r1/verification.json) |
+| R135 | 2026-10-26 组合工程交错计时 | 动态crop/反向子序列/arc_push/area，旧新各3次中位数327.615→88.412秒；六次全120帧与PCM相同 | [Evidence](docs/validation/evidence/projection-scanline-20261026-r1/benchmark-r3/verification.json) |
+| R136 | 2026-10-26 实际注册Skill | 真实入口渲染与validate通过；120帧/PCM与旧安装相同，68文件/17模块 | [Evidence](docs/validation/evidence/projection-scanline-20261026-r1/skill-r3/verification.json) |
+| R137 | 2026-10-26 实际案例与媒体 | 自制原图、可编辑工程包、MP4/GIF完整解码及抽帧目检；首轮编排字段拒绝保留；未做连续播放/听审 | [Evidence](docs/validation/evidence/projection-scanline-20261026-r1/preview-r4/verification.json) |
+| R138 | 2026-10-26 kit与完整文档 | r20 kit独立登记/调用；三语README、C27、使用流程及证据同步，保留131历史行/38原关闭条件 | [Evidence](docs/validation/evidence/projection-scanline-20261026-r1/final-delivery-r1/verification.json) |
 
 ## 当前边界与开发方向
 
 当前可交付的是有明确契约、离线可运行、可编辑、可复查的 Agent CLI 闭环。完整开源素材/模板生态、约定的 AI 特效/美颜/排版、完整色彩管线、指定草稿版本的真实转换质量、广泛自然视听和长片资源性能仍需开发与验收。消费级 GUI、账号、云协作及任意私有版本无损转换不属于当前内核收口门槛。后续 Float32 转场/运行时闭包候选 R113/R114 未随本版提供。
 
-[当前完整目标差距表](docs/product/GOAL_GAPS_20261025.md)按 CLI 0.1.16 更新全部 G01–G38。单一 Skill、500 风格/预览、359 资源、GPU 配音/翻译、字幕配音联合流程、四轨/恢复及受控词活动边界已交付；自然视听、复杂组合、高级 AI、内容模板、Agent 自主任务、长片可靠性和新版公开包仍开放。R67–R72 分别记录真实执行及限制，不给出总体完成率。[2026-10-24 评估](docs/product/GOAL_GAPS_20261024.md)是历史快照。
+[当前完整目标差距表](docs/product/GOAL_GAPS_20261025.md)按 CLI 0.1.19 更新全部 G01–G38。单一 Skill、500 风格/预览、359 资源、GPU 配音/翻译、字幕配音联合流程、四轨/恢复及受控词活动边界已交付；自然视听、复杂组合、高级 AI、内容模板、Agent 自主任务、长片可靠性和新版公开包仍开放。R67–R72 分别记录真实执行及限制，不给出总体完成率。[2026-10-24 评估](docs/product/GOAL_GAPS_20261024.md)是历史快照。
 
 
 
 下一步以真实客户素材与最小可复现工程收集缺口，逐项补齐、实测、发布新版本；不覆盖既有发布包/摘要/标签。只按实际成功产物更新核验。
 
-**Current delivery / 当前交付 / 目前交付（R110–R117，2026-10-25）：** CLI 0.1.16 / local.13 / r14; explicit byte-identical semantic runtime relocation, zero upgrade inference and preserved CPU/GPU/Skill results. Full goal remains active.
+**Historical delivery / 历史交付 / 歷史交付（R110–R117，2026-10-25）：** CLI 0.1.15 / local.13 / r14; explicit byte-identical semantic runtime relocation, zero upgrade inference and preserved CPU/GPU/Skill results. Full goal remains active.
 
 ## 文档体系、来源与维护
 

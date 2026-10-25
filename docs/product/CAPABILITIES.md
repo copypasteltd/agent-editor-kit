@@ -2,15 +2,15 @@
 
 <!-- community-current -->
 
-**CLI 0.1.17 / alpha.4-local.15 / r17 kit · 1 Skill / 17 modules.**
+**CLI 0.1.19 / alpha.4-local.17 / r20 kit · 1 Skill / 17 modules.**
 
-Scanline affine parameter reuse, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+Animated crop and nested bilinear/area projection parameter reuse, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
 
-[Affine timing/preview](AFFINE_RENDERING.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](affine-scanline-capabilities-cli-0.1.17.json). Full target conditions remain open.
+[Projection workflow/preview](PROJECTION_RENDERING.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](projection-scanline-capabilities-cli-0.1.19.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.md) · [Machine response](affine-scanline-capabilities-cli-0.1.17.json) · [Module data](module-catalog.json)
+[README](../../README.md) · [Machine response](projection-scanline-capabilities-cli-0.1.19.json) · [Module data](module-catalog.json)
 
 | 编号 | 功能模块 | 具体行为与输入 → 输出 | 入口 | 依赖/边界 |
 |---|---|---|---|---|
@@ -3499,9 +3499,13 @@ Scanline affine parameter reuse, portable motion/capture, editable ad variants, 
 ```json
 {
   "affine_expression_reuse": {
-    "engine": "native-geq-scanline-v1",
+    "engine": "native-geq-scanline-v2",
     "status": "implemented_with_limits",
-    "scope": "fixed_canvas_affine_video_filters",
+    "scope": [
+      "fixed_canvas_affine_video_filters",
+      "dynamic_crop_fit_fill_stretch",
+      "sequence_crop_fit_TRS_bilinear_and_area"
+    ],
     "invariants": [
       "refresh_at_each_plane_slice_scanline_X_zero",
       "pure_expressions_only",
@@ -3509,9 +3513,32 @@ Scanline affine parameter reuse, portable motion/capture, editable ad variants, 
       "premultiplied_float_bilinear_sampler_unchanged",
       "pixel_dependent_or_stateful_expressions_keep_legacy_evaluation"
     ],
+    "sequence_cache": {
+      "selection": "greedy_expanded_expression_length_without_numeric_approximation",
+      "bilinear_persistent_registers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        8,
+        9
+      ],
+      "area_persistent_registers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "pixel_scratch_registers_disjoint": true,
+      "area_kernel": "unchanged_source_axis_fractional_box_integral"
+    },
     "limits": [
       "CPU_composition",
-      "not_all_geq_filters_or_sequence_crop_fit_projection",
+      "not_all_geq_filters",
       "no_global_frame_cache",
       "not_full_4K_long_form_or_GPU_composition_acceptance"
     ]

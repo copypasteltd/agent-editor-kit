@@ -82,3 +82,5 @@ capture 捕获**完整作者输出时段**，包括被 presentation-window 隐�
 应用有快照、工程写锁、事务、幂等、预算和取消；dry-run 不写工程。规范内容 SHA 和输入文件 SHA 分开记录，完整 recipe/参数嵌入 provenance；之后渲染/工程包无需原外部 JSON。锁定轨道、跟踪绑定和被跟踪源拒绝，避免覆盖正在使用的轨迹。内容改变要改版本并重新预览；原输出不覆盖。
 
 **English:** Application uses snapshot, project lock, transaction, idempotency and cooperative timeout/cancellation. The receipt embeds recipe, resolved parameters and separate canonical-content/raw-file hashes. Rendering and editable-package import therefore do not require the original standalone recipe. Locked tracks and tracking relationships reject. Full G04/G12/G32/G33 and the complete CapCut-level target remain open.
+
+2026-10-26: CLI0.1.19 extends pure scanline reuse to animated crop and child crop/fit/TRS, for bilinear and area. [Current workflow / 当前使用](PROJECTION_RENDERING.md) includes the editable combination case and actual previews; historical timing remains scoped to its original fixture.

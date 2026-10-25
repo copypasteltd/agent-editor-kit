@@ -1,0 +1,35 @@
+{
+  "status": "interrupted_after_intermediate_profiling",
+  "interrupted_at_utc": "2026-10-25T16:44:11.849665+00:00",
+  "reason": "Maintainer stopped only owned PID33592 and its child tree to eliminate repeated per-pixel area bound expressions before final delivery.",
+  "completed_calls": [
+    "ffmpeg-version",
+    "old-version",
+    "new-version",
+    "import",
+    "compose",
+    "motion",
+    "validate",
+    "old-1",
+    "old-1-frames",
+    "old-1-pcm",
+    "new-1",
+    "new-1-frames",
+    "new-1-pcm",
+    "new-2",
+    "new-2-frames",
+    "new-2-pcm"
+  ],
+  "completed_render_seconds": {
+    "old-1": 310.35077309999906,
+    "new-1": 212.2222968999995
+  },
+  "final_acceptance": false,
+  "baseline_cli": "0.1.17",
+  "intermediate_cli": "0.1.18",
+  "intermediate_build": "local.16/candidate-r1",
+  "generator_sha256": "79ef572d1b4ab983d48cefe1487612c893417e671dab212af997f4129d222e25",
+  "replay_measurements": false,
+  "source_fallback": false,
+  "other_workloads_touched": false
+}

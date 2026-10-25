@@ -2,11 +2,13 @@
 
 <!-- community-current -->
 
-**CLI 0.1.17 / alpha.4-local.15 / r17 kit · 1 Skill / 17 modules.**
+**CLI 0.1.19 / alpha.4-local.17 / r20 kit · 1 Skill / 17 modules.**
 
 新增可復用運鏡包：六套參數路徑、既有動畫擷取、跨時長/畫幅復用、明確衝突及作者時鐘；結果保留為可編輯關鍵影格。
 
-[Motion workflow/previews](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime upgrade](SEMANTIC_RUNTIME_UPGRADE.md) · [75 declarations](affine-scanline-capabilities-cli-0.1.17.json) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md).
+[Motion workflow/previews](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime upgrade](SEMANTIC_RUNTIME_UPGRADE.md) · [75 declarations](projection-scanline-capabilities-cli-0.1.19.json) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md).
+
+動態裁切與原生子序列投影復用參數，支援雙線性/面積採樣；合成仍由CPU執行，GPU編碼另外選擇。
 
 <!-- /community-current -->
 
@@ -285,3 +287,5 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 <!-- /semantic-decisions-current -->
 
 [Fixed-canvas affine reuse / 扫描行复用](AFFINE_RENDERING.md) uses the existing render workflow, keeps CPU composition explicit, and provides paired timing and actual previews.
+
+[Animated crop and native-canvas projection / 动态裁切与嵌套投影](PROJECTION_RENDERING.md) retains the existing bilinear/area kernels, explicit raster quota and editable keys; CPU composition and GPU encoding remain separate.

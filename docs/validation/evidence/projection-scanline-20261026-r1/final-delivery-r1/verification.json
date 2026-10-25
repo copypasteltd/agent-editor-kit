@@ -1,0 +1,158 @@
+{
+  "status": "passed",
+  "started_at_utc": "2026-10-25T17:33:06.759242+00:00",
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "new_model_forwards_in_audit": 0,
+  "new_renders_in_audit": 0,
+  "independent_agent_benchmark": false,
+  "human_quality_acceptance": false,
+  "finished_at_utc": "2026-10-25T17:33:58.539767+00:00",
+  "baseline_commit": "2a78657b20b41c849dde5ebe347671d562f46cf2",
+  "cli_version": "0.1.19",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.17\\final-r1\\installed",
+  "actual_read_only_cli_calls": 6,
+  "source_and_installed_files": 208,
+  "skill_files": 68,
+  "kit_files": 94,
+  "kit_sha256": "fea2c7913a959d2c34135362bd4a69f8102b56155a1667fdec17436b55f403c9",
+  "capability_count": 75,
+  "capability_status_counts": {
+    "implemented_with_limits": 47,
+    "implemented": 20,
+    "degraded": 1,
+    "local_adapter_only": 7
+  },
+  "original_goal_closure_conditions_preserved": 38,
+  "historical_readme_rows_preserved_per_language": 131,
+  "current_readme_rows_per_language": 138,
+  "local_links_checked": 2601,
+  "public_release": "v0.1.0-alpha.3",
+  "public_api_status": 200,
+  "current_failed_phases": 2,
+  "unchanged_semantic_modules": 19,
+  "paired_render_median_ratio": 3.7055523674190085,
+  "files": [
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "sha256": "9d9a0c20ed90d6d6ed52204767e784deff50f1599e17e0eabcbd0c819b5ced74"
+    },
+    {
+      "path": "docs/product/IMPLEMENTATION_PLAN_20261025.md",
+      "sha256": "c288afb28cdb7692ee82ddc6048e234f88764d4728ea49a8589e03699a6622f1"
+    },
+    {
+      "path": "README.md",
+      "sha256": "d89fae908490fbbe8525024a4296baab56c8a50b2e8bf6230ad65bf78b111391"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "sha256": "5e796caf6f6585bf4496fb0a564fd56e1381f8c76e57488d3c58a6366f229482"
+    },
+    {
+      "path": "README.en.md",
+      "sha256": "74f7263fca5eda69871501ade7ed724fea6676defb88bfc428c2d31b298c06bf"
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "718f8d58caf7165c65eb8a12005f375662a71d85c917b3c7ec559134d4200112"
+    },
+    {
+      "path": "docs/product/COMMUNITY_LOCAL_DELIVERY.md",
+      "sha256": "6f4412ff4b3919effc4e5e7871d936c9d0a0e51b355e71f47eb9c5fa35ff29fd"
+    },
+    {
+      "path": "docs/product/MOTION_PACKS.md",
+      "sha256": "313c039b97853ea3e137896f168aada7edf66aa9fcf44ddeb7847e4d96319ef3"
+    },
+    {
+      "path": "docs/product/CASES.md",
+      "sha256": "3f477e18953e4c71441acc3dfbfffde0e59db86965006b8ac1fe7853a3544360"
+    },
+    {
+      "path": "docs/product/AFFINE_RENDERING.md",
+      "sha256": "78ea7b29c45de8f38f232fdc6828e25e459e250cd8aefcd2a82cea9c35a7fee7"
+    },
+    {
+      "path": "docs/product/PROJECTION_RENDERING.md",
+      "sha256": "6a957fd20cf94757a5cfaedd2fdf6427c729d47ee1f2e3d3cbfadf77a10f334c"
+    },
+    {
+      "path": "docs/specs/裁切与序列投影参数复用契约_20261026.md",
+      "sha256": "613e80267b606505fae0d94b96285afc060a6d2fd9bf5b48f7de678353745aa7"
+    },
+    {
+      "path": "docs/validation/裁切与序列投影实测_2026-10-26.md",
+      "sha256": "868bcf626a215c844c28205b998ef2a69d0ab50868f8de4814212a7c419fff0c"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.md",
+      "sha256": "23e5a9f2cf5d067c35e090b5570f3bdd41007c091848342b92bb7b15c42b7881"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.zh-TW.md",
+      "sha256": "f2cb64313876fedced03251d94b06d3f52f8debf99eaba7f6c2a83484789d048"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.en.md",
+      "sha256": "07aef316dc464b7b9bcf44191541fbf2f89d9b593d80ba8beb124bfa6d091ad2"
+    },
+    {
+      "path": "docs/product/SKILLS.md",
+      "sha256": "d95339b5a2411b76a0bdf1a12d7bbae0079a657aa0369552fcb303df0c9da05e"
+    },
+    {
+      "path": "docs/product/SKILLS.zh-TW.md",
+      "sha256": "29d8c93d66880fc2861c12922c9e02edc1528cd45f97da13a5454827535ff0a6"
+    },
+    {
+      "path": "docs/product/SKILLS.en.md",
+      "sha256": "ee691206bfaef59220636856a7f93995a16c62d9803e82c793f00cbb361708d1"
+    },
+    {
+      "path": "docs/product/EFFECTS.md",
+      "sha256": "6a037d16dff686de175ebdde3a231d134fa772e0942664f70f19a17bf4798f62"
+    },
+    {
+      "path": "docs/product/EFFECTS.zh-TW.md",
+      "sha256": "7014c9d6ec1835fb1c2ee699cf46de8045e7b27b807f28887334aea80f1f61f1"
+    },
+    {
+      "path": "docs/product/EFFECTS.en.md",
+      "sha256": "35deaaf2d0bd027c6a21006c2b3d62097c4dc16bad5649221765ede21ee457c3"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.md",
+      "sha256": "a76e61d536c153f5446cd562d9204e1abb570a11b8653690739705bf136f40b0"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.zh-TW.md",
+      "sha256": "dfaf133c98c506e801d6d937f06db21b06f77f410abe3a4653b0d970a7a3ff23"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.en.md",
+      "sha256": "f8528b6ace1eb8c0738eff0f91ce9997774645dd155c017790d8a8f471d58f70"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
+      "sha256": "6f09b951cd7a996f462e0368857292d9e774e51f059cb3ec22029fcd81ee56b3"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
+      "sha256": "84ece4c37f4a5015f6e3f01f233d0b96f78e1b91e8ec2fe474f8e43ea5f70393"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/motion-packs.md",
+      "sha256": "62ca905ee6d3beaed99fcbee16ed6e8cd1170494bf47547d0476e78980a10fb7"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/timeline/module.md",
+      "sha256": "8df41fbbe53feb66f306d8c8032b1ba70969cfdb485fea98922afbd5bb72f8a2"
+    },
+    {
+      "path": "docs/releases/CLI_0.1.19_LOCAL.md",
+      "sha256": "dce878a7e9acceb3f5f223c58ffd99065440d0e060df19272527d78b29ada147"
+    }
+  ]
+}

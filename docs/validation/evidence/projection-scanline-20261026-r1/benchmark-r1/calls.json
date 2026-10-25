@@ -1,0 +1,95 @@
+[
+  {
+    "id": "ffmpeg-version",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10013550000439864,
+    "stdout_sha256": "40cbd764aa9f5e9ae10b41da9e53fc901c606832f05af38f67ec763a580020c5",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "old-version",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.15\\final-r1\\installed\\run.py",
+      "version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 13.201275400002487,
+    "stdout_sha256": "7e766d6dcd81ce8342cc1760d62026b6fa9ba241d818ca5d7416fe7f0763457d",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "new-version",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.16\\final-r1\\installed\\run.py",
+      "version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.3236484000080964,
+    "stdout_sha256": "db72b864f5f14ef341526c9a19a950df6c45f07ed34120860bf1a4ae34a3e9ed",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "import",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.16\\final-r1\\installed\\run.py",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\motion-pack-20261025-installed-r1\\editable-motion.aevpkg.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\projection-scanline-20261026-r1\\对照工程"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.0299395000038203,
+    "stdout_sha256": "c2274210c585dd3882b643f3d129383f25f6e9bdc6c67453d47a20d64742e786",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "compose",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.16\\final-r1\\installed\\run.py",
+      "timeline",
+      "compose",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\projection-scanline-20261026-r1\\对照工程",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\projection-scanline-20261026-r1\\combination.json"
+    ],
+    "exit_code": 2,
+    "elapsed_seconds": 2.5966374999989057,
+    "stdout_sha256": "0fea663c2ff640a6f8459f5ea5955a9e8dd1f4102844597c37a97172c0f061af",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

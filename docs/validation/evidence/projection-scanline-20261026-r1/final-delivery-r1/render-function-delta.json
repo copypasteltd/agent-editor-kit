@@ -1,0 +1,11 @@
+{
+  "changed": [
+    "_affine_video_filters",
+    "_dynamic_crop_filters",
+    "_sequence_raster_filters"
+  ],
+  "added": [
+    "_geq_row_invariant",
+    "_geq_scanline_expression"
+  ]
+}

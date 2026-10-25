@@ -448,7 +448,8 @@ def _dynamic_crop_filters(
     It keeps the native raster size until the final canvas resize, so small
     crop windows do not allocate an enormous zoomed intermediate frame. Fit
     bars follow the static crop/pad alpha contract. Each plane
-    has its own expression state; registers are initialized for every pixel.
+    has its own expression state; pure window/fit values are initialized at X=0
+    on every scanline. Pixel/stateful expressions retain per-pixel evaluation.
     """
     normalized = str(crop.get("unit", "pixels")).lower() in {"normalized", "relative"}
     default_width = 1.0 if normalized else float(source_width or canvas_width)
@@ -474,8 +475,9 @@ def _dynamic_crop_filters(
         f"st(3,clip(({origin_y}),0,H-ld(1)));"
     )
     fit = str(crop.get("fit", crop.get("mode", "fit"))).lower()
+    pixel_setup = ""
     if fit == "stretch":
-        setup += (
+        pixel_setup = (
             "st(7,ld(2)+(X+0.5)*ld(0)/W-0.5);"
             "st(8,ld(3)+(Y+0.5)*ld(1)/H-0.5);st(9,1);"
         )
@@ -487,16 +489,21 @@ def _dynamic_crop_filters(
             f"st(4,{scale_function}({canvas_width}/ld(0),{canvas_height}/ld(1)));"
             f"st(5,({canvas_width}-ld(0)*ld(4))/2);"
             f"st(6,({canvas_height}-ld(1)*ld(4))/2);"
+        )
+        pixel_setup = (
             f"st(7,ld(2)+({destination_x}-ld(5))/ld(4)-0.5);"
             f"st(8,ld(3)+({destination_y}-ld(6))/ld(4)-0.5);"
         )
         if fit == "fill":
-            setup += "st(9,1);"
+            pixel_setup += "st(9,1);"
         else:
-            setup += (
+            pixel_setup += (
                 f"st(9,gte({destination_x},ld(5))*lt({destination_x},ld(5)+ld(0)*ld(4))"
                 f"*gte({destination_y},ld(6))*lt({destination_y},ld(6)+ld(1)*ld(4)));"
             )
+    if _geq_row_invariant([window_width, window_height, origin_x, origin_y]):
+        setup = f"if(eq(X,0),{setup.rstrip(';')},0);"
+    setup += pixel_setup
     sample_x = "clip(ld(7),ld(2),ld(2)+ld(0)-1)"
     sample_y = "clip(ld(8),ld(3),ld(3)+ld(1)-1)"
 
@@ -1140,6 +1147,81 @@ def _video_overlay_position(transform: dict[str, str], width: int, height: int) 
     )
 
 
+def _geq_row_invariant(expressions: list[str]) -> bool:
+    """Only known pure, pixel-independent expressions may share scanline state."""
+    functions = {'abs', 'acos', 'asin', 'atan', 'atan2', 'between', 'bitand', 'bitor',
+                 'ceil', 'clip', 'cos', 'cosh', 'eq', 'exp', 'floor', 'gauss', 'gcd',
+                 'gt', 'gte', 'hypot', 'if', 'ifnot', 'isinf', 'isnan', 'lerp', 'log',
+                 'lt', 'lte', 'max', 'min', 'mod', 'not', 'pow', 'round', 'sgn',
+                 'sin', 'sinh', 'sqrt', 'squish', 'tan', 'tanh', 'trunc'}
+    return all(not re.search(r'\b(?:X|Y)\b', value)
+               and set(re.findall(r'\b([A-Za-z_]\w*)\s*\(', value)) <= functions
+               for value in expressions)
+
+
+def _geq_scanline_expression(definitions: dict[str, str], body: str, registers: tuple[int, ...]) -> str:
+    """Compile a pure row DAG into disjoint persistent and pixel registers.
+
+    Cache selection estimates repeated evaluation by expanded text length.
+    This heuristic only chooses storage: it does not approximate expressions.
+    Definitions are ordered dependencies. Pixel code must not write registers
+    offered here; initialization repeats at X=0 for each plane/slice/scanline.
+    """
+    token = re.compile(r'@\{([a-z_]+)\}')
+    seen: set[str] = set()
+    for name, value in definitions.items():
+        if not set(token.findall(value)) <= seen:
+            raise ValueError('Row expression definitions must be topologically ordered')
+        seen.add(name)
+    if not set(token.findall(body)) <= seen or len(set(registers)) != len(registers):
+        raise ValueError('Invalid row expression body/register allocation')
+    if any(type(r) is not int or not 0 <= r < 10 for r in registers):
+        raise ValueError('AVExpr has exactly ten registers')
+    if set(map(int, re.findall(r'\bst\s*\(\s*(\d+)\s*,', body))) & set(registers):
+        raise ValueError('Pixel writes cannot overwrite scanline registers')
+    if not _geq_row_invariant(list(definitions.values())):
+        raise ValueError('Row caching requires pure pixel-independent definitions')
+    selected: set[str] = set()
+    def cost(expression: str, cache: set[str], memo: dict[str, int]) -> int:
+        total, offset = 0, 0
+        for match in token.finditer(expression):
+            name = match[1]
+            if name in cache:
+                weight = 5  # ld(n), independent of register allocation
+            else:
+                if name not in memo:
+                    memo[name] = cost(definitions[name], cache, memo)+2
+                weight = memo[name]
+            total += match.start()-offset+weight
+            offset = match.end()
+        return total+len(expression)-offset
+    for _ in registers:
+        before = cost(body, selected, {})
+        choices = [(before-cost(body, selected|{name}, {}), name)
+                   for name in definitions if name not in selected]
+        if not choices:
+            break
+        # Stable definition order resolves equal scores reproducibly.
+        gain, name = max(choices, key=lambda item: item[0])
+        if gain <= 0:
+            break
+        selected.add(name)
+    allocation = dict(zip((name for name in definitions if name in selected), registers))
+    memo: dict[str, str] = {}
+    def expand(expression: str) -> str:
+        def replace(match: re.Match[str]) -> str:
+            name = match[1]
+            if name in allocation:
+                return f'ld({allocation[name]})'
+            if name not in memo:
+                memo[name] = '('+expand(definitions[name])+')'
+            return memo[name]
+        return token.sub(replace, expression)
+    initialize = ';'.join(f'st({register},{expand(definitions[name])})'
+                          for name, register in allocation.items())
+    return (f'if(eq(X,0),{initialize},0);' if initialize else '')+expand(body)
+
+
 def _affine_video_filters(transform: dict[str, str]) -> list[str]:
     """Sample a rotated layer onto its fixed output canvas around its anchor.
 
@@ -1165,14 +1247,7 @@ def _affine_video_filters(transform: dict[str, str]) -> list[str]:
     # original arithmetic order and sampling kernel; only pure row-invariant
     # transform calculations are reused. Stateful/pixel-dependent expressions
     # retain the original path to avoid changing their evaluation semantics.
-    row_functions = {'abs', 'acos', 'asin', 'atan', 'atan2', 'between', 'bitand', 'bitor',
-                     'ceil', 'clip', 'cos', 'cosh', 'eq', 'exp', 'floor', 'gauss', 'gcd',
-                     'gt', 'gte', 'hypot', 'if', 'ifnot', 'isinf', 'isnan', 'lerp', 'log',
-                     'lt', 'lte', 'max', 'min', 'mod', 'not', 'pow', 'round', 'sgn',
-                     'sin', 'sinh', 'sqrt', 'squish', 'tan', 'tanh', 'trunc'}
-    pure = all(not re.search(r'\b(?:X|Y)\b', value)
-               and set(re.findall(r'\b([A-Za-z_]\w*)\s*\(', value)) <= row_functions
-               for value in values.values())
+    pure = _geq_row_invariant(list(values.values()))
     if pure:
         initialize = (
             f"st(7,{angle});st(0,cos(ld(7)));st(1,sin(ld(7)));"
@@ -3407,7 +3482,52 @@ def _sequence_raster_filters(
     )
     sample_x = 'clip(ld(6),ld(2),ld(2)+ld(0)-1)'
     sample_y = 'clip(ld(7),ld(3),ld(3)+ld(1)-1)'
+    pure = _geq_row_invariant([w, h, x, y, *values.values()])
+    # A projection has more row constants than AVExpr's ten registers. Keep
+    # the most expensive repeated nodes, with disjoint pixel scratch storage.
+    # The area kernel reads its top/bottom edges without overwriting constants.
+    definitions = {
+        'crop_w': f'clip(({w}),2,{sw})', 'crop_h': f'clip(({h}),2,{sh})',
+        'crop_x': f'clip(({x}),0,{sw}-@{{crop_w}})',
+        'crop_y': f'clip(({y}),0,{sh}-@{{crop_h}})',
+        'fit_x': f'{tw}/@{{crop_w}}' if fit == 'stretch' else f'{select}({tw}/@{{crop_w}},{th}/@{{crop_h}})',
+        'fit_y': f'{th}/@{{crop_h}}' if fit == 'stretch' else '@{fit_x}',
+        'cosine': f'cos({angle})', 'sine': f'sin({angle})',
+        'position_x': f"({values['position_x']})*{tw}",
+        'position_y': f"({values['position_y']})*{th}",
+        'scale': scale, 'anchor_x': f"({values['anchor_x']})", 'anchor_y': f"({values['anchor_y']})",
+    }
+    pixel_coordinates = (
+        'st(6,@{crop_x}+@{anchor_x}*@{crop_w}'
+        '+((X+0.5-@{position_x})*@{cosine}+(Y+0.5-@{position_y})*@{sine})/(@{scale}*@{fit_x})-0.5);'
+        'st(7,@{crop_y}+@{anchor_y}*@{crop_h}'
+        '+(-(X+0.5-@{position_x})*@{sine}+(Y+0.5-@{position_y})*@{cosine})/(@{scale}*@{fit_y})-0.5);'
+    )
     def plane(name: str) -> str:
+        if pure:
+            if sampling == 'area':
+                area_definitions = {**definitions,
+                    'kernel_x': 'max(1,1/(@{scale}*@{fit_x}))',
+                    'kernel_y': 'max(1,1/(@{scale}*@{fit_y}))'}
+                edges = (
+                    'st(8,clip(ld(6)+0.5-@{kernel_x}/2,@{crop_x},@{crop_x}+@{crop_w}));'
+                    'st(9,clip(ld(6)+0.5+@{kernel_x}/2,@{crop_x},@{crop_x}+@{crop_w}));'
+                    # X has now been consumed. Reuse its register for top;
+                    # bottom still reads the original Y before replacing it.
+                    'st(6,clip(ld(7)+0.5-@{kernel_y}/2,@{crop_y},@{crop_y}+@{crop_h}));'
+                    'st(7,clip(ld(7)+0.5+@{kernel_y}/2,@{crop_y},@{crop_y}+@{crop_h}));'
+                )
+                integral = area_rectangle(name,
+                    top='ld(6)', bottom='ld(7)',
+                    width='@{kernel_x}', height='@{kernel_y}')
+                body = f'if(lt(X,{tw})*lt(Y,{th}),'+pixel_coordinates+edges+integral+',0)'
+                return _expr_arg(_geq_scanline_expression(area_definitions, body, (0,1,2,3,4,5)))
+            inside = ('gte(ld(6),@{crop_x}-0.5)*lt(ld(6),@{crop_x}+@{crop_w}-0.5)'
+                      '*gte(ld(7),@{crop_y}-0.5)*lt(ld(7),@{crop_y}+@{crop_h}-0.5)')
+            px = 'clip(ld(6),@{crop_x},@{crop_x}+@{crop_w}-1)'
+            py = 'clip(ld(7),@{crop_y},@{crop_y}+@{crop_h}-1)'
+            body = pixel_coordinates+f'if({inside},{name}({px},{py}),0)'
+            return _expr_arg(_geq_scanline_expression(definitions, body, (0,1,2,3,4,5,8,9)))
         if sampling == 'area':
             # Reuse registers only after their old values have been consumed.
             edges = (f'st(4,max(1,1/({scale}*ld(4))));st(5,max(1,1/({scale}*ld(5))));'

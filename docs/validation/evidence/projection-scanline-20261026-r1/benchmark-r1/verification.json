@@ -1,0 +1,30 @@
+{
+  "status": "failed",
+  "phase": "benchmark",
+  "started_at_utc": "2026-10-25T16:28:49.909907+00:00",
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "human_listening": false,
+  "continuous_playback": false,
+  "natural_motion_quality_acceptance": false,
+  "affinity": {
+    "original_mask": 4095,
+    "selected_mask": 15,
+    "logical_processors": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "scope": "This evidence process and its children only; not an isolated host benchmark."
+  },
+  "ffmpeg": {
+    "path": "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+    "sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+    "version": "ffmpeg version 8.1-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers"
+  },
+  "ffmpeg_threads": "unchanged native default; both runtimes inherit the same four-logical-CPU affinity",
+  "error": "AssertionError('')",
+  "finished_at_utc": "2026-10-25T16:29:10.964312+00:00"
+}

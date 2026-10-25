@@ -2,9 +2,11 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.17 / alpha.4-local.15 / r17 kit.** One registered Skill / 17 modules; [r17 kit](agent-editor-kit-community-unified-skill-r17.zip). Six reusable motion paths and native animation capture are now installed, alongside editable ad variants, semantic runtime migration, GPU voice/translation, subtitle dubbing and 359 resources.
+**Current local / 当前本机 / 目前本機：CLI 0.1.19 / alpha.4-local.17 / r20 kit.** One registered Skill / 17 modules; [r20 kit](agent-editor-kit-community-unified-skill-r20.zip). Six reusable motion paths and native animation capture are now installed, alongside editable ad variants, semantic runtime migration, GPU voice/translation, subtitle dubbing and 359 resources.
 
 [Motion workflow + previews](../product/MOTION_PACKS.md) · [Current installation](../product/COMMUNITY_LOCAL_DELIVERY.md) · [All 38 original goals](../product/GOAL_GAPS_20261025.md). Public alpha.3 assets retain their original version.
+
+Animated crop and native child-canvas projection reuse parameters for bilinear/area sampling. Composition remains on the CPU; GPU encoding is a separate choice.
 
 <!-- /community-current -->
 
@@ -70,3 +72,5 @@ The `agent-ffmpeg-local-skills-v2` manifest declares `skill_count=1`, `module_co
 [Actual verification and migration receipts](../validation/evidence/unified-skill-20261024-r1/) · [Original alpha.3 release](https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3)
 
 [Fixed-canvas affine reuse / 扫描行复用](../product/AFFINE_RENDERING.md) uses the existing render workflow, keeps CPU composition explicit, and provides paired timing and actual previews.
+
+[Animated crop and native-canvas projection / 动态裁切与嵌套投影](../product/PROJECTION_RENDERING.md) retains the existing bilinear/area kernels, explicit raster quota and editable keys; CPU composition and GPU encoding remain separate.

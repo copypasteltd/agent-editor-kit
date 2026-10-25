@@ -1,0 +1,89 @@
+[
+  {
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e4f42b0b2ae47d5b8f3c27d6c076a55b81f6d0106b96b139f99c61d32296a7ad",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "doctor"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "f96bfc55d6675687ea0801fc4abd32de62f0e4d7bef8aa11dd0e6c0d831cef62",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "capabilities"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "978665b1457e05ceee4b18a9bea8a9669b88fec701da973bdcad846c3893d5fe",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "schema",
+      "show"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "10381252fa3cdac787828235a85fee397482defcfd3e9ff1dfe51376200fea6e",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "gpu",
+      "inspect"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "16eb34e4893ad3f3c0001b09ff54d13aa4cdbacf2c3e1adba2b157d03003d9cb",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "model-pack",
+      "list"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "ac3cf97dd792ffb5f44bea2f23f198c93511cc19ea881955bc1a1d642ffab96a",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

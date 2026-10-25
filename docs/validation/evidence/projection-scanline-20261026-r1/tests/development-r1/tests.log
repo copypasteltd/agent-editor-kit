@@ -1,0 +1,18 @@
+test_animated_normalized_crop_and_keyed_motion_keep_old_pixels (test_projection_scanline_cache.ProjectionScanlineTests.test_animated_normalized_crop_and_keyed_motion_keep_old_pixels) ... ok
+test_dynamic_crop_all_fit_modes_and_alpha_contracts (test_projection_scanline_cache.ProjectionScanlineTests.test_dynamic_crop_all_fit_modes_and_alpha_contracts) ... ok
+test_hidden_rgb_does_not_pollute_bilinear_or_area_edges (test_projection_scanline_cache.ProjectionScanlineTests.test_hidden_rgb_does_not_pollute_bilinear_or_area_edges) ... ok
+test_marker_follows_independent_forward_geometry (test_projection_scanline_cache.ProjectionScanlineTests.test_marker_follows_independent_forward_geometry) ... ok
+test_mismatched_odd_source_parent_canvases (test_projection_scanline_cache.ProjectionScanlineTests.test_mismatched_odd_source_parent_canvases) ... ok
+test_nested_reverse_keyframe_clock (test_projection_scanline_cache.ProjectionScanlineTests.test_nested_reverse_keyframe_clock) ... ok
+test_plane_and_slice_threads_have_independent_state (test_projection_scanline_cache.ProjectionScanlineTests.test_plane_and_slice_threads_have_independent_state) ... ok
+test_projection_all_fit_modes_both_sampling_methods (test_projection_scanline_cache.ProjectionScanlineTests.test_projection_all_fit_modes_both_sampling_methods) ... ok
+test_quarter_turn_extreme_anchor_and_negative_scale (test_projection_scanline_cache.ProjectionScanlineTests.test_quarter_turn_extreme_anchor_and_negative_scale) ... ok
+test_repeated_backward_timestamps_do_not_leave_row_constants_stale (test_projection_scanline_cache.ProjectionScanlineTests.test_repeated_backward_timestamps_do_not_leave_row_constants_stale) ... ok
+test_row_compiler_rejects_unsafe_allocation_and_non_pure_definitions (test_projection_scanline_cache.ProjectionScanlineTests.test_row_compiler_rejects_unsafe_allocation_and_non_pure_definitions) ... ok
+test_stateful_pixel_and_unknown_calls_retain_old_path (test_projection_scanline_cache.ProjectionScanlineTests.test_stateful_pixel_and_unknown_calls_retain_old_path) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 39.922s
+
+OK
+AEK_RESULT={"methods": 12, "skipped": 0, "failures": 0, "errors": 0, "success": true}

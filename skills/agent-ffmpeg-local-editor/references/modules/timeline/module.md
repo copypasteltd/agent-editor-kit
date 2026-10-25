@@ -17,3 +17,7 @@ For looks and client choices, read [looks](../../looks.md) and [actual visual se
 For reusable paths and saved keyframe animation, read [motion packs](../../motion-packs.md).
 Inspect actual previews and parameters; apply on the visible output clock, preserve
 source retiming, and replace conflicting whole property tracks only explicitly.
+
+## Dynamic crop and nested projection (CLI 0.1.19)
+
+Read [motion-packs](../../motion-packs.md) for the editable combination workflow. Dynamic crop and child crop/fit/TRS automatically reuse pure scanline parameters. Bilinear and source-axis box area sampling retain their existing precision and alpha contract; area is explicit via `--sequence-sampling area`. Keep `--sequence-memory-mib` explicit for overrides; no silent quality reduction or quota expansion. Composition is CPU, hardware encoding is separate.

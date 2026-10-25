@@ -34,3 +34,5 @@ CLI **0.1.17 / alpha.4-local.15** 自动复用固定画布仿射合成中的扫�
 此优化只覆盖固定画布仿射 helper；动态 crop/fit 的序列投影、其他 geq 滤镜、4K/长片/并发RSS和自然素材美学并未因此验收。已有空间路径仍为65点折线；不改变其他原目标门槛。
 
 **English:** This does not optimize every geq filter or the separate crop/fit sequence projector. General 4K, long-form, concurrency/RSS and natural-footage acceptance remain open. Motion paths still use 65 linear samples.
+
+2026-10-26: CLI0.1.19 extends pure scanline reuse to animated crop and child crop/fit/TRS, for bilinear and area. [Current workflow / 当前使用](PROJECTION_RENDERING.md) includes the editable combination case and actual previews; historical timing remains scoped to its original fixture.

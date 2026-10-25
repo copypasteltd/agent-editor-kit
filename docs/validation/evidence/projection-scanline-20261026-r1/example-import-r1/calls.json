@@ -1,0 +1,118 @@
+[
+  {
+    "id": "import",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\projection-scanline-20261026-r2\\editable-projection.aevpkg.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\projection-scanline-20261026-example-r1\\客户 示例"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "cef960ca1ed8a99155469eb2922d9ab779c90ddf4bf31a3bab4ade553e05963a",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "validate",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\projection-scanline-20261026-example-r1\\客户 示例"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "00def8d0bc5efd05f1ffd862d323a1428b1e984515461e907f23778be00b3e27",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "render",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\projection-scanline-20261026-example-r1\\客户 示例",
+      "--sequence-id",
+      "projection_demo",
+      "--sequence-sampling",
+      "area",
+      "--sequence-memory-mib",
+      "1024",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\projection-scanline-20261026-example-r1\\客户 示例\\renders\\client.mkv",
+      "--container",
+      "mkv",
+      "--audio-codec",
+      "pcm_f32le",
+      "--pixel-format",
+      "yuv444p",
+      "--crf",
+      "0",
+      "--hardware-encode",
+      "off"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "347cebb6081b7b2022974a3a4cf9902564881090ce96cc8bb9411e73c4fa9596",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "frames",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\projection-scanline-20261026-example-r1\\客户 示例\\renders\\client.mkv",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-fps_mode",
+      "passthrough",
+      "-pix_fmt",
+      "rgba",
+      "-f",
+      "framemd5",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "3e4bc2bd1b56d925861116c76b58358e504dd1eb5bfcfd49367f058a6827050c",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "pcm",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\projection-scanline-20261026-example-r1\\客户 示例\\renders\\client.mkv",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-acodec",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "884b9b9a7ba18ca4e0c5ec5ed91ae13ad0816a8c1a318512c21a7eb1876a4a87",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

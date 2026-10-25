@@ -1,0 +1,141 @@
+[
+  {
+    "id": "ffmpeg-version",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.103228100007982,
+    "stdout_sha256": "40cbd764aa9f5e9ae10b41da9e53fc901c606832f05af38f67ec763a580020c5",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "skill-version",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 4.097265900010825,
+    "stdout_sha256": "fd51251de905493165724323a967e32df33640425909b0e6392afdb5387089ac",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "skill-capabilities",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "capabilities"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 3.163623500004178,
+    "stdout_sha256": "e9efea10857465bc050318b5dd0f31bc4a931bd7f918e9b31c3ecd3ee1b5fd38",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "skill-render",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\projection-scanline-20261026-r3\\对照工程",
+      "--sequence-id",
+      "projection_demo",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\projection-scanline-20261026-r3\\对照工程\\renders\\skill.mkv",
+      "--container",
+      "mkv",
+      "--audio-codec",
+      "pcm_f32le",
+      "--pixel-format",
+      "yuv444p",
+      "--crf",
+      "0",
+      "--hardware-encode",
+      "off"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 111.48558400000911,
+    "stdout_sha256": "e86498e622832c98cb618e7f53d548e95e17f71debca70d7eb2a14bdcdfdd5d4",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "skill-frames",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\projection-scanline-20261026-r3\\对照工程\\renders\\skill.mkv",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-fps_mode",
+      "passthrough",
+      "-pix_fmt",
+      "rgba",
+      "-f",
+      "framemd5",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6666304999962449,
+    "stdout_sha256": "3e4bc2bd1b56d925861116c76b58358e504dd1eb5bfcfd49367f058a6827050c",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "skill-pcm",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\projection-scanline-20261026-r3\\对照工程\\renders\\skill.mkv",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-acodec",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.3012308000033954,
+    "stdout_sha256": "8b5efe4889b42f40ba626088b76b03c7766f8bb6b977aed499ecfec102943fdc",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "skill-validate",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\projection-scanline-20261026-r3\\对照工程"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 5.271863200003281,
+    "stdout_sha256": "3743f5fafc9edb1dfe3d81113ff27f637419bdadf12bf92f23e8704c2f1ecc03",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

@@ -9,9 +9,26 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- affine-scanline-current -->
+<!-- projection-scanline-current -->
 
-**CLI 0.1.17 / alpha.4-local.15 / r17 kit** · 208 product Python files · 1 Skill / 17 modules. Fixed-canvas affine parameters are reused per scanline. Paired medians: 95.03 → 30.27 seconds (3.14×); all 120 frames and PCM match across six renders. CPU composition; hardware encoding remains explicit.
+**CLI 0.1.19 / alpha.4-local.17 / r20 kit** · 1 Skill / 17 modules. Animated crop and nested crop/fit/TRS reuse scanline parameters with unchanged bilinear/area precision. Paired three-run medians 327.62→88.41s (3.71×); all120 frames and PCM match across six renders.
+
+[Install / 固定0.1.19](docs/releases/CLI_0.1.19_LOCAL.md) · [Workflow / 使用流程](docs/product/PROJECTION_RENDERING.md) · [C27](docs/product/CASES.md#c27-projection-scanline) · [Evidence](docs/validation/裁切与序列投影实测_2026-10-26.md)
+
+```powershell
+& $avk validate --project $project
+& $avk render --project $project --sequence-sampling area --sequence-memory-mib 1024 --output $output --hardware-encode auto
+```
+
+![Actual installed output / silent](docs/assets/projection-scanline-20261026-r2/projection.gif)
+
+CPU composition; GPU encoding is separate. This is a384×216/four-second combination measurement, with general4K/long-form and natural-quality acceptance still open.
+
+<!-- /projection-scanline-current -->
+
+<!-- affine-scanline-history -->
+
+**Historical / 历史 / 歷史：CLI 0.1.17 / alpha.4-local.15 / r17 kit** · 208 product Python files · 1 Skill / 17 modules. Fixed-canvas affine parameters are reused per scanline. Paired medians: 95.03 → 30.27 seconds (3.14×); all 120 frames and PCM match across six renders. CPU composition; hardware encoding remains explicit.
 
 [Workflow / 使用流程](docs/product/AFFINE_RENDERING.md) · [C26](docs/product/CASES.md#c26-affine-scanline) · [Evidence](docs/validation/仿射扫描行复用实测_2026-10-25.md)
 
@@ -19,7 +36,7 @@ This page includes functional modules, services/dependencies, installation/usage
 
 Same 640×360/30fps/4s fixture and codec; child processes use the same four logical CPUs. Separate crop/fit projectors, general 4K/long-form and natural-footage acceptance remain open.
 
-<!-- /affine-scanline-current -->
+<!-- /affine-scanline-history -->
 
 <!-- motion-pack-history -->
 
@@ -90,13 +107,13 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r17 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r17.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r20 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r20.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
 <!-- community-materials-gpu -->
 
-**Local installed extension: CLI 0.1.16, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
+**Local installed extension: CLI 0.1.19, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
 
 [Complete workflow and limits](docs/product/COMMUNITY_MATERIALS.en.md) · [Resource catalog](docs/product/COMMUNITY_MATERIAL_CATALOG.md) · [103 named voices and actual audition scope](docs/product/COMMUNITY_VOICES.md) · [CPU evidence](docs/validation/evidence/community-materials-20261025-r1/cpu/verification.json) · [GPU evidence](docs/validation/evidence/community-materials-20261025-r1/gpu/verification.json).
 
@@ -582,7 +599,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.15/final-r1/installed/`, CLI 0.1.17. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.17/final-r1/installed/`, CLI 0.1.19. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -906,6 +923,13 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R129 | 2026-10-25 Clocks/CLI regression | Installed nested clocks and122 CLI tests pass, zero skips; not the entire historical suite | [Evidence](docs/validation/evidence/affine-scanline-20261025-r1/tests/cli-installed-r1/verification.json) |
 | R130 | 2026-10-25 Failure/limits retained | Measurement-helper encoding-name failure retained; CPU optimization for fixed-canvas affine only; general4K/long-form/natural quality unaccepted | [Evidence](docs/validation/evidence/affine-scanline-20261025-r1/benchmark-r1/verification.json) |
 | R131 | 2026-10-25 Kit/full documentation | Independent r17 kit registration/calls pass; trilingual README/C26/evidence updated;124 historical rows and38 original closure conditions retained | [Evidence](docs/validation/evidence/affine-scanline-20261025-r1/final-delivery-r2/verification.json) |
+| R132 | 2026-10-26 Pinned installation | CLI0.1.19/local.17; 208 product files match the installed pinned ZIP | [Evidence](docs/validation/evidence/projection-scanline-20261026-r1/installation-final-r1/verification.json) |
+| R133 | 2026-10-26 Crop/register pressure | 13 installed tests pass, including all animated crop/transform channels; original12-test evidence retained | [Evidence](docs/validation/evidence/projection-scanline-20261026-r1/tests/projection-final-r1/verification.json) |
+| R134 | 2026-10-26 Sequence/alpha/clocks | 63 sequence,45 clock,17 alpha,8 affine and122 CLI methods pass separately, zero skips | [Evidence](docs/validation/evidence/projection-scanline-20261026-r1/tests/sequence-final-r1/verification.json) |
+| R135 | 2026-10-26 Paired combination timing | Animated crop/reverse child/arc_push/area, three runs each: medians327.615→88.412s; all120 frames and PCM match across six renders | [Evidence](docs/validation/evidence/projection-scanline-20261026-r1/benchmark-r3/verification.json) |
+| R136 | 2026-10-26 Registered Skill | Actual render/validate;120 frames/PCM match old installation;68 files/17 modules | [Evidence](docs/validation/evidence/projection-scanline-20261026-r1/skill-r3/verification.json) |
+| R137 | 2026-10-26 Actual case/media | Self-authored original/editable package, complete MP4/GIF decode and extracted-frame inspection; first authoring-field rejection retained; no playback/listening acceptance | [Evidence](docs/validation/evidence/projection-scanline-20261026-r1/preview-r4/verification.json) |
+| R138 | 2026-10-26 Kit/full documentation | Independent r20 kit registration/calls; trilingual README/C27/workflow/evidence updated;131 historical rows/38 original closures preserved | [Evidence](docs/validation/evidence/projection-scanline-20261026-r1/final-delivery-r1/verification.json) |
 
 ## Current limits and development direction
 
@@ -917,7 +941,7 @@ Exact audio-channel relationship protection and native capture remain delivered 
 
 Use real client media and minimal reproducible projects to identify gaps, implement/check them individually and publish new versions without replacing prior bundles/digests/tags. Record actual successful artifacts rather than inferred completion.
 
-**Current delivery / 当前交付 / 目前交付（R110–R117，2026-10-25）：** CLI 0.1.16 / local.13 / r14; explicit byte-identical semantic runtime relocation, zero upgrade inference and preserved CPU/GPU/Skill results. Full goal remains active.
+**Historical delivery / 历史交付 / 歷史交付（R110–R117，2026-10-25）：** CLI 0.1.15 / local.13 / r14; explicit byte-identical semantic runtime relocation, zero upgrade inference and preserved CPU/GPU/Skill results. Full goal remains active.
 
 ## Documentation, provenance and maintenance
 

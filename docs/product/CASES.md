@@ -654,3 +654,15 @@ CLI 0.1.13 在实际模型/运行库字节读取中响应超时和取消，部�
 ![Actual installed output](../assets/affine-scanline-20261025-r1/detail-scan.gif)
 
 Four-second self-authored graphic, silent; no natural-footage or continuous-playback acceptance. Full goal remains active.
+
+<a id="c27-projection-scanline"></a>
+
+## C27 动态裁切与嵌套投影 / Crop and nested projection
+
+动态裁切及嵌套crop/fit/TRS支持扫描行复用，双线性/面积采样保持精度；同组合工程三轮中位数327.62→88.41秒（3.71×），六次120帧及PCM相同。
+
+[完整使用流程](PROJECTION_RENDERING.md) · [原始实测](../validation/裁切与序列投影实测_2026-10-26.md) · [可编辑案例](../assets/projection-scanline-20261026-r2/editable-projection.aevpkg.zip) · [原图](../assets/projection-scanline-20261026-r2/original.png) · [实际MP4](../assets/projection-scanline-20261026-r2/projection.mp4)
+
+![Actual installed output / silent](../assets/projection-scanline-20261026-r2/projection.gif)
+
+Native child480×270/output384×216,30fps/4s, reverse clock, animated crop, arc_push and area sampling. Self-authored graphic; natural-motion, continuous-playback and listening acceptance remain open.

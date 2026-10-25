@@ -1,6 +1,6 @@
 # Installed-release runtime contract
 
-This namespace calls the locally installed `v0.1.0-alpha.4-local.15` / CLI 0.1.17
+This namespace calls the locally installed `v0.1.0-alpha.4-local.17` / CLI 0.1.19
 package using this Skill's `scripts/run.ps1`. Its 17 modules share the launcher.
 The editable Skill source stays on E:; Codex reads
 Windows directory junctions. `local/agent-ffmpeg/runtime.json` selects the native Python and installed path.

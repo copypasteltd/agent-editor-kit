@@ -1,0 +1,170 @@
+{
+  "operations": [
+    {
+      "op": "add_sequence",
+      "id": "native_panel",
+      "canvas": {
+        "width": 480,
+        "height": 270
+      },
+      "duration_tick": 360000
+    },
+    {
+      "op": "append_clip",
+      "sequence_id": "native_panel",
+      "track_id": "native_panel_video_1",
+      "id": "cropped_leaf",
+      "asset_id": "asset_20261025143340_794ee0f5",
+      "source_in_tick": 0,
+      "source_out_tick": 360000,
+      "timeline_start_tick": 0,
+      "duration_tick": 360000,
+      "crop": {
+        "unit": "normalized",
+        "x": 0.04,
+        "y": 0.05,
+        "width": 0.88,
+        "height": 0.86,
+        "fit": "fill"
+      },
+      "keyframes": [
+        {
+          "property": "crop.x",
+          "keyframes": [
+            {
+              "at_tick": 0,
+              "value": 0.04,
+              "interpolation": "bezier",
+              "control_points": [
+                0.25,
+                0.1,
+                0.75,
+                0.9
+              ]
+            },
+            {
+              "at_tick": 360000,
+              "value": 0.11,
+              "interpolation": "linear"
+            }
+          ]
+        },
+        {
+          "property": "crop.width",
+          "keyframes": [
+            {
+              "at_tick": 0,
+              "value": 0.88,
+              "interpolation": "bezier",
+              "control_points": [
+                0.25,
+                0.1,
+                0.75,
+                0.9
+              ]
+            },
+            {
+              "at_tick": 360000,
+              "value": 0.76,
+              "interpolation": "linear"
+            }
+          ]
+        },
+        {
+          "property": "transform.rotation",
+          "keyframes": [
+            {
+              "at_tick": 0,
+              "value": -3.0,
+              "interpolation": "bezier",
+              "control_points": [
+                0.25,
+                0.1,
+                0.75,
+                0.9
+              ]
+            },
+            {
+              "at_tick": 360000,
+              "value": 5.0,
+              "interpolation": "linear"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "op": "add_sequence",
+      "id": "projection_demo",
+      "canvas": {
+        "width": 384,
+        "height": 216
+      },
+      "duration_tick": 360000
+    },
+    {
+      "op": "append_sequence_clip",
+      "sequence_id": "projection_demo",
+      "track_id": "projection_demo_video_1",
+      "id": "projected_panel",
+      "nested_sequence_id": "native_panel",
+      "source_in_tick": 0,
+      "source_out_tick": 360000,
+      "timeline_start_tick": 0,
+      "duration_tick": 360000,
+      "reverse": true,
+      "crop": {
+        "unit": "normalized",
+        "x": 0.02,
+        "y": 0.03,
+        "width": 0.94,
+        "height": 0.91,
+        "fit": "fit"
+      },
+      "keyframes": [
+        {
+          "property": "crop.x",
+          "keyframes": [
+            {
+              "at_tick": 0,
+              "value": 0.02,
+              "interpolation": "bezier",
+              "control_points": [
+                0.25,
+                0.1,
+                0.75,
+                0.9
+              ]
+            },
+            {
+              "at_tick": 360000,
+              "value": 0.05,
+              "interpolation": "linear"
+            }
+          ]
+        },
+        {
+          "property": "crop.height",
+          "keyframes": [
+            {
+              "at_tick": 0,
+              "value": 0.91,
+              "interpolation": "bezier",
+              "control_points": [
+                0.25,
+                0.1,
+                0.75,
+                0.9
+              ]
+            },
+            {
+              "at_tick": 360000,
+              "value": 0.83,
+              "interpolation": "linear"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

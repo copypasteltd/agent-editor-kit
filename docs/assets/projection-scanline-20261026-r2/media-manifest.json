@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "cli_version": "0.1.19",
+  "files": [
+    {
+      "path": "docs/assets/projection-scanline-20261026-r2/editable-projection.aevpkg.zip",
+      "bytes": 56465,
+      "sha256": "06180c1d6642152273ab9bf88429e540bca30cc71bfcf703dc6a4aaba9e94d24"
+    },
+    {
+      "path": "docs/assets/projection-scanline-20261026-r2/editable-projection.aevpkg.zip.conversion-report.json",
+      "bytes": 965,
+      "sha256": "263259abe864c77e379815e6f09c8a51f676f7aff0276e5cd468c3e60307643b"
+    },
+    {
+      "path": "docs/assets/projection-scanline-20261026-r2/midpoint.png",
+      "bytes": 19416,
+      "sha256": "8d7b0c64fec1e3cab62b122167aa8386f337d2353aafc1ed6f931c9358bd8fb8"
+    },
+    {
+      "path": "docs/assets/projection-scanline-20261026-r2/original.png",
+      "bytes": 11171,
+      "sha256": "46f24805392fdd5b305928b713d2508af53f810e092e841c4587c53ab6c9b2e1"
+    },
+    {
+      "path": "docs/assets/projection-scanline-20261026-r2/projection.gif",
+      "bytes": 529133,
+      "sha256": "1bf3cc9021783abada5b82f92d3fa30e856c6369144341b6db3b5fed6f561bb1"
+    },
+    {
+      "path": "docs/assets/projection-scanline-20261026-r2/projection.mp4",
+      "bytes": 232755,
+      "sha256": "c3c85761ce43e5538db7fdf30bfcda19ed83f9f1ecd2204beaebdba5c16796a4"
+    },
+    {
+      "path": "docs/assets/projection-scanline-20261026-r2/SOURCE.txt",
+      "bytes": 235,
+      "sha256": "5fe1dbea497359a982a519afb77c337e8f4e90275975e7329048912a7a68eab0"
+    }
+  ],
+  "mp4_frames": 120,
+  "gif_frames": 40,
+  "seconds": 4,
+  "silent": true,
+  "preview_encoder": "h264_nvenc",
+  "composition": "CPU crop and sequence scanline parameter reuse",
+  "continuous_playback": false,
+  "human_aesthetic_acceptance": false
+}

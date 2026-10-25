@@ -1,0 +1,174 @@
+[
+  {
+    "id": "ffmpeg-version",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09463350000442006,
+    "stdout_sha256": "40cbd764aa9f5e9ae10b41da9e53fc901c606832f05af38f67ec763a580020c5",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "preview-mp4",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-v",
+      "error",
+      "-n",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\projection-scanline-20261026-r3\\对照工程\\renders\\new-3.mkv",
+      "-an",
+      "-c:v",
+      "h264_nvenc",
+      "-preset",
+      "p5",
+      "-cq",
+      "20",
+      "-pix_fmt",
+      "yuv420p",
+      "-movflags",
+      "+faststart",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\projection-scanline-20261026-r1\\projection.mp4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.7177253999980167,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "preview-gif",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-v",
+      "error",
+      "-n",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\projection-scanline-20261026-r3\\对照工程\\renders\\new-3.mkv",
+      "-an",
+      "-filter_complex",
+      "fps=10,scale=384:216:flags=lanczos,split[a][b];[a]palettegen[p];[b][p]paletteuse",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\projection-scanline-20261026-r1\\projection.gif"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.4324525999982143,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "mp4-probe",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.EXE",
+      "-v",
+      "error",
+      "-count_frames",
+      "-show_streams",
+      "-show_format",
+      "-of",
+      "json",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\projection-scanline-20261026-r1\\projection.mp4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.16070600000966806,
+    "stdout_sha256": "958bd1b9c9749a4bf2dfe6098f63efbcbc47cbea539762e7e45a606520b7c738",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "mp4-full-decode",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\projection-scanline-20261026-r1\\projection.mp4",
+      "-f",
+      "null",
+      "NUL"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.172858100006124,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "gif-probe",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.EXE",
+      "-v",
+      "error",
+      "-count_frames",
+      "-show_streams",
+      "-show_format",
+      "-of",
+      "json",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\projection-scanline-20261026-r1\\projection.gif"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12910430000920314,
+    "stdout_sha256": "c19ef148750962e22fae6afa3e864629b728f21147dc61e809762d2f2c9b1d5a",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "gif-full-decode",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\projection-scanline-20261026-r1\\projection.gif",
+      "-f",
+      "null",
+      "NUL"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.15780309999536257,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "midpoint",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-v",
+      "error",
+      "-n",
+      "-ss",
+      "2",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\projection-scanline-20261026-r3\\对照工程\\renders\\new-3.mkv",
+      "-frames:v",
+      "1",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\projection-scanline-20261026-r1\\midpoint.png"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.176180900001782,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "export-editable",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.17\\final-r1\\installed\\run.py",
+      "convert",
+      "export",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\projection-scanline-20261026-r3\\对照工程",
+      "--format",
+      "agent-project",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\projection-scanline-20261026-r1\\editable-projection.aevpkg.zip"
+    ],
+    "exit_code": 2,
+    "elapsed_seconds": 2.8290145000064513,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "2d88661b3fac774756cd141a7ccaa94331070f470aa96fc6a5566abbc9ec65be"
+  }
+]

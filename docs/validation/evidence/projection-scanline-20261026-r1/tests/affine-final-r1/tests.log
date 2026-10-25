@@ -1,0 +1,14 @@
+test_all_sampled_motion_paths_match_legacy_with_forced_affine (test_affine_scanline_cache.AffineScanlineTests.test_all_sampled_motion_paths_match_legacy_with_forced_affine) ... ok
+test_bezier_hold_nonzero_start_and_nested_reverse_clock (test_affine_scanline_cache.AffineScanlineTests.test_bezier_hold_nonzero_start_and_nested_reverse_clock) ... ok
+test_marker_follows_independent_forward_rotation_geometry (test_affine_scanline_cache.AffineScanlineTests.test_marker_follows_independent_forward_rotation_geometry) ... ok
+test_pixel_dependent_and_stateful_expressions_keep_legacy_semantics (test_affine_scanline_cache.AffineScanlineTests.test_pixel_dependent_and_stateful_expressions_keep_legacy_semantics) ... ok
+test_repeated_and_backward_timestamps_do_not_reuse_another_frame (test_affine_scanline_cache.AffineScanlineTests.test_repeated_and_backward_timestamps_do_not_reuse_another_frame) ... ok
+test_slice_threads_have_identical_independent_state (test_affine_scanline_cache.AffineScanlineTests.test_slice_threads_have_identical_independent_state) ... ok
+test_static_extreme_anchors_rotations_and_scales_match_old_pixels (test_affine_scanline_cache.AffineScanlineTests.test_static_extreme_anchors_rotations_and_scales_match_old_pixels) ... ok
+test_transparent_hidden_rgb_does_not_pollute_partial_alpha (test_affine_scanline_cache.AffineScanlineTests.test_transparent_hidden_rgb_does_not_pollute_partial_alpha) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 20.454s
+
+OK
+AEK_RESULT={"methods": 8, "skipped": 0, "failures": 0, "errors": 0, "success": true}

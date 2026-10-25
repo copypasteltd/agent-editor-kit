@@ -1,0 +1,185 @@
+[
+  {
+    "id": "configure",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\projection-scanline-kit-r1\\独立工具 包\\scripts\\activate_community_runtime.py",
+      "--installed",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.17\\final-r1\\installed",
+      "--packs",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-portable-r1\\模型 包",
+      "--voice-cuda-lib",
+      "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\lib",
+      "--translation-cuda-lib",
+      "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.4\\bin",
+      "--semantic-config",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\semantic-runtime.json"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "3d60df32de4502eb1b084e0c796fc32e50926f44862d31011fab92b704373393",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "register",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\projection-scanline-kit-r1\\独立工具 包\\register-agent-ffmpeg-local-skills.ps1",
+      "-SkillsDirectory",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\projection-scanline-kit-r1\\isolated-discovery",
+      "-ReceiptPath",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\projection-scanline-20261026-r1\\kit-r1\\registration.json"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "bc63b29201484abcc00c27cb42080a58dbf16fb4f913163c30354fd9b66330e4",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "version",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\projection-scanline-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "60c2bc222db1992eac4ced72faabba711b24876939776e3e91606429753e6f8f",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "capabilities",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\projection-scanline-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "capabilities"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "378e7e6316927c3286961028dcb1536b0454300f5f69e12531b1934046b9f5e7",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "motion-help",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\projection-scanline-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "motion",
+      "pack",
+      "apply",
+      "--help"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "34c1810a69306e1c557c3efe922f46b69a2972dde6f233c30d329a0f90d21a79",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "import-case",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\projection-scanline-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\motion-pack-20261025-installed-r1\\editable-motion.aevpkg.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\projection-scanline-kit-r1\\独立验收 工程"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "d3866de0188222dcea10fb3c7b97dbd60f99cdae6760b4d059e731cf1201008d",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "motion-inspect",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\projection-scanline-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "motion",
+      "pack",
+      "inspect",
+      "--name",
+      "arc_push"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "79eba9eaf6315a442a4823309bd4df345ad05a1799803137db557eeecdd3bab7",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "motion-dry-run",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\projection-scanline-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "motion",
+      "pack",
+      "apply",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\projection-scanline-kit-r1\\独立验收 工程",
+      "--sequence-id",
+      "reused_arc",
+      "--clip-id",
+      "reused_hero",
+      "--name",
+      "arc_push",
+      "--replace",
+      "--dry-run"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "41f40e486da4a032c643452492a6ee3ff38af66deed9fd39448acdd62532ab04",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "validate",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\projection-scanline-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\projection-scanline-kit-r1\\独立验收 工程"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "f398543c6e33b1aedbc1ffc62ae359527cd1eab19ac0900015c61a03d535f918",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

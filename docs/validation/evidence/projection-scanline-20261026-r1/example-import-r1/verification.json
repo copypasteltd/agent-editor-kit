@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "started_at_utc": "2026-10-25T17:30:52.931708+00:00",
+  "affinity": {
+    "original_mask": 4095,
+    "selected_mask": 15,
+    "logical_processors": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "scope": "This evidence process and its children only; not an isolated host benchmark."
+  },
+  "native_windows": true,
+  "virtualization": false,
+  "real_registered_skill": true,
+  "source_fallback": false,
+  "human_listening": false,
+  "continuous_playback": false,
+  "finished_at_utc": "2026-10-25T17:32:38.553818+00:00",
+  "package": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\projection-scanline-20261026-r2\\editable-projection.aevpkg.zip",
+  "package_sha256": "06180c1d6642152273ab9bf88429e540bca30cc71bfcf703dc6a4aaba9e94d24",
+  "package_unchanged": true,
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\projection-scanline-20261026-example-r1\\客户 示例",
+  "compared_frames": 120,
+  "frames_equal": true,
+  "audio_pcm_equal": true,
+  "result_sha256": "bc3e92d41a765919ee13b376c7a71bed701a5196bf588d74e7650bd0368541df",
+  "process_calls": 5,
+  "new_model_forwards": 0,
+  "scope": "Relocated published editable case; lossless encoded comparison, not playback/listening acceptance."
+}

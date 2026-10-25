@@ -57,14 +57,17 @@ def projection_budget(groups: dict[str, dict[str, Any]], config: dict[str, Any])
     return result
 
 
-def area_rectangle(name: str) -> str:
+def area_rectangle(name: str, *, left: str = 'ld(8)', right: str = 'ld(9)',
+                   top: str = 'ld(2)', bottom: str = 'ld(3)',
+                   width: str = 'ld(4)', height: str = 'ld(5)') -> str:
     """Integrate piecewise-constant premultiplied pixels over fractional edges.
 
     FFmpeg *sum() queries round coordinates to integers. Interpolate four
     integer prefixes at each continuous edge instead. Registers supplied by
     the caller: 8/9 = left/right, 2/3 = top/bottom, 4/5 = full kernel width/height.
     The rectangle is clipped to the crop but normalization includes transparency
-    beyond it. No additional geq registers are needed (there are only ten).
+    beyond it. Callers may supply read-only expressions instead of registers;
+    this lets scanline constants survive pixel evaluation within ten registers.
     """
     def prefix(x: str, y: str) -> str:
         ix, iy = f'floor({x})', f'floor({y})'
@@ -74,5 +77,5 @@ def area_rectangle(name: str) -> str:
                 f'+{fx}*(1-{fy})*{function}({ix},{iy}-1)'
                 f'+(1-{fx})*{fy}*{function}({ix}-1,{iy})'
                 f'+{fx}*{fy}*{function}({ix},{iy}))')
-    return (f"({prefix('ld(9)','ld(3)')}-{prefix('ld(8)','ld(3)')}"
-            f"-{prefix('ld(9)','ld(2)')}+{prefix('ld(8)','ld(2)')})/(ld(4)*ld(5))")
+    return (f"({prefix(right,bottom)}-{prefix(left,bottom)}"
+            f"-{prefix(right,top)}+{prefix(left,top)})/({width}*{height})")

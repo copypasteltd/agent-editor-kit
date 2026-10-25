@@ -1,0 +1,37 @@
+usage: ai-ad-editor motion pack apply [-h] [--format {json,text}]
+                                      [--request-id REQUEST_ID]
+                                      [--idempotency-key IDEMPOTENCY_KEY]
+                                      [--dry-run] [--no-network]
+                                      [--progress {none,jsonl}]
+                                      [--timeout-seconds TIMEOUT_SECONDS]
+                                      [--cancel-file CANCEL_FILE]
+                                      (--input INPUT |
+                                      --name {orbit_focus,arc_push,bezier_sweep,whip_settle,breathe_float,detail_scan})
+                                      --project PROJECT
+                                      [--sequence-id SEQUENCE_ID]
+                                      [--track-id TRACK_ID] --clip-id CLIP_ID
+                                      [--param PARAM]
+                                      [--start-tick START_TICK]
+                                      [--end-tick END_TICK] [--replace]
+
+options:
+  -h, --help            show this help message and exit
+  --format {json,text}  输出格式
+  --request-id REQUEST_ID
+  --idempotency-key IDEMPOTENCY_KEY
+  --dry-run
+  --no-network
+  --progress {none,jsonl}
+  --timeout-seconds TIMEOUT_SECONDS
+  --cancel-file CANCEL_FILE
+  --input INPUT         本地运镜包 JSON
+  --name {orbit_focus,arc_push,bezier_sweep,whip_settle,breathe_float,detail_scan}
+                        内置包稳定 ID
+  --project PROJECT
+  --sequence-id SEQUENCE_ID
+  --track-id TRACK_ID
+  --clip-id CLIP_ID
+  --param PARAM         NAME=有限数字；可多次指定，不能重复
+  --start-tick START_TICK
+  --end-tick END_TICK
+  --replace             显式替换包涉及的整条已有属性轨

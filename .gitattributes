@@ -1577,3 +1577,20 @@ docs/product/affine-scanline-capabilities-cli-0.1.17.json -text -whitespace
 scripts/*affine_scanline*20261025.py text eol=lf
 docs/specs/仿射扫描行复用契约_20261025.md text eol=lf
 docs/validation/仿射扫描行复用实测_2026-10-25.md text eol=lf
+
+# Projection scanline evidence preserves the actual native command output.
+docs/validation/evidence/projection-scanline-20261026-r1/** -text -whitespace
+docs/assets/projection-scanline-20261026-r1/** -text -whitespace
+docs/assets/projection-scanline-20261026-r2/** -text -whitespace
+docs/product/projection-scanline-capabilities-cli-0.1.18.json -text -whitespace
+docs/skills/community-unified-skill-package-0.1.18.json -text -whitespace
+docs/product/projection-scanline-capabilities-cli-0.1.19.json -text -whitespace
+docs/skills/community-unified-skill-package-0.1.19.json -text -whitespace
+docs/skills/community-unified-skill-package-0.1.19-r20.json -text -whitespace
+scripts/*projection_scanline*20261026.py text eol=lf
+scripts/verify_projection_example_20261026.py text eol=lf
+docs/releases/CLI_0.1.18_LOCAL.md text eol=lf
+docs/releases/CLI_0.1.19_LOCAL.md text eol=lf
+docs/specs/OpenCL投影候选接口_20261026.md text eol=lf
+docs/specs/裁切与序列投影参数复用契约_20261026.md text eol=lf
+docs/validation/裁切与序列投影实测_2026-10-26.md text eol=lf

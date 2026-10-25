@@ -1,0 +1,9 @@
+usage: ai-ad-editor convert export [-h] [--format {json,text}]
+                                   [--request-id REQUEST_ID]
+                                   [--idempotency-key IDEMPOTENCY_KEY]
+                                   [--dry-run] [--no-network]
+                                   [--progress {none,jsonl}] --project PROJECT
+                                   --output OUTPUT
+                                   [--target-format {agent-json,package,otio,kdenlive-xml,jianying-draft-json}]
+                                   [--strict]
+ai-ad-editor convert export: error: argument --format: invalid choice: 'agent-project' (choose from json, text)

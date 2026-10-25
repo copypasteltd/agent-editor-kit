@@ -1,0 +1,9 @@
+Initial documentation-only audit, 2026-10-25:
+AssertionError: README.md F IDs counted F01-F43, expected F01-F50.
+The checker matched only a standalone first cell, omitting existing combined
+labels such as "F44 / M01". No product command or README feature failed.
+The initial executed auditor is retained as executed-documentation-auditor.py.
+The revised auditor accepts the existing combined labels and still requires
+50 distinct functional IDs, 19 service IDs, 17 module IDs, 66 verification IDs,
+all 65 historical rows verbatim and all 38 original closure conditions.
+No historical rows, original closure conditions or feature scope were removed.

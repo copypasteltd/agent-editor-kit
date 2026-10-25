@@ -6,6 +6,8 @@
 
 <!-- /community-current -->
 
+最新差距复核：[完整 G01–G38 表与关闭条件](product/GOAL_GAPS_20261025.md) · [r9 实际安装版响应/官方发行 API](validation/evidence/goal-gaps-20261025-r9/inventory.json) · [历史编号与文档审计](validation/evidence/goal-gaps-20261025-r9/documentation-audit.json)。CLI 0.1.8 仍是有限功能集，全部 38 组各有未满足条件；此次只读盘点没有新增模型/渲染或质量验收。All original closure conditions and historical README rows are preserved.
+
 [简体中文](../README.md) · [繁體中文](../README.zh-TW.md) · [English](../README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit) · [Local package parts](releases/v0.1.0-alpha.3/artifacts)
 
 当前本机安装为 **v0.1.0-alpha.4-local.6 / CLI 0.1.8 / 独立四轨分离 / GPU 配音与翻译 / 359 项资源**；公开预发布仍为 **alpha.3 / CLI 0.1.2**。500 套风格与 **1 个 Skill / 17 项内部模块**继续保留，完整剪映等价仍未验收。Local CLI 0.1.8 includes independent four-source separation and the community/GPU extension; published alpha.3 downloads retain CLI 0.1.2. Use the matching application, kit and model pins.

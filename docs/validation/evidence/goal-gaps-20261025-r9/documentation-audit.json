@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-10-25T01:44:55.603661+00:00",
+  "baseline_commit": "ebf9153aca94a0f58c73cd66aab4e0ca7deb0855",
+  "all_original_G01_G38_closure_conditions_verbatim": true,
+  "historical_R01_R65_verbatim_in_three_readmes": true,
+  "numbered_rows": {
+    "F": 50,
+    "S": 19,
+    "K": 17,
+    "R": 66
+  },
+  "local_links_checked": 1010,
+  "missing_local_links": [],
+  "new_product_features": 0,
+  "initial_documentation_audit_failed_due_to_id_regex": true,
+  "new_renders": 0,
+  "new_model_forwards": 0,
+  "human_listening": false,
+  "full_capcut_parity": false,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "b6430fd03b5fb8e7e22d157738f39a193f37dddb9525996655ded0f564faac37"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "sha256": "298f78e7afad4d556560cd8c7c99472fb181cac960decc60824211a2527033e4"
+    },
+    {
+      "path": "README.en.md",
+      "sha256": "021e3f3760ebe1b04d75017b63a2575c57e4743b5cd4d16147255b796e2e1fca"
+    },
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "sha256": "0c78480edfe723cbea617740001a11ddb4ce1d0dc9d1218a649d370c2c3a14d7"
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "c78fbec740fde4e463820b1587184866baa05abdf5b00602ffe6055611c063b8"
+    },
+    {
+      "path": "docs/product/IMPLEMENTATION_PLAN_20261025.md",
+      "sha256": "e3c531154774875bf5a9a19313f5583ba107010c75e4a9755520e2dcb29e0e4c"
+    }
+  ],
+  "generator_sha256": "ab15ea5a4e5cd3b59b03046568d0515b5a8d947772f30f527345756dea1802e8"
+}

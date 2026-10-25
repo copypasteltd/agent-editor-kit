@@ -657,12 +657,13 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R63 | 實際字幕成片與工程包 | 10 次 CLI/1 前向，236 影格；工程往返 PCM/逐格 RGB 相同 | [C17 / GIF](docs/product/CASES.md#c17-ctc-activity) · [Actual render](docs/validation/evidence/ctc-activity-20261025-r1/demo-r1/verification.json); 2026-10-25; silent diagnostic, no human listening/continuous playback |
 | R64 | 統一 Skill r7 | 81 檔案/63 Skill 檔案，1 註冊入口/17 內部模組；隔離核驗 8 次行程呼叫 | [Actual Skill](docs/validation/evidence/ctc-activity-20261025-r1/skill-r1/state.json) · [r7 kit](docs/validation/evidence/ctc-activity-20261025-r1/kit-r1/verification.json); 2026-10-25; same physical host, weights separate |
 | R65 | 最新完整目標評估 | 真實註冊入口另 6 次唯讀；74 項宣告/38 組差距保留，全部原關閉條件不變 | [38 numbered gaps](docs/product/GOAL_GAPS_20261025.md) · [Read-only inventory/API](docs/validation/evidence/goal-gaps-20261025-r8/inventory.json); 2026-10-25; public alpha.3 / CLI 0.1.2; no full CapCut acceptance |
+| R66 | 目前目標差距再次核對 | 實際統一 Skill 6 次唯讀呼叫成功；CLI 0.1.8，195 個原始碼/安裝版 Python 檔案一致；38 組仍有未滿足條件 | [完整編號差距與關閉條件](docs/product/GOAL_GAPS_20261025.md) · [實際回應與官方發行 API](docs/validation/evidence/goal-gaps-20261025-r9/inventory.json) · [文件稽核](docs/validation/evidence/goal-gaps-20261025-r9/documentation-audit.json)；2026-10-25，0 新算繪/推論/人工聽審，未重跑歷史回歸；公開仍為 alpha.3 / CLI 0.1.2 |
 
 ## 當前邊界與開發方向
 
 當前可交付的是有明確契約、離線可運行、可編輯、可復查的 Agent CLI 閉環。完整開源素材/模板生態、約定的 AI 特效/美顏/排版、完整色彩管線、指定草稿版本的真實轉換品質、廣泛自然視聽和長片資源性能仍需開發與驗收。消費級 GUI、賬號、云協作及任意私有版本無損轉換不屬於當前內核收口門檻。後續 Float32 轉場/運行時閉包候選 R113/R114 未隨本版提供。
 
-[目前完整目標差距表](docs/product/GOAL_GAPS_20261025.md)按 CLI 0.1.8 更新全部 G01–G38。單一 Skill、500 風格/預覽、359 資源、GPU 配音/翻譯、四軌/恢復及受控詞活動邊界已交付；自然視聽、複雜組合、進階 AI、內容範本、Agent 自主任務、長片可靠性和新版公開包仍開放。R60–R65 分別記錄真實執行及限制，不給出總體完成率。[2026-10-24 評估](docs/product/GOAL_GAPS_20261024.md)是歷史快照。
+[目前完整目標差距表](docs/product/GOAL_GAPS_20261025.md)按 CLI 0.1.8 更新全部 G01–G38。單一 Skill、500 風格/預覽、359 資源、GPU 配音/翻譯、四軌/恢復及受控詞活動邊界已交付；自然視聽、複雜組合、進階 AI、內容範本、Agent 自主任務、長片可靠性和新版公開包仍開放。R60–R66 分別記錄真實執行及限制，不給出總體完成率。[2026-10-24 評估](docs/product/GOAL_GAPS_20261024.md)是歷史快照。
 
 
 

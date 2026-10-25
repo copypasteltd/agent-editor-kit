@@ -206,8 +206,11 @@ def execute(args):
         cancel = Path(args.cancel_file)
         cancel = (cancel if cancel.is_absolute() else root/cancel).resolve()
     checkpoint(deadline,cancel)
-    if (args.source_language=='en') == (args.target_language=='en'):
-        raise argument_error('当前联合流程支持中英双向','from/to')
+    preserve_text = args.source_language == args.target_language
+    if not preserve_text and (args.source_language=='en') == (args.target_language=='en'):
+        raise argument_error('联合流程支持中英双向或同语种保留原文；简繁转换请先显式处理','from/to')
+    if preserve_text and args.glossary:
+        raise argument_error('同语种保留原文不会应用译后术语替换；请先显式校正文案','glossary')
     if not 1<=args.threads<=8 or not 1<=args.beam_size<=8:
         raise argument_error('threads/beam-size 必须为 1–8','threads/beam_size')
     if not all(math.isfinite(v) and .5<=v<=2 for v in (args.speed,args.max_speed)) or (args.fit=='speed' and args.max_speed<args.speed):
@@ -244,7 +247,7 @@ def execute(args):
             raise argument_error('音色不存在或与目标语言不匹配','voice')
         cue['voice'] = voices[ident]
     terms = glossary(args.glossary)
-    contexts = {task:model_context(args,task) for task in ('translation','voice')}
+    contexts = {task:model_context(args,task) for task in (('voice',) if preserve_text else ('translation','voice'))}
     checkpoint(deadline,cancel)
     ident = args.id or new_id('dub')
     assert_id(ident,'id')
@@ -255,7 +258,8 @@ def execute(args):
         output_directory=str(destination),fit=args.fit,base_speed=args.speed,max_speed=args.max_speed,
         overlap_policy=args.overlap_policy,subtitle_mode=args.subtitle_mode,timeline_start_tick=args.timeline_start_tick,
         devices={task:context['device'] for task,context in contexts.items()},applied=args.apply,
-        actual_audio_duration_known=False,model_inference=False,review_required=True)
+        actual_audio_duration_known=False,model_inference=False,review_required=True,
+        text_mode='preserve-original' if preserve_text else 'translate')
     if args.dry_run:
         return plan
     operation = new_id('op_dub')
@@ -264,10 +268,13 @@ def execute(args):
         stage.mkdir()
         (stage/'source.srt').write_bytes(source_bytes)
         pair = 'en-zh' if args.source_language=='en' else 'zh-en'
-        translated,translation_attempts = run_model(root,job,contexts['translation'],'translate',dict(pair=pair,
-            texts=[c['text'] for c in cues],source_language=args.source_language,target_language=args.target_language,
-            threads=args.threads,beam_size=args.beam_size),deadline,cancel)
-        texts = translated.get('output')
+        if preserve_text:
+            texts,translation_attempts = [c['text'] for c in cues],[]
+        else:
+            translated,translation_attempts = run_model(root,job,contexts['translation'],'translate',dict(pair=pair,
+                texts=[c['text'] for c in cues],source_language=args.source_language,target_language=args.target_language,
+                threads=args.threads,beam_size=args.beam_size),deadline,cancel)
+            texts = translated.get('output')
         if not isinstance(texts,list) or len(texts)!=len(cues) or not all(isinstance(t,str) and t.strip() and len(t)<=3000 for t in texts):
             raise AppError('DUBBING_TRANSLATION_INVALID','翻译数量/文本无效或单段过长',exit_code=6)
         edits = apply_glossary([c['text'] for c in cues],texts,terms)
@@ -291,9 +298,9 @@ def execute(args):
         report = dict(format=FORMAT,operation_id=operation,source_language=args.source_language,target_language=args.target_language,
             plan=plan,glossary_edits=edits,translation_attempts=translation_attempts,voice_attempts=voice_attempts,
             timing_scope='cue_windows_not_phonetic_alignment_or_lip_sync',human_semantic_acceptance=False,
-            human_listening=False,truncation=False,cues=[])
+            human_listening=False,truncation=False,cues=[],text_mode=plan['text_mode'])
         translated_cues = [dict(c,text=t) for c,t in zip(cues,texts)]
-        bilingual_cues = [dict(c,text=c['text']+'\n'+t) for c,t in zip(cues,texts)]
+        bilingual_cues = [dict(c,text=t if preserve_text else c['text']+'\n'+t) for c,t in zip(cues,texts)]
         (stage/'translated.srt').write_text(cues_to_srt(translated_cues,preserve_order=True),encoding='utf-8')
         (stage/'bilingual.srt').write_text(cues_to_srt(bilingual_cues,preserve_order=True),encoding='utf-8')
         ledger = load_ledger(root)
@@ -337,7 +344,7 @@ def execute(args):
             publish.append((stage/name,target))
             model_refs[task] = ref
         source_asset = register(stage/'source.srt','subtitle',[],dict(duration_tick=max(c['end_ms'] for c in cues)*tps//1000,subtitle_cues=len(cues)))
-        translation_asset = register(stage/'translated.srt','subtitle',[source_asset['id'],model_refs['translation']],source_asset['probe'])
+        translation_asset = register(stage/'translated.srt','subtitle',[source_asset['id']]+([model_refs['translation']] if 'translation' in model_refs else []),source_asset['probe'])
         bilingual_asset = register(stage/'bilingual.srt','subtitle',[source_asset['id'],translation_asset['id']],source_asset['probe'])
         for cue,text,row in zip(cues,texts,measured):
             registered = []

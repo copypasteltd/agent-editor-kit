@@ -2,23 +2,23 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.13 / alpha.4-local.11。** One registered Skill / 17 modules;
+**Current local / 当前本机 / 目前本機：CLI 0.1.14 / alpha.4-local.12 / r13 kit。** One registered Skill / 17 modules;
 joint subtitle translation/dubbing, CTC activity boundaries, managed job recovery, independent four-source
 separation, offline image/text retrieval, GPU speech/translation and 359 resources. Public alpha.3 remains CLI 0.1.2.
-[Semantic package workflow](SEMANTIC_PROJECT_PACKAGE.md) · [Semantic recovery](SEMANTIC_JOB_RECOVERY.md) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](semantic-control-capabilities-cli-0.1.13.json) ·
+[Semantic package workflow](SEMANTIC_PROJECT_PACKAGE.md) · [Semantic recovery](SEMANTIC_JOB_RECOVERY.md) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](ad-storyboard-capabilities-cli-0.1.14.json) ·
 [Subtitle dubbing workflow](SUBTITLE_DUBBING.md) · [CTC limits](CTC_ACTIVITY_ALIGNMENT.md) ·
 [All 38 remaining gap groups](GOAL_GAPS_20261025.md).
 Cue-window fit does not establish semantics, natural listening, word precision or lip sync.
 
 <!-- /community-current -->
 
-[README](../../README.zh-TW.md) · [Machine response](semantic-control-capabilities-cli-0.1.13.json) · [Module data](module-catalog.json)
+[README](../../README.zh-TW.md) · [Machine response](ad-storyboard-capabilities-cli-0.1.14.json) · [Module data](module-catalog.json)
 
 | 編號 | 功能模塊 | 具體行為與輸入 → 輸出 | 入口 | 依賴/邊界 |
 |---|---|---|---|---|
 | F01 | Agent 調用協議 | 任務參數 → JSON 響應、退出碼、錯誤、warning、產物與 provenance；能力與 schema 可查詢。 | `version; doctor; capabilities; schema show` | Skill 組織任務，CLI 執行；沒有後臺云端 Agent 服務。 |
 | F02 | 可編輯專案 | 創建/檢查 Agent Project，保存資產、序列、軌道、ticks 時鐘、輸出配置和權利引用。 | `project init/inspect` | 源媒體與專案元資料分離，移動工程後需重鏈並復核證據路徑。 |
-| F03 | 事務、恢復與快照 | 中繼資料事務/快照；原生子程序樹歸屬；明確復原四軌及字幕配音持久化暫存與未提交輸出。  新增語義登記/索引/校準/檢索的受管任務。| `project snapshot/restore/migrate/recover; operation inspect` | 整棵已引用語義目錄保護；活躍/變化/未知/舊快取保留。僅已接入任務，不是模型續算；同步校驗可能延遲逾時。 |
+| F03 | 事務、恢復與快照 | 中繼資料事務/快照；原生子程序樹歸屬；明確復原四軌及字幕配音持久化暫存與未提交輸出。  新增語義登記/索引/校準/檢索的受管任務。| `project snapshot/restore/migrate/recover; operation inspect` | 整棵已引用語義目錄保護；活躍/變化/未知/舊快取保留。僅已接入任務，不是模型續算；目前完整性讀取已回應逾時/取消；其他 worker/OS 阻塞 I/O 仍有邊界。 |
 | F04 | 素材導入與重鏈 | 本地圖片/影片/音頻/字體 → 探測結果、穩定資產 ID、雜湊和來源記錄。 | `media ingest/relink` | 不抓取在線素材；導入不自動證明商業授權。 |
 | F05 | 代理、縮略圖與波形 | 素材 → 輕量代理、圖片縮略圖、音頻波形、可核查聯系表。 | `media prepare/contact-sheet` | 聯系表是抽樣證據；不代表逐影格視覺理解。 |
 | F06 | 鏡頭、靜音與高光分析 | 本地影片/音頻 → 切鏡、靜音、節拍或啟發式高光候選與時間證據。 | `media understand/highlights` | 高光是啟發式候選，語義判斷需要 Agent/已註冊適配器復核。 |
@@ -66,7 +66,8 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 | F48 | 配樂準備與聲音混合 | 實際音樂/人聲資產 → 擷取、迴圈、淡入淡出、明確增益與人聲閃避混音。 | `music prepare/mix` | 保留原分軌，不靜默裁人聲；不作曲、不自動修復迴圈接縫或保證畫面語義匹配。 |
 | F49 | 原生擷取 | 明確視窗/螢幕/區域/攝影機/麥克風 → 有限錄製、CPU/NVENC、取消與專案資產登記。 | `capture devices/record` | 真實視窗 CPU/GPU 已驗；攝影機/麥克風、聯合音畫同步、裝置故障與長錄製未驗。 |
 | F50 | 離線圖文語義檢索與條件選擇 | 本地索引、中英/參考圖、同影格正負條件、經驗校準檔案、實際預覽/來源時間及可編輯引用。 | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | 專案包按需衍生路徑繫結；同機 80 條遷移決策保留，仍有 3 條已知錯誤；執行環境另備，G26/G31 開放 |
-| F51 | 字幕翻譯配音聯合流程 | 普通中英 SRT、明確音色/軌道 → 譯文、完整批次 WAV、實際時窗、可編輯聲音/雙語字幕與原子提交。 | `dub subtitles` | 批內復用初始化；保留原聲/重試/錯譯；cue 時窗不證明精確字詞、自然韻律或口型同步。 |
+| F51 | 字幕翻譯配音聯合流程 | 普通中英 SRT、明確音色/軌道 → 譯文或保留同語種原文、完整批次 WAV、實際時窗、可編輯聲音/字幕及原子提交。 | `dub subtitles` | 同語種只初始化配音模型；保留原聲/重試/錯譯；cue 時窗不證明字詞精度、自然韻律或口型同步。 |
+| F52 | 可編輯廣告分鏡與返工 | 已確認 brief/實際素材 → 多畫幅與時長的畫面/字幕/配音/源音/配樂獨立軌道；按鏡頭及變體局部改稿。 | `ad storyboard/build/revise` | 整影格分配、原素材位元組鎖、實際字型排版和完整配音時窗；不自動創造賣點或決定素材語義。 |
 
 | 編號 | 服務模塊 | 運行形式 | 需要什么/提供什么 | 入口 | 範圍 |
 |---|---|---|---|---|---|
@@ -4015,9 +4016,40 @@ Cue-window fit does not establish semantics, natural listening, word precision o
     "highlight_rough_cut_apply",
     "local_ad_plan",
     "local_ad_plan_apply",
+    "editable_ad_storyboard",
+    "multiformat_ad_variants",
+    "scoped_ad_shot_revision",
     "local_template_tracking",
     "offline_model_registry"
   ],
+  "ad_storyboard": {
+    "engine": "agent-ad-storyboard-v1",
+    "commands": [
+      "ad.storyboard",
+      "ad.build",
+      "ad.revise"
+    ],
+    "features": [
+      "explicit_brief_and_local_assets",
+      "rational_fps_frame_apportionment",
+      "independent_variant_canvases_and_durations",
+      "editable_picture_caption_voice_source_music_tracks",
+      "same_language_reviewed_subtitle_voice_batch",
+      "native_input_read_locks",
+      "plan_and_project_digest_gates",
+      "complete_voice_window_gate",
+      "font_metric_overflow_gate",
+      "scoped_revision_preserves_unselected_edits",
+      "snapshot_and_atomic_project_commit"
+    ],
+    "limits": [
+      "creative_decisions_supplied_by_caller",
+      "no_implicit_semantic_selection_or_claim_generation",
+      "no_implicit_voice_truncation_or_music_loop",
+      "complex_manual_clip_splits_require_explicit_replanning",
+      "natural_ad_quality_and_independent_agent_benchmark_pending"
+    ]
+  },
   "network": "disabled",
   "asr_contract": "asr.adapter_registers_explicit_native_python_safetensors_and_evidence_for_hash_verified_isolated_whisper_inference_and_subtitle_model_rights_dependencies_with_legacy_local_model_path_gates_preserved",
   "tts_contract": "tts.adapter_and_voice_register_explicit_local_soulx_artifacts_and_exact_transcript_then_tts.synthesize_hash_verifies_and_runs_isolated_native_python_without_network_or_downloads_and_registers_generated_wav_with_optional_audio_track_apply",

@@ -1544,3 +1544,12 @@ docs/skills/community-unified-skill-package-0.1.13.json -text -whitespace
 scripts/*semantic_control*20261025.py text eol=lf
 docs/specs/可中断完整性校验契约_20261025.md text eol=lf
 docs/validation/完整性校验超时取消实测_2026-10-25.md text eol=lf
+
+# Actual ad storyboard/model/encode receipts retain native stream bytes.
+docs/validation/evidence/ad-storyboard-20261025-r1/** -text -whitespace
+docs/assets/ad-storyboard-20261025-r1/** -text -whitespace
+docs/product/ad-storyboard-capabilities-cli-0.1.14.json -text -whitespace
+docs/skills/community-unified-skill-package-0.1.14.json -text -whitespace
+scripts/*ad_storyboard*20261025.py text eol=lf
+docs/specs/可编辑广告分镜与返工契约_20261025.md text eol=lf
+docs/validation/可编辑广告分镜与返工实测_2026-10-25.md text eol=lf

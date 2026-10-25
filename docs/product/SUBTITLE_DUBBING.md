@@ -1,5 +1,8 @@
 # 字幕翻译、分段配音与可编辑交付
 
+**CLI 0.1.14 新增：** 同语种 en/en、zh-Hans/zh-Hans 或 zh-Hant/zh-Hant 批量配音保持原文，只初始化配音模型，不加载翻译包、重复字幕或应用译后术语表。语音保持完整，仍检查实际时窗。用于[广告分镜流程](AD_STORYBOARD.md)。下文早期翻译/配音记录继续保留。
+
+
 [简体首页](../../README.md) · [繁體](../../README.zh-TW.md) · [English](../../README.en.md)
 
 CLI 0.1.9 的 `dub subtitles` 将本地 SRT 翻译、Kokoro 批量配音、实际时窗检查、

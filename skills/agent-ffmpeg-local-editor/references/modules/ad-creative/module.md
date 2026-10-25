@@ -4,7 +4,7 @@
 
 Product/audience/evidence → hooks/copy/scripts/variants
 
-Commands: `advisory; ad plan`. Advisory instructions without bundled media-generation models.
+Commands: `advisory; ad plan; ad storyboard; ad build; ad revise`. Advisory instructions without bundled media-generation models.
 
 ## Workflow
 
@@ -16,3 +16,5 @@ Use the credited upstream reference for detailed copy frameworks.
 ## Attributed resources
 
 [Upstream workflow](references/upstream/workflow.md) retains author, source commit and license. Use specific frameworks/helpers only when relevant; inspect their inputs and dependencies first. The shared runtime contract governs execution.
+
+For actual editable production, read [ad-storyboard.md](../../ad-storyboard.md): a reviewed brief plus actual assets becomes multiple canvases/durations, followed by selected-shot revision. Keep creative claims/evidence explicit and inspect every actual render.

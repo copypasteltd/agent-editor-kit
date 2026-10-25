@@ -1,0 +1,22 @@
+[
+  {
+    "name": "validate-actual-project",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.12\\final-r2\\installed\\run.py",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\project"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.868873799990979,
+    "stdout_sha256": "9e45adec150405cae8a3787c7d18a9796e948b2b18232a1b1a3efcbe809700ee",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

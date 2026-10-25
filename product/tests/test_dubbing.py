@@ -205,6 +205,32 @@ class DubbingWorkflowTests(unittest.TestCase):
         self.assertEqual(before,self.baseline())
         self.assertFalse((self.root/'cache/managed-jobs').exists())
 
+    def test_same_language_batch_preserves_text_and_initializes_voice_only(self):
+        flags = self.apply_tracks()
+        code,result = self.run_command(*flags,'--to','zh-Hans')
+        self.assertEqual(code,0,result)
+        report = json.loads(Path(result['data']['report']).read_bytes())
+        self.assertEqual(report['text_mode'],'preserve-original')
+        self.assertEqual(report['translation_attempts'],[])
+        self.assertEqual(set(report['model_rights_refs']),{'voice'})
+        self.assertEqual([c['source_text'] for c in report['cues']],[c['translation'] for c in report['cues']])
+        self.assertEqual([c['text'] for c in self.calls[0]['payload']['segments']],['你好','继续前进'])
+        self.assertEqual([c['task'] for c in self.calls],['voice'])
+        self.assertEqual(dubbing_cli.model_context.call_args_list[0].args[1],'voice')
+        self.assertEqual(dubbing_cli.model_context.call_count,1)
+        self.assertFalse((Path(result['data']['report']).parent/'translation-MODEL-SOURCE.txt').exists())
+        shown=[c['subtitle']['text'] for c in result['data']['clips'] if 'subtitle' in c]
+        self.assertEqual(shown,['你好','继续前进'])
+
+    def test_same_language_dry_run_needs_no_translation_runtime(self):
+        before=self.baseline()
+        code,result=self.run_command('--to','zh-Hans','--dry-run')
+        self.assertEqual(code,0,result)
+        self.assertEqual(set(result['data']['devices']),{'voice'})
+        self.assertEqual(result['data']['text_mode'],'preserve-original')
+        self.assertEqual(self.calls,[])
+        self.assertEqual(self.baseline(),before)
+
     def test_apply_retains_source_translation_audio_and_portable_model_evidence(self):
         flags = self.apply_tracks()
         source = self.source.read_bytes()

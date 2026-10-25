@@ -38,7 +38,7 @@ def main():
         path = ROOT/('docs/product/CAPABILITIES'+suffix+'.md')
         original = text = path.read_text('utf-8-sig')
         canonical = (ROOT/readme).read_text('utf-8-sig')
-        for prefix, count in [('F', 51), ('S', 20)]:
+        for prefix, count in [('F', 52), ('S', 20)]:
             old_rows = list(re.finditer(r'^\| '+prefix+r'\d{2}\s*\|.*$', text, re.M))
             rows = re.findall(r'^\| '+prefix+r'\d{2}\s*\|.*$', canonical, re.M)
             assert len(rows) == count and old_rows
@@ -54,10 +54,10 @@ def main():
         # Captured versioned evidence replaces only current fields; explanatory
         # workflow sections and historical failure references stay intact.
         path.write_text(text, encoding='utf-8', newline='\n')
-        for prefix, count in [('F',51),('S',20)]:
+        for prefix, count in [('F',52),('S',20)]:
             assert len(re.findall(r'^\| '+prefix+r'\d{2}\s*\|',text,re.M))==count
         assert len(re.findall(r'^### `[^`]+`\s*$',text,re.M))==len(entries)
-        records.append(dict(path=path.relative_to(ROOT).as_posix(),functional_rows=51,service_rows=20,
+        records.append(dict(path=path.relative_to(ROOT).as_posix(),functional_rows=52,service_rows=20,
                             actual_capability_fields=len(entries),changed=text!=original))
     print(json.dumps(records,ensure_ascii=False))
 

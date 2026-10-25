@@ -613,6 +613,8 @@ def build_parser() -> argparse.ArgumentParser:
     ad_apply.add_argument("--sequence-id", default=None)
     ad_apply.add_argument("--replace-markers", action="store_true", help="替换计划中同 ID 的既有标记")
     ad_apply.add_argument("--preserve-duration", action="store_true", help="不把序列时长设置为计划时长")
+    from .ad_storyboard_cli import add_parsers as add_storyboard_parsers
+    add_storyboard_parsers(ads, _leaf_common)
 
     subtitle = subs.add_parser("subtitle", help="字幕解析、验证与规范化")
     ss = subtitle.add_subparsers(dest="action", required=True)
@@ -7225,6 +7227,8 @@ from .stem_separation_cli import command as stem_separation_command
 COMMANDS[('audio', 'separate-stems')] = lambda args: stem_separation_command(args, _envelope)
 from .dubbing_cli import command as dubbing_command
 COMMANDS[('dub', 'subtitles')] = lambda args: dubbing_command(args, _envelope)
+from .ad_storyboard_cli import ACTIONS as STORYBOARD_ACTIONS, command as storyboard_command
+COMMANDS.update({('ad', action): (lambda args: storyboard_command(args, _envelope, _operation)) for action in STORYBOARD_ACTIONS})
 
 
 def main(argv: list[str] | None = None) -> int:

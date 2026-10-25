@@ -1156,7 +1156,13 @@ def build_capability_manifest() -> dict[str, Any]:
             },
             "ai": {
                 "status": "local_adapter_only",
-                "features": ["offline_transformers_asr_gate", "registered_native_whisper_asr", "asr_model_integrity_registry", "asr_long_form_attention_mask", "subtitle_cer_evaluation", "ffmpeg_whisper_cpp_asr", "local_asr_subtitle_generation", "local_flite_tts", "registered_soulx_chinese_tts", "tts_voice_transcript_registry", "tts_generated_audio_asset_and_track_apply", "tts_model_voice_rights_dependencies", "heuristic_highlights", "highlight_rough_cut_apply", "local_ad_plan", "local_ad_plan_apply", "local_template_tracking", "offline_model_registry"],
+                "features": ["offline_transformers_asr_gate", "registered_native_whisper_asr", "asr_model_integrity_registry", "asr_long_form_attention_mask", "subtitle_cer_evaluation", "ffmpeg_whisper_cpp_asr", "local_asr_subtitle_generation", "local_flite_tts", "registered_soulx_chinese_tts", "tts_voice_transcript_registry", "tts_generated_audio_asset_and_track_apply", "tts_model_voice_rights_dependencies", "heuristic_highlights", "highlight_rough_cut_apply", "local_ad_plan", "local_ad_plan_apply", "editable_ad_storyboard", "multiformat_ad_variants", "scoped_ad_shot_revision", "local_template_tracking", "offline_model_registry"],
+                "ad_storyboard": {
+                    "engine": "agent-ad-storyboard-v1",
+                    "commands": ["ad.storyboard", "ad.build", "ad.revise"],
+                    "features": ["explicit_brief_and_local_assets", "rational_fps_frame_apportionment", "independent_variant_canvases_and_durations", "editable_picture_caption_voice_source_music_tracks", "same_language_reviewed_subtitle_voice_batch", "native_input_read_locks", "plan_and_project_digest_gates", "complete_voice_window_gate", "font_metric_overflow_gate", "scoped_revision_preserves_unselected_edits", "snapshot_and_atomic_project_commit"],
+                    "limits": ["creative_decisions_supplied_by_caller", "no_implicit_semantic_selection_or_claim_generation", "no_implicit_voice_truncation_or_music_loop", "complex_manual_clip_splits_require_explicit_replanning", "natural_ad_quality_and_independent_agent_benchmark_pending"],
+                },
                 "network": "disabled",
                 "asr_contract": "asr.adapter_registers_explicit_native_python_safetensors_and_evidence_for_hash_verified_isolated_whisper_inference_and_subtitle_model_rights_dependencies_with_legacy_local_model_path_gates_preserved",
                 "tts_contract": "tts.adapter_and_voice_register_explicit_local_soulx_artifacts_and_exact_transcript_then_tts.synthesize_hash_verifies_and_runs_isolated_native_python_without_network_or_downloads_and_registers_generated_wav_with_optional_audio_track_apply",

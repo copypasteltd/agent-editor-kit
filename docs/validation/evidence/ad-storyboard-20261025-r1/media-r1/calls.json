@@ -1,0 +1,238 @@
+[
+  {
+    "name": "vertical12-silent",
+    "argv": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\original-project-offline\\renders\\vertical12.mkv",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-c:v",
+      "libx264",
+      "-crf",
+      "18",
+      "-pix_fmt",
+      "yuv420p",
+      "-movflags",
+      "+faststart",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ad-storyboard-20261025-r1\\vertical12-silent.mp4"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "vertical12-gif",
+    "argv": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\original-project-offline\\renders\\vertical12.mkv",
+      "-an",
+      "-vf",
+      "fps=5,scale=240:-2:flags=lanczos,split[a][b];[a]palettegen[p];[b][p]paletteuse",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ad-storyboard-20261025-r1\\vertical12.gif"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "vertical12-frame",
+    "argv": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-ss",
+      "1.5",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\original-project-offline\\renders\\vertical12.mkv",
+      "-frames:v",
+      "1",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ad-storyboard-20261025-r1\\vertical12.png"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "vertical12-probe",
+    "argv": [
+      "ffprobe",
+      "-v",
+      "error",
+      "-count_frames",
+      "-show_streams",
+      "-of",
+      "json",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ad-storyboard-20261025-r1\\vertical12-silent.mp4"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "wide9-silent",
+    "argv": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\original-project-offline\\renders\\wide9.mkv",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-c:v",
+      "libx264",
+      "-crf",
+      "18",
+      "-pix_fmt",
+      "yuv420p",
+      "-movflags",
+      "+faststart",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ad-storyboard-20261025-r1\\wide9-silent.mp4"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "wide9-gif",
+    "argv": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\original-project-offline\\renders\\wide9.mkv",
+      "-an",
+      "-vf",
+      "fps=5,scale=240:-2:flags=lanczos,split[a][b];[a]palettegen[p];[b][p]paletteuse",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ad-storyboard-20261025-r1\\wide9.gif"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "wide9-frame",
+    "argv": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-ss",
+      "1.5",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\original-project-offline\\renders\\wide9.mkv",
+      "-frames:v",
+      "1",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ad-storyboard-20261025-r1\\wide9.png"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "wide9-probe",
+    "argv": [
+      "ffprobe",
+      "-v",
+      "error",
+      "-count_frames",
+      "-show_streams",
+      "-of",
+      "json",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ad-storyboard-20261025-r1\\wide9-silent.mp4"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "square9-silent",
+    "argv": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\original-project-offline\\renders\\square9.mkv",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-c:v",
+      "libx264",
+      "-crf",
+      "18",
+      "-pix_fmt",
+      "yuv420p",
+      "-movflags",
+      "+faststart",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ad-storyboard-20261025-r1\\square9-silent.mp4"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "square9-gif",
+    "argv": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\original-project-offline\\renders\\square9.mkv",
+      "-an",
+      "-vf",
+      "fps=5,scale=240:-2:flags=lanczos,split[a][b];[a]palettegen[p];[b][p]paletteuse",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ad-storyboard-20261025-r1\\square9.gif"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "square9-frame",
+    "argv": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-ss",
+      "1.5",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\original-project-offline\\renders\\square9.mkv",
+      "-frames:v",
+      "1",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ad-storyboard-20261025-r1\\square9.png"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "square9-probe",
+    "argv": [
+      "ffprobe",
+      "-v",
+      "error",
+      "-count_frames",
+      "-show_streams",
+      "-of",
+      "json",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ad-storyboard-20261025-r1\\square9-silent.mp4"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "revision-before",
+    "argv": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-ss",
+      "7.5",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\original-project-offline\\renders\\wide9.mkv",
+      "-frames:v",
+      "1",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ad-storyboard-20261025-r1\\revision-before.png"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "revision-after",
+    "argv": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-ss",
+      "7.5",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\original-project-offline\\renders\\wide9-revision.mkv",
+      "-frames:v",
+      "1",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ad-storyboard-20261025-r1\\revision-after.png"
+    ],
+    "exit_code": 0
+  }
+]

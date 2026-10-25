@@ -9,23 +9,47 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- semantic-control-current -->
+<!-- ad-storyboard-current -->
 
-**CLI 0.1.13 / alpha.4-local.11 / r12 kit** · 203 product Python files · 1 Skill / 17 modules. Integrity reads now observe timeout/cancellation, discard partial digests and preserve native locks/recovery. Three 1-second requests took 2.500 / 2.354 / 2.426s end to end; cancellation to exit took 0.188 / 0.054s. Per-command loading, three known query errors and the full goal remain open.
+**CLI 0.1.14 / alpha.4-local.12 / r13 kit** · 205 product Python files · 1 Skill / 17 modules. Reviewed ad brief→multiple canvases/durations→separate editable tracks→selected-shot revision→portable project package now runs end to end. New `ad storyboard/build/revise`; same-language GPU voice batches preserve copy and initialize once for three lines. Actual vertical 12s, wide/square 9s variants. Revising only the last 3s preserves the first 180 frames and decoded PCM; the registered Skill repeats a scoped revision.
+
+[Workflow / 使用流程](docs/product/AD_STORYBOARD.md) · [C23 / 原输入与实际输出](docs/product/CASES.md#c23-ad-storyboard) · [Evidence / 实测与边界](docs/validation/可编辑广告分镜与返工实测_2026-10-25.md)
+
+```powershell
+# Ingest actual assets and prepare the reviewed brief first; use the pinned Skill launcher below.
+& $avk ad storyboard --project $project --input "$project/brief.json" --output "$project/validation/ad-plan.json" --dry-run
+& $avk ad storyboard --project $project --input "$project/brief.json" --output "$project/validation/ad-plan.json"
+& $avk ad build --project $project --input "$project/validation/ad-plan.json"
+& $avk render --project $project --sequence-id ad_product_wide_sequence --output "$project/renders/wide.mp4"
+& $avk ad revise --project $project --input "$project/revision.json" --output "$project/validation/revision-1.json"
+& $avk ad build --project $project --input "$project/validation/revision-1.json"
+```
+
+![Actual wide ad / silent](docs/assets/ad-storyboard-20261025-r1/wide9.gif)
+
+Copy and asset choices are explicit caller inputs. This is an authored product-card ad, without natural-ad quality or independent Agent-success acceptance. The full goal remains active.
+
+Upgrade: old semantic projects pin their previous installation directory. Reusing them directly with the new runtime returns `SEMANTIC_ADAPTER_INTEGRITY_FAILED`. Retain the old runtime for reproduction; explicitly register/rebuild the relevant index and calibration for the new runtime. Old pins are preserved. [Observed upgrade rejection](docs/validation/evidence/ad-storyboard-20261025-r1/kit-r1/semantic-dry-run.stdout.txt)
+
+<!-- /ad-storyboard-current -->
+
+<!-- semantic-control-history -->
+
+**Historical / 历史 / 歷史：CLI 0.1.13 / alpha.4-local.11 / r12 kit** · 203 product Python files · 1 Skill / 17 modules. Integrity reads now observe timeout/cancellation, discard partial digests and preserve native locks/recovery. Three 1-second requests took 2.500 / 2.354 / 2.426s end to end; cancellation to exit took 0.188 / 0.054s. Per-command loading, three known query errors and the full goal remain open.
 
 [实际耗时/原始诊断](docs/validation/完整性校验超时取消实测_2026-10-25.md)
 
-<!-- /semantic-control-current -->
+<!-- /semantic-control-history -->
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r12 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r12.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r13 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r13.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
 <!-- community-materials-gpu -->
 
-**Local installed extension: CLI 0.1.13, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
+**Local installed extension: CLI 0.1.14, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
 
 [Complete workflow and limits](docs/product/COMMUNITY_MATERIALS.en.md) · [Resource catalog](docs/product/COMMUNITY_MATERIAL_CATALOG.md) · [103 named voices and actual audition scope](docs/product/COMMUNITY_VOICES.md) · [CPU evidence](docs/validation/evidence/community-materials-20261025-r1/cpu/verification.json) · [GPU evidence](docs/validation/evidence/community-materials-20261025-r1/gpu/verification.json).
 
@@ -325,7 +349,7 @@ The implementation is **Python CLI + Agent Project schema + FFmpeg**, with an ex
 5. For selection, show the original and a small candidate set, record final IDs/strength/scope and trial them on target media.
 6. Render to a new project-owned path, inspect the encoded output, manifest, warnings, A/V and rights, then export the project package.
 
-## 43 base functional modules, plus F44–F51 above
+## 43 base functional modules, plus F44–F52 above
 
 IDs locate documentation groups with dependencies/overlap; they are not 43 independent kernels or a completion score. The table describes behavior, commands and limits. The [complete machine capability manual](docs/product/CAPABILITIES.en.md) retains every field.
 
@@ -333,7 +357,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 |---|---|---|---|---|
 | F01 | Agent command protocol | Task arguments → JSON responses, exit codes, errors, warnings, artifacts and provenance; queryable capabilities and schema. | `version; doctor; capabilities; schema show` | Skills guide the task; the CLI executes it. No hosted Agent service. |
 | F02 | Editable projects | Create/inspect Agent Projects with assets, sequences, tracks, tick clocks, output settings and rights references. | `project init/inspect` | Source media and metadata are separate; relocation requires relinking and evidence-path review. |
-| F03 | Transactions, recovery and snapshots | Metadata transactions/snapshots, native child-tree ownership and explicit recovery of durable four-source/subtitle-dubbing workspaces and uncommitted outputs.  Adds managed semantic registration/index/calibration/search jobs.| `project snapshot/restore/migrate/recover; operation inspect` | Whole referenced semantic directories protected; active/changed/unknown/legacy paths retained. Only integrated jobs; no inference resume; synchronous checks may delay deadlines. |
+| F03 | Transactions, recovery and snapshots | Metadata transactions/snapshots, native child-tree ownership and explicit recovery of durable four-source/subtitle-dubbing workspaces and uncommitted outputs.  Adds managed semantic registration/index/calibration/search jobs.| `project snapshot/restore/migrate/recover; operation inspect` | Whole referenced semantic directories protected; active/changed/unknown/legacy paths retained. Only integrated jobs; no inference resume; current integrity reads observe deadlines/cancellation; other workers/OS blocking I/O retain limits. |
 | F04 | Media ingestion and relinking | Local images/video/audio/fonts → probe results, stable asset IDs, hashes and provenance. | `media ingest/relink` | No online-media fetching; ingestion does not establish commercial rights. |
 | F05 | Proxies, thumbnails and waveforms | Media → lightweight proxies, thumbnails, waveforms and auditable contact sheets. | `media prepare/contact-sheet` | Contact sheets are samples, not exhaustive visual understanding. |
 | F06 | Scene, silence and highlight analysis | Local video/audio → scene, silence, beat or heuristic highlight candidates and timing evidence. | `media understand/highlights` | Heuristic candidates require Agent or registered-adapter review for semantics. |
@@ -381,7 +405,8 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F48 | Music preparation and mixing | Actual music/speech assets → trim, loop, fades, explicit gain and speech-ducked mix. | `music prepare/mix` | Retains original stems and complete speech; no composition, automatic loop-seam repair or guaranteed visual semantic matching. |
 | F49 | Native capture | Explicit window/desktop/region/camera/microphone → finite recording, CPU/NVENC, cancellation and project assets. | `capture devices/record` | Actual CPU/GPU window evidence; camera/microphone, joint AV sync, device faults and long recording unaccepted. |
 | F50 | Offline visual semantic retrieval and conditions | Local index, Chinese/English/reference images, same-frame positive/negative clauses, empirical profiles, actual previews/source times and editable references. | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | URI-only portable semantic package; all 80 decisions retained with 3 known errors; same-host runtime pins remain external; G26/G31 open |
-| F51 | Joint subtitle translation/dubbing | Plain Chinese/English SRT and explicit voices/tracks → translations, complete batched WAV, actual fit, editable audio/bilingual captions and atomic application. | `dub subtitles` | Reuses initialization within the batch; retains originals/retries/awkward translations; cue fitting does not establish word timing, naturalness or lip sync. |
+| F51 | Joint subtitle translation/dubbing | Plain Chinese/English SRT and explicit voices/tracks → translation or preserved same-language copy, complete batched WAV, actual fit, editable audio/captions and atomic application. | `dub subtitles` | Same-language mode initializes only voice; preserves originals/retries/awkward translations; cue fit does not establish word precision, naturalness or lip sync. |
+| F52 | Editable ad storyboards and revision | Reviewed brief/actual assets → separate picture/caption/voice/source/music tracks for multiple canvases/durations; selected-shot/variant revisions. | `ad storyboard/build/revise` | Whole-frame allocation, actual asset locks, real font layout and complete voice-window checks; caller supplies claims and semantic choices. |
 
 ## Supported service modules and dependencies
 
@@ -508,7 +533,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.11/final-r1/installed/`, CLI 0.1.13. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.12/final-r2/installed/`, CLI 0.1.14. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -579,7 +604,7 @@ K01–K17 are internal modules, not separate registrations. Describe the outcome
 | K12 | [`reference-remake`](skills/agent-ffmpeg-local-editor/references/modules/reference-remake/module.md) | Reference pacing/layout remake | Local reference + replacement assets → editable remake | `media understand; timeline compose` | Rebuild structure; no automatic acquisition or rights grant. |
 | K13 | [`ffmpeg`](skills/agent-ffmpeg-local-editor/references/modules/ffmpeg/module.md) | Native media tools | Local files + settings → conversion/resize/extraction/compression | `native ffmpeg / ffprobe` | Native tools; inspect codec availability. |
 | K14 | [`video-edit`](skills/agent-ffmpeg-local-editor/references/modules/video-edit/module.md) | General video-edit workflows | Local files + edit instructions → trims/concat/overlays | `native ffmpeg; installed CLI` | Use timeline/editor for complex editable projects. |
-| K15 | [`ad-creative`](skills/agent-ffmpeg-local-editor/references/modules/ad-creative/module.md) | Ad creative and variants | Product/audience/evidence → hooks/copy/scripts/variants | `advisory; ad plan` | Advisory instructions without bundled media-generation models. |
+| K15 | [`ad-creative`](skills/agent-ffmpeg-local-editor/references/modules/ad-creative/module.md) | Creative planning, editable storyboards and variants | Product/audience/reviewed copy/actual assets → plans, independent sequences and scoped revisions | `advisory; ad plan; ad storyboard/build/revise` | Explicit creative decisions and claim evidence; no bundled video-generation model. |
 | K16 | [`video-content-strategist`](skills/agent-ffmpeg-local-editor/references/modules/video-content-strategist/module.md) | Video content strategy | Goals/audience/supplied references → direction/series/scripts | `advisory Skill` | No live trends, platform accounts or crawler. |
 | K17 | [`campaign-analytics`](skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/module.md) | Supplied campaign-data analysis | Local campaign tables → ROAS/CPA/funnel/suggestions | `advisory Skill` | No ad-platform connector; metrics depend on data/attribution assumptions. |
 
@@ -802,6 +827,14 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R99 | CPU/GPU and unified Skill regression | CPU/CUDA/actual Skill each preserve all 80 migrated decisions and scores exactly; three known query errors retained | [2026-10-25 evidence](docs/validation/evidence/semantic-control-20261025-r1/installed-r1/skill-cuda/verification.json) · [Scope](docs/validation/完整性校验超时取消实测_2026-10-25.md) |
 | R100 | Installed and locally loaded delivery | CLI 0.1.13 / local.11 / r12; 203 equal product files, 1 Skill/17 modules, four unchanged model packs verified; separate kit on the same host | [2026-10-25 evidence](docs/validation/evidence/semantic-control-20261025-r1/kit-r1/verification.json) · [Scope](docs/validation/完整性校验超时取消实测_2026-10-25.md) |
 | R101 | Delivery audit | All 38 original closure conditions and R01–R95 retained; no new natural-quality or human-listening acceptance; public release still alpha.3 | [2026-10-25 evidence](docs/validation/evidence/semantic-control-20261025-r1/final-delivery-r2/verification.json) · [Scope](docs/validation/完整性校验超时取消实测_2026-10-25.md) |
+| R102 | Installed byte identity | CLI 0.1.14 / local.12; 205 product Python files match the pinned installation; older bundles retained | [2026-10-25 evidence](docs/validation/evidence/ad-storyboard-20261025-r1/installation-r2/verification.json) · [Scope](docs/validation/可编辑广告分镜与返工实测_2026-10-25.md) |
+| R103 | Code and installed regression | Final source contracts 226/226; final installed focused suite 55/55; installed CLI 122/122; separate scopes, not additive | [2026-10-25 evidence](docs/validation/evidence/ad-storyboard-20261025-r1/tests/installed-r2/verification.json) · [Scope](docs/validation/可编辑广告分镜与返工实测_2026-10-25.md) |
+| R104 | Real same-language GPU voice | Three original lines retained; one CUDA voice initialization/three generations; no translation worker; complete speech stays local | [2026-10-25 evidence](docs/validation/evidence/ad-storyboard-20261025-r1/setup-finalize-r1/verification.json) · [Scope](docs/validation/可编辑广告分镜与返工实测_2026-10-25.md) |
+| R105 | Actual canvas variants | Vertical 12s/360 frames, wide/square each 9s/270; separate 270-frame NVENC check; does not imply GPU effects throughout | [2026-10-25 evidence](docs/validation/evidence/ad-storyboard-20261025-r1/render-continue-r1/verification.json) · [Scope](docs/validation/可编辑广告分镜与返工实测_2026-10-25.md) |
+| R106 | Selected-shot revisions | Installed runtime and registered Skill independently revise the last wide shot; first 180 frames/decoded PCM/unselected sequences/original assets retained | [2026-10-25 evidence](docs/validation/evidence/ad-storyboard-20261025-r1/skill-r1/verification.json) · [Scope](docs/validation/可编辑广告分镜与返工实测_2026-10-25.md) |
+| R107 | Editable package migration | With the original project unavailable, import retains three editable sequences and reproduces revised RGB/PCM exactly | [2026-10-25 evidence](docs/validation/evidence/ad-storyboard-20261025-r1/roundtrip-r1/verification.json) · [Scope](docs/validation/可编辑广告分镜与返工实测_2026-10-25.md) |
+| R108 | Unified Skill and kit | 1 Skill/17 modules, 66 Skill files; r13 tested in a separate Chinese/space directory on the same physical host | [2026-10-25 evidence](docs/validation/evidence/ad-storyboard-20261025-r1/kit-r2/verification.json) · [Scope](docs/validation/可编辑广告分镜与返工实测_2026-10-25.md) |
+| R109 | Delivery and preserved failures | R01–R101 and all 38 original closure conditions retained; old same-language rejection/recorder error/missing NVENC bitrate preserved; no natural-quality/listening acceptance | [2026-10-25 evidence](docs/validation/evidence/ad-storyboard-20261025-r1/final-delivery-r1/verification.json) · [Scope](docs/validation/可编辑广告分镜与返工实测_2026-10-25.md) |
 
 ## Current limits and development direction
 
@@ -813,7 +846,7 @@ Exact audio-channel relationship protection and native capture remain delivered 
 
 Use real client media and minimal reproducible projects to identify gaps, implement/check them individually and publish new versions without replacing prior bundles/digests/tags. Record actual successful artifacts rather than inferred completion.
 
-**Current delivery / 当前交付 / 目前交付（R96–R101，2026-10-25）：** CLI 0.1.13 / local.11 / r12; interruptible integrity reads, full hashes/native locks preserved. Per-command model loading and all original goal conditions remain open.
+**Current delivery / 当前交付 / 目前交付（R102–R109，2026-10-25）：** CLI 0.1.14 / local.12 / r13; editable ad variants, scoped revisions, same-language GPU voice and actual package rerender. All original goal conditions remain open.
 
 ## Documentation, provenance and maintenance
 

@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "kit": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\skills\\agent-editor-kit-community-unified-skill-r13.zip",
+  "kit_sha256": "2721bc5ddfc69bb43a1a860206ba70fcc5b13ee186756535d875eca76c97e9f3",
+  "files": 88,
+  "skill_files": 66,
+  "cli_version": "0.1.14",
+  "registered_skills": 1,
+  "internal_modules": 17,
+  "process_calls": 8,
+  "json_cli_calls": 5,
+  "real_discovery_changed": false,
+  "dry_run_metadata_unchanged": true,
+  "dry_run_assets_unchanged": true,
+  "scope": "Actual editable-ad revision dry-run and validation; does not rebind old semantic adapters.",
+  "prior_semantic_upgrade_failure_preserved": "kit-r1/failure.json",
+  "new_model_forwards": 0,
+  "new_renders": 0,
+  "native_windows": true,
+  "virtualization": false,
+  "source_fallback": false,
+  "generator_sha256": "48aea85a807799cd21a69012a9929ae98f13ecfb2fab7e34c93993e0d3941f42"
+}

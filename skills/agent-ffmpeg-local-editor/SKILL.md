@@ -7,7 +7,7 @@ description: "Edit and deliver local videos with agent editor kit: multitrack ed
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.11` / CLI `0.1.13`.
+The current local runtime is `v0.1.0-alpha.4-local.12` / CLI `0.1.14`.
 The published alpha.3 downloads retain CLI 0.1.2 and their original scope.
 
 ## Runtime and common workflow
@@ -57,6 +57,8 @@ media. Add other modules when the request needs them. For example:
 
 - Long interview to shorts: video-understand → long-to-short → timeline → quality.
 - Product ad: ad-creative or content strategy → editor → timeline/template → quality.
+  For reviewed briefs and local assets, read [ad-storyboard.md](references/ad-storyboard.md)
+  to build multiple editable canvases/durations and revise selected shots.
 - Client filter choice: [client-look-selection.md](references/client-look-selection.md)
   and [looks.md](references/looks.md); show actual candidate images, IDs, strength
   and license, record the chosen target, then test it on the client's footage.

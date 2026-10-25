@@ -599,3 +599,24 @@ All original G26/G31/G32/G33/G36 conditions remain; no natural-action, human acc
 CLI 0.1.13 在实际模型/运行库字节读取中响应超时和取消，部分摘要丢弃，原素材与元数据保留。
 [五例原始命令/响应/耗时](../validation/完整性校验超时取消实测_2026-10-25.md)；CPU/CUDA/实际统一入口各 80 决策往返一致，原错误保留。
 本案例是原生进程与文件行为，无新视觉效果/屏幕录制，不使用历史 GIF 冒充当轮输出。
+
+<a id="c23-ad-storyboard"></a>
+
+## C23：真实广告分镜、三种画幅与只改末镜
+
+推广 agent editor kit 的审核 brief 与 4 套自制动态产品图卡，导入真实字幕字体/资源库音乐，用同语种 CUDA 完整批量配音，编译为三套普通可编辑五轨序列。
+[完整 JSON 与使用流程](AD_STORYBOARD.md) · [审核 brief](../assets/ad-storyboard-20261025-r1/reviewed-brief.json) · [原始输入/CC0 与字体来源](../assets/ad-storyboard-20261025-r1/source/SOURCE.txt) · [完整实测及原失败](../validation/可编辑广告分镜与返工实测_2026-10-25.md)。
+
+| 变体 | 实际输出 | GIF | 原输入/静帧 |
+|---|---|---|---|
+| 9:16 / 12 秒 / 360 帧 / 30fps | [无声 MP4](../assets/ad-storyboard-20261025-r1/vertical12-silent.mp4) | [60 帧 GIF](../assets/ad-storyboard-20261025-r1/vertical12.gif) | [实际静帧](../assets/ad-storyboard-20261025-r1/vertical12.png) |
+| 16:9 / 9 秒 / 270 帧 / 30fps | [无声 MP4](../assets/ad-storyboard-20261025-r1/wide9-silent.mp4) | [45 帧 GIF](../assets/ad-storyboard-20261025-r1/wide9.gif) | [实际静帧](../assets/ad-storyboard-20261025-r1/wide9.png) |
+| 1:1 / 9 秒 / 270 帧 / 30fps | [无声 MP4](../assets/ad-storyboard-20261025-r1/square9-silent.mp4) | [45 帧 GIF](../assets/ad-storyboard-20261025-r1/square9.gif) | [实际静帧](../assets/ad-storyboard-20261025-r1/square9.png) |
+
+![实际三种画幅静帧，非 GUI 截图](../assets/ad-storyboard-20261025-r1/variants-clear.png)
+
+只替换横屏 cta 镜头和文字：前 180 帧完全一致，末 90 帧改变，解码 PCM/其他两套序列/原资产不变。实际注册 Skill 独立重复返工通过。
+[修改前 7.5 秒帧](../assets/ad-storyboard-20261025-r1/revision-before.png) · [修改后同一帧](../assets/ad-storyboard-20261025-r1/revision-after.png) · [安装版证明](../validation/evidence/ad-storyboard-20261025-r1/revision-r1/verification.json) · [真实 Skill](../validation/evidence/ad-storyboard-20261025-r1/skill-r1/verification.json)。
+
+完整声音/分轨/修改后视频在本地 `workspace/ad-storyboard-20261025-installed-r1/original-project-offline/`；可编辑包为该工作目录的 `campaign.aevpkg.zip`，另有 `restored/` 与 `skill-restored/`。原工程不可用时已导入并重渲染，RGB/PCM 相同。公开媒体不含未核验发布权利的生成配音。
+这是自制图卡产品广告，非自然广告或独立 Agent 质量基准；程序完整解码、静帧检查、连续播放、人类听审分别记录。当前只有前两者，不宣称后两者。[媒体 SHA/帧数](../assets/ad-storyboard-20261025-r1/media-manifest.json)。

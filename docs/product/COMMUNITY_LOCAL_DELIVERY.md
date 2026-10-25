@@ -2,11 +2,11 @@
 
 [使用手册](COMMUNITY_MATERIALS.md) · [繁體中文](COMMUNITY_MATERIALS.zh-TW.md) · [English](COMMUNITY_MATERIALS.en.md)
 
-当前本机版本是 **`v0.1.0-alpha.4-local.11` / CLI 0.1.13**，正式安装在 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.11/final-r1/installed/`。这是本地构建和验收记录；公开 GitHub Release 仍是 alpha.3 / CLI 0.1.2，原附件、标签和摘要不覆盖。
+当前本机版本是 **`v0.1.0-alpha.4-local.12` / CLI 0.1.14**，正式安装在 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.12/final-r2/installed/`。这是本地构建和验收记录；公开 GitHub Release 仍是 alpha.3 / CLI 0.1.2，原附件、标签和摘要不覆盖。
 
 The current build is installed locally. Public alpha.3 downloads remain unchanged and do not contain the new voice, translation, material or GPU commands. The updated Skill kit must be paired with this matching local runtime bundle.
 
-本轮增加完整性读取的超时/取消与部分摘要丢弃，保留[语义任务恢复](SEMANTIC_JOB_RECOVERY.md)，保留[语义工程包迁移](SEMANTIC_PROJECT_PACKAGE.md)，保留[显式条件与设备绑定的经验校准拒识](SEMANTIC_RETRIEVAL.md)，保留[字幕翻译配音联合流程](SUBTITLE_DUBBING.md)，保留[CTC 词活动边界](CTC_ACTIVITY_ALIGNMENT.md)，保留[原生任务恢复](JOB_RECOVERY.md)，保留[独立四轨分离](FOUR_STEM_SEPARATION.md)、[原生采集](NATIVE_CAPTURE.md)及精确声道关系修复。前一版本 `v0.1.0-alpha.4-local.1` 的 ZIP 与 SHA-256 `cf4e55f410582547d7fe56549d4594b4d8f0ee6aff8be24f77408c035fd74ead` 保留，旧 r2 kit 继续匹配旧包。
+本轮新增[可编辑广告分镜、多画幅/时长与指定镜头返工](AD_STORYBOARD.md)以及同语种原文 GPU 批量配音。此前的完整性读取超时/取消、[语义任务恢复](SEMANTIC_JOB_RECOVERY.md)、[语义工程包迁移](SEMANTIC_PROJECT_PACKAGE.md)、[显式条件与设备绑定的经验校准拒识](SEMANTIC_RETRIEVAL.md)、[字幕翻译配音联合流程](SUBTITLE_DUBBING.md)、[CTC 词活动边界](CTC_ACTIVITY_ALIGNMENT.md)、[原生任务恢复](JOB_RECOVERY.md)、[独立四轨分离](FOUR_STEM_SEPARATION.md)、[原生采集](NATIVE_CAPTURE.md)及精确声道关系修复继续保留。早期 `v0.1.0-alpha.4-local.1` 的 ZIP 与 SHA-256 `cf4e55f410582547d7fe56549d4594b4d8f0ee6aff8be24f77408c035fd74ead` 保留，旧 r2 kit 继续匹配旧包。
 
 ## 本机文件 / Local files
 
@@ -14,9 +14,9 @@ The current build is installed locally. Public alpha.3 downloads remain unchange
 
 | 内容 / Item | 路径 / Path | 校验 / Verification |
 |---|---|---|
-| 编译好的基础运行 ZIP / Application bundle | `local/agent-ffmpeg/v0.1.0-alpha.4-local.11/candidate-r1/bundle.zip` | SHA-256 `ec2edda498a297eb04cc205f929abedfa395ad96eb83710ca5f53cd211cfecd1` |
-| 运行包清单 / Bundle manifest | ZIP 内 / inside ZIP: `manifest.json` | `sha256:37b8cd1ab04ff5d00d0c68d74cdbf98bacaa9e2d042da8e2d61ea6d657391488` |
-| 单入口 Skill kit / Single-entry kit | `docs/skills/agent-editor-kit-community-unified-skill-r12.zip` | [独立包摘要 / Package digest](../skills/community-unified-skill-package-0.1.13.json) |
+| 编译好的基础运行 ZIP / Application bundle | `local/agent-ffmpeg/v0.1.0-alpha.4-local.12/candidate-r2/bundle.zip` | SHA-256 `504531688a3e0f34e7f5775cc2af9c255fd532bb6422629eca60a53e137d2fcc` |
+| 运行包清单 / Bundle manifest | ZIP 内 / inside ZIP: `manifest.json` | `sha256:6e6192aefd59edb8e52472016103c4c27031fdb10b84446fc8de770131d63072` |
+| 单入口 Skill kit / Single-entry kit | `docs/skills/agent-editor-kit-community-unified-skill-r13.zip` | [独立包摘要 / Package digest](../skills/community-unified-skill-package-0.1.14.json) |
 | 四个模型 ZIP / Four model ZIPs | `local/agent-ffmpeg/community-model-archives-r2/` | 见下表及 / see table and `archives.json` |
 | 可移动模型安装 / Relocated model installation | `local/agent-ffmpeg/community-portable-r1/模型 包/` | 实际从四个 ZIP 安装；路径含中文与空格 / actually installed from all four ZIPs |
 | 当前调用配置 / Runtime configuration | `local/agent-ffmpeg/runtime.json` | 固定应用摘要、原生 Python、启动器摘要 / pinned app, native Python and launcher |
@@ -43,13 +43,13 @@ Requires native Windows x64, existing CPython 3.13 x64 and FFmpeg/ffprobe on PAT
 $aekPython = 'C:/Python313/python.exe'
 $aekSource = 'E:/dev/sandbox/AI广告剪辑'
 $aekHome = 'E:/tools/agent-editor-kit-gpu'
-$aekArchive = Join-Path $aekSource 'local/agent-ffmpeg/v0.1.0-alpha.4-local.11/candidate-r1/bundle.zip'
-$aekExpectedZip = 'ec2edda498a297eb04cc205f929abedfa395ad96eb83710ca5f53cd211cfecd1'
+$aekArchive = Join-Path $aekSource 'local/agent-ffmpeg/v0.1.0-alpha.4-local.12/candidate-r2/bundle.zip'
+$aekExpectedZip = '504531688a3e0f34e7f5775cc2af9c255fd532bb6422629eca60a53e137d2fcc'
 if ((Get-FileHash -LiteralPath $aekArchive -Algorithm SHA256).Hash.ToLowerInvariant() -ne $aekExpectedZip) { throw 'Application archive hash mismatch' }
-Expand-Archive -LiteralPath (Join-Path $aekSource 'docs/skills/agent-editor-kit-community-unified-skill-r12.zip') -DestinationPath $aekHome
+Expand-Archive -LiteralPath (Join-Path $aekSource 'docs/skills/agent-editor-kit-community-unified-skill-r13.zip') -DestinationPath $aekHome
 Expand-Archive -LiteralPath $aekArchive -DestinationPath (Join-Path $aekHome 'bundle')
 Set-Location $aekHome
-& $aekPython -I -B -X utf8 ./bundle/install.py --bundle ./bundle --target ./local/agent-ffmpeg/installed --manifest-sha256 'sha256:37b8cd1ab04ff5d00d0c68d74cdbf98bacaa9e2d042da8e2d61ea6d657391488' --timeout-seconds 600
+& $aekPython -I -B -X utf8 ./bundle/install.py --bundle ./bundle --target ./local/agent-ffmpeg/installed --manifest-sha256 'sha256:6e6192aefd59edb8e52472016103c4c27031fdb10b84446fc8de770131d63072' --timeout-seconds 600
 if ($LASTEXITCODE) { throw 'Native application installation failed' }
 ```
 
@@ -254,6 +254,10 @@ Kokoro/OPUS 包内。更换语义实现或其绝对位置后须明确重新登�
 manifest `sha256:0a79580cc12c1ec813404f3838fa2f17dc0c8d4a67678e4b25fba88d870facfe`；
 [r8 kit](../skills/agent-editor-kit-community-unified-skill-r8.zip) 与其旧 pin 不改。
 
-## CLI 0.1.13 当前交付 / Current delivery
+## CLI 0.1.13 历史交付 / Historical delivery
 
 302664913 bytes、203 个产品 Python 文件；[读取超时/取消实际核验](../validation/完整性校验超时取消实测_2026-10-25.md)。旧 local.10/r11 与原收据保留。CPU/CUDA 和统一入口验证按本批收据记录；模型仍逐命令加载，完整 G32/G33 未关闭。
+
+## CLI 0.1.14 当前交付 / Current delivery
+
+302674843 bytes、205 个产品 Python 文件。新增[可编辑广告分镜/变体/返工](AD_STORYBOARD.md)和保留原文的同语种批量 GPU 配音；[实际案例、失败和边界](../validation/可编辑广告分镜与返工实测_2026-10-25.md)。旧 local.11/r12 和候选 r1 收据保留。公开仍 alpha.3；自然质量和完整原目标继续开放。

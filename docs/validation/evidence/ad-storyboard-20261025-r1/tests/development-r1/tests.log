@@ -1,0 +1,31 @@
+test_cancellation_preserves_original_and_no_plan (test_ad_storyboard.StoryboardCliTests.test_cancellation_preserves_original_and_no_plan) ... ok
+test_caption_overflow_is_rejected_before_publishing_plan (test_ad_storyboard.StoryboardCliTests.test_caption_overflow_is_rejected_before_publishing_plan) ... ok
+test_changed_actual_media_fails_without_project_edits (test_ad_storyboard.StoryboardCliTests.test_changed_actual_media_fails_without_project_edits) ... ok
+test_commit_failure_rolls_back_project_snapshot_and_operations (test_ad_storyboard.StoryboardCliTests.test_commit_failure_rolls_back_project_snapshot_and_operations) ... ok
+test_dry_run_has_no_project_side_effects (test_ad_storyboard.StoryboardCliTests.test_dry_run_has_no_project_side_effects) ... ok
+test_existing_output_is_preserved (test_ad_storyboard.StoryboardCliTests.test_existing_output_is_preserved) ... ok
+test_plan_then_atomic_build_and_idempotent_replay (test_ad_storyboard.StoryboardCliTests.test_plan_then_atomic_build_and_idempotent_replay) ... ok
+test_add_and_remove_caption_and_voice_preserve_other_clips (test_ad_storyboard.StoryboardPlanTests.test_add_and_remove_caption_and_voice_preserve_other_clips) ... ok
+test_changed_and_rehashed_plan_cannot_inject_arbitrary_tracks (test_ad_storyboard.StoryboardPlanTests.test_changed_and_rehashed_plan_cannot_inject_arbitrary_tracks) ... ok
+test_existing_variant_is_preserved_and_rejected (test_ad_storyboard.StoryboardPlanTests.test_existing_variant_is_preserved_and_rejected) ... ok
+test_invalid_canvas_and_repeated_variants_are_rejected (test_ad_storyboard.StoryboardPlanTests.test_invalid_canvas_and_repeated_variants_are_rejected) ... ok
+test_locked_revision_track_is_not_overwritten (test_ad_storyboard.StoryboardPlanTests.test_locked_revision_track_is_not_overwritten) ... ok
+test_missing_font_and_wrong_media_kind_are_rejected (test_ad_storyboard.StoryboardPlanTests.test_missing_font_and_wrong_media_kind_are_rejected) ... ok
+test_no_implicit_video_audio (test_ad_storyboard.StoryboardPlanTests.test_no_implicit_video_audio) ... ok
+test_nonfinite_boolean_and_nonpositive_weights_are_rejected (test_ad_storyboard.StoryboardPlanTests.test_nonfinite_boolean_and_nonpositive_weights_are_rejected) ... ok
+test_rational_fps_boundaries_do_not_accumulate_rounding (test_ad_storyboard.StoryboardPlanTests.test_rational_fps_boundaries_do_not_accumulate_rounding) ... ok
+test_revision_changes_only_requested_variant_shot_and_fields (test_ad_storyboard.StoryboardPlanTests.test_revision_changes_only_requested_variant_shot_and_fields) ... ok
+test_revision_preserves_manual_style_keyframes_and_crop (test_ad_storyboard.StoryboardPlanTests.test_revision_preserves_manual_style_keyframes_and_crop) ... ok
+test_short_source_and_music_are_rejected (test_ad_storyboard.StoryboardPlanTests.test_short_source_and_music_are_rejected) ... ok
+test_source_audio_is_explicit_and_its_gain_is_editable (test_ad_storyboard.StoryboardPlanTests.test_source_audio_is_explicit_and_its_gain_is_editable) ... ok
+test_split_picture_revision_is_rejected (test_ad_storyboard.StoryboardPlanTests.test_split_picture_revision_is_rejected) ... ok
+test_stale_plan_cannot_overwrite_current_edit (test_ad_storyboard.StoryboardPlanTests.test_stale_plan_cannot_overwrite_current_edit) ... ok
+test_unknown_fields_and_duplicate_shots_are_rejected (test_ad_storyboard.StoryboardPlanTests.test_unknown_fields_and_duplicate_shots_are_rejected) ... ok
+test_variants_are_gapless_frame_aligned_and_preserve_source (test_ad_storyboard.StoryboardPlanTests.test_variants_are_gapless_frame_aligned_and_preserve_source) ... ok
+test_voice_is_complete_and_never_truncated (test_ad_storyboard.StoryboardPlanTests.test_voice_is_complete_and_never_truncated) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 4.916s
+
+OK
+AEK_RESULT={"methods": 25, "skipped": 0, "failures": 0, "errors": 0, "success": true}

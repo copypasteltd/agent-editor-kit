@@ -8,7 +8,7 @@ Check `dub subtitles --help` and the pinned runtime before execution.
 
 Require a local, reviewed plain UTF-8 SRT, explicit `en`/`zh-Hans`/`zh-Hant`
 source and target languages, and existing registered community model packs.
-Only Chinese ↔ English is supported. No automatic downloads or voice cloning.
+Translation supports Chinese ↔ English. Matching source/target languages preserve reviewed text and initialize only the voice model; no translation pack or glossary is used. No automatic downloads or voice cloning.
 Plain SRT preserves source IDs/order and integer milliseconds; markup, malformed
 blocks and duplicate IDs are rejected. Limits are 1 MiB, 1000 cues, 3000
 characters/cue and 300 seconds per generated utterance. Project timebase must
@@ -51,7 +51,7 @@ replacement and does not ensure contextual meaning.
 
 ## Devices, output and recovery
 
-Prefer configured `--device auto`; inspect both actual providers. Per-task
+Prefer configured `--device auto`; inspect the actual providers used. Same-language mode has only a voice provider. Per-task
 `--voice-device`/`--translation-device`, pack and CUDA library overrides exist.
 One Kokoro initialization is reused within the voice batch. Translation and
 speech workers run sequentially; this is not cross-command persistent caching.

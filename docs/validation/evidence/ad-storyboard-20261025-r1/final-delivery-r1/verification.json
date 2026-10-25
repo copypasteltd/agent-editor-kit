@@ -1,0 +1,107 @@
+{
+  "status": "passed",
+  "started_at_utc": "2026-10-25T12:49:25.294666+00:00",
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "new_model_forwards_in_audit": 0,
+  "new_renders_in_audit": 0,
+  "human_playback": false,
+  "human_listening": false,
+  "natural_ad_quality_acceptance": false,
+  "independent_agent_benchmark": false,
+  "finished_at_utc": "2026-10-25T12:49:47.319025+00:00",
+  "baseline_commit": "bcd479d3ddfe2362e8cf71dc0b54f2b35afe792f",
+  "cli_version": "0.1.14",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.12\\final-r2\\installed",
+  "actual_read_only_cli_calls": 6,
+  "source_and_installed_files": 205,
+  "skill_files": 66,
+  "kit_files": 88,
+  "kit_sha256": "2721bc5ddfc69bb43a1a860206ba70fcc5b13ee186756535d875eca76c97e9f3",
+  "capability_count": 75,
+  "capability_status_counts": {
+    "implemented_with_limits": 47,
+    "implemented": 20,
+    "degraded": 1,
+    "local_adapter_only": 7
+  },
+  "original_goal_closure_conditions_preserved": 38,
+  "historical_readme_rows_preserved_per_language": 101,
+  "current_readme_rows_per_language": 109,
+  "local_links_checked": 2256,
+  "public_release": "v0.1.0-alpha.3",
+  "public_api_status": 200,
+  "actual_case_phases_verified": 6,
+  "preserved_failed_phases": 3,
+  "files": [
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "sha256": "a867218ab850ea695846604ab08d047116111dc6670ef3e459c4c3c6b76c13d9"
+    },
+    {
+      "path": "docs/product/IMPLEMENTATION_PLAN_20261025.md",
+      "sha256": "76e38c0a8c05ad0afee57157f156062dd9afbb982f84c64e1ac7ca0303a41768"
+    },
+    {
+      "path": "README.md",
+      "sha256": "c131f930bdac0420248effd00bc2d016d87a9a22a980a088ce8a670afccea697"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "sha256": "57a89f124844585d205081a417ae45d73827f64ce68d0c411ffcddd50ddbc15b"
+    },
+    {
+      "path": "README.en.md",
+      "sha256": "705c0bc50ed89cc4fd066bc295fbcc3a2bb86646d297d6108d51c3d2b63e4e0b"
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "c931d191e6434a0fff75b2e7a032bbb1f2d9ef20014a6a6993653b2f94ee3eb7"
+    },
+    {
+      "path": "docs/product/COMMUNITY_LOCAL_DELIVERY.md",
+      "sha256": "b96712a406d9fa9b49f9635c8cf49cf0c415ed38cba4348e7e5e90e22e01fd6a"
+    },
+    {
+      "path": "docs/product/AD_STORYBOARD.md",
+      "sha256": "e88691a6370addd33944df12aa551a66a55cce9933682b590d37cf3a76ce38eb"
+    },
+    {
+      "path": "docs/product/CASES.md",
+      "sha256": "aaf9c16318eac15bddebe2c7dd3c45e9defedc26656a7cda4a19980ee7f4a758"
+    },
+    {
+      "path": "docs/product/SUBTITLE_DUBBING.md",
+      "sha256": "c1e6aacff423253c8e4b7834b92b1c1f8a2d4975b9bd12a0e9d4274e029d6686"
+    },
+    {
+      "path": "docs/validation/可编辑广告分镜与返工实测_2026-10-25.md",
+      "sha256": "64772f579271ffd861a112c4a9b545f1291d02d6f6cfcb22cd5feebaf04db683"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.md",
+      "sha256": "9689c46c9ca85d696245a6519b16e9e41670a92c9fcc8fb3e3a28a62dce30e3a"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.zh-TW.md",
+      "sha256": "0bc4e76b1ef3927a3d038925559041b36c92984cd021961b2f8dd4e7b563fc97"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.en.md",
+      "sha256": "9c63948fb50c6ab11aa4ad7a21ea0635ace0c568e810c7b085a2ce42afeeee1e"
+    },
+    {
+      "path": "docs/product/SKILLS.md",
+      "sha256": "e11d8c94fb23db592c053c731d3842585ae4de90f698fbf36d98bc53d66aa8e6"
+    },
+    {
+      "path": "docs/product/SKILLS.zh-TW.md",
+      "sha256": "8ed572e3234bfe8b6e49c3b8f2d812544bafa2e45bd35a4722bc20bf48ac1d04"
+    },
+    {
+      "path": "docs/product/SKILLS.en.md",
+      "sha256": "d6382fd599fc6d4e017d3a50de0c85fd64c452344148d9cf31f3b520f8c7b012"
+    }
+  ]
+}

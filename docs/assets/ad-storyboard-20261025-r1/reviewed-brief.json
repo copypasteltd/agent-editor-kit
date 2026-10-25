@@ -1,0 +1,75 @@
+{
+  "id": "aek_demo",
+  "product": "agent editor kit",
+  "audience": "需要可编辑本地广告工程的视频创作者",
+  "cta": "现在开始本地剪辑",
+  "caption_style": {
+    "font_asset_id": "ad_font",
+    "font_ratio": 0.06
+  },
+  "music": {
+    "asset_id": "ad_music",
+    "gain_db": -27
+  },
+  "shots": [
+    {
+      "id": "hook",
+      "asset_id": "ad_picture_0",
+      "text": "保留原始素材。",
+      "fit": "fit",
+      "weight": 1,
+      "voice": {
+        "asset_id": "dub_audio_20261025121417_bec46f4b"
+      },
+      "rationale": "明确保留原始素材"
+    },
+    {
+      "id": "proof",
+      "asset_id": "ad_picture_1",
+      "text": "自由修改每个镜头。",
+      "fit": "fit",
+      "weight": 1,
+      "voice": {
+        "asset_id": "dub_audio_20261025121417_f76d02d9"
+      },
+      "rationale": "展示逐镜头可编辑结构"
+    },
+    {
+      "id": "cta",
+      "asset_id": "ad_picture_2",
+      "text": "现在开始本地剪辑。",
+      "fit": "fit",
+      "weight": 1,
+      "voice": {
+        "asset_id": "dub_audio_20261025121417_d8a236c7"
+      },
+      "rationale": "明确本地开始剪辑的行动"
+    }
+  ],
+  "variants": [
+    {
+      "id": "vertical12",
+      "canvas": {
+        "width": 360,
+        "height": 640
+      },
+      "duration_seconds": 12
+    },
+    {
+      "id": "wide9",
+      "canvas": {
+        "width": 640,
+        "height": 360
+      },
+      "duration_seconds": 9
+    },
+    {
+      "id": "square9",
+      "canvas": {
+        "width": 360,
+        "height": 360
+      },
+      "duration_seconds": 9
+    }
+  ]
+}

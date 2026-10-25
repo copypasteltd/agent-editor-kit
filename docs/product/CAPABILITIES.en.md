@@ -2,23 +2,23 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.13 / alpha.4-local.11。** One registered Skill / 17 modules;
+**Current local / 当前本机 / 目前本機：CLI 0.1.14 / alpha.4-local.12 / r13 kit。** One registered Skill / 17 modules;
 joint subtitle translation/dubbing, CTC activity boundaries, managed job recovery, independent four-source
 separation, offline image/text retrieval, GPU speech/translation and 359 resources. Public alpha.3 remains CLI 0.1.2.
-[Semantic package workflow](SEMANTIC_PROJECT_PACKAGE.md) · [Semantic recovery](SEMANTIC_JOB_RECOVERY.md) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](semantic-control-capabilities-cli-0.1.13.json) ·
+[Semantic package workflow](SEMANTIC_PROJECT_PACKAGE.md) · [Semantic recovery](SEMANTIC_JOB_RECOVERY.md) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](ad-storyboard-capabilities-cli-0.1.14.json) ·
 [Subtitle dubbing workflow](SUBTITLE_DUBBING.md) · [CTC limits](CTC_ACTIVITY_ALIGNMENT.md) ·
 [All 38 remaining gap groups](GOAL_GAPS_20261025.md).
 Cue-window fit does not establish semantics, natural listening, word precision or lip sync.
 
 <!-- /community-current -->
 
-[README](../../README.en.md) · [Machine response](semantic-control-capabilities-cli-0.1.13.json) · [Module data](module-catalog.json)
+[README](../../README.en.md) · [Machine response](ad-storyboard-capabilities-cli-0.1.14.json) · [Module data](module-catalog.json)
 
 | ID | Module | Behavior and input → output | Entry | Dependency/limit |
 |---|---|---|---|---|
 | F01 | Agent command protocol | Task arguments → JSON responses, exit codes, errors, warnings, artifacts and provenance; queryable capabilities and schema. | `version; doctor; capabilities; schema show` | Skills guide the task; the CLI executes it. No hosted Agent service. |
 | F02 | Editable projects | Create/inspect Agent Projects with assets, sequences, tracks, tick clocks, output settings and rights references. | `project init/inspect` | Source media and metadata are separate; relocation requires relinking and evidence-path review. |
-| F03 | Transactions, recovery and snapshots | Metadata transactions/snapshots, native child-tree ownership and explicit recovery of durable four-source/subtitle-dubbing workspaces and uncommitted outputs.  Adds managed semantic registration/index/calibration/search jobs.| `project snapshot/restore/migrate/recover; operation inspect` | Whole referenced semantic directories protected; active/changed/unknown/legacy paths retained. Only integrated jobs; no inference resume; synchronous checks may delay deadlines. |
+| F03 | Transactions, recovery and snapshots | Metadata transactions/snapshots, native child-tree ownership and explicit recovery of durable four-source/subtitle-dubbing workspaces and uncommitted outputs.  Adds managed semantic registration/index/calibration/search jobs.| `project snapshot/restore/migrate/recover; operation inspect` | Whole referenced semantic directories protected; active/changed/unknown/legacy paths retained. Only integrated jobs; no inference resume; current integrity reads observe deadlines/cancellation; other workers/OS blocking I/O retain limits. |
 | F04 | Media ingestion and relinking | Local images/video/audio/fonts → probe results, stable asset IDs, hashes and provenance. | `media ingest/relink` | No online-media fetching; ingestion does not establish commercial rights. |
 | F05 | Proxies, thumbnails and waveforms | Media → lightweight proxies, thumbnails, waveforms and auditable contact sheets. | `media prepare/contact-sheet` | Contact sheets are samples, not exhaustive visual understanding. |
 | F06 | Scene, silence and highlight analysis | Local video/audio → scene, silence, beat or heuristic highlight candidates and timing evidence. | `media understand/highlights` | Heuristic candidates require Agent or registered-adapter review for semantics. |
@@ -66,7 +66,8 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 | F48 | Music preparation and mixing | Actual music/speech assets → trim, loop, fades, explicit gain and speech-ducked mix. | `music prepare/mix` | Retains original stems and complete speech; no composition, automatic loop-seam repair or guaranteed visual semantic matching. |
 | F49 | Native capture | Explicit window/desktop/region/camera/microphone → finite recording, CPU/NVENC, cancellation and project assets. | `capture devices/record` | Actual CPU/GPU window evidence; camera/microphone, joint AV sync, device faults and long recording unaccepted. |
 | F50 | Offline visual semantic retrieval and conditions | Local index, Chinese/English/reference images, same-frame positive/negative clauses, empirical profiles, actual previews/source times and editable references. | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | URI-only portable semantic package; all 80 decisions retained with 3 known errors; same-host runtime pins remain external; G26/G31 open |
-| F51 | Joint subtitle translation/dubbing | Plain Chinese/English SRT and explicit voices/tracks → translations, complete batched WAV, actual fit, editable audio/bilingual captions and atomic application. | `dub subtitles` | Reuses initialization within the batch; retains originals/retries/awkward translations; cue fitting does not establish word timing, naturalness or lip sync. |
+| F51 | Joint subtitle translation/dubbing | Plain Chinese/English SRT and explicit voices/tracks → translation or preserved same-language copy, complete batched WAV, actual fit, editable audio/captions and atomic application. | `dub subtitles` | Same-language mode initializes only voice; preserves originals/retries/awkward translations; cue fit does not establish word precision, naturalness or lip sync. |
+| F52 | Editable ad storyboards and revision | Reviewed brief/actual assets → separate picture/caption/voice/source/music tracks for multiple canvases/durations; selected-shot/variant revisions. | `ad storyboard/build/revise` | Whole-frame allocation, actual asset locks, real font layout and complete voice-window checks; caller supplies claims and semantic choices. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -4015,9 +4016,40 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "highlight_rough_cut_apply",
     "local_ad_plan",
     "local_ad_plan_apply",
+    "editable_ad_storyboard",
+    "multiformat_ad_variants",
+    "scoped_ad_shot_revision",
     "local_template_tracking",
     "offline_model_registry"
   ],
+  "ad_storyboard": {
+    "engine": "agent-ad-storyboard-v1",
+    "commands": [
+      "ad.storyboard",
+      "ad.build",
+      "ad.revise"
+    ],
+    "features": [
+      "explicit_brief_and_local_assets",
+      "rational_fps_frame_apportionment",
+      "independent_variant_canvases_and_durations",
+      "editable_picture_caption_voice_source_music_tracks",
+      "same_language_reviewed_subtitle_voice_batch",
+      "native_input_read_locks",
+      "plan_and_project_digest_gates",
+      "complete_voice_window_gate",
+      "font_metric_overflow_gate",
+      "scoped_revision_preserves_unselected_edits",
+      "snapshot_and_atomic_project_commit"
+    ],
+    "limits": [
+      "creative_decisions_supplied_by_caller",
+      "no_implicit_semantic_selection_or_claim_generation",
+      "no_implicit_voice_truncation_or_music_loop",
+      "complex_manual_clip_splits_require_explicit_replanning",
+      "natural_ad_quality_and_independent_agent_benchmark_pending"
+    ]
+  },
   "network": "disabled",
   "asr_contract": "asr.adapter_registers_explicit_native_python_safetensors_and_evidence_for_hash_verified_isolated_whisper_inference_and_subtitle_model_rights_dependencies_with_legacy_local_model_path_gates_preserved",
   "tts_contract": "tts.adapter_and_voice_register_explicit_local_soulx_artifacts_and_exact_transcript_then_tts.synthesize_hash_verifies_and_runs_isolated_native_python_without_network_or_downloads_and_registers_generated_wav_with_optional_audio_track_apply",

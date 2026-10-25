@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "phase": "setup-finalize",
+  "cli_version": "0.1.14",
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "human_listening": false,
+  "natural_quality_acceptance": false,
+  "started_at_utc": "2026-10-25T12:15:41.714443+00:00",
+  "variants": 3,
+  "recorded_actual_voice_generations": 3,
+  "recorded_model_initializations": 1,
+  "devices": {
+    "voice": {
+      "requested": "cuda",
+      "selected": "cuda",
+      "fallback_reason": null,
+      "gpu": {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3060",
+        "driver": "595.95",
+        "total_mib": 12288,
+        "free_mib": 10310,
+        "compute_capability": "8.6"
+      },
+      "device_index": 0,
+      "minimum_free_mib": 3072,
+      "existing_gpu_processes_untouched": true
+    }
+  },
+  "reviewed_original_text_preserved": true,
+  "translation_worker_calls": 0,
+  "recording_failure_preserved": "setup-continue-r1/verification.json",
+  "verified_prior_calls": [
+    {
+      "path": "docs/validation/evidence/ad-storyboard-20261025-r1/setup-continue-r1/build-replay.stdout",
+      "sha256": "a7a6b16961123c7a34cfd3f37f262d9644feec25e7eb353b861e4cd6370f0c22"
+    },
+    {
+      "path": "docs/validation/evidence/ad-storyboard-20261025-r1/setup-continue-r1/build.stdout",
+      "sha256": "555694deb9f0f6563ee3fa8066de97432de62fbe98f6cab3f44b346da6203916"
+    },
+    {
+      "path": "docs/validation/evidence/ad-storyboard-20261025-r1/setup-continue-r1/gpu-voice-batch.stdout",
+      "sha256": "17e2efe4ef37d9c7a71e414644e2a672ea4ab4c02aeb5794dee6777008c7ee44"
+    },
+    {
+      "path": "docs/validation/evidence/ad-storyboard-20261025-r1/setup-continue-r1/stale-plan.stdout",
+      "sha256": "8f911783c287d624792a0c986ff557d9aed5a290ae712dfe14dc57ec534f5821"
+    },
+    {
+      "path": "docs/validation/evidence/ad-storyboard-20261025-r1/setup-continue-r1/storyboard-dry.stdout",
+      "sha256": "5ddb2c1b2b58c3e5bd420fe7a1bbd2e77fd21e12277005fb6fb9df53b815629d"
+    },
+    {
+      "path": "docs/validation/evidence/ad-storyboard-20261025-r1/setup-continue-r1/storyboard.stdout",
+      "sha256": "84e59cf6b0c124faf500a7d4b844297e8ea6790601fdc004b4453b54144d5eab"
+    }
+  ],
+  "calls": 1,
+  "source_files": 205,
+  "source_and_installed_equal": true,
+  "finished_at_utc": "2026-10-25T12:15:43.726567+00:00"
+}

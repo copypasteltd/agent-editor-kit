@@ -1,0 +1,176 @@
+[
+  {
+    "name": "skill-version",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.957379999992554,
+    "stdout_sha256": "111affee610b3b4075b61b37a2aa33adcfea8a819cb255fb64c1758f7e4fbc93",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "skill-import",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\campaign.aevpkg.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\skill-restored"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 4.159246900002472,
+    "stdout_sha256": "c5a80c0c568b788e70f8c1a1558c0dc104e072921492d3fce5dbb82b232a31f8",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "revise",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+      "ad",
+      "revise",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\skill-restored",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\skill-restored\\revision-skill.json",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\skill-restored\\validation\\revision-skill.json"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 4.892047199988156,
+    "stdout_sha256": "5aaa5182d6d430bb1ef1c755125e1e327b39c259b1e8fb8029a4018fe7c32f08",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "revise-build",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+      "ad",
+      "build",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\skill-restored",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\skill-restored\\validation\\revision-skill.json"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 4.197154900000896,
+    "stdout_sha256": "a565e0f2992a11f74359a8acb232725d87d26dc3b320ee414caf8953e5804e15",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "revised-wide9",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\skill-restored",
+      "--sequence-id",
+      "ad_aek_demo_wide9_sequence",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\skill-restored\\renders\\wide9-skill.mkv",
+      "--container",
+      "mkv",
+      "--audio-codec",
+      "pcm_f32le",
+      "--crf",
+      "0",
+      "--pixel-format",
+      "yuv420p",
+      "--hardware-encode",
+      "off"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 26.524617900009616,
+    "stdout_sha256": "ed968e93c7bdfb49c471609008ee2be98d803efc497e08b41dbc3a6e66e55d79",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "revised-wide9-probe",
+    "argv": [
+      "ffprobe",
+      "-v",
+      "error",
+      "-show_streams",
+      "-of",
+      "json",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\skill-restored\\renders\\wide9-skill.mkv"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.12580439999874216,
+    "stdout_sha256": "a9c1268b6c10627083162f98a8af8cffb25b90e88c245cfac869befe65e6dfe8",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "revised-wide9-frames",
+    "argv": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\skill-restored\\renders\\wide9-skill.mkv",
+      "-map",
+      "0:v:0",
+      "-pix_fmt",
+      "rgb24",
+      "-f",
+      "framemd5",
+      "-"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.42364410001027863,
+    "stdout_sha256": "52d6b4f7513439b90fa852690a1b98f31b759245b6148e036a7af308961ba026",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "revised-wide9-pcm",
+    "argv": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\ad-storyboard-20261025-installed-r1\\skill-restored\\renders\\wide9-skill.mkv",
+      "-map",
+      "0:a:0",
+      "-ar",
+      "48000",
+      "-ac",
+      "2",
+      "-f",
+      "f32le",
+      "-"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.14680419999058358,
+    "stdout_sha256": "b5aacc68d085ab022ba0c7235fa1c81673bb8d7a613bc5129e8331fc4c7160d6",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_retained": false
+  }
+]

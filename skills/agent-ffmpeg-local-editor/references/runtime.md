@@ -1,6 +1,6 @@
 # Installed-release runtime contract
 
-This namespace calls the locally installed `v0.1.0-alpha.4-local.11` / CLI 0.1.13
+This namespace calls the locally installed `v0.1.0-alpha.4-local.12` / CLI 0.1.14
 package using this Skill's `scripts/run.ps1`. Its 17 modules share the launcher.
 The editable Skill source stays on E:; Codex reads
 Windows directory junctions. `local/agent-ffmpeg/runtime.json` selects the native Python and installed path.
@@ -103,3 +103,7 @@ Kokoro initialization per voice batch, checks complete WAV sample counts against
 source cue windows and commits editable speech/captions atomically. It uses the
 existing community packs and explicit destination tracks. Speech/translation
 rights, semantics, natural listening, phonetic timing and lip sync remain open.
+
+## Editable ad storyboards
+
+Read [ad-storyboard.md](ad-storyboard.md) for `ad storyboard/build/revise`, complete same-language GPU voice batches, separate editable tracks and exact selected-shot changes. Plans bind actual project/media bytes; preview each variant and retain quality/rights review.

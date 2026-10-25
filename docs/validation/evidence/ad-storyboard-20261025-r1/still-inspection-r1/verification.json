@@ -1,0 +1,34 @@
+{
+  "status": "recorded",
+  "at_utc": "2026-10-25T12:35:43.014185+00:00",
+  "files": [
+    {
+      "path": "docs/assets/ad-storyboard-20261025-r1/variants.png",
+      "sha256": "bca2448bd0d516040ff9ed07439ab7f6a4123bffd16d16403674fc0329941439",
+      "observation": "First contact sheet overlaps the square preview with the wide subtitle; preserved, replaced for display by variants-clear.png.",
+      "method": "Assistant viewed the actual local raster via view_image."
+    },
+    {
+      "path": "docs/assets/ad-storyboard-20261025-r1/variants-clear.png",
+      "sha256": "a712506392601de2fb1f302a546aa2ecda9d6a0a5d6d84ee2b870cf8510a6eac",
+      "observation": "Three decoded variant stills visible without overlap. Fit keeps the wide source inside vertical/square canvases with black padding. Captions visible within canvas.",
+      "method": "Assistant viewed the actual local raster via view_image."
+    },
+    {
+      "path": "docs/assets/ad-storyboard-20261025-r1/revision-before.png",
+      "sha256": "e3c3c2690537745f32439b511e306ba35c0aa45800bccac95478e60f7206d1d5",
+      "observation": "Original last-shot card reads DELIVER THREE FORMATS; single Chinese CTA caption visible.",
+      "method": "Assistant viewed the actual local raster via view_image."
+    },
+    {
+      "path": "docs/assets/ad-storyboard-20261025-r1/revision-after.png",
+      "sha256": "96cbf6b907b80319a30cc44cdffc07af18789543bf63253df0c21c5644a9bf4e",
+      "observation": "Replacement last-shot card reads START A LOCAL EDIT; reviewed Chinese CTA plus agent editor kit second line visible, within canvas.",
+      "method": "Assistant viewed the actual local raster via view_image."
+    }
+  ],
+  "continuous_human_playback": false,
+  "human_listening": false,
+  "natural_ad_quality_acceptance": false,
+  "static_inspection_only": true
+}

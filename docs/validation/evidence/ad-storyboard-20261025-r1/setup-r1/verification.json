@@ -1,0 +1,12 @@
+{
+  "status": "failed",
+  "phase": "setup",
+  "cli_version": "0.1.14",
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "human_listening": false,
+  "natural_quality_acceptance": false,
+  "started_at_utc": "2026-10-25T12:04:48.102566+00:00",
+  "error": "AssertionError({'ok': False, 'command': 'dub.subtitles', 'request_id': 'req_20261025120505_300bc9a0', 'operation_id': 'op_dub_20261025120504_f2f9f99e', 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'ARGUMENT_INVALID', 'message': '当前联合流程支持中英双向', 'path': 'from/to', 'retryable': False, 'operation_id': 'op_dub_20261025120504_f2f9f99e'}], 'provenance': {'cli_version': '0.1.14', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-10-25T12:05:05.049341Z', 'finished_at': '2026-10-25T12:05:05.049349Z', 'network': 'disabled'}})"
+}

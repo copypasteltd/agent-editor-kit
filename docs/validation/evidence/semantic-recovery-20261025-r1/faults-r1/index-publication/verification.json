@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "case": "index-publication",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.10\\final-r1\\installed",
+  "started_at_utc": "2026-10-25T08:21:19.972605+00:00",
+  "native_windows": true,
+  "virtualization": false,
+  "fault_hooks_only_in_verification_harness": true,
+  "human_quality_acceptance": false,
+  "fault_process": {
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\semantic-recovery-20261025-r1\\faults-r1\\index-publication\\fault-child.py",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\semantic-recovery-20261025-r1\\faults-r1\\index-publication\\fault-spec.json"
+    ],
+    "pid": 24776,
+    "exit_code": 1,
+    "elapsed_seconds": 227.08964130000095,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "observed_fault_boundary": {
+    "parent_pid": 24776,
+    "hook": "after-publication",
+    "job": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-recovery-20261025-faults-r1\\index-publication\\cache\\managed-jobs\\job-1c2c903bd70441ea8e200de0bd5fbe25",
+    "destination": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-recovery-20261025-faults-r1\\index-publication\\assets\\semantic\\444a4d87963afbf1b83648a5",
+    "kind": "semantic-index"
+  },
+  "dry_run_metadata_unchanged": true,
+  "original_inputs_preserved": true,
+  "cleaned": 1,
+  "metadata_rollback_verified": true,
+  "committed_metadata_preserved": false,
+  "finished_at_utc": "2026-10-25T08:25:19.121473+00:00",
+  "installed_bytes_unchanged": true,
+  "calls": 6
+}

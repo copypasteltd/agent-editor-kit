@@ -573,3 +573,21 @@ All original G26/G31/G32/G33/G36 conditions remain; no natural-action, human acc
 | C20-06 | [实际编码帧](../assets/semantic-package-20261025-r1/demo-installed-r1/actual-encoded-frames.png) | Agent 静态目检另行记录，无人类连续观看、听审或语义接受；[媒体收据](../validation/evidence/semantic-package-20261025-r1/demo-installed-r1/verification.json) |
 
 旧 C19 失败原样保留，新版拒绝该损坏 ZIP；从完好源重新导出。Same-host package integrity preserves mistakes too; full G26/G31 and all original goal conditions remain open.
+
+
+<a id="c21-semantic-recovery"></a>
+
+## C21：语义任务真实中断、恢复与失败边界 / Native semantic recovery
+
+[使用流程](SEMANTIC_JOB_RECOVERY.md) · [输入/全部命令/结果](../validation/语义任务中断恢复实测_2026-10-25.md)。
+
+| 编号 | 案例 | 实际结果与限制 |
+|---|---|---|
+| C21-01 | 11 本地资产、明确外部授权源、40 校准、80 查询 | 采用既有熟悉静态图协议，实际 CPU/CUDA/Skill，三条原查询错误保留 |
+| C21-02 | 真实索引/校准发布后、提交前结束 CLI | 显式恢复后回收未引用目录，元数据与原输入不变 |
+| C21-03 | 校准提交后结束 CLI | 已提交整树保留，清理缓存后使用原新 ID 真实查询通过 |
+| C21-04 | model-loading 阶段强停和取消 | 原生句柄验证仅本任务 worker 退出；不推断 kernel 中取消 |
+| C21-05 | 1 秒超时 | 返回 PROCESS_TIMEOUT，但同步完整性检查导致墙钟显著超限；作为明确未通过的及时性边界保留 |
+| C21-06 | 显式诊断清理与工程两次往返 | 索引/校准/权利/素材保留，原路径移走后 CPU/CUDA/Skill 各 80 决策一致 |
+
+本批是文件/进程/模型任务行为，未制作新的视觉效果或冒充屏幕录制。[C20](#c20-semantic-package)提供前一版同组查询的实际图片、MP4/GIF与可编辑卡片包，日期和版本分别保留。

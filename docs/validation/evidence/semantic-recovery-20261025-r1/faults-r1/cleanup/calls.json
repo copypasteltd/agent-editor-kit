@@ -1,0 +1,81 @@
+[
+  {
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.10\\final-r1\\installed\\run.py",
+      "project",
+      "recover",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-recovery-20261025-installed-r1\\source",
+      "--cleanup-jobs",
+      "--dry-run"
+    ],
+    "exit_code": 0,
+    "ok": true,
+    "status": "planned",
+    "elapsed_seconds": 3.1809544999996433,
+    "stdout_sha256": "677512ff7e5c2bf2e81faddb7ff3ad768f808137028129d1a457ceaab4875a8b",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.10\\final-r1\\installed\\run.py",
+      "project",
+      "recover",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-recovery-20261025-installed-r1\\source",
+      "--cleanup-jobs"
+    ],
+    "exit_code": 0,
+    "ok": true,
+    "status": "succeeded",
+    "elapsed_seconds": 2.94257479999942,
+    "stdout_sha256": "ede62af2b760660c865f5ad2bcfdff5882984ec757d4eb47ff4bcad43b4b1f6f",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.10\\final-r1\\installed\\run.py",
+      "semantic",
+      "search",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-recovery-20261025-installed-r1\\source",
+      "--index-id",
+      "images-v1",
+      "--query",
+      "一只猫，不是一杯咖啡",
+      "--calibration-id",
+      "accept-cuda",
+      "--kind",
+      "image",
+      "--device",
+      "cuda"
+    ],
+    "exit_code": 0,
+    "ok": true,
+    "status": "succeeded",
+    "elapsed_seconds": 239.93478070000128,
+    "stdout_sha256": "878368d67760ebf46eb390efaff853ad369d51fe44150f5fda2896fee08a0250",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

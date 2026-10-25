@@ -2,23 +2,23 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.11 / alpha.4-local.9。** One registered Skill / 17 modules;
+**Current local / 当前本机 / 目前本機：CLI 0.1.12 / alpha.4-local.10。** One registered Skill / 17 modules;
 joint subtitle translation/dubbing, CTC activity boundaries, managed job recovery, independent four-source
 separation, offline image/text retrieval, GPU speech/translation and 359 resources. Public alpha.3 remains CLI 0.1.2.
-[Semantic package workflow](SEMANTIC_PROJECT_PACKAGE.md) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](semantic-package-capabilities-cli-0.1.11.json) ·
+[Semantic package workflow](SEMANTIC_PROJECT_PACKAGE.md) · [Semantic recovery](SEMANTIC_JOB_RECOVERY.md) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](semantic-recovery-capabilities-cli-0.1.12.json) ·
 [Subtitle dubbing workflow](SUBTITLE_DUBBING.md) · [CTC limits](CTC_ACTIVITY_ALIGNMENT.md) ·
 [All 38 remaining gap groups](GOAL_GAPS_20261025.md).
 Cue-window fit does not establish semantics, natural listening, word precision or lip sync.
 
 <!-- /community-current -->
 
-[README](../../README.md) · [Machine response](semantic-package-capabilities-cli-0.1.11.json) · [Module data](module-catalog.json)
+[README](../../README.md) · [Machine response](semantic-recovery-capabilities-cli-0.1.12.json) · [Module data](module-catalog.json)
 
 | 编号 | 功能模块 | 具体行为与输入 → 输出 | 入口 | 依赖/边界 |
 |---|---|---|---|---|
 | F01 | Agent 调用协议 | 任务参数 → JSON 响应、退出码、错误、warning、产物与 provenance；能力与 schema 可查询。 | `version; doctor; capabilities; schema show` | Skill 组织任务，CLI 执行；没有后台云端 Agent 服务。 |
 | F02 | 可编辑项目 | 创建/检查 Agent Project，保存资产、序列、轨道、ticks 时钟、输出配置和权利引用。 | `project init/inspect` | 源媒体与项目元数据分离，移动工程后需重链并复核证据路径。 |
-| F03 | 事务、恢复与快照 | 元数据事务/快照；原生子进程树归属；显式恢复四轨及字幕配音的持久化工作目录和未提交输出。 | `project snapshot/restore/migrate/recover; operation inspect` | 已提交资产保留；变化/活跃/未知/旧缓存保留。仅已接入的四轨/字幕配音受管目录，不是完整媒体备份或模型续算。 |
+| F03 | 事务、恢复与快照 | 元数据事务/快照；原生子进程树归属；显式恢复四轨及字幕配音的持久化工作目录和未提交输出。  新增语义登记/索引/校准/检索的受管任务。| `project snapshot/restore/migrate/recover; operation inspect` | 整棵已引用语义目录保护；活跃/变化/未知/旧缓存保留。仅已接入任务，不是模型续算；同步校验可能延迟超时。 |
 | F04 | 素材导入与重链 | 本地图片/视频/音频/字体 → 探测结果、稳定资产 ID、哈希和来源记录。 | `media ingest/relink` | 不抓取在线素材；导入不自动证明商业授权。 |
 | F05 | 代理、缩略图与波形 | 素材 → 轻量代理、图片缩略图、音频波形、可核查联系表。 | `media prepare/contact-sheet` | 联系表是抽样证据；不代表逐帧视觉理解。 |
 | F06 | 镜头、静音与高光分析 | 本地视频/音频 → 切镜、静音、节拍或启发式高光候选与时间证据。 | `media understand/highlights` | 高光是启发式候选，语义判断需要 Agent/已注册适配器复核。 |
@@ -175,6 +175,20 @@ Cue-window fit does not establish semantics, natural listening, word precision o
     "import_validation": "semantic_inner_bindings_before_staged_publication",
     "native_runtime_bundled": false,
     "inference_during_conversion": false
+  },
+  "managed_jobs": {
+    "actions": [
+      "adapter-register",
+      "index",
+      "calibrate",
+      "search"
+    ],
+    "native_owner_lease": true,
+    "semantic_tree_write_ahead_publication": true,
+    "explicit_cleanup": "project recover --cleanup-jobs",
+    "diagnostics_retained_until_explicit_cleanup": true,
+    "legacy_semantic_cache": "preserved_unmanaged",
+    "inference_checkpoint_resume": false
   },
   "limits": [
     "requires_existing_registered_native_Python_Torch_Transformers_Pillow_and_local_SigLIP_safetensors",
@@ -2203,6 +2217,9 @@ Cue-window fit does not establish semantics, natural listening, word precision o
       "dry_run",
       "native_owner_lease",
       "four_stem_transaction_scoped_workspaces",
+      "subtitle_dubbing_and_semantic_workspaces",
+      "semantic_tree_identity_and_hash_intents",
+      "whole_semantic_tree_preserved_if_any_asset_or_rights_reference_exists",
       "durable_publication_intent",
       "exclusive_same_volume_publish",
       "filesystem_identity_and_hash_check",
@@ -2212,8 +2229,9 @@ Cue-window fit does not establish semantics, natural listening, word precision o
       "owned_descendants_end_on_owner_exit"
     ],
     "limits": [
-      "managed_workspaces_currently_four_stem_only",
+      "four_stem_subtitle_dubbing_and_semantic_only",
       "historical_unmanaged_cache_preserved",
+      "semantic_diagnostics_retained_until_explicit_cleanup_no_checkpoint_resume",
       "up_to_256_jobs_and_10000_entries_per_workspace",
       "cooperating_local_filesystem_not_hostile_OS_sandbox",
       "job_object_assignment_failure_is_strict_no_unsupervised_fallback",

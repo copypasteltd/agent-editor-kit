@@ -1,0 +1,25 @@
+{
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.10\\final-r1\\installed",
+  "arguments": [
+    "semantic",
+    "search",
+    "--project",
+    "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-recovery-20261025-faults-r1\\search-cancel",
+    "--device",
+    "cuda",
+    "--timeout-seconds",
+    "600",
+    "--index-id",
+    "images-v1",
+    "--query",
+    "a cat",
+    "--kind",
+    "image",
+    "--calibration-id",
+    "accept-cuda",
+    "--cancel-file",
+    "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-recovery-20261025-faults-r1\\search-cancel.cancel"
+  ],
+  "checkpoint": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\semantic-recovery-20261025-r1\\faults-r1\\search-cancel\\checkpoint.json",
+  "hook": "after-publication"
+}

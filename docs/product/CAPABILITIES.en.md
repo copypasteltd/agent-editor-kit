@@ -2,23 +2,23 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.11 / alpha.4-local.9。** One registered Skill / 17 modules;
+**Current local / 当前本机 / 目前本機：CLI 0.1.12 / alpha.4-local.10。** One registered Skill / 17 modules;
 joint subtitle translation/dubbing, CTC activity boundaries, managed job recovery, independent four-source
 separation, offline image/text retrieval, GPU speech/translation and 359 resources. Public alpha.3 remains CLI 0.1.2.
-[Semantic package workflow](SEMANTIC_PROJECT_PACKAGE.md) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](semantic-package-capabilities-cli-0.1.11.json) ·
+[Semantic package workflow](SEMANTIC_PROJECT_PACKAGE.md) · [Semantic recovery](SEMANTIC_JOB_RECOVERY.md) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](semantic-recovery-capabilities-cli-0.1.12.json) ·
 [Subtitle dubbing workflow](SUBTITLE_DUBBING.md) · [CTC limits](CTC_ACTIVITY_ALIGNMENT.md) ·
 [All 38 remaining gap groups](GOAL_GAPS_20261025.md).
 Cue-window fit does not establish semantics, natural listening, word precision or lip sync.
 
 <!-- /community-current -->
 
-[README](../../README.en.md) · [Machine response](semantic-package-capabilities-cli-0.1.11.json) · [Module data](module-catalog.json)
+[README](../../README.en.md) · [Machine response](semantic-recovery-capabilities-cli-0.1.12.json) · [Module data](module-catalog.json)
 
 | ID | Module | Behavior and input → output | Entry | Dependency/limit |
 |---|---|---|---|---|
 | F01 | Agent command protocol | Task arguments → JSON responses, exit codes, errors, warnings, artifacts and provenance; queryable capabilities and schema. | `version; doctor; capabilities; schema show` | Skills guide the task; the CLI executes it. No hosted Agent service. |
 | F02 | Editable projects | Create/inspect Agent Projects with assets, sequences, tracks, tick clocks, output settings and rights references. | `project init/inspect` | Source media and metadata are separate; relocation requires relinking and evidence-path review. |
-| F03 | Transactions, recovery and snapshots | Metadata transactions/snapshots, native child-tree ownership and explicit recovery of durable four-source/subtitle-dubbing workspaces and uncommitted outputs. | `project snapshot/restore/migrate/recover; operation inspect` | Preserves committed assets and active/changed/unknown/legacy files. Only integrated four-source/subtitle-dubbing managed workspaces; not a full media backup or inference resume. |
+| F03 | Transactions, recovery and snapshots | Metadata transactions/snapshots, native child-tree ownership and explicit recovery of durable four-source/subtitle-dubbing workspaces and uncommitted outputs.  Adds managed semantic registration/index/calibration/search jobs.| `project snapshot/restore/migrate/recover; operation inspect` | Whole referenced semantic directories protected; active/changed/unknown/legacy paths retained. Only integrated jobs; no inference resume; synchronous checks may delay deadlines. |
 | F04 | Media ingestion and relinking | Local images/video/audio/fonts → probe results, stable asset IDs, hashes and provenance. | `media ingest/relink` | No online-media fetching; ingestion does not establish commercial rights. |
 | F05 | Proxies, thumbnails and waveforms | Media → lightweight proxies, thumbnails, waveforms and auditable contact sheets. | `media prepare/contact-sheet` | Contact sheets are samples, not exhaustive visual understanding. |
 | F06 | Scene, silence and highlight analysis | Local video/audio → scene, silence, beat or heuristic highlight candidates and timing evidence. | `media understand/highlights` | Heuristic candidates require Agent or registered-adapter review for semantics. |
@@ -175,6 +175,20 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "import_validation": "semantic_inner_bindings_before_staged_publication",
     "native_runtime_bundled": false,
     "inference_during_conversion": false
+  },
+  "managed_jobs": {
+    "actions": [
+      "adapter-register",
+      "index",
+      "calibrate",
+      "search"
+    ],
+    "native_owner_lease": true,
+    "semantic_tree_write_ahead_publication": true,
+    "explicit_cleanup": "project recover --cleanup-jobs",
+    "diagnostics_retained_until_explicit_cleanup": true,
+    "legacy_semantic_cache": "preserved_unmanaged",
+    "inference_checkpoint_resume": false
   },
   "limits": [
     "requires_existing_registered_native_Python_Torch_Transformers_Pillow_and_local_SigLIP_safetensors",
@@ -2203,6 +2217,9 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
       "dry_run",
       "native_owner_lease",
       "four_stem_transaction_scoped_workspaces",
+      "subtitle_dubbing_and_semantic_workspaces",
+      "semantic_tree_identity_and_hash_intents",
+      "whole_semantic_tree_preserved_if_any_asset_or_rights_reference_exists",
       "durable_publication_intent",
       "exclusive_same_volume_publish",
       "filesystem_identity_and_hash_check",
@@ -2212,8 +2229,9 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
       "owned_descendants_end_on_owner_exit"
     ],
     "limits": [
-      "managed_workspaces_currently_four_stem_only",
+      "four_stem_subtitle_dubbing_and_semantic_only",
       "historical_unmanaged_cache_preserved",
+      "semantic_diagnostics_retained_until_explicit_cleanup_no_checkpoint_resume",
       "up_to_256_jobs_and_10000_entries_per_workspace",
       "cooperating_local_filesystem_not_hostile_OS_sandbox",
       "job_object_assignment_failure_is_strict_no_unsupervised_fallback",

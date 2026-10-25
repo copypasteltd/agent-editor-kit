@@ -3,16 +3,17 @@
 [Unified entry](../SKILL.md) · [Runtime](runtime.md) ·
 [Full guide](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/SEMANTIC_RETRIEVAL.md)
 
-Use CLI 0.1.10 through this Skill's pinned installed launcher. This is part of K08,
+Use CLI 0.1.12 through this Skill's pinned installed launcher. This is part of K08,
 not an additional Skill registration. Local images/video samples can be searched
 with Chinese, English or an existing local reference image using SigLIP2.
 
-CLI 0.1.10 has a verified migration gap: the new indexed/calibrated project
+Historical CLI 0.1.10 has a verified migration gap: the new indexed/calibrated project
 exports/imports and passes general `validate`, but search on that imported copy
 fails with `SEMANTIC_INDEX_INVALID` / `Manifest outside project semantic asset tree`.
-Do not promise portable profiles or rewrite pins. Re-register, rebuild and
-recalibrate explicitly after moving; that workaround has not been verified by
-this case. Ordinary diagnostic image-card package rendering passed separately.
+CLI 0.1.11 fixed newly exported project packages and verified same-host CPU/CUDA/
+Skill queries after moving the original paths. Re-export an intact original to
+replace a damaged 0.1.10 package; there is no automatic old-ZIP repair. Runtime
+pins stay external. Ordinary diagnostic image-card rendering is separate.
 [Actual failure and preview](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/assets/semantic-decision-20261025-r1/demo-installed-r1/KNOWN_ISSUE.md).
 
 ## Existing runtime and explicit registration
@@ -65,8 +66,11 @@ The query file is `{"queries":[{"id":"q1","text":"a cat"}]}`; never pass labels.
 `auto` prefers an available GPU with enough free memory and records CPU fallback;
 `cuda` is strict. CUDA BF16 and CPU float32 are tested on the current native host.
 Batch queries to amortize model loading and large-file hashing. There is no
-persistent model service. Cancellation terminates only the operation's child
-process; startup cancellation has been exercised, not in-flight CUDA kernels.
+persistent model service. CLI 0.1.12 manages the four mutating/inference actions
+with owned native process jobs and durable recovery records. Read
+[job-recovery.md](job-recovery.md) before explicit cleanup. Actual fault evidence
+defines exercised stages; no in-flight CUDA-kernel or power-loss guarantee is
+implied. Synchronous integrity checking can delay timeout/cancellation response.
 
 ## Explicit conditions and empirical rejection
 

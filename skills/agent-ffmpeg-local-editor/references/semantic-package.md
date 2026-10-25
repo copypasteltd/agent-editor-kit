@@ -1,6 +1,6 @@
 # Move an indexed and calibrated project
 
-Use the pinned CLI 0.1.11 installation. Read [semantic-retrieval.md](semantic-retrieval.md)
+Use the pinned CLI 0.1.12 installation. Read [semantic-retrieval.md](semantic-retrieval.md)
 for explicit adapter/index/device-profile setup and candidate review.
 
 ```powershell

@@ -1,0 +1,34 @@
+[
+  {
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+      "semantic",
+      "search",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-recovery-20261025-installed-r1\\second",
+      "--queries-file",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-recovery-20261025-installed-r1\\queries.json",
+      "--index-id",
+      "images-v1",
+      "--kind",
+      "image",
+      "--calibration-id",
+      "accept-cuda",
+      "--device",
+      "cuda",
+      "--limit",
+      "3"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 186.98976220000623,
+    "stdout_sha256": "027df837d2b07e842f452614acf6c2d67d89722d64645278255d1e7559ab2610",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "succeeded",
+    "ok": true
+  }
+]

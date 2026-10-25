@@ -15,7 +15,8 @@ from .utils import atomic_write_json, load_json, now_iso, sha256_file
 
 FORMAT = 'agent-owned-job-workspace-v1'
 JOB_RE = re.compile(r'job-[0-9a-f]{32}')
-KINDS = {'four-stem-separation', 'subtitle-dubbing'}
+KINDS = {'four-stem-separation', 'subtitle-dubbing', 'semantic-register', 'semantic-index',
+         'semantic-calibrate', 'semantic-search'}
 MAX_OUTPUTS = 4096
 MAX_MANIFEST_BYTES = 2 * 1024 * 1024
 _SCOPE = ContextVar('agent_owned_job_scope', default=None)
@@ -118,7 +119,8 @@ def _load_record(root, job):
     record = json.loads(path.read_text('utf8'))
     if (not isinstance(record, dict) or record.get('format') != FORMAT or record.get('job_id') != job.name
             or record.get('project') != str(root.resolve()) or record.get('kind') not in KINDS
-            or not isinstance(record.get('outputs'), list) or len(record['outputs']) > MAX_OUTPUTS):
+            or not isinstance(record.get('outputs'), list) or len(record['outputs']) > MAX_OUTPUTS
+            or not isinstance(record.get('trees', []), list) or len(record.get('trees', [])) > 1):
         raise ValueError('Job manifest ownership or format invalid')
     return record
 
@@ -147,10 +149,15 @@ def _plan(root, job, record, *, preserve_outputs=False):
             status = 'owned_unreferenced'
         outputs.append(dict(path=relative, status=status, identity=item['identity'], sha256=item['sha256']))
     count, total = _scan_owned_tree(root, job)
-    return dict(job_id=job.name, kind=record['kind'], files=count, workspace_bytes=total, outputs=outputs)
+    result = dict(job_id=job.name, kind=record['kind'], files=count, workspace_bytes=total, outputs=outputs)
+    if record.get('trees'):
+        from .job_trees import plan as tree_plan
+        result['trees'] = [tree_plan(root, item, record['kind'], references,
+            preserve_outputs=preserve_outputs) for item in record['trees']]
+    return result
 
 
-def _recover_one(root, job, *, dry_run=False, preserve_outputs=False):
+def _recover_one(root, job, *, dry_run=False, preserve_outputs=False, retain_workspace=False):
     lease = None
     try:
         job = _owned(root, job)
@@ -162,7 +169,7 @@ def _recover_one(root, job, *, dry_run=False, preserve_outputs=False):
             return dict(job_id=job.name, status='active_or_locked_preserved')
         record = _load_record(root, job)
         plan = _plan(root, job, record, preserve_outputs=preserve_outputs)
-        if any(item['status'] == 'changed_preserved' for item in plan['outputs']):
+        if any(item['status'] == 'changed_preserved' for item in plan['outputs'] + plan.get('trees', [])):
             return dict(plan, status='changed_output_preserved')
         if dry_run:
             return dict(plan, status='cleanup_planned')
@@ -178,6 +185,14 @@ def _recover_one(root, job, *, dry_run=False, preserve_outputs=False):
                     raise ValueError('Output identity changed during recovery')
                 path.unlink()
                 removed.append(item['path'])
+        for item, intent in zip(plan.get('trees', []), record.get('trees', [])):
+            if item['status'] == 'owned_unreferenced':
+                from .job_trees import remove as remove_tree
+                remove_tree(root, intent, record['kind'])
+                removed.append(item['path'])
+        if retain_workspace:
+            return dict(plan, status='preserved_for_review', removed_outputs=removed,
+                path=str(job), reason=record.get('review_reason', 'semantic execution evidence'))
         lease.close()
         lease = None
         _scan_owned_tree(root, job)
@@ -255,6 +270,8 @@ class Workspace:
 
     def finish(self, *, preserve_outputs=False):
         self.lease.close()
+        if self.record['kind'].startswith('semantic-') and self.record.get('review_reason'):
+            return _recover_one(self.root, self.path, preserve_outputs=preserve_outputs, retain_workspace=True)
         if self.record.get('review_reason'):
             return dict(job_id=self.path.name, kind=self.record['kind'], status='preserved_for_review',
                 path=str(self.path), reason=self.record['review_reason'])
@@ -263,6 +280,10 @@ class Workspace:
     def hold_for_review(self, reason):
         self.record['review_reason'] = str(reason)[:512]
         atomic_write_json(self.path / 'job.json', self.record)
+
+    def publish_tree(self, stage, destination):
+        from .job_trees import publish
+        publish(self, stage, destination)
 
 
 class WorkspaceScope:

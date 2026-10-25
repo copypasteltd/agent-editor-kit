@@ -1523,3 +1523,12 @@ docs/skills/community-unified-skill-package-0.1.11.json -text -whitespace
 docs/specs/语义工程包迁移契约_20261025.md text eol=lf
 docs/validation/语义工程包迁移实测_2026-10-25.md text eol=lf
 scripts/*semantic_package*20261025.py text eol=lf
+
+# Managed semantic-job evidence preserves raw native streams and their hashes.
+docs/validation/evidence/semantic-recovery-20261025-r1/** -text -whitespace
+docs/assets/semantic-recovery-20261025-r1/** -text -whitespace
+docs/product/semantic-recovery-capabilities-cli-0.1.12.json -text -whitespace
+docs/skills/community-unified-skill-package-0.1.12.json -text -whitespace
+docs/specs/语义任务发布与中断恢复契约_20261025.md text eol=lf
+docs/validation/语义任务中断恢复实测_2026-10-25.md text eol=lf
+scripts/*semantic_recovery*20261025.py text eol=lf

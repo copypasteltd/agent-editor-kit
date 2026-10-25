@@ -18,6 +18,7 @@ from .semantic_contract import (DIMENSION, ENGINE, INDEX_FORMAT, MAX_ASSETS, MAX
     PROTOCOL, adapter_fingerprint, check_vectors, fingerprint, implementation_files, json_object,
     local_file, model_files, rank, verify_adapter)
 from .semantic_sampling import extract, owned, plan, png_probe, remaining
+from .semantic_jobs import managed, current as current_job
 from .utils import assert_id, atomic_write_json, new_id, now_iso, run_process, sha256_file
 
 
@@ -52,14 +53,10 @@ def _config(timeout, cancel_file, root, *, batch_size=8, device_index=0):
 
 
 def _job(root):
-    directory=owned(root,root/'cache/semantic-jobs')
-    if directory.exists() and sum(1 for _ in directory.iterdir())>=256:
-        raise AppError('SEMANTIC_JOB_BUDGET','语义任务记录已达 256 项；请先显式归档旧 cache/semantic-jobs 目录',exit_code=6)
-    if shutil.disk_usage(root).free<256*1024**2:
-        raise AppError('SEMANTIC_DISK_BUDGET','语义任务需要至少 256MiB 磁盘余量',exit_code=6)
-    path=owned(root,directory/new_id('job'))
-    path.mkdir(parents=True,exist_ok=False)
-    return path
+    job=current_job()
+    if job.root != Path(root).resolve():
+        raise ValueError('Semantic job and project roots differ')
+    return job.path
 
 
 def _invoke(python, request, job, name, deadline, marker):
@@ -120,6 +117,7 @@ def _checked_adapter(root, project, adapter_id):
     return adapter
 
 
+@managed('semantic-register')
 def register(root, project, *, adapter_id, python_executable, model_path, evidence, creator,
              license_spdx, verification_status='unverified', permitted_uses=None, threads=4,
              timeout=600, cancel_file=None, dry_run=False):
@@ -206,6 +204,7 @@ def _source(root, asset):
     return source,observed
 
 
+@managed('semantic-index')
 def build_index(root, project, *, index_id, adapter_id, asset_ids=None, all_visual=False, interval=2.,
                 max_per_asset=128, device='auto', device_index=0, batch_size=8, timeout=600,
                 cancel_file=None, dry_run=False):
@@ -283,8 +282,7 @@ def build_index(root, project, *, index_id, adapter_id, asset_ids=None, all_visu
                 raise AppError('SEMANTIC_INPUT_CHANGED','缩略图在推理后发生变化',exit_code=6)
         for asset,_,_ in plans:_source(root,asset)
         remaining(deadline,marker)
-        destination.parent.mkdir(parents=True,exist_ok=True)
-        ready.rename(destination)
+        current_job().publish_tree(ready,destination)
         generated=[]
         index_asset_id=f'sem_{key}_index';vector_asset_id=f'sem_{key}_vectors'
         for aid,path,kind,probe in [(index_asset_id,destination/'index.json','generated',{}),
@@ -324,10 +322,8 @@ def build_index(root, project, *, index_id, adapter_id, asset_ids=None, all_visu
                     generated_assets=len(generated),inference=inference,validation=validation,snapshot=snapshot,
                     operation_id=operation_id,verification_scope=verification_summary(),network='disabled')
     except BaseException:
-        # Only a fresh, operation-owned output tree is removed. Diagnostic job
-        # records survive; the CLI transaction restores metadata on exceptions.
-        if destination.exists():shutil.rmtree(destination)
-        if ready.exists():shutil.rmtree(ready)
+        # Transaction rollback precedes identity-checked managed cleanup.
+        # Preserve request/response evidence and changed or referenced outputs.
         raise
 
 
@@ -440,6 +436,7 @@ def queries_from(*,query=None,queries_file=None,image=None,root):
     return 'text',items
 
 
+@managed('semantic-search')
 def search(root,project,*,index_id,query=None,queries_file=None,image=None,limit=5,minimum=-1.,
            kind=None,distinct_assets=True,device='auto',device_index=0,batch_size=8,timeout=600,
            cancel_file=None,dry_run=False,calibration_id=None,query_mode='clauses'):

@@ -1,0 +1,10 @@
+{
+  "status": "verification-controller-failed",
+  "step": "parsing-registration-stdout",
+  "activation_exit_code": 0,
+  "registration_exit_code": 0,
+  "error": "PowerShell human-readable registration stdout is local Windows encoding, not UTF-8 JSON; inspect the structured registration.json instead",
+  "raw_stream": "registration.stdout.json",
+  "runtime_already_activated": true,
+  "repeated_activation": false
+}

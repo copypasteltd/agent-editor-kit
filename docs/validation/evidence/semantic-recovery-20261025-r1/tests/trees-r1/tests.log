@@ -1,0 +1,28 @@
+test_added_empty_directory_is_preserved (test_semantic_jobs.SemanticJobTests.test_added_empty_directory_is_preserved) ... ok
+test_added_file_preserves_all_outputs (test_semantic_jobs.SemanticJobTests.test_added_file_preserves_all_outputs) ... ok
+test_any_registered_asset_preserves_the_complete_semantic_tree (test_semantic_jobs.SemanticJobTests.test_any_registered_asset_preserves_the_complete_semantic_tree) ... ok
+test_calibration_uses_its_separate_owned_namespace (test_semantic_jobs.SemanticJobTests.test_calibration_uses_its_separate_owned_namespace) ... ok
+test_committed_metadata_keeps_tree_on_explicit_diagnostic_cleanup (test_semantic_jobs.SemanticJobTests.test_committed_metadata_keeps_tree_on_explicit_diagnostic_cleanup) ... ok
+test_dry_run_plans_without_changing_any_evidence (test_semantic_jobs.SemanticJobTests.test_dry_run_plans_without_changing_any_evidence) ... ok
+test_existing_destination_is_never_overwritten (test_semantic_jobs.SemanticJobTests.test_existing_destination_is_never_overwritten) ... ok
+test_explicit_recovery_removes_only_the_owned_unreferenced_tree (test_semantic_jobs.SemanticJobTests.test_explicit_recovery_removes_only_the_owned_unreferenced_tree) ... ok
+test_interrupted_cleanup_can_reclaim_remaining_original_entries (test_semantic_jobs.SemanticJobTests.test_interrupted_cleanup_can_reclaim_remaining_original_entries) ... ok
+test_live_owner_prevents_cleanup_of_the_whole_tree (test_semantic_jobs.SemanticJobTests.test_live_owner_prevents_cleanup_of_the_whole_tree) ... ok
+test_modified_file_preserves_tree_and_job (test_semantic_jobs.SemanticJobTests.test_modified_file_preserves_tree_and_job) ... ok
+test_normal_failure_rolls_back_metadata_and_reclaims_only_its_publication (test_semantic_jobs.SemanticJobTests.test_normal_failure_rolls_back_metadata_and_reclaims_only_its_publication) ... ok
+test_outside_stage_and_outside_publication_root_are_rejected (test_semantic_jobs.SemanticJobTests.test_outside_stage_and_outside_publication_root_are_rejected) ... ok
+test_prepublication_crash_workspace_is_reclaimed (test_semantic_jobs.SemanticJobTests.test_prepublication_crash_workspace_is_reclaimed) ... ok
+test_rename_failure_preserves_evidence_without_publishing (test_semantic_jobs.SemanticJobTests.test_rename_failure_preserves_evidence_without_publishing) ... ok
+test_rights_evidence_alone_preserves_the_tree (test_semantic_jobs.SemanticJobTests.test_rights_evidence_alone_preserves_the_tree) ... ok
+test_same_bytes_replaced_file_is_preserved (test_semantic_jobs.SemanticJobTests.test_same_bytes_replaced_file_is_preserved) ... ok
+test_same_bytes_replaced_root_is_preserved (test_semantic_jobs.SemanticJobTests.test_same_bytes_replaced_root_is_preserved) ... ok
+test_tampered_intent_is_preserved (test_semantic_jobs.SemanticJobTests.test_tampered_intent_is_preserved) ... ok
+test_tree_namespaces_are_restricted_by_task_kind (test_semantic_jobs.SemanticJobTests.test_tree_namespaces_are_restricted_by_task_kind) ... ok
+test_tree_output_budget_is_enforced_before_publication (test_semantic_jobs.SemanticJobTests.test_tree_output_budget_is_enforced_before_publication) ... ok
+test_write_ahead_intent_precedes_atomic_directory_publication (test_semantic_jobs.SemanticJobTests.test_write_ahead_intent_precedes_atomic_directory_publication) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 3.324s
+
+OK
+AEK_RESULT={"methods": 22, "skipped": 0, "failures": 0, "errors": 0, "success": true}

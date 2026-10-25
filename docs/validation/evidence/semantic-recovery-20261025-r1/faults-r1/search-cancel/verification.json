@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "case": "search-cancel",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.10\\final-r1\\installed",
+  "started_at_utc": "2026-10-25T08:39:54.912266+00:00",
+  "native_windows": true,
+  "virtualization": false,
+  "fault_hooks_only_in_verification_harness": true,
+  "human_quality_acceptance": false,
+  "fault_process": {
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\semantic-recovery-20261025-r1\\faults-r1\\search-cancel\\fault-child.py",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\semantic-recovery-20261025-r1\\faults-r1\\search-cancel\\fault-spec.json"
+    ],
+    "pid": 28048,
+    "exit_code": 8,
+    "elapsed_seconds": 170.7451832000006,
+    "stdout_sha256": "9a3e7b27cb367efc785795c6e45aa8768dba9047e22422f1715ce0a63312fa6f",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "owned_worker_handle_observed_exited": true,
+  "observed_fault_boundary": {
+    "worker": {
+      "pid": 34444,
+      "phase": "model-loading",
+      "elapsed_seconds": 88.37147610000102,
+      "request_sha256": "sha256:0199ad697409490484f8b63a8ef985813e45803b6d5e1c7ca0e910f3e7ea927d"
+    },
+    "job": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-recovery-20261025-faults-r1\\search-cancel\\cache\\managed-jobs\\job-d2cf91bc55514c2f840b24334a732a2f"
+  },
+  "dry_run_metadata_unchanged": true,
+  "original_inputs_preserved": true,
+  "cleaned": 1,
+  "metadata_rollback_verified": true,
+  "committed_metadata_preserved": false,
+  "finished_at_utc": "2026-10-25T08:42:55.233091+00:00",
+  "installed_bytes_unchanged": true,
+  "calls": 6
+}

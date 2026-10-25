@@ -1,6 +1,7 @@
 # Interrupted local jobs
 
-Use for cancellation, timeout or an interrupted four-source/subtitle-dubbing job.
+Use for cancellation, timeout or an interrupted four-source, subtitle-dubbing or
+`semantic adapter-register/index/calibrate/search` job (CLI 0.1.12 and later).
 Inspect `project recover --help` through the pinned installed launcher first.
 
 ```powershell
@@ -14,16 +15,23 @@ pending transaction first, then inspects the durable managed workspaces in
 `cache/managed-jobs/`. Check `data.job_recovery.jobs`: the native lease protects
 active jobs; only matching filesystem identity/hash and unreferenced derived
 outputs can be removed. Committed assets and active local Rights Ledger evidence/
-license references survive. Changed outputs, unknown or
+license references survive. For a semantic index/calibration directory, any
+asset or active rights reference inside protects the entire published directory.
+Changed outputs, unknown or
 blocked directories, user media and legacy unmanaged caches are preserved.
 Dry-run makes no metadata or file changes. Keep preserved evidence and inspect
 the reason; do not replace recovery with a blanket cache deletion.
 
 Subtitle dubbing overflow deliberately returns `preserved_for_review` and keeps
 complete WAVs and failure.json. Explicit cleanup can remove this uncommitted
-directory: save required review samples first. Current budgets are 2MiB of
+directory: save required review samples first. Semantic jobs likewise keep
+requests, responses, failures and `worker-phase.json` for review until explicit
+cleanup. Normal uncommitted semantic publication is rolled back, while committed
+index/profile data remains available. Current budgets are 2MiB of
 manifest data/4096 published outputs and 10,000 scanned entries per job, at most
-256 jobs per scan. No other model cache automatically gains this contract.
+256 jobs per scan. One semantic publication tree permits up to 4098 files within
+the 10,000-entry scan limit. Legacy `cache/semantic-jobs/` is not adopted.
+No other model cache automatically gains this contract.
 
 Normal transactional responses may expose `data.job_cleanup`. If the owner was
 hard-stopped, the private native process job ends descendants launched through
@@ -34,4 +42,10 @@ This is cleanup/recovery, not inference checkpoint resume. Preserve sources and
 failure records, use a fresh prefix when retrying separation, and do not claim
 power-loss, disk-exhaustion or general long-concurrency acceptance. Upgrading a
 four-source adapter requires explicit registration of the new implementation
-pins; never silently rewrite old hashes or infer model redistribution rights.
+pins; semantic upgrades likewise require explicit registration and rebuilt
+indexes/profiles. Never silently rewrite old hashes or infer model redistribution
+rights. Phase timings expose import, verification, loading and inference costs;
+there is no persistent model service. Synchronous integrity checks can delay
+timeout/cancellation handling, so report observed wall time as well as the error.
+
+[Full semantic recovery workflow](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/SEMANTIC_JOB_RECOVERY.md)

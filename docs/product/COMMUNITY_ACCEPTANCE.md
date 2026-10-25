@@ -1,6 +1,6 @@
 # 素材与 GPU 扩展验收 / Community and GPU acceptance
 
-2026-10-25；本页专项实测基线 **CLI 0.1.3 / `v0.1.0-alpha.4-local.1`**。当前安装版已为 **CLI 0.1.10 / local.8**，见[本地交付](COMMUNITY_LOCAL_DELIVERY.md)。以下保留当时素材/配音/翻译/配乐/GPU 的实际验收，不表示本轮重跑这些推理，也不作为完整剪映功能或成片质量的验收。
+2026-10-25；本页专项实测基线 **CLI 0.1.3 / `v0.1.0-alpha.4-local.1`**。当前安装版已为 **CLI 0.1.12 / local.10**，见[本地交付](COMMUNITY_LOCAL_DELIVERY.md)。以下保留当时素材/配音/翻译/配乐/GPU 的实际验收，不表示本轮重跑这些推理，也不作为完整剪映功能或成片质量的验收。
 
 This page records the scoped local extension. It does not certify full CapCut equivalence, natural-media quality, human listening or semantic translation acceptance. Public alpha.3 remains unchanged.
 
@@ -71,3 +71,6 @@ CLI 0.1.9 另有[字幕翻译配音联合流程](SUBTITLE_DUBBING.md)与[独立�
 
 
 2026-10-25 CLI 0.1.11 / local.9：新增[语义工程包迁移](SEMANTIC_PROJECT_PACKAGE.md)与[真实核验](../validation/语义工程包迁移实测_2026-10-25.md)。同机 CPU/CUDA/Skill 各 80 决策在原路径不可用后保留；原三条错误及旧 C19 失败不改写。原生依赖继续外部固定，全部 G01–G38 原条件保持，完整目标继续进行。
+
+
+2026-10-25 当前 CLI 0.1.12：[语义任务恢复](SEMANTIC_JOB_RECOVERY.md)与[真实实测](../validation/语义任务中断恢复实测_2026-10-25.md)。7 类故障/清理结构核验通过，但同步完整性检查延迟超时/取消；仍逐命令加载，三条查询错误与全部原目标保留。

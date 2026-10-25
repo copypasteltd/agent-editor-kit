@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "case": "search-timeout",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.10\\final-r1\\installed",
+  "started_at_utc": "2026-10-25T08:42:55.418024+00:00",
+  "native_windows": true,
+  "virtualization": false,
+  "fault_hooks_only_in_verification_harness": true,
+  "human_quality_acceptance": false,
+  "fault_process": {
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\semantic-recovery-20261025-r1\\faults-r1\\search-timeout\\fault-child.py",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\semantic-recovery-20261025-r1\\faults-r1\\search-timeout\\fault-spec.json"
+    ],
+    "pid": 14252,
+    "exit_code": 6,
+    "elapsed_seconds": 81.7392989,
+    "stdout_sha256": "58469dfed99dc87a8d3250ecc876ca30db7a27b1cbbfd6b59db8de1b51f91711",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "actual_timeout": true,
+  "timeout_stage": "full command, may precede model loading",
+  "dry_run_metadata_unchanged": true,
+  "original_inputs_preserved": true,
+  "cleaned": 1,
+  "metadata_rollback_verified": true,
+  "committed_metadata_preserved": false,
+  "finished_at_utc": "2026-10-25T08:44:31.954073+00:00",
+  "installed_bytes_unchanged": true,
+  "calls": 5
+}

@@ -12,6 +12,7 @@ from .rights import active_records, add_record, load_ledger, save_ledger
 from .semantic_contract import fingerprint, json_object, local_file
 from .semantic_queries import QUERY_PROTOCOL, prepare, rank_clauses
 from .semantic_sampling import owned, remaining
+from .semantic_jobs import managed, current as current_job
 from .utils import assert_id, atomic_write_json, new_id, now_iso, sha256_file
 
 FORMAT = 'agent-semantic-acceptance-profile-v1'
@@ -123,6 +124,7 @@ def load_profile(root, project, calibration_id, manifest, *, kind):
                        exit_code=6, cause=str(exc)) from exc
 
 
+@managed('semantic-calibrate')
 def calibrate(root, project, *, index_id, calibration_id, input_path, kind=None,
               false_accept_rate=.05, minimum_coverage=.75, device='auto', device_index=0,
               batch_size=8, timeout=600, cancel_file=None, dry_run=False):
@@ -167,7 +169,6 @@ def calibrate(root, project, *, index_id, calibration_id, input_path, kind=None,
     if original_hash != 'sha256:' + sha256_file(source):
         raise AppError('SEMANTIC_INPUT_CHANGED', '校准输入在执行期间改变', exit_code=6)
     ready = job/'ready'; ready.mkdir(exist_ok=False)
-    published = False
     try:
         shutil.copyfile(source, ready/'dataset.json')
         if 'sha256:' + sha256_file(ready/'dataset.json') != original_hash:
@@ -181,7 +182,7 @@ def calibrate(root, project, *, index_id, calibration_id, input_path, kind=None,
         profile['fingerprint'] = fingerprint(profile)
         atomic_write_json(ready/'profile.json', profile)
         remaining(deadline, marker)
-        destination.parent.mkdir(parents=True, exist_ok=True); ready.rename(destination); published=True
+        current_job().publish_tree(ready, destination)
         assets, generated = asset_map(project), []
         for suffix, filename in (('profile', 'profile.json'), ('dataset', 'dataset.json')):
             path = destination/filename
@@ -224,11 +225,7 @@ def calibrate(root, project, *, index_id, calibration_id, input_path, kind=None,
         return dict(calibration=record, profile=profile, validation=validation, snapshot=snapshot,
                     operation_id=operation_id, network='disabled')
     except BaseException as exc:
-        if published and destination.exists():
-            shutil.rmtree(destination)
-        if ready.exists():
-            shutil.rmtree(ready)
         if isinstance(exc, OSError):
-            raise AppError('SEMANTIC_CALIBRATION_IO_FAILED', '校准发布失败，已回收本次未提交产物',
+            raise AppError('SEMANTIC_CALIBRATION_IO_FAILED', '校准发布失败，事务与受管任务按身份核验恢复',
                            exit_code=6, cause=str(exc)) from exc
         raise

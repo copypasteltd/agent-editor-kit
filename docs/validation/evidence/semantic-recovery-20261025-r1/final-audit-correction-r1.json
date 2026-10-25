@@ -1,0 +1,9 @@
+{
+  "status": "superseded-audit-count",
+  "first_report": "final-delivery-r1/verification.json",
+  "actual_read_only_calls": 6,
+  "reported_read_only_calls": 3,
+  "cause": "Fault-evidence loop shadowed the read-only calls variable after raw outputs were saved",
+  "replacement": "final-delivery-r2/verification.json",
+  "original_receipts_preserved": true
+}

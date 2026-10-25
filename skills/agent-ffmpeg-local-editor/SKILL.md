@@ -7,7 +7,7 @@ description: "Edit and deliver local videos with agent editor kit: multitrack ed
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.9` / CLI `0.1.11`.
+The current local runtime is `v0.1.0-alpha.4-local.10` / CLI `0.1.12`.
 The published alpha.3 downloads retain CLI 0.1.2 and their original scope.
 
 ## Runtime and common workflow
@@ -74,7 +74,7 @@ media. Add other modules when the request needs them. For example:
   [audio-stems.md](references/audio-stems.md). Register the existing four-source
   runtime explicitly, prefer GPU with `auto`, retain the four editable tracks,
   and review leakage, artifacts, float peaks and source/model rights.
-- Interrupted four-source or subtitle-dubbing job: read [job-recovery.md](references/job-recovery.md).
+- Interrupted four-source, subtitle-dubbing or semantic job: read [job-recovery.md](references/job-recovery.md).
   Preview owned workspace cleanup, recover pending metadata first, and preserve
   committed assets, live jobs, changed files and legacy unmanaged caches.
 - Find footage from a description or reference image: read

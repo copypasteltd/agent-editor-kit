@@ -1,0 +1,36 @@
+[
+  {
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.10\\final-r1\\installed\\run.py",
+      "semantic",
+      "search",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-recovery-20261025-installed-r1\\restored",
+      "--queries-file",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-recovery-20261025-installed-r1\\queries.json",
+      "--index-id",
+      "images-v1",
+      "--kind",
+      "image",
+      "--calibration-id",
+      "accept-cuda",
+      "--device",
+      "cuda",
+      "--limit",
+      "3"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 161.0457435999997,
+    "stdout_sha256": "84180d7706becf39bf7a9ad4972294d6e5a2a20ad7f66d08205d8b4546e12593",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "succeeded",
+    "ok": true
+  }
+]

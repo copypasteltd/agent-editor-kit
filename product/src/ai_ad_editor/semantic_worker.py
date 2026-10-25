@@ -20,7 +20,17 @@ def main() -> int:
     started=time.monotonic()
     response=dict(protocol=PROTOCOL,status='failed',network='disabled',blocked_network_events=[],
                   request_sha256=request.get('request_sha256'))
+    phases={}; previous=[None,started]
+    def phase(name):
+        now=time.monotonic()
+        if previous[0] is not None:
+            phases[previous[0]]=phases.get(previous[0],0.)+now-previous[1]
+        previous[:]=[name,now]
+        (response_path.parent/'worker-phase.json').write_text(json.dumps(dict(pid=os.getpid(),
+            phase=name,elapsed_seconds=now-started,request_sha256=request.get('request_sha256')))+'\n',
+            encoding='utf-8',newline='\n')
     try:
+        phase('request-and-environment')
         if (request.get('protocol')!=PROTOCOL or request.get('network')!='disabled'
                 or request.get('request_sha256')!=fingerprint({k:v for k,v in request.items() if k!='request_sha256'})):
             raise ValueError('SEMANTIC_REQUEST_INVALID')
@@ -32,7 +42,8 @@ def main() -> int:
             path=runtime/name;path.mkdir(parents=True,exist_ok=True);os.environ[key]=str(path)
         os.environ.update(HF_HUB_OFFLINE='1',TRANSFORMERS_OFFLINE='1',HF_HUB_DISABLE_TELEMETRY='1',
                           DO_NOT_TRACK='1',TOKENIZERS_PARALLELISM='false',TQDM_DISABLE='1')
-        from ai_ad_editor.artifact_locks import artifact_entry,verification_scope
+        phase('native-imports')
+        from ai_ad_editor.artifact_locks import artifact_entry,verification_scope,verification_summary
         from ai_ad_editor.semantic_contract import DIMENSION, check_vectors, verify_adapter
         from ai_ad_editor.utils import sha256_file
         import numpy as np
@@ -50,6 +61,7 @@ def main() -> int:
         versions['python']=sys.version.split()[0]
         module_paths={key:str(Path(value.__file__).resolve()) for key,value in modules.items()}
         response.update(versions=versions,module_paths=module_paths)
+        phase('adapter-verification')
         if request['task']=='inspect':
             files={Path(path) for path in module_paths.values()}
             # Pin the selected Python/native inference components, including all
@@ -65,6 +77,7 @@ def main() -> int:
             if not 1<=len(files)<=128:raise ValueError('SEMANTIC_RUNTIME_INVENTORY_BUDGET')
             with verification_scope():
                 response['runtime_artifacts']=[artifact_entry(local_file(path),'runtime') for path in sorted(files)]
+                response['verification_scope']=verification_summary()
             response.update(status='succeeded',model_forward_calls=0)
         else:
             with verification_scope():
@@ -107,6 +120,7 @@ def main() -> int:
                         if entry['bytes']>50*1024**2 or entry['sha256']!=item['sha256']:
                             raise ValueError('SEMANTIC_INPUT_HASH_MISMATCH_OR_BUDGET')
                 load_start=time.monotonic()
+                phase('model-loading')
                 model,loading=SiglipModel.from_pretrained(adapter['model_path'],local_files_only=True,
                     trust_remote_code=False,use_safetensors=True,dtype=dtype,output_loading_info=True)
                 if any(loading.get(key) for key in ('missing_keys','unexpected_keys','mismatched_keys','error_msgs')):
@@ -115,6 +129,7 @@ def main() -> int:
                 processor=SiglipImageProcessor.from_pretrained(adapter['model_path'],local_files_only=True)
                 if device=='cuda':torch.cuda.synchronize(index)
                 load_seconds=time.monotonic()-load_start
+                phase('inference')
                 values=[];calls=0;image_sizes=[]
                 infer_start=time.monotonic()
                 with torch.inference_mode():
@@ -159,6 +174,7 @@ def main() -> int:
                     peak_cuda_allocated_bytes=torch.cuda.max_memory_allocated(index) if device=='cuda' else None,
                     peak_cuda_reserved_bytes=torch.cuda.max_memory_reserved(index) if device=='cuda' else None,
                     model_loads=1,model_forward_calls=calls,batch_size=batch_size,image_sizes=image_sizes,
+                    verification_scope=verification_summary(),
                     model_loading_keys_verified=True,text_normalization='lowercase; max_length=64; no truncation',
                     model_reuse_scope='complete current batch only; no persistent model service')
     except Exception as exc:
@@ -167,6 +183,8 @@ def main() -> int:
         if request.get('device')=='cuda' and isinstance(exc,RuntimeError) and any(s in message.lower() for s in ('cuda','cublas','cudnn','out of memory')):
             code='SEMANTIC_CUDA_FAILED'
         response.update(code=code,error_type=type(exc).__name__,message=message,traceback=traceback.format_exc()[-6000:])
+    phase('terminal')
+    response['phase_seconds']={key:round(value,6) for key,value in phases.items()}
     response['elapsed_seconds']=round(time.monotonic()-started,6)
     response_path.write_text(json.dumps(response,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
     return 0 if response['status']=='succeeded' else 1

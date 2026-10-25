@@ -9,23 +9,23 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- current-goal-review-r14 -->
+<!-- current-goal-review-r15 -->
 
-**CLI 0.1.11 / alpha.4-local.9 / r10 kit**：200 product Python files; one Skill / 17 modules. Same-host CPU, CUDA and registered-Skill runs each preserve all 80 original decisions after migration, including two false accepts and a clock false rejection. Re-export intact sources to replace damaged 0.1.10 packages. All G01–G38 original closure conditions remain.
+**CLI 0.1.12 / alpha.4-local.10 / r11 kit** · 202 product Python files · 1 Skill / 17 modules. Registration, indexing, calibration and search now use owned durable jobs. Identity/SHA publication records protect whole referenced directories. Seven real fault/cleanup cases pass recovery checks; the 1-second timeout still takes about 81.739 seconds. Full performance and recovery acceptance remains open.
 
-[All 38 numbered gaps](docs/product/GOAL_GAPS_20261025.md) · [Actual migration evidence](docs/validation/语义工程包迁移实测_2026-10-25.md)
+[All 38 numbered gaps](docs/product/GOAL_GAPS_20261025.md) · [Actual checks](docs/validation/语义任务中断恢复实测_2026-10-25.md)
 
-<!-- /current-goal-review-r14 -->
+<!-- /current-goal-review-r15 -->
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r10 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r10.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r11 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r11.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
 <!-- community-materials-gpu -->
 
-**Local installed extension: CLI 0.1.11, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
+**Local installed extension: CLI 0.1.12, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
 
 [Complete workflow and limits](docs/product/COMMUNITY_MATERIALS.en.md) · [Resource catalog](docs/product/COMMUNITY_MATERIAL_CATALOG.md) · [103 named voices and actual audition scope](docs/product/COMMUNITY_VOICES.md) · [CPU evidence](docs/validation/evidence/community-materials-20261025-r1/cpu/verification.json) · [GPU evidence](docs/validation/evidence/community-materials-20261025-r1/gpu/verification.json).
 
@@ -40,7 +40,7 @@ This page includes functional modules, services/dependencies, installation/usage
 | V01 / F50 | Explicit clauses, device-bound empirical profiles, actual previews and portable projects | CPU/CUDA/Skill each preserve 80 same-host migration decisions, including two false accepts and one false rejection; external runtime pins and G26/G31 remain open |
 | D01 / F51 | Chinese/English SRT translation, complete batched speech, actual WAV fitting, explicit casting/mixing and atomic clips | Plain SRT / Chinese-English only; cue timing, semantics/naturalness/lip sync unaccepted |
 
-CPU 46 commands and GPU 15 commands are separate current tests. The real 12-second edit was fully decoded and package-round-tripped. Public examples omit speech whose publication rights remain unverified; local original stems and complete outputs remain available in delivery records. Human listening and full CapCut equivalence remain open.
+The 46 CPU and 15 GPU commands are separate tests from the earlier materials/GPU batch; this semantic-recovery batch did not rerun them. That batch's real 12-second edit was fully decoded and package-round-tripped. Public examples omit speech whose publication rights remain unverified; local original stems and complete outputs remain available in delivery records. Human listening and full CapCut equivalence remain open.
 
 <!-- /community-materials-gpu -->
 
@@ -48,9 +48,27 @@ CPU 46 commands and GPU 15 commands are separate current tests. The real 12-seco
 
 
 
+<!-- semantic-recovery-r1 -->
+
+## Local CLI 0.1.12: managed semantic recovery
+
+Registration, indexing, calibration and search now use owned durable jobs. Identity/SHA publication records protect whole referenced directories. Seven real fault/cleanup cases pass recovery checks; the 1-second timeout still takes about 81.739 seconds. Full performance and recovery acceptance remains open.
+
+[Workflow](docs/product/SEMANTIC_JOB_RECOVERY.md) · [Real evidence and limitations](docs/validation/语义任务中断恢复实测_2026-10-25.md) · [C21](docs/product/CASES.md#c21-semantic-recovery) · [r11 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r11.zip)
+
+```powershell
+& $avk project recover --project $project --cleanup-jobs --dry-run
+& $avk project recover --project $project --cleanup-jobs
+& $avk validate --project $project
+```
+
+Inspect the dry-run and retain required diagnostics first. Cleanup preserves committed references, active jobs, changed/unknown files and legacy caches. It does not resume inference.
+
+<!-- /semantic-recovery-r1 -->
+
 <!-- semantic-package-r1 -->
 
-## Local CLI 0.1.11: portable indexed and calibrated projects
+## Historical CLI 0.1.11: portable indexed and calibrated projects
 
 Packages preserve semantic directories and derive only required URI bindings. Import verifies source/index/vector/preview/profile/dataset and rights hashes before publishing. Vectors, observations, cutoffs, devices and model pins are retained.
 
@@ -313,7 +331,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 |---|---|---|---|---|
 | F01 | Agent command protocol | Task arguments → JSON responses, exit codes, errors, warnings, artifacts and provenance; queryable capabilities and schema. | `version; doctor; capabilities; schema show` | Skills guide the task; the CLI executes it. No hosted Agent service. |
 | F02 | Editable projects | Create/inspect Agent Projects with assets, sequences, tracks, tick clocks, output settings and rights references. | `project init/inspect` | Source media and metadata are separate; relocation requires relinking and evidence-path review. |
-| F03 | Transactions, recovery and snapshots | Metadata transactions/snapshots, native child-tree ownership and explicit recovery of durable four-source/subtitle-dubbing workspaces and uncommitted outputs. | `project snapshot/restore/migrate/recover; operation inspect` | Preserves committed assets and active/changed/unknown/legacy files. Only integrated four-source/subtitle-dubbing managed workspaces; not a full media backup or inference resume. |
+| F03 | Transactions, recovery and snapshots | Metadata transactions/snapshots, native child-tree ownership and explicit recovery of durable four-source/subtitle-dubbing workspaces and uncommitted outputs.  Adds managed semantic registration/index/calibration/search jobs.| `project snapshot/restore/migrate/recover; operation inspect` | Whole referenced semantic directories protected; active/changed/unknown/legacy paths retained. Only integrated jobs; no inference resume; synchronous checks may delay deadlines. |
 | F04 | Media ingestion and relinking | Local images/video/audio/fonts → probe results, stable asset IDs, hashes and provenance. | `media ingest/relink` | No online-media fetching; ingestion does not establish commercial rights. |
 | F05 | Proxies, thumbnails and waveforms | Media → lightweight proxies, thumbnails, waveforms and auditable contact sheets. | `media prepare/contact-sheet` | Contact sheets are samples, not exhaustive visual understanding. |
 | F06 | Scene, silence and highlight analysis | Local video/audio → scene, silence, beat or heuristic highlight candidates and timing evidence. | `media understand/highlights` | Heuristic candidates require Agent or registered-adapter review for semantics. |
@@ -488,7 +506,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.9/final-r1/installed/`, CLI 0.1.11. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.10/final-r1/installed/`, CLI 0.1.12. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -768,18 +786,25 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R85 | 旧损坏包 / Legacy invalid package | Actual 0.1.10 flattened package rejected before destination publication; old bytes retained; no automatic repair | [2026-10-25 evidence](docs/validation/evidence/semantic-package-20261025-r1/installed-r1/legacy-cuda/verification.json) · [Full scope](docs/validation/语义工程包迁移实测_2026-10-25.md) |
 | R86 | C20 可视案例 / Visual example | 12s/360 frames MP4; 60-frame GIF; editable card package decoded frames identical; no human continuous review | [2026-10-25 evidence](docs/validation/evidence/semantic-package-20261025-r1/demo-installed-r1/verification.json) · [Full scope](docs/validation/语义工程包迁移实测_2026-10-25.md) |
 | R87 | 单入口交付 / Single-entry delivery | CLI 0.1.11 / local.9 / r10; one Skill, 17 modules, 65 pinned files; all 38 original gap conditions remain | [2026-10-25 evidence](docs/validation/evidence/semantic-package-20261025-r1/kit-r1/verification.json) · [Full scope](docs/validation/语义工程包迁移实测_2026-10-25.md) |
+| R88 | 源码范围 / Source checks | 150 related contracts; separate 122 CLI; zero skips; 22 tree cases included, not added | [2026-10-25 evidence](docs/validation/evidence/semantic-recovery-20261025-r1/tests/development-r1/verification.json) · [Scope](docs/validation/语义任务中断恢复实测_2026-10-25.md) |
+| R89 | 固定安装 / Installed checks | 202 source-identical Python files; separate 150 related contracts / 122 CLI; zero skips | [2026-10-25 evidence](docs/validation/evidence/semantic-recovery-20261025-r1/tests/installed-r1/verification.json) · [Scope](docs/validation/语义任务中断恢复实测_2026-10-25.md) |
+| R90 | 实际恢复 / Real recovery | 7 actual native model fault/cleanup cases; owned worker exit and pre/post-commit invariants; no power-loss claim | [2026-10-25 evidence](docs/validation/evidence/semantic-recovery-20261025-r1/faults-r1/calibration-commit/verification.json) · [Scope](docs/validation/语义任务中断恢复实测_2026-10-25.md) |
+| R91 | 语义回归 / Query regression | CPU/CUDA/registered Skill each preserve all 80 decisions after migration; known 3 errors retained | [2026-10-25 evidence](docs/validation/evidence/semantic-recovery-20261025-r1/installed-r1/skill-cuda/verification.json) · [Scope](docs/validation/语义任务中断恢复实测_2026-10-25.md) |
+| R92 | 性能失败保留 / Timing limitation | 1-second timeout actually 81.739s; imports/hash/load/inference observable; no persistent service or deadline pass | [2026-10-25 evidence](docs/validation/evidence/semantic-recovery-20261025-r1/faults-r1/search-timeout/verification.json) · [Scope](docs/validation/语义任务中断恢复实测_2026-10-25.md) |
+| R93 | 单入口交付 / Single-entry delivery | CLI 0.1.12 / local.10 / r11; 1 Skill / 17 modules; same-host isolated kit, no clean-machine claim | [2026-10-25 evidence](docs/validation/evidence/semantic-recovery-20261025-r1/kit-r2/verification.json) · [Scope](docs/validation/语义任务中断恢复实测_2026-10-25.md) |
+| R94 | 完整目标复核 / Full goal review | All G01–G38 original closure conditions and R01–R87 retained; public release/API checked separately; no overall percentage | [2026-10-25 evidence](docs/validation/evidence/semantic-recovery-20261025-r1/final-delivery-r2/verification.json) · [Scope](docs/validation/语义任务中断恢复实测_2026-10-25.md) |
 
 ## Current limits and development direction
 
 The deliverable is an offline, editable and auditable Agent CLI workflow with explicit contracts. Openly licensed asset/template ecosystems, agreed AI/beauty/layout features, complete color processing, actual quality for supported draft profiles, broad natural-media acceptance and long-form resource performance remain open. Consumer GUI, accounts, cloud collaboration and arbitrary lossless private-draft interchange are outside current core acceptance. Later R113/R114 Float32 transition/runtime-closure candidates are not included in this release.
 
-[The complete-goal assessment](docs/product/GOAL_GAPS_20261025.md) updates every G01–G38 against CLI 0.1.11. A single Skill, 500 looks/previews, 359 resources, GPU speech/translation, joint subtitle dubbing, stems/recovery and controlled word activity timing are delivered. Natural audiovisual quality, complex combinations, advanced AI, content/templates, autonomous Agent tasks, long-job reliability and a newer public release remain open. R67–R72 retain separate real scopes and limits; no overall completion percentage is established. The [2026-10-24 assessment](docs/product/GOAL_GAPS_20261024.md) is historical.
+[The complete-goal assessment](docs/product/GOAL_GAPS_20261025.md) updates every G01–G38 against CLI 0.1.12. A single Skill, 500 looks/previews, 359 resources, GPU speech/translation, joint subtitle dubbing, stems/recovery and controlled word activity timing are delivered. Natural audiovisual quality, complex combinations, advanced AI, content/templates, autonomous Agent tasks, long-job reliability and a newer public release remain open. R67–R72 retain separate real scopes and limits; no overall completion percentage is established. The [2026-10-24 assessment](docs/product/GOAL_GAPS_20261024.md) is historical.
 
 Exact audio-channel relationship protection and native capture remain delivered within their documented scope. Extremely short-window pitch, natural-speech alignment, actual camera/microphone recording and AV synchronization remain unaccepted. CLI 0.1.5 introduced limited visual semantic retrieval; neither the 500 looks nor the current 75 declarations establish an overall completion percentage.
 
 Use real client media and minimal reproducible projects to identify gaps, implement/check them individually and publish new versions without replacing prior bundles/digests/tags. Record actual successful artifacts rather than inferred completion.
 
-**Current delivery / 当前交付 / 目前交付（R82–R87，2026-10-25）：** CLI 0.1.11 / alpha.4-local.9 / r10; 200 product files, 1 Skill / 17 modules. Source and installed 65 semantic / 122 CLI scopes pass separately. Actual migration preserves 80 decisions including 3 mistakes. Public alpha.3 / CLI 0.1.2 assets and all 38 original conditions remain.
+**Current delivery / 当前交付 / 目前交付（R88–R94，2026-10-25）：** CLI 0.1.12 / local.10 / r11; 202 product files, 1 Skill / 17 modules. Native semantic recovery added; observed timeout overrun and three known query errors remain. Public alpha.3 assets and all 38 original conditions preserved.
 
 ## Documentation, provenance and maintenance
 

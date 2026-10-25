@@ -1,0 +1,18 @@
+test_applied_keys_render_without_external_recipe (test_motion_pack.MotionPackCLI.test_applied_keys_render_without_external_recipe) ... ok
+test_bad_parameters_conflicts_and_cancel_leave_original_bytes (test_motion_pack.MotionPackCLI.test_bad_parameters_conflicts_and_cancel_leave_original_bytes) ... ok
+test_capture_does_not_mutate_project_and_copies_declared_rights (test_motion_pack.MotionPackCLI.test_capture_does_not_mutate_project_and_copies_declared_rights) ... ok
+test_catalog_inspect_create_roundtrip_and_no_overwrite (test_motion_pack.MotionPackCLI.test_catalog_inspect_create_roundtrip_and_no_overwrite) ... ok
+test_dry_run_and_idempotency_preserve_snapshots_and_project (test_motion_pack.MotionPackCLI.test_dry_run_and_idempotency_preserve_snapshots_and_project) ... ok
+test_post_save_failure_rolls_back_project_snapshot_and_operation (test_motion_pack.MotionPackCLI.test_post_save_failure_rolls_back_project_snapshot_and_operation) ... ok
+test_tiny_budget_and_locked_tracks_are_explicit_failures (test_motion_pack.MotionPackCLI.test_tiny_budget_and_locked_tracks_are_explicit_failures) ... ok
+test_actual_orbit_pixels_follow_independent_analytic_circle (test_motion_pack_native.MotionPackNative.test_actual_orbit_pixels_follow_independent_analytic_circle) ... ok
+test_all_six_recipes_produce_distinct_fully_decodable_native_frames (test_motion_pack_native.MotionPackNative.test_all_six_recipes_produce_distinct_fully_decodable_native_frames) ... ok
+test_capture_reuses_native_easing_in_another_canvas_and_duration (test_motion_pack_native.MotionPackNative.test_capture_reuses_native_easing_in_another_canvas_and_duration) ... ok
+test_nonlinear_nested_reverse_samples_author_clock_instead_of_parent_progress (test_motion_pack_native.MotionPackNative.test_nonlinear_nested_reverse_samples_author_clock_instead_of_parent_progress) ... ok
+test_split_presentation_windows_retain_identical_author_motion_pixels (test_motion_pack_native.MotionPackNative.test_split_presentation_windows_retain_identical_author_motion_pixels) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 70.283s
+
+OK
+AEK_RESULT={"methods": 12, "skipped": 0, "failures": 0, "errors": 0, "success": true}

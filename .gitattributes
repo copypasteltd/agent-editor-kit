@@ -1562,3 +1562,12 @@ scripts/*semantic_upgrade*20261025.py text eol=lf
 docs/specs/语义工程运行时升级契约_20261025.md text eol=lf
 docs/validation/语义工程运行时升级实测_2026-10-25.md text eol=lf
 docs/validation/语义运行时升级实测_2026-10-25.md text eol=lf
+
+# Motion recipes, actual native streams and measured preview media retain bytes.
+docs/validation/evidence/motion-pack-20261025-r1/** -text -whitespace
+docs/assets/motion-pack-20261025-r1/** -text -whitespace
+docs/product/motion-pack-capabilities-cli-0.1.16.json -text -whitespace
+docs/skills/community-unified-skill-package-0.1.16.json -text -whitespace
+scripts/*motion_pack*20261025.py text eol=lf
+docs/specs/可复用运镜包契约_20261025.md text eol=lf
+docs/validation/可复用运镜包实测_2026-10-25.md text eol=lf

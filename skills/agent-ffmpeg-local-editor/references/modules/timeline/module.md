@@ -4,7 +4,7 @@
 
 Edit JSON → tracks/motion/transitions/nesting
 
-Commands: `timeline compose/edit; motion apply`. Explicit track/clip targets and author clocks.
+Commands: `timeline compose/edit; motion apply; motion pack list/inspect/create/capture/apply`. Explicit track/clip targets and author clocks.
 
 ## Workflow
 
@@ -13,3 +13,7 @@ source ranges, explicit tracks and audio. Use `timeline compose` or `timeline ed
 Use `preview frame` or `preview range` to inspect actual results before rendering. Keep native PTS and nested clocks.
 
 For looks and client choices, read [looks](../../looks.md) and [actual visual selection](../../client-look-selection.md).
+
+For reusable paths and saved keyframe animation, read [motion packs](../../motion-packs.md).
+Inspect actual previews and parameters; apply on the visible output clock, preserve
+source retiming, and replace conflicting whole property tracks only explicitly.

@@ -2121,3 +2121,7 @@
   }
 ]
 ```
+
+## Portable motion packs / 可复用运镜包
+
+CLI 0.1.16 adds six parameterized paths and capture/reuse of existing curves, compiled into ordinary editable transform keys. The twelve base motion presets above remain unchanged. [Full parameter ranges, commands and actual six MP4/GIF previews](MOTION_PACKS.md) · [Installed/Skill evidence](../validation/可复用运镜包实测_2026-10-25.md). Generated paths are 65-point polylines; CPU composition and natural/subject-follow quality remain limited.

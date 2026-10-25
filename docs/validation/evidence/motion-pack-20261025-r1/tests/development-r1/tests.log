@@ -1,0 +1,110 @@
+test_applied_keys_render_without_external_recipe (test_motion_pack.MotionPackCLI.test_applied_keys_render_without_external_recipe) ... FAIL
+test_bad_parameters_conflicts_and_cancel_leave_original_bytes (test_motion_pack.MotionPackCLI.test_bad_parameters_conflicts_and_cancel_leave_original_bytes) ... FAIL
+test_capture_does_not_mutate_project_and_copies_declared_rights (test_motion_pack.MotionPackCLI.test_capture_does_not_mutate_project_and_copies_declared_rights) ... FAIL
+test_catalog_inspect_create_roundtrip_and_no_overwrite (test_motion_pack.MotionPackCLI.test_catalog_inspect_create_roundtrip_and_no_overwrite) ... ok
+test_dry_run_and_idempotency_preserve_snapshots_and_project (test_motion_pack.MotionPackCLI.test_dry_run_and_idempotency_preserve_snapshots_and_project) ... FAIL
+test_post_save_failure_rolls_back_project_snapshot_and_operation (test_motion_pack.MotionPackCLI.test_post_save_failure_rolls_back_project_snapshot_and_operation) ... FAIL
+test_tiny_budget_and_locked_tracks_are_explicit_failures (test_motion_pack.MotionPackCLI.test_tiny_budget_and_locked_tracks_are_explicit_failures) ... FAIL
+test_capture_and_retime_preserves_original_bezier_easing_at_independent_times (test_motion_pack.MotionPackContracts.test_capture_and_retime_preserves_original_bezier_easing_at_independent_times) ... ok
+test_capture_rejects_duplicate_native_aliases_and_empty_properties (test_motion_pack.MotionPackContracts.test_capture_rejects_duplicate_native_aliases_and_empty_properties) ... ok
+test_capture_window_retains_full_author_curve_instead_of_slicing_easing (test_motion_pack.MotionPackContracts.test_capture_window_retains_full_author_curve_instead_of_slicing_easing) ... ok
+test_catalog_calls_return_independent_values (test_motion_pack.MotionPackContracts.test_catalog_calls_return_independent_values) ... ok
+test_duplicate_json_keys_and_large_inputs_are_rejected (test_motion_pack.MotionPackContracts.test_duplicate_json_keys_and_large_inputs_are_rejected) ... ok
+test_parameter_unknown_bool_nan_infinite_and_overflow_are_rejected (test_motion_pack.MotionPackContracts.test_parameter_unknown_bool_nan_infinite_and_overflow_are_rejected) ... ok
+test_property_alias_conflicts_require_explicit_whole_track_replacement (test_motion_pack.MotionPackContracts.test_property_alias_conflicts_require_explicit_whole_track_replacement) ... ok
+test_rational_rounding_collisions_are_rejected_before_mutation (test_motion_pack.MotionPackContracts.test_rational_rounding_collisions_are_rejected_before_mutation) ... ok
+test_rejects_bad_easing_unknown_fields_and_unbound_expressions (test_motion_pack.MotionPackContracts.test_rejects_bad_easing_unknown_fields_and_unbound_expressions) ... ok
+test_rejects_zero_negative_duplicate_or_out_of_range_times (test_motion_pack.MotionPackContracts.test_rejects_zero_negative_duplicate_or_out_of_range_times) ... ok
+test_six_recipes_compile_all_parameters_at_declared_extremes (test_motion_pack.MotionPackContracts.test_six_recipes_compile_all_parameters_at_declared_extremes) ... ok
+test_tracking_is_not_silently_overwritten (test_motion_pack.MotionPackContracts.test_tracking_is_not_silently_overwritten) ... ok
+test_visible_application_uses_author_offset_and_preserves_native_source_fields (test_motion_pack.MotionPackContracts.test_visible_application_uses_author_offset_and_preserves_native_source_fields) ... ok
+
+======================================================================
+FAIL: test_applied_keys_render_without_external_recipe (test_motion_pack.MotionPackCLI.test_applied_keys_render_without_external_recipe)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_motion_pack.py", line 227, in test_applied_keys_render_without_external_recipe
+    value=self.apply('--input',output,'--param','zoom=0.2')
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_motion_pack.py", line 158, in apply
+    return self.command('apply','--project',self.root,'--clip-id','hero',*args,**kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_motion_pack.py", line 154, in command
+    self.assertEqual(actual,code,value)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : {'ok': False, 'command': 'motion.pack', 'request_id': 'req_20261025142526_fd1aa841', 'operation_id': None, 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'PROJECT_INVALID', 'message': '运镜操作前工程无效', 'path': None, 'retryable': False, 'diagnostics': {'ok': False, 'errors': [{'code': 'SCHEMA_VALIDATION_FAILED', 'message': "'source_in_tick' is a required property", 'path': 'sequences.0.tracks.0.clips.0', 'retryable': False}, {'code': 'SCHEMA_VALIDATION_FAILED', 'message': "'source_out_tick' is a required property", 'path': 'sequences.0.tracks.0.clips.0', 'retryable': False}, {'code': 'TIME_RANGE_INVALID', 'message': '片段时间范围无效', 'path': 'sequences[0].tracks[0].clips[0]', 'retryable': False}], 'warnings': [{'status': 'unverified', 'code': 'RIGHTS_STATUS_BLOCKED', 'message': '状态 unverified 不允许发布', 'asset_id': 'asset_20261025142525_4166baad', 'rights_ref': 'asset_20261025142525_4166baad', 'record_version': 1, 'context': 'project_asset'}, {'code': 'RIGHTS_USE_NOT_PERMITTED', 'message': '记录未允许目标用途: commercial_ad', 'asset_id': 'asset_20261025142525_4166baad', 'rights_ref': 'asset_20261025142525_4166baad', 'record_version': 1, 'context': 'project_asset'}, {'code': 'RIGHTS_EVIDENCE_INCOMPLETE', 'message': '来源、许可证或证据字段缺失', 'asset_id': 'asset_20261025142525_4166baad', 'rights_ref': 'asset_20261025142525_4166baad', 'record_version': 1, 'context': 'project_asset'}], 'rights': {'ok': True, 'target': 'commercial_ad', 'checked': 1, 'required_records': 1, 'failures': [], 'warnings': [{'status': 'unverified', 'code': 'RIGHTS_STATUS_BLOCKED', 'message': '状态 unverified 不允许发布', 'asset_id': 'asset_20261025142525_4166baad', 'rights_ref': 'asset_20261025142525_4166baad', 'record_version': 1, 'context': 'project_asset'}, {'code': 'RIGHTS_USE_NOT_PERMITTED', 'message': '记录未允许目标用途: commercial_ad', 'asset_id': 'asset_20261025142525_4166baad', 'rights_ref': 'asset_20261025142525_4166baad', 'record_version': 1, 'context': 'project_asset'}, {'code': 'RIGHTS_EVIDENCE_INCOMPLETE', 'message': '来源、许可证或证据字段缺失', 'asset_id': 'asset_20261025142525_4166baad', 'rights_ref': 'asset_20261025142525_4166baad', 'record_version': 1, 'context': 'project_asset'}], 'disposition_decisions': [], 'effective_disposition_decisions': []}, 'schema_engine': 'jsonschema', 'asset_count': 1, 'sequence_count': 1}}], 'provenance': {'cli_version': '0.1.16', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-10-25T14:25:26.805489Z', 'finished_at': '2026-10-25T14:25:26.805508Z', 'network': 'disabled'}}
+
+======================================================================
+FAIL: test_bad_parameters_conflicts_and_cancel_leave_original_bytes (test_motion_pack.MotionPackCLI.test_bad_parameters_conflicts_and_cancel_leave_original_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_motion_pack.py", line 199, in test_bad_parameters_conflicts_and_cancel_leave_original_bytes
+    self.apply('--name','arc_push')
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_motion_pack.py", line 158, in apply
+    return self.command('apply','--project',self.root,'--clip-id','hero',*args,**kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_motion_pack.py", line 154, in command
+    self.assertEqual(actual,code,value)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : {'ok': False, 'command': 'motion.pack', 'request_id': 'req_20261025142528_a70beaac', 'operation_id': None, 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'PROJECT_INVALID', 'message': '运镜操作前工程无效', 'path': None, 'retryable': False, 'diagnostics': {'ok': False, 'errors': [{'code': 'SCHEMA_VALIDATION_FAILED', 'message': "'source_in_tick' is a required property", 'path': 'sequences.0.tracks.0.clips.0', 'retryable': False}, {'code': 'SCHEMA_VALIDATION_FAILED', 'message': "'source_out_tick' is a required property", 'path': 'sequences.0.tracks.0.clips.0', 'retryable': False}, {'code': 'TIME_RANGE_INVALID', 'message': '片段时间范围无效', 'path': 'sequences[0].tracks[0].clips[0]', 'retryable': False}], 'warnings': [{'status': 'unverified', 'code': 'RIGHTS_STATUS_BLOCKED', 'message': '状态 unverified 不允许发布', 'asset_id': 'asset_20261025142527_01f19c71', 'rights_ref': 'asset_20261025142527_01f19c71', 'record_version': 1, 'context': 'project_asset'}, {'code': 'RIGHTS_USE_NOT_PERMITTED', 'message': '记录未允许目标用途: commercial_ad', 'asset_id': 'asset_20261025142527_01f19c71', 'rights_ref': 'asset_20261025142527_01f19c71', 'record_version': 1, 'context': 'project_asset'}, {'code': 'RIGHTS_EVIDENCE_INCOMPLETE', 'message': '来源、许可证或证据字段缺失', 'asset_id': 'asset_20261025142527_01f19c71', 'rights_ref': 'asset_20261025142527_01f19c71', 'record_version': 1, 'context': 'project_asset'}], 'rights': {'ok': True, 'target': 'commercial_ad', 'checked': 1, 'required_records': 1, 'failures': [], 'warnings': [{'status': 'unverified', 'code': 'RIGHTS_STATUS_BLOCKED', 'message': '状态 unverified 不允许发布', 'asset_id': 'asset_20261025142527_01f19c71', 'rights_ref': 'asset_20261025142527_01f19c71', 'record_version': 1, 'context': 'project_asset'}, {'code': 'RIGHTS_USE_NOT_PERMITTED', 'message': '记录未允许目标用途: commercial_ad', 'asset_id': 'asset_20261025142527_01f19c71', 'rights_ref': 'asset_20261025142527_01f19c71', 'record_version': 1, 'context': 'project_asset'}, {'code': 'RIGHTS_EVIDENCE_INCOMPLETE', 'message': '来源、许可证或证据字段缺失', 'asset_id': 'asset_20261025142527_01f19c71', 'rights_ref': 'asset_20261025142527_01f19c71', 'record_version': 1, 'context': 'project_asset'}], 'disposition_decisions': [], 'effective_disposition_decisions': []}, 'schema_engine': 'jsonschema', 'asset_count': 1, 'sequence_count': 1}}], 'provenance': {'cli_version': '0.1.16', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-10-25T14:25:28.457752Z', 'finished_at': '2026-10-25T14:25:28.457768Z', 'network': 'disabled'}}
+
+======================================================================
+FAIL: test_capture_does_not_mutate_project_and_copies_declared_rights (test_motion_pack.MotionPackCLI.test_capture_does_not_mutate_project_and_copies_declared_rights)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_motion_pack.py", line 182, in test_capture_does_not_mutate_project_and_copies_declared_rights
+    self.apply('--name','bezier_sweep')
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_motion_pack.py", line 158, in apply
+    return self.command('apply','--project',self.root,'--clip-id','hero',*args,**kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_motion_pack.py", line 154, in command
+    self.assertEqual(actual,code,value)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : {'ok': False, 'command': 'motion.pack', 'request_id': 'req_20261025142529_1d6ee4cc', 'operation_id': None, 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'PROJECT_INVALID', 'message': '运镜操作前工程无效', 'path': None, 'retryable': False, 'diagnostics': {'ok': False, 'errors': [{'code': 'SCHEMA_VALIDATION_FAILED', 'message': "'source_in_tick' is a required property", 'path': 'sequences.0.tracks.0.clips.0', 'retryable': False}, {'code': 'SCHEMA_VALIDATION_FAILED', 'message': "'source_out_tick' is a required property", 'path': 'sequences.0.tracks.0.clips.0', 'retryable': False}, {'code': 'TIME_RANGE_INVALID', 'message': '片段时间范围无效', 'path': 'sequences[0].tracks[0].clips[0]', 'retryable': False}], 'warnings': [{'status': 'unverified', 'code': 'RIGHTS_STATUS_BLOCKED', 'message': '状态 unverified 不允许发布', 'asset_id': 'asset_20261025142528_f0c25684', 'rights_ref': 'asset_20261025142528_f0c25684', 'record_version': 1, 'context': 'project_asset'}, {'code': 'RIGHTS_USE_NOT_PERMITTED', 'message': '记录未允许目标用途: commercial_ad', 'asset_id': 'asset_20261025142528_f0c25684', 'rights_ref': 'asset_20261025142528_f0c25684', 'record_version': 1, 'context': 'project_asset'}, {'code': 'RIGHTS_EVIDENCE_INCOMPLETE', 'message': '来源、许可证或证据字段缺失', 'asset_id': 'asset_20261025142528_f0c25684', 'rights_ref': 'asset_20261025142528_f0c25684', 'record_version': 1, 'context': 'project_asset'}], 'rights': {'ok': True, 'target': 'commercial_ad', 'checked': 1, 'required_records': 1, 'failures': [], 'warnings': [{'status': 'unverified', 'code': 'RIGHTS_STATUS_BLOCKED', 'message': '状态 unverified 不允许发布', 'asset_id': 'asset_20261025142528_f0c25684', 'rights_ref': 'asset_20261025142528_f0c25684', 'record_version': 1, 'context': 'project_asset'}, {'code': 'RIGHTS_USE_NOT_PERMITTED', 'message': '记录未允许目标用途: commercial_ad', 'asset_id': 'asset_20261025142528_f0c25684', 'rights_ref': 'asset_20261025142528_f0c25684', 'record_version': 1, 'context': 'project_asset'}, {'code': 'RIGHTS_EVIDENCE_INCOMPLETE', 'message': '来源、许可证或证据字段缺失', 'asset_id': 'asset_20261025142528_f0c25684', 'rights_ref': 'asset_20261025142528_f0c25684', 'record_version': 1, 'context': 'project_asset'}], 'disposition_decisions': [], 'effective_disposition_decisions': []}, 'schema_engine': 'jsonschema', 'asset_count': 1, 'sequence_count': 1}}], 'provenance': {'cli_version': '0.1.16', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-10-25T14:25:29.258028Z', 'finished_at': '2026-10-25T14:25:29.258041Z', 'network': 'disabled'}}
+
+======================================================================
+FAIL: test_dry_run_and_idempotency_preserve_snapshots_and_project (test_motion_pack.MotionPackCLI.test_dry_run_and_idempotency_preserve_snapshots_and_project)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_motion_pack.py", line 171, in test_dry_run_and_idempotency_preserve_snapshots_and_project
+    planned=self.apply('--name','arc_push','--dry-run')
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_motion_pack.py", line 158, in apply
+    return self.command('apply','--project',self.root,'--clip-id','hero',*args,**kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_motion_pack.py", line 154, in command
+    self.assertEqual(actual,code,value)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : {'ok': False, 'command': 'motion.pack', 'request_id': 'req_20261025142530_f85cfa44', 'operation_id': None, 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'PROJECT_INVALID', 'message': '运镜操作前工程无效', 'path': None, 'retryable': False, 'diagnostics': {'ok': False, 'errors': [{'code': 'SCHEMA_VALIDATION_FAILED', 'message': "'source_in_tick' is a required property", 'path': 'sequences.0.tracks.0.clips.0', 'retryable': False}, {'code': 'SCHEMA_VALIDATION_FAILED', 'message': "'source_out_tick' is a required property", 'path': 'sequences.0.tracks.0.clips.0', 'retryable': False}, {'code': 'TIME_RANGE_INVALID', 'message': '片段时间范围无效', 'path': 'sequences[0].tracks[0].clips[0]', 'retryable': False}], 'warnings': [{'status': 'unverified', 'code': 'RIGHTS_STATUS_BLOCKED', 'message': '状态 unverified 不允许发布', 'asset_id': 'asset_20261025142530_2497deb8', 'rights_ref': 'asset_20261025142530_2497deb8', 'record_version': 1, 'context': 'project_asset'}, {'code': 'RIGHTS_USE_NOT_PERMITTED', 'message': '记录未允许目标用途: commercial_ad', 'asset_id': 'asset_20261025142530_2497deb8', 'rights_ref': 'asset_20261025142530_2497deb8', 'record_version': 1, 'context': 'project_asset'}, {'code': 'RIGHTS_EVIDENCE_INCOMPLETE', 'message': '来源、许可证或证据字段缺失', 'asset_id': 'asset_20261025142530_2497deb8', 'rights_ref': 'asset_20261025142530_2497deb8', 'record_version': 1, 'context': 'project_asset'}], 'rights': {'ok': True, 'target': 'commercial_ad', 'checked': 1, 'required_records': 1, 'failures': [], 'warnings': [{'status': 'unverified', 'code': 'RIGHTS_STATUS_BLOCKED', 'message': '状态 unverified 不允许发布', 'asset_id': 'asset_20261025142530_2497deb8', 'rights_ref': 'asset_20261025142530_2497deb8', 'record_version': 1, 'context': 'project_asset'}, {'code': 'RIGHTS_USE_NOT_PERMITTED', 'message': '记录未允许目标用途: commercial_ad', 'asset_id': 'asset_20261025142530_2497deb8', 'rights_ref': 'asset_20261025142530_2497deb8', 'record_version': 1, 'context': 'project_asset'}, {'code': 'RIGHTS_EVIDENCE_INCOMPLETE', 'message': '来源、许可证或证据字段缺失', 'asset_id': 'asset_20261025142530_2497deb8', 'rights_ref': 'asset_20261025142530_2497deb8', 'record_version': 1, 'context': 'project_asset'}], 'disposition_decisions': [], 'effective_disposition_decisions': []}, 'schema_engine': 'jsonschema', 'asset_count': 1, 'sequence_count': 1}}], 'provenance': {'cli_version': '0.1.16', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-10-25T14:25:30.661123Z', 'finished_at': '2026-10-25T14:25:30.661136Z', 'network': 'disabled'}}
+
+======================================================================
+FAIL: test_post_save_failure_rolls_back_project_snapshot_and_operation (test_motion_pack.MotionPackCLI.test_post_save_failure_rolls_back_project_snapshot_and_operation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_motion_pack.py", line 219, in test_post_save_failure_rolls_back_project_snapshot_and_operation
+    value=self.apply('--name','arc_push',code=6)
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_motion_pack.py", line 158, in apply
+    return self.command('apply','--project',self.root,'--clip-id','hero',*args,**kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_motion_pack.py", line 154, in command
+    self.assertEqual(actual,code,value)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 6 : {'ok': False, 'command': 'motion.pack', 'request_id': 'req_20261025142531_935aebc0', 'operation_id': None, 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'PROJECT_INVALID', 'message': '运镜操作前工程无效', 'path': None, 'retryable': False, 'diagnostics': {'ok': False, 'errors': [{'code': 'SCHEMA_VALIDATION_FAILED', 'message': "'source_in_tick' is a required property", 'path': 'sequences.0.tracks.0.clips.0', 'retryable': False}, {'code': 'SCHEMA_VALIDATION_FAILED', 'message': "'source_out_tick' is a required property", 'path': 'sequences.0.tracks.0.clips.0', 'retryable': False}, {'code': 'TIME_RANGE_INVALID', 'message': '片段时间范围无效', 'path': 'sequences[0].tracks[0].clips[0]', 'retryable': False}], 'warnings': [{'status': 'unverified', 'code': 'RIGHTS_STATUS_BLOCKED', 'message': '状态 unverified 不允许发布', 'asset_id': 'asset_20261025142530_1f1d22dc', 'rights_ref': 'asset_20261025142530_1f1d22dc', 'record_version': 1, 'context': 'project_asset'}, {'code': 'RIGHTS_USE_NOT_PERMITTED', 'message': '记录未允许目标用途: commercial_ad', 'asset_id': 'asset_20261025142530_1f1d22dc', 'rights_ref': 'asset_20261025142530_1f1d22dc', 'record_version': 1, 'context': 'project_asset'}, {'code': 'RIGHTS_EVIDENCE_INCOMPLETE', 'message': '来源、许可证或证据字段缺失', 'asset_id': 'asset_20261025142530_1f1d22dc', 'rights_ref': 'asset_20261025142530_1f1d22dc', 'record_version': 1, 'context': 'project_asset'}], 'rights': {'ok': True, 'target': 'commercial_ad', 'checked': 1, 'required_records': 1, 'failures': [], 'warnings': [{'status': 'unverified', 'code': 'RIGHTS_STATUS_BLOCKED', 'message': '状态 unverified 不允许发布', 'asset_id': 'asset_20261025142530_1f1d22dc', 'rights_ref': 'asset_20261025142530_1f1d22dc', 'record_version': 1, 'context': 'project_asset'}, {'code': 'RIGHTS_USE_NOT_PERMITTED', 'message': '记录未允许目标用途: commercial_ad', 'asset_id': 'asset_20261025142530_1f1d22dc', 'rights_ref': 'asset_20261025142530_1f1d22dc', 'record_version': 1, 'context': 'project_asset'}, {'code': 'RIGHTS_EVIDENCE_INCOMPLETE', 'message': '来源、许可证或证据字段缺失', 'asset_id': 'asset_20261025142530_1f1d22dc', 'rights_ref': 'asset_20261025142530_1f1d22dc', 'record_version': 1, 'context': 'project_asset'}], 'disposition_decisions': [], 'effective_disposition_decisions': []}, 'schema_engine': 'jsonschema', 'asset_count': 1, 'sequence_count': 1}}], 'provenance': {'cli_version': '0.1.16', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-10-25T14:25:31.327771Z', 'finished_at': '2026-10-25T14:25:31.327789Z', 'network': 'disabled'}}
+
+======================================================================
+FAIL: test_tiny_budget_and_locked_tracks_are_explicit_failures (test_motion_pack.MotionPackCLI.test_tiny_budget_and_locked_tracks_are_explicit_failures)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_motion_pack.py", line 213, in test_tiny_budget_and_locked_tracks_are_explicit_failures
+    self.assertEqual(value['errors'][0]['code'],'EDIT_TRACK_LOCKED')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'PROJECT_INVALID' != 'EDIT_TRACK_LOCKED'
+- PROJECT_INVALID
++ EDIT_TRACK_LOCKED
+
+
+----------------------------------------------------------------------
+Ran 20 tests in 7.185s
+
+FAILED (failures=6)
+AEK_RESULT={"methods": 20, "skipped": 0, "failures": 6, "errors": 0, "success": false}

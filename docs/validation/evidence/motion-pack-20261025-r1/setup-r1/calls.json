@@ -1,0 +1,70 @@
+[
+  {
+    "name": "init",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.14\\final-r1\\installed\\run.py",
+      "project",
+      "init",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\motion-pack-20261025-installed-r1\\原工程",
+      "--name",
+      "Reusable motion package gallery"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 3.102465099989786,
+    "stdout_sha256": "f2aa6836c3af659034cd4ef9c4c76171f15696f0dcd083ba2bb695615d2ffa4f",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "ingest",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.14\\final-r1\\installed\\run.py",
+      "media",
+      "ingest",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\motion-pack-20261025-installed-r1\\原工程",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\motion-pack-20261025-r1\\original.png"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 4.544154599992908,
+    "stdout_sha256": "23e58259a40254ac875d36f48b782f2d46a54cd949ac089e56a8c532b9bef682",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "compose-gallery",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.14\\final-r1\\installed\\run.py",
+      "timeline",
+      "compose",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\motion-pack-20261025-installed-r1\\原工程",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\motion-pack-20261025-installed-r1\\compose-gallery.json"
+    ],
+    "exit_code": 2,
+    "elapsed_seconds": 2.3352209000004223,
+    "stdout_sha256": "db9cbbd12664c609e8aacc174f0641716473c9c3d0088d21f8bf72ecb5b9123e",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

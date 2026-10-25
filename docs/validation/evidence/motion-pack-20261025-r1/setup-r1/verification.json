@@ -1,0 +1,15 @@
+{
+  "status": "failed",
+  "phase": "setup",
+  "cli_version": "0.1.16",
+  "source_files": 208,
+  "started_at_utc": "2026-10-25T14:33:34.149224+00:00",
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "human_listening": false,
+  "continuous_playback": false,
+  "natural_motion_quality_acceptance": false,
+  "error": "AssertionError({'ok': False, 'command': 'timeline.compose', 'request_id': 'req_20261025143344_a8b3de7e', 'operation_id': None, 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'SEQUENCE_CANVAS_INVALID', 'message': '序列 canvas 必须为 width/height 对象，或 null 以继承项目画布', 'path': 'sequence.canvas', 'retryable': False}], 'provenance': {'cli_version': '0.1.16', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-10-25T14:33:44.214362Z', 'finished_at': '2026-10-25T14:33:44.214377Z', 'network': 'disabled'}})",
+  "process_calls": 3
+}

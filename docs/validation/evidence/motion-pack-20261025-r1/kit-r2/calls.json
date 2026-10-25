@@ -1,0 +1,164 @@
+[
+  {
+    "id": "configure",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\motion-pack-kit-r2\\独立工具 包\\scripts\\activate_community_runtime.py",
+      "--installed",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.14\\final-r2\\installed",
+      "--packs",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-portable-r1\\模型 包",
+      "--voice-cuda-lib",
+      "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\lib",
+      "--translation-cuda-lib",
+      "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.4\\bin",
+      "--semantic-config",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\semantic-runtime.json"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "d12332f23c416c8aef63725bbc78ffdfd3a44a41a14d54f941605126b90b3b1e",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "register",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\motion-pack-kit-r2\\独立工具 包\\register-agent-ffmpeg-local-skills.ps1",
+      "-SkillsDirectory",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\motion-pack-kit-r2\\isolated-discovery",
+      "-ReceiptPath",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\motion-pack-20261025-r1\\kit-r2\\registration.json"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "a1859a3b504df38830bc9d7547a1b5a6674e347ec6bd38c14d335fec620fb514",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "version",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\motion-pack-kit-r2\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "8cda0cbe6864c5924373b35b80bf6dcb083b69c6040ceac2682527dd8f1dbac7",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "capabilities",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\motion-pack-kit-r2\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "capabilities"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "82f4c2aad3503c69953c32b6eb51fff6d0178455cef2a07a1bf3e2de84ff3083",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "motion-help",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\motion-pack-kit-r2\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "motion",
+      "pack",
+      "apply",
+      "--help"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "34c1810a69306e1c557c3efe922f46b69a2972dde6f233c30d329a0f90d21a79",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "motion-inspect",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\motion-pack-kit-r2\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "motion",
+      "pack",
+      "inspect",
+      "--name",
+      "arc_push"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "188682a6f82bbc5818b66d186d6c15cbf61b729f34b77c87b0359b23ea9fb9c6",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "motion-dry-run",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\motion-pack-kit-r2\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "motion",
+      "pack",
+      "apply",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\motion-pack-20261025-installed-r1\\导入工程",
+      "--sequence-id",
+      "reused_arc",
+      "--clip-id",
+      "reused_hero",
+      "--name",
+      "arc_push",
+      "--replace",
+      "--dry-run"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "e97a46245b25f5bc53114af2d406f38eef2dc9b751dff9977b4d37c80b1a6336",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "validate",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\motion-pack-kit-r2\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\motion-pack-20261025-installed-r1\\导入工程"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "c314bd8f2acf3699b41fbc46eecafa006a7fb99662e895b84b8a45bb528c61ed",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

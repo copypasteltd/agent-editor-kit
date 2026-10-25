@@ -1,0 +1,2395 @@
+{
+  "format": "agent-editor-motion-pack",
+  "format_version": 1,
+  "id": "detail_scan",
+  "version": "1.0.0",
+  "name": "Detail scan / 停顿式细节扫视",
+  "description": "Detail scan / 停顿式细节扫视; editable 65-sample transform keys",
+  "creator": "agent editor kit contributors",
+  "license": "MIT",
+  "parameters": {
+    "zoom": {
+      "default": 0.15,
+      "minimum": 0.0,
+      "maximum": 0.5,
+      "description": "Relative scale increase / 相对缩放增量"
+    },
+    "travel": {
+      "default": 0.3,
+      "minimum": -0.8,
+      "maximum": 0.8,
+      "description": "Scan horizontal extent / 扫视水平幅度"
+    },
+    "tilt": {
+      "default": 5.0,
+      "minimum": -45.0,
+      "maximum": 45.0,
+      "description": "Rotation degrees / 旋转角度"
+    }
+  },
+  "tracks": [
+    {
+      "property": "transform.position.x",
+      "mode": "add",
+      "keyframes": [
+        {
+          "at": [
+            0,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            1,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            2,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            3,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            4,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            5,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            6,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            7,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            8,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            9,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            10,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            11,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            12,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            13,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.499767578125,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            14,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.49198437500000003,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            15,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.474240234375,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            16,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.448,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            17,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.414728515625,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            18,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.37589062500000003,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            19,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.332951171875,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            20,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.28737500000000005,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            21,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.240626953125,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            22,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.19417187500000005,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            23,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.149474609375,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            24,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.10800000000000004,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            25,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.07121289062500002,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            26,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.04057812500000002,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            27,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.01756054687499997,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            28,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": -0.0036249999999999893,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            29,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.0,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            30,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.0,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            31,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.0,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            32,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.0,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            33,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.0,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            34,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.0,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            35,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.0,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            36,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.0,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            37,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.0,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            38,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.0,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            39,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.0020566406250000094,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            40,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.014000000000000023,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            41,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.03531835937500004,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            42,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.06454687500000005,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            43,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.10022070312500006,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            44,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.14087500000000006,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            45,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.18504492187500005,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            46,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.23126562500000006,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            47,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.27807226562500004,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            48,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.32400000000000007,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            49,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.36758398437500006,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            50,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.407359375,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            51,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.44186132812500006,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            52,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.469625,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            53,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.48918554687500004,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            54,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.499078125,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            55,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            56,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            57,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            58,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            59,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            60,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            61,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            62,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            63,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            64,
+            64
+          ],
+          "value": {
+            "parameter": "travel",
+            "factor": 0.5,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        }
+      ]
+    },
+    {
+      "property": "transform.rotation",
+      "mode": "add",
+      "keyframes": [
+        {
+          "at": [
+            0,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.0,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            1,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.0980171403295606,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            2,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.19509032201612825,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            3,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.29028467725446233,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            4,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.3826834323650898,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            5,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.47139673682599764,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            6,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.5555702330196022,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            7,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.6343932841636455,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            8,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.7071067811865476,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            9,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.7730104533627369,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            10,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.8314696123025452,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            11,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.8819212643483549,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            12,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.9238795325112867,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            13,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.9569403357322089,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            14,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.9807852804032304,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            15,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.9951847266721968,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            16,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 1.0,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            17,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.9951847266721969,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            18,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.9807852804032304,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            19,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.9569403357322089,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            20,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.9238795325112867,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            21,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.881921264348355,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            22,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.8314696123025453,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            23,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.7730104533627371,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            24,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.7071067811865476,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            25,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.6343932841636455,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            26,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.5555702330196022,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            27,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.4713967368259978,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            28,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.3826834323650899,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            29,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.2902846772544624,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            30,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.1950903220161286,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            31,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 0.09801714032956083,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            32,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": 1.2246467991473532e-16,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            33,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.09801714032956059,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            34,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.19509032201612836,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            35,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.2902846772544621,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            36,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.38268343236508967,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            37,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.47139673682599764,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            38,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.555570233019602,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            39,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.6343932841636453,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            40,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.7071067811865475,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            41,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.7730104533627367,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            42,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.8314696123025452,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            43,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.8819212643483549,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            44,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.9238795325112865,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            45,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.9569403357322088,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            46,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.9807852804032303,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            47,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.9951847266721969,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            48,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -1.0,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            49,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.9951847266721969,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            50,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.9807852804032304,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            51,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.9569403357322089,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            52,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.9238795325112866,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            53,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.881921264348355,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            54,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.8314696123025455,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            55,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.7730104533627369,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            56,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.7071067811865477,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            57,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.6343932841636459,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            58,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.5555702330196022,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            59,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.4713967368259979,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            60,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.3826834323650904,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            61,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.2902846772544625,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            62,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.19509032201612872,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            63,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -0.0980171403295605,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            64,
+            64
+          ],
+          "value": {
+            "parameter": "tilt",
+            "factor": -2.4492935982947064e-16,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        }
+      ]
+    },
+    {
+      "property": "transform.scale",
+      "mode": "multiply",
+      "keyframes": [
+        {
+          "at": [
+            0,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            1,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            2,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            3,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            4,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            5,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            6,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            7,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            8,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            9,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            10,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            11,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            12,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            13,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            14,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            15,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            16,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            17,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            18,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            19,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            20,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            21,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            22,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            23,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            24,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            25,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            26,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            27,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            28,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            29,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            30,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            31,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            32,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            33,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            34,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            35,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            36,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            37,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            38,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            39,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            40,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            41,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            42,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            43,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            44,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            45,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            46,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            47,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            48,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            49,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            50,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            51,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            52,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            53,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            54,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            55,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            56,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            57,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            58,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            59,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            60,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            61,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            62,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            63,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            64,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        }
+      ]
+    }
+  ],
+  "sampling": {
+    "kind": "uniform-linear",
+    "intervals": 64,
+    "error_note": "Finite 65-point polyline, not analytic spatial interpolation; inspect at the target size and duration."
+  }
+}

@@ -9,9 +9,28 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- semantic-upgrade-current -->
+<!-- motion-pack-current -->
 
-**CLI 0.1.15 / alpha.4-local.13 / r14 kit** · 206 product Python files · 1 Skill / 17 modules. New `project upgrade-semantic` derives new adapter/index/profile identities after an installation-path change, verifying byte-identical code/dependencies and reusing vectors without inference. Original data, fitted thresholds and known errors remain.
+**CLI 0.1.16 / alpha.4-local.14 / r16 kit** · 208 product Python files · 1 Skill / 17 modules. New portable motion packs: six parameterized paths, existing-animation capture, reuse across durations/canvases, explicit conflict handling and authored clocks; results remain editable keyframes.
+
+[Workflow / 使用流程](docs/product/MOTION_PACKS.md) · [C25 / Original + six previews](docs/product/CASES.md#c25-motion-packs) · [Evidence](docs/validation/可复用运镜包实测_2026-10-25.md)
+
+```powershell
+& $avk motion pack list
+& $avk motion pack inspect --name arc_push
+& $avk motion pack apply --project $project --sequence-id $sequence --clip-id $clip --name arc_push --param travel=0.18 --param zoom=0.12 --dry-run
+# Review the returned property conflicts, then apply without --dry-run.
+```
+
+![Actual parameterized arc / silent](docs/assets/motion-pack-20261025-r1/arc_push.gif)
+
+Each preview is four seconds/120 frames; all six MP4/GIF files decode. Native trim/nested-reverse, captured reuse, project-package and registered-Skill pixel checks pass. Paths use 65-point polylines; the rotating example took about 65 seconds. CPU composition performance, natural footage and subject-follow combinations remain open.
+
+<!-- /motion-pack-current -->
+
+<!-- semantic-upgrade-history -->
+
+**Historical / 历史 / 歷史：CLI 0.1.15 / alpha.4-local.13 / r14 kit** · 206 product Python files · 1 Skill / 17 modules. New `project upgrade-semantic` derives new adapter/index/profile identities after an installation-path change, verifying byte-identical code/dependencies and reusing vectors without inference. Original data, fitted thresholds and known errors remain.
 
 [Workflow / 使用流程](docs/product/SEMANTIC_RUNTIME_UPGRADE.md) · [C24](docs/product/CASES.md#c24-semantic-upgrade) · [Evidence / 实测](docs/validation/语义运行时升级实测_2026-10-25.md)
 
@@ -23,7 +42,7 @@ This page includes functional modules, services/dependencies, installation/usage
 
 CPU/CUDA: 80 decisions each preserved before/after; three known errors retained. Zero new model forwards in the upgrade itself.
 
-<!-- /semantic-upgrade-current -->
+<!-- /semantic-upgrade-history -->
 
 <!-- ad-storyboard-history -->
 
@@ -59,13 +78,13 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r14 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r14.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r16 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r16.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
 <!-- community-materials-gpu -->
 
-**Local installed extension: CLI 0.1.15, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
+**Local installed extension: CLI 0.1.16, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
 
 [Complete workflow and limits](docs/product/COMMUNITY_MATERIALS.en.md) · [Resource catalog](docs/product/COMMUNITY_MATERIAL_CATALOG.md) · [103 named voices and actual audition scope](docs/product/COMMUNITY_VOICES.md) · [CPU evidence](docs/validation/evidence/community-materials-20261025-r1/cpu/verification.json) · [GPU evidence](docs/validation/evidence/community-materials-20261025-r1/gpu/verification.json).
 
@@ -424,6 +443,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F51 | Joint subtitle translation/dubbing | Plain Chinese/English SRT and explicit voices/tracks → translation or preserved same-language copy, complete batched WAV, actual fit, editable audio/captions and atomic application. | `dub subtitles` | Same-language mode initializes only voice; preserves originals/retries/awkward translations; cue fit does not establish word precision, naturalness or lip sync. |
 | F52 | Editable ad storyboards and revision | Reviewed brief/actual assets → separate picture/caption/voice/source/music tracks for multiple canvases/durations; selected-shot/variant revisions. | `ad storyboard/build/revise` | Whole-frame allocation, actual asset locks, real font layout and complete voice-window checks; caller supplies claims and semantic choices. |
 | F53 | Semantic runtime relocation | Old adapter/index/profiles → new installation-bound identities, copying vectors/previews/datasets and retaining fitted observations. | `project upgrade-semantic` | All 19 implementation files and external dependencies must be byte-identical; zero new model forwards; original records retained; changed bytes require rebuilding. |
+| F54 | Portable parameterized motion | Versioned local JSON / captured authored curves → editable keys, resolved parameters/digests/snapshot and cross-project reuse, with six actual previews. | `motion pack list/inspect/create/capture/apply` | 65-point paths, transform properties; conflicts reject unless whole-property replacement is explicit; tracking bindings reject; CPU performance/natural quality remain open. |
 
 ## Supported service modules and dependencies
 
@@ -550,7 +570,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.13/final-r3/installed/`, CLI 0.1.15. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.14/final-r2/installed/`, CLI 0.1.16. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -608,7 +628,7 @@ K01–K17 are internal modules, not separate registrations. Describe the outcome
 | ID | Internal module | Responsibility | Input → output | Commands | Dependency/limit |
 |---|---|---|---|---|---|
 | K01 | [`$agent-ffmpeg-local-editor`](skills/agent-ffmpeg-local-editor/SKILL.md) | Editing and delivery entrypoint | brief + local media → plan, project, video, manifest | `project init; timeline compose; look; render` | Routes by capability, including client look selection; needs the base CLI. |
-| K02 | [`timeline`](skills/agent-ffmpeg-local-editor/references/modules/timeline/module.md) | Timeline, keys and motion | Edit JSON → tracks/motion/transitions/nesting | `timeline compose/edit; motion apply` | Explicit track/clip targets and author clocks. |
+| K02 | [`timeline`](skills/agent-ffmpeg-local-editor/references/modules/timeline/module.md) | Timeline, keys and motion | Edit JSON → tracks/motion/transitions/nesting | `timeline compose/edit; motion apply; motion pack list/inspect/create/capture/apply` | Explicit track/clip targets and author clocks. |
 | K03 | [`quality`](skills/agent-ffmpeg-local-editor/references/modules/quality/module.md) | Output and pixel review | Video + manifest + reference → reports/scopes/differences | `quality check/scopes/mask/golden` | Separate static review/playback/listening; review look selections. |
 | K04 | [`project-ops`](skills/agent-ffmpeg-local-editor/references/modules/project-ops/module.md) | Project operations, recovery and queues | Projects + jobs → snapshots/recovery/relink/results | `project snapshot/recover; media relink; queue` | Preserve sources/failures; not a cloud scheduler. |
 | K05 | [`local-policy`](skills/agent-ffmpeg-local-editor/references/modules/local-policy/module.md) | Local execution policy | Project references → audit/structured refusal | `policy audit` | Remote references refused; not an OS sandbox. |
@@ -860,6 +880,13 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R115 | Native timeout/cancellation | One/five-second budgets plus early/read cancellation at 64/512MiB; partial reads discard digests; metadata/assets unchanged | [2026-10-25 evidence](docs/validation/evidence/semantic-upgrade-20261025-r1/faults-r3/verification.json) · [Scope](docs/validation/语义运行时升级实测_2026-10-25.md) |
 | R116 | Unified Skill and separate kit | 1 Skill/17 modules, 66 Skill files, r14 kit; eight configure/register/upgrade-dry-run and diagnostic calls from a separate Chinese/space path | [2026-10-25 evidence](docs/validation/evidence/semantic-upgrade-20261025-r1/kit-r1/verification.json) · [Scope](docs/validation/语义运行时升级实测_2026-10-25.md) |
 | R117 | Delivery/history retention | R01–R109 verbatim and all 38 original goal gates retained; local Skill and three-language docs updated; public old assets not overwritten | [2026-10-25 evidence](docs/validation/evidence/semantic-upgrade-20261025-r1/final-delivery-r1/verification.json) · [Scope](docs/validation/语义运行时升级实测_2026-10-25.md) |
+| R118 | 2026-10-25 Pinned installation | CLI 0.1.16 / local.14; 208 product files match the pinned ZIP installation byte for byte | [Evidence](docs/validation/evidence/motion-pack-20261025-r1/installation-r2/verification.json) |
+| R119 | 2026-10-25 New contracts/native pixels | Source/installed contracts each 22/22, native pixels each 5/5, zero skips; separate scopes, not a completion rate | [Evidence](docs/validation/evidence/motion-pack-20261025-r1/tests/installed-native-r2/verification.json) |
+| R120 | 2026-10-25 Actual motion previews | Seven native renders include the original control; another product NVENC output has 120 frames; six four-second MP4/GIF previews, source/parameters/hashes; rotation example took about 65 seconds | [Evidence](docs/validation/evidence/motion-pack-20261025-r1/render-r1/verification.json) |
+| R121 | 2026-10-25 Capture reuse/project package | With external recipes and the source project unavailable, capture reuse/imported output each match all 120 baseline frames; project JSON/asset bytes retained | [Evidence](docs/validation/evidence/motion-pack-20261025-r1/reuse-r1/verification.json) |
+| R122 | 2026-10-25 Registered Skill | Single-entry dry-run/apply/render/validate execute; all 120 frames match baseline; seventeen modules retained | [Evidence](docs/validation/evidence/motion-pack-20261025-r1/skill-r2/verification.json) |
+| R123 | 2026-10-25 Failures/regression retained | 122/122 installed CLI regression; initial fixture missing source ticks and demo script using unsupported canvas.background remain in the evidence | [Evidence](docs/validation/evidence/motion-pack-20261025-r1/tests/installed-cli-r2/verification.json) |
+| R124 | 2026-10-25 Local load/three-language docs | r16 kit, parameter/previews and functional manuals updated; R01–R117 and all 38 original goal gates retained; public old assets unchanged | [Evidence](docs/validation/evidence/motion-pack-20261025-r1/final-delivery-r2/verification.json) |
 
 ## Current limits and development direction
 
@@ -871,7 +898,7 @@ Exact audio-channel relationship protection and native capture remain delivered 
 
 Use real client media and minimal reproducible projects to identify gaps, implement/check them individually and publish new versions without replacing prior bundles/digests/tags. Record actual successful artifacts rather than inferred completion.
 
-**Current delivery / 当前交付 / 目前交付（R110–R117，2026-10-25）：** CLI 0.1.15 / local.13 / r14; explicit byte-identical semantic runtime relocation, zero upgrade inference and preserved CPU/GPU/Skill results. Full goal remains active.
+**Current delivery / 当前交付 / 目前交付（R110–R117，2026-10-25）：** CLI 0.1.16 / local.13 / r14; explicit byte-identical semantic runtime relocation, zero upgrade inference and preserved CPU/GPU/Skill results. Full goal remains active.
 
 ## Documentation, provenance and maintenance
 

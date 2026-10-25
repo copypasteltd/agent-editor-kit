@@ -7,7 +7,7 @@ description: "Edit and deliver local videos with agent editor kit: multitrack ed
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.13` / CLI `0.1.15`.
+The current local runtime is `v0.1.0-alpha.4-local.14` / CLI `0.1.16`.
 The published alpha.3 downloads retain CLI 0.1.2 and their original scope.
 
 ## Runtime and common workflow
@@ -62,6 +62,9 @@ media. Add other modules when the request needs them. For example:
 - Client filter choice: [client-look-selection.md](references/client-look-selection.md)
   and [looks.md](references/looks.md); show actual candidate images, IDs, strength
   and license, record the chosen target, then test it on the client's footage.
+- Reusable camera paths or accepted keyframe animation: read
+  [motion-packs.md](references/motion-packs.md). Show actual previews, compile
+  bounded parameters to editable keys and review property conflicts before replacing.
 - Local AI task: local-models plus the relevant media module; require existing
   registered dependencies and check actual inference artifacts.
 - Translate and dub reviewed subtitles: read [subtitle-dubbing.md](references/subtitle-dubbing.md).

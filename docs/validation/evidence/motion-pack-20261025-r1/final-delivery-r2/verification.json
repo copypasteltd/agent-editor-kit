@@ -1,0 +1,141 @@
+{
+  "status": "passed",
+  "started_at_utc": "2026-10-25T15:15:17.607268+00:00",
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "new_model_forwards_in_audit": 0,
+  "new_renders_in_audit": 0,
+  "independent_agent_benchmark": false,
+  "human_quality_acceptance": false,
+  "finished_at_utc": "2026-10-25T15:15:45.753788+00:00",
+  "baseline_commit": "c8eab913b88c59632d910eef08c73e534dab419a",
+  "cli_version": "0.1.16",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.14\\final-r2\\installed",
+  "actual_read_only_cli_calls": 6,
+  "source_and_installed_files": 208,
+  "skill_files": 68,
+  "kit_files": 92,
+  "kit_sha256": "5f88094eaf392fffc598ddddc610c0c92bf31f2166ee4cbaf9c4a82c3dbf48b7",
+  "capability_count": 75,
+  "capability_status_counts": {
+    "implemented_with_limits": 47,
+    "implemented": 20,
+    "degraded": 1,
+    "local_adapter_only": 7
+  },
+  "original_goal_closure_conditions_preserved": 38,
+  "historical_readme_rows_preserved_per_language": 117,
+  "current_readme_rows_per_language": 124,
+  "local_links_checked": 2467,
+  "public_release": "v0.1.0-alpha.3",
+  "public_api_status": 200,
+  "preserved_real_failed_phases": 2,
+  "unchanged_semantic_modules": 19,
+  "files": [
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "sha256": "38904645b761703c64db257de3a98a07c4ed3158a9ba6470cf347811b80c8232"
+    },
+    {
+      "path": "docs/product/IMPLEMENTATION_PLAN_20261025.md",
+      "sha256": "58b3791a169afb7fa6144758751711a7c601e37e35cefa467de823f711093575"
+    },
+    {
+      "path": "README.md",
+      "sha256": "c62d4949d4ff70664855d535f15f8aa8de322afc8ee0eef78443f127a56f434a"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "sha256": "6af53c174af11750cc42f11ed7ed66c7bcef66107e95a5b406ff5513471f2700"
+    },
+    {
+      "path": "README.en.md",
+      "sha256": "18ffe03b88f3b61832b4260ee696af735c5df0688f44e2f5f22e18a3ca2ee115"
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "77e4fb59ee5d10b8e4a946f24ad67872baa86a0545d31b43b4ccac13972dd290"
+    },
+    {
+      "path": "docs/product/COMMUNITY_LOCAL_DELIVERY.md",
+      "sha256": "7f8b1836e325e29cb6d6cf9b8f367a5fdaadf70fc8b9a03b1401067a2db98bfb"
+    },
+    {
+      "path": "docs/product/MOTION_PACKS.md",
+      "sha256": "7b6effb53a04ca185d6e68c771de9442c1d7f212f1dd5ad8c90f02e61da5a6ab"
+    },
+    {
+      "path": "docs/product/CASES.md",
+      "sha256": "e560b76d8d7cdc7858f63ba6b39d37f78613cb4b8d642bb4656dc6a814ee2ee9"
+    },
+    {
+      "path": "docs/validation/可复用运镜包实测_2026-10-25.md",
+      "sha256": "5d51067eaa1cbf0ee7fa1b2e0566912e443cb8ac5e6aa73bf30eeaa8ed3987a0"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.md",
+      "sha256": "71cd8b9e65249d81e0847f25fb8fa3e3d05c0e64ba4e586244851c63d5db2c3a"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.zh-TW.md",
+      "sha256": "3687a514656a5781d90520a1939f2c0bfbf68aae83cb98147946df1c9c70d5be"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.en.md",
+      "sha256": "1973e34185d8c9858b4a274496a9f63e3acb1d01a8476842ead09365ed9fe55f"
+    },
+    {
+      "path": "docs/product/SKILLS.md",
+      "sha256": "82a8969e6675a4e48e4d454e4f73d86e2eb91ff1237d896e4adcac678ad34d04"
+    },
+    {
+      "path": "docs/product/SKILLS.zh-TW.md",
+      "sha256": "c08d8a72aa55292f609aecbf0721e5d0acf077df2fff937bbd5d1b26e6457c89"
+    },
+    {
+      "path": "docs/product/SKILLS.en.md",
+      "sha256": "c39668f969a1e0c12dadf84db53cfe8ca34d9edaadf3be015ea6fd72c69bfdfb"
+    },
+    {
+      "path": "docs/product/EFFECTS.md",
+      "sha256": "6a037d16dff686de175ebdde3a231d134fa772e0942664f70f19a17bf4798f62"
+    },
+    {
+      "path": "docs/product/EFFECTS.zh-TW.md",
+      "sha256": "7014c9d6ec1835fb1c2ee699cf46de8045e7b27b807f28887334aea80f1f61f1"
+    },
+    {
+      "path": "docs/product/EFFECTS.en.md",
+      "sha256": "35deaaf2d0bd027c6a21006c2b3d62097c4dc16bad5649221765ede21ee457c3"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.md",
+      "sha256": "691a31dd1e4a54a9b984cedab33018930b85175073366c463f6ffba201eed2ab"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.zh-TW.md",
+      "sha256": "495afad74b361a1a16ffb99d985b927c278311cfe7f87c85beb7b8d4e687a22a"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.en.md",
+      "sha256": "73f7d1091eb1b7c5cbc261a57ff486cf7805d6e65bc6e36c20ba4dcb748c2ba0"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
+      "sha256": "b61ee9c22de3031f856a19b7982abdedcc2350c53fee08eb40813c3ad62d8d53"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
+      "sha256": "97e3f01a66e02f68f86f5730880217b0eafd95cc4e3bb3db5b392da773ba5fa2"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/motion-packs.md",
+      "sha256": "9a2e9409011f2ec5886f6e94241d7e443246bf3f7454d4dc53347fd41810df71"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/timeline/module.md",
+      "sha256": "1a6017a130ca0d145619f8e64ab8b9ccac214b3549ad9a9c514fa59784c8084c"
+    }
+  ]
+}

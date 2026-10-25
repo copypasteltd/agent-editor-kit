@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "started_at_utc": "2026-10-25T14:54:13.926849+00:00",
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "new_model_forwards_in_audit": 0,
+  "new_renders_in_audit": 0,
+  "independent_agent_benchmark": false,
+  "human_quality_acceptance": false,
+  "finished_at_utc": "2026-10-25T14:54:35.000707+00:00",
+  "baseline_commit": "c8eab913b88c59632d910eef08c73e534dab419a",
+  "cli_version": "0.1.16",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.14\\final-r1\\installed",
+  "actual_read_only_cli_calls": 6,
+  "source_and_installed_files": 208,
+  "skill_files": 68,
+  "kit_files": 92,
+  "kit_sha256": "c757a741221607b34e394277479659fd11012908f1d788e71405ad296c164c95",
+  "capability_count": 75,
+  "capability_status_counts": {
+    "implemented_with_limits": 47,
+    "implemented": 20,
+    "degraded": 1,
+    "local_adapter_only": 7
+  },
+  "original_goal_closure_conditions_preserved": 38,
+  "historical_readme_rows_preserved_per_language": 117,
+  "current_readme_rows_per_language": 124,
+  "local_links_checked": 2378,
+  "public_release": "v0.1.0-alpha.3",
+  "public_api_status": 200,
+  "preserved_real_failed_phases": 2,
+  "unchanged_semantic_modules": 19,
+  "files": [
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "sha256": "287241da7e14c36ec55983149aee70bf7883f46843694d9603323db454841182"
+    },
+    {
+      "path": "docs/product/IMPLEMENTATION_PLAN_20261025.md",
+      "sha256": "a07bd766b1dd79bde563b31065a62722f64dec2fd7f79131f418a5e5a7c68504"
+    },
+    {
+      "path": "README.md",
+      "sha256": "9bebeb978c6acef21e3ef2acc5f19d1eb8f7715ffa7c650e498b6ac78748ced8"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "sha256": "55082677842f64432a2e90d311d6717c5cdcf9d1ee93b89d7c90eda7482c4e49"
+    },
+    {
+      "path": "README.en.md",
+      "sha256": "3ae980cf6777b51f3fe62ac97034b89a269fa7adeb13dbb2bcb47f9d46bc089c"
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "77e4fb59ee5d10b8e4a946f24ad67872baa86a0545d31b43b4ccac13972dd290"
+    },
+    {
+      "path": "docs/product/COMMUNITY_LOCAL_DELIVERY.md",
+      "sha256": "652849986daf17322d6524e2307c74cd068e2ec9e9b6561a8291f2d04b918809"
+    },
+    {
+      "path": "docs/product/MOTION_PACKS.md",
+      "sha256": "3abed14a3d7d275f3c8d7166d777bd9d09898ce758962a46741bd0ae845f7c38"
+    },
+    {
+      "path": "docs/product/CASES.md",
+      "sha256": "e560b76d8d7cdc7858f63ba6b39d37f78613cb4b8d642bb4656dc6a814ee2ee9"
+    },
+    {
+      "path": "docs/validation/可复用运镜包实测_2026-10-25.md",
+      "sha256": "450ec5a334580c6b1b27bbbf319cfea0f075aad5a483c8397040edfb93dffa2d"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.md",
+      "sha256": "821e544e727d83285db7472e0b39c4cf08962303774b7f322318a1930bd10f12"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.zh-TW.md",
+      "sha256": "4070d9b889c84d587168c33da5cdc84807070937959b4b39d4a9ef3b3e38652c"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.en.md",
+      "sha256": "75a8ed5663d61af3d25d01c31c265f7edce25b9b4236067122b401bffdc69a38"
+    },
+    {
+      "path": "docs/product/SKILLS.md",
+      "sha256": "78a7bffc8e2b55744b403904780217c5b9898a31140ca6ed9f40ed6f1e2ce5cc"
+    },
+    {
+      "path": "docs/product/SKILLS.zh-TW.md",
+      "sha256": "6d93fd8af4d4b756c797778fa22427473927c1630c2813429262070ab9dc7395"
+    },
+    {
+      "path": "docs/product/SKILLS.en.md",
+      "sha256": "046ea34646b177ebade254244fbc6610d1d697e2560226397f8574cd5638c37a"
+    }
+  ]
+}

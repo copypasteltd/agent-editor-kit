@@ -9,9 +9,28 @@
 本页包含完整功能模块、服务与依赖、安装与使用逻辑、Skill 输入输出、真实案例和核验表。长篇原始验收日志继续留档，功能说明与案例入口恢复到首页。
 
 
-<!-- semantic-upgrade-current -->
+<!-- motion-pack-current -->
 
-**CLI 0.1.15 / alpha.4-local.13 / r14 kit** · 206 product Python files · 1 Skill / 17 modules. 新增 `project upgrade-semantic`：安装路径改变时，逐文件校验相同实现/依赖，派生新适配器、索引和校准，无需重复模型推理。旧记录、素材、阈值和原错误保留。
+**CLI 0.1.16 / alpha.4-local.14 / r16 kit** · 208 product Python files · 1 Skill / 17 modules. 新增可复用运镜包：六套参数路径、已有动画捕获、跨时长/画幅复用、明确冲突和作者时钟；结果保留为可编辑关键帧。
+
+[Workflow / 使用流程](docs/product/MOTION_PACKS.md) · [C25 / Original + six previews](docs/product/CASES.md#c25-motion-packs) · [Evidence](docs/validation/可复用运镜包实测_2026-10-25.md)
+
+```powershell
+& $avk motion pack list
+& $avk motion pack inspect --name arc_push
+& $avk motion pack apply --project $project --sequence-id $sequence --clip-id $clip --name arc_push --param travel=0.18 --param zoom=0.12 --dry-run
+# Review the returned property conflicts, then apply without --dry-run.
+```
+
+![Actual parameterized arc / silent](docs/assets/motion-pack-20261025-r1/arc_push.gif)
+
+每条 4 秒/120 帧；六套 MP4/GIF 均完整解码。原生裁切/嵌套倒放、捕获复用、工程包和真实 Skill 的逐帧对照通过。空间路径为 65 点折线；带旋转样例耗时约 65 秒，CPU 合成性能/自然素材与主体跟随仍待补齐。
+
+<!-- /motion-pack-current -->
+
+<!-- semantic-upgrade-history -->
+
+**Historical / 历史 / 歷史：CLI 0.1.15 / alpha.4-local.13 / r14 kit** · 206 product Python files · 1 Skill / 17 modules. 新增 `project upgrade-semantic`：安装路径改变时，逐文件校验相同实现/依赖，派生新适配器、索引和校准，无需重复模型推理。旧记录、素材、阈值和原错误保留。
 
 [Workflow / 使用流程](docs/product/SEMANTIC_RUNTIME_UPGRADE.md) · [C24](docs/product/CASES.md#c24-semantic-upgrade) · [Evidence / 实测](docs/validation/语义运行时升级实测_2026-10-25.md)
 
@@ -23,7 +42,7 @@
 
 CPU/CUDA: 80 decisions each preserved before/after; three known errors retained. Zero new model forwards in the upgrade itself.
 
-<!-- /semantic-upgrade-current -->
+<!-- /semantic-upgrade-history -->
 
 <!-- ad-storyboard-history -->
 
@@ -59,13 +78,13 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r14 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r14.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
+**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r16 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r16.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
 
 <!-- /unified-skill-registration -->
 
 <!-- community-materials-gpu -->
 
-**本机新增已安装扩展：CLI 0.1.15，GPU 配音/翻译与 359 项内置开源资源。** 公开 alpha.3 附件保持原版。外层只指定 `$agent-ffmpeg-local-editor`；本机登记 GPU 包后默认优先 GPU，明确返回实际设备/回退原因，保留 CPU 兼容。
+**本机新增已安装扩展：CLI 0.1.16，GPU 配音/翻译与 359 项内置开源资源。** 公开 alpha.3 附件保持原版。外层只指定 `$agent-ffmpeg-local-editor`；本机登记 GPU 包后默认优先 GPU，明确返回实际设备/回退原因，保留 CPU 兼容。
 
 [完整流程与边界](docs/product/COMMUNITY_MATERIALS.md) · [逐项素材目录](docs/product/COMMUNITY_MATERIAL_CATALOG.md) · [103 音色与实际试听范围](docs/product/COMMUNITY_VOICES.md) · [CPU 实测](docs/validation/evidence/community-materials-20261025-r1/cpu/verification.json) · [GPU 实测](docs/validation/evidence/community-materials-20261025-r1/gpu/verification.json)。
 
@@ -424,6 +443,7 @@ flowchart LR
 | F51 | 字幕翻译配音联合流程 | 普通中英 SRT、显式音色/轨道 → 译文或保留同语种原文、完整批量 WAV、实际时窗、可编辑声音/字幕和原子提交。 | `dub subtitles` | 同语种只初始化配音模型；保留原声/重试/错译；cue 时窗不证明字词精度、自然韵律或口型同步。 |
 | F52 | 可编辑广告分镜与返工 | 已确认 brief/实际素材 → 多画幅与时长的画面/字幕/配音/源音/配乐独立轨道；按镜头与变体局部改稿。 | `ad storyboard/build/revise` | 整帧分配、原素材字节锁、实际字体排版和完整配音时窗；不自动创造卖点或决定素材语义。 |
 | F53 | 语义运行时升级 | 旧适配器/索引/校准 → 新安装路径下的新 ID，复制向量/预览/数据集且保留拟合和原观察。 | `project upgrade-semantic` | 全部 19 个实现与外部依赖须字节相同；零新模型前向，原记录不改；内容变化拒绝并要求重建。 |
+| F54 | 可复用参数运镜 | 本地版本化 JSON / 已有作者曲线 → 普通关键帧、参数/摘要/快照、跨工程复用。六套真实预览供选型。 | `motion pack list/inspect/create/capture/apply` | 65 点采样、transform 属性；默认拒绝冲突，显式替换整条属性轨；跟踪绑定拒绝，CPU 合成/自然质量未闭。 |
 
 ## 支持的服务模块与依赖
 
@@ -550,7 +570,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.13/final-r3/installed/`，CLI 0.1.15；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
+本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.14/final-r2/installed/`，CLI 0.1.16；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -606,7 +626,7 @@ project/
 | 编号 | 内部模块 | 职责 | 输入 → 输出 | 相关命令 | 依赖/边界 |
 |---|---|---|---|---|---|
 | K01 | [`$agent-ffmpeg-local-editor`](skills/agent-ffmpeg-local-editor/SKILL.md) | 项目总入口与交付 | brief + 本地素材 → 计划、可编辑工程、成片、manifest | `project init; timeline compose; look; render` | 按能力路由，包含滤镜客户选型；需要基础 CLI。 |
-| K02 | [`timeline`](skills/agent-ffmpeg-local-editor/references/modules/timeline/module.md) | 时间线、关键帧与运镜 | 编辑 JSON → 多轨/运镜/转场/嵌套 | `timeline compose/edit; motion apply` | 明确目标轨道/片段与作者时钟。 |
+| K02 | [`timeline`](skills/agent-ffmpeg-local-editor/references/modules/timeline/module.md) | 时间线、关键帧与运镜 | 编辑 JSON → 多轨/运镜/转场/嵌套 | `timeline compose/edit; motion apply; motion pack list/inspect/create/capture/apply` | 明确目标轨道/片段与作者时钟。 |
 | K03 | [`quality`](skills/agent-ffmpeg-local-editor/references/modules/quality/module.md) | 成片与像素核验 | 成片 + manifest + 参考 → 报告/Scope/差异 | `quality check/scopes/mask/golden` | 区分目检/播放/听审；支持滤镜样例选型复核。 |
 | K04 | [`project-ops`](skills/agent-ffmpeg-local-editor/references/modules/project-ops/module.md) | 工程运维、恢复与队列 | 工程 + 作业 → 快照/恢复/重链/运行结果 | `project snapshot/recover; media relink; queue` | 保留旧源与失败；不是云任务调度器。 |
 | K05 | [`local-policy`](skills/agent-ffmpeg-local-editor/references/modules/local-policy/module.md) | 本地执行约束 | 工程引用 → 审计/结构化拒绝 | `policy audit` | 运行时禁止远程引用；不推断为 OS 沙箱。 |
@@ -858,18 +878,25 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R115 | 真实超时与取消 | 原生 1 秒/5 秒预算、64MiB 早期/512MiB 读取中取消；读取中断丢弃部分摘要，元数据/资产保持 | [2026-10-25 evidence](docs/validation/evidence/semantic-upgrade-20261025-r1/faults-r3/verification.json) · [Scope](docs/validation/语义运行时升级实测_2026-10-25.md) |
 | R116 | 单一 Skill 与独立工具包 | 1 Skill/17 模块、66 Skill 文件、r14 kit；独立中文/空格目录配置/注册/升级 dry-run 等 8 调用 | [2026-10-25 evidence](docs/validation/evidence/semantic-upgrade-20261025-r1/kit-r1/verification.json) · [Scope](docs/validation/语义运行时升级实测_2026-10-25.md) |
 | R117 | 交付与历史保持 | R01–R109 原文及全部 38 原关闭条件保持；本地加载/三语文档更新，公开旧版不覆盖 | [2026-10-25 evidence](docs/validation/evidence/semantic-upgrade-20261025-r1/final-delivery-r1/verification.json) · [Scope](docs/validation/语义运行时升级实测_2026-10-25.md) |
+| R118 | 2026-10-25 固定安装 | CLI 0.1.16 / local.14，208 产品文件与固定 ZIP 安装版逐字节一致 | [Evidence](docs/validation/evidence/motion-pack-20261025-r1/installation-r2/verification.json) |
+| R119 | 2026-10-25 新增契约与原生像素 | 源码/安装契约各 22/22、原生像素各 5/5，0 skip；范围分开，非完成率 | [Evidence](docs/validation/evidence/motion-pack-20261025-r1/tests/installed-native-r2/verification.json) |
+| R120 | 2026-10-25 真实运镜预览 | 7 条原生渲染含原图对照，另产品 NVENC 120 帧；六套 4 秒 MP4/GIF、实际源/参数/哈希；带旋转样例约 65 秒 | [Evidence](docs/validation/evidence/motion-pack-20261025-r1/render-r1/verification.json) |
+| R121 | 2026-10-25 捕获复用与工程包 | 外部包及原工程不可用后，捕获复用/导入工程各 120 帧与原结果相同，JSON/资产保持 | [Evidence](docs/validation/evidence/motion-pack-20261025-r1/reuse-r1/verification.json) |
+| R122 | 2026-10-25 真实注册 Skill | 唯一入口 dry-run、正式 apply、render、validate 通过；120 帧与基准相同，17 模块保持 | [Evidence](docs/validation/evidence/motion-pack-20261025-r1/skill-r2/verification.json) |
+| R123 | 2026-10-25 保留失败与回归 | 122/122 安装 CLI 回归；首轮夹具漏源时码、演示脚本传入不支持的 canvas.background 两条失败保留 | [Evidence](docs/validation/evidence/motion-pack-20261025-r1/tests/installed-cli-r2/verification.json) |
+| R124 | 2026-10-25 本地加载与三语文档 | r16 kit/参数/预览/功能手册同步；R01–R117 与 38 原关闭条件保留，公开旧附件不覆盖 | [Evidence](docs/validation/evidence/motion-pack-20261025-r1/final-delivery-r2/verification.json) |
 
 ## 当前边界与开发方向
 
 当前可交付的是有明确契约、离线可运行、可编辑、可复查的 Agent CLI 闭环。完整开源素材/模板生态、约定的 AI 特效/美颜/排版、完整色彩管线、指定草稿版本的真实转换质量、广泛自然视听和长片资源性能仍需开发与验收。消费级 GUI、账号、云协作及任意私有版本无损转换不属于当前内核收口门槛。后续 Float32 转场/运行时闭包候选 R113/R114 未随本版提供。
 
-[当前完整目标差距表](docs/product/GOAL_GAPS_20261025.md)按 CLI 0.1.15 更新全部 G01–G38。单一 Skill、500 风格/预览、359 资源、GPU 配音/翻译、字幕配音联合流程、四轨/恢复及受控词活动边界已交付；自然视听、复杂组合、高级 AI、内容模板、Agent 自主任务、长片可靠性和新版公开包仍开放。R67–R72 分别记录真实执行及限制，不给出总体完成率。[2026-10-24 评估](docs/product/GOAL_GAPS_20261024.md)是历史快照。
+[当前完整目标差距表](docs/product/GOAL_GAPS_20261025.md)按 CLI 0.1.16 更新全部 G01–G38。单一 Skill、500 风格/预览、359 资源、GPU 配音/翻译、字幕配音联合流程、四轨/恢复及受控词活动边界已交付；自然视听、复杂组合、高级 AI、内容模板、Agent 自主任务、长片可靠性和新版公开包仍开放。R67–R72 分别记录真实执行及限制，不给出总体完成率。[2026-10-24 评估](docs/product/GOAL_GAPS_20261024.md)是历史快照。
 
 
 
 下一步以真实客户素材与最小可复现工程收集缺口，逐项补齐、实测、发布新版本；不覆盖既有发布包/摘要/标签。只按实际成功产物更新核验。
 
-**Current delivery / 当前交付 / 目前交付（R110–R117，2026-10-25）：** CLI 0.1.15 / local.13 / r14; explicit byte-identical semantic runtime relocation, zero upgrade inference and preserved CPU/GPU/Skill results. Full goal remains active.
+**Current delivery / 当前交付 / 目前交付（R110–R117，2026-10-25）：** CLI 0.1.16 / local.13 / r14; explicit byte-identical semantic runtime relocation, zero upgrade inference and preserved CPU/GPU/Skill results. Full goal remains active.
 
 ## 文档体系、来源与维护
 

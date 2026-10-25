@@ -2,12 +2,9 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.8 / alpha.4-local.6。** One registered Skill / 17 modules; [r7 kit](agent-editor-kit-community-unified-skill-r7.zip);
-CTC activity boundaries, native job recovery, independent four-source separation, offline image/text retrieval,
-GPU voice/translation and 359 resources. Public alpha.3 remains CLI 0.1.2.
-[Current delivery](../product/COMMUNITY_LOCAL_DELIVERY.md) · [74 declarations](../product/ctc-activity-capabilities-cli-0.1.8.json) ·
-[CTC workflow and limits](../product/CTC_ACTIVITY_ALIGNMENT.md) · [All 38 remaining gap groups](../product/GOAL_GAPS_20261025.md).
-Controlled word-block precision does not establish natural speech/Chinese/lyrics acceptance.
+**Current local / 当前本机 / 目前本機：CLI 0.1.16 / alpha.4-local.14 / r16 kit.** One registered Skill / 17 modules; [r16 kit](agent-editor-kit-community-unified-skill-r16.zip). Six reusable motion paths and native animation capture are now installed, alongside editable ad variants, semantic runtime migration, GPU voice/translation, subtitle dubbing and 359 resources.
+
+[Motion workflow + previews](../product/MOTION_PACKS.md) · [Current installation](../product/COMMUNITY_LOCAL_DELIVERY.md) · [All 38 original goals](../product/GOAL_GAPS_20261025.md). Public alpha.3 assets retain their original version.
 
 <!-- /community-current -->
 

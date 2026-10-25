@@ -1,0 +1,2389 @@
+{
+  "format": "agent-editor-motion-pack",
+  "format_version": 1,
+  "id": "orbit_focus",
+  "version": "1.0.0",
+  "name": "Orbit focus / 绕中心椭圆运镜",
+  "description": "Orbit focus / 绕中心椭圆运镜; editable 65-sample transform keys",
+  "creator": "agent editor kit contributors",
+  "license": "MIT",
+  "parameters": {
+    "zoom": {
+      "default": 0.15,
+      "minimum": 0.0,
+      "maximum": 0.5,
+      "description": "Relative scale increase / 相对缩放增量"
+    },
+    "radius": {
+      "default": 0.12,
+      "minimum": 0.0,
+      "maximum": 0.35,
+      "description": "Normalized ellipse radius / 归一化椭圆半径"
+    }
+  },
+  "tracks": [
+    {
+      "property": "transform.position.x",
+      "mode": "add",
+      "keyframes": [
+        {
+          "at": [
+            0,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 1.0,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            1,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.9951847266721969,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            2,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.9807852804032304,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            3,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.9569403357322088,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            4,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.9238795325112867,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            5,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.881921264348355,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            6,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.8314696123025452,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            7,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.773010453362737,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            8,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.7071067811865476,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            9,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.6343932841636455,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            10,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.5555702330196023,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            11,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.4713967368259978,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            12,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.38268343236508984,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            13,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.29028467725446233,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            14,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.19509032201612833,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            15,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.09801714032956077,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            16,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 6.123233995736766e-17,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            17,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.09801714032956065,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            18,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.1950903220161282,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            19,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.29028467725446216,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            20,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.3826834323650897,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            21,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.4713967368259977,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            22,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.555570233019602,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            23,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.6343932841636454,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            24,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.7071067811865475,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            25,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.773010453362737,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            26,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.8314696123025453,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            27,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.8819212643483549,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            28,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.9238795325112867,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            29,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.9569403357322088,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            30,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.9807852804032304,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            31,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.9951847266721968,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            32,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -1.0,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            33,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.9951847266721969,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            34,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.9807852804032304,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            35,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.9569403357322089,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            36,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.9238795325112868,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            37,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.881921264348355,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            38,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.8314696123025455,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            39,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.7730104533627371,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            40,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.7071067811865477,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            41,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.6343932841636459,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            42,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.5555702330196022,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            43,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.47139673682599786,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            44,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.38268343236509034,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            45,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.29028467725446244,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            46,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.19509032201612866,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            47,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.09801714032956045,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            48,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -1.8369701987210297e-16,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            49,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.09801714032956009,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            50,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.1950903220161283,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            51,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.29028467725446205,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            52,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.38268343236509,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            53,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.4713967368259976,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            54,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.5555702330196018,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            55,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.6343932841636456,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            56,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.7071067811865474,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            57,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.7730104533627365,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            58,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.8314696123025452,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            59,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.8819212643483548,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            60,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.9238795325112865,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            61,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.9569403357322088,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            62,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.9807852804032303,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            63,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.9951847266721969,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            64,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 1.0,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        }
+      ]
+    },
+    {
+      "property": "transform.position.y",
+      "mode": "add",
+      "keyframes": [
+        {
+          "at": [
+            0,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.0,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            1,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.05881028419773636,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            2,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.11705419320967694,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            3,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.1741708063526774,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            4,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.22961005941905385,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            5,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.2828380420955986,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            6,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.3333421398117613,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            7,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.38063597049818726,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            8,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.4242640687119285,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            9,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.46380627201764213,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            10,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.4988817673815271,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            11,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.5291527586090129,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            12,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.5543277195067721,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            13,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.5741642014393253,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            14,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.5884711682419382,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            15,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.597110836003318,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            16,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.6,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            17,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.5971108360033182,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            18,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.5884711682419382,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            19,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.5741642014393253,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            20,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.5543277195067721,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            21,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.529152758609013,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            22,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.4988817673815272,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            23,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.46380627201764224,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            24,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.4242640687119285,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            25,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.38063597049818726,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            26,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.3333421398117613,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            27,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.28283804209559865,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            28,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.22961005941905394,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            29,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.17417080635267743,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            30,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.11705419320967717,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            31,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 0.05881028419773649,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            32,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": 7.347880794884119e-17,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            33,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.05881028419773635,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            34,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.11705419320967701,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            35,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.17417080635267726,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            36,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.2296100594190538,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            37,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.2828380420955986,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            38,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.33334213981176114,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            39,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.38063597049818715,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            40,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.42426406871192845,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            41,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.46380627201764196,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            42,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.4988817673815271,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            43,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.5291527586090129,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            44,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.5543277195067718,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            45,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.5741642014393252,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            46,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.5884711682419381,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            47,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.5971108360033182,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            48,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.6,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            49,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.5971108360033182,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            50,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.5884711682419382,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            51,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.5741642014393253,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            52,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.554327719506772,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            53,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.529152758609013,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            54,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.49888176738152723,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            55,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.46380627201764213,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            56,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.4242640687119286,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            57,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.38063597049818754,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            58,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.3333421398117613,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            59,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.28283804209559876,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            60,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.2296100594190542,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            61,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.17417080635267748,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            62,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.11705419320967722,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            63,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -0.058810284197736304,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            64,
+            64
+          ],
+          "value": {
+            "parameter": "radius",
+            "factor": -1.4695761589768238e-16,
+            "offset": 0.0
+          },
+          "interpolation": "linear"
+        }
+      ]
+    },
+    {
+      "property": "transform.scale",
+      "mode": "multiply",
+      "keyframes": [
+        {
+          "at": [
+            0,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            1,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            2,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            3,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            4,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            5,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            6,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            7,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            8,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            9,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            10,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            11,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            12,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            13,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            14,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            15,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            16,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            17,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            18,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            19,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            20,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            21,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            22,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            23,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            24,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            25,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            26,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            27,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            28,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            29,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            30,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            31,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            32,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            33,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            34,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            35,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            36,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            37,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            38,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            39,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            40,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            41,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            42,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            43,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            44,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            45,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            46,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            47,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            48,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            49,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            50,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            51,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            52,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            53,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            54,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            55,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            56,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            57,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            58,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            59,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            60,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            61,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            62,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            63,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        },
+        {
+          "at": [
+            64,
+            64
+          ],
+          "value": {
+            "parameter": "zoom",
+            "factor": 1.0,
+            "offset": 1.0
+          },
+          "interpolation": "linear"
+        }
+      ]
+    }
+  ],
+  "sampling": {
+    "kind": "uniform-linear",
+    "intervals": 64,
+    "error_note": "Finite 65-point polyline, not analytic spatial interpolation; inspect at the target size and duration."
+  }
+}

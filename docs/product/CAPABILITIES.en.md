@@ -2,17 +2,15 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.15 / alpha.4-local.13 / r14 kit。** One registered Skill / 17 modules;
-joint subtitle translation/dubbing, CTC activity boundaries, managed job recovery, independent four-source
-separation, offline image/text retrieval, GPU speech/translation and 359 resources. Public alpha.3 remains CLI 0.1.2.
-[Semantic package workflow](SEMANTIC_PROJECT_PACKAGE.md) · [Semantic recovery](SEMANTIC_JOB_RECOVERY.md) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](semantic-upgrade-capabilities-cli-0.1.15.json) ·
-[Subtitle dubbing workflow](SUBTITLE_DUBBING.md) · [CTC limits](CTC_ACTIVITY_ALIGNMENT.md) ·
-[All 38 remaining gap groups](GOAL_GAPS_20261025.md).
-Cue-window fit does not establish semantics, natural listening, word precision or lip sync.
+**CLI 0.1.16 / alpha.4-local.14 / r16 kit · 1 Skill / 17 modules.**
+
+Portable parameterized motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+
+[Motion workflow and actual previews](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](motion-pack-capabilities-cli-0.1.16.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.en.md) · [Machine response](semantic-upgrade-capabilities-cli-0.1.15.json) · [Module data](module-catalog.json)
+[README](../../README.en.md) · [Machine response](motion-pack-capabilities-cli-0.1.16.json) · [Module data](module-catalog.json)
 
 | ID | Module | Behavior and input → output | Entry | Dependency/limit |
 |---|---|---|---|---|
@@ -69,6 +67,7 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 | F51 | Joint subtitle translation/dubbing | Plain Chinese/English SRT and explicit voices/tracks → translation or preserved same-language copy, complete batched WAV, actual fit, editable audio/captions and atomic application. | `dub subtitles` | Same-language mode initializes only voice; preserves originals/retries/awkward translations; cue fit does not establish word precision, naturalness or lip sync. |
 | F52 | Editable ad storyboards and revision | Reviewed brief/actual assets → separate picture/caption/voice/source/music tracks for multiple canvases/durations; selected-shot/variant revisions. | `ad storyboard/build/revise` | Whole-frame allocation, actual asset locks, real font layout and complete voice-window checks; caller supplies claims and semantic choices. |
 | F53 | Semantic runtime relocation | Old adapter/index/profiles → new installation-bound identities, copying vectors/previews/datasets and retaining fitted observations. | `project upgrade-semantic` | All 19 implementation files and external dependencies must be byte-identical; zero new model forwards; original records retained; changed bytes require rebuilding. |
+| F54 | Portable parameterized motion | Versioned local JSON / captured authored curves → editable keys, resolved parameters/digests/snapshot and cross-project reuse, with six actual previews. | `motion pack list/inspect/create/capture/apply` | 65-point paths, transform properties; conflicts reject unless whole-property replacement is explicit; tracking bindings reject; CPU performance/natural quality remain open. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -2799,6 +2798,46 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
       1
     ],
     "execution": "normalized cubic easing sampled into a frame-evaluable FFmpeg expression"
+  },
+  "motion_packs": {
+    "status": "implemented_with_limits",
+    "engine": "agent-motion-pack-v1",
+    "format": "agent-editor-motion-pack",
+    "format_version": 1,
+    "commands": [
+      "motion.pack.list",
+      "motion.pack.inspect",
+      "motion.pack.create",
+      "motion.pack.capture",
+      "motion.pack.apply"
+    ],
+    "builtins": [
+      "orbit_focus",
+      "arc_push",
+      "bezier_sweep",
+      "whip_settle",
+      "breathe_float",
+      "detail_scan"
+    ],
+    "features": [
+      "versioned_portable_json",
+      "bounded_affine_parameters",
+      "rational_normalized_times",
+      "editable_native_transform_keys",
+      "complete_authored_easing_capture",
+      "presentation_window_offsets",
+      "explicit_conflict_replacement",
+      "embedded_recipe_and_digests",
+      "snapshot_atomic_commit_and_idempotency"
+    ],
+    "limits": [
+      "six_builtins_use_65_linear_samples",
+      "transform_properties_only",
+      "replaces_whole_selected_property_tracks",
+      "sub_tick_point_collisions_rejected",
+      "tracking_bindings_rejected",
+      "not_3d_camera_solve_or_full_motion_quality_acceptance"
+    ]
   }
 }
 ```

@@ -910,6 +910,18 @@ def build_capability_manifest() -> dict[str, Any]:
                 "properties": ["transform.position.x", "transform.position.y", "transform.anchor.x", "transform.anchor.y", "transform.scale", "transform.rotation", "transform.opacity", "blend.opacity", "audio.volume", "audio.pan", "crop.x", "crop.y", "crop.width", "crop.height", "mask.x", "mask.y", "mask.width", "mask.height", "mask.cx", "mask.cy", "mask.radius", "mask.rx", "mask.ry", "mask.feather", "mask.points.<index>.x", "mask.points.<index>.y", "mask.segments.<index>.<from|control1|control2|to>.x", "mask.segments.<index>.<from|control1|control2|to>.y"],
                 "interpolation": ["hold", "linear", "ease_in", "ease_out", "ease_in_out", "bezier"],
                 "bezier_control_points": {"forms": [["y1", "y2"], ["x1", "y1", "x2", "y2"]], "x_range": [0, 1], "execution": "normalized cubic easing sampled into a frame-evaluable FFmpeg expression"},
+                "motion_packs": {
+                    "status": "implemented_with_limits", "engine": "agent-motion-pack-v1",
+                    "format": "agent-editor-motion-pack", "format_version": 1,
+                    "commands": ["motion.pack.list", "motion.pack.inspect", "motion.pack.create", "motion.pack.capture", "motion.pack.apply"],
+                    "builtins": ["orbit_focus", "arc_push", "bezier_sweep", "whip_settle", "breathe_float", "detail_scan"],
+                    "features": ["versioned_portable_json", "bounded_affine_parameters", "rational_normalized_times",
+                        "editable_native_transform_keys", "complete_authored_easing_capture", "presentation_window_offsets",
+                        "explicit_conflict_replacement", "embedded_recipe_and_digests", "snapshot_atomic_commit_and_idempotency"],
+                    "limits": ["six_builtins_use_65_linear_samples", "transform_properties_only",
+                        "replaces_whole_selected_property_tracks", "sub_tick_point_collisions_rejected",
+                        "tracking_bindings_rejected", "not_3d_camera_solve_or_full_motion_quality_acceptance"],
+                },
             },
             "effects": {
                 "status": "implemented",

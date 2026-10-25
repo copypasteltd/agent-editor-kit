@@ -2,13 +2,11 @@
 
 <!-- community-current -->
 
-**CLI 0.1.15 / alpha.4-local.13 / r14 kit · 1 Skill / 17 modules.**
+**CLI 0.1.16 / alpha.4-local.14 / r16 kit · 1 Skill / 17 modules.**
 
-Reviewed ad brief→multiple canvases/durations→separate editable tracks→selected-shot revision→portable project package now runs end to end. New `ad storyboard/build/revise`; same-language GPU voice batches preserve copy and initialize once for three lines. Actual vertical 12s, wide/square 9s variants. Revising only the last 3s preserves the first 180 frames and decoded PCM; the registered Skill repeats a scoped revision.
+New portable motion packs: six parameterized paths, existing-animation capture, reuse across durations/canvases, explicit conflict handling and authored clocks; results remain editable keyframes.
 
-[Editable ad workflow](AD_STORYBOARD.md) · [Same-language/translated dubbing](SUBTITLE_DUBBING.md) · [75 declarations](semantic-upgrade-capabilities-cli-0.1.15.json) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [All original goal conditions](GOAL_GAPS_20261025.md).
-
-Copy and asset choices are explicit caller inputs. This is an authored product-card ad, without natural-ad quality or independent Agent-success acceptance. The full goal remains active.
+[Motion workflow/previews](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime upgrade](SEMANTIC_RUNTIME_UPGRADE.md) · [75 declarations](motion-pack-capabilities-cli-0.1.16.json) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md).
 
 <!-- /community-current -->
 
@@ -23,7 +21,7 @@ Register only `$agent-ffmpeg-local-editor`. K01–K17 load as internal reference
 | ID | Internal module | Responsibility | Input → output | Commands | Dependency/limit |
 |---|---|---|---|---|---|
 | K01 | [`$agent-ffmpeg-local-editor`](../../skills/agent-ffmpeg-local-editor/SKILL.md) | Editing and delivery entrypoint | brief + local media → plan, project, video, manifest | `project init; timeline compose; look; render` | Routes by capability, including client look selection; needs the base CLI. |
-| K02 | [`timeline`](../../skills/agent-ffmpeg-local-editor/references/modules/timeline/module.md) | Timeline, keys and motion | Edit JSON → tracks/motion/transitions/nesting | `timeline compose/edit; motion apply` | Explicit track/clip targets and author clocks. |
+| K02 | [`timeline`](../../skills/agent-ffmpeg-local-editor/references/modules/timeline/module.md) | Timeline, keys and motion | Edit JSON → tracks/motion/transitions/nesting | `timeline compose/edit; motion apply; motion pack list/inspect/create/capture/apply` | Explicit track/clip targets and author clocks. |
 | K03 | [`quality`](../../skills/agent-ffmpeg-local-editor/references/modules/quality/module.md) | Output and pixel review | Video + manifest + reference → reports/scopes/differences | `quality check/scopes/mask/golden` | Separate static review/playback/listening; review look selections. |
 | K04 | [`project-ops`](../../skills/agent-ffmpeg-local-editor/references/modules/project-ops/module.md) | Project operations, recovery and queues | Projects + jobs → snapshots/recovery/relink/results | `project snapshot/recover; media relink; queue` | Preserve sources/failures; not a cloud scheduler. |
 | K05 | [`local-policy`](../../skills/agent-ffmpeg-local-editor/references/modules/local-policy/module.md) | Local execution policy | Project references → audit/structured refusal | `policy audit` | Remote references refused; not an OS sandbox. |

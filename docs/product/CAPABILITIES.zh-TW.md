@@ -2,17 +2,15 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.15 / alpha.4-local.13 / r14 kit。** One registered Skill / 17 modules;
-joint subtitle translation/dubbing, CTC activity boundaries, managed job recovery, independent four-source
-separation, offline image/text retrieval, GPU speech/translation and 359 resources. Public alpha.3 remains CLI 0.1.2.
-[Semantic package workflow](SEMANTIC_PROJECT_PACKAGE.md) · [Semantic recovery](SEMANTIC_JOB_RECOVERY.md) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](semantic-upgrade-capabilities-cli-0.1.15.json) ·
-[Subtitle dubbing workflow](SUBTITLE_DUBBING.md) · [CTC limits](CTC_ACTIVITY_ALIGNMENT.md) ·
-[All 38 remaining gap groups](GOAL_GAPS_20261025.md).
-Cue-window fit does not establish semantics, natural listening, word precision or lip sync.
+**CLI 0.1.16 / alpha.4-local.14 / r16 kit · 1 Skill / 17 modules.**
+
+Portable parameterized motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+
+[Motion workflow and actual previews](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](motion-pack-capabilities-cli-0.1.16.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.zh-TW.md) · [Machine response](semantic-upgrade-capabilities-cli-0.1.15.json) · [Module data](module-catalog.json)
+[README](../../README.zh-TW.md) · [Machine response](motion-pack-capabilities-cli-0.1.16.json) · [Module data](module-catalog.json)
 
 | 編號 | 功能模塊 | 具體行為與輸入 → 輸出 | 入口 | 依賴/邊界 |
 |---|---|---|---|---|
@@ -69,6 +67,7 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 | F51 | 字幕翻譯配音聯合流程 | 普通中英 SRT、明確音色/軌道 → 譯文或保留同語種原文、完整批次 WAV、實際時窗、可編輯聲音/字幕及原子提交。 | `dub subtitles` | 同語種只初始化配音模型；保留原聲/重試/錯譯；cue 時窗不證明字詞精度、自然韻律或口型同步。 |
 | F52 | 可編輯廣告分鏡與返工 | 已確認 brief/實際素材 → 多畫幅與時長的畫面/字幕/配音/源音/配樂獨立軌道；按鏡頭及變體局部改稿。 | `ad storyboard/build/revise` | 整影格分配、原素材位元組鎖、實際字型排版和完整配音時窗；不自動創造賣點或決定素材語義。 |
 | F53 | 語義執行時升級 | 舊適配器/索引/校準 → 新安裝路徑的新 ID，複製向量/預覽/資料集並保留擬合及原觀察。 | `project upgrade-semantic` | 全部 19 個實作與外部依賴須位元組相同；零新模型前向，原記錄不改；內容變更拒絕並要求重建。 |
+| F54 | 可復用參數運鏡 | 本地版本化 JSON / 既有作者曲線 → 一般關鍵影格、參數/摘要/快照、跨專案復用。六套實際預覽供選型。 | `motion pack list/inspect/create/capture/apply` | 65 點採樣、transform 屬性；預設拒絕衝突，明確取代整條屬性軌；跟蹤綁定拒絕，CPU 合成/自然品質未結案。 |
 
 | 編號 | 服務模塊 | 運行形式 | 需要什么/提供什么 | 入口 | 範圍 |
 |---|---|---|---|---|---|
@@ -2799,6 +2798,46 @@ Cue-window fit does not establish semantics, natural listening, word precision o
       1
     ],
     "execution": "normalized cubic easing sampled into a frame-evaluable FFmpeg expression"
+  },
+  "motion_packs": {
+    "status": "implemented_with_limits",
+    "engine": "agent-motion-pack-v1",
+    "format": "agent-editor-motion-pack",
+    "format_version": 1,
+    "commands": [
+      "motion.pack.list",
+      "motion.pack.inspect",
+      "motion.pack.create",
+      "motion.pack.capture",
+      "motion.pack.apply"
+    ],
+    "builtins": [
+      "orbit_focus",
+      "arc_push",
+      "bezier_sweep",
+      "whip_settle",
+      "breathe_float",
+      "detail_scan"
+    ],
+    "features": [
+      "versioned_portable_json",
+      "bounded_affine_parameters",
+      "rational_normalized_times",
+      "editable_native_transform_keys",
+      "complete_authored_easing_capture",
+      "presentation_window_offsets",
+      "explicit_conflict_replacement",
+      "embedded_recipe_and_digests",
+      "snapshot_atomic_commit_and_idempotency"
+    ],
+    "limits": [
+      "six_builtins_use_65_linear_samples",
+      "transform_properties_only",
+      "replaces_whole_selected_property_tracks",
+      "sub_tick_point_collisions_rejected",
+      "tracking_bindings_rejected",
+      "not_3d_camera_solve_or_full_motion_quality_acceptance"
+    ]
   }
 }
 ```

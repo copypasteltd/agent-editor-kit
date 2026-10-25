@@ -773,6 +773,8 @@ def build_parser() -> argparse.ArgumentParser:
 
     motion = subs.add_parser("motion", help="查询和应用本地关键帧运镜预设")
     motion_sub = motion.add_subparsers(dest="action", required=True)
+    from .motion_pack_cli import add_parser as add_motion_pack_parser
+    add_motion_pack_parser(motion_sub, _leaf_common)
     motion_list = _leaf_common(motion_sub.add_parser("list", help="列出可用运镜预设及参数契约"))
     motion_list.add_argument("--query", default=None, help="按 ID、别名、类别或说明筛选")
     motion_inspect = _leaf_common(motion_sub.add_parser("inspect", help="查看单个运镜预设的详细契约"))
@@ -7015,6 +7017,8 @@ def command_policy_audit(args: argparse.Namespace) -> dict[str, Any]:
 
 def _idempotency_context(args: argparse.Namespace) -> tuple[Path, Path, str] | None:
     key = getattr(args, "idempotency_key", None)
+    if key and getattr(args, 'domain', None) == 'motion' and getattr(args, 'action', None) == 'pack' and getattr(args, 'pack_action', None) != 'apply':
+        raise argument_error('运镜包幂等键仅用于 apply；捕获/查询不写工程幂等记录', 'idempotency_key')
     project_value = getattr(args, "project", None)
     if not key or getattr(args, "dry_run", False) or not project_value:
         return None
@@ -7092,7 +7096,8 @@ def _project_operation_lock(args: argparse.Namespace):
     project = getattr(args, "project", None)
     key = (getattr(args, "domain", None), getattr(args, "action", None))
     adapter_read_only = (key in {("audio", "adapter"), ("media", "adapter")} and getattr(args, "adapter_action", None) in {"list", "inspect"}) or (key in {("tts", "adapter"), ("tts", "voice"), ("asr", "adapter"), ('ocr','adapter'), ('face','adapter')} and getattr(args, "registration_action", None) in {"list", "inspect"})
-    if not project or getattr(args, "dry_run", False) or key in _READ_ONLY_PROJECT_COMMANDS or adapter_read_only or key == ("queue", "cancel"):
+    pack_read_only = key == ('motion', 'pack') and getattr(args, 'pack_action', None) != 'apply'
+    if not project or getattr(args, "dry_run", False) or key in _READ_ONLY_PROJECT_COMMANDS or adapter_read_only or pack_read_only or key == ("queue", "cancel"):
         return contextlib.nullcontext()
     return project_write_lock(project)
 
@@ -7233,6 +7238,8 @@ from .dubbing_cli import command as dubbing_command
 COMMANDS[('dub', 'subtitles')] = lambda args: dubbing_command(args, _envelope)
 from .ad_storyboard_cli import ACTIONS as STORYBOARD_ACTIONS, command as storyboard_command
 COMMANDS.update({('ad', action): (lambda args: storyboard_command(args, _envelope, _operation)) for action in STORYBOARD_ACTIONS})
+from .motion_pack_cli import command as motion_pack_command
+COMMANDS[('motion', 'pack')] = lambda args: motion_pack_command(args, _envelope, _operation)
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -7252,7 +7259,8 @@ def main(argv: list[str] | None = None) -> int:
             transaction_root = getattr(args, "project", None)
             command_key = (args.domain, getattr(args, "action", None))
             adapter_read_only = (command_key in {("audio", "adapter"), ("media", "adapter")} and getattr(args, "adapter_action", None) in {"list", "inspect"}) or (command_key in {("tts", "adapter"), ("tts", "voice"), ("asr", "adapter"), ('ocr','adapter'), ('face','adapter')} and getattr(args, "registration_action", None) in {"list", "inspect"})
-            transaction_enabled = bool(transaction_root) and not getattr(args, "dry_run", False) and command_key not in _READ_ONLY_PROJECT_COMMANDS and not adapter_read_only and command_key not in {("project", "recover"), ("queue", "cancel")}
+            pack_read_only = command_key == ('motion', 'pack') and getattr(args, 'pack_action', None) != 'apply'
+            transaction_enabled = bool(transaction_root) and not getattr(args, "dry_run", False) and command_key not in _READ_ONLY_PROJECT_COMMANDS and not adapter_read_only and not pack_read_only and command_key not in {("project", "recover"), ("queue", "cancel")}
             with (project_transaction(transaction_root, command=_command_name(args)) if transaction_enabled else contextlib.nullcontext({"active": False, "recovered": False})) as transaction:
                 if idempotency:
                     root, record_path, fingerprint = idempotency

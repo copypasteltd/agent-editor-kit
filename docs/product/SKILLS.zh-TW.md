@@ -2,13 +2,11 @@
 
 <!-- community-current -->
 
-**CLI 0.1.15 / alpha.4-local.13 / r14 kit · 1 Skill / 17 modules.**
+**CLI 0.1.16 / alpha.4-local.14 / r16 kit · 1 Skill / 17 modules.**
 
-已實作廣告 brief→多畫幅/時長→獨立可編輯軌道→指定鏡頭返工→專案包遷移。新增 `ad storyboard/build/revise`；同語種 GPU 批次配音保留原文，3 句只初始化一次模型。實際生成直式 12 秒、橫式/方形各 9 秒。橫式僅改最後 3 秒，前 180 影格與聲音 PCM 不變；實際註冊 Skill 再次返工通過。
+新增可復用運鏡包：六套參數路徑、既有動畫擷取、跨時長/畫幅復用、明確衝突及作者時鐘；結果保留為可編輯關鍵影格。
 
-[Editable ad workflow](AD_STORYBOARD.md) · [Same-language/translated dubbing](SUBTITLE_DUBBING.md) · [75 declarations](semantic-upgrade-capabilities-cli-0.1.15.json) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [All original goal conditions](GOAL_GAPS_20261025.md).
-
-呼叫者明確提供文案與素材選擇；本例是自製產品圖卡廣告，不是自然素材廣告品質或 Agent 自主成功率驗收。完整目標繼續進行。
+[Motion workflow/previews](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime upgrade](SEMANTIC_RUNTIME_UPGRADE.md) · [75 declarations](motion-pack-capabilities-cli-0.1.16.json) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md).
 
 <!-- /community-current -->
 
@@ -23,7 +21,7 @@
 | 編號 | 內部模組 | 職責 | 輸入 → 輸出 | 相關命令 | 依賴/邊界 |
 |---|---|---|---|---|---|
 | K01 | [`$agent-ffmpeg-local-editor`](../../skills/agent-ffmpeg-local-editor/SKILL.md) | 專案總入口與交付 | brief + 本地素材 → 計劃、可編輯工程、成片、manifest | `project init; timeline compose; look; render` | 按能力路由，包含濾鏡客戶選型；需要基礎 CLI。 |
-| K02 | [`timeline`](../../skills/agent-ffmpeg-local-editor/references/modules/timeline/module.md) | 時間線、關鍵影格與運鏡 | 編輯 JSON → 多軌/運鏡/轉場/嵌套 | `timeline compose/edit; motion apply` | 明確目標軌道/片段與作者時鐘。 |
+| K02 | [`timeline`](../../skills/agent-ffmpeg-local-editor/references/modules/timeline/module.md) | 時間線、關鍵影格與運鏡 | 編輯 JSON → 多軌/運鏡/轉場/嵌套 | `timeline compose/edit; motion apply; motion pack list/inspect/create/capture/apply` | 明確目標軌道/片段與作者時鐘。 |
 | K03 | [`quality`](../../skills/agent-ffmpeg-local-editor/references/modules/quality/module.md) | 成片與像素核驗 | 成片 + manifest + 參考 → 報告/Scope/差異 | `quality check/scopes/mask/golden` | 區分目檢/播放/聽審；支持濾鏡樣例選型復核。 |
 | K04 | [`project-ops`](../../skills/agent-ffmpeg-local-editor/references/modules/project-ops/module.md) | 工程運維、恢復與隊列 | 工程 + 作業 → 快照/恢復/重鏈/運行結果 | `project snapshot/recover; media relink; queue` | 保留舊源與失敗；不是云任務調度器。 |
 | K05 | [`local-policy`](../../skills/agent-ffmpeg-local-editor/references/modules/local-policy/module.md) | 本地執行約束 | 工程引用 → 審計/結構化拒絕 | `policy audit` | 運行時禁止遠程引用；不推斷為 OS 沙箱。 |

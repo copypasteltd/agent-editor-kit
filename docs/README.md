@@ -12,10 +12,11 @@
 | 当前 alpha.3 预发布下载、安装、Skill 注册与首次视频 / Current release and first render | [Release](https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3) · [简体上手](releases/v0.1.0-alpha.3/QUICKSTART.md) · [繁體上手](releases/v0.1.0-alpha.3/QUICKSTART.zh-TW.md) · [English](releases/v0.1.0-alpha.3/QUICKSTART.en.md) |
 | alpha.3 发行范围、新目录安装与可执行示例 / Release scope and fresh-directory checks | [Scope](releases/v0.1.0-alpha.3/RELEASE.md) · [Release notes](releases/v0.1.0-alpha.3/RELEASE-NOTES.md) · [Native verification](validation/evidence/release-v0.1.0-alpha.3-r1/verification.json) |
 | alpha.3 的 GitHub 发布与 10 个附件逐项下载核对 / Current publication and ten download hashes | [Publication receipt](validation/evidence/release-v0.1.0-alpha.3-r1/publication.json) · [Reproduction](validation/evidence/release-v0.1.0-alpha.3-r1/git-reproduction.json) |
-| 当前 CLI 0.1.15 的全部 38 组差距 / Current full-goal assessment | [最新编号表](product/GOAL_GAPS_20261025.md) · [CPU/GPU/Skill 与错误](validation/语义条件与校准拒识实测_2026-10-25.md) · [C19](product/CASES.md#c19-semantic-decisions) |
+| 当前 CLI 0.1.16 的全部 38 组差距 / Current full-goal assessment | [最新编号表](product/GOAL_GAPS_20261025.md) · [CPU/GPU/Skill 与错误](validation/语义条件与校准拒识实测_2026-10-25.md) · [C19](product/CASES.md#c19-semantic-decisions) |
 | alpha.3 历史目标评估 / Historical alpha.3 assessment | [2026-10-24 差距评估](product/GOAL_GAPS_20261024.md) · [Installed inventory](validation/evidence/goal-gaps-20261024-r1/inventory.json) |
 | 当前完整功能与本地服务模块、安装版全部能力字段 / Complete functional and service modules | [简体](product/CAPABILITIES.md) · [繁體](product/CAPABILITIES.zh-TW.md) · [English](product/CAPABILITIES.en.md) |
 | 46 效果算子与 12 运镜的具体参数、范围、后端 / Full effect and motion parameters | [简体](product/EFFECTS.md) · [繁體](product/EFFECTS.zh-TW.md) · [English](product/EFFECTS.en.md) |
+| 新增可复用参数运镜、已有曲线捕获、真实预览 / Portable motion and previews | [完整流程](product/MOTION_PACKS.md) · [C25](product/CASES.md#c25-motion-packs) · [安装/像素/Skill 实测](validation/可复用运镜包实测_2026-10-25.md) |
 | 一个 Skill 内部 17 项模块的输入输出、依赖与职责 / Current internal task modules | [简体](product/SKILLS.md) · [繁體](product/SKILLS.zh-TW.md) · [English](product/SKILLS.en.md) |
 | N002 母图的全部 500 套实际滤镜样例、原图与客户选型 / All supplied-image previews | [交互图册](assets/looks-n002-20261024-r1/index.html) · [简体说明](local/FILTER_GALLERY.md) · [繁體說明](local/FILTER_GALLERY.zh-TW.md) · [English](local/FILTER_GALLERY.en.md) |
 | 恢复的全部演示与原输入/输出/失败记录 / Restored full demonstration casebook | [Complete cases](product/CASES.md) |

@@ -1,0 +1,80 @@
+[
+  {
+    "name": "build",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\offline\\build.py",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.14\\candidate-r2\\bundle"
+    ],
+    "exit_code": 0,
+    "started_at_utc": "2026-10-25T14:57:14.068057+00:00",
+    "stdout_sha256": "fd5d33a40ff61e18588cd632f08064fe88415f33d2e71761c8ace9cc300a1b2d",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "install",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.14\\unpacked-r2\\install.py",
+      "--bundle",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.14\\unpacked-r2",
+      "--target",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.14\\final-r2\\installed",
+      "--manifest-sha256",
+      "sha256:865622138982287488d6740bdffb925542beb047b51479fd3fc9058bc716f7f3",
+      "--timeout-seconds",
+      "600"
+    ],
+    "exit_code": 0,
+    "started_at_utc": "2026-10-25T14:59:02.072497+00:00",
+    "stdout_sha256": "f0cf40cc21ab88cc2cb24ec0eb2fee9cd128b4be27c07c511d8f375a92b35750",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "version",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.14\\final-r2\\installed\\run.py",
+      "version"
+    ],
+    "exit_code": 0,
+    "started_at_utc": "2026-10-25T14:59:30.402181+00:00",
+    "stdout_sha256": "a0ac96bc7e1b5922c0d4f21b4544973055f4235cc822e425d00b9f5cfef125ea",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "capabilities",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.14\\final-r2\\installed\\run.py",
+      "capabilities"
+    ],
+    "exit_code": 0,
+    "started_at_utc": "2026-10-25T14:59:34.767008+00:00",
+    "stdout_sha256": "92391932c7b2fe084a57630baf94b5548e2d5ba7a021d9ad093e0ceb485883cc",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

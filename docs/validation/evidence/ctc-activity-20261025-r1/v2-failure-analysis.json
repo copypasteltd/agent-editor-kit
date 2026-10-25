@@ -1,0 +1,37 @@
+{
+  "status": "v2_quality_failure_preserved",
+  "gate_seconds": 0.06666666666666667,
+  "cases": [
+    {
+      "fixture": "original",
+      "max_error_ms": 4.75,
+      "passed": true
+    },
+    {
+      "fixture": "heldout",
+      "max_error_ms": 105.375,
+      "passed": false
+    },
+    {
+      "fixture": "awb",
+      "max_error_ms": 4.9375,
+      "passed": true
+    },
+    {
+      "fixture": "background",
+      "max_error_ms": 4.3125,
+      "passed": true
+    },
+    {
+      "fixture": "kal",
+      "max_error_ms": 4.375,
+      "passed": true
+    }
+  ],
+  "cause": "weak initial components separated by more than 40ms low-energy gap have no CTC anchor and fail the strong-region admission; three RMS heldout onsets remain late",
+  "source_snapshot": {
+    "path": "failed-v2-source.zip",
+    "sha256": "549e219c94208da05af58297c81878ba5c6ad83ce9c848cdeb3e9cc188f7669d"
+  },
+  "no_v3_result_available": true
+}

@@ -1,0 +1,139 @@
+{
+  "argv": [
+    "media",
+    "ingest",
+    "--project",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\original",
+    "--asset-id",
+    "long",
+    "--input",
+    "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ctc-alignment-20261018\\input-long.wav"
+  ],
+  "exit_code": 0,
+  "result": {
+    "ok": true,
+    "command": "media.ingest",
+    "request_id": "req_20261025010701_8ed6337b",
+    "operation_id": "op_20261025010701_3dbad25c",
+    "status": "succeeded",
+    "data": {
+      "asset": {
+        "id": "long",
+        "kind": "audio",
+        "uri": "assets/long_input-long.wav",
+        "sha256": "sha256:1f8a329980b552cb7689099ffc49329b2986df95264f853ac1fe37d60cd18643",
+        "probe": {
+          "duration_seconds": 47.19375,
+          "duration_tick": 4247438,
+          "format": "wav",
+          "format_long_name": "WAV / WAVE (Waveform Audio)",
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "pcm_s16le",
+              "codec_long_name": "PCM signed 16-bit little-endian",
+              "codec_type": "audio",
+              "codec_tag_string": "[1][0][0][0]",
+              "codec_tag": "0x0001",
+              "sample_fmt": "s16",
+              "sample_rate": "16000",
+              "channels": 1,
+              "bits_per_sample": 16,
+              "initial_padding": 0,
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "time_base": "1/16000",
+              "duration_ts": 755100,
+              "duration": "47.193750",
+              "bit_rate": "256000",
+              "disposition": {
+                "default": 0,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              }
+            }
+          ],
+          "video": {
+            "codec": null,
+            "width": null,
+            "height": null,
+            "pix_fmt": null,
+            "fps": null,
+            "color_space": null,
+            "duration_seconds": 0.0,
+            "start_time_seconds": 0.0
+          },
+          "audio": {
+            "codec": "pcm_s16le",
+            "sample_rate": 16000,
+            "channels": 1,
+            "duration_seconds": 47.19375,
+            "start_time_seconds": 0.0
+          }
+        },
+        "rights_ref": "long",
+        "source": {
+          "source_url": "local://E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ctc-alignment-20261018\\input-long.wav",
+          "retrieved_at": "2026-10-25T01:07:01.467439Z",
+          "original_name": "input-long.wav"
+        }
+      },
+      "rights": {
+        "asset_id": "long",
+        "kind": "audio",
+        "sha256": "sha256:1f8a329980b552cb7689099ffc49329b2986df95264f853ac1fe37d60cd18643",
+        "source_url": "local://E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ctc-alignment-20261018\\input-long.wav",
+        "source_version": "local",
+        "retrieved_at": "2026-10-25T01:07:01.467482Z",
+        "creator": "unknown",
+        "license_spdx": "LicenseRef-UNVERIFIED",
+        "license_url": "",
+        "attribution": "",
+        "permitted_uses": [
+          "internal"
+        ],
+        "restrictions": [],
+        "evidence": "",
+        "verification_status": "unverified",
+        "verified_by": "",
+        "takedown_status": "clear",
+        "notes": "Imported by local CLI",
+        "record_id": "rights_20261025010701_30cb8158",
+        "record_version": 1,
+        "active": true,
+        "recorded_at": "2026-10-25T01:07:01.468437Z",
+        "permitted_channels": []
+      },
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\original\\assets\\long_input-long.wav"
+    },
+    "artifacts": [],
+    "warnings": [],
+    "errors": [],
+    "provenance": {
+      "cli_version": "0.1.8",
+      "schema_version": "0.1.0",
+      "engine_version": "ffmpeg-local",
+      "started_at": "2026-10-25T01:07:01.482827Z",
+      "finished_at": "2026-10-25T01:07:01.482838Z",
+      "network": "disabled"
+    }
+  },
+  "stderr": "",
+  "seconds": 0.9138904999999795
+}

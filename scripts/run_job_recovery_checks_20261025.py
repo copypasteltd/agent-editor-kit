@@ -23,6 +23,7 @@ def main():
     parser.add_argument('--site', type=Path, required=True)
     parser.add_argument('--pattern', required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--test-name', help='optional exact unittest name for a failed-method recheck')
     args = parser.parse_args()
     site, output = args.site.resolve(strict=True), args.output.resolve()
     assert output.is_relative_to(ROOT / 'docs/validation/evidence') and not output.exists()
@@ -34,8 +35,14 @@ def main():
     command = [sys.executable, '-E', '-B', '-X', 'utf8', '-c',
         'import sys,unittest;sys.path.insert(0,sys.argv.pop(1));from ai_ad_editor.runtime import configure_local_runtime;configure_local_runtime();unittest.main(module=None)',
         str(site), 'discover', '-s', str(ROOT / 'product/tests'), '-p', args.pattern, '-v']
+    if args.test_name:
+        command = [sys.executable, '-E', '-B', '-X', 'utf8', '-c',
+            'import sys,unittest;sys.path.insert(0,sys.argv.pop(1));sys.path.insert(0,sys.argv.pop(1));from ai_ad_editor.runtime import configure_local_runtime;configure_local_runtime();unittest.main(module=None)',
+            str(site), str(ROOT / 'product/tests'), args.test_name, '-v']
     receipt = dict(started_at_utc=datetime.now(timezone.utc).isoformat(), command=command, site=str(site),
         pattern=args.pattern, frozen_before=frozen(), native_windows=True, virtualization=False)
+    if args.test_name:
+        receipt['selected_test'] = args.test_name
     environment = dict(os.environ, PYTHONPATH=str(site), PYTHONDONTWRITEBYTECODE='1', PYTHONUTF8='1')
     started = time.monotonic()
     with (output / 'tests.log').open('wb') as stream:

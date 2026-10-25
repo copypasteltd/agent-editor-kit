@@ -1,0 +1,272 @@
+{
+  "fixture": "heldout",
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\development-r1\\heldout",
+  "reference": "authored word blocks, not phonetic truth",
+  "immutable_threshold_seconds": 0.06666666666666667,
+  "quality": {
+    "raw_ctc": {
+      "max_error_samples": 4584,
+      "max_error_ms": 286.5,
+      "passed": false,
+      "words": [
+        {
+          "word": "LOCAL",
+          "start_error_samples": 1960,
+          "end_error_samples": -3492,
+          "start_error_ms": 122.5,
+          "end_error_ms": -218.25,
+          "passed": false
+        },
+        {
+          "word": "VIDEO",
+          "start_error_samples": 988,
+          "end_error_samples": -4584,
+          "start_error_ms": 61.75,
+          "end_error_ms": -286.5,
+          "passed": false
+        },
+        {
+          "word": "EDITOR",
+          "start_error_samples": 2936,
+          "end_error_samples": -3181,
+          "start_error_ms": 183.5,
+          "end_error_ms": -198.8125,
+          "passed": false
+        },
+        {
+          "word": "KEEPS",
+          "start_error_samples": 819,
+          "end_error_samples": -3520,
+          "start_error_ms": 51.1875,
+          "end_error_ms": -220.0,
+          "passed": false
+        },
+        {
+          "word": "EVERY",
+          "start_error_samples": 3200,
+          "end_error_samples": -3634,
+          "start_error_ms": 200.0,
+          "end_error_ms": -227.125,
+          "passed": false
+        },
+        {
+          "word": "ORIGINAL",
+          "start_error_samples": 3406,
+          "end_error_samples": -3870,
+          "start_error_ms": 212.875,
+          "end_error_ms": -241.875,
+          "passed": false
+        },
+        {
+          "word": "WORD",
+          "start_error_samples": 770,
+          "end_error_samples": -2585,
+          "start_error_ms": 48.125,
+          "end_error_ms": -161.5625,
+          "passed": false
+        }
+      ]
+    },
+    "activity": {
+      "max_error_samples": 2246,
+      "max_error_ms": 140.375,
+      "passed": false,
+      "words": [
+        {
+          "word": "LOCAL",
+          "start_error_samples": 0,
+          "end_error_samples": -332,
+          "start_error_ms": 0.0,
+          "end_error_ms": -20.75,
+          "passed": true
+        },
+        {
+          "word": "VIDEO",
+          "start_error_samples": -12,
+          "end_error_samples": 16,
+          "start_error_ms": -0.75,
+          "end_error_ms": 1.0,
+          "passed": true
+        },
+        {
+          "word": "EDITOR",
+          "start_error_samples": 2096,
+          "end_error_samples": -101,
+          "start_error_ms": 131.0,
+          "end_error_ms": -6.3125,
+          "passed": false
+        },
+        {
+          "word": "KEEPS",
+          "start_error_samples": -21,
+          "end_error_samples": -1240,
+          "start_error_ms": -1.3125,
+          "end_error_ms": -77.5,
+          "passed": false
+        },
+        {
+          "word": "EVERY",
+          "start_error_samples": 2200,
+          "end_error_samples": -154,
+          "start_error_ms": 137.5,
+          "end_error_ms": -9.625,
+          "passed": false
+        },
+        {
+          "word": "ORIGINAL",
+          "start_error_samples": 2246,
+          "end_error_samples": 10,
+          "start_error_ms": 140.375,
+          "end_error_ms": 0.625,
+          "passed": false
+        },
+        {
+          "word": "WORD",
+          "start_error_samples": -70,
+          "end_error_samples": 15,
+          "start_error_ms": -4.375,
+          "end_error_ms": 0.9375,
+          "passed": true
+        }
+      ]
+    }
+  },
+  "activity": {
+    "algorithm": "ctc-guided-activity-v1",
+    "sample_rate": 16000,
+    "frame_samples": 80,
+    "dc_offset": 0,
+    "dc_subsample_step": 1,
+    "noise_rms": 0,
+    "reference_rms": 5298,
+    "low_threshold": 17,
+    "high_threshold": 53,
+    "max_internal_gap_frames": 8,
+    "min_region_frames": 4,
+    "max_movement_samples": 12000,
+    "regions": [
+      {
+        "start_sample": 4800,
+        "end_sample": 16000,
+        "anchored_units": [
+          0
+        ]
+      },
+      {
+        "start_sample": 19520,
+        "end_sample": 31520,
+        "anchored_units": [
+          1
+        ]
+      },
+      {
+        "start_sample": 39200,
+        "end_sample": 48240,
+        "anchored_units": [
+          2
+        ]
+      },
+      {
+        "start_sample": 52320,
+        "end_sample": 61840,
+        "anchored_units": [
+          3
+        ]
+      },
+      {
+        "start_sample": 71680,
+        "end_sample": 80320,
+        "anchored_units": [
+          4
+        ]
+      },
+      {
+        "start_sample": 87520,
+        "end_sample": 100880,
+        "anchored_units": [
+          5
+        ]
+      },
+      {
+        "start_sample": 103200,
+        "end_sample": 110800,
+        "anchored_units": [
+          6
+        ]
+      }
+    ],
+    "decisions": [
+      {
+        "unit_index": 0,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 4800,
+          "end_sample": 16000
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 1,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 19520,
+          "end_sample": 31520
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 2,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 39200,
+          "end_sample": 48240
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 3,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 52320,
+          "end_sample": 61840
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 4,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 71680,
+          "end_sample": 80320
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 5,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 87520,
+          "end_sample": 100880
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 6,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 103200,
+          "end_sample": 110800
+        },
+        "changed": true
+      }
+    ],
+    "changed_units": 7,
+    "review_required": true,
+    "continuous_speech_boundaries_not_inferred": true
+  },
+  "model_forward_calls": 1,
+  "actual_device": "NVIDIA GeForce RTX 3060",
+  "peak_cuda_bytes": 503343104,
+  "input_sha256": "e615ea11cefabcfd85bc674b4e0e9a70b7e639d4284c1a54862db6e4784b1b5d",
+  "reference_sha256": "729cc9271956e132ef0a79a29b7a1333e54be6e31c7e2daea88158c57da485d7"
+}

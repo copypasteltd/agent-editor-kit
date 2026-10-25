@@ -1,0 +1,329 @@
+{
+  "argv": [
+    "validate",
+    "--project",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\background"
+  ],
+  "exit_code": 0,
+  "seconds": 0.229,
+  "stderr": "",
+  "result": {
+    "ok": true,
+    "command": "validate",
+    "request_id": "req_20261025010407_22e9e4ca",
+    "operation_id": null,
+    "status": "succeeded",
+    "data": {
+      "report": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\background\\validation\\validation_run_20261025010407_2e5abf33.json",
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "speech",
+          "rights_ref": "speech",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "speech",
+          "rights_ref": "speech",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_EVIDENCE_INCOMPLETE",
+          "message": "来源、许可证或证据字段缺失",
+          "asset_id": "speech",
+          "rights_ref": "speech",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "aligned_subtitle_20261025010407_b63222f0",
+          "rights_ref": "aligned_subtitle_20261025010407_b63222f0",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "aligned_subtitle_20261025010407_b63222f0",
+          "rights_ref": "aligned_subtitle_20261025010407_b63222f0",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "aligned_subtitle_20261025010407_8e810275",
+          "rights_ref": "aligned_subtitle_20261025010407_8e810275",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "aligned_subtitle_20261025010407_8e810275",
+          "rights_ref": "aligned_subtitle_20261025010407_8e810275",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "aligned_subtitle_20261025010407_1ed9f466",
+          "rights_ref": "aligned_subtitle_20261025010407_1ed9f466",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "aligned_subtitle_20261025010407_1ed9f466",
+          "rights_ref": "aligned_subtitle_20261025010407_1ed9f466",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "asr_adapter_ctc",
+          "rights_ref": "asr_adapter_ctc",
+          "record_version": 1,
+          "context": "derived_dependency"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "asr_adapter_ctc",
+          "rights_ref": "asr_adapter_ctc",
+          "record_version": 1,
+          "context": "derived_dependency"
+        }
+      ],
+      "rights": {
+        "ok": true,
+        "target": "commercial_ad",
+        "checked": 4,
+        "required_records": 5,
+        "failures": [],
+        "warnings": [
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "speech",
+            "rights_ref": "speech",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "speech",
+            "rights_ref": "speech",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_EVIDENCE_INCOMPLETE",
+            "message": "来源、许可证或证据字段缺失",
+            "asset_id": "speech",
+            "rights_ref": "speech",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "aligned_subtitle_20261025010407_b63222f0",
+            "rights_ref": "aligned_subtitle_20261025010407_b63222f0",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "aligned_subtitle_20261025010407_b63222f0",
+            "rights_ref": "aligned_subtitle_20261025010407_b63222f0",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "aligned_subtitle_20261025010407_8e810275",
+            "rights_ref": "aligned_subtitle_20261025010407_8e810275",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "aligned_subtitle_20261025010407_8e810275",
+            "rights_ref": "aligned_subtitle_20261025010407_8e810275",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "aligned_subtitle_20261025010407_1ed9f466",
+            "rights_ref": "aligned_subtitle_20261025010407_1ed9f466",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "aligned_subtitle_20261025010407_1ed9f466",
+            "rights_ref": "aligned_subtitle_20261025010407_1ed9f466",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "asr_adapter_ctc",
+            "rights_ref": "asr_adapter_ctc",
+            "record_version": 1,
+            "context": "derived_dependency"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "asr_adapter_ctc",
+            "rights_ref": "asr_adapter_ctc",
+            "record_version": 1,
+            "context": "derived_dependency"
+          }
+        ],
+        "disposition_decisions": [],
+        "effective_disposition_decisions": []
+      },
+      "schema_engine": "jsonschema",
+      "asset_count": 4,
+      "sequence_count": 1
+    },
+    "artifacts": [],
+    "warnings": [
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "speech",
+        "rights_ref": "speech",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "speech",
+        "rights_ref": "speech",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_EVIDENCE_INCOMPLETE",
+        "message": "来源、许可证或证据字段缺失",
+        "asset_id": "speech",
+        "rights_ref": "speech",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "aligned_subtitle_20261025010407_b63222f0",
+        "rights_ref": "aligned_subtitle_20261025010407_b63222f0",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "aligned_subtitle_20261025010407_b63222f0",
+        "rights_ref": "aligned_subtitle_20261025010407_b63222f0",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "aligned_subtitle_20261025010407_8e810275",
+        "rights_ref": "aligned_subtitle_20261025010407_8e810275",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "aligned_subtitle_20261025010407_8e810275",
+        "rights_ref": "aligned_subtitle_20261025010407_8e810275",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "aligned_subtitle_20261025010407_1ed9f466",
+        "rights_ref": "aligned_subtitle_20261025010407_1ed9f466",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "aligned_subtitle_20261025010407_1ed9f466",
+        "rights_ref": "aligned_subtitle_20261025010407_1ed9f466",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "asr_adapter_ctc",
+        "rights_ref": "asr_adapter_ctc",
+        "record_version": 1,
+        "context": "derived_dependency"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "asr_adapter_ctc",
+        "rights_ref": "asr_adapter_ctc",
+        "record_version": 1,
+        "context": "derived_dependency"
+      }
+    ],
+    "errors": [],
+    "provenance": {
+      "cli_version": "0.1.8",
+      "schema_version": "0.1.0",
+      "engine_version": "ffmpeg-local",
+      "started_at": "2026-10-25T01:04:07.661010Z",
+      "finished_at": "2026-10-25T01:04:07.661019Z",
+      "network": "disabled"
+    }
+  }
+}

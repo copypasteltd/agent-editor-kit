@@ -56,7 +56,8 @@ def _locked(args):
         raise fail('ALIGNMENT_MODEL_RIGHTS_MISSING', '对齐模型缺少匹配的权利记录', exit_code=7)
     transcript_path = resolve_local_path(root, args.transcript, field='transcript')
     transcript_digest = artifact_entry(transcript_path, 'alignment-transcript')['sha256']
-    prepared = prepare_text(read_transcript(transcript_path), adapter, case=args.case, granularity=args.granularity)
+    prepared = prepare_text(read_transcript(transcript_path), adapter, case=args.case, granularity=args.granularity,
+                            boundary_mode=args.boundary_mode)
     frame_windows(1, prepared['stride_samples'], prepared['receptive_samples'],
         window_samples=round(args.window_seconds * SAMPLE_RATE), context_samples=round(args.context_seconds * SAMPLE_RATE))
     probe = probe_media(source)

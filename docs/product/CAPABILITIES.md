@@ -2,7 +2,12 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.7 / alpha.4-local.5。** Native process ownership and four-source job recovery; independent stems, offline retrieval, GPU voice/translation, 359 resources and capture; one Skill / 17 modules. Public alpha.3 remains CLI 0.1.2. [Installation](COMMUNITY_LOCAL_DELIVERY.md) · [Recovery / 恢复 / 復原](JOB_RECOVERY.md) · [Actual evidence](../validation/任务中断恢复实测_2026-10-25.md) · [74 current declarations](job-recovery-capabilities-cli-0.1.7.json) · [38 remaining groups](GOAL_GAPS_20261025.md).
+**Current local / 当前本机 / 目前本機：CLI 0.1.8 / alpha.4-local.6。** One registered Skill / 17 modules;
+CTC activity boundaries, native job recovery, independent four-source separation, offline image/text retrieval,
+GPU voice/translation and 359 resources. Public alpha.3 remains CLI 0.1.2.
+[Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [74 declarations](ctc-activity-capabilities-cli-0.1.8.json) ·
+[CTC workflow and limits](CTC_ACTIVITY_ALIGNMENT.md) · [All 38 remaining gap groups](GOAL_GAPS_20261025.md).
+Controlled word-block precision does not establish natural speech/Chinese/lyrics acceptance.
 
 <!-- /community-current -->
 
@@ -34,7 +39,7 @@
 | F22 | 自定义 LUT 与色彩自动化 | 本地 .cube/.3dl/.csp/.dat → 登记、检查；支持的 3D LUT 强度与色彩参数按契约动画。 | `lut register/list/inspect; effects inspect` | 格式登记不等于所有路径都完整解析；完整 CUBE 才有对应强度/浮点支持。 |
 | F23 | 显式 Float32 像素路径 | 声明输入/工作/输出信号、顺序与预算 → 原生浮点色彩、LUT/shaper、选定空间处理和 surface。 | `render; preview; surface export/inspect` | 必须显式选择 float32-native-v1；能力子集，拒绝不支持项，非完整 HDR/ICC 管线。 |
 | F24 | 字幕、文字与分段 | SRT/VTT/ASS/SSA/TTML 或文字 → 规范化、分段、双语、文字层、逐字高亮和文字动画。 | `subtitle validate/normalize/segment; timeline compose` | 字体需本地可用；复杂排版、双向 shaping 与部分动画/时钟有明确近似或拒绝。 |
-| F25 | 离线转写与字词对齐 | 音频 + 已有 Whisper/CTC 模型/校正文 → 转写、字幕、字词时码与 CER 评估。 | `asr adapter; subtitle transcribe/align/evaluate` | 基础包不带权重；转写段时间不等于精确逐字对齐，既有 CTC 自然精度门槛未通过。 |
+| F25 | 离线转写与字词对齐 | 音频 + 已有 Whisper/CTC 模型/校正文 → 转写、字幕、字词时码与 CER 评估。 | `asr adapter; subtitle transcribe/align/evaluate` | 基础包不带权重；activity 保留原 CTC 并通过 6 组受控词块门槛；自然连续语音、中文和歌词精度仍未验收。[流程](CTC_ACTIVITY_ALIGNMENT.md) |
 | F26 | 多轨音频与总线 | 显式音轨 → 混音、总线、音量/声像、静音/solo、淡化、EQ、压缩、降噪、响度与闪避。 | `audio extract; timeline compose; quality check` | 视频资产有声音不代表时间线自动出声；自动 PCM/LUFS 检查不代替听审。 |
 | F27 | 本地语音合成 | 已有本地 flite 或登记 SoulX 权重/授权参考声 → WAV 资产与可选音轨。 | `tts adapter/voice; tts synthesize` | flite 取决于 FFmpeg 构建且限 ASCII 英文；SoulX 需 CUDA/原生依赖，非基础包自带配音库。 |
 | F28 | 独立四轨与双轨分离 | 鼓/贝斯/其他乐器/人声 → 四个 float WAV 与可编辑音轨；保留双轨和 mid/side。 | `audio separate-stems; audio separate; audio adapter` | 另供原生 Torch/权重，已实测 CPU/GPU；自然质量/听审/模型权利待验。 |

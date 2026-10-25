@@ -1,0 +1,314 @@
+{
+  "fixture": "kal16",
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\skill-r1\\kal16",
+  "reference": "authored word blocks, not phonetic truth",
+  "immutable_threshold_seconds": 0.06666666666666667,
+  "quality": {
+    "raw_ctc": {
+      "max_error_samples": 3099,
+      "max_error_ms": 193.6875,
+      "passed": false,
+      "words": [
+        {
+          "word": "AGENTS",
+          "start_error_samples": 2600,
+          "end_error_samples": 5,
+          "start_error_ms": 162.5,
+          "end_error_ms": 0.3125,
+          "passed": false
+        },
+        {
+          "word": "KEEP",
+          "start_error_samples": 485,
+          "end_error_samples": -3099,
+          "start_error_ms": 30.3125,
+          "end_error_ms": -193.6875,
+          "passed": false
+        },
+        {
+          "word": "EVERY",
+          "start_error_samples": 1221,
+          "end_error_samples": -1174,
+          "start_error_ms": 76.3125,
+          "end_error_ms": -73.375,
+          "passed": false
+        },
+        {
+          "word": "FRAME",
+          "start_error_samples": 746,
+          "end_error_samples": -1349,
+          "start_error_ms": 46.625,
+          "end_error_ms": -84.3125,
+          "passed": false
+        },
+        {
+          "word": "AND",
+          "start_error_samples": 891,
+          "end_error_samples": -827,
+          "start_error_ms": 55.6875,
+          "end_error_ms": -51.6875,
+          "passed": true
+        },
+        {
+          "word": "EACH",
+          "start_error_samples": 2693,
+          "end_error_samples": -965,
+          "start_error_ms": 168.3125,
+          "end_error_ms": -60.3125,
+          "passed": false
+        },
+        {
+          "word": "VOICE",
+          "start_error_samples": 3035,
+          "end_error_samples": -1213,
+          "start_error_ms": 189.6875,
+          "end_error_ms": -75.8125,
+          "passed": false
+        },
+        {
+          "word": "EDITABLE",
+          "start_error_samples": 1827,
+          "end_error_samples": 33,
+          "start_error_ms": 114.1875,
+          "end_error_ms": 2.0625,
+          "passed": false
+        }
+      ]
+    },
+    "activity": {
+      "max_error_samples": 73,
+      "max_error_ms": 4.5625,
+      "passed": true,
+      "words": [
+        {
+          "word": "AGENTS",
+          "start_error_samples": 0,
+          "end_error_samples": 45,
+          "start_error_ms": 0.0,
+          "end_error_ms": 2.8125,
+          "passed": true
+        },
+        {
+          "word": "KEEP",
+          "start_error_samples": -35,
+          "end_error_samples": 61,
+          "start_error_ms": -2.1875,
+          "end_error_ms": 3.8125,
+          "passed": true
+        },
+        {
+          "word": "EVERY",
+          "start_error_samples": -19,
+          "end_error_samples": 66,
+          "start_error_ms": -1.1875,
+          "end_error_ms": 4.125,
+          "passed": true
+        },
+        {
+          "word": "FRAME",
+          "start_error_samples": -14,
+          "end_error_samples": 51,
+          "start_error_ms": -0.875,
+          "end_error_ms": 3.1875,
+          "passed": true
+        },
+        {
+          "word": "AND",
+          "start_error_samples": -29,
+          "end_error_samples": 13,
+          "start_error_ms": -1.8125,
+          "end_error_ms": 0.8125,
+          "passed": true
+        },
+        {
+          "word": "EACH",
+          "start_error_samples": -67,
+          "end_error_samples": 35,
+          "start_error_ms": -4.1875,
+          "end_error_ms": 2.1875,
+          "passed": true
+        },
+        {
+          "word": "VOICE",
+          "start_error_samples": -45,
+          "end_error_samples": 27,
+          "start_error_ms": -2.8125,
+          "end_error_ms": 1.6875,
+          "passed": true
+        },
+        {
+          "word": "EDITABLE",
+          "start_error_samples": -53,
+          "end_error_samples": 73,
+          "start_error_ms": -3.3125,
+          "end_error_ms": 4.5625,
+          "passed": true
+        }
+      ]
+    }
+  },
+  "activity": {
+    "algorithm": "ctc-guided-activity-v3",
+    "sample_rate": 16000,
+    "frame_samples": 80,
+    "dc_offset": 0,
+    "dc_subsample_step": 1,
+    "noise_rms": 0,
+    "reference_rms": 2444,
+    "low_threshold": 2,
+    "high_threshold": 25,
+    "max_internal_gap_frames": 8,
+    "max_support_gap_frames": 24,
+    "min_region_frames": 4,
+    "max_movement_samples": 12000,
+    "regions": [
+      {
+        "start_sample": 3520,
+        "end_sample": 12240,
+        "anchored_units": [
+          0
+        ],
+        "strong_activity": true
+      },
+      {
+        "start_sample": 13920,
+        "end_sample": 22080,
+        "anchored_units": [
+          1
+        ],
+        "strong_activity": true
+      },
+      {
+        "start_sample": 26640,
+        "end_sample": 32960,
+        "anchored_units": [
+          2
+        ],
+        "strong_activity": true
+      },
+      {
+        "start_sample": 35120,
+        "end_sample": 43040,
+        "anchored_units": [
+          3
+        ],
+        "strong_activity": true
+      },
+      {
+        "start_sample": 48720,
+        "end_sample": 51760,
+        "anchored_units": [
+          4
+        ],
+        "strong_activity": true
+      },
+      {
+        "start_sample": 54560,
+        "end_sample": 60560,
+        "anchored_units": [
+          5
+        ],
+        "strong_activity": true
+      },
+      {
+        "start_sample": 65440,
+        "end_sample": 75520,
+        "anchored_units": [
+          6
+        ],
+        "strong_activity": true
+      },
+      {
+        "start_sample": 76880,
+        "end_sample": 87440,
+        "anchored_units": [
+          7
+        ],
+        "strong_activity": true
+      }
+    ],
+    "support_attachments": [],
+    "decisions": [
+      {
+        "unit_index": 0,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 3520,
+          "end_sample": 12240
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 1,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 13920,
+          "end_sample": 22080
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 2,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 26640,
+          "end_sample": 32960
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 3,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 35120,
+          "end_sample": 43040
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 4,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 48720,
+          "end_sample": 51760
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 5,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 54560,
+          "end_sample": 60560
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 6,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 65440,
+          "end_sample": 75520
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 7,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 76880,
+          "end_sample": 87440
+        },
+        "changed": true
+      }
+    ],
+    "changed_units": 8,
+    "review_required": true,
+    "continuous_speech_boundaries_not_inferred": true
+  },
+  "model_forward_calls": 1,
+  "actual_device": "NVIDIA GeForce RTX 3060",
+  "peak_cuda_bytes": 474988544,
+  "input_sha256": "fa4593a6a7369beb24b183f107176951b0c26f47b1723adb90e92d53642cc48d",
+  "reference_sha256": "25193e9932a1d8cab312b28b5f8a90498f82abc4a69bedd9e1c23025e8e40826"
+}

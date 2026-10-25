@@ -1,0 +1,213 @@
+{
+  "argv": [
+    "convert",
+    "export",
+    "--project",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\original",
+    "--target-format",
+    "package",
+    "--output",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\activity.aevpkg.zip"
+  ],
+  "exit_code": 0,
+  "result": {
+    "ok": true,
+    "command": "convert.export",
+    "request_id": "req_20261025011352_bad5a82b",
+    "operation_id": null,
+    "status": "succeeded",
+    "data": {
+      "output": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\activity.aevpkg.zip",
+      "report": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\activity.aevpkg.zip.conversion-report.json",
+      "report_data": {
+        "report_version": "0.1.0",
+        "direction": "export",
+        "source_format": "agent-project/0.1.0",
+        "target_format": "agent-project-package/0.1.0",
+        "created_at": "2026-10-25T01:13:51.788883Z",
+        "items": [
+          {
+            "capability": "project-package",
+            "status": "Exact",
+            "source": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\original",
+            "target": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\activity.aevpkg.zip",
+            "detail": "项目、登记权利和本地素材已写入自包含 ZIP"
+          }
+        ],
+        "warnings": [
+          {
+            "capability": "package-excluded-runtime",
+            "status": "Approximate",
+            "source": "project runtime",
+            "target": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\activity.aevpkg.zip",
+            "detail": "renders/cache/operations/history 未打包"
+          }
+        ],
+        "failures": []
+      },
+      "manifest": {
+        "package_format": "agent-project-package",
+        "package_version": "0.1.0",
+        "created_at": "2026-10-25T01:13:51.788791Z",
+        "project_id": "proj_20261025010121_58c2d62d",
+        "project_schema_version": "0.1.0",
+        "files": [
+          {
+            "path": "assets/aligned_subtitle_20261025010216_4a2ba926_activity.srt",
+            "size": 62,
+            "sha256": "116741d26ce4c1da65dc96097cdf363e9c2c2be79a2686355cb7472e4d5c5d8c"
+          },
+          {
+            "path": "assets/aligned_subtitle_20261025010216_68cca82c_activity.json",
+            "size": 18951,
+            "sha256": "128e8468c0243d147840971f2959fafa197eba2802c6a201214942d23dcc9a3f"
+          },
+          {
+            "path": "assets/aligned_subtitle_20261025010216_b00a5269_activity.transcript.txt",
+            "size": 29,
+            "sha256": "39c37b920c4d4972a6b5314a294f67c6ed8569735741f099b7c05ee9b8519684"
+          },
+          {
+            "path": "assets/aligned_subtitle_20261025010659_834c01c5_default.srt",
+            "size": 62,
+            "sha256": "33a00c55abcd8bec84ee81ba3f080b2554f1e7d7349d61dc696fcc6fabe2419c"
+          },
+          {
+            "path": "assets/aligned_subtitle_20261025010659_ba52d37c_default.transcript.txt",
+            "size": 29,
+            "sha256": "39c37b920c4d4972a6b5314a294f67c6ed8569735741f099b7c05ee9b8519684"
+          },
+          {
+            "path": "assets/aligned_subtitle_20261025010659_dab27169_default.json",
+            "size": 14321,
+            "sha256": "80a7649f7b7e0a815e0ae1574f05ef93ed5ebbed6145f9b57f3dd006a6e3e519"
+          },
+          {
+            "path": "assets/aligned_subtitle_20261025010732_1a8d90ba_long.json",
+            "size": 93942,
+            "sha256": "fa93d75da321dac2570407c5129fba5d8a92aade784c8bdd6ca0a3d138ee8c65"
+          },
+          {
+            "path": "assets/aligned_subtitle_20261025010732_baf4d789_long.transcript.txt",
+            "size": 179,
+            "sha256": "e44884bfa88cced075e107d0197e39531a21c1aa73debc308f4fa6c289649757"
+          },
+          {
+            "path": "assets/aligned_subtitle_20261025010732_f7f3fcee_long.srt",
+            "size": 212,
+            "sha256": "374c15ff784881e919d3d8e6907442054f1746d6708553cf988c933cf3b2168e"
+          },
+          {
+            "path": "assets/aligned_subtitle_20261025010807_5a528491_segmented.json",
+            "size": 20452,
+            "sha256": "cd4ded15e74e1c273b3876dd01719977a67bcd1f6a11e73a68eaff4a3d00acaa"
+          },
+          {
+            "path": "assets/aligned_subtitle_20261025010807_c1593253_segmented.transcript.srt",
+            "size": 102,
+            "sha256": "db9252991d82a7c5313aef2d1c87b8af63a44548d2060d4803cd80c470f8d92f"
+          },
+          {
+            "path": "assets/aligned_subtitle_20261025010807_efa7bd12_segmented.srt",
+            "size": 95,
+            "sha256": "af1164b379c4f28e37ed766140d0f6eb1d0bf78d0ff502f5c62af2f57c2c90fd"
+          },
+          {
+            "path": "assets/aligned_subtitle_20261025011153_210deddb_applied.json",
+            "size": 18951,
+            "sha256": "c1ba7554be420f4af163d2384a748e31f99bda9e5935eaaa13c4d4b93e39a014"
+          },
+          {
+            "path": "assets/aligned_subtitle_20261025011153_b04c86c5_applied.transcript.txt",
+            "size": 29,
+            "sha256": "39c37b920c4d4972a6b5314a294f67c6ed8569735741f099b7c05ee9b8519684"
+          },
+          {
+            "path": "assets/aligned_subtitle_20261025011153_bbeeb139_applied.srt",
+            "size": 62,
+            "sha256": "116741d26ce4c1da65dc96097cdf363e9c2c2be79a2686355cb7472e4d5c5d8c"
+          },
+          {
+            "path": "assets/comparison_comparison_comparison-board.png",
+            "size": 35484,
+            "sha256": "c84ea5e509140cea2d5aae8acbd5d006144753df08093f66ea6aa5b13b2a27ed"
+          },
+          {
+            "path": "assets/font_font_noto-sans-sc-variable.ttf",
+            "size": 17772300,
+            "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+          },
+          {
+            "path": "assets/long_long_input-long.wav",
+            "size": 1510244,
+            "sha256": "1f8a329980b552cb7689099ffc49329b2986df95264f853ac1fe37d60cd18643"
+          },
+          {
+            "path": "assets/speech_speech_input.wav",
+            "size": 251744,
+            "sha256": "eea24cb10f383c972a64ae8742795e3eb5e404ba4dd37f98440197f8c84a0d30"
+          },
+          {
+            "path": "project.json",
+            "size": 37259,
+            "sha256": "2a46fcc654bca86ceaf44db947edf68d6c59d6be2711cd74346aa036e1617d7b"
+          },
+          {
+            "path": "project.lock.json",
+            "size": 307,
+            "sha256": "abac09ddaa55871572635bffa1a6a06c25c954c5bb436f4ea19a4fd15b4f8a02"
+          },
+          {
+            "path": "rights-ledger.json",
+            "size": 30419,
+            "sha256": "df2fb76075036f6aacab9006295af7102458a8e0eac548c97da9384d1369f01a"
+          },
+          {
+            "path": "validation/quality_run_20261025011349_deafd027.json",
+            "size": 5695,
+            "sha256": "8ce1b7a2a397f4dab6669fe55d43c40bc1256d76533c8e309d4e4c92b0f436c4"
+          },
+          {
+            "path": "validation/validation_run_20261025010216_8f173ed7.json",
+            "size": 6947,
+            "sha256": "a849ab9de0ddafa1b07b7fcf8ccea1dcb17b251c91da7ebad3f7144b3da48963"
+          },
+          {
+            "path": "validation/validation_run_20261025010911_c91b0c05.json",
+            "size": 20000,
+            "sha256": "c74355defbb083221f36df0844b55c241a4e87f29c559e1da9ec00dd5138528a"
+          }
+        ],
+        "excluded": [
+          "renders/",
+          "cache/",
+          "operations/",
+          "history/"
+        ],
+        "network": "disabled",
+        "upstream_runtime": "none"
+      }
+    },
+    "artifacts": [],
+    "warnings": [
+      {
+        "capability": "package-excluded-runtime",
+        "status": "Approximate",
+        "source": "project runtime",
+        "target": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\activity.aevpkg.zip",
+        "detail": "renders/cache/operations/history 未打包"
+      }
+    ],
+    "errors": [],
+    "provenance": {
+      "cli_version": "0.1.8",
+      "schema_version": "0.1.0",
+      "engine_version": "ffmpeg-local",
+      "started_at": "2026-10-25T01:13:52.551008Z",
+      "finished_at": "2026-10-25T01:13:52.551027Z",
+      "network": "disabled"
+    }
+  },
+  "stderr": "",
+  "seconds": 2.969826100001228
+}

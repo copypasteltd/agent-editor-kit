@@ -1,0 +1,313 @@
+{
+  "format": "ctc-activity-authored-blocks-v1",
+  "created_at_utc": "2026-10-25T00:45:55.890056+00:00",
+  "frozen_before_v2_candidate_execution": true,
+  "voice": "kal",
+  "sample_rate": 16000,
+  "samples": 140902,
+  "words": [
+    {
+      "word": "MOTION",
+      "start_sample": 2240,
+      "end_sample": 15026
+    },
+    {
+      "word": "SIGNAL",
+      "start_sample": 20466,
+      "end_sample": 32748
+    },
+    {
+      "word": "EDITING",
+      "start_sample": 34188,
+      "end_sample": 47090
+    },
+    {
+      "word": "TIMELINE",
+      "start_sample": 51090,
+      "end_sample": 66868
+    },
+    {
+      "word": "SAVES",
+      "start_sample": 73428,
+      "end_sample": 87497
+    },
+    {
+      "word": "CLEAN",
+      "start_sample": 90057,
+      "end_sample": 103270
+    },
+    {
+      "word": "FINAL",
+      "start_sample": 107750,
+      "end_sample": 120625
+    },
+    {
+      "word": "OUTPUT",
+      "start_sample": 122545,
+      "end_sample": 137382
+    }
+  ],
+  "gaps_before_words_samples": [
+    2240,
+    5440,
+    1440,
+    4000,
+    6560,
+    2560,
+    4480,
+    1920
+  ],
+  "trailing_gap_samples": 3520,
+  "original_word_sources": [
+    {
+      "word": "MOTION",
+      "path": "motion-kal-raw.wav",
+      "sha256": "8d74fb07e44fb8f3c9d53fe25c5850412671798cd9096950ef03e67b39359e89",
+      "trim_start": 94,
+      "trim_end": 12880,
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-v",
+        "error",
+        "-nostdin",
+        "-n",
+        "-f",
+        "lavfi",
+        "-i",
+        "flite=text=motion:voice=kal",
+        "-ar",
+        "16000",
+        "-ac",
+        "1",
+        "-c:a",
+        "pcm_s16le",
+        "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\docs\\assets\\ctc-activity-20261025-r1\\holdout-kal\\motion-kal-raw.wav"
+      ]
+    },
+    {
+      "word": "SIGNAL",
+      "path": "signal-kal-raw.wav",
+      "sha256": "adf18ef29415150820aa954bf06a3d5d548f272830a3b43ee837a772fd963640",
+      "trim_start": 107,
+      "trim_end": 12389,
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-v",
+        "error",
+        "-nostdin",
+        "-n",
+        "-f",
+        "lavfi",
+        "-i",
+        "flite=text=signal:voice=kal",
+        "-ar",
+        "16000",
+        "-ac",
+        "1",
+        "-c:a",
+        "pcm_s16le",
+        "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\docs\\assets\\ctc-activity-20261025-r1\\holdout-kal\\signal-kal-raw.wav"
+      ]
+    },
+    {
+      "word": "EDITING",
+      "path": "editing-kal-raw.wav",
+      "sha256": "a9007cdeaeb6d6a6c6247fde48190d869548a29231c624be639193489d5c33b2",
+      "trim_start": 35,
+      "trim_end": 12937,
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-v",
+        "error",
+        "-nostdin",
+        "-n",
+        "-f",
+        "lavfi",
+        "-i",
+        "flite=text=editing:voice=kal",
+        "-ar",
+        "16000",
+        "-ac",
+        "1",
+        "-c:a",
+        "pcm_s16le",
+        "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\docs\\assets\\ctc-activity-20261025-r1\\holdout-kal\\editing-kal-raw.wav"
+      ]
+    },
+    {
+      "word": "TIMELINE",
+      "path": "timeline-kal-raw.wav",
+      "sha256": "1797b52a946da850e0e7dbd5dc0255953444c6cb1329ddb5875168ce3f238db6",
+      "trim_start": 42,
+      "trim_end": 15820,
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-v",
+        "error",
+        "-nostdin",
+        "-n",
+        "-f",
+        "lavfi",
+        "-i",
+        "flite=text=timeline:voice=kal",
+        "-ar",
+        "16000",
+        "-ac",
+        "1",
+        "-c:a",
+        "pcm_s16le",
+        "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\docs\\assets\\ctc-activity-20261025-r1\\holdout-kal\\timeline-kal-raw.wav"
+      ]
+    },
+    {
+      "word": "SAVES",
+      "path": "saves-kal-raw.wav",
+      "sha256": "f3f96ff8cf38c77aa7fedf2df9b77ea5ff3abaefffcd21f99e293f53904f4b58",
+      "trim_start": 107,
+      "trim_end": 14176,
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-v",
+        "error",
+        "-nostdin",
+        "-n",
+        "-f",
+        "lavfi",
+        "-i",
+        "flite=text=saves:voice=kal",
+        "-ar",
+        "16000",
+        "-ac",
+        "1",
+        "-c:a",
+        "pcm_s16le",
+        "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\docs\\assets\\ctc-activity-20261025-r1\\holdout-kal\\saves-kal-raw.wav"
+      ]
+    },
+    {
+      "word": "CLEAN",
+      "path": "clean-kal-raw.wav",
+      "sha256": "36783d4646f818376c22321bbde511758aee626ba0fbc6c7d7248322509ea196",
+      "trim_start": 38,
+      "trim_end": 13251,
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-v",
+        "error",
+        "-nostdin",
+        "-n",
+        "-f",
+        "lavfi",
+        "-i",
+        "flite=text=clean:voice=kal",
+        "-ar",
+        "16000",
+        "-ac",
+        "1",
+        "-c:a",
+        "pcm_s16le",
+        "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\docs\\assets\\ctc-activity-20261025-r1\\holdout-kal\\clean-kal-raw.wav"
+      ]
+    },
+    {
+      "word": "FINAL",
+      "path": "final-kal-raw.wav",
+      "sha256": "3be1609f0c5b93c3ee208b96530e70876d995ed2ce7c0888c3ea6984c8b27d7a",
+      "trim_start": 75,
+      "trim_end": 12950,
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-v",
+        "error",
+        "-nostdin",
+        "-n",
+        "-f",
+        "lavfi",
+        "-i",
+        "flite=text=final:voice=kal",
+        "-ar",
+        "16000",
+        "-ac",
+        "1",
+        "-c:a",
+        "pcm_s16le",
+        "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\docs\\assets\\ctc-activity-20261025-r1\\holdout-kal\\final-kal-raw.wav"
+      ]
+    },
+    {
+      "word": "OUTPUT",
+      "path": "output-kal-raw.wav",
+      "sha256": "0b30ab58da3fb63ee43acf50c0749a0f9146194ae7e00ba07d96832515a9f10f",
+      "trim_start": 14,
+      "trim_end": 14851,
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-v",
+        "error",
+        "-nostdin",
+        "-n",
+        "-f",
+        "lavfi",
+        "-i",
+        "flite=text=output:voice=kal",
+        "-ar",
+        "16000",
+        "-ac",
+        "1",
+        "-c:a",
+        "pcm_s16le",
+        "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\docs\\assets\\ctc-activity-20261025-r1\\holdout-kal\\output-kal-raw.wav"
+      ]
+    }
+  ],
+  "reference": "authored abs>=32 trimmed word blocks, not natural phonetic annotations",
+  "boundary_error_seconds_max": 0.06666666666666667,
+  "contract_sha256": "299257d87536efeb613356babf7db2b996a0ca63c59fc6b8cb8d6b41738986f8",
+  "generator_sha256": "edb9af7f2dd1f00405d9f62a9c31ae553b9af5721b950511e98365e888f7a574",
+  "rights": {
+    "authored_text_and_placement": "CC0-1.0",
+    "speech": "FFmpeg Flite KAL; retain original CMU attribution and license; not blanket CC0"
+  },
+  "files": {
+    "clean-kal-raw.wav": {
+      "bytes": 26698,
+      "sha256": "36783d4646f818376c22321bbde511758aee626ba0fbc6c7d7248322509ea196"
+    },
+    "editing-kal-raw.wav": {
+      "bytes": 26194,
+      "sha256": "a9007cdeaeb6d6a6c6247fde48190d869548a29231c624be639193489d5c33b2"
+    },
+    "final-kal-raw.wav": {
+      "bytes": 26102,
+      "sha256": "3be1609f0c5b93c3ee208b96530e70876d995ed2ce7c0888c3ea6984c8b27d7a"
+    },
+    "input.wav": {
+      "bytes": 281848,
+      "sha256": "0b1a7824d62ca8e96b79c83b41ed11c9498d9113fd79d0d040e93426715f117a"
+    },
+    "motion-kal-raw.wav": {
+      "bytes": 25842,
+      "sha256": "8d74fb07e44fb8f3c9d53fe25c5850412671798cd9096950ef03e67b39359e89"
+    },
+    "output-kal-raw.wav": {
+      "bytes": 29986,
+      "sha256": "0b30ab58da3fb63ee43acf50c0749a0f9146194ae7e00ba07d96832515a9f10f"
+    },
+    "saves-kal-raw.wav": {
+      "bytes": 28430,
+      "sha256": "f3f96ff8cf38c77aa7fedf2df9b77ea5ff3abaefffcd21f99e293f53904f4b58"
+    },
+    "signal-kal-raw.wav": {
+      "bytes": 25090,
+      "sha256": "adf18ef29415150820aa954bf06a3d5d548f272830a3b43ee837a772fd963640"
+    },
+    "timeline-kal-raw.wav": {
+      "bytes": 31718,
+      "sha256": "1797b52a946da850e0e7dbd5dc0255953444c6cb1329ddb5875168ce3f238db6"
+    },
+    "transcript.txt": {
+      "bytes": 55,
+      "sha256": "67b4c185249b237261635320f183e9ffc6f9f1bffb58dd7aaa23757e3e945392"
+    }
+  }
+}

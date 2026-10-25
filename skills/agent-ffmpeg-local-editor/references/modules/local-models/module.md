@@ -14,6 +14,9 @@ or strict CUDA errors. General adapters still require their own registration.
 For independent drums/bass/other/vocals, read [audio-stems.md](../../audio-stems.md).
 Use the dedicated four-source engine; the older vocal/residual-accompaniment
 adapter does not implicitly become a four-source adapter.
+For corrected speech word timing, read [ctc-alignment.md](../../ctc-alignment.md).
+The explicit activity mode preserves raw CTC evidence and requires review;
+continuous speech, Chinese, lyrics and overlapping voices remain unaccepted.
 
 ## Workflow
 

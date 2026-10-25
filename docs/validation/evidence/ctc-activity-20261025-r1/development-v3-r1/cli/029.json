@@ -1,0 +1,1794 @@
+{
+  "argv": [
+    "subtitle",
+    "align",
+    "--project",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\development-v3-r1\\kal",
+    "--asset-id",
+    "speech",
+    "--adapter-id",
+    "ctc",
+    "--transcript",
+    "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ctc-activity-20261025-r1\\holdout-kal\\transcript.txt",
+    "--output",
+    "assets/alignment/activity.json",
+    "--granularity",
+    "whitespace",
+    "--boundary-mode",
+    "activity",
+    "--timeout",
+    "600"
+  ],
+  "exit_code": 0,
+  "seconds": 16.899,
+  "stderr": "",
+  "result": {
+    "ok": true,
+    "command": "subtitle.align",
+    "request_id": "req_20261025005640_f836f731",
+    "operation_id": "op_20261025005640_b7c105a2",
+    "status": "succeeded",
+    "data": {
+      "output": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\development-v3-r1\\kal\\assets\\alignment\\activity.json",
+      "srt": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\development-v3-r1\\kal\\assets\\alignment\\activity.srt",
+      "transcript_copy": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\development-v3-r1\\kal\\assets\\alignment\\activity.transcript.txt",
+      "source_sha256": "sha256:0b1a7824d62ca8e96b79c83b41ed11c9498d9113fd79d0d040e93426715f117a",
+      "transcript_sha256": "sha256:67b4c185249b237261635320f183e9ffc6f9f1bffb58dd7aaa23757e3e945392",
+      "adapter_id": "ctc",
+      "model_sha256": "sha256:4b83d7907db29c899b24df13091f4cd19f495104bc2a92a88527b14207c586dd",
+      "prepared": {
+        "original_text": "MOTION SIGNAL EDITING TIMELINE SAVES CLEAN FINAL OUTPUT",
+        "original_file_text": "MOTION SIGNAL EDITING TIMELINE SAVES CLEAN FINAL OUTPUT",
+        "format": "txt",
+        "index_basis": "original_text-unicode-codepoints",
+        "segments": [
+          {
+            "text": "MOTION SIGNAL EDITING TIMELINE SAVES CLEAN FINAL OUTPUT",
+            "start_char": 0,
+            "end_char": 55,
+            "start_sample": 0,
+            "end_sample": null,
+            "tokens": [
+              {
+                "text": "M",
+                "token": "M",
+                "token_id": 17,
+                "start_char": 0,
+                "end_char": 1
+              },
+              {
+                "text": "O",
+                "token": "O",
+                "token_id": 8,
+                "start_char": 1,
+                "end_char": 2
+              },
+              {
+                "text": "T",
+                "token": "T",
+                "token_id": 6,
+                "start_char": 2,
+                "end_char": 3
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 3,
+                "end_char": 4
+              },
+              {
+                "text": "O",
+                "token": "O",
+                "token_id": 8,
+                "start_char": 4,
+                "end_char": 5
+              },
+              {
+                "text": "N",
+                "token": "N",
+                "token_id": 9,
+                "start_char": 5,
+                "end_char": 6
+              },
+              {
+                "text": "S",
+                "token": "S",
+                "token_id": 12,
+                "start_char": 7,
+                "end_char": 8
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 8,
+                "end_char": 9
+              },
+              {
+                "text": "G",
+                "token": "G",
+                "token_id": 21,
+                "start_char": 9,
+                "end_char": 10
+              },
+              {
+                "text": "N",
+                "token": "N",
+                "token_id": 9,
+                "start_char": 10,
+                "end_char": 11
+              },
+              {
+                "text": "A",
+                "token": "A",
+                "token_id": 7,
+                "start_char": 11,
+                "end_char": 12
+              },
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 12,
+                "end_char": 13
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 14,
+                "end_char": 15
+              },
+              {
+                "text": "D",
+                "token": "D",
+                "token_id": 14,
+                "start_char": 15,
+                "end_char": 16
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 16,
+                "end_char": 17
+              },
+              {
+                "text": "T",
+                "token": "T",
+                "token_id": 6,
+                "start_char": 17,
+                "end_char": 18
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 18,
+                "end_char": 19
+              },
+              {
+                "text": "N",
+                "token": "N",
+                "token_id": 9,
+                "start_char": 19,
+                "end_char": 20
+              },
+              {
+                "text": "G",
+                "token": "G",
+                "token_id": 21,
+                "start_char": 20,
+                "end_char": 21
+              },
+              {
+                "text": "T",
+                "token": "T",
+                "token_id": 6,
+                "start_char": 22,
+                "end_char": 23
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 23,
+                "end_char": 24
+              },
+              {
+                "text": "M",
+                "token": "M",
+                "token_id": 17,
+                "start_char": 24,
+                "end_char": 25
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 25,
+                "end_char": 26
+              },
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 26,
+                "end_char": 27
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 27,
+                "end_char": 28
+              },
+              {
+                "text": "N",
+                "token": "N",
+                "token_id": 9,
+                "start_char": 28,
+                "end_char": 29
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 29,
+                "end_char": 30
+              },
+              {
+                "text": "S",
+                "token": "S",
+                "token_id": 12,
+                "start_char": 31,
+                "end_char": 32
+              },
+              {
+                "text": "A",
+                "token": "A",
+                "token_id": 7,
+                "start_char": 32,
+                "end_char": 33
+              },
+              {
+                "text": "V",
+                "token": "V",
+                "token_id": 25,
+                "start_char": 33,
+                "end_char": 34
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 34,
+                "end_char": 35
+              },
+              {
+                "text": "S",
+                "token": "S",
+                "token_id": 12,
+                "start_char": 35,
+                "end_char": 36
+              },
+              {
+                "text": "C",
+                "token": "C",
+                "token_id": 19,
+                "start_char": 37,
+                "end_char": 38
+              },
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 38,
+                "end_char": 39
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 39,
+                "end_char": 40
+              },
+              {
+                "text": "A",
+                "token": "A",
+                "token_id": 7,
+                "start_char": 40,
+                "end_char": 41
+              },
+              {
+                "text": "N",
+                "token": "N",
+                "token_id": 9,
+                "start_char": 41,
+                "end_char": 42
+              },
+              {
+                "text": "F",
+                "token": "F",
+                "token_id": 20,
+                "start_char": 43,
+                "end_char": 44
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 44,
+                "end_char": 45
+              },
+              {
+                "text": "N",
+                "token": "N",
+                "token_id": 9,
+                "start_char": 45,
+                "end_char": 46
+              },
+              {
+                "text": "A",
+                "token": "A",
+                "token_id": 7,
+                "start_char": 46,
+                "end_char": 47
+              },
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 47,
+                "end_char": 48
+              },
+              {
+                "text": "O",
+                "token": "O",
+                "token_id": 8,
+                "start_char": 49,
+                "end_char": 50
+              },
+              {
+                "text": "U",
+                "token": "U",
+                "token_id": 16,
+                "start_char": 50,
+                "end_char": 51
+              },
+              {
+                "text": "T",
+                "token": "T",
+                "token_id": 6,
+                "start_char": 51,
+                "end_char": 52
+              },
+              {
+                "text": "P",
+                "token": "P",
+                "token_id": 23,
+                "start_char": 52,
+                "end_char": 53
+              },
+              {
+                "text": "U",
+                "token": "U",
+                "token_id": 16,
+                "start_char": 53,
+                "end_char": 54
+              },
+              {
+                "text": "T",
+                "token": "T",
+                "token_id": 6,
+                "start_char": 54,
+                "end_char": 55
+              }
+            ],
+            "ignored": [
+              {
+                "start_char": 6,
+                "end_char": 7,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 13,
+                "end_char": 14,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 21,
+                "end_char": 22,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 30,
+                "end_char": 31,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 36,
+                "end_char": 37,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 42,
+                "end_char": 43,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 48,
+                "end_char": 49,
+                "text": " ",
+                "reason": "whitespace"
+              }
+            ]
+          }
+        ],
+        "case": "upper",
+        "granularity": "whitespace",
+        "boundary_mode": "activity",
+        "stride_samples": 320,
+        "receptive_samples": 400
+      },
+      "applied": false,
+      "network": "disabled",
+      "result": {
+        "format": "agent-ctc-alignment-v1",
+        "sample_rate": 16000,
+        "samples": 140902,
+        "original_text": "MOTION SIGNAL EDITING TIMELINE SAVES CLEAN FINAL OUTPUT",
+        "original_file_text": "MOTION SIGNAL EDITING TIMELINE SAVES CLEAN FINAL OUTPUT",
+        "index_basis": "original_text-unicode-codepoints",
+        "granularity": "whitespace",
+        "case": "upper",
+        "boundary_mode": "activity",
+        "stride_samples": 320,
+        "receptive_samples": 400,
+        "segments": [
+          {
+            "text": "MOTION SIGNAL EDITING TIMELINE SAVES CLEAN FINAL OUTPUT",
+            "start_char": 0,
+            "end_char": 55,
+            "ignored": [
+              {
+                "start_char": 6,
+                "end_char": 7,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 13,
+                "end_char": 14,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 21,
+                "end_char": 22,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 30,
+                "end_char": 31,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 36,
+                "end_char": 37,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 42,
+                "end_char": 43,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 48,
+                "end_char": 49,
+                "text": " ",
+                "reason": "whitespace"
+              }
+            ],
+            "start_sample": 0,
+            "end_sample": 140902,
+            "frames": 441,
+            "characters": [
+              {
+                "text": "M",
+                "token": "M",
+                "token_id": 17,
+                "start_char": 0,
+                "end_char": 1,
+                "start_frame": 21,
+                "end_frame": 22,
+                "posterior_geometric_mean": 0.9993473977058631,
+                "start_sample": 6760,
+                "end_sample": 7080
+              },
+              {
+                "text": "O",
+                "token": "O",
+                "token_id": 8,
+                "start_char": 1,
+                "end_char": 2,
+                "start_frame": 27,
+                "end_frame": 28,
+                "posterior_geometric_mean": 0.531038602192773,
+                "start_sample": 8680,
+                "end_sample": 9000
+              },
+              {
+                "text": "T",
+                "token": "T",
+                "token_id": 6,
+                "start_char": 2,
+                "end_char": 3,
+                "start_frame": 32,
+                "end_frame": 33,
+                "posterior_geometric_mean": 0.834555994965138,
+                "start_sample": 10280,
+                "end_sample": 10600
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 3,
+                "end_char": 4,
+                "start_frame": 35,
+                "end_frame": 36,
+                "posterior_geometric_mean": 0.9522856392729795,
+                "start_sample": 11240,
+                "end_sample": 11560
+              },
+              {
+                "text": "O",
+                "token": "O",
+                "token_id": 8,
+                "start_char": 4,
+                "end_char": 5,
+                "start_frame": 38,
+                "end_frame": 39,
+                "posterior_geometric_mean": 0.8750407602288961,
+                "start_sample": 12200,
+                "end_sample": 12520
+              },
+              {
+                "text": "N",
+                "token": "N",
+                "token_id": 9,
+                "start_char": 5,
+                "end_char": 6,
+                "start_frame": 39,
+                "end_frame": 40,
+                "posterior_geometric_mean": 0.9962272468637071,
+                "start_sample": 12520,
+                "end_sample": 12840
+              },
+              {
+                "text": "S",
+                "token": "S",
+                "token_id": 12,
+                "start_char": 7,
+                "end_char": 8,
+                "start_frame": 79,
+                "end_frame": 80,
+                "posterior_geometric_mean": 0.9955714052034305,
+                "start_sample": 25320,
+                "end_sample": 25640
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 8,
+                "end_char": 9,
+                "start_frame": 83,
+                "end_frame": 84,
+                "posterior_geometric_mean": 0.9946870865969277,
+                "start_sample": 26600,
+                "end_sample": 26920
+              },
+              {
+                "text": "G",
+                "token": "G",
+                "token_id": 21,
+                "start_char": 9,
+                "end_char": 10,
+                "start_frame": 85,
+                "end_frame": 86,
+                "posterior_geometric_mean": 0.9965386217989299,
+                "start_sample": 27240,
+                "end_sample": 27560
+              },
+              {
+                "text": "N",
+                "token": "N",
+                "token_id": 9,
+                "start_char": 10,
+                "end_char": 11,
+                "start_frame": 88,
+                "end_frame": 91,
+                "posterior_geometric_mean": 0.789596056048167,
+                "start_sample": 28200,
+                "end_sample": 29160
+              },
+              {
+                "text": "A",
+                "token": "A",
+                "token_id": 7,
+                "start_char": 11,
+                "end_char": 12,
+                "start_frame": 91,
+                "end_frame": 93,
+                "posterior_geometric_mean": 0.6984771570332551,
+                "start_sample": 29160,
+                "end_sample": 29800
+              },
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 12,
+                "end_char": 13,
+                "start_frame": 93,
+                "end_frame": 94,
+                "posterior_geometric_mean": 0.97435431569632,
+                "start_sample": 29800,
+                "end_sample": 30120
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 14,
+                "end_char": 15,
+                "start_frame": 123,
+                "end_frame": 124,
+                "posterior_geometric_mean": 0.6391338347492019,
+                "start_sample": 39400,
+                "end_sample": 39720
+              },
+              {
+                "text": "D",
+                "token": "D",
+                "token_id": 14,
+                "start_char": 15,
+                "end_char": 16,
+                "start_frame": 127,
+                "end_frame": 128,
+                "posterior_geometric_mean": 0.9862914483716102,
+                "start_sample": 40680,
+                "end_sample": 41000
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 16,
+                "end_char": 17,
+                "start_frame": 131,
+                "end_frame": 132,
+                "posterior_geometric_mean": 0.835347738258578,
+                "start_sample": 41960,
+                "end_sample": 42280
+              },
+              {
+                "text": "T",
+                "token": "T",
+                "token_id": 6,
+                "start_char": 17,
+                "end_char": 18,
+                "start_frame": 134,
+                "end_frame": 135,
+                "posterior_geometric_mean": 0.991964932923131,
+                "start_sample": 42920,
+                "end_sample": 43240
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 18,
+                "end_char": 19,
+                "start_frame": 138,
+                "end_frame": 139,
+                "posterior_geometric_mean": 0.9791038118550113,
+                "start_sample": 44200,
+                "end_sample": 44520
+              },
+              {
+                "text": "N",
+                "token": "N",
+                "token_id": 9,
+                "start_char": 19,
+                "end_char": 20,
+                "start_frame": 139,
+                "end_frame": 140,
+                "posterior_geometric_mean": 0.9911130026714902,
+                "start_sample": 44520,
+                "end_sample": 44840
+              },
+              {
+                "text": "G",
+                "token": "G",
+                "token_id": 21,
+                "start_char": 20,
+                "end_char": 21,
+                "start_frame": 140,
+                "end_frame": 141,
+                "posterior_geometric_mean": 0.9532113726335015,
+                "start_sample": 44840,
+                "end_sample": 45160
+              },
+              {
+                "text": "T",
+                "token": "T",
+                "token_id": 6,
+                "start_char": 22,
+                "end_char": 23,
+                "start_frame": 174,
+                "end_frame": 175,
+                "posterior_geometric_mean": 0.9942099880100473,
+                "start_sample": 55720,
+                "end_sample": 56040
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 23,
+                "end_char": 24,
+                "start_frame": 182,
+                "end_frame": 183,
+                "posterior_geometric_mean": 0.9689229069191552,
+                "start_sample": 58280,
+                "end_sample": 58600
+              },
+              {
+                "text": "M",
+                "token": "M",
+                "token_id": 17,
+                "start_char": 24,
+                "end_char": 25,
+                "start_frame": 185,
+                "end_frame": 186,
+                "posterior_geometric_mean": 0.9364377048687041,
+                "start_sample": 59240,
+                "end_sample": 59560
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 25,
+                "end_char": 26,
+                "start_frame": 186,
+                "end_frame": 187,
+                "posterior_geometric_mean": 0.9882503570685539,
+                "start_sample": 59560,
+                "end_sample": 59880
+              },
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 26,
+                "end_char": 27,
+                "start_frame": 190,
+                "end_frame": 192,
+                "posterior_geometric_mean": 0.8295524662313387,
+                "start_sample": 60840,
+                "end_sample": 61480
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 27,
+                "end_char": 28,
+                "start_frame": 197,
+                "end_frame": 198,
+                "posterior_geometric_mean": 0.9897011526892874,
+                "start_sample": 63080,
+                "end_sample": 63400
+              },
+              {
+                "text": "N",
+                "token": "N",
+                "token_id": 9,
+                "start_char": 28,
+                "end_char": 29,
+                "start_frame": 199,
+                "end_frame": 200,
+                "posterior_geometric_mean": 0.980818025499806,
+                "start_sample": 63720,
+                "end_sample": 64040
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 29,
+                "end_char": 30,
+                "start_frame": 200,
+                "end_frame": 201,
+                "posterior_geometric_mean": 0.9919144962730574,
+                "start_sample": 64040,
+                "end_sample": 64360
+              },
+              {
+                "text": "S",
+                "token": "S",
+                "token_id": 12,
+                "start_char": 31,
+                "end_char": 32,
+                "start_frame": 244,
+                "end_frame": 245,
+                "posterior_geometric_mean": 0.8668434568771836,
+                "start_sample": 78120,
+                "end_sample": 78440
+              },
+              {
+                "text": "A",
+                "token": "A",
+                "token_id": 7,
+                "start_char": 32,
+                "end_char": 33,
+                "start_frame": 255,
+                "end_frame": 256,
+                "posterior_geometric_mean": 0.973761423606371,
+                "start_sample": 81640,
+                "end_sample": 81960
+              },
+              {
+                "text": "V",
+                "token": "V",
+                "token_id": 25,
+                "start_char": 33,
+                "end_char": 34,
+                "start_frame": 260,
+                "end_frame": 261,
+                "posterior_geometric_mean": 0.5793232065667742,
+                "start_sample": 83240,
+                "end_sample": 83560
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 34,
+                "end_char": 35,
+                "start_frame": 261,
+                "end_frame": 263,
+                "posterior_geometric_mean": 0.621891065093308,
+                "start_sample": 83560,
+                "end_sample": 84200
+              },
+              {
+                "text": "S",
+                "token": "S",
+                "token_id": 12,
+                "start_char": 35,
+                "end_char": 36,
+                "start_frame": 263,
+                "end_frame": 265,
+                "posterior_geometric_mean": 0.6868169026178882,
+                "start_sample": 84200,
+                "end_sample": 84840
+              },
+              {
+                "text": "C",
+                "token": "C",
+                "token_id": 19,
+                "start_char": 37,
+                "end_char": 38,
+                "start_frame": 297,
+                "end_frame": 298,
+                "posterior_geometric_mean": 0.7150042642514397,
+                "start_sample": 95080,
+                "end_sample": 95400
+              },
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 38,
+                "end_char": 39,
+                "start_frame": 300,
+                "end_frame": 301,
+                "posterior_geometric_mean": 0.9940555330912398,
+                "start_sample": 96040,
+                "end_sample": 96360
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 39,
+                "end_char": 40,
+                "start_frame": 307,
+                "end_frame": 308,
+                "posterior_geometric_mean": 0.8821683001148732,
+                "start_sample": 98280,
+                "end_sample": 98600
+              },
+              {
+                "text": "A",
+                "token": "A",
+                "token_id": 7,
+                "start_char": 40,
+                "end_char": 41,
+                "start_frame": 309,
+                "end_frame": 310,
+                "posterior_geometric_mean": 0.9528275489498933,
+                "start_sample": 98920,
+                "end_sample": 99240
+              },
+              {
+                "text": "N",
+                "token": "N",
+                "token_id": 9,
+                "start_char": 41,
+                "end_char": 42,
+                "start_frame": 317,
+                "end_frame": 318,
+                "posterior_geometric_mean": 0.0007761995921994275,
+                "start_sample": 101480,
+                "end_sample": 101800
+              },
+              {
+                "text": "F",
+                "token": "F",
+                "token_id": 20,
+                "start_char": 43,
+                "end_char": 44,
+                "start_frame": 351,
+                "end_frame": 352,
+                "posterior_geometric_mean": 0.9289963959108305,
+                "start_sample": 112360,
+                "end_sample": 112680
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 44,
+                "end_char": 45,
+                "start_frame": 359,
+                "end_frame": 360,
+                "posterior_geometric_mean": 0.9868242395911451,
+                "start_sample": 114920,
+                "end_sample": 115240
+              },
+              {
+                "text": "N",
+                "token": "N",
+                "token_id": 9,
+                "start_char": 45,
+                "end_char": 46,
+                "start_frame": 361,
+                "end_frame": 363,
+                "posterior_geometric_mean": 0.8930419407622098,
+                "start_sample": 115560,
+                "end_sample": 116200
+              },
+              {
+                "text": "A",
+                "token": "A",
+                "token_id": 7,
+                "start_char": 46,
+                "end_char": 47,
+                "start_frame": 363,
+                "end_frame": 364,
+                "posterior_geometric_mean": 0.010246646221622656,
+                "start_sample": 116200,
+                "end_sample": 116520
+              },
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 47,
+                "end_char": 48,
+                "start_frame": 368,
+                "end_frame": 369,
+                "posterior_geometric_mean": 0.6935472618049184,
+                "start_sample": 117800,
+                "end_sample": 118120
+              },
+              {
+                "text": "O",
+                "token": "O",
+                "token_id": 8,
+                "start_char": 49,
+                "end_char": 50,
+                "start_frame": 401,
+                "end_frame": 402,
+                "posterior_geometric_mean": 0.9304987370852071,
+                "start_sample": 128360,
+                "end_sample": 128680
+              },
+              {
+                "text": "U",
+                "token": "U",
+                "token_id": 16,
+                "start_char": 50,
+                "end_char": 51,
+                "start_frame": 402,
+                "end_frame": 403,
+                "posterior_geometric_mean": 0.9748919595680455,
+                "start_sample": 128680,
+                "end_sample": 129000
+              },
+              {
+                "text": "T",
+                "token": "T",
+                "token_id": 6,
+                "start_char": 51,
+                "end_char": 52,
+                "start_frame": 406,
+                "end_frame": 407,
+                "posterior_geometric_mean": 0.9251374528963842,
+                "start_sample": 129960,
+                "end_sample": 130280
+              },
+              {
+                "text": "P",
+                "token": "P",
+                "token_id": 23,
+                "start_char": 52,
+                "end_char": 53,
+                "start_frame": 412,
+                "end_frame": 413,
+                "posterior_geometric_mean": 0.41589183490664505,
+                "start_sample": 131880,
+                "end_sample": 132200
+              },
+              {
+                "text": "U",
+                "token": "U",
+                "token_id": 16,
+                "start_char": 53,
+                "end_char": 54,
+                "start_frame": 415,
+                "end_frame": 416,
+                "posterior_geometric_mean": 0.3504169078488238,
+                "start_sample": 132840,
+                "end_sample": 133160
+              },
+              {
+                "text": "T",
+                "token": "T",
+                "token_id": 6,
+                "start_char": 54,
+                "end_char": 55,
+                "start_frame": 419,
+                "end_frame": 420,
+                "posterior_geometric_mean": 0.8370992012503525,
+                "start_sample": 134120,
+                "end_sample": 134440
+              }
+            ],
+            "units": [
+              {
+                "text": "MOTION",
+                "start_char": 0,
+                "end_char": 6,
+                "start_sample": 2240,
+                "end_sample": 15040,
+                "posterior_geometric_mean": 0.846399371428427
+              },
+              {
+                "text": "SIGNAL",
+                "start_char": 7,
+                "end_char": 13,
+                "start_sample": 20400,
+                "end_sample": 32800,
+                "posterior_geometric_mean": 0.8996795591092415
+              },
+              {
+                "text": "EDITING",
+                "start_char": 14,
+                "end_char": 21,
+                "start_sample": 34160,
+                "end_sample": 47120,
+                "posterior_geometric_mean": 0.9013048118621547
+              },
+              {
+                "text": "TIMELINE",
+                "start_char": 22,
+                "end_char": 30,
+                "start_sample": 51040,
+                "end_sample": 66880,
+                "posterior_geometric_mean": 0.9584412094134691
+              },
+              {
+                "text": "SAVES",
+                "start_char": 31,
+                "end_char": 36,
+                "start_sample": 73360,
+                "end_sample": 87520,
+                "posterior_geometric_mean": 0.7310951312839045
+              },
+              {
+                "text": "CLEAN",
+                "start_char": 37,
+                "end_char": 42,
+                "start_sample": 90000,
+                "end_sample": 103280,
+                "posterior_geometric_mean": 0.21540297066997174
+              },
+              {
+                "text": "FINAL",
+                "start_char": 43,
+                "end_char": 48,
+                "start_sample": 107680,
+                "end_sample": 120640,
+                "posterior_geometric_mean": 0.35723721858020707
+              },
+              {
+                "text": "OUTPUT",
+                "start_char": 49,
+                "end_char": 55,
+                "start_sample": 122480,
+                "end_sample": 137440,
+                "posterior_geometric_mean": 0.6839696310786213
+              }
+            ],
+            "windows": [
+              {
+                "core_start": 0,
+                "core_end": 441,
+                "frame_start": 0,
+                "frame_end": 441,
+                "sample_start": 0,
+                "sample_end": 141200,
+                "right_zero_pad": 298,
+                "input_samples": 141200,
+                "output_frames": 441,
+                "retained_frames": 441
+              }
+            ],
+            "emission_bytes": 29988,
+            "traceback_bytes": 42777,
+            "path_log_probability": -114.49479554461794,
+            "low_posterior_character_indices": [
+              41,
+              46
+            ],
+            "raw_units": [
+              {
+                "text": "MOTION",
+                "start_char": 0,
+                "end_char": 6,
+                "start_sample": 6760,
+                "end_sample": 12840,
+                "posterior_geometric_mean": 0.846399371428427
+              },
+              {
+                "text": "SIGNAL",
+                "start_char": 7,
+                "end_char": 13,
+                "start_sample": 25320,
+                "end_sample": 30120,
+                "posterior_geometric_mean": 0.8996795591092415
+              },
+              {
+                "text": "EDITING",
+                "start_char": 14,
+                "end_char": 21,
+                "start_sample": 39400,
+                "end_sample": 45160,
+                "posterior_geometric_mean": 0.9013048118621547
+              },
+              {
+                "text": "TIMELINE",
+                "start_char": 22,
+                "end_char": 30,
+                "start_sample": 55720,
+                "end_sample": 64360,
+                "posterior_geometric_mean": 0.9584412094134691
+              },
+              {
+                "text": "SAVES",
+                "start_char": 31,
+                "end_char": 36,
+                "start_sample": 78120,
+                "end_sample": 84840,
+                "posterior_geometric_mean": 0.7310951312839045
+              },
+              {
+                "text": "CLEAN",
+                "start_char": 37,
+                "end_char": 42,
+                "start_sample": 95080,
+                "end_sample": 101800,
+                "posterior_geometric_mean": 0.21540297066997174
+              },
+              {
+                "text": "FINAL",
+                "start_char": 43,
+                "end_char": 48,
+                "start_sample": 112360,
+                "end_sample": 118120,
+                "posterior_geometric_mean": 0.35723721858020707
+              },
+              {
+                "text": "OUTPUT",
+                "start_char": 49,
+                "end_char": 55,
+                "start_sample": 128360,
+                "end_sample": 134440,
+                "posterior_geometric_mean": 0.6839696310786213
+              }
+            ],
+            "activity": {
+              "algorithm": "ctc-guided-activity-v3",
+              "sample_rate": 16000,
+              "frame_samples": 80,
+              "dc_offset": 0,
+              "dc_subsample_step": 2,
+              "noise_rms": 0,
+              "reference_rms": 5592,
+              "low_threshold": 2,
+              "high_threshold": 56,
+              "max_internal_gap_frames": 8,
+              "max_support_gap_frames": 24,
+              "min_region_frames": 4,
+              "max_movement_samples": 12000,
+              "regions": [
+                {
+                  "start_sample": 2240,
+                  "end_sample": 15040,
+                  "anchored_units": [
+                    0
+                  ],
+                  "strong_activity": true
+                },
+                {
+                  "start_sample": 20400,
+                  "end_sample": 32800,
+                  "anchored_units": [
+                    1
+                  ],
+                  "strong_activity": true
+                },
+                {
+                  "start_sample": 34160,
+                  "end_sample": 47120,
+                  "anchored_units": [
+                    2
+                  ],
+                  "strong_activity": true
+                },
+                {
+                  "start_sample": 51040,
+                  "end_sample": 66880,
+                  "anchored_units": [
+                    3
+                  ],
+                  "strong_activity": true
+                },
+                {
+                  "start_sample": 73360,
+                  "end_sample": 87520,
+                  "anchored_units": [
+                    4
+                  ],
+                  "strong_activity": true
+                },
+                {
+                  "start_sample": 90000,
+                  "end_sample": 103280,
+                  "anchored_units": [
+                    5
+                  ],
+                  "strong_activity": true
+                },
+                {
+                  "start_sample": 107680,
+                  "end_sample": 120640,
+                  "anchored_units": [
+                    6
+                  ],
+                  "strong_activity": true
+                },
+                {
+                  "start_sample": 122480,
+                  "end_sample": 137440,
+                  "anchored_units": [
+                    7
+                  ],
+                  "strong_activity": true
+                }
+              ],
+              "support_attachments": [],
+              "decisions": [
+                {
+                  "unit_index": 0,
+                  "status": "activity_estimated",
+                  "candidate": {
+                    "start_sample": 2240,
+                    "end_sample": 15040
+                  },
+                  "changed": true
+                },
+                {
+                  "unit_index": 1,
+                  "status": "activity_estimated",
+                  "candidate": {
+                    "start_sample": 20400,
+                    "end_sample": 32800
+                  },
+                  "changed": true
+                },
+                {
+                  "unit_index": 2,
+                  "status": "activity_estimated",
+                  "candidate": {
+                    "start_sample": 34160,
+                    "end_sample": 47120
+                  },
+                  "changed": true
+                },
+                {
+                  "unit_index": 3,
+                  "status": "activity_estimated",
+                  "candidate": {
+                    "start_sample": 51040,
+                    "end_sample": 66880
+                  },
+                  "changed": true
+                },
+                {
+                  "unit_index": 4,
+                  "status": "activity_estimated",
+                  "candidate": {
+                    "start_sample": 73360,
+                    "end_sample": 87520
+                  },
+                  "changed": true
+                },
+                {
+                  "unit_index": 5,
+                  "status": "activity_estimated",
+                  "candidate": {
+                    "start_sample": 90000,
+                    "end_sample": 103280
+                  },
+                  "changed": true
+                },
+                {
+                  "unit_index": 6,
+                  "status": "activity_estimated",
+                  "candidate": {
+                    "start_sample": 107680,
+                    "end_sample": 120640
+                  },
+                  "changed": true
+                },
+                {
+                  "unit_index": 7,
+                  "status": "activity_estimated",
+                  "candidate": {
+                    "start_sample": 122480,
+                    "end_sample": 137440
+                  },
+                  "changed": true
+                }
+              ],
+              "changed_units": 8,
+              "review_required": true,
+              "continuous_speech_boundaries_not_inferred": true
+            }
+          }
+        ],
+        "protocol": "agent-video-ctc-align-v1",
+        "engine": "transformers-wav2vec2-ctc-local-v1",
+        "adapter_id": "ctc",
+        "model_sha256": "sha256:4b83d7907db29c899b24df13091f4cd19f495104bc2a92a88527b14207c586dd",
+        "source_sha256": "sha256:0b1a7824d62ca8e96b79c83b41ed11c9498d9113fd79d0d040e93426715f117a",
+        "request_sha256": "sha256:7e7051473a596fc9ce0394e58da6482129a5f239fc1ef8ec4c192f41aa095fd1",
+        "worker": {
+          "protocol": "agent-video-ctc-align-v1",
+          "status": "succeeded",
+          "network": "disabled",
+          "blocked_network_events": [],
+          "request_sha256": "sha256:7e7051473a596fc9ce0394e58da6482129a5f239fc1ef8ec4c192f41aa095fd1",
+          "model_forward_calls": 1,
+          "device": "NVIDIA GeForce RTX 3060",
+          "peak_cuda_bytes": 527028736,
+          "threads": 4,
+          "versions": {
+            "python": "3.13.14",
+            "numpy": "2.4.6",
+            "torch": "2.13.0+cu130",
+            "transformers": "5.14.1"
+          },
+          "module_paths": {
+            "torch": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\__init__.py",
+            "transformers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\__init__.py"
+          },
+          "input_sha256": "sha256:29e7b4b9cb8e3a559888cbb9f83227dd40af2d8472669632323ec62abbf2e627",
+          "source_sha256": "sha256:0b1a7824d62ca8e96b79c83b41ed11c9498d9113fd79d0d040e93426715f117a",
+          "adapter_sha256": "sha256:4b83d7907db29c899b24df13091f4cd19f495104bc2a92a88527b14207c586dd",
+          "verification": {
+            "mode": "windows-read-lock-command-scope",
+            "files_hashed": 20,
+            "bytes_hashed": 378127651,
+            "digest_reuses_while_locked": 6,
+            "write_and_delete_sharing": false,
+            "persists_across_commands": false
+          },
+          "elapsed_seconds": 11.33
+        },
+        "diagnostic_directory": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\development-v3-r1\\kal\\cache\\alignment\\run_20261025005627_f550e903",
+        "review_required": true,
+        "warnings": [
+          "ALIGNMENT_REVIEW_REQUIRED"
+        ],
+        "elapsed_seconds": 13.295,
+        "operation_id": "op_20261025005640_b7c105a2",
+        "transcript_sha256": "sha256:67b4c185249b237261635320f183e9ffc6f9f1bffb58dd7aaa23757e3e945392",
+        "transcript_format": "txt",
+        "timeline_start_tick": 0,
+        "ticks_per_second": 90000,
+        "display_cues": [
+          {
+            "text": "MOTION SIGNAL EDITING TIMELINE SAVES CLEAN FINAL OUTPUT",
+            "start_tick": 12600,
+            "end_tick": 773100,
+            "source_start_char": 0,
+            "word_timing": [
+              {
+                "text": "MOTION",
+                "start_char": 0,
+                "start": 0.0,
+                "end": 0.8
+              },
+              {
+                "text": "SIGNAL",
+                "start_char": 7,
+                "start": 1.135,
+                "end": 1.91
+              },
+              {
+                "text": "EDITING",
+                "start_char": 14,
+                "start": 1.995,
+                "end": 2.805
+              },
+              {
+                "text": "TIMELINE",
+                "start_char": 22,
+                "start": 3.05,
+                "end": 4.04
+              },
+              {
+                "text": "SAVES",
+                "start_char": 31,
+                "start": 4.445,
+                "end": 5.33
+              },
+              {
+                "text": "CLEAN",
+                "start_char": 37,
+                "start": 5.485,
+                "end": 6.315
+              },
+              {
+                "text": "FINAL",
+                "start_char": 43,
+                "start": 6.59,
+                "end": 7.4
+              },
+              {
+                "text": "OUTPUT",
+                "start_char": 49,
+                "start": 7.515,
+                "end": 8.45
+              }
+            ]
+          }
+        ]
+      },
+      "registered_assets": [
+        {
+          "id": "aligned_subtitle_20261025005640_3c20c9af",
+          "kind": "generated",
+          "uri": "assets/alignment/activity.transcript.txt",
+          "sha256": "sha256:67b4c185249b237261635320f183e9ffc6f9f1bffb58dd7aaa23757e3e945392",
+          "rights_ref": "aligned_subtitle_20261025005640_3c20c9af",
+          "probe": {
+            "duration_tick": 773100
+          },
+          "source": {
+            "source_url": "local://E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\development-v3-r1\\kal\\assets\\alignment\\activity.transcript.txt",
+            "original_name": "activity.transcript.txt",
+            "retrieved_at": "2026-10-25T00:56:40.819894Z"
+          }
+        },
+        {
+          "id": "aligned_subtitle_20261025005640_b17d1214",
+          "kind": "generated",
+          "uri": "assets/alignment/activity.json",
+          "sha256": "sha256:28911d3d0b51e6d6d3226cc2c2ad523a07f7ef0d952bfe1e0c3b6e63265d9474",
+          "rights_ref": "aligned_subtitle_20261025005640_b17d1214",
+          "probe": {
+            "duration_tick": 773100
+          },
+          "source": {
+            "source_url": "local://E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\development-v3-r1\\kal\\assets\\alignment\\activity.json",
+            "original_name": "activity.json",
+            "retrieved_at": "2026-10-25T00:56:40.830888Z"
+          }
+        },
+        {
+          "id": "aligned_subtitle_20261025005640_d399ffff",
+          "kind": "subtitle",
+          "uri": "assets/alignment/activity.srt",
+          "sha256": "sha256:49a4b2157054e08630a0b488d2d472aa79f58cd5dc5b9d5de00952c3d3e8a360",
+          "rights_ref": "aligned_subtitle_20261025005640_d399ffff",
+          "probe": {
+            "duration_tick": 773100
+          },
+          "source": {
+            "source_url": "local://E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\development-v3-r1\\kal\\assets\\alignment\\activity.srt",
+            "original_name": "activity.srt",
+            "retrieved_at": "2026-10-25T00:56:40.832282Z"
+          }
+        }
+      ],
+      "generated_clips": [],
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "warnings": [
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "speech",
+            "rights_ref": "speech",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "speech",
+            "rights_ref": "speech",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_EVIDENCE_INCOMPLETE",
+            "message": "来源、许可证或证据字段缺失",
+            "asset_id": "speech",
+            "rights_ref": "speech",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "aligned_subtitle_20261025005640_3c20c9af",
+            "rights_ref": "aligned_subtitle_20261025005640_3c20c9af",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "aligned_subtitle_20261025005640_3c20c9af",
+            "rights_ref": "aligned_subtitle_20261025005640_3c20c9af",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "aligned_subtitle_20261025005640_b17d1214",
+            "rights_ref": "aligned_subtitle_20261025005640_b17d1214",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "aligned_subtitle_20261025005640_b17d1214",
+            "rights_ref": "aligned_subtitle_20261025005640_b17d1214",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "aligned_subtitle_20261025005640_d399ffff",
+            "rights_ref": "aligned_subtitle_20261025005640_d399ffff",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "aligned_subtitle_20261025005640_d399ffff",
+            "rights_ref": "aligned_subtitle_20261025005640_d399ffff",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "asr_adapter_ctc",
+            "rights_ref": "asr_adapter_ctc",
+            "record_version": 1,
+            "context": "derived_dependency"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "asr_adapter_ctc",
+            "rights_ref": "asr_adapter_ctc",
+            "record_version": 1,
+            "context": "derived_dependency"
+          }
+        ],
+        "rights": {
+          "ok": true,
+          "target": "commercial_ad",
+          "checked": 4,
+          "required_records": 5,
+          "failures": [],
+          "warnings": [
+            {
+              "status": "unverified",
+              "code": "RIGHTS_STATUS_BLOCKED",
+              "message": "状态 unverified 不允许发布",
+              "asset_id": "speech",
+              "rights_ref": "speech",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "code": "RIGHTS_USE_NOT_PERMITTED",
+              "message": "记录未允许目标用途: commercial_ad",
+              "asset_id": "speech",
+              "rights_ref": "speech",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "code": "RIGHTS_EVIDENCE_INCOMPLETE",
+              "message": "来源、许可证或证据字段缺失",
+              "asset_id": "speech",
+              "rights_ref": "speech",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "status": "unverified",
+              "code": "RIGHTS_STATUS_BLOCKED",
+              "message": "状态 unverified 不允许发布",
+              "asset_id": "aligned_subtitle_20261025005640_3c20c9af",
+              "rights_ref": "aligned_subtitle_20261025005640_3c20c9af",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "code": "RIGHTS_USE_NOT_PERMITTED",
+              "message": "记录未允许目标用途: commercial_ad",
+              "asset_id": "aligned_subtitle_20261025005640_3c20c9af",
+              "rights_ref": "aligned_subtitle_20261025005640_3c20c9af",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "status": "unverified",
+              "code": "RIGHTS_STATUS_BLOCKED",
+              "message": "状态 unverified 不允许发布",
+              "asset_id": "aligned_subtitle_20261025005640_b17d1214",
+              "rights_ref": "aligned_subtitle_20261025005640_b17d1214",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "code": "RIGHTS_USE_NOT_PERMITTED",
+              "message": "记录未允许目标用途: commercial_ad",
+              "asset_id": "aligned_subtitle_20261025005640_b17d1214",
+              "rights_ref": "aligned_subtitle_20261025005640_b17d1214",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "status": "unverified",
+              "code": "RIGHTS_STATUS_BLOCKED",
+              "message": "状态 unverified 不允许发布",
+              "asset_id": "aligned_subtitle_20261025005640_d399ffff",
+              "rights_ref": "aligned_subtitle_20261025005640_d399ffff",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "code": "RIGHTS_USE_NOT_PERMITTED",
+              "message": "记录未允许目标用途: commercial_ad",
+              "asset_id": "aligned_subtitle_20261025005640_d399ffff",
+              "rights_ref": "aligned_subtitle_20261025005640_d399ffff",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "status": "unverified",
+              "code": "RIGHTS_STATUS_BLOCKED",
+              "message": "状态 unverified 不允许发布",
+              "asset_id": "asr_adapter_ctc",
+              "rights_ref": "asr_adapter_ctc",
+              "record_version": 1,
+              "context": "derived_dependency"
+            },
+            {
+              "code": "RIGHTS_USE_NOT_PERMITTED",
+              "message": "记录未允许目标用途: commercial_ad",
+              "asset_id": "asr_adapter_ctc",
+              "rights_ref": "asr_adapter_ctc",
+              "record_version": 1,
+              "context": "derived_dependency"
+            }
+          ],
+          "disposition_decisions": [],
+          "effective_disposition_decisions": []
+        },
+        "schema_engine": "jsonschema",
+        "asset_count": 4,
+        "sequence_count": 1
+      },
+      "before_snapshot": {
+        "snapshot_id": "snap_20261025005640_f7cadb6c",
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\development-v3-r1\\kal\\history\\snap_20261025005640_f7cadb6c.json",
+        "label": "before-subtitle-align",
+        "created_at": "2026-10-25T00:56:40.755482Z"
+      },
+      "verification": {
+        "mode": "windows-read-lock-command-scope",
+        "files_hashed": 22,
+        "bytes_hashed": 378409554,
+        "digest_reuses_while_locked": 58,
+        "write_and_delete_sharing": false,
+        "persists_across_commands": false
+      }
+    },
+    "artifacts": [],
+    "warnings": [
+      {
+        "code": "ALIGNMENT_REVIEW_REQUIRED",
+        "message": "CTC 后验不是校准准确率；应核验逐字稿、字边界及自然语音效果"
+      }
+    ],
+    "errors": [],
+    "provenance": {
+      "cli_version": "0.1.8",
+      "schema_version": "0.1.0",
+      "engine_version": "ffmpeg-local",
+      "started_at": "2026-10-25T00:56:40.854470Z",
+      "finished_at": "2026-10-25T00:56:40.854477Z",
+      "network": "disabled"
+    }
+  }
+}

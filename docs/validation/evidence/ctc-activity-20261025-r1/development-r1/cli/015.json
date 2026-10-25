@@ -1,0 +1,139 @@
+{
+  "argv": [
+    "media",
+    "ingest",
+    "--project",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\development-r1\\awb",
+    "--asset-id",
+    "speech",
+    "--input",
+    "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ctc-activity-20261025-r1\\input\\input.wav"
+  ],
+  "exit_code": 0,
+  "seconds": 2.594,
+  "stderr": "",
+  "result": {
+    "ok": true,
+    "command": "media.ingest",
+    "request_id": "req_20261025003729_92612dba",
+    "operation_id": "op_20261025003728_dca4c4cc",
+    "status": "succeeded",
+    "data": {
+      "asset": {
+        "id": "speech",
+        "kind": "audio",
+        "uri": "assets/speech_input.wav",
+        "sha256": "sha256:d36a2862c82c02abd11831c86cfb48441e6e1a86eab6832b8da52c2525ef9bbf",
+        "probe": {
+          "duration_seconds": 8.646688,
+          "duration_tick": 778202,
+          "format": "wav",
+          "format_long_name": "WAV / WAVE (Waveform Audio)",
+          "streams": [
+            {
+              "index": 0,
+              "codec_name": "pcm_s16le",
+              "codec_long_name": "PCM signed 16-bit little-endian",
+              "codec_type": "audio",
+              "codec_tag_string": "[1][0][0][0]",
+              "codec_tag": "0x0001",
+              "sample_fmt": "s16",
+              "sample_rate": "16000",
+              "channels": 1,
+              "bits_per_sample": 16,
+              "initial_padding": 0,
+              "r_frame_rate": "0/0",
+              "avg_frame_rate": "0/0",
+              "time_base": "1/16000",
+              "duration_ts": 138347,
+              "duration": "8.646688",
+              "bit_rate": "256000",
+              "disposition": {
+                "default": 0,
+                "dub": 0,
+                "original": 0,
+                "comment": 0,
+                "lyrics": 0,
+                "karaoke": 0,
+                "forced": 0,
+                "hearing_impaired": 0,
+                "visual_impaired": 0,
+                "clean_effects": 0,
+                "attached_pic": 0,
+                "timed_thumbnails": 0,
+                "non_diegetic": 0,
+                "captions": 0,
+                "descriptions": 0,
+                "metadata": 0,
+                "dependent": 0,
+                "still_image": 0,
+                "multilayer": 0
+              }
+            }
+          ],
+          "video": {
+            "codec": null,
+            "width": null,
+            "height": null,
+            "pix_fmt": null,
+            "fps": null,
+            "color_space": null,
+            "duration_seconds": 0.0,
+            "start_time_seconds": 0.0
+          },
+          "audio": {
+            "codec": "pcm_s16le",
+            "sample_rate": 16000,
+            "channels": 1,
+            "duration_seconds": 8.646688,
+            "start_time_seconds": 0.0
+          }
+        },
+        "rights_ref": "speech",
+        "source": {
+          "source_url": "local://E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ctc-activity-20261025-r1\\input\\input.wav",
+          "retrieved_at": "2026-10-25T00:37:28.592877Z",
+          "original_name": "input.wav"
+        }
+      },
+      "rights": {
+        "asset_id": "speech",
+        "kind": "audio",
+        "sha256": "sha256:d36a2862c82c02abd11831c86cfb48441e6e1a86eab6832b8da52c2525ef9bbf",
+        "source_url": "local://E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ctc-activity-20261025-r1\\input\\input.wav",
+        "source_version": "local",
+        "retrieved_at": "2026-10-25T00:37:28.592893Z",
+        "creator": "unknown",
+        "license_spdx": "LicenseRef-UNVERIFIED",
+        "license_url": "",
+        "attribution": "",
+        "permitted_uses": [
+          "internal"
+        ],
+        "restrictions": [],
+        "evidence": "",
+        "verification_status": "unverified",
+        "verified_by": "",
+        "takedown_status": "clear",
+        "notes": "Imported by local CLI",
+        "record_id": "rights_20261025003728_f32b585f",
+        "record_version": 1,
+        "active": true,
+        "recorded_at": "2026-10-25T00:37:28.593459Z",
+        "permitted_channels": []
+      },
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\development-r1\\awb\\assets\\speech_input.wav"
+    },
+    "artifacts": [],
+    "warnings": [],
+    "errors": [],
+    "provenance": {
+      "cli_version": "0.1.8",
+      "schema_version": "0.1.0",
+      "engine_version": "ffmpeg-local",
+      "started_at": "2026-10-25T00:37:29.252434Z",
+      "finished_at": "2026-10-25T00:37:29.252445Z",
+      "network": "disabled"
+    }
+  }
+}

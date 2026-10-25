@@ -2,7 +2,12 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.7 / alpha.4-local.5。** Native process ownership and four-source job recovery; independent stems, offline retrieval, GPU voice/translation, 359 resources and capture; one Skill / 17 modules. Public alpha.3 remains CLI 0.1.2. [Installation](COMMUNITY_LOCAL_DELIVERY.md) · [Recovery / 恢复 / 復原](JOB_RECOVERY.md) · [Actual evidence](../validation/任务中断恢复实测_2026-10-25.md) · [74 current declarations](job-recovery-capabilities-cli-0.1.7.json) · [38 remaining groups](GOAL_GAPS_20261025.md).
+**Current local / 当前本机 / 目前本機：CLI 0.1.8 / alpha.4-local.6。** One registered Skill / 17 modules;
+CTC activity boundaries, native job recovery, independent four-source separation, offline image/text retrieval,
+GPU voice/translation and 359 resources. Public alpha.3 remains CLI 0.1.2.
+[Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [74 declarations](ctc-activity-capabilities-cli-0.1.8.json) ·
+[CTC workflow and limits](CTC_ACTIVITY_ALIGNMENT.md) · [All 38 remaining gap groups](GOAL_GAPS_20261025.md).
+Controlled word-block precision does not establish natural speech/Chinese/lyrics acceptance.
 
 <!-- /community-current -->
 

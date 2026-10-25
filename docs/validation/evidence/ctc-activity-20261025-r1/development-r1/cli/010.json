@@ -1,0 +1,386 @@
+{
+  "argv": [
+    "subtitle",
+    "align",
+    "--project",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\development-r1\\heldout",
+    "--asset-id",
+    "speech",
+    "--adapter-id",
+    "ctc",
+    "--transcript",
+    "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\boundary-heldout-20261018\\transcript.txt",
+    "--output",
+    "assets/alignment/activity.json",
+    "--granularity",
+    "whitespace",
+    "--boundary-mode",
+    "activity",
+    "--timeout",
+    "600",
+    "--dry-run"
+  ],
+  "exit_code": 0,
+  "seconds": 3.764,
+  "stderr": "",
+  "result": {
+    "ok": true,
+    "command": "subtitle.align",
+    "request_id": "req_20261025003510_157477e7",
+    "operation_id": null,
+    "status": "planned",
+    "data": {
+      "output": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\development-r1\\heldout\\assets\\alignment\\activity.json",
+      "srt": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\development-r1\\heldout\\assets\\alignment\\activity.srt",
+      "transcript_copy": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\development-r1\\heldout\\assets\\alignment\\activity.transcript.txt",
+      "source_sha256": "sha256:e615ea11cefabcfd85bc674b4e0e9a70b7e639d4284c1a54862db6e4784b1b5d",
+      "transcript_sha256": "sha256:3e4fdafa4d22cc16b11306714e2fac467a1d856c80b6650575d1e2000b80b495",
+      "adapter_id": "ctc",
+      "model_sha256": "sha256:3122a5a60bb51a2b861f215e6d7fcaced9c475a365373edf6b77b7c2aaafa8c6",
+      "prepared": {
+        "original_text": "LOCAL VIDEO EDITOR KEEPS EVERY ORIGINAL WORD",
+        "original_file_text": "LOCAL VIDEO EDITOR KEEPS EVERY ORIGINAL WORD",
+        "format": "txt",
+        "index_basis": "original_text-unicode-codepoints",
+        "segments": [
+          {
+            "text": "LOCAL VIDEO EDITOR KEEPS EVERY ORIGINAL WORD",
+            "start_char": 0,
+            "end_char": 44,
+            "start_sample": 0,
+            "end_sample": null,
+            "tokens": [
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 0,
+                "end_char": 1
+              },
+              {
+                "text": "O",
+                "token": "O",
+                "token_id": 8,
+                "start_char": 1,
+                "end_char": 2
+              },
+              {
+                "text": "C",
+                "token": "C",
+                "token_id": 19,
+                "start_char": 2,
+                "end_char": 3
+              },
+              {
+                "text": "A",
+                "token": "A",
+                "token_id": 7,
+                "start_char": 3,
+                "end_char": 4
+              },
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 4,
+                "end_char": 5
+              },
+              {
+                "text": "V",
+                "token": "V",
+                "token_id": 25,
+                "start_char": 6,
+                "end_char": 7
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 7,
+                "end_char": 8
+              },
+              {
+                "text": "D",
+                "token": "D",
+                "token_id": 14,
+                "start_char": 8,
+                "end_char": 9
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 9,
+                "end_char": 10
+              },
+              {
+                "text": "O",
+                "token": "O",
+                "token_id": 8,
+                "start_char": 10,
+                "end_char": 11
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 12,
+                "end_char": 13
+              },
+              {
+                "text": "D",
+                "token": "D",
+                "token_id": 14,
+                "start_char": 13,
+                "end_char": 14
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 14,
+                "end_char": 15
+              },
+              {
+                "text": "T",
+                "token": "T",
+                "token_id": 6,
+                "start_char": 15,
+                "end_char": 16
+              },
+              {
+                "text": "O",
+                "token": "O",
+                "token_id": 8,
+                "start_char": 16,
+                "end_char": 17
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 17,
+                "end_char": 18
+              },
+              {
+                "text": "K",
+                "token": "K",
+                "token_id": 26,
+                "start_char": 19,
+                "end_char": 20
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 20,
+                "end_char": 21
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 21,
+                "end_char": 22
+              },
+              {
+                "text": "P",
+                "token": "P",
+                "token_id": 23,
+                "start_char": 22,
+                "end_char": 23
+              },
+              {
+                "text": "S",
+                "token": "S",
+                "token_id": 12,
+                "start_char": 23,
+                "end_char": 24
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 25,
+                "end_char": 26
+              },
+              {
+                "text": "V",
+                "token": "V",
+                "token_id": 25,
+                "start_char": 26,
+                "end_char": 27
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 27,
+                "end_char": 28
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 28,
+                "end_char": 29
+              },
+              {
+                "text": "Y",
+                "token": "Y",
+                "token_id": 22,
+                "start_char": 29,
+                "end_char": 30
+              },
+              {
+                "text": "O",
+                "token": "O",
+                "token_id": 8,
+                "start_char": 31,
+                "end_char": 32
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 32,
+                "end_char": 33
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 33,
+                "end_char": 34
+              },
+              {
+                "text": "G",
+                "token": "G",
+                "token_id": 21,
+                "start_char": 34,
+                "end_char": 35
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 35,
+                "end_char": 36
+              },
+              {
+                "text": "N",
+                "token": "N",
+                "token_id": 9,
+                "start_char": 36,
+                "end_char": 37
+              },
+              {
+                "text": "A",
+                "token": "A",
+                "token_id": 7,
+                "start_char": 37,
+                "end_char": 38
+              },
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 38,
+                "end_char": 39
+              },
+              {
+                "text": "W",
+                "token": "W",
+                "token_id": 18,
+                "start_char": 40,
+                "end_char": 41
+              },
+              {
+                "text": "O",
+                "token": "O",
+                "token_id": 8,
+                "start_char": 41,
+                "end_char": 42
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 42,
+                "end_char": 43
+              },
+              {
+                "text": "D",
+                "token": "D",
+                "token_id": 14,
+                "start_char": 43,
+                "end_char": 44
+              }
+            ],
+            "ignored": [
+              {
+                "start_char": 5,
+                "end_char": 6,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 11,
+                "end_char": 12,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 18,
+                "end_char": 19,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 24,
+                "end_char": 25,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 30,
+                "end_char": 31,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 39,
+                "end_char": 40,
+                "text": " ",
+                "reason": "whitespace"
+              }
+            ]
+          }
+        ],
+        "case": "upper",
+        "granularity": "whitespace",
+        "boundary_mode": "activity",
+        "stride_samples": 320,
+        "receptive_samples": 400
+      },
+      "applied": false,
+      "network": "disabled"
+    },
+    "artifacts": [],
+    "warnings": [
+      {
+        "code": "ALIGNMENT_REVIEW_REQUIRED",
+        "message": "尚未推理；真实对齐仍须核验"
+      }
+    ],
+    "errors": [],
+    "provenance": {
+      "cli_version": "0.1.8",
+      "schema_version": "0.1.0",
+      "engine_version": "ffmpeg-local",
+      "started_at": "2026-10-25T00:35:10.098105Z",
+      "finished_at": "2026-10-25T00:35:10.098114Z",
+      "network": "disabled"
+    }
+  }
+}

@@ -1,0 +1,295 @@
+{
+  "status": "v1_quality_failure_preserved",
+  "unchanged_gate_ms": 66.66666666666667,
+  "cases": [
+    {
+      "name": "original",
+      "raw_max_error_ms": 258.1875,
+      "activity_max_error_ms": 210.0,
+      "passed": false
+    },
+    {
+      "name": "heldout",
+      "raw_max_error_ms": 286.5,
+      "activity_max_error_ms": 140.375,
+      "passed": false
+    },
+    {
+      "name": "awb",
+      "raw_max_error_ms": 353.1875,
+      "activity_max_error_ms": 13.25,
+      "passed": true
+    },
+    {
+      "name": "background",
+      "raw_max_error_ms": 353.1875,
+      "activity_max_error_ms": 8.25,
+      "passed": true
+    }
+  ],
+  "cause": "v1 low=max(2,2*noise,ceil(reference/316)) yields 27 PCM; original weak onset RMS repeatedly 8..27 PCM is dropped while later vowel reference is 8377 PCM",
+  "original_reference_type": "authored abs>=32 trimmed synthetic word blocks, not independent phonetic truth",
+  "weak_onset_frames": [
+    {
+      "start_sample": 8000,
+      "rms": 25.648099344785766,
+      "peak": 45,
+      "nonzero_samples": 78
+    },
+    {
+      "start_sample": 8080,
+      "rms": 13.951254423886047,
+      "peak": 31,
+      "nonzero_samples": 78
+    },
+    {
+      "start_sample": 8160,
+      "rms": 38.23512782769269,
+      "peak": 77,
+      "nonzero_samples": 79
+    },
+    {
+      "start_sample": 8240,
+      "rms": 38.15740426182054,
+      "peak": 77,
+      "nonzero_samples": 80
+    },
+    {
+      "start_sample": 8320,
+      "rms": 12.030689922028579,
+      "peak": 32,
+      "nonzero_samples": 72
+    },
+    {
+      "start_sample": 8400,
+      "rms": 10.547511554864494,
+      "peak": 21,
+      "nonzero_samples": 77
+    },
+    {
+      "start_sample": 8480,
+      "rms": 16.971667566859775,
+      "peak": 30,
+      "nonzero_samples": 76
+    },
+    {
+      "start_sample": 8560,
+      "rms": 19.564317008267885,
+      "peak": 39,
+      "nonzero_samples": 78
+    },
+    {
+      "start_sample": 8640,
+      "rms": 13.995088424157956,
+      "peak": 32,
+      "nonzero_samples": 72
+    },
+    {
+      "start_sample": 8720,
+      "rms": 10.46303015383211,
+      "peak": 18,
+      "nonzero_samples": 76
+    },
+    {
+      "start_sample": 8800,
+      "rms": 14.996249531132776,
+      "peak": 29,
+      "nonzero_samples": 75
+    },
+    {
+      "start_sample": 8880,
+      "rms": 9.790939689325024,
+      "peak": 23,
+      "nonzero_samples": 71
+    },
+    {
+      "start_sample": 8960,
+      "rms": 6.732384421584971,
+      "peak": 16,
+      "nonzero_samples": 74
+    },
+    {
+      "start_sample": 9040,
+      "rms": 11.102927541869306,
+      "peak": 23,
+      "nonzero_samples": 76
+    },
+    {
+      "start_sample": 9120,
+      "rms": 15.337454156410706,
+      "peak": 29,
+      "nonzero_samples": 78
+    },
+    {
+      "start_sample": 9200,
+      "rms": 18.649396773086256,
+      "peak": 33,
+      "nonzero_samples": 79
+    },
+    {
+      "start_sample": 9280,
+      "rms": 11.501630319219966,
+      "peak": 22,
+      "nonzero_samples": 78
+    },
+    {
+      "start_sample": 9360,
+      "rms": 8.322409506867588,
+      "peak": 16,
+      "nonzero_samples": 76
+    },
+    {
+      "start_sample": 9440,
+      "rms": 10.890936598842176,
+      "peak": 22,
+      "nonzero_samples": 79
+    },
+    {
+      "start_sample": 9520,
+      "rms": 12.092352955483891,
+      "peak": 23,
+      "nonzero_samples": 78
+    },
+    {
+      "start_sample": 9600,
+      "rms": 9.453174070120575,
+      "peak": 20,
+      "nonzero_samples": 73
+    },
+    {
+      "start_sample": 9680,
+      "rms": 14.718186029535026,
+      "peak": 23,
+      "nonzero_samples": 76
+    },
+    {
+      "start_sample": 9760,
+      "rms": 26.472391278462172,
+      "peak": 48,
+      "nonzero_samples": 78
+    },
+    {
+      "start_sample": 9840,
+      "rms": 18.403464347779742,
+      "peak": 36,
+      "nonzero_samples": 78
+    },
+    {
+      "start_sample": 9920,
+      "rms": 8.648699324175862,
+      "peak": 20,
+      "nonzero_samples": 76
+    },
+    {
+      "start_sample": 10000,
+      "rms": 8.586326339011347,
+      "peak": 19,
+      "nonzero_samples": 68
+    },
+    {
+      "start_sample": 10080,
+      "rms": 27.537020535998444,
+      "peak": 50,
+      "nonzero_samples": 79
+    },
+    {
+      "start_sample": 10160,
+      "rms": 26.911661041266107,
+      "peak": 45,
+      "nonzero_samples": 80
+    },
+    {
+      "start_sample": 10240,
+      "rms": 11.843774736121926,
+      "peak": 27,
+      "nonzero_samples": 77
+    },
+    {
+      "start_sample": 10320,
+      "rms": 15.740870369836605,
+      "peak": 30,
+      "nonzero_samples": 78
+    },
+    {
+      "start_sample": 10400,
+      "rms": 30.033939135584596,
+      "peak": 54,
+      "nonzero_samples": 80
+    },
+    {
+      "start_sample": 10480,
+      "rms": 8.378544026261364,
+      "peak": 18,
+      "nonzero_samples": 75
+    },
+    {
+      "start_sample": 10560,
+      "rms": 15.692354826475215,
+      "peak": 24,
+      "nonzero_samples": 78
+    },
+    {
+      "start_sample": 10640,
+      "rms": 20.37952403762168,
+      "peak": 35,
+      "nonzero_samples": 78
+    },
+    {
+      "start_sample": 10720,
+      "rms": 17.62632973707232,
+      "peak": 32,
+      "nonzero_samples": 76
+    },
+    {
+      "start_sample": 10800,
+      "rms": 8.709190547921201,
+      "peak": 21,
+      "nonzero_samples": 71
+    },
+    {
+      "start_sample": 10880,
+      "rms": 8.769977194953245,
+      "peak": 24,
+      "nonzero_samples": 70
+    },
+    {
+      "start_sample": 10960,
+      "rms": 14.219265100559873,
+      "peak": 26,
+      "nonzero_samples": 78
+    },
+    {
+      "start_sample": 11040,
+      "rms": 20.34883289036499,
+      "peak": 38,
+      "nonzero_samples": 79
+    },
+    {
+      "start_sample": 11120,
+      "rms": 4.136725758374611,
+      "peak": 10,
+      "nonzero_samples": 69
+    },
+    {
+      "start_sample": 11200,
+      "rms": 18.193405398660254,
+      "peak": 35,
+      "nonzero_samples": 76
+    },
+    {
+      "start_sample": 11280,
+      "rms": 24.330793246419237,
+      "peak": 47,
+      "nonzero_samples": 79
+    }
+  ],
+  "source_snapshot": {
+    "path": "failed-v1-source.zip",
+    "bytes": 1630992,
+    "sha256": "96fb3dce86ad690c30785c28bf4fbb65079a452a7404de60043afeb3a28a89bd",
+    "files": 207
+  },
+  "no_reference_or_gate_changes": true,
+  "no_v2_result_available": true,
+  "generator_sha256": "456296001c0c7c26ff01475e35a3ae9f34d840ffe3cd0fa01d82eecc9f9504a4"
+}

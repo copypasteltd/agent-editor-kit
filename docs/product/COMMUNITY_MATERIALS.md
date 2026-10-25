@@ -1,6 +1,6 @@
 # 开源素材、配音、翻译、配乐与 GPU 使用手册
 
-本轮交付是本机已安装验证的 **CLI 0.1.3 / `v0.1.0-alpha.4-local.1`**。公开 GitHub Release 仍为 alpha.3 / CLI 0.1.2；不要把这些新命令用于旧附件。注册入口仍只有 `$agent-ffmpeg-local-editor`，17 项内部模块继续保留。
+当前运行版本为 **CLI 0.1.8 / `v0.1.0-alpha.4-local.6`**，使用[匹配的本地包和 r7 kit](COMMUNITY_LOCAL_DELIVERY.md)。本页保留的素材/配音/翻译/GPU 专项实测基线为 **CLI 0.1.3 / local.1**，未在本轮重新推理全部这些任务。公开 GitHub Release 仍为 alpha.3 / CLI 0.1.2；不要把这些新命令用于旧附件。注册入口仍只有 `$agent-ffmpeg-local-editor`，17 项内部模块继续保留。
 
 ## 能力与交付层级
 

@@ -2,7 +2,12 @@
 
 <!-- community-current -->
 
-**目前本機：CLI 0.1.5 / alpha.4-local.3，一個 Skill / 17 內部模組。** 已加入離線圖文語義檢索、GPU 配音/翻譯、359 項資源及原生擷取。使用 [r4 kit](agent-editor-kit-community-unified-skill-r4.zip) 與[相符的本機套件](../product/COMMUNITY_LOCAL_DELIVERY.md)，K08 按需讀取[檢索流程](../product/SEMANTIC_RETRIEVAL.md)。下方 alpha.3/r1 流程保留為 CLI 0.1.2 歷史基線；目前版本、依賴及使用範圍以相符交付手冊為準。
+**Current local / 当前本机 / 目前本機：CLI 0.1.8 / alpha.4-local.6。** One registered Skill / 17 modules; [r7 kit](agent-editor-kit-community-unified-skill-r7.zip);
+CTC activity boundaries, native job recovery, independent four-source separation, offline image/text retrieval,
+GPU voice/translation and 359 resources. Public alpha.3 remains CLI 0.1.2.
+[Current delivery](../product/COMMUNITY_LOCAL_DELIVERY.md) · [74 declarations](../product/ctc-activity-capabilities-cli-0.1.8.json) ·
+[CTC workflow and limits](../product/CTC_ACTIVITY_ALIGNMENT.md) · [All 38 remaining gap groups](../product/GOAL_GAPS_20261025.md).
+Controlled word-block precision does not establish natural speech/Chinese/lyrics acceptance.
 
 <!-- /community-current -->
 

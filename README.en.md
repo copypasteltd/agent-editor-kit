@@ -11,13 +11,13 @@ This page includes functional modules, services/dependencies, installation/usage
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r6 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r6.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r7 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r7.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
 <!-- community-materials-gpu -->
 
-**Local installed extension: CLI 0.1.7, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
+**Local installed extension: CLI 0.1.8, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
 
 [Complete workflow and limits](docs/product/COMMUNITY_MATERIALS.en.md) · [Resource catalog](docs/product/COMMUNITY_MATERIAL_CATALOG.md) · [103 named voices and actual audition scope](docs/product/COMMUNITY_VOICES.md) · [CPU evidence](docs/validation/evidence/community-materials-20261025-r1/cpu/verification.json) · [GPU evidence](docs/validation/evidence/community-materials-20261025-r1/gpu/verification.json).
 
@@ -36,6 +36,26 @@ CPU 46 commands and GPU 15 commands are separate current tests. The real 12-seco
 <!-- /community-materials-gpu -->
 
 
+
+<!-- ctc-activity-r1 -->
+
+## Local CLI 0.1.8: word activity boundaries with raw timing retained
+
+Explicit `--boundary-mode activity --granularity whitespace` uses actual PCM to estimate isolated-word regions while retaining original CTC characters/word times. Register an existing native CTC Python/weights first; Kokoro/OPUS packs do not supply this model. Default `ctc` is unchanged; CPU/CUDA are explicit choices.
+
+Development and installed builds each run six actual GPU cases: maximum errors 4.3125–4.9375ms under the unchanged 66.6667ms gate. v1/v2 failures are retained. Controlled authored word blocks do not establish natural continuous-speech, Chinese, singing or overlap precision; G15 remains open.
+
+```powershell
+# Existing project/source and explicitly registered native CTC adapter required.
+& $avk subtitle align --project $project --asset-id speech --adapter-id ctc --transcript $text --output assets/alignment/words.json --granularity whitespace --boundary-mode activity --dry-run
+& $avk subtitle align --project $project --asset-id speech --adapter-id ctc --transcript $text --output assets/alignment/words.json --granularity whitespace --boundary-mode activity
+```
+
+[Workflow / 使用流程](docs/product/CTC_ACTIVITY_ALIGNMENT.md) · [Actual checks / 实测](docs/validation/CTC声学边界实测_2026-10-25.md) · [C17 / source, output and package](docs/product/CASES.md#c17-ctc-activity).
+
+![Actual installed applied captions — silent diagnostic](docs/assets/ctc-activity-20261025-r1/demo-r1/actual-output-silent.gif)
+
+<!-- /ctc-activity-r1 -->
 
 <!-- job-recovery-r1 -->
 
@@ -237,7 +257,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F22 | Custom LUTs and color automation | Local .cube/.3dl/.csp/.dat → registration/inspection; supported 3D LUT strength and color channels follow automation contracts. | `lut register/list/inspect; effects inspect` | Registration does not imply complete parsing on every path; full CUBE data is required for the corresponding intensity/float features. |
 | F23 | Explicit Float32 pixel pipeline | Declared source/working/output signals, ordering and budgets → float color, LUT/shaper, selected spatial processing and surfaces. | `render; preview; surface export/inspect` | Explicit float32-native-v1 selection; a bounded subset that refuses unsupported features, not a complete HDR/ICC pipeline. |
 | F24 | Subtitles, text and segmentation | SRT/VTT/ASS/SSA/TTML or text → normalization, segmentation, bilingual text, layers, word highlighting and text animation. | `subtitle validate/normalize/segment; timeline compose` | Fonts must exist locally; complex layout, bidi shaping and some clock/animation combinations have explicit approximations or refusals. |
-| F25 | Offline transcription and alignment | Audio + existing Whisper/CTC weights/corrected text → transcripts, captions, word/character timings and CER evaluation. | `asr adapter; subtitle transcribe/align/evaluate` | Weights are not bundled; segment timestamps are not precise word alignment, and the dated CTC quality gate failed. |
+| F25 | Offline transcription and alignment | Audio + existing Whisper/CTC weights/corrected text → transcripts, captions, word/character timings and CER evaluation. | `asr adapter; subtitle transcribe/align/evaluate` | Weights remain separate; activity preserves raw CTC and passes six controlled word-block cases. Natural continuous speech, Chinese and lyrics remain unaccepted. [Workflow](docs/product/CTC_ACTIVITY_ALIGNMENT.md) |
 | F26 | Multitrack audio and buses | Explicit audio tracks → mixing/buses, volume/pan, mute/solo, fades, EQ, compression, denoise, loudness and ducking. | `audio extract; timeline compose; quality check` | A video containing sound does not automatically author an audio track; PCM/LUFS checks do not replace listening. |
 | F27 | Local speech synthesis | Existing flite or registered SoulX weights/authorized voice references → WAV assets and optional audio tracks. | `tts adapter/voice; tts synthesize` | flite depends on the FFmpeg build and is ASCII-English only; SoulX needs CUDA/native dependencies, not bundled voices. |
 | F28 | Four-source and two-source separation | Audio → independent drums/bass/other/vocals estimates, float WAV assets and editable tracks; existing two-source and mid/side retained. | `audio separate-stems; audio separate; audio adapter` | Native runtime/weights supplied separately; controlled CPU/GPU tested; natural quality, listening and model rights open. |
@@ -633,12 +653,18 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R57 | Pinned installation and single r6 Skill | New eight-wheel bundle; 194 product Python files byte-identical; 79-file r6 kit, eight isolated configure/register/read-only/dry-run process calls | [Installation](docs/validation/evidence/job-recovery-20261025-r1/installation/verification.json) · [Kit](docs/validation/evidence/job-recovery-20261025-r1/kit-r1/verification.json); 2026-10-25, same physical host, no new public Release |
 | R58 | Current full-goal review | Six additional real read-only Skill calls; 74 declarations and all 38 unmet group conditions retained | [Numbered gaps](docs/product/GOAL_GAPS_20261025.md) · [Raw responses/API](docs/validation/evidence/goal-gaps-20261025-r6/inventory.json); 2026-10-25, zero new inference/rendering, public alpha.3 / CLI 0.1.2 |
 | R59 | Latest gaps and installation consistency | Six new actual read-only Skill calls; all 194 committed Python files byte-identical to the installation; all 38 original closure conditions retained | [Full gaps](docs/product/GOAL_GAPS_20261025.md) · [Fresh responses/API](docs/validation/evidence/goal-gaps-20261025-r7/inventory.json) · [Independent review](docs/validation/evidence/goal-gaps-20261025-r7/review.json); 2026-10-25, CTC activity boundaries remain an unintegrated draft, zero new inference/rendering/listening and no newly accepted capability |
+| R60 | Controlled word-boundary repair | Development/installed: 36 CLI calls and 6 real GPU forwards each; all boundaries pass in six cases | [Development](docs/validation/evidence/ctc-activity-20261025-r1/development-v3-r1/state.json) · [Installed](docs/validation/evidence/ctc-activity-20261025-r1/installed-r1/state.json); 2026-10-25; authored blocks, not phonetic truth; v1/v2 failures retained |
+| R61 | Installed contracts/regressions | 17 activity, 25 CTC and 22 ASR pass; CLI initially 121/122 with one development-path assumption failure; corrected test passes one targeted source/installed recheck each | [Tests / retained failure](docs/validation/CTC声学边界实测_2026-10-25.md) · [Targeted installed recheck](docs/validation/evidence/ctc-activity-20261025-r1/installed-runtime-recheck-r1/verification.json); 2026-10-25; neither the full 122 nor historical 2,930 rerun after test correction |
+| R62 | CPU, windows and cancellation | CPU: another 12 calls/2 forwards; compatibility: 7/5, raw default, 47-second windows, SRT clocks and cancellation/timeout metadata preservation | [CPU](docs/validation/evidence/ctc-activity-20261025-r1/cpu-v3-r1/state.json) · [Compatibility](docs/validation/evidence/ctc-activity-20261025-r1/extended-r1/verification.json); 2026-10-25; long-window structure is not precision acceptance |
+| R63 | Actual caption edit/package | 10 CLI calls/1 forward, 236 frames; package PCM and every decoded RGB frame match | [C17 / GIF](docs/product/CASES.md#c17-ctc-activity) · [Actual render](docs/validation/evidence/ctc-activity-20261025-r1/demo-r1/verification.json); 2026-10-25; silent diagnostic, no human listening/continuous playback |
+| R64 | Unified Skill r7 | 81 files/63 Skill files, one registration/17 modules; 8 isolated process calls | [Actual Skill](docs/validation/evidence/ctc-activity-20261025-r1/skill-r1/state.json) · [r7 kit](docs/validation/evidence/ctc-activity-20261025-r1/kit-r1/verification.json); 2026-10-25; same physical host, weights separate |
+| R65 | Current complete-goal review | Six additional read-only registered calls; 74 declarations and 38 remaining groups; all original closure conditions retained | [38 numbered gaps](docs/product/GOAL_GAPS_20261025.md) · [Read-only inventory/API](docs/validation/evidence/goal-gaps-20261025-r8/inventory.json); 2026-10-25; public alpha.3 / CLI 0.1.2; no full CapCut acceptance |
 
 ## Current limits and development direction
 
 The deliverable is an offline, editable and auditable Agent CLI workflow with explicit contracts. Openly licensed asset/template ecosystems, agreed AI/beauty/layout features, complete color processing, actual quality for supported draft profiles, broad natural-media acceptance and long-form resource performance remain open. Consumer GUI, accounts, cloud collaboration and arbitrary lossless private-draft interchange are outside current core acceptance. Later R113/R114 Float32 transition/runtime-closure candidates are not included in this release.
 
-The [2026-10-25 current goal-gap assessment](docs/product/GOAL_GAPS_20261025.md) updates 38 groups against local CLI 0.1.7: the single Skill, 359 resources, GPU TTS, English/Chinese translation, independent four-source separation and bounded interruption recovery are delivered within their documented limits; advanced AI, natural-media quality, complex combinations, performance/reliability and a new public package remain open. First address known alignment/audio failures, actual Agent tasks, human quality acceptance, long-form resources and clean-host installation; then expand content/templates and the remaining AI scope. R59 records the latest read-only verification and the unintegrated development draft. The evidence does not establish an overall completion percentage. The [2026-10-24 assessment](docs/product/GOAL_GAPS_20261024.md) remains an alpha.3 historical snapshot.
+[The complete-goal assessment](docs/product/GOAL_GAPS_20261025.md) updates every G01–G38 against CLI 0.1.8. A single Skill, 500 looks/previews, 359 resources, GPU voice/translation, stems/recovery and controlled word activity timing are delivered. Natural audiovisual quality, complex combinations, advanced AI, content/templates, autonomous Agent tasks, long-job reliability and a newer public release remain open. R60–R65 retain separate real scopes and limits; no overall completion percentage is established. The [2026-10-24 assessment](docs/product/GOAL_GAPS_20261024.md) is historical.
 
 Exact audio-channel relationship protection and native capture remain delivered within their documented scope. Extremely short-window pitch, precise alignment, actual camera/microphone recording and AV synchronization remain unaccepted. CLI 0.1.5 adds limited visual semantic retrieval; neither the 500 looks nor the 74 declarations establish an overall completion percentage.
 

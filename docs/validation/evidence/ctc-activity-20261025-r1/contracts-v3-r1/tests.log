@@ -1,0 +1,22 @@
+test_bad_activity_diagnostics_reject_without_committing (test_ctc_activity.ActivityCliTests.test_bad_activity_diagnostics_reject_without_committing) ... ok
+test_explicit_dry_run_and_invalid_character_mode_do_not_infer (test_ctc_activity.ActivityCliTests.test_explicit_dry_run_and_invalid_character_mode_do_not_infer) ... ok
+test_protocol_keeps_raw_and_applies_units_with_review (test_ctc_activity.ActivityCliTests.test_protocol_keeps_raw_and_applies_units_with_review) ... ok
+test_cancellation_and_invalid_pcm_or_order (test_ctc_activity.ActivityPcmTests.test_cancellation_and_invalid_pcm_or_order) ... ok
+test_dc_noise_and_scale_preserve_isolated_bounds (test_ctc_activity.ActivityPcmTests.test_dc_noise_and_scale_preserve_isolated_bounds) ... ok
+test_internal_gap_limit_does_not_pad_external_silence (test_ctc_activity.ActivityPcmTests.test_internal_gap_limit_does_not_pad_external_silence) ... ok
+test_isolated_region_uses_sound_and_retains_every_other_field (test_ctc_activity.ActivityPcmTests.test_isolated_region_uses_sound_and_retains_every_other_field) ... ok
+test_movement_budget_and_cross_region_anchor_preserve_raw (test_ctc_activity.ActivityPcmTests.test_movement_budget_and_cross_region_anchor_preserve_raw) ... ok
+test_noise_and_silence_are_not_high_confidence_boundaries (test_ctc_activity.ActivityPcmTests.test_noise_and_silence_are_not_high_confidence_boundaries) ... ok
+test_offset_and_non_frame_tail_use_absolute_sample_clock (test_ctc_activity.ActivityPcmTests.test_offset_and_non_frame_tail_use_absolute_sample_clock) ... ok
+test_one_continuous_activity_cannot_invent_internal_word_boundary (test_ctc_activity.ActivityPcmTests.test_one_continuous_activity_cannot_invent_internal_word_boundary) ... ok
+test_short_gap_between_two_anchored_words_stays_separate (test_ctc_activity.ActivityPcmTests.test_short_gap_between_two_anchored_words_stays_separate) ... ok
+test_short_impulse_is_rejected (test_ctc_activity.ActivityPcmTests.test_short_impulse_is_rejected) ... ok
+test_weak_component_near_two_anchored_words_remains_ambiguous (test_ctc_activity.ActivityPcmTests.test_weak_component_near_two_anchored_words_remains_ambiguous) ... ok
+test_weak_onset_and_tail_do_not_inherit_global_vowel_loudness (test_ctc_activity.ActivityPcmTests.test_weak_onset_and_tail_do_not_inherit_global_vowel_loudness) ... ok
+test_weak_support_across_gap_attaches_without_padding (test_ctc_activity.ActivityPcmTests.test_weak_support_across_gap_attaches_without_padding) ... ok
+test_controller_recomputes_source_audio_and_rejects_mutated_evidence (test_ctc_activity.ActivityValidationTests.test_controller_recomputes_source_audio_and_rejects_mutated_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 5.420s
+
+OK

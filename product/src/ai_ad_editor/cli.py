@@ -648,6 +648,8 @@ def build_parser() -> argparse.ArgumentParser:
         subtitle_align.add_argument('--' + name, required=True)
     subtitle_align.add_argument('--case', choices=('upper', 'lower', 'preserve'), default='upper')
     subtitle_align.add_argument('--granularity', choices=('character', 'whitespace'), default='character')
+    subtitle_align.add_argument('--boundary-mode', choices=('ctc', 'activity'), default='ctc',
+                                help='ctc 保留原字符峰；activity 用 PCM 活动估计孤立词边界并保留原时间，须 whitespace')
     subtitle_align.add_argument('--window-seconds', type=float, default=30.0)
     subtitle_align.add_argument('--context-seconds', type=float, default=.5)
     subtitle_align.add_argument('--timeout', type=float, default=3600)

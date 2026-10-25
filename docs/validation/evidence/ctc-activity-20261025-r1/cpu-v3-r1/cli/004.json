@@ -1,0 +1,282 @@
+{
+  "argv": [
+    "subtitle",
+    "align",
+    "--project",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\cpu-v3-r1\\original",
+    "--asset-id",
+    "speech",
+    "--adapter-id",
+    "ctc",
+    "--transcript",
+    "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ctc-alignment-20261018\\transcript.txt",
+    "--output",
+    "assets/alignment/activity.json",
+    "--granularity",
+    "whitespace",
+    "--boundary-mode",
+    "activity",
+    "--timeout",
+    "600",
+    "--dry-run"
+  ],
+  "exit_code": 0,
+  "seconds": 1.345,
+  "stderr": "",
+  "result": {
+    "ok": true,
+    "command": "subtitle.align",
+    "request_id": "req_20261025010102_9197e088",
+    "operation_id": null,
+    "status": "planned",
+    "data": {
+      "output": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\cpu-v3-r1\\original\\assets\\alignment\\activity.json",
+      "srt": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\cpu-v3-r1\\original\\assets\\alignment\\activity.srt",
+      "transcript_copy": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\cpu-v3-r1\\original\\assets\\alignment\\activity.transcript.txt",
+      "source_sha256": "sha256:eea24cb10f383c972a64ae8742795e3eb5e404ba4dd37f98440197f8c84a0d30",
+      "transcript_sha256": "sha256:39c37b920c4d4972a6b5314a294f67c6ed8569735741f099b7c05ee9b8519684",
+      "adapter_id": "ctc",
+      "model_sha256": "sha256:28fbfe98ec53bf65826e3072ecdda99a9d471ed2c23fcb4c07baf041eac4f953",
+      "prepared": {
+        "original_text": "RED BLUE GREEN RED BLUE GREEN",
+        "original_file_text": "RED BLUE GREEN RED BLUE GREEN",
+        "format": "txt",
+        "index_basis": "original_text-unicode-codepoints",
+        "segments": [
+          {
+            "text": "RED BLUE GREEN RED BLUE GREEN",
+            "start_char": 0,
+            "end_char": 29,
+            "start_sample": 0,
+            "end_sample": null,
+            "tokens": [
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 0,
+                "end_char": 1
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 1,
+                "end_char": 2
+              },
+              {
+                "text": "D",
+                "token": "D",
+                "token_id": 14,
+                "start_char": 2,
+                "end_char": 3
+              },
+              {
+                "text": "B",
+                "token": "B",
+                "token_id": 24,
+                "start_char": 4,
+                "end_char": 5
+              },
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 5,
+                "end_char": 6
+              },
+              {
+                "text": "U",
+                "token": "U",
+                "token_id": 16,
+                "start_char": 6,
+                "end_char": 7
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 7,
+                "end_char": 8
+              },
+              {
+                "text": "G",
+                "token": "G",
+                "token_id": 21,
+                "start_char": 9,
+                "end_char": 10
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 10,
+                "end_char": 11
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 11,
+                "end_char": 12
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 12,
+                "end_char": 13
+              },
+              {
+                "text": "N",
+                "token": "N",
+                "token_id": 9,
+                "start_char": 13,
+                "end_char": 14
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 15,
+                "end_char": 16
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 16,
+                "end_char": 17
+              },
+              {
+                "text": "D",
+                "token": "D",
+                "token_id": 14,
+                "start_char": 17,
+                "end_char": 18
+              },
+              {
+                "text": "B",
+                "token": "B",
+                "token_id": 24,
+                "start_char": 19,
+                "end_char": 20
+              },
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 20,
+                "end_char": 21
+              },
+              {
+                "text": "U",
+                "token": "U",
+                "token_id": 16,
+                "start_char": 21,
+                "end_char": 22
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 22,
+                "end_char": 23
+              },
+              {
+                "text": "G",
+                "token": "G",
+                "token_id": 21,
+                "start_char": 24,
+                "end_char": 25
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 25,
+                "end_char": 26
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 26,
+                "end_char": 27
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 27,
+                "end_char": 28
+              },
+              {
+                "text": "N",
+                "token": "N",
+                "token_id": 9,
+                "start_char": 28,
+                "end_char": 29
+              }
+            ],
+            "ignored": [
+              {
+                "start_char": 3,
+                "end_char": 4,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 8,
+                "end_char": 9,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 14,
+                "end_char": 15,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 18,
+                "end_char": 19,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 23,
+                "end_char": 24,
+                "text": " ",
+                "reason": "whitespace"
+              }
+            ]
+          }
+        ],
+        "case": "upper",
+        "granularity": "whitespace",
+        "boundary_mode": "activity",
+        "stride_samples": 320,
+        "receptive_samples": 400
+      },
+      "applied": false,
+      "network": "disabled"
+    },
+    "artifacts": [],
+    "warnings": [
+      {
+        "code": "ALIGNMENT_REVIEW_REQUIRED",
+        "message": "尚未推理；真实对齐仍须核验"
+      }
+    ],
+    "errors": [],
+    "provenance": {
+      "cli_version": "0.1.8",
+      "schema_version": "0.1.0",
+      "engine_version": "ffmpeg-local",
+      "started_at": "2026-10-25T01:01:02.419175Z",
+      "finished_at": "2026-10-25T01:01:02.419200Z",
+      "network": "disabled"
+    }
+  }
+}

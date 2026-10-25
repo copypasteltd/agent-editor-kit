@@ -1,0 +1,68 @@
+{
+  "argv": [
+    "convert",
+    "import",
+    "--input",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\activity.aevpkg.zip",
+    "--output",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\对齐往返 工程"
+  ],
+  "exit_code": 0,
+  "result": {
+    "ok": true,
+    "command": "convert.import",
+    "request_id": "req_20261025011400_b00526d7",
+    "operation_id": null,
+    "status": "succeeded",
+    "data": {
+      "root": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\对齐往返 工程",
+      "project": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\对齐往返 工程\\project.json",
+      "report": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\对齐往返 工程\\validation\\conversion_report_20261025011400_a25e607e.json",
+      "report_data": {
+        "report_version": "0.1.0",
+        "direction": "import",
+        "source_format": "agent-project-package/0.1.0",
+        "target_format": "agent-project/0.1.0",
+        "created_at": "2026-10-25T01:14:00.685974Z",
+        "items": [
+          {
+            "capability": "project-package",
+            "status": "Exact",
+            "source": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\activity.aevpkg.zip",
+            "target": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\对齐往返 工程",
+            "detail": "manifest、文件哈希和本地路径安全检查通过"
+          },
+          {
+            "capability": "project-model",
+            "status": "Exact",
+            "source": "agent-project-package/0.1.0",
+            "target": "Agent Project JSON",
+            "detail": ""
+          },
+          {
+            "capability": "rights-ledger",
+            "status": "Exact",
+            "source": "rights-ledger.json",
+            "target": "项目 Rights Ledger",
+            "detail": ""
+          }
+        ],
+        "warnings": [],
+        "failures": []
+      }
+    },
+    "artifacts": [],
+    "warnings": [],
+    "errors": [],
+    "provenance": {
+      "cli_version": "0.1.8",
+      "schema_version": "0.1.0",
+      "engine_version": "ffmpeg-local",
+      "started_at": "2026-10-25T01:14:00.710321Z",
+      "finished_at": "2026-10-25T01:14:00.710327Z",
+      "network": "disabled"
+    }
+  },
+  "stderr": "",
+  "seconds": 8.090902899999492
+}

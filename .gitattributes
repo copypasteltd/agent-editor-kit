@@ -1476,3 +1476,14 @@ docs/skills/community-unified-skill-package-0.1.7.json -text -whitespace
 scripts/*four_stem*20261025.py text eol=lf
 scripts/assess_goal_gaps_20261025_r4.py text eol=lf
 docs/validation/独立四轨音源分离实测_2026-10-25.md text eol=lf
+
+# Frozen CTC references, raw real-run receipts and failed source snapshots.
+docs/assets/ctc-activity-20261025-r1/** -text -whitespace
+docs/validation/evidence/ctc-activity-20261025-r1/** -text -whitespace
+docs/validation/evidence/goal-gaps-20261025-r8/** -text -whitespace
+docs/third-party/ctc-activity-source-20261025/** -text -whitespace
+docs/specs/CTC声学活动边界契约_20261025.md -text -whitespace
+docs/product/ctc-activity-capabilities-cli-0.1.8.json -text -whitespace
+docs/skills/community-unified-skill-package-0.1.8.json -text -whitespace
+docs/validation/CTC声学边界实测_2026-10-25.md text eol=lf
+scripts/*ctc_activity*20261025.py text eol=lf

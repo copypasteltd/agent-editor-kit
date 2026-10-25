@@ -1,6 +1,6 @@
 # Community materials, voice, translation, music and GPU workflow
 
-The verified local build is **CLI 0.1.3 / `v0.1.0-alpha.4-local.1`**. The public GitHub Release remains alpha.3 / CLI 0.1.2; its old archive does not contain these commands. Invoke only `$agent-ffmpeg-local-editor`; its 17 internal modules remain available.
+The current runtime is **CLI 0.1.8 / `v0.1.0-alpha.4-local.6`**, paired with the [matching local bundle and r7 kit](COMMUNITY_LOCAL_DELIVERY.md). This page preserves the materials/voice/translation/GPU evidence from **CLI 0.1.3 / local.1**; those tasks were not all rerun in this increment. The public GitHub Release remains alpha.3 / CLI 0.1.2; its old archive does not contain these commands. Invoke only `$agent-ffmpeg-local-editor`; its 17 internal modules remain available.
 
 | ID | Module | Implemented | Limits |
 |---|---|---|---|

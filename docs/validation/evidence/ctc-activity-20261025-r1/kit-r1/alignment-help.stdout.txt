@@ -1,0 +1,47 @@
+usage: ai-ad-editor subtitle align [-h] [--format {json,text}]
+                                   [--request-id REQUEST_ID]
+                                   [--idempotency-key IDEMPOTENCY_KEY]
+                                   [--dry-run] [--no-network]
+                                   [--progress {none,jsonl}] --project PROJECT
+                                   --asset-id ASSET_ID --transcript TRANSCRIPT
+                                   --adapter-id ADAPTER_ID --output OUTPUT
+                                   [--case {upper,lower,preserve}]
+                                   [--granularity {character,whitespace}]
+                                   [--boundary-mode {ctc,activity}]
+                                   [--window-seconds WINDOW_SECONDS]
+                                   [--context-seconds CONTEXT_SECONDS]
+                                   [--timeout TIMEOUT]
+                                   [--cancel-file CANCEL_FILE] [--apply]
+                                   [--track-id TRACK_ID]
+                                   [--sequence-id SEQUENCE_ID]
+                                   [--font-asset-id FONT_ASSET_ID]
+                                   [--replace-track]
+                                   [--timeline-start-tick TIMELINE_START_TICK]
+
+options:
+  -h, --help            show this help message and exit
+  --format {json,text}  输出格式
+  --request-id REQUEST_ID
+  --idempotency-key IDEMPOTENCY_KEY
+  --dry-run
+  --no-network
+  --progress {none,jsonl}
+  --project PROJECT
+  --asset-id ASSET_ID
+  --transcript TRANSCRIPT
+  --adapter-id ADAPTER_ID
+  --output OUTPUT
+  --case {upper,lower,preserve}
+  --granularity {character,whitespace}
+  --boundary-mode {ctc,activity}
+                        ctc 保留原字符峰；activity 用 PCM 活动估计孤立词边界并保留原时间，须 whitespace
+  --window-seconds WINDOW_SECONDS
+  --context-seconds CONTEXT_SECONDS
+  --timeout TIMEOUT
+  --cancel-file CANCEL_FILE
+  --apply
+  --track-id TRACK_ID
+  --sequence-id SEQUENCE_ID
+  --font-asset-id FONT_ASSET_ID
+  --replace-track
+  --timeline-start-tick TIMELINE_START_TICK

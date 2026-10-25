@@ -1,0 +1,33 @@
+{
+  "argv": [
+    "project",
+    "init",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\development-v2-r1\\original"
+  ],
+  "exit_code": 0,
+  "seconds": 0.174,
+  "stderr": "",
+  "result": {
+    "ok": true,
+    "command": "project.init",
+    "request_id": "req_20261025004612_8fc314fa",
+    "operation_id": null,
+    "status": "succeeded",
+    "data": {
+      "project": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\development-v2-r1\\original\\project.json",
+      "root": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\development-v2-r1\\original",
+      "project_id": "proj_20261025004612_932d0db8"
+    },
+    "artifacts": [],
+    "warnings": [],
+    "errors": [],
+    "provenance": {
+      "cli_version": "0.1.8",
+      "schema_version": "0.1.0",
+      "engine_version": "ffmpeg-local",
+      "started_at": "2026-10-25T00:46:12.330494Z",
+      "finished_at": "2026-10-25T00:46:12.330511Z",
+      "network": "disabled"
+    }
+  }
+}

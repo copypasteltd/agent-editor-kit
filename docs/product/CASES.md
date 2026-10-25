@@ -464,3 +464,35 @@ The current installed build renders a six-second numeric diagnostic with four ed
 同一安装工程另在实际 worker 启动、第一输出、元数据待提交和已提交后四个位置强制结束 CLI：前三者恢复原元数据并回收未提交输出；最后保留提交后的 4 WAV/四轨，只清理工作目录。三个边界仅加入观察暂停，模型/DSP/恢复实现未替换；正常渲染流程未注入。
 
 [Four real hard-stop cases](../validation/evidence/job-recovery-20261025-r1/faults-r1/verification.json) · [Full report/retained failures](../validation/任务中断恢复实测_2026-10-25.md) · [Recovery workflow](JOB_RECOVERY.md)。旧非管理缓存保留；断电、磁盘不足、其他模型缓存、长并发、自然音频质量和人工听审仍开放，未关闭完整 G33/G36。
+
+
+<a id="c17-ctc-activity"></a>
+
+## C17：原 CTC、活动估计与实际高亮字幕 / Raw CTC, activity timing and applied captions
+
+CLI 0.1.8 固定安装版，通过实际注册的统一 Skill 执行。原 CTC 字符/词时间保留，
+activity 用同一 PCM 估计有静音分隔的词区间，控制器独立重算；原音仍是独立可编辑音轨。
+下图是实际成片的无声诊断，不是自然语音精度或听感验收。
+
+![Actual installed applied-caption output, silent](../assets/ctc-activity-20261025-r1/demo-r1/actual-output-silent.gif)
+
+| 项目 / Item | 实际结果与边界 / Actual result and limit |
+|---|---|
+| 输入 / Input | [原六词 WAV](../assets/ctc-alignment-20261018/input.wav) + [校正文](../assets/ctc-alignment-20261018/transcript.txt) + [不变的作者词块参考](../assets/ctc-alignment-20261018/input-provenance.json)，125850 样本/16kHz/7.865625 秒；不是自然音素精标 |
+| 原图与无字幕视频 / Original board | [PNG](../assets/ctc-activity-20261025-r1/demo-r1/comparison-board.png) · [原图无声 MP4](../assets/ctc-activity-20261025-r1/demo-r1/original-board-silent.mp4)；灰=作者摆放、橙=原 CTC 峰、绿=实际 activity |
+| 实际输出 / Actual output | [无声 MP4](../assets/ctc-activity-20261025-r1/demo-r1/actual-output-silent.mp4) · [实际第 30 帧](../assets/ctc-activity-20261025-r1/demo-r1/actual-frame-30.png) · [应用的时码](../assets/ctc-activity-20261025-r1/demo-r1/applied-alignment.json)；1280×720 / 30fps / 236 帧 |
+| GIF | 79 帧 / 7900ms，实际抽取的无声预览，合并相同帧后的帧数按实际文件记录 |
+| 模型与成片 / Execution | 10 次真实 Skill CLI / 1 次 CUDA 前向；`--apply` 写入可编辑字幕，独立音轨与画面经实际 render/quality/package 执行 |
+| PCM 与往返 / Preservation | 与原音重采样最大差 0.0；工程包导入并重渲染，PCM 和全部解码 RGB 逐帧摘要完全相同 |
+| 本机完整音画和工程 / Local AV and project | `local/agent-ffmpeg/ctc-activity-20261025-r1/installed-r1/original/renders/activity.mkv`；同 run 下 `activity.aevpkg.zip`；公共预览为无声诊断 |
+| 来源与复现 / Provenance | [图形来源](../assets/ctc-activity-20261025-r1/demo-r1/SOURCE.json) · [实际执行/摘要](../validation/evidence/ctc-activity-20261025-r1/demo-r1/verification.json) · [执行器副本](../validation/evidence/ctc-activity-20261025-r1/demo-r1/executed-generator.py) |
+
+本原输入在新模式下最大边界误差为 4.75ms，原始 CTC 为 258.1875ms；门槛仍是全词起止 66.6667ms。
+另五组受控输入、CPU、安装版与真实 Skill 分别见[完整实测和保留失败](../validation/CTC声学边界实测_2026-10-25.md)。
+静态 PNG 已目检；自动解码、连续人工播放、听审和自然精标分别记录，后面三项本轮没有完成。
+G15/G33/G36 和完整剪映等价仍开放。
+
+English: the installed unified Skill produces actual editable highlighted captions and an independent audio track.
+The source/roundtrip PCM and every decoded RGB frame match. Public previews are silent diagnostics;
+controlled authored blocks are not natural phonetic truth. Human listening, continuous playback,
+natural speech, Chinese, singing and overlapping voices remain unaccepted.

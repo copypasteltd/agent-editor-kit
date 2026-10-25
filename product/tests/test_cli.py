@@ -1691,10 +1691,28 @@ print(json.dumps({
             self.assertTrue(any(item.get("code") == "LUT_HASH_MISMATCH" for item in rejected["errors"]), rejected)
 
     def test_runtime_storage_is_local_to_product(self) -> None:
-        paths = configure_local_runtime()
-        self.assertEqual(Path(paths["root"]).resolve(), (ROOT / "product" / ".runtime").resolve())
-        self.assertTrue(Path(paths["temp"]).is_dir())
-        self.assertTrue(Path(paths["cache"]).is_dir())
+        import ai_ad_editor.runtime as tested_runtime
+
+        # Both source/product/src and installed/site own their runtime paths.
+        # A caller override is a separate contract, not the default under test.
+        package_owner = Path(tested_runtime.__file__).resolve().parents[2]
+        with patch.dict(os.environ), patch.object(tempfile, "tempdir", tempfile.tempdir):
+            os.environ.pop("AI_AD_EDITOR_RUNTIME_DIR", None)
+            paths = configure_local_runtime()
+            self.assertEqual(Path(paths["root"]).resolve(), package_owner / ".runtime")
+            for name in ("temp", "cache", "models", "huggingface", "torch", "pip"):
+                self.assertTrue(Path(paths[name]).is_dir())
+                self.assertTrue(Path(paths[name]).resolve().is_relative_to(package_owner / ".runtime"))
+            self.assertEqual(os.environ["TEMP"], paths["temp"])
+            self.assertEqual(os.environ["HF_HUB_OFFLINE"], "1")
+            self.assertEqual(os.environ["TRANSFORMERS_OFFLINE"], "1")
+        with tempfile.TemporaryDirectory(prefix="aek-explicit-runtime-") as raw:
+            explicit = Path(raw) / "configured runtime"
+            with patch.dict(os.environ, AI_AD_EDITOR_RUNTIME_DIR=str(explicit)), patch.object(tempfile, "tempdir", tempfile.tempdir):
+                paths = configure_local_runtime()
+                self.assertEqual(Path(paths["root"]).resolve(), explicit.resolve())
+                self.assertEqual(Path(os.environ["TEMP"]).resolve(), explicit / "temp")
+                self.assertEqual(Path(os.environ["HF_HOME"]).resolve(), explicit / "models" / "huggingface")
 
     def test_cli_unicode_paths_and_progress_use_utf8_pipes(self) -> None:
         with tempfile.TemporaryDirectory(prefix="ai-ad-editor-utf8-") as raw:

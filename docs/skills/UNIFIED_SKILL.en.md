@@ -2,7 +2,12 @@
 
 <!-- community-current -->
 
-**Current local: CLI 0.1.5 / alpha.4-local.3, one Skill / 17 internal modules.** Offline visual semantic retrieval, GPU voice/translation, 359 resources and native capture are available within documented limits. Use the [r4 kit](agent-editor-kit-community-unified-skill-r4.zip) with its [matching local runtime](../product/COMMUNITY_LOCAL_DELIVERY.md); K08 reads the [retrieval workflow](../product/SEMANTIC_RETRIEVAL.md) as needed. The alpha.3/r1 procedure below is preserved as the CLI 0.1.2 historical baseline; use the matching delivery guide for current versions and dependencies.
+**Current local / 当前本机 / 目前本機：CLI 0.1.8 / alpha.4-local.6。** One registered Skill / 17 modules; [r7 kit](agent-editor-kit-community-unified-skill-r7.zip);
+CTC activity boundaries, native job recovery, independent four-source separation, offline image/text retrieval,
+GPU voice/translation and 359 resources. Public alpha.3 remains CLI 0.1.2.
+[Current delivery](../product/COMMUNITY_LOCAL_DELIVERY.md) · [74 declarations](../product/ctc-activity-capabilities-cli-0.1.8.json) ·
+[CTC workflow and limits](../product/CTC_ACTIVITY_ALIGNMENT.md) · [All 38 remaining gap groups](../product/GOAL_GAPS_20261025.md).
+Controlled word-block precision does not establish natural speech/Chinese/lyrics acceptance.
 
 <!-- /community-current -->
 

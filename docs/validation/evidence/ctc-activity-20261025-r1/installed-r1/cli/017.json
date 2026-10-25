@@ -1,0 +1,1791 @@
+{
+  "argv": [
+    "subtitle",
+    "align",
+    "--project",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\awb",
+    "--asset-id",
+    "speech",
+    "--adapter-id",
+    "ctc",
+    "--transcript",
+    "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ctc-activity-20261025-r1\\input\\transcript.txt",
+    "--output",
+    "assets/alignment/activity.json",
+    "--granularity",
+    "whitespace",
+    "--boundary-mode",
+    "activity",
+    "--timeout",
+    "600"
+  ],
+  "exit_code": 0,
+  "seconds": 21.788,
+  "stderr": "",
+  "result": {
+    "ok": true,
+    "command": "subtitle.align",
+    "request_id": "req_20261025010314_f00fa3e6",
+    "operation_id": "op_20261025010314_e72284bf",
+    "status": "succeeded",
+    "data": {
+      "output": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\awb\\assets\\alignment\\activity.json",
+      "srt": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\awb\\assets\\alignment\\activity.srt",
+      "transcript_copy": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\awb\\assets\\alignment\\activity.transcript.txt",
+      "source_sha256": "sha256:d36a2862c82c02abd11831c86cfb48441e6e1a86eab6832b8da52c2525ef9bbf",
+      "transcript_sha256": "sha256:d7962912bb060e1e0e12bcf68c09ac97d61f8859083dab5c64583da9b181e85b",
+      "adapter_id": "ctc",
+      "model_sha256": "sha256:885a11a9c463642db7b0eaa93fe70d89f4e2a98fd586a69d40921d279427ddd3",
+      "prepared": {
+        "original_text": "SHARP BRIGHT CAMERA FOLLOWS QUIET PEOPLE THROUGH WINTER",
+        "original_file_text": "SHARP BRIGHT CAMERA FOLLOWS QUIET PEOPLE THROUGH WINTER",
+        "format": "txt",
+        "index_basis": "original_text-unicode-codepoints",
+        "segments": [
+          {
+            "text": "SHARP BRIGHT CAMERA FOLLOWS QUIET PEOPLE THROUGH WINTER",
+            "start_char": 0,
+            "end_char": 55,
+            "start_sample": 0,
+            "end_sample": null,
+            "tokens": [
+              {
+                "text": "S",
+                "token": "S",
+                "token_id": 12,
+                "start_char": 0,
+                "end_char": 1
+              },
+              {
+                "text": "H",
+                "token": "H",
+                "token_id": 11,
+                "start_char": 1,
+                "end_char": 2
+              },
+              {
+                "text": "A",
+                "token": "A",
+                "token_id": 7,
+                "start_char": 2,
+                "end_char": 3
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 3,
+                "end_char": 4
+              },
+              {
+                "text": "P",
+                "token": "P",
+                "token_id": 23,
+                "start_char": 4,
+                "end_char": 5
+              },
+              {
+                "text": "B",
+                "token": "B",
+                "token_id": 24,
+                "start_char": 6,
+                "end_char": 7
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 7,
+                "end_char": 8
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 8,
+                "end_char": 9
+              },
+              {
+                "text": "G",
+                "token": "G",
+                "token_id": 21,
+                "start_char": 9,
+                "end_char": 10
+              },
+              {
+                "text": "H",
+                "token": "H",
+                "token_id": 11,
+                "start_char": 10,
+                "end_char": 11
+              },
+              {
+                "text": "T",
+                "token": "T",
+                "token_id": 6,
+                "start_char": 11,
+                "end_char": 12
+              },
+              {
+                "text": "C",
+                "token": "C",
+                "token_id": 19,
+                "start_char": 13,
+                "end_char": 14
+              },
+              {
+                "text": "A",
+                "token": "A",
+                "token_id": 7,
+                "start_char": 14,
+                "end_char": 15
+              },
+              {
+                "text": "M",
+                "token": "M",
+                "token_id": 17,
+                "start_char": 15,
+                "end_char": 16
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 16,
+                "end_char": 17
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 17,
+                "end_char": 18
+              },
+              {
+                "text": "A",
+                "token": "A",
+                "token_id": 7,
+                "start_char": 18,
+                "end_char": 19
+              },
+              {
+                "text": "F",
+                "token": "F",
+                "token_id": 20,
+                "start_char": 20,
+                "end_char": 21
+              },
+              {
+                "text": "O",
+                "token": "O",
+                "token_id": 8,
+                "start_char": 21,
+                "end_char": 22
+              },
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 22,
+                "end_char": 23
+              },
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 23,
+                "end_char": 24
+              },
+              {
+                "text": "O",
+                "token": "O",
+                "token_id": 8,
+                "start_char": 24,
+                "end_char": 25
+              },
+              {
+                "text": "W",
+                "token": "W",
+                "token_id": 18,
+                "start_char": 25,
+                "end_char": 26
+              },
+              {
+                "text": "S",
+                "token": "S",
+                "token_id": 12,
+                "start_char": 26,
+                "end_char": 27
+              },
+              {
+                "text": "Q",
+                "token": "Q",
+                "token_id": 30,
+                "start_char": 28,
+                "end_char": 29
+              },
+              {
+                "text": "U",
+                "token": "U",
+                "token_id": 16,
+                "start_char": 29,
+                "end_char": 30
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 30,
+                "end_char": 31
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 31,
+                "end_char": 32
+              },
+              {
+                "text": "T",
+                "token": "T",
+                "token_id": 6,
+                "start_char": 32,
+                "end_char": 33
+              },
+              {
+                "text": "P",
+                "token": "P",
+                "token_id": 23,
+                "start_char": 34,
+                "end_char": 35
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 35,
+                "end_char": 36
+              },
+              {
+                "text": "O",
+                "token": "O",
+                "token_id": 8,
+                "start_char": 36,
+                "end_char": 37
+              },
+              {
+                "text": "P",
+                "token": "P",
+                "token_id": 23,
+                "start_char": 37,
+                "end_char": 38
+              },
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 38,
+                "end_char": 39
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 39,
+                "end_char": 40
+              },
+              {
+                "text": "T",
+                "token": "T",
+                "token_id": 6,
+                "start_char": 41,
+                "end_char": 42
+              },
+              {
+                "text": "H",
+                "token": "H",
+                "token_id": 11,
+                "start_char": 42,
+                "end_char": 43
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 43,
+                "end_char": 44
+              },
+              {
+                "text": "O",
+                "token": "O",
+                "token_id": 8,
+                "start_char": 44,
+                "end_char": 45
+              },
+              {
+                "text": "U",
+                "token": "U",
+                "token_id": 16,
+                "start_char": 45,
+                "end_char": 46
+              },
+              {
+                "text": "G",
+                "token": "G",
+                "token_id": 21,
+                "start_char": 46,
+                "end_char": 47
+              },
+              {
+                "text": "H",
+                "token": "H",
+                "token_id": 11,
+                "start_char": 47,
+                "end_char": 48
+              },
+              {
+                "text": "W",
+                "token": "W",
+                "token_id": 18,
+                "start_char": 49,
+                "end_char": 50
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 50,
+                "end_char": 51
+              },
+              {
+                "text": "N",
+                "token": "N",
+                "token_id": 9,
+                "start_char": 51,
+                "end_char": 52
+              },
+              {
+                "text": "T",
+                "token": "T",
+                "token_id": 6,
+                "start_char": 52,
+                "end_char": 53
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 53,
+                "end_char": 54
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 54,
+                "end_char": 55
+              }
+            ],
+            "ignored": [
+              {
+                "start_char": 5,
+                "end_char": 6,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 12,
+                "end_char": 13,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 19,
+                "end_char": 20,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 27,
+                "end_char": 28,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 33,
+                "end_char": 34,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 40,
+                "end_char": 41,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 48,
+                "end_char": 49,
+                "text": " ",
+                "reason": "whitespace"
+              }
+            ]
+          }
+        ],
+        "case": "upper",
+        "granularity": "whitespace",
+        "boundary_mode": "activity",
+        "stride_samples": 320,
+        "receptive_samples": 400
+      },
+      "applied": false,
+      "network": "disabled",
+      "result": {
+        "format": "agent-ctc-alignment-v1",
+        "sample_rate": 16000,
+        "samples": 138347,
+        "original_text": "SHARP BRIGHT CAMERA FOLLOWS QUIET PEOPLE THROUGH WINTER",
+        "original_file_text": "SHARP BRIGHT CAMERA FOLLOWS QUIET PEOPLE THROUGH WINTER",
+        "index_basis": "original_text-unicode-codepoints",
+        "granularity": "whitespace",
+        "case": "upper",
+        "boundary_mode": "activity",
+        "stride_samples": 320,
+        "receptive_samples": 400,
+        "segments": [
+          {
+            "text": "SHARP BRIGHT CAMERA FOLLOWS QUIET PEOPLE THROUGH WINTER",
+            "start_char": 0,
+            "end_char": 55,
+            "ignored": [
+              {
+                "start_char": 5,
+                "end_char": 6,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 12,
+                "end_char": 13,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 19,
+                "end_char": 20,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 27,
+                "end_char": 28,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 33,
+                "end_char": 34,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 40,
+                "end_char": 41,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 48,
+                "end_char": 49,
+                "text": " ",
+                "reason": "whitespace"
+              }
+            ],
+            "start_sample": 0,
+            "end_sample": 138347,
+            "frames": 433,
+            "characters": [
+              {
+                "text": "S",
+                "token": "S",
+                "token_id": 12,
+                "start_char": 0,
+                "end_char": 1,
+                "start_frame": 30,
+                "end_frame": 31,
+                "posterior_geometric_mean": 0.9994252649204793,
+                "start_sample": 9640,
+                "end_sample": 9960
+              },
+              {
+                "text": "H",
+                "token": "H",
+                "token_id": 11,
+                "start_char": 1,
+                "end_char": 2,
+                "start_frame": 31,
+                "end_frame": 33,
+                "posterior_geometric_mean": 0.9944734120824612,
+                "start_sample": 9960,
+                "end_sample": 10600
+              },
+              {
+                "text": "A",
+                "token": "A",
+                "token_id": 7,
+                "start_char": 2,
+                "end_char": 3,
+                "start_frame": 40,
+                "end_frame": 41,
+                "posterior_geometric_mean": 0.9998990399290077,
+                "start_sample": 12840,
+                "end_sample": 13160
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 3,
+                "end_char": 4,
+                "start_frame": 41,
+                "end_frame": 43,
+                "posterior_geometric_mean": 0.9836604676156625,
+                "start_sample": 13160,
+                "end_sample": 13800
+              },
+              {
+                "text": "P",
+                "token": "P",
+                "token_id": 23,
+                "start_char": 4,
+                "end_char": 5,
+                "start_frame": 45,
+                "end_frame": 47,
+                "posterior_geometric_mean": 0.9938768881167989,
+                "start_sample": 14440,
+                "end_sample": 15080
+              },
+              {
+                "text": "B",
+                "token": "B",
+                "token_id": 24,
+                "start_char": 6,
+                "end_char": 7,
+                "start_frame": 75,
+                "end_frame": 76,
+                "posterior_geometric_mean": 0.9129687562196125,
+                "start_sample": 24040,
+                "end_sample": 24360
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 7,
+                "end_char": 8,
+                "start_frame": 78,
+                "end_frame": 79,
+                "posterior_geometric_mean": 0.9994230025281325,
+                "start_sample": 25000,
+                "end_sample": 25320
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 8,
+                "end_char": 9,
+                "start_frame": 85,
+                "end_frame": 86,
+                "posterior_geometric_mean": 0.9988520226286456,
+                "start_sample": 27240,
+                "end_sample": 27560
+              },
+              {
+                "text": "G",
+                "token": "G",
+                "token_id": 21,
+                "start_char": 9,
+                "end_char": 10,
+                "start_frame": 87,
+                "end_frame": 88,
+                "posterior_geometric_mean": 0.9145575405618055,
+                "start_sample": 27880,
+                "end_sample": 28200
+              },
+              {
+                "text": "H",
+                "token": "H",
+                "token_id": 11,
+                "start_char": 10,
+                "end_char": 11,
+                "start_frame": 89,
+                "end_frame": 90,
+                "posterior_geometric_mean": 0.9276087463838348,
+                "start_sample": 28520,
+                "end_sample": 28840
+              },
+              {
+                "text": "T",
+                "token": "T",
+                "token_id": 6,
+                "start_char": 11,
+                "end_char": 12,
+                "start_frame": 90,
+                "end_frame": 91,
+                "posterior_geometric_mean": 0.9545086923635103,
+                "start_sample": 28840,
+                "end_sample": 29160
+              },
+              {
+                "text": "C",
+                "token": "C",
+                "token_id": 19,
+                "start_char": 13,
+                "end_char": 14,
+                "start_frame": 124,
+                "end_frame": 125,
+                "posterior_geometric_mean": 0.9614343525466087,
+                "start_sample": 39720,
+                "end_sample": 40040
+              },
+              {
+                "text": "A",
+                "token": "A",
+                "token_id": 7,
+                "start_char": 14,
+                "end_char": 15,
+                "start_frame": 129,
+                "end_frame": 130,
+                "posterior_geometric_mean": 0.9972206332847284,
+                "start_sample": 41320,
+                "end_sample": 41640
+              },
+              {
+                "text": "M",
+                "token": "M",
+                "token_id": 17,
+                "start_char": 15,
+                "end_char": 16,
+                "start_frame": 132,
+                "end_frame": 133,
+                "posterior_geometric_mean": 0.9786332075015579,
+                "start_sample": 42280,
+                "end_sample": 42600
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 16,
+                "end_char": 17,
+                "start_frame": 135,
+                "end_frame": 136,
+                "posterior_geometric_mean": 0.8692725583889399,
+                "start_sample": 43240,
+                "end_sample": 43560
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 17,
+                "end_char": 18,
+                "start_frame": 137,
+                "end_frame": 138,
+                "posterior_geometric_mean": 0.9327828980140751,
+                "start_sample": 43880,
+                "end_sample": 44200
+              },
+              {
+                "text": "A",
+                "token": "A",
+                "token_id": 7,
+                "start_char": 18,
+                "end_char": 19,
+                "start_frame": 138,
+                "end_frame": 139,
+                "posterior_geometric_mean": 0.6661000356132788,
+                "start_sample": 44200,
+                "end_sample": 44520
+              },
+              {
+                "text": "F",
+                "token": "F",
+                "token_id": 20,
+                "start_char": 20,
+                "end_char": 21,
+                "start_frame": 177,
+                "end_frame": 178,
+                "posterior_geometric_mean": 0.9995374435940674,
+                "start_sample": 56680,
+                "end_sample": 57000
+              },
+              {
+                "text": "O",
+                "token": "O",
+                "token_id": 8,
+                "start_char": 21,
+                "end_char": 22,
+                "start_frame": 181,
+                "end_frame": 182,
+                "posterior_geometric_mean": 0.9894305620836585,
+                "start_sample": 57960,
+                "end_sample": 58280
+              },
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 22,
+                "end_char": 23,
+                "start_frame": 182,
+                "end_frame": 183,
+                "posterior_geometric_mean": 0.9968420175683195,
+                "start_sample": 58280,
+                "end_sample": 58600
+              },
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 23,
+                "end_char": 24,
+                "start_frame": 185,
+                "end_frame": 186,
+                "posterior_geometric_mean": 0.9981256159322879,
+                "start_sample": 59240,
+                "end_sample": 59560
+              },
+              {
+                "text": "O",
+                "token": "O",
+                "token_id": 8,
+                "start_char": 24,
+                "end_char": 25,
+                "start_frame": 189,
+                "end_frame": 190,
+                "posterior_geometric_mean": 0.9966492060473497,
+                "start_sample": 60520,
+                "end_sample": 60840
+              },
+              {
+                "text": "W",
+                "token": "W",
+                "token_id": 18,
+                "start_char": 25,
+                "end_char": 26,
+                "start_frame": 190,
+                "end_frame": 191,
+                "posterior_geometric_mean": 0.9945199849837509,
+                "start_sample": 60840,
+                "end_sample": 61160
+              },
+              {
+                "text": "S",
+                "token": "S",
+                "token_id": 12,
+                "start_char": 26,
+                "end_char": 27,
+                "start_frame": 197,
+                "end_frame": 199,
+                "posterior_geometric_mean": 0.8344742829729073,
+                "start_sample": 63080,
+                "end_sample": 63720
+              },
+              {
+                "text": "Q",
+                "token": "Q",
+                "token_id": 30,
+                "start_char": 28,
+                "end_char": 29,
+                "start_frame": 228,
+                "end_frame": 229,
+                "posterior_geometric_mean": 0.9713223609154881,
+                "start_sample": 73000,
+                "end_sample": 73320
+              },
+              {
+                "text": "U",
+                "token": "U",
+                "token_id": 16,
+                "start_char": 29,
+                "end_char": 30,
+                "start_frame": 230,
+                "end_frame": 231,
+                "posterior_geometric_mean": 0.9723546960667298,
+                "start_sample": 73640,
+                "end_sample": 73960
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 30,
+                "end_char": 31,
+                "start_frame": 241,
+                "end_frame": 242,
+                "posterior_geometric_mean": 0.9966077636221612,
+                "start_sample": 77160,
+                "end_sample": 77480
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 31,
+                "end_char": 32,
+                "start_frame": 245,
+                "end_frame": 247,
+                "posterior_geometric_mean": 0.8055143260159203,
+                "start_sample": 78440,
+                "end_sample": 79080
+              },
+              {
+                "text": "T",
+                "token": "T",
+                "token_id": 6,
+                "start_char": 32,
+                "end_char": 33,
+                "start_frame": 249,
+                "end_frame": 251,
+                "posterior_geometric_mean": 0.9456505616234606,
+                "start_sample": 79720,
+                "end_sample": 80360
+              },
+              {
+                "text": "P",
+                "token": "P",
+                "token_id": 23,
+                "start_char": 34,
+                "end_char": 35,
+                "start_frame": 298,
+                "end_frame": 299,
+                "posterior_geometric_mean": 0.9985601207134286,
+                "start_sample": 95400,
+                "end_sample": 95720
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 35,
+                "end_char": 36,
+                "start_frame": 301,
+                "end_frame": 302,
+                "posterior_geometric_mean": 0.9991493315040699,
+                "start_sample": 96360,
+                "end_sample": 96680
+              },
+              {
+                "text": "O",
+                "token": "O",
+                "token_id": 8,
+                "start_char": 36,
+                "end_char": 37,
+                "start_frame": 305,
+                "end_frame": 306,
+                "posterior_geometric_mean": 0.9946416790694501,
+                "start_sample": 97640,
+                "end_sample": 97960
+              },
+              {
+                "text": "P",
+                "token": "P",
+                "token_id": 23,
+                "start_char": 37,
+                "end_char": 38,
+                "start_frame": 307,
+                "end_frame": 309,
+                "posterior_geometric_mean": 0.8738272298048485,
+                "start_sample": 98280,
+                "end_sample": 98920
+              },
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 38,
+                "end_char": 39,
+                "start_frame": 313,
+                "end_frame": 314,
+                "posterior_geometric_mean": 0.9984406743974169,
+                "start_sample": 100200,
+                "end_sample": 100520
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 39,
+                "end_char": 40,
+                "start_frame": 314,
+                "end_frame": 316,
+                "posterior_geometric_mean": 0.9295731964309074,
+                "start_sample": 100520,
+                "end_sample": 101160
+              },
+              {
+                "text": "T",
+                "token": "T",
+                "token_id": 6,
+                "start_char": 41,
+                "end_char": 42,
+                "start_frame": 351,
+                "end_frame": 352,
+                "posterior_geometric_mean": 0.7129088937942094,
+                "start_sample": 112360,
+                "end_sample": 112680
+              },
+              {
+                "text": "H",
+                "token": "H",
+                "token_id": 11,
+                "start_char": 42,
+                "end_char": 43,
+                "start_frame": 352,
+                "end_frame": 353,
+                "posterior_geometric_mean": 0.7591152827474257,
+                "start_sample": 112680,
+                "end_sample": 113000
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 43,
+                "end_char": 44,
+                "start_frame": 354,
+                "end_frame": 355,
+                "posterior_geometric_mean": 0.955663418068292,
+                "start_sample": 113320,
+                "end_sample": 113640
+              },
+              {
+                "text": "O",
+                "token": "O",
+                "token_id": 8,
+                "start_char": 44,
+                "end_char": 45,
+                "start_frame": 358,
+                "end_frame": 359,
+                "posterior_geometric_mean": 0.1326720731018062,
+                "start_sample": 114600,
+                "end_sample": 114920
+              },
+              {
+                "text": "U",
+                "token": "U",
+                "token_id": 16,
+                "start_char": 45,
+                "end_char": 46,
+                "start_frame": 359,
+                "end_frame": 360,
+                "posterior_geometric_mean": 0.13394673821441033,
+                "start_sample": 114920,
+                "end_sample": 115240
+              },
+              {
+                "text": "G",
+                "token": "G",
+                "token_id": 21,
+                "start_char": 46,
+                "end_char": 47,
+                "start_frame": 360,
+                "end_frame": 361,
+                "posterior_geometric_mean": 0.12386063566718468,
+                "start_sample": 115240,
+                "end_sample": 115560
+              },
+              {
+                "text": "H",
+                "token": "H",
+                "token_id": 11,
+                "start_char": 47,
+                "end_char": 48,
+                "start_frame": 362,
+                "end_frame": 363,
+                "posterior_geometric_mean": 0.1224506008924701,
+                "start_sample": 115880,
+                "end_sample": 116200
+              },
+              {
+                "text": "W",
+                "token": "W",
+                "token_id": 18,
+                "start_char": 49,
+                "end_char": 50,
+                "start_frame": 398,
+                "end_frame": 399,
+                "posterior_geometric_mean": 0.9997267277849301,
+                "start_sample": 127400,
+                "end_sample": 127720
+              },
+              {
+                "text": "I",
+                "token": "I",
+                "token_id": 10,
+                "start_char": 50,
+                "end_char": 51,
+                "start_frame": 401,
+                "end_frame": 402,
+                "posterior_geometric_mean": 0.9983274348167167,
+                "start_sample": 128360,
+                "end_sample": 128680
+              },
+              {
+                "text": "N",
+                "token": "N",
+                "token_id": 9,
+                "start_char": 51,
+                "end_char": 52,
+                "start_frame": 402,
+                "end_frame": 403,
+                "posterior_geometric_mean": 0.9994992142867795,
+                "start_sample": 128680,
+                "end_sample": 129000
+              },
+              {
+                "text": "T",
+                "token": "T",
+                "token_id": 6,
+                "start_char": 52,
+                "end_char": 53,
+                "start_frame": 406,
+                "end_frame": 407,
+                "posterior_geometric_mean": 0.9990173706050925,
+                "start_sample": 129960,
+                "end_sample": 130280
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 53,
+                "end_char": 54,
+                "start_frame": 409,
+                "end_frame": 410,
+                "posterior_geometric_mean": 0.9972244267063245,
+                "start_sample": 130920,
+                "end_sample": 131240
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 54,
+                "end_char": 55,
+                "start_frame": 410,
+                "end_frame": 412,
+                "posterior_geometric_mean": 0.9829542740381995,
+                "start_sample": 131240,
+                "end_sample": 131880
+              }
+            ],
+            "units": [
+              {
+                "text": "SHARP",
+                "start_char": 0,
+                "end_char": 5,
+                "start_sample": 4320,
+                "end_sample": 18000,
+                "posterior_geometric_mean": 0.9942497540773554
+              },
+              {
+                "text": "BRIGHT",
+                "start_char": 6,
+                "end_char": 12,
+                "start_sample": 19200,
+                "end_sample": 32320,
+                "posterior_geometric_mean": 0.9506274729598164
+              },
+              {
+                "text": "CAMERA",
+                "start_char": 13,
+                "end_char": 19,
+                "start_sample": 35280,
+                "end_sample": 46080,
+                "posterior_geometric_mean": 0.8928965403881379
+              },
+              {
+                "text": "FOLLOWS",
+                "start_char": 20,
+                "end_char": 27,
+                "start_sample": 50960,
+                "end_sample": 67040,
+                "posterior_geometric_mean": 0.9710096182881576
+              },
+              {
+                "text": "QUIET",
+                "start_char": 28,
+                "end_char": 33,
+                "start_sample": 68880,
+                "end_sample": 83200,
+                "posterior_geometric_mean": 0.9356281168942674
+              },
+              {
+                "text": "PEOPLE",
+                "start_char": 34,
+                "end_char": 40,
+                "start_sample": 90480,
+                "end_sample": 103280,
+                "posterior_geometric_mean": 0.9644590312205017
+              },
+              {
+                "text": "THROUGH",
+                "start_char": 41,
+                "end_char": 48,
+                "start_sample": 106880,
+                "end_sample": 117360,
+                "posterior_geometric_mean": 0.281305967141354
+              },
+              {
+                "text": "WINTER",
+                "start_char": 49,
+                "end_char": 55,
+                "start_sample": 123200,
+                "end_sample": 133760,
+                "posterior_geometric_mean": 0.9961070293863593
+              }
+            ],
+            "windows": [
+              {
+                "core_start": 0,
+                "core_end": 433,
+                "frame_start": 0,
+                "frame_end": 433,
+                "sample_start": 0,
+                "sample_end": 138640,
+                "right_zero_pad": 293,
+                "input_samples": 138640,
+                "output_frames": 433,
+                "retained_frames": 433
+              }
+            ],
+            "emission_bytes": 34640,
+            "traceback_bytes": 42001,
+            "path_log_probability": -110.55727060985521,
+            "low_posterior_character_indices": [],
+            "raw_units": [
+              {
+                "text": "SHARP",
+                "start_char": 0,
+                "end_char": 5,
+                "start_sample": 9640,
+                "end_sample": 15080,
+                "posterior_geometric_mean": 0.9942497540773554
+              },
+              {
+                "text": "BRIGHT",
+                "start_char": 6,
+                "end_char": 12,
+                "start_sample": 24040,
+                "end_sample": 29160,
+                "posterior_geometric_mean": 0.9506274729598164
+              },
+              {
+                "text": "CAMERA",
+                "start_char": 13,
+                "end_char": 19,
+                "start_sample": 39720,
+                "end_sample": 44520,
+                "posterior_geometric_mean": 0.8928965403881379
+              },
+              {
+                "text": "FOLLOWS",
+                "start_char": 20,
+                "end_char": 27,
+                "start_sample": 56680,
+                "end_sample": 63720,
+                "posterior_geometric_mean": 0.9710096182881576
+              },
+              {
+                "text": "QUIET",
+                "start_char": 28,
+                "end_char": 33,
+                "start_sample": 73000,
+                "end_sample": 80360,
+                "posterior_geometric_mean": 0.9356281168942674
+              },
+              {
+                "text": "PEOPLE",
+                "start_char": 34,
+                "end_char": 40,
+                "start_sample": 95400,
+                "end_sample": 101160,
+                "posterior_geometric_mean": 0.9644590312205017
+              },
+              {
+                "text": "THROUGH",
+                "start_char": 41,
+                "end_char": 48,
+                "start_sample": 112360,
+                "end_sample": 116200,
+                "posterior_geometric_mean": 0.281305967141354
+              },
+              {
+                "text": "WINTER",
+                "start_char": 49,
+                "end_char": 55,
+                "start_sample": 127400,
+                "end_sample": 131880,
+                "posterior_geometric_mean": 0.9961070293863593
+              }
+            ],
+            "activity": {
+              "algorithm": "ctc-guided-activity-v3",
+              "sample_rate": 16000,
+              "frame_samples": 80,
+              "dc_offset": 0,
+              "dc_subsample_step": 2,
+              "noise_rms": 0,
+              "reference_rms": 4899,
+              "low_threshold": 2,
+              "high_threshold": 49,
+              "max_internal_gap_frames": 8,
+              "max_support_gap_frames": 24,
+              "min_region_frames": 4,
+              "max_movement_samples": 12000,
+              "regions": [
+                {
+                  "start_sample": 4320,
+                  "end_sample": 18000,
+                  "anchored_units": [
+                    0
+                  ],
+                  "strong_activity": true
+                },
+                {
+                  "start_sample": 19200,
+                  "end_sample": 32320,
+                  "anchored_units": [
+                    1
+                  ],
+                  "strong_activity": true
+                },
+                {
+                  "start_sample": 35280,
+                  "end_sample": 46080,
+                  "anchored_units": [
+                    2
+                  ],
+                  "strong_activity": true
+                },
+                {
+                  "start_sample": 50960,
+                  "end_sample": 67040,
+                  "anchored_units": [
+                    3
+                  ],
+                  "strong_activity": true
+                },
+                {
+                  "start_sample": 68880,
+                  "end_sample": 83200,
+                  "anchored_units": [
+                    4
+                  ],
+                  "strong_activity": true
+                },
+                {
+                  "start_sample": 90480,
+                  "end_sample": 103280,
+                  "anchored_units": [
+                    5
+                  ],
+                  "strong_activity": true
+                },
+                {
+                  "start_sample": 106880,
+                  "end_sample": 117360,
+                  "anchored_units": [
+                    6
+                  ],
+                  "strong_activity": true
+                },
+                {
+                  "start_sample": 123200,
+                  "end_sample": 133760,
+                  "anchored_units": [
+                    7
+                  ],
+                  "strong_activity": true
+                }
+              ],
+              "support_attachments": [],
+              "decisions": [
+                {
+                  "unit_index": 0,
+                  "status": "activity_estimated",
+                  "candidate": {
+                    "start_sample": 4320,
+                    "end_sample": 18000
+                  },
+                  "changed": true
+                },
+                {
+                  "unit_index": 1,
+                  "status": "activity_estimated",
+                  "candidate": {
+                    "start_sample": 19200,
+                    "end_sample": 32320
+                  },
+                  "changed": true
+                },
+                {
+                  "unit_index": 2,
+                  "status": "activity_estimated",
+                  "candidate": {
+                    "start_sample": 35280,
+                    "end_sample": 46080
+                  },
+                  "changed": true
+                },
+                {
+                  "unit_index": 3,
+                  "status": "activity_estimated",
+                  "candidate": {
+                    "start_sample": 50960,
+                    "end_sample": 67040
+                  },
+                  "changed": true
+                },
+                {
+                  "unit_index": 4,
+                  "status": "activity_estimated",
+                  "candidate": {
+                    "start_sample": 68880,
+                    "end_sample": 83200
+                  },
+                  "changed": true
+                },
+                {
+                  "unit_index": 5,
+                  "status": "activity_estimated",
+                  "candidate": {
+                    "start_sample": 90480,
+                    "end_sample": 103280
+                  },
+                  "changed": true
+                },
+                {
+                  "unit_index": 6,
+                  "status": "activity_estimated",
+                  "candidate": {
+                    "start_sample": 106880,
+                    "end_sample": 117360
+                  },
+                  "changed": true
+                },
+                {
+                  "unit_index": 7,
+                  "status": "activity_estimated",
+                  "candidate": {
+                    "start_sample": 123200,
+                    "end_sample": 133760
+                  },
+                  "changed": true
+                }
+              ],
+              "changed_units": 8,
+              "review_required": true,
+              "continuous_speech_boundaries_not_inferred": true
+            }
+          }
+        ],
+        "protocol": "agent-video-ctc-align-v1",
+        "engine": "transformers-wav2vec2-ctc-local-v1",
+        "adapter_id": "ctc",
+        "model_sha256": "sha256:885a11a9c463642db7b0eaa93fe70d89f4e2a98fd586a69d40921d279427ddd3",
+        "source_sha256": "sha256:d36a2862c82c02abd11831c86cfb48441e6e1a86eab6832b8da52c2525ef9bbf",
+        "request_sha256": "sha256:ffd94972ce57028838d2534d582592007d4546432fd09ac2e3f462005731e7b0",
+        "worker": {
+          "protocol": "agent-video-ctc-align-v1",
+          "status": "succeeded",
+          "network": "disabled",
+          "blocked_network_events": [],
+          "request_sha256": "sha256:ffd94972ce57028838d2534d582592007d4546432fd09ac2e3f462005731e7b0",
+          "model_forward_calls": 1,
+          "device": "NVIDIA GeForce RTX 3060",
+          "peak_cuda_bytes": 524396544,
+          "threads": 4,
+          "versions": {
+            "python": "3.13.14",
+            "numpy": "2.4.2",
+            "torch": "2.13.0+cu130",
+            "transformers": "5.14.1"
+          },
+          "module_paths": {
+            "torch": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\__init__.py",
+            "transformers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\__init__.py"
+          },
+          "input_sha256": "sha256:2c323c87d46201df5636de959cabfb603823f0d254f20e851e94966828943ab3",
+          "source_sha256": "sha256:d36a2862c82c02abd11831c86cfb48441e6e1a86eab6832b8da52c2525ef9bbf",
+          "adapter_sha256": "sha256:885a11a9c463642db7b0eaa93fe70d89f4e2a98fd586a69d40921d279427ddd3",
+          "verification": {
+            "mode": "windows-read-lock-command-scope",
+            "files_hashed": 20,
+            "bytes_hashed": 378123082,
+            "digest_reuses_while_locked": 6,
+            "write_and_delete_sharing": false,
+            "persists_across_commands": false
+          },
+          "elapsed_seconds": 17.251
+        },
+        "diagnostic_directory": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\awb\\cache\\alignment\\run_20261025010255_660f0e54",
+        "review_required": true,
+        "warnings": [
+          "ALIGNMENT_REVIEW_REQUIRED"
+        ],
+        "elapsed_seconds": 19.097,
+        "operation_id": "op_20261025010314_e72284bf",
+        "transcript_sha256": "sha256:d7962912bb060e1e0e12bcf68c09ac97d61f8859083dab5c64583da9b181e85b",
+        "transcript_format": "txt",
+        "timeline_start_tick": 0,
+        "ticks_per_second": 90000,
+        "display_cues": [
+          {
+            "text": "SHARP BRIGHT CAMERA FOLLOWS QUIET PEOPLE THROUGH WINTER",
+            "start_tick": 24300,
+            "end_tick": 752400,
+            "source_start_char": 0,
+            "word_timing": [
+              {
+                "text": "SHARP",
+                "start_char": 0,
+                "start": 0.0,
+                "end": 0.855
+              },
+              {
+                "text": "BRIGHT",
+                "start_char": 6,
+                "start": 0.93,
+                "end": 1.75
+              },
+              {
+                "text": "CAMERA",
+                "start_char": 13,
+                "start": 1.935,
+                "end": 2.61
+              },
+              {
+                "text": "FOLLOWS",
+                "start_char": 20,
+                "start": 2.915,
+                "end": 3.92
+              },
+              {
+                "text": "QUIET",
+                "start_char": 28,
+                "start": 4.035,
+                "end": 4.93
+              },
+              {
+                "text": "PEOPLE",
+                "start_char": 34,
+                "start": 5.385,
+                "end": 6.185
+              },
+              {
+                "text": "THROUGH",
+                "start_char": 41,
+                "start": 6.41,
+                "end": 7.065
+              },
+              {
+                "text": "WINTER",
+                "start_char": 49,
+                "start": 7.43,
+                "end": 8.09
+              }
+            ]
+          }
+        ]
+      },
+      "registered_assets": [
+        {
+          "id": "aligned_subtitle_20261025010314_6295709a",
+          "kind": "generated",
+          "uri": "assets/alignment/activity.transcript.txt",
+          "sha256": "sha256:d7962912bb060e1e0e12bcf68c09ac97d61f8859083dab5c64583da9b181e85b",
+          "rights_ref": "aligned_subtitle_20261025010314_6295709a",
+          "probe": {
+            "duration_tick": 752400
+          },
+          "source": {
+            "source_url": "local://E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\awb\\assets\\alignment\\activity.transcript.txt",
+            "original_name": "activity.transcript.txt",
+            "retrieved_at": "2026-10-25T01:03:14.485689Z"
+          }
+        },
+        {
+          "id": "aligned_subtitle_20261025010314_b19eaf7a",
+          "kind": "generated",
+          "uri": "assets/alignment/activity.json",
+          "sha256": "sha256:209f951c29a2e3dbff1f6ad3f6b0f5cca795d0be10b93978afd0d5b7d8df8d69",
+          "rights_ref": "aligned_subtitle_20261025010314_b19eaf7a",
+          "probe": {
+            "duration_tick": 752400
+          },
+          "source": {
+            "source_url": "local://E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\awb\\assets\\alignment\\activity.json",
+            "original_name": "activity.json",
+            "retrieved_at": "2026-10-25T01:03:14.494094Z"
+          }
+        },
+        {
+          "id": "aligned_subtitle_20261025010314_c41864d4",
+          "kind": "subtitle",
+          "uri": "assets/alignment/activity.srt",
+          "sha256": "sha256:1d1fd1cca655a6b9b601707dfeffb708657031a235396daea1a04113902b3aca",
+          "rights_ref": "aligned_subtitle_20261025010314_c41864d4",
+          "probe": {
+            "duration_tick": 752400
+          },
+          "source": {
+            "source_url": "local://E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\awb\\assets\\alignment\\activity.srt",
+            "original_name": "activity.srt",
+            "retrieved_at": "2026-10-25T01:03:14.495218Z"
+          }
+        }
+      ],
+      "generated_clips": [],
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "warnings": [
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "speech",
+            "rights_ref": "speech",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "speech",
+            "rights_ref": "speech",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_EVIDENCE_INCOMPLETE",
+            "message": "来源、许可证或证据字段缺失",
+            "asset_id": "speech",
+            "rights_ref": "speech",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "aligned_subtitle_20261025010314_6295709a",
+            "rights_ref": "aligned_subtitle_20261025010314_6295709a",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "aligned_subtitle_20261025010314_6295709a",
+            "rights_ref": "aligned_subtitle_20261025010314_6295709a",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "aligned_subtitle_20261025010314_b19eaf7a",
+            "rights_ref": "aligned_subtitle_20261025010314_b19eaf7a",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "aligned_subtitle_20261025010314_b19eaf7a",
+            "rights_ref": "aligned_subtitle_20261025010314_b19eaf7a",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "aligned_subtitle_20261025010314_c41864d4",
+            "rights_ref": "aligned_subtitle_20261025010314_c41864d4",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "aligned_subtitle_20261025010314_c41864d4",
+            "rights_ref": "aligned_subtitle_20261025010314_c41864d4",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "asr_adapter_ctc",
+            "rights_ref": "asr_adapter_ctc",
+            "record_version": 1,
+            "context": "derived_dependency"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "asr_adapter_ctc",
+            "rights_ref": "asr_adapter_ctc",
+            "record_version": 1,
+            "context": "derived_dependency"
+          }
+        ],
+        "rights": {
+          "ok": true,
+          "target": "commercial_ad",
+          "checked": 4,
+          "required_records": 5,
+          "failures": [],
+          "warnings": [
+            {
+              "status": "unverified",
+              "code": "RIGHTS_STATUS_BLOCKED",
+              "message": "状态 unverified 不允许发布",
+              "asset_id": "speech",
+              "rights_ref": "speech",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "code": "RIGHTS_USE_NOT_PERMITTED",
+              "message": "记录未允许目标用途: commercial_ad",
+              "asset_id": "speech",
+              "rights_ref": "speech",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "code": "RIGHTS_EVIDENCE_INCOMPLETE",
+              "message": "来源、许可证或证据字段缺失",
+              "asset_id": "speech",
+              "rights_ref": "speech",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "status": "unverified",
+              "code": "RIGHTS_STATUS_BLOCKED",
+              "message": "状态 unverified 不允许发布",
+              "asset_id": "aligned_subtitle_20261025010314_6295709a",
+              "rights_ref": "aligned_subtitle_20261025010314_6295709a",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "code": "RIGHTS_USE_NOT_PERMITTED",
+              "message": "记录未允许目标用途: commercial_ad",
+              "asset_id": "aligned_subtitle_20261025010314_6295709a",
+              "rights_ref": "aligned_subtitle_20261025010314_6295709a",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "status": "unverified",
+              "code": "RIGHTS_STATUS_BLOCKED",
+              "message": "状态 unverified 不允许发布",
+              "asset_id": "aligned_subtitle_20261025010314_b19eaf7a",
+              "rights_ref": "aligned_subtitle_20261025010314_b19eaf7a",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "code": "RIGHTS_USE_NOT_PERMITTED",
+              "message": "记录未允许目标用途: commercial_ad",
+              "asset_id": "aligned_subtitle_20261025010314_b19eaf7a",
+              "rights_ref": "aligned_subtitle_20261025010314_b19eaf7a",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "status": "unverified",
+              "code": "RIGHTS_STATUS_BLOCKED",
+              "message": "状态 unverified 不允许发布",
+              "asset_id": "aligned_subtitle_20261025010314_c41864d4",
+              "rights_ref": "aligned_subtitle_20261025010314_c41864d4",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "code": "RIGHTS_USE_NOT_PERMITTED",
+              "message": "记录未允许目标用途: commercial_ad",
+              "asset_id": "aligned_subtitle_20261025010314_c41864d4",
+              "rights_ref": "aligned_subtitle_20261025010314_c41864d4",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "status": "unverified",
+              "code": "RIGHTS_STATUS_BLOCKED",
+              "message": "状态 unverified 不允许发布",
+              "asset_id": "asr_adapter_ctc",
+              "rights_ref": "asr_adapter_ctc",
+              "record_version": 1,
+              "context": "derived_dependency"
+            },
+            {
+              "code": "RIGHTS_USE_NOT_PERMITTED",
+              "message": "记录未允许目标用途: commercial_ad",
+              "asset_id": "asr_adapter_ctc",
+              "rights_ref": "asr_adapter_ctc",
+              "record_version": 1,
+              "context": "derived_dependency"
+            }
+          ],
+          "disposition_decisions": [],
+          "effective_disposition_decisions": []
+        },
+        "schema_engine": "jsonschema",
+        "asset_count": 4,
+        "sequence_count": 1
+      },
+      "before_snapshot": {
+        "snapshot_id": "snap_20261025010314_93a348dc",
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\awb\\history\\snap_20261025010314_93a348dc.json",
+        "label": "before-subtitle-align",
+        "created_at": "2026-10-25T01:03:14.202404Z"
+      },
+      "verification": {
+        "mode": "windows-read-lock-command-scope",
+        "files_hashed": 22,
+        "bytes_hashed": 378399875,
+        "digest_reuses_while_locked": 58,
+        "write_and_delete_sharing": false,
+        "persists_across_commands": false
+      }
+    },
+    "artifacts": [],
+    "warnings": [
+      {
+        "code": "ALIGNMENT_REVIEW_REQUIRED",
+        "message": "CTC 后验不是校准准确率；应核验逐字稿、字边界及自然语音效果"
+      }
+    ],
+    "errors": [],
+    "provenance": {
+      "cli_version": "0.1.8",
+      "schema_version": "0.1.0",
+      "engine_version": "ffmpeg-local",
+      "started_at": "2026-10-25T01:03:14.608959Z",
+      "finished_at": "2026-10-25T01:03:14.608969Z",
+      "network": "disabled"
+    }
+  }
+}

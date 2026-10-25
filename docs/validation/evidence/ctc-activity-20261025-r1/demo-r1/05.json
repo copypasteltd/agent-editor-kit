@@ -1,0 +1,782 @@
+{
+  "argv": [
+    "render",
+    "--project",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\original",
+    "--output",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\original\\renders\\activity.mkv",
+    "--container",
+    "mkv",
+    "--audio-codec",
+    "pcm_f32le",
+    "--width",
+    "1280",
+    "--height",
+    "720",
+    "--crf",
+    "0",
+    "--pixel-format",
+    "yuv444p"
+  ],
+  "exit_code": 0,
+  "result": {
+    "ok": true,
+    "command": "render",
+    "request_id": "req_20261025011347_a13da31c",
+    "operation_id": "render_20261025011201_5feb8cfc",
+    "status": "succeeded",
+    "data": {
+      "status": "succeeded",
+      "operation_id": "render_20261025011201_5feb8cfc",
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\original\\renders\\activity.mkv",
+      "manifest": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\original\\renders\\activity.mkv.manifest.json",
+      "filter_graph_transport": {
+        "mode": "inline",
+        "sha256": "sha256:f984108475025a4f51d4c623500504cb02d78f538f28c050d4f9fa4fae9dcab5",
+        "utf8_bytes": 9582,
+        "logical_command_utf16_units": 10525
+      },
+      "profile": "custom",
+      "settings": {
+        "timebase": {
+          "ticks_per_second": 90000,
+          "display_fps": {
+            "num": 30,
+            "den": 1
+          }
+        },
+        "canvas": {
+          "width": 1280,
+          "height": 720,
+          "pixel_aspect": {
+            "num": 1,
+            "den": 1
+          }
+        },
+        "color": {
+          "primaries": "bt709",
+          "transfer": "bt709",
+          "matrix": "bt709",
+          "range": "limited"
+        },
+        "audio": {
+          "sample_rate": 48000,
+          "channels": 2
+        },
+        "output": {
+          "container": "mkv",
+          "video": {
+            "codec": "libx264",
+            "preset": "medium",
+            "crf": 0,
+            "pixel_format": "yuv444p"
+          },
+          "audio": {
+            "codec": "pcm_f32le",
+            "bitrate": "192k"
+          }
+        }
+      },
+      "delivery": {
+        "clock": {
+          "authored_duration_tick": 707906,
+          "ticks_per_second": 90000,
+          "expected_video_frames": 236,
+          "expected_video_end_seconds": 7.866666666666666,
+          "expected_audio_samples_48000": 377550
+        }
+      },
+      "acceleration": {
+        "version": "1",
+        "request": {
+          "encode": "off",
+          "decode": "off",
+          "encoder": "auto",
+          "decoder": "auto",
+          "probe_max_bytes": 536870912
+        },
+        "status": "planned",
+        "probes": [],
+        "attempts": [],
+        "decisions": [],
+        "device": "driver-default; identity not certified",
+        "report": null
+      },
+      "probe": {
+        "duration_seconds": 7.866,
+        "duration_tick": 707940,
+        "format": "matroska,webm",
+        "format_long_name": "Matroska / WebM",
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High 4:4:4 Predictive",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "avc1.f4001f",
+            "width": 1280,
+            "height": 720,
+            "coded_width": 1280,
+            "coded_height": 720,
+            "has_b_frames": 0,
+            "sample_aspect_ratio": "1:1",
+            "display_aspect_ratio": "16:9",
+            "pix_fmt": "yuv444p",
+            "level": 31,
+            "color_range": "tv",
+            "color_space": "bt709",
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "30/1",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "bits_per_raw_sample": "8",
+            "extradata_size": 48,
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "ENCODER": "Lavc62.28.100 libx264",
+              "DURATION": "00:00:07.866000000"
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "pcm_f32le",
+            "codec_long_name": "PCM 32-bit floating point little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "sample_fmt": "flt",
+            "sample_rate": "48000",
+            "channels": 1,
+            "bits_per_sample": 32,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "bit_rate": "1536000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "ENCODER": "Lavc62.28.100 pcm_f32le",
+              "DURATION": "00:00:07.866000000"
+            }
+          }
+        ],
+        "video": {
+          "codec": "h264",
+          "width": 1280,
+          "height": 720,
+          "pix_fmt": "yuv444p",
+          "fps": "30/1",
+          "color_space": "bt709",
+          "duration_seconds": 0.0,
+          "start_time_seconds": 0.0
+        },
+        "audio": {
+          "codec": "pcm_f32le",
+          "sample_rate": 48000,
+          "channels": 1,
+          "duration_seconds": 0.0,
+          "start_time_seconds": 0.0
+        }
+      },
+      "warnings": [],
+      "quality": {
+        "ok": true,
+        "errors": [],
+        "warnings": [],
+        "metrics": {
+          "duration_seconds": 7.866,
+          "width": 1280,
+          "height": 720,
+          "audio_codec": "pcm_f32le",
+          "video_duration_seconds": 7.866,
+          "audio_duration_seconds": 7.866,
+          "av_duration_delta_seconds": 0.0,
+          "av_start_delta_seconds": 0.0,
+          "av_end_delta_seconds": 0.0,
+          "av_sync_residual_seconds": 0.0010416666666666667,
+          "av_sync_residuals": {
+            "start_delta_seconds": 0.0,
+            "end_delta_seconds": 0.0010416666666666667,
+            "video_start_seconds": 0.0,
+            "audio_start_seconds": 0.0,
+            "video_end_seconds": 0.0006666666666665932,
+            "audio_end_seconds": 0.0003750000000000142
+          },
+          "stream_timing": {
+            "video": {
+              "start_seconds": 0.0,
+              "start_source": "stream-start-time",
+              "duration_seconds": 7.866,
+              "duration_source": "matroska-duration-tag",
+              "end_seconds": 7.866
+            },
+            "audio": {
+              "start_seconds": 0.0,
+              "start_source": "stream-start-time",
+              "duration_seconds": 7.866,
+              "duration_source": "matroska-duration-tag",
+              "end_seconds": 7.866
+            }
+          },
+          "expected_video_frames": 236,
+          "expected_audio_samples": 377550,
+          "expected_video_duration_seconds": 7.866666666666666,
+          "expected_audio_duration_seconds": 7.865625,
+          "expected_quantization_delta_seconds": 0.0010416666666666667,
+          "probe": {
+            "duration_seconds": 7.866,
+            "duration_tick": 707940,
+            "format": "matroska,webm",
+            "format_long_name": "Matroska / WebM",
+            "streams": [
+              {
+                "index": 0,
+                "codec_name": "h264",
+                "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+                "profile": "High 4:4:4 Predictive",
+                "codec_type": "video",
+                "codec_tag_string": "[0][0][0][0]",
+                "codec_tag": "0x0000",
+                "mime_codec_string": "avc1.f4001f",
+                "width": 1280,
+                "height": 720,
+                "coded_width": 1280,
+                "coded_height": 720,
+                "has_b_frames": 0,
+                "sample_aspect_ratio": "1:1",
+                "display_aspect_ratio": "16:9",
+                "pix_fmt": "yuv444p",
+                "level": 31,
+                "color_range": "tv",
+                "color_space": "bt709",
+                "chroma_location": "left",
+                "field_order": "progressive",
+                "is_avc": "true",
+                "nal_length_size": "4",
+                "r_frame_rate": "30/1",
+                "avg_frame_rate": "30/1",
+                "time_base": "1/1000",
+                "start_pts": 0,
+                "start_time": "0.000000",
+                "bits_per_raw_sample": "8",
+                "extradata_size": 48,
+                "disposition": {
+                  "default": 0,
+                  "dub": 0,
+                  "original": 0,
+                  "comment": 0,
+                  "lyrics": 0,
+                  "karaoke": 0,
+                  "forced": 0,
+                  "hearing_impaired": 0,
+                  "visual_impaired": 0,
+                  "clean_effects": 0,
+                  "attached_pic": 0,
+                  "timed_thumbnails": 0,
+                  "non_diegetic": 0,
+                  "captions": 0,
+                  "descriptions": 0,
+                  "metadata": 0,
+                  "dependent": 0,
+                  "still_image": 0,
+                  "multilayer": 0
+                },
+                "tags": {
+                  "ENCODER": "Lavc62.28.100 libx264",
+                  "DURATION": "00:00:07.866000000"
+                }
+              },
+              {
+                "index": 1,
+                "codec_name": "pcm_f32le",
+                "codec_long_name": "PCM 32-bit floating point little-endian",
+                "codec_type": "audio",
+                "codec_tag_string": "[0][0][0][0]",
+                "codec_tag": "0x0000",
+                "sample_fmt": "flt",
+                "sample_rate": "48000",
+                "channels": 1,
+                "bits_per_sample": 32,
+                "initial_padding": 0,
+                "r_frame_rate": "0/0",
+                "avg_frame_rate": "0/0",
+                "time_base": "1/1000",
+                "start_pts": 0,
+                "start_time": "0.000000",
+                "bit_rate": "1536000",
+                "disposition": {
+                  "default": 0,
+                  "dub": 0,
+                  "original": 0,
+                  "comment": 0,
+                  "lyrics": 0,
+                  "karaoke": 0,
+                  "forced": 0,
+                  "hearing_impaired": 0,
+                  "visual_impaired": 0,
+                  "clean_effects": 0,
+                  "attached_pic": 0,
+                  "timed_thumbnails": 0,
+                  "non_diegetic": 0,
+                  "captions": 0,
+                  "descriptions": 0,
+                  "metadata": 0,
+                  "dependent": 0,
+                  "still_image": 0,
+                  "multilayer": 0
+                },
+                "tags": {
+                  "ENCODER": "Lavc62.28.100 pcm_f32le",
+                  "DURATION": "00:00:07.866000000"
+                }
+              }
+            ],
+            "video": {
+              "codec": "h264",
+              "width": 1280,
+              "height": 720,
+              "pix_fmt": "yuv444p",
+              "fps": "30/1",
+              "color_space": "bt709",
+              "duration_seconds": 0.0,
+              "start_time_seconds": 0.0
+            },
+            "audio": {
+              "codec": "pcm_f32le",
+              "sample_rate": 48000,
+              "channels": 1,
+              "duration_seconds": 0.0,
+              "start_time_seconds": 0.0
+            }
+          }
+        }
+      },
+      "project_fingerprint": "3b115b307b862b8d8afe7668ce758e62ca5906f40d66d10877e37e0e2e65a0c0",
+      "input_hashes": {
+        "comparison": "sha256:c84ea5e509140cea2d5aae8acbd5d006144753df08093f66ea6aa5b13b2a27ed",
+        "font": "sha256:a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+        "speech": "sha256:eea24cb10f383c972a64ae8742795e3eb5e404ba4dd37f98440197f8c84a0d30"
+      },
+      "resume_of": null
+    },
+    "artifacts": [],
+    "warnings": [
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "speech",
+        "rights_ref": "speech",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "speech",
+        "rights_ref": "speech",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_EVIDENCE_INCOMPLETE",
+        "message": "来源、许可证或证据字段缺失",
+        "asset_id": "speech",
+        "rights_ref": "speech",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "aligned_subtitle_20261025010216_b00a5269",
+        "rights_ref": "aligned_subtitle_20261025010216_b00a5269",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "aligned_subtitle_20261025010216_b00a5269",
+        "rights_ref": "aligned_subtitle_20261025010216_b00a5269",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "aligned_subtitle_20261025010216_68cca82c",
+        "rights_ref": "aligned_subtitle_20261025010216_68cca82c",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "aligned_subtitle_20261025010216_68cca82c",
+        "rights_ref": "aligned_subtitle_20261025010216_68cca82c",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "aligned_subtitle_20261025010216_4a2ba926",
+        "rights_ref": "aligned_subtitle_20261025010216_4a2ba926",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "aligned_subtitle_20261025010216_4a2ba926",
+        "rights_ref": "aligned_subtitle_20261025010216_4a2ba926",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "aligned_subtitle_20261025010659_ba52d37c",
+        "rights_ref": "aligned_subtitle_20261025010659_ba52d37c",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "aligned_subtitle_20261025010659_ba52d37c",
+        "rights_ref": "aligned_subtitle_20261025010659_ba52d37c",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "aligned_subtitle_20261025010659_dab27169",
+        "rights_ref": "aligned_subtitle_20261025010659_dab27169",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "aligned_subtitle_20261025010659_dab27169",
+        "rights_ref": "aligned_subtitle_20261025010659_dab27169",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "aligned_subtitle_20261025010659_834c01c5",
+        "rights_ref": "aligned_subtitle_20261025010659_834c01c5",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "aligned_subtitle_20261025010659_834c01c5",
+        "rights_ref": "aligned_subtitle_20261025010659_834c01c5",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "long",
+        "rights_ref": "long",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "long",
+        "rights_ref": "long",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_EVIDENCE_INCOMPLETE",
+        "message": "来源、许可证或证据字段缺失",
+        "asset_id": "long",
+        "rights_ref": "long",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "aligned_subtitle_20261025010732_baf4d789",
+        "rights_ref": "aligned_subtitle_20261025010732_baf4d789",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "aligned_subtitle_20261025010732_baf4d789",
+        "rights_ref": "aligned_subtitle_20261025010732_baf4d789",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "aligned_subtitle_20261025010732_1a8d90ba",
+        "rights_ref": "aligned_subtitle_20261025010732_1a8d90ba",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "aligned_subtitle_20261025010732_1a8d90ba",
+        "rights_ref": "aligned_subtitle_20261025010732_1a8d90ba",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "aligned_subtitle_20261025010732_f7f3fcee",
+        "rights_ref": "aligned_subtitle_20261025010732_f7f3fcee",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "aligned_subtitle_20261025010732_f7f3fcee",
+        "rights_ref": "aligned_subtitle_20261025010732_f7f3fcee",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "aligned_subtitle_20261025010807_c1593253",
+        "rights_ref": "aligned_subtitle_20261025010807_c1593253",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "aligned_subtitle_20261025010807_c1593253",
+        "rights_ref": "aligned_subtitle_20261025010807_c1593253",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "aligned_subtitle_20261025010807_5a528491",
+        "rights_ref": "aligned_subtitle_20261025010807_5a528491",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "aligned_subtitle_20261025010807_5a528491",
+        "rights_ref": "aligned_subtitle_20261025010807_5a528491",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "aligned_subtitle_20261025010807_efa7bd12",
+        "rights_ref": "aligned_subtitle_20261025010807_efa7bd12",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "aligned_subtitle_20261025010807_efa7bd12",
+        "rights_ref": "aligned_subtitle_20261025010807_efa7bd12",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "comparison",
+        "rights_ref": "comparison",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "font",
+        "rights_ref": "font",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "font",
+        "rights_ref": "font",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_EVIDENCE_INCOMPLETE",
+        "message": "来源、许可证或证据字段缺失",
+        "asset_id": "font",
+        "rights_ref": "font",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "aligned_subtitle_20261025011153_b04c86c5",
+        "rights_ref": "aligned_subtitle_20261025011153_b04c86c5",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "aligned_subtitle_20261025011153_b04c86c5",
+        "rights_ref": "aligned_subtitle_20261025011153_b04c86c5",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "aligned_subtitle_20261025011153_210deddb",
+        "rights_ref": "aligned_subtitle_20261025011153_210deddb",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "aligned_subtitle_20261025011153_210deddb",
+        "rights_ref": "aligned_subtitle_20261025011153_210deddb",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "aligned_subtitle_20261025011153_bbeeb139",
+        "rights_ref": "aligned_subtitle_20261025011153_bbeeb139",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "aligned_subtitle_20261025011153_bbeeb139",
+        "rights_ref": "aligned_subtitle_20261025011153_bbeeb139",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "asr_adapter_ctc",
+        "rights_ref": "asr_adapter_ctc",
+        "record_version": 1,
+        "context": "derived_dependency"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "asr_adapter_ctc",
+        "rights_ref": "asr_adapter_ctc",
+        "record_version": 1,
+        "context": "derived_dependency"
+      }
+    ],
+    "errors": [],
+    "provenance": {
+      "cli_version": "0.1.8",
+      "schema_version": "0.1.0",
+      "engine_version": "ffmpeg-local",
+      "started_at": "2026-10-25T01:13:47.537140Z",
+      "finished_at": "2026-10-25T01:13:47.537147Z",
+      "network": "disabled"
+    }
+  },
+  "stderr": "",
+  "seconds": 113.5819147000002
+}

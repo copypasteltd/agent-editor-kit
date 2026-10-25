@@ -1,0 +1,1161 @@
+{
+  "argv": [
+    "subtitle",
+    "align",
+    "--project",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\original",
+    "--asset-id",
+    "speech",
+    "--adapter-id",
+    "ctc",
+    "--transcript",
+    "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ctc-alignment-20261018\\transcript.txt",
+    "--output",
+    "assets/alignment/default.json",
+    "--granularity",
+    "whitespace"
+  ],
+  "exit_code": 0,
+  "result": {
+    "ok": true,
+    "command": "subtitle.align",
+    "request_id": "req_20261025010700_5ed287e1",
+    "operation_id": "op_20261025010659_a097e6a9",
+    "status": "succeeded",
+    "data": {
+      "output": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\original\\assets\\alignment\\default.json",
+      "srt": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\original\\assets\\alignment\\default.srt",
+      "transcript_copy": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\original\\assets\\alignment\\default.transcript.txt",
+      "source_sha256": "sha256:eea24cb10f383c972a64ae8742795e3eb5e404ba4dd37f98440197f8c84a0d30",
+      "transcript_sha256": "sha256:39c37b920c4d4972a6b5314a294f67c6ed8569735741f099b7c05ee9b8519684",
+      "adapter_id": "ctc",
+      "model_sha256": "sha256:885a11a9c463642db7b0eaa93fe70d89f4e2a98fd586a69d40921d279427ddd3",
+      "prepared": {
+        "original_text": "RED BLUE GREEN RED BLUE GREEN",
+        "original_file_text": "RED BLUE GREEN RED BLUE GREEN",
+        "format": "txt",
+        "index_basis": "original_text-unicode-codepoints",
+        "segments": [
+          {
+            "text": "RED BLUE GREEN RED BLUE GREEN",
+            "start_char": 0,
+            "end_char": 29,
+            "start_sample": 0,
+            "end_sample": null,
+            "tokens": [
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 0,
+                "end_char": 1
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 1,
+                "end_char": 2
+              },
+              {
+                "text": "D",
+                "token": "D",
+                "token_id": 14,
+                "start_char": 2,
+                "end_char": 3
+              },
+              {
+                "text": "B",
+                "token": "B",
+                "token_id": 24,
+                "start_char": 4,
+                "end_char": 5
+              },
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 5,
+                "end_char": 6
+              },
+              {
+                "text": "U",
+                "token": "U",
+                "token_id": 16,
+                "start_char": 6,
+                "end_char": 7
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 7,
+                "end_char": 8
+              },
+              {
+                "text": "G",
+                "token": "G",
+                "token_id": 21,
+                "start_char": 9,
+                "end_char": 10
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 10,
+                "end_char": 11
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 11,
+                "end_char": 12
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 12,
+                "end_char": 13
+              },
+              {
+                "text": "N",
+                "token": "N",
+                "token_id": 9,
+                "start_char": 13,
+                "end_char": 14
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 15,
+                "end_char": 16
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 16,
+                "end_char": 17
+              },
+              {
+                "text": "D",
+                "token": "D",
+                "token_id": 14,
+                "start_char": 17,
+                "end_char": 18
+              },
+              {
+                "text": "B",
+                "token": "B",
+                "token_id": 24,
+                "start_char": 19,
+                "end_char": 20
+              },
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 20,
+                "end_char": 21
+              },
+              {
+                "text": "U",
+                "token": "U",
+                "token_id": 16,
+                "start_char": 21,
+                "end_char": 22
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 22,
+                "end_char": 23
+              },
+              {
+                "text": "G",
+                "token": "G",
+                "token_id": 21,
+                "start_char": 24,
+                "end_char": 25
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 25,
+                "end_char": 26
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 26,
+                "end_char": 27
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 27,
+                "end_char": 28
+              },
+              {
+                "text": "N",
+                "token": "N",
+                "token_id": 9,
+                "start_char": 28,
+                "end_char": 29
+              }
+            ],
+            "ignored": [
+              {
+                "start_char": 3,
+                "end_char": 4,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 8,
+                "end_char": 9,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 14,
+                "end_char": 15,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 18,
+                "end_char": 19,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 23,
+                "end_char": 24,
+                "text": " ",
+                "reason": "whitespace"
+              }
+            ]
+          }
+        ],
+        "case": "upper",
+        "granularity": "whitespace",
+        "boundary_mode": "ctc",
+        "stride_samples": 320,
+        "receptive_samples": 400
+      },
+      "applied": false,
+      "network": "disabled",
+      "result": {
+        "format": "agent-ctc-alignment-v1",
+        "sample_rate": 16000,
+        "samples": 125850,
+        "original_text": "RED BLUE GREEN RED BLUE GREEN",
+        "original_file_text": "RED BLUE GREEN RED BLUE GREEN",
+        "index_basis": "original_text-unicode-codepoints",
+        "granularity": "whitespace",
+        "case": "upper",
+        "boundary_mode": "ctc",
+        "stride_samples": 320,
+        "receptive_samples": 400,
+        "segments": [
+          {
+            "text": "RED BLUE GREEN RED BLUE GREEN",
+            "start_char": 0,
+            "end_char": 29,
+            "ignored": [
+              {
+                "start_char": 3,
+                "end_char": 4,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 8,
+                "end_char": 9,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 14,
+                "end_char": 15,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 18,
+                "end_char": 19,
+                "text": " ",
+                "reason": "whitespace"
+              },
+              {
+                "start_char": 23,
+                "end_char": 24,
+                "text": " ",
+                "reason": "whitespace"
+              }
+            ],
+            "start_sample": 0,
+            "end_sample": 125850,
+            "frames": 394,
+            "characters": [
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 0,
+                "end_char": 1,
+                "start_frame": 36,
+                "end_frame": 37,
+                "posterior_geometric_mean": 0.9620549147460389,
+                "start_sample": 11560,
+                "end_sample": 11880
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 1,
+                "end_char": 2,
+                "start_frame": 41,
+                "end_frame": 42,
+                "posterior_geometric_mean": 0.9927527673731786,
+                "start_sample": 13160,
+                "end_sample": 13480
+              },
+              {
+                "text": "D",
+                "token": "D",
+                "token_id": 14,
+                "start_char": 2,
+                "end_char": 3,
+                "start_frame": 45,
+                "end_frame": 46,
+                "posterior_geometric_mean": 0.9979239974695335,
+                "start_sample": 14440,
+                "end_sample": 14760
+              },
+              {
+                "text": "B",
+                "token": "B",
+                "token_id": 24,
+                "start_char": 4,
+                "end_char": 5,
+                "start_frame": 93,
+                "end_frame": 94,
+                "posterior_geometric_mean": 0.14968447328264908,
+                "start_sample": 29800,
+                "end_sample": 30120
+              },
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 5,
+                "end_char": 6,
+                "start_frame": 96,
+                "end_frame": 97,
+                "posterior_geometric_mean": 0.9721728172968429,
+                "start_sample": 30760,
+                "end_sample": 31080
+              },
+              {
+                "text": "U",
+                "token": "U",
+                "token_id": 16,
+                "start_char": 6,
+                "end_char": 7,
+                "start_frame": 105,
+                "end_frame": 106,
+                "posterior_geometric_mean": 0.9815767611422803,
+                "start_sample": 33640,
+                "end_sample": 33960
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 7,
+                "end_char": 8,
+                "start_frame": 110,
+                "end_frame": 114,
+                "posterior_geometric_mean": 8.8457212270149e-05,
+                "start_sample": 35240,
+                "end_sample": 36520
+              },
+              {
+                "text": "G",
+                "token": "G",
+                "token_id": 21,
+                "start_char": 9,
+                "end_char": 10,
+                "start_frame": 162,
+                "end_frame": 163,
+                "posterior_geometric_mean": 0.9967209686162093,
+                "start_sample": 51880,
+                "end_sample": 52200
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 10,
+                "end_char": 11,
+                "start_frame": 164,
+                "end_frame": 166,
+                "posterior_geometric_mean": 0.984488674698128,
+                "start_sample": 52520,
+                "end_sample": 53160
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 11,
+                "end_char": 12,
+                "start_frame": 167,
+                "end_frame": 168,
+                "posterior_geometric_mean": 0.9618308768766474,
+                "start_sample": 53480,
+                "end_sample": 53800
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 12,
+                "end_char": 13,
+                "start_frame": 170,
+                "end_frame": 171,
+                "posterior_geometric_mean": 0.9834675016562674,
+                "start_sample": 54440,
+                "end_sample": 54760
+              },
+              {
+                "text": "N",
+                "token": "N",
+                "token_id": 9,
+                "start_char": 13,
+                "end_char": 14,
+                "start_frame": 175,
+                "end_frame": 177,
+                "posterior_geometric_mean": 0.00023803929364201812,
+                "start_sample": 56040,
+                "end_sample": 56680
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 15,
+                "end_char": 16,
+                "start_frame": 220,
+                "end_frame": 222,
+                "posterior_geometric_mean": 0.6831442265866966,
+                "start_sample": 70440,
+                "end_sample": 71080
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 16,
+                "end_char": 17,
+                "start_frame": 225,
+                "end_frame": 226,
+                "posterior_geometric_mean": 0.9926343537310133,
+                "start_sample": 72040,
+                "end_sample": 72360
+              },
+              {
+                "text": "D",
+                "token": "D",
+                "token_id": 14,
+                "start_char": 17,
+                "end_char": 18,
+                "start_frame": 229,
+                "end_frame": 230,
+                "posterior_geometric_mean": 0.9979425173465579,
+                "start_sample": 73320,
+                "end_sample": 73640
+              },
+              {
+                "text": "B",
+                "token": "B",
+                "token_id": 24,
+                "start_char": 19,
+                "end_char": 20,
+                "start_frame": 277,
+                "end_frame": 278,
+                "posterior_geometric_mean": 0.16523480763243126,
+                "start_sample": 88680,
+                "end_sample": 89000
+              },
+              {
+                "text": "L",
+                "token": "L",
+                "token_id": 15,
+                "start_char": 20,
+                "end_char": 21,
+                "start_frame": 280,
+                "end_frame": 281,
+                "posterior_geometric_mean": 0.922765161145584,
+                "start_sample": 89640,
+                "end_sample": 89960
+              },
+              {
+                "text": "U",
+                "token": "U",
+                "token_id": 16,
+                "start_char": 21,
+                "end_char": 22,
+                "start_frame": 289,
+                "end_frame": 290,
+                "posterior_geometric_mean": 0.9818318096276699,
+                "start_sample": 92520,
+                "end_sample": 92840
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 22,
+                "end_char": 23,
+                "start_frame": 295,
+                "end_frame": 298,
+                "posterior_geometric_mean": 0.00010528604338877465,
+                "start_sample": 94440,
+                "end_sample": 95400
+              },
+              {
+                "text": "G",
+                "token": "G",
+                "token_id": 21,
+                "start_char": 24,
+                "end_char": 25,
+                "start_frame": 346,
+                "end_frame": 347,
+                "posterior_geometric_mean": 0.9965104467383481,
+                "start_sample": 110760,
+                "end_sample": 111080
+              },
+              {
+                "text": "R",
+                "token": "R",
+                "token_id": 13,
+                "start_char": 25,
+                "end_char": 26,
+                "start_frame": 348,
+                "end_frame": 350,
+                "posterior_geometric_mean": 0.9866925326498183,
+                "start_sample": 111400,
+                "end_sample": 112040
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 26,
+                "end_char": 27,
+                "start_frame": 351,
+                "end_frame": 352,
+                "posterior_geometric_mean": 0.9819757068327988,
+                "start_sample": 112360,
+                "end_sample": 112680
+              },
+              {
+                "text": "E",
+                "token": "E",
+                "token_id": 5,
+                "start_char": 27,
+                "end_char": 28,
+                "start_frame": 354,
+                "end_frame": 355,
+                "posterior_geometric_mean": 0.9789680669757256,
+                "start_sample": 113320,
+                "end_sample": 113640
+              },
+              {
+                "text": "N",
+                "token": "N",
+                "token_id": 9,
+                "start_char": 28,
+                "end_char": 29,
+                "start_frame": 360,
+                "end_frame": 361,
+                "posterior_geometric_mean": 0.00032716205406639967,
+                "start_sample": 115240,
+                "end_sample": 115560
+              }
+            ],
+            "units": [
+              {
+                "text": "RED",
+                "start_char": 0,
+                "end_char": 3,
+                "start_sample": 11560,
+                "end_sample": 14760,
+                "posterior_geometric_mean": 0.9841156654940545
+              },
+              {
+                "text": "BLUE",
+                "start_char": 4,
+                "end_char": 8,
+                "start_sample": 29800,
+                "end_sample": 36520,
+                "posterior_geometric_mean": 0.05962033828459426
+              },
+              {
+                "text": "GREEN",
+                "start_char": 9,
+                "end_char": 14,
+                "start_sample": 51880,
+                "end_sample": 56680,
+                "posterior_geometric_mean": 0.18571985677677236
+              },
+              {
+                "text": "RED",
+                "start_char": 15,
+                "end_char": 18,
+                "start_sample": 70440,
+                "end_sample": 73640,
+                "posterior_geometric_mean": 0.8779485717432225
+              },
+              {
+                "text": "BLUE",
+                "start_char": 19,
+                "end_char": 23,
+                "start_sample": 88680,
+                "end_sample": 95400,
+                "posterior_geometric_mean": 0.06300864759228861
+              },
+              {
+                "text": "GREEN",
+                "start_char": 24,
+                "end_char": 29,
+                "start_sample": 110760,
+                "end_sample": 115560,
+                "posterior_geometric_mean": 0.1986365568750055
+              }
+            ],
+            "windows": [
+              {
+                "core_start": 0,
+                "core_end": 394,
+                "frame_start": 0,
+                "frame_end": 394,
+                "sample_start": 0,
+                "sample_end": 126160,
+                "right_zero_pad": 310,
+                "input_samples": 126160,
+                "output_frames": 394,
+                "retained_frames": 394
+              }
+            ],
+            "emission_bytes": 14184,
+            "traceback_bytes": 19306,
+            "path_log_probability": -229.31726250341035,
+            "low_posterior_character_indices": [
+              7,
+              13,
+              22,
+              28
+            ]
+          }
+        ],
+        "protocol": "agent-video-ctc-align-v1",
+        "engine": "transformers-wav2vec2-ctc-local-v1",
+        "adapter_id": "ctc",
+        "model_sha256": "sha256:885a11a9c463642db7b0eaa93fe70d89f4e2a98fd586a69d40921d279427ddd3",
+        "source_sha256": "sha256:eea24cb10f383c972a64ae8742795e3eb5e404ba4dd37f98440197f8c84a0d30",
+        "request_sha256": "sha256:161374f86e78816e13cdd0599b31655cdce047fab3025d97049d7b35100c3ca5",
+        "worker": {
+          "protocol": "agent-video-ctc-align-v1",
+          "status": "succeeded",
+          "network": "disabled",
+          "blocked_network_events": [],
+          "request_sha256": "sha256:161374f86e78816e13cdd0599b31655cdce047fab3025d97049d7b35100c3ca5",
+          "model_forward_calls": 1,
+          "device": "NVIDIA GeForce RTX 3060",
+          "peak_cuda_bytes": 511436288,
+          "threads": 4,
+          "versions": {
+            "python": "3.13.14",
+            "numpy": "2.4.2",
+            "torch": "2.13.0+cu130",
+            "transformers": "5.14.1"
+          },
+          "module_paths": {
+            "torch": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\__init__.py",
+            "transformers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\__init__.py"
+          },
+          "input_sha256": "sha256:da69e5d769a0660752aca307b600ea26e41bef8e8f80a5d2a1f0914fe1aa15d3",
+          "source_sha256": "sha256:eea24cb10f383c972a64ae8742795e3eb5e404ba4dd37f98440197f8c84a0d30",
+          "adapter_sha256": "sha256:885a11a9c463642db7b0eaa93fe70d89f4e2a98fd586a69d40921d279427ddd3",
+          "verification": {
+            "mode": "windows-read-lock-command-scope",
+            "files_hashed": 20,
+            "bytes_hashed": 378093877,
+            "digest_reuses_while_locked": 6,
+            "write_and_delete_sharing": false,
+            "persists_across_commands": false
+          },
+          "elapsed_seconds": 18.101
+        },
+        "diagnostic_directory": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\original\\cache\\alignment\\run_20261025010636_cbe87656",
+        "review_required": true,
+        "warnings": [
+          "ALIGNMENT_REVIEW_REQUIRED"
+        ],
+        "elapsed_seconds": 22.927,
+        "operation_id": "op_20261025010659_a097e6a9",
+        "transcript_sha256": "sha256:39c37b920c4d4972a6b5314a294f67c6ed8569735741f099b7c05ee9b8519684",
+        "transcript_format": "txt",
+        "timeline_start_tick": 0,
+        "ticks_per_second": 90000,
+        "display_cues": [
+          {
+            "text": "RED BLUE GREEN RED BLUE GREEN",
+            "start_tick": 65025,
+            "end_tick": 650025,
+            "source_start_char": 0,
+            "word_timing": [
+              {
+                "text": "RED",
+                "start_char": 0,
+                "start": 0.0,
+                "end": 0.2
+              },
+              {
+                "text": "BLUE",
+                "start_char": 4,
+                "start": 1.14,
+                "end": 1.56
+              },
+              {
+                "text": "GREEN",
+                "start_char": 9,
+                "start": 2.52,
+                "end": 2.82
+              },
+              {
+                "text": "RED",
+                "start_char": 15,
+                "start": 3.68,
+                "end": 3.88
+              },
+              {
+                "text": "BLUE",
+                "start_char": 19,
+                "start": 4.82,
+                "end": 5.24
+              },
+              {
+                "text": "GREEN",
+                "start_char": 24,
+                "start": 6.2,
+                "end": 6.5
+              }
+            ]
+          }
+        ]
+      },
+      "registered_assets": [
+        {
+          "id": "aligned_subtitle_20261025010659_ba52d37c",
+          "kind": "generated",
+          "uri": "assets/alignment/default.transcript.txt",
+          "sha256": "sha256:39c37b920c4d4972a6b5314a294f67c6ed8569735741f099b7c05ee9b8519684",
+          "rights_ref": "aligned_subtitle_20261025010659_ba52d37c",
+          "probe": {
+            "duration_tick": 650025
+          },
+          "source": {
+            "source_url": "local://E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\original\\assets\\alignment\\default.transcript.txt",
+            "original_name": "default.transcript.txt",
+            "retrieved_at": "2026-10-25T01:06:59.878527Z"
+          }
+        },
+        {
+          "id": "aligned_subtitle_20261025010659_dab27169",
+          "kind": "generated",
+          "uri": "assets/alignment/default.json",
+          "sha256": "sha256:80a7649f7b7e0a815e0ae1574f05ef93ed5ebbed6145f9b57f3dd006a6e3e519",
+          "rights_ref": "aligned_subtitle_20261025010659_dab27169",
+          "probe": {
+            "duration_tick": 650025
+          },
+          "source": {
+            "source_url": "local://E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\original\\assets\\alignment\\default.json",
+            "original_name": "default.json",
+            "retrieved_at": "2026-10-25T01:06:59.891358Z"
+          }
+        },
+        {
+          "id": "aligned_subtitle_20261025010659_834c01c5",
+          "kind": "subtitle",
+          "uri": "assets/alignment/default.srt",
+          "sha256": "sha256:33a00c55abcd8bec84ee81ba3f080b2554f1e7d7349d61dc696fcc6fabe2419c",
+          "rights_ref": "aligned_subtitle_20261025010659_834c01c5",
+          "probe": {
+            "duration_tick": 650025
+          },
+          "source": {
+            "source_url": "local://E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\original\\assets\\alignment\\default.srt",
+            "original_name": "default.srt",
+            "retrieved_at": "2026-10-25T01:06:59.898938Z"
+          }
+        }
+      ],
+      "generated_clips": [],
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "warnings": [
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "speech",
+            "rights_ref": "speech",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "speech",
+            "rights_ref": "speech",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_EVIDENCE_INCOMPLETE",
+            "message": "来源、许可证或证据字段缺失",
+            "asset_id": "speech",
+            "rights_ref": "speech",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "aligned_subtitle_20261025010216_b00a5269",
+            "rights_ref": "aligned_subtitle_20261025010216_b00a5269",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "aligned_subtitle_20261025010216_b00a5269",
+            "rights_ref": "aligned_subtitle_20261025010216_b00a5269",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "aligned_subtitle_20261025010216_68cca82c",
+            "rights_ref": "aligned_subtitle_20261025010216_68cca82c",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "aligned_subtitle_20261025010216_68cca82c",
+            "rights_ref": "aligned_subtitle_20261025010216_68cca82c",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "aligned_subtitle_20261025010216_4a2ba926",
+            "rights_ref": "aligned_subtitle_20261025010216_4a2ba926",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "aligned_subtitle_20261025010216_4a2ba926",
+            "rights_ref": "aligned_subtitle_20261025010216_4a2ba926",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "aligned_subtitle_20261025010659_ba52d37c",
+            "rights_ref": "aligned_subtitle_20261025010659_ba52d37c",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "aligned_subtitle_20261025010659_ba52d37c",
+            "rights_ref": "aligned_subtitle_20261025010659_ba52d37c",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "aligned_subtitle_20261025010659_dab27169",
+            "rights_ref": "aligned_subtitle_20261025010659_dab27169",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "aligned_subtitle_20261025010659_dab27169",
+            "rights_ref": "aligned_subtitle_20261025010659_dab27169",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "aligned_subtitle_20261025010659_834c01c5",
+            "rights_ref": "aligned_subtitle_20261025010659_834c01c5",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "aligned_subtitle_20261025010659_834c01c5",
+            "rights_ref": "aligned_subtitle_20261025010659_834c01c5",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "asr_adapter_ctc",
+            "rights_ref": "asr_adapter_ctc",
+            "record_version": 1,
+            "context": "derived_dependency"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "asr_adapter_ctc",
+            "rights_ref": "asr_adapter_ctc",
+            "record_version": 1,
+            "context": "derived_dependency"
+          }
+        ],
+        "rights": {
+          "ok": true,
+          "target": "commercial_ad",
+          "checked": 7,
+          "required_records": 8,
+          "failures": [],
+          "warnings": [
+            {
+              "status": "unverified",
+              "code": "RIGHTS_STATUS_BLOCKED",
+              "message": "状态 unverified 不允许发布",
+              "asset_id": "speech",
+              "rights_ref": "speech",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "code": "RIGHTS_USE_NOT_PERMITTED",
+              "message": "记录未允许目标用途: commercial_ad",
+              "asset_id": "speech",
+              "rights_ref": "speech",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "code": "RIGHTS_EVIDENCE_INCOMPLETE",
+              "message": "来源、许可证或证据字段缺失",
+              "asset_id": "speech",
+              "rights_ref": "speech",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "status": "unverified",
+              "code": "RIGHTS_STATUS_BLOCKED",
+              "message": "状态 unverified 不允许发布",
+              "asset_id": "aligned_subtitle_20261025010216_b00a5269",
+              "rights_ref": "aligned_subtitle_20261025010216_b00a5269",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "code": "RIGHTS_USE_NOT_PERMITTED",
+              "message": "记录未允许目标用途: commercial_ad",
+              "asset_id": "aligned_subtitle_20261025010216_b00a5269",
+              "rights_ref": "aligned_subtitle_20261025010216_b00a5269",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "status": "unverified",
+              "code": "RIGHTS_STATUS_BLOCKED",
+              "message": "状态 unverified 不允许发布",
+              "asset_id": "aligned_subtitle_20261025010216_68cca82c",
+              "rights_ref": "aligned_subtitle_20261025010216_68cca82c",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "code": "RIGHTS_USE_NOT_PERMITTED",
+              "message": "记录未允许目标用途: commercial_ad",
+              "asset_id": "aligned_subtitle_20261025010216_68cca82c",
+              "rights_ref": "aligned_subtitle_20261025010216_68cca82c",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "status": "unverified",
+              "code": "RIGHTS_STATUS_BLOCKED",
+              "message": "状态 unverified 不允许发布",
+              "asset_id": "aligned_subtitle_20261025010216_4a2ba926",
+              "rights_ref": "aligned_subtitle_20261025010216_4a2ba926",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "code": "RIGHTS_USE_NOT_PERMITTED",
+              "message": "记录未允许目标用途: commercial_ad",
+              "asset_id": "aligned_subtitle_20261025010216_4a2ba926",
+              "rights_ref": "aligned_subtitle_20261025010216_4a2ba926",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "status": "unverified",
+              "code": "RIGHTS_STATUS_BLOCKED",
+              "message": "状态 unverified 不允许发布",
+              "asset_id": "aligned_subtitle_20261025010659_ba52d37c",
+              "rights_ref": "aligned_subtitle_20261025010659_ba52d37c",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "code": "RIGHTS_USE_NOT_PERMITTED",
+              "message": "记录未允许目标用途: commercial_ad",
+              "asset_id": "aligned_subtitle_20261025010659_ba52d37c",
+              "rights_ref": "aligned_subtitle_20261025010659_ba52d37c",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "status": "unverified",
+              "code": "RIGHTS_STATUS_BLOCKED",
+              "message": "状态 unverified 不允许发布",
+              "asset_id": "aligned_subtitle_20261025010659_dab27169",
+              "rights_ref": "aligned_subtitle_20261025010659_dab27169",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "code": "RIGHTS_USE_NOT_PERMITTED",
+              "message": "记录未允许目标用途: commercial_ad",
+              "asset_id": "aligned_subtitle_20261025010659_dab27169",
+              "rights_ref": "aligned_subtitle_20261025010659_dab27169",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "status": "unverified",
+              "code": "RIGHTS_STATUS_BLOCKED",
+              "message": "状态 unverified 不允许发布",
+              "asset_id": "aligned_subtitle_20261025010659_834c01c5",
+              "rights_ref": "aligned_subtitle_20261025010659_834c01c5",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "code": "RIGHTS_USE_NOT_PERMITTED",
+              "message": "记录未允许目标用途: commercial_ad",
+              "asset_id": "aligned_subtitle_20261025010659_834c01c5",
+              "rights_ref": "aligned_subtitle_20261025010659_834c01c5",
+              "record_version": 1,
+              "context": "project_asset"
+            },
+            {
+              "status": "unverified",
+              "code": "RIGHTS_STATUS_BLOCKED",
+              "message": "状态 unverified 不允许发布",
+              "asset_id": "asr_adapter_ctc",
+              "rights_ref": "asr_adapter_ctc",
+              "record_version": 1,
+              "context": "derived_dependency"
+            },
+            {
+              "code": "RIGHTS_USE_NOT_PERMITTED",
+              "message": "记录未允许目标用途: commercial_ad",
+              "asset_id": "asr_adapter_ctc",
+              "rights_ref": "asr_adapter_ctc",
+              "record_version": 1,
+              "context": "derived_dependency"
+            }
+          ],
+          "disposition_decisions": [],
+          "effective_disposition_decisions": []
+        },
+        "schema_engine": "jsonschema",
+        "asset_count": 7,
+        "sequence_count": 1
+      },
+      "before_snapshot": {
+        "snapshot_id": "snap_20261025010659_e78a4267",
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\installed-r1\\original\\history\\snap_20261025010659_e78a4267.json",
+        "label": "before-subtitle-align",
+        "created_at": "2026-10-25T01:06:59.841634Z"
+      },
+      "verification": {
+        "mode": "windows-read-lock-command-scope",
+        "files_hashed": 22,
+        "bytes_hashed": 378345650,
+        "digest_reuses_while_locked": 58,
+        "write_and_delete_sharing": false,
+        "persists_across_commands": false
+      }
+    },
+    "artifacts": [],
+    "warnings": [
+      {
+        "code": "ALIGNMENT_REVIEW_REQUIRED",
+        "message": "CTC 后验不是校准准确率；应核验逐字稿、字边界及自然语音效果"
+      }
+    ],
+    "errors": [],
+    "provenance": {
+      "cli_version": "0.1.8",
+      "schema_version": "0.1.0",
+      "engine_version": "ffmpeg-local",
+      "started_at": "2026-10-25T01:07:00.569106Z",
+      "finished_at": "2026-10-25T01:07:00.569115Z",
+      "network": "disabled"
+    }
+  },
+  "stderr": "",
+  "seconds": 26.606578700000682
+}

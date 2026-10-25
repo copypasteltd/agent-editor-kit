@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-10-25T01:22:39.494912+00:00",
+  "baseline_commit": "47386c538300c1c52e547aa39f42f974e20ba3b2",
+  "installed_cli": "0.1.8",
+  "source_python_files": 195,
+  "source_and_installed_equal": true,
+  "gap_groups": 38,
+  "closed_complete_gap_groups": 0,
+  "all_original_closure_conditions_verbatim": true,
+  "order_counts": {
+    "先收口": 13,
+    "随后建设": 18,
+    "完整范围扩展": 7
+  },
+  "readmes": [
+    {
+      "path": "README.md",
+      "preserved_history_rows": 59,
+      "current_verification_rows": 65,
+      "functional_ids": 50,
+      "service_ids": 19,
+      "internal_skill_ids": 17,
+      "sha256": "7ba216d636e0202a72e62b861b3ce2e0e8067b791da51e2e9285970e4143c4b9"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "preserved_history_rows": 59,
+      "current_verification_rows": 65,
+      "functional_ids": 50,
+      "service_ids": 19,
+      "internal_skill_ids": 17,
+      "sha256": "59aa70c4bc45b5154d00e64055cbd69769843e7d99a65b5be0b8055f3b1f8f83"
+    },
+    {
+      "path": "README.en.md",
+      "preserved_history_rows": 59,
+      "current_verification_rows": 65,
+      "functional_ids": 50,
+      "service_ids": 19,
+      "internal_skill_ids": 17,
+      "sha256": "1fa0ae128909c1e0aa1c77230a040815b417f061c99ec5111655e75037073276"
+    }
+  ],
+  "local_links_checked": 1756,
+  "missing_local_links": [],
+  "historical_R01_R59_preserved": true,
+  "cli_full_suite_initial_passed": 121,
+  "cli_full_suite_initial_failed": 1,
+  "test_assumption_corrected": true,
+  "installed_and_source_targeted_recheck_each": 1,
+  "full_cli_suite_repeated_after_test_change": false,
+  "previous_r6_kit_unchanged": true,
+  "public_release": "v0.1.0-alpha.3",
+  "full_capcut_parity": false,
+  "human_listening": false,
+  "new_competitor_market_audit": false,
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "goal_remains_active": true,
+  "generator_sha256": "54130685cfd668faa66e9dd96ed6a584bc3ac1d92adaa2667eec14a3ebd6e7c5"
+}

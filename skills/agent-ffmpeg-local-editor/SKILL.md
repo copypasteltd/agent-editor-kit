@@ -7,7 +7,7 @@ description: "Edit and deliver local videos with agent editor kit: multitrack ed
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.5` / CLI `0.1.7`.
+The current local runtime is `v0.1.0-alpha.4-local.6` / CLI `0.1.8`.
 The published alpha.3 downloads retain CLI 0.1.2 and their original scope.
 
 ## Runtime and common workflow
@@ -62,6 +62,10 @@ media. Add other modules when the request needs them. For example:
   and license, record the chosen target, then test it on the client's footage.
 - Local AI task: local-models plus the relevant media module; require existing
   registered dependencies and check actual inference artifacts.
+- Align corrected words to speech: read [ctc-alignment.md](references/ctc-alignment.md).
+  Register the existing native CTC runtime explicitly. Use `activity` only for
+  whitespace words, inspect preserved raw times and review decisions, and retain
+  the continuous-speech/Chinese/lyrics quality limits.
 - Separate drums, bass, other instruments and vocals: read
   [audio-stems.md](references/audio-stems.md). Register the existing four-source
   runtime explicitly, prefer GPU with `auto`, retain the four editable tracks,

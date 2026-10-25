@@ -1,0 +1,933 @@
+{
+  "format": "agent-ctc-alignment-v1",
+  "sample_rate": 16000,
+  "samples": 117985,
+  "original_text": "LOCAL VIDEO EDITOR KEEPS EVERY ORIGINAL WORD",
+  "original_file_text": "LOCAL VIDEO EDITOR KEEPS EVERY ORIGINAL WORD",
+  "index_basis": "original_text-unicode-codepoints",
+  "granularity": "whitespace",
+  "case": "upper",
+  "boundary_mode": "activity",
+  "stride_samples": 320,
+  "receptive_samples": 400,
+  "segments": [
+    {
+      "text": "LOCAL VIDEO EDITOR KEEPS EVERY ORIGINAL WORD",
+      "start_char": 0,
+      "end_char": 44,
+      "ignored": [
+        {
+          "start_char": 5,
+          "end_char": 6,
+          "text": " ",
+          "reason": "whitespace"
+        },
+        {
+          "start_char": 11,
+          "end_char": 12,
+          "text": " ",
+          "reason": "whitespace"
+        },
+        {
+          "start_char": 18,
+          "end_char": 19,
+          "text": " ",
+          "reason": "whitespace"
+        },
+        {
+          "start_char": 24,
+          "end_char": 25,
+          "text": " ",
+          "reason": "whitespace"
+        },
+        {
+          "start_char": 30,
+          "end_char": 31,
+          "text": " ",
+          "reason": "whitespace"
+        },
+        {
+          "start_char": 39,
+          "end_char": 40,
+          "text": " ",
+          "reason": "whitespace"
+        }
+      ],
+      "start_sample": 0,
+      "end_sample": 117985,
+      "frames": 369,
+      "characters": [
+        {
+          "text": "L",
+          "token": "L",
+          "token_id": 15,
+          "start_char": 0,
+          "end_char": 1,
+          "start_frame": 21,
+          "end_frame": 22,
+          "posterior_geometric_mean": 0.9999233543037372,
+          "start_sample": 6760,
+          "end_sample": 7080
+        },
+        {
+          "text": "O",
+          "token": "O",
+          "token_id": 8,
+          "start_char": 1,
+          "end_char": 2,
+          "start_frame": 26,
+          "end_frame": 27,
+          "posterior_geometric_mean": 0.9972271534837064,
+          "start_sample": 8360,
+          "end_sample": 8680
+        },
+        {
+          "text": "C",
+          "token": "C",
+          "token_id": 19,
+          "start_char": 2,
+          "end_char": 3,
+          "start_frame": 32,
+          "end_frame": 33,
+          "posterior_geometric_mean": 0.9681239337775097,
+          "start_sample": 10280,
+          "end_sample": 10600
+        },
+        {
+          "text": "A",
+          "token": "A",
+          "token_id": 7,
+          "start_char": 3,
+          "end_char": 4,
+          "start_frame": 37,
+          "end_frame": 38,
+          "posterior_geometric_mean": 0.9276156161656581,
+          "start_sample": 11880,
+          "end_sample": 12200
+        },
+        {
+          "text": "L",
+          "token": "L",
+          "token_id": 15,
+          "start_char": 4,
+          "end_char": 5,
+          "start_frame": 39,
+          "end_frame": 40,
+          "posterior_geometric_mean": 0.9547145504253959,
+          "start_sample": 12520,
+          "end_sample": 12840
+        },
+        {
+          "text": "V",
+          "token": "V",
+          "token_id": 25,
+          "start_char": 6,
+          "end_char": 7,
+          "start_frame": 64,
+          "end_frame": 65,
+          "posterior_geometric_mean": 0.9894425828504753,
+          "start_sample": 20520,
+          "end_sample": 20840
+        },
+        {
+          "text": "I",
+          "token": "I",
+          "token_id": 10,
+          "start_char": 7,
+          "end_char": 8,
+          "start_frame": 68,
+          "end_frame": 69,
+          "posterior_geometric_mean": 0.9962303230189454,
+          "start_sample": 21800,
+          "end_sample": 22120
+        },
+        {
+          "text": "D",
+          "token": "D",
+          "token_id": 14,
+          "start_char": 8,
+          "end_char": 9,
+          "start_frame": 71,
+          "end_frame": 72,
+          "posterior_geometric_mean": 0.8459734081281116,
+          "start_sample": 22760,
+          "end_sample": 23080
+        },
+        {
+          "text": "E",
+          "token": "E",
+          "token_id": 5,
+          "start_char": 9,
+          "end_char": 10,
+          "start_frame": 74,
+          "end_frame": 75,
+          "posterior_geometric_mean": 0.01851993911699617,
+          "start_sample": 23720,
+          "end_sample": 24040
+        },
+        {
+          "text": "O",
+          "token": "O",
+          "token_id": 8,
+          "start_char": 10,
+          "end_char": 11,
+          "start_frame": 83,
+          "end_frame": 84,
+          "posterior_geometric_mean": 0.9785796646762642,
+          "start_sample": 26600,
+          "end_sample": 26920
+        },
+        {
+          "text": "E",
+          "token": "E",
+          "token_id": 5,
+          "start_char": 12,
+          "end_char": 13,
+          "start_frame": 125,
+          "end_frame": 126,
+          "posterior_geometric_mean": 0.9994626549971048,
+          "start_sample": 40040,
+          "end_sample": 40360
+        },
+        {
+          "text": "D",
+          "token": "D",
+          "token_id": 14,
+          "start_char": 13,
+          "end_char": 14,
+          "start_frame": 127,
+          "end_frame": 129,
+          "posterior_geometric_mean": 0.9387142804597994,
+          "start_sample": 40680,
+          "end_sample": 41320
+        },
+        {
+          "text": "I",
+          "token": "I",
+          "token_id": 10,
+          "start_char": 14,
+          "end_char": 15,
+          "start_frame": 130,
+          "end_frame": 131,
+          "posterior_geometric_mean": 0.9986597405432736,
+          "start_sample": 41640,
+          "end_sample": 41960
+        },
+        {
+          "text": "T",
+          "token": "T",
+          "token_id": 6,
+          "start_char": 15,
+          "end_char": 16,
+          "start_frame": 133,
+          "end_frame": 135,
+          "posterior_geometric_mean": 0.9972788601107255,
+          "start_sample": 42600,
+          "end_sample": 43240
+        },
+        {
+          "text": "O",
+          "token": "O",
+          "token_id": 8,
+          "start_char": 16,
+          "end_char": 17,
+          "start_frame": 138,
+          "end_frame": 139,
+          "posterior_geometric_mean": 0.9997494848605565,
+          "start_sample": 44200,
+          "end_sample": 44520
+        },
+        {
+          "text": "R",
+          "token": "R",
+          "token_id": 13,
+          "start_char": 17,
+          "end_char": 18,
+          "start_frame": 139,
+          "end_frame": 141,
+          "posterior_geometric_mean": 0.9934577424079662,
+          "start_sample": 44520,
+          "end_sample": 45160
+        },
+        {
+          "text": "K",
+          "token": "K",
+          "token_id": 26,
+          "start_char": 19,
+          "end_char": 20,
+          "start_frame": 166,
+          "end_frame": 167,
+          "posterior_geometric_mean": 0.5713489435096734,
+          "start_sample": 53160,
+          "end_sample": 53480
+        },
+        {
+          "text": "E",
+          "token": "E",
+          "token_id": 5,
+          "start_char": 20,
+          "end_char": 21,
+          "start_frame": 170,
+          "end_frame": 171,
+          "posterior_geometric_mean": 0.7952398296251748,
+          "start_sample": 54440,
+          "end_sample": 54760
+        },
+        {
+          "text": "E",
+          "token": "E",
+          "token_id": 5,
+          "start_char": 21,
+          "end_char": 22,
+          "start_frame": 175,
+          "end_frame": 176,
+          "posterior_geometric_mean": 0.6182460161365021,
+          "start_sample": 56040,
+          "end_sample": 56360
+        },
+        {
+          "text": "P",
+          "token": "P",
+          "token_id": 23,
+          "start_char": 22,
+          "end_char": 23,
+          "start_frame": 179,
+          "end_frame": 180,
+          "posterior_geometric_mean": 0.819927606606612,
+          "start_sample": 57320,
+          "end_sample": 57640
+        },
+        {
+          "text": "S",
+          "token": "S",
+          "token_id": 12,
+          "start_char": 23,
+          "end_char": 24,
+          "start_frame": 184,
+          "end_frame": 186,
+          "posterior_geometric_mean": 0.7447359394659615,
+          "start_sample": 58920,
+          "end_sample": 59560
+        },
+        {
+          "text": "E",
+          "token": "E",
+          "token_id": 5,
+          "start_char": 25,
+          "end_char": 26,
+          "start_frame": 227,
+          "end_frame": 228,
+          "posterior_geometric_mean": 0.9954015259412375,
+          "start_sample": 72680,
+          "end_sample": 73000
+        },
+        {
+          "text": "V",
+          "token": "V",
+          "token_id": 25,
+          "start_char": 26,
+          "end_char": 27,
+          "start_frame": 230,
+          "end_frame": 231,
+          "posterior_geometric_mean": 0.998623599321417,
+          "start_sample": 73640,
+          "end_sample": 73960
+        },
+        {
+          "text": "E",
+          "token": "E",
+          "token_id": 5,
+          "start_char": 27,
+          "end_char": 28,
+          "start_frame": 232,
+          "end_frame": 233,
+          "posterior_geometric_mean": 0.8564304649726996,
+          "start_sample": 74280,
+          "end_sample": 74600
+        },
+        {
+          "text": "R",
+          "token": "R",
+          "token_id": 13,
+          "start_char": 28,
+          "end_char": 29,
+          "start_frame": 234,
+          "end_frame": 236,
+          "posterior_geometric_mean": 0.9854048311489331,
+          "start_sample": 74920,
+          "end_sample": 75560
+        },
+        {
+          "text": "Y",
+          "token": "Y",
+          "token_id": 22,
+          "start_char": 29,
+          "end_char": 30,
+          "start_frame": 239,
+          "end_frame": 240,
+          "posterior_geometric_mean": 0.9724760979025469,
+          "start_sample": 76520,
+          "end_sample": 76840
+        },
+        {
+          "text": "O",
+          "token": "O",
+          "token_id": 8,
+          "start_char": 31,
+          "end_char": 32,
+          "start_frame": 277,
+          "end_frame": 278,
+          "posterior_geometric_mean": 0.4526798600081223,
+          "start_sample": 88680,
+          "end_sample": 89000
+        },
+        {
+          "text": "R",
+          "token": "R",
+          "token_id": 13,
+          "start_char": 32,
+          "end_char": 33,
+          "start_frame": 280,
+          "end_frame": 283,
+          "posterior_geometric_mean": 0.8899116066575181,
+          "start_sample": 89640,
+          "end_sample": 90600
+        },
+        {
+          "text": "I",
+          "token": "I",
+          "token_id": 10,
+          "start_char": 33,
+          "end_char": 34,
+          "start_frame": 285,
+          "end_frame": 286,
+          "posterior_geometric_mean": 0.9497010767539293,
+          "start_sample": 91240,
+          "end_sample": 91560
+        },
+        {
+          "text": "G",
+          "token": "G",
+          "token_id": 21,
+          "start_char": 34,
+          "end_char": 35,
+          "start_frame": 288,
+          "end_frame": 289,
+          "posterior_geometric_mean": 0.9982433238101861,
+          "start_sample": 92200,
+          "end_sample": 92520
+        },
+        {
+          "text": "I",
+          "token": "I",
+          "token_id": 10,
+          "start_char": 35,
+          "end_char": 36,
+          "start_frame": 293,
+          "end_frame": 294,
+          "posterior_geometric_mean": 0.9649793571130165,
+          "start_sample": 93800,
+          "end_sample": 94120
+        },
+        {
+          "text": "N",
+          "token": "N",
+          "token_id": 9,
+          "start_char": 36,
+          "end_char": 37,
+          "start_frame": 295,
+          "end_frame": 296,
+          "posterior_geometric_mean": 0.9816145497774086,
+          "start_sample": 94440,
+          "end_sample": 94760
+        },
+        {
+          "text": "A",
+          "token": "A",
+          "token_id": 7,
+          "start_char": 37,
+          "end_char": 38,
+          "start_frame": 301,
+          "end_frame": 302,
+          "posterior_geometric_mean": 0.7450693808953707,
+          "start_sample": 96360,
+          "end_sample": 96680
+        },
+        {
+          "text": "L",
+          "token": "L",
+          "token_id": 15,
+          "start_char": 38,
+          "end_char": 39,
+          "start_frame": 302,
+          "end_frame": 303,
+          "posterior_geometric_mean": 0.9377547234451836,
+          "start_sample": 96680,
+          "end_sample": 97000
+        },
+        {
+          "text": "W",
+          "token": "W",
+          "token_id": 18,
+          "start_char": 40,
+          "end_char": 41,
+          "start_frame": 325,
+          "end_frame": 326,
+          "posterior_geometric_mean": 0.9975525581726506,
+          "start_sample": 104040,
+          "end_sample": 104360
+        },
+        {
+          "text": "O",
+          "token": "O",
+          "token_id": 8,
+          "start_char": 41,
+          "end_char": 42,
+          "start_frame": 329,
+          "end_frame": 330,
+          "posterior_geometric_mean": 0.9934879617922676,
+          "start_sample": 105320,
+          "end_sample": 105640
+        },
+        {
+          "text": "R",
+          "token": "R",
+          "token_id": 13,
+          "start_char": 42,
+          "end_char": 43,
+          "start_frame": 331,
+          "end_frame": 334,
+          "posterior_geometric_mean": 0.9862923311038321,
+          "start_sample": 105960,
+          "end_sample": 106920
+        },
+        {
+          "text": "D",
+          "token": "D",
+          "token_id": 14,
+          "start_char": 43,
+          "end_char": 44,
+          "start_frame": 337,
+          "end_frame": 338,
+          "posterior_geometric_mean": 0.9991321948300373,
+          "start_sample": 107880,
+          "end_sample": 108200
+        }
+      ],
+      "units": [
+        {
+          "text": "LOCAL",
+          "start_char": 0,
+          "end_char": 5,
+          "start_sample": 4800,
+          "end_sample": 16400,
+          "posterior_geometric_mean": 0.9691403403013349
+        },
+        {
+          "text": "VIDEO",
+          "start_char": 6,
+          "end_char": 11,
+          "start_sample": 19520,
+          "end_sample": 31520,
+          "posterior_geometric_mean": 0.4323829511521624
+        },
+        {
+          "text": "EDITOR",
+          "start_char": 12,
+          "end_char": 18,
+          "start_sample": 37040,
+          "end_sample": 48400,
+          "posterior_geometric_mean": 0.9876334484542417
+        },
+        {
+          "text": "KEEPS",
+          "start_char": 19,
+          "end_char": 24,
+          "start_sample": 52320,
+          "end_sample": 63120,
+          "posterior_geometric_mean": 0.7028582390606118
+        },
+        {
+          "text": "EVERY",
+          "start_char": 25,
+          "end_char": 30,
+          "start_sample": 69440,
+          "end_sample": 80480,
+          "posterior_geometric_mean": 0.960101551618583
+        },
+        {
+          "text": "ORIGINAL",
+          "start_char": 31,
+          "end_char": 39,
+          "start_sample": 85200,
+          "end_sample": 100880,
+          "posterior_geometric_mean": 0.8420508079626987
+        },
+        {
+          "text": "WORD",
+          "start_char": 40,
+          "end_char": 44,
+          "start_sample": 103200,
+          "end_sample": 110800,
+          "posterior_geometric_mean": 0.9941038399455633
+        }
+      ],
+      "windows": [
+        {
+          "core_start": 0,
+          "core_end": 369,
+          "frame_start": 0,
+          "frame_end": 369,
+          "sample_start": 0,
+          "sample_end": 118160,
+          "right_zero_pad": 175,
+          "input_samples": 118160,
+          "output_frames": 369,
+          "retained_frames": 369
+        }
+      ],
+      "emission_bytes": 26568,
+      "traceback_bytes": 28413,
+      "path_log_probability": -89.37979777949829,
+      "low_posterior_character_indices": [
+        9
+      ],
+      "raw_units": [
+        {
+          "text": "LOCAL",
+          "start_char": 0,
+          "end_char": 5,
+          "start_sample": 6760,
+          "end_sample": 12840,
+          "posterior_geometric_mean": 0.9691403403013349
+        },
+        {
+          "text": "VIDEO",
+          "start_char": 6,
+          "end_char": 11,
+          "start_sample": 20520,
+          "end_sample": 26920,
+          "posterior_geometric_mean": 0.4323829511521624
+        },
+        {
+          "text": "EDITOR",
+          "start_char": 12,
+          "end_char": 18,
+          "start_sample": 40040,
+          "end_sample": 45160,
+          "posterior_geometric_mean": 0.9876334484542417
+        },
+        {
+          "text": "KEEPS",
+          "start_char": 19,
+          "end_char": 24,
+          "start_sample": 53160,
+          "end_sample": 59560,
+          "posterior_geometric_mean": 0.7028582390606118
+        },
+        {
+          "text": "EVERY",
+          "start_char": 25,
+          "end_char": 30,
+          "start_sample": 72680,
+          "end_sample": 76840,
+          "posterior_geometric_mean": 0.960101551618583
+        },
+        {
+          "text": "ORIGINAL",
+          "start_char": 31,
+          "end_char": 39,
+          "start_sample": 88680,
+          "end_sample": 97000,
+          "posterior_geometric_mean": 0.8420508079626987
+        },
+        {
+          "text": "WORD",
+          "start_char": 40,
+          "end_char": 44,
+          "start_sample": 104040,
+          "end_sample": 108200,
+          "posterior_geometric_mean": 0.9941038399455633
+        }
+      ],
+      "activity": {
+        "algorithm": "ctc-guided-activity-v3",
+        "sample_rate": 16000,
+        "frame_samples": 80,
+        "dc_offset": 0,
+        "dc_subsample_step": 1,
+        "noise_rms": 0,
+        "reference_rms": 5298,
+        "low_threshold": 2,
+        "high_threshold": 53,
+        "max_internal_gap_frames": 8,
+        "max_support_gap_frames": 24,
+        "min_region_frames": 4,
+        "max_movement_samples": 12000,
+        "regions": [
+          {
+            "start_sample": 4800,
+            "end_sample": 16400,
+            "anchored_units": [
+              0
+            ],
+            "strong_activity": true
+          },
+          {
+            "start_sample": 19520,
+            "end_sample": 31520,
+            "anchored_units": [
+              1
+            ],
+            "strong_activity": true
+          },
+          {
+            "start_sample": 37040,
+            "end_sample": 37680,
+            "anchored_units": [],
+            "strong_activity": false
+          },
+          {
+            "start_sample": 38640,
+            "end_sample": 48400,
+            "anchored_units": [
+              2
+            ],
+            "strong_activity": true
+          },
+          {
+            "start_sample": 52320,
+            "end_sample": 63120,
+            "anchored_units": [
+              3
+            ],
+            "strong_activity": true
+          },
+          {
+            "start_sample": 69440,
+            "end_sample": 70080,
+            "anchored_units": [],
+            "strong_activity": false
+          },
+          {
+            "start_sample": 71040,
+            "end_sample": 80480,
+            "anchored_units": [
+              4
+            ],
+            "strong_activity": true
+          },
+          {
+            "start_sample": 85200,
+            "end_sample": 86000,
+            "anchored_units": [],
+            "strong_activity": false
+          },
+          {
+            "start_sample": 86960,
+            "end_sample": 100880,
+            "anchored_units": [
+              5
+            ],
+            "strong_activity": true
+          },
+          {
+            "start_sample": 103200,
+            "end_sample": 110800,
+            "anchored_units": [
+              6
+            ],
+            "strong_activity": true
+          }
+        ],
+        "support_attachments": [
+          {
+            "region_index": 2,
+            "target_region": 3,
+            "status": "weak_support_attached"
+          },
+          {
+            "region_index": 5,
+            "target_region": 6,
+            "status": "weak_support_attached"
+          },
+          {
+            "region_index": 7,
+            "target_region": 8,
+            "status": "weak_support_attached"
+          }
+        ],
+        "decisions": [
+          {
+            "unit_index": 0,
+            "status": "activity_estimated",
+            "candidate": {
+              "start_sample": 4800,
+              "end_sample": 16400
+            },
+            "changed": true
+          },
+          {
+            "unit_index": 1,
+            "status": "activity_estimated",
+            "candidate": {
+              "start_sample": 19520,
+              "end_sample": 31520
+            },
+            "changed": true
+          },
+          {
+            "unit_index": 2,
+            "status": "activity_estimated",
+            "candidate": {
+              "start_sample": 37040,
+              "end_sample": 48400
+            },
+            "changed": true
+          },
+          {
+            "unit_index": 3,
+            "status": "activity_estimated",
+            "candidate": {
+              "start_sample": 52320,
+              "end_sample": 63120
+            },
+            "changed": true
+          },
+          {
+            "unit_index": 4,
+            "status": "activity_estimated",
+            "candidate": {
+              "start_sample": 69440,
+              "end_sample": 80480
+            },
+            "changed": true
+          },
+          {
+            "unit_index": 5,
+            "status": "activity_estimated",
+            "candidate": {
+              "start_sample": 85200,
+              "end_sample": 100880
+            },
+            "changed": true
+          },
+          {
+            "unit_index": 6,
+            "status": "activity_estimated",
+            "candidate": {
+              "start_sample": 103200,
+              "end_sample": 110800
+            },
+            "changed": true
+          }
+        ],
+        "changed_units": 7,
+        "review_required": true,
+        "continuous_speech_boundaries_not_inferred": true
+      }
+    }
+  ],
+  "protocol": "agent-video-ctc-align-v1",
+  "engine": "transformers-wav2vec2-ctc-local-v1",
+  "adapter_id": "ctc",
+  "model_sha256": "sha256:28fbfe98ec53bf65826e3072ecdda99a9d471ed2c23fcb4c07baf041eac4f953",
+  "source_sha256": "sha256:e615ea11cefabcfd85bc674b4e0e9a70b7e639d4284c1a54862db6e4784b1b5d",
+  "request_sha256": "sha256:f4e82ead5d4ca3aa4bc6de42183818ba404cccd8d9e30e9f803e9e6cff7094dc",
+  "worker": {
+    "protocol": "agent-video-ctc-align-v1",
+    "status": "succeeded",
+    "network": "disabled",
+    "blocked_network_events": [],
+    "request_sha256": "sha256:f4e82ead5d4ca3aa4bc6de42183818ba404cccd8d9e30e9f803e9e6cff7094dc",
+    "model_forward_calls": 1,
+    "device": "cpu",
+    "peak_cuda_bytes": null,
+    "threads": 4,
+    "versions": {
+      "python": "3.13.14",
+      "numpy": "2.4.6",
+      "torch": "2.13.0+cu130",
+      "transformers": "5.14.1"
+    },
+    "module_paths": {
+      "torch": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\__init__.py",
+      "transformers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\__init__.py"
+    },
+    "input_sha256": "sha256:6646125fb3d248a7882953e4dc7d69f3ac00f7cec837ee07560da1086e3e45b9",
+    "source_sha256": "sha256:e615ea11cefabcfd85bc674b4e0e9a70b7e639d4284c1a54862db6e4784b1b5d",
+    "adapter_sha256": "sha256:28fbfe98ec53bf65826e3072ecdda99a9d471ed2c23fcb4c07baf041eac4f953",
+    "verification": {
+      "mode": "windows-read-lock-command-scope",
+      "files_hashed": 20,
+      "bytes_hashed": 378080026,
+      "digest_reuses_while_locked": 6,
+      "write_and_delete_sharing": false,
+      "persists_across_commands": false
+    },
+    "elapsed_seconds": 21.672
+  },
+  "diagnostic_directory": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\cpu-v3-r1\\heldout\\cache\\alignment\\run_20261025010204_9ac7a092",
+  "review_required": true,
+  "warnings": [
+    "ALIGNMENT_REVIEW_REQUIRED"
+  ],
+  "elapsed_seconds": 24.434,
+  "operation_id": "op_20261025010228_14354769",
+  "transcript_sha256": "sha256:3e4fdafa4d22cc16b11306714e2fac467a1d856c80b6650575d1e2000b80b495",
+  "transcript_format": "txt",
+  "timeline_start_tick": 0,
+  "ticks_per_second": 90000,
+  "display_cues": [
+    {
+      "text": "LOCAL VIDEO EDITOR KEEPS EVERY ORIGINAL WORD",
+      "start_tick": 27000,
+      "end_tick": 623250,
+      "source_start_char": 0,
+      "word_timing": [
+        {
+          "text": "LOCAL",
+          "start_char": 0,
+          "start": 0.0,
+          "end": 0.725
+        },
+        {
+          "text": "VIDEO",
+          "start_char": 6,
+          "start": 0.92,
+          "end": 1.67
+        },
+        {
+          "text": "EDITOR",
+          "start_char": 12,
+          "start": 2.015,
+          "end": 2.725
+        },
+        {
+          "text": "KEEPS",
+          "start_char": 19,
+          "start": 2.97,
+          "end": 3.645
+        },
+        {
+          "text": "EVERY",
+          "start_char": 25,
+          "start": 4.04,
+          "end": 4.73
+        },
+        {
+          "text": "ORIGINAL",
+          "start_char": 31,
+          "start": 5.025,
+          "end": 6.005
+        },
+        {
+          "text": "WORD",
+          "start_char": 40,
+          "start": 6.15,
+          "end": 6.625
+        }
+      ]
+    }
+  ]
+}

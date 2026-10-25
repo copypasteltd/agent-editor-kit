@@ -1,0 +1,240 @@
+{
+  "fixture": "original",
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\development-r1\\original",
+  "reference": "authored word blocks, not phonetic truth",
+  "immutable_threshold_seconds": 0.06666666666666667,
+  "quality": {
+    "raw_ctc": {
+      "max_error_samples": 4131,
+      "max_error_ms": 258.1875,
+      "passed": false,
+      "words": [
+        {
+          "word": "RED",
+          "start_error_samples": 3560,
+          "end_error_samples": -3236,
+          "start_error_ms": 222.5,
+          "end_error_ms": -202.25,
+          "passed": false
+        },
+        {
+          "word": "BLUE",
+          "start_error_samples": 3804,
+          "end_error_samples": -3229,
+          "start_error_ms": 237.75,
+          "end_error_ms": -201.8125,
+          "passed": false
+        },
+        {
+          "word": "GREEN",
+          "start_error_samples": 4131,
+          "end_error_samples": -2245,
+          "start_error_ms": 258.1875,
+          "end_error_ms": -140.3125,
+          "passed": false
+        },
+        {
+          "word": "RED",
+          "start_error_samples": 3515,
+          "end_error_samples": -3281,
+          "start_error_ms": 219.6875,
+          "end_error_ms": -205.0625,
+          "passed": false
+        },
+        {
+          "word": "BLUE",
+          "start_error_samples": 3759,
+          "end_error_samples": -3274,
+          "start_error_ms": 234.9375,
+          "end_error_ms": -204.625,
+          "passed": false
+        },
+        {
+          "word": "GREEN",
+          "start_error_samples": 4086,
+          "end_error_samples": -2290,
+          "start_error_ms": 255.375,
+          "end_error_ms": -143.125,
+          "passed": false
+        }
+      ]
+    },
+    "activity": {
+      "max_error_samples": 3360,
+      "max_error_ms": 210.0,
+      "passed": false,
+      "words": [
+        {
+          "word": "RED",
+          "start_error_samples": 3360,
+          "end_error_samples": -636,
+          "start_error_ms": 210.0,
+          "end_error_ms": -39.75,
+          "passed": false
+        },
+        {
+          "word": "BLUE",
+          "start_error_samples": 1764,
+          "end_error_samples": -389,
+          "start_error_ms": 110.25,
+          "end_error_ms": -24.3125,
+          "passed": false
+        },
+        {
+          "word": "GREEN",
+          "start_error_samples": 2891,
+          "end_error_samples": -1165,
+          "start_error_ms": 180.6875,
+          "end_error_ms": -72.8125,
+          "passed": false
+        },
+        {
+          "word": "RED",
+          "start_error_samples": 3315,
+          "end_error_samples": -521,
+          "start_error_ms": 207.1875,
+          "end_error_ms": -32.5625,
+          "passed": false
+        },
+        {
+          "word": "BLUE",
+          "start_error_samples": 2039,
+          "end_error_samples": -434,
+          "start_error_ms": 127.4375,
+          "end_error_ms": -27.125,
+          "passed": false
+        },
+        {
+          "word": "GREEN",
+          "start_error_samples": 2046,
+          "end_error_samples": -1130,
+          "start_error_ms": 127.875,
+          "end_error_ms": -70.625,
+          "passed": false
+        }
+      ]
+    }
+  },
+  "activity": {
+    "algorithm": "ctc-guided-activity-v1",
+    "sample_rate": 16000,
+    "frame_samples": 80,
+    "dc_offset": 0,
+    "dc_subsample_step": 1,
+    "noise_rms": 0,
+    "reference_rms": 8377,
+    "low_threshold": 27,
+    "high_threshold": 84,
+    "max_internal_gap_frames": 8,
+    "min_region_frames": 4,
+    "max_movement_samples": 12000,
+    "regions": [
+      {
+        "start_sample": 11360,
+        "end_sample": 17360,
+        "anchored_units": [
+          0
+        ]
+      },
+      {
+        "start_sample": 27760,
+        "end_sample": 39360,
+        "anchored_units": [
+          1
+        ]
+      },
+      {
+        "start_sample": 50640,
+        "end_sample": 57760,
+        "anchored_units": [
+          2
+        ]
+      },
+      {
+        "start_sample": 70240,
+        "end_sample": 76400,
+        "anchored_units": [
+          3
+        ]
+      },
+      {
+        "start_sample": 86960,
+        "end_sample": 98240,
+        "anchored_units": [
+          4
+        ]
+      },
+      {
+        "start_sample": 108720,
+        "end_sample": 116720,
+        "anchored_units": [
+          5
+        ]
+      }
+    ],
+    "decisions": [
+      {
+        "unit_index": 0,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 11360,
+          "end_sample": 17360
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 1,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 27760,
+          "end_sample": 39360
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 2,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 50640,
+          "end_sample": 57760
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 3,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 70240,
+          "end_sample": 76400
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 4,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 86960,
+          "end_sample": 98240
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 5,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 108720,
+          "end_sample": 116720
+        },
+        "changed": true
+      }
+    ],
+    "changed_units": 6,
+    "review_required": true,
+    "continuous_speech_boundaries_not_inferred": true
+  },
+  "model_forward_calls": 1,
+  "actual_device": "NVIDIA GeForce RTX 3060",
+  "peak_cuda_bytes": 511436288,
+  "input_sha256": "eea24cb10f383c972a64ae8742795e3eb5e404ba4dd37f98440197f8c84a0d30",
+  "reference_sha256": "b3e8d6c8f0b6d0afaf8219392c0a990b36127e8b7ce61541389efeb912c73839"
+}

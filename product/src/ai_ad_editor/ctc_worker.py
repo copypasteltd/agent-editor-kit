@@ -32,7 +32,8 @@ def infer(request: dict, checkpoint) -> tuple[dict, dict]:
     with wave.open(request['input'], 'rb') as stream:
         if stream.getframerate() != SAMPLE_RATE or stream.getnchannels() != 1 or stream.getsampwidth() != 2:
             raise RuntimeError('ALIGNMENT_PCM_INVALID')
-        pcm = np.frombuffer(stream.readframes(stream.getnframes()), dtype='<i2').astype(np.float32) / 32768.0
+        raw_pcm = np.frombuffer(stream.readframes(stream.getnframes()), dtype='<i2')
+        pcm = raw_pcm.astype(np.float32) / 32768.0
     stride, receptive = prepared['stride_samples'], prepared['receptive_samples']
     plans = []
     for segment in prepared['segments']:
@@ -86,17 +87,28 @@ def infer(request: dict, checkpoint) -> tuple[dict, dict]:
             timing['end_sample'] = segment['start_sample'] + frame_boundary(timing['end_frame'], frames, samples, stride, receptive)
             characters.append({**token, **timing})
         units = timed_units(segment['text'], characters, offset=segment['start_char'], granularity=prepared['granularity'])
+        activity = None
+        if prepared.get('boundary_mode', 'ctc') == 'activity':
+            from ai_ad_editor.ctc_activity import refine_units
+            if prepared['granularity'] != 'whitespace':
+                raise fail('ALIGNMENT_BOUNDARY_MODE_INVALID', 'activity 需要 whitespace 粒度')
+            raw_units = units
+            units, activity = refine_units(raw_pcm[segment['start_sample']:end], raw_units,
+                                          offset=segment['start_sample'], checkpoint=checkpoint)
         segments.append({k: segment[k] for k in ('text', 'start_char', 'end_char', 'ignored')})
         segments[-1].update({'start_sample': segment['start_sample'], 'end_sample': end, 'frames': frames,
             'characters': characters, 'units': units, 'windows': window_records,
             'emission_bytes': int(emissions.nbytes), 'traceback_bytes': aligned['traceback_bytes'],
             'path_log_probability': aligned['path_log_probability'],
             'low_posterior_character_indices': [c['start_char'] for c in characters if c['posterior_geometric_mean'] < .1]})
+        if activity is not None:
+            segments[-1].update(raw_units=raw_units, activity=activity)
         del emissions
     checkpoint()
     return ({'format': 'agent-ctc-alignment-v1', 'sample_rate': SAMPLE_RATE, 'samples': len(pcm),
              'original_text': prepared['original_text'], 'original_file_text': prepared['original_file_text'],
              'index_basis': prepared['index_basis'], 'granularity': prepared['granularity'], 'case': prepared['case'],
+             'boundary_mode': prepared.get('boundary_mode', 'ctc'),
              'stride_samples': stride, 'receptive_samples': receptive, 'segments': segments},
             {'model_forward_calls': calls, 'device': torch.cuda.get_device_name(0) if adapter['device'] == 'cuda' else 'cpu',
              'peak_cuda_bytes': torch.cuda.max_memory_allocated(0) if adapter['device'] == 'cuda' else None,

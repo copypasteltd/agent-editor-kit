@@ -20,7 +20,7 @@ PROTOCOL = 'agent-video-ctc-align-v1'
 
 def implementation_files() -> list[Path]:
     return [Path(__file__).with_name(name) for name in (
-        'local_ctc.py', 'ctc_alignment.py', 'ctc_worker.py', 'ctc_cli.py', 'local_asr.py',
+        'local_ctc.py', 'ctc_alignment.py', 'ctc_activity.py', 'ctc_worker.py', 'ctc_cli.py', 'local_asr.py',
         'artifact_locks.py', 'whisper_worker.py', 'utils.py', 'policy.py')]
 
 
@@ -84,10 +84,13 @@ def model_files(model: Path) -> list[Path]:
         raise fail('ALIGNMENT_MODEL_INVALID', '本地 CTC 模型/词表不完整或不安全: ' + str(exc), exit_code=10) from exc
 
 
-def prepare_text(transcript: dict[str, Any], adapter: dict[str, Any], *, case: str, granularity: str) -> dict[str, Any]:
+def prepare_text(transcript: dict[str, Any], adapter: dict[str, Any], *, case: str, granularity: str,
+                 boundary_mode: str = 'ctc') -> dict[str, Any]:
+    if boundary_mode not in {'ctc', 'activity'} or (boundary_mode == 'activity' and granularity != 'whitespace'):
+        raise fail('ALIGNMENT_BOUNDARY_MODE_INVALID', 'activity 边界估计需要显式 whitespace 粒度；字符/连续语音仍使用 ctc')
     model = Path(adapter['model_path'])
     config, vocab = _json(model / 'config.json'), _json(model / 'vocab.json')
-    prepared = {**transcript, 'case': case, 'granularity': granularity,
+    prepared = {**transcript, 'case': case, 'granularity': granularity, 'boundary_mode': boundary_mode,
                 'stride_samples': conv_grid(config)[0], 'receptive_samples': conv_grid(config)[1]}
     prepared['segments'] = [{**segment, **map_text(segment['text'], vocab, config['pad_token_id'],
         case=case, offset=segment['start_char'])} for segment in transcript['segments']]
@@ -98,13 +101,19 @@ def prepare_text(transcript: dict[str, Any], adapter: dict[str, Any], *, case: s
     return prepared
 
 
-def validate_alignment(value: Any, prepared: dict[str, Any], samples: int) -> dict[str, Any]:
+def validate_alignment(value: Any, prepared: dict[str, Any], samples: int, *, pcm_path: Path | None = None,
+                       checkpoint=lambda: None) -> dict[str, Any]:
     if not isinstance(value, dict) or value.get('sample_rate') != SAMPLE_RATE or value.get('samples') != samples or value.get('original_text') != prepared['original_text'] or not isinstance(value.get('segments'), list) or len(value['segments']) != len(prepared['segments']):
         raise fail('ALIGNMENT_RESULT_INVALID', 'CTC 返回的原文或采样时钟不匹配', exit_code=6)
     expected_fields = {'format': 'agent-ctc-alignment-v1', **{k: prepared[k] for k in (
         'original_file_text', 'index_basis', 'granularity', 'case', 'stride_samples', 'receptive_samples')}}
     if any(value.get(k) != v for k, v in expected_fields.items()):
         raise fail('ALIGNMENT_RESULT_INVALID', 'CTC 返回的原文件、粒度或模型时钟不匹配', exit_code=6)
+    boundary_mode = prepared.get('boundary_mode', 'ctc')
+    if value.get('boundary_mode', 'ctc') != boundary_mode or boundary_mode not in {'ctc', 'activity'}:
+        raise fail('ALIGNMENT_RESULT_INVALID', 'CTC 返回的边界模式与请求不匹配', exit_code=6)
+    if boundary_mode == 'activity' and (prepared['granularity'] != 'whitespace' or pcm_path is None):
+        raise fail('ALIGNMENT_RESULT_INVALID', '活动边界必须使用 whitespace 与同一解码 PCM 验证', exit_code=6)
     stride, receptive = prepared['stride_samples'], prepared['receptive_samples']
     for actual, expected in zip(value['segments'], prepared['segments']):
         if not isinstance(actual, dict):
@@ -132,7 +141,27 @@ def validate_alignment(value: Any, prepared: dict[str, Any], samples: int) -> di
                 raise fail('ALIGNMENT_RESULT_INVALID', 'CTC 字符时码未使用声明的采样网格', exit_code=6)
             previous = b
         units = timed_units(expected['text'], chars, offset=expected['start_char'], granularity=prepared['granularity'])
-        if actual.get('units') != units:
+        if boundary_mode == 'activity':
+            from .ctc_activity import refine_units
+            import numpy as np
+            if actual.get('raw_units') != units:
+                raise fail('ALIGNMENT_RESULT_INVALID', '原始 CTC 词时间与字符时间不一致', exit_code=6)
+            checkpoint()
+            try:
+                with wave.open(str(pcm_path), 'rb') as stream:
+                    if (stream.getframerate() != SAMPLE_RATE or stream.getnchannels() != 1
+                            or stream.getsampwidth() != 2 or stream.getnframes() != samples):
+                        raise ValueError('PCM format/sample clock changed')
+                    stream.setpos(start)
+                    pcm = np.frombuffer(stream.readframes(end - start), dtype='<i2')
+                if len(pcm) != end - start:
+                    raise ValueError('Incomplete PCM')
+            except (OSError, ValueError, EOFError, wave.Error) as exc:
+                raise fail('ALIGNMENT_RESULT_INVALID', '活动边界无法核验同一 PCM: ' + str(exc), exit_code=6) from exc
+            refined, report = refine_units(pcm, units, offset=start, checkpoint=checkpoint)
+            if actual.get('units') != refined or actual.get('activity') != report:
+                raise fail('ALIGNMENT_RESULT_INVALID', '活动边界/决定与源 PCM 独立重算不一致', exit_code=6)
+        elif actual.get('units') != units:
             raise fail('ALIGNMENT_RESULT_INVALID', 'CTC 词时间与字符时间不一致', exit_code=6)
     return value
 
@@ -197,7 +226,9 @@ def _align_registered(root: Path, source: Path, *, adapter: dict[str, Any], prep
     remaining()
     if artifact_entry(source, 'alignment-source')['sha256'] != source_hash or not verify_adapter(adapter)['ok']:
         raise fail('ALIGNMENT_INTEGRITY_FAILED', '推理过程中源或模型发生变化', exit_code=10)
-    value = validate_alignment(payload.get('alignment'), prepared, samples)
+    if artifact_entry(pcm, 'alignment-pcm')['sha256'] != request['input_sha256']:
+        raise fail('ALIGNMENT_INTEGRITY_FAILED', '推理过程中解码 PCM 发生变化', exit_code=10)
+    value = validate_alignment(payload.get('alignment'), prepared, samples, pcm_path=pcm, checkpoint=remaining)
     value.update({'protocol': PROTOCOL, 'engine': ENGINE, 'adapter_id': adapter['adapter_id'],
                   'model_sha256': adapter['sha256'], 'source_sha256': source_hash,
                   'request_sha256': request_hash, 'worker': {k: v for k, v in payload.items() if k != 'alignment'},

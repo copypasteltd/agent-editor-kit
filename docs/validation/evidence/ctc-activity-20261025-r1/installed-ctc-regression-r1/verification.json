@@ -1,0 +1,1996 @@
+{
+  "started_at_utc": "2026-10-25T01:01:16.904952+00:00",
+  "command": [
+    "C:\\Python313\\python.exe",
+    "-E",
+    "-B",
+    "-X",
+    "utf8",
+    "-c",
+    "import sys,unittest;sys.path.insert(0,sys.argv.pop(1));from ai_ad_editor.runtime import configure_local_runtime;configure_local_runtime();unittest.main(module=None)",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site",
+    "discover",
+    "-s",
+    "E:\\dev\\sandbox\\AI广告剪辑\\product\\tests",
+    "-p",
+    "test_ctc_alignment.py",
+    "-v"
+  ],
+  "site": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site",
+  "pattern": "test_ctc_alignment.py",
+  "frozen_before": [
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\__init__.py",
+      "bytes": 180,
+      "sha256": "sha256:8e01af63a98fac6e22cc7147a4fb284158bcaaffd326abaa3b3541a152c0768a"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\__main__.py",
+      "bytes": 79,
+      "sha256": "sha256:307299fda7b77d22c64cb51430ec75e5f59d78e9c948786afb3b2544fe45e4b7"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\ad_plan.py",
+      "bytes": 5506,
+      "sha256": "sha256:4d6482f6f0baf87cf60ae01be604af0047069e794c2784a9d0c86f30a1a458ac"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\animation.py",
+      "bytes": 2900,
+      "sha256": "sha256:b90064bd9de4fbe1aea85ba7bb11e5acfefc82a85c2b8078ba36bac64c59b949"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\artifact_locks.py",
+      "bytes": 5027,
+      "sha256": "sha256:8084eb6d7358c6376faec11a96bb89453c93bedf09ea9474f8e3e5c41027da3d"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\asr_quality.py",
+      "bytes": 3359,
+      "sha256": "sha256:e2407215903a2552a3efd1acd04840bae03862b470dce72b489573b36d6c1f90"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\audio_channel_links.py",
+      "bytes": 6741,
+      "sha256": "sha256:18e6caaf8370a523efe8a0a747818eb7fa0e058861f7ac982f703ecb648fc691"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\audio_routing.py",
+      "bytes": 21723,
+      "sha256": "sha256:40f74750a79ea80f016dd2eb8a353d6103682756f01970ad802c6292be8e5af8"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\audio_separation.py",
+      "bytes": 13921,
+      "sha256": "sha256:bb36d993ca948deea171e9569c6b4954105bdd5c7b79c70d2f5c14a79878f0de"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\audio_stretch.py",
+      "bytes": 22988,
+      "sha256": "sha256:2286f23b626fe5f5545b585da2c78c50068f3a0d4fa45b414d94d6926ed37973"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\audio_tempo.py",
+      "bytes": 3760,
+      "sha256": "sha256:3284a08dc75a25dcbeed30c7088a18898c46d398e6e7ae9380efcf0e366afcee"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\audio_tools.py",
+      "bytes": 4799,
+      "sha256": "sha256:9e636d1b27707dad3777811827d3c3c3e69ca393a9a3757733e9876517506f5e"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\batch.py",
+      "bytes": 6398,
+      "sha256": "sha256:5a416712628d104c5e9cf1b96bafeb118b2e8bfb44690b51831242b716ff2a92"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\beat_edit.py",
+      "bytes": 9126,
+      "sha256": "sha256:0cbc12d37b80417e022741818f812f61d287123d816217c7e5462f872cfd78fb"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\bindings.py",
+      "bytes": 24915,
+      "sha256": "sha256:2dbb8bce11ecb7f7fd6fa893cca08efdaa6f9c21a3c6f8a4588cbed5092c3a65"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\blend_automation.py",
+      "bytes": 8353,
+      "sha256": "sha256:ca6c28091564fdb28853288f46f4caaeaa96388c4d363e1b139248d89753a1e5"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\browser_process.py",
+      "bytes": 10589,
+      "sha256": "sha256:16fc0ec652a21a7604b5e59737800d91a3bf4254e1c44de2c7989b895c130a65"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\capabilities.py",
+      "bytes": 125625,
+      "sha256": "sha256:a2302f9c10c0cb56f566d702db186f7bc0cede44221cd531852c144e5d734fc8"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\captions.py",
+      "bytes": 13732,
+      "sha256": "sha256:38c500ba0e2697e745d7ad8357d7a9e5cb9e771f4093750b0b6a8b67e7ee0c57"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\capture.py",
+      "bytes": 16349,
+      "sha256": "sha256:9f8261f0ec5d005605c7e6112731245c92e55b6d252f574e9acb2a5fbef457cf"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\cli.py",
+      "bytes": 493514,
+      "sha256": "sha256:e31ed897310c37e28a4e8718b997a67efbd56aec67cc6c8e6f617d5a41611df6"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\clip_windows.py",
+      "bytes": 16957,
+      "sha256": "sha256:47a5b173770772ac72d2764c05e47148962003414adb0fcd26c16a7b3f88f1ce"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\community_audio.py",
+      "bytes": 12398,
+      "sha256": "sha256:b22b1714e164f0e400b7d53f978e0d0e36b83b519f827cd235826d29a037116a"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\community_cli.py",
+      "bytes": 26976,
+      "sha256": "sha256:3911b36f4746b04753932e2af04a53434d4b7789aa32e4025086dcb0cba89ec2"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\community_device.py",
+      "bytes": 3478,
+      "sha256": "sha256:c1525a0b20ebd5d9b37a615494b188c7165526df0bb5479338a3e06e5428f4e5"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\community_models.py",
+      "bytes": 4945,
+      "sha256": "sha256:e776620209fbdd3e059d12695dd54e887ce3549bd66594a9581fa2db9ae5f4ab"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\community_worker.py",
+      "bytes": 8802,
+      "sha256": "sha256:0ac458071552680c98590331c98df5a933db683547007550eba7c2db7cbf0d32"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\contact_sheet.py",
+      "bytes": 22804,
+      "sha256": "sha256:18e7028d73443cb6173ddbcda949147485e6d99f6742afeeb9c8b3cf7f66165b"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\convert.py",
+      "bytes": 56849,
+      "sha256": "sha256:326be682b517c751d4c759376d05abb87c53b3314b6080de044c944fab8d36ba"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\ctc_activity.py",
+      "bytes": 7367,
+      "sha256": "sha256:32e642daa9b2cba6e0946aa6b29f64e1c20b238601a397251b4d32092fc2d289"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\ctc_alignment.py",
+      "bytes": 11422,
+      "sha256": "sha256:a475e9b1acd8ceba2be90884729f0b5a4c76ed354853bc0a57b47f1f9787edd7"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\ctc_cli.py",
+      "bytes": 13599,
+      "sha256": "sha256:9cd8027ee654c95f42d69055c2decdc4628da11dc49c6927ee57a74e1dc9f8a7"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\ctc_worker.py",
+      "bytes": 10553,
+      "sha256": "sha256:18440a7affc7e33169f82e40a0a970d7acd767b5a699559888a6768e1b0589ad"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\cuda_admission.py",
+      "bytes": 11092,
+      "sha256": "sha256:8d030f776b09edeb9d6cfecce720caca3f20a1fab058dd3dc406020ed064fd3b"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\curve_automation.py",
+      "bytes": 9374,
+      "sha256": "sha256:73c33745ad14cfbce2f937db9e78840eef7794259496a62c6247f609167442f5"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\demucs_worker.py",
+      "bytes": 5409,
+      "sha256": "sha256:8a5347b8e2ad0c93fb42b9c1867737ff989914e662753ef11104602c944bba95"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\derived_cache.py",
+      "bytes": 4848,
+      "sha256": "sha256:c3cca48d052b6ff4531cafc04005d7936eeb289a67f74bb4ffd0ceb203dd03e0"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\draft_adapter.py",
+      "bytes": 56926,
+      "sha256": "sha256:0eb1e8f649e66cc6f15ef56bfb75d07166a7d7e3a6f1326f50bca349a1c24071"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\edit_planner.py",
+      "bytes": 30139,
+      "sha256": "sha256:4b91e9bf43709a9382ebed6bebb861cf7b10f4024191e4f255ee96a662992b2f"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\effect_automation.py",
+      "bytes": 22422,
+      "sha256": "sha256:45b3ee4be693cdf1c07cf3fb6f372562ca376c93bf846b9515fc3d0d05ce8dbf"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\effects.py",
+      "bytes": 19155,
+      "sha256": "sha256:2b236659bb30c71d3c14c70ba6030e19b48916f04ec9456d9e90b01672a245f1"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\errors.py",
+      "bytes": 1609,
+      "sha256": "sha256:1525e91f86ad7f22c061a35c383d3513cdcad77acab2e364510b42adde0a9721"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\face_cli.py",
+      "bytes": 13902,
+      "sha256": "sha256:0b22ce781d350770edcecfddfce4058ed478fccd29e723a78f088e32be2bc8c4"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\face_geometry.py",
+      "bytes": 8744,
+      "sha256": "sha256:a3551a4d699e8e5e43622311a1d800be00cbaec70f9152147b3dde4a4f73d380"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\face_landmarks.py",
+      "bytes": 7359,
+      "sha256": "sha256:29112cde9c85408d2cf19c7a26e3f17282605bb80e0d0cb67debd44ac36f5793"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\face_worker.py",
+      "bytes": 14509,
+      "sha256": "sha256:dbfa64be9cefa760cfe6b31685a6cbcc8008b2c696951848ffd75a4f0e604e56"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_audio_graph.py",
+      "bytes": 3835,
+      "sha256": "sha256:d47b84af34f8e65babbe27b3db99e342d4d0990bea10558c2a255cc7ca278fe9"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_balance.py",
+      "bytes": 14001,
+      "sha256": "sha256:16dbfe24290b8bc0b1d77268b6ff34bf813dbbc62b378971d82a5aa49faa9355"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_bundle.py",
+      "bytes": 16354,
+      "sha256": "sha256:0ec2eff233424eef1a1ae9c8a60aa271d808abee77b4a17e5a5ffaac28a2d0c3"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_bundle_source.py",
+      "bytes": 6145,
+      "sha256": "sha256:0f414c8c8f5b79dccb54a41ed02e73c460deb9d96e5884372ffc85357ee1a6ef"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_color_signal.py",
+      "bytes": 6848,
+      "sha256": "sha256:b0c07f905c67db85478fc34d5e1b1614a13361bf64ce34f5838512de875d8be1"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_composite.py",
+      "bytes": 8830,
+      "sha256": "sha256:8275eb65c574407b47b466bbe124015832a92b068e5595a028c04964f884b937"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_crop.py",
+      "bytes": 14802,
+      "sha256": "sha256:390a13647ce58e94ba85bb6fde0d2333a80106fac1806b168a72ed4e7bd6b496"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_curves.py",
+      "bytes": 15920,
+      "sha256": "sha256:1cfad01c55964614ea432431f6db59191b87356aa9b15a3c6a59c127f52c8a56"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_effect_chain.py",
+      "bytes": 8444,
+      "sha256": "sha256:3aa3ffa4c675e1f1dd3330ee4ea7c1d3a12501569cf2f9fdb0cd45a9f1e018f3"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_exposure.py",
+      "bytes": 6270,
+      "sha256": "sha256:fceacb925552a4bb44126143f584f4757a76152e87f9224f4e6ce16f5a6c27ed"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_gaussian.py",
+      "bytes": 11516,
+      "sha256": "sha256:97e64bcecca4ae7d979f382cff0afd8b91401bdf7020c869282218777ec87bdb"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_geometry.py",
+      "bytes": 6804,
+      "sha256": "sha256:57f9af0406663a27e31b35e3463076acf24d3833de5fce98102b6f0b73a9d51a"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_keyer.py",
+      "bytes": 16743,
+      "sha256": "sha256:bb5c5eb5aa0ade318a50e443c8039f7daca99f0d593481da15c530f2b3b22b93"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_levels.py",
+      "bytes": 14977,
+      "sha256": "sha256:4b6d1b777da7359a0c3dc3b0c10e3b87b58b2c4aa1522d994d2a17e9c39ec248"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_lut.py",
+      "bytes": 27425,
+      "sha256": "sha256:bb8489ca1ce1a8cc253f5c22b499428fe7cb0634a53f804cef5d089840ebbece"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_mask.py",
+      "bytes": 17505,
+      "sha256": "sha256:f85427fa44a9c3723c398314230c0e00c6b6e699c09c3785e5b3ff99a244bbfa"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_native_pipe.py",
+      "bytes": 5346,
+      "sha256": "sha256:4b89898462505f58fbbe1ca053a0f4f2ef475f417a99dabeb470f999353eb708"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_native_source.py",
+      "bytes": 20020,
+      "sha256": "sha256:1badc4c67dcdfb995dec5570b47e54fe1a3b1da6234f978062832c2d354496c6"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_numeric_automation.py",
+      "bytes": 4580,
+      "sha256": "sha256:e66c20d09cab1487a86d19104d5637dcdc2bf97e11a781172ab1c431bffe1e09"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_pixels.py",
+      "bytes": 7700,
+      "sha256": "sha256:863991d7c7e88db619b72e268321fe182baca8d4e8f63d8c5166a945928e127f"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_preview.py",
+      "bytes": 11564,
+      "sha256": "sha256:f4dfb9614cfec533ecbcc7b6f1f104d50611677f3f093a4e6aa506a051abf3a0"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_raster.py",
+      "bytes": 9807,
+      "sha256": "sha256:ff83b49c999146a4c3479796f34050e81eaf504efdba48c050a4ded8cdb876ba"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_selective_hsl.py",
+      "bytes": 11700,
+      "sha256": "sha256:e62d668a6308fb0f034d687532e0f6006cd5b6183d20570cad20c34174319dd1"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_sharpen.py",
+      "bytes": 17456,
+      "sha256": "sha256:d261d9b9511f91d6324a95e71209781ad592aee25fe355719dbbb61512c2c846"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_spatial.py",
+      "bytes": 15166,
+      "sha256": "sha256:978868786110885597ae91c582562888bfc272400adc788fceaa3a6cb2187bb1"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_spatial_budget.py",
+      "bytes": 2207,
+      "sha256": "sha256:ea50453012d384afa9422feb89991fc321b91591817e70ce46e93994b1655a0b"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_standard_render.py",
+      "bytes": 23219,
+      "sha256": "sha256:acffad25eed8923c2dabfb280c46135270e4fb66f6caa2761ba1342e8ee37886"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_stream.py",
+      "bytes": 13806,
+      "sha256": "sha256:955705b4f87817de34046f5cf979319278fb7815da75c8e3870630daaad574a8"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_timeline.py",
+      "bytes": 21447,
+      "sha256": "sha256:84d6b33437d7bac52d39c44fcf8c035b4975b5fd69c46d9108f55bb812fa8ee0"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_tone.py",
+      "bytes": 14263,
+      "sha256": "sha256:3e4216a6cd43dbc21afcae33ce527802d414df5fb3e16381abb62fd5c85b9638"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_video_source.py",
+      "bytes": 9879,
+      "sha256": "sha256:79685d1bbe3298b1334b80d429bba0fb6e8c8c57230428f1e08eb9afc56b510a"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_yuv.py",
+      "bytes": 9014,
+      "sha256": "sha256:031b34c9b75e141946eda3ace6521c015c99023fdc5c725be34701577a9e5a1b"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_yuv_source.py",
+      "bytes": 2064,
+      "sha256": "sha256:bb6eae6288a722a6a256126a0b2f3d47d0b03821880b927d0e3b41c988fc32bb"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\font_coverage.py",
+      "bytes": 8755,
+      "sha256": "sha256:2f33b3eb07331ef3b87c78286317df8d903a2c991978e9750a39d6bcd117c243"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\fragments.py",
+      "bytes": 39060,
+      "sha256": "sha256:6087fe24f6f0a2041473ac5ccc04507f7c25c2b598c5a6f65dd7b4ddafe9567f"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\hardware_acceleration.py",
+      "bytes": 21762,
+      "sha256": "sha256:670ab26584d75f45ca6d6a12df0e096bdbe0d25dba6edc9ef3ea4ccba3f5132f"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\hsl_native.py",
+      "bytes": 4265,
+      "sha256": "sha256:236d4af5c4317d57d9e31916472e73d1ed98dde66ed3331d3661830331a0f44e"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\hsl_program.py",
+      "bytes": 2996,
+      "sha256": "sha256:a1f7ac34659d6c55ed79bfacaaa7bf997a1bf4d4fef2fede53cde0abbe61ab17"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\html_components.py",
+      "bytes": 16070,
+      "sha256": "sha256:1779196590bcff1e638b5c6087698eda80a45f1bb4bc4a74c59cf7ca0125693d"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\html_motion.py",
+      "bytes": 46339,
+      "sha256": "sha256:8eca33f78e39367bcf49c8e58a1e2974db3c79165261bff4eefe5657ee92a70a"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\html_quality.py",
+      "bytes": 4215,
+      "sha256": "sha256:7abdb2b18bb86a3d87e058e74b908cb0a430f05273ca9b78122a5985c0b5dba0"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\html_shutter.py",
+      "bytes": 7637,
+      "sha256": "sha256:c7cc14a47500b4339401af86453c845368eacc8c396b8c414195eda76beeb376"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\html_template.py",
+      "bytes": 7268,
+      "sha256": "sha256:f3ad9507632d03df9e7de3e4303638325c9667e1005ae9600c62670b06d1436e"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\inline_sequences.py",
+      "bytes": 9710,
+      "sha256": "sha256:ee1596121f7e0ea88c7d1f8e27d75132b57dc03522a768a2716f97343a1ed911"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\inpainting_frames.py",
+      "bytes": 9857,
+      "sha256": "sha256:bf86f16db2c99574715464ec789481d1720635091a88578a39717f45e489065f"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\job_workspaces.py",
+      "bytes": 11755,
+      "sha256": "sha256:e4460e0e0843bffe49ceafe7b2f5ba2671a9a6e5219e0ec0b73acfb41c6d2185"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\lama_worker.py",
+      "bytes": 5174,
+      "sha256": "sha256:c8b78f2e476e417ed54ea62aa502858eeb13b14c8e91b29fdd15021a4c648154"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\library.py",
+      "bytes": 20636,
+      "sha256": "sha256:60148ae6a1fd92013f97c78ef87a2f68cf4d3a61398af8a1d3c366ca3495af4e"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_asr.py",
+      "bytes": 14600,
+      "sha256": "sha256:7c8582144a9b17e08558f36777c312099e10fee82f18f49589b07f40b61fb9dc"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_ctc.py",
+      "bytes": 17123,
+      "sha256": "sha256:1d0b3f85720d620b1d1827952113b424c9f9562174462fa40b6c6cc8a46fd948"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_face.py",
+      "bytes": 23764,
+      "sha256": "sha256:af5571aab54c303b2c2b24b5f5b5f3caa234470a5cbbff5adf3205aeb6a7eb06"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_inpainting.py",
+      "bytes": 14477,
+      "sha256": "sha256:34294b2a7184afeda6527db59def5aa6b02efa83e8f3beb6e8e53fec0fe03890"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_matting.py",
+      "bytes": 44791,
+      "sha256": "sha256:c70b82dd131de94729f2fe096fa35e3ad2775e5e2476a04a0b97e11a6939a3c6"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_ocr.py",
+      "bytes": 17446,
+      "sha256": "sha256:cd85a6d7b12ec18b3e024327687c483f1f7cfa0deed2369b968f8ab2bccc14b5"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_outpainting.py",
+      "bytes": 10211,
+      "sha256": "sha256:577ecf6fe26a0718cc734ba6b526f52e974b97262965f965aa37f431add1bd55"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_segmentation.py",
+      "bytes": 13876,
+      "sha256": "sha256:30c0acaea0c261f35c5e10b3e0df36ebf10b9137608b18109a1c4739095ed361"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_separation.py",
+      "bytes": 13940,
+      "sha256": "sha256:8fe3784386cbb125b5707bd01dd5d714058e2556aeda852bd5326e57fa839332"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_tts.py",
+      "bytes": 18989,
+      "sha256": "sha256:028216041f53481ee2230642a642304eab3adabd32735fecdad7b952650055ba"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_vace.py",
+      "bytes": 19026,
+      "sha256": "sha256:44cb7558644b219234e15c8e4088cb7c760a8f200e00e1ba66fb16b338c83571"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_vision.py",
+      "bytes": 13179,
+      "sha256": "sha256:d69b94220d749e076e485432cc1b70445f398ad876a8582a3ae75b7668e6c329"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\looks.py",
+      "bytes": 14308,
+      "sha256": "sha256:52a83791df54582ce778dc77d3f23e964f760c53a464feb6329bb96216659601"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\lut_library.py",
+      "bytes": 17810,
+      "sha256": "sha256:a6f89cdcda01318c7163328dca7b54e8606b45582cd9340e2d4d1ad69f0b60be"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\magnetic_mode.py",
+      "bytes": 9034,
+      "sha256": "sha256:7b74280ed8df6d94b259548122b44216ca45d6726084504aa6fdd05524f460e1"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\magnetic_reorder.py",
+      "bytes": 16486,
+      "sha256": "sha256:b3db1863adfa7cb88173a864c127d01ebfa33c2ba46dc21b340ea660db03eef1"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\magnetic_sync.py",
+      "bytes": 5340,
+      "sha256": "sha256:bd4c59d3045eda011a9cc5e7c8720b9380bc756ee41931867b0f4eb4f22ea939"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\mask_edit.py",
+      "bytes": 13490,
+      "sha256": "sha256:952aa4c1cc3f49b2b1c9d5dc0c969901d82d4fcbe660387af2f3f7c044d6bb7a"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\mask_edit_geometry.py",
+      "bytes": 11012,
+      "sha256": "sha256:9bf1d101c1aea8d2265b704fab8dcd65b3bb08c4cc45aed95a4a5cb0ee2ae1f9"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\mask_review.py",
+      "bytes": 14812,
+      "sha256": "sha256:17de0acd6d76ad9218565302a0f47a577a5001a487bbf0c66432b0b6af278bad"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\mask_tracking.py",
+      "bytes": 11000,
+      "sha256": "sha256:724f8f9800536d3ffdc99675fadf79e1262532ec7f9a3d879cf94674ba531b8d"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\material_catalog.py",
+      "bytes": 3869,
+      "sha256": "sha256:c5534092c9f744b21ede152137b29a6a00899d665b4ddd6ee00621630b9f544b"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\material_project.py",
+      "bytes": 8689,
+      "sha256": "sha256:ee582757cd6bdc9a957a2f4f28bf9fac108ee91f9c1c09c7a7ed85591ac846d1"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\matting_frames.py",
+      "bytes": 4054,
+      "sha256": "sha256:e1491c575fe0dff5626439cb27fe422b8e92955ca1dd7503df59bbd6a3509f09"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\media.py",
+      "bytes": 18960,
+      "sha256": "sha256:75755c314fe01111d7ca85138efb6f9b0993e45c14c5a2b65cc1046c5e58cfba"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\migration.py",
+      "bytes": 6471,
+      "sha256": "sha256:b081ca767872d8bfa04f3aac1cd2f1c4d0c03a92e4ad5be53fba29fec0584fa4"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\model_registry.py",
+      "bytes": 19902,
+      "sha256": "sha256:935c747f262ee638f34b987a32016a37cbcd4ff9bd9f5d9a005307da9b468aac"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\motion_presets.py",
+      "bytes": 7150,
+      "sha256": "sha256:6c3c61a7ed62e6ca0ca9d0d033331430e46aca94b3d15df59845ffea4fea15ea"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\multicam.py",
+      "bytes": 28646,
+      "sha256": "sha256:37b4ba0abd2daf0f77b5c6bcebb6c04ed61d8c60c2e47cd7e007af032fb0b620"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\multicam_clock.py",
+      "bytes": 16829,
+      "sha256": "sha256:01336373f510a40e8acf02ae6a8749b4cd72ef87fd721a61cc4eb603a891634e"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\native_audio_clock.py",
+      "bytes": 23327,
+      "sha256": "sha256:4ede471af5c2ebce98f6839eaa59493daa4cf67e995838a2a6fece77807d19fd"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\native_process_job.py",
+      "bytes": 5444,
+      "sha256": "sha256:455e898f6fbf260795b80e12fb18f921d90edb4fd75d967a228c028817b568d7"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\native_video_index.py",
+      "bytes": 12680,
+      "sha256": "sha256:2adfefa4826f9fcf187a84647b6b931d134a2627bd6133fd86b61f0332003b71"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\nested_freeze.py",
+      "bytes": 7203,
+      "sha256": "sha256:2294d318840e6285550eaf70109702b041c031c2cde4c8dc0bca3d2bad848a35"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\ocr_cli.py",
+      "bytes": 10902,
+      "sha256": "sha256:1a818549a1308e78a38a1a5aa9a025772f5be792bacfcdfeacb5599670e0b4ec"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\ocr_geometry.py",
+      "bytes": 5146,
+      "sha256": "sha256:a2a4aedf4289ab20bea45000c1be898668239b75ef215386120850d2f7dfce5c"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\ocr_worker.py",
+      "bytes": 11782,
+      "sha256": "sha256:ee5a2096ec1ee03fc09d2ac4d0b06b1791d5bbfe011772f448045d1377b50d3f"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\pipeline_diagnostics.py",
+      "bytes": 32733,
+      "sha256": "sha256:10293635791333ef437e592d7a58f8dcf341ade759552a26149c1297bb9cac81"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\policy.py",
+      "bytes": 13791,
+      "sha256": "sha256:16100811aae96699ce77245cec6746588953c4f9bc0071a1d04aec0c80ea4d25"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\preview.py",
+      "bytes": 28437,
+      "sha256": "sha256:23465415b1d4d07d02ed8681983481c8985acaa096c4a9127a651f9e5ecb398e"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\project.py",
+      "bytes": 24408,
+      "sha256": "sha256:b125e3dea953fc9613647edba14bfc0623d9ccca065e1c822241ecadea506e14"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\quality.py",
+      "bytes": 20246,
+      "sha256": "sha256:d4e71c9e6616250b681306d562305dafe4cb5867652ab365275277b155e9e047"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\queue_reuse.py",
+      "bytes": 19073,
+      "sha256": "sha256:61797bb01771ef102387ba04d8b3c8d0c6797658c0e4d2e72cb2ace36f26d691"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\range_edits.py",
+      "bytes": 32285,
+      "sha256": "sha256:eff604efaa3c2a66b63b3fcb332804ffd9e45a11ab880964b279a379d5500e4e"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\recommend.py",
+      "bytes": 3579,
+      "sha256": "sha256:0747f63b0089e317ac335e0e2bdc19cde9373691ca145c5fb84cb8cb2e88c5a4"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\render.py",
+      "bytes": 314619,
+      "sha256": "sha256:449173dc1673998de223a9ab4e029cc34a4211ee57c84617b59d5d9e9bc87a44"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\render_queue.py",
+      "bytes": 9931,
+      "sha256": "sha256:171db5bb475f3eaeb4ce05dacdc3c19ba90c2b3f429349d50c949b9d3c97f2be"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\repair_blend.py",
+      "bytes": 14157,
+      "sha256": "sha256:1d4d01f381444cf13416daf82832edc6aa927180aeb1bc8765cf2b5a2ddaa2c6"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\retime_edits.py",
+      "bytes": 11962,
+      "sha256": "sha256:52b962113b90637eb91247af84f1dc24a343224c37f8323ede5c8ffb805cbc2d"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\retime_transform.py",
+      "bytes": 4935,
+      "sha256": "sha256:8b00a27cd939264cece21ddf22ca9949a23a43122dc958c0970cd2526c7bdd35"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\reverse_cache.py",
+      "bytes": 19360,
+      "sha256": "sha256:dcb7db025bb4044f569862514c86246cc955ddcb7a1362d49a3757d48235d878"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\reverse_video_clock.py",
+      "bytes": 18118,
+      "sha256": "sha256:bac8b9a0098de010b0eed47439056eaab1f91edd3a7c414f473867d1ec49650e"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\rfc3339_dates.py",
+      "bytes": 1217,
+      "sha256": "sha256:344d79048ff55a77af00314134c20b57b5301b75d1b6a32b4a7a3f52ce749105"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\rights.py",
+      "bytes": 36660,
+      "sha256": "sha256:ee65bdf0e6a4a8d44122e3dba5f933e81ff04c194c5aed3f78cdf276db867195"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\runtime.py",
+      "bytes": 1763,
+      "sha256": "sha256:b8a81adbd7b19e2269988a0494b8435b59274fc02db22b73d40b858feabe723e"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\rvm_worker.py",
+      "bytes": 5298,
+      "sha256": "sha256:b4ee231349b26fe8d3e94f9bab1ba2f70566b8c2dbe0b806b8864e92957fbeb1"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\sam2_worker.py",
+      "bytes": 9043,
+      "sha256": "sha256:a7df14a7edbe22b78a593ef16e87528645b9043168b314884da332c4e0eef554"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\schema_contract.py",
+      "bytes": 5001,
+      "sha256": "sha256:c7eaefd51abb232aeab9c00daf52033f006391b023b8af7b9c9e6c022ae06090"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\scopes.py",
+      "bytes": 2556,
+      "sha256": "sha256:e68311f38f64d0afc6ed4aa68421697942fe4ad20ac68f662428fc54c361b746"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\segmentation_frames.py",
+      "bytes": 3162,
+      "sha256": "sha256:e934f93150500a9bcb7d386dd91e43d27ae31da4e1c2dc887dd4720ae9fcc5ea"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\selective_hsl.py",
+      "bytes": 7562,
+      "sha256": "sha256:cd49c898258916add6f22de414967833d290b0a4f9efdbc4fd1c023d467d5aea"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\semantic.py",
+      "bytes": 31440,
+      "sha256": "sha256:7b17e53d48effd14b633ce263cba29c554ee6919d60e015dbf7128faac590de2"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\semantic_cli.py",
+      "bytes": 5630,
+      "sha256": "sha256:4a31e51ad7c9783660dbc3b280af3c019ae52a5bd162a3b694c1e946046ba5da"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\semantic_contract.py",
+      "bytes": 11099,
+      "sha256": "sha256:5386bf154bd2f8ee492c4e371dbf8b6fede0ff9253e75af0092b2dc873e3da0a"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\semantic_sampling.py",
+      "bytes": 7082,
+      "sha256": "sha256:ada9d120cf7a702c1590a16be6c90a6378be3f606a60460431bb8c9a318820e1"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\semantic_worker.py",
+      "bytes": 12117,
+      "sha256": "sha256:c7d516667e50d8f23a1e23f537a5bf493ea5b1f15a0cd483d58e0763029d2411"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\separation_dsp.py",
+      "bytes": 5092,
+      "sha256": "sha256:2e32d4159c2906c6d0aceb1846df4f86f3437572ae7127afc30adaf05022965d"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\sequence_canvas.py",
+      "bytes": 1742,
+      "sha256": "sha256:462542e26058d350c2d0a29d0cf4127c4054cab7462a763811b85bfca171412f"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\sequence_sampling.py",
+      "bytes": 4506,
+      "sha256": "sha256:1aa171ef6043878afce099f7a04b214b9c458879147c46147062a77d36356ec2"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\smart_cut.py",
+      "bytes": 15350,
+      "sha256": "sha256:ba871f7bff0f186ad55d9e22c5fcd75e09032e8d7299a01c7ea7b76b2e1a21a1"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\soulx_worker.py",
+      "bytes": 6412,
+      "sha256": "sha256:20dc7a046934925b3620f35922f08a7c97845527a78ee437950e0db9addba3e5"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\source_edits.py",
+      "bytes": 11950,
+      "sha256": "sha256:a2bea20a8d162ac4fa9f329045bca2b7e214a624adca107df6021919d5a1d36c"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\source_transitions.py",
+      "bytes": 17263,
+      "sha256": "sha256:59c2652aa76024b78667293ce46774ba6910e4524db7e39f95dc95bd91b0547a"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\speech.py",
+      "bytes": 6344,
+      "sha256": "sha256:26a17ac367475ebe56a498a3f2950cf1529ec0e7d63238ad6399c8b27c713abd"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\speed_curves.py",
+      "bytes": 6776,
+      "sha256": "sha256:41fbddd764bfa481e6158e8401333113c871e1c38e34257911f9aa676b9bfff9"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\stem_separation.py",
+      "bytes": 16543,
+      "sha256": "sha256:75f88d0c7b2d6ddec0798efe5d0bccb6c5c4d2f9c33eb4adf37a635106d670de"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\stem_separation_cli.py",
+      "bytes": 9729,
+      "sha256": "sha256:7f61029b4417ed7d7c76408e31b51b3574eaff6feddfefa2c6097d88cb2ab72d"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\stem_separation_dsp.py",
+      "bytes": 5562,
+      "sha256": "sha256:fe5f6e2602f1c450ec9ecc2db8c763d9ce77b846c7226e6e8c88aeee36c6021c"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\stem_separation_worker.py",
+      "bytes": 6177,
+      "sha256": "sha256:3ded624662f12880189f7072a68ef902cc980647d9d4af78b697a30ceed072df"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\stroke_motion.py",
+      "bytes": 6423,
+      "sha256": "sha256:ba53f586ff12c75c15803e347307c802d977e874ce792159d74ebb2b6b42ae03"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\subtitle_clock.py",
+      "bytes": 2229,
+      "sha256": "sha256:49ca2001da0f250d682f5818d95f4f51ee362cbaee979fb9a99649a847cd4645"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\subtitle_segments.py",
+      "bytes": 21218,
+      "sha256": "sha256:5590e04147f0b50cb60df3b4e543059a560dbfd684b3085c5f25f8fb04631aea"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\template.py",
+      "bytes": 15317,
+      "sha256": "sha256:25cff8f3f5a76d88358c746dabb5adc50b0b0c345ffee53aa3a175f72248ec7d"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\text_highlight.py",
+      "bytes": 21721,
+      "sha256": "sha256:d08bee683f0bd00bac363a78df5957475765741a7c53d92ac025575b334f78e5"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\text_layout.py",
+      "bytes": 5045,
+      "sha256": "sha256:1f3831478b41ea23c7dd445a66ba08249a4833cce852eb9190ac0a35936a210b"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\text_paint.py",
+      "bytes": 6220,
+      "sha256": "sha256:a924644f0396b5204efbb0e085f25d51f6cda5bfc75f2d44febc6796e42cb028"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\text_typing.py",
+      "bytes": 11561,
+      "sha256": "sha256:6cc022af8300fb4270cb21f2f53ffe2b33210ac203169fed653d11d75e591ec3"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\time_mapping.py",
+      "bytes": 9895,
+      "sha256": "sha256:89bd69060b3f10af1197018b735621eadb8ce2858b4281972d989fddf79f2ef1"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\tracking.py",
+      "bytes": 40754,
+      "sha256": "sha256:3ef89e454292f7cedec1dbfcb8c6a5a9220c802b9e886e18f5aaffffb6a1934b"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\transcribe.py",
+      "bytes": 14266,
+      "sha256": "sha256:877f1cb336233e70d010d39884b1fde6ab475b3df8d55e929bc793b7cfb17ce7"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\understand.py",
+      "bytes": 5199,
+      "sha256": "sha256:3b440295b06683c8b7e0fd8a19a0422239bd86e163081677d47fcc5b1da83a15"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\utils.py",
+      "bytes": 14788,
+      "sha256": "sha256:f1411b706fe613694028328345123eca26499f4385270ae45f9d132d5a0ee182"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\vace_context.py",
+      "bytes": 9866,
+      "sha256": "sha256:aef2d4318720c10a99644e96ea35ba27d48e9b405a332f6b2075b6a558f0e0e6"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\vace_frames.py",
+      "bytes": 15072,
+      "sha256": "sha256:aadc7d5785347422ee62b1d4a195e5dfbf1bcb497eeedc43aa4d839aff6f55de"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\vace_model.py",
+      "bytes": 13701,
+      "sha256": "sha256:8a8f96a14aac93a7b9577f88fe576fecbbfd4fcc206e27843de79f7b1ba54961"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\vace_worker.py",
+      "bytes": 5368,
+      "sha256": "sha256:0ce1dc459b3c0d7f1c95ec2208e78e5fe299200582c878f5de34c9382f4582f5"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\validator.py",
+      "bytes": 98204,
+      "sha256": "sha256:40cf4923fce096020b4ff552188a098ffd4b46a7d1a88701f46758c2727b85db"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\video_clock.py",
+      "bytes": 3626,
+      "sha256": "sha256:24bbd3dbf4d3f384bca30e6e881d900226c56f67302ffa721820d70a972e2e0e"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\vision_tracker.py",
+      "bytes": 6960,
+      "sha256": "sha256:add01f7ecc50a645a1f0e9a0f21f817f5538359aa7f5f268158c23c36769ec4f"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\whisper_worker.py",
+      "bytes": 4364,
+      "sha256": "sha256:39220014386155a911d4714c3dc20493c76720dd98312d4410826728a2f59d2a"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\yolo_worker.py",
+      "bytes": 12271,
+      "sha256": "sha256:fe93653d9ae37e811325655ca81635311cd9c6504d0e41b8d1e7c6fa43e77e86"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_ctc_alignment.py",
+      "bytes": 21854,
+      "sha256": "sha256:838a854a442b413cb05be739f47eea86dae36057f12b0567bc820f3f442aec93"
+    }
+  ],
+  "native_windows": true,
+  "virtualization": false,
+  "finished_at_utc": "2026-10-25T01:02:35.215699+00:00",
+  "exit_code": 0,
+  "wall_seconds": 75.51151369999934,
+  "frozen_after": [
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\__init__.py",
+      "bytes": 180,
+      "sha256": "sha256:8e01af63a98fac6e22cc7147a4fb284158bcaaffd326abaa3b3541a152c0768a"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\__main__.py",
+      "bytes": 79,
+      "sha256": "sha256:307299fda7b77d22c64cb51430ec75e5f59d78e9c948786afb3b2544fe45e4b7"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\ad_plan.py",
+      "bytes": 5506,
+      "sha256": "sha256:4d6482f6f0baf87cf60ae01be604af0047069e794c2784a9d0c86f30a1a458ac"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\animation.py",
+      "bytes": 2900,
+      "sha256": "sha256:b90064bd9de4fbe1aea85ba7bb11e5acfefc82a85c2b8078ba36bac64c59b949"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\artifact_locks.py",
+      "bytes": 5027,
+      "sha256": "sha256:8084eb6d7358c6376faec11a96bb89453c93bedf09ea9474f8e3e5c41027da3d"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\asr_quality.py",
+      "bytes": 3359,
+      "sha256": "sha256:e2407215903a2552a3efd1acd04840bae03862b470dce72b489573b36d6c1f90"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\audio_channel_links.py",
+      "bytes": 6741,
+      "sha256": "sha256:18e6caaf8370a523efe8a0a747818eb7fa0e058861f7ac982f703ecb648fc691"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\audio_routing.py",
+      "bytes": 21723,
+      "sha256": "sha256:40f74750a79ea80f016dd2eb8a353d6103682756f01970ad802c6292be8e5af8"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\audio_separation.py",
+      "bytes": 13921,
+      "sha256": "sha256:bb36d993ca948deea171e9569c6b4954105bdd5c7b79c70d2f5c14a79878f0de"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\audio_stretch.py",
+      "bytes": 22988,
+      "sha256": "sha256:2286f23b626fe5f5545b585da2c78c50068f3a0d4fa45b414d94d6926ed37973"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\audio_tempo.py",
+      "bytes": 3760,
+      "sha256": "sha256:3284a08dc75a25dcbeed30c7088a18898c46d398e6e7ae9380efcf0e366afcee"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\audio_tools.py",
+      "bytes": 4799,
+      "sha256": "sha256:9e636d1b27707dad3777811827d3c3c3e69ca393a9a3757733e9876517506f5e"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\batch.py",
+      "bytes": 6398,
+      "sha256": "sha256:5a416712628d104c5e9cf1b96bafeb118b2e8bfb44690b51831242b716ff2a92"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\beat_edit.py",
+      "bytes": 9126,
+      "sha256": "sha256:0cbc12d37b80417e022741818f812f61d287123d816217c7e5462f872cfd78fb"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\bindings.py",
+      "bytes": 24915,
+      "sha256": "sha256:2dbb8bce11ecb7f7fd6fa893cca08efdaa6f9c21a3c6f8a4588cbed5092c3a65"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\blend_automation.py",
+      "bytes": 8353,
+      "sha256": "sha256:ca6c28091564fdb28853288f46f4caaeaa96388c4d363e1b139248d89753a1e5"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\browser_process.py",
+      "bytes": 10589,
+      "sha256": "sha256:16fc0ec652a21a7604b5e59737800d91a3bf4254e1c44de2c7989b895c130a65"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\capabilities.py",
+      "bytes": 125625,
+      "sha256": "sha256:a2302f9c10c0cb56f566d702db186f7bc0cede44221cd531852c144e5d734fc8"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\captions.py",
+      "bytes": 13732,
+      "sha256": "sha256:38c500ba0e2697e745d7ad8357d7a9e5cb9e771f4093750b0b6a8b67e7ee0c57"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\capture.py",
+      "bytes": 16349,
+      "sha256": "sha256:9f8261f0ec5d005605c7e6112731245c92e55b6d252f574e9acb2a5fbef457cf"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\cli.py",
+      "bytes": 493514,
+      "sha256": "sha256:e31ed897310c37e28a4e8718b997a67efbd56aec67cc6c8e6f617d5a41611df6"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\clip_windows.py",
+      "bytes": 16957,
+      "sha256": "sha256:47a5b173770772ac72d2764c05e47148962003414adb0fcd26c16a7b3f88f1ce"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\community_audio.py",
+      "bytes": 12398,
+      "sha256": "sha256:b22b1714e164f0e400b7d53f978e0d0e36b83b519f827cd235826d29a037116a"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\community_cli.py",
+      "bytes": 26976,
+      "sha256": "sha256:3911b36f4746b04753932e2af04a53434d4b7789aa32e4025086dcb0cba89ec2"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\community_device.py",
+      "bytes": 3478,
+      "sha256": "sha256:c1525a0b20ebd5d9b37a615494b188c7165526df0bb5479338a3e06e5428f4e5"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\community_models.py",
+      "bytes": 4945,
+      "sha256": "sha256:e776620209fbdd3e059d12695dd54e887ce3549bd66594a9581fa2db9ae5f4ab"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\community_worker.py",
+      "bytes": 8802,
+      "sha256": "sha256:0ac458071552680c98590331c98df5a933db683547007550eba7c2db7cbf0d32"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\contact_sheet.py",
+      "bytes": 22804,
+      "sha256": "sha256:18e7028d73443cb6173ddbcda949147485e6d99f6742afeeb9c8b3cf7f66165b"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\convert.py",
+      "bytes": 56849,
+      "sha256": "sha256:326be682b517c751d4c759376d05abb87c53b3314b6080de044c944fab8d36ba"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\ctc_activity.py",
+      "bytes": 7367,
+      "sha256": "sha256:32e642daa9b2cba6e0946aa6b29f64e1c20b238601a397251b4d32092fc2d289"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\ctc_alignment.py",
+      "bytes": 11422,
+      "sha256": "sha256:a475e9b1acd8ceba2be90884729f0b5a4c76ed354853bc0a57b47f1f9787edd7"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\ctc_cli.py",
+      "bytes": 13599,
+      "sha256": "sha256:9cd8027ee654c95f42d69055c2decdc4628da11dc49c6927ee57a74e1dc9f8a7"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\ctc_worker.py",
+      "bytes": 10553,
+      "sha256": "sha256:18440a7affc7e33169f82e40a0a970d7acd767b5a699559888a6768e1b0589ad"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\cuda_admission.py",
+      "bytes": 11092,
+      "sha256": "sha256:8d030f776b09edeb9d6cfecce720caca3f20a1fab058dd3dc406020ed064fd3b"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\curve_automation.py",
+      "bytes": 9374,
+      "sha256": "sha256:73c33745ad14cfbce2f937db9e78840eef7794259496a62c6247f609167442f5"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\demucs_worker.py",
+      "bytes": 5409,
+      "sha256": "sha256:8a5347b8e2ad0c93fb42b9c1867737ff989914e662753ef11104602c944bba95"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\derived_cache.py",
+      "bytes": 4848,
+      "sha256": "sha256:c3cca48d052b6ff4531cafc04005d7936eeb289a67f74bb4ffd0ceb203dd03e0"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\draft_adapter.py",
+      "bytes": 56926,
+      "sha256": "sha256:0eb1e8f649e66cc6f15ef56bfb75d07166a7d7e3a6f1326f50bca349a1c24071"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\edit_planner.py",
+      "bytes": 30139,
+      "sha256": "sha256:4b91e9bf43709a9382ebed6bebb861cf7b10f4024191e4f255ee96a662992b2f"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\effect_automation.py",
+      "bytes": 22422,
+      "sha256": "sha256:45b3ee4be693cdf1c07cf3fb6f372562ca376c93bf846b9515fc3d0d05ce8dbf"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\effects.py",
+      "bytes": 19155,
+      "sha256": "sha256:2b236659bb30c71d3c14c70ba6030e19b48916f04ec9456d9e90b01672a245f1"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\errors.py",
+      "bytes": 1609,
+      "sha256": "sha256:1525e91f86ad7f22c061a35c383d3513cdcad77acab2e364510b42adde0a9721"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\face_cli.py",
+      "bytes": 13902,
+      "sha256": "sha256:0b22ce781d350770edcecfddfce4058ed478fccd29e723a78f088e32be2bc8c4"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\face_geometry.py",
+      "bytes": 8744,
+      "sha256": "sha256:a3551a4d699e8e5e43622311a1d800be00cbaec70f9152147b3dde4a4f73d380"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\face_landmarks.py",
+      "bytes": 7359,
+      "sha256": "sha256:29112cde9c85408d2cf19c7a26e3f17282605bb80e0d0cb67debd44ac36f5793"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\face_worker.py",
+      "bytes": 14509,
+      "sha256": "sha256:dbfa64be9cefa760cfe6b31685a6cbcc8008b2c696951848ffd75a4f0e604e56"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_audio_graph.py",
+      "bytes": 3835,
+      "sha256": "sha256:d47b84af34f8e65babbe27b3db99e342d4d0990bea10558c2a255cc7ca278fe9"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_balance.py",
+      "bytes": 14001,
+      "sha256": "sha256:16dbfe24290b8bc0b1d77268b6ff34bf813dbbc62b378971d82a5aa49faa9355"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_bundle.py",
+      "bytes": 16354,
+      "sha256": "sha256:0ec2eff233424eef1a1ae9c8a60aa271d808abee77b4a17e5a5ffaac28a2d0c3"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_bundle_source.py",
+      "bytes": 6145,
+      "sha256": "sha256:0f414c8c8f5b79dccb54a41ed02e73c460deb9d96e5884372ffc85357ee1a6ef"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_color_signal.py",
+      "bytes": 6848,
+      "sha256": "sha256:b0c07f905c67db85478fc34d5e1b1614a13361bf64ce34f5838512de875d8be1"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_composite.py",
+      "bytes": 8830,
+      "sha256": "sha256:8275eb65c574407b47b466bbe124015832a92b068e5595a028c04964f884b937"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_crop.py",
+      "bytes": 14802,
+      "sha256": "sha256:390a13647ce58e94ba85bb6fde0d2333a80106fac1806b168a72ed4e7bd6b496"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_curves.py",
+      "bytes": 15920,
+      "sha256": "sha256:1cfad01c55964614ea432431f6db59191b87356aa9b15a3c6a59c127f52c8a56"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_effect_chain.py",
+      "bytes": 8444,
+      "sha256": "sha256:3aa3ffa4c675e1f1dd3330ee4ea7c1d3a12501569cf2f9fdb0cd45a9f1e018f3"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_exposure.py",
+      "bytes": 6270,
+      "sha256": "sha256:fceacb925552a4bb44126143f584f4757a76152e87f9224f4e6ce16f5a6c27ed"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_gaussian.py",
+      "bytes": 11516,
+      "sha256": "sha256:97e64bcecca4ae7d979f382cff0afd8b91401bdf7020c869282218777ec87bdb"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_geometry.py",
+      "bytes": 6804,
+      "sha256": "sha256:57f9af0406663a27e31b35e3463076acf24d3833de5fce98102b6f0b73a9d51a"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_keyer.py",
+      "bytes": 16743,
+      "sha256": "sha256:bb5c5eb5aa0ade318a50e443c8039f7daca99f0d593481da15c530f2b3b22b93"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_levels.py",
+      "bytes": 14977,
+      "sha256": "sha256:4b6d1b777da7359a0c3dc3b0c10e3b87b58b2c4aa1522d994d2a17e9c39ec248"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_lut.py",
+      "bytes": 27425,
+      "sha256": "sha256:bb8489ca1ce1a8cc253f5c22b499428fe7cb0634a53f804cef5d089840ebbece"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_mask.py",
+      "bytes": 17505,
+      "sha256": "sha256:f85427fa44a9c3723c398314230c0e00c6b6e699c09c3785e5b3ff99a244bbfa"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_native_pipe.py",
+      "bytes": 5346,
+      "sha256": "sha256:4b89898462505f58fbbe1ca053a0f4f2ef475f417a99dabeb470f999353eb708"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_native_source.py",
+      "bytes": 20020,
+      "sha256": "sha256:1badc4c67dcdfb995dec5570b47e54fe1a3b1da6234f978062832c2d354496c6"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_numeric_automation.py",
+      "bytes": 4580,
+      "sha256": "sha256:e66c20d09cab1487a86d19104d5637dcdc2bf97e11a781172ab1c431bffe1e09"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_pixels.py",
+      "bytes": 7700,
+      "sha256": "sha256:863991d7c7e88db619b72e268321fe182baca8d4e8f63d8c5166a945928e127f"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_preview.py",
+      "bytes": 11564,
+      "sha256": "sha256:f4dfb9614cfec533ecbcc7b6f1f104d50611677f3f093a4e6aa506a051abf3a0"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_raster.py",
+      "bytes": 9807,
+      "sha256": "sha256:ff83b49c999146a4c3479796f34050e81eaf504efdba48c050a4ded8cdb876ba"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_selective_hsl.py",
+      "bytes": 11700,
+      "sha256": "sha256:e62d668a6308fb0f034d687532e0f6006cd5b6183d20570cad20c34174319dd1"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_sharpen.py",
+      "bytes": 17456,
+      "sha256": "sha256:d261d9b9511f91d6324a95e71209781ad592aee25fe355719dbbb61512c2c846"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_spatial.py",
+      "bytes": 15166,
+      "sha256": "sha256:978868786110885597ae91c582562888bfc272400adc788fceaa3a6cb2187bb1"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_spatial_budget.py",
+      "bytes": 2207,
+      "sha256": "sha256:ea50453012d384afa9422feb89991fc321b91591817e70ce46e93994b1655a0b"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_standard_render.py",
+      "bytes": 23219,
+      "sha256": "sha256:acffad25eed8923c2dabfb280c46135270e4fb66f6caa2761ba1342e8ee37886"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_stream.py",
+      "bytes": 13806,
+      "sha256": "sha256:955705b4f87817de34046f5cf979319278fb7815da75c8e3870630daaad574a8"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_timeline.py",
+      "bytes": 21447,
+      "sha256": "sha256:84d6b33437d7bac52d39c44fcf8c035b4975b5fd69c46d9108f55bb812fa8ee0"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_tone.py",
+      "bytes": 14263,
+      "sha256": "sha256:3e4216a6cd43dbc21afcae33ce527802d414df5fb3e16381abb62fd5c85b9638"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_video_source.py",
+      "bytes": 9879,
+      "sha256": "sha256:79685d1bbe3298b1334b80d429bba0fb6e8c8c57230428f1e08eb9afc56b510a"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_yuv.py",
+      "bytes": 9014,
+      "sha256": "sha256:031b34c9b75e141946eda3ace6521c015c99023fdc5c725be34701577a9e5a1b"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\float_yuv_source.py",
+      "bytes": 2064,
+      "sha256": "sha256:bb6eae6288a722a6a256126a0b2f3d47d0b03821880b927d0e3b41c988fc32bb"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\font_coverage.py",
+      "bytes": 8755,
+      "sha256": "sha256:2f33b3eb07331ef3b87c78286317df8d903a2c991978e9750a39d6bcd117c243"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\fragments.py",
+      "bytes": 39060,
+      "sha256": "sha256:6087fe24f6f0a2041473ac5ccc04507f7c25c2b598c5a6f65dd7b4ddafe9567f"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\hardware_acceleration.py",
+      "bytes": 21762,
+      "sha256": "sha256:670ab26584d75f45ca6d6a12df0e096bdbe0d25dba6edc9ef3ea4ccba3f5132f"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\hsl_native.py",
+      "bytes": 4265,
+      "sha256": "sha256:236d4af5c4317d57d9e31916472e73d1ed98dde66ed3331d3661830331a0f44e"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\hsl_program.py",
+      "bytes": 2996,
+      "sha256": "sha256:a1f7ac34659d6c55ed79bfacaaa7bf997a1bf4d4fef2fede53cde0abbe61ab17"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\html_components.py",
+      "bytes": 16070,
+      "sha256": "sha256:1779196590bcff1e638b5c6087698eda80a45f1bb4bc4a74c59cf7ca0125693d"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\html_motion.py",
+      "bytes": 46339,
+      "sha256": "sha256:8eca33f78e39367bcf49c8e58a1e2974db3c79165261bff4eefe5657ee92a70a"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\html_quality.py",
+      "bytes": 4215,
+      "sha256": "sha256:7abdb2b18bb86a3d87e058e74b908cb0a430f05273ca9b78122a5985c0b5dba0"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\html_shutter.py",
+      "bytes": 7637,
+      "sha256": "sha256:c7cc14a47500b4339401af86453c845368eacc8c396b8c414195eda76beeb376"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\html_template.py",
+      "bytes": 7268,
+      "sha256": "sha256:f3ad9507632d03df9e7de3e4303638325c9667e1005ae9600c62670b06d1436e"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\inline_sequences.py",
+      "bytes": 9710,
+      "sha256": "sha256:ee1596121f7e0ea88c7d1f8e27d75132b57dc03522a768a2716f97343a1ed911"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\inpainting_frames.py",
+      "bytes": 9857,
+      "sha256": "sha256:bf86f16db2c99574715464ec789481d1720635091a88578a39717f45e489065f"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\job_workspaces.py",
+      "bytes": 11755,
+      "sha256": "sha256:e4460e0e0843bffe49ceafe7b2f5ba2671a9a6e5219e0ec0b73acfb41c6d2185"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\lama_worker.py",
+      "bytes": 5174,
+      "sha256": "sha256:c8b78f2e476e417ed54ea62aa502858eeb13b14c8e91b29fdd15021a4c648154"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\library.py",
+      "bytes": 20636,
+      "sha256": "sha256:60148ae6a1fd92013f97c78ef87a2f68cf4d3a61398af8a1d3c366ca3495af4e"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_asr.py",
+      "bytes": 14600,
+      "sha256": "sha256:7c8582144a9b17e08558f36777c312099e10fee82f18f49589b07f40b61fb9dc"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_ctc.py",
+      "bytes": 17123,
+      "sha256": "sha256:1d0b3f85720d620b1d1827952113b424c9f9562174462fa40b6c6cc8a46fd948"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_face.py",
+      "bytes": 23764,
+      "sha256": "sha256:af5571aab54c303b2c2b24b5f5b5f3caa234470a5cbbff5adf3205aeb6a7eb06"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_inpainting.py",
+      "bytes": 14477,
+      "sha256": "sha256:34294b2a7184afeda6527db59def5aa6b02efa83e8f3beb6e8e53fec0fe03890"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_matting.py",
+      "bytes": 44791,
+      "sha256": "sha256:c70b82dd131de94729f2fe096fa35e3ad2775e5e2476a04a0b97e11a6939a3c6"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_ocr.py",
+      "bytes": 17446,
+      "sha256": "sha256:cd85a6d7b12ec18b3e024327687c483f1f7cfa0deed2369b968f8ab2bccc14b5"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_outpainting.py",
+      "bytes": 10211,
+      "sha256": "sha256:577ecf6fe26a0718cc734ba6b526f52e974b97262965f965aa37f431add1bd55"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_segmentation.py",
+      "bytes": 13876,
+      "sha256": "sha256:30c0acaea0c261f35c5e10b3e0df36ebf10b9137608b18109a1c4739095ed361"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_separation.py",
+      "bytes": 13940,
+      "sha256": "sha256:8fe3784386cbb125b5707bd01dd5d714058e2556aeda852bd5326e57fa839332"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_tts.py",
+      "bytes": 18989,
+      "sha256": "sha256:028216041f53481ee2230642a642304eab3adabd32735fecdad7b952650055ba"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_vace.py",
+      "bytes": 19026,
+      "sha256": "sha256:44cb7558644b219234e15c8e4088cb7c760a8f200e00e1ba66fb16b338c83571"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\local_vision.py",
+      "bytes": 13179,
+      "sha256": "sha256:d69b94220d749e076e485432cc1b70445f398ad876a8582a3ae75b7668e6c329"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\looks.py",
+      "bytes": 14308,
+      "sha256": "sha256:52a83791df54582ce778dc77d3f23e964f760c53a464feb6329bb96216659601"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\lut_library.py",
+      "bytes": 17810,
+      "sha256": "sha256:a6f89cdcda01318c7163328dca7b54e8606b45582cd9340e2d4d1ad69f0b60be"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\magnetic_mode.py",
+      "bytes": 9034,
+      "sha256": "sha256:7b74280ed8df6d94b259548122b44216ca45d6726084504aa6fdd05524f460e1"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\magnetic_reorder.py",
+      "bytes": 16486,
+      "sha256": "sha256:b3db1863adfa7cb88173a864c127d01ebfa33c2ba46dc21b340ea660db03eef1"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\magnetic_sync.py",
+      "bytes": 5340,
+      "sha256": "sha256:bd4c59d3045eda011a9cc5e7c8720b9380bc756ee41931867b0f4eb4f22ea939"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\mask_edit.py",
+      "bytes": 13490,
+      "sha256": "sha256:952aa4c1cc3f49b2b1c9d5dc0c969901d82d4fcbe660387af2f3f7c044d6bb7a"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\mask_edit_geometry.py",
+      "bytes": 11012,
+      "sha256": "sha256:9bf1d101c1aea8d2265b704fab8dcd65b3bb08c4cc45aed95a4a5cb0ee2ae1f9"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\mask_review.py",
+      "bytes": 14812,
+      "sha256": "sha256:17de0acd6d76ad9218565302a0f47a577a5001a487bbf0c66432b0b6af278bad"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\mask_tracking.py",
+      "bytes": 11000,
+      "sha256": "sha256:724f8f9800536d3ffdc99675fadf79e1262532ec7f9a3d879cf94674ba531b8d"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\material_catalog.py",
+      "bytes": 3869,
+      "sha256": "sha256:c5534092c9f744b21ede152137b29a6a00899d665b4ddd6ee00621630b9f544b"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\material_project.py",
+      "bytes": 8689,
+      "sha256": "sha256:ee582757cd6bdc9a957a2f4f28bf9fac108ee91f9c1c09c7a7ed85591ac846d1"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\matting_frames.py",
+      "bytes": 4054,
+      "sha256": "sha256:e1491c575fe0dff5626439cb27fe422b8e92955ca1dd7503df59bbd6a3509f09"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\media.py",
+      "bytes": 18960,
+      "sha256": "sha256:75755c314fe01111d7ca85138efb6f9b0993e45c14c5a2b65cc1046c5e58cfba"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\migration.py",
+      "bytes": 6471,
+      "sha256": "sha256:b081ca767872d8bfa04f3aac1cd2f1c4d0c03a92e4ad5be53fba29fec0584fa4"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\model_registry.py",
+      "bytes": 19902,
+      "sha256": "sha256:935c747f262ee638f34b987a32016a37cbcd4ff9bd9f5d9a005307da9b468aac"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\motion_presets.py",
+      "bytes": 7150,
+      "sha256": "sha256:6c3c61a7ed62e6ca0ca9d0d033331430e46aca94b3d15df59845ffea4fea15ea"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\multicam.py",
+      "bytes": 28646,
+      "sha256": "sha256:37b4ba0abd2daf0f77b5c6bcebb6c04ed61d8c60c2e47cd7e007af032fb0b620"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\multicam_clock.py",
+      "bytes": 16829,
+      "sha256": "sha256:01336373f510a40e8acf02ae6a8749b4cd72ef87fd721a61cc4eb603a891634e"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\native_audio_clock.py",
+      "bytes": 23327,
+      "sha256": "sha256:4ede471af5c2ebce98f6839eaa59493daa4cf67e995838a2a6fece77807d19fd"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\native_process_job.py",
+      "bytes": 5444,
+      "sha256": "sha256:455e898f6fbf260795b80e12fb18f921d90edb4fd75d967a228c028817b568d7"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\native_video_index.py",
+      "bytes": 12680,
+      "sha256": "sha256:2adfefa4826f9fcf187a84647b6b931d134a2627bd6133fd86b61f0332003b71"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\nested_freeze.py",
+      "bytes": 7203,
+      "sha256": "sha256:2294d318840e6285550eaf70109702b041c031c2cde4c8dc0bca3d2bad848a35"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\ocr_cli.py",
+      "bytes": 10902,
+      "sha256": "sha256:1a818549a1308e78a38a1a5aa9a025772f5be792bacfcdfeacb5599670e0b4ec"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\ocr_geometry.py",
+      "bytes": 5146,
+      "sha256": "sha256:a2a4aedf4289ab20bea45000c1be898668239b75ef215386120850d2f7dfce5c"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\ocr_worker.py",
+      "bytes": 11782,
+      "sha256": "sha256:ee5a2096ec1ee03fc09d2ac4d0b06b1791d5bbfe011772f448045d1377b50d3f"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\pipeline_diagnostics.py",
+      "bytes": 32733,
+      "sha256": "sha256:10293635791333ef437e592d7a58f8dcf341ade759552a26149c1297bb9cac81"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\policy.py",
+      "bytes": 13791,
+      "sha256": "sha256:16100811aae96699ce77245cec6746588953c4f9bc0071a1d04aec0c80ea4d25"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\preview.py",
+      "bytes": 28437,
+      "sha256": "sha256:23465415b1d4d07d02ed8681983481c8985acaa096c4a9127a651f9e5ecb398e"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\project.py",
+      "bytes": 24408,
+      "sha256": "sha256:b125e3dea953fc9613647edba14bfc0623d9ccca065e1c822241ecadea506e14"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\quality.py",
+      "bytes": 20246,
+      "sha256": "sha256:d4e71c9e6616250b681306d562305dafe4cb5867652ab365275277b155e9e047"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\queue_reuse.py",
+      "bytes": 19073,
+      "sha256": "sha256:61797bb01771ef102387ba04d8b3c8d0c6797658c0e4d2e72cb2ace36f26d691"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\range_edits.py",
+      "bytes": 32285,
+      "sha256": "sha256:eff604efaa3c2a66b63b3fcb332804ffd9e45a11ab880964b279a379d5500e4e"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\recommend.py",
+      "bytes": 3579,
+      "sha256": "sha256:0747f63b0089e317ac335e0e2bdc19cde9373691ca145c5fb84cb8cb2e88c5a4"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\render.py",
+      "bytes": 314619,
+      "sha256": "sha256:449173dc1673998de223a9ab4e029cc34a4211ee57c84617b59d5d9e9bc87a44"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\render_queue.py",
+      "bytes": 9931,
+      "sha256": "sha256:171db5bb475f3eaeb4ce05dacdc3c19ba90c2b3f429349d50c949b9d3c97f2be"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\repair_blend.py",
+      "bytes": 14157,
+      "sha256": "sha256:1d4d01f381444cf13416daf82832edc6aa927180aeb1bc8765cf2b5a2ddaa2c6"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\retime_edits.py",
+      "bytes": 11962,
+      "sha256": "sha256:52b962113b90637eb91247af84f1dc24a343224c37f8323ede5c8ffb805cbc2d"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\retime_transform.py",
+      "bytes": 4935,
+      "sha256": "sha256:8b00a27cd939264cece21ddf22ca9949a23a43122dc958c0970cd2526c7bdd35"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\reverse_cache.py",
+      "bytes": 19360,
+      "sha256": "sha256:dcb7db025bb4044f569862514c86246cc955ddcb7a1362d49a3757d48235d878"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\reverse_video_clock.py",
+      "bytes": 18118,
+      "sha256": "sha256:bac8b9a0098de010b0eed47439056eaab1f91edd3a7c414f473867d1ec49650e"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\rfc3339_dates.py",
+      "bytes": 1217,
+      "sha256": "sha256:344d79048ff55a77af00314134c20b57b5301b75d1b6a32b4a7a3f52ce749105"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\rights.py",
+      "bytes": 36660,
+      "sha256": "sha256:ee65bdf0e6a4a8d44122e3dba5f933e81ff04c194c5aed3f78cdf276db867195"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\runtime.py",
+      "bytes": 1763,
+      "sha256": "sha256:b8a81adbd7b19e2269988a0494b8435b59274fc02db22b73d40b858feabe723e"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\rvm_worker.py",
+      "bytes": 5298,
+      "sha256": "sha256:b4ee231349b26fe8d3e94f9bab1ba2f70566b8c2dbe0b806b8864e92957fbeb1"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\sam2_worker.py",
+      "bytes": 9043,
+      "sha256": "sha256:a7df14a7edbe22b78a593ef16e87528645b9043168b314884da332c4e0eef554"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\schema_contract.py",
+      "bytes": 5001,
+      "sha256": "sha256:c7eaefd51abb232aeab9c00daf52033f006391b023b8af7b9c9e6c022ae06090"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\scopes.py",
+      "bytes": 2556,
+      "sha256": "sha256:e68311f38f64d0afc6ed4aa68421697942fe4ad20ac68f662428fc54c361b746"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\segmentation_frames.py",
+      "bytes": 3162,
+      "sha256": "sha256:e934f93150500a9bcb7d386dd91e43d27ae31da4e1c2dc887dd4720ae9fcc5ea"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\selective_hsl.py",
+      "bytes": 7562,
+      "sha256": "sha256:cd49c898258916add6f22de414967833d290b0a4f9efdbc4fd1c023d467d5aea"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\semantic.py",
+      "bytes": 31440,
+      "sha256": "sha256:7b17e53d48effd14b633ce263cba29c554ee6919d60e015dbf7128faac590de2"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\semantic_cli.py",
+      "bytes": 5630,
+      "sha256": "sha256:4a31e51ad7c9783660dbc3b280af3c019ae52a5bd162a3b694c1e946046ba5da"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\semantic_contract.py",
+      "bytes": 11099,
+      "sha256": "sha256:5386bf154bd2f8ee492c4e371dbf8b6fede0ff9253e75af0092b2dc873e3da0a"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\semantic_sampling.py",
+      "bytes": 7082,
+      "sha256": "sha256:ada9d120cf7a702c1590a16be6c90a6378be3f606a60460431bb8c9a318820e1"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\semantic_worker.py",
+      "bytes": 12117,
+      "sha256": "sha256:c7d516667e50d8f23a1e23f537a5bf493ea5b1f15a0cd483d58e0763029d2411"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\separation_dsp.py",
+      "bytes": 5092,
+      "sha256": "sha256:2e32d4159c2906c6d0aceb1846df4f86f3437572ae7127afc30adaf05022965d"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\sequence_canvas.py",
+      "bytes": 1742,
+      "sha256": "sha256:462542e26058d350c2d0a29d0cf4127c4054cab7462a763811b85bfca171412f"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\sequence_sampling.py",
+      "bytes": 4506,
+      "sha256": "sha256:1aa171ef6043878afce099f7a04b214b9c458879147c46147062a77d36356ec2"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\smart_cut.py",
+      "bytes": 15350,
+      "sha256": "sha256:ba871f7bff0f186ad55d9e22c5fcd75e09032e8d7299a01c7ea7b76b2e1a21a1"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\soulx_worker.py",
+      "bytes": 6412,
+      "sha256": "sha256:20dc7a046934925b3620f35922f08a7c97845527a78ee437950e0db9addba3e5"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\source_edits.py",
+      "bytes": 11950,
+      "sha256": "sha256:a2bea20a8d162ac4fa9f329045bca2b7e214a624adca107df6021919d5a1d36c"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\source_transitions.py",
+      "bytes": 17263,
+      "sha256": "sha256:59c2652aa76024b78667293ce46774ba6910e4524db7e39f95dc95bd91b0547a"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\speech.py",
+      "bytes": 6344,
+      "sha256": "sha256:26a17ac367475ebe56a498a3f2950cf1529ec0e7d63238ad6399c8b27c713abd"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\speed_curves.py",
+      "bytes": 6776,
+      "sha256": "sha256:41fbddd764bfa481e6158e8401333113c871e1c38e34257911f9aa676b9bfff9"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\stem_separation.py",
+      "bytes": 16543,
+      "sha256": "sha256:75f88d0c7b2d6ddec0798efe5d0bccb6c5c4d2f9c33eb4adf37a635106d670de"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\stem_separation_cli.py",
+      "bytes": 9729,
+      "sha256": "sha256:7f61029b4417ed7d7c76408e31b51b3574eaff6feddfefa2c6097d88cb2ab72d"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\stem_separation_dsp.py",
+      "bytes": 5562,
+      "sha256": "sha256:fe5f6e2602f1c450ec9ecc2db8c763d9ce77b846c7226e6e8c88aeee36c6021c"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\stem_separation_worker.py",
+      "bytes": 6177,
+      "sha256": "sha256:3ded624662f12880189f7072a68ef902cc980647d9d4af78b697a30ceed072df"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\stroke_motion.py",
+      "bytes": 6423,
+      "sha256": "sha256:ba53f586ff12c75c15803e347307c802d977e874ce792159d74ebb2b6b42ae03"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\subtitle_clock.py",
+      "bytes": 2229,
+      "sha256": "sha256:49ca2001da0f250d682f5818d95f4f51ee362cbaee979fb9a99649a847cd4645"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\subtitle_segments.py",
+      "bytes": 21218,
+      "sha256": "sha256:5590e04147f0b50cb60df3b4e543059a560dbfd684b3085c5f25f8fb04631aea"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\template.py",
+      "bytes": 15317,
+      "sha256": "sha256:25cff8f3f5a76d88358c746dabb5adc50b0b0c345ffee53aa3a175f72248ec7d"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\text_highlight.py",
+      "bytes": 21721,
+      "sha256": "sha256:d08bee683f0bd00bac363a78df5957475765741a7c53d92ac025575b334f78e5"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\text_layout.py",
+      "bytes": 5045,
+      "sha256": "sha256:1f3831478b41ea23c7dd445a66ba08249a4833cce852eb9190ac0a35936a210b"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\text_paint.py",
+      "bytes": 6220,
+      "sha256": "sha256:a924644f0396b5204efbb0e085f25d51f6cda5bfc75f2d44febc6796e42cb028"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\text_typing.py",
+      "bytes": 11561,
+      "sha256": "sha256:6cc022af8300fb4270cb21f2f53ffe2b33210ac203169fed653d11d75e591ec3"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\time_mapping.py",
+      "bytes": 9895,
+      "sha256": "sha256:89bd69060b3f10af1197018b735621eadb8ce2858b4281972d989fddf79f2ef1"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\tracking.py",
+      "bytes": 40754,
+      "sha256": "sha256:3ef89e454292f7cedec1dbfcb8c6a5a9220c802b9e886e18f5aaffffb6a1934b"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\transcribe.py",
+      "bytes": 14266,
+      "sha256": "sha256:877f1cb336233e70d010d39884b1fde6ab475b3df8d55e929bc793b7cfb17ce7"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\understand.py",
+      "bytes": 5199,
+      "sha256": "sha256:3b440295b06683c8b7e0fd8a19a0422239bd86e163081677d47fcc5b1da83a15"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\utils.py",
+      "bytes": 14788,
+      "sha256": "sha256:f1411b706fe613694028328345123eca26499f4385270ae45f9d132d5a0ee182"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\vace_context.py",
+      "bytes": 9866,
+      "sha256": "sha256:aef2d4318720c10a99644e96ea35ba27d48e9b405a332f6b2075b6a558f0e0e6"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\vace_frames.py",
+      "bytes": 15072,
+      "sha256": "sha256:aadc7d5785347422ee62b1d4a195e5dfbf1bcb497eeedc43aa4d839aff6f55de"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\vace_model.py",
+      "bytes": 13701,
+      "sha256": "sha256:8a8f96a14aac93a7b9577f88fe576fecbbfd4fcc206e27843de79f7b1ba54961"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\vace_worker.py",
+      "bytes": 5368,
+      "sha256": "sha256:0ce1dc459b3c0d7f1c95ec2208e78e5fe299200582c878f5de34c9382f4582f5"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\validator.py",
+      "bytes": 98204,
+      "sha256": "sha256:40cf4923fce096020b4ff552188a098ffd4b46a7d1a88701f46758c2727b85db"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\video_clock.py",
+      "bytes": 3626,
+      "sha256": "sha256:24bbd3dbf4d3f384bca30e6e881d900226c56f67302ffa721820d70a972e2e0e"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\vision_tracker.py",
+      "bytes": 6960,
+      "sha256": "sha256:add01f7ecc50a645a1f0e9a0f21f817f5538359aa7f5f268158c23c36769ec4f"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\whisper_worker.py",
+      "bytes": 4364,
+      "sha256": "sha256:39220014386155a911d4714c3dc20493c76720dd98312d4410826728a2f59d2a"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.6\\final\\installed\\site\\ai_ad_editor\\yolo_worker.py",
+      "bytes": 12271,
+      "sha256": "sha256:fe93653d9ae37e811325655ca81635311cd9c6504d0e41b8d1e7c6fa43e77e86"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_ctc_alignment.py",
+      "bytes": 21854,
+      "sha256": "sha256:838a854a442b413cb05be739f47eea86dae36057f12b0567bc820f3f442aec93"
+    }
+  ],
+  "log_sha256": "sha256:2a83a9ea04cbc27380f7dd861836ad2c926d948ccbedf4bc8abd226d8923ad49",
+  "methods": 25,
+  "suite_seconds": 70.843,
+  "skipped": 0,
+  "terminal_ok": true,
+  "frozen_equal": true
+}

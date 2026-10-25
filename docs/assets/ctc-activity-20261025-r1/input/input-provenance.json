@@ -1,0 +1,323 @@
+{
+  "format": "ctc-activity-authored-blocks-v1",
+  "created_at_utc": "2026-10-25T00:28:30.366554+00:00",
+  "frozen_before_candidate_execution": true,
+  "sample_rate": 16000,
+  "samples": 138347,
+  "words": [
+    {
+      "word": "SHARP",
+      "start_sample": 4320,
+      "end_sample": 17948
+    },
+    {
+      "word": "BRIGHT",
+      "start_sample": 19228,
+      "end_sample": 32256
+    },
+    {
+      "word": "CAMERA",
+      "start_sample": 35296,
+      "end_sample": 46069
+    },
+    {
+      "word": "FOLLOWS",
+      "start_sample": 51029,
+      "end_sample": 67002
+    },
+    {
+      "word": "QUIET",
+      "start_sample": 68922,
+      "end_sample": 83140
+    },
+    {
+      "word": "PEOPLE",
+      "start_sample": 90500,
+      "end_sample": 103262
+    },
+    {
+      "word": "THROUGH",
+      "start_sample": 106942,
+      "end_sample": 117359
+    },
+    {
+      "word": "WINTER",
+      "start_sample": 123279,
+      "end_sample": 133707
+    }
+  ],
+  "gaps_before_words_samples": [
+    4320,
+    1280,
+    3040,
+    4960,
+    1920,
+    7360,
+    3680,
+    5920
+  ],
+  "trailing_gap_samples": 4640,
+  "voice": "awb",
+  "reference": "authored placement of abs>=32 trimmed word blocks; not phonetic labels or human annotations",
+  "boundary_error_seconds_max": 0.06666666666666667,
+  "background": {
+    "dc": 173,
+    "alternating_amplitude": 5,
+    "seed": null
+  },
+  "original_word_sources": [
+    {
+      "word": "SHARP",
+      "raw": "sharp-awb-raw.wav",
+      "sha256": "4ff1c3355e38c51d9f7d1563014619f1e4dada1743cc135ab0d2642ce821ce3e",
+      "trim_start": 267,
+      "trim_end": 13895,
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-v",
+        "error",
+        "-nostdin",
+        "-n",
+        "-f",
+        "lavfi",
+        "-i",
+        "flite=text=sharp:voice=awb",
+        "-ar",
+        "16000",
+        "-ac",
+        "1",
+        "-c:a",
+        "pcm_s16le",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ctc-activity-20261025-r1\\input\\sharp-awb-raw.wav"
+      ]
+    },
+    {
+      "word": "BRIGHT",
+      "raw": "bright-awb-raw.wav",
+      "sha256": "7516df9822759a522e9465ac4f0f0add64649d86e8f189bb3ced0c1f6140f933",
+      "trim_start": 50,
+      "trim_end": 13078,
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-v",
+        "error",
+        "-nostdin",
+        "-n",
+        "-f",
+        "lavfi",
+        "-i",
+        "flite=text=bright:voice=awb",
+        "-ar",
+        "16000",
+        "-ac",
+        "1",
+        "-c:a",
+        "pcm_s16le",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ctc-activity-20261025-r1\\input\\bright-awb-raw.wav"
+      ]
+    },
+    {
+      "word": "CAMERA",
+      "raw": "camera-awb-raw.wav",
+      "sha256": "e7728821ae3c3f0258b0bd83a671b9d0a70cbc45851dbce37b5ec9ee1926bee7",
+      "trim_start": 267,
+      "trim_end": 11040,
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-v",
+        "error",
+        "-nostdin",
+        "-n",
+        "-f",
+        "lavfi",
+        "-i",
+        "flite=text=camera:voice=awb",
+        "-ar",
+        "16000",
+        "-ac",
+        "1",
+        "-c:a",
+        "pcm_s16le",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ctc-activity-20261025-r1\\input\\camera-awb-raw.wav"
+      ]
+    },
+    {
+      "word": "FOLLOWS",
+      "raw": "follows-awb-raw.wav",
+      "sha256": "84c224da964a39ec5c48e2ed637432e91bffcf301008f2ac1eb9fe1b7458aee0",
+      "trim_start": 267,
+      "trim_end": 16240,
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-v",
+        "error",
+        "-nostdin",
+        "-n",
+        "-f",
+        "lavfi",
+        "-i",
+        "flite=text=follows:voice=awb",
+        "-ar",
+        "16000",
+        "-ac",
+        "1",
+        "-c:a",
+        "pcm_s16le",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ctc-activity-20261025-r1\\input\\follows-awb-raw.wav"
+      ]
+    },
+    {
+      "word": "QUIET",
+      "raw": "quiet-awb-raw.wav",
+      "sha256": "dcd813ad9a3708711b8c8c0136c1e5a63c2fbaccbd13bd83dac5c5d1037de379",
+      "trim_start": 262,
+      "trim_end": 14480,
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-v",
+        "error",
+        "-nostdin",
+        "-n",
+        "-f",
+        "lavfi",
+        "-i",
+        "flite=text=quiet:voice=awb",
+        "-ar",
+        "16000",
+        "-ac",
+        "1",
+        "-c:a",
+        "pcm_s16le",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ctc-activity-20261025-r1\\input\\quiet-awb-raw.wav"
+      ]
+    },
+    {
+      "word": "PEOPLE",
+      "raw": "people-awb-raw.wav",
+      "sha256": "1c6fefbd8d55ff4929efcff1c11a538254e1bdf549a985d0e690888ea307f3f4",
+      "trim_start": 267,
+      "trim_end": 13029,
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-v",
+        "error",
+        "-nostdin",
+        "-n",
+        "-f",
+        "lavfi",
+        "-i",
+        "flite=text=people:voice=awb",
+        "-ar",
+        "16000",
+        "-ac",
+        "1",
+        "-c:a",
+        "pcm_s16le",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ctc-activity-20261025-r1\\input\\people-awb-raw.wav"
+      ]
+    },
+    {
+      "word": "THROUGH",
+      "raw": "through-awb-raw.wav",
+      "sha256": "931410895d3f777c3cd38d25a20f15d8f57ffb37a460bf6502360f8e6fa18c15",
+      "trim_start": 221,
+      "trim_end": 10638,
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-v",
+        "error",
+        "-nostdin",
+        "-n",
+        "-f",
+        "lavfi",
+        "-i",
+        "flite=text=through:voice=awb",
+        "-ar",
+        "16000",
+        "-ac",
+        "1",
+        "-c:a",
+        "pcm_s16le",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ctc-activity-20261025-r1\\input\\through-awb-raw.wav"
+      ]
+    },
+    {
+      "word": "WINTER",
+      "raw": "winter-awb-raw.wav",
+      "sha256": "07aa60a192bef5725b6e47556f8d9cbb899d64474eaafa554718be2821428af3",
+      "trim_start": 50,
+      "trim_end": 10478,
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-v",
+        "error",
+        "-nostdin",
+        "-n",
+        "-f",
+        "lavfi",
+        "-i",
+        "flite=text=winter:voice=awb",
+        "-ar",
+        "16000",
+        "-ac",
+        "1",
+        "-c:a",
+        "pcm_s16le",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\ctc-activity-20261025-r1\\input\\winter-awb-raw.wav"
+      ]
+    }
+  ],
+  "contract_sha256": "180838c2ded1d7eedc8088b0108b2f68c906710d9498ef7d01a4532eafea431f",
+  "generator_sha256": "df45c55992d666ffefccc10ce706b8db74541918b1eb159e046d4cdbb054a9cd",
+  "rights": {
+    "authored_text_and_placement": "CC0-1.0",
+    "speech": "installed FFmpeg flite AWB; retain upstream voice copyright/license separately; not blanket CC0",
+    "voice_clone": false
+  },
+  "files": {
+    "bright-awb-raw.wav": {
+      "bytes": 26318,
+      "sha256": "7516df9822759a522e9465ac4f0f0add64649d86e8f189bb3ced0c1f6140f933"
+    },
+    "camera-awb-raw.wav": {
+      "bytes": 22158,
+      "sha256": "e7728821ae3c3f0258b0bd83a671b9d0a70cbc45851dbce37b5ec9ee1926bee7"
+    },
+    "follows-awb-raw.wav": {
+      "bytes": 32558,
+      "sha256": "84c224da964a39ec5c48e2ed637432e91bffcf301008f2ac1eb9fe1b7458aee0"
+    },
+    "input-dc-background.wav": {
+      "bytes": 276738,
+      "sha256": "e237fd987c7fed8dec17d39c4d230a099771e442677bc9d304488ee21b38f449"
+    },
+    "input.wav": {
+      "bytes": 276738,
+      "sha256": "d36a2862c82c02abd11831c86cfb48441e6e1a86eab6832b8da52c2525ef9bbf"
+    },
+    "people-awb-raw.wav": {
+      "bytes": 26158,
+      "sha256": "1c6fefbd8d55ff4929efcff1c11a538254e1bdf549a985d0e690888ea307f3f4"
+    },
+    "quiet-awb-raw.wav": {
+      "bytes": 29038,
+      "sha256": "dcd813ad9a3708711b8c8c0136c1e5a63c2fbaccbd13bd83dac5c5d1037de379"
+    },
+    "sharp-awb-raw.wav": {
+      "bytes": 27918,
+      "sha256": "4ff1c3355e38c51d9f7d1563014619f1e4dada1743cc135ab0d2642ce821ce3e"
+    },
+    "through-awb-raw.wav": {
+      "bytes": 21358,
+      "sha256": "931410895d3f777c3cd38d25a20f15d8f57ffb37a460bf6502360f8e6fa18c15"
+    },
+    "transcript.txt": {
+      "bytes": 55,
+      "sha256": "d7962912bb060e1e0e12bcf68c09ac97d61f8859083dab5c64583da9b181e85b"
+    },
+    "winter-awb-raw.wav": {
+      "bytes": 21038,
+      "sha256": "07aa60a192bef5725b6e47556f8d9cbb899d64474eaafa554718be2821428af3"
+    }
+  }
+}

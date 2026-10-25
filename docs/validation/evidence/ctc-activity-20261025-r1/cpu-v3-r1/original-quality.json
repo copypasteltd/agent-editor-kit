@@ -1,0 +1,248 @@
+{
+  "fixture": "original",
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ctc-activity-20261025-r1\\cpu-v3-r1\\original",
+  "reference": "authored word blocks, not phonetic truth",
+  "immutable_threshold_seconds": 0.06666666666666667,
+  "quality": {
+    "raw_ctc": {
+      "max_error_samples": 4131,
+      "max_error_ms": 258.1875,
+      "passed": false,
+      "words": [
+        {
+          "word": "RED",
+          "start_error_samples": 3560,
+          "end_error_samples": -3236,
+          "start_error_ms": 222.5,
+          "end_error_ms": -202.25,
+          "passed": false
+        },
+        {
+          "word": "BLUE",
+          "start_error_samples": 3804,
+          "end_error_samples": -3229,
+          "start_error_ms": 237.75,
+          "end_error_ms": -201.8125,
+          "passed": false
+        },
+        {
+          "word": "GREEN",
+          "start_error_samples": 4131,
+          "end_error_samples": -2245,
+          "start_error_ms": 258.1875,
+          "end_error_ms": -140.3125,
+          "passed": false
+        },
+        {
+          "word": "RED",
+          "start_error_samples": 3515,
+          "end_error_samples": -3281,
+          "start_error_ms": 219.6875,
+          "end_error_ms": -205.0625,
+          "passed": false
+        },
+        {
+          "word": "BLUE",
+          "start_error_samples": 3759,
+          "end_error_samples": -3274,
+          "start_error_ms": 234.9375,
+          "end_error_ms": -204.625,
+          "passed": false
+        },
+        {
+          "word": "GREEN",
+          "start_error_samples": 4086,
+          "end_error_samples": -2290,
+          "start_error_ms": 255.375,
+          "end_error_ms": -143.125,
+          "passed": false
+        }
+      ]
+    },
+    "activity": {
+      "max_error_samples": 76,
+      "max_error_ms": 4.75,
+      "passed": true,
+      "words": [
+        {
+          "word": "RED",
+          "start_error_samples": 0,
+          "end_error_samples": 4,
+          "start_error_ms": 0.0,
+          "end_error_ms": 0.25,
+          "passed": true
+        },
+        {
+          "word": "BLUE",
+          "start_error_samples": -76,
+          "end_error_samples": 11,
+          "start_error_ms": -4.75,
+          "end_error_ms": 0.6875,
+          "passed": true
+        },
+        {
+          "word": "GREEN",
+          "start_error_samples": -69,
+          "end_error_samples": 35,
+          "start_error_ms": -4.3125,
+          "end_error_ms": 2.1875,
+          "passed": true
+        },
+        {
+          "word": "RED",
+          "start_error_samples": -45,
+          "end_error_samples": 39,
+          "start_error_ms": -2.8125,
+          "end_error_ms": 2.4375,
+          "passed": true
+        },
+        {
+          "word": "BLUE",
+          "start_error_samples": -41,
+          "end_error_samples": 46,
+          "start_error_ms": -2.5625,
+          "end_error_ms": 2.875,
+          "passed": true
+        },
+        {
+          "word": "GREEN",
+          "start_error_samples": -34,
+          "end_error_samples": 70,
+          "start_error_ms": -2.125,
+          "end_error_ms": 4.375,
+          "passed": true
+        }
+      ]
+    }
+  },
+  "activity": {
+    "algorithm": "ctc-guided-activity-v3",
+    "sample_rate": 16000,
+    "frame_samples": 80,
+    "dc_offset": 0,
+    "dc_subsample_step": 1,
+    "noise_rms": 0,
+    "reference_rms": 8377,
+    "low_threshold": 2,
+    "high_threshold": 84,
+    "max_internal_gap_frames": 8,
+    "max_support_gap_frames": 24,
+    "min_region_frames": 4,
+    "max_movement_samples": 12000,
+    "regions": [
+      {
+        "start_sample": 8000,
+        "end_sample": 18000,
+        "anchored_units": [
+          0
+        ],
+        "strong_activity": true
+      },
+      {
+        "start_sample": 25920,
+        "end_sample": 39760,
+        "anchored_units": [
+          1
+        ],
+        "strong_activity": true
+      },
+      {
+        "start_sample": 47680,
+        "end_sample": 58960,
+        "anchored_units": [
+          2
+        ],
+        "strong_activity": true
+      },
+      {
+        "start_sample": 66880,
+        "end_sample": 76960,
+        "anchored_units": [
+          3
+        ],
+        "strong_activity": true
+      },
+      {
+        "start_sample": 84880,
+        "end_sample": 98720,
+        "anchored_units": [
+          4
+        ],
+        "strong_activity": true
+      },
+      {
+        "start_sample": 106640,
+        "end_sample": 117920,
+        "anchored_units": [
+          5
+        ],
+        "strong_activity": true
+      }
+    ],
+    "support_attachments": [],
+    "decisions": [
+      {
+        "unit_index": 0,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 8000,
+          "end_sample": 18000
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 1,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 25920,
+          "end_sample": 39760
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 2,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 47680,
+          "end_sample": 58960
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 3,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 66880,
+          "end_sample": 76960
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 4,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 84880,
+          "end_sample": 98720
+        },
+        "changed": true
+      },
+      {
+        "unit_index": 5,
+        "status": "activity_estimated",
+        "candidate": {
+          "start_sample": 106640,
+          "end_sample": 117920
+        },
+        "changed": true
+      }
+    ],
+    "changed_units": 6,
+    "review_required": true,
+    "continuous_speech_boundaries_not_inferred": true
+  },
+  "model_forward_calls": 1,
+  "actual_device": "cpu",
+  "peak_cuda_bytes": null,
+  "input_sha256": "eea24cb10f383c972a64ae8742795e3eb5e404ba4dd37f98440197f8c84a0d30",
+  "reference_sha256": "b3e8d6c8f0b6d0afaf8219392c0a990b36127e8b7ce61541389efeb912c73839"
+}

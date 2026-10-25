@@ -1,0 +1,445 @@
+{
+  "status": "passed",
+  "kit": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\skills\\agent-editor-kit-community-unified-skill-r22.zip",
+  "kit_sha256": "055cc09299e7afe8ce015e1e9a5b900d822ed1e199f59ecf80569a9e3a1036e2",
+  "files": 98,
+  "skill_files": 70,
+  "cli_version": "0.1.21",
+  "registered_skills": 1,
+  "internal_modules": 17,
+  "process_calls": 8,
+  "json_cli_calls": 5,
+  "real_discovery_changed": false,
+  "dry_run_metadata_unchanged": true,
+  "dry_run_assets_unchanged": true,
+  "scope": "Actual native Float32 transition planning and project validation from a fresh isolated kit registration; dry-run does not render or perform inference.",
+  "new_model_forwards": 0,
+  "new_renders": 0,
+  "native_windows": true,
+  "virtualization": false,
+  "source_fallback": false,
+  "generator_sha256": "ee9be6f174fe0468a49fc441dfdb2bace8ac20d60e5a3713ba2cc6034b2770f1",
+  "transition_plan": {
+    "protocol": "linear-premultiplied-float32-transitions-v1",
+    "patterns": [
+      "circleclose",
+      "circlecrop",
+      "circleopen",
+      "coverdown",
+      "coverleft",
+      "coverright",
+      "coverup",
+      "diagbl",
+      "diagbr",
+      "diagtl",
+      "diagtr",
+      "dip_black",
+      "dip_white",
+      "distance",
+      "fade",
+      "fadeblack",
+      "fadefast",
+      "fadegrays",
+      "fadeslow",
+      "fadewhite",
+      "hblur",
+      "hlslice",
+      "hlwind",
+      "horzclose",
+      "horzopen",
+      "hrslice",
+      "hrwind",
+      "pixelize",
+      "radial",
+      "rectcrop",
+      "revealdown",
+      "revealleft",
+      "revealright",
+      "revealup",
+      "slidedown",
+      "slideleft",
+      "slideright",
+      "slideup",
+      "smoothdown",
+      "smoothleft",
+      "smoothright",
+      "smoothup",
+      "squeezeh",
+      "squeezev",
+      "vdslice",
+      "vdwind",
+      "vertclose",
+      "vertopen",
+      "vuslice",
+      "vuwind",
+      "wipebl",
+      "wipebr",
+      "wipedown",
+      "wipeleft",
+      "wiperight",
+      "wipetl",
+      "wipetr",
+      "wipeup",
+      "zoomin"
+    ],
+    "source_handle_plans": [
+      {
+        "engine": "agent-source-transition-v1",
+        "transitions": [
+          {
+            "audio_pairs": [
+              {
+                "from_clip_id": "a0",
+                "to_clip_id": "a1"
+              }
+            ],
+            "duration_tick": 37500,
+            "from_clip_id": "v0",
+            "id": "cut1",
+            "to_clip_id": "v1",
+            "type": "wipe_left",
+            "cut_tick": 90000,
+            "start_tick": 75000,
+            "end_tick": 112500,
+            "pre_tick": 15000,
+            "post_tick": 22500,
+            "xfade": "wipeleft",
+            "pairs": [
+              [
+                "v0",
+                "v1",
+                "video"
+              ],
+              [
+                "a0",
+                "a1",
+                "audio"
+              ]
+            ]
+          },
+          {
+            "audio_pairs": [
+              {
+                "from_clip_id": "a1",
+                "to_clip_id": "a2"
+              }
+            ],
+            "duration_tick": 37500,
+            "from_clip_id": "v1",
+            "id": "cut2",
+            "to_clip_id": "v2",
+            "type": "dip_white",
+            "cut_tick": 180000,
+            "start_tick": 165000,
+            "end_tick": 202500,
+            "pre_tick": 15000,
+            "post_tick": 22500,
+            "xfade": "custom",
+            "pairs": [
+              [
+                "v1",
+                "v2",
+                "video"
+              ],
+              [
+                "a1",
+                "a2",
+                "audio"
+              ]
+            ]
+          },
+          {
+            "audio_pairs": [
+              {
+                "from_clip_id": "a2",
+                "to_clip_id": "a3"
+              }
+            ],
+            "duration_tick": 37500,
+            "from_clip_id": "v2",
+            "id": "cut3",
+            "to_clip_id": "v3",
+            "type": "slide_up",
+            "cut_tick": 270000,
+            "start_tick": 255000,
+            "end_tick": 292500,
+            "pre_tick": 15000,
+            "post_tick": 22500,
+            "xfade": "slideup",
+            "pairs": [
+              [
+                "v2",
+                "v3",
+                "video"
+              ],
+              [
+                "a2",
+                "a3",
+                "audio"
+              ]
+            ]
+          },
+          {
+            "audio_pairs": [
+              {
+                "from_clip_id": "a3",
+                "to_clip_id": "a4"
+              }
+            ],
+            "duration_tick": 37500,
+            "from_clip_id": "v3",
+            "id": "cut4",
+            "to_clip_id": "v4",
+            "type": "dissolve",
+            "cut_tick": 360000,
+            "start_tick": 345000,
+            "end_tick": 382500,
+            "pre_tick": 15000,
+            "post_tick": 22500,
+            "xfade": "fade",
+            "pairs": [
+              [
+                "v3",
+                "v4",
+                "video"
+              ],
+              [
+                "a3",
+                "a4",
+                "audio"
+              ]
+            ]
+          },
+          {
+            "audio_pairs": [
+              {
+                "from_clip_id": "a4",
+                "to_clip_id": "a5"
+              }
+            ],
+            "duration_tick": 37500,
+            "from_clip_id": "v4",
+            "id": "cut5",
+            "to_clip_id": "v5",
+            "type": "slide_right",
+            "cut_tick": 450000,
+            "start_tick": 435000,
+            "end_tick": 472500,
+            "pre_tick": 15000,
+            "post_tick": 22500,
+            "xfade": "slideright",
+            "pairs": [
+              [
+                "v4",
+                "v5",
+                "video"
+              ],
+              [
+                "a4",
+                "a5",
+                "audio"
+              ]
+            ]
+          }
+        ],
+        "handles": [
+          {
+            "clip_id": "a0",
+            "track_id": "child_track_audio_1",
+            "head_tick": 0,
+            "tail_tick": 22500,
+            "authored_start_tick": 0,
+            "authored_duration_tick": 90000,
+            "timeline_start_tick": 0,
+            "duration_tick": 112500,
+            "source_in_tick": 22500,
+            "source_out_tick": 135000,
+            "authored_source_in_tick": 22500,
+            "authored_source_out_tick": 112500,
+            "reverse": false,
+            "speed": "1"
+          },
+          {
+            "clip_id": "a1",
+            "track_id": "child_track_audio_1",
+            "head_tick": 15000,
+            "tail_tick": 22500,
+            "authored_start_tick": 90000,
+            "authored_duration_tick": 90000,
+            "timeline_start_tick": 75000,
+            "duration_tick": 127500,
+            "source_in_tick": 142500,
+            "source_out_tick": 270000,
+            "authored_source_in_tick": 157500,
+            "authored_source_out_tick": 247500,
+            "reverse": false,
+            "speed": "1"
+          },
+          {
+            "clip_id": "a2",
+            "track_id": "child_track_audio_1",
+            "head_tick": 15000,
+            "tail_tick": 22500,
+            "authored_start_tick": 180000,
+            "authored_duration_tick": 90000,
+            "timeline_start_tick": 165000,
+            "duration_tick": 127500,
+            "source_in_tick": 277500,
+            "source_out_tick": 405000,
+            "authored_source_in_tick": 292500,
+            "authored_source_out_tick": 382500,
+            "reverse": false,
+            "speed": "1"
+          },
+          {
+            "clip_id": "a3",
+            "track_id": "child_track_audio_1",
+            "head_tick": 15000,
+            "tail_tick": 22500,
+            "authored_start_tick": 270000,
+            "authored_duration_tick": 90000,
+            "timeline_start_tick": 255000,
+            "duration_tick": 127500,
+            "source_in_tick": 412500,
+            "source_out_tick": 540000,
+            "authored_source_in_tick": 427500,
+            "authored_source_out_tick": 517500,
+            "reverse": false,
+            "speed": "1"
+          },
+          {
+            "clip_id": "a4",
+            "track_id": "child_track_audio_1",
+            "head_tick": 15000,
+            "tail_tick": 22500,
+            "authored_start_tick": 360000,
+            "authored_duration_tick": 90000,
+            "timeline_start_tick": 345000,
+            "duration_tick": 127500,
+            "source_in_tick": 547500,
+            "source_out_tick": 675000,
+            "authored_source_in_tick": 562500,
+            "authored_source_out_tick": 652500,
+            "reverse": false,
+            "speed": "1"
+          },
+          {
+            "clip_id": "a5",
+            "track_id": "child_track_audio_1",
+            "head_tick": 15000,
+            "tail_tick": 0,
+            "authored_start_tick": 450000,
+            "authored_duration_tick": 90000,
+            "timeline_start_tick": 435000,
+            "duration_tick": 105000,
+            "source_in_tick": 682500,
+            "source_out_tick": 787500,
+            "authored_source_in_tick": 697500,
+            "authored_source_out_tick": 787500,
+            "reverse": false,
+            "speed": "1"
+          },
+          {
+            "clip_id": "v0",
+            "track_id": "child_track_video_1",
+            "head_tick": 0,
+            "tail_tick": 22500,
+            "authored_start_tick": 0,
+            "authored_duration_tick": 90000,
+            "timeline_start_tick": 0,
+            "duration_tick": 112500,
+            "source_in_tick": 22500,
+            "source_out_tick": 135000,
+            "authored_source_in_tick": 22500,
+            "authored_source_out_tick": 112500,
+            "reverse": false,
+            "speed": "1"
+          },
+          {
+            "clip_id": "v1",
+            "track_id": "child_track_video_1",
+            "head_tick": 15000,
+            "tail_tick": 22500,
+            "authored_start_tick": 90000,
+            "authored_duration_tick": 90000,
+            "timeline_start_tick": 75000,
+            "duration_tick": 127500,
+            "source_in_tick": 142500,
+            "source_out_tick": 270000,
+            "authored_source_in_tick": 157500,
+            "authored_source_out_tick": 247500,
+            "reverse": false,
+            "speed": "1"
+          },
+          {
+            "clip_id": "v2",
+            "track_id": "child_track_video_1",
+            "head_tick": 15000,
+            "tail_tick": 22500,
+            "authored_start_tick": 180000,
+            "authored_duration_tick": 90000,
+            "timeline_start_tick": 165000,
+            "duration_tick": 127500,
+            "source_in_tick": 277500,
+            "source_out_tick": 405000,
+            "authored_source_in_tick": 292500,
+            "authored_source_out_tick": 382500,
+            "reverse": false,
+            "speed": "1"
+          },
+          {
+            "clip_id": "v3",
+            "track_id": "child_track_video_1",
+            "head_tick": 15000,
+            "tail_tick": 22500,
+            "authored_start_tick": 270000,
+            "authored_duration_tick": 90000,
+            "timeline_start_tick": 255000,
+            "duration_tick": 127500,
+            "source_in_tick": 412500,
+            "source_out_tick": 540000,
+            "authored_source_in_tick": 427500,
+            "authored_source_out_tick": 517500,
+            "reverse": false,
+            "speed": "1"
+          },
+          {
+            "clip_id": "v4",
+            "track_id": "child_track_video_1",
+            "head_tick": 15000,
+            "tail_tick": 22500,
+            "authored_start_tick": 360000,
+            "authored_duration_tick": 90000,
+            "timeline_start_tick": 345000,
+            "duration_tick": 127500,
+            "source_in_tick": 547500,
+            "source_out_tick": 675000,
+            "authored_source_in_tick": 562500,
+            "authored_source_out_tick": 652500,
+            "reverse": false,
+            "speed": "1"
+          },
+          {
+            "clip_id": "v5",
+            "track_id": "child_track_video_1",
+            "head_tick": 15000,
+            "tail_tick": 0,
+            "authored_start_tick": 450000,
+            "authored_duration_tick": 90000,
+            "timeline_start_tick": 435000,
+            "duration_tick": 105000,
+            "source_in_tick": 682500,
+            "source_out_tick": 787500,
+            "authored_source_in_tick": 697500,
+            "authored_source_out_tick": 787500,
+            "reverse": false,
+            "speed": "1"
+          }
+        ]
+      }
+    ],
+    "double_source_over_crossfade": false,
+    "group_spatial_edges": true,
+    "GPU": false
+  }
+}

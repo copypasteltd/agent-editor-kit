@@ -19,6 +19,9 @@ from .float_geometry import resample_rgba
 from .float_mask import compile_mask, apply_mask
 from .float_crop import compile_crop, project_crop
 from .float_effect_chain import EffectCompiler
+from .float_transitions import transition_rgba, PROTOCOL as TRANSITION_PROTOCOL, TYPES as TRANSITION_TYPES
+from .float_transition_plan import compile_track
+from .source_transitions import compile_for_render
 from .float_raster import mode_name
 from .sequence_canvas import sequence_canvas
 from .speed_curves import compile_curve
@@ -113,6 +116,7 @@ class FloatTimeline:
         if len(self.sequences)!=len(self.project['sequences']):raise error('SEQUENCE','序列ID重复')
         if sequence_id not in self.sequences:raise error('SEQUENCE','目标作者序列不存在')
         self.assets={a['id']:a for a in self.project['assets']};self.maps={};self.effect_plans={};self.mask_plans={};self.crop_plans={};self.clip_count=0
+        self.source_transition_plans={};self.transition_plans={}
         if len(self.assets)!=len(self.project['assets']):raise error('SOURCE','资产ID重复')
         self._validate(sequence_id,());sequence=self.sequences[sequence_id]
         self.frame_count=math.ceil(Fraction(int(sequence['duration_tick']),self.tps)*self.fps)
@@ -121,6 +125,9 @@ class FloatTimeline:
             'scalar_clock':'exact rational source/display intervals','curve_clock':'existing adaptive Float64 author clock;see compilation certificate',
             'native_holds':'original PTS to next PTS;last native duration establishes EOF',
             'nested_clock':'continuous author time;exact left/right limits propagated through reversal',
+            'transitions':{'protocol':TRANSITION_PROTOCOL,'patterns':sorted(TRANSITION_TYPES),
+                'source_handle_plans':[p for p in self.source_transition_plans.values() if p],
+                'double_source_over_crossfade':False,'group_spatial_edges':True,'GPU':False},
             'input_contract':'validated Agent Project IR;registered SHA and explicit common working RGB signal',
             'audio_rendered':False,'legacy_render_preview_cache_integrated':False,'HDR_accepted':False,'network':False}
 
@@ -128,19 +135,23 @@ class FloatTimeline:
         if sequence_id in stack or len(stack)>=MAX_DEPTH:raise error('NESTING','嵌套循环或超过16层')
         sequence=self.sequences[sequence_id];canvas=sequence_canvas(self.project,sequence)
         integer(sequence['duration_tick'],1)
-        if sequence.get('source_transitions'):raise error('UNSUPPORTED','源转场计划尚未连接浮点宿主')
+        if sequence_id not in self.source_transition_plans:
+            _,sequence,plan=compile_for_render(self.project,sequence_id)
+            self.source_transition_plans[sequence_id]=plan
+            self.sequences[sequence_id]=sequence
         if canvas['width']*canvas['height']*16>MAX_SURFACE_BYTES:raise error('BUDGET','作者画布超过256MiB表面')
         ids=set()
         for track in sequence['tracks']:
             if track.get('muted') or track['kind']=='audio':continue
             if track['kind']!='video' and track.get('clips'):raise error('UNSUPPORTED','该帧宿主尚未接入此轨道类型',track=track['id'],kind=track['kind'])
+            self.transition_plans[sequence_id+'/'+track['id']]=compile_track(track,self.tps,self.source_transition_plans[sequence_id])
             for clip in track['clips']:
                 self.clip_count+=1
                 if self.clip_count>MAX_CLIPS:raise error('BUDGET','展开作者片段数超过4096')
                 path=sequence_id+'/'+str(clip['id'])
                 if clip['id'] in ids:raise error('SEQUENCE','轨道内片段ID重复',clip=path)
                 ids.add(clip['id'])
-                for field in ('transition_in','transition_out','generator','subtitle','tracking_binding'):
+                for field in ('generator','subtitle','tracking_binding'):
                     if clip.get(field):raise error('UNSUPPORTED','该作者操作尚未连接浮点宿主，不进行旧路径回落',clip=path,operation=field)
                 self.effect_plans[path]=self.effects.compile(clip.get('effects',[]))
                 if self.effect_plans[path] and self.working.transfer!='linear':raise error('SIGNAL','浮点效果链要求线性光工作域',clip=path)
@@ -176,7 +187,7 @@ class FloatTimeline:
 
     def _source_time(self,clip,local_tick,path,*,left_limit=False):
         window=clip.get('presentation_window') or {};elapsed=local_tick+int(window.get('offset_tick',0))
-        animation_tick=elapsed
+        animation_tick=elapsed-int((clip.get('_source_handle') or {}).get('head_tick',0))
         freeze=clip.get('freeze') or {};at=int(freeze.get('at_tick',0));duration=int(freeze.get('duration_tick',0))
         held=duration and ((at<elapsed<=at+duration) if left_limit else (at<=elapsed<at+duration))
         if held:elapsed=Fraction(at)
@@ -223,6 +234,57 @@ class FloatTimeline:
         result,_=resample_rgba(surface,(cw,ch),inverse,max_working_bytes=self.max_working_bytes,cancel=self.poll)
         return result,opacity,inverse,mask_metadata,None
 
+    def _layer(self,sequence_id,clip,at,canvas,rows,depth,left_limit):
+        self.poll()
+        if len(rows)>=MAX_LAYERS_PER_FRAME:raise error('BUDGET','同帧片段数超过128')
+        path=sequence_id+'/'+str(clip['id'])
+        local_tick=at*self.tps-int(clip['timeline_start_tick'])
+        source_time,tick,right=self._source_time(clip,local_tick,path,left_limit=left_limit)
+        frame_index=None;source=None
+        start,end=Fraction(int(clip['source_in_tick']),self.tps),Fraction(int(clip['source_out_tick']),self.tps)
+        if start<=source_time<=end and (source_time!=end or right):
+            if clip.get('sequence_id'):
+                source=self._sequence(clip['sequence_id'],source_time,rows,depth=depth+1,left_limit=right)
+            else:
+                source,frame_index=self.sources[clip['asset_id']].sample(source_time,right_edge=right)
+        if source is None:
+            if clip.get('_source_handle'):
+                raise error('SOURCE_HANDLE_COVERAGE','真实源句柄缺少原生帧覆盖；未补帧或替换为透明',clip=path,source_time=str(source_time))
+            layer=np.zeros((canvas['height'],canvas['width'],4),np.float32)
+            row={'clip':path,'source_time':str(source_time),'empty_native_coverage':True,'author_animation_tick':str(tick)}
+            rows.append(row)
+            return layer,'normal',tick,row
+        if len(rows)>=MAX_LAYERS_PER_FRAME:raise error('BUDGET','同帧片段数超过128')
+        effect_metadata=None
+        if self.effect_plans[path]:source,effect_metadata=self.effects.apply(source,self.effect_plans[path],tick)
+        layer,opacity,inverse,mask_metadata,crop_metadata=self._project(clip,source,canvas,tick,path)
+        blend=clip.get('blend') or {}
+        opacity*=keyframe_value(clip,('blend.opacity','blend_opacity'),float(blend.get('opacity',1)),float(tick))
+        if not math.isfinite(opacity) or not 0<=opacity<=1:raise error('GEOMETRY','合并后的图层透明度须为有限0..1数值')
+        row={'clip':path,'source_time':str(source_time),'native_frame_index':frame_index,'right_edge':right,
+            'author_animation_tick':str(tick),'inverse_affine':inverse,'opacity':opacity,'effects':effect_metadata,'mask':mask_metadata,'crop':crop_metadata}
+        if clip.get('_source_handle'):row['source_handle']=copy.deepcopy(clip['_source_handle'])
+        rows.append(row)
+        return layer,blend.get('mode','normal'),tick,row
+
+    @staticmethod
+    def _transition_opacity(layer,row):
+        opacity=row.get('opacity',1.)
+        if opacity!=1.:
+            layer=layer.copy();layer[:,:,3]*=opacity
+        return layer
+
+    def _edge_transitions(self,layer,envelopes,tick,row):
+        for edge in envelopes:
+            d=edge['duration'];duration=edge['authored_duration']
+            q=(tick/d) if edge['edge']=='in' else (tick-(duration-d))/d
+            if edge['edge']=='in' and q>=1 or edge['edge']=='out' and q<0:continue
+            q=max(0.,min(1.,float(q)));empty=np.zeros_like(layer)
+            a,b=(empty,layer) if edge['edge']=='in' else (layer,empty)
+            layer,metadata=transition_rgba(a,b,q,kind=edge['type'],max_working_bytes=self.max_working_bytes,cancel=self.poll)
+            row.setdefault('edge_transitions',[]).append({**metadata,'edge':edge['edge'],'target':'transparent canvas'})
+        return layer
+
     def _sequence(self,sequence_id,at,rows,*,root=False,depth=0,left_limit=False):
         self.poll();sequence=self.sequences[sequence_id];canvas=sequence_canvas(self.project,sequence);w,h=canvas['width'],canvas['height']
         result=np.zeros((h,w,4),dtype=np.float32)
@@ -238,30 +300,40 @@ class FloatTimeline:
         if not ((0<at<=duration) if left_limit else (0<=at<duration)):return result
         for _,track in sorted(enumerate(sequence['tracks']),key=lambda pair:(pair[1].get('order',pair[0]),pair[0])):
             if track.get('muted') or track['kind']!='video':continue
+            plan=self.transition_plans[sequence_id+'/'+track['id']]
+            at_tick=at*self.tps
+            active_pairs=[p for p in plan['pairs'] if ((p['start']<at_tick<=p['end']) if left_limit else (p['start']<=at_tick<p['end']))]
+            pair_for={cid:p for p in active_pairs for cid in (p['from'],p['to'])}
+            by_id={c['id']:c for c in track['clips']};done=set()
             for clip in track['clips']:
+                if clip['id'] in done:continue
                 local_tick=at*self.tps-int(clip['timeline_start_tick'])
                 if not ((0<local_tick<=clip['duration_tick']) if left_limit else (0<=local_tick<clip['duration_tick'])):continue
-                self.poll()
-                if len(rows)>=MAX_LAYERS_PER_FRAME:raise error('BUDGET','同帧片段数超过128')
-                path=sequence_id+'/'+str(clip['id']);source_time,tick,right=self._source_time(clip,local_tick,path,left_limit=left_limit)
-                if (source_time<Fraction(int(clip['source_in_tick']),self.tps) or source_time>Fraction(int(clip['source_out_tick']),self.tps)
-                    or (source_time==Fraction(int(clip['source_out_tick']),self.tps) and not right)):continue
-                frame_index=None
-                if clip.get('sequence_id'):
-                    source=self._sequence(clip['sequence_id'],source_time,rows,depth=depth+1,left_limit=right)
+                pair=pair_for.get(clip['id'])
+                if pair:
+                    left,right=by_id[pair['from']],by_id[pair['to']]
+                    a,_,ta,ra=self._layer(sequence_id,left,at,canvas,rows,depth,left_limit)
+                    a=self._transition_opacity(a,ra)
+                    a=self._edge_transitions(a,plan['edges'][left['id']],ta,ra)
+                    b,_,tb,rb=self._layer(sequence_id,right,at,canvas,rows,depth,left_limit)
+                    b=self._transition_opacity(b,rb)
+                    b=self._edge_transitions(b,plan['edges'][right['id']],tb,rb)
+                    q=(at_tick-pair['start'])/(pair['end']-pair['start'])
+                    progress=math.nextafter(float(q),-math.inf) if left_limit and q>0 else float(q)
+                    layer,metadata=transition_rgba(a,b,max(0.,min(1.,progress)),kind=pair['type'],cut_fraction=pair['cut_fraction'],
+                        max_working_bytes=self.max_working_bytes,cancel=self.poll)
+                    metadata.update(id=pair['id'],author_progress=str(q),real_source_handles=pair['real_source_handles'],
+                        start_tick=str(pair['start']),end_tick=str(pair['end']),left_limit=left_limit)
+                    ra['paired_transition']=metadata;rb['paired_transition']=metadata
+                    mode='normal';opacity=1.;done.update((left['id'],right['id']))
                 else:
-                    source,frame_index=self.sources[clip['asset_id']].sample(source_time,right_edge=right)
-                    if source is None:
-                        rows.append({'clip':path,'source_time':str(source_time),'empty_native_coverage':True});continue
-                if len(rows)>=MAX_LAYERS_PER_FRAME:raise error('BUDGET','同帧片段数超过128')
-                effect_metadata=None
-                if self.effect_plans[path]:
-                    source,effect_metadata=self.effects.apply(source,self.effect_plans[path],tick)
-                layer,opacity,inverse,mask_metadata,crop_metadata=self._project(clip,source,canvas,tick,path)
-                blend=clip.get('blend') or {};opacity*=keyframe_value(clip,('blend.opacity','blend_opacity'),float(blend.get('opacity',1)),float(tick))
-                result,_=composite_rgba(result,layer,mode=blend.get('mode','normal'),opacity=opacity,max_working_bytes=self.max_working_bytes,cancel=self.poll)
-                rows.append({'clip':path,'source_time':str(source_time),'native_frame_index':frame_index,'right_edge':right,
-                    'author_animation_tick':str(tick),'inverse_affine':inverse,'opacity':opacity,'effects':effect_metadata,'mask':mask_metadata,'crop':crop_metadata})
+                    layer,mode,tick,row=self._layer(sequence_id,clip,at,canvas,rows,depth,left_limit)
+                    envelopes=plan['edges'][clip['id']]
+                    opacity=row.get('opacity',1.)
+                    if envelopes:
+                        layer=self._transition_opacity(layer,row)
+                        layer=self._edge_transitions(layer,envelopes,tick,row);opacity=1.
+                result,_=composite_rgba(result,layer,mode=mode,opacity=opacity,max_working_bytes=self.max_working_bytes,cancel=self.poll)
         return result
 
     def render_frame(self,index):

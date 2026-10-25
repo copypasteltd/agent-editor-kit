@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.20 / alpha.4-local.18 / r21 kit · 1 Skill / 17 modules / 69 files.**
+**CLI0.1.21 / alpha.4-local.19 / r22 kit · 1 Skill / 17 modules / 70 files.**
 
-Native GPU crop, affine camera motion and child-canvas bilinear/area projection are installed. Same-project/codec three-run medians 77.85→12.51s (6.22×); all120 frames, clocks and PCM match across six renders. CPU remains the default; explicit policy records GPU use/fallback.
+The explicit linear Float32 path adds 57 xfade patterns plus black/white dips, real source handles, linked audio and spatial group edges. The registered Skill completes a 6s/72-frame case with reverse, preview, cancel/resume, queues and independent PCM checks. CPU execution; default rendering and GPU projection keep their own contracts.
 
-[GPU workflow](OPENCL_PROJECTION.md) · [Motion](MOTION_PACKS.md) · [Install](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](opencl-projection-capabilities-cli-0.1.20.json).
+[Float32 workflow](FLOAT_TRANSITIONS.md) · [GPU projection](OPENCL_PROJECTION.md) · [Install](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](float-transition-capabilities-cli-0.1.21.json).
 
 <!-- /community-current -->
 

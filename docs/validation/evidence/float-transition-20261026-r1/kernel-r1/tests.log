@@ -1,0 +1,60 @@
+test_aliases_and_invalid_options_do_not_select_unrelated_effects (test_float_transitions.FloatTransitionKernelTests.test_aliases_and_invalid_options_do_not_select_unrelated_effects) ... ok
+test_all_pixels_validated_even_at_endpoint_or_unselected_wipe_corner (test_float_transitions.FloatTransitionKernelTests.test_all_pixels_validated_even_at_endpoint_or_unselected_wipe_corner) ... ok
+test_budget_preflight_and_cancellation_preserve_both_inputs (test_float_transitions.FloatTransitionKernelTests.test_budget_preflight_and_cancellation_preserve_both_inputs) ... ok
+test_crossfade_is_premultiplied_not_double_source_over (test_float_transitions.FloatTransitionKernelTests.test_crossfade_is_premultiplied_not_double_source_over) ... ok
+test_dip_uses_exact_odd_frame_cut_fraction (test_float_transitions.FloatTransitionKernelTests.test_dip_uses_exact_odd_frame_cut_fraction) ... FAIL
+test_extended_rgb_is_preserved_and_fast_slow_have_explicit_domain (test_float_transitions.FloatTransitionKernelTests.test_extended_rgb_is_preserved_and_fast_slow_have_explicit_domain) ... ok
+test_forward_blur_matches_direct_mean_including_shrinking_right_edge (test_float_transitions.FloatTransitionKernelTests.test_forward_blur_matches_direct_mean_including_shrinking_right_edge) ... ok
+test_full_catalogue_is_not_a_fade_alias_and_tiles_are_invariant (test_float_transitions.FloatTransitionKernelTests.test_full_catalogue_is_not_a_fade_alias_and_tiles_are_invariant) ... ok
+test_hidden_colour_cannot_bleed_at_endpoints_or_spatial_motion (test_float_transitions.FloatTransitionKernelTests.test_hidden_colour_cannot_bleed_at_endpoints_or_spatial_motion) ... ok
+test_slide_cover_reveal_move_actual_distinct_pixels (test_float_transitions.FloatTransitionKernelTests.test_slide_cover_reveal_move_actual_distinct_pixels) ... ok
+test_wipe_geometry_matches_explicit_integer_columns_and_rows (test_float_transitions.FloatTransitionKernelTests.test_wipe_geometry_matches_explicit_integer_columns_and_rows) ... ok
+test_actual_handle_samples_and_original_keyframe_clock (test_float_transitions.FloatTransitionTimelineTests.test_actual_handle_samples_and_original_keyframe_clock) ... ok
+test_chained_real_handle_windows_are_independent_and_do_not_ripple (test_float_transitions.FloatTransitionTimelineTests.test_chained_real_handle_windows_are_independent_and_do_not_ripple) ... ok
+test_conflicting_pair_duration_and_auto_cloning_are_rejected (test_float_transitions.FloatTransitionTimelineTests.test_conflicting_pair_duration_and_auto_cloning_are_rejected) ... ok
+test_group_wipe_fade_and_slide_use_child_canvas_and_author_clock (test_float_transitions.FloatTransitionTimelineTests.test_group_wipe_fade_and_slide_use_child_canvas_and_author_clock) ... ok
+test_nested_reverse_propagates_left_limit_through_transition_cut (test_float_transitions.FloatTransitionTimelineTests.test_nested_reverse_propagates_left_limit_through_transition_cut) ... ok
+test_odd_three_frame_dip_reaches_matte_at_original_cut (test_float_transitions.FloatTransitionTimelineTests.test_odd_three_frame_dip_reaches_matte_at_original_cut) ... ok
+test_overlap_composites_once_and_keeps_authored_project_unchanged (test_float_transitions.FloatTransitionTimelineTests.test_overlap_composites_once_and_keeps_authored_project_unchanged) ... ok
+test_reverse_real_handles_select_correct_native_right_edges (test_float_transitions.FloatTransitionTimelineTests.test_reverse_real_handles_select_correct_native_right_edges) ... ok
+test_short_native_coverage_rejects_instead_of_freezing_or_transparency (test_float_transitions.FloatTransitionTimelineTests.test_short_native_coverage_rejects_instead_of_freezing_or_transparency) ... ok
+
+======================================================================
+FAIL: test_dip_uses_exact_odd_frame_cut_fraction (test_float_transitions.FloatTransitionKernelTests.test_dip_uses_exact_odd_frame_cut_fraction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_transitions.py", line 90, in test_dip_uses_exact_odd_frame_cut_fraction
+    np.testing.assert_array_equal(value,rgba(matte))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 1121, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 983, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 32 / 128 (25%)
+First 5 mismatches are at indices:
+ [0, 0, 0]: 6.661338412448735e-17 (ACTUAL), 0.0 (DESIRED)
+ [0, 1, 0]: 6.661338412448735e-17 (ACTUAL), 0.0 (DESIRED)
+ [0, 2, 0]: 6.661338412448735e-17 (ACTUAL), 0.0 (DESIRED)
+ [0, 3, 0]: 6.661338412448735e-17 (ACTUAL), 0.0 (DESIRED)
+ [0, 4, 0]: 6.661338412448735e-17 (ACTUAL), 0.0 (DESIRED)
+Max absolute difference among violations: 6.6613384e-17
+Max relative difference among violations: inf
+ ACTUAL: array([[[6.661338e-17, 0.000000e+00, 0.000000e+00, 1.000000e+00],
+        [6.661338e-17, 0.000000e+00, 0.000000e+00, 1.000000e+00],
+        [6.661338e-17, 0.000000e+00, 0.000000e+00, 1.000000e+00],...
+ DESIRED: array([[[0., 0., 0., 1.],
+        [0., 0., 0., 1.],
+        [0., 0., 0., 1.],...
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.797s
+
+FAILED (failures=1)

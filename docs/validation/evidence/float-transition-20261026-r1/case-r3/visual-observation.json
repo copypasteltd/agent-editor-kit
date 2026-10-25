@@ -1,0 +1,21 @@
+{
+  "status": "observed",
+  "images": [
+    {
+      "path": "docs/assets/float-transition-20261026-r3/original.png",
+      "sha256": "e92a2891f25e9082c6ab4c364b28fbd1280ca95549cfc71dd99b6d517cf779a6",
+      "method": "assistant direct static image inspection via view_image",
+      "observation": "Red/salmon gradient field with a pale circle on the left, seven small code blocks at upper left, and a pale horizontal marker at lower left."
+    },
+    {
+      "path": "docs/assets/float-transition-20261026-r3/midpoint.png",
+      "sha256": "22b3c72764f4da3a1966954a88f1bd8cd5f22b193408d1017e1f25991b48c2d6",
+      "method": "assistant direct static image inspection via view_image",
+      "observation": "Dark blue surround; upper green panel with a pale circle clipped at upper right and a horizontal marker, and lower purple panel with a pale circle partly visible at lower left and code blocks along the left edge. Two scene panels are visible in the slide transition."
+    }
+  ],
+  "continuous_playback": false,
+  "human_listening": false,
+  "natural_quality": false,
+  "scope": "Static observations of two actual files only; render, clock and PCM assertions are established separately in verification.json."
+}

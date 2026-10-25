@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.20 / alpha.4-local.18 / r21 kit · 1 Skill / 17 modules / 69 files.**
+**CLI0.1.21 / alpha.4-local.19 / r22 kit · 1 Skill / 17 modules / 70 files.**
 
-原生 GPU 动态裁切、仿射运镜及子画布双线性/面积投影已交付。相同编码与工程三轮中位数 77.85→12.51秒（6.22×），六次全部120帧、时钟和PCM相同；默认CPU，显式策略决定使用/回退。
+显式线性 Float32 管线新增 57 种 xfade 图案与黑/白 dip，真实源句柄、关联音轨及组级空间进出场已接入。实际统一 Skill 完成 6秒/72帧案例，倒放、预览、取消恢复、队列与逐样本音频核对通过。CPU 执行；默认路径与 GPU 投影沿用各自契约。
 
-[GPU workflow](OPENCL_PROJECTION.md) · [Motion](MOTION_PACKS.md) · [Install](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](opencl-projection-capabilities-cli-0.1.20.json).
+[Float32 workflow](FLOAT_TRANSITIONS.md) · [GPU projection](OPENCL_PROJECTION.md) · [Install](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](float-transition-capabilities-cli-0.1.21.json).
 
 <!-- /community-current -->
 

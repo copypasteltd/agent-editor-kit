@@ -1,0 +1,21 @@
+test_float_transitions (unittest.loader._FailedTest.test_float_transitions) ... ERROR
+
+======================================================================
+ERROR: test_float_transitions (unittest.loader._FailedTest.test_float_transitions)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_float_transitions
+Traceback (most recent call last):
+  File "C:\Python313\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Python313\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_transitions.py", line 6, in <module>
+    from ai_ad_editor.errors import AppError
+ModuleNotFoundError: No module named 'ai_ad_editor'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

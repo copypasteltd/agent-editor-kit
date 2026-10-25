@@ -1,0 +1,4 @@
+{
+  "status": "failed",
+  "reason": "The first invocation used -E, which ignores PYTHONPATH, so test modules were not importable. The maintained runner inserts the package explicitly into sys.path; final receipts are separate. Product code was not changed for this launcher error."
+}

@@ -1,6 +1,6 @@
 # Installed-release runtime contract
 
-This namespace calls the locally installed `v0.1.0-alpha.4-local.18` / CLI 0.1.20
+This namespace calls the locally installed `v0.1.0-alpha.4-local.19` / CLI 0.1.21
 package using this Skill's `scripts/run.ps1`. Its 17 modules share the launcher.
 The editable Skill source stays on E:; Codex reads
 Windows directory junctions. `local/agent-ffmpeg/runtime.json` selects the native Python and installed path.
@@ -47,8 +47,9 @@ Project packages can retain absolute license-evidence paths: when moving hosts, 
 
 The default renderer uses FFmpeg. Explicit `settings.pixel_pipeline.engine = "float32-native-v1"` selects
 its advertised subset and requires complete source/working/delivery signal settings and budgets from the
-schema. `surface export` is a separate frame-bundle interchange command. Do not treat experimental later
-Float32 transitions or legacy development notes as release capabilities. Node/Chromium and model weights
+schema. `surface export` is a separate frame-bundle interchange command. Read
+[float-transitions.md](float-transitions.md) for the installed transition/group/source-handle path.
+Legacy development notes remain historical evidence. Node/Chromium and model weights
 are optional existing dependencies, not bundled base features.
 
 Return exact output paths, warnings, exit codes and error details. Verify actual decoded files and manifests;

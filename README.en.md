@@ -9,9 +9,23 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- opencl-projection-current -->
+<!-- float-transition-current -->
 
-**CLI0.1.20 / alpha.4-local.18 / r21 kit** · 1 Skill / 17 modules. Native GPU crop, affine camera motion and child-canvas bilinear/area projection are installed. Same-project/codec three-run medians 77.85→12.51s (6.22×); all120 frames, clocks and PCM match across six renders. CPU remains the default; explicit policy records GPU use/fallback.
+**CLI0.1.21 / alpha.4-local.19 / r22 kit · 1 Skill / 17 modules.**
+
+The explicit linear Float32 path adds 57 xfade patterns plus black/white dips, real source handles, linked audio and spatial group edges. The registered Skill completes a 6s/72-frame case with reverse, preview, cancel/resume, queues and independent PCM checks. CPU execution; default rendering and GPU projection keep their own contracts.
+
+[Workflow / 使用流程](docs/product/FLOAT_TRANSITIONS.md) · [C29](docs/product/CASES.md#c29-float-transitions) · [Local install](docs/releases/CLI_0.1.21_LOCAL.md) · [Evidence](docs/validation/Float32转场实测_2026-10-26.md)
+
+![Actual registered Skill output / silent GIF](docs/assets/float-transition-20261026-r3/transitions.gif)
+
+CPU Float32; source-handle types and overlap/edge patterns are distinct. Natural audiovisual, HDR, long-form and all original target conditions remain open.
+
+<!-- /float-transition-current -->
+
+<!-- opencl-projection-history -->
+
+**Historical / 历史 / 歷史：CLI0.1.20 / alpha.4-local.18 / r21 kit** · 1 Skill / 17 modules. Native GPU crop, affine camera motion and child-canvas bilinear/area projection are installed. Same-project/codec three-run medians 77.85→12.51s (6.22×); all120 frames, clocks and PCM match across six renders. CPU remains the default; explicit policy records GPU use/fallback.
 
 [Install / 固定安装](docs/releases/CLI_0.1.20_LOCAL.md) · [GPU workflow / 使用流程](docs/product/OPENCL_PROJECTION.md) · [C28](docs/product/CASES.md#c28-opencl-projection) · [Evidence](docs/validation/OpenCL原生投影实测_2026-10-26.md)
 
@@ -24,7 +38,7 @@ This page includes functional modules, services/dependencies, installation/usage
 
 RTX3060 device-tested only;other effects/subtitles remain CPU.1080p/4K single-frame pixel equality passes;general realtime4K,long-form and natural audiovisual acceptance remain open.
 
-<!-- /opencl-projection-current -->
+<!-- /opencl-projection-history -->
 
 <!-- projection-scanline-history -->
 
@@ -124,13 +138,13 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r21 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r21.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r22 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r22.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
 <!-- community-materials-gpu -->
 
-**Local installed extension: CLI 0.1.20, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
+**Local installed extension: CLI 0.1.21, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
 
 [Complete workflow and limits](docs/product/COMMUNITY_MATERIALS.en.md) · [Resource catalog](docs/product/COMMUNITY_MATERIAL_CATALOG.md) · [103 named voices and actual audition scope](docs/product/COMMUNITY_VOICES.md) · [CPU evidence](docs/validation/evidence/community-materials-20261025-r1/cpu/verification.json) · [GPU evidence](docs/validation/evidence/community-materials-20261025-r1/gpu/verification.json).
 
@@ -490,6 +504,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F52 | Editable ad storyboards and revision | Reviewed brief/actual assets → separate picture/caption/voice/source/music tracks for multiple canvases/durations; selected-shot/variant revisions. | `ad storyboard/build/revise` | Whole-frame allocation, actual asset locks, real font layout and complete voice-window checks; caller supplies claims and semantic choices. |
 | F53 | Semantic runtime relocation | Old adapter/index/profiles → new installation-bound identities, copying vectors/previews/datasets and retaining fitted observations. | `project upgrade-semantic` | All 19 implementation files and external dependencies must be byte-identical; zero new model forwards; original records retained; changed bytes require rebuilding. |
 | F54 | Portable parameterized motion | Versioned local JSON / captured authored curves → editable keys, resolved parameters/digests/snapshot and cross-project reuse, with six actual previews. | `motion pack list/inspect/create/capture/apply` | 65-point paths, transform properties; conflicts reject unless whole-property replacement is explicit; tracking bindings reject; CPU performance/natural quality remain open. |
+| F55 | Linear Float32 transitions and group edges | Explicit Float32 projects → 57 xfade patterns+2 dips,premultiplied alpha,real handles/original clocks,linked audio,group wipe/slide,actual preview and encoding. | `timeline transition; preview; render; queue` | CPU;12 real-handle declaration types,other patterns use overlap/edges;normal paired blending;platform-dependent wind,HDR/natural quality open. |
 
 ## Supported service modules and dependencies
 
@@ -616,7 +631,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.18/final-r2/installed/`, CLI 0.1.20. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.19/final-r1/installed/`, CLI 0.1.21. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -955,6 +970,14 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R144 | 2026-10-26 Actual unified Skill | The single registered launcher uses final installed GPU projection;120 frames/PCM match;69 files/17 internal modules,no source fallback | [Evidence](docs/validation/evidence/opencl-projection-20261026-r1/skill-r2/verification.json) |
 | R145 | 2026-10-26 Case/media/workflow | Self-authored original,actual GPU MP4/GIF,editable package,SHA/full decode;no continuous-playback/listening or natural-quality acceptance | [Evidence](docs/validation/evidence/opencl-projection-20261026-r1/preview-r2/verification.json) |
 | R146 | 2026-10-26 Trilingual docs/isolated kit | README,function/service detail,Skill,C28 and isolated r21 kit synchronized;138 historical evidence rows/38 original closures retained | [Evidence](docs/validation/evidence/opencl-projection-20261026-r1/final-delivery-r1/verification.json) |
+| R147 | 2026-10-26 Float32 transitions | CLI0.1.21/local.19-final-r1;211 product files byte-match the installed ZIP;70 Skill files,one entry/17 modules | [Evidence](docs/validation/evidence/float-transition-20261026-r1/installation-final-r1/verification.json) |
+| R148 | 2026-10-26 Float32 transitions | 25 tests,zero skips:alpha,all59 patterns/tiles,real handles,odd cuts,VFR,reverse/trim/freeze/nonlinear parents and cancellation | [Evidence](docs/validation/evidence/float-transition-20261026-r1/kernel-installed-final-r1/verification.json) |
+| R149 | 2026-10-26 Float32 transitions | All57 native FFmpeg midpoint comparisons;53 non-wind patterns differ by at most one16-bit code;four wind hashes reported without bit-parity claim | [Evidence](docs/validation/evidence/float-transition-20261026-r1/xfade-r1/verification.json) |
+| R150 | 2026-10-26 Float32 transitions | Installed3840x2160 full-frame fade/row-blur/wipe checks;512MiB allocation estimate,error<=5.96e-8;not realtime/peak-RSS acceptance | [Evidence](docs/validation/evidence/float-transition-20261026-r1/4k-r1/verification.json) |
+| R151 | 2026-10-26 Float32 transitions | Separate passing groups:98 float,64 audio/handles/nesting,44 installed preview/render,and191CLI/default-preview/queue/schema;zero skips,no combined count | [Evidence](docs/validation/evidence/float-transition-20261026-r1/render-installed-r1/verification.json) |
+| R152 | 2026-10-26 Float32 transitions | Actual registered Skill:6s/72frames,five real-handle/audio pairs,reversed child and spatial group edges;288000 stereo samples,error=3.72529029846e-09 | [Evidence](docs/validation/evidence/float-transition-20261026-r1/case-r3/verification.json) |
+| R153 | 2026-10-26 Float32 transitions | Cancel after encoder startup,resume same operation,explicit MKV/PCM queue:all frames/clocks/PCM match;quality passes,authoring/rights unchanged | [Evidence](docs/validation/evidence/float-transition-20261026-r1/case-r3/verification.json) |
+| R154 | 2026-10-26 Float32 transitions | Three languages:55 functions/20 services/17 modules/75 declarations;C29 MP4/GIF/editable package,r22 isolated kit;146 history rows and38 closures retained | [Evidence](docs/validation/evidence/float-transition-20261026-r1/final-delivery-r2/verification.json) |
 
 ## Current limits and development direction
 
@@ -978,3 +1001,5 @@ Use real client media and minimal reproducible projects to identify gaps, implem
 - [Software MIT](LICENSE) · [Base third-party notices](docs/releases/v0.1.0-alpha.1/THIRD_PARTY.md) · [500 LUT notices](docs/releases/v0.1.0-alpha.3/THIRD_PARTY.md) · [Supplied-image rights](docs/assets/looks-n002-20261024-r1/SOURCE_AND_LICENSES.md).
 
 Own code is MIT; third-party Skills, models, fonts, LUTs and media retain their own terms. Inclusion does not make the supplied image MIT/CC0. Report issues with version, minimal project, actual commands/errors and manifest. Functional updates maintain all three READMEs on main and use normal pushes after verification.
+
+Float32 transition derivative: [LGPL-2.1-or-later notice](product/src/ai_ad_editor/float_transitions_NOTICE.txt) · [complete license](product/src/ai_ad_editor/COPYING.LGPLv2.1.txt). Other files retain their stated licenses.

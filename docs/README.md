@@ -1,5 +1,8 @@
 # agent editor kit 文档 / Documentation
 
+
+Current local / 当前本地 / 目前本地：**CLI0.1.21 / local.19 / r22 kit** · [Float32 transitions](product/FLOAT_TRANSITIONS.md) · [Local bundle](releases/CLI_0.1.21_LOCAL.md) · [Actual case](product/CASES.md#c29-float-transitions).
+
 [简体中文](../README.md) · [繁體中文](../README.zh-TW.md) · [English](../README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit)
 
 当前本机交付 **CLI 0.1.15 / alpha.4-local.13 / r14 kit**，固定安装包、1 Skill/17 模块。

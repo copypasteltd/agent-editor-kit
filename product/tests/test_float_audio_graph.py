@@ -82,11 +82,57 @@ class FloatAudioGraphTests(unittest.TestCase):
         self.p['sequences'][0]['duration_tick']=112501;self.p['sequences'][0]['tracks'][1]['muted']=True
         result,plan=self.render();self.assertEqual(plan['expected_samples_48000'],60001);self.assertEqual(result,bytes(60001*8))
 
-    def test_cancel_and_unconnected_source_transitions_reject_without_real_video_decode(self):
+    def source_transition_fixture(self,reverse=False):
+        seq=self.p['sequences'][0]
+        for asset in self.p['assets']:asset['probe']['duration_seconds']=1.
+        for track,original in zip(seq['tracks'][:2],(self.v,self.c)):
+            first,second=copy.deepcopy(original),copy.deepcopy(original)
+            first.update(id=original['id']+'_a',duration_tick=45000,source_in_tick=18000,source_out_tick=63000,reverse=reverse)
+            second.update(id=original['id']+'_b',timeline_start_tick=45000,duration_tick=45000,source_in_tick=18000,source_out_tick=63000,reverse=reverse)
+            track['clips']=[first,second]
+        seq['source_transitions']=[dict(id='real_cut',type='dissolve',duration_tick=27000,
+            from_clip_id='visual_a',to_clip_id='visual_b',audio_pairs=[dict(from_clip_id='sound_a',to_clip_id='sound_b')])]
+        n=np.arange(48000);q=np.clip((n-19200)/14400,0.,1.)[:,None]
+        a=np.zeros_like(self.samples);b=np.zeros_like(self.samples)
+        ia=n[:33600]+9600 if not reverse else 33599-n[:33600]
+        ib=n[19200:]-14400 if not reverse else 57599-n[19200:]
+        a[:33600]=self.samples[ia];b[19200:]=self.samples[ib]
+        return (a.astype(np.float64)*(1-q)+b.astype(np.float64)*q).astype('<f4')
+
+    def test_real_source_transition_audio_matches_every_sample_without_visual_decode(self):
+        for reverse in (False,True):
+            expected=self.source_transition_fixture(reverse)
+            result,plan=self.render();actual=np.frombuffer(result,'<f4').reshape(-1,2)
+            np.testing.assert_allclose(actual,expected,rtol=0,atol=3e-7)
+            self.assertEqual(len(plan['source_transition_plans']),1)
+            self.assertNotIn('deliberately-absent',str(plan['inputs']))
+            self.assertEqual(len(actual),48000)
+
+    def test_nested_real_source_transition_audio_retains_original_cut_after_trim_and_reverse(self):
+        self.source_transition_fixture()
+        root=self.p['sequences'][0];child=copy.deepcopy(root);child['id']='child';root.pop('source_transitions')
+        self.p['sequences'].append(child)
+        root['duration_tick']=54000
+        root['tracks'][0]['clips']=[dict(id='nested',sequence_id='child',timeline_start_tick=0,duration_tick=54000,
+            source_in_tick=18000,source_out_tick=72000,reverse=True)]
+        root['tracks'][1]['clips']=[]
+        result,_=self.render();actual=np.frombuffer(result,'<f4').reshape(-1,2)
+        # Existing engine contract: each original PCM interval is reversed;
+        # gain is evaluated at the continuous authored child presentation
+        # boundary (.8 - n/SR), not at the preceding PCM sample's timestamp.
+        # Simply reversing a previously mixed buffer is a different oracle.
+        n=np.arange(28800);q=np.clip((.8-n/48000-.4)/.3,0.,1.)[:,None]
+        a=np.zeros((28800,2),np.float64);b=np.zeros_like(a)
+        a[4800:]=self.samples[47999-n[4800:]]
+        b[:19200]=self.samples[23999-n[:19200]]
+        expected=(a*(1-q)+b*q).astype('<f4')
+        np.testing.assert_allclose(actual,expected,rtol=0,atol=3e-7)
+
+    def test_cancel_and_invalid_source_transitions_reject_without_real_video_decode(self):
         marker=self.root/'cancel';marker.touch()
         with self.assertRaises(AppError) as caught:prepare(self.root,self.p,'seq_main',cancel_file=marker)
         self.assertEqual(caught.exception.code,'CANCELLED');self.p['sequences'][0]['source_transitions']=[{'id':'not-wired'}]
         with self.assertRaises(AppError) as caught:prepare(self.root,self.p,'seq_main')
-        self.assertEqual(caught.exception.code,'FLOAT_AUDIO_SOURCE_TRANSITION_UNCONNECTED')
+        self.assertEqual(caught.exception.code,'SOURCE_TRANSITION_INVALID')
 
 if __name__=='__main__':unittest.main()

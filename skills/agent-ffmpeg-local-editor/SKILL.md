@@ -7,7 +7,7 @@ description: "Edit and deliver local videos with agent editor kit: multitrack ed
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.18` / CLI `0.1.20`.
+The current local runtime is `v0.1.0-alpha.4-local.19` / CLI `0.1.21`.
 The published alpha.3 downloads retain CLI 0.1.2 and their original scope.
 
 ## Runtime and common workflow
@@ -73,6 +73,11 @@ media. Add other modules when the request needs them. For example:
   hardware encoding. For GPU projection, read
   [projection-gpu.md](references/projection-gpu.md), select an explicit
   `off|prefer|require` policy and inspect actual device/probe/fallback evidence.
+- Float32 transitions, source handles or group entrance/exit: read
+  [float-transitions.md](references/float-transitions.md). Use actual overlaps
+  or real registered source windows, retain original author clocks and paired
+  audio, preview the selected cut, then inspect the encoded result. The explicit
+  linear Float32 path runs on CPU and has its own signal/budget requirements.
 - Local AI task: local-models plus the relevant media module; require existing
   registered dependencies and check actual inference artifacts.
 - Translate and dub reviewed subtitles: read [subtitle-dubbing.md](references/subtitle-dubbing.md).

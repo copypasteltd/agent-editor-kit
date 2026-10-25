@@ -39,16 +39,16 @@ def main():
         original = text = path.read_text('utf-8-sig')
         canonical = (ROOT/readme).read_text('utf-8-sig')
         current_block = ('<!-- community-current -->\n\n'
-            '**CLI 0.1.20 / alpha.4-local.18 / r21 kit · 1 Skill / 17 modules.**\n\n'
-            'Native OpenCL crop/affine/child-canvas bilinear/area projection, portable motion/capture, editable ad variants, semantic runtime relocation, '
+            '**CLI 0.1.21 / alpha.4-local.19 / r22 kit · 1 Skill / 17 modules.**\n\n'
+            'Linear Float32 transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, '
             'joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.\n\n'
-            '[GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · '
+            '[Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · '
             '[Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · '
             '[75 actual declarations]('+response_path.name+'). Full target conditions remain open.\n\n'
             '<!-- /community-current -->')
         text = re.sub(r'<!-- community-current -->.*?<!-- /community-current -->',
                       lambda _: current_block, text, count=1, flags=re.S)
-        for prefix, count in [('F', 54), ('S', 20)]:
+        for prefix, count in [('F', 55), ('S', 20)]:
             old_rows = list(re.finditer(r'^\| '+prefix+r'\d{2}\s*\|.*$', text, re.M))
             rows = re.findall(r'^\| '+prefix+r'\d{2}\s*\|.*$', canonical, re.M)
             assert len(rows) == count and old_rows
@@ -65,10 +65,10 @@ def main():
         # Captured versioned evidence replaces only current fields; explanatory
         # workflow sections and historical failure references stay intact.
         path.write_text(text, encoding='utf-8', newline='\n')
-        for prefix, count in [('F',54),('S',20)]:
+        for prefix, count in [('F',55),('S',20)]:
             assert len(re.findall(r'^\| '+prefix+r'\d{2}\s*\|',text,re.M))==count
         assert len(re.findall(r'^### `[^`]+`\s*$',text,re.M))==len(entries)
-        records.append(dict(path=path.relative_to(ROOT).as_posix(),functional_rows=54,service_rows=20,
+        records.append(dict(path=path.relative_to(ROOT).as_posix(),functional_rows=55,service_rows=20,
                             actual_capability_fields=len(entries),changed=text!=original))
     print(json.dumps(records,ensure_ascii=False))
 

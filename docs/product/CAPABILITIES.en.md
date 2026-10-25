@@ -2,15 +2,15 @@
 
 <!-- community-current -->
 
-**CLI 0.1.20 / alpha.4-local.18 / r21 kit · 1 Skill / 17 modules.**
+**CLI 0.1.21 / alpha.4-local.19 / r22 kit · 1 Skill / 17 modules.**
 
-Native OpenCL crop/affine/child-canvas bilinear/area projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+Linear Float32 transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
 
-[GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](opencl-projection-capabilities-cli-0.1.20.json). Full target conditions remain open.
+[Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](float-transition-capabilities-cli-0.1.21.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.en.md) · [Machine response](opencl-projection-capabilities-cli-0.1.20.json) · [Module data](module-catalog.json)
+[README](../../README.en.md) · [Machine response](float-transition-capabilities-cli-0.1.21.json) · [Module data](module-catalog.json)
 
 | ID | Module | Behavior and input → output | Entry | Dependency/limit |
 |---|---|---|---|---|
@@ -68,6 +68,7 @@ Native OpenCL crop/affine/child-canvas bilinear/area projection, portable motion
 | F52 | Editable ad storyboards and revision | Reviewed brief/actual assets → separate picture/caption/voice/source/music tracks for multiple canvases/durations; selected-shot/variant revisions. | `ad storyboard/build/revise` | Whole-frame allocation, actual asset locks, real font layout and complete voice-window checks; caller supplies claims and semantic choices. |
 | F53 | Semantic runtime relocation | Old adapter/index/profiles → new installation-bound identities, copying vectors/previews/datasets and retaining fitted observations. | `project upgrade-semantic` | All 19 implementation files and external dependencies must be byte-identical; zero new model forwards; original records retained; changed bytes require rebuilding. |
 | F54 | Portable parameterized motion | Versioned local JSON / captured authored curves → editable keys, resolved parameters/digests/snapshot and cross-project reuse, with six actual previews. | `motion pack list/inspect/create/capture/apply` | 65-point paths, transform properties; conflicts reject unless whole-property replacement is explicit; tracking bindings reject; CPU performance/natural quality remain open. |
+| F55 | Linear Float32 transitions and group edges | Explicit Float32 projects → 57 xfade patterns+2 dips,premultiplied alpha,real handles/original clocks,linked audio,group wipe/slide,actual preview and encoding. | `timeline transition; preview; render; queue` | CPU;12 real-handle declaration types,other patterns use overlap/edges;normal paired blending;platform-dependent wind,HDR/natural quality open. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -857,7 +858,10 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "explicit_zscale_output_matrix_range",
     "independent_alpha8_delivery",
     "common_encoders_quality_fingerprints_operations",
-    "caught_publish_IO_pair_rollback"
+    "caught_publish_IO_pair_rollback",
+    "linear_premultiplied_transitions",
+    "real_source_handles_and_linked_audio",
+    "authored_group_spatial_edges"
   ],
   "limits": [
     "explicit_opt_in_not_default_migration",
@@ -2395,7 +2399,7 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "sequence_spatial_order_is_child_composite_crop_transform_opacity_effects_mask_fade",
     "group_crop_and_affine_cpu_default_explicit_probed_opencl_available",
     "isolated_compositing_is_8bit_encoded_rgb_not_linear_light_or_hdr_acceptance",
-    "group_slide_wipe_transitions_are_not_accepted",
+    "default_8bit_group_slide_wipe_unaccepted_explicit_float32_group_spatial_edges_available",
     "nested_audio_tempo_windows_are_limited_to_16384_and_at_least_one_48khz_sample",
     "audio_speed_curve_uses_piecewise_atempo_and_can_have_segment_boundaries"
   ]
@@ -3217,6 +3221,99 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "auto_handle_contiguous_clips"
   ],
   "xfade_catalog": "local_ffmpeg_xfade",
+  "float32_native": {
+    "status": "implemented_with_limits",
+    "protocol": "linear-premultiplied-float32-transitions-v1",
+    "selection": "settings.pixel_pipeline.engine=float32-native-v1",
+    "patterns": [
+      "circleclose",
+      "circlecrop",
+      "circleopen",
+      "coverdown",
+      "coverleft",
+      "coverright",
+      "coverup",
+      "diagbl",
+      "diagbr",
+      "diagtl",
+      "diagtr",
+      "dip_black",
+      "dip_white",
+      "distance",
+      "fade",
+      "fadeblack",
+      "fadefast",
+      "fadegrays",
+      "fadeslow",
+      "fadewhite",
+      "hblur",
+      "hlslice",
+      "hlwind",
+      "horzclose",
+      "horzopen",
+      "hrslice",
+      "hrwind",
+      "pixelize",
+      "radial",
+      "rectcrop",
+      "revealdown",
+      "revealleft",
+      "revealright",
+      "revealup",
+      "slidedown",
+      "slideleft",
+      "slideright",
+      "slideup",
+      "smoothdown",
+      "smoothleft",
+      "smoothright",
+      "smoothup",
+      "squeezeh",
+      "squeezev",
+      "vdslice",
+      "vdwind",
+      "vertclose",
+      "vertopen",
+      "vuslice",
+      "vuwind",
+      "wipebl",
+      "wipebr",
+      "wipedown",
+      "wipeleft",
+      "wiperight",
+      "wipetl",
+      "wipetr",
+      "wipeup",
+      "zoomin"
+    ],
+    "features": [
+      "linear_light_premultiplied_RGBA",
+      "xfade_spatial_catalog",
+      "original_author_clocks",
+      "group_wipe_slide_and_other_spatial_edges",
+      "exact_overlap_pairs",
+      "real_source_handles",
+      "linked_audio_envelopes",
+      "odd_frame_cut_fraction",
+      "nested_reverse_left_limits",
+      "bounded_tiles_and_row_blur",
+      "cancellation",
+      "no_authored_project_rewrite"
+    ],
+    "limits": [
+      "CPU_only",
+      "explicit_float_pipeline_not_default_migration",
+      "no_automatic_tail_clone",
+      "pair_modes_require_normal",
+      "nonintersecting_pair_windows",
+      "fadefast_fadeslow_require_visible_RGB_0_to_1",
+      "unmatched_edges_target_transparent",
+      "linear_alpha_math_not_integer_xfade_bit_parity",
+      "quota_not_total_RSS",
+      "natural_longform_HDR_and_full_CapCut_parity_unaccepted"
+    ],
+    "license": "LGPL-2.1-or-later;see float_transitions_NOTICE.txt"
+  },
   "source_handle_editor": {
     "engine": "agent-source-transition-v1",
     "command": "timeline transition",

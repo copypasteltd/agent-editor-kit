@@ -208,7 +208,7 @@ class FloatTimelineTests(unittest.TestCase):
 
     def test_source_SHA_signal_and_unsupported_operations_cannot_silently_fall_back(self):
         p,s=image_project();base=copy.deepcopy(p)
-        for field,value in (('effects',[{'type':'hqdn3d'}]),('generator',{'type':'color'}),('transition_in',{'type':'fade'}),('mask',{'type':'gradient'}),('mask',{'type':'rounded_rectangle'}),('keyframes',[{'property':'unknown','keyframes':[]}])):
+        for field,value in (('effects',[{'type':'hqdn3d'}]),('generator',{'type':'color'}),('mask',{'type':'gradient'}),('mask',{'type':'rounded_rectangle'}),('keyframes',[{'property':'unknown','keyframes':[]}])):
             p=copy.deepcopy(base);p['sequences'][0]['tracks'][0]['clips'][0][field]=value;self.code('FLOAT_TIMELINE_UNSUPPORTED',lambda:self.host(p,s))
         p=copy.deepcopy(base);p['assets'][0]['sha256']='sha256:'+'b'*64;self.code('FLOAT_TIMELINE_SOURCE',lambda:self.host(p,s))
         p=copy.deepcopy(base);s['a'].signal=ColorSignal('bt709','srgb');self.code('FLOAT_TIMELINE_SOURCE',lambda:self.host(p,s))

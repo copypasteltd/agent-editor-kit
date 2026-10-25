@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "width": 3840,
+  "height": 2160,
+  "checked_pixels_per_pattern": 8294400,
+  "max_working_bytes": 536870912,
+  "peak_RSS_measured": false,
+  "realtime_claimed": false,
+  "patterns": [
+    {
+      "type": "fade",
+      "seconds": 1.7617161000089254,
+      "max_absolute_error": 5.960464477539063e-08,
+      "surface_sha256": "2380a8260f604f31cf953e43a46d0cf6f592091c7453d4f490c0076a42ae68a6",
+      "metadata": {
+        "protocol": "linear-premultiplied-float32-transitions-v1",
+        "type": "fade",
+        "progress": 0.375,
+        "cut_fraction": 0.5,
+        "alpha": "linear-light premultiplied mix;public straight RGBA;zero-alpha RGB cleared",
+        "arithmetic": "Float64 tiles;Float32 public boundary;wind hash explicitly Float32",
+        "RGB_domain": "finite extended RGB",
+        "endpoints": "exact outgoing/incoming;hidden RGB canonicalized",
+        "tile_pixels": 16384,
+        "estimated_working_bytes": 432734208,
+        "estimated_bytes_are_peak_RSS": false,
+        "GPU": false,
+        "integer_xfade_bit_parity": false,
+        "HDR_delivery_accepted": false
+      }
+    },
+    {
+      "type": "hblur",
+      "seconds": 3.434257400003844,
+      "max_absolute_error": 5.960464477539063e-08,
+      "surface_sha256": "4bc26f8a07cc3f223097f4fc9b1893fdb31fb08c7f72338e81914518d9e98217",
+      "metadata": {
+        "protocol": "linear-premultiplied-float32-transitions-v1",
+        "type": "hblur",
+        "progress": 0.375,
+        "cut_fraction": 0.5,
+        "alpha": "linear-light premultiplied mix;public straight RGBA;zero-alpha RGB cleared",
+        "arithmetic": "Float64 tiles;Float32 public boundary;wind hash explicitly Float32",
+        "RGB_domain": "finite extended RGB",
+        "endpoints": "exact outgoing/incoming;hidden RGB canonicalized",
+        "tile_pixels": 16384,
+        "estimated_working_bytes": 433652224,
+        "estimated_bytes_are_peak_RSS": false,
+        "GPU": false,
+        "integer_xfade_bit_parity": false,
+        "HDR_delivery_accepted": false
+      }
+    },
+    {
+      "type": "wipeleft",
+      "seconds": 1.5367024000006495,
+      "max_absolute_error": 0.0,
+      "surface_sha256": "8196bb60c1c1d1906e0fc3d5fd971904835afaed60d1f4c14dc70cbbe44d5bf1",
+      "metadata": {
+        "protocol": "linear-premultiplied-float32-transitions-v1",
+        "type": "wipeleft",
+        "progress": 0.375,
+        "cut_fraction": 0.5,
+        "alpha": "linear-light premultiplied mix;public straight RGBA;zero-alpha RGB cleared",
+        "arithmetic": "Float64 tiles;Float32 public boundary;wind hash explicitly Float32",
+        "RGB_domain": "finite extended RGB",
+        "endpoints": "exact outgoing/incoming;hidden RGB canonicalized",
+        "tile_pixels": 16384,
+        "estimated_working_bytes": 432734208,
+        "estimated_bytes_are_peak_RSS": false,
+        "GPU": false,
+        "integer_xfade_bit_parity": false,
+        "HDR_delivery_accepted": false
+      }
+    }
+  ]
+}

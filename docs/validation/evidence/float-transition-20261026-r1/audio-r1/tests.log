@@ -1,0 +1,104 @@
+test_audio_volume_automation_is_retained_after_visual_keyframes_are_pruned (test_float_audio_graph.FloatAudioGraphTests.test_audio_volume_automation_is_retained_after_visual_keyframes_are_pruned) ... ok
+test_cancel_and_invalid_source_transitions_reject_without_real_video_decode (test_float_audio_graph.FloatAudioGraphTests.test_cancel_and_invalid_source_transitions_reject_without_real_video_decode) ... ok
+test_empty_and_muted_audio_keep_exact_authored_sample_count (test_float_audio_graph.FloatAudioGraphTests.test_empty_and_muted_audio_keep_exact_authored_sample_count) ... ok
+test_freeze_inserts_exact_authored_silence_and_preserves_source_clock (test_float_audio_graph.FloatAudioGraphTests.test_freeze_inserts_exact_authored_silence_and_preserves_source_clock) ... ok
+test_half_open_source_trim_and_timeline_silence_match_every_sample (test_float_audio_graph.FloatAudioGraphTests.test_half_open_source_trim_and_timeline_silence_match_every_sample) ... ok
+test_native_stereo_source_is_exact_and_missing_visual_is_never_opened (test_float_audio_graph.FloatAudioGraphTests.test_native_stereo_source_is_exact_and_missing_visual_is_never_opened) ... ok
+test_nested_real_source_transition_audio_retains_original_cut_after_trim_and_reverse (test_float_audio_graph.FloatAudioGraphTests.test_nested_real_source_transition_audio_retains_original_cut_after_trim_and_reverse) ... FAIL
+test_nested_video_container_retains_complete_child_audio_and_window (test_float_audio_graph.FloatAudioGraphTests.test_nested_video_container_retains_complete_child_audio_and_window) ... ok
+test_nested_video_freeze_and_parent_gain_keep_original_audio_clock (test_float_audio_graph.FloatAudioGraphTests.test_nested_video_freeze_and_parent_gain_keep_original_audio_clock) ... ok
+test_real_source_transition_audio_matches_every_sample_without_visual_decode (test_float_audio_graph.FloatAudioGraphTests.test_real_source_transition_audio_matches_every_sample_without_visual_decode) ... ok
+test_reverse_preserves_channel_pairs_and_every_original_sample (test_float_audio_graph.FloatAudioGraphTests.test_reverse_preserves_channel_pairs_and_every_original_sample) ... ok
+test_unprefixed_volume_and_pan_aliases_preserve_independent_stereo_channels (test_float_audio_graph.FloatAudioGraphTests.test_unprefixed_volume_and_pan_aliases_preserve_independent_stereo_channels) ... ok
+test_authored_audio_volume_and_fades_keep_phase_when_head_extended (test_source_transitions.SourceTransitionCliTests.test_authored_audio_volume_and_fades_keep_phase_when_head_extended) ... ok
+test_black_white_dip_is_at_authored_cut_even_with_odd_frame_window (test_source_transitions.SourceTransitionCliTests.test_black_white_dip_is_at_authored_cut_even_with_odd_frame_window) ... ok
+test_compose_source_transition_batch_atomicity (test_source_transitions.SourceTransitionCliTests.test_compose_source_transition_batch_atomicity) ... ok
+test_dry_run_snapshot_idempotency_and_stale_hash (test_source_transitions.SourceTransitionCliTests.test_dry_run_snapshot_idempotency_and_stale_hash) ... ok
+test_failure_after_save_rolls_back_all_metadata (test_source_transitions.SourceTransitionCliTests.test_failure_after_save_rolls_back_all_metadata) ... ok
+test_native_roundtrips_preserve_and_external_formats_report_loss (test_source_transitions.SourceTransitionCliTests.test_native_roundtrips_preserve_and_external_formats_report_loss) ... ok
+test_real_source_crossfade_chain_pixels_and_independent_pcm (test_source_transitions.SourceTransitionCliTests.test_real_source_crossfade_chain_pixels_and_independent_pcm) ... ok
+test_reverse_source_frames_are_taken_from_real_opposite_handles (test_source_transitions.SourceTransitionCliTests.test_reverse_source_frames_are_taken_from_real_opposite_handles) ... ok
+test_schema_fallback_and_stale_cut_both_reject (test_source_transitions.SourceTransitionCliTests.test_schema_fallback_and_stale_cut_both_reject) ... ok
+test_video_animation_effect_and_mask_preserve_authored_phase (test_source_transitions.SourceTransitionCliTests.test_video_animation_effect_and_mask_preserve_authored_phase) ... ok
+test_any_participating_audio_lock_rejects_all_three_actions (test_source_transitions.SourceTransitionPlannerTests.test_any_participating_audio_lock_rejects_all_three_actions) ... ok
+test_constant_speed_scales_handles_without_floats (test_source_transitions.SourceTransitionPlannerTests.test_constant_speed_scales_handles_without_floats) ... ok
+test_duplicate_window_on_same_cut_rejects (test_source_transitions.SourceTransitionPlannerTests.test_duplicate_window_on_same_cut_rejects) ... ok
+test_fractional_frame_rate_odd_window_bias_is_exact (test_source_transitions.SourceTransitionPlannerTests.test_fractional_frame_rate_odd_window_bias_is_exact) ... ok
+test_global_duplicate_id_and_missing_reference_reject (test_source_transitions.SourceTransitionPlannerTests.test_global_duplicate_id_and_missing_reference_reject) ... ok
+test_invalid_input_types_and_unknown_fields_reject (test_source_transitions.SourceTransitionPlannerTests.test_invalid_input_types_and_unknown_fields_reject) ... ok
+test_legacy_edge_transition_is_not_overwritten (test_source_transitions.SourceTransitionPlannerTests.test_legacy_edge_transition_is_not_overwritten) ... ok
+test_linked_audio_edge_mismatch_requires_explicit_none (test_source_transitions.SourceTransitionPlannerTests.test_linked_audio_edge_mismatch_requires_explicit_none) ... ok
+test_mismatched_constant_source_clock_rejects (test_source_transitions.SourceTransitionPlannerTests.test_mismatched_constant_source_clock_rejects) ... ok
+test_nested_use_of_transition_sequence_keeps_original_declaration (test_source_transitions.SourceTransitionPlannerTests.test_nested_use_of_transition_sequence_keeps_original_declaration) ... ok
+test_pure_planning_uses_no_processes (test_source_transitions.SourceTransitionPlannerTests.test_pure_planning_uses_no_processes) ... ok
+test_render_copy_keeps_authored_clocks_and_model_immutable (test_source_transitions.SourceTransitionPlannerTests.test_render_copy_keeps_authored_clocks_and_model_immutable) ... ok
+test_resize_and_remove_restore_original_authored_model (test_source_transitions.SourceTransitionPlannerTests.test_resize_and_remove_restore_original_authored_model) ... ok
+test_reverse_extends_opposite_source_edges (test_source_transitions.SourceTransitionPlannerTests.test_reverse_extends_opposite_source_edges) ... ok
+test_second_cut_chain_preserves_both_middle_handles (test_source_transitions.SourceTransitionPlannerTests.test_second_cut_chain_preserves_both_middle_handles) ... ok
+test_short_source_head_rejects_without_duration_clamp (test_source_transitions.SourceTransitionPlannerTests.test_short_source_head_rejects_without_duration_clamp) ... ok
+test_short_source_tail_rejects_without_padding (test_source_transitions.SourceTransitionPlannerTests.test_short_source_tail_rejects_without_padding) ... ok
+test_source_subtick_extension_rejects (test_source_transitions.SourceTransitionPlannerTests.test_source_subtick_extension_rejects) ... ok
+test_source_windows_keep_cut_length_clips_and_linked_audio (test_source_transitions.SourceTransitionPlannerTests.test_source_windows_keep_cut_length_clips_and_linked_audio) ... ok
+test_unaccepted_clip_semantics_reject_explicitly (test_source_transitions.SourceTransitionPlannerTests.test_unaccepted_clip_semantics_reject_explicitly) ... ok
+test_unaligned_duration_and_author_boundary_reject (test_source_transitions.SourceTransitionPlannerTests.test_unaligned_duration_and_author_boundary_reject) ... ok
+test_frozen_ancestor_keeps_child_transition_authorship (test_nested_transitions.InlineSequencePlanningTests.test_frozen_ancestor_keeps_child_transition_authorship) ... ok
+test_namespace_preserves_quoted_text_and_escaped_brackets (test_nested_transitions.InlineSequencePlanningTests.test_namespace_preserves_quoted_text_and_escaped_brackets) ... ok
+test_reachable_transition_branches_and_cycles (test_nested_transitions.InlineSequencePlanningTests.test_reachable_transition_branches_and_cycles) ... ok
+test_surface_and_child_projection_charges_are_cumulative (test_nested_transitions.InlineSequencePlanningTests.test_surface_and_child_projection_charges_are_cumulative) ... ok
+test_all_transition_types_keep_child_pixels_under_reverse_nonlinear_parent (test_nested_transitions.NestedTransitionCliTests.test_all_transition_types_keep_child_pixels_under_reverse_nonlinear_parent) ... ok
+test_child_render_warnings_remain_visible_with_their_sequence_scope (test_nested_transitions.NestedTransitionCliTests.test_child_render_warnings_remain_visible_with_their_sequence_scope) ... ok
+test_child_transparency_survives_native_surface_before_parent_background (test_nested_transitions.NestedTransitionCliTests.test_child_transparency_survives_native_surface_before_parent_background) ... ok
+test_combined_surface_budget_rejects_before_render_job (test_nested_transitions.NestedTransitionCliTests.test_combined_surface_budget_rejects_before_render_job) ... ok
+test_forward_audio_uses_independent_source_windows_and_authored_envelopes (test_nested_transitions.NestedTransitionCliTests.test_forward_audio_uses_independent_source_windows_and_authored_envelopes) ... ok
+test_grandparent_reverse_keeps_nested_surface_scope_and_child_clock (test_nested_transitions.NestedTransitionCliTests.test_grandparent_reverse_keeps_nested_surface_scope_and_child_clock) ... ok
+test_graph_planning_does_not_run_processes_or_modify_author_data (test_nested_transitions.NestedTransitionCliTests.test_graph_planning_does_not_run_processes_or_modify_author_data) ... ok
+test_internal_surface_id_does_not_collide_with_authored_ancestor_sequence (test_nested_transitions.NestedTransitionCliTests.test_internal_surface_id_does_not_collide_with_authored_ancestor_sequence) ... ok
+test_nested_surface_preserves_registered_r3_sources_and_audio_bus (test_nested_transitions.NestedTransitionCliTests.test_nested_surface_preserves_registered_r3_sources_and_audio_bus) ... skipped 'Requires an explicitly supplied existing native Rubber Band executable'
+test_parent_double_speed_selects_completed_child_frames (test_nested_transitions.NestedTransitionCliTests.test_parent_double_speed_selects_completed_child_frames) ... ok
+test_parent_nonlinear_curve_retimes_the_composite_not_crossfade_endpoints (test_nested_transitions.NestedTransitionCliTests.test_parent_nonlinear_curve_retimes_the_composite_not_crossfade_endpoints) ... ok
+test_parent_opacity_uses_parent_clock_after_curve_composition (test_nested_transitions.NestedTransitionCliTests.test_parent_opacity_uses_parent_clock_after_curve_composition) ... ok
+test_parent_reverse_reverses_completed_transition_pixels (test_nested_transitions.NestedTransitionCliTests.test_parent_reverse_reverses_completed_transition_pixels) ... ok
+test_reverse_audio_envelopes_follow_original_continuous_child_clock (test_nested_transitions.NestedTransitionCliTests.test_reverse_audio_envelopes_follow_original_continuous_child_clock) ... ok
+test_same_child_twice_uses_independent_frame_windows (test_nested_transitions.NestedTransitionCliTests.test_same_child_twice_uses_independent_frame_windows) ... ok
+test_trim_entering_the_middle_of_a_transition_keeps_original_progress (test_nested_transitions.NestedTransitionCliTests.test_trim_entering_the_middle_of_a_transition_keeps_original_progress) ... ok
+test_trimmed_parent_preserves_two_authored_transition_windows (test_nested_transitions.NestedTransitionCliTests.test_trimmed_parent_preserves_two_authored_transition_windows) ... ok
+
+======================================================================
+FAIL: test_nested_real_source_transition_audio_retains_original_cut_after_trim_and_reverse (test_float_audio_graph.FloatAudioGraphTests.test_nested_real_source_transition_audio_retains_original_cut_after_trim_and_reverse)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_audio_graph.py", line 120, in test_nested_real_source_transition_audio_retains_original_cut_after_trim_and_reverse
+    np.testing.assert_allclose(actual,reference[9600:38400][::-1],rtol=0,atol=3e-7)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 1768, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header=header, equal_nan=equal_nan,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 983, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=0, atol=3e-07
+
+Mismatched elements: 28583 / 57600 (49.6%)
+First 5 mismatches are at indices:
+ [4800, 0]: -0.19282139837741852 (ACTUAL), -0.19279462099075317 (DESIRED)
+ [4800, 1]: -0.14516928791999817 (ACTUAL), -0.1451491266489029 (DESIRED)
+ [4801, 0]: -0.19500665366649628 (ACTUAL), -0.19497956335544586 (DESIRED)
+ [4801, 1]: -0.15183204412460327 (ACTUAL), -0.15181094408035278 (DESIRED)
+ [4802, 0]: -0.19678908586502075 (ACTUAL), -0.19676174223423004 (DESIRED)
+Max absolute difference among violations: 2.7790666e-05
+Max relative difference among violations: 1.
+ ACTUAL: array([[ 0.009081, -0.169442],
+       [ 0.018144, -0.167773],
+       [ 0.027169, -0.165002],...
+ DESIRED: array([[ 0.009081, -0.169442],
+       [ 0.018144, -0.167773],
+       [ 0.027169, -0.165002],...
+
+----------------------------------------------------------------------
+Ran 64 tests in 305.305s
+
+FAILED (failures=1, skipped=1)

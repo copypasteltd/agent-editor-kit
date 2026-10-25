@@ -1,0 +1,21 @@
+float_transitions.py contains spatial and colour transition formulae adapted
+from libavfilter/vf_xfade.c in FFmpeg n8.0.
+
+Original copyright (c) 2020 Paul B Mahol.
+Upstream: https://github.com/FFmpeg/FFmpeg/blob/n8.0/libavfilter/vf_xfade.c
+Git blob: 4517e4e6b36ee50e3f6c349dec585afeefc48365
+Source SHA-256: 28d6d7c8518328d7eb3ba23c9fcb0b522a4da1947317a5b1b9bcacb4ad67a494
+
+This derivative module is distributed under the GNU Lesser General Public
+License, version 2.1 or, at your option, any later version. It comes WITHOUT
+ANY WARRANTY, including MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+The complete license is included in COPYING.LGPLv2.1.txt. The Python source
+is included in every offline installation and may be modified or replaced.
+Other original project modules retain their stated licenses.
+
+Changes: Python/NumPy tile execution, public Float32 straight RGBA, linear
+premultiplied alpha, exact endpoint contract, rational author clock binding,
+bounded memory admission, cancellation and validation. Native integer xfade
+colour arithmetic and platform-specific wind hashes are not bit-identical.
+Agent dissolve/crossfade aliases mean a continuous fade, not FFmpeg's native
+stochastic dissolve. Dip black/white use an explicit authored cut fraction.

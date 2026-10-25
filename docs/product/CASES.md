@@ -678,3 +678,16 @@ Native child480×270/output384×216,30fps/4s, reverse clock, animated crop, arc_
 ![Actual installed OpenCL render / silent](../assets/opencl-projection-20261026-r1/projection.gif)
 
 自制FIELD NOTES图卡；480×270原生子画布，384×216/30fps/4秒输出，动态裁切、仿射、反向与arc_push。相同libx264编码；预览另用NVENC压缩，不混作投影性能。自然视听、连续播放/听审及完整目标保持开放。
+
+
+<a id="c29-float-transitions"></a>
+
+## C29 线性浮点转场、原素材音轨与子序列倒放 / Float32 transitions
+
+实际单一注册 Skill 调用 CLI0.1.21，6秒/72帧/12fps；五个真实源剪口、独立关联声音、子序列倒放、组级擦除/推移。自制几何图像与合成双声道音调，CC0。预览、编码、编码器启动后取消/原设置恢复、显式MKV/PCM队列、完整帧/时钟/PCM一致，quality通过。音频为验证信号，不是配音/音乐自然质量证明。
+
+[完整流程](FLOAT_TRANSITIONS.md) · [实测](../validation/Float32转场实测_2026-10-26.md) · [原视频](../assets/float-transition-20261026-r3/original.native.mkv) · [原音轨](../assets/float-transition-20261026-r3/original.audio.wav) · [实际MP4](../assets/float-transition-20261026-r3/transitions.mp4) · [可编辑包](../assets/float-transition-20261026-r3/editable-transitions.aevpkg.zip)
+
+![Actual registered Skill composition / silent GIF](../assets/float-transition-20261026-r3/transitions.gif)
+
+CPU Float32；512MiB工作区单帧4K核对不等于实时或全进程资源验收。未做连续播放/人工听审，自然视听/HDR/长片/全剪映等价仍开放。

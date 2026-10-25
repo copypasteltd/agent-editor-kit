@@ -1,0 +1,127 @@
+{
+  "status": "passed",
+  "at_utc": "2026-10-25T20:13:49.274397+00:00",
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "new_renders_in_audit": 0,
+  "new_model_forwards_in_audit": 0,
+  "natural_audiovisual_acceptance": false,
+  "full_CapCut_parity": false,
+  "product_files": 211,
+  "skill_files": 70,
+  "registered_skills": 1,
+  "internal_modules": 17,
+  "test_groups": {
+    "kernel-installed-final-r1": {
+      "methods": 25,
+      "skipped": 0,
+      "installed": "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.19\\final-r1\\installed"
+    },
+    "float-installed-r1": {
+      "methods": 98,
+      "skipped": 0,
+      "installed": "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.19\\final-r1\\installed"
+    },
+    "audio-final-r1": {
+      "methods": 64,
+      "skipped": 0,
+      "installed": null
+    },
+    "render-installed-r1": {
+      "methods": 44,
+      "skipped": 0,
+      "installed": "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.19\\final-r1\\installed"
+    },
+    "legacy-installed-r1": {
+      "methods": 191,
+      "skipped": 0,
+      "installed": "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.19\\final-r1\\installed"
+    }
+  },
+  "patterns": 59,
+  "independent_native_non_wind_patterns": 53,
+  "wind_patterns_reported": 4,
+  "readme_functions": 55,
+  "readme_services": 20,
+  "readme_rows": 154,
+  "historical_rows_preserved": 146,
+  "original_goal_closures_preserved": 38,
+  "capability_count": 75,
+  "capability_status_counts": {
+    "implemented_with_limits": 47,
+    "implemented": 20,
+    "degraded": 1,
+    "local_adapter_only": 7
+  },
+  "relative_document_links": 2308,
+  "public_latest_tag": "v0.1.0-alpha.3",
+  "kit_files": 98,
+  "files": [
+    {
+      "path": "docs/product/CAPABILITIES.en.md",
+      "bytes": 164446,
+      "sha256": "a3ffb5165080f74ee0123b518f69e5c2fd252fa8dd0d56f23f47f6adeb604ef4"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.md",
+      "bytes": 162247,
+      "sha256": "4c3d548b1834c15aa8dde26a3f4d7d5ee01ccf8616ddb928a40f2b1ba59da306"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.zh-TW.md",
+      "bytes": 162314,
+      "sha256": "9ccf9d605c71bf05f0d2c289277d02e50d295fd2811a00c0e3d7b983d4667911"
+    },
+    {
+      "path": "docs/product/CASES.md",
+      "bytes": 95985,
+      "sha256": "d58172bc57e9b0767f9a2cbba7c97d953017153c2514a0c72d9f842c2b81bb95"
+    },
+    {
+      "path": "docs/product/COMMUNITY_LOCAL_DELIVERY.md",
+      "bytes": 26269,
+      "sha256": "e93423bc3f0fcac5dfca03a4954f374c668fec017a49ba25ab4692a65c998b7b"
+    },
+    {
+      "path": "docs/product/FLOAT_TRANSITIONS.md",
+      "bytes": 8639,
+      "sha256": "55b1ef18c028fef71ba23aa7033458bca6404420ad223c0ba2b3dd8d60a1a892"
+    },
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "bytes": 41780,
+      "sha256": "4b367879e4a92900f313f2e3c88b9b94e35b17c54147cc045c5e1ac9ba63eae2"
+    },
+    {
+      "path": "docs/product/IMPLEMENTATION_PLAN_20261025.md",
+      "bytes": 14974,
+      "sha256": "84d2cc8b99e91a1551dedf988430084bca8a25a2e6f91ced895204f0e6d105c2"
+    },
+    {
+      "path": "docs/releases/CLI_0.1.21_LOCAL.md",
+      "bytes": 1934,
+      "sha256": "3dcc0610b3c8d83bc5bb734cc271345b187078e77ba70ed2c6c14cb8b9ac9f1d"
+    },
+    {
+      "path": "docs/validation/Float32转场实测_2026-10-26.md",
+      "bytes": 3596,
+      "sha256": "d4610e9d48f4f3aeeac98a0b615bc59adfad1e2bdc536c835487640664898b28"
+    },
+    {
+      "path": "README.en.md",
+      "bytes": 150544,
+      "sha256": "0879496bd8d2f21b6f2a9192cd086b2291f14ef5f4cf2f13bdd0303249db7502"
+    },
+    {
+      "path": "README.md",
+      "bytes": 139960,
+      "sha256": "f7a558b3467537626362b8d9c6ec791e2b01d90f8130586bebca2732b88d3cce"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "bytes": 140652,
+      "sha256": "e8992d22c850e4a333587ad6a7aade27fc6216408c6a78a67ea0577dff6baa12"
+    }
+  ]
+}

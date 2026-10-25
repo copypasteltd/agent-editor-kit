@@ -2,15 +2,15 @@
 
 <!-- community-current -->
 
-**CLI 0.1.20 / alpha.4-local.18 / r21 kit · 1 Skill / 17 modules.**
+**CLI 0.1.21 / alpha.4-local.19 / r22 kit · 1 Skill / 17 modules.**
 
-Native OpenCL crop/affine/child-canvas bilinear/area projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+Linear Float32 transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
 
-[GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](opencl-projection-capabilities-cli-0.1.20.json). Full target conditions remain open.
+[Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](float-transition-capabilities-cli-0.1.21.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.md) · [Machine response](opencl-projection-capabilities-cli-0.1.20.json) · [Module data](module-catalog.json)
+[README](../../README.md) · [Machine response](float-transition-capabilities-cli-0.1.21.json) · [Module data](module-catalog.json)
 
 | 编号 | 功能模块 | 具体行为与输入 → 输出 | 入口 | 依赖/边界 |
 |---|---|---|---|---|
@@ -68,6 +68,7 @@ Native OpenCL crop/affine/child-canvas bilinear/area projection, portable motion
 | F52 | 可编辑广告分镜与返工 | 已确认 brief/实际素材 → 多画幅与时长的画面/字幕/配音/源音/配乐独立轨道；按镜头与变体局部改稿。 | `ad storyboard/build/revise` | 整帧分配、原素材字节锁、实际字体排版和完整配音时窗；不自动创造卖点或决定素材语义。 |
 | F53 | 语义运行时升级 | 旧适配器/索引/校准 → 新安装路径下的新 ID，复制向量/预览/数据集且保留拟合和原观察。 | `project upgrade-semantic` | 全部 19 个实现与外部依赖须字节相同；零新模型前向，原记录不改；内容变化拒绝并要求重建。 |
 | F54 | 可复用参数运镜 | 本地版本化 JSON / 已有作者曲线 → 普通关键帧、参数/摘要/快照、跨工程复用。六套真实预览供选型。 | `motion pack list/inspect/create/capture/apply` | 65 点采样、transform 属性；默认拒绝冲突，显式替换整条属性轨；跟踪绑定拒绝，CPU 合成/自然质量未闭。 |
+| F55 | 线性浮点转场与组级进出场 | 显式 Float32 工程 → 57 xfade图案+2 dip、预乘alpha混合、真实句柄/原作者时钟、关联音轨、组级擦除/推移与实际预览成片。 | `timeline transition; preview; render; queue` | CPU；12种真实句柄声明，其他图案用显式重叠/边缘；normal双源混合；风噪有平台差异，HDR/自然质量未闭。 |
 
 | 编号 | 服务模块 | 运行形式 | 需要什么/提供什么 | 入口 | 范围 |
 |---|---|---|---|---|---|
@@ -857,7 +858,10 @@ Native OpenCL crop/affine/child-canvas bilinear/area projection, portable motion
     "explicit_zscale_output_matrix_range",
     "independent_alpha8_delivery",
     "common_encoders_quality_fingerprints_operations",
-    "caught_publish_IO_pair_rollback"
+    "caught_publish_IO_pair_rollback",
+    "linear_premultiplied_transitions",
+    "real_source_handles_and_linked_audio",
+    "authored_group_spatial_edges"
   ],
   "limits": [
     "explicit_opt_in_not_default_migration",
@@ -2395,7 +2399,7 @@ Native OpenCL crop/affine/child-canvas bilinear/area projection, portable motion
     "sequence_spatial_order_is_child_composite_crop_transform_opacity_effects_mask_fade",
     "group_crop_and_affine_cpu_default_explicit_probed_opencl_available",
     "isolated_compositing_is_8bit_encoded_rgb_not_linear_light_or_hdr_acceptance",
-    "group_slide_wipe_transitions_are_not_accepted",
+    "default_8bit_group_slide_wipe_unaccepted_explicit_float32_group_spatial_edges_available",
     "nested_audio_tempo_windows_are_limited_to_16384_and_at_least_one_48khz_sample",
     "audio_speed_curve_uses_piecewise_atempo_and_can_have_segment_boundaries"
   ]
@@ -3217,6 +3221,99 @@ Native OpenCL crop/affine/child-canvas bilinear/area projection, portable motion
     "auto_handle_contiguous_clips"
   ],
   "xfade_catalog": "local_ffmpeg_xfade",
+  "float32_native": {
+    "status": "implemented_with_limits",
+    "protocol": "linear-premultiplied-float32-transitions-v1",
+    "selection": "settings.pixel_pipeline.engine=float32-native-v1",
+    "patterns": [
+      "circleclose",
+      "circlecrop",
+      "circleopen",
+      "coverdown",
+      "coverleft",
+      "coverright",
+      "coverup",
+      "diagbl",
+      "diagbr",
+      "diagtl",
+      "diagtr",
+      "dip_black",
+      "dip_white",
+      "distance",
+      "fade",
+      "fadeblack",
+      "fadefast",
+      "fadegrays",
+      "fadeslow",
+      "fadewhite",
+      "hblur",
+      "hlslice",
+      "hlwind",
+      "horzclose",
+      "horzopen",
+      "hrslice",
+      "hrwind",
+      "pixelize",
+      "radial",
+      "rectcrop",
+      "revealdown",
+      "revealleft",
+      "revealright",
+      "revealup",
+      "slidedown",
+      "slideleft",
+      "slideright",
+      "slideup",
+      "smoothdown",
+      "smoothleft",
+      "smoothright",
+      "smoothup",
+      "squeezeh",
+      "squeezev",
+      "vdslice",
+      "vdwind",
+      "vertclose",
+      "vertopen",
+      "vuslice",
+      "vuwind",
+      "wipebl",
+      "wipebr",
+      "wipedown",
+      "wipeleft",
+      "wiperight",
+      "wipetl",
+      "wipetr",
+      "wipeup",
+      "zoomin"
+    ],
+    "features": [
+      "linear_light_premultiplied_RGBA",
+      "xfade_spatial_catalog",
+      "original_author_clocks",
+      "group_wipe_slide_and_other_spatial_edges",
+      "exact_overlap_pairs",
+      "real_source_handles",
+      "linked_audio_envelopes",
+      "odd_frame_cut_fraction",
+      "nested_reverse_left_limits",
+      "bounded_tiles_and_row_blur",
+      "cancellation",
+      "no_authored_project_rewrite"
+    ],
+    "limits": [
+      "CPU_only",
+      "explicit_float_pipeline_not_default_migration",
+      "no_automatic_tail_clone",
+      "pair_modes_require_normal",
+      "nonintersecting_pair_windows",
+      "fadefast_fadeslow_require_visible_RGB_0_to_1",
+      "unmatched_edges_target_transparent",
+      "linear_alpha_math_not_integer_xfade_bit_parity",
+      "quota_not_total_RSS",
+      "natural_longform_HDR_and_full_CapCut_parity_unaccepted"
+    ],
+    "license": "LGPL-2.1-or-later;see float_transitions_NOTICE.txt"
+  },
   "source_handle_editor": {
     "engine": "agent-source-transition-v1",
     "command": "timeline transition",

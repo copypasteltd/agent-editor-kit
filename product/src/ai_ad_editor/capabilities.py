@@ -4,6 +4,7 @@ from typing import Any
 
 from . import ENGINE_ID, VERSION
 from .effects import EFFECT_CATALOG_VERSION, effect_catalog
+from .float_transitions import TYPES as FLOAT_TRANSITION_TYPES
 from .media import ffmpeg_version
 from .motion_presets import MOTION_PRESET_CATALOG_VERSION, motion_preset_catalog
 
@@ -330,7 +331,9 @@ def build_capability_manifest() -> dict[str, Any]:
                 'features': ['original_native_PTS_windows', 'explicit_linear_D65_RGBA_Float32_composition',
                     'existing_author_IR_and_audio_graph', 'bounded_encoder_stdin', 'final_RGB16_delivery_edge',
                     'explicit_zscale_output_matrix_range', 'independent_alpha8_delivery',
-                    'common_encoders_quality_fingerprints_operations', 'caught_publish_IO_pair_rollback'],
+                    'common_encoders_quality_fingerprints_operations', 'caught_publish_IO_pair_rollback',
+                    'linear_premultiplied_transitions', 'real_source_handles_and_linked_audio',
+                    'authored_group_spatial_edges'],
                 'limits': ['explicit_opt_in_not_default_migration', 'unported_operators_reject_without_legacy_fallback',
                     'square_unrotated_native_sources_only', 'BT709_relative_delivery_not_HDR_or_ICC',
                     'source_cache_and_projection_quotas_are_not_total_RSS',
@@ -901,7 +904,7 @@ def build_capability_manifest() -> dict[str, Any]:
                 },
                 "status": "implemented",
                 "features": ["multi_track", "append", "update", "remove", "split", "ripple_insert", "ripple_delete", "slip", "slide", "speed", "speed_curve", "speed_curve_reverse_reflection", "speed_curve_easing", "speed_curve_bezier_handles", "bounded_speed_clock_compilation", "reverse", "freeze_frame", "crop", "crop_position_keyframes", "crop_size_keyframes", "transform_anchor", "motion_preset_keyframes", "motion_preset_apply", "nested_sequences", "independent_sequence_pixel_canvas", "sequence_canvas_update", "selected_sequence_native_output", "single_pass_native_sequence_projection", "explicit_sequence_area_sampling", "fractional_crop_cell_area", "premultiplied_sequence_area_alpha", "sequence_projection_working_quota", "sequence_sampling_output_override", "isolated_sequence_compositing", "sequence_parent_canvas_transform", "sequence_parent_canvas_crop_mask", "sequence_parent_opacity_after_overlap", "sequence_group_track_z_order", "alpha_preserving_isolated_blend", "sequence_group_fade", "nested_reverse", "nested_reverse_parent_bezier_keyframes", "nested_parent_keyframe_layers", "nested_analytic_video_clock", "nested_covering_source_frame_intervals", "nested_subframe_source_trim", "nested_mapped_video_eof", "nested_global_half_open_output_frames", "nested_authored_keyframe_clock", "nested_integrated_audio_windows", "markers"],
-                "limits": ["dynamic_crop_uses_fixed_canvas_inverse_sampling", "dynamic_crop_cpu_default_explicit_probed_opencl_available", "nested_reverse_static_clips_preserve_temporal_order", "native_nested_leaf_intervals_preserved_virtual_surfaces_keep_child_cfr", "speed_easing_compilation_has_250_microsecond_source_clock_bound_and_1024_segment_limit", "speed_bezier_requires_finite_handles_normalized_x_and_positive_interior_speed", "source_speed_endpoint_floor_remains_0_01", "deep_animated_clock_expressions_have_explicit_4mib_limit", "nested_freeze_hold_quantization_is_explicit", "sequence_canvas_fps_color_and_sar_are_project_shared", "cpu_sequence_working_raster_is_componentwise_max_source_parent_opencl_uses_native_source_target", "bilinear_default_retained_explicit_area_has_source_axis_box_kernel", "area_general_rotation_is_not_exact_rotated_pixel_polygon_ewa_or_lanczos", "projection_quota_excludes_leaf_decoder_encoder_threads_and_concurrent_jobs_rss", "leaf_minification_linear_light_hdr_and_natural_quality_unaccepted", "sequence_spatial_order_is_child_composite_crop_transform_opacity_effects_mask_fade", "group_crop_and_affine_cpu_default_explicit_probed_opencl_available", "isolated_compositing_is_8bit_encoded_rgb_not_linear_light_or_hdr_acceptance", "group_slide_wipe_transitions_are_not_accepted", "nested_audio_tempo_windows_are_limited_to_16384_and_at_least_one_48khz_sample", "audio_speed_curve_uses_piecewise_atempo_and_can_have_segment_boundaries"],
+                "limits": ["dynamic_crop_uses_fixed_canvas_inverse_sampling", "dynamic_crop_cpu_default_explicit_probed_opencl_available", "nested_reverse_static_clips_preserve_temporal_order", "native_nested_leaf_intervals_preserved_virtual_surfaces_keep_child_cfr", "speed_easing_compilation_has_250_microsecond_source_clock_bound_and_1024_segment_limit", "speed_bezier_requires_finite_handles_normalized_x_and_positive_interior_speed", "source_speed_endpoint_floor_remains_0_01", "deep_animated_clock_expressions_have_explicit_4mib_limit", "nested_freeze_hold_quantization_is_explicit", "sequence_canvas_fps_color_and_sar_are_project_shared", "cpu_sequence_working_raster_is_componentwise_max_source_parent_opencl_uses_native_source_target", "bilinear_default_retained_explicit_area_has_source_axis_box_kernel", "area_general_rotation_is_not_exact_rotated_pixel_polygon_ewa_or_lanczos", "projection_quota_excludes_leaf_decoder_encoder_threads_and_concurrent_jobs_rss", "leaf_minification_linear_light_hdr_and_natural_quality_unaccepted", "sequence_spatial_order_is_child_composite_crop_transform_opacity_effects_mask_fade", "group_crop_and_affine_cpu_default_explicit_probed_opencl_available", "isolated_compositing_is_8bit_encoded_rgb_not_linear_light_or_hdr_acceptance", "default_8bit_group_slide_wipe_unaccepted_explicit_float32_group_spatial_edges_available", "nested_audio_tempo_windows_are_limited_to_16384_and_at_least_one_48khz_sample", "audio_speed_curve_uses_piecewise_atempo_and_can_have_segment_boundaries"],
             },
             "motion": {
                 "status": "implemented",
@@ -1018,6 +1021,21 @@ def build_capability_manifest() -> dict[str, Any]:
                 "status": "implemented",
                 "features": ["fade", "crossfade", "dissolve", "wipe", "slide", "circlecrop", "rectcrop", "distance", "fadeblack", "fadewhite", "radial", "smooth", "circleopen", "circleclose", "pixelize", "zoomin", "cover", "reveal", "diagonal", "slice", "wind", "blur", "fadegrays", "squeeze", "auto_handle_contiguous_clips"],
                 "xfade_catalog": "local_ffmpeg_xfade",
+                "float32_native": {
+                    "status": "implemented_with_limits", "protocol": "linear-premultiplied-float32-transitions-v1",
+                    "selection": "settings.pixel_pipeline.engine=float32-native-v1",
+                    "patterns": sorted(FLOAT_TRANSITION_TYPES),
+                    "features": ["linear_light_premultiplied_RGBA", "xfade_spatial_catalog", "original_author_clocks",
+                        "group_wipe_slide_and_other_spatial_edges", "exact_overlap_pairs", "real_source_handles",
+                        "linked_audio_envelopes", "odd_frame_cut_fraction", "nested_reverse_left_limits",
+                        "bounded_tiles_and_row_blur", "cancellation", "no_authored_project_rewrite"],
+                    "limits": ["CPU_only", "explicit_float_pipeline_not_default_migration",
+                        "no_automatic_tail_clone", "pair_modes_require_normal", "nonintersecting_pair_windows",
+                        "fadefast_fadeslow_require_visible_RGB_0_to_1", "unmatched_edges_target_transparent",
+                        "linear_alpha_math_not_integer_xfade_bit_parity", "quota_not_total_RSS",
+                        "natural_longform_HDR_and_full_CapCut_parity_unaccepted"],
+                    "license": "LGPL-2.1-or-later;see float_transitions_NOTICE.txt",
+                },
                 "source_handle_editor": {
                     "engine": "agent-source-transition-v1", "command": "timeline transition",
                     "actions": ["add", "resize", "remove"], "field": "sequence.source_transitions",

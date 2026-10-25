@@ -4,7 +4,7 @@
 
 Local video/audio → analysis JSON, frames, caption candidates
 
-Commands: `media understand/contact-sheet; subtitle transcribe; semantic adapter-register/index/search/verify`.
+Commands: `media understand/contact-sheet; subtitle transcribe; semantic adapter-register/index/search/verify/calibrate/calibration-list`.
 Distinguish heuristics from model semantics. For description/reference-image
 retrieval, read [semantic-retrieval](../../semantic-retrieval.md) before execution.
 
@@ -16,5 +16,7 @@ understanding. OCR/ASR requires a registered local adapter. Keep transcript corr
 
 Semantic search uses actual image/text embeddings from an explicitly registered
 offline model. Return source IDs, actual sampled timestamps, previews and cosine
-scores. A point sample supplies no event duration; negation and open-set rejection
-remain unreliable. Review candidates before placing an authored range on the timeline.
+scores and explicit conditions/decisions. Use an applicable index/device calibration
+for empirical acceptance and keep known false accepts/rejections visible. A point
+sample supplies no event duration or general action/identity proof. Review candidates
+before placing an authored range on the timeline.

@@ -1,0 +1,379 @@
+[
+  {
+    "id": "profile-list",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.8\\final-r1\\installed\\run.py",
+      "semantic",
+      "calibration-list",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-20261025-installed-r1"
+    ],
+    "exit_code": 0,
+    "expected_error": null,
+    "actual_errors": [],
+    "status": "succeeded",
+    "workers": [],
+    "stdout_sha256": "0b9c57c7bfed528e77e7bd5b813e0b74859f4900a2e8d36e0e2b6c8b82921abc",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "dry-run",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.8\\final-r1\\installed\\run.py",
+      "semantic",
+      "search",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-20261025-installed-r1",
+      "--index-id",
+      "images-v1",
+      "--query",
+      "a cat",
+      "--kind",
+      "image",
+      "--calibration-id",
+      "accept-cuda",
+      "--device",
+      "cuda",
+      "--dry-run"
+    ],
+    "exit_code": 0,
+    "expected_error": null,
+    "actual_errors": [],
+    "status": "planned",
+    "workers": [],
+    "stdout_sha256": "3f735a9f82bebaacb858cf6c2179a4e93cec3fb21dbe40284827590a5c60502d",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "raw-profile-refusal",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.8\\final-r1\\installed\\run.py",
+      "semantic",
+      "search",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-20261025-installed-r1",
+      "--index-id",
+      "images-v1",
+      "--query",
+      "a cat",
+      "--kind",
+      "image",
+      "--calibration-id",
+      "accept-cuda",
+      "--query-mode",
+      "raw"
+    ],
+    "exit_code": 2,
+    "expected_error": "ARGUMENT_INVALID",
+    "actual_errors": [
+      {
+        "code": "ARGUMENT_INVALID",
+        "message": "校准仅用于 clauses 文本查询；raw 不接受结构条件",
+        "path": "query_mode",
+        "retryable": false
+      }
+    ],
+    "status": "failed",
+    "workers": [],
+    "stdout_sha256": "492b8e941cf655bf8dba38c66e7c710a1ceb262216242c4cbc59ad53fc79f4e9",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "ambiguous-scope-refusal",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.8\\final-r1\\installed\\run.py",
+      "semantic",
+      "search",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-20261025-installed-r1",
+      "--index-id",
+      "images-v1",
+      "--query",
+      "not only a cat",
+      "--kind",
+      "image",
+      "--calibration-id",
+      "accept-cuda"
+    ],
+    "exit_code": 2,
+    "expected_error": "SEMANTIC_QUERY_SCOPE_REQUIRES_REVIEW",
+    "actual_errors": [
+      {
+        "code": "SEMANTIC_QUERY_SCOPE_REQUIRES_REVIEW",
+        "message": "否定范围不明确；请在查询文件中显式提供 include/exclude",
+        "path": null,
+        "retryable": false
+      }
+    ],
+    "status": "failed",
+    "workers": [],
+    "stdout_sha256": "785acb7fc88a83d60c827c9b1367596281f03be058cb39cd2da58035af7d5e9f",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "kind-refusal",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.8\\final-r1\\installed\\run.py",
+      "semantic",
+      "search",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-20261025-installed-r1",
+      "--index-id",
+      "images-v1",
+      "--query",
+      "a cat",
+      "--kind",
+      "video",
+      "--calibration-id",
+      "accept-cuda"
+    ],
+    "exit_code": 6,
+    "expected_error": "SEMANTIC_CALIBRATION_INVALID",
+    "actual_errors": [
+      {
+        "code": "SEMANTIC_CALIBRATION_INVALID",
+        "message": "校准档案无效、过期或适用范围不符",
+        "path": null,
+        "retryable": false,
+        "cause": "Profile scope/index/model/query protocol changed"
+      }
+    ],
+    "status": "failed",
+    "workers": [],
+    "stdout_sha256": "35f6134b243f943322725a23c481689012621cd5b3a0f21369cdd9ec9702bc7f",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "pre-cancel",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.8\\final-r1\\installed\\run.py",
+      "semantic",
+      "search",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-20261025-installed-r1",
+      "--index-id",
+      "images-v1",
+      "--query",
+      "a cat",
+      "--kind",
+      "image",
+      "--calibration-id",
+      "accept-cuda",
+      "--cancel-file",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\semantic-decision-20261025-r1\\controls-r1\\cancel.marker"
+    ],
+    "exit_code": 8,
+    "expected_error": "CANCELLED",
+    "actual_errors": [
+      {
+        "code": "CANCELLED",
+        "message": "语义任务已取消",
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\semantic-decision-20261025-r1\\controls-r1\\cancel.marker",
+        "retryable": false
+      }
+    ],
+    "status": "failed",
+    "workers": [],
+    "stdout_sha256": "c8bf77526361c1dec23d098f4d13d58b08df1ee2375e73a4b8300de1e3c29337",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "auto-profile",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.8\\final-r1\\installed\\run.py",
+      "semantic",
+      "search",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-20261025-installed-r1",
+      "--index-id",
+      "images-v1",
+      "--query",
+      "a cat",
+      "--kind",
+      "image",
+      "--calibration-id",
+      "accept-cuda",
+      "--device",
+      "auto"
+    ],
+    "exit_code": 0,
+    "expected_error": null,
+    "actual_errors": [],
+    "status": "succeeded",
+    "workers": [
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-20261025-installed-r1\\cache\\semantic-jobs\\job_20261025052313_0f859abd\\inference-cuda\\response.json",
+        "sha256": "349e8931420887d52bd16ff0110f2dfd3a05193efb1a38f5c1ca5b4a674e2d65",
+        "device": "cuda",
+        "status": "succeeded",
+        "model_forward_calls": 1
+      }
+    ],
+    "stdout_sha256": "7a4503a2ad11d901d3ecf0878aaf60fc6cefedb0432d6b0efec6fa748f2d9c4f",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "device-refusal",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.8\\final-r1\\installed\\run.py",
+      "semantic",
+      "search",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-20261025-installed-r1",
+      "--index-id",
+      "images-v1",
+      "--query",
+      "a cat",
+      "--kind",
+      "image",
+      "--calibration-id",
+      "accept-cuda",
+      "--device",
+      "cpu"
+    ],
+    "exit_code": 6,
+    "expected_error": "SEMANTIC_CALIBRATION_DEVICE_MISMATCH",
+    "actual_errors": [
+      {
+        "code": "SEMANTIC_CALIBRATION_DEVICE_MISMATCH",
+        "message": "当前推理设备与校准设备不符；请使用匹配档案或分别校准 CPU/GPU",
+        "path": null,
+        "retryable": false
+      }
+    ],
+    "status": "failed",
+    "workers": [
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-20261025-installed-r1\\cache\\semantic-jobs\\job_20261025052616_65cc0472\\inference-cpu\\response.json",
+        "sha256": "195c440b9795ee061153a050ba6202565c39bc8e3e925a61c3a067e570330668",
+        "device": "cpu",
+        "status": "succeeded",
+        "model_forward_calls": 1
+      }
+    ],
+    "stdout_sha256": "397385d8bebcaa7746959c892418eaf9548ec08e3fb24956fa40e5921747d323",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "quality-refusal",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.8\\final-r1\\installed\\run.py",
+      "semantic",
+      "calibrate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-20261025-installed-r1",
+      "--index-id",
+      "images-v1",
+      "--calibration-id",
+      "quality-failure-control",
+      "--kind",
+      "image",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\semantic-decision-20261025-r1\\controls-r1\\deliberate-wrong-labels.json",
+      "--device",
+      "cuda"
+    ],
+    "exit_code": 6,
+    "expected_error": "SEMANTIC_CALIBRATION_QUALITY_FAILED",
+    "actual_errors": [
+      {
+        "code": "SEMANTIC_CALIBRATION_QUALITY_FAILED",
+        "message": "当前模型/素材库无法满足声明的校准覆盖门槛",
+        "path": null,
+        "retryable": false,
+        "diagnostics": {
+          "fit": {
+            "algorithm": "negative-order-statistic-strict-greater-v1",
+            "cutoff": 0.0561935684022833,
+            "requested_false_accept_rate": 0.05,
+            "requested_minimum_correct_coverage": 0.75,
+            "positive_count": 20,
+            "negative_count": 20,
+            "accepted_correct_positives": 0,
+            "correct_positive_coverage": 0.0,
+            "false_accepted_negatives": 1,
+            "observed_false_accept_rate": 0.05,
+            "quality_gate_passed": false,
+            "guarantee": "empirical calibration only; no distribution-free, probability or universal no-match guarantee"
+          },
+          "evidence": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-20261025-installed-r1\\cache\\semantic-jobs\\job_20261025052920_07f97895\\calibration-fit.json"
+        }
+      }
+    ],
+    "status": "failed",
+    "workers": [
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-20261025-installed-r1\\cache\\semantic-jobs\\job_20261025052920_07f97895\\inference-cuda\\response.json",
+        "sha256": "c584ce35d5a0316fe0c8ff367ad36881ed4355f6e246fd9bf804866144962ceb",
+        "device": "cuda",
+        "status": "succeeded",
+        "model_forward_calls": 5
+      }
+    ],
+    "stdout_sha256": "94c62df097f7abbfb91c13adc5c6af8b7cccfb70a01f342e38c728b04911f2c3",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

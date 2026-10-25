@@ -1,0 +1,10 @@
+{
+  "status": "failed",
+  "started_at_utc": "2026-10-25T05:12:36.089665+00:00",
+  "installed": true,
+  "new_model_forwards": 0,
+  "native_windows": true,
+  "virtualization": false,
+  "error": "AssertionError({'ok': False, 'command': 'semantic.search', 'request_id': 'req_20261025051356_6f9165bd', 'operation_id': None, 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'SEMANTIC_INDEX_INVALID', 'message': '索引已损坏、过期或工程引用已改变', 'path': None, 'retryable': False, 'cause': 'Manifest outside project semantic asset tree'}], 'provenance': {'cli_version': '0.1.10', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-10-25T05:13:56.107219Z', 'finished_at': '2026-10-25T05:13:56.107225Z', 'network': 'disabled'}})",
+  "calls": 19
+}

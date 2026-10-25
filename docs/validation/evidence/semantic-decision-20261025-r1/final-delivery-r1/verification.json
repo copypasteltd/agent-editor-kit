@@ -1,0 +1,10 @@
+{
+  "status": "failed",
+  "started_at_utc": "2026-10-25T05:40:10.761911+00:00",
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "goal_remains_active": true,
+  "baseline_commit": "8a684ed362fde3daf92ab42a5a7459eb5cec427b",
+  "error": "AssertionError([{'source': 'skills/agent-ffmpeg-local-editor/references/client-look-selection.md', 'target': '/absolute/path/to/board.jpg'}])"
+}

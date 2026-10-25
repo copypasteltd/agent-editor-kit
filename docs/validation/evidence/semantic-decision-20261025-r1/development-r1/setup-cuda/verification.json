@@ -1,0 +1,15 @@
+{
+  "status": "failed",
+  "phase": "setup",
+  "device": "cuda",
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-20261025-development-r1",
+  "site": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src",
+  "registered_skill": false,
+  "installed": false,
+  "protocol_sha256": "74b6c3c38d15284fd9a7814083378f82170cf516161898907bbf901fe997026b",
+  "started_at_utc": "2026-10-25T03:44:20.305019+00:00",
+  "new_renders": 0,
+  "human_review": false,
+  "error_type": "AssertionError",
+  "error": "{'ok': False, 'command': 'media.ingest', 'request_id': 'req_20261025034426_ad35d543', 'operation_id': None, 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'ARGUMENT_INVALID', 'message': '只允许本地路径或 local/file URI，禁止远程服务和网络素材', 'path': '--source-url', 'retryable': False}], 'provenance': {'cli_version': '0.1.9', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-10-25T03:44:26.121321Z', 'finished_at': '2026-10-25T03:44:26.121342Z', 'network': 'disabled'}}"
+}

@@ -1,0 +1,238 @@
+{
+  "selection": [
+    "q18",
+    "q19",
+    "q14",
+    "hout00zh",
+    "hout08zh",
+    "hpos09en"
+  ],
+  "records": [
+    {
+      "id": "q18",
+      "text": "一只猫，不是一杯咖啡",
+      "expected_asset_ids": [
+        "asset_c2",
+        "asset_i1"
+      ],
+      "group": "negation",
+      "decision": "calibrated_match",
+      "clauses": {
+        "protocol": "agent-semantic-clauses-v1",
+        "parser": "bounded-negation-grammar",
+        "original_text": "一只猫，不是一杯咖啡",
+        "include": [
+          "一只猫"
+        ],
+        "exclude": [
+          "一杯咖啡"
+        ],
+        "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+        "include_rows": [
+          18
+        ],
+        "exclude_rows": [
+          19
+        ]
+      },
+      "top1_correct": true,
+      "rejected": false,
+      "hits": [
+        {
+          "asset_id": "asset_c2",
+          "sample_seconds": 0.0,
+          "score": 0.10362538
+        },
+        {
+          "asset_id": "asset_i1",
+          "sample_seconds": 0.0,
+          "score": 0.10362538
+        },
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": 0.07144834
+        }
+      ],
+      "evaluation": "regression",
+      "correct": true,
+      "actual_image": "previews/asset_c2.png",
+      "expected_image": "previews/asset_c2.png"
+    },
+    {
+      "id": "q19",
+      "text": "an underwater shark swimming beside coral",
+      "expected_asset_ids": [],
+      "group": "out_of_domain",
+      "decision": "no_calibrated_match",
+      "clauses": {
+        "protocol": "agent-semantic-clauses-v1",
+        "parser": "affirmative-text",
+        "original_text": "an underwater shark swimming beside coral",
+        "include": [
+          "an underwater shark swimming beside coral"
+        ],
+        "exclude": [],
+        "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+        "include_rows": [
+          20
+        ],
+        "exclude_rows": []
+      },
+      "top1_correct": null,
+      "rejected": true,
+      "hits": [],
+      "evaluation": "regression",
+      "correct": true,
+      "actual_image": null,
+      "expected_image": null
+    },
+    {
+      "id": "q14",
+      "text": "带数字和指针的钟表",
+      "expected_asset_ids": [
+        "asset_g5"
+      ],
+      "group": "positive",
+      "decision": "no_calibrated_match",
+      "clauses": {
+        "protocol": "agent-semantic-clauses-v1",
+        "parser": "affirmative-text",
+        "original_text": "带数字和指针的钟表",
+        "include": [
+          "带数字和指针的钟表"
+        ],
+        "exclude": [],
+        "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+        "include_rows": [
+          13
+        ],
+        "exclude_rows": []
+      },
+      "top1_correct": false,
+      "rejected": true,
+      "hits": [],
+      "evaluation": "regression",
+      "correct": false,
+      "actual_image": null,
+      "expected_image": "previews/asset_g5.png"
+    },
+    {
+      "id": "hout00zh",
+      "text": "草原上站立的大象",
+      "expected_asset_ids": [],
+      "group": "out_of_library",
+      "decision": "calibrated_match",
+      "clauses": {
+        "protocol": "agent-semantic-clauses-v1",
+        "parser": "affirmative-text",
+        "original_text": "草原上站立的大象",
+        "include": [
+          "草原上站立的大象"
+        ],
+        "exclude": [],
+        "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+        "include_rows": [
+          21
+        ],
+        "exclude_rows": []
+      },
+      "top1_correct": null,
+      "rejected": false,
+      "hits": [
+        {
+          "asset_id": "asset_a7",
+          "sample_seconds": 0.0,
+          "score": 0.08424004
+        },
+        {
+          "asset_id": "asset_k8",
+          "sample_seconds": 0.0,
+          "score": 0.07686527
+        },
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": 0.0627283
+        }
+      ],
+      "evaluation": "heldout",
+      "correct": false,
+      "actual_image": "previews/asset_a7.png",
+      "expected_image": null
+    },
+    {
+      "id": "hout08zh",
+      "text": "靠在墙边的木吉他",
+      "expected_asset_ids": [],
+      "group": "out_of_library",
+      "decision": "calibrated_match",
+      "clauses": {
+        "protocol": "agent-semantic-clauses-v1",
+        "parser": "affirmative-text",
+        "original_text": "靠在墙边的木吉他",
+        "include": [
+          "靠在墙边的木吉他"
+        ],
+        "exclude": [],
+        "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+        "include_rows": [
+          37
+        ],
+        "exclude_rows": []
+      },
+      "top1_correct": null,
+      "rejected": false,
+      "hits": [
+        {
+          "asset_id": "asset_j3",
+          "sample_seconds": 0.0,
+          "score": 0.06719471
+        }
+      ],
+      "evaluation": "heldout",
+      "correct": false,
+      "actual_image": "previews/asset_j3.png",
+      "expected_image": null
+    },
+    {
+      "id": "hpos09en",
+      "text": "the side profile of a horse in silhouette",
+      "expected_asset_ids": [
+        "asset_k8"
+      ],
+      "group": "positive",
+      "decision": "calibrated_match",
+      "clauses": {
+        "protocol": "agent-semantic-clauses-v1",
+        "parser": "affirmative-text",
+        "original_text": "the side profile of a horse in silhouette",
+        "include": [
+          "the side profile of a horse in silhouette"
+        ],
+        "exclude": [],
+        "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+        "include_rows": [
+          18
+        ],
+        "exclude_rows": []
+      },
+      "top1_correct": true,
+      "rejected": false,
+      "hits": [
+        {
+          "asset_id": "asset_k8",
+          "sample_seconds": 0.0,
+          "score": 0.16664205
+        }
+      ],
+      "evaluation": "heldout",
+      "correct": true,
+      "actual_image": "previews/asset_k8.png",
+      "expected_image": "previews/asset_k8.png"
+    }
+  ],
+  "source_sha256": "6a68fafa32b7f94eeb3cf6700e774f6bb5c3af779e8d23f8e03eaf330e7c46b7",
+  "duration_policy": "authored two seconds per diagnostic card",
+  "editability": "six individually editable image-card clips; card typography is rasterized"
+}

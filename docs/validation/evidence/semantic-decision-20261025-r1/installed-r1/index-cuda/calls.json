@@ -1,0 +1,33 @@
+[
+  {
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.8\\final-r1\\installed\\run.py",
+      "semantic",
+      "index",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-20261025-installed-r1",
+      "--index-id",
+      "images-v1",
+      "--adapter-id",
+      "siglip2",
+      "--all-visual-assets",
+      "--device",
+      "cuda",
+      "--batch-size",
+      "8"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 191.99603429999843,
+    "stdout_sha256": "9c971bba655007c698e2ca5aff886e1b09ce2abea2ed61f8b28df27dcdcf1383",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ok": true,
+    "status": "succeeded"
+  }
+]

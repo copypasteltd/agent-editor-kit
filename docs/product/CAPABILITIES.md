@@ -2,17 +2,17 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.9 / alpha.4-local.7。** One registered Skill / 17 modules;
+**Current local / 当前本机 / 目前本機：CLI 0.1.10 / alpha.4-local.8。** One registered Skill / 17 modules;
 joint subtitle translation/dubbing, CTC activity boundaries, managed job recovery, independent four-source
 separation, offline image/text retrieval, GPU speech/translation and 359 resources. Public alpha.3 remains CLI 0.1.2.
-[Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](subtitle-dubbing-capabilities-cli-0.1.9.json) ·
+[Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](semantic-decision-capabilities-cli-0.1.10.json) ·
 [Subtitle dubbing workflow](SUBTITLE_DUBBING.md) · [CTC limits](CTC_ACTIVITY_ALIGNMENT.md) ·
 [All 38 remaining gap groups](GOAL_GAPS_20261025.md).
 Cue-window fit does not establish semantics, natural listening, word precision or lip sync.
 
 <!-- /community-current -->
 
-[README](../../README.md) · [Machine response](subtitle-dubbing-capabilities-cli-0.1.9.json) · [Module data](module-catalog.json)
+[README](../../README.md) · [Machine response](semantic-decision-capabilities-cli-0.1.10.json) · [Module data](module-catalog.json)
 
 | 编号 | 功能模块 | 具体行为与输入 → 输出 | 入口 | 依赖/边界 |
 |---|---|---|---|---|
@@ -65,7 +65,7 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 | F47 | GPU 配音与翻译选择 | 明确 CPU/CUDA/auto 和显存预检 → 实际 provider、设备与明确回退/失败。 | `gpu inspect; voice; translate; --device` | RTX 3060 实测；配音 CUDA 13 / 翻译 CUDA 12、配音当前仅设备 0，其他滤镜不因此 GPU 化。 |
 | F48 | 配乐准备与声音混合 | 实际音乐/人声资产 → 截取、循环、淡入淡出、显式增益和人声闪避混音。 | `music prepare/mix` | 保留原分轨，不静默裁人声；不作曲、不自动修复循环接缝或保证画面语义匹配。 |
 | F49 | 原生采集 | 明确窗口/屏幕/区域/相机/麦克风 → 有限录制、CPU/NVENC、取消和项目资产登记。 | `capture devices/record` | 真实窗口 CPU/GPU 已验；相机/麦克风、联合音画同步、设备故障和长录制未验。 |
-| F50 | 离线图文语义检索 | 本地素材与明确模型 → 索引、中文/英文/参考图查询、实际预览/源时间及可编辑引用。 | `semantic adapter-register/index/search/verify` | 当前安装版有否定/库外失败；校准候选仅开发 GPU 验证，动作/身份/音频推荐和大库仍开放。 |
+| F50 | 离线图文语义检索与条件选择 | 本地索引、中英/参考图、同帧正负条件、经验校准档案、实际预览/源时间及可编辑引用。 | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | CPU/GPU/Skill 已验，仍有两条误选、一条误拒及新工程迁移错误；非通用拒识/动作/身份/音频推荐。 |
 | F51 | 字幕翻译配音联合流程 | 普通中英 SRT、显式音色/轨道 → 译文、完整批量 WAV、实际时窗、可编辑声音/双语字幕及原子提交。 | `dub subtitles` | 批内复用初始化；保留原声/重试/错译；cue 时窗不证明精确字词、自然韵律或口型同步。 |
 
 | 编号 | 服务模块 | 运行形式 | 需要什么/提供什么 | 入口 | 范围 |
@@ -87,7 +87,7 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 | S15 | 配乐准备与混音 | 原生 FFmpeg 音频 | 显式截取/循环/淡化、独立人声/配乐、闪避 | `music prepare/mix` | 不作曲、不静默裁人声、不承诺接缝修复 |
 | S16 | GPU 兼容服务 | 原生 NVIDIA 运行库 | auto/cpu/cuda、显存预检、实际 provider/回退 | `gpu inspect; --device` | RTX 3060 实测，NVIDIA/Intel 依赖许可另列 |
 | S17 | 原生 Windows 采集 | FFmpeg gdigrab / DirectShow | 明确来源、设备 ID、有限时长、完整解码与素材登记 | `capture devices/record` | 真实窗口 CPU/GPU 已验；相机/麦克风/同步未验 |
-| S18 | 图文语义检索 | 显式登记的原生 SigLIP2 worker | 已有 Torch/Transformers/模型；实际 GPU/CPU、源/预览/向量完整性 | `semantic adapter-register/index/search/verify` | 冷启动和大库性能未收口；分数不是概率 |
+| S18 | 图文语义与经验校准 | 明确登记的原生 SigLIP2 worker | 已有 Torch/Transformers/权重；档案绑定索引/实现/类型/实际设备 | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | 分数非概率；冷启动/大库与校准工程迁移仍有限制 |
 | S19 | 独立四轨分离 | 原生 Torch/TorchAudio HDemucs worker | 显式登记原生 Python、权重/证据/实现哈希；auto/cpu/cuda，4 float WAV/轨道 | `audio adapter; audio separate-stems` | 不随基本 ZIP 分发 Torch/权重；自然听感与权重许可未闭 |
 | S20 | 字幕翻译配音联合服务 | 既有 OPUS / Kokoro 原生 worker + 受管工程事务 | 普通 SRT、明确语言/音色/轨道，CPU/CUDA/auto，批内复用 | `dub subtitles` | [完整流程](SUBTITLE_DUBBING.md)；保留全句和重试，字词/口型/自然质量未闭 |
 
@@ -105,7 +105,8 @@ Cue-window fit does not establish semantics, natural listening, word precision o
   "index_format": "agent-visual-semantic-index-v1",
   "commands": [
     "semantic adapter-register/adapter-list/adapter-inspect",
-    "semantic index/index-list/verify/search"
+    "semantic index/index-list/verify/search",
+    "semantic calibrate/calibration-list"
   ],
   "input_kinds": [
     "project_image",
@@ -127,6 +128,37 @@ Cue-window fit does not establish semantics, natural listening, word precision o
   "maximum_batch_size": 32,
   "score": "cosine_similarity_not_probability",
   "source_clock": "original_native_PTS_relative_to_container_origin",
+  "query_protocol": "agent-semantic-clauses-v1",
+  "query_modes": [
+    "clauses",
+    "raw"
+  ],
+  "maximum_include_clauses": 8,
+  "maximum_exclude_clauses": 8,
+  "decisions": [
+    "candidates_require_review",
+    "calibrated_match",
+    "no_calibrated_match"
+  ],
+  "calibration": {
+    "format": "agent-semantic-acceptance-profile-v1",
+    "dataset_format": "agent-semantic-calibration-set-v1",
+    "minimum_queries": 32,
+    "maximum_queries": 128,
+    "minimum_positive_queries": 16,
+    "minimum_absent_queries": 16,
+    "binding": [
+      "index",
+      "model",
+      "implementation",
+      "query_protocol",
+      "kind",
+      "actual_device",
+      "device_index"
+    ],
+    "acceptance": "minimum_positive_clause_cosine_strictly_greater_than_empirical_cutoff",
+    "all_results_require_review": true
+  },
   "integrity": [
     "model",
     "selected_native_runtime_components",
@@ -141,7 +173,10 @@ Cue-window fit does not establish semantics, natural listening, word precision o
     "fixed_768_dimension_224px_64token_base_profile_only",
     "sampled_frames_do_not_prove_actions_or_identity",
     "model_reuse_within_current_batch_only",
-    "no_open_set_abstention_or_calibrated_probability",
+    "empirical_profile_not_universal_rejection_or_probability",
+    "bounded_negation_grammar_unparsed_scope_requires_review",
+    "exclusions_are_relative_frame_evidence_not_object_absence_detection",
+    "calibration_does_not_establish_natural_scene_rejection_or_recall",
     "no_audio_embeddings_or_music_recommendation",
     "no_implicit_download_or_remote_code",
     "relocated_or_changed_adapter_requires_explicit_registration_and_index_rebuild",
@@ -4079,3 +4114,21 @@ Explicit local SigLIP2 image/video-sample embeddings; Chinese/English/reference-
 Plain local SRT → OPUS Chinese/English translation → one Kokoro initialization per voice batch → actual complete WAV sample checks → atomic editable audio/bilingual captions. Original text/times and every speed attempt are retained. Explicit tracks/casting/mixing and bounded whole-utterance regeneration; managed cancellation/timeout/recovery protects committed media and model licenses.
 
 字幕翻译、完整分段配音、实际时窗和可编辑入轨已实现；字幕翻譯、完整分段配音、實際時窗與可編輯入軌已實作。仅中英/普通 SRT；仅 cue 级安排。Actual awkward translations remain recorded. Naturalness, semantic acceptance, word alignment, lip sync, broad reliability and full CapCut parity remain open. The existing 103-name voice catalog now has at least seven distinct voices actually generated; no human listening acceptance.
+
+
+<!-- semantic-decisions-current -->
+
+## CLI 0.1.10 / F50 / S18 / K08: explicit clauses and empirical acceptance
+
+[完整流程 / Workflow](SEMANTIC_RETRIEVAL.md) · [实际质量/错误 / Actual results](../validation/语义条件与校准拒识实测_2026-10-25.md) · [C19](CASES.md#c19-semantic-decisions).
+
+中英条件检索与同帧正负比较、索引/类型/实现/实际设备绑定经验校准已交付。
+中英條件檢索、同影格正負比較與裝置綁定經驗校準已實作。
+`semantic calibrate/calibration-list/search` uses 32–128 reviewed examples (at least 16 positive and 16 absent),
+a correct-positive gate and empirical strict cutoff. Labels stay in the controller. All results still require review.
+Installed CPU/CUDA and the actual Skill retain two false accepts and one original false rejection.
+The new retrieval package fails search after import even though general validate succeeds; portable profiles are not established.
+Complex negation, natural actions/identity/audio/recommendation, large-library performance and managed semantic crash recovery remain open.
+Original CLI 0.1.5 query failures and raw mode remain historical evidence; they are not erased by this extension.
+
+<!-- /semantic-decisions-current -->

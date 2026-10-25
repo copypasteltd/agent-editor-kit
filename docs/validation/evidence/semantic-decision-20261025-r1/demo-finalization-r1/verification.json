@@ -1,0 +1,220 @@
+{
+  "status": "completed-media-with-known-retrieval-package-failure",
+  "original_failure_retained": true,
+  "original_evidence": "docs/validation/evidence/semantic-decision-20261025-r1/demo-installed-r1",
+  "cli_version": "0.1.10",
+  "calls": 19,
+  "successful_calls": 18,
+  "expected_failure_after_observation": false,
+  "duration_seconds": 12,
+  "frames": 360,
+  "fps": "30",
+  "dimensions": [
+    960,
+    540
+  ],
+  "full_video_decode": true,
+  "card_package_decoded_pixels_equal": true,
+  "retrieval_profile_package_verified_same_host": false,
+  "retrieval_package_search_error": [
+    {
+      "code": "SEMANTIC_INDEX_INVALID",
+      "message": "索引已损坏、过期或工程引用已改变",
+      "path": null,
+      "retryable": false,
+      "cause": "Manifest outside project semantic asset tree"
+    }
+  ],
+  "selected_cards": 6,
+  "selected_known_errors": 3,
+  "gif_frames": 60,
+  "gif_duration_ms": 12000,
+  "gif_sample_fps": 5,
+  "gif_frame_durations_ms": [
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200,
+    200
+  ],
+  "new_model_forwards": 0,
+  "new_renders": 0,
+  "original_actual_renders": 2,
+  "human_continuous_viewing": false,
+  "human_listening": false,
+  "natural_action_benchmark": false,
+  "card_typography_rasterized": true,
+  "files": [
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/actual-encoded-frames.png",
+      "bytes": 410193,
+      "sha256": "6f29353b8d1942a1ba81767b9b37215ada02ff89b4b3c1c8b2b40126143bb28c"
+    },
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/card-1.png",
+      "bytes": 251472,
+      "sha256": "9c8c5e73b5603ffddf5c99d19dae8df0419e8cd870379f18975b62f99caf086d"
+    },
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/card-2.png",
+      "bytes": 33505,
+      "sha256": "3d36dccc2d1fdebcffc4d83b4648211e807f01b7f57f1ecb875108a76798c094"
+    },
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/card-3.png",
+      "bytes": 32296,
+      "sha256": "12e28612cb3a64fbad0291edae13063a5982322b5cc40f35196da02791db931b"
+    },
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/card-4.png",
+      "bytes": 114818,
+      "sha256": "6680d7ffc6bbe77bea0408fbe6fd3f3d03f184396891236df7d22560b750a92d"
+    },
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/card-5.png",
+      "bytes": 95578,
+      "sha256": "be769e566e1a1d6db8484e41eb64b278734819df81a1e23f9a4595f2c15a6f80"
+    },
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/card-6.png",
+      "bytes": 42238,
+      "sha256": "d16e8ed34c0c09eef774e7a479f0157bf795c643b470266345dbca292ea773c6"
+    },
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/decisions.gif",
+      "bytes": 394630,
+      "sha256": "e56d982d227138a098dd8fe89975545fd4518c22a50d2934a06d0d2ccd47c134"
+    },
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/decisions.mp4",
+      "bytes": 212454,
+      "sha256": "f603c4b6170c185956d8716d8dfb9aec4766298bcd9c4f8a3af08b40d93fd6a1"
+    },
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/editable-cards.aevpkg.zip",
+      "bytes": 562480,
+      "sha256": "38c8beef4c693cda9d91f5b08943e7d7b5a16c42ddda193a3f85b1db8f5ca0a3"
+    },
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/editable-cards.aevpkg.zip.conversion-report.json",
+      "bytes": 988,
+      "sha256": "4ee9c32c06d954da0e59372de21c30eb6c72f50bd6ae62b0f46a00f2c5a1a090"
+    },
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/encoded-frame-1.png",
+      "bytes": 245990,
+      "sha256": "dfedc6b9b79f4f54857118433a1672d4efb824c9888859129a091762c701b5b3"
+    },
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/encoded-frame-2.png",
+      "bytes": 80652,
+      "sha256": "328fa6955b44b45800379496135872b51dbf25ef2786125d40860134115864c3"
+    },
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/encoded-frame-3.png",
+      "bytes": 74128,
+      "sha256": "c34ca742aaa7cd8ac912f62fdd84a18292c0418b1767e52ebf2b2928e88155f9"
+    },
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/encoded-frame-4.png",
+      "bytes": 144814,
+      "sha256": "a683d351c8e3fb07d770b328479b588c4d07c367546578503ff68e062dce4691"
+    },
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/encoded-frame-5.png",
+      "bytes": 123521,
+      "sha256": "56f423571b99c6cb39d6a72c37bbe7d3c13c6f03156ebb77a1b718a34c8c3dd8"
+    },
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/encoded-frame-6.png",
+      "bytes": 86280,
+      "sha256": "60ad219c202567e19ae5b87091c69575f8fc8c1483b546fa86be77a6afbbd159"
+    },
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/KNOWN_ISSUE.md",
+      "bytes": 1066,
+      "sha256": "886e0171fa5a77ab075965841e1bb8f7efd2ddc7d421ab78a24d0e769021b3e4"
+    },
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/retrieval-project.aevpkg.zip",
+      "bytes": 5636800,
+      "sha256": "3719ea2e4dd6ee5e3a0c36925621b2d4b12eb18b1ff4f22ff1322dd9c414da2f"
+    },
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/retrieval-project.aevpkg.zip.conversion-report.json",
+      "bytes": 989,
+      "sha256": "cecb22c1ba8f8fdcce48ed6ffe708425a89a174237a79435ce8476c757423f1d"
+    },
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/selected-decisions.json",
+      "bytes": 6535,
+      "sha256": "e41978dd44e056dcdd98a547f358b7e57b9917cd4da57abd1730bab2f4b90531"
+    },
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/SOURCE.json",
+      "bytes": 9775,
+      "sha256": "f9271a84eab1b60f953f01576c29984dc706b90e810d7372ecccf0e94bf66440"
+    },
+    {
+      "path": "docs/assets/semantic-decision-20261025-r1/demo-installed-r1/SOURCE_AND_LICENSES.md",
+      "bytes": 733,
+      "sha256": "bced37aa0f234d2a4b9bf4b9bb78e3fce8b7b248044052a7247285e26e51b81b"
+    }
+  ],
+  "finished_at_utc": "2026-10-25T05:17:17.049203+00:00"
+}

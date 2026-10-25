@@ -1,12 +1,75 @@
 # Offline visual semantic retrieval / 离线图文语义检索
 
-This guide describes local CLI 0.1.5 / `v0.1.0-alpha.4-local.3`, installed on the
-native Windows host. The single `$agent-ffmpeg-local-editor` entry shares this
-runtime; the public alpha.3 / CLI 0.1.2 package retains its original scope.
+This guide describes CLI 0.1.10 / `v0.1.0-alpha.4-local.8`. The single
+`$agent-ffmpeg-local-editor` entry uses the pinned installed package. Initial
+retrieval shipped in CLI 0.1.5; its original failures and evidence remain below.
+The public alpha.3 / CLI 0.1.2 package retains its original scope.
 
 关联：[完整目标 G26/G27/G32](GOAL_GAPS_20261025.md) ·
 [检索契约](../specs/离线语义素材检索契约_v0.1_2026-10-25.md) ·
 [统一 Skill](SKILLS.md)。全部 G01–G38 继续保留。
+
+## CLI 0.1.10 条件与校准流程
+
+**当前迁移限制：** 新索引/校准工程导出、导入和通用 `validate` 成功后，检索 dry-run
+实际报 `SEMANTIC_INDEX_INVALID` / `Manifest outside project semantic asset tree`。
+不能据此承诺档案可搬迁，也不能手改 pin；移动后须明确重新登记、重建索引和校准，
+该替代流程未在此案例实测。普通诊断卡片工程的重渲染与全部像素往返单独通过。
+[实际失败及复现包](../assets/semantic-decision-20261025-r1/demo-installed-r1/KNOWN_ISSUE.md)。
+
+默认 `--query-mode clauses` 保留原文，返回明确 `include` / `exclude`。
+支持有界形式“一只猫，不是一杯咖啡”和 `a cat, not a cup of coffee`；
+复杂从句、双重否定、未解析否定会报 `SEMANTIC_QUERY_SCOPE_REQUIRES_REVIEW`。
+保守语法也可能拦截含“不”的肯定词，不能静默改写客户原意。显式条件文件为：
+
+```json
+{"queries":[{"id":"cat-choice","text":"一只猫，不是一杯咖啡","include":["一只猫"],"exclude":["一杯咖啡"]}]}
+```
+
+每种条件最多 8 项；所有正向条件必须作用在同一采样画面，其最小 cosine 分数
+须高于每个排除条件。该比较是相对图像证据，不证明某个对象不存在。
+
+需要经验拒识时，先准备当前索引的独立校准 JSON，顶层恰为
+`format` / `scope` / `queries`；format 是 `agent-semantic-calibration-set-v1`。
+提供 32–128 条不同查询，正向和库外各至少 16 条。每条含 `id` / `text`、
+可选 `include` / `exclude`，以及 `expected_asset_ids`；库外使用 `[]`。
+标签只供控制器在推理后评分，不能混入搜索查询，也不会发给 embedding worker。
+另组评估查询须在推理前冻结；不得根据其结果调阈值后仍称独立测试。
+
+```powershell
+& $avk semantic calibrate --project $project --index-id campaign-v1 `
+  --calibration-id accept-cuda --input $calibrationJson --kind video `
+  --false-accept-rate 0.05 --minimum-coverage 0.75 --device cuda
+& $avk semantic calibration-list --project $project
+& $avk semantic search --project $project --index-id campaign-v1 `
+  --queries-file $queries --kind video --calibration-id accept-cuda --device cuda
+```
+
+负样本顺序统计量决定经验阈值，接受使用严格 `>`；覆盖率还要求正向首选正确，
+不能通过全部拒绝获得合格档案。拟合失败为 `SEMANTIC_CALIBRATION_QUALITY_FAILED`，
+保留诊断、不登记可用 profile。5% 是这份校准集上的控制参数，不是通用误选保证
+或单次命中概率。当前真实结果的误接受和误拒必须一并展示。
+
+档案绑定索引、模型/实现、条件协议、kind、实际设备及设备编号。CPU 和 CUDA
+分别校准；auto 回退到不匹配设备会明确失败。素材增加后须建立包含新资产的
+索引并另行校准，旧索引仍只覆盖原选定素材。更换安装位置或语义实现时需明确
+登记适配器、重建索引与档案；不可手改摘要绕过。普通发布异常有回滚，本任务的
+硬崩溃持久恢复仍未纳入两类既有受管任务保证。
+
+| 返回 decision | 给 Agent / 客户的准确含义 |
+|---|---|
+| `candidates_require_review` | 无档案，仅返回候选供人工选型 |
+| `calibrated_match` | 候选通过该档案的经验条件，仍需核对画面和使用范围 |
+| `no_calibrated_match` | 没有候选通过该档案；不证明所有原视频帧都没有目标 |
+
+`search --dry-run` 核验绑定而不执行模型；`calibration-list` 只列登记。
+参考图查询仍是候选检索，不提供该文本校准拒识。
+`--query-mode raw` 保留原整句排名供历史复现，不能和 profile 混用。
+
+Current workflow: register an existing native model, build an explicit index,
+freeze separate calibration/evaluation queries, calibrate each actual device,
+then show the returned conditions, decision and actual previews. Empirical
+acceptance is not a semantic truth or universal rejection guarantee.
 
 ## 能做什么
 
@@ -92,17 +155,18 @@ ComfyUI 服务或虚拟化环境。CPU 使用 float32；支持 BF16 的 CUDA 使
   --image $referenceImage --kind image --device cpu
 ```
 
-查询文件只接收 ID 和文本，不接收人工答案或相关性标签：
+查询文件接收 ID、文本及可选的显式包含/排除条件，不接收人工答案或相关性标签：
 
 ```json
 {"queries":[{"id":"coffee-zh","text":"木桌上的一杯咖啡"},{"id":"cat-en","text":"a close-up photograph of a cat"}]}
 ```
 
-一批 1–128 个查询；每条最多 1,024 字符，tokenizer 后最多 64 token。
+一批 1–128 个查询；文本/条件最多 1,024 字符，每个嵌入条件 tokenizer 后最多 64 token。
 模型按既定规则转小写，原始查询仍保留；过长输入明确拒绝，不截断。
 默认每资产只返回最高分的一个采样点；`--all-samples` 保留各采样点候选。
 `--kind` 可限制 image/video；`--min-score` 是调用方显式筛选值，不是概率或
-自动校准的“可信命中”。当前默认始终返回排名候选，包括没有正确素材的查询。
+自动校准的“可信命中”。未指定 profile 时返回候选，库外也可能有命中；
+指定适用档案后返回上表中的经验匹配/未匹配状态，仍可能误接受或误拒。
 
 检索不改 `project.json` 或权利台账；模型任务与诊断缓存会写入项目 cache。
 
@@ -136,7 +200,7 @@ worker 报告实际设备、模型 dtype、模型加载/推理时间、CUDA 已�
 本操作的子进程；大型完整性核验阶段的取消响应和总体性能仍需持续改进。
 当前无跨命令模型常驻服务。应把多条查询合为一批以摊薄启动成本。
 
-## 实测与未完成范围
+## CLI 0.1.5 历史实测与未完成范围
 
 预先冻结的样例包含 8 类现成自然静态图片、误导文件名的重复图片、一个三镜头
 静态图序列视频，以及 20 条中英/否定/库外查询。标签与门槛在第一次检索前固定。
@@ -166,6 +230,6 @@ worker 报告实际设备、模型 dtype、模型加载/推理时间、CUDA 已�
 [统一入口证据](../validation/evidence/semantic-20261025-r1/skill-r1/verification.json)、
 [安装版成片证据](../validation/evidence/semantic-20261025-r1/installed-r1/demo/verification.json)。
 
-开放项包括：可靠否定/关系理解、自动拒绝无匹配、自然运动/动作、跨镜头人物身份、
+开放项包括：通用否定/关系理解、跨素材库可靠拒识、自然运动/动作、跨镜头人物身份、
 音频 embedding、配乐/音效推荐、长期大库性能、常驻模型复用和独立 Agent 成功率。
 本功能的阶段交付不关闭完整 G26，也不缩小其他 37 组目标。

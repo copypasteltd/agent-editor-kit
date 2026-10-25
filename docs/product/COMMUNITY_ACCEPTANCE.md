@@ -1,6 +1,6 @@
 # 素材与 GPU 扩展验收 / Community and GPU acceptance
 
-2026-10-25；本页专项实测基线 **CLI 0.1.3 / `v0.1.0-alpha.4-local.1`**。当前安装版已为 **CLI 0.1.9 / local.7**，见[本地交付](COMMUNITY_LOCAL_DELIVERY.md)。以下保留当时素材/配音/翻译/配乐/GPU 的实际验收，不表示本轮重跑这些推理，也不作为完整剪映功能或成片质量的验收。
+2026-10-25；本页专项实测基线 **CLI 0.1.3 / `v0.1.0-alpha.4-local.1`**。当前安装版已为 **CLI 0.1.10 / local.8**，见[本地交付](COMMUNITY_LOCAL_DELIVERY.md)。以下保留当时素材/配音/翻译/配乐/GPU 的实际验收，不表示本轮重跑这些推理，也不作为完整剪映功能或成片质量的验收。
 
 This page records the scoped local extension. It does not certify full CapCut equivalence, natural-media quality, human listening or semantic translation acceptance. Public alpha.3 remains unchanged.
 

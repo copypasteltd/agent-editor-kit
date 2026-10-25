@@ -1,0 +1,83 @@
+[
+  {
+    "argv": [
+      "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "-c",
+      "import sys;sys.path.insert(0,sys.argv.pop(1));from ai_ad_editor.cli import main;raise SystemExit(main())",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\src",
+      "version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.0837382999961847,
+    "stdout_sha256": "4c4c2682c5e51e4cf14890b8b889ff915ae1d7bb80450e33de22d083e3c779a1",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ok": true,
+    "status": "succeeded"
+  },
+  {
+    "argv": [
+      "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "-c",
+      "import sys;sys.path.insert(0,sys.argv.pop(1));from ai_ad_editor.cli import main;raise SystemExit(main())",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\src",
+      "project",
+      "init",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-20261025-development-r1",
+      "--name",
+      "Calibrated visual retrieval"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.4988580999997794,
+    "stdout_sha256": "cc80f6da3d0160358623919fe041d629d9a86073a7c1907e071a296a1e2fdfe6",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ok": true,
+    "status": "succeeded"
+  },
+  {
+    "argv": [
+      "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "-c",
+      "import sys;sys.path.insert(0,sys.argv.pop(1));from ai_ad_editor.cli import main;raise SystemExit(main())",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\src",
+      "media",
+      "ingest",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-20261025-development-r1",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\semantic-20261025-r1\\asset_a7.png",
+      "--asset-id",
+      "asset_a7",
+      "--license-spdx",
+      "CC0-1.0",
+      "--creator",
+      "Lav Varshney",
+      "--evidence",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\semantic-decision-20261025-r1\\SOURCE.json",
+      "--source-url",
+      "https://scikit-image.org/docs/stable/api/skimage.data.html#skimage.data.camera",
+      "--verification-status",
+      "verified"
+    ],
+    "exit_code": 2,
+    "elapsed_seconds": 2.183175799997116,
+    "stdout_sha256": "92b990446f6a47848f97736350fe950a920cdf1aac1788ef42ade793e4029da6",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ok": false,
+    "status": "failed"
+  }
+]

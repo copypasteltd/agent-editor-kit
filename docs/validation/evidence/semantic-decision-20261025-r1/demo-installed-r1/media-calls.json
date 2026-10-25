@@ -1,0 +1,168 @@
+[
+  {
+    "argv": [
+      "ffmpeg",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-demo-installed-r1\\project\\renders\\decisions.mp4",
+      "-map",
+      "0:v:0",
+      "-f",
+      "framemd5",
+      "-"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "ffmpeg",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-demo-installed-r1\\restored\\renders\\again.mp4",
+      "-map",
+      "0:v:0",
+      "-f",
+      "framemd5",
+      "-"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "ffprobe",
+      "-v",
+      "error",
+      "-count_frames",
+      "-show_streams",
+      "-show_format",
+      "-of",
+      "json",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-demo-installed-r1\\project\\renders\\decisions.mp4"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "ffmpeg",
+      "-nostdin",
+      "-v",
+      "error",
+      "-ss",
+      "1",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-demo-installed-r1\\project\\renders\\decisions.mp4",
+      "-frames:v",
+      "1",
+      "-n",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\semantic-decision-20261025-r1\\demo-installed-r1\\encoded-frame-1.png"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "ffmpeg",
+      "-nostdin",
+      "-v",
+      "error",
+      "-ss",
+      "3",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-demo-installed-r1\\project\\renders\\decisions.mp4",
+      "-frames:v",
+      "1",
+      "-n",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\semantic-decision-20261025-r1\\demo-installed-r1\\encoded-frame-2.png"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "ffmpeg",
+      "-nostdin",
+      "-v",
+      "error",
+      "-ss",
+      "5",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-demo-installed-r1\\project\\renders\\decisions.mp4",
+      "-frames:v",
+      "1",
+      "-n",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\semantic-decision-20261025-r1\\demo-installed-r1\\encoded-frame-3.png"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "ffmpeg",
+      "-nostdin",
+      "-v",
+      "error",
+      "-ss",
+      "7",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-demo-installed-r1\\project\\renders\\decisions.mp4",
+      "-frames:v",
+      "1",
+      "-n",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\semantic-decision-20261025-r1\\demo-installed-r1\\encoded-frame-4.png"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "ffmpeg",
+      "-nostdin",
+      "-v",
+      "error",
+      "-ss",
+      "9",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-demo-installed-r1\\project\\renders\\decisions.mp4",
+      "-frames:v",
+      "1",
+      "-n",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\semantic-decision-20261025-r1\\demo-installed-r1\\encoded-frame-5.png"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "ffmpeg",
+      "-nostdin",
+      "-v",
+      "error",
+      "-ss",
+      "11",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-demo-installed-r1\\project\\renders\\decisions.mp4",
+      "-frames:v",
+      "1",
+      "-n",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\semantic-decision-20261025-r1\\demo-installed-r1\\encoded-frame-6.png"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "ffmpeg",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-demo-installed-r1\\project\\renders\\decisions.mp4",
+      "-filter_complex",
+      "[0:v]fps=5,scale=640:-1:flags=lanczos,split[a][b];[a]palettegen[p];[b][p]paletteuse=dither=sierra2_4a",
+      "-an",
+      "-loop",
+      "0",
+      "-n",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\semantic-decision-20261025-r1\\demo-installed-r1\\decisions.gif"
+    ],
+    "exit_code": 0
+  }
+]

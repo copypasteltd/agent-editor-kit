@@ -1,18 +1,14 @@
 # agent editor kit 文档 / Documentation
 
-当前状态以 [r12 实际入口/API/安装与开发差异](validation/evidence/goal-gaps-20261025-r12/inventory.json)及[完整 G01–G38 编号评估](product/GOAL_GAPS_20261025.md)为准：安装版仍 CLI 0.1.9 / r8；检索候选的真实 GPU 进展与误接受/误拒[单列保留](validation/evidence/goal-gaps-20261025-r12/candidate-progress.json)，未计作安装/Skill 交付。三语功能手册已补齐 51 功能/20 服务和 75 项实际安装字段。Current installed and development evidence remain separate; all original closure conditions apply.
+[简体中文](../README.md) · [繁體中文](../README.zh-TW.md) · [English](../README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit)
 
-<!-- community-current -->
-
-当前本机已更新到 **CLI 0.1.9 / 字幕翻译配音联合流程 / 独立四轨分离 / GPU 配音与翻译 / 359 项内置资源 / 单一 Skill**。以下原安装/差距记录按其原版本保留。 [新增完整流程](product/COMMUNITY_MATERIALS.md) · [本地离线交付](product/COMMUNITY_LOCAL_DELIVERY.md) · [本轮验收与剩余差距](product/COMMUNITY_ACCEPTANCE.md)
-
-<!-- /community-current -->
-
-最新差距复核：[完整 G01–G38 表与原关闭条件](product/GOAL_GAPS_20261025.md) · [r10 真实入口/API](validation/evidence/goal-gaps-20261025-r10/inventory.json) · [历史行/链接审计](validation/evidence/goal-gaps-20261025-r10/documentation-audit.json)。CLI 0.1.9 仍是有限功能集，38 组各有未满足条件；[新字幕配音实测](validation/字幕翻译配音联合流程实测_2026-10-25.md)与只读盘点分开，实际错译和性能限制保留。All original closure conditions and historical README rows are preserved.
-
-[简体中文](../README.md) · [繁體中文](../README.zh-TW.md) · [English](../README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit) · [Local package parts](releases/v0.1.0-alpha.3/artifacts)
-
-当前本机安装为 **v0.1.0-alpha.4-local.7 / CLI 0.1.9 / 独立四轨分离 / GPU 配音与翻译 / 359 项资源**；公开预发布仍为 **alpha.3 / CLI 0.1.2**。500 套风格与 **1 个 Skill / 17 项内部模块**继续保留，完整剪映等价仍未验收。Local CLI 0.1.9 includes joint subtitle dubbing, independent four-source separation and the community/GPU extension; published alpha.3 downloads retain CLI 0.1.2. Use the matching application, kit and model pins.
+当前本机交付 **CLI 0.1.10 / alpha.4-local.8 / r9 kit**，固定安装包、1 Skill/17 模块。
+新增条件检索和设备绑定经验校准，CPU/GPU/真实 Skill 均有收据；两条库外误选、一条钟表误拒和检索工程迁移失败保留。
+[完整 G01–G38 差距表](product/GOAL_GAPS_20261025.md) · [本批实际实现/失败/C19](validation/语义条件与校准拒识实测_2026-10-25.md) ·
+[当前安装流程](product/COMMUNITY_LOCAL_DELIVERY.md) · [全部 80 条预览](assets/semantic-decision-20261025-r1/installed-r1/index.html)。
+三语功能手册保留 F01–F51 / S01–S20 与 75 项真实能力字段；完整剪映目标未完成，无总体完成率。
+公开 alpha.3 / CLI 0.1.2 旧包与所有历史收据/原关闭条件保留。
+Current local delivery and actual query/migration failures are explicit; all 38 original closure conditions apply.
 
 | 阅读目标 / Goal | Document |
 |---|---|
@@ -20,7 +16,7 @@
 | 当前 alpha.3 预发布下载、安装、Skill 注册与首次视频 / Current release and first render | [Release](https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3) · [简体上手](releases/v0.1.0-alpha.3/QUICKSTART.md) · [繁體上手](releases/v0.1.0-alpha.3/QUICKSTART.zh-TW.md) · [English](releases/v0.1.0-alpha.3/QUICKSTART.en.md) |
 | alpha.3 发行范围、新目录安装与可执行示例 / Release scope and fresh-directory checks | [Scope](releases/v0.1.0-alpha.3/RELEASE.md) · [Release notes](releases/v0.1.0-alpha.3/RELEASE-NOTES.md) · [Native verification](validation/evidence/release-v0.1.0-alpha.3-r1/verification.json) |
 | alpha.3 的 GitHub 发布与 10 个附件逐项下载核对 / Current publication and ten download hashes | [Publication receipt](validation/evidence/release-v0.1.0-alpha.3-r1/publication.json) · [Reproduction](validation/evidence/release-v0.1.0-alpha.3-r1/git-reproduction.json) |
-| 当前 CLI 0.1.9 的 38 组差距、联合字幕配音与剩余质量/AI/性能工作 / Current full-goal assessment | [2026-10-25 最新评估](product/GOAL_GAPS_20261025.md) · [最新 6 次入口只读核对](validation/evidence/goal-gaps-20261025-r10/inventory.json) · [197 文件与字幕配音实测](validation/字幕翻译配音联合流程实测_2026-10-25.md) · [当前实际 Skill 联合流程](validation/evidence/subtitle-dubbing-20261025-r1/skill-r1/verification.json) |
+| 当前 CLI 0.1.10 的全部 38 组差距 / Current full-goal assessment | [最新编号表](product/GOAL_GAPS_20261025.md) · [CPU/GPU/Skill 与错误](validation/语义条件与校准拒识实测_2026-10-25.md) · [C19](product/CASES.md#c19-semantic-decisions) |
 | alpha.3 历史目标评估 / Historical alpha.3 assessment | [2026-10-24 差距评估](product/GOAL_GAPS_20261024.md) · [Installed inventory](validation/evidence/goal-gaps-20261024-r1/inventory.json) |
 | 当前完整功能与本地服务模块、安装版全部能力字段 / Complete functional and service modules | [简体](product/CAPABILITIES.md) · [繁體](product/CAPABILITIES.zh-TW.md) · [English](product/CAPABILITIES.en.md) |
 | 46 效果算子与 12 运镜的具体参数、范围、后端 / Full effect and motion parameters | [简体](product/EFFECTS.md) · [繁體](product/EFFECTS.zh-TW.md) · [English](product/EFFECTS.en.md) |

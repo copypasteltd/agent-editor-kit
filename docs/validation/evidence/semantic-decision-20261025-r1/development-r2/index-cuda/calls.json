@@ -1,0 +1,34 @@
+[
+  {
+    "argv": [
+      "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "-c",
+      "import sys;sys.path.insert(0,sys.argv.pop(1));from ai_ad_editor.cli import main;raise SystemExit(main())",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\src",
+      "semantic",
+      "index",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-decision-20261025-development-r2",
+      "--index-id",
+      "images-v1",
+      "--adapter-id",
+      "siglip2",
+      "--all-visual-assets",
+      "--device",
+      "cuda",
+      "--batch-size",
+      "8"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 317.26232880000316,
+    "stdout_sha256": "00dcf9574530b41d98835b3ebb6584df22fe3233614973f1d1fe8b22331bee36",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ok": true,
+    "status": "succeeded"
+  }
+]

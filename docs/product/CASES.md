@@ -528,3 +528,26 @@ English: actual local CUDA translation/speech creates three editable voice clips
 The package roundtrip preserves PCM and decoded RGB exactly; public previews are silent.
 Awkward original translation and CPU rendering cost are retained. This case does not close
 naturalness, semantic acceptance, word timing, lip sync or complete G19/G32/G33/G36.
+
+
+<a id="c19-semantic-decisions"></a>
+
+## C19：条件/拒识完整预览与真实工程迁移失败 / Decisions and migration failure
+
+[完整实测](../validation/语义条件与校准拒识实测_2026-10-25.md) · [全部 80 条决策](../assets/semantic-decision-20261025-r1/installed-r1/index.html) · [实际源与许可](../assets/semantic-decision-20261025-r1/SOURCE.json)。
+
+![Actual decisions including all three query failures](../assets/semantic-decision-20261025-r1/demo-installed-r1/decisions.gif)
+
+| 编号 | 输入/输出 | 实际核验与边界 |
+|---|---|---|
+| C19-01 | 已冻结 40 校准/60 另组/20 原查询，11 资产/10 类熟悉静态图 | 真实安装 CPU/CUDA 与统一 Skill；另组库外 18/20，保留大象/吉他误选与原钟表误拒 |
+| C19-02 | 全部 80 条实际决策 → HTML/4 张 PNG/JSON | 包含全部失败；其余候选不保证全部相关；无新的模型推理 |
+| C19-03 | 六张实际结果卡 → [12 秒 MP4](../assets/semantic-decision-20261025-r1/demo-installed-r1/decisions.mp4) / GIF | 960×540 / 30fps / 360 帧；GIF 5fps / 60 帧 / 12000ms，非执行录像或自然广告 |
+| C19-04 | [六段可编辑卡片包](../assets/semantic-decision-20261025-r1/demo-installed-r1/editable-cards.aevpkg.zip) → 导入/重渲染 | 全部解码帧摘要相同；六段 image clips 可编辑，卡内文字是栅格图 |
+| C19-05 | 新检索/校准工程 → 导出/导入/通用 validate → search dry-run | 前三步成功、search 实际失败 `SEMANTIC_INDEX_INVALID`；[错误与复现包说明](../assets/semantic-decision-20261025-r1/demo-installed-r1/KNOWN_ISSUE.md)，不计可搬迁通过 |
+| C19-06 | [六张实际编码帧](../assets/semantic-decision-20261025-r1/demo-installed-r1/actual-encoded-frames.png) | Agent 静态检查；不是人类连续播放/听审/语义接受，无声音音轨 |
+
+[19 次 CLI 原始失败](../validation/evidence/semantic-decision-20261025-r1/demo-installed-r1/failure.json)与
+[已完成媒体核验](../validation/evidence/semantic-decision-20261025-r1/demo-finalization-r1/verification.json)分别保存。
+English: real output retains all mistakes. Card-package frames match; the separate indexed/calibrated project fails search after import.
+All original G26/G31/G32/G33/G36 conditions remain; no natural-action, human acceptance or clean-host migration claim.

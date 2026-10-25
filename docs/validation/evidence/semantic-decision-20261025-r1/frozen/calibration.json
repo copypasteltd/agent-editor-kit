@@ -1,0 +1,248 @@
+{
+  "format": "agent-semantic-calibration-set-v1",
+  "scope": "Eleven familiar static images, ten visual classes; English/Chinese text, no natural actions, audio or identity.",
+  "queries": [
+    {
+      "id": "cpos00en",
+      "text": "black and white photo of a man with a camera",
+      "expected_asset_ids": [
+        "asset_a7"
+      ]
+    },
+    {
+      "id": "cpos00zh",
+      "text": "黑白照片里的男人和相机",
+      "expected_asset_ids": [
+        "asset_a7"
+      ]
+    },
+    {
+      "id": "cpos01en",
+      "text": "a coffee cup and saucer viewed from above",
+      "expected_asset_ids": [
+        "asset_b4"
+      ]
+    },
+    {
+      "id": "cpos01zh",
+      "text": "俯拍咖啡杯与杯碟",
+      "expected_asset_ids": [
+        "asset_b4"
+      ]
+    },
+    {
+      "id": "cpos02en",
+      "text": "the face of a brown tabby cat",
+      "expected_asset_ids": [
+        "asset_c2",
+        "asset_i1"
+      ]
+    },
+    {
+      "id": "cpos02zh",
+      "text": "棕色虎斑猫的脸",
+      "expected_asset_ids": [
+        "asset_c2",
+        "asset_i1"
+      ]
+    },
+    {
+      "id": "cpos03en",
+      "text": "a portrait in an orange astronaut suit",
+      "expected_asset_ids": [
+        "asset_d9"
+      ]
+    },
+    {
+      "id": "cpos03zh",
+      "text": "橙色宇航服的人物肖像",
+      "expected_asset_ids": [
+        "asset_d9"
+      ]
+    },
+    {
+      "id": "cpos04en",
+      "text": "dense blades of lawn grass",
+      "expected_asset_ids": [
+        "asset_e3"
+      ]
+    },
+    {
+      "id": "cpos04zh",
+      "text": "密集的草坪草叶",
+      "expected_asset_ids": [
+        "asset_e3"
+      ]
+    },
+    {
+      "id": "cpos05en",
+      "text": "a close texture of loose gravel",
+      "expected_asset_ids": [
+        "asset_f8"
+      ]
+    },
+    {
+      "id": "cpos05zh",
+      "text": "松散碎石的近景纹理",
+      "expected_asset_ids": [
+        "asset_f8"
+      ]
+    },
+    {
+      "id": "cpos06en",
+      "text": "a blurred photograph of an analog clock",
+      "expected_asset_ids": [
+        "asset_g5"
+      ]
+    },
+    {
+      "id": "cpos06zh",
+      "text": "模糊的指针钟表照片",
+      "expected_asset_ids": [
+        "asset_g5"
+      ]
+    },
+    {
+      "id": "cpos07en",
+      "text": "a telescope view of many distant galaxies",
+      "expected_asset_ids": [
+        "asset_h6"
+      ]
+    },
+    {
+      "id": "cpos07zh",
+      "text": "望远镜中的许多遥远星系",
+      "expected_asset_ids": [
+        "asset_h6"
+      ]
+    },
+    {
+      "id": "cpos08en",
+      "text": "a close texture of a brick wall",
+      "expected_asset_ids": [
+        "asset_j3"
+      ]
+    },
+    {
+      "id": "cpos08zh",
+      "text": "砖墙表面的近距离纹理",
+      "expected_asset_ids": [
+        "asset_j3"
+      ]
+    },
+    {
+      "id": "cpos09en",
+      "text": "a black and white horse silhouette",
+      "expected_asset_ids": [
+        "asset_k8"
+      ]
+    },
+    {
+      "id": "cpos09zh",
+      "text": "黑白马匹剪影",
+      "expected_asset_ids": [
+        "asset_k8"
+      ]
+    },
+    {
+      "id": "cout00en",
+      "text": "a red racing car on a road",
+      "expected_asset_ids": []
+    },
+    {
+      "id": "cout00zh",
+      "text": "公路上的红色赛车",
+      "expected_asset_ids": []
+    },
+    {
+      "id": "cout01en",
+      "text": "a golden retriever dog",
+      "expected_asset_ids": []
+    },
+    {
+      "id": "cout01zh",
+      "text": "一只金毛寻回犬",
+      "expected_asset_ids": []
+    },
+    {
+      "id": "cout02en",
+      "text": "ocean waves breaking on a beach",
+      "expected_asset_ids": []
+    },
+    {
+      "id": "cout02zh",
+      "text": "拍打沙滩的海浪",
+      "expected_asset_ids": []
+    },
+    {
+      "id": "cout03en",
+      "text": "a grand piano in a concert hall",
+      "expected_asset_ids": []
+    },
+    {
+      "id": "cout03zh",
+      "text": "音乐厅里的三角钢琴",
+      "expected_asset_ids": []
+    },
+    {
+      "id": "cout04en",
+      "text": "a forest beside a clear lake",
+      "expected_asset_ids": []
+    },
+    {
+      "id": "cout04zh",
+      "text": "清澈湖泊旁边的树林",
+      "expected_asset_ids": []
+    },
+    {
+      "id": "cout05en",
+      "text": "a bowl filled with fresh fruit",
+      "expected_asset_ids": []
+    },
+    {
+      "id": "cout05zh",
+      "text": "装满新鲜水果的碗",
+      "expected_asset_ids": []
+    },
+    {
+      "id": "cout06en",
+      "text": "a bicycle parked beside a building",
+      "expected_asset_ids": []
+    },
+    {
+      "id": "cout06zh",
+      "text": "停在建筑旁的自行车",
+      "expected_asset_ids": []
+    },
+    {
+      "id": "cout07en",
+      "text": "an airplane flying in the sky",
+      "expected_asset_ids": []
+    },
+    {
+      "id": "cout07zh",
+      "text": "天空中飞行的飞机",
+      "expected_asset_ids": []
+    },
+    {
+      "id": "cout08en",
+      "text": "a microphone in a recording studio",
+      "expected_asset_ids": []
+    },
+    {
+      "id": "cout08zh",
+      "text": "录音棚里的麦克风",
+      "expected_asset_ids": []
+    },
+    {
+      "id": "cout09en",
+      "text": "a surgeon operating in a hospital",
+      "expected_asset_ids": []
+    },
+    {
+      "id": "cout09zh",
+      "text": "医院里正在手术的外科医生",
+      "expected_asset_ids": []
+    }
+  ]
+}

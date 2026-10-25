@@ -2,10 +2,10 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.9 / alpha.4-local.7。** One registered Skill / 17 modules;
+**Current local / 当前本机 / 目前本機：CLI 0.1.10 / alpha.4-local.8。** One registered Skill / 17 modules;
 joint subtitle translation/dubbing, CTC activity boundaries, managed job recovery, independent four-source
 separation, offline image/text retrieval, GPU speech/translation and 359 resources. Public alpha.3 remains CLI 0.1.2.
-[Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](subtitle-dubbing-capabilities-cli-0.1.9.json) ·
+[Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](semantic-decision-capabilities-cli-0.1.10.json) ·
 [Subtitle dubbing workflow](SUBTITLE_DUBBING.md) · [CTC limits](CTC_ACTIVITY_ALIGNMENT.md) ·
 [All 38 remaining gap groups](GOAL_GAPS_20261025.md).
 Cue-window fit does not establish semantics, natural listening, word precision or lip sync.
@@ -29,7 +29,7 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 | K05 | [`local-policy`](../../skills/agent-ffmpeg-local-editor/references/modules/local-policy/module.md) | 本地執行約束 | 工程引用 → 審計/結構化拒絕 | `policy audit` | 運行時禁止遠程引用；不推斷為 OS 沙箱。 |
 | K06 | [`rights-ledger`](../../skills/agent-ffmpeg-local-editor/references/modules/rights-ledger/module.md) | 素材與模型權利證據 | 來源/許可/本地證據 → 臺賬/影響/門禁 | `rights list/check/update/impact` | 分別處理母圖與 LUT 許可；不自動認定版權。 |
 | K07 | [`local-models`](../../skills/agent-ffmpeg-local-editor/references/modules/local-models/module.md) | 已有離線模型登記 | 原生環境 + 權重/雜湊/許可 → 適配器與推理產物 | `audio adapter; audio separate-stems; media adapter; asr adapter; ocr; face; tts; voice; translate; dub subtitles; gpu` | 無權重下載；先核對能力/環境，再調用。 |
-| K08 | [`video-understand`](../../skills/agent-ffmpeg-local-editor/references/modules/video-understand/module.md) | 鏡頭/靜音與影片證據 | 本地影片/音頻 → 分析 JSON、影格、字幕候選 | `media understand/contact-sheet; subtitle transcribe; semantic index/search` | 啟發式與模型語義能力分開說明。 |
+| K08 | [`video-understand`](../../skills/agent-ffmpeg-local-editor/references/modules/video-understand/module.md) | 鏡頭/靜音與影片證據 | 本地影片/音頻 → 分析 JSON、影格、字幕候選 | `media understand/contact-sheet; subtitle transcribe; semantic index/calibrate/calibration-list/search` | 啟發式與模型語義能力分開說明。 |
 | K09 | [`template-library`](../../skills/agent-ffmpeg-local-editor/references/modules/template-library/module.md) | 模板與片段組復用 | 模板/變量/素材庫 → 可編輯變體與索引 | `template apply/batch; library; fragment` | 用戶自有素材，按資源許可復用。 |
 | K10 | [`long-to-short`](../../skills/agent-ffmpeg-local-editor/references/modules/long-to-short/module.md) | 長影片轉短片 | 本地課程/口播 + 核對文本 → 粗剪與短片工程 | `media highlights/smart-cut; timeline compose` | 候選段需復核，不聲稱全自動語義導演。 |
 | K11 | [`screen-demo`](../../skills/agent-ffmpeg-local-editor/references/modules/screen-demo/module.md) | 錄屏與錨點運鏡 | 錄屏 + 操作錨點 → 放大/回全景/字幕演示 | `timeline compose; ocr anchors; preview range` | OCR 需要已有模型，文本框不等於可點擊控件。 |
@@ -130,7 +130,7 @@ brief + 本地素材 → 計劃、可編輯工程、成片、manifest
 
 本地影片/音頻 → 分析 JSON、影格、字幕候選
 
-`media understand/contact-sheet; subtitle transcribe; semantic index/search`
+`media understand/contact-sheet; subtitle transcribe; semantic index/calibrate/calibration-list/search`
 
 啟發式與模型語義能力分開說明。
 
@@ -267,3 +267,21 @@ CLI 0.1.7: K04 uses [owned job recovery](JOB_RECOVERY.md); preview `--cleanup-jo
 Plain local SRT → OPUS Chinese/English translation → one Kokoro initialization per voice batch → actual complete WAV sample checks → atomic editable audio/bilingual captions. Original text/times and every speed attempt are retained. Explicit tracks/casting/mixing and bounded whole-utterance regeneration; managed cancellation/timeout/recovery protects committed media and model licenses.
 
 字幕翻译、完整分段配音、实际时窗和可编辑入轨已实现；字幕翻譯、完整分段配音、實際時窗與可編輯入軌已實作。仅中英/普通 SRT；仅 cue 级安排。Actual awkward translations remain recorded. Naturalness, semantic acceptance, word alignment, lip sync, broad reliability and full CapCut parity remain open. The existing 103-name voice catalog now has at least seven distinct voices actually generated; no human listening acceptance.
+
+
+<!-- semantic-decisions-current -->
+
+## CLI 0.1.10 / F50 / S18 / K08: explicit clauses and empirical acceptance
+
+[完整流程 / Workflow](SEMANTIC_RETRIEVAL.md) · [实际质量/错误 / Actual results](../validation/语义条件与校准拒识实测_2026-10-25.md) · [C19](CASES.md#c19-semantic-decisions).
+
+中英条件检索与同帧正负比较、索引/类型/实现/实际设备绑定经验校准已交付。
+中英條件檢索、同影格正負比較與裝置綁定經驗校準已實作。
+`semantic calibrate/calibration-list/search` uses 32–128 reviewed examples (at least 16 positive and 16 absent),
+a correct-positive gate and empirical strict cutoff. Labels stay in the controller. All results still require review.
+Installed CPU/CUDA and the actual Skill retain two false accepts and one original false rejection.
+The new retrieval package fails search after import even though general validate succeeds; portable profiles are not established.
+Complex negation, natural actions/identity/audio/recommendation, large-library performance and managed semantic crash recovery remain open.
+Original CLI 0.1.5 query failures and raw mode remain historical evidence; they are not erased by this extension.
+
+<!-- /semantic-decisions-current -->

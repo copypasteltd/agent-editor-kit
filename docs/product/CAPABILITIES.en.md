@@ -2,17 +2,17 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.9 / alpha.4-local.7。** One registered Skill / 17 modules;
+**Current local / 当前本机 / 目前本機：CLI 0.1.10 / alpha.4-local.8。** One registered Skill / 17 modules;
 joint subtitle translation/dubbing, CTC activity boundaries, managed job recovery, independent four-source
 separation, offline image/text retrieval, GPU speech/translation and 359 resources. Public alpha.3 remains CLI 0.1.2.
-[Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](subtitle-dubbing-capabilities-cli-0.1.9.json) ·
+[Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](semantic-decision-capabilities-cli-0.1.10.json) ·
 [Subtitle dubbing workflow](SUBTITLE_DUBBING.md) · [CTC limits](CTC_ACTIVITY_ALIGNMENT.md) ·
 [All 38 remaining gap groups](GOAL_GAPS_20261025.md).
 Cue-window fit does not establish semantics, natural listening, word precision or lip sync.
 
 <!-- /community-current -->
 
-[README](../../README.en.md) · [Machine response](subtitle-dubbing-capabilities-cli-0.1.9.json) · [Module data](module-catalog.json)
+[README](../../README.en.md) · [Machine response](semantic-decision-capabilities-cli-0.1.10.json) · [Module data](module-catalog.json)
 
 | ID | Module | Behavior and input → output | Entry | Dependency/limit |
 |---|---|---|---|---|
@@ -65,7 +65,7 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 | F47 | GPU voice/translation selection | Explicit CPU/CUDA/auto and free-VRAM checks → actual provider/device and explicit fallback/failure. | `gpu inspect; voice; translate; --device` | RTX 3060 tested; CUDA 13 voice / CUDA 12 translation, voice device 0 only; this does not accelerate all filters. |
 | F48 | Music preparation and mixing | Actual music/speech assets → trim, loop, fades, explicit gain and speech-ducked mix. | `music prepare/mix` | Retains original stems and complete speech; no composition, automatic loop-seam repair or guaranteed visual semantic matching. |
 | F49 | Native capture | Explicit window/desktop/region/camera/microphone → finite recording, CPU/NVENC, cancellation and project assets. | `capture devices/record` | Actual CPU/GPU window evidence; camera/microphone, joint AV sync, device faults and long recording unaccepted. |
-| F50 | Offline visual semantic retrieval | Local media and an explicit model → index, Chinese/English/reference-image queries, real previews/source times and editable references. | `semantic adapter-register/index/search/verify` | Installed negation/open-set failures remain; calibrated candidate has development GPU checks only; actions/identity/audio recommendations/scale remain open. |
+| F50 | Offline visual semantic retrieval and conditions | Local index, Chinese/English/reference images, same-frame positive/negative clauses, empirical profiles, actual previews/source times and editable references. | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | Installed CPU/CUDA/Skill checked; two false accepts, one false rejection and a new migration error remain; no universal rejection/action/identity/audio recommendation claim. |
 | F51 | Joint subtitle translation/dubbing | Plain Chinese/English SRT and explicit voices/tracks → translations, complete batched WAV, actual fit, editable audio/bilingual captions and atomic application. | `dub subtitles` | Reuses initialization within the batch; retains originals/retries/awkward translations; cue fitting does not establish word timing, naturalness or lip sync. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
@@ -87,7 +87,7 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 | S15 | BGM preparation and mixing | Native FFmpeg audio | Explicit trim/loop/fades, independent voice/music stems and ducking | `music prepare/mix` | No composition, voice truncation or seam-repair promise |
 | S16 | GPU compatibility | Native NVIDIA libraries | `auto/cpu/cuda`, free-VRAM check, explicit provider/fallback | `gpu inspect; --device` | RTX 3060 tested; optional NVIDIA/Intel terms preserved |
 | S17 | Native Windows capture | FFmpeg gdigrab / DirectShow | Explicit source/device IDs, finite duration, full decode and asset registration | `capture devices/record` | Actual CPU/GPU window test; camera/microphone/AV sync pending |
-| S18 | Visual semantic retrieval | Explicit native SigLIP2 worker | Existing Torch/Transformers/model; actual GPU/CPU and source/preview/vector integrity | `semantic adapter-register/index/search/verify` | Cold-start and large-library performance open; cosine is not probability |
+| S18 | Visual semantics and empirical calibration | Explicit native SigLIP2 worker | Existing Torch/Transformers/weights; profile binds index/implementation/kind/actual device | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | Scores are not probabilities; cold start, scale and calibrated-project migration remain limited |
 | S19 | Independent four-source separation | Native Torch/TorchAudio HDemucs worker | Explicit native Python, weights/evidence/implementation hashes; auto/cpu/cuda, four float WAV/tracks | `audio adapter; audio separate-stems` | Torch/weights excluded from base ZIP; natural listening and weight licensing remain open |
 | S20 | Joint subtitle dubbing | Existing native OPUS/Kokoro workers + managed project transaction | Plain SRT, explicit languages/voices/tracks, CPU/CUDA/auto, batch reuse | `dub subtitles` | [Workflow](SUBTITLE_DUBBING.md); complete utterances/retries retained; words/lip sync/natural quality open |
 
@@ -105,7 +105,8 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
   "index_format": "agent-visual-semantic-index-v1",
   "commands": [
     "semantic adapter-register/adapter-list/adapter-inspect",
-    "semantic index/index-list/verify/search"
+    "semantic index/index-list/verify/search",
+    "semantic calibrate/calibration-list"
   ],
   "input_kinds": [
     "project_image",
@@ -127,6 +128,37 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
   "maximum_batch_size": 32,
   "score": "cosine_similarity_not_probability",
   "source_clock": "original_native_PTS_relative_to_container_origin",
+  "query_protocol": "agent-semantic-clauses-v1",
+  "query_modes": [
+    "clauses",
+    "raw"
+  ],
+  "maximum_include_clauses": 8,
+  "maximum_exclude_clauses": 8,
+  "decisions": [
+    "candidates_require_review",
+    "calibrated_match",
+    "no_calibrated_match"
+  ],
+  "calibration": {
+    "format": "agent-semantic-acceptance-profile-v1",
+    "dataset_format": "agent-semantic-calibration-set-v1",
+    "minimum_queries": 32,
+    "maximum_queries": 128,
+    "minimum_positive_queries": 16,
+    "minimum_absent_queries": 16,
+    "binding": [
+      "index",
+      "model",
+      "implementation",
+      "query_protocol",
+      "kind",
+      "actual_device",
+      "device_index"
+    ],
+    "acceptance": "minimum_positive_clause_cosine_strictly_greater_than_empirical_cutoff",
+    "all_results_require_review": true
+  },
   "integrity": [
     "model",
     "selected_native_runtime_components",
@@ -141,7 +173,10 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "fixed_768_dimension_224px_64token_base_profile_only",
     "sampled_frames_do_not_prove_actions_or_identity",
     "model_reuse_within_current_batch_only",
-    "no_open_set_abstention_or_calibrated_probability",
+    "empirical_profile_not_universal_rejection_or_probability",
+    "bounded_negation_grammar_unparsed_scope_requires_review",
+    "exclusions_are_relative_frame_evidence_not_object_absence_detection",
+    "calibration_does_not_establish_natural_scene_rejection_or_recall",
     "no_audio_embeddings_or_music_recommendation",
     "no_implicit_download_or_remote_code",
     "relocated_or_changed_adapter_requires_explicit_registration_and_index_rebuild",
@@ -4079,3 +4114,21 @@ Explicit local SigLIP2 image/video-sample embeddings; Chinese/English/reference-
 Plain local SRT → OPUS Chinese/English translation → one Kokoro initialization per voice batch → actual complete WAV sample checks → atomic editable audio/bilingual captions. Original text/times and every speed attempt are retained. Explicit tracks/casting/mixing and bounded whole-utterance regeneration; managed cancellation/timeout/recovery protects committed media and model licenses.
 
 字幕翻译、完整分段配音、实际时窗和可编辑入轨已实现；字幕翻譯、完整分段配音、實際時窗與可編輯入軌已實作。仅中英/普通 SRT；仅 cue 级安排。Actual awkward translations remain recorded. Naturalness, semantic acceptance, word alignment, lip sync, broad reliability and full CapCut parity remain open. The existing 103-name voice catalog now has at least seven distinct voices actually generated; no human listening acceptance.
+
+
+<!-- semantic-decisions-current -->
+
+## CLI 0.1.10 / F50 / S18 / K08: explicit clauses and empirical acceptance
+
+[完整流程 / Workflow](SEMANTIC_RETRIEVAL.md) · [实际质量/错误 / Actual results](../validation/语义条件与校准拒识实测_2026-10-25.md) · [C19](CASES.md#c19-semantic-decisions).
+
+中英条件检索与同帧正负比较、索引/类型/实现/实际设备绑定经验校准已交付。
+中英條件檢索、同影格正負比較與裝置綁定經驗校準已實作。
+`semantic calibrate/calibration-list/search` uses 32–128 reviewed examples (at least 16 positive and 16 absent),
+a correct-positive gate and empirical strict cutoff. Labels stay in the controller. All results still require review.
+Installed CPU/CUDA and the actual Skill retain two false accepts and one original false rejection.
+The new retrieval package fails search after import even though general validate succeeds; portable profiles are not established.
+Complex negation, natural actions/identity/audio/recommendation, large-library performance and managed semantic crash recovery remain open.
+Original CLI 0.1.5 query failures and raw mode remain historical evidence; they are not erased by this extension.
+
+<!-- /semantic-decisions-current -->

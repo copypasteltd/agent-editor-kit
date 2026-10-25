@@ -1,0 +1,80 @@
+[
+  {
+    "name": "skill-validation",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "C:/Users/carzy/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+      "E:\\dev\\sandbox\\AI广告剪辑\\skills\\agent-ffmpeg-local-editor"
+    ],
+    "started_at_utc": "2026-10-25T04:56:59.196495+00:00",
+    "exit_code": 0,
+    "stdout_sha256": "6cf9e7f0d34ccd36dbd28f270cd28dd04277b2e1516bd4333ce7bb501d7b18d4",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "pin",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "scripts/pin_community_skill.py",
+      "--bundle",
+      "local/agent-ffmpeg/v0.1.0-alpha.4-local.8/candidate-r1/bundle",
+      "--release",
+      "v0.1.0-alpha.4-local.8"
+    ],
+    "started_at_utc": "2026-10-25T04:56:59.351269+00:00",
+    "exit_code": 0,
+    "stdout_sha256": "8705b8e28aedc3234c830fe75ff96d1e4e5cbf59ea68ed913f4cd363624f1c74",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "activate",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "scripts/activate_community_runtime.py",
+      "--installed",
+      "local/agent-ffmpeg/v0.1.0-alpha.4-local.8/final-r1/installed",
+      "--packs",
+      "local/agent-ffmpeg/community-portable-r1/模型 包",
+      "--voice-cuda-lib",
+      "E:/dev/sandbox/模型配乐/ComfyUI_windows_portable/python_embeded/Lib/site-packages/torch/lib",
+      "--translation-cuda-lib",
+      "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.4/bin"
+    ],
+    "started_at_utc": "2026-10-25T04:57:01.297844+00:00",
+    "exit_code": 0,
+    "stdout_sha256": "4f4265bc713d4cdc7bfd342e6a0ca9cb500c41ec67f83565205caafe0458dfaf",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "register",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "register-agent-ffmpeg-local-skills.ps1",
+      "-ReceiptPath",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\semantic-decision-20261025-r1\\activation-r1\\registration.json"
+    ],
+    "started_at_utc": "2026-10-25T04:57:54.005079+00:00",
+    "exit_code": 0,
+    "stdout_sha256": "819904d671c945e2a5503040ccd9fd7d29f9d4605b2a948e98e2aae5ffd50264",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

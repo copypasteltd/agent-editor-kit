@@ -1,0 +1,392 @@
+{
+  "status": "passed",
+  "started_at_utc": "2026-10-25T05:44:11.417510+00:00",
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "goal_remains_active": true,
+  "baseline_commit": "8a684ed362fde3daf92ab42a5a7459eb5cec427b",
+  "finished_at_utc": "2026-10-25T05:44:32.305542+00:00",
+  "cli_version": "0.1.10",
+  "release": "v0.1.0-alpha.4-local.8",
+  "read_only_skill_calls": 6,
+  "installed_source_files": 199,
+  "source_equals_installed": true,
+  "skill_files": 64,
+  "registered_skills": 1,
+  "internal_modules": 17,
+  "kit_sha256": "c6e8fe976868704e0f7111eb9d579297d31c6febfe81a3fbb5d0b8682697f67e",
+  "capabilities": 75,
+  "capability_status_counts": {
+    "implemented_with_limits": 47,
+    "implemented": 20,
+    "degraded": 1,
+    "local_adapter_only": 7
+  },
+  "all_38_original_closure_conditions_verbatim": true,
+  "all_R01_R75_verbatim_in_three_readmes": true,
+  "current_R_rows": 81,
+  "manuals": [
+    {
+      "path": "docs/product/CAPABILITIES.md",
+      "F": 51,
+      "S": 20,
+      "actual_fields": 75,
+      "fields_equal": true
+    },
+    {
+      "path": "docs/product/CAPABILITIES.zh-TW.md",
+      "F": 51,
+      "S": 20,
+      "actual_fields": 75,
+      "fields_equal": true
+    },
+    {
+      "path": "docs/product/CAPABILITIES.en.md",
+      "F": 51,
+      "S": 20,
+      "actual_fields": 75,
+      "fields_equal": true
+    }
+  ],
+  "local_links_checked": 2105,
+  "missing_local_links": [],
+  "real_execution_receipts": [
+    {
+      "path": "docs/validation/evidence/semantic-decision-20261025-r1/tests/development-r3/verification.json",
+      "sha256": "92c0693d2978db4fecc65f8339f4a8ce5813f0f6f71075ddbd288418ccc7c347",
+      "status": "terminal-passing-test-receipt"
+    },
+    {
+      "path": "docs/validation/evidence/semantic-decision-20261025-r1/tests/installed-r1/verification.json",
+      "sha256": "1017195c1548963a8b3fdc8602f227fe9768637ab38e61b70b6abd22f51b4d31",
+      "status": "terminal-passing-test-receipt"
+    },
+    {
+      "path": "docs/validation/evidence/semantic-decision-20261025-r1/tests/installed-cli-r1/verification.json",
+      "sha256": "2c276883583a29dbefc65c87611385f0b977cdb9fc707089f78ae6e1b21eb84a",
+      "status": "terminal-passing-test-receipt"
+    },
+    {
+      "path": "docs/validation/evidence/semantic-decision-20261025-r1/controls-r1/verification.json",
+      "sha256": "5ca042cbf44a7f7e309aace559fb8854bee1c117ab6e078b1332a80801bf9c53",
+      "status": "passed"
+    },
+    {
+      "path": "docs/validation/evidence/semantic-decision-20261025-r1/installed-r1/heldout-cuda/verification.json",
+      "sha256": "6476c52b628103b4ca0406ddb5a081dcf5540508a71745c8b7e7f6107203ebca",
+      "status": "completed-with-quality-evidence"
+    },
+    {
+      "path": "docs/validation/evidence/semantic-decision-20261025-r1/installed-r1/heldout-cpu/verification.json",
+      "sha256": "4a92388752112387fa89db7b122d9b07e9e0533af9cc653da9eccb9e94f22827",
+      "status": "completed-with-quality-evidence"
+    },
+    {
+      "path": "docs/validation/evidence/semantic-decision-20261025-r1/installed-r1/regression-cuda/verification.json",
+      "sha256": "d453f7340d8b9d3262bdc75041d73e4178c9e1a88c91e2746137bade592895fb",
+      "status": "completed-with-quality-evidence"
+    },
+    {
+      "path": "docs/validation/evidence/semantic-decision-20261025-r1/installed-r1/regression-cpu/verification.json",
+      "sha256": "03bee04562e9269e5a41565a3756f62877970e017d6ed82415917eff84499692",
+      "status": "completed-with-quality-evidence"
+    },
+    {
+      "path": "docs/validation/evidence/semantic-decision-20261025-r1/skill-r1/heldout-cuda/verification.json",
+      "sha256": "bcdc8d2213f51fee029b125973629e80b985819f474d3708c88d9deae794345a",
+      "status": "completed-with-quality-evidence"
+    },
+    {
+      "path": "docs/validation/evidence/semantic-decision-20261025-r1/demo-finalization-r1/verification.json",
+      "sha256": "22ae13d4c0c61dfea495ca2e16754e70048b47e45b019d48b5b2f213c0e56d51",
+      "status": "completed-media-with-known-retrieval-package-failure"
+    },
+    {
+      "path": "docs/validation/evidence/semantic-decision-20261025-r1/kit-r1/verification.json",
+      "sha256": "1ca55766828eac27f19a55dcbf2a98881c6632b44f77b04f3f93becd0fa492d4",
+      "status": "passed"
+    }
+  ],
+  "new_audit_model_forwards": 0,
+  "new_audit_renders": 0,
+  "human_listening": false,
+  "human_semantic_acceptance": false,
+  "full_capcut_parity": false,
+  "overall_completion_percentage": null,
+  "public_release_check": {
+    "url": "https://api.github.com/repos/copypasteltd/agent-editor-kit/releases?per_page=10",
+    "checked_at_utc": "2026-10-25T05:44:24.429896+00:00",
+    "http_status": 200,
+    "releases": [
+      {
+        "tag_name": "v0.1.0-alpha.3",
+        "draft": false,
+        "prerelease": true,
+        "published_at": "2026-10-24T12:52:48Z",
+        "html_url": "https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3"
+      }
+    ],
+    "latest_published_tag": "v0.1.0-alpha.3",
+    "response_sha256": "85c0c79378e4caf5ae8fd76815ec224ff1c9f3534fda09a08c0933b6f75121c6"
+  },
+  "known_query_errors_preserved": 3,
+  "known_new_retrieval_package_failure_preserved": true,
+  "static_agent_review": {
+    "gallery_pages": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "encoded_contact_sheet": true,
+    "findings": "all query errors and blank no-match cards retained; text visible within canvas; no human continuous-playback claim"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "553df7b8347d19373da423a764836e563c8e1bef5e9633b7dddaba67e246db75"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.md",
+      "sha256": "bf693aa9f408a0e99e43de3b526bda880f7dea4d9d62d7d92f9039ce826e7db9"
+    },
+    {
+      "path": "docs/product/SKILLS.md",
+      "sha256": "ca29392c45366abd66d5f6b4c6862e7b799e917c8a735394d7292c887f5d7ed6"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "sha256": "b01fcbf7e0504cc0dfc3d13fa0728b87e62f5f9d6d6a9d0a61fa9bbb842758cb"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.zh-TW.md",
+      "sha256": "1afef189869305ac4c2edfb47de9b7dcffb588d2eda6c12ab91f5e93d1d9dafa"
+    },
+    {
+      "path": "docs/product/SKILLS.zh-TW.md",
+      "sha256": "7bc4ce017413b8a82f9db3397301642cb26a63517e4c42f294371e2366ff3593"
+    },
+    {
+      "path": "README.en.md",
+      "sha256": "396407f885566291738bbc56a9ef5654dc46e0519ce8d6a73cb97491e0dcb98d"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.en.md",
+      "sha256": "3140f93f4deca6d1899678857b1ef9bcbd4a2ee50354a8090e4e1b4f720eb15d"
+    },
+    {
+      "path": "docs/product/SKILLS.en.md",
+      "sha256": "83e01ff8dd9b5ebeb3ffc861d4255f2233e7bfee4fbfc0119d629f5a20f0fcc6"
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "1d23229299cf15765c2dac452ea66133eabd7ba9a84417a7ee6f7a8528dcfc03"
+    },
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "sha256": "bf1606a71dbd7a9569dbd5b284b6dab18cc4c289e1c3441079c76d9e1991a6ee"
+    },
+    {
+      "path": "docs/product/IMPLEMENTATION_PLAN_20261025.md",
+      "sha256": "f99beeb91dec218713253f52a80ed4589e05bb4a1910b90ef826795bc2a45659"
+    },
+    {
+      "path": "docs/product/SEMANTIC_RETRIEVAL.md",
+      "sha256": "571aa90d7462346f9666a0d4a833679a6f6b7a7d1ecb951df6ebc1080d7aa5bb"
+    },
+    {
+      "path": "docs/product/COMMUNITY_LOCAL_DELIVERY.md",
+      "sha256": "bd4716f2e86415f76e8d204f22d8039c65bff25a4255d24c14a02bdaf52adc59"
+    },
+    {
+      "path": "docs/product/COMMUNITY_ACCEPTANCE.md",
+      "sha256": "f3aa57a2a7301f8a65a1bea5bc6abf5edd329624eea01af24eddf1fc484fafd4"
+    },
+    {
+      "path": "docs/product/CASES.md",
+      "sha256": "9d7fd053298653cbc49b212002c72091a58ed5631ab9aa87e28dedc3f9ea9b88"
+    },
+    {
+      "path": "docs/specs/语义条件与校准拒识契约_20261025.md",
+      "sha256": "181e8b2388b2c575db8662e2cfb2c4ebae9975d5f6e59be6c105457d1e1dd3b8"
+    },
+    {
+      "path": "docs/validation/语义条件与校准拒识实测_2026-10-25.md",
+      "sha256": "879d2ab0ddf6e752743730710bff11d544c5549ac3ddb7a115837c7f57a76baa"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
+      "sha256": "386a834b26b299ff17f7eed5c6f7e6308f5dc12660f0cb742b2b110ad6279e1c"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/audio-stems.md",
+      "sha256": "1c5735e863fa9af531514d92eeb8922f4cc74f5e899d317d3bf863ddff4cb3b9"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/client-look-selection.md",
+      "sha256": "9c224b82dad0e949326b958a4111dca4a19a1b8f733752fd01faf53db82bb7ff"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/community-materials.md",
+      "sha256": "e64c863a3ebc161885fb829d6eea9b1dc79590429aef15e79bb36aa3296129b2"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/ctc-alignment.md",
+      "sha256": "1c15d49d42793bdfb01aecd56d95bff063fa35112f69f6aa9f5643af0ea692f2"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/job-recovery.md",
+      "sha256": "75073030cb648ec5179556633d684d48a789006f3190bbb97d50e00bb9899bba"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/looks.md",
+      "sha256": "2d1372a65afc434271048f4421b60cea6a115bf9685b5bcaf4703f8458af11a6"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/native-capture.md",
+      "sha256": "53ea706e02c0d4e3871d86101a921e92335acd8d18c4e2afa7bf7302a69954e4"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
+      "sha256": "de024eb87383036ab9c8dab17405b3ac1eb00edab1e01d70ec345de5cc2e113b"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/semantic-retrieval.md",
+      "sha256": "279345c6dccb91ef839ec36b3b7843f05acabf7dbac856c407bec7e16c15d410"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/subtitle-dubbing.md",
+      "sha256": "d5bfff1d79aa1b78af6da20baa5cd137d222972865ef3e2cf61ae103cfdcbf2a"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/module.md",
+      "sha256": "4dc5ef3a95f8eedf7e6a25695c8ddd32b69c236158c085db9fcc81993637c8fe"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/module.md",
+      "sha256": "f28f24ebd8e2d9d05773a75690caeb9c4dff9307c1e3b0c1ba3f0a2e1e0376f9"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/editor/module.md",
+      "sha256": "6af33ea312d3f6e427505f987356f27b9f5451959a6da157477a08e255772cd9"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ffmpeg/module.md",
+      "sha256": "e0318cf1530dc78007cf42412d82f70e15aa8f16bbd93080ed39957c2c349039"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/local-models/module.md",
+      "sha256": "8843493d82afbb6d73b2915c8f5e6aaa37548e5e1a1f22566f67949a3705982a"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/local-policy/module.md",
+      "sha256": "8609b553745050fb2cfd683b4a005efaccb7d9980f7569bcf26f0c441cb6922b"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/long-to-short/module.md",
+      "sha256": "a33c44e0a8bbf4a6b24157778a529cba98295b82cd943c02358abcb250eca0d8"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/project-ops/module.md",
+      "sha256": "5cd82bf1cb3078e7adea2bc9b14a1bc63c6e65cdbf04f03b4f62c82cc45ce1be"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/quality/module.md",
+      "sha256": "dd9b0eb51fe09c1493ff65e079066f055cd6610c35ac08212671b5340e089169"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/reference-remake/module.md",
+      "sha256": "2d104be2522df2053fd8037d379f36b3177707da5f702679cc37f46abf92faec"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/rights-ledger/module.md",
+      "sha256": "4ef1ec27a9db42d018e10a9635be01bb208a897051b218c7f7a4e31729f79343"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/screen-demo/module.md",
+      "sha256": "befcfec2e6826917117ebff621433530ffecc738be5e38dfb756ac4cf41267f5"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/template-library/module.md",
+      "sha256": "8975560bf80d56934dd2061a27e42181e5ad0ab8ed258c8eed080320fb1c9b1f"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/timeline/module.md",
+      "sha256": "f5ab0c61d7b9494e755b6f005be5575a9defedc7fa2c13cd23f6f1c740d76fa3"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-content-strategist/module.md",
+      "sha256": "fabb47181169d2acbe44b7036b74c3448824cac7516e824c5824be577b909ab8"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-edit/module.md",
+      "sha256": "17848982a48cbe2e848187ff10fc2e420ec438b5b3311ce8657e7e437258373a"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-understand/module.md",
+      "sha256": "8663264f31cbd57c54c0b9368bcd44b887ab017b153d798930a0979744e3782a"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-edit/references/upstream/workflow.md",
+      "sha256": "a49b64fc5ad50778ccaf92b568b1a57dbb86c53a076dd7031519798de15ad340"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-edit/references/upstream/references/operations.md",
+      "sha256": "2463a5298822520657e9c63d6bb1caaf4c99cf769d479737a0e078cb538e525b"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-content-strategist/references/upstream/workflow.md",
+      "sha256": "6410439fb3505954dac38adb82f2b0601edbc790775e62741f2892f7ca080bea"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ffmpeg/references/upstream/reference.md",
+      "sha256": "750659d2c3d0c3571c4437895e9f7940e09d5debccf400f59a0ca0ae779960f4"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ffmpeg/references/upstream/workflow.md",
+      "sha256": "7e7d5c5d4d42cd383b5811840721be7b11a7e213c33dfdbd927ee576f3f79757"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/workflow.md",
+      "sha256": "ad2367f6f7a9807976f5ade0c56b8332b667fe96a5634532091dc73d08df88a5"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/assets/ab_test_template.md",
+      "sha256": "a3b1529104389ddfab4e92357f61102d353a4585038bd611353aff2c5e3fa720"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/assets/campaign_report_template.md",
+      "sha256": "448ef109e333b351b0fbc2b2a087352d6abc89d125620585e6518b6aa91e631c"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/assets/channel_comparison_template.md",
+      "sha256": "5c6b30fccafa570192907ad7ff83f1d4b16b83519ab06ceccadbfa195fae69ba"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/references/attribution-models-guide.md",
+      "sha256": "7909ca8534cf68bab00c1f2e2035fa3b6b0dbfd6fb94da2db88948b8616058e5"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/references/campaign-metrics-benchmarks.md",
+      "sha256": "5f83037ed8d13db1febfa5490ad3f21698043057ad859a70c323912091e30cd7"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/references/funnel-optimization-framework.md",
+      "sha256": "9a95040212cf0df227ec40079da50db34b909b7f4ca7ad5c3711a6d0f517d612"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/workflow.md",
+      "sha256": "a246751f9b62bf478ddf0e0d8326f8f00a8c67fe9bfb1045dd311be50130915b"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/references/creative-frameworks.md",
+      "sha256": "f45bb278e6b5f6e44498dfc52f46d23b785bc0b662e0743b873b02daf3842a0d"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/references/platform-specs.md",
+      "sha256": "c8369e4c2a2e7517da2b8c511193b193dd6d008dfccac946cd739d3a19f9b4b5"
+    }
+  ],
+  "generator_sha256": "848a647313f32f30419abc57bd796ac2815d0734b9aab72aec4f0c1dd6f2ce2b"
+}

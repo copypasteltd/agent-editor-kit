@@ -1,0 +1,164 @@
+{
+  "queries": [
+    {
+      "id": "q01",
+      "text": "a cup of coffee on a wooden table",
+      "expected_asset_ids": [
+        "asset_b4"
+      ],
+      "group": "positive"
+    },
+    {
+      "id": "q02",
+      "text": "木桌上的一杯咖啡",
+      "expected_asset_ids": [
+        "asset_b4"
+      ],
+      "group": "positive"
+    },
+    {
+      "id": "q03",
+      "text": "a close-up photograph of a cat",
+      "expected_asset_ids": [
+        "asset_c2",
+        "asset_i1"
+      ],
+      "group": "positive"
+    },
+    {
+      "id": "q04",
+      "text": "一只猫的近距离照片",
+      "expected_asset_ids": [
+        "asset_c2",
+        "asset_i1"
+      ],
+      "group": "positive"
+    },
+    {
+      "id": "q05",
+      "text": "a woman wearing an astronaut spacesuit",
+      "expected_asset_ids": [
+        "asset_d9"
+      ],
+      "group": "positive"
+    },
+    {
+      "id": "q06",
+      "text": "穿宇航服的女性宇航员",
+      "expected_asset_ids": [
+        "asset_d9"
+      ],
+      "group": "positive"
+    },
+    {
+      "id": "q07",
+      "text": "a photographer standing behind a camera",
+      "expected_asset_ids": [
+        "asset_a7"
+      ],
+      "group": "positive"
+    },
+    {
+      "id": "q08",
+      "text": "站在相机后面的摄影师",
+      "expected_asset_ids": [
+        "asset_a7"
+      ],
+      "group": "positive"
+    },
+    {
+      "id": "q09",
+      "text": "a close-up texture of grass",
+      "expected_asset_ids": [
+        "asset_e3"
+      ],
+      "group": "positive"
+    },
+    {
+      "id": "q10",
+      "text": "草地的纹理",
+      "expected_asset_ids": [
+        "asset_e3"
+      ],
+      "group": "positive"
+    },
+    {
+      "id": "q11",
+      "text": "small gray stones and gravel",
+      "expected_asset_ids": [
+        "asset_f8"
+      ],
+      "group": "positive"
+    },
+    {
+      "id": "q12",
+      "text": "灰色碎石和小石子",
+      "expected_asset_ids": [
+        "asset_f8"
+      ],
+      "group": "positive"
+    },
+    {
+      "id": "q13",
+      "text": "a clock face with numbers and hands",
+      "expected_asset_ids": [
+        "asset_g5"
+      ],
+      "group": "positive"
+    },
+    {
+      "id": "q14",
+      "text": "带数字和指针的钟表",
+      "expected_asset_ids": [
+        "asset_g5"
+      ],
+      "group": "positive"
+    },
+    {
+      "id": "q15",
+      "text": "distant galaxies and stars in deep space",
+      "expected_asset_ids": [
+        "asset_h6"
+      ],
+      "group": "positive"
+    },
+    {
+      "id": "q16",
+      "text": "深空中的星系和星星",
+      "expected_asset_ids": [
+        "asset_h6"
+      ],
+      "group": "positive"
+    },
+    {
+      "id": "q17",
+      "text": "a cat, not a cup of coffee",
+      "expected_asset_ids": [
+        "asset_c2",
+        "asset_i1"
+      ],
+      "group": "negation"
+    },
+    {
+      "id": "q18",
+      "text": "一只猫，不是一杯咖啡",
+      "expected_asset_ids": [
+        "asset_c2",
+        "asset_i1"
+      ],
+      "group": "negation"
+    },
+    {
+      "id": "q19",
+      "text": "an underwater shark swimming beside coral",
+      "expected_asset_ids": [],
+      "group": "out_of_domain"
+    },
+    {
+      "id": "q20",
+      "text": "水下珊瑚旁边游动的鲨鱼",
+      "expected_asset_ids": [],
+      "group": "out_of_domain"
+    }
+  ]
+}

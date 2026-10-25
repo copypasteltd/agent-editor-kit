@@ -7,7 +7,7 @@ description: "Edit and deliver local videos with agent editor kit: multitrack ed
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.7` / CLI `0.1.9`.
+The current local runtime is `v0.1.0-alpha.4-local.8` / CLI `0.1.10`.
 The published alpha.3 downloads retain CLI 0.1.2 and their original scope.
 
 ## Runtime and common workflow
@@ -80,8 +80,9 @@ media. Add other modules when the request needs them. For example:
 - Find footage from a description or reference image: read
   [semantic-retrieval.md](references/semantic-retrieval.md). Use an explicit local
   adapter/index and show returned previews, source times and scores. Review the
-  clip duration separately; negation and queries with no matching asset remain
-  unreliable. Read the full 20-query failure gallery before promising selection quality.
+  clip duration separately. Inspect explicit conditions and an applicable index/device
+  calibration before treating a hit as accepted; keep empty results and known errors
+  visible. Candidate scores alone do not establish semantic correctness.
 - Native window/screen/camera/microphone capture: read
   [native-capture.md](references/native-capture.md), select an explicit source,
   record for a finite duration, then edit the returned asset ID normally.

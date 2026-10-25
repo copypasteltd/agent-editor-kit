@@ -106,7 +106,8 @@ def model_files(model: Path) -> list[Path]:
 def implementation_files() -> list[Path]:
     return [Path(__file__).with_name(name) for name in ('semantic_contract.py','semantic_worker.py',
             'semantic.py','semantic_cli.py','semantic_sampling.py','artifact_locks.py','whisper_worker.py',
-            'utils.py','policy.py','reverse_video_clock.py','community_device.py','media.py')]
+            'utils.py','policy.py','reverse_video_clock.py','community_device.py','media.py',
+            'semantic_queries.py','semantic_decision.py')]
 
 
 def adapter_fingerprint(record: dict) -> str:

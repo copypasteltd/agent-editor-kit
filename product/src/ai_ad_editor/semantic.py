@@ -23,7 +23,7 @@ from .utils import assert_id, atomic_write_json, new_id, now_iso, run_process, s
 
 def registry(project):
     result=project.get('extensions',{}).get('local_semantic',{'adapters':[],'indexes':[]})
-    if not isinstance(result,dict) or any(not isinstance(result.get(k,[]),list) for k in ('adapters','indexes')):
+    if not isinstance(result,dict) or any(not isinstance(result.get(k,[]),list) for k in ('adapters','indexes','calibrations')):
         raise AppError('SEMANTIC_REGISTRY_INVALID','语义登记表无效',exit_code=6)
     return result
 
@@ -403,8 +403,9 @@ def queries_from(*,query=None,queries_file=None,image=None,root):
     if not isinstance(values,list) or not 1<=len(values)<=128:raise argument_error('查询文件需要 1–128 项 queries','queries_file')
     identifiers=set();items=[]
     for value in values:
-        if not isinstance(value,dict) or set(value)!={'id','text'}:
-            raise argument_error('每项查询只允许 id 和 text；不接收标签或参考答案','queries_file')
+        if (not isinstance(value,dict) or not {'id','text'}<=set(value)
+                or set(value)-{'id','text','include','exclude'}):
+            raise argument_error('每项查询允许 id/text/include/exclude；不接收标签或参考答案','queries_file')
         assert_id(value['id'],'query_id')
         if (value['id'] in identifiers or not isinstance(value['text'],str) or not value['text'].strip()
                 or len(value['text'])>1024):raise argument_error('查询 ID 须唯一，文本须为 1–1024 字符','query')
@@ -414,30 +415,56 @@ def queries_from(*,query=None,queries_file=None,image=None,root):
 
 def search(root,project,*,index_id,query=None,queries_file=None,image=None,limit=5,minimum=-1.,
            kind=None,distinct_assets=True,device='auto',device_index=0,batch_size=8,timeout=600,
-           cancel_file=None,dry_run=False):
+           cancel_file=None,dry_run=False,calibration_id=None,query_mode='clauses'):
+    from .semantic_queries import prepare, rank_clauses
+    from .semantic_decision import load_profile
     deadline,marker=_config(timeout,cancel_file,root,batch_size=batch_size,device_index=device_index)
     manifest,vectors,adapter=read_index(root,project,index_id)
     # Validate ranking options before any model load or derivative job.
     rank(vectors,vectors[0],manifest['rows'],limit=limit,minimum=minimum,kind=kind,distinct_assets=distinct_assets)
     task,items=queries_from(query=query,queries_file=queries_file,image=image,root=root)
+    if query_mode not in ('raw','clauses'):
+        raise argument_error('query-mode 须为 clauses/raw','query_mode')
+    if (calibration_id and (task!='text' or query_mode!='clauses')
+            or (query_mode=='raw' and any(set(v)-{'id','text'} for v in items))):
+        raise argument_error('校准仅用于 clauses 文本查询；raw 不接受结构条件','query_mode')
+    plans,inputs=prepare(items) if task=='text' and query_mode=='clauses' else (None,items)
+    profile=load_profile(root,project,calibration_id,manifest,kind=kind) if calibration_id else None
     if dry_run:return dict(index_id=index_id,task=task,queries=items,index_rows=len(vectors),model_forward_calls=0,
-                           text_token_budget_checked_by_worker=task=='text')
+                           text_token_budget_checked_by_worker=task=='text',query_mode=query_mode,clauses=plans,
+                           calibration_id=calibration_id,calibration_verified=bool(profile))
     job=_job(root)
-    features,inference=embed(root,adapter,items,task,job=job,device=device,device_index=device_index,
+    features,inference=embed(root,adapter,inputs,task,job=job,device=device,device_index=device_index,
         batch_size=batch_size,deadline=deadline,marker=marker)
+    if profile and (inference['response']['device']!=profile['device']
+                    or inference['response']['device_index']!=profile['device_index']):
+        raise AppError('SEMANTIC_CALIBRATION_DEVICE_MISMATCH',
+            '当前推理设备与校准设备不符；请使用匹配档案或分别校准 CPU/GPU',exit_code=6)
     ledger={r['asset_id']:r for r in active_records(load_ledger(root))}
     results=[]
     tps=project.get('settings',{}).get('timebase',{}).get('ticks_per_second',1_000_000)
-    for value,feature in zip(items,features):
-        hits=rank(vectors,feature,manifest['rows'],limit=limit,minimum=minimum,kind=kind,distinct_assets=distinct_assets)
+    for ordinal,value in enumerate(items):
+        if plans is not None:
+            hits=rank_clauses(vectors,features,manifest['rows'],plans[ordinal],limit=limit,minimum=minimum,
+                kind=kind,distinct_assets=distinct_assets,cutoff=profile['fit']['cutoff'] if profile else None)
+        else:
+            hits=rank(vectors,features[ordinal],manifest['rows'],limit=limit,minimum=minimum,
+                      kind=kind,distinct_assets=distinct_assets)
         for hit in hits:
             hit['rights_verification_status']=ledger.get(hit['rights_ref'],{}).get('verification_status','missing')
             hit['editable_reference']=dict(asset_id=hit['asset_id'],source_seek_seconds=hit['requested_seconds'][0],
                 source_in_tick=round(hit['requested_seconds'][0]*tps),point_sample_only=True,duration_requires_review=True)
-        results.append(dict(query=value,hits=hits))
+        results.append(dict(query=value,hits=hits,clauses=plans[ordinal] if plans is not None else None,
+            decision=('calibrated_match' if hits else 'no_calibrated_match') if profile else 'candidates_require_review',
+            calibration_id=calibration_id,semantic_truth_verified=False))
     remaining(deadline,marker)
     return dict(index_id=index_id,task=task,results=results,limit=limit,minimum_score=minimum,kind=kind,
         distinct_assets=distinct_assets,inference=inference,network='disabled',
-        score_kind='cosine_similarity_not_probability',rights_checked_for_publication=False,
-        warnings=['SAMPLED_VISUAL_SIMILARITY_REQUIRES_REVIEW','OPEN_SET_ABSTENTION_NOT_IMPLEMENTED',
+        query_mode=query_mode,calibration_id=calibration_id,
+        calibration_fit=profile['fit'] if profile else None,
+        score_kind='minimum_clause_cosine_not_probability' if plans is not None else 'cosine_similarity_not_probability',
+        rights_checked_for_publication=False,
+        warnings=['SAMPLED_VISUAL_SIMILARITY_REQUIRES_REVIEW',
+                  'CALIBRATION_IS_EMPIRICAL_NOT_UNIVERSAL_REJECTION' if profile else 'OPEN_SET_REQUIRES_CALIBRATION_PROFILE',
+                  'EXCLUSIONS_ARE_RELATIVE_FRAME_EVIDENCE_NOT_OBJECT_DETECTION',
                   'MODEL_SIMILARITY_DOES_NOT_PROVE_ACTION_IDENTITY_OR_MEDIA_RIGHTS'])

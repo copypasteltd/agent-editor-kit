@@ -9,23 +9,23 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- current-goal-review-r12 -->
+<!-- current-goal-review-r13 -->
 
-**Goal status (2026-10-25): a working open-source Agent editing CLI is available; full CapCut parity is not established.** The installed delivery remains CLI 0.1.9 / r8. All 38 gap groups retain unmet closure conditions. A separate development retrieval candidate scores 20/20 positive, 20/20 negation and 18/20 out-of-library rejections on 60 differently worded queries; it also rejects one original positive query incorrectly. It is not packaged or registered. The three-language manuals now retain the complete 51 functional and 20 service modules.
+**Goal status (2026-10-25): a usable open-source Agent CLI; full CapCut functionality and quality remain unaccepted.** The pinned local delivery is CLI 0.1.10 / local.8 / r9 kit, one Skill / 17 modules. Explicit clauses and device-bound empirical calibration now have installed CPU/CUDA and registered-Skill evidence, retaining two false accepts, one false rejection and a new retrieval-package migration failure. All 38 original closure conditions remain.
 
-[Numbered assessment](docs/product/GOAL_GAPS_20261025.md) · [Actual entry/API/source differences](docs/validation/evidence/goal-gaps-20261025-r12/inventory.json) · [Candidate successes and failures](docs/validation/evidence/goal-gaps-20261025-r12/candidate-progress.json)
+[完整编号评估 / All gaps](docs/product/GOAL_GAPS_20261025.md) · [真实结果与限制 / Actual results](docs/validation/语义条件与校准拒识实测_2026-10-25.md) · [80-query gallery](docs/assets/semantic-decision-20261025-r1/installed-r1/index.html)
 
-<!-- /current-goal-review-r12 -->
+<!-- /current-goal-review-r13 -->
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r8 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r8.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r9 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r9.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
 <!-- community-materials-gpu -->
 
-**Local installed extension: CLI 0.1.9, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
+**Local installed extension: CLI 0.1.10, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
 
 [Complete workflow and limits](docs/product/COMMUNITY_MATERIALS.en.md) · [Resource catalog](docs/product/COMMUNITY_MATERIAL_CATALOG.md) · [103 named voices and actual audition scope](docs/product/COMMUNITY_VOICES.md) · [CPU evidence](docs/validation/evidence/community-materials-20261025-r1/cpu/verification.json) · [GPU evidence](docs/validation/evidence/community-materials-20261025-r1/gpu/verification.json).
 
@@ -37,7 +37,7 @@ This page includes functional modules, services/dependencies, installation/usage
 | G01 / F47 | CUDA voice/translation, auto/cpu/cuda, free-VRAM preflight | RTX 3060 tested; strict CUDA and explicit CPU fallback; optional NVIDIA runtime terms |
 | M04–M05 / F48 | Real BGM trim/loop/fades, speech/music mix and ducking | Preserved stems; no composition or automatic seam repair |
 | C01 / F49 | Native window/desktop/region/camera/microphone capture CLI, CPU/NVENC and cancellation | Actual owned-window evidence; camera/microphone, AV sync and long capture unaccepted |
-| V01 / F50 | Offline image/text embeddings, Chinese/English/reference-image queries, previews and editable source points; auto/cpu/cuda | Small static-image acceptance; negation, open-set rejection, natural actions and audio recommendation remain open |
+| V01 / F50 | Explicit clauses, empirical profiles and actual previews / 条件检索与经验校准 | Two false accepts, one false rejection; imported retrieval package fails; G26/G31 remain open |
 | D01 / F51 | Chinese/English SRT translation, complete batched speech, actual WAV fitting, explicit casting/mixing and atomic clips | Plain SRT / Chinese-English only; cue timing, semantics/naturalness/lip sync unaccepted |
 
 CPU 46 commands and GPU 15 commands are separate current tests. The real 12-second edit was fully decoded and package-round-tripped. Public examples omit speech whose publication rights remain unverified; local original stems and complete outputs remain available in delivery records. Human listening and full CapCut equivalence remain open.
@@ -45,6 +45,31 @@ CPU 46 commands and GPU 15 commands are separate current tests. The real 12-seco
 <!-- /community-materials-gpu -->
 
 
+
+
+
+<!-- semantic-decision-r1 -->
+
+## Local CLI 0.1.10: explicit clauses, calibrated selection and all observed failures
+
+Compare explicit `include`/`exclude` clauses on the same sampled frame, preserving the original query. An index/device-bound empirical profile can return a match or no match. Explicitly re-register the model and rebuild the index, then supply 32–128 reviewed calibration queries with at least 16 positives and 16 absent examples. Labels stay in the controller.
+
+```powershell
+# Existing project/index, explicit native adapter and reviewed calibration JSON required.
+& $avk semantic calibrate --project $project --index-id images-v1 --calibration-id accept-cuda --kind image --input $calibrationJson --device cuda
+& $avk semantic search --project $project --index-id images-v1 --query '一只猫，不是一杯咖啡' --kind image --calibration-id accept-cuda --device cuda --limit 3
+& $avk semantic calibration-list --project $project
+```
+
+Installed CPU/CUDA and the registered Skill each return 20/20 positive, 20/20 negation and 18/20 absent-query rejection on the same 60-query wording set. The original 20-query regression yields 15/16 positive, 2/2 negation and 2/2 rejection; raw still yields 1/2 negation and 0/2 rejection. Thresholds are empirical for this index, not probabilities or universal guarantees. All results require review; complex negation, natural actions, identity, audio and large libraries remain open.
+
+C19 shows six actual two-second cards, including all three query errors: a 12-second/360-frame MP4 and 60-frame GIF. Card-package rerendered pixels match. A separate new indexed/calibrated project fails search after import with `SEMANTIC_INDEX_INVALID`; that actual migration failure is preserved and G31 remains open.
+
+[Workflow](docs/product/SEMANTIC_RETRIEVAL.md) · [Actual checks and failures](docs/validation/语义条件与校准拒识实测_2026-10-25.md) · [All 80 results](docs/assets/semantic-decision-20261025-r1/installed-r1/index.html) · [C19](docs/product/CASES.md#c19-semantic-decisions)
+
+![Actual decisions, including errors](docs/assets/semantic-decision-20261025-r1/demo-installed-r1/decisions.gif)
+
+<!-- /semantic-decision-r1 -->
 
 <!-- subtitle-dubbing-r1 -->
 
@@ -313,7 +338,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F47 | GPU voice/translation selection | Explicit CPU/CUDA/auto and free-VRAM checks → actual provider/device and explicit fallback/failure. | `gpu inspect; voice; translate; --device` | RTX 3060 tested; CUDA 13 voice / CUDA 12 translation, voice device 0 only; this does not accelerate all filters. |
 | F48 | Music preparation and mixing | Actual music/speech assets → trim, loop, fades, explicit gain and speech-ducked mix. | `music prepare/mix` | Retains original stems and complete speech; no composition, automatic loop-seam repair or guaranteed visual semantic matching. |
 | F49 | Native capture | Explicit window/desktop/region/camera/microphone → finite recording, CPU/NVENC, cancellation and project assets. | `capture devices/record` | Actual CPU/GPU window evidence; camera/microphone, joint AV sync, device faults and long recording unaccepted. |
-| F50 | Offline visual semantic retrieval | Local media and an explicit model → index, Chinese/English/reference-image queries, real previews/source times and editable references. | `semantic adapter-register/index/search/verify` | Installed negation/open-set failures remain; calibrated candidate has development GPU checks only; actions/identity/audio recommendations/scale remain open. |
+| F50 | Offline visual semantic retrieval and conditions | Local index, Chinese/English/reference images, same-frame positive/negative clauses, empirical profiles, actual previews/source times and editable references. | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | Installed CPU/CUDA/Skill checked; two false accepts, one false rejection and a new migration error remain; no universal rejection/action/identity/audio recommendation claim. |
 | F51 | Joint subtitle translation/dubbing | Plain Chinese/English SRT and explicit voices/tracks → translations, complete batched WAV, actual fit, editable audio/bilingual captions and atomic application. | `dub subtitles` | Reuses initialization within the batch; retains originals/retries/awkward translations; cue fitting does not establish word timing, naturalness or lip sync. |
 
 ## Supported service modules and dependencies
@@ -339,7 +364,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | S15 | BGM preparation and mixing | Native FFmpeg audio | Explicit trim/loop/fades, independent voice/music stems and ducking | `music prepare/mix` | No composition, voice truncation or seam-repair promise |
 | S16 | GPU compatibility | Native NVIDIA libraries | `auto/cpu/cuda`, free-VRAM check, explicit provider/fallback | `gpu inspect; --device` | RTX 3060 tested; optional NVIDIA/Intel terms preserved |
 | S17 | Native Windows capture | FFmpeg gdigrab / DirectShow | Explicit source/device IDs, finite duration, full decode and asset registration | `capture devices/record` | Actual CPU/GPU window test; camera/microphone/AV sync pending |
-| S18 | Visual semantic retrieval | Explicit native SigLIP2 worker | Existing Torch/Transformers/model; actual GPU/CPU and source/preview/vector integrity | `semantic adapter-register/index/search/verify` | Cold-start and large-library performance open; cosine is not probability |
+| S18 | Visual semantics and empirical calibration | Explicit native SigLIP2 worker | Existing Torch/Transformers/weights; profile binds index/implementation/kind/actual device | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | Scores are not probabilities; cold start, scale and calibrated-project migration remain limited |
 | S19 | Independent four-source separation | Native Torch/TorchAudio HDemucs worker | Explicit native Python, weights/evidence/implementation hashes; auto/cpu/cuda, four float WAV/tracks | `audio adapter; audio separate-stems` | Torch/weights excluded from base ZIP; natural listening and weight licensing remain open |
 | S20 | Joint subtitle dubbing | Existing native OPUS/Kokoro workers + managed project transaction | Plain SRT, explicit languages/voices/tracks, CPU/CUDA/auto, batch reuse | `dub subtitles` | [Workflow](docs/product/SUBTITLE_DUBBING.md); complete utterances/retries retained; words/lip sync/natural quality open |
 
@@ -441,7 +466,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.7/final-r2/installed/`, CLI 0.1.9. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.8/final-r1/installed/`, CLI 0.1.10. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -505,7 +530,7 @@ K01–K17 are internal modules, not separate registrations. Describe the outcome
 | K05 | [`local-policy`](skills/agent-ffmpeg-local-editor/references/modules/local-policy/module.md) | Local execution policy | Project references → audit/structured refusal | `policy audit` | Remote references refused; not an OS sandbox. |
 | K06 | [`rights-ledger`](skills/agent-ffmpeg-local-editor/references/modules/rights-ledger/module.md) | Media and model rights evidence | Source/license/local evidence → ledger/impact/gates | `rights list/check/update/impact` | Treat image and LUT rights separately; no automatic legal determination. |
 | K07 | [`local-models`](skills/agent-ffmpeg-local-editor/references/modules/local-models/module.md) | Existing offline model registration | Native runtime + weights/hashes/licenses → adapters/artifacts | `audio adapter; audio separate-stems; media adapter; asr adapter; ocr; face; tts` | No weight downloads; check capability/runtime before execution. |
-| K08 | [`video-understand`](skills/agent-ffmpeg-local-editor/references/modules/video-understand/module.md) | Scene/silence, semantic retrieval and video evidence | Local video/images/text/reference → analysis, previews, source times and candidates | `media understand/contact-sheet; subtitle transcribe; semantic index/search` | [Retrieval reference](skills/agent-ffmpeg-local-editor/references/semantic-retrieval.md); sample points provide no event duration; review candidates. |
+| K08 | [`video-understand`](skills/agent-ffmpeg-local-editor/references/modules/video-understand/module.md) | Scene/silence, semantic retrieval and video evidence | Local video/images/text/reference → analysis, previews, source times and candidates | `media understand/contact-sheet; subtitle transcribe; semantic index/calibrate/calibration-list/search` | [Retrieval reference](skills/agent-ffmpeg-local-editor/references/semantic-retrieval.md); sample points provide no event duration; review candidates. |
 | K09 | [`template-library`](skills/agent-ffmpeg-local-editor/references/modules/template-library/module.md) | Templates and reusable fragments | Templates/variables/library → editable variants/index | `template apply/batch; library; fragment` | User-provided assets and per-resource licenses. |
 | K10 | [`long-to-short`](skills/agent-ffmpeg-local-editor/references/modules/long-to-short/module.md) | Long video to short clips | Local lesson/talk + reviewed text → rough cuts/short projects | `media highlights/smart-cut; timeline compose` | Review candidate segments; no autonomous semantic-director claim. |
 | K11 | [`screen-demo`](skills/agent-ffmpeg-local-editor/references/modules/screen-demo/module.md) | Screen demos and camera anchors | Recording + action anchors → zoom/return/caption demo | `timeline compose; ocr anchors; preview range` | OCR needs existing models; text boxes are not clickable-control bounds. |
@@ -709,18 +734,24 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R73 | Current goal and delivery review | Six additional actual read-only Skill calls; 197 source/installed files match; 75 declarations and all 38 unmet conditions retained; current install path, footer version and cumulative voice wording corrected | [Current gaps/closure conditions](docs/product/GOAL_GAPS_20261025.md) · [Actual responses/API](docs/validation/evidence/goal-gaps-20261025-r11/inventory.json) · [History/link audit](docs/validation/evidence/goal-gaps-20261025-r11/documentation-audit.json); 2026-10-25; zero new renders/inference/listening; historical R01–R72 preserved; public remains alpha.3 |
 | R74 | Current complete-goal/delivery assessment | Six additional actual read-only Skill calls; 197 installed files match the committed baseline; working source: 193 equal, 4 modified, 2 added; three-language manuals synchronized to 51 features/20 services and 75 installed fields | [38 gap groups](docs/product/GOAL_GAPS_20261025.md) · [Entry/API/differences](docs/validation/evidence/goal-gaps-20261025-r12/inventory.json) · [Documentation audit](docs/validation/evidence/goal-gaps-20261025-r12/final-documentation-r3/documentation-audit.json); 2026-10-25; this assessment adds zero inference/render/listening; public alpha.3 and historical R01–R73 retained |
 | R75 | Development retrieval candidate, not installed | Prior development receipts copied separately: 48 contract tests; GPU 40 calibration/60 differently worded/20 original plus separate raw queries; both out-of-library false accepts and one original positive false rejection retained | [Results and failures](docs/validation/evidence/goal-gaps-20261025-r12/candidate-progress.json) · [Frozen protocol](docs/validation/evidence/goal-gaps-20261025-r12/candidate-snapshot/protocol.json); 2026-10-25; familiar static assets; not installed/CPU/Skill acceptance, G26 remains open |
+| R76 | 条件与校准契约 / Clause and calibration contracts | Source 48/48, zero skips; bounded grammar, empirical cutoff, rollback/device/hash guards; model substitutes are contracts only | [2026-10-25 evidence](docs/validation/evidence/semantic-decision-20261025-r1/tests/development-r3/verification.json) · [Full scope](docs/validation/语义条件与校准拒识实测_2026-10-25.md) |
+| R77 | 固定安装回归 / Installed regressions | Separate installed 48/48 + CLI 122/122, zero skips; not all historical tests | [2026-10-25 evidence](docs/validation/evidence/semantic-decision-20261025-r1/tests/installed-r1/verification.json) · [Full scope](docs/validation/语义条件与校准拒识实测_2026-10-25.md) |
+| R78 | 实际 CPU/CUDA 模型 / Actual CPU/CUDA | Separate device profiles, 40 calibration each; held-out 20/20 positive, 20/20 negation, 18/20 rejection; original positive 15/16; errors retained | [2026-10-25 evidence](docs/validation/evidence/semantic-decision-20261025-r1/installed-r1/heldout-cuda/verification.json) · [Full scope](docs/validation/语义条件与校准拒识实测_2026-10-25.md) |
+| R79 | 实际统一入口与拒绝 / Registered Skill and refusals | Actual Skill 60-query batch retains errors; 9 installed controls preserve metadata/rights/profiles; no universal semantics acceptance | [2026-10-25 evidence](docs/validation/evidence/semantic-decision-20261025-r1/controls-r1/verification.json) · [Full scope](docs/validation/语义条件与校准拒识实测_2026-10-25.md) |
+| R80 | C19 实际视频与迁移失败 / Media and migration failure | 80 result cards; six editable clips, two renders, 360 decoded frames equal; retrieval package search fails after import; failure retained | [2026-10-25 evidence](docs/validation/evidence/semantic-decision-20261025-r1/demo-finalization-r1/verification.json) · [Full scope](docs/validation/语义条件与校准拒识实测_2026-10-25.md) |
+| R81 | 当前离线安装与 r9 / Current installation and r9 | 199 product files equal installed CLI 0.1.10; one Skill / 17 modules / 64 Skill files; isolated r9 activation, not clean-host acceptance | [2026-10-25 evidence](docs/validation/evidence/semantic-decision-20261025-r1/kit-r1/verification.json) · [Full scope](docs/validation/语义条件与校准拒识实测_2026-10-25.md) |
 
 ## Current limits and development direction
 
 The deliverable is an offline, editable and auditable Agent CLI workflow with explicit contracts. Openly licensed asset/template ecosystems, agreed AI/beauty/layout features, complete color processing, actual quality for supported draft profiles, broad natural-media acceptance and long-form resource performance remain open. Consumer GUI, accounts, cloud collaboration and arbitrary lossless private-draft interchange are outside current core acceptance. Later R113/R114 Float32 transition/runtime-closure candidates are not included in this release.
 
-[The complete-goal assessment](docs/product/GOAL_GAPS_20261025.md) updates every G01–G38 against CLI 0.1.9. A single Skill, 500 looks/previews, 359 resources, GPU speech/translation, joint subtitle dubbing, stems/recovery and controlled word activity timing are delivered. Natural audiovisual quality, complex combinations, advanced AI, content/templates, autonomous Agent tasks, long-job reliability and a newer public release remain open. R67–R72 retain separate real scopes and limits; no overall completion percentage is established. The [2026-10-24 assessment](docs/product/GOAL_GAPS_20261024.md) is historical.
+[The complete-goal assessment](docs/product/GOAL_GAPS_20261025.md) updates every G01–G38 against CLI 0.1.10. A single Skill, 500 looks/previews, 359 resources, GPU speech/translation, joint subtitle dubbing, stems/recovery and controlled word activity timing are delivered. Natural audiovisual quality, complex combinations, advanced AI, content/templates, autonomous Agent tasks, long-job reliability and a newer public release remain open. R67–R72 retain separate real scopes and limits; no overall completion percentage is established. The [2026-10-24 assessment](docs/product/GOAL_GAPS_20261024.md) is historical.
 
 Exact audio-channel relationship protection and native capture remain delivered within their documented scope. Extremely short-window pitch, natural-speech alignment, actual camera/microphone recording and AV synchronization remain unaccepted. CLI 0.1.5 introduced limited visual semantic retrieval; neither the 500 looks nor the current 75 declarations establish an overall completion percentage.
 
 Use real client media and minimal reproducible projects to identify gaps, implement/check them individually and publish new versions without replacing prior bundles/digests/tags. Record actual successful artifacts rather than inferred completion.
 
-**Current delivery and review (R67–R73, 2026-10-25):** local CLI 0.1.9 / alpha.4-local.7 and r8 kit; one Skill / 17 internal modules. Joint subtitle dubbing, managed recovery, the installed build and editable package roundtrips have real evidence. Natural quality, other failure paths, long-form performance and autonomous Agent tasks remain unaccepted. The 75 declarations are 20 implemented, 47 limited, seven adapter-only and one degraded, not a completion percentage. R73 only reviews current status; all 38 original closure conditions and historical failures remain. Public alpha.3 retains CLI 0.1.2.
+**Current delivery and review (R76–R81, 2026-10-25):** CLI 0.1.10 / alpha.4-local.8 / r9; one Skill / 17 modules, 199 product files equal the installation. Source 48, separate installed 48 and installed CLI 122 checks pass in their own scopes. Actual models, controls, media and the migration failure are recorded separately. All G01–G38 conditions remain. Public alpha.3 retains CLI 0.1.2.
 
 ## Documentation, provenance and maintenance
 

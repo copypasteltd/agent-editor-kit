@@ -6,8 +6,8 @@ from .project import load_project
 from . import semantic
 from .semantic_contract import verify_adapter
 
-ACTIONS=('adapter-register','adapter-list','adapter-inspect','index','index-list','verify','search')
-READ_ONLY_ACTIONS=('adapter-list','adapter-inspect','index-list','verify','search')
+ACTIONS=('adapter-register','adapter-list','adapter-inspect','index','index-list','verify','calibrate','calibration-list','search')
+READ_ONLY_ACTIONS=('adapter-list','adapter-inspect','index-list','verify','calibration-list','search')
 
 
 def execution(parser):
@@ -25,7 +25,7 @@ def add_parser(subs,leaf):
         p=leaf(actions.add_parser(action))
         p.add_argument('--project',required=True)
         if action in ('adapter-register','adapter-inspect','index'):p.add_argument('--adapter-id',required=True)
-        if action in ('index','verify','search'):p.add_argument('--index-id',required=True)
+        if action in ('index','verify','calibrate','search'):p.add_argument('--index-id',required=True)
         if action=='adapter-register':
             p.add_argument('--python-executable',required=True)
             p.add_argument('--model-path',required=True)
@@ -53,6 +53,15 @@ def add_parser(subs,leaf):
             p.add_argument('--min-score',type=float,default=-1.)
             p.add_argument('--kind',choices=('image','video'))
             p.add_argument('--all-samples',action='store_true',help='返回各采样点；默认每资产只保留最高相似度候选')
+            p.add_argument('--query-mode',choices=('clauses','raw'),default='clauses',help='默认解析有界否定；raw 仅用于原始整句排名/历史复现')
+            p.add_argument('--calibration-id',help='使用当前索引/类型/设备绑定的经验拒识档案')
+            execution(p)
+        if action=='calibrate':
+            p.add_argument('--calibration-id',required=True)
+            p.add_argument('--input',required=True)
+            p.add_argument('--kind',choices=('image','video'))
+            p.add_argument('--false-accept-rate',type=float,default=.05)
+            p.add_argument('--minimum-coverage',type=float,default=.75)
             execution(p)
 
 
@@ -75,6 +84,15 @@ def command(args,envelope):
                 cancel_file=args.cancel_file,dry_run=args.dry_run)
         elif action=='index-list':
             data=dict(indexes=semantic.registry(project).get('indexes',[]),verification='use semantic verify for current bytes',network='disabled')
+        elif action=='calibration-list':
+            data=dict(calibrations=semantic.registry(project).get('calibrations',[]),
+                      verification='search --dry-run verifies the selected profile/index/source/model binding',network='disabled')
+        elif action=='calibrate':
+            from .semantic_decision import calibrate
+            data=calibrate(root,project,index_id=args.index_id,calibration_id=args.calibration_id,input_path=args.input,
+                kind=args.kind,false_accept_rate=args.false_accept_rate,minimum_coverage=args.minimum_coverage,
+                device=args.device,device_index=args.device_index,batch_size=args.batch_size,
+                timeout=args.timeout_seconds,cancel_file=args.cancel_file,dry_run=args.dry_run)
         elif action=='verify':
             manifest,vectors,adapter=semantic.read_index(root,project,args.index_id)
             data=dict(index_id=args.index_id,verified=True,rows=len(vectors),source_assets=len(manifest['sources']),
@@ -83,7 +101,8 @@ def command(args,envelope):
             data=semantic.search(root,project,index_id=args.index_id,query=args.query,queries_file=args.queries_file,
                 image=args.image,limit=args.limit,minimum=args.min_score,kind=args.kind,
                 distinct_assets=not args.all_samples,device=args.device,device_index=args.device_index,batch_size=args.batch_size,
-                timeout=args.timeout_seconds,cancel_file=args.cancel_file,dry_run=args.dry_run)
+                timeout=args.timeout_seconds,cancel_file=args.cancel_file,dry_run=args.dry_run,
+                calibration_id=args.calibration_id,query_mode=args.query_mode)
         data['verification_scope']=verification_summary()
         return envelope('semantic.'+action,args,data=data,status='planned' if args.dry_run else 'succeeded',
                         operation_id=data.get('operation_id'),warnings=data.get('warnings',[]))

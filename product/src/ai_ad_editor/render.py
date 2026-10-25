@@ -2063,6 +2063,7 @@ def _subtitle_filter(
     render_clock: dict[str, Any] | None = None,
     final_fps: str = '30',
     frame_origin: float = 0.,
+    float_paint: bool = False,
 ) -> str | None:
     if not isinstance(subtitle, dict):
         return None
@@ -2172,17 +2173,18 @@ def _subtitle_filter(
         return value
     animation = subtitle.get("animation") if isinstance(subtitle.get("animation"), dict) else style.get("animation") if isinstance(style.get("animation"), dict) else {}
     animation_type = str(animation.get("type", "")).lower().replace("-", "_")
+    clock_number = lambda v: format(v,'.17g') if float_paint else format(v,'.6f')
     if animation_type:
         animation_duration = max(0.001, _num(animation.get("duration", min(0.3, max(0.05, clip_duration / 4 or 0.3))), 0.3))
         delay = max(0.0, _num(animation.get("delay", 0.0), 0.0))
-        start_expr = f"({clip_start:.6f}+{delay:.6f})"
-        end_expr = f"({clip_start:.6f}+{delay + animation_duration:.6f})"
-        progress = f"clip((({time_expression})-{start_expr})/{animation_duration:.6f},0,1)"
+        start_expr = f"({clock_number(clip_start)}+{clock_number(delay)})"
+        end_expr = f"({clock_number(clip_start)}+{clock_number(delay + animation_duration)})"
+        progress = f"clip((({time_expression})-{start_expr})/{clock_number(animation_duration)},0,1)"
         if animation_type in {"fade_in", "fade"}:
             add_alpha(f'if(lt(({time_expression}),{start_expr}),0,{progress})')
         elif animation_type == "fade_out":
             fade_start = clip_start + max(0.0, clip_duration - animation_duration)
-            add_alpha(f'if(gt(({time_expression}),{fade_start:.6f}),clip(({clip_start + clip_duration:.6f}-({time_expression}))/{animation_duration:.6f},0,1),1)')
+            add_alpha(f'if(gt(({time_expression}),{clock_number(fade_start)}),clip(({clock_number(clip_start + clip_duration)}-({time_expression}))/{clock_number(animation_duration)},0,1),1)')
         elif animation_type in {"slide_up", "slide_down", "slide_left", "slide_right"}:
             distance = max(0.0, _num(animation.get("distance", 80), 80))
             if animation_type == "slide_up":
@@ -2236,7 +2238,8 @@ def _subtitle_filter(
                 typing_plan = TypingParagraph(root,
                     build_text_layout(source_subtitle_text, style, font_metrics, font_size),
                     style, resolved_font_path, font_size, render_clock or {}, final_fps, frame_origin,
-                    clip_start, animation_duration, delay, clip_id, time_expression)
+                    clip_start, animation_duration, delay, clip_id, time_expression,
+                    snapshot=float_paint)
         elif animation_type == "pop":
             distance = max(0.0, _num(animation.get("distance", 40), 40))
             add_alpha(f'if(lt(({time_expression}),{start_expr}),0,{progress})')
@@ -2320,6 +2323,7 @@ def _subtitle_filter(
                 base_x, base_y, time_expression, clip_start, clip_id,
                 window_expression if timeline_window else None,
                 paint_text, typing_plan,
+                float_paint=float_paint,
             )
             return finish(value, evidence)
     if not any(part.startswith("x=") for part in parts):

@@ -198,7 +198,8 @@ class FloatRenderContext:
         paths = [Path(ffmpeg_path()).resolve(), Path(ffprobe_path()).resolve()]
         paths += [Path(__file__).with_name(name + '.py') for name in
                   ('float_standard_render', 'float_stream', 'float_audio_graph', 'render', 'float_color_signal',
-                   'float_timeline', 'float_transitions', 'float_transition_plan', 'source_transitions')]
+                   'float_timeline', 'float_transitions', 'float_transition_plan', 'source_transitions',
+                   'float_text','float_text_paint','text_paint','text_layout','text_highlight','text_typing','captions')]
         self.artifacts = [artifact_entry(p, 'standard-float-render-runtime') for p in paths]
         context = IndexContext(self.root, persist=not self.dry_run, cancel_file=self.marker)
         per_source = min(256 * 1024**2, self.config['max_source_cache_bytes'] // max(1, len(needed)))
@@ -244,6 +245,7 @@ class FloatRenderContext:
         self.timeline = FloatTimeline(self.project, self.sequence['id'], self.sources,
             working_signal=self.config['working'], background_signal=self.config['background'], cancel=self.poll,
             max_working_bytes=self.config['projection_working_bytes_limit'],resource_root=self.root)
+        self.artifacts.extend(self.timeline.text_host.artifacts.values())
         self.metadata.update(projection_working_bytes_limit=self.config['projection_working_bytes_limit'],
                              projection_budget_scope='each float projection/composite/delivery call; not total process RSS')
         self.metadata['timeline'] = self.timeline.metadata

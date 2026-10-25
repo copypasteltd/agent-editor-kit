@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.21 / alpha.4-local.19 / r22 kit · 1 Skill / 17 modules / 70 files.**
+**CLI0.1.22 / alpha.4-local.20 / r23 kit · 1 Skill / 17 modules / 71 files.**
 
 The explicit linear Float32 path adds 57 xfade patterns plus black/white dips, real source handles, linked audio and spatial group edges. The registered Skill completes a 6s/72-frame case with reverse, preview, cancel/resume, queues and independent PCM checks. CPU execution; default rendering and GPU projection keep their own contracts.
 
-[Float32 workflow](../product/FLOAT_TRANSITIONS.md) · [GPU projection](../product/OPENCL_PROJECTION.md) · [Install](../product/COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](../product/float-transition-capabilities-cli-0.1.21.json).
+[Float32 workflow](../product/FLOAT_TRANSITIONS.md) · [GPU projection](../product/OPENCL_PROJECTION.md) · [Install](../product/COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](../product/float-text-capabilities-cli-0.1.22.json).
 
 <!-- /community-current -->
 
@@ -74,3 +74,5 @@ The `agent-ffmpeg-local-skills-v2` manifest declares `skill_count=1`, `module_co
 [Fixed-canvas affine reuse / 扫描行复用](../product/AFFINE_RENDERING.md) uses the existing render workflow, keeps CPU composition explicit, and provides paired timing and actual previews.
 
 [Animated crop and native-canvas projection / 动态裁切与嵌套投影](../product/PROJECTION_RENDERING.md) retains the existing bilinear/area kernels, explicit raster quota and editable keys; CPU composition and GPU encoding remain separate.
+
+CLI0.1.22: independent/inline Float32 text, joint typewriter/highlight and plain SRT. Read [workflow](../product/FLOAT_TEXT.md); CPU,8bit coverage/Float32 colors,explicit fonts and original clocks. 4K text/GPU text/rich ASS and full target acceptance remain open.

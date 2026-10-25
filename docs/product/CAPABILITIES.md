@@ -2,15 +2,15 @@
 
 <!-- community-current -->
 
-**CLI 0.1.21 / alpha.4-local.19 / r22 kit · 1 Skill / 17 modules.**
+**CLI 0.1.22 / alpha.4-local.20 / r23 kit · 1 Skill / 17 modules.**
 
-Linear Float32 transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+Linear Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
 
-[Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](float-transition-capabilities-cli-0.1.21.json). Full target conditions remain open.
+[Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](float-text-capabilities-cli-0.1.22.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.md) · [Machine response](float-transition-capabilities-cli-0.1.21.json) · [Module data](module-catalog.json)
+[README](../../README.md) · [Machine response](float-text-capabilities-cli-0.1.22.json) · [Module data](module-catalog.json)
 
 | 编号 | 功能模块 | 具体行为与输入 → 输出 | 入口 | 依赖/边界 |
 |---|---|---|---|---|
@@ -30,7 +30,7 @@ Linear Float32 transitions/source handles/group edges, native OpenCL crop/affine
 | F14 | 变速、倒放与定格 | 显式速度/曲线/Bezier/定格点 → 视频时钟与音频映射。 | `timeline edit; render` | 变速音频后端各有边界；可选 Rubber Band R3 需要已有原生工具。 |
 | F15 | 关键帧与缓动 | 位置、锚点、缩放、旋转、透明度、裁切、蒙版、音量/声像 → 逐帧动画。 | `timeline compose; schema show` | hold/linear/ease_in/ease_out/ease_in_out/bezier；枚举/布尔值不推断为连续动画。 |
 | F16 | 12 套运镜预设 | 推拉、上下左右平移、Ken Burns、旋入/旋出、淡入/淡出、shake → 可编辑关键帧。 | `motion list/inspect/apply` | 参数有界；是明确关键帧预设，不是 AI 三维相机或全部商业运镜库。 |
-| F17 | 转场与剪口效果 | 相邻片段与源句柄 → 淡化、擦除、滑动、黑/白场、圆形等已声明转场。 | `timeline transition; capabilities` | 以默认渲染路径和具体层级为准；Float32 后续转场候选未随本版提供。 |
+| F17 | 转场与剪口效果 | 相邻片段与源句柄 → 淡化、擦除、滑动、黑/白场、圆形等已声明转场。 | `timeline transition; capabilities` | 按渲染路径和层级选择；显式 Float32 已提供 F55 的转场子集，CPU 执行，支持范围见其独立契约。 |
 | F18 | 几何蒙版与逐帧修正 | 矩形/圆/椭圆/路径/多边形 → 反选、羽化、动画、编码蒙版与修正。 | `timeline compose; media mask-edit; quality mask` | 路径点数和采样受限；几何通过不等于语义分割/身份正确。 |
 | F19 | 图层合成与混合 | 多轨视觉层 → normal/multiply/screen/overlay/difference/addition/softlight/hardlight。 | `timeline compose; capabilities` | 默认路径主要为编码 8-bit RGB；不宣称线性光/HDR 合成等价。 |
 | F20 | 46 个效果处理算子 | 模糊/锐化、降噪、色调、曲线、HSL、色键、暗角、颗粒等 → 可配置效果链。 | `effects list/inspect` | 可动画参数与实际后端逐项查询；46 算子与 500 成品 LUT 是不同统计。 |
@@ -69,6 +69,7 @@ Linear Float32 transitions/source handles/group edges, native OpenCL crop/affine
 | F53 | 语义运行时升级 | 旧适配器/索引/校准 → 新安装路径下的新 ID，复制向量/预览/数据集且保留拟合和原观察。 | `project upgrade-semantic` | 全部 19 个实现与外部依赖须字节相同；零新模型前向，原记录不改；内容变化拒绝并要求重建。 |
 | F54 | 可复用参数运镜 | 本地版本化 JSON / 已有作者曲线 → 普通关键帧、参数/摘要/快照、跨工程复用。六套真实预览供选型。 | `motion pack list/inspect/create/capture/apply` | 65 点采样、transform 属性；默认拒绝冲突，显式替换整条属性轨；跟踪绑定拒绝，CPU 合成/自然质量未闭。 |
 | F55 | 线性浮点转场与组级进出场 | 显式 Float32 工程 → 57 xfade图案+2 dip、预乘alpha混合、真实句柄/原作者时钟、关联音轨、组级擦除/推移与实际预览成片。 | `timeline transition; preview; render; queue` | CPU；12种真实句柄声明，其他图案用显式重叠/边缘；normal双源混合；风噪有平台差异，HDR/自然质量未闭。 |
+| F56 | 线性浮点文字与字幕 | 独立字层/片段内字幕/SRT → 原生塑形、线性底框/阴影/描边/填充、逐词与打字机联动、原时钟/倒放、真实预览与成片。 | `timeline compose; preview; render; queue` | 明确本地字体；CPU；覆盖率8bit/颜色Float32；纯文本SRT，复杂Bidi/4K文字/GPU文字未闭。 |
 
 | 编号 | 服务模块 | 运行形式 | 需要什么/提供什么 | 入口 | 范围 |
 |---|---|---|---|---|---|
@@ -861,7 +862,8 @@ Linear Float32 transitions/source handles/group edges, native OpenCL crop/affine
     "caught_publish_IO_pair_rollback",
     "linear_premultiplied_transitions",
     "real_source_handles_and_linked_audio",
-    "authored_group_spatial_edges"
+    "authored_group_spatial_edges",
+    "linear_float32_titles_inline_text_and_plain_SRT"
   ],
   "limits": [
     "explicit_opt_in_not_default_migration",
@@ -3360,6 +3362,45 @@ Linear Float32 transitions/source handles/group edges, native OpenCL crop/affine
 ```json
 {
   "status": "implemented",
+  "float32_native": {
+    "status": "implemented_with_limits",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "selection": "settings.pixel_pipeline.engine=float32-native-v1",
+    "commands": [
+      "preview.frame",
+      "preview.range",
+      "render",
+      "render.resume",
+      "queue.run"
+    ],
+    "features": [
+      "independent_text_track_and_inline_captions",
+      "explicit_registered_font_SHA",
+      "linear_Float32_box_shadow_border_fill_source_over",
+      "256_code_native_coverage_calibration",
+      "whole_paragraph_binary_word_highlights",
+      "whole_prefix_grapheme_typewriter_snapshots",
+      "original_presentation_clock_and_parent_reverse_left_limits",
+      "plain_SRT_half_open_cues",
+      "fade_slide_pop_bounce_rotate",
+      "clip_effects_transforms_masks_crop_blend_and_transitions",
+      "bounded_LRU_surface_cache",
+      "owned_native_process_cancellation_cleanup"
+    ],
+    "limits": [
+      "CPU_only",
+      "glyph_coverage_8bit_authored_colors_and_composition_Float32",
+      "SRT_plain_text_only_rich_ASS_SSA_VTT_not_ported",
+      "explicit_font_and_native_metrics_required",
+      "stateful_positions_and_wall_clock_expansion_rejected",
+      "bidi_and_internal_word_clusters_pending",
+      "typewriter_512_graphemes_highlight_128_ranges",
+      "20_raster_admission_estimate_not_peak_RSS",
+      "4K_native_text_rejected_at_default_768MiB_budget",
+      "not_realtime_HDR_or_full_CapCut_acceptance"
+    ]
+  },
+  "limits_scope": "remaining subtitle limits describe the default encoded-RGB path; float32_native has its own explicit contract",
   "formats": [
     "srt",
     "vtt",

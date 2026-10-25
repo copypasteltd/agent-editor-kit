@@ -44,9 +44,10 @@ class TypingParagraph:
     def __init__(self, root: Path, layout: TextLayout, style: dict[str, Any], font: Path,
                  size: int, clock: dict[str, Any], fps: str, origin: float,
                  start: float, duration: float, delay: float, clip_id: str,
-                 authored_expression: str):
+                 authored_expression: str, *, snapshot: bool = False):
         self.root, self.layout, self.style = root, layout, style
         self.clock, self.fps, self.origin = clock, float(Fraction(fps)), float(origin)
+        self.snapshot = snapshot
         self.units = [unit for unit in graphemes(layout.source) if unit[2] != '\n']
         if len(self.units) > 512 or len(layout.source) > 16384 or len(layout.lines) > 128:
             raise AppError('SUBTITLE_TYPEWRITER_BUDGET', '打字机最多 512 字素、16384 源字符和 128 行', exit_code=2)
@@ -60,10 +61,12 @@ class TypingParagraph:
             raise AppError('SUBTITLE_TYPEWRITER_POSITION_UNSUPPORTED', '打字机需要无状态且无 x/y 相互引用的位置表达式', exit_code=2)
         executable = Path(ffmpeg_path()).resolve()
         self.ffmpeg_sha256, self.font_sha256 = file_fingerprint(executable), file_fingerprint(font)
-        if not _runtime_text_supported(str(executable), self.ffmpeg_sha256):
+        if not snapshot and not _runtime_text_supported(str(executable), self.ffmpeg_sha256):
             raise AppError('SUBTITLE_TYPEWRITER_NATIVE_COMMAND_UNAVAILABLE', '本地 FFmpeg 必须支持 drawtext 的 text 运行时命令', exit_code=6)
-        self.starts = [round(start+delay+i*duration/max(1, len(self.units)), 9) for i in range(len(self.units))]
-        self.first_enable = f'gte(({authored_expression}),{start+delay:.9f})'
+        self.starts = [start+delay+i*duration/max(1, len(self.units)) if snapshot else
+            round(start+delay+i*duration/max(1, len(self.units)), 9) for i in range(len(self.units))]
+        boundary=format(start+delay,'.17g') if snapshot else format(start+delay,'.9f')
+        self.first_enable = f'gte(({authored_expression}),{boundary})'
         identity = {'protocol': 'drawtext-native-prefix-cfr-v1', 'source': layout.source, 'style': style,
                     'font_sha256': self.font_sha256, 'ffmpeg_sha256': self.ffmpeg_sha256, 'fontsize': size,
                     'clock': clock, 'fps': fps, 'origin': origin, 'starts': self.starts, 'clip_id': clip_id,
@@ -124,6 +127,14 @@ class TypingParagraph:
         return ','.join(filters) or 'null'
 
     def finish(self, value: str, command_targets: dict[str, list[str]]) -> tuple[str, dict[str, Any]]:
+        if self.snapshot:
+            return value, {'protocol': 'drawtext-native-prefix-snapshot-v1',
+                'engine': 'native-prefix-author-clock-snapshot', 'author_seconds': self.author_time(self.origin),
+                'grapheme_count': len(self.units), 'revealed_graphemes': self.count(self.author_time(self.origin)),
+                'line_count': len(self.layout.lines), 'paint_count': self.serial, 'command_count': 0,
+                'paragraph_anchor': 'complete-paragraph-fixed-origin-and-baselines',
+                'prefix_shaping': 'whole-native-run', 'newline_consumes_step': False,
+                'authored_whitespace_consumes_step': True, 'frame_grid_quantization': False}
         bias = self.clock.get('reverse_boundary_bias_seconds', 0.)
         candidates = {0}
         for author in self.starts:

@@ -2,15 +2,15 @@
 
 <!-- community-current -->
 
-**CLI 0.1.21 / alpha.4-local.19 / r22 kit · 1 Skill / 17 modules.**
+**CLI 0.1.22 / alpha.4-local.20 / r23 kit · 1 Skill / 17 modules.**
 
-Linear Float32 transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+Linear Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
 
-[Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](float-transition-capabilities-cli-0.1.21.json). Full target conditions remain open.
+[Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](float-text-capabilities-cli-0.1.22.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.en.md) · [Machine response](float-transition-capabilities-cli-0.1.21.json) · [Module data](module-catalog.json)
+[README](../../README.en.md) · [Machine response](float-text-capabilities-cli-0.1.22.json) · [Module data](module-catalog.json)
 
 | ID | Module | Behavior and input → output | Entry | Dependency/limit |
 |---|---|---|---|---|
@@ -30,7 +30,7 @@ Linear Float32 transitions/source handles/group edges, native OpenCL crop/affine
 | F14 | Retiming, reverse and freeze | Explicit speed/curves/Bezier/freeze points → video clocks and audio mapping. | `timeline edit; render` | Audio-retime backends differ; optional Rubber Band R3 requires existing native tools. |
 | F15 | Keyframes and easing | Position, anchor, scale, rotation, opacity, crop, masks, volume and pan → frame-evaluated animation. | `timeline compose; schema show` | hold/linear/ease_in/ease_out/ease_in_out/bezier; enum/boolean channels are not assumed continuous. |
 | F16 | 12 camera/motion presets | Push/pull, four pan directions, Ken Burns, rotation, fades and shake → editable keyframes. | `motion list/inspect/apply` | Bounded keyframe presets, not AI 3D cameras or an entire commercial motion library. |
-| F17 | Transitions and cut effects | Adjacent clips and handles → declared fades, wipes, slides, black/white fades, circular and other transitions. | `timeline transition; capabilities` | Support depends on renderer and layer context; later Float32 transition candidates are not bundled. |
+| F17 | Transitions and cut effects | Adjacent clips and handles → declared fades, wipes, slides, black/white fades, circular and other transitions. | `timeline transition; capabilities` | Select by renderer and layer context; the explicit CPU Float32 subset is delivered under the separate F55 contract. |
 | F18 | Geometric masks and frame corrections | Rectangles/circles/ellipses/paths/polygons → inversion, feathering, animation, encoded masks and corrections. | `timeline compose; media mask-edit; quality mask` | Point topology and sampling are bounded; geometric checks do not prove semantic identity. |
 | F19 | Layer compositing and blending | Visual layers → normal/multiply/screen/overlay/difference/addition/softlight/hardlight. | `timeline compose; capabilities` | The default path mainly uses encoded 8-bit RGB, without general linear-light/HDR equivalence. |
 | F20 | 46 processing operators | Blur/sharpen, denoise, tone, curves, HSL, keying, vignette, noise and more → configurable chains. | `effects list/inspect` | Inspect animated parameters and backends individually; 46 operators and 500 LUT looks are separate inventories. |
@@ -69,6 +69,7 @@ Linear Float32 transitions/source handles/group edges, native OpenCL crop/affine
 | F53 | Semantic runtime relocation | Old adapter/index/profiles → new installation-bound identities, copying vectors/previews/datasets and retaining fitted observations. | `project upgrade-semantic` | All 19 implementation files and external dependencies must be byte-identical; zero new model forwards; original records retained; changed bytes require rebuilding. |
 | F54 | Portable parameterized motion | Versioned local JSON / captured authored curves → editable keys, resolved parameters/digests/snapshot and cross-project reuse, with six actual previews. | `motion pack list/inspect/create/capture/apply` | 65-point paths, transform properties; conflicts reject unless whole-property replacement is explicit; tracking bindings reject; CPU performance/natural quality remain open. |
 | F55 | Linear Float32 transitions and group edges | Explicit Float32 projects → 57 xfade patterns+2 dips,premultiplied alpha,real handles/original clocks,linked audio,group wipe/slide,actual preview and encoding. | `timeline transition; preview; render; queue` | CPU;12 real-handle declaration types,other patterns use overlap/edges;normal paired blending;platform-dependent wind,HDR/natural quality open. |
+| F56 | Linear Float32 text and captions | Independent/inline/SRT → native shaping,linear box/shadow/border/fill,joint word/typewriter,original/reverse clocks,actual preview and rendering. | `timeline compose; preview; render; queue` | Explicit local font;CPU;8bit coverage/Float32 color;plain SRT;complex Bidi/4K/GPU text open. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -861,7 +862,8 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "caught_publish_IO_pair_rollback",
     "linear_premultiplied_transitions",
     "real_source_handles_and_linked_audio",
-    "authored_group_spatial_edges"
+    "authored_group_spatial_edges",
+    "linear_float32_titles_inline_text_and_plain_SRT"
   ],
   "limits": [
     "explicit_opt_in_not_default_migration",
@@ -3360,6 +3362,45 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
 ```json
 {
   "status": "implemented",
+  "float32_native": {
+    "status": "implemented_with_limits",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "selection": "settings.pixel_pipeline.engine=float32-native-v1",
+    "commands": [
+      "preview.frame",
+      "preview.range",
+      "render",
+      "render.resume",
+      "queue.run"
+    ],
+    "features": [
+      "independent_text_track_and_inline_captions",
+      "explicit_registered_font_SHA",
+      "linear_Float32_box_shadow_border_fill_source_over",
+      "256_code_native_coverage_calibration",
+      "whole_paragraph_binary_word_highlights",
+      "whole_prefix_grapheme_typewriter_snapshots",
+      "original_presentation_clock_and_parent_reverse_left_limits",
+      "plain_SRT_half_open_cues",
+      "fade_slide_pop_bounce_rotate",
+      "clip_effects_transforms_masks_crop_blend_and_transitions",
+      "bounded_LRU_surface_cache",
+      "owned_native_process_cancellation_cleanup"
+    ],
+    "limits": [
+      "CPU_only",
+      "glyph_coverage_8bit_authored_colors_and_composition_Float32",
+      "SRT_plain_text_only_rich_ASS_SSA_VTT_not_ported",
+      "explicit_font_and_native_metrics_required",
+      "stateful_positions_and_wall_clock_expansion_rejected",
+      "bidi_and_internal_word_clusters_pending",
+      "typewriter_512_graphemes_highlight_128_ranges",
+      "20_raster_admission_estimate_not_peak_RSS",
+      "4K_native_text_rejected_at_default_768MiB_budget",
+      "not_realtime_HDR_or_full_CapCut_acceptance"
+    ]
+  },
+  "limits_scope": "remaining subtitle limits describe the default encoded-RGB path; float32_native has its own explicit contract",
   "formats": [
     "srt",
     "vtt",

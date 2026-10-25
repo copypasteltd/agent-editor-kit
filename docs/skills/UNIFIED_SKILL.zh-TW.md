@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.21 / alpha.4-local.19 / r22 kit · 1 Skill / 17 modules / 70 files.**
+**CLI0.1.22 / alpha.4-local.20 / r23 kit · 1 Skill / 17 modules / 71 files.**
 
 明確線性 Float32 管線新增 57 種 xfade 圖案及黑/白 dip，真實來源句柄、關聯音軌與群組空間進出場已接入。實際統一 Skill 完成 6秒/72影格案例，倒放、預覽、取消恢復、佇列與逐樣本音訊核對通過。CPU 執行；預設管線與 GPU 投影沿用各自契約。
 
-[Float32 workflow](../product/FLOAT_TRANSITIONS.md) · [GPU projection](../product/OPENCL_PROJECTION.md) · [Install](../product/COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](../product/float-transition-capabilities-cli-0.1.21.json).
+[Float32 workflow](../product/FLOAT_TRANSITIONS.md) · [GPU projection](../product/OPENCL_PROJECTION.md) · [Install](../product/COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](../product/float-text-capabilities-cli-0.1.22.json).
 
 <!-- /community-current -->
 
@@ -95,3 +95,5 @@ skills/agent-ffmpeg-local-editor/
 [Fixed-canvas affine reuse / 扫描行复用](../product/AFFINE_RENDERING.md) uses the existing render workflow, keeps CPU composition explicit, and provides paired timing and actual previews.
 
 [Animated crop and native-canvas projection / 动态裁切与嵌套投影](../product/PROJECTION_RENDERING.md) retains the existing bilinear/area kernels, explicit raster quota and editable keys; CPU composition and GPU encoding remain separate.
+
+CLI0.1.22: independent/inline Float32 text, joint typewriter/highlight and plain SRT. Read [workflow](../product/FLOAT_TEXT.md); CPU,8bit coverage/Float32 colors,explicit fonts and original clocks. 4K text/GPU text/rich ASS and full target acceptance remain open.

@@ -1,0 +1,1838 @@
+[
+  {
+    "test": "test_float_text.FloatTextTests.test_box_shadow_border_and_fill_match_four_independent_coverage_rasters",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "author_seconds": 0.0,
+    "author_frame_number": 0,
+    "graph_sha256": "7e4576c2a32d9e12501c5fd634836498aa05efb110e37037676a6d0e481e17e3",
+    "graph": "cache/float-text/7e4576c2a32d9e12501c5fd634836498aa05efb110e37037676a6d0e481e17e3.ffgraph",
+    "pixels_sha256": "74eb3fa1a842edee603ff5fd199dfd99308f040e671d7c74256148ac5f648d7e",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "coverage": "native-white-glyph-on-opaque-black-8bit",
+        "working_color": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "authored_color": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "component_order": [
+          "boxcolor",
+          "shadowcolor",
+          "bordercolor",
+          "fontcolor"
+        ],
+        "colors": [
+          {
+            "component": "boxcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#32649660",
+            "cache_key": "79c7f657e539518ce054d3ecfc718a21dba160234a9831f58342309ca32e4a1f",
+            "rgba": [
+              50,
+              100,
+              150,
+              96
+            ],
+            "working_rgba": [
+              0.03189603239297867,
+              0.12743768095970154,
+              0.3049873411655426,
+              0.3764705955982208
+            ]
+          },
+          {
+            "component": "shadowcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#dc502080",
+            "cache_key": "82a195f0c8fba266efd01e0ef0c6bf976ea94131ff6db0118a92e2eed267f38b",
+            "rgba": [
+              220,
+              80,
+              32,
+              128
+            ],
+            "working_rgba": [
+              0.7156935334205627,
+              0.0802198275923729,
+              0.014443844556808472,
+              0.501960813999176
+            ]
+          },
+          {
+            "component": "bordercolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#2064dc90",
+            "cache_key": "011a5b3b128a79e5d10afe036a3fc004efbbe7f6b77b11bafbe976b85f961442",
+            "rgba": [
+              32,
+              100,
+              220,
+              144
+            ],
+            "working_rgba": [
+              0.014443844556808472,
+              0.12743768095970154,
+              0.7156935334205627,
+              0.5647059082984924
+            ]
+          },
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "component_composition": "Float32-straight-source-over-with-zero-alpha-RGB-cleared",
+        "media_color_rasterized_at_8bit": false,
+        "coverage_conversion": {
+          "protocol": "native-glyph-coverage-ramp-v1",
+          "black": 0.0,
+          "white": 0.9961547255516052,
+          "code_scale": 256,
+          "codes_checked": 256,
+          "max_code_error": 0.0,
+          "raw_sha256": "734b78f6dace5933716bb5e367edae722dd5a2733bbdc0bbf43acbaf9e0b9841",
+          "ffmpeg_sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        }
+      }
+    ],
+    "layouts": [
+      {}
+    ],
+    "cache_hit": false,
+    "color_raster": "gbrapf32le",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_half_alpha_and_srgb_EOTF_match_independent_reference",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "author_seconds": 0.0,
+    "author_frame_number": 0,
+    "graph_sha256": "26dbbfa4b89ab6dc1242d7fc745c5e3d2e5b517944cf754b91b844330b9d272e",
+    "graph": "cache/float-text/26dbbfa4b89ab6dc1242d7fc745c5e3d2e5b517944cf754b91b844330b9d272e.ffgraph",
+    "pixels_sha256": "3e8b3e8f12cf9591041bf322b7aae9c65ed3e7cbf45e33d762ade960c5fde3fc",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "coverage": "native-white-glyph-on-opaque-black-8bit",
+        "working_color": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "authored_color": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "component_order": [
+          "fontcolor"
+        ],
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "component_composition": "Float32-straight-source-over-with-zero-alpha-RGB-cleared",
+        "media_color_rasterized_at_8bit": false,
+        "coverage_conversion": {
+          "protocol": "native-glyph-coverage-ramp-v1",
+          "black": 0.0,
+          "white": 0.9961547255516052,
+          "code_scale": 256,
+          "codes_checked": 256,
+          "max_code_error": 0.0,
+          "raw_sha256": "734b78f6dace5933716bb5e367edae722dd5a2733bbdc0bbf43acbaf9e0b9841",
+          "ffmpeg_sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        }
+      }
+    ],
+    "layouts": [
+      {}
+    ],
+    "cache_hit": false,
+    "color_raster": "gbrapf32le",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_highlight_and_typewriter_share_one_snapshot_clock",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "author_seconds": 0.4,
+    "author_frame_number": 4,
+    "graph_sha256": "0f9afc97131aa37565427a2e578e2b022e50b97cdb2aa442736067960a1e3442",
+    "graph": "cache/float-text/0f9afc97131aa37565427a2e578e2b022e50b97cdb2aa442736067960a1e3442.ffgraph",
+    "pixels_sha256": "e40a0b15fce7a466ce4519810b723ec3ca47bd81f67059186fad5fe6db6ba907",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "coverage": "native-white-glyph-on-opaque-black-8bit",
+        "working_color": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "authored_color": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "component_order": [
+          "fontcolor"
+        ],
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "component_composition": "Float32-straight-source-over-with-zero-alpha-RGB-cleared",
+        "media_color_rasterized_at_8bit": false,
+        "coverage_conversion": {
+          "protocol": "native-glyph-coverage-ramp-v1",
+          "black": 0.0,
+          "white": 0.9961547255516052,
+          "code_scale": 256,
+          "codes_checked": 256,
+          "max_code_error": 0.0,
+          "raw_sha256": "734b78f6dace5933716bb5e367edae722dd5a2733bbdc0bbf43acbaf9e0b9841",
+          "ffmpeg_sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        }
+      },
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "coverage": "native-white-glyph-on-opaque-black-8bit",
+        "working_color": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "authored_color": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "component_order": [
+          "fontcolor"
+        ],
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "yellow",
+            "cache_key": "fb982dee3907ad99f238bc8f854613300778372a3c4f5f7f277f3968025915ba",
+            "rgba": [
+              255,
+              255,
+              0,
+              255
+            ],
+            "working_rgba": [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "component_composition": "Float32-straight-source-over-with-zero-alpha-RGB-cleared",
+        "media_color_rasterized_at_8bit": false,
+        "coverage_conversion": {
+          "protocol": "native-glyph-coverage-ramp-v1",
+          "black": 0.0,
+          "white": 0.9961547255516052,
+          "code_scale": 256,
+          "codes_checked": 256,
+          "max_code_error": 0.0,
+          "raw_sha256": "734b78f6dace5933716bb5e367edae722dd5a2733bbdc0bbf43acbaf9e0b9841",
+          "ffmpeg_sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        }
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "a2f17162faf97fdd5dec89672304a3cccebfeb16fa9224257b6263395d0cde43",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 4,
+        "engine": "drawtext-whole-paragraph-masked-highlight",
+        "paragraph_metrics": {
+          "text_w": 76.0,
+          "text_h": 16.0,
+          "ascent": 16.0,
+          "descent": 0.0,
+          "font_a": 24.0,
+          "font_d": 6.0,
+          "top_a": 16.0,
+          "bottom_d": 0.0,
+          "line_h": 29.0,
+          "max_glyph_h": 16.0,
+          "max_glyph_w": 16.0
+        },
+        "word_rectangles": [
+          {
+            "source_start": 0,
+            "line": 0,
+            "advance_left": 0.0,
+            "advance_right": 37.625,
+            "start_seconds": 0.0,
+            "end_seconds": 0.5
+          },
+          {
+            "source_start": 3,
+            "line": 0,
+            "advance_left": 37.625,
+            "advance_right": 75.25,
+            "start_seconds": 0.5,
+            "end_seconds": 1.0
+          }
+        ],
+        "line_count": 1,
+        "newline_glyph_painted": false,
+        "color_selection": "binary-whole-paragraph-paints",
+        "timing_evaluation": "one-native-enable-per-word-per-frame",
+        "paint_count": 2,
+        "typing": {
+          "protocol": "drawtext-native-prefix-snapshot-v1",
+          "engine": "native-prefix-author-clock-snapshot",
+          "author_seconds": 0.4,
+          "grapheme_count": 5,
+          "revealed_graphemes": 3,
+          "line_count": 1,
+          "paint_count": 2,
+          "command_count": 0,
+          "paragraph_anchor": "complete-paragraph-fixed-origin-and-baselines",
+          "prefix_shaping": "whole-native-run",
+          "newline_consumes_step": false,
+          "authored_whitespace_consumes_step": true,
+          "frame_grid_quantization": false
+        }
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "gbrapf32le",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_highlight_and_typewriter_share_one_snapshot_clock",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "author_seconds": 0.8,
+    "author_frame_number": 8,
+    "graph_sha256": "241ff1c3c522ae785672d15cf632a861c5ed542cd3e912e40fb77294da78a1c0",
+    "graph": "cache/float-text/241ff1c3c522ae785672d15cf632a861c5ed542cd3e912e40fb77294da78a1c0.ffgraph",
+    "pixels_sha256": "8f61f4b7d6c2b8b4f8232cc523c04d9dd367af3b803abe78e1d04868fd7e4ecc",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "coverage": "native-white-glyph-on-opaque-black-8bit",
+        "working_color": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "authored_color": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "component_order": [
+          "fontcolor"
+        ],
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "component_composition": "Float32-straight-source-over-with-zero-alpha-RGB-cleared",
+        "media_color_rasterized_at_8bit": false,
+        "coverage_conversion": {
+          "protocol": "native-glyph-coverage-ramp-v1",
+          "black": 0.0,
+          "white": 0.9961547255516052,
+          "code_scale": 256,
+          "codes_checked": 256,
+          "max_code_error": 0.0,
+          "raw_sha256": "734b78f6dace5933716bb5e367edae722dd5a2733bbdc0bbf43acbaf9e0b9841",
+          "ffmpeg_sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        }
+      },
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "coverage": "native-white-glyph-on-opaque-black-8bit",
+        "working_color": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "authored_color": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "component_order": [
+          "fontcolor"
+        ],
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "yellow",
+            "cache_key": "fb982dee3907ad99f238bc8f854613300778372a3c4f5f7f277f3968025915ba",
+            "rgba": [
+              255,
+              255,
+              0,
+              255
+            ],
+            "working_rgba": [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "component_composition": "Float32-straight-source-over-with-zero-alpha-RGB-cleared",
+        "media_color_rasterized_at_8bit": false,
+        "coverage_conversion": {
+          "protocol": "native-glyph-coverage-ramp-v1",
+          "black": 0.0,
+          "white": 0.9961547255516052,
+          "code_scale": 256,
+          "codes_checked": 256,
+          "max_code_error": 0.0,
+          "raw_sha256": "734b78f6dace5933716bb5e367edae722dd5a2733bbdc0bbf43acbaf9e0b9841",
+          "ffmpeg_sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        }
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "a2f17162faf97fdd5dec89672304a3cccebfeb16fa9224257b6263395d0cde43",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 4,
+        "engine": "drawtext-whole-paragraph-masked-highlight",
+        "paragraph_metrics": {
+          "text_w": 76.0,
+          "text_h": 16.0,
+          "ascent": 16.0,
+          "descent": 0.0,
+          "font_a": 24.0,
+          "font_d": 6.0,
+          "top_a": 16.0,
+          "bottom_d": 0.0,
+          "line_h": 29.0,
+          "max_glyph_h": 16.0,
+          "max_glyph_w": 16.0
+        },
+        "word_rectangles": [
+          {
+            "source_start": 0,
+            "line": 0,
+            "advance_left": 0.0,
+            "advance_right": 37.625,
+            "start_seconds": 0.0,
+            "end_seconds": 0.5
+          },
+          {
+            "source_start": 3,
+            "line": 0,
+            "advance_left": 37.625,
+            "advance_right": 75.25,
+            "start_seconds": 0.5,
+            "end_seconds": 1.0
+          }
+        ],
+        "line_count": 1,
+        "newline_glyph_painted": false,
+        "color_selection": "binary-whole-paragraph-paints",
+        "timing_evaluation": "one-native-enable-per-word-per-frame",
+        "paint_count": 2,
+        "typing": {
+          "protocol": "drawtext-native-prefix-snapshot-v1",
+          "engine": "native-prefix-author-clock-snapshot",
+          "author_seconds": 0.8,
+          "grapheme_count": 5,
+          "revealed_graphemes": 5,
+          "line_count": 1,
+          "paint_count": 2,
+          "command_count": 0,
+          "paragraph_anchor": "complete-paragraph-fixed-origin-and-baselines",
+          "prefix_shaping": "whole-native-run",
+          "newline_consumes_step": false,
+          "authored_whitespace_consumes_step": true,
+          "frame_grid_quantization": false
+        }
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "gbrapf32le",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_highlight_uses_two_linear_paragraphs_with_identical_alpha",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "author_seconds": 0.25,
+    "author_frame_number": 2,
+    "graph_sha256": "864c49cff4d710afdec6a11d2435a0bbaed958a8f8201e676b907ecb98caab7a",
+    "graph": "cache/float-text/864c49cff4d710afdec6a11d2435a0bbaed958a8f8201e676b907ecb98caab7a.ffgraph",
+    "pixels_sha256": "6abbe890ee9c136489d5a5708a6a8cf38550e84faf7d9f85a11cac44d3541b95",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "coverage": "native-white-glyph-on-opaque-black-8bit",
+        "working_color": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "authored_color": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "component_order": [
+          "fontcolor"
+        ],
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "component_composition": "Float32-straight-source-over-with-zero-alpha-RGB-cleared",
+        "media_color_rasterized_at_8bit": false,
+        "coverage_conversion": {
+          "protocol": "native-glyph-coverage-ramp-v1",
+          "black": 0.0,
+          "white": 0.9961547255516052,
+          "code_scale": 256,
+          "codes_checked": 256,
+          "max_code_error": 0.0,
+          "raw_sha256": "734b78f6dace5933716bb5e367edae722dd5a2733bbdc0bbf43acbaf9e0b9841",
+          "ffmpeg_sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        }
+      },
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "coverage": "native-white-glyph-on-opaque-black-8bit",
+        "working_color": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "authored_color": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "component_order": [
+          "fontcolor"
+        ],
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#c0804080",
+            "cache_key": "c496cbd6c5f25d8072dfd9af02a4ed59c72f85416f86037b16361b638ac07da0",
+            "rgba": [
+              192,
+              128,
+              64,
+              128
+            ],
+            "working_rgba": [
+              0.5271151661872864,
+              0.2158605307340622,
+              0.05126946419477463,
+              0.501960813999176
+            ]
+          }
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "component_composition": "Float32-straight-source-over-with-zero-alpha-RGB-cleared",
+        "media_color_rasterized_at_8bit": false,
+        "coverage_conversion": {
+          "protocol": "native-glyph-coverage-ramp-v1",
+          "black": 0.0,
+          "white": 0.9961547255516052,
+          "code_scale": 256,
+          "codes_checked": 256,
+          "max_code_error": 0.0,
+          "raw_sha256": "734b78f6dace5933716bb5e367edae722dd5a2733bbdc0bbf43acbaf9e0b9841",
+          "ffmpeg_sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        }
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "c20ddd6c566c1f621d9966e61dcd94011712fff97b7be226404ec37d529d004c",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 4,
+        "engine": "drawtext-whole-paragraph-masked-highlight",
+        "paragraph_metrics": {
+          "text_w": 146.0,
+          "text_h": 16.0,
+          "ascent": 16.0,
+          "descent": 0.0,
+          "font_a": 24.0,
+          "font_d": 6.0,
+          "top_a": 16.0,
+          "bottom_d": 0.0,
+          "line_h": 29.0,
+          "max_glyph_h": 16.0,
+          "max_glyph_w": 16.0
+        },
+        "word_rectangles": [
+          {
+            "source_start": 0,
+            "line": 0,
+            "advance_left": 0.0,
+            "advance_right": 72.65625,
+            "start_seconds": 0.0,
+            "end_seconds": 0.5
+          },
+          {
+            "source_start": 5,
+            "line": 0,
+            "advance_left": 72.65625,
+            "advance_right": 145.3125,
+            "start_seconds": 0.5,
+            "end_seconds": 1.0
+          }
+        ],
+        "line_count": 1,
+        "newline_glyph_painted": false,
+        "color_selection": "binary-whole-paragraph-paints",
+        "timing_evaluation": "one-native-enable-per-word-per-frame",
+        "paint_count": 2
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "gbrapf32le",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_highlight_uses_two_linear_paragraphs_with_identical_alpha",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "author_seconds": 0.75,
+    "author_frame_number": 7,
+    "graph_sha256": "2442aa1ba0ae0e5e1ab1b85b15ecb665a8f550998f0e54b8b58b686095275cce",
+    "graph": "cache/float-text/2442aa1ba0ae0e5e1ab1b85b15ecb665a8f550998f0e54b8b58b686095275cce.ffgraph",
+    "pixels_sha256": "3ec29597db87c42a5ea2e12a5ea2517d78efe0a01be88eba205a8a5c2ce6a88b",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "coverage": "native-white-glyph-on-opaque-black-8bit",
+        "working_color": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "authored_color": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "component_order": [
+          "fontcolor"
+        ],
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "component_composition": "Float32-straight-source-over-with-zero-alpha-RGB-cleared",
+        "media_color_rasterized_at_8bit": false,
+        "coverage_conversion": {
+          "protocol": "native-glyph-coverage-ramp-v1",
+          "black": 0.0,
+          "white": 0.9961547255516052,
+          "code_scale": 256,
+          "codes_checked": 256,
+          "max_code_error": 0.0,
+          "raw_sha256": "734b78f6dace5933716bb5e367edae722dd5a2733bbdc0bbf43acbaf9e0b9841",
+          "ffmpeg_sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        }
+      },
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "coverage": "native-white-glyph-on-opaque-black-8bit",
+        "working_color": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "authored_color": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "component_order": [
+          "fontcolor"
+        ],
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#c0804080",
+            "cache_key": "c496cbd6c5f25d8072dfd9af02a4ed59c72f85416f86037b16361b638ac07da0",
+            "rgba": [
+              192,
+              128,
+              64,
+              128
+            ],
+            "working_rgba": [
+              0.5271151661872864,
+              0.2158605307340622,
+              0.05126946419477463,
+              0.501960813999176
+            ]
+          }
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "component_composition": "Float32-straight-source-over-with-zero-alpha-RGB-cleared",
+        "media_color_rasterized_at_8bit": false,
+        "coverage_conversion": {
+          "protocol": "native-glyph-coverage-ramp-v1",
+          "black": 0.0,
+          "white": 0.9961547255516052,
+          "code_scale": 256,
+          "codes_checked": 256,
+          "max_code_error": 0.0,
+          "raw_sha256": "734b78f6dace5933716bb5e367edae722dd5a2733bbdc0bbf43acbaf9e0b9841",
+          "ffmpeg_sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        }
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "c20ddd6c566c1f621d9966e61dcd94011712fff97b7be226404ec37d529d004c",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 4,
+        "engine": "drawtext-whole-paragraph-masked-highlight",
+        "paragraph_metrics": {
+          "text_w": 146.0,
+          "text_h": 16.0,
+          "ascent": 16.0,
+          "descent": 0.0,
+          "font_a": 24.0,
+          "font_d": 6.0,
+          "top_a": 16.0,
+          "bottom_d": 0.0,
+          "line_h": 29.0,
+          "max_glyph_h": 16.0,
+          "max_glyph_w": 16.0
+        },
+        "word_rectangles": [
+          {
+            "source_start": 0,
+            "line": 0,
+            "advance_left": 0.0,
+            "advance_right": 72.65625,
+            "start_seconds": 0.0,
+            "end_seconds": 0.5
+          },
+          {
+            "source_start": 5,
+            "line": 0,
+            "advance_left": 72.65625,
+            "advance_right": 145.3125,
+            "start_seconds": 0.5,
+            "end_seconds": 1.0
+          }
+        ],
+        "line_count": 1,
+        "newline_glyph_painted": false,
+        "color_selection": "binary-whole-paragraph-paints",
+        "timing_evaluation": "one-native-enable-per-word-per-frame",
+        "paint_count": 2
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "gbrapf32le",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_inline_text_preserves_sub_8bit_media_and_source_over_is_linear",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "author_seconds": 0.0,
+    "author_frame_number": 0,
+    "graph_sha256": "26dbbfa4b89ab6dc1242d7fc745c5e3d2e5b517944cf754b91b844330b9d272e",
+    "graph": "cache/float-text/26dbbfa4b89ab6dc1242d7fc745c5e3d2e5b517944cf754b91b844330b9d272e.ffgraph",
+    "pixels_sha256": "3e8b3e8f12cf9591041bf322b7aae9c65ed3e7cbf45e33d762ade960c5fde3fc",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "coverage": "native-white-glyph-on-opaque-black-8bit",
+        "working_color": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "authored_color": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "component_order": [
+          "fontcolor"
+        ],
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "component_composition": "Float32-straight-source-over-with-zero-alpha-RGB-cleared",
+        "media_color_rasterized_at_8bit": false,
+        "coverage_conversion": {
+          "protocol": "native-glyph-coverage-ramp-v1",
+          "black": 0.0,
+          "white": 0.9961547255516052,
+          "code_scale": 256,
+          "codes_checked": 256,
+          "max_code_error": 0.0,
+          "raw_sha256": "734b78f6dace5933716bb5e367edae722dd5a2733bbdc0bbf43acbaf9e0b9841",
+          "ffmpeg_sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        }
+      }
+    ],
+    "layouts": [
+      {}
+    ],
+    "cache_hit": false,
+    "color_raster": "gbrapf32le",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_nested_reverse_propagates_title_left_limit",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "author_seconds": 0.49999999999999994,
+    "author_frame_number": 4,
+    "graph_sha256": "27da8be7c6a9047007859c586ed9cacaa52a9866fb73244cffcb22e8efba1be2",
+    "graph": "cache/float-text/27da8be7c6a9047007859c586ed9cacaa52a9866fb73244cffcb22e8efba1be2.ffgraph",
+    "pixels_sha256": "817986482fefc8187a6881ea9b86b8ef0de86522202e8ae0372e1f96a121ab1c",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "coverage": "native-white-glyph-on-opaque-black-8bit",
+        "working_color": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "authored_color": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "component_order": [
+          "fontcolor"
+        ],
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "white",
+            "cache_key": "ffc5165aaef0dc488e607222a550e94f5823e00a4fec25bb49229f00d2dcf945",
+            "rgba": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "working_rgba": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "component_composition": "Float32-straight-source-over-with-zero-alpha-RGB-cleared",
+        "media_color_rasterized_at_8bit": false,
+        "coverage_conversion": {
+          "protocol": "native-glyph-coverage-ramp-v1",
+          "black": 0.0,
+          "white": 0.9961547255516052,
+          "code_scale": 256,
+          "codes_checked": 256,
+          "max_code_error": 0.0,
+          "raw_sha256": "734b78f6dace5933716bb5e367edae722dd5a2733bbdc0bbf43acbaf9e0b9841",
+          "ffmpeg_sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        }
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "b1eb039ae35ed86ad6ef75fc54a6bef04153754572755557bef4b5c97fe3a82d",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 2,
+        "engine": "drawtext-lines-shared-paragraph-metrics",
+        "paragraph_metrics": {
+          "text_w": 94.0,
+          "text_h": 23.0,
+          "ascent": 23.0,
+          "descent": 0.0,
+          "font_a": 32.0,
+          "font_d": 8.0,
+          "top_a": 23.0,
+          "bottom_d": 0.0,
+          "line_h": 38.0,
+          "max_glyph_h": 23.0,
+          "max_glyph_w": 18.0
+        },
+        "line_count": 1,
+        "newline_glyph_painted": false,
+        "typing": {
+          "protocol": "drawtext-native-prefix-snapshot-v1",
+          "engine": "native-prefix-author-clock-snapshot",
+          "author_seconds": 0.49999999999999994,
+          "grapheme_count": 4,
+          "revealed_graphemes": 2,
+          "line_count": 1,
+          "paint_count": 1,
+          "command_count": 0,
+          "paragraph_anchor": "complete-paragraph-fixed-origin-and-baselines",
+          "prefix_shaping": "whole-native-run",
+          "newline_consumes_step": false,
+          "authored_whitespace_consumes_step": true,
+          "frame_grid_quantization": false
+        }
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "gbrapf32le",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_plain_SRT_half_open_windows_and_clip_clock_offset",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "author_seconds": 0.5,
+    "author_frame_number": 5,
+    "graph_sha256": "add270462c340e7e27fc7f688ec44012e8ed420636b34637dfe1a7dc9fb47bba",
+    "graph": "cache/float-text/add270462c340e7e27fc7f688ec44012e8ed420636b34637dfe1a7dc9fb47bba.ffgraph",
+    "pixels_sha256": "3e8b3e8f12cf9591041bf322b7aae9c65ed3e7cbf45e33d762ade960c5fde3fc",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "coverage": "native-white-glyph-on-opaque-black-8bit",
+        "working_color": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "authored_color": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "component_order": [
+          "fontcolor"
+        ],
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "component_composition": "Float32-straight-source-over-with-zero-alpha-RGB-cleared",
+        "media_color_rasterized_at_8bit": false,
+        "coverage_conversion": {
+          "protocol": "native-glyph-coverage-ramp-v1",
+          "black": 0.0,
+          "white": 0.9961547255516052,
+          "code_scale": 256,
+          "codes_checked": 256,
+          "max_code_error": 0.0,
+          "raw_sha256": "734b78f6dace5933716bb5e367edae722dd5a2733bbdc0bbf43acbaf9e0b9841",
+          "ffmpeg_sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        }
+      }
+    ],
+    "layouts": [
+      {}
+    ],
+    "cache_hit": false,
+    "color_raster": "gbrapf32le",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_plain_SRT_half_open_windows_and_clip_clock_offset",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "author_seconds": 0.49999999999999994,
+    "author_frame_number": 4,
+    "graph_sha256": "013948b730bfa19fda5d02b39cb325332fdd95caad6481372fffa12b32a1b5d2",
+    "graph": "cache/float-text/013948b730bfa19fda5d02b39cb325332fdd95caad6481372fffa12b32a1b5d2.ffgraph",
+    "pixels_sha256": "f642dcc4c5dd585bee5e1c99b1f3abf9c647693f66c2d97e04358fec856ee0e5",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "coverage": "native-white-glyph-on-opaque-black-8bit",
+        "working_color": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "authored_color": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "component_order": [
+          "fontcolor"
+        ],
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "component_composition": "Float32-straight-source-over-with-zero-alpha-RGB-cleared",
+        "media_color_rasterized_at_8bit": false,
+        "coverage_conversion": {
+          "protocol": "native-glyph-coverage-ramp-v1",
+          "black": 0.0,
+          "white": 0.9961547255516052,
+          "code_scale": 256,
+          "codes_checked": 256,
+          "max_code_error": 0.0,
+          "raw_sha256": "734b78f6dace5933716bb5e367edae722dd5a2733bbdc0bbf43acbaf9e0b9841",
+          "ffmpeg_sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        }
+      }
+    ],
+    "layouts": [
+      {}
+    ],
+    "cache_hit": false,
+    "color_raster": "gbrapf32le",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_plain_SRT_half_open_windows_and_clip_clock_offset",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "author_seconds": 1.0,
+    "empty_text": true,
+    "cache_hit": false
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_plain_SRT_half_open_windows_and_clip_clock_offset",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "author_seconds": 0.0,
+    "author_frame_number": 0,
+    "graph_sha256": "45f86b43171f0094c616b9efd3b057c095aae05c064ed57fd2000760855bbc15",
+    "graph": "cache/float-text/45f86b43171f0094c616b9efd3b057c095aae05c064ed57fd2000760855bbc15.ffgraph",
+    "pixels_sha256": "3e8b3e8f12cf9591041bf322b7aae9c65ed3e7cbf45e33d762ade960c5fde3fc",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "coverage": "native-white-glyph-on-opaque-black-8bit",
+        "working_color": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "authored_color": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "component_order": [
+          "fontcolor"
+        ],
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "component_composition": "Float32-straight-source-over-with-zero-alpha-RGB-cleared",
+        "media_color_rasterized_at_8bit": false,
+        "coverage_conversion": {
+          "protocol": "native-glyph-coverage-ramp-v1",
+          "black": 0.0,
+          "white": 0.9961547255516052,
+          "code_scale": 256,
+          "codes_checked": 256,
+          "max_code_error": 0.0,
+          "raw_sha256": "734b78f6dace5933716bb5e367edae722dd5a2733bbdc0bbf43acbaf9e0b9841",
+          "ffmpeg_sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        }
+      }
+    ],
+    "layouts": [
+      {}
+    ],
+    "cache_hit": false,
+    "color_raster": "gbrapf32le",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_trim_window_keeps_original_presentation_clock",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "author_seconds": 0.5,
+    "author_frame_number": 5,
+    "graph_sha256": "d0c5f47952032085848a9ec91abd04dde1b912d14570403c4f7eac3ca2bd3475",
+    "graph": "cache/float-text/d0c5f47952032085848a9ec91abd04dde1b912d14570403c4f7eac3ca2bd3475.ffgraph",
+    "pixels_sha256": "3e8b3e8f12cf9591041bf322b7aae9c65ed3e7cbf45e33d762ade960c5fde3fc",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "coverage": "native-white-glyph-on-opaque-black-8bit",
+        "working_color": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "authored_color": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "component_order": [
+          "fontcolor"
+        ],
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "component_composition": "Float32-straight-source-over-with-zero-alpha-RGB-cleared",
+        "media_color_rasterized_at_8bit": false,
+        "coverage_conversion": {
+          "protocol": "native-glyph-coverage-ramp-v1",
+          "black": 0.0,
+          "white": 0.9961547255516052,
+          "code_scale": 256,
+          "codes_checked": 256,
+          "max_code_error": 0.0,
+          "raw_sha256": "734b78f6dace5933716bb5e367edae722dd5a2733bbdc0bbf43acbaf9e0b9841",
+          "ffmpeg_sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        }
+      }
+    ],
+    "layouts": [
+      {}
+    ],
+    "cache_hit": false,
+    "color_raster": "gbrapf32le",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_typewriter_complete_paragraph_anchor_and_graphemes",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "author_seconds": 0.0,
+    "author_frame_number": 0,
+    "graph_sha256": "3d0948592bf142cc1fe57fd9dc9b0b94186988953fd0ccea717c5b9fbf03aec3",
+    "graph": "cache/float-text/3d0948592bf142cc1fe57fd9dc9b0b94186988953fd0ccea717c5b9fbf03aec3.ffgraph",
+    "pixels_sha256": "954f713c256f376a5b9a97dea4bf7b870186d774269aff6a072a090cebdf0eb4",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "coverage": "native-white-glyph-on-opaque-black-8bit",
+        "working_color": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "authored_color": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "component_order": [
+          "fontcolor"
+        ],
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "white",
+            "cache_key": "ffc5165aaef0dc488e607222a550e94f5823e00a4fec25bb49229f00d2dcf945",
+            "rgba": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "working_rgba": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "component_composition": "Float32-straight-source-over-with-zero-alpha-RGB-cleared",
+        "media_color_rasterized_at_8bit": false,
+        "coverage_conversion": {
+          "protocol": "native-glyph-coverage-ramp-v1",
+          "black": 0.0,
+          "white": 0.9961547255516052,
+          "code_scale": 256,
+          "codes_checked": 256,
+          "max_code_error": 0.0,
+          "raw_sha256": "734b78f6dace5933716bb5e367edae722dd5a2733bbdc0bbf43acbaf9e0b9841",
+          "ffmpeg_sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        }
+      },
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "coverage": "native-white-glyph-on-opaque-black-8bit",
+        "working_color": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "authored_color": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "component_order": [
+          "fontcolor"
+        ],
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "white",
+            "cache_key": "ffc5165aaef0dc488e607222a550e94f5823e00a4fec25bb49229f00d2dcf945",
+            "rgba": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "working_rgba": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "component_composition": "Float32-straight-source-over-with-zero-alpha-RGB-cleared",
+        "media_color_rasterized_at_8bit": false,
+        "coverage_conversion": {
+          "protocol": "native-glyph-coverage-ramp-v1",
+          "black": 0.0,
+          "white": 0.9961547255516052,
+          "code_scale": 256,
+          "codes_checked": 256,
+          "max_code_error": 0.0,
+          "raw_sha256": "734b78f6dace5933716bb5e367edae722dd5a2733bbdc0bbf43acbaf9e0b9841",
+          "ffmpeg_sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        }
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "2c6dac41a6d119a014d2a1f948a3cda105ab280e87e654fd99467206dc356c44",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 3,
+        "engine": "drawtext-lines-shared-paragraph-metrics",
+        "paragraph_metrics": {
+          "text_w": 93.0,
+          "text_h": 61.0,
+          "ascent": 23.0,
+          "descent": 0.0,
+          "font_a": 32.0,
+          "font_d": 8.0,
+          "top_a": 23.0,
+          "bottom_d": 0.0,
+          "line_h": 38.0,
+          "max_glyph_h": 23.0,
+          "max_glyph_w": 21.0
+        },
+        "line_count": 2,
+        "newline_glyph_painted": false,
+        "typing": {
+          "protocol": "drawtext-native-prefix-snapshot-v1",
+          "engine": "native-prefix-author-clock-snapshot",
+          "author_seconds": 0.0,
+          "grapheme_count": 6,
+          "revealed_graphemes": 1,
+          "line_count": 2,
+          "paint_count": 1,
+          "command_count": 0,
+          "paragraph_anchor": "complete-paragraph-fixed-origin-and-baselines",
+          "prefix_shaping": "whole-native-run",
+          "newline_consumes_step": false,
+          "authored_whitespace_consumes_step": true,
+          "frame_grid_quantization": false
+        }
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "gbrapf32le",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_typewriter_complete_paragraph_anchor_and_graphemes",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "author_seconds": 0.9,
+    "author_frame_number": 9,
+    "graph_sha256": "209fe2544d05a1c366ab87b02bd055207bf8da781bb471e1413e8c4d17f0f641",
+    "graph": "cache/float-text/209fe2544d05a1c366ab87b02bd055207bf8da781bb471e1413e8c4d17f0f641.ffgraph",
+    "pixels_sha256": "f3d7d3351f1772bf3832faf905312217fc62bfcea683c93a7ede45f845e5af25",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "coverage": "native-white-glyph-on-opaque-black-8bit",
+        "working_color": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "authored_color": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "component_order": [
+          "fontcolor"
+        ],
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "white",
+            "cache_key": "ffc5165aaef0dc488e607222a550e94f5823e00a4fec25bb49229f00d2dcf945",
+            "rgba": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "working_rgba": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "component_composition": "Float32-straight-source-over-with-zero-alpha-RGB-cleared",
+        "media_color_rasterized_at_8bit": false,
+        "coverage_conversion": {
+          "protocol": "native-glyph-coverage-ramp-v1",
+          "black": 0.0,
+          "white": 0.9961547255516052,
+          "code_scale": 256,
+          "codes_checked": 256,
+          "max_code_error": 0.0,
+          "raw_sha256": "734b78f6dace5933716bb5e367edae722dd5a2733bbdc0bbf43acbaf9e0b9841",
+          "ffmpeg_sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        }
+      },
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "coverage": "native-white-glyph-on-opaque-black-8bit",
+        "working_color": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "authored_color": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "component_order": [
+          "fontcolor"
+        ],
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "white",
+            "cache_key": "ffc5165aaef0dc488e607222a550e94f5823e00a4fec25bb49229f00d2dcf945",
+            "rgba": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "working_rgba": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "component_composition": "Float32-straight-source-over-with-zero-alpha-RGB-cleared",
+        "media_color_rasterized_at_8bit": false,
+        "coverage_conversion": {
+          "protocol": "native-glyph-coverage-ramp-v1",
+          "black": 0.0,
+          "white": 0.9961547255516052,
+          "code_scale": 256,
+          "codes_checked": 256,
+          "max_code_error": 0.0,
+          "raw_sha256": "734b78f6dace5933716bb5e367edae722dd5a2733bbdc0bbf43acbaf9e0b9841",
+          "ffmpeg_sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        }
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "2c6dac41a6d119a014d2a1f948a3cda105ab280e87e654fd99467206dc356c44",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 3,
+        "engine": "drawtext-lines-shared-paragraph-metrics",
+        "paragraph_metrics": {
+          "text_w": 93.0,
+          "text_h": 61.0,
+          "ascent": 23.0,
+          "descent": 0.0,
+          "font_a": 32.0,
+          "font_d": 8.0,
+          "top_a": 23.0,
+          "bottom_d": 0.0,
+          "line_h": 38.0,
+          "max_glyph_h": 23.0,
+          "max_glyph_w": 21.0
+        },
+        "line_count": 2,
+        "newline_glyph_painted": false,
+        "typing": {
+          "protocol": "drawtext-native-prefix-snapshot-v1",
+          "engine": "native-prefix-author-clock-snapshot",
+          "author_seconds": 0.9,
+          "grapheme_count": 6,
+          "revealed_graphemes": 6,
+          "line_count": 2,
+          "paint_count": 1,
+          "command_count": 0,
+          "paragraph_anchor": "complete-paragraph-fixed-origin-and-baselines",
+          "prefix_shaping": "whole-native-run",
+          "newline_consumes_step": false,
+          "authored_whitespace_consumes_step": true,
+          "frame_grid_quantization": false
+        }
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "gbrapf32le",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_typewriter_exact_boundary_and_left_limit_use_prefix_not_CFR_movie",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "author_seconds": 0.25,
+    "author_frame_number": 2,
+    "graph_sha256": "ce300264909e0a9011a839a24c4b00e6f91f8f7d9b7f0a6808a3103140bba4ca",
+    "graph": "cache/float-text/ce300264909e0a9011a839a24c4b00e6f91f8f7d9b7f0a6808a3103140bba4ca.ffgraph",
+    "pixels_sha256": "817986482fefc8187a6881ea9b86b8ef0de86522202e8ae0372e1f96a121ab1c",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "coverage": "native-white-glyph-on-opaque-black-8bit",
+        "working_color": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "authored_color": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "component_order": [
+          "fontcolor"
+        ],
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "white",
+            "cache_key": "ffc5165aaef0dc488e607222a550e94f5823e00a4fec25bb49229f00d2dcf945",
+            "rgba": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "working_rgba": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "component_composition": "Float32-straight-source-over-with-zero-alpha-RGB-cleared",
+        "media_color_rasterized_at_8bit": false,
+        "coverage_conversion": {
+          "protocol": "native-glyph-coverage-ramp-v1",
+          "black": 0.0,
+          "white": 0.9961547255516052,
+          "code_scale": 256,
+          "codes_checked": 256,
+          "max_code_error": 0.0,
+          "raw_sha256": "734b78f6dace5933716bb5e367edae722dd5a2733bbdc0bbf43acbaf9e0b9841",
+          "ffmpeg_sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        }
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "b1eb039ae35ed86ad6ef75fc54a6bef04153754572755557bef4b5c97fe3a82d",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 2,
+        "engine": "drawtext-lines-shared-paragraph-metrics",
+        "paragraph_metrics": {
+          "text_w": 94.0,
+          "text_h": 23.0,
+          "ascent": 23.0,
+          "descent": 0.0,
+          "font_a": 32.0,
+          "font_d": 8.0,
+          "top_a": 23.0,
+          "bottom_d": 0.0,
+          "line_h": 38.0,
+          "max_glyph_h": 23.0,
+          "max_glyph_w": 18.0
+        },
+        "line_count": 1,
+        "newline_glyph_painted": false,
+        "typing": {
+          "protocol": "drawtext-native-prefix-snapshot-v1",
+          "engine": "native-prefix-author-clock-snapshot",
+          "author_seconds": 0.25,
+          "grapheme_count": 4,
+          "revealed_graphemes": 2,
+          "line_count": 1,
+          "paint_count": 1,
+          "command_count": 0,
+          "paragraph_anchor": "complete-paragraph-fixed-origin-and-baselines",
+          "prefix_shaping": "whole-native-run",
+          "newline_consumes_step": false,
+          "authored_whitespace_consumes_step": true,
+          "frame_grid_quantization": false
+        }
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "gbrapf32le",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_typewriter_exact_boundary_and_left_limit_use_prefix_not_CFR_movie",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "author_seconds": 0.24999999999999997,
+    "author_frame_number": 2,
+    "graph_sha256": "257026791928e6a9255a5b0ad0ab843e5de1227cb5fa2a65fe27320bfe9f0b9c",
+    "graph": "cache/float-text/257026791928e6a9255a5b0ad0ab843e5de1227cb5fa2a65fe27320bfe9f0b9c.ffgraph",
+    "pixels_sha256": "07ad946438648df1c866c0dac1ff77664cda0cca23eaa617a80ccae73f64d312",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "coverage": "native-white-glyph-on-opaque-black-8bit",
+        "working_color": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "authored_color": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "component_order": [
+          "fontcolor"
+        ],
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "white",
+            "cache_key": "ffc5165aaef0dc488e607222a550e94f5823e00a4fec25bb49229f00d2dcf945",
+            "rgba": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "working_rgba": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "component_composition": "Float32-straight-source-over-with-zero-alpha-RGB-cleared",
+        "media_color_rasterized_at_8bit": false,
+        "coverage_conversion": {
+          "protocol": "native-glyph-coverage-ramp-v1",
+          "black": 0.0,
+          "white": 0.9961547255516052,
+          "code_scale": 256,
+          "codes_checked": 256,
+          "max_code_error": 0.0,
+          "raw_sha256": "734b78f6dace5933716bb5e367edae722dd5a2733bbdc0bbf43acbaf9e0b9841",
+          "ffmpeg_sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        }
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "b1eb039ae35ed86ad6ef75fc54a6bef04153754572755557bef4b5c97fe3a82d",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 2,
+        "engine": "drawtext-lines-shared-paragraph-metrics",
+        "paragraph_metrics": {
+          "text_w": 94.0,
+          "text_h": 23.0,
+          "ascent": 23.0,
+          "descent": 0.0,
+          "font_a": 32.0,
+          "font_d": 8.0,
+          "top_a": 23.0,
+          "bottom_d": 0.0,
+          "line_h": 38.0,
+          "max_glyph_h": 23.0,
+          "max_glyph_w": 18.0
+        },
+        "line_count": 1,
+        "newline_glyph_painted": false,
+        "typing": {
+          "protocol": "drawtext-native-prefix-snapshot-v1",
+          "engine": "native-prefix-author-clock-snapshot",
+          "author_seconds": 0.24999999999999997,
+          "grapheme_count": 4,
+          "revealed_graphemes": 1,
+          "line_count": 1,
+          "paint_count": 1,
+          "command_count": 0,
+          "paragraph_anchor": "complete-paragraph-fixed-origin-and-baselines",
+          "prefix_shaping": "whole-native-run",
+          "newline_consumes_step": false,
+          "authored_whitespace_consumes_step": true,
+          "frame_grid_quantization": false
+        }
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "gbrapf32le",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false
+  }
+]

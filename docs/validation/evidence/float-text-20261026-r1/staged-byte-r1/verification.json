@@ -1,0 +1,9 @@
+{
+  "status": "failed",
+  "action": "staged whitespace check",
+  "diagnostic": "product/tests/test_float_text.py:261: new blank line at EOF",
+  "repair": "Remove the trailing blank line only; Python AST unchanged; product bytes unchanged.",
+  "before_sha256": "4e184a52bef6a74c54ac23faa4326dc737e05a86971ef7045717834b538dae51",
+  "after_sha256": "429794114c84f697811d0862cbb9debfa538394a61eb407c571de83c0ac16c34",
+  "test_AST_equal": true
+}

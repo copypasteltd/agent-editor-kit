@@ -691,3 +691,15 @@ Native child480×270/output384×216,30fps/4s, reverse clock, animated crop, arc_
 ![Actual registered Skill composition / silent GIF](../assets/float-transition-20261026-r3/transitions.gif)
 
 CPU Float32；512MiB工作区单帧4K核对不等于实时或全进程资源验收。未做连续播放/人工听审，自然视听/HDR/长片/全剪映等价仍开放。
+
+<a id="c30-float-text"></a>
+
+## C30 浮点文字、打字机、逐词高亮与中文SRT / Native Float32 text
+
+真实注册Skill调用CLI0.1.22，6秒/72帧/12fps。中文Noto字体、整段前缀打字机与逐词选色、字层旋转、内嵌标题、根SRT、父级倒放及五组真实源句柄/关联音轨同时编辑。原生覆盖率256码值重建准确；颜色与合成为线性Float32。
+
+[使用流程](FLOAT_TEXT.md) · [完整实测](../validation/Float32文字字幕实测_2026-10-26.md) · [原视频](../assets/float-text-20261026-r3/original.native.mkv) · [原音轨](../assets/float-text-20261026-r3/original.audio.wav) · [MP4](../assets/float-text-20261026-r3/native-text.mp4) · [可编辑包](../assets/float-text-20261026-r3/editable-native-text.aevpkg.zip)
+
+![Actual registered Skill output / silent GIF](../assets/float-text-20261026-r3/native-text.gif)
+
+自制几何视频、字幕与合成验证音调为CC0；Noto Sans SC为OFL-1.1，原字体与许可保留。GIF无声，MP4的验证音调不代表配音/音乐质量。取消恢复及队列完整帧/时钟/PCM相同，逐采样对照原源。CPU文字，未做连续播放或人工听审；自然视听、4K字层、GPU文字、HDR及完整目标保持开放。

@@ -1,0 +1,24 @@
+{
+  "status": "observed",
+  "reviewer": "Codex agent",
+  "method": "Static inspection of decoded GIF frames through view_image",
+  "source": "docs/assets/float-text-20261026-r3/native-text.gif",
+  "frames": [
+    {
+      "index": 0,
+      "observation": "Dark background with the Chinese root SRT cue near the lower edge. No generated title is visible at this instant."
+    },
+    {
+      "index": 24,
+      "observation": "Synthetic green and magenta scene with the outlined AGENT EDITOR KIT title, the inline linear FLOAT32 caption and the Chinese root cue. The three text layers are visible within the output frame."
+    },
+    {
+      "index": 47,
+      "observation": "The transformed scene has moved toward the left edge; the Chinese SRT cue remains at the lower edge on the output canvas."
+    }
+  ],
+  "continuous_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false,
+  "scope": "Three static frames of the synthetic regression case only. This does not assess natural footage, continuous motion, speech, accessibility contrast or production typography."
+}

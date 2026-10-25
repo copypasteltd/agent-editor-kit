@@ -21,6 +21,7 @@ from .float_crop import compile_crop, project_crop
 from .float_effect_chain import EffectCompiler
 from .float_transitions import transition_rgba, PROTOCOL as TRANSITION_PROTOCOL, TYPES as TRANSITION_TYPES
 from .float_transition_plan import compile_track
+from .float_text import FloatTextHost
 from .source_transitions import compile_for_render
 from .float_raster import mode_name
 from .sequence_canvas import sequence_canvas
@@ -116,7 +117,9 @@ class FloatTimeline:
         if len(self.sequences)!=len(self.project['sequences']):raise error('SEQUENCE','序列ID重复')
         if sequence_id not in self.sequences:raise error('SEQUENCE','目标作者序列不存在')
         self.assets={a['id']:a for a in self.project['assets']};self.maps={};self.effect_plans={};self.mask_plans={};self.crop_plans={};self.clip_count=0
-        self.source_transition_plans={};self.transition_plans={}
+        self.source_transition_plans={};self.transition_plans={};self.text_plans={}
+        self.text_host=FloatTextHost(resource_root,self.assets,self.working,self.tps,self.fps,
+            cancel=self.poll,max_working_bytes=self.max_working_bytes)
         if len(self.assets)!=len(self.project['assets']):raise error('SOURCE','资产ID重复')
         self._validate(sequence_id,());sequence=self.sequences[sequence_id]
         self.frame_count=math.ceil(Fraction(int(sequence['duration_tick']),self.tps)*self.fps)
@@ -128,6 +131,7 @@ class FloatTimeline:
             'transitions':{'protocol':TRANSITION_PROTOCOL,'patterns':sorted(TRANSITION_TYPES),
                 'source_handle_plans':[p for p in self.source_transition_plans.values() if p],
                 'double_source_over_crossfade':False,'group_spatial_edges':True,'GPU':False},
+            'text':self.text_host.metadata,
             'input_contract':'validated Agent Project IR;registered SHA and explicit common working RGB signal',
             'audio_rendered':False,'legacy_render_preview_cache_integrated':False,'HDR_accepted':False,'network':False}
 
@@ -143,7 +147,7 @@ class FloatTimeline:
         ids=set()
         for track in sequence['tracks']:
             if track.get('muted') or track['kind']=='audio':continue
-            if track['kind']!='video' and track.get('clips'):raise error('UNSUPPORTED','该帧宿主尚未接入此轨道类型',track=track['id'],kind=track['kind'])
+            if track['kind'] not in ('video','subtitle') and track.get('clips'):raise error('UNSUPPORTED','该帧宿主尚未接入此轨道类型',track=track['id'],kind=track['kind'])
             self.transition_plans[sequence_id+'/'+track['id']]=compile_track(track,self.tps,self.source_transition_plans[sequence_id])
             for clip in track['clips']:
                 self.clip_count+=1
@@ -151,8 +155,12 @@ class FloatTimeline:
                 path=sequence_id+'/'+str(clip['id'])
                 if clip['id'] in ids:raise error('SEQUENCE','轨道内片段ID重复',clip=path)
                 ids.add(clip['id'])
-                for field in ('generator','subtitle','tracking_binding'):
-                    if clip.get(field):raise error('UNSUPPORTED','该作者操作尚未连接浮点宿主，不进行旧路径回落',clip=path,operation=field)
+                if clip.get('tracking_binding'):raise error('UNSUPPORTED','该作者操作尚未连接浮点宿主，不进行旧路径回落',clip=path,operation='tracking_binding')
+                independent_text=track['kind']=='subtitle'
+                if clip.get('generator') and (not independent_text or clip['generator']!={'type':'text'}):
+                    raise error('UNSUPPORTED','浮点生成器仅支持字幕轨道的明确type=text',clip=path,operation='generator')
+                if independent_text or clip.get('subtitle') or clip.get('generator'):
+                    self.text_plans[path]=self.text_host.prepare(clip,independent=independent_text)
                 self.effect_plans[path]=self.effects.compile(clip.get('effects',[]))
                 if self.effect_plans[path] and self.working.transfer!='linear':raise error('SIGNAL','浮点效果链要求线性光工作域',clip=path)
                 integer(clip['timeline_start_tick']);integer(clip['duration_tick'],1);integer(clip['source_in_tick']);integer(clip['source_out_tick'],1)
@@ -175,7 +183,7 @@ class FloatTimeline:
                     child=clip['sequence_id']
                     if child not in self.sequences:raise error('SEQUENCE','子序列不存在',clip=path)
                     self._validate(child,(*stack,sequence_id))
-                else:
+                elif not independent_text:
                     asset_id=clip.get('asset_id');asset=self.assets.get(asset_id);source=self.sources.get(asset_id)
                     if not asset or asset.get('kind') not in ('video','image') or not isinstance(source,TimedSurfaceSource):raise error('SOURCE','片段需要已登记本地视频/图片及对应浮点源',clip=path)
                     if source.sha256!=asset.get('sha256') or source.signal!=self.working:raise error('SOURCE','源SHA或共同工作RGB信号不一致',clip=path)
@@ -208,10 +216,10 @@ class FloatTimeline:
         if left_limit:animation_tick=math.nextafter(float(animation_tick),-math.inf)
         return result,animation_tick,right_edge
 
-    def _project(self,clip,surface,canvas,tick,path):
+    def _project(self,clip,surface,canvas,tick,path,*,extra_rotation=0.):
         transform=clip.get('transform') or {};position=transform.get('position') or {};anchor=transform.get('anchor') or {}
         def value(names,default):return keyframe_value(clip,names,float(default),float(tick))
-        scale=value(('transform.scale','scale'),transform.get('scale',1));angle=value(('transform.rotation','rotation'),transform.get('rotation',0))
+        scale=value(('transform.scale','scale'),transform.get('scale',1));angle=value(('transform.rotation','rotation'),transform.get('rotation',0))+extra_rotation
         opacity=value(('transform.opacity','opacity'),transform.get('opacity',1))
         px=value(('transform.position.x','position.x','position_x'),position.get('x',transform.get('position_x',.5)));py=value(('transform.position.y','position.y','position_y'),position.get('y',transform.get('position_y',.5)))
         ax=value(('transform.anchor.x','anchor.x','anchor_x'),anchor.get('x',transform.get('anchor_x',.5)))
@@ -240,9 +248,14 @@ class FloatTimeline:
         path=sequence_id+'/'+str(clip['id'])
         local_tick=at*self.tps-int(clip['timeline_start_tick'])
         source_time,tick,right=self._source_time(clip,local_tick,path,left_limit=left_limit)
+        text_plan=self.text_plans.get(path);text_metadata=None;extra_rotation=0.
+        text_tick=local_tick+int((clip.get('presentation_window') or {}).get('offset_tick',0))-int((clip.get('_source_handle') or {}).get('head_tick',0))
         frame_index=None;source=None
         start,end=Fraction(int(clip['source_in_tick']),self.tps),Fraction(int(clip['source_out_tick']),self.tps)
-        if start<=source_time<=end and (source_time!=end or right):
+        if text_plan and text_plan['independent']:
+            source,text_metadata=self.text_host.sample(text_plan,at,text_tick,(canvas['width'],canvas['height']),left_limit=left_limit)
+            extra_rotation=self.text_host.rotation(text_plan,tick)
+        elif start<=source_time<=end and (source_time!=end or right):
             if clip.get('sequence_id'):
                 source=self._sequence(clip['sequence_id'],source_time,rows,depth=depth+1,left_limit=right)
             else:
@@ -257,13 +270,25 @@ class FloatTimeline:
         if len(rows)>=MAX_LAYERS_PER_FRAME:raise error('BUDGET','同帧片段数超过128')
         effect_metadata=None
         if self.effect_plans[path]:source,effect_metadata=self.effects.apply(source,self.effect_plans[path],tick)
-        layer,opacity,inverse,mask_metadata,crop_metadata=self._project(clip,source,canvas,tick,path)
+        if text_plan and not text_plan['independent']:
+            h,w=source.shape[:2]
+            text,text_metadata=self.text_host.sample(text_plan,at,text_tick,(w,h),left_limit=left_limit)
+            angle=self.text_host.rotation(text_plan,tick)
+            if angle:
+                c,s=math.cos(math.radians(angle)),math.sin(math.radians(angle));x,y=(w-1)/2,(h-1)/2
+                text,_=resample_rgba(text,(w,h),[[c,s,x-c*x-s*y],[-s,c,y+s*x-c*y]],
+                    max_working_bytes=self.max_working_bytes,cancel=self.poll)
+            source,_=composite_rgba(source,text,max_working_bytes=self.max_working_bytes,cancel=self.poll)
+        layer,opacity,inverse,mask_metadata,crop_metadata=self._project(clip,source,canvas,tick,path,extra_rotation=extra_rotation)
         blend=clip.get('blend') or {}
         opacity*=keyframe_value(clip,('blend.opacity','blend_opacity'),float(blend.get('opacity',1)),float(tick))
         if not math.isfinite(opacity) or not 0<=opacity<=1:raise error('GEOMETRY','合并后的图层透明度须为有限0..1数值')
         row={'clip':path,'source_time':str(source_time),'native_frame_index':frame_index,'right_edge':right,
             'author_animation_tick':str(tick),'inverse_affine':inverse,'opacity':opacity,'effects':effect_metadata,'mask':mask_metadata,'crop':crop_metadata}
         if clip.get('_source_handle'):row['source_handle']=copy.deepcopy(clip['_source_handle'])
+        if text_metadata is not None:row['text']={**text_metadata,'independent':text_plan['independent'],
+            'clock_tick':str(text_tick),'placement':'after-media-effects-before-clip-projection' if not text_plan['independent'] else 'sequence-canvas-before-clip-effects-and-projection',
+            'rotation_degrees':self.text_host.rotation(text_plan,tick)}
         rows.append(row)
         return layer,blend.get('mode','normal'),tick,row
 
@@ -299,7 +324,7 @@ class FloatTimeline:
         duration=Fraction(int(sequence['duration_tick']),self.tps)
         if not ((0<at<=duration) if left_limit else (0<=at<duration)):return result
         for _,track in sorted(enumerate(sequence['tracks']),key=lambda pair:(pair[1].get('order',pair[0]),pair[0])):
-            if track.get('muted') or track['kind']!='video':continue
+            if track.get('muted') or track['kind'] not in ('video','subtitle'):continue
             plan=self.transition_plans[sequence_id+'/'+track['id']]
             at_tick=at*self.tps
             active_pairs=[p for p in plan['pairs'] if ((p['start']<at_tick<=p['end']) if left_limit else (p['start']<=at_tick<p['end']))]
@@ -344,3 +369,4 @@ class FloatTimeline:
     def verify_sources(self):
         for source in self.sources.values():self.poll();source.verify()
         self.effects.verify(self.effect_plans.values())
+        self.text_host.verify()

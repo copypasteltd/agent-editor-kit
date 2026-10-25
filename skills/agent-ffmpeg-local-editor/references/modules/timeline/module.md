@@ -15,6 +15,8 @@ Use `preview frame` or `preview range` to inspect actual results before renderin
 For looks and client choices, read [looks](../../looks.md) and [actual visual selection](../../client-look-selection.md).
 
 For reusable paths and saved keyframe animation, read [motion packs](../../motion-packs.md).
+For explicit linear Float32 text, typewriter, word highlights and plain SRT,
+read [float text](../../float-text.md). Retain explicit fonts and original clocks.
 Inspect actual previews and parameters; apply on the visible output clock, preserve
 source retiming, and replace conflicting whole property tracks only explicitly.
 

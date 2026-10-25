@@ -1,0 +1,122 @@
+{
+  "status": "failed",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.20\\final-r2\\installed",
+  "cli_version": "0.1.22",
+  "calls": [
+    {
+      "name": "generate-original",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-f",
+        "rawvideo",
+        "-pixel_format",
+        "gbrp16le",
+        "-video_size",
+        "320x180",
+        "-framerate",
+        "12",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-text-20261026-case-r2\\original.gbrp16",
+        "-c:v",
+        "ffv1",
+        "-level",
+        "3",
+        "-g",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-text-20261026-r2\\original.native.mkv"
+      ],
+      "exit_code": 0,
+      "seconds": 1.0303300999948988,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "generate-audio",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-f",
+        "f32le",
+        "-ar",
+        "48000",
+        "-ac",
+        "2",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-text-20261026-case-r2\\original.f32",
+        "-c:a",
+        "pcm_f32le",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-text-20261026-r2\\original.audio.wav"
+      ],
+      "exit_code": 0,
+      "seconds": 0.708965600002557,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "version",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "version"
+      ],
+      "exit_code": 0,
+      "seconds": 5.94610119999561,
+      "stdout_sha256": "88727d0f9538ff165f40eb89c97ea70c44800984a6b092739418d3d94cea3f5c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "capabilities",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "capabilities"
+      ],
+      "exit_code": 0,
+      "seconds": 5.181368199991994,
+      "stdout_sha256": "affa91ae2cebe2b82a1d29439b5e501107dfeac6532873371340b26cf4a76d90",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "validate",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "validate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-text-20261026-case-r2\\编辑 工程"
+      ],
+      "exit_code": 2,
+      "seconds": 5.979120599993621,
+      "stdout_sha256": "2faa8758e2669744e3f3e018a9e0fc5ad21286c4f98cdd0150105d250a632788",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": [],
+  "virtualization": false,
+  "source_fallback": false,
+  "continuous_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false,
+  "registered_skill": true,
+  "started_at_utc": "2026-10-25T21:11:51.984873+00:00",
+  "error": "AssertionError(('validate', '{\"ok\":false,\"command\":\"validate\",\"request_id\":\"req_20261025211214_0a48ec6a\",\"operation_id\":null,\"status\":\"failed\",\"data\":{\"report\":\"E:\\\\\\\\dev\\\\\\\\sandbox\\\\\\\\AI广告剪辑\\\\\\\\workspace\\\\\\\\float-text-20261026-case-r2\\\\\\\\编辑 工程\\\\\\\\validation\\\\\\\\validation_run_20261025211214_4adf9fe6.json\",\"ok\":false,\"errors\":[{\"code\":\"SCHEMA_VALIDATION_FAILED\",\"message\":\"\\'probe\\' is a required property\",\"path\":\"assets.2\",\"retryable\":false},{\"code\":\"SCHEMA_VALIDATION_FAILED\",\"message\":\"\\'probe\\' is a required property\",\"path\":\"assets.3\",\"retryable\":false},{\"code\":\"ASSET_PROBE_MISSING\",\"message\":\"资产 probe 缺失\",\"path\":\"assets[2].probe\",\"retryable\":false},{\"code\":\"ASSET_PROBE_MISSING\",\"message\":\"资产 probe 缺失\",\"path\":\"assets[3].probe\",\"retryable\":false}],\"warnings\":[],\"rights\":{\"ok\":true,\"target\":\"commercial_ad\",\"checked\":4,\"required_records\":4,\"failures\":[],\"warnings\":[],\"disposition_decisions\":[],\"effective_disposition_decisions\":[]},\"schema_engine\":\"jsonschema\",\"asset_count\":4,\"sequence_count\":2},\"artifacts\":[],\"warnings\":[],\"errors\":[{\"code\":\"SCHEMA_VALIDATION_FAILED\",\"message\":\"\\'probe\\' is a required property\",\"path\":\"assets.2\",\"retryable\":false},{\"code\":\"SCHEMA_VALIDATION_FAILED\",\"message\":\"\\'probe\\' is a required property\",\"path\":\"assets.3\",\"retryable\":false},{\"code\":\"ASSET_PROBE_MISSING\",\"message\":\"资产 probe 缺失\",\"path\":\"assets[2].probe\",\"retryable\":false},{\"code\":\"ASSET_PROBE_MISSING\",\"message\":\"资产 probe 缺失\",\"path\":\"assets[3].probe\",\"retryable\":false}],\"provenance\":{\"cli_version\":\"0.1.22\",\"schema_version\":\"0.1.0\",\"engine_version\":\"ffmpeg-local\",\"started_at\":\"2026-10-25T21:12:14.437709Z\",\"finished_at\":\"2026-10-25T21:12:14.437740Z\",\"network\":\"disabled\"}}\\r\\n', ''))"
+}

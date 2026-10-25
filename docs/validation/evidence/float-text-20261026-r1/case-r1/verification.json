@@ -1,0 +1,72 @@
+{
+  "status": "failed",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.20\\final-r2\\installed",
+  "cli_version": "0.1.22",
+  "calls": [
+    {
+      "name": "generate-original",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-f",
+        "rawvideo",
+        "-pixel_format",
+        "gbrp16le",
+        "-video_size",
+        "320x180",
+        "-framerate",
+        "12",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-text-20261026-case-r1\\original.gbrp16",
+        "-c:v",
+        "ffv1",
+        "-level",
+        "3",
+        "-g",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-text-20261026-r1\\original.native.mkv"
+      ],
+      "exit_code": 0,
+      "seconds": 0.6802155000041239,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "generate-audio",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-f",
+        "f32le",
+        "-ar",
+        "48000",
+        "-ac",
+        "2",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-text-20261026-case-r1\\original.f32",
+        "-c:a",
+        "pcm_f32le",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-text-20261026-r1\\original.audio.wav"
+      ],
+      "exit_code": 0,
+      "seconds": 0.3708504999958677,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": [],
+  "virtualization": false,
+  "source_fallback": false,
+  "continuous_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false,
+  "registered_skill": true,
+  "started_at_utc": "2026-10-25T21:11:16.587736+00:00",
+  "error": "AppError(code='ARGUMENT_INVALID', message='只允许本地路径或 local/file URI，禁止远程服务和网络素材', exit_code=2, path='source_url', retryable=False, cause=None, hint=None, operation_id=None, diagnostics=None)"
+}

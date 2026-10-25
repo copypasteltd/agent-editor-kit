@@ -9,9 +9,23 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- float-transition-current -->
+<!-- float-text-current -->
 
-**CLI0.1.21 / alpha.4-local.19 / r22 kit · 1 Skill / 17 modules.**
+**CLI0.1.22 / alpha.4-local.20 / r23 kit · 1 Skill / 17 modules.**
+
+The linear Float32 pipeline now renders independent titles, inline captions, joint typewriter/word highlights and plain SRT, preserving original clocks, trim offsets and reversed parent boundaries. Independent component color/alpha checks and an actual registered-Skill 6s/72-frame case cover transitions and linked audio. Text runs on CPU:8-bit glyph coverage,Float32 colors/composition.
+
+[Workflow / 使用流程](docs/product/FLOAT_TEXT.md) · [C30](docs/product/CASES.md#c30-float-text) · [Local install](docs/releases/CLI_0.1.22_LOCAL.md) · [Evidence](docs/validation/Float32文字字幕实测_2026-10-26.md)
+
+![Actual registered Skill native text / silent GIF](docs/assets/float-text-20261026-r3/native-text.gif)
+
+Plain SRT/explicit font;CPU text;4K native text currently rejected by workspace admission. Full original target conditions remain open.
+
+<!-- /float-text-current -->
+
+<!-- float-transition-history -->
+
+**Historical / 历史 / 歷史：CLI0.1.21 / alpha.4-local.19 / r22 kit · 1 Skill / 17 modules.**
 
 The explicit linear Float32 path adds 57 xfade patterns plus black/white dips, real source handles, linked audio and spatial group edges. The registered Skill completes a 6s/72-frame case with reverse, preview, cancel/resume, queues and independent PCM checks. CPU execution; default rendering and GPU projection keep their own contracts.
 
@@ -21,7 +35,7 @@ The explicit linear Float32 path adds 57 xfade patterns plus black/white dips, r
 
 CPU Float32; source-handle types and overlap/edge patterns are distinct. Natural audiovisual, HDR, long-form and all original target conditions remain open.
 
-<!-- /float-transition-current -->
+<!-- /float-transition-history -->
 
 <!-- opencl-projection-history -->
 
@@ -138,7 +152,7 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r22 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r22.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r23 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r23.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
@@ -466,7 +480,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F14 | Retiming, reverse and freeze | Explicit speed/curves/Bezier/freeze points → video clocks and audio mapping. | `timeline edit; render` | Audio-retime backends differ; optional Rubber Band R3 requires existing native tools. |
 | F15 | Keyframes and easing | Position, anchor, scale, rotation, opacity, crop, masks, volume and pan → frame-evaluated animation. | `timeline compose; schema show` | hold/linear/ease_in/ease_out/ease_in_out/bezier; enum/boolean channels are not assumed continuous. |
 | F16 | 12 camera/motion presets | Push/pull, four pan directions, Ken Burns, rotation, fades and shake → editable keyframes. | `motion list/inspect/apply` | Bounded keyframe presets, not AI 3D cameras or an entire commercial motion library. |
-| F17 | Transitions and cut effects | Adjacent clips and handles → declared fades, wipes, slides, black/white fades, circular and other transitions. | `timeline transition; capabilities` | Support depends on renderer and layer context; later Float32 transition candidates are not bundled. |
+| F17 | Transitions and cut effects | Adjacent clips and handles → declared fades, wipes, slides, black/white fades, circular and other transitions. | `timeline transition; capabilities` | Select by renderer and layer context; the explicit CPU Float32 subset is delivered under the separate F55 contract. |
 | F18 | Geometric masks and frame corrections | Rectangles/circles/ellipses/paths/polygons → inversion, feathering, animation, encoded masks and corrections. | `timeline compose; media mask-edit; quality mask` | Point topology and sampling are bounded; geometric checks do not prove semantic identity. |
 | F19 | Layer compositing and blending | Visual layers → normal/multiply/screen/overlay/difference/addition/softlight/hardlight. | `timeline compose; capabilities` | The default path mainly uses encoded 8-bit RGB, without general linear-light/HDR equivalence. |
 | F20 | 46 processing operators | Blur/sharpen, denoise, tone, curves, HSL, keying, vignette, noise and more → configurable chains. | `effects list/inspect` | Inspect animated parameters and backends individually; 46 operators and 500 LUT looks are separate inventories. |
@@ -505,6 +519,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F53 | Semantic runtime relocation | Old adapter/index/profiles → new installation-bound identities, copying vectors/previews/datasets and retaining fitted observations. | `project upgrade-semantic` | All 19 implementation files and external dependencies must be byte-identical; zero new model forwards; original records retained; changed bytes require rebuilding. |
 | F54 | Portable parameterized motion | Versioned local JSON / captured authored curves → editable keys, resolved parameters/digests/snapshot and cross-project reuse, with six actual previews. | `motion pack list/inspect/create/capture/apply` | 65-point paths, transform properties; conflicts reject unless whole-property replacement is explicit; tracking bindings reject; CPU performance/natural quality remain open. |
 | F55 | Linear Float32 transitions and group edges | Explicit Float32 projects → 57 xfade patterns+2 dips,premultiplied alpha,real handles/original clocks,linked audio,group wipe/slide,actual preview and encoding. | `timeline transition; preview; render; queue` | CPU;12 real-handle declaration types,other patterns use overlap/edges;normal paired blending;platform-dependent wind,HDR/natural quality open. |
+| F56 | Linear Float32 text and captions | Independent/inline/SRT → native shaping,linear box/shadow/border/fill,joint word/typewriter,original/reverse clocks,actual preview and rendering. | `timeline compose; preview; render; queue` | Explicit local font;CPU;8bit coverage/Float32 color;plain SRT;complex Bidi/4K/GPU text open. |
 
 ## Supported service modules and dependencies
 
@@ -631,7 +646,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.19/final-r1/installed/`, CLI 0.1.21. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.20/final-r2/installed/`, CLI 0.1.22. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -978,10 +993,18 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R152 | 2026-10-26 Float32 transitions | Actual registered Skill:6s/72frames,five real-handle/audio pairs,reversed child and spatial group edges;288000 stereo samples,error=3.72529029846e-09 | [Evidence](docs/validation/evidence/float-transition-20261026-r1/case-r3/verification.json) |
 | R153 | 2026-10-26 Float32 transitions | Cancel after encoder startup,resume same operation,explicit MKV/PCM queue:all frames/clocks/PCM match;quality passes,authoring/rights unchanged | [Evidence](docs/validation/evidence/float-transition-20261026-r1/case-r3/verification.json) |
 | R154 | 2026-10-26 Float32 transitions | Three languages:55 functions/20 services/17 modules/75 declarations;C29 MP4/GIF/editable package,r22 isolated kit;146 history rows and38 closures retained | [Evidence](docs/validation/evidence/float-transition-20261026-r1/final-delivery-r2/verification.json) |
+| R155 | 2026-10-26 Float32 text | CLI0.1.22/local.20-final-r2;213 source files byte-match the offline installation;one Skill/17 modules/71 files | [Evidence](docs/validation/evidence/float-text-20261026-r1/installation-final-r2/verification.json) |
+| R156 | 2026-10-26 Float32 text | 19 text tests,zero skips:independent color/alpha,four components,word/typewriter,SRT,reverse,trim/freeze,cache,mutation and native cancel cleanup | [Evidence](docs/validation/evidence/float-text-20261026-r1/text-installed-final-r1/verification.json) |
+| R157 | 2026-10-26 Float32 text | All256 coverage codes reconstruct exactly;sRGB EOTF/alpha error<=3e-7;uncovered original media bits retained with>256 gray values | [Evidence](docs/validation/evidence/float-text-20261026-r1/text-installed-final-r1/text_receipts.json) |
+| R158 | 2026-10-26 Float32 text | Separate groups:98float/64audio-handles-nesting/44standard-preview-render;zero skips,no combined count | [Evidence](docs/validation/evidence/float-text-20261026-r1/float-installed-final-r1/verification.json) |
+| R159 | 2026-10-26 Float32 text | Separate groups:72default-text/191CLI-preview-queue-schema;zero skips;unknown-generator rejection code retained | [Evidence](docs/validation/evidence/float-text-20261026-r1/text-legacy-installed-final-r1/verification.json) |
+| R160 | 2026-10-26 Float32 text | Actual registered Skill:6s/72frames,Chinese SRT,joint typewriter/highlight,rotation/inline text,reversed parent/real handles;288000stereo samples,error=3.72529029846e-09 | [Evidence](docs/validation/evidence/float-text-20261026-r1/case-r3/verification.json) |
+| R161 | 2026-10-26 Float32 text | Cancel after encoder startup,resume same operation,explicit MKV queue:all frames/clocks/PCM match;quality passes,authoring/rights retained;editable package includes font license | [Evidence](docs/validation/evidence/float-text-20261026-r1/case-r3/verification.json) |
+| R162 | 2026-10-26 Float32 text | Three languages:56 functions/20 services/17 modules/75 declarations;C30 original/MP4/GIF/editable package,r23 isolated kit;154 historical rows and38 closures retained | [Evidence](docs/validation/evidence/float-text-20261026-r1/final-delivery-r4/verification.json) |
 
 ## Current limits and development direction
 
-The deliverable is an offline, editable and auditable Agent CLI workflow with explicit contracts. Openly licensed asset/template ecosystems, agreed AI/beauty/layout features, complete color processing, actual quality for supported draft profiles, broad natural-media acceptance and long-form resource performance remain open. Consumer GUI, accounts, cloud collaboration and arbitrary lossless private-draft interchange are outside current core acceptance. Later R113/R114 Float32 transition/runtime-closure candidates are not included in this release.
+The deliverable is an offline, editable and auditable Agent CLI workflow with explicit contracts. Openly licensed asset/template ecosystems, agreed AI/beauty/layout features, complete color processing, actual quality for supported draft profiles, broad natural-media acceptance and long-form resource performance remain open. Consumer GUI, accounts, cloud collaboration and arbitrary lossless private-draft interchange are outside current core acceptance.
 
 [The complete-goal assessment](docs/product/GOAL_GAPS_20261025.md) updates every G01–G38 against CLI 0.1.13. A single Skill, 500 looks/previews, 359 resources, GPU speech/translation, joint subtitle dubbing, stems/recovery and controlled word activity timing are delivered. Natural audiovisual quality, complex combinations, advanced AI, content/templates, autonomous Agent tasks, long-job reliability and a newer public release remain open. R67–R72 retain separate real scopes and limits; no overall completion percentage is established. The [2026-10-24 assessment](docs/product/GOAL_GAPS_20261024.md) is historical.
 

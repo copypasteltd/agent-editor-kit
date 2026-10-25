@@ -1,0 +1,26 @@
+{
+  "report_version": "0.1.0",
+  "direction": "export",
+  "source_format": "agent-project/0.1.0",
+  "target_format": "agent-project-package/0.1.0",
+  "created_at": "2026-10-25T21:28:49.772443Z",
+  "items": [
+    {
+      "capability": "project-package",
+      "status": "Exact",
+      "source": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-text-20261026-case-r3\\编辑 工程",
+      "target": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-text-20261026-r3\\editable-native-text.aevpkg.zip",
+      "detail": "项目、登记权利和本地素材已写入自包含 ZIP"
+    }
+  ],
+  "warnings": [
+    {
+      "capability": "package-excluded-runtime",
+      "status": "Approximate",
+      "source": "project runtime",
+      "target": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-text-20261026-r3\\editable-native-text.aevpkg.zip",
+      "detail": "renders/cache/operations/history 未打包"
+    }
+  ],
+  "failures": []
+}

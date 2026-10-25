@@ -220,7 +220,8 @@ def highlight_filter(root: Path, font: Path, size: int, layout: TextLayout, styl
                      ranges: list[tuple[dict[str, Any], int, int]], timings: dict[int, tuple[float, float]],
                      normal: list[str], active: list[str], base_x: str, base_y: str, clock: str, clip_start: float,
                      clip_id: str, visible: str | None,
-                     paint: Callable[[list[str]], str] | None = None, typing: Any = None) -> tuple[str, dict[str, Any]]:
+                     paint: Callable[[list[str]], str] | None = None, typing: Any = None,
+                     *, float_paint: bool = False) -> tuple[str, dict[str, Any]]:
     """Choose a whole-paragraph paint with word/line rectangles in its space."""
     boundaries = {0, len(layout.source), *(x for a, b, _ in graphemes(layout.source) for x in (a, b))}
     if any(start not in boundaries or end not in boundaries for _, start, end in ranges):
@@ -279,7 +280,9 @@ def highlight_filter(root: Path, font: Path, size: int, layout: TextLayout, styl
         marker = len(markers)
         markers[id(entry)] = marker
         begin, finish = timings[id(entry)]
-        timing = f'gte(({clock}),{clip_start+begin:.9f})*lt(({clock}),{clip_start+finish:.9f})'
+        begin_value=format(clip_start+begin,'.17g') if float_paint else format(clip_start+begin,'.9f')
+        end_value=format(clip_start+finish,'.17g') if float_paint else format(clip_start+finish,'.9f')
+        timing = f'gte(({clock}),{begin_value})*lt(({clock}),{end_value})'
         if visible:
             timing += f'*({visible})'
         signals.append(f'drawbox=x={_quoted(f"mod({marker},iw)")}:y={_quoted(f"trunc({marker}/iw)")}:w=1:h=1:color=white:t=fill:replace=1:enable={_quoted(timing)}')
@@ -327,11 +330,17 @@ def highlight_filter(root: Path, font: Path, size: int, layout: TextLayout, styl
     mask = re.sub(r'\bt\b', 'T', mask)
     token = hashlib.sha256((clip_id+normal+active).encode('utf-8')).hexdigest()[:16]
     a, b, c, painted, colored, selected = [f'word_{token}_{v}' for v in ('a','b','c','normal','active','mask')]
-    value = (f'split=3[{a}][{b}][{c}];[{a}]'+normal+f',format=gbrap[{painted}];'
-             +f'[{b}]'+active+f',format=gbrap[{colored}];'
+    pixel_format = 'gbrapf32le' if float_paint else 'gbrap'
+    value = (f'split=3[{a}][{b}][{c}];[{a}]'+normal+f',format={pixel_format}[{painted}];'
+             +f'[{b}]'+active+f',format={pixel_format}[{colored}];'
              +f'[{c}]format=gbrap,lutrgb=r=0:g=0:b=0:a=0,'+','.join(signals)
-             +f',geq=r={_quoted(mask)}:g={_quoted(mask)}:b={_quoted(mask)}:a={_quoted(mask)}[{selected}];'
-             +f'[{painted}][{colored}][{selected}]maskedmerge=planes=15,format=rgba')
+             +f',geq=r={_quoted(mask)}:g={_quoted(mask)}:b={_quoted(mask)}:a={_quoted(mask)}'
+             +(f',format=gbrap,format={pixel_format}' if float_paint else '')+f'[{selected}];')
+    if float_paint:
+        from .float_text_paint import select_graph
+        value += select_graph(painted, colored, selected)
+    else:
+        value += f'[{painted}][{colored}][{selected}]maskedmerge=planes=15,format=rgba'
     return value, {**evidence, 'engine': 'drawtext-whole-paragraph-masked-highlight',
                    'paragraph_metrics': values, 'word_rectangles': rectangles,
                    'line_count':len(layout.lines),'newline_glyph_painted':False,

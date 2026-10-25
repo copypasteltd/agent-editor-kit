@@ -9,9 +9,23 @@
 本頁包含完整功能模塊、服務與依賴、安裝與使用邏輯、Skill 輸入輸出、真實案例和核驗表。長篇原始驗收日志繼續留檔，功能說明與案例入口恢復到首頁。
 
 
-<!-- float-transition-current -->
+<!-- float-text-current -->
 
-**CLI0.1.21 / alpha.4-local.19 / r22 kit · 1 Skill / 17 modules.**
+**CLI0.1.22 / alpha.4-local.20 / r23 kit · 1 Skill / 17 modules.**
+
+線性浮點管線已接入獨立文字、片段內字幕、打字機／逐詞高亮聯動及純文字SRT；保留原作者時鐘、裁切偏移與父級倒放邊界。四元件顏色與alpha獨立核對，實際統一Skill完成含轉場與關聯音軌的6秒／72影格案例。文字合成為CPU，字形覆蓋率8位元、顏色與合成Float32。
+
+[Workflow / 使用流程](docs/product/FLOAT_TEXT.md) · [C30](docs/product/CASES.md#c30-float-text) · [Local install](docs/releases/CLI_0.1.22_LOCAL.md) · [Evidence](docs/validation/Float32文字字幕实测_2026-10-26.md)
+
+![Actual registered Skill native text / silent GIF](docs/assets/float-text-20261026-r3/native-text.gif)
+
+Plain SRT/explicit font;CPU text;4K native text currently rejected by workspace admission. Full original target conditions remain open.
+
+<!-- /float-text-current -->
+
+<!-- float-transition-history -->
+
+**Historical / 历史 / 歷史：CLI0.1.21 / alpha.4-local.19 / r22 kit · 1 Skill / 17 modules.**
 
 明確線性 Float32 管線新增 57 種 xfade 圖案及黑/白 dip，真實來源句柄、關聯音軌與群組空間進出場已接入。實際統一 Skill 完成 6秒/72影格案例，倒放、預覽、取消恢復、佇列與逐樣本音訊核對通過。CPU 執行；預設管線與 GPU 投影沿用各自契約。
 
@@ -21,7 +35,7 @@
 
 CPU Float32; source-handle types and overlap/edge patterns are distinct. Natural audiovisual, HDR, long-form and all original target conditions remain open.
 
-<!-- /float-transition-current -->
+<!-- /float-transition-history -->
 
 <!-- opencl-projection-history -->
 
@@ -138,7 +152,7 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r22 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r22.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
+**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r23 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r23.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
 
 <!-- /unified-skill-registration -->
 
@@ -466,7 +480,7 @@ flowchart LR
 | F14 | 變速、倒放與定格 | 顯式速度/曲線/Bezier/定格點 → 影片時鐘與音頻映射。 | `timeline edit; render` | 變速音頻後端各有邊界；可選 Rubber Band R3 需要已有原生工具。 |
 | F15 | 關鍵影格與緩動 | 位置、錨點、縮放、旋轉、透明度、裁切、蒙版、音量/聲像 → 逐影格動畫。 | `timeline compose; schema show` | hold/linear/ease_in/ease_out/ease_in_out/bezier；枚舉/布爾值不推斷為連續動畫。 |
 | F16 | 12 套運鏡預設 | 推拉、上下左右平移、Ken Burns、旋入/旋出、淡入/淡出、shake → 可編輯關鍵影格。 | `motion list/inspect/apply` | 參數有界；是明確關鍵影格預設，不是 AI 三維相機或全部商業運鏡庫。 |
-| F17 | 轉場與剪口效果 | 相鄰片段與源句柄 → 淡化、擦除、滑動、黑/白場、圓形等已聲明轉場。 | `timeline transition; capabilities` | 以預設渲染路徑和具體層級為準；Float32 後續轉場候選未隨本版提供。 |
+| F17 | 轉場與剪口效果 | 相鄰片段與源句柄 → 淡化、擦除、滑動、黑/白場、圓形等已聲明轉場。 | `timeline transition; capabilities` | 依算繪路徑和層級選擇；明確 Float32 已提供 F55 的轉場子集，CPU 執行，支援範圍見獨立契約。 |
 | F18 | 幾何蒙版與逐影格修正 | 矩形/圓/橢圓/路徑/多邊形 → 反選、羽化、動畫、編碼蒙版與修正。 | `timeline compose; media mask-edit; quality mask` | 路徑點數和取樣受限；幾何通過不等於語義分割/身份正確。 |
 | F19 | 圖層合成與混合 | 多軌視覺層 → normal/multiply/screen/overlay/difference/addition/softlight/hardlight。 | `timeline compose; capabilities` | 預設路徑主要為編碼 8-bit RGB；不宣稱線性光/HDR 合成等價。 |
 | F20 | 46 個效果處理算子 | 模糊/銳化、降噪、色調、曲線、HSL、色鍵、暗角、顆粒等 → 可配置效果鏈。 | `effects list/inspect` | 可動畫參數與實際後端逐項查詢；46 算子與 500 成品 LUT 是不同統計。 |
@@ -505,6 +519,7 @@ flowchart LR
 | F53 | 語義執行時升級 | 舊適配器/索引/校準 → 新安裝路徑的新 ID，複製向量/預覽/資料集並保留擬合及原觀察。 | `project upgrade-semantic` | 全部 19 個實作與外部依賴須位元組相同；零新模型前向，原記錄不改；內容變更拒絕並要求重建。 |
 | F54 | 可復用參數運鏡 | 本地版本化 JSON / 既有作者曲線 → 一般關鍵影格、參數/摘要/快照、跨專案復用。六套實際預覽供選型。 | `motion pack list/inspect/create/capture/apply` | 65 點採樣、transform 屬性；預設拒絕衝突，明確取代整條屬性軌；跟蹤綁定拒絕，CPU 合成/自然品質未結案。 |
 | F55 | 線性浮點轉場與群組進出場 | 明確 Float32 專案 → 57 xfade圖案+2 dip、預乘alpha混合、真實句柄/原作者時鐘、關聯音軌、群組擦除/推移及實際預覽成片。 | `timeline transition; preview; render; queue` | CPU；12種真實句柄宣告，其他圖案用明確重疊/邊緣；normal雙源混合；風噪有平台差異，HDR/自然品質未閉。 |
+| F56 | 線性浮點文字與字幕 | 獨立字層／片段內字幕／SRT → 原生塑形、線性底框／陰影／描邊／填充、逐詞與打字機聯動、原時鐘／倒放、實際預覽與成片。 | `timeline compose; preview; render; queue` | 明確本機字型；CPU；覆蓋率8bit／顏色Float32；純文字SRT，複雜Bidi／4K文字／GPU文字未閉。 |
 
 ## 支持的服務模塊與依賴
 
@@ -631,7 +646,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.19/final-r1/installed/`，CLI 0.1.21；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
+本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.20/final-r2/installed/`，CLI 0.1.22；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -976,12 +991,20 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R152 | 2026-10-26 Float32 transitions | 實際註冊Skill完成6秒／72影格、5組真實來源句柄及配對音軌、子序列倒放、群組空間邊緣；288000個雙聲道取樣誤差3.72529029846e-09 | [Evidence](docs/validation/evidence/float-transition-20261026-r1/case-r3/verification.json) |
 | R153 | 2026-10-26 Float32 transitions | 編碼器啟動後取消，再依原操作恢復；佇列明確指定MKV／PCM，全部影格／時鐘／PCM相同；quality通過，作者資料與權利臺帳未改 | [Evidence](docs/validation/evidence/float-transition-20261026-r1/case-r3/verification.json) |
 | R154 | 2026-10-26 Float32 transitions | 三語55功能／20服務／17模組與75能力欄位同步；C29 MP4／GIF／可編輯套件、r22獨立工具包；保留146列歷史紀錄及38項原關閉條件 | [Evidence](docs/validation/evidence/float-transition-20261026-r1/final-delivery-r2/verification.json) |
+| R155 | 2026-10-26 Float32 text | CLI0.1.22/local.20-final-r2；213個產品檔案與新離線安裝相同；單一Skill／17模組／71檔案 | [Evidence](docs/validation/evidence/float-text-20261026-r1/installation-final-r2/verification.json) |
+| R156 | 2026-10-26 Float32 text | 19項文字專項、零略過：獨立顏色／alpha、四元件、逐詞／打字機、SRT、倒放、視窗／定格、快取、變更與原生取消清理 | [Evidence](docs/validation/evidence/float-text-20261026-r1/text-installed-final-r1/verification.json) |
+| R157 | 2026-10-26 Float32 text | 全部256個覆蓋率碼值重建誤差0；sRGB EOTF／alpha誤差≤3e-7；未覆蓋原媒體逐位元保持且保留>256級灰階 | [Evidence](docs/validation/evidence/float-text-20261026-r1/text-installed-final-r1/text_receipts.json) |
+| R158 | 2026-10-26 Float32 text | 分別98項浮點／64項音訊句柄巢狀／44項標準預覽算繪，全部零略過，未合併計數 | [Evidence](docs/validation/evidence/float-text-20261026-r1/float-installed-final-r1/verification.json) |
+| R159 | 2026-10-26 Float32 text | 分別72項預設文字／191項CLI預覽佇列Schema，全部零略過；保留未知產生器拒絕錯誤碼 | [Evidence](docs/validation/evidence/float-text-20261026-r1/text-legacy-installed-final-r1/verification.json) |
+| R160 | 2026-10-26 Float32 text | 實際註冊Skill6秒／72影格：中文SRT、打字機+逐詞、旋轉／內嵌字、父倒放／真實句柄；288000雙聲道取樣誤差3.72529029846e-09 | [Evidence](docs/validation/evidence/float-text-20261026-r1/case-r3/verification.json) |
+| R161 | 2026-10-26 Float32 text | 編碼器啟動後取消／同操作恢復／明確MKV佇列，全部影格／時鐘／PCM相同；quality及作者／權利保持；可編輯包保留字型授權 | [Evidence](docs/validation/evidence/float-text-20261026-r1/case-r3/verification.json) |
+| R162 | 2026-10-26 Float32 text | 三語56功能／20服務／17模組／75能力、C30原素材／MP4／GIF／工程包、r23獨立kit；保留154歷史列及38原關閉條件 | [Evidence](docs/validation/evidence/float-text-20261026-r1/final-delivery-r4/verification.json) |
 
 ## 當前邊界與開發方向
 
-當前可交付的是有明確契約、離線可運行、可編輯、可復查的 Agent CLI 閉環。完整開源素材/模板生態、約定的 AI 特效/美顏/排版、完整色彩管線、指定草稿版本的真實轉換品質、廣泛自然視聽和長片資源性能仍需開發與驗收。消費級 GUI、賬號、云協作及任意私有版本無損轉換不屬於當前內核收口門檻。後續 Float32 轉場/運行時閉包候選 R113/R114 未隨本版提供。
+當前可交付的是有明確契約、離線可運行、可編輯、可復查的 Agent CLI 閉環。完整開源素材/模板生態、約定的 AI 特效/美顏/排版、完整色彩管線、指定草稿版本的真實轉換品質、廣泛自然視聽和長片資源性能仍需開發與驗收。消費級 GUI、賬號、云協作及任意私有版本無損轉換不屬於當前內核收口門檻。
 
-[目前完整目標差距表](docs/product/GOAL_GAPS_20261025.md)按 CLI 0.1.21 更新全部 G01–G38。單一 Skill、500 風格/預覽、359 資源、GPU 配音/翻譯、字幕配音聯合流程、四軌/恢復及受控詞活動邊界已交付；自然視聽、複雜組合、進階 AI、內容範本、Agent 自主任務、長片可靠性和新版公開包仍開放。R67–R72 分別記錄真實執行及限制，不給出總體完成率。[2026-10-24 評估](docs/product/GOAL_GAPS_20261024.md)是歷史快照。
+[目前完整目標差距表](docs/product/GOAL_GAPS_20261025.md)按 CLI 0.1.22 更新全部 G01–G38。單一 Skill、500 風格/預覽、359 資源、GPU 配音/翻譯、字幕配音聯合流程、四軌/恢復及受控詞活動邊界已交付；自然視聽、複雜組合、進階 AI、內容範本、Agent 自主任務、長片可靠性和新版公開包仍開放。R67–R72 分別記錄真實執行及限制，不給出總體完成率。[2026-10-24 評估](docs/product/GOAL_GAPS_20261024.md)是歷史快照。
 
 
 

@@ -1,6 +1,6 @@
 # 语义任务的中断恢复与诊断
 
-CLI 0.1.12 本机安装版把 `semantic adapter-register/index/calibrate/search` 纳入受管任务。
+CLI 0.1.12 起把 `semantic adapter-register/index/calibrate/search` 纳入受管任务。
 安装版、统一 Skill 和真实故障范围以本轮实测收据为准；执行前先检查 `version`、`capabilities` 和命令帮助。
 
 | 编号 | 使用场景 | 操作及保留内容 |
@@ -35,10 +35,14 @@ CLI 0.1.12 本机安装版把 `semantic adapter-register/index/calibrate/search`
 
 `worker-phase.json` 记录当前阶段；最终响应的 `phase_seconds` 分开记录环境准备、原生依赖导入、
 适配器校验、模型加载和推理。阶段文件用于诊断，不是操作系统隔离、进度百分比或剩余时间估计。
-模型仍在每个命令内加载，尚无常驻服务；已有同步完整性检查可能使总超时响应延后，须报告实际墙钟。
+CLI 0.1.13 在完整性读取之间响应超时/取消，保留原错误码、丢弃部分摘要并关闭当前句柄；完整验证文件的读锁不变。
+恢复在操作预算退出后继续完整检查输出。`adapter-list/adapter-inspect/verify` 也支持超时/取消。
+模型仍逐命令加载；操作系统阻塞的读取不能立即抢占，须报告实际墙钟与 `errors[].diagnostics`。
 
 本契约没有关闭自然检索质量、断电、磁盘耗尽、设备丢失、恶意主机隔离、长并发或完整 G32/G33。
 完整原条件见 [G01–G38](GOAL_GAPS_20261025.md)，工程迁移另见[语义工程包](SEMANTIC_PROJECT_PACKAGE.md)。
 
 
 [本批实际核验与失败](../validation/语义任务中断恢复实测_2026-10-25.md) · [C21](CASES.md#c21-semantic-recovery)。
+
+[CLI 0.1.13 真实读取超时/取消](../validation/完整性校验超时取消实测_2026-10-25.md) · [实现契约](../specs/可中断完整性校验契约_20261025.md)。

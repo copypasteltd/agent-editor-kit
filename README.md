@@ -4,28 +4,28 @@
 
 [简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit) · [Docs](docs/README.md)
 
-**公开发行版本：v0.1.0-alpha.3 预发布版 · CLI 0.1.2 · 500 套风格 · 1 个统一 Skill / 17 项内部模块。** 提供完整运行 ZIP、Agent kit、可选图册及校验摘要。运行内核保持原已验包字节；新增可移植安装和可执行示例。完整剪映等价仍是开发目标，尚未验收。
+**公开发行版本：v0.1.0-alpha.3 预发布版 · CLI 0.1.2 · 500 套风格 · 17 个历史拆分 Skill。** 提供完整运行 ZIP、Agent kit、可选图册及校验摘要。运行内核保持原已验包字节；新增可移植安装和可执行示例。完整剪映等价仍是开发目标，尚未验收。
 
 本页包含完整功能模块、服务与依赖、安装与使用逻辑、Skill 输入输出、真实案例和核验表。长篇原始验收日志继续留档，功能说明与案例入口恢复到首页。
 
 
-<!-- current-goal-review-r15 -->
+<!-- semantic-control-current -->
 
-**CLI 0.1.12 / alpha.4-local.10 / r11 kit** · 202 product Python files · 1 Skill / 17 modules. 登记、索引、校准和检索纳入受管任务；发布前写入身份/SHA，提交引用保护整棵目录。7 类真实故障/清理用例通过结构恢复检查，但 1 秒超时响应延后至约 81.739 秒；完整性能与恢复目标未完成。
+**CLI 0.1.13 / alpha.4-local.11 / r12 kit** · 203 product Python files · 1 Skill / 17 modules. 完整性读取现在响应超时/取消，部分摘要丢弃，原生读锁和恢复保护保留。1 秒超时三例完整 CLI 实测 2.500 / 2.354 / 2.426 秒；取消后退出 0.188 / 0.054 秒。模型仍逐命令加载，三条原查询错误及完整目标保持开放。
 
-[All 38 numbered gaps](docs/product/GOAL_GAPS_20261025.md) · [Actual checks](docs/validation/语义任务中断恢复实测_2026-10-25.md)
+[实际耗时/原始诊断](docs/validation/完整性校验超时取消实测_2026-10-25.md)
 
-<!-- /current-goal-review-r15 -->
+<!-- /semantic-control-current -->
 
 <!-- unified-skill-registration -->
 
-**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r11 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r11.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
+**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r12 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r12.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
 
 <!-- /unified-skill-registration -->
 
 <!-- community-materials-gpu -->
 
-**本机新增已安装扩展：CLI 0.1.12，GPU 配音/翻译与 359 项内置开源资源。** 公开 alpha.3 附件保持原版。外层只指定 `$agent-ffmpeg-local-editor`；本机登记 GPU 包后默认优先 GPU，明确返回实际设备/回退原因，保留 CPU 兼容。
+**本机新增已安装扩展：CLI 0.1.13，GPU 配音/翻译与 359 项内置开源资源。** 公开 alpha.3 附件保持原版。外层只指定 `$agent-ffmpeg-local-editor`；本机登记 GPU 包后默认优先 GPU，明确返回实际设备/回退原因，保留 CPU 兼容。
 
 [完整流程与边界](docs/product/COMMUNITY_MATERIALS.md) · [逐项素材目录](docs/product/COMMUNITY_MATERIAL_CATALOG.md) · [103 音色与实际试听范围](docs/product/COMMUNITY_VOICES.md) · [CPU 实测](docs/validation/evidence/community-materials-20261025-r1/cpu/verification.json) · [GPU 实测](docs/validation/evidence/community-materials-20261025-r1/gpu/verification.json)。
 
@@ -50,7 +50,7 @@ CPU 46 条、GPU 15 条属于素材/GPU 扩展历史批次的独立实测，本�
 
 <!-- semantic-recovery-r1 -->
 
-## 本机 CLI 0.1.12：语义任务恢复与诊断
+## CLI 0.1.12 历史功能：语义任务恢复与诊断
 
 登记、索引、校准和检索纳入受管任务；发布前写入身份/SHA，提交引用保护整棵目录。7 类真实故障/清理用例通过结构恢复检查，但 1 秒超时响应延后至约 81.739 秒；完整性能与恢复目标未完成。
 
@@ -63,6 +63,8 @@ CPU 46 条、GPU 15 条属于素材/GPU 扩展历史批次的独立实测，本�
 ```
 
 Inspect the dry-run and retain required diagnostics first. Cleanup preserves committed references, active jobs, changed/unknown files and legacy caches. It does not resume inference.
+
+CLI 0.1.13 subsequently fixed integrity-read timeout/cancellation; actual timing and preserved boundaries are recorded in [R97/R98](docs/validation/完整性校验超时取消实测_2026-10-25.md).
 
 <!-- /semantic-recovery-r1 -->
 
@@ -506,7 +508,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.10/final-r1/installed/`，CLI 0.1.12；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
+本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.11/final-r1/installed/`，CLI 0.1.13；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -792,18 +794,24 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R93 | 单入口交付 / Single-entry delivery | CLI 0.1.12 / local.10 / r11; 1 Skill / 17 modules; same-host isolated kit, no clean-machine claim | [2026-10-25 evidence](docs/validation/evidence/semantic-recovery-20261025-r1/kit-r2/verification.json) · [Scope](docs/validation/语义任务中断恢复实测_2026-10-25.md) |
 | R94 | 完整目标复核 / Full goal review | All G01–G38 original closure conditions and R01–R87 retained; public release/API checked separately; no overall percentage | [2026-10-25 evidence](docs/validation/evidence/semantic-recovery-20261025-r1/final-delivery-r2/verification.json) · [Scope](docs/validation/语义任务中断恢复实测_2026-10-25.md) |
 | R95 | 当前完整目标差距评估 | 真实统一 Skill 另 6 次只读调用；CLI 0.1.12、202 个源码/安装文件一致、75 项能力与 38 组原关闭条件保留；官方 API 仍 alpha.3 / CLI 0.1.2 | [编号差距与验收条件](docs/product/GOAL_GAPS_20261025.md) · [本次原始响应/API](docs/validation/evidence/goal-gaps-20261025-r13/inventory.json) · [历史保留/链接核对](docs/validation/evidence/goal-gaps-20261025-r13/documentation-audit.json)；2026-10-25，本次 0 新推理/渲染/听审，不给出总体完成百分比；R01–R94 保留 |
+| R96 | 完整性读取控制 | 源码/安装版相关契约各 168/168；有界内存摘要各 5/5，源码 CLI 122/122；范围分别记录，不相加 | [2026-10-25 evidence](docs/validation/evidence/semantic-control-20261025-r1/tests/installed-r1/verification.json) · [Scope](docs/validation/完整性校验超时取消实测_2026-10-25.md) |
+| R97 | 真实超时修复 | 搜索/适配器检查/索引核验各请求 1 秒；完整 CLI 实测 2.500 / 2.354 / 2.426 秒，均返回 PROCESS_TIMEOUT | [2026-10-25 evidence](docs/validation/evidence/semantic-control-20261025-r1/faults-r1/verification.json) · [Scope](docs/validation/完整性校验超时取消实测_2026-10-25.md) |
+| R98 | 真实读取中取消 | 观察实际读取超过 64MiB 后发取消；搜索/检查在 0.188 / 0.054 秒内退出，保留 CANCELLED 和部分摘要诊断 | [2026-10-25 evidence](docs/validation/evidence/semantic-control-20261025-r1/faults-r1/verification.json) · [Scope](docs/validation/完整性校验超时取消实测_2026-10-25.md) |
+| R99 | CPU/GPU 与统一 Skill 回归 | CPU/CUDA/真实 Skill 各 80 决策在迁移后与原工程一致、分数差 0；原三条检索错误保留 | [2026-10-25 evidence](docs/validation/evidence/semantic-control-20261025-r1/installed-r1/skill-cuda/verification.json) · [Scope](docs/validation/完整性校验超时取消实测_2026-10-25.md) |
+| R100 | 新版安装与本地加载 | CLI 0.1.13 / local.11 / r12；203 产品文件一致，1 Skill/17 模块，4 原模型包重验；同机独立工具包验证 | [2026-10-25 evidence](docs/validation/evidence/semantic-control-20261025-r1/kit-r1/verification.json) · [Scope](docs/validation/完整性校验超时取消实测_2026-10-25.md) |
+| R101 | 当前交付核对 | 保留全部原 38 组关闭条件及 R01–R95；本批无新自然质量/人工听审结论，公开仍 alpha.3 | [2026-10-25 evidence](docs/validation/evidence/semantic-control-20261025-r1/final-delivery-r2/verification.json) · [Scope](docs/validation/完整性校验超时取消实测_2026-10-25.md) |
 
 ## 当前边界与开发方向
 
 当前可交付的是有明确契约、离线可运行、可编辑、可复查的 Agent CLI 闭环。完整开源素材/模板生态、约定的 AI 特效/美颜/排版、完整色彩管线、指定草稿版本的真实转换质量、广泛自然视听和长片资源性能仍需开发与验收。消费级 GUI、账号、云协作及任意私有版本无损转换不属于当前内核收口门槛。后续 Float32 转场/运行时闭包候选 R113/R114 未随本版提供。
 
-[当前完整目标差距表](docs/product/GOAL_GAPS_20261025.md)按 CLI 0.1.12 更新全部 G01–G38。单一 Skill、500 风格/预览、359 资源、GPU 配音/翻译、字幕配音联合流程、四轨/恢复及受控词活动边界已交付；自然视听、复杂组合、高级 AI、内容模板、Agent 自主任务、长片可靠性和新版公开包仍开放。R67–R72 分别记录真实执行及限制，不给出总体完成率。[2026-10-24 评估](docs/product/GOAL_GAPS_20261024.md)是历史快照。
+[当前完整目标差距表](docs/product/GOAL_GAPS_20261025.md)按 CLI 0.1.13 更新全部 G01–G38。单一 Skill、500 风格/预览、359 资源、GPU 配音/翻译、字幕配音联合流程、四轨/恢复及受控词活动边界已交付；自然视听、复杂组合、高级 AI、内容模板、Agent 自主任务、长片可靠性和新版公开包仍开放。R67–R72 分别记录真实执行及限制，不给出总体完成率。[2026-10-24 评估](docs/product/GOAL_GAPS_20261024.md)是历史快照。
 
 
 
 下一步以真实客户素材与最小可复现工程收集缺口，逐项补齐、实测、发布新版本；不覆盖既有发布包/摘要/标签。只按实际成功产物更新核验。
 
-**Current delivery / 当前交付 / 目前交付（R88–R94，2026-10-25）：** CLI 0.1.12 / local.10 / r11; 202 product files, 1 Skill / 17 modules. Native semantic recovery added; observed timeout overrun and three known query errors remain. Public alpha.3 assets and all 38 original conditions preserved.
+**Current delivery / 当前交付 / 目前交付（R96–R101，2026-10-25）：** CLI 0.1.13 / local.11 / r12; interruptible integrity reads, full hashes/native locks preserved. Per-command model loading and all original goal conditions remain open.
 
 ## 文档体系、来源与维护
 

@@ -11,6 +11,7 @@ import time
 
 from .artifact_locks import artifact_entry
 from .errors import AppError, argument_error
+from .execution_control import checkpoint
 from .media import ffmpeg_path, ffprobe_path
 from .reverse_video_clock import probe_frames
 from .semantic_contract import sample_times
@@ -20,6 +21,7 @@ PROFILE = 'native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1'
 
 
 def remaining(deadline: float, marker: Path | None) -> float:
+    checkpoint()
     if marker is not None and marker.exists():
         raise AppError('CANCELLED','语义任务已取消',exit_code=8,path=str(marker))
     value=deadline-time.monotonic()

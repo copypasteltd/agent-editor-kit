@@ -17,6 +17,7 @@ from pathlib import Path
 from typing import Any, Iterable
 
 from .errors import AppError, argument_error
+from .execution_control import checkpoint, ExecutionInterrupted
 
 
 ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$")
@@ -37,6 +38,7 @@ def sha256_file(path: Path, chunk_size: int = 1024 * 1024) -> str:
     Reserve before opening the file, then read into the same storage; failed
     reservation cannot advance a stream or yield a partial digest.
     """
+    checkpoint()
     if isinstance(chunk_size, bool) or not isinstance(chunk_size, int) or chunk_size <= 0:
         raise ValueError('chunk_size must be a positive integer')
     requested = min(chunk_size, 64 * 1024)
@@ -52,14 +54,23 @@ def sha256_file(path: Path, chunk_size: int = 1024 * 1024) -> str:
                        exit_code=6, path=str(path))
     view = memoryview(buffer)
     digest = hashlib.sha256()
-    with path.open("rb", buffering=0) as handle:
-        while True:
-            count = handle.readinto(buffer)
-            if count == 0:
-                break
-            if not isinstance(count, int) or not 0 < count <= len(buffer):
-                raise OSError('Local file returned an invalid read count')
-            digest.update(view[:count])
+    processed = 0
+    try:
+        with path.open("rb", buffering=0) as handle:
+            while True:
+                checkpoint()
+                count = handle.readinto(buffer)
+                if count == 0:
+                    break
+                if not isinstance(count, int) or not 0 < count <= len(buffer):
+                    raise OSError('Local file returned an invalid read count')
+                digest.update(view[:count])
+                processed += count
+        checkpoint(force=True)
+    except ExecutionInterrupted as exc:
+        exc.diagnostics = dict(phase='integrity-read', path=str(path), bytes_processed=processed,
+            partial_digest_discarded=True, digest_cached=False)
+        raise
     return digest.hexdigest()
 
 

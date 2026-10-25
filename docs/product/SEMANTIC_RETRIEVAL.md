@@ -1,6 +1,6 @@
 # Offline visual semantic retrieval / 离线图文语义检索
 
-This guide describes CLI 0.1.12 / `v0.1.0-alpha.4-local.10`. The single
+This guide describes CLI 0.1.13 / `v0.1.0-alpha.4-local.11`. The single
 `$agent-ffmpeg-local-editor` entry uses the pinned installed package. Initial
 retrieval shipped in CLI 0.1.5; its original failures and evidence remain below.
 The public alpha.3 / CLI 0.1.2 package retains its original scope.
@@ -11,7 +11,7 @@ The public alpha.3 / CLI 0.1.2 package retains its original scope.
 
 ## 当前工作流与历史迁移问题
 
-CLI 0.1.11 已修复新导出的语义工程包并真实验证同机迁移；旧损坏 ZIP 需从完好源重新导出。当前 CLI 0.1.12 新增受管任务恢复，[操作说明](SEMANTIC_JOB_RECOVERY.md)。模型/原生运行时仍外部固定，三条已知语义错误保留。
+CLI 0.1.11 已修复新导出的语义工程包并真实验证同机迁移；旧损坏 ZIP 需从完好源重新导出。CLI 0.1.12 新增受管任务恢复，当前 0.1.13 再补读取中的超时/取消，[操作说明](SEMANTIC_JOB_RECOVERY.md)。模型/原生运行时仍外部固定，三条已知语义错误保留。
 
 ## CLI 0.1.10 条件与校准流程
 
@@ -242,4 +242,7 @@ worker 报告实际设备、模型 dtype、模型加载/推理时间、CUDA 已�
 2026-10-25 CLI 0.1.11 / local.9：新增[语义工程包迁移](SEMANTIC_PROJECT_PACKAGE.md)与[真实核验](../validation/语义工程包迁移实测_2026-10-25.md)。同机 CPU/CUDA/Skill 各 80 决策在原路径不可用后保留；原三条错误及旧 C19 失败不改写。原生依赖继续外部固定，全部 G01–G38 原条件保持，完整目标继续进行。
 
 
-2026-10-25 当前 CLI 0.1.12：[语义任务恢复](SEMANTIC_JOB_RECOVERY.md)与[真实实测](../validation/语义任务中断恢复实测_2026-10-25.md)。7 类故障/清理结构核验通过，但同步完整性检查延迟超时/取消；仍逐命令加载，三条查询错误与全部原目标保留。
+2026-10-25 历史 CLI 0.1.12：[语义任务恢复](SEMANTIC_JOB_RECOVERY.md)与[真实实测](../validation/语义任务中断恢复实测_2026-10-25.md)。7 类故障/清理结构核验通过，但同步完整性检查延迟超时/取消；仍逐命令加载，三条查询错误与全部原目标保留。
+
+当前 CLI 0.1.13 在不跳过完整摘要/读锁的前提下响应校验中的取消/超时，返回已读字节诊断。
+[实际耗时与边界](../validation/完整性校验超时取消实测_2026-10-25.md)。模型仍逐命令加载，三条原查询错误保留。

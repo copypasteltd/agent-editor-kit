@@ -2,17 +2,17 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.12 / alpha.4-local.10。** One registered Skill / 17 modules;
+**Current local / 当前本机 / 目前本機：CLI 0.1.13 / alpha.4-local.11。** One registered Skill / 17 modules;
 joint subtitle translation/dubbing, CTC activity boundaries, managed job recovery, independent four-source
 separation, offline image/text retrieval, GPU speech/translation and 359 resources. Public alpha.3 remains CLI 0.1.2.
-[Semantic package workflow](SEMANTIC_PROJECT_PACKAGE.md) · [Semantic recovery](SEMANTIC_JOB_RECOVERY.md) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](semantic-recovery-capabilities-cli-0.1.12.json) ·
+[Semantic package workflow](SEMANTIC_PROJECT_PACKAGE.md) · [Semantic recovery](SEMANTIC_JOB_RECOVERY.md) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](semantic-control-capabilities-cli-0.1.13.json) ·
 [Subtitle dubbing workflow](SUBTITLE_DUBBING.md) · [CTC limits](CTC_ACTIVITY_ALIGNMENT.md) ·
 [All 38 remaining gap groups](GOAL_GAPS_20261025.md).
 Cue-window fit does not establish semantics, natural listening, word precision or lip sync.
 
 <!-- /community-current -->
 
-[README](../../README.en.md) · [Machine response](semantic-recovery-capabilities-cli-0.1.12.json) · [Module data](module-catalog.json)
+[README](../../README.en.md) · [Machine response](semantic-control-capabilities-cli-0.1.13.json) · [Module data](module-catalog.json)
 
 | ID | Module | Behavior and input → output | Entry | Dependency/limit |
 |---|---|---|---|---|
@@ -168,6 +168,15 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "vectors",
     "manifest"
   ],
+  "execution_control": {
+    "integrity_reads_observe_deadline_and_cancel": true,
+    "partial_digest_discarded": true,
+    "native_read_locks_preserved": true,
+    "cancel_marker_probe_interval_seconds": 0.025,
+    "inspection_commands_support_timeout_and_cancel": true,
+    "recovery_verifies_outputs_after_operation_budget_reset": true,
+    "blocked_OS_file_read_preemption": false
+  },
   "project_package": {
     "owned_directories_preserved": true,
     "external_source_uri_rebinding": "verified_derived_metadata_only",

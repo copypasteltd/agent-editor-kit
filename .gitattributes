@@ -1536,3 +1536,11 @@ scripts/*semantic_recovery*20261025.py text eol=lf
 # Read-only assessment receipts retain actual native output bytes and hashes.
 docs/validation/evidence/goal-gaps-20261025-r13/** -text -whitespace
 scripts/assess_goal_gaps_20261025_r13.py text eol=lf
+
+# Actual integrity-read cancellation/timeout streams and byte-pin receipts.
+docs/validation/evidence/semantic-control-20261025-r1/** -text -whitespace
+docs/product/semantic-control-capabilities-cli-0.1.13.json -text -whitespace
+docs/skills/community-unified-skill-package-0.1.13.json -text -whitespace
+scripts/*semantic_control*20261025.py text eol=lf
+docs/specs/可中断完整性校验契约_20261025.md text eol=lf
+docs/validation/完整性校验超时取消实测_2026-10-25.md text eol=lf

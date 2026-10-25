@@ -1,0 +1,44 @@
+{
+  "case": "adapter-inspect-cancel",
+  "argv": [
+    "C:/Python313/python.exe",
+    "-I",
+    "-S",
+    "-B",
+    "-u",
+    "-X",
+    "utf8",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.11\\final-r1\\installed\\run.py",
+    "semantic",
+    "adapter-inspect",
+    "--project",
+    "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-control-20261025-installed-r1\\second",
+    "--timeout-seconds",
+    "600",
+    "--adapter-id",
+    "siglip2",
+    "--cancel-file",
+    "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\semantic-control-20261025-r1\\faults-r1\\adapter-inspect-cancel\\cancel marker"
+  ],
+  "pid": 24272,
+  "exit_code": 8,
+  "elapsed_seconds": 2.109146700000565,
+  "cancel_to_exit_seconds": 0.05382839999947464,
+  "observed_read_bytes_at_cancel": 68806622,
+  "error": {
+    "code": "CANCELLED",
+    "message": "任务已取消",
+    "path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\semantic-control-20261025-r1\\faults-r1\\adapter-inspect-cancel\\cancel marker",
+    "retryable": false,
+    "diagnostics": {
+      "phase": "integrity-read",
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\siglip2-base-patch16-224-20261025\\model.safetensors",
+      "bytes_processed": 32505856,
+      "total_bytes": 1500800904,
+      "partial_digest_discarded": true,
+      "digest_cached": false
+    }
+  },
+  "stdout_sha256": "90d3dce3182feb254b618bad15bd385508dd90ac23da19d66af941486874767a",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

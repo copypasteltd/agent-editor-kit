@@ -8,6 +8,7 @@ from pathlib import Path
 
 from .artifact_locks import artifact_entry
 from .errors import AppError, argument_error
+from .execution_control import checkpoint, ExecutionInterrupted
 from .policy import require_local_reference
 from .utils import sha256_bytes
 
@@ -108,7 +109,7 @@ def implementation_files() -> list[Path]:
             'semantic.py','semantic_cli.py','semantic_sampling.py','artifact_locks.py','whisper_worker.py',
             'utils.py','policy.py','reverse_video_clock.py','community_device.py','media.py',
             'semantic_queries.py','semantic_decision.py','semantic_jobs.py','job_workspaces.py',
-            'job_trees.py','native_process_job.py')]
+            'job_trees.py','native_process_job.py','execution_control.py')]
 
 
 def adapter_fingerprint(record: dict) -> str:
@@ -119,6 +120,7 @@ def adapter_fingerprint(record: dict) -> str:
 
 def verify_adapter(record: dict) -> dict:
     try:
+        checkpoint()
         if (record.get('engine')!=ENGINE or record.get('protocol')!=PROTOCOL
                 or record.get('dimension')!=DIMENSION or record.get('preprocessing')!=PREPROCESSING
                 or type(record.get('threads')) is not int or not 1<=record['threads']<=16
@@ -142,6 +144,8 @@ def verify_adapter(record: dict) -> dict:
             if observed!=row:
                 raise ValueError('Pinned artifact bytes/hash changed: '+row['path'])
         return {'ok':True,'checked_files':len(entries),'network':'disabled'}
+    except ExecutionInterrupted:
+        raise
     except (AppError,OSError,KeyError,ValueError,TypeError,AttributeError) as exc:
         return {'ok':False,'code':'SEMANTIC_ADAPTER_INTEGRITY_FAILED','message':str(exc)}
 

@@ -45,7 +45,12 @@ four-source adapter requires explicit registration of the new implementation
 pins; semantic upgrades likewise require explicit registration and rebuilt
 indexes/profiles. Never silently rewrite old hashes or infer model redistribution
 rights. Phase timings expose import, verification, loading and inference costs;
-there is no persistent model service. Synchronous integrity checks can delay
-timeout/cancellation handling, so report observed wall time as well as the error.
+there is no persistent model service. CLI 0.1.13 checks deadline/cancellation
+between integrity reads, preserves interruption codes, discards partial digests
+and closes the current file handle. Report actual wall time and
+`errors[].diagnostics` (`phase`, `bytes_processed`, partial-digest status).
+Already verified files retain their command read locks. Rollback runs after the
+expired operation budget resets and still validates ownership/full hashes.
+OS-blocked file reads are not preempted, so this is not a universal timing guarantee.
 
 [Full semantic recovery workflow](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/SEMANTIC_JOB_RECOVERY.md)

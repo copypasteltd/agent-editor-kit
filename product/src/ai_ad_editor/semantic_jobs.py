@@ -5,6 +5,7 @@ from pathlib import Path
 import shutil
 
 from .errors import AppError
+from .execution_control import checkpoint, operation_budget
 from .job_workspaces import _owned, managed_workspace
 
 _CURRENT = ContextVar('agent_semantic_job', default=None)
@@ -22,7 +23,10 @@ def managed(kind):
         @wraps(function)
         def execute(root, project, **options):
             if options.get('dry_run'):
-                return function(root, project, **options)
+                with operation_budget(options.get('timeout', 600), options.get('cancel_file'), root=root):
+                    result = function(root, project, **options)
+                    checkpoint(force=True)
+                    return result
             root = Path(root).resolve()
             base = _owned(root, root / 'cache/managed-jobs')
             if base.exists() and sum(1 for _ in base.iterdir()) >= 256:
@@ -33,7 +37,11 @@ def managed(kind):
                 job.hold_for_review('Semantic requests/responses retained; explicit project recover --cleanup-jobs can reclaim this workspace')
                 token = _CURRENT.set(job)
                 try:
-                    result = function(root, project, **options)
+                    # Leave the budget before workspace/transaction recovery;
+                    # rollback must still verify complete output hashes.
+                    with operation_budget(options.get('timeout', 600), options.get('cancel_file'), root=root):
+                        result = function(root, project, **options)
+                        checkpoint(force=True)
                     result['managed_workspace'] = dict(job_id=job.path.name, kind=kind, path=str(job.path),
                         evidence_retained=True, explicit_cleanup='project recover --cleanup-jobs')
                     return result

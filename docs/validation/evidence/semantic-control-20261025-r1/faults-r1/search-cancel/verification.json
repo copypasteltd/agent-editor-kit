@@ -1,0 +1,48 @@
+{
+  "case": "search-cancel",
+  "argv": [
+    "C:/Python313/python.exe",
+    "-I",
+    "-S",
+    "-B",
+    "-u",
+    "-X",
+    "utf8",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.11\\final-r1\\installed\\run.py",
+    "semantic",
+    "search",
+    "--project",
+    "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-control-20261025-installed-r1\\second",
+    "--timeout-seconds",
+    "600",
+    "--index-id",
+    "images-v1",
+    "--query",
+    "a photograph of a cat",
+    "--device",
+    "cuda",
+    "--cancel-file",
+    "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\semantic-control-20261025-r1\\faults-r1\\search-cancel\\cancel marker"
+  ],
+  "pid": 27608,
+  "exit_code": 8,
+  "elapsed_seconds": 2.69233830000303,
+  "cancel_to_exit_seconds": 0.18784990000131074,
+  "observed_read_bytes_at_cancel": 67780336,
+  "error": {
+    "code": "CANCELLED",
+    "message": "任务已取消",
+    "path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\semantic-control-20261025-r1\\faults-r1\\search-cancel\\cancel marker",
+    "retryable": false,
+    "diagnostics": {
+      "phase": "integrity-read",
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\siglip2-base-patch16-224-20261025\\model.safetensors",
+      "bytes_processed": 26214400,
+      "total_bytes": 1500800904,
+      "partial_digest_discarded": true,
+      "digest_cached": false
+    }
+  },
+  "stdout_sha256": "32188355792c57bca084dde73defb2ed52908f4d47d129a56a021f97141d9821",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

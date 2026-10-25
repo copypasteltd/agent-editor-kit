@@ -1,0 +1,11 @@
+test_buffer_reservation_can_degrade_without_advancing_or_skipping_source (test_bounded_hash.BoundedFileHashTests.test_buffer_reservation_can_degrade_without_advancing_or_skipping_source) ... ok
+test_io_failure_never_returns_a_prefix_digest_and_closes_handle (test_bounded_hash.BoundedFileHashTests.test_io_failure_never_returns_a_prefix_digest_and_closes_handle) ... ok
+test_memory_limited_reader_and_short_reads_keep_complete_digest (test_bounded_hash.BoundedFileHashTests.test_memory_limited_reader_and_short_reads_keep_complete_digest) ... ok
+test_no_buffer_fails_before_opening_source_with_structured_resource_error (test_bounded_hash.BoundedFileHashTests.test_no_buffer_fails_before_opening_source_with_structured_resource_error) ... ok
+test_real_empty_and_multibuffer_files_match_independent_digest (test_bounded_hash.BoundedFileHashTests.test_real_empty_and_multibuffer_files_match_independent_digest) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 10.547s
+
+OK
+AEK_RESULT={"methods": 5, "skipped": 0, "failures": 0, "errors": 0, "success": true}

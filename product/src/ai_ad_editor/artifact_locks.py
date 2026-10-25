@@ -9,6 +9,7 @@ from pathlib import Path
 import sys
 
 from .errors import AppError
+from .execution_control import checkpoint, ExecutionInterrupted
 
 _CURRENT = ContextVar('agent_video_artifact_verification', default=None)
 
@@ -20,6 +21,7 @@ class _Verification:
         self.cache_hits = 0
 
     def entry(self, path: Path, role: str) -> dict:
+        checkpoint()
         if str(path).startswith('\\\\') or path.is_symlink() or getattr(path, 'is_junction', lambda: False)() or not path.is_file():
             raise AppError('LOCAL_ARTIFACT_LOCK_FAILED', '模型依赖必须为本地普通文件', exit_code=10, path=str(path))
         path = path.resolve()
@@ -60,17 +62,26 @@ class _Verification:
                 raise AppError('LOCAL_ARTIFACT_IDENTITY_CHANGED', '加锁期间模型依赖发生变化', exit_code=10, path=key)
             digest = hashlib.sha256()
             size = 0
-            while chunk := stream.read(1024 * 1024):
+            while True:
+                checkpoint()
+                chunk = stream.read(1024 * 1024)
+                if not chunk:
+                    break
                 digest.update(chunk)
                 size += len(chunk)
+            checkpoint(force=True)
             if size != locked.st_size:
                 raise AppError('LOCAL_ARTIFACT_IDENTITY_CHANGED', '模型依赖读取长度变化', exit_code=10, path=key)
             value = 'sha256:' + digest.hexdigest()
             self.entries[key] = {'stream': stream, 'identity': locked_identity, 'sha256': value}
             self.bytes_hashed += size
             return {'path': key, 'role': role, 'bytes': size, 'sha256': value}
-        except BaseException:
+        except BaseException as exc:
             stream.close()
+            if isinstance(exc, ExecutionInterrupted):
+                exc.diagnostics = dict(phase='integrity-read', path=key,
+                    bytes_processed=size, total_bytes=locked.st_size,
+                    partial_digest_discarded=True, digest_cached=False)
             raise
 
     def summary(self):

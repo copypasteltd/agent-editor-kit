@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from .artifact_locks import verification_scope, verification_summary
 from .project import load_project
+from .execution_control import operation_budget
 from . import semantic
 from .semantic_contract import verify_adapter
 
@@ -44,6 +45,9 @@ def add_parser(subs,leaf):
             p.add_argument('--sample-interval-seconds',type=float,default=2.)
             p.add_argument('--max-samples-per-asset',type=int,default=128)
             execution(p)
+        if action in ('adapter-list','adapter-inspect','verify'):
+            p.add_argument('--timeout-seconds',type=float,default=600)
+            p.add_argument('--cancel-file')
         if action=='search':
             group=p.add_mutually_exclusive_group(required=True)
             group.add_argument('--query')
@@ -76,7 +80,8 @@ def command(args,envelope):
                 timeout=args.timeout_seconds,cancel_file=args.cancel_file,dry_run=args.dry_run)
         elif action in ('adapter-list','adapter-inspect'):
             adapters=semantic.registry(project).get('adapters',[]) if action=='adapter-list' else [semantic.item(project,'adapters',args.adapter_id)]
-            data=dict(adapters=[dict(adapter=r,verification=verify_adapter(r)) for r in adapters],network='disabled')
+            with operation_budget(args.timeout_seconds,args.cancel_file,root=root):
+                data=dict(adapters=[dict(adapter=r,verification=verify_adapter(r)) for r in adapters],network='disabled')
         elif action=='index':
             data=semantic.build_index(root,project,index_id=args.index_id,adapter_id=args.adapter_id,asset_ids=args.asset_id,
                 all_visual=args.all_visual_assets,interval=args.sample_interval_seconds,max_per_asset=args.max_samples_per_asset,
@@ -94,7 +99,8 @@ def command(args,envelope):
                 device=args.device,device_index=args.device_index,batch_size=args.batch_size,
                 timeout=args.timeout_seconds,cancel_file=args.cancel_file,dry_run=args.dry_run)
         elif action=='verify':
-            manifest,vectors,adapter=semantic.read_index(root,project,args.index_id)
+            with operation_budget(args.timeout_seconds,args.cancel_file,root=root):
+                manifest,vectors,adapter=semantic.read_index(root,project,args.index_id)
             data=dict(index_id=args.index_id,verified=True,rows=len(vectors),source_assets=len(manifest['sources']),
                       adapter_sha256=adapter['sha256'],network='disabled')
         else:

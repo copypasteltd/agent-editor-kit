@@ -64,6 +64,7 @@ def _invoke(python, request, job, name, deadline, marker):
     response_path=directory/'response.json'
     request={**request,'protocol':PROTOCOL,'network':'disabled','runtime_root':str(directory/'runtime'),
              'response':str(response_path),'output':str(directory/'features.f32'),
+             'budget_seconds':remaining(deadline,marker),
              'cancel_file':str(marker) if marker else None}
     request['request_sha256']=fingerprint(request)
     request_path=directory/'request.json';atomic_write_json(request_path,request)

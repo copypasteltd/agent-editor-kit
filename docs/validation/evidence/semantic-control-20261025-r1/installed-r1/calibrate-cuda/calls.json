@@ -1,0 +1,38 @@
+[
+  {
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.11\\final-r1\\installed\\run.py",
+      "semantic",
+      "calibrate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-control-20261025-installed-r1\\source",
+      "--index-id",
+      "images-v1",
+      "--calibration-id",
+      "accept-cuda",
+      "--kind",
+      "image",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\semantic-decision-20261025-r1\\frozen\\calibration.json",
+      "--device",
+      "cuda",
+      "--false-accept-rate",
+      "0.05",
+      "--minimum-coverage",
+      "0.75"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 218.5126883999983,
+    "stdout_sha256": "e2bdd55774db48f7539871e0c4f5c85f716bd73261b1b7c914fda334b287b5d9",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "succeeded",
+    "ok": true
+  }
+]

@@ -1,0 +1,24 @@
+test_adapter_verifier_preserves_interruption_code_during_artifact_verification (test_execution_control.ExecutionControlTests.test_adapter_verifier_preserves_interruption_code_during_artifact_verification) ... ok
+test_cached_locked_digest_still_obeys_deadline_without_releasing_outer_lock (test_execution_control.ExecutionControlTests.test_cached_locked_digest_still_obeys_deadline_without_releasing_outer_lock) ... ok
+test_existing_cancel_marker_refuses_before_read (test_execution_control.ExecutionControlTests.test_existing_cancel_marker_refuses_before_read) ... ok
+test_expired_operation_preserves_committed_tree_and_original_input (test_execution_control.ExecutionControlTests.test_expired_operation_preserves_committed_tree_and_original_input) ... ok
+test_expired_operation_still_recovers_uncommitted_published_tree (test_execution_control.ExecutionControlTests.test_expired_operation_still_recovers_uncommitted_published_tree) ... ok
+test_invalid_and_remote_controls_are_rejected (test_execution_control.ExecutionControlTests.test_invalid_and_remote_controls_are_rejected) ... ok
+test_native_partial_digest_is_not_cached_and_its_handle_is_closed (test_execution_control.ExecutionControlTests.test_native_partial_digest_is_not_cached_and_its_handle_is_closed) ... ok
+test_nested_longer_budget_cannot_extend_outer_deadline (test_execution_control.ExecutionControlTests.test_nested_longer_budget_cannot_extend_outer_deadline) ... ok
+test_relative_cancel_marker_is_observed_during_hash_and_scope_resets (test_execution_control.ExecutionControlTests.test_relative_cancel_marker_is_observed_during_hash_and_scope_resets) ... ok
+test_timeout_during_unlocked_hash_preserves_input_and_has_no_result (test_execution_control.ExecutionControlTests.test_timeout_during_unlocked_hash_preserves_input_and_has_no_result) ... ok
+test_unbudgeted_and_successful_budget_hash_all_actual_bytes (test_execution_control.ExecutionControlTests.test_unbudgeted_and_successful_budget_hash_all_actual_bytes) ... ok
+test_digest_reused_while_writes_and_replacement_are_denied (test_artifact_locks.ArtifactLocksTests.test_digest_reused_while_writes_and_replacement_are_denied) ... ok
+test_exception_releases_all_handles (test_artifact_locks.ArtifactLocksTests.test_exception_releases_all_handles) ... ok
+test_existing_writer_prevents_lock_and_has_no_cached_digest (test_artifact_locks.ArtifactLocksTests.test_existing_writer_prevents_lock_and_has_no_cached_digest) ... ok
+test_nested_scope_retains_outer_lock (test_artifact_locks.ArtifactLocksTests.test_nested_scope_retains_outer_lock) ... ok
+test_nonlocal_empty_and_directory_inputs_are_rejected (test_artifact_locks.ArtifactLocksTests.test_nonlocal_empty_and_directory_inputs_are_rejected) ... ok
+test_other_process_can_read_but_cannot_write_while_locked (test_artifact_locks.ArtifactLocksTests.test_other_process_can_read_but_cannot_write_while_locked) ... ok
+test_same_size_and_restored_mtime_are_rehashed_next_command (test_artifact_locks.ArtifactLocksTests.test_same_size_and_restored_mtime_are_rehashed_next_command) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 2.377s
+
+OK
+AEK_RESULT={"methods": 18, "skipped": 0, "failures": 0, "errors": 0, "success": true}

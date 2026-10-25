@@ -2,7 +2,7 @@
 
 [简体中文](../README.md) · [繁體中文](../README.zh-TW.md) · [English](../README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit)
 
-当前本机交付 **CLI 0.1.12 / alpha.4-local.10 / r11 kit**，固定安装包、1 Skill/17 模块。
+当前本机交付 **CLI 0.1.13 / alpha.4-local.11 / r12 kit**，固定安装包、1 Skill/17 模块。
 
 [语义任务恢复操作](product/SEMANTIC_JOB_RECOVERY.md) · [本批真实故障/已知超时限制](validation/语义任务中断恢复实测_2026-10-25.md) · [全部 G01–G38](product/GOAL_GAPS_20261025.md)。公开仍 alpha.3 / CLI 0.1.2，旧附件/历史收据/原关闭条件保留。
 
@@ -12,7 +12,7 @@
 | 当前 alpha.3 预发布下载、安装、Skill 注册与首次视频 / Current release and first render | [Release](https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3) · [简体上手](releases/v0.1.0-alpha.3/QUICKSTART.md) · [繁體上手](releases/v0.1.0-alpha.3/QUICKSTART.zh-TW.md) · [English](releases/v0.1.0-alpha.3/QUICKSTART.en.md) |
 | alpha.3 发行范围、新目录安装与可执行示例 / Release scope and fresh-directory checks | [Scope](releases/v0.1.0-alpha.3/RELEASE.md) · [Release notes](releases/v0.1.0-alpha.3/RELEASE-NOTES.md) · [Native verification](validation/evidence/release-v0.1.0-alpha.3-r1/verification.json) |
 | alpha.3 的 GitHub 发布与 10 个附件逐项下载核对 / Current publication and ten download hashes | [Publication receipt](validation/evidence/release-v0.1.0-alpha.3-r1/publication.json) · [Reproduction](validation/evidence/release-v0.1.0-alpha.3-r1/git-reproduction.json) |
-| 当前 CLI 0.1.12 的全部 38 组差距 / Current full-goal assessment | [最新编号表](product/GOAL_GAPS_20261025.md) · [CPU/GPU/Skill 与错误](validation/语义条件与校准拒识实测_2026-10-25.md) · [C19](product/CASES.md#c19-semantic-decisions) |
+| 当前 CLI 0.1.13 的全部 38 组差距 / Current full-goal assessment | [最新编号表](product/GOAL_GAPS_20261025.md) · [CPU/GPU/Skill 与错误](validation/语义条件与校准拒识实测_2026-10-25.md) · [C19](product/CASES.md#c19-semantic-decisions) |
 | alpha.3 历史目标评估 / Historical alpha.3 assessment | [2026-10-24 差距评估](product/GOAL_GAPS_20261024.md) · [Installed inventory](validation/evidence/goal-gaps-20261024-r1/inventory.json) |
 | 当前完整功能与本地服务模块、安装版全部能力字段 / Complete functional and service modules | [简体](product/CAPABILITIES.md) · [繁體](product/CAPABILITIES.zh-TW.md) · [English](product/CAPABILITIES.en.md) |
 | 46 效果算子与 12 运镜的具体参数、范围、后端 / Full effect and motion parameters | [简体](product/EFFECTS.md) · [繁體](product/EFFECTS.zh-TW.md) · [English](product/EFFECTS.en.md) |
@@ -61,3 +61,5 @@ Contracts remain in specs; raw successes/failures in validation; media in assets
 - [CLI 0.1.8 词活动边界：依赖、CPU/GPU、原时间保留、字幕与质量边界](product/CTC_ACTIVITY_ALIGNMENT.md) · [全部实测与失败](validation/CTC声学边界实测_2026-10-25.md) · [C17](product/CASES.md#c17-ctc-activity)。
 
 - [CLI 0.1.9 中英字幕翻译→完整分段配音→实际时窗→可编辑交付](product/SUBTITLE_DUBBING.md) · [CPU/GPU/统一 Skill、故障、错译与成片实测](validation/字幕翻译配音联合流程实测_2026-10-25.md) · [C18 原图/字幕/实际 MP4/GIF](product/CASES.md#c18-subtitle-dubbing)。
+
+[CLI 0.1.13 完整性读取超时/取消实测](validation/完整性校验超时取消实测_2026-10-25.md) · [实现契约](specs/可中断完整性校验契约_20261025.md)。

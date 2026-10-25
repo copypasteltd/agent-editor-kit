@@ -1,0 +1,89 @@
+{
+  "status": "passed",
+  "started_at_utc": "2026-10-25T11:25:58.855911+00:00",
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "new_inference_in_audit": 0,
+  "new_renders_in_audit": 0,
+  "human_quality_acceptance": false,
+  "finished_at_utc": "2026-10-25T11:26:14.202009+00:00",
+  "baseline_commit": "4bd8c01b97a8c352ddafa991da5bbb699e89b53e",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.11\\final-r1\\installed",
+  "cli_version": "0.1.13",
+  "actual_read_only_cli_calls": 6,
+  "capability_count": 75,
+  "capability_status_counts": {
+    "implemented_with_limits": 47,
+    "implemented": 20,
+    "degraded": 1,
+    "local_adapter_only": 7
+  },
+  "source_and_installed_files": 203,
+  "skill_files": 65,
+  "kit_sha256": "42eb5656d275ffb83d998604a381ff2f3384901cb7d7a6226c8344caf00cffba",
+  "original_goal_closure_conditions_preserved": 38,
+  "historical_readme_rows_preserved_per_language": 95,
+  "current_readme_rows_per_language": 101,
+  "local_links_checked": 2004,
+  "public_release": "v0.1.0-alpha.3",
+  "public_api_status": 200,
+  "files": [
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "sha256": "e0a0c2a42ae622ef0787fb9e94f78ea18373588c3da34782a4e43a6b98f3451c"
+    },
+    {
+      "path": "docs/product/IMPLEMENTATION_PLAN_20261025.md",
+      "sha256": "a6a07d15b954fc1e15cc6598aea8a7d2dcdff7575f79885a1fa50195cea81433"
+    },
+    {
+      "path": "README.md",
+      "sha256": "de5abf1ee82e247fcfbf269c9896ca3c7e6169b71944ed26d773063cf15ed9f1"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "sha256": "d8f10d227bf0309f344e8af8fbfd17b9bcfed840ec3a8483c823c6602d86ad69"
+    },
+    {
+      "path": "README.en.md",
+      "sha256": "fa475e89048d21d56abc103ca0c8bd150bfc1e9f359404d85a1331f8594f7458"
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "1428be3578320e81d3ee3f82355a5a912342afbccff921115d026b3fb9664681"
+    },
+    {
+      "path": "docs/product/COMMUNITY_LOCAL_DELIVERY.md",
+      "sha256": "08760de50055b5325188e202fa3fd54961760d08803b87b43cffc33ac7444bf1"
+    },
+    {
+      "path": "docs/product/SEMANTIC_JOB_RECOVERY.md",
+      "sha256": "c32f4d4920b0b0ee1f71096edac3a944abc6af1c8f92ba3d70954298fe50a479"
+    },
+    {
+      "path": "docs/product/SEMANTIC_RETRIEVAL.md",
+      "sha256": "a065610bc624f870378fbc1099885839b9ee3e738117a3f55f0c1893309339fa"
+    },
+    {
+      "path": "docs/product/CASES.md",
+      "sha256": "814dfd8847cff2541d1c5f5963dec570c8f0b734beee1046dec13ddce1ea983b"
+    },
+    {
+      "path": "docs/validation/完整性校验超时取消实测_2026-10-25.md",
+      "sha256": "eed8e2ef6f491fc9bd1a6193732a423fc42e210e46a91799fb3ce584e60de9e1"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.md",
+      "sha256": "8eaa179e5f979ddc9e238a0969d26dc8b9d6437ae1f675b7bc111fec25503cd3"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.zh-TW.md",
+      "sha256": "f3155c8c4e36721a5f974aac588710c5bf348d90fd516016815c372bed15df6c"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.en.md",
+      "sha256": "b8ae3339782a27f1a35ad7bf834b895093cf4ceacdf1c95dfdd7b398af8c3ecf"
+    }
+  ]
+}

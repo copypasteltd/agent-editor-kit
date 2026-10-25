@@ -1,0 +1,205 @@
+{
+  "status": "completed-with-existing-quality-limits",
+  "started_at_utc": "2026-10-25T10:33:57.775738+00:00",
+  "calls": [
+    {
+      "phase": "setup",
+      "device": "cuda",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\scripts\\run_semantic_control_normal_20261025.py",
+        "--installed",
+        "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.11\\final-r1\\installed",
+        "--run",
+        "installed-r1",
+        "--phase",
+        "setup",
+        "--device",
+        "cuda"
+      ],
+      "exit_code": 0
+    },
+    {
+      "phase": "index",
+      "device": "cuda",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\scripts\\run_semantic_control_normal_20261025.py",
+        "--installed",
+        "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.11\\final-r1\\installed",
+        "--run",
+        "installed-r1",
+        "--phase",
+        "index",
+        "--device",
+        "cuda"
+      ],
+      "exit_code": 0
+    },
+    {
+      "phase": "calibrate",
+      "device": "cuda",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\scripts\\run_semantic_control_normal_20261025.py",
+        "--installed",
+        "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.11\\final-r1\\installed",
+        "--run",
+        "installed-r1",
+        "--phase",
+        "calibrate",
+        "--device",
+        "cuda"
+      ],
+      "exit_code": 0
+    },
+    {
+      "phase": "calibrate",
+      "device": "cpu",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\scripts\\run_semantic_control_normal_20261025.py",
+        "--installed",
+        "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.11\\final-r1\\installed",
+        "--run",
+        "installed-r1",
+        "--phase",
+        "calibrate",
+        "--device",
+        "cpu"
+      ],
+      "exit_code": 0
+    },
+    {
+      "phase": "before",
+      "device": "cuda",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\scripts\\run_semantic_control_normal_20261025.py",
+        "--installed",
+        "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.11\\final-r1\\installed",
+        "--run",
+        "installed-r1",
+        "--phase",
+        "before",
+        "--device",
+        "cuda"
+      ],
+      "exit_code": 0
+    },
+    {
+      "phase": "before",
+      "device": "cpu",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\scripts\\run_semantic_control_normal_20261025.py",
+        "--installed",
+        "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.11\\final-r1\\installed",
+        "--run",
+        "installed-r1",
+        "--phase",
+        "before",
+        "--device",
+        "cpu"
+      ],
+      "exit_code": 0
+    },
+    {
+      "phase": "roundtrip",
+      "device": "cuda",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\scripts\\run_semantic_control_normal_20261025.py",
+        "--installed",
+        "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.11\\final-r1\\installed",
+        "--run",
+        "installed-r1",
+        "--phase",
+        "roundtrip",
+        "--device",
+        "cuda"
+      ],
+      "exit_code": 0
+    },
+    {
+      "phase": "after",
+      "device": "cuda",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\scripts\\run_semantic_control_normal_20261025.py",
+        "--installed",
+        "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.11\\final-r1\\installed",
+        "--run",
+        "installed-r1",
+        "--phase",
+        "after",
+        "--device",
+        "cuda"
+      ],
+      "exit_code": 0
+    },
+    {
+      "phase": "after",
+      "device": "cpu",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\scripts\\run_semantic_control_normal_20261025.py",
+        "--installed",
+        "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.11\\final-r1\\installed",
+        "--run",
+        "installed-r1",
+        "--phase",
+        "after",
+        "--device",
+        "cpu"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "finished_at_utc": "2026-10-25T11:00:30.456588+00:00"
+}

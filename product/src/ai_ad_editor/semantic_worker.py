@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+from contextlib import ExitStack
 import os
 from pathlib import Path
 import sys
@@ -29,11 +30,14 @@ def main() -> int:
         (response_path.parent/'worker-phase.json').write_text(json.dumps(dict(pid=os.getpid(),
             phase=name,elapsed_seconds=now-started,request_sha256=request.get('request_sha256')))+'\n',
             encoding='utf-8',newline='\n')
+    cleanup=ExitStack()
     try:
         phase('request-and-environment')
         if (request.get('protocol')!=PROTOCOL or request.get('network')!='disabled'
                 or request.get('request_sha256')!=fingerprint({k:v for k,v in request.items() if k!='request_sha256'})):
             raise ValueError('SEMANTIC_REQUEST_INVALID')
+        from ai_ad_editor.execution_control import operation_budget
+        cleanup.enter_context(operation_budget(request.get('budget_seconds',600),request.get('cancel_file'),root=Path.cwd()))
         from ai_ad_editor.whisper_worker import install_network_guard
         install_network_guard(response['blocked_network_events'])
         runtime=Path(request['runtime_root'])
@@ -179,10 +183,13 @@ def main() -> int:
                     model_reuse_scope='complete current batch only; no persistent model service')
     except Exception as exc:
         message=str(exc)
-        code=message.split(':',1)[0] if message.startswith('SEMANTIC_') else 'SEMANTIC_WORKER_FAILED'
+        from ai_ad_editor.errors import AppError
+        code=exc.code if isinstance(exc,AppError) else message.split(':',1)[0] if message.startswith('SEMANTIC_') else 'SEMANTIC_WORKER_FAILED'
         if request.get('device')=='cuda' and isinstance(exc,RuntimeError) and any(s in message.lower() for s in ('cuda','cublas','cudnn','out of memory')):
             code='SEMANTIC_CUDA_FAILED'
         response.update(code=code,error_type=type(exc).__name__,message=message,traceback=traceback.format_exc()[-6000:])
+    finally:
+        cleanup.close()
     phase('terminal')
     response['phase_seconds']={key:round(value,6) for key,value in phases.items()}
     response['elapsed_seconds']=round(time.monotonic()-started,6)

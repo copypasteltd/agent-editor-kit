@@ -1,0 +1,223 @@
+{
+  "checked_at_utc": "2026-10-25T00:21:33.136544+00:00",
+  "scope": "goal assessment and documentation only",
+  "installed_release": "v0.1.0-alpha.4-local.5",
+  "installed_cli": "0.1.7",
+  "inventory_sha256": "3295068527f540ed8891175ff6fdca2e83ab7363e4dc4f8ad912dd45dbb11104",
+  "capability_count": 74,
+  "declarations": {
+    "implemented_with_limits": 46,
+    "implemented": 20,
+    "degraded": 1,
+    "local_adapter_only": 7
+  },
+  "tracked_product_python_files_compared": 194,
+  "all_committed_source_and_installed_equal": true,
+  "development_candidates": [
+    {
+      "path": "product/src/ai_ad_editor/ctc_activity.py",
+      "sha256": "50658207de5181826e1efbc004bcfb218a37217ba75ce6eded60b9875e083531",
+      "installed": false,
+      "integrated": false,
+      "new_tests_or_model_results": null,
+      "counts_as_delivered": false
+    },
+    {
+      "path": "docs/specs/CTC声学活动边界契约_20261025.md",
+      "sha256": "bc6bbf0b574d0d0a4a3e54004feaaacdbb7a7e1a5b5d9e2e17af80b8d9fd2b59",
+      "installed": false,
+      "integrated": false,
+      "new_tests_or_model_results": null,
+      "counts_as_delivered": false
+    }
+  ],
+  "kit_sha256": "b6668d060de7c61f13896449072419eec5d6254bce52edc926fa1bae3e4d7b45",
+  "skill_count": 1,
+  "modules": 17,
+  "baseline_commit": "2e21c7a4504cf075cd874f994b2d71e91b2169d8",
+  "gap_groups": 38,
+  "closed_gap_groups": 0,
+  "order_counts": {
+    "先收口": 13,
+    "随后建设": 18,
+    "完整范围扩展": 7
+  },
+  "historical_quality_evidence": {
+    "ctc": {
+      "path": "docs/validation/evidence/ctc-real-en-20261018-b/word-boundary-quality.json",
+      "sha256": "fdb1b5538da1b3e94e663cd2d59b7794d9cb750358fb89a74a4d56a31b997a53",
+      "maximum_error_ms": 258.1875,
+      "unchanged_gate_ms": 66.66666666666667,
+      "passed": false,
+      "reference": "authored trimmed word blocks, not independent phonetic truth"
+    },
+    "qwen": {
+      "path": "docs/validation/evidence/implementation-20261025-r1/native-aligner-research/quality.json",
+      "sha256": "f67486aa560d072bac0b2dc57c87be3cfcd285b6b251461a7883a84d8eba2d62",
+      "cases": [
+        {
+          "fixture": "ctc-alignment-20261018",
+          "max_error_ms": 220.0,
+          "passed": false
+        },
+        {
+          "fixture": "boundary-heldout-20261018",
+          "max_error_ms": 161.0,
+          "passed": false
+        }
+      ]
+    },
+    "semantic": {
+      "path": "docs/validation/evidence/semantic-20261025-r1/development-r1/queries/quality.json",
+      "sha256": "e896fce1f16404a269d5116533fa0eb61c31d7be2fb23697e406c525bf3359e1",
+      "non_positive_queries": [
+        {
+          "id": "q17",
+          "text": "a cat, not a cup of coffee",
+          "group": "negation",
+          "top1_relevant": true,
+          "recall_at_3": 1.0,
+          "expected_asset_ids": [
+            "asset_c2",
+            "asset_i1",
+            "asset_v1"
+          ],
+          "top_hits": [
+            {
+              "asset_id": "asset_v1",
+              "sample_seconds": 2.0,
+              "score": 0.11562234,
+              "relevant": true
+            },
+            {
+              "asset_id": "asset_c2",
+              "sample_seconds": 0.0,
+              "score": 0.11082003,
+              "relevant": true
+            },
+            {
+              "asset_id": "asset_i1",
+              "sample_seconds": 0.0,
+              "score": 0.11082003,
+              "relevant": true
+            }
+          ],
+          "open_set_candidate_returned": null
+        },
+        {
+          "id": "q18",
+          "text": "一只猫，不是一杯咖啡",
+          "group": "negation",
+          "top1_relevant": false,
+          "recall_at_3": 0.3333333333333333,
+          "expected_asset_ids": [
+            "asset_c2",
+            "asset_i1",
+            "asset_v1"
+          ],
+          "top_hits": [
+            {
+              "asset_id": "asset_b4",
+              "sample_seconds": 0.0,
+              "score": 0.10998559,
+              "relevant": false
+            },
+            {
+              "asset_id": "asset_v1",
+              "sample_seconds": 0.0,
+              "score": 0.10809484,
+              "relevant": false
+            },
+            {
+              "asset_id": "asset_c2",
+              "sample_seconds": 0.0,
+              "score": 0.08749028,
+              "relevant": true
+            }
+          ],
+          "open_set_candidate_returned": null
+        },
+        {
+          "id": "q19",
+          "text": "an underwater shark swimming beside coral",
+          "group": "out_of_domain",
+          "top1_relevant": null,
+          "recall_at_3": null,
+          "expected_asset_ids": [],
+          "top_hits": [
+            {
+              "asset_id": "asset_e3",
+              "sample_seconds": 0.0,
+              "score": -0.01032311,
+              "relevant": false
+            },
+            {
+              "asset_id": "asset_g5",
+              "sample_seconds": 0.0,
+              "score": -0.02123708,
+              "relevant": false
+            },
+            {
+              "asset_id": "asset_f8",
+              "sample_seconds": 0.0,
+              "score": -0.0366676,
+              "relevant": false
+            }
+          ],
+          "open_set_candidate_returned": true
+        },
+        {
+          "id": "q20",
+          "text": "水下珊瑚旁边游动的鲨鱼",
+          "group": "out_of_domain",
+          "top1_relevant": null,
+          "recall_at_3": null,
+          "expected_asset_ids": [],
+          "top_hits": [
+            {
+              "asset_id": "asset_e3",
+              "sample_seconds": 0.0,
+              "score": 0.01411478,
+              "relevant": false
+            },
+            {
+              "asset_id": "asset_f8",
+              "sample_seconds": 0.0,
+              "score": -0.00043102,
+              "relevant": false
+            },
+            {
+              "asset_id": "asset_g5",
+              "sample_seconds": 0.0,
+              "score": -0.00883723,
+              "relevant": false
+            }
+          ],
+          "open_set_candidate_returned": true
+        }
+      ]
+    }
+  },
+  "public_release_api": {
+    "url": "https://api.github.com/repos/copypasteltd/agent-editor-kit/releases?per_page=10",
+    "http_status": 200,
+    "error": null
+  },
+  "public_releases": [
+    {
+      "tag_name": "v0.1.0-alpha.3",
+      "prerelease": true,
+      "draft": false,
+      "published_at": "2026-10-24T12:52:48Z",
+      "html_url": "https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3"
+    }
+  ],
+  "new_product_features": 0,
+  "new_model_forwards": 0,
+  "new_renders": 0,
+  "human_listening": false,
+  "full_historical_regression_rerun": false,
+  "virtualization": false,
+  "browser_ui": false,
+  "generator_sha256": "348a7e8df4bafbe864a00ef50db61c556651aec6af0ca8f8d3df61304f8cf7a8"
+}

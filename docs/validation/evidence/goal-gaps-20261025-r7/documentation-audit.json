@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-10-25T00:23:05.838329+00:00",
+  "all_38_original_closure_conditions_preserved": true,
+  "original_R01_R58_rows_verbatim_preserved_in_three_readmes": true,
+  "numbered_rows_per_readme": {
+    "F": 50,
+    "S": 19,
+    "K": 17,
+    "R": 59
+  },
+  "checked_local_link_targets": 957,
+  "scope": "documentation audit; no media or model regression",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "c41a67cba21ed32bcb3483840899bf274ad8d675dd352f803cf6a7e64d9cc621"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "sha256": "4e32593126b40d0eaee47ff8e8f4f6169e158b785d28a610b8a86f94d630e244"
+    },
+    {
+      "path": "README.en.md",
+      "sha256": "6a881e5ffbe894e68e5508ae060f16d2a2300ea8824334def31ca0a53e85990f"
+    },
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "sha256": "0896ade6ca304deb2c1c409d8529c89b067208f92b8e06fb7b617da19b53ae04"
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "7842dace0db3cdab3a15ca0678062c4512985fce410d98f872ee3273db62491a"
+    },
+    {
+      "path": "docs/product/IMPLEMENTATION_PLAN_20261025.md",
+      "sha256": "3d24a85a551546ffefd88feaa680f55b6e6cfe5358988bae9da0ae9a7374d24d"
+    }
+  ],
+  "generator_sha256": "348a7e8df4bafbe864a00ef50db61c556651aec6af0ca8f8d3df61304f8cf7a8"
+}

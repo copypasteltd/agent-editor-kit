@@ -630,12 +630,13 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R56 | CLI 0.1.7 真实推理与成片 | 开发 11 次 CLI/2 前向、安装版 16/4、统一入口另 11/2；成片另 9 次 CLI，6 秒/180 帧，混音最大差 0，工程包往返 PCM/画面相同 | [C16/GIF](docs/product/CASES.md#c16-job-recovery) · [实际成片](docs/validation/evidence/job-recovery-20261025-r1/demo-r1/verification.json)；2026-10-25，受控音频留本地，无自然质量或听审验收 |
 | R57 | 固定安装与单一 Skill r6 | 新 8-wheel 离线包、194 个产品 Python 文件逐字节相同；r6 79 文件，隔离注册/只读/恢复 dry-run 8 次进程调用 | [安装](docs/validation/evidence/job-recovery-20261025-r1/installation/verification.json) · [r6 kit](docs/validation/evidence/job-recovery-20261025-r1/kit-r1/verification.json)；2026-10-25，仍同一物理主机，未新建公开 Release |
 | R58 | 当前完整目标复核 | 实际统一入口另 6 次只读盘点；74 项声明与全部 38 组剩余条件保留 | [完整编号差距](docs/product/GOAL_GAPS_20261025.md) · [原始响应/API](docs/validation/evidence/goal-gaps-20261025-r6/inventory.json)；2026-10-25，0 新推理/渲染，公开 alpha.3 / CLI 0.1.2 |
+| R59 | 最新差距与安装一致性复核 | 实际 Skill 新增 6 次只读调用；194 个已提交 Python 文件与安装版字节一致；38 组原关闭条件保留 | [完整差距](docs/product/GOAL_GAPS_20261025.md) · [本次响应/API](docs/validation/evidence/goal-gaps-20261025-r7/inventory.json) · [独立复核](docs/validation/evidence/goal-gaps-20261025-r7/review.json)；2026-10-25，对齐活动边界仅未集成草稿，0 新模型/渲染/听审，不新增已验收能力 |
 
 ## 当前边界与开发方向
 
 当前可交付的是有明确契约、离线可运行、可编辑、可复查的 Agent CLI 闭环。完整开源素材/模板生态、约定的 AI 特效/美颜/排版、完整色彩管线、指定草稿版本的真实转换质量、广泛自然视听和长片资源性能仍需开发与验收。消费级 GUI、账号、云协作及任意私有版本无损转换不属于当前内核收口门槛。后续 Float32 转场/运行时闭包候选 R113/R114 未随本版提供。
 
-[2026-10-25 当前完整目标差距表](docs/product/GOAL_GAPS_20261025.md)按本地 CLI 0.1.5 更新 38 组差距，明确单一 Skill、359 项资源、GPU 配音/中英翻译已交付，以及高级 AI、自然视听、复杂组合、性能可靠性和新公开包仍待完成。优先关闭真实素材质量、字词对齐和音频历史失败、Agent 实际任务、长片资源与干净主机安装；随后扩充内容与模板及完整 AI 范围。当前没有足够依据给出整体完成百分比。[2026-10-24 评估](docs/product/GOAL_GAPS_20261024.md)保留为 alpha.3 的历史快照。
+[2026-10-25 当前完整目标差距表](docs/product/GOAL_GAPS_20261025.md)按本地 CLI 0.1.7 更新 38 组差距，明确单一 Skill、359 项资源、GPU 配音/中英翻译、独立四轨及有界中断恢复已交付，以及高级 AI、自然视听、复杂组合、性能可靠性和新公开包仍待完成。优先关闭真实素材质量、字词对齐和音频历史失败、Agent 实际任务、长片资源与干净主机安装；随后扩充内容与模板及完整 AI 范围。最新只读复核与开发草稿的状态见 R59；当前没有足够依据给出整体完成百分比。[2026-10-24 评估](docs/product/GOAL_GAPS_20261024.md)保留为 alpha.3 的历史快照。
 
 
 

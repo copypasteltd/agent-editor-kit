@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "started_at_utc": "2026-10-25T17:46:53.513793+00:00",
+  "product_integrated": false,
+  "finished_at_utc": "2026-10-25T17:46:55.359551+00:00",
+  "format": "gbrapf32le",
+  "frames": 8,
+  "raw_cases": [
+    {
+      "clock": "monotonic",
+      "bytes": 16384,
+      "bit_identical": true
+    },
+    {
+      "clock": "repeat-backward",
+      "bytes": 16384,
+      "bit_identical": true
+    }
+  ],
+  "fp64_kernel_compiled": true,
+  "negative_and_gt_one_and_subnormal_preserved": true
+}

@@ -1,0 +1,67 @@
+{
+  "engine": "opencl-binary64-projection-v1",
+  "request": {
+    "mode": "require",
+    "device": "0.0",
+    "max_working_bytes": 1073741824,
+    "probe_timeout_seconds": 30
+  },
+  "status": "planned",
+  "nodes": [],
+  "probes": [
+    {
+      "id": "binary64-coefficients",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-v",
+        "error",
+        "-nostdin",
+        "-n",
+        "-init_hw_device",
+        "opencl=aek_projection:0.0",
+        "-filter_hw_device",
+        "aek_projection",
+        "-f",
+        "lavfi",
+        "-i",
+        "nullsrc=s=9x4:r=1:d=1,format=gbrapf32le",
+        "-vf",
+        "format=gbrapf32le,geq=r='st(0,if(eq(X,0),(0),if(eq(X,1),(-0),if(eq(X,2),(3.1415926535897931),if(eq(X,3),(1.0000000000000002),if(eq(X,4),(1e-08),if(eq(X,5),(-0.50000000001),if(eq(X,6),(1e-300),if(eq(X,7),(1.7976931348623157e+308),if(eq(X,8),(4.9406564584124654e-324),0))))))))));st(1,if(eq(ld(0),0),0,clip(floor(log(abs(ld(0)))/log(2)),-1022,1023)));st(2,ld(0)*pow(2,-ld(1)));st(3,trunc(ld(2)*1048576));st(4,trunc((ld(2)-ld(3)/1048576)*1099511627776));st(5,(ld(2)-ld(3)/1048576-ld(4)/1099511627776)*1152921504606846976);if(isnan(ld(0)),if(eq(Y,3),2048,0),if(isinf(ld(0)),if(eq(Y,3),2049,if(lt(ld(0),0),-1,1)),if(eq(Y,0),ld(3),if(eq(Y,1),ld(4),if(eq(Y,2),ld(5),if(eq(ld(0),0)*lt(1/ld(0),0),2050,ld(1)))))))':g='st(0,if(eq(X,0),(0),if(eq(X,1),(-0),if(eq(X,2),(3.1415926535897931),if(eq(X,3),(1.0000000000000002),if(eq(X,4),(1e-08),if(eq(X,5),(-0.50000000001),if(eq(X,6),(1e-300),if(eq(X,7),(1.7976931348623157e+308),if(eq(X,8),(4.9406564584124654e-324),0))))))))));st(1,if(eq(ld(0),0),0,clip(floor(log(abs(ld(0)))/log(2)),-1022,1023)));st(2,ld(0)*pow(2,-ld(1)));st(3,trunc(ld(2)*1048576));st(4,trunc((ld(2)-ld(3)/1048576)*1099511627776));st(5,(ld(2)-ld(3)/1048576-ld(4)/1099511627776)*1152921504606846976);if(isnan(ld(0)),if(eq(Y,3),2048,0),if(isinf(ld(0)),if(eq(Y,3),2049,if(lt(ld(0),0),-1,1)),if(eq(Y,0),ld(3),if(eq(Y,1),ld(4),if(eq(Y,2),ld(5),if(eq(ld(0),0)*lt(1/ld(0),0),2050,ld(1)))))))':b='st(0,if(eq(X,0),(0),if(eq(X,1),(-0),if(eq(X,2),(3.1415926535897931),if(eq(X,3),(1.0000000000000002),if(eq(X,4),(1e-08),if(eq(X,5),(-0.50000000001),if(eq(X,6),(1e-300),if(eq(X,7),(1.7976931348623157e+308),if(eq(X,8),(4.9406564584124654e-324),0))))))))));st(1,if(eq(ld(0),0),0,clip(floor(log(abs(ld(0)))/log(2)),-1022,1023)));st(2,ld(0)*pow(2,-ld(1)));st(3,trunc(ld(2)*1048576));st(4,trunc((ld(2)-ld(3)/1048576)*1099511627776));st(5,(ld(2)-ld(3)/1048576-ld(4)/1099511627776)*1152921504606846976);if(isnan(ld(0)),if(eq(Y,3),2048,0),if(isinf(ld(0)),if(eq(Y,3),2049,if(lt(ld(0),0),-1,1)),if(eq(Y,0),ld(3),if(eq(Y,1),ld(4),if(eq(Y,2),ld(5),if(eq(ld(0),0)*lt(1/ld(0),0),2050,ld(1)))))))':a='st(0,if(eq(X,0),(0),if(eq(X,1),(-0),if(eq(X,2),(3.1415926535897931),if(eq(X,3),(1.0000000000000002),if(eq(X,4),(1e-08),if(eq(X,5),(-0.50000000001),if(eq(X,6),(1e-300),if(eq(X,7),(1.7976931348623157e+308),if(eq(X,8),(4.9406564584124654e-324),0))))))))));st(1,if(eq(ld(0),0),0,clip(floor(log(abs(ld(0)))/log(2)),-1022,1023)));st(2,ld(0)*pow(2,-ld(1)));st(3,trunc(ld(2)*1048576));st(4,trunc((ld(2)-ld(3)/1048576)*1099511627776));st(5,(ld(2)-ld(3)/1048576-ld(4)/1099511627776)*1152921504606846976);if(isnan(ld(0)),if(eq(Y,3),2048,0),if(isinf(ld(0)),if(eq(Y,3),2049,if(lt(ld(0),0),-1,1)),if(eq(Y,0),ld(3),if(eq(Y,1),ld(4),if(eq(Y,2),ld(5),if(eq(ld(0),0)*lt(1/ld(0),0),2050,ld(1)))))))',hwupload,program_opencl=source='renders/diagnostics/projection_development-probe-r1/coefficient_probe.cl':kernel=project:inputs=1:size=9x4,hwdownload,format=gbrapf32le",
+        "-frames:v",
+        "1",
+        "-f",
+        "rawvideo",
+        "E:\\dev\\sandbox\\AI广告剪辑\\renders\\diagnostics\\projection_development-probe-r1\\coefficient_probe.gbrapf32le"
+      ],
+      "status": "completed",
+      "stdout": {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\renders\\diagnostics\\projection_development-probe-r1\\binary64-coefficients.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\renders\\diagnostics\\projection_development-probe-r1\\binary64-coefficients.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "exit_code": 0
+    }
+  ],
+  "estimated_working_bytes": 0,
+  "quota_scope": "projection-raster-admission-not-total-ram-or-vram",
+  "report": "E:\\dev\\sandbox\\AI广告剪辑\\renders\\diagnostics\\projection_development-probe-r1\\report.json",
+  "other_filters": "unchanged-cpu",
+  "hardware_encoding": "separate-policy",
+  "device": {
+    "selection": "0.0",
+    "name": "NVIDIA GeForce RTX 3060",
+    "vendor": "NVIDIA Corporation",
+    "driver": "595.95",
+    "version": "OpenCL 3.0 CUDA",
+    "type": 4,
+    "image_support": 1,
+    "image_max_width": 32768,
+    "image_max_height": 32768,
+    "double_fp_config": 63,
+    "global_memory_bytes": 12884377600
+  }
+}

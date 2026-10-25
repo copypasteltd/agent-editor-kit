@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.19 / alpha.4-local.17 / r20 kit.** One registered Skill / 17 modules; [r20 kit](agent-editor-kit-community-unified-skill-r20.zip). Six reusable motion paths and native animation capture are now installed, alongside editable ad variants, semantic runtime migration, GPU voice/translation, subtitle dubbing and 359 resources.
+**CLI0.1.20 / alpha.4-local.18 / r21 kit · 1 Skill / 17 modules / 69 files.**
 
-[Motion workflow + previews](../product/MOTION_PACKS.md) · [Current installation](../product/COMMUNITY_LOCAL_DELIVERY.md) · [All 38 original goals](../product/GOAL_GAPS_20261025.md). Public alpha.3 assets retain their original version.
+Native GPU crop, affine camera motion and child-canvas bilinear/area projection are installed. Same-project/codec three-run medians 77.85→12.51s (6.22×); all120 frames, clocks and PCM match across six renders. CPU remains the default; explicit policy records GPU use/fallback.
 
-Animated crop and native child-canvas projection reuse parameters for bilinear/area sampling. Composition remains on the CPU; GPU encoding is a separate choice.
+[GPU workflow](../product/OPENCL_PROJECTION.md) · [Motion](../product/MOTION_PACKS.md) · [Install](../product/COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](../product/opencl-projection-capabilities-cli-0.1.20.json).
 
 <!-- /community-current -->
 

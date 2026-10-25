@@ -2,13 +2,11 @@
 
 <!-- community-current -->
 
-**CLI 0.1.19 / alpha.4-local.17 / r20 kit · 1 Skill / 17 modules.**
+**CLI0.1.20 / alpha.4-local.18 / r21 kit · 1 Skill / 17 modules / 69 files.**
 
-New portable motion packs: six parameterized paths, existing-animation capture, reuse across durations/canvases, explicit conflict handling and authored clocks; results remain editable keyframes.
+Native GPU crop, affine camera motion and child-canvas bilinear/area projection are installed. Same-project/codec three-run medians 77.85→12.51s (6.22×); all120 frames, clocks and PCM match across six renders. CPU remains the default; explicit policy records GPU use/fallback.
 
-[Motion workflow/previews](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime upgrade](SEMANTIC_RUNTIME_UPGRADE.md) · [75 declarations](projection-scanline-capabilities-cli-0.1.19.json) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md).
-
-Animated crop and native child-canvas projection reuse parameters for bilinear/area sampling. Composition remains on the CPU; GPU encoding is a separate choice.
+[GPU workflow](OPENCL_PROJECTION.md) · [Motion](MOTION_PACKS.md) · [Install](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](opencl-projection-capabilities-cli-0.1.20.json).
 
 <!-- /community-current -->
 

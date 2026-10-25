@@ -1,0 +1,174 @@
+[
+  {
+    "id": "ffmpeg-version",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08324719998927321,
+    "stdout_sha256": "40cbd764aa9f5e9ae10b41da9e53fc901c606832f05af38f67ec763a580020c5",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "preview-mp4",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-v",
+      "error",
+      "-n",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\opencl-3.mkv",
+      "-an",
+      "-c:v",
+      "h264_nvenc",
+      "-preset",
+      "p5",
+      "-cq",
+      "20",
+      "-pix_fmt",
+      "yuv420p",
+      "-movflags",
+      "+faststart",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\opencl-projection-20261026-r1\\projection.mp4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.5298355999984778,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "preview-gif",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-v",
+      "error",
+      "-n",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\opencl-3.mkv",
+      "-an",
+      "-filter_complex",
+      "fps=10,scale=384:216:flags=lanczos,split[a][b];[a]palettegen[p];[b][p]paletteuse",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\opencl-projection-20261026-r1\\projection.gif"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2941170999984024,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "mp4-probe",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.EXE",
+      "-v",
+      "error",
+      "-count_frames",
+      "-show_streams",
+      "-show_format",
+      "-of",
+      "json",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\opencl-projection-20261026-r1\\projection.mp4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.22235970001202077,
+    "stdout_sha256": "649875ccc765d0d539db2b9a1ab560fad7aa59e2ba2abdceb31be4daf171390a",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "mp4-full-decode",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\opencl-projection-20261026-r1\\projection.mp4",
+      "-f",
+      "null",
+      "NUL"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13760170000023209,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "gif-probe",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.EXE",
+      "-v",
+      "error",
+      "-count_frames",
+      "-show_streams",
+      "-show_format",
+      "-of",
+      "json",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\opencl-projection-20261026-r1\\projection.gif"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11022499999671709,
+    "stdout_sha256": "137a08414f7c8c8c414d110f7dbe6c9bd0922ea91f866f0f2f7521743df24534",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "gif-full-decode",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\opencl-projection-20261026-r1\\projection.gif",
+      "-f",
+      "null",
+      "NUL"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11337080001248978,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "midpoint",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-v",
+      "error",
+      "-n",
+      "-ss",
+      "2",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\opencl-3.mkv",
+      "-frames:v",
+      "1",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\opencl-projection-20261026-r1\\midpoint.png"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.14864529999613296,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "export-editable",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.18\\final-r2\\installed\\run.py",
+      "convert",
+      "export",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程",
+      "--target-format",
+      "package",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\opencl-projection-20261026-r1\\editable-projection.aevpkg.zip"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 11.20155289999093,
+    "stdout_sha256": "2c08451cb1e2540dbf16bec7ae3e41939a052eb401fb830cd7ea8c703ec8fa16",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

@@ -9,22 +9,39 @@
 本頁包含完整功能模塊、服務與依賴、安裝與使用邏輯、Skill 輸入輸出、真實案例和核驗表。長篇原始驗收日志繼續留檔，功能說明與案例入口恢復到首頁。
 
 
-<!-- projection-scanline-current -->
+<!-- opencl-projection-current -->
 
-**CLI 0.1.19 / alpha.4-local.17 / r20 kit** · 1 Skill / 17 modules. 動態裁切及巢狀crop/fit/TRS支援掃描行復用，雙線性/面積採樣保持精度；同組合專案三輪中位數327.62→88.41秒（3.71×），六次120影格及PCM相同。
+**CLI0.1.20 / alpha.4-local.18 / r21 kit** · 1 Skill / 17 modules. 原生 GPU 動態裁切、仿射運鏡及子畫布雙線性/面積投影已交付。相同編碼及專案三輪中位數 77.85→12.51秒（6.22×），六次全部120影格、時鐘及PCM相同；預設CPU，以明確策略選擇使用/回退。
+
+[Install / 固定安装](docs/releases/CLI_0.1.20_LOCAL.md) · [GPU workflow / 使用流程](docs/product/OPENCL_PROJECTION.md) · [C28](docs/product/CASES.md#c28-opencl-projection) · [Evidence](docs/validation/OpenCL原生投影实测_2026-10-26.md)
+
+```powershell
+& $avk validate --project $project
+& $avk render --project $project --output $output --projection-acceleration prefer --projection-device 0.0 --projection-memory-mib 1024 --sequence-sampling area --sequence-memory-mib 1024 --hardware-encode off
+```
+
+![Actual installed GPU composition / silent](docs/assets/opencl-projection-20261026-r1/projection.gif)
+
+僅本機RTX3060裝置實測；其餘特效/字幕仍CPU。1080p/4K單幀像素對照已過，通用4K即時、長片及自然視聽繼續驗收。
+
+<!-- /opencl-projection-current -->
+
+<!-- projection-scanline-history -->
+
+**Historical / 历史 / 歷史：CLI 0.1.19 / alpha.4-local.17 / r20 kit** · 1 Skill / 17 modules. 動態裁切及巢狀crop/fit/TRS支援掃描行復用，雙線性/面積採樣保持精度；同組合專案三輪中位數327.62→88.41秒（3.71×），六次120影格及PCM相同。
 
 [Install / 固定0.1.19](docs/releases/CLI_0.1.19_LOCAL.md) · [Workflow / 使用流程](docs/product/PROJECTION_RENDERING.md) · [C27](docs/product/CASES.md#c27-projection-scanline) · [Evidence](docs/validation/裁切与序列投影实测_2026-10-26.md)
 
 ```powershell
 & $avk validate --project $project
-& $avk render --project $project --sequence-sampling area --sequence-memory-mib 1024 --output $output --hardware-encode auto
+& $avk render --project $project --sequence-sampling area --sequence-memory-mib 1024 --output $output --hardware-encode off
 ```
 
 ![Actual installed output / silent](docs/assets/projection-scanline-20261026-r2/projection.gif)
 
 CPU合成；GPU編碼另外選擇。本次為384×216/4秒組合實測，完整4K/長片及自然品質繼續驗收。
 
-<!-- /projection-scanline-current -->
+<!-- /projection-scanline-history -->
 
 <!-- affine-scanline-history -->
 
@@ -107,13 +124,13 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r20 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r20.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
+**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r21 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r21.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
 
 <!-- /unified-skill-registration -->
 
 <!-- community-materials-gpu -->
 
-**本機新增已安裝擴充套件：CLI 0.1.19，GPU 配音/翻譯與 359 項內建開源資源。** 公開 alpha.3 附件保持原版。外層只指定 `$agent-ffmpeg-local-editor`；本機登記 GPU 包後預設優先 GPU，明確返回實際裝置/回退原因，保留 CPU 相容。
+**本機新增已安裝擴充套件：CLI 0.1.20，GPU 配音/翻譯與 359 項內建開源資源。** 公開 alpha.3 附件保持原版。外層只指定 `$agent-ffmpeg-local-editor`；本機登記 GPU 包後預設優先 GPU，明確返回實際裝置/回退原因，保留 CPU 相容。
 
 [完整流程與邊界](docs/product/COMMUNITY_MATERIALS.zh-TW.md) · [逐項素材目錄](docs/product/COMMUNITY_MATERIAL_CATALOG.md) · [103 音色與實際試聽範圍](docs/product/COMMUNITY_VOICES.md) · [CPU 實測](docs/validation/evidence/community-materials-20261025-r1/cpu/verification.json) · [GPU 實測](docs/validation/evidence/community-materials-20261025-r1/gpu/verification.json)。
 
@@ -455,8 +472,8 @@ flowchart LR
 | F34 | 參數模板與批量變體 | 本地 JSON 模板 + 類型變量 → 可編輯專案變體、批量輸入與模板快照。 | `template apply/batch` | 支持 asset/color/enum 等類型；復雜條件圖和表達式執行未實現。 |
 | F35 | 素材索引與片段組復用 | 素材目錄/已編輯片段 → 檢索、重復/相似檢查、跨專案片段組與依賴閉包。 | `library index/search/duplicates/similar; fragment` | 用戶自建資源庫，未內置商業素材訂閱/正版音樂庫存。 |
 | F36 | 影格、區間與緩存預覽 | 工程 + 明確影格/區間 → PNG/短影片/緩存與可驗證取樣證據。 | `preview frame/range; cache; preview cache-*` | 預覽不是完整成片核驗；色彩路徑與緩存簽名需一致。 |
-| F37 | 輸出、編碼與硬件探測 | 工程 → MP4/WebM/MKV、編碼/像素/音頻配置、透明輸出與 manifest。 | `render` | 編碼器取決於本地 FFmpeg；硬件實際探測，CPU 效果未整體 GPU 化，無實時/4K 性能保證。 |
-| F38 | 持久隊列、重試與取消 | 凍結專案快照 → 本地排隊、有限 worker、顯式重試/取消與串行元資料提交。 | `queue enqueue/list/inspect/run/cancel` | 預設串行；並發需滿足門禁，不是分布式云渲染服務。 |
+| F37 | 輸出、編碼與GPU投影 | 專案 → MP4/WebM/MKV、明確OpenCL裁切/仿射/子畫布投影、編解碼探測及manifest。 | `render --projection-acceleration; render` | 原生GPU需雙精度/紋理預檢；CPU預設，其餘特效仍CPU，無即時/通用4K保證。 |
+| F38 | 持久佇列、重試與取消 | 凍結專案快照 → 本地排隊、有限worker、明確重試/取消及序列化提交。 | `queue enqueue/list/inspect/run/cancel` | GPU投影策略逐作業傳遞，拒絕其 --reuse-identical 繞過探測；不是雲渲染。 |
 | F39 | 成片、Scope 與 golden 核驗 | 實際編碼文件 → 音畫/影格率/畫幅/時長、響度/黑場、色彩 Scope、蒙版和 golden 差異報告。 | `quality check/scopes/mask/golden` | 自動檢查、靜態目檢、連續播放、人工聽審分別記錄；不等於商業成片品質認證。 |
 | F40 | 權利臺賬與本地策略 | 素材/字體/LUT/模型/模板證據 → 依賴臺賬、變更歷史、影響/撤回與發布門禁。 | `rights; policy audit; render --publish` | --publish 只檢查本地權利，不上傳；臺賬不自動裁定版權。 |
 | F41 | 專案與時間線交換 | Agent JSON/package、OTIO、Kdenlive MLT、已有合法明文草稿 → 導入/導出與損失報告。 | `convert import/export` | Exact/Approximate/Unsupported/Failed 逐項報告；明文草稿不調用剪映，不解密或下載專有資源。 |
@@ -495,7 +512,7 @@ flowchart LR
 | S13 | 內建社群素材服務 | 離線目錄 | 359 項有來源/許可的 BGM、短樂、音效、字型 | `materials list/inspect/verify/ingest` | 逐項權利，不是商業素材訂閱庫 |
 | S14 | 本地配音/翻譯 | 原生模型 worker | 4 個可選 CPU/CUDA 包，103 音色對映和 OPUS 文字/字幕 | `voice / translate / model-pack` | 累計至少 7 個不同音色有真實輸出；103 音色完整試聽及人工驗收未完成 |
 | S15 | 配樂準備與混音 | 原生 FFmpeg 音訊 | 顯式擷取/迴圈/淡化、獨立人聲/配樂、閃避 | `music prepare/mix` | 不作曲、不靜默裁人聲、不承諾接縫修復 |
-| S16 | GPU 相容服務 | 原生 NVIDIA 執行庫 | auto/cpu/cuda、視訊記憶體預檢、實際 provider/回退 | `gpu inspect; --device` | RTX 3060 實測，NVIDIA/Intel 依賴許可另列 |
+| S16 | GPU相容服務 | 已有原生OpenCL ICD / NVIDIA模型執行庫 | 投影off/prefer/require，模型auto/cpu/cuda；實際裝置、探測、預算及回退 | `render --projection-acceleration; gpu inspect; --device` | RTX3060實測；僅投影算子GPU化，外部驅動/庫授權另列 |
 | S17 | 原生 Windows 擷取 | FFmpeg gdigrab / DirectShow | 明確來源、裝置 ID、有限時長、完整解碼與素材登記 | `capture devices/record` | 真實視窗 CPU/GPU 已驗；攝影機/麥克風/同步未驗 |
 | S18 | 圖文語義與經驗校準 | 明確登記的原生 SigLIP2 worker | 既有 Torch/Transformers/權重；檔案綁定索引/實作/類型/實際裝置 | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | 分數非機率；冷啟動/大庫與校準工程遷移仍有限制 |
 | S19 | 獨立四軌分離 | 原生 Torch/TorchAudio HDemucs worker | 明確登記原生 Python、權重/證據/實作雜湊；auto/cpu/cuda，4 float WAV/軌道 | `audio adapter; audio separate-stems` | 基礎 ZIP 不含 Torch/權重；自然聽感與權重許可未閉 |
@@ -599,7 +616,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.17/final-r1/installed/`，CLI 0.1.19；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
+本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.18/final-r2/installed/`，CLI 0.1.20；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -928,12 +945,20 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R136 | 2026-10-26 實際註冊Skill | 實際入口渲染及validate通過；120影格/PCM與舊安裝相同，68檔案/17模組 | [Evidence](docs/validation/evidence/projection-scanline-20261026-r1/skill-r3/verification.json) |
 | R137 | 2026-10-26 實際案例及媒體 | 自製原圖、可編輯專案包、MP4/GIF完整解碼及抽幀目檢；首輪編排欄位拒絕保留；未做連續播放/聽審 | [Evidence](docs/validation/evidence/projection-scanline-20261026-r1/preview-r4/verification.json) |
 | R138 | 2026-10-26 kit及完整文件 | r20 kit獨立登記/調用；三語README、C27、使用流程及證據同步，保留131歷史列/38原結案條件 | [Evidence](docs/validation/evidence/projection-scanline-20261026-r1/final-delivery-r1/verification.json) |
+| R139 | 2026-10-26 固定離線安裝 | CLI0.1.20/local.18-final-r2；209產品檔案與ZIP安裝版逐位元組一致，舊包保留 | [Evidence](docs/validation/evidence/opencl-projection-20261026-r1/installation-final-r2/verification.json) |
+| R140 | 2026-10-26 原生GPU與4K像素 | 18項實際GPU專項0skip；1080p/4K仿射整幀、4K源面積縮小、透明/時鐘/全部通道/獨立幾何與積分通過 | [Evidence](docs/validation/evidence/opencl-projection-20261026-r1/tests/native-final-r1/verification.json) |
+| R141 | 2026-10-26 渲染/佇列/Schema迴歸 | 119項渲染策略/採樣/透明/時鐘/硬體、63項序列、47項佇列/Schema、122項CLI分別通過，0skip | [Evidence](docs/validation/evidence/opencl-projection-20261026-r1/tests/regression-final-r1/verification.json) |
+| R142 | 2026-10-26 相同編碼交錯計時 | CPU/GPU各3次；中位數77.846→12.513秒，6.221×；六次120影格/時鐘/完整PCM相同，非4K即時保證 | [Evidence](docs/validation/evidence/opencl-projection-20261026-r1/benchmark-r2/verification.json) |
+| R143 | 2026-10-26 失敗、取消、恢復與佇列 | 錯誤裝置require明確失敗；啟動前取消後原設定恢復、實際GPU佇列及quality通過；兩次120影格/PCM相同 | [Evidence](docs/validation/evidence/opencl-projection-20261026-r1/controls-r1/verification.json) |
+| R144 | 2026-10-26 實際統一Skill | 唯一註冊入口調用最終安裝版GPU投影；120影格/PCM相同，69檔案/17內部模組，無原始碼回落 | [Evidence](docs/validation/evidence/opencl-projection-20261026-r1/skill-r2/verification.json) |
+| R145 | 2026-10-26 案例媒體與使用流程 | 自製原圖、實際GPU MP4/GIF、可編輯包、SHA及完整解碼；未做連續播放/聽審，自然品質仍開放 | [Evidence](docs/validation/evidence/opencl-projection-20261026-r1/preview-r2/verification.json) |
+| R146 | 2026-10-26 三語文件與獨立kit | 三語README、完整功能/服務、Skill說明、C28及r21獨立kit同步；保留138歷史核驗列及38原結案條件 | [Evidence](docs/validation/evidence/opencl-projection-20261026-r1/final-delivery-r1/verification.json) |
 
 ## 當前邊界與開發方向
 
 當前可交付的是有明確契約、離線可運行、可編輯、可復查的 Agent CLI 閉環。完整開源素材/模板生態、約定的 AI 特效/美顏/排版、完整色彩管線、指定草稿版本的真實轉換品質、廣泛自然視聽和長片資源性能仍需開發與驗收。消費級 GUI、賬號、云協作及任意私有版本無損轉換不屬於當前內核收口門檻。後續 Float32 轉場/運行時閉包候選 R113/R114 未隨本版提供。
 
-[目前完整目標差距表](docs/product/GOAL_GAPS_20261025.md)按 CLI 0.1.19 更新全部 G01–G38。單一 Skill、500 風格/預覽、359 資源、GPU 配音/翻譯、字幕配音聯合流程、四軌/恢復及受控詞活動邊界已交付；自然視聽、複雜組合、進階 AI、內容範本、Agent 自主任務、長片可靠性和新版公開包仍開放。R67–R72 分別記錄真實執行及限制，不給出總體完成率。[2026-10-24 評估](docs/product/GOAL_GAPS_20261024.md)是歷史快照。
+[目前完整目標差距表](docs/product/GOAL_GAPS_20261025.md)按 CLI 0.1.20 更新全部 G01–G38。單一 Skill、500 風格/預覽、359 資源、GPU 配音/翻譯、字幕配音聯合流程、四軌/恢復及受控詞活動邊界已交付；自然視聽、複雜組合、進階 AI、內容範本、Agent 自主任務、長片可靠性和新版公開包仍開放。R67–R72 分別記錄真實執行及限制，不給出總體完成率。[2026-10-24 評估](docs/product/GOAL_GAPS_20261024.md)是歷史快照。
 
 
 

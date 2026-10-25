@@ -2,7 +2,7 @@
 
 [使用手册](COMMUNITY_MATERIALS.md) · [繁體中文](COMMUNITY_MATERIALS.zh-TW.md) · [English](COMMUNITY_MATERIALS.en.md)
 
-当前本机版本是 **`v0.1.0-alpha.4-local.17` / CLI 0.1.19**，正式安装在 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.17/final-r1/installed/`。这是本地构建和验收记录；公开 GitHub Release 仍是 alpha.3 / CLI 0.1.2，原附件、标签和摘要不覆盖。
+当前本机版本是 **`v0.1.0-alpha.4-local.18` / CLI 0.1.20**，正式安装在 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.18/final-r2/installed/`。这是本地构建和验收记录；公开 GitHub Release 仍是 alpha.3 / CLI 0.1.2，原附件、标签和摘要不覆盖。
 
 The current build is installed locally. Public alpha.3 downloads remain unchanged and do not contain the new voice, translation, material or GPU commands. The updated Skill kit must be paired with this matching local runtime bundle.
 
@@ -14,9 +14,9 @@ The current build is installed locally. Public alpha.3 downloads remain unchange
 
 | 内容 / Item | 路径 / Path | 校验 / Verification |
 |---|---|---|
-| 编译好的基础运行 ZIP / Application bundle | `local/agent-ffmpeg/v0.1.0-alpha.4-local.17/candidate-r1/bundle.zip` | SHA-256 `6e779a6d241db07863773954d106a0a1a3bbd06b775c002c32e5430c192b77de` |
-| 运行包清单 / Bundle manifest | ZIP 内 / inside ZIP: `manifest.json` | `sha256:ad703ee0efe2e688b94de61a20eec6d22615e1b879651c8acea6c7011acdd456` |
-| 单入口 Skill kit / Single-entry kit | `docs/skills/agent-editor-kit-community-unified-skill-r20.zip` | [独立包摘要 / Package digest](../skills/community-unified-skill-package-0.1.19-r20.json) |
+| 编译好的基础运行 ZIP / Application bundle | `local/agent-ffmpeg/v0.1.0-alpha.4-local.18/candidate-r2/bundle.zip` | SHA-256 `088b588151d425324ee98019b38772e5a464a00a509d1d15f8eba01e7cd41841` |
+| 运行包清单 / Bundle manifest | ZIP 内 / inside ZIP: `manifest.json` | `sha256:8aeb0ab5cd67b54e1d28367bd41672902df8d897595e4a7d64070277afea68a4` |
+| 单入口 Skill kit / Single-entry kit | `docs/skills/agent-editor-kit-community-unified-skill-r21.zip` | [独立包摘要 / Package digest](../skills/community-unified-skill-package-0.1.20-r21.json) |
 | 四个模型 ZIP / Four model ZIPs | `local/agent-ffmpeg/community-model-archives-r2/` | 见下表及 / see table and `archives.json` |
 | 可移动模型安装 / Relocated model installation | `local/agent-ffmpeg/community-portable-r1/模型 包/` | 实际从四个 ZIP 安装；路径含中文与空格 / actually installed from all four ZIPs |
 | 当前调用配置 / Runtime configuration | `local/agent-ffmpeg/runtime.json` | 固定应用摘要、原生 Python、启动器摘要 / pinned app, native Python and launcher |
@@ -43,13 +43,13 @@ Requires native Windows x64, existing CPython 3.13 x64 and FFmpeg/ffprobe on PAT
 $aekPython = 'C:/Python313/python.exe'
 $aekSource = 'E:/dev/sandbox/AI广告剪辑'
 $aekHome = 'E:/tools/agent-editor-kit-gpu'
-$aekArchive = Join-Path $aekSource 'local/agent-ffmpeg/v0.1.0-alpha.4-local.17/candidate-r1/bundle.zip'
-$aekExpectedZip = '6e779a6d241db07863773954d106a0a1a3bbd06b775c002c32e5430c192b77de'
+$aekArchive = Join-Path $aekSource 'local/agent-ffmpeg/v0.1.0-alpha.4-local.18/candidate-r2/bundle.zip'
+$aekExpectedZip = '088b588151d425324ee98019b38772e5a464a00a509d1d15f8eba01e7cd41841'
 if ((Get-FileHash -LiteralPath $aekArchive -Algorithm SHA256).Hash.ToLowerInvariant() -ne $aekExpectedZip) { throw 'Application archive hash mismatch' }
-Expand-Archive -LiteralPath (Join-Path $aekSource 'docs/skills/agent-editor-kit-community-unified-skill-r20.zip') -DestinationPath $aekHome
+Expand-Archive -LiteralPath (Join-Path $aekSource 'docs/skills/agent-editor-kit-community-unified-skill-r21.zip') -DestinationPath $aekHome
 Expand-Archive -LiteralPath $aekArchive -DestinationPath (Join-Path $aekHome 'bundle')
 Set-Location $aekHome
-& $aekPython -I -B -X utf8 ./bundle/install.py --bundle ./bundle --target ./local/agent-ffmpeg/installed --manifest-sha256 'sha256:ad703ee0efe2e688b94de61a20eec6d22615e1b879651c8acea6c7011acdd456' --timeout-seconds 600
+& $aekPython -I -B -X utf8 ./bundle/install.py --bundle ./bundle --target ./local/agent-ffmpeg/installed --manifest-sha256 'sha256:8aeb0ab5cd67b54e1d28367bd41672902df8d897595e4a7d64070277afea68a4' --timeout-seconds 600
 if ($LASTEXITCODE) { throw 'Native application installation failed' }
 ```
 
@@ -280,6 +280,10 @@ manifest `sha256:0a79580cc12c1ec813404f3838fa2f17dc0c8d4a67678e4b25fba88d870facf
 
 动态裁切和子序列 crop/fit/TRS 复用行参数，双线性与面积采样精度保持。208个产品Python文件，基础ZIP 302695912 bytes。[完整使用流程](PROJECTION_RENDERING.md) · [安装核验](../validation/evidence/projection-scanline-20261026-r1/installation-r1/verification.json)。GPU只承担显式编码，完整目标仍开放。
 
-## CLI 0.1.19 当前交付 / Current delivery
+## CLI 0.1.19 历史交付 / Historical delivery
 
 最终面积积分复用上下边界，保留中间0.1.18包与主动中断证据。208产品Python文件，ZIP 302696007 bytes。[使用流程](PROJECTION_RENDERING.md) · [固定安装](../validation/evidence/projection-scanline-20261026-r1/installation-final-r1/verification.json)。模型、画质和投影配额保持，完整目标继续推进。
+
+## CLI0.1.20 当前交付 / Current delivery
+
+209产品Python文件，69个Skill文件、17模块、r21独立kit。原生OpenCL crop/affine/sequence双线性/面积投影；CPU默认，GPU策略/配额/实际探测独立于编码。完整使用及队列/失败/恢复边界见 [GPU workflow](OPENCL_PROJECTION.md)，实际包摘要见 [固定交付](../releases/CLI_0.1.20_LOCAL.md)。

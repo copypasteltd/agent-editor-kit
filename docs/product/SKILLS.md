@@ -2,13 +2,11 @@
 
 <!-- community-current -->
 
-**CLI 0.1.19 / alpha.4-local.17 / r20 kit · 1 Skill / 17 modules.**
+**CLI0.1.20 / alpha.4-local.18 / r21 kit · 1 Skill / 17 modules / 69 files.**
 
-新增可复用运镜包：六套参数路径、已有动画捕获、跨时长/画幅复用、明确冲突和作者时钟；结果保留为可编辑关键帧。
+原生 GPU 动态裁切、仿射运镜及子画布双线性/面积投影已交付。相同编码与工程三轮中位数 77.85→12.51秒（6.22×），六次全部120帧、时钟和PCM相同；默认CPU，显式策略决定使用/回退。
 
-[Motion workflow/previews](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime upgrade](SEMANTIC_RUNTIME_UPGRADE.md) · [75 declarations](projection-scanline-capabilities-cli-0.1.19.json) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md).
-
-动态裁切与原生子序列投影复用参数，支持双线性/面积采样；合成仍由CPU执行，GPU编码单独选择。
+[GPU workflow](OPENCL_PROJECTION.md) · [Motion](MOTION_PACKS.md) · [Install](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](opencl-projection-capabilities-cli-0.1.20.json).
 
 <!-- /community-current -->
 

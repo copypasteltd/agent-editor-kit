@@ -1,0 +1,315 @@
+{
+  "engine": "opencl-binary64-projection-v1",
+  "request": {
+    "mode": "require",
+    "device": "0.0",
+    "max_working_bytes": 1073741824,
+    "probe_timeout_seconds": 30
+  },
+  "status": "verified",
+  "nodes": [
+    {
+      "id": "aek_projection_0",
+      "kind": "dynamic-crop",
+      "selected": "opencl",
+      "status": "prepared",
+      "source": [
+        640,
+        360
+      ],
+      "target": [
+        640,
+        360
+      ],
+      "sampling": "bilinear",
+      "texture_format": "gbrapf32le",
+      "coefficient_count": 5,
+      "kernel": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\diagnostics\\projection_render_20261025185253_5dc79141\\aek_projection_0.cl",
+      "kernel_sha256": "cfd2c5a82d6b3075550d6c980dffb08b5ddaca22e98fb22dd00d8e22c0c5367c",
+      "components_bytes": {
+        "source_uploads_and_slots": 22118400,
+        "destination_slots": 11059200,
+        "parameter_slots": 960,
+        "prefix_two_pass_slots": 0
+      },
+      "estimated_working_bytes": 33178560,
+      "image_extents": [
+        [
+          640,
+          360
+        ],
+        [
+          640,
+          360
+        ],
+        [
+          5,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "aek_projection_1",
+      "kind": "affine",
+      "selected": "opencl",
+      "status": "prepared",
+      "source": [
+        480,
+        270
+      ],
+      "target": [
+        480,
+        270
+      ],
+      "sampling": "bilinear",
+      "texture_format": "gbrapf32le",
+      "coefficient_count": 7,
+      "kernel": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\diagnostics\\projection_render_20261025185253_5dc79141\\aek_projection_1.cl",
+      "kernel_sha256": "067e39d19a51e45e6cbad2488abfd9c37ecd5e0e6bca74fa57b34390cc617d4b",
+      "components_bytes": {
+        "source_uploads_and_slots": 12441600,
+        "destination_slots": 6220800,
+        "parameter_slots": 1344,
+        "prefix_two_pass_slots": 0
+      },
+      "estimated_working_bytes": 18663744,
+      "image_extents": [
+        [
+          480,
+          270
+        ],
+        [
+          480,
+          270
+        ],
+        [
+          7,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "aek_projection_2",
+      "kind": "sequence",
+      "selected": "opencl",
+      "status": "prepared",
+      "source": [
+        480,
+        270
+      ],
+      "target": [
+        384,
+        216
+      ],
+      "sampling": "area",
+      "texture_format": "gbrapf32le",
+      "coefficient_count": 15,
+      "kernel": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\diagnostics\\projection_render_20261025185253_5dc79141\\aek_projection_2.cl",
+      "kernel_sha256": "b59e0850384e3f646d147d2f559c3f6f32d6f20ba80723af260daf981df33523",
+      "components_bytes": {
+        "source_uploads_and_slots": 12441600,
+        "destination_slots": 3981312,
+        "parameter_slots": 2880,
+        "prefix_two_pass_slots": 24883200
+      },
+      "estimated_working_bytes": 41308992,
+      "image_extents": [
+        [
+          480,
+          270
+        ],
+        [
+          384,
+          216
+        ],
+        [
+          15,
+          4
+        ],
+        [
+          1440,
+          270
+        ]
+      ]
+    }
+  ],
+  "probes": [
+    {
+      "id": "binary64-coefficients",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-v",
+        "error",
+        "-nostdin",
+        "-n",
+        "-init_hw_device",
+        "opencl=aek_projection:0.0",
+        "-filter_hw_device",
+        "aek_projection",
+        "-f",
+        "lavfi",
+        "-i",
+        "nullsrc=s=9x4:r=1:d=1,format=gbrapf32le",
+        "-vf",
+        "format=gbrapf32le,geq=r='st(0,if(eq(X,0),(0),if(eq(X,1),(-0),if(eq(X,2),(3.1415926535897931),if(eq(X,3),(1.0000000000000002),if(eq(X,4),(1e-08),if(eq(X,5),(-0.50000000001),if(eq(X,6),(1e-300),if(eq(X,7),(1.7976931348623157e+308),if(eq(X,8),(4.9406564584124654e-324),0))))))))));st(1,if(eq(ld(0),0),0,clip(floor(log(abs(ld(0)))/log(2)),-1022,1023)));st(2,ld(0)*pow(2,-ld(1)));st(3,trunc(ld(2)*1048576));st(4,trunc((ld(2)-ld(3)/1048576)*1099511627776));st(5,(ld(2)-ld(3)/1048576-ld(4)/1099511627776)*1152921504606846976);if(isnan(ld(0)),if(eq(Y,3),2048,0),if(isinf(ld(0)),if(eq(Y,3),2049,if(lt(ld(0),0),-1,1)),if(eq(Y,0),ld(3),if(eq(Y,1),ld(4),if(eq(Y,2),ld(5),if(eq(ld(0),0)*gt(atan2(0,ld(0)),0),2050,ld(1)))))))':g='st(0,if(eq(X,0),(0),if(eq(X,1),(-0),if(eq(X,2),(3.1415926535897931),if(eq(X,3),(1.0000000000000002),if(eq(X,4),(1e-08),if(eq(X,5),(-0.50000000001),if(eq(X,6),(1e-300),if(eq(X,7),(1.7976931348623157e+308),if(eq(X,8),(4.9406564584124654e-324),0))))))))));st(1,if(eq(ld(0),0),0,clip(floor(log(abs(ld(0)))/log(2)),-1022,1023)));st(2,ld(0)*pow(2,-ld(1)));st(3,trunc(ld(2)*1048576));st(4,trunc((ld(2)-ld(3)/1048576)*1099511627776));st(5,(ld(2)-ld(3)/1048576-ld(4)/1099511627776)*1152921504606846976);if(isnan(ld(0)),if(eq(Y,3),2048,0),if(isinf(ld(0)),if(eq(Y,3),2049,if(lt(ld(0),0),-1,1)),if(eq(Y,0),ld(3),if(eq(Y,1),ld(4),if(eq(Y,2),ld(5),if(eq(ld(0),0)*gt(atan2(0,ld(0)),0),2050,ld(1)))))))':b='st(0,if(eq(X,0),(0),if(eq(X,1),(-0),if(eq(X,2),(3.1415926535897931),if(eq(X,3),(1.0000000000000002),if(eq(X,4),(1e-08),if(eq(X,5),(-0.50000000001),if(eq(X,6),(1e-300),if(eq(X,7),(1.7976931348623157e+308),if(eq(X,8),(4.9406564584124654e-324),0))))))))));st(1,if(eq(ld(0),0),0,clip(floor(log(abs(ld(0)))/log(2)),-1022,1023)));st(2,ld(0)*pow(2,-ld(1)));st(3,trunc(ld(2)*1048576));st(4,trunc((ld(2)-ld(3)/1048576)*1099511627776));st(5,(ld(2)-ld(3)/1048576-ld(4)/1099511627776)*1152921504606846976);if(isnan(ld(0)),if(eq(Y,3),2048,0),if(isinf(ld(0)),if(eq(Y,3),2049,if(lt(ld(0),0),-1,1)),if(eq(Y,0),ld(3),if(eq(Y,1),ld(4),if(eq(Y,2),ld(5),if(eq(ld(0),0)*gt(atan2(0,ld(0)),0),2050,ld(1)))))))':a='st(0,if(eq(X,0),(0),if(eq(X,1),(-0),if(eq(X,2),(3.1415926535897931),if(eq(X,3),(1.0000000000000002),if(eq(X,4),(1e-08),if(eq(X,5),(-0.50000000001),if(eq(X,6),(1e-300),if(eq(X,7),(1.7976931348623157e+308),if(eq(X,8),(4.9406564584124654e-324),0))))))))));st(1,if(eq(ld(0),0),0,clip(floor(log(abs(ld(0)))/log(2)),-1022,1023)));st(2,ld(0)*pow(2,-ld(1)));st(3,trunc(ld(2)*1048576));st(4,trunc((ld(2)-ld(3)/1048576)*1099511627776));st(5,(ld(2)-ld(3)/1048576-ld(4)/1099511627776)*1152921504606846976);if(isnan(ld(0)),if(eq(Y,3),2048,0),if(isinf(ld(0)),if(eq(Y,3),2049,if(lt(ld(0),0),-1,1)),if(eq(Y,0),ld(3),if(eq(Y,1),ld(4),if(eq(Y,2),ld(5),if(eq(ld(0),0)*gt(atan2(0,ld(0)),0),2050,ld(1)))))))',hwupload,program_opencl=source='renders/diagnostics/projection_render_20261025185253_5dc79141/coefficient_probe.cl':kernel=project:inputs=1:size=9x4,hwdownload,format=gbrapf32le",
+        "-frames:v",
+        "1",
+        "-f",
+        "rawvideo",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\diagnostics\\projection_render_20261025185253_5dc79141\\coefficient_probe.gbrapf32le"
+      ],
+      "status": "completed",
+      "stdout": {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\diagnostics\\projection_render_20261025185253_5dc79141\\binary64-coefficients.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\diagnostics\\projection_render_20261025185253_5dc79141\\binary64-coefficients.stderr.log",
+        "sha256": "383d54110229559cf07d53884bc502824331a846bc447071d1eb019944bb4ea4"
+      },
+      "exit_code": 0
+    },
+    {
+      "id": "texture-gbrapf32le",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-v",
+        "error",
+        "-nostdin",
+        "-n",
+        "-init_hw_device",
+        "opencl=aek_projection:0.0",
+        "-filter_hw_device",
+        "aek_projection",
+        "-f",
+        "rawvideo",
+        "-pixel_format",
+        "gbrapf32le",
+        "-video_size",
+        "16x8",
+        "-framerate",
+        "4",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\diagnostics\\projection_render_20261025185253_5dc79141\\texture-gbrapf32le.input",
+        "-vf",
+        "format=gbrapf32le,hwupload,program_opencl=source='renders/diagnostics/projection_render_20261025185253_5dc79141/texture-gbrapf32le.cl':kernel=project:inputs=1,hwdownload,format=gbrapf32le",
+        "-frames:v",
+        "2",
+        "-fps_mode",
+        "passthrough",
+        "-f",
+        "rawvideo",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\diagnostics\\projection_render_20261025185253_5dc79141\\texture-gbrapf32le.output"
+      ],
+      "status": "completed",
+      "stdout": {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\diagnostics\\projection_render_20261025185253_5dc79141\\texture-gbrapf32le.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\diagnostics\\projection_render_20261025185253_5dc79141\\texture-gbrapf32le.stderr.log",
+        "sha256": "26f7da8dd661b705eca5f4521301daadf887a1e7ed9d4b532376a11cfad25287"
+      },
+      "exit_code": 0
+    },
+    {
+      "id": "texture-gbrap",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-hide_banner",
+        "-v",
+        "error",
+        "-nostdin",
+        "-n",
+        "-init_hw_device",
+        "opencl=aek_projection:0.0",
+        "-filter_hw_device",
+        "aek_projection",
+        "-f",
+        "rawvideo",
+        "-pixel_format",
+        "gbrap",
+        "-video_size",
+        "16x8",
+        "-framerate",
+        "4",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\diagnostics\\projection_render_20261025185253_5dc79141\\texture-gbrap.input",
+        "-vf",
+        "format=gbrap,hwupload,program_opencl=source='renders/diagnostics/projection_render_20261025185253_5dc79141/texture-gbrap.cl':kernel=project:inputs=1,hwdownload,format=gbrap",
+        "-frames:v",
+        "2",
+        "-fps_mode",
+        "passthrough",
+        "-f",
+        "rawvideo",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\diagnostics\\projection_render_20261025185253_5dc79141\\texture-gbrap.output"
+      ],
+      "status": "completed",
+      "stdout": {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\diagnostics\\projection_render_20261025185253_5dc79141\\texture-gbrap.stdout.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\diagnostics\\projection_render_20261025185253_5dc79141\\texture-gbrap.stderr.log",
+        "sha256": "a3a284b68b25555379c28ba3167b307c7ba5e416f69bf06b34564b52a21b55e5"
+      },
+      "exit_code": 0
+    }
+  ],
+  "estimated_working_bytes": 93151296,
+  "quota_scope": "projection-raster-admission-not-total-ram-or-vram",
+  "report": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\diagnostics\\projection_render_20261025185253_5dc79141\\report.json",
+  "other_filters": "unchanged-cpu",
+  "hardware_encoding": "separate-policy",
+  "device": {
+    "selection": "0.0",
+    "name": "NVIDIA GeForce RTX 3060",
+    "vendor": "NVIDIA Corporation",
+    "driver": "595.95",
+    "version": "OpenCL 3.0 CUDA",
+    "type": 4,
+    "image_support": 1,
+    "image_max_width": 32768,
+    "image_max_height": 32768,
+    "double_fp_config": 63,
+    "global_memory_bytes": 12884377600
+  },
+  "coefficient_probe": {
+    "values": 9,
+    "planes": 4,
+    "all_binary64_bits_equal": true,
+    "includes_negative_zero_and_extreme_exponents": true,
+    "raw_path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\diagnostics\\projection_render_20261025185253_5dc79141\\coefficient_probe.gbrapf32le",
+    "sha256": "dfeed8534c6558c22730cc5fd3021016a13a02726d394fe4a89196156724a824"
+  },
+  "texture_probes": [
+    {
+      "format": "gbrapf32le",
+      "frames": 2,
+      "planes": 4,
+      "all_sample_bits_equal": true,
+      "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\diagnostics\\projection_render_20261025185253_5dc79141\\texture-gbrapf32le.output",
+      "sha256": "405cffeab2cfe133976ad1d8cbf175846280f4b2f0f6a7648f7b11ad974d0620"
+    },
+    {
+      "format": "gbrap",
+      "frames": 2,
+      "planes": 4,
+      "all_sample_bits_equal": true,
+      "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\diagnostics\\projection_render_20261025185253_5dc79141\\texture-gbrap.output",
+      "sha256": "bd635ea12f53822c8acf4fcfd60406f6d71c32bd898dd3f433f47c25d5b56ca7"
+    }
+  ],
+  "stdout": {
+    "path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\diagnostics\\projection_render_20261025185253_5dc79141\\render.stdout.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr": {
+    "path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\diagnostics\\projection_render_20261025185253_5dc79141\\render.stderr.log",
+    "sha256": "ce37b3beccfed68dee09c00430192e1f80190b07a7bd8274f6648f5e9e2fc99b"
+  },
+  "render_exit_code": 0
+}

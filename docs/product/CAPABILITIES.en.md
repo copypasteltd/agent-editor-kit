@@ -2,15 +2,15 @@
 
 <!-- community-current -->
 
-**CLI 0.1.19 / alpha.4-local.17 / r20 kit · 1 Skill / 17 modules.**
+**CLI 0.1.20 / alpha.4-local.18 / r21 kit · 1 Skill / 17 modules.**
 
-Animated crop and nested bilinear/area projection parameter reuse, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+Native OpenCL crop/affine/child-canvas bilinear/area projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
 
-[Projection workflow/preview](PROJECTION_RENDERING.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](projection-scanline-capabilities-cli-0.1.19.json). Full target conditions remain open.
+[GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](opencl-projection-capabilities-cli-0.1.20.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.en.md) · [Machine response](projection-scanline-capabilities-cli-0.1.19.json) · [Module data](module-catalog.json)
+[README](../../README.en.md) · [Machine response](opencl-projection-capabilities-cli-0.1.20.json) · [Module data](module-catalog.json)
 
 | ID | Module | Behavior and input → output | Entry | Dependency/limit |
 |---|---|---|---|---|
@@ -50,8 +50,8 @@ Animated crop and nested bilinear/area projection parameter reuse, portable moti
 | F34 | Parameterized templates and variants | Local JSON templates + typed variables → editable variants, batch inputs and template snapshots. | `template apply/batch` | Includes asset/color/enum types; complex conditional graphs and expression evaluation are pending. |
 | F35 | Asset indexing and reusable fragments | Asset folders/edited clips → search, duplicates/similarity, cross-project fragments and dependency closure. | `library index/search/duplicates/similar; fragment` | User-owned libraries; no bundled commercial stock subscription or licensed-music catalog. |
 | F36 | Frame/range preview and caching | Projects + explicit frames/ranges → PNG/short video/cache and verifiable sample evidence. | `preview frame/range; cache; preview cache-*` | Preview does not validate the entire delivery; renderer/color path and cache signatures must match. |
-| F37 | Delivery, encoding and hardware probes | Projects → MP4/WebM/MKV, codec/pixel/audio configuration, alpha output and manifests. | `render` | Codecs depend on local FFmpeg; hardware is probed, CPU effects are not globally GPU-ported, and real-time/4K performance is not guaranteed. |
-| F38 | Persistent queues, retry and cancel | Frozen snapshots → local jobs, bounded workers, explicit retry/cancel and serialized metadata commits. | `queue enqueue/list/inspect/run/cancel` | Sequential by default; concurrency has gates and is not distributed cloud rendering. |
+| F37 | Delivery,encoding and GPU projection | Projects → MP4/WebM/MKV,explicit OpenCL crop/affine/child-canvas samplers,codec probes and manifests. | `render --projection-acceleration; render` | Requires native GPU binary64/image probes;CPU default,other effects remain CPU,no realtime/general4K guarantee. |
+| F38 | Persistent queues,retry and cancel | Frozen snapshots → local jobs,bounded workers,explicit retry/cancel and serialized commits. | `queue enqueue/list/inspect/run/cancel` | Per-job GPU projection policy rejects --reuse-identical bypass;not cloud rendering. |
 | F39 | Output, scopes and golden checks | Actual encoded files → stream/fps/canvas/duration, loudness/black frames, scopes, masks and golden differences. | `quality check/scopes/mask/golden` | Automatic checks, static review, playback and listening are recorded separately, without general creative-quality certification. |
 | F40 | Rights ledger and local policy | Media/font/LUT/model/template evidence → dependency ledger, history, impact/retraction and publish gates. | `rights; policy audit; render --publish` | --publish checks local rights without uploading; the ledger does not adjudicate copyright. |
 | F41 | Project and timeline interchange | Agent JSON/package, OTIO, Kdenlive MLT and lawful local plaintext drafts → import/export and loss reports. | `convert import/export` | Per-feature Exact/Approximate/Unsupported/Failed reports; plaintext drafts neither run Jianying nor decrypt/fetch proprietary resources. |
@@ -86,7 +86,7 @@ Animated crop and nested bilinear/area projection parameter reuse, portable moti
 | S13 | Bundled community resources | Offline catalog | 359 source/license-pinned music/jingle/SFX/font files | `materials list/inspect/verify/ingest` | Per-resource rights; no commercial stock subscription |
 | S14 | Local speech/translation | Native model workers | Four optional pinned CPU/CUDA packs; 103 voice mappings and OPUS text/subtitles | `voice / translate / model-pack` | At least seven distinct voices have real outputs; complete 103-voice auditions and human acceptance remain open |
 | S15 | BGM preparation and mixing | Native FFmpeg audio | Explicit trim/loop/fades, independent voice/music stems and ducking | `music prepare/mix` | No composition, voice truncation or seam-repair promise |
-| S16 | GPU compatibility | Native NVIDIA libraries | `auto/cpu/cuda`, free-VRAM check, explicit provider/fallback | `gpu inspect; --device` | RTX 3060 tested; optional NVIDIA/Intel terms preserved |
+| S16 | GPU compatibility | Existing native OpenCL ICD / NVIDIA model runtimes | Projection off/prefer/require,models auto/cpu/cuda;actual device,probes,budget and fallback | `render --projection-acceleration; gpu inspect; --device` | RTX3060 tested;projection operators only,external driver/library terms separate |
 | S17 | Native Windows capture | FFmpeg gdigrab / DirectShow | Explicit source/device IDs, finite duration, full decode and asset registration | `capture devices/record` | Actual CPU/GPU window test; camera/microphone/AV sync pending |
 | S18 | Visual semantics and empirical calibration | Explicit native SigLIP2 worker | Existing Torch/Transformers/weights; profile binds index/implementation/kind/actual device | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | Scores are not probabilities; cold start, scale and calibrated-project migration remain limited |
 | S19 | Independent four-source separation | Native Torch/TorchAudio HDemucs worker | Explicit native Python, weights/evidence/implementation hashes; auto/cpu/cuda, four float WAV/tracks | `audio adapter; audio separate-stems` | Torch/weights excluded from base ZIP; natural listening and weight licensing remain open |
@@ -1279,16 +1279,37 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "actual_raster_pixel_format_color_bitrate_four_frame_encoder_probe",
     "forced_d3d11va_cuda_frames_download_compared_to_cpu_framemd5",
     "bounded_recorded_runtime_fallback_and_final_format_gate",
-    "persistent_probe_attempt_logs_manifest_queue_resume"
+    "persistent_probe_attempt_logs_manifest_queue_resume",
+    "independent_off_prefer_require_opencl_projection_policy",
+    "same_pts_avexpr_binary64_coefficient_textures",
+    "opencl_dynamic_crop_affine_native_sequence_bilinear_and_area",
+    "ordered_binary64_prefix_transported_in_three_float32_texels",
+    "actual_gpu_identity_fp64_image_extents_and_bitwise_texture_probes",
+    "projection_raster_admission_kernel_hashes_logs_queue_resume"
   ],
+  "projection": {
+    "engine": "opencl-binary64-projection-v1",
+    "default": "off",
+    "device": "explicit_platform.device_index",
+    "native_runtime": "existing_windows_OpenCL_ICD_and_FFmpeg_program_opencl",
+    "formats": [
+      "gbrap",
+      "gbrapf32le"
+    ],
+    "fallback": "prefer_before_execution_only",
+    "runtime_failure": "fails_without_cpu_or_encoder_retry",
+    "quota_scope": "projection_raster_admission_not_total_ram_or_vram"
+  },
   "limits": [
     "windows_backend_catalog_only_no_downloads",
     "explicit_video_bitrate_required_not_crf_quality_equivalence",
     "decode_yuv420_8_10bit_h264_hevc_vp9_av1_mpeg2_only",
     "four_frame_equality_does_not_prove_whole_source_quality",
     "pixel_probe_budget_not_total_driver_vram_limit",
-    "driver_default_device_no_certified_device_identity",
-    "cpu_effect_filters_not_gpu_ported_no_speed_or_capcut_parity_claim"
+    "encode_decode_driver_default_device_identity_not_certified",
+    "projection_requires_gpu_images_and_ieee_binary64_actual_preflight",
+    "projection_pixel_stateful_expressions_and_independent_linear_light_float_pipeline_not_ported",
+    "other_effects_and_compositing_remain_cpu_no_realtime_4k_or_capcut_parity_claim"
   ]
 }
 ```
@@ -2357,7 +2378,7 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
   ],
   "limits": [
     "dynamic_crop_uses_fixed_canvas_inverse_sampling",
-    "dynamic_crop_inverse_sampler_is_cpu_geq",
+    "dynamic_crop_cpu_default_explicit_probed_opencl_available",
     "nested_reverse_static_clips_preserve_temporal_order",
     "native_nested_leaf_intervals_preserved_virtual_surfaces_keep_child_cfr",
     "speed_easing_compilation_has_250_microsecond_source_clock_bound_and_1024_segment_limit",
@@ -2366,13 +2387,13 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "deep_animated_clock_expressions_have_explicit_4mib_limit",
     "nested_freeze_hold_quantization_is_explicit",
     "sequence_canvas_fps_color_and_sar_are_project_shared",
-    "sequence_inverse_sampler_working_raster_is_componentwise_max_source_parent",
+    "cpu_sequence_working_raster_is_componentwise_max_source_parent_opencl_uses_native_source_target",
     "bilinear_default_retained_explicit_area_has_source_axis_box_kernel",
     "area_general_rotation_is_not_exact_rotated_pixel_polygon_ewa_or_lanczos",
     "projection_quota_excludes_leaf_decoder_encoder_threads_and_concurrent_jobs_rss",
     "leaf_minification_linear_light_hdr_and_natural_quality_unaccepted",
     "sequence_spatial_order_is_child_composite_crop_transform_opacity_effects_mask_fade",
-    "group_crop_and_affine_are_cpu_inverse_sampling",
+    "group_crop_and_affine_cpu_default_explicit_probed_opencl_available",
     "isolated_compositing_is_8bit_encoded_rgb_not_linear_light_or_hdr_acceptance",
     "group_slide_wipe_transitions_are_not_accepted",
     "nested_audio_tempo_windows_are_limited_to_16384_and_at_least_one_48khz_sample",

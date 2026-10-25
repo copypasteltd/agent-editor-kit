@@ -1,0 +1,11 @@
+{
+  "status": "failed",
+  "code": "PROJECTION_COEFFICIENT_MISMATCH",
+  "plane": 0,
+  "coefficient": 1,
+  "expected": "0x8000000000000000",
+  "actual": "0x0",
+  "original_diagnostic": "renders/diagnostics/projection_development-probe-r1",
+  "relocated_owned_diagnostics": true,
+  "cause": "AVExpr division-by-zero cannot detect the sign of zero; replace with atan2 quadrant test"
+}

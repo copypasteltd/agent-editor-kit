@@ -1102,6 +1102,11 @@ def build_parser() -> argparse.ArgumentParser:
     qgolden.add_argument("--height", type=int, default=None)
 
     for output_parser in (render, qcheck, qgolden):
+        output_parser.add_argument('--projection-acceleration',choices=('off','prefer','require'),default=None,
+                                   help='动态裁切/仿射/子序列投影的OpenCL策略，独立于硬件编码')
+        output_parser.add_argument('--projection-device',default=None,help='原生OpenCL platform.device索引，例如0.0')
+        output_parser.add_argument('--projection-memory-mib',type=int,default=None,
+                                   help='GPU投影工作栅格准入配额MiB，1..65536；不是总VRAM上界')
         output_parser.add_argument('--sequence-sampling', choices=('bilinear','area'), default=None,
                                    help='本次输出的序列容器投影采样，不改写作者工程')
         output_parser.add_argument('--sequence-memory-mib', type=int, default=None,
@@ -5868,6 +5873,8 @@ def _render_settings_for_args(project: dict[str, Any], args: argparse.Namespace)
     settings = copy.deepcopy(project["settings"])
     from .hardware_acceleration import apply_overrides as acceleration_overrides
     acceleration_overrides(settings, vars(args))
+    from .projection_opencl import apply_overrides as projection_overrides
+    projection_overrides(settings,vars(args))
     sampling = getattr(args, 'sequence_sampling', None)
     memory_mib = getattr(args, 'sequence_memory_mib', None)
     if sampling is not None or memory_mib is not None:
@@ -6009,7 +6016,7 @@ def command_render(args: argparse.Namespace) -> dict[str, Any]:
     root, project = load_project(args.project)
     sequence = find_sequence(project, args.sequence_id)
     resume_record = _load_render_resume(root, project, sequence, args.resume) if args.resume else None
-    settings_overridden = any(getattr(args, field, None) is not None for field in ("profile", "width", "height", "container", "video_codec", "audio_codec", "crf", "video_bitrate", "audio_bitrate", "pixel_format", "sequence_sampling", "sequence_memory_mib", 'hardware_encode', 'hardware_decode', 'hardware_encoder', 'hardware_decoder', 'hardware_probe_mib'))
+    settings_overridden = any(getattr(args, field, None) is not None for field in ("profile", "width", "height", "container", "video_codec", "audio_codec", "crf", "video_bitrate", "audio_bitrate", "pixel_format", "sequence_sampling", "sequence_memory_mib", 'hardware_encode', 'hardware_decode', 'hardware_encoder', 'hardware_decoder', 'hardware_probe_mib','projection_acceleration','projection_device','projection_memory_mib'))
     if resume_record:
         if args.output is None:
             args.output = resume_record.get("output")
@@ -6068,6 +6075,9 @@ def _queue_job_args(root: Path, job: dict[str, Any], args: argparse.Namespace) -
         audio_bitrate=job.get("audio_bitrate"),
         pixel_format=job.get("pixel_format"),
         sequence_sampling=job.get('sequence_sampling'),
+        projection_acceleration=job.get('projection_acceleration'),
+        projection_device=job.get('projection_device'),
+        projection_memory_mib=job.get('projection_memory_mib'),
         sequence_memory_mib=job.get('sequence_memory_mib'),
         hardware_encode=job.get('hardware_encode'),
         hardware_decode=job.get('hardware_decode'),

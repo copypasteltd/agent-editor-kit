@@ -1594,3 +1594,16 @@ docs/releases/CLI_0.1.19_LOCAL.md text eol=lf
 docs/specs/OpenCL投影候选接口_20261026.md text eol=lf
 docs/specs/裁切与序列投影参数复用契约_20261026.md text eol=lf
 docs/validation/裁切与序列投影实测_2026-10-26.md text eol=lf
+
+# Native OpenCL evidence, shader programs and actual media retain exact bytes.
+docs/validation/evidence/opencl-projection-20261026-r1/** -text -whitespace
+docs/assets/opencl-projection-20261026-r1/** -text -whitespace
+docs/product/opencl-projection-capabilities-cli-0.1.20.json -text -whitespace
+docs/skills/community-unified-skill-package-0.1.20-r21.json -text -whitespace
+scripts/*opencl_projection*20261026.py text eol=lf
+product/src/ai_ad_editor/projection_opencl.py text eol=lf
+product/tests/*opencl_projection.py text eol=lf
+product/tests/test_projection_opencl.py text eol=lf
+docs/specs/OpenCL原生投影实现契约_20261026.md text eol=lf
+docs/validation/OpenCL原生投影实测_2026-10-26.md text eol=lf
+docs/releases/CLI_0.1.20_LOCAL.md text eol=lf

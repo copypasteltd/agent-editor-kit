@@ -171,7 +171,8 @@ def rewrite_command(args, graph, selected_encoder, selected_decoders, video, con
 def hardware_failure(stderr):
     # Do not retry IO/content/quality failures just because a GPU was requested.
     text = stderr.lower()
-    if any(word in text for word in ('no space left', 'permission denied', 'invalid data found', 'no such file', 'input/output error')):
+    if any(word in text for word in ('no space left', 'permission denied', 'invalid data found', 'no such file', 'input/output error',
+                                    'opencl', 'aek_projection')):
         return False
     return any(word in text for word in ('nvenc', 'cuda', 'cuvid', 'd3d11', 'qsv', 'mfx', 'amf',
                                         'hwdownload', 'hwaccel', 'hardware device', 'device lost', 'hw_encoding'))

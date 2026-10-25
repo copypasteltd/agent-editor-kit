@@ -52,7 +52,7 @@ Keep normal preview/render/pixel review and source-rights checks.
 
 Since CLI 0.1.17, the runtime automatically reuses pure fixed-canvas affine parameters per scanline.
 It retains the float premultiplied bilinear sampler; no new option is needed.
-Composition is CPU; NVENC accelerates encoding only. For performance-sensitive
+CPU composition is the default; NVENC is a separate encoder. For performance-sensitive
 delivery, render the real target duration/canvas instead of extrapolating a
 small graphic. The [paired timing and actual preview](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/AFFINE_RENDERING.md)
 record the same source/project/codec and bounded child-process CPU affinity.
@@ -64,3 +64,8 @@ authored settings. The working-raster admission quota is not total process RSS.
 See the [combination case and workflow](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/PROJECTION_RENDERING.md).
 Show actual previews and retain the selected sampler/canvas in delivery records.
 Full 4K/long-form and natural-motion quality acceptance remain open.
+
+CLI 0.1.20 also offers explicit native OpenCL projection; read
+[projection-gpu.md](projection-gpu.md) for supported nodes, required probes,
+quota/fallback behavior and actual device scope. It accelerates the inverse
+samplers while retaining the same authored motion and sampling semantics.

@@ -1,0 +1,22 @@
+test_cancel_keeps_existing_output_and_does_not_compile (test_projection_opencl.ProjectionNativeFallbackTests.test_cancel_keeps_existing_output_and_does_not_compile) ... ok
+test_dry_run_never_probes_or_writes_kernels (test_projection_opencl.ProjectionNativeFallbackTests.test_dry_run_never_probes_or_writes_kernels) ... ok
+test_real_prefer_cpu_fallback_decodes_to_identical_frames (test_projection_opencl.ProjectionNativeFallbackTests.test_real_prefer_cpu_fallback_decodes_to_identical_frames) ... ok
+test_require_keeps_existing_output_and_failure_operation (test_projection_opencl.ProjectionNativeFallbackTests.test_require_keeps_existing_output_and_failure_operation) ... ok
+test_cancellation_does_not_become_prefer_fallback (test_projection_opencl.ProjectionPolicyTests.test_cancellation_does_not_become_prefer_fallback) ... ok
+test_kernel_files_are_pinned_and_never_overwritten (test_projection_opencl.ProjectionPolicyTests.test_kernel_files_are_pinned_and_never_overwritten) ... ok
+test_no_applicable_projection_is_explicit (test_projection_opencl.ProjectionPolicyTests.test_no_applicable_projection_is_explicit) ... ok
+test_opencl_runtime_failure_is_not_an_encoder_retry (test_projection_opencl.ProjectionPolicyTests.test_opencl_runtime_failure_is_not_an_encoder_retry) ... ok
+test_output_reuse_cannot_bypass_per_job_projection_probe (test_projection_opencl.ProjectionPolicyTests.test_output_reuse_cannot_bypass_per_job_projection_probe) ... ok
+test_planning_never_creates_diagnostics_or_context (test_projection_opencl.ProjectionPolicyTests.test_planning_never_creates_diagnostics_or_context) ... ok
+test_preflight_fallback_restores_exact_cpu_chain (test_projection_opencl.ProjectionPolicyTests.test_preflight_fallback_restores_exact_cpu_chain) ... ok
+test_queue_cli_overrides_preserve_explicit_policy (test_projection_opencl.ProjectionPolicyTests.test_queue_cli_overrides_preserve_explicit_policy) ... ok
+test_quota_and_unsafe_expressions_choose_cpu_or_reject (test_projection_opencl.ProjectionPolicyTests.test_quota_and_unsafe_expressions_choose_cpu_or_reject) ... ok
+test_require_preflight_failure_never_executes_cpu (test_projection_opencl.ProjectionPolicyTests.test_require_preflight_failure_never_executes_cpu) ... ok
+test_schema_has_the_same_strict_policy (test_projection_opencl.ProjectionPolicyTests.test_schema_has_the_same_strict_policy) ... ok
+test_strict_configuration_rejects_coercion_and_extensions (test_projection_opencl.ProjectionPolicyTests.test_strict_configuration_rejects_coercion_and_extensions) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 24.585s
+
+OK
+AEK_RESULT={"methods": 16, "skipped": 0, "failures": 0, "errors": 0, "success": true}

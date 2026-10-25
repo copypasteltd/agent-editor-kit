@@ -1,0 +1,8 @@
+{
+  "status": "precondition_failed",
+  "error": "AssertionError at nonempty staged-file check",
+  "cause": "The audit was started before the preceding git add -A process completed. Its staged-file snapshot was empty.",
+  "correction": "Waited for the actual git add process to finish with exit code 0; run the complete byte audit in a fresh staged-byte-r2 directory.",
+  "product_changed": false,
+  "acceptance_relaxed": false
+}

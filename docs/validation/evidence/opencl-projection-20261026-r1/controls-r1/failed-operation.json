@@ -1,0 +1,28 @@
+{
+  "ok": false,
+  "command": "render",
+  "request_id": "req_20261025185130_329bd754",
+  "operation_id": "render_20261025185129_2709a5b6",
+  "status": "failed",
+  "data": {},
+  "artifacts": [],
+  "warnings": [],
+  "errors": [
+    {
+      "code": "PROJECTION_REQUIRED_UNAVAILABLE",
+      "message": "必须GPU投影，但设备或精度探测未通过",
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\diagnostics\\projection_render_20261025185129_2709a5b6\\report.json",
+      "retryable": false,
+      "cause": "OpenCL platform index unavailable",
+      "operation_id": "render_20261025185129_2709a5b6"
+    }
+  ],
+  "provenance": {
+    "cli_version": "0.1.20",
+    "schema_version": "0.1.0",
+    "engine_version": "ffmpeg-local",
+    "started_at": "2026-10-25T18:51:30.527170Z",
+    "finished_at": "2026-10-25T18:51:30.527189Z",
+    "network": "disabled"
+  }
+}

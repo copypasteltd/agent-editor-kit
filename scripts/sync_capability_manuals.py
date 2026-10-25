@@ -39,10 +39,10 @@ def main():
         original = text = path.read_text('utf-8-sig')
         canonical = (ROOT/readme).read_text('utf-8-sig')
         current_block = ('<!-- community-current -->\n\n'
-            '**CLI 0.1.19 / alpha.4-local.17 / r20 kit · 1 Skill / 17 modules.**\n\n'
-            'Animated crop and nested bilinear/area projection parameter reuse, portable motion/capture, editable ad variants, semantic runtime relocation, '
+            '**CLI 0.1.20 / alpha.4-local.18 / r21 kit · 1 Skill / 17 modules.**\n\n'
+            'Native OpenCL crop/affine/child-canvas bilinear/area projection, portable motion/capture, editable ad variants, semantic runtime relocation, '
             'joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.\n\n'
-            '[Projection workflow/preview](PROJECTION_RENDERING.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · '
+            '[GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · '
             '[Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · '
             '[75 actual declarations]('+response_path.name+'). Full target conditions remain open.\n\n'
             '<!-- /community-current -->')

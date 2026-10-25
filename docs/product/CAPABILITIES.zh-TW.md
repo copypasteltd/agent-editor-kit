@@ -2,15 +2,15 @@
 
 <!-- community-current -->
 
-**CLI 0.1.19 / alpha.4-local.17 / r20 kit · 1 Skill / 17 modules.**
+**CLI 0.1.20 / alpha.4-local.18 / r21 kit · 1 Skill / 17 modules.**
 
-Animated crop and nested bilinear/area projection parameter reuse, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+Native OpenCL crop/affine/child-canvas bilinear/area projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
 
-[Projection workflow/preview](PROJECTION_RENDERING.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](projection-scanline-capabilities-cli-0.1.19.json). Full target conditions remain open.
+[GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](opencl-projection-capabilities-cli-0.1.20.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.zh-TW.md) · [Machine response](projection-scanline-capabilities-cli-0.1.19.json) · [Module data](module-catalog.json)
+[README](../../README.zh-TW.md) · [Machine response](opencl-projection-capabilities-cli-0.1.20.json) · [Module data](module-catalog.json)
 
 | 編號 | 功能模塊 | 具體行為與輸入 → 輸出 | 入口 | 依賴/邊界 |
 |---|---|---|---|---|
@@ -50,8 +50,8 @@ Animated crop and nested bilinear/area projection parameter reuse, portable moti
 | F34 | 參數模板與批量變體 | 本地 JSON 模板 + 類型變量 → 可編輯專案變體、批量輸入與模板快照。 | `template apply/batch` | 支持 asset/color/enum 等類型；復雜條件圖和表達式執行未實現。 |
 | F35 | 素材索引與片段組復用 | 素材目錄/已編輯片段 → 檢索、重復/相似檢查、跨專案片段組與依賴閉包。 | `library index/search/duplicates/similar; fragment` | 用戶自建資源庫，未內置商業素材訂閱/正版音樂庫存。 |
 | F36 | 影格、區間與緩存預覽 | 工程 + 明確影格/區間 → PNG/短影片/緩存與可驗證取樣證據。 | `preview frame/range; cache; preview cache-*` | 預覽不是完整成片核驗；色彩路徑與緩存簽名需一致。 |
-| F37 | 輸出、編碼與硬件探測 | 工程 → MP4/WebM/MKV、編碼/像素/音頻配置、透明輸出與 manifest。 | `render` | 編碼器取決於本地 FFmpeg；硬件實際探測，CPU 效果未整體 GPU 化，無實時/4K 性能保證。 |
-| F38 | 持久隊列、重試與取消 | 凍結專案快照 → 本地排隊、有限 worker、顯式重試/取消與串行元資料提交。 | `queue enqueue/list/inspect/run/cancel` | 預設串行；並發需滿足門禁，不是分布式云渲染服務。 |
+| F37 | 輸出、編碼與GPU投影 | 專案 → MP4/WebM/MKV、明確OpenCL裁切/仿射/子畫布投影、編解碼探測及manifest。 | `render --projection-acceleration; render` | 原生GPU需雙精度/紋理預檢；CPU預設，其餘特效仍CPU，無即時/通用4K保證。 |
+| F38 | 持久佇列、重試與取消 | 凍結專案快照 → 本地排隊、有限worker、明確重試/取消及序列化提交。 | `queue enqueue/list/inspect/run/cancel` | GPU投影策略逐作業傳遞，拒絕其 --reuse-identical 繞過探測；不是雲渲染。 |
 | F39 | 成片、Scope 與 golden 核驗 | 實際編碼文件 → 音畫/影格率/畫幅/時長、響度/黑場、色彩 Scope、蒙版和 golden 差異報告。 | `quality check/scopes/mask/golden` | 自動檢查、靜態目檢、連續播放、人工聽審分別記錄；不等於商業成片品質認證。 |
 | F40 | 權利臺賬與本地策略 | 素材/字體/LUT/模型/模板證據 → 依賴臺賬、變更歷史、影響/撤回與發布門禁。 | `rights; policy audit; render --publish` | --publish 只檢查本地權利，不上傳；臺賬不自動裁定版權。 |
 | F41 | 專案與時間線交換 | Agent JSON/package、OTIO、Kdenlive MLT、已有合法明文草稿 → 導入/導出與損失報告。 | `convert import/export` | Exact/Approximate/Unsupported/Failed 逐項報告；明文草稿不調用剪映，不解密或下載專有資源。 |
@@ -86,7 +86,7 @@ Animated crop and nested bilinear/area projection parameter reuse, portable moti
 | S13 | 內建社群素材服務 | 離線目錄 | 359 項有來源/許可的 BGM、短樂、音效、字型 | `materials list/inspect/verify/ingest` | 逐項權利，不是商業素材訂閱庫 |
 | S14 | 本地配音/翻譯 | 原生模型 worker | 4 個可選 CPU/CUDA 包，103 音色對映和 OPUS 文字/字幕 | `voice / translate / model-pack` | 累計至少 7 個不同音色有真實輸出；103 音色完整試聽及人工驗收未完成 |
 | S15 | 配樂準備與混音 | 原生 FFmpeg 音訊 | 顯式擷取/迴圈/淡化、獨立人聲/配樂、閃避 | `music prepare/mix` | 不作曲、不靜默裁人聲、不承諾接縫修復 |
-| S16 | GPU 相容服務 | 原生 NVIDIA 執行庫 | auto/cpu/cuda、視訊記憶體預檢、實際 provider/回退 | `gpu inspect; --device` | RTX 3060 實測，NVIDIA/Intel 依賴許可另列 |
+| S16 | GPU相容服務 | 已有原生OpenCL ICD / NVIDIA模型執行庫 | 投影off/prefer/require，模型auto/cpu/cuda；實際裝置、探測、預算及回退 | `render --projection-acceleration; gpu inspect; --device` | RTX3060實測；僅投影算子GPU化，外部驅動/庫授權另列 |
 | S17 | 原生 Windows 擷取 | FFmpeg gdigrab / DirectShow | 明確來源、裝置 ID、有限時長、完整解碼與素材登記 | `capture devices/record` | 真實視窗 CPU/GPU 已驗；攝影機/麥克風/同步未驗 |
 | S18 | 圖文語義與經驗校準 | 明確登記的原生 SigLIP2 worker | 既有 Torch/Transformers/權重；檔案綁定索引/實作/類型/實際裝置 | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | 分數非機率；冷啟動/大庫與校準工程遷移仍有限制 |
 | S19 | 獨立四軌分離 | 原生 Torch/TorchAudio HDemucs worker | 明確登記原生 Python、權重/證據/實作雜湊；auto/cpu/cuda，4 float WAV/軌道 | `audio adapter; audio separate-stems` | 基礎 ZIP 不含 Torch/權重；自然聽感與權重許可未閉 |
@@ -1279,16 +1279,37 @@ Animated crop and nested bilinear/area projection parameter reuse, portable moti
     "actual_raster_pixel_format_color_bitrate_four_frame_encoder_probe",
     "forced_d3d11va_cuda_frames_download_compared_to_cpu_framemd5",
     "bounded_recorded_runtime_fallback_and_final_format_gate",
-    "persistent_probe_attempt_logs_manifest_queue_resume"
+    "persistent_probe_attempt_logs_manifest_queue_resume",
+    "independent_off_prefer_require_opencl_projection_policy",
+    "same_pts_avexpr_binary64_coefficient_textures",
+    "opencl_dynamic_crop_affine_native_sequence_bilinear_and_area",
+    "ordered_binary64_prefix_transported_in_three_float32_texels",
+    "actual_gpu_identity_fp64_image_extents_and_bitwise_texture_probes",
+    "projection_raster_admission_kernel_hashes_logs_queue_resume"
   ],
+  "projection": {
+    "engine": "opencl-binary64-projection-v1",
+    "default": "off",
+    "device": "explicit_platform.device_index",
+    "native_runtime": "existing_windows_OpenCL_ICD_and_FFmpeg_program_opencl",
+    "formats": [
+      "gbrap",
+      "gbrapf32le"
+    ],
+    "fallback": "prefer_before_execution_only",
+    "runtime_failure": "fails_without_cpu_or_encoder_retry",
+    "quota_scope": "projection_raster_admission_not_total_ram_or_vram"
+  },
   "limits": [
     "windows_backend_catalog_only_no_downloads",
     "explicit_video_bitrate_required_not_crf_quality_equivalence",
     "decode_yuv420_8_10bit_h264_hevc_vp9_av1_mpeg2_only",
     "four_frame_equality_does_not_prove_whole_source_quality",
     "pixel_probe_budget_not_total_driver_vram_limit",
-    "driver_default_device_no_certified_device_identity",
-    "cpu_effect_filters_not_gpu_ported_no_speed_or_capcut_parity_claim"
+    "encode_decode_driver_default_device_identity_not_certified",
+    "projection_requires_gpu_images_and_ieee_binary64_actual_preflight",
+    "projection_pixel_stateful_expressions_and_independent_linear_light_float_pipeline_not_ported",
+    "other_effects_and_compositing_remain_cpu_no_realtime_4k_or_capcut_parity_claim"
   ]
 }
 ```
@@ -2357,7 +2378,7 @@ Animated crop and nested bilinear/area projection parameter reuse, portable moti
   ],
   "limits": [
     "dynamic_crop_uses_fixed_canvas_inverse_sampling",
-    "dynamic_crop_inverse_sampler_is_cpu_geq",
+    "dynamic_crop_cpu_default_explicit_probed_opencl_available",
     "nested_reverse_static_clips_preserve_temporal_order",
     "native_nested_leaf_intervals_preserved_virtual_surfaces_keep_child_cfr",
     "speed_easing_compilation_has_250_microsecond_source_clock_bound_and_1024_segment_limit",
@@ -2366,13 +2387,13 @@ Animated crop and nested bilinear/area projection parameter reuse, portable moti
     "deep_animated_clock_expressions_have_explicit_4mib_limit",
     "nested_freeze_hold_quantization_is_explicit",
     "sequence_canvas_fps_color_and_sar_are_project_shared",
-    "sequence_inverse_sampler_working_raster_is_componentwise_max_source_parent",
+    "cpu_sequence_working_raster_is_componentwise_max_source_parent_opencl_uses_native_source_target",
     "bilinear_default_retained_explicit_area_has_source_axis_box_kernel",
     "area_general_rotation_is_not_exact_rotated_pixel_polygon_ewa_or_lanczos",
     "projection_quota_excludes_leaf_decoder_encoder_threads_and_concurrent_jobs_rss",
     "leaf_minification_linear_light_hdr_and_natural_quality_unaccepted",
     "sequence_spatial_order_is_child_composite_crop_transform_opacity_effects_mask_fade",
-    "group_crop_and_affine_are_cpu_inverse_sampling",
+    "group_crop_and_affine_cpu_default_explicit_probed_opencl_available",
     "isolated_compositing_is_8bit_encoded_rgb_not_linear_light_or_hdr_acceptance",
     "group_slide_wipe_transitions_are_not_accepted",
     "nested_audio_tempo_windows_are_limited_to_16384_and_at_least_one_48khz_sample",

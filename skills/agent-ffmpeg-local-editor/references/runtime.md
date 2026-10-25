@@ -1,6 +1,6 @@
 # Installed-release runtime contract
 
-This namespace calls the locally installed `v0.1.0-alpha.4-local.17` / CLI 0.1.19
+This namespace calls the locally installed `v0.1.0-alpha.4-local.18` / CLI 0.1.20
 package using this Skill's `scripts/run.ps1`. Its 17 modules share the launcher.
 The editable Skill source stays on E:; Codex reads
 Windows directory junctions. `local/agent-ffmpeg/runtime.json` selects the native Python and installed path.
@@ -54,6 +54,13 @@ are optional existing dependencies, not bundled base features.
 Return exact output paths, warnings, exit codes and error details. Verify actual decoded files and manifests;
 static frames, continuous playback, automatic audio checks and human listening have separate acceptance.
 The alpha package does not provide complete CapCut parity.
+
+## GPU projection
+
+Read [projection-gpu.md](projection-gpu.md) for explicit native OpenCL crop,
+affine and child-canvas bilinear/area projection. CPU is the default; GPU
+composition, encoding and model inference have independent policies and
+diagnostics. Inspect the actual retained device and nodes after rendering.
 
 ## GPU speech and translation
 

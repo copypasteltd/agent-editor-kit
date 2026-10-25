@@ -84,3 +84,5 @@ capture 捕获**完整作者输出时段**，包括被 presentation-window 隐�
 **English:** Application uses snapshot, project lock, transaction, idempotency and cooperative timeout/cancellation. The receipt embeds recipe, resolved parameters and separate canonical-content/raw-file hashes. Rendering and editable-package import therefore do not require the original standalone recipe. Locked tracks and tracking relationships reject. Full G04/G12/G32/G33 and the complete CapCut-level target remain open.
 
 2026-10-26: CLI0.1.19 extends pure scanline reuse to animated crop and child crop/fit/TRS, for bilinear and area. [Current workflow / 当前使用](PROJECTION_RENDERING.md) includes the editable combination case and actual previews; historical timing remains scoped to its original fixture.
+
+2026-10-26: [CLI0.1.20 native GPU projection / 原生GPU投影](OPENCL_PROJECTION.md) adds explicit OpenCL crop/affine/child-canvas samplers,actual-device/precision probes and failure/queue handling. Earlier CPU timing and scope remain historical; other effects stay CPU.

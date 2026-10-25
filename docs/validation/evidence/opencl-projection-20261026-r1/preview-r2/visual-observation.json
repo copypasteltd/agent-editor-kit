@@ -1,0 +1,20 @@
+{
+  "reviewer": "assistant via local image viewer",
+  "scope": "Two still images only; no continuous playback, listening or human aesthetic acceptance.",
+  "images": [
+    {
+      "path": "docs/assets/opencl-projection-20261026-r1/original.png",
+      "sha256": "46f24805392fdd5b305928b713d2508af53f810e092e841c4587c53ab6c9b2e1"
+    },
+    {
+      "path": "docs/assets/opencl-projection-20261026-r1/midpoint.png",
+      "sha256": "8d7b0c64fec1e3cab62b122167aa8386f337d2353aafc1ed6f931c9358bd8fb8"
+    }
+  ],
+  "observations": [
+    "Original FIELD NOTES card is readable and includes the teal grid, warm paper rectangle and orange ring.",
+    "At 2 seconds the actual GPU output shows the card enlarged and rotated in the smaller viewport; title and orange ring remain visible, with the card cropped by the frame."
+  ],
+  "human_quality_acceptance": false,
+  "continuous_playback": false
+}

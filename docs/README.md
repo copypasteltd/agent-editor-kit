@@ -73,3 +73,5 @@ Contracts remain in specs; raw successes/failures in validation; media in assets
 - [仿射扫描行复用实测与边界](validation/仿射扫描行复用实测_2026-10-25.md)
 
 2026-10-26: CLI0.1.19 extends pure scanline reuse to animated crop and child crop/fit/TRS, for bilinear and area. [Current workflow / 当前使用](product/PROJECTION_RENDERING.md) includes the editable combination case and actual previews; historical timing remains scoped to its original fixture.
+
+2026-10-26: [CLI0.1.20 native GPU projection / 原生GPU投影](product/OPENCL_PROJECTION.md) adds explicit OpenCL crop/affine/child-canvas samplers,actual-device/precision probes and failure/queue handling. Earlier CPU timing and scope remain historical; other effects stay CPU.

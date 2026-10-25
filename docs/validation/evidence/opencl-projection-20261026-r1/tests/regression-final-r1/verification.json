@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "scope": "render-regression",
+  "method": null,
+  "installed": "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.18\\final-r2\\installed",
+  "started_at_utc": "2026-10-25T18:35:21.679179+00:00",
+  "finished_at_utc": "2026-10-25T18:40:30.367203+00:00",
+  "exit_code": 0,
+  "source_files": 209,
+  "frozen_equal": true,
+  "installed_frozen_equal": true,
+  "log_sha256": "9f419e716b773d98d4e7244d76a6a6efbc1548c1c93915b01ed42d9cb7e8e54b",
+  "result": {
+    "methods": 119,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0,
+    "success": true
+  }
+}

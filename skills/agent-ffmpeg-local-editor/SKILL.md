@@ -1,13 +1,13 @@
 ---
 name: agent-ffmpeg-local-editor
-description: "Edit and deliver local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, offline visual semantic search, GPU voice/translation, joint subtitle dubbing, licensed music/SFX, captions and quality checks. Also use for ad planning, reference remakes, long-to-short clips, screen demos or supplied campaign data that feeds an edit."
+description: "Edit and deliver local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, offline visual semantic search, GPU projection/voice/translation, joint subtitle dubbing, licensed music/SFX, captions and quality checks. Also use for ad planning, reference remakes, long-to-short clips, screen demos or supplied campaign data that feeds an edit."
 ---
 
 # agent editor kit / unified local Skill
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.17` / CLI `0.1.19`.
+The current local runtime is `v0.1.0-alpha.4-local.18` / CLI `0.1.20`.
 The published alpha.3 downloads retain CLI 0.1.2 and their original scope.
 
 ## Runtime and common workflow
@@ -66,11 +66,13 @@ media. Add other modules when the request needs them. For example:
   [motion-packs.md](references/motion-packs.md). Show actual previews, compile
   bounded parameters to editable keys and review property conflicts before replacing.
 - Combining animated crop, child canvases and camera motion: read
-  [motion-packs.md](references/motion-packs.md). The installed 0.1.19 renderer
+  [motion-packs.md](references/motion-packs.md). The installed renderer
   reuses pure row parameters for bilinear and area projection. Keep the target
   canvas, sampling choice and explicit working-raster quota; review actual
   frames before delivery. This CPU composition improvement is separate from
-  hardware encoding.
+  hardware encoding. For GPU projection, read
+  [projection-gpu.md](references/projection-gpu.md), select an explicit
+  `off|prefer|require` policy and inspect actual device/probe/fallback evidence.
 - Local AI task: local-models plus the relevant media module; require existing
   registered dependencies and check actual inference artifacts.
 - Translate and dub reviewed subtitles: read [subtitle-dubbing.md](references/subtitle-dubbing.md).

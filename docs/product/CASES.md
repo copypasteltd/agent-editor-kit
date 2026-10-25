@@ -666,3 +666,15 @@ Four-second self-authored graphic, silent; no natural-footage or continuous-play
 ![Actual installed output / silent](../assets/projection-scanline-20261026-r2/projection.gif)
 
 Native child480×270/output384×216,30fps/4s, reverse clock, animated crop, arc_push and area sampling. Self-authored graphic; natural-motion, continuous-playback and listening acceptance remain open.
+
+<a id="c28-opencl-projection"></a>
+
+## C28 原生GPU裁切、运镜与面积投影 / Native GPU projection
+
+原生 GPU 动态裁切、仿射运镜及子画布双线性/面积投影已交付。相同编码与工程三轮中位数 77.85→12.51秒（6.22×），六次全部120帧、时钟和PCM相同；默认CPU，显式策略决定使用/回退。
+
+[使用流程](OPENCL_PROJECTION.md) · [完整实测](../validation/OpenCL原生投影实测_2026-10-26.md) · [原图](../assets/opencl-projection-20261026-r1/original.png) · [MP4](../assets/opencl-projection-20261026-r1/projection.mp4) · [可编辑工程包](../assets/opencl-projection-20261026-r1/editable-projection.aevpkg.zip)
+
+![Actual installed OpenCL render / silent](../assets/opencl-projection-20261026-r1/projection.gif)
+
+自制FIELD NOTES图卡；480×270原生子画布，384×216/30fps/4秒输出，动态裁切、仿射、反向与arc_push。相同libx264编码；预览另用NVENC压缩，不混作投影性能。自然视听、连续播放/听审及完整目标保持开放。

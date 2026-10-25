@@ -440,6 +440,7 @@ def _dynamic_crop_filters(
     tps: int,
     *,
     alpha: bool = False,
+    projection=None,
 ) -> list[str]:
     """Animate a crop window while keeping every output frame the same size.
 
@@ -462,6 +463,7 @@ def _dynamic_crop_filters(
     window_height = scalar(("height", "h"), _num(crop.get("height", crop.get("h", default_height)), default_height))
     origin_x = scalar(("x",), _num(crop.get("x", 0), 0))
     origin_y = scalar(("y",), _num(crop.get("y", 0), 0))
+    raw_window = [window_width,window_height,origin_x,origin_y]
     if normalized:
         window_width, window_height = f"W*({window_width})", f"H*({window_height})"
         origin_x, origin_y = f"W*({origin_x})", f"H*({origin_y})"
@@ -512,11 +514,20 @@ def _dynamic_crop_filters(
 
     prefix = ['format=gbrapf32le', 'premultiply=inplace=1'] if alpha else ['format=gbrap']
     suffix = ['unpremultiply=inplace=1', 'format=rgba'] if alpha else []
-    return prefix + [
+    cpu = prefix + [
         f"geq=r={plane('r', 0)}:g={plane('g', 0)}:b={plane('b', 0)}:a={plane('alpha', 0 if alpha else 255)}:interpolation=bilinear",
         f"scale={canvas_width}:{canvas_height}:flags=lanczos",
         "setsar=1",
     ] + suffix
+    if projection is not None:
+        from .projection_opencl import crop_body
+        return projection.select(cpu,kind='dynamic-crop',expressions=raw_window+['0'],
+            alpha_expressions=raw_window+['0' if alpha else '255'],
+            source=(source_width,source_height),target=(source_width,source_height),
+            body=crop_body((canvas_width,canvas_height),normalized=normalized,fit=fit),
+            prefix=prefix,suffix=[f'scale={canvas_width}:{canvas_height}:flags=lanczos','setsar=1']+suffix,
+            pure=_geq_row_invariant(raw_window),integer=not alpha,native_target=True)
+    return cpu
 
 
 def _mask_point(value: Any) -> tuple[float, float] | None:
@@ -1222,7 +1233,7 @@ def _geq_scanline_expression(definitions: dict[str, str], body: str, registers: 
     return (f'if(eq(X,0),{initialize},0);' if initialize else '')+expand(body)
 
 
-def _affine_video_filters(transform: dict[str, str]) -> list[str]:
+def _affine_video_filters(transform: dict[str, str], *, projection=None, width=0, height=0) -> list[str]:
     """Sample a rotated layer onto its fixed output canvas around its anchor.
 
     The old rotate filter retained the input rectangle while its overlay
@@ -1266,9 +1277,18 @@ def _affine_video_filters(transform: dict[str, str]) -> list[str]:
         if pure:
             return _expr_arg(setup+f"if(ld(9),{name}(clip(ld(7),0,W-1),clip(ld(8),0,H-1)),0)")
         return _expr_arg(setup+f"if(ld(7),{name}(clip(ld(5),0,W-1),clip(ld(6),0,H-1)),0)")
-    return ['format=gbrapf32le', 'premultiply=inplace=1',
+    prefix=['format=gbrapf32le','premultiply=inplace=1']
+    suffix=['unpremultiply=inplace=1','format=rgba']
+    cpu = prefix+[
             f"geq=r={plane('r')}:g={plane('g')}:b={plane('b')}:a={plane('alpha')}:interpolation=bilinear",
-            'unpremultiply=inplace=1', 'format=rgba']
+            ]+suffix
+    if projection is not None:
+        from .projection_opencl import affine_body
+        expressions=[f'cos({angle})',f'sin({angle})',values['position_x'],values['position_y'],
+            f"max(0.00000001,abs({values['scale']}))",values['anchor_x'],values['anchor_y']]
+        return projection.select(cpu,kind='affine',expressions=expressions,source=(width,height),
+            target=(width,height),body=affine_body(),prefix=prefix,suffix=suffix,pure=pure,native_target=True)
+    return cpu
 
 
 def _speed_curve_segments(clip: dict[str, Any], source_span_tick: int, tps: int) -> list[tuple[float, float, float, float]]:
@@ -3004,6 +3024,7 @@ def _build_subtitle_layer(
     tps: int,
     automation: EffectAutomation | None = None,
     automation_meta: list[dict[str, Any]] | None = None,
+    projection=None,
 ) -> dict[str, Any]:
     """Compile one independent text clip into a reusable transparent layer.
 
@@ -3044,7 +3065,7 @@ def _build_subtitle_layer(
                    or (clip_value.get('_composite_group') is not None and transform['scale'] != '1.00000000'))
     if affine_text:
         affine_label = f'subtitle_affine{subtitle_index}'
-        filters.append(f'[{layer_label}]'+','.join(_affine_video_filters({**transform,'rotation':rotation_expression}))+f'[{affine_label}]')
+        filters.append(f'[{layer_label}]'+','.join(_affine_video_filters({**transform,'rotation':rotation_expression},projection=projection,width=width,height=height))+f'[{affine_label}]')
         layer_label = affine_label
     else:
         if transform["scale"] != "1.00000000":
@@ -3442,7 +3463,7 @@ def _composite_visual_layers(
 
 def _sequence_raster_filters(
     clip: dict[str, Any], transform: dict[str, str], source: dict[str, int], target: dict[str, int],
-    start: float, tps: int, *, sampling: str = 'bilinear',
+    start: float, tps: int, *, sampling: str = 'bilinear', projection=None,
 ) -> list[str]:
     """Project a child raster into its parent's canvas around the child anchor.
 
@@ -3538,10 +3559,22 @@ def _sequence_raster_filters(
             return _expr_arg(f'if(lt(X,{tw})*lt(Y,{th}),'+setup+edges+area_rectangle(name)+',0)')
         inside = 'st(8,gte(ld(6),ld(2)-0.5)*lt(ld(6),ld(2)+ld(0)-0.5)*gte(ld(7),ld(3)-0.5)*lt(ld(7),ld(3)+ld(1)-0.5));'
         return _expr_arg(setup+inside+f'if(ld(8),{name}({sample_x},{sample_y}),0)')
-    return ['format=rgba', f'pad={max(sw,tw)}:{max(sh,th)}:0:0:color=black@0', 'setsar=1',
+    cpu = ['format=rgba', f'pad={max(sw,tw)}:{max(sh,th)}:0:0:color=black@0', 'setsar=1',
             'format=gbrapf32le', 'premultiply=inplace=1',
             f"geq=r={plane('r')}:g={plane('g')}:b={plane('b')}:a={plane('alpha')}:interpolation=bilinear",
             f'crop={tw}:{th}:0:0:exact=1', 'unpremultiply=inplace=1', 'format=rgba']
+    if projection is not None:
+        from .projection_opencl import expand_definitions,sequence_body
+        area=sampling=='area'
+        gpu_definitions={**definitions}
+        if area:
+            gpu_definitions.update(kernel_x='max(1,1/(@{scale}*@{fit_x}))',
+                                   kernel_y='max(1,1/(@{scale}*@{fit_y}))')
+        return projection.select(cpu,kind='sequence',expressions=expand_definitions(gpu_definitions),
+            source=(sw,sh),target=(tw,th),body=sequence_body(area=area),area=area,pure=pure,
+            prefix=['format=rgba','setsar=1','format=gbrapf32le','premultiply=inplace=1'],
+            suffix=['unpremultiply=inplace=1','format=rgba'])
+    return cpu
 
 
 def _build_compositing_tree(
@@ -3550,6 +3583,7 @@ def _build_compositing_tree(
     *, width: int, height: int, fps: dict[str, int], fps_value: str, duration: float,
     tps: int, transparent_canvas: bool, sampling: str = 'bilinear',
     automation: EffectAutomation | None = None,
+    projection=None,
 ) -> str:
     """Composite complete child sequences before applying container operations.
 
@@ -3594,10 +3628,10 @@ def _build_compositing_tree(
                     'position_y':'0.50000000','anchor_x':'0.50000000','anchor_y':'0.50000000'}
         adapt_raster = source_canvas != parent_canvas or bool(crop) or sampling == 'area'
         if adapt_raster:
-            chain.extend(_sequence_raster_filters(clip, transform, source_canvas, parent_canvas, start, tps, sampling=sampling))
+            chain.extend(_sequence_raster_filters(clip, transform, source_canvas, parent_canvas, start, tps, sampling=sampling,projection=projection))
         else:
             if any(transform[key] != value for key,value in identity.items()):
-                chain.extend(_affine_video_filters(transform))
+                chain.extend(_affine_video_filters(transform,projection=projection,width=source_canvas['width'],height=source_canvas['height']))
         if transform['opacity'] != '1.00000000':
             alpha = f"alpha(X,Y)*clip(({transform['opacity']}),0,1)"
             chain.extend(['format=gbrap',f"geq=r='r(X,Y)':g='g(X,Y)':b='b(X,Y)':a={_expr_arg(alpha)}",'format=rgba'])
@@ -3934,6 +3968,7 @@ def build_filter_graph(root: Path, project: dict[str, Any], sequence: dict[str, 
                        _effect_runtime: EffectAutomation | None = None,
                        _frame_index_context=None, _persist_video_index: bool = False,
                        _audio_clock_context=None,
+                       _projection_runtime=None,
                        _cancel_file: Path | None = None) -> tuple[list[str], str, list[dict[str, Any]], list[dict[str, Any]]]:
     if _frame_index_context is None:
         from .native_video_index import IndexContext
@@ -3949,7 +3984,8 @@ def build_filter_graph(root: Path, project: dict[str, Any], sequence: dict[str, 
     def child_builder(*args, **kwargs):
         return build_filter_graph(*args, **kwargs, _effect_runtime=_effect_runtime,
                                   _frame_index_context=_frame_index_context,
-                                  _audio_clock_context=_audio_clock_context)
+                                  _audio_clock_context=_audio_clock_context,
+                                  _projection_runtime=_projection_runtime)
     if any(c.get('tracking_binding') for s in project.get('sequences',[]) for t in s.get('tracks',[]) for c in t.get('clips',[])):
         from .bindings import compile_project_bindings,validate_project_bindings
         findings = validate_project_bindings(project,root)
@@ -4384,7 +4420,7 @@ def build_filter_graph(root: Path, project: dict[str, Any], sequence: dict[str, 
                     crop_width = max(2, crop_width)
                     crop_height = max(2, crop_height)
                     if (dynamic_width or dynamic_height) and source_width and source_height:
-                        chain.extend(_dynamic_crop_filters(clip, crop, width, height, source_width, source_height, start, tps, alpha=alpha_padding))
+                        chain.extend(_dynamic_crop_filters(clip, crop, width, height, source_width, source_height, start, tps, alpha=alpha_padding,projection=_projection_runtime))
                         dynamic_crop_rendered = True
                     elif crop_width >= 2 and crop_height >= 2:
                         if dynamic_x or dynamic_y:
@@ -4448,7 +4484,7 @@ def build_filter_graph(root: Path, project: dict[str, Any], sequence: dict[str, 
                 affine_canvas = (bool(clip.get('_source_handle')) or transforms['rotation'] != '0.00000000' or bool(clip.get('_tracking_binding_source'))
                                  or (clip.get('_composite_group') is not None and transforms['scale'] != '1.00000000'))
                 if affine_canvas:
-                    chain.extend(_affine_video_filters(transforms))
+                    chain.extend(_affine_video_filters(transforms,projection=_projection_runtime,width=width,height=height))
                 elif transforms["scale"] != "1.00000000":
                     scale_expr = _expr_arg(f"max(2,iw*({transforms['scale']}))")
                     height_expr = _expr_arg(f"max(2,ih*({transforms['scale']}))")
@@ -4754,6 +4790,7 @@ def build_filter_graph(root: Path, project: dict[str, Any], sequence: dict[str, 
             tps=tps,
             automation=_effect_runtime,
             automation_meta=input_meta,
+            projection=_projection_runtime,
         )
         for subtitle_index, overlay in enumerate(subtitle_overlays)
     ]
@@ -4762,6 +4799,7 @@ def build_filter_graph(root: Path, project: dict[str, Any], sequence: dict[str, 
         width=width, height=height, fps=fps, fps_value=fps_value, duration=duration,
         tps=tps, transparent_canvas=transparent_canvas, sampling=sampling_config['method'],
         automation=_effect_runtime,
+        projection=_projection_runtime,
     )
     if not has_adjustments:
         filters.append(f"[{current}]null[vout]")
@@ -4888,19 +4926,23 @@ def _render_project(root, project, sequence, output, *, dry_run=False, render_se
         effective_project['sequences'] = [render_sequence if s.get('id') == sequence.get('id') else s for s in project['sequences']]
     encoder = output_settings(effective_project["settings"])
     validate_output_alignment(sequence_canvas(effective_project, render_sequence), str(encoder['video']['pixel_format']))
+    operation_id = new_id('render')
+    from .projection_opencl import ProjectionSession
+    projection = ProjectionSession(root,effective_project['settings'],operation_id,cancel_file=cancel_file)
     float_renderer = None
     if effective_project['settings'].get('pixel_pipeline') is not None:
+        if projection.enabled:
+            projection.reject_node('float-pixel-pipeline','OpenCL geq projection does not implement the independent linear-light float pipeline')
         from .float_standard_render import FloatRenderContext
         float_renderer = _runtime.enter_context(FloatRenderContext(root, effective_project, render_sequence,
             encoder, dry_run=dry_run, cancel_file=cancel_file))
         inputs, graph, input_meta, warnings = float_renderer.graph()
     else:
         inputs, graph, input_meta, warnings = build_filter_graph(root, effective_project, render_sequence,
-            _persist_video_index=not dry_run,_cancel_file=cancel_file)
+            _persist_video_index=not dry_run,_cancel_file=cancel_file,_projection_runtime=projection)
     fingerprints = render_fingerprints(project, sequence, effective_project["settings"], root)
     if not dry_run:
         output.parent.mkdir(parents=True, exist_ok=True)
-    operation_id = new_id("render")
     acceleration = AccelerationSession(root, effective_project['settings'], encoder, operation_id, cancel_file)
     temp_dir = root / "renders" / ".tmp" / operation_id
     if not dry_run:
@@ -4976,6 +5018,7 @@ def _render_project(root, project, sequence, output, *, dry_run=False, render_se
     execution_args, graph_transport = _execution_filter_graph(root, args, graph, write=not dry_run)
     plan = {"operation_id": operation_id, "command": args, "execution_command":execution_args, "filter_graph_transport":graph_transport, "filter_complex": graph, "inputs": input_meta, "output": str(output), "encoder": encoder, "delivery": delivery, "warnings": warnings, **fingerprints, "resume_of": resume_of}
     plan['acceleration'] = acceleration.evidence
+    plan['projection_acceleration'] = projection.evidence
     if dry_run:
         if progress_callback:
             progress_callback(operation_id, "planned", 0.0, "渲染计划已生成")
@@ -5024,10 +5067,18 @@ def _render_project(root, project, sequence, output, *, dry_run=False, render_se
         plan['acceleration'] = acceleration.evidence
         from .reverse_cache import materialize as materialize_reverse, verify_materialized as verify_reverse
         reverse_jobs=materialize_reverse(root,input_meta,temp_dir,cancel_file=cancel_file)
-        acceleration.prepare(inputs, input_meta, effective_project, temp_dir, _output_color_args(effective_project['settings']))
         def check_acceleration_inputs():
             if render_fingerprints(project, sequence, effective_project['settings'], root) != fingerprints:
                 raise AppError('RENDER_INPUT_CHANGED', '探测或渲染期间输入指纹变化，拒绝重试和发布', exit_code=6)
+            if projection.evidence['status'] in ('prepared','encoded_pending_quality','verified'):
+                projection.verify_programs()
+        if projection.enabled:
+            check_acceleration_inputs()
+            args,graph=projection.prepare(args,graph)
+            check_acceleration_inputs()
+            execution_args,graph_transport=_execution_filter_graph(root,args,graph,write=True)
+            plan.update(command=args,execution_command=execution_args,filter_complex=graph,filter_graph_transport=graph_transport)
+        acceleration.prepare(inputs, input_meta, effective_project, temp_dir, _output_color_args(effective_project['settings']))
         for item in input_meta:
             if job := item.get('audio_stretch'):
                 job['execution'] = _execute_audio_stretch(root, job, temp_dir, cancel_file=cancel_file)
@@ -5041,6 +5092,8 @@ def _render_project(root, project, sequence, output, *, dry_run=False, render_se
             result = float_renderer.run(execution_args)
         else:
             result = run_process(execution_args, timeout=3600, cwd=root, cancel_file=cancel_file)
+        projection.finish(result)
+        plan.update(execution_command=execution_args,filter_graph_transport=graph_transport)
         if result.returncode != 0:
             raise AppError("RENDER_FAILED", "FFmpeg 渲染失败", exit_code=6, retryable=True, cause=result.stderr[-6000:])
         if not temp_output.exists() or temp_output.stat().st_size == 0:
@@ -5055,6 +5108,8 @@ def _render_project(root, project, sequence, output, *, dry_run=False, render_se
             check_acceleration_inputs()
             acceleration.evidence.update(status='verified_pending_publish', quality=quality, output_probe=inspected)
             acceleration.save()
+        if projection.enabled:
+            check_acceleration_inputs()
         if reverse_jobs:
             verify_reverse(root,reverse_jobs,cancel_file=cancel_file)
             check_acceleration_inputs()
@@ -5067,6 +5122,8 @@ def _render_project(root, project, sequence, output, *, dry_run=False, render_se
         if acceleration.enabled:
             acceleration.evidence['status'] = 'verified'
             acceleration.save()
+        if projection.evidence['status']=='encoded_pending_quality':
+            projection.evidence['status']='verified';projection.save()
         manifest = {
             "manifest_version": "0.1.0",
             "operation_id": operation_id,
@@ -5083,6 +5140,7 @@ def _render_project(root, project, sequence, output, *, dry_run=False, render_se
             "settings": effective_project["settings"],
             "delivery": delivery,
             "acceleration": acceleration.evidence,
+            "projection_acceleration": projection.evidence,
             "warnings": warnings,
             "quality": quality,
             **fingerprints,
@@ -5100,8 +5158,10 @@ def _render_project(root, project, sequence, output, *, dry_run=False, render_se
         if progress_callback:
             progress_callback(operation_id, "artifact_written", 100.0, "渲染产物和 manifest 已写入")
             progress_callback(operation_id, "completed", 100.0, "渲染完成")
-        return {"status": "succeeded", "operation_id": operation_id, "path": str(output), "manifest": str(manifest_path), "filter_graph_transport":graph_transport, "profile": profile, "settings": effective_project["settings"], "delivery": delivery, "acceleration": acceleration.evidence, "probe": inspected, "warnings": warnings + quality.get("warnings", []), "quality": quality, **fingerprints, "resume_of": resume_of}
+        return {"status": "succeeded", "operation_id": operation_id, "path": str(output), "manifest": str(manifest_path), "filter_graph_transport":graph_transport, "profile": profile, "settings": effective_project["settings"], "delivery": delivery, "acceleration": acceleration.evidence, "projection_acceleration":projection.evidence, "probe": inspected, "warnings": warnings + quality.get("warnings", []), "quality": quality, **fingerprints, "resume_of": resume_of}
     except AppError as exc:
+        projection.evidence.update(status='cancelled' if exc.code=='CANCELLED' else 'failed',error=exc.as_dict())
+        projection.save()
         acceleration.evidence.update(status='cancelled' if exc.code == 'CANCELLED' else 'failed', error=exc.as_dict())
         acceleration.save()
         # Make the persisted operation discoverable from the CLI error envelope so

@@ -18,6 +18,7 @@ from typing import Any
 
 from .errors import AppError
 from .hardware_acceleration import configuration as hardware_configuration
+from .projection_opencl import configuration as projection_configuration
 from .lut_library import resolve_lut_path
 from .media import ffmpeg_path, ffprobe_path, probe_media
 from .policy import resolve_local_path
@@ -104,8 +105,10 @@ def _probe_input_format(path: Path) -> str:
 
 def _dependency_paths(root: Path, project: dict, settings: dict) -> set[Path]:
     hw = hardware_configuration(settings.get('acceleration'))
-    if hw['encode'] != 'off' or hw['decode'] != 'off' or settings.get('audio_stretch') is not None:
-        raise _error('QUEUE_REUSE_UNSUPPORTED', '逐作业硬件探测或外部音频伸缩尚不支持结果复用')
+    projection=projection_configuration(settings.get('projection_acceleration'))
+    if (hw['encode'] != 'off' or hw['decode'] != 'off' or projection['mode'] != 'off'
+            or settings.get('audio_stretch') is not None):
+        raise _error('QUEUE_REUSE_UNSUPPORTED', '逐作业硬件/投影探测或外部音频伸缩尚不支持结果复用')
     paths: set[Path] = set()
     assets = {a['id']: a for a in project.get('assets', [])}
     for asset in assets.values():

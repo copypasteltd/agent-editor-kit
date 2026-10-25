@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.19 / alpha.4-local.17 / r20 kit.** One registered Skill / 17 modules; [r20 kit](agent-editor-kit-community-unified-skill-r20.zip). Six reusable motion paths and native animation capture are now installed, alongside editable ad variants, semantic runtime migration, GPU voice/translation, subtitle dubbing and 359 resources.
+**CLI0.1.20 / alpha.4-local.18 / r21 kit · 1 Skill / 17 modules / 69 files.**
 
-[Motion workflow + previews](../product/MOTION_PACKS.md) · [Current installation](../product/COMMUNITY_LOCAL_DELIVERY.md) · [All 38 original goals](../product/GOAL_GAPS_20261025.md). Public alpha.3 assets retain their original version.
+原生 GPU 動態裁切、仿射運鏡及子畫布雙線性/面積投影已交付。相同編碼及專案三輪中位數 77.85→12.51秒（6.22×），六次全部120影格、時鐘及PCM相同；預設CPU，以明確策略選擇使用/回退。
 
-動態裁切與原生子序列投影復用參數，支援雙線性/面積採樣；合成仍由CPU執行，GPU編碼另外選擇。
+[GPU workflow](../product/OPENCL_PROJECTION.md) · [Motion](../product/MOTION_PACKS.md) · [Install](../product/COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](../product/opencl-projection-capabilities-cli-0.1.20.json).
 
 <!-- /community-current -->
 

@@ -142,6 +142,10 @@ def normalize_job(root: Path, raw: dict[str, Any]) -> dict[str, Any]:
     for field in (*CLI_FIELDS, 'hardware_probe_mib'):
         normalized[field] = raw.get(field)
     apply_overrides({}, normalized)
+    from .projection_opencl import CLI_FIELDS as PROJECTION_FIELDS, apply_overrides as projection_overrides
+    for field in (*PROJECTION_FIELDS,'projection_memory_mib'):
+        normalized[field]=raw.get(field)
+    projection_overrides({},normalized)
     if sampling is not None and (not isinstance(sampling, str) or sampling not in {'bilinear','area'}):
         raise argument_error('队列 sequence_sampling 只允许 bilinear 或 area', 'sequence_sampling')
     memory_mib = normalized['sequence_memory_mib']

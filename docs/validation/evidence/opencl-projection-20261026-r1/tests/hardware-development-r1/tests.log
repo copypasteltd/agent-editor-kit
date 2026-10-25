@@ -1,0 +1,26 @@
+test_preferred_hardware_keeps_transparency_on_cpu (test_hardware_acceleration.HardwareAlphaBoundaryTests.test_preferred_hardware_keeps_transparency_on_cpu) ... ok
+test_required_hardware_refuses_to_flatten_alpha (test_hardware_acceleration.HardwareAlphaBoundaryTests.test_required_hardware_refuses_to_flatten_alpha) ... ok
+test_dry_run_does_not_probe_or_allocate_hardware (test_hardware_acceleration.HardwareNativeFallbackTests.test_dry_run_does_not_probe_or_allocate_hardware) ... ok
+test_quality_failure_does_not_fallback_or_publish (test_hardware_acceleration.HardwareNativeFallbackTests.test_quality_failure_does_not_fallback_or_publish) ... ok
+test_real_cpu_fallback_retains_clock_manifest_and_image_exclusion (test_hardware_acceleration.HardwareNativeFallbackTests.test_real_cpu_fallback_retains_clock_manifest_and_image_exclusion) ... ok
+test_required_unavailable_keeps_old_output_and_failure_report (test_hardware_acceleration.HardwareNativeFallbackTests.test_required_unavailable_keeps_old_output_and_failure_report) ... ok
+test_cancel_timeout_and_start_error_do_not_retry (test_hardware_acceleration.HardwarePolicyTests.test_cancel_timeout_and_start_error_do_not_retry) ... ok
+test_changed_inputs_stop_before_any_attempt (test_hardware_acceleration.HardwarePolicyTests.test_changed_inputs_stop_before_any_attempt) ... ok
+test_configuration_rejects_unknown_boolean_string_budget_and_modes (test_hardware_acceleration.HardwarePolicyTests.test_configuration_rejects_unknown_boolean_string_budget_and_modes) ... ok
+test_explicit_bitrate_is_required_even_for_prefer (test_hardware_acceleration.HardwarePolicyTests.test_explicit_bitrate_is_required_even_for_prefer) ... ok
+test_final_format_and_color_gate_rejects_silent_loss (test_hardware_acceleration.HardwarePolicyTests.test_final_format_and_color_gate_rejects_silent_loss) ... ok
+test_hash_comparison_keeps_pts_duration_and_sample_size (test_hardware_acceleration.HardwarePolicyTests.test_hash_comparison_keeps_pts_duration_and_sample_size) ... ok
+test_io_and_content_failures_do_not_retry (test_hardware_acceleration.HardwarePolicyTests.test_io_and_content_failures_do_not_retry) ... ok
+test_no_cross_platform_candidate_or_unsupported_codec (test_hardware_acceleration.HardwarePolicyTests.test_no_cross_platform_candidate_or_unsupported_codec) ... ok
+test_physical_input_indices_preserve_image_audio_and_ten_bit (test_hardware_acceleration.HardwarePolicyTests.test_physical_input_indices_preserve_image_audio_and_ten_bit) ... ok
+test_prefer_fallback_is_bounded_and_logs_all_completed_attempts (test_hardware_acceleration.HardwarePolicyTests.test_prefer_fallback_is_bounded_and_logs_all_completed_attempts) ... ok
+test_queue_preserves_policy_and_rejects_invalid_override (test_hardware_acceleration.HardwarePolicyTests.test_queue_preserves_policy_and_rejects_invalid_override) ... ok
+test_required_decode_survives_preferred_encode_fallback (test_hardware_acceleration.HardwarePolicyTests.test_required_decode_survives_preferred_encode_fallback) ... ok
+test_required_encode_never_becomes_cpu (test_hardware_acceleration.HardwarePolicyTests.test_required_encode_never_becomes_cpu) ... ok
+test_schema_rejects_acceleration_extensions (test_hardware_acceleration.HardwarePolicyTests.test_schema_rejects_acceleration_extensions) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 37.120s
+
+OK
+AEK_RESULT={"methods": 20, "skipped": 0, "failures": 0, "errors": 0, "success": true}

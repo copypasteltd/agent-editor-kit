@@ -1,0 +1,165 @@
+{
+  "status": "passed",
+  "started_at_utc": "2026-10-25T18:57:23.670623+00:00",
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "new_model_forwards_in_audit": 0,
+  "new_renders_in_audit": 0,
+  "independent_agent_benchmark": false,
+  "human_quality_acceptance": false,
+  "finished_at_utc": "2026-10-25T18:57:51.222230+00:00",
+  "baseline_commit": "394b0607e847d27478b460755f3d0965c097a17c",
+  "cli_version": "0.1.20",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.18\\final-r2\\installed",
+  "actual_read_only_cli_calls": 6,
+  "source_and_installed_files": 209,
+  "skill_files": 69,
+  "kit_files": 96,
+  "kit_sha256": "e06f0b06d85b6f5d40318eb5276723f4510cfd507524d947dcb027d2f26f7a1f",
+  "capability_count": 75,
+  "capability_status_counts": {
+    "implemented_with_limits": 47,
+    "implemented": 20,
+    "degraded": 1,
+    "local_adapter_only": 7
+  },
+  "original_goal_closure_conditions_preserved": 38,
+  "historical_readme_rows_preserved_per_language": 138,
+  "current_readme_rows_per_language": 146,
+  "local_links_checked": 2670,
+  "public_release": "v0.1.0-alpha.3",
+  "public_api_status": 200,
+  "gpu_diagnostics_verified": 4,
+  "paired_render_median_ratio": 6.2214122357523,
+  "files": [
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "sha256": "c15130f0d062da96438e081058bf99b0b401cc1ab3ca80754960ad524bd56af7"
+    },
+    {
+      "path": "docs/product/IMPLEMENTATION_PLAN_20261025.md",
+      "sha256": "13eb668a358f9716f1646715e2d20d36478332a99929a95c41cd6fec499ba69c"
+    },
+    {
+      "path": "docs/product/COMMUNITY_LOCAL_DELIVERY.md",
+      "sha256": "7db4fd0b2d64c26011fd7ae2d72c1c9c5bd7aedbf0f857d075604c01586fec0b"
+    },
+    {
+      "path": "docs/product/OPENCL_PROJECTION.md",
+      "sha256": "c0b7b943572897f3770041ec0521bbe328b09df3a4e3df9b3c545859afa05e9d"
+    },
+    {
+      "path": "docs/product/CASES.md",
+      "sha256": "eeb58f7d2eed0f798c5fdd31bca6b29835bca1fa5d63ec028bde0acf946554a1"
+    },
+    {
+      "path": "docs/product/PROJECTION_RENDERING.md",
+      "sha256": "4b0ae36cf371382ae64818d53b82be0ef55c70ad0a98070030fa79f0725241c7"
+    },
+    {
+      "path": "docs/product/AFFINE_RENDERING.md",
+      "sha256": "8c4bb9a137eab6bf20b9d0339a371955fed22f798a92ff24f4912f139a3e808b"
+    },
+    {
+      "path": "docs/product/MOTION_PACKS.md",
+      "sha256": "498562e85e612b9fd77ff9be946d20a69cd073d721466b6885a2a6b0f05a9715"
+    },
+    {
+      "path": "README.md",
+      "sha256": "8a301bf6077ed15fc089188fe00a3979808740e6d7dc9248010def302d64ea1e"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "sha256": "ea6be292f90824b7fef5d42f85a509da947707f15ed7fea3a2c13472195d373d"
+    },
+    {
+      "path": "README.en.md",
+      "sha256": "adfb24931747643151f68c88c8e037246cc1af4f6a8fa6fca44f6b50ed61e08e"
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "d7f6e4e7edb7e610c13cf458b3cb664ff95cc5f96021a9ef64022d57977194b5"
+    },
+    {
+      "path": "docs/specs/OpenCL原生投影实现契约_20261026.md",
+      "sha256": "e2895281e127ad3d0253f27e2a163a824cf7272ad857556b6c4a3172d752b055"
+    },
+    {
+      "path": "docs/validation/OpenCL原生投影实测_2026-10-26.md",
+      "sha256": "fde0f94dfb64663a823433003d8d2ba4179a03c54c576bc1e3bf1933b1dacff4"
+    },
+    {
+      "path": "docs/releases/CLI_0.1.20_LOCAL.md",
+      "sha256": "125f6594a6900763d15cb77c262e60613637590a82ba0e79a73ff70bfb682339"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.md",
+      "sha256": "be88e9801854c015d07ffdd593f4a4022d01da09d5d5cf73cb94d773ab8ab30c"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.zh-TW.md",
+      "sha256": "634113a317caf2bd2e6dab9617ba4523458dd83749c2f70edb35f0a1d921fecf"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.en.md",
+      "sha256": "d1be78d1106ab4ad0d8bad1341b0e3f369d5278a9fefe9e8747bdb7d22544c72"
+    },
+    {
+      "path": "docs/product/SKILLS.md",
+      "sha256": "d4f161a815772b29d6ef4e59058dc062f73629a83887625ca24f0a0e14d130d8"
+    },
+    {
+      "path": "docs/product/SKILLS.zh-TW.md",
+      "sha256": "ed32e699e6c8fe22c2888b2daa434d58c2c6bb23f5c648550a77eef3ce216357"
+    },
+    {
+      "path": "docs/product/SKILLS.en.md",
+      "sha256": "ee27cc77771280aefdd616dbdb4997f0ee0496734ebdf8a3cd379e8897209a35"
+    },
+    {
+      "path": "docs/product/EFFECTS.md",
+      "sha256": "6a037d16dff686de175ebdde3a231d134fa772e0942664f70f19a17bf4798f62"
+    },
+    {
+      "path": "docs/product/EFFECTS.zh-TW.md",
+      "sha256": "7014c9d6ec1835fb1c2ee699cf46de8045e7b27b807f28887334aea80f1f61f1"
+    },
+    {
+      "path": "docs/product/EFFECTS.en.md",
+      "sha256": "35deaaf2d0bd027c6a21006c2b3d62097c4dc16bad5649221765ede21ee457c3"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.md",
+      "sha256": "fdc95fa78bebfe0818e1910bd27aedcd9ba2c830ac0c075ecce9f2f3558c7ee6"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.zh-TW.md",
+      "sha256": "edbd2e4ce2c4fd099907f09c6dab3c47c4e36dff41f289211a0544e5e0a5f4d2"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.en.md",
+      "sha256": "aa081a4e48d790b22da68882ada133bca08abe32045c0db11fec03c8a441cb78"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
+      "sha256": "899a3e62f177b6f5a28e5a844d14bb589e9cce14f5e88fc77ced97af97a0d8fd"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
+      "sha256": "4051e1b46af40bbec608f6f9969511bf0f1b4c85e7e9f0673726849f486dff3c"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/projection-gpu.md",
+      "sha256": "1976883f74d1365ed8ecbf920f188d780ba1b9a10642f2fefefd2e156c1107da"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/motion-packs.md",
+      "sha256": "017cf8cc285ec4be2c79adeb3d451f3b2c36f6e742f74d251b2121a2fdb359f4"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/timeline/module.md",
+      "sha256": "da0bb39fcf554b8912f15f705929d704136e08b0eaec6286d2c6de0ca5a21027"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+[
+  {
+    "id": "ffmpeg-version",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07789349999802653,
+    "stdout_sha256": "40cbd764aa9f5e9ae10b41da9e53fc901c606832f05af38f67ec763a580020c5",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "skill-version",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 3.0991837000037776,
+    "stdout_sha256": "8e7f8f5ef3796cd99a3d43e93d9b171614b637e58fef72391a43755ba30fae4d",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "skill-capabilities",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+      "capabilities"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.5888728000136325,
+    "stdout_sha256": "f32d130fd4f31814cfb5a60b113601beea59fd557b9ffc10434e87d00fcf4aa7",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "skill-render",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程",
+      "--sequence-id",
+      "projection_demo",
+      "--container",
+      "mkv",
+      "--audio-codec",
+      "pcm_f32le",
+      "--pixel-format",
+      "yuv444p",
+      "--crf",
+      "0",
+      "--hardware-encode",
+      "off",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\skill-opencl.mkv",
+      "--projection-acceleration",
+      "require",
+      "--projection-device",
+      "0.0",
+      "--sequence-sampling",
+      "area",
+      "--sequence-memory-mib",
+      "1024"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 38.23124850000022,
+    "stdout_sha256": "f22e45f6a457bb4cf2ed88b91c4639c6b993e96f1d5d1dcfaf1ce0e57df71908",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "skill-frames",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\skill-opencl.mkv",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-fps_mode",
+      "passthrough",
+      "-pix_fmt",
+      "rgba",
+      "-f",
+      "framemd5",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.18907989999570418,
+    "stdout_sha256": "3e4bc2bd1b56d925861116c76b58358e504dd1eb5bfcfd49367f058a6827050c",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "skill-pcm",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\opencl-projection-20261026-case-r2\\原生 GPU 对照工程\\renders\\skill-opencl.mkv",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-acodec",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10497499999473803,
+    "stdout_sha256": "8b5efe4889b42f40ba626088b76b03c7766f8bb6b977aed499ecfec102943fdc",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

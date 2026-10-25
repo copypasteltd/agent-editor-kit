@@ -1,0 +1,20 @@
+{
+  "status": "failed",
+  "scope": "policy",
+  "method": null,
+  "installed": null,
+  "started_at_utc": "2026-10-25T18:15:30.814218+00:00",
+  "finished_at_utc": "2026-10-25T18:15:41.047916+00:00",
+  "exit_code": 1,
+  "source_files": 209,
+  "frozen_equal": true,
+  "installed_frozen_equal": true,
+  "log_sha256": "0a5ab7c974b6559e22cff632bbf333447a4e310c41d58153c7b1f8e573f263fa",
+  "result": {
+    "methods": 15,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 1,
+    "success": false
+  }
+}

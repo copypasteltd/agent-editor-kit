@@ -276,6 +276,11 @@ def validate_project(root: Path, project: dict[str, Any], *, strict_rights: bool
             acceleration_configuration(settings_value.get('acceleration'))
         except AppError as exc:
             error(exc.code, exc.message, exc.path or 'settings.acceleration')
+        from .projection_opencl import configuration as projection_configuration
+        try:
+            projection_configuration(settings_value.get('projection_acceleration'))
+        except AppError as exc:
+            error(exc.code, exc.message, exc.path or 'settings.projection_acceleration')
         if settings_value.get('pixel_pipeline') is not None:
             from .float_standard_render import configuration as float_configuration
             from .render import output_settings

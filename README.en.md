@@ -9,22 +9,39 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- projection-scanline-current -->
+<!-- opencl-projection-current -->
 
-**CLI 0.1.19 / alpha.4-local.17 / r20 kit** · 1 Skill / 17 modules. Animated crop and nested crop/fit/TRS reuse scanline parameters with unchanged bilinear/area precision. Paired three-run medians 327.62→88.41s (3.71×); all120 frames and PCM match across six renders.
+**CLI0.1.20 / alpha.4-local.18 / r21 kit** · 1 Skill / 17 modules. Native GPU crop, affine camera motion and child-canvas bilinear/area projection are installed. Same-project/codec three-run medians 77.85→12.51s (6.22×); all120 frames, clocks and PCM match across six renders. CPU remains the default; explicit policy records GPU use/fallback.
+
+[Install / 固定安装](docs/releases/CLI_0.1.20_LOCAL.md) · [GPU workflow / 使用流程](docs/product/OPENCL_PROJECTION.md) · [C28](docs/product/CASES.md#c28-opencl-projection) · [Evidence](docs/validation/OpenCL原生投影实测_2026-10-26.md)
+
+```powershell
+& $avk validate --project $project
+& $avk render --project $project --output $output --projection-acceleration prefer --projection-device 0.0 --projection-memory-mib 1024 --sequence-sampling area --sequence-memory-mib 1024 --hardware-encode off
+```
+
+![Actual installed GPU composition / silent](docs/assets/opencl-projection-20261026-r1/projection.gif)
+
+RTX3060 device-tested only;other effects/subtitles remain CPU.1080p/4K single-frame pixel equality passes;general realtime4K,long-form and natural audiovisual acceptance remain open.
+
+<!-- /opencl-projection-current -->
+
+<!-- projection-scanline-history -->
+
+**Historical / 历史 / 歷史：CLI 0.1.19 / alpha.4-local.17 / r20 kit** · 1 Skill / 17 modules. Animated crop and nested crop/fit/TRS reuse scanline parameters with unchanged bilinear/area precision. Paired three-run medians 327.62→88.41s (3.71×); all120 frames and PCM match across six renders.
 
 [Install / 固定0.1.19](docs/releases/CLI_0.1.19_LOCAL.md) · [Workflow / 使用流程](docs/product/PROJECTION_RENDERING.md) · [C27](docs/product/CASES.md#c27-projection-scanline) · [Evidence](docs/validation/裁切与序列投影实测_2026-10-26.md)
 
 ```powershell
 & $avk validate --project $project
-& $avk render --project $project --sequence-sampling area --sequence-memory-mib 1024 --output $output --hardware-encode auto
+& $avk render --project $project --sequence-sampling area --sequence-memory-mib 1024 --output $output --hardware-encode off
 ```
 
 ![Actual installed output / silent](docs/assets/projection-scanline-20261026-r2/projection.gif)
 
 CPU composition; GPU encoding is separate. This is a384×216/four-second combination measurement, with general4K/long-form and natural-quality acceptance still open.
 
-<!-- /projection-scanline-current -->
+<!-- /projection-scanline-history -->
 
 <!-- affine-scanline-history -->
 
@@ -107,13 +124,13 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r20 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r20.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r21 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r21.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
 <!-- community-materials-gpu -->
 
-**Local installed extension: CLI 0.1.19, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
+**Local installed extension: CLI 0.1.20, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
 
 [Complete workflow and limits](docs/product/COMMUNITY_MATERIALS.en.md) · [Resource catalog](docs/product/COMMUNITY_MATERIAL_CATALOG.md) · [103 named voices and actual audition scope](docs/product/COMMUNITY_VOICES.md) · [CPU evidence](docs/validation/evidence/community-materials-20261025-r1/cpu/verification.json) · [GPU evidence](docs/validation/evidence/community-materials-20261025-r1/gpu/verification.json).
 
@@ -455,8 +472,8 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F34 | Parameterized templates and variants | Local JSON templates + typed variables → editable variants, batch inputs and template snapshots. | `template apply/batch` | Includes asset/color/enum types; complex conditional graphs and expression evaluation are pending. |
 | F35 | Asset indexing and reusable fragments | Asset folders/edited clips → search, duplicates/similarity, cross-project fragments and dependency closure. | `library index/search/duplicates/similar; fragment` | User-owned libraries; no bundled commercial stock subscription or licensed-music catalog. |
 | F36 | Frame/range preview and caching | Projects + explicit frames/ranges → PNG/short video/cache and verifiable sample evidence. | `preview frame/range; cache; preview cache-*` | Preview does not validate the entire delivery; renderer/color path and cache signatures must match. |
-| F37 | Delivery, encoding and hardware probes | Projects → MP4/WebM/MKV, codec/pixel/audio configuration, alpha output and manifests. | `render` | Codecs depend on local FFmpeg; hardware is probed, CPU effects are not globally GPU-ported, and real-time/4K performance is not guaranteed. |
-| F38 | Persistent queues, retry and cancel | Frozen snapshots → local jobs, bounded workers, explicit retry/cancel and serialized metadata commits. | `queue enqueue/list/inspect/run/cancel` | Sequential by default; concurrency has gates and is not distributed cloud rendering. |
+| F37 | Delivery,encoding and GPU projection | Projects → MP4/WebM/MKV,explicit OpenCL crop/affine/child-canvas samplers,codec probes and manifests. | `render --projection-acceleration; render` | Requires native GPU binary64/image probes;CPU default,other effects remain CPU,no realtime/general4K guarantee. |
+| F38 | Persistent queues,retry and cancel | Frozen snapshots → local jobs,bounded workers,explicit retry/cancel and serialized commits. | `queue enqueue/list/inspect/run/cancel` | Per-job GPU projection policy rejects --reuse-identical bypass;not cloud rendering. |
 | F39 | Output, scopes and golden checks | Actual encoded files → stream/fps/canvas/duration, loudness/black frames, scopes, masks and golden differences. | `quality check/scopes/mask/golden` | Automatic checks, static review, playback and listening are recorded separately, without general creative-quality certification. |
 | F40 | Rights ledger and local policy | Media/font/LUT/model/template evidence → dependency ledger, history, impact/retraction and publish gates. | `rights; policy audit; render --publish` | --publish checks local rights without uploading; the ledger does not adjudicate copyright. |
 | F41 | Project and timeline interchange | Agent JSON/package, OTIO, Kdenlive MLT and lawful local plaintext drafts → import/export and loss reports. | `convert import/export` | Per-feature Exact/Approximate/Unsupported/Failed reports; plaintext drafts neither run Jianying nor decrypt/fetch proprietary resources. |
@@ -495,7 +512,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | S13 | Bundled community resources | Offline catalog | 359 source/license-pinned music/jingle/SFX/font files | `materials list/inspect/verify/ingest` | Per-resource rights; no commercial stock subscription |
 | S14 | Local speech/translation | Native model workers | Four optional pinned CPU/CUDA packs; 103 voice mappings and OPUS text/subtitles | `voice / translate / model-pack` | At least seven distinct voices have real outputs; complete 103-voice auditions and human acceptance remain open |
 | S15 | BGM preparation and mixing | Native FFmpeg audio | Explicit trim/loop/fades, independent voice/music stems and ducking | `music prepare/mix` | No composition, voice truncation or seam-repair promise |
-| S16 | GPU compatibility | Native NVIDIA libraries | `auto/cpu/cuda`, free-VRAM check, explicit provider/fallback | `gpu inspect; --device` | RTX 3060 tested; optional NVIDIA/Intel terms preserved |
+| S16 | GPU compatibility | Existing native OpenCL ICD / NVIDIA model runtimes | Projection off/prefer/require,models auto/cpu/cuda;actual device,probes,budget and fallback | `render --projection-acceleration; gpu inspect; --device` | RTX3060 tested;projection operators only,external driver/library terms separate |
 | S17 | Native Windows capture | FFmpeg gdigrab / DirectShow | Explicit source/device IDs, finite duration, full decode and asset registration | `capture devices/record` | Actual CPU/GPU window test; camera/microphone/AV sync pending |
 | S18 | Visual semantics and empirical calibration | Explicit native SigLIP2 worker | Existing Torch/Transformers/weights; profile binds index/implementation/kind/actual device | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | Scores are not probabilities; cold start, scale and calibrated-project migration remain limited |
 | S19 | Independent four-source separation | Native Torch/TorchAudio HDemucs worker | Explicit native Python, weights/evidence/implementation hashes; auto/cpu/cuda, four float WAV/tracks | `audio adapter; audio separate-stems` | Torch/weights excluded from base ZIP; natural listening and weight licensing remain open |
@@ -599,7 +616,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.17/final-r1/installed/`, CLI 0.1.19. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.18/final-r2/installed/`, CLI 0.1.20. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -930,6 +947,14 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R136 | 2026-10-26 Registered Skill | Actual render/validate;120 frames/PCM match old installation;68 files/17 modules | [Evidence](docs/validation/evidence/projection-scanline-20261026-r1/skill-r3/verification.json) |
 | R137 | 2026-10-26 Actual case/media | Self-authored original/editable package, complete MP4/GIF decode and extracted-frame inspection; first authoring-field rejection retained; no playback/listening acceptance | [Evidence](docs/validation/evidence/projection-scanline-20261026-r1/preview-r4/verification.json) |
 | R138 | 2026-10-26 Kit/full documentation | Independent r20 kit registration/calls; trilingual README/C27/workflow/evidence updated;131 historical rows/38 original closures preserved | [Evidence](docs/validation/evidence/projection-scanline-20261026-r1/final-delivery-r1/verification.json) |
+| R139 | 2026-10-26 Pinned offline install | CLI0.1.20/local.18-final-r2;209 product files byte-match the installed ZIP; previous bundles retained | [Evidence](docs/validation/evidence/opencl-projection-20261026-r1/installation-final-r2/verification.json) |
+| R140 | 2026-10-26 Native GPU/4K pixels | 18 actual-GPU tests,zero skips;1080p/4K affine whole frames,4K area-source reduction,alpha/clocks/all channels and independent geometry/integration | [Evidence](docs/validation/evidence/opencl-projection-20261026-r1/tests/native-final-r1/verification.json) |
+| R141 | 2026-10-26 Render/queue/schema regression | 119 render-policy/sampling/alpha/clock/hardware,63 sequence,47 queue/schema and122 CLI methods pass separately,zero skips | [Evidence](docs/validation/evidence/opencl-projection-20261026-r1/tests/regression-final-r1/verification.json) |
+| R142 | 2026-10-26 Paired identical-codec timing | Three CPU/GPU runs each: medians77.846→12.513s,6.221×;all120 frames/clocks/full PCM match across six;not realtime4K acceptance | [Evidence](docs/validation/evidence/opencl-projection-20261026-r1/benchmark-r2/verification.json) |
+| R143 | 2026-10-26 Failure/cancel/resume/queue | Unavailable required device fails;cancelled operation resumes saved settings;actual GPU queue and quality pass;both120-frame/PCM outputs match | [Evidence](docs/validation/evidence/opencl-projection-20261026-r1/controls-r1/verification.json) |
+| R144 | 2026-10-26 Actual unified Skill | The single registered launcher uses final installed GPU projection;120 frames/PCM match;69 files/17 internal modules,no source fallback | [Evidence](docs/validation/evidence/opencl-projection-20261026-r1/skill-r2/verification.json) |
+| R145 | 2026-10-26 Case/media/workflow | Self-authored original,actual GPU MP4/GIF,editable package,SHA/full decode;no continuous-playback/listening or natural-quality acceptance | [Evidence](docs/validation/evidence/opencl-projection-20261026-r1/preview-r2/verification.json) |
+| R146 | 2026-10-26 Trilingual docs/isolated kit | README,function/service detail,Skill,C28 and isolated r21 kit synchronized;138 historical evidence rows/38 original closures retained | [Evidence](docs/validation/evidence/opencl-projection-20261026-r1/final-delivery-r1/verification.json) |
 
 ## Current limits and development direction
 

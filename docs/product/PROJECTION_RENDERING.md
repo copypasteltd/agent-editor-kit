@@ -23,7 +23,7 @@ $aekProject = Join-Path $aekSource 'workspace/projection-client'
 $aekCase = Join-Path $aekSource 'docs/assets/projection-scanline-20261026-r2/editable-projection.aevpkg.zip'
 & $avk convert import --input $aekCase --output $aekProject
 & $avk validate --project $aekProject
-& $avk render --project $aekProject --sequence-id projection_demo --output (Join-Path $aekProject 'renders/client.mp4') --sequence-sampling area --sequence-memory-mib 1024 --hardware-encode auto
+& $avk render --project $aekProject --sequence-id projection_demo --output (Join-Path $aekProject 'renders/client.mp4') --sequence-sampling area --sequence-memory-mib 1024 --hardware-encode off
 ```
 
 该工程包含 640×360 自制图卡、480×270 子序列、384×216/30fps/4秒成片、动态裁切、子序列反向播放和 `arc_push` 普通可编辑关键帧。可以用 `motion pack apply` 调整运镜；先查看属性冲突，明确同意替换后使用 `--replace`。画面选型向客户展示真实 GIF/MP4，不以低清预览推断 4K 性能。
@@ -45,3 +45,5 @@ Each plane/slice refreshes constants at X=0 on every row. A bounded dependency g
 面积核仍是源轴对齐矩形，不是旋转多边形积分。`sequence-memory-mib` 约束可达序列投影工作缓冲，不包含解码、编码、并行任务或整个进程 RSS。尚未验收全部 4K/长片、自然素材运镜美学或 GPU 合成。旧版本实测、失败和全部 G01–G38 原关闭条件保留。
 
 Area remains a source-axis rectangle, not rotated-polygon integration. The quota covers reachable projection buffers, not total process RSS. General 4K/long-form performance, natural-motion aesthetics and GPU composition remain unaccepted. Historical evidence and all original goal closure conditions remain intact.
+
+2026-10-26: [CLI0.1.20 native GPU projection / 原生GPU投影](OPENCL_PROJECTION.md) adds explicit OpenCL crop/affine/child-canvas samplers,actual-device/precision probes and failure/queue handling. Earlier CPU timing and scope remain historical; other effects stay CPU.

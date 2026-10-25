@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "phase": "controls",
+  "started_at_utc": "2026-10-25T18:51:26.879366+00:00",
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "human_listening": false,
+  "continuous_playback": false,
+  "natural_motion_quality_acceptance": false,
+  "affinity": {
+    "original_mask": 4095,
+    "selected_mask": 15,
+    "logical_processors": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "scope": "This evidence process and its children only; not an isolated host benchmark."
+  },
+  "ffmpeg": {
+    "path": "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+    "sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+    "version": "ffmpeg version 8.1-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers"
+  },
+  "required_failure_preserved": true,
+  "cancel_before_gpu": true,
+  "resume_actual_opencl": true,
+  "queued_actual_opencl": true,
+  "full_frames_and_pcm_equal": true,
+  "combined_projection_nvenc": true,
+  "combined_full_decode": true,
+  "combined_pcm_equal": true,
+  "operation_id": "render_20261025185133_c0fe78d9",
+  "finished_at_utc": "2026-10-25T18:52:25.744210+00:00"
+}

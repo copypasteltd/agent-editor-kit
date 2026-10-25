@@ -1,0 +1,139 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-10-25T10:11:03.298003+00:00",
+  "staged_files": 26,
+  "all_staged_bytes_equal_disk": true,
+  "deletions": 0,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 91446,
+      "sha256": "940b0f63696258310ebf94b65d52efdc9077c7d2a6df42d680799423b23fd501"
+    },
+    {
+      "path": "README.en.md",
+      "bytes": 121355,
+      "sha256": "7ff7b2569fc6d69ed51b6cf32ca5c373ea5e7cc49e1f819e9a9ce86da8e43e60"
+    },
+    {
+      "path": "README.md",
+      "bytes": 112429,
+      "sha256": "323e45457941e96565c068bab4adf25401f56fb3b7d97afc7e7575acccb8f0f6"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "bytes": 112837,
+      "sha256": "20170444c9f35784f4508c9cfb6843964869c316442dede2d6270848bd176e5f"
+    },
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "bytes": 36111,
+      "sha256": "1cd4a60111c20c5108c0f9a9faae24c6c921ebb5e83c51d72ac1ca0976fd0138"
+    },
+    {
+      "path": "docs/product/IMPLEMENTATION_PLAN_20261025.md",
+      "bytes": 11195,
+      "sha256": "f49bbf1aa53f4f2aa50587a2db9991389540458310df60d66541c64b1110a4ce"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r13/calls.json",
+      "bytes": 3306,
+      "sha256": "cc913ded95eae1f0fe6702776518edfbe133291f0012184743795a733aa4ca7f"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r13/documentation-audit.json",
+      "bytes": 1148,
+      "sha256": "81671343a4c3aa8c5e4343588b1c5d22fba070944f1c97b72568c829b93cc206"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r13/executed-documentation-auditor.py",
+      "bytes": 11205,
+      "sha256": "20dec8a2d2e02e9202f00cd5a5a02c40843b0eacb94449ef5455dbf6c881b85b"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r13/executed-generator.py",
+      "bytes": 11030,
+      "sha256": "de7b43c3d4b047b72c7cce5bfcc6cf6fdb6e010de61b0db44bb321840de5bf22"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r13/github-releases.raw.json",
+      "bytes": 23226,
+      "sha256": "85c0c79378e4caf5ae8fd76815ec224ff1c9f3534fda09a08c0933b6f75121c6"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r13/installed-source-comparison.json",
+      "bytes": 37029,
+      "sha256": "6c6f6ec5495ff5c0f3bd0fdb84f3d8889ee50751094bcd922d061f3cf099f4da"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r13/inventory.json",
+      "bytes": 6236,
+      "sha256": "ae59bfd40e6e2cea733f1822e75f7c54326bcb3e7b97fe3f742e445d4d94a0cd"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r13/logs/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r13/logs/capabilities.stdout.json",
+      "bytes": 110208,
+      "sha256": "6c6a46013f17a0fe46e83ed62c5163ae3d37eddeb53a2570dd98a636e4e08ad1"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r13/logs/doctor.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r13/logs/doctor.stdout.json",
+      "bytes": 2909,
+      "sha256": "660f985d88cfeacdb76265872ff975f19bd954f2a05f100aaa6e68db35071ee6"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r13/logs/gpu-inspect.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r13/logs/gpu-inspect.stdout.json",
+      "bytes": 539,
+      "sha256": "08cc02844e9a0d5b7b7e56dfe09578d985899f14dc038c0d106235be133f6a3a"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r13/logs/model-pack-list.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r13/logs/model-pack-list.stdout.json",
+      "bytes": 3111,
+      "sha256": "0006f8881c6fb08e34a0056ff76995ea87297da8d5342648af8ff43459f82f58"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r13/logs/schema-show.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r13/logs/schema-show.stdout.json",
+      "bytes": 34103,
+      "sha256": "7357a67bd23c4d7165959c207c9d3be068a21624716b170bf2080ec7da9ef5a8"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r13/logs/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/goal-gaps-20261025-r13/logs/version.stdout.json",
+      "bytes": 1167,
+      "sha256": "e5aa342494ca8a63135bb2173d119bc9cadec0df5989309cd1249b9eb8ae793d"
+    },
+    {
+      "path": "scripts/assess_goal_gaps_20261025_r13.py",
+      "bytes": 11205,
+      "sha256": "20dec8a2d2e02e9202f00cd5a5a02c40843b0eacb94449ef5455dbf6c881b85b"
+    }
+  ]
+}

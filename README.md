@@ -791,6 +791,7 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R92 | 性能失败保留 / Timing limitation | 1-second timeout actually 81.739s; imports/hash/load/inference observable; no persistent service or deadline pass | [2026-10-25 evidence](docs/validation/evidence/semantic-recovery-20261025-r1/faults-r1/search-timeout/verification.json) · [Scope](docs/validation/语义任务中断恢复实测_2026-10-25.md) |
 | R93 | 单入口交付 / Single-entry delivery | CLI 0.1.12 / local.10 / r11; 1 Skill / 17 modules; same-host isolated kit, no clean-machine claim | [2026-10-25 evidence](docs/validation/evidence/semantic-recovery-20261025-r1/kit-r2/verification.json) · [Scope](docs/validation/语义任务中断恢复实测_2026-10-25.md) |
 | R94 | 完整目标复核 / Full goal review | All G01–G38 original closure conditions and R01–R87 retained; public release/API checked separately; no overall percentage | [2026-10-25 evidence](docs/validation/evidence/semantic-recovery-20261025-r1/final-delivery-r2/verification.json) · [Scope](docs/validation/语义任务中断恢复实测_2026-10-25.md) |
+| R95 | 当前完整目标差距评估 | 真实统一 Skill 另 6 次只读调用；CLI 0.1.12、202 个源码/安装文件一致、75 项能力与 38 组原关闭条件保留；官方 API 仍 alpha.3 / CLI 0.1.2 | [编号差距与验收条件](docs/product/GOAL_GAPS_20261025.md) · [本次原始响应/API](docs/validation/evidence/goal-gaps-20261025-r13/inventory.json) · [历史保留/链接核对](docs/validation/evidence/goal-gaps-20261025-r13/documentation-audit.json)；2026-10-25，本次 0 新推理/渲染/听审，不给出总体完成百分比；R01–R94 保留 |
 
 ## 当前边界与开发方向
 

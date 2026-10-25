@@ -1532,3 +1532,7 @@ docs/skills/community-unified-skill-package-0.1.12.json -text -whitespace
 docs/specs/语义任务发布与中断恢复契约_20261025.md text eol=lf
 docs/validation/语义任务中断恢复实测_2026-10-25.md text eol=lf
 scripts/*semantic_recovery*20261025.py text eol=lf
+
+# Read-only assessment receipts retain actual native output bytes and hashes.
+docs/validation/evidence/goal-gaps-20261025-r13/** -text -whitespace
+scripts/assess_goal_gaps_20261025_r13.py text eol=lf

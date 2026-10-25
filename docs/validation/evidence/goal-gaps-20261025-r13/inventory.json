@@ -1,0 +1,179 @@
+{
+  "status": "passed-read-only-installed-review",
+  "baseline_commit": "1b867ce41ffee04112367a5c9548473db35042b0",
+  "started_at_utc": "2026-10-25T10:07:06.530080+00:00",
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "new_model_forwards": 0,
+  "new_renders": 0,
+  "human_listening": false,
+  "historical_regression_rerun": false,
+  "new_competitor_market_audit": false,
+  "overall_completion_percentage": null,
+  "known_timeout_failure": {
+    "receipt": "docs/validation/evidence/semantic-recovery-20261025-r1/faults-r1/search-timeout/verification.json",
+    "sha256": "499dcb0e668514f5b94e0875e4a2f74fb7a07310852e1191198e2c9693c2b078",
+    "elapsed_seconds": 81.7392989,
+    "actual_timeout_error": true,
+    "timing_acceptance": false,
+    "new_execution": false
+  },
+  "checked_at_utc": "2026-10-25T10:07:26.945307+00:00",
+  "runtime": {
+    "release": "v0.1.0-alpha.4-local.10",
+    "python": "C:\\Python313\\python.exe",
+    "installed_directory": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.10\\final-r1\\installed",
+    "manifest_sha256": "sha256:4d4a9dc8d80aa45123619bf0c54cc494bb54c5cc3e7c6e6997130485d01dd3cf",
+    "launcher_sha256": "322dda3168534b883be4b2d18509624060e4db99afc9f5bde91602c0f638755e",
+    "native_only": true,
+    "community_config": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-runtime.json",
+    "semantic_config": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\semantic-runtime.json"
+  },
+  "installed_cli": "0.1.12",
+  "calls": [
+    {
+      "name": "version",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "version"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 5.730541199998697,
+      "stdout_sha256": "e5aa342494ca8a63135bb2173d119bc9cadec0df5989309cd1249b9eb8ae793d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "doctor",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "doctor"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 2.779809399995429,
+      "stdout_sha256": "660f985d88cfeacdb76265872ff975f19bd954f2a05f100aaa6e68db35071ee6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "capabilities",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "capabilities"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 2.0916075999994064,
+      "stdout_sha256": "6c6a46013f17a0fe46e83ed62c5163ae3d37eddeb53a2570dd98a636e4e08ad1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "schema-show",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "schema",
+        "show"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 1.973390399994969,
+      "stdout_sha256": "7357a67bd23c4d7165959c207c9d3be068a21624716b170bf2080ec7da9ef5a8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "gpu-inspect",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "gpu",
+        "inspect"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 2.054734400000598,
+      "stdout_sha256": "08cc02844e9a0d5b7b7e56dfe09578d985899f14dc038c0d106235be133f6a3a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "model-pack-list",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "model-pack",
+        "list"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 2.0640866000030655,
+      "stdout_sha256": "0006f8881c6fb08e34a0056ff76995ea87297da8d5342648af8ff43459f82f58",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "capability_count": 75,
+  "capability_status_counts": {
+    "implemented_with_limits": 47,
+    "implemented": 20,
+    "degraded": 1,
+    "local_adapter_only": 7
+  },
+  "product_python_files": 202,
+  "source_and_installed_equal": true,
+  "registered_skill": "agent-ffmpeg-local-editor",
+  "internal_modules": 17,
+  "skill_pinned_files": 65,
+  "kit_sha256": "b9bcaf26f82714e40111e222ae10d0d0ff06fa0a5a75c2507f844a9a7ad53471",
+  "public_release_check": {
+    "url": "https://api.github.com/repos/copypasteltd/agent-editor-kit/releases?per_page=10",
+    "http_status": 200,
+    "error": null,
+    "response_sha256": "85c0c79378e4caf5ae8fd76815ec224ff1c9f3534fda09a08c0933b6f75121c6",
+    "releases": [
+      {
+        "tag_name": "v0.1.0-alpha.3",
+        "draft": false,
+        "prerelease": true,
+        "published_at": "2026-10-24T12:52:48Z",
+        "html_url": "https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3"
+      }
+    ],
+    "latest_published_tag": "v0.1.0-alpha.3"
+  },
+  "gap_groups": 38,
+  "fully_closed_groups": 0,
+  "generator_sha256": "de7b43c3d4b047b72c7cce5bfcc6cf6fdb6e010de61b0db44bb321840de5bf22"
+}

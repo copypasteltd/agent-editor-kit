@@ -319,7 +319,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | S11 | Rights and interchange | Local evidence and file exchange | Ledger/policy/package hashes/loss reports without invoking a proprietary editor. | `rights / policy / convert` | Does not grant commercial rights to third-party media/models. |
 | S12 | Creative and campaign assistance | Agent task guidance | Uses supplied business information and data to produce scripts/suggestions/analysis. | `$agent-ffmpeg-local-editor` / K01–K17 | No ad-account integration, buying or automatic data collection. |
 | S13 | Bundled community resources | Offline catalog | 359 source/license-pinned music/jingle/SFX/font files | `materials list/inspect/verify/ingest` | Per-resource rights; no commercial stock subscription |
-| S14 | Local speech/translation | Native model workers | Four optional pinned CPU/CUDA packs; 103 voice mappings and OPUS text/subtitles | `voice / translate / model-pack` | Three audition voices generated; human review remains separate |
+| S14 | Local speech/translation | Native model workers | Four optional pinned CPU/CUDA packs; 103 voice mappings and OPUS text/subtitles | `voice / translate / model-pack` | At least seven distinct voices have real outputs; complete 103-voice auditions and human acceptance remain open |
 | S15 | BGM preparation and mixing | Native FFmpeg audio | Explicit trim/loop/fades, independent voice/music stems and ducking | `music prepare/mix` | No composition, voice truncation or seam-repair promise |
 | S16 | GPU compatibility | Native NVIDIA libraries | `auto/cpu/cuda`, free-VRAM check, explicit provider/fallback | `gpu inspect; --device` | RTX 3060 tested; optional NVIDIA/Intel terms preserved |
 | S17 | Native Windows capture | FFmpeg gdigrab / DirectShow | Explicit source/device IDs, finite duration, full decode and asset registration | `capture devices/record` | Actual CPU/GPU window test; camera/microphone/AV sync pending |
@@ -425,7 +425,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host already has `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.3/installed/`. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.7/final-r2/installed/`, CLI 0.1.9. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -690,6 +690,7 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R70 | Actual bilingual edit/package | 8 CLI calls, 19 seconds/570 frames; source-placement PCM max difference 0; package PCM/RGB exact | [Evidence](docs/validation/evidence/subtitle-dubbing-20261025-r1/demo-r1/verification.json) · [Separate scope](docs/validation/evidence/subtitle-dubbing-20261025-r1/demo-r1/executed-generator.py); 2026-10-25; C18 silent diagnostic retains awkward translation; not natural audiovisual acceptance |
 | R71 | Unified Skill r8/local loading | One entry/17 modules; actual Skill: another 9 CLI calls, both CUDA tasks; separate kit inventory/registration check | [Evidence](docs/validation/evidence/subtitle-dubbing-20261025-r1/skill-r1/verification.json) · [Separate scope](docs/validation/evidence/subtitle-dubbing-20261025-r1/kit-r1/verification.json); 2026-10-25; Same physical host; old kits/public alpha.3 retained |
 | R72 | G01–G38 / current goal review | CLI 0.1.9, 75 declarations; all 38 original closure conditions retained | [Numbered gap assessment](docs/product/GOAL_GAPS_20261025.md) · [Actual entry/API](docs/validation/evidence/goal-gaps-20261025-r10/inventory.json) · [History/link audit](docs/validation/evidence/goal-gaps-20261025-r10/documentation-audit.json); 2026-10-25; review calls counted separately from inference/render; no overall completion percentage |
+| R73 | Current goal and delivery review | Six additional actual read-only Skill calls; 197 source/installed files match; 75 declarations and all 38 unmet conditions retained; current install path, footer version and cumulative voice wording corrected | [Current gaps/closure conditions](docs/product/GOAL_GAPS_20261025.md) · [Actual responses/API](docs/validation/evidence/goal-gaps-20261025-r11/inventory.json) · [History/link audit](docs/validation/evidence/goal-gaps-20261025-r11/documentation-audit.json); 2026-10-25; zero new renders/inference/listening; historical R01–R72 preserved; public remains alpha.3 |
 
 ## Current limits and development direction
 
@@ -697,11 +698,11 @@ The deliverable is an offline, editable and auditable Agent CLI workflow with ex
 
 [The complete-goal assessment](docs/product/GOAL_GAPS_20261025.md) updates every G01–G38 against CLI 0.1.9. A single Skill, 500 looks/previews, 359 resources, GPU speech/translation, joint subtitle dubbing, stems/recovery and controlled word activity timing are delivered. Natural audiovisual quality, complex combinations, advanced AI, content/templates, autonomous Agent tasks, long-job reliability and a newer public release remain open. R67–R72 retain separate real scopes and limits; no overall completion percentage is established. The [2026-10-24 assessment](docs/product/GOAL_GAPS_20261024.md) is historical.
 
-Exact audio-channel relationship protection and native capture remain delivered within their documented scope. Extremely short-window pitch, precise alignment, actual camera/microphone recording and AV synchronization remain unaccepted. CLI 0.1.5 adds limited visual semantic retrieval; neither the 500 looks nor the 74 declarations establish an overall completion percentage.
+Exact audio-channel relationship protection and native capture remain delivered within their documented scope. Extremely short-window pitch, natural-speech alignment, actual camera/microphone recording and AV synchronization remain unaccepted. CLI 0.1.5 introduced limited visual semantic retrieval; neither the 500 looks nor the current 75 declarations establish an overall completion percentage.
 
 Use real client media and minimal reproducible projects to identify gaps, implement/check them individually and publish new versions without replacing prior bundles/digests/tags. Record actual successful artifacts rather than inferred completion.
 
-**Latest delivery (R54–R58, 2026-10-25):** local CLI 0.1.7 / alpha.4-local.5 and r6 kit; one Skill / 17 internal modules. Bounded native process and four-source workspace recovery is implemented and tested. Legacy caches and the complete fault matrix remain open. The 74 declarations are 20 implemented, 46 limited, seven adapter-only and one degraded, not a completion percentage. Original G15/G16/G20/G22/G26 failures and all 38 closure conditions remain. Public alpha.3 retains CLI 0.1.2.
+**Current delivery and review (R67–R73, 2026-10-25):** local CLI 0.1.9 / alpha.4-local.7 and r8 kit; one Skill / 17 internal modules. Joint subtitle dubbing, managed recovery, the installed build and editable package roundtrips have real evidence. Natural quality, other failure paths, long-form performance and autonomous Agent tasks remain unaccepted. The 75 declarations are 20 implemented, 47 limited, seven adapter-only and one degraded, not a completion percentage. R73 only reviews current status; all 38 original closure conditions and historical failures remain. Public alpha.3 retains CLI 0.1.2.
 
 ## Documentation, provenance and maintenance
 

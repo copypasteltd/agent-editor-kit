@@ -319,7 +319,7 @@ flowchart LR
 | S11 | 權利與交換服務 | 本地證據與文件交換 | 臺賬/策略/包雜湊/損失報告，不調用專有編輯器。 | `rights / policy / convert` | 不自動授予第三方素材/模型商業權利。 |
 | S12 | 創意與運營支持 | Agent 任務指導 | 依賴調用方提供業務資訊與資料，產出腳本/建議/分析。 | `$agent-ffmpeg-local-editor` / K01–K17 | 不包含廣告平臺賬號接入、投放或自動采集資料。 |
 | S13 | 內建社群素材服務 | 離線目錄 | 359 項有來源/許可的 BGM、短樂、音效、字型 | `materials list/inspect/verify/ingest` | 逐項權利，不是商業素材訂閱庫 |
-| S14 | 本地配音/翻譯 | 原生模型 worker | 4 個可選 CPU/CUDA 包，103 音色對映和 OPUS 文字/字幕 | `voice / translate / model-pack` | 實際生成 3 音色試聽檔案，人工驗收另列 |
+| S14 | 本地配音/翻譯 | 原生模型 worker | 4 個可選 CPU/CUDA 包，103 音色對映和 OPUS 文字/字幕 | `voice / translate / model-pack` | 累計至少 7 個不同音色有真實輸出；103 音色完整試聽及人工驗收未完成 |
 | S15 | 配樂準備與混音 | 原生 FFmpeg 音訊 | 顯式擷取/迴圈/淡化、獨立人聲/配樂、閃避 | `music prepare/mix` | 不作曲、不靜默裁人聲、不承諾接縫修復 |
 | S16 | GPU 相容服務 | 原生 NVIDIA 執行庫 | auto/cpu/cuda、視訊記憶體預檢、實際 provider/回退 | `gpu inspect; --device` | RTX 3060 實測，NVIDIA/Intel 依賴許可另列 |
 | S17 | 原生 Windows 擷取 | FFmpeg gdigrab / DirectShow | 明確來源、裝置 ID、有限時長、完整解碼與素材登記 | `capture devices/record` | 真實視窗 CPU/GPU 已驗；攝影機/麥克風/同步未驗 |
@@ -425,7 +425,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本機已經安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.3/installed/`。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
+本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.7/final-r2/installed/`，CLI 0.1.9；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -688,6 +688,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R70 | 實際雙語成片與工程包 | 8 次 CLI，19 秒/570 影格；原聲音擺放 PCM 最大差 0，工程往返 PCM/RGB 相同 | [Evidence](docs/validation/evidence/subtitle-dubbing-20261025-r1/demo-r1/verification.json) · [Separate scope](docs/validation/evidence/subtitle-dubbing-20261025-r1/demo-r1/executed-generator.py); 2026-10-25; C18 無聲診斷，原錯譯保留；不是自然視聽驗收 |
 | R71 | 統一 Skill r8 與本機載入 | 一個註冊入口/17 內部模組；真實 Skill 另 9 次 CLI、兩個 CUDA 任務；小型 kit 獨立清單/註冊核驗 | [Evidence](docs/validation/evidence/subtitle-dubbing-20261025-r1/skill-r1/verification.json) · [Separate scope](docs/validation/evidence/subtitle-dubbing-20261025-r1/kit-r1/verification.json); 2026-10-25; 同一實體主機；舊 kit/公開 alpha.3 未覆蓋 |
 | R72 | G01–G38 目前目標差距 | CLI 0.1.9，75 項宣告；38 組原關閉條件全部保留 | [完整編號評估](docs/product/GOAL_GAPS_20261025.md) · [真實入口/API](docs/validation/evidence/goal-gaps-20261025-r10/inventory.json) · [歷史列/連結稽核](docs/validation/evidence/goal-gaps-20261025-r10/documentation-audit.json)；2026-10-25，唯讀盤點與模型/算繪分開，無總體完成百分比 |
+| R73 | 目前目標與交付狀態複核 | 統一 Skill 另 6 次唯讀呼叫成功；197 個原始碼/安裝檔案一致；75 項宣告、38 組未關閉條件不變；修正目前安裝路徑、頁尾版本及累計音色說明 | [目前差距/關閉條件](docs/product/GOAL_GAPS_20261025.md) · [實際回應/API](docs/validation/evidence/goal-gaps-20261025-r11/inventory.json) · [歷史保留/連結稽核](docs/validation/evidence/goal-gaps-20261025-r11/documentation-audit.json)；2026-10-25，0 新算繪/推論/人工聽審，歷史 R01–R72 保留，公開仍 alpha.3 |
 
 ## 當前邊界與開發方向
 
@@ -699,7 +700,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 
 下一步以真實客戶素材與最小可復現工程收集缺口，逐項補齊、實測、發布新版本；不覆蓋既有發布包/摘要/標籤。只按實際成功產物更新核驗。
 
-**最新交付（R54–R58，2026-10-25）：** 本機 CLI 0.1.7 / alpha.4-local.5、r6 kit，仍為 1 Skill/17 內部模組。部分 G33 原生程序/四軌暫存/強制中斷復原已實作並實測；舊非管理快取與完整故障矩陣仍開放。74 項聲明為 20 已實作、46 有限制、7 適配器、1 降級，不是完成率。G15/G16/G20/G22/G26 原失敗及全部 38 組關閉條件保留；公開仍 alpha.3 / CLI 0.1.2。
+**目前交付與複核（R67–R73，2026-10-25）：** 本機 CLI 0.1.9 / alpha.4-local.7、r8 kit，1 Skill/17 內部模組。字幕翻譯配音聯合流程、受管復原、安裝版及工程往返已實測；自然品質、其他故障路徑、長片效能和 Agent 自主任務仍待驗收。75 項宣告為 20 已實作、47 有限制、7 適配器、1 降級，不是完成率。R73 僅複核目前狀態，全部 38 組原關閉條件和歷史失敗仍保留；公開仍 alpha.3 / CLI 0.1.2。
 
 ## 文件體系、來源與維護
 

@@ -1044,6 +1044,15 @@ def build_capability_manifest() -> dict[str, Any]:
                     "runtime_versions_recorded_but_complete_os_and_python_dependency_closure_not_bundled"],
             },
             "render": {
+                "affine_expression_reuse": {
+                    "engine": "native-geq-scanline-v1", "status": "implemented_with_limits",
+                    "scope": "fixed_canvas_affine_video_filters",
+                    "invariants": ["refresh_at_each_plane_slice_scanline_X_zero", "pure_expressions_only",
+                        "preserve_half_pixel_coordinates_and_arithmetic_order", "premultiplied_float_bilinear_sampler_unchanged",
+                        "pixel_dependent_or_stateful_expressions_keep_legacy_evaluation"],
+                    "limits": ["CPU_composition", "not_all_geq_filters_or_sequence_crop_fit_projection",
+                        "no_global_frame_cache", "not_full_4K_long_form_or_GPU_composition_acceptance"],
+                },
                 "status": "implemented",
                 "video_frame_clock": {
                     "protocol": "rational-local-video-clock-v1",

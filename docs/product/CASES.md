@@ -642,3 +642,15 @@ CLI 0.1.13 在实际模型/运行库字节读取中响应超时和取消，部�
 六条 MP4 各为 4 秒/30fps/120 帧；六条 GIF 各 4 秒/10fps/40 帧。原生裁切前后字节相同，非线性嵌套倒放的独立几何 oracle 通过；换时长/画幅可复用。捕获外部包和原工程不可用后，导入工程及真实注册 Skill 的 120 帧分别与原结果相同。
 
 本地编辑包 `workspace/motion-pack-20261025-installed-r1/editable-motion.aevpkg.zip`，项目在同目录 `导入工程/`。已做程序完整解码与联系表静帧目检，未做连续播放/人工美学验收。65 点空间折线、CPU 变换、约 65 秒的四秒旋转样例和跟踪组合边界明确保留；这是 G04 子项，不是完整目标验收。
+
+<a id="c26-affine-scanline"></a>
+
+## C26 仿射扫描行复用 / Affine scanline reuse
+
+固定画布旋转/缩放自动复用扫描行参数；同工程三轮中位数 95.03 → 30.27 秒（3.14×），六次全部120帧及PCM相同。CPU合成，GPU编码仍显式选择。
+
+[使用 / Workflow](AFFINE_RENDERING.md) · [原始命令、完整逐帧与计时 / Evidence](../validation/仿射扫描行复用实测_2026-10-25.md) · [原图](../assets/affine-scanline-20261025-r1/original.png) · [MP4](../assets/affine-scanline-20261025-r1/detail-scan.mp4)
+
+![Actual installed output](../assets/affine-scanline-20261025-r1/detail-scan.gif)
+
+Four-second self-authored graphic, silent; no natural-footage or continuous-playback acceptance. Full goal remains active.

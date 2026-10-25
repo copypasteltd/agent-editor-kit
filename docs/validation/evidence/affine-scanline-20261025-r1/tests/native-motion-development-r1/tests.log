@@ -1,0 +1,11 @@
+test_actual_orbit_pixels_follow_independent_analytic_circle (test_motion_pack_native.MotionPackNative.test_actual_orbit_pixels_follow_independent_analytic_circle) ... ok
+test_all_six_recipes_produce_distinct_fully_decodable_native_frames (test_motion_pack_native.MotionPackNative.test_all_six_recipes_produce_distinct_fully_decodable_native_frames) ... ok
+test_capture_reuses_native_easing_in_another_canvas_and_duration (test_motion_pack_native.MotionPackNative.test_capture_reuses_native_easing_in_another_canvas_and_duration) ... ok
+test_nonlinear_nested_reverse_samples_author_clock_instead_of_parent_progress (test_motion_pack_native.MotionPackNative.test_nonlinear_nested_reverse_samples_author_clock_instead_of_parent_progress) ... ok
+test_split_presentation_windows_retain_identical_author_motion_pixels (test_motion_pack_native.MotionPackNative.test_split_presentation_windows_retain_identical_author_motion_pixels) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 23.810s
+
+OK
+AEK_RESULT={"methods": 5, "skipped": 0, "failures": 0, "errors": 0, "success": true}

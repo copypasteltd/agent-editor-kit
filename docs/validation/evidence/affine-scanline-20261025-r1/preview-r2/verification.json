@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "phase": "preview",
+  "started_at_utc": "2026-10-25T15:46:52.721871+00:00",
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "human_listening": false,
+  "continuous_playback": false,
+  "natural_motion_quality_acceptance": false,
+  "affinity": {
+    "original_mask": 4095,
+    "selected_mask": 15,
+    "logical_processors": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "scope": "This evidence process and its children only; not an isolated host benchmark."
+  },
+  "ffmpeg": {
+    "path": "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+    "sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+    "version": "ffmpeg version 8.1-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers"
+  },
+  "ffmpeg_threads": "unchanged native default; both runtimes inherit the same four-logical-CPU affinity",
+  "public_files": [
+    {
+      "path": "docs/assets/affine-scanline-20261025-r1/detail-scan.gif",
+      "bytes": 1152184,
+      "sha256": "3077b84f5f22ffbb044c2599a35cf2a09e5c60a51b15f855ca362e7162b4be64"
+    },
+    {
+      "path": "docs/assets/affine-scanline-20261025-r1/detail-scan.mp4",
+      "bytes": 521006,
+      "sha256": "994dff7d0d28444813f2fa2852d92cbe5ca2851039fc332d0152e57a2c1fe8d7"
+    },
+    {
+      "path": "docs/assets/affine-scanline-20261025-r1/midpoint.png",
+      "bytes": 20593,
+      "sha256": "3f7e1e507c7bfe49ea33476f1f32bc15a4d7f9dc8e6496e9533b7b3a5b85b287"
+    },
+    {
+      "path": "docs/assets/affine-scanline-20261025-r1/original.png",
+      "bytes": 11171,
+      "sha256": "46f24805392fdd5b305928b713d2508af53f810e092e841c4587c53ab6c9b2e1"
+    },
+    {
+      "path": "docs/assets/affine-scanline-20261025-r1/SOURCE.txt",
+      "bytes": 206,
+      "sha256": "a2765cc13a768d1642d818011c957cd129f2581c7d69a50c7bd92e60d2e0b82a"
+    }
+  ],
+  "mp4_frames": 120,
+  "gif_frames": 40,
+  "complete_decode": true,
+  "preview_encoder": "h264_nvenc",
+  "finished_at_utc": "2026-10-25T15:46:55.872529+00:00"
+}

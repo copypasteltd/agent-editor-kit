@@ -9,9 +9,21 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- motion-pack-current -->
+<!-- affine-scanline-current -->
 
-**CLI 0.1.16 / alpha.4-local.14 / r16 kit** · 208 product Python files · 1 Skill / 17 modules. New portable motion packs: six parameterized paths, existing-animation capture, reuse across durations/canvases, explicit conflict handling and authored clocks; results remain editable keyframes.
+**CLI 0.1.17 / alpha.4-local.15 / r17 kit** · 208 product Python files · 1 Skill / 17 modules. Fixed-canvas affine parameters are reused per scanline. Paired medians: 95.03 → 30.27 seconds (3.14×); all 120 frames and PCM match across six renders. CPU composition; hardware encoding remains explicit.
+
+[Workflow / 使用流程](docs/product/AFFINE_RENDERING.md) · [C26](docs/product/CASES.md#c26-affine-scanline) · [Evidence](docs/validation/仿射扫描行复用实测_2026-10-25.md)
+
+![Actual installed render / silent](docs/assets/affine-scanline-20261025-r1/detail-scan.gif)
+
+Same 640×360/30fps/4s fixture and codec; child processes use the same four logical CPUs. Separate crop/fit projectors, general 4K/long-form and natural-footage acceptance remain open.
+
+<!-- /affine-scanline-current -->
+
+<!-- motion-pack-history -->
+
+**Historical / 历史 / 歷史：CLI 0.1.16 / alpha.4-local.14 / r16 kit** · 208 product Python files · 1 Skill / 17 modules. New portable motion packs: six parameterized paths, existing-animation capture, reuse across durations/canvases, explicit conflict handling and authored clocks; results remain editable keyframes.
 
 [Workflow / 使用流程](docs/product/MOTION_PACKS.md) · [C25 / Original + six previews](docs/product/CASES.md#c25-motion-packs) · [Evidence](docs/validation/可复用运镜包实测_2026-10-25.md)
 
@@ -26,7 +38,7 @@ This page includes functional modules, services/dependencies, installation/usage
 
 Each preview is four seconds/120 frames; all six MP4/GIF files decode. Native trim/nested-reverse, captured reuse, project-package and registered-Skill pixel checks pass. Paths use 65-point polylines; the rotating example took about 65 seconds. CPU composition performance, natural footage and subject-follow combinations remain open.
 
-<!-- /motion-pack-current -->
+<!-- /motion-pack-history -->
 
 <!-- semantic-upgrade-history -->
 
@@ -78,7 +90,7 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r16 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r16.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r17 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r17.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
@@ -570,7 +582,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.14/final-r2/installed/`, CLI 0.1.16. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.15/final-r1/installed/`, CLI 0.1.17. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -887,6 +899,13 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R122 | 2026-10-25 Registered Skill | Single-entry dry-run/apply/render/validate execute; all 120 frames match baseline; seventeen modules retained | [Evidence](docs/validation/evidence/motion-pack-20261025-r1/skill-r2/verification.json) |
 | R123 | 2026-10-25 Failures/regression retained | 122/122 installed CLI regression; initial fixture missing source ticks and demo script using unsupported canvas.background remain in the evidence | [Evidence](docs/validation/evidence/motion-pack-20261025-r1/tests/installed-cli-r2/verification.json) |
 | R124 | 2026-10-25 Local load/three-language docs | r16 kit, parameter/previews and functional manuals updated; R01–R117 and all 38 original goal gates retained; public old assets unchanged | [Evidence](docs/validation/evidence/motion-pack-20261025-r1/final-delivery-r2/verification.json) |
+| R125 | 2026-10-25 Pinned installation | CLI0.1.17/local.15; 208 product files match the installed release ZIP | [Evidence](docs/validation/evidence/affine-scanline-20261025-r1/installation-r1/verification.json) |
+| R126 | 2026-10-25 Pixels/alpha sampling | Source/installed: 8 new pixel, 5 motion and 17 alpha tests each pass; scopes remain separate | [Evidence](docs/validation/evidence/affine-scanline-20261025-r1/tests/affine-installed-r1/verification.json) |
+| R127 | 2026-10-25 Paired timing | Three-run medians 95.034→30.274s (3.139×), all120 frames and complete PCM match across six renders; four logical CPU affinity, not a GPU ratio | [Evidence](docs/validation/evidence/affine-scanline-20261025-r1/verify-r2/verification.json) |
+| R128 | 2026-10-25 Registered Skill | Actual render/validate; 120 frames and PCM match old installation; one entry/17 modules | [Evidence](docs/validation/evidence/affine-scanline-20261025-r1/skill-r2/verification.json) |
+| R129 | 2026-10-25 Clocks/CLI regression | Installed nested clocks and122 CLI tests pass, zero skips; not the entire historical suite | [Evidence](docs/validation/evidence/affine-scanline-20261025-r1/tests/cli-installed-r1/verification.json) |
+| R130 | 2026-10-25 Failure/limits retained | Measurement-helper encoding-name failure retained; CPU optimization for fixed-canvas affine only; general4K/long-form/natural quality unaccepted | [Evidence](docs/validation/evidence/affine-scanline-20261025-r1/benchmark-r1/verification.json) |
+| R131 | 2026-10-25 Kit/full documentation | Independent r17 kit registration/calls pass; trilingual README/C26/evidence updated;124 historical rows and38 original closure conditions retained | [Evidence](docs/validation/evidence/affine-scanline-20261025-r1/final-delivery-r2/verification.json) |
 
 ## Current limits and development direction
 

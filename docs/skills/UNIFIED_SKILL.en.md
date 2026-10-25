@@ -2,7 +2,7 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.16 / alpha.4-local.14 / r16 kit.** One registered Skill / 17 modules; [r16 kit](agent-editor-kit-community-unified-skill-r16.zip). Six reusable motion paths and native animation capture are now installed, alongside editable ad variants, semantic runtime migration, GPU voice/translation, subtitle dubbing and 359 resources.
+**Current local / 当前本机 / 目前本機：CLI 0.1.17 / alpha.4-local.15 / r17 kit.** One registered Skill / 17 modules; [r17 kit](agent-editor-kit-community-unified-skill-r17.zip). Six reusable motion paths and native animation capture are now installed, alongside editable ad variants, semantic runtime migration, GPU voice/translation, subtitle dubbing and 359 resources.
 
 [Motion workflow + previews](../product/MOTION_PACKS.md) · [Current installation](../product/COMMUNITY_LOCAL_DELIVERY.md) · [All 38 original goals](../product/GOAL_GAPS_20261025.md). Public alpha.3 assets retain their original version.
 
@@ -68,3 +68,5 @@ The only registered folder contains `SKILL.md`, UI metadata, the pinned runtime 
 The `agent-ffmpeg-local-skills-v2` manifest declares `skill_count=1`, `module_count=17` and stable K01–K17 mappings to previous names. Future expansion should add internal task references rather than new public specialist registrations. The old split source is retained for historical reproduction; new packaging uses the manifest's single entry.
 
 [Actual verification and migration receipts](../validation/evidence/unified-skill-20261024-r1/) · [Original alpha.3 release](https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3)
+
+[Fixed-canvas affine reuse / 扫描行复用](../product/AFFINE_RENDERING.md) uses the existing render workflow, keeps CPU composition explicit, and provides paired timing and actual previews.

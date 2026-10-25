@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "activation": {
+    "status": "configured",
+    "release": "v0.1.0-alpha.4-local.15",
+    "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.15\\final-r1\\installed",
+    "community_config": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-runtime.json",
+    "verified_packs": [
+      "kokoro-zh-en-int8",
+      "opus-zh-en-cpu-int8",
+      "kokoro-zh-en-cuda13",
+      "opus-zh-en-cuda12-int8"
+    ],
+    "previous_config_preserved": true,
+    "native_windows": true,
+    "network": false,
+    "virtual_environment": false,
+    "evidence": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\activations\\20261025T154603631119Z",
+    "semantic_config": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\semantic-runtime.json"
+  },
+  "registration": {
+    "status": "registered",
+    "registration_mode": "single",
+    "registered_at_utc": "2026-10-25T15:46:25.0864103Z",
+    "skill_count": 1,
+    "module_count": 17,
+    "release": "v0.1.0-alpha.4-local.15",
+    "namespace_manifest_sha256": "247e45f69f8d963ef6a9f09546d62fa1b1a95b34658d6199d5ed53531507dcd3",
+    "name": "agent-ffmpeg-local-editor",
+    "canonical_directory": "E:\\dev\\sandbox\\AI广告剪辑\\skills\\agent-ffmpeg-local-editor",
+    "registration_directory": "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor",
+    "discovery_directory": "C:\\Users\\carzy\\.codex\\skills",
+    "runtime_directory": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.15\\final-r1\\installed",
+    "created_entry": false,
+    "retired_junction_count": 0,
+    "retired_junctions": [],
+    "original_specialist_sources_preserved": true
+  },
+  "source_fallback": false
+}

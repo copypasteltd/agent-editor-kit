@@ -1,0 +1,23 @@
+test_alpha_geometry_alpha_video_dynamic_crop (test_alpha_resampling.AlphaResamplingTests.test_alpha_geometry_alpha_video_dynamic_crop) ... ok
+test_alpha_geometry_animated_affine_has_no_dark_fringe (test_alpha_resampling.AlphaResamplingTests.test_alpha_geometry_animated_affine_has_no_dark_fringe) ... ok
+test_alpha_geometry_crop_and_rotation_have_no_dark_fringe (test_alpha_resampling.AlphaResamplingTests.test_alpha_geometry_crop_and_rotation_have_no_dark_fringe) ... ok
+test_alpha_geometry_dynamic_fill_hidden_rgb (test_alpha_resampling.AlphaResamplingTests.test_alpha_geometry_dynamic_fill_hidden_rgb) ... ok
+test_alpha_geometry_dynamic_fit_hidden_rgb (test_alpha_resampling.AlphaResamplingTests.test_alpha_geometry_dynamic_fit_hidden_rgb) ... ok
+test_alpha_geometry_dynamic_fit_padding_reveals_background (test_alpha_resampling.AlphaResamplingTests.test_alpha_geometry_dynamic_fit_padding_reveals_background) ... ok
+test_alpha_geometry_dynamic_stretch_hidden_rgb (test_alpha_resampling.AlphaResamplingTests.test_alpha_geometry_dynamic_stretch_hidden_rgb) ... ok
+test_alpha_geometry_independent_text_rotated_edges (test_alpha_resampling.AlphaResamplingTests.test_alpha_geometry_independent_text_rotated_edges) ... ok
+test_alpha_geometry_independent_text_scalar_edges (test_alpha_resampling.AlphaResamplingTests.test_alpha_geometry_independent_text_scalar_edges) ... ok
+test_alpha_geometry_opaque_dynamic_fit_keeps_black_bars (test_alpha_resampling.AlphaResamplingTests.test_alpha_geometry_opaque_dynamic_fit_keeps_black_bars) ... ok
+test_alpha_geometry_static_rotation_has_no_dark_fringe (test_alpha_resampling.AlphaResamplingTests.test_alpha_geometry_static_rotation_has_no_dark_fringe) ... ok
+test_alpha_video_hidden_rgb_has_no_visible_influence (test_alpha_resampling.AlphaResamplingTests.test_alpha_video_hidden_rgb_has_no_visible_influence) ... ok
+test_animated_scale_hidden_rgb_has_no_visible_influence (test_alpha_resampling.AlphaResamplingTests.test_animated_scale_hidden_rgb_has_no_visible_influence) ... ok
+test_indexed_png_hidden_rgb_has_no_visible_influence (test_alpha_resampling.AlphaResamplingTests.test_indexed_png_hidden_rgb_has_no_visible_influence) ... ok
+test_png_fill_hidden_rgb_has_no_visible_influence (test_alpha_resampling.AlphaResamplingTests.test_png_fill_hidden_rgb_has_no_visible_influence) ... ok
+test_png_fit_hidden_rgb_has_no_visible_influence (test_alpha_resampling.AlphaResamplingTests.test_png_fit_hidden_rgb_has_no_visible_influence) ... ok
+test_png_stretch_hidden_rgb_has_no_visible_influence (test_alpha_resampling.AlphaResamplingTests.test_png_stretch_hidden_rgb_has_no_visible_influence) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 109.470s
+
+OK
+AEK_RESULT={"methods": 17, "skipped": 0, "failures": 0, "errors": 0, "success": true}

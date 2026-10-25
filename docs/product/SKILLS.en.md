@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI 0.1.16 / alpha.4-local.14 / r16 kit · 1 Skill / 17 modules.**
+**CLI 0.1.17 / alpha.4-local.15 / r17 kit · 1 Skill / 17 modules.**
 
 New portable motion packs: six parameterized paths, existing-animation capture, reuse across durations/canvases, explicit conflict handling and authored clocks; results remain editable keyframes.
 
-[Motion workflow/previews](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime upgrade](SEMANTIC_RUNTIME_UPGRADE.md) · [75 declarations](motion-pack-capabilities-cli-0.1.16.json) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md).
+[Motion workflow/previews](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime upgrade](SEMANTIC_RUNTIME_UPGRADE.md) · [75 declarations](affine-scanline-capabilities-cli-0.1.17.json) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md).
 
 <!-- /community-current -->
 
@@ -283,3 +283,5 @@ Complex negation, natural actions/identity/audio/recommendation, large-library p
 Original CLI 0.1.5 query failures and raw mode remain historical evidence; they are not erased by this extension.
 
 <!-- /semantic-decisions-current -->
+
+[Fixed-canvas affine reuse / 扫描行复用](AFFINE_RENDERING.md) uses the existing render workflow, keeps CPU composition explicit, and provides paired timing and actual previews.

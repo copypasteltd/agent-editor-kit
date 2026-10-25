@@ -1159,7 +1159,37 @@ def _affine_video_filters(transform: dict[str, str]) -> list[str]:
         f"st(6,({values['anchor_y']})*H+(-ld(2)*ld(1)+ld(3)*ld(0))/ld(4)-0.5);"
         "st(7,gte(ld(5),-0.5)*lt(ld(5),W-0.5)*gte(ld(6),-0.5)*lt(ld(6),H-0.5));"
     )
+    # geq owns an AVExpr per plane/slice and visits every scanline from X=0.
+    # Reinitialize each row instead of keying on T/N: timestamps may repeat,
+    # slices may move, and each plane has its own register state. Keep the
+    # original arithmetic order and sampling kernel; only pure row-invariant
+    # transform calculations are reused. Stateful/pixel-dependent expressions
+    # retain the original path to avoid changing their evaluation semantics.
+    row_functions = {'abs', 'acos', 'asin', 'atan', 'atan2', 'between', 'bitand', 'bitor',
+                     'ceil', 'clip', 'cos', 'cosh', 'eq', 'exp', 'floor', 'gauss', 'gcd',
+                     'gt', 'gte', 'hypot', 'if', 'ifnot', 'isinf', 'isnan', 'lerp', 'log',
+                     'lt', 'lte', 'max', 'min', 'mod', 'not', 'pow', 'round', 'sgn',
+                     'sin', 'sinh', 'sqrt', 'squish', 'tan', 'tanh', 'trunc'}
+    pure = all(not re.search(r'\b(?:X|Y)\b', value)
+               and set(re.findall(r'\b([A-Za-z_]\w*)\s*\(', value)) <= row_functions
+               for value in values.values())
+    if pure:
+        initialize = (
+            f"st(7,{angle});st(0,cos(ld(7)));st(1,sin(ld(7)));"
+            f"st(2,({values['position_x']})*W);st(3,({values['position_y']})*H);"
+            f"st(4,max(0.00000001,abs({values['scale']})));"
+            f"st(5,({values['anchor_x']})*W);st(6,({values['anchor_y']})*H)"
+        )
+        dx, dy = '(X+0.5-ld(2))', '(Y+0.5-ld(3))'
+        setup = (
+            f"if(eq(X,0),{initialize},0);"
+            f"st(7,ld(5)+({dx}*ld(0)+{dy}*ld(1))/ld(4)-0.5);"
+            f"st(8,ld(6)+(-{dx}*ld(1)+{dy}*ld(0))/ld(4)-0.5);"
+            "st(9,gte(ld(7),-0.5)*lt(ld(7),W-0.5)*gte(ld(8),-0.5)*lt(ld(8),H-0.5));"
+        )
     def plane(name: str) -> str:
+        if pure:
+            return _expr_arg(setup+f"if(ld(9),{name}(clip(ld(7),0,W-1),clip(ld(8),0,H-1)),0)")
         return _expr_arg(setup+f"if(ld(7),{name}(clip(ld(5),0,W-1),clip(ld(6),0,H-1)),0)")
     return ['format=gbrapf32le', 'premultiply=inplace=1',
             f"geq=r={plane('r')}:g={plane('g')}:b={plane('b')}:a={plane('alpha')}:interpolation=bilinear",

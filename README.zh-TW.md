@@ -9,9 +9,21 @@
 本頁包含完整功能模塊、服務與依賴、安裝與使用邏輯、Skill 輸入輸出、真實案例和核驗表。長篇原始驗收日志繼續留檔，功能說明與案例入口恢復到首頁。
 
 
-<!-- motion-pack-current -->
+<!-- affine-scanline-current -->
 
-**CLI 0.1.16 / alpha.4-local.14 / r16 kit** · 208 product Python files · 1 Skill / 17 modules. 新增可復用運鏡包：六套參數路徑、既有動畫擷取、跨時長/畫幅復用、明確衝突及作者時鐘；結果保留為可編輯關鍵影格。
+**CLI 0.1.17 / alpha.4-local.15 / r17 kit** · 208 product Python files · 1 Skill / 17 modules. 固定畫幅旋轉/縮放自動復用掃描行參數；同專案三輪中位數 95.03 → 30.27 秒（3.14×），六次全部120影格及PCM相同。CPU合成，GPU編碼仍明確選擇。
+
+[Workflow / 使用流程](docs/product/AFFINE_RENDERING.md) · [C26](docs/product/CASES.md#c26-affine-scanline) · [Evidence](docs/validation/仿射扫描行复用实测_2026-10-25.md)
+
+![Actual installed render / silent](docs/assets/affine-scanline-20261025-r1/detail-scan.gif)
+
+相同640×360/30fps/4秒素材及編碼設定，子程序統一使用4個邏輯CPU；動態crop/fit投影、完整4K/長片及自然素材品質繼續驗收。
+
+<!-- /affine-scanline-current -->
+
+<!-- motion-pack-history -->
+
+**Historical / 历史 / 歷史：CLI 0.1.16 / alpha.4-local.14 / r16 kit** · 208 product Python files · 1 Skill / 17 modules. 新增可復用運鏡包：六套參數路徑、既有動畫擷取、跨時長/畫幅復用、明確衝突及作者時鐘；結果保留為可編輯關鍵影格。
 
 [Workflow / 使用流程](docs/product/MOTION_PACKS.md) · [C25 / Original + six previews](docs/product/CASES.md#c25-motion-packs) · [Evidence](docs/validation/可复用运镜包实测_2026-10-25.md)
 
@@ -26,7 +38,7 @@
 
 每條 4 秒/120 影格；六套 MP4/GIF 均完整解碼。原生裁切/巢狀倒放、擷取復用、專案包及實際 Skill 的逐影格對照通過。空間路徑為 65 點折線；含旋轉樣例耗時約 65 秒，CPU 合成效能/自然素材及主體跟隨仍待補齊。
 
-<!-- /motion-pack-current -->
+<!-- /motion-pack-history -->
 
 <!-- semantic-upgrade-history -->
 
@@ -78,7 +90,7 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r16 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r16.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
+**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r17 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r17.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
 
 <!-- /unified-skill-registration -->
 
@@ -570,7 +582,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.14/final-r2/installed/`，CLI 0.1.16；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
+本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.15/final-r1/installed/`，CLI 0.1.17；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -885,6 +897,13 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R122 | 2026-10-25 實際註冊 Skill | 唯一入口 dry-run、正式 apply、render、validate 通過；120 影格與基準相同，17 模組保持 | [Evidence](docs/validation/evidence/motion-pack-20261025-r1/skill-r2/verification.json) |
 | R123 | 2026-10-25 保留失敗及迴歸 | 122/122 安裝 CLI 迴歸；首輪夾具漏來源時間碼、示範腳本傳入不支援的 canvas.background 兩條失敗保留 | [Evidence](docs/validation/evidence/motion-pack-20261025-r1/tests/installed-cli-r2/verification.json) |
 | R124 | 2026-10-25 本機載入及三語文件 | r16 kit/參數/預覽/功能手冊同步；R01–R117 與 38 原結案條件保留，公開舊附件不覆寫 | [Evidence](docs/validation/evidence/motion-pack-20261025-r1/final-delivery-r2/verification.json) |
+| R125 | 2026-10-25 固定安裝 | CLI0.1.17/local.15，208產品檔案與發行ZIP安裝版一致 | [Evidence](docs/validation/evidence/affine-scanline-20261025-r1/installation-r1/verification.json) |
+| R126 | 2026-10-25 像素與透明採樣 | 原始碼/安裝各8項新像素、5項運鏡及17項透明採樣通過；各範圍獨立 | [Evidence](docs/validation/evidence/affine-scanline-20261025-r1/tests/affine-installed-r1/verification.json) |
+| R127 | 2026-10-25 交錯效能實測 | 同專案三輪中位數95.034→30.274秒（3.139×），六次120影格與完整PCM相同；4邏輯CPU親和性，非GPU比值 | [Evidence](docs/validation/evidence/affine-scanline-20261025-r1/verify-r2/verification.json) |
+| R128 | 2026-10-25 實際註冊Skill | 實際渲染/validate；120影格及PCM與舊安裝相同，單入口17模組 | [Evidence](docs/validation/evidence/affine-scanline-20261025-r1/skill-r2/verification.json) |
+| R129 | 2026-10-25 時鐘與CLI迴歸 | 安裝版巢狀時鐘及122項CLI通過，0skip；未重跑全部歷史套件 | [Evidence](docs/validation/evidence/affine-scanline-20261025-r1/tests/cli-installed-r1/verification.json) |
+| R130 | 2026-10-25 保留失敗及範圍 | 測量腳本編碼名稱失敗保留；CPU最佳化，僅固定畫幅仿射，完整4K/長片/自然品質未驗收 | [Evidence](docs/validation/evidence/affine-scanline-20261025-r1/benchmark-r1/verification.json) |
+| R131 | 2026-10-25 kit及完整文件 | r17 kit獨立登記/調用通過；三語README、C26及實測同步，124歷史列及38原結案條件保持 | [Evidence](docs/validation/evidence/affine-scanline-20261025-r1/final-delivery-r2/verification.json) |
 
 ## 當前邊界與開發方向
 

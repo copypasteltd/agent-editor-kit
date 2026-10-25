@@ -49,3 +49,12 @@ can expose the background. Locked tracks and tracking relationships reject.
 After applying, ordinary keys and the embedded recipe travel with the editable
 project package; the original standalone JSON is not needed for rendering.
 Keep normal preview/render/pixel review and source-rights checks.
+
+CLI 0.1.17 automatically reuses pure fixed-canvas affine parameters per scanline.
+It retains the float premultiplied bilinear sampler; no new option is needed.
+Composition is CPU; NVENC accelerates encoding only. For performance-sensitive
+delivery, render the real target duration/canvas instead of extrapolating a
+small graphic. The [paired timing and actual preview](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/AFFINE_RENDERING.md)
+record the same source/project/codec and bounded child-process CPU affinity.
+Separate dynamic crop/fit sequence projection and full 4K/long-form acceptance
+remain open. This optimization does not certify natural motion aesthetics.

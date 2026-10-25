@@ -68,3 +68,6 @@ Contracts remain in specs; raw successes/failures in validation; media in assets
 - [CLI 0.1.14 可编辑广告分镜/多画幅/时长/局部返工](product/AD_STORYBOARD.md) · [实际 GPU/三变体/包迁移/注册 Skill/失败](validation/可编辑广告分镜与返工实测_2026-10-25.md) · [C23 MP4/GIF/原素材](product/CASES.md#c23-ad-storyboard)。
 
 - [CLI 0.1.15 显式语义运行时升级、保留向量与校准](product/SEMANTIC_RUNTIME_UPGRADE.md) · [真实 CPU/CUDA/Skill 与零前向迁移实测](validation/语义运行时升级实测_2026-10-25.md) · [C24](product/CASES.md#c24-semantic-upgrade)。
+
+- [仿射扫描行复用：使用、预览与计时](product/AFFINE_RENDERING.md)
+- [仿射扫描行复用实测与边界](validation/仿射扫描行复用实测_2026-10-25.md)

@@ -2,8 +2,8 @@
   "format": "agent-ffmpeg-local-skills-v2",
   "status": "reviewed",
   "registration_mode": "single",
-  "release": "v0.1.0-alpha.4-local.14",
-  "manifest_sha256": "sha256:865622138982287488d6740bdffb925542beb047b51479fd3fc9058bc716f7f3",
+  "release": "v0.1.0-alpha.4-local.15",
+  "manifest_sha256": "sha256:fdb384446291baa6065a390efbc3b6fe91e62b1b06f4c2e87ff289e736c1c10c",
   "runtime_config": "local/agent-ffmpeg/runtime.json",
   "skill_count": 1,
   "module_count": 17,
@@ -13,7 +13,7 @@
     {
       "name": "agent-ffmpeg-local-editor",
       "purpose_zh": "唯一入口：17 项内部模块、可复用参数运镜包、可编辑广告分镜/变体/返工、可迁移语义检索、字幕配音、四轨与 GPU 配音/翻译",
-      "skill_md_sha256": "b61ee9c22de3031f856a19b7982abdedcc2350c53fee08eb40813c3ad62d8d53"
+      "skill_md_sha256": "ecd6185412e220fc1a87f7f27550392cb3ef8e1ee0685b7ccf5eb253d44e9450"
     }
   ],
   "modules": [
@@ -464,8 +464,8 @@
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/motion-packs.md",
-      "bytes": 3327,
-      "sha256": "9a2e9409011f2ec5886f6e94241d7e443246bf3f7454d4dc53347fd41810df71"
+      "bytes": 4021,
+      "sha256": "eaa6a3d24f8dd52b843a063ca5e36392d16d06c13032f6a471b32af3736761f5"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/native-capture.md",
@@ -475,7 +475,7 @@
     {
       "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
       "bytes": 7182,
-      "sha256": "97e3f01a66e02f68f86f5730880217b0eafd95cc4e3bb3db5b392da773ba5fa2"
+      "sha256": "a0cf5631ceaecf7e7e3b9e07c771b16042491df9fd4bed0774ed033699166dcc"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/semantic-package.md",
@@ -505,12 +505,12 @@
     {
       "path": "skills/agent-ffmpeg-local-editor/scripts/run.py",
       "bytes": 2296,
-      "sha256": "2a21a31be3aa6d2aadfbc2c31f830d262cdbc774726226083dfb1442f2561126"
+      "sha256": "56437701b4892b6b6ec7c93fa3316ca51d3b56bbd645a595296b1a446bbc7bb0"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
       "bytes": 8766,
-      "sha256": "b61ee9c22de3031f856a19b7982abdedcc2350c53fee08eb40813c3ad62d8d53"
+      "sha256": "ecd6185412e220fc1a87f7f27550392cb3ef8e1ee0685b7ccf5eb253d44e9450"
     }
   ],
   "retired_skills": [
@@ -579,7 +579,7 @@
       "skill_md_sha256": "da31e25b3e641f80367075cdb4e72be99be2c89c332556d8ba58ec419fffd46b"
     }
   ],
-  "cli_version": "0.1.16",
+  "cli_version": "0.1.17",
   "material_count": 359,
   "named_voice_count": 103,
   "optional_model_pack_count": 4

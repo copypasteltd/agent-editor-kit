@@ -2,7 +2,7 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.16 / alpha.4-local.14 / r16 kit.** One registered Skill / 17 modules; [r16 kit](agent-editor-kit-community-unified-skill-r16.zip). Six reusable motion paths and native animation capture are now installed, alongside editable ad variants, semantic runtime migration, GPU voice/translation, subtitle dubbing and 359 resources.
+**Current local / 当前本机 / 目前本機：CLI 0.1.17 / alpha.4-local.15 / r17 kit.** One registered Skill / 17 modules; [r17 kit](agent-editor-kit-community-unified-skill-r17.zip). Six reusable motion paths and native animation capture are now installed, alongside editable ad variants, semantic runtime migration, GPU voice/translation, subtitle dubbing and 359 resources.
 
 [Motion workflow + previews](../product/MOTION_PACKS.md) · [Current installation](../product/COMMUNITY_LOCAL_DELIVERY.md) · [All 38 original goals](../product/GOAL_GAPS_20261025.md). Public alpha.3 assets retain their original version.
 
@@ -89,3 +89,5 @@ skills/agent-ffmpeg-local-editor/
 注册清单格式为 `agent-ffmpeg-local-skills-v2`：`skill_count=1`，`module_count=17`。每个模块有稳定 K01–K17 编号和对应旧名称映射。后续扩展优先增加内部参考，不再注册新的 `$agent-ffmpeg-local-*` 专用入口。原始拆分源的归档和重建脚本供维护者使用，正式打包只取清单中的一个入口。
 
 [本轮实际核验与迁移回执](../validation/evidence/unified-skill-20261024-r1/) · [原 alpha.3 Release](https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3)
+
+[Fixed-canvas affine reuse / 扫描行复用](../product/AFFINE_RENDERING.md) uses the existing render workflow, keeps CPU composition explicit, and provides paired timing and actual previews.

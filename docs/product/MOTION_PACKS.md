@@ -1,8 +1,10 @@
 # 可复用运镜包 / Portable motion packs
 
-CLI **0.1.16 / alpha.4-local.14**：六套参数化路径和已有关键帧捕获，最终写成普通可编辑 transform 关键帧。保留原 `motion list/inspect/apply` 的 12 项基础预设。
+CLI **0.1.16 / alpha.4-local.14** 引入；当前 0.1.17：六套参数化路径和已有关键帧捕获，最终写成普通可编辑 transform 关键帧。保留原 `motion list/inspect/apply` 的 12 项基础预设。
 
 **English:** Six parameterized motion paths and capture of existing transform animation compile into ordinary editable keys. Recipes are local versioned JSON, contain no media paths or executable expressions, and can be reused across durations and canvases. The original twelve `motion apply` presets remain available.
+
+CLI 0.1.17 自动复用固定画布仿射参数；[使用与同源交错计时](AFFINE_RENDERING.md)。原六包、参数和作者时钟保持，历史65秒记录保留。
 
 [完整实测 / Evidence](../validation/可复用运镜包实测_2026-10-25.md) · [案例 C25](CASES.md#c25-motion-packs) · [全部目标](GOAL_GAPS_20261025.md) · [单入口 Skill](../skills/UNIFIED_SKILL.md)
 

@@ -1,0 +1,168 @@
+{
+  "status": "failed",
+  "error": "AssertionError()",
+  "calls": [
+    {
+      "id": "configure",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\affine-scanline-kit-r1\\独立工具 包\\scripts\\activate_community_runtime.py",
+        "--installed",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.15\\final-r1\\installed",
+        "--packs",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-portable-r1\\模型 包",
+        "--voice-cuda-lib",
+        "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\lib",
+        "--translation-cuda-lib",
+        "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.4\\bin",
+        "--semantic-config",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\semantic-runtime.json"
+      ],
+      "exit_code": 0,
+      "json_cli": false,
+      "stdout_sha256": "1c5d9d7592afad940cb728c40ddbd2f8fee98749229d908c6f1c63c007c66250",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "register",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\affine-scanline-kit-r1\\独立工具 包\\register-agent-ffmpeg-local-skills.ps1",
+        "-SkillsDirectory",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\affine-scanline-kit-r1\\isolated-discovery",
+        "-ReceiptPath",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\affine-scanline-20261025-r1\\kit-r1\\registration.json"
+      ],
+      "exit_code": 0,
+      "json_cli": false,
+      "stdout_sha256": "e8d5f918f0156fe1fab684d9965886776316b8c47505f378f91078d125bbcede",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "version",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\affine-scanline-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "version"
+      ],
+      "exit_code": 0,
+      "json_cli": true,
+      "stdout_sha256": "17440701cf0b5801456f53d3c61f870033fb10d93dcf5cc4c9c0a224094ac61c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "capabilities",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\affine-scanline-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "capabilities"
+      ],
+      "exit_code": 0,
+      "json_cli": true,
+      "stdout_sha256": "c3de45a5c7730df8f2701b438b305de388e6662a09599f920c688e428583d3d1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "motion-help",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\affine-scanline-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "motion",
+        "pack",
+        "apply",
+        "--help"
+      ],
+      "exit_code": 0,
+      "json_cli": false,
+      "stdout_sha256": "34c1810a69306e1c557c3efe922f46b69a2972dde6f233c30d329a0f90d21a79",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "motion-inspect",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\affine-scanline-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "motion",
+        "pack",
+        "inspect",
+        "--name",
+        "arc_push"
+      ],
+      "exit_code": 0,
+      "json_cli": true,
+      "stdout_sha256": "861977d106f30cc66c4aa860bfcfcf32a9a49f2662dc46900e7ccd56b529f584",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "motion-dry-run",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\affine-scanline-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "motion",
+        "pack",
+        "apply",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\affine-scanline-20261025-r2\\对照工程",
+        "--sequence-id",
+        "reused_arc",
+        "--clip-id",
+        "reused_hero",
+        "--name",
+        "arc_push",
+        "--replace",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "json_cli": true,
+      "stdout_sha256": "2be36e613a714f5007e7797ed539854c185926cc1c7c6cf06d8a7801496f6b19",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "validate",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\affine-scanline-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "validate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\affine-scanline-20261025-r2\\对照工程"
+      ],
+      "exit_code": 0,
+      "json_cli": true,
+      "stdout_sha256": "3ad84ee1159cf5e0f141c2860762ef613fd4b90b86e13fb3d759ac8ac10239b5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

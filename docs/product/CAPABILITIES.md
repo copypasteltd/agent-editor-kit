@@ -2,15 +2,15 @@
 
 <!-- community-current -->
 
-**CLI 0.1.16 / alpha.4-local.14 / r16 kit · 1 Skill / 17 modules.**
+**CLI 0.1.17 / alpha.4-local.15 / r17 kit · 1 Skill / 17 modules.**
 
-Portable parameterized motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+Scanline affine parameter reuse, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
 
-[Motion workflow and actual previews](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](motion-pack-capabilities-cli-0.1.16.json). Full target conditions remain open.
+[Affine timing/preview](AFFINE_RENDERING.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](affine-scanline-capabilities-cli-0.1.17.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.md) · [Machine response](motion-pack-capabilities-cli-0.1.16.json) · [Module data](module-catalog.json)
+[README](../../README.md) · [Machine response](affine-scanline-capabilities-cli-0.1.17.json) · [Module data](module-catalog.json)
 
 | 编号 | 功能模块 | 具体行为与输入 → 输出 | 入口 | 依赖/边界 |
 |---|---|---|---|---|
@@ -3498,6 +3498,24 @@ Portable parameterized motion/capture, editable ad variants, semantic runtime re
 
 ```json
 {
+  "affine_expression_reuse": {
+    "engine": "native-geq-scanline-v1",
+    "status": "implemented_with_limits",
+    "scope": "fixed_canvas_affine_video_filters",
+    "invariants": [
+      "refresh_at_each_plane_slice_scanline_X_zero",
+      "pure_expressions_only",
+      "preserve_half_pixel_coordinates_and_arithmetic_order",
+      "premultiplied_float_bilinear_sampler_unchanged",
+      "pixel_dependent_or_stateful_expressions_keep_legacy_evaluation"
+    ],
+    "limits": [
+      "CPU_composition",
+      "not_all_geq_filters_or_sequence_crop_fit_projection",
+      "no_global_frame_cache",
+      "not_full_4K_long_form_or_GPU_composition_acceptance"
+    ]
+  },
   "status": "implemented",
   "video_frame_clock": {
     "protocol": "rational-local-video-clock-v1",

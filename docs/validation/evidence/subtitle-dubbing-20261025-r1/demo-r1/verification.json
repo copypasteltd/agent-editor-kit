@@ -1,0 +1,79 @@
+{
+  "status": "passed-with-natural-quality-review-open",
+  "checked_at_utc": "2026-10-25T02:41:52.395297+00:00",
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\dubbing-20261025-r1\\installed-gpu-r2\\basic",
+  "local_audio_movie": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\dubbing-20261025-r1\\installed-gpu-r2\\basic\\renders\\dubbing.mkv",
+  "local_package": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\dubbing-20261025-r1\\installed-gpu-r2\\dubbing.aevpkg.zip",
+  "package_sha256": "1fff5d866ef2c548f310800d39895c59f09def3f16c215a6769f51911a720c6a",
+  "frames": 570,
+  "fps": 30,
+  "duration_seconds": 19.0,
+  "width": 1280,
+  "height": 720,
+  "source_pcm_max_abs_difference": 0.0,
+  "package_pcm_exact": true,
+  "package_decoded_rgb_exact": true,
+  "rendered_pcm_sha256": "cf8f511f38b1abf86c974e39722f143970a849d8c11f07ad5403cc799e6091a1",
+  "decoded_rgb_sha256": "SHA256=c7b49f79f29c2029d0da7d9cdba34e486165438974e2adfcf68d2f80b5a164fd",
+  "gif_frames": 95,
+  "gif_duration_ms": 19000,
+  "cli_calls": 8,
+  "frozen_equal": true,
+  "source_provenance": {
+    "source": "Authored diagnostic graphic using actual report durations and three authored English lines.",
+    "license": "CC0-1.0",
+    "font": "Noto Sans SC / OFL-1.1, included in installed material data",
+    "report_sha256": "3540f40096472b6bac71070bb63c612b4d646f9b1a77dda16826cbe61c475f62",
+    "image_sha256": "9113a64e52ab79b55a0d5afc39715173c5ca80ace1b90c5a550051254f87e408",
+    "voice_media_in_public_artifacts": false
+  },
+  "human_listening": false,
+  "human_semantic_acceptance": false,
+  "continuous_playback": false,
+  "public_outputs_silent": true,
+  "full_G19_closed": false,
+  "native_windows": true,
+  "virtualization": false,
+  "files": [
+    {
+      "path": "docs/assets/subtitle-dubbing-20261025-r1/demo-r1/frame-1.png",
+      "bytes": 77873,
+      "sha256": "c18f58d6dc8bb29b09447fe10cb7a70f60250e40cf6496cf19a636e81179e0d8"
+    },
+    {
+      "path": "docs/assets/subtitle-dubbing-20261025-r1/demo-r1/frame-2.png",
+      "bytes": 81826,
+      "sha256": "c20cb789586370367e2d027dedbf4ad65ff9a47a4a283839084296d0c9970f22"
+    },
+    {
+      "path": "docs/assets/subtitle-dubbing-20261025-r1/demo-r1/frame-3.png",
+      "bytes": 82303,
+      "sha256": "0d608a4f95d2a46d9cad53ee831d9857aacbd1669dd3385b090f62b8ce98bf0a"
+    },
+    {
+      "path": "docs/assets/subtitle-dubbing-20261025-r1/demo-r1/output-silent.mp4",
+      "bytes": 185789,
+      "sha256": "8e4c6437e63e08341a3b8fa18df64e220c9284fee0dbb06f113dfb419ba8f288"
+    },
+    {
+      "path": "docs/assets/subtitle-dubbing-20261025-r1/demo-r1/palette.png",
+      "bytes": 723,
+      "sha256": "2a9c46c0afa8d866d9504723f135de2929af7b9e6ff39801d833e2176023ed80"
+    },
+    {
+      "path": "docs/assets/subtitle-dubbing-20261025-r1/demo-r1/preview.gif",
+      "bytes": 56733,
+      "sha256": "e3dff015eff941ba23f8ac4481ac69bd7a146e994ce2a1a0e1862297ee84e7be"
+    },
+    {
+      "path": "docs/assets/subtitle-dubbing-20261025-r1/demo-r1/source-board.png",
+      "bytes": 47996,
+      "sha256": "9113a64e52ab79b55a0d5afc39715173c5ca80ace1b90c5a550051254f87e408"
+    },
+    {
+      "path": "docs/assets/subtitle-dubbing-20261025-r1/demo-r1/source-provenance.json",
+      "bytes": 432,
+      "sha256": "1b9513db7fab3101c1059ef6c039c4678d9350cb2bd08987863471779394d73c"
+    }
+  ]
+}

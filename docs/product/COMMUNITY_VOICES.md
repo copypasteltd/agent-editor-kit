@@ -1,16 +1,16 @@
 # 103 个具名音色 / Named voices
 
 来自 Kokoro v1.1 中文/英文上游映射，3 英文女声、55 中文女声、45 中文男声。性别/语言标签来自上游，不代表真人身份或授权克隆。
-实际常规试听产物：`zf_001`、`zm_009`、`af_maple`。另有同模型 CPU/CUDA 比较；人工听审尚未完成，未为其余 100 个音色编造试听评价。
+原 CPU/GPU 常规生成：`zf_001`、`zm_009`、`af_maple`。CLI 0.1.9 [字幕配音实测](../validation/字幕翻译配音联合流程实测_2026-10-25.md)另实际生成 `zf_002`、`zf_003`、`af_sol`、`bf_vale`，当前至少 7 个不同音色有真实 WAV。尚未完成人类听审，也没有为其余 96 个音色编造推理或试听评价；原三音色历史结果保持。
 
 | # | ID | speaker_id | 语言 / Language | 上游标签 | 实测范围 |
 |---|---|---|---|---|---|
 | V001 | `af_maple` | 0 | en | female | 实际生成 WAV / WAV generated |
-| V002 | `af_sol` | 1 | en | female | 映射已核验，未逐音色推理/听审 |
-| V003 | `bf_vale` | 2 | en | female | 映射已核验，未逐音色推理/听审 |
+| V002 | `af_sol` | 1 | en | female | CLI 0.1.9 CPU 实际生成 WAV；未人类听审 |
+| V003 | `bf_vale` | 2 | en | female | CLI 0.1.9 CPU 实际生成 WAV；未人类听审 |
 | V004 | `zf_001` | 3 | zh | female | 实际生成 WAV / WAV generated |
-| V005 | `zf_002` | 4 | zh | female | 映射已核验，未逐音色推理/听审 |
-| V006 | `zf_003` | 5 | zh | female | 映射已核验，未逐音色推理/听审 |
+| V005 | `zf_002` | 4 | zh | female | CLI 0.1.9 CUDA/统一 Skill 实际生成 WAV；未人类听审 |
+| V006 | `zf_003` | 5 | zh | female | CLI 0.1.9 CUDA/统一 Skill 实际生成 WAV；未人类听审 |
 | V007 | `zf_004` | 6 | zh | female | 映射已核验，未逐音色推理/听审 |
 | V008 | `zf_005` | 7 | zh | female | 映射已核验，未逐音色推理/听审 |
 | V009 | `zf_006` | 8 | zh | female | 映射已核验，未逐音色推理/听审 |

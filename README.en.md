@@ -11,31 +11,54 @@ This page includes functional modules, services/dependencies, installation/usage
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r7 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r7.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r8 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r8.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
 <!-- community-materials-gpu -->
 
-**Local installed extension: CLI 0.1.8, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
+**Local installed extension: CLI 0.1.9, GPU voice/translation and 359 bundled open resources.** The public alpha.3 attachments remain unchanged. Invoke the single `$agent-ffmpeg-local-editor` entry; its updated local registration prefers configured GPU packs, records the actual device/fallback, and retains CPU compatibility.
 
 [Complete workflow and limits](docs/product/COMMUNITY_MATERIALS.en.md) · [Resource catalog](docs/product/COMMUNITY_MATERIAL_CATALOG.md) · [103 named voices and actual audition scope](docs/product/COMMUNITY_VOICES.md) · [CPU evidence](docs/validation/evidence/community-materials-20261025-r1/cpu/verification.json) · [GPU evidence](docs/validation/evidence/community-materials-20261025-r1/gpu/verification.json).
 
 | Extension | Actual implementation | Limits |
 |---|---|---|
 | F44 / M01 | 44 BGM, 85 jingles, 228 unique SFX, 2 OFL Noto fonts | Source licenses/attribution remain separate; no stock subscription |
-| F45 / M02 | Chinese/English speech, 103 named voices, text files/speed/WAV | Three voices generated for audition; no cloning or universal voice-quality approval |
+| F45 / M02 | Chinese/English speech, 103 named voices, text files/speed/WAV | At least seven voices actually generated; no human listening acceptance, cloning or universal voice-quality approval |
 | F46 / M03 | Offline bidirectional translation, bilingual SRT, glossary | Cue order/milliseconds retained; translation and pronunciation need review |
 | F47 / G01 | CUDA voice/translation, auto/cpu/cuda, free-VRAM preflight | RTX 3060 tested; strict CUDA and explicit CPU fallback; optional NVIDIA runtime terms |
 | F48 / M04–M05 | Real BGM trim/loop/fades, speech/music mix and ducking | Preserved stems; no composition or automatic seam repair |
 | F49 / C01 | Native window/desktop/region/camera/microphone capture CLI, CPU/NVENC and cancellation | Actual owned-window evidence; camera/microphone, AV sync and long capture unaccepted |
 | F50 / V01 | Offline image/text embeddings, Chinese/English/reference-image queries, previews and editable source points; auto/cpu/cuda | Small static-image acceptance; negation, open-set rejection, natural actions and audio recommendation remain open |
+| F51 / D01 | Chinese/English SRT translation, complete batched speech, actual WAV fitting, explicit casting/mixing and atomic clips | Plain SRT / Chinese-English only; cue timing, semantics/naturalness/lip sync unaccepted |
 
 CPU 46 commands and GPU 15 commands are separate current tests. The real 12-second edit was fully decoded and package-round-tripped. Public examples omit speech whose publication rights remain unverified; local original stems and complete outputs remain available in delivery records. Human listening and full CapCut equivalence remain open.
 
 <!-- /community-materials-gpu -->
 
 
+
+<!-- subtitle-dubbing-r1 -->
+
+## Local CLI 0.1.9: subtitle translation and complete editable dubbing
+
+`dub subtitles` combines OPUS Chinese/English translation, batched Kokoro speech, actual WAV window checks and an atomic project commit. One voice batch initializes Kokoro once; source/translated text, complete speech, all speed attempts and original cue times are retained. Overflow refuses the commit by default. Explicit speed fitting regenerates whole utterances up to three times without cutting dialogue.
+
+Prepare the source SRT, ingested font and explicit audio/subtitle destination tracks using the [complete workflow](docs/product/SUBTITLE_DUBBING.md), then run:
+
+```powershell
+& $avk dub subtitles --project $project --input $sourceSrt --from en --to zh-Hans --device auto --fit reject --apply --audio-track-id track_audio_1 --subtitle-track-id captions --font-asset-id caption_font --dry-run
+& $avk dub subtitles --project $project --input $sourceSrt --from en --to zh-Hans --device auto --fit reject --apply --audio-track-id track_audio_1 --subtitle-track-id captions --font-asset-id caption_font
+& $avk validate --project $project
+```
+
+Installed GPU: 22 CLI calls; CPU: another 9; actual registered Skill: another 9, recorded separately. The installed 27-method suite and 122-method CLI regression pass, alongside active cancellation/timeout and three hard-stop boundaries. The 19-second/570-frame package roundtrip preserves PCM and decoded RGB exactly. The actual third translation, “以秒数创建另一个版本 。”, remains awkward and is retained. Engineering checks do not establish semantic acceptance, natural listening, word precision or lip sync.
+
+[Actual results and retained failures](docs/validation/字幕翻译配音联合流程实测_2026-10-25.md) · [C18 / inputs, actual output, project and GIF](docs/product/CASES.md#c18-subtitle-dubbing). The preview is a silent diagnostic extracted from the real output. Full audio/project media stays local while content rights remain unverified.
+
+![Actual installed subtitle dubbing — silent](docs/assets/subtitle-dubbing-20261025-r1/demo-r1/preview.gif)
+
+<!-- /subtitle-dubbing-r1 -->
 
 <!-- ctc-activity-r1 -->
 
@@ -227,7 +250,7 @@ The implementation is **Python CLI + Agent Project schema + FFmpeg**, with an ex
 5. For selection, show the original and a small candidate set, record final IDs/strength/scope and trial them on target media.
 6. Render to a new project-owned path, inspect the encoded output, manifest, warnings, A/V and rights, then export the project package.
 
-## 43 base functional modules, plus F44–F50 above
+## 43 base functional modules, plus F44–F51 above
 
 IDs locate documentation groups with dependencies/overlap; they are not 43 independent kernels or a completion score. The table describes behavior, commands and limits. The [complete machine capability manual](docs/product/CAPABILITIES.en.md) retains every field.
 
@@ -302,6 +325,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | S17 | Native Windows capture | FFmpeg gdigrab / DirectShow | Explicit source/device IDs, finite duration, full decode and asset registration | `capture devices/record` | Actual CPU/GPU window test; camera/microphone/AV sync pending |
 | S18 | Visual semantic retrieval | Explicit native SigLIP2 worker | Existing Torch/Transformers/model; actual GPU/CPU and source/preview/vector integrity | `semantic adapter-register/index/search/verify` | Cold-start and large-library performance open; cosine is not probability |
 | S19 | Independent four-source separation | Native Torch/TorchAudio HDemucs worker | Explicit native Python, weights/evidence/implementation hashes; auto/cpu/cuda, four float WAV/tracks | `audio adapter; audio separate-stems` | Torch/weights excluded from base ZIP; natural listening and weight licensing remain open |
+| S20 | Joint subtitle dubbing | Existing native OPUS/Kokoro workers + managed project transaction | Plain SRT, explicit languages/voices/tracks, CPU/CUDA/auto, batch reuse | `dub subtitles` | [Workflow](docs/product/SUBTITLE_DUBBING.md); complete utterances/retries retained; words/lip sync/natural quality open |
 
 **Observed local environment:** this update’s doctor sees native Python 3.13.1, FFmpeg/ffprobe 8.1 and Node; this does not establish registration of every model/browser adapter. doctor merely discovers Docker/WSL executable paths and does not run them. This project uses native tools without invoking Docker/WSL/virtual environments.
 
@@ -660,12 +684,18 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R64 | Unified Skill r7 | 81 files/63 Skill files, one registration/17 modules; 8 isolated process calls | [Actual Skill](docs/validation/evidence/ctc-activity-20261025-r1/skill-r1/state.json) · [r7 kit](docs/validation/evidence/ctc-activity-20261025-r1/kit-r1/verification.json); 2026-10-25; same physical host, weights separate |
 | R65 | Current complete-goal review | Six additional read-only registered calls; 74 declarations and 38 remaining groups; all original closure conditions retained | [38 numbered gaps](docs/product/GOAL_GAPS_20261025.md) · [Read-only inventory/API](docs/validation/evidence/goal-gaps-20261025-r8/inventory.json); 2026-10-25; public alpha.3 / CLI 0.1.2; no full CapCut acceptance |
 | R66 | Refreshed full-goal assessment | Six actual read-only unified Skill calls passed; CLI 0.1.8; 195 source/installed Python files match; all 38 groups retain unmet conditions | [Numbered gaps and closure conditions](docs/product/GOAL_GAPS_20261025.md) · [Actual responses and official release API](docs/validation/evidence/goal-gaps-20261025-r9/inventory.json) · [Documentation audit](docs/validation/evidence/goal-gaps-20261025-r9/documentation-audit.json); 2026-10-25; zero new renders/model forwards/listening; historical regressions not rerun; public alpha.3 / CLI 0.1.2 |
+| R67 | Final installed contracts/regression | 27/27 dubbing and 122/122 CLI methods, no skip; 197 product Python files equal source | [Evidence](docs/validation/evidence/subtitle-dubbing-20261025-r1/tests/installed-r2/verification.json) · [Separate scope](docs/validation/evidence/subtitle-dubbing-20261025-r1/tests/installed-cli-r2/verification.json); 2026-10-25; Contract tests separate from real models; historical 2930 not rerun |
+| R68 | Real subtitle translation and speech | GPU: 22 CLI / 6 pipelines / 11 complete generations; CPU: another 9 / 2 / 4, including original translations and overflow refusal | [Evidence](docs/validation/evidence/subtitle-dubbing-20261025-r1/installed-gpu-r2/verification.json) · [Separate scope](docs/validation/evidence/subtitle-dubbing-20261025-r1/installed-cpu-r2/verification.json); 2026-10-25; Awkward translations retained; no human listening/semantic acceptance/lip sync |
+| R69 | Dubbing control and crash recovery | Actual worker cancellation/deadline and three hard-stopped owners; precommit rollback, postcommit speech/captions/model licenses preserved | [Evidence](docs/validation/evidence/subtitle-dubbing-20261025-r1/control-r1/verification.json) · [Separate scope](docs/validation/evidence/subtitle-dubbing-20261025-r1/crashes-r1/verification.json); 2026-10-25; Managed paths only; other caches/power/disk/long concurrency remain open |
+| R70 | Actual bilingual edit/package | 8 CLI calls, 19 seconds/570 frames; source-placement PCM max difference 0; package PCM/RGB exact | [Evidence](docs/validation/evidence/subtitle-dubbing-20261025-r1/demo-r1/verification.json) · [Separate scope](docs/validation/evidence/subtitle-dubbing-20261025-r1/demo-r1/executed-generator.py); 2026-10-25; C18 silent diagnostic retains awkward translation; not natural audiovisual acceptance |
+| R71 | Unified Skill r8/local loading | One entry/17 modules; actual Skill: another 9 CLI calls, both CUDA tasks; separate kit inventory/registration check | [Evidence](docs/validation/evidence/subtitle-dubbing-20261025-r1/skill-r1/verification.json) · [Separate scope](docs/validation/evidence/subtitle-dubbing-20261025-r1/kit-r1/verification.json); 2026-10-25; Same physical host; old kits/public alpha.3 retained |
+| R72 | G01–G38 / current goal review | CLI 0.1.9, 75 declarations; all 38 original closure conditions retained | [Numbered gap assessment](docs/product/GOAL_GAPS_20261025.md) · [Actual entry/API](docs/validation/evidence/goal-gaps-20261025-r10/inventory.json) · [History/link audit](docs/validation/evidence/goal-gaps-20261025-r10/documentation-audit.json); 2026-10-25; review calls counted separately from inference/render; no overall completion percentage |
 
 ## Current limits and development direction
 
 The deliverable is an offline, editable and auditable Agent CLI workflow with explicit contracts. Openly licensed asset/template ecosystems, agreed AI/beauty/layout features, complete color processing, actual quality for supported draft profiles, broad natural-media acceptance and long-form resource performance remain open. Consumer GUI, accounts, cloud collaboration and arbitrary lossless private-draft interchange are outside current core acceptance. Later R113/R114 Float32 transition/runtime-closure candidates are not included in this release.
 
-[The complete-goal assessment](docs/product/GOAL_GAPS_20261025.md) updates every G01–G38 against CLI 0.1.8. A single Skill, 500 looks/previews, 359 resources, GPU voice/translation, stems/recovery and controlled word activity timing are delivered. Natural audiovisual quality, complex combinations, advanced AI, content/templates, autonomous Agent tasks, long-job reliability and a newer public release remain open. R60–R66 retain separate real scopes and limits; no overall completion percentage is established. The [2026-10-24 assessment](docs/product/GOAL_GAPS_20261024.md) is historical.
+[The complete-goal assessment](docs/product/GOAL_GAPS_20261025.md) updates every G01–G38 against CLI 0.1.9. A single Skill, 500 looks/previews, 359 resources, GPU speech/translation, joint subtitle dubbing, stems/recovery and controlled word activity timing are delivered. Natural audiovisual quality, complex combinations, advanced AI, content/templates, autonomous Agent tasks, long-job reliability and a newer public release remain open. R67–R72 retain separate real scopes and limits; no overall completion percentage is established. The [2026-10-24 assessment](docs/product/GOAL_GAPS_20261024.md) is historical.
 
 Exact audio-channel relationship protection and native capture remain delivered within their documented scope. Extremely short-window pitch, precise alignment, actual camera/microphone recording and AV synchronization remain unaccepted. CLI 0.1.5 adds limited visual semantic retrieval; neither the 500 looks nor the 74 declarations establish an overall completion percentage.
 

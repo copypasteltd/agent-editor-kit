@@ -1,0 +1,74 @@
+usage: ai-ad-editor dub subtitles [-h] [--format {json,text}]
+                                  [--request-id REQUEST_ID]
+                                  [--idempotency-key IDEMPOTENCY_KEY]
+                                  [--dry-run] [--no-network]
+                                  [--progress {none,jsonl}] --project PROJECT
+                                  --input INPUT --from {en,zh-Hans,zh-Hant}
+                                  --to {en,zh-Hans,zh-Hant} [--id ID]
+                                  [--voice VOICE] [--voice-map VOICE_MAP]
+                                  [--speed SPEED] [--fit {reject,speed}]
+                                  [--max-speed MAX_SPEED]
+                                  [--overlap-policy {reject,mix}]
+                                  [--subtitle-mode {translation,bilingual}]
+                                  [--threads THREADS] [--beam-size BEAM_SIZE]
+                                  [--glossary GLOSSARY] [--apply]
+                                  [--sequence-id SEQUENCE_ID]
+                                  [--audio-track-id AUDIO_TRACK_ID]
+                                  [--subtitle-track-id SUBTITLE_TRACK_ID]
+                                  [--font-asset-id FONT_ASSET_ID]
+                                  [--timeline-start-tick TIMELINE_START_TICK]
+                                  [--device {auto,cpu,cuda}]
+                                  [--device-index DEVICE_INDEX]
+                                  [--voice-device {auto,cpu,cuda}]
+                                  [--voice-pack VOICE_PACK]
+                                  [--voice-gpu-pack VOICE_GPU_PACK]
+                                  [--voice-cuda-library-directory VOICE_CUDA_LIBRARY_DIRECTORY]
+                                  [--translation-device {auto,cpu,cuda}]
+                                  [--translation-pack TRANSLATION_PACK]
+                                  [--translation-gpu-pack TRANSLATION_GPU_PACK]
+                                  [--translation-cuda-library-directory TRANSLATION_CUDA_LIBRARY_DIRECTORY]
+                                  [--timeout-seconds TIMEOUT_SECONDS]
+                                  [--cancel-file CANCEL_FILE]
+
+options:
+  -h, --help            show this help message and exit
+  --format {json,text}  输出格式
+  --request-id REQUEST_ID
+  --idempotency-key IDEMPOTENCY_KEY
+  --dry-run
+  --no-network
+  --progress {none,jsonl}
+  --project PROJECT
+  --input INPUT
+  --from {en,zh-Hans,zh-Hant}
+  --to {en,zh-Hans,zh-Hant}
+  --id ID
+  --voice VOICE
+  --voice-map VOICE_MAP
+                        本地 JSON: {"cues":{"原字幕编号":"音色 ID"}}；不自动识别说话人
+  --speed SPEED
+  --fit {reject,speed}
+  --max-speed MAX_SPEED
+  --overlap-policy {reject,mix}
+  --subtitle-mode {translation,bilingual}
+  --threads THREADS
+  --beam-size BEAM_SIZE
+  --glossary GLOSSARY
+  --apply
+  --sequence-id SEQUENCE_ID
+  --audio-track-id AUDIO_TRACK_ID
+  --subtitle-track-id SUBTITLE_TRACK_ID
+  --font-asset-id FONT_ASSET_ID
+  --timeline-start-tick TIMELINE_START_TICK
+  --device {auto,cpu,cuda}
+  --device-index DEVICE_INDEX
+  --voice-device {auto,cpu,cuda}
+  --voice-pack VOICE_PACK
+  --voice-gpu-pack VOICE_GPU_PACK
+  --voice-cuda-library-directory VOICE_CUDA_LIBRARY_DIRECTORY
+  --translation-device {auto,cpu,cuda}
+  --translation-pack TRANSLATION_PACK
+  --translation-gpu-pack TRANSLATION_GPU_PACK
+  --translation-cuda-library-directory TRANSLATION_CUDA_LIBRARY_DIRECTORY
+  --timeout-seconds TIMEOUT_SECONDS
+  --cancel-file CANCEL_FILE

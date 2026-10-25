@@ -1,0 +1,162 @@
+{
+  "argv": [
+    "convert",
+    "export",
+    "--project",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\dubbing-20261025-r1\\installed-gpu-r2\\basic",
+    "--target-format",
+    "package",
+    "--output",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\dubbing-20261025-r1\\installed-gpu-r2\\dubbing.aevpkg.zip"
+  ],
+  "exit_code": 0,
+  "response": {
+    "ok": true,
+    "command": "convert.export",
+    "request_id": "req_20261025023759_1305cf7e",
+    "operation_id": null,
+    "status": "succeeded",
+    "data": {
+      "output": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\dubbing-20261025-r1\\installed-gpu-r2\\dubbing.aevpkg.zip",
+      "report": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\dubbing-20261025-r1\\installed-gpu-r2\\dubbing.aevpkg.zip.conversion-report.json",
+      "report_data": {
+        "report_version": "0.1.0",
+        "direction": "export",
+        "source_format": "agent-project/0.1.0",
+        "target_format": "agent-project-package/0.1.0",
+        "created_at": "2026-10-25T02:37:59.076872Z",
+        "items": [
+          {
+            "capability": "project-package",
+            "status": "Exact",
+            "source": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\dubbing-20261025-r1\\installed-gpu-r2\\basic",
+            "target": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\dubbing-20261025-r1\\installed-gpu-r2\\dubbing.aevpkg.zip",
+            "detail": "项目、登记权利和本地素材已写入自包含 ZIP"
+          }
+        ],
+        "warnings": [
+          {
+            "capability": "package-excluded-runtime",
+            "status": "Approximate",
+            "source": "project runtime",
+            "target": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\dubbing-20261025-r1\\installed-gpu-r2\\dubbing.aevpkg.zip",
+            "detail": "renders/cache/operations/history 未打包"
+          }
+        ],
+        "failures": []
+      },
+      "manifest": {
+        "package_format": "agent-project-package",
+        "package_version": "0.1.0",
+        "created_at": "2026-10-25T02:37:59.076711Z",
+        "project_id": "proj_20261025022951_ef54d45c",
+        "project_schema_version": "0.1.0",
+        "files": [
+          {
+            "path": "assets/caption_font_noto-sans-sc-variable.ttf",
+            "size": 17772300,
+            "sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da"
+          },
+          {
+            "path": "assets/dub_audio_20261025023201_cb76b15e_attempt-1.wav",
+            "size": 108856,
+            "sha256": "c5c6018f5384723135c78b13a64240425b2d40926e92a6b8661c0cbb6dde3bb7"
+          },
+          {
+            "path": "assets/dub_audio_20261025023202_2c63b04e_attempt-1.wav",
+            "size": 133866,
+            "sha256": "7f88e1039783af977fbd1a1743aac27d0308d043f4d45df7e4a5a5a8ab8b01ae"
+          },
+          {
+            "path": "assets/dub_audio_20261025023202_5560fec6_attempt-1.wav",
+            "size": 128846,
+            "sha256": "d14109248cf82cf99c55c6a475e72d00e7be1c1dba45e6600b3206d72ccbc9e1"
+          },
+          {
+            "path": "assets/dub_generated_20261025023202_1a2c9d33_report.json",
+            "size": 31932,
+            "sha256": "3540f40096472b6bac71070bb63c612b4d646f9b1a77dda16826cbe61c475f62"
+          },
+          {
+            "path": "assets/dub_subtitle_20261025023201_40be05c4_bilingual.srt",
+            "size": 309,
+            "sha256": "c4e57ab69fd00609fbb8f445362d46ea74448d808005060c24680c0f0d36dd8a"
+          },
+          {
+            "path": "assets/dub_subtitle_20261025023201_525ad8d1_source.srt",
+            "size": 200,
+            "sha256": "64f391340ad3cbf15df3a3e55977bf3ba8a008be93660c3b7b7bc079de22f2a9"
+          },
+          {
+            "path": "assets/dub_subtitle_20261025023201_719d1637_translated.srt",
+            "size": 215,
+            "sha256": "7d58c4bb50f5615d9b935e008d451dcb0cf0f3d0ae75f2d8a89c6b6307166656"
+          },
+          {
+            "path": "assets/dubbing_board_dubbing_board_source-board.png",
+            "size": 47996,
+            "sha256": "9113a64e52ab79b55a0d5afc39715173c5ca80ace1b90c5a550051254f87e408"
+          },
+          {
+            "path": "project.json",
+            "size": 23653,
+            "sha256": "681c9d03b256bd52879630cfb1931baf0739544ba8c08cd79dc587dd7a71b8bb"
+          },
+          {
+            "path": "project.lock.json",
+            "size": 307,
+            "sha256": "738487c3f75057fbe312a6a67a35eae5bd565bb1b6a98de385cc67b35e94b619"
+          },
+          {
+            "path": "rights-ledger.json",
+            "size": 17050,
+            "sha256": "08fb508a14f28bb4ea9126ee2dadef8a46586286ef12f8e5612e5062095277c5"
+          },
+          {
+            "path": "validation/community_op_20261025023006_d56cf4d1.json",
+            "size": 3142,
+            "sha256": "6f41db00a270575c847b347e60a5fb1a981d2b765f644e2d2327256b26c780dc"
+          },
+          {
+            "path": "validation/validation_run_20261025023204_f5e298bc.json",
+            "size": 9198,
+            "sha256": "25bd064335895df5303c317253b17212e5b27454c434a1a1a8fa2d7fd12469a5"
+          },
+          {
+            "path": "validation/validation_run_20261025023426_827d6ac7.json",
+            "size": 9198,
+            "sha256": "09692c4952090b8fbd960255ca504ce1c1c460b8d67383fe1401a1c73c38560b"
+          }
+        ],
+        "excluded": [
+          "renders/",
+          "cache/",
+          "operations/",
+          "history/"
+        ],
+        "network": "disabled",
+        "upstream_runtime": "none"
+      }
+    },
+    "artifacts": [],
+    "warnings": [
+      {
+        "capability": "package-excluded-runtime",
+        "status": "Approximate",
+        "source": "project runtime",
+        "target": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\dubbing-20261025-r1\\installed-gpu-r2\\dubbing.aevpkg.zip",
+        "detail": "renders/cache/operations/history 未打包"
+      }
+    ],
+    "errors": [],
+    "provenance": {
+      "cli_version": "0.1.9",
+      "schema_version": "0.1.0",
+      "engine_version": "ffmpeg-local",
+      "started_at": "2026-10-25T02:37:59.880838Z",
+      "finished_at": "2026-10-25T02:37:59.880846Z",
+      "network": "disabled"
+    }
+  },
+  "seconds": 2.926499099998182
+}

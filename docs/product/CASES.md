@@ -496,3 +496,35 @@ English: the installed unified Skill produces actual editable highlighted captio
 The source/roundtrip PCM and every decoded RGB frame match. Public previews are silent diagnostics;
 controlled authored blocks are not natural phonetic truth. Human listening, continuous playback,
 natural speech, Chinese, singing and overlapping voices remain unaccepted.
+
+<a id="c18-subtitle-dubbing"></a>
+
+## C18：字幕翻译 → 完整分段配音 → 可编辑双语成片 / SRT to editable dubbed captions
+
+固定安装版 CLI 0.1.9 / local.7，真实 OPUS CUDA 翻译与 Kokoro CUDA 配音。
+每段保留原文、译文、完整 WAV 与原 cue 时间，三个字幕片段和三段声音可独立编辑。
+下图是实际编码成片的无声诊断；第三段原始错译保留，不代表广告语义或听感验收。
+
+![Actual installed subtitle dubbing, silent](../assets/subtitle-dubbing-20261025-r1/demo-r1/preview.gif)
+
+| 项目 / Item | 实际结果与边界 / Actual result and limit |
+|---|---|
+| 源字幕 / Source | [三段英文 SRT](../validation/evidence/subtitle-dubbing-20261025-r1/installed-gpu-r2/basic.srt)，0–6、6.5–12.5、13–19 秒；作者文本，无自然语音精标 |
+| 原画面 / Source image | [原创数值图](../assets/subtitle-dubbing-20261025-r1/demo-r1/source-board.png)，来自实际 WAV 时长；[CC0/OFL 来源](../assets/subtitle-dubbing-20261025-r1/demo-r1/source-provenance.json) |
+| 真实模型 / Actual models | zf_001/zf_002/zf_003，完整声音 2.2669167/2.7879583/2.683375 秒；一次 voice batch 初始化，全部实际样本数适配 6 秒窗口 |
+| 实际视频 / Output | [无声 MP4](../assets/subtitle-dubbing-20261025-r1/demo-r1/output-silent.mp4)，1280×720 / 30fps / 19 秒 / 570 帧；[第 1](../assets/subtitle-dubbing-20261025-r1/demo-r1/frame-1.png) / [第 2](../assets/subtitle-dubbing-20261025-r1/demo-r1/frame-2.png) / [第 3](../assets/subtitle-dubbing-20261025-r1/demo-r1/frame-3.png) 段实际抽帧 |
+| GIF | 实际抽取 5fps / 95 帧 / 19000ms，无音轨；不是实时执行录像 |
+| 成片与往返 / Render and roundtrip | 8 次实际 CLI；与三个 WAV 重采样摆放最大 PCM 差 0；工程包导入重渲染 PCM 和全部解码 RGB 摘要相同 |
+| 本地完整音画 / Local audiovisual file | `local/agent-ffmpeg/dubbing-20261025-r1/installed-gpu-r2/basic/renders/dubbing.mkv`；声音权利 unverified/internal，仅留本机 |
+| 可编辑包 / Editable package | 同 run 下 `dubbing.aevpkg.zip`；保留原/译/双语字幕、三段声音、报告与模型许可；SHA-256 `1fff5d866ef2c548f310800d39895c59f09def3f16c215a6769f51911a720c6a` |
+| 复现与响应 / Reproduction | [完整实测与失败](../validation/字幕翻译配音联合流程实测_2026-10-25.md) · [8 次 CLI/编码/往返检查](../validation/evidence/subtitle-dubbing-20261025-r1/demo-r1/verification.json) · [执行器副本](../validation/evidence/subtitle-dubbing-20261025-r1/demo-r1/executed-generator.py) |
+
+实际第三段译文是“以秒数创建另一个版本 。”，需语境校对；技术通过不意味着该译文可交付客户。
+两次 CPU 字幕合成 render 为 210.470/197.556 秒，当时并行其他检查，不能用作独占性能结论。
+3 张静态帧已检查字幕完整且在画布内；连续人工播放、听审和人类语义接受未完成。
+默认超窗拒绝、显式完整再生成、CPU 双向、重叠混音、幂等、取消/超时与强制中断另见完整实测。
+
+English: actual local CUDA translation/speech creates three editable voice clips and bilingual captions.
+The package roundtrip preserves PCM and decoded RGB exactly; public previews are silent.
+Awkward original translation and CPU rendering cost are retained. This case does not close
+naturalness, semantic acceptance, word timing, lip sync or complete G19/G32/G33/G36.

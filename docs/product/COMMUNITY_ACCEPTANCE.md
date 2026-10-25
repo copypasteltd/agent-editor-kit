@@ -1,6 +1,6 @@
 # 素材与 GPU 扩展验收 / Community and GPU acceptance
 
-2026-10-25；本页专项实测基线 **CLI 0.1.3 / `v0.1.0-alpha.4-local.1`**。当前安装版已为 **CLI 0.1.8 / local.6**，见[本地交付](COMMUNITY_LOCAL_DELIVERY.md)。以下保留当时素材/配音/翻译/配乐/GPU 的实际验收，不表示本轮重跑这些推理，也不作为完整剪映功能或成片质量的验收。
+2026-10-25；本页专项实测基线 **CLI 0.1.3 / `v0.1.0-alpha.4-local.1`**。当前安装版已为 **CLI 0.1.9 / local.7**，见[本地交付](COMMUNITY_LOCAL_DELIVERY.md)。以下保留当时素材/配音/翻译/配乐/GPU 的实际验收，不表示本轮重跑这些推理，也不作为完整剪映功能或成片质量的验收。
 
 This page records the scoped local extension. It does not certify full CapCut equivalence, natural-media quality, human listening or semantic translation acceptance. Public alpha.3 remains unchanged.
 
@@ -66,3 +66,5 @@ The measured warm-generation improvement excludes hashing, process startup and m
 本轮范围内的实现与离线交付已完成；人工听审、翻译语义接受和上述总产品差距作为后续验收项单独保留。
 
 完整产品的现状与 G01–G38 收口条件见 [2026-10-25 目标差距评估](GOAL_GAPS_20261025.md)。本页仍仅记录素材与 GPU 扩展的阶段性验收。
+
+CLI 0.1.9 另有[字幕翻译配音联合流程](SUBTITLE_DUBBING.md)与[独立本批实测](../validation/字幕翻译配音联合流程实测_2026-10-25.md)。上表 M02/R33 的三音色仍是 CLI 0.1.3 当时范围；新增四个不同音色真实生成后，当前至少 7/103 有 WAV，全部人类听审仍未完成。新流程不改写本页历史调用数或质量失败。

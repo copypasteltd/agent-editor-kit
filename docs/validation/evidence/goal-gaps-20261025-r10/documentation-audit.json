@@ -1,0 +1,97 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-10-25T02:58:58.344978+00:00",
+  "baseline_commit": "7f24b2551e9d54b528d0eed9f15642b7fe57ad5d",
+  "all_original_G01_G38_closure_conditions_verbatim": true,
+  "historical_R01_R66_verbatim_in_three_readmes": true,
+  "numbered_rows": {
+    "F": 51,
+    "S": 20,
+    "K": 17,
+    "R": 72
+  },
+  "local_links_checked": 1842,
+  "missing_local_links": [],
+  "new_product_features": 0,
+  "scope": "documentation audit only; batch product/model/render work has separate receipts",
+  "initial_documentation_audit_failed": false,
+  "new_renders": 0,
+  "new_model_forwards": 0,
+  "human_listening": false,
+  "full_capcut_parity": false,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "1301b30e454322be8fb722eec17801fd0a44252860ea5fdf8545bee48e456573"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "sha256": "119ed2b05f11c995a80f75fdb7efb6ee0268a019893412a83bde294ef27f07de"
+    },
+    {
+      "path": "README.en.md",
+      "sha256": "b8c7f85c710a3c0600480a51d1f0bbcb62c064d25c43716db3100ecd67fe98df"
+    },
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "sha256": "bc6146f1df49f1ca459c4befbc21823663a908bc5fcb8c11f5f440778e27e859"
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "6ebfe8da45428e475019f10c0915d20a38fd88864c4b5ede450ea3fec1f2ab67"
+    },
+    {
+      "path": "docs/product/IMPLEMENTATION_PLAN_20261025.md",
+      "sha256": "dd317e21fa1973d3ecc7570e254f8596fb2af7a5071ea7d2f8c25bf01b23c48b"
+    },
+    {
+      "path": "docs/product/SUBTITLE_DUBBING.md",
+      "sha256": "404708b1f7a46d451a9c7d37e6124f643f7a3aaba9353b38e89312a52c949369"
+    },
+    {
+      "path": "docs/product/COMMUNITY_LOCAL_DELIVERY.md",
+      "sha256": "7153f3a1fd20c2b38fb624f7c1a2f4d2503c06d041d14d8d4a774ae7539787e6"
+    },
+    {
+      "path": "docs/product/COMMUNITY_VOICES.md",
+      "sha256": "68c62d38466eebd0447ba9519eb1ba9ca5e4a15897ceb1f085b831e0fd83124e"
+    },
+    {
+      "path": "docs/product/JOB_RECOVERY.md",
+      "sha256": "01ff3e855dfb5f4f629193ce035e05b4ef5a59eb07d6eb310c0c27541e066d90"
+    },
+    {
+      "path": "docs/product/CASES.md",
+      "sha256": "a0b24aeab9782f680ceefce1b433f6dd3764be292c8dda66cf15b7af9a7a9c0e"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.md",
+      "sha256": "df2cd8ac17aca828a152b536b1a82dead6063cd3c825d2aee45d4d12c28a8e29"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.zh-TW.md",
+      "sha256": "a7851777e1fc0111f4a7670c38be2b1376e8d8ddf9a0c4eaba172abd4d7ab012"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.en.md",
+      "sha256": "33927b93dfa9bc1ba7115f125870fa4ac679e262a99e03068450edf31d0bc33f"
+    },
+    {
+      "path": "docs/product/SKILLS.md",
+      "sha256": "f82108b0afe94656fe9ea51a8004224f2d92feed9ccb60d8a80d6f29bd7c4bca"
+    },
+    {
+      "path": "docs/product/SKILLS.zh-TW.md",
+      "sha256": "96a5a4945dc344ce151c7c15bde733626aaa2778e7fe2ddb092c02455c393cf0"
+    },
+    {
+      "path": "docs/product/SKILLS.en.md",
+      "sha256": "bf22f6aad9a5793ffd5647e7066e20df380009d8053dbd759842bc3c0ed858f9"
+    },
+    {
+      "path": "docs/validation/字幕翻译配音联合流程实测_2026-10-25.md",
+      "sha256": "0061b6bacebcc342f35a855b6b2c8e33d41d8078748f30c010fe360305476ea2"
+    }
+  ],
+  "generator_sha256": "df2c8be2491277639390697bebb6bb53404c1dda1cb439e87b63bafc37c8f0cf"
+}

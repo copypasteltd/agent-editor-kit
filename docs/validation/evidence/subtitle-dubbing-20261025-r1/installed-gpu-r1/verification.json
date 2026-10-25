@@ -1,0 +1,1765 @@
+{
+  "status": "failed",
+  "started_at_utc": "2026-10-25T02:15:46.200382+00:00",
+  "site": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.7\\final\\installed\\site",
+  "launcher": null,
+  "device": "cuda",
+  "work": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\dubbing-20261025-r1\\installed-gpu-r1",
+  "frozen_before": [
+    {
+      "path": "ai_ad_editor\\__init__.py",
+      "sha256": "9e01467da3660049ceb78d942d73f3984149d23faf8e1de86591485a3e422cdb"
+    },
+    {
+      "path": "ai_ad_editor\\__main__.py",
+      "sha256": "307299fda7b77d22c64cb51430ec75e5f59d78e9c948786afb3b2544fe45e4b7"
+    },
+    {
+      "path": "ai_ad_editor\\ad_plan.py",
+      "sha256": "4d6482f6f0baf87cf60ae01be604af0047069e794c2784a9d0c86f30a1a458ac"
+    },
+    {
+      "path": "ai_ad_editor\\animation.py",
+      "sha256": "b90064bd9de4fbe1aea85ba7bb11e5acfefc82a85c2b8078ba36bac64c59b949"
+    },
+    {
+      "path": "ai_ad_editor\\artifact_locks.py",
+      "sha256": "8084eb6d7358c6376faec11a96bb89453c93bedf09ea9474f8e3e5c41027da3d"
+    },
+    {
+      "path": "ai_ad_editor\\asr_quality.py",
+      "sha256": "e2407215903a2552a3efd1acd04840bae03862b470dce72b489573b36d6c1f90"
+    },
+    {
+      "path": "ai_ad_editor\\audio_channel_links.py",
+      "sha256": "18e6caaf8370a523efe8a0a747818eb7fa0e058861f7ac982f703ecb648fc691"
+    },
+    {
+      "path": "ai_ad_editor\\audio_routing.py",
+      "sha256": "40f74750a79ea80f016dd2eb8a353d6103682756f01970ad802c6292be8e5af8"
+    },
+    {
+      "path": "ai_ad_editor\\audio_separation.py",
+      "sha256": "bb36d993ca948deea171e9569c6b4954105bdd5c7b79c70d2f5c14a79878f0de"
+    },
+    {
+      "path": "ai_ad_editor\\audio_stretch.py",
+      "sha256": "2286f23b626fe5f5545b585da2c78c50068f3a0d4fa45b414d94d6926ed37973"
+    },
+    {
+      "path": "ai_ad_editor\\audio_tempo.py",
+      "sha256": "3284a08dc75a25dcbeed30c7088a18898c46d398e6e7ae9380efcf0e366afcee"
+    },
+    {
+      "path": "ai_ad_editor\\audio_tools.py",
+      "sha256": "9e636d1b27707dad3777811827d3c3c3e69ca393a9a3757733e9876517506f5e"
+    },
+    {
+      "path": "ai_ad_editor\\batch.py",
+      "sha256": "5a416712628d104c5e9cf1b96bafeb118b2e8bfb44690b51831242b716ff2a92"
+    },
+    {
+      "path": "ai_ad_editor\\beat_edit.py",
+      "sha256": "0cbc12d37b80417e022741818f812f61d287123d816217c7e5462f872cfd78fb"
+    },
+    {
+      "path": "ai_ad_editor\\bindings.py",
+      "sha256": "2dbb8bce11ecb7f7fd6fa893cca08efdaa6f9c21a3c6f8a4588cbed5092c3a65"
+    },
+    {
+      "path": "ai_ad_editor\\blend_automation.py",
+      "sha256": "ca6c28091564fdb28853288f46f4caaeaa96388c4d363e1b139248d89753a1e5"
+    },
+    {
+      "path": "ai_ad_editor\\browser_process.py",
+      "sha256": "16fc0ec652a21a7604b5e59737800d91a3bf4254e1c44de2c7989b895c130a65"
+    },
+    {
+      "path": "ai_ad_editor\\capabilities.py",
+      "sha256": "1e1c70933b60adb626bc9f6f8167224b413cad946aaa432ee9247f08b862cca3"
+    },
+    {
+      "path": "ai_ad_editor\\captions.py",
+      "sha256": "38c500ba0e2697e745d7ad8357d7a9e5cb9e771f4093750b0b6a8b67e7ee0c57"
+    },
+    {
+      "path": "ai_ad_editor\\capture.py",
+      "sha256": "9f8261f0ec5d005605c7e6112731245c92e55b6d252f574e9acb2a5fbef457cf"
+    },
+    {
+      "path": "ai_ad_editor\\cli.py",
+      "sha256": "c94f7c6005a9fc1a67ee076cae89327e815af48f97b877e11de60668ff95183f"
+    },
+    {
+      "path": "ai_ad_editor\\clip_windows.py",
+      "sha256": "47a5b173770772ac72d2764c05e47148962003414adb0fcd26c16a7b3f88f1ce"
+    },
+    {
+      "path": "ai_ad_editor\\community_audio.py",
+      "sha256": "b22b1714e164f0e400b7d53f978e0d0e36b83b519f827cd235826d29a037116a"
+    },
+    {
+      "path": "ai_ad_editor\\community_cli.py",
+      "sha256": "3911b36f4746b04753932e2af04a53434d4b7789aa32e4025086dcb0cba89ec2"
+    },
+    {
+      "path": "ai_ad_editor\\community_device.py",
+      "sha256": "c1525a0b20ebd5d9b37a615494b188c7165526df0bb5479338a3e06e5428f4e5"
+    },
+    {
+      "path": "ai_ad_editor\\community_models.py",
+      "sha256": "646db6e84e480b0252ace647e35cb4bdb4bdbee1cf342cce928c255d9497d89b"
+    },
+    {
+      "path": "ai_ad_editor\\community_worker.py",
+      "sha256": "85ea135885f895d57156d7a3a8f63dca0057a2ca615c2db114d6ee1649c4e882"
+    },
+    {
+      "path": "ai_ad_editor\\contact_sheet.py",
+      "sha256": "18e7028d73443cb6173ddbcda949147485e6d99f6742afeeb9c8b3cf7f66165b"
+    },
+    {
+      "path": "ai_ad_editor\\convert.py",
+      "sha256": "326be682b517c751d4c759376d05abb87c53b3314b6080de044c944fab8d36ba"
+    },
+    {
+      "path": "ai_ad_editor\\ctc_activity.py",
+      "sha256": "32e642daa9b2cba6e0946aa6b29f64e1c20b238601a397251b4d32092fc2d289"
+    },
+    {
+      "path": "ai_ad_editor\\ctc_alignment.py",
+      "sha256": "a475e9b1acd8ceba2be90884729f0b5a4c76ed354853bc0a57b47f1f9787edd7"
+    },
+    {
+      "path": "ai_ad_editor\\ctc_cli.py",
+      "sha256": "9cd8027ee654c95f42d69055c2decdc4628da11dc49c6927ee57a74e1dc9f8a7"
+    },
+    {
+      "path": "ai_ad_editor\\ctc_worker.py",
+      "sha256": "18440a7affc7e33169f82e40a0a970d7acd767b5a699559888a6768e1b0589ad"
+    },
+    {
+      "path": "ai_ad_editor\\cuda_admission.py",
+      "sha256": "8d030f776b09edeb9d6cfecce720caca3f20a1fab058dd3dc406020ed064fd3b"
+    },
+    {
+      "path": "ai_ad_editor\\curve_automation.py",
+      "sha256": "73c33745ad14cfbce2f937db9e78840eef7794259496a62c6247f609167442f5"
+    },
+    {
+      "path": "ai_ad_editor\\demucs_worker.py",
+      "sha256": "8a5347b8e2ad0c93fb42b9c1867737ff989914e662753ef11104602c944bba95"
+    },
+    {
+      "path": "ai_ad_editor\\derived_cache.py",
+      "sha256": "c3cca48d052b6ff4531cafc04005d7936eeb289a67f74bb4ffd0ceb203dd03e0"
+    },
+    {
+      "path": "ai_ad_editor\\draft_adapter.py",
+      "sha256": "0eb1e8f649e66cc6f15ef56bfb75d07166a7d7e3a6f1326f50bca349a1c24071"
+    },
+    {
+      "path": "ai_ad_editor\\dubbing.py",
+      "sha256": "c0ebe30da344a86c028faa382cc8a35dd6a72a4a18ec42847e40bf662e79497b"
+    },
+    {
+      "path": "ai_ad_editor\\dubbing_cli.py",
+      "sha256": "2b4f255a90684e7c7baa937301a3174a011d799caec5f77605f718709cdaa323"
+    },
+    {
+      "path": "ai_ad_editor\\edit_planner.py",
+      "sha256": "4b91e9bf43709a9382ebed6bebb861cf7b10f4024191e4f255ee96a662992b2f"
+    },
+    {
+      "path": "ai_ad_editor\\effect_automation.py",
+      "sha256": "45b3ee4be693cdf1c07cf3fb6f372562ca376c93bf846b9515fc3d0d05ce8dbf"
+    },
+    {
+      "path": "ai_ad_editor\\effects.py",
+      "sha256": "2b236659bb30c71d3c14c70ba6030e19b48916f04ec9456d9e90b01672a245f1"
+    },
+    {
+      "path": "ai_ad_editor\\errors.py",
+      "sha256": "1525e91f86ad7f22c061a35c383d3513cdcad77acab2e364510b42adde0a9721"
+    },
+    {
+      "path": "ai_ad_editor\\face_cli.py",
+      "sha256": "0b22ce781d350770edcecfddfce4058ed478fccd29e723a78f088e32be2bc8c4"
+    },
+    {
+      "path": "ai_ad_editor\\face_geometry.py",
+      "sha256": "a3551a4d699e8e5e43622311a1d800be00cbaec70f9152147b3dde4a4f73d380"
+    },
+    {
+      "path": "ai_ad_editor\\face_landmarks.py",
+      "sha256": "29112cde9c85408d2cf19c7a26e3f17282605bb80e0d0cb67debd44ac36f5793"
+    },
+    {
+      "path": "ai_ad_editor\\face_worker.py",
+      "sha256": "dbfa64be9cefa760cfe6b31685a6cbcc8008b2c696951848ffd75a4f0e604e56"
+    },
+    {
+      "path": "ai_ad_editor\\float_audio_graph.py",
+      "sha256": "d47b84af34f8e65babbe27b3db99e342d4d0990bea10558c2a255cc7ca278fe9"
+    },
+    {
+      "path": "ai_ad_editor\\float_balance.py",
+      "sha256": "16dbfe24290b8bc0b1d77268b6ff34bf813dbbc62b378971d82a5aa49faa9355"
+    },
+    {
+      "path": "ai_ad_editor\\float_bundle.py",
+      "sha256": "0ec2eff233424eef1a1ae9c8a60aa271d808abee77b4a17e5a5ffaac28a2d0c3"
+    },
+    {
+      "path": "ai_ad_editor\\float_bundle_source.py",
+      "sha256": "0f414c8c8f5b79dccb54a41ed02e73c460deb9d96e5884372ffc85357ee1a6ef"
+    },
+    {
+      "path": "ai_ad_editor\\float_color_signal.py",
+      "sha256": "b0c07f905c67db85478fc34d5e1b1614a13361bf64ce34f5838512de875d8be1"
+    },
+    {
+      "path": "ai_ad_editor\\float_composite.py",
+      "sha256": "8275eb65c574407b47b466bbe124015832a92b068e5595a028c04964f884b937"
+    },
+    {
+      "path": "ai_ad_editor\\float_crop.py",
+      "sha256": "390a13647ce58e94ba85bb6fde0d2333a80106fac1806b168a72ed4e7bd6b496"
+    },
+    {
+      "path": "ai_ad_editor\\float_curves.py",
+      "sha256": "1cfad01c55964614ea432431f6db59191b87356aa9b15a3c6a59c127f52c8a56"
+    },
+    {
+      "path": "ai_ad_editor\\float_effect_chain.py",
+      "sha256": "3aa3ffa4c675e1f1dd3330ee4ea7c1d3a12501569cf2f9fdb0cd45a9f1e018f3"
+    },
+    {
+      "path": "ai_ad_editor\\float_exposure.py",
+      "sha256": "fceacb925552a4bb44126143f584f4757a76152e87f9224f4e6ce16f5a6c27ed"
+    },
+    {
+      "path": "ai_ad_editor\\float_gaussian.py",
+      "sha256": "97e64bcecca4ae7d979f382cff0afd8b91401bdf7020c869282218777ec87bdb"
+    },
+    {
+      "path": "ai_ad_editor\\float_geometry.py",
+      "sha256": "57f9af0406663a27e31b35e3463076acf24d3833de5fce98102b6f0b73a9d51a"
+    },
+    {
+      "path": "ai_ad_editor\\float_keyer.py",
+      "sha256": "bb5c5eb5aa0ade318a50e443c8039f7daca99f0d593481da15c530f2b3b22b93"
+    },
+    {
+      "path": "ai_ad_editor\\float_levels.py",
+      "sha256": "4b6d1b777da7359a0c3dc3b0c10e3b87b58b2c4aa1522d994d2a17e9c39ec248"
+    },
+    {
+      "path": "ai_ad_editor\\float_lut.py",
+      "sha256": "bb8489ca1ce1a8cc253f5c22b499428fe7cb0634a53f804cef5d089840ebbece"
+    },
+    {
+      "path": "ai_ad_editor\\float_mask.py",
+      "sha256": "f85427fa44a9c3723c398314230c0e00c6b6e699c09c3785e5b3ff99a244bbfa"
+    },
+    {
+      "path": "ai_ad_editor\\float_native_pipe.py",
+      "sha256": "4b89898462505f58fbbe1ca053a0f4f2ef475f417a99dabeb470f999353eb708"
+    },
+    {
+      "path": "ai_ad_editor\\float_native_source.py",
+      "sha256": "1badc4c67dcdfb995dec5570b47e54fe1a3b1da6234f978062832c2d354496c6"
+    },
+    {
+      "path": "ai_ad_editor\\float_numeric_automation.py",
+      "sha256": "e66c20d09cab1487a86d19104d5637dcdc2bf97e11a781172ab1c431bffe1e09"
+    },
+    {
+      "path": "ai_ad_editor\\float_pixels.py",
+      "sha256": "863991d7c7e88db619b72e268321fe182baca8d4e8f63d8c5166a945928e127f"
+    },
+    {
+      "path": "ai_ad_editor\\float_preview.py",
+      "sha256": "f4dfb9614cfec533ecbcc7b6f1f104d50611677f3f093a4e6aa506a051abf3a0"
+    },
+    {
+      "path": "ai_ad_editor\\float_raster.py",
+      "sha256": "ff83b49c999146a4c3479796f34050e81eaf504efdba48c050a4ded8cdb876ba"
+    },
+    {
+      "path": "ai_ad_editor\\float_selective_hsl.py",
+      "sha256": "e62d668a6308fb0f034d687532e0f6006cd5b6183d20570cad20c34174319dd1"
+    },
+    {
+      "path": "ai_ad_editor\\float_sharpen.py",
+      "sha256": "d261d9b9511f91d6324a95e71209781ad592aee25fe355719dbbb61512c2c846"
+    },
+    {
+      "path": "ai_ad_editor\\float_spatial.py",
+      "sha256": "978868786110885597ae91c582562888bfc272400adc788fceaa3a6cb2187bb1"
+    },
+    {
+      "path": "ai_ad_editor\\float_spatial_budget.py",
+      "sha256": "ea50453012d384afa9422feb89991fc321b91591817e70ce46e93994b1655a0b"
+    },
+    {
+      "path": "ai_ad_editor\\float_standard_render.py",
+      "sha256": "acffad25eed8923c2dabfb280c46135270e4fb66f6caa2761ba1342e8ee37886"
+    },
+    {
+      "path": "ai_ad_editor\\float_stream.py",
+      "sha256": "955705b4f87817de34046f5cf979319278fb7815da75c8e3870630daaad574a8"
+    },
+    {
+      "path": "ai_ad_editor\\float_timeline.py",
+      "sha256": "84d6b33437d7bac52d39c44fcf8c035b4975b5fd69c46d9108f55bb812fa8ee0"
+    },
+    {
+      "path": "ai_ad_editor\\float_tone.py",
+      "sha256": "3e4216a6cd43dbc21afcae33ce527802d414df5fb3e16381abb62fd5c85b9638"
+    },
+    {
+      "path": "ai_ad_editor\\float_video_source.py",
+      "sha256": "79685d1bbe3298b1334b80d429bba0fb6e8c8c57230428f1e08eb9afc56b510a"
+    },
+    {
+      "path": "ai_ad_editor\\float_yuv.py",
+      "sha256": "031b34c9b75e141946eda3ace6521c015c99023fdc5c725be34701577a9e5a1b"
+    },
+    {
+      "path": "ai_ad_editor\\float_yuv_source.py",
+      "sha256": "bb6eae6288a722a6a256126a0b2f3d47d0b03821880b927d0e3b41c988fc32bb"
+    },
+    {
+      "path": "ai_ad_editor\\font_coverage.py",
+      "sha256": "2f33b3eb07331ef3b87c78286317df8d903a2c991978e9750a39d6bcd117c243"
+    },
+    {
+      "path": "ai_ad_editor\\fragments.py",
+      "sha256": "6087fe24f6f0a2041473ac5ccc04507f7c25c2b598c5a6f65dd7b4ddafe9567f"
+    },
+    {
+      "path": "ai_ad_editor\\hardware_acceleration.py",
+      "sha256": "670ab26584d75f45ca6d6a12df0e096bdbe0d25dba6edc9ef3ea4ccba3f5132f"
+    },
+    {
+      "path": "ai_ad_editor\\hsl_native.py",
+      "sha256": "236d4af5c4317d57d9e31916472e73d1ed98dde66ed3331d3661830331a0f44e"
+    },
+    {
+      "path": "ai_ad_editor\\hsl_program.py",
+      "sha256": "a1f7ac34659d6c55ed79bfacaaa7bf997a1bf4d4fef2fede53cde0abbe61ab17"
+    },
+    {
+      "path": "ai_ad_editor\\html_components.py",
+      "sha256": "1779196590bcff1e638b5c6087698eda80a45f1bb4bc4a74c59cf7ca0125693d"
+    },
+    {
+      "path": "ai_ad_editor\\html_motion.py",
+      "sha256": "8eca33f78e39367bcf49c8e58a1e2974db3c79165261bff4eefe5657ee92a70a"
+    },
+    {
+      "path": "ai_ad_editor\\html_quality.py",
+      "sha256": "7abdb2b18bb86a3d87e058e74b908cb0a430f05273ca9b78122a5985c0b5dba0"
+    },
+    {
+      "path": "ai_ad_editor\\html_shutter.py",
+      "sha256": "c7cc14a47500b4339401af86453c845368eacc8c396b8c414195eda76beeb376"
+    },
+    {
+      "path": "ai_ad_editor\\html_template.py",
+      "sha256": "f3ad9507632d03df9e7de3e4303638325c9667e1005ae9600c62670b06d1436e"
+    },
+    {
+      "path": "ai_ad_editor\\inline_sequences.py",
+      "sha256": "ee1596121f7e0ea88c7d1f8e27d75132b57dc03522a768a2716f97343a1ed911"
+    },
+    {
+      "path": "ai_ad_editor\\inpainting_frames.py",
+      "sha256": "bf86f16db2c99574715464ec789481d1720635091a88578a39717f45e489065f"
+    },
+    {
+      "path": "ai_ad_editor\\job_workspaces.py",
+      "sha256": "039bc42806871ac02e3dd64f005cec02824d08acef084aec4b87c13bc129b0e7"
+    },
+    {
+      "path": "ai_ad_editor\\lama_worker.py",
+      "sha256": "c8b78f2e476e417ed54ea62aa502858eeb13b14c8e91b29fdd15021a4c648154"
+    },
+    {
+      "path": "ai_ad_editor\\library.py",
+      "sha256": "60148ae6a1fd92013f97c78ef87a2f68cf4d3a61398af8a1d3c366ca3495af4e"
+    },
+    {
+      "path": "ai_ad_editor\\local_asr.py",
+      "sha256": "7c8582144a9b17e08558f36777c312099e10fee82f18f49589b07f40b61fb9dc"
+    },
+    {
+      "path": "ai_ad_editor\\local_ctc.py",
+      "sha256": "1d0b3f85720d620b1d1827952113b424c9f9562174462fa40b6c6cc8a46fd948"
+    },
+    {
+      "path": "ai_ad_editor\\local_face.py",
+      "sha256": "af5571aab54c303b2c2b24b5f5b5f3caa234470a5cbbff5adf3205aeb6a7eb06"
+    },
+    {
+      "path": "ai_ad_editor\\local_inpainting.py",
+      "sha256": "34294b2a7184afeda6527db59def5aa6b02efa83e8f3beb6e8e53fec0fe03890"
+    },
+    {
+      "path": "ai_ad_editor\\local_matting.py",
+      "sha256": "c70b82dd131de94729f2fe096fa35e3ad2775e5e2476a04a0b97e11a6939a3c6"
+    },
+    {
+      "path": "ai_ad_editor\\local_ocr.py",
+      "sha256": "cd85a6d7b12ec18b3e024327687c483f1f7cfa0deed2369b968f8ab2bccc14b5"
+    },
+    {
+      "path": "ai_ad_editor\\local_outpainting.py",
+      "sha256": "577ecf6fe26a0718cc734ba6b526f52e974b97262965f965aa37f431add1bd55"
+    },
+    {
+      "path": "ai_ad_editor\\local_segmentation.py",
+      "sha256": "30c0acaea0c261f35c5e10b3e0df36ebf10b9137608b18109a1c4739095ed361"
+    },
+    {
+      "path": "ai_ad_editor\\local_separation.py",
+      "sha256": "8fe3784386cbb125b5707bd01dd5d714058e2556aeda852bd5326e57fa839332"
+    },
+    {
+      "path": "ai_ad_editor\\local_tts.py",
+      "sha256": "028216041f53481ee2230642a642304eab3adabd32735fecdad7b952650055ba"
+    },
+    {
+      "path": "ai_ad_editor\\local_vace.py",
+      "sha256": "44cb7558644b219234e15c8e4088cb7c760a8f200e00e1ba66fb16b338c83571"
+    },
+    {
+      "path": "ai_ad_editor\\local_vision.py",
+      "sha256": "d69b94220d749e076e485432cc1b70445f398ad876a8582a3ae75b7668e6c329"
+    },
+    {
+      "path": "ai_ad_editor\\looks.py",
+      "sha256": "52a83791df54582ce778dc77d3f23e964f760c53a464feb6329bb96216659601"
+    },
+    {
+      "path": "ai_ad_editor\\lut_library.py",
+      "sha256": "a6f89cdcda01318c7163328dca7b54e8606b45582cd9340e2d4d1ad69f0b60be"
+    },
+    {
+      "path": "ai_ad_editor\\magnetic_mode.py",
+      "sha256": "7b74280ed8df6d94b259548122b44216ca45d6726084504aa6fdd05524f460e1"
+    },
+    {
+      "path": "ai_ad_editor\\magnetic_reorder.py",
+      "sha256": "b3db1863adfa7cb88173a864c127d01ebfa33c2ba46dc21b340ea660db03eef1"
+    },
+    {
+      "path": "ai_ad_editor\\magnetic_sync.py",
+      "sha256": "bd4c59d3045eda011a9cc5e7c8720b9380bc756ee41931867b0f4eb4f22ea939"
+    },
+    {
+      "path": "ai_ad_editor\\mask_edit.py",
+      "sha256": "952aa4c1cc3f49b2b1c9d5dc0c969901d82d4fcbe660387af2f3f7c044d6bb7a"
+    },
+    {
+      "path": "ai_ad_editor\\mask_edit_geometry.py",
+      "sha256": "9bf1d101c1aea8d2265b704fab8dcd65b3bb08c4cc45aed95a4a5cb0ee2ae1f9"
+    },
+    {
+      "path": "ai_ad_editor\\mask_review.py",
+      "sha256": "17de0acd6d76ad9218565302a0f47a577a5001a487bbf0c66432b0b6af278bad"
+    },
+    {
+      "path": "ai_ad_editor\\mask_tracking.py",
+      "sha256": "724f8f9800536d3ffdc99675fadf79e1262532ec7f9a3d879cf94674ba531b8d"
+    },
+    {
+      "path": "ai_ad_editor\\material_catalog.py",
+      "sha256": "c5534092c9f744b21ede152137b29a6a00899d665b4ddd6ee00621630b9f544b"
+    },
+    {
+      "path": "ai_ad_editor\\material_project.py",
+      "sha256": "ee582757cd6bdc9a957a2f4f28bf9fac108ee91f9c1c09c7a7ed85591ac846d1"
+    },
+    {
+      "path": "ai_ad_editor\\matting_frames.py",
+      "sha256": "e1491c575fe0dff5626439cb27fe422b8e92955ca1dd7503df59bbd6a3509f09"
+    },
+    {
+      "path": "ai_ad_editor\\media.py",
+      "sha256": "75755c314fe01111d7ca85138efb6f9b0993e45c14c5a2b65cc1046c5e58cfba"
+    },
+    {
+      "path": "ai_ad_editor\\migration.py",
+      "sha256": "b081ca767872d8bfa04f3aac1cd2f1c4d0c03a92e4ad5be53fba29fec0584fa4"
+    },
+    {
+      "path": "ai_ad_editor\\model_registry.py",
+      "sha256": "935c747f262ee638f34b987a32016a37cbcd4ff9bd9f5d9a005307da9b468aac"
+    },
+    {
+      "path": "ai_ad_editor\\motion_presets.py",
+      "sha256": "6c3c61a7ed62e6ca0ca9d0d033331430e46aca94b3d15df59845ffea4fea15ea"
+    },
+    {
+      "path": "ai_ad_editor\\multicam.py",
+      "sha256": "37b4ba0abd2daf0f77b5c6bcebb6c04ed61d8c60c2e47cd7e007af032fb0b620"
+    },
+    {
+      "path": "ai_ad_editor\\multicam_clock.py",
+      "sha256": "01336373f510a40e8acf02ae6a8749b4cd72ef87fd721a61cc4eb603a891634e"
+    },
+    {
+      "path": "ai_ad_editor\\native_audio_clock.py",
+      "sha256": "4ede471af5c2ebce98f6839eaa59493daa4cf67e995838a2a6fece77807d19fd"
+    },
+    {
+      "path": "ai_ad_editor\\native_process_job.py",
+      "sha256": "455e898f6fbf260795b80e12fb18f921d90edb4fd75d967a228c028817b568d7"
+    },
+    {
+      "path": "ai_ad_editor\\native_video_index.py",
+      "sha256": "2adfefa4826f9fcf187a84647b6b931d134a2627bd6133fd86b61f0332003b71"
+    },
+    {
+      "path": "ai_ad_editor\\nested_freeze.py",
+      "sha256": "2294d318840e6285550eaf70109702b041c031c2cde4c8dc0bca3d2bad848a35"
+    },
+    {
+      "path": "ai_ad_editor\\ocr_cli.py",
+      "sha256": "1a818549a1308e78a38a1a5aa9a025772f5be792bacfcdfeacb5599670e0b4ec"
+    },
+    {
+      "path": "ai_ad_editor\\ocr_geometry.py",
+      "sha256": "a2a4aedf4289ab20bea45000c1be898668239b75ef215386120850d2f7dfce5c"
+    },
+    {
+      "path": "ai_ad_editor\\ocr_worker.py",
+      "sha256": "ee5a2096ec1ee03fc09d2ac4d0b06b1791d5bbfe011772f448045d1377b50d3f"
+    },
+    {
+      "path": "ai_ad_editor\\pipeline_diagnostics.py",
+      "sha256": "10293635791333ef437e592d7a58f8dcf341ade759552a26149c1297bb9cac81"
+    },
+    {
+      "path": "ai_ad_editor\\policy.py",
+      "sha256": "16100811aae96699ce77245cec6746588953c4f9bc0071a1d04aec0c80ea4d25"
+    },
+    {
+      "path": "ai_ad_editor\\preview.py",
+      "sha256": "23465415b1d4d07d02ed8681983481c8985acaa096c4a9127a651f9e5ecb398e"
+    },
+    {
+      "path": "ai_ad_editor\\project.py",
+      "sha256": "b125e3dea953fc9613647edba14bfc0623d9ccca065e1c822241ecadea506e14"
+    },
+    {
+      "path": "ai_ad_editor\\quality.py",
+      "sha256": "d4e71c9e6616250b681306d562305dafe4cb5867652ab365275277b155e9e047"
+    },
+    {
+      "path": "ai_ad_editor\\queue_reuse.py",
+      "sha256": "61797bb01771ef102387ba04d8b3c8d0c6797658c0e4d2e72cb2ace36f26d691"
+    },
+    {
+      "path": "ai_ad_editor\\range_edits.py",
+      "sha256": "eff604efaa3c2a66b63b3fcb332804ffd9e45a11ab880964b279a379d5500e4e"
+    },
+    {
+      "path": "ai_ad_editor\\recommend.py",
+      "sha256": "0747f63b0089e317ac335e0e2bdc19cde9373691ca145c5fb84cb8cb2e88c5a4"
+    },
+    {
+      "path": "ai_ad_editor\\render.py",
+      "sha256": "449173dc1673998de223a9ab4e029cc34a4211ee57c84617b59d5d9e9bc87a44"
+    },
+    {
+      "path": "ai_ad_editor\\render_queue.py",
+      "sha256": "171db5bb475f3eaeb4ce05dacdc3c19ba90c2b3f429349d50c949b9d3c97f2be"
+    },
+    {
+      "path": "ai_ad_editor\\repair_blend.py",
+      "sha256": "1d4d01f381444cf13416daf82832edc6aa927180aeb1bc8765cf2b5a2ddaa2c6"
+    },
+    {
+      "path": "ai_ad_editor\\retime_edits.py",
+      "sha256": "52b962113b90637eb91247af84f1dc24a343224c37f8323ede5c8ffb805cbc2d"
+    },
+    {
+      "path": "ai_ad_editor\\retime_transform.py",
+      "sha256": "8b00a27cd939264cece21ddf22ca9949a23a43122dc958c0970cd2526c7bdd35"
+    },
+    {
+      "path": "ai_ad_editor\\reverse_cache.py",
+      "sha256": "dcb7db025bb4044f569862514c86246cc955ddcb7a1362d49a3757d48235d878"
+    },
+    {
+      "path": "ai_ad_editor\\reverse_video_clock.py",
+      "sha256": "bac8b9a0098de010b0eed47439056eaab1f91edd3a7c414f473867d1ec49650e"
+    },
+    {
+      "path": "ai_ad_editor\\rfc3339_dates.py",
+      "sha256": "344d79048ff55a77af00314134c20b57b5301b75d1b6a32b4a7a3f52ce749105"
+    },
+    {
+      "path": "ai_ad_editor\\rights.py",
+      "sha256": "ee65bdf0e6a4a8d44122e3dba5f933e81ff04c194c5aed3f78cdf276db867195"
+    },
+    {
+      "path": "ai_ad_editor\\runtime.py",
+      "sha256": "b8a81adbd7b19e2269988a0494b8435b59274fc02db22b73d40b858feabe723e"
+    },
+    {
+      "path": "ai_ad_editor\\rvm_worker.py",
+      "sha256": "b4ee231349b26fe8d3e94f9bab1ba2f70566b8c2dbe0b806b8864e92957fbeb1"
+    },
+    {
+      "path": "ai_ad_editor\\sam2_worker.py",
+      "sha256": "a7df14a7edbe22b78a593ef16e87528645b9043168b314884da332c4e0eef554"
+    },
+    {
+      "path": "ai_ad_editor\\schema_contract.py",
+      "sha256": "c7eaefd51abb232aeab9c00daf52033f006391b023b8af7b9c9e6c022ae06090"
+    },
+    {
+      "path": "ai_ad_editor\\scopes.py",
+      "sha256": "e68311f38f64d0afc6ed4aa68421697942fe4ad20ac68f662428fc54c361b746"
+    },
+    {
+      "path": "ai_ad_editor\\segmentation_frames.py",
+      "sha256": "e934f93150500a9bcb7d386dd91e43d27ae31da4e1c2dc887dd4720ae9fcc5ea"
+    },
+    {
+      "path": "ai_ad_editor\\selective_hsl.py",
+      "sha256": "cd49c898258916add6f22de414967833d290b0a4f9efdbc4fd1c023d467d5aea"
+    },
+    {
+      "path": "ai_ad_editor\\semantic.py",
+      "sha256": "7b17e53d48effd14b633ce263cba29c554ee6919d60e015dbf7128faac590de2"
+    },
+    {
+      "path": "ai_ad_editor\\semantic_cli.py",
+      "sha256": "4a31e51ad7c9783660dbc3b280af3c019ae52a5bd162a3b694c1e946046ba5da"
+    },
+    {
+      "path": "ai_ad_editor\\semantic_contract.py",
+      "sha256": "5386bf154bd2f8ee492c4e371dbf8b6fede0ff9253e75af0092b2dc873e3da0a"
+    },
+    {
+      "path": "ai_ad_editor\\semantic_sampling.py",
+      "sha256": "ada9d120cf7a702c1590a16be6c90a6378be3f606a60460431bb8c9a318820e1"
+    },
+    {
+      "path": "ai_ad_editor\\semantic_worker.py",
+      "sha256": "c7d516667e50d8f23a1e23f537a5bf493ea5b1f15a0cd483d58e0763029d2411"
+    },
+    {
+      "path": "ai_ad_editor\\separation_dsp.py",
+      "sha256": "2e32d4159c2906c6d0aceb1846df4f86f3437572ae7127afc30adaf05022965d"
+    },
+    {
+      "path": "ai_ad_editor\\sequence_canvas.py",
+      "sha256": "462542e26058d350c2d0a29d0cf4127c4054cab7462a763811b85bfca171412f"
+    },
+    {
+      "path": "ai_ad_editor\\sequence_sampling.py",
+      "sha256": "1aa171ef6043878afce099f7a04b214b9c458879147c46147062a77d36356ec2"
+    },
+    {
+      "path": "ai_ad_editor\\smart_cut.py",
+      "sha256": "ba871f7bff0f186ad55d9e22c5fcd75e09032e8d7299a01c7ea7b76b2e1a21a1"
+    },
+    {
+      "path": "ai_ad_editor\\soulx_worker.py",
+      "sha256": "20dc7a046934925b3620f35922f08a7c97845527a78ee437950e0db9addba3e5"
+    },
+    {
+      "path": "ai_ad_editor\\source_edits.py",
+      "sha256": "a2bea20a8d162ac4fa9f329045bca2b7e214a624adca107df6021919d5a1d36c"
+    },
+    {
+      "path": "ai_ad_editor\\source_transitions.py",
+      "sha256": "59c2652aa76024b78667293ce46774ba6910e4524db7e39f95dc95bd91b0547a"
+    },
+    {
+      "path": "ai_ad_editor\\speech.py",
+      "sha256": "26a17ac367475ebe56a498a3f2950cf1529ec0e7d63238ad6399c8b27c713abd"
+    },
+    {
+      "path": "ai_ad_editor\\speed_curves.py",
+      "sha256": "41fbddd764bfa481e6158e8401333113c871e1c38e34257911f9aa676b9bfff9"
+    },
+    {
+      "path": "ai_ad_editor\\stem_separation.py",
+      "sha256": "75f88d0c7b2d6ddec0798efe5d0bccb6c5c4d2f9c33eb4adf37a635106d670de"
+    },
+    {
+      "path": "ai_ad_editor\\stem_separation_cli.py",
+      "sha256": "7f61029b4417ed7d7c76408e31b51b3574eaff6feddfefa2c6097d88cb2ab72d"
+    },
+    {
+      "path": "ai_ad_editor\\stem_separation_dsp.py",
+      "sha256": "fe5f6e2602f1c450ec9ecc2db8c763d9ce77b846c7226e6e8c88aeee36c6021c"
+    },
+    {
+      "path": "ai_ad_editor\\stem_separation_worker.py",
+      "sha256": "3ded624662f12880189f7072a68ef902cc980647d9d4af78b697a30ceed072df"
+    },
+    {
+      "path": "ai_ad_editor\\stroke_motion.py",
+      "sha256": "ba53f586ff12c75c15803e347307c802d977e874ce792159d74ebb2b6b42ae03"
+    },
+    {
+      "path": "ai_ad_editor\\subtitle_clock.py",
+      "sha256": "49ca2001da0f250d682f5818d95f4f51ee362cbaee979fb9a99649a847cd4645"
+    },
+    {
+      "path": "ai_ad_editor\\subtitle_segments.py",
+      "sha256": "5590e04147f0b50cb60df3b4e543059a560dbfd684b3085c5f25f8fb04631aea"
+    },
+    {
+      "path": "ai_ad_editor\\template.py",
+      "sha256": "25cff8f3f5a76d88358c746dabb5adc50b0b0c345ffee53aa3a175f72248ec7d"
+    },
+    {
+      "path": "ai_ad_editor\\text_highlight.py",
+      "sha256": "d08bee683f0bd00bac363a78df5957475765741a7c53d92ac025575b334f78e5"
+    },
+    {
+      "path": "ai_ad_editor\\text_layout.py",
+      "sha256": "1f3831478b41ea23c7dd445a66ba08249a4833cce852eb9190ac0a35936a210b"
+    },
+    {
+      "path": "ai_ad_editor\\text_paint.py",
+      "sha256": "a924644f0396b5204efbb0e085f25d51f6cda5bfc75f2d44febc6796e42cb028"
+    },
+    {
+      "path": "ai_ad_editor\\text_typing.py",
+      "sha256": "6cc022af8300fb4270cb21f2f53ffe2b33210ac203169fed653d11d75e591ec3"
+    },
+    {
+      "path": "ai_ad_editor\\time_mapping.py",
+      "sha256": "89bd69060b3f10af1197018b735621eadb8ce2858b4281972d989fddf79f2ef1"
+    },
+    {
+      "path": "ai_ad_editor\\tracking.py",
+      "sha256": "3ef89e454292f7cedec1dbfcb8c6a5a9220c802b9e886e18f5aaffffb6a1934b"
+    },
+    {
+      "path": "ai_ad_editor\\transcribe.py",
+      "sha256": "877f1cb336233e70d010d39884b1fde6ab475b3df8d55e929bc793b7cfb17ce7"
+    },
+    {
+      "path": "ai_ad_editor\\understand.py",
+      "sha256": "3b440295b06683c8b7e0fd8a19a0422239bd86e163081677d47fcc5b1da83a15"
+    },
+    {
+      "path": "ai_ad_editor\\utils.py",
+      "sha256": "f1411b706fe613694028328345123eca26499f4385270ae45f9d132d5a0ee182"
+    },
+    {
+      "path": "ai_ad_editor\\vace_context.py",
+      "sha256": "aef2d4318720c10a99644e96ea35ba27d48e9b405a332f6b2075b6a558f0e0e6"
+    },
+    {
+      "path": "ai_ad_editor\\vace_frames.py",
+      "sha256": "aadc7d5785347422ee62b1d4a195e5dfbf1bcb497eeedc43aa4d839aff6f55de"
+    },
+    {
+      "path": "ai_ad_editor\\vace_model.py",
+      "sha256": "8a8f96a14aac93a7b9577f88fe576fecbbfd4fcc206e27843de79f7b1ba54961"
+    },
+    {
+      "path": "ai_ad_editor\\vace_worker.py",
+      "sha256": "0ce1dc459b3c0d7f1c95ec2208e78e5fe299200582c878f5de34c9382f4582f5"
+    },
+    {
+      "path": "ai_ad_editor\\validator.py",
+      "sha256": "40cf4923fce096020b4ff552188a098ffd4b46a7d1a88701f46758c2727b85db"
+    },
+    {
+      "path": "ai_ad_editor\\video_clock.py",
+      "sha256": "24bbd3dbf4d3f384bca30e6e881d900226c56f67302ffa721820d70a972e2e0e"
+    },
+    {
+      "path": "ai_ad_editor\\vision_tracker.py",
+      "sha256": "add01f7ecc50a645a1f0e9a0f21f817f5538359aa7f5f268158c23c36769ec4f"
+    },
+    {
+      "path": "ai_ad_editor\\whisper_worker.py",
+      "sha256": "39220014386155a911d4714c3dc20493c76720dd98312d4410826728a2f59d2a"
+    },
+    {
+      "path": "ai_ad_editor\\yolo_worker.py",
+      "sha256": "fe93653d9ae37e811325655ca81635311cd9c6504d0e41b8d1e7c6fa43e77e86"
+    }
+  ],
+  "calls": [
+    {
+      "name": "basic-init",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "-c",
+        "import sys;sys.path.insert(0,sys.argv.pop(1));from ai_ad_editor.cli import main;raise SystemExit(main())",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.7\\final\\installed\\site",
+        "project",
+        "init",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\dubbing-20261025-r1\\installed-gpu-r1\\basic",
+        "--name",
+        "Subtitle dubbing acceptance basic"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 2.3938954999975977,
+      "stdout_sha256": "6fa12d7e918e4a918bf60248abadb86ef530ec6688780e06da3944448d832f7e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "basic-fonts",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "-c",
+        "import sys;sys.path.insert(0,sys.argv.pop(1));from ai_ad_editor.cli import main;raise SystemExit(main())",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.7\\final\\installed\\site",
+        "materials",
+        "list",
+        "--kind",
+        "font",
+        "--limit",
+        "2"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 2.8716602999993484,
+      "stdout_sha256": "8a004fe6726b18acf449bffcc22f9c3502e2838fa3f2bf87f104902389da9f52",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "basic-font",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "-c",
+        "import sys;sys.path.insert(0,sys.argv.pop(1));from ai_ad_editor.cli import main;raise SystemExit(main())",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.7\\final\\installed\\site",
+        "materials",
+        "ingest",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\dubbing-20261025-r1\\installed-gpu-r1\\basic",
+        "--id",
+        "noto-sans-sc-variable",
+        "--asset-id",
+        "caption_font"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 4.0226101000007475,
+      "stdout_sha256": "a2f0e8276ba022400a358355c101a5d46d15e8dd76de2d4d8e498a43555d9456",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "basic-dry-run",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "-c",
+        "import sys;sys.path.insert(0,sys.argv.pop(1));from ai_ad_editor.cli import main;raise SystemExit(main())",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.7\\final\\installed\\site",
+        "dub",
+        "subtitles",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\dubbing-20261025-r1\\installed-gpu-r1\\basic",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\subtitle-dubbing-20261025-r1\\installed-gpu-r1\\basic.srt",
+        "--from",
+        "en",
+        "--to",
+        "zh-Hans",
+        "--device",
+        "cuda",
+        "--apply",
+        "--audio-track-id",
+        "track_audio_1",
+        "--subtitle-track-id",
+        "captions",
+        "--font-asset-id",
+        "caption_font",
+        "--voice-map",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\subtitle-dubbing-20261025-r1\\installed-gpu-r1\\basic-voices.json",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "planned",
+      "elapsed_seconds": 6.2864016000021365,
+      "stdout_sha256": "b3e4ad10e69e6b655a635e35a1d0520a99565a83be51d74669165669570368b7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "basic-generate",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "-c",
+        "import sys;sys.path.insert(0,sys.argv.pop(1));from ai_ad_editor.cli import main;raise SystemExit(main())",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.7\\final\\installed\\site",
+        "dub",
+        "subtitles",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\dubbing-20261025-r1\\installed-gpu-r1\\basic",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\subtitle-dubbing-20261025-r1\\installed-gpu-r1\\basic.srt",
+        "--from",
+        "en",
+        "--to",
+        "zh-Hans",
+        "--device",
+        "cuda",
+        "--apply",
+        "--audio-track-id",
+        "track_audio_1",
+        "--subtitle-track-id",
+        "captions",
+        "--font-asset-id",
+        "caption_font",
+        "--voice-map",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\subtitle-dubbing-20261025-r1\\installed-gpu-r1\\basic-voices.json"
+      ],
+      "exit_code": 9,
+      "ok": false,
+      "status": "failed",
+      "elapsed_seconds": 63.75225500000306,
+      "stdout_sha256": "d39d8085cce5e5b3b1e1b3405dd1e8c87ad4ce673967d0ac726190121fe71aa7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "cases": [],
+  "new_model_inference": true,
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "human_listening": false,
+  "human_semantic_acceptance": false,
+  "raw_voice_publication": false,
+  "generator_sha256": "66da879b2edb450174afbf9ea3f7b794bde4d79ac35aebca0a64eada70cff9a4",
+  "error": "AssertionError(('basic-generate', 9, {'ok': False, 'command': 'dub.subtitles', 'request_id': 'req_20261025021707_33d9e6f2', 'operation_id': None, 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'INTERNAL_INPUT_ERROR', 'message': \"string indices must be integers, not 'str'\", 'retryable': False}], 'provenance': {'cli_version': '0.1.9', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-10-25T02:17:07.659988Z', 'finished_at': '2026-10-25T02:17:07.660005Z', 'network': 'disabled'}}))",
+  "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\scripts\\run_subtitle_dubbing_20261025.py\", line 141, in main\n    basic=check_success('basic',run('basic-generate',argv))\n                                ~~~^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\scripts\\run_subtitle_dubbing_20261025.py\", line 71, in run\n    assert result.returncode==expected,(name,result.returncode,response)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ('basic-generate', 9, {'ok': False, 'command': 'dub.subtitles', 'request_id': 'req_20261025021707_33d9e6f2', 'operation_id': None, 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'INTERNAL_INPUT_ERROR', 'message': \"string indices must be integers, not 'str'\", 'retryable': False}], 'provenance': {'cli_version': '0.1.9', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-10-25T02:17:07.659988Z', 'finished_at': '2026-10-25T02:17:07.660005Z', 'network': 'disabled'}})\n",
+  "finished_at_utc": "2026-10-25T02:17:07.758928+00:00",
+  "frozen_after": [
+    {
+      "path": "ai_ad_editor\\__init__.py",
+      "sha256": "9e01467da3660049ceb78d942d73f3984149d23faf8e1de86591485a3e422cdb"
+    },
+    {
+      "path": "ai_ad_editor\\__main__.py",
+      "sha256": "307299fda7b77d22c64cb51430ec75e5f59d78e9c948786afb3b2544fe45e4b7"
+    },
+    {
+      "path": "ai_ad_editor\\ad_plan.py",
+      "sha256": "4d6482f6f0baf87cf60ae01be604af0047069e794c2784a9d0c86f30a1a458ac"
+    },
+    {
+      "path": "ai_ad_editor\\animation.py",
+      "sha256": "b90064bd9de4fbe1aea85ba7bb11e5acfefc82a85c2b8078ba36bac64c59b949"
+    },
+    {
+      "path": "ai_ad_editor\\artifact_locks.py",
+      "sha256": "8084eb6d7358c6376faec11a96bb89453c93bedf09ea9474f8e3e5c41027da3d"
+    },
+    {
+      "path": "ai_ad_editor\\asr_quality.py",
+      "sha256": "e2407215903a2552a3efd1acd04840bae03862b470dce72b489573b36d6c1f90"
+    },
+    {
+      "path": "ai_ad_editor\\audio_channel_links.py",
+      "sha256": "18e6caaf8370a523efe8a0a747818eb7fa0e058861f7ac982f703ecb648fc691"
+    },
+    {
+      "path": "ai_ad_editor\\audio_routing.py",
+      "sha256": "40f74750a79ea80f016dd2eb8a353d6103682756f01970ad802c6292be8e5af8"
+    },
+    {
+      "path": "ai_ad_editor\\audio_separation.py",
+      "sha256": "bb36d993ca948deea171e9569c6b4954105bdd5c7b79c70d2f5c14a79878f0de"
+    },
+    {
+      "path": "ai_ad_editor\\audio_stretch.py",
+      "sha256": "2286f23b626fe5f5545b585da2c78c50068f3a0d4fa45b414d94d6926ed37973"
+    },
+    {
+      "path": "ai_ad_editor\\audio_tempo.py",
+      "sha256": "3284a08dc75a25dcbeed30c7088a18898c46d398e6e7ae9380efcf0e366afcee"
+    },
+    {
+      "path": "ai_ad_editor\\audio_tools.py",
+      "sha256": "9e636d1b27707dad3777811827d3c3c3e69ca393a9a3757733e9876517506f5e"
+    },
+    {
+      "path": "ai_ad_editor\\batch.py",
+      "sha256": "5a416712628d104c5e9cf1b96bafeb118b2e8bfb44690b51831242b716ff2a92"
+    },
+    {
+      "path": "ai_ad_editor\\beat_edit.py",
+      "sha256": "0cbc12d37b80417e022741818f812f61d287123d816217c7e5462f872cfd78fb"
+    },
+    {
+      "path": "ai_ad_editor\\bindings.py",
+      "sha256": "2dbb8bce11ecb7f7fd6fa893cca08efdaa6f9c21a3c6f8a4588cbed5092c3a65"
+    },
+    {
+      "path": "ai_ad_editor\\blend_automation.py",
+      "sha256": "ca6c28091564fdb28853288f46f4caaeaa96388c4d363e1b139248d89753a1e5"
+    },
+    {
+      "path": "ai_ad_editor\\browser_process.py",
+      "sha256": "16fc0ec652a21a7604b5e59737800d91a3bf4254e1c44de2c7989b895c130a65"
+    },
+    {
+      "path": "ai_ad_editor\\capabilities.py",
+      "sha256": "1e1c70933b60adb626bc9f6f8167224b413cad946aaa432ee9247f08b862cca3"
+    },
+    {
+      "path": "ai_ad_editor\\captions.py",
+      "sha256": "38c500ba0e2697e745d7ad8357d7a9e5cb9e771f4093750b0b6a8b67e7ee0c57"
+    },
+    {
+      "path": "ai_ad_editor\\capture.py",
+      "sha256": "9f8261f0ec5d005605c7e6112731245c92e55b6d252f574e9acb2a5fbef457cf"
+    },
+    {
+      "path": "ai_ad_editor\\cli.py",
+      "sha256": "c94f7c6005a9fc1a67ee076cae89327e815af48f97b877e11de60668ff95183f"
+    },
+    {
+      "path": "ai_ad_editor\\clip_windows.py",
+      "sha256": "47a5b173770772ac72d2764c05e47148962003414adb0fcd26c16a7b3f88f1ce"
+    },
+    {
+      "path": "ai_ad_editor\\community_audio.py",
+      "sha256": "b22b1714e164f0e400b7d53f978e0d0e36b83b519f827cd235826d29a037116a"
+    },
+    {
+      "path": "ai_ad_editor\\community_cli.py",
+      "sha256": "3911b36f4746b04753932e2af04a53434d4b7789aa32e4025086dcb0cba89ec2"
+    },
+    {
+      "path": "ai_ad_editor\\community_device.py",
+      "sha256": "c1525a0b20ebd5d9b37a615494b188c7165526df0bb5479338a3e06e5428f4e5"
+    },
+    {
+      "path": "ai_ad_editor\\community_models.py",
+      "sha256": "646db6e84e480b0252ace647e35cb4bdb4bdbee1cf342cce928c255d9497d89b"
+    },
+    {
+      "path": "ai_ad_editor\\community_worker.py",
+      "sha256": "85ea135885f895d57156d7a3a8f63dca0057a2ca615c2db114d6ee1649c4e882"
+    },
+    {
+      "path": "ai_ad_editor\\contact_sheet.py",
+      "sha256": "18e7028d73443cb6173ddbcda949147485e6d99f6742afeeb9c8b3cf7f66165b"
+    },
+    {
+      "path": "ai_ad_editor\\convert.py",
+      "sha256": "326be682b517c751d4c759376d05abb87c53b3314b6080de044c944fab8d36ba"
+    },
+    {
+      "path": "ai_ad_editor\\ctc_activity.py",
+      "sha256": "32e642daa9b2cba6e0946aa6b29f64e1c20b238601a397251b4d32092fc2d289"
+    },
+    {
+      "path": "ai_ad_editor\\ctc_alignment.py",
+      "sha256": "a475e9b1acd8ceba2be90884729f0b5a4c76ed354853bc0a57b47f1f9787edd7"
+    },
+    {
+      "path": "ai_ad_editor\\ctc_cli.py",
+      "sha256": "9cd8027ee654c95f42d69055c2decdc4628da11dc49c6927ee57a74e1dc9f8a7"
+    },
+    {
+      "path": "ai_ad_editor\\ctc_worker.py",
+      "sha256": "18440a7affc7e33169f82e40a0a970d7acd767b5a699559888a6768e1b0589ad"
+    },
+    {
+      "path": "ai_ad_editor\\cuda_admission.py",
+      "sha256": "8d030f776b09edeb9d6cfecce720caca3f20a1fab058dd3dc406020ed064fd3b"
+    },
+    {
+      "path": "ai_ad_editor\\curve_automation.py",
+      "sha256": "73c33745ad14cfbce2f937db9e78840eef7794259496a62c6247f609167442f5"
+    },
+    {
+      "path": "ai_ad_editor\\demucs_worker.py",
+      "sha256": "8a5347b8e2ad0c93fb42b9c1867737ff989914e662753ef11104602c944bba95"
+    },
+    {
+      "path": "ai_ad_editor\\derived_cache.py",
+      "sha256": "c3cca48d052b6ff4531cafc04005d7936eeb289a67f74bb4ffd0ceb203dd03e0"
+    },
+    {
+      "path": "ai_ad_editor\\draft_adapter.py",
+      "sha256": "0eb1e8f649e66cc6f15ef56bfb75d07166a7d7e3a6f1326f50bca349a1c24071"
+    },
+    {
+      "path": "ai_ad_editor\\dubbing.py",
+      "sha256": "c0ebe30da344a86c028faa382cc8a35dd6a72a4a18ec42847e40bf662e79497b"
+    },
+    {
+      "path": "ai_ad_editor\\dubbing_cli.py",
+      "sha256": "2b4f255a90684e7c7baa937301a3174a011d799caec5f77605f718709cdaa323"
+    },
+    {
+      "path": "ai_ad_editor\\edit_planner.py",
+      "sha256": "4b91e9bf43709a9382ebed6bebb861cf7b10f4024191e4f255ee96a662992b2f"
+    },
+    {
+      "path": "ai_ad_editor\\effect_automation.py",
+      "sha256": "45b3ee4be693cdf1c07cf3fb6f372562ca376c93bf846b9515fc3d0d05ce8dbf"
+    },
+    {
+      "path": "ai_ad_editor\\effects.py",
+      "sha256": "2b236659bb30c71d3c14c70ba6030e19b48916f04ec9456d9e90b01672a245f1"
+    },
+    {
+      "path": "ai_ad_editor\\errors.py",
+      "sha256": "1525e91f86ad7f22c061a35c383d3513cdcad77acab2e364510b42adde0a9721"
+    },
+    {
+      "path": "ai_ad_editor\\face_cli.py",
+      "sha256": "0b22ce781d350770edcecfddfce4058ed478fccd29e723a78f088e32be2bc8c4"
+    },
+    {
+      "path": "ai_ad_editor\\face_geometry.py",
+      "sha256": "a3551a4d699e8e5e43622311a1d800be00cbaec70f9152147b3dde4a4f73d380"
+    },
+    {
+      "path": "ai_ad_editor\\face_landmarks.py",
+      "sha256": "29112cde9c85408d2cf19c7a26e3f17282605bb80e0d0cb67debd44ac36f5793"
+    },
+    {
+      "path": "ai_ad_editor\\face_worker.py",
+      "sha256": "dbfa64be9cefa760cfe6b31685a6cbcc8008b2c696951848ffd75a4f0e604e56"
+    },
+    {
+      "path": "ai_ad_editor\\float_audio_graph.py",
+      "sha256": "d47b84af34f8e65babbe27b3db99e342d4d0990bea10558c2a255cc7ca278fe9"
+    },
+    {
+      "path": "ai_ad_editor\\float_balance.py",
+      "sha256": "16dbfe24290b8bc0b1d77268b6ff34bf813dbbc62b378971d82a5aa49faa9355"
+    },
+    {
+      "path": "ai_ad_editor\\float_bundle.py",
+      "sha256": "0ec2eff233424eef1a1ae9c8a60aa271d808abee77b4a17e5a5ffaac28a2d0c3"
+    },
+    {
+      "path": "ai_ad_editor\\float_bundle_source.py",
+      "sha256": "0f414c8c8f5b79dccb54a41ed02e73c460deb9d96e5884372ffc85357ee1a6ef"
+    },
+    {
+      "path": "ai_ad_editor\\float_color_signal.py",
+      "sha256": "b0c07f905c67db85478fc34d5e1b1614a13361bf64ce34f5838512de875d8be1"
+    },
+    {
+      "path": "ai_ad_editor\\float_composite.py",
+      "sha256": "8275eb65c574407b47b466bbe124015832a92b068e5595a028c04964f884b937"
+    },
+    {
+      "path": "ai_ad_editor\\float_crop.py",
+      "sha256": "390a13647ce58e94ba85bb6fde0d2333a80106fac1806b168a72ed4e7bd6b496"
+    },
+    {
+      "path": "ai_ad_editor\\float_curves.py",
+      "sha256": "1cfad01c55964614ea432431f6db59191b87356aa9b15a3c6a59c127f52c8a56"
+    },
+    {
+      "path": "ai_ad_editor\\float_effect_chain.py",
+      "sha256": "3aa3ffa4c675e1f1dd3330ee4ea7c1d3a12501569cf2f9fdb0cd45a9f1e018f3"
+    },
+    {
+      "path": "ai_ad_editor\\float_exposure.py",
+      "sha256": "fceacb925552a4bb44126143f584f4757a76152e87f9224f4e6ce16f5a6c27ed"
+    },
+    {
+      "path": "ai_ad_editor\\float_gaussian.py",
+      "sha256": "97e64bcecca4ae7d979f382cff0afd8b91401bdf7020c869282218777ec87bdb"
+    },
+    {
+      "path": "ai_ad_editor\\float_geometry.py",
+      "sha256": "57f9af0406663a27e31b35e3463076acf24d3833de5fce98102b6f0b73a9d51a"
+    },
+    {
+      "path": "ai_ad_editor\\float_keyer.py",
+      "sha256": "bb5c5eb5aa0ade318a50e443c8039f7daca99f0d593481da15c530f2b3b22b93"
+    },
+    {
+      "path": "ai_ad_editor\\float_levels.py",
+      "sha256": "4b6d1b777da7359a0c3dc3b0c10e3b87b58b2c4aa1522d994d2a17e9c39ec248"
+    },
+    {
+      "path": "ai_ad_editor\\float_lut.py",
+      "sha256": "bb8489ca1ce1a8cc253f5c22b499428fe7cb0634a53f804cef5d089840ebbece"
+    },
+    {
+      "path": "ai_ad_editor\\float_mask.py",
+      "sha256": "f85427fa44a9c3723c398314230c0e00c6b6e699c09c3785e5b3ff99a244bbfa"
+    },
+    {
+      "path": "ai_ad_editor\\float_native_pipe.py",
+      "sha256": "4b89898462505f58fbbe1ca053a0f4f2ef475f417a99dabeb470f999353eb708"
+    },
+    {
+      "path": "ai_ad_editor\\float_native_source.py",
+      "sha256": "1badc4c67dcdfb995dec5570b47e54fe1a3b1da6234f978062832c2d354496c6"
+    },
+    {
+      "path": "ai_ad_editor\\float_numeric_automation.py",
+      "sha256": "e66c20d09cab1487a86d19104d5637dcdc2bf97e11a781172ab1c431bffe1e09"
+    },
+    {
+      "path": "ai_ad_editor\\float_pixels.py",
+      "sha256": "863991d7c7e88db619b72e268321fe182baca8d4e8f63d8c5166a945928e127f"
+    },
+    {
+      "path": "ai_ad_editor\\float_preview.py",
+      "sha256": "f4dfb9614cfec533ecbcc7b6f1f104d50611677f3f093a4e6aa506a051abf3a0"
+    },
+    {
+      "path": "ai_ad_editor\\float_raster.py",
+      "sha256": "ff83b49c999146a4c3479796f34050e81eaf504efdba48c050a4ded8cdb876ba"
+    },
+    {
+      "path": "ai_ad_editor\\float_selective_hsl.py",
+      "sha256": "e62d668a6308fb0f034d687532e0f6006cd5b6183d20570cad20c34174319dd1"
+    },
+    {
+      "path": "ai_ad_editor\\float_sharpen.py",
+      "sha256": "d261d9b9511f91d6324a95e71209781ad592aee25fe355719dbbb61512c2c846"
+    },
+    {
+      "path": "ai_ad_editor\\float_spatial.py",
+      "sha256": "978868786110885597ae91c582562888bfc272400adc788fceaa3a6cb2187bb1"
+    },
+    {
+      "path": "ai_ad_editor\\float_spatial_budget.py",
+      "sha256": "ea50453012d384afa9422feb89991fc321b91591817e70ce46e93994b1655a0b"
+    },
+    {
+      "path": "ai_ad_editor\\float_standard_render.py",
+      "sha256": "acffad25eed8923c2dabfb280c46135270e4fb66f6caa2761ba1342e8ee37886"
+    },
+    {
+      "path": "ai_ad_editor\\float_stream.py",
+      "sha256": "955705b4f87817de34046f5cf979319278fb7815da75c8e3870630daaad574a8"
+    },
+    {
+      "path": "ai_ad_editor\\float_timeline.py",
+      "sha256": "84d6b33437d7bac52d39c44fcf8c035b4975b5fd69c46d9108f55bb812fa8ee0"
+    },
+    {
+      "path": "ai_ad_editor\\float_tone.py",
+      "sha256": "3e4216a6cd43dbc21afcae33ce527802d414df5fb3e16381abb62fd5c85b9638"
+    },
+    {
+      "path": "ai_ad_editor\\float_video_source.py",
+      "sha256": "79685d1bbe3298b1334b80d429bba0fb6e8c8c57230428f1e08eb9afc56b510a"
+    },
+    {
+      "path": "ai_ad_editor\\float_yuv.py",
+      "sha256": "031b34c9b75e141946eda3ace6521c015c99023fdc5c725be34701577a9e5a1b"
+    },
+    {
+      "path": "ai_ad_editor\\float_yuv_source.py",
+      "sha256": "bb6eae6288a722a6a256126a0b2f3d47d0b03821880b927d0e3b41c988fc32bb"
+    },
+    {
+      "path": "ai_ad_editor\\font_coverage.py",
+      "sha256": "2f33b3eb07331ef3b87c78286317df8d903a2c991978e9750a39d6bcd117c243"
+    },
+    {
+      "path": "ai_ad_editor\\fragments.py",
+      "sha256": "6087fe24f6f0a2041473ac5ccc04507f7c25c2b598c5a6f65dd7b4ddafe9567f"
+    },
+    {
+      "path": "ai_ad_editor\\hardware_acceleration.py",
+      "sha256": "670ab26584d75f45ca6d6a12df0e096bdbe0d25dba6edc9ef3ea4ccba3f5132f"
+    },
+    {
+      "path": "ai_ad_editor\\hsl_native.py",
+      "sha256": "236d4af5c4317d57d9e31916472e73d1ed98dde66ed3331d3661830331a0f44e"
+    },
+    {
+      "path": "ai_ad_editor\\hsl_program.py",
+      "sha256": "a1f7ac34659d6c55ed79bfacaaa7bf997a1bf4d4fef2fede53cde0abbe61ab17"
+    },
+    {
+      "path": "ai_ad_editor\\html_components.py",
+      "sha256": "1779196590bcff1e638b5c6087698eda80a45f1bb4bc4a74c59cf7ca0125693d"
+    },
+    {
+      "path": "ai_ad_editor\\html_motion.py",
+      "sha256": "8eca33f78e39367bcf49c8e58a1e2974db3c79165261bff4eefe5657ee92a70a"
+    },
+    {
+      "path": "ai_ad_editor\\html_quality.py",
+      "sha256": "7abdb2b18bb86a3d87e058e74b908cb0a430f05273ca9b78122a5985c0b5dba0"
+    },
+    {
+      "path": "ai_ad_editor\\html_shutter.py",
+      "sha256": "c7cc14a47500b4339401af86453c845368eacc8c396b8c414195eda76beeb376"
+    },
+    {
+      "path": "ai_ad_editor\\html_template.py",
+      "sha256": "f3ad9507632d03df9e7de3e4303638325c9667e1005ae9600c62670b06d1436e"
+    },
+    {
+      "path": "ai_ad_editor\\inline_sequences.py",
+      "sha256": "ee1596121f7e0ea88c7d1f8e27d75132b57dc03522a768a2716f97343a1ed911"
+    },
+    {
+      "path": "ai_ad_editor\\inpainting_frames.py",
+      "sha256": "bf86f16db2c99574715464ec789481d1720635091a88578a39717f45e489065f"
+    },
+    {
+      "path": "ai_ad_editor\\job_workspaces.py",
+      "sha256": "039bc42806871ac02e3dd64f005cec02824d08acef084aec4b87c13bc129b0e7"
+    },
+    {
+      "path": "ai_ad_editor\\lama_worker.py",
+      "sha256": "c8b78f2e476e417ed54ea62aa502858eeb13b14c8e91b29fdd15021a4c648154"
+    },
+    {
+      "path": "ai_ad_editor\\library.py",
+      "sha256": "60148ae6a1fd92013f97c78ef87a2f68cf4d3a61398af8a1d3c366ca3495af4e"
+    },
+    {
+      "path": "ai_ad_editor\\local_asr.py",
+      "sha256": "7c8582144a9b17e08558f36777c312099e10fee82f18f49589b07f40b61fb9dc"
+    },
+    {
+      "path": "ai_ad_editor\\local_ctc.py",
+      "sha256": "1d0b3f85720d620b1d1827952113b424c9f9562174462fa40b6c6cc8a46fd948"
+    },
+    {
+      "path": "ai_ad_editor\\local_face.py",
+      "sha256": "af5571aab54c303b2c2b24b5f5b5f3caa234470a5cbbff5adf3205aeb6a7eb06"
+    },
+    {
+      "path": "ai_ad_editor\\local_inpainting.py",
+      "sha256": "34294b2a7184afeda6527db59def5aa6b02efa83e8f3beb6e8e53fec0fe03890"
+    },
+    {
+      "path": "ai_ad_editor\\local_matting.py",
+      "sha256": "c70b82dd131de94729f2fe096fa35e3ad2775e5e2476a04a0b97e11a6939a3c6"
+    },
+    {
+      "path": "ai_ad_editor\\local_ocr.py",
+      "sha256": "cd85a6d7b12ec18b3e024327687c483f1f7cfa0deed2369b968f8ab2bccc14b5"
+    },
+    {
+      "path": "ai_ad_editor\\local_outpainting.py",
+      "sha256": "577ecf6fe26a0718cc734ba6b526f52e974b97262965f965aa37f431add1bd55"
+    },
+    {
+      "path": "ai_ad_editor\\local_segmentation.py",
+      "sha256": "30c0acaea0c261f35c5e10b3e0df36ebf10b9137608b18109a1c4739095ed361"
+    },
+    {
+      "path": "ai_ad_editor\\local_separation.py",
+      "sha256": "8fe3784386cbb125b5707bd01dd5d714058e2556aeda852bd5326e57fa839332"
+    },
+    {
+      "path": "ai_ad_editor\\local_tts.py",
+      "sha256": "028216041f53481ee2230642a642304eab3adabd32735fecdad7b952650055ba"
+    },
+    {
+      "path": "ai_ad_editor\\local_vace.py",
+      "sha256": "44cb7558644b219234e15c8e4088cb7c760a8f200e00e1ba66fb16b338c83571"
+    },
+    {
+      "path": "ai_ad_editor\\local_vision.py",
+      "sha256": "d69b94220d749e076e485432cc1b70445f398ad876a8582a3ae75b7668e6c329"
+    },
+    {
+      "path": "ai_ad_editor\\looks.py",
+      "sha256": "52a83791df54582ce778dc77d3f23e964f760c53a464feb6329bb96216659601"
+    },
+    {
+      "path": "ai_ad_editor\\lut_library.py",
+      "sha256": "a6f89cdcda01318c7163328dca7b54e8606b45582cd9340e2d4d1ad69f0b60be"
+    },
+    {
+      "path": "ai_ad_editor\\magnetic_mode.py",
+      "sha256": "7b74280ed8df6d94b259548122b44216ca45d6726084504aa6fdd05524f460e1"
+    },
+    {
+      "path": "ai_ad_editor\\magnetic_reorder.py",
+      "sha256": "b3db1863adfa7cb88173a864c127d01ebfa33c2ba46dc21b340ea660db03eef1"
+    },
+    {
+      "path": "ai_ad_editor\\magnetic_sync.py",
+      "sha256": "bd4c59d3045eda011a9cc5e7c8720b9380bc756ee41931867b0f4eb4f22ea939"
+    },
+    {
+      "path": "ai_ad_editor\\mask_edit.py",
+      "sha256": "952aa4c1cc3f49b2b1c9d5dc0c969901d82d4fcbe660387af2f3f7c044d6bb7a"
+    },
+    {
+      "path": "ai_ad_editor\\mask_edit_geometry.py",
+      "sha256": "9bf1d101c1aea8d2265b704fab8dcd65b3bb08c4cc45aed95a4a5cb0ee2ae1f9"
+    },
+    {
+      "path": "ai_ad_editor\\mask_review.py",
+      "sha256": "17de0acd6d76ad9218565302a0f47a577a5001a487bbf0c66432b0b6af278bad"
+    },
+    {
+      "path": "ai_ad_editor\\mask_tracking.py",
+      "sha256": "724f8f9800536d3ffdc99675fadf79e1262532ec7f9a3d879cf94674ba531b8d"
+    },
+    {
+      "path": "ai_ad_editor\\material_catalog.py",
+      "sha256": "c5534092c9f744b21ede152137b29a6a00899d665b4ddd6ee00621630b9f544b"
+    },
+    {
+      "path": "ai_ad_editor\\material_project.py",
+      "sha256": "ee582757cd6bdc9a957a2f4f28bf9fac108ee91f9c1c09c7a7ed85591ac846d1"
+    },
+    {
+      "path": "ai_ad_editor\\matting_frames.py",
+      "sha256": "e1491c575fe0dff5626439cb27fe422b8e92955ca1dd7503df59bbd6a3509f09"
+    },
+    {
+      "path": "ai_ad_editor\\media.py",
+      "sha256": "75755c314fe01111d7ca85138efb6f9b0993e45c14c5a2b65cc1046c5e58cfba"
+    },
+    {
+      "path": "ai_ad_editor\\migration.py",
+      "sha256": "b081ca767872d8bfa04f3aac1cd2f1c4d0c03a92e4ad5be53fba29fec0584fa4"
+    },
+    {
+      "path": "ai_ad_editor\\model_registry.py",
+      "sha256": "935c747f262ee638f34b987a32016a37cbcd4ff9bd9f5d9a005307da9b468aac"
+    },
+    {
+      "path": "ai_ad_editor\\motion_presets.py",
+      "sha256": "6c3c61a7ed62e6ca0ca9d0d033331430e46aca94b3d15df59845ffea4fea15ea"
+    },
+    {
+      "path": "ai_ad_editor\\multicam.py",
+      "sha256": "37b4ba0abd2daf0f77b5c6bcebb6c04ed61d8c60c2e47cd7e007af032fb0b620"
+    },
+    {
+      "path": "ai_ad_editor\\multicam_clock.py",
+      "sha256": "01336373f510a40e8acf02ae6a8749b4cd72ef87fd721a61cc4eb603a891634e"
+    },
+    {
+      "path": "ai_ad_editor\\native_audio_clock.py",
+      "sha256": "4ede471af5c2ebce98f6839eaa59493daa4cf67e995838a2a6fece77807d19fd"
+    },
+    {
+      "path": "ai_ad_editor\\native_process_job.py",
+      "sha256": "455e898f6fbf260795b80e12fb18f921d90edb4fd75d967a228c028817b568d7"
+    },
+    {
+      "path": "ai_ad_editor\\native_video_index.py",
+      "sha256": "2adfefa4826f9fcf187a84647b6b931d134a2627bd6133fd86b61f0332003b71"
+    },
+    {
+      "path": "ai_ad_editor\\nested_freeze.py",
+      "sha256": "2294d318840e6285550eaf70109702b041c031c2cde4c8dc0bca3d2bad848a35"
+    },
+    {
+      "path": "ai_ad_editor\\ocr_cli.py",
+      "sha256": "1a818549a1308e78a38a1a5aa9a025772f5be792bacfcdfeacb5599670e0b4ec"
+    },
+    {
+      "path": "ai_ad_editor\\ocr_geometry.py",
+      "sha256": "a2a4aedf4289ab20bea45000c1be898668239b75ef215386120850d2f7dfce5c"
+    },
+    {
+      "path": "ai_ad_editor\\ocr_worker.py",
+      "sha256": "ee5a2096ec1ee03fc09d2ac4d0b06b1791d5bbfe011772f448045d1377b50d3f"
+    },
+    {
+      "path": "ai_ad_editor\\pipeline_diagnostics.py",
+      "sha256": "10293635791333ef437e592d7a58f8dcf341ade759552a26149c1297bb9cac81"
+    },
+    {
+      "path": "ai_ad_editor\\policy.py",
+      "sha256": "16100811aae96699ce77245cec6746588953c4f9bc0071a1d04aec0c80ea4d25"
+    },
+    {
+      "path": "ai_ad_editor\\preview.py",
+      "sha256": "23465415b1d4d07d02ed8681983481c8985acaa096c4a9127a651f9e5ecb398e"
+    },
+    {
+      "path": "ai_ad_editor\\project.py",
+      "sha256": "b125e3dea953fc9613647edba14bfc0623d9ccca065e1c822241ecadea506e14"
+    },
+    {
+      "path": "ai_ad_editor\\quality.py",
+      "sha256": "d4e71c9e6616250b681306d562305dafe4cb5867652ab365275277b155e9e047"
+    },
+    {
+      "path": "ai_ad_editor\\queue_reuse.py",
+      "sha256": "61797bb01771ef102387ba04d8b3c8d0c6797658c0e4d2e72cb2ace36f26d691"
+    },
+    {
+      "path": "ai_ad_editor\\range_edits.py",
+      "sha256": "eff604efaa3c2a66b63b3fcb332804ffd9e45a11ab880964b279a379d5500e4e"
+    },
+    {
+      "path": "ai_ad_editor\\recommend.py",
+      "sha256": "0747f63b0089e317ac335e0e2bdc19cde9373691ca145c5fb84cb8cb2e88c5a4"
+    },
+    {
+      "path": "ai_ad_editor\\render.py",
+      "sha256": "449173dc1673998de223a9ab4e029cc34a4211ee57c84617b59d5d9e9bc87a44"
+    },
+    {
+      "path": "ai_ad_editor\\render_queue.py",
+      "sha256": "171db5bb475f3eaeb4ce05dacdc3c19ba90c2b3f429349d50c949b9d3c97f2be"
+    },
+    {
+      "path": "ai_ad_editor\\repair_blend.py",
+      "sha256": "1d4d01f381444cf13416daf82832edc6aa927180aeb1bc8765cf2b5a2ddaa2c6"
+    },
+    {
+      "path": "ai_ad_editor\\retime_edits.py",
+      "sha256": "52b962113b90637eb91247af84f1dc24a343224c37f8323ede5c8ffb805cbc2d"
+    },
+    {
+      "path": "ai_ad_editor\\retime_transform.py",
+      "sha256": "8b00a27cd939264cece21ddf22ca9949a23a43122dc958c0970cd2526c7bdd35"
+    },
+    {
+      "path": "ai_ad_editor\\reverse_cache.py",
+      "sha256": "dcb7db025bb4044f569862514c86246cc955ddcb7a1362d49a3757d48235d878"
+    },
+    {
+      "path": "ai_ad_editor\\reverse_video_clock.py",
+      "sha256": "bac8b9a0098de010b0eed47439056eaab1f91edd3a7c414f473867d1ec49650e"
+    },
+    {
+      "path": "ai_ad_editor\\rfc3339_dates.py",
+      "sha256": "344d79048ff55a77af00314134c20b57b5301b75d1b6a32b4a7a3f52ce749105"
+    },
+    {
+      "path": "ai_ad_editor\\rights.py",
+      "sha256": "ee65bdf0e6a4a8d44122e3dba5f933e81ff04c194c5aed3f78cdf276db867195"
+    },
+    {
+      "path": "ai_ad_editor\\runtime.py",
+      "sha256": "b8a81adbd7b19e2269988a0494b8435b59274fc02db22b73d40b858feabe723e"
+    },
+    {
+      "path": "ai_ad_editor\\rvm_worker.py",
+      "sha256": "b4ee231349b26fe8d3e94f9bab1ba2f70566b8c2dbe0b806b8864e92957fbeb1"
+    },
+    {
+      "path": "ai_ad_editor\\sam2_worker.py",
+      "sha256": "a7df14a7edbe22b78a593ef16e87528645b9043168b314884da332c4e0eef554"
+    },
+    {
+      "path": "ai_ad_editor\\schema_contract.py",
+      "sha256": "c7eaefd51abb232aeab9c00daf52033f006391b023b8af7b9c9e6c022ae06090"
+    },
+    {
+      "path": "ai_ad_editor\\scopes.py",
+      "sha256": "e68311f38f64d0afc6ed4aa68421697942fe4ad20ac68f662428fc54c361b746"
+    },
+    {
+      "path": "ai_ad_editor\\segmentation_frames.py",
+      "sha256": "e934f93150500a9bcb7d386dd91e43d27ae31da4e1c2dc887dd4720ae9fcc5ea"
+    },
+    {
+      "path": "ai_ad_editor\\selective_hsl.py",
+      "sha256": "cd49c898258916add6f22de414967833d290b0a4f9efdbc4fd1c023d467d5aea"
+    },
+    {
+      "path": "ai_ad_editor\\semantic.py",
+      "sha256": "7b17e53d48effd14b633ce263cba29c554ee6919d60e015dbf7128faac590de2"
+    },
+    {
+      "path": "ai_ad_editor\\semantic_cli.py",
+      "sha256": "4a31e51ad7c9783660dbc3b280af3c019ae52a5bd162a3b694c1e946046ba5da"
+    },
+    {
+      "path": "ai_ad_editor\\semantic_contract.py",
+      "sha256": "5386bf154bd2f8ee492c4e371dbf8b6fede0ff9253e75af0092b2dc873e3da0a"
+    },
+    {
+      "path": "ai_ad_editor\\semantic_sampling.py",
+      "sha256": "ada9d120cf7a702c1590a16be6c90a6378be3f606a60460431bb8c9a318820e1"
+    },
+    {
+      "path": "ai_ad_editor\\semantic_worker.py",
+      "sha256": "c7d516667e50d8f23a1e23f537a5bf493ea5b1f15a0cd483d58e0763029d2411"
+    },
+    {
+      "path": "ai_ad_editor\\separation_dsp.py",
+      "sha256": "2e32d4159c2906c6d0aceb1846df4f86f3437572ae7127afc30adaf05022965d"
+    },
+    {
+      "path": "ai_ad_editor\\sequence_canvas.py",
+      "sha256": "462542e26058d350c2d0a29d0cf4127c4054cab7462a763811b85bfca171412f"
+    },
+    {
+      "path": "ai_ad_editor\\sequence_sampling.py",
+      "sha256": "1aa171ef6043878afce099f7a04b214b9c458879147c46147062a77d36356ec2"
+    },
+    {
+      "path": "ai_ad_editor\\smart_cut.py",
+      "sha256": "ba871f7bff0f186ad55d9e22c5fcd75e09032e8d7299a01c7ea7b76b2e1a21a1"
+    },
+    {
+      "path": "ai_ad_editor\\soulx_worker.py",
+      "sha256": "20dc7a046934925b3620f35922f08a7c97845527a78ee437950e0db9addba3e5"
+    },
+    {
+      "path": "ai_ad_editor\\source_edits.py",
+      "sha256": "a2bea20a8d162ac4fa9f329045bca2b7e214a624adca107df6021919d5a1d36c"
+    },
+    {
+      "path": "ai_ad_editor\\source_transitions.py",
+      "sha256": "59c2652aa76024b78667293ce46774ba6910e4524db7e39f95dc95bd91b0547a"
+    },
+    {
+      "path": "ai_ad_editor\\speech.py",
+      "sha256": "26a17ac367475ebe56a498a3f2950cf1529ec0e7d63238ad6399c8b27c713abd"
+    },
+    {
+      "path": "ai_ad_editor\\speed_curves.py",
+      "sha256": "41fbddd764bfa481e6158e8401333113c871e1c38e34257911f9aa676b9bfff9"
+    },
+    {
+      "path": "ai_ad_editor\\stem_separation.py",
+      "sha256": "75f88d0c7b2d6ddec0798efe5d0bccb6c5c4d2f9c33eb4adf37a635106d670de"
+    },
+    {
+      "path": "ai_ad_editor\\stem_separation_cli.py",
+      "sha256": "7f61029b4417ed7d7c76408e31b51b3574eaff6feddfefa2c6097d88cb2ab72d"
+    },
+    {
+      "path": "ai_ad_editor\\stem_separation_dsp.py",
+      "sha256": "fe5f6e2602f1c450ec9ecc2db8c763d9ce77b846c7226e6e8c88aeee36c6021c"
+    },
+    {
+      "path": "ai_ad_editor\\stem_separation_worker.py",
+      "sha256": "3ded624662f12880189f7072a68ef902cc980647d9d4af78b697a30ceed072df"
+    },
+    {
+      "path": "ai_ad_editor\\stroke_motion.py",
+      "sha256": "ba53f586ff12c75c15803e347307c802d977e874ce792159d74ebb2b6b42ae03"
+    },
+    {
+      "path": "ai_ad_editor\\subtitle_clock.py",
+      "sha256": "49ca2001da0f250d682f5818d95f4f51ee362cbaee979fb9a99649a847cd4645"
+    },
+    {
+      "path": "ai_ad_editor\\subtitle_segments.py",
+      "sha256": "5590e04147f0b50cb60df3b4e543059a560dbfd684b3085c5f25f8fb04631aea"
+    },
+    {
+      "path": "ai_ad_editor\\template.py",
+      "sha256": "25cff8f3f5a76d88358c746dabb5adc50b0b0c345ffee53aa3a175f72248ec7d"
+    },
+    {
+      "path": "ai_ad_editor\\text_highlight.py",
+      "sha256": "d08bee683f0bd00bac363a78df5957475765741a7c53d92ac025575b334f78e5"
+    },
+    {
+      "path": "ai_ad_editor\\text_layout.py",
+      "sha256": "1f3831478b41ea23c7dd445a66ba08249a4833cce852eb9190ac0a35936a210b"
+    },
+    {
+      "path": "ai_ad_editor\\text_paint.py",
+      "sha256": "a924644f0396b5204efbb0e085f25d51f6cda5bfc75f2d44febc6796e42cb028"
+    },
+    {
+      "path": "ai_ad_editor\\text_typing.py",
+      "sha256": "6cc022af8300fb4270cb21f2f53ffe2b33210ac203169fed653d11d75e591ec3"
+    },
+    {
+      "path": "ai_ad_editor\\time_mapping.py",
+      "sha256": "89bd69060b3f10af1197018b735621eadb8ce2858b4281972d989fddf79f2ef1"
+    },
+    {
+      "path": "ai_ad_editor\\tracking.py",
+      "sha256": "3ef89e454292f7cedec1dbfcb8c6a5a9220c802b9e886e18f5aaffffb6a1934b"
+    },
+    {
+      "path": "ai_ad_editor\\transcribe.py",
+      "sha256": "877f1cb336233e70d010d39884b1fde6ab475b3df8d55e929bc793b7cfb17ce7"
+    },
+    {
+      "path": "ai_ad_editor\\understand.py",
+      "sha256": "3b440295b06683c8b7e0fd8a19a0422239bd86e163081677d47fcc5b1da83a15"
+    },
+    {
+      "path": "ai_ad_editor\\utils.py",
+      "sha256": "f1411b706fe613694028328345123eca26499f4385270ae45f9d132d5a0ee182"
+    },
+    {
+      "path": "ai_ad_editor\\vace_context.py",
+      "sha256": "aef2d4318720c10a99644e96ea35ba27d48e9b405a332f6b2075b6a558f0e0e6"
+    },
+    {
+      "path": "ai_ad_editor\\vace_frames.py",
+      "sha256": "aadc7d5785347422ee62b1d4a195e5dfbf1bcb497eeedc43aa4d839aff6f55de"
+    },
+    {
+      "path": "ai_ad_editor\\vace_model.py",
+      "sha256": "8a8f96a14aac93a7b9577f88fe576fecbbfd4fcc206e27843de79f7b1ba54961"
+    },
+    {
+      "path": "ai_ad_editor\\vace_worker.py",
+      "sha256": "0ce1dc459b3c0d7f1c95ec2208e78e5fe299200582c878f5de34c9382f4582f5"
+    },
+    {
+      "path": "ai_ad_editor\\validator.py",
+      "sha256": "40cf4923fce096020b4ff552188a098ffd4b46a7d1a88701f46758c2727b85db"
+    },
+    {
+      "path": "ai_ad_editor\\video_clock.py",
+      "sha256": "24bbd3dbf4d3f384bca30e6e881d900226c56f67302ffa721820d70a972e2e0e"
+    },
+    {
+      "path": "ai_ad_editor\\vision_tracker.py",
+      "sha256": "add01f7ecc50a645a1f0e9a0f21f817f5538359aa7f5f268158c23c36769ec4f"
+    },
+    {
+      "path": "ai_ad_editor\\whisper_worker.py",
+      "sha256": "39220014386155a911d4714c3dc20493c76720dd98312d4410826728a2f59d2a"
+    },
+    {
+      "path": "ai_ad_editor\\yolo_worker.py",
+      "sha256": "fe93653d9ae37e811325655ca81635311cd9c6504d0e41b8d1e7c6fa43e77e86"
+    }
+  ],
+  "frozen_equal": true
+}

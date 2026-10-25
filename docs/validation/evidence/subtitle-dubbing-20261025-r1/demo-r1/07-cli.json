@@ -1,0 +1,406 @@
+{
+  "argv": [
+    "validate",
+    "--project",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\dubbing-20261025-r1\\installed-gpu-r2\\dubbing-restored"
+  ],
+  "exit_code": 0,
+  "response": {
+    "ok": true,
+    "command": "validate",
+    "request_id": "req_20261025023803_7d753d68",
+    "operation_id": null,
+    "status": "succeeded",
+    "data": {
+      "report": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\dubbing-20261025-r1\\installed-gpu-r2\\dubbing-restored\\validation\\validation_run_20261025023803_ed5c120d.json",
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "dub_subtitle_20261025023201_525ad8d1",
+          "rights_ref": "dub_subtitle_20261025023201_525ad8d1",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "dub_subtitle_20261025023201_525ad8d1",
+          "rights_ref": "dub_subtitle_20261025023201_525ad8d1",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "dub_subtitle_20261025023201_719d1637",
+          "rights_ref": "dub_subtitle_20261025023201_719d1637",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "dub_subtitle_20261025023201_719d1637",
+          "rights_ref": "dub_subtitle_20261025023201_719d1637",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "dub_subtitle_20261025023201_40be05c4",
+          "rights_ref": "dub_subtitle_20261025023201_40be05c4",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "dub_subtitle_20261025023201_40be05c4",
+          "rights_ref": "dub_subtitle_20261025023201_40be05c4",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "dub_audio_20261025023201_cb76b15e",
+          "rights_ref": "dub_audio_20261025023201_cb76b15e",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "dub_audio_20261025023201_cb76b15e",
+          "rights_ref": "dub_audio_20261025023201_cb76b15e",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "dub_audio_20261025023202_2c63b04e",
+          "rights_ref": "dub_audio_20261025023202_2c63b04e",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "dub_audio_20261025023202_2c63b04e",
+          "rights_ref": "dub_audio_20261025023202_2c63b04e",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "dub_audio_20261025023202_5560fec6",
+          "rights_ref": "dub_audio_20261025023202_5560fec6",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "dub_audio_20261025023202_5560fec6",
+          "rights_ref": "dub_audio_20261025023202_5560fec6",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "dub_generated_20261025023202_1a2c9d33",
+          "rights_ref": "dub_generated_20261025023202_1a2c9d33",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "dub_generated_20261025023202_1a2c9d33",
+          "rights_ref": "dub_generated_20261025023202_1a2c9d33",
+          "record_version": 1,
+          "context": "project_asset"
+        }
+      ],
+      "rights": {
+        "ok": true,
+        "target": "commercial_ad",
+        "checked": 9,
+        "required_records": 11,
+        "failures": [],
+        "warnings": [
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "dub_subtitle_20261025023201_525ad8d1",
+            "rights_ref": "dub_subtitle_20261025023201_525ad8d1",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "dub_subtitle_20261025023201_525ad8d1",
+            "rights_ref": "dub_subtitle_20261025023201_525ad8d1",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "dub_subtitle_20261025023201_719d1637",
+            "rights_ref": "dub_subtitle_20261025023201_719d1637",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "dub_subtitle_20261025023201_719d1637",
+            "rights_ref": "dub_subtitle_20261025023201_719d1637",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "dub_subtitle_20261025023201_40be05c4",
+            "rights_ref": "dub_subtitle_20261025023201_40be05c4",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "dub_subtitle_20261025023201_40be05c4",
+            "rights_ref": "dub_subtitle_20261025023201_40be05c4",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "dub_audio_20261025023201_cb76b15e",
+            "rights_ref": "dub_audio_20261025023201_cb76b15e",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "dub_audio_20261025023201_cb76b15e",
+            "rights_ref": "dub_audio_20261025023201_cb76b15e",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "dub_audio_20261025023202_2c63b04e",
+            "rights_ref": "dub_audio_20261025023202_2c63b04e",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "dub_audio_20261025023202_2c63b04e",
+            "rights_ref": "dub_audio_20261025023202_2c63b04e",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "dub_audio_20261025023202_5560fec6",
+            "rights_ref": "dub_audio_20261025023202_5560fec6",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "dub_audio_20261025023202_5560fec6",
+            "rights_ref": "dub_audio_20261025023202_5560fec6",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "dub_generated_20261025023202_1a2c9d33",
+            "rights_ref": "dub_generated_20261025023202_1a2c9d33",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "dub_generated_20261025023202_1a2c9d33",
+            "rights_ref": "dub_generated_20261025023202_1a2c9d33",
+            "record_version": 1,
+            "context": "project_asset"
+          }
+        ],
+        "disposition_decisions": [],
+        "effective_disposition_decisions": []
+      },
+      "schema_engine": "jsonschema",
+      "asset_count": 9,
+      "sequence_count": 1
+    },
+    "artifacts": [],
+    "warnings": [
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "dub_subtitle_20261025023201_525ad8d1",
+        "rights_ref": "dub_subtitle_20261025023201_525ad8d1",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "dub_subtitle_20261025023201_525ad8d1",
+        "rights_ref": "dub_subtitle_20261025023201_525ad8d1",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "dub_subtitle_20261025023201_719d1637",
+        "rights_ref": "dub_subtitle_20261025023201_719d1637",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "dub_subtitle_20261025023201_719d1637",
+        "rights_ref": "dub_subtitle_20261025023201_719d1637",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "dub_subtitle_20261025023201_40be05c4",
+        "rights_ref": "dub_subtitle_20261025023201_40be05c4",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "dub_subtitle_20261025023201_40be05c4",
+        "rights_ref": "dub_subtitle_20261025023201_40be05c4",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "dub_audio_20261025023201_cb76b15e",
+        "rights_ref": "dub_audio_20261025023201_cb76b15e",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "dub_audio_20261025023201_cb76b15e",
+        "rights_ref": "dub_audio_20261025023201_cb76b15e",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "dub_audio_20261025023202_2c63b04e",
+        "rights_ref": "dub_audio_20261025023202_2c63b04e",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "dub_audio_20261025023202_2c63b04e",
+        "rights_ref": "dub_audio_20261025023202_2c63b04e",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "dub_audio_20261025023202_5560fec6",
+        "rights_ref": "dub_audio_20261025023202_5560fec6",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "dub_audio_20261025023202_5560fec6",
+        "rights_ref": "dub_audio_20261025023202_5560fec6",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "status": "unverified",
+        "code": "RIGHTS_STATUS_BLOCKED",
+        "message": "状态 unverified 不允许发布",
+        "asset_id": "dub_generated_20261025023202_1a2c9d33",
+        "rights_ref": "dub_generated_20261025023202_1a2c9d33",
+        "record_version": 1,
+        "context": "project_asset"
+      },
+      {
+        "code": "RIGHTS_USE_NOT_PERMITTED",
+        "message": "记录未允许目标用途: commercial_ad",
+        "asset_id": "dub_generated_20261025023202_1a2c9d33",
+        "rights_ref": "dub_generated_20261025023202_1a2c9d33",
+        "record_version": 1,
+        "context": "project_asset"
+      }
+    ],
+    "errors": [],
+    "provenance": {
+      "cli_version": "0.1.9",
+      "schema_version": "0.1.0",
+      "engine_version": "ffmpeg-local",
+      "started_at": "2026-10-25T02:38:03.525162Z",
+      "finished_at": "2026-10-25T02:38:03.525171Z",
+      "network": "disabled"
+    }
+  },
+  "seconds": 1.71080019999863
+}

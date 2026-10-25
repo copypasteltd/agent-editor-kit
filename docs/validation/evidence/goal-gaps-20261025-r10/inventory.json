@@ -1,0 +1,176 @@
+{
+  "status": "passed-read-only-installed-review",
+  "checked_at_utc": "2026-10-25T02:55:31.094505+00:00",
+  "baseline_commit": "7f24b2551e9d54b528d0eed9f15642b7fe57ad5d",
+  "source_worktree_status": " M product/src/ai_ad_editor/__init__.py\n M product/src/ai_ad_editor/capabilities.py\n M product/src/ai_ad_editor/cli.py\n M product/src/ai_ad_editor/community_models.py\n M product/src/ai_ad_editor/community_worker.py\n M product/src/ai_ad_editor/job_workspaces.py\n?? product/src/ai_ad_editor/dubbing.py\n?? product/src/ai_ad_editor/dubbing_cli.py\n",
+  "runtime": {
+    "release": "v0.1.0-alpha.4-local.7",
+    "python": "C:\\Python313\\python.exe",
+    "installed_directory": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.7\\final-r2\\installed",
+    "manifest_sha256": "sha256:0a79580cc12c1ec813404f3838fa2f17dc0c8d4a67678e4b25fba88d870facfe",
+    "launcher_sha256": "322dda3168534b883be4b2d18509624060e4db99afc9f5bde91602c0f638755e",
+    "native_only": true,
+    "community_config": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-runtime.json",
+    "semantic_config": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\semantic-runtime.json"
+  },
+  "installed_cli": "0.1.9",
+  "calls": [
+    {
+      "name": "version",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "version"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 2.0410442000029434,
+      "stdout_sha256": "3d1fbfb115738857fefc10fb321c26e094a9939aafafaa5e0fc9eda97458cc8c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "doctor",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "doctor"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 2.6234522000013385,
+      "stdout_sha256": "217003150cd6b3d67299ad960964a01ea3034ee2c58deb67df8597f88a70c83b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "capabilities",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "capabilities"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 1.9838144999994256,
+      "stdout_sha256": "c4981b5be27481d2dbbca26226a3f6fa48e20ef509c25d21738d87cf0c20de8d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "schema-show",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "schema",
+        "show"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 2.0840699000000313,
+      "stdout_sha256": "a234b23163f91dd030d2d563bb30a30d26132b4de08e68daffb07681c3232478",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "gpu-inspect",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "gpu",
+        "inspect"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 1.8741939999999886,
+      "stdout_sha256": "a25a07eac21d468feb96fba493cb6ae5fceac31cfdb2e4000b144b72efce42d9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "model-pack-list",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "model-pack",
+        "list"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 1.9815662000000884,
+      "stdout_sha256": "892682454f96364ba5f29c9ed318bfd6dbd227a01c37a4eac52afa0b73b5cbc4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "capability_count": 75,
+  "capability_status_counts": {
+    "implemented_with_limits": 47,
+    "implemented": 20,
+    "degraded": 1,
+    "local_adapter_only": 7
+  },
+  "product_python_files": 197,
+  "source_and_installed_equal": true,
+  "registered_skill": "agent-ffmpeg-local-editor",
+  "internal_modules": 17,
+  "kit_sha256": "919abfb74aea317e5f9368879961845e5355ab207d9369781b82a133865e5b80",
+  "gap_groups": 38,
+  "closed_complete_gap_groups": 0,
+  "order_counts": {
+    "先收口": 13,
+    "随后建设": 18,
+    "完整范围扩展": 7
+  },
+  "public_release_check": {
+    "url": "https://api.github.com/repos/copypasteltd/agent-editor-kit/releases?per_page=10",
+    "http_status": 200,
+    "releases": [
+      {
+        "tag_name": "v0.1.0-alpha.3",
+        "draft": false,
+        "prerelease": true,
+        "published_at": "2026-10-24T12:52:48Z",
+        "html_url": "https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3"
+      }
+    ],
+    "error": null,
+    "response_sha256": "85c0c79378e4caf5ae8fd76815ec224ff1c9f3534fda09a08c0933b6f75121c6",
+    "latest_published_tag": "v0.1.0-alpha.3"
+  },
+  "new_model_forwards": 0,
+  "new_renders": 0,
+  "historical_regression_rerun": false,
+  "human_listening": false,
+  "new_competitor_market_audit": false,
+  "overall_completion_percentage": null,
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "goal_remains_active": true,
+  "generator_sha256": "7f7bd261ffa962d0d5b94a4001e5473f986ed4b9d5f5bec265e1d916fc73e7be"
+}

@@ -1,8 +1,8 @@
-# CLI 0.1.7：任务中断恢复 / Interrupted-job recovery / 工作中斷復原
+# CLI 0.1.7 起：任务中断恢复 / Interrupted-job recovery / 工作中斷復原
 
 [简体 README](../../README.md) · [繁體 README](../../README.zh-TW.md) · [English README](../../README.en.md) · [四轨分离](FOUR_STEM_SEPARATION.md) · [完整目标差距](GOAL_GAPS_20261025.md)
 
-本版增加原生 Windows 子进程生命周期管理，以及独立四轨任务的持久化临时目录和输出登记。正常返回、取消或异常会在项目元数据提交或回滚后清理本任务文件；主 CLI 被强制结束后，可显式检查并恢复。
+CLI 0.1.7 增加原生 Windows 子进程生命周期管理，以及独立四轨任务的持久化临时目录和输出登记。CLI 0.1.9 将同一机制扩展到[字幕翻译配音联合流程](SUBTITLE_DUBBING.md)，并保护已提交的权利许可引用。正常返回、取消或异常会在项目元数据提交或回滚后清理本任务文件；主 CLI 被强制结束后，可显式检查并恢复。超窗拒绝的配音目录会保留供复核，直到显式清理。
 
 This version adds native Windows process lifetime management and durable workspaces for four-source separation. Explicit recovery restores pending project metadata first, then checks ownership before removing abandoned scratch files or unreferenced outputs. This is a bounded recovery feature; full G33 acceptance remains open.
 
@@ -35,14 +35,15 @@ Without `--cleanup-jobs`, `project recover` retains its metadata-only behavior. 
 
 | 内容 / Item | 行为 / Behavior |
 |---|---|
-| 工作目录 | `cache/managed-jobs/job-<32位十六进制UUID>/`；当前仅 `four-stem-separation` |
+| 工作目录 | `cache/managed-jobs/job-<32位十六进制UUID>/`；`four-stem-separation` 和 `subtitle-dubbing` |
 | 运行中工作 | `owner.lock` 的原生文件锁作为租约；拿不到租约时 `active_or_locked_preserved`，不按 PID 或年龄猜测 |
 | 未提交派生输出 | 发布前持久化目标路径、文件系统身份、字节数及 SHA-256；只有仍匹配且未被工程资产引用的输出才可移除 |
-| 已提交资产 | 工程引用的输出返回 `referenced_preserved`，保留四条可编辑音轨及对应文件 |
+| 已提交资产与许可 | 工程资产和 active Rights Ledger 的本地 `evidence` / `license_url` 引用保护输出；返回 `referenced_preserved`，保留四轨或配音/字幕及模型许可证据 |
+| 正常超窗拒绝 | `preserved_for_review` 保留完整配音和 failure.json；显式清理会删除该未提交目录，先保存需要的试听证据 |
 | 修改或替换的输出 | `changed_output_preserved`；包括字节相同但文件身份不同的替换，保留任务及证据 |
 | 未知/受阻目录 | `unverified_or_blocked_preserved`；未知格式、连接/符号链接、损坏登记、无法访问时保留 |
 | 原素材与旧缓存 | 原素材、用户文件以及历史 `cache/four-stem-separation/` 等非管理目录保留，不猜测归属 |
-| 扫描预算 | 每次最多 256 个任务，每任务 10,000 个目录项、64KiB 登记、128 个输出；超限保留并提示再次检查 |
+| 扫描预算 | 每次最多 256 个任务，每任务 10,000 个目录项、2MiB 登记、4096 个输出；发布前检查预算，恢复超限保留并提示再次检查 |
 
 原生进程管理仅覆盖经共享 `run_process` helper 启动的子进程树。子进程先暂停创建，加入本次调用独占的 Windows Job Object 后才运行；主进程退出/取消/超时时结束该树。创建或加入失败会拒绝执行新子进程，不静默降级。它不结束其他任务，也不是虚拟机、容器或安全沙箱。
 
@@ -55,3 +56,5 @@ The native guard applies to subprocesses started through the shared `run_process
 Four-source adapters pin implementation files as integrity artifacts. Moving from 0.1.6 to 0.1.7 requires explicit re-registration of the existing environment/model; it must not silently update an old adapter's hashes. The model and native Python remain separately supplied, and unverified model/media rights remain unverified.
 
 本地验收与真实强制中断记录见[任务中断恢复实测](../validation/任务中断恢复实测_2026-10-25.md)。该记录区分原生生命周期测试、真实模型推理和仅用于观察边界的暂停注入；未完成的人类听审与完整 G33 门槛继续保留。
+
+CLI 0.1.9 字幕配音的运行中取消/超时、首个发布、元数据已保存待提交和提交后三个强制结束阶段另见[本批实际证据](../validation/evidence/subtitle-dubbing-20261025-r1/)。提交前恢复原元数据并回收部分文件；提交后保留声音、字幕、报告和模型许可。其他模型路径、旧缓存、断电/磁盘不足与长并发仍未验收。

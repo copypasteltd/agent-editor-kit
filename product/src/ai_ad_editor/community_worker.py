@@ -54,6 +54,35 @@ def main():
         assert config.validate()
         engine = sherpa_onnx.OfflineTts(config)
         loaded = time.perf_counter()
+        if 'segments' in payload:
+            from ai_ad_editor.dubbing import synthesize_segments
+            data = synthesize_segments(engine, payload)
+            provider_loaded = bool(ctypes.windll.kernel32.GetModuleHandleW('onnxruntime_providers_cuda.dll')) if provider == 'cuda' else False
+            if provider == 'cuda' and not provider_loaded:
+                raise RuntimeError('CUDA provider DLL did not load; refusing a CPU result labelled CUDA')
+            data.update(engine_version=sherpa_onnx.__version__, requested_provider=provider,
+                speaker_count=engine.num_speakers, initialization_seconds=loaded-started,
+                generation_seconds=time.perf_counter()-loaded, cuda_provider_dll_loaded=provider_loaded,
+                compute_type='float32' if provider == 'cuda' else 'int8_model')
+        else:
+            data = single_voice(engine, payload, provider, sherpa_onnx, np, loaded, started)
+    elif task == 'translate':
+        data = translate(root, payload, provider)
+    else:
+        raise ValueError('Unknown task')
+    result = dict(protocol=PROTOCOL, ok=True, task=task, provider=provider,
+                  elapsed_seconds=time.perf_counter() - started, network='disabled', **data)
+    response = Path(request['response'])
+    with response.open('x', encoding='utf-8') as handle:
+        handle.write(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
+    print(json.dumps({'ok': True, 'task': task, 'elapsed_seconds': result['elapsed_seconds']}), flush=True)
+    if dll:
+        dll.close()
+    if external_dll:
+        external_dll.close()
+
+
+def single_voice(engine, payload, provider, sherpa_onnx, np, loaded, started):
         audio = engine.generate(payload['text'], sid=payload['speaker_id'], speed=payload['speed'])
         generation_seconds = time.perf_counter() - loaded
         provider_loaded = bool(ctypes.windll.kernel32.GetModuleHandleW('onnxruntime_providers_cuda.dll')) if provider == 'cuda' else False
@@ -77,7 +106,10 @@ def main():
                     peak=float(np.abs(samples).max()), rms=float(np.sqrt(np.mean(samples ** 2))), speed=payload['speed'],
                     initialization_seconds=loaded-started, generation_seconds=generation_seconds,
                     cuda_provider_dll_loaded=provider_loaded, compute_type='float32' if provider == 'cuda' else 'int8_model')
-    elif task == 'translate':
+        return data
+
+
+def translate(root, payload, provider):
         import sentencepiece as spm
         from opencc import OpenCC
         pair = payload['pair']
@@ -129,18 +161,7 @@ def main():
                     output=translations, input_token_counts=[len(t) for t in batch],
                     scores=scores, compute_type=actual_compute,
                     target_language=payload['target_language'], beam_size=payload['beam_size'])
-    else:
-        raise ValueError('Unknown task')
-    result = dict(protocol=PROTOCOL, ok=True, task=task, provider=provider,
-                  elapsed_seconds=time.perf_counter() - started, network='disabled', **data)
-    response = Path(request['response'])
-    with response.open('x', encoding='utf-8') as handle:
-        handle.write(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
-    print(json.dumps({'ok': True, 'task': task, 'elapsed_seconds': result['elapsed_seconds']}), flush=True)
-    if dll:
-        dll.close()
-    if external_dll:
-        external_dll.close()
+        return data
 
 
 if __name__ == '__main__':

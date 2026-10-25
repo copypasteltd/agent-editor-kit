@@ -5,6 +5,7 @@ import hashlib
 import json
 import platform
 import sys
+import time
 from pathlib import Path, PurePosixPath
 from typing import Any
 
@@ -56,12 +57,18 @@ def verify_pack(value: str, pack_id: str) -> tuple[Path, dict[str, Any]]:
 
 
 def infer(root: Path, *, pack: str, pack_id: str, task: str, payload: dict[str, Any],
-          dry_run: bool = False, timeout: float = 1800) -> dict[str, Any]:
+          dry_run: bool = False, timeout: float = 1800, cancel_file: Path | None = None) -> dict[str, Any]:
+    started = time.monotonic()
+    if cancel_file is not None and cancel_file.exists():
+        raise AppError('CANCELLED', '模型任务已取消', exit_code=8, path=str(cancel_file))
     pack_root, manifest = verify_pack(pack, pack_id)
     summary = {'id': pack_id, 'manifest_sha256': sha256_file(pack_root / 'manifest.json'),
                'verified_files': len(manifest['files']), 'engine': manifest['engine'], 'provider': payload.get('device', 'cpu')}
     if dry_run:
         return {'pack': summary, 'task': task, 'network': 'disabled', 'model_inference': False}
+    remaining = timeout - (time.monotonic() - started)
+    if remaining <= 0:
+        raise AppError('PROCESS_TIMEOUT', '模型包校验已耗尽任务超时预算', exit_code=6)
     operation = new_id('community_model')
     request = ensure_inside(root, root / 'validation' / (operation + '-request.json'))
     response = request.with_name(operation + '-response.json')
@@ -71,11 +78,11 @@ def infer(root: Path, *, pack: str, pack_id: str, task: str, payload: dict[str, 
     atomic_write_json(request, body)
     worker = Path(__file__).with_name('community_worker.py')
     result = run_process([sys.executable, '-I', '-S', '-B', '-u', '-X', 'utf8', str(worker), str(request)],
-                         cwd=pack_root, timeout=timeout)
+                         cwd=pack_root, timeout=remaining, cancel_file=cancel_file)
     log = request.with_name(operation + '-worker.txt')
     log.write_text(result.stdout[-8000:] + '\n' + result.stderr[-8000:], encoding='utf-8')
     if result.returncode or not response.is_file():
-        raise AppError('COMMUNITY_MODEL_FAILED', '本地 CPU 模型推理失败', exit_code=6,
+        raise AppError('COMMUNITY_MODEL_FAILED', '本地模型推理失败', exit_code=6,
                        cause=result.stderr[-4000:], path=str(log))
     data = json.loads(response.read_text('utf-8'))
     if data.get('protocol') != PROTOCOL or data.get('task') != task or not data.get('ok'):

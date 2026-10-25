@@ -1,0 +1,28 @@
+test_assignment_failure_never_executes_application_code (test_job_recovery.NativeProcessTreeTests.test_assignment_failure_never_executes_application_code) ... ok
+test_cancel_ends_both_child_and_grandchild (test_job_recovery.NativeProcessTreeTests.test_cancel_ends_both_child_and_grandchild) ... E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\native_process_job.py:26: ResourceWarning: unclosed file <_io.FileIO name=3 mode='rb' closefd=True>
+  class BasicLimits(ctypes.Structure):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\native_process_job.py:26: ResourceWarning: unclosed file <_io.FileIO name=4 mode='rb' closefd=True>
+  class BasicLimits(ctypes.Structure):
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_hard_owner_exit_ends_its_tree_without_taskkill (test_job_recovery.NativeProcessTreeTests.test_hard_owner_exit_ends_its_tree_without_taskkill) ... ok
+test_normal_child_exit_reaps_descendants_holding_pipes (test_job_recovery.NativeProcessTreeTests.test_normal_child_exit_reaps_descendants_holding_pipes) ... ok
+test_timeout_ends_both_child_and_grandchild (test_job_recovery.NativeProcessTreeTests.test_timeout_ends_both_child_and_grandchild) ... ok
+test_changed_output_is_preserved (test_job_recovery.WorkspaceRecoveryTests.test_changed_output_is_preserved) ... ok
+test_forged_paths_and_unknown_directories_are_preserved (test_job_recovery.WorkspaceRecoveryTests.test_forged_paths_and_unknown_directories_are_preserved) ... ok
+test_junction_inside_job_cannot_reach_external_files (test_job_recovery.WorkspaceRecoveryTests.test_junction_inside_job_cannot_reach_external_files) ... ok
+test_live_lease_is_preserved_and_dry_run_does_not_write (test_job_recovery.WorkspaceRecoveryTests.test_live_lease_is_preserved_and_dry_run_does_not_write) ... ok
+test_metadata_rollback_removes_only_owned_publications (test_job_recovery.WorkspaceRecoveryTests.test_metadata_rollback_removes_only_owned_publications) ... ok
+test_publication_does_not_replace_a_competing_file (test_job_recovery.WorkspaceRecoveryTests.test_publication_does_not_replace_a_competing_file) ... ok
+test_recover_restores_missing_or_corrupt_project_before_cache_cleanup (test_job_recovery.WorkspaceRecoveryTests.test_recover_restores_missing_or_corrupt_project_before_cache_cleanup) ... ok
+test_referenced_output_survives_cleanup (test_job_recovery.WorkspaceRecoveryTests.test_referenced_output_survives_cleanup) ... ok
+test_replaced_output_with_identical_bytes_is_preserved (test_job_recovery.WorkspaceRecoveryTests.test_replaced_output_with_identical_bytes_is_preserved) ... ok
+test_stale_publication_is_planned_then_removed_and_repeat_is_clean (test_job_recovery.WorkspaceRecoveryTests.test_stale_publication_is_planned_then_removed_and_repeat_is_clean) ... ok
+test_transaction_retains_lease_until_metadata_commits (test_job_recovery.WorkspaceRecoveryTests.test_transaction_retains_lease_until_metadata_commits) ... ok
+test_unmanaged_historical_cache_is_preserved (test_job_recovery.WorkspaceRecoveryTests.test_unmanaged_historical_cache_is_preserved) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 5.865s
+
+OK

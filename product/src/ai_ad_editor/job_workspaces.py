@@ -15,7 +15,9 @@ from .utils import atomic_write_json, load_json, now_iso, sha256_file
 
 FORMAT = 'agent-owned-job-workspace-v1'
 JOB_RE = re.compile(r'job-[0-9a-f]{32}')
-KINDS = {'four-stem-separation'}
+KINDS = {'four-stem-separation', 'subtitle-dubbing'}
+MAX_OUTPUTS = 4096
+MAX_MANIFEST_BYTES = 2 * 1024 * 1024
 _SCOPE = ContextVar('agent_owned_job_scope', default=None)
 
 
@@ -75,6 +77,15 @@ def _references(root):
         if isinstance(uri, str) and uri and '://' not in uri:
             path = Path(uri)
             result.add((path if path.is_absolute() else root / path).resolve())
+    from .rights import active_records, load_ledger
+    for record in active_records(load_ledger(root)):
+        for key in ('evidence', 'license_url'):
+            value = record.get(key)
+            if isinstance(value, str) and value:
+                value = value.removeprefix('local://')
+                if '://' not in value:
+                    path = Path(value)
+                    result.add((path if path.is_absolute() else root / path).resolve())
     return result
 
 
@@ -102,12 +113,12 @@ def _load_record(root, job):
     if job.parent != _owned(root, root / 'cache/managed-jobs') or not JOB_RE.fullmatch(job.name):
         raise ValueError('Unknown job directory')
     path = _owned(root, job / 'job.json')
-    if path.stat().st_size > 65536:
+    if path.stat().st_size > MAX_MANIFEST_BYTES:
         raise ValueError('Job manifest exceeds byte budget')
     record = json.loads(path.read_text('utf8'))
     if (not isinstance(record, dict) or record.get('format') != FORMAT or record.get('job_id') != job.name
             or record.get('project') != str(root.resolve()) or record.get('kind') not in KINDS
-            or not isinstance(record.get('outputs'), list) or len(record['outputs']) > 128):
+            or not isinstance(record.get('outputs'), list) or len(record['outputs']) > MAX_OUTPUTS):
         raise ValueError('Job manifest ownership or format invalid')
     return record
 
@@ -215,6 +226,8 @@ class Workspace:
             raise
 
     def publish(self, stage, destination):
+        if len(self.record['outputs']) >= MAX_OUTPUTS:
+            raise ValueError('Job output budget exceeded')
         stage, destination = _owned(self.root, stage), _owned(self.root, destination)
         if not stage.is_relative_to(self.path) or not destination.is_relative_to(self.root / 'assets/derived'):
             raise ValueError('Publication must move an owned stage into derived assets')
@@ -227,6 +240,9 @@ class Workspace:
             stream.flush()
             os.fsync(stream.fileno())
         self.record['outputs'].append(dict(path=relative, identity=_identity(stage), sha256='sha256:' + sha256_file(stage)))
+        if len(json.dumps(self.record, ensure_ascii=False, indent=2).encode('utf-8')) > MAX_MANIFEST_BYTES-1:
+            self.record['outputs'].pop()
+            raise ValueError('Job manifest byte budget exceeded')
         atomic_write_json(self.path / 'job.json', self.record)  # write-ahead intent before any public path exists
         destination.parent.mkdir(parents=True, exist_ok=True)
         if os.name == 'nt':
@@ -239,7 +255,14 @@ class Workspace:
 
     def finish(self, *, preserve_outputs=False):
         self.lease.close()
+        if self.record.get('review_reason'):
+            return dict(job_id=self.path.name, kind=self.record['kind'], status='preserved_for_review',
+                path=str(self.path), reason=self.record['review_reason'])
         return _recover_one(self.root, self.path, preserve_outputs=preserve_outputs)
+
+    def hold_for_review(self, reason):
+        self.record['review_reason'] = str(reason)[:512]
+        atomic_write_json(self.path / 'job.json', self.record)
 
 
 class WorkspaceScope:

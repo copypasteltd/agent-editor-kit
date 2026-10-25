@@ -1,0 +1,17 @@
+usage: ai-ad-editor project recover [-h] [--format {json,text}]
+                                    [--request-id REQUEST_ID]
+                                    [--idempotency-key IDEMPOTENCY_KEY]
+                                    [--dry-run] [--no-network]
+                                    [--progress {none,jsonl}]
+                                    --project PROJECT [--cleanup-jobs]
+
+options:
+  -h, --help            show this help message and exit
+  --format {json,text}  输出格式
+  --request-id REQUEST_ID
+  --idempotency-key IDEMPOTENCY_KEY
+  --dry-run
+  --no-network
+  --progress {none,jsonl}
+  --project PROJECT
+  --cleanup-jobs        恢复元数据后回收有归属证据的中断任务；保留在用、已引用、已改动和未知文件

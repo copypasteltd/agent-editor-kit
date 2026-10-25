@@ -1,6 +1,6 @@
 # Installed-release runtime contract
 
-This namespace calls the locally installed `v0.1.0-alpha.4-local.6` / CLI 0.1.8
+This namespace calls the locally installed `v0.1.0-alpha.4-local.7` / CLI 0.1.9
 package using this Skill's `scripts/run.ps1`. Its 17 modules share the launcher.
 The editable Skill source stays on E:; Codex reads
 Windows directory junctions. `local/agent-ffmpeg/runtime.json` selects the native Python and installed path.
@@ -92,3 +92,11 @@ Read [ctc-alignment.md](ctc-alignment.md) for explicit CPU/CUDA registration,
 raw CTC preservation and optional audio-activity boundaries. This is a separate
 existing model runtime, not one of the Kokoro/OPUS packs. Controlled word-block
 scores do not establish natural phonetic precision or complete G15 acceptance.
+
+## Joint subtitle translation and dubbing
+
+Read [subtitle-dubbing.md](subtitle-dubbing.md). `dub subtitles` reuses one
+Kokoro initialization per voice batch, checks complete WAV sample counts against
+source cue windows and commits editable speech/captions atomically. It uses the
+existing community packs and explicit destination tracks. Speech/translation
+rights, semantics, natural listening, phonetic timing and lip sync remain open.

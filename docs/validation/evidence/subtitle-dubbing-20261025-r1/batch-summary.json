@@ -1,0 +1,70 @@
+{
+  "status": "passed",
+  "scope": "batch acceptance index; does not replace separate execution receipts",
+  "receipts": [
+    {
+      "scope": "installed-gpu-r2",
+      "sha256": "34030c1c9c0b554f4785104da398771c5e92d4ca5b3350aee575aa65004fefe3",
+      "status": "passed-with-natural-quality-and-rights-review-open",
+      "test_methods": null
+    },
+    {
+      "scope": "installed-cpu-r2",
+      "sha256": "100e67f09ce0b97da23f349a63232d72418740f7e992b0b01cd545d5bbe92928",
+      "status": "passed-with-natural-quality-and-rights-review-open",
+      "test_methods": null
+    },
+    {
+      "scope": "skill-r1",
+      "sha256": "a3afb7e5ff07793fea80711e3e6892b60fa20edf83fc84e46c1e18c1101ab6b3",
+      "status": "passed-with-natural-quality-and-rights-review-open",
+      "test_methods": null
+    },
+    {
+      "scope": "control-r1",
+      "sha256": "3fbfbbd0875d7b18394a89e13883e5137c21f0d45ee244d56c01f08f38b31a7b",
+      "status": "passed",
+      "test_methods": null
+    },
+    {
+      "scope": "crashes-r1",
+      "sha256": "d0b7129173ae5e167f72d0e33de665deafac270bede9438e5b873178130b1363",
+      "status": "passed",
+      "test_methods": null
+    },
+    {
+      "scope": "demo-r1",
+      "sha256": "b6456e96d2741ea9a12330f2e1f0aa38de79eefbea114fa7c3b47dcc629781da",
+      "status": "passed-with-natural-quality-review-open",
+      "test_methods": null
+    },
+    {
+      "scope": "kit-r1",
+      "sha256": "9fbf2fa3e919323e5178e03b9b1a39c9d8451ead7dd6abe1f110e3a97a822f5d",
+      "status": "passed",
+      "test_methods": null
+    },
+    {
+      "scope": "tests/installed-r2",
+      "sha256": "d64e7744feba8edd1535224a9bdfd275a749ae17ca2455215eaf39a6b3b6fd11",
+      "status": null,
+      "test_methods": 27
+    },
+    {
+      "scope": "tests/installed-cli-r2",
+      "sha256": "3ccb6a4bcfde5ddaadae6505a471e0049abc76b05eff83a0a72c65b1ba7f3174",
+      "status": null,
+      "test_methods": 122
+    }
+  ],
+  "skill_files": 64,
+  "skill_count": 1,
+  "module_count": 17,
+  "public_voice_media": false,
+  "human_listening": false,
+  "human_semantic_acceptance": false,
+  "full_capcut_parity": false,
+  "goal_remains_active": true,
+  "largest_new_evidence_file": 1069937,
+  "new_evidence_files": 271
+}

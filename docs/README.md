@@ -2,15 +2,15 @@
 
 <!-- community-current -->
 
-当前本机已更新到 **CLI 0.1.8 / 独立四轨分离 / GPU 配音与翻译 / 359 项内置资源 / 单一 Skill**。以下原安装/差距记录按其原版本保留。 [新增完整流程](product/COMMUNITY_MATERIALS.md) · [本地离线交付](product/COMMUNITY_LOCAL_DELIVERY.md) · [本轮验收与剩余差距](product/COMMUNITY_ACCEPTANCE.md)
+当前本机已更新到 **CLI 0.1.9 / 字幕翻译配音联合流程 / 独立四轨分离 / GPU 配音与翻译 / 359 项内置资源 / 单一 Skill**。以下原安装/差距记录按其原版本保留。 [新增完整流程](product/COMMUNITY_MATERIALS.md) · [本地离线交付](product/COMMUNITY_LOCAL_DELIVERY.md) · [本轮验收与剩余差距](product/COMMUNITY_ACCEPTANCE.md)
 
 <!-- /community-current -->
 
-最新差距复核：[完整 G01–G38 表与关闭条件](product/GOAL_GAPS_20261025.md) · [r9 实际安装版响应/官方发行 API](validation/evidence/goal-gaps-20261025-r9/inventory.json) · [历史编号与文档审计](validation/evidence/goal-gaps-20261025-r9/documentation-audit.json)。CLI 0.1.8 仍是有限功能集，全部 38 组各有未满足条件；此次只读盘点没有新增模型/渲染或质量验收。All original closure conditions and historical README rows are preserved.
+最新差距复核：[完整 G01–G38 表与原关闭条件](product/GOAL_GAPS_20261025.md) · [r10 真实入口/API](validation/evidence/goal-gaps-20261025-r10/inventory.json) · [历史行/链接审计](validation/evidence/goal-gaps-20261025-r10/documentation-audit.json)。CLI 0.1.9 仍是有限功能集，38 组各有未满足条件；[新字幕配音实测](validation/字幕翻译配音联合流程实测_2026-10-25.md)与只读盘点分开，实际错译和性能限制保留。All original closure conditions and historical README rows are preserved.
 
 [简体中文](../README.md) · [繁體中文](../README.zh-TW.md) · [English](../README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit) · [Local package parts](releases/v0.1.0-alpha.3/artifacts)
 
-当前本机安装为 **v0.1.0-alpha.4-local.6 / CLI 0.1.8 / 独立四轨分离 / GPU 配音与翻译 / 359 项资源**；公开预发布仍为 **alpha.3 / CLI 0.1.2**。500 套风格与 **1 个 Skill / 17 项内部模块**继续保留，完整剪映等价仍未验收。Local CLI 0.1.8 includes independent four-source separation and the community/GPU extension; published alpha.3 downloads retain CLI 0.1.2. Use the matching application, kit and model pins.
+当前本机安装为 **v0.1.0-alpha.4-local.7 / CLI 0.1.9 / 独立四轨分离 / GPU 配音与翻译 / 359 项资源**；公开预发布仍为 **alpha.3 / CLI 0.1.2**。500 套风格与 **1 个 Skill / 17 项内部模块**继续保留，完整剪映等价仍未验收。Local CLI 0.1.9 includes joint subtitle dubbing, independent four-source separation and the community/GPU extension; published alpha.3 downloads retain CLI 0.1.2. Use the matching application, kit and model pins.
 
 | 阅读目标 / Goal | Document |
 |---|---|
@@ -18,7 +18,7 @@
 | 当前 alpha.3 预发布下载、安装、Skill 注册与首次视频 / Current release and first render | [Release](https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3) · [简体上手](releases/v0.1.0-alpha.3/QUICKSTART.md) · [繁體上手](releases/v0.1.0-alpha.3/QUICKSTART.zh-TW.md) · [English](releases/v0.1.0-alpha.3/QUICKSTART.en.md) |
 | alpha.3 发行范围、新目录安装与可执行示例 / Release scope and fresh-directory checks | [Scope](releases/v0.1.0-alpha.3/RELEASE.md) · [Release notes](releases/v0.1.0-alpha.3/RELEASE-NOTES.md) · [Native verification](validation/evidence/release-v0.1.0-alpha.3-r1/verification.json) |
 | alpha.3 的 GitHub 发布与 10 个附件逐项下载核对 / Current publication and ten download hashes | [Publication receipt](validation/evidence/release-v0.1.0-alpha.3-r1/publication.json) · [Reproduction](validation/evidence/release-v0.1.0-alpha.3-r1/git-reproduction.json) |
-| 当前 CLI 0.1.8 的 38 组差距、已交付扩展与剩余质量/AI/性能工作 / Current full-goal assessment | [2026-10-25 最新评估](product/GOAL_GAPS_20261025.md) · [最新 6 次安装版只读核对](validation/evidence/goal-gaps-20261025-r8/inventory.json) · [195 文件与真实对齐结果](validation/CTC声学边界实测_2026-10-25.md) · [当前实际 Skill 四轨](validation/evidence/job-recovery-20261025-r1/skill-r1/verification.json) |
+| 当前 CLI 0.1.9 的 38 组差距、联合字幕配音与剩余质量/AI/性能工作 / Current full-goal assessment | [2026-10-25 最新评估](product/GOAL_GAPS_20261025.md) · [最新 6 次入口只读核对](validation/evidence/goal-gaps-20261025-r10/inventory.json) · [197 文件与字幕配音实测](validation/字幕翻译配音联合流程实测_2026-10-25.md) · [当前实际 Skill 联合流程](validation/evidence/subtitle-dubbing-20261025-r1/skill-r1/verification.json) |
 | alpha.3 历史目标评估 / Historical alpha.3 assessment | [2026-10-24 差距评估](product/GOAL_GAPS_20261024.md) · [Installed inventory](validation/evidence/goal-gaps-20261024-r1/inventory.json) |
 | 当前完整功能与本地服务模块、安装版全部能力字段 / Complete functional and service modules | [简体](product/CAPABILITIES.md) · [繁體](product/CAPABILITIES.zh-TW.md) · [English](product/CAPABILITIES.en.md) |
 | 46 效果算子与 12 运镜的具体参数、范围、后端 / Full effect and motion parameters | [简体](product/EFFECTS.md) · [繁體](product/EFFECTS.zh-TW.md) · [English](product/EFFECTS.en.md) |
@@ -65,3 +65,5 @@ Contracts remain in specs; raw successes/failures in validation; media in assets
 - [CLI 0.1.7 原生任务中断恢复：流程、保留规则和范围](product/JOB_RECOVERY.md) · [真实四阶段/回归/成片](validation/任务中断恢复实测_2026-10-25.md) · [C16](product/CASES.md#c16-job-recovery)。
 
 - [CLI 0.1.8 词活动边界：依赖、CPU/GPU、原时间保留、字幕与质量边界](product/CTC_ACTIVITY_ALIGNMENT.md) · [全部实测与失败](validation/CTC声学边界实测_2026-10-25.md) · [C17](product/CASES.md#c17-ctc-activity)。
+
+- [CLI 0.1.9 中英字幕翻译→完整分段配音→实际时窗→可编辑交付](product/SUBTITLE_DUBBING.md) · [CPU/GPU/统一 Skill、故障、错译与成片实测](validation/字幕翻译配音联合流程实测_2026-10-25.md) · [C18 原图/字幕/实际 MP4/GIF](product/CASES.md#c18-subtitle-dubbing)。

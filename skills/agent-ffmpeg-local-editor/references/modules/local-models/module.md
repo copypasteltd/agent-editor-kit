@@ -4,8 +4,13 @@
 
 Native runtime + weights/hashes/licenses → adapters/artifacts
 
-Commands: `media adapter; audio adapter; audio separate-stems; asr adapter; ocr; face; tts; voice; translate; gpu; model-pack`.
+Commands: `media adapter; audio adapter; audio separate-stems; asr adapter; ocr; face; tts; voice; translate; dub subtitles; gpu; model-pack`.
 No weight downloads; check capability/runtime before execution.
+
+For translated SRT with complete timed speech and editable caption/audio clips,
+read [subtitle-dubbing.md](../../subtitle-dubbing.md). Preserve all regeneration
+attempts and inspect actual providers, fit and content rights; cue timing does
+not imply word alignment, naturalness or lip synchronization.
 
 For the installed community speech/translation packs, read
 [community-materials.md](../../community-materials.md). Prefer configured GPU

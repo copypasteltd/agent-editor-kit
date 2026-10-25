@@ -1241,6 +1241,8 @@ def build_parser() -> argparse.ArgumentParser:
     add_capture_parser(subs, _leaf_common)
     from .semantic_cli import add_parser as add_semantic_parser
     add_semantic_parser(subs, _leaf_common)
+    from .dubbing_cli import add_parser as add_dubbing_parser
+    add_dubbing_parser(subs, _leaf_common)
     return parser
 
 
@@ -7221,6 +7223,8 @@ from .semantic_cli import ACTIONS as SEMANTIC_ACTIONS, command as semantic_comma
 COMMANDS.update({('semantic', action): (lambda args: semantic_command(args, _envelope)) for action in SEMANTIC_ACTIONS})
 from .stem_separation_cli import command as stem_separation_command
 COMMANDS[('audio', 'separate-stems')] = lambda args: stem_separation_command(args, _envelope)
+from .dubbing_cli import command as dubbing_command
+COMMANDS[('dub', 'subtitles')] = lambda args: dubbing_command(args, _envelope)
 
 
 def main(argv: list[str] | None = None) -> int:

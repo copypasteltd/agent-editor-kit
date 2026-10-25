@@ -1,0 +1,17 @@
+{
+  "status": "static-inspection-completed",
+  "frames": [
+    "docs/assets/subtitle-dubbing-20261025-r1/demo-r1/frame-1.png",
+    "docs/assets/subtitle-dubbing-20261025-r1/demo-r1/frame-2.png",
+    "docs/assets/subtitle-dubbing-20261025-r1/demo-r1/frame-3.png"
+  ],
+  "observations": [
+    "All three bilingual captions are fully inside the 1280x720 canvas with no visible clipping in these inspected frames.",
+    "Numeric board and caption blocks do not obscure each other in these frames.",
+    "Third source translation is awkward and remains unchanged in actual output."
+  ],
+  "continuous_playback": false,
+  "human_listening": false,
+  "human_semantic_acceptance": false,
+  "scope": "assistant static frame inspection only; no natural-quality certification"
+}

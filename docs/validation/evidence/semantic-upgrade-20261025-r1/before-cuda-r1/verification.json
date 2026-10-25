@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "phase": "before",
+  "device": "cuda",
+  "started_at_utc": "2026-10-25T13:22:00.388439+00:00",
+  "cli_version": "0.1.15",
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "new_renders": 0,
+  "human_semantic_acceptance": false,
+  "independent_agent_benchmark": false,
+  "error": "AssertionError({'ok': False, 'command': 'semantic.search', 'request_id': 'req_20261025132651_f8815084', 'operation_id': None, 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'SEMANTIC_RUNTIME_CHANGED', 'message': '本地语义推理失败', 'path': None, 'retryable': False, 'cause': 'SEMANTIC_RUNTIME_CHANGED', 'diagnostics': {'job': 'E:\\\\dev\\\\sandbox\\\\AI广告剪辑\\\\workspace\\\\semantic-upgrade-20261025-installed-r1\\\\project\\\\cache\\\\managed-jobs\\\\job-a612f43b0dbc4ecdb9bc4f2636057cc0\\\\inference-cuda', 'response': 'E:\\\\dev\\\\sandbox\\\\AI广告剪辑\\\\workspace\\\\semantic-upgrade-20261025-installed-r1\\\\project\\\\cache\\\\managed-jobs\\\\job-a612f43b0dbc4ecdb9bc4f2636057cc0\\\\inference-cuda\\\\response.json', 'exit_code': 1}}], 'provenance': {'cli_version': '0.1.15', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-10-25T13:26:51.875412Z', 'finished_at': '2026-10-25T13:26:51.875432Z', 'network': 'disabled'}})"
+}

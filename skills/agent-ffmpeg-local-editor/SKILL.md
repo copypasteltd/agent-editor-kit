@@ -7,7 +7,7 @@ description: "Edit and deliver local videos with agent editor kit: multitrack ed
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.12` / CLI `0.1.14`.
+The current local runtime is `v0.1.0-alpha.4-local.13` / CLI `0.1.15`.
 The published alpha.3 downloads retain CLI 0.1.2 and their original scope.
 
 ## Runtime and common workflow
@@ -87,7 +87,8 @@ media. Add other modules when the request needs them. For example:
   visible. Candidate scores alone do not establish semantic correctness.
 - Move an indexed/calibrated project: read [semantic-package.md](references/semantic-package.md).
   Export a package, inspect the conversion report, import into a new directory
-  and run a real query. Model/runtime pins stay external and unchanged.
+  and run a real query. Use its explicit runtime-upgrade flow if the old
+  installation path changed; byte-identical implementations can reuse vectors.
 - Native window/screen/camera/microphone capture: read
   [native-capture.md](references/native-capture.md), select an explicit source,
   record for a finite duration, then edit the returned asset ID normally.

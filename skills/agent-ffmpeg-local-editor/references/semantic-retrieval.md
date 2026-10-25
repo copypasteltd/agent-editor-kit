@@ -3,7 +3,7 @@
 [Unified entry](../SKILL.md) · [Runtime](runtime.md) ·
 [Full guide](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/SEMANTIC_RETRIEVAL.md)
 
-Use CLI 0.1.13 through this Skill's pinned installed launcher. This is part of K08,
+Use CLI 0.1.15 through this Skill's pinned installed launcher. This is part of K08,
 not an additional Skill registration. Local images/video samples can be searched
 with Chinese, English or an existing local reference image using SigLIP2.
 
@@ -70,7 +70,8 @@ persistent model service. CLI 0.1.12 manages the four mutating/inference actions
 with owned native process jobs and durable recovery records. Read
 [job-recovery.md](job-recovery.md) before explicit cleanup. Actual fault evidence
 defines exercised stages; no in-flight CUDA-kernel or power-loss guarantee is
-implied. Synchronous integrity checking can delay timeout/cancellation response.
+implied. Integrity reads observe timeout/cancellation; an OS-blocked read is
+not preempted, and per-command model loading still has a resource cost.
 
 ## Explicit conditions and empirical rejection
 
@@ -122,8 +123,9 @@ actual provider and select or calibrate the corresponding profile. Strict CUDA
 examples avoid a silent change of profile scope. `search --dry-run` verifies
 binding without inference; `calibration-list` only lists registrations.
 
-Changed semantic implementation or relocated dependencies require explicit
-adapter registration and a rebuilt index. Do not rewrite stored hashes to bypass
+Changed semantic implementation or external dependency bytes require explicit
+adapter registration and a rebuilt index. An installation-path-only change can
+use the byte-identical upgrade flow in semantic-package.md. Do not rewrite stored hashes to bypass
 verification. New media needs a new index/profile; old indexes still cover only
 their selected assets/samples. Use new IDs to retain previous evidence.
 
@@ -186,5 +188,7 @@ and `--cancel-file`. Inspect the actual error diagnostics and elapsed time.
 Interrupted partial digests are discarded; verified files retain native read locks.
 Recovery checks output hashes after leaving the expired operation budget.
 An OS-blocked file read is not preempted; model loading remains per command.
-The implementation pin changed: explicitly register the new adapter and rebuild
-its index/profiles; never edit old pins to make an old project appear compatible.
+For a changed installation path, read [semantic-package.md](semantic-package.md).
+CLI 0.1.15 can explicitly derive new adapter/index/profile identities while
+reusing vectors when all 19 implementation files and external dependencies are
+byte-identical. Changed content still requires rebuilding. Never edit old pins.

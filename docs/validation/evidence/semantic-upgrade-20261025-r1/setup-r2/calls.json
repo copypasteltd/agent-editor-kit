@@ -1,0 +1,52 @@
+[
+  {
+    "id": "import",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.13\\final-r3\\installed\\run.py",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-control-20261025-installed-r1\\second.aevpkg.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-upgrade-20261025-installed-r2\\project"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 3.0011422999959905,
+    "stdout_sha256": "ba64660b75e766811bb5c9319a0c1bfa3eb12f155f069b6260a276ec444e0e92",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "first-relocation",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-upgrade-20261025-installed-r2\\isolated-native\\installed\\run.py",
+      "project",
+      "upgrade-semantic",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-upgrade-20261025-installed-r2\\project",
+      "--adapter-id",
+      "siglip2",
+      "--new-adapter-id",
+      "isolated15",
+      "--id-prefix",
+      "source15"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 77.8385408000031,
+    "stdout_sha256": "da091b0fcaed553e8205ec9c07577cbaffee82a91f6c737403c6559b21f70b25",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

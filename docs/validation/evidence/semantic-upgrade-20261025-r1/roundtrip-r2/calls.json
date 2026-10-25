@@ -1,0 +1,70 @@
+[
+  {
+    "id": "export",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.13\\final-r3\\installed\\run.py",
+      "convert",
+      "export",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-upgrade-20261025-installed-r2\\project",
+      "--target-format",
+      "package",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-upgrade-20261025-installed-r2\\upgraded.aevpkg.zip"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 3.127640800012159,
+    "stdout_sha256": "bf7aeacc2cf4d3d59b873b5705d84f77e6002a058d26fff0de60d0d3029404b1",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "import",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.13\\final-r3\\installed\\run.py",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-upgrade-20261025-installed-r2\\upgraded.aevpkg.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-upgrade-20261025-installed-r2\\restored"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 3.8101429999951506,
+    "stdout_sha256": "3d38c1e5c04371e34b5dd55b788b684cff045c5134c9cbfd8ed2c8dad93b150c",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "validate",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.13\\final-r3\\installed\\run.py",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-upgrade-20261025-installed-r2\\restored"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.643569599997136,
+    "stdout_sha256": "cb0cd765c017b9ac490cd16d8864e239fb699cd4775cd46ff29e7067563fef34",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

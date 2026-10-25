@@ -2,17 +2,17 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.14 / alpha.4-local.12 / r13 kit。** One registered Skill / 17 modules;
+**Current local / 当前本机 / 目前本機：CLI 0.1.15 / alpha.4-local.13 / r14 kit。** One registered Skill / 17 modules;
 joint subtitle translation/dubbing, CTC activity boundaries, managed job recovery, independent four-source
 separation, offline image/text retrieval, GPU speech/translation and 359 resources. Public alpha.3 remains CLI 0.1.2.
-[Semantic package workflow](SEMANTIC_PROJECT_PACKAGE.md) · [Semantic recovery](SEMANTIC_JOB_RECOVERY.md) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](ad-storyboard-capabilities-cli-0.1.14.json) ·
+[Semantic package workflow](SEMANTIC_PROJECT_PACKAGE.md) · [Semantic recovery](SEMANTIC_JOB_RECOVERY.md) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](semantic-upgrade-capabilities-cli-0.1.15.json) ·
 [Subtitle dubbing workflow](SUBTITLE_DUBBING.md) · [CTC limits](CTC_ACTIVITY_ALIGNMENT.md) ·
 [All 38 remaining gap groups](GOAL_GAPS_20261025.md).
 Cue-window fit does not establish semantics, natural listening, word precision or lip sync.
 
 <!-- /community-current -->
 
-[README](../../README.en.md) · [Machine response](ad-storyboard-capabilities-cli-0.1.14.json) · [Module data](module-catalog.json)
+[README](../../README.en.md) · [Machine response](semantic-upgrade-capabilities-cli-0.1.15.json) · [Module data](module-catalog.json)
 
 | ID | Module | Behavior and input → output | Entry | Dependency/limit |
 |---|---|---|---|---|
@@ -68,6 +68,7 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 | F50 | Offline visual semantic retrieval and conditions | Local index, Chinese/English/reference images, same-frame positive/negative clauses, empirical profiles, actual previews/source times and editable references. | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | URI-only portable semantic package; all 80 decisions retained with 3 known errors; same-host runtime pins remain external; G26/G31 open |
 | F51 | Joint subtitle translation/dubbing | Plain Chinese/English SRT and explicit voices/tracks → translation or preserved same-language copy, complete batched WAV, actual fit, editable audio/captions and atomic application. | `dub subtitles` | Same-language mode initializes only voice; preserves originals/retries/awkward translations; cue fit does not establish word precision, naturalness or lip sync. |
 | F52 | Editable ad storyboards and revision | Reviewed brief/actual assets → separate picture/caption/voice/source/music tracks for multiple canvases/durations; selected-shot/variant revisions. | `ad storyboard/build/revise` | Whole-frame allocation, actual asset locks, real font layout and complete voice-window checks; caller supplies claims and semantic choices. |
+| F53 | Semantic runtime relocation | Old adapter/index/profiles → new installation-bound identities, copying vectors/previews/datasets and retaining fitted observations. | `project upgrade-semantic` | All 19 implementation files and external dependencies must be byte-identical; zero new model forwards; original records retained; changed bytes require rebuilding. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -107,7 +108,8 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
   "commands": [
     "semantic adapter-register/adapter-list/adapter-inspect",
     "semantic index/index-list/verify/search",
-    "semantic calibrate/calibration-list"
+    "semantic calibrate/calibration-list",
+    "project upgrade-semantic"
   ],
   "input_kinds": [
     "project_image",
@@ -186,6 +188,22 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "native_runtime_bundled": false,
     "inference_during_conversion": false
   },
+  "runtime_upgrade": {
+    "command": "project upgrade-semantic",
+    "format": "agent-semantic-runtime-upgrade-v1",
+    "explicit_new_ids": true,
+    "requires_all_pinned_implementation_bytes_identical": true,
+    "requires_external_model_runtime_and_evidence_bytes_identical": true,
+    "old_installation_directory_required": false,
+    "old_records_retained": true,
+    "vectors_previews_dataset_fit_observations_device_preserved": true,
+    "new_model_forwards": 0,
+    "maximum_indexes": 32,
+    "maximum_profiles": 64,
+    "maximum_total_preview_rows": 4096,
+    "maximum_copied_payload_bytes": 536870912,
+    "changed_implementation_requires_new_index_and_calibration": true
+  },
   "managed_jobs": {
     "actions": [
       "adapter-register",
@@ -211,7 +229,8 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "calibration_does_not_establish_natural_scene_rejection_or_recall",
     "no_audio_embeddings_or_music_recommendation",
     "no_implicit_download_or_remote_code",
-    "relocated_or_changed_adapter_requires_explicit_registration_and_index_rebuild",
+    "byte_identical_implementation_relocation_requires_explicit_upgrade_with_new_ids",
+    "changed_model_runtime_or_implementation_requires_explicit_registration_and_index_rebuild",
     "legacy_flattened_semantic_packages_require_reexport_from_intact_source_project",
     "OS_DLL_closure_long_library_performance_and_broad_advertising_quality_unaccepted"
   ]

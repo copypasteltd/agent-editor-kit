@@ -1,0 +1,19 @@
+{
+  "status": "failed",
+  "scope": "contracts",
+  "installed": null,
+  "started_at_utc": "2026-10-25T13:29:28.938129+00:00",
+  "finished_at_utc": "2026-10-25T13:32:29.957938+00:00",
+  "exit_code": 1,
+  "source_files": 206,
+  "frozen_equal": true,
+  "installed_frozen_equal": true,
+  "log_sha256": "108b2128c0c95c071785435d9366a1f9842a0007759a7635add0edf02aa10095",
+  "result": {
+    "methods": 122,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 1,
+    "success": false
+  }
+}

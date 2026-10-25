@@ -1,0 +1,49 @@
+{
+  "case": "read-timeout",
+  "argv": [
+    "C:/Python313/python.exe",
+    "-I",
+    "-S",
+    "-B",
+    "-u",
+    "-X",
+    "utf8",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.13\\final-r3\\installed\\run.py",
+    "project",
+    "upgrade-semantic",
+    "--project",
+    "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-upgrade-20261025-installed-r2\\fault-project",
+    "--adapter-id",
+    "siglip2",
+    "--new-adapter-id",
+    "fault150",
+    "--id-prefix",
+    "fault150",
+    "--timeout-seconds",
+    "5"
+  ],
+  "pid": 23916,
+  "exit_code": 6,
+  "elapsed_seconds": 7.640880399994785,
+  "cancel_to_exit_seconds": null,
+  "observed_read_bytes_at_cancel": null,
+  "error": {
+    "code": "PROCESS_TIMEOUT",
+    "message": "任务已超时",
+    "path": null,
+    "retryable": true,
+    "diagnostics": {
+      "phase": "integrity-read",
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\siglip2-base-patch16-224-20261025\\model.safetensors",
+      "bytes_processed": 529530880,
+      "total_bytes": 1500800904,
+      "partial_digest_discarded": true,
+      "digest_cached": false
+    }
+  },
+  "deadline_seconds": 5,
+  "wall_gate_seconds": 12,
+  "require_integrity_read": true,
+  "stdout_sha256": "db35f1890f598925eb4a091178584450eccaeefbc0fb60f6cc76a80257886688",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

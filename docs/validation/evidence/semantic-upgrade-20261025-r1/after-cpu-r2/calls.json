@@ -1,0 +1,35 @@
+[
+  {
+    "id": "query80",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.13\\final-r3\\installed\\run.py",
+      "semantic",
+      "search",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-upgrade-20261025-installed-r2\\project",
+      "--queries-file",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-upgrade-20261025-installed-r2\\queries.json",
+      "--index-id",
+      "current15_i_99fadef4a678ea4684b4",
+      "--calibration-id",
+      "current15_c_059b5bbbc5b108e03431",
+      "--kind",
+      "image",
+      "--device",
+      "cpu",
+      "--limit",
+      "3"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 149.1847787000006,
+    "stdout_sha256": "0a8918f17605218419d1ca61b7a794571a2759da2e9a4a685f64c411bfb4d91c",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

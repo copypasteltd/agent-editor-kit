@@ -2,17 +2,17 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.14 / alpha.4-local.12 / r13 kit。** One registered Skill / 17 modules;
+**Current local / 当前本机 / 目前本機：CLI 0.1.15 / alpha.4-local.13 / r14 kit。** One registered Skill / 17 modules;
 joint subtitle translation/dubbing, CTC activity boundaries, managed job recovery, independent four-source
 separation, offline image/text retrieval, GPU speech/translation and 359 resources. Public alpha.3 remains CLI 0.1.2.
-[Semantic package workflow](SEMANTIC_PROJECT_PACKAGE.md) · [Semantic recovery](SEMANTIC_JOB_RECOVERY.md) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](ad-storyboard-capabilities-cli-0.1.14.json) ·
+[Semantic package workflow](SEMANTIC_PROJECT_PACKAGE.md) · [Semantic recovery](SEMANTIC_JOB_RECOVERY.md) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](semantic-upgrade-capabilities-cli-0.1.15.json) ·
 [Subtitle dubbing workflow](SUBTITLE_DUBBING.md) · [CTC limits](CTC_ACTIVITY_ALIGNMENT.md) ·
 [All 38 remaining gap groups](GOAL_GAPS_20261025.md).
 Cue-window fit does not establish semantics, natural listening, word precision or lip sync.
 
 <!-- /community-current -->
 
-[README](../../README.md) · [Machine response](ad-storyboard-capabilities-cli-0.1.14.json) · [Module data](module-catalog.json)
+[README](../../README.md) · [Machine response](semantic-upgrade-capabilities-cli-0.1.15.json) · [Module data](module-catalog.json)
 
 | 编号 | 功能模块 | 具体行为与输入 → 输出 | 入口 | 依赖/边界 |
 |---|---|---|---|---|
@@ -68,6 +68,7 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 | F50 | 离线图文语义检索与条件选择 | 本地索引、中英/参考图、同帧正负条件、经验校准档案、实际预览/源时间及可编辑引用。 | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | 工程包按需派生路径绑定；同机 80 条迁移决策保留，仍有 3 条已知错误；运行时另备，G26/G31 开放 |
 | F51 | 字幕翻译配音联合流程 | 普通中英 SRT、显式音色/轨道 → 译文或保留同语种原文、完整批量 WAV、实际时窗、可编辑声音/字幕和原子提交。 | `dub subtitles` | 同语种只初始化配音模型；保留原声/重试/错译；cue 时窗不证明字词精度、自然韵律或口型同步。 |
 | F52 | 可编辑广告分镜与返工 | 已确认 brief/实际素材 → 多画幅与时长的画面/字幕/配音/源音/配乐独立轨道；按镜头与变体局部改稿。 | `ad storyboard/build/revise` | 整帧分配、原素材字节锁、实际字体排版和完整配音时窗；不自动创造卖点或决定素材语义。 |
+| F53 | 语义运行时升级 | 旧适配器/索引/校准 → 新安装路径下的新 ID，复制向量/预览/数据集且保留拟合和原观察。 | `project upgrade-semantic` | 全部 19 个实现与外部依赖须字节相同；零新模型前向，原记录不改；内容变化拒绝并要求重建。 |
 
 | 编号 | 服务模块 | 运行形式 | 需要什么/提供什么 | 入口 | 范围 |
 |---|---|---|---|---|---|
@@ -107,7 +108,8 @@ Cue-window fit does not establish semantics, natural listening, word precision o
   "commands": [
     "semantic adapter-register/adapter-list/adapter-inspect",
     "semantic index/index-list/verify/search",
-    "semantic calibrate/calibration-list"
+    "semantic calibrate/calibration-list",
+    "project upgrade-semantic"
   ],
   "input_kinds": [
     "project_image",
@@ -186,6 +188,22 @@ Cue-window fit does not establish semantics, natural listening, word precision o
     "native_runtime_bundled": false,
     "inference_during_conversion": false
   },
+  "runtime_upgrade": {
+    "command": "project upgrade-semantic",
+    "format": "agent-semantic-runtime-upgrade-v1",
+    "explicit_new_ids": true,
+    "requires_all_pinned_implementation_bytes_identical": true,
+    "requires_external_model_runtime_and_evidence_bytes_identical": true,
+    "old_installation_directory_required": false,
+    "old_records_retained": true,
+    "vectors_previews_dataset_fit_observations_device_preserved": true,
+    "new_model_forwards": 0,
+    "maximum_indexes": 32,
+    "maximum_profiles": 64,
+    "maximum_total_preview_rows": 4096,
+    "maximum_copied_payload_bytes": 536870912,
+    "changed_implementation_requires_new_index_and_calibration": true
+  },
   "managed_jobs": {
     "actions": [
       "adapter-register",
@@ -211,7 +229,8 @@ Cue-window fit does not establish semantics, natural listening, word precision o
     "calibration_does_not_establish_natural_scene_rejection_or_recall",
     "no_audio_embeddings_or_music_recommendation",
     "no_implicit_download_or_remote_code",
-    "relocated_or_changed_adapter_requires_explicit_registration_and_index_rebuild",
+    "byte_identical_implementation_relocation_requires_explicit_upgrade_with_new_ids",
+    "changed_model_runtime_or_implementation_requires_explicit_registration_and_index_rebuild",
     "legacy_flattened_semantic_packages_require_reexport_from_intact_source_project",
     "OS_DLL_closure_long_library_performance_and_broad_advertising_quality_unaccepted"
   ]

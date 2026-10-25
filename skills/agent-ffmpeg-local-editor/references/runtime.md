@@ -1,6 +1,6 @@
 # Installed-release runtime contract
 
-This namespace calls the locally installed `v0.1.0-alpha.4-local.12` / CLI 0.1.14
+This namespace calls the locally installed `v0.1.0-alpha.4-local.13` / CLI 0.1.15
 package using this Skill's `scripts/run.ps1`. Its 17 modules share the launcher.
 The editable Skill source stays on E:; Codex reads
 Windows directory junctions. `local/agent-ffmpeg/runtime.json` selects the native Python and installed path.
@@ -81,6 +81,11 @@ native runtime hashes and actual inference attempts are recorded by the product.
 For project-package migration, read [semantic-package.md](semantic-package.md).
 The semantic asset tree and calibration bindings are portable project data;
 external model/runtime pins still require verification when a query executes.
+When upgrading the installation path, `project upgrade-semantic` explicitly
+derives new identities if all 19 pinned implementation modules and external
+dependencies remain byte-identical. It retains vectors and device profiles
+without model forwards; changed bytes require rebuilding. Read the package
+reference for the command, returned IDs, cancellation and limits.
 
 ## Four-source audio separation
 

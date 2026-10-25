@@ -1,0 +1,21 @@
+test_added_or_removed_implementation_inventory_requires_rebuild (test_semantic_upgrade.SemanticUpgradeTests.test_added_or_removed_implementation_inventory_requires_rebuild) ... ok
+test_cancel_before_upgrade_keeps_originals (test_semantic_upgrade.SemanticUpgradeTests.test_cancel_before_upgrade_keeps_originals) ... ok
+test_changed_current_implementation_requires_rebuild (test_semantic_upgrade.SemanticUpgradeTests.test_changed_current_implementation_requires_rebuild) ... ok
+test_changed_model_runtime_python_and_evidence_are_each_rejected (test_semantic_upgrade.SemanticUpgradeTests.test_changed_model_runtime_python_and_evidence_are_each_rejected) ... ok
+test_copy_interruption_removes_partial_stages_and_retains_metadata (test_semantic_upgrade.SemanticUpgradeTests.test_copy_interruption_removes_partial_stages_and_retains_metadata) ... ok
+test_corrupt_vector_preview_source_and_dataset_each_reject (test_semantic_upgrade.SemanticUpgradeTests.test_corrupt_vector_preview_source_and_dataset_each_reject) ... ok
+test_disk_budget_rejects_without_changing_metadata (test_semantic_upgrade.SemanticUpgradeTests.test_disk_budget_rejects_without_changing_metadata) ... ok
+test_dry_run_creates_no_project_files_or_jobs (test_semantic_upgrade.SemanticUpgradeTests.test_dry_run_creates_no_project_files_or_jobs) ... ok
+test_duplicate_target_is_preserved_and_idempotency_replays (test_semantic_upgrade.SemanticUpgradeTests.test_duplicate_target_is_preserved_and_idempotency_replays) ... ok
+test_explicit_index_selection_refuses_unknown_or_duplicate_ids (test_semantic_upgrade.SemanticUpgradeTests.test_explicit_index_selection_refuses_unknown_or_duplicate_ids) ... ok
+test_missing_original_rights_and_orphan_profile_refuse (test_semantic_upgrade.SemanticUpgradeTests.test_missing_original_rights_and_orphan_profile_refuse) ... ok
+test_no_profiles_still_preserves_valid_searchable_index (test_semantic_upgrade.SemanticUpgradeTests.test_no_profiles_still_preserves_valid_searchable_index) ... ok
+test_old_installation_can_be_missing_and_all_originals_survive (test_semantic_upgrade.SemanticUpgradeTests.test_old_installation_can_be_missing_and_all_originals_survive) ... ok
+test_save_failure_rolls_back_metadata_and_published_trees (test_semantic_upgrade.SemanticUpgradeTests.test_save_failure_rolls_back_metadata_and_published_trees) ... ok
+test_two_indexes_and_profiles_publish_as_independently_owned_trees (test_semantic_upgrade.SemanticUpgradeTests.test_two_indexes_and_profiles_publish_as_independently_owned_trees) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 42.778s
+
+OK
+AEK_RESULT={"methods": 15, "skipped": 0, "failures": 0, "errors": 0, "success": true}

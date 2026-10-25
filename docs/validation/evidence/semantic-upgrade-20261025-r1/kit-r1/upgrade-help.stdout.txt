@@ -1,0 +1,28 @@
+usage: ai-ad-editor project upgrade-semantic [-h] [--format {json,text}]
+                                             [--request-id REQUEST_ID]
+                                             [--idempotency-key IDEMPOTENCY_KEY]
+                                             [--dry-run] [--no-network]
+                                             [--progress {none,jsonl}]
+                                             --project PROJECT
+                                             --adapter-id ADAPTER_ID
+                                             --new-adapter-id NEW_ADAPTER_ID
+                                             --id-prefix ID_PREFIX
+                                             [--index-id INDEX_ID]
+                                             [--timeout-seconds TIMEOUT_SECONDS]
+                                             [--cancel-file CANCEL_FILE]
+
+options:
+  -h, --help            show this help message and exit
+  --format {json,text}  输出格式
+  --request-id REQUEST_ID
+  --idempotency-key IDEMPOTENCY_KEY
+  --dry-run
+  --no-network
+  --progress {none,jsonl}
+  --project PROJECT
+  --adapter-id ADAPTER_ID
+  --new-adapter-id NEW_ADAPTER_ID
+  --id-prefix ID_PREFIX
+  --index-id INDEX_ID   可重复；默认迁移该适配器的全部索引及其校准
+  --timeout-seconds TIMEOUT_SECONDS
+  --cancel-file CANCEL_FILE

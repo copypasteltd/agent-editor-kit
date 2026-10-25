@@ -1,0 +1,36 @@
+{
+  "protocol": "agent-semantic-embedding-v1",
+  "status": "failed",
+  "network": "disabled",
+  "blocked_network_events": [],
+  "request_sha256": "sha256:aad691764df4506d2cc3e4ca62197d551060506626ff4b58678825523bdbe322",
+  "versions": {
+    "torch": "2.13.0+cu130",
+    "transformers": "5.14.1",
+    "numpy": "2.4.2",
+    "PIL": "12.1.0",
+    "tokenizers": "0.22.2",
+    "safetensors": "0.8.0",
+    "siglip": "bundled-with-transformers",
+    "python": "3.13.14"
+  },
+  "module_paths": {
+    "torch": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\__init__.py",
+    "transformers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\__init__.py",
+    "numpy": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-upgrade-20261025-installed-r1\\isolated-native\\installed\\site\\numpy\\__init__.py",
+    "PIL": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-upgrade-20261025-installed-r1\\isolated-native\\installed\\site\\PIL\\__init__.py",
+    "tokenizers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\tokenizers\\__init__.py",
+    "safetensors": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\safetensors\\__init__.py",
+    "siglip": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\models\\siglip\\modeling_siglip.py"
+  },
+  "code": "SEMANTIC_RUNTIME_CHANGED",
+  "error_type": "ValueError",
+  "message": "SEMANTIC_RUNTIME_CHANGED",
+  "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-upgrade-20261025-installed-r1\\isolated-native\\installed\\site\\ai_ad_editor\\semantic_worker.py\", line 91, in main\n    raise ValueError('SEMANTIC_RUNTIME_CHANGED')\nValueError: SEMANTIC_RUNTIME_CHANGED\n",
+  "phase_seconds": {
+    "request-and-environment": 0.008724,
+    "native-imports": 141.967146,
+    "adapter-verification": 68.23643
+  },
+  "elapsed_seconds": 210.213364
+}

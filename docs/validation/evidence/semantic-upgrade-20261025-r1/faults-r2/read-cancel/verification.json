@@ -1,0 +1,43 @@
+{
+  "case": "read-cancel",
+  "argv": [
+    "C:/Python313/python.exe",
+    "-I",
+    "-S",
+    "-B",
+    "-u",
+    "-X",
+    "utf8",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.13\\final-r3\\installed\\run.py",
+    "project",
+    "upgrade-semantic",
+    "--project",
+    "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-upgrade-20261025-installed-r2\\fault-project",
+    "--adapter-id",
+    "siglip2",
+    "--new-adapter-id",
+    "fault151",
+    "--id-prefix",
+    "fault151",
+    "--timeout-seconds",
+    "600",
+    "--cancel-file",
+    "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\semantic-upgrade-20261025-r1\\faults-r2\\read-cancel\\cancel marker"
+  ],
+  "pid": 16448,
+  "exit_code": 8,
+  "elapsed_seconds": 4.053338600002462,
+  "cancel_to_exit_seconds": 1.9044867999909911,
+  "observed_read_bytes_at_cancel": 81992588,
+  "error": {
+    "code": "CANCELLED",
+    "message": "任务已取消",
+    "path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\semantic-upgrade-20261025-r1\\faults-r2\\read-cancel\\cancel marker",
+    "retryable": false
+  },
+  "deadline_seconds": 600,
+  "wall_gate_seconds": null,
+  "require_integrity_read": true,
+  "stdout_sha256": "4010894f726e5a9a2b6d0524a509d33dc3846bb746f01a5c6469771d8b43075d",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

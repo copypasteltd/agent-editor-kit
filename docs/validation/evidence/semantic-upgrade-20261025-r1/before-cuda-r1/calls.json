@@ -1,0 +1,35 @@
+[
+  {
+    "id": "query80",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-upgrade-20261025-installed-r1\\isolated-native\\installed\\run.py",
+      "semantic",
+      "search",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-upgrade-20261025-installed-r1\\project",
+      "--queries-file",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-upgrade-20261025-installed-r1\\queries.json",
+      "--index-id",
+      "source15_i_140aadca01394e993df7",
+      "--calibration-id",
+      "source15_c_c1115719e1238768d03f",
+      "--kind",
+      "image",
+      "--device",
+      "cuda",
+      "--limit",
+      "3"
+    ],
+    "exit_code": 6,
+    "elapsed_seconds": 291.5559893000027,
+    "stdout_sha256": "307dcc7e3eed1e84b8a093518c5cf04466487307b96cd928f1676ea0270fce2c",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

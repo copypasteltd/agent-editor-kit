@@ -1,0 +1,3144 @@
+{
+  "status": "passed-with-known-quality-errors",
+  "phase": "skill",
+  "device": "cuda",
+  "started_at_utc": "2026-10-25T13:59:22.544406+00:00",
+  "cli_version": "0.1.15",
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "new_renders": 0,
+  "human_semantic_acceptance": false,
+  "independent_agent_benchmark": false,
+  "query_count": 80,
+  "quality": {
+    "queries": [
+      {
+        "id": "hpos00en",
+        "text": "a monochrome photographer outdoors",
+        "expected_asset_ids": [
+          "asset_a7"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "a monochrome photographer outdoors",
+          "include": [
+            "a monochrome photographer outdoors"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            0
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_a7",
+            "sample_seconds": 0.0,
+            "score": 0.14607949
+          },
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.07614741
+          }
+        ]
+      },
+      {
+        "id": "hpos00zh",
+        "text": "户外摄影师的黑白影像",
+        "expected_asset_ids": [
+          "asset_a7"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "户外摄影师的黑白影像",
+          "include": [
+            "户外摄影师的黑白影像"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            1
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_a7",
+            "sample_seconds": 0.0,
+            "score": 0.12115654
+          },
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.09333447
+          },
+          {
+            "asset_id": "asset_j3",
+            "sample_seconds": 0.0,
+            "score": 0.07555397
+          }
+        ]
+      },
+      {
+        "id": "hpos01en",
+        "text": "latte art inside a ceramic coffee cup",
+        "expected_asset_ids": [
+          "asset_b4"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "latte art inside a ceramic coffee cup",
+          "include": [
+            "latte art inside a ceramic coffee cup"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            2
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_b4",
+            "sample_seconds": 0.0,
+            "score": 0.09496608
+          }
+        ]
+      },
+      {
+        "id": "hpos01zh",
+        "text": "陶瓷咖啡杯里的拉花",
+        "expected_asset_ids": [
+          "asset_b4"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "陶瓷咖啡杯里的拉花",
+          "include": [
+            "陶瓷咖啡杯里的拉花"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            3
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_b4",
+            "sample_seconds": 0.0,
+            "score": 0.09740736
+          }
+        ]
+      },
+      {
+        "id": "hpos02en",
+        "text": "a furry domestic kitten with striped markings",
+        "expected_asset_ids": [
+          "asset_c2",
+          "asset_i1"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "a furry domestic kitten with striped markings",
+          "include": [
+            "a furry domestic kitten with striped markings"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            4
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_i1",
+            "sample_seconds": 0.0,
+            "score": 0.10133176
+          },
+          {
+            "asset_id": "asset_c2",
+            "sample_seconds": 0.0,
+            "score": 0.10133176
+          }
+        ]
+      },
+      {
+        "id": "hpos02zh",
+        "text": "带条纹的毛茸茸家猫",
+        "expected_asset_ids": [
+          "asset_c2",
+          "asset_i1"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "带条纹的毛茸茸家猫",
+          "include": [
+            "带条纹的毛茸茸家猫"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            5
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_c2",
+            "sample_seconds": 0.0,
+            "score": 0.09741768
+          },
+          {
+            "asset_id": "asset_i1",
+            "sample_seconds": 0.0,
+            "score": 0.09741768
+          }
+        ]
+      },
+      {
+        "id": "hpos03en",
+        "text": "an astronaut posing in front of a flag",
+        "expected_asset_ids": [
+          "asset_d9"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "an astronaut posing in front of a flag",
+          "include": [
+            "an astronaut posing in front of a flag"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            6
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_d9",
+            "sample_seconds": 0.0,
+            "score": 0.12641031
+          }
+        ]
+      },
+      {
+        "id": "hpos03zh",
+        "text": "站在旗帜前的航天员",
+        "expected_asset_ids": [
+          "asset_d9"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "站在旗帜前的航天员",
+          "include": [
+            "站在旗帜前的航天员"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            7
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_d9",
+            "sample_seconds": 0.0,
+            "score": 0.11843219
+          },
+          {
+            "asset_id": "asset_h6",
+            "sample_seconds": 0.0,
+            "score": 0.06460843
+          },
+          {
+            "asset_id": "asset_a7",
+            "sample_seconds": 0.0,
+            "score": 0.06124663
+          }
+        ]
+      },
+      {
+        "id": "hpos04en",
+        "text": "a detailed patch of wild grass texture",
+        "expected_asset_ids": [
+          "asset_e3"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "a detailed patch of wild grass texture",
+          "include": [
+            "a detailed patch of wild grass texture"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            8
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.13858667
+          }
+        ]
+      },
+      {
+        "id": "hpos04zh",
+        "text": "野草表面的细节纹理",
+        "expected_asset_ids": [
+          "asset_e3"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "野草表面的细节纹理",
+          "include": [
+            "野草表面的细节纹理"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            9
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.12974947
+          },
+          {
+            "asset_id": "asset_j3",
+            "sample_seconds": 0.0,
+            "score": 0.09899808
+          },
+          {
+            "asset_id": "asset_f8",
+            "sample_seconds": 0.0,
+            "score": 0.09551919
+          }
+        ]
+      },
+      {
+        "id": "hpos05en",
+        "text": "rough pebbles covering the ground",
+        "expected_asset_ids": [
+          "asset_f8"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "rough pebbles covering the ground",
+          "include": [
+            "rough pebbles covering the ground"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            10
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_f8",
+            "sample_seconds": 0.0,
+            "score": 0.13037453
+          },
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.09572292
+          },
+          {
+            "asset_id": "asset_j3",
+            "sample_seconds": 0.0,
+            "score": 0.06354432
+          }
+        ]
+      },
+      {
+        "id": "hpos05zh",
+        "text": "铺满地面的粗糙小石块",
+        "expected_asset_ids": [
+          "asset_f8"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "铺满地面的粗糙小石块",
+          "include": [
+            "铺满地面的粗糙小石块"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            11
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_f8",
+            "sample_seconds": 0.0,
+            "score": 0.14426119
+          },
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.10863244
+          },
+          {
+            "asset_id": "asset_j3",
+            "sample_seconds": 0.0,
+            "score": 0.08951201
+          }
+        ]
+      },
+      {
+        "id": "hpos06en",
+        "text": "numbers around a round clock dial",
+        "expected_asset_ids": [
+          "asset_g5"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "numbers around a round clock dial",
+          "include": [
+            "numbers around a round clock dial"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            12
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_g5",
+            "sample_seconds": 0.0,
+            "score": 0.0829245
+          }
+        ]
+      },
+      {
+        "id": "hpos06zh",
+        "text": "圆形表盘周围的数字",
+        "expected_asset_ids": [
+          "asset_g5"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "圆形表盘周围的数字",
+          "include": [
+            "圆形表盘周围的数字"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            13
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_g5",
+            "sample_seconds": 0.0,
+            "score": 0.07809988
+          }
+        ]
+      },
+      {
+        "id": "hpos07en",
+        "text": "a deep space astronomical photograph",
+        "expected_asset_ids": [
+          "asset_h6"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "a deep space astronomical photograph",
+          "include": [
+            "a deep space astronomical photograph"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            14
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_h6",
+            "sample_seconds": 0.0,
+            "score": 0.14319169
+          },
+          {
+            "asset_id": "asset_g5",
+            "sample_seconds": 0.0,
+            "score": 0.08951729
+          },
+          {
+            "asset_id": "asset_d9",
+            "sample_seconds": 0.0,
+            "score": 0.07003624
+          }
+        ]
+      },
+      {
+        "id": "hpos07zh",
+        "text": "深空天文摄影",
+        "expected_asset_ids": [
+          "asset_h6"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "深空天文摄影",
+          "include": [
+            "深空天文摄影"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            15
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_h6",
+            "sample_seconds": 0.0,
+            "score": 0.09938202
+          },
+          {
+            "asset_id": "asset_a7",
+            "sample_seconds": 0.0,
+            "score": 0.07814817
+          },
+          {
+            "asset_id": "asset_g5",
+            "sample_seconds": 0.0,
+            "score": 0.06740752
+          }
+        ]
+      },
+      {
+        "id": "hpos08en",
+        "text": "rows of rectangular masonry bricks",
+        "expected_asset_ids": [
+          "asset_j3"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "rows of rectangular masonry bricks",
+          "include": [
+            "rows of rectangular masonry bricks"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            16
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_j3",
+            "sample_seconds": 0.0,
+            "score": 0.13931154
+          }
+        ]
+      },
+      {
+        "id": "hpos08zh",
+        "text": "成排的矩形砌筑砖块",
+        "expected_asset_ids": [
+          "asset_j3"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "成排的矩形砌筑砖块",
+          "include": [
+            "成排的矩形砌筑砖块"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            17
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_j3",
+            "sample_seconds": 0.0,
+            "score": 0.1305273
+          },
+          {
+            "asset_id": "asset_f8",
+            "sample_seconds": 0.0,
+            "score": 0.07033295
+          },
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.06120993
+          }
+        ]
+      },
+      {
+        "id": "hpos09en",
+        "text": "the side profile of a horse in silhouette",
+        "expected_asset_ids": [
+          "asset_k8"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "the side profile of a horse in silhouette",
+          "include": [
+            "the side profile of a horse in silhouette"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            18
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_k8",
+            "sample_seconds": 0.0,
+            "score": 0.16664205
+          }
+        ]
+      },
+      {
+        "id": "hpos09zh",
+        "text": "侧面的马形轮廓",
+        "expected_asset_ids": [
+          "asset_k8"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "侧面的马形轮廓",
+          "include": [
+            "侧面的马形轮廓"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            19
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_k8",
+            "sample_seconds": 0.0,
+            "score": 0.12245935
+          },
+          {
+            "asset_id": "asset_g5",
+            "sample_seconds": 0.0,
+            "score": 0.07162742
+          },
+          {
+            "asset_id": "asset_j3",
+            "sample_seconds": 0.0,
+            "score": 0.06933362
+          }
+        ]
+      },
+      {
+        "id": "hout00en",
+        "text": "an elephant standing in a savanna",
+        "expected_asset_ids": [],
+        "group": "out_of_library",
+        "decision": "no_calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "an elephant standing in a savanna",
+          "include": [
+            "an elephant standing in a savanna"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            20
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": null,
+        "rejected": true,
+        "hits": []
+      },
+      {
+        "id": "hout00zh",
+        "text": "草原上站立的大象",
+        "expected_asset_ids": [],
+        "group": "out_of_library",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "草原上站立的大象",
+          "include": [
+            "草原上站立的大象"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            21
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": null,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_a7",
+            "sample_seconds": 0.0,
+            "score": 0.08424004
+          },
+          {
+            "asset_id": "asset_k8",
+            "sample_seconds": 0.0,
+            "score": 0.07686527
+          },
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.0627283
+          }
+        ]
+      },
+      {
+        "id": "hout01en",
+        "text": "penguins walking on ice",
+        "expected_asset_ids": [],
+        "group": "out_of_library",
+        "decision": "no_calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "penguins walking on ice",
+          "include": [
+            "penguins walking on ice"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            22
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": null,
+        "rejected": true,
+        "hits": []
+      },
+      {
+        "id": "hout01zh",
+        "text": "冰面上行走的企鹅",
+        "expected_asset_ids": [],
+        "group": "out_of_library",
+        "decision": "no_calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "冰面上行走的企鹅",
+          "include": [
+            "冰面上行走的企鹅"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            23
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": null,
+        "rejected": true,
+        "hits": []
+      },
+      {
+        "id": "hout02en",
+        "text": "a city skyline illuminated at night",
+        "expected_asset_ids": [],
+        "group": "out_of_library",
+        "decision": "no_calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "a city skyline illuminated at night",
+          "include": [
+            "a city skyline illuminated at night"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            24
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": null,
+        "rejected": true,
+        "hits": []
+      },
+      {
+        "id": "hout02zh",
+        "text": "夜间亮灯的城市天际线",
+        "expected_asset_ids": [],
+        "group": "out_of_library",
+        "decision": "no_calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "夜间亮灯的城市天际线",
+          "include": [
+            "夜间亮灯的城市天际线"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            25
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": null,
+        "rejected": true,
+        "hits": []
+      },
+      {
+        "id": "hout03en",
+        "text": "an octopus swimming underwater",
+        "expected_asset_ids": [],
+        "group": "out_of_library",
+        "decision": "no_calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "an octopus swimming underwater",
+          "include": [
+            "an octopus swimming underwater"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            26
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": null,
+        "rejected": true,
+        "hits": []
+      },
+      {
+        "id": "hout03zh",
+        "text": "水下游动的章鱼",
+        "expected_asset_ids": [],
+        "group": "out_of_library",
+        "decision": "no_calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "水下游动的章鱼",
+          "include": [
+            "水下游动的章鱼"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            27
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": null,
+        "rejected": true,
+        "hits": []
+      },
+      {
+        "id": "hout04en",
+        "text": "a sailing boat on the sea",
+        "expected_asset_ids": [],
+        "group": "out_of_library",
+        "decision": "no_calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "a sailing boat on the sea",
+          "include": [
+            "a sailing boat on the sea"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            28
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": null,
+        "rejected": true,
+        "hits": []
+      },
+      {
+        "id": "hout04zh",
+        "text": "海面上的帆船",
+        "expected_asset_ids": [],
+        "group": "out_of_library",
+        "decision": "no_calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "海面上的帆船",
+          "include": [
+            "海面上的帆船"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            29
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": null,
+        "rejected": true,
+        "hits": []
+      },
+      {
+        "id": "hout05en",
+        "text": "a pizza topped with tomatoes and cheese",
+        "expected_asset_ids": [],
+        "group": "out_of_library",
+        "decision": "no_calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "a pizza topped with tomatoes and cheese",
+          "include": [
+            "a pizza topped with tomatoes and cheese"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            30
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": null,
+        "rejected": true,
+        "hits": []
+      },
+      {
+        "id": "hout05zh",
+        "text": "番茄芝士披萨",
+        "expected_asset_ids": [],
+        "group": "out_of_library",
+        "decision": "no_calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "番茄芝士披萨",
+          "include": [
+            "番茄芝士披萨"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            31
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": null,
+        "rejected": true,
+        "hits": []
+      },
+      {
+        "id": "hout06en",
+        "text": "snow covered mountain peaks",
+        "expected_asset_ids": [],
+        "group": "out_of_library",
+        "decision": "no_calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "snow covered mountain peaks",
+          "include": [
+            "snow covered mountain peaks"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            32
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": null,
+        "rejected": true,
+        "hits": []
+      },
+      {
+        "id": "hout06zh",
+        "text": "白雪覆盖的山峰",
+        "expected_asset_ids": [],
+        "group": "out_of_library",
+        "decision": "no_calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "白雪覆盖的山峰",
+          "include": [
+            "白雪覆盖的山峰"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            33
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": null,
+        "rejected": true,
+        "hits": []
+      },
+      {
+        "id": "hout07en",
+        "text": "an empty basketball court",
+        "expected_asset_ids": [],
+        "group": "out_of_library",
+        "decision": "no_calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "an empty basketball court",
+          "include": [
+            "an empty basketball court"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            34
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": null,
+        "rejected": true,
+        "hits": []
+      },
+      {
+        "id": "hout07zh",
+        "text": "空旷的篮球场",
+        "expected_asset_ids": [],
+        "group": "out_of_library",
+        "decision": "no_calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "空旷的篮球场",
+          "include": [
+            "空旷的篮球场"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            35
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": null,
+        "rejected": true,
+        "hits": []
+      },
+      {
+        "id": "hout08en",
+        "text": "an acoustic guitar leaning on a wall",
+        "expected_asset_ids": [],
+        "group": "out_of_library",
+        "decision": "no_calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "an acoustic guitar leaning on a wall",
+          "include": [
+            "an acoustic guitar leaning on a wall"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            36
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": null,
+        "rejected": true,
+        "hits": []
+      },
+      {
+        "id": "hout08zh",
+        "text": "靠在墙边的木吉他",
+        "expected_asset_ids": [],
+        "group": "out_of_library",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "靠在墙边的木吉他",
+          "include": [
+            "靠在墙边的木吉他"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            37
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": null,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_j3",
+            "sample_seconds": 0.0,
+            "score": 0.06719471
+          }
+        ]
+      },
+      {
+        "id": "hout09en",
+        "text": "a waterfall descending into a river",
+        "expected_asset_ids": [],
+        "group": "out_of_library",
+        "decision": "no_calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "a waterfall descending into a river",
+          "include": [
+            "a waterfall descending into a river"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            38
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": null,
+        "rejected": true,
+        "hits": []
+      },
+      {
+        "id": "hout09zh",
+        "text": "落入河流的瀑布",
+        "expected_asset_ids": [],
+        "group": "out_of_library",
+        "decision": "no_calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "落入河流的瀑布",
+          "include": [
+            "落入河流的瀑布"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            39
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": null,
+        "rejected": true,
+        "hits": []
+      },
+      {
+        "id": "hneg00en",
+        "text": "a monochrome photographer outdoors, not a portrait in an orange astronaut suit",
+        "expected_asset_ids": [
+          "asset_a7"
+        ],
+        "group": "negation",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "bounded-negation-grammar",
+          "original_text": "a monochrome photographer outdoors, not a portrait in an orange astronaut suit",
+          "include": [
+            "a monochrome photographer outdoors"
+          ],
+          "exclude": [
+            "a portrait in an orange astronaut suit"
+          ],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            0
+          ],
+          "exclude_rows": [
+            40
+          ]
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_a7",
+            "sample_seconds": 0.0,
+            "score": 0.14607949
+          },
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.07614741
+          }
+        ]
+      },
+      {
+        "id": "hneg00zh",
+        "text": "户外摄影师的黑白影像，不是橙色宇航服的人物肖像",
+        "expected_asset_ids": [
+          "asset_a7"
+        ],
+        "group": "negation",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "bounded-negation-grammar",
+          "original_text": "户外摄影师的黑白影像，不是橙色宇航服的人物肖像",
+          "include": [
+            "户外摄影师的黑白影像"
+          ],
+          "exclude": [
+            "橙色宇航服的人物肖像"
+          ],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            1
+          ],
+          "exclude_rows": [
+            41
+          ]
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_a7",
+            "sample_seconds": 0.0,
+            "score": 0.12115654
+          },
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.09333447
+          },
+          {
+            "asset_id": "asset_j3",
+            "sample_seconds": 0.0,
+            "score": 0.07555397
+          }
+        ]
+      },
+      {
+        "id": "hneg01en",
+        "text": "latte art inside a ceramic coffee cup, not dense blades of lawn grass",
+        "expected_asset_ids": [
+          "asset_b4"
+        ],
+        "group": "negation",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "bounded-negation-grammar",
+          "original_text": "latte art inside a ceramic coffee cup, not dense blades of lawn grass",
+          "include": [
+            "latte art inside a ceramic coffee cup"
+          ],
+          "exclude": [
+            "dense blades of lawn grass"
+          ],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            2
+          ],
+          "exclude_rows": [
+            42
+          ]
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_b4",
+            "sample_seconds": 0.0,
+            "score": 0.09496608
+          }
+        ]
+      },
+      {
+        "id": "hneg01zh",
+        "text": "陶瓷咖啡杯里的拉花，不是密集的草坪草叶",
+        "expected_asset_ids": [
+          "asset_b4"
+        ],
+        "group": "negation",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "bounded-negation-grammar",
+          "original_text": "陶瓷咖啡杯里的拉花，不是密集的草坪草叶",
+          "include": [
+            "陶瓷咖啡杯里的拉花"
+          ],
+          "exclude": [
+            "密集的草坪草叶"
+          ],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            3
+          ],
+          "exclude_rows": [
+            43
+          ]
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_b4",
+            "sample_seconds": 0.0,
+            "score": 0.09740736
+          }
+        ]
+      },
+      {
+        "id": "hneg02en",
+        "text": "a furry domestic kitten with striped markings, not a close texture of loose gravel",
+        "expected_asset_ids": [
+          "asset_c2",
+          "asset_i1"
+        ],
+        "group": "negation",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "bounded-negation-grammar",
+          "original_text": "a furry domestic kitten with striped markings, not a close texture of loose gravel",
+          "include": [
+            "a furry domestic kitten with striped markings"
+          ],
+          "exclude": [
+            "a close texture of loose gravel"
+          ],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            4
+          ],
+          "exclude_rows": [
+            44
+          ]
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_i1",
+            "sample_seconds": 0.0,
+            "score": 0.10133176
+          },
+          {
+            "asset_id": "asset_c2",
+            "sample_seconds": 0.0,
+            "score": 0.10133176
+          }
+        ]
+      },
+      {
+        "id": "hneg02zh",
+        "text": "带条纹的毛茸茸家猫，不是松散碎石的近景纹理",
+        "expected_asset_ids": [
+          "asset_c2",
+          "asset_i1"
+        ],
+        "group": "negation",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "bounded-negation-grammar",
+          "original_text": "带条纹的毛茸茸家猫，不是松散碎石的近景纹理",
+          "include": [
+            "带条纹的毛茸茸家猫"
+          ],
+          "exclude": [
+            "松散碎石的近景纹理"
+          ],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            5
+          ],
+          "exclude_rows": [
+            45
+          ]
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_c2",
+            "sample_seconds": 0.0,
+            "score": 0.09741768
+          },
+          {
+            "asset_id": "asset_i1",
+            "sample_seconds": 0.0,
+            "score": 0.09741768
+          }
+        ]
+      },
+      {
+        "id": "hneg03en",
+        "text": "an astronaut posing in front of a flag, not a blurred photograph of an analog clock",
+        "expected_asset_ids": [
+          "asset_d9"
+        ],
+        "group": "negation",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "bounded-negation-grammar",
+          "original_text": "an astronaut posing in front of a flag, not a blurred photograph of an analog clock",
+          "include": [
+            "an astronaut posing in front of a flag"
+          ],
+          "exclude": [
+            "a blurred photograph of an analog clock"
+          ],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            6
+          ],
+          "exclude_rows": [
+            46
+          ]
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_d9",
+            "sample_seconds": 0.0,
+            "score": 0.12641031
+          }
+        ]
+      },
+      {
+        "id": "hneg03zh",
+        "text": "站在旗帜前的航天员，不是模糊的指针钟表照片",
+        "expected_asset_ids": [
+          "asset_d9"
+        ],
+        "group": "negation",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "bounded-negation-grammar",
+          "original_text": "站在旗帜前的航天员，不是模糊的指针钟表照片",
+          "include": [
+            "站在旗帜前的航天员"
+          ],
+          "exclude": [
+            "模糊的指针钟表照片"
+          ],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            7
+          ],
+          "exclude_rows": [
+            47
+          ]
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_d9",
+            "sample_seconds": 0.0,
+            "score": 0.11843219
+          },
+          {
+            "asset_id": "asset_h6",
+            "sample_seconds": 0.0,
+            "score": 0.06460843
+          },
+          {
+            "asset_id": "asset_a7",
+            "sample_seconds": 0.0,
+            "score": 0.06124663
+          }
+        ]
+      },
+      {
+        "id": "hneg04en",
+        "text": "a detailed patch of wild grass texture, not a telescope view of many distant galaxies",
+        "expected_asset_ids": [
+          "asset_e3"
+        ],
+        "group": "negation",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "bounded-negation-grammar",
+          "original_text": "a detailed patch of wild grass texture, not a telescope view of many distant galaxies",
+          "include": [
+            "a detailed patch of wild grass texture"
+          ],
+          "exclude": [
+            "a telescope view of many distant galaxies"
+          ],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            8
+          ],
+          "exclude_rows": [
+            48
+          ]
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.13858667
+          }
+        ]
+      },
+      {
+        "id": "hneg04zh",
+        "text": "野草表面的细节纹理，不是望远镜中的许多遥远星系",
+        "expected_asset_ids": [
+          "asset_e3"
+        ],
+        "group": "negation",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "bounded-negation-grammar",
+          "original_text": "野草表面的细节纹理，不是望远镜中的许多遥远星系",
+          "include": [
+            "野草表面的细节纹理"
+          ],
+          "exclude": [
+            "望远镜中的许多遥远星系"
+          ],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            9
+          ],
+          "exclude_rows": [
+            49
+          ]
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.12974947
+          },
+          {
+            "asset_id": "asset_j3",
+            "sample_seconds": 0.0,
+            "score": 0.09899808
+          },
+          {
+            "asset_id": "asset_f8",
+            "sample_seconds": 0.0,
+            "score": 0.09551919
+          }
+        ]
+      },
+      {
+        "id": "hneg05en",
+        "text": "rough pebbles covering the ground, not a close texture of a brick wall",
+        "expected_asset_ids": [
+          "asset_f8"
+        ],
+        "group": "negation",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "bounded-negation-grammar",
+          "original_text": "rough pebbles covering the ground, not a close texture of a brick wall",
+          "include": [
+            "rough pebbles covering the ground"
+          ],
+          "exclude": [
+            "a close texture of a brick wall"
+          ],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            10
+          ],
+          "exclude_rows": [
+            50
+          ]
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_f8",
+            "sample_seconds": 0.0,
+            "score": 0.13037453
+          },
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.09572292
+          }
+        ]
+      },
+      {
+        "id": "hneg05zh",
+        "text": "铺满地面的粗糙小石块，不是砖墙表面的近距离纹理",
+        "expected_asset_ids": [
+          "asset_f8"
+        ],
+        "group": "negation",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "bounded-negation-grammar",
+          "original_text": "铺满地面的粗糙小石块，不是砖墙表面的近距离纹理",
+          "include": [
+            "铺满地面的粗糙小石块"
+          ],
+          "exclude": [
+            "砖墙表面的近距离纹理"
+          ],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            11
+          ],
+          "exclude_rows": [
+            51
+          ]
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_f8",
+            "sample_seconds": 0.0,
+            "score": 0.14426119
+          },
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.10863244
+          }
+        ]
+      },
+      {
+        "id": "hneg06en",
+        "text": "numbers around a round clock dial, not a black and white horse silhouette",
+        "expected_asset_ids": [
+          "asset_g5"
+        ],
+        "group": "negation",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "bounded-negation-grammar",
+          "original_text": "numbers around a round clock dial, not a black and white horse silhouette",
+          "include": [
+            "numbers around a round clock dial"
+          ],
+          "exclude": [
+            "a black and white horse silhouette"
+          ],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            12
+          ],
+          "exclude_rows": [
+            52
+          ]
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_g5",
+            "sample_seconds": 0.0,
+            "score": 0.0829245
+          }
+        ]
+      },
+      {
+        "id": "hneg06zh",
+        "text": "圆形表盘周围的数字，不是黑白马匹剪影",
+        "expected_asset_ids": [
+          "asset_g5"
+        ],
+        "group": "negation",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "bounded-negation-grammar",
+          "original_text": "圆形表盘周围的数字，不是黑白马匹剪影",
+          "include": [
+            "圆形表盘周围的数字"
+          ],
+          "exclude": [
+            "黑白马匹剪影"
+          ],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            13
+          ],
+          "exclude_rows": [
+            53
+          ]
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_g5",
+            "sample_seconds": 0.0,
+            "score": 0.07809988
+          }
+        ]
+      },
+      {
+        "id": "hneg07en",
+        "text": "a deep space astronomical photograph, not black and white photo of a man with a camera",
+        "expected_asset_ids": [
+          "asset_h6"
+        ],
+        "group": "negation",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "bounded-negation-grammar",
+          "original_text": "a deep space astronomical photograph, not black and white photo of a man with a camera",
+          "include": [
+            "a deep space astronomical photograph"
+          ],
+          "exclude": [
+            "black and white photo of a man with a camera"
+          ],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            14
+          ],
+          "exclude_rows": [
+            54
+          ]
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_h6",
+            "sample_seconds": 0.0,
+            "score": 0.14319169
+          },
+          {
+            "asset_id": "asset_g5",
+            "sample_seconds": 0.0,
+            "score": 0.08951729
+          },
+          {
+            "asset_id": "asset_d9",
+            "sample_seconds": 0.0,
+            "score": 0.07003624
+          }
+        ]
+      },
+      {
+        "id": "hneg07zh",
+        "text": "深空天文摄影，不是黑白照片里的男人和相机",
+        "expected_asset_ids": [
+          "asset_h6"
+        ],
+        "group": "negation",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "bounded-negation-grammar",
+          "original_text": "深空天文摄影，不是黑白照片里的男人和相机",
+          "include": [
+            "深空天文摄影"
+          ],
+          "exclude": [
+            "黑白照片里的男人和相机"
+          ],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            15
+          ],
+          "exclude_rows": [
+            55
+          ]
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_h6",
+            "sample_seconds": 0.0,
+            "score": 0.09938202
+          }
+        ]
+      },
+      {
+        "id": "hneg08en",
+        "text": "rows of rectangular masonry bricks, not a coffee cup and saucer viewed from above",
+        "expected_asset_ids": [
+          "asset_j3"
+        ],
+        "group": "negation",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "bounded-negation-grammar",
+          "original_text": "rows of rectangular masonry bricks, not a coffee cup and saucer viewed from above",
+          "include": [
+            "rows of rectangular masonry bricks"
+          ],
+          "exclude": [
+            "a coffee cup and saucer viewed from above"
+          ],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            16
+          ],
+          "exclude_rows": [
+            56
+          ]
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_j3",
+            "sample_seconds": 0.0,
+            "score": 0.13931154
+          }
+        ]
+      },
+      {
+        "id": "hneg08zh",
+        "text": "成排的矩形砌筑砖块，不是俯拍咖啡杯与杯碟",
+        "expected_asset_ids": [
+          "asset_j3"
+        ],
+        "group": "negation",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "bounded-negation-grammar",
+          "original_text": "成排的矩形砌筑砖块，不是俯拍咖啡杯与杯碟",
+          "include": [
+            "成排的矩形砌筑砖块"
+          ],
+          "exclude": [
+            "俯拍咖啡杯与杯碟"
+          ],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            17
+          ],
+          "exclude_rows": [
+            57
+          ]
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_j3",
+            "sample_seconds": 0.0,
+            "score": 0.1305273
+          },
+          {
+            "asset_id": "asset_f8",
+            "sample_seconds": 0.0,
+            "score": 0.07033295
+          },
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.06120993
+          }
+        ]
+      },
+      {
+        "id": "hneg09en",
+        "text": "the side profile of a horse in silhouette, not the face of a brown tabby cat",
+        "expected_asset_ids": [
+          "asset_k8"
+        ],
+        "group": "negation",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "bounded-negation-grammar",
+          "original_text": "the side profile of a horse in silhouette, not the face of a brown tabby cat",
+          "include": [
+            "the side profile of a horse in silhouette"
+          ],
+          "exclude": [
+            "the face of a brown tabby cat"
+          ],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            18
+          ],
+          "exclude_rows": [
+            58
+          ]
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_k8",
+            "sample_seconds": 0.0,
+            "score": 0.16664205
+          }
+        ]
+      },
+      {
+        "id": "hneg09zh",
+        "text": "侧面的马形轮廓，不是棕色虎斑猫的脸",
+        "expected_asset_ids": [
+          "asset_k8"
+        ],
+        "group": "negation",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "bounded-negation-grammar",
+          "original_text": "侧面的马形轮廓，不是棕色虎斑猫的脸",
+          "include": [
+            "侧面的马形轮廓"
+          ],
+          "exclude": [
+            "棕色虎斑猫的脸"
+          ],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            19
+          ],
+          "exclude_rows": [
+            59
+          ]
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_k8",
+            "sample_seconds": 0.0,
+            "score": 0.12245935
+          },
+          {
+            "asset_id": "asset_g5",
+            "sample_seconds": 0.0,
+            "score": 0.07162742
+          },
+          {
+            "asset_id": "asset_j3",
+            "sample_seconds": 0.0,
+            "score": 0.06933362
+          }
+        ]
+      },
+      {
+        "id": "q01",
+        "text": "a cup of coffee on a wooden table",
+        "expected_asset_ids": [
+          "asset_b4"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "a cup of coffee on a wooden table",
+          "include": [
+            "a cup of coffee on a wooden table"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            60
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_b4",
+            "sample_seconds": 0.0,
+            "score": 0.13429911
+          }
+        ]
+      },
+      {
+        "id": "q02",
+        "text": "木桌上的一杯咖啡",
+        "expected_asset_ids": [
+          "asset_b4"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "木桌上的一杯咖啡",
+          "include": [
+            "木桌上的一杯咖啡"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            61
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_b4",
+            "sample_seconds": 0.0,
+            "score": 0.11323069
+          }
+        ]
+      },
+      {
+        "id": "q03",
+        "text": "a close-up photograph of a cat",
+        "expected_asset_ids": [
+          "asset_c2",
+          "asset_i1"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "a close-up photograph of a cat",
+          "include": [
+            "a close-up photograph of a cat"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            62
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_c2",
+            "sample_seconds": 0.0,
+            "score": 0.15478325
+          },
+          {
+            "asset_id": "asset_i1",
+            "sample_seconds": 0.0,
+            "score": 0.15478325
+          },
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.07385938
+          }
+        ]
+      },
+      {
+        "id": "q04",
+        "text": "一只猫的近距离照片",
+        "expected_asset_ids": [
+          "asset_c2",
+          "asset_i1"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "一只猫的近距离照片",
+          "include": [
+            "一只猫的近距离照片"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            63
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_c2",
+            "sample_seconds": 0.0,
+            "score": 0.11749298
+          },
+          {
+            "asset_id": "asset_i1",
+            "sample_seconds": 0.0,
+            "score": 0.11749298
+          },
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.09475299
+          }
+        ]
+      },
+      {
+        "id": "q05",
+        "text": "a woman wearing an astronaut spacesuit",
+        "expected_asset_ids": [
+          "asset_d9"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "a woman wearing an astronaut spacesuit",
+          "include": [
+            "a woman wearing an astronaut spacesuit"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            64
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_d9",
+            "sample_seconds": 0.0,
+            "score": 0.14378212
+          }
+        ]
+      },
+      {
+        "id": "q06",
+        "text": "穿宇航服的女性宇航员",
+        "expected_asset_ids": [
+          "asset_d9"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "穿宇航服的女性宇航员",
+          "include": [
+            "穿宇航服的女性宇航员"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            65
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_d9",
+            "sample_seconds": 0.0,
+            "score": 0.11519457
+          }
+        ]
+      },
+      {
+        "id": "q07",
+        "text": "a photographer standing behind a camera",
+        "expected_asset_ids": [
+          "asset_a7"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "a photographer standing behind a camera",
+          "include": [
+            "a photographer standing behind a camera"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            66
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_a7",
+            "sample_seconds": 0.0,
+            "score": 0.12499708
+          }
+        ]
+      },
+      {
+        "id": "q08",
+        "text": "站在相机后面的摄影师",
+        "expected_asset_ids": [
+          "asset_a7"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "站在相机后面的摄影师",
+          "include": [
+            "站在相机后面的摄影师"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            67
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_a7",
+            "sample_seconds": 0.0,
+            "score": 0.10978157
+          },
+          {
+            "asset_id": "asset_g5",
+            "sample_seconds": 0.0,
+            "score": 0.07587678
+          },
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.06708021
+          }
+        ]
+      },
+      {
+        "id": "q09",
+        "text": "a close-up texture of grass",
+        "expected_asset_ids": [
+          "asset_e3"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "a close-up texture of grass",
+          "include": [
+            "a close-up texture of grass"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            68
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.14079288
+          },
+          {
+            "asset_id": "asset_j3",
+            "sample_seconds": 0.0,
+            "score": 0.07223772
+          },
+          {
+            "asset_id": "asset_f8",
+            "sample_seconds": 0.0,
+            "score": 0.07011794
+          }
+        ]
+      },
+      {
+        "id": "q10",
+        "text": "草地的纹理",
+        "expected_asset_ids": [
+          "asset_e3"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "草地的纹理",
+          "include": [
+            "草地的纹理"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            69
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.14412379
+          },
+          {
+            "asset_id": "asset_f8",
+            "sample_seconds": 0.0,
+            "score": 0.09711078
+          },
+          {
+            "asset_id": "asset_j3",
+            "sample_seconds": 0.0,
+            "score": 0.09522714
+          }
+        ]
+      },
+      {
+        "id": "q11",
+        "text": "small gray stones and gravel",
+        "expected_asset_ids": [
+          "asset_f8"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "small gray stones and gravel",
+          "include": [
+            "small gray stones and gravel"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            70
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_f8",
+            "sample_seconds": 0.0,
+            "score": 0.14725515
+          },
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.0941849
+          },
+          {
+            "asset_id": "asset_j3",
+            "sample_seconds": 0.0,
+            "score": 0.06653879
+          }
+        ]
+      },
+      {
+        "id": "q12",
+        "text": "灰色碎石和小石子",
+        "expected_asset_ids": [
+          "asset_f8"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "灰色碎石和小石子",
+          "include": [
+            "灰色碎石和小石子"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            71
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_f8",
+            "sample_seconds": 0.0,
+            "score": 0.15252742
+          },
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.09820744
+          },
+          {
+            "asset_id": "asset_j3",
+            "sample_seconds": 0.0,
+            "score": 0.07484215
+          }
+        ]
+      },
+      {
+        "id": "q13",
+        "text": "a clock face with numbers and hands",
+        "expected_asset_ids": [
+          "asset_g5"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "a clock face with numbers and hands",
+          "include": [
+            "a clock face with numbers and hands"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            72
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_g5",
+            "sample_seconds": 0.0,
+            "score": 0.07591314
+          }
+        ]
+      },
+      {
+        "id": "q14",
+        "text": "带数字和指针的钟表",
+        "expected_asset_ids": [
+          "asset_g5"
+        ],
+        "group": "positive",
+        "decision": "no_calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "带数字和指针的钟表",
+          "include": [
+            "带数字和指针的钟表"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            73
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": false,
+        "rejected": true,
+        "hits": []
+      },
+      {
+        "id": "q15",
+        "text": "distant galaxies and stars in deep space",
+        "expected_asset_ids": [
+          "asset_h6"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "distant galaxies and stars in deep space",
+          "include": [
+            "distant galaxies and stars in deep space"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            74
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_h6",
+            "sample_seconds": 0.0,
+            "score": 0.12249758
+          }
+        ]
+      },
+      {
+        "id": "q16",
+        "text": "深空中的星系和星星",
+        "expected_asset_ids": [
+          "asset_h6"
+        ],
+        "group": "positive",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "深空中的星系和星星",
+          "include": [
+            "深空中的星系和星星"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            75
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_h6",
+            "sample_seconds": 0.0,
+            "score": 0.1195628
+          }
+        ]
+      },
+      {
+        "id": "q17",
+        "text": "a cat, not a cup of coffee",
+        "expected_asset_ids": [
+          "asset_c2",
+          "asset_i1"
+        ],
+        "group": "negation",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "bounded-negation-grammar",
+          "original_text": "a cat, not a cup of coffee",
+          "include": [
+            "a cat"
+          ],
+          "exclude": [
+            "a cup of coffee"
+          ],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            76
+          ],
+          "exclude_rows": [
+            77
+          ]
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_c2",
+            "sample_seconds": 0.0,
+            "score": 0.13077565
+          },
+          {
+            "asset_id": "asset_i1",
+            "sample_seconds": 0.0,
+            "score": 0.13077565
+          }
+        ]
+      },
+      {
+        "id": "q18",
+        "text": "一只猫，不是一杯咖啡",
+        "expected_asset_ids": [
+          "asset_c2",
+          "asset_i1"
+        ],
+        "group": "negation",
+        "decision": "calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "bounded-negation-grammar",
+          "original_text": "一只猫，不是一杯咖啡",
+          "include": [
+            "一只猫"
+          ],
+          "exclude": [
+            "一杯咖啡"
+          ],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            78
+          ],
+          "exclude_rows": [
+            79
+          ]
+        },
+        "top1_correct": true,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_i1",
+            "sample_seconds": 0.0,
+            "score": 0.10352951
+          },
+          {
+            "asset_id": "asset_c2",
+            "sample_seconds": 0.0,
+            "score": 0.10352951
+          },
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.07151573
+          }
+        ]
+      },
+      {
+        "id": "q19",
+        "text": "an underwater shark swimming beside coral",
+        "expected_asset_ids": [],
+        "group": "out_of_domain",
+        "decision": "no_calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "an underwater shark swimming beside coral",
+          "include": [
+            "an underwater shark swimming beside coral"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            80
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": null,
+        "rejected": true,
+        "hits": []
+      },
+      {
+        "id": "q20",
+        "text": "水下珊瑚旁边游动的鲨鱼",
+        "expected_asset_ids": [],
+        "group": "out_of_domain",
+        "decision": "no_calibrated_match",
+        "clauses": {
+          "protocol": "agent-semantic-clauses-v1",
+          "parser": "affirmative-text",
+          "original_text": "水下珊瑚旁边游动的鲨鱼",
+          "include": [
+            "水下珊瑚旁边游动的鲨鱼"
+          ],
+          "exclude": [],
+          "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+          "include_rows": [
+            81
+          ],
+          "exclude_rows": []
+        },
+        "top1_correct": null,
+        "rejected": true,
+        "hits": []
+      }
+    ],
+    "negation": {
+      "count": 22,
+      "correct": 22,
+      "rate": 1.0
+    },
+    "out_of_domain": {
+      "count": 2,
+      "correct": 2,
+      "rate": 1.0
+    },
+    "out_of_library": {
+      "count": 20,
+      "correct": 18,
+      "rate": 0.9
+    },
+    "positive": {
+      "count": 36,
+      "correct": 35,
+      "rate": 0.9722222222222222
+    }
+  },
+  "known_error_ids": [
+    "hout00zh",
+    "hout08zh",
+    "q14"
+  ],
+  "query_payload_unchanged": true,
+  "project_rights_and_assets_unchanged": true,
+  "decisions_and_order_identical": true,
+  "maximum_score_error": 0.0,
+  "inference": {
+    "selection": {
+      "requested": "cuda",
+      "selected": "cuda",
+      "fallback_reason": null,
+      "gpu": {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 3060",
+        "driver": "595.95",
+        "total_mib": 12288,
+        "free_mib": 10231,
+        "compute_capability": "8.6"
+      },
+      "device_index": 0,
+      "minimum_free_mib": 3072,
+      "existing_gpu_processes_untouched": true
+    },
+    "attempts": [
+      {
+        "device": "cuda",
+        "status": "succeeded",
+        "response": {
+          "protocol": "agent-semantic-embedding-v1",
+          "status": "succeeded",
+          "network": "disabled",
+          "blocked_network_events": [],
+          "request_sha256": "sha256:77814fdb13284d32d6fe9657365f1358cfd7d30d33262dd14e61bd5681c2a0ca",
+          "versions": {
+            "torch": "2.13.0+cu130",
+            "transformers": "5.14.1",
+            "numpy": "2.4.2",
+            "PIL": "12.1.0",
+            "tokenizers": "0.22.2",
+            "safetensors": "0.8.0",
+            "siglip": "bundled-with-transformers",
+            "python": "3.13.14"
+          },
+          "module_paths": {
+            "torch": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\__init__.py",
+            "transformers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\__init__.py",
+            "numpy": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.13\\final-r3\\installed\\site\\numpy\\__init__.py",
+            "PIL": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.13\\final-r3\\installed\\site\\PIL\\__init__.py",
+            "tokenizers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\tokenizers\\__init__.py",
+            "safetensors": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\safetensors\\__init__.py",
+            "siglip": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\models\\siglip\\modeling_siglip.py"
+          },
+          "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-upgrade-20261025-installed-r2\\restored\\cache\\managed-jobs\\job-8b47ff97b1134eb5b3844c59b6598580\\inference-cuda\\features.f32",
+          "output_sha256": "sha256:ce046ef448ea7108e73c4e15b7b4bb24dec83797022c5354a1c6d1f26257f4ca",
+          "rows": 82,
+          "dimension": 768,
+          "dtype": "float32-little-endian",
+          "item_ids": [
+            "clause_0",
+            "clause_1",
+            "clause_2",
+            "clause_3",
+            "clause_4",
+            "clause_5",
+            "clause_6",
+            "clause_7",
+            "clause_8",
+            "clause_9",
+            "clause_10",
+            "clause_11",
+            "clause_12",
+            "clause_13",
+            "clause_14",
+            "clause_15",
+            "clause_16",
+            "clause_17",
+            "clause_18",
+            "clause_19",
+            "clause_20",
+            "clause_21",
+            "clause_22",
+            "clause_23",
+            "clause_24",
+            "clause_25",
+            "clause_26",
+            "clause_27",
+            "clause_28",
+            "clause_29",
+            "clause_30",
+            "clause_31",
+            "clause_32",
+            "clause_33",
+            "clause_34",
+            "clause_35",
+            "clause_36",
+            "clause_37",
+            "clause_38",
+            "clause_39",
+            "clause_40",
+            "clause_41",
+            "clause_42",
+            "clause_43",
+            "clause_44",
+            "clause_45",
+            "clause_46",
+            "clause_47",
+            "clause_48",
+            "clause_49",
+            "clause_50",
+            "clause_51",
+            "clause_52",
+            "clause_53",
+            "clause_54",
+            "clause_55",
+            "clause_56",
+            "clause_57",
+            "clause_58",
+            "clause_59",
+            "clause_60",
+            "clause_61",
+            "clause_62",
+            "clause_63",
+            "clause_64",
+            "clause_65",
+            "clause_66",
+            "clause_67",
+            "clause_68",
+            "clause_69",
+            "clause_70",
+            "clause_71",
+            "clause_72",
+            "clause_73",
+            "clause_74",
+            "clause_75",
+            "clause_76",
+            "clause_77",
+            "clause_78",
+            "clause_79",
+            "clause_80",
+            "clause_81"
+          ],
+          "task": "text",
+          "adapter_sha256": "sha256:bb2c2b3f486600c8717f11a11be3dc8ff03fd2d81d76ce5787dc0b9029ce890a",
+          "device": "cuda",
+          "device_index": 0,
+          "actual_device": "NVIDIA GeForce RTX 3060",
+          "model_dtype": "torch.bfloat16",
+          "load_seconds": 51.724597,
+          "inference_seconds": 0.557299,
+          "peak_cuda_allocated_bytes": 785155072,
+          "peak_cuda_reserved_bytes": 803209216,
+          "model_loads": 1,
+          "model_forward_calls": 11,
+          "batch_size": 8,
+          "image_sizes": [],
+          "verification_scope": {
+            "mode": "windows-read-lock-command-scope",
+            "files_hashed": 97,
+            "bytes_hashed": 4322594101,
+            "digest_reuses_while_locked": 1,
+            "write_and_delete_sharing": false,
+            "persists_across_commands": false
+          },
+          "model_loading_keys_verified": true,
+          "text_normalization": "lowercase; max_length=64; no truncation",
+          "model_reuse_scope": "complete current batch only; no persistent model service",
+          "phase_seconds": {
+            "request-and-environment": 0.006529,
+            "native-imports": 17.850979,
+            "adapter-verification": 114.025694,
+            "model-loading": 51.724597,
+            "inference": 0.600717
+          },
+          "elapsed_seconds": 184.209473
+        }
+      }
+    ],
+    "job": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-upgrade-20261025-installed-r2\\restored\\cache\\managed-jobs\\job-8b47ff97b1134eb5b3844c59b6598580",
+    "response": {
+      "protocol": "agent-semantic-embedding-v1",
+      "status": "succeeded",
+      "network": "disabled",
+      "blocked_network_events": [],
+      "request_sha256": "sha256:77814fdb13284d32d6fe9657365f1358cfd7d30d33262dd14e61bd5681c2a0ca",
+      "versions": {
+        "torch": "2.13.0+cu130",
+        "transformers": "5.14.1",
+        "numpy": "2.4.2",
+        "PIL": "12.1.0",
+        "tokenizers": "0.22.2",
+        "safetensors": "0.8.0",
+        "siglip": "bundled-with-transformers",
+        "python": "3.13.14"
+      },
+      "module_paths": {
+        "torch": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\__init__.py",
+        "transformers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\__init__.py",
+        "numpy": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.13\\final-r3\\installed\\site\\numpy\\__init__.py",
+        "PIL": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.13\\final-r3\\installed\\site\\PIL\\__init__.py",
+        "tokenizers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\tokenizers\\__init__.py",
+        "safetensors": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\safetensors\\__init__.py",
+        "siglip": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\models\\siglip\\modeling_siglip.py"
+      },
+      "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-upgrade-20261025-installed-r2\\restored\\cache\\managed-jobs\\job-8b47ff97b1134eb5b3844c59b6598580\\inference-cuda\\features.f32",
+      "output_sha256": "sha256:ce046ef448ea7108e73c4e15b7b4bb24dec83797022c5354a1c6d1f26257f4ca",
+      "rows": 82,
+      "dimension": 768,
+      "dtype": "float32-little-endian",
+      "item_ids": [
+        "clause_0",
+        "clause_1",
+        "clause_2",
+        "clause_3",
+        "clause_4",
+        "clause_5",
+        "clause_6",
+        "clause_7",
+        "clause_8",
+        "clause_9",
+        "clause_10",
+        "clause_11",
+        "clause_12",
+        "clause_13",
+        "clause_14",
+        "clause_15",
+        "clause_16",
+        "clause_17",
+        "clause_18",
+        "clause_19",
+        "clause_20",
+        "clause_21",
+        "clause_22",
+        "clause_23",
+        "clause_24",
+        "clause_25",
+        "clause_26",
+        "clause_27",
+        "clause_28",
+        "clause_29",
+        "clause_30",
+        "clause_31",
+        "clause_32",
+        "clause_33",
+        "clause_34",
+        "clause_35",
+        "clause_36",
+        "clause_37",
+        "clause_38",
+        "clause_39",
+        "clause_40",
+        "clause_41",
+        "clause_42",
+        "clause_43",
+        "clause_44",
+        "clause_45",
+        "clause_46",
+        "clause_47",
+        "clause_48",
+        "clause_49",
+        "clause_50",
+        "clause_51",
+        "clause_52",
+        "clause_53",
+        "clause_54",
+        "clause_55",
+        "clause_56",
+        "clause_57",
+        "clause_58",
+        "clause_59",
+        "clause_60",
+        "clause_61",
+        "clause_62",
+        "clause_63",
+        "clause_64",
+        "clause_65",
+        "clause_66",
+        "clause_67",
+        "clause_68",
+        "clause_69",
+        "clause_70",
+        "clause_71",
+        "clause_72",
+        "clause_73",
+        "clause_74",
+        "clause_75",
+        "clause_76",
+        "clause_77",
+        "clause_78",
+        "clause_79",
+        "clause_80",
+        "clause_81"
+      ],
+      "task": "text",
+      "adapter_sha256": "sha256:bb2c2b3f486600c8717f11a11be3dc8ff03fd2d81d76ce5787dc0b9029ce890a",
+      "device": "cuda",
+      "device_index": 0,
+      "actual_device": "NVIDIA GeForce RTX 3060",
+      "model_dtype": "torch.bfloat16",
+      "load_seconds": 51.724597,
+      "inference_seconds": 0.557299,
+      "peak_cuda_allocated_bytes": 785155072,
+      "peak_cuda_reserved_bytes": 803209216,
+      "model_loads": 1,
+      "model_forward_calls": 11,
+      "batch_size": 8,
+      "image_sizes": [],
+      "verification_scope": {
+        "mode": "windows-read-lock-command-scope",
+        "files_hashed": 97,
+        "bytes_hashed": 4322594101,
+        "digest_reuses_while_locked": 1,
+        "write_and_delete_sharing": false,
+        "persists_across_commands": false
+      },
+      "model_loading_keys_verified": true,
+      "text_normalization": "lowercase; max_length=64; no truncation",
+      "model_reuse_scope": "complete current batch only; no persistent model service",
+      "phase_seconds": {
+        "request-and-environment": 0.006529,
+        "native-imports": 17.850979,
+        "adapter-verification": 114.025694,
+        "model-loading": 51.724597,
+        "inference": 0.600717
+      },
+      "elapsed_seconds": 184.209473
+    }
+  },
+  "old_isolated_installation_unavailable": true,
+  "calls": 1,
+  "product_files": 206,
+  "installed_and_source_equal": true,
+  "finished_at_utc": "2026-10-25T14:03:47.542620+00:00"
+}

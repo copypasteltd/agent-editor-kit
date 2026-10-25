@@ -166,6 +166,8 @@ def build_parser() -> argparse.ArgumentParser:
     recover = _leaf_common(ps.add_parser("recover", help="恢复上次中断的项目元数据事务"))
     recover.add_argument("--project", required=True)
     recover.add_argument("--cleanup-jobs", action="store_true", help="恢复元数据后回收有归属证据的中断任务；保留在用、已引用、已改动和未知文件")
+    from .semantic_upgrade import add_parser as add_semantic_upgrade_parser
+    add_semantic_upgrade_parser(ps, _leaf_common)
 
     diagnostics = subs.add_parser('diagnostics', help='检查及显式导出本地管道失败诊断')
     diagnostic_actions = diagnostics.add_subparsers(dest='action', required=True)
@@ -7223,6 +7225,8 @@ from .capture import command as capture_command
 COMMANDS.update({("capture", action): (lambda args: capture_command(args, _envelope)) for action in ("devices", "record")})
 from .semantic_cli import ACTIONS as SEMANTIC_ACTIONS, command as semantic_command
 COMMANDS.update({('semantic', action): (lambda args: semantic_command(args, _envelope)) for action in SEMANTIC_ACTIONS})
+from .semantic_upgrade import command as semantic_upgrade_command
+COMMANDS[('project', 'upgrade-semantic')] = lambda args: semantic_upgrade_command(args, _envelope)
 from .stem_separation_cli import command as stem_separation_command
 COMMANDS[('audio', 'separate-stems')] = lambda args: stem_separation_command(args, _envelope)
 from .dubbing_cli import command as dubbing_command

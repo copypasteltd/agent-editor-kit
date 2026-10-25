@@ -9,9 +9,23 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- float-text-current -->
+<!-- float-text-coverage-current -->
 
-**CLI0.1.22 / alpha.4-local.20 / r23 kit · 1 Skill / 17 modules.**
+**CLI0.1.23 / alpha.4-local.21 / r24 kit · 1 Skill / 17 modules.**
+
+Native byte glyph coverage now feeds tiled linear component composition. Equal prefixes and paragraph geometry reuse masks without quantizing author time. The registered Skill renders a 4K/8-frame title animation and a 6s/72-frame transition/linked-audio case. CPU text,8bit coverage,Float32 colors. The actual 4K CPU render call took 692.895s; throughput still needs improvement.
+
+[Workflow](docs/product/FLOAT_TEXT_COVERAGE.md) · [C31/C32](docs/product/CASES.md#c31-float-text-coverage) · [Local install](docs/releases/CLI_0.1.23_LOCAL.md) · [Evidence](docs/validation/文字覆盖率分块与复用实测_2026-10-26.md)
+
+![Actual registered Skill 4K title animation / silent GIF](docs/assets/float-text-coverage-20261026-4k-r2/4k-native-text.gif)
+
+CPU text;8bit glyph coverage;admission estimate is not peak RSS or realtime/long-form acceptance. Full target conditions remain open.
+
+<!-- /float-text-coverage-current -->
+
+<!-- float-text-history -->
+
+**Historical / 历史 / 歷史：CLI0.1.22 / alpha.4-local.20 / r23 kit · 1 Skill / 17 modules.**
 
 The linear Float32 pipeline now renders independent titles, inline captions, joint typewriter/word highlights and plain SRT, preserving original clocks, trim offsets and reversed parent boundaries. Independent component color/alpha checks and an actual registered-Skill 6s/72-frame case cover transitions and linked audio. Text runs on CPU:8-bit glyph coverage,Float32 colors/composition.
 
@@ -19,9 +33,9 @@ The linear Float32 pipeline now renders independent titles, inline captions, joi
 
 ![Actual registered Skill native text / silent GIF](docs/assets/float-text-20261026-r3/native-text.gif)
 
-Plain SRT/explicit font;CPU text;4K native text currently rejected by workspace admission. Full original target conditions remain open.
+Historical CLI0.1.22:plain SRT/explicit font;CPU text;4K text was rejected by its workspace admission. Full original target conditions remain open.
 
-<!-- /float-text-current -->
+<!-- /float-text-history -->
 
 <!-- float-transition-history -->
 
@@ -152,7 +166,7 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r23 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r23.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r24 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r24.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
@@ -519,7 +533,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F53 | Semantic runtime relocation | Old adapter/index/profiles → new installation-bound identities, copying vectors/previews/datasets and retaining fitted observations. | `project upgrade-semantic` | All 19 implementation files and external dependencies must be byte-identical; zero new model forwards; original records retained; changed bytes require rebuilding. |
 | F54 | Portable parameterized motion | Versioned local JSON / captured authored curves → editable keys, resolved parameters/digests/snapshot and cross-project reuse, with six actual previews. | `motion pack list/inspect/create/capture/apply` | 65-point paths, transform properties; conflicts reject unless whole-property replacement is explicit; tracking bindings reject; CPU performance/natural quality remain open. |
 | F55 | Linear Float32 transitions and group edges | Explicit Float32 projects → 57 xfade patterns+2 dips,premultiplied alpha,real handles/original clocks,linked audio,group wipe/slide,actual preview and encoding. | `timeline transition; preview; render; queue` | CPU;12 real-handle declaration types,other patterns use overlap/edges;normal paired blending;platform-dependent wind,HDR/natural quality open. |
-| F56 | Linear Float32 text and captions | Independent/inline/SRT → native shaping,linear box/shadow/border/fill,joint word/typewriter,original/reverse clocks,actual preview and rendering. | `timeline compose; preview; render; queue` | Explicit local font;CPU;8bit coverage/Float32 color;plain SRT;complex Bidi/4K/GPU text open. |
+| F56 | Linear Float32 text and captions | Independent/inline/SRT,joint word/typewriter → native byte coverage,reusable glyphs,tiled linear composition,original clocks,4K titles and actual delivery. | `timeline compose; preview; render; queue` | Explicit local font;CPU;8bit coverage/Float32 colors;admission is not peak RSS;rich ASS/Bidi/GPU text/natural quality open. |
 
 ## Supported service modules and dependencies
 
@@ -646,7 +660,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.20/final-r2/installed/`, CLI 0.1.22. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.21/final-r2/installed/`, CLI 0.1.23. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1001,6 +1015,14 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R160 | 2026-10-26 Float32 text | Actual registered Skill:6s/72frames,Chinese SRT,joint typewriter/highlight,rotation/inline text,reversed parent/real handles;288000stereo samples,error=3.72529029846e-09 | [Evidence](docs/validation/evidence/float-text-20261026-r1/case-r3/verification.json) |
 | R161 | 2026-10-26 Float32 text | Cancel after encoder startup,resume same operation,explicit MKV queue:all frames/clocks/PCM match;quality passes,authoring/rights retained;editable package includes font license | [Evidence](docs/validation/evidence/float-text-20261026-r1/case-r3/verification.json) |
 | R162 | 2026-10-26 Float32 text | Three languages:56 functions/20 services/17 modules/75 declarations;C30 original/MP4/GIF/editable package,r23 isolated kit;154 historical rows and38 closures retained | [Evidence](docs/validation/evidence/float-text-20261026-r1/final-delivery-r4/verification.json) |
+| R163 | 2026-10-26 Native coverage/4K | CLI0.1.23/local.21-final-r2;214 source files byte-match offline installation;71 Skill files,one entry/17 modules | [Evidence](docs/validation/evidence/float-text-coverage-20261026-r1/installation-final-r2/verification.json) |
+| R164 | 2026-10-26 Native coverage/4K | 26 text tests,zero skips:4K four-component independent coverage/Float64 oracle error<=3e-7,all256 native codes exact,small-budget preflight rejection | [Evidence](docs/validation/evidence/float-text-coverage-20261026-r1/text-installed-final-r1/verification.json) |
+| R165 | 2026-10-26 Native coverage/4K | Equal prefixes and normal/active paragraphs share immutable glyph masks;exact author clocks;32MiB workspace adapts cache ceilings for small canvases;numeric AST/cancel verified | [Evidence](docs/validation/evidence/float-text-coverage-20261026-r1/text-installed-final-r1/text_receipts.json) |
+| R166 | 2026-10-26 Native coverage/4K | Separate98 float/64 audio-handles-nesting/44 preview-render/191 CLI-queue-schema/72 default-text;zero skips,no combined count | [Evidence](docs/validation/evidence/float-text-coverage-20261026-r1/render-installed-final-r1/verification.json) |
+| R167 | 2026-10-26 Native coverage/4K | Actual registered Skill6s/72frames:captions/word/typewriter/rotation/reversed parent/real handles,288000stereo samples error=3.72529029846e-09;resume/queue frames and PCM equal | [Evidence](docs/validation/evidence/float-text-coverage-20261026-r1/case-r1/verification.json) |
+| R168 | 2026-10-26 Native coverage/4K | Actual registered Skill3840x2160/4fps/2s/8frames,three text layers,four components,fade and joint word/typewriter;full decode/quality/editable package/MP4/GIF;CPU render call 692.895s,not realtime | [Evidence](docs/validation/evidence/float-text-coverage-20261026-r1/4k-r2/verification.json) |
+| R169 | 2026-10-26 Native coverage/4K | Six interleaved 320x180 full renders,4logical-CPU affinity:median138.511->120.379s (1.151x);all72 frame clocks/PCM equal,decoded10bit code error<=1;nonexclusive host | [Evidence](docs/validation/evidence/float-text-coverage-20261026-r1/benchmark-r1/verification.json) |
+| R170 | 2026-10-26 Native coverage/4K | Three languages:56functions/20services/17modules/75declarations,C31/C32,r24 isolated kit;162historical rows and38original closure conditions retained | [Evidence](docs/validation/evidence/float-text-coverage-20261026-r1/final-delivery-r2/verification.json) |
 
 ## Current limits and development direction
 

@@ -703,3 +703,27 @@ CPU Float32；512MiB工作区单帧4K核对不等于实时或全进程资源验�
 ![Actual registered Skill output / silent GIF](../assets/float-text-20261026-r3/native-text.gif)
 
 自制几何视频、字幕与合成验证音调为CC0；Noto Sans SC为OFL-1.1，原字体与许可保留。GIF无声，MP4的验证音调不代表配音/音乐质量。取消恢复及队列完整帧/时钟/PCM相同，逐采样对照原源。CPU文字，未做连续播放或人工听审；自然视听、4K字层、GPU文字、HDR及完整目标保持开放。
+
+<a id="c31-float-text-coverage"></a>
+
+## C31 Native coverage / 原生字形覆盖率复用
+
+6秒/72帧/12fps；原生字节覆盖率、联合打字机/逐词、中文SRT、旋转/倒放及五组真实句柄/关联音轨。取消恢复和队列的全部帧/时钟/PCM相同，字体许可随可编辑包保留。
+
+[Workflow](FLOAT_TEXT_COVERAGE.md) · [Original](../assets/float-text-coverage-20261026-r1/original.png) · [MP4](../assets/float-text-coverage-20261026-r1/native-text.mp4) · [Editable package](../assets/float-text-coverage-20261026-r1/editable-native-text.aevpkg.zip)
+
+![Actual registered Skill / silent GIF](../assets/float-text-coverage-20261026-r1/native-text.gif)
+
+CPU文字；8bit覆盖率/Float32颜色，分块Float64算术。不代表自然视听、GPU文字、HDR、长片、实时或完整目标验收；无连续播放或人工听审。
+
+<a id="c32-4k-text"></a>
+
+## C32 4K titles / 实际4K字层
+
+3840×2160/4fps/2秒/8帧；三个可编辑文字层，四组件颜色、淡入、逐词与完整前缀打字机。实际安装版通过统一Skill执行预览/编码/完整解码/质检/工程包；CPU渲染调用耗时692.895秒，非实时。自制文字与背景，Noto字型按OFL保留。
+
+[Workflow](FLOAT_TEXT_COVERAGE.md) · [Original](../assets/float-text-coverage-20261026-4k-r2/original.png) · [MP4](../assets/float-text-coverage-20261026-4k-r2/4k-native-text.mp4) · [Editable package](../assets/float-text-coverage-20261026-4k-r2/editable-4k-text.aevpkg.zip)
+
+![Actual registered Skill / silent GIF](../assets/float-text-coverage-20261026-4k-r2/4k-native-text.gif)
+
+CPU文字；8bit覆盖率/Float32颜色，分块Float64算术。不代表自然视听、GPU文字、HDR、长片、实时或完整目标验收；无连续播放或人工听审。

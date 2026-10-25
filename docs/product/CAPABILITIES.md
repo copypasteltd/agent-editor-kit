@@ -2,15 +2,15 @@
 
 <!-- community-current -->
 
-**CLI 0.1.22 / alpha.4-local.20 / r23 kit · 1 Skill / 17 modules.**
+**CLI 0.1.23 / alpha.4-local.21 / r24 kit · 1 Skill / 17 modules.**
 
-Linear Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+4K text, reusable native byte coverage and tiled linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
 
-[Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](float-text-capabilities-cli-0.1.22.json). Full target conditions remain open.
+[4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](float-text-coverage-capabilities-cli-0.1.23.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.md) · [Machine response](float-text-capabilities-cli-0.1.22.json) · [Module data](module-catalog.json)
+[README](../../README.md) · [Machine response](float-text-coverage-capabilities-cli-0.1.23.json) · [Module data](module-catalog.json)
 
 | 编号 | 功能模块 | 具体行为与输入 → 输出 | 入口 | 依赖/边界 |
 |---|---|---|---|---|
@@ -69,7 +69,7 @@ Linear Float32 titles/inline captions/typewriter/word highlights/plain SRT and t
 | F53 | 语义运行时升级 | 旧适配器/索引/校准 → 新安装路径下的新 ID，复制向量/预览/数据集且保留拟合和原观察。 | `project upgrade-semantic` | 全部 19 个实现与外部依赖须字节相同；零新模型前向，原记录不改；内容变化拒绝并要求重建。 |
 | F54 | 可复用参数运镜 | 本地版本化 JSON / 已有作者曲线 → 普通关键帧、参数/摘要/快照、跨工程复用。六套真实预览供选型。 | `motion pack list/inspect/create/capture/apply` | 65 点采样、transform 属性；默认拒绝冲突，显式替换整条属性轨；跟踪绑定拒绝，CPU 合成/自然质量未闭。 |
 | F55 | 线性浮点转场与组级进出场 | 显式 Float32 工程 → 57 xfade图案+2 dip、预乘alpha混合、真实句柄/原作者时钟、关联音轨、组级擦除/推移与实际预览成片。 | `timeline transition; preview; render; queue` | CPU；12种真实句柄声明，其他图案用显式重叠/边缘；normal双源混合；风噪有平台差异，HDR/自然质量未闭。 |
-| F56 | 线性浮点文字与字幕 | 独立字层/片段内字幕/SRT → 原生塑形、线性底框/阴影/描边/填充、逐词与打字机联动、原时钟/倒放、真实预览与成片。 | `timeline compose; preview; render; queue` | 明确本地字体；CPU；覆盖率8bit/颜色Float32；纯文本SRT，复杂Bidi/4K文字/GPU文字未闭。 |
+| F56 | 线性浮点文字与字幕 | 独立/内嵌/SRT、联合逐词/打字机 → 原生字节覆盖率、可复用字形、分块线性合成、原作者时钟、4K标题和实际交付。 | `timeline compose; preview; render; queue` | 明确本地字体；CPU；覆盖率8bit/颜色Float32；工作区准入非峰值RSS；富ASS/Bidi/GPU文字/自然质量未闭。 |
 
 | 编号 | 服务模块 | 运行形式 | 需要什么/提供什么 | 入口 | 范围 |
 |---|---|---|---|---|---|
@@ -3385,7 +3385,10 @@ Linear Float32 titles/inline captions/typewriter/word highlights/plain SRT and t
       "fade_slide_pop_bounce_rotate",
       "clip_effects_transforms_masks_crop_blend_and_transitions",
       "bounded_LRU_surface_cache",
-      "owned_native_process_cancellation_cleanup"
+      "owned_native_process_cancellation_cleanup",
+      "native_byte_component_coverage_and_tiled_Float64_source_over",
+      "content_addressed_prefix_and_geometry_mask_LRU",
+      "4K_text_with_explicit_workspace_admission"
     ],
     "limits": [
       "CPU_only",
@@ -3395,8 +3398,8 @@ Linear Float32 titles/inline captions/typewriter/word highlights/plain SRT and t
       "stateful_positions_and_wall_clock_expansion_rejected",
       "bidi_and_internal_word_clusters_pending",
       "typewriter_512_graphemes_highlight_128_ranges",
-      "20_raster_admission_estimate_not_peak_RSS",
-      "4K_native_text_rejected_at_default_768MiB_budget",
+      "four_Float32_surfaces_plus_native_masks_tiles_two_cache_limits_admission_not_peak_RSS",
+      "sequential_native_CPU_coverage_rasters_GPU_text_pending",
       "not_realtime_HDR_or_full_CapCut_acceptance"
     ]
   },

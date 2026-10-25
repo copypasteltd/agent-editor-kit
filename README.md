@@ -9,9 +9,23 @@
 本页包含完整功能模块、服务与依赖、安装与使用逻辑、Skill 输入输出、真实案例和核验表。长篇原始验收日志继续留档，功能说明与案例入口恢复到首页。
 
 
-<!-- float-text-current -->
+<!-- float-text-coverage-current -->
 
-**CLI0.1.22 / alpha.4-local.20 / r23 kit · 1 Skill / 17 modules.**
+**CLI0.1.23 / alpha.4-local.21 / r24 kit · 1 Skill / 17 modules.**
+
+字形栅格已改为原生字节覆盖率，颜色按块浮点合成；相同前缀与段落几何复用缓存，保留原作者时钟。实际统一Skill完成4K/8帧标题动画和含转场/关联音轨的6秒/72帧案例。CPU文字，覆盖率8bit、颜色Float32。 该4K案例的CPU渲染调用耗时692.895秒，速度仍需改善。
+
+[Workflow](docs/product/FLOAT_TEXT_COVERAGE.md) · [C31/C32](docs/product/CASES.md#c31-float-text-coverage) · [Local install](docs/releases/CLI_0.1.23_LOCAL.md) · [Evidence](docs/validation/文字覆盖率分块与复用实测_2026-10-26.md)
+
+![Actual registered Skill 4K title animation / silent GIF](docs/assets/float-text-coverage-20261026-4k-r2/4k-native-text.gif)
+
+文字由CPU合成，字形覆盖率为8bit；工作区准入估算、实时速度、长片和完整目标分别验收。
+
+<!-- /float-text-coverage-current -->
+
+<!-- float-text-history -->
+
+**Historical / 历史 / 歷史：CLI0.1.22 / alpha.4-local.20 / r23 kit · 1 Skill / 17 modules.**
 
 线性浮点管线已接入独立文字、片段内字幕、打字机/逐词高亮联动及纯文本SRT；保留原作者时钟、裁切偏移和父级倒放边界。四组件颜色与alpha独立核对，实际统一Skill完成含转场与关联音轨的6秒/72帧案例。文字合成为CPU，字形覆盖率8位、颜色与合成Float32。
 
@@ -19,9 +33,9 @@
 
 ![Actual registered Skill native text / silent GIF](docs/assets/float-text-20261026-r3/native-text.gif)
 
-Plain SRT/explicit font;CPU text;4K native text currently rejected by workspace admission. Full original target conditions remain open.
+Historical CLI0.1.22:plain SRT/explicit font;CPU text;4K text was rejected by its workspace admission. Full original target conditions remain open.
 
-<!-- /float-text-current -->
+<!-- /float-text-history -->
 
 <!-- float-transition-history -->
 
@@ -152,7 +166,7 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r23 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r23.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
+**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r24 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r24.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
 
 <!-- /unified-skill-registration -->
 
@@ -519,7 +533,7 @@ flowchart LR
 | F53 | 语义运行时升级 | 旧适配器/索引/校准 → 新安装路径下的新 ID，复制向量/预览/数据集且保留拟合和原观察。 | `project upgrade-semantic` | 全部 19 个实现与外部依赖须字节相同；零新模型前向，原记录不改；内容变化拒绝并要求重建。 |
 | F54 | 可复用参数运镜 | 本地版本化 JSON / 已有作者曲线 → 普通关键帧、参数/摘要/快照、跨工程复用。六套真实预览供选型。 | `motion pack list/inspect/create/capture/apply` | 65 点采样、transform 属性；默认拒绝冲突，显式替换整条属性轨；跟踪绑定拒绝，CPU 合成/自然质量未闭。 |
 | F55 | 线性浮点转场与组级进出场 | 显式 Float32 工程 → 57 xfade图案+2 dip、预乘alpha混合、真实句柄/原作者时钟、关联音轨、组级擦除/推移与实际预览成片。 | `timeline transition; preview; render; queue` | CPU；12种真实句柄声明，其他图案用显式重叠/边缘；normal双源混合；风噪有平台差异，HDR/自然质量未闭。 |
-| F56 | 线性浮点文字与字幕 | 独立字层/片段内字幕/SRT → 原生塑形、线性底框/阴影/描边/填充、逐词与打字机联动、原时钟/倒放、真实预览与成片。 | `timeline compose; preview; render; queue` | 明确本地字体；CPU；覆盖率8bit/颜色Float32；纯文本SRT，复杂Bidi/4K文字/GPU文字未闭。 |
+| F56 | 线性浮点文字与字幕 | 独立/内嵌/SRT、联合逐词/打字机 → 原生字节覆盖率、可复用字形、分块线性合成、原作者时钟、4K标题和实际交付。 | `timeline compose; preview; render; queue` | 明确本地字体；CPU；覆盖率8bit/颜色Float32；工作区准入非峰值RSS；富ASS/Bidi/GPU文字/自然质量未闭。 |
 
 ## 支持的服务模块与依赖
 
@@ -646,7 +660,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.20/final-r2/installed/`，CLI 0.1.22；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
+本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.21/final-r2/installed/`，CLI 0.1.23；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -999,12 +1013,20 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R160 | 2026-10-26 Float32 text | 真实注册Skill6秒/72帧：中文SRT、打字机+逐词、旋转/内嵌字、父倒放/真实句柄；288000双声道采样误差3.72529029846e-09 | [Evidence](docs/validation/evidence/float-text-20261026-r1/case-r3/verification.json) |
 | R161 | 2026-10-26 Float32 text | 编码器启动后取消/同操作恢复/显式MKV队列，全部帧/时钟/PCM相同；quality和原作者/权利不变；可编辑包保留字体许可 | [Evidence](docs/validation/evidence/float-text-20261026-r1/case-r3/verification.json) |
 | R162 | 2026-10-26 Float32 text | 三语56功能/20服务/17模块/75能力、C30原素材/MP4/GIF/工程包、r23独立kit；保留154历史行及38原关闭条件 | [Evidence](docs/validation/evidence/float-text-20261026-r1/final-delivery-r4/verification.json) |
+| R163 | 2026-10-26 Native coverage/4K | CLI0.1.23/local.21-final-r2，214产品文件与离线安装一致；71 Skill文件、1入口/17模块 | [Evidence](docs/validation/evidence/float-text-coverage-20261026-r1/installation-final-r2/verification.json) |
+| R164 | 2026-10-26 Native coverage/4K | 26文字专项0skip：4K四组件独立覆盖率/Float64公式误差≤3e-7，256原生码值准确，小预算前置拒绝 | [Evidence](docs/validation/evidence/float-text-coverage-20261026-r1/text-installed-final-r1/verification.json) |
+| R165 | 2026-10-26 Native coverage/4K | 相同字素前缀/普通活动段落共享不可写字形；原时钟不取整；32MiB工作区缩小缓存后小画幅可用；数值AST/取消验证 | [Evidence](docs/validation/evidence/float-text-coverage-20261026-r1/text-installed-final-r1/text_receipts.json) |
+| R166 | 2026-10-26 Native coverage/4K | 分别98浮点/64音频源句柄嵌套/44预览渲染/191CLI队列Schema/72默认文字，全部0skip，不合并计数 | [Evidence](docs/validation/evidence/float-text-coverage-20261026-r1/render-installed-final-r1/verification.json) |
+| R167 | 2026-10-26 Native coverage/4K | 真实注册Skill6秒/72帧：字幕/逐词/打字机/旋转/父倒放/真实句柄，288000双声道采样误差3.72529029846e-09；恢复/队列逐帧与PCM相同 | [Evidence](docs/validation/evidence/float-text-coverage-20261026-r1/case-r1/verification.json) |
+| R168 | 2026-10-26 Native coverage/4K | 真实注册Skill3840×2160/4fps/2秒/8帧、三字层、四组件、淡入和逐词打字机；完整解码/质检/可编辑包/MP4/GIF；CPU渲染调用耗时692.895秒，非实时 | [Evidence](docs/validation/evidence/float-text-coverage-20261026-r1/4k-r2/verification.json) |
+| R169 | 2026-10-26 Native coverage/4K | 同工程320×180、6次交错成片，4逻辑CPU亲和，中位数138.511→120.379秒（1.151×）；全部72帧时钟/PCM相同，解码10bit码差≤1；非独占主机 | [Evidence](docs/validation/evidence/float-text-coverage-20261026-r1/benchmark-r1/verification.json) |
+| R170 | 2026-10-26 Native coverage/4K | 三语56功能/20服务/17模块/75能力，C31/C32、r24独立kit；保留162历史行与38原关闭条件 | [Evidence](docs/validation/evidence/float-text-coverage-20261026-r1/final-delivery-r2/verification.json) |
 
 ## 当前边界与开发方向
 
 当前可交付的是有明确契约、离线可运行、可编辑、可复查的 Agent CLI 闭环。完整开源素材/模板生态、约定的 AI 特效/美颜/排版、完整色彩管线、指定草稿版本的真实转换质量、广泛自然视听和长片资源性能仍需开发与验收。消费级 GUI、账号、云协作及任意私有版本无损转换不属于当前内核收口门槛。
 
-[当前完整目标差距表](docs/product/GOAL_GAPS_20261025.md)按 CLI 0.1.22 更新全部 G01–G38。单一 Skill、500 风格/预览、359 资源、GPU 配音/翻译、字幕配音联合流程、四轨/恢复及受控词活动边界已交付；自然视听、复杂组合、高级 AI、内容模板、Agent 自主任务、长片可靠性和新版公开包仍开放。R67–R72 分别记录真实执行及限制，不给出总体完成率。[2026-10-24 评估](docs/product/GOAL_GAPS_20261024.md)是历史快照。
+[当前完整目标差距表](docs/product/GOAL_GAPS_20261025.md)按 CLI 0.1.23 更新全部 G01–G38。单一 Skill、500 风格/预览、359 资源、GPU 配音/翻译、字幕配音联合流程、四轨/恢复及受控词活动边界已交付；自然视听、复杂组合、高级 AI、内容模板、Agent 自主任务、长片可靠性和新版公开包仍开放。R67–R72 分别记录真实执行及限制，不给出总体完成率。[2026-10-24 评估](docs/product/GOAL_GAPS_20261024.md)是历史快照。
 
 
 

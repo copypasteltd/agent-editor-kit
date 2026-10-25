@@ -1,0 +1,90 @@
+{
+  "status": "failed",
+  "calls": [
+    {
+      "name": "version",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "version"
+      ],
+      "exit_code": 0,
+      "seconds": 5.202953899992281,
+      "stdout_sha256": "51b18edb29e8ea4be09eb0fbedacb5f96cf720614e5cdf041cae355c870cf0b3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "validate",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "validate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-text-coverage-20261026-4k-r1\\4K 可编辑 工程"
+      ],
+      "exit_code": 0,
+      "seconds": 5.571222200000193,
+      "stdout_sha256": "4739220d276f03cc6c85d372b661a09c99e6ee707d7edd23207564d77a91badd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "preview",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "preview",
+        "frame",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-text-coverage-20261026-4k-r1\\4K 可编辑 工程",
+        "--frame",
+        "4",
+        "--height",
+        "540"
+      ],
+      "exit_code": 0,
+      "seconds": 110.62609550000343,
+      "stdout_sha256": "7eebe854de3e0fd0b301acf1cdd405ea6836db37be776b1f6c4337e049031fa6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "render",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-text-coverage-20261026-4k-r1\\4K 可编辑 工程",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-text-coverage-20261026-4k-r1\\4k-native-text.mp4"
+      ],
+      "exit_code": 2,
+      "seconds": 7.876144699999713,
+      "stdout_sha256": "0f28659f9dfcee586c1745672f024fba31470189051d17f4560b94b2a0540304",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "registered_skill": true,
+  "virtualization": false,
+  "source_fallback": false,
+  "continuous_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false,
+  "new_model_forwards": 0,
+  "error": "AssertionError(('render', b'{\"ok\":false,\"command\":\"render\",\"request_id\":\"req_20261025222853_7e6f11fb\",\"operation_id\":null,\"status\":\"failed\",\"data\":{},\"artifacts\":[],\"warnings\":[],\"errors\":[{\"code\":\"ARGUMENT_INVALID\",\"message\":\"\\xe8\\xbe\\x93\\xe5\\x87\\xba\\xe8\\xb7\\xaf\\xe5\\xbe\\x84\\xe5\\xbf\\x85\\xe9\\xa1\\xbb\\xe4\\xbd\\x8d\\xe4\\xba\\x8e\\xe9\\xa1\\xb9\\xe7\\x9b\\xae\\xe7\\x9b\\xae\\xe5\\xbd\\x95\\xe5\\x86\\x85\",\"path\":\"E:\\\\\\\\dev\\\\\\\\sandbox\\\\\\\\AI\\xe5\\xb9\\xbf\\xe5\\x91\\x8a\\xe5\\x89\\xaa\\xe8\\xbe\\x91\\\\\\\\docs\\\\\\\\assets\\\\\\\\float-text-coverage-20261026-4k-r1\\\\\\\\4k-native-text.mp4\",\"retryable\":false}],\"provenance\":{\"cli_version\":\"0.1.23\",\"schema_version\":\"0.1.0\",\"engine_version\":\"ffmpeg-local\",\"started_at\":\"2026-10-25T22:28:53.864113Z\",\"finished_at\":\"2026-10-25T22:28:53.864128Z\",\"network\":\"disabled\"}}\\r\\n', b''))"
+}

@@ -39,10 +39,10 @@ def main():
         original = text = path.read_text('utf-8-sig')
         canonical = (ROOT/readme).read_text('utf-8-sig')
         current_block = ('<!-- community-current -->\n\n'
-            '**CLI 0.1.22 / alpha.4-local.20 / r23 kit · 1 Skill / 17 modules.**\n\n'
-            'Linear Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, '
+            '**CLI 0.1.23 / alpha.4-local.21 / r24 kit · 1 Skill / 17 modules.**\n\n'
+            '4K text, reusable native byte coverage and tiled linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, '
             'joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.\n\n'
-            '[Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · '
+            '[4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · '
             '[Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · '
             '[75 actual declarations]('+response_path.name+'). Full target conditions remain open.\n\n'
             '<!-- /community-current -->')

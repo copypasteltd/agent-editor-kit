@@ -7,7 +7,7 @@ description: "Edit and deliver local videos with agent editor kit: multitrack ed
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.20` / CLI `0.1.22`.
+The current local runtime is `v0.1.0-alpha.4-local.21` / CLI `0.1.23`.
 The published alpha.3 downloads retain CLI 0.1.2 and their original scope.
 
 ## Runtime and common workflow
@@ -81,7 +81,9 @@ media. Add other modules when the request needs them. For example:
 - Float32 titles, typewriter, word highlights or SRT: read
   [float-text.md](references/float-text.md). Register a local font, retain
   original author clocks and preview actual cue/word boundaries. Glyph coverage
-  is8bit; authored color/component composition is linear Float32 on CPU.
+  is8bit; authored color/component composition uses tiled linear arithmetic on
+  CPU. The default workspace admits 4K text; read the resource estimate and
+  actual cache/clock diagnostics before delivery.
 - Local AI task: local-models plus the relevant media module; require existing
   registered dependencies and check actual inference artifacts.
 - Translate and dub reviewed subtitles: read [subtitle-dubbing.md](references/subtitle-dubbing.md).

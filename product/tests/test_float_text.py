@@ -230,11 +230,83 @@ class FloatTextTests(unittest.TestCase):
         with self.assertRaisesRegex(AppError,'发生变化'):self.host.verify()
         with self.assertRaisesRegex(AppError,'SHA'):self.host.prepare(self.title(),independent=True)
 
-    def test_4K_native_text_admission_rejects_before_process_start(self):
-        plan=self.host.prepare(self.title(),independent=True)
+    def test_4K_native_text_explicit_small_budget_rejects_before_process_start(self):
+        host=FloatTextHost(self.root,self.assets,LINEAR,100,F(10),max_working_bytes=32*1024**2)
+        plan=host.prepare(self.title(),independent=True)
         with patch('ai_ad_editor.float_text._TextPipe') as native:
-            with self.assertRaisesRegex(AppError,'预算'):self.host.sample(plan,0,0,(3840,2160))
+            with self.assertRaisesRegex(AppError,'预算'):host.sample(plan,0,0,(3840,2160))
             native.assert_not_called()
+
+    def test_4K_four_components_match_independent_native_patch_without_full_float_native_graph(self):
+        palette={'boxcolor':'#32649660','shadowcolor':'#dc502080','bordercolor':'#2064dc90','fontcolor':'#4080c080'}
+        a,r=self.sample(self.title(box=True,boxborderw=5,borderw=3,shadowx=5,shadowy=4,**palette),size=(3840,2160))
+        reference=np.zeros((100,240,4),np.float64)
+        for key in ('boxcolor','shadowcolor','bordercolor','fontcolor'):
+            rgba=[int(palette[key][i:i+2],16) for i in (1,3,5,7)]
+            af=self.native_coverage(key,{})*rgba[3]/255;ab=reference[:,:,3]
+            total=af+ab*(1-af)
+            numerator=linear(rgba[:3])[None,None,:]*af[:,:,None]+reference[:,:,:3]*(ab*(1-af))[:,:,None]
+            reference[:,:,:3]=np.divide(numerator,total[:,:,None],out=np.zeros_like(numerator),where=total[:,:,None]>0)
+            reference[:,:,3]=total
+        np.testing.assert_allclose(a[:100,:240],reference,atol=3e-7,rtol=0)
+        self.assertFalse(np.any(a[100:]))
+        self.assertFalse(np.any(a[:100,240:]))
+        self.assertLessEqual(r['estimated_working_bytes'],768*1024**2)
+        self.assertEqual(r['engine'],'native-byte-coverage-tiled-linear-text-v1')
+        for mask in self.root.glob('cache/float-text-coverage/*.ffgraph'):
+            self.assertNotIn('gbrapf32le',mask.read_text('utf8'))
+
+    def test_fade_reuses_glyph_rasters_across_distinct_exact_clocks(self):
+        c=self.title(box=True,boxcolor='#20406080')
+        c['subtitle']['animation']={'type':'fade_in','duration':1}
+        a,_=self.sample(c,20);count=self.host.metadata['native_coverage_rasters']
+        b,r=self.sample(c,60)
+        self.assertEqual(self.host.metadata['native_coverage_rasters'],count)
+        np.testing.assert_allclose(b[:,:,3],a[:,:,3]*3,atol=1e-7,rtol=0)
+        self.assertTrue(all(x['cache_hit'] for x in r['coverage_rasters']))
+
+    def test_equal_typewriter_prefixes_reuse_coverage_without_clock_quantization(self):
+        c=self.title('HHHH');c['subtitle']['animation']={'type':'typing','duration':1}
+        a,_=self.sample(c,25);count=self.host.metadata['native_coverage_rasters']
+        b,r=self.sample(c,26)
+        np.testing.assert_array_equal(a,b)
+        self.assertEqual(self.host.metadata['native_coverage_rasters'],count)
+        self.assertEqual(r['layouts'][0]['typing']['revealed_graphemes'],2)
+        self.assertFalse(r['frame_grid_quantization'])
+
+    def test_normal_active_paragraphs_share_masks_but_retain_distinct_linear_colors(self):
+        c=self.title('HH HH',fontsize=24,active_color='#c0804080')
+        c['subtitle']['word_timing']=[{'text':'HH','start':0,'end':.5},{'text':'HH','start':.5,'end':1}]
+        a,_=self.sample(c,25);count=self.host.metadata['native_coverage_rasters']
+        b,_=self.sample(c,75)
+        self.assertEqual(self.host.metadata['native_coverage_rasters'],count+1)
+        np.testing.assert_array_equal(a[:,:,3],b[:,:,3])
+        self.assertTrue(np.any(a!=b))
+
+    def test_compiled_opacity_interpreter_is_lazy_and_rejects_author_code(self):
+        from ai_ad_editor.float_text_coverage import scalar
+        self.assertEqual(scalar('if(gt(.6,.5),clip((.6-.5)/.5,0,1),1/0)'),.19999999999999996)
+        for expression in ('__import__("os")','x.y','[1][0]','nan','1/0','sin(1)'):
+            with self.subTest(expression=expression),self.assertRaises(AppError):scalar(expression)
+
+    def test_recipe_size_and_invalid_working_budget_fail_before_native_rasters(self):
+        from ai_ad_editor.float_text_coverage import CoverageSnapshot
+        plan=self.host.prepare(self.title(),independent=True)
+        with patch('ai_ad_editor.render._subtitle_filter',return_value='x'*(4*1024**2)),patch('ai_ad_editor.float_text._TextPipe') as pipe:
+            with self.assertRaisesRegex(AppError,'编排超过'):
+                CoverageSnapshot(self.host,240,100,0,0,pipe).render(plan,[plan['subtitle']])
+            pipe.assert_not_called()
+        for budget in (True,0,768*1024**2+1):
+            with self.subTest(budget=budget),self.assertRaises(AppError):
+                FloatTextHost(self.root,self.assets,LINEAR,100,F(10),max_working_bytes=budget)
+
+    def test_small_explicit_workspace_adapts_cache_ceilings_and_keeps_small_text_available(self):
+        host=FloatTextHost(self.root,self.assets,LINEAR,100,F(10),max_working_bytes=32*1024**2)
+        a,r=self.sample(host=host)
+        self.assertTrue(np.any(a[:,:,3]))
+        self.assertEqual(host.cache_limit,8*1024**2)
+        self.assertLessEqual(r['estimated_working_bytes'],32*1024**2)
+        self.assertLessEqual(host.coverage_cached_bytes,host.cache_limit)
 
     def test_unsupported_fonts_styles_rich_captions_and_stateful_expressions_fail(self):
         cases=[]

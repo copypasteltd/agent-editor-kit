@@ -2,15 +2,15 @@
 
 <!-- community-current -->
 
-**CLI 0.1.22 / alpha.4-local.20 / r23 kit · 1 Skill / 17 modules.**
+**CLI 0.1.23 / alpha.4-local.21 / r24 kit · 1 Skill / 17 modules.**
 
-Linear Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+4K text, reusable native byte coverage and tiled linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
 
-[Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](float-text-capabilities-cli-0.1.22.json). Full target conditions remain open.
+[4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](float-text-coverage-capabilities-cli-0.1.23.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.en.md) · [Machine response](float-text-capabilities-cli-0.1.22.json) · [Module data](module-catalog.json)
+[README](../../README.en.md) · [Machine response](float-text-coverage-capabilities-cli-0.1.23.json) · [Module data](module-catalog.json)
 
 | ID | Module | Behavior and input → output | Entry | Dependency/limit |
 |---|---|---|---|---|
@@ -69,7 +69,7 @@ Linear Float32 titles/inline captions/typewriter/word highlights/plain SRT and t
 | F53 | Semantic runtime relocation | Old adapter/index/profiles → new installation-bound identities, copying vectors/previews/datasets and retaining fitted observations. | `project upgrade-semantic` | All 19 implementation files and external dependencies must be byte-identical; zero new model forwards; original records retained; changed bytes require rebuilding. |
 | F54 | Portable parameterized motion | Versioned local JSON / captured authored curves → editable keys, resolved parameters/digests/snapshot and cross-project reuse, with six actual previews. | `motion pack list/inspect/create/capture/apply` | 65-point paths, transform properties; conflicts reject unless whole-property replacement is explicit; tracking bindings reject; CPU performance/natural quality remain open. |
 | F55 | Linear Float32 transitions and group edges | Explicit Float32 projects → 57 xfade patterns+2 dips,premultiplied alpha,real handles/original clocks,linked audio,group wipe/slide,actual preview and encoding. | `timeline transition; preview; render; queue` | CPU;12 real-handle declaration types,other patterns use overlap/edges;normal paired blending;platform-dependent wind,HDR/natural quality open. |
-| F56 | Linear Float32 text and captions | Independent/inline/SRT → native shaping,linear box/shadow/border/fill,joint word/typewriter,original/reverse clocks,actual preview and rendering. | `timeline compose; preview; render; queue` | Explicit local font;CPU;8bit coverage/Float32 color;plain SRT;complex Bidi/4K/GPU text open. |
+| F56 | Linear Float32 text and captions | Independent/inline/SRT,joint word/typewriter → native byte coverage,reusable glyphs,tiled linear composition,original clocks,4K titles and actual delivery. | `timeline compose; preview; render; queue` | Explicit local font;CPU;8bit coverage/Float32 colors;admission is not peak RSS;rich ASS/Bidi/GPU text/natural quality open. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -3385,7 +3385,10 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
       "fade_slide_pop_bounce_rotate",
       "clip_effects_transforms_masks_crop_blend_and_transitions",
       "bounded_LRU_surface_cache",
-      "owned_native_process_cancellation_cleanup"
+      "owned_native_process_cancellation_cleanup",
+      "native_byte_component_coverage_and_tiled_Float64_source_over",
+      "content_addressed_prefix_and_geometry_mask_LRU",
+      "4K_text_with_explicit_workspace_admission"
     ],
     "limits": [
       "CPU_only",
@@ -3395,8 +3398,8 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
       "stateful_positions_and_wall_clock_expansion_rejected",
       "bidi_and_internal_word_clusters_pending",
       "typewriter_512_graphemes_highlight_128_ranges",
-      "20_raster_admission_estimate_not_peak_RSS",
-      "4K_native_text_rejected_at_default_768MiB_budget",
+      "four_Float32_surfaces_plus_native_masks_tiles_two_cache_limits_admission_not_peak_RSS",
+      "sequential_native_CPU_coverage_rasters_GPU_text_pending",
       "not_realtime_HDR_or_full_CapCut_acceptance"
     ]
   },

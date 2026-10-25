@@ -328,6 +328,13 @@ def highlight_filter(root: Path, font: Path, size: int, layout: TextLayout, styl
                            'start_seconds': start, 'end_seconds': stop})
     mask = '255*gt(' + '+'.join(f'({value})' for value in selections) + ',0)' if selections else '0'
     mask = re.sub(r'\bt\b', 'T', mask)
+    if float_paint and callable(getattr(paint, 'select_coverage', None)):
+        value = paint.select_coverage(normal, active, signals, mask)
+        return value, {**evidence, 'engine': 'drawtext-whole-paragraph-masked-highlight',
+                       'paragraph_metrics': values, 'word_rectangles': rectangles,
+                       'line_count':len(layout.lines),'newline_glyph_painted':False,
+                       'color_selection': 'binary-whole-paragraph-paints',
+                       'timing_evaluation': 'compiled-constant-native-enable-per-word', 'paint_count': 2}
     token = hashlib.sha256((clip_id+normal+active).encode('utf-8')).hexdigest()[:16]
     a, b, c, painted, colored, selected = [f'word_{token}_{v}' for v in ('a','b','c','normal','active','mask')]
     pixel_format = 'gbrapf32le' if float_paint else 'gbrap'

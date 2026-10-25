@@ -1,5 +1,7 @@
 # 线性 Float32 文字与字幕 / Linear Float32 text
 
+CLI0.1.23 的当前资源与4K实现见 [覆盖率复用和分块合成](FLOAT_TEXT_COVERAGE.md)。下文作者格式继续适用，0.1.22 的20张Float32栅格和4K拒绝规则是旧版实现记录。
+
 CLI **0.1.22 / alpha.4-local.20** 为显式 `float32-native-v1` 工程接入独立文字轨道、片段内字幕和纯文本 SRT。原生 FFmpeg 负责塑形及覆盖率，填充、描边、阴影、底框的颜色转换与叠加在明确的线性 Float32 域完成。媒体原像素不进入文字栅格进程。
 
 English: explicitly select the Float32 pipeline, register a local font, author a subtitle-track text generator or inline `subtitle`, preview the actual author frames, render and export the editable package. Native glyph coverage has eight bits; authored colors and compositing use Float32. Plain SRT only; rich ASS/SSA/VTT remain on the default path. This implementation runs on CPU.

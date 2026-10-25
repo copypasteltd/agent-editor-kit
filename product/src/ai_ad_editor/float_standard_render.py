@@ -199,7 +199,7 @@ class FloatRenderContext:
         paths += [Path(__file__).with_name(name + '.py') for name in
                   ('float_standard_render', 'float_stream', 'float_audio_graph', 'render', 'float_color_signal',
                    'float_timeline', 'float_transitions', 'float_transition_plan', 'source_transitions',
-                   'float_text','float_text_paint','text_paint','text_layout','text_highlight','text_typing','captions')]
+                   'float_text','float_text_paint','float_text_coverage','text_paint','text_layout','text_highlight','text_typing','captions')]
         self.artifacts = [artifact_entry(p, 'standard-float-render-runtime') for p in paths]
         context = IndexContext(self.root, persist=not self.dry_run, cancel_file=self.marker)
         per_source = min(256 * 1024**2, self.config['max_source_cache_bytes'] // max(1, len(needed)))

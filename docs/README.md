@@ -1,7 +1,10 @@
 # agent editor kit 文档 / Documentation
 
 
-Current local / 当前本地 / 目前本地：**CLI0.1.22 / local.20 / r23 kit** · [Float32 text](product/FLOAT_TEXT.md) · [Local bundle](releases/CLI_0.1.22_LOCAL.md) · [C30](product/CASES.md#c30-float-text).
+Current local / 当前本地 / 目前本地：**CLI0.1.23 / local.21 / r24 kit** · [4K text/coverage](product/FLOAT_TEXT_COVERAGE.md) · [Local bundle](releases/CLI_0.1.23_LOCAL.md) · [C31/C32](product/CASES.md#c31-float-text-coverage).
+
+
+Historical / 历史 / 歷史：**CLI0.1.22 / local.20 / r23 kit** · [Float32 text](product/FLOAT_TEXT.md) · [Local bundle](releases/CLI_0.1.22_LOCAL.md) · [C30](product/CASES.md#c30-float-text).
 
 
 Historical local / 此前本地 / 先前本機：**CLI0.1.21 / local.19 / r22 kit** · [Float32 transitions](product/FLOAT_TRANSITIONS.md) · [Local bundle](releases/CLI_0.1.21_LOCAL.md) · [Actual case](product/CASES.md#c29-float-transitions).

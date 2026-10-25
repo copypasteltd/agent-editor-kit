@@ -1,6 +1,6 @@
 # Linear Float32 titles and captions
 
-For a `settings.pixel_pipeline.engine="float32-native-v1"` project, CLI0.1.22
+For a `settings.pixel_pipeline.engine="float32-native-v1"` project, CLI0.1.23
 supports independent text generators, inline captions and plain SRT. Read
 installed `capabilities` → `subtitles.float32_native` before composing.
 Use the installed launcher; this feature runs on CPU.
@@ -32,9 +32,20 @@ Plain SRT accepts `asset_time_base=sequence|clip` and integer
 `asset_time_offset_tick`. Rich ASS/SSA/VTT and file-level word animations must
 first be explicitly converted to editable text. No legacy pixel fallback.
 
-Default cache64MiB; native text admission estimates20 Float32 RGBA rasters
-against the explicit maximum768MiB workspace. This is not a process RSS cap.
-4K text is rejected before native execution. Unknown styles, stateful x/y,
+CLI0.1.23 uses native byte coverage and tiled Float64 source-over with Float32
+component boundaries. Equal shaped prefixes and geometry reuse immutable
+masks without quantizing author time. Normal/active paragraphs share glyph
+coverage while retaining their distinct linear colors. Animation alpha is
+applied once after painting the complete paragraph.
+
+Surface and byte-mask LRUs each default to64MiB; each ceiling adapts to at
+most one quarter of an explicit smaller workspace. Admission reserves four
+Float32 surfaces, byte rasters/scratch, both cache ceilings and tile scratch
+against the maximum768MiB. Default 3840x2160 text fits this estimate; it is
+not a peak RSS cap, realtime promise or long-form acceptance. Inspect actual
+native_coverage_rasters, coverage_cache_hits and estimated_working_bytes.
+Read the [4K/cache workflow](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/FLOAT_TEXT_COVERAGE.md).
+Unknown styles, stateful x/y,
 wall-clock expansion, missing font metrics and malformed word times fail.
 Bidi/internal shaping clusters, GPU text, HDR, natural quality, realtime and
 full CapCut parity remain open. Preserve the original target conditions.

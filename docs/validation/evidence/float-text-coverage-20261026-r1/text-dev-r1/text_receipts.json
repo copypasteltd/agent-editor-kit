@@ -1,0 +1,2895 @@
+[
+  {
+    "test": "test_float_text.FloatTextTests.test_4K_four_components_match_independent_native_patch_without_full_float_native_graph",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.0,
+    "author_frame_number": 0,
+    "graph_sha256": "4853e4e21113ee7cff2f92d86ebfcdcfbb6aed5e594e8bbc022bb90eb57c02d6",
+    "graph": "cache/float-text-coverage/4853e4e21113ee7cff2f92d86ebfcdcfbb6aed5e594e8bbc022bb90eb57c02d6.recipe.json",
+    "pixels_sha256": "7f100ee2f65b6b9093c1488469501965325f70118f65567da5935af57a1cc881",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "boxcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#32649660",
+            "cache_key": "79c7f657e539518ce054d3ecfc718a21dba160234a9831f58342309ca32e4a1f",
+            "rgba": [
+              50,
+              100,
+              150,
+              96
+            ],
+            "working_rgba": [
+              0.03189603239297867,
+              0.12743768095970154,
+              0.3049873411655426,
+              0.3764705955982208
+            ]
+          },
+          {
+            "component": "shadowcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#dc502080",
+            "cache_key": "82a195f0c8fba266efd01e0ef0c6bf976ea94131ff6db0118a92e2eed267f38b",
+            "rgba": [
+              220,
+              80,
+              32,
+              128
+            ],
+            "working_rgba": [
+              0.7156935334205627,
+              0.0802198275923729,
+              0.014443844556808472,
+              0.501960813999176
+            ]
+          },
+          {
+            "component": "bordercolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#2064dc90",
+            "cache_key": "011a5b3b128a79e5d10afe036a3fc004efbbe7f6b77b11bafbe976b85f961442",
+            "rgba": [
+              32,
+              100,
+              220,
+              144
+            ],
+            "working_rgba": [
+              0.014443844556808472,
+              0.12743768095970154,
+              0.7156935334205627,
+              0.5647059082984924
+            ]
+          },
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "boxcolor",
+          "shadowcolor",
+          "bordercolor",
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {}
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "2357c20d44419654b124ab9832811a90f1c48b0fa09adb9dd28e50ac29139802",
+        "cache_hit": false,
+        "binary": false
+      },
+      {
+        "graph_sha256": "74380fe653faeb6155d52ee5c7dbc13ab82f254d7a51170293fb3798e45d5728",
+        "cache_hit": false,
+        "binary": false
+      },
+      {
+        "graph_sha256": "7c86fb95fe43146d1713448dfe3159832bef7bb4bc27b661dc8b9759c17f7bef",
+        "cache_hit": false,
+        "binary": false
+      },
+      {
+        "graph_sha256": "e51d577d6e248f29d97ffc45c16f410a0ec059dce137fea2c178d098279e4cb4",
+        "cache_hit": false,
+        "binary": false
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 739807232
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_animation_alpha_is_applied_once_after_component_source_over",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.0,
+    "author_frame_number": 0,
+    "graph_sha256": "816b9f52774d83d727810e77381a50c839097b04ec364e85bcd027fadec6eadb",
+    "graph": "cache/float-text-coverage/816b9f52774d83d727810e77381a50c839097b04ec364e85bcd027fadec6eadb.recipe.json",
+    "pixels_sha256": "e27836bc95c50e84bf7d009a23fa2bad2fee01153ae41b6123657db4d8422ed5",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "boxcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#20406080",
+            "cache_key": "d05d061bcab8d25ecfe8f670443f0775c7800244cebdb3a07ab22f7867e123f6",
+            "rgba": [
+              32,
+              64,
+              96,
+              128
+            ],
+            "working_rgba": [
+              0.014443844556808472,
+              0.05126946419477463,
+              0.11697067320346832,
+              0.501960813999176
+            ]
+          },
+          {
+            "component": "bordercolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#c0602080",
+            "cache_key": "cd59890730d6e88e18169656132ad0635cd876e8934a9f4dd601806e16d15239",
+            "rgba": [
+              192,
+              96,
+              32,
+              128
+            ],
+            "working_rgba": [
+              0.5271151661872864,
+              0.11697067320346832,
+              0.014443844556808472,
+              0.501960813999176
+            ]
+          },
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "boxcolor",
+          "bordercolor",
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {}
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "2ea7ddaef2b56a290b782318cd7c5f3c8a584289850925da8b5dbcc7a583263d",
+        "cache_hit": false,
+        "binary": false
+      },
+      {
+        "graph_sha256": "4ec892a08ab93c6e07d6adfa0cce765ea82cbcfac93f594112a3c6b96c6617ff",
+        "cache_hit": false,
+        "binary": false
+      },
+      {
+        "graph_sha256": "fef5259deb80577c6ba2ee03222a66f3c53a8997f7fcbb5e6423ee0105f6d2ef",
+        "cache_hit": false,
+        "binary": false
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_animation_alpha_is_applied_once_after_component_source_over",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.5,
+    "author_frame_number": 5,
+    "graph_sha256": "4da531b089fe012f4e86c5af5252bfe7291d102c76081dbddf10dfc60cbce37c",
+    "graph": "cache/float-text-coverage/4da531b089fe012f4e86c5af5252bfe7291d102c76081dbddf10dfc60cbce37c.recipe.json",
+    "pixels_sha256": "f4a90ef851e78f3d06f89e34ff8c9124a2edb7f0d0f961ee219980a9b5e0e218",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "boxcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#20406080",
+            "cache_key": "d05d061bcab8d25ecfe8f670443f0775c7800244cebdb3a07ab22f7867e123f6",
+            "rgba": [
+              32,
+              64,
+              96,
+              128
+            ],
+            "working_rgba": [
+              0.014443844556808472,
+              0.05126946419477463,
+              0.11697067320346832,
+              0.501960813999176
+            ]
+          },
+          {
+            "component": "bordercolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#c0602080",
+            "cache_key": "cd59890730d6e88e18169656132ad0635cd876e8934a9f4dd601806e16d15239",
+            "rgba": [
+              192,
+              96,
+              32,
+              128
+            ],
+            "working_rgba": [
+              0.5271151661872864,
+              0.11697067320346832,
+              0.014443844556808472,
+              0.501960813999176
+            ]
+          },
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "boxcolor",
+          "bordercolor",
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {}
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "2ea7ddaef2b56a290b782318cd7c5f3c8a584289850925da8b5dbcc7a583263d",
+        "cache_hit": true,
+        "binary": false
+      },
+      {
+        "graph_sha256": "4ec892a08ab93c6e07d6adfa0cce765ea82cbcfac93f594112a3c6b96c6617ff",
+        "cache_hit": true,
+        "binary": false
+      },
+      {
+        "graph_sha256": "fef5259deb80577c6ba2ee03222a66f3c53a8997f7fcbb5e6423ee0105f6d2ef",
+        "cache_hit": true,
+        "binary": false
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_box_shadow_border_and_fill_match_four_independent_coverage_rasters",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.0,
+    "author_frame_number": 0,
+    "graph_sha256": "4853e4e21113ee7cff2f92d86ebfcdcfbb6aed5e594e8bbc022bb90eb57c02d6",
+    "graph": "cache/float-text-coverage/4853e4e21113ee7cff2f92d86ebfcdcfbb6aed5e594e8bbc022bb90eb57c02d6.recipe.json",
+    "pixels_sha256": "523d023ffc19eda4e23e2467427480991fb5482bceacbfd8a0a39692a52d4ef6",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "boxcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#32649660",
+            "cache_key": "79c7f657e539518ce054d3ecfc718a21dba160234a9831f58342309ca32e4a1f",
+            "rgba": [
+              50,
+              100,
+              150,
+              96
+            ],
+            "working_rgba": [
+              0.03189603239297867,
+              0.12743768095970154,
+              0.3049873411655426,
+              0.3764705955982208
+            ]
+          },
+          {
+            "component": "shadowcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#dc502080",
+            "cache_key": "82a195f0c8fba266efd01e0ef0c6bf976ea94131ff6db0118a92e2eed267f38b",
+            "rgba": [
+              220,
+              80,
+              32,
+              128
+            ],
+            "working_rgba": [
+              0.7156935334205627,
+              0.0802198275923729,
+              0.014443844556808472,
+              0.501960813999176
+            ]
+          },
+          {
+            "component": "bordercolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#2064dc90",
+            "cache_key": "011a5b3b128a79e5d10afe036a3fc004efbbe7f6b77b11bafbe976b85f961442",
+            "rgba": [
+              32,
+              100,
+              220,
+              144
+            ],
+            "working_rgba": [
+              0.014443844556808472,
+              0.12743768095970154,
+              0.7156935334205627,
+              0.5647059082984924
+            ]
+          },
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "boxcolor",
+          "shadowcolor",
+          "bordercolor",
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {}
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "fc6fead80b26e725bff2f9f71a573a65365d5a0a714a2eed69afb1c364fe7382",
+        "cache_hit": false,
+        "binary": false
+      },
+      {
+        "graph_sha256": "73fb980aacf2e67f8e367e441529893c7792c862b4670d9e179bc0aa5998e5e0",
+        "cache_hit": false,
+        "binary": false
+      },
+      {
+        "graph_sha256": "18137e7db97e926aa0fc84e720a72e284f5ea6d9f7cc36e88dde1583dd3ca22c",
+        "cache_hit": false,
+        "binary": false
+      },
+      {
+        "graph_sha256": "a4085befb0e8edfbff4a2db128813a00e2129dc51bc28352b22c3e5d6c587ac2",
+        "cache_hit": false,
+        "binary": false
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_equal_typewriter_prefixes_reuse_coverage_without_clock_quantization",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.25,
+    "author_frame_number": 2,
+    "graph_sha256": "f98a61f71b6a882b08c190cd9063fe5a34604f5d156e871cdf7c4551bee98a2c",
+    "graph": "cache/float-text-coverage/f98a61f71b6a882b08c190cd9063fe5a34604f5d156e871cdf7c4551bee98a2c.recipe.json",
+    "pixels_sha256": "f642dcc4c5dd585bee5e1c99b1f3abf9c647693f66c2d97e04358fec856ee0e5",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "b1eb039ae35ed86ad6ef75fc54a6bef04153754572755557bef4b5c97fe3a82d",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 2,
+        "engine": "drawtext-lines-shared-paragraph-metrics",
+        "paragraph_metrics": {
+          "text_w": 94.0,
+          "text_h": 23.0,
+          "ascent": 23.0,
+          "descent": 0.0,
+          "font_a": 32.0,
+          "font_d": 8.0,
+          "top_a": 23.0,
+          "bottom_d": 0.0,
+          "line_h": 38.0,
+          "max_glyph_h": 23.0,
+          "max_glyph_w": 18.0
+        },
+        "line_count": 1,
+        "newline_glyph_painted": false,
+        "typing": {
+          "protocol": "drawtext-native-prefix-snapshot-v1",
+          "engine": "native-prefix-author-clock-snapshot",
+          "author_seconds": 0.25,
+          "grapheme_count": 4,
+          "revealed_graphemes": 2,
+          "line_count": 1,
+          "paint_count": 1,
+          "command_count": 0,
+          "paragraph_anchor": "complete-paragraph-fixed-origin-and-baselines",
+          "prefix_shaping": "whole-native-run",
+          "newline_consumes_step": false,
+          "authored_whitespace_consumes_step": true,
+          "frame_grid_quantization": false
+        }
+      }
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "0f13dfd1e1e1fad8f87c5b7433d1e81eab77b6b2e7374ab53d8147127a53a791",
+        "cache_hit": false,
+        "binary": false
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_equal_typewriter_prefixes_reuse_coverage_without_clock_quantization",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.26,
+    "author_frame_number": 2,
+    "graph_sha256": "f98a61f71b6a882b08c190cd9063fe5a34604f5d156e871cdf7c4551bee98a2c",
+    "graph": "cache/float-text-coverage/f98a61f71b6a882b08c190cd9063fe5a34604f5d156e871cdf7c4551bee98a2c.recipe.json",
+    "pixels_sha256": "f642dcc4c5dd585bee5e1c99b1f3abf9c647693f66c2d97e04358fec856ee0e5",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "b1eb039ae35ed86ad6ef75fc54a6bef04153754572755557bef4b5c97fe3a82d",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 2,
+        "engine": "drawtext-lines-shared-paragraph-metrics",
+        "paragraph_metrics": {
+          "text_w": 94.0,
+          "text_h": 23.0,
+          "ascent": 23.0,
+          "descent": 0.0,
+          "font_a": 32.0,
+          "font_d": 8.0,
+          "top_a": 23.0,
+          "bottom_d": 0.0,
+          "line_h": 38.0,
+          "max_glyph_h": 23.0,
+          "max_glyph_w": 18.0
+        },
+        "line_count": 1,
+        "newline_glyph_painted": false,
+        "typing": {
+          "protocol": "drawtext-native-prefix-snapshot-v1",
+          "engine": "native-prefix-author-clock-snapshot",
+          "author_seconds": 0.26,
+          "grapheme_count": 4,
+          "revealed_graphemes": 2,
+          "line_count": 1,
+          "paint_count": 1,
+          "command_count": 0,
+          "paragraph_anchor": "complete-paragraph-fixed-origin-and-baselines",
+          "prefix_shaping": "whole-native-run",
+          "newline_consumes_step": false,
+          "authored_whitespace_consumes_step": true,
+          "frame_grid_quantization": false
+        }
+      }
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "0f13dfd1e1e1fad8f87c5b7433d1e81eab77b6b2e7374ab53d8147127a53a791",
+        "cache_hit": true,
+        "binary": false
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_fade_reuses_glyph_rasters_across_distinct_exact_clocks",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.2,
+    "author_frame_number": 2,
+    "graph_sha256": "02bfdac07d548f575432bf94a81ec0ab7b73fd3c43bd9b249c4f731c2496a64c",
+    "graph": "cache/float-text-coverage/02bfdac07d548f575432bf94a81ec0ab7b73fd3c43bd9b249c4f731c2496a64c.recipe.json",
+    "pixels_sha256": "f3f087fef55d797acabc9f57a57e786d943977aa164d50bf28f64e32168d80ab",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "boxcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#20406080",
+            "cache_key": "d05d061bcab8d25ecfe8f670443f0775c7800244cebdb3a07ab22f7867e123f6",
+            "rgba": [
+              32,
+              64,
+              96,
+              128
+            ],
+            "working_rgba": [
+              0.014443844556808472,
+              0.05126946419477463,
+              0.11697067320346832,
+              0.501960813999176
+            ]
+          },
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "boxcolor",
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {}
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "9b0275dbfe792f9bf5751816132525fa5f1a9b46098d01405e478b7154917813",
+        "cache_hit": false,
+        "binary": false
+      },
+      {
+        "graph_sha256": "42b898a74bd2abeea3f6a87ca2490fbf6c9aff36dd83f6bd6777c29d7bd68ea1",
+        "cache_hit": false,
+        "binary": false
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_fade_reuses_glyph_rasters_across_distinct_exact_clocks",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.6,
+    "author_frame_number": 6,
+    "graph_sha256": "13122d38b0bdd6e832cb043368405a2e3a929f0fac8a6b0951fc8f445d3e3e30",
+    "graph": "cache/float-text-coverage/13122d38b0bdd6e832cb043368405a2e3a929f0fac8a6b0951fc8f445d3e3e30.recipe.json",
+    "pixels_sha256": "733cd3afa2411e969916502554c2611ceb0b633a8be897d1fe1091e3fea83816",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "boxcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#20406080",
+            "cache_key": "d05d061bcab8d25ecfe8f670443f0775c7800244cebdb3a07ab22f7867e123f6",
+            "rgba": [
+              32,
+              64,
+              96,
+              128
+            ],
+            "working_rgba": [
+              0.014443844556808472,
+              0.05126946419477463,
+              0.11697067320346832,
+              0.501960813999176
+            ]
+          },
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "boxcolor",
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {}
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "9b0275dbfe792f9bf5751816132525fa5f1a9b46098d01405e478b7154917813",
+        "cache_hit": true,
+        "binary": false
+      },
+      {
+        "graph_sha256": "42b898a74bd2abeea3f6a87ca2490fbf6c9aff36dd83f6bd6777c29d7bd68ea1",
+        "cache_hit": true,
+        "binary": false
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_half_alpha_and_srgb_EOTF_match_independent_reference",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.0,
+    "author_frame_number": 0,
+    "graph_sha256": "12d89758f04c4d9ea4a566b409b3391ef89eb05ba861cd63616312e770b0905e",
+    "graph": "cache/float-text-coverage/12d89758f04c4d9ea4a566b409b3391ef89eb05ba861cd63616312e770b0905e.recipe.json",
+    "pixels_sha256": "3e8b3e8f12cf9591041bf322b7aae9c65ed3e7cbf45e33d762ade960c5fde3fc",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {}
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "e80dd80716058446100406d19fa8da25014961eafe1df2ba16e144e0399e5cb2",
+        "cache_hit": false,
+        "binary": false
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_highlight_and_typewriter_share_one_snapshot_clock",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.4,
+    "author_frame_number": 4,
+    "graph_sha256": "661206ad96f0d31502b55b5dcee8ef17d1ca0b61c6eedf6f0a669e9516ce4e15",
+    "graph": "cache/float-text-coverage/661206ad96f0d31502b55b5dcee8ef17d1ca0b61c6eedf6f0a669e9516ce4e15.recipe.json",
+    "pixels_sha256": "e40a0b15fce7a466ce4519810b723ec3ca47bd81f67059186fad5fe6db6ba907",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      },
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "yellow",
+            "cache_key": "fb982dee3907ad99f238bc8f854613300778372a3c4f5f7f277f3968025915ba",
+            "rgba": [
+              255,
+              255,
+              0,
+              255
+            ],
+            "working_rgba": [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "a2f17162faf97fdd5dec89672304a3cccebfeb16fa9224257b6263395d0cde43",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 4,
+        "engine": "drawtext-whole-paragraph-masked-highlight",
+        "paragraph_metrics": {
+          "text_w": 76.0,
+          "text_h": 16.0,
+          "ascent": 16.0,
+          "descent": 0.0,
+          "font_a": 24.0,
+          "font_d": 6.0,
+          "top_a": 16.0,
+          "bottom_d": 0.0,
+          "line_h": 29.0,
+          "max_glyph_h": 16.0,
+          "max_glyph_w": 16.0
+        },
+        "word_rectangles": [
+          {
+            "source_start": 0,
+            "line": 0,
+            "advance_left": 0.0,
+            "advance_right": 37.625,
+            "start_seconds": 0.0,
+            "end_seconds": 0.5
+          },
+          {
+            "source_start": 3,
+            "line": 0,
+            "advance_left": 37.625,
+            "advance_right": 75.25,
+            "start_seconds": 0.5,
+            "end_seconds": 1.0
+          }
+        ],
+        "line_count": 1,
+        "newline_glyph_painted": false,
+        "color_selection": "binary-whole-paragraph-paints",
+        "timing_evaluation": "compiled-constant-native-enable-per-word",
+        "paint_count": 2,
+        "typing": {
+          "protocol": "drawtext-native-prefix-snapshot-v1",
+          "engine": "native-prefix-author-clock-snapshot",
+          "author_seconds": 0.4,
+          "grapheme_count": 5,
+          "revealed_graphemes": 3,
+          "line_count": 1,
+          "paint_count": 2,
+          "command_count": 0,
+          "paragraph_anchor": "complete-paragraph-fixed-origin-and-baselines",
+          "prefix_shaping": "whole-native-run",
+          "newline_consumes_step": false,
+          "authored_whitespace_consumes_step": true,
+          "frame_grid_quantization": false
+        }
+      }
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "de05cb7a1e183d86a0b640ad3dc0c8e842f3d77121c29f10c0015798243f0680",
+        "cache_hit": false,
+        "binary": false
+      },
+      {
+        "graph_sha256": "de05cb7a1e183d86a0b640ad3dc0c8e842f3d77121c29f10c0015798243f0680",
+        "cache_hit": true,
+        "binary": false
+      },
+      {
+        "graph_sha256": "4231ee73b2d5c96ffb7a034aadf847f839b0c53e6cd9bfa03ae57c1412da6510",
+        "cache_hit": false,
+        "binary": true
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_highlight_and_typewriter_share_one_snapshot_clock",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.8,
+    "author_frame_number": 8,
+    "graph_sha256": "4137e0e29de8d07370b370f4b3c511a218cc12e0ade2f0398ec6a9bf445417b4",
+    "graph": "cache/float-text-coverage/4137e0e29de8d07370b370f4b3c511a218cc12e0ade2f0398ec6a9bf445417b4.recipe.json",
+    "pixels_sha256": "8f61f4b7d6c2b8b4f8232cc523c04d9dd367af3b803abe78e1d04868fd7e4ecc",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      },
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "yellow",
+            "cache_key": "fb982dee3907ad99f238bc8f854613300778372a3c4f5f7f277f3968025915ba",
+            "rgba": [
+              255,
+              255,
+              0,
+              255
+            ],
+            "working_rgba": [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "a2f17162faf97fdd5dec89672304a3cccebfeb16fa9224257b6263395d0cde43",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 4,
+        "engine": "drawtext-whole-paragraph-masked-highlight",
+        "paragraph_metrics": {
+          "text_w": 76.0,
+          "text_h": 16.0,
+          "ascent": 16.0,
+          "descent": 0.0,
+          "font_a": 24.0,
+          "font_d": 6.0,
+          "top_a": 16.0,
+          "bottom_d": 0.0,
+          "line_h": 29.0,
+          "max_glyph_h": 16.0,
+          "max_glyph_w": 16.0
+        },
+        "word_rectangles": [
+          {
+            "source_start": 0,
+            "line": 0,
+            "advance_left": 0.0,
+            "advance_right": 37.625,
+            "start_seconds": 0.0,
+            "end_seconds": 0.5
+          },
+          {
+            "source_start": 3,
+            "line": 0,
+            "advance_left": 37.625,
+            "advance_right": 75.25,
+            "start_seconds": 0.5,
+            "end_seconds": 1.0
+          }
+        ],
+        "line_count": 1,
+        "newline_glyph_painted": false,
+        "color_selection": "binary-whole-paragraph-paints",
+        "timing_evaluation": "compiled-constant-native-enable-per-word",
+        "paint_count": 2,
+        "typing": {
+          "protocol": "drawtext-native-prefix-snapshot-v1",
+          "engine": "native-prefix-author-clock-snapshot",
+          "author_seconds": 0.8,
+          "grapheme_count": 5,
+          "revealed_graphemes": 5,
+          "line_count": 1,
+          "paint_count": 2,
+          "command_count": 0,
+          "paragraph_anchor": "complete-paragraph-fixed-origin-and-baselines",
+          "prefix_shaping": "whole-native-run",
+          "newline_consumes_step": false,
+          "authored_whitespace_consumes_step": true,
+          "frame_grid_quantization": false
+        }
+      }
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "04bcd7fb0e6c70840f8b278e2cdb4e982cd6f96e01fd8abab536d47ae77d6405",
+        "cache_hit": false,
+        "binary": false
+      },
+      {
+        "graph_sha256": "04bcd7fb0e6c70840f8b278e2cdb4e982cd6f96e01fd8abab536d47ae77d6405",
+        "cache_hit": true,
+        "binary": false
+      },
+      {
+        "graph_sha256": "bc67a1623b8ccd8e1ae99054aecefe671bd87a8d59b01c5e8300364abab43154",
+        "cache_hit": false,
+        "binary": true
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_highlight_uses_two_linear_paragraphs_with_identical_alpha",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.25,
+    "author_frame_number": 2,
+    "graph_sha256": "9eb6997bb448acc04903eeddc54e84a3f539d1d4e65ace858a5a4b6064609101",
+    "graph": "cache/float-text-coverage/9eb6997bb448acc04903eeddc54e84a3f539d1d4e65ace858a5a4b6064609101.recipe.json",
+    "pixels_sha256": "6abbe890ee9c136489d5a5708a6a8cf38550e84faf7d9f85a11cac44d3541b95",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      },
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#c0804080",
+            "cache_key": "c496cbd6c5f25d8072dfd9af02a4ed59c72f85416f86037b16361b638ac07da0",
+            "rgba": [
+              192,
+              128,
+              64,
+              128
+            ],
+            "working_rgba": [
+              0.5271151661872864,
+              0.2158605307340622,
+              0.05126946419477463,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "c20ddd6c566c1f621d9966e61dcd94011712fff97b7be226404ec37d529d004c",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 4,
+        "engine": "drawtext-whole-paragraph-masked-highlight",
+        "paragraph_metrics": {
+          "text_w": 146.0,
+          "text_h": 16.0,
+          "ascent": 16.0,
+          "descent": 0.0,
+          "font_a": 24.0,
+          "font_d": 6.0,
+          "top_a": 16.0,
+          "bottom_d": 0.0,
+          "line_h": 29.0,
+          "max_glyph_h": 16.0,
+          "max_glyph_w": 16.0
+        },
+        "word_rectangles": [
+          {
+            "source_start": 0,
+            "line": 0,
+            "advance_left": 0.0,
+            "advance_right": 72.65625,
+            "start_seconds": 0.0,
+            "end_seconds": 0.5
+          },
+          {
+            "source_start": 5,
+            "line": 0,
+            "advance_left": 72.65625,
+            "advance_right": 145.3125,
+            "start_seconds": 0.5,
+            "end_seconds": 1.0
+          }
+        ],
+        "line_count": 1,
+        "newline_glyph_painted": false,
+        "color_selection": "binary-whole-paragraph-paints",
+        "timing_evaluation": "compiled-constant-native-enable-per-word",
+        "paint_count": 2
+      }
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "6bccef7a67e842b7fd8d8627f74e622b709ec7df3537a93465a5b04e445dfe63",
+        "cache_hit": false,
+        "binary": false
+      },
+      {
+        "graph_sha256": "6bccef7a67e842b7fd8d8627f74e622b709ec7df3537a93465a5b04e445dfe63",
+        "cache_hit": true,
+        "binary": false
+      },
+      {
+        "graph_sha256": "e4efebfd331a20e5c6de69e8ba8316b8bcbff921c3a15433d7c65916f48c99f4",
+        "cache_hit": false,
+        "binary": true
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_highlight_uses_two_linear_paragraphs_with_identical_alpha",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.75,
+    "author_frame_number": 7,
+    "graph_sha256": "a1c83f940a1ddb079a4afddb71677fce2266b85f69cf6ed8872ff2887aa52bdc",
+    "graph": "cache/float-text-coverage/a1c83f940a1ddb079a4afddb71677fce2266b85f69cf6ed8872ff2887aa52bdc.recipe.json",
+    "pixels_sha256": "3ec29597db87c42a5ea2e12a5ea2517d78efe0a01be88eba205a8a5c2ce6a88b",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      },
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#c0804080",
+            "cache_key": "c496cbd6c5f25d8072dfd9af02a4ed59c72f85416f86037b16361b638ac07da0",
+            "rgba": [
+              192,
+              128,
+              64,
+              128
+            ],
+            "working_rgba": [
+              0.5271151661872864,
+              0.2158605307340622,
+              0.05126946419477463,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "c20ddd6c566c1f621d9966e61dcd94011712fff97b7be226404ec37d529d004c",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 4,
+        "engine": "drawtext-whole-paragraph-masked-highlight",
+        "paragraph_metrics": {
+          "text_w": 146.0,
+          "text_h": 16.0,
+          "ascent": 16.0,
+          "descent": 0.0,
+          "font_a": 24.0,
+          "font_d": 6.0,
+          "top_a": 16.0,
+          "bottom_d": 0.0,
+          "line_h": 29.0,
+          "max_glyph_h": 16.0,
+          "max_glyph_w": 16.0
+        },
+        "word_rectangles": [
+          {
+            "source_start": 0,
+            "line": 0,
+            "advance_left": 0.0,
+            "advance_right": 72.65625,
+            "start_seconds": 0.0,
+            "end_seconds": 0.5
+          },
+          {
+            "source_start": 5,
+            "line": 0,
+            "advance_left": 72.65625,
+            "advance_right": 145.3125,
+            "start_seconds": 0.5,
+            "end_seconds": 1.0
+          }
+        ],
+        "line_count": 1,
+        "newline_glyph_painted": false,
+        "color_selection": "binary-whole-paragraph-paints",
+        "timing_evaluation": "compiled-constant-native-enable-per-word",
+        "paint_count": 2
+      }
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "6bccef7a67e842b7fd8d8627f74e622b709ec7df3537a93465a5b04e445dfe63",
+        "cache_hit": true,
+        "binary": false
+      },
+      {
+        "graph_sha256": "6bccef7a67e842b7fd8d8627f74e622b709ec7df3537a93465a5b04e445dfe63",
+        "cache_hit": true,
+        "binary": false
+      },
+      {
+        "graph_sha256": "5ac7d95b650711dd0673547baf201443be153c55e6c3a09b20d5b0a28a7e2371",
+        "cache_hit": false,
+        "binary": true
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_inline_text_preserves_sub_8bit_media_and_source_over_is_linear",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.0,
+    "author_frame_number": 0,
+    "graph_sha256": "12d89758f04c4d9ea4a566b409b3391ef89eb05ba861cd63616312e770b0905e",
+    "graph": "cache/float-text-coverage/12d89758f04c4d9ea4a566b409b3391ef89eb05ba861cd63616312e770b0905e.recipe.json",
+    "pixels_sha256": "3e8b3e8f12cf9591041bf322b7aae9c65ed3e7cbf45e33d762ade960c5fde3fc",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {}
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "e80dd80716058446100406d19fa8da25014961eafe1df2ba16e144e0399e5cb2",
+        "cache_hit": false,
+        "binary": false
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_nested_reverse_propagates_title_left_limit",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.49999999999999994,
+    "author_frame_number": 4,
+    "graph_sha256": "f4db93a62b52f50584a7e12295fbedb6ab773ce2b4724cdb6eb2de3683d389f6",
+    "graph": "cache/float-text-coverage/f4db93a62b52f50584a7e12295fbedb6ab773ce2b4724cdb6eb2de3683d389f6.recipe.json",
+    "pixels_sha256": "817986482fefc8187a6881ea9b86b8ef0de86522202e8ae0372e1f96a121ab1c",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "white",
+            "cache_key": "ffc5165aaef0dc488e607222a550e94f5823e00a4fec25bb49229f00d2dcf945",
+            "rgba": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "working_rgba": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "b1eb039ae35ed86ad6ef75fc54a6bef04153754572755557bef4b5c97fe3a82d",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 2,
+        "engine": "drawtext-lines-shared-paragraph-metrics",
+        "paragraph_metrics": {
+          "text_w": 94.0,
+          "text_h": 23.0,
+          "ascent": 23.0,
+          "descent": 0.0,
+          "font_a": 32.0,
+          "font_d": 8.0,
+          "top_a": 23.0,
+          "bottom_d": 0.0,
+          "line_h": 38.0,
+          "max_glyph_h": 23.0,
+          "max_glyph_w": 18.0
+        },
+        "line_count": 1,
+        "newline_glyph_painted": false,
+        "typing": {
+          "protocol": "drawtext-native-prefix-snapshot-v1",
+          "engine": "native-prefix-author-clock-snapshot",
+          "author_seconds": 0.49999999999999994,
+          "grapheme_count": 4,
+          "revealed_graphemes": 2,
+          "line_count": 1,
+          "paint_count": 1,
+          "command_count": 0,
+          "paragraph_anchor": "complete-paragraph-fixed-origin-and-baselines",
+          "prefix_shaping": "whole-native-run",
+          "newline_consumes_step": false,
+          "authored_whitespace_consumes_step": true,
+          "frame_grid_quantization": false
+        }
+      }
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "0f13dfd1e1e1fad8f87c5b7433d1e81eab77b6b2e7374ab53d8147127a53a791",
+        "cache_hit": false,
+        "binary": false
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_normal_active_paragraphs_share_masks_but_retain_distinct_linear_colors",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.25,
+    "author_frame_number": 2,
+    "graph_sha256": "ad167b42eb612c6db7acf0edda63f70e3f1a9b73f49fdd8483377656614b1fec",
+    "graph": "cache/float-text-coverage/ad167b42eb612c6db7acf0edda63f70e3f1a9b73f49fdd8483377656614b1fec.recipe.json",
+    "pixels_sha256": "bd9ff322d598cb6dbd0c6e291d3fd240c961a1e2c62794de5c3d7b925c5577fe",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      },
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#c0804080",
+            "cache_key": "c496cbd6c5f25d8072dfd9af02a4ed59c72f85416f86037b16361b638ac07da0",
+            "rgba": [
+              192,
+              128,
+              64,
+              128
+            ],
+            "working_rgba": [
+              0.5271151661872864,
+              0.2158605307340622,
+              0.05126946419477463,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "a2f17162faf97fdd5dec89672304a3cccebfeb16fa9224257b6263395d0cde43",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 4,
+        "engine": "drawtext-whole-paragraph-masked-highlight",
+        "paragraph_metrics": {
+          "text_w": 76.0,
+          "text_h": 16.0,
+          "ascent": 16.0,
+          "descent": 0.0,
+          "font_a": 24.0,
+          "font_d": 6.0,
+          "top_a": 16.0,
+          "bottom_d": 0.0,
+          "line_h": 29.0,
+          "max_glyph_h": 16.0,
+          "max_glyph_w": 16.0
+        },
+        "word_rectangles": [
+          {
+            "source_start": 0,
+            "line": 0,
+            "advance_left": 0.0,
+            "advance_right": 37.625,
+            "start_seconds": 0.0,
+            "end_seconds": 0.5
+          },
+          {
+            "source_start": 3,
+            "line": 0,
+            "advance_left": 37.625,
+            "advance_right": 75.25,
+            "start_seconds": 0.5,
+            "end_seconds": 1.0
+          }
+        ],
+        "line_count": 1,
+        "newline_glyph_painted": false,
+        "color_selection": "binary-whole-paragraph-paints",
+        "timing_evaluation": "compiled-constant-native-enable-per-word",
+        "paint_count": 2
+      }
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "fb6be60358a286232e322d868682dfe925da869372ffd8414aa4d94152095661",
+        "cache_hit": false,
+        "binary": false
+      },
+      {
+        "graph_sha256": "fb6be60358a286232e322d868682dfe925da869372ffd8414aa4d94152095661",
+        "cache_hit": true,
+        "binary": false
+      },
+      {
+        "graph_sha256": "4231ee73b2d5c96ffb7a034aadf847f839b0c53e6cd9bfa03ae57c1412da6510",
+        "cache_hit": false,
+        "binary": true
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_normal_active_paragraphs_share_masks_but_retain_distinct_linear_colors",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.75,
+    "author_frame_number": 7,
+    "graph_sha256": "5b74e9d9d2b6c402b2a9099b0f527963f069f1f3bc00ec25e0ef9d50f556dbf8",
+    "graph": "cache/float-text-coverage/5b74e9d9d2b6c402b2a9099b0f527963f069f1f3bc00ec25e0ef9d50f556dbf8.recipe.json",
+    "pixels_sha256": "c15829737c1885f5a246b394439cf98f254314a6d4c21c704bddadb204cf4114",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      },
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#c0804080",
+            "cache_key": "c496cbd6c5f25d8072dfd9af02a4ed59c72f85416f86037b16361b638ac07da0",
+            "rgba": [
+              192,
+              128,
+              64,
+              128
+            ],
+            "working_rgba": [
+              0.5271151661872864,
+              0.2158605307340622,
+              0.05126946419477463,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "a2f17162faf97fdd5dec89672304a3cccebfeb16fa9224257b6263395d0cde43",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 4,
+        "engine": "drawtext-whole-paragraph-masked-highlight",
+        "paragraph_metrics": {
+          "text_w": 76.0,
+          "text_h": 16.0,
+          "ascent": 16.0,
+          "descent": 0.0,
+          "font_a": 24.0,
+          "font_d": 6.0,
+          "top_a": 16.0,
+          "bottom_d": 0.0,
+          "line_h": 29.0,
+          "max_glyph_h": 16.0,
+          "max_glyph_w": 16.0
+        },
+        "word_rectangles": [
+          {
+            "source_start": 0,
+            "line": 0,
+            "advance_left": 0.0,
+            "advance_right": 37.625,
+            "start_seconds": 0.0,
+            "end_seconds": 0.5
+          },
+          {
+            "source_start": 3,
+            "line": 0,
+            "advance_left": 37.625,
+            "advance_right": 75.25,
+            "start_seconds": 0.5,
+            "end_seconds": 1.0
+          }
+        ],
+        "line_count": 1,
+        "newline_glyph_painted": false,
+        "color_selection": "binary-whole-paragraph-paints",
+        "timing_evaluation": "compiled-constant-native-enable-per-word",
+        "paint_count": 2
+      }
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "fb6be60358a286232e322d868682dfe925da869372ffd8414aa4d94152095661",
+        "cache_hit": true,
+        "binary": false
+      },
+      {
+        "graph_sha256": "fb6be60358a286232e322d868682dfe925da869372ffd8414aa4d94152095661",
+        "cache_hit": true,
+        "binary": false
+      },
+      {
+        "graph_sha256": "bc67a1623b8ccd8e1ae99054aecefe671bd87a8d59b01c5e8300364abab43154",
+        "cache_hit": false,
+        "binary": true
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_plain_SRT_half_open_windows_and_clip_clock_offset",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.5,
+    "author_frame_number": 5,
+    "graph_sha256": "12d89758f04c4d9ea4a566b409b3391ef89eb05ba861cd63616312e770b0905e",
+    "graph": "cache/float-text-coverage/12d89758f04c4d9ea4a566b409b3391ef89eb05ba861cd63616312e770b0905e.recipe.json",
+    "pixels_sha256": "3e8b3e8f12cf9591041bf322b7aae9c65ed3e7cbf45e33d762ade960c5fde3fc",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {}
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "e80dd80716058446100406d19fa8da25014961eafe1df2ba16e144e0399e5cb2",
+        "cache_hit": false,
+        "binary": false
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_plain_SRT_half_open_windows_and_clip_clock_offset",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.49999999999999994,
+    "author_frame_number": 4,
+    "graph_sha256": "c1bd00f6856d00bd7ff6097bce8343d65c65775cc6f26369abe217ddfa78c883",
+    "graph": "cache/float-text-coverage/c1bd00f6856d00bd7ff6097bce8343d65c65775cc6f26369abe217ddfa78c883.recipe.json",
+    "pixels_sha256": "f642dcc4c5dd585bee5e1c99b1f3abf9c647693f66c2d97e04358fec856ee0e5",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {}
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "c01fc3e7dd590d1375390be435a90cac2673d7f7db31d9ea38d0e921e3711b74",
+        "cache_hit": false,
+        "binary": false
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_plain_SRT_half_open_windows_and_clip_clock_offset",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "author_seconds": 1.0,
+    "empty_text": true,
+    "cache_hit": false
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_plain_SRT_half_open_windows_and_clip_clock_offset",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.0,
+    "author_frame_number": 0,
+    "graph_sha256": "12d89758f04c4d9ea4a566b409b3391ef89eb05ba861cd63616312e770b0905e",
+    "graph": "cache/float-text-coverage/12d89758f04c4d9ea4a566b409b3391ef89eb05ba861cd63616312e770b0905e.recipe.json",
+    "pixels_sha256": "3e8b3e8f12cf9591041bf322b7aae9c65ed3e7cbf45e33d762ade960c5fde3fc",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {}
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "e80dd80716058446100406d19fa8da25014961eafe1df2ba16e144e0399e5cb2",
+        "cache_hit": true,
+        "binary": false
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_subframe_thirds_do_not_round_typewriter_to_nanoseconds",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.3333333333333333,
+    "author_frame_number": 3,
+    "graph_sha256": "f98a61f71b6a882b08c190cd9063fe5a34604f5d156e871cdf7c4551bee98a2c",
+    "graph": "cache/float-text-coverage/f98a61f71b6a882b08c190cd9063fe5a34604f5d156e871cdf7c4551bee98a2c.recipe.json",
+    "pixels_sha256": "f642dcc4c5dd585bee5e1c99b1f3abf9c647693f66c2d97e04358fec856ee0e5",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "bbf96648afa55a303ab06a8128c1a372e78158dde7f152765df5e39b954a8f88",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 2,
+        "engine": "drawtext-lines-shared-paragraph-metrics",
+        "paragraph_metrics": {
+          "text_w": 71.0,
+          "text_h": 23.0,
+          "ascent": 23.0,
+          "descent": 0.0,
+          "font_a": 32.0,
+          "font_d": 8.0,
+          "top_a": 23.0,
+          "bottom_d": 0.0,
+          "line_h": 38.0,
+          "max_glyph_h": 23.0,
+          "max_glyph_w": 18.0
+        },
+        "line_count": 1,
+        "newline_glyph_painted": false,
+        "typing": {
+          "protocol": "drawtext-native-prefix-snapshot-v1",
+          "engine": "native-prefix-author-clock-snapshot",
+          "author_seconds": 0.3333333333333333,
+          "grapheme_count": 3,
+          "revealed_graphemes": 2,
+          "line_count": 1,
+          "paint_count": 1,
+          "command_count": 0,
+          "paragraph_anchor": "complete-paragraph-fixed-origin-and-baselines",
+          "prefix_shaping": "whole-native-run",
+          "newline_consumes_step": false,
+          "authored_whitespace_consumes_step": true,
+          "frame_grid_quantization": false
+        }
+      }
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "0f13dfd1e1e1fad8f87c5b7433d1e81eab77b6b2e7374ab53d8147127a53a791",
+        "cache_hit": false,
+        "binary": false
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_subframe_thirds_do_not_round_typewriter_to_nanoseconds",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.33333333333333326,
+    "author_frame_number": 3,
+    "graph_sha256": "a49de85fac3e4f9a73bf46aa6037b7682c2c317fa9f6c1fc262ce50754a4dfec",
+    "graph": "cache/float-text-coverage/a49de85fac3e4f9a73bf46aa6037b7682c2c317fa9f6c1fc262ce50754a4dfec.recipe.json",
+    "pixels_sha256": "6ad9adf1263134f930fa85ee86b3fe00bc6190d9e131df6c321484285ca74bd6",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "bbf96648afa55a303ab06a8128c1a372e78158dde7f152765df5e39b954a8f88",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 2,
+        "engine": "drawtext-lines-shared-paragraph-metrics",
+        "paragraph_metrics": {
+          "text_w": 71.0,
+          "text_h": 23.0,
+          "ascent": 23.0,
+          "descent": 0.0,
+          "font_a": 32.0,
+          "font_d": 8.0,
+          "top_a": 23.0,
+          "bottom_d": 0.0,
+          "line_h": 38.0,
+          "max_glyph_h": 23.0,
+          "max_glyph_w": 18.0
+        },
+        "line_count": 1,
+        "newline_glyph_painted": false,
+        "typing": {
+          "protocol": "drawtext-native-prefix-snapshot-v1",
+          "engine": "native-prefix-author-clock-snapshot",
+          "author_seconds": 0.33333333333333326,
+          "grapheme_count": 3,
+          "revealed_graphemes": 1,
+          "line_count": 1,
+          "paint_count": 1,
+          "command_count": 0,
+          "paragraph_anchor": "complete-paragraph-fixed-origin-and-baselines",
+          "prefix_shaping": "whole-native-run",
+          "newline_consumes_step": false,
+          "authored_whitespace_consumes_step": true,
+          "frame_grid_quantization": false
+        }
+      }
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "23d400e65dbfc52db2ef84276408ff634e8ef32a5928820482ea0f039d6ba5d2",
+        "cache_hit": false,
+        "binary": false
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_trim_window_keeps_original_presentation_clock",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.5,
+    "author_frame_number": 5,
+    "graph_sha256": "12d89758f04c4d9ea4a566b409b3391ef89eb05ba861cd63616312e770b0905e",
+    "graph": "cache/float-text-coverage/12d89758f04c4d9ea4a566b409b3391ef89eb05ba861cd63616312e770b0905e.recipe.json",
+    "pixels_sha256": "3e8b3e8f12cf9591041bf322b7aae9c65ed3e7cbf45e33d762ade960c5fde3fc",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "#4080c080",
+            "cache_key": "5445060456070c6ecf6e393200519a1232e566f804b73dbdbbc83a9aedf72e39",
+            "rgba": [
+              64,
+              128,
+              192,
+              128
+            ],
+            "working_rgba": [
+              0.05126946419477463,
+              0.2158605307340622,
+              0.5271151661872864,
+              0.501960813999176
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {}
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "e80dd80716058446100406d19fa8da25014961eafe1df2ba16e144e0399e5cb2",
+        "cache_hit": false,
+        "binary": false
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_typewriter_complete_paragraph_anchor_and_graphemes",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.0,
+    "author_frame_number": 0,
+    "graph_sha256": "8b40d386093161293fbc78c335d697e595e86083529014460dfca7eac7f118bd",
+    "graph": "cache/float-text-coverage/8b40d386093161293fbc78c335d697e595e86083529014460dfca7eac7f118bd.recipe.json",
+    "pixels_sha256": "954f713c256f376a5b9a97dea4bf7b870186d774269aff6a072a090cebdf0eb4",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "white",
+            "cache_key": "ffc5165aaef0dc488e607222a550e94f5823e00a4fec25bb49229f00d2dcf945",
+            "rgba": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "working_rgba": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      },
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "white",
+            "cache_key": "ffc5165aaef0dc488e607222a550e94f5823e00a4fec25bb49229f00d2dcf945",
+            "rgba": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "working_rgba": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "2c6dac41a6d119a014d2a1f948a3cda105ab280e87e654fd99467206dc356c44",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 3,
+        "engine": "drawtext-lines-shared-paragraph-metrics",
+        "paragraph_metrics": {
+          "text_w": 93.0,
+          "text_h": 61.0,
+          "ascent": 23.0,
+          "descent": 0.0,
+          "font_a": 32.0,
+          "font_d": 8.0,
+          "top_a": 23.0,
+          "bottom_d": 0.0,
+          "line_h": 38.0,
+          "max_glyph_h": 23.0,
+          "max_glyph_w": 21.0
+        },
+        "line_count": 2,
+        "newline_glyph_painted": false,
+        "typing": {
+          "protocol": "drawtext-native-prefix-snapshot-v1",
+          "engine": "native-prefix-author-clock-snapshot",
+          "author_seconds": 0.0,
+          "grapheme_count": 6,
+          "revealed_graphemes": 1,
+          "line_count": 2,
+          "paint_count": 1,
+          "command_count": 0,
+          "paragraph_anchor": "complete-paragraph-fixed-origin-and-baselines",
+          "prefix_shaping": "whole-native-run",
+          "newline_consumes_step": false,
+          "authored_whitespace_consumes_step": true,
+          "frame_grid_quantization": false
+        }
+      }
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "8c387a694e6730a853f93a9f87c80430bd9368d64d82d178e7422c2efa074be9",
+        "cache_hit": false,
+        "binary": false
+      },
+      {
+        "graph_sha256": "65b4ea71a50eda96beae396b3ffb8081ff0a6220de6f6c404857335e21802d47",
+        "cache_hit": false,
+        "binary": false
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_typewriter_complete_paragraph_anchor_and_graphemes",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.9,
+    "author_frame_number": 9,
+    "graph_sha256": "e08dce38e01261cdf7ca7a5d19b4a31363014605f5a613cdcb5f751d038c3592",
+    "graph": "cache/float-text-coverage/e08dce38e01261cdf7ca7a5d19b4a31363014605f5a613cdcb5f751d038c3592.recipe.json",
+    "pixels_sha256": "f3d7d3351f1772bf3832faf905312217fc62bfcea683c93a7ede45f845e5af25",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "white",
+            "cache_key": "ffc5165aaef0dc488e607222a550e94f5823e00a4fec25bb49229f00d2dcf945",
+            "rgba": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "working_rgba": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      },
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "white",
+            "cache_key": "ffc5165aaef0dc488e607222a550e94f5823e00a4fec25bb49229f00d2dcf945",
+            "rgba": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "working_rgba": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "2c6dac41a6d119a014d2a1f948a3cda105ab280e87e654fd99467206dc356c44",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 3,
+        "engine": "drawtext-lines-shared-paragraph-metrics",
+        "paragraph_metrics": {
+          "text_w": 93.0,
+          "text_h": 61.0,
+          "ascent": 23.0,
+          "descent": 0.0,
+          "font_a": 32.0,
+          "font_d": 8.0,
+          "top_a": 23.0,
+          "bottom_d": 0.0,
+          "line_h": 38.0,
+          "max_glyph_h": 23.0,
+          "max_glyph_w": 21.0
+        },
+        "line_count": 2,
+        "newline_glyph_painted": false,
+        "typing": {
+          "protocol": "drawtext-native-prefix-snapshot-v1",
+          "engine": "native-prefix-author-clock-snapshot",
+          "author_seconds": 0.9,
+          "grapheme_count": 6,
+          "revealed_graphemes": 6,
+          "line_count": 2,
+          "paint_count": 1,
+          "command_count": 0,
+          "paragraph_anchor": "complete-paragraph-fixed-origin-and-baselines",
+          "prefix_shaping": "whole-native-run",
+          "newline_consumes_step": false,
+          "authored_whitespace_consumes_step": true,
+          "frame_grid_quantization": false
+        }
+      }
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "f3d6ec59fc33c5d183cb6838e0c12cbbbb378e1d2628ec26c9e1402acab7b1e5",
+        "cache_hit": false,
+        "binary": false
+      },
+      {
+        "graph_sha256": "d06bcdd42bb860cae039f474942ec0727dba5e37749c0b82f797e5511d6f99fa",
+        "cache_hit": false,
+        "binary": false
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_typewriter_exact_boundary_and_left_limit_use_prefix_not_CFR_movie",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.25,
+    "author_frame_number": 2,
+    "graph_sha256": "f4db93a62b52f50584a7e12295fbedb6ab773ce2b4724cdb6eb2de3683d389f6",
+    "graph": "cache/float-text-coverage/f4db93a62b52f50584a7e12295fbedb6ab773ce2b4724cdb6eb2de3683d389f6.recipe.json",
+    "pixels_sha256": "817986482fefc8187a6881ea9b86b8ef0de86522202e8ae0372e1f96a121ab1c",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "white",
+            "cache_key": "ffc5165aaef0dc488e607222a550e94f5823e00a4fec25bb49229f00d2dcf945",
+            "rgba": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "working_rgba": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "b1eb039ae35ed86ad6ef75fc54a6bef04153754572755557bef4b5c97fe3a82d",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 2,
+        "engine": "drawtext-lines-shared-paragraph-metrics",
+        "paragraph_metrics": {
+          "text_w": 94.0,
+          "text_h": 23.0,
+          "ascent": 23.0,
+          "descent": 0.0,
+          "font_a": 32.0,
+          "font_d": 8.0,
+          "top_a": 23.0,
+          "bottom_d": 0.0,
+          "line_h": 38.0,
+          "max_glyph_h": 23.0,
+          "max_glyph_w": 18.0
+        },
+        "line_count": 1,
+        "newline_glyph_painted": false,
+        "typing": {
+          "protocol": "drawtext-native-prefix-snapshot-v1",
+          "engine": "native-prefix-author-clock-snapshot",
+          "author_seconds": 0.25,
+          "grapheme_count": 4,
+          "revealed_graphemes": 2,
+          "line_count": 1,
+          "paint_count": 1,
+          "command_count": 0,
+          "paragraph_anchor": "complete-paragraph-fixed-origin-and-baselines",
+          "prefix_shaping": "whole-native-run",
+          "newline_consumes_step": false,
+          "authored_whitespace_consumes_step": true,
+          "frame_grid_quantization": false
+        }
+      }
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "0f13dfd1e1e1fad8f87c5b7433d1e81eab77b6b2e7374ab53d8147127a53a791",
+        "cache_hit": false,
+        "binary": false
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  },
+  {
+    "test": "test_float_text.FloatTextTests.test_typewriter_exact_boundary_and_left_limit_use_prefix_not_CFR_movie",
+    "protocol": "native-glyph-linear-float32-paint-v1",
+    "engine": "native-byte-coverage-tiled-linear-text-v1",
+    "author_seconds": 0.24999999999999997,
+    "author_frame_number": 2,
+    "graph_sha256": "b655939d22f3f6b4225102f437a36c5fb7a9a5fa3a9a892c1eaba5e24f1ab3d9",
+    "graph": "cache/float-text-coverage/b655939d22f3f6b4225102f437a36c5fb7a9a5fa3a9a892c1eaba5e24f1ab3d9.recipe.json",
+    "pixels_sha256": "07ad946438648df1c866c0dac1ff77664cda0cca23eaa617a80ccae73f64d312",
+    "paints": [
+      {
+        "protocol": "native-glyph-linear-float32-paint-v1",
+        "engine": "native-byte-coverage-tiled-linear-text-v1",
+        "coverage": "native-byte-white-glyph-on-opaque-black",
+        "colors": [
+          {
+            "component": "fontcolor",
+            "protocol": "ffmpeg-rgba-color-v1",
+            "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+            "value": "white",
+            "cache_key": "ffc5165aaef0dc488e607222a550e94f5823e00a4fec25bb49229f00d2dcf945",
+            "rgba": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "working_rgba": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        ],
+        "component_order": [
+          "fontcolor"
+        ],
+        "alpha_application": "coverage-times-authored-alpha-once",
+        "media_color_rasterized_at_8bit": false
+      }
+    ],
+    "layouts": [
+      {
+        "protocol": "drawtext-native-metrics-v1",
+        "cache_key": "b1eb039ae35ed86ad6ef75fc54a6bef04153754572755557bef4b5c97fe3a82d",
+        "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+        "font_sha256": "69853909b940023570964e29cffe30da95aea8de3627736b5cd15ab30143169f",
+        "query_count": 2,
+        "engine": "drawtext-lines-shared-paragraph-metrics",
+        "paragraph_metrics": {
+          "text_w": 94.0,
+          "text_h": 23.0,
+          "ascent": 23.0,
+          "descent": 0.0,
+          "font_a": 32.0,
+          "font_d": 8.0,
+          "top_a": 23.0,
+          "bottom_d": 0.0,
+          "line_h": 38.0,
+          "max_glyph_h": 23.0,
+          "max_glyph_w": 18.0
+        },
+        "line_count": 1,
+        "newline_glyph_painted": false,
+        "typing": {
+          "protocol": "drawtext-native-prefix-snapshot-v1",
+          "engine": "native-prefix-author-clock-snapshot",
+          "author_seconds": 0.24999999999999997,
+          "grapheme_count": 4,
+          "revealed_graphemes": 1,
+          "line_count": 1,
+          "paint_count": 1,
+          "command_count": 0,
+          "paragraph_anchor": "complete-paragraph-fixed-origin-and-baselines",
+          "prefix_shaping": "whole-native-run",
+          "newline_consumes_step": false,
+          "authored_whitespace_consumes_step": true,
+          "frame_grid_quantization": false
+        }
+      }
+    ],
+    "coverage_rasters": [
+      {
+        "graph_sha256": "23d400e65dbfc52db2ef84276408ff634e8ef32a5928820482ea0f039d6ba5d2",
+        "cache_hit": false,
+        "binary": false
+      }
+    ],
+    "cache_hit": false,
+    "color_raster": "Float32-RGBA",
+    "glyph_coverage_bits": 8,
+    "media_pixels_in_native_graph": false,
+    "frame_grid_quantization": false,
+    "component_arithmetic": "Float64 tiled;Float32 component boundary",
+    "tile_pixels": 16384,
+    "estimated_working_bytes": 144338432
+  }
+]

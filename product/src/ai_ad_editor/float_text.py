@@ -22,15 +22,14 @@ from .captions import parse_srt
 from .clip_windows import validate_window
 from .errors import AppError
 from .float_native_pipe import NativePipe
-from .float_text_paint import FORMAT, PROTOCOL, paint_drawtext
+from .float_text_paint import PROTOCOL
+from .float_text_coverage import CoverageSnapshot, TILE_PIXELS
 from .media import ffmpeg_path
 from .policy import resolve_local_path
-from .utils import atomic_write_text
 
 MAX_TEXT_BYTES = 64 * 1024
 MAX_CUE_BYTES = 4 * 1024**2
 MAX_CUES = 8192
-MAX_GRAPH_BYTES = 4 * 1024**2
 DEFAULT_CACHE_BYTES = 64 * 1024**2
 STYLE_FIELDS = {'font_asset_id', 'fontfile', 'fontsize', 'fontcolor', 'active_color', 'highlight_color',
     'box', 'boxcolor', 'boxborderw', 'box_padding', 'borderw', 'bordercolor', 'shadowx', 'shadowy',
@@ -60,13 +59,25 @@ class FloatTextHost:
         self.poll = cancel or (lambda: None)
         if type(cache_bytes) is not int or not 0 <= cache_bytes <= 256 * 1024**2:
             raise error('BUDGET', '文字表面缓存必须在0..256MiB范围')
-        self.max_working_bytes, self.cache_limit = max_working_bytes, cache_bytes
+        if type(max_working_bytes) is not int or not 1 <= max_working_bytes <= 768*1024**2:
+            raise error('BUDGET', '文字工作区预算必须在1..768MiB范围')
+        self.max_working_bytes = max_working_bytes
+        # Cache is a ceiling, not a compulsory allocation. Keep small explicit
+        # workspaces useful for small canvases while reserving both ceilings.
+        self.cache_limit = min(cache_bytes, max_working_bytes//4)
         self.cache, self.cached_bytes, self.artifacts = OrderedDict(), 0, {}
+        self.coverage_cache, self.coverage_cached_bytes = OrderedDict(), 0
         self.coverage_profile = None
         self.metadata = {'protocol': PROTOCOL, 'authored_color': {'primaries': 'bt709', 'transfer': 'srgb'},
             'working_signal': vars(working_signal), 'glyph_coverage_bits': 8, 'color_component_bits': 32,
-            'media_pixels_in_glyph_process': False, 'cache_limit_bytes': cache_bytes,
+            'media_pixels_in_glyph_process': False, 'cache_limit_bytes': self.cache_limit,
+            'requested_cache_limit_bytes': cache_bytes,
             'cached_bytes': 0, 'cache_hits': 0, 'native_snapshots': 0, 'plans': [],
+            'coverage_cache_limit_bytes': self.cache_limit, 'coverage_cached_bytes': 0,
+            'coverage_cache_hits': 0, 'native_coverage_rasters': 0,
+            'admission': {'max_working_bytes': max_working_bytes, 'float_surfaces': 4,
+                          'native_and_scratch_bytes_per_pixel': 8, 'two_cache_limits_reserved': True,
+                          'tile_pixels': TILE_PIXELS, 'estimate_is_peak_RSS': False},
             'GPU': False, 'HDR_accepted': False, 'whole_movie_cache': False}
 
     def _pin(self, path, role, expected=None):
@@ -116,7 +127,7 @@ class FloatTextHost:
         for dependency in sorted(Path(PIL.__file__).parent.rglob('*')):
             if dependency.is_file() and dependency.suffix.lower() in {'.py','.pyd','.dll'}:
                 self._pin(dependency, 'float-text-font-metrics-runtime')
-        for name in ('float_text', 'float_text_paint', 'text_paint', 'text_layout', 'text_highlight', 'text_typing', 'render', 'captions'):
+        for name in ('float_text', 'float_text_paint', 'float_text_coverage', 'text_paint', 'text_layout', 'text_highlight', 'text_typing', 'render', 'captions'):
             self._pin(Path(__file__).with_name(name + '.py'), 'float-text-implementation')
         cues = None
         if subtitle.get('asset_uri'):
@@ -201,10 +212,13 @@ class FloatTextHost:
     def sample(self, plan, sequence_time, animation_tick, size, *, left_limit=False):
         self.poll()
         width, height = size
-        # The native glyph graph owns full-size split/stack/scratch planes.
-        # Reserve an admission estimate of 20 Float32 RGBA rasters before
-        # starting it. This is not a measurement/cap on native process RSS.
-        estimate = width * height * 16 * 20
+        if any(type(value) is not int or value < 2 for value in size):
+            raise error('BUDGET', '文字画布尺寸必须为至少2的整数')
+        # Four full Float32 surfaces cover the outer result and a selected
+        # normal/active paragraph. Native masks are one byte per pixel and
+        # are rendered sequentially. Reserve native scratch, both bounded
+        # caches and Float64 tile scratch; this is not a process RSS cap.
+        estimate = width * height * 72 + min(width*height, TILE_PIXELS)*512 + 2*self.cache_limit + 4096
         if min(width, height) < 2 or estimate > self.max_working_bytes:
             raise error('BUDGET', '文字原生栅格工作区估算超过显式单次预算', estimated_working_bytes=estimate,
                         max_working_bytes=self.max_working_bytes, width=width, height=height)
@@ -241,6 +255,7 @@ class FloatTextHost:
             record = {'protocol': PROTOCOL, 'author_seconds': author, 'empty_text': True, 'cache_hit': False}
         else:
             value, record = self._native(plan, active, author, frame_number, width, height)
+            record['estimated_working_bytes'] = estimate
         if value.nbytes <= self.cache_limit:
             while self.cached_bytes + value.nbytes > self.cache_limit and self.cache:
                 _, (old, _) = self.cache.popitem(last=False); self.cached_bytes -= old.nbytes
@@ -249,95 +264,28 @@ class FloatTextHost:
         return value.copy(), record
 
     def _native(self, plan, subtitles, author, frame_number, width, height):
-        from .render import _subtitle_filter
         if self.coverage_profile is None:
             self._coverage_conversion()
-        paints, layouts, graphs, warnings = [], [], [], []
-        for index, subtitle in enumerate(subtitles):
-            self.poll()
-            subtitle = copy.deepcopy(subtitle)
-            for field in ('x', 'y'):
-                if field in subtitle['style']:
-                    subtitle['style'][field] = re.sub(r'\bn\b', str(frame_number), str(subtitle['style'][field]))
-            alpha, layout = [], {}
-            def paint(parts):
-                # n in drawtext denotes the original author frame number.
-                # A snapshot process always has one physical input frame.
-                parts = [parts[0], *parts[1:], f'start_number={frame_number}']
-                result, receipt = paint_drawtext(self.root, parts, f'{plan["identity"]}-{index}-{len(paints)}',
-                    working_signal=self.working, coverage_profile=self.coverage_profile, cancel=self.poll)
-                paints.append(receipt)
-                return result
-            graph = _subtitle_filter(self.root, subtitle, warnings, plan['id'], plan['start_tick'] / self.tps,
-                plan['duration_tick'] / self.tps, rotation_supported=True, assets=self.assets,
-                time_expression=format(author, '.17g'), animation_alpha=alpha, layout_evidence=layout, paint_text=paint,
-                render_clock={'maps': [], 'reverse_boundary_bias_seconds': 0.}, final_fps=str(self.fps),
-                frame_origin=author, float_paint=True)
-            if graph:
-                if alpha:
-                    opacity = re.sub(r'\bt\b', 'T', '*'.join(f'({e})' for e in alpha))
-                    graph += f",format={FORMAT},geq=r='r(X,Y)':g='g(X,Y)':b='b(X,Y)':a='alpha(X,Y)*({opacity})'"
-                graphs.append(graph); layouts.append(layout)
-        if warnings:
-            raise error('UNSUPPORTED', '文字编译出现近似或未支持操作，未回落到旧像素路径', warnings=warnings)
-        # color's negotiated source format may omit alpha before conversion.
-        # Establish transparent black explicitly in Float32, independently of
-        # the source filter's alpha negotiation.
-        graph = (f'color=c=black:s={width}x{height}:r=1:d=1,format={FORMAT},geq=r=0:g=0:b=0:a=0,'
-                 f"settb=1/1000000000,setpts='{format(author, '.17g')}/TB'," + ','.join(graphs) + f',format={FORMAT}[text]')
-        if len(graph.encode('utf8')) > MAX_GRAPH_BYTES:
-            raise error('BUDGET', '文字原生图超过4MiB预算')
-        digest = hashlib.sha256(graph.encode('utf8')).hexdigest()
-        path = self.root / 'cache' / 'float-text' / (digest + '.ffgraph')
-        atomic_write_text(path, graph)
-        command = [ffmpeg_path(), '-nostdin', '-hide_banner', '-loglevel', 'error', '-filter_complex_threads', '1',
-            '-filter_complex_script', str(path), '-map', '[text]', '-frames:v', '1',
-            '-pix_fmt', FORMAT, '-f', 'rawvideo', '-']
-        expected = width * height * 16
-        with _TextPipe(command, cwd=self.root, poll=self.poll, timeout=60) as pipe:
-            raw = pipe.read(expected + 1)
-            if len(raw) != expected:
-                raise error('NATIVE', '文字原生进程未返回完整Float32栅格', expected_bytes=expected,
-                            actual_bytes=len(raw), stderr=pipe.stderr())
-            pipe.finish()
-        self.poll()
-        planes = np.frombuffer(raw, '<f4').reshape(4, height, width)
-        value = np.ascontiguousarray(np.moveaxis(planes[[2, 0, 1, 3]], 0, 2))
-        if not np.isfinite(value).all() or np.any((value[:, :, 3] < 0) | (value[:, :, 3] > 1)):
-            raise error('SURFACE', '原生文字返回无效浮点表面')
-        value[value[:, :, 3] == 0, :3] = 0
-        self.metadata['native_snapshots'] += 1
-        return value, {'protocol': PROTOCOL, 'author_seconds': author, 'author_frame_number': frame_number,
-            'graph_sha256': digest, 'graph': path.relative_to(self.root).as_posix(),
-            'pixels_sha256': hashlib.sha256(value.tobytes()).hexdigest(), 'paints': paints, 'layouts': layouts,
-            'cache_hit': False, 'color_raster': FORMAT, 'glyph_coverage_bits': 8,
-            'media_pixels_in_native_graph': False, 'frame_grid_quantization': False}
+        return CoverageSnapshot(self, width, height, author, frame_number, _TextPipe).render(plan, subtitles)
 
     def _coverage_conversion(self):
-        # libswscale builds can map opaque RGB8 white slightly below 1.0 in
-        # gbrapf32le. Recover the discrete coverage codes using a classifier
-        # verified against all 256 possible inputs. No affine-only approximation
-        # is accepted and no media/authored color enters this classification.
-        graph = 'nullsrc=s=256x2:r=1:d=1,format=gbrap,geq=r=X:g=X:b=X:a=255,format=gbrap,format=gbrapf32le'
+        # Validate the byte plane directly. No swscale Float32 conversion or
+        # discrete recovery classifier participates in glyph coverage now.
+        graph = 'nullsrc=s=256x2:r=1:d=1,format=gbrap,geq=r=X:g=X:b=X:a=255,format=gbrap,extractplanes=r'
         command = [ffmpeg_path(), '-nostdin', '-v', 'error', '-filter_threads', '1', '-f', 'lavfi', '-i', graph,
-            '-frames:v', '1', '-pix_fmt', FORMAT, '-f', 'rawvideo', '-']
-        expected = 256 * 2 * 16
+            '-frames:v', '1', '-pix_fmt', 'gray', '-f', 'rawvideo', '-']
+        expected = 256 * 2
         with _TextPipe(command, cwd=self.root, poll=self.poll, timeout=30) as pipe:
             raw = pipe.read(expected + 1)
             if len(raw) != expected:
                 raise error('COVERAGE', '字形覆盖率转换探针未返回完整原始栅格', stderr=pipe.stderr())
             pipe.finish()
-        planes = np.frombuffer(raw, '<f4').reshape(4, 2, 256)
-        black, white = float(planes[2, 0, 0]), float(planes[2, 0, -1])
-        if not np.isfinite(planes).all() or not white > black:
-            raise error('COVERAGE', '字形覆盖率转换不是有限正线性映射')
-        scale = round(255 / (white - black))
-        reconstructed = np.rint((planes[:3].astype(np.float64) - black) * scale)
-        maximum = float(np.max(np.abs(reconstructed - np.arange(256, dtype=np.float64)[None, None, :])))
+        planes = np.frombuffer(raw, np.uint8).reshape(2, 256)
+        maximum = float(np.max(np.abs(planes.astype(np.float64) - np.arange(256, dtype=np.float64)[None, :])))
         if maximum != 0:
             raise error('COVERAGE', '字形覆盖率转换不满足256码值独立参考，不使用近似回落', max_absolute_error=maximum)
-        self.coverage_profile = {'protocol': 'native-glyph-coverage-ramp-v1', 'black': black, 'white': white,
-            'code_scale': scale, 'codes_checked': 256, 'max_code_error': maximum,
+        self.coverage_profile = {'protocol': 'native-byte-glyph-coverage-ramp-v1', 'black': 0, 'white': 255,
+            'code_scale': 1, 'codes_checked': 256, 'max_code_error': maximum,
             'raw_sha256': hashlib.sha256(raw).hexdigest(),
             'ffmpeg_sha256': self.artifacts[str(Path(ffmpeg_path()).resolve())]['sha256']}
         self.metadata['coverage_conversion'] = self.coverage_profile

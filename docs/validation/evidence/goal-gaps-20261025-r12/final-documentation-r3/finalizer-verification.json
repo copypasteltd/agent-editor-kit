@@ -1,0 +1,23 @@
+{
+  "started_at_utc": "2026-10-25T04:24:49.222876+00:00",
+  "output_override": "docs/validation/evidence/goal-gaps-20261025-r12/final-documentation-r3",
+  "original_receipts": [
+    {
+      "source": "docs/validation/evidence/goal-gaps-20261025-r12/inventory.json",
+      "sha256": "38286521dd7f27e77ed7d48d09d9fce246a94a7b371b8feca1eac31123e3ab87"
+    },
+    {
+      "source": "docs/validation/evidence/goal-gaps-20261025-r12/installed-source-comparison.json",
+      "sha256": "63d6919cfd9adafd5b646cf0d118417bdb3fc23e755a8d7ca1b6adc27ad736e2"
+    },
+    {
+      "source": "docs/validation/evidence/goal-gaps-20261025-r12/logs/capabilities.stdout.json",
+      "sha256": "d5ad014005ab4192cb3e5e07cc92581330b37cf90a248db542ed69d7b6948292"
+    }
+  ],
+  "source": "audit_goal_gaps_20261025_r12_final.py",
+  "initial_audit_preserved": true,
+  "product_source_changed": false,
+  "status": "passed",
+  "finished_at_utc": "2026-10-25T04:24:49.963810+00:00"
+}

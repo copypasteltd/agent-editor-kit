@@ -9,6 +9,14 @@
 本頁包含完整功能模塊、服務與依賴、安裝與使用邏輯、Skill 輸入輸出、真實案例和核驗表。長篇原始驗收日志繼續留檔，功能說明與案例入口恢復到首頁。
 
 
+<!-- current-goal-review-r12 -->
+
+**目標狀態（2026-10-25）：已有可用的開源 Agent 編輯 CLI，完整剪映水準尚未達成。** 已安裝仍是 CLI 0.1.9 / r8；38 組差距各有未滿足的關閉條件。檢索開發候選另一組 60 條查詢中正向/否定各 20/20、庫外拒絕 18/20，原正向另有 1 條誤拒；尚未打包或切換 Skill。三語手冊本次補齊至 51 功能/20 服務模組，保留歷史記錄。
+
+[目前編號評估](docs/product/GOAL_GAPS_20261025.md) · [本次入口/API/原始碼差異](docs/validation/evidence/goal-gaps-20261025-r12/inventory.json) · [候選成功與失敗](docs/validation/evidence/goal-gaps-20261025-r12/candidate-progress.json)
+
+<!-- /current-goal-review-r12 -->
+
 <!-- unified-skill-registration -->
 
 **只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r8 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r8.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
@@ -23,14 +31,14 @@
 
 | 擴充套件編號 | 已實現 | 邊界 |
 |---|---|---|
-| F44 / M01 | 44 首 BGM、85 個短樂、228 個獨立音效、2 個 OFL Noto 字型 | 分別保留來源/許可，不是商業素材訂閱庫 |
-| F45 / M02 | 中英配音、103 具名音色、文字檔案/語速/WAV | 至少 7 個音色有真實生成，未完成人類聽審，不克隆、不宣稱全音色聽審 |
-| F46 / M03 | 本地雙向翻譯、雙語 SRT、顯式術語表 | cue 順序/毫秒保留，語義/發音仍需校對 |
-| F47 / G01 | CUDA 配音/翻譯、auto/cpu/cuda、視訊記憶體預檢 | RTX 3060 實測，嚴格 CUDA/CPU 回退分明，NVIDIA 依賴許可另列 |
-| F48 / M04–M05 | 真實 BGM 擷取/迴圈/淡入淡出、配音混合和閃避 | 保留原分軌，不代表作曲或自動接縫修復 |
-| F49 / C01 | 原生視窗/螢幕/區域/攝影機/麥克風擷取 CLI，CPU/NVENC 編碼和取消 | 實測自身測試視窗；攝影機/麥克風、聯合音畫同步及長錄製待驗 |
-| F50 / V01 | 離線圖文語義索引、中文/英文/參考圖查詢、預覽與可編輯時間點，auto/cpu/cuda | 小型靜態圖集實測；否定/庫外拒識/自然動作/音訊推薦仍未完成 |
-| F51 / D01 | 中英字幕翻譯、批次完整配音、實際 WAV 時窗、明確音色/混音及原子入軌 | 僅普通 SRT / 中英；cue 級時間，語義/聽感/口型未驗收 |
+| M01 / F44 | 44 首 BGM、85 個短樂、228 個獨立音效、2 個 OFL Noto 字型 | 分別保留來源/許可，不是商業素材訂閱庫 |
+| M02 / F45 | 中英配音、103 具名音色、文字檔案/語速/WAV | 至少 7 個音色有真實生成，未完成人類聽審，不克隆、不宣稱全音色聽審 |
+| M03 / F46 | 本地雙向翻譯、雙語 SRT、顯式術語表 | cue 順序/毫秒保留，語義/發音仍需校對 |
+| G01 / F47 | CUDA 配音/翻譯、auto/cpu/cuda、視訊記憶體預檢 | RTX 3060 實測，嚴格 CUDA/CPU 回退分明，NVIDIA 依賴許可另列 |
+| M04–M05 / F48 | 真實 BGM 擷取/迴圈/淡入淡出、配音混合和閃避 | 保留原分軌，不代表作曲或自動接縫修復 |
+| C01 / F49 | 原生視窗/螢幕/區域/攝影機/麥克風擷取 CLI，CPU/NVENC 編碼和取消 | 實測自身測試視窗；攝影機/麥克風、聯合音畫同步及長錄製待驗 |
+| V01 / F50 | 離線圖文語義索引、中文/英文/參考圖查詢、預覽與可編輯時間點，auto/cpu/cuda | 小型靜態圖集實測；否定/庫外拒識/自然動作/音訊推薦仍未完成 |
+| D01 / F51 | 中英字幕翻譯、批次完整配音、實際 WAV 時窗、明確音色/混音及原子入軌 | 僅普通 SRT / 中英；cue 級時間，語義/聽感/口型未驗收 |
 
 CPU 46 條、GPU 15 條為本輪獨立實測。12 秒真實成片已完整解碼、工程往返。未確認釋出權利的生成配音不隨公共頁面再分發，本地原始分軌/完整成片見交付記錄。人工聽審與完整剪映等價仍未完成。
 
@@ -258,7 +266,7 @@ flowchart LR
 |---|---|---|---|---|
 | F01 | Agent 調用協議 | 任務參數 → JSON 響應、退出碼、錯誤、warning、產物與 provenance；能力與 schema 可查詢。 | `version; doctor; capabilities; schema show` | Skill 組織任務，CLI 執行；沒有後臺云端 Agent 服務。 |
 | F02 | 可編輯專案 | 創建/檢查 Agent Project，保存資產、序列、軌道、ticks 時鐘、輸出配置和權利引用。 | `project init/inspect` | 源媒體與專案元資料分離，移動工程後需重鏈並復核證據路徑。 |
-| F03 | 事務、恢復與快照 | 中繼資料事務/快照；原生子程序樹歸屬；明確復原四軌持久化暫存與未提交輸出。 | `project snapshot/restore/migrate/recover; operation inspect` | 保留已提交資產、變更/執行中/未知/舊快取。僅受管四軌暫存，並非完整媒體備份或模型續算。 |
+| F03 | 事務、恢復與快照 | 中繼資料事務/快照；原生子程序樹歸屬；明確復原四軌及字幕配音持久化暫存與未提交輸出。 | `project snapshot/restore/migrate/recover; operation inspect` | 保留已提交資產、變更/執行中/未知/舊快取。僅已接入的四軌/字幕配音受管暫存，並非完整媒體備份或模型續算。 |
 | F04 | 素材導入與重鏈 | 本地圖片/影片/音頻/字體 → 探測結果、穩定資產 ID、雜湊和來源記錄。 | `media ingest/relink` | 不抓取在線素材；導入不自動證明商業授權。 |
 | F05 | 代理、縮略圖與波形 | 素材 → 輕量代理、圖片縮略圖、音頻波形、可核查聯系表。 | `media prepare/contact-sheet` | 聯系表是抽樣證據；不代表逐影格視覺理解。 |
 | F06 | 鏡頭、靜音與高光分析 | 本地影片/音頻 → 切鏡、靜音、節拍或啟發式高光候選與時間證據。 | `media understand/highlights` | 高光是啟發式候選，語義判斷需要 Agent/已註冊適配器復核。 |
@@ -299,6 +307,14 @@ flowchart LR
 | F41 | 專案與時間線交換 | Agent JSON/package、OTIO、Kdenlive MLT、已有合法明文草稿 → 導入/導出與損失報告。 | `convert import/export` | Exact/Approximate/Unsupported/Failed 逐項報告；明文草稿不調用剪映，不解密或下載專有資源。 |
 | F42 | 管道診斷與錯誤交付 | 失敗操作 → 有界日志、diagnostic manifest、顯式導出和可復查錯誤資訊。 | `diagnostics list/show/export; operation inspect` | 失敗/拒絕不是成功渲染；包含本地路徑的診斷需按交付範圍處理。 |
 | F43 | 創意、內容與投放分析 | 用戶提供的產品、受眾、參考片或投放表 → 腳本、結構、變體建議與分析。 | `ad plan/apply; advisory Skills` | 策略 Skill 不提供廣告平臺連接、自動投放、實時資料或效果保證。 |
+| F44 | 內建開源素材庫 | 359 項逐項具名 BGM/短樂/音效/簡繁字型 → 查詢、檢查、權利登記與專案資產。 | `materials list/inspect/verify/ingest` | 44 BGM、85 短樂、228 音效、2 字型；逐項保留來源/許可，影片/貼紙和產業覆蓋不足。 |
+| F45 | Kokoro 中英配音庫 | 文字、103 具名音色和語速 → 完整 WAV、實際時長與可編輯聲音資產。 | `voice list/synthesize; model-pack` | 可選 CPU/CUDA 包；累計至少 7 個音色實際生成，完整試聽、情緒/方言與人類聽審未驗收。 |
+| F46 | 中英翻譯與雙語字幕 | 文字或普通 SRT → 中英雙向譯文、簡繁轉換、雙語 SRT 與明確術語譯後替換。 | `translate text/subtitles` | OPUS 需本地模型；保留 cue 順序/毫秒，錯譯仍保留，不能代替人工語義接受。 |
+| F47 | GPU 配音與翻譯選擇 | 明確 CPU/CUDA/auto 和視訊記憶體預檢 → 實際 provider、裝置與明確回退/失敗。 | `gpu inspect; voice; translate; --device` | RTX 3060 實測；配音 CUDA 13 / 翻譯 CUDA 12、配音目前僅裝置 0，其餘濾鏡不因此 GPU 化。 |
+| F48 | 配樂準備與聲音混合 | 實際音樂/人聲資產 → 擷取、迴圈、淡入淡出、明確增益與人聲閃避混音。 | `music prepare/mix` | 保留原分軌，不靜默裁人聲；不作曲、不自動修復迴圈接縫或保證畫面語義匹配。 |
+| F49 | 原生擷取 | 明確視窗/螢幕/區域/攝影機/麥克風 → 有限錄製、CPU/NVENC、取消與專案資產登記。 | `capture devices/record` | 真實視窗 CPU/GPU 已驗；攝影機/麥克風、聯合音畫同步、裝置故障與長錄製未驗。 |
+| F50 | 離線圖文語義檢索 | 本地素材與明確模型 → 索引、中文/英文/參考圖查詢、實際預覽/來源時間與可編輯引用。 | `semantic adapter-register/index/search/verify` | 目前安裝版有否定/庫外失敗；校準候選僅開發 GPU 驗證，動作/身分/音訊推薦及大庫仍開放。 |
+| F51 | 字幕翻譯配音聯合流程 | 普通中英 SRT、明確音色/軌道 → 譯文、完整批次 WAV、實際時窗、可編輯聲音/雙語字幕與原子提交。 | `dub subtitles` | 批內復用初始化；保留原聲/重試/錯譯；cue 時窗不證明精確字詞、自然韻律或口型同步。 |
 
 ## 支持的服務模塊與依賴
 
@@ -689,6 +705,8 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R71 | 統一 Skill r8 與本機載入 | 一個註冊入口/17 內部模組；真實 Skill 另 9 次 CLI、兩個 CUDA 任務；小型 kit 獨立清單/註冊核驗 | [Evidence](docs/validation/evidence/subtitle-dubbing-20261025-r1/skill-r1/verification.json) · [Separate scope](docs/validation/evidence/subtitle-dubbing-20261025-r1/kit-r1/verification.json); 2026-10-25; 同一實體主機；舊 kit/公開 alpha.3 未覆蓋 |
 | R72 | G01–G38 目前目標差距 | CLI 0.1.9，75 項宣告；38 組原關閉條件全部保留 | [完整編號評估](docs/product/GOAL_GAPS_20261025.md) · [真實入口/API](docs/validation/evidence/goal-gaps-20261025-r10/inventory.json) · [歷史列/連結稽核](docs/validation/evidence/goal-gaps-20261025-r10/documentation-audit.json)；2026-10-25，唯讀盤點與模型/算繪分開，無總體完成百分比 |
 | R73 | 目前目標與交付狀態複核 | 統一 Skill 另 6 次唯讀呼叫成功；197 個原始碼/安裝檔案一致；75 項宣告、38 組未關閉條件不變；修正目前安裝路徑、頁尾版本及累計音色說明 | [目前差距/關閉條件](docs/product/GOAL_GAPS_20261025.md) · [實際回應/API](docs/validation/evidence/goal-gaps-20261025-r11/inventory.json) · [歷史保留/連結稽核](docs/validation/evidence/goal-gaps-20261025-r11/documentation-audit.json)；2026-10-25，0 新算繪/推論/人工聽審，歷史 R01–R72 保留，公開仍 alpha.3 |
+| R74 | 本次完整目標/交付評估 | 另 6 次實際唯讀 Skill 呼叫；197 安裝檔案符合已提交基線；工作區 193 相同、4 修改、2 新增；三語手冊補齊 51 功能/20 服務及 75 項安裝欄位 | [38 組差距](docs/product/GOAL_GAPS_20261025.md) · [入口/API/差異](docs/validation/evidence/goal-gaps-20261025-r12/inventory.json) · [文件稽核](docs/validation/evidence/goal-gaps-20261025-r12/final-documentation-r3/documentation-audit.json)；2026-10-25，本次 0 新推論/算繪/人工聽審，公開仍 alpha.3，歷史 R01–R73 保留 |
+| R75 | 檢索候選進度，未入安裝版 | 既有開發實測快照：48 契約測試；GPU 40 校準/60 另組措辭/20 原查詢及獨立 raw；另組庫外誤接受 2 條、原正向誤拒 1 條均保留 | [逐項結果與失敗](docs/validation/evidence/goal-gaps-20261025-r12/candidate-progress.json) · [凍結協定](docs/validation/evidence/goal-gaps-20261025-r12/candidate-snapshot/protocol.json)；2026-10-25，熟悉靜態素材；未計作安裝/CPU/Skill 驗收，G26 未關閉 |
 
 ## 當前邊界與開發方向
 

@@ -12,13 +12,13 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 
 <!-- /community-current -->
 
-[README](../../README.md) · [Machine response](capabilities.json) · [Module data](module-catalog.json)
+[README](../../README.md) · [Machine response](subtitle-dubbing-capabilities-cli-0.1.9.json) · [Module data](module-catalog.json)
 
 | 编号 | 功能模块 | 具体行为与输入 → 输出 | 入口 | 依赖/边界 |
 |---|---|---|---|---|
 | F01 | Agent 调用协议 | 任务参数 → JSON 响应、退出码、错误、warning、产物与 provenance；能力与 schema 可查询。 | `version; doctor; capabilities; schema show` | Skill 组织任务，CLI 执行；没有后台云端 Agent 服务。 |
 | F02 | 可编辑项目 | 创建/检查 Agent Project，保存资产、序列、轨道、ticks 时钟、输出配置和权利引用。 | `project init/inspect` | 源媒体与项目元数据分离，移动工程后需重链并复核证据路径。 |
-| F03 | 事务、恢复与快照 | 元数据事务/快照；原生子进程树归属；显式恢复四轨持久化工作目录和未提交输出。 | `project snapshot/restore/migrate/recover; operation inspect` | 已提交资产保留；变化/活跃/未知/旧缓存保留。仅受管四轨工作目录，不是完整媒体备份或模型续算。 |
+| F03 | 事务、恢复与快照 | 元数据事务/快照；原生子进程树归属；显式恢复四轨及字幕配音的持久化工作目录和未提交输出。 | `project snapshot/restore/migrate/recover; operation inspect` | 已提交资产保留；变化/活跃/未知/旧缓存保留。仅已接入的四轨/字幕配音受管目录，不是完整媒体备份或模型续算。 |
 | F04 | 素材导入与重链 | 本地图片/视频/音频/字体 → 探测结果、稳定资产 ID、哈希和来源记录。 | `media ingest/relink` | 不抓取在线素材；导入不自动证明商业授权。 |
 | F05 | 代理、缩略图与波形 | 素材 → 轻量代理、图片缩略图、音频波形、可核查联系表。 | `media prepare/contact-sheet` | 联系表是抽样证据；不代表逐帧视觉理解。 |
 | F06 | 镜头、静音与高光分析 | 本地视频/音频 → 切镜、静音、节拍或启发式高光候选与时间证据。 | `media understand/highlights` | 高光是启发式候选，语义判断需要 Agent/已注册适配器复核。 |
@@ -43,7 +43,7 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 | F25 | 离线转写与字词对齐 | 音频 + 已有 Whisper/CTC 模型/校正文 → 转写、字幕、字词时码与 CER 评估。 | `asr adapter; subtitle transcribe/align/evaluate` | 基础包不带权重；activity 保留原 CTC 并通过 6 组受控词块门槛；自然连续语音、中文和歌词精度仍未验收。[流程](CTC_ACTIVITY_ALIGNMENT.md) |
 | F26 | 多轨音频与总线 | 显式音轨 → 混音、总线、音量/声像、静音/solo、淡化、EQ、压缩、降噪、响度与闪避。 | `audio extract; timeline compose; quality check` | 视频资产有声音不代表时间线自动出声；自动 PCM/LUFS 检查不代替听审。 |
 | F27 | 本地语音合成 | 已有本地 flite 或登记 SoulX 权重/授权参考声 → WAV 资产与可选音轨。 | `tts adapter/voice; tts synthesize` | flite 取决于 FFmpeg 构建且限 ASCII 英文；SoulX 需 CUDA/原生依赖，非基础包自带配音库。 |
-| F28 | 独立四轨与双轨分离 | 鼓/贝斯/其他乐器/人声 → 四个 float WAV 与可编辑音轨；保留双轨和 mid/side。 | `audio separate-stems; audio separate; audio adapter` | 另供原生 Torch/权重，已实测 CPU/GPU；自然质量/听审/模型权利待验。 |
+| F28 | 独立四轨与双轨分离 | 音频 → drums/bass/other/vocals 四个模型预测、float WAV 与可编辑音轨；保留原双轨和 mid/side。 | `audio separate-stems; audio separate; audio adapter` | 另供原生环境/权重；受控 CPU/GPU 实测，自然质量/听审/模型权利仍待验。 |
 | F29 | 跟踪、绑定与重构图 | 模板/模型/已编码蒙版轨迹 → 文字/贴纸锚定、裁切与主体重构图关键帧。 | `media track/track-bind/reframe` | 多目标须明确对象；置信度/蒙版不等于身份保证，支持的变换与时钟需检查。 |
 | F30 | OCR 锚点与人脸修饰 | 已有 PP-OCR/OpenSeeFace 模型 → OCR 框/文字、锚点运镜、人脸点位与受限修饰。 | `ocr adapter/scan/anchors; face adapter/scan/retouch` | 已有 ONNX CPU 环境与权重；不是完整 UI 行为识别、美妆、瘦身或脸部生成。 |
 | F31 | 人像抠像与对象分割 | 已有 RVM/SAM2 + 提示点/框 → 透明视频、对象 mask 和可编辑派生资产。 | `media adapter; media matting` | RVM 人像与 SAM2 对象分割不同；概率 mask 不是物理发丝 matte，需检查运动/遮挡。 |
@@ -59,6 +59,14 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 | F41 | 项目与时间线交换 | Agent JSON/package、OTIO、Kdenlive MLT、已有合法明文草稿 → 导入/导出与损失报告。 | `convert import/export` | Exact/Approximate/Unsupported/Failed 逐项报告；明文草稿不调用剪映，不解密或下载专有资源。 |
 | F42 | 管道诊断与错误交付 | 失败操作 → 有界日志、diagnostic manifest、显式导出和可复查错误信息。 | `diagnostics list/show/export; operation inspect` | 失败/拒绝不是成功渲染；包含本地路径的诊断需按交付范围处理。 |
 | F43 | 创意、内容与投放分析 | 用户提供的产品、受众、参考片或投放表 → 脚本、结构、变体建议与分析。 | `ad plan/apply; advisory Skills` | 策略 Skill 不提供广告平台连接、自动投放、实时数据或效果保证。 |
+| F44 | 内置开源素材库 | 359 项逐项具名 BGM/短乐/音效/简繁字体 → 查询、检查、权利登记与项目资产。 | `materials list/inspect/verify/ingest` | 44 BGM、85 短乐、228 音效、2 字体；每项保留来源/许可，视频/贴纸和行业覆盖不足。 |
+| F45 | Kokoro 中英配音库 | 文本、103 具名音色和语速 → 完整 WAV、实际时长与可编辑声音资产。 | `voice list/synthesize; model-pack` | 可选 CPU/CUDA 包；累计至少 7 个音色实际生成，完整试听、情绪/方言与人类听审未验收。 |
+| F46 | 中英翻译与双语字幕 | 文本或普通 SRT → 中英双向译文、简繁转换、双语 SRT与显式术语译后替换。 | `translate text/subtitles` | OPUS 需本地模型；保留 cue 顺序/毫秒，错译仍保留，不能替代人工语义接受。 |
+| F47 | GPU 配音与翻译选择 | 明确 CPU/CUDA/auto 和显存预检 → 实际 provider、设备与明确回退/失败。 | `gpu inspect; voice; translate; --device` | RTX 3060 实测；配音 CUDA 13 / 翻译 CUDA 12、配音当前仅设备 0，其他滤镜不因此 GPU 化。 |
+| F48 | 配乐准备与声音混合 | 实际音乐/人声资产 → 截取、循环、淡入淡出、显式增益和人声闪避混音。 | `music prepare/mix` | 保留原分轨，不静默裁人声；不作曲、不自动修复循环接缝或保证画面语义匹配。 |
+| F49 | 原生采集 | 明确窗口/屏幕/区域/相机/麦克风 → 有限录制、CPU/NVENC、取消和项目资产登记。 | `capture devices/record` | 真实窗口 CPU/GPU 已验；相机/麦克风、联合音画同步、设备故障和长录制未验。 |
+| F50 | 离线图文语义检索 | 本地素材与明确模型 → 索引、中文/英文/参考图查询、实际预览/源时间及可编辑引用。 | `semantic adapter-register/index/search/verify` | 当前安装版有否定/库外失败；校准候选仅开发 GPU 验证，动作/身份/音频推荐和大库仍开放。 |
+| F51 | 字幕翻译配音联合流程 | 普通中英 SRT、显式音色/轨道 → 译文、完整批量 WAV、实际时窗、可编辑声音/双语字幕及原子提交。 | `dub subtitles` | 批内复用初始化；保留原声/重试/错译；cue 时窗不证明精确字词、自然韵律或口型同步。 |
 
 | 编号 | 服务模块 | 运行形式 | 需要什么/提供什么 | 入口 | 范围 |
 |---|---|---|---|---|---|
@@ -78,10 +86,219 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 | S14 | 本地配音/翻译 | 原生模型 worker | 4 个可选 CPU/CUDA 包，103 音色映射和 OPUS 文本/字幕 | `voice / translate / model-pack` | 累计至少 7 个不同音色有真实输出；103 音色完整试听及人工验收未完成 |
 | S15 | 配乐准备与混音 | 原生 FFmpeg 音频 | 显式截取/循环/淡化、独立人声/配乐、闪避 | `music prepare/mix` | 不作曲、不静默裁人声、不承诺接缝修复 |
 | S16 | GPU 兼容服务 | 原生 NVIDIA 运行库 | auto/cpu/cuda、显存预检、实际 provider/回退 | `gpu inspect; --device` | RTX 3060 实测，NVIDIA/Intel 依赖许可另列 |
+| S17 | 原生 Windows 采集 | FFmpeg gdigrab / DirectShow | 明确来源、设备 ID、有限时长、完整解码与素材登记 | `capture devices/record` | 真实窗口 CPU/GPU 已验；相机/麦克风/同步未验 |
+| S18 | 图文语义检索 | 显式登记的原生 SigLIP2 worker | 已有 Torch/Transformers/模型；实际 GPU/CPU、源/预览/向量完整性 | `semantic adapter-register/index/search/verify` | 冷启动和大库性能未收口；分数不是概率 |
+| S19 | 独立四轨分离 | 原生 Torch/TorchAudio HDemucs worker | 显式登记原生 Python、权重/证据/实现哈希；auto/cpu/cuda，4 float WAV/轨道 | `audio adapter; audio separate-stems` | 不随基本 ZIP 分发 Torch/权重；自然听感与权重许可未闭 |
+| S20 | 字幕翻译配音联合服务 | 既有 OPUS / Kokoro 原生 worker + 受管工程事务 | 普通 SRT、明确语言/音色/轨道，CPU/CUDA/auto，批内复用 | `dub subtitles` | [完整流程](SUBTITLE_DUBBING.md)；保留全句和重试，字词/口型/自然质量未闭 |
 
 ## 完整安装版能力字段
 
 以下逐项保留本轮从安装版读取的能力字段、状态、命令、限制与配额。它们是契约，不是本轮对每一项重新执行的验收。状态 local_adapter_only 需要已有模型，implemented_with_limits 需阅读限制。
+
+### `visual_semantic_retrieval`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "engine": "transformers-siglip-local-v1",
+  "protocol": "agent-semantic-embedding-v1",
+  "index_format": "agent-visual-semantic-index-v1",
+  "commands": [
+    "semantic adapter-register/adapter-list/adapter-inspect",
+    "semantic index/index-list/verify/search"
+  ],
+  "input_kinds": [
+    "project_image",
+    "project_video",
+    "text_query",
+    "local_reference_image"
+  ],
+  "devices": [
+    "auto",
+    "cpu",
+    "cuda"
+  ],
+  "dimension": 768,
+  "text_token_limit": 64,
+  "silent_truncation": false,
+  "maximum_assets": 512,
+  "maximum_rows": 4096,
+  "maximum_queries": 128,
+  "maximum_batch_size": 32,
+  "score": "cosine_similarity_not_probability",
+  "source_clock": "original_native_PTS_relative_to_container_origin",
+  "integrity": [
+    "model",
+    "selected_native_runtime_components",
+    "product_implementation",
+    "source_media",
+    "preview",
+    "vectors",
+    "manifest"
+  ],
+  "limits": [
+    "requires_existing_registered_native_Python_Torch_Transformers_Pillow_and_local_SigLIP_safetensors",
+    "fixed_768_dimension_224px_64token_base_profile_only",
+    "sampled_frames_do_not_prove_actions_or_identity",
+    "model_reuse_within_current_batch_only",
+    "no_open_set_abstention_or_calibrated_probability",
+    "no_audio_embeddings_or_music_recommendation",
+    "no_implicit_download_or_remote_code",
+    "relocated_or_changed_adapter_requires_explicit_registration_and_index_rebuild",
+    "OS_DLL_closure_long_library_performance_and_broad_advertising_quality_unaccepted"
+  ]
+}
+```
+
+### `native_capture`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "engine": "ffmpeg-windows-capture-v1",
+  "commands": [
+    "capture.devices",
+    "capture.record"
+  ],
+  "sources": [
+    "explicit_window_title",
+    "desktop_or_region",
+    "explicit_dshow_camera",
+    "explicit_dshow_microphone"
+  ],
+  "features": [
+    "bounded_native_windows_recording",
+    "stable_current_device_ids",
+    "optional_explicit_audio_input",
+    "cpu_or_nvenc_video_encoding",
+    "auto_records_cpu_fallback",
+    "cancellation_and_preserved_diagnostics",
+    "complete_output_decode_before_asset_registration",
+    "local_source_evidence"
+  ],
+  "limits": [
+    "windows_gdigrab_and_dshow_build_required",
+    "no_implicit_microphone_or_camera",
+    "device_modes_and_permissions_must_be_available",
+    "av_sync_and_natural_recording_need_review",
+    "not_a_capture_of_all_windows_or_a_background_monitor",
+    "capture_does_not_grant_content_rights"
+  ]
+}
+```
+
+### `community_materials`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "catalog_version": "1.0.0",
+  "commands": [
+    "materials.list",
+    "materials.inspect",
+    "materials.verify",
+    "materials.ingest"
+  ],
+  "counts": {
+    "music": 44,
+    "jingle": 85,
+    "sfx": 228,
+    "font": 2
+  },
+  "features": [
+    "bundled_real_audio_and_fonts",
+    "stable_ids_and_three_language_search",
+    "source_archive_and_individual_file_hashes",
+    "copied_local_rights_and_attribution_evidence",
+    "explicit_optional_audio_track_apply"
+  ],
+  "limits": [
+    "source_licenses_remain_separate_from_product_code",
+    "attribution_and_font_redistribution_conditions_survive_import",
+    "not_a_commercial_stock_subscription_or_unlimited_music_catalog"
+  ]
+}
+```
+
+### `community_voice_translation`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "provider": "native_windows_cpu_or_explicit_cuda",
+  "commands": [
+    "model-pack.list",
+    "model-pack.verify",
+    "voice.list",
+    "voice.synthesize",
+    "translate.text",
+    "translate.subtitles",
+    "gpu.inspect"
+  ],
+  "voices": 103,
+  "voice_engine": "kokoro-sherpa-cpu-v1",
+  "translation_engine": "opus-ctranslate2-ruy-cpu-v1",
+  "device_selection": [
+    "auto",
+    "cpu",
+    "cuda"
+  ],
+  "gpu_packs": [
+    "kokoro-zh-en-cuda13",
+    "opus-zh-en-cuda12-int8"
+  ],
+  "features": [
+    "hash_pinned_optional_local_model_packs",
+    "isolated_cpython313_without_site_startup",
+    "chinese_english_named_voice_and_speed",
+    "natural_duration_24k_mono_wav",
+    "chinese_english_bidirectional_translation",
+    "explicit_simplified_traditional_conversion",
+    "srt_cue_order_and_millisecond_timing_preservation",
+    "bilingual_subtitles",
+    "explicit_glossary_post_edits_or_refusal"
+  ],
+  "limits": [
+    "weights_not_in_base_package",
+    "no_runtime_downloads",
+    "cpython313_windows_x64_packs",
+    "no_voice_cloning",
+    "no_asr_or_precise_word_alignment_added",
+    "translation_not_a_semantic_accuracy_guarantee",
+    "subtitle_style_flattened_to_srt",
+    "glossary_is_not_constrained_decoding",
+    "output_and_text_rights_need_review"
+  ]
+}
+```
+
+### `community_music`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "engine": "community-audio-ffmpeg-v1",
+  "commands": [
+    "music.prepare",
+    "music.mix"
+  ],
+  "features": [
+    "explicit_source_asset_and_rights_parents",
+    "trim_and_opt_in_loop",
+    "gain_and_fade_in_out",
+    "speech_music_sidechain_ducking",
+    "preserved_original_stems",
+    "exact_requested_48k_stereo_pcm_sample_count",
+    "sample_peak_and_rms_metrics"
+  ],
+  "limits": [
+    "looping_does_not_repair_seams",
+    "not_music_generation_or_composition",
+    "not_human_listening_or_true_peak_loudness_acceptance",
+    "no_silent_voice_truncation_or_source_overwrite"
+  ]
+}
+```
 
 ### `timeline_native_float_keyer`
 
@@ -1935,8 +2152,32 @@ Cue-window fit does not establish semantics, natural listening, word precision o
     "validation_metadata",
     "exports_metadata"
   ],
+  "owned_job_recovery": {
+    "command": "project recover --cleanup-jobs",
+    "format": "agent-owned-job-workspace-v1",
+    "features": [
+      "dry_run",
+      "native_owner_lease",
+      "four_stem_transaction_scoped_workspaces",
+      "durable_publication_intent",
+      "exclusive_same_volume_publish",
+      "filesystem_identity_and_hash_check",
+      "rollback_before_unreferenced_output_cleanup",
+      "referenced_and_modified_outputs_preserved",
+      "native_windows_suspended_child_job_assignment_before_application_code",
+      "owned_descendants_end_on_owner_exit"
+    ],
+    "limits": [
+      "managed_workspaces_currently_four_stem_only",
+      "historical_unmanaged_cache_preserved",
+      "up_to_256_jobs_and_10000_entries_per_workspace",
+      "cooperating_local_filesystem_not_hostile_OS_sandbox",
+      "job_object_assignment_failure_is_strict_no_unsupervised_fallback",
+      "power_loss_and_disk_exhaustion_not_full_acceptance"
+    ]
+  },
   "limits": [
-    "media_and_render_side_effect_files_are_reported_but_not_copied_or_deleted_by_recovery",
+    "default_recovery_is_metadata_only;_unmanaged_media_render_and_cache_side_effects_remain_preserved",
     "direct_external_json_editors_do_not_join_cli_lock_or_transaction",
     "cross_version_snapshot_migration_is_limited_to_known_legacy_shapes"
   ]
@@ -3082,6 +3323,47 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 }
 ```
 
+### `four_stem_separation`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "engine": "torchaudio-hdemucs-four-stem-local-v1",
+  "commands": [
+    "audio adapter register/list/inspect",
+    "audio separate-stems"
+  ],
+  "features": [
+    "four_independent_neural_estimates",
+    "drums_bass_other_vocals",
+    "shared_source_normalization_and_overlap_add",
+    "raw_sum_error_diagnostics",
+    "stereo_float_wav",
+    "four_editable_audio_tracks",
+    "source_and_model_rights_dependencies",
+    "auto_cpu_cuda",
+    "explicit_gpu_index",
+    "finite_total_timeout",
+    "cancel_and_failure_cleanup",
+    "command_scoped_artifact_locks",
+    "no_implicit_downloads"
+  ],
+  "limits": [
+    "explicit_existing_compatible_checkpoint_and_native_torch_torchaudio_required",
+    "model_is_stereo_44100_hdemucs_high_with_four_fixed_sources",
+    "single_job_max_1800_seconds",
+    "segment_1_to_20_seconds_overlap_0_to_0_75",
+    "auto_falls_back_only_at_gpu_preflight",
+    "no_runtime_oom_or_model_failure_fallback",
+    "raw_estimate_sum_is_not_projected_to_mixture",
+    "no_independent_normalization_or_limiter_float_peaks_may_exceed_one",
+    "editing_preserves_original_tracks_review_duplicate_mix_before_render",
+    "natural_leakage_artifacts_listening_and_checkpoint_license_acceptance_remain_open",
+    "runtime_versions_recorded_but_complete_os_and_python_dependency_closure_not_bundled"
+  ]
+}
+```
+
 ### `render`
 
 ```json
@@ -3595,6 +3877,11 @@ Cue-window fit does not establish semantics, natural listening, word precision o
     "asr.adapter.inspect",
     "subtitle.align"
   ],
+  "boundary_modes": [
+    "ctc",
+    "activity"
+  ],
+  "activity_algorithm": "ctc-guided-activity-v3",
   "features": [
     "native_offline_wav2vec2_ctc_safetensors",
     "explicit_corrected_text_or_srt_windows",
@@ -3606,11 +3893,18 @@ Cue-window fit does not establish semantics, natural listening, word precision o
     "character_and_word_highlight_track_apply",
     "source_transcript_model_rights_closure",
     "command_scoped_native_read_locks",
-    "idempotency_cancel_timeout_and_transaction_rollback"
+    "idempotency_cancel_timeout_and_transaction_rollback",
+    "explicit_pcm_conditioned_isolated_word_activity",
+    "raw_character_and_word_timing_preserved",
+    "controller_recomputes_activity_from_hash_bound_pcm",
+    "ambiguous_continuous_activity_preserves_ctc"
   ],
   "limits": [
     "1800_seconds_16384_codepoints_8192_tokens",
     "512_mib_emissions_64_million_traceback_cells_excludes_total_process_and_model_memory",
+    "activity_requires_explicit_whitespace_granularity",
+    "activity_is_not_phonetic_truth_or_continuous_internal_word_alignment",
+    "noise_music_and_wrong_transcripts_require_review",
     "oov_or_script_conversion_requires_explicit_user_corrected_text",
     "posterior_is_not_calibrated_accuracy",
     "wrong_transcripts_can_be_forced_into_audio",
@@ -3712,6 +4006,46 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 }
 ```
 
+### `subtitle_dubbing`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "agent-subtitle-dubbing-v1",
+  "commands": [
+    "dub.subtitles"
+  ],
+  "features": [
+    "strict_srt_source_order_and_millisecond_clocks",
+    "english_chinese_translation",
+    "one_kokoro_initialization_per_batch",
+    "explicit_per_cue_voice_map",
+    "cpu_cuda_auto_per_task",
+    "whole_utterance_bounded_speed_regeneration",
+    "independent_actual_wav_sample_fit_checks",
+    "original_and_retry_audio_retained",
+    "editable_audio_and_bilingual_subtitle_clips",
+    "single_project_transaction",
+    "owned_crash_recovery",
+    "overflow_evidence_and_explicit_cleanup",
+    "source_translation_model_and_voice_rights_dependencies",
+    "total_timeout_cancel_and_dry_run"
+  ],
+  "limits": [
+    "existing_native_pinned_model_packs_required_no_downloads",
+    "plain_utf8_srt_1mib_1000_cues",
+    "english_chinese_only_3000_characters_and_300_seconds_per_cue",
+    "kokoro_cuda_device_zero_only",
+    "max_three_complete_generations_and_speed_two",
+    "explicit_overlap_mix_and_track_admission",
+    "millisecond_divisible_project_timebase_required",
+    "cue_timing_not_phonetic_alignment_or_lip_sync",
+    "source_translation_voice_rights_and_natural_quality_require_review",
+    "full_g19_and_capcut_parity_unaccepted"
+  ]
+}
+```
+
 ### `policy`
 
 ```json
@@ -3730,7 +4064,6 @@ Cue-window fit does not establish semantics, natural listening, word precision o
   ]
 }
 ```
-
 
 ## CLI 0.1.5 / F50 / S18 / K08: visual semantic retrieval
 

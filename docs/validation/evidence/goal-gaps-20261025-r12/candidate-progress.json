@@ -1,0 +1,133 @@
+{
+  "scope": "development source only; not installed or registered Skill delivery",
+  "model": "SigLIP2 base patch16 224",
+  "device": "cuda",
+  "calibration": {
+    "algorithm": "negative-order-statistic-strict-greater-v1",
+    "cutoff": 0.0561935684022833,
+    "requested_false_accept_rate": 0.05,
+    "requested_minimum_correct_coverage": 0.75,
+    "positive_count": 20,
+    "negative_count": 20,
+    "accepted_correct_positives": 20,
+    "correct_positive_coverage": 1.0,
+    "false_accepted_negatives": 1,
+    "observed_false_accept_rate": 0.05,
+    "quality_gate_passed": true,
+    "guarantee": "empirical calibration only; no distribution-free, probability or universal no-match guarantee"
+  },
+  "heldout": {
+    "negation": {
+      "count": 20,
+      "correct": 20,
+      "rate": 1.0
+    },
+    "out_of_library": {
+      "count": 20,
+      "correct": 18,
+      "rate": 0.9
+    },
+    "positive": {
+      "count": 20,
+      "correct": 20,
+      "rate": 1.0
+    }
+  },
+  "heldout_failures": [
+    {
+      "id": "hout00zh",
+      "text": "草原上站立的大象",
+      "group": "out_of_library",
+      "decision": "calibrated_match",
+      "top1_correct": null,
+      "rejected": false,
+      "hits": [
+        {
+          "asset_id": "asset_a7",
+          "sample_seconds": 0.0,
+          "score": 0.08424004
+        },
+        {
+          "asset_id": "asset_k8",
+          "sample_seconds": 0.0,
+          "score": 0.07686527
+        },
+        {
+          "asset_id": "asset_e3",
+          "sample_seconds": 0.0,
+          "score": 0.0627283
+        }
+      ]
+    },
+    {
+      "id": "hout08zh",
+      "text": "靠在墙边的木吉他",
+      "group": "out_of_library",
+      "decision": "calibrated_match",
+      "top1_correct": null,
+      "rejected": false,
+      "hits": [
+        {
+          "asset_id": "asset_j3",
+          "sample_seconds": 0.0,
+          "score": 0.06719471
+        }
+      ]
+    }
+  ],
+  "original_regression": {
+    "negation": {
+      "count": 2,
+      "correct": 2,
+      "rate": 1.0
+    },
+    "out_of_domain": {
+      "count": 2,
+      "correct": 2,
+      "rate": 1.0
+    },
+    "positive": {
+      "count": 16,
+      "correct": 15,
+      "rate": 0.9375
+    }
+  },
+  "original_regression_failures": [
+    {
+      "id": "q14",
+      "text": "带数字和指针的钟表",
+      "group": "positive",
+      "decision": "no_calibrated_match",
+      "top1_correct": false,
+      "rejected": true,
+      "hits": []
+    }
+  ],
+  "raw_original_regression": {
+    "negation": {
+      "count": 2,
+      "correct": 1,
+      "rate": 0.5
+    },
+    "out_of_domain": {
+      "count": 2,
+      "correct": 0,
+      "rate": 0.0
+    },
+    "positive": {
+      "count": 16,
+      "correct": 16,
+      "rate": 1.0
+    }
+  },
+  "tests": {
+    "methods": 48,
+    "skipped": 0,
+    "frozen_equal": true,
+    "kind": "contracts, not model quality"
+  },
+  "protocol_sha256": "74b6c3c38d15284fd9a7814083378f82170cf516161898907bbf901fe997026b",
+  "independent_scope": "query wording only; familiar static assets; no action, identity or audio quality acceptance",
+  "new_inference_in_this_assessment": 0,
+  "copied_files": 10
+}

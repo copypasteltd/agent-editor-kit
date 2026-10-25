@@ -9,6 +9,14 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
+<!-- current-goal-review-r12 -->
+
+**Goal status (2026-10-25): a working open-source Agent editing CLI is available; full CapCut parity is not established.** The installed delivery remains CLI 0.1.9 / r8. All 38 gap groups retain unmet closure conditions. A separate development retrieval candidate scores 20/20 positive, 20/20 negation and 18/20 out-of-library rejections on 60 differently worded queries; it also rejects one original positive query incorrectly. It is not packaged or registered. The three-language manuals now retain the complete 51 functional and 20 service modules.
+
+[Numbered assessment](docs/product/GOAL_GAPS_20261025.md) · [Actual entry/API/source differences](docs/validation/evidence/goal-gaps-20261025-r12/inventory.json) · [Candidate successes and failures](docs/validation/evidence/goal-gaps-20261025-r12/candidate-progress.json)
+
+<!-- /current-goal-review-r12 -->
+
 <!-- unified-skill-registration -->
 
 **One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r8 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r8.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
@@ -23,14 +31,14 @@ This page includes functional modules, services/dependencies, installation/usage
 
 | Extension | Actual implementation | Limits |
 |---|---|---|
-| F44 / M01 | 44 BGM, 85 jingles, 228 unique SFX, 2 OFL Noto fonts | Source licenses/attribution remain separate; no stock subscription |
-| F45 / M02 | Chinese/English speech, 103 named voices, text files/speed/WAV | At least seven voices actually generated; no human listening acceptance, cloning or universal voice-quality approval |
-| F46 / M03 | Offline bidirectional translation, bilingual SRT, glossary | Cue order/milliseconds retained; translation and pronunciation need review |
-| F47 / G01 | CUDA voice/translation, auto/cpu/cuda, free-VRAM preflight | RTX 3060 tested; strict CUDA and explicit CPU fallback; optional NVIDIA runtime terms |
-| F48 / M04–M05 | Real BGM trim/loop/fades, speech/music mix and ducking | Preserved stems; no composition or automatic seam repair |
-| F49 / C01 | Native window/desktop/region/camera/microphone capture CLI, CPU/NVENC and cancellation | Actual owned-window evidence; camera/microphone, AV sync and long capture unaccepted |
-| F50 / V01 | Offline image/text embeddings, Chinese/English/reference-image queries, previews and editable source points; auto/cpu/cuda | Small static-image acceptance; negation, open-set rejection, natural actions and audio recommendation remain open |
-| F51 / D01 | Chinese/English SRT translation, complete batched speech, actual WAV fitting, explicit casting/mixing and atomic clips | Plain SRT / Chinese-English only; cue timing, semantics/naturalness/lip sync unaccepted |
+| M01 / F44 | 44 BGM, 85 jingles, 228 unique SFX, 2 OFL Noto fonts | Source licenses/attribution remain separate; no stock subscription |
+| M02 / F45 | Chinese/English speech, 103 named voices, text files/speed/WAV | At least seven voices actually generated; no human listening acceptance, cloning or universal voice-quality approval |
+| M03 / F46 | Offline bidirectional translation, bilingual SRT, glossary | Cue order/milliseconds retained; translation and pronunciation need review |
+| G01 / F47 | CUDA voice/translation, auto/cpu/cuda, free-VRAM preflight | RTX 3060 tested; strict CUDA and explicit CPU fallback; optional NVIDIA runtime terms |
+| M04–M05 / F48 | Real BGM trim/loop/fades, speech/music mix and ducking | Preserved stems; no composition or automatic seam repair |
+| C01 / F49 | Native window/desktop/region/camera/microphone capture CLI, CPU/NVENC and cancellation | Actual owned-window evidence; camera/microphone, AV sync and long capture unaccepted |
+| V01 / F50 | Offline image/text embeddings, Chinese/English/reference-image queries, previews and editable source points; auto/cpu/cuda | Small static-image acceptance; negation, open-set rejection, natural actions and audio recommendation remain open |
+| D01 / F51 | Chinese/English SRT translation, complete batched speech, actual WAV fitting, explicit casting/mixing and atomic clips | Plain SRT / Chinese-English only; cue timing, semantics/naturalness/lip sync unaccepted |
 
 CPU 46 commands and GPU 15 commands are separate current tests. The real 12-second edit was fully decoded and package-round-tripped. Public examples omit speech whose publication rights remain unverified; local original stems and complete outputs remain available in delivery records. Human listening and full CapCut equivalence remain open.
 
@@ -258,7 +266,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 |---|---|---|---|---|
 | F01 | Agent command protocol | Task arguments → JSON responses, exit codes, errors, warnings, artifacts and provenance; queryable capabilities and schema. | `version; doctor; capabilities; schema show` | Skills guide the task; the CLI executes it. No hosted Agent service. |
 | F02 | Editable projects | Create/inspect Agent Projects with assets, sequences, tracks, tick clocks, output settings and rights references. | `project init/inspect` | Source media and metadata are separate; relocation requires relinking and evidence-path review. |
-| F03 | Transactions, recovery and snapshots | Metadata transactions/snapshots, native child-tree ownership and explicit recovery of durable four-source workspaces/uncommitted outputs. | `project snapshot/restore/migrate/recover; operation inspect` | Preserves committed assets and active/changed/unknown/legacy files. Owned four-source workspaces only; not a full media backup or inference resume. |
+| F03 | Transactions, recovery and snapshots | Metadata transactions/snapshots, native child-tree ownership and explicit recovery of durable four-source/subtitle-dubbing workspaces and uncommitted outputs. | `project snapshot/restore/migrate/recover; operation inspect` | Preserves committed assets and active/changed/unknown/legacy files. Only integrated four-source/subtitle-dubbing managed workspaces; not a full media backup or inference resume. |
 | F04 | Media ingestion and relinking | Local images/video/audio/fonts → probe results, stable asset IDs, hashes and provenance. | `media ingest/relink` | No online-media fetching; ingestion does not establish commercial rights. |
 | F05 | Proxies, thumbnails and waveforms | Media → lightweight proxies, thumbnails, waveforms and auditable contact sheets. | `media prepare/contact-sheet` | Contact sheets are samples, not exhaustive visual understanding. |
 | F06 | Scene, silence and highlight analysis | Local video/audio → scene, silence, beat or heuristic highlight candidates and timing evidence. | `media understand/highlights` | Heuristic candidates require Agent or registered-adapter review for semantics. |
@@ -299,6 +307,14 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F41 | Project and timeline interchange | Agent JSON/package, OTIO, Kdenlive MLT and lawful local plaintext drafts → import/export and loss reports. | `convert import/export` | Per-feature Exact/Approximate/Unsupported/Failed reports; plaintext drafts neither run Jianying nor decrypt/fetch proprietary resources. |
 | F42 | Pipeline diagnostics and failure artifacts | Failed operations → bounded logs, diagnostic manifests, explicit exports and inspectable errors. | `diagnostics list/show/export; operation inspect` | A failure/refusal is not a successful render; review local-path information before sharing diagnostics. |
 | F43 | Creative, content and campaign guidance | Supplied products, audiences, references or campaign tables → scripts, structure, variant suggestions and analysis. | `ad plan/apply; advisory Skills` | Advisory Skills do not supply ad-platform connectors, automatic buying, live data or performance guarantees. |
+| F44 | Bundled open media library | 359 individually identified BGM/jingles/SFX/Chinese fonts → search, verification, rights records and project assets. | `materials list/inspect/verify/ingest` | 44 BGM, 85 jingles, 228 SFX, 2 fonts; retain individual provenance/licenses; video/sticker/industry coverage remains limited. |
+| F45 | Kokoro Chinese/English voices | Text, 103 named voices and speed → complete WAV, actual duration and editable speech assets. | `voice list/synthesize; model-pack` | Optional CPU/CUDA packs; at least seven distinct voices generated; complete auditions, emotion/dialects and human listening unaccepted. |
+| F46 | Translation and bilingual captions | Text/plain SRT → Chinese-English translation, simplified/traditional conversion, bilingual SRT and explicit post-translation glossary. | `translate text/subtitles` | Existing OPUS models required; cue order/milliseconds retained; awkward translations remain and semantic acceptance is pending. |
+| F47 | GPU voice/translation selection | Explicit CPU/CUDA/auto and free-VRAM checks → actual provider/device and explicit fallback/failure. | `gpu inspect; voice; translate; --device` | RTX 3060 tested; CUDA 13 voice / CUDA 12 translation, voice device 0 only; this does not accelerate all filters. |
+| F48 | Music preparation and mixing | Actual music/speech assets → trim, loop, fades, explicit gain and speech-ducked mix. | `music prepare/mix` | Retains original stems and complete speech; no composition, automatic loop-seam repair or guaranteed visual semantic matching. |
+| F49 | Native capture | Explicit window/desktop/region/camera/microphone → finite recording, CPU/NVENC, cancellation and project assets. | `capture devices/record` | Actual CPU/GPU window evidence; camera/microphone, joint AV sync, device faults and long recording unaccepted. |
+| F50 | Offline visual semantic retrieval | Local media and an explicit model → index, Chinese/English/reference-image queries, real previews/source times and editable references. | `semantic adapter-register/index/search/verify` | Installed negation/open-set failures remain; calibrated candidate has development GPU checks only; actions/identity/audio recommendations/scale remain open. |
+| F51 | Joint subtitle translation/dubbing | Plain Chinese/English SRT and explicit voices/tracks → translations, complete batched WAV, actual fit, editable audio/bilingual captions and atomic application. | `dub subtitles` | Reuses initialization within the batch; retains originals/retries/awkward translations; cue fitting does not establish word timing, naturalness or lip sync. |
 
 ## Supported service modules and dependencies
 
@@ -691,6 +707,8 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R71 | Unified Skill r8/local loading | One entry/17 modules; actual Skill: another 9 CLI calls, both CUDA tasks; separate kit inventory/registration check | [Evidence](docs/validation/evidence/subtitle-dubbing-20261025-r1/skill-r1/verification.json) · [Separate scope](docs/validation/evidence/subtitle-dubbing-20261025-r1/kit-r1/verification.json); 2026-10-25; Same physical host; old kits/public alpha.3 retained |
 | R72 | G01–G38 / current goal review | CLI 0.1.9, 75 declarations; all 38 original closure conditions retained | [Numbered gap assessment](docs/product/GOAL_GAPS_20261025.md) · [Actual entry/API](docs/validation/evidence/goal-gaps-20261025-r10/inventory.json) · [History/link audit](docs/validation/evidence/goal-gaps-20261025-r10/documentation-audit.json); 2026-10-25; review calls counted separately from inference/render; no overall completion percentage |
 | R73 | Current goal and delivery review | Six additional actual read-only Skill calls; 197 source/installed files match; 75 declarations and all 38 unmet conditions retained; current install path, footer version and cumulative voice wording corrected | [Current gaps/closure conditions](docs/product/GOAL_GAPS_20261025.md) · [Actual responses/API](docs/validation/evidence/goal-gaps-20261025-r11/inventory.json) · [History/link audit](docs/validation/evidence/goal-gaps-20261025-r11/documentation-audit.json); 2026-10-25; zero new renders/inference/listening; historical R01–R72 preserved; public remains alpha.3 |
+| R74 | Current complete-goal/delivery assessment | Six additional actual read-only Skill calls; 197 installed files match the committed baseline; working source: 193 equal, 4 modified, 2 added; three-language manuals synchronized to 51 features/20 services and 75 installed fields | [38 gap groups](docs/product/GOAL_GAPS_20261025.md) · [Entry/API/differences](docs/validation/evidence/goal-gaps-20261025-r12/inventory.json) · [Documentation audit](docs/validation/evidence/goal-gaps-20261025-r12/final-documentation-r3/documentation-audit.json); 2026-10-25; this assessment adds zero inference/render/listening; public alpha.3 and historical R01–R73 retained |
+| R75 | Development retrieval candidate, not installed | Prior development receipts copied separately: 48 contract tests; GPU 40 calibration/60 differently worded/20 original plus separate raw queries; both out-of-library false accepts and one original positive false rejection retained | [Results and failures](docs/validation/evidence/goal-gaps-20261025-r12/candidate-progress.json) · [Frozen protocol](docs/validation/evidence/goal-gaps-20261025-r12/candidate-snapshot/protocol.json); 2026-10-25; familiar static assets; not installed/CPU/Skill acceptance, G26 remains open |
 
 ## Current limits and development direction
 

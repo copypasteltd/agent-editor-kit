@@ -1,5 +1,7 @@
 # agent editor kit 文档 / Documentation
 
+当前状态以 [r12 实际入口/API/安装与开发差异](validation/evidence/goal-gaps-20261025-r12/inventory.json)及[完整 G01–G38 编号评估](product/GOAL_GAPS_20261025.md)为准：安装版仍 CLI 0.1.9 / r8；检索候选的真实 GPU 进展与误接受/误拒[单列保留](validation/evidence/goal-gaps-20261025-r12/candidate-progress.json)，未计作安装/Skill 交付。三语功能手册已补齐 51 功能/20 服务和 75 项实际安装字段。Current installed and development evidence remain separate; all original closure conditions apply.
+
 <!-- community-current -->
 
 当前本机已更新到 **CLI 0.1.9 / 字幕翻译配音联合流程 / 独立四轨分离 / GPU 配音与翻译 / 359 项内置资源 / 单一 Skill**。以下原安装/差距记录按其原版本保留。 [新增完整流程](product/COMMUNITY_MATERIALS.md) · [本地离线交付](product/COMMUNITY_LOCAL_DELIVERY.md) · [本轮验收与剩余差距](product/COMMUNITY_ACCEPTANCE.md)

@@ -1,0 +1,316 @@
+{
+  "status": "passed-read-only-installed-review",
+  "checked_at_utc": "2026-10-25T04:16:12.494111+00:00",
+  "baseline_commit": "3576b95e0deba39c6f3e5326117dcbd3ee21a13b",
+  "source_worktree_status": " M product/src/ai_ad_editor/cli.py\n M product/src/ai_ad_editor/semantic.py\n M product/src/ai_ad_editor/semantic_cli.py\n M product/src/ai_ad_editor/semantic_contract.py\n?? product/src/ai_ad_editor/semantic_decision.py\n?? product/src/ai_ad_editor/semantic_queries.py\n",
+  "runtime": {
+    "release": "v0.1.0-alpha.4-local.7",
+    "python": "C:\\Python313\\python.exe",
+    "installed_directory": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.7\\final-r2\\installed",
+    "manifest_sha256": "sha256:0a79580cc12c1ec813404f3838fa2f17dc0c8d4a67678e4b25fba88d870facfe",
+    "launcher_sha256": "322dda3168534b883be4b2d18509624060e4db99afc9f5bde91602c0f638755e",
+    "native_only": true,
+    "community_config": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-runtime.json",
+    "semantic_config": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\semantic-runtime.json"
+  },
+  "installed_cli": "0.1.9",
+  "calls": [
+    {
+      "name": "version",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "version"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 10.511623200000031,
+      "stdout_sha256": "bd4ea95d419453817cc50a264abc0aad4ba9d3f77f8c898a635e72be1143b1b4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "doctor",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "doctor"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 3.334717300000193,
+      "stdout_sha256": "d90ccafa0920d7e02ce5585543dfd692d62d07fe29be5b3285969b38bdf8259f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "capabilities",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "capabilities"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 2.5672440999987884,
+      "stdout_sha256": "d5ad014005ab4192cb3e5e07cc92581330b37cf90a248db542ed69d7b6948292",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "schema-show",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "schema",
+        "show"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 2.2534826999981306,
+      "stdout_sha256": "12ad8eb207c8504ee1564f04ccffc88affd34706ee2a90f481856b280ba55e31",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "gpu-inspect",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "gpu",
+        "inspect"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 2.425022199997329,
+      "stdout_sha256": "1b9c917fd5881392ad222176ce46cc3da9b4dc0653f6df883314ba75e3dd3379",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "model-pack-list",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "model-pack",
+        "list"
+      ],
+      "exit_code": 0,
+      "ok": true,
+      "status": "succeeded",
+      "elapsed_seconds": 2.6714691999950446,
+      "stdout_sha256": "3e254046848c096cdd0e592b98c5bade75e930dd387598c10e4d1ed3b7d67328",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "capability_count": 75,
+  "capability_status_counts": {
+    "implemented_with_limits": 47,
+    "implemented": 20,
+    "degraded": 1,
+    "local_adapter_only": 7
+  },
+  "product_python_files": 197,
+  "source_and_installed_equal": false,
+  "product_source_python_files": 199,
+  "source_comparison_counts": {
+    "equal": 193,
+    "modified": 4,
+    "source_only": 2
+  },
+  "installed_matches_committed_baseline": true,
+  "development_candidate": {
+    "scope": "development source only; not installed or registered Skill delivery",
+    "model": "SigLIP2 base patch16 224",
+    "device": "cuda",
+    "calibration": {
+      "algorithm": "negative-order-statistic-strict-greater-v1",
+      "cutoff": 0.0561935684022833,
+      "requested_false_accept_rate": 0.05,
+      "requested_minimum_correct_coverage": 0.75,
+      "positive_count": 20,
+      "negative_count": 20,
+      "accepted_correct_positives": 20,
+      "correct_positive_coverage": 1.0,
+      "false_accepted_negatives": 1,
+      "observed_false_accept_rate": 0.05,
+      "quality_gate_passed": true,
+      "guarantee": "empirical calibration only; no distribution-free, probability or universal no-match guarantee"
+    },
+    "heldout": {
+      "negation": {
+        "count": 20,
+        "correct": 20,
+        "rate": 1.0
+      },
+      "out_of_library": {
+        "count": 20,
+        "correct": 18,
+        "rate": 0.9
+      },
+      "positive": {
+        "count": 20,
+        "correct": 20,
+        "rate": 1.0
+      }
+    },
+    "heldout_failures": [
+      {
+        "id": "hout00zh",
+        "text": "草原上站立的大象",
+        "group": "out_of_library",
+        "decision": "calibrated_match",
+        "top1_correct": null,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_a7",
+            "sample_seconds": 0.0,
+            "score": 0.08424004
+          },
+          {
+            "asset_id": "asset_k8",
+            "sample_seconds": 0.0,
+            "score": 0.07686527
+          },
+          {
+            "asset_id": "asset_e3",
+            "sample_seconds": 0.0,
+            "score": 0.0627283
+          }
+        ]
+      },
+      {
+        "id": "hout08zh",
+        "text": "靠在墙边的木吉他",
+        "group": "out_of_library",
+        "decision": "calibrated_match",
+        "top1_correct": null,
+        "rejected": false,
+        "hits": [
+          {
+            "asset_id": "asset_j3",
+            "sample_seconds": 0.0,
+            "score": 0.06719471
+          }
+        ]
+      }
+    ],
+    "original_regression": {
+      "negation": {
+        "count": 2,
+        "correct": 2,
+        "rate": 1.0
+      },
+      "out_of_domain": {
+        "count": 2,
+        "correct": 2,
+        "rate": 1.0
+      },
+      "positive": {
+        "count": 16,
+        "correct": 15,
+        "rate": 0.9375
+      }
+    },
+    "original_regression_failures": [
+      {
+        "id": "q14",
+        "text": "带数字和指针的钟表",
+        "group": "positive",
+        "decision": "no_calibrated_match",
+        "top1_correct": false,
+        "rejected": true,
+        "hits": []
+      }
+    ],
+    "raw_original_regression": {
+      "negation": {
+        "count": 2,
+        "correct": 1,
+        "rate": 0.5
+      },
+      "out_of_domain": {
+        "count": 2,
+        "correct": 0,
+        "rate": 0.0
+      },
+      "positive": {
+        "count": 16,
+        "correct": 16,
+        "rate": 1.0
+      }
+    },
+    "tests": {
+      "methods": 48,
+      "skipped": 0,
+      "frozen_equal": true,
+      "kind": "contracts, not model quality"
+    },
+    "protocol_sha256": "74b6c3c38d15284fd9a7814083378f82170cf516161898907bbf901fe997026b",
+    "independent_scope": "query wording only; familiar static assets; no action, identity or audio quality acceptance",
+    "new_inference_in_this_assessment": 0,
+    "copied_files": 10
+  },
+  "registered_skill": "agent-ffmpeg-local-editor",
+  "internal_modules": 17,
+  "kit_sha256": "919abfb74aea317e5f9368879961845e5355ab207d9369781b82a133865e5b80",
+  "gap_groups": 38,
+  "closed_complete_gap_groups": 0,
+  "order_counts": {
+    "先收口": 13,
+    "随后建设": 18,
+    "完整范围扩展": 7
+  },
+  "public_release_check": {
+    "url": "https://api.github.com/repos/copypasteltd/agent-editor-kit/releases?per_page=10",
+    "http_status": 200,
+    "releases": [
+      {
+        "tag_name": "v0.1.0-alpha.3",
+        "draft": false,
+        "prerelease": true,
+        "published_at": "2026-10-24T12:52:48Z",
+        "html_url": "https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3"
+      }
+    ],
+    "error": null,
+    "response_sha256": "85c0c79378e4caf5ae8fd76815ec224ff1c9f3534fda09a08c0933b6f75121c6",
+    "latest_published_tag": "v0.1.0-alpha.3"
+  },
+  "new_model_forwards": 0,
+  "new_renders": 0,
+  "historical_regression_rerun": false,
+  "human_listening": false,
+  "new_competitor_market_audit": false,
+  "overall_completion_percentage": null,
+  "native_windows": true,
+  "virtualization": false,
+  "browser_ui": false,
+  "goal_remains_active": true,
+  "generator_sha256": "ac6ecda6e342444d4ff101b6bff286844898293a6e3336fb625e5a7410c57171"
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "original": "docs/validation/evidence/semantic-decision-20261025-r1/frozen/protocol.json",
+    "copy": "docs/validation/evidence/goal-gaps-20261025-r12/candidate-snapshot/protocol.json",
+    "sha256": "74b6c3c38d15284fd9a7814083378f82170cf516161898907bbf901fe997026b"
+  },
+  {
+    "original": "docs/validation/evidence/semantic-decision-20261025-r1/development-r2/calibrate-cuda/verification.json",
+    "copy": "docs/validation/evidence/goal-gaps-20261025-r12/candidate-snapshot/calibration-verification.json",
+    "sha256": "134f305269d4c6118d1530b998af6d88581124bd09e9c0f7f11a6f05fd2d8f08"
+  },
+  {
+    "original": "docs/validation/evidence/semantic-decision-20261025-r1/development-r2/heldout-cuda/verification.json",
+    "copy": "docs/validation/evidence/goal-gaps-20261025-r12/candidate-snapshot/heldout-verification.json",
+    "sha256": "a00746a756e726605f682151de66edfd5718438903524cccbc116dd5b7db595f"
+  },
+  {
+    "original": "docs/validation/evidence/semantic-decision-20261025-r1/development-r2/regression-cuda/verification.json",
+    "copy": "docs/validation/evidence/goal-gaps-20261025-r12/candidate-snapshot/regression-verification.json",
+    "sha256": "1b76f408cc955d19adc939573ba4763c8f010fe32698aa1e498413e32b6bdac5"
+  },
+  {
+    "original": "docs/validation/evidence/semantic-decision-20261025-r1/tests/development-r2/verification.json",
+    "copy": "docs/validation/evidence/goal-gaps-20261025-r12/candidate-snapshot/tests-verification.json",
+    "sha256": "d743957f827e3254886f96c21c796c172bf5e855ab5581dd586a769f1a52b271"
+  },
+  {
+    "original": "docs/validation/evidence/semantic-decision-20261025-r1/tests/development-r2/tests.log",
+    "copy": "docs/validation/evidence/goal-gaps-20261025-r12/candidate-snapshot/tests.log",
+    "sha256": "2afff9b1f8f63052d732d6a492a4749d07f0735c223a9fd34c7c6234844e4fb0"
+  },
+  {
+    "original": "docs/validation/evidence/semantic-decision-20261025-r1/tests/development-r1/verification.json",
+    "copy": "docs/validation/evidence/goal-gaps-20261025-r12/candidate-snapshot/first-failed-tests-verification.json",
+    "sha256": "d04ca18a9196dacf533dc59a4f6d5084c58f5f16b022853c5099e056591fc7eb"
+  },
+  {
+    "original": "docs/validation/evidence/semantic-decision-20261025-r1/tests/development-r1/tests.log",
+    "copy": "docs/validation/evidence/goal-gaps-20261025-r12/candidate-snapshot/first-failed-tests.log",
+    "sha256": "ec144968071bd43f7fc73a8a803efc641107a901422350453351ef7b0e5d15c3"
+  },
+  {
+    "original": "scripts/run_semantic_decisions_20261025.py",
+    "copy": "docs/validation/evidence/goal-gaps-20261025-r12/candidate-snapshot/executed-model-runner.py",
+    "sha256": "a568757f2b430fb578f73c0a5966e6a4c9a72104a8f7f43e9f4e832f2ffdf52b"
+  },
+  {
+    "original": "docs/validation/evidence/semantic-decision-20261025-r1/frozen/executed-freezer.py",
+    "copy": "docs/validation/evidence/goal-gaps-20261025-r12/candidate-snapshot/executed-freezer.py",
+    "sha256": "97f19bf5d164d4bcb790dad072c428be2167da212f02c79f3422b68e1e34029c"
+  }
+]

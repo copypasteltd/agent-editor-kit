@@ -12,13 +12,13 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 
 <!-- /community-current -->
 
-[README](../../README.en.md) · [Machine response](capabilities.json) · [Module data](module-catalog.json)
+[README](../../README.en.md) · [Machine response](subtitle-dubbing-capabilities-cli-0.1.9.json) · [Module data](module-catalog.json)
 
 | ID | Module | Behavior and input → output | Entry | Dependency/limit |
 |---|---|---|---|---|
 | F01 | Agent command protocol | Task arguments → JSON responses, exit codes, errors, warnings, artifacts and provenance; queryable capabilities and schema. | `version; doctor; capabilities; schema show` | Skills guide the task; the CLI executes it. No hosted Agent service. |
 | F02 | Editable projects | Create/inspect Agent Projects with assets, sequences, tracks, tick clocks, output settings and rights references. | `project init/inspect` | Source media and metadata are separate; relocation requires relinking and evidence-path review. |
-| F03 | Transactions, recovery and snapshots | Metadata transactions/snapshots, native child-tree ownership and explicit recovery of durable four-source workspaces/uncommitted outputs. | `project snapshot/restore/migrate/recover; operation inspect` | Preserves committed assets and active/changed/unknown/legacy files. Owned four-source workspaces only; not a full media backup or inference resume. |
+| F03 | Transactions, recovery and snapshots | Metadata transactions/snapshots, native child-tree ownership and explicit recovery of durable four-source/subtitle-dubbing workspaces and uncommitted outputs. | `project snapshot/restore/migrate/recover; operation inspect` | Preserves committed assets and active/changed/unknown/legacy files. Only integrated four-source/subtitle-dubbing managed workspaces; not a full media backup or inference resume. |
 | F04 | Media ingestion and relinking | Local images/video/audio/fonts → probe results, stable asset IDs, hashes and provenance. | `media ingest/relink` | No online-media fetching; ingestion does not establish commercial rights. |
 | F05 | Proxies, thumbnails and waveforms | Media → lightweight proxies, thumbnails, waveforms and auditable contact sheets. | `media prepare/contact-sheet` | Contact sheets are samples, not exhaustive visual understanding. |
 | F06 | Scene, silence and highlight analysis | Local video/audio → scene, silence, beat or heuristic highlight candidates and timing evidence. | `media understand/highlights` | Heuristic candidates require Agent or registered-adapter review for semantics. |
@@ -43,7 +43,7 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 | F25 | Offline transcription and alignment | Audio + existing Whisper/CTC weights/corrected text → transcripts, captions, word/character timings and CER evaluation. | `asr adapter; subtitle transcribe/align/evaluate` | Weights remain separate; activity preserves raw CTC and passes six controlled word-block cases. Natural continuous speech, Chinese and lyrics remain unaccepted. [Workflow](CTC_ACTIVITY_ALIGNMENT.md) |
 | F26 | Multitrack audio and buses | Explicit audio tracks → mixing/buses, volume/pan, mute/solo, fades, EQ, compression, denoise, loudness and ducking. | `audio extract; timeline compose; quality check` | A video containing sound does not automatically author an audio track; PCM/LUFS checks do not replace listening. |
 | F27 | Local speech synthesis | Existing flite or registered SoulX weights/authorized voice references → WAV assets and optional audio tracks. | `tts adapter/voice; tts synthesize` | flite depends on the FFmpeg build and is ASCII-English only; SoulX needs CUDA/native dependencies, not bundled voices. |
-| F28 | Independent four-source and two-source separation | drums/bass/other/vocals → four float WAV assets and editable tracks; existing vocal/residual or mid/side retained. | `audio separate-stems; audio separate; audio adapter` | Native Torch/weights supplied separately; actual CPU/GPU tested; natural quality/listening/model rights open. |
+| F28 | Four-source and two-source separation | Audio → independent drums/bass/other/vocals estimates, float WAV assets and editable tracks; existing two-source and mid/side retained. | `audio separate-stems; audio separate; audio adapter` | Native runtime/weights supplied separately; controlled CPU/GPU tested; natural quality, listening and model rights open. |
 | F29 | Tracking, binding and reframing | Template/model/encoded-mask tracks → anchored text/stickers, crop and subject-reframe keyframes. | `media track/track-bind/reframe` | Choose the object explicitly; confidence/masks do not guarantee identity, and supported transforms/clocks must be checked. |
 | F30 | OCR anchors and face retouch | Existing PP-OCR/OpenSeeFace models → text polygons, anchor camera keys, landmarks and bounded retouch. | `ocr adapter/scan/anchors; face adapter/scan/retouch` | Existing ONNX CPU runtime and weights; not full UI action detection, makeup, body sculpting or face generation. |
 | F31 | Human matting and object segmentation | Existing RVM/SAM2 + points/boxes → alpha video, object masks and editable derived assets. | `media adapter; media matting` | RVM human matting and SAM2 segmentation differ; probability masks are not physical hair mattes and require motion/occlusion review. |
@@ -59,6 +59,14 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 | F41 | Project and timeline interchange | Agent JSON/package, OTIO, Kdenlive MLT and lawful local plaintext drafts → import/export and loss reports. | `convert import/export` | Per-feature Exact/Approximate/Unsupported/Failed reports; plaintext drafts neither run Jianying nor decrypt/fetch proprietary resources. |
 | F42 | Pipeline diagnostics and failure artifacts | Failed operations → bounded logs, diagnostic manifests, explicit exports and inspectable errors. | `diagnostics list/show/export; operation inspect` | A failure/refusal is not a successful render; review local-path information before sharing diagnostics. |
 | F43 | Creative, content and campaign guidance | Supplied products, audiences, references or campaign tables → scripts, structure, variant suggestions and analysis. | `ad plan/apply; advisory Skills` | Advisory Skills do not supply ad-platform connectors, automatic buying, live data or performance guarantees. |
+| F44 | Bundled open media library | 359 individually identified BGM/jingles/SFX/Chinese fonts → search, verification, rights records and project assets. | `materials list/inspect/verify/ingest` | 44 BGM, 85 jingles, 228 SFX, 2 fonts; retain individual provenance/licenses; video/sticker/industry coverage remains limited. |
+| F45 | Kokoro Chinese/English voices | Text, 103 named voices and speed → complete WAV, actual duration and editable speech assets. | `voice list/synthesize; model-pack` | Optional CPU/CUDA packs; at least seven distinct voices generated; complete auditions, emotion/dialects and human listening unaccepted. |
+| F46 | Translation and bilingual captions | Text/plain SRT → Chinese-English translation, simplified/traditional conversion, bilingual SRT and explicit post-translation glossary. | `translate text/subtitles` | Existing OPUS models required; cue order/milliseconds retained; awkward translations remain and semantic acceptance is pending. |
+| F47 | GPU voice/translation selection | Explicit CPU/CUDA/auto and free-VRAM checks → actual provider/device and explicit fallback/failure. | `gpu inspect; voice; translate; --device` | RTX 3060 tested; CUDA 13 voice / CUDA 12 translation, voice device 0 only; this does not accelerate all filters. |
+| F48 | Music preparation and mixing | Actual music/speech assets → trim, loop, fades, explicit gain and speech-ducked mix. | `music prepare/mix` | Retains original stems and complete speech; no composition, automatic loop-seam repair or guaranteed visual semantic matching. |
+| F49 | Native capture | Explicit window/desktop/region/camera/microphone → finite recording, CPU/NVENC, cancellation and project assets. | `capture devices/record` | Actual CPU/GPU window evidence; camera/microphone, joint AV sync, device faults and long recording unaccepted. |
+| F50 | Offline visual semantic retrieval | Local media and an explicit model → index, Chinese/English/reference-image queries, real previews/source times and editable references. | `semantic adapter-register/index/search/verify` | Installed negation/open-set failures remain; calibrated candidate has development GPU checks only; actions/identity/audio recommendations/scale remain open. |
+| F51 | Joint subtitle translation/dubbing | Plain Chinese/English SRT and explicit voices/tracks → translations, complete batched WAV, actual fit, editable audio/bilingual captions and atomic application. | `dub subtitles` | Reuses initialization within the batch; retains originals/retries/awkward translations; cue fitting does not establish word timing, naturalness or lip sync. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -78,10 +86,219 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 | S14 | Local speech/translation | Native model workers | Four optional pinned CPU/CUDA packs; 103 voice mappings and OPUS text/subtitles | `voice / translate / model-pack` | At least seven distinct voices have real outputs; complete 103-voice auditions and human acceptance remain open |
 | S15 | BGM preparation and mixing | Native FFmpeg audio | Explicit trim/loop/fades, independent voice/music stems and ducking | `music prepare/mix` | No composition, voice truncation or seam-repair promise |
 | S16 | GPU compatibility | Native NVIDIA libraries | `auto/cpu/cuda`, free-VRAM check, explicit provider/fallback | `gpu inspect; --device` | RTX 3060 tested; optional NVIDIA/Intel terms preserved |
+| S17 | Native Windows capture | FFmpeg gdigrab / DirectShow | Explicit source/device IDs, finite duration, full decode and asset registration | `capture devices/record` | Actual CPU/GPU window test; camera/microphone/AV sync pending |
+| S18 | Visual semantic retrieval | Explicit native SigLIP2 worker | Existing Torch/Transformers/model; actual GPU/CPU and source/preview/vector integrity | `semantic adapter-register/index/search/verify` | Cold-start and large-library performance open; cosine is not probability |
+| S19 | Independent four-source separation | Native Torch/TorchAudio HDemucs worker | Explicit native Python, weights/evidence/implementation hashes; auto/cpu/cuda, four float WAV/tracks | `audio adapter; audio separate-stems` | Torch/weights excluded from base ZIP; natural listening and weight licensing remain open |
+| S20 | Joint subtitle dubbing | Existing native OPUS/Kokoro workers + managed project transaction | Plain SRT, explicit languages/voices/tracks, CPU/CUDA/auto, batch reuse | `dub subtitles` | [Workflow](SUBTITLE_DUBBING.md); complete utterances/retries retained; words/lip sync/natural quality open |
 
 ## Complete installed capability fields
 
 Below are every capability’s fields/status/commands/limits/budgets read from the installed release. They are contracts rather than newly rerun acceptance for every feature. local_adapter_only needs existing models; implemented_with_limits requires its limits to be read.
+
+### `visual_semantic_retrieval`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "engine": "transformers-siglip-local-v1",
+  "protocol": "agent-semantic-embedding-v1",
+  "index_format": "agent-visual-semantic-index-v1",
+  "commands": [
+    "semantic adapter-register/adapter-list/adapter-inspect",
+    "semantic index/index-list/verify/search"
+  ],
+  "input_kinds": [
+    "project_image",
+    "project_video",
+    "text_query",
+    "local_reference_image"
+  ],
+  "devices": [
+    "auto",
+    "cpu",
+    "cuda"
+  ],
+  "dimension": 768,
+  "text_token_limit": 64,
+  "silent_truncation": false,
+  "maximum_assets": 512,
+  "maximum_rows": 4096,
+  "maximum_queries": 128,
+  "maximum_batch_size": 32,
+  "score": "cosine_similarity_not_probability",
+  "source_clock": "original_native_PTS_relative_to_container_origin",
+  "integrity": [
+    "model",
+    "selected_native_runtime_components",
+    "product_implementation",
+    "source_media",
+    "preview",
+    "vectors",
+    "manifest"
+  ],
+  "limits": [
+    "requires_existing_registered_native_Python_Torch_Transformers_Pillow_and_local_SigLIP_safetensors",
+    "fixed_768_dimension_224px_64token_base_profile_only",
+    "sampled_frames_do_not_prove_actions_or_identity",
+    "model_reuse_within_current_batch_only",
+    "no_open_set_abstention_or_calibrated_probability",
+    "no_audio_embeddings_or_music_recommendation",
+    "no_implicit_download_or_remote_code",
+    "relocated_or_changed_adapter_requires_explicit_registration_and_index_rebuild",
+    "OS_DLL_closure_long_library_performance_and_broad_advertising_quality_unaccepted"
+  ]
+}
+```
+
+### `native_capture`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "engine": "ffmpeg-windows-capture-v1",
+  "commands": [
+    "capture.devices",
+    "capture.record"
+  ],
+  "sources": [
+    "explicit_window_title",
+    "desktop_or_region",
+    "explicit_dshow_camera",
+    "explicit_dshow_microphone"
+  ],
+  "features": [
+    "bounded_native_windows_recording",
+    "stable_current_device_ids",
+    "optional_explicit_audio_input",
+    "cpu_or_nvenc_video_encoding",
+    "auto_records_cpu_fallback",
+    "cancellation_and_preserved_diagnostics",
+    "complete_output_decode_before_asset_registration",
+    "local_source_evidence"
+  ],
+  "limits": [
+    "windows_gdigrab_and_dshow_build_required",
+    "no_implicit_microphone_or_camera",
+    "device_modes_and_permissions_must_be_available",
+    "av_sync_and_natural_recording_need_review",
+    "not_a_capture_of_all_windows_or_a_background_monitor",
+    "capture_does_not_grant_content_rights"
+  ]
+}
+```
+
+### `community_materials`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "catalog_version": "1.0.0",
+  "commands": [
+    "materials.list",
+    "materials.inspect",
+    "materials.verify",
+    "materials.ingest"
+  ],
+  "counts": {
+    "music": 44,
+    "jingle": 85,
+    "sfx": 228,
+    "font": 2
+  },
+  "features": [
+    "bundled_real_audio_and_fonts",
+    "stable_ids_and_three_language_search",
+    "source_archive_and_individual_file_hashes",
+    "copied_local_rights_and_attribution_evidence",
+    "explicit_optional_audio_track_apply"
+  ],
+  "limits": [
+    "source_licenses_remain_separate_from_product_code",
+    "attribution_and_font_redistribution_conditions_survive_import",
+    "not_a_commercial_stock_subscription_or_unlimited_music_catalog"
+  ]
+}
+```
+
+### `community_voice_translation`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "provider": "native_windows_cpu_or_explicit_cuda",
+  "commands": [
+    "model-pack.list",
+    "model-pack.verify",
+    "voice.list",
+    "voice.synthesize",
+    "translate.text",
+    "translate.subtitles",
+    "gpu.inspect"
+  ],
+  "voices": 103,
+  "voice_engine": "kokoro-sherpa-cpu-v1",
+  "translation_engine": "opus-ctranslate2-ruy-cpu-v1",
+  "device_selection": [
+    "auto",
+    "cpu",
+    "cuda"
+  ],
+  "gpu_packs": [
+    "kokoro-zh-en-cuda13",
+    "opus-zh-en-cuda12-int8"
+  ],
+  "features": [
+    "hash_pinned_optional_local_model_packs",
+    "isolated_cpython313_without_site_startup",
+    "chinese_english_named_voice_and_speed",
+    "natural_duration_24k_mono_wav",
+    "chinese_english_bidirectional_translation",
+    "explicit_simplified_traditional_conversion",
+    "srt_cue_order_and_millisecond_timing_preservation",
+    "bilingual_subtitles",
+    "explicit_glossary_post_edits_or_refusal"
+  ],
+  "limits": [
+    "weights_not_in_base_package",
+    "no_runtime_downloads",
+    "cpython313_windows_x64_packs",
+    "no_voice_cloning",
+    "no_asr_or_precise_word_alignment_added",
+    "translation_not_a_semantic_accuracy_guarantee",
+    "subtitle_style_flattened_to_srt",
+    "glossary_is_not_constrained_decoding",
+    "output_and_text_rights_need_review"
+  ]
+}
+```
+
+### `community_music`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "engine": "community-audio-ffmpeg-v1",
+  "commands": [
+    "music.prepare",
+    "music.mix"
+  ],
+  "features": [
+    "explicit_source_asset_and_rights_parents",
+    "trim_and_opt_in_loop",
+    "gain_and_fade_in_out",
+    "speech_music_sidechain_ducking",
+    "preserved_original_stems",
+    "exact_requested_48k_stereo_pcm_sample_count",
+    "sample_peak_and_rms_metrics"
+  ],
+  "limits": [
+    "looping_does_not_repair_seams",
+    "not_music_generation_or_composition",
+    "not_human_listening_or_true_peak_loudness_acceptance",
+    "no_silent_voice_truncation_or_source_overwrite"
+  ]
+}
+```
 
 ### `timeline_native_float_keyer`
 
@@ -1935,8 +2152,32 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "validation_metadata",
     "exports_metadata"
   ],
+  "owned_job_recovery": {
+    "command": "project recover --cleanup-jobs",
+    "format": "agent-owned-job-workspace-v1",
+    "features": [
+      "dry_run",
+      "native_owner_lease",
+      "four_stem_transaction_scoped_workspaces",
+      "durable_publication_intent",
+      "exclusive_same_volume_publish",
+      "filesystem_identity_and_hash_check",
+      "rollback_before_unreferenced_output_cleanup",
+      "referenced_and_modified_outputs_preserved",
+      "native_windows_suspended_child_job_assignment_before_application_code",
+      "owned_descendants_end_on_owner_exit"
+    ],
+    "limits": [
+      "managed_workspaces_currently_four_stem_only",
+      "historical_unmanaged_cache_preserved",
+      "up_to_256_jobs_and_10000_entries_per_workspace",
+      "cooperating_local_filesystem_not_hostile_OS_sandbox",
+      "job_object_assignment_failure_is_strict_no_unsupervised_fallback",
+      "power_loss_and_disk_exhaustion_not_full_acceptance"
+    ]
+  },
   "limits": [
-    "media_and_render_side_effect_files_are_reported_but_not_copied_or_deleted_by_recovery",
+    "default_recovery_is_metadata_only;_unmanaged_media_render_and_cache_side_effects_remain_preserved",
     "direct_external_json_editors_do_not_join_cli_lock_or_transaction",
     "cross_version_snapshot_migration_is_limited_to_known_legacy_shapes"
   ]
@@ -3082,6 +3323,47 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
 }
 ```
 
+### `four_stem_separation`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "engine": "torchaudio-hdemucs-four-stem-local-v1",
+  "commands": [
+    "audio adapter register/list/inspect",
+    "audio separate-stems"
+  ],
+  "features": [
+    "four_independent_neural_estimates",
+    "drums_bass_other_vocals",
+    "shared_source_normalization_and_overlap_add",
+    "raw_sum_error_diagnostics",
+    "stereo_float_wav",
+    "four_editable_audio_tracks",
+    "source_and_model_rights_dependencies",
+    "auto_cpu_cuda",
+    "explicit_gpu_index",
+    "finite_total_timeout",
+    "cancel_and_failure_cleanup",
+    "command_scoped_artifact_locks",
+    "no_implicit_downloads"
+  ],
+  "limits": [
+    "explicit_existing_compatible_checkpoint_and_native_torch_torchaudio_required",
+    "model_is_stereo_44100_hdemucs_high_with_four_fixed_sources",
+    "single_job_max_1800_seconds",
+    "segment_1_to_20_seconds_overlap_0_to_0_75",
+    "auto_falls_back_only_at_gpu_preflight",
+    "no_runtime_oom_or_model_failure_fallback",
+    "raw_estimate_sum_is_not_projected_to_mixture",
+    "no_independent_normalization_or_limiter_float_peaks_may_exceed_one",
+    "editing_preserves_original_tracks_review_duplicate_mix_before_render",
+    "natural_leakage_artifacts_listening_and_checkpoint_license_acceptance_remain_open",
+    "runtime_versions_recorded_but_complete_os_and_python_dependency_closure_not_bundled"
+  ]
+}
+```
+
 ### `render`
 
 ```json
@@ -3595,6 +3877,11 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "asr.adapter.inspect",
     "subtitle.align"
   ],
+  "boundary_modes": [
+    "ctc",
+    "activity"
+  ],
+  "activity_algorithm": "ctc-guided-activity-v3",
   "features": [
     "native_offline_wav2vec2_ctc_safetensors",
     "explicit_corrected_text_or_srt_windows",
@@ -3606,11 +3893,18 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "character_and_word_highlight_track_apply",
     "source_transcript_model_rights_closure",
     "command_scoped_native_read_locks",
-    "idempotency_cancel_timeout_and_transaction_rollback"
+    "idempotency_cancel_timeout_and_transaction_rollback",
+    "explicit_pcm_conditioned_isolated_word_activity",
+    "raw_character_and_word_timing_preserved",
+    "controller_recomputes_activity_from_hash_bound_pcm",
+    "ambiguous_continuous_activity_preserves_ctc"
   ],
   "limits": [
     "1800_seconds_16384_codepoints_8192_tokens",
     "512_mib_emissions_64_million_traceback_cells_excludes_total_process_and_model_memory",
+    "activity_requires_explicit_whitespace_granularity",
+    "activity_is_not_phonetic_truth_or_continuous_internal_word_alignment",
+    "noise_music_and_wrong_transcripts_require_review",
     "oov_or_script_conversion_requires_explicit_user_corrected_text",
     "posterior_is_not_calibrated_accuracy",
     "wrong_transcripts_can_be_forced_into_audio",
@@ -3712,6 +4006,46 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
 }
 ```
 
+### `subtitle_dubbing`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "agent-subtitle-dubbing-v1",
+  "commands": [
+    "dub.subtitles"
+  ],
+  "features": [
+    "strict_srt_source_order_and_millisecond_clocks",
+    "english_chinese_translation",
+    "one_kokoro_initialization_per_batch",
+    "explicit_per_cue_voice_map",
+    "cpu_cuda_auto_per_task",
+    "whole_utterance_bounded_speed_regeneration",
+    "independent_actual_wav_sample_fit_checks",
+    "original_and_retry_audio_retained",
+    "editable_audio_and_bilingual_subtitle_clips",
+    "single_project_transaction",
+    "owned_crash_recovery",
+    "overflow_evidence_and_explicit_cleanup",
+    "source_translation_model_and_voice_rights_dependencies",
+    "total_timeout_cancel_and_dry_run"
+  ],
+  "limits": [
+    "existing_native_pinned_model_packs_required_no_downloads",
+    "plain_utf8_srt_1mib_1000_cues",
+    "english_chinese_only_3000_characters_and_300_seconds_per_cue",
+    "kokoro_cuda_device_zero_only",
+    "max_three_complete_generations_and_speed_two",
+    "explicit_overlap_mix_and_track_admission",
+    "millisecond_divisible_project_timebase_required",
+    "cue_timing_not_phonetic_alignment_or_lip_sync",
+    "source_translation_voice_rights_and_natural_quality_require_review",
+    "full_g19_and_capcut_parity_unaccepted"
+  ]
+}
+```
+
 ### `policy`
 
 ```json
@@ -3730,7 +4064,6 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
   ]
 }
 ```
-
 
 ## CLI 0.1.5 / F50 / S18 / K08: visual semantic retrieval
 

@@ -68,3 +68,6 @@ The measured warm-generation improvement excludes hashing, process startup and m
 完整产品的现状与 G01–G38 收口条件见 [2026-10-25 目标差距评估](GOAL_GAPS_20261025.md)。本页仍仅记录素材与 GPU 扩展的阶段性验收。
 
 CLI 0.1.9 另有[字幕翻译配音联合流程](SUBTITLE_DUBBING.md)与[独立本批实测](../validation/字幕翻译配音联合流程实测_2026-10-25.md)。上表 M02/R33 的三音色仍是 CLI 0.1.3 当时范围；新增四个不同音色真实生成后，当前至少 7/103 有 WAV，全部人类听审仍未完成。新流程不改写本页历史调用数或质量失败。
+
+
+2026-10-25 CLI 0.1.11 / local.9：新增[语义工程包迁移](SEMANTIC_PROJECT_PACKAGE.md)与[真实核验](../validation/语义工程包迁移实测_2026-10-25.md)。同机 CPU/CUDA/Skill 各 80 决策在原路径不可用后保留；原三条错误及旧 C19 失败不改写。原生依赖继续外部固定，全部 G01–G38 原条件保持，完整目标继续进行。

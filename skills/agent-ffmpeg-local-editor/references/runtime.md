@@ -1,6 +1,6 @@
 # Installed-release runtime contract
 
-This namespace calls the locally installed `v0.1.0-alpha.4-local.8` / CLI 0.1.10
+This namespace calls the locally installed `v0.1.0-alpha.4-local.9` / CLI 0.1.11
 package using this Skill's `scripts/run.ps1`. Its 17 modules share the launcher.
 The editable Skill source stays on E:; Codex reads
 Windows directory junctions. `local/agent-ffmpeg/runtime.json` selects the native Python and installed path.
@@ -78,6 +78,9 @@ for explicit per-project adapter registration, not automatic model execution.
 The base application does not include Torch or SigLIP2 weights. Report missing
 paths; do not download dependencies or fall back to source. CUDA/CPU choices,
 native runtime hashes and actual inference attempts are recorded by the product.
+For project-package migration, read [semantic-package.md](semantic-package.md).
+The semantic asset tree and calibration bindings are portable project data;
+external model/runtime pins still require verification when a query executes.
 
 ## Four-source audio separation
 

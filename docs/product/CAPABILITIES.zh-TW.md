@@ -2,17 +2,17 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.10 / alpha.4-local.8。** One registered Skill / 17 modules;
+**Current local / 当前本机 / 目前本機：CLI 0.1.11 / alpha.4-local.9。** One registered Skill / 17 modules;
 joint subtitle translation/dubbing, CTC activity boundaries, managed job recovery, independent four-source
 separation, offline image/text retrieval, GPU speech/translation and 359 resources. Public alpha.3 remains CLI 0.1.2.
-[Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](semantic-decision-capabilities-cli-0.1.10.json) ·
+[Semantic package workflow](SEMANTIC_PROJECT_PACKAGE.md) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](semantic-package-capabilities-cli-0.1.11.json) ·
 [Subtitle dubbing workflow](SUBTITLE_DUBBING.md) · [CTC limits](CTC_ACTIVITY_ALIGNMENT.md) ·
 [All 38 remaining gap groups](GOAL_GAPS_20261025.md).
 Cue-window fit does not establish semantics, natural listening, word precision or lip sync.
 
 <!-- /community-current -->
 
-[README](../../README.zh-TW.md) · [Machine response](semantic-decision-capabilities-cli-0.1.10.json) · [Module data](module-catalog.json)
+[README](../../README.zh-TW.md) · [Machine response](semantic-package-capabilities-cli-0.1.11.json) · [Module data](module-catalog.json)
 
 | 編號 | 功能模塊 | 具體行為與輸入 → 輸出 | 入口 | 依賴/邊界 |
 |---|---|---|---|---|
@@ -65,7 +65,7 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 | F47 | GPU 配音與翻譯選擇 | 明確 CPU/CUDA/auto 和視訊記憶體預檢 → 實際 provider、裝置與明確回退/失敗。 | `gpu inspect; voice; translate; --device` | RTX 3060 實測；配音 CUDA 13 / 翻譯 CUDA 12、配音目前僅裝置 0，其餘濾鏡不因此 GPU 化。 |
 | F48 | 配樂準備與聲音混合 | 實際音樂/人聲資產 → 擷取、迴圈、淡入淡出、明確增益與人聲閃避混音。 | `music prepare/mix` | 保留原分軌，不靜默裁人聲；不作曲、不自動修復迴圈接縫或保證畫面語義匹配。 |
 | F49 | 原生擷取 | 明確視窗/螢幕/區域/攝影機/麥克風 → 有限錄製、CPU/NVENC、取消與專案資產登記。 | `capture devices/record` | 真實視窗 CPU/GPU 已驗；攝影機/麥克風、聯合音畫同步、裝置故障與長錄製未驗。 |
-| F50 | 離線圖文語義檢索與條件選擇 | 本地索引、中英/參考圖、同影格正負條件、經驗校準檔案、實際預覽/來源時間及可編輯引用。 | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | CPU/GPU/Skill 已驗，仍有兩條誤選、一條誤拒及新工程遷移錯誤；非通用拒識/動作/身分/音訊推薦。 |
+| F50 | 離線圖文語義檢索與條件選擇 | 本地索引、中英/參考圖、同影格正負條件、經驗校準檔案、實際預覽/來源時間及可編輯引用。 | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | 專案包按需衍生路徑繫結；同機 80 條遷移決策保留，仍有 3 條已知錯誤；執行環境另備，G26/G31 開放 |
 | F51 | 字幕翻譯配音聯合流程 | 普通中英 SRT、明確音色/軌道 → 譯文、完整批次 WAV、實際時窗、可編輯聲音/雙語字幕與原子提交。 | `dub subtitles` | 批內復用初始化；保留原聲/重試/錯譯；cue 時窗不證明精確字詞、自然韻律或口型同步。 |
 
 | 編號 | 服務模塊 | 運行形式 | 需要什么/提供什么 | 入口 | 範圍 |
@@ -168,6 +168,14 @@ Cue-window fit does not establish semantics, natural listening, word precision o
     "vectors",
     "manifest"
   ],
+  "project_package": {
+    "owned_directories_preserved": true,
+    "external_source_uri_rebinding": "verified_derived_metadata_only",
+    "vectors_samples_calibration_fit_dataset_device_and_adapter_pins": "unchanged",
+    "import_validation": "semantic_inner_bindings_before_staged_publication",
+    "native_runtime_bundled": false,
+    "inference_during_conversion": false
+  },
   "limits": [
     "requires_existing_registered_native_Python_Torch_Transformers_Pillow_and_local_SigLIP_safetensors",
     "fixed_768_dimension_224px_64token_base_profile_only",
@@ -180,6 +188,7 @@ Cue-window fit does not establish semantics, natural listening, word precision o
     "no_audio_embeddings_or_music_recommendation",
     "no_implicit_download_or_remote_code",
     "relocated_or_changed_adapter_requires_explicit_registration_and_index_rebuild",
+    "legacy_flattened_semantic_packages_require_reexport_from_intact_source_project",
     "OS_DLL_closure_long_library_performance_and_broad_advertising_quality_unaccepted"
   ]
 }
@@ -3616,6 +3625,14 @@ Cue-window fit does not establish semantics, natural listening, word precision o
     "kdenlive-xml",
     "jianying-draft-json"
   ],
+  "package_semantic_data": {
+    "owned_namespace_preserved": true,
+    "external_uri_only_derived_rebinding": true,
+    "import_staged_before_publication": true,
+    "inner_index_profile_dataset_vector_source_preview_and_rights_hash_checks": true,
+    "external_native_runtime_bundled_or_retrusted": false,
+    "legacy_flattened_semantic_package_repair": false
+  },
   "features": [
     "agent_json_exact_roundtrip",
     "portable_agent_project_package",

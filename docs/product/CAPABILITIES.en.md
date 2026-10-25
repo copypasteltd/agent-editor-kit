@@ -2,17 +2,17 @@
 
 <!-- community-current -->
 
-**Current local / 当前本机 / 目前本機：CLI 0.1.10 / alpha.4-local.8。** One registered Skill / 17 modules;
+**Current local / 当前本机 / 目前本機：CLI 0.1.11 / alpha.4-local.9。** One registered Skill / 17 modules;
 joint subtitle translation/dubbing, CTC activity boundaries, managed job recovery, independent four-source
 separation, offline image/text retrieval, GPU speech/translation and 359 resources. Public alpha.3 remains CLI 0.1.2.
-[Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](semantic-decision-capabilities-cli-0.1.10.json) ·
+[Semantic package workflow](SEMANTIC_PROJECT_PACKAGE.md) · [Current delivery](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](semantic-package-capabilities-cli-0.1.11.json) ·
 [Subtitle dubbing workflow](SUBTITLE_DUBBING.md) · [CTC limits](CTC_ACTIVITY_ALIGNMENT.md) ·
 [All 38 remaining gap groups](GOAL_GAPS_20261025.md).
 Cue-window fit does not establish semantics, natural listening, word precision or lip sync.
 
 <!-- /community-current -->
 
-[README](../../README.en.md) · [Machine response](semantic-decision-capabilities-cli-0.1.10.json) · [Module data](module-catalog.json)
+[README](../../README.en.md) · [Machine response](semantic-package-capabilities-cli-0.1.11.json) · [Module data](module-catalog.json)
 
 | ID | Module | Behavior and input → output | Entry | Dependency/limit |
 |---|---|---|---|---|
@@ -65,7 +65,7 @@ Cue-window fit does not establish semantics, natural listening, word precision o
 | F47 | GPU voice/translation selection | Explicit CPU/CUDA/auto and free-VRAM checks → actual provider/device and explicit fallback/failure. | `gpu inspect; voice; translate; --device` | RTX 3060 tested; CUDA 13 voice / CUDA 12 translation, voice device 0 only; this does not accelerate all filters. |
 | F48 | Music preparation and mixing | Actual music/speech assets → trim, loop, fades, explicit gain and speech-ducked mix. | `music prepare/mix` | Retains original stems and complete speech; no composition, automatic loop-seam repair or guaranteed visual semantic matching. |
 | F49 | Native capture | Explicit window/desktop/region/camera/microphone → finite recording, CPU/NVENC, cancellation and project assets. | `capture devices/record` | Actual CPU/GPU window evidence; camera/microphone, joint AV sync, device faults and long recording unaccepted. |
-| F50 | Offline visual semantic retrieval and conditions | Local index, Chinese/English/reference images, same-frame positive/negative clauses, empirical profiles, actual previews/source times and editable references. | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | Installed CPU/CUDA/Skill checked; two false accepts, one false rejection and a new migration error remain; no universal rejection/action/identity/audio recommendation claim. |
+| F50 | Offline visual semantic retrieval and conditions | Local index, Chinese/English/reference images, same-frame positive/negative clauses, empirical profiles, actual previews/source times and editable references. | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | URI-only portable semantic package; all 80 decisions retained with 3 known errors; same-host runtime pins remain external; G26/G31 open |
 | F51 | Joint subtitle translation/dubbing | Plain Chinese/English SRT and explicit voices/tracks → translations, complete batched WAV, actual fit, editable audio/bilingual captions and atomic application. | `dub subtitles` | Reuses initialization within the batch; retains originals/retries/awkward translations; cue fitting does not establish word timing, naturalness or lip sync. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
@@ -168,6 +168,14 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "vectors",
     "manifest"
   ],
+  "project_package": {
+    "owned_directories_preserved": true,
+    "external_source_uri_rebinding": "verified_derived_metadata_only",
+    "vectors_samples_calibration_fit_dataset_device_and_adapter_pins": "unchanged",
+    "import_validation": "semantic_inner_bindings_before_staged_publication",
+    "native_runtime_bundled": false,
+    "inference_during_conversion": false
+  },
   "limits": [
     "requires_existing_registered_native_Python_Torch_Transformers_Pillow_and_local_SigLIP_safetensors",
     "fixed_768_dimension_224px_64token_base_profile_only",
@@ -180,6 +188,7 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "no_audio_embeddings_or_music_recommendation",
     "no_implicit_download_or_remote_code",
     "relocated_or_changed_adapter_requires_explicit_registration_and_index_rebuild",
+    "legacy_flattened_semantic_packages_require_reexport_from_intact_source_project",
     "OS_DLL_closure_long_library_performance_and_broad_advertising_quality_unaccepted"
   ]
 }
@@ -3616,6 +3625,14 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "kdenlive-xml",
     "jianying-draft-json"
   ],
+  "package_semantic_data": {
+    "owned_namespace_preserved": true,
+    "external_uri_only_derived_rebinding": true,
+    "import_staged_before_publication": true,
+    "inner_index_profile_dataset_vector_source_preview_and_rights_hash_checks": true,
+    "external_native_runtime_bundled_or_retrusted": false,
+    "legacy_flattened_semantic_package_repair": false
+  },
   "features": [
     "agent_json_exact_roundtrip",
     "portable_agent_project_package",

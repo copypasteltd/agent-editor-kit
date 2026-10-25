@@ -5,6 +5,7 @@ import shutil
 import xml.etree.ElementTree as ET
 import copy
 import stat
+import tempfile
 import zipfile
 from pathlib import Path
 from typing import Any
@@ -155,9 +156,17 @@ def _package_asset_map(root: Path, project: dict[str, Any]) -> tuple[dict[str, A
             failures.append(report_item("asset", "Failed", str(source), str(asset.get("id", "")), "资产文件不存在，项目包拒绝生成"))
             continue
         target_name = safe_filename(source.name)
-        package_path = f"assets/{asset_id}_{target_name}"
+        try:
+            relative = source.relative_to(root.resolve())
+        except ValueError:
+            relative = None
+        # Semantic index/vector/preview/profile bindings rely on this owned
+        # tree. Preserving all project-owned assets also avoids renaming source
+        # URIs unnecessarily. External files still become local package assets.
+        package_path = (relative.as_posix() if relative and relative.parts[0] == 'assets'
+                        else f"assets/{asset_id}_{target_name}")
         # IDs are normally unique, but avoid silently overwriting a duplicate.
-        if package_path in files:
+        if package_path in files and files[package_path] != source:
             package_path = f"assets/{asset_id}_{index + 1}_{target_name}"
         files[package_path] = source
         asset["uri"] = package_path
@@ -180,6 +189,8 @@ def _export_project_package(root: Path, project: dict[str, Any], output: Path) -
     if failures:
         raise ValueError("项目包含缺失素材，无法生成可移植项目包")
     lut_count = _package_luts(root, packaged_project, asset_files)
+    from .semantic_package import prepare as prepare_semantic
+    semantic_files, semantic_ledger, semantic_summary = prepare_semantic(root, project, packaged_project)
     output.parent.mkdir(parents=True, exist_ok=True)
     if output.exists() and output.is_dir():
         raise ValueError(f"项目包输出必须是文件: {output}")
@@ -194,7 +205,9 @@ def _export_project_package(root: Path, project: dict[str, Any], output: Path) -
         portable_library = dict(library, records=portable_records)
         source_files['assets/lut-library.json'] = _package_json_bytes(portable_library)
     ledger_path = root / "rights-ledger.json"
-    if ledger_path.is_file():
+    if semantic_ledger is not None:
+        source_files["rights-ledger.json"] = _package_json_bytes(semantic_ledger)
+    elif ledger_path.is_file():
         source_files["rights-ledger.json"] = ledger_path.read_bytes()
     else:
         source_files["rights-ledger.json"] = _package_json_bytes({"schema_version": "0.2.0", "records": []})
@@ -208,6 +221,7 @@ def _export_project_package(root: Path, project: dict[str, Any], output: Path) -
         source_files.setdefault(relative, path.read_bytes())
     for package_path, source in asset_files.items():
         source_files[package_path] = source.read_bytes()
+    source_files.update(semantic_files)
     entries = [
         {"path": name, "size": len(data), "sha256": sha256_file_bytes(data)}
         for name, data in sorted(source_files.items())
@@ -237,6 +251,13 @@ def _export_project_package(root: Path, project: dict[str, Any], output: Path) -
     if lut_count:
         report['items'].append(report_item('lut-resources', 'Mapped', 'local paths / lut_id',
             'assets/luts/', f'{lut_count} 个引用改写为包内内容寻址路径；关键帧及 LUT 原字节保留，缓存不打包'))
+    if semantic_summary['indexes'] or semantic_summary['calibrations']:
+        report['items'].append(report_item('semantic-project-data', 'Mapped', 'local_semantic',
+            'assets/semantic/ + assets/semantic-calibration/',
+            '受管目录、向量、采样时码与校准数据保留；必要的 URI 派生绑定已校验并记录'))
+        report['semantic_data'] = semantic_summary
+        report['warnings'].append(report_item('semantic-native-runtime', 'Approximate',
+            'external adapter/runtime/model pins', detail='原生模型依赖不打包也不重新信任；实际检索仍验证原 pin'))
     report_bytes = _package_json_bytes(report)
     with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED, allowZip64=True) as archive:
         _zip_write_bytes(archive, PROJECT_PACKAGE_MANIFEST, manifest_bytes)
@@ -759,17 +780,55 @@ def _zip_member_path(name: str) -> Path:
     """Validate one ZIP member as a relative project path."""
     normalized = str(name).replace("\\", "/")
     candidate = Path(normalized)
-    if not normalized or candidate.is_absolute() or normalized.startswith("/"):
+    if not normalized or candidate.is_absolute() or candidate.drive or ':' in normalized or normalized.startswith("/"):
         raise ValueError(f"项目包包含绝对路径成员: {name}")
     parts = [part for part in normalized.split("/") if part not in {""}]
     if any(part in {".", ".."} for part in parts):
         raise ValueError(f"项目包包含路径穿越成员: {name}")
     if any("\x00" in part for part in parts):
         raise ValueError(f"项目包包含非法路径成员: {name}")
+    if normalized != Path(*parts).as_posix() or any(part.endswith(('.', ' ')) for part in parts):
+        raise ValueError(f"项目包包含非规范路径成员: {name}")
+    reserved = {'con','prn','aux','nul',*(f'com{i}' for i in range(1,10)),*(f'lpt{i}' for i in range(1,10))}
+    if any(part.split('.')[0].casefold() in reserved for part in parts):
+        raise ValueError(f"项目包包含 Windows 保留文件名: {name}")
     return Path(*parts)
 
 
 def _import_project_package(source: Path, destination: Path) -> tuple[Path, dict[str, Any], list[dict[str, Any]]]:
+    """Validate in a fresh owned staging tree before publishing the import."""
+    destination = destination.resolve()
+    existed = destination.exists()
+    if existed and (not destination.is_dir() or any(destination.iterdir())):
+        raise ValueError(f"转换输出目录必须不存在或为空: {destination}")
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix='.aek-package-', dir=destination.parent) as raw:
+        staging = Path(raw).resolve()
+        if not staging.is_relative_to(destination.parent.resolve()):
+            raise ValueError('Package staging directory outside requested parent')
+        _, project, items = _read_project_package(source, staging)
+        from .semantic_package import verify as verify_semantic
+        verification = verify_semantic(staging, project)
+        if verification['indexes'] or verification['calibrations']:
+            items.append(report_item('semantic-project-data', 'Exact', 'package semantic payload',
+                detail='索引/源/向量/预览/校准/权利绑定已验证；不执行或验证外部模型运行时'))
+            items.append(report_item('semantic-native-runtime', 'Approximate', 'external adapter pins',
+                detail='模型、原生依赖及实现仍须在使用时通过固定 pin 校验；未下载或重登记'))
+        for item in items:
+            if item.get('target') == str(staging):
+                item['target'] = str(destination)
+        if existed:
+            destination.rmdir()  # Only the previously confirmed empty directory.
+        try:
+            staging.rename(destination)
+        except BaseException:
+            if existed and not destination.exists():
+                destination.mkdir()
+            raise
+        return destination, project, items
+
+
+def _read_project_package(source: Path, destination: Path) -> tuple[Path, dict[str, Any], list[dict[str, Any]]]:
     """Import and verify a self-contained local Agent Project ZIP."""
     if destination.exists() and any(destination.iterdir()):
         raise ValueError(f"转换输出目录必须不存在或为空: {destination}")
@@ -778,7 +837,7 @@ def _import_project_package(source: Path, destination: Path) -> tuple[Path, dict
     try:
         with zipfile.ZipFile(source, "r") as archive:
             raw_infos = [info for info in archive.infolist() if not info.is_dir()]
-            if len({info.filename for info in raw_infos}) != len(raw_infos):
+            if len({_zip_member_path(info.filename).as_posix().casefold() for info in raw_infos}) != len(raw_infos):
                 raise ValueError("项目包包含重复 ZIP 成员")
             infos = {info.filename: info for info in raw_infos}
             if PROJECT_PACKAGE_MANIFEST not in infos:
@@ -794,7 +853,7 @@ def _import_project_package(source: Path, destination: Path) -> tuple[Path, dict
                 if not isinstance(entry, dict) or not isinstance(entry.get("path"), str):
                     raise ValueError("项目包 manifest.files 含有无效项")
                 relative = _zip_member_path(entry["path"]).as_posix()
-                if relative in expected:
+                if relative.casefold() in {path.casefold() for path in expected}:
                     raise ValueError(f"项目包 manifest 存在重复路径: {relative}")
                 expected[relative] = entry
             for required in PROJECT_PACKAGE_ROOT_FILES[:2]:
@@ -852,7 +911,7 @@ def import_external(source: Path, destination: Path, *, strict: bool = False) ->
         raise ValueError("--strict 当前适用于 jianying-draft-json 草稿适配器")
     if source.suffix.lower() in {".zip", ".aevpkg"}:
         root, project, items = _import_project_package(source, destination)
-        report = {"report_version": "0.1.0", "direction": "import", "source_format": f"agent-project-package/{PROJECT_PACKAGE_VERSION}", "target_format": "agent-project/0.1.0", "created_at": now_iso(), "items": items, "warnings": [], "failures": []}
+        report = {"report_version": "0.1.0", "direction": "import", "source_format": f"agent-project-package/{PROJECT_PACKAGE_VERSION}", "target_format": "agent-project/0.1.0", "created_at": now_iso(), "items": items, "warnings": [item for item in items if item['status'] in {'Approximate','Unsupported'}], "failures": []}
         report_path = root / "validation" / f"conversion_{new_id('report')}.json"
         atomic_write_json(report_path, report)
         return {"root": str(root), "project": str(root / "project.json"), "report": str(report_path), "report_data": report}

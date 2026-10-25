@@ -2,11 +2,11 @@
 
 [使用手册](COMMUNITY_MATERIALS.md) · [繁體中文](COMMUNITY_MATERIALS.zh-TW.md) · [English](COMMUNITY_MATERIALS.en.md)
 
-当前本机版本是 **`v0.1.0-alpha.4-local.8` / CLI 0.1.10**，正式安装在 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.8/final-r1/installed/`。这是本地构建和验收记录；公开 GitHub Release 仍是 alpha.3 / CLI 0.1.2，原附件、标签和摘要不覆盖。
+当前本机版本是 **`v0.1.0-alpha.4-local.9` / CLI 0.1.11**，正式安装在 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.9/final-r1/installed/`。这是本地构建和验收记录；公开 GitHub Release 仍是 alpha.3 / CLI 0.1.2，原附件、标签和摘要不覆盖。
 
 The current build is installed locally. Public alpha.3 downloads remain unchanged and do not contain the new voice, translation, material or GPU commands. The updated Skill kit must be paired with this matching local runtime bundle.
 
-本轮增加[显式条件与设备绑定的经验校准拒识](SEMANTIC_RETRIEVAL.md)，保留[字幕翻译配音联合流程](SUBTITLE_DUBBING.md)，保留[CTC 词活动边界](CTC_ACTIVITY_ALIGNMENT.md)，保留[原生任务恢复](JOB_RECOVERY.md)，保留[独立四轨分离](FOUR_STEM_SEPARATION.md)、[原生采集](NATIVE_CAPTURE.md)及精确声道关系修复。前一版本 `v0.1.0-alpha.4-local.1` 的 ZIP 与 SHA-256 `cf4e55f410582547d7fe56549d4594b4d8f0ee6aff8be24f77408c035fd74ead` 保留，旧 r2 kit 继续匹配旧包。
+本轮增加[语义工程包迁移](SEMANTIC_PROJECT_PACKAGE.md)，保留[显式条件与设备绑定的经验校准拒识](SEMANTIC_RETRIEVAL.md)，保留[字幕翻译配音联合流程](SUBTITLE_DUBBING.md)，保留[CTC 词活动边界](CTC_ACTIVITY_ALIGNMENT.md)，保留[原生任务恢复](JOB_RECOVERY.md)，保留[独立四轨分离](FOUR_STEM_SEPARATION.md)、[原生采集](NATIVE_CAPTURE.md)及精确声道关系修复。前一版本 `v0.1.0-alpha.4-local.1` 的 ZIP 与 SHA-256 `cf4e55f410582547d7fe56549d4594b4d8f0ee6aff8be24f77408c035fd74ead` 保留，旧 r2 kit 继续匹配旧包。
 
 ## 本机文件 / Local files
 
@@ -14,9 +14,9 @@ The current build is installed locally. Public alpha.3 downloads remain unchange
 
 | 内容 / Item | 路径 / Path | 校验 / Verification |
 |---|---|---|
-| 编译好的基础运行 ZIP / Application bundle | `local/agent-ffmpeg/v0.1.0-alpha.4-local.8/candidate-r1/bundle.zip` | SHA-256 `da3ada9242ad7c5385eb91d542a7fa78ab335997df6c39c6aadf5dbdd6a4d243` |
-| 运行包清单 / Bundle manifest | ZIP 内 / inside ZIP: `manifest.json` | `sha256:fa6ddf51337a6b7b4f9b9a00adc76a387c291c89931e9973b3e2f1a2877361a1` |
-| 单入口 Skill kit / Single-entry kit | `docs/skills/agent-editor-kit-community-unified-skill-r9.zip` | [独立包摘要 / Package digest](../skills/community-unified-skill-package-0.1.10.json) |
+| 编译好的基础运行 ZIP / Application bundle | `local/agent-ffmpeg/v0.1.0-alpha.4-local.9/candidate-r1/bundle.zip` | SHA-256 `5f8526444d468c62563cdaf805597bd288cb59624956518e5f3dd185b492e90d` |
+| 运行包清单 / Bundle manifest | ZIP 内 / inside ZIP: `manifest.json` | `sha256:bc29ef0d61e71e04fe498c416a287cdd9a15fe729e3e4d26a5f9216d4a48eaa9` |
+| 单入口 Skill kit / Single-entry kit | `docs/skills/agent-editor-kit-community-unified-skill-r10.zip` | [独立包摘要 / Package digest](../skills/community-unified-skill-package-0.1.11.json) |
 | 四个模型 ZIP / Four model ZIPs | `local/agent-ffmpeg/community-model-archives-r2/` | 见下表及 / see table and `archives.json` |
 | 可移动模型安装 / Relocated model installation | `local/agent-ffmpeg/community-portable-r1/模型 包/` | 实际从四个 ZIP 安装；路径含中文与空格 / actually installed from all four ZIPs |
 | 当前调用配置 / Runtime configuration | `local/agent-ffmpeg/runtime.json` | 固定应用摘要、原生 Python、启动器摘要 / pinned app, native Python and launcher |
@@ -43,13 +43,13 @@ Requires native Windows x64, existing CPython 3.13 x64 and FFmpeg/ffprobe on PAT
 $aekPython = 'C:/Python313/python.exe'
 $aekSource = 'E:/dev/sandbox/AI广告剪辑'
 $aekHome = 'E:/tools/agent-editor-kit-gpu'
-$aekArchive = Join-Path $aekSource 'local/agent-ffmpeg/v0.1.0-alpha.4-local.8/candidate-r1/bundle.zip'
-$aekExpectedZip = 'da3ada9242ad7c5385eb91d542a7fa78ab335997df6c39c6aadf5dbdd6a4d243'
+$aekArchive = Join-Path $aekSource 'local/agent-ffmpeg/v0.1.0-alpha.4-local.9/candidate-r1/bundle.zip'
+$aekExpectedZip = '5f8526444d468c62563cdaf805597bd288cb59624956518e5f3dd185b492e90d'
 if ((Get-FileHash -LiteralPath $aekArchive -Algorithm SHA256).Hash.ToLowerInvariant() -ne $aekExpectedZip) { throw 'Application archive hash mismatch' }
-Expand-Archive -LiteralPath (Join-Path $aekSource 'docs/skills/agent-editor-kit-community-unified-skill-r9.zip') -DestinationPath $aekHome
+Expand-Archive -LiteralPath (Join-Path $aekSource 'docs/skills/agent-editor-kit-community-unified-skill-r10.zip') -DestinationPath $aekHome
 Expand-Archive -LiteralPath $aekArchive -DestinationPath (Join-Path $aekHome 'bundle')
 Set-Location $aekHome
-& $aekPython -I -B -X utf8 ./bundle/install.py --bundle ./bundle --target ./local/agent-ffmpeg/installed --manifest-sha256 'sha256:fa6ddf51337a6b7b4f9b9a00adc76a387c291c89931e9973b3e2f1a2877361a1' --timeout-seconds 600
+& $aekPython -I -B -X utf8 ./bundle/install.py --bundle ./bundle --target ./local/agent-ffmpeg/installed --manifest-sha256 'sha256:bc29ef0d61e71e04fe498c416a287cdd9a15fe729e3e4d26a5f9216d4a48eaa9' --timeout-seconds 600
 if ($LASTEXITCODE) { throw 'Native application installation failed' }
 ```
 
@@ -217,6 +217,14 @@ manifest `sha256:8aae41452002706b2c74398c1e58fc7c16db458932e62f3e3614b57248d7994
 本批 local.7/candidate-r1 的模型字典处理错误已留档，未激活；该历史安装只使用 local.7/candidate-r2 摘要；上表现已指向 local.8/candidate-r1。
 
 
+## CLI 0.1.11 语义工程包迁移 / Semantic project-package migration
+
+应用 ZIP 302,659,130 bytes，200 产品 Python 文件；[安装收据](../validation/evidence/semantic-package-20261025-r1/installation-r1/verification.json)。
+[使用流程](SEMANTIC_PROJECT_PACKAGE.md) · [完整实际核验](../validation/语义工程包迁移实测_2026-10-25.md)。
+CPU/CUDA/统一 Skill 各 80 条迁移后查询保持原决策；两条误接受和一条钟表误拒仍在。
+外部模型、原生运行时和安装实现 pin 保留；不是干净主机交付或全部 G31 关闭。
+旧 local.8 / CLI 0.1.10、r9 kit 与 C19 原错误保留；下节是当时历史实测。
+
 ## CLI 0.1.10 条件检索与经验拒识 / Explicit clauses and calibrated decisions
 
 [完整操作流程](SEMANTIC_RETRIEVAL.md) · [实际模型/失败/安装/Skill/案例](../validation/语义条件与校准拒识实测_2026-10-25.md)。
@@ -227,7 +235,7 @@ manifest `sha256:8aae41452002706b2c74398c1e58fc7c16db458932e62f3e3614b57248d7994
 原始整句排名继续用 `--query-mode raw` 复现，默认条件查询配合索引/类型/实际设备绑定的
 经验校准档案。该档案不证明通用拒识、自然动作/身份/音频推荐或完整 G26 关闭。
 
-当前已实测的迁移缺口：新检索/校准工程 export/import/通用 validate 成功后，search dry-run
+CLI 0.1.10 当时已实测的迁移缺口：新检索/校准工程 export/import/通用 validate 成功后，search dry-run
 报 `SEMANTIC_INDEX_INVALID` / `Manifest outside project semantic asset tree`。
 [C19 原错误与复现包](../assets/semantic-decision-20261025-r1/demo-installed-r1/KNOWN_ISSUE.md)保留；
 普通卡片工程的 360 帧往返通过不代替索引/档案可搬迁或干净主机验收。

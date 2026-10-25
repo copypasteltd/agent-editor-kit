@@ -1,0 +1,26 @@
+[
+  {
+    "argv": [
+      "C:/Python313/python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.9\\final-r1\\installed\\run.py",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\semantic-decision-20261025-r1\\demo-installed-r1\\retrieval-project.aevpkg.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\legacy-rejected"
+    ],
+    "exit_code": 6,
+    "elapsed_seconds": 1.7324093999995966,
+    "stdout_sha256": "b86d67fd26bbc731afd8296c988631ae032547b95146d377723bbfad0f98110c",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "failed",
+    "ok": false
+  }
+]

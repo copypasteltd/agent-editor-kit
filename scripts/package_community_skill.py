@@ -35,7 +35,7 @@ def main():
     for name in ('COMMUNITY_LOCAL_DELIVERY.md', 'COMMUNITY_MATERIALS.md', 'COMMUNITY_MATERIALS.en.md',
                  'COMMUNITY_MATERIALS.zh-TW.md', 'COMMUNITY_MATERIAL_CATALOG.md', 'COMMUNITY_VOICES.md', 'COMMUNITY_ACCEPTANCE.md',
                  'SEMANTIC_RETRIEVAL.md', 'FOUR_STEM_SEPARATION.md', 'JOB_RECOVERY.md',
-                 'CTC_ACTIVITY_ALIGNMENT.md', 'SUBTITLE_DUBBING.md'):
+                 'CTC_ACTIVITY_ALIGNMENT.md', 'SUBTITLE_DUBBING.md', 'SEMANTIC_PROJECT_PACKAGE.md'):
         path = ROOT / 'docs/product' / name
         files[path.relative_to(ROOT).as_posix()] = path.read_bytes()
     # Keep the Skill inventory byte-identical; externalize only documentation

@@ -534,6 +534,8 @@ naturalness, semantic acceptance, word timing, lip sync or complete G19/G32/G33/
 
 ## C19：条件/拒识完整预览与真实工程迁移失败 / Decisions and migration failure
 
+历史 CLI 0.1.10 实测保留。CLI 0.1.11 的新包修复与真实往返见 [C20](#c20-semantic-package)；旧损坏包本身未被修改或自动修复。
+
 [完整实测](../validation/语义条件与校准拒识实测_2026-10-25.md) · [全部 80 条决策](../assets/semantic-decision-20261025-r1/installed-r1/index.html) · [实际源与许可](../assets/semantic-decision-20261025-r1/SOURCE.json)。
 
 ![Actual decisions including all three query failures](../assets/semantic-decision-20261025-r1/demo-installed-r1/decisions.gif)
@@ -551,3 +553,23 @@ naturalness, semantic acceptance, word timing, lip sync or complete G19/G32/G33/
 [已完成媒体核验](../validation/evidence/semantic-decision-20261025-r1/demo-finalization-r1/verification.json)分别保存。
 English: real output retains all mistakes. Card-package frames match; the separate indexed/calibrated project fails search after import.
 All original G26/G31/G32/G33/G36 conditions remain; no natural-action, human acceptance or clean-host migration claim.
+
+
+<a id="c20-semantic-package"></a>
+
+## C20：真实语义工程包迁移 / Portable semantic project
+
+[完整流程](SEMANTIC_PROJECT_PACKAGE.md) · [完整实际核验](../validation/语义工程包迁移实测_2026-10-25.md) · [迁移后 80 决策](../assets/semantic-package-20261025-r1/installed-r1/index.html)。
+
+![Post-migration actual decisions](../assets/semantic-package-20261025-r1/demo-installed-r1/decisions.gif)
+
+| 编号 | 内容 | 实际核验与限制 |
+|---|---|---|
+| C20-01 | 11 资产、40 校准、80 查询，含一个明确外部源 | CPU/CUDA/Skill 各 80 条迁移后决策与原工程一致；向量、阈值、数据、设备和模型 pin 保留，原源路径已移走 |
+| C20-02 | [完整 HTML/PNG/JSON](../assets/semantic-package-20261025-r1/installed-r1/index.html) | 实际返回预览，保留大象/吉他误接受和钟表误拒；熟悉静态图，非新自然质量 |
+| C20-03 | [12 秒 MP4](../assets/semantic-package-20261025-r1/demo-installed-r1/decisions.mp4) / GIF | 960×540 / 30fps / 360 帧；GIF 5fps / 60 帧 / 12000ms，诊断卡片，非执行录像 |
+| C20-04 | [可编辑卡片包](../assets/semantic-package-20261025-r1/demo-installed-r1/editable-cards.aevpkg.zip) | 导入重渲染全部帧摘要相同；6 段 image clips 可编辑，卡内排版为栅格 |
+| C20-05 | [索引/校准工程包](../assets/semantic-package-20261025-r1/demo-installed-r1/retrieval-project.aevpkg.zip) | 包含本批已迁移工程素材与数据；原生模型/运行时不在包中，使用时原 pin 必须仍匹配 |
+| C20-06 | [实际编码帧](../assets/semantic-package-20261025-r1/demo-installed-r1/actual-encoded-frames.png) | Agent 静态目检另行记录，无人类连续观看、听审或语义接受；[媒体收据](../validation/evidence/semantic-package-20261025-r1/demo-installed-r1/verification.json) |
+
+旧 C19 失败原样保留，新版拒绝该损坏 ZIP；从完好源重新导出。Same-host package integrity preserves mistakes too; full G26/G31 and all original goal conditions remain open.

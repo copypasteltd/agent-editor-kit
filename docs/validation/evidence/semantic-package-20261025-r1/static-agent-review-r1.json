@@ -1,0 +1,36 @@
+{
+  "reviewed_at_utc": "2026-10-25T07:01:25.556481+00:00",
+  "reviewer": "Codex static image inspection",
+  "scope": "four actual 80-query gallery pages and six encoded video stills",
+  "findings": [
+    "all 3 known failures remain visible in red",
+    "no-match decisions shown as empty cards",
+    "text and images within canvas",
+    "original query labels and actual IDs visible"
+  ],
+  "human_review": false,
+  "human_continuous_playback": false,
+  "human_listening": false,
+  "files": [
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/installed-r1/results-1.png",
+      "sha256": "ac18dde0bc7f9a7b8d72757a6b49aa03ec722b2d62dea6f610a972e3fffffd92"
+    },
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/installed-r1/results-2.png",
+      "sha256": "ef4e162856b422522ed843bfd6932414e35d88424a59686ab8bb1d2fe4b40589"
+    },
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/installed-r1/results-3.png",
+      "sha256": "968fc8b059e0a42c6ed644e14ebe901347c5638918cf5a38015620cf7ebdea5a"
+    },
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/installed-r1/results-4.png",
+      "sha256": "d4fa50c17039df1013376cde3eebc7ee054f59153f92366c1a3e35e973164ed1"
+    },
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/demo-installed-r1/actual-encoded-frames.png",
+      "sha256": "6f29353b8d1942a1ba81767b9b37215ada02ff89b4b3c1c8b2b40126143bb28c"
+    }
+  ]
+}

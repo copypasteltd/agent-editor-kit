@@ -1514,3 +1514,12 @@ docs/skills/community-unified-skill-package-0.1.10.json -text -whitespace
 docs/specs/语义条件与校准拒识契约_20261025.md -text -whitespace
 scripts/*semantic_decision*20261025.py text eol=lf
 docs/validation/语义条件与校准拒识实测_2026-10-25.md text eol=lf
+
+# Semantic project-package receipts retain native log bytes and recorded hashes.
+docs/validation/evidence/semantic-package-20261025-r1/** -text -whitespace
+docs/assets/semantic-package-20261025-r1/** -text -whitespace
+docs/product/semantic-package-capabilities-cli-0.1.11.json -text -whitespace
+docs/skills/community-unified-skill-package-0.1.11.json -text -whitespace
+docs/specs/语义工程包迁移契约_20261025.md text eol=lf
+docs/validation/语义工程包迁移实测_2026-10-25.md text eol=lf
+scripts/*semantic_package*20261025.py text eol=lf

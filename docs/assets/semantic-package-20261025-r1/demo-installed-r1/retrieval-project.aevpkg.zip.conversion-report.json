@@ -1,0 +1,70 @@
+{
+  "report_version": "0.1.0",
+  "direction": "export",
+  "source_format": "agent-project/0.1.0",
+  "target_format": "agent-project-package/0.1.0",
+  "created_at": "2026-10-25T07:00:11.668337Z",
+  "items": [
+    {
+      "capability": "project-package",
+      "status": "Exact",
+      "source": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\restored",
+      "target": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\semantic-package-20261025-r1\\demo-installed-r1\\retrieval-project.aevpkg.zip",
+      "detail": "项目、登记权利和本地素材已写入自包含 ZIP"
+    },
+    {
+      "capability": "semantic-project-data",
+      "status": "Mapped",
+      "source": "local_semantic",
+      "target": "assets/semantic/ + assets/semantic-calibration/",
+      "detail": "受管目录、向量、采样时码与校准数据保留；必要的 URI 派生绑定已校验并记录"
+    }
+  ],
+  "warnings": [
+    {
+      "capability": "package-excluded-runtime",
+      "status": "Approximate",
+      "source": "project runtime",
+      "target": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\semantic-package-20261025-r1\\demo-installed-r1\\retrieval-project.aevpkg.zip",
+      "detail": "renders/cache/operations/history 未打包"
+    },
+    {
+      "capability": "semantic-native-runtime",
+      "status": "Approximate",
+      "source": "external adapter/runtime/model pins",
+      "target": null,
+      "detail": "原生模型依赖不打包也不重新信任；实际检索仍验证原 pin"
+    }
+  ],
+  "failures": [],
+  "semantic_data": {
+    "indexes": [
+      {
+        "index_id": "images-v1",
+        "uri_rewritten": false,
+        "old_fingerprint": "sha256:81a344dadd2b0311c6e9edda7bcb045790e8a0d8441a261d3d57712f81f13691",
+        "fingerprint": "sha256:81a344dadd2b0311c6e9edda7bcb045790e8a0d8441a261d3d57712f81f13691",
+        "vector_sha256_unchanged": true
+      }
+    ],
+    "calibrations": [
+      {
+        "calibration_id": "accept-cuda",
+        "index_binding_rewritten": false,
+        "cutoff": 0.0561935684022833,
+        "fit_and_observations_unchanged": true,
+        "dataset_sha256_unchanged": true
+      },
+      {
+        "calibration_id": "accept-cpu",
+        "index_binding_rewritten": false,
+        "cutoff": 0.05586498798289672,
+        "fit_and_observations_unchanged": true,
+        "dataset_sha256_unchanged": true
+      }
+    ],
+    "runtime_verification": "not_performed",
+    "external_native_runtimes": "not_bundled; original pins retained; search verifies them",
+    "new_model_forwards": 0
+  }
+}

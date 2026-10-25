@@ -16,3 +16,8 @@ For interrupted four-source jobs, read [job-recovery](../../job-recovery.md).
 `project recover` stays metadata-only by default; `--cleanup-jobs --dry-run`
 previews owned stale workspaces before explicit cleanup. Preserve live, changed,
 unknown and legacy files; committed assets must remain editable.
+
+For moving indexed/calibrated projects, read [semantic-package](../../semantic-package.md).
+Keep conversion reports and run an actual query after import; runtime/model
+pins remain external. A damaged legacy flattened package requires a new export
+from its intact source.

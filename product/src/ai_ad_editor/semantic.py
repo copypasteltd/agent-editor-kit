@@ -23,7 +23,8 @@ from .utils import assert_id, atomic_write_json, new_id, now_iso, run_process, s
 
 def registry(project):
     result=project.get('extensions',{}).get('local_semantic',{'adapters':[],'indexes':[]})
-    if not isinstance(result,dict) or any(not isinstance(result.get(k,[]),list) for k in ('adapters','indexes','calibrations')):
+    if (not isinstance(result,dict) or any(not isinstance(result.get(k,[]),list)
+            or any(not isinstance(v,dict) for v in result.get(k,[])) for k in ('adapters','indexes','calibrations'))):
         raise AppError('SEMANTIC_REGISTRY_INVALID','语义登记表无效',exit_code=6)
     return result
 
@@ -333,9 +334,35 @@ def build_index(root, project, *, index_id, adapter_id, asset_ids=None, all_visu
 def read_index(root, project, index_id):
     record=item(project,'indexes',index_id)
     try:
+        adapter_id=record['adapter_id']
+    except (KeyError,TypeError) as exc:
+        raise AppError('SEMANTIC_INDEX_INVALID','索引缺少适配器绑定',exit_code=6,cause=str(exc)) from exc
+    adapter=_checked_adapter(root,project,adapter_id)
+    return _index_payload(root,project,index_id,adapter)
+
+
+def read_index_payload(root, project, index_id):
+    """Verify portable data without executing or requiring the external runtime.
+
+    Package conversion can run on a machine without Torch or model weights.
+    Search still uses read_index and its full native-runtime verification.
+    """
+    record=item(project,'indexes',index_id)
+    if not isinstance(record.get('adapter_id'),str):
+        raise AppError('SEMANTIC_INDEX_INVALID','索引缺少适配器绑定',exit_code=6)
+    adapter=item(project,'adapters',record['adapter_id'])
+    if (adapter.get('engine')!=ENGINE or adapter.get('protocol')!=PROTOCOL
+            or adapter.get('dimension')!=DIMENSION or adapter.get('preprocessing')!=PREPROCESSING
+            or adapter.get('sha256')!=adapter_fingerprint(adapter)):
+        raise AppError('SEMANTIC_INDEX_INVALID','索引适配器元数据绑定无效',exit_code=6)
+    return _index_payload(root,project,index_id,adapter)
+
+
+def _index_payload(root, project, index_id, adapter):
+    record=item(project,'indexes',index_id)
+    try:
         if record['sha256']!=fingerprint({k:v for k,v in record.items() if k!='sha256'}):
             raise ValueError('Index registration fingerprint changed')
-        adapter=_checked_adapter(root,project,record['adapter_id'])
         if adapter['sha256']!=record['adapter_sha256']:raise ValueError('Index model or implementation is stale')
         assets=asset_map(project)
         index_asset=assets[record['asset_id']];path=local_file(index_asset['uri'],root=root)

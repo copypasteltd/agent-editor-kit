@@ -1,0 +1,3233 @@
+{
+  "indexes": {
+    "images-v1": {
+      "format": "agent-visual-semantic-index-v1",
+      "index_id": "images-v1",
+      "created_at": "2026-10-25T06:38:21.951063Z",
+      "adapter_id": "siglip2",
+      "adapter_sha256": "sha256:4424bac1bb517593ca264dc75dea547c46ed29ee17375f03f156e6d39b18a056",
+      "engine": "transformers-siglip-local-v1",
+      "preprocessing": "siglip-local-rgb-lowercase-pad64-no-truncation-v1",
+      "dimension": 768,
+      "dtype": "float32-little-endian",
+      "rows": [
+        {
+          "native_frame_index": 0,
+          "native_pts": null,
+          "native_time_base": null,
+          "sample_seconds": 0.0,
+          "sample_seconds_rational": "0",
+          "requested_seconds": [
+            0.0
+          ],
+          "preview_sha256": "sha256:94de75b4bd9fb2f799da56917abd61a967723e5d27f59a1f5573eb29399a43dd",
+          "preview_probe": {
+            "duration_seconds": 0,
+            "video": {
+              "codec": "png",
+              "width": 512,
+              "height": 512,
+              "pix_fmt": "rgb24"
+            }
+          },
+          "asset_id": "asset_a7",
+          "kind": "image",
+          "source_uri": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\external\\explicit-external-source.png",
+          "source_sha256": "sha256:b0793d2adda0fa6ae899c03989482bff9a42d3d5690fc7e3648f2795d730c23a",
+          "rights_ref": "asset_a7",
+          "preview_asset_id": "sem_140aadca01394e993df7aad4_frame_0000",
+          "preview_uri": "assets/semantic/140aadca01394e993df7aad4/frames0000/000000.png"
+        },
+        {
+          "native_frame_index": 0,
+          "native_pts": null,
+          "native_time_base": null,
+          "sample_seconds": 0.0,
+          "sample_seconds_rational": "0",
+          "requested_seconds": [
+            0.0
+          ],
+          "preview_sha256": "sha256:8141d410ff36e2e54ffc0174555b0477e04b73c25db10b9d9aee7642e961db89",
+          "preview_probe": {
+            "duration_seconds": 0,
+            "video": {
+              "codec": "png",
+              "width": 512,
+              "height": 341,
+              "pix_fmt": "rgb24"
+            }
+          },
+          "asset_id": "asset_b4",
+          "kind": "image",
+          "source_uri": "assets/asset_b4_asset_b4.png",
+          "source_sha256": "sha256:cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+          "rights_ref": "asset_b4",
+          "preview_asset_id": "sem_140aadca01394e993df7aad4_frame_0001",
+          "preview_uri": "assets/semantic/140aadca01394e993df7aad4/frames0001/000000.png"
+        },
+        {
+          "native_frame_index": 0,
+          "native_pts": null,
+          "native_time_base": null,
+          "sample_seconds": 0.0,
+          "sample_seconds_rational": "0",
+          "requested_seconds": [
+            0.0
+          ],
+          "preview_sha256": "sha256:29b65a5342e5b5340feddec1c8a98326aa8ed70ebcc3b0153d0bcea4b4c536b6",
+          "preview_probe": {
+            "duration_seconds": 0,
+            "video": {
+              "codec": "png",
+              "width": 512,
+              "height": 341,
+              "pix_fmt": "rgb24"
+            }
+          },
+          "asset_id": "asset_c2",
+          "kind": "image",
+          "source_uri": "assets/asset_c2_asset_c2.png",
+          "source_sha256": "sha256:596aa1e7cb875eb79f437e310381d26b338a81c2da23439704a73c4651e8c4bb",
+          "rights_ref": "asset_c2",
+          "preview_asset_id": "sem_140aadca01394e993df7aad4_frame_0002",
+          "preview_uri": "assets/semantic/140aadca01394e993df7aad4/frames0002/000000.png"
+        },
+        {
+          "native_frame_index": 0,
+          "native_pts": null,
+          "native_time_base": null,
+          "sample_seconds": 0.0,
+          "sample_seconds_rational": "0",
+          "requested_seconds": [
+            0.0
+          ],
+          "preview_sha256": "sha256:123bf8848c979ccfc34d0fd7f614da1a45621f35f78ae0d0c4e456a3a264a45c",
+          "preview_probe": {
+            "duration_seconds": 0,
+            "video": {
+              "codec": "png",
+              "width": 512,
+              "height": 512,
+              "pix_fmt": "rgb24"
+            }
+          },
+          "asset_id": "asset_d9",
+          "kind": "image",
+          "source_uri": "assets/asset_d9_asset_d9.png",
+          "source_sha256": "sha256:88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
+          "rights_ref": "asset_d9",
+          "preview_asset_id": "sem_140aadca01394e993df7aad4_frame_0003",
+          "preview_uri": "assets/semantic/140aadca01394e993df7aad4/frames0003/000000.png"
+        },
+        {
+          "native_frame_index": 0,
+          "native_pts": null,
+          "native_time_base": null,
+          "sample_seconds": 0.0,
+          "sample_seconds_rational": "0",
+          "requested_seconds": [
+            0.0
+          ],
+          "preview_sha256": "sha256:5ae769d025398f34c3f480363c4882c7ed8abd34ebdd50bfd3bb5fa9fc695745",
+          "preview_probe": {
+            "duration_seconds": 0,
+            "video": {
+              "codec": "png",
+              "width": 512,
+              "height": 512,
+              "pix_fmt": "rgb24"
+            }
+          },
+          "asset_id": "asset_e3",
+          "kind": "image",
+          "source_uri": "assets/asset_e3_asset_e3.png",
+          "source_sha256": "sha256:b6b6022426b38936c43a4ac09635cd78af074e90f42ffa8227ac8b7452d39f89",
+          "rights_ref": "asset_e3",
+          "preview_asset_id": "sem_140aadca01394e993df7aad4_frame_0004",
+          "preview_uri": "assets/semantic/140aadca01394e993df7aad4/frames0004/000000.png"
+        },
+        {
+          "native_frame_index": 0,
+          "native_pts": null,
+          "native_time_base": null,
+          "sample_seconds": 0.0,
+          "sample_seconds_rational": "0",
+          "requested_seconds": [
+            0.0
+          ],
+          "preview_sha256": "sha256:a101ad84f77fd484d3ffbcc349a3b8288659a60686d143b92b3d33082c00100b",
+          "preview_probe": {
+            "duration_seconds": 0,
+            "video": {
+              "codec": "png",
+              "width": 512,
+              "height": 512,
+              "pix_fmt": "rgb24"
+            }
+          },
+          "asset_id": "asset_f8",
+          "kind": "image",
+          "source_uri": "assets/asset_f8_asset_f8.png",
+          "source_sha256": "sha256:c48615b451bf1e606fbd72c0aa9f8cc0f068ab7111ef7d93bb9b0f2586440c12",
+          "rights_ref": "asset_f8",
+          "preview_asset_id": "sem_140aadca01394e993df7aad4_frame_0005",
+          "preview_uri": "assets/semantic/140aadca01394e993df7aad4/frames0005/000000.png"
+        },
+        {
+          "native_frame_index": 0,
+          "native_pts": null,
+          "native_time_base": null,
+          "sample_seconds": 0.0,
+          "sample_seconds_rational": "0",
+          "requested_seconds": [
+            0.0
+          ],
+          "preview_sha256": "sha256:12d90ce293c07a7e832cff4062fa58156c35ce9bf09f53a7354251bffd6557df",
+          "preview_probe": {
+            "duration_seconds": 0,
+            "video": {
+              "codec": "png",
+              "width": 512,
+              "height": 384,
+              "pix_fmt": "rgb24"
+            }
+          },
+          "asset_id": "asset_g5",
+          "kind": "image",
+          "source_uri": "assets/asset_g5_asset_g5.png",
+          "source_sha256": "sha256:f029226b28b642e80113d86622e9b215ee067a0966feaf5e60604a1e05733955",
+          "rights_ref": "asset_g5",
+          "preview_asset_id": "sem_140aadca01394e993df7aad4_frame_0006",
+          "preview_uri": "assets/semantic/140aadca01394e993df7aad4/frames0006/000000.png"
+        },
+        {
+          "native_frame_index": 0,
+          "native_pts": null,
+          "native_time_base": null,
+          "sample_seconds": 0.0,
+          "sample_seconds_rational": "0",
+          "requested_seconds": [
+            0.0
+          ],
+          "preview_sha256": "sha256:74d17f13eda7c30d252efcb4ab05459bebd0d54a450e2703564822db43e0b398",
+          "preview_probe": {
+            "duration_seconds": 0,
+            "video": {
+              "codec": "png",
+              "width": 512,
+              "height": 446,
+              "pix_fmt": "rgb24"
+            }
+          },
+          "asset_id": "asset_h6",
+          "kind": "image",
+          "source_uri": "assets/asset_h6_asset_h6.jpg",
+          "source_sha256": "sha256:3a19c5dd8a927a9334bb1229a6d63711b1c0c767fb27e2286e7c84a3e2c2f5f4",
+          "rights_ref": "asset_h6",
+          "preview_asset_id": "sem_140aadca01394e993df7aad4_frame_0007",
+          "preview_uri": "assets/semantic/140aadca01394e993df7aad4/frames0007/000000.png"
+        },
+        {
+          "native_frame_index": 0,
+          "native_pts": null,
+          "native_time_base": null,
+          "sample_seconds": 0.0,
+          "sample_seconds_rational": "0",
+          "requested_seconds": [
+            0.0
+          ],
+          "preview_sha256": "sha256:29b65a5342e5b5340feddec1c8a98326aa8ed70ebcc3b0153d0bcea4b4c536b6",
+          "preview_probe": {
+            "duration_seconds": 0,
+            "video": {
+              "codec": "png",
+              "width": 512,
+              "height": 341,
+              "pix_fmt": "rgb24"
+            }
+          },
+          "asset_id": "asset_i1",
+          "kind": "image",
+          "source_uri": "assets/asset_i1_coffee_intro.png",
+          "source_sha256": "sha256:596aa1e7cb875eb79f437e310381d26b338a81c2da23439704a73c4651e8c4bb",
+          "rights_ref": "asset_i1",
+          "preview_asset_id": "sem_140aadca01394e993df7aad4_frame_0008",
+          "preview_uri": "assets/semantic/140aadca01394e993df7aad4/frames0008/000000.png"
+        },
+        {
+          "native_frame_index": 0,
+          "native_pts": null,
+          "native_time_base": null,
+          "sample_seconds": 0.0,
+          "sample_seconds_rational": "0",
+          "requested_seconds": [
+            0.0
+          ],
+          "preview_sha256": "sha256:60825e84d24fdb68b251ba9af1f8eb05a0a31dbaac3ae1acba6cb78f4a3d4dd9",
+          "preview_probe": {
+            "duration_seconds": 0,
+            "video": {
+              "codec": "png",
+              "width": 512,
+              "height": 512,
+              "pix_fmt": "rgb24"
+            }
+          },
+          "asset_id": "asset_j3",
+          "kind": "image",
+          "source_uri": "assets/asset_j3_brick.png",
+          "source_sha256": "sha256:7966caf324f6ba843118d98f7a07746d22f6a343430add0233eca5f6eaaa8fcf",
+          "rights_ref": "asset_j3",
+          "preview_asset_id": "sem_140aadca01394e993df7aad4_frame_0009",
+          "preview_uri": "assets/semantic/140aadca01394e993df7aad4/frames0009/000000.png"
+        },
+        {
+          "native_frame_index": 0,
+          "native_pts": null,
+          "native_time_base": null,
+          "sample_seconds": 0.0,
+          "sample_seconds_rational": "0",
+          "requested_seconds": [
+            0.0
+          ],
+          "preview_sha256": "sha256:29f7ba75a45ea3affc077383e0543245949b3654a391b8756e4f1f0043163cdd",
+          "preview_probe": {
+            "duration_seconds": 0,
+            "video": {
+              "codec": "png",
+              "width": 512,
+              "height": 420,
+              "pix_fmt": "rgb24"
+            }
+          },
+          "asset_id": "asset_k8",
+          "kind": "image",
+          "source_uri": "assets/asset_k8_horse.png",
+          "source_sha256": "sha256:c7fb60789fe394c485f842291ea3b21e50d140f39d6dcb5fb9917cc178225455",
+          "rights_ref": "asset_k8",
+          "preview_asset_id": "sem_140aadca01394e993df7aad4_frame_0010",
+          "preview_uri": "assets/semantic/140aadca01394e993df7aad4/frames0010/000000.png"
+        }
+      ],
+      "sources": [
+        {
+          "asset_id": "asset_a7",
+          "uri": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\external\\explicit-external-source.png",
+          "sha256": "sha256:b0793d2adda0fa6ae899c03989482bff9a42d3d5690fc7e3648f2795d730c23a",
+          "bytes": 139512,
+          "kind": "image",
+          "rights_ref": "asset_a7",
+          "sampling": {
+            "profile": "native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1",
+            "requested_bins": 1,
+            "unique_frames": 1
+          }
+        },
+        {
+          "asset_id": "asset_b4",
+          "uri": "assets/asset_b4_asset_b4.png",
+          "sha256": "sha256:cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+          "bytes": 466706,
+          "kind": "image",
+          "rights_ref": "asset_b4",
+          "sampling": {
+            "profile": "native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1",
+            "requested_bins": 1,
+            "unique_frames": 1
+          }
+        },
+        {
+          "asset_id": "asset_c2",
+          "uri": "assets/asset_c2_asset_c2.png",
+          "sha256": "sha256:596aa1e7cb875eb79f437e310381d26b338a81c2da23439704a73c4651e8c4bb",
+          "bytes": 240512,
+          "kind": "image",
+          "rights_ref": "asset_c2",
+          "sampling": {
+            "profile": "native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1",
+            "requested_bins": 1,
+            "unique_frames": 1
+          }
+        },
+        {
+          "asset_id": "asset_d9",
+          "uri": "assets/asset_d9_asset_d9.png",
+          "sha256": "sha256:88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
+          "bytes": 791555,
+          "kind": "image",
+          "rights_ref": "asset_d9",
+          "sampling": {
+            "profile": "native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1",
+            "requested_bins": 1,
+            "unique_frames": 1
+          }
+        },
+        {
+          "asset_id": "asset_e3",
+          "uri": "assets/asset_e3_asset_e3.png",
+          "sha256": "sha256:b6b6022426b38936c43a4ac09635cd78af074e90f42ffa8227ac8b7452d39f89",
+          "bytes": 217893,
+          "kind": "image",
+          "rights_ref": "asset_e3",
+          "sampling": {
+            "profile": "native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1",
+            "requested_bins": 1,
+            "unique_frames": 1
+          }
+        },
+        {
+          "asset_id": "asset_f8",
+          "uri": "assets/asset_f8_asset_f8.png",
+          "sha256": "sha256:c48615b451bf1e606fbd72c0aa9f8cc0f068ab7111ef7d93bb9b0f2586440c12",
+          "bytes": 194247,
+          "kind": "image",
+          "rights_ref": "asset_f8",
+          "sampling": {
+            "profile": "native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1",
+            "requested_bins": 1,
+            "unique_frames": 1
+          }
+        },
+        {
+          "asset_id": "asset_g5",
+          "uri": "assets/asset_g5_asset_g5.png",
+          "sha256": "sha256:f029226b28b642e80113d86622e9b215ee067a0966feaf5e60604a1e05733955",
+          "bytes": 58784,
+          "kind": "image",
+          "rights_ref": "asset_g5",
+          "sampling": {
+            "profile": "native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1",
+            "requested_bins": 1,
+            "unique_frames": 1
+          }
+        },
+        {
+          "asset_id": "asset_h6",
+          "uri": "assets/asset_h6_asset_h6.jpg",
+          "sha256": "sha256:3a19c5dd8a927a9334bb1229a6d63711b1c0c767fb27e2286e7c84a3e2c2f5f4",
+          "bytes": 527940,
+          "kind": "image",
+          "rights_ref": "asset_h6",
+          "sampling": {
+            "profile": "native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1",
+            "requested_bins": 1,
+            "unique_frames": 1
+          }
+        },
+        {
+          "asset_id": "asset_i1",
+          "uri": "assets/asset_i1_coffee_intro.png",
+          "sha256": "sha256:596aa1e7cb875eb79f437e310381d26b338a81c2da23439704a73c4651e8c4bb",
+          "bytes": 240512,
+          "kind": "image",
+          "rights_ref": "asset_i1",
+          "sampling": {
+            "profile": "native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1",
+            "requested_bins": 1,
+            "unique_frames": 1
+          }
+        },
+        {
+          "asset_id": "asset_j3",
+          "uri": "assets/asset_j3_brick.png",
+          "sha256": "sha256:7966caf324f6ba843118d98f7a07746d22f6a343430add0233eca5f6eaaa8fcf",
+          "bytes": 106634,
+          "kind": "image",
+          "rights_ref": "asset_j3",
+          "sampling": {
+            "profile": "native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1",
+            "requested_bins": 1,
+            "unique_frames": 1
+          }
+        },
+        {
+          "asset_id": "asset_k8",
+          "uri": "assets/asset_k8_horse.png",
+          "sha256": "sha256:c7fb60789fe394c485f842291ea3b21e50d140f39d6dcb5fb9917cc178225455",
+          "bytes": 16633,
+          "kind": "image",
+          "rights_ref": "asset_k8",
+          "sampling": {
+            "profile": "native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1",
+            "requested_bins": 1,
+            "unique_frames": 1
+          }
+        }
+      ],
+      "vectors": {
+        "uri": "assets/semantic/140aadca01394e993df7aad4/vectors.f32",
+        "sha256": "sha256:f62d2250469b8b54414477a4872a6c071fcacb9d016dda27021e4ad27e8f1868",
+        "bytes": 33792
+      },
+      "extraction": [
+        {
+          "asset_id": "asset_a7",
+          "command": [
+            "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+            "-nostdin",
+            "-hide_banner",
+            "-v",
+            "info",
+            "-protocol_whitelist",
+            "file,pipe",
+            "-copyts",
+            "-i",
+            "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\external\\explicit-external-source.png",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-sn",
+            "-dn",
+            "-vf",
+            "select=eq(n\\,0),scale=512:512:force_original_aspect_ratio=decrease,format=rgb24,showinfo",
+            "-frames:v",
+            "1",
+            "-fps_mode",
+            "passthrough",
+            "-start_number",
+            "0",
+            "-n",
+            "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\cache\\semantic-jobs\\job_20261025063529_0907effd\\ready\\frames0000\\%06d.png"
+          ],
+          "actual_frames": 1,
+          "native_pts_checked": false,
+          "thumbnail_profile": "native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1",
+          "video_color_acceptance": "display-oriented RGB8 retrieval evidence; not HDR grading"
+        },
+        {
+          "asset_id": "asset_b4",
+          "command": [
+            "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+            "-nostdin",
+            "-hide_banner",
+            "-v",
+            "info",
+            "-protocol_whitelist",
+            "file,pipe",
+            "-copyts",
+            "-i",
+            "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\assets\\asset_b4_asset_b4.png",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-sn",
+            "-dn",
+            "-vf",
+            "select=eq(n\\,0),scale=512:512:force_original_aspect_ratio=decrease,format=rgb24,showinfo",
+            "-frames:v",
+            "1",
+            "-fps_mode",
+            "passthrough",
+            "-start_number",
+            "0",
+            "-n",
+            "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\cache\\semantic-jobs\\job_20261025063529_0907effd\\ready\\frames0001\\%06d.png"
+          ],
+          "actual_frames": 1,
+          "native_pts_checked": false,
+          "thumbnail_profile": "native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1",
+          "video_color_acceptance": "display-oriented RGB8 retrieval evidence; not HDR grading"
+        },
+        {
+          "asset_id": "asset_c2",
+          "command": [
+            "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+            "-nostdin",
+            "-hide_banner",
+            "-v",
+            "info",
+            "-protocol_whitelist",
+            "file,pipe",
+            "-copyts",
+            "-i",
+            "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\assets\\asset_c2_asset_c2.png",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-sn",
+            "-dn",
+            "-vf",
+            "select=eq(n\\,0),scale=512:512:force_original_aspect_ratio=decrease,format=rgb24,showinfo",
+            "-frames:v",
+            "1",
+            "-fps_mode",
+            "passthrough",
+            "-start_number",
+            "0",
+            "-n",
+            "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\cache\\semantic-jobs\\job_20261025063529_0907effd\\ready\\frames0002\\%06d.png"
+          ],
+          "actual_frames": 1,
+          "native_pts_checked": false,
+          "thumbnail_profile": "native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1",
+          "video_color_acceptance": "display-oriented RGB8 retrieval evidence; not HDR grading"
+        },
+        {
+          "asset_id": "asset_d9",
+          "command": [
+            "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+            "-nostdin",
+            "-hide_banner",
+            "-v",
+            "info",
+            "-protocol_whitelist",
+            "file,pipe",
+            "-copyts",
+            "-i",
+            "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\assets\\asset_d9_asset_d9.png",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-sn",
+            "-dn",
+            "-vf",
+            "select=eq(n\\,0),scale=512:512:force_original_aspect_ratio=decrease,format=rgb24,showinfo",
+            "-frames:v",
+            "1",
+            "-fps_mode",
+            "passthrough",
+            "-start_number",
+            "0",
+            "-n",
+            "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\cache\\semantic-jobs\\job_20261025063529_0907effd\\ready\\frames0003\\%06d.png"
+          ],
+          "actual_frames": 1,
+          "native_pts_checked": false,
+          "thumbnail_profile": "native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1",
+          "video_color_acceptance": "display-oriented RGB8 retrieval evidence; not HDR grading"
+        },
+        {
+          "asset_id": "asset_e3",
+          "command": [
+            "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+            "-nostdin",
+            "-hide_banner",
+            "-v",
+            "info",
+            "-protocol_whitelist",
+            "file,pipe",
+            "-copyts",
+            "-i",
+            "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\assets\\asset_e3_asset_e3.png",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-sn",
+            "-dn",
+            "-vf",
+            "select=eq(n\\,0),scale=512:512:force_original_aspect_ratio=decrease,format=rgb24,showinfo",
+            "-frames:v",
+            "1",
+            "-fps_mode",
+            "passthrough",
+            "-start_number",
+            "0",
+            "-n",
+            "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\cache\\semantic-jobs\\job_20261025063529_0907effd\\ready\\frames0004\\%06d.png"
+          ],
+          "actual_frames": 1,
+          "native_pts_checked": false,
+          "thumbnail_profile": "native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1",
+          "video_color_acceptance": "display-oriented RGB8 retrieval evidence; not HDR grading"
+        },
+        {
+          "asset_id": "asset_f8",
+          "command": [
+            "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+            "-nostdin",
+            "-hide_banner",
+            "-v",
+            "info",
+            "-protocol_whitelist",
+            "file,pipe",
+            "-copyts",
+            "-i",
+            "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\assets\\asset_f8_asset_f8.png",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-sn",
+            "-dn",
+            "-vf",
+            "select=eq(n\\,0),scale=512:512:force_original_aspect_ratio=decrease,format=rgb24,showinfo",
+            "-frames:v",
+            "1",
+            "-fps_mode",
+            "passthrough",
+            "-start_number",
+            "0",
+            "-n",
+            "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\cache\\semantic-jobs\\job_20261025063529_0907effd\\ready\\frames0005\\%06d.png"
+          ],
+          "actual_frames": 1,
+          "native_pts_checked": false,
+          "thumbnail_profile": "native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1",
+          "video_color_acceptance": "display-oriented RGB8 retrieval evidence; not HDR grading"
+        },
+        {
+          "asset_id": "asset_g5",
+          "command": [
+            "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+            "-nostdin",
+            "-hide_banner",
+            "-v",
+            "info",
+            "-protocol_whitelist",
+            "file,pipe",
+            "-copyts",
+            "-i",
+            "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\assets\\asset_g5_asset_g5.png",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-sn",
+            "-dn",
+            "-vf",
+            "select=eq(n\\,0),scale=512:512:force_original_aspect_ratio=decrease,format=rgb24,showinfo",
+            "-frames:v",
+            "1",
+            "-fps_mode",
+            "passthrough",
+            "-start_number",
+            "0",
+            "-n",
+            "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\cache\\semantic-jobs\\job_20261025063529_0907effd\\ready\\frames0006\\%06d.png"
+          ],
+          "actual_frames": 1,
+          "native_pts_checked": false,
+          "thumbnail_profile": "native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1",
+          "video_color_acceptance": "display-oriented RGB8 retrieval evidence; not HDR grading"
+        },
+        {
+          "asset_id": "asset_h6",
+          "command": [
+            "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+            "-nostdin",
+            "-hide_banner",
+            "-v",
+            "info",
+            "-protocol_whitelist",
+            "file,pipe",
+            "-copyts",
+            "-i",
+            "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\assets\\asset_h6_asset_h6.jpg",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-sn",
+            "-dn",
+            "-vf",
+            "select=eq(n\\,0),scale=512:512:force_original_aspect_ratio=decrease,format=rgb24,showinfo",
+            "-frames:v",
+            "1",
+            "-fps_mode",
+            "passthrough",
+            "-start_number",
+            "0",
+            "-n",
+            "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\cache\\semantic-jobs\\job_20261025063529_0907effd\\ready\\frames0007\\%06d.png"
+          ],
+          "actual_frames": 1,
+          "native_pts_checked": false,
+          "thumbnail_profile": "native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1",
+          "video_color_acceptance": "display-oriented RGB8 retrieval evidence; not HDR grading"
+        },
+        {
+          "asset_id": "asset_i1",
+          "command": [
+            "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+            "-nostdin",
+            "-hide_banner",
+            "-v",
+            "info",
+            "-protocol_whitelist",
+            "file,pipe",
+            "-copyts",
+            "-i",
+            "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\assets\\asset_i1_coffee_intro.png",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-sn",
+            "-dn",
+            "-vf",
+            "select=eq(n\\,0),scale=512:512:force_original_aspect_ratio=decrease,format=rgb24,showinfo",
+            "-frames:v",
+            "1",
+            "-fps_mode",
+            "passthrough",
+            "-start_number",
+            "0",
+            "-n",
+            "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\cache\\semantic-jobs\\job_20261025063529_0907effd\\ready\\frames0008\\%06d.png"
+          ],
+          "actual_frames": 1,
+          "native_pts_checked": false,
+          "thumbnail_profile": "native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1",
+          "video_color_acceptance": "display-oriented RGB8 retrieval evidence; not HDR grading"
+        },
+        {
+          "asset_id": "asset_j3",
+          "command": [
+            "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+            "-nostdin",
+            "-hide_banner",
+            "-v",
+            "info",
+            "-protocol_whitelist",
+            "file,pipe",
+            "-copyts",
+            "-i",
+            "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\assets\\asset_j3_brick.png",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-sn",
+            "-dn",
+            "-vf",
+            "select=eq(n\\,0),scale=512:512:force_original_aspect_ratio=decrease,format=rgb24,showinfo",
+            "-frames:v",
+            "1",
+            "-fps_mode",
+            "passthrough",
+            "-start_number",
+            "0",
+            "-n",
+            "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\cache\\semantic-jobs\\job_20261025063529_0907effd\\ready\\frames0009\\%06d.png"
+          ],
+          "actual_frames": 1,
+          "native_pts_checked": false,
+          "thumbnail_profile": "native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1",
+          "video_color_acceptance": "display-oriented RGB8 retrieval evidence; not HDR grading"
+        },
+        {
+          "asset_id": "asset_k8",
+          "command": [
+            "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+            "-nostdin",
+            "-hide_banner",
+            "-v",
+            "info",
+            "-protocol_whitelist",
+            "file,pipe",
+            "-copyts",
+            "-i",
+            "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\assets\\asset_k8_horse.png",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-sn",
+            "-dn",
+            "-vf",
+            "select=eq(n\\,0),scale=512:512:force_original_aspect_ratio=decrease,format=rgb24,showinfo",
+            "-frames:v",
+            "1",
+            "-fps_mode",
+            "passthrough",
+            "-start_number",
+            "0",
+            "-n",
+            "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\cache\\semantic-jobs\\job_20261025063529_0907effd\\ready\\frames0010\\%06d.png"
+          ],
+          "actual_frames": 1,
+          "native_pts_checked": false,
+          "thumbnail_profile": "native-pts-floor-frame-ffmpeg-autorotate-rgb8-max512-v1",
+          "video_color_acceptance": "display-oriented RGB8 retrieval evidence; not HDR grading"
+        }
+      ],
+      "inference": {
+        "selection": {
+          "requested": "cuda",
+          "selected": "cuda",
+          "fallback_reason": null,
+          "gpu": {
+            "index": 0,
+            "name": "NVIDIA GeForce RTX 3060",
+            "driver": "595.95",
+            "total_mib": 12288,
+            "free_mib": 10574,
+            "compute_capability": "8.6"
+          },
+          "device_index": 0,
+          "minimum_free_mib": 3072,
+          "existing_gpu_processes_untouched": true
+        },
+        "attempts": [
+          {
+            "device": "cuda",
+            "status": "succeeded",
+            "response": {
+              "protocol": "agent-semantic-embedding-v1",
+              "status": "succeeded",
+              "network": "disabled",
+              "blocked_network_events": [],
+              "request_sha256": "sha256:d09b58154cd3e1e4bb4f626ef77d3e012833c954e77ce9d1bd7ec0b4776e491d",
+              "versions": {
+                "torch": "2.13.0+cu130",
+                "transformers": "5.14.1",
+                "numpy": "2.4.2",
+                "PIL": "12.1.0",
+                "tokenizers": "0.22.2",
+                "safetensors": "0.8.0",
+                "siglip": "bundled-with-transformers",
+                "python": "3.13.14"
+              },
+              "module_paths": {
+                "torch": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\__init__.py",
+                "transformers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\__init__.py",
+                "numpy": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.9\\final-r1\\installed\\site\\numpy\\__init__.py",
+                "PIL": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.9\\final-r1\\installed\\site\\PIL\\__init__.py",
+                "tokenizers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\tokenizers\\__init__.py",
+                "safetensors": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\safetensors\\__init__.py",
+                "siglip": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\models\\siglip\\modeling_siglip.py"
+              },
+              "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\cache\\semantic-jobs\\job_20261025063529_0907effd\\inference-cuda\\features.f32",
+              "output_sha256": "sha256:c194ec9b449c0ada1fe851fc6b2db94c66f27f7547cd202aa283aab6f7a18255",
+              "rows": 10,
+              "dimension": 768,
+              "dtype": "float32-little-endian",
+              "item_ids": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9"
+              ],
+              "task": "image",
+              "adapter_sha256": "sha256:4424bac1bb517593ca264dc75dea547c46ed29ee17375f03f156e6d39b18a056",
+              "device": "cuda",
+              "device_index": 0,
+              "actual_device": "NVIDIA GeForce RTX 3060",
+              "model_dtype": "torch.bfloat16",
+              "load_seconds": 58.643834,
+              "inference_seconds": 18.114211,
+              "peak_cuda_allocated_bytes": 808215040,
+              "peak_cuda_reserved_bytes": 834666496,
+              "model_loads": 1,
+              "model_forward_calls": 2,
+              "batch_size": 8,
+              "image_sizes": [
+                [
+                  512,
+                  512
+                ],
+                [
+                  512,
+                  341
+                ],
+                [
+                  512,
+                  341
+                ],
+                [
+                  512,
+                  512
+                ],
+                [
+                  512,
+                  512
+                ],
+                [
+                  512,
+                  512
+                ],
+                [
+                  512,
+                  384
+                ],
+                [
+                  512,
+                  446
+                ],
+                [
+                  512,
+                  512
+                ],
+                [
+                  512,
+                  420
+                ]
+              ],
+              "model_loading_keys_verified": true,
+              "text_normalization": "lowercase; max_length=64; no truncation",
+              "model_reuse_scope": "complete current batch only; no persistent model service",
+              "elapsed_seconds": 162.934131
+            }
+          }
+        ],
+        "job": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\cache\\semantic-jobs\\job_20261025063529_0907effd",
+        "response": {
+          "protocol": "agent-semantic-embedding-v1",
+          "status": "succeeded",
+          "network": "disabled",
+          "blocked_network_events": [],
+          "request_sha256": "sha256:d09b58154cd3e1e4bb4f626ef77d3e012833c954e77ce9d1bd7ec0b4776e491d",
+          "versions": {
+            "torch": "2.13.0+cu130",
+            "transformers": "5.14.1",
+            "numpy": "2.4.2",
+            "PIL": "12.1.0",
+            "tokenizers": "0.22.2",
+            "safetensors": "0.8.0",
+            "siglip": "bundled-with-transformers",
+            "python": "3.13.14"
+          },
+          "module_paths": {
+            "torch": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\__init__.py",
+            "transformers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\__init__.py",
+            "numpy": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.9\\final-r1\\installed\\site\\numpy\\__init__.py",
+            "PIL": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.9\\final-r1\\installed\\site\\PIL\\__init__.py",
+            "tokenizers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\tokenizers\\__init__.py",
+            "safetensors": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\safetensors\\__init__.py",
+            "siglip": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\models\\siglip\\modeling_siglip.py"
+          },
+          "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\cache\\semantic-jobs\\job_20261025063529_0907effd\\inference-cuda\\features.f32",
+          "output_sha256": "sha256:c194ec9b449c0ada1fe851fc6b2db94c66f27f7547cd202aa283aab6f7a18255",
+          "rows": 10,
+          "dimension": 768,
+          "dtype": "float32-little-endian",
+          "item_ids": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+          ],
+          "task": "image",
+          "adapter_sha256": "sha256:4424bac1bb517593ca264dc75dea547c46ed29ee17375f03f156e6d39b18a056",
+          "device": "cuda",
+          "device_index": 0,
+          "actual_device": "NVIDIA GeForce RTX 3060",
+          "model_dtype": "torch.bfloat16",
+          "load_seconds": 58.643834,
+          "inference_seconds": 18.114211,
+          "peak_cuda_allocated_bytes": 808215040,
+          "peak_cuda_reserved_bytes": 834666496,
+          "model_loads": 1,
+          "model_forward_calls": 2,
+          "batch_size": 8,
+          "image_sizes": [
+            [
+              512,
+              512
+            ],
+            [
+              512,
+              341
+            ],
+            [
+              512,
+              341
+            ],
+            [
+              512,
+              512
+            ],
+            [
+              512,
+              512
+            ],
+            [
+              512,
+              512
+            ],
+            [
+              512,
+              384
+            ],
+            [
+              512,
+              446
+            ],
+            [
+              512,
+              512
+            ],
+            [
+              512,
+              420
+            ]
+          ],
+          "model_loading_keys_verified": true,
+          "text_normalization": "lowercase; max_length=64; no truncation",
+          "model_reuse_scope": "complete current batch only; no persistent model service",
+          "elapsed_seconds": 162.934131
+        },
+        "deduplication": {
+          "index_rows": 11,
+          "unique_image_inputs": 10,
+          "key": "exact thumbnail SHA-256; source and time records remain separate"
+        }
+      },
+      "network": "disabled",
+      "warnings": [
+        "SAMPLED_VISUAL_SIMILARITY_REQUIRES_REVIEW",
+        "SOURCE_AND_MODEL_RIGHTS_REMAIN_SEPARATE"
+      ],
+      "fingerprint": "sha256:bb6cd187f91099e5fbf8c962529aeeca8b35a7d0b78131eb4d52566144760d5e"
+    }
+  },
+  "profiles": {
+    "accept-cuda": {
+      "format": "agent-semantic-acceptance-profile-v1",
+      "calibration_id": "accept-cuda",
+      "index_id": "images-v1",
+      "index_fingerprint": "sha256:bb6cd187f91099e5fbf8c962529aeeca8b35a7d0b78131eb4d52566144760d5e",
+      "adapter_sha256": "sha256:4424bac1bb517593ca264dc75dea547c46ed29ee17375f03f156e6d39b18a056",
+      "query_protocol": "agent-semantic-clauses-v1",
+      "kind": "image",
+      "created_at": "2026-10-25T06:43:00.055843Z",
+      "scope": "Eleven familiar static images, ten visual classes; English/Chinese text, no natural actions, audio or identity.",
+      "dataset_sha256": "sha256:fd492a66daabea06da2823b68775bf7a51c8ccb43ac583df8566d53b393d0621",
+      "device": "cuda",
+      "device_index": 0,
+      "fit": {
+        "algorithm": "negative-order-statistic-strict-greater-v1",
+        "cutoff": 0.0561935684022833,
+        "requested_false_accept_rate": 0.05,
+        "requested_minimum_correct_coverage": 0.75,
+        "positive_count": 20,
+        "negative_count": 20,
+        "accepted_correct_positives": 20,
+        "correct_positive_coverage": 1.0,
+        "false_accepted_negatives": 1,
+        "observed_false_accept_rate": 0.05,
+        "quality_gate_passed": true,
+        "guarantee": "empirical calibration only; no distribution-free, probability or universal no-match guarantee"
+      },
+      "observations": [
+        {
+          "id": "cpos00en",
+          "expected_asset_ids": [
+            "asset_a7"
+          ],
+          "top_asset_id": "asset_a7",
+          "score": 0.15392839460527338,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "black and white photo of a man with a camera",
+            "include": [
+              "black and white photo of a man with a camera"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              0
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos00zh",
+          "expected_asset_ids": [
+            "asset_a7"
+          ],
+          "top_asset_id": "asset_a7",
+          "score": 0.12548425928469167,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "黑白照片里的男人和相机",
+            "include": [
+              "黑白照片里的男人和相机"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              1
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos01en",
+          "expected_asset_ids": [
+            "asset_b4"
+          ],
+          "top_asset_id": "asset_b4",
+          "score": 0.13476951294092115,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a coffee cup and saucer viewed from above",
+            "include": [
+              "a coffee cup and saucer viewed from above"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              2
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos01zh",
+          "expected_asset_ids": [
+            "asset_b4"
+          ],
+          "top_asset_id": "asset_b4",
+          "score": 0.09001906410009908,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "俯拍咖啡杯与杯碟",
+            "include": [
+              "俯拍咖啡杯与杯碟"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              3
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos02en",
+          "expected_asset_ids": [
+            "asset_c2",
+            "asset_i1"
+          ],
+          "top_asset_id": "asset_c2",
+          "score": 0.14972823687916847,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "the face of a brown tabby cat",
+            "include": [
+              "the face of a brown tabby cat"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              4
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos02zh",
+          "expected_asset_ids": [
+            "asset_c2",
+            "asset_i1"
+          ],
+          "top_asset_id": "asset_c2",
+          "score": 0.1193023596853818,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "棕色虎斑猫的脸",
+            "include": [
+              "棕色虎斑猫的脸"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              5
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos03en",
+          "expected_asset_ids": [
+            "asset_d9"
+          ],
+          "top_asset_id": "asset_d9",
+          "score": 0.15412864416339062,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a portrait in an orange astronaut suit",
+            "include": [
+              "a portrait in an orange astronaut suit"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              6
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos03zh",
+          "expected_asset_ids": [
+            "asset_d9"
+          ],
+          "top_asset_id": "asset_d9",
+          "score": 0.13969109801303786,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "橙色宇航服的人物肖像",
+            "include": [
+              "橙色宇航服的人物肖像"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              7
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos04en",
+          "expected_asset_ids": [
+            "asset_e3"
+          ],
+          "top_asset_id": "asset_e3",
+          "score": 0.1221585649696062,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "dense blades of lawn grass",
+            "include": [
+              "dense blades of lawn grass"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              8
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos04zh",
+          "expected_asset_ids": [
+            "asset_e3"
+          ],
+          "top_asset_id": "asset_e3",
+          "score": 0.12273302754695423,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "密集的草坪草叶",
+            "include": [
+              "密集的草坪草叶"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              9
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos05en",
+          "expected_asset_ids": [
+            "asset_f8"
+          ],
+          "top_asset_id": "asset_f8",
+          "score": 0.14625853194356309,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a close texture of loose gravel",
+            "include": [
+              "a close texture of loose gravel"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              10
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos05zh",
+          "expected_asset_ids": [
+            "asset_f8"
+          ],
+          "top_asset_id": "asset_f8",
+          "score": 0.14771546657258197,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "松散碎石的近景纹理",
+            "include": [
+              "松散碎石的近景纹理"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              11
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos06en",
+          "expected_asset_ids": [
+            "asset_g5"
+          ],
+          "top_asset_id": "asset_g5",
+          "score": 0.14463026759799644,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a blurred photograph of an analog clock",
+            "include": [
+              "a blurred photograph of an analog clock"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              12
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos06zh",
+          "expected_asset_ids": [
+            "asset_g5"
+          ],
+          "top_asset_id": "asset_g5",
+          "score": 0.10824712799372659,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "模糊的指针钟表照片",
+            "include": [
+              "模糊的指针钟表照片"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              13
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos07en",
+          "expected_asset_ids": [
+            "asset_h6"
+          ],
+          "top_asset_id": "asset_h6",
+          "score": 0.17244899460365193,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a telescope view of many distant galaxies",
+            "include": [
+              "a telescope view of many distant galaxies"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              14
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos07zh",
+          "expected_asset_ids": [
+            "asset_h6"
+          ],
+          "top_asset_id": "asset_h6",
+          "score": 0.11900684473251387,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "望远镜中的许多遥远星系",
+            "include": [
+              "望远镜中的许多遥远星系"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              15
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos08en",
+          "expected_asset_ids": [
+            "asset_j3"
+          ],
+          "top_asset_id": "asset_j3",
+          "score": 0.1319579383148887,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a close texture of a brick wall",
+            "include": [
+              "a close texture of a brick wall"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              16
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos08zh",
+          "expected_asset_ids": [
+            "asset_j3"
+          ],
+          "top_asset_id": "asset_j3",
+          "score": 0.14249977524014157,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "砖墙表面的近距离纹理",
+            "include": [
+              "砖墙表面的近距离纹理"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              17
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos09en",
+          "expected_asset_ids": [
+            "asset_k8"
+          ],
+          "top_asset_id": "asset_k8",
+          "score": 0.17620621812043297,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a black and white horse silhouette",
+            "include": [
+              "a black and white horse silhouette"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              18
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos09zh",
+          "expected_asset_ids": [
+            "asset_k8"
+          ],
+          "top_asset_id": "asset_k8",
+          "score": 0.15279867549448112,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "黑白马匹剪影",
+            "include": [
+              "黑白马匹剪影"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              19
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout00en",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_e3",
+          "score": -0.009440092680172135,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a red racing car on a road",
+            "include": [
+              "a red racing car on a road"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              20
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout00zh",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_k8",
+          "score": 0.04951538877806893,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "公路上的红色赛车",
+            "include": [
+              "公路上的红色赛车"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              21
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout01en",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_c2",
+          "score": 0.0390259744627441,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a golden retriever dog",
+            "include": [
+              "a golden retriever dog"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              22
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout01zh",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_j3",
+          "score": 0.051828422565813936,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "一只金毛寻回犬",
+            "include": [
+              "一只金毛寻回犬"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              23
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout02en",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_j3",
+          "score": 0.01959644937256128,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "ocean waves breaking on a beach",
+            "include": [
+              "ocean waves breaking on a beach"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              24
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout02zh",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_e3",
+          "score": 0.053959344311199794,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "拍打沙滩的海浪",
+            "include": [
+              "拍打沙滩的海浪"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              25
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout03en",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_j3",
+          "score": 0.001852942691757716,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a grand piano in a concert hall",
+            "include": [
+              "a grand piano in a concert hall"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              26
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout03zh",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_j3",
+          "score": 0.04137576756738813,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "音乐厅里的三角钢琴",
+            "include": [
+              "音乐厅里的三角钢琴"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              27
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout04en",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_e3",
+          "score": 0.015742024655710105,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a forest beside a clear lake",
+            "include": [
+              "a forest beside a clear lake"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              28
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout04zh",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_j3",
+          "score": 0.026982755422869705,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "清澈湖泊旁边的树林",
+            "include": [
+              "清澈湖泊旁边的树林"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              29
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout05en",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_g5",
+          "score": 0.00520035589936127,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a bowl filled with fresh fruit",
+            "include": [
+              "a bowl filled with fresh fruit"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              30
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout05zh",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_f8",
+          "score": 0.025861341668320464,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "装满新鲜水果的碗",
+            "include": [
+              "装满新鲜水果的碗"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              31
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout06en",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_j3",
+          "score": 0.01754333467947344,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a bicycle parked beside a building",
+            "include": [
+              "a bicycle parked beside a building"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              32
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout06zh",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_j3",
+          "score": 0.051961713975494254,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "停在建筑旁的自行车",
+            "include": [
+              "停在建筑旁的自行车"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              33
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout07en",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_g5",
+          "score": 0.053989858595018966,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "an airplane flying in the sky",
+            "include": [
+              "an airplane flying in the sky"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              34
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout07zh",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_g5",
+          "score": 0.0561935684022833,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "天空中飞行的飞机",
+            "include": [
+              "天空中飞行的飞机"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              35
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout08en",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_g5",
+          "score": 0.03158518283089383,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a microphone in a recording studio",
+            "include": [
+              "a microphone in a recording studio"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              36
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout08zh",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_a7",
+          "score": 0.06029636837209934,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "录音棚里的麦克风",
+            "include": [
+              "录音棚里的麦克风"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              37
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout09en",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_g5",
+          "score": 0.02342280827319509,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a surgeon operating in a hospital",
+            "include": [
+              "a surgeon operating in a hospital"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              38
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout09zh",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_g5",
+          "score": 0.028215097235676802,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "医院里正在手术的外科医生",
+            "include": [
+              "医院里正在手术的外科医生"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              39
+            ],
+            "exclude_rows": []
+          }
+        }
+      ],
+      "inference": {
+        "selection": {
+          "requested": "cuda",
+          "selected": "cuda",
+          "fallback_reason": null,
+          "gpu": {
+            "index": 0,
+            "name": "NVIDIA GeForce RTX 3060",
+            "driver": "595.95",
+            "total_mib": 12288,
+            "free_mib": 10574,
+            "compute_capability": "8.6"
+          },
+          "device_index": 0,
+          "minimum_free_mib": 3072,
+          "existing_gpu_processes_untouched": true
+        },
+        "attempts": [
+          {
+            "device": "cuda",
+            "status": "succeeded",
+            "response": {
+              "protocol": "agent-semantic-embedding-v1",
+              "status": "succeeded",
+              "network": "disabled",
+              "blocked_network_events": [],
+              "request_sha256": "sha256:49fc80d5c62e0c6511b88bee8cd27d130f270961ac2f0b5d2db8f356efce2515",
+              "versions": {
+                "torch": "2.13.0+cu130",
+                "transformers": "5.14.1",
+                "numpy": "2.4.2",
+                "PIL": "12.1.0",
+                "tokenizers": "0.22.2",
+                "safetensors": "0.8.0",
+                "siglip": "bundled-with-transformers",
+                "python": "3.13.14"
+              },
+              "module_paths": {
+                "torch": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\__init__.py",
+                "transformers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\__init__.py",
+                "numpy": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.9\\final-r1\\installed\\site\\numpy\\__init__.py",
+                "PIL": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.9\\final-r1\\installed\\site\\PIL\\__init__.py",
+                "tokenizers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\tokenizers\\__init__.py",
+                "safetensors": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\safetensors\\__init__.py",
+                "siglip": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\models\\siglip\\modeling_siglip.py"
+              },
+              "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\cache\\semantic-jobs\\job_20261025063940_f76912dc\\inference-cuda\\features.f32",
+              "output_sha256": "sha256:5c9b38f3ebd3858d4c49a144df16d597eaccdd69c406997f3c9d42511c189ff4",
+              "rows": 40,
+              "dimension": 768,
+              "dtype": "float32-little-endian",
+              "item_ids": [
+                "clause_0",
+                "clause_1",
+                "clause_2",
+                "clause_3",
+                "clause_4",
+                "clause_5",
+                "clause_6",
+                "clause_7",
+                "clause_8",
+                "clause_9",
+                "clause_10",
+                "clause_11",
+                "clause_12",
+                "clause_13",
+                "clause_14",
+                "clause_15",
+                "clause_16",
+                "clause_17",
+                "clause_18",
+                "clause_19",
+                "clause_20",
+                "clause_21",
+                "clause_22",
+                "clause_23",
+                "clause_24",
+                "clause_25",
+                "clause_26",
+                "clause_27",
+                "clause_28",
+                "clause_29",
+                "clause_30",
+                "clause_31",
+                "clause_32",
+                "clause_33",
+                "clause_34",
+                "clause_35",
+                "clause_36",
+                "clause_37",
+                "clause_38",
+                "clause_39"
+              ],
+              "task": "text",
+              "adapter_sha256": "sha256:4424bac1bb517593ca264dc75dea547c46ed29ee17375f03f156e6d39b18a056",
+              "device": "cuda",
+              "device_index": 0,
+              "actual_device": "NVIDIA GeForce RTX 3060",
+              "model_dtype": "torch.bfloat16",
+              "load_seconds": 89.796001,
+              "inference_seconds": 0.40708,
+              "peak_cuda_allocated_bytes": 785155072,
+              "peak_cuda_reserved_bytes": 803209216,
+              "model_loads": 1,
+              "model_forward_calls": 5,
+              "batch_size": 8,
+              "image_sizes": [],
+              "model_loading_keys_verified": true,
+              "text_normalization": "lowercase; max_length=64; no truncation",
+              "model_reuse_scope": "complete current batch only; no persistent model service",
+              "elapsed_seconds": 197.175926
+            }
+          }
+        ],
+        "job": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\cache\\semantic-jobs\\job_20261025063940_f76912dc",
+        "response": {
+          "protocol": "agent-semantic-embedding-v1",
+          "status": "succeeded",
+          "network": "disabled",
+          "blocked_network_events": [],
+          "request_sha256": "sha256:49fc80d5c62e0c6511b88bee8cd27d130f270961ac2f0b5d2db8f356efce2515",
+          "versions": {
+            "torch": "2.13.0+cu130",
+            "transformers": "5.14.1",
+            "numpy": "2.4.2",
+            "PIL": "12.1.0",
+            "tokenizers": "0.22.2",
+            "safetensors": "0.8.0",
+            "siglip": "bundled-with-transformers",
+            "python": "3.13.14"
+          },
+          "module_paths": {
+            "torch": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\__init__.py",
+            "transformers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\__init__.py",
+            "numpy": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.9\\final-r1\\installed\\site\\numpy\\__init__.py",
+            "PIL": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.9\\final-r1\\installed\\site\\PIL\\__init__.py",
+            "tokenizers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\tokenizers\\__init__.py",
+            "safetensors": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\safetensors\\__init__.py",
+            "siglip": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\models\\siglip\\modeling_siglip.py"
+          },
+          "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\cache\\semantic-jobs\\job_20261025063940_f76912dc\\inference-cuda\\features.f32",
+          "output_sha256": "sha256:5c9b38f3ebd3858d4c49a144df16d597eaccdd69c406997f3c9d42511c189ff4",
+          "rows": 40,
+          "dimension": 768,
+          "dtype": "float32-little-endian",
+          "item_ids": [
+            "clause_0",
+            "clause_1",
+            "clause_2",
+            "clause_3",
+            "clause_4",
+            "clause_5",
+            "clause_6",
+            "clause_7",
+            "clause_8",
+            "clause_9",
+            "clause_10",
+            "clause_11",
+            "clause_12",
+            "clause_13",
+            "clause_14",
+            "clause_15",
+            "clause_16",
+            "clause_17",
+            "clause_18",
+            "clause_19",
+            "clause_20",
+            "clause_21",
+            "clause_22",
+            "clause_23",
+            "clause_24",
+            "clause_25",
+            "clause_26",
+            "clause_27",
+            "clause_28",
+            "clause_29",
+            "clause_30",
+            "clause_31",
+            "clause_32",
+            "clause_33",
+            "clause_34",
+            "clause_35",
+            "clause_36",
+            "clause_37",
+            "clause_38",
+            "clause_39"
+          ],
+          "task": "text",
+          "adapter_sha256": "sha256:4424bac1bb517593ca264dc75dea547c46ed29ee17375f03f156e6d39b18a056",
+          "device": "cuda",
+          "device_index": 0,
+          "actual_device": "NVIDIA GeForce RTX 3060",
+          "model_dtype": "torch.bfloat16",
+          "load_seconds": 89.796001,
+          "inference_seconds": 0.40708,
+          "peak_cuda_allocated_bytes": 785155072,
+          "peak_cuda_reserved_bytes": 803209216,
+          "model_loads": 1,
+          "model_forward_calls": 5,
+          "batch_size": 8,
+          "image_sizes": [],
+          "model_loading_keys_verified": true,
+          "text_normalization": "lowercase; max_length=64; no truncation",
+          "model_reuse_scope": "complete current batch only; no persistent model service",
+          "elapsed_seconds": 197.175926
+        }
+      },
+      "network": "disabled",
+      "fingerprint": "sha256:856b9e1d392a4767db07e9a3c34cf3593f60c2d75c10b4b577b745461ce89bbe"
+    },
+    "accept-cpu": {
+      "format": "agent-semantic-acceptance-profile-v1",
+      "calibration_id": "accept-cpu",
+      "index_id": "images-v1",
+      "index_fingerprint": "sha256:bb6cd187f91099e5fbf8c962529aeeca8b35a7d0b78131eb4d52566144760d5e",
+      "adapter_sha256": "sha256:4424bac1bb517593ca264dc75dea547c46ed29ee17375f03f156e6d39b18a056",
+      "query_protocol": "agent-semantic-clauses-v1",
+      "kind": "image",
+      "created_at": "2026-10-25T06:45:58.217700Z",
+      "scope": "Eleven familiar static images, ten visual classes; English/Chinese text, no natural actions, audio or identity.",
+      "dataset_sha256": "sha256:fd492a66daabea06da2823b68775bf7a51c8ccb43ac583df8566d53b393d0621",
+      "device": "cpu",
+      "device_index": 0,
+      "fit": {
+        "algorithm": "negative-order-statistic-strict-greater-v1",
+        "cutoff": 0.05586498798289672,
+        "requested_false_accept_rate": 0.05,
+        "requested_minimum_correct_coverage": 0.75,
+        "positive_count": 20,
+        "negative_count": 20,
+        "accepted_correct_positives": 20,
+        "correct_positive_coverage": 1.0,
+        "false_accepted_negatives": 1,
+        "observed_false_accept_rate": 0.05,
+        "quality_gate_passed": true,
+        "guarantee": "empirical calibration only; no distribution-free, probability or universal no-match guarantee"
+      },
+      "observations": [
+        {
+          "id": "cpos00en",
+          "expected_asset_ids": [
+            "asset_a7"
+          ],
+          "top_asset_id": "asset_a7",
+          "score": 0.15380956746135088,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "black and white photo of a man with a camera",
+            "include": [
+              "black and white photo of a man with a camera"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              0
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos00zh",
+          "expected_asset_ids": [
+            "asset_a7"
+          ],
+          "top_asset_id": "asset_a7",
+          "score": 0.12534212845558704,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "黑白照片里的男人和相机",
+            "include": [
+              "黑白照片里的男人和相机"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              1
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos01en",
+          "expected_asset_ids": [
+            "asset_b4"
+          ],
+          "top_asset_id": "asset_b4",
+          "score": 0.1344344020318698,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a coffee cup and saucer viewed from above",
+            "include": [
+              "a coffee cup and saucer viewed from above"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              2
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos01zh",
+          "expected_asset_ids": [
+            "asset_b4"
+          ],
+          "top_asset_id": "asset_b4",
+          "score": 0.08980326399742682,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "俯拍咖啡杯与杯碟",
+            "include": [
+              "俯拍咖啡杯与杯碟"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              3
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos02en",
+          "expected_asset_ids": [
+            "asset_c2",
+            "asset_i1"
+          ],
+          "top_asset_id": "asset_c2",
+          "score": 0.14929485430844328,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "the face of a brown tabby cat",
+            "include": [
+              "the face of a brown tabby cat"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              4
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos02zh",
+          "expected_asset_ids": [
+            "asset_c2",
+            "asset_i1"
+          ],
+          "top_asset_id": "asset_i1",
+          "score": 0.11888345948458687,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "棕色虎斑猫的脸",
+            "include": [
+              "棕色虎斑猫的脸"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              5
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos03en",
+          "expected_asset_ids": [
+            "asset_d9"
+          ],
+          "top_asset_id": "asset_d9",
+          "score": 0.15361818707996938,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a portrait in an orange astronaut suit",
+            "include": [
+              "a portrait in an orange astronaut suit"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              6
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos03zh",
+          "expected_asset_ids": [
+            "asset_d9"
+          ],
+          "top_asset_id": "asset_d9",
+          "score": 0.14006430528895875,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "橙色宇航服的人物肖像",
+            "include": [
+              "橙色宇航服的人物肖像"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              7
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos04en",
+          "expected_asset_ids": [
+            "asset_e3"
+          ],
+          "top_asset_id": "asset_e3",
+          "score": 0.12160902591633996,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "dense blades of lawn grass",
+            "include": [
+              "dense blades of lawn grass"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              8
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos04zh",
+          "expected_asset_ids": [
+            "asset_e3"
+          ],
+          "top_asset_id": "asset_e3",
+          "score": 0.12275086769467404,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "密集的草坪草叶",
+            "include": [
+              "密集的草坪草叶"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              9
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos05en",
+          "expected_asset_ids": [
+            "asset_f8"
+          ],
+          "top_asset_id": "asset_f8",
+          "score": 0.14607498448126965,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a close texture of loose gravel",
+            "include": [
+              "a close texture of loose gravel"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              10
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos05zh",
+          "expected_asset_ids": [
+            "asset_f8"
+          ],
+          "top_asset_id": "asset_f8",
+          "score": 0.14749179153438352,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "松散碎石的近景纹理",
+            "include": [
+              "松散碎石的近景纹理"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              11
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos06en",
+          "expected_asset_ids": [
+            "asset_g5"
+          ],
+          "top_asset_id": "asset_g5",
+          "score": 0.14465128425689233,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a blurred photograph of an analog clock",
+            "include": [
+              "a blurred photograph of an analog clock"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              12
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos06zh",
+          "expected_asset_ids": [
+            "asset_g5"
+          ],
+          "top_asset_id": "asset_g5",
+          "score": 0.10819481425370209,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "模糊的指针钟表照片",
+            "include": [
+              "模糊的指针钟表照片"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              13
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos07en",
+          "expected_asset_ids": [
+            "asset_h6"
+          ],
+          "top_asset_id": "asset_h6",
+          "score": 0.17223128222952633,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a telescope view of many distant galaxies",
+            "include": [
+              "a telescope view of many distant galaxies"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              14
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos07zh",
+          "expected_asset_ids": [
+            "asset_h6"
+          ],
+          "top_asset_id": "asset_h6",
+          "score": 0.11904138208338907,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "望远镜中的许多遥远星系",
+            "include": [
+              "望远镜中的许多遥远星系"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              15
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos08en",
+          "expected_asset_ids": [
+            "asset_j3"
+          ],
+          "top_asset_id": "asset_j3",
+          "score": 0.13178941733805513,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a close texture of a brick wall",
+            "include": [
+              "a close texture of a brick wall"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              16
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos08zh",
+          "expected_asset_ids": [
+            "asset_j3"
+          ],
+          "top_asset_id": "asset_j3",
+          "score": 0.14231370580778704,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "砖墙表面的近距离纹理",
+            "include": [
+              "砖墙表面的近距离纹理"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              17
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos09en",
+          "expected_asset_ids": [
+            "asset_k8"
+          ],
+          "top_asset_id": "asset_k8",
+          "score": 0.17602073495973555,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a black and white horse silhouette",
+            "include": [
+              "a black and white horse silhouette"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              18
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cpos09zh",
+          "expected_asset_ids": [
+            "asset_k8"
+          ],
+          "top_asset_id": "asset_k8",
+          "score": 0.15247298114383454,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "黑白马匹剪影",
+            "include": [
+              "黑白马匹剪影"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              19
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout00en",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_e3",
+          "score": -0.009855820906508727,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a red racing car on a road",
+            "include": [
+              "a red racing car on a road"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              20
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout00zh",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_k8",
+          "score": 0.04962040724722898,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "公路上的红色赛车",
+            "include": [
+              "公路上的红色赛车"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              21
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout01en",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_c2",
+          "score": 0.03872415131905079,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a golden retriever dog",
+            "include": [
+              "a golden retriever dog"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              22
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout01zh",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_j3",
+          "score": 0.051472166377084516,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "一只金毛寻回犬",
+            "include": [
+              "一只金毛寻回犬"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              23
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout02en",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_j3",
+          "score": 0.01908926917189069,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "ocean waves breaking on a beach",
+            "include": [
+              "ocean waves breaking on a beach"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              24
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout02zh",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_e3",
+          "score": 0.05377282322408485,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "拍打沙滩的海浪",
+            "include": [
+              "拍打沙滩的海浪"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              25
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout03en",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_j3",
+          "score": 0.0015011968783132453,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a grand piano in a concert hall",
+            "include": [
+              "a grand piano in a concert hall"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              26
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout03zh",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_j3",
+          "score": 0.04156933239032812,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "音乐厅里的三角钢琴",
+            "include": [
+              "音乐厅里的三角钢琴"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              27
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout04en",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_e3",
+          "score": 0.0157227377804289,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a forest beside a clear lake",
+            "include": [
+              "a forest beside a clear lake"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              28
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout04zh",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_j3",
+          "score": 0.026693812608247026,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "清澈湖泊旁边的树林",
+            "include": [
+              "清澈湖泊旁边的树林"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              29
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout05en",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_g5",
+          "score": 0.004598001244672377,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a bowl filled with fresh fruit",
+            "include": [
+              "a bowl filled with fresh fruit"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              30
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout05zh",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_f8",
+          "score": 0.02668121335082371,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "装满新鲜水果的碗",
+            "include": [
+              "装满新鲜水果的碗"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              31
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout06en",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_j3",
+          "score": 0.017294640400530126,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a bicycle parked beside a building",
+            "include": [
+              "a bicycle parked beside a building"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              32
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout06zh",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_j3",
+          "score": 0.05190530403266869,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "停在建筑旁的自行车",
+            "include": [
+              "停在建筑旁的自行车"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              33
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout07en",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_g5",
+          "score": 0.05366815750984688,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "an airplane flying in the sky",
+            "include": [
+              "an airplane flying in the sky"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              34
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout07zh",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_g5",
+          "score": 0.05586498798289672,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "天空中飞行的飞机",
+            "include": [
+              "天空中飞行的飞机"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              35
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout08en",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_g5",
+          "score": 0.031245751110413212,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a microphone in a recording studio",
+            "include": [
+              "a microphone in a recording studio"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              36
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout08zh",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_a7",
+          "score": 0.06002688687461519,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "录音棚里的麦克风",
+            "include": [
+              "录音棚里的麦克风"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              37
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout09en",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_g5",
+          "score": 0.023347825047107168,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "a surgeon operating in a hospital",
+            "include": [
+              "a surgeon operating in a hospital"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              38
+            ],
+            "exclude_rows": []
+          }
+        },
+        {
+          "id": "cout09zh",
+          "expected_asset_ids": [],
+          "top_asset_id": "asset_g5",
+          "score": 0.028171981091174858,
+          "clauses": {
+            "protocol": "agent-semantic-clauses-v1",
+            "parser": "affirmative-text",
+            "original_text": "医院里正在手术的外科医生",
+            "include": [
+              "医院里正在手术的外科医生"
+            ],
+            "exclude": [],
+            "semantics": "all positive clauses; each must outrank every exclusion on the sampled frame",
+            "include_rows": [
+              39
+            ],
+            "exclude_rows": []
+          }
+        }
+      ],
+      "inference": {
+        "selection": {
+          "requested": "cpu",
+          "selected": "cpu",
+          "fallback_reason": null
+        },
+        "attempts": [
+          {
+            "device": "cpu",
+            "status": "succeeded",
+            "response": {
+              "protocol": "agent-semantic-embedding-v1",
+              "status": "succeeded",
+              "network": "disabled",
+              "blocked_network_events": [],
+              "request_sha256": "sha256:1efb1f51ac9dc04d6c6cdeaf419eee1d14b3815bab13079c6cc11371cc976eb7",
+              "versions": {
+                "torch": "2.13.0+cu130",
+                "transformers": "5.14.1",
+                "numpy": "2.4.2",
+                "PIL": "12.1.0",
+                "tokenizers": "0.22.2",
+                "safetensors": "0.8.0",
+                "siglip": "bundled-with-transformers",
+                "python": "3.13.14"
+              },
+              "module_paths": {
+                "torch": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\__init__.py",
+                "transformers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\__init__.py",
+                "numpy": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.9\\final-r1\\installed\\site\\numpy\\__init__.py",
+                "PIL": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.9\\final-r1\\installed\\site\\PIL\\__init__.py",
+                "tokenizers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\tokenizers\\__init__.py",
+                "safetensors": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\safetensors\\__init__.py",
+                "siglip": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\models\\siglip\\modeling_siglip.py"
+              },
+              "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\cache\\semantic-jobs\\job_20261025064407_3fa27d33\\inference-cpu\\features.f32",
+              "output_sha256": "sha256:c209321fa156a1eaf6e580d08a3daacc6cc428a660c447791c3543080aecd802",
+              "rows": 40,
+              "dimension": 768,
+              "dtype": "float32-little-endian",
+              "item_ids": [
+                "clause_0",
+                "clause_1",
+                "clause_2",
+                "clause_3",
+                "clause_4",
+                "clause_5",
+                "clause_6",
+                "clause_7",
+                "clause_8",
+                "clause_9",
+                "clause_10",
+                "clause_11",
+                "clause_12",
+                "clause_13",
+                "clause_14",
+                "clause_15",
+                "clause_16",
+                "clause_17",
+                "clause_18",
+                "clause_19",
+                "clause_20",
+                "clause_21",
+                "clause_22",
+                "clause_23",
+                "clause_24",
+                "clause_25",
+                "clause_26",
+                "clause_27",
+                "clause_28",
+                "clause_29",
+                "clause_30",
+                "clause_31",
+                "clause_32",
+                "clause_33",
+                "clause_34",
+                "clause_35",
+                "clause_36",
+                "clause_37",
+                "clause_38",
+                "clause_39"
+              ],
+              "task": "text",
+              "adapter_sha256": "sha256:4424bac1bb517593ca264dc75dea547c46ed29ee17375f03f156e6d39b18a056",
+              "device": "cpu",
+              "device_index": 0,
+              "actual_device": "cpu",
+              "model_dtype": "torch.float32",
+              "load_seconds": 1.14996,
+              "inference_seconds": 13.205041,
+              "peak_cuda_allocated_bytes": null,
+              "peak_cuda_reserved_bytes": null,
+              "model_loads": 1,
+              "model_forward_calls": 5,
+              "batch_size": 8,
+              "image_sizes": [],
+              "model_loading_keys_verified": true,
+              "text_normalization": "lowercase; max_length=64; no truncation",
+              "model_reuse_scope": "complete current batch only; no persistent model service",
+              "elapsed_seconds": 109.236247
+            }
+          }
+        ],
+        "job": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\cache\\semantic-jobs\\job_20261025064407_3fa27d33",
+        "response": {
+          "protocol": "agent-semantic-embedding-v1",
+          "status": "succeeded",
+          "network": "disabled",
+          "blocked_network_events": [],
+          "request_sha256": "sha256:1efb1f51ac9dc04d6c6cdeaf419eee1d14b3815bab13079c6cc11371cc976eb7",
+          "versions": {
+            "torch": "2.13.0+cu130",
+            "transformers": "5.14.1",
+            "numpy": "2.4.2",
+            "PIL": "12.1.0",
+            "tokenizers": "0.22.2",
+            "safetensors": "0.8.0",
+            "siglip": "bundled-with-transformers",
+            "python": "3.13.14"
+          },
+          "module_paths": {
+            "torch": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\__init__.py",
+            "transformers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\__init__.py",
+            "numpy": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.9\\final-r1\\installed\\site\\numpy\\__init__.py",
+            "PIL": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.9\\final-r1\\installed\\site\\PIL\\__init__.py",
+            "tokenizers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\tokenizers\\__init__.py",
+            "safetensors": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\safetensors\\__init__.py",
+            "siglip": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\models\\siglip\\modeling_siglip.py"
+          },
+          "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\semantic-package-20261025-installed-r1\\source\\cache\\semantic-jobs\\job_20261025064407_3fa27d33\\inference-cpu\\features.f32",
+          "output_sha256": "sha256:c209321fa156a1eaf6e580d08a3daacc6cc428a660c447791c3543080aecd802",
+          "rows": 40,
+          "dimension": 768,
+          "dtype": "float32-little-endian",
+          "item_ids": [
+            "clause_0",
+            "clause_1",
+            "clause_2",
+            "clause_3",
+            "clause_4",
+            "clause_5",
+            "clause_6",
+            "clause_7",
+            "clause_8",
+            "clause_9",
+            "clause_10",
+            "clause_11",
+            "clause_12",
+            "clause_13",
+            "clause_14",
+            "clause_15",
+            "clause_16",
+            "clause_17",
+            "clause_18",
+            "clause_19",
+            "clause_20",
+            "clause_21",
+            "clause_22",
+            "clause_23",
+            "clause_24",
+            "clause_25",
+            "clause_26",
+            "clause_27",
+            "clause_28",
+            "clause_29",
+            "clause_30",
+            "clause_31",
+            "clause_32",
+            "clause_33",
+            "clause_34",
+            "clause_35",
+            "clause_36",
+            "clause_37",
+            "clause_38",
+            "clause_39"
+          ],
+          "task": "text",
+          "adapter_sha256": "sha256:4424bac1bb517593ca264dc75dea547c46ed29ee17375f03f156e6d39b18a056",
+          "device": "cpu",
+          "device_index": 0,
+          "actual_device": "cpu",
+          "model_dtype": "torch.float32",
+          "load_seconds": 1.14996,
+          "inference_seconds": 13.205041,
+          "peak_cuda_allocated_bytes": null,
+          "peak_cuda_reserved_bytes": null,
+          "model_loads": 1,
+          "model_forward_calls": 5,
+          "batch_size": 8,
+          "image_sizes": [],
+          "model_loading_keys_verified": true,
+          "text_normalization": "lowercase; max_length=64; no truncation",
+          "model_reuse_scope": "complete current batch only; no persistent model service",
+          "elapsed_seconds": 109.236247
+        }
+      },
+      "network": "disabled",
+      "fingerprint": "sha256:70c843fed5f1e3ec99abc1a1ac90258feebc6225c6db9543a99f4a2c3f04bf61"
+    }
+  }
+}

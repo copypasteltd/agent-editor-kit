@@ -2,6 +2,8 @@
 
 [简体中文](../README.md) · [繁體中文](../README.zh-TW.md) · [English](../README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit)
 
+当前 CLI 0.1.11： [语义工程包操作](product/SEMANTIC_PROJECT_PACKAGE.md) · [本批实测与失败](validation/语义工程包迁移实测_2026-10-25.md) · [全部 G01–G38](product/GOAL_GAPS_20261025.md)。
+
 当前本机交付 **CLI 0.1.10 / alpha.4-local.8 / r9 kit**，固定安装包、1 Skill/17 模块。
 新增条件检索和设备绑定经验校准，CPU/GPU/真实 Skill 均有收据；两条库外误选、一条钟表误拒和检索工程迁移失败保留。
 [完整 G01–G38 差距表](product/GOAL_GAPS_20261025.md) · [本批实际实现/失败/C19](validation/语义条件与校准拒识实测_2026-10-25.md) ·

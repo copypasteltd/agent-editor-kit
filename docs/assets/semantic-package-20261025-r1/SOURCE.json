@@ -1,0 +1,125 @@
+{
+  "assets": [
+    {
+      "asset_id": "asset_a7",
+      "path": "docs/assets/semantic-20261025-r1/asset_a7.png",
+      "kind": "image",
+      "sha256": "b0793d2adda0fa6ae899c03989482bff9a42d3d5690fc7e3648f2795d730c23a",
+      "original_name": "camera.png",
+      "creator": "Lav Varshney",
+      "license_spdx": "CC0-1.0",
+      "source_url": "https://scikit-image.org/docs/stable/api/skimage.data.html#skimage.data.camera",
+      "local_upstream_docstring": "Gray-level \"camera\" image.\n\nCan be used for segmentation and denoising examples.\n\nReturns\n-------\ncamera : (512, 512) uint8 ndarray\n    Camera image.\n\nNotes\n-----\nNo copyright restrictions. CC0 by the photographer (Lav Varshney).\n\n.. versionchanged:: 0.18\n    This image was replaced due to copyright restrictions. For more\n    information, please see [1]_.\n\nReferences\n----------\n.. [1] https://github.com/scikit-image/scikit-image/issues/3927"
+    },
+    {
+      "asset_id": "asset_b4",
+      "path": "docs/assets/semantic-20261025-r1/asset_b4.png",
+      "kind": "image",
+      "sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7",
+      "original_name": "coffee.png",
+      "creator": "Rachel Michetti; courtesy Pikolo Espresso Bar",
+      "license_spdx": "CC0-1.0",
+      "source_url": "https://scikit-image.org/docs/stable/api/skimage.data.html#skimage.data.coffee",
+      "local_upstream_docstring": "Coffee cup.\n\nThis photograph is courtesy of Pikolo Espresso Bar.\nIt contains several elliptical shapes as well as varying texture (smooth\nporcelain to coarse wood grain).\n\nNotes\n-----\nNo copyright restrictions.  CC0 by the photographer (Rachel Michetti).\n\nReturns\n-------\ncoffee : (400, 600, 3) uint8 ndarray\n    Coffee image."
+    },
+    {
+      "asset_id": "asset_c2",
+      "path": "docs/assets/semantic-20261025-r1/asset_c2.png",
+      "kind": "image",
+      "sha256": "596aa1e7cb875eb79f437e310381d26b338a81c2da23439704a73c4651e8c4bb",
+      "original_name": "chelsea.png",
+      "creator": "Stefan van der Walt",
+      "license_spdx": "CC0-1.0",
+      "source_url": "https://scikit-image.org/docs/stable/api/skimage.data.html#skimage.data.chelsea",
+      "local_upstream_docstring": "Chelsea the cat.\n\nAn example with texture, prominent edges in horizontal and diagonal\ndirections, as well as features of differing scales.\n\nNotes\n-----\nNo copyright restrictions.  CC0 by the photographer (Stefan van der Walt).\n\nReturns\n-------\nchelsea : (300, 451, 3) uint8 ndarray\n    Chelsea image."
+    },
+    {
+      "asset_id": "asset_d9",
+      "path": "docs/assets/semantic-20261025-r1/asset_d9.png",
+      "kind": "image",
+      "sha256": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
+      "original_name": "astronaut.png",
+      "creator": "NASA; Eileen Collins photograph",
+      "license_spdx": "LicenseRef-NASA-Public-Domain",
+      "source_url": "https://scikit-image.org/docs/stable/api/skimage.data.html#skimage.data.astronaut",
+      "local_upstream_docstring": "Color image of the astronaut Eileen Collins.\n\nPhotograph of Eileen Collins, an American astronaut. She was selected\nas an astronaut in 1992 and first piloted the space shuttle STS-63 in\n1995. She retired in 2006 after spending a total of 38 days, 8 hours\nand 10 minutes in outer space.\n\nThis image was downloaded from the NASA Great Images database\n<https://flic.kr/p/r9qvLn>`__.\n\nNo known copyright restrictions, released into the public domain.\n\nReturns\n-------\nastronaut : (512, 512, 3) uint8 ndarray\n    Astronaut image."
+    },
+    {
+      "asset_id": "asset_e3",
+      "path": "docs/assets/semantic-20261025-r1/asset_e3.png",
+      "kind": "image",
+      "sha256": "b6b6022426b38936c43a4ac09635cd78af074e90f42ffa8227ac8b7452d39f89",
+      "original_name": "grass.png",
+      "creator": "CC0 Textures",
+      "license_spdx": "CC0-1.0",
+      "source_url": "https://scikit-image.org/docs/stable/api/skimage.data.html#skimage.data.grass",
+      "local_upstream_docstring": "Grass.\n\nReturns\n-------\ngrass : (512, 512) uint8 image\n    Some grass.\n\nNotes\n-----\nThe original image was downloaded from\n`DeviantArt <https://www.deviantart.com/linolafett/art/Grass-01-434853879>`__\nand licensed under the Creative Commons CC0 License.\n\nThe downloaded image was cropped to include a region of ``(512, 512)``\npixels around the top left corner, converted to grayscale, then to uint8\nprior to saving the result in PNG format."
+    },
+    {
+      "asset_id": "asset_f8",
+      "path": "docs/assets/semantic-20261025-r1/asset_f8.png",
+      "kind": "image",
+      "sha256": "c48615b451bf1e606fbd72c0aa9f8cc0f068ab7111ef7d93bb9b0f2586440c12",
+      "original_name": "gravel.png",
+      "creator": "CC0 Textures",
+      "license_spdx": "CC0-1.0",
+      "source_url": "https://scikit-image.org/docs/stable/api/skimage.data.html#skimage.data.gravel",
+      "local_upstream_docstring": "Gravel\n\nReturns\n-------\ngravel : (512, 512) uint8 image\n    Grayscale gravel sample.\n\nNotes\n-----\nThe original image was downloaded from\n`CC0Textures <https://cc0textures.com/view.php?tex=Gravel04>`__ and\nlicensed under the Creative Commons CC0 License.\n\nThe downloaded image was then rescaled to ``(1024, 1024)``, then the\ntop left ``(512, 512)`` pixel region  was cropped prior to converting the\nimage to grayscale and uint8 data type. The result was saved using the\nPNG format."
+    },
+    {
+      "asset_id": "asset_g5",
+      "path": "docs/assets/semantic-20261025-r1/asset_g5.png",
+      "kind": "image",
+      "sha256": "f029226b28b642e80113d86622e9b215ee067a0966feaf5e60604a1e05733955",
+      "original_name": "clock_motion.png",
+      "creator": "Stefan van der Walt",
+      "license_spdx": "CC0-1.0",
+      "source_url": "https://scikit-image.org/docs/stable/api/skimage.data.html#skimage.data.clock",
+      "local_upstream_docstring": "Motion blurred clock.\n\nThis photograph of a wall clock was taken while moving the camera in an\napproximately horizontal direction.  It may be used to illustrate\ninverse filters and deconvolution.\n\nReleased into the public domain by the photographer (Stefan van der Walt).\n\nReturns\n-------\nclock : (300, 400) uint8 ndarray\n    Clock image."
+    },
+    {
+      "asset_id": "asset_h6",
+      "path": "docs/assets/semantic-20261025-r1/asset_h6.jpg",
+      "kind": "image",
+      "sha256": "3a19c5dd8a927a9334bb1229a6d63711b1c0c767fb27e2286e7c84a3e2c2f5f4",
+      "original_name": "hubble_deep_field.jpg",
+      "creator": "NASA / Hubble",
+      "license_spdx": "LicenseRef-NASA-Public-Domain",
+      "source_url": "https://scikit-image.org/docs/stable/api/skimage.data.html#skimage.data.hubble_deep_field",
+      "local_upstream_docstring": "Hubble eXtreme Deep Field.\n\nThis photograph contains the Hubble Telescope's farthest ever view of\nthe universe. It can be useful as an example for multi-scale\ndetection.\n\nNotes\n-----\nThis image was downloaded from\n`HubbleSite\n<http://hubblesite.org/newscenter/archive/releases/2012/37/image/a/>`__.\n\nThe image was captured by NASA and `may be freely used in the public domain\n<http://www.nasa.gov/audience/formedia/features/MP_Photo_Guidelines.html>`_.\n\nReturns\n-------\nhubble_deep_field : (872, 1000, 3) uint8 ndarray\n    Hubble deep field image."
+    },
+    {
+      "asset_id": "asset_i1",
+      "path": "docs/assets/semantic-20261025-r1/coffee_intro.png",
+      "kind": "image",
+      "sha256": "596aa1e7cb875eb79f437e310381d26b338a81c2da23439704a73c4651e8c4bb",
+      "original_name": "chelsea.png",
+      "creator": "Stefan van der Walt",
+      "license_spdx": "CC0-1.0",
+      "source_url": "https://scikit-image.org/docs/stable/api/skimage.data.html#skimage.data.chelsea",
+      "local_upstream_docstring": "Chelsea the cat.\n\nAn example with texture, prominent edges in horizontal and diagonal\ndirections, as well as features of differing scales.\n\nNotes\n-----\nNo copyright restrictions.  CC0 by the photographer (Stefan van der Walt).\n\nReturns\n-------\nchelsea : (300, 451, 3) uint8 ndarray\n    Chelsea image.",
+      "same_pixels_as": "asset_c2"
+    },
+    {
+      "asset_id": "asset_j3",
+      "path": "docs/assets/semantic-decision-20261025-r1/brick.png",
+      "kind": "image",
+      "sha256": "7966caf324f6ba843118d98f7a07746d22f6a343430add0233eca5f6eaaa8fcf",
+      "creator": "CC0 Textures",
+      "license_spdx": "CC0-1.0",
+      "source_url": "https://scikit-image.org/docs/stable/api/skimage.data.html#skimage.data.brick",
+      "local_upstream_docstring": "Brick wall.\n\nReturns\n-------\nbrick : (512, 512) uint8 image\n    A small section of a brick wall.\n\nNotes\n-----\nThe original image was downloaded from\n`CC0Textures <https://cc0textures.com/view.php?tex=Bricks25>`_ and licensed\nunder the Creative Commons CC0 License.\n\nA perspective transform was then applied to the image, prior to\nrotating it by 90 degrees, cropping and scaling it to obtain the final\nimage."
+    },
+    {
+      "asset_id": "asset_k8",
+      "path": "docs/assets/semantic-decision-20261025-r1/horse.png",
+      "kind": "image",
+      "sha256": "c7fb60789fe394c485f842291ea3b21e50d140f39d6dcb5fb9917cc178225455",
+      "creator": "Andreas Preuss (marauder)",
+      "license_spdx": "CC0-1.0",
+      "source_url": "https://scikit-image.org/docs/stable/api/skimage.data.html#skimage.data.horse",
+      "local_upstream_docstring": "Black and white silhouette of a horse.\n\nThis image was downloaded from\n`openclipart <http://openclipart.org/detail/158377/horse-by-marauder>`\n\nNo copyright restrictions. CC0 given by owner (Andreas Preuss (marauder)).\n\nReturns\n-------\nhorse : (328, 400) bool ndarray\n    Horse image."
+    }
+  ],
+  "original_source": "../semantic-20261025-r1/SOURCE.json"
+}

@@ -169,3 +169,7 @@ actual returned previews and empty decisions, not generated substitute images.
 Natural actions, cross-shot identity, audio embeddings, semantic music matching,
 large libraries and independent Agent task success remain unaccepted. Do not
 claim complete G26 closure or full CapCut parity.
+
+For an indexed/calibrated project package, read [semantic-package.md](semantic-package.md).
+The CLI 0.1.11 path preserves the owned tree and checks semantic data before
+import publication. The old 0.1.10 failed package remains historical evidence.

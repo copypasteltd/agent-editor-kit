@@ -1,0 +1,106 @@
+{
+  "status": "rendered-all-actual-decisions",
+  "queries": 80,
+  "failures": 3,
+  "model_executions": 0,
+  "sources": [
+    {
+      "path": "docs/validation/evidence/semantic-package-20261025-r1/installed-r1/after-cuda/verification.json",
+      "sha256": "cf69416a38f352a0740f12516f7e1b0e6e30686a632f6ec3dc49f40b00b38e5e",
+      "migration_decisions_equal": true
+    }
+  ],
+  "generator_sha256": "23380e442a5eea6f025d52039178c2751ed329d3849c1b535adde54a4d0023f1",
+  "files": [
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/installed-r1/decisions.json",
+      "bytes": 81299,
+      "sha256": "0996b336e1adf2250b7d7d4576f11a9291534d2c0daf68eb43f841830431ffca"
+    },
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/installed-r1/index.html",
+      "bytes": 24128,
+      "sha256": "312bb1ad06e812a54e231e709b2b4559079c132c22bfda9955b627283ba3bc54"
+    },
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/installed-r1/previews/asset_a7.png",
+      "bytes": 224546,
+      "sha256": "94de75b4bd9fb2f799da56917abd61a967723e5d27f59a1f5573eb29399a43dd"
+    },
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/installed-r1/previews/asset_b4.png",
+      "bytes": 325483,
+      "sha256": "8141d410ff36e2e54ffc0174555b0477e04b73c25db10b9d9aee7642e961db89"
+    },
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/installed-r1/previews/asset_c2.png",
+      "bytes": 274227,
+      "sha256": "29b65a5342e5b5340feddec1c8a98326aa8ed70ebcc3b0153d0bcea4b4c536b6"
+    },
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/installed-r1/previews/asset_d9.png",
+      "bytes": 445112,
+      "sha256": "123bf8848c979ccfc34d0fd7f614da1a45621f35f78ae0d0c4e456a3a264a45c"
+    },
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/installed-r1/previews/asset_e3.png",
+      "bytes": 390824,
+      "sha256": "5ae769d025398f34c3f480363c4882c7ed8abd34ebdd50bfd3bb5fa9fc695745"
+    },
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/installed-r1/previews/asset_f8.png",
+      "bytes": 316305,
+      "sha256": "a101ad84f77fd484d3ffbcc349a3b8288659a60686d143b92b3d33082c00100b"
+    },
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/installed-r1/previews/asset_g5.png",
+      "bytes": 80320,
+      "sha256": "12d90ce293c07a7e832cff4062fa58156c35ce9bf09f53a7354251bffd6557df"
+    },
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/installed-r1/previews/asset_h6.png",
+      "bytes": 436258,
+      "sha256": "74d17f13eda7c30d252efcb4ab05459bebd0d54a450e2703564822db43e0b398"
+    },
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/installed-r1/previews/asset_i1.png",
+      "bytes": 274227,
+      "sha256": "29b65a5342e5b5340feddec1c8a98326aa8ed70ebcc3b0153d0bcea4b4c536b6"
+    },
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/installed-r1/previews/asset_j3.png",
+      "bytes": 155962,
+      "sha256": "60825e84d24fdb68b251ba9af1f8eb05a0a31dbaac3ae1acba6cb78f4a3d4dd9"
+    },
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/installed-r1/previews/asset_k8.png",
+      "bytes": 24500,
+      "sha256": "29f7ba75a45ea3affc077383e0543245949b3654a391b8756e4f1f0043163cdd"
+    },
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/installed-r1/results-1.png",
+      "bytes": 493993,
+      "sha256": "ac18dde0bc7f9a7b8d72757a6b49aa03ec722b2d62dea6f610a972e3fffffd92"
+    },
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/installed-r1/results-2.png",
+      "bytes": 163776,
+      "sha256": "ef4e162856b422522ed843bfd6932414e35d88424a59686ab8bb1d2fe4b40589"
+    },
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/installed-r1/results-3.png",
+      "bytes": 535036,
+      "sha256": "968fc8b059e0a42c6ed644e14ebe901347c5638918cf5a38015620cf7ebdea5a"
+    },
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/installed-r1/results-4.png",
+      "bytes": 521340,
+      "sha256": "d4fa50c17039df1013376cde3eebc7ee054f59153f92366c1a3e35e973164ed1"
+    },
+    {
+      "path": "docs/assets/semantic-package-20261025-r1/installed-r1/SOURCE_AND_LICENSES.md",
+      "bytes": 733,
+      "sha256": "bced37aa0f234d2a4b9bf4b9bb78e3fce8b7b248044052a7247285e26e51b81b"
+    }
+  ]
+}

@@ -1,9 +1,11 @@
 # Linear Float32 titles and captions
 
-For a `settings.pixel_pipeline.engine="float32-native-v1"` project, CLI0.1.23
+For a `settings.pixel_pipeline.engine="float32-native-v1"` project, CLI0.1.24
 supports independent text generators, inline captions and plain SRT. Read
 installed `capabilities` → `subtitles.float32_native` before composing.
-Use the installed launcher; this feature runs on CPU.
+Use the installed launcher. CPU is the default; read
+[projection-gpu.md](projection-gpu.md) for the explicit Float32 OpenCL backend
+and its separate device/host quotas. Glyph rasterization stays on CPU.
 
 Register an actual local font and pass `font_asset_id` or `fontfile`. Keep
 explicit source/working/output signals; fonts and SRT are not pixel sources.

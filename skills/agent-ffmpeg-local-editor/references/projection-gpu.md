@@ -1,4 +1,4 @@
-# Native GPU projection (CLI 0.1.20)
+# Native GPU projection (CLI 0.1.24)
 
 Read this for an edit with animated crop, affine camera keys or native child
 canvases when GPU composition is requested. Use the installed launcher from
@@ -34,8 +34,8 @@ Per-frame AVExpr coefficients retain authored PTS, Bezier and hold clocks.
 Binary64 coefficient transport and actual gbrap8/Float32 texture round trips
 are checked before rendering. Bilinear/area sampling keeps premultiplied alpha.
 Area uses the existing source-axis rectangle footprint, not a rotated polygon.
-Other effects, subtitles and blending still run on CPU; the independent
-linear-light `pixel_pipeline` is not supported by this OpenCL backend.
+This FFmpeg graph backend keeps effects, subtitles and blending on CPU.
+The independent linear-light `pixel_pipeline` uses the separate backend below.
 
 `projection-memory-mib` conservatively admits cumulative raster slots, including
 area prefix textures. It is separate from `sequence-memory-mib` and is not a
@@ -54,3 +54,60 @@ The [workflow and editable case](https://github.com/copypasteltd/agent-editor-ki
 provides actual media, benchmark evidence and the current tested device scope.
 Machine equality, still inspection, continuous playback and human listening
 remain separate checks. Full CapCut parity has not been accepted.
+
+## Independent linear Float32 pipeline
+
+With `settings.pixel_pipeline.engine = "float32-native-v1"`, the same
+`projection_acceleration` setting selects `render-owned-float32-opencl-v1`.
+It uses the existing Windows OpenCL ICD directly, without FFmpeg
+`program_opencl`, a model server, download or virtual environment.
+
+```json
+"projection_acceleration": {
+  "mode": "require",
+  "device": "0.0",
+  "max_working_bytes": 1073741824,
+  "probe_timeout_seconds": 30
+}
+```
+
+Set this in the editable project for previews and queue jobs. A render can
+also supply `--projection-acceleration require --projection-device 0.0
+--projection-memory-mib 1024`. Retain explicit linear working/output signals,
+local font registration and `sequence_sampling.method = "bilinear"`.
+Hardware encode/decode stay `off` in this pipeline.
+
+GPU work covers premultiplied bilinear affine sampling, normal source-over,
+ordered text box/shadow/border/fill colors, whole-paragraph source-over and
+binary word selection. Native glyph rasterization, crop/masks, effects,
+transitions, other blends, signal conversion, audio and encoding remain CPU
+operations and appear in `CPU_scope`. Here `require` requires the declared
+GPU primitives and a nonempty actual operation receipt, not every editor
+operator to run on GPU. `prefer` permits a recorded preflight CPU fallback;
+execution failure, cancellation or timeout never silently retry on CPU.
+
+Before execution, the render-owned process compares GPU operations against
+independent CPU oracles, including all 65,536 native gray levels. Arithmetic
+is binary64 without fast math, with explicit Float32 component boundaries;
+media pixels do not pass through an 8bit GPU conversion. Glyph coverage is
+still 8bit. Original author clocks, paragraph selection and animation alpha
+semantics are retained.
+
+Inspect `data.projection_acceleration` and the matching `cache/float-gpu/*/
+receipt.json`: actual device/driver, kernel and execution hashes, probe errors,
+actual per-operator counts, worker PID/exit, shared-handle cleanup and final
+status. `probe` operations are separate from the edited-frame `operations`.
+A dry run creates no GPU context, worker or shared buffers.
+
+There are at most three retained device buffers and three shared host
+segments per render. The requested quota independently bounds each pool;
+the combined process memory and free VRAM are not reserved or measured by
+these limits. At 4K, three full Float32 device buffers use 398,131,200 bytes.
+Existing source/text caches and CPU workspaces have separate ceilings. Keep
+other GPU jobs running and retain explicit budgets. Cancellation and timeout
+terminate only this task's owned process, then close its shared handles.
+
+The [Float32 GPU contract and cases](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/FLOAT_GPU.md)
+contains installed-package evidence and measured performance. Inspect actual
+full-resolution output; this scope does not establish realtime or complete
+CapCut quality parity.

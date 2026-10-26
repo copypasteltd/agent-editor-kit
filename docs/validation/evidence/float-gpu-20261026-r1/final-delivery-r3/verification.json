@@ -1,0 +1,1807 @@
+{
+  "status": "passed",
+  "goal_closed": false,
+  "virtualization": false,
+  "source_fallback": false,
+  "product_files": 217,
+  "skill_files": 71,
+  "modules": 17,
+  "test_groups": {
+    "gpu": 23,
+    "text": 26,
+    "float": 98,
+    "audio": 64,
+    "render": 44,
+    "legacy": 191,
+    "text-legacy": 72
+  },
+  "functions": 57,
+  "services": 20,
+  "declarations": 75,
+  "historical_rows_preserved": 170,
+  "readme_rows": 178,
+  "original_goal_closures_preserved": 38,
+  "local_links_checked": 2283,
+  "public_release": "v0.1.0-alpha.3",
+  "actual_4K_frames": 8,
+  "paired_4K_renders": 2,
+  "observed_speedup": 2.120303922881542,
+  "kit_sha256": "59a44d9523e4bc3f673f7a7505ef4575840550ef02bcb53cd7302e837929f5e6",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "4b424f63143f4a1bca13f04f6061b9ad321de122f274b3f26f97c531d43fa916",
+      "bytes": 2101
+    },
+    {
+      "path": "README.en.md",
+      "sha256": "23a25b23914620aff4b6a302608fd835c4f8b32063a5fb6c1d07972d4968c1e9",
+      "bytes": 161636
+    },
+    {
+      "path": "README.md",
+      "sha256": "068307b04819c794d7ec752a6a24eb08bb7a6827f9432b278c4d30e51193d43d",
+      "bytes": 150596
+    },
+    {
+      "path": "README.zh-TW.md",
+      "sha256": "34b78a7da0ba414b57436953efde7d93adc7cd052d763bb1ab444c5435a8698f",
+      "bytes": 151620
+    },
+    {
+      "path": "agent-ffmpeg-local-install-manifest.json",
+      "sha256": "d02aa660ed278a268e62ae576a89353a075bf440d9f965ee368e3f994d4f7e82",
+      "bytes": 25882
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "46bdc77bd82c4673f7939422da9644c4b43e521f155042c9cc3946187c662e40",
+      "bytes": 11390
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-4k-r1/4k-native-text.gif",
+      "sha256": "1413ebb29f2f5c332f9dd7dece4f9e9cb60250efa8568896f51a79d5f7942485",
+      "bytes": 42235
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-4k-r1/4k-native-text.mp4",
+      "sha256": "0f975732908c664e874c218eb5faaa4e79f7d0308644d7f201b4e0100631a690",
+      "bytes": 251291
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-4k-r1/Noto-Sans-SC-OFL.txt",
+      "sha256": "566b792278acba9d6ec6f9d5c3fd27f3dabf90e622ed7f5c788d10eb54bbf852",
+      "bytes": 4943
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-4k-r1/SOURCE.txt",
+      "sha256": "18c99af107e8e428652447f886ea436212c9ead9c5894aaacaf2b24ca10b6bec",
+      "bytes": 250
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-4k-r1/editable-4k-text.aevpkg.zip",
+      "sha256": "4432059eb8ebacb65b589ee38e356f59c14e50eb2016eaa2c66315a969a724cf",
+      "bytes": 11305786
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-4k-r1/editable-4k-text.aevpkg.zip.conversion-report.json",
+      "sha256": "56e24a923ed86111c7335503d9ac0d0c6d5cb971e4faf6f9a0ab6be9ca3d6ff6",
+      "bytes": 945
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-4k-r1/original.png",
+      "sha256": "1eb136891345754d8dcc759e79ac1821303af67dfc8385b8d8eb7d6dd3be2708",
+      "bytes": 2726
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-4k-r1/preview.png",
+      "sha256": "bf8983a6c967dfb2b4e05cbe59510455d38c3cf973a1a279aee04121d820952c",
+      "bytes": 47832
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-r1/Noto-Sans-SC-OFL.txt",
+      "sha256": "566b792278acba9d6ec6f9d5c3fd27f3dabf90e622ed7f5c788d10eb54bbf852",
+      "bytes": 4943
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-r1/SOURCE.txt",
+      "sha256": "003c949a272a42444772c8a740dddfccbc74a5f214f4fee2d38ff57566a9ca43",
+      "bytes": 428
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-r1/editable-native-text.aevpkg.zip",
+      "sha256": "0cfea9a9073d89cce4481a38f2b36758444bc312d0c4fa5f7ed3e2e3f9b95c14",
+      "bytes": 17190401
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-r1/editable-native-text.aevpkg.zip.conversion-report.json",
+      "sha256": "c52d586578961fe43b2db25648bc7387d710e4df56b2a157b41c0d2555570020",
+      "bytes": 943
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-r1/media-manifest.json",
+      "sha256": "379aae7c332c2452be8ed8548b0b60a553c05ffdf87a85bda9975d3512dd1155",
+      "bytes": 5819
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-r1/midpoint.png",
+      "sha256": "abd0f064f24d32f369e0d2b9412382e086b2e91ae90132886597a2b0f1e82cce",
+      "bytes": 33938
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-r1/native-text.gif",
+      "sha256": "592f0f3dbbf5dab061255b2b912b65c6c39c00c927be27d3a9911dfe626150f4",
+      "bytes": 747390
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-r1/native-text.mp4",
+      "sha256": "390f6e1453513624f348eccaf3bc9879223b43cd3fa7517a16bc2cdcd330da41",
+      "bytes": 223421
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-r1/original.audio.wav",
+      "sha256": "06c6550683acf09b369910167cdf789bc8afb30bb5d58924fa2987def3e54d8d",
+      "bytes": 3456092
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-r1/original.native.mkv",
+      "sha256": "df4bf4ac2d66cb5112792b8bd8ca7e9c03f6f0049caac9ab19ebb21215400737",
+      "bytes": 3792808
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-r1/original.png",
+      "sha256": "e92a2891f25e9082c6ab4c364b28fbd1280ca95549cfc71dd99b6d517cf779a6",
+      "bytes": 11695
+    },
+    {
+      "path": "docs/product/CAPABILITIES.en.md",
+      "sha256": "59859c37a79939fe7ed6c05b6d355a7997bd91b516cff80e6f8bb6a1a88b346c",
+      "bytes": 169014
+    },
+    {
+      "path": "docs/product/CAPABILITIES.md",
+      "sha256": "cff72c25ae49456ddf8ebfa29de18fcb6918aff8978c9990fb1433a04ad1581a",
+      "bytes": 166803
+    },
+    {
+      "path": "docs/product/CAPABILITIES.zh-TW.md",
+      "sha256": "a0bdce2d818af66aea976cfeedfa9f554104340fbd884d416d66a7b96637b4f1",
+      "bytes": 166908
+    },
+    {
+      "path": "docs/product/CASES.md",
+      "sha256": "a8c5e9bb58a6436e013ebd6f36511ff32bcc816b7a8b494c601ca9d91702a70a",
+      "bytes": 100638
+    },
+    {
+      "path": "docs/product/COMMUNITY_LOCAL_DELIVERY.md",
+      "sha256": "64365a37b65d559e3cd93be38c16212ed14f776895c1f54c1a14243ce292b9e6",
+      "bytes": 26885
+    },
+    {
+      "path": "docs/product/FLOAT_GPU.md",
+      "sha256": "d85c4df607a31372ecac1c7e836c9307772c6e7a243273b31d2e975750e6f213",
+      "bytes": 4983
+    },
+    {
+      "path": "docs/product/FLOAT_TEXT.md",
+      "sha256": "d0006da08b4fd932fe0388bc1ac03a6b1ada02ce26e669d1d1a8c04429b0c51c",
+      "bytes": 7935
+    },
+    {
+      "path": "docs/product/FLOAT_TEXT_COVERAGE.md",
+      "sha256": "b050aeefbd9cedb7b992043c70b0874c35364c4a0caf88c6f60704ceff82f152",
+      "bytes": 6979
+    },
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "sha256": "d3eb1910eed6ef1c1b18f22b224a8c2dc2891bbb5d456c85962b852a90841f24",
+      "bytes": 42883
+    },
+    {
+      "path": "docs/product/IMPLEMENTATION_PLAN_20261025.md",
+      "sha256": "7248806821aaa5b0838015cb44e56d9ab4e0f92fa4e73b5935de5103ad990f77",
+      "bytes": 15739
+    },
+    {
+      "path": "docs/product/OPENCL_PROJECTION.md",
+      "sha256": "cd4c683dde48c3cb7cd7da342fb72e26edac7ec5d21cb83b46666ac174b13726",
+      "bytes": 8335
+    },
+    {
+      "path": "docs/product/SKILLS.en.md",
+      "sha256": "e8678901cbfe096cad6f2af9d61bccaf8ba311ba0cfaa53c99141946ab3892a9",
+      "bytes": 17291
+    },
+    {
+      "path": "docs/product/SKILLS.md",
+      "sha256": "6d33fec4f4c4b747d65c5431aad90a04dc743771ea90cd7ddcb7f4860ce66fd1",
+      "bytes": 16804
+    },
+    {
+      "path": "docs/product/SKILLS.zh-TW.md",
+      "sha256": "1fe0d1a19ae35bca5f0280b3dc7c6db7cc53a72c5e7b90aade1f482936aa0a54",
+      "bytes": 16840
+    },
+    {
+      "path": "docs/product/float-gpu-capabilities-cli-0.1.24.json",
+      "sha256": "e59ed86b1b15cd3140072d62ac29e609d9644783d3190a9e2997612374847071",
+      "bytes": 119494
+    },
+    {
+      "path": "docs/releases/CLI_0.1.24_LOCAL.md",
+      "sha256": "b357dbe128a6ced18cea77265960dd4368d9ee3664f6b947641eb17dd0ef3fa5",
+      "bytes": 1773
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.en.md",
+      "sha256": "f84e9b1e16dfad882fe20ad55e9ab510f8a1fe4325d8a77c029d6fd031bc7b7a",
+      "bytes": 7566
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.md",
+      "sha256": "628fedb11d2dc2491763d79b9a97baa57b89e6dd2dec346456b299f77a3c4e74",
+      "bytes": 7866
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.zh-TW.md",
+      "sha256": "7d9c6762030409aaca8be8f5943e95387064f2037369751777dc45c6f5be0bce",
+      "bytes": 7881
+    },
+    {
+      "path": "docs/skills/agent-editor-kit-community-unified-skill-r25.zip",
+      "sha256": "59a44d9523e4bc3f673f7a7505ef4575840550ef02bcb53cd7302e837929f5e6",
+      "bytes": 541715
+    },
+    {
+      "path": "docs/skills/community-unified-skill-package-0.1.24-r25.json",
+      "sha256": "a50c228e44dca68e5a9c981bff4f277bbf3c429a8202b88a63a9ea7e08098ddf",
+      "bytes": 415
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/decode-full.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/decode-full.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/executed-generator.py",
+      "sha256": "08f51660dadc946dcf4daa1ae442de48bea286545c86c52a95e6fe12f2349f39",
+      "bytes": 9479
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/executed-observation.py",
+      "sha256": "03ed9640f5a05e4027756eaf3c7fa547a238ce9112a372f708b66cb13b673ac4",
+      "bytes": 3148
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/export.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/export.stdout.log",
+      "sha256": "cbedc83ed1c6da60793d6ec20457f3bd355add00f4f34f25701f00e4c82c7c05",
+      "bytes": 2899
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/gif-stills.png",
+      "sha256": "5ccb04bd7e5d3d7d3768958638705c810b17fe3a8cbce0b6ab422a6ca4068c13",
+      "bytes": 51446
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/gif.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/gif.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/preview.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/preview.stdout.log",
+      "sha256": "74b4f0eba72760d273cc6bdcc6ade572b30ce65827bb53d0a0011d559a8739d4",
+      "bytes": 205729
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/probe.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/probe.stdout.log",
+      "sha256": "ae611d430467d36b2d7cfa50ba1f6c3335f6ccba3c665599bd35d209916a8886",
+      "bytes": 2274
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/quality.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/quality.stdout.log",
+      "sha256": "85b7d5e9ef0f9455484f88909ae77c03af6aba353c0071027416a5dcc791e615",
+      "bytes": 3646
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/render.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/render.stdout.log",
+      "sha256": "3ff9e3beef872738b93c5b98bb228b4c9b9481fc30ca96e57dbd3e21c2bf2a73",
+      "bytes": 214624
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/text-receipt.json",
+      "sha256": "ad4d4f91c0cd1f2dc1126214f69ac247a0a6c5bf5b82ba8d76f141fc7975d0cf",
+      "bytes": 40004
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/validate.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/validate.stdout.log",
+      "sha256": "9577caefc67e42ff277c11fb0415941539b85f5b51c7cd53f48223f0f5d56e2e",
+      "bytes": 801
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/verification.json",
+      "sha256": "fb2bf792e7a6d0284c26233325fd5e534f25fc59cb4aadff371438df6718da27",
+      "bytes": 12922
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/version.stdout.log",
+      "sha256": "113f65856d64dbeea549f137dd65b3015931b6e61d4b0b651a2398677d0f1e03",
+      "bytes": 1167
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/visual-observation.json",
+      "sha256": "bbd2b181037ee786cab0aa6ccd0c61be9891a6ae138d71a2d7942a5c159fd5a2",
+      "bytes": 1236
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/activation-final-r1/activation-and-registration.json",
+      "sha256": "cbd9ac5d524d5e623b535a3e36765902e80b5f32bd124db7ea1fdf18e2dee8c2",
+      "bytes": 1750
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/activation-final-r1/activation.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/activation-final-r1/activation.stdout.json",
+      "sha256": "3be2d2f06290153292ee20d5d54d84bae1176f3c0a0d56fe2b9f7d619f1e3812",
+      "bytes": 706
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/activation-final-r1/executed-generator.py",
+      "sha256": "74059e5c818a9c03ba099ed98a0ce763eecc04634db7d713adc8b4bbbdbec7d5",
+      "bytes": 2612
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/activation-final-r1/kokoro-zh-en-cuda13.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/activation-final-r1/kokoro-zh-en-cuda13.stdout.json",
+      "sha256": "3c04158604cf17d377ea2dbfcbcdf09d0bb8ac0ee5c8d15724c007294ffd7d68",
+      "bytes": 659
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/activation-final-r1/kokoro-zh-en-int8.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/activation-final-r1/kokoro-zh-en-int8.stdout.json",
+      "sha256": "548b34a1d7e3f73cca31abeb2efec32a693f9fff8132a98cf127359ad5b49b08",
+      "bytes": 655
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/activation-final-r1/opus-zh-en-cpu-int8.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/activation-final-r1/opus-zh-en-cpu-int8.stdout.json",
+      "sha256": "dce1f3d90c117d7e52d3f7b5fecb683df499f7169797733196e21cd43edb2cab",
+      "bytes": 660
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/activation-final-r1/opus-zh-en-cuda12-int8.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/activation-final-r1/opus-zh-en-cuda12-int8.stdout.json",
+      "sha256": "80d5389dbfefbf6afa91cae24a7ea8d4c009e5f0d26052b4e12cfd31178e68ee",
+      "bytes": 666
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/activation-final-r1/previous-community-runtime.json",
+      "sha256": "215495ee2c7f917d3394f3cae9821f4ad74765e1600af1282f1468b9f228b61c",
+      "bytes": 797
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/activation-final-r1/previous-runtime.json",
+      "sha256": "ca04241ad3054a501e78e252f789bdaf1dfa95c9a31d42e6a357498aaf7d33d3",
+      "bytes": 624
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/activation-final-r1/registration-current.json",
+      "sha256": "53b832bad9bab1b0e07edad14a6a8d26ecb88706eab66b525926ff67b6b1bcf0",
+      "bytes": 861
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/activation-final-r1/registration.json",
+      "sha256": "e336c2e4f632a864f3d49e5e8277b18d5d29bff98f503e3340c4a9ad27548367",
+      "bytes": 939
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/activation-final-r1/registration.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/activation-final-r1/registration.stdout.txt",
+      "sha256": "8b498cdfba5c3a41f4bb5b30afb84cbb08fcf370369802528713c7d3891646e3",
+      "bytes": 363
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/activation-final-r1/verification.json",
+      "sha256": "4dd1d9e56df91e2b0c65221f9d4a27c53a800e0cbda737f6a0d6fc3f153e1b82",
+      "bytes": 749
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/audio-installed-final-r1/executed-runner.py",
+      "sha256": "a346070501584a15e296743718704d81137829301a5af2a6d06089a2a30ac420",
+      "bytes": 3785
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/audio-installed-final-r1/tests.log",
+      "sha256": "4fa178911eb34a278b2f21597dcab623eee295a2d4a4aa9286e671042578313f",
+      "bytes": 11513
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/audio-installed-final-r1/verification.json",
+      "sha256": "c1846721d7dea0001015aae4078a5c7c8f41117937366d3b052f549759538053",
+      "bytes": 20300
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/CPU-clocks.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/CPU-clocks.stdout.log",
+      "sha256": "558c35fe51f61293984febde338ac2a3391594a4bfbcf1f5e336e8eb3688ca86",
+      "bytes": 856
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/CPU-decode-audio.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/CPU-decode-audio.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/CPU-decode-video.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/CPU-decode-video.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/CPU-render.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/CPU-render.stdout.log",
+      "sha256": "d14ccf052b4897439050d5d3fd2f1fb3e18bba65aac194e789f58f45f09b72ff",
+      "bytes": 84132
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/CPU-version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/CPU-version.stdout.log",
+      "sha256": "5c58433360ed1263ff8c063761c6666fbb79037423110bde3037fa1fb31eda6d",
+      "bytes": 1167
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/GPU-clocks.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/GPU-clocks.stdout.log",
+      "sha256": "558c35fe51f61293984febde338ac2a3391594a4bfbcf1f5e336e8eb3688ca86",
+      "bytes": 856
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/GPU-decode-audio.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/GPU-decode-audio.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/GPU-decode-video.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/GPU-decode-video.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/GPU-render.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/GPU-render.stdout.log",
+      "sha256": "f6633287fc7e8d603e100dc3a1447f0d053f7e304ea225bddb2559672bb37c24",
+      "bytes": 214546
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/GPU-version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/GPU-version.stdout.log",
+      "sha256": "ca07801747939cbc8df91637a1c11f0e9659a1464dbbef0758fef18492aea90d",
+      "bytes": 1167
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/executed-generator.py",
+      "sha256": "9c481c022b6f2ccc9e51f4f51b970b225db0bb4b15684f73335d2a1da0b25f9e",
+      "bytes": 8351
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/verification.json",
+      "sha256": "6442eea901138c9acdf670461760f4db56bb58cf983fea06c02441da939c9049",
+      "bytes": 13576
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/actual-frames.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/actual-frames.stdout.log",
+      "sha256": "d51fab6ca5543d5d6a6cda2731496dd21ca053895ef592559871633359806dd1",
+      "bytes": 5975
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/actual-pcm.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/actual-pcm.stdout.log",
+      "sha256": "08eee939a313d32cba44dbd6b90ab6bc80f67452ae00bb006b10edc17c26733d",
+      "bytes": 2304000
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/cancel.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/cancel.stdout.log",
+      "sha256": "a25257150c0fd1ec4a368d0a6f97bfe272945340a6fb90db22cf995d8b368596",
+      "bytes": 622
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/capabilities.json",
+      "sha256": "d9ac06e0ec4ad25edba371870c9277c11486178fd3913231a2bc95ef7b9d7a1d",
+      "bytes": 164646
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/capabilities.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/capabilities.stdout.log",
+      "sha256": "c97cb5fb463f218104cf68cc6e2eb2bd9309b311bff0b3c27ea7b2153e7a4e1e",
+      "bytes": 119495
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/decode-display.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/decode-display.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/display-gif.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/display-gif.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/display-mp4.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/display-mp4.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/display-still.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/display-still.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/executed-generator.py",
+      "sha256": "22908879e7e7a5eb782c9c4c5b2c5bee70d81a5b491a8b105cdb42db80c4ec15",
+      "bytes": 21967
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/executed-observation.py",
+      "sha256": "03ed9640f5a05e4027756eaf3c7fa547a238ce9112a372f708b66cb13b673ac4",
+      "bytes": 3148
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/export-package.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/export-package.stdout.log",
+      "sha256": "6db2f48aa92043a69423cbb453ffbfd1743ad2f36f68c79609da98f199779944",
+      "bytes": 3301
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/generate-audio.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/generate-audio.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/generate-original.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/generate-original.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/gif-stills.png",
+      "sha256": "393949df40152ee69f9b8bd827ef2a0c98e55987ba935200317d5d75e4012e20",
+      "bytes": 269630
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/gpu-receipt.json",
+      "sha256": "c7facb6ed7b59aa6e7dbeb33a49a592ee271adf7ace4a4b27fb858240a4b04dc",
+      "bytes": 3555
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/native-text-receipt.json",
+      "sha256": "2cc3d2b5d10e927b503dcba3001e984f2d3b50d707a7c52be6cb96854ebfcbd8",
+      "bytes": 40888
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/preview-0.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/preview-0.stdout.log",
+      "sha256": "3b9bdbbf9ae1d0156323b1c884b7e5e03d648c9a242a1941ee46099390460d93",
+      "bytes": 229902
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/preview-11.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/preview-11.stdout.log",
+      "sha256": "82389a965a8d691ad47897903e7db7a64618368ec759cd5958b294fc04b9a5f0",
+      "bytes": 230829
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/preview-24.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/preview-24.stdout.log",
+      "sha256": "c432275d79941756e1103b59244959c74b357e50df0bb6c094d2661db2488818",
+      "bytes": 230828
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/preview-36.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/preview-36.stdout.log",
+      "sha256": "7a680c21083e28f3b07d7bd7e4c3fbc56fd8e0f1040ae57826c222a68128ad80",
+      "bytes": 230852
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/preview-48.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/preview-48.stdout.log",
+      "sha256": "f874a7aa893853a4f30d4cbbae8203e84c83903e2386847ee9093b84649b1572",
+      "bytes": 230849
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/preview-60.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/preview-60.stdout.log",
+      "sha256": "dc2a54bc717a40bb00548a0a5dcb0e37ad9614310ece89c08b083c0cf52a9f67",
+      "bytes": 230846
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/preview-71.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/preview-71.stdout.log",
+      "sha256": "76106bfa5b083b3875b2e2bd90f884d39a0c5084dd8d3ee9f7a92e806c79cdc9",
+      "bytes": 229946
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/quality.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/quality.stdout.log",
+      "sha256": "408b3b662773651e43d4e4af58c7a1d736b7f6f72e80deeecae14d850f116487",
+      "bytes": 3437
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/queue-enqueue.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/queue-enqueue.stdout.log",
+      "sha256": "8be514b6f2e281220e33df906e1b09a8477aed787e05848fa49f053981dd3a9b",
+      "bytes": 1382
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/queue-run.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/queue-run.stdout.log",
+      "sha256": "8ff5b6e5cb6bda348c73de17a906a01023a1c1b83effe90a83b523c290076bb0",
+      "bytes": 3085
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/queued-frames.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/queued-frames.stdout.log",
+      "sha256": "d51fab6ca5543d5d6a6cda2731496dd21ca053895ef592559871633359806dd1",
+      "bytes": 5975
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/queued-pcm.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/queued-pcm.stdout.log",
+      "sha256": "08eee939a313d32cba44dbd6b90ab6bc80f67452ae00bb006b10edc17c26733d",
+      "bytes": 2304000
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/render-dry-run.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/render-dry-run.stdout.log",
+      "sha256": "25a5fad6cb4a2a80ddf856467eae456aac1ee4cd0ee883778f91a3f96e60015d",
+      "bytes": 242508
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/render.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/render.stdout.log",
+      "sha256": "16785da3e7d345b9ea3c66d57e590931154921ccb59d9fe0d979c83e9dc003f6",
+      "bytes": 295539
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/resume.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/resume.stdout.log",
+      "sha256": "ca07ab3fcf9f3f405706bbfbe1fd517bfb565dd81e55ae4c7ad27ea3eca16706",
+      "bytes": 295574
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/resumed-frames.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/resumed-frames.stdout.log",
+      "sha256": "d51fab6ca5543d5d6a6cda2731496dd21ca053895ef592559871633359806dd1",
+      "bytes": 5975
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/resumed-pcm.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/resumed-pcm.stdout.log",
+      "sha256": "08eee939a313d32cba44dbd6b90ab6bc80f67452ae00bb006b10edc17c26733d",
+      "bytes": 2304000
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/validate.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/validate.stdout.log",
+      "sha256": "65a6d5cca32959c6bdebf3682c10dcdf5daf482c6a126a0e43d4992ff790ef80",
+      "bytes": 797
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/verification.json",
+      "sha256": "edfb0121a2e01e478de0dad35f7f61e59c9a26a068fe0c81bfc9a231486127e8",
+      "bytes": 28546
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/version.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/version.stdout.log",
+      "sha256": "ff05eac58fcf42dfe30617b4aea039a738d852323f3784e1b1815b09a8c30f7d",
+      "bytes": 1167
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/visual-observation.json",
+      "sha256": "fa1866797ed469576ccbd23d9b2418b036e67c38542b0de9f80b0b885347c790",
+      "bytes": 1231
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/final-delivery-r1/executed-generator.py",
+      "sha256": "36c4e8f6e35f443036d3166c23fa237e034972747e59fd96c603b391f936cc77",
+      "bytes": 11525
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/final-delivery-r1/product-files.json",
+      "sha256": "865c38c322fddf45d891df36af71d899b5246062baff1c382ae82da85a0875b9",
+      "bytes": 19469
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/final-delivery-r1/verification.json",
+      "sha256": "f6cd6a6306f48f9a33ff9dec9762c7c52a1a133e88377eedc40723047fecb7b6",
+      "bytes": 447
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/final-delivery-r2/executed-generator.py",
+      "sha256": "2060bc2ed4051c4974aa0d99a8ba78921be47776ed41adafc207f7b726976e87",
+      "bytes": 11716
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/final-delivery-r2/product-files.json",
+      "sha256": "865c38c322fddf45d891df36af71d899b5246062baff1c382ae82da85a0875b9",
+      "bytes": 19469
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/final-delivery-r2/public-releases.json",
+      "sha256": "03def88cf8084e14b9835bf6db4523a5f4e2c3b0ff61fc7c4be002a993abe0f8",
+      "bytes": 27426
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/final-delivery-r2/verification.json",
+      "sha256": "117f37e86cb6eb28c0cda39112ba00c61b4d422aa940250a3550a84bf346ee24",
+      "bytes": 260520
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/float-installed-final-r1/executed-runner.py",
+      "sha256": "a346070501584a15e296743718704d81137829301a5af2a6d06089a2a30ac420",
+      "bytes": 3785
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/float-installed-final-r1/tests.log",
+      "sha256": "639b5173d043254f88a43ce4100cdb5dda66ee72d2b46a8135fd7a8705971737",
+      "bytes": 17048
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/float-installed-final-r1/verification.json",
+      "sha256": "096009f8270eb321d9e91e1137e20d710e886405a6a19457d196fe69a8c09556",
+      "bytes": 20336
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/gpu-installed-final-r1/executed-runner.py",
+      "sha256": "a346070501584a15e296743718704d81137829301a5af2a6d06089a2a30ac420",
+      "bytes": 3785
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/gpu-installed-final-r1/native_calls.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/gpu-installed-final-r1/receipts.json",
+      "sha256": "aaae7e8205d32aa568052aa0dfab96af49f739aba28fe3e64bf82597c4abcc13",
+      "bytes": 283964
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/gpu-installed-final-r1/tests.log",
+      "sha256": "666f49742a47fa18a078a110e05fc604fbffb994e9648afe72d6060bb326825d",
+      "bytes": 3490
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/gpu-installed-final-r1/text_receipts.json",
+      "sha256": "4853c7a9d12d137682aabca6825a0dde3e51d864ccb424945747cd820ad98047",
+      "bytes": 52933
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/gpu-installed-final-r1/verification.json",
+      "sha256": "6e9f2f728d58314ac379970293f4cafddb885868714bfbbad1925ff125065858",
+      "bytes": 20230
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r2/build.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r2/build.stdout.json",
+      "sha256": "aa4d43ee995d4cd5893fa5fa3c61e84057dfb93d98d7acdacf480256233f10a2",
+      "bytes": 448
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r2/calls.json",
+      "sha256": "a3b3ba7bc8f87b3f0c0f7139688e2e5cb4ee4a5a365f1501cb946741b06dfc29",
+      "bytes": 2616
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r2/capabilities.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r2/capabilities.stdout.json",
+      "sha256": "5952eaf9ef35e1331a913e3cc981bfb8104f78b6d99df786fc9f29daf5c856e6",
+      "bytes": 119495
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r2/executed-generator.py",
+      "sha256": "1412d5aa8c3db5fe88b2749a2100ffa94247c8f4739ffabf54e5d749a687a969",
+      "bytes": 5355
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r2/install.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r2/install.stdout.json",
+      "sha256": "c0670985d4929976d16bd24ee668c9144c5c3a76d91867076139e37de9b83a8b",
+      "bytes": 1708
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r2/verification.json",
+      "sha256": "b159a78f61f23ad48b296f344d1707d380eb3ba9ee052501def7eee9a1c7a429",
+      "bytes": 29029
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r2/version.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r2/version.stdout.json",
+      "sha256": "dc854798d5629bc4b38e3c95a92a1ac21a260a91bd64f792cdc6d37e142cb251",
+      "bytes": 1167
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r3/build.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r3/build.stdout.json",
+      "sha256": "f54bbcb50b40b7d8b513640ad19efe2a8347cf3a3f2c25483bb69cb28e57d819",
+      "bytes": 448
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r3/calls.json",
+      "sha256": "477d407f08632a6e2eca44bdd4579d7afcd2559caafb01e9688f0689e8897ab3",
+      "bytes": 2616
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r3/capabilities.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r3/capabilities.stdout.json",
+      "sha256": "5866fbf42da63fe7cf99aa48022328da732d0fa8e160d30147b951d7b6a35b97",
+      "bytes": 119495
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r3/executed-generator.py",
+      "sha256": "1412d5aa8c3db5fe88b2749a2100ffa94247c8f4739ffabf54e5d749a687a969",
+      "bytes": 5355
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r3/install.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r3/install.stdout.json",
+      "sha256": "a6f2a4e2977202dd83a0d278a49999c4fefd96218393281f9011fc0536a617b0",
+      "bytes": 1708
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r3/verification.json",
+      "sha256": "37c9d6749fa1697552b99d998f24eff96dc2c9c3a0985f0f5e139d3c95925581",
+      "bytes": 29029
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r3/version.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r3/version.stdout.json",
+      "sha256": "3472884ea856a0a6757d467485a2096ac738c4cc5412855afacdd56a52459ac2",
+      "bytes": 1167
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r4/build.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r4/build.stdout.json",
+      "sha256": "989763188f07f3803b8d5aa212bdc72d8c6611dc1ec1f73a9323309f53c3f7ee",
+      "bytes": 448
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r4/calls.json",
+      "sha256": "0671a3911740ac4495455d49bd86d2e8cfdc013a40eec4af42cf8caf75b28900",
+      "bytes": 2616
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r4/capabilities.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r4/capabilities.stdout.json",
+      "sha256": "4c21827b5150817b61a26f969947a52b691d15becd087df8bd6571c868b698ef",
+      "bytes": 119495
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r4/executed-generator.py",
+      "sha256": "1412d5aa8c3db5fe88b2749a2100ffa94247c8f4739ffabf54e5d749a687a969",
+      "bytes": 5355
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r4/install.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r4/install.stdout.json",
+      "sha256": "2d34394c4cc9bf4128f7abc574ac0c0c6703ba8889c7c81fc34e7886e2d89b2b",
+      "bytes": 1708
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r4/verification.json",
+      "sha256": "aea4600c2d0630adb8451abaa759107f932c43177dfa6a083c852a81bd18e726",
+      "bytes": 29029
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r4/version.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/installation-final-r4/version.stdout.json",
+      "sha256": "724373ecb25c3d8a0a74b4c9e7d151c8f38d4ede4069b44a8b636c63527c483b",
+      "bytes": 1167
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/kit-r1/calls.json",
+      "sha256": "810a975fd3a1d91f695354284ea7a4c6ae4d44df382a3c95e22544b25efbfe51",
+      "bytes": 5916
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/kit-r1/capabilities.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/kit-r1/capabilities.stdout.txt",
+      "sha256": "d94d05ff09d54995040b87f5ed3e29d4802ea0aaa8b7b4a9d8f7b55cbb0db2d0",
+      "bytes": 119495
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/kit-r1/configure.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/kit-r1/configure.stdout.txt",
+      "sha256": "bc57e19893c555a484b9d9d97581ccfdfd53d5141c4d3198b5ca7dbb5a4ce779",
+      "bytes": 820
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/kit-r1/executed-generator.py",
+      "sha256": "6972f709f5a749e9a6aaab2d0000467262eb7002e89c88875f07bf5188b07955",
+      "bytes": 7905
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/kit-r1/float-render-dry-run.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/kit-r1/float-render-dry-run.stdout.txt",
+      "sha256": "bba98c922220bbe07cf894771441c0e635dc0da9ed8e713b0f2351b680233407",
+      "bytes": 236426
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/kit-r1/import-case.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/kit-r1/import-case.stdout.txt",
+      "sha256": "071b677fa309bf5f79fe0e85ad173acca23056c47d23fb85e1acc5ce742b2745",
+      "bytes": 1576
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/kit-r1/register.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/kit-r1/register.stdout.txt",
+      "sha256": "bd58eb32a943433189504751279658cbdba77cdbaaa2714d12309f5e69a1fde6",
+      "bytes": 350
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/kit-r1/registration.json",
+      "sha256": "fa401b1ee195298fffcf17688b22674d21e674ce9e5cb2b4b7285b001cd8faf8",
+      "bytes": 1113
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/kit-r1/transition-help.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/kit-r1/transition-help.stdout.txt",
+      "sha256": "6ba1c7e3bc0e34c0363aacbe265838ab48f04a0e6d45976ceea2cfeea2fa80a5",
+      "bytes": 930
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/kit-r1/validate.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/kit-r1/validate.stdout.txt",
+      "sha256": "cce33c4bea372f74f8e245a7022dbd6bfabd6c62313baac66864c6835d0c7550",
+      "bytes": 803
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/kit-r1/verification.json",
+      "sha256": "3c063688048360f56011dfb9e7512c6e54bd8fd58624b1fa7496fb5cc1570765",
+      "bytes": 54908
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/kit-r1/version.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/kit-r1/version.stdout.txt",
+      "sha256": "59f2689368f7bc9a1eb0ce7e24ca4c9f39f4ef6197c7d94b349c2eba6463ca76",
+      "bytes": 1167
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/legacy-installed-final-r1/executed-runner.py",
+      "sha256": "a346070501584a15e296743718704d81137829301a5af2a6d06089a2a30ac420",
+      "bytes": 3785
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/legacy-installed-final-r1/tests.log",
+      "sha256": "70b038d5afd979a2507246bbf6e7eb1930a9201a32c341ae14970048ad52aac0",
+      "bytes": 27966
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/legacy-installed-final-r1/verification.json",
+      "sha256": "3c79a9ee51b0c7455712f910d473838d2a1968a6cf665c2c1ae364b795afc275",
+      "bytes": 20307
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/executed-generator.py",
+      "sha256": "7d18f20ca0219cb3ef10f3ee791afe8ad591ca7cb5bf28d93a9af59a6d50e0b6",
+      "bytes": 4012
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/import.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/import.stdout.log",
+      "sha256": "f909ec0f7fdee07a5ee0c3fe4e13266904155f84eda19c0980c2d3bc158c5ef1",
+      "bytes": 1564
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/imported-24.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/imported-24.stdout.log",
+      "sha256": "e761ea4c728554bb401c14e93d2375ff08e8f84a4d149b053e8d729c8d6092ae",
+      "bytes": 72
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/imported-36.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/imported-36.stdout.log",
+      "sha256": "ebb316bca0833510a91747949f2f2a8fc7e4da954c29d94806f56995bb3aec62",
+      "bytes": 72
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/imported-48.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/imported-48.stdout.log",
+      "sha256": "bdc5468865f82c1cd7e08ecbe690d60f9976d660288c6180686c0feb2bf9be9b",
+      "bytes": 72
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/original-24.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/original-24.stdout.log",
+      "sha256": "e761ea4c728554bb401c14e93d2375ff08e8f84a4d149b053e8d729c8d6092ae",
+      "bytes": 72
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/original-36.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/original-36.stdout.log",
+      "sha256": "ebb316bca0833510a91747949f2f2a8fc7e4da954c29d94806f56995bb3aec62",
+      "bytes": 72
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/original-48.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/original-48.stdout.log",
+      "sha256": "bdc5468865f82c1cd7e08ecbe690d60f9976d660288c6180686c0feb2bf9be9b",
+      "bytes": 72
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/preview-24.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/preview-24.stdout.log",
+      "sha256": "f78bc2fc82782340657f9b05628548dd4621367475a2ed8a32b1f2c9c4188a5f",
+      "bytes": 230893
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/preview-36.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/preview-36.stdout.log",
+      "sha256": "2d88d20ef5829bacc89f815cb0bda3008e20d885e3333db4394623340775c937",
+      "bytes": 230922
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/preview-48.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/preview-48.stdout.log",
+      "sha256": "a65e6aa7d12cdf8b635c04247a1174192e4c87b2a043a323b0125e4491a7788a",
+      "bytes": 230919
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/validate.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/validate.stdout.log",
+      "sha256": "114bb76f421c0e2a5e1d1451b09d6408b5f366558f3617716c07cb7de1b30e31",
+      "bytes": 800
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/package-r1/verification.json",
+      "sha256": "917b36f24be90c5954626edc26ce120cf1afa8014c20de98ce6a61cb2cbddd82",
+      "bytes": 9339
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/render-installed-final-r1/executed-runner.py",
+      "sha256": "a346070501584a15e296743718704d81137829301a5af2a6d06089a2a30ac420",
+      "bytes": 3785
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/render-installed-final-r1/tests.log",
+      "sha256": "d84d355deab43ce1aca33d3f27231127719b9e245a17aa7b1f67a8534b0e6386",
+      "bytes": 8200
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/render-installed-final-r1/verification.json",
+      "sha256": "c5c7aa22781b381e4b1cbedbbbaea8d9af4889788eb5612dda5a7fa6557cc561",
+      "bytes": 20294
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r1/executed-runner.py",
+      "sha256": "a346070501584a15e296743718704d81137829301a5af2a6d06089a2a30ac420",
+      "bytes": 3785
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r1/native_calls.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r1/receipts.json",
+      "sha256": "eed5b8385480c62fb7c1b86df29b418ffc16fb2aa48a9eb8770b2fb909bcbff6",
+      "bytes": 43587
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r1/tests.log",
+      "sha256": "8a6be05c03e964020ceae77e4a93921f9f5a6955674e388768cd5dbf2feb64ee",
+      "bytes": 2574
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r1/text_receipts.json",
+      "sha256": "4853c7a9d12d137682aabca6825a0dde3e51d864ccb424945747cd820ad98047",
+      "bytes": 52933
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r1/verification.json",
+      "sha256": "0858818a9877152ddda88dd34094825176aa167ce85e09bf13f3f177c21a483d",
+      "bytes": 20167
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r2/executed-runner.py",
+      "sha256": "a346070501584a15e296743718704d81137829301a5af2a6d06089a2a30ac420",
+      "bytes": 3785
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r2/native_calls.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r2/receipts.json",
+      "sha256": "8d3012cf1ccdd298bdb7be27e6c11d000799476a13145b5be16740b8ea8f5aed",
+      "bytes": 43586
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r2/tests.log",
+      "sha256": "c3ef34f88d2b972dc93721d7da6cafbcfab879a9ee4793b2e4f035779e19a10d",
+      "bytes": 7849
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r2/text_receipts.json",
+      "sha256": "4853c7a9d12d137682aabca6825a0dde3e51d864ccb424945747cd820ad98047",
+      "bytes": 52933
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r2/verification.json",
+      "sha256": "b061b2f0b31d861d68462dad11812b1562f667fb26a8e443ac1775573036ef30",
+      "bytes": 20167
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r3/executed-runner.py",
+      "sha256": "a346070501584a15e296743718704d81137829301a5af2a6d06089a2a30ac420",
+      "bytes": 3785
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r3/native_calls.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r3/receipts.json",
+      "sha256": "895b88526dd2aec3b9f74e97c801c3f1992bec72d6e4be0c5389f502fffd92d2",
+      "bytes": 245943
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r3/tests.log",
+      "sha256": "4d8d2abf15011feda8b720049b481edc978244a899eb6e7ca7b3a7bdbd0a42b5",
+      "bytes": 4520
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r3/text_receipts.json",
+      "sha256": "4853c7a9d12d137682aabca6825a0dde3e51d864ccb424945747cd820ad98047",
+      "bytes": 52933
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r3/verification.json",
+      "sha256": "3b914c58d7453b754e6df58f9fd53487d0fca2443407fa905923415b3b415e1a",
+      "bytes": 20167
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r4/executed-runner.py",
+      "sha256": "a346070501584a15e296743718704d81137829301a5af2a6d06089a2a30ac420",
+      "bytes": 3785
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r4/native_calls.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r4/receipts.json",
+      "sha256": "81641613340971f76b8108fea763c8ad698bbd18cf9d9eac5adb1874533fd3ec",
+      "bytes": 254159
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r4/tests.log",
+      "sha256": "55448687a3a793623ca243d871a55b7b446545c6956574553ee53d306f7844e8",
+      "bytes": 3000
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r4/text_receipts.json",
+      "sha256": "4853c7a9d12d137682aabca6825a0dde3e51d864ccb424945747cd820ad98047",
+      "bytes": 52933
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r4/verification.json",
+      "sha256": "7e8c388aa2646feeb39a9da7435f094b07a4fb7cec360bbae03a897fb923b294",
+      "bytes": 20167
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r5/executed-runner.py",
+      "sha256": "a346070501584a15e296743718704d81137829301a5af2a6d06089a2a30ac420",
+      "bytes": 3785
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r5/native_calls.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r5/receipts.json",
+      "sha256": "a1ff200a818eb0c7bbf7ddad300e9b145e60d3f4ed1619abee0768f02732296b",
+      "bytes": 257769
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r5/tests.log",
+      "sha256": "af476a0787cdb7af34bbb2385c3d89adf4a76633d9ff45ae133001e6cc4562a1",
+      "bytes": 3154
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r5/text_receipts.json",
+      "sha256": "4853c7a9d12d137682aabca6825a0dde3e51d864ccb424945747cd820ad98047",
+      "bytes": 52933
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/source-gpu-r5/verification.json",
+      "sha256": "8fcd575205493a0c675cccb19a1e8572c7e37b96b7dd19aa7eafd8eaab2ad75f",
+      "bytes": 20167
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/text-installed-final-r1/executed-runner.py",
+      "sha256": "a346070501584a15e296743718704d81137829301a5af2a6d06089a2a30ac420",
+      "bytes": 3785
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/text-installed-final-r1/native_calls.json",
+      "sha256": "044b5b6dbd72e4a5f4ffa00d613d9955f01cf6cd8d49857bbd9558e8d8ce2475",
+      "bytes": 7279
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/text-installed-final-r1/tests.log",
+      "sha256": "28a49e0bf3ecae53e5d0ef8f82a609d3550232ffc0da72a91ae020782471d2d0",
+      "bytes": 4490
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/text-installed-final-r1/text_receipts.json",
+      "sha256": "1d441929a994fbd694e108b2a4d91c8ec4b9f0ee4222efb276e58eaa19d6a8b2",
+      "bytes": 104254
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/text-installed-final-r1/verification.json",
+      "sha256": "68a8c099966e420c0459c2997b870d3df380f25719e41694b764331c884cf76a",
+      "bytes": 20230
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/text-legacy-installed-final-r1/executed-runner.py",
+      "sha256": "a346070501584a15e296743718704d81137829301a5af2a6d06089a2a30ac420",
+      "bytes": 3785
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/text-legacy-installed-final-r1/tests.log",
+      "sha256": "676b28b1a26c3273a9ef88846c63904d66eb3e7b40531a54ea283a30f231fa6e",
+      "bytes": 11379
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/text-legacy-installed-final-r1/verification.json",
+      "sha256": "4f83d431cdc5fc3a896df15d133abfc08841cf74f47a789a2f7b4769021ad340",
+      "bytes": 20330
+    },
+    {
+      "path": "docs/validation/浮点GPU执行层实测_2026-10-26.md",
+      "sha256": "f6842e0df6de36b392a0aac5a5d7a816a2665b818f1a5f4db707757d5bc86488",
+      "bytes": 4491
+    },
+    {
+      "path": "product/pyproject.toml",
+      "sha256": "e0db127c21ce9853ae475d339cf60fc7c9f61d20b902fe4e7bb92f449a95ecf8",
+      "bytes": 1451
+    },
+    {
+      "path": "product/src/ai_ad_editor/__init__.py",
+      "sha256": "7a3116cf17cca05402cb386c1078ec89e4bb0f6fc2aa5a4ee62dbd7c4c741551",
+      "bytes": 181
+    },
+    {
+      "path": "product/src/ai_ad_editor/capabilities.py",
+      "sha256": "b16bcca0719b3750eb2468d2240592d082f3a72c9fb1eeaac81b68b70a7e4a07",
+      "bytes": 141252
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_gpu.py",
+      "sha256": "0de29bed72e47dc21d89115091d0fd94faaa33062ec27402096bfab2662046fd",
+      "bytes": 14836
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_gpu_native.py",
+      "sha256": "8cd50512bc0fb66fa0aab988b691e2144163374a9f7aa2671f49c3a338b31f0b",
+      "bytes": 16855
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_gpu_worker.py",
+      "sha256": "083f4d6b73b59a1090ad4fa5f81f935aa5eb947cf58c767bba6cbca5e4482b83",
+      "bytes": 9063
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_preview.py",
+      "sha256": "c7a7097f6a639352e812837cae01838907942237a4cd7b6cef5a4a63b2220d04",
+      "bytes": 11469
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_standard_render.py",
+      "sha256": "ead80de49031f5931babeb8a3b0d2ea1ac37b303932a9a9030dfe3a83831af27",
+      "bytes": 24818
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_text.py",
+      "sha256": "fa7a0a02c363c55c81f07627146d75aa9f3ad131ca3a5843037678a84f723354",
+      "bytes": 20301
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_text_coverage.py",
+      "sha256": "dc2212f77592b271d2b658348e1cd112d74964f1ccd18cffd221c26d2c605521",
+      "bytes": 16102
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_timeline.py",
+      "sha256": "0e87b04357aa8ba8a3fd763b82c90e46b9bfbaaf291f04ffeef07eb826e1da68",
+      "bytes": 28833
+    },
+    {
+      "path": "product/src/ai_ad_editor/render.py",
+      "sha256": "593b5547a8b7119ec8f3129714fe78d57b98c61d31a562105dea34337df25a28",
+      "bytes": 327155
+    },
+    {
+      "path": "product/tests/native_float_gpu.py",
+      "sha256": "132a92fd520a75ea0a3bd79de929460036f1110ca85aa8cb6ad9e034c2829caa",
+      "bytes": 14517
+    },
+    {
+      "path": "scripts/activate_float_gpu_20261026.py",
+      "sha256": "74059e5c818a9c03ba099ed98a0ce763eecc04634db7d713adc8b4bbbdbec7d5",
+      "bytes": 2612
+    },
+    {
+      "path": "scripts/audit_float_gpu_delivery_20261026.py",
+      "sha256": "b155cbc69ae0f2796fe2613ed0f3ca3d22210f7f9e15f2d4a0b9410171e25352",
+      "bytes": 11838
+    },
+    {
+      "path": "scripts/audit_float_gpu_stage_20261026.py",
+      "sha256": "5f0fd11c1c9036880b2f7617ce6d56a710c01b78b558e28d6fbb821ee86c55bd",
+      "bytes": 4648
+    },
+    {
+      "path": "scripts/benchmark_float_gpu_20261026.py",
+      "sha256": "9c481c022b6f2ccc9e51f4f51b970b225db0bb4b15684f73335d2a1da0b25f9e",
+      "bytes": 8351
+    },
+    {
+      "path": "scripts/build_float_gpu_20261026.py",
+      "sha256": "1412d5aa8c3db5fe88b2749a2100ffa94247c8f4739ffabf54e5d749a687a969",
+      "bytes": 5355
+    },
+    {
+      "path": "scripts/document_float_gpu_20261026.py",
+      "sha256": "b3fcf5a34c338da598e7218acd0aae2483dbe34695c5c8fb7625d0dd7f36bca8",
+      "bytes": 27840
+    },
+    {
+      "path": "scripts/observe_float_gpu_20261026.py",
+      "sha256": "03ed9640f5a05e4027756eaf3c7fa547a238ce9112a372f708b66cb13b673ac4",
+      "bytes": 3148
+    },
+    {
+      "path": "scripts/package_community_skill.py",
+      "sha256": "ad4370c4e0a2dbd6caf20beca556664c68b181700e421fa16a5d2a2601fe5703",
+      "bytes": 4910
+    },
+    {
+      "path": "scripts/pin_community_skill.py",
+      "sha256": "26bc176cd3c651776168932d27e981f6259a4f6457f527eb017d6eccd909fd2d",
+      "bytes": 2701
+    },
+    {
+      "path": "scripts/publish_float_gpu_skill_kit_20261026.py",
+      "sha256": "849243093dcc361cb81f58fbbaafbf0ae05db5b051a993d06845130b6f24ec41",
+      "bytes": 1076
+    },
+    {
+      "path": "scripts/run_float_gpu_4k_20261026.py",
+      "sha256": "08f51660dadc946dcf4daa1ae442de48bea286545c86c52a95e6fe12f2349f39",
+      "bytes": 9479
+    },
+    {
+      "path": "scripts/run_float_gpu_case_20261026.py",
+      "sha256": "22908879e7e7a5eb782c9c4c5b2c5bee70d81a5b491a8b105cdb42db80c4ec15",
+      "bytes": 21967
+    },
+    {
+      "path": "scripts/sync_capability_manuals.py",
+      "sha256": "28a3c06541ae88f28baef09c19340cef2778c005f833a791600bc7c89286ffc3",
+      "bytes": 4811
+    },
+    {
+      "path": "scripts/test_float_gpu_20261026.py",
+      "sha256": "a346070501584a15e296743718704d81137829301a5af2a6d06089a2a30ac420",
+      "bytes": 3785
+    },
+    {
+      "path": "scripts/verify_float_gpu_package_20261026.py",
+      "sha256": "7d18f20ca0219cb3ef10f3ee791afe8ad591ca7cb5bf28d93a9af59a6d50e0b6",
+      "bytes": 4012
+    },
+    {
+      "path": "scripts/verify_float_gpu_push_20261026.py",
+      "sha256": "76aef11ce54078b563e6277ba8a4573d578b11931fbe998b0c982d888fad88ab",
+      "bytes": 2929
+    },
+    {
+      "path": "scripts/verify_float_gpu_skill_kit_20261026.py",
+      "sha256": "6972f709f5a749e9a6aaab2d0000467262eb7002e89c88875f07bf5188b07955",
+      "bytes": 7905
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
+      "sha256": "ead45afe2d9ec9675341eb92260ea1f7f0ff3a7afb3c3001698a8091d907bdac",
+      "bytes": 10409
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/float-text.md",
+      "sha256": "262187cc89c68f6b984c76aa1ed199ddcdd9bf4e2baeb801c7132e822f2f6e04",
+      "bytes": 3342
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/projection-gpu.md",
+      "sha256": "c69b87561092ed5eec806404989cb32f67d6ff9e5fc77a6b4a2efad5f9783f23",
+      "bytes": 6386
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
+      "sha256": "8b65f6fcecdee4b2a75d627fb7454ff23f38ef40cd5aa21f5aa4983c30b3410e",
+      "bytes": 7553
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/scripts/run.py",
+      "sha256": "9d7f4f0f56c83c05def14abec054bdaab58ab4630d6a5e92849377736b98fb55",
+      "bytes": 2296
+    }
+  ]
+}

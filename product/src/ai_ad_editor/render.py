@@ -4935,11 +4935,10 @@ def _render_project(root, project, sequence, output, *, dry_run=False, render_se
     projection = ProjectionSession(root,effective_project['settings'],operation_id,cancel_file=cancel_file)
     float_renderer = None
     if effective_project['settings'].get('pixel_pipeline') is not None:
-        if projection.enabled:
-            projection.reject_node('float-pixel-pipeline','OpenCL geq projection does not implement the independent linear-light float pipeline')
         from .float_standard_render import FloatRenderContext
         float_renderer = _runtime.enter_context(FloatRenderContext(root, effective_project, render_sequence,
-            encoder, dry_run=dry_run, cancel_file=cancel_file))
+            encoder, dry_run=dry_run, cancel_file=cancel_file, operation_id=operation_id))
+        projection = float_renderer.gpu
         inputs, graph, input_meta, warnings = float_renderer.graph()
     else:
         inputs, graph, input_meta, warnings = build_filter_graph(root, effective_project, render_sequence,

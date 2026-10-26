@@ -96,3 +96,5 @@ $avk = Join-Path $aekSkills 'agent-ffmpeg-local-editor/scripts/run.ps1'
 ## 实测与交付
 
 [当轮安装与核验报告](../validation/Float32文字字幕实测_2026-10-26.md)记录独立像素 oracle、实际统一 Skill 案例、安装包、队列和取消恢复。具体可视案例与原素材见 [C30](CASES.md#c30-float-text)。所有历史 G01–G38 关闭条件保持不变。
+
+当前CLI0.1.24另有[独立原生Float32 GPU执行层](FLOAT_GPU.md)：明确GPU策略、字色/普通叠加/仿射/逐词选择，保留CPU字形和其他算子；上文历史版本边界不追改。

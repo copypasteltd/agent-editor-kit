@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.23 / alpha.4-local.21 / r24 kit · 1 Skill / 17 modules / 71 files.**
+**CLI0.1.24 / alpha.4-local.22 / r25 kit · 1 Skill / 17 modules / 71 files.**
 
 显式线性 Float32 管线新增 57 种 xfade 图案与黑/白 dip，真实源句柄、关联音轨及组级空间进出场已接入。实际统一 Skill 完成 6秒/72帧案例，倒放、预览、取消恢复、队列与逐样本音频核对通过。CPU 执行；默认路径与 GPU 投影沿用各自契约。
 
-[Float32 workflow](../product/FLOAT_TRANSITIONS.md) · [GPU projection](../product/OPENCL_PROJECTION.md) · [Install](../product/COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](../product/float-text-coverage-capabilities-cli-0.1.23.json).
+[Float32 workflow](../product/FLOAT_TRANSITIONS.md) · [GPU projection](../product/OPENCL_PROJECTION.md) · [Install](../product/COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](../product/float-gpu-capabilities-cli-0.1.24.json).
 
 <!-- /community-current -->
 
@@ -98,4 +98,6 @@ skills/agent-ffmpeg-local-editor/
 
 CLI0.1.22: independent/inline Float32 text, joint typewriter/highlight and plain SRT. Read [workflow](../product/FLOAT_TEXT.md); CPU,8bit coverage/Float32 colors,explicit fonts and original clocks. 4K text/GPU text/rich ASS and full target acceptance remain open.
 
-CLI0.1.23:[4K text and reusable native byte coverage](../product/FLOAT_TEXT_COVERAGE.md). CPU tiled linear component composition,exact original clocks,bounded adaptive caches. GPU text,natural quality,HDR,realtime and full original conditions remain open.
+Historical CLI0.1.23:[4K text and reusable native byte coverage](../product/FLOAT_TEXT_COVERAGE.md). CPU tiled linear component composition,exact original clocks,bounded adaptive caches. GPU text,natural quality,HDR,realtime and full original conditions remain open.
+
+CLI0.1.24:[native Float32 GPU workflow](../product/FLOAT_GPU.md). Explicit geometry/normal composition/text colors/word selection;owned worker cleanup;CPU glyph rasterization and remaining operators retained. Full original target conditions remain open.

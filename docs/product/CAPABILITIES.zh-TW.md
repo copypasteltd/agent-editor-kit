@@ -2,15 +2,15 @@
 
 <!-- community-current -->
 
-**CLI 0.1.23 / alpha.4-local.21 / r24 kit · 1 Skill / 17 modules.**
+**CLI 0.1.24 / alpha.4-local.22 / r25 kit · 1 Skill / 17 modules.**
 
-4K text, reusable native byte coverage and tiled linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+Explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
 
-[4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](float-text-coverage-capabilities-cli-0.1.23.json). Full target conditions remain open.
+[Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](float-gpu-capabilities-cli-0.1.24.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.zh-TW.md) · [Machine response](float-text-coverage-capabilities-cli-0.1.23.json) · [Module data](module-catalog.json)
+[README](../../README.zh-TW.md) · [Machine response](float-gpu-capabilities-cli-0.1.24.json) · [Module data](module-catalog.json)
 
 | 編號 | 功能模塊 | 具體行為與輸入 → 輸出 | 入口 | 依賴/邊界 |
 |---|---|---|---|---|
@@ -69,7 +69,8 @@
 | F53 | 語義執行時升級 | 舊適配器/索引/校準 → 新安裝路徑的新 ID，複製向量/預覽/資料集並保留擬合及原觀察。 | `project upgrade-semantic` | 全部 19 個實作與外部依賴須位元組相同；零新模型前向，原記錄不改；內容變更拒絕並要求重建。 |
 | F54 | 可復用參數運鏡 | 本地版本化 JSON / 既有作者曲線 → 一般關鍵影格、參數/摘要/快照、跨專案復用。六套實際預覽供選型。 | `motion pack list/inspect/create/capture/apply` | 65 點採樣、transform 屬性；預設拒絕衝突，明確取代整條屬性軌；跟蹤綁定拒絕，CPU 合成/自然品質未結案。 |
 | F55 | 線性浮點轉場與群組進出場 | 明確 Float32 專案 → 57 xfade圖案+2 dip、預乘alpha混合、真實句柄/原作者時鐘、關聯音軌、群組擦除/推移及實際預覽成片。 | `timeline transition; preview; render; queue` | CPU；12種真實句柄宣告，其他圖案用明確重疊/邊緣；normal雙源混合；風噪有平台差異，HDR/自然品質未閉。 |
-| F56 | 線性浮點文字與字幕 | 獨立／內嵌／SRT、聯合逐詞／打字機 → 原生位元組覆蓋率、可重用字形、分塊線性合成、原作者時鐘、4K標題及實際交付。 | `timeline compose; preview; render; queue` | 明確本機字型；CPU；覆蓋率8bit／顏色Float32；工作區准入非峰值RSS；富ASS／Bidi／GPU文字／自然品質未閉。 |
+| F56 | 線性浮點文字與字幕 | 獨立／內嵌／SRT、聯合逐詞／打字機 → 原生位元組覆蓋率、可重用字形、分塊線性合成、原作者時鐘、4K標題及實際交付。 | `timeline compose; preview; render; queue` | 明確本機字型；CPU／明確GPU；覆蓋率8bit／顏色Float32；工作區准入非峰值RSS；富ASS／Bidi／自然品質未閉。 |
+| F57 | 原生浮點GPU執行層 | 明確GPU策略 → 線性Float32仿射、一般疊加、文字元件／段落與逐詞選擇；正式算繪／預覽／佇列／恢復。 | `projection_acceleration; render; preview; queue` | off/prefer/require；實際binary64／次正規探測；任務專屬程序與共用段；其餘算子CPU，非全部GPU化。 |
 
 | 編號 | 服務模塊 | 運行形式 | 需要什么/提供什么 | 入口 | 範圍 |
 |---|---|---|---|---|---|
@@ -88,7 +89,7 @@
 | S13 | 內建社群素材服務 | 離線目錄 | 359 項有來源/許可的 BGM、短樂、音效、字型 | `materials list/inspect/verify/ingest` | 逐項權利，不是商業素材訂閱庫 |
 | S14 | 本地配音/翻譯 | 原生模型 worker | 4 個可選 CPU/CUDA 包，103 音色對映和 OPUS 文字/字幕 | `voice / translate / model-pack` | 累計至少 7 個不同音色有真實輸出；103 音色完整試聽及人工驗收未完成 |
 | S15 | 配樂準備與混音 | 原生 FFmpeg 音訊 | 顯式擷取/迴圈/淡化、獨立人聲/配樂、閃避 | `music prepare/mix` | 不作曲、不靜默裁人聲、不承諾接縫修復 |
-| S16 | GPU相容服務 | 已有原生OpenCL ICD / NVIDIA模型執行庫 | 投影off/prefer/require，模型auto/cpu/cuda；實際裝置、探測、預算及回退 | `render --projection-acceleration; gpu inspect; --device` | RTX3060實測；僅投影算子GPU化，外部驅動/庫授權另列 |
+| S16 | GPU相容服務 | 既有原生OpenCL ICD / NVIDIA模型庫 | 預設圖投影及獨立Float32仿射／一般疊加／字色／逐詞；off/prefer/require，模型auto/cpu/cuda；實際探測／預算／清理 | `render --projection-acceleration; gpu inspect; --device` | RTX3060實測；字形／效果／轉場等CPU，非全部算子GPU化，系統庫授權另列。 |
 | S17 | 原生 Windows 擷取 | FFmpeg gdigrab / DirectShow | 明確來源、裝置 ID、有限時長、完整解碼與素材登記 | `capture devices/record` | 真實視窗 CPU/GPU 已驗；攝影機/麥克風/同步未驗 |
 | S18 | 圖文語義與經驗校準 | 明確登記的原生 SigLIP2 worker | 既有 Torch/Transformers/權重；檔案綁定索引/實作/類型/實際裝置 | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | 分數非機率；冷啟動/大庫與校準工程遷移仍有限制 |
 | S19 | 獨立四軌分離 | 原生 Torch/TorchAudio HDemucs worker | 明確登記原生 Python、權重/證據/實作雜湊；auto/cpu/cuda，4 float WAV/軌道 | `audio adapter; audio separate-stems` | 基礎 ZIP 不含 Torch/權重；自然聽感與權重許可未閉 |
@@ -863,7 +864,8 @@
     "linear_premultiplied_transitions",
     "real_source_handles_and_linked_audio",
     "authored_group_spatial_edges",
-    "linear_float32_titles_inline_text_and_plain_SRT"
+    "linear_float32_titles_inline_text_and_plain_SRT",
+    "explicit_probed_native_opencl_float_geometry_normal_over_and_text_colors"
   ],
   "limits": [
     "explicit_opt_in_not_default_migration",
@@ -1291,7 +1293,9 @@
     "opencl_dynamic_crop_affine_native_sequence_bilinear_and_area",
     "ordered_binary64_prefix_transported_in_three_float32_texels",
     "actual_gpu_identity_fp64_image_extents_and_bitwise_texture_probes",
-    "projection_raster_admission_kernel_hashes_logs_queue_resume"
+    "projection_raster_admission_kernel_hashes_logs_queue_resume",
+    "render_owned_float32_opencl_worker_shared_buffers",
+    "binary64_linear_float_affine_normal_over_text_components_binary_word_selection"
   ],
   "projection": {
     "engine": "opencl-binary64-projection-v1",
@@ -1306,6 +1310,34 @@
     "runtime_failure": "fails_without_cpu_or_encoder_retry",
     "quota_scope": "projection_raster_admission_not_total_ram_or_vram"
   },
+  "float32_projection": {
+    "engine": "render-owned-float32-opencl-v1",
+    "default": "off",
+    "selection": "pixel_pipeline=float32-native-v1;projection_acceleration=off|prefer|require",
+    "device": "explicit_platform.device_index",
+    "native_runtime": "existing_windows_OpenCL_ICD",
+    "surface": "straight_RGBA_Float32;binary64_kernel_math;no_fast_math",
+    "operators": [
+      "premultiplied_bilinear_affine",
+      "normal_source_over",
+      "ordered_text_color_components",
+      "binary_word_selection"
+    ],
+    "probe": "65536_native_levels_and_independent_CPU_oracles_before_execution",
+    "lifetime": "one_owned_finite_worker_per_render_or_preview;cancel_timeout_cleanup",
+    "budgets": "separate_device_and_host_shared_buffer_limits;not_peak_RSS_or_reserved_free_VRAM",
+    "CPU_scope": [
+      "glyph_rasterization",
+      "effects",
+      "masks",
+      "crop",
+      "transitions",
+      "non_normal_blends",
+      "color_conversion",
+      "audio",
+      "encoding"
+    ]
+  },
   "limits": [
     "windows_backend_catalog_only_no_downloads",
     "explicit_video_bitrate_required_not_crf_quality_equivalence",
@@ -1314,8 +1346,8 @@
     "pixel_probe_budget_not_total_driver_vram_limit",
     "encode_decode_driver_default_device_identity_not_certified",
     "projection_requires_gpu_images_and_ieee_binary64_actual_preflight",
-    "projection_pixel_stateful_expressions_and_independent_linear_light_float_pipeline_not_ported",
-    "other_effects_and_compositing_remain_cpu_no_realtime_4k_or_capcut_parity_claim"
+    "projection_pixel_stateful_expressions_not_ported",
+    "float_opencl_scope_explicit_other_operators_CPU_no_realtime_4k_or_capcut_parity_claim"
   ]
 }
 ```
@@ -3390,8 +3422,17 @@
       "content_addressed_prefix_and_geometry_mask_LRU",
       "4K_text_with_explicit_workspace_admission"
     ],
+    "GPU": {
+      "selection": "explicit_projection_acceleration_off_prefer_require",
+      "engine": "render-owned-float32-opencl-v1",
+      "scope": [
+        "ordered_color_components",
+        "paragraph_source_over",
+        "binary_word_selection"
+      ],
+      "glyph_rasterization": "CPU"
+    },
     "limits": [
-      "CPU_only",
       "glyph_coverage_8bit_authored_colors_and_composition_Float32",
       "SRT_plain_text_only_rich_ASS_SSA_VTT_not_ported",
       "explicit_font_and_native_metrics_required",
@@ -3399,7 +3440,7 @@
       "bidi_and_internal_word_clusters_pending",
       "typewriter_512_graphemes_highlight_128_ranges",
       "four_Float32_surfaces_plus_native_masks_tiles_two_cache_limits_admission_not_peak_RSS",
-      "sequential_native_CPU_coverage_rasters_GPU_text_pending",
+      "sequential_native_CPU_coverage_rasters_explicit_GPU_color_composition",
       "not_realtime_HDR_or_full_CapCut_acceptance"
     ]
   },

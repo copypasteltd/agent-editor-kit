@@ -168,9 +168,8 @@ class FloatPreviewContext:
                 height, width = surface.shape[:2]
                 if (request['width'], request['height']) != (width, height):
                     sx, sy = width/request['width'], height/request['height']
-                    surface, geometry = resample_rgba(surface, [request['width'], request['height']],
-                        [[sx, 0, (sx-1)/2], [0, sy, (sy-1)/2]],
-                        max_working_bytes=r.config['projection_working_bytes_limit'], cancel=r.poll)
+                    surface, geometry = r.timeline.resample(surface, [request['width'], request['height']],
+                        [[sx, 0, (sx-1)/2], [0, sy, (sy-1)/2]])
                     self.metadata['preview_geometry'] = geometry
                 delivered, _ = convert_rgba(surface, r.config['working'], target,
                     max_working_bytes=r.config['projection_working_bytes_limit'], cancel=r.poll)

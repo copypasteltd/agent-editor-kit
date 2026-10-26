@@ -39,16 +39,16 @@ def main():
         original = text = path.read_text('utf-8-sig')
         canonical = (ROOT/readme).read_text('utf-8-sig')
         current_block = ('<!-- community-current -->\n\n'
-            '**CLI 0.1.23 / alpha.4-local.21 / r24 kit · 1 Skill / 17 modules.**\n\n'
-            '4K text, reusable native byte coverage and tiled linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, '
+            '**CLI 0.1.24 / alpha.4-local.22 / r25 kit · 1 Skill / 17 modules.**\n\n'
+            'Explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, '
             'joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.\n\n'
-            '[4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · '
+            '[Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · '
             '[Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · '
             '[75 actual declarations]('+response_path.name+'). Full target conditions remain open.\n\n'
             '<!-- /community-current -->')
         text = re.sub(r'<!-- community-current -->.*?<!-- /community-current -->',
                       lambda _: current_block, text, count=1, flags=re.S)
-        for prefix, count in [('F', 56), ('S', 20)]:
+        for prefix, count in [('F', 57), ('S', 20)]:
             old_rows = list(re.finditer(r'^\| '+prefix+r'\d{2}\s*\|.*$', text, re.M))
             rows = re.findall(r'^\| '+prefix+r'\d{2}\s*\|.*$', canonical, re.M)
             assert len(rows) == count and old_rows
@@ -65,10 +65,10 @@ def main():
         # Captured versioned evidence replaces only current fields; explanatory
         # workflow sections and historical failure references stay intact.
         path.write_text(text, encoding='utf-8', newline='\n')
-        for prefix, count in [('F',56),('S',20)]:
+        for prefix, count in [('F',57),('S',20)]:
             assert len(re.findall(r'^\| '+prefix+r'\d{2}\s*\|',text,re.M))==count
         assert len(re.findall(r'^### `[^`]+`\s*$',text,re.M))==len(entries)
-        records.append(dict(path=path.relative_to(ROOT).as_posix(),functional_rows=56,service_rows=20,
+        records.append(dict(path=path.relative_to(ROOT).as_posix(),functional_rows=57,service_rows=20,
                             actual_capability_fields=len(entries),changed=text!=original))
     print(json.dumps(records,ensure_ascii=False))
 

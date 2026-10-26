@@ -53,3 +53,5 @@ $avk = Join-Path $aekSkills 'agent-ffmpeg-local-editor/scripts/run.ps1'
 渲染證據分別記錄 `native_snapshots`（邏輯文字快照）、`native_coverage_rasters`（實際原生字節栅格）、`coverage_cache_hits`、`coverage_cached_bytes`、每張圖的 SHA、`estimated_working_bytes` 和顏色／時間契約。邏輯快照數不等於原生啟動數。小預算會縮小快取，仍不足時在原生程序啟動前拒絕。
 
 僅支援純文字 SRT、明確本地字型及既有動畫。富 ASS/SSA/VTT、複雜 Bidi／內部塑形簇、GPU 字形合成、自然視聽、HDR/ICC、即時及完整剪映等價仍開放。較大畫布、模型和外部工作不因這次文字改進而自動通過資源驗收。
+
+当前CLI0.1.24另有[独立原生Float32 GPU执行层](FLOAT_GPU.md)：明确GPU策略、字色/普通叠加/仿射/逐词选择，保留CPU字形和其他算子；上文历史版本边界不追改。

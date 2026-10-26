@@ -1,0 +1,373 @@
+{
+  "status": "passed",
+  "calls": [
+    {
+      "name": "version",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "version"
+      ],
+      "exit_code": 0,
+      "seconds": 2.843126100000518,
+      "stdout_sha256": "113f65856d64dbeea549f137dd65b3015931b6e61d4b0b651a2398677d0f1e03",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "validate",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "validate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-4k-r1\\4K 可编辑 工程"
+      ],
+      "exit_code": 0,
+      "seconds": 2.602079700000104,
+      "stdout_sha256": "9577caefc67e42ff277c11fb0415941539b85f5b51c7cd53f48223f0f5d56e2e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "preview",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "preview",
+        "frame",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-4k-r1\\4K 可编辑 工程",
+        "--frame",
+        "4",
+        "--height",
+        "540"
+      ],
+      "exit_code": 0,
+      "seconds": 45.58567839999978,
+      "stdout_sha256": "74b4f0eba72760d273cc6bdcc6ade572b30ce65827bb53d0a0011d559a8739d4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "render",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-4k-r1\\4K 可编辑 工程",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-4k-r1\\4K 可编辑 工程\\renders\\4k-native-text.mp4"
+      ],
+      "exit_code": 0,
+      "seconds": 192.5990369000001,
+      "stdout_sha256": "3ff9e3beef872738b93c5b98bb228b4c9b9481fc30ca96e57dbd3e21c2bf2a73",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "decode-full",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-4k-r1\\4K 可编辑 工程\\renders\\4k-native-text.mp4",
+        "-map",
+        "0:v:0",
+        "-f",
+        "null",
+        "-"
+      ],
+      "exit_code": 0,
+      "seconds": 0.175004099999569,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "probe",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.EXE",
+        "-v",
+        "error",
+        "-select_streams",
+        "v:0",
+        "-count_frames",
+        "-show_streams",
+        "-of",
+        "json",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-4k-r1\\4K 可编辑 工程\\renders\\4k-native-text.mp4"
+      ],
+      "exit_code": 0,
+      "seconds": 0.1349883000002592,
+      "stdout_sha256": "ae611d430467d36b2d7cfa50ba1f6c3335f6ccba3c665599bd35d209916a8886",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "quality",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "quality",
+        "check",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-4k-r1\\4K 可编辑 工程",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-4k-r1\\4K 可编辑 工程\\renders\\4k-native-text.mp4"
+      ],
+      "exit_code": 0,
+      "seconds": 2.697740299999168,
+      "stdout_sha256": "85b7d5e9ef0f9455484f88909ae77c03af6aba353c0071027416a5dcc791e615",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "export",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "convert",
+        "export",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-4k-r1\\4K 可编辑 工程",
+        "--target-format",
+        "package",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-gpu-20261026-4k-r1\\editable-4k-text.aevpkg.zip"
+      ],
+      "exit_code": 0,
+      "seconds": 3.0357631999995647,
+      "stdout_sha256": "cbedc83ed1c6da60793d6ec20457f3bd355add00f4f34f25701f00e4c82c7c05",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "gif",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-4k-r1\\4K 可编辑 工程\\renders\\4k-native-text.mp4",
+        "-vf",
+        "fps=4,scale=960:540:flags=lanczos,split[a][b];[a]palettegen[p];[b][p]paletteuse",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-gpu-20261026-4k-r1\\4k-native-text.gif"
+      ],
+      "exit_code": 0,
+      "seconds": 0.3677045000004,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "registered_skill": true,
+  "virtualization": false,
+  "source_fallback": false,
+  "continuous_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false,
+  "new_model_forwards": 0,
+  "GPU_receipt": {
+    "engine": "render-owned-float32-opencl-v1",
+    "request": {
+      "mode": "require",
+      "device": "0.0",
+      "max_working_bytes": 1073741824,
+      "probe_timeout_seconds": 30
+    },
+    "status": "verified",
+    "dry_run": null,
+    "operations": {
+      "paint": 48,
+      "over": 56,
+      "affine": 24,
+      "select": 8
+    },
+    "CPU_scope": [
+      "glyph-rasterization",
+      "color-conversion",
+      "effects",
+      "masks",
+      "crop",
+      "transitions",
+      "non-normal-blends",
+      "audio",
+      "delivery-encoding"
+    ],
+    "GPU_scope": [
+      "premultiplied-affine",
+      "normal-source-over",
+      "text-color-components",
+      "binary-word-selection"
+    ],
+    "host_shared_bytes_limit": 1073741824,
+    "retained_host_shared_bytes": 0,
+    "device_bytes_limit": 1073741824,
+    "limits_are_peak_RSS": false,
+    "free_VRAM_reserved": false,
+    "integer_media_conversion": false,
+    "worker_closed": true,
+    "runtime_failure_CPU_fallback": false,
+    "artifacts": [
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.22\\final-r4\\installed\\site\\ai_ad_editor\\float_gpu.py",
+        "role": "float-gpu-execution",
+        "bytes": 14836,
+        "sha256": "sha256:0de29bed72e47dc21d89115091d0fd94faaa33062ec27402096bfab2662046fd"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.22\\final-r4\\installed\\site\\ai_ad_editor\\float_gpu_worker.py",
+        "role": "float-gpu-execution",
+        "bytes": 9063,
+        "sha256": "sha256:083f4d6b73b59a1090ad4fa5f81f935aa5eb947cf58c767bba6cbca5e4482b83"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.22\\final-r4\\installed\\site\\ai_ad_editor\\float_gpu_native.py",
+        "role": "float-gpu-execution",
+        "bytes": 16855,
+        "sha256": "sha256:8cd50512bc0fb66fa0aab988b691e2144163374a9f7aa2671f49c3a338b31f0b"
+      }
+    ],
+    "planned_maximum_pixels": 8294400,
+    "planned_device_bytes": 398131200,
+    "planned_host_shared_bytes": 273715968,
+    "owned_worker_pid": 10380,
+    "native": {
+      "protocol": "native-opencl-binary64-float32-primitives-v1",
+      "device": {
+        "selection": "0.0",
+        "name": "NVIDIA GeForce RTX 3060",
+        "vendor": "NVIDIA Corporation",
+        "driver": "595.95",
+        "version": "OpenCL 3.0 CUDA",
+        "type": 4,
+        "double_fp_config": 63,
+        "global_memory_bytes": 12884377600,
+        "max_allocation_bytes": 3221094400
+      },
+      "kernel_sha256": "e2cd0de55e91caa4aac9885757b1f520044fd4660910e6974b094fab3d72077b",
+      "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+      "arithmetic": "binary64;explicit Float32 round-to-nearest-even boundaries",
+      "device_quota_bytes": 1073741824,
+      "retained_device_bytes": 398131200,
+      "operations": {
+        "over": 58,
+        "affine": 26,
+        "paint": 49,
+        "select_words": 9
+      },
+      "integer_media_conversion": false
+    },
+    "probe": {
+      "pixels_per_case": 65536,
+      "max_errors": {
+        "over": 0.0,
+        "affine": 0.0,
+        "paint": 0.0,
+        "select": 0.0
+      },
+      "absolute_limit": 3e-07,
+      "all_16bit_levels_present": true,
+      "actual_gpu_operations": 6,
+      "subnormal_over_bit_exact": true,
+      "subnormal_affine_bit_exact": true,
+      "subnormal_alpha_input_bits": [
+        0,
+        1,
+        2,
+        8388607,
+        8388608,
+        8388609,
+        1065353215,
+        1065353216
+      ]
+    },
+    "maximum_host_shared_bytes": 273715200,
+    "operation_elapsed_seconds": 79.99394129999928,
+    "render_exit_code": 0,
+    "worker_returncode": 0,
+    "shared_handles_closed": true
+  },
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-4k-r1\\4K 可编辑 工程",
+  "actual_frames": 8,
+  "width": 3840,
+  "height": 2160,
+  "seconds": 2,
+  "fps": 4,
+  "font_license_preserved": true,
+  "original_authoring_unchanged": true,
+  "public_files": [
+    {
+      "path": "docs/assets/float-gpu-20261026-4k-r1/4k-native-text.gif",
+      "bytes": 42235,
+      "sha256": "1413ebb29f2f5c332f9dd7dece4f9e9cb60250efa8568896f51a79d5f7942485"
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-4k-r1/4k-native-text.mp4",
+      "bytes": 251291,
+      "sha256": "0f975732908c664e874c218eb5faaa4e79f7d0308644d7f201b4e0100631a690"
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-4k-r1/editable-4k-text.aevpkg.zip",
+      "bytes": 11305786,
+      "sha256": "4432059eb8ebacb65b589ee38e356f59c14e50eb2016eaa2c66315a969a724cf"
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-4k-r1/editable-4k-text.aevpkg.zip.conversion-report.json",
+      "bytes": 945,
+      "sha256": "56e24a923ed86111c7335503d9ac0d0c6d5cb971e4faf6f9a0ab6be9ca3d6ff6"
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-4k-r1/Noto-Sans-SC-OFL.txt",
+      "bytes": 4943,
+      "sha256": "566b792278acba9d6ec6f9d5c3fd27f3dabf90e622ed7f5c788d10eb54bbf852"
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-4k-r1/original.png",
+      "bytes": 2726,
+      "sha256": "1eb136891345754d8dcc759e79ac1821303af67dfc8385b8d8eb7d6dd3be2708"
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-4k-r1/preview.png",
+      "bytes": 47832,
+      "sha256": "bf8983a6c967dfb2b4e05cbe59510455d38c3cf973a1a279aee04121d820952c"
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-4k-r1/SOURCE.txt",
+      "bytes": 250,
+      "sha256": "18c99af107e8e428652447f886ea436212c9ead9c5894aaacaf2b24ca10b6bec"
+    }
+  ],
+  "native_coverage_rasters": 80,
+  "coverage_cache_hits": 32,
+  "native_snapshots": 24,
+  "admission": {
+    "max_working_bytes": 805306368,
+    "float_surfaces": 4,
+    "native_and_scratch_bytes_per_pixel": 8,
+    "two_cache_limits_reserved": true,
+    "tile_pixels": 16384,
+    "estimate_is_peak_RSS": false
+  }
+}

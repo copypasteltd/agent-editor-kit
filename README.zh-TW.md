@@ -9,9 +9,23 @@
 本頁包含完整功能模塊、服務與依賴、安裝與使用邏輯、Skill 輸入輸出、真實案例和核驗表。長篇原始驗收日志繼續留檔，功能說明與案例入口恢復到首頁。
 
 
-<!-- float-text-coverage-current -->
+<!-- float-gpu-current -->
 
-**CLI0.1.23 / alpha.4-local.21 / r24 kit · 1 Skill / 17 modules.**
+**CLI0.1.24 / alpha.4-local.22 / r25 kit · 1 Skill / 17 modules.**
+
+原生 Windows 浮點 GPU 執行層已接入正式算繪、預覽、佇列及恢復：仿射投影、一般疊加、文字顏色與逐詞選擇。已安裝 CLI 完成6秒／72影格混剪；註冊的統一 Skill 完成4K／8影格動畫及混剪包重新匯入預覽。同一4K專案單次成對實測 CPU 296.712秒 → GPU 139.938秒（2.120×）；全部影格時鐘／完整PCM相同，解碼碼差≤1。
+
+[Workflow](docs/product/FLOAT_GPU.md) · [C33/C34](docs/product/CASES.md#c33-float-gpu) · [Local install](docs/releases/CLI_0.1.24_LOCAL.md) · [Evidence](docs/validation/浮点GPU执行层实测_2026-10-26.md)
+
+![Actual installed GPU 4K animation / silent GIF](docs/assets/float-gpu-20261026-4k-r1/4k-native-text.gif)
+
+完整解碼最大8bit碼差為 0（門檻≤1）。 本機RTX3060；單對實測、非獨占主機，非中位數或一般速度承諾。字形柵格、轉場／效果／crop／其他混合等仍在CPU；覆蓋率8bit／顏色Float32。准入配額非峰值RSS或可用顯存預留，完整目標持續開放。
+
+<!-- /float-gpu-current -->
+
+<!-- float-text-coverage-history -->
+
+**Historical / 历史 / 歷史：CLI0.1.23 / alpha.4-local.21 / r24 kit · 1 Skill / 17 modules.**
 
 字形栅格已改為原生位元組覆蓋率，顏色採分塊浮點合成；相同前綴與段落幾何重用快取，保留原作者時鐘。實際統一Skill完成4K／8影格標題動畫及含轉場／關聯音軌的6秒／72影格案例。CPU文字，覆蓋率8bit、顏色Float32。 該4K案例的CPU算繪呼叫耗時692.895秒，速度仍須改善。
 
@@ -21,7 +35,7 @@
 
 文字使用CPU合成，字形覆蓋率為8bit；工作區准入估算、即時速度、長片及完整目標分別驗收。
 
-<!-- /float-text-coverage-current -->
+<!-- /float-text-coverage-history -->
 
 <!-- float-text-history -->
 
@@ -166,7 +180,7 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r24 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r24.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
+**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r25 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r25.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
 
 <!-- /unified-skill-registration -->
 
@@ -533,7 +547,8 @@ flowchart LR
 | F53 | 語義執行時升級 | 舊適配器/索引/校準 → 新安裝路徑的新 ID，複製向量/預覽/資料集並保留擬合及原觀察。 | `project upgrade-semantic` | 全部 19 個實作與外部依賴須位元組相同；零新模型前向，原記錄不改；內容變更拒絕並要求重建。 |
 | F54 | 可復用參數運鏡 | 本地版本化 JSON / 既有作者曲線 → 一般關鍵影格、參數/摘要/快照、跨專案復用。六套實際預覽供選型。 | `motion pack list/inspect/create/capture/apply` | 65 點採樣、transform 屬性；預設拒絕衝突，明確取代整條屬性軌；跟蹤綁定拒絕，CPU 合成/自然品質未結案。 |
 | F55 | 線性浮點轉場與群組進出場 | 明確 Float32 專案 → 57 xfade圖案+2 dip、預乘alpha混合、真實句柄/原作者時鐘、關聯音軌、群組擦除/推移及實際預覽成片。 | `timeline transition; preview; render; queue` | CPU；12種真實句柄宣告，其他圖案用明確重疊/邊緣；normal雙源混合；風噪有平台差異，HDR/自然品質未閉。 |
-| F56 | 線性浮點文字與字幕 | 獨立／內嵌／SRT、聯合逐詞／打字機 → 原生位元組覆蓋率、可重用字形、分塊線性合成、原作者時鐘、4K標題及實際交付。 | `timeline compose; preview; render; queue` | 明確本機字型；CPU；覆蓋率8bit／顏色Float32；工作區准入非峰值RSS；富ASS／Bidi／GPU文字／自然品質未閉。 |
+| F56 | 線性浮點文字與字幕 | 獨立／內嵌／SRT、聯合逐詞／打字機 → 原生位元組覆蓋率、可重用字形、分塊線性合成、原作者時鐘、4K標題及實際交付。 | `timeline compose; preview; render; queue` | 明確本機字型；CPU／明確GPU；覆蓋率8bit／顏色Float32；工作區准入非峰值RSS；富ASS／Bidi／自然品質未閉。 |
+| F57 | 原生浮點GPU執行層 | 明確GPU策略 → 線性Float32仿射、一般疊加、文字元件／段落與逐詞選擇；正式算繪／預覽／佇列／恢復。 | `projection_acceleration; render; preview; queue` | off/prefer/require；實際binary64／次正規探測；任務專屬程序與共用段；其餘算子CPU，非全部GPU化。 |
 
 ## 支持的服務模塊與依賴
 
@@ -556,7 +571,7 @@ flowchart LR
 | S13 | 內建社群素材服務 | 離線目錄 | 359 項有來源/許可的 BGM、短樂、音效、字型 | `materials list/inspect/verify/ingest` | 逐項權利，不是商業素材訂閱庫 |
 | S14 | 本地配音/翻譯 | 原生模型 worker | 4 個可選 CPU/CUDA 包，103 音色對映和 OPUS 文字/字幕 | `voice / translate / model-pack` | 累計至少 7 個不同音色有真實輸出；103 音色完整試聽及人工驗收未完成 |
 | S15 | 配樂準備與混音 | 原生 FFmpeg 音訊 | 顯式擷取/迴圈/淡化、獨立人聲/配樂、閃避 | `music prepare/mix` | 不作曲、不靜默裁人聲、不承諾接縫修復 |
-| S16 | GPU相容服務 | 已有原生OpenCL ICD / NVIDIA模型執行庫 | 投影off/prefer/require，模型auto/cpu/cuda；實際裝置、探測、預算及回退 | `render --projection-acceleration; gpu inspect; --device` | RTX3060實測；僅投影算子GPU化，外部驅動/庫授權另列 |
+| S16 | GPU相容服務 | 既有原生OpenCL ICD / NVIDIA模型庫 | 預設圖投影及獨立Float32仿射／一般疊加／字色／逐詞；off/prefer/require，模型auto/cpu/cuda；實際探測／預算／清理 | `render --projection-acceleration; gpu inspect; --device` | RTX3060實測；字形／效果／轉場等CPU，非全部算子GPU化，系統庫授權另列。 |
 | S17 | 原生 Windows 擷取 | FFmpeg gdigrab / DirectShow | 明確來源、裝置 ID、有限時長、完整解碼與素材登記 | `capture devices/record` | 真實視窗 CPU/GPU 已驗；攝影機/麥克風/同步未驗 |
 | S18 | 圖文語義與經驗校準 | 明確登記的原生 SigLIP2 worker | 既有 Torch/Transformers/權重；檔案綁定索引/實作/類型/實際裝置 | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | 分數非機率；冷啟動/大庫與校準工程遷移仍有限制 |
 | S19 | 獨立四軌分離 | 原生 Torch/TorchAudio HDemucs worker | 明確登記原生 Python、權重/證據/實作雜湊；auto/cpu/cuda，4 float WAV/軌道 | `audio adapter; audio separate-stems` | 基礎 ZIP 不含 Torch/權重；自然聽感與權重許可未閉 |
@@ -660,7 +675,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.21/final-r2/installed/`，CLI 0.1.23；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
+本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.22/final-r4/installed/`，CLI 0.1.24；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1021,6 +1036,14 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R168 | 2026-10-26 Native coverage/4K | 實際註冊Skill3840×2160／4fps／2秒／8影格、三字層、四元件、淡入和逐詞打字機；完整解碼／質檢／可編輯包／MP4／GIF；CPU算繪呼叫耗時692.895秒，非即時 | [Evidence](docs/validation/evidence/float-text-coverage-20261026-r1/4k-r2/verification.json) |
 | R169 | 2026-10-26 Native coverage/4K | 同專案320×180、6次交錯成片，4邏輯CPU親和，中位數138.511→120.379秒（1.151×）；全部72影格時鐘／PCM相同，解碼10bit碼差≤1；非獨占主機 | [Evidence](docs/validation/evidence/float-text-coverage-20261026-r1/benchmark-r1/verification.json) |
 | R170 | 2026-10-26 Native coverage/4K | 三語56功能／20服務／17模組／75能力，C31／C32、r24獨立kit；保留162歷史列及38原關閉條件 | [Evidence](docs/validation/evidence/float-text-coverage-20261026-r1/final-delivery-r2/verification.json) |
+| R171 | 2026-10-26 Float32 GPU | 離線ZIP安裝，217產品檔案逐位元組相同，CLI0.1.24/local.22-final-r4；統一Skill／17模組／71檔案 | [Evidence](docs/validation/evidence/float-gpu-20261026-r1/installation-final-r4/verification.json) |
+| R172 | 2026-10-26 Float32 GPU | 23項實際GPU／控制／編碼／取消恢復檢查，零略過；65,536級灰階、次正規alpha位元、120次控制替換、異常／預算及既有目錄保護 | [Evidence](docs/validation/evidence/float-gpu-20261026-r1/gpu-installed-final-r1/verification.json) |
+| R173 | 2026-10-26 Float32 GPU | 分別26文字／98浮點／64音訊句柄巢狀／44預覽算繪／191CLI佇列Schema／72預設文字；各組零略過，未合併歷史計數 | [Evidence](docs/validation/evidence/float-gpu-20261026-r1/render-installed-final-r1/verification.json) |
+| R174 | 2026-10-26 Float32 GPU | 實際安裝CLI6秒／72影格：GPU字色／投影／逐詞、轉場／倒放／SRT與關聯音軌；288000雙聲道取樣誤差3.72529029846e-09；取消恢復／佇列全影格及PCM相同 | [Evidence](docs/validation/evidence/float-gpu-20261026-r1/case-r1/verification.json) |
+| R175 | 2026-10-26 Float32 GPU | 實際統一Skill3840×2160／4fps／2秒／8影格、三字層／四元件／逐詞打字機；GPU實際算子及清理、完整解碼／質檢／MP4／GIF／可編輯包 | [Evidence](docs/validation/evidence/float-gpu-20261026-r1/4k-r1/verification.json) |
+| R176 | 2026-10-26 Float32 GPU | 同4K專案完整成片單對 CPU 296.712→GPU 139.938秒（2.120×）；4邏輯CPU親和、空專案快取、全影格時鐘／PCM相同，最大8bit碼差≤1，非獨占／非中位數 | [Evidence](docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/verification.json) |
+| R177 | 2026-10-26 Float32 GPU | 可編輯包實際匯入，三影格RGBA64解碼相同；字型授權保留；r25獨立kit註冊／計畫／驗證 · [r25 kit](docs/validation/evidence/float-gpu-20261026-r1/kit-r1/verification.json) | [Evidence](docs/validation/evidence/float-gpu-20261026-r1/package-r1/verification.json) |
+| R178 | 2026-10-26 Float32 GPU | 三語57功能／20服務／17模組／75能力；170歷史核驗列及38原關閉條件保持；最終安裝／Skill／文件位元組核驗 | [Evidence](docs/validation/evidence/float-gpu-20261026-r1/final-delivery-r3/verification.json) |
 
 ## 當前邊界與開發方向
 

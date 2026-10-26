@@ -99,3 +99,5 @@ Only the recorded RTX3060/native Windows configuration is device-tested here. In
 ![Actual installed OpenCL composition / silent](../assets/opencl-projection-20261026-r1/projection.gif)
 
 实际预览静音。自动完整解码、像素/PCM对照、抽帧目检、连续播放与人类听审分别记录；保留失败和原 G01–G38 关闭条件。
+
+当前CLI0.1.24另有[独立原生Float32 GPU执行层](FLOAT_GPU.md)：明确GPU策略、字色/普通叠加/仿射/逐词选择，保留CPU字形和其他算子；上文历史版本边界不追改。

@@ -9,9 +9,23 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- float-text-coverage-current -->
+<!-- float-gpu-current -->
 
-**CLI0.1.23 / alpha.4-local.21 / r24 kit · 1 Skill / 17 modules.**
+**CLI0.1.24 / alpha.4-local.22 / r25 kit · 1 Skill / 17 modules.**
+
+Native Windows Float32 GPU execution now drives render, preview, queue and resume: affine sampling, normal source-over, text colors and word selection. The installed CLI delivers a 6s/72-frame edit; the registered Skill renders 4K/8-frame animation and reimports the edit for preview. One paired render of the same 4K project: CPU 296.712s → GPU 139.938s (2.120×); all frame clocks/full decoded PCM match, decoded code error≤1.
+
+[Workflow](docs/product/FLOAT_GPU.md) · [C33/C34](docs/product/CASES.md#c33-float-gpu) · [Local install](docs/releases/CLI_0.1.24_LOCAL.md) · [Evidence](docs/validation/浮点GPU执行层实测_2026-10-26.md)
+
+![Actual installed GPU 4K animation / silent GIF](docs/assets/float-gpu-20261026-4k-r1/4k-native-text.gif)
+
+Actual maximum decoded 8-bit code error: 0 (limit: 1). RTX3060, one nonexclusive-host pair, not a median or general speed guarantee. Glyph rasterization, transitions/effects/crop/other blends remain CPU;8bit coverage/Float32 colors. Admission is not peak RSS or reserved free VRAM. Full target conditions remain open.
+
+<!-- /float-gpu-current -->
+
+<!-- float-text-coverage-history -->
+
+**Historical / 历史 / 歷史：CLI0.1.23 / alpha.4-local.21 / r24 kit · 1 Skill / 17 modules.**
 
 Native byte glyph coverage now feeds tiled linear component composition. Equal prefixes and paragraph geometry reuse masks without quantizing author time. The registered Skill renders a 4K/8-frame title animation and a 6s/72-frame transition/linked-audio case. CPU text,8bit coverage,Float32 colors. The actual 4K CPU render call took 692.895s; throughput still needs improvement.
 
@@ -21,7 +35,7 @@ Native byte glyph coverage now feeds tiled linear component composition. Equal p
 
 CPU text;8bit glyph coverage;admission estimate is not peak RSS or realtime/long-form acceptance. Full target conditions remain open.
 
-<!-- /float-text-coverage-current -->
+<!-- /float-text-coverage-history -->
 
 <!-- float-text-history -->
 
@@ -166,7 +180,7 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r24 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r24.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r25 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r25.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
@@ -533,7 +547,8 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F53 | Semantic runtime relocation | Old adapter/index/profiles → new installation-bound identities, copying vectors/previews/datasets and retaining fitted observations. | `project upgrade-semantic` | All 19 implementation files and external dependencies must be byte-identical; zero new model forwards; original records retained; changed bytes require rebuilding. |
 | F54 | Portable parameterized motion | Versioned local JSON / captured authored curves → editable keys, resolved parameters/digests/snapshot and cross-project reuse, with six actual previews. | `motion pack list/inspect/create/capture/apply` | 65-point paths, transform properties; conflicts reject unless whole-property replacement is explicit; tracking bindings reject; CPU performance/natural quality remain open. |
 | F55 | Linear Float32 transitions and group edges | Explicit Float32 projects → 57 xfade patterns+2 dips,premultiplied alpha,real handles/original clocks,linked audio,group wipe/slide,actual preview and encoding. | `timeline transition; preview; render; queue` | CPU;12 real-handle declaration types,other patterns use overlap/edges;normal paired blending;platform-dependent wind,HDR/natural quality open. |
-| F56 | Linear Float32 text and captions | Independent/inline/SRT,joint word/typewriter → native byte coverage,reusable glyphs,tiled linear composition,original clocks,4K titles and actual delivery. | `timeline compose; preview; render; queue` | Explicit local font;CPU;8bit coverage/Float32 colors;admission is not peak RSS;rich ASS/Bidi/GPU text/natural quality open. |
+| F56 | Linear Float32 text and captions | Independent/inline/SRT,joint word/typewriter → native byte coverage,reusable glyphs,tiled linear composition,original clocks,4K titles and actual delivery. | `timeline compose; preview; render; queue` | Explicit local font;CPU/explicit GPU;8bit coverage/Float32 colors;admission is not peak RSS;rich ASS/Bidi/natural quality open. |
+| F57 | Native Float32 GPU execution | Explicit policy → linear Float32 affine, normal over, text components/paragraphs and word selection; real render/preview/queue/resume. | `projection_acceleration; render; preview; queue` | off/prefer/require;actual binary64/subnormal probes;owned process/shared buffers;other operators CPU,not all-GPU editing. |
 
 ## Supported service modules and dependencies
 
@@ -556,7 +571,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | S13 | Bundled community resources | Offline catalog | 359 source/license-pinned music/jingle/SFX/font files | `materials list/inspect/verify/ingest` | Per-resource rights; no commercial stock subscription |
 | S14 | Local speech/translation | Native model workers | Four optional pinned CPU/CUDA packs; 103 voice mappings and OPUS text/subtitles | `voice / translate / model-pack` | At least seven distinct voices have real outputs; complete 103-voice auditions and human acceptance remain open |
 | S15 | BGM preparation and mixing | Native FFmpeg audio | Explicit trim/loop/fades, independent voice/music stems and ducking | `music prepare/mix` | No composition, voice truncation or seam-repair promise |
-| S16 | GPU compatibility | Existing native OpenCL ICD / NVIDIA model runtimes | Projection off/prefer/require,models auto/cpu/cuda;actual device,probes,budget and fallback | `render --projection-acceleration; gpu inspect; --device` | RTX3060 tested;projection operators only,external driver/library terms separate |
+| S16 | GPU compatibility | Existing native OpenCL ICD / NVIDIA model libraries | Graph projection and independent Float32 affine/normal over/text colors/word selection;off/prefer/require,model auto/cpu/cuda;actual probes/budgets/cleanup | `render --projection-acceleration; gpu inspect; --device` | RTX3060 tested;glyphs/effects/transitions remain CPU,not all-GPU;system-library licenses separate. |
 | S17 | Native Windows capture | FFmpeg gdigrab / DirectShow | Explicit source/device IDs, finite duration, full decode and asset registration | `capture devices/record` | Actual CPU/GPU window test; camera/microphone/AV sync pending |
 | S18 | Visual semantics and empirical calibration | Explicit native SigLIP2 worker | Existing Torch/Transformers/weights; profile binds index/implementation/kind/actual device | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | Scores are not probabilities; cold start, scale and calibrated-project migration remain limited |
 | S19 | Independent four-source separation | Native Torch/TorchAudio HDemucs worker | Explicit native Python, weights/evidence/implementation hashes; auto/cpu/cuda, four float WAV/tracks | `audio adapter; audio separate-stems` | Torch/weights excluded from base ZIP; natural listening and weight licensing remain open |
@@ -660,7 +675,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.21/final-r2/installed/`, CLI 0.1.23. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.22/final-r4/installed/`, CLI 0.1.24. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1023,6 +1038,14 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R168 | 2026-10-26 Native coverage/4K | Actual registered Skill3840x2160/4fps/2s/8frames,three text layers,four components,fade and joint word/typewriter;full decode/quality/editable package/MP4/GIF;CPU render call 692.895s,not realtime | [Evidence](docs/validation/evidence/float-text-coverage-20261026-r1/4k-r2/verification.json) |
 | R169 | 2026-10-26 Native coverage/4K | Six interleaved 320x180 full renders,4logical-CPU affinity:median138.511->120.379s (1.151x);all72 frame clocks/PCM equal,decoded10bit code error<=1;nonexclusive host | [Evidence](docs/validation/evidence/float-text-coverage-20261026-r1/benchmark-r1/verification.json) |
 | R170 | 2026-10-26 Native coverage/4K | Three languages:56functions/20services/17modules/75declarations,C31/C32,r24 isolated kit;162historical rows and38original closure conditions retained | [Evidence](docs/validation/evidence/float-text-coverage-20261026-r1/final-delivery-r2/verification.json) |
+| R171 | 2026-10-26 Float32 GPU | Offline ZIP installed;217 source files byte-match CLI0.1.24/local.22-final-r4;one Skill/17modules/71files | [Evidence](docs/validation/evidence/float-gpu-20261026-r1/installation-final-r4/verification.json) |
+| R172 | 2026-10-26 Float32 GPU | 23 actual GPU/control/encode/cancel-resume tests,zero skips;65,536levels,subnormal alpha bits,120 control replacements,failure/budget/existing-directory protection | [Evidence](docs/validation/evidence/float-gpu-20261026-r1/gpu-installed-final-r1/verification.json) |
+| R173 | 2026-10-26 Float32 GPU | Separate26 text/98 float/64 audio-handles-nesting/44 preview-render/191 CLI-queue-schema/72 default-text;zero skips,not combined with history | [Evidence](docs/validation/evidence/float-gpu-20261026-r1/render-installed-final-r1/verification.json) |
+| R174 | 2026-10-26 Float32 GPU | Installed CLI,6s/72frames:GPU text/affine/word selection,transitions/reverse/SRT/linked audio;288000stereo sample oracle error=3.72529029846e-09;resume/queue frames and PCM equal | [Evidence](docs/validation/evidence/float-gpu-20261026-r1/case-r1/verification.json) |
+| R175 | 2026-10-26 Float32 GPU | Registered Skill3840x2160/4fps/2s/8frames,three text layers/four components/word-typewriter;actual GPU operations/cleanup,full decode/quality/MP4/GIF/editable package | [Evidence](docs/validation/evidence/float-gpu-20261026-r1/4k-r1/verification.json) |
+| R176 | 2026-10-26 Float32 GPU | One complete paired4K render CPU 296.712->GPU 139.938s (2.120x);4logicalCPU affinity,fresh project caches,all clocks/fullPCM equal,max8bitcodeerror<=1;nonexclusive,not a median | [Evidence](docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/verification.json) |
+| R177 | 2026-10-26 Float32 GPU | Actual editable package import,three RGBA64 previews equal,font license retained;r25 isolated kit registration/planning/validation · [r25 kit](docs/validation/evidence/float-gpu-20261026-r1/kit-r1/verification.json) | [Evidence](docs/validation/evidence/float-gpu-20261026-r1/package-r1/verification.json) |
+| R178 | 2026-10-26 Float32 GPU | Three languages57functions/20services/17modules/75declarations;170historical rows and38original closure conditions retained;final installed/Skill/docs byte audit | [Evidence](docs/validation/evidence/float-gpu-20261026-r1/final-delivery-r3/verification.json) |
 
 ## Current limits and development direction
 

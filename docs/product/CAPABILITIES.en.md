@@ -2,15 +2,15 @@
 
 <!-- community-current -->
 
-**CLI 0.1.23 / alpha.4-local.21 / r24 kit · 1 Skill / 17 modules.**
+**CLI 0.1.24 / alpha.4-local.22 / r25 kit · 1 Skill / 17 modules.**
 
-4K text, reusable native byte coverage and tiled linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+Explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
 
-[4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](float-text-coverage-capabilities-cli-0.1.23.json). Full target conditions remain open.
+[Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](float-gpu-capabilities-cli-0.1.24.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.en.md) · [Machine response](float-text-coverage-capabilities-cli-0.1.23.json) · [Module data](module-catalog.json)
+[README](../../README.en.md) · [Machine response](float-gpu-capabilities-cli-0.1.24.json) · [Module data](module-catalog.json)
 
 | ID | Module | Behavior and input → output | Entry | Dependency/limit |
 |---|---|---|---|---|
@@ -69,7 +69,8 @@
 | F53 | Semantic runtime relocation | Old adapter/index/profiles → new installation-bound identities, copying vectors/previews/datasets and retaining fitted observations. | `project upgrade-semantic` | All 19 implementation files and external dependencies must be byte-identical; zero new model forwards; original records retained; changed bytes require rebuilding. |
 | F54 | Portable parameterized motion | Versioned local JSON / captured authored curves → editable keys, resolved parameters/digests/snapshot and cross-project reuse, with six actual previews. | `motion pack list/inspect/create/capture/apply` | 65-point paths, transform properties; conflicts reject unless whole-property replacement is explicit; tracking bindings reject; CPU performance/natural quality remain open. |
 | F55 | Linear Float32 transitions and group edges | Explicit Float32 projects → 57 xfade patterns+2 dips,premultiplied alpha,real handles/original clocks,linked audio,group wipe/slide,actual preview and encoding. | `timeline transition; preview; render; queue` | CPU;12 real-handle declaration types,other patterns use overlap/edges;normal paired blending;platform-dependent wind,HDR/natural quality open. |
-| F56 | Linear Float32 text and captions | Independent/inline/SRT,joint word/typewriter → native byte coverage,reusable glyphs,tiled linear composition,original clocks,4K titles and actual delivery. | `timeline compose; preview; render; queue` | Explicit local font;CPU;8bit coverage/Float32 colors;admission is not peak RSS;rich ASS/Bidi/GPU text/natural quality open. |
+| F56 | Linear Float32 text and captions | Independent/inline/SRT,joint word/typewriter → native byte coverage,reusable glyphs,tiled linear composition,original clocks,4K titles and actual delivery. | `timeline compose; preview; render; queue` | Explicit local font;CPU/explicit GPU;8bit coverage/Float32 colors;admission is not peak RSS;rich ASS/Bidi/natural quality open. |
+| F57 | Native Float32 GPU execution | Explicit policy → linear Float32 affine, normal over, text components/paragraphs and word selection; real render/preview/queue/resume. | `projection_acceleration; render; preview; queue` | off/prefer/require;actual binary64/subnormal probes;owned process/shared buffers;other operators CPU,not all-GPU editing. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -88,7 +89,7 @@
 | S13 | Bundled community resources | Offline catalog | 359 source/license-pinned music/jingle/SFX/font files | `materials list/inspect/verify/ingest` | Per-resource rights; no commercial stock subscription |
 | S14 | Local speech/translation | Native model workers | Four optional pinned CPU/CUDA packs; 103 voice mappings and OPUS text/subtitles | `voice / translate / model-pack` | At least seven distinct voices have real outputs; complete 103-voice auditions and human acceptance remain open |
 | S15 | BGM preparation and mixing | Native FFmpeg audio | Explicit trim/loop/fades, independent voice/music stems and ducking | `music prepare/mix` | No composition, voice truncation or seam-repair promise |
-| S16 | GPU compatibility | Existing native OpenCL ICD / NVIDIA model runtimes | Projection off/prefer/require,models auto/cpu/cuda;actual device,probes,budget and fallback | `render --projection-acceleration; gpu inspect; --device` | RTX3060 tested;projection operators only,external driver/library terms separate |
+| S16 | GPU compatibility | Existing native OpenCL ICD / NVIDIA model libraries | Graph projection and independent Float32 affine/normal over/text colors/word selection;off/prefer/require,model auto/cpu/cuda;actual probes/budgets/cleanup | `render --projection-acceleration; gpu inspect; --device` | RTX3060 tested;glyphs/effects/transitions remain CPU,not all-GPU;system-library licenses separate. |
 | S17 | Native Windows capture | FFmpeg gdigrab / DirectShow | Explicit source/device IDs, finite duration, full decode and asset registration | `capture devices/record` | Actual CPU/GPU window test; camera/microphone/AV sync pending |
 | S18 | Visual semantics and empirical calibration | Explicit native SigLIP2 worker | Existing Torch/Transformers/weights; profile binds index/implementation/kind/actual device | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | Scores are not probabilities; cold start, scale and calibrated-project migration remain limited |
 | S19 | Independent four-source separation | Native Torch/TorchAudio HDemucs worker | Explicit native Python, weights/evidence/implementation hashes; auto/cpu/cuda, four float WAV/tracks | `audio adapter; audio separate-stems` | Torch/weights excluded from base ZIP; natural listening and weight licensing remain open |
@@ -863,7 +864,8 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "linear_premultiplied_transitions",
     "real_source_handles_and_linked_audio",
     "authored_group_spatial_edges",
-    "linear_float32_titles_inline_text_and_plain_SRT"
+    "linear_float32_titles_inline_text_and_plain_SRT",
+    "explicit_probed_native_opencl_float_geometry_normal_over_and_text_colors"
   ],
   "limits": [
     "explicit_opt_in_not_default_migration",
@@ -1291,7 +1293,9 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "opencl_dynamic_crop_affine_native_sequence_bilinear_and_area",
     "ordered_binary64_prefix_transported_in_three_float32_texels",
     "actual_gpu_identity_fp64_image_extents_and_bitwise_texture_probes",
-    "projection_raster_admission_kernel_hashes_logs_queue_resume"
+    "projection_raster_admission_kernel_hashes_logs_queue_resume",
+    "render_owned_float32_opencl_worker_shared_buffers",
+    "binary64_linear_float_affine_normal_over_text_components_binary_word_selection"
   ],
   "projection": {
     "engine": "opencl-binary64-projection-v1",
@@ -1306,6 +1310,34 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "runtime_failure": "fails_without_cpu_or_encoder_retry",
     "quota_scope": "projection_raster_admission_not_total_ram_or_vram"
   },
+  "float32_projection": {
+    "engine": "render-owned-float32-opencl-v1",
+    "default": "off",
+    "selection": "pixel_pipeline=float32-native-v1;projection_acceleration=off|prefer|require",
+    "device": "explicit_platform.device_index",
+    "native_runtime": "existing_windows_OpenCL_ICD",
+    "surface": "straight_RGBA_Float32;binary64_kernel_math;no_fast_math",
+    "operators": [
+      "premultiplied_bilinear_affine",
+      "normal_source_over",
+      "ordered_text_color_components",
+      "binary_word_selection"
+    ],
+    "probe": "65536_native_levels_and_independent_CPU_oracles_before_execution",
+    "lifetime": "one_owned_finite_worker_per_render_or_preview;cancel_timeout_cleanup",
+    "budgets": "separate_device_and_host_shared_buffer_limits;not_peak_RSS_or_reserved_free_VRAM",
+    "CPU_scope": [
+      "glyph_rasterization",
+      "effects",
+      "masks",
+      "crop",
+      "transitions",
+      "non_normal_blends",
+      "color_conversion",
+      "audio",
+      "encoding"
+    ]
+  },
   "limits": [
     "windows_backend_catalog_only_no_downloads",
     "explicit_video_bitrate_required_not_crf_quality_equivalence",
@@ -1314,8 +1346,8 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "pixel_probe_budget_not_total_driver_vram_limit",
     "encode_decode_driver_default_device_identity_not_certified",
     "projection_requires_gpu_images_and_ieee_binary64_actual_preflight",
-    "projection_pixel_stateful_expressions_and_independent_linear_light_float_pipeline_not_ported",
-    "other_effects_and_compositing_remain_cpu_no_realtime_4k_or_capcut_parity_claim"
+    "projection_pixel_stateful_expressions_not_ported",
+    "float_opencl_scope_explicit_other_operators_CPU_no_realtime_4k_or_capcut_parity_claim"
   ]
 }
 ```
@@ -3390,8 +3422,17 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
       "content_addressed_prefix_and_geometry_mask_LRU",
       "4K_text_with_explicit_workspace_admission"
     ],
+    "GPU": {
+      "selection": "explicit_projection_acceleration_off_prefer_require",
+      "engine": "render-owned-float32-opencl-v1",
+      "scope": [
+        "ordered_color_components",
+        "paragraph_source_over",
+        "binary_word_selection"
+      ],
+      "glyph_rasterization": "CPU"
+    },
     "limits": [
-      "CPU_only",
       "glyph_coverage_8bit_authored_colors_and_composition_Float32",
       "SRT_plain_text_only_rich_ASS_SSA_VTT_not_ported",
       "explicit_font_and_native_metrics_required",
@@ -3399,7 +3440,7 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
       "bidi_and_internal_word_clusters_pending",
       "typewriter_512_graphemes_highlight_128_ranges",
       "four_Float32_surfaces_plus_native_masks_tiles_two_cache_limits_admission_not_peak_RSS",
-      "sequential_native_CPU_coverage_rasters_GPU_text_pending",
+      "sequential_native_CPU_coverage_rasters_explicit_GPU_color_composition",
       "not_realtime_HDR_or_full_CapCut_acceptance"
     ]
   },

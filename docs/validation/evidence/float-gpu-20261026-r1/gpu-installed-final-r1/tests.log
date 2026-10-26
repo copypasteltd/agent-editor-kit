@@ -1,0 +1,28 @@
+test_actual_missing_device_prefer_records_preflight_fallback (native_float_gpu.FloatGPUPolicyTests.test_actual_missing_device_prefer_records_preflight_fallback) ... ok
+test_dry_run_creates_no_context_process_or_cache (native_float_gpu.FloatGPUPolicyTests.test_dry_run_creates_no_context_process_or_cache) ... ok
+test_existing_operation_directory_is_never_cleaned_or_overwritten (native_float_gpu.FloatGPUPolicyTests.test_existing_operation_directory_is_never_cleaned_or_overwritten) ... ok
+test_native_output_rejects_wrong_dtype_and_readonly (native_float_gpu.FloatGPUPolicyTests.test_native_output_rejects_wrong_dtype_and_readonly) ... ok
+test_off_creates_no_process (native_float_gpu.FloatGPUPolicyTests.test_off_creates_no_process) ... ok
+test_planned_4K_budget_prefer_falls_back_before_process (native_float_gpu.FloatGPUPolicyTests.test_planned_4K_budget_prefer_falls_back_before_process) ... ok
+test_planned_4K_budget_require_fails_before_process (native_float_gpu.FloatGPUPolicyTests.test_planned_4K_budget_require_fails_before_process) ... ok
+test_all_65536_levels_survive_identity_and_source_over (native_float_gpu.NativeFloatGPUTests.test_all_65536_levels_survive_identity_and_source_over) ... ok
+test_binary_selection_preserves_whole_paragraph (native_float_gpu.NativeFloatGPUTests.test_binary_selection_preserves_whole_paragraph) ... ok
+test_cancel_poll_during_request_stops_only_owned_worker (native_float_gpu.NativeFloatGPUTests.test_cancel_poll_during_request_stops_only_owned_worker) ... ok
+test_four_ordered_components_with_nontransparent_base (native_float_gpu.NativeFloatGPUTests.test_four_ordered_components_with_nontransparent_base) ... ok
+test_independent_probe_and_subnormal_bits (native_float_gpu.NativeFloatGPUTests.test_independent_probe_and_subnormal_bits) ... ok
+test_invalid_late_tile_fails_without_mutating_input (native_float_gpu.NativeFloatGPUTests.test_invalid_late_tile_fails_without_mutating_input) ... ok
+test_many_owned_control_replacements_and_shape_growth (native_float_gpu.NativeFloatGPUTests.test_many_owned_control_replacements_and_shape_growth) ... ok
+test_real_text_styles_and_word_clock_match_cpu (native_float_gpu.NativeFloatGPUTests.test_real_text_styles_and_word_clock_match_cpu) ... ok
+test_runtime_bad_mask_is_failure_and_worker_closed (native_float_gpu.NativeFloatGPUTests.test_runtime_bad_mask_is_failure_and_worker_closed) ... ok
+test_source_over_opacity_against_cpu_and_input_immutable (native_float_gpu.NativeFloatGPUTests.test_source_over_opacity_against_cpu_and_input_immutable) ... ok
+test_subpixel_affine_extended_RGB_and_hidden_alpha (native_float_gpu.NativeFloatGPUTests.test_subpixel_affine_extended_RGB_and_hidden_alpha) ... ok
+test_timeout_closes_worker_without_cpu_retry (native_float_gpu.NativeFloatGPUTests.test_timeout_closes_worker_without_cpu_retry) ... ok
+test_worker_exit_is_failure_without_cpu_retry (native_float_gpu.NativeFloatGPUTests.test_worker_exit_is_failure_without_cpu_retry) ... ok
+test_public_dry_run_records_GPU_plan_without_worker (native_float_gpu.NativeFloatRenderGPUTests.test_public_dry_run_records_GPU_plan_without_worker) ... ok
+test_real_encoded_frame_and_PCM_match_CPU (native_float_gpu.NativeFloatRenderGPUTests.test_real_encoded_frame_and_PCM_match_CPU) ... ok
+test_real_encoder_cancel_resume_with_GPU (native_float_gpu.NativeFloatRenderGPUTests.test_real_encoder_cancel_resume_with_GPU) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 86.690s
+
+OK

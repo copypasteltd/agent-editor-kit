@@ -1,0 +1,30 @@
+{
+  "inspection_by": "agent",
+  "inspection": "static PNG and actual GIF still contact sheet only",
+  "files": [
+    {
+      "path": "docs/assets/float-gpu-20261026-4k-r1/original.png",
+      "sha256": "1eb136891345754d8dcc759e79ac1821303af67dfc8385b8d8eb7d6dd3be2708"
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-4k-r1/4k-native-text.gif",
+      "sha256": "1413ebb29f2f5c332f9dd7dece4f9e9cb60250efa8568896f51a79d5f7942485"
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/4k-r1/gif-stills.png",
+      "sha256": "5ccb04bd7e5d3d7d3768958638705c810b17fe3a8cbce0b6ab422a6ca4068c13"
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-4k-r1/preview.png",
+      "sha256": "bf8983a6c967dfb2b4e05cbe59510455d38c3cf973a1a279aee04121d820952c"
+    }
+  ],
+  "notes": [
+    "All eight actual GIF stills show the centered brand title fading in, the main line revealing whole text prefixes, and a visible Chinese footer on the authored dark background."
+  ],
+  "continuous_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false,
+  "full_resolution_pixel_quality_accepted": false,
+  "scope": "Static observation is separate from automated full decode, clock and PCM checks."
+}

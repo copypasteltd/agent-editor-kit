@@ -53,10 +53,11 @@ class _TextPipe(NativePipe):
 
 class FloatTextHost:
     def __init__(self, root, assets, working_signal, tps, fps, *, cancel=None,
-                 max_working_bytes=768 * 1024**2, cache_bytes=DEFAULT_CACHE_BYTES):
+                 max_working_bytes=768 * 1024**2, cache_bytes=DEFAULT_CACHE_BYTES, gpu=None):
         self.root = Path(root).resolve() if root is not None else None
         self.assets, self.working, self.tps, self.fps = assets, working_signal, tps, fps
         self.poll = cancel or (lambda: None)
+        self.gpu = gpu
         if type(cache_bytes) is not int or not 0 <= cache_bytes <= 256 * 1024**2:
             raise error('BUDGET', '文字表面缓存必须在0..256MiB范围')
         if type(max_working_bytes) is not int or not 1 <= max_working_bytes <= 768*1024**2:
@@ -78,7 +79,8 @@ class FloatTextHost:
             'admission': {'max_working_bytes': max_working_bytes, 'float_surfaces': 4,
                           'native_and_scratch_bytes_per_pixel': 8, 'two_cache_limits_reserved': True,
                           'tile_pixels': TILE_PIXELS, 'estimate_is_peak_RSS': False},
-            'GPU': False, 'HDR_accepted': False, 'whole_movie_cache': False}
+            'GPU': bool(gpu is not None and gpu.active), 'GPU_scope': 'color-components/paragraph-over/word-selection;glyph-rasterization-on-CPU',
+            'HDR_accepted': False, 'whole_movie_cache': False}
 
     def _pin(self, path, role, expected=None):
         self.poll()

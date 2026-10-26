@@ -131,13 +131,15 @@ def configuration(value, settings, encoder):
 
 
 class FloatRenderContext:
-    def __init__(self, root, project, sequence, encoder, *, dry_run=False, cancel_file=None):
+    def __init__(self, root, project, sequence, encoder, *, dry_run=False, cancel_file=None, operation_id=None):
         self.root = Path(root).resolve()
         self.project = project
         self.sequence = sequence
         self.encoder = encoder
         self.marker = cancel_file
         self.dry_run = dry_run
+        self.operation_id = operation_id
+        self.gpu = None
         self.config = configuration(project['settings']['pixel_pipeline'], project['settings'], encoder)
         self.stack = ExitStack()
         self.sources = {}
@@ -199,13 +201,16 @@ class FloatRenderContext:
         paths += [Path(__file__).with_name(name + '.py') for name in
                   ('float_standard_render', 'float_stream', 'float_audio_graph', 'render', 'float_color_signal',
                    'float_timeline', 'float_transitions', 'float_transition_plan', 'source_transitions',
-                   'float_text','float_text_paint','float_text_coverage','text_paint','text_layout','text_highlight','text_typing','captions')]
+                   'float_text','float_text_paint','float_text_coverage','text_paint','text_layout','text_highlight','text_typing','captions',
+                   'float_gpu','float_gpu_native','float_gpu_worker')]
         self.artifacts = [artifact_entry(p, 'standard-float-render-runtime') for p in paths]
         context = IndexContext(self.root, persist=not self.dry_run, cancel_file=self.marker)
         per_source = min(256 * 1024**2, self.config['max_source_cache_bytes'] // max(1, len(needed)))
         self.metadata.update(source_count=len(needed), per_source_cache_limit_bytes=per_source,
                              total_source_cache_limit_bytes=self.config['max_source_cache_bytes'],
                              cache_limit_is_process_RSS_limit=False, artifacts=self.artifacts)
+        from .sequence_canvas import sequence_canvas
+        planned_pixels = max(c['width']*c['height'] for c in [sequence_canvas(self.project, s) for s in sequences.values()])
         for asset_id in sorted(needed):
             self.poll()
             asset = assets.get(asset_id)
@@ -217,6 +222,7 @@ class FloatRenderContext:
                 raise error('SOURCE_CHANGED', '原始资产实际SHA与登记值不一致', asset_id=asset_id)
             inspected = probe_media(path)
             video = next((s for s in inspected.get('streams', []) if s.get('codec_type') == 'video'), {})
+            planned_pixels = max(planned_pixels, int(video.get('width', 0))*int(video.get('height', 0)))
             aspect = str(video.get('sample_aspect_ratio', ''))
             if aspect not in {'', 'N/A', '0:1'}:
                 try: square = Fraction(aspect.replace(':', '/')) == 1
@@ -242,13 +248,23 @@ class FloatRenderContext:
                 timeout=self.config['native_timeout_seconds']))
             self.sources[asset_id] = source
             self.metadata['source_receipts'][asset_id] = source.metadata
+        from .float_gpu import FloatGPUSession
+        self.gpu = self.stack.enter_context(FloatGPUSession(self.root, self.project['settings'],
+            operation_id=self.operation_id, dry_run=self.dry_run, cancel=self.poll,
+            timeout=self.config['native_timeout_seconds'], max_pixels=planned_pixels))
+        if self.gpu.active:
+            from .float_preview import runtime_paths
+            paths = runtime_paths() | {Path(sys.executable).resolve(), Path('C:/Windows/System32/OpenCL.dll')}
+            self.metadata['empty_numerical_package_markers'] = [str(p) for p in sorted(paths) if p.stat().st_size == 0]
+            self.artifacts.extend(artifact_entry(p, 'float-gpu-numerical-runtime') for p in sorted(paths) if p.stat().st_size > 0)
         self.timeline = FloatTimeline(self.project, self.sequence['id'], self.sources,
             working_signal=self.config['working'], background_signal=self.config['background'], cancel=self.poll,
-            max_working_bytes=self.config['projection_working_bytes_limit'],resource_root=self.root)
+            max_working_bytes=self.config['projection_working_bytes_limit'],resource_root=self.root,gpu=self.gpu)
         self.artifacts.extend(self.timeline.text_host.artifacts.values())
         self.metadata.update(projection_working_bytes_limit=self.config['projection_working_bytes_limit'],
                              projection_budget_scope='each float projection/composite/delivery call; not total process RSS')
         self.metadata['timeline'] = self.timeline.metadata
+        self.metadata['projection_acceleration'] = self.gpu.evidence
 
     def graph(self):
         from .float_audio_graph import prepare

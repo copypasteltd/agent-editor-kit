@@ -1,0 +1,30 @@
+{
+  "inspection_by": "agent",
+  "inspection": "static PNG and actual GIF still contact sheet only",
+  "files": [
+    {
+      "path": "docs/assets/float-gpu-20261026-r1/original.png",
+      "sha256": "e92a2891f25e9082c6ab4c364b28fbd1280ca95549cfc71dd99b6d517cf779a6"
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-r1/native-text.gif",
+      "sha256": "592f0f3dbbf5dab061255b2b912b65c6c39c00c927be27d3a9911dfe626150f4"
+    },
+    {
+      "path": "docs/validation/evidence/float-gpu-20261026-r1/case-r1/gif-stills.png",
+      "sha256": "393949df40152ee69f9b8bd827ef2a0c98e55987ba935200317d5d75e4012e20"
+    },
+    {
+      "path": "docs/assets/float-gpu-20261026-r1/midpoint.png",
+      "sha256": "abd0f064f24d32f369e0d2b9412382e086b2e91ae90132886597a2b0f1e82cce"
+    }
+  ],
+  "notes": [
+    "Actual reduced-resolution stills show geometric source, transformed child canvas, colored title and Chinese captions; title prefixes and word emphasis vary across selected stills."
+  ],
+  "continuous_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false,
+  "full_resolution_pixel_quality_accepted": false,
+  "scope": "Static observation is separate from automated full decode, clock and PCM checks."
+}

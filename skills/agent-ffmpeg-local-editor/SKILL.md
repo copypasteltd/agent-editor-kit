@@ -7,7 +7,7 @@ description: "Edit and deliver local videos with agent editor kit: multitrack ed
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.21` / CLI `0.1.23`.
+The current local runtime is `v0.1.0-alpha.4-local.22` / CLI `0.1.24`.
 The published alpha.3 downloads retain CLI 0.1.2 and their original scope.
 
 ## Runtime and common workflow
@@ -77,12 +77,15 @@ media. Add other modules when the request needs them. For example:
   [float-transitions.md](references/float-transitions.md). Use actual overlaps
   or real registered source windows, retain original author clocks and paired
   audio, preview the selected cut, then inspect the encoded result. The explicit
-  linear Float32 path runs on CPU and has its own signal/budget requirements.
+  linear Float32 path has its own signal/budget requirements. Its optional
+  GPU geometry/normal composition is described in `projection-gpu.md`;
+  transitions and source-handle clocks keep their existing CPU implementation.
 - Float32 titles, typewriter, word highlights or SRT: read
   [float-text.md](references/float-text.md). Register a local font, retain
   original author clocks and preview actual cue/word boundaries. Glyph coverage
-  is8bit; authored color/component composition uses tiled linear arithmetic on
-  CPU. The default workspace admits 4K text; read the resource estimate and
+  is 8-bit; authored color/component composition uses linear arithmetic with an
+  explicit CPU or probed OpenCL backend. Read `projection-gpu.md` for GPU
+  policy and actual operation/cleanup receipts. The default workspace admits 4K text; read the resource estimate and
   actual cache/clock diagnostics before delivery.
 - Local AI task: local-models plus the relevant media module; require existing
   registered dependencies and check actual inference artifacts.

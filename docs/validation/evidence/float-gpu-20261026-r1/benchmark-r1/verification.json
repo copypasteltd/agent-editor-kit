@@ -1,0 +1,393 @@
+{
+  "status": "passed",
+  "calls": [
+    {
+      "name": "CPU-version",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.21\\final-r2\\installed\\run.py",
+        "version"
+      ],
+      "seconds": 7.507764099999804,
+      "exit_code": 0,
+      "stdout_sha256": "5c58433360ed1263ff8c063761c6666fbb79037423110bde3037fa1fb31eda6d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "CPU-render",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.21\\final-r2\\installed\\run.py",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-benchmark-r1\\CPU",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-benchmark-r1\\CPU\\renders\\result.mp4"
+      ],
+      "seconds": 296.7120657000005,
+      "exit_code": 0,
+      "stdout_sha256": "d14ccf052b4897439050d5d3fd2f1fb3e18bba65aac194e789f58f45f09b72ff",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "GPU-version",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.22\\final-r4\\installed\\run.py",
+        "version"
+      ],
+      "seconds": 1.9902638000003208,
+      "exit_code": 0,
+      "stdout_sha256": "ca07801747939cbc8df91637a1c11f0e9659a1464dbbef0758fef18492aea90d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "GPU-render",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.22\\final-r4\\installed\\run.py",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-benchmark-r1\\GPU",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-benchmark-r1\\GPU\\renders\\result.mp4"
+      ],
+      "seconds": 139.9384599999994,
+      "exit_code": 0,
+      "stdout_sha256": "f6633287fc7e8d603e100dc3a1447f0d053f7e304ea225bddb2559672bb37c24",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "CPU-decode-video",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-benchmark-r1\\CPU\\renders\\result.mp4",
+        "-map",
+        "0:v:0",
+        "-pix_fmt",
+        "yuv420p",
+        "-f",
+        "rawvideo",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-benchmark-r1\\CPU\\decoded.yuv"
+      ],
+      "seconds": 0.37489740000000893,
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "CPU-decode-audio",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-benchmark-r1\\CPU\\renders\\result.mp4",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-benchmark-r1\\CPU\\decoded.f32"
+      ],
+      "seconds": 0.1049777999996877,
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "CPU-clocks",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-benchmark-r1\\CPU\\renders\\result.mp4",
+        "-map",
+        "0:v:0",
+        "-f",
+        "framemd5",
+        "-"
+      ],
+      "seconds": 0.2928160999999818,
+      "exit_code": 0,
+      "stdout_sha256": "558c35fe51f61293984febde338ac2a3391594a4bfbcf1f5e336e8eb3688ca86",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "GPU-decode-video",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-benchmark-r1\\GPU\\renders\\result.mp4",
+        "-map",
+        "0:v:0",
+        "-pix_fmt",
+        "yuv420p",
+        "-f",
+        "rawvideo",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-benchmark-r1\\GPU\\decoded.yuv"
+      ],
+      "seconds": 0.36756229999991774,
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "GPU-decode-audio",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-benchmark-r1\\GPU\\renders\\result.mp4",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-benchmark-r1\\GPU\\decoded.f32"
+      ],
+      "seconds": 0.06696579999970709,
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "GPU-clocks",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-benchmark-r1\\GPU\\renders\\result.mp4",
+        "-map",
+        "0:v:0",
+        "-f",
+        "framemd5",
+        "-"
+      ],
+      "seconds": 0.23746229999960633,
+      "exit_code": 0,
+      "stdout_sha256": "558c35fe51f61293984febde338ac2a3391594a4bfbcf1f5e336e8eb3688ca86",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "rounds": [
+    {
+      "label": "CPU",
+      "project": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-benchmark-r1\\CPU",
+      "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-benchmark-r1\\CPU\\renders\\result.mp4",
+      "seconds": 296.7120657000005,
+      "SHA256": "b32295a730b46d990dff8e0f46282040125d11bf856bf1eb60edea7805a2a130",
+      "frames": 8,
+      "authoring_unchanged": true
+    },
+    {
+      "label": "GPU",
+      "project": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-benchmark-r1\\GPU",
+      "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-gpu-20261026-benchmark-r1\\GPU\\renders\\result.mp4",
+      "seconds": 139.9384599999994,
+      "SHA256": "b32295a730b46d990dff8e0f46282040125d11bf856bf1eb60edea7805a2a130",
+      "frames": 8,
+      "authoring_unchanged": true
+    }
+  ],
+  "source_fallback": false,
+  "virtualization": false,
+  "exclusive_host": false,
+  "new_model_forwards": 0,
+  "comparison": "one pair, CPU CLI0.1.23 then GPU CLI0.1.24; not a median or general speed guarantee",
+  "cache_policy": "fresh owned project and empty project cache per render; OS page cache uncontrolled",
+  "other_owned_test_or_build_jobs_during_timing": false,
+  "peak_RSS_measured": false,
+  "logical_CPU_affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "authoring_without_device_policy_SHA256": "3d750e26dabfe506c2419c4d2d3b3e81da55b36193b77fc24b517661821d7ab7",
+  "actual_GPU_receipt": {
+    "engine": "render-owned-float32-opencl-v1",
+    "request": {
+      "mode": "require",
+      "device": "0.0",
+      "max_working_bytes": 1073741824,
+      "probe_timeout_seconds": 30
+    },
+    "status": "verified",
+    "dry_run": null,
+    "operations": {
+      "paint": 48,
+      "over": 56,
+      "affine": 24,
+      "select": 8
+    },
+    "CPU_scope": [
+      "glyph-rasterization",
+      "color-conversion",
+      "effects",
+      "masks",
+      "crop",
+      "transitions",
+      "non-normal-blends",
+      "audio",
+      "delivery-encoding"
+    ],
+    "GPU_scope": [
+      "premultiplied-affine",
+      "normal-source-over",
+      "text-color-components",
+      "binary-word-selection"
+    ],
+    "host_shared_bytes_limit": 1073741824,
+    "retained_host_shared_bytes": 0,
+    "device_bytes_limit": 1073741824,
+    "limits_are_peak_RSS": false,
+    "free_VRAM_reserved": false,
+    "integer_media_conversion": false,
+    "worker_closed": true,
+    "runtime_failure_CPU_fallback": false,
+    "artifacts": [
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.22\\final-r4\\installed\\site\\ai_ad_editor\\float_gpu.py",
+        "role": "float-gpu-execution",
+        "bytes": 14836,
+        "sha256": "sha256:0de29bed72e47dc21d89115091d0fd94faaa33062ec27402096bfab2662046fd"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.22\\final-r4\\installed\\site\\ai_ad_editor\\float_gpu_worker.py",
+        "role": "float-gpu-execution",
+        "bytes": 9063,
+        "sha256": "sha256:083f4d6b73b59a1090ad4fa5f81f935aa5eb947cf58c767bba6cbca5e4482b83"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.22\\final-r4\\installed\\site\\ai_ad_editor\\float_gpu_native.py",
+        "role": "float-gpu-execution",
+        "bytes": 16855,
+        "sha256": "sha256:8cd50512bc0fb66fa0aab988b691e2144163374a9f7aa2671f49c3a338b31f0b"
+      }
+    ],
+    "planned_maximum_pixels": 8294400,
+    "planned_device_bytes": 398131200,
+    "planned_host_shared_bytes": 273715968,
+    "owned_worker_pid": 10416,
+    "native": {
+      "protocol": "native-opencl-binary64-float32-primitives-v1",
+      "device": {
+        "selection": "0.0",
+        "name": "NVIDIA GeForce RTX 3060",
+        "vendor": "NVIDIA Corporation",
+        "driver": "595.95",
+        "version": "OpenCL 3.0 CUDA",
+        "type": 4,
+        "double_fp_config": 63,
+        "global_memory_bytes": 12884377600,
+        "max_allocation_bytes": 3221094400
+      },
+      "kernel_sha256": "e2cd0de55e91caa4aac9885757b1f520044fd4660910e6974b094fab3d72077b",
+      "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+      "arithmetic": "binary64;explicit Float32 round-to-nearest-even boundaries",
+      "device_quota_bytes": 1073741824,
+      "retained_device_bytes": 398131200,
+      "operations": {
+        "over": 58,
+        "affine": 26,
+        "paint": 49,
+        "select_words": 9
+      },
+      "integer_media_conversion": false
+    },
+    "probe": {
+      "pixels_per_case": 65536,
+      "max_errors": {
+        "over": 0.0,
+        "affine": 0.0,
+        "paint": 0.0,
+        "select": 0.0
+      },
+      "absolute_limit": 3e-07,
+      "all_16bit_levels_present": true,
+      "actual_gpu_operations": 6,
+      "subnormal_over_bit_exact": true,
+      "subnormal_affine_bit_exact": true,
+      "subnormal_alpha_input_bits": [
+        0,
+        1,
+        2,
+        8388607,
+        8388608,
+        8388609,
+        1065353215,
+        1065353216
+      ]
+    },
+    "maximum_host_shared_bytes": 273715200,
+    "operation_elapsed_seconds": 57.14621960000204,
+    "render_exit_code": 0,
+    "worker_returncode": 0,
+    "shared_handles_closed": true
+  },
+  "versions": {
+    "CPU": "0.1.23",
+    "GPU": "0.1.24"
+  },
+  "CPU_seconds": 296.7120657000005,
+  "GPU_seconds": 139.9384599999994,
+  "observed_speedup": 2.120303922881542,
+  "maximum_decoded_8bit_code_error": 0,
+  "different_codes": 0,
+  "all_8_frame_clocks_equal": true,
+  "full_decoded_PCM_equal": true,
+  "actual_renders": 2,
+  "width": 3840,
+  "height": 2160,
+  "frames_per_render": 8,
+  "fps": 4,
+  "duration_seconds": 2,
+  "natural_quality_accepted": false,
+  "continuous_playback": false,
+  "human_listening": false
+}

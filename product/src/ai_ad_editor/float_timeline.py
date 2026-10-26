@@ -100,13 +100,14 @@ class TimedSurfaceSource:
 
 class FloatTimeline:
     def __init__(self,project,sequence_id,sources,*,working_signal,background_signal=ColorSignal('bt709','srgb'),cancel=None,
-                 max_working_bytes=768*1024*1024,resource_root=None):
+                 max_working_bytes=768*1024*1024,resource_root=None,gpu=None):
         if not isinstance(working_signal,ColorSignal) or not isinstance(background_signal,ColorSignal):raise error('SIGNAL','工作与背景RGB信号须明确')
         if cancel is not None and not callable(cancel):raise error('ARGUMENT','取消回调无效')
         self.project=copy.deepcopy(project);self.sources=dict(sources);self.working=working_signal;self.background_signal=background_signal
         if type(max_working_bytes) is not int or not 1<=max_working_bytes<=768*1024*1024:
             raise error('BUDGET','浮点投影/合成的单次工作区配额须在1字节到768MiB')
         self.max_working_bytes=max_working_bytes
+        self.gpu=gpu
         self.poll=cancel if cancel is not None else lambda:None;self.poll()
         self.effects=EffectCompiler(resource_root=resource_root,working_signal=self.working,
             max_working_bytes=self.max_working_bytes,cancel=self.poll)
@@ -119,7 +120,7 @@ class FloatTimeline:
         self.assets={a['id']:a for a in self.project['assets']};self.maps={};self.effect_plans={};self.mask_plans={};self.crop_plans={};self.clip_count=0
         self.source_transition_plans={};self.transition_plans={};self.text_plans={}
         self.text_host=FloatTextHost(resource_root,self.assets,self.working,self.tps,self.fps,
-            cancel=self.poll,max_working_bytes=self.max_working_bytes)
+            cancel=self.poll,max_working_bytes=self.max_working_bytes,gpu=gpu)
         if len(self.assets)!=len(self.project['assets']):raise error('SOURCE','资产ID重复')
         self._validate(sequence_id,());sequence=self.sequences[sequence_id]
         self.frame_count=math.ceil(Fraction(int(sequence['duration_tick']),self.tps)*self.fps)
@@ -131,7 +132,7 @@ class FloatTimeline:
             'transitions':{'protocol':TRANSITION_PROTOCOL,'patterns':sorted(TRANSITION_TYPES),
                 'source_handle_plans':[p for p in self.source_transition_plans.values() if p],
                 'double_source_over_crossfade':False,'group_spatial_edges':True,'GPU':False},
-            'text':self.text_host.metadata,
+            'text':self.text_host.metadata,'GPU':gpu.evidence if gpu is not None else {'status':'off'},
             'input_contract':'validated Agent Project IR;registered SHA and explicit common working RGB signal',
             'audio_rendered':False,'legacy_render_preview_cache_integrated':False,'HDR_accepted':False,'network':False}
 
@@ -239,8 +240,18 @@ class FloatTimeline:
         mask_metadata=None
         if self.mask_plans[path] is not None:
             surface,mask_metadata=apply_mask(surface,self.mask_plans[path],tick,max_working_bytes=self.max_working_bytes,cancel=self.poll)
-        result,_=resample_rgba(surface,(cw,ch),inverse,max_working_bytes=self.max_working_bytes,cancel=self.poll)
+        result,_=self.resample(surface,(cw,ch),inverse)
         return result,opacity,inverse,mask_metadata,None
+
+    def resample(self,surface,size,inverse):
+        if self.gpu is not None and self.gpu.active:
+            return self.gpu.resample(surface,size,inverse)
+        return resample_rgba(surface,size,inverse,max_working_bytes=self.max_working_bytes,cancel=self.poll)
+
+    def composite(self,a,b,*,mode='normal',opacity=1.):
+        if mode=='normal' and self.gpu is not None and self.gpu.active:
+            return self.gpu.over(a,b,opacity),{'GPU':True,'mode':mode,'opacity':opacity}
+        return composite_rgba(a,b,mode=mode,opacity=opacity,max_working_bytes=self.max_working_bytes,cancel=self.poll)
 
     def _layer(self,sequence_id,clip,at,canvas,rows,depth,left_limit):
         self.poll()
@@ -276,9 +287,8 @@ class FloatTimeline:
             angle=self.text_host.rotation(text_plan,tick)
             if angle:
                 c,s=math.cos(math.radians(angle)),math.sin(math.radians(angle));x,y=(w-1)/2,(h-1)/2
-                text,_=resample_rgba(text,(w,h),[[c,s,x-c*x-s*y],[-s,c,y+s*x-c*y]],
-                    max_working_bytes=self.max_working_bytes,cancel=self.poll)
-            source,_=composite_rgba(source,text,max_working_bytes=self.max_working_bytes,cancel=self.poll)
+                text,_=self.resample(text,(w,h),[[c,s,x-c*x-s*y],[-s,c,y+s*x-c*y]])
+            source,_=self.composite(source,text)
         layer,opacity,inverse,mask_metadata,crop_metadata=self._project(clip,source,canvas,tick,path,extra_rotation=extra_rotation)
         blend=clip.get('blend') or {}
         opacity*=keyframe_value(clip,('blend.opacity','blend_opacity'),float(blend.get('opacity',1)),float(tick))
@@ -358,7 +368,7 @@ class FloatTimeline:
                     if envelopes:
                         layer=self._transition_opacity(layer,row)
                         layer=self._edge_transitions(layer,envelopes,tick,row);opacity=1.
-                result,_=composite_rgba(result,layer,mode=mode,opacity=opacity,max_working_bytes=self.max_working_bytes,cancel=self.poll)
+                result,_=self.composite(result,layer,mode=mode,opacity=opacity)
         return result
 
     def render_frame(self,index):

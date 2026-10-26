@@ -727,3 +727,27 @@ CPU文字；8bit覆盖率/Float32颜色，分块Float64算术。不代表自然�
 ![Actual registered Skill / silent GIF](../assets/float-text-coverage-20261026-4k-r2/4k-native-text.gif)
 
 CPU文字；8bit覆盖率/Float32颜色，分块Float64算术。不代表自然视听、GPU文字、HDR、长片、实时或完整目标验收；无连续播放或人工听审。
+
+<a id="c33-float-gpu"></a>
+
+## C33 Float32 GPU mixed edit / 浮点GPU混剪
+
+6秒/72帧/12fps；实际GPU字色/投影/逐词，转场、父倒放、SRT、真实句柄和完整关联音轨；取消恢复/队列逐帧与PCM一致。
+
+[Workflow](FLOAT_GPU.md) · [Original](../assets/float-gpu-20261026-r1/original.png) · [MP4](../assets/float-gpu-20261026-r1/native-text.mp4) · [Editable package](../assets/float-gpu-20261026-r1/editable-native-text.aevpkg.zip)
+
+![Actual installed GPU render / silent GIF](../assets/float-gpu-20261026-r1/native-text.gif)
+
+原生Windows/RTX3060，CC0自制内容、Noto字型OFL保留；覆盖率8bit、颜色Float32、binary64内核。其余算子CPU，静帧观察与完整解码分列；未进行连续播放、人工听审或自然质量验收。
+
+<a id="c34-4k-gpu"></a>
+
+## C34 Actual 4K GPU titles / 实际4K GPU字层
+
+3840×2160/4fps/2秒/8帧、三层文字。独立同工程成对成片 CPU 296.712秒→GPU 139.938秒（2.120×）；单对非独占主机，不代表中位数、实时或通用保证。
+
+[Workflow](FLOAT_GPU.md) · [Original](../assets/float-gpu-20261026-4k-r1/original.png) · [MP4](../assets/float-gpu-20261026-4k-r1/4k-native-text.mp4) · [Editable package](../assets/float-gpu-20261026-4k-r1/editable-4k-text.aevpkg.zip)
+
+![Actual installed GPU render / silent GIF](../assets/float-gpu-20261026-4k-r1/4k-native-text.gif)
+
+原生Windows/RTX3060，CC0自制内容、Noto字型OFL保留；覆盖率8bit、颜色Float32、binary64内核。其余算子CPU，静帧观察与完整解码分列；未进行连续播放、人工听审或自然质量验收。

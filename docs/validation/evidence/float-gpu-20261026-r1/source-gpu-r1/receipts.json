@@ -1,0 +1,1312 @@
+[
+  {
+    "test": "native_float_gpu.NativeFloatGPUTests.test_all_65536_levels_survive_identity_and_source_over",
+    "evidence": {
+      "engine": "render-owned-float32-opencl-v1",
+      "request": {
+        "mode": "require",
+        "device": "0.0",
+        "max_working_bytes": 1073741824,
+        "probe_timeout_seconds": 30
+      },
+      "status": "prepared",
+      "dry_run": false,
+      "operations": {
+        "affine": 1,
+        "over": 1
+      },
+      "CPU_scope": [
+        "glyph-rasterization",
+        "color-conversion",
+        "effects",
+        "masks",
+        "crop",
+        "transitions",
+        "non-normal-blends",
+        "audio",
+        "delivery-encoding"
+      ],
+      "GPU_scope": [
+        "premultiplied-affine",
+        "normal-source-over",
+        "text-color-components",
+        "binary-word-selection"
+      ],
+      "host_shared_bytes_limit": 1073741824,
+      "retained_host_shared_bytes": 0,
+      "device_bytes_limit": 1073741824,
+      "limits_are_peak_RSS": false,
+      "free_VRAM_reserved": false,
+      "integer_media_conversion": false,
+      "worker_closed": true,
+      "runtime_failure_CPU_fallback": false,
+      "artifacts": [
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+          "role": "float-gpu-execution",
+          "bytes": 13861,
+          "sha256": "sha256:05e51d659c8324001227d7fe3460abccd1c74c6601ce007580d4b414ec2183b4"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_worker.py",
+          "role": "float-gpu-execution",
+          "bytes": 7963,
+          "sha256": "sha256:0c5727393b2ca3e2ab12d6983ce1cbe1c7e4e0cc0ab1d855722e640722c2ec3f"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_native.py",
+          "role": "float-gpu-execution",
+          "bytes": 16855,
+          "sha256": "sha256:8cd50512bc0fb66fa0aab988b691e2144163374a9f7aa2671f49c3a338b31f0b"
+        }
+      ],
+      "planned_maximum_pixels": 65536,
+      "planned_device_bytes": 3145728,
+      "planned_host_shared_bytes": 2163456,
+      "owned_worker_pid": 13576,
+      "native": {
+        "protocol": "native-opencl-binary64-float32-primitives-v1",
+        "device": {
+          "selection": "0.0",
+          "name": "NVIDIA GeForce RTX 3060",
+          "vendor": "NVIDIA Corporation",
+          "driver": "595.95",
+          "version": "OpenCL 3.0 CUDA",
+          "type": 4,
+          "double_fp_config": 63,
+          "global_memory_bytes": 12884377600,
+          "max_allocation_bytes": 3221094400
+        },
+        "kernel_sha256": "e2cd0de55e91caa4aac9885757b1f520044fd4660910e6974b094fab3d72077b",
+        "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+        "arithmetic": "binary64;explicit Float32 round-to-nearest-even boundaries",
+        "device_quota_bytes": 1073741824,
+        "retained_device_bytes": 3145728,
+        "operations": {
+          "over": 2,
+          "affine": 2,
+          "paint": 1,
+          "select_words": 1
+        },
+        "integer_media_conversion": false
+      },
+      "probe": {
+        "pixels_per_case": 65536,
+        "max_errors": {
+          "over": 0.0,
+          "affine": 0.0,
+          "paint": 0.0,
+          "select": 0.0
+        },
+        "absolute_limit": 3e-07,
+        "all_16bit_levels_present": true,
+        "actual_gpu_operations": 4
+      },
+      "maximum_host_shared_bytes": 2097408,
+      "operation_elapsed_seconds": 0.1318554999998014,
+      "worker_returncode": 0,
+      "shared_handles_closed": true
+    }
+  },
+  {
+    "test": "native_float_gpu.NativeFloatGPUTests.test_binary_selection_preserves_whole_paragraph",
+    "evidence": {
+      "engine": "render-owned-float32-opencl-v1",
+      "request": {
+        "mode": "require",
+        "device": "0.0",
+        "max_working_bytes": 1073741824,
+        "probe_timeout_seconds": 30
+      },
+      "status": "prepared",
+      "dry_run": false,
+      "operations": {
+        "select": 1
+      },
+      "CPU_scope": [
+        "glyph-rasterization",
+        "color-conversion",
+        "effects",
+        "masks",
+        "crop",
+        "transitions",
+        "non-normal-blends",
+        "audio",
+        "delivery-encoding"
+      ],
+      "GPU_scope": [
+        "premultiplied-affine",
+        "normal-source-over",
+        "text-color-components",
+        "binary-word-selection"
+      ],
+      "host_shared_bytes_limit": 1073741824,
+      "retained_host_shared_bytes": 0,
+      "device_bytes_limit": 1073741824,
+      "limits_are_peak_RSS": false,
+      "free_VRAM_reserved": false,
+      "integer_media_conversion": false,
+      "worker_closed": true,
+      "runtime_failure_CPU_fallback": false,
+      "artifacts": [
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+          "role": "float-gpu-execution",
+          "bytes": 13861,
+          "sha256": "sha256:05e51d659c8324001227d7fe3460abccd1c74c6601ce007580d4b414ec2183b4"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_worker.py",
+          "role": "float-gpu-execution",
+          "bytes": 7963,
+          "sha256": "sha256:0c5727393b2ca3e2ab12d6983ce1cbe1c7e4e0cc0ab1d855722e640722c2ec3f"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_native.py",
+          "role": "float-gpu-execution",
+          "bytes": 16855,
+          "sha256": "sha256:8cd50512bc0fb66fa0aab988b691e2144163374a9f7aa2671f49c3a338b31f0b"
+        }
+      ],
+      "planned_maximum_pixels": 65536,
+      "planned_device_bytes": 3145728,
+      "planned_host_shared_bytes": 2163456,
+      "owned_worker_pid": 10424,
+      "native": {
+        "protocol": "native-opencl-binary64-float32-primitives-v1",
+        "device": {
+          "selection": "0.0",
+          "name": "NVIDIA GeForce RTX 3060",
+          "vendor": "NVIDIA Corporation",
+          "driver": "595.95",
+          "version": "OpenCL 3.0 CUDA",
+          "type": 4,
+          "double_fp_config": 63,
+          "global_memory_bytes": 12884377600,
+          "max_allocation_bytes": 3221094400
+        },
+        "kernel_sha256": "e2cd0de55e91caa4aac9885757b1f520044fd4660910e6974b094fab3d72077b",
+        "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+        "arithmetic": "binary64;explicit Float32 round-to-nearest-even boundaries",
+        "device_quota_bytes": 1073741824,
+        "retained_device_bytes": 3145728,
+        "operations": {
+          "over": 1,
+          "affine": 1,
+          "paint": 1,
+          "select_words": 2
+        },
+        "integer_media_conversion": false
+      },
+      "probe": {
+        "pixels_per_case": 65536,
+        "max_errors": {
+          "over": 0.0,
+          "affine": 0.0,
+          "paint": 0.0,
+          "select": 0.0
+        },
+        "absolute_limit": 3e-07,
+        "all_16bit_levels_present": true,
+        "actual_gpu_operations": 4
+      },
+      "maximum_host_shared_bytes": 34749,
+      "operation_elapsed_seconds": 0.05307840000023134,
+      "worker_returncode": 0,
+      "shared_handles_closed": true
+    }
+  },
+  {
+    "test": "native_float_gpu.NativeFloatGPUTests.test_cancel_poll_during_request_stops_only_owned_worker",
+    "evidence": {
+      "engine": "render-owned-float32-opencl-v1",
+      "request": {
+        "mode": "require",
+        "device": "0.0",
+        "max_working_bytes": 1073741824,
+        "probe_timeout_seconds": 30
+      },
+      "status": "cancelled",
+      "dry_run": false,
+      "operations": {},
+      "CPU_scope": [
+        "glyph-rasterization",
+        "color-conversion",
+        "effects",
+        "masks",
+        "crop",
+        "transitions",
+        "non-normal-blends",
+        "audio",
+        "delivery-encoding"
+      ],
+      "GPU_scope": [
+        "premultiplied-affine",
+        "normal-source-over",
+        "text-color-components",
+        "binary-word-selection"
+      ],
+      "host_shared_bytes_limit": 1073741824,
+      "retained_host_shared_bytes": 0,
+      "device_bytes_limit": 1073741824,
+      "limits_are_peak_RSS": false,
+      "free_VRAM_reserved": false,
+      "integer_media_conversion": false,
+      "worker_closed": true,
+      "runtime_failure_CPU_fallback": false,
+      "artifacts": [
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+          "role": "float-gpu-execution",
+          "bytes": 13861,
+          "sha256": "sha256:05e51d659c8324001227d7fe3460abccd1c74c6601ce007580d4b414ec2183b4"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_worker.py",
+          "role": "float-gpu-execution",
+          "bytes": 7963,
+          "sha256": "sha256:0c5727393b2ca3e2ab12d6983ce1cbe1c7e4e0cc0ab1d855722e640722c2ec3f"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_native.py",
+          "role": "float-gpu-execution",
+          "bytes": 16855,
+          "sha256": "sha256:8cd50512bc0fb66fa0aab988b691e2144163374a9f7aa2671f49c3a338b31f0b"
+        }
+      ],
+      "planned_maximum_pixels": 65536,
+      "planned_device_bytes": 3145728,
+      "planned_host_shared_bytes": 2163456,
+      "owned_worker_pid": 2568,
+      "native": {
+        "protocol": "native-opencl-binary64-float32-primitives-v1",
+        "device": {
+          "selection": "0.0",
+          "name": "NVIDIA GeForce RTX 3060",
+          "vendor": "NVIDIA Corporation",
+          "driver": "595.95",
+          "version": "OpenCL 3.0 CUDA",
+          "type": 4,
+          "double_fp_config": 63,
+          "global_memory_bytes": 12884377600,
+          "max_allocation_bytes": 3221094400
+        },
+        "kernel_sha256": "e2cd0de55e91caa4aac9885757b1f520044fd4660910e6974b094fab3d72077b",
+        "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+        "arithmetic": "binary64;explicit Float32 round-to-nearest-even boundaries",
+        "device_quota_bytes": 1073741824,
+        "retained_device_bytes": 3145728,
+        "operations": {
+          "over": 1,
+          "affine": 1,
+          "paint": 1,
+          "select_words": 1
+        },
+        "integer_media_conversion": false
+      },
+      "probe": {
+        "pixels_per_case": 65536,
+        "max_errors": {
+          "over": 0.0,
+          "affine": 0.0,
+          "paint": 0.0,
+          "select": 0.0
+        },
+        "absolute_limit": 3e-07,
+        "all_16bit_levels_present": true,
+        "actual_gpu_operations": 4
+      },
+      "maximum_host_shared_bytes": 33952,
+      "error": {
+        "code": "CANCELLED",
+        "message": "test cancellation",
+        "path": null,
+        "retryable": false
+      },
+      "worker_returncode": 1,
+      "shared_handles_closed": true
+    }
+  },
+  {
+    "test": "native_float_gpu.NativeFloatGPUTests.test_four_ordered_components_with_nontransparent_base",
+    "evidence": {
+      "engine": "render-owned-float32-opencl-v1",
+      "request": {
+        "mode": "require",
+        "device": "0.0",
+        "max_working_bytes": 1073741824,
+        "probe_timeout_seconds": 30
+      },
+      "status": "prepared",
+      "dry_run": false,
+      "operations": {
+        "paint": 1
+      },
+      "CPU_scope": [
+        "glyph-rasterization",
+        "color-conversion",
+        "effects",
+        "masks",
+        "crop",
+        "transitions",
+        "non-normal-blends",
+        "audio",
+        "delivery-encoding"
+      ],
+      "GPU_scope": [
+        "premultiplied-affine",
+        "normal-source-over",
+        "text-color-components",
+        "binary-word-selection"
+      ],
+      "host_shared_bytes_limit": 1073741824,
+      "retained_host_shared_bytes": 0,
+      "device_bytes_limit": 1073741824,
+      "limits_are_peak_RSS": false,
+      "free_VRAM_reserved": false,
+      "integer_media_conversion": false,
+      "worker_closed": true,
+      "runtime_failure_CPU_fallback": false,
+      "artifacts": [
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+          "role": "float-gpu-execution",
+          "bytes": 13861,
+          "sha256": "sha256:05e51d659c8324001227d7fe3460abccd1c74c6601ce007580d4b414ec2183b4"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_worker.py",
+          "role": "float-gpu-execution",
+          "bytes": 7963,
+          "sha256": "sha256:0c5727393b2ca3e2ab12d6983ce1cbe1c7e4e0cc0ab1d855722e640722c2ec3f"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_native.py",
+          "role": "float-gpu-execution",
+          "bytes": 16855,
+          "sha256": "sha256:8cd50512bc0fb66fa0aab988b691e2144163374a9f7aa2671f49c3a338b31f0b"
+        }
+      ],
+      "planned_maximum_pixels": 65536,
+      "planned_device_bytes": 3145728,
+      "planned_host_shared_bytes": 2163456,
+      "owned_worker_pid": 25644,
+      "native": {
+        "protocol": "native-opencl-binary64-float32-primitives-v1",
+        "device": {
+          "selection": "0.0",
+          "name": "NVIDIA GeForce RTX 3060",
+          "vendor": "NVIDIA Corporation",
+          "driver": "595.95",
+          "version": "OpenCL 3.0 CUDA",
+          "type": 4,
+          "double_fp_config": 63,
+          "global_memory_bytes": 12884377600,
+          "max_allocation_bytes": 3221094400
+        },
+        "kernel_sha256": "e2cd0de55e91caa4aac9885757b1f520044fd4660910e6974b094fab3d72077b",
+        "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+        "arithmetic": "binary64;explicit Float32 round-to-nearest-even boundaries",
+        "device_quota_bytes": 1073741824,
+        "retained_device_bytes": 3145728,
+        "operations": {
+          "over": 1,
+          "affine": 1,
+          "paint": 2,
+          "select_words": 1
+        },
+        "integer_media_conversion": false
+      },
+      "probe": {
+        "pixels_per_case": 65536,
+        "max_errors": {
+          "over": 0.0,
+          "affine": 0.0,
+          "paint": 0.0,
+          "select": 0.0
+        },
+        "absolute_limit": 3e-07,
+        "all_16bit_levels_present": true,
+        "actual_gpu_operations": 4
+      },
+      "maximum_host_shared_bytes": 21316,
+      "operation_elapsed_seconds": 0.03046859999994922,
+      "worker_returncode": 0,
+      "shared_handles_closed": true
+    }
+  },
+  {
+    "test": "native_float_gpu.NativeFloatGPUTests.test_independent_probe_all_four_gpu_operations",
+    "evidence": {
+      "engine": "render-owned-float32-opencl-v1",
+      "request": {
+        "mode": "require",
+        "device": "0.0",
+        "max_working_bytes": 1073741824,
+        "probe_timeout_seconds": 30
+      },
+      "status": "prepared",
+      "dry_run": false,
+      "operations": {},
+      "CPU_scope": [
+        "glyph-rasterization",
+        "color-conversion",
+        "effects",
+        "masks",
+        "crop",
+        "transitions",
+        "non-normal-blends",
+        "audio",
+        "delivery-encoding"
+      ],
+      "GPU_scope": [
+        "premultiplied-affine",
+        "normal-source-over",
+        "text-color-components",
+        "binary-word-selection"
+      ],
+      "host_shared_bytes_limit": 1073741824,
+      "retained_host_shared_bytes": 0,
+      "device_bytes_limit": 1073741824,
+      "limits_are_peak_RSS": false,
+      "free_VRAM_reserved": false,
+      "integer_media_conversion": false,
+      "worker_closed": true,
+      "runtime_failure_CPU_fallback": false,
+      "artifacts": [
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+          "role": "float-gpu-execution",
+          "bytes": 13861,
+          "sha256": "sha256:05e51d659c8324001227d7fe3460abccd1c74c6601ce007580d4b414ec2183b4"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_worker.py",
+          "role": "float-gpu-execution",
+          "bytes": 7963,
+          "sha256": "sha256:0c5727393b2ca3e2ab12d6983ce1cbe1c7e4e0cc0ab1d855722e640722c2ec3f"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_native.py",
+          "role": "float-gpu-execution",
+          "bytes": 16855,
+          "sha256": "sha256:8cd50512bc0fb66fa0aab988b691e2144163374a9f7aa2671f49c3a338b31f0b"
+        }
+      ],
+      "planned_maximum_pixels": 65536,
+      "planned_device_bytes": 3145728,
+      "planned_host_shared_bytes": 2163456,
+      "owned_worker_pid": 6128,
+      "native": {
+        "protocol": "native-opencl-binary64-float32-primitives-v1",
+        "device": {
+          "selection": "0.0",
+          "name": "NVIDIA GeForce RTX 3060",
+          "vendor": "NVIDIA Corporation",
+          "driver": "595.95",
+          "version": "OpenCL 3.0 CUDA",
+          "type": 4,
+          "double_fp_config": 63,
+          "global_memory_bytes": 12884377600,
+          "max_allocation_bytes": 3221094400
+        },
+        "kernel_sha256": "e2cd0de55e91caa4aac9885757b1f520044fd4660910e6974b094fab3d72077b",
+        "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+        "arithmetic": "binary64;explicit Float32 round-to-nearest-even boundaries",
+        "device_quota_bytes": 1073741824,
+        "retained_device_bytes": 3145728,
+        "operations": {
+          "over": 1,
+          "affine": 1,
+          "paint": 1,
+          "select_words": 1
+        },
+        "integer_media_conversion": false
+      },
+      "probe": {
+        "pixels_per_case": 65536,
+        "max_errors": {
+          "over": 0.0,
+          "affine": 0.0,
+          "paint": 0.0,
+          "select": 0.0
+        },
+        "absolute_limit": 3e-07,
+        "all_16bit_levels_present": true,
+        "actual_gpu_operations": 4
+      },
+      "worker_returncode": 0,
+      "shared_handles_closed": true
+    }
+  },
+  {
+    "test": "native_float_gpu.NativeFloatGPUTests.test_invalid_late_tile_fails_without_mutating_input",
+    "evidence": {
+      "engine": "render-owned-float32-opencl-v1",
+      "request": {
+        "mode": "require",
+        "device": "0.0",
+        "max_working_bytes": 1073741824,
+        "probe_timeout_seconds": 30
+      },
+      "status": "prepared",
+      "dry_run": false,
+      "operations": {},
+      "CPU_scope": [
+        "glyph-rasterization",
+        "color-conversion",
+        "effects",
+        "masks",
+        "crop",
+        "transitions",
+        "non-normal-blends",
+        "audio",
+        "delivery-encoding"
+      ],
+      "GPU_scope": [
+        "premultiplied-affine",
+        "normal-source-over",
+        "text-color-components",
+        "binary-word-selection"
+      ],
+      "host_shared_bytes_limit": 1073741824,
+      "retained_host_shared_bytes": 0,
+      "device_bytes_limit": 1073741824,
+      "limits_are_peak_RSS": false,
+      "free_VRAM_reserved": false,
+      "integer_media_conversion": false,
+      "worker_closed": true,
+      "runtime_failure_CPU_fallback": false,
+      "artifacts": [
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+          "role": "float-gpu-execution",
+          "bytes": 13861,
+          "sha256": "sha256:05e51d659c8324001227d7fe3460abccd1c74c6601ce007580d4b414ec2183b4"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_worker.py",
+          "role": "float-gpu-execution",
+          "bytes": 7963,
+          "sha256": "sha256:0c5727393b2ca3e2ab12d6983ce1cbe1c7e4e0cc0ab1d855722e640722c2ec3f"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_native.py",
+          "role": "float-gpu-execution",
+          "bytes": 16855,
+          "sha256": "sha256:8cd50512bc0fb66fa0aab988b691e2144163374a9f7aa2671f49c3a338b31f0b"
+        }
+      ],
+      "planned_maximum_pixels": 65536,
+      "planned_device_bytes": 3145728,
+      "planned_host_shared_bytes": 2163456,
+      "owned_worker_pid": 10872,
+      "native": {
+        "protocol": "native-opencl-binary64-float32-primitives-v1",
+        "device": {
+          "selection": "0.0",
+          "name": "NVIDIA GeForce RTX 3060",
+          "vendor": "NVIDIA Corporation",
+          "driver": "595.95",
+          "version": "OpenCL 3.0 CUDA",
+          "type": 4,
+          "double_fp_config": 63,
+          "global_memory_bytes": 12884377600,
+          "max_allocation_bytes": 3221094400
+        },
+        "kernel_sha256": "e2cd0de55e91caa4aac9885757b1f520044fd4660910e6974b094fab3d72077b",
+        "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+        "arithmetic": "binary64;explicit Float32 round-to-nearest-even boundaries",
+        "device_quota_bytes": 1073741824,
+        "retained_device_bytes": 3145728,
+        "operations": {
+          "over": 1,
+          "affine": 1,
+          "paint": 1,
+          "select_words": 1
+        },
+        "integer_media_conversion": false
+      },
+      "probe": {
+        "pixels_per_case": 65536,
+        "max_errors": {
+          "over": 0.0,
+          "affine": 0.0,
+          "paint": 0.0,
+          "select": 0.0
+        },
+        "absolute_limit": 3e-07,
+        "all_16bit_levels_present": true,
+        "actual_gpu_operations": 4
+      },
+      "worker_returncode": 0,
+      "shared_handles_closed": true
+    }
+  },
+  {
+    "test": "native_float_gpu.NativeFloatGPUTests.test_real_text_styles_and_word_clock_match_cpu",
+    "evidence": {
+      "engine": "render-owned-float32-opencl-v1",
+      "request": {
+        "mode": "require",
+        "device": "0.0",
+        "max_working_bytes": 1073741824,
+        "probe_timeout_seconds": 30
+      },
+      "status": "prepared",
+      "dry_run": false,
+      "operations": {
+        "paint": 10,
+        "over": 10,
+        "select": 4
+      },
+      "CPU_scope": [
+        "glyph-rasterization",
+        "color-conversion",
+        "effects",
+        "masks",
+        "crop",
+        "transitions",
+        "non-normal-blends",
+        "audio",
+        "delivery-encoding"
+      ],
+      "GPU_scope": [
+        "premultiplied-affine",
+        "normal-source-over",
+        "text-color-components",
+        "binary-word-selection"
+      ],
+      "host_shared_bytes_limit": 1073741824,
+      "retained_host_shared_bytes": 0,
+      "device_bytes_limit": 1073741824,
+      "limits_are_peak_RSS": false,
+      "free_VRAM_reserved": false,
+      "integer_media_conversion": false,
+      "worker_closed": true,
+      "runtime_failure_CPU_fallback": false,
+      "artifacts": [
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+          "role": "float-gpu-execution",
+          "bytes": 13861,
+          "sha256": "sha256:05e51d659c8324001227d7fe3460abccd1c74c6601ce007580d4b414ec2183b4"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_worker.py",
+          "role": "float-gpu-execution",
+          "bytes": 7963,
+          "sha256": "sha256:0c5727393b2ca3e2ab12d6983ce1cbe1c7e4e0cc0ab1d855722e640722c2ec3f"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_native.py",
+          "role": "float-gpu-execution",
+          "bytes": 16855,
+          "sha256": "sha256:8cd50512bc0fb66fa0aab988b691e2144163374a9f7aa2671f49c3a338b31f0b"
+        }
+      ],
+      "planned_maximum_pixels": 65536,
+      "planned_device_bytes": 3145728,
+      "planned_host_shared_bytes": 2163456,
+      "owned_worker_pid": 21660,
+      "native": {
+        "protocol": "native-opencl-binary64-float32-primitives-v1",
+        "device": {
+          "selection": "0.0",
+          "name": "NVIDIA GeForce RTX 3060",
+          "vendor": "NVIDIA Corporation",
+          "driver": "595.95",
+          "version": "OpenCL 3.0 CUDA",
+          "type": 4,
+          "double_fp_config": 63,
+          "global_memory_bytes": 12884377600,
+          "max_allocation_bytes": 3221094400
+        },
+        "kernel_sha256": "e2cd0de55e91caa4aac9885757b1f520044fd4660910e6974b094fab3d72077b",
+        "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+        "arithmetic": "binary64;explicit Float32 round-to-nearest-even boundaries",
+        "device_quota_bytes": 1073741824,
+        "retained_device_bytes": 3145728,
+        "operations": {
+          "over": 11,
+          "affine": 1,
+          "paint": 11,
+          "select_words": 5
+        },
+        "integer_media_conversion": false
+      },
+      "probe": {
+        "pixels_per_case": 65536,
+        "max_errors": {
+          "over": 0.0,
+          "affine": 0.0,
+          "paint": 0.0,
+          "select": 0.0
+        },
+        "absolute_limit": 3e-07,
+        "all_16bit_levels_present": true,
+        "actual_gpu_operations": 4
+      },
+      "maximum_host_shared_bytes": 792000,
+      "operation_elapsed_seconds": 1.2712314999994305,
+      "worker_returncode": 0,
+      "shared_handles_closed": true
+    }
+  },
+  {
+    "test": "native_float_gpu.NativeFloatGPUTests.test_runtime_bad_mask_is_failure_and_worker_closed",
+    "evidence": {
+      "engine": "render-owned-float32-opencl-v1",
+      "request": {
+        "mode": "require",
+        "device": "0.0",
+        "max_working_bytes": 1073741824,
+        "probe_timeout_seconds": 30
+      },
+      "status": "failed",
+      "dry_run": false,
+      "operations": {},
+      "CPU_scope": [
+        "glyph-rasterization",
+        "color-conversion",
+        "effects",
+        "masks",
+        "crop",
+        "transitions",
+        "non-normal-blends",
+        "audio",
+        "delivery-encoding"
+      ],
+      "GPU_scope": [
+        "premultiplied-affine",
+        "normal-source-over",
+        "text-color-components",
+        "binary-word-selection"
+      ],
+      "host_shared_bytes_limit": 1073741824,
+      "retained_host_shared_bytes": 0,
+      "device_bytes_limit": 1073741824,
+      "limits_are_peak_RSS": false,
+      "free_VRAM_reserved": false,
+      "integer_media_conversion": false,
+      "worker_closed": true,
+      "runtime_failure_CPU_fallback": false,
+      "artifacts": [
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+          "role": "float-gpu-execution",
+          "bytes": 13861,
+          "sha256": "sha256:05e51d659c8324001227d7fe3460abccd1c74c6601ce007580d4b414ec2183b4"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_worker.py",
+          "role": "float-gpu-execution",
+          "bytes": 7963,
+          "sha256": "sha256:0c5727393b2ca3e2ab12d6983ce1cbe1c7e4e0cc0ab1d855722e640722c2ec3f"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_native.py",
+          "role": "float-gpu-execution",
+          "bytes": 16855,
+          "sha256": "sha256:8cd50512bc0fb66fa0aab988b691e2144163374a9f7aa2671f49c3a338b31f0b"
+        }
+      ],
+      "planned_maximum_pixels": 65536,
+      "planned_device_bytes": 3145728,
+      "planned_host_shared_bytes": 2163456,
+      "owned_worker_pid": 7148,
+      "native": {
+        "protocol": "native-opencl-binary64-float32-primitives-v1",
+        "device": {
+          "selection": "0.0",
+          "name": "NVIDIA GeForce RTX 3060",
+          "vendor": "NVIDIA Corporation",
+          "driver": "595.95",
+          "version": "OpenCL 3.0 CUDA",
+          "type": 4,
+          "double_fp_config": 63,
+          "global_memory_bytes": 12884377600,
+          "max_allocation_bytes": 3221094400
+        },
+        "kernel_sha256": "e2cd0de55e91caa4aac9885757b1f520044fd4660910e6974b094fab3d72077b",
+        "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+        "arithmetic": "binary64;explicit Float32 round-to-nearest-even boundaries",
+        "device_quota_bytes": 1073741824,
+        "retained_device_bytes": 3145728,
+        "operations": {
+          "over": 1,
+          "affine": 1,
+          "paint": 1,
+          "select_words": 1
+        },
+        "integer_media_conversion": false
+      },
+      "probe": {
+        "pixels_per_case": 65536,
+        "max_errors": {
+          "over": 0.0,
+          "affine": 0.0,
+          "paint": 0.0,
+          "select": 0.0
+        },
+        "absolute_limit": 3e-07,
+        "all_16bit_levels_present": true,
+        "actual_gpu_operations": 4
+      },
+      "maximum_host_shared_bytes": 34749,
+      "error": {
+        "code": "FLOAT_GPU_MASK",
+        "message": "GPU逐词选择需要同尺寸表面及0/255蒙版",
+        "path": null,
+        "retryable": false
+      },
+      "worker_returncode": 6,
+      "shared_handles_closed": true
+    }
+  },
+  {
+    "test": "native_float_gpu.NativeFloatGPUTests.test_source_over_opacity_against_cpu_and_input_immutable",
+    "evidence": {
+      "engine": "render-owned-float32-opencl-v1",
+      "request": {
+        "mode": "require",
+        "device": "0.0",
+        "max_working_bytes": 1073741824,
+        "probe_timeout_seconds": 30
+      },
+      "status": "prepared",
+      "dry_run": false,
+      "operations": {
+        "over": 3
+      },
+      "CPU_scope": [
+        "glyph-rasterization",
+        "color-conversion",
+        "effects",
+        "masks",
+        "crop",
+        "transitions",
+        "non-normal-blends",
+        "audio",
+        "delivery-encoding"
+      ],
+      "GPU_scope": [
+        "premultiplied-affine",
+        "normal-source-over",
+        "text-color-components",
+        "binary-word-selection"
+      ],
+      "host_shared_bytes_limit": 1073741824,
+      "retained_host_shared_bytes": 0,
+      "device_bytes_limit": 1073741824,
+      "limits_are_peak_RSS": false,
+      "free_VRAM_reserved": false,
+      "integer_media_conversion": false,
+      "worker_closed": true,
+      "runtime_failure_CPU_fallback": false,
+      "artifacts": [
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+          "role": "float-gpu-execution",
+          "bytes": 13861,
+          "sha256": "sha256:05e51d659c8324001227d7fe3460abccd1c74c6601ce007580d4b414ec2183b4"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_worker.py",
+          "role": "float-gpu-execution",
+          "bytes": 7963,
+          "sha256": "sha256:0c5727393b2ca3e2ab12d6983ce1cbe1c7e4e0cc0ab1d855722e640722c2ec3f"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_native.py",
+          "role": "float-gpu-execution",
+          "bytes": 16855,
+          "sha256": "sha256:8cd50512bc0fb66fa0aab988b691e2144163374a9f7aa2671f49c3a338b31f0b"
+        }
+      ],
+      "planned_maximum_pixels": 65536,
+      "planned_device_bytes": 3145728,
+      "planned_host_shared_bytes": 2163456,
+      "owned_worker_pid": 10584,
+      "native": {
+        "protocol": "native-opencl-binary64-float32-primitives-v1",
+        "device": {
+          "selection": "0.0",
+          "name": "NVIDIA GeForce RTX 3060",
+          "vendor": "NVIDIA Corporation",
+          "driver": "595.95",
+          "version": "OpenCL 3.0 CUDA",
+          "type": 4,
+          "double_fp_config": 63,
+          "global_memory_bytes": 12884377600,
+          "max_allocation_bytes": 3221094400
+        },
+        "kernel_sha256": "e2cd0de55e91caa4aac9885757b1f520044fd4660910e6974b094fab3d72077b",
+        "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+        "arithmetic": "binary64;explicit Float32 round-to-nearest-even boundaries",
+        "device_quota_bytes": 1073741824,
+        "retained_device_bytes": 3145728,
+        "operations": {
+          "over": 4,
+          "affine": 1,
+          "paint": 1,
+          "select_words": 1
+        },
+        "integer_media_conversion": false
+      },
+      "probe": {
+        "pixels_per_case": 65536,
+        "max_errors": {
+          "over": 0.0,
+          "affine": 0.0,
+          "paint": 0.0,
+          "select": 0.0
+        },
+        "absolute_limit": 3e-07,
+        "all_16bit_levels_present": true,
+        "actual_gpu_operations": 4
+      },
+      "maximum_host_shared_bytes": 33952,
+      "operation_elapsed_seconds": 0.15608780000002298,
+      "worker_returncode": 0,
+      "shared_handles_closed": true
+    }
+  },
+  {
+    "test": "native_float_gpu.NativeFloatGPUTests.test_subpixel_affine_extended_RGB_and_hidden_alpha",
+    "evidence": {
+      "engine": "render-owned-float32-opencl-v1",
+      "request": {
+        "mode": "require",
+        "device": "0.0",
+        "max_working_bytes": 1073741824,
+        "probe_timeout_seconds": 30
+      },
+      "status": "prepared",
+      "dry_run": false,
+      "operations": {
+        "affine": 3
+      },
+      "CPU_scope": [
+        "glyph-rasterization",
+        "color-conversion",
+        "effects",
+        "masks",
+        "crop",
+        "transitions",
+        "non-normal-blends",
+        "audio",
+        "delivery-encoding"
+      ],
+      "GPU_scope": [
+        "premultiplied-affine",
+        "normal-source-over",
+        "text-color-components",
+        "binary-word-selection"
+      ],
+      "host_shared_bytes_limit": 1073741824,
+      "retained_host_shared_bytes": 0,
+      "device_bytes_limit": 1073741824,
+      "limits_are_peak_RSS": false,
+      "free_VRAM_reserved": false,
+      "integer_media_conversion": false,
+      "worker_closed": true,
+      "runtime_failure_CPU_fallback": false,
+      "artifacts": [
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+          "role": "float-gpu-execution",
+          "bytes": 13861,
+          "sha256": "sha256:05e51d659c8324001227d7fe3460abccd1c74c6601ce007580d4b414ec2183b4"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_worker.py",
+          "role": "float-gpu-execution",
+          "bytes": 7963,
+          "sha256": "sha256:0c5727393b2ca3e2ab12d6983ce1cbe1c7e4e0cc0ab1d855722e640722c2ec3f"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_native.py",
+          "role": "float-gpu-execution",
+          "bytes": 16855,
+          "sha256": "sha256:8cd50512bc0fb66fa0aab988b691e2144163374a9f7aa2671f49c3a338b31f0b"
+        }
+      ],
+      "planned_maximum_pixels": 65536,
+      "planned_device_bytes": 3145728,
+      "planned_host_shared_bytes": 2163456,
+      "owned_worker_pid": 3444,
+      "native": {
+        "protocol": "native-opencl-binary64-float32-primitives-v1",
+        "device": {
+          "selection": "0.0",
+          "name": "NVIDIA GeForce RTX 3060",
+          "vendor": "NVIDIA Corporation",
+          "driver": "595.95",
+          "version": "OpenCL 3.0 CUDA",
+          "type": 4,
+          "double_fp_config": 63,
+          "global_memory_bytes": 12884377600,
+          "max_allocation_bytes": 3221094400
+        },
+        "kernel_sha256": "e2cd0de55e91caa4aac9885757b1f520044fd4660910e6974b094fab3d72077b",
+        "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+        "arithmetic": "binary64;explicit Float32 round-to-nearest-even boundaries",
+        "device_quota_bytes": 1073741824,
+        "retained_device_bytes": 3145728,
+        "operations": {
+          "over": 1,
+          "affine": 4,
+          "paint": 1,
+          "select_words": 1
+        },
+        "integer_media_conversion": false
+      },
+      "probe": {
+        "pixels_per_case": 65536,
+        "max_errors": {
+          "over": 0.0,
+          "affine": 0.0,
+          "paint": 0.0,
+          "select": 0.0
+        },
+        "absolute_limit": 3e-07,
+        "all_16bit_levels_present": true,
+        "actual_gpu_operations": 4
+      },
+      "maximum_host_shared_bytes": 31488,
+      "operation_elapsed_seconds": 0.11835820000032982,
+      "worker_returncode": 0,
+      "shared_handles_closed": true
+    }
+  },
+  {
+    "test": "native_float_gpu.NativeFloatGPUTests.test_timeout_closes_worker_without_cpu_retry",
+    "evidence": {
+      "engine": "render-owned-float32-opencl-v1",
+      "request": {
+        "mode": "require",
+        "device": "0.0",
+        "max_working_bytes": 1073741824,
+        "probe_timeout_seconds": 30
+      },
+      "status": "failed",
+      "dry_run": false,
+      "operations": {},
+      "CPU_scope": [
+        "glyph-rasterization",
+        "color-conversion",
+        "effects",
+        "masks",
+        "crop",
+        "transitions",
+        "non-normal-blends",
+        "audio",
+        "delivery-encoding"
+      ],
+      "GPU_scope": [
+        "premultiplied-affine",
+        "normal-source-over",
+        "text-color-components",
+        "binary-word-selection"
+      ],
+      "host_shared_bytes_limit": 1073741824,
+      "retained_host_shared_bytes": 0,
+      "device_bytes_limit": 1073741824,
+      "limits_are_peak_RSS": false,
+      "free_VRAM_reserved": false,
+      "integer_media_conversion": false,
+      "worker_closed": true,
+      "runtime_failure_CPU_fallback": false,
+      "artifacts": [
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+          "role": "float-gpu-execution",
+          "bytes": 13861,
+          "sha256": "sha256:05e51d659c8324001227d7fe3460abccd1c74c6601ce007580d4b414ec2183b4"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_worker.py",
+          "role": "float-gpu-execution",
+          "bytes": 7963,
+          "sha256": "sha256:0c5727393b2ca3e2ab12d6983ce1cbe1c7e4e0cc0ab1d855722e640722c2ec3f"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_native.py",
+          "role": "float-gpu-execution",
+          "bytes": 16855,
+          "sha256": "sha256:8cd50512bc0fb66fa0aab988b691e2144163374a9f7aa2671f49c3a338b31f0b"
+        }
+      ],
+      "planned_maximum_pixels": 65536,
+      "planned_device_bytes": 3145728,
+      "planned_host_shared_bytes": 2163456,
+      "owned_worker_pid": 5648,
+      "native": {
+        "protocol": "native-opencl-binary64-float32-primitives-v1",
+        "device": {
+          "selection": "0.0",
+          "name": "NVIDIA GeForce RTX 3060",
+          "vendor": "NVIDIA Corporation",
+          "driver": "595.95",
+          "version": "OpenCL 3.0 CUDA",
+          "type": 4,
+          "double_fp_config": 63,
+          "global_memory_bytes": 12884377600,
+          "max_allocation_bytes": 3221094400
+        },
+        "kernel_sha256": "e2cd0de55e91caa4aac9885757b1f520044fd4660910e6974b094fab3d72077b",
+        "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+        "arithmetic": "binary64;explicit Float32 round-to-nearest-even boundaries",
+        "device_quota_bytes": 1073741824,
+        "retained_device_bytes": 3145728,
+        "operations": {
+          "over": 1,
+          "affine": 1,
+          "paint": 1,
+          "select_words": 1
+        },
+        "integer_media_conversion": false
+      },
+      "probe": {
+        "pixels_per_case": 65536,
+        "max_errors": {
+          "over": 0.0,
+          "affine": 0.0,
+          "paint": 0.0,
+          "select": 0.0
+        },
+        "absolute_limit": 3e-07,
+        "all_16bit_levels_present": true,
+        "actual_gpu_operations": 4
+      },
+      "maximum_host_shared_bytes": 33952,
+      "error": {
+        "code": "FLOAT_GPU_TIMEOUT",
+        "message": "本任务GPU操作超时",
+        "path": null,
+        "retryable": false,
+        "diagnostics": {
+          "timeout_seconds": 0.01,
+          "sequence": 2
+        }
+      },
+      "worker_returncode": 1,
+      "shared_handles_closed": true
+    }
+  },
+  {
+    "test": "native_float_gpu.NativeFloatGPUTests.test_worker_exit_is_failure_without_cpu_retry",
+    "evidence": {
+      "engine": "render-owned-float32-opencl-v1",
+      "request": {
+        "mode": "require",
+        "device": "0.0",
+        "max_working_bytes": 1073741824,
+        "probe_timeout_seconds": 30
+      },
+      "status": "failed",
+      "dry_run": false,
+      "operations": {},
+      "CPU_scope": [
+        "glyph-rasterization",
+        "color-conversion",
+        "effects",
+        "masks",
+        "crop",
+        "transitions",
+        "non-normal-blends",
+        "audio",
+        "delivery-encoding"
+      ],
+      "GPU_scope": [
+        "premultiplied-affine",
+        "normal-source-over",
+        "text-color-components",
+        "binary-word-selection"
+      ],
+      "host_shared_bytes_limit": 1073741824,
+      "retained_host_shared_bytes": 0,
+      "device_bytes_limit": 1073741824,
+      "limits_are_peak_RSS": false,
+      "free_VRAM_reserved": false,
+      "integer_media_conversion": false,
+      "worker_closed": true,
+      "runtime_failure_CPU_fallback": false,
+      "artifacts": [
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+          "role": "float-gpu-execution",
+          "bytes": 13861,
+          "sha256": "sha256:05e51d659c8324001227d7fe3460abccd1c74c6601ce007580d4b414ec2183b4"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_worker.py",
+          "role": "float-gpu-execution",
+          "bytes": 7963,
+          "sha256": "sha256:0c5727393b2ca3e2ab12d6983ce1cbe1c7e4e0cc0ab1d855722e640722c2ec3f"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_native.py",
+          "role": "float-gpu-execution",
+          "bytes": 16855,
+          "sha256": "sha256:8cd50512bc0fb66fa0aab988b691e2144163374a9f7aa2671f49c3a338b31f0b"
+        }
+      ],
+      "planned_maximum_pixels": 65536,
+      "planned_device_bytes": 3145728,
+      "planned_host_shared_bytes": 2163456,
+      "owned_worker_pid": 13552,
+      "native": {
+        "protocol": "native-opencl-binary64-float32-primitives-v1",
+        "device": {
+          "selection": "0.0",
+          "name": "NVIDIA GeForce RTX 3060",
+          "vendor": "NVIDIA Corporation",
+          "driver": "595.95",
+          "version": "OpenCL 3.0 CUDA",
+          "type": 4,
+          "double_fp_config": 63,
+          "global_memory_bytes": 12884377600,
+          "max_allocation_bytes": 3221094400
+        },
+        "kernel_sha256": "e2cd0de55e91caa4aac9885757b1f520044fd4660910e6974b094fab3d72077b",
+        "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+        "arithmetic": "binary64;explicit Float32 round-to-nearest-even boundaries",
+        "device_quota_bytes": 1073741824,
+        "retained_device_bytes": 3145728,
+        "operations": {
+          "over": 1,
+          "affine": 1,
+          "paint": 1,
+          "select_words": 1
+        },
+        "integer_media_conversion": false
+      },
+      "probe": {
+        "pixels_per_case": 65536,
+        "max_errors": {
+          "over": 0.0,
+          "affine": 0.0,
+          "paint": 0.0,
+          "select": 0.0
+        },
+        "absolute_limit": 3e-07,
+        "all_16bit_levels_present": true,
+        "actual_gpu_operations": 4
+      },
+      "maximum_host_shared_bytes": 33952,
+      "error": {
+        "code": "FLOAT_GPU_WORKER_EXIT",
+        "message": "本任务GPU进程提前退出",
+        "path": null,
+        "retryable": false,
+        "diagnostics": {
+          "returncode": 1
+        }
+      },
+      "worker_returncode": 1,
+      "shared_handles_closed": true
+    }
+  }
+]

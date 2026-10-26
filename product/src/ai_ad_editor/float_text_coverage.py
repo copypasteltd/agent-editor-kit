@@ -184,6 +184,10 @@ class CoverageSnapshot:
         return value
 
     def over(self, target, *, color=None, coverage=None, surface=None, opacity=1.):
+        gpu = self.host.gpu
+        if gpu is not None and gpu.active and surface is not None:
+            target[:] = gpu.over(target, surface, opacity, text_order=True)
+            return
         rows = max(1, TILE_PIXELS//self.width)
         for y in range(0, self.height, rows):
             self.host.poll()
@@ -204,6 +208,7 @@ class CoverageSnapshot:
 
     def evaluate(self, recipe):
         result = np.zeros((self.height, self.width, 4), np.float32)
+        gpu = self.host.gpu
         for token in filter(None, recipe.split(',')):
             if token == 'null':
                 continue
@@ -213,17 +218,24 @@ class CoverageSnapshot:
             if 'selection' in node:
                 normal, active = self.evaluate(node['normal']), self.evaluate(node['active'])
                 selection = self.mask(node['selection'], binary=True)
-                rows = max(1, TILE_PIXELS//self.width)
-                for y in range(0, self.height, rows):
-                    self.host.poll()
-                    selected = selection[y:y+rows] != 0
-                    normal[y:y+rows][selected] = active[y:y+rows][selected]
+                if gpu is not None and gpu.active:
+                    normal = gpu.select(normal, active, selection)
+                else:
+                    rows = max(1, TILE_PIXELS//self.width)
+                    for y in range(0, self.height, rows):
+                        self.host.poll()
+                        selected = selection[y:y+rows] != 0
+                        normal[y:y+rows][selected] = active[y:y+rows][selected]
                 del active, selection
                 self.over(result, surface=normal)
                 del normal
             else:
-                for component in node['components']:
-                    self.over(result, color=component['color'], coverage=self.mask(component['mask']))
+                if gpu is not None and gpu.active and node['components']:
+                    masks = np.stack([self.mask(c['mask']) for c in node['components']])
+                    result = gpu.paint(masks, [c['color'] for c in node['components']], base=result)
+                else:
+                    for component in node['components']:
+                        self.over(result, color=component['color'], coverage=self.mask(component['mask']))
         return result
 
     def render(self, plan, subtitles):
@@ -278,4 +290,5 @@ class CoverageSnapshot:
             'paints': self.paints, 'layouts': layouts, 'coverage_rasters': self.mask_records,
             'cache_hit': False, 'color_raster': 'Float32-RGBA', 'glyph_coverage_bits': 8,
             'media_pixels_in_native_graph': False, 'frame_grid_quantization': False,
-            'component_arithmetic': 'Float64 tiled;Float32 component boundary', 'tile_pixels': TILE_PIXELS}
+            'component_arithmetic': 'GPU binary64;Float32 component boundary' if self.host.gpu is not None and self.host.gpu.active else 'Float64 tiled;Float32 component boundary',
+            'GPU': self.host.gpu is not None and self.host.gpu.active, 'tile_pixels': TILE_PIXELS}

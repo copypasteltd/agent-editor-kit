@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "old_installation": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.33\\final-r1\\installed",
+  "final_installation": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.33\\final-r2\\installed",
+  "changed_product_files": [
+    "procedural_cli.py",
+    "utils.py"
+  ],
+  "byte_identical_product_files": 231,
+  "pixel_and_GPU_kernels_byte_identical": true,
+  "final_manifest_sha256": "sha256:a7736ad17900a98db06260044fb39f9849c83242c14ac96d9aec26d65d4f09c5",
+  "source_files": 233,
+  "old_core_regressions": "installed-native-regression-r1 and installed-legacy-r1 are final-r1; 231 other product files, including all pixel/GPU kernels, remain byte-identical",
+  "final_feature_tests": "Final-r2 particles/file loading/idempotency, actual GPU, native integration and legacy tests are rerun separately.",
+  "rejected_installed_candidate_retained": true
+}

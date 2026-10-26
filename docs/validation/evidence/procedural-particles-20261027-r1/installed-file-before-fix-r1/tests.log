@@ -1,0 +1,72 @@
+test_custom_source_file_is_loaded_and_seed_override_is_retained (test_procedural_particles.ParticleCLITests.test_custom_source_file_is_loaded_and_seed_override_is_retained) ... ERROR
+test_empty_explicit_signal_file_is_loaded_for_a_new_project (test_procedural_particles.ParticleCLITests.test_empty_explicit_signal_file_is_loaded_for_a_new_project) ... ERROR
+test_invalid_missing_and_oversize_JSON_return_structured_error_and_no_mutation (test_procedural_particles.ParticleCLITests.test_invalid_missing_and_oversize_JSON_return_structured_error_and_no_mutation) ... ERROR
+
+======================================================================
+ERROR: test_custom_source_file_is_loaded_and_seed_override_is_retained (test_procedural_particles.ParticleCLITests.test_custom_source_file_is_loaded_and_seed_override_is_retained)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_procedural_particles.py", line 201, in test_custom_source_file_is_loaded_and_seed_override_is_retained
+    code,value=self.call('vfx','apply','--project',self.root,'--config',path,'--clip-id','custom',
+               ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        '--duration-tick','180000','--enable-native','--seed','94')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_procedural_particles.py", line 166, in call
+    with contextlib.redirect_stdout(buf):code=cli.main(list(map(str,args)))
+                                              ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.33\final-r1\installed\site\ai_ad_editor\cli.py", line 7312, in main
+    result = handler(args)
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.33\final-r1\installed\site\ai_ad_editor\procedural_cli.py", line 79, in command
+    config=normalize(load_json(args.config))
+                     ~~~~~~~~~^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.33\final-r1\installed\site\ai_ad_editor\utils.py", line 119, in load_json
+    with path.open("r", encoding="utf-8-sig") as handle:
+         ^^^^^^^^^
+AttributeError: 'str' object has no attribute 'open'
+
+======================================================================
+ERROR: test_empty_explicit_signal_file_is_loaded_for_a_new_project (test_procedural_particles.ParticleCLITests.test_empty_explicit_signal_file_is_loaded_for_a_new_project)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_procedural_particles.py", line 207, in test_empty_explicit_signal_file_is_loaded_for_a_new_project
+    code,value=self.call('vfx','apply','--project',self.root,'--preset','rain','--duration-tick','90000',
+               ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        '--source-signals',path,'--enable-native')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_procedural_particles.py", line 166, in call
+    with contextlib.redirect_stdout(buf):code=cli.main(list(map(str,args)))
+                                              ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.33\final-r1\installed\site\ai_ad_editor\cli.py", line 7312, in main
+    result = handler(args)
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.33\final-r1\installed\site\ai_ad_editor\procedural_cli.py", line 64, in command
+    signals=load_json(args.source_signals) if args.source_signals else {}
+            ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.33\final-r1\installed\site\ai_ad_editor\utils.py", line 119, in load_json
+    with path.open("r", encoding="utf-8-sig") as handle:
+         ^^^^^^^^^
+AttributeError: 'str' object has no attribute 'open'
+
+======================================================================
+ERROR: test_invalid_missing_and_oversize_JSON_return_structured_error_and_no_mutation (test_procedural_particles.ParticleCLITests.test_invalid_missing_and_oversize_JSON_return_structured_error_and_no_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_procedural_particles.py", line 214, in test_invalid_missing_and_oversize_JSON_return_structured_error_and_no_mutation
+    code,value=self.call('vfx','apply','--project',self.root,'--config',path,'--duration-tick','90000','--enable-native')
+               ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_procedural_particles.py", line 166, in call
+    with contextlib.redirect_stdout(buf):code=cli.main(list(map(str,args)))
+                                              ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.33\final-r1\installed\site\ai_ad_editor\cli.py", line 7312, in main
+    result = handler(args)
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.33\final-r1\installed\site\ai_ad_editor\procedural_cli.py", line 79, in command
+    config=normalize(load_json(args.config))
+                     ~~~~~~~~~^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.33\final-r1\installed\site\ai_ad_editor\utils.py", line 119, in load_json
+    with path.open("r", encoding="utf-8-sig") as handle:
+         ^^^^^^^^^
+AttributeError: 'str' object has no attribute 'open'
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.671s
+
+FAILED (errors=3)

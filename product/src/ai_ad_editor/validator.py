@@ -591,10 +591,25 @@ def validate_project(root: Path, project: dict[str, Any], *, strict_rights: bool
                 track_kind = str(track.get("kind", ""))
                 generator = clip.get("generator")
                 text_generator = isinstance(generator, dict) and str(generator.get("type", "")).lower() == "text"
-                if generator is not None and (not isinstance(generator, dict) or str(generator.get("type", "")).lower() != "text"):
-                    error("GENERATOR_UNSUPPORTED", "当前片段 generator 只支持 type=text", f"{cp}.generator")
-                if generator is not None and track_kind != "subtitle":
+                particle_generator = isinstance(generator, dict) and generator.get('type') == 'particles'
+                if generator is not None and not text_generator and not particle_generator:
+                    error("GENERATOR_UNSUPPORTED", "generator 只支持 text 或版本化 particles", f"{cp}.generator")
+                if text_generator and track_kind != "subtitle":
                     error("GENERATOR_TRACK_INVALID", "文字 generator 必须位于 subtitle 轨道", f"{cp}.generator")
+                if particle_generator:
+                    if project['settings'].get('pixel_pipeline') is None:
+                        error('PARTICLE_NATIVE_PIPELINE_REQUIRED','粒子源要求明确的原生浮点 pixel_pipeline',f'{cp}.generator')
+                    if track_kind not in ('video','overlay'):
+                        error('GENERATOR_TRACK_INVALID','粒子源必须位于 video/overlay 轨道',f'{cp}.generator')
+                    try:
+                        from .procedural_particles import normalize
+                        from fractions import Fraction
+                        config=normalize(generator)
+                        tps=max(1,_int(project['settings']['timebase'].get('ticks_per_second'),1))
+                        if Fraction(_int(clip.get('source_out_tick'),0),tps)>Fraction(config['duration_tick'],config['ticks_per_second']):
+                            error('PARTICLE_SOURCE_RANGE','片段源范围超过粒子源时长',cp)
+                    except AppError as exc:
+                        error(exc.code,exc.message,f'{cp}.generator')
                 inline_text_layer = track_kind == "subtitle" and text_generator and isinstance(clip.get("subtitle"), dict)
                 cid = clip.get("id")
                 if not isinstance(cid, str) or not ID_RE.fullmatch(cid):
@@ -611,10 +626,10 @@ def validate_project(root: Path, project: dict[str, Any], *, strict_rights: bool
                     error("TIME_RANGE_INVALID", "片段时间范围无效", cp)
                 if start + dur > duration:
                     error("CLIP_OUTSIDE_SEQUENCE", "片段超出序列时长", cp)
-                if not inline_text_layer and clip.get("asset_id") not in asset_map(project) and clip.get("sequence_id") not in declared_sequence_ids:
+                if not inline_text_layer and not particle_generator and clip.get("asset_id") not in asset_map(project) and clip.get("sequence_id") not in declared_sequence_ids:
                     error("REFERENCE_MISSING", "片段引用的资产或序列不存在", cp)
-                if inline_text_layer and (clip.get("asset_id") or clip.get("sequence_id")):
-                    error("GENERATOR_REFERENCE_CONFLICT", "文字 generator 不能同时引用 asset_id 或 sequence_id", cp)
+                if (inline_text_layer or particle_generator) and (clip.get("asset_id") or clip.get("sequence_id")):
+                    error("GENERATOR_REFERENCE_CONFLICT", "generator 不能同时引用 asset_id 或 sequence_id", cp)
                 if 'sequence_clip_id' in clip:
                     try:
                         from .sequence_selection import selected

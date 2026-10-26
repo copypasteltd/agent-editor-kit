@@ -147,6 +147,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="ai-ad-editor", description="本地优先、面向 Agent 的广告视频 CLI")
     _common(parser)
     subs = parser.add_subparsers(dest="domain", required=True)
+    from .procedural_cli import add_parser as add_vfx_parser
+    add_vfx_parser(subs,_leaf_common)
 
     project = subs.add_parser("project", help="项目管理")
     ps = project.add_subparsers(dest="action", required=True)
@@ -4979,8 +4981,9 @@ def _clip_from_change(change: dict[str, Any], track: dict[str, Any]) -> dict[str
     sequence_id = change.get("nested_sequence_id")
     generator = change.get("generator")
     text_generator = isinstance(generator, dict) and str(generator.get("type", "")).lower() == "text" and isinstance(change.get("subtitle"), dict)
-    if not asset_id and not sequence_id and not text_generator:
-        raise argument_error("append_clip 必须提供 asset_id、nested_sequence_id 或有效的 text generator")
+    particle_generator = isinstance(generator,dict) and generator.get('type')=='particles'
+    if not asset_id and not sequence_id and not text_generator and not particle_generator:
+        raise argument_error("append_clip 必须提供 asset_id、nested_sequence_id 或有效的 text/particles generator")
     source_in = int(change["source_in_tick"])
     source_out = int(change["source_out_tick"])
     duration = int(change.get("duration_tick", source_out - source_in))
@@ -7088,6 +7091,7 @@ def command_diagnostics(args):
 
 
 _READ_ONLY_PROJECT_COMMANDS = {
+    ('vfx','list'),('vfx','inspect'),('vfx','show'),
     ("media", "model-session"),
     *(('semantic', action) for action in ('adapter-list','adapter-inspect','index-list','verify','calibration-list','search')),
     ('surface','inspect'),
@@ -7268,6 +7272,8 @@ from .ad_storyboard_cli import ACTIONS as STORYBOARD_ACTIONS, command as storybo
 COMMANDS.update({('ad', action): (lambda args: storyboard_command(args, _envelope, _operation)) for action in STORYBOARD_ACTIONS})
 from .motion_pack_cli import command as motion_pack_command
 COMMANDS[('motion', 'pack')] = lambda args: motion_pack_command(args, _envelope, _operation)
+from .procedural_cli import command as command_vfx
+COMMANDS.update({('vfx',action):command_vfx for action in ('list','inspect','apply','update','show')})
 
 
 def main(argv: list[str] | None = None) -> int:

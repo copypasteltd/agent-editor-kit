@@ -9,7 +9,33 @@
 本頁包含完整功能模塊、服務與依賴、安裝與使用邏輯、Skill 輸入輸出、真實案例和核驗表。長篇原始驗收日志繼續留檔，功能說明與案例入口恢復到首頁。
 
 
-<!-- model-session-current -->
+<!-- procedural-particles-current -->
+
+**CLI0.1.35 / alpha.4-local.33 / r36 kit · 1 Skill / 17 modules.**
+
+新增可編輯程序化粒子：雪、彩紙、餘燼、光斑、斜雨、星芒。來源參數、seed和獨立幀率直接儲存在工程；原生Float32合成、實際OpenCL光柵化、一般關鍵幀/裁切/倒放、預覽、佇列及工程包/OTIO回讀已接通。六宮格由已註冊安裝版Skill實際渲染，未使用模型或第三方影像。
+
+```powershell
+$aekSkills = if ($env:CODEX_HOME) { Join-Path $env:CODEX_HOME 'skills' } else { Join-Path $env:USERPROFILE '.codex/skills' }
+$avk = Join-Path $aekSkills 'agent-ffmpeg-local-editor/scripts/run.ps1'
+$avkProject = 'E:/dev/sandbox/particle-demo'
+& $avk project init $avkProject
+& $avk vfx list
+& $avk vfx inspect --name snow
+& $avk vfx apply --project $avkProject --preset snow --seed 73 --clip-id snow --duration-tick 360000 --enable-native --dry-run
+& $avk vfx apply --project $avkProject --preset snow --seed 73 --clip-id snow --duration-tick 360000 --enable-native
+& $avk vfx show --project $avkProject --clip-id snow
+```
+
+[Workflow / parameters](docs/product/PROCEDURAL_PARTICLES.md) · [C45](docs/product/CASES.md#c45-procedural-particles) · [Install](docs/releases/CLI_0.1.35_LOCAL.md) · [Evidence](docs/validation/可编辑粒子实测_2026-10-27.md)
+
+![Actual registered Skill GPU output, annotated GIF](docs/assets/procedural-particles-20261027-r3/particle-grid.gif)
+
+目前為二維診斷效果；沒有三維碰撞、深度遮擋、流體或發射器參數關鍵幀。舊FFmpeg圖明確拒絕此來源；完整剪映等價與全部38項原關閉條件持續保留。
+
+<!-- /procedural-particles-current -->
+
+<!-- model-session-history -->
 
 **CLI0.1.34 / alpha.4-local.32 / r35 kit · 1 Skill / 17 modules.**
 
@@ -34,7 +60,7 @@ try {
 
 ![Measured session timing; not generated model imagery](docs/assets/model-session-20261027-r1/timing.png)
 
-<!-- /model-session-current -->
+<!-- /model-session-history -->
 
 <!-- video-generation-current -->
 
@@ -656,7 +682,7 @@ flowchart LR
 5. 若需要選型，展示原圖與少量候選，記錄最終 ID/強度/作用域；在目標素材上復試。
 6. 渲染至工程內新路徑，檢查實際編碼文件、manifest、warning、音畫與權利，再導出專案包。
 
-## 完整的 62 個功能模組
+## 完整的 63 個功能模組
 
 編號用於定位文件；各模塊有依賴與交叉，不是“43 個獨立內核”或完成率。下表直接寫明行為、入口與限制；[完整機器能力清單及每項契約](docs/product/CAPABILITIES.zh-TW.md)保留全部字段。
 
@@ -724,6 +750,7 @@ flowchart LR
 | F60 | 原生跟蹤與烘焙交付 | 實際alpha/5類遮罩/59轉場足跡；剪輯與共享變速保留觀察；原生烘焙逐幀核驗並保留來源旁車。 | `media track-bind; timeline compose/edit; convert export --bake-tracking` | 目前凍結圖/FPS；20,000幀/256,000求值；無法表達的整數步進拒絕；外部播放器與自然身分/遮擋待驗收。 |
 | F61 | 本地GPU影片生成 | 文生、圖生、尾幀/首尾幀；原文提示/取樣、真實模型視窗、可編輯入軌、端點核驗、可移植配方與受管恢復。 | `media adapter; media generate` | 既有原生VACE/CUDA依賴；無聲8bit SDR；條件端點合成保留；自然品質/生成權利/完整剪映AI待驗收。 |
 | F62 | 原生GPU模型會話 | 同工程/適配器/提示詞重用權重與嵌入；每任務重設，活連線傳遞持鎖雜湊；取消、期限、閒置及任務數退出。 | `media model-session; media generate --model-session` | 原生Windows VACE；首條仍載入；新提示詞須新會話，串行執行；非全域顯存預留/多GPU。 |
+| F63 | 可編輯程序化粒子 | 六種原創配方、五形狀、seed/獨立CFR/發射器；實際GPU分塊光柵化與線性透明合成。支援一般剪輯、預覽、佇列、工程包及本地OTIO往返。 | `vfx list/inspect/apply/update/show` | 原生浮點管線；CPU負責hash/運動/分塊；16發射器、4096活粒子、128Mi候選像素/幀；無3D/碰撞/深度。 |
 
 ## 支持的服務模塊與依賴
 
@@ -851,7 +878,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.32/final-r3/installed/`，CLI 0.1.34；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
+本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.33/final-r2/installed/`，CLI 0.1.35；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1283,6 +1310,12 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R239 | 2026-10-27 native GPU sessions | 已註冊統一Skill渲染原/遷移工程，全部128個30FPS幀解碼一致；51個12FPS來源幀、作者4.25秒與編碼128/30秒分開記錄；實際GIF/包保留本機。 | [Evidence](docs/validation/evidence/model-session-20261027-r1/render-roundtrip-r2/verification.json) |
 | R240 | 2026-10-27 native GPU sessions | 一個入口/17內部模組/75 Skill檔案；r35 kit116檔案，獨立目錄解包/登記/目前宣告/說明/舊圖渲染計畫與包校驗逾時保護，未改變實際發現目錄。 | [Evidence](docs/validation/evidence/model-session-20261027-r1/kit-r3/verification.json) |
 | R241 | 2026-10-27 native GPU sessions | 三語62功能/21服務/75宣告、完整流程、C44/實測/版本雜湊與Skill同步；235歷史R列及38原關閉條件保留；開發失敗與未接納候選分開留證。 | [Evidence](docs/validation/evidence/model-session-20261027-r1/development-attempts-r2/verification.json) |
+| R242 | 2026-10-27 editable particles | CLI0.1.35/local.33：233產品檔案/Schema與新離線包一致；最終安裝版粒子19、GPU1、集成5及舊流程192分開通過。原生回歸427於首候選通過；最終檔案讀取/冪等修復及231檔案位元組對應另驗。 | [Evidence](docs/validation/evidence/procedural-particles-20261027-r1/installation-final-r2/verification.json) |
+| R243 | 2026-10-27 editable particles | 實際RTX/OpenCL：六配方18幀加五形狀5幀共23次光柵化，預乘顏色/alpha與CPU獨立後端對照；seed、隨機存取、邊角、透明度與資源准入有獨立數值測試。 | [Evidence](docs/validation/evidence/procedural-particles-20261027-r1/installed-particle-gpu-r3/verification.json) |
+| R244 | 2026-10-27 editable particles | C45由實際註冊Skill生成48幀/12FPS六宮格，288次粒子GPU調度；可編輯工程包遷移後所有解碼幀相同。GIF額外加了編號/英文標籤；原片、純色背景和配方保留。 | [Evidence](docs/validation/evidence/procedural-particles-20261027-r1/case-r3/verification.json) |
+| R245 | 2026-10-27 editable particles | 安裝版實際編碼/完整PCM、預覽命中與seed失效、佇列、分割及巢狀倒放、工程包/OTIO往返通過；OTIO背景色遺漏已修復。原生時鐘與核驗範圍分開記。 | [Evidence](docs/validation/evidence/procedural-particles-20261027-r1/installed-integration-r2/verification.json) |
+| R246 | 2026-10-27 editable particles | 一個入口/17內部模組/76 Skill檔案；r36 kit於獨立目錄解包/註冊，vfx查詢/說明與既有原生渲染計畫實測；未切換實際發現目錄，不含應用和模型大包。 | [Evidence](docs/validation/evidence/procedural-particles-20261027-r1/kit-r1/verification.json) |
+| R247 | 2026-10-27 editable particles | 三語63功能/21服務/76能力、完整流程、C45媒體、安裝雜湊與Skill同步；241歷史R列和38原關閉條件保留。參數檔案讀取失敗和未接納候選原樣留證。 | [Evidence](docs/validation/evidence/procedural-particles-20261027-r1/development-attempts-r1/verification.json) |
 
 ## 當前邊界與開發方向
 

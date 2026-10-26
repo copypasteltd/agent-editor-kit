@@ -1,0 +1,16 @@
+{
+  "status": "failed",
+  "started_at_utc": "2026-10-26T18:35:26.456847+00:00",
+  "native_windows": true,
+  "source_fallback": false,
+  "synthetic_diagnostic": true,
+  "natural_quality_accepted": false,
+  "listening_accepted": false,
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.33\\final-r1\\installed",
+  "manifest_sha256": "sha256:de62eed4b511e25b80d3c7f332965861540b8b92081861204277104093916b1f",
+  "native_tools": {
+    "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+    "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.EXE": "70872c3ffbc43d0b2c570f9837f54d6e9a832f4ca25463e9735b6a3ec0621478"
+  },
+  "error": "AssertionError(('apply-snow', b'', b'Traceback (most recent call last):\\r\\n  File \"E:\\\\dev\\\\sandbox\\\\AI\\xe5\\xb9\\xbf\\xe5\\x91\\x8a\\xe5\\x89\\xaa\\xe8\\xbe\\x91\\\\local\\\\agent-ffmpeg\\\\v0.1.0-alpha.4-local.33\\\\final-r1\\\\installed\\\\run.py\", line 7, in <module>\\r\\n    raise SystemExit(main())\\r\\n                     ~~~~^^\\r\\n  File \"E:\\\\dev\\\\sandbox\\\\AI\\xe5\\xb9\\xbf\\xe5\\x91\\x8a\\xe5\\x89\\xaa\\xe8\\xbe\\x91\\\\local\\\\agent-ffmpeg\\\\v0.1.0-alpha.4-local.33\\\\final-r1\\\\installed\\\\site\\\\ai_ad_editor\\\\cli.py\", line 7312, in main\\r\\n    result = handler(args)\\r\\n  File \"E:\\\\dev\\\\sandbox\\\\AI\\xe5\\xb9\\xbf\\xe5\\x91\\x8a\\xe5\\x89\\xaa\\xe8\\xbe\\x91\\\\local\\\\agent-ffmpeg\\\\v0.1.0-alpha.4-local.33\\\\final-r1\\\\installed\\\\site\\\\ai_ad_editor\\\\procedural_cli.py\", line 79, in command\\r\\n    config=normalize(load_json(args.config))\\r\\n                     ~~~~~~~~~^^^^^^^^^^^^^\\r\\n  File \"E:\\\\dev\\\\sandbox\\\\AI\\xe5\\xb9\\xbf\\xe5\\x91\\x8a\\xe5\\x89\\xaa\\xe8\\xbe\\x91\\\\local\\\\agent-ffmpeg\\\\v0.1.0-alpha.4-local.33\\\\final-r1\\\\installed\\\\site\\\\ai_ad_editor\\\\utils.py\", line 119, in load_json\\r\\n    with path.open(\"r\", encoding=\"utf-8-sig\") as handle:\\r\\n         ^^^^^^^^^\\r\\nAttributeError: \\'str\\' object has no attribute \\'open\\'\\r\\n'))"
+}

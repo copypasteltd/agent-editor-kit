@@ -188,7 +188,7 @@ class FloatRenderContext:
                 for clip in track['clips']:
                     if clip.get('sequence_id'):
                         collect(clip['sequence_id'], (*parents, sequence_id))
-                    else:
+                    elif not (isinstance(clip.get('generator'),dict) and clip['generator'].get('type')=='particles'):
                         needed.add(clip.get('asset_id'))
         collect(self.sequence['id'])
         if len(needed) > self.config['max_open_sources']:
@@ -200,7 +200,7 @@ class FloatRenderContext:
                   ('float_standard_render', 'float_stream', 'float_audio_graph', 'render', 'float_color_signal',
                    'float_timeline', 'float_tracking', 'bindings', 'animation', 'float_crop', 'float_adjustments', 'float_effect_chain', 'float_transitions', 'float_transition_plan', 'source_transitions',
                    'float_text','float_text_paint','float_text_coverage','text_paint','text_layout','text_highlight','text_typing','captions',
-                   'float_gpu','float_gpu_native','float_gpu_worker')]
+                   'float_gpu','float_gpu_native','float_gpu_worker','procedural_particles')]
         self.artifacts = [artifact_entry(p, 'standard-float-render-runtime') for p in paths]
         context = IndexContext(self.root, persist=not self.dry_run, cancel_file=self.marker)
         per_source = min(256 * 1024**2, self.config['max_source_cache_bytes'] // max(1, len(needed)))
@@ -209,6 +209,13 @@ class FloatRenderContext:
                              cache_limit_is_process_RSS_limit=False, artifacts=self.artifacts)
         from .sequence_canvas import sequence_canvas
         planned_pixels = max(c['width']*c['height'] for c in [sequence_canvas(self.project, s) for s in sequences.values()])
+        for sequence in sequences.values():
+            for track in sequence['tracks']:
+                for clip in track['clips']:
+                    generator=clip.get('generator') or {}
+                    if generator.get('type')=='particles':
+                        from .procedural_particles import normalize
+                        c=normalize(generator)['canvas'];planned_pixels=max(planned_pixels,c['width']*c['height'])
         for asset_id in sorted(needed):
             self.poll()
             asset = assets.get(asset_id)

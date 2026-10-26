@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.34 / alpha.4-local.32 / r35 kit · 1 Skill / 17 modules / 75 files.**
+**CLI0.1.35 / alpha.4-local.33 / r36 kit · 1 Skill / 17 modules / 76 files.**
 
-Explicit native GPU sessions add start/status/stop and reuse weights plus the same prompt embeddings. Scheduler, prior-frame context and metrics reset per job. This host measured 654.27s for the first generation and 35.46/28.48s for the next two; session-wide model verification adds 480.42s separately. Same-seed replay matches all 17 decoded frames. Cancellation during real denoising rolls back and exits only the owned process.
+Editable procedural snow, confetti, embers, bokeh, rain and sparkles now retain their parameters, seed and independent FPS in the project. Native Float32 composition, actual OpenCL rasterization, normal clip keys/cuts/reverse, preview, queues and package/OTIO reimport share the editable source. The six-cell scene is rendered through the registered installed Skill with no models or third-party footage.
 
-[Model session workflow](MODEL_SESSIONS.md)
+[Particle workflow and limits](PROCEDURAL_PARTICLES.md)
 
 <!-- /community-current -->
 

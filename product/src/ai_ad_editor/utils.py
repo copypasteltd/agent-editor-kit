@@ -88,7 +88,7 @@ def request_fingerprint(command: str, args: Any) -> str:
     values = dict(vars(args)) if hasattr(args, "__dict__") else dict(args)
     for field in ("request_id", "format", "progress", "idempotency_key", "dry_run"):
         values.pop(field, None)
-    for field in ("project", "input", "output", "variables", "report", "rules", "corrections", "transcript"):
+    for field in ("project", "input", "output", "variables", "report", "rules", "corrections", "transcript", "config", "source_signals"):
         value = values.get(field)
         if not isinstance(value, str) or not value:
             continue
@@ -100,7 +100,7 @@ def request_fingerprint(command: str, args: Any) -> str:
         # Output/report files and project.json are products of the operation.
         # Hashing their new contents would invalidate an otherwise identical
         # replay as soon as the first operation succeeded.
-        if field in {"input", "variables", "rules", "corrections", "transcript"} and candidate.is_file():
+        if field in {"input", "variables", "rules", "corrections", "transcript", "config", "source_signals"} and candidate.is_file():
             try:
                 values[field + "_sha256"] = sha256_file(candidate)
             except OSError:

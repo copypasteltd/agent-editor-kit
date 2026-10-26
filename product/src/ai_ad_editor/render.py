@@ -887,6 +887,7 @@ def render_fingerprints(project: dict[str, Any], sequence: dict[str, Any], setti
     asset_ids: set[str] = set()
     local_files: set[str] = set()
     seen_sequences: set[str] = set()
+    particle_sources: list[dict[str, Any]] = []
 
     def collect(sequence_value: dict[str, Any]) -> None:
         sequence_id = str(sequence_value.get("id"))
@@ -895,6 +896,8 @@ def render_fingerprints(project: dict[str, Any], sequence: dict[str, Any], setti
         seen_sequences.add(sequence_id)
         for track in sequence_value.get("tracks", []):
             for clip in track.get("clips", []):
+                if isinstance(clip.get('generator'),dict) and clip['generator'].get('type')=='particles':
+                    particle_sources.append(clip['generator'])
                 if clip.get("asset_id"):
                     asset_ids.add(str(clip.get("asset_id")))
                 subtitle = clip.get("subtitle") if isinstance(clip.get("subtitle"), dict) else {}
@@ -910,6 +913,9 @@ def render_fingerprints(project: dict[str, Any], sequence: dict[str, Any], setti
     collect(sequence)
     assets = {str(asset.get("id")): asset for asset in project.get("assets", []) if asset.get("id") in asset_ids}
     input_hashes: dict[str, str | None] = {}
+    if particle_sources:
+        for name in ('procedural_particles','float_timeline','float_gpu','float_gpu_worker','float_gpu_native'):
+            input_hashes['runtime:particles:'+name]='sha256:'+sha256_file(Path(__file__).with_name(name+'.py'))
     for asset_id in sorted(assets):
         asset = assets[asset_id]
         digest = asset.get("sha256")
@@ -3974,6 +3980,9 @@ def build_filter_graph(root: Path, project: dict[str, Any], sequence: dict[str, 
                        _audio_clock_context=None,
                        _projection_runtime=None,
                        _cancel_file: Path | None = None) -> tuple[list[str], str, list[dict[str, Any]], list[dict[str, Any]]]:
+    if any(isinstance(c.get('generator'),dict) and c['generator'].get('type')=='particles'
+           for s in project['sequences'] for t in s['tracks'] for c in t['clips']):
+        raise AppError('PARTICLE_NATIVE_PIPELINE_REQUIRED','可编辑粒子源要求显式的原生浮点 pixel_pipeline；旧版图不会静默丢弃生成器',exit_code=2)
     if any('sequence_clip_id' in c for s in project['sequences'] for t in s['tracks'] for c in t['clips']):
         raise AppError('SEQUENCE_SELECTION_NATIVE_REQUIRED', '作者单片段输出必须由浮点宿主渲染；音频需先编译独立选择实例', exit_code=2)
     if _frame_index_context is None:

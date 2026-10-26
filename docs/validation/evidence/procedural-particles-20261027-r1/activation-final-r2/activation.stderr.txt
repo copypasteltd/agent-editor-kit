@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\scripts\activate_community_runtime.py", line 131, in <module>
+    main()
+    ~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\scripts\activate_community_runtime.py", line 54, in main
+    raise ValueError('Skill inventory changed: ' + row['path'])
+ValueError: Skill inventory changed: skills/agent-ffmpeg-local-editor/references/procedural-particles.md

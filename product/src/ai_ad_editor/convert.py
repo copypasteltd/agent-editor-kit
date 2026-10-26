@@ -423,6 +423,11 @@ def _export_otio(root: Path, project: dict[str, Any], output: Path) -> dict[str,
             elif isinstance(clip.get("generator"), dict) and str(clip["generator"].get("type", "")).lower() == "text" and isinstance(clip.get("subtitle"), dict):
                 child["media_reference"] = {"OTIO_SCHEMA": "GeneratorReference.1", "generator_kind": "Text"}
                 items.append(report_item("text-generator", "Mapped", str(clip.get("id")), child["name"], "文字生成器保留为 GeneratorReference，并在 ai_ad_editor metadata 保存完整片段"))
+            elif isinstance(clip.get('generator'),dict) and clip['generator'].get('type')=='particles':
+                child['media_reference']={'OTIO_SCHEMA':'GeneratorReference.1','generator_kind':'AgentParticles',
+                    'parameters':copy.deepcopy(clip['generator'])}
+                items.append(report_item('particle-generator','Mapped',str(clip.get('id')),child['name'],
+                    '版本化粒子源完整保存于 Agent metadata；外部 OTIO 播放器不保证渲染该生成器'))
             else:
                 items.append(report_item("media-reference", "Failed", str(clip.get("asset_id")), child["name"], "片段没有可导出的本地资产或受支持的文字生成器"))
                 cursor_tick = max(cursor_tick, timeline_start_tick + duration_tick)
@@ -442,6 +447,10 @@ def _export_otio(root: Path, project: dict[str, Any], output: Path) -> dict[str,
                                      "project_canvas": sequence_canvas(project, {'canvas':None})}},
         "tracks": {"OTIO_SCHEMA": "Stack.1", "name": "tracks", "children": tracks},
     }
+    if any(isinstance(c.get('generator'),dict) and c['generator'].get('type')=='particles'
+           for t in sequence.get('tracks',[]) for c in t.get('clips',[])):
+        payload['metadata']['ai_ad_editor']['particle_render_settings']={k:copy.deepcopy(v)
+            for k,v in project['settings'].items() if k in ('canvas','pixel_pipeline','color','output','projection_acceleration','sequence_sampling','acceleration')}
     atomic_write_json(output, payload)
     report = {"report_version": "0.1.0", "direction": "export", "source_format": "agent-project/0.1.0", "target_format": "opentimelineio-json", "created_at": now_iso(), "items": items, "warnings": [item for item in items if item["status"] in {"Approximate", "Unsupported"}], "failures": [item for item in items if item["status"] == "Failed"]}
     report_path = output.with_suffix(output.suffix + ".conversion-report.json")
@@ -616,6 +625,8 @@ def _import_otio(source: Path, destination: Path, payload: dict[str, Any]) -> tu
     import_tps = int(project["settings"]["timebase"]["ticks_per_second"])
     report_items: list[dict[str, Any]] = [report_item("project-model", "Mapped", "OpenTimelineIO", "Agent Project JSON", "标准 Stack/Track/Gap/Clip 以及 ai_ad_editor metadata 已映射到本地时间线")]
     asset_by_uri: dict[str, dict[str, Any]] = {}
+    native_asset_ids={}
+    particle_settings=local.get('particle_render_settings')
     raw_tracks = payload.get("tracks")
     if isinstance(raw_tracks, dict):
         raw_tracks = raw_tracks.get("children", [])
@@ -627,6 +638,7 @@ def _import_otio(source: Path, destination: Path, payload: dict[str, Any]) -> tu
         local = metadata.get("ai_ad_editor") if isinstance(metadata.get("ai_ad_editor"), dict) else {}
         raw_kind = str(local.get("track_kind", otio_track.get("kind", "video"))).lower()
         kind = "audio" if raw_kind == "audio" else "subtitle" if raw_kind == "subtitle" else "video"
+        if raw_kind=='overlay' and particle_settings is not None:kind='overlay'
         requested_id = str(local.get("track_id") or otio_track.get("name") or f"track_{kind}_{track_index + 1}")
         try:
             order = int(local.get("track_order", track_index))
@@ -687,7 +699,9 @@ def _import_otio(source: Path, destination: Path, payload: dict[str, Any]) -> tu
                     asset_by_uri[key] = asset
                 asset = asset_by_uri[key]
             elif str(ref.get("OTIO_SCHEMA", "")).startswith("GeneratorReference.") and preserved_clip.get("generator"):
-                report_items.append(report_item("text-generator", "Mapped", str(child.get("name")), track.get("id"), "GeneratorReference 通过 ai_ad_editor metadata 恢复为本地文字片段"))
+                kind=preserved_clip['generator'].get('type')
+                report_items.append(report_item(kind+'-generator', 'Mapped',str(child.get('name')),track.get('id'),
+                    'GeneratorReference 通过 Agent metadata 恢复完整本地生成器；其他播放器不保证渲染'))
             else:
                 report_items.append(report_item("media-reference", "Unsupported", str(child.get("name", child_index)), track.get("id"), "缺少本地 target_url 或可恢复的本地生成器"))
                 continue
@@ -714,11 +728,18 @@ def _import_otio(source: Path, destination: Path, payload: dict[str, Any]) -> tu
                 clip = {"id": str(child.get("name") or new_id("clip")), "timeline_start_tick": timeline_start, "duration_tick": duration_tick, "source_in_tick": source_in_tick, "source_out_tick": source_in_tick + duration_tick}
             if asset:
                 clip["asset_id"] = asset["id"]
+                if local_metadata.get('asset_id'):native_asset_ids[local_metadata['asset_id']]=asset['id']
             else:
                 clip.pop("asset_id", None)
             track.setdefault("clips", []).append(clip)
             current_tick = max(current_tick, timeline_start + int(clip.get("duration_tick", duration_tick)))
             sequence["duration_tick"] = max(sequence["duration_tick"], current_tick)
+    if particle_settings is not None:
+        if not isinstance(particle_settings,dict) or set(particle_settings)-{'canvas','pixel_pipeline','color','output','projection_acceleration','sequence_sampling','acceleration'}:
+            raise ValueError('OTIO粒子渲染设置字段无效')
+        project['settings'].update(copy.deepcopy(particle_settings))
+        pipeline=project['settings'].get('pixel_pipeline') or {}
+        pipeline['sources']={native_asset_ids[k]:v for k,v in pipeline.get('sources',{}).items() if k in native_asset_ids}
     save_project(root, project)
     save_ledger(root, ledger)
     return root, project, report_items

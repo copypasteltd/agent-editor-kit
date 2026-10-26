@@ -82,13 +82,18 @@ def _handles(project, track, clip, head, tail, assets):
     if clip.get('blend') or any(k.get('property') in {'blend.opacity', 'blend_opacity'} for k in clip.get('keyframes', [])):
         fail('SOURCE_TRANSITION_CLIP_UNSUPPORTED', '单片段混合模式/混合透明度尚无转场前的独立合成语义')
     asset = assets.get(clip.get('asset_id'), {})
-    if asset.get('kind') not in ({'video'} if track.get('kind') == 'video' else {'video', 'audio'}):
+    particle=isinstance(clip.get('generator'),dict) and clip['generator'].get('type')=='particles'
+    if not particle and asset.get('kind') not in ({'video'} if track.get('kind') == 'video' else {'video', 'audio'}):
         fail('SOURCE_TRANSITION_CLIP_UNSUPPORTED', '真实句柄只接受本地视频及显式音轨媒体；图片/生成器另行验收')
     source_in = integer(clip.get('source_in_tick'), 'source_in_tick')
     source_out = integer(clip.get('source_out_tick'), 'source_out_tick', positive=True)
     try:
         speed = Fraction(str(clip.get('speed', 1)))
-        bound = Fraction(str(asset['probe']['duration_seconds'])) * project['settings']['timebase']['ticks_per_second']
+        if particle:
+            from .source_edits import source_bounds
+            bound=source_bounds(project,clip)['end_tick']
+        else:
+            bound = Fraction(str(asset['probe']['duration_seconds'])) * project['settings']['timebase']['ticks_per_second']
     except (KeyError, ValueError, TypeError, ZeroDivisionError):
         fail('SOURCE_TRANSITION_SOURCE_BOUND', '源时长或速度未登记为有限数值')
     if speed <= 0 or source_out-source_in != speed*duration:

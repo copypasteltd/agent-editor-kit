@@ -2,15 +2,11 @@
 
 <!-- community-current -->
 
-**CLI 0.1.33 / alpha.4-local.31 / r34 kit · 1 Skill / 17 modules.**
+**CLI0.1.35 / alpha.4-local.33 / r36 kit · 1 Skill / 17 modules / 76 files.**
 
-Native CUDA text/image/last/first-last video generation, independently verified retained endpoints, portable recipes, editable clips and managed recovery; frame-verified native tracking bake with ordinary hold keys and original source sidecars; actual rendered source alpha and five masks, 59 edge/paired transition point/ROI footprints with retained density and peer-cycle preflight, independent spatial-edge retime; shared-author tracking dependency retime with selected layer outputs, deferred scalar alpha/external blend order, private audio instances and retained outside routes; magnetic synchronized native source/follower partition and pre-cut lineage repair; native-PTS physical source slip/real extension/source-handle roll/slide with per-fragment author offsets and rational constant clocks; split/trim/ripple/range editing with retained source fragments, pinned ROI references, hidden removed-source followers and locked-reference atomic guards; dynamic tracking with shared crop/TRS geometry, editable source observations and overlay child audio; ordered global/interval Float32 grading at the selected root with authored clocks and locked portable LUTs; explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+新增可編輯程序化粒子：雪、彩紙、餘燼、光斑、斜雨、星芒。來源參數、seed和獨立幀率直接儲存在工程；原生Float32合成、實際OpenCL光柵化、一般關鍵幀/裁切/倒放、預覽、佇列及工程包/OTIO回讀已接通。六宮格由已註冊安裝版Skill實際渲染，未使用模型或第三方影像。
 
-[Video generation workflow](VIDEO_GENERATION.md) · [Tracking bake workflow](TRACKING_BAKE.md) · [Tracking visibility workflow](TRACKING_VISIBILITY.md) · [Shared-author retime workflow](TRACKING_RETIME.md) · [Magnetic tracking workflow](TRACKING_MAGNETIC.md) · [Tracked source workflow](TRACKING_SOURCE_EDITS.md) · [Tracking edit workflow](TRACKING_EDITS.md) · [Native tracking workflow](FLOAT_TRACKING.md) · [Float32 adjustment workflow](FLOAT_ADJUSTMENTS.md) · [Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](model-session-capabilities-cli-0.1.34.json). Full target conditions remain open.
-
-新增原生 GPU 模型會話：明確啟動、查詢、停止，連續生成重用權重與同一提示詞嵌入；每個任務重設 scheduler、前窗上下文及統計。實際同機首條生成 654.27 秒，後兩條 35.46/28.48 秒；會話全模型校驗另計 480.42 秒。相同 seed 的 17 幀逐像素一致，實際去噪取消可回滾並退出所屬行程。
-
-[Model sessions](MODEL_SESSIONS.md)
+[Particle workflow and limits](PROCEDURAL_PARTICLES.md)
 
 <!-- /community-current -->
 
@@ -80,6 +76,7 @@ Native CUDA text/image/last/first-last video generation, independently verified 
 | F60 | 原生跟蹤與烘焙交付 | 實際alpha/5類遮罩/59轉場足跡；剪輯與共享變速保留觀察；原生烘焙逐幀核驗並保留來源旁車。 | `media track-bind; timeline compose/edit; convert export --bake-tracking` | 目前凍結圖/FPS；20,000幀/256,000求值；無法表達的整數步進拒絕；外部播放器與自然身分/遮擋待驗收。 |
 | F61 | 本地GPU影片生成 | 文生、圖生、尾幀/首尾幀；原文提示/取樣、真實模型視窗、可編輯入軌、端點核驗、可移植配方與受管恢復。 | `media adapter; media generate` | 既有原生VACE/CUDA依賴；無聲8bit SDR；條件端點合成保留；自然品質/生成權利/完整剪映AI待驗收。 |
 | F62 | 原生GPU模型會話 | 同工程/適配器/提示詞重用權重與嵌入；每任務重設，活連線傳遞持鎖雜湊；取消、期限、閒置及任務數退出。 | `media model-session; media generate --model-session` | 原生Windows VACE；首條仍載入；新提示詞須新會話，串行執行；非全域顯存預留/多GPU。 |
+| F63 | 可編輯程序化粒子 | 六種原創配方、五形狀、seed/獨立CFR/發射器；實際GPU分塊光柵化與線性透明合成。支援一般剪輯、預覽、佇列、工程包及本地OTIO往返。 | `vfx list/inspect/apply/update/show` | 原生浮點管線；CPU負責hash/運動/分塊；16發射器、4096活粒子、128Mi候選像素/幀；無3D/碰撞/深度。 |
 
 | 編號 | 服務模塊 | 運行形式 | 需要什么/提供什么 | 入口 | 範圍 |
 |---|---|---|---|---|---|
@@ -4754,3 +4751,87 @@ Complex negation, natural actions/identity/audio/recommendation, large-library p
 Original CLI 0.1.5 query failures and raw mode remain historical evidence; they are not erased by this extension.
 
 <!-- /semantic-decisions-current -->
+
+
+### `procedural_particles`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "analytic-seeded-particle-source-v1",
+  "catalog_version": "1.0.0",
+  "recipes": [
+    "snow",
+    "confetti",
+    "embers",
+    "bokeh",
+    "rain",
+    "sparkles"
+  ],
+  "commands": [
+    "vfx.list",
+    "vfx.inspect",
+    "vfx.apply",
+    "vfx.update",
+    "vfx.show"
+  ],
+  "source": "editable_clip_generator_not_baked_media",
+  "network": false,
+  "external_assets": [],
+  "license": "MIT",
+  "backend": "explicit_native_linear_Float32_timeline",
+  "GPU": "render_owned_OpenCL_particle_coverage_glow_ordered_over_with_32x32_CSR_bins",
+  "CPU": [
+    "seed_hash",
+    "analytic_birth_trajectory",
+    "tile_index",
+    "color_conversion",
+    "ordinary_encoder"
+  ],
+  "source_clock": "declared_rational_CFR_half_open_intervals_exact_reverse_left_limits",
+  "integration": [
+    "native_render",
+    "native_preview",
+    "cache",
+    "persistent_queue",
+    "clip_windows",
+    "speed_curves",
+    "reverse",
+    "freeze",
+    "TRS_keys",
+    "masks",
+    "blend",
+    "nested_sequences",
+    "source_slip_and_handles",
+    "agent_json",
+    "project_package",
+    "local_OTIO_metadata_roundtrip"
+  ],
+  "limits": {
+    "emitters": 16,
+    "live_particle_reservation": 4096,
+    "pixels": 8847360,
+    "fps": [
+      1,
+      120
+    ],
+    "source_seconds": 600,
+    "candidate_pixel_visits_per_frame": 134217728
+  },
+  "unsupported": [
+    "legacy_FFmpeg_graph",
+    "emitter_parameter_keyframes",
+    "3D",
+    "collisions",
+    "depth_occlusion",
+    "fluid_simulation",
+    "AI_effect_generation",
+    "foreign_OTIO_particle_execution"
+  ],
+  "runtime_failure_CPU_fallback": false,
+  "natural_footage_quality_accepted": false,
+  "goal_G06_complete": false
+}
+```
+
+[CLI0.1.35 exact installed capability snapshot](procedural-particles-capabilities-cli-0.1.35.json).

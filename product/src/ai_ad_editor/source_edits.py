@@ -25,6 +25,11 @@ def fail(code, message, path='edit'):
 def source_bounds(project, clip):
     """Exact bounds as recorded in the local asset/sequence, in project ticks."""
     tps = project['settings']['timebase']['ticks_per_second']
+    if isinstance(clip.get('generator'),dict) and clip['generator'].get('type')=='particles':
+        from .procedural_particles import normalize, identity
+        config=normalize(clip['generator'])
+        return {'kind':'particles','source_id':identity(config),
+                'end_tick':Fraction(config['duration_tick']*tps,config['ticks_per_second'])}
     sid = clip.get('sequence_id')
     if sid:
         sequence = next((s for s in project['sequences'] if s['id'] == sid), None)

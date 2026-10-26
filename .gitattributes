@@ -1730,3 +1730,11 @@ scripts/*model_session*20261027.py text eol=lf
 docs/product/MODEL_SESSIONS.md text eol=lf
 docs/releases/CLI_0.1.34_LOCAL.md text eol=lf
 docs/validation/原生GPU模型常驻实测_2026-10-27.md text eol=lf
+
+# Preserve particle test/case receipts and their original line endings.
+docs/validation/evidence/procedural-particles-20261027-r1/** -text -whitespace
+docs/product/procedural-particles-capabilities-cli-0.1.35.json -text -whitespace
+scripts/*particle*20261027.py text eol=lf
+docs/product/PROCEDURAL_PARTICLES.md text eol=lf
+docs/releases/CLI_0.1.35_LOCAL.md text eol=lf
+docs/validation/可编辑粒子实测_2026-10-27.md text eol=lf

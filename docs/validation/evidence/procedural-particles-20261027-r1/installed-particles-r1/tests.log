@@ -1,0 +1,20 @@
+test_all_six_recipes_are_visible_and_different_without_external_assets (test_procedural_particles.ParticleTests.test_all_six_recipes_are_visible_and_different_without_external_assets) ... ok
+test_birth_trajectory_and_interior_alpha_have_independent_numeric_oracles (test_procedural_particles.ParticleTests.test_birth_trajectory_and_interior_alpha_have_independent_numeric_oracles) ... ok
+test_cancel_interrupts_scene_and_raster (test_procedural_particles.ParticleTests.test_cancel_interrupts_scene_and_raster) ... ok
+test_exact_fractional_grid_matches_half_open_media_intervals (test_procedural_particles.ParticleTests.test_exact_fractional_grid_matches_half_open_media_intervals) ... ok
+test_native_clock_reverse_split_crop_and_keyframes_keep_particle_identity (test_procedural_particles.ParticleTests.test_native_clock_reverse_split_crop_and_keyframes_keep_particle_identity) ... ok
+test_overlap_is_ordered_linear_premultiplied_over (test_procedural_particles.ParticleTests.test_overlap_is_ordered_linear_premultiplied_over) ... ok
+test_particle_slip_bounds_are_the_declared_source_not_current_author_window (test_procedural_particles.ParticleTests.test_particle_slip_bounds_are_the_declared_source_not_current_author_window) ... ok
+test_resource_limits_and_bad_parameters_fail_before_allocation (test_procedural_particles.ParticleTests.test_resource_limits_and_bad_parameters_fail_before_allocation) ... ok
+test_rotated_rectangle_corners_are_not_clipped_by_disc_bounds (test_procedural_particles.ParticleTests.test_rotated_rectangle_corners_are_not_clipped_by_disc_bounds) ... ok
+test_seek_reorder_seed_and_emitter_defaults_are_deterministic (test_procedural_particles.ParticleTests.test_seek_reorder_seed_and_emitter_defaults_are_deterministic) ... ok
+test_shapes_palette_fades_and_transparency (test_procedural_particles.ParticleTests.test_shapes_palette_fades_and_transparency) ... ok
+test_tile_indices_reject_tampering_and_unsafe_device_data (test_procedural_particles.ParticleTests.test_tile_indices_reject_tampering_and_unsafe_device_data) ... ok
+test_dry_run_apply_update_show_and_failed_change_are_transactional (test_procedural_particles.ParticleCLITests.test_dry_run_apply_update_show_and_failed_change_are_transactional) ... ok
+test_locked_tracks_and_unused_or_zero_source_arguments_are_rejected (test_procedural_particles.ParticleCLITests.test_locked_tracks_and_unused_or_zero_source_arguments_are_rejected) ... ok
+test_source_signals_and_backend_are_explicit (test_procedural_particles.ParticleCLITests.test_source_signals_and_backend_are_explicit) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 3.120s
+
+OK

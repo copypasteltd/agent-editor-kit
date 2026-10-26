@@ -865,3 +865,21 @@ C42 实际注册 Skill：36 帧 Float32 核验、工程包重导入后的36个�
 [完整实测/本机视频与GIF](../validation/原生GPU模型常驻实测_2026-10-27.md) · [使用流程](MODEL_SESSIONS.md) · [复现代码](../../scripts/run_model_session_case_20261027.py)
 
 ![Actual timing data](../assets/model-session-20261027-r1/timing.png)
+
+<a id="c45-procedural-particles"></a>
+
+## C45 · 可编辑GPU粒子 / Editable GPU particles
+
+Actual registered Skill, CLI0.1.35/local.33. Six-cell original diagnostic scene,48 frames/12FPS/4s;288 particle GPU dispatches. Seed/emitters/source FPS remain editable; all48 decoded RGB frames equal after project-package migration. No third-party media or model inference.
+
+![Before / original solid background](../assets/procedural-particles-20261027-r3/before.png)
+
+![Actual output with labels](../assets/procedural-particles-20261027-r3/contact.png)
+
+![Actual rendered output, annotated silent GIF](../assets/procedural-particles-20261027-r3/particle-grid.gif)
+
+[Actual MP4](../assets/procedural-particles-20261027-r3/particle-grid.mp4) · [Editable package](../assets/procedural-particles-20261027-r3/editable-particle-grid.aevpkg.zip) · [Recipes](../assets/procedural-particles-20261027-r3/recipes.json) · [Source/license](../assets/procedural-particles-20261027-r3/SOURCE.txt) · [Media hashes](../assets/procedural-particles-20261027-r3/media-manifest.json) · [Workflow](PROCEDURAL_PARTICLES.md) · [Evidence](../validation/可编辑粒子实测_2026-10-27.md).
+
+GIF/contact images decode the actual MP4 and add recipe numbers/English labels. GIF 48 frames/3840ms; authored MP4 is4s. Diagnostic static frame inspection, full-frame package comparison and silent audio decode are separate; no natural-footage/continuous-playback/human-listening acceptance.
+
+Actual registered-launcher wall time: original GPU render 257.676s; migrated render 264.977s. These include startup, IPC and encoding; no matched CPU timing was performed for C45, so no GPU speedup claim is made.

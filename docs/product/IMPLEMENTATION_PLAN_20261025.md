@@ -1,6 +1,9 @@
 # 完整目标实施台账（2026-10-25 起）
 
-当前本地 **CLI0.1.34 / alpha.4-local.32 / r35 kit**：[原生GPU模型会话](MODEL_SESSIONS.md)实际连续生成/同seed逐帧重放/去噪取消与安装版Skill交付；[冷热成本和资源证据](../validation/原生GPU模型常驻实测_2026-10-27.md)。全部38原关闭条件保留。
+当前本地 **CLI0.1.35 / alpha.4-local.33 / r36 kit**：[G06可编辑粒子](PROCEDURAL_PARTICLES.md)已接通原生CPU/GPU、普通编辑、预览/队列与包/本地OTIO；[真实安装版案例与边界](../validation/可编辑粒子实测_2026-10-27.md)。三维/碰撞/深度、复合效果包及全部38原关闭条件继续保留。
+
+
+此前本地 **CLI0.1.34 / alpha.4-local.32 / r35 kit**：[原生GPU模型会话](MODEL_SESSIONS.md)实际连续生成/同seed逐帧重放/去噪取消与安装版Skill交付；[冷热成本和资源证据](../validation/原生GPU模型常驻实测_2026-10-27.md)。全部38原关闭条件保留。
 
 此前本地 **CLI0.1.33 / alpha.4-local.31 / r34 kit**：[本地GPU四模式生成](VIDEO_GENERATION.md)、可编辑入轨/配方迁移/受管恢复及真实模型结果已留证；自然质量、模型与输出权利及38项原关闭条件继续保留。
 

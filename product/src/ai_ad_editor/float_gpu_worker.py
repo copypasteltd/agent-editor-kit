@@ -29,7 +29,7 @@ def read(path):
 
 def execute(gpu, request, nonce):
     op = request.get('op')
-    if op not in {'over', 'affine', 'paint', 'select'}:
+    if op not in {'over', 'affine', 'paint', 'select', 'particles'}:
         raise error('PROTOCOL', 'GPU操作未登记')
     specs = request.get('buffers')
     if not isinstance(specs, list) or len(specs) != 3:
@@ -70,7 +70,8 @@ def execute(gpu, request, nonce):
             if op == 'over': gpu.over(a, b, output, request['opacity'], text_order=request.get('text_order', False))
             elif op == 'affine': gpu.affine(b, output, request['inverse'], request['nearest'])
             elif op == 'paint': gpu.paint(b, request['colors'], output, base=a if a.dtype == np.float32 and a.ndim == 3 else None)
-            else: gpu.select(a, b, c, output)
+            elif op == 'select': gpu.select(a, b, c, output)
+            else: gpu.particles(b, c, output)
             gpu.surface(output)
         finally:
             arrays.clear()

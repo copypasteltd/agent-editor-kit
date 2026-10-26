@@ -1,0 +1,16 @@
+{
+  "status": "failed",
+  "started_at_utc": "2026-10-26T19:19:09.906716+00:00",
+  "native_windows": true,
+  "source_fallback": false,
+  "synthetic_diagnostic": true,
+  "natural_quality_accepted": false,
+  "listening_accepted": false,
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.33\\final-r2\\installed",
+  "manifest_sha256": "sha256:a7736ad17900a98db06260044fb39f9849c83242c14ac96d9aec26d65d4f09c5",
+  "native_tools": {
+    "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+    "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.EXE": "70872c3ffbc43d0b2c570f9837f54d6e9a832f4ca25463e9735b6a3ec0621478"
+  },
+  "error": "AssertionError(('render', b'{\"ok\":false,\"command\":\"render\",\"request_id\":\"req_20261026192108_5a2d3633\",\"operation_id\":null,\"status\":\"failed\",\"data\":{},\"artifacts\":[],\"warnings\":[],\"errors\":[{\"code\":\"ARGUMENT_INVALID\",\"message\":\"\\xe8\\xbe\\x93\\xe5\\x87\\xba\\xe8\\xb7\\xaf\\xe5\\xbe\\x84\\xe5\\xbf\\x85\\xe9\\xa1\\xbb\\xe4\\xbd\\x8d\\xe4\\xba\\x8e\\xe9\\xa1\\xb9\\xe7\\x9b\\xae\\xe7\\x9b\\xae\\xe5\\xbd\\x95\\xe5\\x86\\x85\",\"path\":\"E:\\\\\\\\dev\\\\\\\\sandbox\\\\\\\\AI\\xe5\\xb9\\xbf\\xe5\\x91\\x8a\\xe5\\x89\\xaa\\xe8\\xbe\\x91\\\\\\\\renders\\\\\\\\particle-grid.mp4\",\"retryable\":false}],\"provenance\":{\"cli_version\":\"0.1.35\",\"schema_version\":\"0.1.0\",\"engine_version\":\"ffmpeg-local\",\"started_at\":\"2026-10-26T19:21:08.221012Z\",\"finished_at\":\"2026-10-26T19:21:08.221019Z\",\"network\":\"disabled\"}}\\r\\n', b''))"
+}

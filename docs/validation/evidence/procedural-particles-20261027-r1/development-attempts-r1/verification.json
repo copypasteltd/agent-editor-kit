@@ -1,0 +1,85 @@
+{
+  "status": "recorded",
+  "at_utc": "2026-10-26T19:37:17.151526+00:00",
+  "final_product_files": 233,
+  "rejected_attempts": [
+    {
+      "attempt": "source-particles-r1",
+      "status": "failed",
+      "record_sha256": "2aadb7c834e1bac7f14a6f796581618bdcebdafee01f75be16a3c5544ca178f7",
+      "reason": "Test fixture read error instead of the actual errors envelope; fixture repaired."
+    },
+    {
+      "attempt": "source-integration-r1",
+      "status": "failed",
+      "record_sha256": "e2dc03bc074ead2bdb43da602baf0950b60730a63bc4c29642260282ccc6e1c7",
+      "reason": "Product OTIO native-background omission repaired; queue test was separately corrected to request its MKV container."
+    },
+    {
+      "attempt": "installed-file-before-fix-r1",
+      "status": "failed",
+      "record_sha256": "5107d44f63038bda177602ad8c50dc00c31b530b9cac122f44f7a5e069022475",
+      "reason": "Three real custom/signal-file reads failed with str.open; bounded Path-based JSON reader added."
+    },
+    {
+      "attempt": "case-r1",
+      "status": "failed",
+      "record_sha256": "a0727c0843e692ccb71f40e054ae781846e3e1d8da61a0ca83ff2dcbc3d4cfba",
+      "reason": "Actual registered Skill custom-file apply reproduced the same reader failure before any scene render."
+    },
+    {
+      "attempt": "case-r2",
+      "status": "failed",
+      "record_sha256": "8d388c346f834de05273e8ae921ae092eee2d5ba3630dbd2128205b1b2634d1e",
+      "reason": "Case runner used a cwd-relative output outside the project; the existing output containment guard rejected it. Runner/docs now use project-contained absolute output paths."
+    },
+    {
+      "attempt": "activation-final-r2",
+      "status": "rejected-before-configuration",
+      "record_sha256": "565e93d997414b4b6c91149bc1019408bff41b9d97f1d655986d1a8a2d51926a",
+      "reason": "Activation was started before the preceding inventory refresh completed; the integrity guard rejected the stale inventory. Sequential activation-final-r3 succeeded."
+    }
+  ],
+  "final_installed_groups": [
+    {
+      "attempt": "installed-particles-r2",
+      "tests": 19,
+      "record_sha256": "3e0b51543b6e033ad049b7718fca2a3142ab4df514db8233654ab1c934c042a9"
+    },
+    {
+      "attempt": "installed-particle-gpu-r3",
+      "tests": 1,
+      "record_sha256": "6a7d8a95589273c20a33d264b67d05e0784d02ba6d5bb4c75184504098d09739"
+    },
+    {
+      "attempt": "installed-integration-r2",
+      "tests": 5,
+      "record_sha256": "da9d2d8a20636c4023e986144c4ca807d28a23a690ab29416470d830dae585fb"
+    },
+    {
+      "attempt": "installed-legacy-r2",
+      "tests": 192,
+      "record_sha256": "4f905bace1621d2d4fc19210d53a1f84b8335ce666f2af26ae12555c50878987"
+    }
+  ],
+  "earlier_native_regression_tests": 427,
+  "earlier_native_regression_installation": "final-r1",
+  "changed_product_files": [
+    "procedural_cli.py",
+    "utils.py"
+  ],
+  "byte_identical_product_files": 231,
+  "pixel_and_GPU_kernels_byte_identical": true,
+  "final_legacy_regression_rerun": true,
+  "final_installed_input_file_and_idempotency_tests": true,
+  "particle_gpu_comparisons": 23,
+  "particle_cpu_max_error": 4.76837158203125e-07,
+  "C45_render_wall_seconds": {
+    "render": 257.6761791000026,
+    "render-restored": 264.9773473999958
+  },
+  "C45_matched_CPU_timing": false,
+  "retained_rejected_bundle": "local/agent-ffmpeg/v0.1.0-alpha.4-local.33/candidate-r1/bundle.zip",
+  "source_fallback": false,
+  "goal_complete": false
+}

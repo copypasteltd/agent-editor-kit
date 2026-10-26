@@ -1564,18 +1564,22 @@
           "$ref": "#/$defs/crop"
         },
         "generator": {
-          "type": "object",
-          "additionalProperties": true,
-          "properties": {
-            "type": {
-              "type": "string",
-              "enum": [
-                "text"
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "type": {
+                  "const": "text"
+                }
+              },
+              "required": [
+                "type"
               ]
+            },
+            {
+              "$ref": "#/$defs/particleGenerator"
             }
-          },
-          "required": [
-            "type"
           ]
         },
         "subtitle": {
@@ -3306,6 +3310,271 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "particleEmitter": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "rate": {
+          "type": "number",
+          "minimum": 0.01,
+          "maximum": 1024
+        },
+        "size_end": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 4
+        },
+        "aspect": {
+          "type": "number",
+          "minimum": 0.05,
+          "maximum": 20
+        },
+        "softness": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "glow": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "opacity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "fade_in": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "fade_out": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "lifetime": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number",
+            "minimum": 0.01,
+            "maximum": 120
+          }
+        },
+        "position": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number",
+            "minimum": -4,
+            "maximum": 4
+          }
+        },
+        "spread": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 8
+          }
+        },
+        "size": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number",
+            "minimum": 0.0001,
+            "maximum": 0.5
+          }
+        },
+        "rotation": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number",
+            "minimum": -36000,
+            "maximum": 36000
+          }
+        },
+        "spin": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number",
+            "minimum": -36000,
+            "maximum": 36000
+          }
+        },
+        "acceleration": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number",
+            "minimum": -8,
+            "maximum": 8
+          }
+        },
+        "sway": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 16
+          }
+        },
+        "twinkle": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 16
+          }
+        },
+        "velocity": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "number",
+              "minimum": -8,
+              "maximum": 8
+            }
+          }
+        },
+        "shape": {
+          "enum": [
+            "disc",
+            "rectangle",
+            "diamond",
+            "star",
+            "ring"
+          ]
+        },
+        "prewarm": {
+          "type": "boolean"
+        },
+        "colors": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 32,
+          "items": {
+            "type": "string",
+            "pattern": "^#[a-fA-F0-9]{6}$"
+          }
+        },
+        "color_end": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^#[a-fA-F0-9]{6}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "particleGenerator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "canvas",
+        "fps",
+        "duration_tick",
+        "ticks_per_second",
+        "emitters"
+      ],
+      "properties": {
+        "type": {
+          "const": "particles"
+        },
+        "protocol": {
+          "const": "analytic-seeded-particle-source-v1"
+        },
+        "seed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9223372036854775807
+        },
+        "canvas": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "width",
+            "height"
+          ],
+          "properties": {
+            "width": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 8192
+            },
+            "height": {
+              "type": "integer",
+              "minimum": 2,
+              "maximum": 8192
+            }
+          }
+        },
+        "fps": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "num",
+            "den"
+          ],
+          "properties": {
+            "num": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 120000
+            },
+            "den": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 120000
+            }
+          }
+        },
+        "duration_tick": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ticks_per_second": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000000000
+        },
+        "emitters": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 16,
+          "items": {
+            "$ref": "#/$defs/particleEmitter"
           }
         }
       }

@@ -43,7 +43,7 @@ class FloatGPUSession:
             'status': 'planned' if self.enabled else 'off', 'dry_run': dry_run,
             'operations': {}, 'CPU_scope': ['glyph-rasterization', 'color-conversion', 'effects', 'masks', 'crop',
                 'transitions', 'non-normal-blends', 'audio', 'delivery-encoding'],
-            'GPU_scope': ['premultiplied-affine', 'normal-source-over', 'text-color-components', 'binary-word-selection'],
+            'GPU_scope': ['premultiplied-affine', 'normal-source-over', 'text-color-components', 'binary-word-selection', 'seeded-particle-rasterization'],
             'host_shared_bytes_limit': self.config['max_working_bytes'], 'retained_host_shared_bytes': 0,
             'device_bytes_limit': self.config['max_working_bytes'], 'limits_are_peak_RSS': False,
             'free_VRAM_reserved': False, 'integer_media_conversion': False, 'worker_closed': False,
@@ -54,7 +54,7 @@ class FloatGPUSession:
         self.evidence['planned_device_bytes'] = max_pixels*48
         self.evidence['planned_host_shared_bytes'] = max_pixels*33+768
         self.artifacts = [artifact_entry(Path(__file__).with_name(name+'.py'), 'float-gpu-execution')
-                          for name in ('float_gpu', 'float_gpu_worker', 'float_gpu_native')]
+                          for name in ('float_gpu', 'float_gpu_worker', 'float_gpu_native', 'procedural_particles')]
         self.evidence['artifacts'] = self.artifacts
 
     @property
@@ -215,6 +215,11 @@ class FloatGPUSession:
     def prepare(self, args, graph):
         self.verify_programs(); self.save()
         return args, graph
+
+    def particles(self, scene, tiles, size):
+        from .procedural_particles import validate_scene
+        validate_scene(scene, tiles, size)
+        return self._call('particles', (size[1], size[0], 4), [self._dummy(), scene, tiles])
 
     def finish(self, result):
         if self.ready:

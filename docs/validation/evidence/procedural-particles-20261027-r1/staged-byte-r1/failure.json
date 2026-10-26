@@ -1,0 +1,12 @@
+{
+  "status": "failed",
+  "at_utc": "2026-10-26T20:12:53.574240+00:00",
+  "scope": "Git staging only, no product/render changes",
+  "first_mismatched_file": "docs/validation/evidence/procedural-particles-20261027-r1/activation-final-r1/activation.stdout.json",
+  "working_bytes": 737,
+  "indexed_bytes": 736,
+  "working_sha256": "c8be65e1db138c3ef9cdb248bebc51a83a28be34ef0274c2fa75670469cbfabd",
+  "indexed_sha256": "ecf7215dc0512fc11199adc606966a745137ceaa7f81550199c1bea2f19327a1",
+  "cause": "The first git add normalized CRLF before the new -text attributes were installed; ordinary add reused its stat cache. Scoped renormalization is required to store the original captured bytes.",
+  "repair": "Preserve the rejected stage attempt, run scoped git add --renormalize, then rerun full staged byte comparison as r2."
+}

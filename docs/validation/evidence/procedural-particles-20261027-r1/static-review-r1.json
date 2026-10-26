@@ -1,0 +1,22 @@
+{
+  "status": "recorded",
+  "at_utc": "2026-10-26T19:37:08.149755+00:00",
+  "static_image_review": true,
+  "image": "docs/assets/procedural-particles-20261027-r3/contact.png",
+  "image_sha256": "d177b274881f3c234ad7dfa63a335d0bea0903da5fa3d5c34fd21d3d5b1128dc",
+  "frame_index": 18,
+  "actual_encoded_output": true,
+  "post_labels": true,
+  "observations": [
+    "All six numbered labels appear in the intended three-column/two-row layout.",
+    "Snow appears as scattered white discs; confetti as multicolor rotated rectangles.",
+    "Embers are sparse warm points; bokeh has large soft pastel circles.",
+    "Rain appears as narrow tilted streaks; sparkles as scattered gold and white stars.",
+    "Dark background remains visible between translucent particles; no missing cell was observed in this frame."
+  ],
+  "continuous_playback": false,
+  "listening_accepted": false,
+  "natural_quality_accepted": false,
+  "goal_complete": false,
+  "limits": "One static decoded frame; motion is verified numerically, not by human continuous playback."
+}

@@ -6,6 +6,10 @@ Edit JSON → tracks/motion/transitions/nesting
 
 Commands: `timeline compose/edit; motion apply; motion pack list/inspect/create/capture/apply`. Explicit track/clip targets and author clocks.
 
+For seeded editable snow/confetti/embers/bokeh/rain/sparkles, read
+[procedural particles](../../procedural-particles.md). Native Float32/GPU
+sources retain their parameters and native clock through ordinary edits.
+
 ## Workflow
 
 Inspect `schema show`, `effects list` and `timeline compose --help`. Author an edit JSON with integer ticks,

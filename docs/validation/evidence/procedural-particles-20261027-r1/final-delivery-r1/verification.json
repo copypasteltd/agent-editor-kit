@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "goal_complete": false,
+  "at_utc": "2026-10-26T19:55:12.597981+00:00",
+  "native_windows": true,
+  "virtualization": false,
+  "source_fallback": false,
+  "cli_version": "0.1.35",
+  "product_files": 233,
+  "groups": [
+    {
+      "attempt": "installed-particles-r2",
+      "tests": 19
+    },
+    {
+      "attempt": "installed-particle-gpu-r3",
+      "tests": 1
+    },
+    {
+      "attempt": "installed-integration-r2",
+      "tests": 5
+    },
+    {
+      "attempt": "installed-legacy-r2",
+      "tests": 192
+    }
+  ],
+  "earlier_native_regression_tests": 427,
+  "earlier_native_regression_final_r1": true,
+  "byte_identical_after_input_fix": 231,
+  "particle_gpu_comparisons": 23,
+  "particle_gpu_max_error": 4.76837158203125e-07,
+  "case_frames": 48,
+  "case_gpu_dispatches": 288,
+  "all_package_frames_equal": true,
+  "skill_files": 76,
+  "kit_files": 118,
+  "historical_R_rows_preserved": 241,
+  "current_R_rows": 247,
+  "original_G_closure_cells_preserved": 38,
+  "functional_rows": 63,
+  "services": 21,
+  "modules": 17,
+  "capability_declarations": 76,
+  "local_links_checked": 3380,
+  "natural_quality_accepted": false,
+  "files": 389
+}

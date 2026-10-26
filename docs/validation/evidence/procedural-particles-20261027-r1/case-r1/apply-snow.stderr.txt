@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.33\final-r1\installed\run.py", line 7, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.33\final-r1\installed\site\ai_ad_editor\cli.py", line 7312, in main
+    result = handler(args)
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.33\final-r1\installed\site\ai_ad_editor\procedural_cli.py", line 79, in command
+    config=normalize(load_json(args.config))
+                     ~~~~~~~~~^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.33\final-r1\installed\site\ai_ad_editor\utils.py", line 119, in load_json
+    with path.open("r", encoding="utf-8-sig") as handle:
+         ^^^^^^^^^
+AttributeError: 'str' object has no attribute 'open'

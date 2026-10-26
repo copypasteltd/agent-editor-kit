@@ -1,0 +1,132 @@
+{
+  "test_procedural_particles": {
+    "RECEIPTS": [
+      {
+        "engine": "render-owned-float32-opencl-v1",
+        "request": {
+          "mode": "require",
+          "device": "0.0",
+          "max_working_bytes": 1073741824,
+          "probe_timeout_seconds": 30
+        },
+        "status": "prepared",
+        "dry_run": false,
+        "operations": {
+          "particles": 18
+        },
+        "CPU_scope": [
+          "glyph-rasterization",
+          "color-conversion",
+          "effects",
+          "masks",
+          "crop",
+          "transitions",
+          "non-normal-blends",
+          "audio",
+          "delivery-encoding"
+        ],
+        "GPU_scope": [
+          "premultiplied-affine",
+          "normal-source-over",
+          "text-color-components",
+          "binary-word-selection",
+          "seeded-particle-rasterization"
+        ],
+        "host_shared_bytes_limit": 1073741824,
+        "retained_host_shared_bytes": 0,
+        "device_bytes_limit": 1073741824,
+        "limits_are_peak_RSS": false,
+        "free_VRAM_reserved": false,
+        "integer_media_conversion": false,
+        "worker_closed": true,
+        "runtime_failure_CPU_fallback": false,
+        "artifacts": [
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+            "role": "float-gpu-execution",
+            "bytes": 15132,
+            "sha256": "sha256:492f94e98c9308962dbaf11b2305b7aa2ae2974a5ea8d64b1ff48db18e31b424"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_worker.py",
+            "role": "float-gpu-execution",
+            "bytes": 9137,
+            "sha256": "sha256:a3ed63a16c911ac3fc64aad5883eb37b716ebeb8e4537664e87a8160dc15357d"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_native.py",
+            "role": "float-gpu-execution",
+            "bytes": 19013,
+            "sha256": "sha256:9eb7435dc12dd69133bde972a95ff6b5d1b7dcfd4b6ce97b51a21ef556a217a6"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\procedural_particles.py",
+            "role": "float-gpu-execution",
+            "bytes": 15968,
+            "sha256": "sha256:fc9ddae8be0fb1a6b4d6aca9835447657f0d0b19ec8e28389fd773d719ddc229"
+          }
+        ],
+        "planned_maximum_pixels": 20736,
+        "planned_device_bytes": 995328,
+        "planned_host_shared_bytes": 685056,
+        "owned_worker_pid": 35796,
+        "native": {
+          "protocol": "native-opencl-binary64-float32-primitives-v1",
+          "device": {
+            "selection": "0.0",
+            "name": "NVIDIA GeForce RTX 3060",
+            "vendor": "NVIDIA Corporation",
+            "driver": "595.95",
+            "version": "OpenCL 3.0 CUDA",
+            "type": 4,
+            "double_fp_config": 63,
+            "global_memory_bytes": 12884377600,
+            "max_allocation_bytes": 3221094400
+          },
+          "kernel_sha256": "daed9acb931058a2a39f835daad127d97500001f99090335ce6a26f5c37eaf65",
+          "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+          "arithmetic": "binary64;explicit Float32 round-to-nearest-even boundaries",
+          "device_quota_bytes": 1073741824,
+          "retained_device_bytes": 3145728,
+          "operations": {
+            "over": 2,
+            "affine": 2,
+            "paint": 1,
+            "select_words": 1,
+            "particles": 18
+          },
+          "integer_media_conversion": false
+        },
+        "probe": {
+          "pixels_per_case": 65536,
+          "max_errors": {
+            "over": 0.0,
+            "affine": 0.0,
+            "paint": 0.0,
+            "select": 0.0
+          },
+          "absolute_limit": 3e-07,
+          "all_16bit_levels_present": true,
+          "actual_gpu_operations": 6,
+          "subnormal_over_bit_exact": true,
+          "subnormal_affine_bit_exact": true,
+          "subnormal_alpha_input_bits": [
+            0,
+            1,
+            2,
+            8388607,
+            8388608,
+            8388609,
+            1065353215,
+            1065353216
+          ]
+        },
+        "maximum_host_shared_bytes": 341432,
+        "operation_elapsed_seconds": 0.9119146999873919,
+        "particle_cpu_max_error": 2.384185791015625e-07,
+        "worker_returncode": 0,
+        "shared_handles_closed": true
+      }
+    ]
+  }
+}

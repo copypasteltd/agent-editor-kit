@@ -2,15 +2,11 @@
 
 <!-- community-current -->
 
-**CLI 0.1.33 / alpha.4-local.31 / r34 kit · 1 Skill / 17 modules.**
+**CLI0.1.35 / alpha.4-local.33 / r36 kit · 1 Skill / 17 modules / 76 files.**
 
-Native CUDA text/image/last/first-last video generation, independently verified retained endpoints, portable recipes, editable clips and managed recovery; frame-verified native tracking bake with ordinary hold keys and original source sidecars; actual rendered source alpha and five masks, 59 edge/paired transition point/ROI footprints with retained density and peer-cycle preflight, independent spatial-edge retime; shared-author tracking dependency retime with selected layer outputs, deferred scalar alpha/external blend order, private audio instances and retained outside routes; magnetic synchronized native source/follower partition and pre-cut lineage repair; native-PTS physical source slip/real extension/source-handle roll/slide with per-fragment author offsets and rational constant clocks; split/trim/ripple/range editing with retained source fragments, pinned ROI references, hidden removed-source followers and locked-reference atomic guards; dynamic tracking with shared crop/TRS geometry, editable source observations and overlay child audio; ordered global/interval Float32 grading at the selected root with authored clocks and locked portable LUTs; explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+Editable procedural snow, confetti, embers, bokeh, rain and sparkles now retain their parameters, seed and independent FPS in the project. Native Float32 composition, actual OpenCL rasterization, normal clip keys/cuts/reverse, preview, queues and package/OTIO reimport share the editable source. The six-cell scene is rendered through the registered installed Skill with no models or third-party footage.
 
-[Video generation workflow](VIDEO_GENERATION.md) · [Tracking bake workflow](TRACKING_BAKE.md) · [Tracking visibility workflow](TRACKING_VISIBILITY.md) · [Shared-author retime workflow](TRACKING_RETIME.md) · [Magnetic tracking workflow](TRACKING_MAGNETIC.md) · [Tracked source workflow](TRACKING_SOURCE_EDITS.md) · [Tracking edit workflow](TRACKING_EDITS.md) · [Native tracking workflow](FLOAT_TRACKING.md) · [Float32 adjustment workflow](FLOAT_ADJUSTMENTS.md) · [Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](model-session-capabilities-cli-0.1.34.json). Full target conditions remain open.
-
-Explicit native GPU sessions add start/status/stop and reuse weights plus the same prompt embeddings. Scheduler, prior-frame context and metrics reset per job. This host measured 654.27s for the first generation and 35.46/28.48s for the next two; session-wide model verification adds 480.42s separately. Same-seed replay matches all 17 decoded frames. Cancellation during real denoising rolls back and exits only the owned process.
-
-[Model sessions](MODEL_SESSIONS.md)
+[Particle workflow and limits](PROCEDURAL_PARTICLES.md)
 
 <!-- /community-current -->
 
@@ -80,6 +76,7 @@ Explicit native GPU sessions add start/status/stop and reuse weights plus the sa
 | F60 | Native tracking and baked delivery | Actual alpha/five masks/59 transition footprints; edits and shared retime retain observations; native bake verifies all frames and retains source sidecars. | `media track-bind; timeline compose/edit; convert export --bake-tracking` | Frozen graph/FPS;20,000 frames/256,000 samples;unrepresentable integer steps reject;external players and natural identity/occlusion remain unaccepted. |
 | F61 | Local GPU video generation | Text,image,last/first-last conditions; prompt/sampling,real model windows,editable clips,endpoint proofs,portable recipes and managed recovery. | `media adapter; media generate` | Existing native VACE/CUDA required;silent8bit SDR;known endpoints retained;natural quality,output rights and complete CapCut AI unaccepted. |
 | F62 | Native GPU model sessions | Reuse weights/embeddings per project/adapter/prompt; reset jobs, transfer live locked digests, retire on cancel/deadline/idle/job budget. | `media model-session; media generate --model-session` | Native Windows VACE; first job still loads; new prompt needs a new serial session; no global VRAM reservation/multi-GPU. |
+| F63 | Editable procedural particles | Six original recipes, five shapes, seed, native CFR and emitters; actual GPU tile rasterization and linear transparency. Ordinary edits, preview, queues, packages and local OTIO roundtrips. | `vfx list/inspect/apply/update/show` | Native Float32 pipeline; CPU hash/motion/binning; 16 emitters, 4096 reserved live particles, 128Mi candidate visits/frame; no 3-D/collision/depth. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -4754,3 +4751,87 @@ Complex negation, natural actions/identity/audio/recommendation, large-library p
 Original CLI 0.1.5 query failures and raw mode remain historical evidence; they are not erased by this extension.
 
 <!-- /semantic-decisions-current -->
+
+
+### `procedural_particles`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "analytic-seeded-particle-source-v1",
+  "catalog_version": "1.0.0",
+  "recipes": [
+    "snow",
+    "confetti",
+    "embers",
+    "bokeh",
+    "rain",
+    "sparkles"
+  ],
+  "commands": [
+    "vfx.list",
+    "vfx.inspect",
+    "vfx.apply",
+    "vfx.update",
+    "vfx.show"
+  ],
+  "source": "editable_clip_generator_not_baked_media",
+  "network": false,
+  "external_assets": [],
+  "license": "MIT",
+  "backend": "explicit_native_linear_Float32_timeline",
+  "GPU": "render_owned_OpenCL_particle_coverage_glow_ordered_over_with_32x32_CSR_bins",
+  "CPU": [
+    "seed_hash",
+    "analytic_birth_trajectory",
+    "tile_index",
+    "color_conversion",
+    "ordinary_encoder"
+  ],
+  "source_clock": "declared_rational_CFR_half_open_intervals_exact_reverse_left_limits",
+  "integration": [
+    "native_render",
+    "native_preview",
+    "cache",
+    "persistent_queue",
+    "clip_windows",
+    "speed_curves",
+    "reverse",
+    "freeze",
+    "TRS_keys",
+    "masks",
+    "blend",
+    "nested_sequences",
+    "source_slip_and_handles",
+    "agent_json",
+    "project_package",
+    "local_OTIO_metadata_roundtrip"
+  ],
+  "limits": {
+    "emitters": 16,
+    "live_particle_reservation": 4096,
+    "pixels": 8847360,
+    "fps": [
+      1,
+      120
+    ],
+    "source_seconds": 600,
+    "candidate_pixel_visits_per_frame": 134217728
+  },
+  "unsupported": [
+    "legacy_FFmpeg_graph",
+    "emitter_parameter_keyframes",
+    "3D",
+    "collisions",
+    "depth_occlusion",
+    "fluid_simulation",
+    "AI_effect_generation",
+    "foreign_OTIO_particle_execution"
+  ],
+  "runtime_failure_CPU_fallback": false,
+  "natural_footage_quality_accepted": false,
+  "goal_G06_complete": false
+}
+```
+
+[CLI0.1.35 exact installed capability snapshot](procedural-particles-capabilities-cli-0.1.35.json).

@@ -24,6 +24,7 @@ from .float_tracking import FloatTracking
 from .float_transitions import transition_rgba, PROTOCOL as TRANSITION_PROTOCOL, TYPES as TRANSITION_TYPES
 from .float_transition_plan import compile_track, edge_progress, pair_progress
 from .float_text import FloatTextHost
+from .procedural_particles import ParticleSource
 from .source_transitions import compile_for_render
 from .float_raster import mode_name
 from .sequence_canvas import sequence_canvas
@@ -120,7 +121,7 @@ class FloatTimeline:
         if len(self.sequences)!=len(self.project['sequences']):raise error('SEQUENCE','序列ID重复')
         if sequence_id not in self.sequences:raise error('SEQUENCE','目标作者序列不存在')
         self.assets={a['id']:a for a in self.project['assets']};self.maps={};self.constant_maps={};self.effect_plans={};self.mask_plans={};self.crop_plans={};self.clip_count=0
-        self.source_transition_plans={};self.transition_plans={};self.text_plans={}
+        self.source_transition_plans={};self.transition_plans={};self.text_plans={};self.particle_plans={}
         self.text_host=FloatTextHost(resource_root,self.assets,self.working,self.tps,self.fps,
             cancel=self.poll,max_working_bytes=self.max_working_bytes,gpu=gpu)
         if len(self.assets)!=len(self.project['assets']):raise error('SOURCE','资产ID重复')
@@ -139,6 +140,9 @@ class FloatTimeline:
                 'source_handle_plans':[p for p in self.source_transition_plans.values() if p],
                 'double_source_over_crossfade':False,'group_spatial_edges':True,'GPU':False},
             'text':self.text_host.metadata,'adjustments':self.adjustments.metadata,'tracking':self.tracking.metadata,
+            'particles':{p:{'sha256':s.sha256,'protocol':s.config['protocol'],'frames':s.frames,
+                'source_fps':str(s.fps),'source_duration_seconds':str(s.duration),'random_access':True,
+                'palette_signal':{'primaries':'bt709','transfer':'srgb'}} for p,s in self.particle_plans.items()},
             'GPU':gpu.evidence if gpu is not None else {'status':'off'},
             'input_contract':'validated Agent Project IR;registered SHA and explicit common working RGB signal',
             'audio_rendered':False,'legacy_render_preview_cache_integrated':False,'HDR_accepted':False,'network':False}
@@ -164,9 +168,19 @@ class FloatTimeline:
                 if clip['id'] in ids:raise error('SEQUENCE','轨道内片段ID重复',clip=path)
                 ids.add(clip['id'])
                 independent_text=track['kind']=='subtitle'
-                if clip.get('generator') and (not independent_text or clip['generator']!={'type':'text'}):
-                    raise error('UNSUPPORTED','浮点生成器仅支持字幕轨道的明确type=text',clip=path,operation='generator')
-                if independent_text or clip.get('subtitle') or clip.get('generator'):
+                particle=isinstance(clip.get('generator'),dict) and clip['generator'].get('type')=='particles'
+                if clip.get('generator') and not particle and (not independent_text or clip['generator']!={'type':'text'}):
+                    raise error('UNSUPPORTED','浮点生成器要求受支持的明确协议',clip=path,operation='generator')
+                if particle:
+                    integer(clip['source_in_tick']);integer(clip['source_out_tick'],1)
+                    if track['kind'] not in ('video','overlay') or clip.get('asset_id') or clip.get('sequence_id'):
+                        raise error('SOURCE','粒子生成器只能作为视频/叠加轨道的独立源',clip=path)
+                    source=ParticleSource(clip['generator'],cancel=self.poll)
+                    if self.working.transfer!='linear':raise error('SIGNAL','粒子合成要求线性工作域',clip=path)
+                    if Fraction(clip['source_out_tick'],self.tps)>source.duration:
+                        raise error('SOURCE','粒子源范围超过其声明时长',clip=path)
+                    self.particle_plans[path]=source
+                if independent_text or clip.get('subtitle'):
                     self.text_plans[path]=self.text_host.prepare(clip,independent=independent_text)
                 self.effect_plans[path]=self.effects.compile(clip.get('effects',[]))
                 if self.effect_plans[path] and self.working.transfer!='linear':raise error('SIGNAL','浮点效果链要求线性光工作域',clip=path)
@@ -194,7 +208,7 @@ class FloatTimeline:
                     self._validate(child,(*stack,sequence_id))
                 elif 'sequence_clip_id' in clip:
                     raise error('SELECTION','单片段输出必须引用子序列',clip=path)
-                elif not independent_text:
+                elif not independent_text and not particle:
                     asset_id=clip.get('asset_id');asset=self.assets.get(asset_id);source=self.sources.get(asset_id)
                     if not asset or asset.get('kind') not in ('video','image') or not isinstance(source,TimedSurfaceSource):raise error('SOURCE','片段需要已登记本地视频/图片及对应浮点源',clip=path)
                     if source.sha256!=asset.get('sha256') or source.signal!=self.working:raise error('SOURCE','源SHA或共同工作RGB信号不一致',clip=path)
@@ -331,6 +345,11 @@ class FloatTimeline:
                         source_time,rows,depth=depth+1,left_limit=right)
                 else:
                     source=self._sequence(clip['sequence_id'],source_time,rows,depth=depth+1,left_limit=right)
+            elif path in self.particle_plans:
+                source,frame_index=self.particle_plans[path].sample(source_time,right_edge=right,
+                    gpu=self.gpu,max_working_bytes=self.max_working_bytes)
+                if source is not None and self.working!=ColorSignal('bt709','linear'):
+                    source,_=convert_rgba(source,ColorSignal('bt709','linear'),self.working,cancel=self.poll)
             else:
                 source,frame_index=self.sources[clip['asset_id']].sample(source_time,right_edge=right)
         if source is None:
@@ -365,6 +384,10 @@ class FloatTimeline:
             'clock_tick':str(text_tick),'placement':'after-media-effects-before-clip-projection' if not text_plan['independent'] else 'sequence-canvas-before-clip-effects-and-projection',
             'rotation_degrees':self.text_host.rotation(text_plan,tick)}
         rows.append(row)
+        if path in self.particle_plans:
+            row['particles']={'sha256':self.particle_plans[path].sha256,'source_frame_index':frame_index,
+                **self.particle_plans[path].last_frame_receipt,
+                'source_clock':'declared-CFR-half-open-native-grid'}
         return layer,blend.get('mode',inherited_mode),tick,row
 
     @staticmethod

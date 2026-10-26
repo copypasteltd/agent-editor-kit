@@ -1,0 +1,83 @@
+[
+  {
+    "id": "version",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "seconds": 4.715383200003998,
+    "stdout_sha256": "c15b41bd4431e092fc9271af249c20b2442744df88c8343a19759e8832732b83",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "init",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "project",
+      "init",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\particle-case-r1\\project",
+      "--name",
+      "C45 editable particle preview"
+    ],
+    "exit_code": 0,
+    "seconds": 8.856277700004284,
+    "stdout_sha256": "034590b2cb2f075ffbda76a33e8964e1d9992957ce23144f11dd31af4a31508f",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "inspect-snow",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "vfx",
+      "inspect",
+      "--name",
+      "snow"
+    ],
+    "exit_code": 0,
+    "seconds": 9.024280900004669,
+    "stdout_sha256": "fc0c60c3e25d4d0d3cc61df206dbb5c87dd978763546f0857693052f0ae91195",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "apply-snow",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "vfx",
+      "apply",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\particle-case-r1\\project",
+      "--config",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\particle-case-r1\\snow.json",
+      "--clip-id",
+      "snow",
+      "--duration-tick",
+      "360000",
+      "--enable-native"
+    ],
+    "exit_code": 1,
+    "seconds": 11.092589300009422,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "450416cf5309efb9b4baa83d6dfa40245352e95fbf5f811039a36552bd49166e"
+  }
+]

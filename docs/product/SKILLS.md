@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.34 / alpha.4-local.32 / r35 kit · 1 Skill / 17 modules / 75 files.**
+**CLI0.1.35 / alpha.4-local.33 / r36 kit · 1 Skill / 17 modules / 76 files.**
 
-新增原生 GPU 模型会话：显式启动、查询、停止，连续生成复用权重和同一提示词嵌入；每个任务重置调度器、前窗上下文与统计。实际同机首条生成 654.27 秒，后两条 35.46/28.48 秒；会话全模型校验另计 480.42 秒。相同 seed 的 17 帧逐像素相同，实际去噪取消可回滚并退出所属进程。
+新增可编辑程序化粒子：雪、彩纸、余烬、光斑、斜雨、星芒。源参数、seed和独立帧率直接保存在工程；原生Float32合成、真实OpenCL栅格化、普通关键帧/裁切/倒放、预览、队列及工程包/OTIO回读已接通。六宫格为已注册安装版Skill实际渲染，未使用模型或第三方影像。
 
-[Model session workflow](MODEL_SESSIONS.md)
+[Particle workflow and limits](PROCEDURAL_PARTICLES.md)
 
 <!-- /community-current -->
 

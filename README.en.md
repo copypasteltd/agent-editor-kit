@@ -9,7 +9,33 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- model-session-current -->
+<!-- procedural-particles-current -->
+
+**CLI0.1.35 / alpha.4-local.33 / r36 kit · 1 Skill / 17 modules.**
+
+Editable procedural snow, confetti, embers, bokeh, rain and sparkles now retain their parameters, seed and independent FPS in the project. Native Float32 composition, actual OpenCL rasterization, normal clip keys/cuts/reverse, preview, queues and package/OTIO reimport share the editable source. The six-cell scene is rendered through the registered installed Skill with no models or third-party footage.
+
+```powershell
+$aekSkills = if ($env:CODEX_HOME) { Join-Path $env:CODEX_HOME 'skills' } else { Join-Path $env:USERPROFILE '.codex/skills' }
+$avk = Join-Path $aekSkills 'agent-ffmpeg-local-editor/scripts/run.ps1'
+$avkProject = 'E:/dev/sandbox/particle-demo'
+& $avk project init $avkProject
+& $avk vfx list
+& $avk vfx inspect --name snow
+& $avk vfx apply --project $avkProject --preset snow --seed 73 --clip-id snow --duration-tick 360000 --enable-native --dry-run
+& $avk vfx apply --project $avkProject --preset snow --seed 73 --clip-id snow --duration-tick 360000 --enable-native
+& $avk vfx show --project $avkProject --clip-id snow
+```
+
+[Workflow / parameters](docs/product/PROCEDURAL_PARTICLES.md) · [C45](docs/product/CASES.md#c45-procedural-particles) · [Install](docs/releases/CLI_0.1.35_LOCAL.md) · [Evidence](docs/validation/可编辑粒子实测_2026-10-27.md)
+
+![Actual registered Skill GPU output, annotated GIF](docs/assets/procedural-particles-20261027-r3/particle-grid.gif)
+
+This is a 2-D diagnostic effect core. 3-D/collisions, depth occlusion, fluids and emitter-parameter keyframes remain open. The legacy FFmpeg graph explicitly rejects this source. Full CapCut parity and all 38 original closure conditions remain open.
+
+<!-- /procedural-particles-current -->
+
+<!-- model-session-history -->
 
 **CLI0.1.34 / alpha.4-local.32 / r35 kit · 1 Skill / 17 modules.**
 
@@ -34,7 +60,7 @@ These are single observations on one host, with registration, full verification 
 
 ![Measured session timing; not generated model imagery](docs/assets/model-session-20261027-r1/timing.png)
 
-<!-- /model-session-current -->
+<!-- /model-session-history -->
 
 <!-- video-generation-current -->
 
@@ -656,7 +682,7 @@ The implementation is **Python CLI + Agent Project schema + FFmpeg**, with an ex
 5. For selection, show the original and a small candidate set, record final IDs/strength/scope and trial them on target media.
 6. Render to a new project-owned path, inspect the encoded output, manifest, warnings, A/V and rights, then export the project package.
 
-## All 62 functional modules
+## All 63 functional modules
 
 IDs locate documentation groups with dependencies/overlap; they are not 43 independent kernels or a completion score. The table describes behavior, commands and limits. The [complete machine capability manual](docs/product/CAPABILITIES.en.md) retains every field.
 
@@ -724,6 +750,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F60 | Native tracking and baked delivery | Actual alpha/five masks/59 transition footprints; edits and shared retime retain observations; native bake verifies all frames and retains source sidecars. | `media track-bind; timeline compose/edit; convert export --bake-tracking` | Frozen graph/FPS;20,000 frames/256,000 samples;unrepresentable integer steps reject;external players and natural identity/occlusion remain unaccepted. |
 | F61 | Local GPU video generation | Text,image,last/first-last conditions; prompt/sampling,real model windows,editable clips,endpoint proofs,portable recipes and managed recovery. | `media adapter; media generate` | Existing native VACE/CUDA required;silent8bit SDR;known endpoints retained;natural quality,output rights and complete CapCut AI unaccepted. |
 | F62 | Native GPU model sessions | Reuse weights/embeddings per project/adapter/prompt; reset jobs, transfer live locked digests, retire on cancel/deadline/idle/job budget. | `media model-session; media generate --model-session` | Native Windows VACE; first job still loads; new prompt needs a new serial session; no global VRAM reservation/multi-GPU. |
+| F63 | Editable procedural particles | Six original recipes, five shapes, seed, native CFR and emitters; actual GPU tile rasterization and linear transparency. Ordinary edits, preview, queues, packages and local OTIO roundtrips. | `vfx list/inspect/apply/update/show` | Native Float32 pipeline; CPU hash/motion/binning; 16 emitters, 4096 reserved live particles, 128Mi candidate visits/frame; no 3-D/collision/depth. |
 
 ## Supported service modules and dependencies
 
@@ -851,7 +878,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.32/final-r3/installed/`, CLI 0.1.34. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.33/final-r2/installed/`, CLI 0.1.35. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1285,6 +1312,12 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R239 | 2026-10-27 native GPU sessions | Registered unified Skill renders original/imported projects with128 matching decoded30FPS frames. Source51 frames at12FPS,author4.25s and encoded128/30s are separate. Actual GIFs/packages remain local. | [Evidence](docs/validation/evidence/model-session-20261027-r1/render-roundtrip-r2/verification.json) |
 | R240 | 2026-10-27 native GPU sessions | One entry,17 modules,75 Skill files;r35 kit116 files. Isolated unpack/registration/current declarations/help/legacy graph planning and pack-timeout protection pass without changing real discovery. | [Evidence](docs/validation/evidence/model-session-20261027-r1/kit-r3/verification.json) |
 | R241 | 2026-10-27 native GPU sessions | Full trilingual62 functions/21 services/75 declarations,workflow,C44/evidence/release pins and Skill synchronized.235 historical R rows and38 original closure cells retained; failed development and rejected candidates recorded. | [Evidence](docs/validation/evidence/model-session-20261027-r1/development-attempts-r2/verification.json) |
+| R242 | 2026-10-27 editable particles | CLI0.1.35/local.33: 233 product files and schema match the new offline bundle; final installed particle/GPU/integration/legacy groups pass 19/1/5/192 separately. Native427 passed on candidate1; the final JSON-reader/idempotency repair and231 unchanged files are checked explicitly. | [Evidence](docs/validation/evidence/procedural-particles-20261027-r1/installation-final-r2/verification.json) |
+| R243 | 2026-10-27 editable particles | Actual RTX/OpenCL: 18 frames across six recipes plus five shapes, 23 raster dispatches compared in premultiplied light/alpha against the separate CPU backend. Independent numeric tests cover seed/seeking, corners, transparency and admission budgets. | [Evidence](docs/validation/evidence/procedural-particles-20261027-r1/installed-particle-gpu-r3/verification.json) |
+| R244 | 2026-10-27 editable particles | C45 registered Skill renders 48 frames at12FPS with288 GPU particle dispatches; all decoded frames equal after editable-package migration. GIF adds numbered English labels; actual MP4, solid input and recipes retained. | [Evidence](docs/validation/evidence/procedural-particles-20261027-r1/case-r3/verification.json) |
+| R245 | 2026-10-27 editable particles | Installed encoding/full PCM, preview hits/seed invalidation, queue, split/nested reverse and package/OTIO roundtrips pass. Missing OTIO background was repaired; clocks and verification scopes remain explicit. | [Evidence](docs/validation/evidence/procedural-particles-20261027-r1/installed-integration-r2/verification.json) |
+| R246 | 2026-10-27 editable particles | One entry,17 modules,76 Skill files; fresh-directory r36 kit extraction/registration, vfx discovery/help and existing native plans tested. Actual discovery retained; large application/model archives separate. | [Evidence](docs/validation/evidence/procedural-particles-20261027-r1/kit-r1/verification.json) |
+| R247 | 2026-10-27 editable particles | Three languages,63 functions/21 services/76 capabilities, full workflow,C45 media/install hashes/Skill synchronized. All241 historical R rows and38 original closure cells retained; rejected JSON-reader candidates/failures preserved. | [Evidence](docs/validation/evidence/procedural-particles-20261027-r1/development-attempts-r1/verification.json) |
 
 ## Current limits and development direction
 

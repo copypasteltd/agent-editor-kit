@@ -95,6 +95,36 @@ __kernel void select_words(__global float4 *normal, __global const float4 *activ
     size_t i=get_global_id(0);
     if (i<count && selection[i]) normal[i]=active[i];
 }
+__kernel void particles(__global const float *scene, __global const uint *bins,
+                       __global float4 *out, int w, int h) {
+    size_t i=get_global_id(0); if(i>=(size_t)w*h)return;
+    int x=i%w,y=i/w; uint tile=(y/32)*bins[0]+x/32;
+    uint first=bins[3+tile],end=bins[4+tile],ids=3+bins[2];
+    float4 sum=(float4)(0.0f);
+    for(uint j=first;j<end;j++) {
+        __global const float *p=scene+13*bins[ids+j];
+        double support=(p[10]==1.0f?sqrt(2.0):1.0)*(1.0+(double)p[11]);
+        double extent=fmax((double)p[2],(double)p[3])*fmax(p[12]!=0?4.0:0.0,support)+2.0;
+        if(x<floor((double)p[0]-extent)||x>=ceil((double)p[0]+extent)+1.0||
+           y<floor((double)p[1]-extent)||y>=ceil((double)p[1]+extent)+1.0)continue;
+        float dx=(float)x-p[0],dy=(float)y-p[1];
+        float a=(dx*p[4]+dy*p[5])/p[2],b=(-dx*p[5]+dy*p[4])/p[3];
+        float radial=sqrt(a*a+b*b),distance=1.0f-radial;
+        int shape=(int)p[10];
+        if(shape==1)distance=1.0f-fmax(fabs(a),fabs(b));
+        else if(shape==2)distance=1.0f-fabs(a)-fabs(b);
+        else if(shape==3)distance=0.68f+0.32f*cos(5.0f*atan2(b,a))-radial;
+        else if(shape==4)distance=0.16f-fabs(radial-0.82f);
+        float divisor=(float)fmax((double)p[11],1.0/fmax((double)fmin(p[2],p[3]),0.0001));
+        float coverage=clamp(0.5f+distance/divisor,0.0f,1.0f);
+        if(p[12]!=0)coverage=1.0f-(1.0f-coverage)*(1.0f-exp(-radial*radial)*p[12]);
+        float alpha=coverage*p[9],remain=1.0f-alpha;
+        sum.xyz=sum.xyz*remain+(float3)(p[6],p[7],p[8])*alpha;
+        sum.w=alpha+sum.w*remain;
+    }
+    if(sum.w>0.0f)sum.xyz/=sum.w; else sum.xyz=(float3)(0.0f);
+    out[i]=sum;
+}
 '''
 
 
@@ -126,10 +156,11 @@ class NativeGPU:
                 log=C.create_string_buffer(min(size.value,65536))
                 if len(log):self.lib.clGetProgramBuildInfo(self.program,self.device,0x1183,len(log),log,None)
                 raise error('BUILD','OpenCL浮点内核编译失败',native_code=result,log=log.value.decode('utf8','replace'))
-            for name in ('over','affine','paint','select_words'):
+            for name in ('over','affine','paint','select_words','particles'):
                 self.kernels[name]=self.lib.clCreateKernel(self.program,name.encode(),C.byref(code));self._check(code.value,'kernel')
             self.metadata={'protocol':PROTOCOL,'device':self.info,'kernel_sha256':hashlib.sha256(data).hexdigest(),
-                'build_options':'-cl-std=CL1.2;FP_CONTRACT OFF;no fast math','arithmetic':'binary64;explicit Float32 round-to-nearest-even boundaries',
+                'build_options':'-cl-std=CL1.2;FP_CONTRACT OFF;no fast math',
+                'arithmetic':'binary64 affine/over/text; binary32 particle coverage and ordered accumulation; Float32 surfaces',
                 'device_quota_bytes':self.limit,'retained_device_bytes':0,'operations':{},'integer_media_conversion':False}
         except BaseException:
             self.close();raise
@@ -266,6 +297,14 @@ class NativeGPU:
         self._reserve(normal.nbytes);self._write(0,normal);self._write(1,active);self._write(2,selection)
         count=normal.shape[0]*normal.shape[1]
         self._run('select_words',[C.c_void_p(self.buffers[0]),C.c_void_p(self.buffers[1]),C.c_void_p(self.buffers[2]),C.c_ulonglong(count)],count,output,buffer=0)
+
+    def particles(self, scene, tiles, output):
+        from .procedural_particles import validate_scene
+        self.output(output); h,w=output.shape[:2]
+        validate_scene(scene,tiles,(w,h))
+        self._reserve(max(scene.nbytes,tiles.nbytes,output.nbytes));self._write(0,scene);self._write(1,tiles)
+        self._run('particles',[C.c_void_p(self.buffers[0]),C.c_void_p(self.buffers[1]),
+            C.c_void_p(self.buffers[2]),C.c_int(w),C.c_int(h)],w*h,output)
 
     def close(self):
         if not hasattr(self,'lib'):return

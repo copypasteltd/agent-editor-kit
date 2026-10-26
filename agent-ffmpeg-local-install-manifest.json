@@ -2,8 +2,8 @@
   "format": "agent-ffmpeg-local-skills-v2",
   "status": "reviewed",
   "registration_mode": "single",
-  "release": "v0.1.0-alpha.4-local.32",
-  "manifest_sha256": "sha256:0d3fda8a037d510eb60294ca6c70d3dd6f2c7eaf4fa9be8291987145c0ad41aa",
+  "release": "v0.1.0-alpha.4-local.33",
+  "manifest_sha256": "sha256:a7736ad17900a98db06260044fb39f9849c83242c14ac96d9aec26d65d4f09c5",
   "runtime_config": "local/agent-ffmpeg/runtime.json",
   "skill_count": 1,
   "module_count": 17,
@@ -12,8 +12,8 @@
   "skills": [
     {
       "name": "agent-ffmpeg-local-editor",
-      "purpose_zh": "唯一入口：17内部模块、显式GPU模型常驻/同提示词复用、四模式生成与可编辑入轨、原生跟踪/烘焙、Float32/GPU合成、500滤镜、语义检索、字幕配音及四轨分离",
-      "skill_md_sha256": "a55ce6587b68236c7001340be587217fe5a5ae11b1164c4d5ff66d3bcd5abe2f"
+      "purpose_zh": "唯一入口：17内部模块、可编辑GPU粒子、GPU模型会话/视频生成、原生跟踪/烘焙、Float32/GPU合成、500滤镜、语义检索、字幕配音及四轨分离",
+      "skill_md_sha256": "8c951cd984f017144515288e72bd220b349f00bbaefc820b09073e6133c27ff7"
     }
   ],
   "modules": [
@@ -434,8 +434,8 @@
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/modules/timeline/module.md",
-      "bytes": 2044,
-      "sha256": "de72cc2ea7a2482ef2a190d2c749a71587a0e45880ee21993dc870525c7479fd"
+      "bytes": 2259,
+      "sha256": "66573cbb498c2324f7ad4ddde13df9fa8f2815f38d3dcaf12012f16f92e9ab69"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/modules/video-content-strategist/module.md",
@@ -498,6 +498,11 @@
       "sha256": "53ea706e02c0d4e3871d86101a921e92335acd8d18c4e2afa7bf7302a69954e4"
     },
     {
+      "path": "skills/agent-ffmpeg-local-editor/references/procedural-particles.md",
+      "bytes": 4148,
+      "sha256": "d3bf2dc365844aafa0866f3219d5bccfbf48e0fdb9f7a7d25d3a17a939b1ebdc"
+    },
+    {
       "path": "skills/agent-ffmpeg-local-editor/references/projection-gpu.md",
       "bytes": 6386,
       "sha256": "c69b87561092ed5eec806404989cb32f67d6ff9e5fc77a6b4a2efad5f9783f23"
@@ -505,7 +510,7 @@
     {
       "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
       "bytes": 8019,
-      "sha256": "bf9272c26d189cb9bf9769ae059acf1364211bcf6c4c8c1bee9b0964b6c02bb1"
+      "sha256": "8aa420b3427b83c9c81acdac95f4aa91c481687296b897f30fa51d6bd95a13ca"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/semantic-package.md",
@@ -540,12 +545,12 @@
     {
       "path": "skills/agent-ffmpeg-local-editor/scripts/run.py",
       "bytes": 2296,
-      "sha256": "2b6b7fffa0dd902fc37543e12ca880208f9731e62e7007050ef5893a114750a6"
+      "sha256": "f16dfb812845f6e90704d8162ab4fb2ce152fbe308e2184e7488a3a1733df712"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
-      "bytes": 12067,
-      "sha256": "a55ce6587b68236c7001340be587217fe5a5ae11b1164c4d5ff66d3bcd5abe2f"
+      "bytes": 12307,
+      "sha256": "8c951cd984f017144515288e72bd220b349f00bbaefc820b09073e6133c27ff7"
     }
   ],
   "retired_skills": [
@@ -614,7 +619,7 @@
       "skill_md_sha256": "da31e25b3e641f80367075cdb4e72be99be2c89c332556d8ba58ec419fffd46b"
     }
   ],
-  "cli_version": "0.1.34",
+  "cli_version": "0.1.35",
   "material_count": 359,
   "named_voice_count": 103,
   "optional_model_pack_count": 4

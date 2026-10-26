@@ -1,6 +1,8 @@
 # agent editor kit 文档 / Documentation
 
-Current local / 当前本地 / 目前本地：**CLI0.1.33 / local.31 / r34 kit** · [GPU generation](product/VIDEO_GENERATION.md) · [Install](releases/CLI_0.1.33_LOCAL.md) · [C43](product/CASES.md#c43-video-generation).
+Current local / 当前本地 / 目前本地：**CLI0.1.34 / local.32 / r35 kit** · [Native model sessions](product/MODEL_SESSIONS.md) · [Install](releases/CLI_0.1.34_LOCAL.md) · [C44](product/CASES.md#c44-model-sessions).
+
+Historical / 历史 / 歷史：**CLI0.1.33 / local.31 / r34 kit** · [GPU generation](product/VIDEO_GENERATION.md) · [Install](releases/CLI_0.1.33_LOCAL.md) · [C43](product/CASES.md#c43-video-generation).
 
 Historical / 历史 / 歷史：**CLI0.1.32 / local.30 / r33 kit** · [Bake](product/TRACKING_BAKE.md) · [Install](releases/CLI_0.1.32_LOCAL.md) · [C42](product/CASES.md#c42-tracking-bake).
 

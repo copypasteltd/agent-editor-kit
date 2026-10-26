@@ -214,8 +214,8 @@ def _windows_job():
         kernel.CloseHandle(handle)
 
 
-def _worker_command(adapter: dict, request_path: Path) -> list[str]:
-    name = 'rvm_worker.py' if adapter['engine'] == MATTING_ENGINE else 'lama_worker.py' if adapter['engine'] == 'torchscript-lama-local-v1' else 'vace_worker.py' if adapter['engine'] == 'diffusers-wan-vace-local-v1' else 'sam2_worker.py'
+def _worker_command(adapter: dict, request_path: Path, session=None) -> list[str]:
+    name = 'vace_session_relay.py' if session is not None else 'rvm_worker.py' if adapter['engine'] == MATTING_ENGINE else 'lama_worker.py' if adapter['engine'] == 'torchscript-lama-local-v1' else 'vace_worker.py' if adapter['engine'] == 'diffusers-wan-vace-local-v1' else 'sam2_worker.py'
     return [adapter['executable'], '-I', '-B', '-X', 'utf8', str(Path(__file__).with_name(name)), str(request_path)]
 
 
@@ -234,6 +234,7 @@ def validate_response(response: dict, request: dict) -> None:
         expected.update(mask_sha256=request['mask']['sha256'], mask_plan_sha256=request['mask']['plan_sha256'], inpainting=request['inpainting'])
     if joint:
         expected['generation'] = request['generation']
+        if 'model_session' in request: expected['model_session'] = request['model_session']
     if any(response.get(key) != value for key, value in expected.items()):
         raise AppError('MATTING_WORKER_INTEGRITY_INVALID', '抠像 worker 协议或输入/模型/网络/设备不符', exit_code=6)
     info, metrics = request['video'], response.get('metrics')
@@ -280,7 +281,9 @@ def validate_response(response: dict, request: dict) -> None:
                     raise ValueError('joint inpainting conditioning mismatch')
                 verification = response.get('artifact_verification', {})
                 artifacts = {a['path']: a['bytes'] for a in request['adapter']['artifacts']}
-                if not isinstance(verification, dict) or verification.get('mode') != 'windows-read-lock-command-scope' or verification.get('write_and_delete_sharing') is not False or verification.get('persists_across_commands') is not False:
+                resident = 'model_session' in request
+                verification_mode = 'windows-read-lock-model-session' if resident else 'windows-read-lock-command-scope'
+                if not isinstance(verification, dict) or verification.get('mode') != verification_mode or verification.get('write_and_delete_sharing') is not False or verification.get('persists_across_commands') is not resident:
                     raise ValueError('joint artifact verification scope')
                 if type(verification.get('files_hashed')) is not int or verification['files_hashed'] != len(artifacts) or type(verification.get('bytes_hashed')) is not int or verification['bytes_hashed'] != sum(artifacts.values()) or type(verification.get('digest_reuses_while_locked')) is not int or verification['digest_reuses_while_locked'] < len(request['adapter']['artifacts']):
                     raise ValueError('joint artifact verification counters')
@@ -308,6 +311,16 @@ def validate_response(response: dict, request: dict) -> None:
                     if execution.get('text_offload_hooks_removed_before_generation') is not True:
                         raise ValueError('text offload hooks were not released')
                     validate_execution(execution,text_gpu_budget_mib=request['adapter']['settings']['text_gpu_budget_mib'],model_calls=metrics['model_calls'])
+                    if resident:
+                        reuse = execution.get('resident_model', {})
+                        if (reuse.get('session_id') != request['model_session']['session_id']
+                                or type(reuse.get('inference_job')) is not int or reuse['inference_job'] < 1
+                                or reuse.get('predictor_loads') != 1 or reuse.get('text_encoder_loads') != 1
+                                or reuse.get('reused') is not (reuse['inference_job'] > 1)
+                                or reuse.get('weights_read_this_job') is not (reuse['inference_job'] == 1)
+                                or reuse.get('prompt_embeddings_reused') is not reuse['reused']
+                                or any(reuse.get(k) is not True for k in ('scheduler_reset', 'previous_frame_state_reset', 'new_prompt_requires_new_session'))):
+                            raise ValueError('joint resident model reuse contract')
                     shapes=execution.get('window_input_shapes')
                     factor=request['generation']['model_input_scale']
                     edge=max(64,(request['inpainting']['model_max_edge']+15)//16*16)*factor
@@ -376,7 +389,7 @@ def _pipeline_workspace(cache: Path, on_failure=None):
 
 
 def matte_native(root: Path, output: Path, *, adapter: dict, plan: dict, timeout: float = 3600,
-                 cancel_file: Path | None = None, progress: Callable | None = None, operation_id: str | None = None, workspace=None) -> dict:
+                 cancel_file: Path | None = None, progress: Callable | None = None, operation_id: str | None = None, workspace=None, session=None) -> dict:
     if not math.isfinite(timeout) or not 0 < timeout <= 604800:
         raise argument_error('timeout-seconds 必须为 0..604800（不含 0）', 'timeout')
     if output.exists() or output.suffix.lower() != '.mov':
@@ -407,6 +420,9 @@ def matte_native(root: Path, output: Path, *, adapter: dict, plan: dict, timeout
             staged = work / 'foreground.mov'
             request = {**plan, 'adapter': adapter, 'runtime_root': runtime, 'response': str(work / 'response.json'), 'progress': str(work / 'progress.json'),
                        'ffmpeg': {'path': str(ffmpeg), 'sha256': ffmpeg_hash}}
+            if session is not None:
+                if adapter['engine'] != 'diffusers-wan-vace-local-v1': raise argument_error('模型会话当前只支持VACE', 'session')
+                request['model_session'] = session
             request['request_sha256'] = request_hash(request)
             request_path = work / 'request.json'
             atomic_write_json(request_path, request)
@@ -440,7 +456,8 @@ def matte_native(root: Path, output: Path, *, adapter: dict, plan: dict, timeout
                     diagnostic.start_failure_role = None
                     processes.append(decode); assign(decode)
                     diagnostic.start_failure_role = 'worker'
-                    worker = subprocess.Popen(_worker_command(adapter, request_path), stdin=decode.stdout, stdout=subprocess.PIPE, stderr=logs[1])
+                    worker_command = _worker_command(adapter, request_path, session) if session is not None else _worker_command(adapter, request_path)
+                    worker = subprocess.Popen(worker_command, stdin=decode.stdout, stdout=subprocess.PIPE, stderr=logs[1])
                     diagnostic.processes.started('worker', worker)
                     diagnostic.start_failure_role = None
                     processes.append(worker); assign(worker)

@@ -1,0 +1,19 @@
+test_exact_rational_clock_and_configuration_rebuild (test_video_generation.ConditioningTests.test_exact_rational_clock_and_configuration_rebuild) ... ok
+test_image_fit_flatten_and_reject_are_explicit (test_video_generation.ConditioningTests.test_image_fit_flatten_and_reject_are_explicit) ... ok
+test_raster_clock_resource_and_sampler_rejections (test_video_generation.ConditioningTests.test_raster_clock_resource_and_sampler_rejections) ... ok
+test_text_and_first_last_masks_reach_the_actual_window_processor (test_video_generation.ConditioningTests.test_text_and_first_last_masks_reach_the_actual_window_processor) ... ok
+test_all_modes_native_encode_decode_and_editable_apply (test_video_generation.NativeGenerationTests.test_all_modes_native_encode_decode_and_editable_apply) ... ok
+test_cancel_and_timeout_remove_owned_conditions_before_publication (test_video_generation.NativeGenerationTests.test_cancel_and_timeout_remove_owned_conditions_before_publication) ... ok
+test_crashed_generation_workspace_cleans_only_owned_uncommitted_files (test_video_generation.NativeGenerationTests.test_crashed_generation_workspace_cleans_only_owned_uncommitted_files) ... ok
+test_default_command_configuration_fits_the_window_budget (test_video_generation.NativeGenerationTests.test_default_command_configuration_fits_the_window_budget) ... ok
+test_dry_run_admits_four_modes_without_mutation_or_inference (test_video_generation.NativeGenerationTests.test_dry_run_admits_four_modes_without_mutation_or_inference) ... ok
+test_invalid_mode_parameters_track_clock_budget_before_worker (test_video_generation.NativeGenerationTests.test_invalid_mode_parameters_track_clock_budget_before_worker) ... ok
+test_metadata_save_failure_rolls_back_already_published_movie (test_video_generation.NativeGenerationTests.test_metadata_save_failure_rolls_back_already_published_movie) ... ok
+test_native_bad_worker_rollback_leaves_inputs_and_metadata (test_video_generation.NativeGenerationTests.test_native_bad_worker_rollback_leaves_inputs_and_metadata) ... ok
+test_recipe_tamper_is_rejected_and_fragment_rebinds_both_images (test_video_generation.NativeGenerationTests.test_recipe_tamper_is_rejected_and_fragment_rebinds_both_images) ... ok
+test_tampered_image_and_adapter_never_reach_inference (test_video_generation.NativeGenerationTests.test_tampered_image_and_adapter_never_reach_inference) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 88.430s
+
+OK

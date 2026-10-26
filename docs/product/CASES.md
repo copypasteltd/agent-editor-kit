@@ -853,3 +853,15 @@ C42 实际注册 Skill：36 帧 Float32 核验、工程包重导入后的36个�
 [Actual responses/paths/hashes](../validation/本地GPU视频生成实测_2026-10-26.md) · [Workflow](VIDEO_GENERATION.md) · [Reproduction script](../../scripts/run_video_generation_case_20261026.py) · [CC0 source](../assets/video-generation-20261026-r1/SOURCE.txt).
 
 ![CC0 conditions only](../assets/video-generation-20261026-r1/conditions.png)
+
+<a id="c44-model-sessions"></a>
+
+## C44：原生GPU常驻与冷热重放 / Resident GPU reuse
+
+新增原生 GPU 模型会话：显式启动、查询、停止，连续生成复用权重和同一提示词嵌入；每个任务重置调度器、前窗上下文与统计。实际同机首条生成 654.27 秒，后两条 35.46/28.48 秒；会话全模型校验另计 480.42 秒。相同 seed 的 17 帧逐像素相同，实际去噪取消可回滚并退出所属进程。
+
+这是单机单次冷热观测，首次登记/完整校验/加载成本全部保留；更换正负提示词或 token 预算须新建会话，只允许串行任务。自然质量、模型与输出权利、总进程 RAM/VRAM 配额、多 GPU 和完整剪映等价仍未验收；静态检查已发现生成中间帧彩边、背景块状伪影和异常碎片；实际模型视频/GIF与工程包保留本机。下图仅展示实际耗时数据。
+
+[完整实测/本机视频与GIF](../validation/原生GPU模型常驻实测_2026-10-27.md) · [使用流程](MODEL_SESSIONS.md) · [复现代码](../../scripts/run_model_session_case_20261027.py)
+
+![Actual timing data](../assets/model-session-20261027-r1/timing.png)

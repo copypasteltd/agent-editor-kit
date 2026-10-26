@@ -108,6 +108,7 @@ from .local_segmentation import SEGMENTATION_ENGINE, load_prompts as load_segmen
 from .local_inpainting import INPAINT_ENGINE, prepare_mask as prepare_inpaint_mask, normalize_options as inpaint_options
 from .local_vace import VACE_ENGINE, normalize_generation as vace_options, window_plan as vace_windows, buffer_budget as vace_buffer_budget
 from .generation_cli import command as command_media_generate
+from .model_session import command as command_model_session
 from .model_registry import (
     MODEL_REGISTRY_VERSION,
     adapter_for,
@@ -189,6 +190,8 @@ def build_parser() -> argparse.ArgumentParser:
     ms = media.add_subparsers(dest="action", required=True)
     from .generation_cli import add_parser as add_generation_parser
     add_generation_parser(ms, _leaf_common)
+    from .model_session import add_parser as add_model_session_parser
+    add_model_session_parser(ms, _leaf_common)
     ingest = _leaf_common(ms.add_parser("ingest", help="导入本地素材"))
     ingest.add_argument("--project", required=True)
     ingest.add_argument("--input", required=True)
@@ -7085,6 +7088,7 @@ def command_diagnostics(args):
 
 
 _READ_ONLY_PROJECT_COMMANDS = {
+    ("media", "model-session"),
     *(('semantic', action) for action in ('adapter-list','adapter-inspect','index-list','verify','calibration-list','search')),
     ('surface','inspect'),
     ('diagnostics', 'list'), ('diagnostics', 'show'), ('diagnostics', 'export'),
@@ -7156,6 +7160,7 @@ COMMANDS: dict[tuple[str, str | None], Callable[[argparse.Namespace], dict[str, 
     ("media", "inpaint"): command_media_matting,
     ("media", "outpaint"): command_media_matting,
     ("media", "generate"): command_media_generate,
+    ("media", "model-session"): command_model_session,
     ('media', 'mask-edit'): command_media_mask_edit,
     ("media", "relink"): command_media_relink,
     ("media", "adapter"): command_media_adapter,

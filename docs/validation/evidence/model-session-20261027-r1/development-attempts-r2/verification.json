@@ -1,0 +1,194 @@
+{
+  "status": "recorded",
+  "at_utc": "2026-10-26T17:27:11.374985+00:00",
+  "final_product_files": 230,
+  "failed_attempts_retained": true,
+  "model_checks_weakened": false,
+  "other_user_processes_modified": false,
+  "rejected_session_tests": {
+    "tests": 18,
+    "failures": 1,
+    "errors": 1,
+    "reason": "Owner disconnect exposed an EOF status-query race, fixed in controller. A second failure was a test expecting an error code in the translated message rather than AppError.code."
+  },
+  "rejected_first_bundle": {
+    "activated": false,
+    "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.32\\candidate-r1\\bundle.zip",
+    "sha256": "0542f4a273f412f719479f1ca1d1962e930853bd6a2b47bb36d98a6f955ccf04",
+    "reason": "Controller fix occurred while the first candidate was being built; frozen byte comparison rejected it. The second candidate was rebuilt and fully installed/verified."
+  },
+  "rejected_source_vace": {
+    "tests": 160,
+    "failures": 3,
+    "frozen_equal": false,
+    "reason": "Source changed during execution: old pinned adapters correctly rejected modified implementation bytes. Also retained an obsolete36-artifact fixture expectation."
+  },
+  "rejected_installed_vace": {
+    "tests": 160,
+    "failures": 1,
+    "frozen_equal": true,
+    "reason": "Only the obsolete36-artifact fixture expectation failed; the session controller/worker/relay add3 required pinned artifacts. Corrected to39 and added an independent missing-session-inventory rejection test."
+  },
+  "control_fix": {
+    "real_gpu_observation": "status returned PROJECT_WRITE_LOCKED during actual denoising",
+    "failed_before": true,
+    "passed_after": true,
+    "final_installed": "final-r3",
+    "measured_gpu_installation": "final-r2",
+    "byte_identical_inference_kernel": true,
+    "byte_identical_non_cli_product_files": 229,
+    "reason": "Only the model-session CLI control transaction/lock exemption changed. Actual GPU performance was measured on final-r2; final-r3 installed regressions verify the corrected controls."
+  },
+  "rejected_skill_call": {
+    "path": "render-roundtrip-r1",
+    "exit_code": 2,
+    "reason": "Actual registered Skill retained the old local.31 launcher release/manifest pin. Corrected to the final local.32 manifest, refreshed all75 Skill file pins, registered again and reran actual rendering as render-roundtrip-r2. Registration now executes the reviewed launcher version before discovery mutation; an isolated deliberately stale pin is rejected without creating discovery or a success receipt."
+  },
+  "rejected_kit_verifiers": [
+    {
+      "path": "kit-r1",
+      "reason": "Verifier copied a renamed generation protocol string. The installed API correctly retained local-vace-conditioned-video-generation-v1. Corrected the expected fixture; implementation unchanged."
+    },
+    {
+      "path": "kit-r2",
+      "reason": "Verifier copied the historical tracking-retime fixture with the wrong date. Installed convert.import correctly rejected the missing input. Restored the existing20261026 fixture and preflight all fixture paths; implementation/kit bytes unchanged."
+    }
+  ],
+  "accepted_final_kit": {
+    "path": "kit-r3",
+    "sha256": "d37e2ba12a2ab642d7344d7cf1a0b6748363944c370225edb88f83e11e336d71",
+    "files": 116
+  },
+  "accepted_installed_groups": [
+    {
+      "path": "session-installed-r2",
+      "tests": 19
+    },
+    {
+      "path": "generation-installed-r2",
+      "tests": 14
+    },
+    {
+      "path": "vace-installed-r3",
+      "tests": 161
+    },
+    {
+      "path": "legacy-installed-r2",
+      "tests": 192
+    }
+  ],
+  "evidence": [
+    {
+      "path": "session-source-r1/verification.json",
+      "sha256": "8d5e2428c9a2cdcc86d33158e0797db5e3c29b5b43fe1e720758848d53292d58"
+    },
+    {
+      "path": "session-source-r2/verification.json",
+      "sha256": "b2704207df1c91de544487d57e1c72b5c6f75559e8690d6189580c5cd4bb18f1"
+    },
+    {
+      "path": "session-source-r3/verification.json",
+      "sha256": "cd2b4879a96c4789ef9c5b93b72db3023b768e28abd58af19355003090f90425"
+    },
+    {
+      "path": "generation-source-r1/verification.json",
+      "sha256": "0b3a07eb93195ae2bee7e3f7d35ec4791cc5764f192f41b2100d74abe369c021"
+    },
+    {
+      "path": "installation-final-r1/verification.json",
+      "sha256": "c4c76080040b5236ae7befe44d36920de79ec21978eed388628031ac62b05030"
+    },
+    {
+      "path": "installation-final-r2/verification.json",
+      "sha256": "222351ddd27f39cdf547a3fc14afb57047807b642b96218e494467df233d8559"
+    },
+    {
+      "path": "vace-source-r1/verification.json",
+      "sha256": "a0faad1bacbed267ee8bfcfc88d6b4f6e1de7c9be5240ecd1984835a706d8a59"
+    },
+    {
+      "path": "vace-installed-r1/verification.json",
+      "sha256": "02c55c89095184d87dfab42dfbd8f52a0291d86b1e52034273f4f4556c1d863c"
+    },
+    {
+      "path": "vace-installed-r2/verification.json",
+      "sha256": "40a226317a381c1fba5947e1f33805fbb3614999f32017139147972529afb582"
+    },
+    {
+      "path": "session-installed-r1/verification.json",
+      "sha256": "b49d977a93c74154aceec90e71fafba1ba4a6cf8e6b0bd402eefad46675b5990"
+    },
+    {
+      "path": "generation-installed-r1/verification.json",
+      "sha256": "e8c9853e6efdbd6f64ff01b36c8b999015f314cbce501f013eb9f08594cf8419"
+    },
+    {
+      "path": "legacy-installed-r1/verification.json",
+      "sha256": "9af4f6018453415bf76869c433fc19dc27e9df0a596fc89e31264ceb2fe89957"
+    },
+    {
+      "path": "installation-final-r3/verification.json",
+      "sha256": "25b5474e4b52ef55b44a2edd1816a6ffc46d0f6c7d71cef7cabed47b958d2080"
+    },
+    {
+      "path": "control-lock-r1/verification.json",
+      "sha256": "216a63647af458ec1c2cee6fd16160d5c6373d89efc3dcdd1bb79d2b54c94171"
+    },
+    {
+      "path": "control-source-r1/verification.json",
+      "sha256": "35feb2fb924aa8b6109ea2d854627bf46219ba154f30398640dd8e15b9299d66"
+    },
+    {
+      "path": "control-source-r2/verification.json",
+      "sha256": "8e04f590c4af5ecc96562f3bc682e2ad021f564ae81a4c0dd2253558edd6015d"
+    },
+    {
+      "path": "control-fix-r1/verification.json",
+      "sha256": "04335c13ef7e2c37aeafa967f4cdc82b86b3ff1897fb664c44616cb81a63969a"
+    },
+    {
+      "path": "session-installed-r2/verification.json",
+      "sha256": "7b8bce4f1fa4ab7d75d9366363ccbf868e2d6b427460032f782d7af753955d0a"
+    },
+    {
+      "path": "generation-installed-r2/verification.json",
+      "sha256": "ff76e8eb146a5eb7aadf3892df6492e89a0f33ba57e40089ab8f5a9c1120ae36"
+    },
+    {
+      "path": "vace-installed-r3/verification.json",
+      "sha256": "6bc35194e41970c1ddca9d8fedb8e1f9e94cc74a7c772a9eafb8d045ec441dfd"
+    },
+    {
+      "path": "legacy-installed-r2/verification.json",
+      "sha256": "f311ce37fcab0f82ebd8c811e2ee981f14b49bb822758194585966075fd51424"
+    },
+    {
+      "path": "render-roundtrip-r1/verification.json",
+      "sha256": "fe80e328fe4bb07348fde69bbec15dd9089a7aaa579598ca59632b5a67105eb2"
+    },
+    {
+      "path": "skill-registration-r1/verification.json",
+      "sha256": "a7d88cdf73a58a9e38160508babc615685cbc2e047f9b082d2aa009e3b808462"
+    },
+    {
+      "path": "render-roundtrip-r2/verification.json",
+      "sha256": "7f95ff304f3e3d6f2366c74f9b7fe9f9797677efc62b090ce9605636085cc2df"
+    },
+    {
+      "path": "registration-preflight-r1/verification.json",
+      "sha256": "f8a2076fe6538afa1c025ad829a48c3a140c7609f05d8b8787dbf9799f686fbf"
+    },
+    {
+      "path": "kit-r1/failure.json",
+      "sha256": "86c721c9ce38bac2d1e4ce270c6d9c1d969d4345bad8625f1d688b4fdfb8b6ad"
+    },
+    {
+      "path": "kit-r2/failure.json",
+      "sha256": "2f25f75f71e9aaa19e1a98479b7ce7a42e35cb9321abb0744dfd324a91584802"
+    },
+    {
+      "path": "kit-r3/verification.json",
+      "sha256": "872902372313823318fa98d45a12ba09c043d7f77a08d1b3b394ecb70ff118d9"
+    }
+  ]
+}

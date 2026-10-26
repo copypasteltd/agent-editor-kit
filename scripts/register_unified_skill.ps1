@@ -76,6 +76,20 @@ if (-not $names.ContainsKey('skills/agent-ffmpeg-local-editor/SKILL.md') -or
     (Get-Sha256 (Join-Path $canonicalPath 'SKILL.md')) -ne $entry.skill_md_sha256) {
     throw 'The unified package must contain exactly one reviewed Skill entry'
 }
+# Exercise the reviewed Skill launcher before changing discovery or writing a
+# success receipt. A valid runtime receipt alone cannot prove its pin matches.
+$skillLauncher = Join-Path $canonicalPath 'scripts/run.py'
+if (-not $names.ContainsKey('skills/agent-ffmpeg-local-editor/scripts/run.py')) {
+    throw 'The reviewed Skill launcher is missing from the inventory'
+}
+$launcherOutput = & $runtime.python '-I' '-S' '-B' '-X' 'utf8' $skillLauncher $runtimePath 'version'
+if ($LASTEXITCODE -ne 0) {
+    throw 'Skill launcher preflight failed; discovery and registration receipt were preserved'
+}
+$launcherVersion = ($launcherOutput -join "`n") | ConvertFrom-Json
+if (-not $launcherVersion.ok -or $launcherVersion.data.cli_version -ne $manifest.cli_version) {
+    throw 'Skill launcher version differs from the reviewed namespace'
+}
 $existingEntry = Assert-OwnedJunction $registrationPath $canonicalPath
 $retire = @()
 $retiredNames = @{}
@@ -125,6 +139,7 @@ try {
         status='registered'; registration_mode='single'; registered_at_utc=[DateTime]::UtcNow.ToString('o')
         skill_count=1; module_count=$manifest.module_count; release=$runtime.release
         namespace_manifest_sha256=(Get-Sha256 $manifestPath)
+        launcher_preflight_verified=$true; registered_cli_version=$launcherVersion.data.cli_version
         name=$entry.name; canonical_directory=$canonicalPath; registration_directory=$registrationPath
         discovery_directory=$discoveryRoot; runtime_directory=$runtime.installed_directory
         created_entry=$created; retired_junction_count=@($removed).Count; retired_junctions=@($removed)

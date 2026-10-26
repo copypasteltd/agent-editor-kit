@@ -1,13 +1,19 @@
 ---
 name: agent-ffmpeg-local-editor
-description: "Edit and generate local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, native tracking, GPU text/image/first-last video generation, semantic search, voice/translation, subtitle dubbing, music/SFX and quality checks. Also use for ads, reference remakes, long-to-short clips and screen demos."
+description: "Edit and generate local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, native tracking, GPU text/image/first-last generation with reusable model sessions, semantic search, voice/translation, subtitle dubbing, music/SFX and quality checks. Also use for ads, reference remakes, long-to-short clips and screen demos."
 ---
 
 # agent editor kit / unified local Skill
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.31` / CLI `0.1.33`.
+The current local runtime is `v0.1.0-alpha.4-local.32` / CLI `0.1.34`.
+For repeated GPU generation with the same prompt, read
+[model sessions](references/model-sessions.md). Start one explicit session,
+reuse its ID with `media generate --model-session`, and stop it in `finally`.
+Weights and prompt embeddings persist; scheduler and previous-frame context
+reset for every job. A new prompt pair requires a new session. Session startup
+verifies the complete model; the first generation still pays the loading cost.
 Native tracking can be exported as ordinary hold keys with `convert export --bake-tracking`
 for `agent-json` or `package`; OTIO/MLT/draft exports bake automatically. The native
 path verifies every Float32 display frame before export and preserves an original

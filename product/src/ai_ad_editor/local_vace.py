@@ -18,7 +18,8 @@ IMPLEMENTATIONS = {'worker': 'vace_worker.py', 'frames': 'vace_frames.py', 'cont
                    'model_loader': 'vace_model.py', 'pipeline': 'local_matting.py', 'mask_controller': 'local_inpainting.py',
                    'rgba': 'matting_frames.py', 'guard': 'rvm_worker.py', 'artifact_verification': 'artifact_locks.py', 'io': 'utils.py', 'blend': 'repair_blend.py',
                    'cuda_admission': 'cuda_admission.py', 'outpaint': 'local_outpainting.py', 'diagnostics': 'pipeline_diagnostics.py', 'error_contract': 'errors.py', 'local_policy': 'policy.py',
-                   'temporal_context': 'vace_context.py'}
+                   'temporal_context': 'vace_context.py', 'model_session': 'model_session.py',
+                   'session_worker': 'vace_session_worker.py', 'session_relay': 'vace_session_relay.py'}
 CAPABILITIES = ['prompted_masked_video_editing', 'joint_temporal_windows', 'native_cuda_bfloat16', 'outside_rgb_and_alpha_preserved',
                 'explicit_previous_generated_overlap_conditioning']
 MODEL_FILES = {'model_index.json', 'scheduler/scheduler_config.json', 'text_encoder/config.json',
@@ -169,7 +170,7 @@ def prepare_adapter(root, *, adapter_id, model_path, executable, evidence, creat
     return record, rights
 
 
-def verify_adapter(record):
+def _verify_adapter(record, entry):
     findings=[]
     try:
         if any(record.get(k)!=v for k,v in {'engine':VACE_ENGINE,'protocol':VACE_PROTOCOL,'kind':'video-inpainting','network':'disabled','output_contract':'rgba_video_v1','capabilities':CAPABILITIES}.items()): raise ValueError('VACE registry contract')
@@ -181,9 +182,22 @@ def verify_adapter(record):
         actual={(a['path'],a['role']) for a in record['artifacts']}
         if len(actual)!=len(record['artifacts']) or not expected.issubset(actual) or len(actual-expected)!=1 or next(iter(actual-expected))[1]!='evidence':raise ValueError('VACE artifact inventory')
         if record['model_kind']!='directory' or record['model_file_count']!=len(files) or record['model_sha256']!=model_digest(model,record['artifacts']):raise ValueError('VACE model manifest')
-        if next(a['sha256'] for a in record['artifacts'] if a['role']=='python')!=record['executable_sha256'] or any(_entry(Path(a['path']),a['role'])!=a for a in record['artifacts']):raise ValueError('VACE artifact changed')
+        if next(a['sha256'] for a in record['artifacts'] if a['role']=='python')!=record['executable_sha256'] or any(entry(Path(a['path']),a['role'])!=a for a in record['artifacts']):raise ValueError('VACE artifact changed')
     except (AppError,ValueError,TypeError,KeyError,OSError,StopIteration) as exc:findings.append({'code':getattr(exc,'code','VACE_REGISTRY_INVALID'),'message':str(exc)})
     return {'adapter_id':record.get('adapter_id'),'engine':record.get('engine'),'network':'disabled','ok':not findings,'findings':findings}
+
+
+def verify_adapter(record):
+    return _verify_adapter(record, _entry)
+
+
+def verify_launch_contract(record):
+    """Pre-spawn code/executable checks; child hashes model bytes before ready."""
+    artifacts = {(a['path'], a['role']): a for a in record.get('artifacts', [])}
+    def entry(path, role):
+        if role == 'model': return artifacts[(str(path), role)]
+        return _entry(path, role)
+    return dict(_verify_adapter(record, entry), model_bytes_verified=False)
 
 
 def normalize_generation(*, prompt, negative_prompt=None, seed=None, inference_steps=None, guidance_scale=None, conditioning_scale=None,

@@ -1,0 +1,31 @@
+{
+  "status": "reviewed_with_quality_defects",
+  "reviewed_at_utc": "2026-10-26T17:10:40.918810+00:00",
+  "static_image_review": true,
+  "continuous_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false,
+  "model_output_publication_accepted": false,
+  "contact_sheet": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\actual-resident-contact.png",
+  "contact_sheet_sha256": "10c76e053b643e30bda812cd7b0ace9a709be94cb6d240840007aa41212657ff",
+  "reviewed_frames_per_clip": [
+    0,
+    4,
+    8,
+    12,
+    16
+  ],
+  "clips": [
+    "cold",
+    "warm-replay",
+    "warm-new"
+  ],
+  "observations": [
+    "Cold and same-seed replay contact samples visually match; complete17-frame equality is separately established by raw decoded pixels.",
+    "Generated interior frames show colored edge halos and block-like background artifacts.",
+    "Warm-new frame4 shows a stray colored fragment above the bottle; final frame has colored edge distortion.",
+    "Retained endpoints do not establish prompt realism, smooth motion, identity consistency or natural video quality."
+  ],
+  "timing_chart_reviewed": true,
+  "timing_chart_scope": "Original numeric data chart only; no model image published."
+}

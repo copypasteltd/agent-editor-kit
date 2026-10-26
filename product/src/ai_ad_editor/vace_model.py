@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import gc
+import copy
 import threading
 from pathlib import Path
 import time
@@ -12,6 +13,11 @@ WEIGHT_FILES = {
     'transformer': [f'diffusion_pytorch_model-{i:05d}-of-00002.safetensors' for i in range(1, 3)],
     'vae': ['diffusion_pytorch_model.safetensors'],
 }
+
+
+def prompt_identity(generation):
+    """One resident session retains exactly one explicit text embedding pair."""
+    return tuple(generation[key] for key in ('prompt', 'negative_prompt', 'prompt_max_tokens'))
 
 
 def load_local_weights(loader, directory, *, read_report, **options):
@@ -89,8 +95,9 @@ def load_predictor(model_path, settings, generation, *, progress=None):
     from .cuda_admission import HEADROOM_BYTES, POLICY, admit_cuda, record_window, window_summary
 
     started=time.monotonic();root=Path(model_path);read_report=[]
+    phase_callback = [progress]
     def phase(name):
-        if progress:progress(name)
+        if phase_callback[0]:phase_callback[0](name)
     phase('admitting-text-gpu-memory')
     text_check=admit_cuda(torch,settings['text_gpu_budget_mib']*1024**2+HEADROOM_BYTES,'text-weights')
     import accelerate
@@ -180,6 +187,24 @@ def load_predictor(model_path, settings, generation, *, progress=None):
               'window_input_shapes':[]}
     from .vace_context import ConditioningTrace
     conditioning_trace=ConditioningTrace() if generation.get('temporal_context')=='previous' else None
+    original_prompt = prompt_identity(generation)
+    initial = copy.deepcopy(metadata)
+
+    def begin_generation(options, *, progress=None):
+        nonlocal generation, conditioning_trace
+        if prompt_identity(options) != original_prompt:
+            raise ValueError('VACE_SESSION_PROMPT_CHANGED_START_NEW_SESSION')
+        # A fresh scheduler and trace prevent step, scene or previous-frame state
+        # leaking across projects/jobs. Only weights and text embeddings persist.
+        generation = copy.deepcopy(options)
+        phase_callback[0] = progress
+        pipe.scheduler = UniPCMultistepScheduler.from_config(pipe.scheduler.config, flow_shift=options['flow_shift'])
+        metadata.clear(); metadata.update(copy.deepcopy(initial))
+        metadata.update(load_seconds=0., initial_load_seconds=initial['load_seconds'], text_phase_seconds=0.,
+                        flow_shift=options['flow_shift'], model_input_scale=options['model_input_scale'])
+        metadata['gpu_admission']['windows'] = window_summary()
+        conditioning_trace = ConditioningTrace() if options.get('temporal_context') == 'previous' else None
+        return metadata
     def predict(images,masks,window_generation):
         if {k:v for k,v in window_generation.items() if k!='seed'}!={k:v for k,v in generation.items() if k!='seed'}:raise ValueError('VACE_GENERATION_SETTINGS_CHANGED')
         phase('admitting-video-window-gpu-memory')
@@ -203,4 +228,5 @@ def load_predictor(model_path, settings, generation, *, progress=None):
         metadata['window_input_shapes'].append(list(images.shape[:3]))
         return np.asarray(value,dtype=np.float32)
     phase('local-video-model-ready')
+    predict.begin_generation = begin_generation
     return predict,metadata

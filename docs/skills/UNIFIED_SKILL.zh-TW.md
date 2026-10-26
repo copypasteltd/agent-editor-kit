@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.33 / alpha.4-local.31 / r34 kit · 1 Skill / 17 modules / 74 files.**
+**CLI0.1.34 / alpha.4-local.32 / r35 kit · 1 Skill / 17 modules / 75 files.**
 
-新增本地 GPU 文生、圖生、尾幀與首尾幀影片生成：明確條件、原文提示詞、seed/取樣與視窗參數，產出無聲影片資產，並可直接作為普通可編輯片段入軌。重用既有 VACE 原生核心、GPU 記憶體准入、權利依賴與交易恢復。
+新增原生 GPU 模型會話：明確啟動、查詢、停止，連續生成重用權重與同一提示詞嵌入；每個任務重設 scheduler、前窗上下文及統計。實際同機首條生成 654.27 秒，後兩條 35.46/28.48 秒；會話全模型校驗另計 480.42 秒。相同 seed 的 17 幀逐像素一致，實際去噪取消可回滾並退出所屬行程。
 
-[Video generation workflow](../product/VIDEO_GENERATION.md)
+[Model session workflow](../product/MODEL_SESSIONS.md)
 
 <!-- /community-current -->
 

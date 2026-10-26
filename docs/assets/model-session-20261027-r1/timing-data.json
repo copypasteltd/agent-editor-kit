@@ -1,0 +1,25 @@
+{
+  "scope": "single observations on one RTX3060, not a repeated benchmark",
+  "units": "seconds",
+  "rows": [
+    {
+      "name": "Session full-model verification",
+      "seconds": 480.42180440000084
+    },
+    {
+      "name": "First generation, includes loading",
+      "seconds": 654.2718785000034
+    },
+    {
+      "name": "Warm replay, identical seed",
+      "seconds": 35.457979399994656
+    },
+    {
+      "name": "Warm generation, new condition",
+      "seconds": 28.478757899996708
+    }
+  ],
+  "registration_seconds": 672.4734276000017,
+  "actual_model_frames_published": false,
+  "evidence": "docs/validation/evidence/model-session-20261027-r1/case-r1/verification.json"
+}

@@ -1,0 +1,32 @@
+{
+  "status": "failed",
+  "at_utc": "2026-10-26T17:03:43.643484+00:00",
+  "registered_skill": true,
+  "source_fallback": false,
+  "new_model_windows": 0,
+  "model_audio_generated": false,
+  "source_outputs_silent": true,
+  "natural_quality_accepted": false,
+  "model_output_publication_accepted": false,
+  "continuous_playback": false,
+  "human_listening": false,
+  "calls": [
+    {
+      "name": "version",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "version"
+      ],
+      "exit_code": 2,
+      "stdout": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\model-session-20261027-r1\\render-roundtrip-r1\\version.stdout.log",
+      "stdout_sha256": "e2b8dbaa66c8e0eddb530d123768b92c4fabb1904890bf0f1e87eb3289a456ba",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "error": "AssertionError(('version', b'{\"ok\": false, \"status\": \"failed\", \"errors\": [{\"code\": \"LOCAL_SKILL_RUNTIME_UNAVAILABLE\", \"message\": \"Installed release does not match the Skill runtime pin\"}]}\\r\\n', b''))"
+}

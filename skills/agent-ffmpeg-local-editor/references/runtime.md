@@ -1,6 +1,6 @@
 # Installed-release runtime contract
 
-This namespace calls the locally installed `v0.1.0-alpha.4-local.31` / CLI 0.1.33
+This namespace calls the locally installed `v0.1.0-alpha.4-local.32` / CLI 0.1.34
 package using this Skill's `scripts/run.ps1`. Its 17 modules share the launcher.
 The editable Skill source stays on E:; Codex reads
 Windows directory junctions. `local/agent-ffmpeg/runtime.json` selects the native Python and installed path.
@@ -24,6 +24,13 @@ The installer preserves existing destinations. An unavailable installation requi
 not a source fallback. The namespace manifest registers only `$agent-ffmpeg-local-editor`; its 17 modules are internal references. The registrar retires only this checkout's 16 previous specialist junctions. Legacy `video-cut-` Skills are separate.
 
 ## Project workflow
+
+Repeated generation can use an explicit [native model session](model-sessions.md).
+Keep one project, adapter and prompt pair per session; use returned UUIDs and
+stop the owned session after the batch. Do not stop unrelated GPU processes.
+Idle/lifetime/job/deadline budgets retire the process; cancellation or a failed
+lease also retires it. Never copy session `cache/model-sessions/*/private.json`
+credentials into reports, project packages or client deliverables.
 
 Read actual command help, `capabilities` and `schema show` before authoring JSON. Example with `$avk` set
 as in SKILL.md (all source files and changes.json must already exist):

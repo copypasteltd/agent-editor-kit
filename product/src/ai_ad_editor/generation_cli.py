@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import copy
+from contextlib import ExitStack
 import math
 from pathlib import Path
 
@@ -37,12 +38,13 @@ def add_parser(subs, leaf):
     p.add_argument('--sequence-id'); p.add_argument('--track-id'); p.add_argument('--apply', action='store_true')
     p.add_argument('--timeline-start-seconds', type=float, default=0)
     p.add_argument('--timeout-seconds', type=float, default=3600); p.add_argument('--cancel-file')
+    p.add_argument('--model-session', help='复用显式启动的同工程VACE会话UUID；提示词须相同')
     return p
 
 
 def command(args):
     from .cli import _envelope, _operation, _progress, _recompute_sequence_duration
-    with verification_scope():
+    with verification_scope(), ExitStack() as contexts:
         root, project = load_project(args.project); assets = asset_map(project); assert_id(args.asset_id, 'asset-id')
         if not math.isfinite(args.timeout_seconds) or not 0 < args.timeout_seconds <= 604800 or not math.isfinite(args.timeline_start_seconds) or args.timeline_start_seconds < 0:
             raise argument_error('生成须有有限的正超时和非负时间线起点', 'timeout-seconds/timeline-start-seconds')
@@ -59,6 +61,10 @@ def command(args):
         adapter = visual_adapter_for(load_visual_model_registry(root), args.adapter_id)
         if not adapter or adapter.get('engine') != VACE_ENGINE:
             raise AppError('VIDEO_GENERATION_ADAPTER_UNAVAILABLE', '生成要求显式登记的本地VACE CUDA适配器', exit_code=10)
+        session = None
+        if getattr(args, 'model_session', None):
+            from .model_session import lease
+            session = contexts.enter_context(lease(root, args.model_session, adapter, config['sampling'], timeout=args.timeout_seconds))
         from .local_vace import verify_adapter
         if not verify_adapter(adapter)['ok']:
             raise AppError('MODEL_ADAPTER_HASH_INVALID', '生成模型或运行依赖变化，请重新登记', exit_code=10)
@@ -96,7 +102,7 @@ def command(args):
             with managed_workspace(root, 'video-generation') as job:
                 _progress(args, operation_id, 'started', 'media.generate', 0, '准备完整生成条件与本地GPU推理')
                 stage, result = generation.execute(root, job, config, references, adapter, timeout=args.timeout_seconds,
-                    cancel_file=marker, operation_id=operation_id, progress=lambda frame, total:
+                    cancel_file=marker, operation_id=operation_id, **({'session': session} if session is not None else {}), progress=lambda frame, total:
                         _progress(args, operation_id, 'progress', 'media.generate', round(90 * frame / total), f'生成 {frame}/{total} 帧'))
                 cancel(marker); generated = result['result']; job.publish(stage, output)
                 asset = dict(id=args.asset_id, kind='video', uri=output.relative_to(root).as_posix(), sha256=generated['sha256'],

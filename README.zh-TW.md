@@ -9,9 +9,36 @@
 本頁包含完整功能模塊、服務與依賴、安裝與使用邏輯、Skill 輸入輸出、真實案例和核驗表。長篇原始驗收日志繼續留檔，功能說明與案例入口恢復到首頁。
 
 
+<!-- model-session-current -->
+
+**CLI0.1.34 / alpha.4-local.32 / r35 kit · 1 Skill / 17 modules.**
+
+新增原生 GPU 模型會話：明確啟動、查詢、停止，連續生成重用權重與同一提示詞嵌入；每個任務重設 scheduler、前窗上下文及統計。實際同機首條生成 654.27 秒，後兩條 35.46/28.48 秒；會話全模型校驗另計 480.42 秒。相同 seed 的 17 幀逐像素一致，實際去噪取消可回滾並退出所屬行程。
+
+```powershell
+$sessionStart = & $avk media model-session start --project $avkProject --adapter-id $vaceAdapterId | ConvertFrom-Json
+if (-not $sessionStart.ok) { throw 'Model session failed to start' }
+try {
+  & $avk media generate --project $avkProject --adapter-id $vaceAdapterId `
+    --model-session $sessionStart.data.session_id --asset-id variant-01 `
+    --prompt $reviewedPrompt --width 256 --height 144 --frames 17 --fps 12
+  if ($LASTEXITCODE -ne 0) { throw 'Generation failed' }
+} finally {
+  & $avk media model-session stop --project $avkProject --session-id $sessionStart.data.session_id
+}
+```
+
+[Workflow / try-finally](docs/product/MODEL_SESSIONS.md) · [C44](docs/product/CASES.md#c44-model-sessions) · [Install](docs/releases/CLI_0.1.34_LOCAL.md) · [Evidence](docs/validation/原生GPU模型常驻实测_2026-10-27.md)
+
+這是單機單次冷熱觀測，首次登記/完整校驗/載入成本全部保留；更換正負提示詞或 token 預算須新建會話，僅允許串行任務。自然品質、模型與輸出權利、總行程 RAM/VRAM 配額、多 GPU 及完整剪映等價仍未驗收；靜態檢查已發現生成中間幀彩邊、背景塊狀偽影與異常碎片；實際模型影片/GIF與工程包保留本機。下圖僅展示實際耗時資料。
+
+![Measured session timing; not generated model imagery](docs/assets/model-session-20261027-r1/timing.png)
+
+<!-- /model-session-current -->
+
 <!-- video-generation-current -->
 
-**CLI0.1.33 / alpha.4-local.31 / r34 kit · 1 Skill / 17 modules.**
+**Historical / 历史 / 歷史：CLI0.1.33 / alpha.4-local.31 / r34 kit · 1 Skill / 17 modules.**
 
 新增本地 GPU 文生、圖生、尾幀與首尾幀影片生成：明確條件、原文提示詞、seed/取樣與視窗參數，產出無聲影片資產，並可直接作為普通可編輯片段入軌。重用既有 VACE 原生核心、GPU 記憶體准入、權利依賴與交易恢復。
 
@@ -629,7 +656,7 @@ flowchart LR
 5. 若需要選型，展示原圖與少量候選，記錄最終 ID/強度/作用域；在目標素材上復試。
 6. 渲染至工程內新路徑，檢查實際編碼文件、manifest、warning、音畫與權利，再導出專案包。
 
-## 43 個基礎功能模塊，以及上方 F44–F52 擴充
+## 完整的 62 個功能模組
 
 編號用於定位文件；各模塊有依賴與交叉，不是“43 個獨立內核”或完成率。下表直接寫明行為、入口與限制；[完整機器能力清單及每項契約](docs/product/CAPABILITIES.zh-TW.md)保留全部字段。
 
@@ -696,6 +723,7 @@ flowchart LR
 | F59 | 原生PTS跟蹤及疊加軌 | 保存來源觀測→依實際原生影格求跟隨位置；共用crop/TRS、ROI縮放／相對旋轉、透明度、視窗及巢狀聲音。 | `media track-bind; preview; render; queue; package` | 明確Float32，原生PTS不烘焙顯示鍵；預算／循環門禁；模板漂移及遮擋另審，中間格式烘焙未接通。 |
 | F60 | 原生跟蹤與烘焙交付 | 實際alpha/5類遮罩/59轉場足跡；剪輯與共享變速保留觀察；原生烘焙逐幀核驗並保留來源旁車。 | `media track-bind; timeline compose/edit; convert export --bake-tracking` | 目前凍結圖/FPS；20,000幀/256,000求值；無法表達的整數步進拒絕；外部播放器與自然身分/遮擋待驗收。 |
 | F61 | 本地GPU影片生成 | 文生、圖生、尾幀/首尾幀；原文提示/取樣、真實模型視窗、可編輯入軌、端點核驗、可移植配方與受管恢復。 | `media adapter; media generate` | 既有原生VACE/CUDA依賴；無聲8bit SDR；條件端點合成保留；自然品質/生成權利/完整剪映AI待驗收。 |
+| F62 | 原生GPU模型會話 | 同工程/適配器/提示詞重用權重與嵌入；每任務重設，活連線傳遞持鎖雜湊；取消、期限、閒置及任務數退出。 | `media model-session; media generate --model-session` | 原生Windows VACE；首條仍載入；新提示詞須新會話，串行執行；非全域顯存預留/多GPU。 |
 
 ## 支持的服務模塊與依賴
 
@@ -723,6 +751,7 @@ flowchart LR
 | S18 | 圖文語義與經驗校準 | 明確登記的原生 SigLIP2 worker | 既有 Torch/Transformers/權重；檔案綁定索引/實作/類型/實際裝置 | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | 分數非機率；冷啟動/大庫與校準工程遷移仍有限制 |
 | S19 | 獨立四軌分離 | 原生 Torch/TorchAudio HDemucs worker | 明確登記原生 Python、權重/證據/實作雜湊；auto/cpu/cuda，4 float WAV/軌道 | `audio adapter; audio separate-stems` | 基礎 ZIP 不含 Torch/權重；自然聽感與權重許可未閉 |
 | S20 | 字幕翻譯配音聯合服務 | 既有 OPUS / Kokoro 原生 worker + 受管工程事務 | 普通 SRT、明確語言/音色/軌道，CPU/CUDA/auto，批內復用 | `dub subtitles` | [完整流程](docs/product/SUBTITLE_DUBBING.md)；保留全句與重試，字詞/口型/自然品質未閉 |
+| S21 | 本地GPU常駐推理會話 | 原生行程、認證Windows命名管道、JSON/原始幀、重疊拒寫鎖與生命週期監控。 | 既有本地VACE適配器；同一提示詞多方案。 | `media model-session start/status/stop` | 不開放網路埠；同工程串行，首條載入與其他模型重用仍有限。 |
 
 **本機查詢與交付狀態：** 本輪 doctor 檢測到原生 Python 3.13.1、FFmpeg/ffprobe 8.1 和 Node；這不證明每個模型或瀏覽器適配器均已註冊。doctor 只查到系統存在 Docker/WSL 可執行路徑，沒有運行它們。本專案始終使用原生工具，不調度 Docker/WSL/虛擬環境。
 
@@ -822,7 +851,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.31/final-r1/installed/`，CLI 0.1.33；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
+本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.32/final-r3/installed/`，CLI 0.1.34；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1248,6 +1277,12 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R233 | 2026-10-26 local GPU generation | 模型與輸出權利維持unverified/internal，rights.check預期拒絕；實際MP4/GIF與可編輯工程包保留本機，公開目錄僅含自行繪製CC0條件圖，不以輸入圖冒充生成結果。 | [Evidence](docs/validation/evidence/video-generation-20261026-r1/case-r1/rights-expected-reject.stdout.json) |
 | R234 | 2026-10-26 local GPU generation | 統一Skill新增按需生成流程，維持1入口/17模組；74 Skill檔案與r34 kit114檔案；獨立註冊/安裝版核驗；模型包校驗期限可設定，強制逾時保留先前兩份設定，無原始碼回退。 | [Evidence](docs/validation/evidence/video-generation-20261026-r1/kit-r2/verification.json) |
 | R235 | 2026-10-26 local GPU generation | 三語README及61功能/20服務/75宣告、流程、案例/模型限制與安裝包同步；229歷史R列及38原關閉條件保留，開發失敗獨立留證。 | [Evidence](docs/validation/evidence/video-generation-20261026-r1/development-attempts-r1/verification.json) |
+| R236 | 2026-10-27 native GPU sessions | CLI0.1.34/local.32：230產品檔案/schema與固定安裝包一致；安裝版會話/讀鎖19、生成14、VACE/修復/恢復161、舊流程192通過，各組分開保留。 | [Evidence](docs/validation/evidence/model-session-20261027-r1/installation-final-r3/verification.json) |
+| R237 | 2026-10-27 native GPU sessions | C44實際CUDA連續3任務，51個RGBA幀獨立解碼；同seed重放17幀像素一致，權重/文字編碼器各載入一次。首次生成654.27s、重用35.46/28.48s，全量校驗480.42s另計，非多輪基準。 | [Evidence](docs/validation/evidence/model-session-20261027-r1/case-r1/verification.json) |
+| R238 | 2026-10-27 native GPU sessions | 真實去噪啟動後取消，工程/權利檔案逐位元組回滾、無未完成資產、所屬會話退出；原生worker RAM與整卡顯存取樣分開記，非全行程硬配額。 | [Evidence](docs/validation/evidence/model-session-20261027-r1/resources-r1/verification.json) |
+| R239 | 2026-10-27 native GPU sessions | 已註冊統一Skill渲染原/遷移工程，全部128個30FPS幀解碼一致；51個12FPS來源幀、作者4.25秒與編碼128/30秒分開記錄；實際GIF/包保留本機。 | [Evidence](docs/validation/evidence/model-session-20261027-r1/render-roundtrip-r2/verification.json) |
+| R240 | 2026-10-27 native GPU sessions | 一個入口/17內部模組/75 Skill檔案；r35 kit116檔案，獨立目錄解包/登記/目前宣告/說明/舊圖渲染計畫與包校驗逾時保護，未改變實際發現目錄。 | [Evidence](docs/validation/evidence/model-session-20261027-r1/kit-r3/verification.json) |
+| R241 | 2026-10-27 native GPU sessions | 三語62功能/21服務/75宣告、完整流程、C44/實測/版本雜湊與Skill同步；235歷史R列及38原關閉條件保留；開發失敗與未接納候選分開留證。 | [Evidence](docs/validation/evidence/model-session-20261027-r1/development-attempts-r2/verification.json) |
 
 ## 當前邊界與開發方向
 

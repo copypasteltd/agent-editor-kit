@@ -1,0 +1,81 @@
+{
+  "status": "passed",
+  "synthetic_model": false,
+  "model_media_published": false,
+  "contact_sheet": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\actual-resident-contact.png",
+  "contact_sha256": "10c76e053b643e30bda812cd7b0ace9a709be94cb6d240840007aa41212657ff",
+  "cases": [
+    {
+      "asset_id": "cold",
+      "preview": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\cold.mp4",
+      "sha256": "4332398ae304d3bafe4f35a7a5f373e8b855df551e20e251665011bb767c0a49",
+      "frames": 17,
+      "fps": "12",
+      "audio": false,
+      "gif": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\cold.gif",
+      "gif_sha256": "c91b94bb88749d77c6f44aa84c3bc454e3d58307064b0e92ab083c88512ef056",
+      "gif_frames": 17,
+      "gif_duration_ms": 1420,
+      "rgba_sha256": "sha256:08bb8bfccdd074dd1d68dc4c21942f6c13f0889db388a8c81206d138634b5193"
+    },
+    {
+      "asset_id": "warm-replay",
+      "preview": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\warm-replay.mp4",
+      "sha256": "4332398ae304d3bafe4f35a7a5f373e8b855df551e20e251665011bb767c0a49",
+      "frames": 17,
+      "fps": "12",
+      "audio": false,
+      "gif": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\warm-replay.gif",
+      "gif_sha256": "c91b94bb88749d77c6f44aa84c3bc454e3d58307064b0e92ab083c88512ef056",
+      "gif_frames": 17,
+      "gif_duration_ms": 1420,
+      "rgba_sha256": "sha256:08bb8bfccdd074dd1d68dc4c21942f6c13f0889db388a8c81206d138634b5193"
+    },
+    {
+      "asset_id": "warm-new",
+      "preview": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\warm-new.mp4",
+      "sha256": "dcb327327989a3ee6d83956c2ce91fcec4fc68f00c4dda793af61ab61664505b",
+      "frames": 17,
+      "fps": "12",
+      "audio": false,
+      "gif": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\warm-new.gif",
+      "gif_sha256": "e407e8cd202a105c267878501f4642e63d6454e26bbbb6534c335ca96a4c312e",
+      "gif_frames": 17,
+      "gif_duration_ms": 1420,
+      "rgba_sha256": "sha256:9e4ffaab27c567eab1d2f4c9d32e9ac7d3abc4d6e7547e30d0feed294afaea5d"
+    }
+  ],
+  "package_asset_checks": [
+    {
+      "asset_id": "asset_20261026161847_07ab58d1",
+      "sha256": "f098211c9ee1cdaea1a64e8de2e9ee596af5aad9d919196a410866596204e655",
+      "equal": true
+    },
+    {
+      "asset_id": "asset_20261026161850_171b843f",
+      "sha256": "e767b8ab152fa54a65d39aa9b1019cdd775b4b304a643b602092471897fd4f0e",
+      "equal": true
+    },
+    {
+      "asset_id": "cold",
+      "sha256": "166153039e37f3c632463730d6afaaccab66c4d3444b2694b883ba27f36c3142",
+      "equal": true
+    },
+    {
+      "asset_id": "warm-replay",
+      "sha256": "166153039e37f3c632463730d6afaaccab66c4d3444b2694b883ba27f36c3142",
+      "equal": true
+    },
+    {
+      "asset_id": "warm-new",
+      "sha256": "ddf6b19c7060031ce55ee6d579c9600fc8e98f19dfdea64ab529fd49f9387331",
+      "equal": true
+    }
+  ],
+  "static_image_review": false,
+  "continuous_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false,
+  "timing_chart": "docs/assets/model-session-20261027-r1/timing.png",
+  "timing_chart_sha256": "f09991c43b978cfcc2a7dcdf5f32e9159e303bc5692d196df545fdab81b68f57"
+}

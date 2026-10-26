@@ -8,7 +8,7 @@ import sys
 import time
 
 
-def infer(request,response):
+def infer(request,response, *, source=None, sink=None, model_cache=None):
     from ai_ad_editor.local_matting import request_hash
     from ai_ad_editor.local_inpainting import mask_unchanged, normalize_options
     from ai_ad_editor.local_vace import VACE_ENGINE,VACE_PROTOCOL,normalize_generation,verify_adapter,window_plan
@@ -25,21 +25,26 @@ def infer(request,response):
     import numpy as np
     import torch
     if not torch.cuda.is_available() or not torch.cuda.is_bf16_supported():raise ValueError('VACE_CUDA_BFLOAT16_UNAVAILABLE_NO_FALLBACK')
-    torch.set_num_threads(adapter['settings']['threads']);torch.set_num_interop_threads(1)
+    if model_cache is None or not model_cache.torch_configured:
+        torch.set_num_threads(adapter['settings']['threads']);torch.set_num_interop_threads(1)
+        if model_cache is not None: model_cache.torch_configured = True
     torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cudnn.allow_tf32=False;torch.cuda.reset_peak_memory_stats()
     predictor=None;metadata={};completed=0;last=0.
     def phase(name):atomic_write_json(Path(request['progress']),{'frames':completed,'stage':name})
     def predict(images,masks,options):
         nonlocal predictor,metadata
         if predictor is None:
-            from ai_ad_editor.vace_model import load_predictor
-            predictor,metadata=load_predictor(adapter['model_path'],adapter['settings'],generation,progress=phase)
+            if model_cache is not None:
+                predictor, metadata = model_cache.predictor_for(adapter, generation, phase)
+            else:
+                from ai_ad_editor.vace_model import load_predictor
+                predictor,metadata=load_predictor(adapter['model_path'],adapter['settings'],generation,progress=phase)
         return predictor(images,masks,options)
     def progress(frame):
         nonlocal completed,last
         completed=frame
         if frame==info['frames'] or time.monotonic()-last>=.5:phase('writing-lossless-rgba');last=time.monotonic()
-    metrics=process_frames(sys.stdin.buffer,sys.stdout.buffer,width=info['width'],height=info['height'],frames=info['frames'],
+    metrics=process_frames(source if source is not None else sys.stdin.buffer,sink if sink is not None else sys.stdout.buffer,width=info['width'],height=info['height'],frames=info['frames'],
                           infer=predict,options=request['inpainting'],generation=generation,channel=request['mask']['channel'],budget=adapter['settings']['state_budget_bytes'],progress=progress)
     phase('verifying-inputs-after-generation')
     if not verify_adapter(adapter)['ok'] or not mask_unchanged(request) or 'sha256:'+sha256_file(Path(request['source']['path']))!=request['source']['sha256']:raise ValueError('VACE_INPUT_CHANGED_DURING_GENERATION')

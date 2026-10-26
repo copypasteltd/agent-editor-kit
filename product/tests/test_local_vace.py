@@ -410,7 +410,8 @@ class NativeVaceTests(unittest.TestCase):
     def test_registration_dry_run_inspect_and_complete_inventory(self):
         before=self.metadata();code,result=invoke('media','adapter','register',*self.options,'--dry-run')
         self.assertEqual(code,0,result);self.assertEqual(self.metadata(),before)
-        adapter=self.register();self.assertEqual(adapter['model_file_count'],17);self.assertEqual(len(adapter['artifacts']),36)
+        adapter=self.register();self.assertEqual(adapter['model_file_count'],17);self.assertEqual(len(adapter['artifacts']),39)
+        self.assertTrue({'model_session','session_worker','session_relay'}.issubset({a['role'] for a in adapter['artifacts']}))
         self.assertTrue(verify_adapter(adapter)['ok'])
         self.assertTrue(invoke('media','adapter','inspect','--project',str(self.root),'--adapter-id','vace')[1]['data']['verification']['ok'])
 
@@ -420,6 +421,14 @@ class NativeVaceTests(unittest.TestCase):
         adapter['artifacts']=[a for a in adapter['artifacts'] if a['role']!='cuda_admission']
         adapter['sha256']=manifest_hash(adapter)
         self.assertFalse(verify_adapter(adapter)['ok'])
+
+    def test_missing_session_implementation_cannot_attest_old_inventory(self):
+        adapter=self.register()
+        for role in ('model_session','session_worker','session_relay'):
+            changed=copy.deepcopy(adapter)
+            changed['artifacts']=[a for a in changed['artifacts'] if a['role']!=role]
+            changed['sha256']=manifest_hash(changed)
+            self.assertFalse(verify_adapter(changed)['ok'])
 
     def test_model_inventory_custom_code_architecture_and_map_rejection(self):
         missing=self.model/'tokenizer/spiece.model';original=missing.read_bytes();missing.unlink()

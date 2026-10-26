@@ -1,0 +1,330 @@
+{
+  "status": "passed",
+  "at_utc": "2026-10-26T17:07:19.378621+00:00",
+  "registered_skill": true,
+  "source_fallback": false,
+  "new_model_windows": 0,
+  "model_audio_generated": false,
+  "source_outputs_silent": true,
+  "natural_quality_accepted": false,
+  "model_output_publication_accepted": false,
+  "continuous_playback": false,
+  "human_listening": false,
+  "calls": [
+    {
+      "name": "version",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "version"
+      ],
+      "exit_code": 0,
+      "stdout": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\model-session-20261027-r1\\render-roundtrip-r2\\version.stdout.log",
+      "stdout_sha256": "8a11dd9bc66d214dc4a1c2db1682f9908b3403aee25204e37a9e1f0f76121aa8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "import-case",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "convert",
+        "import",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\editable-resident-videos.aevpkg.zip",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\重新 导入工程"
+      ],
+      "exit_code": 0,
+      "stdout": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\model-session-20261027-r1\\render-roundtrip-r2\\import-case.stdout.log",
+      "stdout_sha256": "3e9cbaf78c4396e4bdbae1ddf0ec78d47bf8f42042518fdbb86c95ba5505d09f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "original-render",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\可编辑 常驻模型工程",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\可编辑 常驻模型工程\\renders\\combined-generated.mp4",
+        "--hardware-encode",
+        "off"
+      ],
+      "exit_code": 0,
+      "stdout": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\model-session-20261027-r1\\render-roundtrip-r2\\original-render.stdout.log",
+      "stdout_sha256": "7a0b31b671c7b8e02acf54c7ff212e8f34469aef459ffe596cc600554d6eca63",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "original-quality",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "quality",
+        "check",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\可编辑 常驻模型工程",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\可编辑 常驻模型工程\\renders\\combined-generated.mp4"
+      ],
+      "exit_code": 0,
+      "stdout": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\model-session-20261027-r1\\render-roundtrip-r2\\original-quality.stdout.log",
+      "stdout_sha256": "57befcb854e09214fb36029055fea5ec67c9f7c1fee282c5a3dbad654b6c8fd8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "original-probe",
+      "argv": [
+        "ffprobe",
+        "-v",
+        "error",
+        "-count_frames",
+        "-show_streams",
+        "-of",
+        "json",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\可编辑 常驻模型工程\\renders\\combined-generated.mp4"
+      ],
+      "exit_code": 0,
+      "stdout": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\model-session-20261027-r1\\render-roundtrip-r2\\original-probe.stdout.log",
+      "stdout_sha256": "8b60a7f313afae3003413f29daa6f49248a37dcf9e770053991dfad48bd9ffa6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "original-framemd5",
+      "argv": [
+        "ffmpeg",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\可编辑 常驻模型工程\\renders\\combined-generated.mp4",
+        "-map",
+        "0:v:0",
+        "-an",
+        "-pix_fmt",
+        "rgba",
+        "-f",
+        "framemd5",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "stdout": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\model-session-20261027-r1\\render-roundtrip-r2\\original-framemd5.stdout.log",
+      "stdout_sha256": "58a47062572fa62189c015c68562ae2eac2f5ceffb2b57aed6a6ebc8aa3a2073",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "imported-render",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\重新 导入工程",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\重新 导入工程\\renders\\combined-generated.mp4",
+        "--hardware-encode",
+        "off"
+      ],
+      "exit_code": 0,
+      "stdout": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\model-session-20261027-r1\\render-roundtrip-r2\\imported-render.stdout.log",
+      "stdout_sha256": "754bf21add526a0c22f87af96e0b7b4bd312c534e5748b8120ad89a57670ab5e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "imported-quality",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "quality",
+        "check",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\重新 导入工程",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\重新 导入工程\\renders\\combined-generated.mp4"
+      ],
+      "exit_code": 0,
+      "stdout": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\model-session-20261027-r1\\render-roundtrip-r2\\imported-quality.stdout.log",
+      "stdout_sha256": "c096bc4a0ff07d1f7482e5935f5fc749e56aef5efdd685330ed5ed24067ce5eb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "imported-probe",
+      "argv": [
+        "ffprobe",
+        "-v",
+        "error",
+        "-count_frames",
+        "-show_streams",
+        "-of",
+        "json",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\重新 导入工程\\renders\\combined-generated.mp4"
+      ],
+      "exit_code": 0,
+      "stdout": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\model-session-20261027-r1\\render-roundtrip-r2\\imported-probe.stdout.log",
+      "stdout_sha256": "8b60a7f313afae3003413f29daa6f49248a37dcf9e770053991dfad48bd9ffa6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "imported-framemd5",
+      "argv": [
+        "ffmpeg",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\重新 导入工程\\renders\\combined-generated.mp4",
+        "-map",
+        "0:v:0",
+        "-an",
+        "-pix_fmt",
+        "rgba",
+        "-f",
+        "framemd5",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "stdout": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\model-session-20261027-r1\\render-roundtrip-r2\\imported-framemd5.stdout.log",
+      "stdout_sha256": "58a47062572fa62189c015c68562ae2eac2f5ceffb2b57aed6a6ebc8aa3a2073",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "original-rgb",
+      "argv": [
+        "ffmpeg",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\可编辑 常驻模型工程\\renders\\combined-generated.mp4",
+        "-an",
+        "-pix_fmt",
+        "rgb24",
+        "-f",
+        "rawvideo",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "stdout": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\original-rgb.bin",
+      "stdout_sha256": "ad1ff9f9b70e18c320731f7b3c415d6a270c1d452ae23b045c589f53a3b2723a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "author_display_fps": "30",
+  "author_duration": "17/4",
+  "expected_frames": 128,
+  "outputs": [
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\可编辑 常驻模型工程\\renders\\combined-generated.mp4",
+      "sha256": "df2a58f29d7ef31d7eb9062b8b93bc5bdebad8531edae5085aa7e138c1999db1",
+      "decoded_frames": 128,
+      "video_fps": "30/1",
+      "width": 256,
+      "height": 144,
+      "audio_streams": [
+        {
+          "codec": "aac",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\重新 导入工程\\renders\\combined-generated.mp4",
+      "sha256": "df2a58f29d7ef31d7eb9062b8b93bc5bdebad8531edae5085aa7e138c1999db1",
+      "decoded_frames": 128,
+      "video_fps": "30/1",
+      "width": 256,
+      "height": 144,
+      "audio_streams": [
+        {
+          "codec": "aac",
+          "sample_rate": "48000",
+          "channels": 2
+        }
+      ]
+    }
+  ],
+  "decoded_equal_frames": 128,
+  "source_native_frames": 51,
+  "source_native_fps": "12",
+  "combined_display_fps": "30",
+  "encoded_duration_seconds": 4.266666666666667,
+  "author_duration_seconds": 4.25,
+  "gif": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\model-session-20261027-r1\\combined-generated.gif",
+  "gif_sha256": "8f220bfc6c35ef063bdcf79c9b8ba9de8acf433d82c3ba792b1f42fd0ebd6488",
+  "gif_frames": 43,
+  "gif_duration_ms": 4270,
+  "gif_frame_delays_ms": [
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    70
+  ],
+  "source_and_imported_pixels_equal": true
+}

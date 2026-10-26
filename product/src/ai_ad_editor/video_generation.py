@@ -162,7 +162,7 @@ def rebind_recipe(value, *, mapping, asset, assets):
     return rebound
 
 
-def execute(root, job, config, references, adapter, *, timeout, cancel_file=None, progress=None, operation_id=None):
+def execute(root, job, config, references, adapter, *, timeout, cancel_file=None, progress=None, operation_id=None, session=None):
     from .float_stream import _EncoderPipe, CHUNK_BYTES
     from .local_matting import prepare_plan, matte_native
     from .local_inpainting import prepare_mask, normalize_options
@@ -213,7 +213,7 @@ def execute(root, job, config, references, adapter, *, timeout, cancel_file=None
     plan['video'].pop('downsample_ratio', None)
     output = job.path / 'generated.mov'
     result = matte_native(root, output, adapter=adapter, plan=plan, timeout=remaining(), cancel_file=cancel_file,
-        progress=progress, operation_id=operation_id, workspace=job)
+        progress=progress, operation_id=operation_id, workspace=job, **({'session': session} if session is not None else {}))
     for row in references.values():
         remaining()
         if 'sha256:' + sha256_file(Path(row['path'])) != row['sha256']:

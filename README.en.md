@@ -9,9 +9,36 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
+<!-- model-session-current -->
+
+**CLI0.1.34 / alpha.4-local.32 / r35 kit · 1 Skill / 17 modules.**
+
+Explicit native GPU sessions add start/status/stop and reuse weights plus the same prompt embeddings. Scheduler, prior-frame context and metrics reset per job. This host measured 654.27s for the first generation and 35.46/28.48s for the next two; session-wide model verification adds 480.42s separately. Same-seed replay matches all 17 decoded frames. Cancellation during real denoising rolls back and exits only the owned process.
+
+```powershell
+$sessionStart = & $avk media model-session start --project $avkProject --adapter-id $vaceAdapterId | ConvertFrom-Json
+if (-not $sessionStart.ok) { throw 'Model session failed to start' }
+try {
+  & $avk media generate --project $avkProject --adapter-id $vaceAdapterId `
+    --model-session $sessionStart.data.session_id --asset-id variant-01 `
+    --prompt $reviewedPrompt --width 256 --height 144 --frames 17 --fps 12
+  if ($LASTEXITCODE -ne 0) { throw 'Generation failed' }
+} finally {
+  & $avk media model-session stop --project $avkProject --session-id $sessionStart.data.session_id
+}
+```
+
+[Workflow / try-finally](docs/product/MODEL_SESSIONS.md) · [C44](docs/product/CASES.md#c44-model-sessions) · [Install](docs/releases/CLI_0.1.34_LOCAL.md) · [Evidence](docs/validation/原生GPU模型常驻实测_2026-10-27.md)
+
+These are single observations on one host, with registration, full verification and first-load costs retained. A new prompt pair/token budget requires a new session; jobs are serial. Natural quality, model/output rights, total process RAM/VRAM quotas, multi-GPU support and full CapCut equivalence remain unaccepted. Static review found colored edges, block-like backgrounds and a stray fragment in generated interiors. Actual videos/GIFs/packages stay local. The chart shows measured timing data only.
+
+![Measured session timing; not generated model imagery](docs/assets/model-session-20261027-r1/timing.png)
+
+<!-- /model-session-current -->
+
 <!-- video-generation-current -->
 
-**CLI0.1.33 / alpha.4-local.31 / r34 kit · 1 Skill / 17 modules.**
+**Historical / 历史 / 歷史：CLI0.1.33 / alpha.4-local.31 / r34 kit · 1 Skill / 17 modules.**
 
 Local GPU generation now accepts text, a first image, a last image or a first/last pair. Explicit prompt, seed/sampling and bounded windows produce silent video assets and ordinary editable timeline clips, reusing the native VACE engine, GPU admission, rights dependencies and transactional recovery.
 
@@ -629,7 +656,7 @@ The implementation is **Python CLI + Agent Project schema + FFmpeg**, with an ex
 5. For selection, show the original and a small candidate set, record final IDs/strength/scope and trial them on target media.
 6. Render to a new project-owned path, inspect the encoded output, manifest, warnings, A/V and rights, then export the project package.
 
-## 43 base functional modules, plus F44–F52 above
+## All 62 functional modules
 
 IDs locate documentation groups with dependencies/overlap; they are not 43 independent kernels or a completion score. The table describes behavior, commands and limits. The [complete machine capability manual](docs/product/CAPABILITIES.en.md) retains every field.
 
@@ -696,6 +723,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F59 | Native PTS tracking and overlay tracks | Saved source observations → actual selected-frame anchors;shared crop/TRS,ROI scale/relative rotation,alpha,windows and nested audio. | `media track-bind; preview; render; queue; package` | Explicit Float32,no display-key bake,budget/cycle gates;template drift/occlusion require review;native interchange baking pending. |
 | F60 | Native tracking and baked delivery | Actual alpha/five masks/59 transition footprints; edits and shared retime retain observations; native bake verifies all frames and retains source sidecars. | `media track-bind; timeline compose/edit; convert export --bake-tracking` | Frozen graph/FPS;20,000 frames/256,000 samples;unrepresentable integer steps reject;external players and natural identity/occlusion remain unaccepted. |
 | F61 | Local GPU video generation | Text,image,last/first-last conditions; prompt/sampling,real model windows,editable clips,endpoint proofs,portable recipes and managed recovery. | `media adapter; media generate` | Existing native VACE/CUDA required;silent8bit SDR;known endpoints retained;natural quality,output rights and complete CapCut AI unaccepted. |
+| F62 | Native GPU model sessions | Reuse weights/embeddings per project/adapter/prompt; reset jobs, transfer live locked digests, retire on cancel/deadline/idle/job budget. | `media model-session; media generate --model-session` | Native Windows VACE; first job still loads; new prompt needs a new serial session; no global VRAM reservation/multi-GPU. |
 
 ## Supported service modules and dependencies
 
@@ -723,6 +751,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | S18 | Visual semantics and empirical calibration | Explicit native SigLIP2 worker | Existing Torch/Transformers/weights; profile binds index/implementation/kind/actual device | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | Scores are not probabilities; cold start, scale and calibrated-project migration remain limited |
 | S19 | Independent four-source separation | Native Torch/TorchAudio HDemucs worker | Explicit native Python, weights/evidence/implementation hashes; auto/cpu/cuda, four float WAV/tracks | `audio adapter; audio separate-stems` | Torch/weights excluded from base ZIP; natural listening and weight licensing remain open |
 | S20 | Joint subtitle dubbing | Existing native OPUS/Kokoro workers + managed project transaction | Plain SRT, explicit languages/voices/tracks, CPU/CUDA/auto, batch reuse | `dub subtitles` | [Workflow](docs/product/SUBTITLE_DUBBING.md); complete utterances/retries retained; words/lip sync/natural quality open |
+| S21 | Local resident GPU inference session | Native process, authenticated Windows named pipe, JSON/raw frames, overlapping deny-write locks and lifecycle watchdog. | Existing local VACE adapter, repeated variants of one prompt. | `media model-session start/status/stop` | No network port; serial per project; initial loading and reuse of other models remain limited. |
 
 **Observed local environment:** this update’s doctor sees native Python 3.13.1, FFmpeg/ffprobe 8.1 and Node; this does not establish registration of every model/browser adapter. doctor merely discovers Docker/WSL executable paths and does not run them. This project uses native tools without invoking Docker/WSL/virtual environments.
 
@@ -822,7 +851,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.31/final-r1/installed/`, CLI 0.1.33. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.32/final-r3/installed/`, CLI 0.1.34. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1250,6 +1279,12 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R233 | 2026-10-26 local GPU generation | Model/output rights remain unverified/internal and rights.check rejects as expected. Actual MP4/GIF/editable package stay local; public assets contain original CC0 conditions only. | [Evidence](docs/validation/evidence/video-generation-20261026-r1/case-r1/rights-expected-reject.stdout.json) |
 | R234 | 2026-10-26 local GPU generation | Unified Skill adds generation: one entry,17 modules,74 Skill files and114-file r34 kit. Isolated registration uses the installed CLI without source fallback. Pack verification has a configurable deadline; a forced timeout preserves both prior configuration files. | [Evidence](docs/validation/evidence/video-generation-20261026-r1/kit-r2/verification.json) |
 | R235 | 2026-10-26 local GPU generation | Full trilingual READMEs,61 functions/20 services/75 declarations,workflow,cases/model limits and bundle updated;229 historical R rows and38 original closure cells retained. Failed development attempts recorded separately. | [Evidence](docs/validation/evidence/video-generation-20261026-r1/development-attempts-r1/verification.json) |
+| R236 | 2026-10-27 native GPU sessions | CLI0.1.34/local.32:230 product files/schema equal the installed bundle. Installed groups pass19 session/locks,14 generation,161 VACE/repair/recovery and192 legacy tests; counts remain separate. | [Evidence](docs/validation/evidence/model-session-20261027-r1/installation-final-r3/verification.json) |
+| R237 | 2026-10-27 native GPU sessions | C44:three real CUDA jobs,51 independently decoded RGBA frames,same-seed17-frame pixel-identical replay and one load each of video/text weights. First CLI654.27s,warm35.46/28.48s,full verification480.42s separately; single observations. | [Evidence](docs/validation/evidence/model-session-20261027-r1/case-r1/verification.json) |
+| R238 | 2026-10-27 native GPU sessions | Cancellation after actual denoising restores project/rights bytes,publishes no unfinished asset and exits the owned session. Native worker RAM and whole-device VRAM samples are separate; no total-process hard quota claim. | [Evidence](docs/validation/evidence/model-session-20261027-r1/resources-r1/verification.json) |
+| R239 | 2026-10-27 native GPU sessions | Registered unified Skill renders original/imported projects with128 matching decoded30FPS frames. Source51 frames at12FPS,author4.25s and encoded128/30s are separate. Actual GIFs/packages remain local. | [Evidence](docs/validation/evidence/model-session-20261027-r1/render-roundtrip-r2/verification.json) |
+| R240 | 2026-10-27 native GPU sessions | One entry,17 modules,75 Skill files;r35 kit116 files. Isolated unpack/registration/current declarations/help/legacy graph planning and pack-timeout protection pass without changing real discovery. | [Evidence](docs/validation/evidence/model-session-20261027-r1/kit-r3/verification.json) |
+| R241 | 2026-10-27 native GPU sessions | Full trilingual62 functions/21 services/75 declarations,workflow,C44/evidence/release pins and Skill synchronized.235 historical R rows and38 original closure cells retained; failed development and rejected candidates recorded. | [Evidence](docs/validation/evidence/model-session-20261027-r1/development-attempts-r2/verification.json) |
 
 ## Current limits and development direction
 

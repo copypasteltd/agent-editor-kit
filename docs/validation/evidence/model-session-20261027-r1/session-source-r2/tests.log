@@ -1,0 +1,65 @@
+test_two_real_transports_reuse_one_model_and_reset_each_job (test_model_session.NativeSessionTests.test_two_real_transports_reuse_one_model_and_reset_each_job) ... ok
+test_busy_foreign_adapter_and_invalid_stream_do_not_stop_lease_owner (test_model_session.NativeSessionTests.test_busy_foreign_adapter_and_invalid_stream_do_not_stop_lease_owner) ... ok
+test_cancel_before_generation_retires_only_owned_session_and_rolls_back (test_model_session.NativeSessionTests.test_cancel_before_generation_retires_only_owned_session_and_rolls_back) ... ok
+test_inference_deadline_exits_resident_process_and_keeps_project (test_model_session.NativeSessionTests.test_inference_deadline_exits_resident_process_and_keeps_project) ... ok
+test_owner_disconnect_retires_session_without_touching_foreign_files (test_model_session.NativeSessionTests.test_owner_disconnect_retires_session_without_touching_foreign_files) ... ERROR
+test_max_jobs_releases_model_after_successful_publication (test_model_session.NativeSessionTests.test_max_jobs_releases_model_after_successful_publication) ... ok
+test_idle_budget_exits_native_process (test_model_session.NativeSessionTests.test_idle_budget_exits_native_process) ... ok
+test_changed_weight_bytes_cannot_become_ready (test_model_session.NativeSessionTests.test_changed_weight_bytes_cannot_become_ready) ... FAIL
+test_attestation_overlap_blocks_writes_without_rehash_and_rejects_mutation (test_model_session.SessionInvariantTests.test_attestation_overlap_blocks_writes_without_rehash_and_rejects_mutation) ... ok
+test_predictor_cache_does_not_reload_and_resets_state (test_model_session.SessionInvariantTests.test_predictor_cache_does_not_reload_and_resets_state) ... ok
+test_prompt_contract_preserves_text_and_changes_only_explicit_fields (test_model_session.SessionInvariantTests.test_prompt_contract_preserves_text_and_changes_only_explicit_fields) ... ok
+test_digest_reused_while_writes_and_replacement_are_denied (test_artifact_locks.ArtifactLocksTests.test_digest_reused_while_writes_and_replacement_are_denied) ... ok
+test_exception_releases_all_handles (test_artifact_locks.ArtifactLocksTests.test_exception_releases_all_handles) ... ok
+test_existing_writer_prevents_lock_and_has_no_cached_digest (test_artifact_locks.ArtifactLocksTests.test_existing_writer_prevents_lock_and_has_no_cached_digest) ... ok
+test_nested_scope_retains_outer_lock (test_artifact_locks.ArtifactLocksTests.test_nested_scope_retains_outer_lock) ... ok
+test_nonlocal_empty_and_directory_inputs_are_rejected (test_artifact_locks.ArtifactLocksTests.test_nonlocal_empty_and_directory_inputs_are_rejected) ... ok
+test_other_process_can_read_but_cannot_write_while_locked (test_artifact_locks.ArtifactLocksTests.test_other_process_can_read_but_cannot_write_while_locked) ... ok
+test_same_size_and_restored_mtime_are_rehashed_next_command (test_artifact_locks.ArtifactLocksTests.test_same_size_and_restored_mtime_are_rehashed_next_command) ... ok
+
+======================================================================
+ERROR: test_owner_disconnect_retires_session_without_touching_foreign_files (test_model_session.NativeSessionTests.test_owner_disconnect_retires_session_without_touching_foreign_files)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python313\Lib\multiprocessing\connection.py", line 317, in _recv_bytes
+    ov, err = _winapi.ReadFile(self._handle, bsize,
+              ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+                                overlapped=True)
+                                ^^^^^^^^^^^^^^^^
+BrokenPipeError: [WinError 109] 管道已结束。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_model_session.py", line 165, in test_owner_disconnect_retires_session_without_touching_foreign_files
+    while session.status(self.root,self.identity)['live'] and time.monotonic()<deadline:time.sleep(.05)
+          ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\model_session.py", line 85, in status
+    return _accepted(receive_json(connection))['state']
+                     ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\model_session.py", line 31, in receive_json
+    result = json.loads(connection.recv_bytes(MESSAGE_LIMIT).decode('utf-8'))
+                        ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\multiprocessing\connection.py", line 216, in recv_bytes
+    buf = self._recv_bytes(maxlength)
+  File "C:\Python313\Lib\multiprocessing\connection.py", line 337, in _recv_bytes
+    raise EOFError
+EOFError
+
+======================================================================
+FAIL: test_changed_weight_bytes_cannot_become_ready (test_model_session.NativeSessionTests.test_changed_weight_bytes_cannot_become_ready)
+----------------------------------------------------------------------
+ai_ad_editor.errors.AppError: 模型会话未完成全模型校验，查看本地worker.log
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_model_session.py", line 185, in test_changed_weight_bytes_cannot_become_ready
+    with self.assertRaisesRegex(AppError,'MODEL_SESSION_START_FAILED'):self.start()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "MODEL_SESSION_START_FAILED" does not match "模型会话未完成全模型校验，查看本地worker.log"
+
+----------------------------------------------------------------------
+Ran 18 tests in 63.268s
+
+FAILED (failures=1, errors=1)

@@ -1,0 +1,2185 @@
+{
+  "status": "completed",
+  "worker_pid": 24228,
+  "process_samples": 1462,
+  "peak_working_set_bytes": 9670328320,
+  "maximum_sampled_private_bytes": 18114576384,
+  "per_process_cuda_peak": "Recorded by Torch in each real inference response; excludes context and other applications.",
+  "gpu_samples_scope": "whole GPU device, includes other applications; not process attribution or a reservation",
+  "sampling_scope": "Resident worker after session readiness; excludes startup hashing and controller/decoder/encoder process totals.",
+  "process_termination_or_gpu_mutation": false,
+  "gpu_queries": [
+    {
+      "at_utc": "2026-10-26T16:19:46.658699+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:19:51.813905+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:19:56.937737+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:20:02.060669+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:20:07.351091+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:20:12.452359+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:20:17.551530+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:20:22.643146+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:20:27.733190+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:20:32.836308+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:20:37.943310+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:20:43.059130+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:20:48.165643+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:20:53.263031+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:20:58.349422+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:21:03.458237+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:21:08.557146+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:21:13.658395+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:21:18.754512+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:21:23.845104+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:21:28.956768+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:21:34.059775+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:21:39.167259+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:21:44.276792+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:21:49.408681+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:21:54.525543+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:21:59.614196+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:22:04.715556+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:22:09.808289+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:22:14.996879+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:22:20.092073+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:22:25.213966+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:22:30.350083+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:22:35.443719+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:22:40.535722+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:22:45.659248+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:22:50.793514+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:22:55.908831+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:23:01.134910+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:23:06.290865+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:23:11.403146+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:23:16.517359+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:23:21.656660+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:23:26.773418+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:23:32.047315+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:23:37.195032+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:23:42.322493+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:23:47.457206+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:23:52.571595+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:23:57.703640+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:24:02.845152+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:24:07.969289+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:24:13.232062+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:24:18.389040+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:24:23.889902+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:24:29.257363+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:24:34.558831+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:24:39.958441+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:24:45.439584+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:24:50.799195+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:24:56.157281+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:25:01.294890+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:25:06.402791+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:25:11.515059+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:25:16.622164+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:25:21.749027+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:25:26.848391+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:25:31.987003+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:25:37.081531+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:25:42.182034+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:25:47.385077+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:25:52.510725+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:25:57.607797+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:26:02.743845+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:26:07.855957+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:26:12.974396+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:26:18.159278+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:26:23.280022+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:26:28.381995+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:26:33.487251+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1474, 10640\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:26:38.980942+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1480, 10634\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:26:44.182777+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:26:49.343470+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:26:54.628299+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1482, 10632\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:27:00.046781+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1479, 10635\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:27:05.567675+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:27:11.069037+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1480, 10634\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:27:16.639345+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:27:22.029927+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:27:27.202420+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:27:32.295964+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:27:37.426602+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1482, 10632\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:27:42.733111+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1510, 10604\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:27:48.065222+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:27:53.276006+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:27:58.562602+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:28:03.749050+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:28:08.960629+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:28:14.398237+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:28:19.780505+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:28:25.127520+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:28:30.721291+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:28:36.272677+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:28:41.559916+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:28:46.698936+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:28:51.826474+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:28:56.929724+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:29:02.021171+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:29:07.158257+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:29:12.289683+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:29:17.399381+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:29:22.501211+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:29:27.610119+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:29:32.733696+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:29:37.844825+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:29:42.959725+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:29:48.113309+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:29:53.230442+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:29:58.345134+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:30:03.495497+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:30:09.731925+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:30:14.871704+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:30:19.985058+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:30:25.084344+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:30:30.220159+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:30:35.314110+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:30:40.402027+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:30:45.633888+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:30:50.728432+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:30:55.848138+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:31:00.985917+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:31:06.108591+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:31:11.229480+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:31:16.338940+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:31:21.447824+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:31:26.607048+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1482, 10632\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:31:31.906473+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1481, 10633\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:31:37.028498+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:31:42.134364+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:31:47.237733+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:31:52.356242+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:31:57.476021+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:32:02.593633+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:32:07.862740+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:32:13.121332+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:32:18.721153+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:32:23.989207+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:32:29.109374+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:32:34.258875+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:32:39.374081+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:32:44.542001+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:32:49.654022+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:32:54.782450+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:32:59.898698+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:33:05.040053+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:33:10.137221+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:33:15.252942+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:33:20.343798+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:33:25.446602+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:33:30.576412+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:33:35.697394+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:33:40.835045+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:33:46.021756+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:33:51.126253+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:33:56.272742+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:34:01.419108+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:34:06.549909+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:34:11.675721+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:34:16.760603+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:34:21.870868+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:34:27.016603+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:34:32.119289+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:34:37.249112+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:34:42.428133+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:34:47.534108+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:34:52.729071+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:34:57.818135+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:35:02.920094+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:35:08.035041+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:35:13.134180+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:35:18.263828+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:35:23.377445+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:35:28.477092+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:35:33.602647+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:35:38.700919+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:35:43.850449+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:35:49.168281+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:35:54.634880+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:35:59.734816+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:36:04.829680+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:36:09.939521+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:36:15.064510+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:36:20.187464+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:36:25.292368+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:36:30.433188+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:36:35.578333+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:36:40.702147+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:36:45.822213+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:36:50.930233+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:36:56.062577+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:37:01.202725+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:37:06.329762+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:37:11.435634+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:37:16.570729+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:37:21.683340+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:37:26.801990+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:37:31.905661+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:37:37.013588+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:37:42.129158+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:37:47.262788+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:37:52.410879+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:37:57.527013+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:38:02.661048+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:38:07.845346+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:38:12.976676+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:38:18.112628+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:38:23.238682+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:38:28.394206+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:38:33.518384+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:38:38.640672+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:38:43.791002+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1450, 10664\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:38:48.912611+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:38:54.034988+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:38:59.153072+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:39:04.282128+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:39:09.473406+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:39:14.577201+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:39:19.682876+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:39:24.797096+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:39:29.914805+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:39:35.011763+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:39:40.128224+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:39:45.253889+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:39:50.388990+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:39:55.497631+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:40:00.628695+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:40:05.742412+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:40:10.885115+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:40:15.995197+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:40:21.097522+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:40:26.205474+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:40:31.316319+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:40:36.437885+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:40:41.586418+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:40:46.711499+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:40:51.808768+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:40:56.928878+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1543, 10571\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:41:02.062061+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:41:07.249386+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:41:12.516618+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:41:18.049917+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:41:24.025724+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:41:29.558464+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:41:34.984944+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:41:40.329296+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:41:45.603581+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:41:50.981503+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:41:56.784879+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:42:02.286426+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:42:07.545258+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:42:12.892872+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:42:18.451986+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:42:23.539830+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:42:28.884033+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:42:34.097299+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:42:39.636662+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:42:45.991669+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:42:51.531896+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:42:56.820538+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:43:02.245938+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:43:07.551844+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:43:12.691076+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:43:18.191910+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:43:23.733994+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:43:29.394794+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:43:34.592476+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:43:39.968126+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:43:45.462061+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:43:50.827026+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8333, 3781\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:44:03.176908+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8311, 3803\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:44:08.284986+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8311, 3803\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:44:13.386388+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8311, 3803\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:44:18.494448+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8311, 3803\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:44:23.908739+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8311, 3803\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:44:28.992220+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8311, 3803\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:44:34.086693+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8311, 3803\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:44:39.196798+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8311, 3803\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:44:44.342387+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8299, 3815\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:44:49.550421+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8335, 3779\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:44:54.651824+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8350, 3764\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:44:59.733717+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8390, 3724\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:45:04.832708+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8635, 3479\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:45:09.954620+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 8521, 3593\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:45:15.198065+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:45:20.388189+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:45:25.868837+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:45:31.010378+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:45:36.389593+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:45:42.717930+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:45:47.908894+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:45:53.379161+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:45:58.516782+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:46:03.817877+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:46:09.979571+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:46:15.222031+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:46:20.329279+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:46:25.411759+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:46:30.690096+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:46:35.899423+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:46:41.388403+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:46:46.762194+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:46:51.871944+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:46:57.375962+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:47:02.943725+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:47:08.035458+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:47:13.342862+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:47:18.836721+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:47:24.171572+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:47:29.560790+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:47:34.875048+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:47:40.255053+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:47:45.551497+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:47:50.652232+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:47:55.732616+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:48:00.866912+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:48:05.981278+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:48:11.105689+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:48:16.600959+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:48:21.697886+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:48:26.788897+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1583, 10531\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:48:31.924497+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 5453, 6661\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:48:37.103311+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7677, 4437\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:48:42.194098+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7679, 4435\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:48:47.294919+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7715, 4399\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:48:52.385984+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7715, 4399\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:48:57.514724+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7715, 4399\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:49:02.653832+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7715, 4399\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:49:07.835690+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7715, 4399\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:49:13.836379+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7715, 4399\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:49:18.925383+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7715, 4399\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:49:24.095944+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7715, 4399\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:49:29.301341+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7715, 4399\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:49:34.525436+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7715, 4399\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:49:39.661524+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7715, 4399\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:49:44.797257+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7715, 4399\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:49:49.957393+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7715, 4399\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:49:55.074890+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7715, 4399\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:50:00.198263+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7715, 4399\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:50:05.378819+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7715, 4399\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:50:10.532888+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7715, 4399\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:50:15.666764+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7715, 4399\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:50:20.817254+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7715, 4399\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:50:25.945168+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7715, 4399\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:50:31.069937+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7715, 4399\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:50:36.224521+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7713, 4401\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:50:41.361222+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7713, 4401\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:50:46.469014+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7713, 4401\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:50:51.555522+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7713, 4401\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:50:56.673323+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7713, 4401\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:51:01.966219+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7713, 4401\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:51:07.356291+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 7713, 4401\r\n",
+      "stderr": ""
+    },
+    {
+      "at_utc": "2026-10-26T16:51:12.450957+00:00",
+      "exit_code": 0,
+      "stdout": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21, 1438, 10676\r\n",
+      "stderr": ""
+    }
+  ]
+}

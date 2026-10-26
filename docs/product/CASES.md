@@ -787,3 +787,15 @@ Native bound clips now support split/trim/ripple and range edits. The planner re
 [Workflow, input/output, commands and limits](TRACKING_EDITS.md) · [Before MP4](../assets/tracking-edits-20261026-r3/before.mp4) · [Edited MP4](../assets/tracking-edits-20261026-r3/edited.mp4) · [Editable package](../assets/tracking-edits-20261026-r3/editable-tracking-edits.aevpkg.zip).
 
 2.5s/30frames/12fps/320×180; explicit8bit diagnostic delivery, complete Float32 composition checked separately. Self-authored CC0 source/marker/tones, font license retained. No new model inference, natural quality, continuous playback or human listening acceptance.
+
+<a id="c38-tracking-source-edits"></a>
+
+## C38 · 跟踪源滑移/真实外扩 · CLI0.1.28
+
+已登记CC0移动几何、透明标记与双声道合成音，有限内段先滑移0.25秒，再关联头尾各外扩0.25秒。
+36帧/3秒，其中30帧有真实源覆盖；全部Float32像素与独立无绑定作者工程相同，完整144000双声道采样误差0。
+工程包重导入与队列分别核验。实际GPU投影及清理留证；GIF静音，无自然身份/连续播放/人工听审验收。
+
+![Actual silent GIF](../assets/tracking-source-edits-20261026-r3/edited.gif)
+
+[Before MP4](../assets/tracking-source-edits-20261026-r3/before.mp4) · [Edited MP4](../assets/tracking-source-edits-20261026-r3/edited.mp4) · [Editable package](../assets/tracking-source-edits-20261026-r3/editable-tracking-source-edits.aevpkg.zip) · [Source/rights](../assets/tracking-source-edits-20261026-r3/SOURCE.txt) · [Hashes](../assets/tracking-source-edits-20261026-r3/media-manifest.json) · [Workflow](TRACKING_SOURCE_EDITS.md) · [Evidence](../validation/跟踪源编辑实测_2026-10-26.md).

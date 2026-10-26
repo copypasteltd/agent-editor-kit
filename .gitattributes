@@ -1664,3 +1664,11 @@ docs/validation/跟踪剪辑实测_2026-10-26.md text eol=lf
 scripts/*tracking_edits*20261026.py text eol=lf
 product/src/ai_ad_editor/binding_edits.py text eol=lf
 product/tests/test_tracking_edits.py text eol=lf
+docs/validation/evidence/tracking-source-edits-20261026-r1/** -text -whitespace
+docs/assets/tracking-source-edits-20261026-*/** -text -whitespace
+docs/product/tracking-source-edits-capabilities-cli-0.1.28.json -text -whitespace
+product/tests/test_tracking_source_edits.py text eol=lf
+scripts/*tracking_source_edits*20261026.py text eol=lf
+docs/product/TRACKING_SOURCE_EDITS.md text eol=lf
+docs/releases/CLI_0.1.28_LOCAL.md text eol=lf
+docs/validation/跟踪源编辑实测_2026-10-26.md text eol=lf

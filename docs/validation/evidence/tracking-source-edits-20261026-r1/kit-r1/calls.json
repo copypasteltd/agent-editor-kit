@@ -1,0 +1,224 @@
+[
+  {
+    "id": "configure",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\tracking-source-edits-kit-r1\\独立工具 包\\scripts\\activate_community_runtime.py",
+      "--installed",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.26\\final-r1\\installed",
+      "--packs",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-portable-r1\\模型 包",
+      "--voice-cuda-lib",
+      "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\lib",
+      "--translation-cuda-lib",
+      "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.4\\bin",
+      "--semantic-config",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\semantic-runtime.json"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "e41f5d22bcea5bda8bf5c63e8a605aac0849436e1e45583d25321c43974861fd",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "register",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\tracking-source-edits-kit-r1\\独立工具 包\\register-agent-ffmpeg-local-skills.ps1",
+      "-SkillsDirectory",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\tracking-source-edits-kit-r1\\isolated-discovery",
+      "-ReceiptPath",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\kit-r1\\registration.json"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "5c57f82ed0a808cd331c003defee2ca3cdab973547c89bf8f8d3d632d02b3997",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "version",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\tracking-source-edits-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "01da7dccec776752ce164ded35335105fc193b8e2c415f3efce9daaa47b18f4b",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "capabilities",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\tracking-source-edits-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "capabilities"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "6df6acaa9013eb1c1fe76265531079abc346a64ec5340fc292044d6a211657fa",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "transition-help",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\tracking-source-edits-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "timeline",
+      "transition",
+      "--help"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "6ba1c7e3bc0e34c0363aacbe265838ab48f04a0e6d45976ceea2cfeea2fa80a5",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "import-case",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\tracking-source-edits-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-tracking-20261026-r5\\editable-native-tracking.aevpkg.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\tracking-source-edits-kit-r1\\独立验收 工程"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "3f6011fda482045d10206db4080221c32234a2446b5442cc75edeb30be7eecd9",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "float-render-dry-run",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\tracking-source-edits-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\tracking-source-edits-kit-r1\\独立验收 工程",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\tracking-source-edits-kit-r1\\独立验收 工程\\renders\\isolated-plan.mkv",
+      "--container",
+      "mkv",
+      "--hardware-encode",
+      "off",
+      "--dry-run"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "6240fd5a575b57f414ecda6151efef51b8c510e52e07913e6a5eb773390277fa",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "validate",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\tracking-source-edits-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\tracking-source-edits-kit-r1\\独立验收 工程"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "d0cab042fa8f75c22bacae59f10ff10106273eceb20ba3b991920cf179ed8fbf",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "import-tracking-edit-case",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\tracking-source-edits-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-source-edits-20261026-r3\\editable-tracking-source-edits.aevpkg.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\tracking-source-edits-kit-r1\\跟踪剪辑 工程"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "016ccb0a0ee2e321a6fecefac67bf92faad47787ad9c221414318d1c4b630315",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "tracking-source-dry-run",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\tracking-source-edits-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "timeline",
+      "edit",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\tracking-source-edits-kit-r1\\跟踪剪辑 工程",
+      "--sequence-id",
+      "child",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\tracking-source-edits-kit-r1\\tracking-edit.json",
+      "--dry-run"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "1bdcc79552f320c967d9d9882332f59ca8cc0a9ffa5f7a5589438be8e539bc07",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "validate-tracking-edit-case",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\tracking-source-edits-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\tracking-source-edits-kit-r1\\跟踪剪辑 工程"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "bd462c66296385af0fc06e43ca9cc2906b482511169d0e65843017a0096f8bc5",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

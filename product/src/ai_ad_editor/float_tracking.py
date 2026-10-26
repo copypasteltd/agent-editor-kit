@@ -9,7 +9,7 @@ from fractions import Fraction
 import math
 
 from .animation import keyframe_value
-from .bindings import BINDING_VERSION, find_sources, validate_binding
+from .bindings import BINDING_VERSION, find_sources, source_references, validate_binding
 from .clip_windows import validate_window
 from .errors import AppError
 from .sequence_canvas import sequence_canvas
@@ -27,7 +27,7 @@ def binding_plan(project,sequence,track,target):
     binding=target['tracking_binding']
     return dict(coordinate_space=BINDING_VERSION,host_protocol=PROTOCOL,
         source_clip_id=binding['source_clip_id'],source_track_id=binding['source_track_id'],
-        source_fragments=[dict(track_id=t['id'],clip_id=c['id']) for t,c in find_sources(sequence,binding)],
+        source_fragments=[dict(r) for r in source_references(binding)],
         canvas=sequence_canvas(project,sequence),sampled_frames=0,hidden_frames=None,keyframes=[],
         warnings=['tracking_observations_interpolated_at_selected_original_PTS',
             'native_binding_is_dynamic_not_baked_to_display_FPS',
@@ -53,7 +53,8 @@ class FloatTracking:
                 raise error('BUDGET','原生绑定超过128项或64000条总观测')
             sources=find_sources(sequence,clip['tracking_binding']);reference_count+=len(sources)
             if reference_count>MAX_SOURCE_REFERENCES:raise error('BUDGET','原生绑定超过4096个总源分片引用')
-            candidates=[dict(source_track=t,source=c,source_path=sequence['id']+'/'+c['id']) for t,c in sources]
+            candidates=[dict(source_track=t,source=c,source_path=sequence['id']+'/'+c['id'],
+                author_offset_tick=r.get('author_offset_tick',0)) for (t,c),r in zip(sources,source_references(clip['tracking_binding']))]
             self.plans[path]=dict(sequence=sequence,track=track,target=clip,binding=clip['tracking_binding'],
                 sources=candidates,
                 times=tuple(Fraction(str(p['at_seconds'])) for p in clip['tracking_binding']['observations']))
@@ -101,7 +102,7 @@ class FloatTracking:
             author_start=start-Fraction(int(window.get('offset_tick',0)),h.tps)
             author_end=author_start+Fraction(validate_window(source,allow_tracking=True),h.tps)
             if pinned_reference and 'reference_output_tick' in plan['binding']:
-                at=author_start+Fraction(plan['binding']['reference_output_tick'],h.tps)
+                at=author_start+Fraction(plan['binding']['reference_output_tick']+selected['author_offset_tick'],h.tps)
             at=max(author_start,min(author_end,at));left_limit=at==author_end
         local=at*h.tps-source['timeline_start_tick']
         source_time,tick,right=h._source_time(source,local,path,left_limit=left_limit)

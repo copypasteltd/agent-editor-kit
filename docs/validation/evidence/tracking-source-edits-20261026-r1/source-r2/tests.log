@@ -1,0 +1,116 @@
+test_chained_bound_video_head_extension_keeps_downstream_reference_and_all_pixels (test_tracking_source_edits.NativeTrackingSourceEditTests.test_chained_bound_video_head_extension_keeps_downstream_reference_and_all_pixels) ... ok
+test_fragment_specific_extension_and_repeated_split_keep_independent_reference_offsets (test_tracking_source_edits.NativeTrackingSourceEditTests.test_fragment_specific_extension_and_repeated_split_keep_independent_reference_offsets) ... ok
+test_freeze_and_scalar_speed_preserve_original_tracking_on_extension (test_tracking_source_edits.NativeTrackingSourceEditTests.test_freeze_and_scalar_speed_preserve_original_tracking_on_extension) ... 
+  test_freeze_and_scalar_speed_preserve_original_tracking_on_extension (test_tracking_source_edits.NativeTrackingSourceEditTests.test_freeze_and_scalar_speed_preserve_original_tracking_on_extension) (frame=1) ... FAIL
+  test_freeze_and_scalar_speed_preserve_original_tracking_on_extension (test_tracking_source_edits.NativeTrackingSourceEditTests.test_freeze_and_scalar_speed_preserve_original_tracking_on_extension) (frame=4) ... FAIL
+test_head_extension_preserves_every_existing_pixel_and_ROI_rotation_reference (test_tracking_source_edits.NativeTrackingSourceEditTests.test_head_extension_preserves_every_existing_pixel_and_ROI_rotation_reference) ... ok
+test_invalid_offsets_and_existing_physical_or_legacy_guards (test_tracking_source_edits.NativeTrackingSourceEditTests.test_invalid_offsets_and_existing_physical_or_legacy_guards) ... ok
+test_nonzero_VFR_slip_uses_real_pts_and_observations_without_cfr_resnapping (test_tracking_source_edits.NativeTrackingSourceEditTests.test_nonzero_VFR_slip_uses_real_pts_and_observations_without_cfr_resnapping) ... ok
+test_repeated_real_head_extensions_accumulate_the_source_author_shift (test_tracking_source_edits.NativeTrackingSourceEditTests.test_repeated_real_head_extensions_accumulate_the_source_author_shift) ... ok
+test_repeated_slip_reports_dependency_and_rejects_locked_follower_atomically (test_tracking_source_edits.NativeTrackingSourceEditTests.test_repeated_slip_reports_dependency_and_rejects_locked_follower_atomically) ... ok
+test_slip_reprojects_against_actual_new_native_frame_in_both_directions (test_tracking_source_edits.NativeTrackingSourceEditTests.test_slip_reprojects_against_actual_new_native_frame_in_both_directions) ... ok
+test_slipped_unobserved_frames_hide_instead_of_inventing_motion (test_tracking_source_edits.NativeTrackingSourceEditTests.test_slipped_unobserved_frames_hide_instead_of_inventing_motion) ... ok
+test_source_handle_roll_extends_one_fragment_without_replacing_observations (test_tracking_source_edits.NativeTrackingSourceEditTests.test_source_handle_roll_extends_one_fragment_without_replacing_observations) ... ok
+test_target_video_extension_reanchors_base_opacity_and_keeps_existing_composite (test_tracking_source_edits.NativeTrackingSourceEditTests.test_target_video_extension_reanchors_base_opacity_and_keeps_existing_composite) ... ok
+test_complete_source_removal_retains_hidden_binding_and_all_observation_evidence (test_tracking_edits.NativeTrackingEditTests.test_complete_source_removal_retains_hidden_binding_and_all_observation_evidence) ... ok
+test_cycle_through_secondary_fragment_and_aggregate_budget_reject (test_tracking_edits.NativeTrackingEditTests.test_cycle_through_secondary_fragment_and_aggregate_budget_reject) ... ok
+test_edited_chain_retains_intermediate_pose_at_later_follower_reference (test_tracking_edits.NativeTrackingEditTests.test_edited_chain_retains_intermediate_pose_at_later_follower_reference) ... ok
+test_legacy_pipeline_keeps_explicit_guard_and_refuses_native_route_fields (test_tracking_edits.NativeTrackingEditTests.test_legacy_pipeline_keeps_explicit_guard_and_refuses_native_route_fields) ... ok
+test_locked_dependent_and_invalid_split_are_atomic (test_tracking_edits.NativeTrackingEditTests.test_locked_dependent_and_invalid_split_are_atomic) ... ok
+test_native_VFR_reverse_and_freeze_split_uses_same_original_indices (test_tracking_edits.NativeTrackingEditTests.test_native_VFR_reverse_and_freeze_split_uses_same_original_indices) ... ok
+test_nonzero_original_ROI_reference_survives_source_and_target_ripple (test_tracking_edits.NativeTrackingEditTests.test_nonzero_original_ROI_reference_survives_source_and_target_ripple) ... ok
+test_overlap_duplicate_and_missing_fragment_reject_before_fetch (test_tracking_edits.NativeTrackingEditTests.test_overlap_duplicate_and_missing_fragment_reject_before_fetch) ... ok
+test_range_lift_extract_insert_and_overwrite_replan_real_retained_windows (test_tracking_edits.NativeTrackingEditTests.test_range_lift_extract_insert_and_overwrite_replan_real_retained_windows) ... ok
+test_repeated_split_and_trim_keep_only_live_fragments_and_original_reference (test_tracking_edits.NativeTrackingEditTests.test_repeated_split_and_trim_keep_only_live_fragments_and_original_reference) ... ok
+test_retained_roll_preserves_pixels_and_slide_follows_the_new_source_clock (test_tracking_edits.NativeTrackingEditTests.test_retained_roll_preserves_pixels_and_slide_follows_the_new_source_clock) ... ok
+test_ripple_insert_and_delete_preserve_frames_around_exact_blank_gap (test_tracking_edits.NativeTrackingEditTests.test_ripple_insert_and_delete_preserve_frames_around_exact_blank_gap) ... ok
+test_source_only_insert_hides_follower_in_gap_then_follows_shifted_source (test_tracking_edits.NativeTrackingEditTests.test_source_only_insert_hides_follower_in_gap_then_follows_shifted_source) ... ok
+test_source_slip_and_real_extension_require_finite_recorded_bounds (test_tracking_edits.NativeTrackingEditTests.test_source_slip_and_real_extension_require_finite_recorded_bounds) ... ok
+test_split_source_and_target_in_either_order_preserves_every_pixel_and_authored_keys (test_tracking_edits.NativeTrackingEditTests.test_split_source_and_target_in_either_order_preserves_every_pixel_and_authored_keys) ... ok
+test_VFR_and_nonzero_demux_origin_hold_anchor_on_the_selected_video_frame (test_float_tracking.FloatTrackingTests.test_VFR_and_nonzero_demux_origin_hold_anchor_on_the_selected_video_frame) ... ok
+test_actual_marker_pixels_follow_every_original_CFR_frame_without_mutating_authoring (test_float_tracking.FloatTrackingTests.test_actual_marker_pixels_follow_every_original_CFR_frame_without_mutating_authoring) ... ok
+test_animated_crop_uses_the_same_author_rounding_and_visibility_as_pixels (test_float_tracking.FloatTrackingTests.test_animated_crop_uses_the_same_author_rounding_and_visibility_as_pixels) ... ok
+test_binding_base_opacity_and_source_blend_are_applied_once (test_float_tracking.FloatTrackingTests.test_binding_base_opacity_and_source_blend_are_applied_once) ... ok
+test_chained_binding_cycle_is_rejected_before_any_native_frame_is_fetched (test_float_tracking.FloatTrackingTests.test_chained_binding_cycle_is_rejected_before_any_native_frame_is_fetched) ... ok
+test_chained_video_binding_projects_the_actual_bound_source_geometry_and_alpha (test_float_tracking.FloatTrackingTests.test_chained_video_binding_projects_the_actual_bound_source_geometry_and_alpha) ... ok
+test_crop_stretch_rotation_and_half_pixel_anchor_match_independent_forward_geometry (test_float_tracking.FloatTrackingTests.test_crop_stretch_rotation_and_half_pixel_anchor_match_independent_forward_geometry) ... ok
+test_declarative_plan_does_not_bake_CFR_keys_or_execute_inference (test_float_tracking.FloatTrackingTests.test_declarative_plan_does_not_bake_CFR_keys_or_execute_inference) ... ok
+test_freeze_keeps_source_frame_but_retains_continuous_author_geometry_clock (test_float_tracking.FloatTrackingTests.test_freeze_keeps_source_frame_but_retains_continuous_author_geometry_clock) ... ok
+test_invalid_identity_and_binding_budget_fail_before_pixel_fetch (test_float_tracking.FloatTrackingTests.test_invalid_identity_and_binding_budget_fail_before_pixel_fetch) ... ok
+test_muted_source_hides_target_without_fetching_or_requiring_a_provider (test_float_tracking.FloatTrackingTests.test_muted_source_hides_target_without_fetching_or_requiring_a_provider) ... ok
+test_nested_reverse_and_double_reverse_use_child_canvas_once (test_float_tracking.FloatTrackingTests.test_nested_reverse_and_double_reverse_use_child_canvas_once) ... ok
+test_observed_range_and_source_window_never_bind_outside_visible_source (test_float_tracking.FloatTrackingTests.test_observed_range_and_source_window_never_bind_outside_visible_source) ... ok
+test_partial_native_index_and_clocks_above_float64_integer_precision (test_float_tracking.FloatTrackingTests.test_partial_native_index_and_clocks_above_float64_integer_precision) ... ok
+test_reverse_source_uses_original_half_open_selected_frame (test_float_tracking.FloatTrackingTests.test_reverse_source_uses_original_half_open_selected_frame) ... ok
+test_roi_and_rotation_reference_is_deterministic_when_previewed_out_of_order (test_float_tracking.FloatTrackingTests.test_roi_and_rotation_reference_is_deterministic_when_previewed_out_of_order) ... ok
+test_saved_binding_windows_retain_original_source_and_ROI_reference_clocks (test_float_tracking.FloatTrackingTests.test_saved_binding_windows_retain_original_source_and_ROI_reference_clocks) ... ok
+test_scalar_and_curve_retime_preserve_video_tracking_frame_identity (test_float_tracking.FloatTrackingTests.test_scalar_and_curve_retime_preserve_video_tracking_frame_identity) ... ok
+
+======================================================================
+FAIL: test_freeze_and_scalar_speed_preserve_original_tracking_on_extension (test_tracking_source_edits.NativeTrackingSourceEditTests.test_freeze_and_scalar_speed_preserve_original_tracking_on_extension) (frame=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_tracking_source_edits.py", line 39, in pixels_equal
+    with self.subTest(frame=i):np.testing.assert_array_equal(x[0],y[0])
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 1121, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 983, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 2 / 128 (1.56%)
+Mismatch at indices:
+ [1, 3, 0]: 1.0 (ACTUAL), 0.0 (DESIRED)
+ [1, 4, 0]: 0.0 (ACTUAL), 1.0 (DESIRED)
+Max absolute difference among violations: 1.
+Max relative difference among violations: 1.
+ ACTUAL: array([[[0., 0., 0., 1.],
+        [0., 0., 0., 1.],
+        [0., 0., 0., 1.],...
+ DESIRED: array([[[0., 0., 0., 1.],
+        [0., 0., 0., 1.],
+        [0., 0., 0., 1.],...
+
+======================================================================
+FAIL: test_freeze_and_scalar_speed_preserve_original_tracking_on_extension (test_tracking_source_edits.NativeTrackingSourceEditTests.test_freeze_and_scalar_speed_preserve_original_tracking_on_extension) (frame=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_tracking_source_edits.py", line 39, in pixels_equal
+    with self.subTest(frame=i):np.testing.assert_array_equal(x[0],y[0])
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 1121, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 983, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 2 / 128 (1.56%)
+Mismatch at indices:
+ [1, 1, 0]: 0.0 (ACTUAL), 1.0 (DESIRED)
+ [1, 6, 0]: 1.0 (ACTUAL), 0.0 (DESIRED)
+Max absolute difference among violations: 1.
+Max relative difference among violations: 1.
+ ACTUAL: array([[[0., 0., 0., 1.],
+        [0., 0., 0., 1.],
+        [0., 0., 0., 1.],...
+ DESIRED: array([[[0., 0., 0., 1.],
+        [0., 0., 0., 1.],
+        [0., 0., 0., 1.],...
+
+----------------------------------------------------------------------
+Ran 45 tests in 1.161s
+
+FAILED (failures=2)

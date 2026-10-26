@@ -13,6 +13,7 @@ ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/'docs/validation/evidence/tracking-edits-20261026-r1'
 GROUPS={
     'tracking':['test_tracking_edits','test_float_tracking'],
+    'tracking-source':['test_tracking_source_edits','test_tracking_edits','test_float_tracking'],
     'editing':['test_clip_windows','test_range_edits','test_linked_edit','test_source_edits','test_retime_edits'],
     'adjustments':['test_float_adjustments'],
     'bindings':['test_tracking_geometry','test_sequence_canvas','test_fragments'],
@@ -32,11 +33,13 @@ def pins(package):
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--run',required=True)
+    ap.add_argument('--base',type=Path,default=BASE)
     ap.add_argument('--installed',type=Path);ap.add_argument('--group',choices=GROUPS,default='tracking')
     a=ap.parse_args();assert a.run.replace('-','').isalnum()
-    out=BASE/a.run;out.mkdir(parents=True,exist_ok=False)
+    base=a.base.resolve();assert base.is_relative_to(ROOT/'docs/validation/evidence')
+    out=base/a.run;out.mkdir(parents=True,exist_ok=False)
     (out/'executed-runner.py').write_bytes(Path(__file__).read_bytes())
-    work=ROOT/'workspace'/('tracking-edits-20261026-tests-'+a.run);work.mkdir(parents=True,exist_ok=False)
+    work=ROOT/'workspace'/(base.name+'-tests-'+a.run);work.mkdir(parents=True,exist_ok=False)
     os.environ.update(TEMP=str(work),TMP=str(work),TMPDIR=str(work));tempfile.tempdir=str(work)
     source=ROOT/'product/src/ai_ad_editor'
     package=a.installed.resolve()/'site/ai_ad_editor' if a.installed else source

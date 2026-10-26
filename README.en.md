@@ -9,9 +9,23 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
+<!-- tracking-source-edits-current -->
+
+**CLI0.1.28 / alpha.4-local.26 / r29 kit · 1 Skill / 17 modules.**
+
+Tracked physical sources now support slip, real head/tail extension and source-handle roll/slide. Original observations, per-fragment author offsets, target opacity keys and linked audio remain editable; locked dependencies reject atomically. Integer-grid piecewise constant curves use rational inversion at native frame boundaries.
+
+[Workflow](docs/product/TRACKING_SOURCE_EDITS.md) · [C38](docs/product/CASES.md#c38-tracking-source-edits) · [Local install](docs/releases/CLI_0.1.28_LOCAL.md) · [Evidence](docs/validation/跟踪源编辑实测_2026-10-26.md)
+
+![Actual registered Skill / silent GIF](docs/assets/tracking-source-edits-20261026-r3/edited.gif)
+
+36 Float32 frames equal an independent unbound project; original native indices and 144000 stereo PCM samples verified. Synthetic diagnostic content; no natural-quality or human listening acceptance.
+
+<!-- /tracking-source-edits-current -->
+
 <!-- tracking-edits-current -->
 
-**CLI0.1.27 / alpha.4-local.25 / r28 kit · 1 Skill / 17 modules.**
+**Historical / 历史 / 歷史：CLI0.1.27 / alpha.4-local.25 / r28 kit · 1 Skill / 17 modules.**
 
 Native bound clips now support split/trim/ripple and range edits. The planner repairs retained source fragments, pins ROI/rotation references, hides followers after source removal and rejects locked-reference changes atomically. Registered-Skill C37 cuts 36 frames to 30: every retained Float32 pixel/native PTS/binding coordinate matches, all 120,000 stereo samples splice exactly, and editable-package reimport matches.
 
@@ -593,7 +607,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F57 | Native Float32 GPU execution | Explicit policy → linear Float32 affine, normal over, text components/paragraphs and word selection; real render/preview/queue/resume. | `projection_acceleration; render; preview; queue` | off/prefer/require;actual binary64/subnormal probes;owned process/shared buffers;other operators CPU,not all-GPU editing. |
 | F58 | Float32 global/interval adjustments | Ordered grading after all tracks including subtitles;existing float effects,LUT/exposure,six keyframe modes,selected root once. | `settings.adjustments; preview; render; queue` | Explicit linear working/effect signals;CPU execution;locked/portable LUTs;original interval clocks,not complete HDR. |
 | F59 | Native PTS tracking and overlay tracks | Saved source observations → actual selected-frame anchors;shared crop/TRS,ROI scale/relative rotation,alpha,windows and nested audio. | `media track-bind; preview; render; queue; package` | Explicit Float32,no display-key bake,budget/cycle gates;template drift/occlusion require review;native interchange baking pending. |
-| F60 | Editable native tracking | Split/trim/ripple/range edits → retained source fragments, original observations and pinned ROI/rotation references; removed sources hide followers. | `timeline compose/edit; preview; render; package` | Explicit native Float32;128 fragments/binding,lock/cycle/ambiguity gates;source slip/extension/magnetic propagation retain limits.[Workflow](docs/product/TRACKING_EDITS.md) |
+| F60 | Editing native tracking | Split/trim/ripple/range edits plus physical slip/extension; preserve fragment author offsets, ROI reference, target opacity and linked audio. | `timeline compose/edit; preview; render; package` | Explicit Float32; finite source/lock/overlap/cycle budgets. Bound-container retime, magnetic cut propagation and interchange baking remain open. |
 
 ## Supported service modules and dependencies
 
@@ -720,7 +734,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.25/final-r4/installed/`, CLI 0.1.27. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.26/final-r1/installed/`, CLI 0.1.28. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1112,6 +1126,12 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R197 | 2026-10-26 Native tracking edits | Fresh r28 kit unpack/single-entry registration/actual CLI planning and validation;73 Skill files/17 modules;packaged docs match source | [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/kit-r2/verification.json) |
 | R198 | 2026-10-26 Native tracking edits | Three languages preserve60 functions/20 services/17 modules/75 actual declarations;all193 historical R rows and38 original closure cells remain;source/install/kit/link delivery audit | [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/final-delivery-r3/verification.json) |
 | R199 | 2026-10-26 Native tracking edits | Failures retained:first install hit2 legacy minimal-binding read errors,now fixed/rebuilt;first case incorrectly assumed this machine’s10-bit CRF0 was lossless;SPS/pixel counterexample retained;explicit8-bit and complete Float32 checks pass ; chained current-pose evaluation is separated from the pinned ROI reference, with the reproduced pixel failure fixed.| [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/development-attempts-r1/verification.json) |
+| R200 | 2026-10-26 Native tracking source edits | Offline ZIP installed; 220 product Python files/schema equal source; CLI0.1.28/local.26-final-r1; one Skill/17 modules/73 files. | [Evidence](docs/validation/evidence/tracking-source-edits-20261026-r1/installation-final-r1/verification.json) |
+| R201 | 2026-10-26 Native tracking source edits | Installed groups: 46 tracking/source,195 editing,71 bindings,98 Float32,46 render,65 audio,192 legacy; zero skips, kept as separate groups. | [Evidence](docs/validation/evidence/tracking-source-edits-20261026-r1/tracking-installed-r1/verification.json) |
+| R202 | 2026-10-26 Native tracking source edits | C38 actual registered source/audio slip and real head-tail extension: 36 Float32 frames equal independent unbound authoring; all native indices;144000 complete stereo samples error0; editable package roundtrip. | [Evidence](docs/validation/evidence/tracking-source-edits-20261026-r1/case-r3/verification.json) |
+| R203 | 2026-10-26 Native tracking source edits | r29 fresh isolated kit: one registration/17 modules/73 Skill files; actual source-edit dry-run, finite physical ranges and validation; real discovery retained. | [Evidence](docs/validation/evidence/tracking-source-edits-20261026-r1/kit-r1/verification.json) |
+| R204 | 2026-10-26 Native tracking source edits | Final installed/Skill/media/document/staged-byte checks; 199 historical R rows and38 original closure cells preserved;60 functions/20 services/75 declarations. | [Evidence](docs/validation/evidence/tracking-source-edits-20261026-r1/final-delivery-r1/verification.json) |
+| R205 | 2026-10-26 Native tracking source edits | Development failures retained: initial insufficient physical handle fixture; actual two-frame flat-curve rounding counterexample fixed with rational inversion; no epsilon or tolerance relaxation; initial case harness context lookup and an incorrect nominal-FPS oracle were corrected before final acceptance; both failed runs retained. | [Evidence](docs/validation/evidence/tracking-source-edits-20261026-r1/development-attempts-r1/verification.json) |
 
 ## Current limits and development direction
 

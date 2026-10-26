@@ -1365,6 +1365,11 @@
               },
               "clip_id": {
                 "$ref": "#/$defs/id"
+              },
+              "author_offset_tick": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
               }
             }
           }

@@ -2,15 +2,15 @@
 
 <!-- community-current -->
 
-**CLI 0.1.27 / alpha.4-local.25 / r28 kit · 1 Skill / 17 modules.**
+**CLI 0.1.28 / alpha.4-local.26 / r29 kit · 1 Skill / 17 modules.**
 
-Native-PTS split/trim/ripple/range editing with retained source fragments, pinned ROI references, hidden removed-source followers and locked-reference atomic guards; dynamic tracking with shared crop/TRS geometry, editable source observations and overlay child audio; ordered global/interval Float32 grading at the selected root with authored clocks and locked portable LUTs; explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+Native-PTS physical source slip/real extension/source-handle roll/slide with per-fragment author offsets and rational constant clocks; split/trim/ripple/range editing with retained source fragments, pinned ROI references, hidden removed-source followers and locked-reference atomic guards; dynamic tracking with shared crop/TRS geometry, editable source observations and overlay child audio; ordered global/interval Float32 grading at the selected root with authored clocks and locked portable LUTs; explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
 
-[Tracking edit workflow](TRACKING_EDITS.md) · [Native tracking workflow](FLOAT_TRACKING.md) · [Float32 adjustment workflow](FLOAT_ADJUSTMENTS.md) · [Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](tracking-edits-capabilities-cli-0.1.27.json). Full target conditions remain open.
+[Tracked source workflow](TRACKING_SOURCE_EDITS.md) · [Tracking edit workflow](TRACKING_EDITS.md) · [Native tracking workflow](FLOAT_TRACKING.md) · [Float32 adjustment workflow](FLOAT_ADJUSTMENTS.md) · [Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](tracking-source-edits-capabilities-cli-0.1.28.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.zh-TW.md) · [Machine response](tracking-edits-capabilities-cli-0.1.27.json) · [Module data](module-catalog.json)
+[README](../../README.zh-TW.md) · [Machine response](tracking-source-edits-capabilities-cli-0.1.28.json) · [Module data](module-catalog.json)
 
 | 編號 | 功能模塊 | 具體行為與輸入 → 輸出 | 入口 | 依賴/邊界 |
 |---|---|---|---|---|
@@ -73,7 +73,7 @@ Native-PTS split/trim/ripple/range editing with retained source fragments, pinne
 | F57 | 原生浮點GPU執行層 | 明確GPU策略 → 線性Float32仿射、一般疊加、文字元件／段落與逐詞選擇；正式算繪／預覽／佇列／恢復。 | `projection_acceleration; render; preview; queue` | off/prefer/require；實際binary64／次正規探測；任務專屬程序與共用段；其餘算子CPU，非全部GPU化。 |
 | F58 | Float32全域／區間調整層 | 全軌含字幕合成後依序調色；LUT／曝光及既有浮點效果、六類關鍵影格、選中根僅套用一次。 | `settings.adjustments; preview; render; queue` | 明確線性工作域／效果訊號；CPU執行；LUT持鎖／封裝遷移；保留作者區間時鐘，非完整HDR。 |
 | F59 | 原生PTS跟蹤及疊加軌 | 保存來源觀測→依實際原生影格求跟隨位置；共用crop/TRS、ROI縮放／相對旋轉、透明度、視窗及巢狀聲音。 | `media track-bind; preview; render; queue; package` | 明確Float32，原生PTS不烘焙顯示鍵；預算／循環門禁；模板漂移及遮擋另審，中間格式烘焙未接通。 |
-| F60 | 跟蹤後的可編輯剪輯 | 分割／裁切／波紋及範圍編輯→保留來源分片引用、原始軌跡及ROI／旋轉基準；刪除來源後隱藏標籤。 | `timeline compose/edit; preview; render; package` | 明確原生Float32；128分片／綁定，鎖定／循環／歧義門禁；來源slip／實際外擴／磁性傳播仍受限。[流程](TRACKING_EDITS.md) |
+| F60 | 原生追蹤後續編輯 | 分割/裁切/波紋/範圍、物理來源滑移與真實外擴；分片作者偏移、ROI基準、目標透明度及關聯音軌保留。 | `timeline compose/edit; preview; render; package` | 明確Float32；有限來源/鎖/重疊/循環預算門禁；容器變速、磁性傳播及中間格式烘焙持續推進。 |
 
 | 編號 | 服務模塊 | 運行形式 | 需要什么/提供什么 | 入口 | 範圍 |
 |---|---|---|---|---|---|
@@ -903,16 +903,23 @@ Native-PTS split/trim/ripple/range editing with retained source fragments, pinne
       "range_insert_overwrite_lift_extract_retained_roll_slide",
       "retained_source_fragments_and_hidden_deleted_sources",
       "pinned_ROI_rotation_reference_after_surgery",
-      "locked_reference_atomic_rejection"
+      "locked_reference_atomic_rejection",
+      "physical_source_slip_and_real_head_tail_extension",
+      "fragment_specific_author_reference_offsets_and_target_opacity_reanchor",
+      "source_handle_roll_slide_with_retained_observations",
+      "rational_integer_grid_piecewise_constant_curve_clock"
     ],
     "edit_protocol": "native-tracking-edit-lineage-v1",
     "max_source_fragments_per_binding": 128,
     "max_total_source_references": 4096,
     "edit_limits": [
-      "source_slip_extension_and_container_retime_require_new_binding_plan",
+      "container_retime_requires_binding_dependency_container_plan",
       "magnetic_cut_propagation_keeps_existing_binding_guard",
-      "overlapping_source_fragments_reject_ambiguous_coverage"
+      "overlapping_source_fragments_reject_ambiguous_coverage",
+      "physical_source_limits_and_unobserved_range_hiding_remain",
+      "nonconstant_curve_mapping_keeps_existing_bounded_float_clock"
     ],
+    "source_edit_reference_policy": "head extensions accumulate author_offset_tick per source fragment; slip recalibrates ROI/rotation at the pinned output clock",
     "max_bindings": 128,
     "max_total_observations": 64000,
     "max_observations_per_binding": 4000,

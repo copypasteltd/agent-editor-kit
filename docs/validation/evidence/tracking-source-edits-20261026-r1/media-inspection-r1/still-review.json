@@ -1,0 +1,16 @@
+{
+  "status": "reviewed",
+  "reviewed_at_utc": "2026-10-26T05:50:07.641890+00:00",
+  "tool": "view_image",
+  "contact_sheet_sha256": "888bd6ac3eddc8407ac4efe08cd5d7d6bb94f36bdb899ba0dd63a9f6ed863fbd",
+  "observations": [
+    "Frames 2 and 33: both before and edited show only the dark canvas, with no visible follower.",
+    "Frame 3: edited source appears with the red follower border aligned around the green square; before is still outside coverage.",
+    "Frame 18: both show the follower aligned with the square at their respective changed source positions.",
+    "Frame 32: edited source and aligned follower remain visible while before is outside coverage."
+  ],
+  "scope": "Static inspection of ten actual decoded MP4 stills. Pixel and PCM correctness checked independently in case-r3.",
+  "continuous_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false
+}

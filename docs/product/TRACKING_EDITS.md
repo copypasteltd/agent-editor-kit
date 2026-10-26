@@ -1,5 +1,7 @@
 # 跟踪后的可编辑剪辑 / Editable native tracking
 
+CLI0.1.28 extends tracked physical slip/real source handles; see [current source-edit workflow](TRACKING_SOURCE_EDITS.md). Earlier versioned checks below retain their original scope.
+
 CLI **0.1.27 / alpha.4-local.25 / r28 kit**, one registered
 `$agent-ffmpeg-local-editor`, 17 internal modules. This extends the installed
 [native PTS binding](FLOAT_TRACKING.md) with detached edit-lineage planning.

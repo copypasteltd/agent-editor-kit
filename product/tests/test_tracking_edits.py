@@ -158,12 +158,12 @@ class NativeTrackingEditTests(unittest.TestCase):
         with patch('ai_ad_editor.float_tracking.MAX_SOURCE_REFERENCES',1),self.assertRaises(AppError) as caught:self.frames(p,s)
         self.assertEqual(caught.exception.code,'FLOAT_TRACKING_BUDGET')
 
-    def test_source_slip_and_real_extension_stay_explicitly_guarded(self):
+    def test_source_slip_and_real_extension_require_finite_recorded_bounds(self):
         p,s=scene()
         with self.assertRaises(AppError) as caught:build_range_plan(p,'main',dict(action='slip',clip_id='source',delta_source_tick=10))
-        self.assertEqual(caught.exception.code,'EDIT_RANGE_BINDING_UNSUPPORTED')
+        self.assertEqual(caught.exception.code,'SOURCE_EDIT_BOUND_UNKNOWN')
         with self.assertRaises(AppError) as caught:build_range_plan(p,'main',dict(action='extend_source',clip_id='source',head_tick=0,tail_tick=10))
-        self.assertEqual(caught.exception.code,'EDIT_RANGE_BINDING_SOURCE_EXTENSION_UNSUPPORTED')
+        self.assertEqual(caught.exception.code,'SOURCE_EDIT_BOUND_UNKNOWN')
 
     def test_retained_roll_preserves_pixels_and_slide_follows_the_new_source_clock(self):
         p,s=scene();expected=self.frames(p,s);p=self.split(p,'source')

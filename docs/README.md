@@ -1,6 +1,8 @@
 # agent editor kit 文档 / Documentation
 
-Current local / 当前本地 / 目前本地：**CLI0.1.27 / local.25 / r28 kit** · [Tracking edits](product/TRACKING_EDITS.md) · [Installation](releases/CLI_0.1.27_LOCAL.md) · [C37](product/CASES.md#c37-tracking-edits).
+Current local / 当前本地 / 目前本地：**CLI0.1.28 / local.26 / r29 kit** · [Source editing](product/TRACKING_SOURCE_EDITS.md) · [Install](releases/CLI_0.1.28_LOCAL.md) · [C38](product/CASES.md#c38-tracking-source-edits).
+
+Historical / 历史 / 歷史：**CLI0.1.27 / local.25 / r28 kit** · [Tracking edits](product/TRACKING_EDITS.md) · [Installation](releases/CLI_0.1.27_LOCAL.md) · [C37](product/CASES.md#c37-tracking-edits).
 
 
 

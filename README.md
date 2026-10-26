@@ -9,9 +9,23 @@
 本页包含完整功能模块、服务与依赖、安装与使用逻辑、Skill 输入输出、真实案例和核验表。长篇原始验收日志继续留档，功能说明与案例入口恢复到首页。
 
 
+<!-- tracking-source-edits-current -->
+
+**CLI0.1.28 / alpha.4-local.26 / r29 kit · 1 Skill / 17 modules.**
+
+跟踪源可滑移、真实头尾外扩及使用真实句柄roll/slide；原始观察保留，每个分片独立保留作者偏移，关联音轨同步源编辑，锁定引用冲突整体拒绝。修复分段恒速曲线在帧边界的浮点误选。
+
+[Workflow](docs/product/TRACKING_SOURCE_EDITS.md) · [C38](docs/product/CASES.md#c38-tracking-source-edits) · [Local install](docs/releases/CLI_0.1.28_LOCAL.md) · [Evidence](docs/validation/跟踪源编辑实测_2026-10-26.md)
+
+![Actual registered Skill / silent GIF](docs/assets/tracking-source-edits-20261026-r3/edited.gif)
+
+36帧Float32像素与独立无绑定工程一致，逐项核验原生索引及完整144000双声道采样。本例使用合成诊断素材；未作自然画质、连续播放或人工听审验收。
+
+<!-- /tracking-source-edits-current -->
+
 <!-- tracking-edits-current -->
 
-**CLI0.1.27 / alpha.4-local.25 / r28 kit · 1 Skill / 17 modules.**
+**Historical / 历史 / 歷史：CLI0.1.27 / alpha.4-local.25 / r28 kit · 1 Skill / 17 modules.**
 
 带跟踪绑定的原生剪辑已接通：源与标签可分割、裁切、波纹插入/删除及范围编辑；自动重规划保留源分片，固定ROI缩放/旋转基准，源删除后跟随层隐藏，锁定引用冲突整体拒绝。统一Skill实跑C37：36帧剪为30帧，全部保留Float32像素/PTS/绑定坐标一致，完整120000双声道采样误差0，可编辑包重导入相同。
 
@@ -593,7 +607,7 @@ flowchart LR
 | F57 | 原生浮点GPU执行层 | 明确GPU策略 → 线性Float32仿射、普通叠加、文字组件/段落与逐词选择；正式渲染/预览/队列/恢复。 | `projection_acceleration; render; preview; queue` | off/prefer/require；实际binary64/次正规探测；任务独占进程和共享段；其余算子CPU，非全部GPU化。 |
 | F58 | Float32全局/区间调整层 | 全轨含字幕合成后按顺序调色；LUT/曝光及既有浮点效果、六类关键帧、选中根只应用一次。 | `settings.adjustments; preview; render; queue` | 显式线性工作域/效果信号；CPU执行；LUT持锁/包迁移；保留作者区间时钟，非完整HDR。 |
 | F59 | 原生PTS跟踪与叠加轨 | 保存源观测→按实际原生帧求跟随位置；共享crop/TRS、ROI缩放/相对旋转、透明度、窗口与嵌套声音。 | `media track-bind; preview; render; queue; package` | 显式Float32，原生PTS不烘焙显示键；预算/循环门禁；模板漂移与遮挡另审，中间格式烘焙未接通。 |
-| F60 | 跟踪后的可编辑剪辑 | 分割/裁切/波纹与范围编辑→保留源分片引用、原始轨迹和ROI/旋转基准；删除源后隐藏标签。 | `timeline compose/edit; preview; render; package` | 显式原生Float32；128分片/绑定，锁定/循环/歧义门禁；源slip/真实外扩/磁性传播仍受限。[流程](docs/product/TRACKING_EDITS.md) |
+| F60 | 原生跟踪后续编辑 | 分割/裁切/波纹/范围、物理源滑移与真实外扩；分片作者偏移、ROI基准、目标透明度及关联音轨保持。 | `timeline compose/edit; preview; render; package` | 显式Float32；有限源/锁/重叠/循环预算门禁；容器变速、磁性传播和中间格式烘焙继续推进。 |
 
 ## 支持的服务模块与依赖
 
@@ -720,7 +734,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.25/final-r4/installed/`，CLI 0.1.27；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
+本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.26/final-r1/installed/`，CLI 0.1.28；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1110,6 +1124,12 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R197 | 2026-10-26 Native tracking edits | r28独立kit解包、单入口登记、实际CLI计划/校验；73Skill文件/17模块，包内文档与源一致 | [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/kit-r2/verification.json) |
 | R198 | 2026-10-26 Native tracking edits | 三语60功能/20服务/17模块/75实际声明；193历史核验行与全部38关闭条件保持；源码/安装/kit/链接交付核验 | [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/final-delivery-r3/verification.json) |
 | R199 | 2026-10-26 Native tracking edits | 失败保留：首安装2个旧最小绑定读取异常已修复重建；首视频误把本机10bit CRF0当作无损，保留SPS/实际像素反例，最终8bit及全部Float32核验通过 ；链式绑定的当前姿态与ROI基准已分开求值，新增实际像素反例后修复通过。| [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/development-attempts-r1/verification.json) |
+| R200 | 2026-10-26 原生跟踪源编辑 | 离线 ZIP 已安装；220 个产品 Python 文件及 schema 与源码逐字节一致；CLI0.1.28/local.26-final-r1；1 个 Skill、17 个模块、73 个文件。 | [Evidence](docs/validation/evidence/tracking-source-edits-20261026-r1/installation-final-r1/verification.json) |
+| R201 | 2026-10-26 原生跟踪源编辑 | 安装版分组验证：跟踪/源编辑46项、编辑195项、绑定71项、Float32合成98项、渲染46项、音频65项、旧CLI192项；均无跳过，各组独立计数。 | [Evidence](docs/validation/evidence/tracking-source-edits-20261026-r1/tracking-installed-r1/verification.json) |
+| R202 | 2026-10-26 原生跟踪源编辑 | C38真实统一Skill执行视频与关联音轨滑移及头尾外扩：36帧Float32像素与独立无绑定工程一致；逐项核对原PTS索引；完整144000双声道采样误差0；可编辑工程包往返。 | [Evidence](docs/validation/evidence/tracking-source-edits-20261026-r1/case-r3/verification.json) |
+| R203 | 2026-10-26 原生跟踪源编辑 | r29工具包独立注册：唯一入口、17模块、73个Skill文件；实际源滑移dry-run与验证，原作者工程及素材不变，实际Codex发现入口不变。 | [Evidence](docs/validation/evidence/tracking-source-edits-20261026-r1/kit-r1/verification.json) |
+| R204 | 2026-10-26 原生跟踪源编辑 | 安装版、Skill、媒体、文档及暂存字节核验；保留199条历史R记录和38项原关闭条件；60项功能、20类服务、75组实际能力声明。 | [Evidence](docs/validation/evidence/tracking-source-edits-20261026-r1/final-delivery-r1/verification.json) |
+| R205 | 2026-10-26 原生跟踪源编辑 | 保留失败反例：不足真实源句柄的测试输入、恒速曲线两帧误选、案例脚本错误入口及误用标称fps的独立参照；分别修复，未增加epsilon或降低像素精度。 | [Evidence](docs/validation/evidence/tracking-source-edits-20261026-r1/development-attempts-r1/verification.json) |
 
 ## 当前边界与开发方向
 

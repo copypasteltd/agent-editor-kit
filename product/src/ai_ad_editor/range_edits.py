@@ -256,7 +256,7 @@ class RangeDraft:
             'authored_duration_tick': clip['duration_tick'], 'offset_tick': 0})
         offset = window['offset_tick'] + offset_delta
         if offset < 0 or offset + duration > window['authored_duration_tick']:
-            if clip['id'] in self.protected:
+            if clip['id'] in self.protected and not self.native_tracking:
                 fail('EDIT_RANGE_BINDING_SOURCE_EXTENSION_UNSUPPORTED','带绑定的真实源外扩需要重新规划观测基准；保留句柄内的窗口调整可用')
             if self.request.get('handle_policy') != 'source' and self.request['action'] != 'extend_source':
                 fail('EDIT_RANGE_HANDLE_SHORTFALL', '原作者输出没有足够保留句柄；可显式选择 handle_policy=source 使用真实源范围')
@@ -279,7 +279,7 @@ class RangeDraft:
         replacements = {}
         delta = self.request['delta_source_tick']
         for cid in sorted(selected):
-            if delta and cid in self.protected:
+            if delta and cid in self.protected and not self.native_tracking:
                 fail('EDIT_RANGE_BINDING_UNSUPPORTED', 'slip 会使跟踪源或目标的既有观察失效；请先重新规划绑定')
             replacements[cid], change = slip(self.project, self.before[cid][1], delta)
             if delta:
@@ -511,7 +511,7 @@ class RangeDraft:
             self.sequence['source_transitions'] = declarations
         if self.native_tracking:
             from .binding_edits import replan
-            self.binding_changes = replan(self.project,self.sequence,self.original,self.origin)
+            self.binding_changes = replan(self.project,self.sequence,self.original,self.origin,source_changes=self.source_changes)
             self.rebound.update(c['clip_id'] for c in self.binding_changes)
         for s in ([] if self.native_tracking else self.project['sequences']):
             for track in s['tracks']:

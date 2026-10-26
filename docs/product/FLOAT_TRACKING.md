@@ -1,5 +1,7 @@
 # 原生 PTS 跟踪绑定 / Native PTS tracking bindings
 
+CLI0.1.28 extends tracked physical slip/real source handles; see [current source-edit workflow](TRACKING_SOURCE_EDITS.md). Earlier versioned checks below retain their original scope.
+
 agent editor kit CLI 0.1.26 / `v0.1.0-alpha.4-local.24`，单入口
 `$agent-ffmpeg-local-editor`。保存的跟踪观测已接入显式 Float32 渲染、帧与范围
 预览、队列及恢复。源轨道与标记轨道保持可编辑，渲染不重复运行分析模型。

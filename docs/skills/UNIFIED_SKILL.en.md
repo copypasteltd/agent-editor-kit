@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.27 / alpha.4-local.25 / r28 kit · 1 Skill / 17 modules / 73 files.**
+**CLI0.1.28 / alpha.4-local.26 / r29 kit · 1 Skill / 17 modules / 73 files.**
 
-Native bound clips now support split/trim/ripple and range edits. The planner repairs retained source fragments, pins ROI/rotation references, hides followers after source removal and rejects locked-reference changes atomically. Registered-Skill C37 cuts 36 frames to 30: every retained Float32 pixel/native PTS/binding coordinate matches, all 120,000 stereo samples splice exactly, and editable-package reimport matches.
+Tracked physical sources now support slip, real head/tail extension and source-handle roll/slide. Original observations, per-fragment author offsets, target opacity keys and linked audio remain editable; locked dependencies reject atomically. Integer-grid piecewise constant curves use rational inversion at native frame boundaries.
 
-[Native tracking editing workflow](../product/TRACKING_EDITS.md)
+[Physical tracked-source editing](../product/TRACKING_SOURCE_EDITS.md)
 
 <!-- /community-current -->
 

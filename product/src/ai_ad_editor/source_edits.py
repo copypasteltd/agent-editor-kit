@@ -149,7 +149,9 @@ def expand_author(project, clip, head, tail):
     needed; a fractional final source tick is conservatively included. Recompile
     the extended curve to check its actual bounded approximation covers output.
     """
-    duration = validate_window(clip)
+    from .bindings import native_clock_project
+    native_tracking=native_clock_project(project)
+    duration = validate_window(clip,allow_tracking=native_tracking)
     bounds = source_bounds(project, clip)
     tps = project['settings']['timebase']['ticks_per_second']
     mapping = clock(clip, duration, tps)
@@ -192,6 +194,8 @@ def expand_author(project, clip, head, tail):
     shifted = sum(_shift_automation(value, head) for value in
                   (result.get('keyframes', []), result.get('effects', []),
                    result.get('audio', {}).get('effects', [])))
+    binding_keys=(result.get('tracking_binding') or {}).get('base',{}).get('opacity_keyframes',[])
+    shifted_binding_keys=_shift_automation(binding_keys,head)
     if result.get('freeze'):
         result['freeze']['at_tick'] += head
     cue_shift = old_start-(new_start+head)
@@ -203,7 +207,7 @@ def expand_author(project, clip, head, tail):
     window['authored_start_tick'] = new_start
     window['authored_duration_tick'] = duration+head+tail
     window['offset_tick'] += head
-    validate_window(result)
+    validate_window(result,allow_tracking=native_tracking)
     return result, {'clip_id': clip['id'], 'engine': ENGINE, 'source_kind': bounds['kind'], 'source_id': bounds['source_id'],
         'source_bound_tick': str(bounds['end_tick']), 'head_tick': head, 'tail_tick': tail,
         'source_left_tick': source_left, 'source_right_tick': source_right,
@@ -211,6 +215,7 @@ def expand_author(project, clip, head, tail):
         'before_author_duration_tick': duration, 'after_author_duration_tick': duration+head+tail,
         'head_speed': str(head_speed), 'tail_speed': str(tail_speed), 'curve_recompile_count': attempt+1,
         'actual_content_tick': float(content), 'shifted_keyframe_count': shifted,
+        'shifted_binding_opacity_keys':shifted_binding_keys,
         'native_nested_curve_renormalized': mapping['nested_curve'],
         'before_nested_curve_scale': float(duration/mapping['content_tick']) if mapping['nested_curve'] else None,
         'after_nested_curve_scale': float((duration+head+tail)/content) if mapping['nested_curve'] else None,

@@ -82,8 +82,8 @@ Inspect that state in the plan and rebind explicitly when replacing footage.
 
 Locked follower references reject atomically. Overlapping source fragments are
 ambiguous and reject; routes admit up to 128 fragments per binding and 4,096
-total references. Source slip, real source extension, bound-clip container
-retime and magnetic cut propagation retain explicit guards. MLT/OTIO/draft
+total references. Bound-clip container retime and magnetic cut propagation
+retain their existing guards. MLT/OTIO/draft
 baking remains separate. Do not remove those guards or bake display-FPS keys
 to force an edit through. Deliver the editable package after verification.
 
@@ -102,3 +102,26 @@ resume/queue and package reimport are checked separately.
 · [Input](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/assets/float-tracking-20261026-r5/original.native.mkv)
 · [Silent GIF](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/assets/float-tracking-20261026-r5/native-tracking.gif)
 · [MP4](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/assets/float-tracking-20261026-r5/native-tracking.mp4)
+
+## Physical source edits (CLI 0.1.28)
+
+Use `timeline edit --input request.json --sequence-id ID --dry-run` for
+`{"action":"slip","clip_id":"ID","delta_source_tick":N}` or
+`{"action":"extend_source","clip_id":"ID","head_tick":N,"tail_tick":N}`.
+These edit the finite registered source and preserve timeline link groups.
+Apply the planned project hash with `--expected-project-sha256 HASH`.
+
+Source slip uses the new original PTS with the existing observations; ROI and
+rotation recalibrate at the pinned output reference. Unobserved source regions
+hide the follower. Real head extension accumulates `author_offset_tick` on each
+retained source fragment, preserving the prior ROI/rotation reference even when
+only one fragment expands. Extending a bound video target shifts its base
+opacity keys along with its author clock. Source-handle roll/slide use the same
+logic. Locked dependent rewrites and insufficient physical handles reject
+atomically. Preview changed intervals and check linked audio before delivery.
+
+Integer-grid piecewise constant curves now use rational source-clock inversion;
+nonconstant curves keep the existing bounded float mapping. This does not
+establish natural tracking/occlusion or arbitrary nonlinear timing precision.
+
+[Full workflow and C38 preview](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/TRACKING_SOURCE_EDITS.md)

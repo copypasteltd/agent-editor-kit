@@ -12,11 +12,15 @@ from .errors import AppError
 PROTOCOL = 'native-tracking-edit-lineage-v1'
 
 
-def replan(project, sequence, original, origins):
+def replan(project, sequence, original, origins, *, source_changes=()):
     if not native_clock_project(project):return []
     before = {c['id']:(t,c) for t in original['tracks'] for c in t['clips']}
     after = {c['id']:(t,c) for t in sequence['tracks'] for c in t['clips']}
     descendants = {}
+    author_shifts = {}
+    for change in source_changes:
+        cid=change['clip_id']
+        author_shifts[cid]=author_shifts.get(cid,0)+change.get('head_tick',0)
     for cid, pair in after.items():
         descendants.setdefault(origins.get(cid,cid),[]).append(pair)
     changed = []
@@ -40,7 +44,11 @@ def replan(project, sequence, original, origins):
                 for source_track, source in pairs:
                     if source.get('sequence_id') or source.get('asset_id') != binding['asset_id']:
                         raise AppError('EDIT_BINDING_SOURCE_CHANGED','编辑替换了跟踪源的媒体身份，需重新跟踪或明确解除绑定',exit_code=2)
-                    route.append(dict(track_id=source_track['id'],clip_id=source['id']))
+                    retained=dict(track_id=source_track['id'],clip_id=source['id'],
+                        **({'author_offset_tick':reference['author_offset_tick']} if 'author_offset_tick' in reference else {}))
+                    offset=reference.get('author_offset_tick',0)+author_shifts.get(source['id'],0)
+                    if offset:retained['author_offset_tick']=offset
+                    route.append(retained)
             route.sort(key=lambda r:(after[r['clip_id']][1]['timeline_start_tick'],r['track_id'],r['clip_id']))
             if len(route)>MAX_SOURCE_FRAGMENTS:
                 raise AppError('EDIT_BINDING_FRAGMENT_BUDGET','一次绑定超过128个保留源分片',exit_code=2)
@@ -56,12 +64,13 @@ def replan(project, sequence, original, origins):
                 window = source.get('presentation_window') or {}
                 elapsed = origin-source['timeline_start_tick']+int(window.get('offset_tick',0))
                 updated['reference_output_tick'] = max(0,min(int(window.get('authored_duration_tick',source['duration_tick'])),elapsed))
-            if updated != binding:
+            edits=[copy.deepcopy(c) for c in source_changes if c['clip_id'] in {r['clip_id'] for r in refs}]
+            if updated != binding or edits:
                 if track.get('locked'):
                     raise AppError('EDIT_BOUND_REFERENCE_LOCKED','编辑需要更新锁定轨道上的跟踪引用',exit_code=2)
                 target['tracking_binding'] = updated
                 changed.append(dict(clip_id=target['id'],before=copy.deepcopy(binding),after=copy.deepcopy(updated),
-                    inactive=not route,protocol=PROTOCOL))
+                    inactive=not route,protocol=PROTOCOL,source_edits=edits))
     # Validate the complete result, including routes of unchanged dependants.
     for track in sequence['tracks']:
         for target in track['clips']:

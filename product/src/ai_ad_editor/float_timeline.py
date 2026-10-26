@@ -119,7 +119,7 @@ class FloatTimeline:
         self.sequences={s['id']:s for s in self.project['sequences']};self.sequence_id=sequence_id
         if len(self.sequences)!=len(self.project['sequences']):raise error('SEQUENCE','序列ID重复')
         if sequence_id not in self.sequences:raise error('SEQUENCE','目标作者序列不存在')
-        self.assets={a['id']:a for a in self.project['assets']};self.maps={};self.effect_plans={};self.mask_plans={};self.crop_plans={};self.clip_count=0
+        self.assets={a['id']:a for a in self.project['assets']};self.maps={};self.constant_maps={};self.effect_plans={};self.mask_plans={};self.crop_plans={};self.clip_count=0
         self.source_transition_plans={};self.transition_plans={};self.text_plans={}
         self.text_host=FloatTextHost(resource_root,self.assets,self.working,self.tps,self.fps,
             cancel=self.poll,max_working_bytes=self.max_working_bytes,gpu=gpu)
@@ -197,6 +197,14 @@ class FloatTimeline:
                 if clip.get('speed_curve'):
                     span=int(clip['source_out_tick'])-int(clip['source_in_tick']);segments=compile_curve(raw,span,self.tps)
                     self.maps[path]=make_map(raw,segments,self.tps)
+                    if segments and all(left==right for _,_,left,right in segments):
+                        grid=[(round(a*self.tps),round(b*self.tps),Fraction(str(v))) for a,b,v,_ in segments]
+                        # These boundaries must actually be authored integer ticks.
+                        # Nonlinear/adaptive off-grid segments retain their bounded
+                        # float mapping; no epsilon or source-PTS snapping is used.
+                        if all(float(Fraction(a,self.tps))==item[0] and float(Fraction(b,self.tps))==item[1]
+                               for (a,b,_),item in zip(grid,segments)):
+                            self.constant_maps[path]=(grid,sum((Fraction(b-a)/v for a,b,v in grid),Fraction()))
 
     def _source_time(self,clip,local_tick,path,*,left_limit=False):
         window=clip.get('presentation_window') or {};elapsed=local_tick+int(window.get('offset_tick',0))
@@ -210,6 +218,17 @@ class FloatTimeline:
         if path in self.maps:
             if elapsed==0:result=end if reverse else start
             elif elapsed==validate_window(clip,allow_tracking=True)-duration:result=start if reverse else end
+            elif path in self.constant_maps:
+                grid,total=self.constant_maps[path]
+                author=validate_window(clip,allow_tracking=True)-duration
+                remaining=max(Fraction(),min(total,total*(author-elapsed if reverse else elapsed)/author))
+                value=Fraction(grid[-1][1])
+                for a,b,speed in grid:
+                    span=Fraction(b-a)/speed
+                    if remaining<=span:
+                        value=a+remaining*speed;break
+                    remaining-=span
+                result=start+value/self.tps
             else:result=Fraction.from_float(unmap_time(self.maps[path],float(elapsed/self.tps)))
         else:
             speed=Fraction(str(clip.get('speed',1)))

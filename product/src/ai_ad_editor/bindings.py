@@ -85,7 +85,9 @@ def validate_binding(project: dict, sequence: dict, track: dict, clip: dict, *, 
     if 'source_fragments' in b:
         refs = b['source_fragments']
         if not isinstance(refs,list) or len(refs)>MAX_SOURCE_FRAGMENTS or any(
-            not isinstance(r,dict) or set(r)!={'track_id','clip_id'} or any(not isinstance(v,str) or not v for v in r.values())
+            not isinstance(r,dict) or not {'track_id','clip_id'}<=set(r) or set(r)-{'track_id','clip_id','author_offset_tick'}
+            or any(not isinstance(r[k],str) or not r[k] for k in ('track_id','clip_id'))
+            or ('author_offset_tick' in r and (type(r['author_offset_tick']) is not int or not 0<=r['author_offset_tick']<=2**53-1))
             for r in refs):
             raise invalid('原生源分片须为0..128个明确轨道/片段引用')
         if len({(r['track_id'],r['clip_id']) for r in refs})!=len(refs) or any(r['clip_id']==clip.get('id') for r in refs):
@@ -94,6 +96,8 @@ def validate_binding(project: dict, sequence: dict, track: dict, clip: dict, *, 
             raise invalid('主源引用须与第一项源分片一致')
     if 'reference_output_tick' in b and (type(b['reference_output_tick']) is not int or not 0<=b['reference_output_tick']<=2**53-1):
         raise invalid('绑定基准输出tick须为可精确表示的非负整数')
+    if any(b.get('reference_output_tick',0)+r.get('author_offset_tick',0)>2**53-1 for r in source_references(b)):
+        raise invalid('绑定基准与源分片作者偏移之和超出精确tick范围')
     sources = find_sources(sequence,b) if native_clock else [find_source(sequence,b)]
     assets = {a.get('id'):a for a in project.get('assets', [])}
     asset = assets.get(b['asset_id'], {})

@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.27 / alpha.4-local.25 / r28 kit · 1 Skill / 17 modules / 73 files.**
+**CLI0.1.28 / alpha.4-local.26 / r29 kit · 1 Skill / 17 modules / 73 files.**
 
-带跟踪绑定的原生剪辑已接通：源与标签可分割、裁切、波纹插入/删除及范围编辑；自动重规划保留源分片，固定ROI缩放/旋转基准，源删除后跟随层隐藏，锁定引用冲突整体拒绝。统一Skill实跑C37：36帧剪为30帧，全部保留Float32像素/PTS/绑定坐标一致，完整120000双声道采样误差0，可编辑包重导入相同。
+跟踪源可滑移、真实头尾外扩及使用真实句柄roll/slide；原始观察保留，每个分片独立保留作者偏移，关联音轨同步源编辑，锁定引用冲突整体拒绝。修复分段恒速曲线在帧边界的浮点误选。
 
-[Native tracking editing workflow](TRACKING_EDITS.md)
+[Physical tracked-source editing](TRACKING_SOURCE_EDITS.md)
 
 <!-- /community-current -->
 

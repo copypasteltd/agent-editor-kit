@@ -1,0 +1,799 @@
+{
+  "status": "passed",
+  "cli_version": "0.1.28",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.26\\final-r1\\installed",
+  "registered_skill": true,
+  "source_fallback": false,
+  "virtualization": false,
+  "new_model_forwards": 0,
+  "natural_quality_accepted": false,
+  "continuous_playback": false,
+  "human_listening": false,
+  "calls": [
+    {
+      "name": "version",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "version"
+      ],
+      "exit_code": 0,
+      "seconds": 1.9063454999995884,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\version.stdout.log",
+      "stdout_sha256": "ec381400ff26f9d353bfc6374b26b6a8f914ebd1196b9a3cca1e7f9efc8c2d70",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "import-source",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "convert",
+        "import",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-tracking-20261026-r5\\editable-native-tracking.aevpkg.zip",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程"
+      ],
+      "exit_code": 0,
+      "seconds": 1.7934501000017917,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\import-source.stdout.log",
+      "stdout_sha256": "f9d2a36d09f8e00265b498a629b4019e7069c07aa4c1fc54badd8a2d272ddfe1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "validate-initial",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "validate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程"
+      ],
+      "exit_code": 0,
+      "seconds": 2.098382699998183,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\validate-initial.stdout.log",
+      "stdout_sha256": "253fbe7d9ad07402efc6442c7242d7cc24c287e16ffa93bf82a53c8fb35dd793",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "render-before",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程",
+        "--sequence-id",
+        "child",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程\\renders\\before.mkv"
+      ],
+      "exit_code": 0,
+      "seconds": 19.287329300001147,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\render-before.stdout.log",
+      "stdout_sha256": "fc9e1a4da5804f98cdb5d5957e596564eb08b435cef127d498097bfa59cc7535",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "edit-plan-0",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "timeline",
+        "edit",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程",
+        "--sequence-id",
+        "child",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\request-0.json",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "seconds": 2.1763400999989244,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\edit-plan-0.stdout.log",
+      "stdout_sha256": "a76c0aea443788d1d740615092e87fca79119db135d384857debbc0158ab7988",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "edit-apply-0",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "timeline",
+        "edit",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程",
+        "--sequence-id",
+        "child",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\request-0.json",
+        "--expected-project-sha256",
+        "sha256:8868ee82988d9845d34a058491f8325927b6f775c5f12969952af62615ba9323"
+      ],
+      "exit_code": 0,
+      "seconds": 2.1569262000011804,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\edit-apply-0.stdout.log",
+      "stdout_sha256": "e158b8e6689515d90cb8c8c8fa64a3dfc9c18b5af1c24c87d27a0cc994ebafd5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "edit-plan-1",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "timeline",
+        "edit",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程",
+        "--sequence-id",
+        "child",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\request-1.json",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "seconds": 2.0754721999983303,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\edit-plan-1.stdout.log",
+      "stdout_sha256": "e014632fce2f419acaffd961e9cc99c425987c838df3e0896014706908dcdc55",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "edit-apply-1",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "timeline",
+        "edit",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程",
+        "--sequence-id",
+        "child",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\request-1.json",
+        "--expected-project-sha256",
+        "sha256:7e2bc5c16da2558231943a292b5c30bf6724779b6a279aa9a4182e31178f9c85"
+      ],
+      "exit_code": 0,
+      "seconds": 2.1779663000015717,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\edit-apply-1.stdout.log",
+      "stdout_sha256": "277f7ce3003fa297b8fae80a6e6fccb9f0cdd5d2981e240b1b2301119069c2f2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "validate-edited",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "validate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程"
+      ],
+      "exit_code": 0,
+      "seconds": 2.0567470000023604,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\validate-edited.stdout.log",
+      "stdout_sha256": "a41868cbd27dc7d94ddde556301de41cd76799b551ea51db11f5a46171ebace1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "independent-native-pts",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.EXE",
+        "-v",
+        "error",
+        "-select_streams",
+        "v:0",
+        "-show_streams",
+        "-show_frames",
+        "-show_entries",
+        "stream=time_base:frame=pts",
+        "-of",
+        "json",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程\\assets\\original.native.mkv"
+      ],
+      "exit_code": 0,
+      "seconds": 0.10990519999904791,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\independent-native-pts.stdout.log",
+      "stdout_sha256": "34e6f0810b33178e225263d9be2b9891c56ab9e43e7d0b9810883abe545e04b3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "render-edited",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程",
+        "--sequence-id",
+        "child",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程\\renders\\edited.mkv"
+      ],
+      "exit_code": 0,
+      "seconds": 19.901329799999075,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\render-edited.stdout.log",
+      "stdout_sha256": "7b7a3c246c65b66c505450fb1f26dc13f6e107bceb637f6c6e2f15eba64995c7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "edited-frames",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程\\renders\\edited.mkv",
+        "-map",
+        "0:v:0",
+        "-pix_fmt",
+        "rgba64le",
+        "-f",
+        "framemd5",
+        "-"
+      ],
+      "exit_code": 0,
+      "seconds": 0.08853799999997136,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\edited-frames.stdout.log",
+      "stdout_sha256": "e93afe26a2247bcf5877781e48bd5895aeabbf5dcfa7c459c7c2e835fb7a9a05",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "edited-pcm",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程\\renders\\edited.mkv",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "-"
+      ],
+      "exit_code": 0,
+      "seconds": 0.05772459999934654,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\edited-pcm.bin",
+      "stdout_sha256": "38227151bf728f66167b37c08a4569e18cfbabaa87d79dbda5953d9a4586bdf9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "original-source-pcm",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程\\assets\\original.audio.wav",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "-"
+      ],
+      "exit_code": 0,
+      "seconds": 0.06151940000199829,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\original-source-pcm.bin",
+      "stdout_sha256": "c33cc4356706c476998a70050d6ca058b73b9d85cf56fff258edb940eacef52c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "export-package",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "convert",
+        "export",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程",
+        "--target-format",
+        "package",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-source-edits-20261026-r3\\editable-tracking-source-edits.aevpkg.zip"
+      ],
+      "exit_code": 0,
+      "seconds": 2.5604745999989973,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\export-package.stdout.log",
+      "stdout_sha256": "52ad92cbe0247fa289820a9372af8e7fab39721a17d3164ae188af7628ae611f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "import-edited",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "convert",
+        "import",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-source-edits-20261026-r3\\editable-tracking-source-edits.aevpkg.zip",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\重导入 工程"
+      ],
+      "exit_code": 0,
+      "seconds": 1.830351000000519,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\import-edited.stdout.log",
+      "stdout_sha256": "ca78ad9af00f9a5f011a9c0ab4116c01e38231c1e2c64782e79c1bf84df5be03",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "validate-imported",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "validate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\重导入 工程"
+      ],
+      "exit_code": 0,
+      "seconds": 2.0519965999992564,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\validate-imported.stdout.log",
+      "stdout_sha256": "3f5226cf5108e528ddb6157e55edc074f26216372ca1638448d51f66b7aae4cf",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "render-imported",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\重导入 工程",
+        "--sequence-id",
+        "child",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\重导入 工程\\renders\\restored.mkv"
+      ],
+      "exit_code": 0,
+      "seconds": 19.452221499999723,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\render-imported.stdout.log",
+      "stdout_sha256": "748886d062722969e451913886c5841c0b9c650cd810a592e9079bec6c9c7935",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "restored-frames",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\重导入 工程\\renders\\restored.mkv",
+        "-map",
+        "0:v:0",
+        "-pix_fmt",
+        "rgba64le",
+        "-f",
+        "framemd5",
+        "-"
+      ],
+      "exit_code": 0,
+      "seconds": 0.08613960000002407,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\restored-frames.stdout.log",
+      "stdout_sha256": "e93afe26a2247bcf5877781e48bd5895aeabbf5dcfa7c459c7c2e835fb7a9a05",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "restored-pcm",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\重导入 工程\\renders\\restored.mkv",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "-"
+      ],
+      "exit_code": 0,
+      "seconds": 0.05553229999713949,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\restored-pcm.bin",
+      "stdout_sha256": "38227151bf728f66167b37c08a4569e18cfbabaa87d79dbda5953d9a4586bdf9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "preview-2",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "preview",
+        "frame",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程",
+        "--sequence-id",
+        "child",
+        "--frame",
+        "2",
+        "--height",
+        "180"
+      ],
+      "exit_code": 0,
+      "seconds": 14.540677700002561,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\preview-2.stdout.log",
+      "stdout_sha256": "1286dbb0b92131dce72629e89045b52c1baaf4e5f6f2bc9e79f796d77768044b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "preview-3",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "preview",
+        "frame",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程",
+        "--sequence-id",
+        "child",
+        "--frame",
+        "3",
+        "--height",
+        "180"
+      ],
+      "exit_code": 0,
+      "seconds": 14.25851060000059,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\preview-3.stdout.log",
+      "stdout_sha256": "ddbc12f6488a4e52ce687985764d3b827fcf9e3abef40cadf639b289c2ba5ab8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "preview-18",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "preview",
+        "frame",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程",
+        "--sequence-id",
+        "child",
+        "--frame",
+        "18",
+        "--height",
+        "180"
+      ],
+      "exit_code": 0,
+      "seconds": 14.403063300000213,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\preview-18.stdout.log",
+      "stdout_sha256": "e709f00780fe0ec47e3f2cefb31d7b504c78313ce34b0c3ce37d8129e142644d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "preview-32",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "preview",
+        "frame",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程",
+        "--sequence-id",
+        "child",
+        "--frame",
+        "32",
+        "--height",
+        "180"
+      ],
+      "exit_code": 0,
+      "seconds": 15.511574100000871,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\preview-32.stdout.log",
+      "stdout_sha256": "c342bc7c313df26c3ac3fa3738fc9d447716b5d9e5b99c5d12dba56134f67fa3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "preview-33",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "preview",
+        "frame",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程",
+        "--sequence-id",
+        "child",
+        "--frame",
+        "33",
+        "--height",
+        "180"
+      ],
+      "exit_code": 0,
+      "seconds": 15.142391599998518,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\preview-33.stdout.log",
+      "stdout_sha256": "e62faa7c7e8ef968f4df13480921aca5d5617be555e654a5febc8b2d86f00029",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "quality",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "quality",
+        "check",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程\\renders\\edited.mkv"
+      ],
+      "exit_code": 0,
+      "seconds": 1.745366600000125,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\quality.stdout.log",
+      "stdout_sha256": "737941a63e619f22212c43a0142888b949e67418dbdf9d3e9e81f32839284e2f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "before-mp4",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程\\renders\\before.mkv",
+        "-vf",
+        "zscale=transferin=linear:transfer=iec61966-2-1,format=yuv420p",
+        "-c:v",
+        "libx264",
+        "-crf",
+        "17",
+        "-c:a",
+        "aac",
+        "-movflags",
+        "+faststart",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-source-edits-20261026-r3\\before.mp4"
+      ],
+      "exit_code": 0,
+      "seconds": 0.11513189999823226,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\before-mp4.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "edited-mp4",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程\\renders\\edited.mkv",
+        "-vf",
+        "zscale=transferin=linear:transfer=iec61966-2-1,format=yuv420p",
+        "-c:v",
+        "libx264",
+        "-crf",
+        "17",
+        "-c:a",
+        "aac",
+        "-movflags",
+        "+faststart",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-source-edits-20261026-r3\\edited.mp4"
+      ],
+      "exit_code": 0,
+      "seconds": 0.1240354000001389,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\edited-mp4.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "gif",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-source-edits-20261026-r3\\edited.mp4",
+        "-filter_complex",
+        "[0:v]fps=8,scale=480:-1:flags=lanczos,split[a][b];[a]palettegen[p];[b][p]paletteuse",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-source-edits-20261026-r3\\edited.gif"
+      ],
+      "exit_code": 0,
+      "seconds": 0.1660124000009091,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\gif.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "midpoint",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-ss",
+        "1.5",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-source-edits-20261026-r3\\edited.mp4",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-source-edits-20261026-r3\\midpoint.png"
+      ],
+      "exit_code": 0,
+      "seconds": 0.06898229999933392,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-source-edits-20261026-r1\\case-r3\\midpoint.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": [
+    {
+      "name": "actual registered CLI",
+      "ok": true
+    },
+    {
+      "name": "dry-run preserves author 0",
+      "ok": true
+    },
+    {
+      "name": "source and audio selected 0",
+      "ok": true
+    },
+    {
+      "name": "dry-run preserves author 1",
+      "ok": true
+    },
+    {
+      "name": "source and audio selected 1",
+      "ok": true
+    },
+    {
+      "name": "original observations and fragment clock preserved",
+      "ok": true
+    },
+    {
+      "name": "rights unchanged",
+      "ok": true
+    },
+    {
+      "name": "moving_source exact independently specified physical range",
+      "ok": true
+    },
+    {
+      "name": "child_sound exact independently specified physical range",
+      "ok": true
+    },
+    {
+      "name": "all Float32 pixels equal independent unbound authoring",
+      "ok": true
+    },
+    {
+      "name": "all original native frame indices",
+      "ok": true
+    },
+    {
+      "name": "actual GPU and owned cleanup",
+      "ok": true
+    },
+    {
+      "name": "edited all decoded clocks and samples",
+      "ok": true
+    },
+    {
+      "name": "complete independent stereo PCM",
+      "ok": true,
+      "max_absolute_error": 0.0,
+      "samples": 144000
+    },
+    {
+      "name": "binding survives package",
+      "ok": true
+    },
+    {
+      "name": "restored all decoded clocks and samples",
+      "ok": true
+    },
+    {
+      "name": "all encoded frames and full PCM preserved",
+      "ok": true
+    }
+  ],
+  "started_at_utc": "2026-10-26T05:44:56.245368+00:00",
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\编辑 工程",
+  "imported_project": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-source-edits-20261026-case-r3\\重导入 工程",
+  "public": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-source-edits-20261026-r3",
+  "edited_frames": 36,
+  "independent_float32_frames_equal": 36,
+  "actual_bound_frames": 30,
+  "full_pcm_samples_per_channel": 144000,
+  "max_pcm_error": 0.0,
+  "restored_frames_and_pcm_equal": true,
+  "gif_frames": 24,
+  "package_sha256": "323c0dbfe1452c2661c04eb9f882463fbb48cb22dddc3478394ba7a7dbb5d1da",
+  "finished_at_utc": "2026-10-26T05:48:07.693776+00:00"
+}

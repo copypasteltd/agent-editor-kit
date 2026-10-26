@@ -1,5 +1,7 @@
 # 原生 PTS 跟踪绑定 / Native PTS tracking bindings
 
+CLI0.1.29 now supports synchronized magnetic tracking cuts/reorder; [current workflow and C39](TRACKING_MAGNETIC.md). Earlier versioned records below retain their original scope.
+
 CLI0.1.28 extends tracked physical slip/real source handles; see [current source-edit workflow](TRACKING_SOURCE_EDITS.md). Earlier versioned checks below retain their original scope.
 
 agent editor kit CLI 0.1.26 / `v0.1.0-alpha.4-local.24`，单入口

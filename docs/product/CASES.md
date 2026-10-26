@@ -799,3 +799,13 @@ Native bound clips now support split/trim/ripple and range edits. The planner re
 ![Actual silent GIF](../assets/tracking-source-edits-20261026-r3/edited.gif)
 
 [Before MP4](../assets/tracking-source-edits-20261026-r3/before.mp4) · [Edited MP4](../assets/tracking-source-edits-20261026-r3/edited.mp4) · [Editable package](../assets/tracking-source-edits-20261026-r3/editable-tracking-source-edits.aevpkg.zip) · [Source/rights](../assets/tracking-source-edits-20261026-r3/SOURCE.txt) · [Hashes](../assets/tracking-source-edits-20261026-r3/media-manifest.json) · [Workflow](TRACKING_SOURCE_EDITS.md) · [Evidence](../validation/跟踪源编辑实测_2026-10-26.md).
+
+<a id="c39-tracking-magnetic"></a>
+
+## C39 · 跟踪磁性重排 · CLI0.1.29
+
+CC0移动几何、动态裁切/运镜、跟随标记和双声道合成音；实际统一Skill把第3秒移到第1秒前，跨剪口拆分视频、标签和关联音轨。全部36帧Float32像素/原生PTS/动态几何按原帧顺序保持；完整144000双声道采样误差0。工程包和队列分别核验，实际GPU投影与清理留证。GIF静音，无自然质量/连续播放/人工听审验收。
+
+![Actual silent GIF](../assets/tracking-magnetic-20261026-r1/edited.gif)
+
+[Before MP4](../assets/tracking-magnetic-20261026-r1/before.mp4) · [Edited MP4](../assets/tracking-magnetic-20261026-r1/edited.mp4) · [Editable package](../assets/tracking-magnetic-20261026-r1/editable-tracking-magnetic.aevpkg.zip) · [Source/rights](../assets/tracking-magnetic-20261026-r1/SOURCE.txt) · [Hashes](../assets/tracking-magnetic-20261026-r1/media-manifest.json) · [Workflow](TRACKING_MAGNETIC.md) · [Evidence](../validation/跟踪磁性重排实测_2026-10-26.md).

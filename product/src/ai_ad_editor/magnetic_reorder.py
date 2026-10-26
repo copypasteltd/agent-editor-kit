@@ -241,7 +241,19 @@ def build_reorder_plan(project, sequence_id, request):
                 clip['timeline_start_tick'] += delta
     main['clips'] = packed
     draft.settle()
-    draft.repair_bindings()
+    from .bindings import native_clock_project
+    native = native_clock_project(candidate)
+    binding_changes = []
+    if native:
+        from .binding_edits import replan
+        # Split descendants must be traced to the pre-cut author graph. The
+        # generic draft starts after split_sync and cannot recover that lineage.
+        origins = {cid:cid for cid in draft.before}
+        origins.update({piece['clip_id']:split['clip_id'] for split in splits for piece in split['pieces']})
+        binding_changes = replan(candidate, sequence, original, origins)
+        draft.rebound.extend(row['clip_id'] for row in binding_changes)
+    else:
+        draft.repair_bindings()
     draft.retime_subtitles()
     removed, dropped = _transitions(candidate, sequence, original, normalized['transition_policy'])
     now = {c['id']: c for t in sequence['tracks'] for c in t['clips']}
@@ -252,7 +264,10 @@ def build_reorder_plan(project, sequence_id, request):
             if (cid, field) in drop_fields:
                 expected.pop(field, None)
         if cid in draft.rebound:
-            expected['tracking_binding']['source_track_id'] = now[cid]['tracking_binding']['source_track_id']
+            if native:
+                expected['tracking_binding'] = copy.deepcopy(now[cid]['tracking_binding'])
+            else:
+                expected['tracking_binding']['source_track_id'] = now[cid]['tracking_binding']['source_track_id']
         if _content(expected) != _content(now[cid]):
             _error('EDIT_CONTENT_INVARIANT_FAILED', '重排不能重写原作者内容: ' + cid)
     for track in original['tracks']:
@@ -279,6 +294,7 @@ def build_reorder_plan(project, sequence_id, request):
             'rebound_clip_ids': draft.rebound, 'retimed_subtitle_ids': draft.retimed_subtitles,
             'removed_transition_ids': [row['id'] for row in removed], 'dropped_legacy_transition_fields': dropped,
             'sync_splits': splits,
+            'tracking_binding_changes': binding_changes,
             'before_duration_tick': original['duration_tick'], 'after_duration_tick': sequence['duration_tick'],
             'warnings': warnings,
             'limits': ['explicit-whole-clip-reorder-not-a-persistent-magnet-mode-or-screen-snap-gesture',

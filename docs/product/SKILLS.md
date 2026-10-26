@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.28 / alpha.4-local.26 / r29 kit · 1 Skill / 17 modules / 73 files.**
+**CLI0.1.29 / alpha.4-local.27 / r30 kit · 1 Skill / 17 modules / 73 files.**
 
-跟踪源可滑移、真实头尾外扩及使用真实句柄roll/slide；原始观察保留，每个分片独立保留作者偏移，关联音轨同步源编辑，锁定引用冲突整体拒绝。修复分段恒速曲线在帧边界的浮点误选。
+磁性重排支持跟踪源、标签与关联音轨跨主轨剪口同步拆分；从剪切前的完整作者工程重建源引用，保留原始观察、ROI基准、每分片偏移及完整处理时钟。
 
-[Physical tracked-source editing](TRACKING_SOURCE_EDITS.md)
+[Magnetic tracking workflow](TRACKING_MAGNETIC.md)
 
 <!-- /community-current -->
 

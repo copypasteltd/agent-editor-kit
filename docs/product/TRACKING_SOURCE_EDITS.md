@@ -1,5 +1,7 @@
 # 跟踪源滑移与真实外扩 / Physical tracked-source editing
 
+CLI0.1.29 now supports synchronized magnetic tracking cuts/reorder; [current workflow and C39](TRACKING_MAGNETIC.md). Earlier versioned records below retain their original scope.
+
 CLI 0.1.28 支持带原生跟踪绑定的 `slip`、`extend_source`，以及需要真实源句柄的
 `roll/slide`。它们编辑已登记素材的真实范围，保留原始观测和关联音轨，使用有限源边界检查。
 本流程用于显式 `float32-native-v1`；其他渲染路径沿用各自的绑定门禁。

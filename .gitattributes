@@ -1672,3 +1672,12 @@ scripts/*tracking_source_edits*20261026.py text eol=lf
 docs/product/TRACKING_SOURCE_EDITS.md text eol=lf
 docs/releases/CLI_0.1.28_LOCAL.md text eol=lf
 docs/validation/跟踪源编辑实测_2026-10-26.md text eol=lf
+
+docs/validation/evidence/tracking-magnetic-20261026-r1/** -text -whitespace
+docs/assets/tracking-magnetic-20261026-*/** -text -whitespace
+product/tests/test_tracking_magnetic.py text eol=lf
+scripts/*tracking_magnetic*20261026.py text eol=lf
+docs/product/TRACKING_MAGNETIC.md text eol=lf
+docs/product/tracking-magnetic-capabilities-cli-0.1.29.json -text -whitespace
+docs/releases/CLI_0.1.29_LOCAL.md text eol=lf
+docs/validation/跟踪磁性重排实测_2026-10-26.md text eol=lf

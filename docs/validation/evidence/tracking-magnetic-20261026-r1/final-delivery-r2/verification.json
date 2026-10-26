@@ -1,0 +1,1378 @@
+{
+  "status": "passed",
+  "native_windows": true,
+  "virtualization": false,
+  "source_fallback": false,
+  "goal_complete": false,
+  "checked_at_utc": "2026-10-26T06:32:36.684409+00:00",
+  "product_files": 220,
+  "skill_files": 73,
+  "modules": 17,
+  "test_groups": [
+    {
+      "group": "tracking",
+      "tests": 61,
+      "skipped": 0,
+      "frozen_equal": true
+    },
+    {
+      "group": "magnetic",
+      "tests": 66,
+      "skipped": 0,
+      "frozen_equal": true
+    },
+    {
+      "group": "editing",
+      "tests": 195,
+      "skipped": 0,
+      "frozen_equal": true
+    },
+    {
+      "group": "bindings",
+      "tests": 71,
+      "skipped": 0,
+      "frozen_equal": true
+    },
+    {
+      "group": "legacy",
+      "tests": 192,
+      "skipped": 0,
+      "frozen_equal": true
+    },
+    {
+      "group": "render",
+      "tests": 46,
+      "skipped": 0,
+      "frozen_equal": true
+    },
+    {
+      "group": "audio",
+      "tests": 65,
+      "skipped": 0,
+      "frozen_equal": true
+    },
+    {
+      "group": "float",
+      "tests": 98,
+      "skipped": 0,
+      "frozen_equal": true
+    }
+  ],
+  "functions": 60,
+  "services": 20,
+  "declarations": 75,
+  "readme_rows": 211,
+  "historical_rows_preserved": 205,
+  "original_goal_closures_preserved": 38,
+  "local_links_checked": 3156,
+  "actual_registered_skill_frames": 36,
+  "full_pcm_samples_per_channel": 144000,
+  "kit_sha256": "b58d95e1715d09f07050f46689e18f0011fb8eeb907a344cda180a8e2241f971",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 100168,
+      "sha256": "0873df6ec28bd8db7c296bd9daade59f0e6edfc52176979f70d1c69cef9451db"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 2306,
+      "sha256": "4a3ecbb6916c2b80b1cb93fab7fe1b7328c7e6590aac436fb5c9e4e83d880e17"
+    },
+    {
+      "path": "README.en.md",
+      "bytes": 179020,
+      "sha256": "31e0dde23a3d51624b61df8969a5307d7c8f264fb98735b4f626dee95fb24768"
+    },
+    {
+      "path": "README.md",
+      "bytes": 167048,
+      "sha256": "b4abcf2f631536f3f63b4f5bdba0d24ce2a3174baf97f94394b02a42519b8607"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "bytes": 168411,
+      "sha256": "3d81cb1861b697f6363964872a30dfe08a322a9a275c53ee77a4a82665643635"
+    },
+    {
+      "path": "agent-ffmpeg-local-install-manifest.json",
+      "bytes": 26377,
+      "sha256": "3f7e19020ec9e5f3b9b9dc9a62e0899ea2a2093f1e72c313cbcfddfc35933592"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 12303,
+      "sha256": "9b6e8744a7fd39d39776b55a60a9f85d52b6e5397dc254766c61b768e5685dac"
+    },
+    {
+      "path": "docs/assets/tracking-magnetic-20261026-r1/SOURCE.txt",
+      "bytes": 358,
+      "sha256": "0ea28f5b8170b59a200e2c49dd2f22d6fe8f851a67851d8a56475fd9c9f7f4e7"
+    },
+    {
+      "path": "docs/assets/tracking-magnetic-20261026-r1/before.mp4",
+      "bytes": 76223,
+      "sha256": "a8c6ff7d3e299a7b414ebb4fe094559343d5f22715ef8bfb92deada0fdb2ca41"
+    },
+    {
+      "path": "docs/assets/tracking-magnetic-20261026-r1/editable-tracking-magnetic.aevpkg.zip",
+      "bytes": 13175830,
+      "sha256": "75ec8a93d8a18acea768400d2b0e15a78970755e6530e2142a1fd304b8e0abfb"
+    },
+    {
+      "path": "docs/assets/tracking-magnetic-20261026-r1/editable-tracking-magnetic.aevpkg.zip.conversion-report.json",
+      "bytes": 979,
+      "sha256": "1b23cd1c3889286eeeaddac752808a2168f0f8723f4189e3dbe1ddbad99feead"
+    },
+    {
+      "path": "docs/assets/tracking-magnetic-20261026-r1/edited.gif",
+      "bytes": 524706,
+      "sha256": "e72ad10d4939379571c1368e879815f4c5ea3827826beec1a3fea1397e7591fd"
+    },
+    {
+      "path": "docs/assets/tracking-magnetic-20261026-r1/edited.mp4",
+      "bytes": 77861,
+      "sha256": "ae27e68d9a9b17e5d8047726acca52fc16a44b3513f6354c34b1b06aff18e8de"
+    },
+    {
+      "path": "docs/assets/tracking-magnetic-20261026-r1/media-manifest.json",
+      "bytes": 9125,
+      "sha256": "5751bc45f2716e4dc7cef1c9fb4e5c4dd46698569c354f5abec369e2a460293c"
+    },
+    {
+      "path": "docs/assets/tracking-magnetic-20261026-r1/midpoint.png",
+      "bytes": 10620,
+      "sha256": "3a558ad9a17cfbffbde83fddeb67151a100df31c73faf30eb9df1149f2f3447f"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.en.md",
+      "bytes": 175158,
+      "sha256": "f7d8d863ab5ab0d9dba2b30acb7cc30e8f5c0ba78821e7ed58b1e0869530ec76"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.md",
+      "bytes": 172891,
+      "sha256": "38bf093fac6b7abaa3a605ca270d627193db1615a0f458e335d2b8edb9600f0c"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.zh-TW.md",
+      "bytes": 173017,
+      "sha256": "47a69e4ab06553630f04b963debc41b39e1f5a919d94d72da0d713caea0ea1a0"
+    },
+    {
+      "path": "docs/product/CASES.md",
+      "bytes": 106963,
+      "sha256": "bab2fde411547ed78bd8f7ede6c031f0407a1b489978f70d9dec36c4c03881d3"
+    },
+    {
+      "path": "docs/product/COMMUNITY_LOCAL_DELIVERY.md",
+      "bytes": 28028,
+      "sha256": "35cf6ee513deba0e90317b4452552027a0007b4f17b5b25fc8d9098efd26b2b8"
+    },
+    {
+      "path": "docs/product/FLOAT_TRACKING.md",
+      "bytes": 7135,
+      "sha256": "ba1974fd776d9a301c513543383628b501e416a7331864f56eb7ef53de35dc2b"
+    },
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "bytes": 43972,
+      "sha256": "fc3879d97a4b22be2db463eb4b4c6d87e50646b85765854c5ba85a0002f93927"
+    },
+    {
+      "path": "docs/product/IMPLEMENTATION_PLAN_20261025.md",
+      "bytes": 16830,
+      "sha256": "5ab284a8e569102b6ba1daf035c461e2f66410ee3117fbcc38700d3dddbec2e2"
+    },
+    {
+      "path": "docs/product/SKILLS.en.md",
+      "bytes": 17285,
+      "sha256": "d01525fbacc7fa135a81d5b28845738dc9496a6094320054aa343eb487b53e3a"
+    },
+    {
+      "path": "docs/product/SKILLS.md",
+      "bytes": 16775,
+      "sha256": "0a36c80b6d356022715a91039564077e2b42f8916dbb48beb62285e3a8ba8e70"
+    },
+    {
+      "path": "docs/product/SKILLS.zh-TW.md",
+      "bytes": 16811,
+      "sha256": "f1ac99a61e87bc1187325101d883aa11ea09706f9a83f5b6ad03815ef868fc43"
+    },
+    {
+      "path": "docs/product/TRACKING_EDITS.md",
+      "bytes": 9619,
+      "sha256": "1d99fa32458623ef9b52a660fd37fd1e1ebf94dd2e666ec7ee1551e5f4928451"
+    },
+    {
+      "path": "docs/product/TRACKING_MAGNETIC.md",
+      "bytes": 4934,
+      "sha256": "705ba6820cb41c6753ac8fd86348fcad8585ae727ef0540a17cea4a862586a66"
+    },
+    {
+      "path": "docs/product/TRACKING_SOURCE_EDITS.md",
+      "bytes": 5195,
+      "sha256": "78af5faa67863e5c9fc010b9ac5f5531c6b09b55c3755d819cff4d30e69eb684"
+    },
+    {
+      "path": "docs/product/tracking-magnetic-capabilities-cli-0.1.29.json",
+      "bytes": 123101,
+      "sha256": "609fae1dded1790605846e607db2490a735d45c4a95cefc4f74c6c8f9d4b8aa5"
+    },
+    {
+      "path": "docs/releases/CLI_0.1.29_LOCAL.md",
+      "bytes": 1463,
+      "sha256": "f9ed7d15232a75d4f814e086e290a5f3fa42800d9706feeed868c854eea4e42e"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.en.md",
+      "bytes": 7538,
+      "sha256": "c16eecb4161f86516a63610065c38a9bef4882c1863eb18c6218da4a8196af1f"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.md",
+      "bytes": 7815,
+      "sha256": "74882295e4094694ddd8d9aa9634b4deb39afbd4cdd64944d3a002c7877d7132"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.zh-TW.md",
+      "bytes": 7830,
+      "sha256": "b5d76c287b3c811084682665c3f8e82c6d0363353146a70a5628677b27d7ca6e"
+    },
+    {
+      "path": "docs/skills/agent-editor-kit-community-unified-skill-r30.zip",
+      "bytes": 567396,
+      "sha256": "b58d95e1715d09f07050f46689e18f0011fb8eeb907a344cda180a8e2241f971"
+    },
+    {
+      "path": "docs/skills/community-unified-skill-package-0.1.29-r30.json",
+      "bytes": 415,
+      "sha256": "3d62ed8e38c69db4e74e1d45ccb5b2c3c891364ba35c8300968391debdc2945d"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/activation-final-r1/activation-and-registration.json",
+      "bytes": 1750,
+      "sha256": "0da87cd391609f918747f78d4fcad62818dab42f427806b26d21d05e9fd9f259"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/activation-final-r1/activation.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/activation-final-r1/activation.stdout.json",
+      "bytes": 706,
+      "sha256": "fc45aee99f837fc89002ae8b7882164c542d924b6b9c394738c5ef8437817ac2"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/activation-final-r1/executed-generator.py",
+      "bytes": 2620,
+      "sha256": "c9af8070120b23775e0431fb455dc7cec709c21c7ac78a388aefe436e11f232b"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/activation-final-r1/kokoro-zh-en-cuda13.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/activation-final-r1/kokoro-zh-en-cuda13.stdout.json",
+      "bytes": 659,
+      "sha256": "9528a324dcf1c48cc23aedf175e3a76723b3f220deaa7778e557179f4727bcbe"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/activation-final-r1/kokoro-zh-en-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/activation-final-r1/kokoro-zh-en-int8.stdout.json",
+      "bytes": 655,
+      "sha256": "868979bc7e16c228f224d0ba76a08c03f04e0a0b9616262edb50ea95fc57116c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/activation-final-r1/opus-zh-en-cpu-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/activation-final-r1/opus-zh-en-cpu-int8.stdout.json",
+      "bytes": 660,
+      "sha256": "4f9a594578c86089edc1e96e659aeeda540f8a698bc7919c705dfab19792e8f4"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/activation-final-r1/opus-zh-en-cuda12-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/activation-final-r1/opus-zh-en-cuda12-int8.stdout.json",
+      "bytes": 666,
+      "sha256": "d78a3647dac22f376843377fbaaf217d25dcbf3093edf11ab2169ac8d2fe3b3c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/activation-final-r1/previous-community-runtime.json",
+      "bytes": 797,
+      "sha256": "215495ee2c7f917d3394f3cae9821f4ad74765e1600af1282f1468b9f228b61c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/activation-final-r1/previous-runtime.json",
+      "bytes": 624,
+      "sha256": "b67a8bc5b41919e23f2b9a4b603cc6a727a4e7111cabc94493cefd03a233f674"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/activation-final-r1/registration.json",
+      "bytes": 939,
+      "sha256": "b8cee2a4999aaefe075ae53fd0f6e552e006d23d5bdb270b1ee96acc478cd8e0"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/activation-final-r1/registration.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/activation-final-r1/registration.stdout.txt",
+      "bytes": 371,
+      "sha256": "9756679c7071de178b2b3a547975ade76a43e903131d178094ddb0baa6226f74"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/activation-final-r1/verification.json",
+      "bytes": 749,
+      "sha256": "f30efdef09fab9eb1929c0ca9ffa6e485be7b4c96c80a6150b4f5e2500aac3b6"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/audio-installed-r1/executed-runner.py",
+      "bytes": 4536,
+      "sha256": "c8265532faf98424589576ebdf717a84566bb6b608f5b13128d36017f7fb6327"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/audio-installed-r1/tests.log",
+      "bytes": 11726,
+      "sha256": "f2aef3c37e9609282f1ff10c22b6bbe09c9ca6c5b97ee1a6507fa37cb391bea9"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/audio-installed-r1/verification.json",
+      "bytes": 20581,
+      "sha256": "dbe7399a6a27801b9b9e76776158d6e7b785fb80978a0a052a633c01e8db6eb0"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/bindings-installed-r1/executed-runner.py",
+      "bytes": 4536,
+      "sha256": "c8265532faf98424589576ebdf717a84566bb6b608f5b13128d36017f7fb6327"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/bindings-installed-r1/tests.log",
+      "bytes": 11972,
+      "sha256": "e45ce68cf46c9495a4e1480d257006e566c50385a716569368fd49b5814cd0a9"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/bindings-installed-r1/verification.json",
+      "bytes": 20572,
+      "sha256": "27e34a028f3eba20b83a097255ffba0dd519d756dbb9f5b43e60514121dc2d31"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/before-frames.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/before-frames.stdout.log",
+      "bytes": 3095,
+      "sha256": "c955fb53a99ed3f179672fce3f175f31746738125756bda973d9872cd9561aba"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/before-mp4.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/before-mp4.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/before-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/edit-apply.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/edit-apply.stdout.log",
+      "bytes": 56035,
+      "sha256": "cdbc7eb392c1050628e4ee058b2c8d196181f167ffe34d551bb05dbdc1f00c8e"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/edit-plan.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/edit-plan.stdout.log",
+      "bytes": 55722,
+      "sha256": "7e75e047f4c2118a5723faf2bda331cdb052bbfbaec675f9eb29326caa81a137"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/edited-author-project.json",
+      "bytes": 208260,
+      "sha256": "3d86eae21d0474b4ede4e84782949470a9b9c502dd2c68e797a5c0c8d3090c29"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/edited-frames.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/edited-frames.stdout.log",
+      "bytes": 3095,
+      "sha256": "d45bacbf8a6505f33d9f88778daf6c2e521a81340ccafa6af17682bf759dd0a2"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/edited-mp4.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/edited-mp4.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/edited-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/executed-generator.py",
+      "bytes": 13144,
+      "sha256": "f3ec816988070a1754048e28884786a5e7562dbebfdaa467c97c2d124846f871"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/export-package.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/export-package.stdout.log",
+      "bytes": 3988,
+      "sha256": "df9d930345b7820d5123b29fd68386bbc25331c0e6288120eb62d191a4319f81"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/gif.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/gif.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/gpu-receipt.json",
+      "bytes": 3516,
+      "sha256": "6f9f1e488003cdb59b5123bd7d9b0d0fed9e5dce9cbcadc5d2e2b603ebcb1daa"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/import-edited.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/import-edited.stdout.log",
+      "bytes": 1610,
+      "sha256": "ef1c410fd08fa60b010605e95f7ab53c74b06028736b72dd482387fe77aa1332"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/import-source.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/import-source.stdout.log",
+      "bytes": 1593,
+      "sha256": "2deb0ffb10e952d0023189d70aac92f8e42be3b2c32d69d80bfbc054876a72c9"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/initial-author-project.json",
+      "bytes": 28493,
+      "sha256": "69c9649e860c117e38f744e59790f6ae79d6ca70b1dbd7a37ac52ebf1574be3b"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/magnetic-plan.json",
+      "bytes": 113662,
+      "sha256": "146cdb69efb9338404b4911db5be5f7c3fc53ab7878bc5fc419c99cbc83e2f67"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/midpoint.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/midpoint.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/native-float-frame-oracles.json",
+      "bytes": 12239,
+      "sha256": "f735c1237f5cf59065022b323550b01533c8e39c56f74e586feb904c96cf6a27"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/preview-0.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/preview-0.stdout.log",
+      "bytes": 172816,
+      "sha256": "3ada23951deae886ffb8e25600d0590fbcd3986fab9af09cb0c2ac9b5a219187"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/preview-11.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/preview-11.stdout.log",
+      "bytes": 172815,
+      "sha256": "91ed7e00ee5df7897b08fbe417289a321c1afb84841c04c3b5467f44e3753820"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/preview-12.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/preview-12.stdout.log",
+      "bytes": 171923,
+      "sha256": "108f5a4ea7debc94349d550ae2f7d7941e0e8fdf62504df3ce4a7610482f229a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/preview-23.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/preview-23.stdout.log",
+      "bytes": 172825,
+      "sha256": "325fb08cb6b384705da29eaa1098ca2731e32bc9d2b82a3c9528fd08b9d8d303"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/preview-24.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/preview-24.stdout.log",
+      "bytes": 172830,
+      "sha256": "a54b09b0dde5e9f10344f09e33f30d0d1a06d6972b5c172ea884262a647342bc"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/preview-35.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/preview-35.stdout.log",
+      "bytes": 172831,
+      "sha256": "685d42eb6f8ede183fd2d5f205c3738e762baaa182f74e939ec4825feb2586ed"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/public-media.json",
+      "bytes": 1328,
+      "sha256": "79805f8438fad07b3f12ba6bf0b9edb8933aa27212849869a3c9d2761d0ecdca"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/quality.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/quality.stdout.log",
+      "bytes": 3436,
+      "sha256": "eb76bdc7bfa4ac665d019c6a95d0a4779933f43d48e5c3ea63062b2be2e93efe"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/render-before.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/render-before.stdout.log",
+      "bytes": 186432,
+      "sha256": "df38d05aa6936d00fc0996f886be46f5000d2d6922985909dbbd61b0e35864a8"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/render-edited.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/render-edited.stdout.log",
+      "bytes": 191633,
+      "sha256": "28de51205e7fce63ce138aa02f4b2a8de88a5231d4f9a7efac8d2e309c20653b"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/render-imported.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/render-imported.stdout.log",
+      "bytes": 191740,
+      "sha256": "e6f9434ff2d069cd1c1b249f22445d09dd8563eb9b7bbaa2a05c4f705378a635"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/restored-frames.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/restored-frames.stdout.log",
+      "bytes": 3095,
+      "sha256": "d45bacbf8a6505f33d9f88778daf6c2e521a81340ccafa6af17682bf759dd0a2"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/restored-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/validate-edited.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/validate-edited.stdout.log",
+      "bytes": 805,
+      "sha256": "33df2781c2e8da7c4cfb0c5c3097338c9eee158574272730f267ec0c9a632d33"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/validate-imported.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/validate-imported.stdout.log",
+      "bytes": 808,
+      "sha256": "1f41163750f0562e3bc060e86e144409cdb6f55b323de60f9b6863b5d86c9df8"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/validate-initial.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/validate-initial.stdout.log",
+      "bytes": 805,
+      "sha256": "fba05ed4611ae82af2fe5df371eba35062d8512c3400ed7ff79c89991e5e1fe4"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/verification.json",
+      "bytes": 30460,
+      "sha256": "31c294e4052233cb83d3c9e70a8ea5d1946764ca65cbd9265cae78762e4158ba"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/version.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/version.stdout.log",
+      "bytes": 1167,
+      "sha256": "f87e412fc85f13a63797230a00edac2de046089ac72fcb95c8f5cf51d8396a39"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/delivery-attempts-r1/verification.json",
+      "bytes": 550,
+      "sha256": "2ef29f02393044b248ed53558ae3c3ff78057e9aefd40f98392cd7adf6495bf3"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/development-attempts-r1/executed-generator.py",
+      "bytes": 1837,
+      "sha256": "abfc9f0faa584b4aead1b1c0d2206b14ea3a6f2cd764c6033824476a7b4601bb"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/development-attempts-r1/verification.json",
+      "bytes": 1353,
+      "sha256": "3255b6768e560db7fb4304632c566831cb3011323de52ab411b4214eaaa6f373"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/editing-installed-r1/executed-runner.py",
+      "bytes": 4536,
+      "sha256": "c8265532faf98424589576ebdf717a84566bb6b608f5b13128d36017f7fb6327"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/editing-installed-r1/tests.log",
+      "bytes": 31311,
+      "sha256": "4c5607cd14ae2a419c23ba96237986418c2db744053d58cff96df89f75bcaa2e"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/editing-installed-r1/verification.json",
+      "bytes": 20615,
+      "sha256": "67d8748976010cf2498b3408efdb177c6654435a6a386198d59850a4a7da4dd0"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/final-delivery-r1/executed-generator.py",
+      "bytes": 12008,
+      "sha256": "786fe6cac1c8c34aaf022b93b470cbcde79797440c805a241a332e091be8f814"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/final-delivery-r1/product-files.json",
+      "bytes": 19744,
+      "sha256": "5e2afc6b51794355eceff1f417f03f611d92c05f340c472e52fce48028acbfe9"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/final-delivery-r1/verification.json",
+      "bytes": 296,
+      "sha256": "65534fab88f35440c04f65ccd834fe6a43f54a1ab56974c53061078ee498ca47"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/float-installed-r1/executed-runner.py",
+      "bytes": 4536,
+      "sha256": "c8265532faf98424589576ebdf717a84566bb6b608f5b13128d36017f7fb6327"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/float-installed-r1/test_float_standard_render-error_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/float-installed-r1/test_float_standard_render-native_calls.json",
+      "bytes": 10423,
+      "sha256": "6831cabda729bb9e58c0532b843fc7501836d1510e02a5a4d51327bc50cd065e"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/float-installed-r1/test_float_standard_render-render_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/float-installed-r1/tests.log",
+      "bytes": 17048,
+      "sha256": "8dd5a65cd2b90c3ab2eecb157070be3049c573ae0b41daad97473ca6972e6fe6"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/float-installed-r1/verification.json",
+      "bytes": 20617,
+      "sha256": "11405e04ebfc757a6af0a68de1978e9ce31bfdc057af6e448821909807fb7237"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/installation-final-r1/build.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/installation-final-r1/build.stdout.json",
+      "bytes": 448,
+      "sha256": "9d7aaa33984f64ab3186c9f957471173dfd2fc30584c0f8f76244f10780b95ab"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/installation-final-r1/calls.json",
+      "bytes": 2616,
+      "sha256": "7b6432a048fa9cb556a96ba34f6db2ac6db0e1882cb797916b1f80fd15ac8738"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/installation-final-r1/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/installation-final-r1/capabilities.stdout.json",
+      "bytes": 123101,
+      "sha256": "609fae1dded1790605846e607db2490a735d45c4a95cefc4f74c6c8f9d4b8aa5"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/installation-final-r1/executed-generator.py",
+      "bytes": 5363,
+      "sha256": "9cafb806f382ac5533232cb037c02ef2644a9711889202d9b90d41acd3f788cb"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/installation-final-r1/install.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/installation-final-r1/install.stdout.json",
+      "bytes": 1708,
+      "sha256": "44c9707ceccd9f967f2e9a09222b3d76e0cdb4ba0061b8f4854ea6cf302bc0dc"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/installation-final-r1/verification.json",
+      "bytes": 29424,
+      "sha256": "b43e47dd859129049211f27ee4106d7ae0e6525b8fbccf64b8d96ece9a212948"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/installation-final-r1/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/installation-final-r1/version.stdout.json",
+      "bytes": 1167,
+      "sha256": "938292a65a6db056ca27144024550356e4056e9b471ddf712ba6a23bdd8eede8"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/calls.json",
+      "bytes": 8460,
+      "sha256": "12544c2d1464b2bb78b2cf43035cd7b880797d7612a9f214c7eca6e619b65061"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/capabilities.stdout.txt",
+      "bytes": 123101,
+      "sha256": "cc8dccecaad094bad4858f83d052a36c853607ae7282c3603a24f52eeb5023eb"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/configure.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/configure.stdout.txt",
+      "bytes": 836,
+      "sha256": "c63e9e88a1ab9fc056e62a434142c0ebab9ad563dfae1b2780fa60e830ef4908"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/executed-generator.py",
+      "bytes": 11328,
+      "sha256": "e9d69e76f6c9041064498991e1298c7efad23f47c5ec0eb40fd3e45c5ae0afd9"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/float-render-dry-run.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/float-render-dry-run.stdout.txt",
+      "bytes": 208768,
+      "sha256": "dcaf3c06981f784b367b49d544bdaded2049d77bf91fe3a46a7d311f44f5a3dc"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/import-case.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/import-case.stdout.txt",
+      "bytes": 1617,
+      "sha256": "c3dc2f09c02b0e27ced87783e7f05a9a31314d2bb1a4de2989472e551928a493"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/import-tracking-edit-case.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/import-tracking-edit-case.stdout.txt",
+      "bytes": 1622,
+      "sha256": "8021110c8294bf998114c1c14bbe47ee93324d09512e68b1a7f3953aa112e0d2"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/register.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/register.stdout.txt",
+      "bytes": 358,
+      "sha256": "e422d043799c87fc0d3f61f71a0a4189469ade49eb2a9a5362c2610ee31034f9"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/registration.json",
+      "bytes": 1137,
+      "sha256": "e06a5704c041a20d1ffd7731c461c10c38dcc69246409ca2a9addc74e52390fe"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/tracking-edit-plan.json",
+      "bytes": 148804,
+      "sha256": "c9214de9adf75535c8ce4a1a3ebc0127c392c3ac888d621bfd1e98beb7eea395"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/tracking-magnetic-dry-run.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/tracking-magnetic-dry-run.stdout.txt",
+      "bytes": 66311,
+      "sha256": "6d32790388bc057931c59e7f9868b7d75d7628bdf9539500b464ad1589e29526"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/transition-help.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/transition-help.stdout.txt",
+      "bytes": 930,
+      "sha256": "6ba1c7e3bc0e34c0363aacbe265838ab48f04a0e6d45976ceea2cfeea2fa80a5"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/validate-tracking-edit-case.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/validate-tracking-edit-case.stdout.txt",
+      "bytes": 811,
+      "sha256": "20d1e6aaab5d916ce8ee5e241966abeb8e3e31fc1b3123d0b155cc8c706edf4b"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/validate.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/validate.stdout.txt",
+      "bytes": 811,
+      "sha256": "0c7bc06497343e949c5159d3bfb8bce6bd7fc865f4ba83799c03a52112aff160"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/verification.json",
+      "bytes": 45252,
+      "sha256": "51f33aa9f30aad903b58eb26b850ce635489093b7baf0c87d220d39f814b5c64"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/version.stdout.txt",
+      "bytes": 1167,
+      "sha256": "a3dca5f8b0149fbd21ec8be18191cb96b9f09194e118486f6c5ccf702e539a88"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/legacy-installed-r1/executed-runner.py",
+      "bytes": 4536,
+      "sha256": "c8265532faf98424589576ebdf717a84566bb6b608f5b13128d36017f7fb6327"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/legacy-installed-r1/tests.log",
+      "bytes": 28167,
+      "sha256": "3669d9d1054264b5b168db4f4824476476637b179854b3c7e8a6aad978beef19"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/legacy-installed-r1/verification.json",
+      "bytes": 20588,
+      "sha256": "8e6e887a2d476aaefb8978a505b32efb75e36ba55e6d13b42e0790fcd6fb4987"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/magnetic-installed-r1/executed-runner.py",
+      "bytes": 4536,
+      "sha256": "c8265532faf98424589576ebdf717a84566bb6b608f5b13128d36017f7fb6327"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/magnetic-installed-r1/tests.log",
+      "bytes": 11351,
+      "sha256": "3fac3ffed3fa17de4c3bf659a7df0c5d216ad3d9ecbdc7eb125c1d8f9a0d8308"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/magnetic-installed-r1/verification.json",
+      "bytes": 20547,
+      "sha256": "a1d81d17d7750713076b36b23d2dbd03865d2c23347f12dbe9ab7b508687627a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/magnetic-source-r1/executed-runner.py",
+      "bytes": 4536,
+      "sha256": "c8265532faf98424589576ebdf717a84566bb6b608f5b13128d36017f7fb6327"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/magnetic-source-r1/tests.log",
+      "bytes": 11351,
+      "sha256": "52575170ee530304326e20095fe0b0742fda94bc6bbdd4346b4f95933d19b9d2"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/magnetic-source-r1/verification.json",
+      "bytes": 20484,
+      "sha256": "519c5ec6934ca4cddd6ea8ee3d7d1dd9f13fe74afaa8f5b0020487bc69e09dce"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/media-inspection-r1/before-0.png",
+      "bytes": 9633,
+      "sha256": "d941ea130a024e144bd4f13f17be6bc5b6e3f83383b5e6ddf094474701f94583"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/media-inspection-r1/before-11.png",
+      "bytes": 10520,
+      "sha256": "971d8b5e374604a73d01fcc95c903f532a897e0e401ed6ca1d917b4ca201c3e5"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/media-inspection-r1/before-12.png",
+      "bytes": 10029,
+      "sha256": "b31c3c9ccf51b21a29809793067ac516d02d023b921830d8a189577f550dadec"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/media-inspection-r1/before-24.png",
+      "bytes": 10469,
+      "sha256": "5224b6f907b87afc1cc0fda186fc22b78a1de1174bd05e171274efba6609209c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/media-inspection-r1/before-35.png",
+      "bytes": 11446,
+      "sha256": "c86b7cb342fbdaf4e37e3e8c58020d6ea0bafcaf0091c50e9b127cd4ee6715f0"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/media-inspection-r1/contact-sheet.png",
+      "bytes": 112888,
+      "sha256": "f70362d17cec57e0a9502dd144a29221828a1e479d01f9c6fec86a4da46ee5fd"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/media-inspection-r1/edited-0.png",
+      "bytes": 9593,
+      "sha256": "0eb5c0e3fbd64ef264798386b0797b85b1eafe8e70387f78ce142ee740f6bdaa"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/media-inspection-r1/edited-11.png",
+      "bytes": 11295,
+      "sha256": "7d63e2d8db156e8d311f1c57eae5286a21a8ee07dc26b925e6974e493e8df83a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/media-inspection-r1/edited-12.png",
+      "bytes": 9778,
+      "sha256": "71f9eca7977b17e2893cfab756c211787df4ec21bc863067f6e9c9fb067e044b"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/media-inspection-r1/edited-23.png",
+      "bytes": 10394,
+      "sha256": "b0a1a9c8879d4b567e2206af2ae6bea547715c16c53bbd75bf902853ace469f9"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/media-inspection-r1/edited-24.png",
+      "bytes": 10052,
+      "sha256": "9a219eb3ed17f1a2b26b5dcb9fd65c6f173650a46702408843a78783a4119f36"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/media-inspection-r1/executed-generator.py",
+      "bytes": 2560,
+      "sha256": "c131494fe223e39864e6037e0e5024a45221693461ea6c4ef8425aa315a1f89b"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/media-inspection-r1/still-review.json",
+      "bytes": 724,
+      "sha256": "d1c331102240ebbb6be2f15869e14e36f42d24650e4a2f24fa73458e5a548a5a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/media-inspection-r1/verification.json",
+      "bytes": 9057,
+      "sha256": "05c99260a06c1e696f483a92a09d076ec4b4e329c7a2e1d41e23e0cea9f89d63"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/queue-r1/actual-frames.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/queue-r1/actual-frames.stdout.log",
+      "bytes": 3095,
+      "sha256": "d45bacbf8a6505f33d9f88778daf6c2e521a81340ccafa6af17682bf759dd0a2"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/queue-r1/actual-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/queue-r1/actual-pcm.stdout.log",
+      "bytes": 72,
+      "sha256": "33f6194eaa391ffdb3e75b14aaf3e2c37d1af1e7a76ece662bc274a38e1ea318"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/queue-r1/enqueue.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/queue-r1/enqueue.stdout.log",
+      "bytes": 1384,
+      "sha256": "ff2960c331c1c4f25e3901adc4a936df5ae9dabde806169c926db90e5b8e1a08"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/queue-r1/executed-generator.py",
+      "bytes": 4218,
+      "sha256": "ff4eafeaeb14c9f93916d6488fcd5b26393b76914ba30e33eb55a109fc57bcc8"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/queue-r1/import.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/queue-r1/import.stdout.log",
+      "bytes": 1602,
+      "sha256": "50b40259d4f964b83938b5c741c4607d222c9fbd8cdde73f5decc8ed70cb8b77"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/queue-r1/jobs.json",
+      "bytes": 249,
+      "sha256": "d21062212f542a03971becce1c3c8275c001fd687e1937eeb663efc77c3f5e62"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/queue-r1/queued-frames.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/queue-r1/queued-frames.stdout.log",
+      "bytes": 3095,
+      "sha256": "d45bacbf8a6505f33d9f88778daf6c2e521a81340ccafa6af17682bf759dd0a2"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/queue-r1/queued-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/queue-r1/queued-pcm.stdout.log",
+      "bytes": 72,
+      "sha256": "33f6194eaa391ffdb3e75b14aaf3e2c37d1af1e7a76ece662bc274a38e1ea318"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/queue-r1/run.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/queue-r1/run.stdout.log",
+      "bytes": 929,
+      "sha256": "206c3813a24a917bcdd76103279289ff10e2dbf6a1b450cb0f880eb0413a7259"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/queue-r1/verification.json",
+      "bytes": 5788,
+      "sha256": "8924b55f3df1b2df8a04ccfcc005b7ba6ae5ebd5e85fded4b48786bf95558942"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/registration-current.json",
+      "bytes": 939,
+      "sha256": "b8cee2a4999aaefe075ae53fd0f6e552e006d23d5bdb270b1ee96acc478cd8e0"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/render-installed-r1/executed-runner.py",
+      "bytes": 4536,
+      "sha256": "c8265532faf98424589576ebdf717a84566bb6b608f5b13128d36017f7fb6327"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/render-installed-r1/test_float_standard_render-error_receipts.json",
+      "bytes": 2900,
+      "sha256": "cfba7c1c4443d17fc4411597f9babce37c27de972b8040a05b46a5f7cdd55d3f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/render-installed-r1/test_float_standard_render-native_calls.json",
+      "bytes": 56641,
+      "sha256": "12e9ae2d4c94625a494a9940b3f15509cc51c200ed7de395a4b6ef5ea8035fcf"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/render-installed-r1/test_float_standard_render-render_receipts.json",
+      "bytes": 373321,
+      "sha256": "100116b6938d85b6f349b96f8b556e84c4b2362ef2d7f1ef1aa0a99eec28eec5"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/render-installed-r1/tests.log",
+      "bytes": 8596,
+      "sha256": "3bc199d030cd7c74c1eb34ec6ae87f98cf5e3e1e4e1305aac92a289ef698675b"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/render-installed-r1/verification.json",
+      "bytes": 20575,
+      "sha256": "f0b6fbc1e33764c93057ce5c45fcb3e9393ab14ca5e5d48d5bbbe26137051400"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/source-r1/executed-runner.py",
+      "bytes": 4536,
+      "sha256": "c8265532faf98424589576ebdf717a84566bb6b608f5b13128d36017f7fb6327"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/source-r1/tests.log",
+      "bytes": 11594,
+      "sha256": "ec35f3e7e03e7dcbcbd8b82aa69ae6cedd59466dd42cc3a3ae1463c3f0054423"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/source-r1/verification.json",
+      "bytes": 20556,
+      "sha256": "f8f5f940f61586fd212b02966d68a564e202ef20f3228bfd54026aafb4ce850c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/source-r2/executed-runner.py",
+      "bytes": 4536,
+      "sha256": "c8265532faf98424589576ebdf717a84566bb6b608f5b13128d36017f7fb6327"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/source-r2/tests.log",
+      "bytes": 13717,
+      "sha256": "6b17e906e0119325517b1bd7a5f399ebaa8aeae3d006bc326bf44f45dbb60fa1"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/source-r2/verification.json",
+      "bytes": 20556,
+      "sha256": "e09a39ca4f57590ff33efc44f2318d9d77641128fda5e39b393b11f18a366663"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/source-r3/executed-runner.py",
+      "bytes": 4536,
+      "sha256": "c8265532faf98424589576ebdf717a84566bb6b608f5b13128d36017f7fb6327"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/source-r3/tests.log",
+      "bytes": 12184,
+      "sha256": "a16336ff7086e41e2cafaa8a77a2b1ad39ace2e33264f84f18c3cd637744f3a8"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/source-r3/verification.json",
+      "bytes": 20556,
+      "sha256": "f901f8974f503ecb0d0a9879f3c5a235bc8f3c45196a71b788de067a78108b14"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/tracking-installed-r1/executed-runner.py",
+      "bytes": 4536,
+      "sha256": "c8265532faf98424589576ebdf717a84566bb6b608f5b13128d36017f7fb6327"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/tracking-installed-r1/tests.log",
+      "bytes": 12184,
+      "sha256": "73bc48b6f9680ae5bf6f9de3155c6eebe264cf8e9bacd73955195e27eb259daf"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/tracking-installed-r1/verification.json",
+      "bytes": 20619,
+      "sha256": "a1590ca13b46ab778e1fbe474e1ffd663c82c93d41ea725d3a9d96bc488f0f47"
+    },
+    {
+      "path": "docs/validation/跟踪磁性重排实测_2026-10-26.md",
+      "bytes": 3503,
+      "sha256": "1784e33bb2d4f355e595fb65e7d133f3f6d2204b80f912ee66a3bbea9711afa8"
+    },
+    {
+      "path": "product/pyproject.toml",
+      "bytes": 1451,
+      "sha256": "2b89a06c13607867635f81265ebdc6e7eb57aa78449aeadae55960ade48dab06"
+    },
+    {
+      "path": "product/src/ai_ad_editor/__init__.py",
+      "bytes": 181,
+      "sha256": "da5cc11e6553906f8c16651e96425dd868102dc9c56c571f5078454cecadd24e"
+    },
+    {
+      "path": "product/src/ai_ad_editor/capabilities.py",
+      "bytes": 145920,
+      "sha256": "e3eb58d2eb889bc1d8b52a5c23043c315fb04579573d769af1669d33c9ecc3a7"
+    },
+    {
+      "path": "product/src/ai_ad_editor/magnetic_reorder.py",
+      "bytes": 17330,
+      "sha256": "1f8c2cc2bf85f07965cf0c936268fc08fa23a54266853313708d35dbd7c591e2"
+    },
+    {
+      "path": "product/src/ai_ad_editor/magnetic_sync.py",
+      "bytes": 5499,
+      "sha256": "855357b6f8ba013a702801c6d85e55f75d689cf6aba1fbad7a67e066fb4694d3"
+    },
+    {
+      "path": "product/tests/test_tracking_magnetic.py",
+      "bytes": 10552,
+      "sha256": "d3961b91f48af98e6157db832938eabc7d504e74d0ac9b640ae9a1b14eba77fb"
+    },
+    {
+      "path": "scripts/activate_tracking_magnetic_20261026.py",
+      "bytes": 2620,
+      "sha256": "c9af8070120b23775e0431fb455dc7cec709c21c7ac78a388aefe436e11f232b"
+    },
+    {
+      "path": "scripts/audit_tracking_magnetic_delivery_20261026.py",
+      "bytes": 12008,
+      "sha256": "786fe6cac1c8c34aaf022b93b470cbcde79797440c805a241a332e091be8f814"
+    },
+    {
+      "path": "scripts/audit_tracking_magnetic_stage_20261026.py",
+      "bytes": 4851,
+      "sha256": "7dfe55404c875ef5bb87f5cafe0d2d7615dc02c62d2897c2dac3178085b3e794"
+    },
+    {
+      "path": "scripts/build_tracking_magnetic_20261026.py",
+      "bytes": 5363,
+      "sha256": "9cafb806f382ac5533232cb037c02ef2644a9711889202d9b90d41acd3f788cb"
+    },
+    {
+      "path": "scripts/document_tracking_magnetic_20261026.py",
+      "bytes": 18448,
+      "sha256": "00d1896ba8b6228b7a3b6fee3d33d1a1f99bf1f49db078cfc87fbd0b80909319"
+    },
+    {
+      "path": "scripts/inspect_tracking_magnetic_media_20261026.py",
+      "bytes": 2560,
+      "sha256": "c131494fe223e39864e6037e0e5024a45221693461ea6c4ef8425aa315a1f89b"
+    },
+    {
+      "path": "scripts/package_community_skill.py",
+      "bytes": 5028,
+      "sha256": "dcf62cf56694ee78f532fc28654029cc857b9a08a31cb2f72a173eb61c6e2751"
+    },
+    {
+      "path": "scripts/publish_tracking_magnetic_skill_kit_20261026.py",
+      "bytes": 1247,
+      "sha256": "9c6ae1f1c1b84b924f07f3aca47bf02fb209ef9f7e2b5b7077c41dd912d9b2fc"
+    },
+    {
+      "path": "scripts/run_tracking_magnetic_case_20261026.py",
+      "bytes": 13144,
+      "sha256": "f3ec816988070a1754048e28884786a5e7562dbebfdaa467c97c2d124846f871"
+    },
+    {
+      "path": "scripts/sync_capability_manuals.py",
+      "bytes": 5654,
+      "sha256": "b751d0e605dda934dd459ccfa518e1d8c3d03468b7b47efaa787f3a198173e8f"
+    },
+    {
+      "path": "scripts/test_tracking_edits_20261026.py",
+      "bytes": 4536,
+      "sha256": "c8265532faf98424589576ebdf717a84566bb6b608f5b13128d36017f7fb6327"
+    },
+    {
+      "path": "scripts/verify_tracking_magnetic_failures_20261026.py",
+      "bytes": 1837,
+      "sha256": "abfc9f0faa584b4aead1b1c0d2206b14ea3a6f2cd764c6033824476a7b4601bb"
+    },
+    {
+      "path": "scripts/verify_tracking_magnetic_push_20261026.py",
+      "bytes": 2945,
+      "sha256": "823d4703d7446039660a951f09d5f42e389cfc7a2a3492f15b384013bfc34104"
+    },
+    {
+      "path": "scripts/verify_tracking_magnetic_queue_20261026.py",
+      "bytes": 4218,
+      "sha256": "ff4eafeaeb14c9f93916d6488fcd5b26393b76914ba30e33eb55a109fc57bcc8"
+    },
+    {
+      "path": "scripts/verify_tracking_magnetic_skill_kit_20261026.py",
+      "bytes": 11328,
+      "sha256": "e9d69e76f6c9041064498991e1298c7efad23f47c5ec0eb40fd3e45c5ae0afd9"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
+      "bytes": 10800,
+      "sha256": "c2cfb1b99959a5180a3b5a590ade7152082d27617ea2e0a89b10cf8dac5b8ed5"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/float-tracking.md",
+      "bytes": 8752,
+      "sha256": "9eb52d9fd6ad9c3bdb0148b621f917a7203b98c379dfc53cfec4e9b79b4d2100"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
+      "bytes": 7553,
+      "sha256": "d1b9241c4fa6eb4431cbdde26114bd09e225b23d2a5605304ffebcdc2710ee8d"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/scripts/run.py",
+      "bytes": 2296,
+      "sha256": "109d64cb871f27667d80e9b4be13c9eb2ab2ed5b9c7da569ce48eb6a2f56500e"
+    }
+  ]
+}

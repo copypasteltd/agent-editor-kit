@@ -6,11 +6,13 @@ from collections import defaultdict
 
 from .clip_windows import slice_clip, validate_track_transitions
 from .edit_planner import _error
+from .bindings import native_clock_project
 
 
 def split_sync(project, sequence, main, deltas, options, maximum):
     if not options['sync'] or not main:
         return []
+    native = native_clock_project(project)
     rows = {c['id']: (t, c) for t in sequence['tracks'] for c in t['clips']}
     starts = [c['timeline_start_tick'] for c in main]
     ends = [c['timeline_start_tick']+c['duration_tick'] for c in main]
@@ -77,7 +79,7 @@ def split_sync(project, sequence, main, deltas, options, maximum):
             track, _ = rows[cid]
             if track.get('locked', False):
                 _error('EDIT_TRACK_LOCKED', '同步拆分涉及锁定的关联成员: '+cid)
-            if cid in protected:
+            if cid in protected and not native:
                 _error('EDIT_REORDER_SYNC_BINDING_UNSUPPORTED', '同步拆分涉及跟踪绑定源或目标: '+cid)
             if cid in transition_refs:
                 _error('EDIT_REORDER_SYNC_TRANSITION_UNSUPPORTED', '同步拆分涉及真实源转场端点: '+cid)
@@ -90,7 +92,8 @@ def split_sync(project, sequence, main, deltas, options, maximum):
                 'original_start_tick': c['timeline_start_tick'], 'original_duration_tick': c['duration_tick'], 'pieces': []}
             for i, (a, b) in enumerate(zip(points, points[1:])):
                 pid = cid if i == 0 else fresh(cid+'_sync_'+str(i))
-                piece = slice_clip(c, a-c['timeline_start_tick'], b-c['timeline_start_tick'], clip_id=pid)
+                piece = slice_clip(c, a-c['timeline_start_tick'], b-c['timeline_start_tick'], clip_id=pid,
+                                   allow_tracking=native)
                 if link:
                     piece['link_id'] = links[bisect_right(cuts, a)]
                 delta, host = region(a)

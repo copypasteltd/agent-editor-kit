@@ -1,0 +1,10 @@
+{
+  "status": "retained",
+  "checked_at_utc": "2026-10-26T06:32:32.835705+00:00",
+  "failed_audit": "docs/validation/evidence/tracking-magnetic-20261026-r1/final-delivery-r1/verification.json",
+  "failed_audit_sha256": "65534fab88f35440c04f65ccd834fe6a43f54a1ab56974c53061078ee498ca47",
+  "reason": "Documentation linked the future staged-byte proof before staging. Directory link is now used until that proof is actually generated.",
+  "product_tests_changed": false,
+  "source_installed_changed": false,
+  "pixel_or_audio_checks_weakened": false
+}

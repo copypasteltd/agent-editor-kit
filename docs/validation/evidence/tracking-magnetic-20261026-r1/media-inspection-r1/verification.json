@@ -1,0 +1,253 @@
+{
+  "status": "passed",
+  "source": "actual public MP4 decoder output; no reconstructed GUI",
+  "frames": [
+    {
+      "label": "before",
+      "frame": 24,
+      "sha256": "5224b6f907b87afc1cc0fda186fc22b78a1de1174bd05e171274efba6609209c"
+    },
+    {
+      "label": "edited",
+      "frame": 0,
+      "sha256": "0eb5c0e3fbd64ef264798386b0797b85b1eafe8e70387f78ce142ee740f6bdaa"
+    },
+    {
+      "label": "before",
+      "frame": 35,
+      "sha256": "c86b7cb342fbdaf4e37e3e8c58020d6ea0bafcaf0091c50e9b127cd4ee6715f0"
+    },
+    {
+      "label": "edited",
+      "frame": 11,
+      "sha256": "7d63e2d8db156e8d311f1c57eae5286a21a8ee07dc26b925e6974e493e8df83a"
+    },
+    {
+      "label": "before",
+      "frame": 0,
+      "sha256": "d941ea130a024e144bd4f13f17be6bc5b6e3f83383b5e6ddf094474701f94583"
+    },
+    {
+      "label": "edited",
+      "frame": 12,
+      "sha256": "71f9eca7977b17e2893cfab756c211787df4ec21bc863067f6e9c9fb067e044b"
+    },
+    {
+      "label": "before",
+      "frame": 11,
+      "sha256": "971d8b5e374604a73d01fcc95c903f532a897e0e401ed6ca1d917b4ca201c3e5"
+    },
+    {
+      "label": "edited",
+      "frame": 23,
+      "sha256": "b0a1a9c8879d4b567e2206af2ae6bea547715c16c53bbd75bf902853ace469f9"
+    },
+    {
+      "label": "before",
+      "frame": 12,
+      "sha256": "b31c3c9ccf51b21a29809793067ac516d02d023b921830d8a189577f550dadec"
+    },
+    {
+      "label": "edited",
+      "frame": 24,
+      "sha256": "9a219eb3ed17f1a2b26b5dcb9fd65c6f173650a46702408843a78783a4119f36"
+    }
+  ],
+  "calls": [
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-magnetic-20261026-r1\\before.mp4",
+        "-vf",
+        "select=eq(n\\,24)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-magnetic-20261026-r1\\media-inspection-r1\\before-24.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "5224b6f907b87afc1cc0fda186fc22b78a1de1174bd05e171274efba6609209c"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-magnetic-20261026-r1\\edited.mp4",
+        "-vf",
+        "select=eq(n\\,0)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-magnetic-20261026-r1\\media-inspection-r1\\edited-0.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "0eb5c0e3fbd64ef264798386b0797b85b1eafe8e70387f78ce142ee740f6bdaa"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-magnetic-20261026-r1\\before.mp4",
+        "-vf",
+        "select=eq(n\\,35)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-magnetic-20261026-r1\\media-inspection-r1\\before-35.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "c86b7cb342fbdaf4e37e3e8c58020d6ea0bafcaf0091c50e9b127cd4ee6715f0"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-magnetic-20261026-r1\\edited.mp4",
+        "-vf",
+        "select=eq(n\\,11)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-magnetic-20261026-r1\\media-inspection-r1\\edited-11.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "7d63e2d8db156e8d311f1c57eae5286a21a8ee07dc26b925e6974e493e8df83a"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-magnetic-20261026-r1\\before.mp4",
+        "-vf",
+        "select=eq(n\\,0)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-magnetic-20261026-r1\\media-inspection-r1\\before-0.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "d941ea130a024e144bd4f13f17be6bc5b6e3f83383b5e6ddf094474701f94583"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-magnetic-20261026-r1\\edited.mp4",
+        "-vf",
+        "select=eq(n\\,12)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-magnetic-20261026-r1\\media-inspection-r1\\edited-12.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "71f9eca7977b17e2893cfab756c211787df4ec21bc863067f6e9c9fb067e044b"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-magnetic-20261026-r1\\before.mp4",
+        "-vf",
+        "select=eq(n\\,11)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-magnetic-20261026-r1\\media-inspection-r1\\before-11.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "971d8b5e374604a73d01fcc95c903f532a897e0e401ed6ca1d917b4ca201c3e5"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-magnetic-20261026-r1\\edited.mp4",
+        "-vf",
+        "select=eq(n\\,23)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-magnetic-20261026-r1\\media-inspection-r1\\edited-23.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "b0a1a9c8879d4b567e2206af2ae6bea547715c16c53bbd75bf902853ace469f9"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-magnetic-20261026-r1\\before.mp4",
+        "-vf",
+        "select=eq(n\\,12)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-magnetic-20261026-r1\\media-inspection-r1\\before-12.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "b31c3c9ccf51b21a29809793067ac516d02d023b921830d8a189577f550dadec"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-magnetic-20261026-r1\\edited.mp4",
+        "-vf",
+        "select=eq(n\\,24)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-magnetic-20261026-r1\\media-inspection-r1\\edited-24.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "9a219eb3ed17f1a2b26b5dcb9fd65c6f173650a46702408843a78783a4119f36"
+    }
+  ],
+  "sheet_sha256": "f70362d17cec57e0a9502dd144a29221828a1e479d01f9c6fec86a4da46ee5fd",
+  "review_scope": "static frame inspection only",
+  "continuous_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false
+}

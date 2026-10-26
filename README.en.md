@@ -9,9 +9,23 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
+<!-- tracking-magnetic-current -->
+
+**CLI0.1.29 / alpha.4-local.27 / r30 kit · 1 Skill / 17 modules.**
+
+Magnetic reorder now partitions tracked sources, followers and linked audio across main-track cuts. It rebuilds source routes from the complete pre-cut graph, retaining observations, pinned ROI references, fragment offsets and complete authored clocks.
+
+[Workflow](docs/product/TRACKING_MAGNETIC.md) · [C39](docs/product/CASES.md#c39-tracking-magnetic) · [Install](docs/releases/CLI_0.1.29_LOCAL.md) · [Evidence](docs/validation/跟踪磁性重排实测_2026-10-26.md)
+
+![Actual registered Skill / silent GIF](docs/assets/tracking-magnetic-20261026-r1/edited.gif)
+
+All36 Float32 frames, native PTS and dynamic tracking geometry retain the independently specified original-frame permutation; complete144000 stereo samples have zero error. Synthetic diagnostics; no natural-quality, continuous-playback or human-listening acceptance.
+
+<!-- /tracking-magnetic-current -->
+
 <!-- tracking-source-edits-current -->
 
-**CLI0.1.28 / alpha.4-local.26 / r29 kit · 1 Skill / 17 modules.**
+**Historical / 历史 / 歷史：CLI0.1.28 / alpha.4-local.26 / r29 kit · 1 Skill / 17 modules.**
 
 Tracked physical sources now support slip, real head/tail extension and source-handle roll/slide. Original observations, per-fragment author offsets, target opacity keys and linked audio remain editable; locked dependencies reject atomically. Integer-grid piecewise constant curves use rational inversion at native frame boundaries.
 
@@ -559,7 +573,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F09 | Multitrack editing | Edit JSON → tracks, insertion, updates, split/delete, duration/placement edits and canvas settings. | `timeline compose/edit` | Track locks, integer ticks, asset duration and advertised contracts apply. |
 | F10 | Range and output-window edits | Explicit ranges → trim/delete/ripple edits while preserving author time and source mapping. | `timeline edit` | Check contracts for complex retiming/nesting combinations rather than assuming universal support. |
 | F11 | Source handles, slip and slide | Source in/out points and neighbors → reversible source edits, handle transitions and cut adjustments. | `timeline edit/transition` | Insufficient source handles are reported rather than silently inventing coverage. |
-| F12 | Magnetic tracks and linked edits | Primary-track block reordering, linked IDs and attached audio → structured edits preserving relationships. | `timeline edit` | Locks, boundaries and link-selection rules constrain ambiguous edits. |
+| F12 | Magnetic tracks and linked edits | Main-track reorder, synchronized native tracking cuts, region-specific links and attached audio. | `timeline edit` | Explicit sync/split policies; locks, transition endpoints and resource gates. Non-native tracking cuts remain guarded. |
 | F13 | Compound and nested sequences | Child sequences → independent canvases, parent transforms/opacity, nested clocks and freezes. | `timeline compose/edit` | Independent spatial canvases do not imply independent color/fps; some group spatial transitions remain unsupported. |
 | F14 | Retiming, reverse and freeze | Explicit speed/curves/Bezier/freeze points → video clocks and audio mapping. | `timeline edit; render` | Audio-retime backends differ; optional Rubber Band R3 requires existing native tools. |
 | F15 | Keyframes and easing | Position, anchor, scale, rotation, opacity, crop, masks, volume and pan → frame-evaluated animation. | `timeline compose; schema show` | hold/linear/ease_in/ease_out/ease_in_out/bezier; enum/boolean channels are not assumed continuous. |
@@ -607,7 +621,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F57 | Native Float32 GPU execution | Explicit policy → linear Float32 affine, normal over, text components/paragraphs and word selection; real render/preview/queue/resume. | `projection_acceleration; render; preview; queue` | off/prefer/require;actual binary64/subnormal probes;owned process/shared buffers;other operators CPU,not all-GPU editing. |
 | F58 | Float32 global/interval adjustments | Ordered grading after all tracks including subtitles;existing float effects,LUT/exposure,six keyframe modes,selected root once. | `settings.adjustments; preview; render; queue` | Explicit linear working/effect signals;CPU execution;locked/portable LUTs;original interval clocks,not complete HDR. |
 | F59 | Native PTS tracking and overlay tracks | Saved source observations → actual selected-frame anchors;shared crop/TRS,ROI scale/relative rotation,alpha,windows and nested audio. | `media track-bind; preview; render; queue; package` | Explicit Float32,no display-key bake,budget/cycle gates;template drift/occlusion require review;native interchange baking pending. |
-| F60 | Editing native tracking | Split/trim/ripple/range edits plus physical slip/extension; preserve fragment author offsets, ROI reference, target opacity and linked audio. | `timeline compose/edit; preview; render; package` | Explicit Float32; finite source/lock/overlap/cycle budgets. Bound-container retime, magnetic cut propagation and interchange baking remain open. |
+| F60 | Editing native tracking | Magnetic source routes, split/trim/ripple/range and physical slip/extension; retain observations, fragment offsets, ROI references, target opacity and linked audio. | `timeline compose/edit; preview; render; package` | Explicit Float32 with finite-source/lock/overlap/cycle budgets; bound-container retime and interchange baking remain open. |
 
 ## Supported service modules and dependencies
 
@@ -734,7 +748,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.26/final-r1/installed/`, CLI 0.1.28. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.27/final-r1/installed/`, CLI 0.1.29. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1132,6 +1146,12 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R203 | 2026-10-26 Native tracking source edits | r29 fresh isolated kit: one registration/17 modules/73 Skill files; actual source-edit dry-run, finite physical ranges and validation; real discovery retained. | [Evidence](docs/validation/evidence/tracking-source-edits-20261026-r1/kit-r1/verification.json) |
 | R204 | 2026-10-26 Native tracking source edits | Final installed/Skill/media/document/staged-byte checks; 199 historical R rows and38 original closure cells preserved;60 functions/20 services/75 declarations. | [Evidence](docs/validation/evidence/tracking-source-edits-20261026-r1/final-delivery-r1/verification.json) |
 | R205 | 2026-10-26 Native tracking source edits | Development failures retained: initial insufficient physical handle fixture; actual two-frame flat-curve rounding counterexample fixed with rational inversion; no epsilon or tolerance relaxation; initial case harness context lookup and an incorrect nominal-FPS oracle were corrected before final acceptance; both failed runs retained. | [Evidence](docs/validation/evidence/tracking-source-edits-20261026-r1/development-attempts-r1/verification.json) |
+| R206 | 2026-10-26 Native magnetic tracking | Offline CLI0.1.29/local.27-final-r1 installed;220 product Python files/schema equal source;one Skill,17 modules,73 files. | [Evidence](docs/validation/evidence/tracking-magnetic-20261026-r1/installation-final-r1/verification.json) |
+| R207 | 2026-10-26 Native magnetic tracking | Installed groups:61 tracking,66 magnetic,195 editing,71 bindings,98 Float32,46 render,65 audio,192 legacy;separate groups,zero skips. | [Evidence](docs/validation/evidence/tracking-magnetic-20261026-r1/tracking-installed-r1/verification.json) |
+| R208 | 2026-10-26 Native magnetic tracking | C39 actual registered source/follower/audio partition and reorder:all36 Float32 frames,native PTS and dynamic geometry retain original frame permutation;complete144000 stereo samples error0;package and queue reproduced. | [Evidence](docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/verification.json) |
+| R209 | 2026-10-26 Native magnetic tracking | r30 fresh isolated kit:one registration,17 modules,73 Skill files;actual magnetic dry-run,binding rewrites and validation;author/assets and real discovery unchanged. | [Evidence](docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/verification.json) |
+| R210 | 2026-10-26 Native magnetic tracking | Installed/Skill/media/three-language docs/staged-byte verification;205 historical rows and38 original closure conditions preserved;60 functions,20 services,75 declarations. | [Evidence](docs/validation/evidence/tracking-magnetic-20261026-r1/final-delivery-r2/verification.json) |
+| R211 | 2026-10-26 Native magnetic tracking | Rejected development fixture retained:clip ID a conflicted with asset a;correctly rejected,then renamed shot_a/shot_b/shot_c without weakening pixels or product guards. | [Evidence](docs/validation/evidence/tracking-magnetic-20261026-r1/development-attempts-r1/verification.json) |
 
 ## Current limits and development direction
 

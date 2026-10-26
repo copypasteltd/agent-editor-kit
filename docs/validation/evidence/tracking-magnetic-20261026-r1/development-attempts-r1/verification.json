@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-10-26T06:21:14.149729+00:00",
+  "failed_attempts": [
+    {
+      "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/source-r2/verification.json",
+      "sha256": "e09a39ca4f57590ff33efc44f2318d9d77641128fda5e39b393b11f18a366663",
+      "excluded_from_final_acceptance": true,
+      "reason": "New direct-main fixture requested clip ID a, already reserved by asset a. Correctly rejected; fixture uses shot_a/shot_b/shot_c.",
+      "files": [
+        {
+          "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/source-r2/executed-runner.py",
+          "sha256": "c8265532faf98424589576ebdf717a84566bb6b608f5b13128d36017f7fb6327",
+          "bytes": 4536
+        },
+        {
+          "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/source-r2/tests.log",
+          "sha256": "6b17e906e0119325517b1bd7a5f399ebaa8aeae3d006bc326bf44f45dbb60fa1",
+          "bytes": 13717
+        },
+        {
+          "path": "docs/validation/evidence/tracking-magnetic-20261026-r1/source-r2/verification.json",
+          "sha256": "e09a39ca4f57590ff33efc44f2318d9d77641128fda5e39b393b11f18a366663",
+          "bytes": 20556
+        }
+      ]
+    }
+  ],
+  "pixel_threshold_relaxed": false,
+  "product_guard_removed": false,
+  "virtualization": false,
+  "new_model_forwards": 0
+}

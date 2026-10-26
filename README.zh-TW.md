@@ -9,9 +9,23 @@
 本頁包含完整功能模塊、服務與依賴、安裝與使用邏輯、Skill 輸入輸出、真實案例和核驗表。長篇原始驗收日志繼續留檔，功能說明與案例入口恢復到首頁。
 
 
+<!-- tracking-magnetic-current -->
+
+**CLI0.1.29 / alpha.4-local.27 / r30 kit · 1 Skill / 17 modules.**
+
+磁性重排支援追蹤來源、標籤與關聯音軌跨主軌剪口同步拆分；從剪切前的完整作者工程重建來源引用，保留原始觀察、ROI基準、各分片偏移及完整處理時鐘。
+
+[Workflow](docs/product/TRACKING_MAGNETIC.md) · [C39](docs/product/CASES.md#c39-tracking-magnetic) · [Install](docs/releases/CLI_0.1.29_LOCAL.md) · [Evidence](docs/validation/跟踪磁性重排实测_2026-10-26.md)
+
+![Actual registered Skill / silent GIF](docs/assets/tracking-magnetic-20261026-r1/edited.gif)
+
+36影格Float32像素、原生PTS及動態追蹤幾何均按獨立指定的原影格順序保留；完整144000雙聲道取樣誤差0。合成診斷素材，未作自然品質、連續播放或人工聽審驗收。
+
+<!-- /tracking-magnetic-current -->
+
 <!-- tracking-source-edits-current -->
 
-**CLI0.1.28 / alpha.4-local.26 / r29 kit · 1 Skill / 17 modules.**
+**Historical / 历史 / 歷史：CLI0.1.28 / alpha.4-local.26 / r29 kit · 1 Skill / 17 modules.**
 
 追蹤來源可滑移、真實頭尾外擴及使用真實句柄roll/slide；保留原始觀察，各分片獨立保留作者偏移，關聯音軌同步來源編輯，鎖定引用衝突整體拒絕。修正分段恆速曲線在影格邊界的浮點誤選。
 
@@ -559,7 +573,7 @@ flowchart LR
 | F09 | 多軌基礎剪輯 | 編輯 JSON → 加軌、插入、更新、拆分、刪除、時長/位置修改與畫幅設置。 | `timeline compose/edit` | 遵守軌道鎖、整數 ticks、資產時長與實際能力契約。 |
 | F10 | 範圍與輸出窗口編輯 | 明確區間 → 裁切/刪除/波紋等範圍編輯，保留作者時間與源映射。 | `timeline edit` | 復雜變速與嵌套的組合需按具體契約檢查，不推斷所有組合均可用。 |
 | F11 | 源句柄、滑移與滑動 | 源入出點與鄰接片段 → 可逆源編輯、源句柄轉場和剪口調整。 | `timeline edit/transition` | 源句柄不足會報錯；不以靜默復制影格替代。 |
-| F12 | 磁吸、主軌與關聯音畫 | 主軌塊重排、關聯 ID、音畫附著 → 結構化編輯並保持相對關系。 | `timeline edit` | 鎖、邊界和關聯選擇規則會阻止不明確編輯；不是拖拽式 GUI。 |
+| F12 | 磁吸、主軌與關聯音畫 | 主軌重排、原生追蹤跨剪口同步拆分、區域關聯ID及音畫附著。 | `timeline edit` | 明確同步及拆分策略；鎖、轉場端點及資源門禁；非原生追蹤跨剪口仍受限。 |
 | F13 | 復合與嵌套序列 | 子序列 → 獨立畫布合成、父變換/透明度、嵌套時鐘與定格。 | `timeline compose/edit` | 獨立空間不代表獨立色彩/影格率；部分組級空間轉場未接受。 |
 | F14 | 變速、倒放與定格 | 顯式速度/曲線/Bezier/定格點 → 影片時鐘與音頻映射。 | `timeline edit; render` | 變速音頻後端各有邊界；可選 Rubber Band R3 需要已有原生工具。 |
 | F15 | 關鍵影格與緩動 | 位置、錨點、縮放、旋轉、透明度、裁切、蒙版、音量/聲像 → 逐影格動畫。 | `timeline compose; schema show` | hold/linear/ease_in/ease_out/ease_in_out/bezier；枚舉/布爾值不推斷為連續動畫。 |
@@ -607,7 +621,7 @@ flowchart LR
 | F57 | 原生浮點GPU執行層 | 明確GPU策略 → 線性Float32仿射、一般疊加、文字元件／段落與逐詞選擇；正式算繪／預覽／佇列／恢復。 | `projection_acceleration; render; preview; queue` | off/prefer/require；實際binary64／次正規探測；任務專屬程序與共用段；其餘算子CPU，非全部GPU化。 |
 | F58 | Float32全域／區間調整層 | 全軌含字幕合成後依序調色；LUT／曝光及既有浮點效果、六類關鍵影格、選中根僅套用一次。 | `settings.adjustments; preview; render; queue` | 明確線性工作域／效果訊號；CPU執行；LUT持鎖／封裝遷移；保留作者區間時鐘，非完整HDR。 |
 | F59 | 原生PTS跟蹤及疊加軌 | 保存來源觀測→依實際原生影格求跟隨位置；共用crop/TRS、ROI縮放／相對旋轉、透明度、視窗及巢狀聲音。 | `media track-bind; preview; render; queue; package` | 明確Float32，原生PTS不烘焙顯示鍵；預算／循環門禁；模板漂移及遮擋另審，中間格式烘焙未接通。 |
-| F60 | 原生追蹤後續編輯 | 分割/裁切/波紋/範圍、物理來源滑移與真實外擴；分片作者偏移、ROI基準、目標透明度及關聯音軌保留。 | `timeline compose/edit; preview; render; package` | 明確Float32；有限來源/鎖/重疊/循環預算門禁；容器變速、磁性傳播及中間格式烘焙持續推進。 |
+| F60 | 原生追蹤後續編輯 | 磁性重排分片路由、分割/裁切/波紋/範圍、物理滑移與外擴；保留原始觀察、分片偏移、ROI基準、目標透明度及關聯音軌。 | `timeline compose/edit; preview; render; package` | 明確Float32；有限來源/鎖/重疊/循環預算門禁；帶綁定容器變速及中間格式烘焙持續推進。 |
 
 ## 支持的服務模塊與依賴
 
@@ -734,7 +748,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.26/final-r1/installed/`，CLI 0.1.28；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
+本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.27/final-r1/installed/`，CLI 0.1.29；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1130,6 +1144,12 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R203 | 2026-10-26 原生追蹤來源編輯 | r29工具包獨立註冊：唯一入口、17模組、73個Skill檔案；實際來源滑移dry-run與驗證，原作者工程及素材不變，實際Codex探索入口不變。 | [Evidence](docs/validation/evidence/tracking-source-edits-20261026-r1/kit-r1/verification.json) |
 | R204 | 2026-10-26 原生追蹤來源編輯 | 安裝版、Skill、媒體、文件及暫存位元組核驗；保留199條歷史R紀錄和38項原關閉條件；60項功能、20類服務、75組實際能力宣告。 | [Evidence](docs/validation/evidence/tracking-source-edits-20261026-r1/final-delivery-r1/verification.json) |
 | R205 | 2026-10-26 原生追蹤來源編輯 | 保留失敗反例：不足真實來源句柄的測試輸入、恆速曲線兩影格誤選、案例腳本錯誤入口及誤用標稱fps的獨立參照；分別修正，未增加epsilon或降低像素精度。 | [Evidence](docs/validation/evidence/tracking-source-edits-20261026-r1/development-attempts-r1/verification.json) |
+| R206 | 2026-10-26 原生追蹤磁性重排 | 離線安裝CLI0.1.29/local.27-final-r1，220個產品Python檔案及schema與原始碼一致；唯一Skill、17模組、73檔案。 | [Evidence](docs/validation/evidence/tracking-magnetic-20261026-r1/installation-final-r1/verification.json) |
+| R207 | 2026-10-26 原生追蹤磁性重排 | 安裝版分組核驗：追蹤61、磁性編輯66、編輯195、綁定71、Float32合成98、算繪46、音訊65、舊CLI192；各組獨立，無略過。 | [Evidence](docs/validation/evidence/tracking-magnetic-20261026-r1/tracking-installed-r1/verification.json) |
+| R208 | 2026-10-26 原生追蹤磁性重排 | C39統一Skill實際跨剪口重排視訊/標籤/音軌：36影格Float32像素、原生PTS及動態幾何按原影格重排；完整144000雙聲道取樣誤差0；工程包及佇列重現。 | [Evidence](docs/validation/evidence/tracking-magnetic-20261026-r1/case-r1/verification.json) |
+| R209 | 2026-10-26 原生追蹤磁性重排 | r30獨立工具包：唯一註冊、17模組、73個Skill檔案；真實磁性重排dry-run、綁定改寫及工程驗證；作者工程及素材不變，實際探索入口不變。 | [Evidence](docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/verification.json) |
+| R210 | 2026-10-26 原生追蹤磁性重排 | 安裝版/Skill/媒體/三語文件/暫存位元組核驗；保留205條歷史R紀錄及38項原關閉條件；60功能、20服務、75組實際能力宣告。 | [Evidence](docs/validation/evidence/tracking-magnetic-20261026-r1/final-delivery-r2/verification.json) |
+| R211 | 2026-10-26 原生追蹤磁性重排 | 保留開發失敗：新測試要求的片段ID a與資產ID a衝突，正確拒絕；改用shot_a/shot_b/shot_c，未降低像素門檻或移除產品門禁。 | [Evidence](docs/validation/evidence/tracking-magnetic-20261026-r1/development-attempts-r1/verification.json) |
 
 ## 當前邊界與開發方向
 

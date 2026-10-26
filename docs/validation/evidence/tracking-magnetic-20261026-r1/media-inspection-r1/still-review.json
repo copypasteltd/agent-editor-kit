@@ -1,0 +1,14 @@
+{
+  "status": "reviewed",
+  "reviewed_at_utc": "2026-10-26T06:29:05.555118+00:00",
+  "tool": "view_image",
+  "contact_sheet_sha256": "f70362d17cec57e0a9502dd144a29221828a1e479d01f9c6fec86a4da46ee5fd",
+  "observations": [
+    "The five decoded original/output pairs (24,0),(35,11),(0,12),(11,23),(12,24) show matching source pose/crop and red follower placement.",
+    "The red follower remains aligned with the green moving square at each sampled boundary; no reconstructed GUI is shown."
+  ],
+  "scope": "Static inspection of actual public MP4 decoder output; complete native pixels/PTS/PCM verified separately in case-r1.",
+  "continuous_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false
+}

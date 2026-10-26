@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.28 / alpha.4-local.26 / r29 kit · 1 Skill / 17 modules / 73 files.**
+**CLI0.1.29 / alpha.4-local.27 / r30 kit · 1 Skill / 17 modules / 73 files.**
 
-Tracked physical sources now support slip, real head/tail extension and source-handle roll/slide. Original observations, per-fragment author offsets, target opacity keys and linked audio remain editable; locked dependencies reject atomically. Integer-grid piecewise constant curves use rational inversion at native frame boundaries.
+Magnetic reorder now partitions tracked sources, followers and linked audio across main-track cuts. It rebuilds source routes from the complete pre-cut graph, retaining observations, pinned ROI references, fragment offsets and complete authored clocks.
 
-[Physical tracked-source editing](TRACKING_SOURCE_EDITS.md)
+[Magnetic tracking workflow](TRACKING_MAGNETIC.md)
 
 <!-- /community-current -->
 

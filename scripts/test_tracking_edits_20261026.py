@@ -14,6 +14,8 @@ BASE=ROOT/'docs/validation/evidence/tracking-edits-20261026-r1'
 GROUPS={
     'tracking':['test_tracking_edits','test_float_tracking'],
     'tracking-source':['test_tracking_source_edits','test_tracking_edits','test_float_tracking'],
+    'tracking-magnetic':['test_tracking_magnetic','test_tracking_source_edits','test_tracking_edits','test_float_tracking'],
+    'magnetic':['test_magnetic_mode','test_magnetic_reorder'],
     'editing':['test_clip_windows','test_range_edits','test_linked_edit','test_source_edits','test_retime_edits'],
     'adjustments':['test_float_adjustments'],
     'bindings':['test_tracking_geometry','test_sequence_canvas','test_fragments'],

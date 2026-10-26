@@ -82,8 +82,7 @@ Inspect that state in the plan and rebind explicitly when replacing footage.
 
 Locked follower references reject atomically. Overlapping source fragments are
 ambiguous and reject; routes admit up to 128 fragments per binding and 4,096
-total references. Bound-clip container retime and magnetic cut propagation
-retain their existing guards. MLT/OTIO/draft
+total references. Bound-clip container retime retains its existing dependency-container guard. MLT/OTIO/draft
 baking remains separate. Do not remove those guards or bake display-FPS keys
 to force an edit through. Deliver the editable package after verification.
 
@@ -125,3 +124,24 @@ nonconstant curves keep the existing bounded float mapping. This does not
 establish natural tracking/occlusion or arbitrary nonlinear timing precision.
 
 [Full workflow and C38 preview](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/TRACKING_SOURCE_EDITS.md)
+
+## Magnetic synchronized reorder (CLI 0.1.29)
+
+With an explicit video main track, use:
+
+```json
+{"action":"reorder","clip_ids":["shot_c"],"before_clip_id":"shot_a","options":{"sync":true},"sync_span_policy":"split"}
+```
+
+Plan with `timeline edit --dry-run`, inspect `sync_splits`, `moves` and
+`tracking_binding_changes`, then apply with its `--expected-project-sha256`.
+Native Float32 sources and followers can cross main-track cuts. Retained pieces
+keep original author windows and observations; source routes are repaired from
+the complete pre-cut graph, including chains, pinned ROI/rotation references
+and per-fragment author offsets. Linked video/audio keep region-specific links.
+Review sync opt-outs, locked dependants, changed source coverage and the encoded
+output. Legacy non-native tracking cuts and true transition endpoints retain
+explicit guards. This does not complete bound-container retime or natural
+identity/occlusion tracking.
+
+[Full workflow and actual C39 preview](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/TRACKING_MAGNETIC.md)

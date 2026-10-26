@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "failed_attempts": [
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/source-r1/verification.json",
+      "sha256": "f436ce7b1358ae445dd4d1aca1af71c69ba6c9e65880e089dffa044c7ef5396d",
+      "excluded_from_final_acceptance": true,
+      "status": "failed",
+      "failures": 1,
+      "errors": 0
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/source-r2/verification.json",
+      "sha256": "03976a47c136f6ed6d910590785f4a14ee8b58a2ec59674323a69c46f50dff0b",
+      "excluded_from_final_acceptance": true,
+      "status": "failed",
+      "failures": 3,
+      "errors": 5
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/source-r4/verification.json",
+      "sha256": "7ca9e9e2d816ff9675dd9583c85330659037c2fb3294139b1b1af7ead277c098",
+      "excluded_from_final_acceptance": true,
+      "status": "failed",
+      "failures": 0,
+      "errors": 2
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r1/verification.json",
+      "sha256": "23f4e8c46001ba4d10d46bd8e603fce232de7be0fa5e39b8e3ea4ba72ba2410c",
+      "excluded_from_final_acceptance": true,
+      "status": "failed",
+      "failures": null,
+      "errors": null
+    }
+  ],
+  "final_installed_tests": 125,
+  "resolution": "Actual projected-alpha oracle; Fraction progress accepted; slide expectations checked against public pixels; finite-difference perturbation adjusted to resolve Float32 subtraction; real probe and independent-edge retime admitted; C41 request uses schema-complete interpolation/slide alias/explicit overlap. No pixel-equality threshold relaxation or goal closure changes."
+}

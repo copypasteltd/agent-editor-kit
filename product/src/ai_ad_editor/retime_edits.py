@@ -48,7 +48,13 @@ def _guard(draft, track, clip):
         _error('EDIT_RETIME_TRACK_UNSUPPORTED', 'retime 需要可渲染的 video/audio/subtitle 轨道')
     if any(isinstance(clip.get(key), dict) and clip[key].get('type') not in FADES
            for key in ('transition_in','transition_out')):
-        _error('EDIT_RETIME_TRANSITION_UNSUPPORTED', '完整输出变速需先移除旧跨片段转场或选择其完整上级组')
+        independent=False
+        if draft.native_tracking and track['kind'] in ('video','overlay','subtitle'):
+            from .float_transition_plan import compile_track
+            plan=compile_track(track,draft.project['settings']['timebase']['ticks_per_second'])
+            independent=not any(clip['id'] in (p['from'],p['to']) for p in plan['pairs'])
+        if not independent:
+            _error('EDIT_RETIME_TRANSITION_UNSUPPORTED', '完整输出变速需先移除跨片段转场或选择其完整上级组')
 
 
 def _wrap(draft, track, clip, host, transform, *, cid, first, last, shared=None):

@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "reason": "git diff --cached --check flagged the raw captured CLI JSON CRLF line ending as trailing whitespace.",
+  "product_or_media_changed": false,
+  "resolution": "Preserve original response bytes and apply the same -text -whitespace attributes used by other raw evidence; rerun full delivery and stage checks.",
+  "superseded_by": "staged-byte-r2"
+}

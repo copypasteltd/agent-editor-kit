@@ -34,7 +34,10 @@ def selected(project, clip):
         raise AppError('SEQUENCE_SELECTION_TRANSITION', '不能拆选真实源转场端点；请选择完整上级容器', exit_code=2)
     if any(isinstance(target.get(k), dict) and target[k].get('type') not in (None, '', 'fade', 'fade_in', 'fade_out')
            for k in ('transition_in', 'transition_out')):
-        raise AppError('SEQUENCE_SELECTION_TRANSITION', '不能拆选旧式跨片段转场端点', exit_code=2)
+        from .float_transition_plan import compile_track
+        plan=compile_track(track,project['settings']['timebase']['ticks_per_second'])
+        if any(cid in (p['from'],p['to']) for p in plan['pairs']):
+            raise AppError('SEQUENCE_SELECTION_TRANSITION', '不能拆选跨片段转场端点', exit_code=2)
     return child, track, target
 
 

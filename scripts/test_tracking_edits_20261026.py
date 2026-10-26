@@ -12,6 +12,7 @@ import unittest
 ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/'docs/validation/evidence/tracking-edits-20261026-r1'
 GROUPS={
+    'tracking-visibility':['test_tracking_visibility','test_float_transitions','test_tracking_retime','test_tracking_magnetic','test_tracking_source_edits','test_tracking_edits','test_float_tracking'],
     'tracking':['test_tracking_edits','test_float_tracking'],
     'tracking-source':['test_tracking_source_edits','test_tracking_edits','test_float_tracking'],
     'tracking-magnetic':['test_tracking_magnetic','test_tracking_source_edits','test_tracking_edits','test_float_tracking'],

@@ -194,7 +194,17 @@ class FloatTrackingTests(unittest.TestCase):
             state=self.row(h.render_frame(i)[1])['tracking']
             self.assertAlmostEqual(state['values']['position.x'],1.5*(x+.5)/8-.25)
             self.assertAlmostEqual(state['values']['position.y'],1.5*1.5/4-.25)
-            self.assertAlmostEqual(state['values']['opacity'],.6*.5)
+            # The carrier is now sampled at its actual canvas alpha, including
+            # the transparent bilinear border of the half-size source raster.
+            px=1.5*(x+.5)-2-.5;py=1.5*1.5-1-.5
+            def carrier_alpha(xx,yy):
+                # Carrier centre follows (x,1); inverse scale is exactly 2.
+                sx=2*(xx-x)+3.5;sy=2*(yy-1)+1.5
+                return sum(max(0.,1-abs(ix-sx))*max(0.,1-abs(iy-sy))
+                    for iy in range(4) for ix in range(8))
+            coverage=sum(max(0.,1-abs(xx-px))*max(0.,1-abs(yy-py))*carrier_alpha(xx,yy)
+                for yy in range(4) for xx in range(8))
+            self.assertAlmostEqual(state['values']['opacity'],.6*.5*coverage)
             self.assertEqual(state['native_frame_index'],i)
 
     def test_chained_binding_cycle_is_rejected_before_any_native_frame_is_fetched(self):

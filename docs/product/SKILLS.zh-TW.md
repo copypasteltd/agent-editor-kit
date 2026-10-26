@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.30 / alpha.4-local.28 / r31 kit · 1 Skill / 17 modules / 73 files.**
+**CLI0.1.31 / alpha.4-local.29 / r32 kit · 1 Skill / 17 modules / 73 files.**
 
-追蹤來源、標籤與關聯音軌支援完整輸出變速。依賴閉包保存在共享作者子序列，各父層只選擇自己的輸出；保留原始觀察、原生PTS、ROI基準、裁切/運鏡、透明度及外部疊放順序。
+實際來源像素/效果alpha和5類遮罩已接入跟蹤；59種進出場/雙來源轉場傳遞錨點及ROI足跡，連續轉場保留完整密度，生成黑白幕不偽造來源；獨立空間進出場可共享變速。
 
-[Shared-author retime workflow](TRACKING_RETIME.md)
+[Tracking visibility workflow](TRACKING_VISIBILITY.md)
 
 <!-- /community-current -->
 

@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.30 / alpha.4-local.28 / r31 kit · 1 Skill / 17 modules / 73 files.**
+**CLI0.1.31 / alpha.4-local.29 / r32 kit · 1 Skill / 17 modules / 73 files.**
 
-Tracked sources, followers and linked sound now share a complete author graph during relative output retiming. Each parent layer selects its own output, preserving saved observations, native PTS, ROI references, crop/motion, scalar alpha and external blend order.
+Tracking reads actual source pixel/effect alpha and five mask shapes. All 59 edge/paired transitions transport point and ROI footprints, retaining full density between operations; generated mattes carry no source contribution. Independent spatial edges survive shared-output retime.
 
-[Shared-author retime workflow](TRACKING_RETIME.md)
+[Tracking visibility workflow](TRACKING_VISIBILITY.md)
 
 <!-- /community-current -->
 

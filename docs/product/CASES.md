@@ -819,3 +819,13 @@ CC0动态裁切/运镜/ROI标签与合成双声道音轨；实际统一Skill执�
 ![Actual silent GIF](../assets/tracking-retime-20261026-r1/edited.gif)
 
 [Before MP4](../assets/tracking-retime-20261026-r1/before.mp4) · [Edited MP4](../assets/tracking-retime-20261026-r1/edited.mp4) · [Editable package](../assets/tracking-retime-20261026-r1/editable-tracking-retime.aevpkg.zip) · [Source/rights](../assets/tracking-retime-20261026-r1/SOURCE.txt) · [Hashes](../assets/tracking-retime-20261026-r1/media-manifest.json) · [Workflow](TRACKING_RETIME.md) · [Evidence](../validation/跟踪共享变速实测_2026-10-26.md).
+
+<a id="c41-tracking-visibility"></a>
+
+## C41 · 跟踪遮罩与空间转场 · CLI0.1.31
+
+C41：45次跟踪求值对照独立整数滑动参考，全部36帧Float32及解码画面对照无绑定参考工程，完整144000双声道采样、包往返、队列分别核验。实际GPU投影/合成及清理留证。仅受控素材/静态抽帧，未验收自然遮挡、身份、连续播放或人工听感；38项原关闭条件保留。
+
+![Actual silent GIF](../assets/tracking-visibility-20261026-r2/edited.gif)
+
+[Before MP4](../assets/tracking-visibility-20261026-r2/before.mp4) · [Edited MP4](../assets/tracking-visibility-20261026-r2/edited.mp4) · [Editable package](../assets/tracking-visibility-20261026-r2/editable-tracking-visibility.aevpkg.zip) · [Source/rights](../assets/tracking-visibility-20261026-r2/SOURCE.txt) · [Hashes](../assets/tracking-visibility-20261026-r2/media-manifest.json) · [Workflow](TRACKING_VISIBILITY.md).

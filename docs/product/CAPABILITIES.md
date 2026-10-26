@@ -2,15 +2,15 @@
 
 <!-- community-current -->
 
-**CLI 0.1.30 / alpha.4-local.28 / r31 kit · 1 Skill / 17 modules.**
+**CLI 0.1.31 / alpha.4-local.29 / r32 kit · 1 Skill / 17 modules.**
 
-Shared-author tracking dependency retime with selected layer outputs, deferred scalar alpha/external blend order, private audio instances and retained outside routes; magnetic synchronized native source/follower partition and pre-cut lineage repair; native-PTS physical source slip/real extension/source-handle roll/slide with per-fragment author offsets and rational constant clocks; split/trim/ripple/range editing with retained source fragments, pinned ROI references, hidden removed-source followers and locked-reference atomic guards; dynamic tracking with shared crop/TRS geometry, editable source observations and overlay child audio; ordered global/interval Float32 grading at the selected root with authored clocks and locked portable LUTs; explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+Actual rendered source alpha and five masks, 59 edge/paired transition point/ROI footprints with retained density and peer-cycle preflight, independent spatial-edge retime; shared-author tracking dependency retime with selected layer outputs, deferred scalar alpha/external blend order, private audio instances and retained outside routes; magnetic synchronized native source/follower partition and pre-cut lineage repair; native-PTS physical source slip/real extension/source-handle roll/slide with per-fragment author offsets and rational constant clocks; split/trim/ripple/range editing with retained source fragments, pinned ROI references, hidden removed-source followers and locked-reference atomic guards; dynamic tracking with shared crop/TRS geometry, editable source observations and overlay child audio; ordered global/interval Float32 grading at the selected root with authored clocks and locked portable LUTs; explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
 
-[Shared-author retime workflow](TRACKING_RETIME.md) · [Magnetic tracking workflow](TRACKING_MAGNETIC.md) · [Tracked source workflow](TRACKING_SOURCE_EDITS.md) · [Tracking edit workflow](TRACKING_EDITS.md) · [Native tracking workflow](FLOAT_TRACKING.md) · [Float32 adjustment workflow](FLOAT_ADJUSTMENTS.md) · [Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](tracking-retime-capabilities-cli-0.1.30.json). Full target conditions remain open.
+[Tracking visibility workflow](TRACKING_VISIBILITY.md) · [Shared-author retime workflow](TRACKING_RETIME.md) · [Magnetic tracking workflow](TRACKING_MAGNETIC.md) · [Tracked source workflow](TRACKING_SOURCE_EDITS.md) · [Tracking edit workflow](TRACKING_EDITS.md) · [Native tracking workflow](FLOAT_TRACKING.md) · [Float32 adjustment workflow](FLOAT_ADJUSTMENTS.md) · [Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](tracking-visibility-capabilities-cli-0.1.31.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.md) · [Machine response](tracking-retime-capabilities-cli-0.1.30.json) · [Module data](module-catalog.json)
+[README](../../README.md) · [Machine response](tracking-visibility-capabilities-cli-0.1.31.json) · [Module data](module-catalog.json)
 
 | 编号 | 功能模块 | 具体行为与输入 → 输出 | 入口 | 依赖/边界 |
 |---|---|---|---|---|
@@ -27,7 +27,7 @@ Shared-author tracking dependency retime with selected layer outputs, deferred s
 | F11 | 源句柄、滑移与滑动 | 源入出点与邻接片段 → 可逆源编辑、源句柄转场和剪口调整。 | `timeline edit/transition` | 源句柄不足会报错；不以静默复制帧替代。 |
 | F12 | 磁吸、主轨与关联音画 | 主轨重排、原生跟踪跨剪口同步拆分、区域关联ID和音画附着。 | `timeline edit` | 显式同步及拆分策略；锁、转场端点和资源门禁；非原生跟踪跨剪口继续受限。 |
 | F13 | 复合与嵌套序列 | 子序列 → 独立画布合成、父变换/透明度、嵌套时钟与定格。 | `timeline compose/edit` | 独立空间不代表独立色彩/帧率；部分组级空间转场未接受。 |
-| F14 | 变速、倒放与定格 | 显式速度/曲线/Bezier/定格点；原生跟踪依赖闭包共享完整作者时钟，各层输出选择保留叠放位置及关联声音。 | `timeline edit; render` | 默认ripple与显式sync_content:retime不同；锁/端点/预算门禁，音频后端与非恒速曲线保留原精度边界。 |
+| F14 | 变速、倒放与定格 | 共享完整作者时钟、逐层输出和单次声音；原生独立空间入出场可保留。 | `timeline edit; render` | 跨片段转场仍需完整上级；ripple/retime、锁、预算和音频后端边界保留。 |
 | F15 | 关键帧与缓动 | 位置、锚点、缩放、旋转、透明度、裁切、蒙版、音量/声像 → 逐帧动画。 | `timeline compose; schema show` | hold/linear/ease_in/ease_out/ease_in_out/bezier；枚举/布尔值不推断为连续动画。 |
 | F16 | 12 套运镜预设 | 推拉、上下左右平移、Ken Burns、旋入/旋出、淡入/淡出、shake → 可编辑关键帧。 | `motion list/inspect/apply` | 参数有界；是明确关键帧预设，不是 AI 三维相机或全部商业运镜库。 |
 | F17 | 转场与剪口效果 | 相邻片段与源句柄 → 淡化、擦除、滑动、黑/白场、圆形等已声明转场。 | `timeline transition; capabilities` | 按渲染路径和层级选择；显式 Float32 已提供 F55 的转场子集，CPU 执行，支持范围见其独立契约。 |
@@ -73,7 +73,7 @@ Shared-author tracking dependency retime with selected layer outputs, deferred s
 | F57 | 原生浮点GPU执行层 | 明确GPU策略 → 线性Float32仿射、普通叠加、文字组件/段落与逐词选择；正式渲染/预览/队列/恢复。 | `projection_acceleration; render; preview; queue` | off/prefer/require；实际binary64/次正规探测；任务独占进程和共享段；其余算子CPU，非全部GPU化。 |
 | F58 | Float32全局/区间调整层 | 全轨含字幕合成后按顺序调色；LUT/曝光及既有浮点效果、六类关键帧、选中根只应用一次。 | `settings.adjustments; preview; render; queue` | 显式线性工作域/效果信号；CPU执行；LUT持锁/包迁移；保留作者区间时钟，非完整HDR。 |
 | F59 | 原生PTS跟踪与叠加轨 | 保存源观测→按实际原生帧求跟随位置；共享crop/TRS、ROI缩放/相对旋转、透明度、窗口与嵌套声音。 | `media track-bind; preview; render; queue; package` | 显式Float32，原生PTS不烘焙显示键；预算/循环门禁；模板漂移与遮挡另审，中间格式烘焙未接通。 |
-| F60 | 原生跟踪后续编辑 | 共享作者变速、逐层输出、完整音轨单次选择；磁性分片重排、分割/裁切/波纹/范围、物理滑移与外扩；保留原始观察/基准。 | `timeline compose/edit; preview; render; package` | 显式Float32；父层关联组保留共享输出时钟；显式解除关联会分离完整输出；中间格式烘焙及自然遮挡质量继续推进。 |
+| F60 | 原生跟踪与后续编辑 | 实际alpha/5类遮罩、59转场锚点与ROI足迹；共享变速、磁性分片、物理源编辑保留观察。 | `media track-bind; timeline compose/edit; preview; render; package` | 来源贡献在更高轨道遮挡前；丢失足迹隐藏；自然身份/遮挡质量与中间格式烘焙待补。 |
 
 | 编号 | 服务模块 | 运行形式 | 需要什么/提供什么 | 入口 | 范围 |
 |---|---|---|---|---|---|
@@ -912,8 +912,18 @@ Shared-author tracking dependency retime with selected layer outputs, deferred s
       "shared_author_dependency_closure_complete_output_retime",
       "per_layer_selected_output_preserves_external_blend_and_scalar_alpha",
       "selected_audio_instances_avoid_duplicate_sound",
-      "partial_retime_retained_parent_routes_and_repeated_linked_retime"
+      "partial_retime_retained_parent_routes_and_repeated_linked_retime",
+      "actual_projected_pixel_alpha_effects_and_all_five_mask_shapes",
+      "all_59_edge_and_paired_transition_source_point_footprints",
+      "full_density_transport_across_edge_then_paired_transition",
+      "spatial_point_and_ROI_transport_generated_matte_has_no_source",
+      "actual_transition_peer_binding_cycle_preflight_and_bounded_leaf_cache"
     ],
+    "visibility_protocol": "native-transition-point-footprint-v1",
+    "visibility_alpha": "no transition: bilinear projected alpha times scalar opacity; transitions: alpha-weighted point footprint mass clamped to 0..1",
+    "visibility_geometry": "bilinear tent/Float64 density transported through the actual sampling kernels; mass centroid; required missing or degenerate ROI hides target",
+    "max_visibility_dependency_depth": 64,
+    "max_leaf_cache_bytes": 67108864,
     "edit_protocol": "native-tracking-edit-lineage-v1",
     "max_source_fragments_per_binding": 128,
     "max_total_source_references": 4096,
@@ -932,12 +942,14 @@ Shared-author tracking dependency retime with selected layer outputs, deferred s
     "max_depth": 16,
     "display_keyframes_baked": false,
     "render_time_model_inference": false,
-    "GPU": "coordinate evaluation CPU; explicit probed Float32 GPU projection/compositing when eligible",
+    "GPU": "coordinate and transition footprint evaluation CPU; explicit probed Float32 GPU projection/compositing when eligible",
     "limits": [
       "direct_square_unrotated_video_sources",
       "observation_analysis_quality_and_sampling_are_separate",
-      "masks_transitions_and_occlusion_visibility_require_review",
+      "source_contribution_precedes_higher_track_occlusion",
       "ROI_scale_clamp_0_01_to_20",
+      "nonlocal_warps_may_duplicate_or_lose_a_pixel_footprint_no_natural_identity_claim",
+      "conservative_transition_peer_visibility_cycles_rejected_before_pixel_fetch",
       "MLT_OTIO_draft_export_requires_native_clock_bake_not_yet_implemented",
       "not_natural_identity_tracking_or_full_motion_quality_acceptance"
     ]

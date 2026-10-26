@@ -1,0 +1,253 @@
+{
+  "status": "passed",
+  "source": "actual public MP4 decoder output; no reconstructed GUI",
+  "frames": [
+    {
+      "label": "before",
+      "frame": 0,
+      "sha256": "1f1a59892dcf5b5f05f76bf293f83f488b6761c40f611956ce1fc79d71519a65"
+    },
+    {
+      "label": "edited",
+      "frame": 0,
+      "sha256": "fe18a7dcb0430a0edd686fcdbe68dd5572c9edf0220aed2931760eb678799263"
+    },
+    {
+      "label": "before",
+      "frame": 9,
+      "sha256": "44e46177247d73f1152f9aa47e504789e1f92557633dcbc656fbfbf36141f274"
+    },
+    {
+      "label": "edited",
+      "frame": 9,
+      "sha256": "3db1799d59a598b719065b81ba0247323cb1ac34ef5d73dfbdfcb882dc33e2a5"
+    },
+    {
+      "label": "before",
+      "frame": 18,
+      "sha256": "c1375bd807196f84553be6032e47acf0bfa52446e150ca01defe113797461bd5"
+    },
+    {
+      "label": "edited",
+      "frame": 18,
+      "sha256": "128f697d9575f65e383fe5291c580eb33cc1a96b02994b4ad2a4b59390802d7a"
+    },
+    {
+      "label": "before",
+      "frame": 22,
+      "sha256": "dbca8311a229bc0d54bf552894415bc93103053106f5680df776c7ce8570a96c"
+    },
+    {
+      "label": "edited",
+      "frame": 22,
+      "sha256": "5d19368b65ed97114af186d73654f62dfe2048215a799bc9d07b1e03c40beb02"
+    },
+    {
+      "label": "before",
+      "frame": 26,
+      "sha256": "55ce5032e884b1e99eae75be5591ec84c907c2a0b482170e958557d72bfc6c6a"
+    },
+    {
+      "label": "edited",
+      "frame": 26,
+      "sha256": "c0e35161c92491dda078a27339487052b74c203d20b73f8d9cba17a53a2d120e"
+    }
+  ],
+  "calls": [
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-visibility-20261026-r2\\before.mp4",
+        "-vf",
+        "select=eq(n\\,0)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-visibility-20261026-r1\\media-inspection-r1\\before-0.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "1f1a59892dcf5b5f05f76bf293f83f488b6761c40f611956ce1fc79d71519a65"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-visibility-20261026-r2\\edited.mp4",
+        "-vf",
+        "select=eq(n\\,0)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-visibility-20261026-r1\\media-inspection-r1\\edited-0.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "fe18a7dcb0430a0edd686fcdbe68dd5572c9edf0220aed2931760eb678799263"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-visibility-20261026-r2\\before.mp4",
+        "-vf",
+        "select=eq(n\\,9)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-visibility-20261026-r1\\media-inspection-r1\\before-9.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "44e46177247d73f1152f9aa47e504789e1f92557633dcbc656fbfbf36141f274"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-visibility-20261026-r2\\edited.mp4",
+        "-vf",
+        "select=eq(n\\,9)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-visibility-20261026-r1\\media-inspection-r1\\edited-9.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "3db1799d59a598b719065b81ba0247323cb1ac34ef5d73dfbdfcb882dc33e2a5"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-visibility-20261026-r2\\before.mp4",
+        "-vf",
+        "select=eq(n\\,18)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-visibility-20261026-r1\\media-inspection-r1\\before-18.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "c1375bd807196f84553be6032e47acf0bfa52446e150ca01defe113797461bd5"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-visibility-20261026-r2\\edited.mp4",
+        "-vf",
+        "select=eq(n\\,18)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-visibility-20261026-r1\\media-inspection-r1\\edited-18.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "128f697d9575f65e383fe5291c580eb33cc1a96b02994b4ad2a4b59390802d7a"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-visibility-20261026-r2\\before.mp4",
+        "-vf",
+        "select=eq(n\\,22)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-visibility-20261026-r1\\media-inspection-r1\\before-22.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "dbca8311a229bc0d54bf552894415bc93103053106f5680df776c7ce8570a96c"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-visibility-20261026-r2\\edited.mp4",
+        "-vf",
+        "select=eq(n\\,22)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-visibility-20261026-r1\\media-inspection-r1\\edited-22.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "5d19368b65ed97114af186d73654f62dfe2048215a799bc9d07b1e03c40beb02"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-visibility-20261026-r2\\before.mp4",
+        "-vf",
+        "select=eq(n\\,26)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-visibility-20261026-r1\\media-inspection-r1\\before-26.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "55ce5032e884b1e99eae75be5591ec84c907c2a0b482170e958557d72bfc6c6a"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-visibility-20261026-r2\\edited.mp4",
+        "-vf",
+        "select=eq(n\\,26)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-visibility-20261026-r1\\media-inspection-r1\\edited-26.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "c0e35161c92491dda078a27339487052b74c203d20b73f8d9cba17a53a2d120e"
+    }
+  ],
+  "sheet_sha256": "c725e41427269ab0d07c0380ed7c28d752332babd3bb0b8d086bb67a53bede27",
+  "review_scope": "static frame inspection only",
+  "continuous_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false
+}

@@ -42,16 +42,18 @@ The anchor uses the exact original video frame selected by native PTS, rational
 time base and demux origin. Its source time follows the same trim, scalar/curve
 speed, freeze, reverse, presentation window and nested clock as the picture.
 Coordinates use the same actual crop/fit/TRS inverse and pixel-centre convention
-as rendering. Source transform/blend alpha multiplies the target's saved base
-alpha. Optional ROI scaling/relative rotation uses geometry at the original
+as rendering. CLI 0.1.31 samples actual projected source pixel/mask/effect alpha
+and transports point footprints through its own edge and paired transitions.
+Source contribution multiplies the target's saved base alpha once. Optional ROI scaling/relative rotation uses geometry at the original
 target author start; random-access previews do not change that reference.
 
 The renderer accepts saved observations for CFR/VFR and nonzero demux origins.
 Analysis cadence and accuracy are separate: the built-in template tracker
 samples rescaled RGB frames and can drift on occlusion, scale changes or cuts.
 Do not claim native-frame detections or natural identity quality from an
-interpolated observation. Masks, transitions and occlusion visibility require
-separate review. Source crop/range/mute visibility is evaluated explicitly.
+interpolated observation. Higher track occlusion and natural identity require
+separate review. Source crop/range/mute, actual alpha, five mask shapes and
+59 transition source contributions are evaluated explicitly.
 
 Coordinate math is CPU. Eligible affine/normal composition/text can use the
 explicitly probed native GPU path; CPU crop and effects remain CPU. Do not
@@ -82,9 +84,41 @@ Inspect that state in the plan and rebind explicitly when replacing footage.
 
 Locked follower references reject atomically. Overlapping source fragments are
 ambiguous and reject; routes admit up to 128 fragments per binding and 4,096
-total references. Bound-clip container retime retains its existing dependency-container guard. MLT/OTIO/draft
+total references. Shared-author retime is supported as described below. MLT/OTIO/draft
 baking remains separate. Do not remove those guards or bake display-FPS keys
 to force an edit through. Deliver the editable package after verification.
+
+## Actual visibility and spatial transitions (CLI 0.1.31)
+
+Native bindings automatically use `native-transition-point-footprint-v1`.
+Preview every transition boundary and any masked/partially transparent source.
+Inspect each tracking row's `visibility`, `active`, `reason` and `values`.
+No transition: sample the actual projected alpha bilinearly and multiply the
+separate scalar opacity. During an edge/pair, an alpha-weighted bilinear point
+footprint travels through the actual transition sampling kernel; its mass
+(clamped 0..1) controls visibility and its centroid controls position. Original
+PTS and saved observations stay unchanged. Generated black/white mattes have
+no source contribution. A lost anchor hides the label; a missing or degenerate
+required ROI endpoint hides it with `source-ROI-footprint-unobservable`.
+
+Own edge followed by a paired transition retains the full Float64 density
+between operations. Colour-dependent patterns read the real RGBA, not a probe
+colour. Masks use exactly the rendered crop-before-mask/source-before-project
+ordering. This measures source contribution before higher track occlusion;
+pixelize/blur/warps may duplicate or lose footprints and do not establish a
+natural object's identity. Review natural scenes separately.
+
+Independent spatial edges now survive native complete-output retime. A paired
+endpoint still requires selecting its complete parent group. Cyclic dependencies
+through a transition peer reject before pixel I/O, including conservative cases
+whose windows might not intersect. Additional visibility dependency depth is
+limited to 64; the direct leaf cache is per frame and at most min(workspace/4,
+64MiB). Footprint calculation is CPU with bounded tiles and cancellation;
+eligible projection/composition retains the probed GPU path.
+
+[Workflow and C41](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/TRACKING_VISIBILITY.md)
+· [Silent preview](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/assets/tracking-visibility-20261026-r2/edited.gif)
+· [Editable case](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/assets/tracking-visibility-20261026-r2/editable-tracking-visibility.aevpkg.zip)
 
 [Editing workflow, real case and silent preview](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/TRACKING_EDITS.md)
 

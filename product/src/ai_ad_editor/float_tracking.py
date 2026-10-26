@@ -13,6 +13,7 @@ from .bindings import BINDING_VERSION, find_sources, source_references, validate
 from .clip_windows import validate_window
 from .errors import AppError
 from .sequence_canvas import sequence_canvas
+from .float_tracking_visibility import sample as visibility_sample
 
 PROTOCOL='native-PTS-float32-tracking-bindings-v1'
 MAX_BINDINGS=128
@@ -31,7 +32,8 @@ def binding_plan(project,sequence,track,target):
         canvas=sequence_canvas(project,sequence),sampled_frames=0,hidden_frames=None,keyframes=[],
         warnings=['tracking_observations_interpolated_at_selected_original_PTS',
             'native_binding_is_dynamic_not_baked_to_display_FPS',
-            'source_masks_transitions_and_occlusion_visibility_require_review'])
+            'source_alpha_masks_and_transition_point_footprints_are_evaluated',
+            'higher_track_occlusion_and_natural_identity_require_review'])
 
 def forward(inverse,x,y):
     a,b,c=inverse[0];d,e,f=inverse[1];det=a*e-b*d
@@ -67,13 +69,41 @@ class FloatTracking:
                 for source in self.plans[path]['sources']:visit(source['source_path'],(*stack,path))
             completed.add(path)
         for path in self.plans:visit(path,())
+        # A colour-dependent paired transition also reads the peer's actual
+        # rendered leaf. Include its bindings/nested children before any fetch.
+        graph={path:set() for path in self.clips}
+        for path,(_,_,clip) in self.clips.items():
+            if clip.get('sequence_id'):
+                child=host.sequences[clip['sequence_id']];chosen=clip.get('sequence_clip_id')
+                graph[path].update(child['id']+'/'+c['id'] for t in child['tracks']
+                    if not t.get('muted') and t['kind'] in ('video','overlay','subtitle') for c in t['clips']
+                    if chosen is None or chosen==c['id'])
+        for path,plan in self.plans.items():
+            for source in plan['sources']:
+                graph[path].add(source['source_path'])
+                transitions=host.transition_plans.get(plan['sequence']['id']+'/'+source['source_track']['id'],{})
+                for pair in transitions.get('pairs',[]):
+                    cid=source['source']['id']
+                    if cid in (pair['from'],pair['to']):
+                        peer=pair['to'] if cid==pair['from'] else pair['from']
+                        graph[path].add(plan['sequence']['id']+'/'+peer)
+        checked=set()
+        def check_visibility(path,stack):
+            if path in stack:raise error('VISIBILITY_CYCLE','实际转场可见度与跟踪绑定存在循环依赖')
+            if len(stack)>=64:raise error('VISIBILITY_DEPTH','实际图层可见度依赖超过64层')
+            if path in checked:return
+            for dependency in sorted(graph[path]):check_visibility(dependency,(*stack,path))
+            checked.add(path)
+        for path in self.plans:check_visibility(path,())
         self.metadata=dict(protocol=PROTOCOL,plans=rows,bindings=len(rows),observations=count,
+            visibility_protocol='native-transition-point-footprint-v1',
             clock='selected original PTS * native time base minus recorded demux origin; no CFR resnap',
             geometry='same crop/fit/TRS inverse as rendered source; integer pixel centres and half-pixel edges',
             ROI_reference='source geometry at target original author start; first observation if no native frame covers reference',
             scale_policy='existing binding clamp 0.01..20; source projected ROI-width ratio',
-            alpha='binding base opacity automation times source transform and blend opacity',
-            visibility='source clip coverage/range/crop/mute; masks/transitions/occlusion need separate review',
+            alpha='binding base opacity times actual rendered source canvas alpha and scalar opacity; transition footprint mass clamped to 0..1',
+            visibility='source coverage/range/crop/mute, pixel alpha, mask and own edge/paired transition source contribution; higher tracks and natural identity unverified',
+            transition_geometry='alpha-weighted bilinear point footprint through the actual 59 transition kernels; centroid; missing required ROI footprint hides target',
             model_inference=False,display_keyframes_baked=False,integer_intermediate=False,
             evaluations=0,hidden_evaluations=0,cache_hits=0,source_references=reference_count,
             edit_lineage='native-tracking-edit-lineage-v1; empty route is hidden',
@@ -131,6 +161,7 @@ class FloatTracking:
         x,y=point['x']*width-.5,point['y']*height-.5
         px,py=forward(inverse,x,y);rx,ry=forward(inverse,x+point['width']*width,y)
         roi=math.hypot(rx-px,ry-py)
+        rotation=math.degrees(math.atan2(ry-py,rx-px))
         if not math.isfinite(roi) or roi<=0:raise error('GEOMETRY','投影ROI宽度须为有限正数')
         inside=True
         if crop:
@@ -140,14 +171,33 @@ class FloatTracking:
         blend=source.get('blend') or {}
         opacity*=keyframe_value(source,('blend.opacity','blend_opacity'),float(blend.get('opacity',1)),float(tick))
         if not math.isfinite(opacity) or not 0<=opacity<=1:raise error('ALPHA','源绑定透明度须为有限0..1')
-        return dict(active=active,reason=None if active else 'source-outside-observed-range-or-crop',
+        visibility=None
+        if active and not reference:
+            probes=[(px,py)]
+            geometry_required=b['scale_mode']=='roi' or b['rotation_mode']=='source'
+            if geometry_required:probes.append((rx,ry))
+            visible=visibility_sample(h,plan['sequence'],track,source,path,at,tick,probes,left_limit=left_limit)
+            visibility=visible['metadata'];opacity=visible['opacity']
+            visibility['ROI_geometry_probes_requested']=geometry_required
+            if visible['points'][0] is not None:
+                px,py=visible['points'][0]
+            if geometry_required and len(visible['points'])>1 and visible['geometry_visible']:
+                rx,ry=visible['points'][1];roi=math.hypot(rx-px,ry-py)
+                rotation=math.degrees(math.atan2(ry-py,rx-px))
+            if opacity==0:
+                active=False;reason='source-anchor-footprint-invisible'
+            elif geometry_required and (not visible['geometry_visible'] or roi<=0):
+                active=False;reason='source-ROI-footprint-unobservable'
+            else:reason=None
+        else:reason=None if active else 'source-outside-observed-range-or-crop'
+        return dict(active=active,reason=reason,
             source_fragment=path,
             x=(px+.5)/canvas['width'],y=(py+.5)/canvas['height'],roi_width_pixels=roi,
-            rotation=math.degrees(math.atan2(ry-py,rx-px)),opacity=opacity,
+            rotation=rotation,opacity=opacity,
             native_frame_index=index,native_pts=native_tick,native_time=str(native_time),
             source_author_tick=str(tick),source_time=str(source_time),inside_crop=inside,
             confidence=point['confidence'],held_observation=i==0 or i==len(times) and native_time>times[-1],
-            reference_fallback=fallback)
+            reference_fallback=fallback,visibility=visibility)
 
     def _reference(self,path,plan,stack):
         if path not in self.references:

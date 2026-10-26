@@ -1691,3 +1691,14 @@ docs/product/TRACKING_RETIME.md text eol=lf
 docs/product/tracking-retime-capabilities-cli-0.1.30.json -text -whitespace
 docs/releases/CLI_0.1.30_LOCAL.md text eol=lf
 docs/validation/跟踪共享变速实测_2026-10-26.md text eol=lf
+docs/validation/evidence/tracking-visibility-20261026-r1/** -text -whitespace
+docs/assets/tracking-visibility-20261026-r1/** -text -whitespace
+docs/assets/tracking-visibility-20261026-r2/** -text -whitespace
+docs/product/tracking-visibility-capabilities-cli-0.1.31.json -text -whitespace
+product/src/ai_ad_editor/float_transition_trace.py -text
+product/src/ai_ad_editor/float_tracking_visibility.py -text
+product/tests/test_tracking_visibility.py text eol=lf
+scripts/*tracking_visibility*20261026.py text eol=lf
+docs/product/TRACKING_VISIBILITY.md text eol=lf
+docs/releases/CLI_0.1.31_LOCAL.md text eol=lf
+docs/validation/跟踪实际可见度实测_2026-10-26.md text eol=lf

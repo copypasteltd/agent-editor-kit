@@ -20,6 +20,25 @@ def duration_ticks(config, tps):
     return ticks
 
 
+def edge_progress(edge, tick):
+    """One authoritative edge clock, including the caller's left limit."""
+    d=edge['duration'];duration=edge['authored_duration']
+    q=tick/d if edge['edge']=='in' else (tick-(duration-d))/d
+    if edge['edge']=='in' and q>=1 or edge['edge']=='out' and q<0:return None
+    return max(0.,min(1.,float(q)))
+
+
+def active_pair(plan, clip_id, at_tick, *, left_limit=False):
+    return next((p for p in plan['pairs'] if clip_id in (p['from'],p['to']) and
+        ((p['start']<at_tick<=p['end']) if left_limit else (p['start']<=at_tick<p['end']))),None)
+
+
+def pair_progress(pair, at_tick, *, left_limit=False):
+    q=(at_tick-pair['start'])/(pair['end']-pair['start'])
+    progress=math.nextafter(float(q),-math.inf) if left_limit and q>0 else float(q)
+    return q,max(0.,min(1.,progress))
+
+
 def compile_track(track, tps, source_plan=None):
     clips = track.get('clips', [])
     by_id = {c['id']: c for c in clips}

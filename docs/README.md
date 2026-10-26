@@ -1,6 +1,8 @@
 # agent editor kit 文档 / Documentation
 
-Current local / 当前本地 / 目前本地：**CLI0.1.30 / local.28 / r31 kit** · [Shared-author retime](product/TRACKING_RETIME.md) · [Install](releases/CLI_0.1.30_LOCAL.md) · [C40](product/CASES.md#c40-tracking-retime).
+Current local / 当前本地 / 目前本地：**CLI0.1.31 / local.29 / r32 kit** · [Visibility](product/TRACKING_VISIBILITY.md) · [Install](releases/CLI_0.1.31_LOCAL.md) · [C41](product/CASES.md#c41-tracking-visibility).
+
+Historical / 历史 / 歷史：**CLI0.1.30 / local.28 / r31 kit** · [Shared-author retime](product/TRACKING_RETIME.md) · [Install](releases/CLI_0.1.30_LOCAL.md) · [C40](product/CASES.md#c40-tracking-retime).
 
 Historical / 历史 / 歷史：**CLI0.1.29 / local.27 / r30 kit** · [Magnetic tracking](product/TRACKING_MAGNETIC.md) · [Install](releases/CLI_0.1.29_LOCAL.md) · [C39](product/CASES.md#c39-tracking-magnetic).
 

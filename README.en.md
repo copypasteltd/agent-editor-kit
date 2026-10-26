@@ -9,9 +9,23 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
+<!-- tracking-visibility-current -->
+
+**CLI0.1.31 / alpha.4-local.29 / r32 kit · 1 Skill / 17 modules.**
+
+Tracking reads actual source pixel/effect alpha and five mask shapes. All 59 edge/paired transitions transport point and ROI footprints, retaining full density between operations; generated mattes carry no source contribution. Independent spatial edges survive shared-output retime.
+
+[Workflow](docs/product/TRACKING_VISIBILITY.md) · [C41](docs/product/CASES.md#c41-tracking-visibility) · [Install](docs/releases/CLI_0.1.31_LOCAL.md) · [Evidence](docs/validation/跟踪实际可见度实测_2026-10-26.md)
+
+![Actual registered Skill / silent GIF](docs/assets/tracking-visibility-20261026-r2/edited.gif)
+
+C41 checks 45 binding evaluations against an independent integer-slide oracle, all 36 Float32 and decoded frames against an unbound reference project, complete 144,000 stereo samples, package roundtrip and queue separately. Actual GPU projection/composition and cleanup are recorded. Controlled media and static inspection do not accept natural occlusion/identity, continuous playback or human listening. All 38 original goal closure conditions remain.
+
+<!-- /tracking-visibility-current -->
+
 <!-- tracking-retime-current -->
 
-**CLI0.1.30 / alpha.4-local.28 / r31 kit · 1 Skill / 17 modules.**
+**Historical / 历史 / 歷史：CLI0.1.30 / alpha.4-local.28 / r31 kit · 1 Skill / 17 modules.**
 
 Tracked sources, followers and linked sound now share a complete author graph during relative output retiming. Each parent layer selects its own output, preserving saved observations, native PTS, ROI references, crop/motion, scalar alpha and external blend order.
 
@@ -589,7 +603,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F11 | Source handles, slip and slide | Source in/out points and neighbors → reversible source edits, handle transitions and cut adjustments. | `timeline edit/transition` | Insufficient source handles are reported rather than silently inventing coverage. |
 | F12 | Magnetic tracks and linked edits | Main-track reorder, synchronized native tracking cuts, region-specific links and attached audio. | `timeline edit` | Explicit sync/split policies; locks, transition endpoints and resource gates. Non-native tracking cuts remain guarded. |
 | F13 | Compound and nested sequences | Child sequences → independent canvases, parent transforms/opacity, nested clocks and freezes. | `timeline compose/edit` | Independent spatial canvases do not imply independent color/fps; some group spatial transitions remain unsupported. |
-| F14 | Speed, reverse and freeze | Explicit scalar/curve/Bezier/freeze maps; native tracking dependency closure shares complete author time, with per-layer outputs and linked sound. | `timeline edit; render` | Default ripple differs from explicit sync_content:retime; locks/endpoints/budgets apply. Audio backends and nonconstant curves retain their precision limits. |
+| F14 | Speed, reverse and freeze | Shared complete author clock, selected layers and single sound instance; independent native spatial edges retained. | `timeline edit; render` | Paired endpoints require the complete parent; ripple/retime, lock, budget and audio-backend limits remain. |
 | F15 | Keyframes and easing | Position, anchor, scale, rotation, opacity, crop, masks, volume and pan → frame-evaluated animation. | `timeline compose; schema show` | hold/linear/ease_in/ease_out/ease_in_out/bezier; enum/boolean channels are not assumed continuous. |
 | F16 | 12 camera/motion presets | Push/pull, four pan directions, Ken Burns, rotation, fades and shake → editable keyframes. | `motion list/inspect/apply` | Bounded keyframe presets, not AI 3D cameras or an entire commercial motion library. |
 | F17 | Transitions and cut effects | Adjacent clips and handles → declared fades, wipes, slides, black/white fades, circular and other transitions. | `timeline transition; capabilities` | Select by renderer and layer context; the explicit CPU Float32 subset is delivered under the separate F55 contract. |
@@ -635,7 +649,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F57 | Native Float32 GPU execution | Explicit policy → linear Float32 affine, normal over, text components/paragraphs and word selection; real render/preview/queue/resume. | `projection_acceleration; render; preview; queue` | off/prefer/require;actual binary64/subnormal probes;owned process/shared buffers;other operators CPU,not all-GPU editing. |
 | F58 | Float32 global/interval adjustments | Ordered grading after all tracks including subtitles;existing float effects,LUT/exposure,six keyframe modes,selected root once. | `settings.adjustments; preview; render; queue` | Explicit linear working/effect signals;CPU execution;locked/portable LUTs;original interval clocks,not complete HDR. |
 | F59 | Native PTS tracking and overlay tracks | Saved source observations → actual selected-frame anchors;shared crop/TRS,ROI scale/relative rotation,alpha,windows and nested audio. | `media track-bind; preview; render; queue; package` | Explicit Float32,no display-key bake,budget/cycle gates;template drift/occlusion require review;native interchange baking pending. |
-| F60 | Editing native tracking | Shared-author retime, selected layer outputs and single sound selection; magnetic partition/reorder, split/trim/ripple/range and physical slip/extension with retained observations/references. | `timeline compose/edit; preview; render; package` | Explicit Float32. Keep the parent link cohort for a shared output clock; explicit unlink separates complete outputs. Interchange baking and natural occlusion quality remain open. |
+| F60 | Native tracking and continued editing | Actual alpha/five masks,59 transition point/ROI footprints; shared retime, magnetic partitions and physical source edits retain observations. | `media track-bind; timeline compose/edit; preview; render; package` | Source contribution precedes higher-track occlusion; lost footprints hide; natural identity/occlusion quality and interchange baking remain open. |
 
 ## Supported service modules and dependencies
 
@@ -762,7 +776,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.28/final-r1/installed/`, CLI 0.1.30. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.29/final-r1/installed/`, CLI 0.1.31. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1172,6 +1186,12 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R215 | 2026-10-26 Native shared-author tracking retime | r31 fresh isolated kit: one registration, 17 modules, 73 Skill files; real shared-retime dry-run/observations/validation with unchanged authored project and assets. | [Evidence](docs/validation/evidence/tracking-retime-20261026-r1/kit-r1/verification.json) |
 | R216 | 2026-10-26 Native shared-author tracking retime | Installed/Skill/media/full trilingual documentation and staged-byte audit; retain 211 historical R rows and 38 original goal closures; 60 functions, 20 services, 75 actual declarations. | [Evidence](docs/validation/evidence/tracking-retime-20261026-r1/final-delivery-r1/verification.json) |
 | R217 | 2026-10-26 Native shared-author tracking retime | Preserved failed development attempt: extra alpha rounding on repeated nesting and missing explicit sync_content:retime in fixtures. Fixed shared outputs/requests; no pixel threshold relaxation. | [Evidence](docs/validation/evidence/tracking-retime-20261026-r1/development-attempts-r1/verification.json) |
+| R218 | 2026-10-26 native tracking visibility | Native CLI0.1.31/local.29 installed:224 product files/schema equal source; one Skill/17 modules/73 files/four existing model packs. Separate frozen installed groups: tracking=125, magnetic=66, editing=195, bindings=71, float=98, render=46, audio=65, legacy=192, effects=219, text=98. | [Evidence](docs/validation/evidence/tracking-visibility-20261026-r1/tracking-installed-r1/verification.json) |
+| R219 | 2026-10-26 native tracking visibility | Actual registered C41:45 binding evaluations and36 Float32/decoded frames match independent slide and unbound-transform oracles; full144000 stereo samples unchanged; native package roundtrip passed. | [Evidence](docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/verification.json) |
+| R220 | 2026-10-26 native tracking visibility | Independent queue reproduces all36 decoded frames and144000 stereo samples; authored graph/assets/settings/rights retained; actual GPU worker/shared handles closed. | [Evidence](docs/validation/evidence/tracking-visibility-20261026-r1/queue-r1/verification.json) |
+| R221 | 2026-10-26 native tracking visibility | Fresh isolated r32 kit111 files:one registration/17 modules/73 Skill files; real isolated CLI,current visibility protocol and inverse C40 retime dry-run checked; no source fallback/inference. | [Evidence](docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/verification.json) |
+| R222 | 2026-10-26 native tracking visibility | Complete trilingual READMEs/manuals/capability JSON/Skill/media and staged-byte audit; all217 historical R rows and38 original closure cells retained;60 functions/20 services/75 actual declarations. | [Evidence](docs/validation/evidence/tracking-visibility-20261026-r1/final-delivery-r2/verification.json) |
+| R223 | 2026-10-26 native tracking visibility | Failed development runs retained separately:old scalar-only alpha assertion,Fraction progress admission,slide direction/finite-difference precision,missing probe/edge guard and invalid first C41 authoring request. Final gates and goal scope remain explicit. | [Evidence](docs/validation/evidence/tracking-visibility-20261026-r1/development-attempts-r1/verification.json) |
 
 ## Current limits and development direction
 

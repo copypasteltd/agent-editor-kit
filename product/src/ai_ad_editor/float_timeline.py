@@ -22,7 +22,7 @@ from .float_effect_chain import EffectCompiler
 from .float_adjustments import FloatAdjustments
 from .float_tracking import FloatTracking
 from .float_transitions import transition_rgba, PROTOCOL as TRANSITION_PROTOCOL, TYPES as TRANSITION_TYPES
-from .float_transition_plan import compile_track
+from .float_transition_plan import compile_track, edge_progress, pair_progress
 from .float_text import FloatTextHost
 from .source_transitions import compile_for_render
 from .float_raster import mode_name
@@ -127,6 +127,8 @@ class FloatTimeline:
         self._validate(sequence_id,());sequence=self.sequences[sequence_id]
         self.adjustments=FloatAdjustments(self.settings.get('adjustments'),self.effects,sequence,cancel=self.poll)
         self.tracking=FloatTracking(self)
+        self._layer_cache={};self._layer_cache_bytes=0
+        self._layer_cache_budget=min(self.max_working_bytes//4,64*1024**2)
         self.frame_count=math.ceil(Fraction(int(sequence['duration_tick']),self.tps)*self.fps)
         self.metadata={'protocol':PROTOCOL,'sequence_id':sequence_id,'display_fps':str(self.fps),'frames':self.frame_count,
             'working_signal':{'primaries':working_signal.primaries,'transfer':working_signal.transfer},
@@ -296,6 +298,20 @@ class FloatTimeline:
         return composite_rgba(a,b,mode=mode,opacity=opacity,max_working_bytes=self.max_working_bytes,cancel=self.poll)
 
     def _layer(self,sequence_id,clip,at,canvas,rows,depth,left_limit):
+        """Cache only direct leaves; nested metadata is always traversed."""
+        self.poll()
+        key=(sequence_id+'/'+str(clip['id']),at,left_limit)
+        if not clip.get('sequence_id') and key in self._layer_cache:
+            if len(rows)>=MAX_LAYERS_PER_FRAME:raise error('BUDGET','同帧片段数超过128')
+            layer,mode,tick,saved=self._layer_cache[key];row=copy.deepcopy(saved);rows.append(row)
+            return layer,mode,tick,row
+        value=self._layer_uncached(sequence_id,clip,at,canvas,rows,depth,left_limit)
+        layer,mode,tick,row=value
+        if not clip.get('sequence_id') and self._layer_cache_bytes+layer.nbytes<=self._layer_cache_budget:
+            self._layer_cache[key]=(layer,mode,tick,copy.deepcopy(row));self._layer_cache_bytes+=layer.nbytes
+        return value
+
+    def _layer_uncached(self,sequence_id,clip,at,canvas,rows,depth,left_limit):
         self.poll()
         if len(rows)>=MAX_LAYERS_PER_FRAME:raise error('BUDGET','同帧片段数超过128')
         path=sequence_id+'/'+str(clip['id'])
@@ -360,10 +376,9 @@ class FloatTimeline:
 
     def _edge_transitions(self,layer,envelopes,tick,row):
         for edge in envelopes:
-            d=edge['duration'];duration=edge['authored_duration']
-            q=(tick/d) if edge['edge']=='in' else (tick-(duration-d))/d
-            if edge['edge']=='in' and q>=1 or edge['edge']=='out' and q<0:continue
-            q=max(0.,min(1.,float(q)));empty=np.zeros_like(layer)
+            q=edge_progress(edge,tick)
+            if q is None:continue
+            empty=np.zeros_like(layer)
             a,b=(empty,layer) if edge['edge']=='in' else (layer,empty)
             layer,metadata=transition_rgba(a,b,q,kind=edge['type'],max_working_bytes=self.max_working_bytes,cancel=self.poll)
             row.setdefault('edge_transitions',[]).append({**metadata,'edge':edge['edge'],'target':'transparent canvas'})
@@ -425,9 +440,8 @@ class FloatTimeline:
                     b,_,tb,rb=self._layer(sequence_id,right,at,canvas,rows,depth,left_limit)
                     b=self._transition_opacity(b,rb)
                     b=self._edge_transitions(b,plan['edges'][right['id']],tb,rb)
-                    q=(at_tick-pair['start'])/(pair['end']-pair['start'])
-                    progress=math.nextafter(float(q),-math.inf) if left_limit and q>0 else float(q)
-                    layer,metadata=transition_rgba(a,b,max(0.,min(1.,progress)),kind=pair['type'],cut_fraction=pair['cut_fraction'],
+                    q,progress=pair_progress(pair,at_tick,left_limit=left_limit)
+                    layer,metadata=transition_rgba(a,b,progress,kind=pair['type'],cut_fraction=pair['cut_fraction'],
                         max_working_bytes=self.max_working_bytes,cancel=self.poll)
                     metadata.update(id=pair['id'],author_progress=str(q),real_source_handles=pair['real_source_handles'],
                         start_tick=str(pair['start']),end_tick=str(pair['end']),left_limit=left_limit)
@@ -448,6 +462,7 @@ class FloatTimeline:
     def render_frame(self,index):
         if type(index) is not int or not 0<=index<self.frame_count:raise error('RANGE','输出帧索引越界')
         self._frame_adjustments=[];self.tracking.reset_frame()
+        self._layer_cache.clear();self._layer_cache_bytes=0
         rows=[];at=Fraction(index,1)/self.fps;result=self._sequence(self.sequence_id,at,rows,root=True)
         return result,{'protocol':PROTOCOL,'frame':index,'author_time':str(at),'layers':rows,
             'adjustments':self._frame_adjustments,'encoded_movie':False,'legacy_render_integrated':False}

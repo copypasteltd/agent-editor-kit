@@ -9,9 +9,23 @@
 本頁包含完整功能模塊、服務與依賴、安裝與使用邏輯、Skill 輸入輸出、真實案例和核驗表。長篇原始驗收日志繼續留檔，功能說明與案例入口恢復到首頁。
 
 
+<!-- tracking-visibility-current -->
+
+**CLI0.1.31 / alpha.4-local.29 / r32 kit · 1 Skill / 17 modules.**
+
+實際來源像素/效果alpha和5類遮罩已接入跟蹤；59種進出場/雙來源轉場傳遞錨點及ROI足跡，連續轉場保留完整密度，生成黑白幕不偽造來源；獨立空間進出場可共享變速。
+
+[Workflow](docs/product/TRACKING_VISIBILITY.md) · [C41](docs/product/CASES.md#c41-tracking-visibility) · [Install](docs/releases/CLI_0.1.31_LOCAL.md) · [Evidence](docs/validation/跟踪实际可见度实测_2026-10-26.md)
+
+![Actual registered Skill / silent GIF](docs/assets/tracking-visibility-20261026-r2/edited.gif)
+
+C41：45次跟蹤求值對照獨立整數滑動參考，全部36幀Float32及解碼畫面對照無綁定參考工程，完整144000雙聲道採樣、包往返、佇列分別核驗。實際GPU投影/合成及清理留證。僅受控素材/靜態抽幀，未驗收自然遮擋、身分、連續播放或人工聽感；38項原關閉條件保留。
+
+<!-- /tracking-visibility-current -->
+
 <!-- tracking-retime-current -->
 
-**CLI0.1.30 / alpha.4-local.28 / r31 kit · 1 Skill / 17 modules.**
+**Historical / 历史 / 歷史：CLI0.1.30 / alpha.4-local.28 / r31 kit · 1 Skill / 17 modules.**
 
 追蹤來源、標籤與關聯音軌支援完整輸出變速。依賴閉包保存在共享作者子序列，各父層只選擇自己的輸出；保留原始觀察、原生PTS、ROI基準、裁切/運鏡、透明度及外部疊放順序。
 
@@ -589,7 +603,7 @@ flowchart LR
 | F11 | 源句柄、滑移與滑動 | 源入出點與鄰接片段 → 可逆源編輯、源句柄轉場和剪口調整。 | `timeline edit/transition` | 源句柄不足會報錯；不以靜默復制影格替代。 |
 | F12 | 磁吸、主軌與關聯音畫 | 主軌重排、原生追蹤跨剪口同步拆分、區域關聯ID及音畫附著。 | `timeline edit` | 明確同步及拆分策略；鎖、轉場端點及資源門禁；非原生追蹤跨剪口仍受限。 |
 | F13 | 復合與嵌套序列 | 子序列 → 獨立畫布合成、父變換/透明度、嵌套時鐘與定格。 | `timeline compose/edit` | 獨立空間不代表獨立色彩/影格率；部分組級空間轉場未接受。 |
-| F14 | 變速、倒放與定格 | 明確速度/曲線/Bezier/定格點；原生追蹤依賴閉包共享完整作者時鐘，各層輸出選擇保留疊放位置及關聯聲音。 | `timeline edit; render` | 預設ripple與明確sync_content:retime不同；鎖/端點/預算門禁，音訊後端及非恆速曲線保留原精度邊界。 |
+| F14 | 變速、倒放與定格 | 共享完整作者時鐘、逐層輸出和單次聲音；原生獨立空間進出場可保留。 | `timeline edit; render` | 跨片段轉場仍需完整上級；ripple/retime、鎖、預算和音訊後端邊界保留。 |
 | F15 | 關鍵影格與緩動 | 位置、錨點、縮放、旋轉、透明度、裁切、蒙版、音量/聲像 → 逐影格動畫。 | `timeline compose; schema show` | hold/linear/ease_in/ease_out/ease_in_out/bezier；枚舉/布爾值不推斷為連續動畫。 |
 | F16 | 12 套運鏡預設 | 推拉、上下左右平移、Ken Burns、旋入/旋出、淡入/淡出、shake → 可編輯關鍵影格。 | `motion list/inspect/apply` | 參數有界；是明確關鍵影格預設，不是 AI 三維相機或全部商業運鏡庫。 |
 | F17 | 轉場與剪口效果 | 相鄰片段與源句柄 → 淡化、擦除、滑動、黑/白場、圓形等已聲明轉場。 | `timeline transition; capabilities` | 依算繪路徑和層級選擇；明確 Float32 已提供 F55 的轉場子集，CPU 執行，支援範圍見獨立契約。 |
@@ -635,7 +649,7 @@ flowchart LR
 | F57 | 原生浮點GPU執行層 | 明確GPU策略 → 線性Float32仿射、一般疊加、文字元件／段落與逐詞選擇；正式算繪／預覽／佇列／恢復。 | `projection_acceleration; render; preview; queue` | off/prefer/require；實際binary64／次正規探測；任務專屬程序與共用段；其餘算子CPU，非全部GPU化。 |
 | F58 | Float32全域／區間調整層 | 全軌含字幕合成後依序調色；LUT／曝光及既有浮點效果、六類關鍵影格、選中根僅套用一次。 | `settings.adjustments; preview; render; queue` | 明確線性工作域／效果訊號；CPU執行；LUT持鎖／封裝遷移；保留作者區間時鐘，非完整HDR。 |
 | F59 | 原生PTS跟蹤及疊加軌 | 保存來源觀測→依實際原生影格求跟隨位置；共用crop/TRS、ROI縮放／相對旋轉、透明度、視窗及巢狀聲音。 | `media track-bind; preview; render; queue; package` | 明確Float32，原生PTS不烘焙顯示鍵；預算／循環門禁；模板漂移及遮擋另審，中間格式烘焙未接通。 |
-| F60 | 原生追蹤後續編輯 | 共享作者變速、逐層輸出、完整音軌單次選擇；磁性分片重排、分割/裁切/波紋/範圍、物理滑移及外擴；保留原始觀察/基準。 | `timeline compose/edit; preview; render; package` | 明確Float32；父層關聯組保留共享輸出時鐘；明確解除關聯會分離完整輸出；中間格式烘焙及自然遮擋品質持續推進。 |
+| F60 | 原生跟蹤與後續編輯 | 實際alpha/5類遮罩、59轉場錨點與ROI足跡；共享變速、磁性分片、實體來源編輯保留觀察。 | `media track-bind; timeline compose/edit; preview; render; package` | 來源貢獻在更高軌道遮擋前；丟失足跡隱藏；自然身分/遮擋品質與中間格式烘焙待補。 |
 
 ## 支持的服務模塊與依賴
 
@@ -762,7 +776,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.28/final-r1/installed/`，CLI 0.1.30；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
+本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.29/final-r1/installed/`，CLI 0.1.31；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1170,6 +1184,12 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R215 | 2026-10-26 原生追蹤共享變速 | r31獨立工具包：唯一註冊、17模組、73個Skill檔案；真實共享變速dry-run、原觀察保留及工程驗證，作者工程及素材不變。 | [Evidence](docs/validation/evidence/tracking-retime-20261026-r1/kit-r1/verification.json) |
 | R216 | 2026-10-26 原生追蹤共享變速 | 安裝版/Skill/媒體/三語完整文件及暫存位元組核驗；保留211條歷史R記錄及38項原關閉條件；60功能、20服務、75組實際能力聲明。 | [Evidence](docs/validation/evidence/tracking-retime-20261026-r1/final-delivery-r1/verification.json) |
 | R217 | 2026-10-26 原生追蹤共享變速 | 保留開發失敗：重複巢狀變速的額外alpha取整及缺少明確sync_content:retime的測試情境；修復共享輸出/明確請求後通過，未放寬逐像素門檻。 | [Evidence](docs/validation/evidence/tracking-retime-20261026-r1/development-attempts-r1/verification.json) |
+| R218 | 2026-10-26 native tracking visibility | 已安裝原生CLI0.1.31/local.29，224個產品檔案/schema與原始碼一致；唯一Skill/17模組/73檔案/4個既有模型包。分組實測：tracking=125, magnetic=66, editing=195, bindings=71, float=98, render=46, audio=65, legacy=192, effects=219, text=98。 | [Evidence](docs/validation/evidence/tracking-visibility-20261026-r1/tracking-installed-r1/verification.json) |
+| R219 | 2026-10-26 native tracking visibility | C41實際註冊Skill：45次綁定求值/36幀Float32及解碼畫面對照獨立滑動和無綁定參考；完整144000雙聲道採樣不變；工程包往返通過。 | [Evidence](docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/verification.json) |
+| R220 | 2026-10-26 native tracking visibility | 獨立佇列重現36完整解碼幀和144000雙聲道採樣；作者圖/資產/設定/權利保留；實際GPU worker/shared handles已關閉。 | [Evidence](docs/validation/evidence/tracking-visibility-20261026-r1/queue-r1/verification.json) |
+| R221 | 2026-10-26 native tracking visibility | 新r32獨立kit111檔案，唯一註冊/17模組/73 Skill檔案；獨立CLI、C40反向變速dry-run和新可見度協定已核驗，無原始碼回退/推理。 | [Evidence](docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/verification.json) |
+| R222 | 2026-10-26 native tracking visibility | 完整三語README/手冊/能力JSON/Skill/媒體及暫存位元組審核；保留217歷史R列與38原關閉條件；60功能/20服務/75實際宣告。 | [Evidence](docs/validation/evidence/tracking-visibility-20261026-r1/final-delivery-r2/verification.json) |
+| R223 | 2026-10-26 native tracking visibility | 開發失敗獨立保留：舊標量alpha斷言、Fraction進度、滑動方向/參考精度、缺少probe/獨立邊緣門禁及第一份無效C41請求。最終門檻與目標邊界明確保留。 | [Evidence](docs/validation/evidence/tracking-visibility-20261026-r1/development-attempts-r1/verification.json) |
 
 ## 當前邊界與開發方向
 

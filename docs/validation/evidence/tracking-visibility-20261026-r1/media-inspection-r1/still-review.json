@@ -1,0 +1,36 @@
+{
+  "status": "reviewed",
+  "contact_sheet_sha256": "c725e41427269ab0d07c0380ed7c28d752332babd3bb0b8d086bb67a53bede27",
+  "reviewed_frame_pairs": [
+    [
+      0,
+      0
+    ],
+    [
+      9,
+      9
+    ],
+    [
+      18,
+      18
+    ],
+    [
+      22,
+      22
+    ],
+    [
+      26,
+      26
+    ]
+  ],
+  "method": "Actual contact sheet opened with view_image; before/edited layout and marker alignment inspected.",
+  "findings": [
+    "Dynamic feather mask clips source canvas and hides lost outgoing label.",
+    "At frame18 outgoing marker remains on visible source; incoming source is hidden.",
+    "At frame22 incoming source/label move together; outgoing anchor is lost and its marker hides.",
+    "At frame26 incoming marker aligns with source."
+  ],
+  "continuous_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false
+}

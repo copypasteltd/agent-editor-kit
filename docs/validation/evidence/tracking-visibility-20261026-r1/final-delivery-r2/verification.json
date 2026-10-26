@@ -1,0 +1,1580 @@
+{
+  "status": "passed",
+  "native_windows": true,
+  "virtualization": false,
+  "source_fallback": false,
+  "goal_complete": false,
+  "checked_at_utc": "2026-10-26T09:32:46.004759+00:00",
+  "product_files": 224,
+  "skill_files": 73,
+  "modules": 17,
+  "test_groups": [
+    {
+      "group": "tracking",
+      "tests": 125,
+      "skipped": 0,
+      "frozen_equal": true
+    },
+    {
+      "group": "magnetic",
+      "tests": 66,
+      "skipped": 0,
+      "frozen_equal": true
+    },
+    {
+      "group": "editing",
+      "tests": 195,
+      "skipped": 0,
+      "frozen_equal": true
+    },
+    {
+      "group": "bindings",
+      "tests": 71,
+      "skipped": 0,
+      "frozen_equal": true
+    },
+    {
+      "group": "float",
+      "tests": 98,
+      "skipped": 0,
+      "frozen_equal": true
+    },
+    {
+      "group": "render",
+      "tests": 46,
+      "skipped": 0,
+      "frozen_equal": true
+    },
+    {
+      "group": "audio",
+      "tests": 65,
+      "skipped": 0,
+      "frozen_equal": true
+    },
+    {
+      "group": "legacy",
+      "tests": 192,
+      "skipped": 0,
+      "frozen_equal": true
+    },
+    {
+      "group": "effects",
+      "tests": 219,
+      "skipped": 0,
+      "frozen_equal": true
+    },
+    {
+      "group": "text",
+      "tests": 98,
+      "skipped": 0,
+      "frozen_equal": true
+    }
+  ],
+  "functions": 60,
+  "services": 20,
+  "declarations": 75,
+  "readme_rows": 223,
+  "historical_rows_preserved": 217,
+  "original_goal_closures_preserved": 38,
+  "local_links_checked": 3223,
+  "actual_registered_skill_frames": 36,
+  "full_pcm_samples_per_channel": 144000,
+  "kit_sha256": "3d77d84ff210a65bba5dc11c0536dbc998bcbf4aabd04805f15f6c2d54e17e49",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 101437,
+      "sha256": "403f36db8dd5569cc4266898b5b3b0435f9d1bd0dbe808f6a39bd5710049a645"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 2388,
+      "sha256": "7fdaff2d9fe88f65a68ffe7ac9d003aaec5dddc410068fb3ee9ada4df8d18707"
+    },
+    {
+      "path": "README.en.md",
+      "bytes": 185629,
+      "sha256": "b3ebfdb19c5633594afaef62a405117ca9c6598a6cef19bb7649d2c07d93e6fe"
+    },
+    {
+      "path": "README.md",
+      "bytes": 173203,
+      "sha256": "d3798e0d9cac0a78f433853156d288cac6d429e6b933ef4d8feff25de6bb24e1"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "bytes": 174405,
+      "sha256": "d0ef1356b6437c3c2bd7b55feb10a0fba028503d9c85159393aefcdf09e01cec"
+    },
+    {
+      "path": "agent-ffmpeg-local-install-manifest.json",
+      "bytes": 26430,
+      "sha256": "2422c0fa459f61336bdab5fca1df927b01a5950961c8e135e478e4b408af9a25"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 12725,
+      "sha256": "23f331992356f4750a431d6bee1a3756bb80fbbee4e86a0645ae8c67ba6447f1"
+    },
+    {
+      "path": "docs/assets/tracking-visibility-20261026-r2/SOURCE.txt",
+      "bytes": 499,
+      "sha256": "3c853ee2042dd03ea61426edd00c5d9849480221bbb2cbcca8b2ba7a4a7fc2dc"
+    },
+    {
+      "path": "docs/assets/tracking-visibility-20261026-r2/before.mp4",
+      "bytes": 57898,
+      "sha256": "404c364ab7ea98f53dafc36ed7610b2292dd2c93ae70964ad0eed130b2f5d5c5"
+    },
+    {
+      "path": "docs/assets/tracking-visibility-20261026-r2/editable-tracking-visibility.aevpkg.zip",
+      "bytes": 13170159,
+      "sha256": "04bc8e5fbe6a0c08d008a821ec4020ec810cea1bed711aa884fd3ce74f727c03"
+    },
+    {
+      "path": "docs/assets/tracking-visibility-20261026-r2/editable-tracking-visibility.aevpkg.zip.conversion-report.json",
+      "bytes": 989,
+      "sha256": "6d6f9ba6466053dd663fdf0d01c26813589d3fd71da46881aecdf0723c091cf4"
+    },
+    {
+      "path": "docs/assets/tracking-visibility-20261026-r2/edited.gif",
+      "bytes": 293318,
+      "sha256": "713dcb1a717c17fcf3a39c32fc648a4066800a9c9c9f66a2496adad762989b53"
+    },
+    {
+      "path": "docs/assets/tracking-visibility-20261026-r2/edited.mp4",
+      "bytes": 62634,
+      "sha256": "7fc7133a89ba19dc25c2836606a3c0b0467a57d0712e05a9c2e0bbac853a34ab"
+    },
+    {
+      "path": "docs/assets/tracking-visibility-20261026-r2/media-manifest.json",
+      "bytes": 9142,
+      "sha256": "7a73bc2b2e1d90c876578f5cf9ce78235b5b3e983a36310ba2de108257b2d466"
+    },
+    {
+      "path": "docs/assets/tracking-visibility-20261026-r2/midpoint.png",
+      "bytes": 7656,
+      "sha256": "5d19368b65ed97114af186d73654f62dfe2048215a799bc9d07b1e03c40beb02"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.en.md",
+      "bytes": 177098,
+      "sha256": "5a6ee8dc368bc280da8b38d951b8af73d4ea0ce79a12259db48c65ced7b078ef"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.md",
+      "bytes": 174754,
+      "sha256": "01e1647b370196da291463adc0938ffe62bc4af37aeed36b95e48f82848cc70f"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.zh-TW.md",
+      "bytes": 174880,
+      "sha256": "91ead16c4b49b20f150ae89c01e02d233be0c5ca7edd5ffe15ecc36110cc54fc"
+    },
+    {
+      "path": "docs/product/CASES.md",
+      "bytes": 108915,
+      "sha256": "49df94696daf042a64911945a25f634b5667ce1f6cf2ae6e1e7c9bf07dc133c1"
+    },
+    {
+      "path": "docs/product/COMMUNITY_LOCAL_DELIVERY.md",
+      "bytes": 28367,
+      "sha256": "b858fa8a71a1e6d27588cfafcef3953a9f6b0e47bcd398ebe095820283b4d371"
+    },
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "bytes": 44613,
+      "sha256": "3f21f1a3898955b52c9497f7bc32a4c8c3ed157354e305f87a457146eda6f9ae"
+    },
+    {
+      "path": "docs/product/IMPLEMENTATION_PLAN_20261025.md",
+      "bytes": 17471,
+      "sha256": "6d7f1ff99ff45bccf7bf0eb7f286143d01750164a44b80f7aa117e5c81587134"
+    },
+    {
+      "path": "docs/product/SKILLS.en.md",
+      "bytes": 17319,
+      "sha256": "4bbc41170ddc7f32fce15359e41ebb0f9f1f42ccd3f9aa0daec18cd226f62be6"
+    },
+    {
+      "path": "docs/product/SKILLS.md",
+      "bytes": 16792,
+      "sha256": "d4c53737c425b37cdd8b5e26ac1810a63dd120805c94b781a83d5489abfbf2fa"
+    },
+    {
+      "path": "docs/product/SKILLS.zh-TW.md",
+      "bytes": 16828,
+      "sha256": "dcc3e36f9ecb55a74413887558145a15ee75cdcdc99c8094e6e26f618a01cd9e"
+    },
+    {
+      "path": "docs/product/TRACKING_VISIBILITY.md",
+      "bytes": 6158,
+      "sha256": "3d26cd6c54f0f2ff94efe2879b2423476f47b6b1c2583cf2f84fd65d37ae64b5"
+    },
+    {
+      "path": "docs/product/tracking-visibility-capabilities-cli-0.1.31.json",
+      "bytes": 124383,
+      "sha256": "b340dc55af0cb8926f3be88006d6c9aec6617727e2e553754b6da83e24019d61"
+    },
+    {
+      "path": "docs/releases/CLI_0.1.31_LOCAL.md",
+      "bytes": 1899,
+      "sha256": "c50df4630829eab8cbe7908d356965e910ae853e99e3d0eb3ac456b94d1cc79d"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.en.md",
+      "bytes": 7572,
+      "sha256": "ea16d4882b8d668d2efad4474a523d1ecdd60711dfb701428277a0423ccb3f5e"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.md",
+      "bytes": 7832,
+      "sha256": "51e7ffe478f4f5cfd66af7d9da0e1f8b9f9723d7c93a8a8a91c7f8be4bba6e4b"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.zh-TW.md",
+      "bytes": 7847,
+      "sha256": "317f5a190731e98378d810556e514e1182017c147d252fd801a497210b57d851"
+    },
+    {
+      "path": "docs/skills/agent-editor-kit-community-unified-skill-r32.zip",
+      "bytes": 576704,
+      "sha256": "3d77d84ff210a65bba5dc11c0536dbc998bcbf4aabd04805f15f6c2d54e17e49"
+    },
+    {
+      "path": "docs/skills/community-unified-skill-package-0.1.31-r32.json",
+      "bytes": 415,
+      "sha256": "f9a6da90cdee042a7b6543d06e671928bdb14fa6698ff058ca5dc40b833f2146"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/activation-final-r1/activation-and-registration.json",
+      "bytes": 1750,
+      "sha256": "7069111476ccd2b7f6538aa50e220060a904f1b9c1655b20b9e04a88f71f8622"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/activation-final-r1/activation.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/activation-final-r1/activation.stdout.json",
+      "bytes": 706,
+      "sha256": "5c849a131d92892ff98cc1493f692d708a0cb19878908b39ee1bb2748d8d69fe"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/activation-final-r1/executed-generator.py",
+      "bytes": 2622,
+      "sha256": "7c2ae7a80275ee62e5f4fcb15c4ad5a8060a69c973b0c6e6c571f9868e310657"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/activation-final-r1/kokoro-zh-en-cuda13.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/activation-final-r1/kokoro-zh-en-cuda13.stdout.json",
+      "bytes": 659,
+      "sha256": "0734ef01b53919f32a76748dd4963eacd73d6a7930ffaae6e9003d4e667732c2"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/activation-final-r1/kokoro-zh-en-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/activation-final-r1/kokoro-zh-en-int8.stdout.json",
+      "bytes": 655,
+      "sha256": "4c470e61c5b8552483bfa5cb385354c9d1514b2f2e5d2bd126ebf8d596249e6c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/activation-final-r1/opus-zh-en-cpu-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/activation-final-r1/opus-zh-en-cpu-int8.stdout.json",
+      "bytes": 660,
+      "sha256": "2aedec0d58c634a7a0b826f3e51168c75a7bd9dc0f452e4211a128bf29760c12"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/activation-final-r1/opus-zh-en-cuda12-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/activation-final-r1/opus-zh-en-cuda12-int8.stdout.json",
+      "bytes": 666,
+      "sha256": "32a4c9b8826f7915837e7bd8194529edf08a968cb02b539e136d79edfd4adad1"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/activation-final-r1/previous-community-runtime.json",
+      "bytes": 797,
+      "sha256": "215495ee2c7f917d3394f3cae9821f4ad74765e1600af1282f1468b9f228b61c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/activation-final-r1/previous-runtime.json",
+      "bytes": 624,
+      "sha256": "fd1adc858527c3b69221ec04c7df307674ba715de61adb28c3d043bdda392c79"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/activation-final-r1/registration.json",
+      "bytes": 939,
+      "sha256": "27b9380f5bb17da98a69494edaf5552c3eb251e563dbd9bda50a20ac36c7448b"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/activation-final-r1/registration.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/activation-final-r1/registration.stdout.txt",
+      "bytes": 373,
+      "sha256": "34fe1b9b9791631e7cf93aeee191a7d54cc6cbec0308ca858f0c5cfa89cc39dd"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/activation-final-r1/verification.json",
+      "bytes": 749,
+      "sha256": "f154fdb1f443af449e933eaf562140b04d95a6486758dff005d8484ea67f2b0e"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/audio-installed-r1/executed-runner.py",
+      "bytes": 4884,
+      "sha256": "dd4533135f004ce0a42d9f6dfe9acad289eb21e245b2f2be3d203d611e7ec243"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/audio-installed-r1/tests.log",
+      "bytes": 11726,
+      "sha256": "79283661b7bb67f906fb2233d8c669ec187cd60e0e21acab9071699ac2c26ec9"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/audio-installed-r1/verification.json",
+      "bytes": 21011,
+      "sha256": "1c3611fe54e2378ec944f5913ab38e2f911689cb36a1cd095a4d78cf752a930a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/bindings-installed-r1/executed-runner.py",
+      "bytes": 4884,
+      "sha256": "dd4533135f004ce0a42d9f6dfe9acad289eb21e245b2f2be3d203d611e7ec243"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/bindings-installed-r1/tests.log",
+      "bytes": 11972,
+      "sha256": "aaac2e3aa488368096902cef2b0071c84b288185f9060dc9869388bdd9b2cc41"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/bindings-installed-r1/verification.json",
+      "bytes": 21002,
+      "sha256": "8f7250165ca0fb60e7d39cc024fb404436d5c4ead543c4b134d5a3f0e66c46c0"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r1/executed-generator.py",
+      "bytes": 15474,
+      "sha256": "ace3e238e2be7f7d587c35ec5ff76c860b3d5d2d47c5599c84e373286bf0fe1e"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r1/import-source.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r1/import-source.stdout.log",
+      "bytes": 1601,
+      "sha256": "5a63842f3f1c574228fb203bd118e3b2c018d7e872327f8581dfec3d84718a67"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r1/initial-author-project.json",
+      "bytes": 37745,
+      "sha256": "3dc2c3ed2f23435612603aa2dab82291ef8b20fe85c313c2d7c348a5b50daaf7"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r1/validate-initial.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r1/validate-initial.stdout.log",
+      "bytes": 5586,
+      "sha256": "8e4c70760c985d04123ac2ab2b66cd02121ab259e70080b0df93449a1ddf67e6"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r1/verification.json",
+      "bytes": 7312,
+      "sha256": "23f4e8c46001ba4d10d46bd8e603fce232de7be0fa5e39b8e3ea4ba72ba2410c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r1/version.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r1/version.stdout.log",
+      "bytes": 1167,
+      "sha256": "02cd3b425f1257dabac6e9b957fa36120128f94ceb92be4958e25555c7c54269"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/before-frames.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/before-frames.stdout.log",
+      "bytes": 3095,
+      "sha256": "f25a57455e27f717ee33152832e37e145a2cfb366dc3ad5345e81862a192699d"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/before-mp4.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/before-mp4.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/before-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/edited-frames.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/edited-frames.stdout.log",
+      "bytes": 3095,
+      "sha256": "a6a957eb211628819325b3379e23ab008eae0b76a34669b462dc284c879ce300"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/edited-mp4.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/edited-mp4.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/edited-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/executed-generator.py",
+      "bytes": 15699,
+      "sha256": "3c8e82c8b004ed8e4c62ed0d2240ad6316db7ddb2006f203688003ed111802fb"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/export-package.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/export-package.stdout.log",
+      "bytes": 3856,
+      "sha256": "8005bb0f8e80f80e241e9e15354dd5a65fe3a81ddb0f511c7dec867b8093644d"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/gif.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/gif.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/gpu-receipt.json",
+      "bytes": 3513,
+      "sha256": "a5a2de0b597a9c9ec8af51cfe56d67ed94d1ab43ff0f8e1978722e23f6397dc5"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/import-edited.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/import-edited.stdout.log",
+      "bytes": 1622,
+      "sha256": "5ded94b57128be7bbbef679cc8128358a012a91441c47fc5098469cd40a6c3c8"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/import-source.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/import-source.stdout.log",
+      "bytes": 1601,
+      "sha256": "e935f649aa0f1a6cc720f4433dfbee07cb85da90848d8e8242bb9d5b60ca9f79"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/independent-footprint-oracles.json",
+      "bytes": 19590,
+      "sha256": "86f4557f10059c50163fe312186fc4b16ef9a7374c9865b7c7c9b741d7f5640f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/independent-unbound-oracle-project.json",
+      "bytes": 41589,
+      "sha256": "3239133a534da4714e5129d9ea00ec8ce5665b2c2ea24eecb4aa01fc1e7da13f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/initial-author-project.json",
+      "bytes": 38140,
+      "sha256": "0f6ad2e8957c384aa92d933a246da596485827c19da6b40552b3bcf67880a437"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/midpoint.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/midpoint.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/native-float-frame-oracles.json",
+      "bytes": 7805,
+      "sha256": "3299262594f8a65fb5868999aff951f155d4710f298b34fdc887488670b2b9d2"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/oracle-frames.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/oracle-frames.stdout.log",
+      "bytes": 3095,
+      "sha256": "a6a957eb211628819325b3379e23ab008eae0b76a34669b462dc284c879ce300"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/oracle-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/preview-0.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/preview-0.stdout.log",
+      "bytes": 171360,
+      "sha256": "dedac49c45947358ecf879f4ed9f3b90f7076f71f623d43bb9b276321cf1347d"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/preview-17.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/preview-17.stdout.log",
+      "bytes": 171426,
+      "sha256": "50843e155e377afce9c6cfbc26f3d80b48ed44d8c8917e710da420aab3d9e57a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/preview-18.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/preview-18.stdout.log",
+      "bytes": 174050,
+      "sha256": "864ee53732ac6dc858158621125eefbce13f830c382784c67457d1685e627489"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/preview-22.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/preview-22.stdout.log",
+      "bytes": 174141,
+      "sha256": "2fb6994328d15141f441ef1c37da52a13873d62da5f786d83678bb84ea3625ea"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/preview-26.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/preview-26.stdout.log",
+      "bytes": 174142,
+      "sha256": "b81a3f0f80d2b40d2612c176ed99d980d1f390cba2cee728a43005bed06467d4"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/preview-27.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/preview-27.stdout.log",
+      "bytes": 171422,
+      "sha256": "3c590d890124e339a2929035c8f7fdecb496dadb2dc90a2a95f95f041982d7a6"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/preview-35.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/preview-35.stdout.log",
+      "bytes": 171419,
+      "sha256": "4ba9df1780185580355028c81692bce4247e1a80d3048683d5d2ec29a05724c3"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/preview-9.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/preview-9.stdout.log",
+      "bytes": 171415,
+      "sha256": "ea18d637e9b4fa0b2cfd4ed740f961c75e5714c8ec01ad461c760f40c7619c75"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/quality.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/quality.stdout.log",
+      "bytes": 3438,
+      "sha256": "84542668c407c603777258503eb68891fc8f8d6bce096c12fbbddcc43b29db3f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/render-before.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/render-before.stdout.log",
+      "bytes": 218016,
+      "sha256": "3cf987e74584490ef7341efb856d2a91f627555bb7500f87e803f39143d59c94"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/render-edited.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/render-edited.stdout.log",
+      "bytes": 218020,
+      "sha256": "26302a87ea4e0a94d3b6e99c717a93005eb7446c9eb0c9f4ac1e363b86c9cfd1"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/render-imported.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/render-imported.stdout.log",
+      "bytes": 218222,
+      "sha256": "4bb93f9cc903dcac4fe6fc837198896d113a5c7281a36e65b9f84e8713ae1987"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/render-oracle.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/render-oracle.stdout.log",
+      "bytes": 200556,
+      "sha256": "af13cb7f90de79dbd9f5a23a794c1b6db85c40f4de25cc3a75ffcf68e1c3f0bd"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/render-plan.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/render-plan.stdout.log",
+      "bytes": 77469,
+      "sha256": "d5dd7dc104b55d4201875efe65b57ce6ed148d3cccb72c6dbbe1a0609b2149d7"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/restored-frames.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/restored-frames.stdout.log",
+      "bytes": 3095,
+      "sha256": "a6a957eb211628819325b3379e23ab008eae0b76a34669b462dc284c879ce300"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/restored-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/validate-imported.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/validate-imported.stdout.log",
+      "bytes": 810,
+      "sha256": "75870fcd823c3c4d8ff1834d09d664f255b148f9d43b5c61768649dd22f9d079"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/validate-initial.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/validate-initial.stdout.log",
+      "bytes": 807,
+      "sha256": "c302a01633aa4d7d4357d9dc49388cf3b59dbc26a8410aab17378cf89d5acf2b"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/verification.json",
+      "bytes": 32895,
+      "sha256": "2957099d720ea0e56821bb761333d91d0e5491859277d2d4becfa1f6cef57576"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/version.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/case-r2/version.stdout.log",
+      "bytes": 1167,
+      "sha256": "7e521ec533582a0908f74240de009d9cc8c7f16c7f46dc51000d7e8a6d8ea957"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/development-attempts-r1/executed-generator.py",
+      "bytes": 1718,
+      "sha256": "8e0e06b285feae8fe894c848281fb04609fa5cfcf3c080098f9f48a867dfe255"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/development-attempts-r1/verification.json",
+      "bytes": 1718,
+      "sha256": "9d1492694532ecdd5fa5e1e52727f59262fb853b900d9d3421f48df046389c72"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/editing-installed-r1/executed-runner.py",
+      "bytes": 4884,
+      "sha256": "dd4533135f004ce0a42d9f6dfe9acad289eb21e245b2f2be3d203d611e7ec243"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/editing-installed-r1/tests.log",
+      "bytes": 31311,
+      "sha256": "567e4d539bd5d0b7f6cceac16e75e3bc2244b7ce99c6e92de0a38560fed2ca1a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/editing-installed-r1/verification.json",
+      "bytes": 21045,
+      "sha256": "8179592700e7fe3edd356596db04a023ca2a1e0e2957b3b9fa1fe98fdb6005de"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/effects-installed-r1/executed-runner.py",
+      "bytes": 4884,
+      "sha256": "dd4533135f004ce0a42d9f6dfe9acad289eb21e245b2f2be3d203d611e7ec243"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/effects-installed-r1/test_float_standard_render-error_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/effects-installed-r1/test_float_standard_render-native_calls.json",
+      "bytes": 39809,
+      "sha256": "5b16cc3964b724b4ec4bc38c76659948c10ef05e569bacc29b653a9693fd7bc0"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/effects-installed-r1/test_float_standard_render-render_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/effects-installed-r1/tests.log",
+      "bytes": 35666,
+      "sha256": "6978df54654756d7fe219c411ec83ca7b2981d9f155bbb2b9f8c4d5f6c07f7b0"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/effects-installed-r1/verification.json",
+      "bytes": 21070,
+      "sha256": "3866cfd57169326437ce44a776f8ab7c5c73e8d03fa23839d14fc227b5095a2b"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/final-delivery-r1/executed-generator.py",
+      "bytes": 11557,
+      "sha256": "a1f792fc4350eb238ba048d28411357b7ad8cdd381a416f722092726281e1a2c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/final-delivery-r1/product-files.json",
+      "bytes": 20132,
+      "sha256": "f77ebddaf33f180d684c6f638a90ec803980f9a6a39cee7a0fb342c05bb951ef"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/final-delivery-r1/verification.json",
+      "bytes": 64865,
+      "sha256": "5be19f7c3b8917c5384e1f1152f9ef39eb32608a9e039a911311f081a661e1c9"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/float-installed-r1/executed-runner.py",
+      "bytes": 4884,
+      "sha256": "dd4533135f004ce0a42d9f6dfe9acad289eb21e245b2f2be3d203d611e7ec243"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/float-installed-r1/test_float_standard_render-error_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/float-installed-r1/test_float_standard_render-native_calls.json",
+      "bytes": 10423,
+      "sha256": "eccd50a7d0d24760759d1da3e599ad8d5fe7f7780323474dd38840ef8c7a01a9"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/float-installed-r1/test_float_standard_render-render_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/float-installed-r1/tests.log",
+      "bytes": 17048,
+      "sha256": "5becfca3b36184136cb8851fe6ef5dcf6424c683e81ce0376000d46086f2bdec"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/float-installed-r1/verification.json",
+      "bytes": 21047,
+      "sha256": "cb11a78eb94013b883b4800f5d707517bce2530782800aca05bf613bd04bd01f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/installation-final-r1/build.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/installation-final-r1/build.stdout.json",
+      "bytes": 448,
+      "sha256": "86d2453c69f93b9d1d9c2d21dbdb7af233027809dfe4a4a2628a6840921dbb69"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/installation-final-r1/calls.json",
+      "bytes": 2616,
+      "sha256": "a69c85520955ebfdebe1eadd4d5ed45a9ccf6fc4869c6cbeafcbd069e9cc4fca"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/installation-final-r1/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/installation-final-r1/capabilities.stdout.json",
+      "bytes": 124383,
+      "sha256": "b340dc55af0cb8926f3be88006d6c9aec6617727e2e553754b6da83e24019d61"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/installation-final-r1/executed-generator.py",
+      "bytes": 5365,
+      "sha256": "34463b8b527465e072896acd808a56c69c245b7c47aea48f452eef5e6b926a65"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/installation-final-r1/install.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/installation-final-r1/install.stdout.json",
+      "bytes": 1708,
+      "sha256": "bb86bde0561d44a07b62f4dadae650ea0e15ff26d2d1e4d31bd8c74b63a1121b"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/installation-final-r1/verification.json",
+      "bytes": 29972,
+      "sha256": "93f9a7579a0b0a4b93ec39084ffbac767a1d5c1471d13dad029294709b2a8fc6"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/installation-final-r1/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/installation-final-r1/version.stdout.json",
+      "bytes": 1167,
+      "sha256": "d3db6d33f20053da2543c89c5f3e3baf1188f222478853704607bdfbf9059758"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/calls.json",
+      "bytes": 10940,
+      "sha256": "b59ef16a040e3156c43ab616d7f1e4cfa3fe03fb277323880e8bbadd38b9b823"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/capabilities.stdout.txt",
+      "bytes": 124383,
+      "sha256": "e5eea1d3ff277370c0b650a3679b512388ed73dd2830bbea203e584d9cf9f5f5"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/configure.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/configure.stdout.txt",
+      "bytes": 840,
+      "sha256": "0e83fc5f1f7459559e5d8130cd8cd8dc9f1708c7d05723e0a73c203d3e484b39"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/executed-generator.py",
+      "bytes": 12779,
+      "sha256": "d80baea354aa45b4968a71ed31bf921fe8b71c1e378835d62a8722e77c1e87e2"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/float-render-dry-run.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/float-render-dry-run.stdout.txt",
+      "bytes": 209620,
+      "sha256": "8060e8d216519a37905abf2e37d1c6a21b4722e7213e846e731f7f3ca7af088a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/import-case.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/import-case.stdout.txt",
+      "bytes": 1625,
+      "sha256": "b99e4acebc5268cf75671840457a4e0439e95af26855f04be5d51f7e988c3c86"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/import-tracking-edit-case.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/import-tracking-edit-case.stdout.txt",
+      "bytes": 1626,
+      "sha256": "2ffe0f10f74f2c021d55767ce8eb2fa30425bc64a9a7ea6dbd9d85d31d7948d1"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/import-visibility-case.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/import-visibility-case.stdout.txt",
+      "bytes": 1634,
+      "sha256": "316a8408826f6b3d7eabeb85e0b553dba6bc74886412b56e6af579269f71c8b9"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/register.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/register.stdout.txt",
+      "bytes": 360,
+      "sha256": "37b3cc1e8205233cc4e9330003b594b9decc4eba7991a03235639203a9061c83"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/registration.json",
+      "bytes": 1143,
+      "sha256": "e5b6b32c872ab3a9233273c4c5dc9b9cacc918571c0547f49de297fdf6ddab7a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/tracking-edit-plan.json",
+      "bytes": 13802,
+      "sha256": "57f3a4e2a33baca73cd962c41c6d3dad6c8899b86ec78e5bd9cb0014db6445bd"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/tracking-visibility-dry-run.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/tracking-visibility-dry-run.stdout.txt",
+      "bytes": 8727,
+      "sha256": "c50fd32bbb0266e8b34cad17ac43d475d05b168eb956c546d8bb276bc6e29e19"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/transition-help.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/transition-help.stdout.txt",
+      "bytes": 930,
+      "sha256": "6ba1c7e3bc0e34c0363aacbe265838ab48f04a0e6d45976ceea2cfeea2fa80a5"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/validate-tracking-edit-case.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/validate-tracking-edit-case.stdout.txt",
+      "bytes": 813,
+      "sha256": "422525795d0a192a1d76c7b41f35ec279b8a73371cc7a22b58d11cda66f92917"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/validate-visibility-case.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/validate-visibility-case.stdout.txt",
+      "bytes": 813,
+      "sha256": "7c5ab304e051dfa8bdcebfa062da3c3aa3866900dd08459309fe6402a1bf3c92"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/validate.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/validate.stdout.txt",
+      "bytes": 813,
+      "sha256": "186d70b2bc8bd097467f3da9d955779598e68fb72ddc68959360188ff5525e52"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/verification.json",
+      "bytes": 45740,
+      "sha256": "48250f157cd4b7ef69735276f918af75b513f14b9d06c5f37be3905f9c329b18"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/version.stdout.txt",
+      "bytes": 1167,
+      "sha256": "5bf7f6f7458c33e69d8efde9f270984826ef6106c919db1ce89b767bbff18da4"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/visibility-render-plan.json",
+      "bytes": 110067,
+      "sha256": "7d79b82ed3eae966bb80413ab90f6b9b6afc3e073f64c5ab837bce4df98318db"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/visibility-render-plan.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/visibility-render-plan.stdout.txt",
+      "bytes": 77616,
+      "sha256": "95ba55f2dbae2598d6da1f969331c9a1fbac7f8feaaafcb6a4194e2cceed2781"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/legacy-installed-r1/executed-runner.py",
+      "bytes": 4884,
+      "sha256": "dd4533135f004ce0a42d9f6dfe9acad289eb21e245b2f2be3d203d611e7ec243"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/legacy-installed-r1/tests.log",
+      "bytes": 28167,
+      "sha256": "91574b8fe1c52b1d330e6543caca9e284eb2e4b946082efe7b1561f486060919"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/legacy-installed-r1/verification.json",
+      "bytes": 21018,
+      "sha256": "522cd2b90adeb6dfeb0ac09c98600f6f84dc90127c2e98a00411a3ade3f99b56"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/magnetic-installed-r1/executed-runner.py",
+      "bytes": 4884,
+      "sha256": "dd4533135f004ce0a42d9f6dfe9acad289eb21e245b2f2be3d203d611e7ec243"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/magnetic-installed-r1/tests.log",
+      "bytes": 11352,
+      "sha256": "713adc66ddfc399c36b2ea45a3dc14e4ee85b8aa382d57d0628ce4e4a4b18a14"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/magnetic-installed-r1/verification.json",
+      "bytes": 20977,
+      "sha256": "33b6da9d959a902d127ee04b0b326f9987bea6f346530881cbcca29007077bbd"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/media-inspection-r1/before-0.png",
+      "bytes": 7217,
+      "sha256": "1f1a59892dcf5b5f05f76bf293f83f488b6761c40f611956ce1fc79d71519a65"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/media-inspection-r1/before-18.png",
+      "bytes": 8277,
+      "sha256": "c1375bd807196f84553be6032e47acf0bfa52446e150ca01defe113797461bd5"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/media-inspection-r1/before-22.png",
+      "bytes": 8499,
+      "sha256": "dbca8311a229bc0d54bf552894415bc93103053106f5680df776c7ce8570a96c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/media-inspection-r1/before-26.png",
+      "bytes": 8336,
+      "sha256": "55ce5032e884b1e99eae75be5591ec84c907c2a0b482170e958557d72bfc6c6a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/media-inspection-r1/before-9.png",
+      "bytes": 7390,
+      "sha256": "44e46177247d73f1152f9aa47e504789e1f92557633dcbc656fbfbf36141f274"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/media-inspection-r1/contact-sheet.png",
+      "bytes": 83919,
+      "sha256": "c725e41427269ab0d07c0380ed7c28d752332babd3bb0b8d086bb67a53bede27"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/media-inspection-r1/edited-0.png",
+      "bytes": 7263,
+      "sha256": "fe18a7dcb0430a0edd686fcdbe68dd5572c9edf0220aed2931760eb678799263"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/media-inspection-r1/edited-18.png",
+      "bytes": 7110,
+      "sha256": "128f697d9575f65e383fe5291c580eb33cc1a96b02994b4ad2a4b59390802d7a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/media-inspection-r1/edited-22.png",
+      "bytes": 7656,
+      "sha256": "5d19368b65ed97114af186d73654f62dfe2048215a799bc9d07b1e03c40beb02"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/media-inspection-r1/edited-26.png",
+      "bytes": 7002,
+      "sha256": "c0e35161c92491dda078a27339487052b74c203d20b73f8d9cba17a53a2d120e"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/media-inspection-r1/edited-9.png",
+      "bytes": 6462,
+      "sha256": "3db1799d59a598b719065b81ba0247323cb1ac34ef5d73dfbdfcb882dc33e2a5"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/media-inspection-r1/executed-generator.py",
+      "bytes": 2560,
+      "sha256": "20479bcc3bf1134faeda92583d7f15700628e8854bf498cfc240341c67ca5a5b"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/media-inspection-r1/still-review.json",
+      "bytes": 861,
+      "sha256": "5825e843e3f6d1af4f489d5dc1a599b49405c89305ceabc6e3e3bf2b5db37291"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/media-inspection-r1/verification.json",
+      "bytes": 9091,
+      "sha256": "7acefd7c88280a851706f5f55408dbe1e085bcd0a857e4016dc56bb2fdf4db55"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/queue-r1/actual-frames.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/queue-r1/actual-frames.stdout.log",
+      "bytes": 3095,
+      "sha256": "a6a957eb211628819325b3379e23ab008eae0b76a34669b462dc284c879ce300"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/queue-r1/actual-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/queue-r1/actual-pcm.stdout.log",
+      "bytes": 72,
+      "sha256": "2457e1dafca532f821e0f438ce364d40346c49f21e95157ff18c3b2c4aa1c6db"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/queue-r1/enqueue.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/queue-r1/enqueue.stdout.log",
+      "bytes": 1386,
+      "sha256": "1fa304dd341a6b41ae0fd76d10589a0f9dd99d1bb28fdea459b203c4c4cacaeb"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/queue-r1/executed-generator.py",
+      "bytes": 4224,
+      "sha256": "88b23633ab6d2b2faff9da5edc73f632b7aa9512ff7c932452185fc0f95b28f9"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/queue-r1/import.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/queue-r1/import.stdout.log",
+      "bytes": 1614,
+      "sha256": "a58d7f70bf507a9088bee511f6e4f8824858658919e46c320f5406389d1ca166"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/queue-r1/jobs.json",
+      "bytes": 249,
+      "sha256": "d21062212f542a03971becce1c3c8275c001fd687e1937eeb663efc77c3f5e62"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/queue-r1/queued-frames.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/queue-r1/queued-frames.stdout.log",
+      "bytes": 3095,
+      "sha256": "a6a957eb211628819325b3379e23ab008eae0b76a34669b462dc284c879ce300"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/queue-r1/queued-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/queue-r1/queued-pcm.stdout.log",
+      "bytes": 72,
+      "sha256": "2457e1dafca532f821e0f438ce364d40346c49f21e95157ff18c3b2c4aa1c6db"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/queue-r1/run.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/queue-r1/run.stdout.log",
+      "bytes": 933,
+      "sha256": "f262e5508df365a1e39341a2bc2f6527037fa7ebae8513c90456ffbd1d3d07cf"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/queue-r1/verification.json",
+      "bytes": 5810,
+      "sha256": "152fa9477f5ee8404cd6e8fb6c22ff7a744c5fe07079ad24bc328c028bbe87db"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/registration-current.json",
+      "bytes": 939,
+      "sha256": "7a6fe2b259bdd9c046b19dc441e234d3e9c49d60a618505301063aa12f602d11"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/render-installed-r1/executed-runner.py",
+      "bytes": 4884,
+      "sha256": "dd4533135f004ce0a42d9f6dfe9acad289eb21e245b2f2be3d203d611e7ec243"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/render-installed-r1/test_float_standard_render-error_receipts.json",
+      "bytes": 2900,
+      "sha256": "d6eea4a7373ed13deccb317ec07d7b10186833faab3dca709b10ef8c45d24d96"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/render-installed-r1/test_float_standard_render-native_calls.json",
+      "bytes": 56641,
+      "sha256": "a0154c02a35f1893b55cee1a6744e6cb509bd78d5991eeb5f59fb47a1fba19d2"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/render-installed-r1/test_float_standard_render-render_receipts.json",
+      "bytes": 375509,
+      "sha256": "b2148e8ef27ba0ec2b3bdc92faa4d60d742e0277f43af80e5a4e5b290ea23bce"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/render-installed-r1/tests.log",
+      "bytes": 8596,
+      "sha256": "ea4cff952cbd26773bf5b0cc34f24cfa807ea964c87dbdc7c544a463e5928e59"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/render-installed-r1/verification.json",
+      "bytes": 21005,
+      "sha256": "a517d088564e8726c44c031bba1743e5a5225f2a4a74ba4d6456d327511a3863"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/source-r1/executed-runner.py",
+      "bytes": 4682,
+      "sha256": "c82c6f91489634c5f979ebb46f3574df7dbfe8f7314b297432982682337f31fe"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/source-r1/tests.log",
+      "bytes": 16221,
+      "sha256": "2ef1c802ba2e35b3c2b77ed21cea6e1b54f1fb246701869ffd4aff4c3bd8761b"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/source-r1/verification.json",
+      "bytes": 20978,
+      "sha256": "f436ce7b1358ae445dd4d1aca1af71c69ba6c9e65880e089dffa044c7ef5396d"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/source-r2/executed-runner.py",
+      "bytes": 4884,
+      "sha256": "dd4533135f004ce0a42d9f6dfe9acad289eb21e245b2f2be3d203d611e7ec243"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/source-r2/tests.log",
+      "bytes": 41433,
+      "sha256": "1393b7dcacf00e4abae7c7563a8e4e0d5618955dd19d3c13d96e152360f9bd0d"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/source-r2/verification.json",
+      "bytes": 21045,
+      "sha256": "03976a47c136f6ed6d910590785f4a14ee8b58a2ec59674323a69c46f50dff0b"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/source-r3/executed-runner.py",
+      "bytes": 4884,
+      "sha256": "dd4533135f004ce0a42d9f6dfe9acad289eb21e245b2f2be3d203d611e7ec243"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/source-r3/tests.log",
+      "bytes": 23392,
+      "sha256": "6f9a37e7319f83f30baf96fc50a54264a85359a1a3d0f70a4d174f6f891e661f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/source-r3/verification.json",
+      "bytes": 21045,
+      "sha256": "a1f415bffa90d2c12a895b482f8f091d5ef61042bbed41af5c9ed2b4e4775419"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/source-r4/executed-runner.py",
+      "bytes": 4884,
+      "sha256": "dd4533135f004ce0a42d9f6dfe9acad289eb21e245b2f2be3d203d611e7ec243"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/source-r4/tests.log",
+      "bytes": 28027,
+      "sha256": "e827fa4fed57c448fb2cfdfba0f71f74e370b4f99ab617840cc30518eca2d1e3"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/source-r4/verification.json",
+      "bytes": 21045,
+      "sha256": "7ca9e9e2d816ff9675dd9583c85330659037c2fb3294139b1b1af7ead277c098"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/source-r5/executed-runner.py",
+      "bytes": 4884,
+      "sha256": "dd4533135f004ce0a42d9f6dfe9acad289eb21e245b2f2be3d203d611e7ec243"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/source-r5/tests.log",
+      "bytes": 24196,
+      "sha256": "1c999c39992c096ee81de9f91f7b357262d8907c4f9037e1b5a4afd372172f06"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/source-r5/verification.json",
+      "bytes": 21045,
+      "sha256": "3fb433569e0ec0f63bbb43766bf754d8504afa74e10cb81983f2a90181e938b0"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/staged-byte-r1/executed-generator.py",
+      "bytes": 4853,
+      "sha256": "a21852312f60db667163e19b45b3d109486226f2ede66577027fa6c04111d395"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/staged-byte-r1/verification.json",
+      "bytes": 381,
+      "sha256": "5ca587b3bd9831a0136070d04c1018ad632cd3b485e66e6e015294b50f9c1bf6"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/text-installed-r1/executed-runner.py",
+      "bytes": 4884,
+      "sha256": "dd4533135f004ce0a42d9f6dfe9acad289eb21e245b2f2be3d203d611e7ec243"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/text-installed-r1/tests.log",
+      "bytes": 15769,
+      "sha256": "d5cc5c27044bdb47b00c1cf47b5de9ef2f27812846b5a99edc9e70841932e8a9"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/text-installed-r1/verification.json",
+      "bytes": 21057,
+      "sha256": "2768c8e5fbdae399b5cef109a034718ecc94338bfa73127e619fe3fd82f698da"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/tracking-installed-r1/executed-runner.py",
+      "bytes": 4884,
+      "sha256": "dd4533135f004ce0a42d9f6dfe9acad289eb21e245b2f2be3d203d611e7ec243"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/tracking-installed-r1/tests.log",
+      "bytes": 24196,
+      "sha256": "86b312537b63056c983f5f1ff2809fa1b20b45391930b85f2abbab3e154ec32c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-visibility-20261026-r1/tracking-installed-r1/verification.json",
+      "bytes": 21142,
+      "sha256": "3cca062c87e61f2ebd9a9f8d1daa3fc74fb1d0e4b37f5b81885a4d554811d033"
+    },
+    {
+      "path": "docs/validation/跟踪实际可见度实测_2026-10-26.md",
+      "bytes": 4406,
+      "sha256": "f8e7bf7aeff49306c4a5b0a3c343ec65703dd8e280faf1f7b6a3ba99b7a68f47"
+    },
+    {
+      "path": "product/pyproject.toml",
+      "bytes": 1451,
+      "sha256": "3e68208c0198269d0f58cf0a7034301ee47ebc92835a62861da629d177dadfb8"
+    },
+    {
+      "path": "product/src/ai_ad_editor/__init__.py",
+      "bytes": 181,
+      "sha256": "c94739a891cbf34636622da9b10afc9ba002910131951e49dc677de496f849d4"
+    },
+    {
+      "path": "product/src/ai_ad_editor/capabilities.py",
+      "bytes": 147586,
+      "sha256": "f1070fed374d07f8aa91f9d81f5732b04a0c7d93cf8559b5dd1a19b1fefae91e"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_timeline.py",
+      "bytes": 34716,
+      "sha256": "8340d14a490060d031c87185e8521c88b6917e7cea99154c940e69d347fdf8ed"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_tracking.py",
+      "bytes": 16369,
+      "sha256": "955978836503f032531d9d603183a3b0ec0609de804326efa69cd7a8b08f2dcf"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_tracking_visibility.py",
+      "bytes": 4229,
+      "sha256": "b5fdd9731c388823828a4707009cab58d04a1d5a247a3b3207379dc998ac43c6"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_transition_plan.py",
+      "bytes": 5634,
+      "sha256": "9081584a60972c789efac8f4405ac54cf4ce4cf2046982dd88932b17c3892912"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_transition_trace.py",
+      "bytes": 6649,
+      "sha256": "da56460b3feff19c8e058b4cd534c686bcd9291711b7e0b4c699a41d0edcfa74"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_transitions.py",
+      "bytes": 14515,
+      "sha256": "7de54ec6bd9497c8b9363707262d3b267cceb30576f61bb56747ebae137dd758"
+    },
+    {
+      "path": "product/src/ai_ad_editor/retime_edits.py",
+      "bytes": 13803,
+      "sha256": "5ecf938272065bcd490dd31ee90185a43beb2188a378288640f64a4a09073d8a"
+    },
+    {
+      "path": "product/src/ai_ad_editor/sequence_selection.py",
+      "bytes": 4507,
+      "sha256": "b23b67303b22ca56341a09b82c047a98b63c6a12c90ca8a3015530e9c225de2b"
+    },
+    {
+      "path": "product/tests/test_float_tracking.py",
+      "bytes": 15557,
+      "sha256": "83e449575edb18d7cae2ee2b7bf88066dd1a454620ea48fbae90910c6caf9cda"
+    },
+    {
+      "path": "product/tests/test_tracking_visibility.py",
+      "bytes": 18121,
+      "sha256": "933e52659d72fdb307fbbf9e4af90070c053438777a80402320085d72f1c6b26"
+    },
+    {
+      "path": "scripts/activate_tracking_visibility_20261026.py",
+      "bytes": 2622,
+      "sha256": "7c2ae7a80275ee62e5f4fcb15c4ad5a8060a69c973b0c6e6c571f9868e310657"
+    },
+    {
+      "path": "scripts/audit_tracking_visibility_delivery_20261026.py",
+      "bytes": 11557,
+      "sha256": "a1f792fc4350eb238ba048d28411357b7ad8cdd381a416f722092726281e1a2c"
+    },
+    {
+      "path": "scripts/audit_tracking_visibility_stage_20261026.py",
+      "bytes": 4853,
+      "sha256": "642e25212e54e9d2c38a28d71c4cdcf7d3f46ed4f35857d019e2ddb14eb3e84e"
+    },
+    {
+      "path": "scripts/build_tracking_visibility_20261026.py",
+      "bytes": 5365,
+      "sha256": "34463b8b527465e072896acd808a56c69c245b7c47aea48f452eef5e6b926a65"
+    },
+    {
+      "path": "scripts/document_tracking_visibility_20261026.py",
+      "bytes": 18138,
+      "sha256": "bb6f39d1f234227ab889fdfc1cf8f7f0526544d6b5d9b32a7cd2e5ddb55f5bfe"
+    },
+    {
+      "path": "scripts/inspect_tracking_visibility_media_20261026.py",
+      "bytes": 2560,
+      "sha256": "20479bcc3bf1134faeda92583d7f15700628e8854bf498cfc240341c67ca5a5b"
+    },
+    {
+      "path": "scripts/package_community_skill.py",
+      "bytes": 5076,
+      "sha256": "9b4f722620d1a693b5b0a454faabca9344ee6d1c4df53570fd5b5e24cc550b8a"
+    },
+    {
+      "path": "scripts/pin_community_skill.py",
+      "bytes": 3278,
+      "sha256": "961408b332c9cd6b8ca5e0a7650432819b45e01a526105f87d3f21695e3ba6b4"
+    },
+    {
+      "path": "scripts/publish_tracking_visibility_skill_kit_20261026.py",
+      "bytes": 1249,
+      "sha256": "4ae5ba09a1e4dd230cc1660707406340bb669b678ecb8d0560c61b35c6cc62ac"
+    },
+    {
+      "path": "scripts/run_tracking_visibility_case_20261026.py",
+      "bytes": 15699,
+      "sha256": "3c8e82c8b004ed8e4c62ed0d2240ad6316db7ddb2006f203688003ed111802fb"
+    },
+    {
+      "path": "scripts/sync_capability_manuals.py",
+      "bytes": 6107,
+      "sha256": "19d9cda8c717599f7312a4ee3a62ec64ea36a5797cd4c04393c5d1e7a7f0686c"
+    },
+    {
+      "path": "scripts/test_tracking_edits_20261026.py",
+      "bytes": 4884,
+      "sha256": "dd4533135f004ce0a42d9f6dfe9acad289eb21e245b2f2be3d203d611e7ec243"
+    },
+    {
+      "path": "scripts/verify_tracking_visibility_failures_20261026.py",
+      "bytes": 1718,
+      "sha256": "8e0e06b285feae8fe894c848281fb04609fa5cfcf3c080098f9f48a867dfe255"
+    },
+    {
+      "path": "scripts/verify_tracking_visibility_push_20261026.py",
+      "bytes": 2949,
+      "sha256": "226809e71390cc237aab90355c2b7b350b2a0a1e8d326d62f986a09ed0a44acd"
+    },
+    {
+      "path": "scripts/verify_tracking_visibility_queue_20261026.py",
+      "bytes": 4224,
+      "sha256": "88b23633ab6d2b2faff9da5edc73f632b7aa9512ff7c932452185fc0f95b28f9"
+    },
+    {
+      "path": "scripts/verify_tracking_visibility_skill_kit_20261026.py",
+      "bytes": 12779,
+      "sha256": "d80baea354aa45b4968a71ed31bf921fe8b71c1e378835d62a8722e77c1e87e2"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
+      "bytes": 10889,
+      "sha256": "0b32571ef87a4a9524fbcf6f9ade2da50a68fb9021191dc6a0e95ee683dcacb4"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/float-tracking.md",
+      "bytes": 13233,
+      "sha256": "e88f8cdcc6324a296880bec33bfe28d38790295a0e3cb16a92e054dd4548fa79"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
+      "bytes": 7553,
+      "sha256": "16713bd7f1da6d55ce0279730f2517fc3e3fcae55addabe094fc80ae54ac5b13"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/scripts/run.py",
+      "bytes": 2296,
+      "sha256": "30a278dd1ee59af7decc38c134b35c2b21c9306586a635b37d217f5e7040c7b1"
+    }
+  ]
+}

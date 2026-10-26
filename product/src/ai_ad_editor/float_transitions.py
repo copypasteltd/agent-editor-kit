@@ -66,6 +66,13 @@ def mix(a, b, weight):
     return a * weight + b * (1. - weight)
 
 
+def _matte(like, rgba):
+    """Generated mattes carry no source provenance in private trace lanes."""
+    value = np.zeros(like.shape[-1], np.float64)
+    value[:4] = rgba
+    return value
+
+
 def _tile(kind, a, b, x, y, w, h, p, cut_fraction, fetch, progress):
     """Return premultiplied binary64 samples. p is outgoing coverage."""
     def weighted(weight):
@@ -74,7 +81,7 @@ def _tile(kind, a, b, x, y, w, h, p, cut_fraction, fetch, progress):
         return weighted(p)
     if kind in {'dip_black', 'dip_white'}:
         q = progress
-        matte = np.array([1., 1., 1., 1.] if kind == 'dip_white' else [0., 0., 0., 1.])
+        matte = _matte(a, [1., 1., 1., 1.] if kind == 'dip_white' else [0., 0., 0., 1.])
         if q < cut_fraction:
             return mix(a, matte, 1. - q / cut_fraction)
         return mix(matte, b, (1. - q) / (1. - cut_fraction)) if cut_fraction < 1. else matte + np.zeros_like(a)
@@ -84,7 +91,7 @@ def _tile(kind, a, b, x, y, w, h, p, cut_fraction, fetch, progress):
             ca[:, :3] = a[:, :3].mean(axis=1, keepdims=True)
             cb[:, :3] = b[:, :3].mean(axis=1, keepdims=True)
         else:
-            ca = cb = np.array([1., 1., 1., 1.] if kind == 'fadewhite' else [0., 0., 0., 1.])
+            ca = cb = _matte(a, [1., 1., 1., 1.] if kind == 'fadewhite' else [0., 0., 0., 1.])
         return mix(mix(a, ca, smooth(.8, 1., p)), mix(cb, b, smooth(.2, 1., p)), p)
     if kind in {'fadefast', 'fadeslow'}:
         delta = np.abs(a[:, :3] - b[:, :3])
@@ -93,7 +100,7 @@ def _tile(kind, a, b, x, y, w, h, p, cut_fraction, fetch, progress):
         output[:, :3] = mix(a[:, :3], b[:, :3], p ** exponent)
         return output
     if kind == 'distance':
-        choose_a = (np.linalg.norm(a - b, axis=1) <= p).reshape(-1, 1)
+        choose_a = (np.linalg.norm(a[:, :4] - b[:, :4], axis=1) <= p).reshape(-1, 1)
         return mix(np.where(choose_a, a, b), b, p)
     if kind.startswith('wipe'):
         if kind in {'wipeleft', 'wiperight', 'wipeup', 'wipedown'}:
@@ -121,7 +128,7 @@ def _tile(kind, a, b, x, y, w, h, p, cut_fraction, fetch, progress):
             inside = np.hypot(x-w//2, y-h//2) <= radius
         else:
             inside = (np.abs(x-w//2) < int(abs(p-.5)*w)) & (np.abs(y-h//2) < int(abs(p-.5)*h))
-        return np.where(inside[:, None], a if p >= .5 else b, [0., 0., 0., 1.])
+        return np.where(inside[:, None], a if p >= .5 else b, _matte(a, [0., 0., 0., 1.]))
     if kind == 'radial':
         s = np.arctan2(x-w//2, y-h//2) - (p-.5)*(math.pi*2.5)
         return weighted(1.-smooth(0., 1., s))

@@ -1,0 +1,80 @@
+{
+  "status": "failed",
+  "cli_version": "0.1.31",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.29\\final-r1\\installed",
+  "registered_skill": true,
+  "source_fallback": false,
+  "virtualization": false,
+  "new_model_forwards": 0,
+  "natural_quality_accepted": false,
+  "continuous_playback": false,
+  "human_listening": false,
+  "calls": [
+    {
+      "name": "version",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "version"
+      ],
+      "exit_code": 0,
+      "seconds": 4.084573000000091,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-visibility-20261026-r1\\case-r1\\version.stdout.log",
+      "stdout_sha256": "02cd3b425f1257dabac6e9b957fa36120128f94ceb92be4958e25555c7c54269",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "import-source",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "convert",
+        "import",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-tracking-20261026-r5\\editable-native-tracking.aevpkg.zip",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-visibility-20261026-case-r1\\编辑 工程"
+      ],
+      "exit_code": 0,
+      "seconds": 4.535447700000077,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-visibility-20261026-r1\\case-r1\\import-source.stdout.log",
+      "stdout_sha256": "5a63842f3f1c574228fb203bd118e3b2c018d7e872327f8581dfec3d84718a67",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "validate-initial",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "validate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-visibility-20261026-case-r1\\编辑 工程"
+      ],
+      "exit_code": 2,
+      "seconds": 4.405314700001327,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-visibility-20261026-r1\\case-r1\\validate-initial.stdout.log",
+      "stdout_sha256": "8e4c70760c985d04123ac2ab2b66cd02121ab259e70080b0df93449a1ddf67e6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": [
+    {
+      "name": "actual registered CLI",
+      "ok": true
+    }
+  ],
+  "started_at_utc": "2026-10-26T08:40:08.076845+00:00",
+  "error": "AssertionError(('validate-initial', b'\\xa8\\xe9\\x81\\x93\\xe7\\x89\\x87\\xe6\\xae\\xb5\\xe9\\x87\\x8d\\xe5\\x8f\\xa0: follow_marker \\xe4\\xb8\\x8e incoming_marker\",\"path\":\"sequences[0].tracks[2].clips[1]\",\"retryable\":false}],\"warnings\":[],\"rights\":{\"ok\":true,\"target\":\"commercial_ad\",\"checked\":4,\"required_records\":4,\"failures\":[],\"warnings\":[],\"disposition_decisions\":[],\"effective_disposition_decisions\":[]},\"schema_engine\":\"jsonschema\",\"asset_count\":4,\"sequence_count\":1},\"artifacts\":[],\"warnings\":[],\"errors\":[{\"code\":\"SCHEMA_VALIDATION_FAILED\",\"message\":\"\\'interpolation\\' is a required property\",\"path\":\"sequences.0.tracks.0.clips.0.mask.keyframes.0.keyframes.0\",\"retryable\":false},{\"code\":\"SCHEMA_VALIDATION_FAILED\",\"message\":\"\\'interpolation\\' is a required property\",\"path\":\"sequences.0.tracks.0.clips.0.mask.keyframes.0.keyframes.1\",\"retryable\":false},{\"code\":\"SCHEMA_VALIDATION_FAILED\",\"message\":\"\\'interpolation\\' is a required property\",\"path\":\"sequences.0.tracks.0.clips.0.mask.keyframes.0.keyframes.2\",\"retryable\":false},{\"code\":\"SCHEMA_VALIDATION_FAILED\",\"message\":\"\\'interpolation\\' is a required property\",\"path\":\"sequences.0.tracks.0.clips.0.mask.keyframes.1.keyframes.0\",\"retryable\":false},{\"code\":\"SCHEMA_VALIDATION_FAILED\",\"message\":\"\\'interpolation\\' is a required property\",\"path\":\"sequences.0.tracks.0.clips.0.mask.keyframes.1.keyframes.1\",\"retryable\":false},{\"code\":\"TRANSITION_UNSUPPORTED\",\"message\":\"\\xe4\\xb8\\x8d\\xe6\\x94\\xaf\\xe6\\x8c\\x81\\xe7\\x9a\\x84\\xe8\\xbd\\xac\\xe5\\x9c\\xba\\xe7\\xb1\\xbb\\xe5\\x9e\\x8b: slideleft\",\"path\":\"sequences[0].tracks[0].clips[0].transition_out.type\",\"retryable\":false},{\"code\":\"INTERPOLATION_INVALID\",\"message\":\"mask \\xe5\\x85\\xb3\\xe9\\x94\\xae\\xe5\\xb8\\xa7\\xe6\\x8f\\x92\\xe5\\x80\\xbc\\xe7\\xb1\\xbb\\xe5\\x9e\\x8b\\xe6\\x97\\xa0\\xe6\\x95\\x88\",\"path\":\"sequences[0].tracks[0].clips[0].mask.keyframes[0].keyframes[0].interpolation\",\"retryable\":false},{\"code\":\"INTERPOLATION_INVALID\",\"message\":\"mask \\xe5\\x85\\xb3\\xe9\\x94\\xae\\xe5\\xb8\\xa7\\xe6\\x8f\\x92\\xe5\\x80\\xbc\\xe7\\xb1\\xbb\\xe5\\x9e\\x8b\\xe6\\x97\\xa0\\xe6\\x95\\x88\",\"path\":\"sequences[0].tracks[0].clips[0].mask.keyframes[0].keyframes[1].interpolation\",\"retryable\":false},{\"code\":\"INTERPOLATION_INVALID\",\"message\":\"mask \\xe5\\x85\\xb3\\xe9\\x94\\xae\\xe5\\xb8\\xa7\\xe6\\x8f\\x92\\xe5\\x80\\xbc\\xe7\\xb1\\xbb\\xe5\\x9e\\x8b\\xe6\\x97\\xa0\\xe6\\x95\\x88\",\"path\":\"sequences[0].tracks[0].clips[0].mask.keyframes[0].keyframes[2].interpolation\",\"retryable\":false},{\"code\":\"INTERPOLATION_INVALID\",\"message\":\"mask \\xe5\\x85\\xb3\\xe9\\x94\\xae\\xe5\\xb8\\xa7\\xe6\\x8f\\x92\\xe5\\x80\\xbc\\xe7\\xb1\\xbb\\xe5\\x9e\\x8b\\xe6\\x97\\xa0\\xe6\\x95\\x88\",\"path\":\"sequences[0].tracks[0].clips[0].mask.keyframes[1].keyframes[0].interpolation\",\"retryable\":false},{\"code\":\"INTERPOLATION_INVALID\",\"message\":\"mask \\xe5\\x85\\xb3\\xe9\\x94\\xae\\xe5\\xb8\\xa7\\xe6\\x8f\\x92\\xe5\\x80\\xbc\\xe7\\xb1\\xbb\\xe5\\x9e\\x8b\\xe6\\x97\\xa0\\xe6\\x95\\x88\",\"path\":\"sequences[0].tracks[0].clips[0].mask.keyframes[1].keyframes[1].interpolation\",\"retryable\":false},{\"code\":\"TRANSITION_UNSUPPORTED\",\"message\":\"\\xe4\\xb8\\x8d\\xe6\\x94\\xaf\\xe6\\x8c\\x81\\xe7\\x9a\\x84\\xe8\\xbd\\xac\\xe5\\x9c\\xba\\xe7\\xb1\\xbb\\xe5\\x9e\\x8b: slideleft\",\"path\":\"sequences[0].tracks[0].clips[1].transition_in.type\",\"retryable\":false},{\"code\":\"TRACK_OVERLAP\",\"message\":\"\\xe8\\xbd\\xa8\\xe9\\x81\\x93\\xe7\\x89\\x87\\xe6\\xae\\xb5\\xe9\\x87\\x8d\\xe5\\x8f\\xa0: moving_source \\xe4\\xb8\\x8e incoming_source\",\"path\":\"sequences[0].tracks[0].clips[1]\",\"retryable\":false},{\"code\":\"TRACK_OVERLAP\",\"message\":\"\\xe8\\xbd\\xa8\\xe9\\x81\\x93\\xe7\\x89\\x87\\xe6\\xae\\xb5\\xe9\\x87\\x8d\\xe5\\x8f\\xa0: follow_marker \\xe4\\xb8\\x8e incoming_marker\",\"path\":\"sequences[0].tracks[2].clips[1]\",\"retryable\":false}],\"provenance\":{\"cli_version\":\"0.1.31\",\"schema_version\":\"0.1.0\",\"engine_version\":\"ffmpeg-local\",\"started_at\":\"2026-10-26T08:40:21.018946Z\",\"finished_at\":\"2026-10-26T08:40:21.018960Z\",\"network\":\"disabled\"}}\\r\\n', b''))"
+}

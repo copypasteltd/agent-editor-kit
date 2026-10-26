@@ -2,15 +2,15 @@
 
 <!-- community-current -->
 
-**CLI 0.1.24 / alpha.4-local.22 / r25 kit · 1 Skill / 17 modules.**
+**CLI 0.1.25 / alpha.4-local.23 / r26 kit · 1 Skill / 17 modules.**
 
-Explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+Ordered global/interval Float32 grading at the selected root with authored clocks and locked portable LUTs; explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
 
-[Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](float-gpu-capabilities-cli-0.1.24.json). Full target conditions remain open.
+[Float32 adjustment workflow](FLOAT_ADJUSTMENTS.md) · [Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](float-adjustments-capabilities-cli-0.1.25.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.md) · [Machine response](float-gpu-capabilities-cli-0.1.24.json) · [Module data](module-catalog.json)
+[README](../../README.md) · [Machine response](float-adjustments-capabilities-cli-0.1.25.json) · [Module data](module-catalog.json)
 
 | 编号 | 功能模块 | 具体行为与输入 → 输出 | 入口 | 依赖/边界 |
 |---|---|---|---|---|
@@ -71,6 +71,7 @@ Explicit native Float32 GPU affine/normal composition/text colors/word selection
 | F55 | 线性浮点转场与组级进出场 | 显式 Float32 工程 → 57 xfade图案+2 dip、预乘alpha混合、真实句柄/原作者时钟、关联音轨、组级擦除/推移与实际预览成片。 | `timeline transition; preview; render; queue` | CPU；12种真实句柄声明，其他图案用显式重叠/边缘；normal双源混合；风噪有平台差异，HDR/自然质量未闭。 |
 | F56 | 线性浮点文字与字幕 | 独立/内嵌/SRT、联合逐词/打字机 → 原生字节覆盖率、可复用字形、分块线性合成、原作者时钟、4K标题和实际交付。 | `timeline compose; preview; render; queue` | 明确本地字体；CPU/显式GPU；覆盖率8bit/颜色Float32；工作区准入非峰值RSS；富ASS/Bidi/自然质量未闭。 |
 | F57 | 原生浮点GPU执行层 | 明确GPU策略 → 线性Float32仿射、普通叠加、文字组件/段落与逐词选择；正式渲染/预览/队列/恢复。 | `projection_acceleration; render; preview; queue` | off/prefer/require；实际binary64/次正规探测；任务独占进程和共享段；其余算子CPU，非全部GPU化。 |
+| F58 | Float32全局/区间调整层 | 全轨含字幕合成后按顺序调色；LUT/曝光及既有浮点效果、六类关键帧、选中根只应用一次。 | `settings.adjustments; preview; render; queue` | 显式线性工作域/效果信号；CPU执行；LUT持锁/包迁移；保留作者区间时钟，非完整HDR。 |
 
 | 编号 | 服务模块 | 运行形式 | 需要什么/提供什么 | 入口 | 范围 |
 |---|---|---|---|---|---|
@@ -865,8 +866,28 @@ Explicit native Float32 GPU affine/normal composition/text colors/word selection
     "real_source_handles_and_linked_audio",
     "authored_group_spatial_edges",
     "linear_float32_titles_inline_text_and_plain_SRT",
-    "explicit_probed_native_opencl_float_geometry_normal_over_and_text_colors"
+    "explicit_probed_native_opencl_float_geometry_normal_over_and_text_colors",
+    "ordered_sequence_adjustments_after_complete_composite"
   ],
+  "adjustments": {
+    "protocol": "selected-sequence-author-clock-float32-adjustments-v1",
+    "selection": "settings.adjustments; explicit native Float32 pipeline",
+    "forms": [
+      "effect_object",
+      "effect_array_container",
+      "supported_signal_free_string_shorthand"
+    ],
+    "stage": "after_all_selected_sequence_video_and_subtitle_tracks_before_delivery",
+    "clock": "selected_sequence_tick_minus_declared_start_tick; original interval duration retained",
+    "nested": "once_at_selected_root_not_each_child_canvas",
+    "resource_policy": "existing_effect_compiler_signals_alpha_range_automation_and_LUT_dependencies",
+    "interval": "start_inclusive_end_exclusive; shorter_target_clips_coverage_without_time_rescaling",
+    "max_layers": 128,
+    "max_effects": 4096,
+    "max_declaration_bytes": 8388608,
+    "GPU": false,
+    "audio_changed": false
+  },
   "limits": [
     "explicit_opt_in_not_default_migration",
     "unported_operators_reject_without_legacy_fallback",

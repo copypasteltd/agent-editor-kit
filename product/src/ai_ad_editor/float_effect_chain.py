@@ -61,6 +61,18 @@ class EffectCompiler:
                 raise AppError('FLOAT_TIMELINE_UNSUPPORTED','该效果尚未连接浮点时间线',exit_code=2)
         return tuple(result)
 
+    def dependencies(self, plans):
+        """Return every actual LUT/library identity used by compiled chains."""
+        result = {}
+        for chain in plans:
+            for plan in chain:
+                if isinstance(plan, LUTPlan):
+                    for dependency in plan.dependencies:
+                        previous = result.setdefault(dependency.path, dependency)
+                        if previous != dependency:
+                            raise AppError('FLOAT_LUT_RESOURCE_CHANGED', '效果链LUT依赖身份冲突', exit_code=2)
+        return tuple(result[path] for path in sorted(result))
+
     def verify(self, plans):
         seen = set()
         for chain in plans:

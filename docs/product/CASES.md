@@ -751,3 +751,15 @@ CPU文字；8bit覆盖率/Float32颜色，分块Float64算术。不代表自然�
 ![Actual installed GPU render / silent GIF](../assets/float-gpu-20261026-4k-r1/4k-native-text.gif)
 
 原生Windows/RTX3060，CC0自制内容、Noto字型OFL保留；覆盖率8bit、颜色Float32、binary64内核。其余算子CPU，静帧观察与完整解码分列；未进行连续播放、人工听审或自然质量验收。
+
+<a id="c35-float-adjustments"></a>
+
+## C35 · Global/interval Float32 grading with the registered Skill
+
+CLI0.1.25/local.23-final-r1. Self-authored CC0 geometric footage, stereo tones, captions and linear LUT; Noto Sans SC/OFL font. Two adjustment layers run after GPU composition;108 layer applications over72frames/6s/12fps/320×180. Five source-handle transitions, reversed child and CJK/SRT/typewriter/word selection remain editable.
+
+![Actual silent GIF](../assets/float-adjustments-20261026-r1/native-text.gif)
+
+[Source video](../assets/float-adjustments-20261026-r1/original.native.mkv) · [Source audio](../assets/float-adjustments-20261026-r1/original.audio.wav) · [Actual MP4](../assets/float-adjustments-20261026-r1/native-text.mp4) · [Editable package](../assets/float-adjustments-20261026-r1/editable-native-text.aevpkg.zip) · [Media hashes](../assets/float-adjustments-20261026-r1/media-manifest.json) · [Workflow](FLOAT_ADJUSTMENTS.md) · [Execution](../validation/evidence/float-adjustments-20261026-r1/case-r1/verification.json) · [Reimport/range](../validation/evidence/float-adjustments-20261026-r1/package-r1/verification.json).
+
+All resumed/queued frames, clocks and complete PCM match. Reimport retains LUT bytes/font license;three RGBA64 frames and12 Float32 range frames/full48000stereo samples match exactly. Synthetic tones are numerical evidence;no human listening,continuous playback,natural-content quality or new GPU speed claim.

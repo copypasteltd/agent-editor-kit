@@ -1,0 +1,17 @@
+test_adjust_after_all_tracks_including_transparent_mix_and_preserve_alpha_bits (test_float_adjustments.FloatAdjustmentTests.test_adjust_after_all_tracks_including_transparent_mix_and_preserve_alpha_bits) ... ok
+test_chain_and_layer_order_match_and_reversal_changes_result (test_float_adjustments.FloatAdjustmentTests.test_chain_and_layer_order_match_and_reversal_changes_result) ... ok
+test_disabled_unknown_effects_and_empty_layers_are_noops (test_float_adjustments.FloatAdjustmentTests.test_disabled_unknown_effects_and_empty_layers_are_noops) ... ok
+test_fractional_ticks_do_not_snap_hold_channels_to_frame_grid (test_float_adjustments.FloatAdjustmentTests.test_fractional_ticks_do_not_snap_hold_channels_to_frame_grid) ... ok
+test_global_is_applied_once_after_reversed_nested_canvas (test_float_adjustments.FloatAdjustmentTests.test_global_is_applied_once_after_reversed_nested_canvas) ... ok
+test_interval_uses_exact_half_open_endpoints_and_original_local_clock (test_float_adjustments.FloatAdjustmentTests.test_interval_uses_exact_half_open_endpoints_and_original_local_clock) ... ok
+test_keys_beyond_declared_window_reject_and_equal_endpoint_is_valid (test_float_adjustments.FloatAdjustmentTests.test_keys_beyond_declared_window_reject_and_equal_endpoint_is_valid) ... ok
+test_late_surface_invalid_values_are_not_skipped_by_zero_strength (test_float_adjustments.FloatAdjustmentTests.test_late_surface_invalid_values_are_not_skipped_by_zero_strength) ... ok
+test_local_LUT_resource_is_shared_fingerprinted_and_change_detected (test_float_adjustments.FloatAdjustmentTests.test_local_LUT_resource_is_shared_fingerprinted_and_change_detected) ... ok
+test_malformed_and_unknown_declarations_reject_before_fetch (test_float_adjustments.FloatAdjustmentTests.test_malformed_and_unknown_declarations_reject_before_fetch) ... ok
+test_short_target_clips_coverage_without_rescaling_declared_animation (test_float_adjustments.FloatAdjustmentTests.test_short_target_clips_coverage_without_rescaling_declared_animation) ... ok
+test_six_easings_retain_layer_clock_offset (test_float_adjustments.FloatAdjustmentTests.test_six_easings_retain_layer_clock_offset) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.135s
+
+OK

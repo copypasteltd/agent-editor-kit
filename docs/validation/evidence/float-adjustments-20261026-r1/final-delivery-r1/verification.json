@@ -1,0 +1,1653 @@
+{
+  "status": "passed",
+  "goal_closed": false,
+  "virtualization": false,
+  "source_fallback": false,
+  "verified_at_utc": "2026-10-26T01:42:39.715208+00:00",
+  "product_files": 218,
+  "skill_files": 72,
+  "modules": 17,
+  "test_groups": {
+    "adjustments": 14,
+    "effects": 219,
+    "float": 98,
+    "audio": 64,
+    "render": 44,
+    "legacy": 191,
+    "text": 98,
+    "gpu": 23
+  },
+  "functions": 58,
+  "services": 20,
+  "declarations": 75,
+  "readme_rows": 185,
+  "historical_rows_preserved": 178,
+  "original_goal_closures_preserved": 38,
+  "local_links_checked": 2911,
+  "actual_registered_skill_frames": 72,
+  "adjustment_layer_applications": 108,
+  "range_reimport_frames": 12,
+  "kit_sha256": "7af70e3b934cabf4a5b1731c9fa6fab225a1165493311bc459ec59dbbe5a313f",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 98599,
+      "sha256": "10d99476c28a923b5ea14962aee58ac8b570a32b0463e97831157d426eb3b31f"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 2142,
+      "sha256": "8aece890b834981d4c4286b2c65fb16daa2fbd55921698040e8f32b2a8993e0c"
+    },
+    {
+      "path": "README.en.md",
+      "bytes": 165118,
+      "sha256": "33a75272be1a9b71b26de4a18f7a5f4b0629a6a7ae505ccf937383aee694672c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 153899,
+      "sha256": "2d53b5d68f63cb79fdf854283358f100e3e822f0b1ba0da46c1de901ac8cee50"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "bytes": 155014,
+      "sha256": "98c3bf244fbc0228b9bad8f2edf62829cc01c209ba0b5edf635f05224c8efe11"
+    },
+    {
+      "path": "agent-ffmpeg-local-install-manifest.json",
+      "bytes": 26113,
+      "sha256": "5c2d27fc7bfa899617fdef868c7e5211d1d137a3bf1b05b39f66f52701c07f7c"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 11662,
+      "sha256": "d37956b592d7e50912aee797308bd21e02d9a686f2312b21aeb2c9c2cd3a60d0"
+    },
+    {
+      "path": "docs/assets/float-adjustments-20261026-r1/Noto-Sans-SC-OFL.txt",
+      "bytes": 4943,
+      "sha256": "566b792278acba9d6ec6f9d5c3fd27f3dabf90e622ed7f5c788d10eb54bbf852"
+    },
+    {
+      "path": "docs/assets/float-adjustments-20261026-r1/SOURCE.txt",
+      "bytes": 526,
+      "sha256": "ea3b33c5c82c1bd2ffec47d468fc759e773ae0058663e27ff3fe498c011ea32b"
+    },
+    {
+      "path": "docs/assets/float-adjustments-20261026-r1/editable-native-text.aevpkg.zip",
+      "bytes": 17191642,
+      "sha256": "6dc5b640d59800e656959eb83b7ab419324f89b3015f42e8508491cd62e88321"
+    },
+    {
+      "path": "docs/assets/float-adjustments-20261026-r1/editable-native-text.aevpkg.zip.conversion-report.json",
+      "bytes": 1231,
+      "sha256": "de6e49be8947b4a8438e8cd8ab0e0fff1ba6efb09f4305b9b9d414af0100c04e"
+    },
+    {
+      "path": "docs/assets/float-adjustments-20261026-r1/media-manifest.json",
+      "bytes": 5900,
+      "sha256": "c330202fcc354e32f4394949a9612937bc6389304b23296d188c63086eca2297"
+    },
+    {
+      "path": "docs/assets/float-adjustments-20261026-r1/midpoint.png",
+      "bytes": 31026,
+      "sha256": "7943ed529351685702ad2eeb50f06db36b4e9b2e7fbf0e97655593966a3ba5d8"
+    },
+    {
+      "path": "docs/assets/float-adjustments-20261026-r1/native-text.gif",
+      "bytes": 806785,
+      "sha256": "b4d4a3f55c719e766b234eeaedc55dcb5bb1afe7f5d6d5171ca064c7e18caffc"
+    },
+    {
+      "path": "docs/assets/float-adjustments-20261026-r1/native-text.mp4",
+      "bytes": 225566,
+      "sha256": "f62db620d8178f6996677bd67870293f9b377afa2f694f0e930a4429d4051ac3"
+    },
+    {
+      "path": "docs/assets/float-adjustments-20261026-r1/original.audio.wav",
+      "bytes": 3456092,
+      "sha256": "06c6550683acf09b369910167cdf789bc8afb30bb5d58924fa2987def3e54d8d"
+    },
+    {
+      "path": "docs/assets/float-adjustments-20261026-r1/original.native.mkv",
+      "bytes": 3792808,
+      "sha256": "a4b11987d6f7d63fda1852cb5f6972983c4465222a0e6cb5f1af781cf0b748a6"
+    },
+    {
+      "path": "docs/assets/float-adjustments-20261026-r1/original.png",
+      "bytes": 11695,
+      "sha256": "e92a2891f25e9082c6ab4c364b28fbd1280ca95549cfc71dd99b6d517cf779a6"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.en.md",
+      "bytes": 170480,
+      "sha256": "1cef810f4d1c5e2e8828d4547929fbc6d6160175415ef9198202096a59b94f50"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.md",
+      "bytes": 168254,
+      "sha256": "74dbfaf72eb8565c2af73d4e9f6dc75a972eb7162086a7ce47bb9fabc4524e60"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.zh-TW.md",
+      "bytes": 168370,
+      "sha256": "963025dc87e73d8f6a7469d5c463d7427b50c71a9f6b1c31cea31e20c8b94710"
+    },
+    {
+      "path": "docs/product/CASES.md",
+      "bytes": 102104,
+      "sha256": "304539f8548000cd42dc2e52bc37cf9f334d74e602e566931020ee7fdc91a108"
+    },
+    {
+      "path": "docs/product/COMMUNITY_LOCAL_DELIVERY.md",
+      "bytes": 27070,
+      "sha256": "32a7c936d6609a80ffcbee29e4f5166c647f598d35d5db36ccc5c7a5321b24b2"
+    },
+    {
+      "path": "docs/product/FLOAT_ADJUSTMENTS.md",
+      "bytes": 4435,
+      "sha256": "eac34a962c300766d18b681137fa70b65dfdc2f86da7eac57e4b9855e047caf9"
+    },
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "bytes": 42977,
+      "sha256": "dee05cb680b755fd5fdca4292f8afaf572410c7c0a133362d22b65dac5120957"
+    },
+    {
+      "path": "docs/product/IMPLEMENTATION_PLAN_20261025.md",
+      "bytes": 15739,
+      "sha256": "de9c182ad02e808d5c25f949394ff0fd3bbd46c164bc8910695e0823768dd4ab"
+    },
+    {
+      "path": "docs/product/SKILLS.en.md",
+      "bytes": 17515,
+      "sha256": "8d4481bf04ffe6a096905ce40e8a225835b067cd2d93a14f1da40f63f515e149"
+    },
+    {
+      "path": "docs/product/SKILLS.md",
+      "bytes": 17028,
+      "sha256": "5497f819fe690b4815c3e902f881a5a130f6b96eecb96bab86becce5c6e3bfce"
+    },
+    {
+      "path": "docs/product/SKILLS.zh-TW.md",
+      "bytes": 17064,
+      "sha256": "f9871763ee43f6cdc63827d30f71fcc9f98678a75b56f8422d62983ae77f5886"
+    },
+    {
+      "path": "docs/product/float-adjustments-capabilities-cli-0.1.25.json",
+      "bytes": 165709,
+      "sha256": "3a0cc52f06caaa42f0b264658cb2f95f10a63ba2f38a2464abad97f6c2da77ea"
+    },
+    {
+      "path": "docs/releases/CLI_0.1.25_LOCAL.md",
+      "bytes": 2236,
+      "sha256": "c3d3c9bf1647202f402b6a2a8afa1f6442b3091df3d097d16b5ae37e755e117b"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.en.md",
+      "bytes": 7801,
+      "sha256": "3d5240aa817b3dc57b26f11d3cc29b5ea03ec4cd97c233d0512701faa6e6efe2"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.md",
+      "bytes": 8101,
+      "sha256": "498a2a63cce30a7963b85b629972d1c212f48614ccd4e74830522fedd36e795b"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.zh-TW.md",
+      "bytes": 8116,
+      "sha256": "6ef802f0b4bf60bcb6c3bcf59fc492115ca39b8ec1fa09047c45ffb9857aa39d"
+    },
+    {
+      "path": "docs/skills/agent-editor-kit-community-unified-skill-r26.zip",
+      "bytes": 546744,
+      "sha256": "7af70e3b934cabf4a5b1731c9fa6fab225a1165493311bc459ec59dbbe5a313f"
+    },
+    {
+      "path": "docs/skills/community-unified-skill-package-0.1.25-r26.json",
+      "bytes": 415,
+      "sha256": "4d25d5a9a4baf5a73b886af55e54c6279159930c559f2d05263f1226418c0799"
+    },
+    {
+      "path": "docs/validation/Float32调整层实测_2026-10-26.md",
+      "bytes": 4551,
+      "sha256": "308f0c90e47e8350c59b14ae2f72741a7cf4fd59026d28c8059d788c48008332"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/activation-final-r1/activation-and-registration.json",
+      "bytes": 1750,
+      "sha256": "8676051ab6279998fe0180ee84df100c84e8bef0171e2f06bbef7bc6308d686f"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/activation-final-r1/activation.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/activation-final-r1/activation.stdout.json",
+      "bytes": 706,
+      "sha256": "508163cb9e99956c3c308abf35500acd36ac47c16bcbeeff7f51f46563845c1b"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/activation-final-r1/executed-generator.py",
+      "bytes": 2620,
+      "sha256": "d62e92f197a60b8aacea17d7c912248ae9fbf17a52433ff4adb00583c61d5106"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/activation-final-r1/kokoro-zh-en-cuda13.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/activation-final-r1/kokoro-zh-en-cuda13.stdout.json",
+      "bytes": 659,
+      "sha256": "c95e98d0721e506ac08b80842a2aeaf3c3a20bc7e58a20cadc96eb79e641bf56"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/activation-final-r1/kokoro-zh-en-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/activation-final-r1/kokoro-zh-en-int8.stdout.json",
+      "bytes": 655,
+      "sha256": "3edd330d1adec3324ef894f779995372a6d3d0f004f0e66624fdcc5911a17d6d"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/activation-final-r1/opus-zh-en-cpu-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/activation-final-r1/opus-zh-en-cpu-int8.stdout.json",
+      "bytes": 660,
+      "sha256": "7d5373d5accd19e48fb035c03b796402a1a493c37452e3e7af8dd97a2a7d59d0"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/activation-final-r1/opus-zh-en-cuda12-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/activation-final-r1/opus-zh-en-cuda12-int8.stdout.json",
+      "bytes": 666,
+      "sha256": "1fff1e144d9c4c280a2357aaa2d108e2dc0cfb8377af66fe16892e1a506b19cd"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/activation-final-r1/previous-community-runtime.json",
+      "bytes": 797,
+      "sha256": "215495ee2c7f917d3394f3cae9821f4ad74765e1600af1282f1468b9f228b61c"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/activation-final-r1/previous-runtime.json",
+      "bytes": 624,
+      "sha256": "cafcf9b3903e2df45521a022d9c9bee376d9be9c142804382f12fa4555f31a17"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/activation-final-r1/registration-current.json",
+      "bytes": 939,
+      "sha256": "f85c16ed1d2c8c5af5c7cbac5ebbc64cf1c5a9784d88900398c048ecf6a5d21c"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/activation-final-r1/registration.json",
+      "bytes": 939,
+      "sha256": "6540f1005880570635859534813cfa5ffd1c41cae1a21e6c04b4a11be5d00773"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/activation-final-r1/registration.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/activation-final-r1/registration.stdout.txt",
+      "bytes": 371,
+      "sha256": "b8a039b53b95f8bd51cba3f62b702491f7a1a709b331ae68bc54c430e774f3ff"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/activation-final-r1/verification.json",
+      "bytes": 749,
+      "sha256": "fe0aa96b17cc0d17259d3862a51f0ba6fa507c7ed75557a98061089ae18f7936"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/adjustments-installed-r1/executed-runner.py",
+      "bytes": 3745,
+      "sha256": "22f0d1e7f8142142965eafbc7aec48becb32ba8df2cf0f1a70069d9d73d888d4"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/adjustments-installed-r1/test_float_adjustments-native_calls.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/adjustments-installed-r1/test_float_adjustments-render_receipts.json",
+      "bytes": 110933,
+      "sha256": "c37b0fe84a148bc3c0882a04073675dccf3224da2b2ad46992f603688e349382"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/adjustments-installed-r1/test_float_standard_render-error_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/adjustments-installed-r1/test_float_standard_render-native_calls.json",
+      "bytes": 5646,
+      "sha256": "0a5272198ee283296ff93ae71093e2acdf18a7746443098e566554df5fa48d2a"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/adjustments-installed-r1/test_float_standard_render-render_receipts.json",
+      "bytes": 183500,
+      "sha256": "9f2138f66232c2c76a3edd575ed63648cfeaaa565bb4737cb2654eb6d7162749"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/adjustments-installed-r1/tests.log",
+      "bytes": 2632,
+      "sha256": "6f01ae28a2c8be96983b6cb0930e58dbd099a86fb50a305ef8b929ee2815874e"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/adjustments-installed-r1/verification.json",
+      "bytes": 20340,
+      "sha256": "ca128ecdf3b48c29592d94c52b619f33d342eeafef4f4ab8d2761e481531710b"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/audio-installed-r1/executed-runner.py",
+      "bytes": 3873,
+      "sha256": "12e494fb2d05b2d00eb2e19131c94a82e076b6c9f8440b528eaa28f8a0929d07"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/audio-installed-r1/tests.log",
+      "bytes": 11513,
+      "sha256": "a423b016a6fb8ea9626fc8c2c40b863b366beb64c9d142fe88bb2b477d3f19b6"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/audio-installed-r1/verification.json",
+      "bytes": 20396,
+      "sha256": "074394e6e34ec67ac5e6fe88397b53e642a119a5368db985bde9eb1a578971d8"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/actual-frames.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/actual-frames.stdout.log",
+      "bytes": 5975,
+      "sha256": "e2d8d4832bfd8a4f80e83f8d404a34e9ac1395a3fad28c414013f1de11a4dca6"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/actual-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/actual-pcm.stdout.log",
+      "bytes": 2304000,
+      "sha256": "08eee939a313d32cba44dbd6b90ab6bc80f67452ae00bb006b10edc17c26733d"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/adjustments-receipt.json",
+      "bytes": 1383,
+      "sha256": "cd15216da5d2313ede120d39f5ff59e671715b609d2988edd91c6f4ce6761404"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/cancel.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/cancel.stdout.log",
+      "bytes": 630,
+      "sha256": "45c74da095f08151a20bf80765a548f18eb9d7cfb374499650be852c1ad5e800"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/capabilities.json",
+      "bytes": 165709,
+      "sha256": "1ba8a4dfb1c9caa9a9cbbab5435f0d394ca1a193c827fb7e3cf9992145679571"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/capabilities.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/capabilities.stdout.log",
+      "bytes": 120322,
+      "sha256": "19feb71a9047240266ace1a2773182642c7c8e0d2a64e661505d0c047a2e4829"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/decode-display.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/decode-display.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/display-gif.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/display-gif.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/display-mp4.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/display-mp4.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/display-still.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/display-still.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/executed-generator.py",
+      "bytes": 24130,
+      "sha256": "b061564fba7c07398d4ea0011b99ba35659e0467e1713361696aeb031bcef5b3"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/export-package.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/export-package.stdout.log",
+      "bytes": 3743,
+      "sha256": "6a035ab387bedff4d78588275e775c0e98b3a86d4e2ab26dd755b0e4935f98af"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/generate-audio.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/generate-audio.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/generate-original.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/generate-original.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/gpu-receipt.json",
+      "bytes": 3557,
+      "sha256": "a21f6674342c27ef0634db3860703f4ad0c6a6aca6b26506d3039c942c010b5e"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/native-text-receipt.json",
+      "bytes": 40936,
+      "sha256": "0660d1c6d526bfdf33a607836ec6eada35d003646ac121c4dd60a75eaf2383bc"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/preview-0.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/preview-0.stdout.log",
+      "bytes": 232033,
+      "sha256": "9e864df6e119820aad3767d8b642306e67f058d1ac06589b8a3296177438fe3c"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/preview-11.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/preview-11.stdout.log",
+      "bytes": 232964,
+      "sha256": "20820ad06d1117265ad1e2911d6f5790e1ed65a129c789cc4ad6f77545f43073"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/preview-24.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/preview-24.stdout.log",
+      "bytes": 232967,
+      "sha256": "f6d0801be85ac8b8a83f077617cd20ba429a8e956df9ee146f6c63f5e0224c73"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/preview-36.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/preview-36.stdout.log",
+      "bytes": 232992,
+      "sha256": "e7b2a13bc9b07213d37e33f90bd1748088589a702213c498b7f39a7c09896773"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/preview-48.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/preview-48.stdout.log",
+      "bytes": 232989,
+      "sha256": "b3c7ac25435271cf43176f9d422e30ded873a3c2448c966bcbbd20956e10dc3e"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/preview-60.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/preview-60.stdout.log",
+      "bytes": 232989,
+      "sha256": "4876fd1bc768020649fe6601ce3f767145538cdc9c175bc7cb9021c0974dd1f1"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/preview-71.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/preview-71.stdout.log",
+      "bytes": 232078,
+      "sha256": "caf28f332bee3e5c03ba4de413434196fb38adf2904f118b72c567cfba38e6b1"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/quality.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/quality.stdout.log",
+      "bytes": 3445,
+      "sha256": "15ee49abb5025608c5db831aab5f73c228378774376e282911eb126e51d5248f"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/queue-enqueue.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/queue-enqueue.stdout.log",
+      "bytes": 1390,
+      "sha256": "aa1c3d01f343a26b1507f8dc573ba13fa28ea7f969f943ca58c3b41693284049"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/queue-run.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/queue-run.stdout.log",
+      "bytes": 3101,
+      "sha256": "35fdad65606106cd35f108564c33e60e3d116e6a33b94187dee82c959bf883ab"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/queued-frames.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/queued-frames.stdout.log",
+      "bytes": 5975,
+      "sha256": "e2d8d4832bfd8a4f80e83f8d404a34e9ac1395a3fad28c414013f1de11a4dca6"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/queued-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/queued-pcm.stdout.log",
+      "bytes": 2304000,
+      "sha256": "08eee939a313d32cba44dbd6b90ab6bc80f67452ae00bb006b10edc17c26733d"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/render-dry-run.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/render-dry-run.stdout.log",
+      "bytes": 246906,
+      "sha256": "2fc056ffd42fc110b7d41cbe0f0dd81d83533e19805ce34bde572ecacddb5dd1"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/render.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/render.stdout.log",
+      "bytes": 298820,
+      "sha256": "d85a82af7530de986eddb196e929aef6eadf5f2238df2bd798f9beda352e80f9"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/resume.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/resume.stdout.log",
+      "bytes": 298832,
+      "sha256": "0b497daa3b14ec40ea765784123bedfceb85055f93446537ff622d6bdcbf08b7"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/resumed-frames.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/resumed-frames.stdout.log",
+      "bytes": 5975,
+      "sha256": "e2d8d4832bfd8a4f80e83f8d404a34e9ac1395a3fad28c414013f1de11a4dca6"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/resumed-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/resumed-pcm.stdout.log",
+      "bytes": 2304000,
+      "sha256": "08eee939a313d32cba44dbd6b90ab6bc80f67452ae00bb006b10edc17c26733d"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/validate.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/validate.stdout.log",
+      "bytes": 805,
+      "sha256": "6b2cf2a296f19b879274898b79117dc8a06b3eaceb41bba484f1b35c6a12e164"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/verification.json",
+      "bytes": 28635,
+      "sha256": "fc86daecfb38a51b5a7a172ef3813fec95fa879eaa17542bb61cee71cddb27cc"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/version.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/case-r1/version.stdout.log",
+      "bytes": 1167,
+      "sha256": "6f89900cae9af68e259791b91d8936f30497f7a30303b8731079fcca5f9cbd85"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/effects-installed-r1/executed-runner.py",
+      "bytes": 3745,
+      "sha256": "22f0d1e7f8142142965eafbc7aec48becb32ba8df2cf0f1a70069d9d73d888d4"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/effects-installed-r1/test_float_standard_render-error_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/effects-installed-r1/test_float_standard_render-native_calls.json",
+      "bytes": 39809,
+      "sha256": "67cbc61336b48e773d851b3efe23556f2a08a70880dab698bf57062c479ec543"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/effects-installed-r1/test_float_standard_render-render_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/effects-installed-r1/tests.log",
+      "bytes": 35666,
+      "sha256": "acf178294501fb6810b0d6eec722f58e7a53eec17a2c829c9a4beed21fb8d6a1"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/effects-installed-r1/verification.json",
+      "bytes": 20455,
+      "sha256": "ac14a746f1eb0ca12250f7de0798493086e26b0f4a90109712fba5c5313d11d7"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/float-installed-r1/executed-runner.py",
+      "bytes": 3745,
+      "sha256": "22f0d1e7f8142142965eafbc7aec48becb32ba8df2cf0f1a70069d9d73d888d4"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/float-installed-r1/test_float_standard_render-error_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/float-installed-r1/test_float_standard_render-native_calls.json",
+      "bytes": 10423,
+      "sha256": "05281904a824dc24e21a4f76d95203d50f8e3431811edcf6a8b4cd01cc2dcb0b"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/float-installed-r1/test_float_standard_render-render_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/float-installed-r1/tests.log",
+      "bytes": 17048,
+      "sha256": "01426a161bd2270386a95e9a1ad8da1f26f2e8729f36eaadbf9492f2f986f690"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/float-installed-r1/verification.json",
+      "bytes": 20432,
+      "sha256": "1e49ab63b72df9bd104f1ee8c1ab969665a3da6d6b791fd131ac344716076feb"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/gpu-installed-r1/executed-runner.py",
+      "bytes": 3873,
+      "sha256": "12e494fb2d05b2d00eb2e19131c94a82e076b6c9f8440b528eaa28f8a0929d07"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/gpu-installed-r1/native_float_gpu-receipts.json",
+      "bytes": 285640,
+      "sha256": "43772e61dfce24abb13a3d9a511a37f193576f1520dde103c3f23666af988033"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/gpu-installed-r1/test_float_standard_render-error_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/gpu-installed-r1/test_float_standard_render-native_calls.json",
+      "bytes": 5729,
+      "sha256": "608778a25a323629b81c9e2820c767695c0dd9768843cffbdf48272e6cff5813"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/gpu-installed-r1/test_float_standard_render-render_receipts.json",
+      "bytes": 347390,
+      "sha256": "52440e2298e5e00a8c99d5afa2ae7a1abb674300b13bc726852c2e3bf76500d5"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/gpu-installed-r1/tests.log",
+      "bytes": 3490,
+      "sha256": "8f57818833653efa02523117fbcff0de58fb569f1baeb72c72b82d6ea7985c80"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/gpu-installed-r1/verification.json",
+      "bytes": 20326,
+      "sha256": "4ec11e6ce54e2edafe0ba7ae9b64750ae3102b06a51aeca9284e4e20005aa3a6"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/installation-final-r1/build.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/installation-final-r1/build.stdout.json",
+      "bytes": 448,
+      "sha256": "352ea1633ba57194d5968dc502d4d85c03245229c33dfe7daccb6808818f13b7"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/installation-final-r1/calls.json",
+      "bytes": 2616,
+      "sha256": "70763233111f79d6957b18436d83b5c59516e181c82956684963fc7638c3e651"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/installation-final-r1/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/installation-final-r1/capabilities.stdout.json",
+      "bytes": 120322,
+      "sha256": "34985557c719986a1d883f9aedc88d27fd67c47717ff30dcc1f9732dc289c9e7"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/installation-final-r1/executed-generator.py",
+      "bytes": 5363,
+      "sha256": "90b10cb36e52b0a730caa350a562582c19913fb733085df47bf75359d2db9255"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/installation-final-r1/install.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/installation-final-r1/install.stdout.json",
+      "bytes": 1708,
+      "sha256": "b0a2f1aa9076f5f0fb54120b710efaef74ef77424b10a2096256725a9ae17b99"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/installation-final-r1/verification.json",
+      "bytes": 29163,
+      "sha256": "2f5f869ab6cb92caac6a72e3245eeb8e81f570d49174c5bb49fcbb2f63151274"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/installation-final-r1/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/installation-final-r1/version.stdout.json",
+      "bytes": 1167,
+      "sha256": "e968ac054718d15c241f99879bfa01a7c393f747c1b4f38f8618f227a4b084af"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r1/calls.json",
+      "bytes": 6036,
+      "sha256": "45dfdc2fa122de8eb2f30791f5388bd060662c85b5d7ec983d2d3ed184219846"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r1/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r1/capabilities.stdout.txt",
+      "bytes": 120322,
+      "sha256": "9925e8f5c16f9b98f7902a8bf3d11006b68796b48e58f435021d476c36a58588"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r1/configure.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r1/configure.stdout.txt",
+      "bytes": 836,
+      "sha256": "988cad10b9b47a2bec9bae9970d1d94dd33e70436cb2547169780ec428ff095c"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r1/executed-generator.py",
+      "bytes": 8178,
+      "sha256": "ee69f7e7baa9205e179c780f7461f7bdc259a26ede67adfa4a8918d05a0e7507"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r1/float-render-dry-run.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r1/float-render-dry-run.stdout.txt",
+      "bytes": 240828,
+      "sha256": "eb51b7e0d9793c9ab5fd9b88b77228323ba930e2a9ff1441eb608c4129071720"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r1/import-case.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r1/import-case.stdout.txt",
+      "bytes": 1616,
+      "sha256": "089951c3b0ae2c17c5f346b282bde60b18d253a43d959cc425d4c59fa277a411"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r1/register.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r1/register.stdout.txt",
+      "bytes": 358,
+      "sha256": "d9d0b65f3a15c170d060a24299bf3d64a0bd269b00d1168dea91b906111fbeb5"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r1/registration.json",
+      "bytes": 1137,
+      "sha256": "4b846eb46bc2ceef58aa7ad7baeee4891807dd220cb8fcc7a0aac4ce58ab6031"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r1/transition-help.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r1/transition-help.stdout.txt",
+      "bytes": 930,
+      "sha256": "6ba1c7e3bc0e34c0363aacbe265838ab48f04a0e6d45976ceea2cfeea2fa80a5"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r1/validate.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r1/validate.stdout.txt",
+      "bytes": 811,
+      "sha256": "1d5bf81bbf1fde9370c3de5fc9d8550fc6542450dc1685e2b90312252410b648"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r1/verification.json",
+      "bytes": 56448,
+      "sha256": "4c0b774e19d80a50323a5b279b2aed350d547e533d3bb4c1cf7da2b520567f07"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r1/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r1/version.stdout.txt",
+      "bytes": 1167,
+      "sha256": "4e336e2563f599b64119ea030b65da09f9f7406a52808d418762a255e300bf0b"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/calls.json",
+      "bytes": 6036,
+      "sha256": "1e8544416247f6844411d7252496518e3ba15cc1a468f44a0b08761c37e67447"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/capabilities.stdout.txt",
+      "bytes": 120322,
+      "sha256": "aeace392d23dc6a61515c4f90c6e954fc2895010b57852cbeba57f1b02bceb88"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/configure.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/configure.stdout.txt",
+      "bytes": 836,
+      "sha256": "3ec7bba367cf3e1c11ec517358591f7b8005d11d12f0aa42aa3d2865376544e0"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/executed-generator.py",
+      "bytes": 8265,
+      "sha256": "7745d4eb62f30c02596ffec6091289a1e5090828022f847a4caba153dc63b2ca"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/float-render-dry-run.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/float-render-dry-run.stdout.txt",
+      "bytes": 240828,
+      "sha256": "71076174419a291be8df9cbffd701c913386e9833373cd59997e790b3ce9fa20"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/import-case.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/import-case.stdout.txt",
+      "bytes": 1616,
+      "sha256": "a00e39d636689f0b1a820d126229bac53c536802fed9a1ce1b97d1e8a58e0fc6"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/register.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/register.stdout.txt",
+      "bytes": 358,
+      "sha256": "b1ba273a21e12e3ca13602207c41eb913bfbf9b894a5217a68ef8de29544113e"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/registration.json",
+      "bytes": 1137,
+      "sha256": "978b53838501171515def8de716461178728200466f53170d44e905d5056499a"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/transition-help.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/transition-help.stdout.txt",
+      "bytes": 930,
+      "sha256": "6ba1c7e3bc0e34c0363aacbe265838ab48f04a0e6d45976ceea2cfeea2fa80a5"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/validate.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/validate.stdout.txt",
+      "bytes": 811,
+      "sha256": "2e1e3a6cf0710b2df664bbbdc9febb69b6124462a08cea7f9267fbf08ba24924"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/verification.json",
+      "bytes": 56448,
+      "sha256": "2efc5a2a93b65a23458995af7415492b61a539f68445d987536aa333765481f6"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/version.stdout.txt",
+      "bytes": 1167,
+      "sha256": "1f667263f81f2f24d770f88c5a126f3e80572a6f7f4ffed0dc896a9d626f339b"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/legacy-installed-r1/executed-runner.py",
+      "bytes": 3873,
+      "sha256": "12e494fb2d05b2d00eb2e19131c94a82e076b6c9f8440b528eaa28f8a0929d07"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/legacy-installed-r1/tests.log",
+      "bytes": 27966,
+      "sha256": "750d23cf7ba90c93d307502afb7b37e6a6a5a00a4f9fbdb4ee2d7e11bfbd92b2"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/legacy-installed-r1/verification.json",
+      "bytes": 20403,
+      "sha256": "ea6fecf4508517c745c1bd6a7770b8e4e06b5fe0762550957d5f2b22a80f4fe9"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/executed-generator.py",
+      "bytes": 5195,
+      "sha256": "e29f9cb7bf88ef3420fa41e8ed97f4ed5796a9a0ecfd1c6dc85ae5af2933e6ed"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/import.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/import.stdout.log",
+      "bytes": 1604,
+      "sha256": "fd45776d179618b9251747f298a62a602b27acbb933c18a8717aca4ede9f7cc9"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/imported-24.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/imported-24.stdout.log",
+      "bytes": 72,
+      "sha256": "2b50e06c875f5972eeb6653c9b0de2382f9f91c828ad5b56dbffabdda02c4a4a"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/imported-36.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/imported-36.stdout.log",
+      "bytes": 72,
+      "sha256": "d6be2be93d765acaa5fd1f3cd0232e3fbc2bdb722a30936369352b70a4c2505e"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/imported-48.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/imported-48.stdout.log",
+      "bytes": 72,
+      "sha256": "71ab46a51a69ea76c17667a1445a433670b5879f6412150d4ab65e08e4258b68"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/imported-range-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/imported-range-pcm.stdout.log",
+      "bytes": 384000,
+      "sha256": "36c94872a48e77d10d3b54d54f4a0a8705591869fab3b07fd35278568ddef2b2"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/imported-range-pixels.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/imported-range-pixels.stdout.log",
+      "bytes": 11059200,
+      "sha256": "0b1755c97ab4afaa1a93f6dac216f5fe58df25859ce61dd8860b630044e68a09"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/imported-range.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/imported-range.stdout.log",
+      "bytes": 243325,
+      "sha256": "2263de3bf489ed472184ff255529a94696cf195d056671211feb639062bd77e6"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/original-24.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/original-24.stdout.log",
+      "bytes": 72,
+      "sha256": "2b50e06c875f5972eeb6653c9b0de2382f9f91c828ad5b56dbffabdda02c4a4a"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/original-36.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/original-36.stdout.log",
+      "bytes": 72,
+      "sha256": "d6be2be93d765acaa5fd1f3cd0232e3fbc2bdb722a30936369352b70a4c2505e"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/original-48.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/original-48.stdout.log",
+      "bytes": 72,
+      "sha256": "71ab46a51a69ea76c17667a1445a433670b5879f6412150d4ab65e08e4258b68"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/original-range-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/original-range-pcm.stdout.log",
+      "bytes": 384000,
+      "sha256": "36c94872a48e77d10d3b54d54f4a0a8705591869fab3b07fd35278568ddef2b2"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/original-range-pixels.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/original-range-pixels.stdout.log",
+      "bytes": 11059200,
+      "sha256": "0b1755c97ab4afaa1a93f6dac216f5fe58df25859ce61dd8860b630044e68a09"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/original-range.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/original-range.stdout.log",
+      "bytes": 243167,
+      "sha256": "63be9e741acf5b2f4ac983352aedc916ebf8713ea08befdb2494564ea13312f4"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/preview-24.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/preview-24.stdout.log",
+      "bytes": 233087,
+      "sha256": "5445fc8ff8bfe468ff4ea98f2d1d6f1029d05f3c840bb399aa5e0d0fe5c31c6e"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/preview-36.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/preview-36.stdout.log",
+      "bytes": 233111,
+      "sha256": "ccd0edb00417a6432e51980e6c94f02e0cf94e73142336ccf12d862de7eb6a53"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/preview-48.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/preview-48.stdout.log",
+      "bytes": 233108,
+      "sha256": "be4fe050de7517571ed3930757876fd13b9ee63b411fe8c6e47292ed8f8a5528"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/validate.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/validate.stdout.log",
+      "bytes": 808,
+      "sha256": "d16fbe5be87ef4a6135f221aafa0ca7b6fa160ff0969b75bf1e7302573c9d0f3"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/package-r1/verification.json",
+      "bytes": 14961,
+      "sha256": "d772eff7464c55aa6342e82a5da457dfa4a29f05cdc53621afe6e47278b8a63d"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/render-installed-r1/executed-runner.py",
+      "bytes": 3873,
+      "sha256": "12e494fb2d05b2d00eb2e19131c94a82e076b6c9f8440b528eaa28f8a0929d07"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/render-installed-r1/test_float_standard_render-error_receipts.json",
+      "bytes": 2900,
+      "sha256": "700cbd9a1387ad71f4234eb0f53b8c0550ec048f75e935c88cd766f57367622f"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/render-installed-r1/test_float_standard_render-native_calls.json",
+      "bytes": 53835,
+      "sha256": "b920047c3226e22727762fbdb51f9aa76ad744f035d8d432900d884489e94908"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/render-installed-r1/test_float_standard_render-render_receipts.json",
+      "bytes": 301318,
+      "sha256": "766cfe23850021d568b9dc7d143f7270cd87df10450c317748f5a43859aae5ab"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/render-installed-r1/tests.log",
+      "bytes": 8200,
+      "sha256": "cc051daba4791e017b2392cc41a7c78a750f10be0e71df1114289cc95f400587"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/render-installed-r1/verification.json",
+      "bytes": 20390,
+      "sha256": "f7eaefe14e7bf90a7ca00bccc3c57577e86841fadccd3afe94da50b08ef67a4a"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r1/executed-runner.py",
+      "bytes": 3745,
+      "sha256": "22f0d1e7f8142142965eafbc7aec48becb32ba8df2cf0f1a70069d9d73d888d4"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r1/tests.log",
+      "bytes": 2257,
+      "sha256": "69e3e7ce91fdf110f3910dda4a609163975792abb168cb83ca5629ae9af36d3f"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r1/verification.json",
+      "bytes": 20277,
+      "sha256": "4216e9916cbff67ef64e533071b3057d6ea6990c0af9117dd7fc19ad4b6fb1ca"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r2/executed-runner.py",
+      "bytes": 3745,
+      "sha256": "22f0d1e7f8142142965eafbc7aec48becb32ba8df2cf0f1a70069d9d73d888d4"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r2/test_float_adjustments-native_calls.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r2/test_float_adjustments-render_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r2/test_float_standard_render-error_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r2/test_float_standard_render-native_calls.json",
+      "bytes": 4880,
+      "sha256": "6a09d115cc9ed230591293bb720f4c9d539c296e29cf3a52cb37576c64ef1b33"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r2/test_float_standard_render-render_receipts.json",
+      "bytes": 175436,
+      "sha256": "a205899a8f027aa8ce09b840fa9ef4be62f7ae1a65b476593e710be8c451a0f1"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r2/tests.log",
+      "bytes": 5433,
+      "sha256": "cc89c1474612514254fdb52b81c4bb8799c00d0405f23d2163c5e531d41f507e"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r2/verification.json",
+      "bytes": 20277,
+      "sha256": "5e02a7228da456558c5708f65051ac6362546a99f67679722da577f14820825b"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r3/executed-runner.py",
+      "bytes": 3745,
+      "sha256": "22f0d1e7f8142142965eafbc7aec48becb32ba8df2cf0f1a70069d9d73d888d4"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r3/test_float_adjustments-native_calls.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r3/test_float_adjustments-render_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r3/test_float_standard_render-error_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r3/test_float_standard_render-native_calls.json",
+      "bytes": 4880,
+      "sha256": "09de1a1f78c755b3deead7611da42d33473c5f68a3052718eedd5b2398d897a6"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r3/test_float_standard_render-render_receipts.json",
+      "bytes": 175534,
+      "sha256": "1fafffa6cedbe1047224ccf8059e0607dd772ac1a9e04ad2f68212d292decfc5"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r3/tests.log",
+      "bytes": 3812,
+      "sha256": "9099529baf6f27125d4d90b34b16d4a4ed22f593ee8db5958f8e9ee6124ee936"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r3/verification.json",
+      "bytes": 20277,
+      "sha256": "772128c8129329a6b6000ed4ae8c967a68842a1b844b08f9634c2cad1677c837"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r4/executed-runner.py",
+      "bytes": 3745,
+      "sha256": "22f0d1e7f8142142965eafbc7aec48becb32ba8df2cf0f1a70069d9d73d888d4"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r4/test_float_adjustments-native_calls.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r4/test_float_adjustments-render_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r4/test_float_standard_render-error_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r4/test_float_standard_render-native_calls.json",
+      "bytes": 5646,
+      "sha256": "a500863b9bec19e714df43002b0163c45748563d51419f5f4766625b89ebe164"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r4/test_float_standard_render-render_receipts.json",
+      "bytes": 175534,
+      "sha256": "832c8a6bf9e17ca9f0f1527484f6aaf90b7e1776952feac6acb3a67e3a9af126"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r4/tests.log",
+      "bytes": 3274,
+      "sha256": "1e0529bf9f73c0f8617fd14d95efd149e41c854baefd2babf295c7ccca873079"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r4/verification.json",
+      "bytes": 20277,
+      "sha256": "67251a1e1f452fc0b250d8f0d31653e54a0f094a9adeb2fae39f7af81b74da5a"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r5/executed-runner.py",
+      "bytes": 3745,
+      "sha256": "22f0d1e7f8142142965eafbc7aec48becb32ba8df2cf0f1a70069d9d73d888d4"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r5/test_float_adjustments-native_calls.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r5/test_float_adjustments-render_receipts.json",
+      "bytes": 105801,
+      "sha256": "8e7ed47bbc538f13d0c01e3133bc5744cce0fa7f50acb19bb2c72c4e85424d86"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r5/test_float_standard_render-error_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r5/test_float_standard_render-native_calls.json",
+      "bytes": 5646,
+      "sha256": "dc48c818b26edfaaf439a1aa7d01c0a96a925122acf2f6994253c9cce930429b"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r5/test_float_standard_render-render_receipts.json",
+      "bytes": 175537,
+      "sha256": "93b17d1f5d22793dc91c8ea81da1fc289a272c650eb30dc6a9d4dca355376605"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r5/tests.log",
+      "bytes": 2632,
+      "sha256": "30283ee82527f7fab9f93c3eebc1183808827b117a5e0b4941b2bfa27217033a"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-adjustments-r5/verification.json",
+      "bytes": 20277,
+      "sha256": "c10e6014b3ecca004e7c8fd03e54b2f6435431aaca41aefbdb7d9899afd40850"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-effects-r1/executed-runner.py",
+      "bytes": 3745,
+      "sha256": "22f0d1e7f8142142965eafbc7aec48becb32ba8df2cf0f1a70069d9d73d888d4"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-effects-r1/test_float_standard_render-error_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-effects-r1/test_float_standard_render-native_calls.json",
+      "bytes": 39809,
+      "sha256": "4bf90ce8881d782911e507c5d9831eba3e1e4b0d2a7e7fd67c651df42098d541"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-effects-r1/test_float_standard_render-render_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-effects-r1/tests.log",
+      "bytes": 35666,
+      "sha256": "96372a20d5399d0056222ca37fb2c5db0d97d72a8e7e89df7eb872e934042e75"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-effects-r1/verification.json",
+      "bytes": 20392,
+      "sha256": "8f5a135e5e297bde93818934a53ac6ecaa4cdf687aebade267b160c58e123157"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-float-r1/executed-runner.py",
+      "bytes": 3745,
+      "sha256": "22f0d1e7f8142142965eafbc7aec48becb32ba8df2cf0f1a70069d9d73d888d4"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-float-r1/test_float_standard_render-error_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-float-r1/test_float_standard_render-native_calls.json",
+      "bytes": 10423,
+      "sha256": "6336d095e5824576f77076c2a221d1a4fd70b1b4dee1f8bde2e7dbf41db165c0"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-float-r1/test_float_standard_render-render_receipts.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-float-r1/tests.log",
+      "bytes": 17048,
+      "sha256": "bab9e3cc7cea65e9217545cc2be9e31ca4b80438562597f1369dfc9b8107398d"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/source-float-r1/verification.json",
+      "bytes": 20369,
+      "sha256": "81223ec7d567c14ed999c81c2f4f36dca30c29df9bcc8cdbd0c20c3e41a74a9d"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/text-installed-r1/executed-runner.py",
+      "bytes": 3873,
+      "sha256": "12e494fb2d05b2d00eb2e19131c94a82e076b6c9f8440b528eaa28f8a0929d07"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/text-installed-r1/tests.log",
+      "bytes": 15769,
+      "sha256": "84621f298c053cec538ab6975d037ef8b7d7dcc9d81f7ff2b16345dcc6fef183"
+    },
+    {
+      "path": "docs/validation/evidence/float-adjustments-20261026-r1/text-installed-r1/verification.json",
+      "bytes": 20442,
+      "sha256": "316c1133217b5843a8cceef8b55b6f77d666eb81434f6131ac97ba45a7ab669a"
+    },
+    {
+      "path": "product/pyproject.toml",
+      "bytes": 1451,
+      "sha256": "6c10fc9b36011c5abd9ade197daba69d6ffe8dc271d45bcd12a09e7d42f6417b"
+    },
+    {
+      "path": "product/src/ai_ad_editor/__init__.py",
+      "bytes": 181,
+      "sha256": "918739a36e8446cee134a360f10a9028defc354f57b8f170940435b96cfe5d20"
+    },
+    {
+      "path": "product/src/ai_ad_editor/capabilities.py",
+      "bytes": 142307,
+      "sha256": "6e4f3f6b95e23138c2f6ffcd633a513359fda2ce334237e16225f62c6f8c40b3"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_adjustments.py",
+      "bytes": 7073,
+      "sha256": "fc439a169b5bf353fba54617ae09f5c73b2d0d924909f74fc545962a31df3c58"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_effect_chain.py",
+      "bytes": 9057,
+      "sha256": "73fa375ee466a069b02f2f1613fccc729c0a00e7dd0c3379c6673cd872c743ab"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_standard_render.py",
+      "bytes": 25259,
+      "sha256": "b73202b648fe73a2f5c9081630509bfeb1b0df6ab330f7272bfba0eb419b148d"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_timeline.py",
+      "bytes": 29294,
+      "sha256": "c0d0bd276a126ad6d2dfa6875f1b130ae59795f87c1f5b158601ffc35c58bd8b"
+    },
+    {
+      "path": "product/tests/test_float_adjustments.py",
+      "bytes": 14911,
+      "sha256": "f2b49ecc934702afe8133f00f3527dbf20739e962d648760a2d0727c30937e0d"
+    },
+    {
+      "path": "scripts/activate_float_adjustments_20261026.py",
+      "bytes": 2620,
+      "sha256": "d62e92f197a60b8aacea17d7c912248ae9fbf17a52433ff4adb00583c61d5106"
+    },
+    {
+      "path": "scripts/audit_float_adjustments_delivery_20261026.py",
+      "bytes": 9733,
+      "sha256": "a0299910cba8056be29d0500fd130c1db398018508693a24d9deb03838de9bca"
+    },
+    {
+      "path": "scripts/audit_float_adjustments_stage_20261026.py",
+      "bytes": 4656,
+      "sha256": "e20f059017bf36b131483f7361905ce9b544ecf848519ec67f70fc259aab686d"
+    },
+    {
+      "path": "scripts/build_float_adjustments_20261026.py",
+      "bytes": 5363,
+      "sha256": "90b10cb36e52b0a730caa350a562582c19913fb733085df47bf75359d2db9255"
+    },
+    {
+      "path": "scripts/document_float_adjustments_20261026.py",
+      "bytes": 14831,
+      "sha256": "a8d6894d04890682bffba6095f53afa5b9fcd756bd38b72f77b9f014648f013a"
+    },
+    {
+      "path": "scripts/package_community_skill.py",
+      "bytes": 4934,
+      "sha256": "d8d49c588157771c036378a77f93c05d71c5d0e2a374f36f57b4034c738b4797"
+    },
+    {
+      "path": "scripts/pin_community_skill.py",
+      "bytes": 2733,
+      "sha256": "e56830ddf07e7c7fbb7c51179993aab8d030b78ab10ba3ea51c5c71ed26696de"
+    },
+    {
+      "path": "scripts/publish_float_adjustments_skill_kit_20261026.py",
+      "bytes": 1247,
+      "sha256": "d2ac3c1c78ab63e16c65932101a4072e3590c9d05bea46efd9dc0742d48c4e45"
+    },
+    {
+      "path": "scripts/run_float_adjustments_case_20261026.py",
+      "bytes": 24130,
+      "sha256": "b061564fba7c07398d4ea0011b99ba35659e0467e1713361696aeb031bcef5b3"
+    },
+    {
+      "path": "scripts/sync_capability_manuals.py",
+      "bytes": 4974,
+      "sha256": "cb64c948181ccdee9acf097e4c7181c6082ff0e142a3bb588df77bd8e0638767"
+    },
+    {
+      "path": "scripts/test_float_adjustments_20261026.py",
+      "bytes": 3873,
+      "sha256": "12e494fb2d05b2d00eb2e19131c94a82e076b6c9f8440b528eaa28f8a0929d07"
+    },
+    {
+      "path": "scripts/verify_float_adjustments_package_20261026.py",
+      "bytes": 5195,
+      "sha256": "e29f9cb7bf88ef3420fa41e8ed97f4ed5796a9a0ecfd1c6dc85ae5af2933e6ed"
+    },
+    {
+      "path": "scripts/verify_float_adjustments_push_20261026.py",
+      "bytes": 2945,
+      "sha256": "3bf3dcab1159ce26c83d1722ea19387628d4c0aa549e325993f4470f72731d3f"
+    },
+    {
+      "path": "scripts/verify_float_adjustments_skill_kit_20261026.py",
+      "bytes": 8265,
+      "sha256": "7745d4eb62f30c02596ffec6091289a1e5090828022f847a4caba153dc63b2ca"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
+      "bytes": 10670,
+      "sha256": "1d3a5fec8d07ac477be71e263c9ac8eb4eeaa3fd1a3c9a1126dd269c5c206169"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/float-adjustments.md",
+      "bytes": 3133,
+      "sha256": "169fe217293328c0d26d71fe55df66b58b551f28d01fc0149ad0ec09278898e3"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
+      "bytes": 7553,
+      "sha256": "c4d216c375fe08a581de32905f51daf18744c62fd3e683151b29fb7d0189e40d"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/scripts/run.py",
+      "bytes": 2296,
+      "sha256": "fc9d98fba5a3cccf6a971e5ed4ed17a30be8800e393987ce33a75edf03b12c32"
+    }
+  ]
+}

@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.24 / alpha.4-local.22 / r25 kit · 1 Skill / 17 modules / 71 files.**
+**CLI0.1.25 / alpha.4-local.23 / r26 kit · 1 Skill / 17 modules / 72 files.**
 
 明確線性 Float32 管線新增 57 種 xfade 圖案及黑/白 dip，真實來源句柄、關聯音軌與群組空間進出場已接入。實際統一 Skill 完成 6秒/72影格案例，倒放、預覽、取消恢復、佇列與逐樣本音訊核對通過。CPU 執行；預設管線與 GPU 投影沿用各自契約。
 
-[Float32 workflow](FLOAT_TRANSITIONS.md) · [GPU projection](OPENCL_PROJECTION.md) · [Install](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](float-gpu-capabilities-cli-0.1.24.json).
+[Float32 workflow](FLOAT_TRANSITIONS.md) · [GPU projection](OPENCL_PROJECTION.md) · [Install](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](float-adjustments-capabilities-cli-0.1.25.json).
 
 <!-- /community-current -->
 
@@ -293,3 +293,5 @@ CLI0.1.22: independent/inline Float32 text, joint typewriter/highlight and plain
 Historical CLI0.1.23:[4K text and reusable native byte coverage](FLOAT_TEXT_COVERAGE.md). CPU tiled linear component composition,exact original clocks,bounded adaptive caches. GPU text,natural quality,HDR,realtime and full original conditions remain open.
 
 CLI0.1.24:[native Float32 GPU workflow](FLOAT_GPU.md). Explicit geometry/normal composition/text colors/word selection;owned worker cleanup;CPU glyph rasterization and remaining operators retained. Full original target conditions remain open.
+
+CLI0.1.25: [global/interval Float32 grading](FLOAT_ADJUSTMENTS.md); one selected root, authored clocks, explicit local LUT dependencies; CPU effects with compatible GPU composition. One Skill /17 modules /72 files.

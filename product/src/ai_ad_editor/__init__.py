@@ -1,6 +1,6 @@
 """Local-only Agent-first advertising video editor."""
 
-VERSION = "0.1.24"
+VERSION = "0.1.25"
 SCHEMA_VERSION = "0.1.0"
 ENGINE_ID = "ffmpeg-local"
 

@@ -1,0 +1,28 @@
+test_adjust_after_all_tracks_including_transparent_mix_and_preserve_alpha_bits (test_float_adjustments.FloatAdjustmentTests.test_adjust_after_all_tracks_including_transparent_mix_and_preserve_alpha_bits) ... ok
+test_chain_and_layer_order_match_and_reversal_changes_result (test_float_adjustments.FloatAdjustmentTests.test_chain_and_layer_order_match_and_reversal_changes_result) ... ok
+test_disabled_unknown_effects_and_empty_layers_are_noops (test_float_adjustments.FloatAdjustmentTests.test_disabled_unknown_effects_and_empty_layers_are_noops) ... ok
+test_fractional_ticks_do_not_snap_hold_channels_to_frame_grid (test_float_adjustments.FloatAdjustmentTests.test_fractional_ticks_do_not_snap_hold_channels_to_frame_grid) ... ok
+test_global_is_applied_once_after_reversed_nested_canvas (test_float_adjustments.FloatAdjustmentTests.test_global_is_applied_once_after_reversed_nested_canvas) ... ok
+test_interval_uses_exact_half_open_endpoints_and_original_local_clock (test_float_adjustments.FloatAdjustmentTests.test_interval_uses_exact_half_open_endpoints_and_original_local_clock) ... ok
+test_keys_beyond_declared_window_reject_and_equal_endpoint_is_valid (test_float_adjustments.FloatAdjustmentTests.test_keys_beyond_declared_window_reject_and_equal_endpoint_is_valid) ... ok
+test_late_surface_invalid_values_are_not_skipped_by_zero_strength (test_float_adjustments.FloatAdjustmentTests.test_late_surface_invalid_values_are_not_skipped_by_zero_strength) ... ok
+test_local_LUT_resource_is_shared_fingerprinted_and_change_detected (test_float_adjustments.FloatAdjustmentTests.test_local_LUT_resource_is_shared_fingerprinted_and_change_detected) ... ok
+test_malformed_and_unknown_declarations_reject_before_fetch (test_float_adjustments.FloatAdjustmentTests.test_malformed_and_unknown_declarations_reject_before_fetch) ... ok
+test_project_local_LUT_is_read_locked_before_encoder_and_released_afterward (test_float_adjustments.FloatAdjustmentTests.test_project_local_LUT_is_read_locked_before_encoder_and_released_afterward) ... ok
+test_real_ten_bit_render_frame_preview_and_complete_audio (test_float_adjustments.FloatAdjustmentTests.test_real_ten_bit_render_frame_preview_and_complete_audio) ... FAIL
+test_short_target_clips_coverage_without_rescaling_declared_animation (test_float_adjustments.FloatAdjustmentTests.test_short_target_clips_coverage_without_rescaling_declared_animation) ... ok
+test_six_easings_retain_layer_clock_offset (test_float_adjustments.FloatAdjustmentTests.test_six_easings_retain_layer_clock_offset) ... ok
+
+======================================================================
+FAIL: test_real_ten_bit_render_frame_preview_and_complete_audio (test_float_adjustments.FloatAdjustmentTests.test_real_ten_bit_render_frame_preview_and_complete_audio)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_adjustments.py", line 197, in test_real_ten_bit_render_frame_preview_and_complete_audio
+    self.assertEqual(code,0,envelope);preview=envelope['data']
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : {'ok': False, 'command': 'preview.frame', 'request_id': 'req_20261026010714_d9cc09fb', 'operation_id': None, 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'PROJECT_INVALID', 'message': '项目验证失败，拒绝预览', 'path': None, 'retryable': False, 'cause': '{"ok": false, "errors": [{"code": "SCHEMA_VALIDATION_FAILED", "message": "\'rights_ref\' is a required property", "path": "assets.1", "retryable": false}, {"code": "SCHEMA_VALIDATION_FAILED", "message": "{\'id\': \'grade\', \'start_tick\': 27000, \'duration_tick\': 36000, \'effects\': [{\'type\': \'exposure\', \'parameters\': {\'amount\': 0, \'black\': 0}, \'keyframes\': [{\'property\': \'amount\', \'keyframes\': [{\'at_tick\': 0, \'value\': 0}, {\'at_tick\': 36000, \'value\': 1}]}]}]} is not valid under any of the given schemas", "path": "settings.adjustments.0", "retryable": false}, {"code": "INTERPOLATION_INVALID", "message": "序列调节关键帧插值类型无效", "path": "settings.adjustments[0].effects[0].keyframes[0].keyframes[0].interpolation", "retryable": false}, {"code": "INTERPOLATION_INVALID", "message": "序列调节关键帧插值类型无效", "path": "settings.adjustments[0].effects[0].keyframes[0].keyframes[1].interpolation", "retryable": false}, {"code": "RIGHTS_REF_MISSING", "message": "资产 rights_ref 缺失", "path": "assets[1].rights_ref", "retryable": false}, {"code": "ID_DUPLICATE", "message": "重复 ID: sound", "path": "sequences[0].tracks[1].clips[0].id", "retryable": false}], "warnings": [], "rights": {"ok": false, "target": "commercial_ad", "checked": 2, "required_records": 1, "failures": [{"asset_id": "sound", "context": "project_asset", "code": "RIGHTS_RECORD_MISSING", "message": "没有对应 Rights Ledger 记录"}], "warnings": [], "disposition_decisions": [], "effective_disposition_decisions": []}, "schema_engine": "jsonschema", "asset_count": 2, "sequence_count": 1}'}], 'provenance': {'cli_version': '0.1.24', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-10-26T01:07:14.798016Z', 'finished_at': '2026-10-26T01:07:14.798023Z', 'network': 'disabled'}}
+
+----------------------------------------------------------------------
+Ran 14 tests in 23.453s
+
+FAILED (failures=1)

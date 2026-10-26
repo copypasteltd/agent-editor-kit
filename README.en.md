@@ -9,9 +9,23 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- float-gpu-current -->
+<!-- float-adjustments-current -->
 
-**CLI0.1.24 / alpha.4-local.22 / r25 kit · 1 Skill / 17 modules.**
+**CLI0.1.25 / alpha.4-local.23 / r26 kit · 1 Skill / 17 modules.**
+
+Installed global/interval Float32 adjustments now support ordered effect chains, LUT/exposure, six keyframe interpolations and one application at the selected sequence root. The registered Skill delivers a 6s/72-frame edit with GPU text/affine, reversed nested clips, transitions and linked audio. Resume/queue preserve every frame clock and complete PCM; package reimport preserves LUT bytes and frame/range previews.
+
+[Workflow](docs/product/FLOAT_ADJUSTMENTS.md) · [C35](docs/product/CASES.md#c35-float-adjustments) · [Local install](docs/releases/CLI_0.1.25_LOCAL.md) · [Evidence](docs/validation/Float32调整层实测_2026-10-26.md)
+
+![Actual registered Skill edit / silent GIF](docs/assets/float-adjustments-20261026-r1/native-text.gif)
+
+Adjustments use CPU Float32 and combine with supported GPU composition. No new model inference or performance claim. Natural-content quality, HDR/ICC and the full goal remain open.
+
+<!-- /float-adjustments-current -->
+
+<!-- float-gpu-history -->
+
+**Historical / 历史 / 歷史：CLI0.1.24 / alpha.4-local.22 / r25 kit · 1 Skill / 17 modules.**
 
 Native Windows Float32 GPU execution now drives render, preview, queue and resume: affine sampling, normal source-over, text colors and word selection. The installed CLI delivers a 6s/72-frame edit; the registered Skill renders 4K/8-frame animation and reimports the edit for preview. One paired render of the same 4K project: CPU 296.712s → GPU 139.938s (2.120×); all frame clocks/full decoded PCM match, decoded code error≤1.
 
@@ -21,7 +35,7 @@ Native Windows Float32 GPU execution now drives render, preview, queue and resum
 
 Actual maximum decoded 8-bit code error: 0 (limit: 1). RTX3060, one nonexclusive-host pair, not a median or general speed guarantee. Glyph rasterization, transitions/effects/crop/other blends remain CPU;8bit coverage/Float32 colors. Admission is not peak RSS or reserved free VRAM. Full target conditions remain open.
 
-<!-- /float-gpu-current -->
+<!-- /float-gpu-history -->
 
 <!-- float-text-coverage-history -->
 
@@ -180,7 +194,7 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r25 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r25.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r26 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r26.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
@@ -549,6 +563,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F55 | Linear Float32 transitions and group edges | Explicit Float32 projects → 57 xfade patterns+2 dips,premultiplied alpha,real handles/original clocks,linked audio,group wipe/slide,actual preview and encoding. | `timeline transition; preview; render; queue` | CPU;12 real-handle declaration types,other patterns use overlap/edges;normal paired blending;platform-dependent wind,HDR/natural quality open. |
 | F56 | Linear Float32 text and captions | Independent/inline/SRT,joint word/typewriter → native byte coverage,reusable glyphs,tiled linear composition,original clocks,4K titles and actual delivery. | `timeline compose; preview; render; queue` | Explicit local font;CPU/explicit GPU;8bit coverage/Float32 colors;admission is not peak RSS;rich ASS/Bidi/natural quality open. |
 | F57 | Native Float32 GPU execution | Explicit policy → linear Float32 affine, normal over, text components/paragraphs and word selection; real render/preview/queue/resume. | `projection_acceleration; render; preview; queue` | off/prefer/require;actual binary64/subnormal probes;owned process/shared buffers;other operators CPU,not all-GPU editing. |
+| F58 | Float32 global/interval adjustments | Ordered grading after all tracks including subtitles;existing float effects,LUT/exposure,six keyframe modes,selected root once. | `settings.adjustments; preview; render; queue` | Explicit linear working/effect signals;CPU execution;locked/portable LUTs;original interval clocks,not complete HDR. |
 
 ## Supported service modules and dependencies
 
@@ -675,7 +690,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.22/final-r4/installed/`, CLI 0.1.24. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.23/final-r1/installed/`, CLI 0.1.25. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1046,6 +1061,13 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R176 | 2026-10-26 Float32 GPU | One complete paired4K render CPU 296.712->GPU 139.938s (2.120x);4logicalCPU affinity,fresh project caches,all clocks/fullPCM equal,max8bitcodeerror<=1;nonexclusive,not a median | [Evidence](docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/verification.json) |
 | R177 | 2026-10-26 Float32 GPU | Actual editable package import,three RGBA64 previews equal,font license retained;r25 isolated kit registration/planning/validation · [r25 kit](docs/validation/evidence/float-gpu-20261026-r1/kit-r1/verification.json) | [Evidence](docs/validation/evidence/float-gpu-20261026-r1/package-r1/verification.json) |
 | R178 | 2026-10-26 Float32 GPU | Three languages57functions/20services/17modules/75declarations;170historical rows and38original closure conditions retained;final installed/Skill/docs byte audit | [Evidence](docs/validation/evidence/float-gpu-20261026-r1/final-delivery-r3/verification.json) |
+| R179 | 2026-10-26 Float32 adjustments | Offline ZIP installed,218 source files byte-match;CLI0.1.25/local.23-final-r1;one Skill/17 modules/72 files | [Evidence](docs/validation/evidence/float-adjustments-20261026-r1/installation-final-r1/verification.json) |
+| R180 | 2026-10-26 Float32 adjustments | 14 adjustment tests:independent pixel/clock oracles,actual 10bit encode,complete original PCM,RGBA16 frame preview,Windows LUT read-lock/release | [Evidence](docs/validation/evidence/float-adjustments-20261026-r1/adjustments-installed-r1/verification.json) |
+| R181 | 2026-10-26 Float32 adjustments | Separate installed groups,zero skips:adjustments=14, effects=219, float=98, audio=64, render=44, legacy=191, text=98, gpu=23;not combined with history | [Evidence](docs/validation/evidence/float-adjustments-20261026-r1/effects-installed-r1/verification.json) |
+| R182 | 2026-10-26 Float32 adjustments | Registered Skill6s/72frames;global LUT/exposure plus animated interval,108 layer applications;288000 stereo sample oracle error=3.72529029846e-09;resume/queue frames and full PCM equal | [Evidence](docs/validation/evidence/float-adjustments-20261026-r1/case-r1/verification.json) |
+| R183 | 2026-10-26 Float32 adjustments | Actual editable package import,LUT bytes/font license retained;3 RGBA64 frames and12 Float32 range frames/48000 stereo PCM samples exactly match | [Evidence](docs/validation/evidence/float-adjustments-20261026-r1/package-r1/verification.json) |
+| R184 | 2026-10-26 Float32 adjustments | r26 isolated kit extraction/registration/planning/validation;real discovery retained;one Skill/17 modules/72 files | [Evidence](docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/verification.json) |
+| R185 | 2026-10-26 Float32 adjustments | Three languages58functions/20services/17modules/75declarations;178 historical rows/38original closure conditions retained;final delivery bytes/links checked | [Evidence](docs/validation/evidence/float-adjustments-20261026-r1/final-delivery-r1/verification.json) |
 
 ## Current limits and development direction
 

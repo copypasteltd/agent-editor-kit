@@ -1643,3 +1643,13 @@ docs/product/FLOAT_TEXT_COVERAGE.md text eol=lf
 docs/specs/文字覆盖率分块与复用契约_20261026.md text eol=lf
 docs/validation/文字覆盖率分块与复用实测_2026-10-26.md text eol=lf
 docs/releases/CLI_0.1.23_LOCAL.md text eol=lf
+
+# Float32 adjustment implementation, native receipts and public media.
+docs/validation/evidence/float-adjustments-20261026-r1/** -text -whitespace
+docs/assets/float-adjustments-20261026-*/** -text -whitespace
+product/src/ai_ad_editor/float_adjustments.py text eol=lf
+product/tests/test_float_adjustments.py text eol=lf
+scripts/*float_adjustments*20261026.py text eol=lf
+docs/product/FLOAT_ADJUSTMENTS.md text eol=lf
+docs/product/float-adjustments-capabilities-cli-0.1.25.json -text -whitespace
+docs/skills/community-unified-skill-package-0.1.25-r26.json -text -whitespace

@@ -1,0 +1,829 @@
+{
+  "status": "passed",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.23\\final-r1\\installed",
+  "cli_version": "0.1.25",
+  "calls": [
+    {
+      "name": "generate-original",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-f",
+        "rawvideo",
+        "-pixel_format",
+        "gbrp16le",
+        "-video_size",
+        "320x180",
+        "-framerate",
+        "12",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\original.gbrp16",
+        "-c:v",
+        "ffv1",
+        "-level",
+        "3",
+        "-g",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-adjustments-20261026-r1\\original.native.mkv"
+      ],
+      "exit_code": 0,
+      "seconds": 0.16447599999992235,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "generate-audio",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-f",
+        "f32le",
+        "-ar",
+        "48000",
+        "-ac",
+        "2",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\original.f32",
+        "-c:a",
+        "pcm_f32le",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-adjustments-20261026-r1\\original.audio.wav"
+      ],
+      "exit_code": 0,
+      "seconds": 0.06958180000037828,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "version",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "version"
+      ],
+      "exit_code": 0,
+      "seconds": 2.168595899999673,
+      "stdout_sha256": "6f89900cae9af68e259791b91d8936f30497f7a30303b8731079fcca5f9cbd85",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "capabilities",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "capabilities"
+      ],
+      "exit_code": 0,
+      "seconds": 1.9556816000003892,
+      "stdout_sha256": "19feb71a9047240266ace1a2773182642c7c8e0d2a64e661505d0c047a2e4829",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "validate",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "validate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程"
+      ],
+      "exit_code": 0,
+      "seconds": 2.40508090000003,
+      "stdout_sha256": "6b2cf2a296f19b879274898b79117dc8a06b3eaceb41bba484f1b35c6a12e164",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "preview-0",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "preview",
+        "frame",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程",
+        "--frame",
+        "0",
+        "--height",
+        "180"
+      ],
+      "exit_code": 0,
+      "seconds": 21.334073199999693,
+      "stdout_sha256": "9e864df6e119820aad3767d8b642306e67f058d1ac06589b8a3296177438fe3c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "preview-11",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "preview",
+        "frame",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程",
+        "--frame",
+        "11",
+        "--height",
+        "180"
+      ],
+      "exit_code": 0,
+      "seconds": 18.93879560000005,
+      "stdout_sha256": "20820ad06d1117265ad1e2911d6f5790e1ed65a129c789cc4ad6f77545f43073",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "preview-24",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "preview",
+        "frame",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程",
+        "--frame",
+        "24",
+        "--height",
+        "180"
+      ],
+      "exit_code": 0,
+      "seconds": 18.051412099999652,
+      "stdout_sha256": "f6d0801be85ac8b8a83f077617cd20ba429a8e956df9ee146f6c63f5e0224c73",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "preview-36",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "preview",
+        "frame",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程",
+        "--frame",
+        "36",
+        "--height",
+        "180"
+      ],
+      "exit_code": 0,
+      "seconds": 18.35415009999997,
+      "stdout_sha256": "e7b2a13bc9b07213d37e33f90bd1748088589a702213c498b7f39a7c09896773",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "preview-48",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "preview",
+        "frame",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程",
+        "--frame",
+        "48",
+        "--height",
+        "180"
+      ],
+      "exit_code": 0,
+      "seconds": 17.937090600000374,
+      "stdout_sha256": "b3c7ac25435271cf43176f9d422e30ded873a3c2448c966bcbbd20956e10dc3e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "preview-60",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "preview",
+        "frame",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程",
+        "--frame",
+        "60",
+        "--height",
+        "180"
+      ],
+      "exit_code": 0,
+      "seconds": 19.059780600000522,
+      "stdout_sha256": "4876fd1bc768020649fe6601ce3f767145538cdc9c175bc7cb9021c0974dd1f1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "preview-71",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "preview",
+        "frame",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程",
+        "--frame",
+        "71",
+        "--height",
+        "180"
+      ],
+      "exit_code": 0,
+      "seconds": 20.871021300001303,
+      "stdout_sha256": "caf28f332bee3e5c03ba4de413434196fb38adf2904f118b72c567cfba38e6b1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "render-dry-run",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程\\renders\\planned.mkv",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "seconds": 9.70381180000004,
+      "stdout_sha256": "2fc056ffd42fc110b7d41cbe0f0dd81d83533e19805ce34bde572ecacddb5dd1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "render",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程\\renders\\native-text.mkv"
+      ],
+      "exit_code": 0,
+      "seconds": 116.84158130000105,
+      "stdout_sha256": "d85a82af7530de986eddb196e929aef6eadf5f2238df2bd798f9beda352e80f9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "actual-frames",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程\\renders\\native-text.mkv",
+        "-map",
+        "0:v:0",
+        "-pix_fmt",
+        "rgba",
+        "-f",
+        "framemd5",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.10973969999940891,
+      "stdout_sha256": "e2d8d4832bfd8a4f80e83f8d404a34e9ac1395a3fad28c414013f1de11a4dca6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "actual-pcm",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程\\renders\\native-text.mkv",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.07909069999914209,
+      "stdout_sha256": "08eee939a313d32cba44dbd6b90ab6bc80f67452ae00bb006b10edc17c26733d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "cancel",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程\\renders\\resumed.mkv",
+        "--cancel-file",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\cancel.flag"
+      ],
+      "exit_code": 8,
+      "seconds": 14.090568100000382,
+      "stdout_sha256": "45c74da095f08151a20bf80765a548f18eb9d7cfb374499650be852c1ad5e800",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "owned_encoder_output_observed": true
+    },
+    {
+      "name": "resume",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程",
+        "--resume",
+        "render_20261026012535_58fe142e"
+      ],
+      "exit_code": 0,
+      "seconds": 115.08662619999996,
+      "stdout_sha256": "0b497daa3b14ec40ea765784123bedfceb85055f93446537ff622d6bdcbf08b7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "resumed-frames",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程\\renders\\resumed.mkv",
+        "-map",
+        "0:v:0",
+        "-pix_fmt",
+        "rgba",
+        "-f",
+        "framemd5",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.09314090000043507,
+      "stdout_sha256": "e2d8d4832bfd8a4f80e83f8d404a34e9ac1395a3fad28c414013f1de11a4dca6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "resumed-pcm",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程\\renders\\resumed.mkv",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.06661969999913708,
+      "stdout_sha256": "08eee939a313d32cba44dbd6b90ab6bc80f67452ae00bb006b10edc17c26733d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "queue-enqueue",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "queue",
+        "enqueue",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\jobs.json"
+      ],
+      "exit_code": 0,
+      "seconds": 2.051343799999813,
+      "stdout_sha256": "aa1c3d01f343a26b1507f8dc573ba13fa28ea7f969f943ca58c3b41693284049",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "queue-run",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "queue",
+        "run",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程",
+        "--job-id",
+        "float-transitions"
+      ],
+      "exit_code": 0,
+      "seconds": 140.147739,
+      "stdout_sha256": "35fdad65606106cd35f108564c33e60e3d116e6a33b94187dee82c959bf883ab",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "queued-frames",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程\\renders\\queued.mkv",
+        "-map",
+        "0:v:0",
+        "-pix_fmt",
+        "rgba",
+        "-f",
+        "framemd5",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.24306419999993523,
+      "stdout_sha256": "e2d8d4832bfd8a4f80e83f8d404a34e9ac1395a3fad28c414013f1de11a4dca6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "queued-pcm",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程\\renders\\queued.mkv",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.2592471999996633,
+      "stdout_sha256": "08eee939a313d32cba44dbd6b90ab6bc80f67452ae00bb006b10edc17c26733d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "quality",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "quality",
+        "check",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程\\renders\\native-text.mkv"
+      ],
+      "exit_code": 0,
+      "seconds": 5.804590100000496,
+      "stdout_sha256": "15ee49abb5025608c5db831aab5f73c228378774376e282911eb126e51d5248f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "display-mp4",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程\\renders\\native-text.mkv",
+        "-vf",
+        "zscale=pin=709:tin=linear:min=709:rin=limited:p=709:t=709:m=709:r=limited,format=yuv420p",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "fast",
+        "-crf",
+        "18",
+        "-color_primaries",
+        "bt709",
+        "-color_trc",
+        "bt709",
+        "-colorspace",
+        "bt709",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "160k",
+        "-movflags",
+        "+faststart",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-adjustments-20261026-r1\\native-text.mp4"
+      ],
+      "exit_code": 0,
+      "seconds": 0.3107068999997864,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "display-gif",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-adjustments-20261026-r1\\native-text.mp4",
+        "-an",
+        "-filter_complex",
+        "fps=8,split[a][b];[a]palettegen[p];[b][p]paletteuse",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-adjustments-20261026-r1\\native-text.gif"
+      ],
+      "exit_code": 0,
+      "seconds": 0.9069217999985995,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "display-still",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-ss",
+        "2.95",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-adjustments-20261026-r1\\native-text.mp4",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-adjustments-20261026-r1\\midpoint.png"
+      ],
+      "exit_code": 0,
+      "seconds": 0.09998530000120809,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "decode-display",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-adjustments-20261026-r1\\native-text.mp4",
+        "-f",
+        "null",
+        "-"
+      ],
+      "exit_code": 0,
+      "seconds": 0.08876210000016727,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "export-package",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "convert",
+        "export",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程",
+        "--target-format",
+        "package",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-adjustments-20261026-r1\\editable-native-text.aevpkg.zip"
+      ],
+      "exit_code": 0,
+      "seconds": 4.1361407000003965,
+      "stdout_sha256": "6a035ab387bedff4d78588275e775c0e98b3a86d4e2ab26dd755b0e4935f98af",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": [
+    {
+      "name": "dry run did not create movie",
+      "ok": true
+    },
+    {
+      "name": "global once and exact interval coverage",
+      "ok": true
+    },
+    {
+      "name": "LUT is an actual locked render dependency",
+      "ok": true
+    },
+    {
+      "name": "adjustments remain explicit CPU Float32 visual-only",
+      "ok": true
+    },
+    {
+      "name": "actual scoped GPU render and owned cleanup",
+      "ok": true
+    },
+    {
+      "name": "actual GPU text geometry and selection operations",
+      "ok": true
+    },
+    {
+      "name": "actual Float32 transport frames",
+      "ok": true
+    },
+    {
+      "name": "actual GPU text colors",
+      "ok": true
+    },
+    {
+      "name": "actual Float32 native text plans and snapshots",
+      "ok": true,
+      "snapshots": 76,
+      "cache_hits": 140
+    },
+    {
+      "name": "all 256 native coverage codes exact",
+      "ok": true
+    },
+    {
+      "name": "native text never receives media pixels",
+      "ok": true
+    },
+    {
+      "name": "actual complete frame/PCM count",
+      "ok": true
+    },
+    {
+      "name": "every sample matches original PCM and independent author-clock envelopes",
+      "ok": true,
+      "max_absolute_error": 3.725290298461914e-09,
+      "samples_per_channel": 288000
+    },
+    {
+      "name": "cancel creates no movie",
+      "ok": true
+    },
+    {
+      "name": "resumed complete frame/PCM count",
+      "ok": true
+    },
+    {
+      "name": "resume all frames/clocks/PCM match",
+      "ok": true
+    },
+    {
+      "name": "queued complete frame/PCM count",
+      "ok": true
+    },
+    {
+      "name": "queue all frames/clocks/PCM match",
+      "ok": true
+    },
+    {
+      "name": "authored settings/assets/sequences and rights unchanged",
+      "ok": true
+    }
+  ],
+  "virtualization": false,
+  "source_fallback": false,
+  "continuous_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false,
+  "registered_skill": true,
+  "started_at_utc": "2026-10-26T01:21:03.219410+00:00",
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-adjustments-20261026-case-r1\\编辑 工程",
+  "public_directory": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-adjustments-20261026-r1",
+  "public_files": [
+    {
+      "path": "docs/assets/float-adjustments-20261026-r1/editable-native-text.aevpkg.zip",
+      "bytes": 17191642,
+      "sha256": "6dc5b640d59800e656959eb83b7ab419324f89b3015f42e8508491cd62e88321"
+    },
+    {
+      "path": "docs/assets/float-adjustments-20261026-r1/editable-native-text.aevpkg.zip.conversion-report.json",
+      "bytes": 1231,
+      "sha256": "de6e49be8947b4a8438e8cd8ab0e0fff1ba6efb09f4305b9b9d414af0100c04e"
+    },
+    {
+      "path": "docs/assets/float-adjustments-20261026-r1/midpoint.png",
+      "bytes": 31026,
+      "sha256": "7943ed529351685702ad2eeb50f06db36b4e9b2e7fbf0e97655593966a3ba5d8"
+    },
+    {
+      "path": "docs/assets/float-adjustments-20261026-r1/native-text.gif",
+      "bytes": 806785,
+      "sha256": "b4d4a3f55c719e766b234eeaedc55dcb5bb1afe7f5d6d5171ca064c7e18caffc"
+    },
+    {
+      "path": "docs/assets/float-adjustments-20261026-r1/native-text.mp4",
+      "bytes": 225566,
+      "sha256": "f62db620d8178f6996677bd67870293f9b377afa2f694f0e930a4429d4051ac3"
+    },
+    {
+      "path": "docs/assets/float-adjustments-20261026-r1/Noto-Sans-SC-OFL.txt",
+      "bytes": 4943,
+      "sha256": "566b792278acba9d6ec6f9d5c3fd27f3dabf90e622ed7f5c788d10eb54bbf852"
+    },
+    {
+      "path": "docs/assets/float-adjustments-20261026-r1/original.audio.wav",
+      "bytes": 3456092,
+      "sha256": "06c6550683acf09b369910167cdf789bc8afb30bb5d58924fa2987def3e54d8d"
+    },
+    {
+      "path": "docs/assets/float-adjustments-20261026-r1/original.native.mkv",
+      "bytes": 3792808,
+      "sha256": "a4b11987d6f7d63fda1852cb5f6972983c4465222a0e6cb5f1af781cf0b748a6"
+    },
+    {
+      "path": "docs/assets/float-adjustments-20261026-r1/original.png",
+      "bytes": 11695,
+      "sha256": "e92a2891f25e9082c6ab4c364b28fbd1280ca95549cfc71dd99b6d517cf779a6"
+    },
+    {
+      "path": "docs/assets/float-adjustments-20261026-r1/SOURCE.txt",
+      "bytes": 526,
+      "sha256": "ea3b33c5c82c1bd2ffec47d468fc759e773ae0058663e27ff3fe498c011ea32b"
+    }
+  ],
+  "actual_frames": 72,
+  "seconds": 6,
+  "display_fps": 12,
+  "gif_frames": 48,
+  "decoded_frame_clock_sha256": "e2d8d4832bfd8a4f80e83f8d404a34e9ac1395a3fad28c414013f1de11a4dca6",
+  "full_pcm_sha256": "08eee939a313d32cba44dbd6b90ab6bc80f67452ae00bb006b10edc17c26733d",
+  "max_pcm_error": 3.725290298461914e-09,
+  "adjustment_layers": 2,
+  "adjustment_frame_applications": 108,
+  "grade_LUT_sha256": "d74499abf4445ff1105120f05aa1b35cc477882109a410691c2309defe39f297",
+  "original_authoring_unchanged": true,
+  "real_source_handle_pairs": 5,
+  "paired_audio_tracks": true,
+  "finished_at_utc": "2026-10-26T01:30:16.507675+00:00"
+}

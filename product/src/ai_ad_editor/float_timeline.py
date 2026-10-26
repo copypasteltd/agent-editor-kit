@@ -19,6 +19,7 @@ from .float_geometry import resample_rgba
 from .float_mask import compile_mask, apply_mask
 from .float_crop import compile_crop, project_crop
 from .float_effect_chain import EffectCompiler
+from .float_adjustments import FloatAdjustments
 from .float_transitions import transition_rgba, PROTOCOL as TRANSITION_PROTOCOL, TYPES as TRANSITION_TYPES
 from .float_transition_plan import compile_track
 from .float_text import FloatTextHost
@@ -123,6 +124,7 @@ class FloatTimeline:
             cancel=self.poll,max_working_bytes=self.max_working_bytes,gpu=gpu)
         if len(self.assets)!=len(self.project['assets']):raise error('SOURCE','资产ID重复')
         self._validate(sequence_id,());sequence=self.sequences[sequence_id]
+        self.adjustments=FloatAdjustments(self.settings.get('adjustments'),self.effects,sequence,cancel=self.poll)
         self.frame_count=math.ceil(Fraction(int(sequence['duration_tick']),self.tps)*self.fps)
         self.metadata={'protocol':PROTOCOL,'sequence_id':sequence_id,'display_fps':str(self.fps),'frames':self.frame_count,
             'working_signal':{'primaries':working_signal.primaries,'transfer':working_signal.transfer},
@@ -132,7 +134,8 @@ class FloatTimeline:
             'transitions':{'protocol':TRANSITION_PROTOCOL,'patterns':sorted(TRANSITION_TYPES),
                 'source_handle_plans':[p for p in self.source_transition_plans.values() if p],
                 'double_source_over_crossfade':False,'group_spatial_edges':True,'GPU':False},
-            'text':self.text_host.metadata,'GPU':gpu.evidence if gpu is not None else {'status':'off'},
+            'text':self.text_host.metadata,'adjustments':self.adjustments.metadata,
+            'GPU':gpu.evidence if gpu is not None else {'status':'off'},
             'input_contract':'validated Agent Project IR;registered SHA and explicit common working RGB signal',
             'audio_rendered':False,'legacy_render_preview_cache_integrated':False,'HDR_accepted':False,'network':False}
 
@@ -369,14 +372,19 @@ class FloatTimeline:
                         layer=self._transition_opacity(layer,row)
                         layer=self._edge_transitions(layer,envelopes,tick,row);opacity=1.
                 result,_=self.composite(result,layer,mode=mode,opacity=opacity)
+        if root:
+            result,self._frame_adjustments=self.adjustments.apply(result,at*self.tps,left_limit=left_limit)
         return result
 
     def render_frame(self,index):
         if type(index) is not int or not 0<=index<self.frame_count:raise error('RANGE','输出帧索引越界')
+        self._frame_adjustments=[]
         rows=[];at=Fraction(index,1)/self.fps;result=self._sequence(self.sequence_id,at,rows,root=True)
-        return result,{'protocol':PROTOCOL,'frame':index,'author_time':str(at),'layers':rows,'encoded_movie':False,'legacy_render_integrated':False}
+        return result,{'protocol':PROTOCOL,'frame':index,'author_time':str(at),'layers':rows,
+            'adjustments':self._frame_adjustments,'encoded_movie':False,'legacy_render_integrated':False}
 
     def verify_sources(self):
         for source in self.sources.values():self.poll();source.verify()
         self.effects.verify(self.effect_plans.values())
+        self.adjustments.verify()
         self.text_host.verify()

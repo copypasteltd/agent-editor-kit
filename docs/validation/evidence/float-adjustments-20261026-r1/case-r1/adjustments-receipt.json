@@ -1,0 +1,46 @@
+{
+  "protocol": "selected-sequence-author-clock-float32-adjustments-v1",
+  "selected_sequence_id": "seq_main",
+  "stage": "after-all-video-and-subtitle-tracks-before-delivery-conversion",
+  "clock": "selected sequence tick minus declared layer start; no frame-grid resnap",
+  "nested_application": "once at selected root; child canvases are not graded twice",
+  "intervals": "start-inclusive/end-exclusive; clipped coverage retains original animation clock",
+  "layers": [
+    {
+      "index": 0,
+      "id": "global-editorial",
+      "enabled": true,
+      "start_tick": 0,
+      "declared_duration_tick": null,
+      "end_tick": 540000,
+      "effective_start_tick": 0,
+      "effective_end_tick": 540000,
+      "effect_types": [
+        "lut3d",
+        "exposure"
+      ],
+      "compiled_effects": 2
+    },
+    {
+      "index": 1,
+      "id": "interval-darken",
+      "enabled": true,
+      "start_tick": 90000,
+      "declared_duration_tick": 270000,
+      "end_tick": 360000,
+      "effective_start_tick": 90000,
+      "effective_end_tick": 360000,
+      "effect_types": [
+        "exposure"
+      ],
+      "compiled_effects": 1
+    }
+  ],
+  "active_plans": 2,
+  "applied_frames": 72,
+  "layer_applications": 108,
+  "integer_intermediate": false,
+  "GPU": false,
+  "audio_changed": false,
+  "workspace_scope": "existing per-effect explicit quota; not aggregate process RSS"
+}

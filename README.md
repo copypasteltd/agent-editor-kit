@@ -9,9 +9,23 @@
 本页包含完整功能模块、服务与依赖、安装与使用逻辑、Skill 输入输出、真实案例和核验表。长篇原始验收日志继续留档，功能说明与案例入口恢复到首页。
 
 
-<!-- float-gpu-current -->
+<!-- float-adjustments-current -->
 
-**CLI0.1.24 / alpha.4-local.22 / r25 kit · 1 Skill / 17 modules.**
+**CLI0.1.25 / alpha.4-local.23 / r26 kit · 1 Skill / 17 modules.**
+
+全局和区间 Float32 调整层已进入安装版：LUT 与曝光、效果链顺序、六类关键帧插值、选中序列只应用一次。统一 Skill 实跑6秒/72帧工程，组合GPU字幕/投影、倒放子序列、转场及关联声音；取消恢复与队列全部帧时钟/完整PCM一致。项目包带LUT原字节，重导入的帧与范围预览一致。
+
+[Workflow](docs/product/FLOAT_ADJUSTMENTS.md) · [C35](docs/product/CASES.md#c35-float-adjustments) · [Local install](docs/releases/CLI_0.1.25_LOCAL.md) · [Evidence](docs/validation/Float32调整层实测_2026-10-26.md)
+
+![Actual registered Skill edit / silent GIF](docs/assets/float-adjustments-20261026-r1/native-text.gif)
+
+调整层为CPU Float32计算，可与已支持的GPU合成组合；本轮未新增模型推理或性能承诺。自然素材视听、HDR/ICC及完整目标继续验收。
+
+<!-- /float-adjustments-current -->
+
+<!-- float-gpu-history -->
+
+**Historical / 历史 / 歷史：CLI0.1.24 / alpha.4-local.22 / r25 kit · 1 Skill / 17 modules.**
 
 原生 Windows 浮点 GPU 执行层已接入正式渲染、预览、队列和恢复：仿射投影、普通叠加、文字颜色与逐词选择。已安装 CLI 完成6秒/72帧混剪；注册的统一 Skill 完成4K/8帧动画与混剪包重新导入预览。相同4K工程单次成对实测 CPU 296.712秒 → GPU 139.938秒（2.120×）；全部帧时钟/完整PCM相同，解码码差≤1。
 
@@ -21,7 +35,7 @@
 
 完整解码最大8bit码差为 0（门槛≤1）。 本机RTX3060；单对实测、非独占主机，不是中位数或通用速度承诺。字形栅格、转场/效果/crop/其他混合等仍在CPU；覆盖率8bit/颜色Float32。准入配额不等于峰值RSS或可用显存预留，完整目标继续开放。
 
-<!-- /float-gpu-current -->
+<!-- /float-gpu-history -->
 
 <!-- float-text-coverage-history -->
 
@@ -180,7 +194,7 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r25 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r25.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
+**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r26 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r26.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
 
 <!-- /unified-skill-registration -->
 
@@ -549,6 +563,7 @@ flowchart LR
 | F55 | 线性浮点转场与组级进出场 | 显式 Float32 工程 → 57 xfade图案+2 dip、预乘alpha混合、真实句柄/原作者时钟、关联音轨、组级擦除/推移与实际预览成片。 | `timeline transition; preview; render; queue` | CPU；12种真实句柄声明，其他图案用显式重叠/边缘；normal双源混合；风噪有平台差异，HDR/自然质量未闭。 |
 | F56 | 线性浮点文字与字幕 | 独立/内嵌/SRT、联合逐词/打字机 → 原生字节覆盖率、可复用字形、分块线性合成、原作者时钟、4K标题和实际交付。 | `timeline compose; preview; render; queue` | 明确本地字体；CPU/显式GPU；覆盖率8bit/颜色Float32；工作区准入非峰值RSS；富ASS/Bidi/自然质量未闭。 |
 | F57 | 原生浮点GPU执行层 | 明确GPU策略 → 线性Float32仿射、普通叠加、文字组件/段落与逐词选择；正式渲染/预览/队列/恢复。 | `projection_acceleration; render; preview; queue` | off/prefer/require；实际binary64/次正规探测；任务独占进程和共享段；其余算子CPU，非全部GPU化。 |
+| F58 | Float32全局/区间调整层 | 全轨含字幕合成后按顺序调色；LUT/曝光及既有浮点效果、六类关键帧、选中根只应用一次。 | `settings.adjustments; preview; render; queue` | 显式线性工作域/效果信号；CPU执行；LUT持锁/包迁移；保留作者区间时钟，非完整HDR。 |
 
 ## 支持的服务模块与依赖
 
@@ -675,7 +690,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.22/final-r4/installed/`，CLI 0.1.24；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
+本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.23/final-r1/installed/`，CLI 0.1.25；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1044,6 +1059,13 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R176 | 2026-10-26 Float32 GPU | 同4K工程完整成片单对 CPU 296.712→GPU 139.938秒（2.120×）；4逻辑CPU亲和、空工程缓存、全部帧时钟/PCM相同，最大8bit码差≤1，非独占/非中位数 | [Evidence](docs/validation/evidence/float-gpu-20261026-r1/benchmark-r1/verification.json) |
 | R177 | 2026-10-26 Float32 GPU | 可编辑包实际导入，三帧RGBA64解码相同；字体许可保留；r25独立kit注册/计划/验证 · [r25 kit](docs/validation/evidence/float-gpu-20261026-r1/kit-r1/verification.json) | [Evidence](docs/validation/evidence/float-gpu-20261026-r1/package-r1/verification.json) |
 | R178 | 2026-10-26 Float32 GPU | 三语57功能/20服务/17模块/75能力；170历史核验行和38原关闭条件保持；最终安装/Skill/文档字节核验 | [Evidence](docs/validation/evidence/float-gpu-20261026-r1/final-delivery-r3/verification.json) |
+| R179 | 2026-10-26 Float32 adjustments | 离线ZIP安装、218产品文件逐字节一致；CLI0.1.25/local.23-final-r1；统一Skill/17模块/72文件 | [Evidence](docs/validation/evidence/float-adjustments-20261026-r1/installation-final-r1/verification.json) |
+| R180 | 2026-10-26 Float32 adjustments | 14项调整层检查，含独立像素/时钟公式、实际10bit编码、完整原PCM、RGBA16帧预览、Windows LUT读锁与释放 | [Evidence](docs/validation/evidence/float-adjustments-20261026-r1/adjustments-installed-r1/verification.json) |
+| R181 | 2026-10-26 Float32 adjustments | 安装版各组分别通过且0skip：adjustments=14, effects=219, float=98, audio=64, render=44, legacy=191, text=98, gpu=23；不合并历史计数 | [Evidence](docs/validation/evidence/float-adjustments-20261026-r1/effects-installed-r1/verification.json) |
+| R182 | 2026-10-26 Float32 adjustments | 统一Skill6秒/72帧；全局LUT+曝光与区间动画共108次层应用；完整288000双声道采样误差3.72529029846e-09；恢复/队列全帧和PCM相同 | [Evidence](docs/validation/evidence/float-adjustments-20261026-r1/case-r1/verification.json) |
+| R183 | 2026-10-26 Float32 adjustments | 可编辑包实际导入，LUT原字节/字体许可保留，3帧RGBA64与12帧Float32范围/48000双声道PCM完全相同 | [Evidence](docs/validation/evidence/float-adjustments-20261026-r1/package-r1/verification.json) |
+| R184 | 2026-10-26 Float32 adjustments | r26独立kit解包/登记/计划/校验，真实发现目录保持；唯一Skill17模块72文件 | [Evidence](docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/verification.json) |
+| R185 | 2026-10-26 Float32 adjustments | 三语58功能/20服务/17模块/75声明；178历史核验行、38原关闭条件保持；最终交付字节与链接核验 | [Evidence](docs/validation/evidence/float-adjustments-20261026-r1/final-delivery-r1/verification.json) |
 
 ## 当前边界与开发方向
 

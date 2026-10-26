@@ -2,15 +2,15 @@
 
 <!-- community-current -->
 
-**CLI 0.1.24 / alpha.4-local.22 / r25 kit · 1 Skill / 17 modules.**
+**CLI 0.1.25 / alpha.4-local.23 / r26 kit · 1 Skill / 17 modules.**
 
-Explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+Ordered global/interval Float32 grading at the selected root with authored clocks and locked portable LUTs; explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
 
-[Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](float-gpu-capabilities-cli-0.1.24.json). Full target conditions remain open.
+[Float32 adjustment workflow](FLOAT_ADJUSTMENTS.md) · [Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](float-adjustments-capabilities-cli-0.1.25.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.en.md) · [Machine response](float-gpu-capabilities-cli-0.1.24.json) · [Module data](module-catalog.json)
+[README](../../README.en.md) · [Machine response](float-adjustments-capabilities-cli-0.1.25.json) · [Module data](module-catalog.json)
 
 | ID | Module | Behavior and input → output | Entry | Dependency/limit |
 |---|---|---|---|---|
@@ -71,6 +71,7 @@ Explicit native Float32 GPU affine/normal composition/text colors/word selection
 | F55 | Linear Float32 transitions and group edges | Explicit Float32 projects → 57 xfade patterns+2 dips,premultiplied alpha,real handles/original clocks,linked audio,group wipe/slide,actual preview and encoding. | `timeline transition; preview; render; queue` | CPU;12 real-handle declaration types,other patterns use overlap/edges;normal paired blending;platform-dependent wind,HDR/natural quality open. |
 | F56 | Linear Float32 text and captions | Independent/inline/SRT,joint word/typewriter → native byte coverage,reusable glyphs,tiled linear composition,original clocks,4K titles and actual delivery. | `timeline compose; preview; render; queue` | Explicit local font;CPU/explicit GPU;8bit coverage/Float32 colors;admission is not peak RSS;rich ASS/Bidi/natural quality open. |
 | F57 | Native Float32 GPU execution | Explicit policy → linear Float32 affine, normal over, text components/paragraphs and word selection; real render/preview/queue/resume. | `projection_acceleration; render; preview; queue` | off/prefer/require;actual binary64/subnormal probes;owned process/shared buffers;other operators CPU,not all-GPU editing. |
+| F58 | Float32 global/interval adjustments | Ordered grading after all tracks including subtitles;existing float effects,LUT/exposure,six keyframe modes,selected root once. | `settings.adjustments; preview; render; queue` | Explicit linear working/effect signals;CPU execution;locked/portable LUTs;original interval clocks,not complete HDR. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -865,8 +866,28 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "real_source_handles_and_linked_audio",
     "authored_group_spatial_edges",
     "linear_float32_titles_inline_text_and_plain_SRT",
-    "explicit_probed_native_opencl_float_geometry_normal_over_and_text_colors"
+    "explicit_probed_native_opencl_float_geometry_normal_over_and_text_colors",
+    "ordered_sequence_adjustments_after_complete_composite"
   ],
+  "adjustments": {
+    "protocol": "selected-sequence-author-clock-float32-adjustments-v1",
+    "selection": "settings.adjustments; explicit native Float32 pipeline",
+    "forms": [
+      "effect_object",
+      "effect_array_container",
+      "supported_signal_free_string_shorthand"
+    ],
+    "stage": "after_all_selected_sequence_video_and_subtitle_tracks_before_delivery",
+    "clock": "selected_sequence_tick_minus_declared_start_tick; original interval duration retained",
+    "nested": "once_at_selected_root_not_each_child_canvas",
+    "resource_policy": "existing_effect_compiler_signals_alpha_range_automation_and_LUT_dependencies",
+    "interval": "start_inclusive_end_exclusive; shorter_target_clips_coverage_without_time_rescaling",
+    "max_layers": 128,
+    "max_effects": 4096,
+    "max_declaration_bytes": 8388608,
+    "GPU": false,
+    "audio_changed": false
+  },
   "limits": [
     "explicit_opt_in_not_default_migration",
     "unported_operators_reject_without_legacy_fallback",

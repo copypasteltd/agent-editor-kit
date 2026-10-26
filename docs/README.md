@@ -87,3 +87,5 @@ Contracts remain in specs; raw successes/failures in validation; media in assets
 2026-10-26: CLI0.1.19 extends pure scanline reuse to animated crop and child crop/fit/TRS, for bilinear and area. [Current workflow / 当前使用](product/PROJECTION_RENDERING.md) includes the editable combination case and actual previews; historical timing remains scoped to its original fixture.
 
 2026-10-26: [CLI0.1.20 native GPU projection / 原生GPU投影](product/OPENCL_PROJECTION.md) adds explicit OpenCL crop/affine/child-canvas samplers,actual-device/precision probes and failure/queue handling. Earlier CPU timing and scope remain historical; other effects stay CPU.
+
+CLI0.1.25 / local.23: [Float32全局与区间调整层](product/FLOAT_ADJUSTMENTS.md) · [C35源/结果/GIF/工程包](product/CASES.md#c35-float-adjustments) · [本地交付](releases/CLI_0.1.25_LOCAL.md) · [实测](validation/Float32调整层实测_2026-10-26.md)。

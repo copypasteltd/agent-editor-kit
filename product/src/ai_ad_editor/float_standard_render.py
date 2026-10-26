@@ -66,8 +66,6 @@ def configuration(value, settings, encoder):
         raise error('COLOR_TAGS', '输出色彩标签必须与实际浮点交付转换一致')
     if color.get('tone_map', 'none') != 'none' or color.get('tone_mapping', 'none') != 'none':
         raise error('UNSUPPORTED', 'HDR色调映射尚未连接浮点标准渲染')
-    if settings.get('adjustments'):
-        raise error('UNSUPPORTED', '全局调整层尚未连接浮点标准渲染')
     acceleration = settings.get('acceleration') or {}
     if not isinstance(acceleration, dict):
         raise error('CONFIG', '硬件加速配置必须是对象')
@@ -200,7 +198,7 @@ class FloatRenderContext:
         paths = [Path(ffmpeg_path()).resolve(), Path(ffprobe_path()).resolve()]
         paths += [Path(__file__).with_name(name + '.py') for name in
                   ('float_standard_render', 'float_stream', 'float_audio_graph', 'render', 'float_color_signal',
-                   'float_timeline', 'float_transitions', 'float_transition_plan', 'source_transitions',
+                   'float_timeline', 'float_adjustments', 'float_effect_chain', 'float_transitions', 'float_transition_plan', 'source_transitions',
                    'float_text','float_text_paint','float_text_coverage','text_paint','text_layout','text_highlight','text_typing','captions',
                    'float_gpu','float_gpu_native','float_gpu_worker')]
         self.artifacts = [artifact_entry(p, 'standard-float-render-runtime') for p in paths]
@@ -261,6 +259,12 @@ class FloatRenderContext:
             working_signal=self.config['working'], background_signal=self.config['background'], cancel=self.poll,
             max_working_bytes=self.config['projection_working_bytes_limit'],resource_root=self.root,gpu=self.gpu)
         self.artifacts.extend(self.timeline.text_host.artifacts.values())
+        chains = [*self.timeline.effect_plans.values(), *(p.effects for p in self.timeline.adjustments.plans)]
+        for dependency in self.timeline.effects.dependencies(chains):
+            entry = artifact_entry(Path(dependency.path), 'float-effect-resource')
+            if entry['sha256'] != dependency.sha256 or entry['bytes'] != dependency.size:
+                raise error('INPUT_CHANGED', '浮点效果资源在编译与加锁之间变化', artifact=dependency.path)
+            self.artifacts.append(entry)
         self.metadata.update(projection_working_bytes_limit=self.config['projection_working_bytes_limit'],
                              projection_budget_scope='each float projection/composite/delivery call; not total process RSS')
         self.metadata['timeline'] = self.timeline.metadata

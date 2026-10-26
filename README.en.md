@@ -9,7 +9,21 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- procedural-particles-current -->
+<!-- gpu-dispatch-current -->
+
+**CLI0.1.36 / alpha.4-local.34 / r37 kit · 1 Skill / 17 modules.**
+
+Native Float32 GPU control now uses owned native pipes, removing per-operator control-file writes and polling. The same48-frame project through the registered installed Skill measures **133.95s → 35.19s (3.81×)**; all decoded10bit frames and384000 Float32 audio samples match, with byte-identical numeric kernels.
+
+[Workflow / usage](docs/product/GPU_DISPATCH.md) · [C46](docs/product/CASES.md#c46-gpu-dispatch) · [Install](docs/releases/CLI_0.1.36_LOCAL.md) · [Evidence](docs/validation/GPU管道调度实测_2026-10-27.md)
+
+![Measured timing; identical decoded output](docs/assets/gpu-dispatch-20261027-r1/timing.png)
+
+One matched960×360 diagnostic pair on this machine, including startup,encoding and checks; not realtime,4K,long-form or multivendor acceptance. Full CapCut parity remains open; all38 original closure cells and247 historical verification rows remain.
+
+<!-- /gpu-dispatch-current -->
+
+<!-- procedural-particles-history -->
 
 **CLI0.1.35 / alpha.4-local.33 / r36 kit · 1 Skill / 17 modules.**
 
@@ -33,7 +47,7 @@ $avkProject = 'E:/dev/sandbox/particle-demo'
 
 This is a 2-D diagnostic effect core. 3-D/collisions, depth occlusion, fluids and emitter-parameter keyframes remain open. The legacy FFmpeg graph explicitly rejects this source. Full CapCut parity and all 38 original closure conditions remain open.
 
-<!-- /procedural-particles-current -->
+<!-- /procedural-particles-history -->
 
 <!-- model-session-history -->
 
@@ -744,7 +758,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F54 | Portable parameterized motion | Versioned local JSON / captured authored curves → editable keys, resolved parameters/digests/snapshot and cross-project reuse, with six actual previews. | `motion pack list/inspect/create/capture/apply` | 65-point paths, transform properties; conflicts reject unless whole-property replacement is explicit; tracking bindings reject; CPU performance/natural quality remain open. |
 | F55 | Linear Float32 transitions and group edges | Explicit Float32 projects → 57 xfade patterns+2 dips,premultiplied alpha,real handles/original clocks,linked audio,group wipe/slide,actual preview and encoding. | `timeline transition; preview; render; queue` | CPU;12 real-handle declaration types,other patterns use overlap/edges;normal paired blending;platform-dependent wind,HDR/natural quality open. |
 | F56 | Linear Float32 text and captions | Independent/inline/SRT,joint word/typewriter → native byte coverage,reusable glyphs,tiled linear composition,original clocks,4K titles and actual delivery. | `timeline compose; preview; render; queue` | Explicit local font;CPU/explicit GPU;8bit coverage/Float32 colors;admission is not peak RSS;rich ASS/Bidi/natural quality open. |
-| F57 | Native Float32 GPU execution | Explicit policy → linear Float32 affine, normal over, text components/paragraphs and word selection; real render/preview/queue/resume. | `projection_acceleration; render; preview; queue` | off/prefer/require;actual binary64/subnormal probes;owned process/shared buffers;other operators CPU,not all-GPU editing. |
+| F57 | Native Float32 GPU execution | Explicit policy for affine,normal over,text components/word selection; owned pipe dispatch/shared pixels;render,preview,queue,resume. | `projection_acceleration; render; preview; queue` | off/prefer/require;actual binary64/subnormal probes;bounded packets/queues and owned process/thread/stream cleanup;other operators CPU. |
 | F58 | Float32 global/interval adjustments | Ordered grading after all tracks including subtitles;existing float effects,LUT/exposure,six keyframe modes,selected root once. | `settings.adjustments; preview; render; queue` | Explicit linear working/effect signals;CPU execution;locked/portable LUTs;original interval clocks,not complete HDR. |
 | F59 | Native PTS tracking and overlay tracks | Saved source observations → actual selected-frame anchors;shared crop/TRS,ROI scale/relative rotation,alpha,windows and nested audio. | `media track-bind; preview; render; queue; package` | Explicit Float32,no display-key bake,budget/cycle gates;template drift/occlusion require review;native interchange baking pending. |
 | F60 | Native tracking and baked delivery | Actual alpha/five masks/59 transition footprints; edits and shared retime retain observations; native bake verifies all frames and retains source sidecars. | `media track-bind; timeline compose/edit; convert export --bake-tracking` | Frozen graph/FPS;20,000 frames/256,000 samples;unrepresentable integer steps reject;external players and natural identity/occlusion remain unaccepted. |
@@ -878,7 +892,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.33/final-r2/installed/`, CLI 0.1.35. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.34/final-r1/installed/`, CLI 0.1.36. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1318,6 +1332,12 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R245 | 2026-10-27 editable particles | Installed encoding/full PCM, preview hits/seed invalidation, queue, split/nested reverse and package/OTIO roundtrips pass. Missing OTIO background was repaired; clocks and verification scopes remain explicit. | [Evidence](docs/validation/evidence/procedural-particles-20261027-r1/installed-integration-r2/verification.json) |
 | R246 | 2026-10-27 editable particles | One entry,17 modules,76 Skill files; fresh-directory r36 kit extraction/registration, vfx discovery/help and existing native plans tested. Actual discovery retained; large application/model archives separate. | [Evidence](docs/validation/evidence/procedural-particles-20261027-r1/kit-r1/verification.json) |
 | R247 | 2026-10-27 editable particles | Three languages,63 functions/21 services/76 capabilities, full workflow,C45 media/install hashes/Skill synchronized. All241 historical R rows and38 original closure cells retained; rejected JSON-reader candidates/failures preserved. | [Evidence](docs/validation/evidence/procedural-particles-20261027-r1/development-attempts-r1/verification.json) |
+| R248 | 2026-10-27 GPU dispatch | CLI0.1.36/local.34 offline bundle:234 product files equal source;656 final installed regressions pass,zero skips,including12 protocol/23 native GPU and particles,encoding,PCM,preview,queue,editing and legacy paths. | [Evidence](docs/validation/evidence/gpu-dispatch-20261027-r1/installed-regression-r1/verification.json) |
+| R249 | 2026-10-27 GPU dispatch | Registered Skill,same fixture/author graph/FFmpeg,48frames at12FPS:133.95s → 35.19s (3.81×). All48 decoded10bit frame hashes and384000 PCM scalars equal;one diagnostic pair,no4K/realtime extrapolation. | [Evidence](docs/validation/evidence/gpu-dispatch-20261027-r1/render-installed-r1/verification.json) |
+| R250 | 2026-10-27 GPU dispatch | Separate32-tiny-operation and3-author-frame profiles/CPU-GPU errors. Numeric GPU modules and worker execute/probe remain unchanged;227 existing product files are byte-identical. Microcalls,full movie and historical C45 are timed separately. | [Evidence](docs/validation/evidence/gpu-dispatch-20261027-r1/kernel-identity-r1/verification.json) |
+| R251 | 2026-10-27 GPU dispatch | 128KiB packets/single-slot queues reject truncation,nonfinite JSON and duplicate members;actual pipe backpressure/breakage,120 messages,cancel/timeout/resume tested. Atomic project persistence retained;process/thread/stream/shared-memory closure recorded. | [Evidence](docs/validation/evidence/gpu-dispatch-20261027-r1/installed-regression-r1/receipts.json) |
+| R252 | 2026-10-27 GPU dispatch | Fresh r37 kit:one entry,17 modules,76 Skill files/119 package files;independent extraction,complete pack verification,registration and23 calls retain actual discovery. | [Evidence](docs/validation/evidence/gpu-dispatch-20261027-r1/kit-r1/verification.json) |
+| R253 | 2026-10-27 GPU dispatch | Three languages,63 functions/21 services/76 capability snapshots,C46 actual output/timing chart,complete workflow/install/Skill docs synchronized. All247 earlier R rows/38 closure cells preserved;two failed development test-helper attempts retained. | [Evidence](docs/validation/evidence/gpu-dispatch-20261027-r1/final-delivery-r2/verification.json) |
 
 ## Current limits and development direction
 

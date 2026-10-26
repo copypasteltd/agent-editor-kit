@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.35 / alpha.4-local.33 / r36 kit · 1 Skill / 17 modules / 76 files.**
+**CLI0.1.36 / alpha.4-local.34 / r37 kit · 1 Skill / 17 modules / 76 files.**
 
-Editable procedural snow, confetti, embers, bokeh, rain and sparkles now retain their parameters, seed and independent FPS in the project. Native Float32 composition, actual OpenCL rasterization, normal clip keys/cuts/reverse, preview, queues and package/OTIO reimport share the editable source. The six-cell scene is rendered through the registered installed Skill with no models or third-party footage.
+Native Float32 GPU control now uses owned native pipes, removing per-operator control-file writes and polling. The same48-frame project through the registered installed Skill measures **133.95s → 35.19s (3.81×)**; all decoded10bit frames and384000 Float32 audio samples match, with byte-identical numeric kernels.
 
-[Particle workflow and limits](../product/PROCEDURAL_PARTICLES.md)
+[GPU workflow and limits](../product/GPU_DISPATCH.md)
 
 <!-- /community-current -->
 

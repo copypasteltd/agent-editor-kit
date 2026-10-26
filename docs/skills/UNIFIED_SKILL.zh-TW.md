@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.35 / alpha.4-local.33 / r36 kit · 1 Skill / 17 modules / 76 files.**
+**CLI0.1.36 / alpha.4-local.34 / r37 kit · 1 Skill / 17 modules / 76 files.**
 
-新增可編輯程序化粒子：雪、彩紙、餘燼、光斑、斜雨、星芒。來源參數、seed和獨立幀率直接儲存在工程；原生Float32合成、實際OpenCL光柵化、一般關鍵幀/裁切/倒放、預覽、佇列及工程包/OTIO回讀已接通。六宮格由已註冊安裝版Skill實際渲染，未使用模型或第三方影像。
+原生Float32 GPU控制改為任務自有本機管道，消除每個算子的控制檔案寫入與輪詢。相同48幀工程透過實際註冊安裝版對照：**133.95s → 35.19s (3.81×)**；全部10bit解碼幀和384000個Float32音訊取樣相同，數值核心位元組保持。
 
-[Particle workflow and limits](../product/PROCEDURAL_PARTICLES.md)
+[GPU workflow and limits](../product/GPU_DISPATCH.md)
 
 <!-- /community-current -->
 

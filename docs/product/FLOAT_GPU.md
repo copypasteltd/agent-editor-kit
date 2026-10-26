@@ -1,5 +1,9 @@
 # 线性 Float32 GPU 执行层
 
+CLI0.1.36 保留本页算子、精度与选择方式，将高频控制文件改为任务自有的本机管道。
+像素内核和共享内存布局保持原字节；详见[GPU调度、清理与实测](GPU_DISPATCH.md)。
+下文CLI0.1.24为首次接入的历史范围，当前安装与摘要见[本地交付](COMMUNITY_LOCAL_DELIVERY.md)。
+
 `agent editor kit` CLI0.1.24 为显式 `float32-native-v1` 工程连接原生 Windows
 OpenCL 执行层。它面向渲染与预览任务，不启动常驻模型服务，不下载依赖。
 默认仍为 CPU；指定的 GPU 必须支持 IEEE binary64。完整剪映等价目标保持开放。

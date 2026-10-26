@@ -1,0 +1,15 @@
+{
+  "baseline_cli": "0.1.35",
+  "current_cli": "0.1.36",
+  "baseline_seconds": 133.95359160000226,
+  "current_seconds": 35.19153840000217,
+  "speedup_one_pair": 3.8064147715688947,
+  "decoded_frames": 48,
+  "all_frames_equal": true,
+  "all_PCM_equal": true,
+  "stereo_frame_pairs": 192000,
+  "float32_samples": 384000,
+  "fixture_sha256": "4d4c29352d8806426220e0ca501b871b92f5b54f1f342af4c71191f2c41acc8b",
+  "author_graph_sha256": "d5eddc47f21ad6de3d1701031cccf6ed72ef865d1ffce5bec133af1b4874c983",
+  "scope": "One matched 48-frame registered-Skill pair; startup, render, quality and encoding included; no real-time/long-film/multivendor acceptance."
+}

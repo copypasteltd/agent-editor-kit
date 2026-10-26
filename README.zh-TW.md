@@ -9,7 +9,21 @@
 本頁包含完整功能模塊、服務與依賴、安裝與使用邏輯、Skill 輸入輸出、真實案例和核驗表。長篇原始驗收日志繼續留檔，功能說明與案例入口恢復到首頁。
 
 
-<!-- procedural-particles-current -->
+<!-- gpu-dispatch-current -->
+
+**CLI0.1.36 / alpha.4-local.34 / r37 kit · 1 Skill / 17 modules.**
+
+原生Float32 GPU控制改為任務自有本機管道，消除每個算子的控制檔案寫入與輪詢。相同48幀工程透過實際註冊安裝版對照：**133.95s → 35.19s (3.81×)**；全部10bit解碼幀和384000個Float32音訊取樣相同，數值核心位元組保持。
+
+[Workflow / usage](docs/product/GPU_DISPATCH.md) · [C46](docs/product/CASES.md#c46-gpu-dispatch) · [Install](docs/releases/CLI_0.1.36_LOCAL.md) · [Evidence](docs/validation/GPU管道调度实测_2026-10-27.md)
+
+![Measured timing; identical decoded output](docs/assets/gpu-dispatch-20261027-r1/timing.png)
+
+單一960×360診斷工程、同機一次配對，包含啟動、編碼及核驗；不是即時、4K長片或跨裝置保證。完整剪映等價仍未完成；38項原關閉條件與247項歷史核驗保留。
+
+<!-- /gpu-dispatch-current -->
+
+<!-- procedural-particles-history -->
 
 **CLI0.1.35 / alpha.4-local.33 / r36 kit · 1 Skill / 17 modules.**
 
@@ -33,7 +47,7 @@ $avkProject = 'E:/dev/sandbox/particle-demo'
 
 目前為二維診斷效果；沒有三維碰撞、深度遮擋、流體或發射器參數關鍵幀。舊FFmpeg圖明確拒絕此來源；完整剪映等價與全部38項原關閉條件持續保留。
 
-<!-- /procedural-particles-current -->
+<!-- /procedural-particles-history -->
 
 <!-- model-session-history -->
 
@@ -744,7 +758,7 @@ flowchart LR
 | F54 | 可復用參數運鏡 | 本地版本化 JSON / 既有作者曲線 → 一般關鍵影格、參數/摘要/快照、跨專案復用。六套實際預覽供選型。 | `motion pack list/inspect/create/capture/apply` | 65 點採樣、transform 屬性；預設拒絕衝突，明確取代整條屬性軌；跟蹤綁定拒絕，CPU 合成/自然品質未結案。 |
 | F55 | 線性浮點轉場與群組進出場 | 明確 Float32 專案 → 57 xfade圖案+2 dip、預乘alpha混合、真實句柄/原作者時鐘、關聯音軌、群組擦除/推移及實際預覽成片。 | `timeline transition; preview; render; queue` | CPU；12種真實句柄宣告，其他圖案用明確重疊/邊緣；normal雙源混合；風噪有平台差異，HDR/自然品質未閉。 |
 | F56 | 線性浮點文字與字幕 | 獨立／內嵌／SRT、聯合逐詞／打字機 → 原生位元組覆蓋率、可重用字形、分塊線性合成、原作者時鐘、4K標題及實際交付。 | `timeline compose; preview; render; queue` | 明確本機字型；CPU／明確GPU；覆蓋率8bit／顏色Float32；工作區准入非峰值RSS；富ASS／Bidi／自然品質未閉。 |
-| F57 | 原生浮點GPU執行層 | 明確GPU策略 → 線性Float32仿射、一般疊加、文字元件／段落與逐詞選擇；正式算繪／預覽／佇列／恢復。 | `projection_acceleration; render; preview; queue` | off/prefer/require；實際binary64／次正規探測；任務專屬程序與共用段；其餘算子CPU，非全部GPU化。 |
+| F57 | 原生Float32 GPU執行 | 顯式策略驅動仿射、一般合成、文字元件/逐詞選擇；任務自有管道調度、共享像素、渲染/預覽/佇列/恢復。 | `projection_acceleration; render; preview; queue` | off/prefer/require；實際binary64/次正規數探測；有界控制包/佇列及程序/執行緒/串流清理；其他算子CPU。 |
 | F58 | Float32全域／區間調整層 | 全軌含字幕合成後依序調色；LUT／曝光及既有浮點效果、六類關鍵影格、選中根僅套用一次。 | `settings.adjustments; preview; render; queue` | 明確線性工作域／效果訊號；CPU執行；LUT持鎖／封裝遷移；保留作者區間時鐘，非完整HDR。 |
 | F59 | 原生PTS跟蹤及疊加軌 | 保存來源觀測→依實際原生影格求跟隨位置；共用crop/TRS、ROI縮放／相對旋轉、透明度、視窗及巢狀聲音。 | `media track-bind; preview; render; queue; package` | 明確Float32，原生PTS不烘焙顯示鍵；預算／循環門禁；模板漂移及遮擋另審，中間格式烘焙未接通。 |
 | F60 | 原生跟蹤與烘焙交付 | 實際alpha/5類遮罩/59轉場足跡；剪輯與共享變速保留觀察；原生烘焙逐幀核驗並保留來源旁車。 | `media track-bind; timeline compose/edit; convert export --bake-tracking` | 目前凍結圖/FPS；20,000幀/256,000求值；無法表達的整數步進拒絕；外部播放器與自然身分/遮擋待驗收。 |
@@ -878,7 +892,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.33/final-r2/installed/`，CLI 0.1.35；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
+本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.34/final-r1/installed/`，CLI 0.1.36；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1316,6 +1330,12 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R245 | 2026-10-27 editable particles | 安裝版實際編碼/完整PCM、預覽命中與seed失效、佇列、分割及巢狀倒放、工程包/OTIO往返通過；OTIO背景色遺漏已修復。原生時鐘與核驗範圍分開記。 | [Evidence](docs/validation/evidence/procedural-particles-20261027-r1/installed-integration-r2/verification.json) |
 | R246 | 2026-10-27 editable particles | 一個入口/17內部模組/76 Skill檔案；r36 kit於獨立目錄解包/註冊，vfx查詢/說明與既有原生渲染計畫實測；未切換實際發現目錄，不含應用和模型大包。 | [Evidence](docs/validation/evidence/procedural-particles-20261027-r1/kit-r1/verification.json) |
 | R247 | 2026-10-27 editable particles | 三語63功能/21服務/76能力、完整流程、C45媒體、安裝雜湊與Skill同步；241歷史R列和38原關閉條件保留。參數檔案讀取失敗和未接納候選原樣留證。 | [Evidence](docs/validation/evidence/procedural-particles-20261027-r1/development-attempts-r1/verification.json) |
+| R248 | 2026-10-27 GPU dispatch | CLI0.1.36/local.34離線包：234產品檔案與原始碼一致；最終安裝版656項回歸通過、零跳過，含12協議、23原生GPU及粒子/實際編碼/PCM/預覽/佇列/編輯/舊流程。 | [Evidence](docs/validation/evidence/gpu-dispatch-20261027-r1/installed-regression-r1/verification.json) |
+| R249 | 2026-10-27 GPU dispatch | 實際註冊Skill、相同素材包/作者圖/FFmpeg、48幀12FPS：133.95s → 35.19s (3.81×)。48個10bit解碼幀雜湊及全部384000 PCM浮點取樣相同；單次受控配對，不推論4K/即時。 | [Evidence](docs/validation/evidence/gpu-dispatch-20261027-r1/render-installed-r1/verification.json) |
+| R250 | 2026-10-27 GPU dispatch | 分開記錄32次小算子、3幀作者圖及CPU/GPU誤差；原GPU數值模組和worker execute/probe保持，227個舊產品檔案位元組相同。高頻呼叫、整片與歷史C45分開計時。 | [Evidence](docs/validation/evidence/gpu-dispatch-20261027-r1/kernel-identity-r1/verification.json) |
+| R251 | 2026-10-27 GPU dispatch | 128KiB包/單槽讀寫佇列，拒絕截斷/非有限/重複鍵；實際滿管道、斷管道、120訊息、取消/逾時/恢復均測試。工程原子寫入不變；實際程序/執行緒/串流/共享段回收留證。 | [Evidence](docs/validation/evidence/gpu-dispatch-20261027-r1/installed-regression-r1/receipts.json) |
+| R252 | 2026-10-27 GPU dispatch | r37獨立工具包：一入口/17模組/76 Skill檔案、119包檔案；獨立目錄解包、完整模型校驗、註冊及23次呼叫，實際發現聯接保持。 | [Evidence](docs/validation/evidence/gpu-dispatch-20261027-r1/kit-r1/verification.json) |
+| R253 | 2026-10-27 GPU dispatch | 三語63功能/21服務及76能力快照、C46實際輸出/耗時圖、完整使用/安裝/Skill手冊更新；247歷史核驗和38原關閉條件保持。開發期兩次測試輔助程序失敗原樣留證。 | [Evidence](docs/validation/evidence/gpu-dispatch-20261027-r1/final-delivery-r2/verification.json) |
 
 ## 當前邊界與開發方向
 

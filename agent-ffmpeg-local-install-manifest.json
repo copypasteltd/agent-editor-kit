@@ -2,8 +2,8 @@
   "format": "agent-ffmpeg-local-skills-v2",
   "status": "reviewed",
   "registration_mode": "single",
-  "release": "v0.1.0-alpha.4-local.33",
-  "manifest_sha256": "sha256:a7736ad17900a98db06260044fb39f9849c83242c14ac96d9aec26d65d4f09c5",
+  "release": "v0.1.0-alpha.4-local.34",
+  "manifest_sha256": "sha256:4ffe05cbbb0b6797eef49e87cf9076599ef78e9d47b262920698d14b01533f2b",
   "runtime_config": "local/agent-ffmpeg/runtime.json",
   "skill_count": 1,
   "module_count": 17,
@@ -13,7 +13,7 @@
     {
       "name": "agent-ffmpeg-local-editor",
       "purpose_zh": "唯一入口：17内部模块、可编辑GPU粒子、GPU模型会话/视频生成、原生跟踪/烘焙、Float32/GPU合成、500滤镜、语义检索、字幕配音及四轨分离",
-      "skill_md_sha256": "8c951cd984f017144515288e72bd220b349f00bbaefc820b09073e6133c27ff7"
+      "skill_md_sha256": "ab8fbd15ad25a15f864d752bbc6e9e29d8a18a507308385bf0b12e5f741546ad"
     }
   ],
   "modules": [
@@ -504,13 +504,13 @@
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/projection-gpu.md",
-      "bytes": 6386,
-      "sha256": "c69b87561092ed5eec806404989cb32f67d6ff9e5fc77a6b4a2efad5f9783f23"
+      "bytes": 7407,
+      "sha256": "3106723ddc8bd6487fa7db03d5c72c45bbfe01c32858f3952f54d2b56e6ca723"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
       "bytes": 8019,
-      "sha256": "8aa420b3427b83c9c81acdac95f4aa91c481687296b897f30fa51d6bd95a13ca"
+      "sha256": "222c3b48c8fb30d50439177e4ecaf84ec43f54295085dae3dce6b3056a1c24d6"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/semantic-package.md",
@@ -545,12 +545,12 @@
     {
       "path": "skills/agent-ffmpeg-local-editor/scripts/run.py",
       "bytes": 2296,
-      "sha256": "f16dfb812845f6e90704d8162ab4fb2ce152fbe308e2184e7488a3a1733df712"
+      "sha256": "5ce855b0f9f511aa7bbbef36cafd8978d5bd9960f6cd5e6d1c65187ce1f36d3c"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
-      "bytes": 12307,
-      "sha256": "8c951cd984f017144515288e72bd220b349f00bbaefc820b09073e6133c27ff7"
+      "bytes": 12518,
+      "sha256": "ab8fbd15ad25a15f864d752bbc6e9e29d8a18a507308385bf0b12e5f741546ad"
     }
   ],
   "retired_skills": [
@@ -619,7 +619,7 @@
       "skill_md_sha256": "da31e25b3e641f80367075cdb4e72be99be2c89c332556d8ba58ec419fffd46b"
     }
   ],
-  "cli_version": "0.1.35",
+  "cli_version": "0.1.36",
   "material_count": 359,
   "named_voice_count": 103,
   "optional_model_pack_count": 4

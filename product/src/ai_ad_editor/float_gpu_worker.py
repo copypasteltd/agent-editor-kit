@@ -8,16 +8,15 @@ from multiprocessing.shared_memory import SharedMemory
 from pathlib import Path
 import re
 import sys
-import time
 
 import numpy as np
 
 from .errors import AppError
 from .float_gpu_native import NativeGPU, error
-from .utils import atomic_write_json, read_json_snapshot
+from .float_gpu_control import PROTOCOL as CONTROL_PROTOCOL, MAX_CONTROL, encode_packet, read_packet, write_packet
+from .utils import read_json_snapshot
 
 PROTOCOL = 'owned-float32-opencl-worker-v1'
-MAX_CONTROL = 128*1024
 
 
 def read(path):
@@ -137,37 +136,34 @@ def main():
     nonce = config.get('nonce')
     if not isinstance(nonce, str) or not re.fullmatch('[0-9a-f]{32}', nonce):
         raise error('PROTOCOL', 'GPU工作区标识无效')
-    response = root/'response.json'
+    if config.get('control_protocol') != CONTROL_PROTOCOL:
+        raise error('PROTOCOL', 'GPU工作进程需要任务自有管道协议')
+    def respond(value): write_packet(sys.stdout.buffer, encode_packet(value))
     sequence = 0
     try:
         with NativeGPU(config['device'], config['max_device_bytes']) as gpu:
             evidence = probe(gpu)
-            atomic_write_json(response, {'nonce': nonce, 'sequence': 0, 'ok': True,
-                'metadata': gpu.metadata, 'probe': evidence, 'protocol': PROTOCOL})
-            last = time.monotonic()
-            while time.monotonic()-last < 300:
-                path = root/'request.json'
-                if not path.exists(): time.sleep(0.02); continue
-                try: request = read(path)
-                except OSError as exc:
-                    if getattr(exc, 'winerror', None) in {5, 32, 33}:
-                        time.sleep(.02); continue
-                    raise
+            respond({'nonce': nonce, 'sequence': 0, 'ok': True,
+                'metadata': gpu.metadata, 'probe': evidence, 'protocol': PROTOCOL,
+                'control_protocol': CONTROL_PROTOCOL})
+            while True:
+                request = read_packet(sys.stdin.buffer)
+                if request is None: break
                 if request.get('nonce') != nonce:
                     raise error('PROTOCOL', 'GPU控制消息标识不匹配')
                 current = request.get('sequence')
-                if current == sequence: time.sleep(0.02); continue
                 if type(current) is not int or current != sequence+1:
                     raise error('PROTOCOL', 'GPU控制消息序号不连续')
                 sequence = current
                 if request.get('op') == 'close': break
                 execute(gpu, request, nonce)
-                atomic_write_json(response, {'nonce': nonce, 'sequence': sequence, 'ok': True, 'metadata': gpu.metadata})
-                last = time.monotonic()
+                respond({'nonce': nonce, 'sequence': sequence, 'ok': True, 'metadata': gpu.metadata})
     except Exception as exc:
         problem = exc if isinstance(exc, AppError) else error('WORKER', '本任务GPU执行失败', exception=type(exc).__name__, detail=str(exc)[:4000])
-        atomic_write_json(response, {'nonce': nonce, 'sequence': sequence, 'ok': False,
-                                     'error': problem.as_dict(), 'exit_code': problem.exit_code})
+        try:
+            respond({'nonce': nonce, 'sequence': sequence, 'ok': False,
+                     'error': problem.as_dict(), 'exit_code': problem.exit_code})
+        except (OSError, AppError): pass  # A departed owner has already closed its private pipe.
         raise SystemExit(problem.exit_code)
 
 

@@ -1,0 +1,271 @@
+{
+  "status": "passed",
+  "at_utc": "2026-10-26T22:00:44.245403+00:00",
+  "cli_version": "0.1.36",
+  "package": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.34\\final-r1\\installed\\site",
+  "source_package": false,
+  "fixture_sha256": "4d4c29352d8806426220e0ca501b871b92f5b54f1f342af4c71191f2c41acc8b",
+  "virtualization": false,
+  "source_fallback": false,
+  "encoded_movie": false,
+  "sixteen_durable_writes_seconds": 0.4085988000006182,
+  "direct_native_metadata": {
+    "protocol": "native-opencl-binary64-float32-primitives-v1",
+    "device": {
+      "selection": "0.0",
+      "name": "NVIDIA GeForce RTX 3060",
+      "vendor": "NVIDIA Corporation",
+      "driver": "595.95",
+      "version": "OpenCL 3.0 CUDA",
+      "type": 4,
+      "double_fp_config": 63,
+      "global_memory_bytes": 12884377600,
+      "max_allocation_bytes": 3221094400
+    },
+    "kernel_sha256": "daed9acb931058a2a39f835daad127d97500001f99090335ce6a26f5c37eaf65",
+    "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+    "arithmetic": "binary64 affine/over/text; binary32 particle coverage and ordered accumulation; Float32 surfaces",
+    "device_quota_bytes": 268435456,
+    "retained_device_bytes": 3072,
+    "operations": {
+      "over": 32
+    },
+    "integer_media_conversion": false
+  },
+  "GPU_author_frames_seconds": 1.6408431000018027,
+  "GPU_receipt": {
+    "engine": "render-owned-float32-opencl-v1",
+    "request": {
+      "mode": "require",
+      "device": "0.0",
+      "max_working_bytes": 1073741824,
+      "probe_timeout_seconds": 30
+    },
+    "status": "prepared",
+    "dry_run": false,
+    "operations": {
+      "over": 50,
+      "particles": 18,
+      "affine": 18
+    },
+    "CPU_scope": [
+      "glyph-rasterization",
+      "color-conversion",
+      "effects",
+      "masks",
+      "crop",
+      "transitions",
+      "non-normal-blends",
+      "audio",
+      "delivery-encoding"
+    ],
+    "GPU_scope": [
+      "premultiplied-affine",
+      "normal-source-over",
+      "text-color-components",
+      "binary-word-selection",
+      "seeded-particle-rasterization"
+    ],
+    "host_shared_bytes_limit": 1073741824,
+    "retained_host_shared_bytes": 0,
+    "device_bytes_limit": 1073741824,
+    "limits_are_peak_RSS": false,
+    "free_VRAM_reserved": false,
+    "integer_media_conversion": false,
+    "worker_closed": true,
+    "runtime_failure_CPU_fallback": false,
+    "artifacts": [
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.34\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu.py",
+        "role": "float-gpu-execution",
+        "bytes": 15258,
+        "sha256": "sha256:60e357a943b872aa7e31db768489a39d959f95ad873e3080b8c084fb5901c99c"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.34\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_worker.py",
+        "role": "float-gpu-execution",
+        "bytes": 9070,
+        "sha256": "sha256:6603919bb93526723e730cee29b496a59d681ed0259d7261d4edb6c0ce81a5d7"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.34\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_native.py",
+        "role": "float-gpu-execution",
+        "bytes": 19068,
+        "sha256": "sha256:c72c82e7d50bcea9e392421324ae5ab428be72c02210037b23dc9e6b19e9e77a"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.34\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_control.py",
+        "role": "float-gpu-execution",
+        "bytes": 6648,
+        "sha256": "sha256:717c02fd2ec1801587c4786c391f24a324fd9667aeec3d6be8c3272320c09b8d"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.34\\final-r1\\installed\\site\\ai_ad_editor\\procedural_particles.py",
+        "role": "float-gpu-execution",
+        "bytes": 16325,
+        "sha256": "sha256:bd76802609fba6c9bec097a3188cb4f5316187cdaa7d2e7b4caa9197748189b6"
+      }
+    ],
+    "planned_maximum_pixels": 345600,
+    "planned_device_bytes": 16588800,
+    "planned_host_shared_bytes": 11405568,
+    "owned_worker_pid": 32980,
+    "control": {
+      "protocol": "owned-inherited-binary-pipes-v1",
+      "max_packet_bytes": 131072,
+      "queue_capacity_each": 1,
+      "pixel_payload": false,
+      "network": false,
+      "transient_control_persisted": false,
+      "sent_packets": 87,
+      "received_packets": 87,
+      "sent_bytes": 34667,
+      "received_bytes": 70527,
+      "threads_closed": true,
+      "streams_closed": true
+    },
+    "native": {
+      "protocol": "native-opencl-binary64-float32-primitives-v1",
+      "device": {
+        "selection": "0.0",
+        "name": "NVIDIA GeForce RTX 3060",
+        "vendor": "NVIDIA Corporation",
+        "driver": "595.95",
+        "version": "OpenCL 3.0 CUDA",
+        "type": 4,
+        "double_fp_config": 63,
+        "global_memory_bytes": 12884377600,
+        "max_allocation_bytes": 3221094400
+      },
+      "kernel_sha256": "daed9acb931058a2a39f835daad127d97500001f99090335ce6a26f5c37eaf65",
+      "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+      "arithmetic": "binary64 affine/over/text; binary32 particle coverage and ordered accumulation; Float32 surfaces",
+      "device_quota_bytes": 1073741824,
+      "retained_device_bytes": 16588800,
+      "operations": {
+        "over": 52,
+        "affine": 20,
+        "paint": 1,
+        "select_words": 1,
+        "particles": 18
+      },
+      "integer_media_conversion": false
+    },
+    "probe": {
+      "pixels_per_case": 65536,
+      "max_errors": {
+        "over": 0.0,
+        "affine": 0.0,
+        "paint": 0.0,
+        "select": 0.0
+      },
+      "absolute_limit": 3e-07,
+      "all_16bit_levels_present": true,
+      "actual_gpu_operations": 6,
+      "subnormal_over_bit_exact": true,
+      "subnormal_affine_bit_exact": true,
+      "subnormal_alpha_input_bits": [
+        0,
+        1,
+        2,
+        8388607,
+        8388608,
+        8388609,
+        1065353215,
+        1065353216
+      ]
+    },
+    "maximum_host_shared_bytes": 11059456,
+    "operation_elapsed_seconds": 1.3183727999567054,
+    "worker_returncode": 0,
+    "shared_handles_closed": true
+  },
+  "artifact_verification": {
+    "mode": "windows-read-lock-command-scope",
+    "files_hashed": 5,
+    "bytes_hashed": 66369,
+    "digest_reuses_while_locked": 0,
+    "write_and_delete_sharing": false,
+    "persists_across_commands": false
+  },
+  "tiny_direct_seconds": [
+    0.001895399997010827,
+    0.0004343999898992479,
+    0.00025570001162122935,
+    0.00020730000687763095,
+    0.00019189999147783965,
+    0.00016309999045915902,
+    0.000185500000952743,
+    0.0002018999948631972,
+    0.00017729999672155827,
+    0.00018930000078398734,
+    0.0001846999948611483,
+    0.00017329999536741525,
+    0.00017050000315066427,
+    0.00017020000086631626,
+    0.00018010000349022448,
+    0.0001928000128827989,
+    0.00017970000044442713,
+    0.0001627000019652769,
+    0.00019029999384656549,
+    0.00018149999959859997,
+    0.00017919999663718045,
+    0.00017300000763498247,
+    0.0001672000071266666,
+    0.00017329999536741525,
+    0.00019320000137668103,
+    0.00016730000788811594,
+    0.00013859999307896942,
+    0.0001297999988310039,
+    0.0001790999958757311,
+    0.0001860999909695238,
+    0.0001951000012923032,
+    0.0001773999974830076
+  ],
+  "tiny_worker_seconds": [
+    0.008251599996583536,
+    0.00602640000579413,
+    0.005366199999116361,
+    0.004886800001258962,
+    0.004960999998729676,
+    0.0034113999863620847,
+    0.0037049999955343083,
+    0.0037775999953737482,
+    0.005630700004985556,
+    0.006511600004159845,
+    0.00496860001294408,
+    0.0054798000055598095,
+    0.003662799994344823,
+    0.004842300011659972,
+    0.004642999992938712,
+    0.0061240000068210065,
+    0.004031400007079355,
+    0.0035758000012720004,
+    0.005530199996428564,
+    0.0035527000000001863,
+    0.004138600008445792,
+    0.0056680999987293035,
+    0.00381809999817051,
+    0.004370200011180714,
+    0.004459500007214956,
+    0.00455659998988267,
+    0.003353200008859858,
+    0.004134799994062632,
+    0.004384899992146529,
+    0.005167499999515712,
+    0.004577600004267879,
+    0.00377370000933297
+  ],
+  "tiny_direct_total_seconds": 0.0077468999807024375,
+  "tiny_worker_total_seconds": 0.15134170003875624,
+  "CPU_author_frames_seconds": 7.3005448999902,
+  "product_files_frozen": true,
+  "frame_indices": [
+    0,
+    18,
+    47
+  ],
+  "CPU_GPU_max_error": 2.980232238769531e-07,
+  "raw_frames": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-dispatch-profile-installed-r2",
+  "worker_closed": true
+}

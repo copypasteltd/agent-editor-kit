@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.35 / alpha.4-local.33 / r36 kit · 1 Skill / 17 modules / 76 files.**
+**CLI0.1.36 / alpha.4-local.34 / r37 kit · 1 Skill / 17 modules / 76 files.**
 
-新增可編輯程序化粒子：雪、彩紙、餘燼、光斑、斜雨、星芒。來源參數、seed和獨立幀率直接儲存在工程；原生Float32合成、實際OpenCL光柵化、一般關鍵幀/裁切/倒放、預覽、佇列及工程包/OTIO回讀已接通。六宮格由已註冊安裝版Skill實際渲染，未使用模型或第三方影像。
+原生Float32 GPU控制改為任務自有本機管道，消除每個算子的控制檔案寫入與輪詢。相同48幀工程透過實際註冊安裝版對照：**133.95s → 35.19s (3.81×)**；全部10bit解碼幀和384000個Float32音訊取樣相同，數值核心位元組保持。
 
-[Particle workflow and limits](PROCEDURAL_PARTICLES.md)
+[GPU workflow and limits](GPU_DISPATCH.md)
 
 <!-- /community-current -->
 
@@ -70,7 +70,7 @@
 | F54 | 可復用參數運鏡 | 本地版本化 JSON / 既有作者曲線 → 一般關鍵影格、參數/摘要/快照、跨專案復用。六套實際預覽供選型。 | `motion pack list/inspect/create/capture/apply` | 65 點採樣、transform 屬性；預設拒絕衝突，明確取代整條屬性軌；跟蹤綁定拒絕，CPU 合成/自然品質未結案。 |
 | F55 | 線性浮點轉場與群組進出場 | 明確 Float32 專案 → 57 xfade圖案+2 dip、預乘alpha混合、真實句柄/原作者時鐘、關聯音軌、群組擦除/推移及實際預覽成片。 | `timeline transition; preview; render; queue` | CPU；12種真實句柄宣告，其他圖案用明確重疊/邊緣；normal雙源混合；風噪有平台差異，HDR/自然品質未閉。 |
 | F56 | 線性浮點文字與字幕 | 獨立／內嵌／SRT、聯合逐詞／打字機 → 原生位元組覆蓋率、可重用字形、分塊線性合成、原作者時鐘、4K標題及實際交付。 | `timeline compose; preview; render; queue` | 明確本機字型；CPU／明確GPU；覆蓋率8bit／顏色Float32；工作區准入非峰值RSS；富ASS／Bidi／自然品質未閉。 |
-| F57 | 原生浮點GPU執行層 | 明確GPU策略 → 線性Float32仿射、一般疊加、文字元件／段落與逐詞選擇；正式算繪／預覽／佇列／恢復。 | `projection_acceleration; render; preview; queue` | off/prefer/require；實際binary64／次正規探測；任務專屬程序與共用段；其餘算子CPU，非全部GPU化。 |
+| F57 | 原生Float32 GPU執行 | 顯式策略驅動仿射、一般合成、文字元件/逐詞選擇；任務自有管道調度、共享像素、渲染/預覽/佇列/恢復。 | `projection_acceleration; render; preview; queue` | off/prefer/require；實際binary64/次正規數探測；有界控制包/佇列及程序/執行緒/串流清理；其他算子CPU。 |
 | F58 | Float32全域／區間調整層 | 全軌含字幕合成後依序調色；LUT／曝光及既有浮點效果、六類關鍵影格、選中根僅套用一次。 | `settings.adjustments; preview; render; queue` | 明確線性工作域／效果訊號；CPU執行；LUT持鎖／封裝遷移；保留作者區間時鐘，非完整HDR。 |
 | F59 | 原生PTS跟蹤及疊加軌 | 保存來源觀測→依實際原生影格求跟隨位置；共用crop/TRS、ROI縮放／相對旋轉、透明度、視窗及巢狀聲音。 | `media track-bind; preview; render; queue; package` | 明確Float32，原生PTS不烘焙顯示鍵；預算／循環門禁；模板漂移及遮擋另審，中間格式烘焙未接通。 |
 | F60 | 原生跟蹤與烘焙交付 | 實際alpha/5類遮罩/59轉場足跡；剪輯與共享變速保留觀察；原生烘焙逐幀核驗並保留來源旁車。 | `media track-bind; timeline compose/edit; convert export --bake-tracking` | 目前凍結圖/FPS；20,000幀/256,000求值；無法表達的整數步進拒絕；外部播放器與自然身分/遮擋待驗收。 |
@@ -1456,6 +1456,16 @@
     "selection": "pixel_pipeline=float32-native-v1;projection_acceleration=off|prefer|require",
     "device": "explicit_platform.device_index",
     "native_runtime": "existing_windows_OpenCL_ICD",
+    "control": {
+      "protocol": "owned-inherited-binary-pipes-v1",
+      "max_packet_bytes": 131072,
+      "queue_capacity_each": 1,
+      "pixel_transport": "three_owned_shared_memory_segments",
+      "network": false,
+      "per_operation_control_files": false,
+      "cleanup": "owned_child_wait_then_join_IO_threads_and_close_streams",
+      "durability": "project_snapshots_manifests_and_receipts_remain_atomic_fsync"
+    },
     "surface": "straight_RGBA_Float32;binary64_kernel_math;no_fast_math",
     "operators": [
       "premultiplied_bilinear_affine",
@@ -4835,3 +4845,5 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 ```
 
 [CLI0.1.35 exact installed capability snapshot](procedural-particles-capabilities-cli-0.1.35.json).
+
+[CLI0.1.36 exact installed capability snapshot](gpu-dispatch-capabilities-cli-0.1.36.json).

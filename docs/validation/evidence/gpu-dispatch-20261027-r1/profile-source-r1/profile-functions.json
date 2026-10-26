@@ -1,0 +1,7256 @@
+[
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_timeline.py",
+    "line": 485,
+    "function": "render_frame",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 9.5e-05,
+    "cumulative_seconds": 0.9787871
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_timeline.py",
+    "line": 433,
+    "function": "_sequence",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 0.0159719,
+    "cumulative_seconds": 0.9734445
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_timeline.py",
+    "line": 309,
+    "function": "composite",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 7.99e-05,
+    "cumulative_seconds": 0.48590880000000003
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_timeline.py",
+    "line": 314,
+    "function": "_layer",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 0.003148,
+    "cumulative_seconds": 0.4609995
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_timeline.py",
+    "line": 328,
+    "function": "_layer_uncached",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 0.0008818000000000001,
+    "cumulative_seconds": 0.4559614
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+    "line": 74,
+    "function": "_wait",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 0.0006215000000000001,
+    "cumulative_seconds": 0.4304366
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_control.py",
+    "line": 149,
+    "function": "receive",
+    "primitive_calls": 87,
+    "calls": 87,
+    "own_seconds": 0.0020116,
+    "cumulative_seconds": 0.4295205
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_control.py",
+    "line": 54,
+    "function": "read_packet",
+    "primitive_calls": 85,
+    "calls": 85,
+    "own_seconds": 0.0010648,
+    "cumulative_seconds": 0.39717290000000005
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_control.py",
+    "line": 33,
+    "function": "_exact",
+    "primitive_calls": 171,
+    "calls": 171,
+    "own_seconds": 0.0009916,
+    "cumulative_seconds": 0.3920039
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'read' of '_io.FileIO' objects>",
+    "primitive_calls": 171,
+    "calls": 171,
+    "own_seconds": 0.39050300000000004,
+    "cumulative_seconds": 0.39050300000000004
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_timeline.py",
+    "line": 287,
+    "function": "_project",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 0.00010130000000000001,
+    "cumulative_seconds": 0.24649390000000002
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_timeline.py",
+    "line": 304,
+    "function": "resample",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 6.720000000000001e-05,
+    "cumulative_seconds": 0.24536680000000002
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+    "line": 191,
+    "function": "resample",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 0.00024170000000000002,
+    "cumulative_seconds": 0.2452949
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\procedural_particles.py",
+    "line": 281,
+    "function": "sample",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 0.0001178,
+    "cumulative_seconds": 0.206489
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\procedural_particles.py",
+    "line": 233,
+    "function": "frame",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 0.0003508,
+    "cumulative_seconds": 0.1996069
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+    "line": 221,
+    "function": "particles",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 0.0002495,
+    "cumulative_seconds": 0.14098560000000002
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\__init__.py",
+    "line": 717,
+    "function": "__getattr__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 7.000000000000001e-06,
+    "cumulative_seconds": 0.1309563
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 1349,
+    "function": "_find_and_load",
+    "primitive_calls": 1,
+    "calls": 35,
+    "own_seconds": 0.00024680000000000004,
+    "cumulative_seconds": 0.13094930000000002
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 1304,
+    "function": "_find_and_load_unlocked",
+    "primitive_calls": 1,
+    "calls": 35,
+    "own_seconds": 0.00014450000000000002,
+    "cumulative_seconds": 0.13089530000000002
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 911,
+    "function": "_load_unlocked",
+    "primitive_calls": 1,
+    "calls": 35,
+    "own_seconds": 0.0001285,
+    "cumulative_seconds": 0.1302918
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 1020,
+    "function": "exec_module",
+    "primitive_calls": 1,
+    "calls": 33,
+    "own_seconds": 0.00011520000000000001,
+    "cumulative_seconds": 0.13024260000000001
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 480,
+    "function": "_call_with_frames_removed",
+    "primitive_calls": 2,
+    "calls": 91,
+    "own_seconds": 0.0003771,
+    "cumulative_seconds": 0.12908650000000002
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.exec>",
+    "primitive_calls": 1,
+    "calls": 33,
+    "own_seconds": 0.00017250000000000002,
+    "cumulative_seconds": 0.1290831
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\testing\\__init__.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.02e-05,
+    "cumulative_seconds": 0.1290795
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'copy' of 'numpy.ndarray' objects>",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 0.10823210000000001,
+    "cumulative_seconds": 0.10823210000000001
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_native.py",
+    "line": 238,
+    "function": "surface",
+    "primitive_calls": 204,
+    "calls": 204,
+    "own_seconds": 0.09008780000000001,
+    "cumulative_seconds": 0.1028974
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+    "line": 68,
+    "function": "verify_programs",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 0.0025813000000000003,
+    "cumulative_seconds": 0.09841330000000001
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\utils.py",
+    "line": 34,
+    "function": "sha256_file",
+    "primitive_calls": 430,
+    "calls": 430,
+    "own_seconds": 0.0058615,
+    "cumulative_seconds": 0.0934432
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\testing\\_private\\utils.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 0.00011,
+    "cumulative_seconds": 0.0771829
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+    "line": 186,
+    "function": "over",
+    "primitive_calls": 32,
+    "calls": 51,
+    "own_seconds": 0.00042040000000000003,
+    "cumulative_seconds": 0.059726100000000004
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+    "line": 151,
+    "function": "_call",
+    "primitive_calls": 32,
+    "calls": 87,
+    "own_seconds": 0.11126100000000001,
+    "cumulative_seconds": 0.058348800000000006
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+    "line": 135,
+    "function": "_buffers",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 0.0013788000000000001,
+    "cumulative_seconds": 0.0570895
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pathlib\\_local.py",
+    "line": 529,
+    "function": "open",
+    "primitive_calls": 431,
+    "calls": 431,
+    "own_seconds": 0.0004535,
+    "cumulative_seconds": 0.055785600000000005
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _io.open>",
+    "primitive_calls": 432,
+    "calls": 432,
+    "own_seconds": 0.0467349,
+    "cumulative_seconds": 0.0553676
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 1093,
+    "function": "get_code",
+    "primitive_calls": 33,
+    "calls": 33,
+    "own_seconds": 0.0003232,
+    "cumulative_seconds": 0.0531768
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+    "line": 237,
+    "function": "_free_shared",
+    "primitive_calls": 55,
+    "calls": 55,
+    "own_seconds": 0.00027570000000000003,
+    "cumulative_seconds": 0.049495700000000004
+  },
+  {
+    "file": "C:\\Python313\\Lib\\multiprocessing\\shared_memory.py",
+    "line": 225,
+    "function": "close",
+    "primitive_calls": 324,
+    "calls": 324,
+    "own_seconds": 0.00043870000000000004,
+    "cumulative_seconds": 0.048968000000000005
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\procedural_particles.py",
+    "line": 200,
+    "function": "scene",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 0.0157229,
+    "cumulative_seconds": 0.048506900000000006
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'close' of 'mmap.mmap' objects>",
+    "primitive_calls": 162,
+    "calls": 162,
+    "own_seconds": 0.0484341,
+    "cumulative_seconds": 0.0484341
+  },
+  {
+    "file": "C:\\Python313\\Lib\\platform.py",
+    "line": 1102,
+    "function": "machine",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.9000000000000005e-06,
+    "cumulative_seconds": 0.0434871
+  },
+  {
+    "file": "C:\\Python313\\Lib\\platform.py",
+    "line": 967,
+    "function": "uname",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.4500000000000005e-05,
+    "cumulative_seconds": 0.043482200000000006
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\__init__.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.93e-05,
+    "cumulative_seconds": 0.0407534
+  },
+  {
+    "file": "C:\\Python313\\Lib\\platform.py",
+    "line": 321,
+    "function": "_wmi_query",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 6.050000000000001e-05,
+    "cumulative_seconds": 0.0384945
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _wmi.exec_query>",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 0.038407800000000006,
+    "cumulative_seconds": 0.038407800000000006
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 1085,
+    "function": "source_to_code",
+    "primitive_calls": 14,
+    "calls": 14,
+    "own_seconds": 3.03e-05,
+    "cumulative_seconds": 0.0322862
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.compile>",
+    "primitive_calls": 15,
+    "calls": 15,
+    "own_seconds": 0.0319618,
+    "cumulative_seconds": 0.0319618
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\procedural_particles.py",
+    "line": 145,
+    "function": "tile_index",
+    "primitive_calls": 36,
+    "calls": 36,
+    "own_seconds": 0.008107300000000001,
+    "cumulative_seconds": 0.030532700000000003
+  },
+  {
+    "file": "C:\\Python313\\Lib\\platform.py",
+    "line": 446,
+    "function": "win32_ver",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.93e-05,
+    "cumulative_seconds": 0.0275548
+  },
+  {
+    "file": "C:\\Python313\\Lib\\queue.py",
+    "line": 180,
+    "function": "get",
+    "primitive_calls": 173,
+    "calls": 183,
+    "own_seconds": 0.0013675,
+    "cumulative_seconds": 0.0269395
+  },
+  {
+    "file": "C:\\Python313\\Lib\\platform.py",
+    "line": 387,
+    "function": "_win32_ver",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.6100000000000002e-05,
+    "cumulative_seconds": 0.026622600000000003
+  },
+  {
+    "file": "C:\\Python313\\Lib\\threading.py",
+    "line": 327,
+    "function": "wait",
+    "primitive_calls": 173,
+    "calls": 183,
+    "own_seconds": 0.0009483,
+    "cumulative_seconds": 0.0248902
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\procedural_particles.py",
+    "line": 137,
+    "function": "bounds",
+    "primitive_calls": 3228,
+    "calls": 3228,
+    "own_seconds": 0.010796,
+    "cumulative_seconds": 0.0189402
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\procedural_particles.py",
+    "line": 165,
+    "function": "validate_scene",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 0.0016316000000000002,
+    "cumulative_seconds": 0.018001
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.__import__>",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 2.26e-05,
+    "cumulative_seconds": 0.015536000000000001
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 1214,
+    "function": "get_data",
+    "primitive_calls": 47,
+    "calls": 47,
+    "own_seconds": 0.00017380000000000002,
+    "cumulative_seconds": 0.015430000000000001
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 1240,
+    "function": "_find_spec",
+    "primitive_calls": 35,
+    "calls": 35,
+    "own_seconds": 0.0003066,
+    "cumulative_seconds": 0.015194200000000001
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 1551,
+    "function": "find_spec",
+    "primitive_calls": 33,
+    "calls": 33,
+    "own_seconds": 3.58e-05,
+    "cumulative_seconds": 0.014373200000000001
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 1522,
+    "function": "_get_spec",
+    "primitive_calls": 33,
+    "calls": 33,
+    "own_seconds": 0.0001406,
+    "cumulative_seconds": 0.0143374
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 1390,
+    "function": "_handle_fromlist",
+    "primitive_calls": 50,
+    "calls": 53,
+    "own_seconds": 0.0001427,
+    "cumulative_seconds": 0.014060900000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\case.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.72e-05,
+    "cumulative_seconds": 0.013820200000000001
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\procedural_particles.py",
+    "line": 124,
+    "function": "uniform",
+    "primitive_calls": 2173,
+    "calls": 2173,
+    "own_seconds": 0.005172,
+    "cumulative_seconds": 0.013323100000000001
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _io.open_code>",
+    "primitive_calls": 47,
+    "calls": 47,
+    "own_seconds": 0.013133,
+    "cumulative_seconds": 0.013133
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'update' of '_hashlib.HASH' objects>",
+    "primitive_calls": 430,
+    "calls": 430,
+    "own_seconds": 0.0128167,
+    "cumulative_seconds": 0.0128167
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method nt.stat>",
+    "primitive_calls": 162,
+    "calls": 162,
+    "own_seconds": 0.012386900000000001,
+    "cumulative_seconds": 0.012386900000000001
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 1624,
+    "function": "find_spec",
+    "primitive_calls": 57,
+    "calls": 57,
+    "own_seconds": 0.0005595,
+    "cumulative_seconds": 0.0123444
+  },
+  {
+    "file": "C:\\Python313\\Lib\\platform.py",
+    "line": 836,
+    "function": "_get_machine_win32",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.6800000000000002e-05,
+    "cumulative_seconds": 0.0119135
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 145,
+    "function": "_path_stat",
+    "primitive_calls": 155,
+    "calls": 155,
+    "own_seconds": 8.900000000000001e-05,
+    "cumulative_seconds": 0.0119025
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 5.9800000000000003e-05,
+    "cumulative_seconds": 0.0113056
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'acquire' of '_thread.lock' objects>",
+    "primitive_calls": 43,
+    "calls": 1075,
+    "own_seconds": 0.0313805,
+    "cumulative_seconds": 0.0108348
+  },
+  {
+    "file": "C:\\Python313\\Lib\\fractions.py",
+    "line": 663,
+    "function": "forward",
+    "primitive_calls": 4661,
+    "calls": 4661,
+    "own_seconds": 0.0024534,
+    "cumulative_seconds": 0.0105733
+  },
+  {
+    "file": "C:\\Python313\\Lib\\concurrent\\futures\\__init__.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6.7e-06,
+    "cumulative_seconds": 0.008963800000000001
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'reduce' of 'numpy.ufunc' objects>",
+    "primitive_calls": 1994,
+    "calls": 1994,
+    "own_seconds": 0.0086631,
+    "cumulative_seconds": 0.0086631
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pathlib\\_local.py",
+    "line": 166,
+    "function": "__fspath__",
+    "primitive_calls": 431,
+    "calls": 431,
+    "own_seconds": 0.00039630000000000004,
+    "cumulative_seconds": 0.008660600000000001
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'readinto' of '_io.FileIO' objects>",
+    "primitive_calls": 860,
+    "calls": 860,
+    "own_seconds": 0.0085298,
+    "cumulative_seconds": 0.0085298
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pathlib\\_local.py",
+    "line": 227,
+    "function": "__str__",
+    "primitive_calls": 433,
+    "calls": 433,
+    "own_seconds": 0.0018932,
+    "cumulative_seconds": 0.0082772
+  },
+  {
+    "file": "C:\\Python313\\Lib\\multiprocessing\\shared_memory.py",
+    "line": 76,
+    "function": "__init__",
+    "primitive_calls": 165,
+    "calls": 165,
+    "own_seconds": 0.0030758,
+    "cumulative_seconds": 0.0078735
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\fromnumeric.py",
+    "line": 2436,
+    "function": "any",
+    "primitive_calls": 1242,
+    "calls": 1242,
+    "own_seconds": 0.0012424,
+    "cumulative_seconds": 0.0072009000000000005
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.next>",
+    "primitive_calls": 148,
+    "calls": 148,
+    "own_seconds": 0.00010850000000000001,
+    "cumulative_seconds": 0.006900300000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 954,
+    "function": "distribution",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.8000000000000001e-06,
+    "cumulative_seconds": 0.0067729
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 393,
+    "function": "from_name",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 5.8e-06,
+    "cumulative_seconds": 0.0067711
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 890,
+    "function": "<genexpr>",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 1.73e-05,
+    "cumulative_seconds": 0.0065962
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 756,
+    "function": "search",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 1.86e-05,
+    "cumulative_seconds": 0.0065687
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method '__exit__' of '_io._IOBase' objects>",
+    "primitive_calls": 463,
+    "calls": 463,
+    "own_seconds": 0.006454400000000001,
+    "cumulative_seconds": 0.006454400000000001
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'all' of 'numpy.ndarray' objects>",
+    "primitive_calls": 702,
+    "calls": 702,
+    "own_seconds": 0.0007970000000000001,
+    "cumulative_seconds": 0.006053800000000001
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\fromnumeric.py",
+    "line": 86,
+    "function": "_wrapreduction_any_all",
+    "primitive_calls": 1242,
+    "calls": 1242,
+    "own_seconds": 0.0019858000000000002,
+    "cumulative_seconds": 0.0059585
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'digest' of '_hashlib.HASH' objects>",
+    "primitive_calls": 2173,
+    "calls": 2173,
+    "own_seconds": 0.005935200000000001,
+    "cumulative_seconds": 0.005935200000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\_functools.py",
+    "line": 75,
+    "function": "wrapper",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 2.25e-05,
+    "cumulative_seconds": 0.0058872
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 765,
+    "function": "lookup",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 1.43e-05,
+    "cumulative_seconds": 0.0057938
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 775,
+    "function": "__init__",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 0.0008810000000000001,
+    "cumulative_seconds": 0.005779500000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pathlib\\_local.py",
+    "line": 289,
+    "function": "drive",
+    "primitive_calls": 434,
+    "calls": 434,
+    "own_seconds": 0.0009553000000000001,
+    "cumulative_seconds": 0.005659
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\result.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.43e-05,
+    "cumulative_seconds": 0.0053041
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\_methods.py",
+    "line": 64,
+    "function": "_all",
+    "primitive_calls": 702,
+    "calls": 702,
+    "own_seconds": 0.0004086,
+    "cumulative_seconds": 0.005256800000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\abc.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.58e-05,
+    "cumulative_seconds": 0.005240900000000001
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'clear' of 'dict' objects>",
+    "primitive_calls": 6,
+    "calls": 6,
+    "own_seconds": 0.0052018,
+    "cumulative_seconds": 0.0052018
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_control.py",
+    "line": 141,
+    "function": "send",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 0.0002611,
+    "cumulative_seconds": 0.005197500000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\concurrent\\futures\\_base.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.98e-05,
+    "cumulative_seconds": 0.0046627000000000005
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _winapi.CreateFileMapping>",
+    "primitive_calls": 165,
+    "calls": 165,
+    "own_seconds": 0.0045669000000000005,
+    "cumulative_seconds": 0.0045669000000000005
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pathlib\\_local.py",
+    "line": 257,
+    "function": "_parse_path",
+    "primitive_calls": 434,
+    "calls": 434,
+    "own_seconds": 0.0019549000000000003,
+    "cumulative_seconds": 0.0042675000000000005
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\resources\\__init__.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.45e-05,
+    "cumulative_seconds": 0.004097
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.__build_class__>",
+    "primitive_calls": 99,
+    "calls": 100,
+    "own_seconds": 0.0010512,
+    "cumulative_seconds": 0.004089000000000001
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\procedural_particles.py",
+    "line": 138,
+    "function": "<genexpr>",
+    "primitive_calls": 16140,
+    "calls": 16140,
+    "own_seconds": 0.0040717,
+    "cumulative_seconds": 0.0040717
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 155,
+    "function": "_path_is_mode_type",
+    "primitive_calls": 58,
+    "calls": 58,
+    "own_seconds": 5.67e-05,
+    "cumulative_seconds": 0.0038481
+  },
+  {
+    "file": "C:\\Python313\\Lib\\fractions.py",
+    "line": 203,
+    "function": "__new__",
+    "primitive_calls": 2527,
+    "calls": 2527,
+    "own_seconds": 0.0027266,
+    "cumulative_seconds": 0.0038342000000000003
+  },
+  {
+    "file": "C:\\Python313\\Lib\\json\\__init__.py",
+    "line": 299,
+    "function": "loads",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 0.0007704000000000001,
+    "cumulative_seconds": 0.0036917
+  },
+  {
+    "file": "C:\\Python313\\Lib\\fractions.py",
+    "line": 808,
+    "function": "_div",
+    "primitive_calls": 2212,
+    "calls": 2212,
+    "own_seconds": 0.0018280000000000002,
+    "cumulative_seconds": 0.0035591000000000004
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 164,
+    "function": "_path_isfile",
+    "primitive_calls": 51,
+    "calls": 51,
+    "own_seconds": 3.82e-05,
+    "cumulative_seconds": 0.0034852000000000004
+  },
+  {
+    "file": "C:\\Python313\\Lib\\queue.py",
+    "line": 140,
+    "function": "put",
+    "primitive_calls": 172,
+    "calls": 172,
+    "own_seconds": 0.000956,
+    "cumulative_seconds": 0.0034272
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\_dtype.py",
+    "line": 32,
+    "function": "__str__",
+    "primitive_calls": 258,
+    "calls": 258,
+    "own_seconds": 0.0007859000000000001,
+    "cumulative_seconds": 0.0034096
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method nt.listdir>",
+    "primitive_calls": 14,
+    "calls": 14,
+    "own_seconds": 0.0033858,
+    "cumulative_seconds": 0.0033858
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\main.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.1200000000000001e-05,
+    "cumulative_seconds": 0.0033620000000000004
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_control.py",
+    "line": 20,
+    "function": "encode_packet",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 0.00048330000000000004,
+    "cumulative_seconds": 0.0031091
+  },
+  {
+    "file": "C:\\Python313\\Lib\\fractions.py",
+    "line": 776,
+    "function": "_sub",
+    "primitive_calls": 2263,
+    "calls": 2263,
+    "own_seconds": 0.0015573000000000002,
+    "cumulative_seconds": 0.0031007
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\__init__.py",
+    "line": 330,
+    "function": "_compile",
+    "primitive_calls": 199,
+    "calls": 199,
+    "own_seconds": 0.0001639,
+    "cumulative_seconds": 0.0028749
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.min>",
+    "primitive_calls": 22983,
+    "calls": 22983,
+    "own_seconds": 0.0028706,
+    "cumulative_seconds": 0.0028706
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 742,
+    "function": "children",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 3.65e-05,
+    "cumulative_seconds": 0.0027298
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pathlib\\_local.py",
+    "line": 498,
+    "function": "__init__",
+    "primitive_calls": 623,
+    "calls": 623,
+    "own_seconds": 0.0010531000000000002,
+    "cumulative_seconds": 0.0027192
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_compiler.py",
+    "line": 743,
+    "function": "compile",
+    "primitive_calls": 9,
+    "calls": 9,
+    "own_seconds": 4.8e-05,
+    "cumulative_seconds": 0.0025874
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\_dtype.py",
+    "line": 342,
+    "function": "_name_get",
+    "primitive_calls": 258,
+    "calls": 258,
+    "own_seconds": 0.0009352000000000001,
+    "cumulative_seconds": 0.0025331000000000004
+  },
+  {
+    "file": "C:\\Python313\\Lib\\fractions.py",
+    "line": 334,
+    "function": "_from_coprime_ints",
+    "primitive_calls": 4661,
+    "calls": 4661,
+    "own_seconds": 0.0018496,
+    "cumulative_seconds": 0.0025196000000000003
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 782,
+    "function": "_compile_bytecode",
+    "primitive_calls": 19,
+    "calls": 19,
+    "own_seconds": 4.49e-05,
+    "cumulative_seconds": 0.0024116000000000003
+  },
+  {
+    "file": "C:\\Python313\\Lib\\json\\decoder.py",
+    "line": 340,
+    "function": "decode",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 0.00029790000000000003,
+    "cumulative_seconds": 0.0023773
+  },
+  {
+    "file": "C:\\Python313\\Lib\\json\\__init__.py",
+    "line": 183,
+    "function": "dumps",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 0.0003912,
+    "cumulative_seconds": 0.0023758
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method marshal.loads>",
+    "primitive_calls": 19,
+    "calls": 19,
+    "own_seconds": 0.0023432,
+    "cumulative_seconds": 0.0023432
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\testing\\_private\\extbuild.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.22e-05,
+    "cumulative_seconds": 0.0023238
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\__init__.py",
+    "line": 287,
+    "function": "compile",
+    "primitive_calls": 6,
+    "calls": 6,
+    "own_seconds": 6.5000000000000004e-06,
+    "cumulative_seconds": 0.0023045
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 101,
+    "function": "_path_join",
+    "primitive_calls": 294,
+    "calls": 294,
+    "own_seconds": 0.0015014000000000002,
+    "cumulative_seconds": 0.0022148000000000003
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\testing\\_private\\utils.py",
+    "line": 994,
+    "function": "assert_array_equal",
+    "primitive_calls": 32,
+    "calls": 32,
+    "own_seconds": 0.00012670000000000002,
+    "cumulative_seconds": 0.0022129000000000003
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\testing\\_private\\utils.py",
+    "line": 733,
+    "function": "assert_array_compare",
+    "primitive_calls": 32,
+    "calls": 32,
+    "own_seconds": 0.0006868,
+    "cumulative_seconds": 0.0020862000000000003
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.isinstance>",
+    "primitive_calls": 10418,
+    "calls": 10418,
+    "own_seconds": 0.0017230000000000001,
+    "cumulative_seconds": 0.0020623
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6.66e-05,
+    "cumulative_seconds": 0.0020246
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 1233,
+    "function": "path_stats",
+    "primitive_calls": 33,
+    "calls": 33,
+    "own_seconds": 2.8800000000000002e-05,
+    "cumulative_seconds": 0.0020208
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_control.py",
+    "line": 107,
+    "function": "_deliver",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 0.0003099,
+    "cumulative_seconds": 0.0020169000000000003
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'append' of 'list' objects>",
+    "primitive_calls": 11913,
+    "calls": 11913,
+    "own_seconds": 0.0019974000000000003,
+    "cumulative_seconds": 0.0019974000000000003
+  },
+  {
+    "file": "C:\\Python313\\Lib\\threading.py",
+    "line": 398,
+    "function": "notify",
+    "primitive_calls": 344,
+    "calls": 344,
+    "own_seconds": 0.0005491000000000001,
+    "cumulative_seconds": 0.0019734
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\resources\\_common.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.16e-05,
+    "cumulative_seconds": 0.0019348000000000002
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.len>",
+    "primitive_calls": 12419,
+    "calls": 12499,
+    "own_seconds": 0.0019099000000000002,
+    "cumulative_seconds": 0.0019273
+  },
+  {
+    "file": "C:\\Python313\\Lib\\json\\encoder.py",
+    "line": 183,
+    "function": "encode",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 0.00028280000000000004,
+    "cumulative_seconds": 0.0018931000000000002
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.max>",
+    "primitive_calls": 13701,
+    "calls": 13701,
+    "own_seconds": 0.0017681,
+    "cumulative_seconds": 0.0018659000000000002
+  },
+  {
+    "file": "C:\\Python313\\Lib\\numbers.py",
+    "line": 308,
+    "function": "__float__",
+    "primitive_calls": 2317,
+    "calls": 2317,
+    "own_seconds": 0.0013961000000000002,
+    "cumulative_seconds": 0.0018407
+  },
+  {
+    "file": "C:\\Python313\\Lib\\queue.py",
+    "line": 220,
+    "function": "put_nowait",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 8.1e-05,
+    "cumulative_seconds": 0.0018142000000000002
+  },
+  {
+    "file": "C:\\Python313\\Lib\\copy.py",
+    "line": 119,
+    "function": "deepcopy",
+    "primitive_calls": 18,
+    "calls": 846,
+    "own_seconds": 0.0008240000000000001,
+    "cumulative_seconds": 0.0017597000000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\traceback.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.2800000000000004e-05,
+    "cumulative_seconds": 0.0017414000000000002
+  },
+  {
+    "file": "C:\\Python313\\Lib\\json\\decoder.py",
+    "line": 351,
+    "function": "raw_decode",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 0.0013488,
+    "cumulative_seconds": 0.0017333000000000001
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method __new__ of type object at 0x00007FFE6AE128A0>",
+    "primitive_calls": 7881,
+    "calls": 7881,
+    "own_seconds": 0.0016819,
+    "cumulative_seconds": 0.0017234000000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pathlib\\_local.py",
+    "line": 117,
+    "function": "__init__",
+    "primitive_calls": 623,
+    "calls": 623,
+    "own_seconds": 0.0010294,
+    "cumulative_seconds": 0.0016661
+  },
+  {
+    "file": "C:\\Python313\\Lib\\copy.py",
+    "line": 218,
+    "function": "_deepcopy_dict",
+    "primitive_calls": 18,
+    "calls": 36,
+    "own_seconds": 0.0002634,
+    "cumulative_seconds": 0.0016567
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'read' of '_io.BufferedReader' objects>",
+    "primitive_calls": 33,
+    "calls": 33,
+    "own_seconds": 0.0016192000000000001,
+    "cumulative_seconds": 0.0016192000000000001
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'hexdigest' of '_hashlib.HASH' objects>",
+    "primitive_calls": 430,
+    "calls": 430,
+    "own_seconds": 0.0016138,
+    "cumulative_seconds": 0.0016138
+  },
+  {
+    "file": "C:\\Python313\\Lib\\json\\encoder.py",
+    "line": 205,
+    "function": "iterencode",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 0.0015144000000000002,
+    "cumulative_seconds": 0.0015144000000000002
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\_dtype.py",
+    "line": 326,
+    "function": "_name_includes_bit_suffix",
+    "primitive_calls": 258,
+    "calls": 258,
+    "own_seconds": 0.0003374,
+    "cumulative_seconds": 0.0014096
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 1500,
+    "function": "_path_importer_cache",
+    "primitive_calls": 65,
+    "calls": 65,
+    "own_seconds": 5.89e-05,
+    "cumulative_seconds": 0.0013956
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_control.py",
+    "line": 72,
+    "function": "write_packet",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 0.00039180000000000004,
+    "cumulative_seconds": 0.0013807000000000001
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method numpy.asarray>",
+    "primitive_calls": 90,
+    "calls": 90,
+    "own_seconds": 0.0013458,
+    "cumulative_seconds": 0.0013458
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 1487,
+    "function": "_path_hooks",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 4.1200000000000005e-05,
+    "cumulative_seconds": 0.0013367000000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 970,
+    "function": "parse",
+    "primitive_calls": 9,
+    "calls": 9,
+    "own_seconds": 5.2900000000000005e-05,
+    "cumulative_seconds": 0.0013036
+  },
+  {
+    "file": "C:\\Python313\\Lib\\sysconfig\\__init__.py",
+    "line": 186,
+    "function": "_safe_realpath",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 1.0500000000000001e-05,
+    "cumulative_seconds": 0.0012921
+  },
+  {
+    "file": "<frozen ntpath>",
+    "line": 702,
+    "function": "realpath",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 4.66e-05,
+    "cumulative_seconds": 0.0012816000000000001
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method sys.intern>",
+    "primitive_calls": 3065,
+    "calls": 3065,
+    "own_seconds": 0.0012657,
+    "cumulative_seconds": 0.0012657
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method math.gcd>",
+    "primitive_calls": 10002,
+    "calls": 10002,
+    "own_seconds": 0.0012468000000000002,
+    "cumulative_seconds": 0.0012468000000000002
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 451,
+    "function": "_parse_sub",
+    "primitive_calls": 9,
+    "calls": 25,
+    "own_seconds": 0.00011740000000000001,
+    "cumulative_seconds": 0.0012223000000000002
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_compiler.py",
+    "line": 576,
+    "function": "_code",
+    "primitive_calls": 9,
+    "calls": 9,
+    "own_seconds": 4.16e-05,
+    "cumulative_seconds": 0.0012112000000000002
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\execution_control.py",
+    "line": 43,
+    "function": "checkpoint",
+    "primitive_calls": 1720,
+    "calls": 1720,
+    "own_seconds": 0.0007316,
+    "cumulative_seconds": 0.0011531
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\procedural_particles.py",
+    "line": 211,
+    "function": "mix",
+    "primitive_calls": 10254,
+    "calls": 10254,
+    "own_seconds": 0.0011499000000000001,
+    "cumulative_seconds": 0.0011499000000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 511,
+    "function": "_parse",
+    "primitive_calls": 9,
+    "calls": 31,
+    "own_seconds": 0.0004672,
+    "cumulative_seconds": 0.0011475
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _hashlib.openssl_sha256>",
+    "primitive_calls": 430,
+    "calls": 430,
+    "own_seconds": 0.0011415000000000002,
+    "cumulative_seconds": 0.0011415000000000002
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 806,
+    "function": "module_from_spec",
+    "primitive_calls": 35,
+    "calls": 35,
+    "own_seconds": 7.52e-05,
+    "cumulative_seconds": 0.0011378
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 513,
+    "function": "cache_from_source",
+    "primitive_calls": 66,
+    "calls": 66,
+    "own_seconds": 0.00020730000000000002,
+    "cumulative_seconds": 0.0011307
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method nt._getfinalpathname>",
+    "primitive_calls": 16,
+    "calls": 16,
+    "own_seconds": 0.0011144,
+    "cumulative_seconds": 0.0011144
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _hashlib.openssl_sha512>",
+    "primitive_calls": 2173,
+    "calls": 2173,
+    "own_seconds": 0.0010994000000000002,
+    "cumulative_seconds": 0.0010994000000000002
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\numerictypes.py",
+    "line": 475,
+    "function": "issubdtype",
+    "primitive_calls": 258,
+    "calls": 258,
+    "own_seconds": 0.000506,
+    "cumulative_seconds": 0.0010722000000000001
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_timeline.py",
+    "line": 229,
+    "function": "_source_time",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 0.0002334,
+    "cumulative_seconds": 0.0010704
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_timeline.py",
+    "line": 263,
+    "function": "projection",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 0.0002551,
+    "cumulative_seconds": 0.0010258
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'release' of '_thread.lock' objects>",
+    "primitive_calls": 355,
+    "calls": 355,
+    "own_seconds": 0.0010215,
+    "cumulative_seconds": 0.0010215
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_compiler.py",
+    "line": 37,
+    "function": "_compile",
+    "primitive_calls": 9,
+    "calls": 76,
+    "own_seconds": 0.000297,
+    "cumulative_seconds": 0.0010162
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\runner.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.55e-05,
+    "cumulative_seconds": 0.0009983000000000001
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 733,
+    "function": "_init_module_attrs",
+    "primitive_calls": 35,
+    "calls": 35,
+    "own_seconds": 0.000136,
+    "cumulative_seconds": 0.0009725000000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\sysconfig\\__init__.py",
+    "line": 573,
+    "function": "get_config_var",
+    "primitive_calls": 2,
+    "calls": 3,
+    "own_seconds": 6.1e-06,
+    "cumulative_seconds": 0.0009725000000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\sysconfig\\__init__.py",
+    "line": 533,
+    "function": "get_config_vars",
+    "primitive_calls": 2,
+    "calls": 6,
+    "own_seconds": 1.0300000000000001e-05,
+    "cumulative_seconds": 0.0009672000000000001
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method math.sin>",
+    "primitive_calls": 6485,
+    "calls": 6485,
+    "own_seconds": 0.0009648,
+    "cumulative_seconds": 0.0009648
+  },
+  {
+    "file": "C:\\Python313\\Lib\\sysconfig\\__init__.py",
+    "line": 461,
+    "function": "_init_config_vars",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.7300000000000003e-05,
+    "cumulative_seconds": 0.0009587
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 1675,
+    "function": "_fill_cache",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 9.28e-05,
+    "cumulative_seconds": 0.0009458000000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pathlib\\_local.py",
+    "line": 505,
+    "function": "__new__",
+    "primitive_calls": 623,
+    "calls": 623,
+    "own_seconds": 0.0005648000000000001,
+    "cumulative_seconds": 0.0009383000000000001
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 416,
+    "function": "__enter__",
+    "primitive_calls": 35,
+    "calls": 35,
+    "own_seconds": 4.3100000000000004e-05,
+    "cumulative_seconds": 0.0009181
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'write' of '_io.FileIO' objects>",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 0.0009163000000000001,
+    "cumulative_seconds": 0.0009163000000000001
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\testing\\_private\\utils.py",
+    "line": 772,
+    "function": "func_assert_same_pos",
+    "primitive_calls": 64,
+    "calls": 64,
+    "own_seconds": 0.0001856,
+    "cumulative_seconds": 0.0008904000000000001
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 304,
+    "function": "acquire",
+    "primitive_calls": 46,
+    "calls": 46,
+    "own_seconds": 0.0002701,
+    "cumulative_seconds": 0.0008702
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method math.ceil>",
+    "primitive_calls": 6582,
+    "calls": 6582,
+    "own_seconds": 0.0008321,
+    "cumulative_seconds": 0.0008396
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method math.floor>",
+    "primitive_calls": 6492,
+    "calls": 6492,
+    "own_seconds": 0.0008259000000000001,
+    "cumulative_seconds": 0.0008369
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 477,
+    "function": "StrFormatStyle",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.9e-06,
+    "cumulative_seconds": 0.0008171000000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\sysconfig\\__init__.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.43e-05,
+    "cumulative_seconds": 0.0008045000000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\sysconfig\\__init__.py",
+    "line": 358,
+    "function": "_init_non_posix",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.3400000000000003e-05,
+    "cumulative_seconds": 0.0008028
+  },
+  {
+    "file": "<frozen zipimport>",
+    "line": 68,
+    "function": "__init__",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 3.8900000000000004e-05,
+    "cumulative_seconds": 0.0007678
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'get' of 'dict' objects>",
+    "primitive_calls": 3320,
+    "calls": 3320,
+    "own_seconds": 0.0007676,
+    "cumulative_seconds": 0.0007676
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 632,
+    "function": "cached",
+    "primitive_calls": 66,
+    "calls": 66,
+    "own_seconds": 3e-05,
+    "cumulative_seconds": 0.0007447
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 642,
+    "function": "_get_cached",
+    "primitive_calls": 33,
+    "calls": 33,
+    "own_seconds": 5.27e-05,
+    "cumulative_seconds": 0.0007147000000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 739,
+    "function": "joinpath",
+    "primitive_calls": 188,
+    "calls": 188,
+    "own_seconds": 0.0001179,
+    "cumulative_seconds": 0.0007051000000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pathlib\\_local.py",
+    "line": 237,
+    "function": "_format_parsed_parts",
+    "primitive_calls": 434,
+    "calls": 434,
+    "own_seconds": 0.00033160000000000004,
+    "cumulative_seconds": 0.0006505
+  },
+  {
+    "file": "C:\\Python313\\Lib\\collections\\__init__.py",
+    "line": 358,
+    "function": "namedtuple",
+    "primitive_calls": 5,
+    "calls": 5,
+    "own_seconds": 0.00025120000000000003,
+    "cumulative_seconds": 0.0006202
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 759,
+    "function": "mtime",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 3.21e-05,
+    "cumulative_seconds": 0.0006146000000000001
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _struct.unpack>",
+    "primitive_calls": 2173,
+    "calls": 2173,
+    "own_seconds": 0.0006127,
+    "cumulative_seconds": 0.0006127
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 851,
+    "function": "normalize",
+    "primitive_calls": 189,
+    "calls": 189,
+    "own_seconds": 0.00013130000000000002,
+    "cumulative_seconds": 0.0005612000000000001
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_timeline.py",
+    "line": 267,
+    "function": "value",
+    "primitive_calls": 126,
+    "calls": 126,
+    "own_seconds": 0.00016910000000000002,
+    "cumulative_seconds": 0.0005459
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\numerictypes.py",
+    "line": 293,
+    "function": "issubclass_",
+    "primitive_calls": 516,
+    "calls": 516,
+    "own_seconds": 0.00029620000000000004,
+    "cumulative_seconds": 0.0005392
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 444,
+    "function": "PercentStyle",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.9e-06,
+    "cumulative_seconds": 0.0005317000000000001
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_color_signal.py",
+    "line": 67,
+    "function": "convert_rgba",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 0.00023070000000000002,
+    "cumulative_seconds": 0.0005299
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 1716,
+    "function": "path_hook_for_FileFinder",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 2.2100000000000002e-05,
+    "cumulative_seconds": 0.0005277
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\testing\\_private\\utils.py",
+    "line": 754,
+    "function": "robust_any_difference",
+    "primitive_calls": 64,
+    "calls": 64,
+    "own_seconds": 0.00028020000000000003,
+    "cumulative_seconds": 0.0005116000000000001
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _struct.pack>",
+    "primitive_calls": 2173,
+    "calls": 2173,
+    "own_seconds": 0.0005038,
+    "cumulative_seconds": 0.0005038
+  },
+  {
+    "file": "C:\\Python313\\Lib\\fractions.py",
+    "line": 983,
+    "function": "_richcmp",
+    "primitive_calls": 135,
+    "calls": 135,
+    "own_seconds": 0.00019500000000000002,
+    "cumulative_seconds": 0.0005002
+  },
+  {
+    "file": "C:\\Python313\\Lib\\difflib.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.1700000000000005e-05,
+    "cumulative_seconds": 0.0004912
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'join' of 'str' objects>",
+    "primitive_calls": 892,
+    "calls": 892,
+    "own_seconds": 0.0004821,
+    "cumulative_seconds": 0.0004883
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'split' of 'str' objects>",
+    "primitive_calls": 442,
+    "calls": 442,
+    "own_seconds": 0.0004869,
+    "cumulative_seconds": 0.0004869
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\procedural_particles.py",
+    "line": 192,
+    "function": "index_at",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 9.26e-05,
+    "cumulative_seconds": 0.00048310000000000003
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_compiler.py",
+    "line": 241,
+    "function": "_optimize_charset",
+    "primitive_calls": 29,
+    "calls": 29,
+    "own_seconds": 0.00036940000000000003,
+    "cumulative_seconds": 0.000478
+  },
+  {
+    "file": "C:\\Python313\\Lib\\threading.py",
+    "line": 318,
+    "function": "_is_owned",
+    "primitive_calls": 527,
+    "calls": 527,
+    "own_seconds": 0.0002636,
+    "cumulative_seconds": 0.00047010000000000004
+  },
+  {
+    "file": "C:\\Python313\\Lib\\json\\decoder.py",
+    "line": 292,
+    "function": "__init__",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 0.00047000000000000004,
+    "cumulative_seconds": 0.00047000000000000004
+  },
+  {
+    "file": "C:\\Python313\\Lib\\queue.py",
+    "line": 267,
+    "function": "_qsize",
+    "primitive_calls": 538,
+    "calls": 538,
+    "own_seconds": 0.0002499,
+    "cumulative_seconds": 0.00046610000000000005
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\__init__.py",
+    "line": 183,
+    "function": "sub",
+    "primitive_calls": 190,
+    "calls": 190,
+    "own_seconds": 9.680000000000001e-05,
+    "cumulative_seconds": 0.0004623
+  },
+  {
+    "file": "C:\\Python313\\Lib\\copy.py",
+    "line": 192,
+    "function": "_deepcopy_list",
+    "primitive_calls": 18,
+    "calls": 54,
+    "own_seconds": 0.00010190000000000001,
+    "cumulative_seconds": 0.00044520000000000003
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 162,
+    "function": "__enter__",
+    "primitive_calls": 46,
+    "calls": 46,
+    "own_seconds": 6.66e-05,
+    "cumulative_seconds": 0.0004441
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\loader.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.87e-05,
+    "cumulative_seconds": 0.00044300000000000003
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pathlib\\_local.py",
+    "line": 277,
+    "function": "_raw_path",
+    "primitive_calls": 434,
+    "calls": 434,
+    "own_seconds": 0.00029330000000000003,
+    "cumulative_seconds": 0.00043620000000000003
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'match' of 're.Pattern' objects>",
+    "primitive_calls": 226,
+    "calls": 226,
+    "own_seconds": 0.0004328,
+    "cumulative_seconds": 0.0004328
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\procedural_particles.py",
+    "line": 162,
+    "function": "<genexpr>",
+    "primitive_calls": 4974,
+    "calls": 4974,
+    "own_seconds": 0.0004314,
+    "cumulative_seconds": 0.0004314
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'get' of '_contextvars.ContextVar' objects>",
+    "primitive_calls": 1720,
+    "calls": 1720,
+    "own_seconds": 0.0004215,
+    "cumulative_seconds": 0.0004215
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 169,
+    "function": "_path_isdir",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 6e-06,
+    "cumulative_seconds": 0.00040710000000000003
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\animation.py",
+    "line": 43,
+    "function": "keyframe_value",
+    "primitive_calls": 144,
+    "calls": 144,
+    "own_seconds": 0.00021170000000000002,
+    "cumulative_seconds": 0.0004044
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method time.monotonic>",
+    "primitive_calls": 808,
+    "calls": 808,
+    "own_seconds": 0.00040110000000000005,
+    "cumulative_seconds": 0.00040110000000000005
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\_collections.py",
+    "line": 20,
+    "function": "__missing__",
+    "primitive_calls": 201,
+    "calls": 201,
+    "own_seconds": 0.0003343,
+    "cumulative_seconds": 0.0004003
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method fromkeys>",
+    "primitive_calls": 447,
+    "calls": 447,
+    "own_seconds": 0.0003996,
+    "cumulative_seconds": 0.0003996
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'endswith' of 'str' objects>",
+    "primitive_calls": 3055,
+    "calls": 3055,
+    "own_seconds": 0.00039370000000000003,
+    "cumulative_seconds": 0.00039370000000000003
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.issubclass>",
+    "primitive_calls": 1298,
+    "calls": 1298,
+    "own_seconds": 0.000393,
+    "cumulative_seconds": 0.000393
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\resources\\abc.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.51e-05,
+    "cumulative_seconds": 0.00038540000000000004
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_control.py",
+    "line": 45,
+    "function": "_object",
+    "primitive_calls": 344,
+    "calls": 344,
+    "own_seconds": 0.0003845,
+    "cumulative_seconds": 0.0003845
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 126,
+    "function": "EntryPoint",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 7.8e-06,
+    "cumulative_seconds": 0.0003813
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 1619,
+    "function": "_get_spec",
+    "primitive_calls": 33,
+    "calls": 33,
+    "own_seconds": 7.400000000000001e-05,
+    "cumulative_seconds": 0.00038030000000000003
+  },
+  {
+    "file": "C:\\Python313\\Lib\\threading.py",
+    "line": 306,
+    "function": "__exit__",
+    "primitive_calls": 355,
+    "calls": 355,
+    "own_seconds": 0.0002862,
+    "cumulative_seconds": 0.0003757
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'reshape' of 'numpy.ndarray' objects>",
+    "primitive_calls": 228,
+    "calls": 228,
+    "own_seconds": 0.0003642,
+    "cumulative_seconds": 0.0003642
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method nt._path_splitroot_ex>",
+    "primitive_calls": 466,
+    "calls": 466,
+    "own_seconds": 0.0003635,
+    "cumulative_seconds": 0.0003635
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 124,
+    "function": "setdefault",
+    "primitive_calls": 46,
+    "calls": 46,
+    "own_seconds": 0.0002209,
+    "cumulative_seconds": 0.0003624
+  },
+  {
+    "file": "C:\\Python313\\Lib\\threading.py",
+    "line": 303,
+    "function": "__enter__",
+    "primitive_calls": 355,
+    "calls": 355,
+    "own_seconds": 0.00020490000000000002,
+    "cumulative_seconds": 0.0003614
+  },
+  {
+    "file": "C:\\Python313\\Lib\\fractions.py",
+    "line": 792,
+    "function": "_mul",
+    "primitive_calls": 132,
+    "calls": 132,
+    "own_seconds": 0.000212,
+    "cumulative_seconds": 0.0003512
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'items' of 'dict' objects>",
+    "primitive_calls": 1319,
+    "calls": 1319,
+    "own_seconds": 0.0003465,
+    "cumulative_seconds": 0.0003465
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\__init__.py",
+    "line": 169,
+    "function": "fullmatch",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 1.0700000000000001e-05,
+    "cumulative_seconds": 0.0003444
+  },
+  {
+    "file": "<frozen abc>",
+    "line": 117,
+    "function": "__instancecheck__",
+    "primitive_calls": 430,
+    "calls": 430,
+    "own_seconds": 0.00013110000000000002,
+    "cumulative_seconds": 0.0003393
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'index' of 'tuple' objects>",
+    "primitive_calls": 1614,
+    "calls": 1614,
+    "own_seconds": 0.0003333,
+    "cumulative_seconds": 0.0003333
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.all>",
+    "primitive_calls": 103,
+    "calls": 103,
+    "own_seconds": 0.000146,
+    "cumulative_seconds": 0.00031820000000000004
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'replace' of 'str' objects>",
+    "primitive_calls": 729,
+    "calls": 729,
+    "own_seconds": 0.00031370000000000004,
+    "cumulative_seconds": 0.00031370000000000004
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 1846,
+    "function": "LoggerAdapter",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 0.0003086,
+    "cumulative_seconds": 0.0003097
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.eval>",
+    "primitive_calls": 5,
+    "calls": 5,
+    "own_seconds": 0.0003065,
+    "cumulative_seconds": 0.0003085
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 426,
+    "function": "inner",
+    "primitive_calls": 9,
+    "calls": 11,
+    "own_seconds": 1.77e-05,
+    "cumulative_seconds": 0.0003077
+  },
+  {
+    "file": "<frozen abc>",
+    "line": 105,
+    "function": "__new__",
+    "primitive_calls": 15,
+    "calls": 15,
+    "own_seconds": 1.8200000000000002e-05,
+    "cumulative_seconds": 0.00030450000000000003
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method math.cos>",
+    "primitive_calls": 1632,
+    "calls": 1632,
+    "own_seconds": 0.0003014,
+    "cumulative_seconds": 0.0003014
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 833,
+    "function": "spec_from_file_location",
+    "primitive_calls": 33,
+    "calls": 33,
+    "own_seconds": 0.0001249,
+    "cumulative_seconds": 0.0002999
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\fromnumeric.py",
+    "line": 3011,
+    "function": "max",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 7.16e-05,
+    "cumulative_seconds": 0.0002997
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 137,
+    "function": "_path_split",
+    "primitive_calls": 66,
+    "calls": 66,
+    "own_seconds": 0.0001276,
+    "cumulative_seconds": 0.0002988
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'lower' of 'str' objects>",
+    "primitive_calls": 2229,
+    "calls": 2229,
+    "own_seconds": 0.0002853,
+    "cumulative_seconds": 0.0002853
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\numeric.py",
+    "line": 2535,
+    "function": "array_equal",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 0.0001584,
+    "cumulative_seconds": 0.000279
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 463,
+    "function": "_lock_unlock_module",
+    "primitive_calls": 11,
+    "calls": 11,
+    "own_seconds": 1.81e-05,
+    "cumulative_seconds": 0.0002732
+  },
+  {
+    "file": "C:\\Python313\\Lib\\threading.py",
+    "line": 315,
+    "function": "_acquire_restore",
+    "primitive_calls": 183,
+    "calls": 183,
+    "own_seconds": 0.00014470000000000002,
+    "cumulative_seconds": 0.0002641
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'clear' of 'list' objects>",
+    "primitive_calls": 110,
+    "calls": 110,
+    "own_seconds": 0.0001763,
+    "cumulative_seconds": 0.0002518
+  },
+  {
+    "file": "C:\\Python313\\Lib\\fractions.py",
+    "line": 414,
+    "function": "numerator",
+    "primitive_calls": 2428,
+    "calls": 2428,
+    "own_seconds": 0.00024080000000000003,
+    "cumulative_seconds": 0.00024080000000000003
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method math.sqrt>",
+    "primitive_calls": 1364,
+    "calls": 1364,
+    "own_seconds": 0.00023530000000000003,
+    "cumulative_seconds": 0.00023530000000000003
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'extend' of 'bytearray' objects>",
+    "primitive_calls": 172,
+    "calls": 172,
+    "own_seconds": 0.0002323,
+    "cumulative_seconds": 0.0002323
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 982,
+    "function": "find_spec",
+    "primitive_calls": 35,
+    "calls": 35,
+    "own_seconds": 1.84e-05,
+    "cumulative_seconds": 0.00022950000000000002
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 426,
+    "function": "_get_module_lock",
+    "primitive_calls": 46,
+    "calls": 46,
+    "own_seconds": 0.00014690000000000002,
+    "cumulative_seconds": 0.0002291
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method numpy.zeros>",
+    "primitive_calls": 110,
+    "calls": 110,
+    "own_seconds": 0.0002268,
+    "cumulative_seconds": 0.0002268
+  },
+  {
+    "file": "C:\\Python313\\Lib\\fractions.py",
+    "line": 418,
+    "function": "denominator",
+    "primitive_calls": 2392,
+    "calls": 2392,
+    "own_seconds": 0.0002264,
+    "cumulative_seconds": 0.0002264
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\fromnumeric.py",
+    "line": 66,
+    "function": "_wrapreduction",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 8.86e-05,
+    "cumulative_seconds": 0.0002253
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method math.radians>",
+    "primitive_calls": 1650,
+    "calls": 1650,
+    "own_seconds": 0.0002213,
+    "cumulative_seconds": 0.0002213
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'startswith' of 'str' objects>",
+    "primitive_calls": 1047,
+    "calls": 1047,
+    "own_seconds": 0.0002186,
+    "cumulative_seconds": 0.0002186
+  },
+  {
+    "file": "C:\\Python313\\Lib\\fractions.py",
+    "line": 1005,
+    "function": "__lt__",
+    "primitive_calls": 42,
+    "calls": 42,
+    "own_seconds": 2.65e-05,
+    "cumulative_seconds": 0.00021700000000000002
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _abc._abc_instancecheck>",
+    "primitive_calls": 430,
+    "calls": 430,
+    "own_seconds": 0.0001955,
+    "cumulative_seconds": 0.00020820000000000002
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method nt.fspath>",
+    "primitive_calls": 973,
+    "calls": 973,
+    "own_seconds": 0.00020810000000000002,
+    "cumulative_seconds": 0.00020810000000000002
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\fromnumeric.py",
+    "line": 2431,
+    "function": "_any_dispatcher",
+    "primitive_calls": 1242,
+    "calls": 1242,
+    "own_seconds": 0.00020390000000000002,
+    "cumulative_seconds": 0.00020390000000000002
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 643,
+    "function": "origin",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.1e-06,
+    "cumulative_seconds": 0.0001986
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 647,
+    "function": "_load_json",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6.900000000000001e-06,
+    "cumulative_seconds": 0.0001975
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+    "line": 183,
+    "function": "_dummy",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 9.28e-05,
+    "cumulative_seconds": 0.00019730000000000003
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _imp.is_builtin>",
+    "primitive_calls": 35,
+    "calls": 35,
+    "own_seconds": 0.00019610000000000002,
+    "cumulative_seconds": 0.00019610000000000002
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.getattr>",
+    "primitive_calls": 798,
+    "calls": 798,
+    "own_seconds": 0.00019140000000000002,
+    "cumulative_seconds": 0.00019250000000000002
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 167,
+    "function": "__getitem__",
+    "primitive_calls": 472,
+    "calls": 472,
+    "own_seconds": 0.0001361,
+    "cumulative_seconds": 0.00019140000000000002
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 190,
+    "function": "_path_abspath",
+    "primitive_calls": 40,
+    "calls": 40,
+    "own_seconds": 2.3100000000000002e-05,
+    "cumulative_seconds": 0.0001884
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'rstrip' of 'str' objects>",
+    "primitive_calls": 959,
+    "calls": 959,
+    "own_seconds": 0.0001818,
+    "cumulative_seconds": 0.0001818
+  },
+  {
+    "file": "C:\\Python313\\Lib\\queue.py",
+    "line": 271,
+    "function": "_put",
+    "primitive_calls": 172,
+    "calls": 172,
+    "own_seconds": 0.00012,
+    "cumulative_seconds": 0.0001817
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 574,
+    "function": "__getitem__",
+    "primitive_calls": 4,
+    "calls": 6,
+    "own_seconds": 6.200000000000001e-06,
+    "cumulative_seconds": 0.00017940000000000002
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 907,
+    "function": "read_text",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 9.7e-06,
+    "cumulative_seconds": 0.00017920000000000002
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_timeline.py",
+    "line": 114,
+    "function": "<lambda>",
+    "primitive_calls": 1941,
+    "calls": 1941,
+    "own_seconds": 0.00017570000000000002,
+    "cumulative_seconds": 0.00017570000000000002
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 372,
+    "function": "release",
+    "primitive_calls": 46,
+    "calls": 46,
+    "own_seconds": 0.00011480000000000001,
+    "cumulative_seconds": 0.000174
+  },
+  {
+    "file": "C:\\Python313\\Lib\\fractions.py",
+    "line": 1013,
+    "function": "__le__",
+    "primitive_calls": 54,
+    "calls": 54,
+    "own_seconds": 2.54e-05,
+    "cumulative_seconds": 0.00017260000000000002
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _winapi.CloseHandle>",
+    "primitive_calls": 165,
+    "calls": 165,
+    "own_seconds": 0.00017020000000000002,
+    "cumulative_seconds": 0.00017020000000000002
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\testing\\_private\\utils.py",
+    "line": 852,
+    "function": "<lambda>",
+    "primitive_calls": 64,
+    "calls": 64,
+    "own_seconds": 0.0001674,
+    "cumulative_seconds": 0.0001674
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 177,
+    "function": "_path_isabs",
+    "primitive_calls": 40,
+    "calls": 40,
+    "own_seconds": 8.290000000000001e-05,
+    "cumulative_seconds": 0.0001653
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 420,
+    "function": "__exit__",
+    "primitive_calls": 35,
+    "calls": 35,
+    "own_seconds": 2.19e-05,
+    "cumulative_seconds": 0.0001651
+  },
+  {
+    "file": "C:\\Python313\\Lib\\functools.py",
+    "line": 36,
+    "function": "update_wrapper",
+    "primitive_calls": 26,
+    "calls": 26,
+    "own_seconds": 8.510000000000001e-05,
+    "cumulative_seconds": 0.0001638
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pathlib\\_local.py",
+    "line": 539,
+    "function": "read_text",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.1000000000000006e-06,
+    "cumulative_seconds": 0.0001605
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\_meta.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.5e-05,
+    "cumulative_seconds": 0.0001582
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\_dtype.py",
+    "line": 23,
+    "function": "_kind_name",
+    "primitive_calls": 258,
+    "calls": 258,
+    "own_seconds": 0.0001574,
+    "cumulative_seconds": 0.0001574
+  },
+  {
+    "file": "C:\\Python313\\Lib\\queue.py",
+    "line": 275,
+    "function": "_get",
+    "primitive_calls": 172,
+    "calls": 172,
+    "own_seconds": 9.970000000000001e-05,
+    "cumulative_seconds": 0.00015680000000000002
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method '__enter__' of '_thread.lock' objects>",
+    "primitive_calls": 355,
+    "calls": 355,
+    "own_seconds": 0.0001565,
+    "cumulative_seconds": 0.0001565
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pathlib\\_abc.py",
+    "line": 628,
+    "function": "read_text",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.8000000000000001e-06,
+    "cumulative_seconds": 0.0001562
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 645,
+    "function": "parent",
+    "primitive_calls": 89,
+    "calls": 89,
+    "own_seconds": 0.00011750000000000001,
+    "cumulative_seconds": 0.0001549
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.hasattr>",
+    "primitive_calls": 410,
+    "calls": 410,
+    "own_seconds": 0.0001543,
+    "cumulative_seconds": 0.0001543
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_compiler.py",
+    "line": 514,
+    "function": "_compile_info",
+    "primitive_calls": 9,
+    "calls": 9,
+    "own_seconds": 5.1200000000000004e-05,
+    "cumulative_seconds": 0.00015140000000000002
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 753,
+    "function": "Union",
+    "primitive_calls": 4,
+    "calls": 4,
+    "own_seconds": 2.11e-05,
+    "cumulative_seconds": 0.00015130000000000002
+  },
+  {
+    "file": "<frozen ntpath>",
+    "line": 648,
+    "function": "_getfinalpathname_nonstrict",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.1400000000000001e-05,
+    "cumulative_seconds": 0.0001487
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\_collections.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.2000000000000004e-06,
+    "cumulative_seconds": 0.0001487
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\procedural_particles.py",
+    "line": 147,
+    "function": "<lambda>",
+    "primitive_calls": 1614,
+    "calls": 1614,
+    "own_seconds": 0.0001453,
+    "cumulative_seconds": 0.0001453
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.sum>",
+    "primitive_calls": 196,
+    "calls": 196,
+    "own_seconds": 0.0001388,
+    "cumulative_seconds": 0.0001388
+  },
+  {
+    "file": "C:\\Python313\\Lib\\multiprocessing\\shared_memory.py",
+    "line": 206,
+    "function": "buf",
+    "primitive_calls": 344,
+    "calls": 344,
+    "own_seconds": 0.00013470000000000002,
+    "cumulative_seconds": 0.00013470000000000002
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _thread.allocate_lock>",
+    "primitive_calls": 218,
+    "calls": 218,
+    "own_seconds": 0.0001341,
+    "cumulative_seconds": 0.0001341
+  },
+  {
+    "file": "C:\\Python313\\Lib\\copy.py",
+    "line": 232,
+    "function": "_keep_alive",
+    "primitive_calls": 90,
+    "calls": 90,
+    "own_seconds": 0.0001106,
+    "cumulative_seconds": 0.00013350000000000002
+  },
+  {
+    "file": "C:\\Python313\\Lib\\fractions.py",
+    "line": 1017,
+    "function": "__ge__",
+    "primitive_calls": 21,
+    "calls": 21,
+    "own_seconds": 3.24e-05,
+    "cumulative_seconds": 0.0001325
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'rpartition' of 'str' objects>",
+    "primitive_calls": 432,
+    "calls": 432,
+    "own_seconds": 0.0001294,
+    "cumulative_seconds": 0.0001294
+  },
+  {
+    "file": "C:\\Python313\\Lib\\multiprocessing\\shared_memory.py",
+    "line": 211,
+    "function": "name",
+    "primitive_calls": 258,
+    "calls": 258,
+    "own_seconds": 0.0001292,
+    "cumulative_seconds": 0.0001292
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'view' of 'numpy.ndarray' objects>",
+    "primitive_calls": 36,
+    "calls": 36,
+    "own_seconds": 0.0001275,
+    "cumulative_seconds": 0.0001275
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'remove' of 'collections.deque' objects>",
+    "primitive_calls": 183,
+    "calls": 183,
+    "own_seconds": 0.00012570000000000002,
+    "cumulative_seconds": 0.00012570000000000002
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\suite.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.2600000000000001e-05,
+    "cumulative_seconds": 0.0001249
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 177,
+    "function": "getwidth",
+    "primitive_calls": 23,
+    "calls": 90,
+    "own_seconds": 0.0001016,
+    "cumulative_seconds": 0.00012460000000000002
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 2050,
+    "function": "__new__",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 1.3000000000000001e-05,
+    "cumulative_seconds": 0.0001221
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 61,
+    "function": "Sectioned",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 8.6e-06,
+    "cumulative_seconds": 0.0001194
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.id>",
+    "primitive_calls": 1044,
+    "calls": 1044,
+    "own_seconds": 0.00011870000000000001,
+    "cumulative_seconds": 0.00011870000000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 1423,
+    "function": "__init__",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 2.7700000000000002e-05,
+    "cumulative_seconds": 0.00011640000000000001
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'sub' of 're.Pattern' objects>",
+    "primitive_calls": 191,
+    "calls": 191,
+    "own_seconds": 0.0001144,
+    "cumulative_seconds": 0.0001144
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\_distutils_hack\\__init__.py",
+    "line": 101,
+    "function": "find_spec",
+    "primitive_calls": 35,
+    "calls": 35,
+    "own_seconds": 5.0900000000000004e-05,
+    "cumulative_seconds": 0.00011260000000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\threading.py",
+    "line": 312,
+    "function": "_release_save",
+    "primitive_calls": 183,
+    "calls": 183,
+    "own_seconds": 6.890000000000001e-05,
+    "cumulative_seconds": 0.00011090000000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\textwrap.py",
+    "line": 419,
+    "function": "dedent",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6.6e-06,
+    "cumulative_seconds": 0.00011030000000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 1634,
+    "function": "__getitem__",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 8.7e-06,
+    "cumulative_seconds": 0.0001099
+  },
+  {
+    "file": "<string>",
+    "line": 2,
+    "function": "__init__",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 6.670000000000001e-05,
+    "cumulative_seconds": 0.00010870000000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\fractions.py",
+    "line": 958,
+    "function": "__hash__",
+    "primitive_calls": 36,
+    "calls": 36,
+    "own_seconds": 8.300000000000001e-05,
+    "cumulative_seconds": 0.00010800000000000001
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'append' of 'collections.deque' objects>",
+    "primitive_calls": 355,
+    "calls": 355,
+    "own_seconds": 0.00010570000000000001,
+    "cumulative_seconds": 0.00010570000000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\util.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 9.3e-06,
+    "cumulative_seconds": 0.0001044
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _operator.lt>",
+    "primitive_calls": 42,
+    "calls": 42,
+    "own_seconds": 0.00010410000000000001,
+    "cumulative_seconds": 0.00010410000000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 260,
+    "function": "get",
+    "primitive_calls": 211,
+    "calls": 211,
+    "own_seconds": 5.95e-05,
+    "cumulative_seconds": 0.00010400000000000001
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 697,
+    "function": "_classify_pyc",
+    "primitive_calls": 19,
+    "calls": 19,
+    "own_seconds": 5.3700000000000004e-05,
+    "cumulative_seconds": 0.0001026
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_color_signal.py",
+    "line": 49,
+    "function": "_to_linear",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 0.00010140000000000001,
+    "cumulative_seconds": 0.00010200000000000001
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'pack' of '_struct.Struct' objects>",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 0.00010200000000000001,
+    "cumulative_seconds": 0.00010200000000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\multiprocessing\\shared_memory.py",
+    "line": 187,
+    "function": "__del__",
+    "primitive_calls": 162,
+    "calls": 162,
+    "own_seconds": 6.75e-05,
+    "cumulative_seconds": 0.00010120000000000001
+  },
+  {
+    "file": "C:\\Python313\\Lib\\contextlib.py",
+    "line": 276,
+    "function": "contextmanager",
+    "primitive_calls": 11,
+    "calls": 11,
+    "own_seconds": 2.6300000000000002e-05,
+    "cumulative_seconds": 9.99e-05
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\testing\\_private\\utils.py",
+    "line": 803,
+    "function": "assert_same_inf_values",
+    "primitive_calls": 32,
+    "calls": 32,
+    "own_seconds": 1.77e-05,
+    "cumulative_seconds": 9.93e-05
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 1598,
+    "function": "__init__",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 3.15e-05,
+    "cumulative_seconds": 9.850000000000001e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 427,
+    "function": "<genexpr>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.5e-06,
+    "cumulative_seconds": 9.83e-05
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 139,
+    "function": "<genexpr>",
+    "primitive_calls": 198,
+    "calls": 198,
+    "own_seconds": 6.620000000000001e-05,
+    "cumulative_seconds": 9.78e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 749,
+    "function": "zip_children",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 5.7000000000000005e-06,
+    "cumulative_seconds": 9.680000000000001e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\sysconfig\\__init__.py",
+    "line": 453,
+    "function": "get_path",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 2.8000000000000003e-06,
+    "cumulative_seconds": 9.54e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'release' of 'memoryview' objects>",
+    "primitive_calls": 162,
+    "calls": 162,
+    "own_seconds": 9.520000000000001e-05,
+    "cumulative_seconds": 9.520000000000001e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'decode' of 'bytes' objects>",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 9.44e-05,
+    "cumulative_seconds": 9.44e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'unpack' of '_struct.Struct' objects>",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 9.38e-05,
+    "cumulative_seconds": 9.38e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\sysconfig\\__init__.py",
+    "line": 441,
+    "function": "get_paths",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 3.2000000000000003e-06,
+    "cumulative_seconds": 9.26e-05
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 1575,
+    "function": "find_distributions",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.1000000000000002e-06,
+    "cumulative_seconds": 9.240000000000001e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\json\\encoder.py",
+    "line": 105,
+    "function": "__init__",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 9.15e-05,
+    "cumulative_seconds": 9.15e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\zipfile\\_path\\__init__.py",
+    "line": 308,
+    "function": "__init__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 8.400000000000001e-06,
+    "cumulative_seconds": 9.11e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\functools.py",
+    "line": 875,
+    "function": "register",
+    "primitive_calls": 4,
+    "calls": 4,
+    "own_seconds": 1.9e-05,
+    "cumulative_seconds": 9.080000000000001e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 173,
+    "function": "_type_check",
+    "primitive_calls": 13,
+    "calls": 13,
+    "own_seconds": 3.12e-05,
+    "cumulative_seconds": 9.06e-05
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_timeline.py",
+    "line": 275,
+    "function": "<genexpr>",
+    "primitive_calls": 144,
+    "calls": 144,
+    "own_seconds": 6.55e-05,
+    "cumulative_seconds": 9.03e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method '__exit__' of '_thread.lock' objects>",
+    "primitive_calls": 355,
+    "calls": 355,
+    "own_seconds": 8.950000000000001e-05,
+    "cumulative_seconds": 8.950000000000001e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\sysconfig\\__init__.py",
+    "line": 262,
+    "function": "_expand_vars",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 2.9500000000000002e-05,
+    "cumulative_seconds": 8.94e-05
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 74,
+    "function": "__new__",
+    "primitive_calls": 46,
+    "calls": 46,
+    "own_seconds": 6.620000000000001e-05,
+    "cumulative_seconds": 8.92e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\abc.py",
+    "line": 41,
+    "function": "_register",
+    "primitive_calls": 6,
+    "calls": 6,
+    "own_seconds": 2.3e-05,
+    "cumulative_seconds": 8.910000000000001e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 871,
+    "function": "find_distributions",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.3e-06,
+    "cumulative_seconds": 8.850000000000001e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'disable' of '_lsprof.Profiler' objects>",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 8.740000000000001e-05,
+    "cumulative_seconds": 8.740000000000001e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'astype' of 'numpy.ndarray' objects>",
+    "primitive_calls": 21,
+    "calls": 21,
+    "own_seconds": 8.71e-05,
+    "cumulative_seconds": 8.71e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 886,
+    "function": "_search_paths",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.7e-06,
+    "cumulative_seconds": 8.49e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\fractions.py",
+    "line": 760,
+    "function": "_add",
+    "primitive_calls": 54,
+    "calls": 54,
+    "own_seconds": 4.33e-05,
+    "cumulative_seconds": 8.31e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\zipfile\\_path\\__init__.py",
+    "line": 147,
+    "function": "make",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.3e-06,
+    "cumulative_seconds": 8.27e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'group' of 're.Match' objects>",
+    "primitive_calls": 270,
+    "calls": 270,
+    "own_seconds": 8.27e-05,
+    "cumulative_seconds": 8.27e-05
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+    "line": 139,
+    "function": "<genexpr>",
+    "primitive_calls": 230,
+    "calls": 230,
+    "own_seconds": 8.19e-05,
+    "cumulative_seconds": 8.19e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 844,
+    "function": "__init__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.7e-06,
+    "cumulative_seconds": 8.19e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pprint.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.09e-05,
+    "cumulative_seconds": 8.170000000000001e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'any' of 'numpy.ndarray' objects>",
+    "primitive_calls": 32,
+    "calls": 32,
+    "own_seconds": 2.7700000000000002e-05,
+    "cumulative_seconds": 8.16e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'encode' of 'str' objects>",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 8.020000000000001e-05,
+    "cumulative_seconds": 8.020000000000001e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\zipfile\\_path\\__init__.py",
+    "line": 89,
+    "function": "__init__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 7.6e-06,
+    "cumulative_seconds": 7.88e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\functools.py",
+    "line": 541,
+    "function": "decorating_function",
+    "primitive_calls": 8,
+    "calls": 8,
+    "own_seconds": 1.91e-05,
+    "cumulative_seconds": 7.790000000000001e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 806,
+    "function": "Optional",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 5.600000000000001e-06,
+    "cumulative_seconds": 7.64e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\resources\\abc.py",
+    "line": 62,
+    "function": "Traversable",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 5.8e-06,
+    "cumulative_seconds": 7.52e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 97,
+    "function": "closegroup",
+    "primitive_calls": 14,
+    "calls": 14,
+    "own_seconds": 6.7e-06,
+    "cumulative_seconds": 7.47e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\fractions.py",
+    "line": 1009,
+    "function": "__gt__",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 9.2e-06,
+    "cumulative_seconds": 7.16e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\zipfile\\__init__.py",
+    "line": 1323,
+    "function": "__init__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.55e-05,
+    "cumulative_seconds": 7.120000000000001e-05
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 89,
+    "function": "_unpack_uint32",
+    "primitive_calls": 57,
+    "calls": 57,
+    "own_seconds": 4.64e-05,
+    "cumulative_seconds": 7.09e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 1368,
+    "function": "__setattr__",
+    "primitive_calls": 52,
+    "calls": 52,
+    "own_seconds": 3.9500000000000005e-05,
+    "cumulative_seconds": 7.070000000000001e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\fractions.py",
+    "line": 962,
+    "function": "__eq__",
+    "primitive_calls": 54,
+    "calls": 54,
+    "own_seconds": 3.76e-05,
+    "cumulative_seconds": 6.890000000000001e-05
+  },
+  {
+    "file": "<frozen ntpath>",
+    "line": 222,
+    "function": "split",
+    "primitive_calls": 11,
+    "calls": 11,
+    "own_seconds": 4.22e-05,
+    "cumulative_seconds": 6.86e-05
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 82,
+    "function": "remove",
+    "primitive_calls": 46,
+    "calls": 46,
+    "own_seconds": 4.5e-05,
+    "cumulative_seconds": 6.81e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\enum.py",
+    "line": 1603,
+    "function": "__and__",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 2.65e-05,
+    "cumulative_seconds": 6.68e-05
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 445,
+    "function": "cb",
+    "primitive_calls": 35,
+    "calls": 35,
+    "own_seconds": 4.1500000000000006e-05,
+    "cumulative_seconds": 6.63e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\copy.py",
+    "line": 173,
+    "function": "_deepcopy_atomic",
+    "primitive_calls": 756,
+    "calls": 756,
+    "own_seconds": 6.560000000000001e-05,
+    "cumulative_seconds": 6.560000000000001e-05
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 232,
+    "function": "__init__",
+    "primitive_calls": 35,
+    "calls": 35,
+    "own_seconds": 4.74e-05,
+    "cumulative_seconds": 6.36e-05
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 1226,
+    "function": "__exit__",
+    "primitive_calls": 136,
+    "calls": 136,
+    "own_seconds": 4.1700000000000004e-05,
+    "cumulative_seconds": 6.25e-05
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 1128,
+    "function": "find_spec",
+    "primitive_calls": 33,
+    "calls": 33,
+    "own_seconds": 2.22e-05,
+    "cumulative_seconds": 6.21e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\platform.py",
+    "line": 687,
+    "function": "_node",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.8e-06,
+    "cumulative_seconds": 6.2e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\_colorize.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.9e-05,
+    "cumulative_seconds": 6.19e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\sysconfig\\__init__.py",
+    "line": 220,
+    "function": "is_python_build",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6e-06,
+    "cumulative_seconds": 6.13e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.setattr>",
+    "primitive_calls": 197,
+    "calls": 197,
+    "own_seconds": 6.06e-05,
+    "cumulative_seconds": 6.06e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\sysconfig\\__init__.py",
+    "line": 114,
+    "function": "_getuserbase",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 1.2100000000000001e-05,
+    "cumulative_seconds": 6.0100000000000004e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 239,
+    "function": "__next",
+    "primitive_calls": 284,
+    "calls": 284,
+    "own_seconds": 6e-05,
+    "cumulative_seconds": 6e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pathlib\\_local.py",
+    "line": 329,
+    "function": "parent",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 4.7e-06,
+    "cumulative_seconds": 6e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_compiler.py",
+    "line": 401,
+    "function": "_simple",
+    "primitive_calls": 41,
+    "calls": 41,
+    "own_seconds": 2.23e-05,
+    "cumulative_seconds": 5.9900000000000006e-05
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\lib\\_twodim_base_impl.py",
+    "line": 176,
+    "function": "eye",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 4.97e-05,
+    "cumulative_seconds": 5.9900000000000006e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\threading.py",
+    "line": 605,
+    "function": "is_set",
+    "primitive_calls": 440,
+    "calls": 440,
+    "own_seconds": 5.8700000000000004e-05,
+    "cumulative_seconds": 5.8700000000000004e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _socket.gethostname>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 5.8200000000000005e-05,
+    "cumulative_seconds": 5.8200000000000005e-05
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 491,
+    "function": "_verbose_message",
+    "primitive_calls": 279,
+    "calls": 279,
+    "own_seconds": 5.7900000000000005e-05,
+    "cumulative_seconds": 5.7900000000000005e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _abc._abc_init>",
+    "primitive_calls": 15,
+    "calls": 15,
+    "own_seconds": 5.75e-05,
+    "cumulative_seconds": 5.75e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.any>",
+    "primitive_calls": 24,
+    "calls": 24,
+    "own_seconds": 3.1100000000000004e-05,
+    "cumulative_seconds": 5.75e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pathlib\\_local.py",
+    "line": 298,
+    "function": "root",
+    "primitive_calls": 434,
+    "calls": 434,
+    "own_seconds": 5.7400000000000006e-05,
+    "cumulative_seconds": 5.7400000000000006e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'popleft' of 'collections.deque' objects>",
+    "primitive_calls": 172,
+    "calls": 172,
+    "own_seconds": 5.7100000000000006e-05,
+    "cumulative_seconds": 5.7100000000000006e-05
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 730,
+    "function": "_validate_timestamp_pyc",
+    "primitive_calls": 19,
+    "calls": 19,
+    "own_seconds": 2.4900000000000002e-05,
+    "cumulative_seconds": 5.6500000000000005e-05
+  },
+  {
+    "file": "<frozen ntpath>",
+    "line": 254,
+    "function": "basename",
+    "primitive_calls": 8,
+    "calls": 8,
+    "own_seconds": 6.4000000000000006e-06,
+    "cumulative_seconds": 5.6300000000000006e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 1307,
+    "function": "__init__",
+    "primitive_calls": 8,
+    "calls": 8,
+    "own_seconds": 1.0500000000000001e-05,
+    "cumulative_seconds": 5.61e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pathlib\\_local.py",
+    "line": 307,
+    "function": "_tail",
+    "primitive_calls": 434,
+    "calls": 434,
+    "own_seconds": 5.6000000000000006e-05,
+    "cumulative_seconds": 5.6000000000000006e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'partition' of 'str' objects>",
+    "primitive_calls": 250,
+    "calls": 250,
+    "own_seconds": 5.5700000000000005e-05,
+    "cumulative_seconds": 5.5700000000000005e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _winapi.GetLastError>",
+    "primitive_calls": 165,
+    "calls": 165,
+    "own_seconds": 5.5400000000000005e-05,
+    "cumulative_seconds": 5.5400000000000005e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 1639,
+    "function": "<genexpr>",
+    "primitive_calls": 6,
+    "calls": 6,
+    "own_seconds": 2.5e-06,
+    "cumulative_seconds": 5.4300000000000005e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 163,
+    "function": "__len__",
+    "primitive_calls": 175,
+    "calls": 175,
+    "own_seconds": 3.6700000000000004e-05,
+    "cumulative_seconds": 5.4000000000000005e-05
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\_methods.py",
+    "line": 55,
+    "function": "_any",
+    "primitive_calls": 32,
+    "calls": 32,
+    "own_seconds": 1.09e-05,
+    "cumulative_seconds": 5.39e-05
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 79,
+    "function": "__init__",
+    "primitive_calls": 46,
+    "calls": 46,
+    "own_seconds": 5.2300000000000004e-05,
+    "cumulative_seconds": 5.2300000000000004e-05
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+    "line": 29,
+    "function": "<lambda>",
+    "primitive_calls": 345,
+    "calls": 345,
+    "own_seconds": 5.11e-05,
+    "cumulative_seconds": 5.11e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'end' of 're.Match' objects>",
+    "primitive_calls": 172,
+    "calls": 172,
+    "own_seconds": 5.1000000000000006e-05,
+    "cumulative_seconds": 5.1000000000000006e-05
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 674,
+    "function": "_check_name_wrapper",
+    "primitive_calls": 33,
+    "calls": 33,
+    "own_seconds": 4.53e-05,
+    "cumulative_seconds": 5.08e-05
+  },
+  {
+    "file": "<frozen abc>",
+    "line": 110,
+    "function": "register",
+    "primitive_calls": 26,
+    "calls": 26,
+    "own_seconds": 7.2000000000000005e-06,
+    "cumulative_seconds": 5.0100000000000005e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 334,
+    "function": "__new__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.11e-05,
+    "cumulative_seconds": 5e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method nt._path_isfile>",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 4.9300000000000006e-05,
+    "cumulative_seconds": 4.9300000000000006e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 292,
+    "function": "tell",
+    "primitive_calls": 98,
+    "calls": 98,
+    "own_seconds": 3.07e-05,
+    "cumulative_seconds": 4.8700000000000005e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 804,
+    "function": "search",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 2.2800000000000002e-05,
+    "cumulative_seconds": 4.83e-05
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 1222,
+    "function": "__enter__",
+    "primitive_calls": 136,
+    "calls": 136,
+    "own_seconds": 3.32e-05,
+    "cumulative_seconds": 4.77e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_compiler.py",
+    "line": 389,
+    "function": "_mk_bitmap",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 4.25e-05,
+    "cumulative_seconds": 4.7000000000000004e-05
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+    "line": 61,
+    "function": "active",
+    "primitive_calls": 158,
+    "calls": 158,
+    "own_seconds": 4.66e-05,
+    "cumulative_seconds": 4.66e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\fractions.py",
+    "line": 427,
+    "function": "__str__",
+    "primitive_calls": 39,
+    "calls": 39,
+    "own_seconds": 4.6500000000000005e-05,
+    "cumulative_seconds": 4.6500000000000005e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 2069,
+    "function": "__init__",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 7.7e-06,
+    "cumulative_seconds": 4.64e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_compiler.py",
+    "line": 214,
+    "function": "_compile_charset",
+    "primitive_calls": 29,
+    "calls": 29,
+    "own_seconds": 3.0200000000000002e-05,
+    "cumulative_seconds": 4.63e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'flush' of '_io._IOBase' objects>",
+    "primitive_calls": 86,
+    "calls": 86,
+    "own_seconds": 4.5900000000000004e-05,
+    "cumulative_seconds": 4.5900000000000004e-05
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 173,
+    "function": "__exit__",
+    "primitive_calls": 46,
+    "calls": 46,
+    "own_seconds": 2.6200000000000003e-05,
+    "cumulative_seconds": 4.57e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 1658,
+    "function": "copy_with",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 4.3e-06,
+    "cumulative_seconds": 4.57e-05
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 48,
+    "function": "_new_module",
+    "primitive_calls": 33,
+    "calls": 33,
+    "own_seconds": 4.55e-05,
+    "cumulative_seconds": 4.55e-05
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\animation.py",
+    "line": 45,
+    "function": "<genexpr>",
+    "primitive_calls": 144,
+    "calls": 144,
+    "own_seconds": 4.52e-05,
+    "cumulative_seconds": 4.52e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _operator.eq>",
+    "primitive_calls": 32,
+    "calls": 32,
+    "own_seconds": 4.5e-05,
+    "cumulative_seconds": 4.5e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 3790,
+    "function": "__getattr__",
+    "primitive_calls": 17,
+    "calls": 17,
+    "own_seconds": 2.72e-05,
+    "cumulative_seconds": 4.4800000000000005e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 164,
+    "function": "_type_convert",
+    "primitive_calls": 13,
+    "calls": 13,
+    "own_seconds": 7.2000000000000005e-06,
+    "cumulative_seconds": 4.41e-05
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_adjustments.py",
+    "line": 116,
+    "function": "apply",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 1.9900000000000003e-05,
+    "cumulative_seconds": 4.41e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _abc._abc_register>",
+    "primitive_calls": 26,
+    "calls": 26,
+    "own_seconds": 1.2800000000000001e-05,
+    "cumulative_seconds": 4.2900000000000006e-05
+  },
+  {
+    "file": "<frozen abc>",
+    "line": 121,
+    "function": "__subclasscheck__",
+    "primitive_calls": 28,
+    "calls": 28,
+    "own_seconds": 7.6e-06,
+    "cumulative_seconds": 4.2800000000000004e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 175,
+    "function": "append",
+    "primitive_calls": 94,
+    "calls": 94,
+    "own_seconds": 2.7600000000000003e-05,
+    "cumulative_seconds": 4.27e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 255,
+    "function": "match",
+    "primitive_calls": 222,
+    "calls": 222,
+    "own_seconds": 3.46e-05,
+    "cumulative_seconds": 4.21e-05
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_color_signal.py",
+    "line": 35,
+    "function": "__post_init__",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 3.5600000000000005e-05,
+    "cumulative_seconds": 4.2000000000000004e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 2195,
+    "function": "__init_subclass__",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 1.79e-05,
+    "cumulative_seconds": 4.1500000000000006e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 371,
+    "function": "_escape",
+    "primitive_calls": 29,
+    "calls": 29,
+    "own_seconds": 2.72e-05,
+    "cumulative_seconds": 4.05e-05
+  },
+  {
+    "file": "<frozen ntpath>",
+    "line": 50,
+    "function": "normcase",
+    "primitive_calls": 10,
+    "calls": 10,
+    "own_seconds": 1.79e-05,
+    "cumulative_seconds": 4.0100000000000006e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method math.isfinite>",
+    "primitive_calls": 144,
+    "calls": 144,
+    "own_seconds": 4.0100000000000006e-05,
+    "cumulative_seconds": 4.0100000000000006e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'extend' of 'list' objects>",
+    "primitive_calls": 38,
+    "calls": 38,
+    "own_seconds": 2.97e-05,
+    "cumulative_seconds": 3.93e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<function FreezableDefaultDict.__missing__ at 0x00000201CD4159E0>",
+    "primitive_calls": 188,
+    "calls": 188,
+    "own_seconds": 3.9e-05,
+    "cumulative_seconds": 3.9e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method nt._path_splitroot>",
+    "primitive_calls": 40,
+    "calls": 40,
+    "own_seconds": 3.88e-05,
+    "cumulative_seconds": 3.88e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 921,
+    "function": "locate_file",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3e-06,
+    "cumulative_seconds": 3.86e-05
+  },
+  {
+    "file": "<frozen ntpath>",
+    "line": 606,
+    "function": "_readlink_deep",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 7.100000000000001e-06,
+    "cumulative_seconds": 3.85e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 1923,
+    "function": "_get_protocol_attrs",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 2.65e-05,
+    "cumulative_seconds": 3.79e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _abc._abc_subclasscheck>",
+    "primitive_calls": 28,
+    "calls": 28,
+    "own_seconds": 3.19e-05,
+    "cumulative_seconds": 3.52e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\signals.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 9.800000000000001e-06,
+    "cumulative_seconds": 3.46e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _imp.release_lock>",
+    "primitive_calls": 217,
+    "calls": 217,
+    "own_seconds": 3.44e-05,
+    "cumulative_seconds": 3.44e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\resources\\abc.py",
+    "line": 16,
+    "function": "ResourceReader",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6.200000000000001e-06,
+    "cumulative_seconds": 3.43e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\multiprocessing\\shared_memory.py",
+    "line": 238,
+    "function": "unlink",
+    "primitive_calls": 162,
+    "calls": 162,
+    "own_seconds": 3.3900000000000004e-05,
+    "cumulative_seconds": 3.3900000000000004e-05
+  },
+  {
+    "file": "<frozen ntpath>",
+    "line": 99,
+    "function": "join",
+    "primitive_calls": 9,
+    "calls": 9,
+    "own_seconds": 2.29e-05,
+    "cumulative_seconds": 3.3600000000000004e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 1023,
+    "function": "__init__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.9e-06,
+    "cumulative_seconds": 3.3600000000000004e-05
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\testing\\_private\\utils.py",
+    "line": 745,
+    "function": "isnumber",
+    "primitive_calls": 64,
+    "calls": 64,
+    "own_seconds": 3.35e-05,
+    "cumulative_seconds": 3.35e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 789,
+    "function": "<genexpr>",
+    "primitive_calls": 12,
+    "calls": 12,
+    "own_seconds": 6.8e-06,
+    "cumulative_seconds": 3.3100000000000005e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\result.py",
+    "line": 24,
+    "function": "TestResult",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 7.6e-06,
+    "cumulative_seconds": 3.3100000000000005e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _imp.acquire_lock>",
+    "primitive_calls": 217,
+    "calls": 217,
+    "own_seconds": 3.29e-05,
+    "cumulative_seconds": 3.29e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.sorted>",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 1.7500000000000002e-05,
+    "cumulative_seconds": 3.23e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'rfind' of 'str' objects>",
+    "primitive_calls": 134,
+    "calls": 134,
+    "own_seconds": 3.2200000000000003e-05,
+    "cumulative_seconds": 3.2200000000000003e-05
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 989,
+    "function": "create_module",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 2.7e-06,
+    "cumulative_seconds": 3.1400000000000004e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 2399,
+    "function": "get_type_hints",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 1.69e-05,
+    "cumulative_seconds": 3.13e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 1294,
+    "function": "_is_dunder",
+    "primitive_calls": 52,
+    "calls": 52,
+    "own_seconds": 1.9900000000000003e-05,
+    "cumulative_seconds": 3.12e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\case.py",
+    "line": 45,
+    "function": "_Outcome",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 7.5e-06,
+    "cumulative_seconds": 3.1100000000000004e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method '__exit__' of '_thread.RLock' objects>",
+    "primitive_calls": 99,
+    "calls": 99,
+    "own_seconds": 3.0500000000000003e-05,
+    "cumulative_seconds": 3.0500000000000003e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'format' of 'str' objects>",
+    "primitive_calls": 36,
+    "calls": 36,
+    "own_seconds": 2.89e-05,
+    "cumulative_seconds": 2.89e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\case.py",
+    "line": 362,
+    "function": "TestCase",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.04e-05,
+    "cumulative_seconds": 2.85e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\functools.py",
+    "line": 823,
+    "function": "singledispatch",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 1.48e-05,
+    "cumulative_seconds": 2.83e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.locals>",
+    "primitive_calls": 10,
+    "calls": 10,
+    "own_seconds": 2.78e-05,
+    "cumulative_seconds": 2.78e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 448,
+    "function": "_uniq",
+    "primitive_calls": 13,
+    "calls": 13,
+    "own_seconds": 1.7100000000000002e-05,
+    "cumulative_seconds": 2.71e-05
+  },
+  {
+    "file": "<frozen ntpath>",
+    "line": 343,
+    "function": "expanduser",
+    "primitive_calls": 26,
+    "calls": 26,
+    "own_seconds": 1.6100000000000002e-05,
+    "cumulative_seconds": 2.6300000000000002e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\subprocess.py",
+    "line": 1243,
+    "function": "poll",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.5000000000000004e-06,
+    "cumulative_seconds": 2.6300000000000002e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method nt.readlink>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.6300000000000002e-05,
+    "cumulative_seconds": 2.6300000000000002e-05
+  },
+  {
+    "file": "<frozen _collections_abc>",
+    "line": 808,
+    "function": "get",
+    "primitive_calls": 4,
+    "calls": 4,
+    "own_seconds": 6.5000000000000004e-06,
+    "cumulative_seconds": 2.6200000000000003e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _imp.create_builtin>",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 2.6000000000000002e-05,
+    "cumulative_seconds": 2.6000000000000002e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 85,
+    "function": "opengroup",
+    "primitive_calls": 14,
+    "calls": 14,
+    "own_seconds": 1.3700000000000001e-05,
+    "cumulative_seconds": 2.58e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\result.py",
+    "line": 12,
+    "function": "failfast",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 6.7e-06,
+    "cumulative_seconds": 2.5500000000000003e-05
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+    "line": 194,
+    "function": "<genexpr>",
+    "primitive_calls": 54,
+    "calls": 54,
+    "own_seconds": 2.54e-05,
+    "cumulative_seconds": 2.54e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _imp.find_frozen>",
+    "primitive_calls": 33,
+    "calls": 33,
+    "own_seconds": 2.54e-05,
+    "cumulative_seconds": 2.54e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\resources\\abc.py",
+    "line": 153,
+    "function": "TraversableResources",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.9e-06,
+    "cumulative_seconds": 2.5300000000000002e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method numpy.asanyarray>",
+    "primitive_calls": 82,
+    "calls": 82,
+    "own_seconds": 2.51e-05,
+    "cumulative_seconds": 2.51e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\fractions.py",
+    "line": 24,
+    "function": "_hash_algorithm",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 9.100000000000001e-06,
+    "cumulative_seconds": 2.5e-05
+  },
+  {
+    "file": "<frozen os>",
+    "line": 711,
+    "function": "__getitem__",
+    "primitive_calls": 5,
+    "calls": 5,
+    "own_seconds": 1.2e-05,
+    "cumulative_seconds": 2.4800000000000003e-05
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 67,
+    "function": "_relax_case",
+    "primitive_calls": 57,
+    "calls": 57,
+    "own_seconds": 2.4500000000000003e-05,
+    "cumulative_seconds": 2.4500000000000003e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pprint.py",
+    "line": 106,
+    "function": "PrettyPrinter",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.37e-05,
+    "cumulative_seconds": 2.37e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'pop' of 'dict' objects>",
+    "primitive_calls": 44,
+    "calls": 44,
+    "own_seconds": 2.37e-05,
+    "cumulative_seconds": 2.37e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _weakref._remove_dead_weakref>",
+    "primitive_calls": 46,
+    "calls": 46,
+    "own_seconds": 2.3100000000000002e-05,
+    "cumulative_seconds": 2.3100000000000002e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\subprocess.py",
+    "line": 1573,
+    "function": "_internal_poll",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.3500000000000001e-05,
+    "cumulative_seconds": 2.2800000000000002e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'pop' of 'list' objects>",
+    "primitive_calls": 71,
+    "calls": 71,
+    "own_seconds": 2.26e-05,
+    "cumulative_seconds": 2.26e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'add' of 'set' objects>",
+    "primitive_calls": 96,
+    "calls": 96,
+    "own_seconds": 2.23e-05,
+    "cumulative_seconds": 2.23e-05
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\_ufunc_config.py",
+    "line": 472,
+    "function": "__enter__",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 1.1200000000000001e-05,
+    "cumulative_seconds": 2.12e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\sysconfig\\__init__.py",
+    "line": 123,
+    "function": "joinuser",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 8.8e-06,
+    "cumulative_seconds": 2.12e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\enum.py",
+    "line": 1585,
+    "function": "_get_value",
+    "primitive_calls": 21,
+    "calls": 21,
+    "own_seconds": 1.4000000000000001e-05,
+    "cumulative_seconds": 2.11e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'ravel' of 'numpy.ndarray' objects>",
+    "primitive_calls": 32,
+    "calls": 32,
+    "own_seconds": 2.11e-05,
+    "cumulative_seconds": 2.11e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _thread.get_ident>",
+    "primitive_calls": 92,
+    "calls": 92,
+    "own_seconds": 2.11e-05,
+    "cumulative_seconds": 2.11e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 379,
+    "function": "_remove_dups_flatten",
+    "primitive_calls": 4,
+    "calls": 4,
+    "own_seconds": 1.0700000000000001e-05,
+    "cumulative_seconds": 2.09e-05
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\sequence_canvas.py",
+    "line": 19,
+    "function": "sequence_canvas",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 1.79e-05,
+    "cumulative_seconds": 2.08e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pathlib\\_abc.py",
+    "line": 130,
+    "function": "with_segments",
+    "primitive_calls": 4,
+    "calls": 4,
+    "own_seconds": 5.4e-06,
+    "cumulative_seconds": 2.0700000000000002e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 1277,
+    "function": "__init__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.3e-06,
+    "cumulative_seconds": 2.05e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pathlib\\_local.py",
+    "line": 193,
+    "function": "__eq__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.1000000000000002e-06,
+    "cumulative_seconds": 1.97e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'remove' of 'list' objects>",
+    "primitive_calls": 46,
+    "calls": 46,
+    "own_seconds": 1.95e-05,
+    "cumulative_seconds": 1.95e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 716,
+    "function": "FastPath",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6.7e-06,
+    "cumulative_seconds": 1.93e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\enum.py",
+    "line": 695,
+    "function": "__call__",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 1.3800000000000002e-05,
+    "cumulative_seconds": 1.9200000000000003e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_compiler.py",
+    "line": 394,
+    "function": "_bytes_to_codes",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 1.3100000000000002e-05,
+    "cumulative_seconds": 1.9200000000000003e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 930,
+    "function": "__init__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.02e-05,
+    "cumulative_seconds": 1.9200000000000003e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pathlib\\_local.py",
+    "line": 245,
+    "function": "_from_parsed_parts",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 3.8e-06,
+    "cumulative_seconds": 1.91e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method '__init_subclass__' of 'object' objects>",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 1.06e-05,
+    "cumulative_seconds": 1.91e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method time.perf_counter>",
+    "primitive_calls": 66,
+    "calls": 66,
+    "own_seconds": 1.9e-05,
+    "cumulative_seconds": 1.9e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 230,
+    "function": "__init__",
+    "primitive_calls": 9,
+    "calls": 9,
+    "own_seconds": 1.18e-05,
+    "cumulative_seconds": 1.8500000000000002e-05
+  },
+  {
+    "file": "<string>",
+    "line": 9,
+    "function": "__eq__",
+    "primitive_calls": 21,
+    "calls": 21,
+    "own_seconds": 1.8500000000000002e-05,
+    "cumulative_seconds": 1.8500000000000002e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 2128,
+    "function": "getLogger",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.7e-06,
+    "cumulative_seconds": 1.77e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\_meta.py",
+    "line": 11,
+    "function": "PackageMetadata",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.800000000000001e-06,
+    "cumulative_seconds": 1.77e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_compiler.py",
+    "line": 439,
+    "function": "_get_literal_prefix",
+    "primitive_calls": 7,
+    "calls": 8,
+    "own_seconds": 1.13e-05,
+    "cumulative_seconds": 1.76e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pathlib\\_local.py",
+    "line": 174,
+    "function": "_str_normcase",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 4.000000000000001e-06,
+    "cumulative_seconds": 1.74e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method numpy.array>",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 1.74e-05,
+    "cumulative_seconds": 1.74e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method from_bytes>",
+    "primitive_calls": 57,
+    "calls": 57,
+    "own_seconds": 1.73e-05,
+    "cumulative_seconds": 1.73e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\functools.py",
+    "line": 864,
+    "function": "_is_union_type",
+    "primitive_calls": 5,
+    "calls": 5,
+    "own_seconds": 7.7e-06,
+    "cumulative_seconds": 1.69e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 260,
+    "function": "_collect_type_parameters",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 7.9e-06,
+    "cumulative_seconds": 1.6800000000000002e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.callable>",
+    "primitive_calls": 76,
+    "calls": 76,
+    "own_seconds": 1.67e-05,
+    "cumulative_seconds": 1.67e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'find' of 'bytearray' objects>",
+    "primitive_calls": 73,
+    "calls": 73,
+    "own_seconds": 1.66e-05,
+    "cumulative_seconds": 1.66e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 1623,
+    "function": "__init__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.8e-06,
+    "cumulative_seconds": 1.6400000000000002e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\functools.py",
+    "line": 868,
+    "function": "_is_valid_dispatch_type",
+    "primitive_calls": 6,
+    "calls": 6,
+    "own_seconds": 5.2e-06,
+    "cumulative_seconds": 1.63e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 654,
+    "function": "DistributionFinder",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.1000000000000004e-06,
+    "cumulative_seconds": 1.63e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\sysconfig\\__init__.py",
+    "line": 245,
+    "function": "_subst_vars",
+    "primitive_calls": 24,
+    "calls": 24,
+    "own_seconds": 8.200000000000001e-06,
+    "cumulative_seconds": 1.58e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _winapi.LCMapStringEx>",
+    "primitive_calls": 10,
+    "calls": 10,
+    "own_seconds": 1.56e-05,
+    "cumulative_seconds": 1.56e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 82,
+    "function": "groups",
+    "primitive_calls": 46,
+    "calls": 46,
+    "own_seconds": 1.0700000000000001e-05,
+    "cumulative_seconds": 1.52e-05
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 662,
+    "function": "spec_from_loader",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 8.1e-06,
+    "cumulative_seconds": 1.5e-05
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_timeline.py",
+    "line": 446,
+    "function": "<lambda>",
+    "primitive_calls": 24,
+    "calls": 24,
+    "own_seconds": 9.3e-06,
+    "cumulative_seconds": 1.48e-05
+  },
+  {
+    "file": "<frozen ntpath>",
+    "line": 261,
+    "function": "dirname",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 2.7e-06,
+    "cumulative_seconds": 1.4200000000000001e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 352,
+    "function": "Distribution",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.3800000000000002e-05,
+    "cumulative_seconds": 1.4200000000000001e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\functools.py",
+    "line": 66,
+    "function": "wraps",
+    "primitive_calls": 16,
+    "calls": 16,
+    "own_seconds": 1.41e-05,
+    "cumulative_seconds": 1.41e-05
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 599,
+    "function": "__init__",
+    "primitive_calls": 35,
+    "calls": 35,
+    "own_seconds": 1.4000000000000001e-05,
+    "cumulative_seconds": 1.4000000000000001e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _imp._fix_co_filename>",
+    "primitive_calls": 19,
+    "calls": 19,
+    "own_seconds": 1.39e-05,
+    "cumulative_seconds": 1.39e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\resources\\_common.py",
+    "line": 19,
+    "function": "package_to_anchor",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.6e-06,
+    "cumulative_seconds": 1.3800000000000002e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 1361,
+    "function": "getLogger",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.9000000000000005e-06,
+    "cumulative_seconds": 1.3700000000000001e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.pow>",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 1.3700000000000001e-05,
+    "cumulative_seconds": 1.3700000000000001e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_compiler.py",
+    "line": 470,
+    "function": "_get_charset_prefix",
+    "primitive_calls": 5,
+    "calls": 5,
+    "own_seconds": 1.09e-05,
+    "cumulative_seconds": 1.34e-05
+  },
+  {
+    "file": "<frozen ntpath>",
+    "line": 80,
+    "function": "isabs",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 8.000000000000001e-06,
+    "cumulative_seconds": 1.3300000000000001e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 600,
+    "function": "__init__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 5.3e-06,
+    "cumulative_seconds": 1.3100000000000002e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\sysconfig\\__init__.py",
+    "line": 254,
+    "function": "_extend_dict",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 1.18e-05,
+    "cumulative_seconds": 1.3100000000000002e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 2692,
+    "function": "overload",
+    "primitive_calls": 4,
+    "calls": 4,
+    "own_seconds": 1.2400000000000002e-05,
+    "cumulative_seconds": 1.29e-05
+  },
+  {
+    "file": "<frozen os>",
+    "line": 785,
+    "function": "encodekey",
+    "primitive_calls": 5,
+    "calls": 5,
+    "own_seconds": 8.200000000000001e-06,
+    "cumulative_seconds": 1.2800000000000001e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.dir>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.2800000000000001e-05,
+    "cumulative_seconds": 1.2800000000000001e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 112,
+    "function": "__init__",
+    "primitive_calls": 78,
+    "calls": 78,
+    "own_seconds": 1.2600000000000001e-05,
+    "cumulative_seconds": 1.2600000000000001e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pathlib\\_local.py",
+    "line": 252,
+    "function": "_from_parsed_string",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 1.9e-06,
+    "cumulative_seconds": 1.2600000000000001e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 2325,
+    "function": "runtime_checkable",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 7.5e-06,
+    "cumulative_seconds": 1.25e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _sre.compile>",
+    "primitive_calls": 9,
+    "calls": 9,
+    "own_seconds": 1.25e-05,
+    "cumulative_seconds": 1.25e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'fullmatch' of 're.Pattern' objects>",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 1.1900000000000001e-05,
+    "cumulative_seconds": 1.1900000000000001e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\_collections.py",
+    "line": 23,
+    "function": "freeze",
+    "primitive_calls": 14,
+    "calls": 14,
+    "own_seconds": 1.18e-05,
+    "cumulative_seconds": 1.18e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'update' of 'dict' objects>",
+    "primitive_calls": 30,
+    "calls": 30,
+    "own_seconds": 1.18e-05,
+    "cumulative_seconds": 1.18e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.ord>",
+    "primitive_calls": 91,
+    "calls": 91,
+    "own_seconds": 1.15e-05,
+    "cumulative_seconds": 1.15e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\case.py",
+    "line": 405,
+    "function": "__init_subclass__",
+    "primitive_calls": 4,
+    "calls": 4,
+    "own_seconds": 1.0500000000000001e-05,
+    "cumulative_seconds": 1.1400000000000001e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\types.py",
+    "line": 334,
+    "function": "__getattr__",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 1.13e-05,
+    "cumulative_seconds": 1.13e-05
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\testing\\overrides.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 9e-06,
+    "cumulative_seconds": 1.13e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\_functools.py",
+    "line": 89,
+    "function": "pass_none",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3e-06,
+    "cumulative_seconds": 1.11e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\weakref.py",
+    "line": 104,
+    "function": "__init__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 7.100000000000001e-06,
+    "cumulative_seconds": 1.1000000000000001e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\fractions.py",
+    "line": 923,
+    "function": "__floor__",
+    "primitive_calls": 36,
+    "calls": 36,
+    "own_seconds": 1.1000000000000001e-05,
+    "cumulative_seconds": 1.1000000000000001e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _operator.le>",
+    "primitive_calls": 54,
+    "calls": 54,
+    "own_seconds": 1.09e-05,
+    "cumulative_seconds": 1.09e-05
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method nt._path_normpath>",
+    "primitive_calls": 36,
+    "calls": 36,
+    "own_seconds": 1.08e-05,
+    "cumulative_seconds": 1.08e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\case.py",
+    "line": 244,
+    "function": "_AssertRaisesContext",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.01e-05,
+    "cumulative_seconds": 1.01e-05
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\case.py",
+    "line": 411,
+    "function": "__init__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6.8e-06,
+    "cumulative_seconds": 9.800000000000001e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\difflib.py",
+    "line": 44,
+    "function": "SequenceMatcher",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 9.800000000000001e-06,
+    "cumulative_seconds": 9.800000000000001e-06
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 1604,
+    "function": "<genexpr>",
+    "primitive_calls": 56,
+    "calls": 56,
+    "own_seconds": 9.600000000000001e-06,
+    "cumulative_seconds": 9.600000000000001e-06
+  },
+  {
+    "file": "<frozen _collections_abc>",
+    "line": 971,
+    "function": "clear",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 4.3e-06,
+    "cumulative_seconds": 9.600000000000001e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 1477,
+    "function": "__init__",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 6.1e-06,
+    "cumulative_seconds": 9.600000000000001e-06
+  },
+  {
+    "file": "<frozen ntpath>",
+    "line": 34,
+    "function": "_get_bothseps",
+    "primitive_calls": 11,
+    "calls": 11,
+    "own_seconds": 6.900000000000001e-06,
+    "cumulative_seconds": 9.5e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\platform.py",
+    "line": 337,
+    "function": "<genexpr>",
+    "primitive_calls": 8,
+    "calls": 8,
+    "own_seconds": 4.6e-06,
+    "cumulative_seconds": 9.5e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _operator.ge>",
+    "primitive_calls": 21,
+    "calls": 21,
+    "own_seconds": 9.4e-06,
+    "cumulative_seconds": 9.4e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\weakref.py",
+    "line": 367,
+    "function": "__init__",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 9.3e-06,
+    "cumulative_seconds": 9.3e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _winapi.WaitForSingleObject>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 9.3e-06,
+    "cumulative_seconds": 9.3e-06
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\_ufunc_config.py",
+    "line": 488,
+    "function": "__exit__",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 3.8e-06,
+    "cumulative_seconds": 9.2e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 171,
+    "function": "__setitem__",
+    "primitive_calls": 41,
+    "calls": 41,
+    "own_seconds": 8.5e-06,
+    "cumulative_seconds": 8.5e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 1256,
+    "function": "_generic_init_subclass",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 8.000000000000001e-06,
+    "cumulative_seconds": 8.5e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\functools.py",
+    "line": 884,
+    "function": "<lambda>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6.000000000000001e-07,
+    "cumulative_seconds": 8.400000000000001e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 411,
+    "function": "discover",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 5.2e-06,
+    "cumulative_seconds": 8.400000000000001e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\resources\\_functional.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6.7e-06,
+    "cumulative_seconds": 8.400000000000001e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 732,
+    "function": "__new__",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 5.3e-06,
+    "cumulative_seconds": 8.400000000000001e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _sre.unicode_iscased>",
+    "primitive_calls": 36,
+    "calls": 36,
+    "own_seconds": 8.200000000000001e-06,
+    "cumulative_seconds": 8.200000000000001e-06
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_tracking.py",
+    "line": 243,
+    "function": "evaluate",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 8.1e-06,
+    "cumulative_seconds": 8.1e-06
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 412,
+    "function": "__init__",
+    "primitive_calls": 35,
+    "calls": 35,
+    "own_seconds": 8.000000000000001e-06,
+    "cumulative_seconds": 8.000000000000001e-06
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 158,
+    "function": "__init__",
+    "primitive_calls": 46,
+    "calls": 46,
+    "own_seconds": 7.9e-06,
+    "cumulative_seconds": 7.9e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_compiler.py",
+    "line": 573,
+    "function": "isstring",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 5.9e-06,
+    "cumulative_seconds": 7.9e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\sysconfig\\__init__.py",
+    "line": 313,
+    "function": "get_default_scheme",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 2.5e-06,
+    "cumulative_seconds": 7.8e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 273,
+    "function": "getuntil",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 5.9e-06,
+    "cumulative_seconds": 7.7e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\contextlib.py",
+    "line": 450,
+    "function": "__exit__",
+    "primitive_calls": 16,
+    "calls": 16,
+    "own_seconds": 6.7e-06,
+    "cumulative_seconds": 7.7e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 1835,
+    "function": "__init__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.0000000000000003e-06,
+    "cumulative_seconds": 7.7e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method '__contains__' of 'frozenset' objects>",
+    "primitive_calls": 21,
+    "calls": 21,
+    "own_seconds": 7.7e-06,
+    "cumulative_seconds": 7.7e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pathlib\\_local.py",
+    "line": 140,
+    "function": "joinpath",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.3e-06,
+    "cumulative_seconds": 7.6e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method nt.getcwd>",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 7.6e-06,
+    "cumulative_seconds": 7.6e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\fractions.py",
+    "line": 927,
+    "function": "__ceil__",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 7.5e-06,
+    "cumulative_seconds": 7.5e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\loader.py",
+    "line": 63,
+    "function": "TestLoader",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 7.2000000000000005e-06,
+    "cumulative_seconds": 7.2000000000000005e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'isidentifier' of 'str' objects>",
+    "primitive_calls": 24,
+    "calls": 24,
+    "own_seconds": 7.100000000000001e-06,
+    "cumulative_seconds": 7.100000000000001e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 2499,
+    "function": "_strip_annotations",
+    "primitive_calls": 4,
+    "calls": 4,
+    "own_seconds": 4.2000000000000004e-06,
+    "cumulative_seconds": 7.000000000000001e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\concurrent\\futures\\_base.py",
+    "line": 325,
+    "function": "Future",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 7.000000000000001e-06,
+    "cumulative_seconds": 7.000000000000001e-06
+  },
+  {
+    "file": "<frozen _collections_abc>",
+    "line": 815,
+    "function": "__contains__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.8000000000000001e-06,
+    "cumulative_seconds": 6.900000000000001e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\traceback.py",
+    "line": 424,
+    "function": "StackSummary",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6.8e-06,
+    "cumulative_seconds": 6.8e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 870,
+    "function": "MetadataPathFinder",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 5.4e-06,
+    "cumulative_seconds": 6.8e-06
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 997,
+    "function": "exec_module",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 1.4000000000000001e-06,
+    "cumulative_seconds": 6.7e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 351,
+    "function": "_deduplicate",
+    "primitive_calls": 4,
+    "calls": 4,
+    "own_seconds": 3.8e-06,
+    "cumulative_seconds": 6.7e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 1110,
+    "function": "StreamHandler",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6.7e-06,
+    "cumulative_seconds": 6.7e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 1462,
+    "function": "Logger",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6.7e-06,
+    "cumulative_seconds": 6.7e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 458,
+    "function": "validate",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.7e-06,
+    "cumulative_seconds": 6.6e-06
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 653,
+    "function": "has_location",
+    "primitive_calls": 47,
+    "calls": 47,
+    "own_seconds": 6.5000000000000004e-06,
+    "cumulative_seconds": 6.5000000000000004e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 691,
+    "function": "__init__",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 3.7e-06,
+    "cumulative_seconds": 6.5000000000000004e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _operator.gt>",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 6.5000000000000004e-06,
+    "cumulative_seconds": 6.5000000000000004e-06
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 1184,
+    "function": "__init__",
+    "primitive_calls": 33,
+    "calls": 33,
+    "own_seconds": 6.4000000000000006e-06,
+    "cumulative_seconds": 6.4000000000000006e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 954,
+    "function": "fix_flags",
+    "primitive_calls": 9,
+    "calls": 9,
+    "own_seconds": 5.7000000000000005e-06,
+    "cumulative_seconds": 6.4000000000000006e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 1765,
+    "function": "__eq__",
+    "primitive_calls": 16,
+    "calls": 16,
+    "own_seconds": 4.1000000000000006e-06,
+    "cumulative_seconds": 6.4000000000000006e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _sre.unicode_tolower>",
+    "primitive_calls": 43,
+    "calls": 43,
+    "own_seconds": 6.4000000000000006e-06,
+    "cumulative_seconds": 6.4000000000000006e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'tolist' of 'numpy.ndarray' objects>",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 6.300000000000001e-06,
+    "cumulative_seconds": 6.300000000000001e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'set' of '_contextvars.ContextVar' objects>",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 6.300000000000001e-06,
+    "cumulative_seconds": 6.300000000000001e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\collections\\__init__.py",
+    "line": 432,
+    "function": "<genexpr>",
+    "primitive_calls": 21,
+    "calls": 21,
+    "own_seconds": 6.200000000000001e-06,
+    "cumulative_seconds": 6.200000000000001e-06
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\testing\\_private\\utils.py",
+    "line": 2786,
+    "function": "_get_glibc_version",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6e-06,
+    "cumulative_seconds": 6.200000000000001e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 2524,
+    "function": "get_origin",
+    "primitive_calls": 5,
+    "calls": 5,
+    "own_seconds": 4.000000000000001e-06,
+    "cumulative_seconds": 6e-06
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_tracking.py",
+    "line": 112,
+    "function": "reset_frame",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 4.7e-06,
+    "cumulative_seconds": 5.8e-06
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 1209,
+    "function": "get_filename",
+    "primitive_calls": 33,
+    "calls": 33,
+    "own_seconds": 5.500000000000001e-06,
+    "cumulative_seconds": 5.500000000000001e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\enum.py",
+    "line": 1152,
+    "function": "__new__",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 5.4e-06,
+    "cumulative_seconds": 5.4e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'reset' of '_contextvars.ContextVar' objects>",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 5.4e-06,
+    "cumulative_seconds": 5.4e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\weakref.py",
+    "line": 495,
+    "function": "popitem",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 3.9e-06,
+    "cumulative_seconds": 5.3e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\sysconfig\\__init__.py",
+    "line": 301,
+    "function": "get_preferred_scheme",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 4.1000000000000006e-06,
+    "cumulative_seconds": 5.3e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\abc.py",
+    "line": 96,
+    "function": "InspectLoader",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 5.1e-06,
+    "cumulative_seconds": 5.3e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pathlib\\_local.py",
+    "line": 148,
+    "function": "__truediv__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.0000000000000003e-07,
+    "cumulative_seconds": 5.1e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\_collections.py",
+    "line": 27,
+    "function": "Pair",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 5.1e-06,
+    "cumulative_seconds": 5.1e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\enum.py",
+    "line": 199,
+    "function": "__get__",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 2.7e-06,
+    "cumulative_seconds": 4.800000000000001e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 1096,
+    "function": "__eq__",
+    "primitive_calls": 8,
+    "calls": 8,
+    "own_seconds": 2.5e-06,
+    "cumulative_seconds": 4.800000000000001e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\traceback.py",
+    "line": 989,
+    "function": "TracebackException",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.800000000000001e-06,
+    "cumulative_seconds": 4.800000000000001e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 1337,
+    "function": "Manager",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.1000000000000006e-06,
+    "cumulative_seconds": 4.7e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 250,
+    "function": "EntryPoints",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.7e-06,
+    "cumulative_seconds": 4.7e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 921,
+    "function": "Handler",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.6e-06,
+    "cumulative_seconds": 4.6e-06
+  },
+  {
+    "file": "<frozen importlib._bootstrap_external>",
+    "line": 1017,
+    "function": "create_module",
+    "primitive_calls": 33,
+    "calls": 33,
+    "own_seconds": 4.5e-06,
+    "cumulative_seconds": 4.5e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\_collections.py",
+    "line": 24,
+    "function": "<lambda>",
+    "primitive_calls": 13,
+    "calls": 13,
+    "own_seconds": 4.5e-06,
+    "cumulative_seconds": 4.5e-06
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 501,
+    "function": "_requires_builtin_wrapper",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 4.000000000000001e-06,
+    "cumulative_seconds": 4.4e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 463,
+    "function": "_eval_type",
+    "primitive_calls": 4,
+    "calls": 4,
+    "own_seconds": 3.2000000000000003e-06,
+    "cumulative_seconds": 4.4e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 1409,
+    "function": "_fixupParents",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.2000000000000003e-06,
+    "cumulative_seconds": 4.4e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\difflib.py",
+    "line": 1666,
+    "function": "HtmlDiff",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.3e-06,
+    "cumulative_seconds": 4.3e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 957,
+    "function": "createLock",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.6e-06,
+    "cumulative_seconds": 4.3e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 866,
+    "function": "__bool__",
+    "primitive_calls": 14,
+    "calls": 14,
+    "own_seconds": 4.3e-06,
+    "cumulative_seconds": 4.3e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\runner.py",
+    "line": 30,
+    "function": "TextTestResult",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.2000000000000004e-06,
+    "cumulative_seconds": 4.2000000000000004e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\threading.py",
+    "line": 122,
+    "function": "RLock",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 4.1000000000000006e-06,
+    "cumulative_seconds": 4.1000000000000006e-06
+  },
+  {
+    "file": "<frozen abc>",
+    "line": 7,
+    "function": "abstractmethod",
+    "primitive_calls": 16,
+    "calls": 16,
+    "own_seconds": 4.000000000000001e-06,
+    "cumulative_seconds": 4.000000000000001e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 205,
+    "function": "_checkLevel",
+    "primitive_calls": 4,
+    "calls": 4,
+    "own_seconds": 3.5000000000000004e-06,
+    "cumulative_seconds": 4.000000000000001e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_compiler.py",
+    "line": 410,
+    "function": "_generate_overlap_table",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 3.4e-06,
+    "cumulative_seconds": 3.9e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\weakref.py",
+    "line": 289,
+    "function": "update",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.8000000000000003e-06,
+    "cumulative_seconds": 3.9e-06
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\fromnumeric.py",
+    "line": 3006,
+    "function": "_max_dispatcher",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 3.9e-06,
+    "cumulative_seconds": 3.9e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\main.py",
+    "line": 56,
+    "function": "TestProgram",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.9e-06,
+    "cumulative_seconds": 3.9e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\traceback.py",
+    "line": 276,
+    "function": "FrameSummary",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.7e-06,
+    "cumulative_seconds": 3.7e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\_itertools.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.7e-06,
+    "cumulative_seconds": 3.7e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method numpy._core._multiarray_umath._make_extobj>",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 3.7e-06,
+    "cumulative_seconds": 3.7e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'findall' of 're.Pattern' objects>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.7e-06,
+    "cumulative_seconds": 3.7e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _imp.exec_builtin>",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 3.7e-06,
+    "cumulative_seconds": 3.7e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_compiler.py",
+    "line": 31,
+    "function": "_combine_flags",
+    "primitive_calls": 16,
+    "calls": 16,
+    "own_seconds": 3.6000000000000003e-06,
+    "cumulative_seconds": 3.6000000000000003e-06
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\numeric.py",
+    "line": 2516,
+    "function": "_array_equal_dispatcher",
+    "primitive_calls": 18,
+    "calls": 18,
+    "own_seconds": 3.6000000000000003e-06,
+    "cumulative_seconds": 3.6000000000000003e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\platform.py",
+    "line": 339,
+    "function": "<genexpr>",
+    "primitive_calls": 8,
+    "calls": 8,
+    "own_seconds": 3.6000000000000003e-06,
+    "cumulative_seconds": 3.6000000000000003e-06
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\testing\\_private\\utils.py",
+    "line": 2280,
+    "function": "suppress_warnings",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.6000000000000003e-06,
+    "cumulative_seconds": 3.6000000000000003e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 1342,
+    "function": "__init__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.3e-06,
+    "cumulative_seconds": 3.6000000000000003e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_compiler.py",
+    "line": 431,
+    "function": "_get_iscased",
+    "primitive_calls": 13,
+    "calls": 13,
+    "own_seconds": 3.5000000000000004e-06,
+    "cumulative_seconds": 3.5000000000000004e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 76,
+    "function": "__init__",
+    "primitive_calls": 9,
+    "calls": 9,
+    "own_seconds": 3.5000000000000004e-06,
+    "cumulative_seconds": 3.5000000000000004e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 1773,
+    "function": "__hash__",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 2.9e-06,
+    "cumulative_seconds": 3.5000000000000004e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\zipfile\\__init__.py",
+    "line": 1973,
+    "function": "__del__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.4000000000000003e-06,
+    "cumulative_seconds": 3.5000000000000004e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 898,
+    "function": "_addHandlerRef",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.8000000000000003e-06,
+    "cumulative_seconds": 3.4e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 443,
+    "function": "<genexpr>",
+    "primitive_calls": 4,
+    "calls": 4,
+    "own_seconds": 1.6000000000000001e-06,
+    "cumulative_seconds": 3.4e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'translate' of 'bytearray' objects>",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 3.4e-06,
+    "cumulative_seconds": 3.4e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.vars>",
+    "primitive_calls": 8,
+    "calls": 8,
+    "own_seconds": 3.4e-06,
+    "cumulative_seconds": 3.4e-06
+  },
+  {
+    "file": "<frozen os>",
+    "line": 1126,
+    "function": "__subclasshook__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.7e-06,
+    "cumulative_seconds": 3.3e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\contextlib.py",
+    "line": 444,
+    "function": "__init__",
+    "primitive_calls": 16,
+    "calls": 16,
+    "own_seconds": 3.3e-06,
+    "cumulative_seconds": 3.3e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'tolist' of 'memoryview' objects>",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 3.3e-06,
+    "cumulative_seconds": 3.3e-06
+  },
+  {
+    "file": "<frozen os>",
+    "line": 779,
+    "function": "check_str",
+    "primitive_calls": 5,
+    "calls": 5,
+    "own_seconds": 2.4000000000000003e-06,
+    "cumulative_seconds": 3.2000000000000003e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 899,
+    "function": "PathDistribution",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.1000000000000004e-06,
+    "cumulative_seconds": 3.1000000000000004e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 1122,
+    "function": "_is_unpacked_typevartuple",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 1.1e-06,
+    "cumulative_seconds": 2.9e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'search' of 're.Pattern' objects>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.9e-06,
+    "cumulative_seconds": 2.9e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 303,
+    "function": "checkgroupname",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 1.7e-06,
+    "cumulative_seconds": 2.8000000000000003e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 554,
+    "function": "Formatter",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.8000000000000003e-06,
+    "cumulative_seconds": 2.8000000000000003e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 306,
+    "function": "PackagePath",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.8000000000000003e-06,
+    "cumulative_seconds": 2.8000000000000003e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\_functools.py",
+    "line": 6,
+    "function": "method_cache",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.2e-06,
+    "cumulative_seconds": 2.8000000000000003e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 821,
+    "function": "Prepared",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.7e-06,
+    "cumulative_seconds": 2.7e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 311,
+    "function": "_class_escape",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 1.6000000000000001e-06,
+    "cumulative_seconds": 2.6e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 1427,
+    "function": "<genexpr>",
+    "primitive_calls": 19,
+    "calls": 19,
+    "own_seconds": 2.6e-06,
+    "cumulative_seconds": 2.6e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\_functools.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.6e-06,
+    "cumulative_seconds": 2.6e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\concurrent\\futures\\_base.py",
+    "line": 111,
+    "function": "_AllCompletedWaiter",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.5e-06,
+    "cumulative_seconds": 2.5e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\case.py",
+    "line": 443,
+    "function": "addTypeEqualityFunc",
+    "primitive_calls": 6,
+    "calls": 6,
+    "own_seconds": 2.5e-06,
+    "cumulative_seconds": 2.5e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _winapi.GetModuleFileName>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.4000000000000003e-06,
+    "cumulative_seconds": 2.4000000000000003e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\loader.py",
+    "line": 74,
+    "function": "__init__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.3e-06,
+    "cumulative_seconds": 2.3e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\abc.py",
+    "line": 199,
+    "function": "SourceLoader",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.3e-06,
+    "cumulative_seconds": 2.3e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 894,
+    "function": "_parse_flags",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.8000000000000001e-06,
+    "cumulative_seconds": 2.2e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\_meta.py",
+    "line": 47,
+    "function": "SimplePath",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.2e-06,
+    "cumulative_seconds": 2.2e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\enum.py",
+    "line": 1333,
+    "function": "value",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 2.1000000000000002e-06,
+    "cumulative_seconds": 2.1000000000000002e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\suite.py",
+    "line": 16,
+    "function": "BaseTestSuite",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.1000000000000002e-06,
+    "cumulative_seconds": 2.1000000000000002e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\difflib.py",
+    "line": 724,
+    "function": "Differ",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.1000000000000002e-06,
+    "cumulative_seconds": 2.1000000000000002e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 1189,
+    "function": "FileHandler",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.1000000000000002e-06,
+    "cumulative_seconds": 2.1000000000000002e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\abc.py",
+    "line": 28,
+    "function": "__getattr__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.1000000000000002e-06,
+    "cumulative_seconds": 2.1000000000000002e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\runner.py",
+    "line": 164,
+    "function": "TextTestRunner",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.0000000000000003e-06,
+    "cumulative_seconds": 2.0000000000000003e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 511,
+    "function": "StringTemplateStyle",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.0000000000000003e-06,
+    "cumulative_seconds": 2.0000000000000003e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.hash>",
+    "primitive_calls": 9,
+    "calls": 9,
+    "own_seconds": 2.0000000000000003e-06,
+    "cumulative_seconds": 2.0000000000000003e-06
+  },
+  {
+    "file": "<string>",
+    "line": 1,
+    "function": "<lambda>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.3e-06,
+    "cumulative_seconds": 1.9e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\case.py",
+    "line": 1387,
+    "function": "FunctionTestCase",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.9e-06,
+    "cumulative_seconds": 1.9e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _sysconfig.config_vars>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.9e-06,
+    "cumulative_seconds": 1.9e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'cast' of 'memoryview' objects>",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 1.9e-06,
+    "cumulative_seconds": 1.9e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 736,
+    "function": "__init__",
+    "primitive_calls": 7,
+    "calls": 7,
+    "own_seconds": 1.8000000000000001e-06,
+    "cumulative_seconds": 1.8000000000000001e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\contextlib.py",
+    "line": 447,
+    "function": "__enter__",
+    "primitive_calls": 16,
+    "calls": 16,
+    "own_seconds": 1.7e-06,
+    "cumulative_seconds": 1.7e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\re\\_parser.py",
+    "line": 294,
+    "function": "seek",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 1.2000000000000002e-06,
+    "cumulative_seconds": 1.7e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\case.py",
+    "line": 1445,
+    "function": "_SubTest",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.7e-06,
+    "cumulative_seconds": 1.7e-06
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\testing\\_private\\utils.py",
+    "line": 2214,
+    "function": "clear_and_catch_warnings",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.7e-06,
+    "cumulative_seconds": 1.7e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\concurrent\\futures\\_base.py",
+    "line": 569,
+    "function": "Executor",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.7e-06,
+    "cumulative_seconds": 1.7e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 49,
+    "function": "PackageNotFoundError",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.7e-06,
+    "cumulative_seconds": 1.7e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'setter' of 'property' objects>",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 1.7e-06,
+    "cumulative_seconds": 1.7e-06
+  },
+  {
+    "file": "<frozen _collections_abc>",
+    "line": 108,
+    "function": "_check_methods",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.6000000000000001e-06,
+    "cumulative_seconds": 1.6000000000000001e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\platform.py",
+    "line": 454,
+    "function": "<genexpr>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.6000000000000001e-06,
+    "cumulative_seconds": 1.6000000000000001e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\_colorize.py",
+    "line": 8,
+    "function": "ANSIColors",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.6000000000000001e-06,
+    "cumulative_seconds": 1.6000000000000001e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 662,
+    "function": "Context",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.6000000000000001e-06,
+    "cumulative_seconds": 1.6000000000000001e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\functools.py",
+    "line": 501,
+    "function": "lru_cache",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 1.3e-06,
+    "cumulative_seconds": 1.5e-06
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\_ufunc_config.py",
+    "line": 462,
+    "function": "__init__",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 1.5e-06,
+    "cumulative_seconds": 1.5e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\suite.py",
+    "line": 328,
+    "function": "_ErrorHolder",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.5e-06,
+    "cumulative_seconds": 1.5e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 819,
+    "function": "__init__",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 1.5e-06,
+    "cumulative_seconds": 1.5e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\abc.py",
+    "line": 80,
+    "function": "ResourceLoader",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.1e-06,
+    "cumulative_seconds": 1.5e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method sys._getframemodulename>",
+    "primitive_calls": 5,
+    "calls": 5,
+    "own_seconds": 1.5e-06,
+    "cumulative_seconds": 1.5e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\suite.py",
+    "line": 92,
+    "function": "TestSuite",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.4000000000000001e-06,
+    "cumulative_seconds": 1.4000000000000001e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 735,
+    "function": "BufferingFormatter",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.4000000000000001e-06,
+    "cumulative_seconds": 1.4000000000000001e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'popitem' of 'dict' objects>",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 1.4000000000000001e-06,
+    "cumulative_seconds": 1.4000000000000001e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'upper' of 'str' objects>",
+    "primitive_calls": 5,
+    "calls": 5,
+    "own_seconds": 1.4000000000000001e-06,
+    "cumulative_seconds": 1.4000000000000001e-06
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\_distutils_hack\\__init__.py",
+    "line": 108,
+    "function": "<lambda>",
+    "primitive_calls": 10,
+    "calls": 10,
+    "own_seconds": 1.3e-06,
+    "cumulative_seconds": 1.3e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 694,
+    "function": "path",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.0000000000000002e-06,
+    "cumulative_seconds": 1.3e-06
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\testing\\_private\\utils.py",
+    "line": 1492,
+    "function": "_Dummy",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.3e-06,
+    "cumulative_seconds": 1.3e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\pprint.py",
+    "line": 80,
+    "function": "_safe_key",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.3e-06,
+    "cumulative_seconds": 1.3e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\loader.py",
+    "line": 22,
+    "function": "_FailedTest",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.3e-06,
+    "cumulative_seconds": 1.3e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\runner.py",
+    "line": 14,
+    "function": "_WritelnDecorator",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.3e-06,
+    "cumulative_seconds": 1.3e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 1357,
+    "function": "disable",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6.000000000000001e-07,
+    "cumulative_seconds": 1.3e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\abc.py",
+    "line": 52,
+    "function": "MetaPathFinder",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.3e-06,
+    "cumulative_seconds": 1.3e-06
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_color_signal.py",
+    "line": 58,
+    "function": "_from_linear",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 1.2000000000000002e-06,
+    "cumulative_seconds": 1.2000000000000002e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\sysconfig\\__init__.py",
+    "line": 280,
+    "function": "_get_preferred_schemes",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 1.2000000000000002e-06,
+    "cumulative_seconds": 1.2000000000000002e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\concurrent\\futures\\_base.py",
+    "line": 74,
+    "function": "_AsCompletedWaiter",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.2000000000000002e-06,
+    "cumulative_seconds": 1.2000000000000002e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\case.py",
+    "line": 193,
+    "function": "_BaseTestCaseContext",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.2000000000000002e-06,
+    "cumulative_seconds": 1.2000000000000002e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\signals.py",
+    "line": 9,
+    "function": "_InterruptHandler",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.2000000000000002e-06,
+    "cumulative_seconds": 1.2000000000000002e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 286,
+    "function": "LogRecord",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.2000000000000002e-06,
+    "cumulative_seconds": 1.2000000000000002e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 1271,
+    "function": "_StderrHandler",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.2000000000000002e-06,
+    "cumulative_seconds": 1.2000000000000002e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 451,
+    "function": "__init__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.2000000000000002e-06,
+    "cumulative_seconds": 1.2000000000000002e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\_collections.py",
+    "line": 5,
+    "function": "FreezableDefaultDict",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.2000000000000002e-06,
+    "cumulative_seconds": 1.2000000000000002e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\abc.py",
+    "line": 149,
+    "function": "ExecutionLoader",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.0000000000000002e-06,
+    "cumulative_seconds": 1.2000000000000002e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _operator.index>",
+    "primitive_calls": 6,
+    "calls": 6,
+    "own_seconds": 1.2000000000000002e-06,
+    "cumulative_seconds": 1.2000000000000002e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\zipfile\\__init__.py",
+    "line": 1977,
+    "function": "close",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.1e-06,
+    "cumulative_seconds": 1.1e-06
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\multiarray.py",
+    "line": 115,
+    "function": "empty_like",
+    "primitive_calls": 6,
+    "calls": 6,
+    "own_seconds": 1.1e-06,
+    "cumulative_seconds": 1.1e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\traceback.py",
+    "line": 966,
+    "function": "_ExceptionPrintContext",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.1e-06,
+    "cumulative_seconds": 1.1e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\case.py",
+    "line": 283,
+    "function": "_AssertWarnsContext",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.1e-06,
+    "cumulative_seconds": 1.1e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 440,
+    "function": "_discover_resolvers",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.1e-06,
+    "cumulative_seconds": 1.1e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 770,
+    "function": "Lookup",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.1e-06,
+    "cumulative_seconds": 1.1e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method time.time_ns>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.1e-06,
+    "cumulative_seconds": 1.1e-06
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'get' of 'mappingproxy' objects>",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 1.1e-06,
+    "cumulative_seconds": 1.1e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 553,
+    "function": "__repr__",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 1.0000000000000002e-06,
+    "cumulative_seconds": 1.0000000000000002e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\typing.py",
+    "line": 2200,
+    "function": "<genexpr>",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 1.0000000000000002e-06,
+    "cumulative_seconds": 1.0000000000000002e-06
+  },
+  {
+    "file": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\sequence_canvas.py",
+    "line": 9,
+    "function": "validate_canvas",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 1.0000000000000002e-06,
+    "cumulative_seconds": 1.0000000000000002e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\sysconfig\\__init__.py",
+    "line": 109,
+    "function": "_get_implementation",
+    "primitive_calls": 4,
+    "calls": 4,
+    "own_seconds": 1.0000000000000002e-06,
+    "cumulative_seconds": 1.0000000000000002e-06
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\testing\\_private\\utils.py",
+    "line": 2172,
+    "function": "IgnoreException",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.0000000000000002e-06,
+    "cumulative_seconds": 1.0000000000000002e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 2264,
+    "function": "NullHandler",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.0000000000000002e-06,
+    "cumulative_seconds": 1.0000000000000002e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 858,
+    "function": "legacy_normalize",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 7.000000000000001e-07,
+    "cumulative_seconds": 1.0000000000000002e-06
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 814,
+    "function": "Filterer",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 9.000000000000001e-07,
+    "cumulative_seconds": 9.000000000000001e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 324,
+    "function": "FileHash",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 9.000000000000001e-07,
+    "cumulative_seconds": 9.000000000000001e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\concurrent\\futures\\_base.py",
+    "line": 59,
+    "function": "_Waiter",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 8.000000000000001e-07,
+    "cumulative_seconds": 8.000000000000001e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\concurrent\\futures\\_base.py",
+    "line": 141,
+    "function": "_AcquireFutures",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 8.000000000000001e-07,
+    "cumulative_seconds": 8.000000000000001e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\concurrent\\futures\\_base.py",
+    "line": 96,
+    "function": "_FirstCompletedWaiter",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 8.000000000000001e-07,
+    "cumulative_seconds": 8.000000000000001e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 1295,
+    "function": "PlaceHolder",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 8.000000000000001e-07,
+    "cumulative_seconds": 8.000000000000001e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 332,
+    "function": "DeprecatedNonAbstract",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 8.000000000000001e-07,
+    "cumulative_seconds": 8.000000000000001e-07
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method numpy._core._multiarray_umath._blas_supports_fpe>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 8.000000000000001e-07,
+    "cumulative_seconds": 8.000000000000001e-07
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.abs>",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 8.000000000000001e-07,
+    "cumulative_seconds": 8.000000000000001e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\platform.py",
+    "line": 914,
+    "function": "_unknown_as_blank",
+    "primitive_calls": 5,
+    "calls": 5,
+    "own_seconds": 7.000000000000001e-07,
+    "cumulative_seconds": 7.000000000000001e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\traceback.py",
+    "line": 94,
+    "function": "_Sentinel",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 7.000000000000001e-07,
+    "cumulative_seconds": 7.000000000000001e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\case.py",
+    "line": 202,
+    "function": "_AssertRaisesBaseContext",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 7.000000000000001e-07,
+    "cumulative_seconds": 7.000000000000001e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 1829,
+    "function": "RootLogger",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 7.000000000000001e-07,
+    "cumulative_seconds": 7.000000000000001e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\abc.py",
+    "line": 68,
+    "function": "PathEntryFinder",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 7.000000000000001e-07,
+    "cumulative_seconds": 7.000000000000001e-07
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method _io.text_encoding>",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 7.000000000000001e-07,
+    "cumulative_seconds": 7.000000000000001e-07
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'keys' of 'dict' objects>",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 7.000000000000001e-07,
+    "cumulative_seconds": 7.000000000000001e-07
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\multiarray.py",
+    "line": 403,
+    "function": "where",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 6.000000000000001e-07,
+    "cumulative_seconds": 6.000000000000001e-07
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_pytesttester.py",
+    "line": 75,
+    "function": "__init__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6.000000000000001e-07,
+    "cumulative_seconds": 6.000000000000001e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\case.py",
+    "line": 26,
+    "function": "SkipTest",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6.000000000000001e-07,
+    "cumulative_seconds": 6.000000000000001e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\case.py",
+    "line": 335,
+    "function": "_AssertNotWarnsContext",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6.000000000000001e-07,
+    "cumulative_seconds": 6.000000000000001e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\suite.py",
+    "line": 375,
+    "function": "_DebugResult",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6.000000000000001e-07,
+    "cumulative_seconds": 6.000000000000001e-07
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\testing\\_private\\utils.py",
+    "line": 49,
+    "function": "KnownFailureException",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6.000000000000001e-07,
+    "cumulative_seconds": 6.000000000000001e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 1301,
+    "function": "__init__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6.000000000000001e-07,
+    "cumulative_seconds": 6.000000000000001e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 777,
+    "function": "Filter",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6.000000000000001e-07,
+    "cumulative_seconds": 6.000000000000001e-07
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method atexit.register>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 6.000000000000001e-07,
+    "cumulative_seconds": 6.000000000000001e-07
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method from_iterable>",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 6.000000000000001e-07,
+    "cumulative_seconds": 6.000000000000001e-07
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.iter>",
+    "primitive_calls": 3,
+    "calls": 3,
+    "own_seconds": 6.000000000000001e-07,
+    "cumulative_seconds": 6.000000000000001e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\__init__.py",
+    "line": 900,
+    "function": "__init__",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 5.000000000000001e-07,
+    "cumulative_seconds": 5.000000000000001e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\resources\\abc.py",
+    "line": 58,
+    "function": "TraversalError",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 5.000000000000001e-07,
+    "cumulative_seconds": 5.000000000000001e-07
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<method 'lstrip' of 'str' objects>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 5.000000000000001e-07,
+    "cumulative_seconds": 5.000000000000001e-07
+  },
+  {
+    "file": "<frozen importlib._bootstrap>",
+    "line": 1014,
+    "function": "is_package",
+    "primitive_calls": 2,
+    "calls": 2,
+    "own_seconds": 4.0000000000000003e-07,
+    "cumulative_seconds": 4.0000000000000003e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\inspect.py",
+    "line": 758,
+    "function": "getmro",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.0000000000000003e-07,
+    "cumulative_seconds": 4.0000000000000003e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\zipfile\\__init__.py",
+    "line": 749,
+    "function": "_check_compression",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.0000000000000003e-07,
+    "cumulative_seconds": 4.0000000000000003e-07
+  },
+  {
+    "file": "<string>",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.0000000000000003e-07,
+    "cumulative_seconds": 4.0000000000000003e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\case.py",
+    "line": 34,
+    "function": "_ShouldStop",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.0000000000000003e-07,
+    "cumulative_seconds": 4.0000000000000003e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\case.py",
+    "line": 352,
+    "function": "_OrderedChainMap",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.0000000000000003e-07,
+    "cumulative_seconds": 4.0000000000000003e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\concurrent\\futures\\_base.py",
+    "line": 45,
+    "function": "Error",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.0000000000000003e-07,
+    "cumulative_seconds": 4.0000000000000003e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\abc.py",
+    "line": 190,
+    "function": "FileLoader",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 4.0000000000000003e-07,
+    "cumulative_seconds": 4.0000000000000003e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\concurrent\\futures\\_base.py",
+    "line": 49,
+    "function": "CancelledError",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.0000000000000004e-07,
+    "cumulative_seconds": 3.0000000000000004e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\concurrent\\futures\\_base.py",
+    "line": 651,
+    "function": "BrokenExecutor",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.0000000000000004e-07,
+    "cumulative_seconds": 3.0000000000000004e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\_functools.py",
+    "line": 99,
+    "function": "wrapper",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.0000000000000004e-07,
+    "cumulative_seconds": 3.0000000000000004e-07
+  },
+  {
+    "file": "~",
+    "line": 0,
+    "function": "<built-in method builtins.globals>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 3.0000000000000004e-07,
+    "cumulative_seconds": 3.0000000000000004e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\unittest\\case.py",
+    "line": 39,
+    "function": "_UnexpectedSuccess",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.0000000000000002e-07,
+    "cumulative_seconds": 2.0000000000000002e-07
+  },
+  {
+    "file": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\testing\\_private\\__init__.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.0000000000000002e-07,
+    "cumulative_seconds": 2.0000000000000002e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\concurrent\\__init__.py",
+    "line": 1,
+    "function": "<module>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.0000000000000002e-07,
+    "cumulative_seconds": 2.0000000000000002e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\concurrent\\futures\\_base.py",
+    "line": 55,
+    "function": "InvalidStateError",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 2.0000000000000002e-07,
+    "cumulative_seconds": 2.0000000000000002e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\logging\\__init__.py",
+    "line": 257,
+    "function": "_register_at_fork_reinit_lock",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.0000000000000001e-07,
+    "cumulative_seconds": 1.0000000000000001e-07
+  },
+  {
+    "file": "C:\\Python313\\Lib\\importlib\\metadata\\_functools.py",
+    "line": 83,
+    "function": "<lambda>",
+    "primitive_calls": 1,
+    "calls": 1,
+    "own_seconds": 1.0000000000000001e-07,
+    "cumulative_seconds": 1.0000000000000001e-07
+  }
+]

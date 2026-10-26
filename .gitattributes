@@ -1738,3 +1738,11 @@ scripts/*particle*20261027.py text eol=lf
 docs/product/PROCEDURAL_PARTICLES.md text eol=lf
 docs/releases/CLI_0.1.35_LOCAL.md text eol=lf
 docs/validation/可编辑粒子实测_2026-10-27.md text eol=lf
+
+# Preserve native GPU pipe benchmark/test output bytes, including rejected attempts.
+docs/validation/evidence/gpu-dispatch-20261027-r1/** -text -whitespace
+docs/product/gpu-dispatch-capabilities-cli-0.1.36.json -text -whitespace
+scripts/*gpu_dispatch*20261027.py text eol=lf
+docs/product/GPU_DISPATCH.md text eol=lf
+docs/releases/CLI_0.1.36_LOCAL.md text eol=lf
+docs/validation/GPU管道调度实测_2026-10-27.md text eol=lf

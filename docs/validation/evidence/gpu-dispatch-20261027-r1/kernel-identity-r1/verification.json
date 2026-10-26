@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "baseline_commit": "d75e5cb26cb58d5f7c18923fb841dfe341f9716c",
+  "prior_product_files": 233,
+  "new_product_files": 234,
+  "byte_identical_existing_files": 227,
+  "changed_files": [
+    "__init__.py",
+    "capabilities.py",
+    "float_gpu.py",
+    "float_gpu_worker.py",
+    "float_standard_render.py",
+    "render.py"
+  ],
+  "new_files": [
+    "float_gpu_control.py"
+  ],
+  "unchanged_numeric_files": {
+    "float_gpu_native.py": "c72c82e7d50bcea9e392421324ae5ab428be72c02210037b23dc9e6b19e9e77a",
+    "procedural_particles.py": "bd76802609fba6c9bec097a3188cb4f5316187cdaa7d2e7b4caa9197748189b6",
+    "float_timeline.py": "36220b3a143f496989bbfd8531fd05cfd359dbb5bf6347fcf39bbe8d910af059",
+    "float_geometry.py": "57f9af0406663a27e31b35e3463076acf24d3833de5fce98102b6f0b73a9d51a",
+    "float_composite.py": "8275eb65c574407b47b466bbe124015832a92b068e5595a028c04964f884b937"
+  },
+  "worker_execute_and_probe_AST_equal": true,
+  "source_and_installed_equal": true,
+  "scope": "Raw kernel identity and numeric-function syntax identity; actual all-frame/PCM and CPU oracle checks are separate."
+}

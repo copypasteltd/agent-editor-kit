@@ -1,6 +1,9 @@
 # agent editor kit 文档 / Documentation
 
-Current local / 当前本地 / 目前本地：**CLI0.1.35 / local.33 / r36 kit** · [Editable particles](product/PROCEDURAL_PARTICLES.md) · [Install](releases/CLI_0.1.35_LOCAL.md) · [C45](product/CASES.md#c45-procedural-particles).
+Current local / 当前本地 / 目前本地：**CLI0.1.36 / local.34 / r37 kit** · [GPU dispatch](product/GPU_DISPATCH.md) · [Install](releases/CLI_0.1.36_LOCAL.md) · [C46](product/CASES.md#c46-gpu-dispatch).
+
+
+Historical / 历史 / 歷史：**CLI0.1.35 / local.33 / r36 kit** · [Editable particles](product/PROCEDURAL_PARTICLES.md) · [Install](releases/CLI_0.1.35_LOCAL.md) · [C45](product/CASES.md#c45-procedural-particles).
 
 
 Historical / 历史 / 歷史：**CLI0.1.34 / local.32 / r35 kit** · [Native model sessions](product/MODEL_SESSIONS.md) · [Install](releases/CLI_0.1.34_LOCAL.md) · [C44](product/CASES.md#c44-model-sessions).

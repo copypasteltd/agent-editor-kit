@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "skill_files": 76,
+  "single_entry": true,
+  "internal_modules": 17,
+  "calls": [
+    {
+      "name": "validate",
+      "exit_code": 0,
+      "stdout_sha256": "6cf9e7f0d34ccd36dbd28f270cd28dd04277b2e1516bd4333ce7bb501d7b18d4"
+    },
+    {
+      "name": "register",
+      "exit_code": 0,
+      "stdout_sha256": "48e67d750f7556a5941722d160563140ba0d805b8886dd3140763fa7471f3caa"
+    }
+  ],
+  "runtime_directory": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.34\\final-r1\\installed",
+  "namespace_manifest_sha256": "ab01d9ce747ea0affcddac1340ea7f2cfa85644392ab439e4292dbb080b7b7cc"
+}

@@ -1,7 +1,6 @@
 """Explicit Float32 GPU policy, bounded shared buffers and owned worker lifetime."""
 from __future__ import annotations
 
-import json
 from multiprocessing.shared_memory import SharedMemory
 from pathlib import Path
 import re
@@ -15,8 +14,9 @@ import numpy as np
 from .artifact_locks import artifact_entry
 from .errors import AppError
 from .float_gpu_native import NativeGPU, error
+from .float_gpu_control import OwnedPipeControl, PROTOCOL as CONTROL_PROTOCOL
 from .projection_opencl import configuration
-from .utils import atomic_write_json, sha256_file, read_json_snapshot
+from .utils import atomic_write_json, sha256_file
 
 PROTOCOL = 'render-owned-float32-opencl-v1'
 
@@ -33,6 +33,7 @@ class FloatGPUSession:
         self.directory = self.root/'cache/float-gpu'/(operation_id or 'float-'+self.nonce)
         self.path = self.directory/'receipt.json'
         self.process = None
+        self.control = None
         self.directory_owned = False
         self.segments = []
         self.capacities = []
@@ -54,7 +55,7 @@ class FloatGPUSession:
         self.evidence['planned_device_bytes'] = max_pixels*48
         self.evidence['planned_host_shared_bytes'] = max_pixels*33+768
         self.artifacts = [artifact_entry(Path(__file__).with_name(name+'.py'), 'float-gpu-execution')
-                          for name in ('float_gpu', 'float_gpu_worker', 'float_gpu_native', 'procedural_particles')]
+                          for name in ('float_gpu', 'float_gpu_worker', 'float_gpu_native', 'float_gpu_control', 'procedural_particles')]
         self.evidence['artifacts'] = self.artifacts
 
     @property
@@ -74,28 +75,24 @@ class FloatGPUSession:
         deadline = time.monotonic()+timeout
         while True:
             self.poll()
-            path = self.directory/'response.json'
-            if path.exists():
-                try: value = read_json_snapshot(path, 128*1024)
-                except OSError as exc:
-                    if getattr(exc, 'winerror', None) in {5, 32, 33} and time.monotonic() < deadline:
-                        time.sleep(.02); continue
-                    raise error('PROTOCOL', 'GPU响应读取失败', detail=str(exc)) from exc
-                except ValueError as exc: raise error('PROTOCOL', 'GPU响应不是完整且有界的JSON') from exc
-                if not isinstance(value, dict): raise error('PROTOCOL', 'GPU响应必须为对象')
+            remaining = deadline-time.monotonic()
+            if remaining <= 0:
+                raise error('TIMEOUT', '本任务GPU操作超时', timeout_seconds=timeout, sequence=number)
+            value = self.control.receive(min(.02, remaining))
+            if value is not None:
                 if value.get('nonce') != self.nonce: raise error('PROTOCOL', 'GPU响应不属于本任务')
+                current = value.get('sequence')
+                if type(current) is not int or current < 0 or current > number:
+                    raise error('PROTOCOL', 'GPU响应序号不连续')
                 if not value.get('ok'):
                     self.evidence['worker_error_response'] = value
                     item = value.get('error') or {}
                     raise AppError(item.get('code', 'FLOAT_GPU_WORKER'), item.get('message', 'GPU执行失败'),
                         exit_code=value.get('exit_code', 6), diagnostics=item.get('diagnostics'))
-                if value.get('sequence') == number:
+                if current == number:
                     return value
             if self.process.poll() is not None:
                 raise error('WORKER_EXIT', '本任务GPU进程提前退出', returncode=self.process.returncode)
-            if time.monotonic() >= deadline:
-                raise error('TIMEOUT', '本任务GPU操作超时', timeout_seconds=timeout, sequence=number)
-            time.sleep(0.02)
 
     def __enter__(self):
         self.poll()
@@ -107,17 +104,22 @@ class FloatGPUSession:
                 raise error('BUDGET', '计划表面超过GPU或主机共享配额',
                     planned_device_bytes=self.evidence['planned_device_bytes'], planned_host_shared_bytes=self.evidence['planned_host_shared_bytes'])
             atomic_write_json(self.directory/'init.json', {'nonce': self.nonce, 'device': self.config['device'],
-                'max_device_bytes': self.config['max_working_bytes']})
+                'max_device_bytes': self.config['max_working_bytes'], 'control_protocol': CONTROL_PROTOCOL})
             self.evidence['status'] = 'probing'; self.save()
             # Explicit existing NumPy site is needed by the isolated Windows
             # worker, both in a development checkout and in the offline bundle.
             bootstrap = 'import sys;sys.path[:0]='+repr([str(Path(__file__).resolve().parent.parent),
                 str(Path(np.__file__).resolve().parent.parent)])+';from ai_ad_editor.float_gpu_worker import main;main()'
             command = [sys.executable, '-I', '-S', '-B', '-u', '-X', 'utf8', '-c', bootstrap, str(self.directory)]
-            self.process = subprocess.Popen(command, cwd=self.root, stdin=subprocess.DEVNULL,
-                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
+            self.process = subprocess.Popen(command, cwd=self.root, stdin=subprocess.PIPE,
+                stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, bufsize=0,
+                creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
             self.evidence['owned_worker_pid'] = self.process.pid
+            self.control = OwnedPipeControl(self.process)
+            self.evidence['control'] = self.control.evidence
             result = self._wait(0, self.config['probe_timeout_seconds'])
+            if result.get('control_protocol') != CONTROL_PROTOCOL:
+                raise error('PROTOCOL', 'GPU进程未确认任务自有管道协议')
             self.evidence.update(native=result['metadata'], probe=result['probe'], status='prepared')
             self.ready = True; self.save()
         except BaseException as exc:
@@ -162,9 +164,9 @@ class FloatGPUSession:
             specs.append({'name': self.segments[index].name, 'shape': list(value.shape), 'dtype': str(value.dtype)})
             del target
         self.sequence += 1
-        atomic_write_json(self.directory/'request.json', {'nonce': self.nonce, 'sequence': self.sequence,
-            'op': op, 'output_shape': list(shape), 'buffers': specs, **params})
         try:
+            self.control.send({'nonce': self.nonce, 'sequence': self.sequence,
+                'op': op, 'output_shape': list(shape), 'buffers': specs, **params})
             result = self._wait(self.sequence, self.timeout)
             self.evidence['native'] = result['metadata']
             self.evidence['operations'][op] = self.evidence['operations'].get(op, 0)+1
@@ -248,6 +250,8 @@ class FloatGPUSession:
                 except subprocess.TimeoutExpired:
                     self.process.kill(); self.process.wait(timeout=5)
             self.evidence['worker_returncode'] = self.process.returncode
+        if self.control is not None:
+            self.control.close()
         self.ready = False
         self._free_shared()
         self.evidence['worker_closed'] = self.process is None or self.process.poll() is not None
@@ -260,9 +264,10 @@ class FloatGPUSession:
         if self.closed: return
         if self.process is not None and self.process.poll() is None and kind is None:
             self.sequence += 1
-            atomic_write_json(self.directory/'request.json', {'nonce': self.nonce, 'sequence': self.sequence, 'op': 'close'})
-            try: self.process.wait(timeout=2)
-            except subprocess.TimeoutExpired: pass
+            try:
+                self.control.send({'nonce': self.nonce, 'sequence': self.sequence, 'op': 'close'})
+                self.process.wait(timeout=2)
+            except (subprocess.TimeoutExpired, AppError, OSError): pass
         if value is not None:
             self.evidence.update(status='cancelled' if isinstance(value, AppError) and value.code == 'CANCELLED' else 'failed')
         self._stop(); self.closed = True; self.save()

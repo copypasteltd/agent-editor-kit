@@ -1,0 +1,251 @@
+{
+  "status": "passed",
+  "at_utc": "2026-10-26T20:41:59.664844+00:00",
+  "cli_version": "0.1.35",
+  "package": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.33\\final-r2\\installed\\site",
+  "source_package": false,
+  "fixture_sha256": "4d4c29352d8806426220e0ca501b871b92f5b54f1f342af4c71191f2c41acc8b",
+  "virtualization": false,
+  "source_fallback": false,
+  "encoded_movie": false,
+  "sixteen_durable_writes_seconds": 0.47445050001260825,
+  "direct_native_metadata": {
+    "protocol": "native-opencl-binary64-float32-primitives-v1",
+    "device": {
+      "selection": "0.0",
+      "name": "NVIDIA GeForce RTX 3060",
+      "vendor": "NVIDIA Corporation",
+      "driver": "595.95",
+      "version": "OpenCL 3.0 CUDA",
+      "type": 4,
+      "double_fp_config": 63,
+      "global_memory_bytes": 12884377600,
+      "max_allocation_bytes": 3221094400
+    },
+    "kernel_sha256": "daed9acb931058a2a39f835daad127d97500001f99090335ce6a26f5c37eaf65",
+    "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+    "arithmetic": "binary64 affine/over/text; binary32 particle coverage and ordered accumulation; Float32 surfaces",
+    "device_quota_bytes": 268435456,
+    "retained_device_bytes": 3072,
+    "operations": {
+      "over": 32
+    },
+    "integer_media_conversion": false
+  },
+  "GPU_author_frames_seconds": 4.657209199998761,
+  "GPU_receipt": {
+    "engine": "render-owned-float32-opencl-v1",
+    "request": {
+      "mode": "require",
+      "device": "0.0",
+      "max_working_bytes": 1073741824,
+      "probe_timeout_seconds": 30
+    },
+    "status": "prepared",
+    "dry_run": false,
+    "operations": {
+      "over": 50,
+      "particles": 18,
+      "affine": 18
+    },
+    "CPU_scope": [
+      "glyph-rasterization",
+      "color-conversion",
+      "effects",
+      "masks",
+      "crop",
+      "transitions",
+      "non-normal-blends",
+      "audio",
+      "delivery-encoding"
+    ],
+    "GPU_scope": [
+      "premultiplied-affine",
+      "normal-source-over",
+      "text-color-components",
+      "binary-word-selection",
+      "seeded-particle-rasterization"
+    ],
+    "host_shared_bytes_limit": 1073741824,
+    "retained_host_shared_bytes": 0,
+    "device_bytes_limit": 1073741824,
+    "limits_are_peak_RSS": false,
+    "free_VRAM_reserved": false,
+    "integer_media_conversion": false,
+    "worker_closed": true,
+    "runtime_failure_CPU_fallback": false,
+    "artifacts": [
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.33\\final-r2\\installed\\site\\ai_ad_editor\\float_gpu.py",
+        "role": "float-gpu-execution",
+        "bytes": 15132,
+        "sha256": "sha256:492f94e98c9308962dbaf11b2305b7aa2ae2974a5ea8d64b1ff48db18e31b424"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.33\\final-r2\\installed\\site\\ai_ad_editor\\float_gpu_worker.py",
+        "role": "float-gpu-execution",
+        "bytes": 9137,
+        "sha256": "sha256:a3ed63a16c911ac3fc64aad5883eb37b716ebeb8e4537664e87a8160dc15357d"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.33\\final-r2\\installed\\site\\ai_ad_editor\\float_gpu_native.py",
+        "role": "float-gpu-execution",
+        "bytes": 19068,
+        "sha256": "sha256:c72c82e7d50bcea9e392421324ae5ab428be72c02210037b23dc9e6b19e9e77a"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.33\\final-r2\\installed\\site\\ai_ad_editor\\procedural_particles.py",
+        "role": "float-gpu-execution",
+        "bytes": 16325,
+        "sha256": "sha256:bd76802609fba6c9bec097a3188cb4f5316187cdaa7d2e7b4caa9197748189b6"
+      }
+    ],
+    "planned_maximum_pixels": 345600,
+    "planned_device_bytes": 16588800,
+    "planned_host_shared_bytes": 11405568,
+    "owned_worker_pid": 27484,
+    "native": {
+      "protocol": "native-opencl-binary64-float32-primitives-v1",
+      "device": {
+        "selection": "0.0",
+        "name": "NVIDIA GeForce RTX 3060",
+        "vendor": "NVIDIA Corporation",
+        "driver": "595.95",
+        "version": "OpenCL 3.0 CUDA",
+        "type": 4,
+        "double_fp_config": 63,
+        "global_memory_bytes": 12884377600,
+        "max_allocation_bytes": 3221094400
+      },
+      "kernel_sha256": "daed9acb931058a2a39f835daad127d97500001f99090335ce6a26f5c37eaf65",
+      "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+      "arithmetic": "binary64 affine/over/text; binary32 particle coverage and ordered accumulation; Float32 surfaces",
+      "device_quota_bytes": 1073741824,
+      "retained_device_bytes": 16588800,
+      "operations": {
+        "over": 52,
+        "affine": 20,
+        "paint": 1,
+        "select_words": 1,
+        "particles": 18
+      },
+      "integer_media_conversion": false
+    },
+    "probe": {
+      "pixels_per_case": 65536,
+      "max_errors": {
+        "over": 0.0,
+        "affine": 0.0,
+        "paint": 0.0,
+        "select": 0.0
+      },
+      "absolute_limit": 3e-07,
+      "all_16bit_levels_present": true,
+      "actual_gpu_operations": 6,
+      "subnormal_over_bit_exact": true,
+      "subnormal_affine_bit_exact": true,
+      "subnormal_alpha_input_bits": [
+        0,
+        1,
+        2,
+        8388607,
+        8388608,
+        8388609,
+        1065353215,
+        1065353216
+      ]
+    },
+    "maximum_host_shared_bytes": 11059456,
+    "operation_elapsed_seconds": 6.7006607000221265,
+    "worker_returncode": 0,
+    "shared_handles_closed": true
+  },
+  "artifact_verification": {
+    "mode": "windows-read-lock-command-scope",
+    "files_hashed": 4,
+    "bytes_hashed": 59662,
+    "digest_reuses_while_locked": 0,
+    "write_and_delete_sharing": false,
+    "persists_across_commands": false
+  },
+  "tiny_direct_seconds": [
+    0.026591300003929064,
+    0.0001942999952007085,
+    0.00013129999570082873,
+    0.0001112000027205795,
+    0.00011249999806750566,
+    0.0001201999984914437,
+    0.00011229999654460698,
+    0.00011150000500492752,
+    0.00011210000957362354,
+    0.0001109000004362315,
+    0.0001103000104194507,
+    0.00011199999426025897,
+    0.00011059999815188348,
+    0.0001112000027205795,
+    0.00012929999502375722,
+    0.0001449999981559813,
+    0.00010970000585075468,
+    0.00011039999662898481,
+    0.0001033000007737428,
+    0.00011210000957362354,
+    0.00011510000331327319,
+    0.00010889999975915998,
+    0.00010679999832063913,
+    0.00011350000568199903,
+    0.00010659999679774046,
+    0.00010699999984353781,
+    0.00010910000128205866,
+    0.00010699999984353781,
+    0.00011869998706970364,
+    0.0001112000027205795,
+    0.00010819999442901462,
+    0.00010640000982675701
+  ],
+  "tiny_worker_seconds": [
+    0.06750229999306612,
+    0.06250759999966249,
+    0.06401570000161882,
+    0.06354719999944791,
+    0.06319010000152048,
+    0.06757169999764301,
+    0.06346390000544488,
+    0.06231340000522323,
+    0.06888550000439864,
+    0.12734500000078697,
+    0.0817003999982262,
+    0.07378779999271501,
+    0.06465709999611136,
+    0.07073469999886584,
+    0.06242579998797737,
+    0.06492649999563582,
+    0.06296710000606254,
+    0.06453380000311881,
+    0.08013070000743028,
+    0.08329920000687707,
+    0.06397410000499804,
+    0.06418460000713822,
+    0.06695469999976922,
+    0.06577630000538193,
+    0.06404539999493863,
+    0.08602109999628738,
+    0.06339759999536909,
+    0.1075734000041848,
+    0.0826048000017181,
+    0.08447359999991022,
+    0.06772520000231452,
+    0.08211950000259094
+  ],
+  "tiny_direct_total_seconds": 0.030180000016116537,
+  "tiny_worker_total_seconds": 2.318355800016434,
+  "CPU_author_frames_seconds": 3.5697481999959564,
+  "product_files_frozen": true,
+  "frame_indices": [
+    0,
+    18,
+    47
+  ],
+  "CPU_GPU_max_error": 2.980232238769531e-07,
+  "raw_frames": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-dispatch-profile-installed-r1",
+  "worker_closed": true
+}

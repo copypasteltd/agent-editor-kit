@@ -111,3 +111,20 @@ The [Float32 GPU contract and cases](https://github.com/copypasteltd/agent-edito
 contains installed-package evidence and measured performance. Inspect actual
 full-resolution output; this scope does not establish realtime or complete
 CapCut quality parity.
+
+## Owned control pipes, CLI0.1.36
+
+The installed native Float32 backend uses `owned-inherited-binary-pipes-v1`.
+No per-operation JSON files or network service are needed; media pixels still
+use the same three owned shared buffers. Project/snapshot/manifest/queue and
+receipt durability remain active. There is one bounded send/receive queue,
+each with capacity1; each UTF-8 JSON packet body is bounded to128KiB.
+Inspect `projection_acceleration.control.protocol`, `sent_packets`,
+`received_packets`, `threads_closed` and `streams_closed`, together with
+`worker_closed`/`shared_handles_closed`. Runtime errors must fail and close
+the owned process rather than silently retry on CPU. Existing GPU policy,
+commands, author clocks and kernel precision remain the same.
+
+For measured all-frame/PCM before-after checks and their scope, read
+[GPU dispatch](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/GPU_DISPATCH.md).
+Do not promise realtime or extrapolate one diagnostic timing to client footage.

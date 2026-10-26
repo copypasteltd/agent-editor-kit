@@ -883,3 +883,15 @@ Actual registered Skill, CLI0.1.35/local.33. Six-cell original diagnostic scene,
 GIF/contact images decode the actual MP4 and add recipe numbers/English labels. GIF 48 frames/3840ms; authored MP4 is4s. Diagnostic static frame inspection, full-frame package comparison and silent audio decode are separate; no natural-footage/continuous-playback/human-listening acceptance.
 
 Actual registered-launcher wall time: original GPU render 257.676s; migrated render 264.977s. These include startup, IPC and encoding; no matched CPU timing was performed for C45, so no GPU speedup claim is made.
+
+<a id="c46-gpu-dispatch"></a>
+
+## C46 · 原生GPU调度 / Owned GPU dispatch
+
+Actual registered installed CLI0.1.35→0.1.36,unchanged C45 author graph/tools/fixture,48frames at12FPS/4s/960×360,288 particle dispatches. **133.95s → 35.19s (3.81×)**. All48 decoded10bit frames and complete384000 Float32 PCM samples equal.
+
+![Actual paired wall time](../assets/gpu-dispatch-20261027-r1/timing.png)
+
+[Actual optimized MKV](../assets/gpu-dispatch-20261027-r1/optimized.mkv) · [Timing data](../assets/gpu-dispatch-20261027-r1/timings.json) · [Source/license](../assets/gpu-dispatch-20261027-r1/SOURCE.txt) · [Media manifest](../assets/gpu-dispatch-20261027-r1/media-manifest.json) · [C45 original source/GIF](#c45-procedural-particles) · [Workflow](GPU_DISPATCH.md) · [Evidence](../validation/GPU管道调度实测_2026-10-27.md).
+
+Original synthetic diagnostic scene,silent track;no model inference. Timing includes launcher,startup,encoding and checks. One measured pair,not realtime/4K/long-form/multivendor performance. Full decode equality is separate from natural quality,continuous human playback and listening;those remain unaccepted.

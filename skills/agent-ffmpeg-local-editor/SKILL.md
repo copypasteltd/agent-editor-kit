@@ -7,7 +7,10 @@ description: "Edit and generate local videos with agent editor kit: multitrack e
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.33` / CLI `0.1.35`.
+The current local runtime is `v0.1.0-alpha.4-local.34` / CLI `0.1.36`.
+Native Float32 GPU operations now use bounded owned control pipes. Read
+[GPU execution](references/projection-gpu.md) for policy, actual operator counts,
+cancellation and process/thread/stream cleanup receipts.
 For editable snow/confetti/embers/bokeh/rain/sparkles, read
 [procedural particles](references/procedural-particles.md). Use native Float32
 rendering and actual preview evidence; emitter parameters stay in the project.

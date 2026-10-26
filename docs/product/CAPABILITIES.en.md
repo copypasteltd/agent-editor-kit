@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.35 / alpha.4-local.33 / r36 kit · 1 Skill / 17 modules / 76 files.**
+**CLI0.1.36 / alpha.4-local.34 / r37 kit · 1 Skill / 17 modules / 76 files.**
 
-Editable procedural snow, confetti, embers, bokeh, rain and sparkles now retain their parameters, seed and independent FPS in the project. Native Float32 composition, actual OpenCL rasterization, normal clip keys/cuts/reverse, preview, queues and package/OTIO reimport share the editable source. The six-cell scene is rendered through the registered installed Skill with no models or third-party footage.
+Native Float32 GPU control now uses owned native pipes, removing per-operator control-file writes and polling. The same48-frame project through the registered installed Skill measures **133.95s → 35.19s (3.81×)**; all decoded10bit frames and384000 Float32 audio samples match, with byte-identical numeric kernels.
 
-[Particle workflow and limits](PROCEDURAL_PARTICLES.md)
+[GPU workflow and limits](GPU_DISPATCH.md)
 
 <!-- /community-current -->
 
@@ -70,7 +70,7 @@ Editable procedural snow, confetti, embers, bokeh, rain and sparkles now retain 
 | F54 | Portable parameterized motion | Versioned local JSON / captured authored curves → editable keys, resolved parameters/digests/snapshot and cross-project reuse, with six actual previews. | `motion pack list/inspect/create/capture/apply` | 65-point paths, transform properties; conflicts reject unless whole-property replacement is explicit; tracking bindings reject; CPU performance/natural quality remain open. |
 | F55 | Linear Float32 transitions and group edges | Explicit Float32 projects → 57 xfade patterns+2 dips,premultiplied alpha,real handles/original clocks,linked audio,group wipe/slide,actual preview and encoding. | `timeline transition; preview; render; queue` | CPU;12 real-handle declaration types,other patterns use overlap/edges;normal paired blending;platform-dependent wind,HDR/natural quality open. |
 | F56 | Linear Float32 text and captions | Independent/inline/SRT,joint word/typewriter → native byte coverage,reusable glyphs,tiled linear composition,original clocks,4K titles and actual delivery. | `timeline compose; preview; render; queue` | Explicit local font;CPU/explicit GPU;8bit coverage/Float32 colors;admission is not peak RSS;rich ASS/Bidi/natural quality open. |
-| F57 | Native Float32 GPU execution | Explicit policy → linear Float32 affine, normal over, text components/paragraphs and word selection; real render/preview/queue/resume. | `projection_acceleration; render; preview; queue` | off/prefer/require;actual binary64/subnormal probes;owned process/shared buffers;other operators CPU,not all-GPU editing. |
+| F57 | Native Float32 GPU execution | Explicit policy for affine,normal over,text components/word selection; owned pipe dispatch/shared pixels;render,preview,queue,resume. | `projection_acceleration; render; preview; queue` | off/prefer/require;actual binary64/subnormal probes;bounded packets/queues and owned process/thread/stream cleanup;other operators CPU. |
 | F58 | Float32 global/interval adjustments | Ordered grading after all tracks including subtitles;existing float effects,LUT/exposure,six keyframe modes,selected root once. | `settings.adjustments; preview; render; queue` | Explicit linear working/effect signals;CPU execution;locked/portable LUTs;original interval clocks,not complete HDR. |
 | F59 | Native PTS tracking and overlay tracks | Saved source observations → actual selected-frame anchors;shared crop/TRS,ROI scale/relative rotation,alpha,windows and nested audio. | `media track-bind; preview; render; queue; package` | Explicit Float32,no display-key bake,budget/cycle gates;template drift/occlusion require review;native interchange baking pending. |
 | F60 | Native tracking and baked delivery | Actual alpha/five masks/59 transition footprints; edits and shared retime retain observations; native bake verifies all frames and retains source sidecars. | `media track-bind; timeline compose/edit; convert export --bake-tracking` | Frozen graph/FPS;20,000 frames/256,000 samples;unrepresentable integer steps reject;external players and natural identity/occlusion remain unaccepted. |
@@ -1456,6 +1456,16 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "selection": "pixel_pipeline=float32-native-v1;projection_acceleration=off|prefer|require",
     "device": "explicit_platform.device_index",
     "native_runtime": "existing_windows_OpenCL_ICD",
+    "control": {
+      "protocol": "owned-inherited-binary-pipes-v1",
+      "max_packet_bytes": 131072,
+      "queue_capacity_each": 1,
+      "pixel_transport": "three_owned_shared_memory_segments",
+      "network": false,
+      "per_operation_control_files": false,
+      "cleanup": "owned_child_wait_then_join_IO_threads_and_close_streams",
+      "durability": "project_snapshots_manifests_and_receipts_remain_atomic_fsync"
+    },
     "surface": "straight_RGBA_Float32;binary64_kernel_math;no_fast_math",
     "operators": [
       "premultiplied_bilinear_affine",
@@ -4835,3 +4845,5 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 ```
 
 [CLI0.1.35 exact installed capability snapshot](procedural-particles-capabilities-cli-0.1.35.json).
+
+[CLI0.1.36 exact installed capability snapshot](gpu-dispatch-capabilities-cli-0.1.36.json).

@@ -32,6 +32,8 @@ class NativeFloatGPUTests(unittest.TestCase):
         self.gpu.__exit__(None, None, None)
         self.assertTrue(self.gpu.evidence['worker_closed'])
         self.assertTrue(self.gpu.evidence['shared_handles_closed'])
+        self.assertTrue(self.gpu.evidence['control']['threads_closed'])
+        self.assertTrue(self.gpu.evidence['control']['streams_closed'])
         RECEIPTS.append({'test': self.id(), 'evidence': copy.deepcopy(self.gpu.evidence)})
 
     def random(self, h=27, w=39):
@@ -144,7 +146,7 @@ class NativeFloatGPUTests(unittest.TestCase):
         self.assertEqual(result.exception.code, 'FLOAT_GPU_TIMEOUT')
         self.assertTrue(self.gpu.evidence['worker_closed'])
 
-    def test_many_owned_control_replacements_and_shape_growth(self):
+    def test_many_owned_control_packets_and_shape_growth(self):
         a = self.random(2, 3)
         for index in range(120):
             if index in (30, 60, 90): a = self.random(3+index//10, 7+index//10)
@@ -153,6 +155,9 @@ class NativeFloatGPUTests(unittest.TestCase):
         self.assertEqual(self.gpu.evidence['operations']['over'], 120)
         self.assertEqual(len(self.gpu.segments), 3)
         self.assertLessEqual(self.gpu.evidence['maximum_host_shared_bytes'], self.gpu.config['max_working_bytes'])
+        self.assertFalse((self.gpu.directory/'request.json').exists())
+        self.assertFalse((self.gpu.directory/'response.json').exists())
+        self.assertEqual(self.gpu.evidence['control']['received_packets'], 121)
 
 
 class FloatGPUPolicyTests(unittest.TestCase):

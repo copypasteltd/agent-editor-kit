@@ -65,7 +65,7 @@ def compile_track(track, tps, source_plan=None):
         if any(other is not pair and pair['start'] < other['end'] and other['start'] < pair['end'] for other in pairs):
             raise error('WINDOW_OVERLAP', '同轨两源转场窗口不能相交')
     for clip in clips:
-        authored = validate_window(clip)
+        authored = validate_window(clip,allow_tracking=True)
         envelopes = []
         for edge in ('in', 'out'):
             config = clip.get('transition_'+edge)

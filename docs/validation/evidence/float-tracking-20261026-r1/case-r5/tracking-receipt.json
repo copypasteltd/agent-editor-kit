@@ -1,0 +1,39 @@
+{
+  "protocol": "native-PTS-float32-tracking-bindings-v1",
+  "plans": [
+    {
+      "target": "child/follow_marker",
+      "source": "child/moving_source",
+      "coordinate_space": "timeline-canvas-v1",
+      "host_protocol": "native-PTS-float32-tracking-bindings-v1",
+      "source_clip_id": "moving_source",
+      "source_track_id": "child_track_video_1",
+      "canvas": {
+        "width": 320,
+        "height": 180
+      },
+      "sampled_frames": 0,
+      "hidden_frames": null,
+      "keyframes": [],
+      "warnings": [
+        "tracking_observations_interpolated_at_selected_original_PTS",
+        "native_binding_is_dynamic_not_baked_to_display_FPS",
+        "source_masks_transitions_and_occlusion_visibility_require_review"
+      ]
+    }
+  ],
+  "bindings": 1,
+  "observations": 36,
+  "clock": "selected original PTS * native time base minus recorded demux origin; no CFR resnap",
+  "geometry": "same crop/fit/TRS inverse as rendered source; integer pixel centres and half-pixel edges",
+  "ROI_reference": "source geometry at target original author start; first observation if no native frame covers reference",
+  "scale_policy": "existing binding clamp 0.01..20; source projected ROI-width ratio",
+  "alpha": "binding base opacity automation times source transform and blend opacity",
+  "visibility": "source clip coverage/range/crop/mute; masks/transitions/occlusion need separate review",
+  "model_inference": false,
+  "display_keyframes_baked": false,
+  "integer_intermediate": false,
+  "evaluations": 36,
+  "hidden_evaluations": 0,
+  "cache_hits": 0
+}

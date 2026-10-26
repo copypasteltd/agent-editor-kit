@@ -58,6 +58,15 @@ class FloatAudioGraphTests(unittest.TestCase):
         root['duration_tick']=45000;root['tracks'][0]['clips']=[parent];root['tracks'][1]['clips']=[]
         result,_=self.render();self.assertEqual(result,self.samples[9600:33600].tobytes())
 
+    def test_nested_overlay_container_preserves_complete_child_stereo_audio_and_reverse(self):
+        root=self.p['sequences'][0];child=copy.deepcopy(root);child['id']='child'
+        child['tracks'][0]['id']='child_video';child['tracks'][1]['id']='child_audio';self.p['sequences'].append(child)
+        root['tracks'][0]['clips']=[];root['tracks'][1]['clips']=[]
+        root['tracks'].append(dict(id='overlay_group',kind='overlay',order=2,clips=[dict(id='nested',sequence_id='child',
+            timeline_start_tick=0,duration_tick=90000,source_in_tick=0,source_out_tick=90000,reverse=True)]))
+        result,plan=self.render();self.assertEqual(result,self.samples[::-1].tobytes())
+        self.assertEqual(plan['nested_visual_containers_compiled_as_audio'],1)
+
     def test_audio_volume_automation_is_retained_after_visual_keyframes_are_pruned(self):
         gain=10**(-6/20)
         self.c['keyframes']=[{'property':'audio.volume','keyframes':[{'at_tick':0,'value':gain,'interpolation':'linear'},{'at_tick':90000,'value':gain,'interpolation':'linear'}]},

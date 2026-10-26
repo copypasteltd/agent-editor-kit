@@ -763,3 +763,15 @@ CLI0.1.25/local.23-final-r1. Self-authored CC0 geometric footage, stereo tones, 
 [Source video](../assets/float-adjustments-20261026-r1/original.native.mkv) · [Source audio](../assets/float-adjustments-20261026-r1/original.audio.wav) · [Actual MP4](../assets/float-adjustments-20261026-r1/native-text.mp4) · [Editable package](../assets/float-adjustments-20261026-r1/editable-native-text.aevpkg.zip) · [Media hashes](../assets/float-adjustments-20261026-r1/media-manifest.json) · [Workflow](FLOAT_ADJUSTMENTS.md) · [Execution](../validation/evidence/float-adjustments-20261026-r1/case-r1/verification.json) · [Reimport/range](../validation/evidence/float-adjustments-20261026-r1/package-r1/verification.json).
 
 All resumed/queued frames, clocks and complete PCM match. Reimport retains LUT bytes/font license;three RGBA64 frames and12 Float32 range frames/full48000stereo samples match exactly. Synthetic tones are numerical evidence;no human listening,continuous playback,natural-content quality or new GPU speed claim.
+
+<a id="c36-float-tracking"></a>
+
+## C36 · Native PTS following marker through crop/TRS and reversed overlay audio
+
+CLI0.1.26/local.24-final-r2, registered unified Skill. Actual local template analysis produces36observations; animated crop/scale/rotation, following transparent marker, reversed nested overlay, GPU text and full stereo audio.36frames/3s/12fps/320×180. Original CC0 geometry/marker/tones; Noto Sans SC/OFL.
+
+![Actual silent GIF](../assets/float-tracking-20261026-r5/native-tracking.gif)
+
+[Source video](../assets/float-tracking-20261026-r5/original.native.mkv) · [Source audio](../assets/float-tracking-20261026-r5/original.audio.wav) · [Actual MP4](../assets/float-tracking-20261026-r5/native-tracking.mp4) · [Editable package](../assets/float-tracking-20261026-r5/editable-native-tracking.aevpkg.zip) · [Media hashes](../assets/float-tracking-20261026-r5/media-manifest.json) · [Workflow](FLOAT_TRACKING.md) · [Execution](../validation/evidence/float-tracking-20261026-r1/case-r5/verification.json) · [Reimport](../validation/evidence/float-tracking-20261026-r1/package-r1/verification.json).
+
+Every selected original source index matches. Independent anchor error≤0.018046262px,actual red marker centroid error≤0.42361414px. Full144000 stereo PCM samples match the independent reversal oracle;resume/queue match all decoded frames/clocks/PCM. Package retains observations/license;3RGBA64frames and12Float32rangeframes/full48000stereoPCM match. No natural identity,occlusion,continuous playback,human listening or speed acceptance.

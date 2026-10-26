@@ -57,6 +57,13 @@ class BundledSchemaTests(unittest.TestCase):
             project=self.dated(value)
             self.assertEqual(list(validator.iter_errors(project)),[],value)
 
+    def test_overlay_enum_requires_an_explicit_native_pipeline_in_the_actual_schema(self):
+        self.project['sequences'][0]['tracks'][0]['kind']='overlay'
+        validator=contract.make_validator();self.assertTrue(list(validator.iter_errors(self.project)))
+        self.project['settings']['pixel_pipeline']={'engine':'float32-native-v1',
+            'working_signal':{'primaries':'bt709','transfer':'linear'},'output_signal':{'primaries':'bt709','transfer':'linear'},'sources':{}}
+        self.assertEqual(list(validator.iter_errors(self.project)),[])
+
     def test_format_failure_cases_in_actual_validator(self):
         validator=contract.make_validator()
         for value in ('2025-02-29T12:00:00Z','2024-02-30T00:00:00Z','0000-01-01T00:00:00Z','2026-10-18','2026-10-18T24:00:00Z','2026-10-18T00:00:00+24:00','2026-10-18T00:00:00+08:60','2026-10-18T00:00:00Z\n','２０２６-10-18T00:00:00Z','2026-10-18T00:00:60Z'):

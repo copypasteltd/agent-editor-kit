@@ -183,7 +183,7 @@ class FloatRenderContext:
             if sequence_id in parents or len(parents) >= 16 or sequence_id not in sequences:
                 raise error('SEQUENCE', '序列循环、缺失或嵌套过深')
             for track in sequences[sequence_id]['tracks']:
-                if track.get('muted') or track['kind'] != 'video':
+                if track.get('muted') or track['kind'] not in ('video','overlay'):
                     continue
                 for clip in track['clips']:
                     if clip.get('sequence_id'):
@@ -198,7 +198,7 @@ class FloatRenderContext:
         paths = [Path(ffmpeg_path()).resolve(), Path(ffprobe_path()).resolve()]
         paths += [Path(__file__).with_name(name + '.py') for name in
                   ('float_standard_render', 'float_stream', 'float_audio_graph', 'render', 'float_color_signal',
-                   'float_timeline', 'float_adjustments', 'float_effect_chain', 'float_transitions', 'float_transition_plan', 'source_transitions',
+                   'float_timeline', 'float_tracking', 'bindings', 'animation', 'float_crop', 'float_adjustments', 'float_effect_chain', 'float_transitions', 'float_transition_plan', 'source_transitions',
                    'float_text','float_text_paint','float_text_coverage','text_paint','text_layout','text_highlight','text_typing','captions',
                    'float_gpu','float_gpu_native','float_gpu_worker')]
         self.artifacts = [artifact_entry(p, 'standard-float-render-runtime') for p in paths]

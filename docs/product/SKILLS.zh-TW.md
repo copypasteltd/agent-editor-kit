@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.25 / alpha.4-local.23 / r26 kit · 1 Skill / 17 modules / 72 files.**
+**CLI0.1.26 / alpha.4-local.24 / r27 kit · 1 Skill / 17 modules / 73 files.**
 
-明確線性 Float32 管線新增 57 種 xfade 圖案及黑/白 dip，真實來源句柄、關聯音軌與群組空間進出場已接入。實際統一 Skill 完成 6秒/72影格案例，倒放、預覽、取消恢復、佇列與逐樣本音訊核對通過。CPU 執行；預設管線與 GPU 投影沿用各自契約。
+原生 PTS 跟蹤綁定已接入安裝版：貼圖／標籤共用實際影片影格時鐘及 crop/fit/TRS 座標，支援倒放、變速、定格、巢狀及作者視窗；疊加序列保留聲音。統一 Skill 實跑36影格／3秒案例，動畫裁切及旋轉下逐影格核對錨點和標記像素，取消恢復／佇列完整畫面時鐘與PCM相同，可編輯套件保留原始觀測。
 
-[Float32 workflow](FLOAT_TRANSITIONS.md) · [GPU projection](OPENCL_PROJECTION.md) · [Install](COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](float-adjustments-capabilities-cli-0.1.25.json).
+[Native tracking workflow](FLOAT_TRACKING.md)
 
 <!-- /community-current -->
 

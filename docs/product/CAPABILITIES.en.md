@@ -2,15 +2,15 @@
 
 <!-- community-current -->
 
-**CLI 0.1.25 / alpha.4-local.23 / r26 kit · 1 Skill / 17 modules.**
+**CLI 0.1.26 / alpha.4-local.24 / r27 kit · 1 Skill / 17 modules.**
 
-Ordered global/interval Float32 grading at the selected root with authored clocks and locked portable LUTs; explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+Native-PTS dynamic tracking with shared crop/TRS geometry, editable source observations and overlay child audio; ordered global/interval Float32 grading at the selected root with authored clocks and locked portable LUTs; explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
 
-[Float32 adjustment workflow](FLOAT_ADJUSTMENTS.md) · [Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](float-adjustments-capabilities-cli-0.1.25.json). Full target conditions remain open.
+[Native tracking workflow](FLOAT_TRACKING.md) · [Float32 adjustment workflow](FLOAT_ADJUSTMENTS.md) · [Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](float-tracking-capabilities-cli-0.1.26.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.en.md) · [Machine response](float-adjustments-capabilities-cli-0.1.25.json) · [Module data](module-catalog.json)
+[README](../../README.en.md) · [Machine response](float-tracking-capabilities-cli-0.1.26.json) · [Module data](module-catalog.json)
 
 | ID | Module | Behavior and input → output | Entry | Dependency/limit |
 |---|---|---|---|---|
@@ -72,6 +72,7 @@ Ordered global/interval Float32 grading at the selected root with authored clock
 | F56 | Linear Float32 text and captions | Independent/inline/SRT,joint word/typewriter → native byte coverage,reusable glyphs,tiled linear composition,original clocks,4K titles and actual delivery. | `timeline compose; preview; render; queue` | Explicit local font;CPU/explicit GPU;8bit coverage/Float32 colors;admission is not peak RSS;rich ASS/Bidi/natural quality open. |
 | F57 | Native Float32 GPU execution | Explicit policy → linear Float32 affine, normal over, text components/paragraphs and word selection; real render/preview/queue/resume. | `projection_acceleration; render; preview; queue` | off/prefer/require;actual binary64/subnormal probes;owned process/shared buffers;other operators CPU,not all-GPU editing. |
 | F58 | Float32 global/interval adjustments | Ordered grading after all tracks including subtitles;existing float effects,LUT/exposure,six keyframe modes,selected root once. | `settings.adjustments; preview; render; queue` | Explicit linear working/effect signals;CPU execution;locked/portable LUTs;original interval clocks,not complete HDR. |
+| F59 | Native PTS tracking and overlay tracks | Saved source observations → actual selected-frame anchors;shared crop/TRS,ROI scale/relative rotation,alpha,windows and nested audio. | `media track-bind; preview; render; queue; package` | Explicit Float32,no display-key bake,budget/cycle gates;template drift/occlusion require review;native interchange baking pending. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -867,8 +868,53 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "authored_group_spatial_edges",
     "linear_float32_titles_inline_text_and_plain_SRT",
     "explicit_probed_native_opencl_float_geometry_normal_over_and_text_colors",
-    "ordered_sequence_adjustments_after_complete_composite"
+    "ordered_sequence_adjustments_after_complete_composite",
+    "native_PTS_dynamic_tracking_bindings",
+    "overlay_tracks_and_nested_overlay_audio"
   ],
+  "tracking": {
+    "protocol": "native-PTS-float32-tracking-bindings-v1",
+    "selection": "saved tracking_binding on an explicit native Float32 visual clip",
+    "commands": [
+      "media.track-bind",
+      "render",
+      "preview.frame",
+      "preview.range",
+      "render.resume",
+      "queue.run"
+    ],
+    "clock": "selected original int64 PTS times rational time_base minus demux origin; no CFR keyframe bake",
+    "geometry": "same crop/fit/TRS inverse and actual source dimensions as rendered source",
+    "features": [
+      "CFR_and_VFR_observation_playback",
+      "nonzero_demux_origin",
+      "partial_native_index",
+      "scalar_and_curve_retime",
+      "reverse_freeze_and_nested_clocks",
+      "dynamic_crop",
+      "source_and_target_presentation_windows",
+      "source_opacity_and_blend",
+      "ROI_scale_and_relative_rotation",
+      "chained_bindings",
+      "cycle_and_aggregate_budget_gates",
+      "editable_package_preserves_source_observations"
+    ],
+    "max_bindings": 128,
+    "max_total_observations": 64000,
+    "max_observations_per_binding": 4000,
+    "max_depth": 16,
+    "display_keyframes_baked": false,
+    "render_time_model_inference": false,
+    "GPU": "coordinate evaluation CPU; explicit probed Float32 GPU projection/compositing when eligible",
+    "limits": [
+      "direct_square_unrotated_video_sources",
+      "observation_analysis_quality_and_sampling_are_separate",
+      "masks_transitions_and_occlusion_visibility_require_review",
+      "ROI_scale_clamp_0_01_to_20",
+      "MLT_OTIO_draft_export_requires_native_clock_bake_not_yet_implemented",
+      "not_natural_identity_tracking_or_full_motion_quality_acceptance"
+    ]
+  },
   "adjustments": {
     "protocol": "selected-sequence-author-clock-float32-adjustments-v1",
     "selection": "settings.adjustments; explicit native Float32 pipeline",
@@ -2105,6 +2151,7 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
   "canvas_tracking_binding": {
     "status": "implemented_with_limits",
     "version": "timeline-canvas-v1",
+    "limits_scope": "features_and_limits_below_describe_legacy_bake; explicit_native_Float32_uses_standard_native_float_render.tracking",
     "features": [
       "source_clip_reference",
       "source_sha256_gate",

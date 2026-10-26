@@ -37,7 +37,7 @@ def prepare(root,project,sequence_id,*,cancel_file=None,persist_clock=True):
     for sequence in detached['sequences']:
         kept=[]
         for track in sequence['tracks']:
-            if track['kind'] not in ('audio','video'):continue
+            if track['kind'] not in ('audio','video','overlay'):continue
             clips=[]
             for clip in track['clips']:
                 if track['kind']!='audio' and not clip.get('sequence_id'):pruned+=1;continue
@@ -50,7 +50,7 @@ def prepare(root,project,sequence_id,*,cancel_file=None,persist_clock=True):
             # Represent these as audio containers only in the detached compiler
             # project so recursive window/freeze builders allow an empty picture.
             # IDs, order, mute and routing references stay on the same tracks.
-            if track['kind']=='video':
+            if track['kind'] in ('video','overlay'):
                 audio_containers+=len(clips);track['kind']='audio'
             track['clips']=clips;kept.append(track)
         sequence['tracks']=kept

@@ -17,9 +17,10 @@ from .float_color_signal import ColorSignal,convert_rgba
 from .float_composite import composite_rgba
 from .float_geometry import resample_rgba
 from .float_mask import compile_mask, apply_mask
-from .float_crop import compile_crop, project_crop
+from .float_crop import compile_crop, project_crop, projection_geometry
 from .float_effect_chain import EffectCompiler
 from .float_adjustments import FloatAdjustments
+from .float_tracking import FloatTracking
 from .float_transitions import transition_rgba, PROTOCOL as TRANSITION_PROTOCOL, TYPES as TRANSITION_TYPES
 from .float_transition_plan import compile_track
 from .float_text import FloatTextHost
@@ -125,6 +126,7 @@ class FloatTimeline:
         if len(self.assets)!=len(self.project['assets']):raise error('SOURCE','资产ID重复')
         self._validate(sequence_id,());sequence=self.sequences[sequence_id]
         self.adjustments=FloatAdjustments(self.settings.get('adjustments'),self.effects,sequence,cancel=self.poll)
+        self.tracking=FloatTracking(self)
         self.frame_count=math.ceil(Fraction(int(sequence['duration_tick']),self.tps)*self.fps)
         self.metadata={'protocol':PROTOCOL,'sequence_id':sequence_id,'display_fps':str(self.fps),'frames':self.frame_count,
             'working_signal':{'primaries':working_signal.primaries,'transfer':working_signal.transfer},
@@ -134,7 +136,7 @@ class FloatTimeline:
             'transitions':{'protocol':TRANSITION_PROTOCOL,'patterns':sorted(TRANSITION_TYPES),
                 'source_handle_plans':[p for p in self.source_transition_plans.values() if p],
                 'double_source_over_crossfade':False,'group_spatial_edges':True,'GPU':False},
-            'text':self.text_host.metadata,'adjustments':self.adjustments.metadata,
+            'text':self.text_host.metadata,'adjustments':self.adjustments.metadata,'tracking':self.tracking.metadata,
             'GPU':gpu.evidence if gpu is not None else {'status':'off'},
             'input_contract':'validated Agent Project IR;registered SHA and explicit common working RGB signal',
             'audio_rendered':False,'legacy_render_preview_cache_integrated':False,'HDR_accepted':False,'network':False}
@@ -151,7 +153,7 @@ class FloatTimeline:
         ids=set()
         for track in sequence['tracks']:
             if track.get('muted') or track['kind']=='audio':continue
-            if track['kind'] not in ('video','subtitle') and track.get('clips'):raise error('UNSUPPORTED','该帧宿主尚未接入此轨道类型',track=track['id'],kind=track['kind'])
+            if track['kind'] not in ('video','overlay','subtitle') and track.get('clips'):raise error('UNSUPPORTED','该帧宿主尚未接入此轨道类型',track=track['id'],kind=track['kind'])
             self.transition_plans[sequence_id+'/'+track['id']]=compile_track(track,self.tps,self.source_transition_plans[sequence_id])
             for clip in track['clips']:
                 self.clip_count+=1
@@ -159,7 +161,6 @@ class FloatTimeline:
                 path=sequence_id+'/'+str(clip['id'])
                 if clip['id'] in ids:raise error('SEQUENCE','轨道内片段ID重复',clip=path)
                 ids.add(clip['id'])
-                if clip.get('tracking_binding'):raise error('UNSUPPORTED','该作者操作尚未连接浮点宿主，不进行旧路径回落',clip=path,operation='tracking_binding')
                 independent_text=track['kind']=='subtitle'
                 if clip.get('generator') and (not independent_text or clip['generator']!={'type':'text'}):
                     raise error('UNSUPPORTED','浮点生成器仅支持字幕轨道的明确type=text',clip=path,operation='generator')
@@ -170,7 +171,7 @@ class FloatTimeline:
                 integer(clip['timeline_start_tick']);integer(clip['duration_tick'],1);integer(clip['source_in_tick']);integer(clip['source_out_tick'],1)
                 if clip['source_out_tick']<=clip['source_in_tick']:
                     raise error('CLOCK','作者片段范围无效',clip=path)
-                authored=validate_window(clip);freeze=clip.get('freeze') or {};freeze_duration=integer(freeze.get('duration_tick',0));freeze_at=integer(freeze.get('at_tick',0))
+                authored=validate_window(clip,allow_tracking=True);freeze=clip.get('freeze') or {};freeze_duration=integer(freeze.get('duration_tick',0));freeze_at=integer(freeze.get('at_tick',0))
                 if freeze_duration>=authored or freeze_at>authored-freeze_duration:
                     raise error('FREEZE','冻结区间无效',clip=path)
                 mode_name((clip.get('blend') or {}).get('mode','normal'))
@@ -208,7 +209,7 @@ class FloatTimeline:
         reverse=bool(clip.get('reverse'))
         if path in self.maps:
             if elapsed==0:result=end if reverse else start
-            elif elapsed==validate_window(clip)-duration:result=start if reverse else end
+            elif elapsed==validate_window(clip,allow_tracking=True)-duration:result=start if reverse else end
             else:result=Fraction.from_float(unmap_time(self.maps[path],float(elapsed/self.tps)))
         else:
             speed=Fraction(str(clip.get('speed',1)))
@@ -220,26 +221,41 @@ class FloatTimeline:
         if left_limit:animation_tick=math.nextafter(float(animation_tick),-math.inf)
         return result,animation_tick,right_edge
 
-    def _project(self,clip,surface,canvas,tick,path,*,extra_rotation=0.):
+    def projection(self,clip,source_size,canvas,tick,path,*,extra_rotation=0.,overrides=None):
+        """Pure geometry shared by pixels and dynamic tracking anchors."""
         transform=clip.get('transform') or {};position=transform.get('position') or {};anchor=transform.get('anchor') or {}
-        def value(names,default):return keyframe_value(clip,names,float(default),float(tick))
-        scale=value(('transform.scale','scale'),transform.get('scale',1));angle=value(('transform.rotation','rotation'),transform.get('rotation',0))+extra_rotation
-        opacity=value(('transform.opacity','opacity'),transform.get('opacity',1))
-        px=value(('transform.position.x','position.x','position_x'),position.get('x',transform.get('position_x',.5)));py=value(('transform.position.y','position.y','position_y'),position.get('y',transform.get('position_y',.5)))
-        ax=value(('transform.anchor.x','anchor.x','anchor_x'),anchor.get('x',transform.get('anchor_x',.5)))
-        ay=value(('transform.anchor.y','anchor.y','anchor_y'),anchor.get('y',transform.get('anchor_y',.5)))
+        bound=overrides or {}
+        def value(names,default,prop):return bound.get(prop,keyframe_value(clip,names,float(default),float(tick)))
+        scale=value(('transform.scale','scale'),transform.get('scale',1),'scale')
+        angle=value(('transform.rotation','rotation'),transform.get('rotation',0),'rotation')+extra_rotation
+        opacity=value(('transform.opacity','opacity'),transform.get('opacity',1),'opacity')
+        px=value(('transform.position.x','position.x','position_x'),position.get('x',transform.get('position_x',.5)),'position.x')
+        py=value(('transform.position.y','position.y','position_y'),position.get('y',transform.get('position_y',.5)),'position.y')
+        ax=value(('transform.anchor.x','anchor.x','anchor_x'),anchor.get('x',transform.get('anchor_x',.5)),'anchor.x')
+        ay=value(('transform.anchor.y','anchor.y','anchor_y'),anchor.get('y',transform.get('anchor_y',.5)),'anchor.y')
         if not all(math.isfinite(v) for v in (scale,angle,opacity,px,py,ax,ay)) or scale<=0 or not 0<=opacity<=1:raise error('GEOMETRY','变换包含无效值')
+        width,height=source_size;cw,ch=canvas['width'],canvas['height']
+        crop=self.crop_plans[path]
+        if crop is not None:
+            geometry,inverse=projection_geometry(crop,(width,height),(cw,ch),tick,scale=scale,rotation=angle,
+                position=(px,py),anchor=(ax,ay))
+            return inverse.tolist(),opacity,{**geometry,'scale':scale,'rotation':angle,'position':(px,py),'anchor':(ax,ay)}
+        zoom=min(cw/width,ch/height)*scale;c,s=math.cos(math.radians(angle))/zoom,math.sin(math.radians(angle))/zoom
+        anchor_x,anchor_y=width*ax-.5,height*ay-.5;dest_x,dest_y=cw*px-.5,ch*py-.5
+        inverse=[[c,s,anchor_x-c*dest_x-s*dest_y],[-s,c,anchor_y+s*dest_x-c*dest_y]]
+        return inverse,opacity,None
+
+    def _project(self,clip,surface,canvas,tick,path,*,extra_rotation=0.,overrides=None):
         height,width=surface.shape[:2];cw,ch=canvas['width'],canvas['height']
-        if self.crop_plans[path] is not None:
-            result,crop_metadata=project_crop(surface,self.crop_plans[path],tick,(cw,ch),scale=scale,rotation=angle,
-                position=(px,py),anchor=(ax,ay),max_working_bytes=self.max_working_bytes,cancel=self.poll)
+        inverse,opacity,geometry=self.projection(clip,(width,height),canvas,tick,path,extra_rotation=extra_rotation,overrides=overrides)
+        if geometry is not None:
+            result,crop_metadata=project_crop(surface,self.crop_plans[path],tick,(cw,ch),
+                **{k:geometry[k] for k in ('scale','rotation','position','anchor')},
+                max_working_bytes=self.max_working_bytes,cancel=self.poll)
             mask_metadata=None
             if self.mask_plans[path] is not None:
                 result,mask_metadata=apply_mask(result,self.mask_plans[path],tick,max_working_bytes=self.max_working_bytes,cancel=self.poll)
             return result,opacity,crop_metadata['inverse'],mask_metadata,crop_metadata
-        zoom=min(cw/width,ch/height)*scale;c,s=math.cos(math.radians(angle))/zoom,math.sin(math.radians(angle))/zoom
-        anchor_x,anchor_y=width*ax-.5,height*ay-.5;dest_x,dest_y=cw*px-.5,ch*py-.5
-        inverse=[[c,s,anchor_x-c*dest_x-s*dest_y],[-s,c,anchor_y+s*dest_x-c*dest_y]]
         mask_metadata=None
         if self.mask_plans[path] is not None:
             surface,mask_metadata=apply_mask(surface,self.mask_plans[path],tick,max_working_bytes=self.max_working_bytes,cancel=self.poll)
@@ -292,12 +308,14 @@ class FloatTimeline:
                 c,s=math.cos(math.radians(angle)),math.sin(math.radians(angle));x,y=(w-1)/2,(h-1)/2
                 text,_=self.resample(text,(w,h),[[c,s,x-c*x-s*y],[-s,c,y+s*x-c*y]])
             source,_=self.composite(source,text)
-        layer,opacity,inverse,mask_metadata,crop_metadata=self._project(clip,source,canvas,tick,path,extra_rotation=extra_rotation)
+        binding=self.tracking.evaluate(path,at,left_limit=left_limit)
+        layer,opacity,inverse,mask_metadata,crop_metadata=self._project(clip,source,canvas,tick,path,extra_rotation=extra_rotation,overrides=binding['values'] if binding else None)
         blend=clip.get('blend') or {}
         opacity*=keyframe_value(clip,('blend.opacity','blend_opacity'),float(blend.get('opacity',1)),float(tick))
         if not math.isfinite(opacity) or not 0<=opacity<=1:raise error('GEOMETRY','合并后的图层透明度须为有限0..1数值')
         row={'clip':path,'source_time':str(source_time),'native_frame_index':frame_index,'right_edge':right,
             'author_animation_tick':str(tick),'inverse_affine':inverse,'opacity':opacity,'effects':effect_metadata,'mask':mask_metadata,'crop':crop_metadata}
+        if binding is not None:row['tracking']=binding
         if clip.get('_source_handle'):row['source_handle']=copy.deepcopy(clip['_source_handle'])
         if text_metadata is not None:row['text']={**text_metadata,'independent':text_plan['independent'],
             'clock_tick':str(text_tick),'placement':'after-media-effects-before-clip-projection' if not text_plan['independent'] else 'sequence-canvas-before-clip-effects-and-projection',
@@ -337,7 +355,7 @@ class FloatTimeline:
         duration=Fraction(int(sequence['duration_tick']),self.tps)
         if not ((0<at<=duration) if left_limit else (0<=at<duration)):return result
         for _,track in sorted(enumerate(sequence['tracks']),key=lambda pair:(pair[1].get('order',pair[0]),pair[0])):
-            if track.get('muted') or track['kind'] not in ('video','subtitle'):continue
+            if track.get('muted') or track['kind'] not in ('video','overlay','subtitle'):continue
             plan=self.transition_plans[sequence_id+'/'+track['id']]
             at_tick=at*self.tps
             active_pairs=[p for p in plan['pairs'] if ((p['start']<at_tick<=p['end']) if left_limit else (p['start']<=at_tick<p['end']))]
@@ -378,7 +396,7 @@ class FloatTimeline:
 
     def render_frame(self,index):
         if type(index) is not int or not 0<=index<self.frame_count:raise error('RANGE','输出帧索引越界')
-        self._frame_adjustments=[]
+        self._frame_adjustments=[];self.tracking.reset_frame()
         rows=[];at=Fraction(index,1)/self.fps;result=self._sequence(self.sequence_id,at,rows,root=True)
         return result,{'protocol':PROTOCOL,'frame':index,'author_time':str(at),'layers':rows,
             'adjustments':self._frame_adjustments,'encoded_movie':False,'legacy_render_integrated':False}

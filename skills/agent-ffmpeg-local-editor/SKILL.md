@@ -1,13 +1,13 @@
 ---
 name: agent-ffmpeg-local-editor
-description: "Edit and deliver local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, offline visual semantic search, GPU projection/voice/translation, joint subtitle dubbing, licensed music/SFX, captions and quality checks. Also use for ad planning, reference remakes, long-to-short clips, screen demos or supplied campaign data that feeds an edit."
+description: "Edit and deliver local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, native PTS tracking bindings, offline visual semantic search, GPU projection/voice/translation, joint subtitle dubbing, licensed music/SFX, captions and quality checks. Also use for ad planning, reference remakes, long-to-short clips, screen demos or supplied campaign data that feeds an edit."
 ---
 
 # agent editor kit / unified local Skill
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.23` / CLI `0.1.25`.
+The current local runtime is `v0.1.0-alpha.4-local.24` / CLI `0.1.26`.
 The published alpha.3 downloads retain CLI 0.1.2 and their original scope.
 
 ## Runtime and common workflow
@@ -127,6 +127,8 @@ media. Add other modules when the request needs them. For example:
 
 These are internal references, not separate registrations or autonomous agents.
 Detailed source credits and licenses remain beside the relevant module resources.
+
+For native Float32 source-following markers/labels, read [tracking](references/float-tracking.md).
 
 ## Execution invariants
 

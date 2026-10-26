@@ -534,8 +534,12 @@ def validate_project(root: Path, project: dict[str, Any], *, strict_rights: bool
             else:
                 track_ids.add(tid)
                 ids.add(tid)
-            if track.get("kind") not in {"video", "audio", "subtitle", "data"}:
+            if track.get("kind") not in {"video", "overlay", "audio", "subtitle", "data"}:
                 error("TRACK_KIND_INVALID", "轨道 kind 无效", f"{tp}.kind")
+            if track.get('kind') == 'overlay':
+                from .bindings import native_clock_project
+                if not native_clock_project(project):
+                    error('TRACK_OVERLAY_PIPELINE_REQUIRED','overlay 轨道需要显式 float32-native-v1 渲染；默认轨道请使用 video',f'{tp}.kind')
             track_audio = track.get("audio")
             if track_audio is not None:
                 if not isinstance(track_audio, dict):
@@ -616,7 +620,8 @@ def validate_project(root: Path, project: dict[str, Any], *, strict_rights: bool
                 authored_dur = dur
                 if 'presentation_window' in clip:
                     try:
-                        authored_dur = validate_window(clip)
+                        from .bindings import native_clock_project
+                        authored_dur = validate_window(clip,allow_tracking=native_clock_project(project))
                     except AppError as exc:
                         error(exc.code, exc.message, cp+'.presentation_window')
                 speed_curve = clip.get("speed_curve")

@@ -188,7 +188,7 @@ class FloatTextHost:
             raise error('ANIMATION', '尚未实现的文字动画不得近似替代', kind=kind)
         handle = clip.get('_source_handle') or {}
         start = int(handle.get('authored_start_tick', (clip.get('presentation_window') or {}).get('authored_start_tick',clip['timeline_start_tick'])))
-        duration = int(handle.get('authored_duration_tick', validate_window(clip)))
+        duration = int(handle.get('authored_duration_tick', validate_window(clip,allow_tracking=True)))
         if kind=='rotate':
             animation=copy.deepcopy(animation)
             animation.setdefault('duration',min(.3,max(.05,duration/self.tps/4 or .3)))

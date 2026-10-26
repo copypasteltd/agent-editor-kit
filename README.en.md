@@ -9,9 +9,23 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- float-adjustments-current -->
+<!-- float-tracking-current -->
 
-**CLI0.1.25 / alpha.4-local.23 / r26 kit · 1 Skill / 17 modules.**
+**CLI0.1.26 / alpha.4-local.24 / r27 kit · 1 Skill / 17 modules.**
+
+Installed native-PTS tracking bindings now share the picture clock and actual crop/fit/TRS geometry across reversal, retiming, freeze, nesting and author windows. Overlay sequences retain audio. The registered Skill delivers a 3s/36-frame moving-marker case with independent anchor/pixel checks; resume/queue retain complete frame clocks and PCM, and editable packages preserve original observations.
+
+[Workflow](docs/product/FLOAT_TRACKING.md) · [C36](docs/product/CASES.md#c36-float-tracking) · [Local install](docs/releases/CLI_0.1.26_LOCAL.md) · [Evidence](docs/validation/原生PTS跟踪实测_2026-10-26.md)
+
+![Actual registered Skill / silent GIF](docs/assets/float-tracking-20261026-r5/native-tracking.gif)
+
+Template sampling/confidence is reported separately. Coordinates use CPU; eligible projection/composition/text use GPU. Occlusion, mask/transition visibility, natural identity quality and native-binding MLT/OTIO baking retain explicit limits. The full goal remains active.
+
+<!-- /float-tracking-current -->
+
+<!-- float-adjustments-history -->
+
+**Historical / 历史 / 歷史：CLI0.1.25 / alpha.4-local.23 / r26 kit · 1 Skill / 17 modules.**
 
 Installed global/interval Float32 adjustments now support ordered effect chains, LUT/exposure, six keyframe interpolations and one application at the selected sequence root. The registered Skill delivers a 6s/72-frame edit with GPU text/affine, reversed nested clips, transitions and linked audio. Resume/queue preserve every frame clock and complete PCM; package reimport preserves LUT bytes and frame/range previews.
 
@@ -21,7 +35,7 @@ Installed global/interval Float32 adjustments now support ordered effect chains,
 
 Adjustments use CPU Float32 and combine with supported GPU composition. No new model inference or performance claim. Natural-content quality, HDR/ICC and the full goal remain open.
 
-<!-- /float-adjustments-current -->
+<!-- /float-adjustments-history -->
 
 <!-- float-gpu-history -->
 
@@ -194,7 +208,7 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r26 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r26.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r27 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r27.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
@@ -564,6 +578,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F56 | Linear Float32 text and captions | Independent/inline/SRT,joint word/typewriter → native byte coverage,reusable glyphs,tiled linear composition,original clocks,4K titles and actual delivery. | `timeline compose; preview; render; queue` | Explicit local font;CPU/explicit GPU;8bit coverage/Float32 colors;admission is not peak RSS;rich ASS/Bidi/natural quality open. |
 | F57 | Native Float32 GPU execution | Explicit policy → linear Float32 affine, normal over, text components/paragraphs and word selection; real render/preview/queue/resume. | `projection_acceleration; render; preview; queue` | off/prefer/require;actual binary64/subnormal probes;owned process/shared buffers;other operators CPU,not all-GPU editing. |
 | F58 | Float32 global/interval adjustments | Ordered grading after all tracks including subtitles;existing float effects,LUT/exposure,six keyframe modes,selected root once. | `settings.adjustments; preview; render; queue` | Explicit linear working/effect signals;CPU execution;locked/portable LUTs;original interval clocks,not complete HDR. |
+| F59 | Native PTS tracking and overlay tracks | Saved source observations → actual selected-frame anchors;shared crop/TRS,ROI scale/relative rotation,alpha,windows and nested audio. | `media track-bind; preview; render; queue; package` | Explicit Float32,no display-key bake,budget/cycle gates;template drift/occlusion require review;native interchange baking pending. |
 
 ## Supported service modules and dependencies
 
@@ -690,7 +705,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.23/final-r1/installed/`, CLI 0.1.25. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.24/final-r2/installed/`, CLI 0.1.26. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1068,6 +1083,14 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R183 | 2026-10-26 Float32 adjustments | Actual editable package import,LUT bytes/font license retained;3 RGBA64 frames and12 Float32 range frames/48000 stereo PCM samples exactly match | [Evidence](docs/validation/evidence/float-adjustments-20261026-r1/package-r1/verification.json) |
 | R184 | 2026-10-26 Float32 adjustments | r26 isolated kit extraction/registration/planning/validation;real discovery retained;one Skill/17 modules/72 files | [Evidence](docs/validation/evidence/float-adjustments-20261026-r1/kit-r2/verification.json) |
 | R185 | 2026-10-26 Float32 adjustments | Three languages58functions/20services/17modules/75declarations;178 historical rows/38original closure conditions retained;final delivery bytes/links checked | [Evidence](docs/validation/evidence/float-adjustments-20261026-r1/final-delivery-r1/verification.json) |
+| R186 | 2026-10-26 Native PTS tracking | Offline ZIP installed,219 product files/packaged schema match;CLI0.1.26/local.24-final-r2;one Skill/17 modules/73 files | [Evidence](docs/validation/evidence/float-tracking-20261026-r1/installation-final-r2/verification.json) |
+| R187 | 2026-10-26 Native PTS tracking | 18 native tracking checks:actual pixels,VFR/nonzero origin/large PTS,crop/TRS,retime/reverse/freeze/windows/nesting,alpha,chains/cycles | [Evidence](docs/validation/evidence/float-tracking-20261026-r1/tracking-installed-r2/verification.json) |
+| R188 | 2026-10-26 Native PTS tracking | Separate final installed groups,zero skips:tracking=18, bindings=71, float=98, effects=219, adjustments=14, audio=65, render=46, legacy=192, text=98, gpu=23;not combined with history | [Evidence](docs/validation/evidence/float-tracking-20261026-r1/effects-installed-r2/verification.json) |
+| R189 | 2026-10-26 Native PTS tracking | Registered Skill36frames/3s,actual template analysis36observations,reversed overlay;independent anchor error≤0.018046262px,marker centroid≤0.42361414px;144000 complete stereo PCM samples error=0;resume/queue equal | [Evidence](docs/validation/evidence/float-tracking-20261026-r1/case-r5/verification.json) |
+| R190 | 2026-10-26 Native PTS tracking | Actual package reimport preserves observation/reference hash and font license;3 RGBA64 frames plus12 Float32 range frames/48000 full stereo samples equal | [Evidence](docs/validation/evidence/float-tracking-20261026-r1/package-r1/verification.json) |
+| R191 | 2026-10-26 Native PTS tracking | r27 isolated kit unpack/register/plan/validate;one Skill/17 modules/73 files;actual discovery preserved | [Evidence](docs/validation/evidence/float-tracking-20261026-r1/kit-r2/verification.json) |
+| R192 | 2026-10-26 Native PTS tracking | Three languages59functions/20services/17modules/75actual declarations;185historical rows/38original closure conditions retained;final delivery byte/link checks | [Evidence](docs/validation/evidence/float-tracking-20261026-r1/final-delivery-r2/verification.json) |
+| R193 | 2026-10-26 Native PTS tracking | Failed attempts retained:overlay schema gap fixed;fixture interpolation/image-origin declarations and native-PTS oracle corrected;early71tests had no assertion failure but lost source freeze during edits,excluded from final acceptance | [Evidence](docs/validation/evidence/float-tracking-20261026-r1/development-attempts-r1/verification.json) |
 
 ## Current limits and development direction
 

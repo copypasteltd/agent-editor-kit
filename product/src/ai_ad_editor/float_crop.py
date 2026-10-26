@@ -170,6 +170,38 @@ def resolve_crop(plan, source_size, author_tick):
         'author_tick':tick, 'rounding':rounding, 'nested':record['nested'], 'dynamic_size':dynamic_size}
 
 
+def projection_geometry(plan, source_size, output_size, author_tick, *, scale=1,
+                        rotation=0, position=(.5, .5), anchor=(.5, .5)):
+    """The sampler's exact pure inverse, also used to project tracking anchors."""
+    if not isinstance(source_size, (list, tuple)) or len(source_size) != 2:
+        raise error('ARGUMENT', '源尺寸须为宽高二元组')
+    if not isinstance(output_size, (list, tuple)) or len(output_size) != 2:
+        raise error('ARGUMENT', '输出尺寸须为宽高二元组')
+    sw, sh = (integer(v, 1, MAX_DIMENSION) for v in source_size)
+    ow, oh = (integer(v, 1, MAX_DIMENSION) for v in output_size)
+    scale, rotation = number(scale, low=0), number(rotation)
+    if scale == 0 or not isinstance(position, (list, tuple)) or len(position) != 2 or not isinstance(anchor, (list, tuple)) or len(anchor) != 2:
+        raise error('ARGUMENT', 'TRS须有正缩放和二维position/anchor')
+    px, py = (number(v) for v in position)
+    ax, ay = (number(v) for v in anchor)
+    resolved = resolve_crop(plan, (sw, sh), author_tick)
+    x, y, width, height = resolved['window']
+    fx, fy = ow/width, oh/height
+    if resolved['fit'] != 'stretch':
+        fx = fy = (max if resolved['fit'] == 'fill' else min)(fx, fy)
+    angle = math.radians(rotation)
+    c, s = math.cos(angle), math.sin(angle)
+    try:
+        matrix = np.asarray([[c/(scale*fx), s/(scale*fx), 0], [-s/(scale*fy), c/(scale*fy), 0]], np.float64)
+        matrix[0, 2] = x+ax*width-.5+matrix[0, 0]*(.5-px*ow)+matrix[0, 1]*(.5-py*oh)
+        matrix[1, 2] = y+ay*height-.5+matrix[1, 0]*(.5-px*ow)+matrix[1, 1]*(.5-py*oh)
+    except (OverflowError, ZeroDivisionError) as caught:
+        raise error('ARGUMENT', '裁剪TRS超出有限逆映射范围') from caught
+    if not np.isfinite(matrix).all() or np.max(np.abs(matrix)) > 1e9:
+        raise error('ARGUMENT', '裁剪逆矩阵超出有限系数预算')
+    return resolved, matrix
+
+
 def project_crop(source, plan, author_tick, output_size, *, scale=1, rotation=0, position=(.5, .5),
                  anchor=(.5, .5), interpolation='bilinear', tile_pixels=65536,
                  max_working_bytes=MAX_WORKING_BYTES, cancel=None):
@@ -198,26 +230,9 @@ def project_crop(source, plan, author_tick, output_size, *, scale=1, rotation=0,
     max_working_bytes = integer(max_working_bytes, 1, MAX_WORKING_BYTES)
     if interpolation not in ('nearest', 'bilinear'):
         raise error('ARGUMENT', '裁剪重采样只支持显式nearest或bilinear')
-    scale, rotation = number(scale, low=0), number(rotation)
-    if scale == 0 or not isinstance(position, (list, tuple)) or len(position) != 2 or not isinstance(anchor, (list, tuple)) or len(anchor) != 2:
-        raise error('ARGUMENT', 'TRS须有正缩放和二维position/anchor')
-    px, py = (number(v) for v in position)
-    ax, ay = (number(v) for v in anchor)
-    resolved = resolve_crop(plan, (sw, sh), author_tick)
+    resolved, matrix = projection_geometry(plan, (sw, sh), (ow, oh), author_tick,
+        scale=scale, rotation=rotation, position=position, anchor=anchor)
     x, y, width, height = resolved['window']
-    fx, fy = ow/width, oh/height
-    if resolved['fit'] != 'stretch':
-        fx = fy = (max if resolved['fit'] == 'fill' else min)(fx, fy)
-    angle = math.radians(rotation)
-    c, s = math.cos(angle), math.sin(angle)
-    try:
-        matrix = np.asarray([[c/(scale*fx), s/(scale*fx), 0], [-s/(scale*fy), c/(scale*fy), 0]], np.float64)
-        matrix[0, 2] = x+ax*width-.5+matrix[0, 0]*(.5-px*ow)+matrix[0, 1]*(.5-py*oh)
-        matrix[1, 2] = y+ay*height-.5+matrix[1, 0]*(.5-px*ow)+matrix[1, 1]*(.5-py*oh)
-    except (OverflowError, ZeroDivisionError) as caught:
-        raise error('ARGUMENT', '裁剪TRS超出有限逆映射范围') from caught
-    if not np.isfinite(matrix).all() or np.max(np.abs(matrix)) > 1e9:
-        raise error('ARGUMENT', '裁剪逆矩阵超出有限系数预算')
     pixels, tile = ow*oh, min(ow*oh, tile_pixels)
     estimated = int(source.nbytes+pixels*16+max(tile, min(tile_pixels, sw*sh))*416+4096)
     if estimated > max_working_bytes:

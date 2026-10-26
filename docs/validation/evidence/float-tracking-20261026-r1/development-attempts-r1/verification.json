@@ -1,0 +1,71 @@
+{
+  "status": "passed",
+  "scope": "Audit of retained failed attempts, not a claim these attempts passed.",
+  "checked_at_utc": "2026-10-26T03:02:09.076593+00:00",
+  "attempts": [
+    {
+      "attempt": "case-r1",
+      "status": "failed",
+      "reason": "Product integration gap: overlay track absent from packaged schema and semantic validator; fixture also lacked interpolation and reused an asset ID as clip ID. Schema/validator gates and fixture were corrected.",
+      "source": "docs/validation/evidence/float-tracking-20261026-r1/case-r1/verification.json",
+      "sha256": "926e3a9892d3c76426f391729206c95638d68e4f51045710a82f66291c28cdec",
+      "failure_excerpt": "AssertionError(('track-bind', 'quences.1.tracks.0.clips.0.keyframes.0.keyframes.2\\\\\", \\\\\"retryable\\\\\": false}, {\\\\\"code\\\\\": \\\\\"SCHEMA_VALIDATION_FAILED\\\\\", \\\\\"message\\\\\": \\\\\"\\'interpolation\\' is a required property\\\\\", \\\\\"path\\\\\": \\\\\"sequences.1.tracks.0.clips.0.keyframes.1.keyframes.0\\\\\", \\\\\"retryable\\\\\": false}, {\\\\\"code\\\\\": \\\\\"SCHEMA_VALIDATION_FAILED\\\\\", \\\\\"message\\\\\": \\\\\"\\'interpolation\\' is a required property\\\\\", \\\\\"path\\\\\": \\\\\"sequences.1.tracks.0.clips.0.keyframes.1.keyframes.1\\\\\", \\\\\"retryable\\\\\": false}, {\\\\\"code\\\\\": \\\\\"SCHEMA_VALIDATION_FAILED\\\\\", \\\\\"message\\\\\": \\\\\"\\'overlay\\' is not one of [\\'video\\', \\'audio\\', \\'subtitle\\', \\'data\\']\\\\\", \\\\\"path\\\\\": \\\\\"sequences.1.tracks.2.kind\\\\\", \\\\\"retryable\\\\\": false}, {\\\\\"code\\\\\": \\\\\"TRACK_KIND_INVALID\\\\\", \\\\\"message\\\\\": \\\\\"轨道 kind 无效\\\\\", \\\\\"path\\\\\": \\\\\"sequences[0].tracks[2].kind\\\\\", \\\\\"retryable\\\\\": false}, {\\\\\"code\\\\\": \\\\\"INTERPOLATION_INVALID\\\\\", \\\\\"message\\\\\": \\\\\"crop 关键帧插值类型无效\\\\\", \\\\\"path\\\\\": \\\\\"sequences[1].tracks[0].clips[0].crop.keyframes[0].keyframes[0].interpolation\\\\\", \\\\\"retryable\\\\\": false}, {\\\\\"code\\\\\": \\\\\"INTERPOLATION_INVALID\\\\\", \\\\\"message\\\\\": \\\\\"crop 关键帧插值类型无效\\\\\", \\\\\"path\\\\\": \\\\\"sequences[1].tracks[0].clips[0].crop.keyframes[0].keyframes[1].interpolation\\\\\", \\\\\"retryable\\\\\": false}, {\\\\\"code\\\\\": \\\\\"INTERPOLATION_INVALID\\\\\", \\\\\"message\\\\\": \\\\\"crop 关键帧插值类型无效\\\\\", \\\\\"path\\\\\": \\\\\"sequences[1].tracks[0].clips[0].crop.keyframes[0].keyframes[2].interpolation\\\\\", \\\\\"retryable\\\\\": false}, {\\\\\"code\\\\\": \\\\\"INTERPOLATION_INVALID\\\\\", \\\\\"message\\\\\": \\\\\"关键帧插值类型无效\\\\\", \\\\\"path\\\\\": \\\\\"sequences[1].tracks[0].clips[0].keyframes\\\\\", \\\\\"retryable\\\\\": false}, {\\\\\"code\\\\\": \\\\\"INTERPOLATION_INVALID\\\\\", \\\\\"message\\\\\": \\\\\"关键帧插值类型无效\\\\\", \\\\\"path\\\\\": \\\\\"sequences[1].tracks[0].clips[0].keyframes\\\\\", \\\\\"retryable\\\\\": false}, {\\\\\"code\\\\\": \\\\\"INTERPOLATION_INVALID\\\\\", \\\\\"message\\\\\": \\\\\"关键帧插值类型无效\\\\\", \\\\\"path\\\\\": \\\\\"sequences[1].tracks[0].clips[0].keyframes\\\\\", \\\\\"retryable\\\\\": false}, {\\\\\"code\\\\\": \\\\\"INTERPOLATION_INVALID\\\\\", \\\\\"message\\\\\": \\\\\"关键帧插值类型无效\\\\\", \\\\\"path\\\\\": \\\\\"sequences[1].tracks[0].clips[0].keyframes\\\\\", \\\\\"retryable\\\\\": false}, {\\\\\"code\\\\\": \\\\\"INTERPOLATION_INVALID\\\\\", \\\\\"message\\\\\": \\\\\"关键帧插值类型无效\\\\\", \\\\\"path\\\\\": \\\\\"sequences[1].tracks[0].clips[0].keyframes\\\\\", \\\\\"retryable\\\\\": false}, {\\\\\"code\\\\\": \\\\\"TRACK_KIND_INVALID\\\\\", \\\\\"message\\\\\": \\\\\"轨道 kind 无效\\\\\", \\\\\"path\\\\\": \\\\\"sequences[1].tracks[2].kind\\\\\", \\\\\"retryable\\\\\": false}, {\\\\\"code\\\\\": \\\\\"ID_DUPLICATE\\\\\", \\\\\"message\\\\\": \\\\\"重复 ID: marker\\\\\", \\\\\"path\\\\\": \\\\\"sequences[1].tracks[2].clips[0].id\\\\\", \\\\\"retryable\\\\\": false}], \\\\\"warnings\\\\\": [], \\\\\"rights\\\\\": {\\\\\"ok\\\\\": true, \\\\\"target\\\\\": \\\\\"commercial_ad\\\\\", \\\\\"checked\\\\\": 4, \\\\\"required_records\\\\\": 4, \\\\\"failures\\\\\": [], \\\\\"warnings\\\\\": [], \\\\\"disposition_decisions\\\\\": [], \\\\\"effective_disposition_decisions\\\\\": []}, \\\\\"schema_engine\\\\\": \\\\\"jsonschema\\\\\", \\\\\"asset_count\\\\\": 4, \\\\\"sequence_count\\\\\": 2}\"}],\"provenance\":{\"cli_version\":\"0.1.26\",\"schema_version\":\"0.1.0\",\"engine_version\":\"ffmpeg-local\",\"started_at\":\"2026-10-26T02:27:19.542939Z\",\"finished_at\":\"2026-10-26T02:27:19.542947Z\",\"network\":\"disabled\"}}\\r\\n', ''))",
+      "tests": null,
+      "assertion_failures": null,
+      "errors": null,
+      "excluded_from_final_acceptance": true
+    },
+    {
+      "attempt": "case-r2",
+      "status": "failed",
+      "reason": "Fixture still omitted interpolation on leading-decimal scale values. Generator now declares interpolation for every authored key.",
+      "source": "docs/validation/evidence/float-tracking-20261026-r1/case-r2/verification.json",
+      "sha256": "546779b445ca9f154fa25ef072efbd7c066796e9dce74e4b90eebad88c5f6b53",
+      "failure_excerpt": "AssertionError(('track-bind', '{\"ok\":false,\"command\":\"media.track-bind\",\"request_id\":\"req_20261026023554_5e90fbd2\",\"operation_id\":null,\"status\":\"failed\",\"data\":{},\"artifacts\":[],\"warnings\":[],\"errors\":[{\"code\":\"TRACK_BIND_APPLY_INVALID\",\"message\":\"对象跟踪绑定后项目校验失败\",\"path\":null,\"retryable\":false,\"cause\":\"{\\\\\"ok\\\\\": false, \\\\\"errors\\\\\": [{\\\\\"code\\\\\": \\\\\"SCHEMA_VALIDATION_FAILED\\\\\", \\\\\"message\\\\\": \\\\\"\\'interpolation\\' is a required property\\\\\", \\\\\"path\\\\\": \\\\\"sequences.1.tracks.0.clips.0.keyframes.0.keyframes.0\\\\\", \\\\\"retryable\\\\\": false}, {\\\\\"code\\\\\": \\\\\"SCHEMA_VALIDATION_FAILED\\\\\", \\\\\"message\\\\\": \\\\\"\\'interpolation\\' is a required property\\\\\", \\\\\"path\\\\\": \\\\\"sequences.1.tracks.0.clips.0.keyframes.0.keyframes.2\\\\\", \\\\\"retryable\\\\\": false}, {\\\\\"code\\\\\": \\\\\"INTERPOLATION_INVALID\\\\\", \\\\\"message\\\\\": \\\\\"关键帧插值类型无效\\\\\", \\\\\"path\\\\\": \\\\\"sequences[1].tracks[0].clips[0].keyframes\\\\\", \\\\\"retryable\\\\\": false}, {\\\\\"code\\\\\": \\\\\"INTERPOLATION_INVALID\\\\\", \\\\\"message\\\\\": \\\\\"关键帧插值类型无效\\\\\", \\\\\"path\\\\\": \\\\\"sequences[1].tracks[0].clips[0].keyframes\\\\\", \\\\\"retryable\\\\\": false}], \\\\\"warnings\\\\\": [], \\\\\"rights\\\\\": {\\\\\"ok\\\\\": true, \\\\\"target\\\\\": \\\\\"commercial_ad\\\\\", \\\\\"checked\\\\\": 4, \\\\\"required_records\\\\\": 4, \\\\\"failures\\\\\": [], \\\\\"warnings\\\\\": [], \\\\\"disposition_decisions\\\\\": [], \\\\\"effective_disposition_decisions\\\\\": []}, \\\\\"schema_engine\\\\\": \\\\\"jsonschema\\\\\", \\\\\"asset_count\\\\\": 4, \\\\\"sequence_count\\\\\": 2}\"}],\"provenance\":{\"cli_version\":\"0.1.26\",\"schema_version\":\"0.1.0\",\"engine_version\":\"ffmpeg-local\",\"started_at\":\"2026-10-26T02:35:54.370732Z\",\"finished_at\":\"2026-10-26T02:35:54.370739Z\",\"network\":\"disabled\"}}\\r\\n', ''))",
+      "tests": null,
+      "assertion_failures": null,
+      "errors": null,
+      "excluded_from_final_acceptance": true
+    },
+    {
+      "attempt": "case-r3",
+      "status": "failed",
+      "reason": "Fixture PNG had no container origin; existing native source contract correctly required explicit demux_origin. Generator now declares zero for the self-authored still.",
+      "source": "docs/validation/evidence/float-tracking-20261026-r1/case-r3/verification.json",
+      "sha256": "21de0ccfc2f210c068b06e913733f254b15a71a97375dfd325fe7b4b3c3a1231",
+      "failure_excerpt": "AssertionError(('preview-0', '{\"ok\":false,\"command\":\"preview.frame\",\"request_id\":\"req_20261026023725_f7b9a8f8\",\"operation_id\":null,\"status\":\"failed\",\"data\":{},\"artifacts\":[],\"warnings\":[],\"errors\":[{\"code\":\"FLOAT_NATIVE_SOURCE_CLOCK\",\"message\":\"容器起点未知，调用者须显式指定\",\"path\":null,\"retryable\":false}],\"provenance\":{\"cli_version\":\"0.1.26\",\"schema_version\":\"0.1.0\",\"engine_version\":\"ffmpeg-local\",\"started_at\":\"2026-10-26T02:37:25.088697Z\",\"finished_at\":\"2026-10-26T02:37:25.088705Z\",\"network\":\"disabled\"}}\\r\\n', ''))",
+      "tests": null,
+      "assertion_failures": null,
+      "errors": null,
+      "excluded_from_final_acceptance": true
+    },
+    {
+      "attempt": "case-r4",
+      "status": "failed",
+      "reason": "Independent oracle incorrectly assumed exact 1/12-second CFR boundaries for Matroska millisecond PTS. Final oracle independently reads actual PTS and uses half-open rational selection. Pixel centroid uses red-excess weights rather than a thresholded support centroid.",
+      "source": "docs/validation/evidence/float-tracking-20261026-r1/case-r4/verification.json",
+      "sha256": "82892b94f2e6619a4686c4bd4e34c480df64e364714afa25f26a5f24f4cc3f42",
+      "failure_excerpt": "AssertionError()",
+      "tests": null,
+      "assertion_failures": null,
+      "errors": null,
+      "excluded_from_final_acceptance": true
+    },
+    {
+      "attempt": "source-bindings-r1",
+      "status": "failed",
+      "reason": "All71 tests had zero assertion failures/errors/skips, but product version/capability edits happened during the run. Frozen-byte gate failed. This run is excluded; final installed frozen groups are separate.",
+      "source": "docs/validation/evidence/float-tracking-20261026-r1/source-bindings-r1/verification.json",
+      "sha256": "0cede9ca517cac21d0480da62d1cf2f800510887e7a9943503fc049da4630f30",
+      "failure_excerpt": null,
+      "tests": 71,
+      "assertion_failures": 0,
+      "errors": 0,
+      "excluded_from_final_acceptance": true
+    }
+  ],
+  "final_case": "case-r5",
+  "final_installation": "installation-final-r2",
+  "failed_evidence_rewritten": false,
+  "goal_closed": false
+}

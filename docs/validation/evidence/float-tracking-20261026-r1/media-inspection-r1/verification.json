@@ -1,0 +1,19 @@
+{
+  "status": "extracted",
+  "checked_at_utc": "2026-10-26T03:05:55.329995+00:00",
+  "actual_GIF_frames": [
+    0,
+    12,
+    23
+  ],
+  "source_frame": 0,
+  "continuous_playback": false,
+  "human_listening": false,
+  "source": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-tracking-20261026-r5\\native-tracking.gif",
+  "source_sha256": "547240fdbd5c6eb11c323203d7e0f39ef5b28a04dabd59e7a0a52751d1ce8948",
+  "contact_sheet": "docs/validation/evidence/float-tracking-20261026-r1/media-inspection-r1/contact-sheet.png",
+  "sha256": "bbb41d3945d72047bcfa12d4c0a96dec7aa4e8ed23ffd1d02e35c9484f2c37dc",
+  "late_seek_empty_output_observed": true,
+  "late_seek_note": "Original case-r5 display-still exit0 had no frame after a 2.95s seek on the3s file. It is not counted as a successful still. The reproduction now seeks1.5s and checks file existence plus image decoding. Original evidence is retained.",
+  "goal_closed": false
+}

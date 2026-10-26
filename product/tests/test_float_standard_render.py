@@ -144,6 +144,19 @@ class FloatStandardRenderTests(unittest.TestCase):
         self.assertTrue(transport['owned_threads_closed'])
         self.assert_clean()
 
+    def test_overlay_track_is_validated_and_encoded_by_the_native_pipeline(self):
+        self.visual();self.s['tracks'][0]['kind']='overlay'
+        self.assertTrue(validate_project(self.root,self.p)['ok'])
+        result=self.execute();actual=self.decode_y(result['path'],32,16)
+        self.assertEqual(actual.shape,(1,3,16,32))
+        self.assertTrue(np.all(actual[0,0]>100));self.assert_clean()
+
+    def test_overlay_track_cannot_be_silently_omitted_by_the_default_pipeline(self):
+        self.visual();self.s['tracks'][0]['kind']='overlay';self.p['settings'].pop('pixel_pipeline')
+        report=validate_project(self.root,self.p);self.assertFalse(report['ok'])
+        self.assertTrue(any(row['code']=='TRACK_OVERLAY_PIPELINE_REQUIRED' for row in report['errors']))
+        self.assertTrue(any(row['code']=='SCHEMA_VALIDATION_FAILED' for row in report['errors']))
+
     def test_webm_all_alpha_codes_and_near_rounding_boundaries_survive_separate_plane(self):
         codes = np.arange(256, dtype=np.float32) / 255
         rgba = np.ones((16, 256, 4), np.float32); rgba[:, :, :3] = [.125, .375, .875]

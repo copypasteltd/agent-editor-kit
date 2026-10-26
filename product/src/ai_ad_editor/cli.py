@@ -2924,7 +2924,12 @@ def command_media_track_bind(args: argparse.Namespace) -> dict[str, Any]:
         if tracking['range'].get('end_seconds') is None:
             tracking['range']['end_seconds'] = float(asset_map(project)[asset_id]['probe']['duration_seconds'])
         binding = make_binding(project,sequence,source_track,source_clip,target_track,target_clip,tracking,offset_x=float(args.offset_x),offset_y=float(args.offset_y),scale_mode=args.scale_mode,scale_multiplier=float(args.scale_multiplier),rotation_mode=args.rotation_mode)
-        geometry = compile_binding(project,sequence,target_track,{**target_clip,'tracking_binding':binding})
+        from .bindings import native_clock_project
+        if native_clock_project(project):
+            from .float_tracking import binding_plan
+            geometry = binding_plan(project,sequence,target_track,{**target_clip,'tracking_binding':binding})
+        else:
+            geometry = compile_binding(project,sequence,target_track,{**target_clip,'tracking_binding':binding})
         model_warnings = [w for w in plan['warnings'] if w != 'tracking_clock_mapped_to_target_clip_duration']
         plan.update({'binding_version':'0.2.0','tracking_binding':binding,**geometry})
         plan['warnings'] = model_warnings+plan['warnings']

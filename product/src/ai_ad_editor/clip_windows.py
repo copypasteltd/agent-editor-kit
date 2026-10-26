@@ -35,7 +35,7 @@ def validate_track_transitions(track):
         fail('输出窗口轨道含旧式跨片段转场；请先移除或裁切完整嵌套容器',code='CLIP_WINDOW_TRANSITION_CONFLICT')
 
 
-def validate_window(clip):
+def validate_window(clip, *, allow_tracking=False):
     value = clip.get('presentation_window')
     if value is None and 'presentation_window' not in clip:
         return int(clip['duration_tick'])
@@ -49,7 +49,7 @@ def validate_window(clip):
     visible = integer(clip['duration_tick'], 'duration_tick', 1)
     if offset + visible > duration:
         fail('可见窗口不能越过完整作者时长')
-    if clip.get('tracking_binding'):
+    if clip.get('tracking_binding') and not allow_tracking:
         fail('跟踪绑定尚未接受输出窗口裁切；请先解除绑定', code='CLIP_WINDOW_BINDING_UNSUPPORTED')
     return duration
 

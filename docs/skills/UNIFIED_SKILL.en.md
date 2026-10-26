@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.25 / alpha.4-local.23 / r26 kit · 1 Skill / 17 modules / 72 files.**
+**CLI0.1.26 / alpha.4-local.24 / r27 kit · 1 Skill / 17 modules / 73 files.**
 
-The explicit linear Float32 path adds 57 xfade patterns plus black/white dips, real source handles, linked audio and spatial group edges. The registered Skill completes a 6s/72-frame case with reverse, preview, cancel/resume, queues and independent PCM checks. CPU execution; default rendering and GPU projection keep their own contracts.
+Installed native-PTS tracking bindings now share the picture clock and actual crop/fit/TRS geometry across reversal, retiming, freeze, nesting and author windows. Overlay sequences retain audio. The registered Skill delivers a 3s/36-frame moving-marker case with independent anchor/pixel checks; resume/queue retain complete frame clocks and PCM, and editable packages preserve original observations.
 
-[Float32 workflow](../product/FLOAT_TRANSITIONS.md) · [GPU projection](../product/OPENCL_PROJECTION.md) · [Install](../product/COMMUNITY_LOCAL_DELIVERY.md) · [75 declarations](../product/float-adjustments-capabilities-cli-0.1.25.json).
+[Native tracking workflow](../product/FLOAT_TRACKING.md)
 
 <!-- /community-current -->
 

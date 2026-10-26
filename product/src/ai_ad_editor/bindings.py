@@ -32,12 +32,12 @@ def _finite(value: Any) -> float:
     return float(value)
 
 
-def find_source(sequence: dict, binding: dict) -> tuple[dict, dict]:
+def find_source(sequence: dict, binding: dict, *, allow_window: bool = False) -> tuple[dict, dict]:
     for track in sequence.get('tracks', []):
         if track.get('id') == binding['source_track_id']:
             for clip in track.get('clips', []):
                 if clip.get('id') == binding['source_clip_id']:
-                    if clip.get('presentation_window') is not None:
+                    if clip.get('presentation_window') is not None and not allow_window:
                         raise invalid('跟踪绑定源暂不支持输出窗口时钟；请绑定完整作者片段')
                     if track.get('kind') not in {'video', 'overlay'} or clip.get('sequence_id') or clip.get('asset_id') != binding['asset_id']:
                         raise invalid('绑定源必须是匹配 asset_id 的直接视频片段')
@@ -45,7 +45,14 @@ def find_source(sequence: dict, binding: dict) -> tuple[dict, dict]:
     raise invalid('找不到绑定引用的源轨道/片段')
 
 
-def validate_binding(project: dict, sequence: dict, track: dict, clip: dict) -> None:
+def native_clock_project(project: dict) -> bool:
+    settings=project.get('settings',{})
+    value=settings.get('pixel_pipeline') if isinstance(settings,dict) else None
+    return isinstance(value,dict) and value.get('engine') == 'float32-native-v1'
+
+
+def validate_binding(project: dict, sequence: dict, track: dict, clip: dict, *, native_clock: bool | None = None) -> None:
+    native_clock = native_clock_project(project) if native_clock is None else native_clock
     b = clip.get('tracking_binding')
     if b is None:
         return
@@ -56,7 +63,7 @@ def validate_binding(project: dict, sequence: dict, track: dict, clip: dict) -> 
         raise invalid('绑定目标必须是直接视觉片段')
     if not all(isinstance(b[k], str) and b[k] for k in ('source_track_id','source_clip_id','asset_id')) or b['source_clip_id'] == clip.get('id'):
         raise invalid('绑定源引用无效或源与目标相同')
-    _, source = find_source(sequence, b)
+    _, source = find_source(sequence, b, allow_window=native_clock)
     assets = {a.get('id'):a for a in project.get('assets', [])}
     asset = assets.get(b['asset_id'], {})
     if asset.get('kind') != 'video' or not isinstance(b['source_sha256'], str) or not re.fullmatch(r'sha256:[0-9a-f]{64}', b['source_sha256']) or b['source_sha256'] != asset.get('sha256'):
@@ -67,9 +74,9 @@ def validate_binding(project: dict, sequence: dict, track: dict, clip: dict) -> 
     stream = next((s for s in asset.get('probe',{}).get('streams',[]) if s.get('codec_type')=='video'),{})
     try:
         rotations = [float(stream.get('tags',{}).get('rotate',0)),*[float(s.get('rotation',0)) for s in stream.get('side_data_list',[])]]
-        if any(r%360 for r in rotations) or stream.get('sample_aspect_ratio','1:1') not in {'1:1','0:1','N/A',None} or abs(float(stream.get('start_time') or 0)) > .001:
+        if any(r%360 for r in rotations) or stream.get('sample_aspect_ratio','1:1') not in {'1:1','0:1','N/A',None} or not native_clock and abs(float(stream.get('start_time') or 0)) > .001:
             raise ValueError('raster/PTS')
-        if stream.get('avg_frame_rate') and stream.get('r_frame_rate') and Fraction(stream['avg_frame_rate']) != Fraction(stream['r_frame_rate']):
+        if not native_clock and stream.get('avg_frame_rate') and stream.get('r_frame_rate') and Fraction(stream['avg_frame_rate']) != Fraction(stream['r_frame_rate']):
             raise ValueError('variable frame rate')
     except (TypeError,ValueError,ZeroDivisionError):
         raise invalid('绑定当前需要零旋转/起始 PTS、方形像素和一致的名义/平均帧率')
@@ -367,6 +374,8 @@ def validate_project_bindings(project: dict, root: Path | None = None) -> list[d
 def bake_interchange_bindings(project: dict) -> tuple[dict,list[str]]:
     bound = [c['id'] for s in project.get('sequences',[]) for t in s.get('tracks',[]) for c in t.get('clips',[]) if c.get('tracking_binding')]
     if not bound: return project,[]
+    if native_clock_project(project):
+        raise AppError('TRACK_BIND_NATIVE_BAKE_REQUIRED', '原生PTS绑定须保留为可编辑工程包；当前中间格式尚未按原生帧时钟烘焙', exit_code=2)
     result = compile_project_bindings(project)
     for sequence in result['sequences']:
         for track in sequence['tracks']:

@@ -15,6 +15,9 @@ Use `preview frame` or `preview range` to inspect actual results before renderin
 For looks and client choices, read [looks](../../looks.md) and [actual visual selection](../../client-look-selection.md).
 
 For reusable paths and saved keyframe animation, read [motion packs](../../motion-packs.md).
+For a marker or label following actual source frames in the native Float32
+renderer, read [native PTS tracking](../../float-tracking.md). Keep source
+observations editable; do not replace them with guessed display keys.
 For explicit linear Float32 text, typewriter, word highlights and plain SRT,
 read [float text](../../float-text.md). Retain explicit fonts and original clocks.
 Inspect actual previews and parameters; apply on the visible output clock, preserve

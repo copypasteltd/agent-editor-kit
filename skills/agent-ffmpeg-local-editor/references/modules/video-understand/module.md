@@ -20,3 +20,7 @@ scores and explicit conditions/decisions. Use an applicable index/device calibra
 for empirical acceptance and keep known false accepts/rejections visible. A point
 sample supplies no event duration or general action/identity proof. Review candidates
 before placing an authored range on the timeline.
+
+For original-source ROI observations bound to a marker/label, read
+[native PTS tracking](../../float-tracking.md). Analysis sampling and confidence
+do not establish natural object identity or occlusion quality.

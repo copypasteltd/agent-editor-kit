@@ -1145,6 +1145,7 @@
           "type": "string",
           "enum": [
             "video",
+            "overlay",
             "audio",
             "subtitle",
             "data"
@@ -3275,5 +3276,52 @@
         }
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "settings": {
+            "required": [
+              "pixel_pipeline"
+            ],
+            "properties": {
+              "pixel_pipeline": {
+                "type": "object",
+                "required": [
+                  "engine"
+                ],
+                "properties": {
+                  "engine": {
+                    "const": "float32-native-v1"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "sequences": {
+            "items": {
+              "properties": {
+                "tracks": {
+                  "items": {
+                    "properties": {
+                      "kind": {
+                        "not": {
+                          "const": "overlay"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
 }

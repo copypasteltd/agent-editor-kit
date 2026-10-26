@@ -487,6 +487,12 @@ def validate_project(root: Path, project: dict[str, Any], *, strict_rights: bool
                 validate_generation_metadata(asset['source']['vace_generation'], asset=asset)
             except AppError as exc:
                 error(exc.code, exc.message, f'{path}.source.vace_generation')
+        if isinstance(asset.get('source'), dict) and 'video_generation' in asset['source']:
+            try:
+                from .video_generation import validate_recipe
+                validate_recipe(asset['source']['video_generation'], asset=asset, assets=asset_map(project))
+            except AppError as exc:
+                error(exc.code, exc.message, f'{path}.source.video_generation')
 
     declared_sequence_ids = {str(item.get("id")) for item in project.get("sequences", []) if item.get("id")}
     sequence_ids: set[str] = set()

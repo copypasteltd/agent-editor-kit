@@ -2,7 +2,7 @@
 
 [使用手册](COMMUNITY_MATERIALS.md) · [繁體中文](COMMUNITY_MATERIALS.zh-TW.md) · [English](COMMUNITY_MATERIALS.en.md)
 
-当前本机版本是 **`v0.1.0-alpha.4-local.30` / CLI 0.1.32**，正式安装在 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.30/final-r3/installed/`。这是本地构建和验收记录；公开 GitHub Release 仍是 alpha.3 / CLI 0.1.2，原附件、标签和摘要不覆盖。
+当前本机版本是 **`v0.1.0-alpha.4-local.31` / CLI 0.1.33**，正式安装在 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.31/final-r1/installed/`。这是本地构建和验收记录；公开 GitHub Release 仍是 alpha.3 / CLI 0.1.2，原附件、标签和摘要不覆盖。
 
 The current build is installed locally. Public alpha.3 downloads remain unchanged and do not contain the new voice, translation, material or GPU commands. The updated Skill kit must be paired with this matching local runtime bundle.
 
@@ -14,9 +14,9 @@ The current build is installed locally. Public alpha.3 downloads remain unchange
 
 | 内容 / Item | 路径 / Path | 校验 / Verification |
 |---|---|---|
-| 编译好的基础运行 ZIP / Application bundle | `local/agent-ffmpeg/v0.1.0-alpha.4-local.30/candidate-r3/bundle.zip` | SHA-256 `68afad180fb09a5d87fcf0dd5c029e9e60c787949382662972796b74c6a798bb` |
-| 运行包清单 / Bundle manifest | ZIP 内 / inside ZIP: `manifest.json` | `sha256:fce0dfe256f83dfb0e36c31cb4ba9b8d08136574bab6fa5100594a625b896f11` |
-| 单入口 Skill kit / Single-entry kit | `docs/skills/agent-editor-kit-community-unified-skill-r33.zip` | [独立包摘要 / Package digest](../skills/community-unified-skill-package-0.1.32-r33.json) |
+| 编译好的基础运行 ZIP / Application bundle | `local/agent-ffmpeg/v0.1.0-alpha.4-local.31/candidate-r1/bundle.zip` | SHA-256 `2133ea5756c43858832bb24049028e0e21b3ad27acdcbe249698e293ac202d83` |
+| 运行包清单 / Bundle manifest | ZIP 内 / inside ZIP: `manifest.json` | `sha256:855426d7aa2f4ed1d09ffd8163f4a994a27780c65f29d79e09a799f2663f663a` |
+| 单入口 Skill kit / Single-entry kit | `docs/skills/agent-editor-kit-community-unified-skill-r34.zip` | [独立包摘要 / Package digest](../skills/community-unified-skill-package-0.1.33-r34.json) |
 | 四个模型 ZIP / Four model ZIPs | `local/agent-ffmpeg/community-model-archives-r2/` | 见下表及 / see table and `archives.json` |
 | 可移动模型安装 / Relocated model installation | `local/agent-ffmpeg/community-portable-r1/模型 包/` | 实际从四个 ZIP 安装；路径含中文与空格 / actually installed from all four ZIPs |
 | 当前调用配置 / Runtime configuration | `local/agent-ffmpeg/runtime.json` | 固定应用摘要、原生 Python、启动器摘要 / pinned app, native Python and launcher |
@@ -43,13 +43,13 @@ Requires native Windows x64, existing CPython 3.13 x64 and FFmpeg/ffprobe on PAT
 $aekPython = 'C:/Python313/python.exe'
 $aekSource = 'E:/dev/sandbox/AI广告剪辑'
 $aekHome = 'E:/tools/agent-editor-kit-gpu'
-$aekArchive = Join-Path $aekSource 'local/agent-ffmpeg/v0.1.0-alpha.4-local.30/candidate-r3/bundle.zip'
-$aekExpectedZip = '68afad180fb09a5d87fcf0dd5c029e9e60c787949382662972796b74c6a798bb'
+$aekArchive = Join-Path $aekSource 'local/agent-ffmpeg/v0.1.0-alpha.4-local.31/candidate-r1/bundle.zip'
+$aekExpectedZip = '2133ea5756c43858832bb24049028e0e21b3ad27acdcbe249698e293ac202d83'
 if ((Get-FileHash -LiteralPath $aekArchive -Algorithm SHA256).Hash.ToLowerInvariant() -ne $aekExpectedZip) { throw 'Application archive hash mismatch' }
-Expand-Archive -LiteralPath (Join-Path $aekSource 'docs/skills/agent-editor-kit-community-unified-skill-r33.zip') -DestinationPath $aekHome
+Expand-Archive -LiteralPath (Join-Path $aekSource 'docs/skills/agent-editor-kit-community-unified-skill-r34.zip') -DestinationPath $aekHome
 Expand-Archive -LiteralPath $aekArchive -DestinationPath (Join-Path $aekHome 'bundle')
 Set-Location $aekHome
-& $aekPython -I -B -X utf8 ./bundle/install.py --bundle ./bundle --target ./local/agent-ffmpeg/installed --manifest-sha256 'sha256:fce0dfe256f83dfb0e36c31cb4ba9b8d08136574bab6fa5100594a625b896f11' --timeout-seconds 600
+& $aekPython -I -B -X utf8 ./bundle/install.py --bundle ./bundle --target ./local/agent-ffmpeg/installed --manifest-sha256 'sha256:855426d7aa2f4ed1d09ffd8163f4a994a27780c65f29d79e09a799f2663f663a' --timeout-seconds 600
 if ($LASTEXITCODE) { throw 'Native application installation failed' }
 ```
 
@@ -90,6 +90,10 @@ $avk = Join-Path $aekHome 'skills/agent-ffmpeg-local-editor/scripts/run.ps1'
 注册器只处理本项目拥有的目录联接；同名但无关的注册会保留并报错。已使用当前仓库入口时无需另注册到另一个安装目录。客户端缓存未刷新时重新打开会话，外层继续只指定 **`$agent-ffmpeg-local-editor`**。
 
 The registrar preserves unrelated same-name registrations. Existing users may keep this repository's registration. Refresh the client/session discovery cache when necessary; use one Skill entry.
+
+模型包逐个做完整性校验，每包默认期限为 600 秒；大模型正在读盘或磁盘较慢时，可显式向 `activate_community_runtime.py` 传入 `--verify-timeout-seconds 1200`（范围 1–3600）。达到期限时保存失败记录并保留此前的运行配置，不会跳过摘要校验。
+
+Each model pack has a 600-second verification deadline. During heavy local I/O, pass `--verify-timeout-seconds 1200` to `activate_community_runtime.py` (range 1–3600). Timeout retains a failure receipt and the previous runtime configuration; integrity checks are never skipped.
 
 ## 设备选择与许可 / Device selection and terms
 
@@ -312,4 +316,6 @@ CLI0.1.29/local.27/r30：native magnetic synchronized tracking cuts/reorder; [wo
 
 历史 / Historical：CLI0.1.31/local.29/r32：[实际跟踪可见度](TRACKING_VISIBILITY.md) · [verified local delivery](../releases/CLI_0.1.31_LOCAL.md). 前版本[CLI0.1.30](../releases/CLI_0.1.30_LOCAL.md)保留。
 
-CLI0.1.32/local.30/r33：[原生跟踪烘焙](TRACKING_BAKE.md) · [verified local delivery](../releases/CLI_0.1.32_LOCAL.md)。历史[CLI0.1.31](../releases/CLI_0.1.31_LOCAL.md)保留。
+Historical / 历史：CLI0.1.32/local.30/r33：[原生跟踪烘焙](TRACKING_BAKE.md) · [verified local delivery](../releases/CLI_0.1.32_LOCAL.md)。历史[CLI0.1.31](../releases/CLI_0.1.31_LOCAL.md)保留。
+
+CLI0.1.33/local.31/r34：[GPU生成流程](VIDEO_GENERATION.md) · [版本/摘要](../releases/CLI_0.1.33_LOCAL.md)。VACE大权重与已有原生Torch/Diffusers运行时独立登记，不包含在四个配音/翻译模型包中。

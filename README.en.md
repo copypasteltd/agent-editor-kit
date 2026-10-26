@@ -9,9 +9,32 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
+<!-- video-generation-current -->
+
+**CLI0.1.33 / alpha.4-local.31 / r34 kit · 1 Skill / 17 modules.**
+
+Local GPU generation now accepts text, a first image, a last image or a first/last pair. Explicit prompt, seed/sampling and bounded windows produce silent video assets and ordinary editable timeline clips, reusing the native VACE engine, GPU admission, rights dependencies and transactional recovery.
+
+```powershell
+& $avk media generate --project $avkProject --adapter-id $vaceAdapterId `
+  --asset-id generated-shot-01 --mode first-last-to-video `
+  --first-asset-id $firstAssetId --last-asset-id $lastAssetId `
+  --width 256 --height 144 --frames 17 --fps 12 --image-fit contain `
+  --prompt $reviewedPrompt --inference-steps 18 --window-frames 17 `
+  --window-overlap 4 --apply --track-id track_video_1
+```
+
+[Workflow](docs/product/VIDEO_GENERATION.md) · [C43](docs/product/CASES.md#c43-video-generation) · [Install](docs/releases/CLI_0.1.33_LOCAL.md) · [Evidence](docs/validation/本地GPU视频生成实测_2026-10-26.md)
+
+All four modes have real CUDA outputs, complete 17-frame decoding and project-package roundtrips; each supplied endpoint has an independent decoded hash check. Retained endpoints do not establish generated motion/identity quality. Model/output rights, natural quality, continuous playback and full CapCut equivalence remain unaccepted. Actual movies/GIFs/packages stay local; the image below shows original CC0 conditions only.
+
+![Original CC0 first/last conditions only](docs/assets/video-generation-20261026-r1/conditions.png)
+
+<!-- /video-generation-current -->
+
 <!-- tracking-bake-current -->
 
-**CLI0.1.32 / alpha.4-local.30 / r33 kit · 1 Skill / 17 modules.**
+**Historical / 历史 / 歷史：CLI0.1.32 / alpha.4-local.30 / r33 kit · 1 Skill / 17 modules.**
 
 Native PTS tracking now exports as ordinary hold keys. It samples actual clocks, masks and transition visibility, then compares every Float32 display frame before exporting. Original bindings remain in a separate source sidecar; ordinary packages still retain dynamic bindings.
 
@@ -672,6 +695,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F58 | Float32 global/interval adjustments | Ordered grading after all tracks including subtitles;existing float effects,LUT/exposure,six keyframe modes,selected root once. | `settings.adjustments; preview; render; queue` | Explicit linear working/effect signals;CPU execution;locked/portable LUTs;original interval clocks,not complete HDR. |
 | F59 | Native PTS tracking and overlay tracks | Saved source observations → actual selected-frame anchors;shared crop/TRS,ROI scale/relative rotation,alpha,windows and nested audio. | `media track-bind; preview; render; queue; package` | Explicit Float32,no display-key bake,budget/cycle gates;template drift/occlusion require review;native interchange baking pending. |
 | F60 | Native tracking and baked delivery | Actual alpha/five masks/59 transition footprints; edits and shared retime retain observations; native bake verifies all frames and retains source sidecars. | `media track-bind; timeline compose/edit; convert export --bake-tracking` | Frozen graph/FPS;20,000 frames/256,000 samples;unrepresentable integer steps reject;external players and natural identity/occlusion remain unaccepted. |
+| F61 | Local GPU video generation | Text,image,last/first-last conditions; prompt/sampling,real model windows,editable clips,endpoint proofs,portable recipes and managed recovery. | `media adapter; media generate` | Existing native VACE/CUDA required;silent8bit SDR;known endpoints retained;natural quality,output rights and complete CapCut AI unaccepted. |
 
 ## Supported service modules and dependencies
 
@@ -798,7 +822,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.30/final-r3/installed/`, CLI 0.1.32. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.31/final-r1/installed/`, CLI 0.1.33. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1220,6 +1244,12 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R227 | 2026-10-26 native tracking bake | Each frame-only GPU pass executes90 affine/81 over operations; providers,worker and shared handles close. Prepared transport is distinct from encoded-movie quality acceptance. | [Evidence](docs/validation/evidence/tracking-bake-20261026-r1/case-r5/native-bake-proof.json) |
 | R228 | 2026-10-26 native tracking bake | Fresh r33 kit112 files:one Skill/17 modules/73 Skill files; isolated registration,actual CLI/help/bake dry-run verified,without rendering or source fallback. | [Evidence](docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/verification.json) |
 | R229 | 2026-10-26 native tracking bake | Full trilingual READMEs,60 functions/20 services/75 declarations,workflow,case/GIF,Skill and byte audits updated;223 historical R rows and38 original closure cells preserved. Failed development attempts retained separately. | [Evidence](docs/validation/evidence/tracking-bake-20261026-r1/development-attempts-r4/verification.json) |
+| R230 | 2026-10-26 local GPU generation | CLI0.1.33/local.31:227 product files/schema equal source; installed groups14 generation,83 conversion and192 legacy pass. Source VACE/repair/matting/recovery160 also passes; groups are not combined. | [Evidence](docs/validation/evidence/video-generation-20261026-r1/installation-final-r1/verification.json) |
+| R231 | 2026-10-26 local GPU generation | C43:one real17-frame CUDA window per mode; all68 RGBA frames independently decoded. Input shapes,provider,GPU admission,sampling and cold costs retained. Synthetic protocol workers are excluded from real generation. | [Evidence](docs/validation/evidence/video-generation-20261026-r1/case-r1/verification.json) |
+| R232 | 2026-10-26 local GPU generation | Four supplied endpoint frames independently match decoded hashes. Editable clips,rights and recipes survive packaging; the registered Skill renders original/imported projects with170 matching decoded frames at30FPS. Fragment reuse rebinds image IDs and recipe digests. | [Evidence](docs/validation/evidence/video-generation-20261026-r1/render-roundtrip-r1/verification.json) |
+| R233 | 2026-10-26 local GPU generation | Model/output rights remain unverified/internal and rights.check rejects as expected. Actual MP4/GIF/editable package stay local; public assets contain original CC0 conditions only. | [Evidence](docs/validation/evidence/video-generation-20261026-r1/case-r1/rights-expected-reject.stdout.json) |
+| R234 | 2026-10-26 local GPU generation | Unified Skill adds generation: one entry,17 modules,74 Skill files and114-file r34 kit. Isolated registration uses the installed CLI without source fallback. Pack verification has a configurable deadline; a forced timeout preserves both prior configuration files. | [Evidence](docs/validation/evidence/video-generation-20261026-r1/kit-r2/verification.json) |
+| R235 | 2026-10-26 local GPU generation | Full trilingual READMEs,61 functions/20 services/75 declarations,workflow,cases/model limits and bundle updated;229 historical R rows and38 original closure cells retained. Failed development attempts recorded separately. | [Evidence](docs/validation/evidence/video-generation-20261026-r1/development-attempts-r1/verification.json) |
 
 ## Current limits and development direction
 

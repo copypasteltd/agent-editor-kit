@@ -1,13 +1,13 @@
 ---
 name: agent-ffmpeg-local-editor
-description: "Edit and deliver local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, native PTS tracking bindings, offline visual semantic search, GPU projection/voice/translation, joint subtitle dubbing, licensed music/SFX, captions and quality checks. Also use for ad planning, reference remakes, long-to-short clips, screen demos or supplied campaign data that feeds an edit."
+description: "Edit and generate local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, native tracking, GPU text/image/first-last video generation, semantic search, voice/translation, subtitle dubbing, music/SFX and quality checks. Also use for ads, reference remakes, long-to-short clips and screen demos."
 ---
 
 # agent editor kit / unified local Skill
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.30` / CLI `0.1.32`.
+The current local runtime is `v0.1.0-alpha.4-local.31` / CLI `0.1.33`.
 Native tracking can be exported as ordinary hold keys with `convert export --bake-tracking`
 for `agent-json` or `package`; OTIO/MLT/draft exports bake automatically. The native
 path verifies every Float32 display frame before export and preserves an original
@@ -97,6 +97,10 @@ media. Add other modules when the request needs them. For example:
   explicit LUT signals, then inspect actual previews, encoded pixels and audio.
 - Local AI task: local-models plus the relevant media module; require existing
   registered dependencies and check actual inference artifacts.
+- Text/image/first-last video generation: read [video-generation.md](references/video-generation.md).
+  Use the registered local CUDA model, explicit image fit and a fresh asset ID;
+  inspect generated interior frames separately from retained endpoints, then
+  edit the returned video asset normally. Generation is silent and rights need review.
 - Translate and dub reviewed subtitles: read [subtitle-dubbing.md](references/subtitle-dubbing.md).
   Inspect actual complete WAV durations, retain original/retry speech and source/
   translated/bilingual SRTs, then apply to explicit audio/subtitle tracks. Prefer

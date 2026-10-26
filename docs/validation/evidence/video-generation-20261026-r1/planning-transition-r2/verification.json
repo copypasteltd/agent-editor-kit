@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "controller_pid": 33644,
+  "reason": "Installed14 planning tests cover all modes. Skip further repeated20GB planning reads; real generation checks remain.",
+  "started_at_utc": "2026-10-26T14:11:49.474229+00:00",
+  "model_checks_weakened": false,
+  "other_processes_modified": false,
+  "stopped": [
+    {
+      "ProcessId": 33644,
+      "ParentProcessId": 34560,
+      "CommandLine": "\"C:\\Python313\\python.exe\" -E -B -u -X utf8 scripts/run_video_generation_case_20261026.py --run r1"
+    },
+    {
+      "ProcessId": 4548,
+      "ParentProcessId": 33644,
+      "CommandLine": "C:/Python313/python.exe -I -S -B -u -X utf8 E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\run.py media generate --project \"E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程\" --adapter-id vace_generation --asset-id image-to-video --mode image-to-video --width 256 --height 144 --frames 17 --fps 12 --image-fit reject --prompt \"An amber glass perfume bottle with a black cap stands on a blue tabletop in a quiet studio. Soft side lighting, realistic glass reflections. A slow smooth camera move to the right. The bottle remains upright. No text, no people.\" --negative-prompt \"watermark, text, people, distorted objects, jitter\" --seed 231 --inference-steps 18 --guidance-scale 5 --flow-shift 3 --window-frames 17 --window-overlap 4 --apply --track-id track_video_1 --timeline-start-seconds 1.4166666666666667 --timeout-seconds 1800 --first-asset-id asset_20261026132341_6585ea41 --dry-run"
+    }
+  ],
+  "preserved_case_sha256": "26bef3040358eb7b623f60e9b75c408a9b0aa5b33d7dcc44556977eddadfcd4c",
+  "completed_real_modes": 1,
+  "resume_exit_code": 0,
+  "finished_at_utc": "2026-10-26T15:29:02.715545+00:00"
+}

@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.32 / alpha.4-local.30 / r33 kit · 1 Skill / 17 modules / 73 files.**
+**CLI0.1.33 / alpha.4-local.31 / r34 kit · 1 Skill / 17 modules / 74 files.**
 
-原生 PTS 跟踪现可烘焙为普通 hold 关键帧：保留真实帧时钟、遮罩和转场可见度，对烘焙前后全部 Float32 显示帧逐帧比较，再导出工程。原始绑定另存旁车；普通工程包继续保留动态绑定。
+新增本地 GPU 文生、图生、尾帧与首尾帧视频生成：显式条件、原文提示词、seed/采样和窗口参数，产出无声视频资产，并可直接作为普通可编辑片段入轨。复用现有 VACE 原生内核、GPU 内存准入、权利依赖与事务恢复。
 
-[Tracking bake workflow](../product/TRACKING_BAKE.md)
+[Video generation workflow](../product/VIDEO_GENERATION.md)
 
 <!-- /community-current -->
 

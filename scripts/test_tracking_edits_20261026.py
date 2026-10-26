@@ -12,6 +12,8 @@ import unittest
 ROOT=Path(__file__).resolve().parents[1]
 BASE=ROOT/'docs/validation/evidence/tracking-edits-20261026-r1'
 GROUPS={
+    'generation':['test_video_generation'],
+    'vace':['test_local_vace','test_vace_context','test_outpainting','test_local_inpainting','test_local_matting','test_job_recovery'],
     'interchange-clock':['test_cli.P0CliTests.test_kdenlive_profile_blank_and_metadata_roundtrip'],
     'tracking-bake':['test_tracking_bake','test_tracking_visibility','test_float_transitions','test_tracking_retime','test_tracking_magnetic','test_tracking_source_edits','test_tracking_edits','test_float_tracking'],
     'conversion':['test_draft_adapter','test_tracking_geometry','test_sequence_canvas','test_fragments'],

@@ -1,0 +1,21 @@
+usage: ai-ad-editor timeline transition [-h] [--format {json,text}]
+                                        [--request-id REQUEST_ID]
+                                        [--idempotency-key IDEMPOTENCY_KEY]
+                                        [--dry-run] [--no-network]
+                                        [--progress {none,jsonl}]
+                                        --project PROJECT --input INPUT
+                                        [--sequence-id SEQUENCE_ID]
+                                        [--expected-project-sha256 EXPECTED_PROJECT_SHA256]
+
+options:
+  -h, --help            show this help message and exit
+  --format {json,text}  输出格式
+  --request-id REQUEST_ID
+  --idempotency-key IDEMPOTENCY_KEY
+  --dry-run
+  --no-network
+  --progress {none,jsonl}
+  --project PROJECT
+  --input INPUT
+  --sequence-id SEQUENCE_ID
+  --expected-project-sha256 EXPECTED_PROJECT_SHA256

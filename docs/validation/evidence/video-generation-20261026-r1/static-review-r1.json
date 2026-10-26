@@ -1,0 +1,43 @@
+{
+  "at_utc": "2026-10-26T15:30:41.094062+00:00",
+  "static_image_review": true,
+  "natural_quality_accepted": false,
+  "continuous_playback": false,
+  "human_listening": false,
+  "model_media_published": false,
+  "contact": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\all-modes-actual-contact.png",
+  "contact_sha256": "10c3be890dd677f38dbfe655f29c28964f4ba6edabed1a5bda4792fcfaa23da7",
+  "modes": [
+    "text-to-video",
+    "image-to-video",
+    "last-frame-to-video",
+    "first-last-to-video"
+  ],
+  "frames_viewed_per_mode": [
+    0,
+    8,
+    16
+  ],
+  "total_samples": 12,
+  "explicitly_retained_endpoint_samples": 4,
+  "generated_samples": 8,
+  "observations": {
+    "text-to-video": [
+      "The generated bottle neck/cap reaches beyond the sampled frame top.",
+      "Strong cyan outlines and dark/red upper background are visible."
+    ],
+    "image-to-video": [
+      "Frame0 is the expressly retained condition.",
+      "Generated frames8/16 have bright outlines and background color blocks."
+    ],
+    "last-frame-to-video": [
+      "Frame16 is the expressly retained flat geometric condition.",
+      "Generated samples show shaded bottle edges and broad irregular background bands."
+    ],
+    "first-last-to-video": [
+      "Frames0/16 are the two retained geometric input conditions.",
+      "The generated middle sample shows strong cyan/white shapes and a different shaded bottle/label appearance."
+    ]
+  },
+  "scope": "Static frames only. Endpoint matching and complete RGBA decode are separately numerical. Prompt adherence, identity, motion smoothness, natural footage, temporal continuity and full CapCut equivalence are not accepted by these samples."
+}

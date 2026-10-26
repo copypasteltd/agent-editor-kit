@@ -1712,3 +1712,12 @@ scripts/*tracking_bake*20261026.py text eol=lf
 docs/product/TRACKING_BAKE.md text eol=lf
 docs/releases/CLI_0.1.32_LOCAL.md text eol=lf
 docs/validation/跟踪原生烘焙导出实测_2026-10-26.md text eol=lf
+
+# Preserve native generation receipts and installed capability bytes verbatim.
+docs/validation/evidence/video-generation-20261026-r1/** -text -whitespace
+docs/assets/video-generation-20261026-r1/** -text -whitespace
+docs/product/video-generation-capabilities-cli-0.1.33.json -text -whitespace
+scripts/*video_generation*20261026.py text eol=lf
+docs/product/VIDEO_GENERATION.md text eol=lf
+docs/releases/CLI_0.1.33_LOCAL.md text eol=lf
+docs/validation/本地GPU视频生成实测_2026-10-26.md text eol=lf

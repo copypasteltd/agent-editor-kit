@@ -1,0 +1,32 @@
+{
+  "status": "failed",
+  "error": "AssertionError('Traceback (most recent call last):\\r\\n  File \"E:\\\\dev\\\\sandbox\\\\AI广告剪辑\\\\local\\\\agent-ffmpeg\\\\video-generation-kit-r1\\\\独立工具 包\\\\scripts\\\\activate_community_runtime.py\", line 115, in <module>\\r\\n    main()\\r\\n    ~~~~^^\\r\\n  File \"E:\\\\dev\\\\sandbox\\\\AI广告剪辑\\\\local\\\\agent-ffmpeg\\\\video-generation-kit-r1\\\\独立工具 包\\\\scripts\\\\activate_community_runtime.py\", line 60, in main\\r\\n    result = subprocess.run([*prefix, \\'model-pack\\', \\'verify\\', \\'--id\\', ident, \\'--pack\\', str(pack)],\\r\\n                            capture_output=True, timeout=180, creationflags=subprocess.CREATE_NO_WINDOW)\\r\\n  File \"C:\\\\Python313\\\\Lib\\\\subprocess.py\", line 556, in run\\r\\n    stdout, stderr = process.communicate(input, timeout=timeout)\\r\\n                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\\r\\n  File \"C:\\\\Python313\\\\Lib\\\\subprocess.py\", line 1219, in communicate\\r\\n    stdout, stderr = self._communicate(input, endtime, timeout)\\r\\n                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\\r\\n  File \"C:\\\\Python313\\\\Lib\\\\subprocess.py\", line 1640, in _communicate\\r\\n    raise TimeoutExpired(self.args, orig_timeout)\\r\\nsubprocess.TimeoutExpired: Command \\'[\\'C:\\\\\\\\Python313\\\\\\\\python.exe\\', \\'-I\\', \\'-S\\', \\'-B\\', \\'-u\\', \\'-X\\', \\'utf8\\', \\'E:\\\\\\\\dev\\\\\\\\sandbox\\\\\\\\AI广告剪辑\\\\\\\\local\\\\\\\\agent-ffmpeg\\\\\\\\v0.1.0-alpha.4-local.31\\\\\\\\final-r1\\\\\\\\installed\\\\\\\\run.py\\', \\'model-pack\\', \\'verify\\', \\'--id\\', \\'kokoro-zh-en-cuda13\\', \\'--pack\\', \\'E:\\\\\\\\dev\\\\\\\\sandbox\\\\\\\\AI广告剪辑\\\\\\\\local\\\\\\\\agent-ffmpeg\\\\\\\\community-portable-r1\\\\\\\\模型 包\\\\\\\\kokoro-zh-en-cuda13\\']\\' timed out after 180 seconds\\r\\n')",
+  "calls": [
+    {
+      "id": "configure",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\video-generation-kit-r1\\独立工具 包\\scripts\\activate_community_runtime.py",
+        "--installed",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed",
+        "--packs",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-portable-r1\\模型 包",
+        "--voice-cuda-lib",
+        "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\lib",
+        "--translation-cuda-lib",
+        "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.4\\bin",
+        "--semantic-config",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\semantic-runtime.json"
+      ],
+      "exit_code": 1,
+      "json_cli": false,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "f10fc777b34c0c626896b32d9d56d61f85c9cb29c4f14ba2f4fe0c517525223a"
+    }
+  ]
+}

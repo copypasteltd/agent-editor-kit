@@ -1,0 +1,118 @@
+{
+  "status": "recorded",
+  "at_utc": "2026-10-26T15:31:21.380566+00:00",
+  "final_product_files": 227,
+  "failed_attempts_retained": true,
+  "model_checks_weakened": false,
+  "other_user_processes_modified": false,
+  "prefinal_source_tests": {
+    "tests": 13,
+    "errors": 4,
+    "accepted": false,
+    "reason": "Initial test fixture path errors and missing OS-write error conversion; fixed before the frozen build."
+  },
+  "interim_source_tests": {
+    "tests": 13,
+    "accepted_for_final_build": false,
+    "reason": "Passed before final default-window and installed-fixture changes; not counted as final delivery."
+  },
+  "final_source_tests": {
+    "tests": 14,
+    "errors": 0,
+    "product_files": 227,
+    "frozen_equal": true
+  },
+  "failed_transition": {
+    "processes_modified": 0,
+    "reason": "Windows PowerShell CIM used the local output codepage; UTF-8 decoding failed before any stop."
+  },
+  "successful_transition": {
+    "intentional_stops": 2,
+    "real_modes_before_stop": 1,
+    "stopped_roles": [
+      "completed-mode original controller",
+      "identified next read-only image-mode dry-run"
+    ],
+    "reason": "Four-mode planning was already covered by the installed14 tests. Avoid three redundant checkpoint reads; retain every actual-generation integrity check.",
+    "actual_model_worker_interrupted": false,
+    "original_controller_exit_expected": true
+  },
+  "failed_independent_kit": {
+    "accepted": false,
+    "reason": "Fixed180-second activation verification timeout during concurrent large-model I/O.",
+    "retained_candidate_sha256": "8cfefa7b81ae30986cfe34c7624fd878cfd40d76bbfe4cee71c77273961f5579",
+    "public_release_tags_changed": false
+  },
+  "accepted_independent_kit": {
+    "default_per_pack_deadline_seconds": 600,
+    "explicit_deadline_range": [
+      1,
+      3600
+    ],
+    "full_integrity_checks_retained": true,
+    "forced_one_second_timeout_preserves_both_prior_configs": true
+  },
+  "synthetic_protocol_workers_are_real_model_evidence": false,
+  "evidence": [
+    {
+      "path": "source-r1/verification.json",
+      "sha256": "81f84a4e9211cffbacb001b0ca2af234bbf475678dc69b63523dacb1326c0f87"
+    },
+    {
+      "path": "source-r2/verification.json",
+      "sha256": "df3249e40667330569c4559ec256f79a44692bb1f592b464fded9097819c8d03"
+    },
+    {
+      "path": "source-r3/verification.json",
+      "sha256": "09b0b2d5b33b21d58763ca70e1b3fe92f902ca761ca6a74b2526527981717fb4"
+    },
+    {
+      "path": "planning-transition-r1/verification.json",
+      "sha256": "45e432ff68ebea2a6179f309d7c83c7d728fe708c75a29ee4348523e490deb69"
+    },
+    {
+      "path": "planning-transition-r2/verification.json",
+      "sha256": "a928ed64750398bfa7e09c6efa13c052ecb52f93473ac0740f3eaed95158fd00"
+    },
+    {
+      "path": "case-r1/executed-generator.py",
+      "sha256": "ff15b1ebaeae39350441535e51db6fa31d795a1133d9f1176deb40b1f00e402b"
+    },
+    {
+      "path": "case-r1/executed-resume-generator.py",
+      "sha256": "067ad73abeed3ac0a0c161932386832531f45dc21ef47448b1a72ee3f5957dd4"
+    },
+    {
+      "path": "case-r1/before-resume.json",
+      "sha256": "26bef3040358eb7b623f60e9b75c408a9b0aa5b33d7dcc44556977eddadfcd4c"
+    },
+    {
+      "path": "case-r1/verification.json",
+      "sha256": "f73d31ad5b312647fcdccd5aab1ab47ce1448bca0f70a6c8a746e0f31ecaffcb"
+    },
+    {
+      "path": "kit-r1/failure.json",
+      "sha256": "5172b88c36b77e45cbdec0afe50a354bf238f1f483c3630216d61782ca0706d0"
+    },
+    {
+      "path": "kit-r1/retained-unaccepted-artifacts.json",
+      "sha256": "62a7e1b5c95e9ef47c278269aee15a46415d848573a014914a739f7bb162e2aa"
+    },
+    {
+      "path": "kit-r1/unaccepted-candidate.zip",
+      "sha256": "8cfefa7b81ae30986cfe34c7624fd878cfd40d76bbfe4cee71c77273961f5579"
+    },
+    {
+      "path": "kit-r1/unaccepted-package.json",
+      "sha256": "bb8e78f37c26b3328d97729f697c289535249a684ea852d32f20949a9c1aa3a9"
+    },
+    {
+      "path": "kit-r2/verification.json",
+      "sha256": "38e915d6a084375bf0af1ce19f95f1c03ed48404003dc15a69a373104bfe5e49"
+    },
+    {
+      "path": "kit-r2/expected-verification-timeout.json",
+      "sha256": "a880a011113690949d83a702c697baa5fbdc7b89342339a238c3ac3464eb7e8d"
+    }
+  ]
+}

@@ -841,3 +841,15 @@ C42 实际注册 Skill：36 帧 Float32 核验、工程包重导入后的36个�
 ![Actual comparison](../assets/tracking-bake-20261026-r5/comparison.gif)
 
 [Native MP4](../assets/tracking-bake-20261026-r5/original.mp4) · [Baked MP4](../assets/tracking-bake-20261026-r5/baked.mp4) · [Baked editable package](../assets/tracking-bake-20261026-r5/editable-baked-tracking.aevpkg.zip) · [Original dynamic package](../assets/tracking-visibility-20261026-r2/editable-tracking-visibility.aevpkg.zip) · [Source/rights](../assets/tracking-bake-20261026-r5/SOURCE.txt) · [Hashes](../assets/tracking-bake-20261026-r5/media-manifest.json) · [Workflow](TRACKING_BAKE.md).
+
+<a id="c43-video-generation"></a>
+
+## C43：本地GPU四模式生成 / Four-mode local GPU generation
+
+新增本地 GPU 文生、图生、尾帧与首尾帧视频生成：显式条件、原文提示词、seed/采样和窗口参数，产出无声视频资产，并可直接作为普通可编辑片段入轨。复用现有 VACE 原生内核、GPU 内存准入、权利依赖与事务恢复。
+
+四种模式均有真实 CUDA 输出、全部17帧解码与工程包往返记录；每个端点另做解码哈希核验。保留端点不证明模型运动/身份质量；模型与生成内容权利、自然质量、完整播放及完整剪映等价仍未验收。模型成片/GIF/工程包保留本机；下图仅是自行绘制的 CC0 条件图，不是生成输出。
+
+[Actual responses/paths/hashes](../validation/本地GPU视频生成实测_2026-10-26.md) · [Workflow](VIDEO_GENERATION.md) · [Reproduction script](../../scripts/run_video_generation_case_20261026.py) · [CC0 source](../assets/video-generation-20261026-r1/SOURCE.txt).
+
+![CC0 conditions only](../assets/video-generation-20261026-r1/conditions.png)

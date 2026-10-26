@@ -1,0 +1,11 @@
+{
+  "status": "failed-before-staged-byte-comparison",
+  "at_utc": "2026-10-26T15:46:43.177765+00:00",
+  "exit_code": 2,
+  "reason": "Git whitespace check interprets original CRLF source/publication-scope receipts as trailing whitespace. Preserve those native evidence bytes with narrowly scoped attributes.",
+  "product_tests_rerun": false,
+  "model_checks_skipped": false,
+  "evidence_bytes_rewritten": false,
+  "stdout_sha256": "14db17320ce288bad601e614efcb62967ae370ef7e2b04a391314db44b172cb4",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

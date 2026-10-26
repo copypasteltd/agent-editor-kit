@@ -376,7 +376,7 @@ def _pipeline_workspace(cache: Path, on_failure=None):
 
 
 def matte_native(root: Path, output: Path, *, adapter: dict, plan: dict, timeout: float = 3600,
-                 cancel_file: Path | None = None, progress: Callable | None = None, operation_id: str | None = None) -> dict:
+                 cancel_file: Path | None = None, progress: Callable | None = None, operation_id: str | None = None, workspace=None) -> dict:
     if not math.isfinite(timeout) or not 0 < timeout <= 604800:
         raise argument_error('timeout-seconds 必须为 0..604800（不含 0）', 'timeout')
     if output.exists() or output.suffix.lower() != '.mov':
@@ -389,6 +389,11 @@ def matte_native(root: Path, output: Path, *, adapter: dict, plan: dict, timeout
     from .runtime import configure_local_runtime
     runtime = configure_local_runtime()['root']
     cache = root / 'cache' / ('inpainting' if adapter['engine'] in {'torchscript-lama-local-v1', 'diffusers-wan-vace-local-v1'} else 'matting')
+    if workspace is not None:
+        from .job_workspaces import Workspace
+        if not isinstance(workspace, Workspace) or workspace.root != Path(root).resolve() or workspace.record['kind'] != 'video-generation':
+            raise argument_error('生成管道须使用同工程持有租约的受管工作区', 'workspace')
+        cache = workspace.path / 'pipeline'
     cache.mkdir(parents=True, exist_ok=True)
     output.parent.mkdir(parents=True, exist_ok=True)
     ffmpeg = Path(ffmpeg_path()).resolve()

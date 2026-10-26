@@ -1,0 +1,67 @@
+usage: ai-ad-editor media generate [-h] [--format {json,text}]
+                                   [--request-id REQUEST_ID]
+                                   [--idempotency-key IDEMPOTENCY_KEY]
+                                   [--dry-run] [--no-network]
+                                   [--progress {none,jsonl}] --project PROJECT
+                                   --adapter-id ADAPTER_ID --asset-id ASSET_ID
+                                   [--mode {text-to-video,image-to-video,last-frame-to-video,first-last-to-video}]
+                                   [--first-asset-id FIRST_ASSET_ID]
+                                   [--last-asset-id LAST_ASSET_ID]
+                                   [--width WIDTH] [--height HEIGHT]
+                                   [--frames FRAMES] [--fps FPS]
+                                   [--image-fit {contain,cover,reject,stretch}]
+                                   --prompt PROMPT
+                                   [--negative-prompt NEGATIVE_PROMPT]
+                                   [--seed SEED]
+                                   [--inference-steps INFERENCE_STEPS]
+                                   [--guidance-scale GUIDANCE_SCALE]
+                                   [--conditioning-scale CONDITIONING_SCALE]
+                                   [--flow-shift FLOW_SHIFT]
+                                   [--prompt-max-tokens PROMPT_MAX_TOKENS]
+                                   [--window-frames WINDOW_FRAMES]
+                                   [--window-overlap WINDOW_OVERLAP]
+                                   [--temporal-context {none,previous}]
+                                   [--storage-budget-mib STORAGE_BUDGET_MIB]
+                                   [--sequence-id SEQUENCE_ID]
+                                   [--track-id TRACK_ID] [--apply]
+                                   [--timeline-start-seconds TIMELINE_START_SECONDS]
+                                   [--timeout-seconds TIMEOUT_SECONDS]
+                                   [--cancel-file CANCEL_FILE]
+
+options:
+  -h, --help            show this help message and exit
+  --format {json,text}  输出格式
+  --request-id REQUEST_ID
+  --idempotency-key IDEMPOTENCY_KEY
+  --dry-run
+  --no-network
+  --progress {none,jsonl}
+  --project PROJECT
+  --adapter-id ADAPTER_ID
+  --asset-id ASSET_ID   新生成视频资产ID
+  --mode {text-to-video,image-to-video,last-frame-to-video,first-last-to-video}
+  --first-asset-id FIRST_ASSET_ID
+  --last-asset-id LAST_ASSET_ID
+  --width WIDTH
+  --height HEIGHT
+  --frames FRAMES
+  --fps FPS
+  --image-fit {contain,cover,reject,stretch}
+  --prompt PROMPT
+  --negative-prompt NEGATIVE_PROMPT
+  --seed SEED
+  --inference-steps INFERENCE_STEPS
+  --guidance-scale GUIDANCE_SCALE
+  --conditioning-scale CONDITIONING_SCALE
+  --flow-shift FLOW_SHIFT
+  --prompt-max-tokens PROMPT_MAX_TOKENS
+  --window-frames WINDOW_FRAMES
+  --window-overlap WINDOW_OVERLAP
+  --temporal-context {none,previous}
+  --storage-budget-mib STORAGE_BUDGET_MIB
+  --sequence-id SEQUENCE_ID
+  --track-id TRACK_ID
+  --apply
+  --timeline-start-seconds TIMELINE_START_SECONDS
+  --timeout-seconds TIMEOUT_SECONDS
+  --cancel-file CANCEL_FILE

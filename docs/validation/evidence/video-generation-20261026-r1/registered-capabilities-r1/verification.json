@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "argv": [
+    "powershell.exe",
+    "-NoProfile",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+    "capabilities"
+  ],
+  "exit_code": 0,
+  "registered_skill": true,
+  "source_fallback": false,
+  "capabilities": 75,
+  "video_generation_modes": 4,
+  "stdout_sha256": "1ea7e544974ca566208fca74310bfd6920b2e9d8ecdd221c88da3a682d57fba5",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

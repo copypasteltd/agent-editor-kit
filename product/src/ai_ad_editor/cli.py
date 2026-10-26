@@ -107,6 +107,7 @@ from .local_matting import MATTING_ENGINE, prepare_plan as prepare_matting_plan,
 from .local_segmentation import SEGMENTATION_ENGINE, load_prompts as load_segmentation_prompts
 from .local_inpainting import INPAINT_ENGINE, prepare_mask as prepare_inpaint_mask, normalize_options as inpaint_options
 from .local_vace import VACE_ENGINE, normalize_generation as vace_options, window_plan as vace_windows, buffer_budget as vace_buffer_budget
+from .generation_cli import command as command_media_generate
 from .model_registry import (
     MODEL_REGISTRY_VERSION,
     adapter_for,
@@ -186,6 +187,8 @@ def build_parser() -> argparse.ArgumentParser:
 
     media = subs.add_parser("media", help="素材管理")
     ms = media.add_subparsers(dest="action", required=True)
+    from .generation_cli import add_parser as add_generation_parser
+    add_generation_parser(ms, _leaf_common)
     ingest = _leaf_common(ms.add_parser("ingest", help="导入本地素材"))
     ingest.add_argument("--project", required=True)
     ingest.add_argument("--input", required=True)
@@ -7152,6 +7155,7 @@ COMMANDS: dict[tuple[str, str | None], Callable[[argparse.Namespace], dict[str, 
     ("media", "matting"): command_media_matting,
     ("media", "inpaint"): command_media_matting,
     ("media", "outpaint"): command_media_matting,
+    ("media", "generate"): command_media_generate,
     ('media', 'mask-edit'): command_media_mask_edit,
     ("media", "relink"): command_media_relink,
     ("media", "adapter"): command_media_adapter,

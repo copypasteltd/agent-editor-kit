@@ -2,15 +2,15 @@
 
 <!-- community-current -->
 
-**CLI 0.1.32 / alpha.4-local.30 / r33 kit · 1 Skill / 17 modules.**
+**CLI 0.1.33 / alpha.4-local.31 / r34 kit · 1 Skill / 17 modules.**
 
-Frame-verified native tracking bake with ordinary hold keys and original source sidecars; actual rendered source alpha and five masks, 59 edge/paired transition point/ROI footprints with retained density and peer-cycle preflight, independent spatial-edge retime; shared-author tracking dependency retime with selected layer outputs, deferred scalar alpha/external blend order, private audio instances and retained outside routes; magnetic synchronized native source/follower partition and pre-cut lineage repair; native-PTS physical source slip/real extension/source-handle roll/slide with per-fragment author offsets and rational constant clocks; split/trim/ripple/range editing with retained source fragments, pinned ROI references, hidden removed-source followers and locked-reference atomic guards; dynamic tracking with shared crop/TRS geometry, editable source observations and overlay child audio; ordered global/interval Float32 grading at the selected root with authored clocks and locked portable LUTs; explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+Native CUDA text/image/last/first-last video generation, independently verified retained endpoints, portable recipes, editable clips and managed recovery; frame-verified native tracking bake with ordinary hold keys and original source sidecars; actual rendered source alpha and five masks, 59 edge/paired transition point/ROI footprints with retained density and peer-cycle preflight, independent spatial-edge retime; shared-author tracking dependency retime with selected layer outputs, deferred scalar alpha/external blend order, private audio instances and retained outside routes; magnetic synchronized native source/follower partition and pre-cut lineage repair; native-PTS physical source slip/real extension/source-handle roll/slide with per-fragment author offsets and rational constant clocks; split/trim/ripple/range editing with retained source fragments, pinned ROI references, hidden removed-source followers and locked-reference atomic guards; dynamic tracking with shared crop/TRS geometry, editable source observations and overlay child audio; ordered global/interval Float32 grading at the selected root with authored clocks and locked portable LUTs; explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
 
-[Tracking bake workflow](TRACKING_BAKE.md) · [Tracking visibility workflow](TRACKING_VISIBILITY.md) · [Shared-author retime workflow](TRACKING_RETIME.md) · [Magnetic tracking workflow](TRACKING_MAGNETIC.md) · [Tracked source workflow](TRACKING_SOURCE_EDITS.md) · [Tracking edit workflow](TRACKING_EDITS.md) · [Native tracking workflow](FLOAT_TRACKING.md) · [Float32 adjustment workflow](FLOAT_ADJUSTMENTS.md) · [Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](tracking-bake-capabilities-cli-0.1.32.json). Full target conditions remain open.
+[Video generation workflow](VIDEO_GENERATION.md) · [Tracking bake workflow](TRACKING_BAKE.md) · [Tracking visibility workflow](TRACKING_VISIBILITY.md) · [Shared-author retime workflow](TRACKING_RETIME.md) · [Magnetic tracking workflow](TRACKING_MAGNETIC.md) · [Tracked source workflow](TRACKING_SOURCE_EDITS.md) · [Tracking edit workflow](TRACKING_EDITS.md) · [Native tracking workflow](FLOAT_TRACKING.md) · [Float32 adjustment workflow](FLOAT_ADJUSTMENTS.md) · [Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](video-generation-capabilities-cli-0.1.33.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.zh-TW.md) · [Machine response](tracking-bake-capabilities-cli-0.1.32.json) · [Module data](module-catalog.json)
+[README](../../README.zh-TW.md) · [Machine response](video-generation-capabilities-cli-0.1.33.json) · [Module data](module-catalog.json)
 
 | 編號 | 功能模塊 | 具體行為與輸入 → 輸出 | 入口 | 依賴/邊界 |
 |---|---|---|---|---|
@@ -74,6 +74,7 @@ Frame-verified native tracking bake with ordinary hold keys and original source 
 | F58 | Float32全域／區間調整層 | 全軌含字幕合成後依序調色；LUT／曝光及既有浮點效果、六類關鍵影格、選中根僅套用一次。 | `settings.adjustments; preview; render; queue` | 明確線性工作域／效果訊號；CPU執行；LUT持鎖／封裝遷移；保留作者區間時鐘，非完整HDR。 |
 | F59 | 原生PTS跟蹤及疊加軌 | 保存來源觀測→依實際原生影格求跟隨位置；共用crop/TRS、ROI縮放／相對旋轉、透明度、視窗及巢狀聲音。 | `media track-bind; preview; render; queue; package` | 明確Float32，原生PTS不烘焙顯示鍵；預算／循環門禁；模板漂移及遮擋另審，中間格式烘焙未接通。 |
 | F60 | 原生跟蹤與烘焙交付 | 實際alpha/5類遮罩/59轉場足跡；剪輯與共享變速保留觀察；原生烘焙逐幀核驗並保留來源旁車。 | `media track-bind; timeline compose/edit; convert export --bake-tracking` | 目前凍結圖/FPS；20,000幀/256,000求值；無法表達的整數步進拒絕；外部播放器與自然身分/遮擋待驗收。 |
+| F61 | 本地GPU影片生成 | 文生、圖生、尾幀/首尾幀；原文提示/取樣、真實模型視窗、可編輯入軌、端點核驗、可移植配方與受管恢復。 | `media adapter; media generate` | 既有原生VACE/CUDA依賴；無聲8bit SDR；條件端點合成保留；自然品質/生成權利/完整剪映AI待驗收。 |
 
 | 編號 | 服務模塊 | 運行形式 | 需要什么/提供什么 | 入口 | 範圍 |
 |---|---|---|---|---|---|
@@ -4273,7 +4274,8 @@ Frame-verified native tracking bake with ordinary hold keys and original source 
   "commands": [
     "media.adapter.register",
     "media.adapter.inspect",
-    "media.inpaint"
+    "media.inpaint",
+    "media.generate"
   ],
   "features": [
     "fixed_local_wan_vace_1_3b_safetensors",
@@ -4304,6 +4306,59 @@ Frame-verified native tracking bake with ordinary hold keys and original source 
     "text_offload_hooks_removed_before_video": true,
     "reservation": false,
     "oom_guarantee": false
+  },
+  "complete_video_generation": {
+    "protocol": "local-vace-conditioned-video-generation-v1",
+    "command": "media.generate",
+    "modes": [
+      "text-to-video",
+      "image-to-video",
+      "last-frame-to-video",
+      "first-last-to-video"
+    ],
+    "conditioning": "grey_rgb127_white_mask_generate_black_mask_known_first_last_images",
+    "known_endpoints": "explicit_fit_black_flatten_sdr_rgb_retained_and_independently_decode_hash_checked",
+    "image_fit": [
+      "reject",
+      "contain",
+      "cover",
+      "stretch"
+    ],
+    "bounds": {
+      "raster_multiple": 16,
+      "minimum_edge": 64,
+      "maximum_edge": 2048,
+      "frames": [
+        5,
+        4097
+      ],
+      "fps": [
+        1,
+        60
+      ],
+      "duration_seconds": 600,
+      "window_array_bytes": 536870912,
+      "image_pixels": 16777216
+    },
+    "features": [
+      "real_cuda_inference_shared_native_pipeline",
+      "condition_rgba_roundtrip",
+      "exact_requested_frame_count_rational_fps",
+      "digest_bound_portable_recipe",
+      "registered_generated_asset_and_editable_track_apply",
+      "model_image_rights_dependencies",
+      "owned_job_crash_recovery_and_transaction_rollback",
+      "cancel_timeout_before_publication"
+    ],
+    "audio_generated": false,
+    "quality_accepted": false,
+    "limits": [
+      "opaque_8bit_sdr_output_not_hdr_or_matte_generation",
+      "no_implicit_model_install_or_cpu_fallback",
+      "retained_endpoints_are_not_proof_of_generated_identity_or_motion",
+      "prompt_motion_identity_seams_and_natural_quality_require_review",
+      "unverified_generated_rights_default_to_internal"
+    ]
   },
   "generation_parameters": {
     "flow_shift": {

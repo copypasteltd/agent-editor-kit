@@ -1,6 +1,8 @@
 # agent editor kit 文档 / Documentation
 
-Current local / 当前本地 / 目前本地：**CLI0.1.32 / local.30 / r33 kit** · [Bake](product/TRACKING_BAKE.md) · [Install](releases/CLI_0.1.32_LOCAL.md) · [C42](product/CASES.md#c42-tracking-bake).
+Current local / 当前本地 / 目前本地：**CLI0.1.33 / local.31 / r34 kit** · [GPU generation](product/VIDEO_GENERATION.md) · [Install](releases/CLI_0.1.33_LOCAL.md) · [C43](product/CASES.md#c43-video-generation).
+
+Historical / 历史 / 歷史：**CLI0.1.32 / local.30 / r33 kit** · [Bake](product/TRACKING_BAKE.md) · [Install](releases/CLI_0.1.32_LOCAL.md) · [C42](product/CASES.md#c42-tracking-bake).
 
 Historical / 历史 / 歷史：**CLI0.1.31 / local.29 / r32 kit** · [Visibility](product/TRACKING_VISIBILITY.md) · [Install](releases/CLI_0.1.31_LOCAL.md) · [C41](product/CASES.md#c41-tracking-visibility).
 

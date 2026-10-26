@@ -36,7 +36,11 @@ def main():
     parser.add_argument('--voice-cuda-lib', type=Path)
     parser.add_argument('--translation-cuda-lib', type=Path)
     parser.add_argument('--semantic-config', type=Path, help='existing local semantic-model profile; preserve a prior profile when omitted')
+    parser.add_argument('--verify-timeout-seconds', type=int, default=600,
+                        help='per-model-pack integrity verification deadline, 1..3600 seconds (default600)')
     args = parser.parse_args()
+    if not 1 <= args.verify_timeout_seconds <= 3600:
+        parser.error('--verify-timeout-seconds must be within1..3600')
     if sys.platform != 'win32' or sys.version_info[:2] != (3, 13) or sys.prefix != sys.base_prefix or platform.machine().lower() not in {'amd64', 'x86_64'}:
         raise ValueError('Use native Windows CPython 3.13 x64')
     installed, packs = args.installed.resolve(strict=True), args.packs.resolve(strict=True)
@@ -57,8 +61,19 @@ def main():
         pack = packs / ident
         if not pack.is_dir() and ident in {'kokoro-zh-en-cuda13', 'opus-zh-en-cuda12-int8'}:
             continue
-        result = subprocess.run([*prefix, 'model-pack', 'verify', '--id', ident, '--pack', str(pack)],
-                                capture_output=True, timeout=180, creationflags=subprocess.CREATE_NO_WINDOW)
+        try:
+            result = subprocess.run([*prefix, 'model-pack', 'verify', '--id', ident, '--pack', str(pack)],
+                                    capture_output=True, timeout=args.verify_timeout_seconds,
+                                    creationflags=subprocess.CREATE_NO_WINDOW)
+        except subprocess.TimeoutExpired as exc:
+            (evidence / (ident + '.stdout.json')).write_bytes(exc.stdout or b'')
+            (evidence / (ident + '.stderr.txt')).write_bytes(exc.stderr or b'')
+            write_json(evidence / 'verification.json', dict(status='verification-timeout',
+                pack_id=ident, verify_timeout_seconds=args.verify_timeout_seconds,
+                verified_packs=verified, earlier_runtime_configuration_unchanged=True,
+                model_checks_skipped=False, network=False, virtual_environment=False))
+            raise ValueError('Model-pack verification timed out; earlier runtime configuration is unchanged. '
+                             'Review local I/O and set --verify-timeout-seconds explicitly.') from exc
         (evidence / (ident + '.stdout.json')).write_bytes(result.stdout)
         (evidence / (ident + '.stderr.txt')).write_bytes(result.stderr)
         response = json.loads(result.stdout)
@@ -107,6 +122,7 @@ def main():
                   community_config=str(community_path), verified_packs=verified, previous_config_preserved=True,
                   native_windows=True, network=False, virtual_environment=False, evidence=str(evidence))
     report['semantic_config'] = str(semantic_config) if semantic_config else None
+    report['verify_timeout_seconds'] = args.verify_timeout_seconds
     write_json(evidence / 'verification.json', report)
     print(json.dumps(report, ensure_ascii=False), flush=True)
 

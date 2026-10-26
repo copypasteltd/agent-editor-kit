@@ -1,0 +1,2470 @@
+{
+  "status": "passed_actual_four_mode_cuda_transport_and_editable_package",
+  "started_at_utc": "2026-10-26T13:23:34.983953+00:00",
+  "cli_version": "0.1.33",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed",
+  "source_fallback": false,
+  "native_windows": true,
+  "virtualization": false,
+  "synthetic_worker": false,
+  "models_downloaded": false,
+  "other_user_processes_modified": false,
+  "natural_quality_accepted": false,
+  "model_output_publication_accepted": false,
+  "continuous_playback": false,
+  "human_listening": false,
+  "audio_generated": false,
+  "calls": [
+    {
+      "name": "version",
+      "argv": [
+        "C:/Python313/python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\run.py",
+        "version"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "05d0cb84197925693aab0d02c484b416a0a7b3af312f23a3b4692a6e768b6eec",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 2.0364325000045937
+    },
+    {
+      "name": "gpu-before",
+      "argv": [
+        "nvidia-smi",
+        "--query-gpu=name,uuid,memory.total,memory.free",
+        "--format=csv,noheader"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "fc30d49b4b5b84866ffb61123bf7139a114f7c554246502f2da1046d1cca3f94",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 0.09883069999341387
+    },
+    {
+      "name": "init",
+      "argv": [
+        "C:/Python313/python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\run.py",
+        "project",
+        "init",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "9b134dcdfda4c36217ab26a5bd05e2735cc1a7b1ed03e96e68eaf17d1c17adcf",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 1.938419400001294
+    },
+    {
+      "name": "ingest-first",
+      "argv": [
+        "C:/Python313/python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\run.py",
+        "media",
+        "ingest",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\video-generation-20261026-r1\\first.png",
+        "--license-spdx",
+        "CC0-1.0",
+        "--verification-status",
+        "verified",
+        "--permitted-use",
+        "internal",
+        "--permitted-use",
+        "commercial_ad",
+        "--evidence",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\condition-evidence.txt"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "c118d16042231cb82bf1d90fe7288a5658d3f4b427611993783ef577432068f5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 2.091456599999219
+    },
+    {
+      "name": "ingest-last",
+      "argv": [
+        "C:/Python313/python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\run.py",
+        "media",
+        "ingest",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\video-generation-20261026-r1\\last.png",
+        "--license-spdx",
+        "CC0-1.0",
+        "--verification-status",
+        "verified",
+        "--permitted-use",
+        "internal",
+        "--permitted-use",
+        "commercial_ad",
+        "--evidence",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\condition-evidence.txt"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "01167215066c5cbf253831b191b40c8b7ba2077921acf08d69ea5f337a79e217",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 2.432962699997006
+    },
+    {
+      "name": "register-vace",
+      "argv": [
+        "C:/Python313/python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\run.py",
+        "media",
+        "adapter",
+        "register",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程",
+        "--adapter-id",
+        "vace_generation",
+        "--engine",
+        "diffusers-wan-vace-local-v1",
+        "--model-path",
+        "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\wan2.1-vace-1.3b",
+        "--executable",
+        "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+        "--evidence",
+        "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\vace-evidence.json",
+        "--device",
+        "cuda",
+        "--license-spdx",
+        "Apache-2.0",
+        "--verification-status",
+        "unverified",
+        "--permitted-use",
+        "internal"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "2102db748b9fea6014d1c7b5bf8fb1a40dac30e6253991ab554506c7d02fe74f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 808.9190011000028
+    },
+    {
+      "name": "text-to-video-plan",
+      "argv": [
+        "C:/Python313/python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\run.py",
+        "media",
+        "generate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程",
+        "--adapter-id",
+        "vace_generation",
+        "--asset-id",
+        "text-to-video",
+        "--mode",
+        "text-to-video",
+        "--width",
+        "256",
+        "--height",
+        "144",
+        "--frames",
+        "17",
+        "--fps",
+        "12",
+        "--image-fit",
+        "reject",
+        "--prompt",
+        "An amber glass perfume bottle with a black cap stands on a blue tabletop in a quiet studio. Soft side lighting, realistic glass reflections. A slow smooth camera move to the right. The bottle remains upright. No text, no people.",
+        "--negative-prompt",
+        "watermark, text, people, distorted objects, jitter",
+        "--seed",
+        "230",
+        "--inference-steps",
+        "18",
+        "--guidance-scale",
+        "5",
+        "--flow-shift",
+        "3",
+        "--window-frames",
+        "17",
+        "--window-overlap",
+        "4",
+        "--apply",
+        "--track-id",
+        "track_video_1",
+        "--timeline-start-seconds",
+        "0.0",
+        "--timeout-seconds",
+        "1800",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "ecc478cd29cf0340a0f5a07dc6c59646aa33b22e2e642da4057b29793f7a8b4a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 504.6934844999996
+    },
+    {
+      "name": "text-to-video-actual",
+      "argv": [
+        "C:/Python313/python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\run.py",
+        "media",
+        "generate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程",
+        "--adapter-id",
+        "vace_generation",
+        "--asset-id",
+        "text-to-video",
+        "--mode",
+        "text-to-video",
+        "--width",
+        "256",
+        "--height",
+        "144",
+        "--frames",
+        "17",
+        "--fps",
+        "12",
+        "--image-fit",
+        "reject",
+        "--prompt",
+        "An amber glass perfume bottle with a black cap stands on a blue tabletop in a quiet studio. Soft side lighting, realistic glass reflections. A slow smooth camera move to the right. The bottle remains upright. No text, no people.",
+        "--negative-prompt",
+        "watermark, text, people, distorted objects, jitter",
+        "--seed",
+        "230",
+        "--inference-steps",
+        "18",
+        "--guidance-scale",
+        "5",
+        "--flow-shift",
+        "3",
+        "--window-frames",
+        "17",
+        "--window-overlap",
+        "4",
+        "--apply",
+        "--track-id",
+        "track_video_1",
+        "--timeline-start-seconds",
+        "0.0",
+        "--timeout-seconds",
+        "1800"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "c2c96d4378d2f4a895b65d9ea12bafcc16480af09d166fd3ebc69bb872ee50d0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 1522.7741483999998
+    },
+    {
+      "name": "text-to-video-decode",
+      "argv": [
+        "ffmpeg",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程\\assets\\derived\\text-to-video.mov",
+        "-an",
+        "-pix_fmt",
+        "rgba",
+        "-fps_mode",
+        "passthrough",
+        "-f",
+        "rawvideo",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "22998d9ba85a0f94fa1b63dacd6e290551ba79c2ff56577a251b7803b77b6b71",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 0.10715129999880446
+    },
+    {
+      "name": "text-to-video-preview",
+      "argv": [
+        "ffmpeg",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程\\assets\\derived\\text-to-video.mov",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-movflags",
+        "+faststart",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\text-to-video.mp4"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 0.11110030000418192
+    },
+    {
+      "name": "image-to-video-actual",
+      "argv": [
+        "C:/Python313/python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\run.py",
+        "media",
+        "generate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程",
+        "--adapter-id",
+        "vace_generation",
+        "--asset-id",
+        "image-to-video",
+        "--mode",
+        "image-to-video",
+        "--width",
+        "256",
+        "--height",
+        "144",
+        "--frames",
+        "17",
+        "--fps",
+        "12",
+        "--image-fit",
+        "reject",
+        "--prompt",
+        "An amber glass perfume bottle with a black cap stands on a blue tabletop in a quiet studio. Soft side lighting, realistic glass reflections. A slow smooth camera move to the right. The bottle remains upright. No text, no people.",
+        "--negative-prompt",
+        "watermark, text, people, distorted objects, jitter",
+        "--seed",
+        "231",
+        "--inference-steps",
+        "18",
+        "--guidance-scale",
+        "5",
+        "--flow-shift",
+        "3",
+        "--window-frames",
+        "17",
+        "--window-overlap",
+        "4",
+        "--apply",
+        "--track-id",
+        "track_video_1",
+        "--timeline-start-seconds",
+        "1.4166666666666667",
+        "--timeout-seconds",
+        "1800",
+        "--first-asset-id",
+        "asset_20261026132341_6585ea41"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "df966ddb941f5cb16e7f47c2e509f21a96e6c28ad93db9659bbd84020589835a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 1672.7099901999973
+    },
+    {
+      "name": "image-to-video-decode",
+      "argv": [
+        "ffmpeg",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程\\assets\\derived\\image-to-video.mov",
+        "-an",
+        "-pix_fmt",
+        "rgba",
+        "-fps_mode",
+        "passthrough",
+        "-f",
+        "rawvideo",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "d84663c96aa43f4115097ef24acd9c838a2b2f0956f9f90179b16f8127a73e9d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 0.1661422000033781
+    },
+    {
+      "name": "image-to-video-preview",
+      "argv": [
+        "ffmpeg",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程\\assets\\derived\\image-to-video.mov",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-movflags",
+        "+faststart",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\image-to-video.mp4"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 0.12436080000043148
+    },
+    {
+      "name": "last-frame-to-video-actual",
+      "argv": [
+        "C:/Python313/python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\run.py",
+        "media",
+        "generate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程",
+        "--adapter-id",
+        "vace_generation",
+        "--asset-id",
+        "last-frame-to-video",
+        "--mode",
+        "last-frame-to-video",
+        "--width",
+        "256",
+        "--height",
+        "144",
+        "--frames",
+        "17",
+        "--fps",
+        "12",
+        "--image-fit",
+        "reject",
+        "--prompt",
+        "An amber glass perfume bottle with a black cap stands on a blue tabletop in a quiet studio. Soft side lighting, realistic glass reflections. A slow smooth camera move to the right. The bottle remains upright. No text, no people.",
+        "--negative-prompt",
+        "watermark, text, people, distorted objects, jitter",
+        "--seed",
+        "232",
+        "--inference-steps",
+        "18",
+        "--guidance-scale",
+        "5",
+        "--flow-shift",
+        "3",
+        "--window-frames",
+        "17",
+        "--window-overlap",
+        "4",
+        "--apply",
+        "--track-id",
+        "track_video_1",
+        "--timeline-start-seconds",
+        "2.8333333333333335",
+        "--timeout-seconds",
+        "1800",
+        "--last-asset-id",
+        "asset_20261026132343_1eff6f8d"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "5eb0a8b2d20f25eab0db24f58d2af0a01ba2db90c94504187fa6ac9b5ff4b582",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 1489.4744202000002
+    },
+    {
+      "name": "last-frame-to-video-decode",
+      "argv": [
+        "ffmpeg",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程\\assets\\derived\\last-frame-to-video.mov",
+        "-an",
+        "-pix_fmt",
+        "rgba",
+        "-fps_mode",
+        "passthrough",
+        "-f",
+        "rawvideo",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "ec4210fe30f6a9bb4fb5955fa5239d22202a40985ddfc1afc14185e386cb8fd9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 0.13010750000103144
+    },
+    {
+      "name": "last-frame-to-video-preview",
+      "argv": [
+        "ffmpeg",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程\\assets\\derived\\last-frame-to-video.mov",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-movflags",
+        "+faststart",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\last-frame-to-video.mp4"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 0.13678169999911916
+    },
+    {
+      "name": "first-last-to-video-actual",
+      "argv": [
+        "C:/Python313/python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\run.py",
+        "media",
+        "generate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程",
+        "--adapter-id",
+        "vace_generation",
+        "--asset-id",
+        "first-last-to-video",
+        "--mode",
+        "first-last-to-video",
+        "--width",
+        "256",
+        "--height",
+        "144",
+        "--frames",
+        "17",
+        "--fps",
+        "12",
+        "--image-fit",
+        "reject",
+        "--prompt",
+        "An amber glass perfume bottle with a black cap stands on a blue tabletop in a quiet studio. Soft side lighting, realistic glass reflections. A slow smooth camera move to the right. The bottle remains upright. No text, no people.",
+        "--negative-prompt",
+        "watermark, text, people, distorted objects, jitter",
+        "--seed",
+        "233",
+        "--inference-steps",
+        "18",
+        "--guidance-scale",
+        "5",
+        "--flow-shift",
+        "3",
+        "--window-frames",
+        "17",
+        "--window-overlap",
+        "4",
+        "--apply",
+        "--track-id",
+        "track_video_1",
+        "--timeline-start-seconds",
+        "4.25",
+        "--timeout-seconds",
+        "1800",
+        "--first-asset-id",
+        "asset_20261026132341_6585ea41",
+        "--last-asset-id",
+        "asset_20261026132343_1eff6f8d"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "d619a65e756b21dab2ae4526db2ca2f45268b0296da0e3f78bdfffce92697da4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 1440.5418828000038
+    },
+    {
+      "name": "first-last-to-video-decode",
+      "argv": [
+        "ffmpeg",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程\\assets\\derived\\first-last-to-video.mov",
+        "-an",
+        "-pix_fmt",
+        "rgba",
+        "-fps_mode",
+        "passthrough",
+        "-f",
+        "rawvideo",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "2ce5c55d9e68754aea708084ccb0c173e0b5566ca415666a02451370a3ec9509",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 0.25209289999475004
+    },
+    {
+      "name": "first-last-to-video-preview",
+      "argv": [
+        "ffmpeg",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程\\assets\\derived\\first-last-to-video.mov",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-movflags",
+        "+faststart",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\first-last-to-video.mp4"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 0.19040729999687755
+    },
+    {
+      "name": "validate",
+      "argv": [
+        "C:/Python313/python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\run.py",
+        "validate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "8eeac9f230d84fb53b26ff9c546e198043f7109e9bb6f2c5496906e559180242",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 4.665879000000132
+    },
+    {
+      "name": "rights-expected-reject",
+      "argv": [
+        "C:/Python313/python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\run.py",
+        "rights",
+        "check",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程"
+      ],
+      "exit_code": 7,
+      "expected_exit_code": 7,
+      "stdout_sha256": "07a70acf12691c3266df5400ad074357c4742f4d9c0d7da166e5213800b41850",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 1.8174524000060046
+    },
+    {
+      "name": "export-package",
+      "argv": [
+        "C:/Python313/python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\run.py",
+        "convert",
+        "export",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程",
+        "--target-format",
+        "package",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\editable-generated-videos.aevpkg.zip"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "759947ed075a0112aa4711bb7720c73be83428239ed7c730df4b0d12e65f9c4a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 3.1247612000006484
+    },
+    {
+      "name": "import-package",
+      "argv": [
+        "C:/Python313/python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\run.py",
+        "convert",
+        "import",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\editable-generated-videos.aevpkg.zip",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\重新 导入工程"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "39f3e64e725fedcc7ef0f97dee8e5a23ce8fa20e39ae7070430d78823635e651",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 1.7762565000011818
+    },
+    {
+      "name": "validate-imported",
+      "argv": [
+        "C:/Python313/python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\run.py",
+        "validate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\重新 导入工程"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "ee66ff877d2d8f4bc6bdad93e5aa689da461ad0ea09c5544f5668b98f303e91d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 2.270575100003043
+    },
+    {
+      "name": "gpu-after",
+      "argv": [
+        "nvidia-smi",
+        "--query-gpu=name,uuid,memory.total,memory.free",
+        "--format=csv,noheader"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "1e4c051eb92006316a7610198522da51c1bffd1f3c1c5e47d0a582b08d6e2cc0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 0.0873351000045659
+    }
+  ],
+  "checks": [
+    {
+      "name": "227 installed product files equal frozen source",
+      "ok": true
+    },
+    {
+      "name": "installed version",
+      "ok": true
+    },
+    {
+      "name": "text-to-video dry-run keeps project bytes",
+      "ok": true
+    },
+    {
+      "name": "text-to-video all 17 RGBA frames decode and match worker SHA",
+      "ok": true
+    },
+    {
+      "name": "text-to-video actual CUDA provider, model and one window",
+      "ok": true
+    },
+    {
+      "name": "text-to-video no audio and endpoints independently verified",
+      "ok": true
+    },
+    {
+      "name": "image-to-video all 17 RGBA frames decode and match worker SHA",
+      "ok": true
+    },
+    {
+      "name": "image-to-video actual CUDA provider, model and one window",
+      "ok": true
+    },
+    {
+      "name": "image-to-video no audio and endpoints independently verified",
+      "ok": true
+    },
+    {
+      "name": "last-frame-to-video all 17 RGBA frames decode and match worker SHA",
+      "ok": true
+    },
+    {
+      "name": "last-frame-to-video actual CUDA provider, model and one window",
+      "ok": true
+    },
+    {
+      "name": "last-frame-to-video no audio and endpoints independently verified",
+      "ok": true
+    },
+    {
+      "name": "first-last-to-video all 17 RGBA frames decode and match worker SHA",
+      "ok": true
+    },
+    {
+      "name": "first-last-to-video actual CUDA provider, model and one window",
+      "ok": true
+    },
+    {
+      "name": "first-last-to-video no audio and endpoints independently verified",
+      "ok": true
+    },
+    {
+      "name": "portable recipes survive complete project package",
+      "ok": true
+    },
+    {
+      "name": "managed job directories cleaned",
+      "ok": true
+    },
+    {
+      "name": "product source and installation remain byte equal",
+      "ok": true
+    }
+  ],
+  "modes": [
+    {
+      "mode": "text-to-video",
+      "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程\\assets\\derived\\text-to-video.mov",
+      "output_sha256": "1f63d9f5b9aa7d294f73b61cf7d74d4c89dba9064802147f8d13b5bb0b8eae74",
+      "preview": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\text-to-video.mp4",
+      "gif": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\text-to-video.gif",
+      "contact": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\text-to-video-frames.png",
+      "frames": 17,
+      "fps": "12",
+      "duration_seconds": 1.4166666666666667,
+      "raw_rgba_sha256": "22998d9ba85a0f94fa1b63dacd6e290551ba79c2ff56577a251b7803b77b6b71",
+      "elapsed_seconds": 1131.3967450000055,
+      "generated_quality_accepted": false,
+      "rights_status": "unverified",
+      "endpoint_checks": {},
+      "model_execution": {
+        "versions": {
+          "python": "3.13.14",
+          "numpy": "2.4.2",
+          "torch": "2.13.0+cu130",
+          "diffusers": "0.39.0",
+          "transformers": "5.14.1",
+          "accelerate": "1.14.0",
+          "safetensors": "0.8.0"
+        },
+        "local_weight_reads": [
+          {
+            "component": "text_encoder",
+            "backend": "pread",
+            "files": [
+              {
+                "path": "text_encoder/model-00001-of-00003.safetensors",
+                "opens": 1
+              },
+              {
+                "path": "text_encoder/model-00002-of-00003.safetensors",
+                "opens": 1
+              },
+              {
+                "path": "text_encoder/model-00003-of-00003.safetensors",
+                "opens": 1
+              }
+            ]
+          },
+          {
+            "component": "transformer",
+            "backend": "pread",
+            "files": [
+              {
+                "path": "transformer/diffusion_pytorch_model-00001-of-00002.safetensors",
+                "opens": 1
+              },
+              {
+                "path": "transformer/diffusion_pytorch_model-00002-of-00002.safetensors",
+                "opens": 1
+              }
+            ]
+          },
+          {
+            "component": "vae",
+            "backend": "pread",
+            "files": [
+              {
+                "path": "vae/diffusion_pytorch_model.safetensors",
+                "opens": 1
+              }
+            ]
+          }
+        ],
+        "text_device_map": {
+          "shared": "0",
+          "encoder.embed_tokens": "0",
+          "encoder.block.0": "0",
+          "encoder.block.1": "0",
+          "encoder.block.2": "0",
+          "encoder.block.3": "0",
+          "encoder.block.4": "0",
+          "encoder.block.5": "0",
+          "encoder.block.6": "0",
+          "encoder.block.7": "0",
+          "encoder.block.8": "0",
+          "encoder.block.9": "0",
+          "encoder.block.10": "0",
+          "encoder.block.11": "0",
+          "encoder.block.12": "0",
+          "encoder.block.13": "cpu",
+          "encoder.block.14": "cpu",
+          "encoder.block.15": "cpu",
+          "encoder.block.16": "cpu",
+          "encoder.block.17": "cpu",
+          "encoder.block.18": "cpu",
+          "encoder.block.19": "cpu",
+          "encoder.block.20": "cpu",
+          "encoder.block.21": "cpu",
+          "encoder.block.22": "cpu",
+          "encoder.block.23": "cpu",
+          "encoder.final_layer_norm": "cpu",
+          "encoder.dropout": "cpu"
+        },
+        "text_weight_bytes_bfloat16": 11361820672,
+        "text_encoder_released_before_generation": true,
+        "text_offload_hooks_removed_before_generation": true,
+        "prompt_token_counts": {
+          "prompt": 52,
+          "negative_prompt": 14
+        },
+        "prompt_truncated": false,
+        "prompt_extension": false,
+        "text_phase_seconds": 454.1055276000043,
+        "load_seconds": 652.8596273000003,
+        "cuda_device": "NVIDIA GeForce RTX 3060",
+        "cuda_total_bytes": 12884377600,
+        "gpu_admission": {
+          "policy": "cuda-uuid-physical-and-torch-free-v1",
+          "reservation": false,
+          "oom_guarantee": false,
+          "headroom_bytes": 805306368,
+          "text": {
+            "policy": "cuda-uuid-physical-and-torch-free-v1",
+            "stage": "text-weights",
+            "required_free_bytes": 8321499136,
+            "reservation": false,
+            "oom_guarantee": false,
+            "query_started_at_utc": "2026-10-26T13:59:27.411398+00:00",
+            "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+            "logical_device_index": 0,
+            "idle_cache_release": {
+              "scope": "current-worker",
+              "synchronized": true,
+              "empty_cache_called": true,
+              "completed": true,
+              "active_allocation_preserved": true,
+              "allocated_before_bytes": 0,
+              "reserved_before_bytes": 0,
+              "allocated_after_bytes": 0,
+              "reserved_after_bytes": 0,
+              "released_reserved_bytes": 0
+            },
+            "query_command": [
+              "C:\\Windows\\System32\\nvidia-smi.EXE",
+              "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+              "--query-gpu=uuid,memory.total,memory.free",
+              "--format=csv,noheader,nounits"
+            ],
+            "torch_free_bytes": 11799625728,
+            "torch_total_bytes": 12884377600,
+            "physical_free_bytes": 10884218880,
+            "physical_total_bytes": 12884901888,
+            "effective_free_bytes": 10884218880,
+            "query_finished_at_utc": "2026-10-26T13:59:27.816652+00:00",
+            "sample_seconds": 0.4004616000020178,
+            "status": "admitted"
+          },
+          "video": {
+            "policy": "cuda-uuid-physical-and-torch-free-v1",
+            "stage": "video-weights",
+            "required_free_bytes": 5636880972,
+            "reservation": false,
+            "oom_guarantee": false,
+            "query_started_at_utc": "2026-10-26T14:10:16.612130+00:00",
+            "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+            "logical_device_index": 0,
+            "idle_cache_release": {
+              "scope": "current-worker",
+              "synchronized": true,
+              "empty_cache_called": true,
+              "completed": true,
+              "active_allocation_preserved": true,
+              "allocated_before_bytes": 8519680,
+              "reserved_before_bytes": 20971520,
+              "allocated_after_bytes": 8519680,
+              "reserved_after_bytes": 20971520,
+              "released_reserved_bytes": 0
+            },
+            "query_command": [
+              "C:\\Windows\\System32\\nvidia-smi.EXE",
+              "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+              "--query-gpu=uuid,memory.total,memory.free",
+              "--format=csv,noheader,nounits"
+            ],
+            "torch_free_bytes": 11745099776,
+            "torch_total_bytes": 12884377600,
+            "physical_free_bytes": 10762584064,
+            "physical_total_bytes": 12884901888,
+            "effective_free_bytes": 10762584064,
+            "query_finished_at_utc": "2026-10-26T14:10:16.693442+00:00",
+            "sample_seconds": 0.08131210000283318,
+            "status": "admitted"
+          },
+          "video_weight_bytes": 4823185996,
+          "prompt_embedding_bytes": 8388608,
+          "windows": {
+            "count": 1,
+            "minimum_torch_free_bytes": 6546259968,
+            "minimum_physical_free_bytes": 5563744256,
+            "first": {
+              "policy": "cuda-uuid-physical-and-torch-free-v1",
+              "stage": "video-window-1",
+              "required_free_bytes": 805306368,
+              "reservation": false,
+              "oom_guarantee": false,
+              "query_started_at_utc": "2026-10-26T14:10:20.282543+00:00",
+              "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+              "logical_device_index": 0,
+              "idle_cache_release": {
+                "scope": "current-worker",
+                "synchronized": true,
+                "empty_cache_called": true,
+                "completed": true,
+                "active_allocation_preserved": true,
+                "allocated_before_bytes": 4856498688,
+                "reserved_before_bytes": 5219811328,
+                "allocated_after_bytes": 4856498688,
+                "reserved_after_bytes": 5219811328,
+                "released_reserved_bytes": 0
+              },
+              "query_command": [
+                "C:\\Windows\\System32\\nvidia-smi.EXE",
+                "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+                "--query-gpu=uuid,memory.total,memory.free",
+                "--format=csv,noheader,nounits"
+              ],
+              "torch_free_bytes": 6546259968,
+              "torch_total_bytes": 12884377600,
+              "physical_free_bytes": 5563744256,
+              "physical_total_bytes": 12884901888,
+              "effective_free_bytes": 5563744256,
+              "query_finished_at_utc": "2026-10-26T14:10:20.364006+00:00",
+              "sample_seconds": 0.08144980000361102,
+              "status": "admitted"
+            },
+            "last": {
+              "policy": "cuda-uuid-physical-and-torch-free-v1",
+              "stage": "video-window-1",
+              "required_free_bytes": 805306368,
+              "reservation": false,
+              "oom_guarantee": false,
+              "query_started_at_utc": "2026-10-26T14:10:20.282543+00:00",
+              "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+              "logical_device_index": 0,
+              "idle_cache_release": {
+                "scope": "current-worker",
+                "synchronized": true,
+                "empty_cache_called": true,
+                "completed": true,
+                "active_allocation_preserved": true,
+                "allocated_before_bytes": 4856498688,
+                "reserved_before_bytes": 5219811328,
+                "allocated_after_bytes": 4856498688,
+                "reserved_after_bytes": 5219811328,
+                "released_reserved_bytes": 0
+              },
+              "query_command": [
+                "C:\\Windows\\System32\\nvidia-smi.EXE",
+                "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+                "--query-gpu=uuid,memory.total,memory.free",
+                "--format=csv,noheader,nounits"
+              ],
+              "torch_free_bytes": 6546259968,
+              "torch_total_bytes": 12884377600,
+              "physical_free_bytes": 5563744256,
+              "physical_total_bytes": 12884901888,
+              "effective_free_bytes": 5563744256,
+              "query_finished_at_utc": "2026-10-26T14:10:20.364006+00:00",
+              "sample_seconds": 0.08144980000361102,
+              "status": "admitted"
+            }
+          }
+        },
+        "transformer_precision": "bfloat16-with-declared-float32-stability-modules",
+        "transformer_parameter_dtype_elements": {
+          "torch.float32": 3311616,
+          "torch.bfloat16": 2150660416
+        },
+        "float32_stability_modules": [
+          "time_embedder",
+          "scale_shift_table",
+          "norm1",
+          "norm2",
+          "norm3"
+        ],
+        "vae_precision": "float32",
+        "vae_spatial_tiling": true,
+        "window_seconds": [
+          28.950434600003064
+        ],
+        "flow_shift": 3.0,
+        "model_input_scale": 1,
+        "window_input_shapes": [
+          [
+            17,
+            144,
+            256
+          ]
+        ],
+        "conditioning_trace": {
+          "protocol": "agent-vace-conditioning-trace-v1",
+          "calls": 1,
+          "sha256": "sha256:feabb89b2756a61833715691d199216f6123a80990e587ca3ecfe253ec1d8c30",
+          "samples": [
+            {
+              "call": 0,
+              "rgb_shape": [
+                17,
+                144,
+                256,
+                3
+              ],
+              "mask_shape": [
+                17,
+                144,
+                256
+              ],
+              "rgb_sha256": "sha256:dda615bd6841fd3dad78450e1a3313bf1e83d22f011f3843bb925f3605334a6d",
+              "mask_sha256": "sha256:0d8a3e35879bbd5a2704d674ad399c3fb8d9cdba51493ff82c192ceb402305b5"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "mode": "image-to-video",
+      "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程\\assets\\derived\\image-to-video.mov",
+      "output_sha256": "f45e116a405647e72861f60b71b97706d987090bdb2a52dc63c3719e9d1b9615",
+      "preview": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\image-to-video.mp4",
+      "gif": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\image-to-video.gif",
+      "contact": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\image-to-video-frames.png",
+      "frames": 17,
+      "fps": "12",
+      "duration_seconds": 1.4166666666666667,
+      "raw_rgba_sha256": "d84663c96aa43f4115097ef24acd9c838a2b2f0956f9f90179b16f8127a73e9d",
+      "elapsed_seconds": 1320.6581283999985,
+      "generated_quality_accepted": false,
+      "rights_status": "unverified",
+      "endpoint_checks": {
+        "first": {
+          "frame": 0,
+          "expected_rgba_sha256": "sha256:ddfc49fa3effb2c6816e5d63babfae374f791414dba6bb77b06d5f421c31362d",
+          "actual_rgba_sha256": "sha256:ddfc49fa3effb2c6816e5d63babfae374f791414dba6bb77b06d5f421c31362d",
+          "equal": true
+        }
+      },
+      "model_execution": {
+        "versions": {
+          "python": "3.13.14",
+          "numpy": "2.4.2",
+          "torch": "2.13.0+cu130",
+          "diffusers": "0.39.0",
+          "transformers": "5.14.1",
+          "accelerate": "1.14.0",
+          "safetensors": "0.8.0"
+        },
+        "local_weight_reads": [
+          {
+            "component": "text_encoder",
+            "backend": "pread",
+            "files": [
+              {
+                "path": "text_encoder/model-00001-of-00003.safetensors",
+                "opens": 1
+              },
+              {
+                "path": "text_encoder/model-00002-of-00003.safetensors",
+                "opens": 1
+              },
+              {
+                "path": "text_encoder/model-00003-of-00003.safetensors",
+                "opens": 1
+              }
+            ]
+          },
+          {
+            "component": "transformer",
+            "backend": "pread",
+            "files": [
+              {
+                "path": "transformer/diffusion_pytorch_model-00001-of-00002.safetensors",
+                "opens": 1
+              },
+              {
+                "path": "transformer/diffusion_pytorch_model-00002-of-00002.safetensors",
+                "opens": 1
+              }
+            ]
+          },
+          {
+            "component": "vae",
+            "backend": "pread",
+            "files": [
+              {
+                "path": "vae/diffusion_pytorch_model.safetensors",
+                "opens": 1
+              }
+            ]
+          }
+        ],
+        "text_device_map": {
+          "shared": "0",
+          "encoder.embed_tokens": "0",
+          "encoder.block.0": "0",
+          "encoder.block.1": "0",
+          "encoder.block.2": "0",
+          "encoder.block.3": "0",
+          "encoder.block.4": "0",
+          "encoder.block.5": "0",
+          "encoder.block.6": "0",
+          "encoder.block.7": "0",
+          "encoder.block.8": "0",
+          "encoder.block.9": "0",
+          "encoder.block.10": "0",
+          "encoder.block.11": "0",
+          "encoder.block.12": "0",
+          "encoder.block.13": "cpu",
+          "encoder.block.14": "cpu",
+          "encoder.block.15": "cpu",
+          "encoder.block.16": "cpu",
+          "encoder.block.17": "cpu",
+          "encoder.block.18": "cpu",
+          "encoder.block.19": "cpu",
+          "encoder.block.20": "cpu",
+          "encoder.block.21": "cpu",
+          "encoder.block.22": "cpu",
+          "encoder.block.23": "cpu",
+          "encoder.final_layer_norm": "cpu",
+          "encoder.dropout": "cpu"
+        },
+        "text_weight_bytes_bfloat16": 11361820672,
+        "text_encoder_released_before_generation": true,
+        "text_offload_hooks_removed_before_generation": true,
+        "prompt_token_counts": {
+          "prompt": 52,
+          "negative_prompt": 14
+        },
+        "prompt_truncated": false,
+        "prompt_extension": false,
+        "text_phase_seconds": 580.0744409000035,
+        "load_seconds": 782.3715274999995,
+        "cuda_device": "NVIDIA GeForce RTX 3060",
+        "cuda_total_bytes": 12884377600,
+        "gpu_admission": {
+          "policy": "cuda-uuid-physical-and-torch-free-v1",
+          "reservation": false,
+          "oom_guarantee": false,
+          "headroom_bytes": 805306368,
+          "text": {
+            "policy": "cuda-uuid-physical-and-torch-free-v1",
+            "stage": "text-weights",
+            "required_free_bytes": 8321499136,
+            "reservation": false,
+            "oom_guarantee": false,
+            "query_started_at_utc": "2026-10-26T14:25:56.784234+00:00",
+            "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+            "logical_device_index": 0,
+            "idle_cache_release": {
+              "scope": "current-worker",
+              "synchronized": true,
+              "empty_cache_called": true,
+              "completed": true,
+              "active_allocation_preserved": true,
+              "allocated_before_bytes": 0,
+              "reserved_before_bytes": 0,
+              "allocated_after_bytes": 0,
+              "reserved_after_bytes": 0,
+              "released_reserved_bytes": 0
+            },
+            "query_command": [
+              "C:\\Windows\\System32\\nvidia-smi.EXE",
+              "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+              "--query-gpu=uuid,memory.total,memory.free",
+              "--format=csv,noheader,nounits"
+            ],
+            "torch_free_bytes": 11799625728,
+            "torch_total_bytes": 12884377600,
+            "physical_free_bytes": 10948182016,
+            "physical_total_bytes": 12884901888,
+            "effective_free_bytes": 10948182016,
+            "query_finished_at_utc": "2026-10-26T14:25:57.993565+00:00",
+            "sample_seconds": 1.2005604000005405,
+            "status": "admitted"
+          },
+          "video": {
+            "policy": "cuda-uuid-physical-and-torch-free-v1",
+            "stage": "video-weights",
+            "required_free_bytes": 5636880972,
+            "reservation": false,
+            "oom_guarantee": false,
+            "query_started_at_utc": "2026-10-26T14:38:56.046481+00:00",
+            "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+            "logical_device_index": 0,
+            "idle_cache_release": {
+              "scope": "current-worker",
+              "synchronized": true,
+              "empty_cache_called": true,
+              "completed": true,
+              "active_allocation_preserved": true,
+              "allocated_before_bytes": 8519680,
+              "reserved_before_bytes": 20971520,
+              "allocated_after_bytes": 8519680,
+              "reserved_after_bytes": 20971520,
+              "released_reserved_bytes": 0
+            },
+            "query_command": [
+              "C:\\Windows\\System32\\nvidia-smi.EXE",
+              "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+              "--query-gpu=uuid,memory.total,memory.free",
+              "--format=csv,noheader,nounits"
+            ],
+            "torch_free_bytes": 11745099776,
+            "torch_total_bytes": 12884377600,
+            "physical_free_bytes": 10868490240,
+            "physical_total_bytes": 12884901888,
+            "effective_free_bytes": 10868490240,
+            "query_finished_at_utc": "2026-10-26T14:38:56.127425+00:00",
+            "sample_seconds": 0.08093380000354955,
+            "status": "admitted"
+          },
+          "video_weight_bytes": 4823185996,
+          "prompt_embedding_bytes": 8388608,
+          "windows": {
+            "count": 1,
+            "minimum_torch_free_bytes": 6546259968,
+            "minimum_physical_free_bytes": 5669650432,
+            "first": {
+              "policy": "cuda-uuid-physical-and-torch-free-v1",
+              "stage": "video-window-1",
+              "required_free_bytes": 805306368,
+              "reservation": false,
+              "oom_guarantee": false,
+              "query_started_at_utc": "2026-10-26T14:38:59.322122+00:00",
+              "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+              "logical_device_index": 0,
+              "idle_cache_release": {
+                "scope": "current-worker",
+                "synchronized": true,
+                "empty_cache_called": true,
+                "completed": true,
+                "active_allocation_preserved": true,
+                "allocated_before_bytes": 4856498688,
+                "reserved_before_bytes": 5219811328,
+                "allocated_after_bytes": 4856498688,
+                "reserved_after_bytes": 5219811328,
+                "released_reserved_bytes": 0
+              },
+              "query_command": [
+                "C:\\Windows\\System32\\nvidia-smi.EXE",
+                "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+                "--query-gpu=uuid,memory.total,memory.free",
+                "--format=csv,noheader,nounits"
+              ],
+              "torch_free_bytes": 6546259968,
+              "torch_total_bytes": 12884377600,
+              "physical_free_bytes": 5669650432,
+              "physical_total_bytes": 12884901888,
+              "effective_free_bytes": 5669650432,
+              "query_finished_at_utc": "2026-10-26T14:38:59.391930+00:00",
+              "sample_seconds": 0.0697959000026458,
+              "status": "admitted"
+            },
+            "last": {
+              "policy": "cuda-uuid-physical-and-torch-free-v1",
+              "stage": "video-window-1",
+              "required_free_bytes": 805306368,
+              "reservation": false,
+              "oom_guarantee": false,
+              "query_started_at_utc": "2026-10-26T14:38:59.322122+00:00",
+              "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+              "logical_device_index": 0,
+              "idle_cache_release": {
+                "scope": "current-worker",
+                "synchronized": true,
+                "empty_cache_called": true,
+                "completed": true,
+                "active_allocation_preserved": true,
+                "allocated_before_bytes": 4856498688,
+                "reserved_before_bytes": 5219811328,
+                "allocated_after_bytes": 4856498688,
+                "reserved_after_bytes": 5219811328,
+                "released_reserved_bytes": 0
+              },
+              "query_command": [
+                "C:\\Windows\\System32\\nvidia-smi.EXE",
+                "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+                "--query-gpu=uuid,memory.total,memory.free",
+                "--format=csv,noheader,nounits"
+              ],
+              "torch_free_bytes": 6546259968,
+              "torch_total_bytes": 12884377600,
+              "physical_free_bytes": 5669650432,
+              "physical_total_bytes": 12884901888,
+              "effective_free_bytes": 5669650432,
+              "query_finished_at_utc": "2026-10-26T14:38:59.391930+00:00",
+              "sample_seconds": 0.0697959000026458,
+              "status": "admitted"
+            }
+          }
+        },
+        "transformer_precision": "bfloat16-with-declared-float32-stability-modules",
+        "transformer_parameter_dtype_elements": {
+          "torch.float32": 3311616,
+          "torch.bfloat16": 2150660416
+        },
+        "float32_stability_modules": [
+          "time_embedder",
+          "scale_shift_table",
+          "norm1",
+          "norm2",
+          "norm3"
+        ],
+        "vae_precision": "float32",
+        "vae_spatial_tiling": true,
+        "window_seconds": [
+          33.55359219999809
+        ],
+        "flow_shift": 3.0,
+        "model_input_scale": 1,
+        "window_input_shapes": [
+          [
+            17,
+            144,
+            256
+          ]
+        ],
+        "conditioning_trace": {
+          "protocol": "agent-vace-conditioning-trace-v1",
+          "calls": 1,
+          "sha256": "sha256:91b12befcc08b876353ef77d1d55f8453bf0f14f457e733930cc11adc70c9018",
+          "samples": [
+            {
+              "call": 0,
+              "rgb_shape": [
+                17,
+                144,
+                256,
+                3
+              ],
+              "mask_shape": [
+                17,
+                144,
+                256
+              ],
+              "rgb_sha256": "sha256:c1c5c4be41e36665dc8dba6c9c6275be603351f3af33d906b3b18abeeb1a08c4",
+              "mask_sha256": "sha256:43fd89109b2b98ad6265da733a93adf65e3415b90c2897194295577c8bac8286"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "mode": "last-frame-to-video",
+      "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程\\assets\\derived\\last-frame-to-video.mov",
+      "output_sha256": "cc298278407e6678951b65d18012e36e38d07a92ead7fae0e6944fc87135799a",
+      "preview": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\last-frame-to-video.mp4",
+      "gif": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\last-frame-to-video.gif",
+      "contact": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\last-frame-to-video-frames.png",
+      "frames": 17,
+      "fps": "12",
+      "duration_seconds": 1.4166666666666667,
+      "raw_rgba_sha256": "ec4210fe30f6a9bb4fb5955fa5239d22202a40985ddfc1afc14185e386cb8fd9",
+      "elapsed_seconds": 1202.2844866000014,
+      "generated_quality_accepted": false,
+      "rights_status": "unverified",
+      "endpoint_checks": {
+        "last": {
+          "frame": 16,
+          "expected_rgba_sha256": "sha256:ebec1369e26a5fb994f56e3ad1f120953f7311ed50334be886e683bc119107b9",
+          "actual_rgba_sha256": "sha256:ebec1369e26a5fb994f56e3ad1f120953f7311ed50334be886e683bc119107b9",
+          "equal": true
+        }
+      },
+      "model_execution": {
+        "versions": {
+          "python": "3.13.14",
+          "numpy": "2.4.2",
+          "torch": "2.13.0+cu130",
+          "diffusers": "0.39.0",
+          "transformers": "5.14.1",
+          "accelerate": "1.14.0",
+          "safetensors": "0.8.0"
+        },
+        "local_weight_reads": [
+          {
+            "component": "text_encoder",
+            "backend": "pread",
+            "files": [
+              {
+                "path": "text_encoder/model-00001-of-00003.safetensors",
+                "opens": 1
+              },
+              {
+                "path": "text_encoder/model-00002-of-00003.safetensors",
+                "opens": 1
+              },
+              {
+                "path": "text_encoder/model-00003-of-00003.safetensors",
+                "opens": 1
+              }
+            ]
+          },
+          {
+            "component": "transformer",
+            "backend": "pread",
+            "files": [
+              {
+                "path": "transformer/diffusion_pytorch_model-00001-of-00002.safetensors",
+                "opens": 1
+              },
+              {
+                "path": "transformer/diffusion_pytorch_model-00002-of-00002.safetensors",
+                "opens": 1
+              }
+            ]
+          },
+          {
+            "component": "vae",
+            "backend": "pread",
+            "files": [
+              {
+                "path": "vae/diffusion_pytorch_model.safetensors",
+                "opens": 1
+              }
+            ]
+          }
+        ],
+        "text_device_map": {
+          "shared": "0",
+          "encoder.embed_tokens": "0",
+          "encoder.block.0": "0",
+          "encoder.block.1": "0",
+          "encoder.block.2": "0",
+          "encoder.block.3": "0",
+          "encoder.block.4": "0",
+          "encoder.block.5": "0",
+          "encoder.block.6": "0",
+          "encoder.block.7": "0",
+          "encoder.block.8": "0",
+          "encoder.block.9": "0",
+          "encoder.block.10": "0",
+          "encoder.block.11": "0",
+          "encoder.block.12": "0",
+          "encoder.block.13": "cpu",
+          "encoder.block.14": "cpu",
+          "encoder.block.15": "cpu",
+          "encoder.block.16": "cpu",
+          "encoder.block.17": "cpu",
+          "encoder.block.18": "cpu",
+          "encoder.block.19": "cpu",
+          "encoder.block.20": "cpu",
+          "encoder.block.21": "cpu",
+          "encoder.block.22": "cpu",
+          "encoder.block.23": "cpu",
+          "encoder.final_layer_norm": "cpu",
+          "encoder.dropout": "cpu"
+        },
+        "text_weight_bytes_bfloat16": 11361820672,
+        "text_encoder_released_before_generation": true,
+        "text_offload_hooks_removed_before_generation": true,
+        "prompt_token_counts": {
+          "prompt": 52,
+          "negative_prompt": 14
+        },
+        "prompt_truncated": false,
+        "prompt_extension": false,
+        "text_phase_seconds": 423.3666183000023,
+        "load_seconds": 620.900599499997,
+        "cuda_device": "NVIDIA GeForce RTX 3060",
+        "cuda_total_bytes": 12884377600,
+        "gpu_admission": {
+          "policy": "cuda-uuid-physical-and-torch-free-v1",
+          "reservation": false,
+          "oom_guarantee": false,
+          "headroom_bytes": 805306368,
+          "text": {
+            "policy": "cuda-uuid-physical-and-torch-free-v1",
+            "stage": "text-weights",
+            "required_free_bytes": 8321499136,
+            "reservation": false,
+            "oom_guarantee": false,
+            "query_started_at_utc": "2026-10-26T14:53:29.329491+00:00",
+            "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+            "logical_device_index": 0,
+            "idle_cache_release": {
+              "scope": "current-worker",
+              "synchronized": true,
+              "empty_cache_called": true,
+              "completed": true,
+              "active_allocation_preserved": true,
+              "allocated_before_bytes": 0,
+              "reserved_before_bytes": 0,
+              "allocated_after_bytes": 0,
+              "reserved_after_bytes": 0,
+              "released_reserved_bytes": 0
+            },
+            "query_command": [
+              "C:\\Windows\\System32\\nvidia-smi.EXE",
+              "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+              "--query-gpu=uuid,memory.total,memory.free",
+              "--format=csv,noheader,nounits"
+            ],
+            "torch_free_bytes": 11799625728,
+            "torch_total_bytes": 12884377600,
+            "physical_free_bytes": 10923016192,
+            "physical_total_bytes": 12884901888,
+            "effective_free_bytes": 10923016192,
+            "query_finished_at_utc": "2026-10-26T14:53:29.757616+00:00",
+            "sample_seconds": 0.4219864000042435,
+            "status": "admitted"
+          },
+          "video": {
+            "policy": "cuda-uuid-physical-and-torch-free-v1",
+            "stage": "video-weights",
+            "required_free_bytes": 5636880972,
+            "reservation": false,
+            "oom_guarantee": false,
+            "query_started_at_utc": "2026-10-26T15:03:46.753533+00:00",
+            "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+            "logical_device_index": 0,
+            "idle_cache_release": {
+              "scope": "current-worker",
+              "synchronized": true,
+              "empty_cache_called": true,
+              "completed": true,
+              "active_allocation_preserved": true,
+              "allocated_before_bytes": 8519680,
+              "reserved_before_bytes": 20971520,
+              "allocated_after_bytes": 8519680,
+              "reserved_after_bytes": 20971520,
+              "released_reserved_bytes": 0
+            },
+            "query_command": [
+              "C:\\Windows\\System32\\nvidia-smi.EXE",
+              "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+              "--query-gpu=uuid,memory.total,memory.free",
+              "--format=csv,noheader,nounits"
+            ],
+            "torch_free_bytes": 11745099776,
+            "torch_total_bytes": 12884377600,
+            "physical_free_bytes": 11083448320,
+            "physical_total_bytes": 12884901888,
+            "effective_free_bytes": 11083448320,
+            "query_finished_at_utc": "2026-10-26T15:03:46.842900+00:00",
+            "sample_seconds": 0.08935760000167647,
+            "status": "admitted"
+          },
+          "video_weight_bytes": 4823185996,
+          "prompt_embedding_bytes": 8388608,
+          "windows": {
+            "count": 1,
+            "minimum_torch_free_bytes": 6546259968,
+            "minimum_physical_free_bytes": 5884608512,
+            "first": {
+              "policy": "cuda-uuid-physical-and-torch-free-v1",
+              "stage": "video-window-1",
+              "required_free_bytes": 805306368,
+              "reservation": false,
+              "oom_guarantee": false,
+              "query_started_at_utc": "2026-10-26T15:03:50.325364+00:00",
+              "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+              "logical_device_index": 0,
+              "idle_cache_release": {
+                "scope": "current-worker",
+                "synchronized": true,
+                "empty_cache_called": true,
+                "completed": true,
+                "active_allocation_preserved": true,
+                "allocated_before_bytes": 4856498688,
+                "reserved_before_bytes": 5219811328,
+                "allocated_after_bytes": 4856498688,
+                "reserved_after_bytes": 5219811328,
+                "released_reserved_bytes": 0
+              },
+              "query_command": [
+                "C:\\Windows\\System32\\nvidia-smi.EXE",
+                "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+                "--query-gpu=uuid,memory.total,memory.free",
+                "--format=csv,noheader,nounits"
+              ],
+              "torch_free_bytes": 6546259968,
+              "torch_total_bytes": 12884377600,
+              "physical_free_bytes": 5884608512,
+              "physical_total_bytes": 12884901888,
+              "effective_free_bytes": 5884608512,
+              "query_finished_at_utc": "2026-10-26T15:03:50.402859+00:00",
+              "sample_seconds": 0.0774714000071981,
+              "status": "admitted"
+            },
+            "last": {
+              "policy": "cuda-uuid-physical-and-torch-free-v1",
+              "stage": "video-window-1",
+              "required_free_bytes": 805306368,
+              "reservation": false,
+              "oom_guarantee": false,
+              "query_started_at_utc": "2026-10-26T15:03:50.325364+00:00",
+              "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+              "logical_device_index": 0,
+              "idle_cache_release": {
+                "scope": "current-worker",
+                "synchronized": true,
+                "empty_cache_called": true,
+                "completed": true,
+                "active_allocation_preserved": true,
+                "allocated_before_bytes": 4856498688,
+                "reserved_before_bytes": 5219811328,
+                "allocated_after_bytes": 4856498688,
+                "reserved_after_bytes": 5219811328,
+                "released_reserved_bytes": 0
+              },
+              "query_command": [
+                "C:\\Windows\\System32\\nvidia-smi.EXE",
+                "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+                "--query-gpu=uuid,memory.total,memory.free",
+                "--format=csv,noheader,nounits"
+              ],
+              "torch_free_bytes": 6546259968,
+              "torch_total_bytes": 12884377600,
+              "physical_free_bytes": 5884608512,
+              "physical_total_bytes": 12884901888,
+              "effective_free_bytes": 5884608512,
+              "query_finished_at_utc": "2026-10-26T15:03:50.402859+00:00",
+              "sample_seconds": 0.0774714000071981,
+              "status": "admitted"
+            }
+          }
+        },
+        "transformer_precision": "bfloat16-with-declared-float32-stability-modules",
+        "transformer_parameter_dtype_elements": {
+          "torch.float32": 3311616,
+          "torch.bfloat16": 2150660416
+        },
+        "float32_stability_modules": [
+          "time_embedder",
+          "scale_shift_table",
+          "norm1",
+          "norm2",
+          "norm3"
+        ],
+        "vae_precision": "float32",
+        "vae_spatial_tiling": true,
+        "window_seconds": [
+          33.841995800001314
+        ],
+        "flow_shift": 3.0,
+        "model_input_scale": 1,
+        "window_input_shapes": [
+          [
+            17,
+            144,
+            256
+          ]
+        ],
+        "conditioning_trace": {
+          "protocol": "agent-vace-conditioning-trace-v1",
+          "calls": 1,
+          "sha256": "sha256:14c99512425be58d5dd50714d672d39b984f933ad3c59518bb374e2d378a6988",
+          "samples": [
+            {
+              "call": 0,
+              "rgb_shape": [
+                17,
+                144,
+                256,
+                3
+              ],
+              "mask_shape": [
+                17,
+                144,
+                256
+              ],
+              "rgb_sha256": "sha256:d35a9ba1ad75c4c366e6bc84e6950fce4e452e9c61b2897783515582700bd85b",
+              "mask_sha256": "sha256:eb222fa304df63cbe02e78d94537475d6f03a5d3ce1d5336f96b176b34bda65d"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "mode": "first-last-to-video",
+      "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程\\assets\\derived\\first-last-to-video.mov",
+      "output_sha256": "28fc7aef60f98d7b87515f3ea5b6e69085470eb34f0c1c28015d6b1a52afc280",
+      "preview": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\first-last-to-video.mp4",
+      "gif": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\first-last-to-video.gif",
+      "contact": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\first-last-to-video-frames.png",
+      "frames": 17,
+      "fps": "12",
+      "duration_seconds": 1.4166666666666667,
+      "raw_rgba_sha256": "2ce5c55d9e68754aea708084ccb0c173e0b5566ca415666a02451370a3ec9509",
+      "elapsed_seconds": 1100.7277207000006,
+      "generated_quality_accepted": false,
+      "rights_status": "unverified",
+      "endpoint_checks": {
+        "first": {
+          "frame": 0,
+          "expected_rgba_sha256": "sha256:ddfc49fa3effb2c6816e5d63babfae374f791414dba6bb77b06d5f421c31362d",
+          "actual_rgba_sha256": "sha256:ddfc49fa3effb2c6816e5d63babfae374f791414dba6bb77b06d5f421c31362d",
+          "equal": true
+        },
+        "last": {
+          "frame": 16,
+          "expected_rgba_sha256": "sha256:ebec1369e26a5fb994f56e3ad1f120953f7311ed50334be886e683bc119107b9",
+          "actual_rgba_sha256": "sha256:ebec1369e26a5fb994f56e3ad1f120953f7311ed50334be886e683bc119107b9",
+          "equal": true
+        }
+      },
+      "model_execution": {
+        "versions": {
+          "python": "3.13.14",
+          "numpy": "2.4.2",
+          "torch": "2.13.0+cu130",
+          "diffusers": "0.39.0",
+          "transformers": "5.14.1",
+          "accelerate": "1.14.0",
+          "safetensors": "0.8.0"
+        },
+        "local_weight_reads": [
+          {
+            "component": "text_encoder",
+            "backend": "pread",
+            "files": [
+              {
+                "path": "text_encoder/model-00001-of-00003.safetensors",
+                "opens": 1
+              },
+              {
+                "path": "text_encoder/model-00002-of-00003.safetensors",
+                "opens": 1
+              },
+              {
+                "path": "text_encoder/model-00003-of-00003.safetensors",
+                "opens": 1
+              }
+            ]
+          },
+          {
+            "component": "transformer",
+            "backend": "pread",
+            "files": [
+              {
+                "path": "transformer/diffusion_pytorch_model-00001-of-00002.safetensors",
+                "opens": 1
+              },
+              {
+                "path": "transformer/diffusion_pytorch_model-00002-of-00002.safetensors",
+                "opens": 1
+              }
+            ]
+          },
+          {
+            "component": "vae",
+            "backend": "pread",
+            "files": [
+              {
+                "path": "vae/diffusion_pytorch_model.safetensors",
+                "opens": 1
+              }
+            ]
+          }
+        ],
+        "text_device_map": {
+          "shared": "0",
+          "encoder.embed_tokens": "0",
+          "encoder.block.0": "0",
+          "encoder.block.1": "0",
+          "encoder.block.2": "0",
+          "encoder.block.3": "0",
+          "encoder.block.4": "0",
+          "encoder.block.5": "0",
+          "encoder.block.6": "0",
+          "encoder.block.7": "0",
+          "encoder.block.8": "0",
+          "encoder.block.9": "0",
+          "encoder.block.10": "0",
+          "encoder.block.11": "0",
+          "encoder.block.12": "0",
+          "encoder.block.13": "cpu",
+          "encoder.block.14": "cpu",
+          "encoder.block.15": "cpu",
+          "encoder.block.16": "cpu",
+          "encoder.block.17": "cpu",
+          "encoder.block.18": "cpu",
+          "encoder.block.19": "cpu",
+          "encoder.block.20": "cpu",
+          "encoder.block.21": "cpu",
+          "encoder.block.22": "cpu",
+          "encoder.block.23": "cpu",
+          "encoder.final_layer_norm": "cpu",
+          "encoder.dropout": "cpu"
+        },
+        "text_weight_bytes_bfloat16": 11361820672,
+        "text_encoder_released_before_generation": true,
+        "text_offload_hooks_removed_before_generation": true,
+        "prompt_token_counts": {
+          "prompt": 52,
+          "negative_prompt": 14
+        },
+        "prompt_truncated": false,
+        "prompt_extension": false,
+        "text_phase_seconds": 407.7672978999981,
+        "load_seconds": 600.8630922999946,
+        "cuda_device": "NVIDIA GeForce RTX 3060",
+        "cuda_total_bytes": 12884377600,
+        "gpu_admission": {
+          "policy": "cuda-uuid-physical-and-torch-free-v1",
+          "reservation": false,
+          "oom_guarantee": false,
+          "headroom_bytes": 805306368,
+          "text": {
+            "policy": "cuda-uuid-physical-and-torch-free-v1",
+            "stage": "text-weights",
+            "required_free_bytes": 8321499136,
+            "reservation": false,
+            "oom_guarantee": false,
+            "query_started_at_utc": "2026-10-26T15:17:53.397250+00:00",
+            "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+            "logical_device_index": 0,
+            "idle_cache_release": {
+              "scope": "current-worker",
+              "synchronized": true,
+              "empty_cache_called": true,
+              "completed": true,
+              "active_allocation_preserved": true,
+              "allocated_before_bytes": 0,
+              "reserved_before_bytes": 0,
+              "allocated_after_bytes": 0,
+              "reserved_after_bytes": 0,
+              "released_reserved_bytes": 0
+            },
+            "query_command": [
+              "C:\\Windows\\System32\\nvidia-smi.EXE",
+              "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+              "--query-gpu=uuid,memory.total,memory.free",
+              "--format=csv,noheader,nounits"
+            ],
+            "torch_free_bytes": 11799625728,
+            "torch_total_bytes": 12884377600,
+            "physical_free_bytes": 11146362880,
+            "physical_total_bytes": 12884901888,
+            "effective_free_bytes": 11146362880,
+            "query_finished_at_utc": "2026-10-26T15:17:54.063338+00:00",
+            "sample_seconds": 0.6422012000039103,
+            "status": "admitted"
+          },
+          "video": {
+            "policy": "cuda-uuid-physical-and-torch-free-v1",
+            "stage": "video-weights",
+            "required_free_bytes": 5636880972,
+            "reservation": false,
+            "oom_guarantee": false,
+            "query_started_at_utc": "2026-10-26T15:27:50.930207+00:00",
+            "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+            "logical_device_index": 0,
+            "idle_cache_release": {
+              "scope": "current-worker",
+              "synchronized": true,
+              "empty_cache_called": true,
+              "completed": true,
+              "active_allocation_preserved": true,
+              "allocated_before_bytes": 8519680,
+              "reserved_before_bytes": 20971520,
+              "allocated_after_bytes": 8519680,
+              "reserved_after_bytes": 20971520,
+              "released_reserved_bytes": 0
+            },
+            "query_command": [
+              "C:\\Windows\\System32\\nvidia-smi.EXE",
+              "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+              "--query-gpu=uuid,memory.total,memory.free",
+              "--format=csv,noheader,nounits"
+            ],
+            "torch_free_bytes": 11745099776,
+            "torch_total_bytes": 12884377600,
+            "physical_free_bytes": 11091836928,
+            "physical_total_bytes": 12884901888,
+            "effective_free_bytes": 11091836928,
+            "query_finished_at_utc": "2026-10-26T15:27:51.017469+00:00",
+            "sample_seconds": 0.08724699999584118,
+            "status": "admitted"
+          },
+          "video_weight_bytes": 4823185996,
+          "prompt_embedding_bytes": 8388608,
+          "windows": {
+            "count": 1,
+            "minimum_torch_free_bytes": 6546259968,
+            "minimum_physical_free_bytes": 5892997120,
+            "first": {
+              "policy": "cuda-uuid-physical-and-torch-free-v1",
+              "stage": "video-window-1",
+              "required_free_bytes": 805306368,
+              "reservation": false,
+              "oom_guarantee": false,
+              "query_started_at_utc": "2026-10-26T15:27:54.299879+00:00",
+              "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+              "logical_device_index": 0,
+              "idle_cache_release": {
+                "scope": "current-worker",
+                "synchronized": true,
+                "empty_cache_called": true,
+                "completed": true,
+                "active_allocation_preserved": true,
+                "allocated_before_bytes": 4856498688,
+                "reserved_before_bytes": 5219811328,
+                "allocated_after_bytes": 4856498688,
+                "reserved_after_bytes": 5219811328,
+                "released_reserved_bytes": 0
+              },
+              "query_command": [
+                "C:\\Windows\\System32\\nvidia-smi.EXE",
+                "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+                "--query-gpu=uuid,memory.total,memory.free",
+                "--format=csv,noheader,nounits"
+              ],
+              "torch_free_bytes": 6546259968,
+              "torch_total_bytes": 12884377600,
+              "physical_free_bytes": 5892997120,
+              "physical_total_bytes": 12884901888,
+              "effective_free_bytes": 5892997120,
+              "query_finished_at_utc": "2026-10-26T15:27:54.371951+00:00",
+              "sample_seconds": 0.07206569999834755,
+              "status": "admitted"
+            },
+            "last": {
+              "policy": "cuda-uuid-physical-and-torch-free-v1",
+              "stage": "video-window-1",
+              "required_free_bytes": 805306368,
+              "reservation": false,
+              "oom_guarantee": false,
+              "query_started_at_utc": "2026-10-26T15:27:54.299879+00:00",
+              "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+              "logical_device_index": 0,
+              "idle_cache_release": {
+                "scope": "current-worker",
+                "synchronized": true,
+                "empty_cache_called": true,
+                "completed": true,
+                "active_allocation_preserved": true,
+                "allocated_before_bytes": 4856498688,
+                "reserved_before_bytes": 5219811328,
+                "allocated_after_bytes": 4856498688,
+                "reserved_after_bytes": 5219811328,
+                "released_reserved_bytes": 0
+              },
+              "query_command": [
+                "C:\\Windows\\System32\\nvidia-smi.EXE",
+                "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+                "--query-gpu=uuid,memory.total,memory.free",
+                "--format=csv,noheader,nounits"
+              ],
+              "torch_free_bytes": 6546259968,
+              "torch_total_bytes": 12884377600,
+              "physical_free_bytes": 5892997120,
+              "physical_total_bytes": 12884901888,
+              "effective_free_bytes": 5892997120,
+              "query_finished_at_utc": "2026-10-26T15:27:54.371951+00:00",
+              "sample_seconds": 0.07206569999834755,
+              "status": "admitted"
+            }
+          }
+        },
+        "transformer_precision": "bfloat16-with-declared-float32-stability-modules",
+        "transformer_parameter_dtype_elements": {
+          "torch.float32": 3311616,
+          "torch.bfloat16": 2150660416
+        },
+        "float32_stability_modules": [
+          "time_embedder",
+          "scale_shift_table",
+          "norm1",
+          "norm2",
+          "norm3"
+        ],
+        "vae_precision": "float32",
+        "vae_spatial_tiling": true,
+        "window_seconds": [
+          34.756530899998324
+        ],
+        "flow_shift": 3.0,
+        "model_input_scale": 1,
+        "window_input_shapes": [
+          [
+            17,
+            144,
+            256
+          ]
+        ],
+        "conditioning_trace": {
+          "protocol": "agent-vace-conditioning-trace-v1",
+          "calls": 1,
+          "sha256": "sha256:2fd98666fd4cfc2db7ee37d60adeb6a779aa516c0a283143019d8a45f299826b",
+          "samples": [
+            {
+              "call": 0,
+              "rgb_shape": [
+                17,
+                144,
+                256,
+                3
+              ],
+              "mask_shape": [
+                17,
+                144,
+                256
+              ],
+              "rgb_sha256": "sha256:47ec856dabe2c2de25c514bc36c68966b5464dc0ebbfde91b3462cebf9be7cfd",
+              "mask_sha256": "sha256:941628f57058bb0688626270b82bf4408c39f55984fe3c9c389b31bb8b161ea2"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "model_adapter": {
+    "adapter_id": "vace_generation",
+    "kind": "video-inpainting",
+    "engine": "diffusers-wan-vace-local-v1",
+    "protocol": "agent-video-wan-vace-inpainting-v1",
+    "output_contract": "rgba_video_v1",
+    "model_path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\wan2.1-vace-1.3b",
+    "model_sha256": "sha256:5a634bfa299951a011112dde59027a2daafd7e51263b6e5e63c5b2843df3a991",
+    "model_kind": "directory",
+    "model_file_count": 17,
+    "executable": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+    "executable_sha256": "sha256:ef8f51028ac5329641985112f8efb1c2d4c47c86b8011ddf7e6fae21e2b4e5a1",
+    "rights_ref": "visual_adapter_vace_generation",
+    "capabilities": [
+      "prompted_masked_video_editing",
+      "joint_temporal_windows",
+      "native_cuda_bfloat16",
+      "outside_rgb_and_alpha_preserved",
+      "explicit_previous_generated_overlap_conditioning"
+    ],
+    "settings": {
+      "device": "cuda",
+      "threads": 4,
+      "precision": "bfloat16",
+      "vae_precision": "float32",
+      "text_gpu_budget_mib": 7168,
+      "text_cpu_budget_mib": 8192,
+      "text_offload": "explicit-balanced-weights-then-release",
+      "state_budget_bytes": 536870912
+    },
+    "artifacts": [
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\wan2.1-vace-1.3b\\model_index.json",
+        "role": "model",
+        "bytes": 408,
+        "sha256": "sha256:078a0c056f61edae212c2e7e78fcb061e48a9bc886c08fb245bf5e165e371ea2"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\wan2.1-vace-1.3b\\scheduler\\scheduler_config.json",
+        "role": "model",
+        "bytes": 751,
+        "sha256": "sha256:070dc020808eec985634b83015c1596425c264d8fa80afe22aa1e02e9e903e6c"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\wan2.1-vace-1.3b\\text_encoder\\config.json",
+        "role": "model",
+        "bytes": 850,
+        "sha256": "sha256:6de5b5703cea483f528659de1e9f3b81955833a027b2a785d3c0f17dc07a938c"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\wan2.1-vace-1.3b\\text_encoder\\model-00001-of-00003.safetensors",
+        "role": "model",
+        "bytes": 4935812536,
+        "sha256": "sha256:a8e861969c7433e707cc5a74065d795d36cca07ec96eb6763eb4083df7248f58"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\wan2.1-vace-1.3b\\text_encoder\\model-00002-of-00003.safetensors",
+        "role": "model",
+        "bytes": 4983103192,
+        "sha256": "sha256:d57d948ece4837d850b7a859a4415121d57cacf8b9ee1d4db200c67f592902d7"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\wan2.1-vace-1.3b\\text_encoder\\model-00003-of-00003.safetensors",
+        "role": "model",
+        "bytes": 1442935480,
+        "sha256": "sha256:0da9ee284e21d1406df708788db1d502d95d75f69faa25cd26151bf8829b7c5f"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\wan2.1-vace-1.3b\\text_encoder\\model.safetensors.index.json",
+        "role": "model",
+        "bytes": 22476,
+        "sha256": "sha256:31c4c7bcce679eaa0dd4667462394ddb013dc2f748e0bffc893dc9146a320dab"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\wan2.1-vace-1.3b\\tokenizer\\special_tokens_map.json",
+        "role": "model",
+        "bytes": 7079,
+        "sha256": "sha256:456b58fd240a06c743a7c2cf8008bec501240d68ebd1fc4018ea569505fea270"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\wan2.1-vace-1.3b\\tokenizer\\spiece.model",
+        "role": "model",
+        "bytes": 4548313,
+        "sha256": "sha256:e3909a67b780650b35cf529ac782ad2b6b26e6d1f849d3fbb6a872905f452458"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\wan2.1-vace-1.3b\\tokenizer\\tokenizer.json",
+        "role": "model",
+        "bytes": 16837459,
+        "sha256": "sha256:20a46ac256746594ed7e1e3ef733b83fbc5a6f0922aa7480eda961743de080ef"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\wan2.1-vace-1.3b\\tokenizer\\tokenizer_config.json",
+        "role": "model",
+        "bytes": 61786,
+        "sha256": "sha256:89bef11d01c80a229079666dd470d536aba87b8eaa00b51cc481ba625be59269"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\wan2.1-vace-1.3b\\transformer\\config.json",
+        "role": "model",
+        "bytes": 662,
+        "sha256": "sha256:58a07adcbe6ae67624d66918ca2ba65615f931c4a26d8f384ae8ac1e68de0608"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\wan2.1-vace-1.3b\\transformer\\diffusion_pytorch_model-00001-of-00002.safetensors",
+        "role": "model",
+        "bytes": 4999964504,
+        "sha256": "sha256:192804a4e10b5bb0a13f5c224bc4ec9707b3b8cc0def8eea005dbce7c9d6752a"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\wan2.1-vace-1.3b\\transformer\\diffusion_pytorch_model-00002-of-00002.safetensors",
+        "role": "model",
+        "bytes": 2146103400,
+        "sha256": "sha256:dadaf1d5e9ccf826e2c497aa9fc2756a044f606d0aa919e5405a734a121bcf7e"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\wan2.1-vace-1.3b\\transformer\\diffusion_pytorch_model.safetensors.index.json",
+        "role": "model",
+        "bytes": 114130,
+        "sha256": "sha256:2ed4b491e7a7f3e8185526d5d9a259944871a122a1eec86808bac9194a965d83"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\wan2.1-vace-1.3b\\vae\\config.json",
+        "role": "model",
+        "bytes": 724,
+        "sha256": "sha256:7a3afcf422b9a9d63e0b6ca7e0d3b5193220a61f5b203bb8417900bc090705e8"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\wan2.1-vace-1.3b\\vae\\diffusion_pytorch_model.safetensors",
+        "role": "model",
+        "bytes": 507591892,
+        "sha256": "sha256:d6e524b3fffede1787a74e81b30976dce5400c4439ba64222168e607ed19e793"
+      },
+      {
+        "path": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+        "role": "python",
+        "bytes": 105696,
+        "sha256": "sha256:ef8f51028ac5329641985112f8efb1c2d4c47c86b8011ddf7e6fae21e2b4e5a1"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\vace-evidence.json",
+        "role": "evidence",
+        "bytes": 5762,
+        "sha256": "sha256:ee32da2e5a97e3e157ce038670c7c61f7f083f7d4d34d7cf773a30b4f38a9aa5"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\site\\ai_ad_editor\\vace_worker.py",
+        "role": "worker",
+        "bytes": 5368,
+        "sha256": "sha256:0ce1dc459b3c0d7f1c95ec2208e78e5fe299200582c878f5de34c9382f4582f5"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\site\\ai_ad_editor\\vace_frames.py",
+        "role": "frames",
+        "bytes": 15072,
+        "sha256": "sha256:aadc7d5785347422ee62b1d4a195e5dfbf1bcb497eeedc43aa4d839aff6f55de"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\site\\ai_ad_editor\\local_vace.py",
+        "role": "controller",
+        "bytes": 19026,
+        "sha256": "sha256:44cb7558644b219234e15c8e4088cb7c760a8f200e00e1ba66fb16b338c83571"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\site\\ai_ad_editor\\vace_model.py",
+        "role": "model_loader",
+        "bytes": 13701,
+        "sha256": "sha256:8a8f96a14aac93a7b9577f88fe576fecbbfd4fcc206e27843de79f7b1ba54961"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\site\\ai_ad_editor\\local_matting.py",
+        "role": "pipeline",
+        "bytes": 45178,
+        "sha256": "sha256:a19c3718a983e0d2e79184f1ad318b462e1c6acb0f9bf7da108168094d09e16c"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\site\\ai_ad_editor\\local_inpainting.py",
+        "role": "mask_controller",
+        "bytes": 14477,
+        "sha256": "sha256:34294b2a7184afeda6527db59def5aa6b02efa83e8f3beb6e8e53fec0fe03890"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\site\\ai_ad_editor\\matting_frames.py",
+        "role": "rgba",
+        "bytes": 4054,
+        "sha256": "sha256:e1491c575fe0dff5626439cb27fe422b8e92955ca1dd7503df59bbd6a3509f09"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\site\\ai_ad_editor\\rvm_worker.py",
+        "role": "guard",
+        "bytes": 5298,
+        "sha256": "sha256:b4ee231349b26fe8d3e94f9bab1ba2f70566b8c2dbe0b806b8864e92957fbeb1"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\site\\ai_ad_editor\\artifact_locks.py",
+        "role": "artifact_verification",
+        "bytes": 5528,
+        "sha256": "sha256:9f99d7ca525459d69efa778a48eb3ea80a2c96ad57b903276087aa9f1f3d8322"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\site\\ai_ad_editor\\utils.py",
+        "role": "io",
+        "bytes": 15239,
+        "sha256": "sha256:b2c7992367a09f8d6c1812afe0b90b64fce0793e28d26d8ebca5e6790489e00f"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\site\\ai_ad_editor\\repair_blend.py",
+        "role": "blend",
+        "bytes": 14157,
+        "sha256": "sha256:1d4d01f381444cf13416daf82832edc6aa927180aeb1bc8765cf2b5a2ddaa2c6"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\site\\ai_ad_editor\\cuda_admission.py",
+        "role": "cuda_admission",
+        "bytes": 11092,
+        "sha256": "sha256:8d030f776b09edeb9d6cfecce720caca3f20a1fab058dd3dc406020ed064fd3b"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\site\\ai_ad_editor\\local_outpainting.py",
+        "role": "outpaint",
+        "bytes": 10211,
+        "sha256": "sha256:577ecf6fe26a0718cc734ba6b526f52e974b97262965f965aa37f431add1bd55"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\site\\ai_ad_editor\\pipeline_diagnostics.py",
+        "role": "diagnostics",
+        "bytes": 32733,
+        "sha256": "sha256:10293635791333ef437e592d7a58f8dcf341ade759552a26149c1297bb9cac81"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\site\\ai_ad_editor\\errors.py",
+        "role": "error_contract",
+        "bytes": 1609,
+        "sha256": "sha256:1525e91f86ad7f22c061a35c383d3513cdcad77acab2e364510b42adde0a9721"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\site\\ai_ad_editor\\policy.py",
+        "role": "local_policy",
+        "bytes": 13791,
+        "sha256": "sha256:16100811aae96699ce77245cec6746588953c4f9bc0071a1d04aec0c80ea4d25"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.31\\final-r1\\installed\\site\\ai_ad_editor\\vace_context.py",
+        "role": "temporal_context",
+        "bytes": 9866,
+        "sha256": "sha256:aef2d4318720c10a99644e96ea35ba27d48e9b405a332f6b2075b6a558f0e0e6"
+      }
+    ],
+    "network": "disabled",
+    "registered_at": "2026-10-26T13:37:12.384769Z",
+    "verification_status": "unverified",
+    "sha256": "sha256:ce31eb0a1d43c4a2624ff8d0161f6d83acfdf977370a9e422d6ffa912a47322d"
+  },
+  "resume_at_utc": "2026-10-26T14:11:51.209532+00:00",
+  "repeated_planning_skipped": "All four mode plans already tested by the14 installed tests; actual first-mode dry-run retained.",
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\可编辑 生成工程",
+  "package": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\editable-generated-videos.aevpkg.zip",
+  "package_sha256": "5d7b14d757071a1fd2aa311d007bfdb7dd6a259ce151847a998e03f6ab9b9afd",
+  "new_model_windows": 4,
+  "diffusion_steps_per_window": 18,
+  "finished_at_utc": "2026-10-26T15:29:02.674700+00:00"
+}

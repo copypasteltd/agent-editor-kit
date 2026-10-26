@@ -7,6 +7,11 @@ Native runtime + weights/hashes/licenses → adapters/artifacts
 Commands: `media adapter; audio adapter; audio separate-stems; asr adapter; ocr; face; tts; voice; translate; dub subtitles; gpu; model-pack`.
 No weight downloads; check capability/runtime before execution.
 
+For text/image/first-last video, read [video-generation.md](../../video-generation.md).
+`media generate` reuses an explicitly registered VACE CUDA runtime, produces a
+new asset and can apply an editable clip. Inspect actual interior frames and
+endpoint evidence separately; retain model/image rights dependencies.
+
 For translated SRT with complete timed speech and editable caption/audio clips,
 read [subtitle-dubbing.md](../../subtitle-dubbing.md). Preserve all regeneration
 attempts and inspect actual providers, fit and content rights; cue timing does

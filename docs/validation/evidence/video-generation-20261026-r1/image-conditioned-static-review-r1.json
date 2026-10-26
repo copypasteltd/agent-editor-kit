@@ -1,0 +1,22 @@
+{
+  "at_utc": "2026-10-26T14:41:26.638473+00:00",
+  "static_image_review": true,
+  "mode": "image-to-video",
+  "frames_viewed": [
+    0,
+    8,
+    16
+  ],
+  "contact": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\video-generation-20261026-r1\\image-to-video-frames.png",
+  "contact_sha256": "2320562dcc598a77817b84173fda366a24c8f1347a05a3bfc902192792c1529b",
+  "natural_quality_accepted": false,
+  "continuous_playback": false,
+  "human_listening": false,
+  "audio_generated": false,
+  "observations": [
+    "Frame0 is the explicitly retained geometric bottle condition.",
+    "Generated frames8/16 show bright edge halos and irregular background color patches.",
+    "The geometric input appearance changes toward shaded/glowing generated objects; exact appearance fidelity is not accepted.",
+    "Static samples cannot establish motion smoothness or prompt-following quality."
+  ]
+}

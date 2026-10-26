@@ -33,6 +33,11 @@ manifest data/4096 published outputs and 10,000 scanned entries per job, at most
 the 10,000-entry scan limit. Legacy `cache/semantic-jobs/` is not adopted.
 No other model cache automatically gains this contract.
 
+CLI 0.1.33 `media generate` also uses owned `video-generation` jobs for its
+conditions, mask, private VACE pipeline and output publication. Recovery retains
+committed generated assets and removes matching uncommitted output/conditions.
+This does not adopt older unowned inpainting caches or resume diffusion.
+
 Normal transactional responses may expose `data.job_cleanup`. If the owner was
 hard-stopped, the private native process job ends descendants launched through
 the shared helper; explicit recovery handles abandoned files. Other custom

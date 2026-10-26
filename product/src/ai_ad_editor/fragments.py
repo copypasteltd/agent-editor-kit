@@ -612,6 +612,11 @@ def prepare_apply(project: dict, ledger: dict, payload: dict, info: dict, reques
                 source_asset_id=maps['asset'][source['outpainting']['source_asset_id']],
                 asset=original, assets=original_assets)
             asset['source']['derived_from'] = [maps['asset'][v] for v in source['derived_from']]
+        if source.get('video_generation') is not None:
+            from .video_generation import rebind_recipe
+            asset['source']['video_generation'] = rebind_recipe(source['video_generation'],
+                mapping=maps['asset'], asset=original, assets=original_assets)
+            asset['source']['derived_from'] = [maps['asset'][v] for v in source['derived_from']]
     for s in imported['sequences']:
         s['id'] = maps['sequence'][s['id']]
         for t in s['tracks']:

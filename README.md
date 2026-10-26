@@ -9,9 +9,32 @@
 本页包含完整功能模块、服务与依赖、安装与使用逻辑、Skill 输入输出、真实案例和核验表。长篇原始验收日志继续留档，功能说明与案例入口恢复到首页。
 
 
+<!-- video-generation-current -->
+
+**CLI0.1.33 / alpha.4-local.31 / r34 kit · 1 Skill / 17 modules.**
+
+新增本地 GPU 文生、图生、尾帧与首尾帧视频生成：显式条件、原文提示词、seed/采样和窗口参数，产出无声视频资产，并可直接作为普通可编辑片段入轨。复用现有 VACE 原生内核、GPU 内存准入、权利依赖与事务恢复。
+
+```powershell
+& $avk media generate --project $avkProject --adapter-id $vaceAdapterId `
+  --asset-id generated-shot-01 --mode first-last-to-video `
+  --first-asset-id $firstAssetId --last-asset-id $lastAssetId `
+  --width 256 --height 144 --frames 17 --fps 12 --image-fit contain `
+  --prompt $reviewedPrompt --inference-steps 18 --window-frames 17 `
+  --window-overlap 4 --apply --track-id track_video_1
+```
+
+[Workflow](docs/product/VIDEO_GENERATION.md) · [C43](docs/product/CASES.md#c43-video-generation) · [Install](docs/releases/CLI_0.1.33_LOCAL.md) · [Evidence](docs/validation/本地GPU视频生成实测_2026-10-26.md)
+
+四种模式均有真实 CUDA 输出、全部17帧解码与工程包往返记录；每个端点另做解码哈希核验。保留端点不证明模型运动/身份质量；模型与生成内容权利、自然质量、完整播放及完整剪映等价仍未验收。模型成片/GIF/工程包保留本机；下图仅是自行绘制的 CC0 条件图，不是生成输出。
+
+![Original CC0 first/last conditions only](docs/assets/video-generation-20261026-r1/conditions.png)
+
+<!-- /video-generation-current -->
+
 <!-- tracking-bake-current -->
 
-**CLI0.1.32 / alpha.4-local.30 / r33 kit · 1 Skill / 17 modules.**
+**Historical / 历史 / 歷史：CLI0.1.32 / alpha.4-local.30 / r33 kit · 1 Skill / 17 modules.**
 
 原生 PTS 跟踪现可烘焙为普通 hold 关键帧：保留真实帧时钟、遮罩和转场可见度，对烘焙前后全部 Float32 显示帧逐帧比较，再导出工程。原始绑定另存旁车；普通工程包继续保留动态绑定。
 
@@ -672,6 +695,7 @@ flowchart LR
 | F58 | Float32全局/区间调整层 | 全轨含字幕合成后按顺序调色；LUT/曝光及既有浮点效果、六类关键帧、选中根只应用一次。 | `settings.adjustments; preview; render; queue` | 显式线性工作域/效果信号；CPU执行；LUT持锁/包迁移；保留作者区间时钟，非完整HDR。 |
 | F59 | 原生PTS跟踪与叠加轨 | 保存源观测→按实际原生帧求跟随位置；共享crop/TRS、ROI缩放/相对旋转、透明度、窗口与嵌套声音。 | `media track-bind; preview; render; queue; package` | 显式Float32，原生PTS不烘焙显示键；预算/循环门禁；模板漂移与遮挡另审，中间格式烘焙未接通。 |
 | F60 | 原生跟踪与烘焙交付 | 实际alpha/5类遮罩/59转场足迹；剪辑与共享变速保留观察；原生烘焙逐帧核验并保留源旁车。 | `media track-bind; timeline compose/edit; convert export --bake-tracking` | 当前冻结图/FPS；20,000帧/256,000求值；无法表达的整数步进拒绝；外部播放器及自然身份/遮挡待验收。 |
+| F61 | 本地GPU视频生成 | 文生、图生、尾帧/首尾帧；原文提示/采样、真实模型窗口、可编辑入轨、端点核验、可移植配方和受管恢复。 | `media adapter; media generate` | 已有原生VACE/CUDA依赖；无声8bit SDR；条件端点合成保留；自然质量/生成权利/全部剪映AI待验收。 |
 
 ## 支持的服务模块与依赖
 
@@ -798,7 +822,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.30/final-r3/installed/`，CLI 0.1.32；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
+本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.31/final-r1/installed/`，CLI 0.1.33；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1218,6 +1242,12 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R227 | 2026-10-26 native tracking bake | 每轮纯帧操作实际GPU affine90/over81；来源、worker及共享资源均关闭。prepared传输状态与编码成片质量分开留证。 | [Evidence](docs/validation/evidence/tracking-bake-20261026-r1/case-r5/native-bake-proof.json) |
 | R228 | 2026-10-26 native tracking bake | 新r33 kit共112文件，唯一Skill/17模块/73 Skill文件；独立注册及实际CLI/help/烘焙dry-run已验证，无渲染或源码回退。 | [Evidence](docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/verification.json) |
 | R229 | 2026-10-26 native tracking bake | 完整三语README、60功能/20服务/75声明、使用流程、案例/GIF、Skill及字节核验同步；223条历史R记录及38项原关闭条件保留，开发失败独立留证。 | [Evidence](docs/validation/evidence/tracking-bake-20261026-r1/development-attempts-r4/verification.json) |
+| R230 | 2026-10-26 local GPU generation | CLI0.1.33/local.31：227产品文件/schema与源码一致；安装版生成14、转换83、旧流程192通过；另有源码VACE/修复/抠像/恢复160通过，分组不合并计数。 | [Evidence](docs/validation/evidence/video-generation-20261026-r1/installation-final-r1/verification.json) |
+| R231 | 2026-10-26 local GPU generation | C43四种模式各实际CUDA推理1个17帧窗口，全部68个RGBA帧独立解码；输入形状、provider、GPU准入、采样与冷启动耗时留证；合成协议worker不计真实生成。 | [Evidence](docs/validation/evidence/video-generation-20261026-r1/case-r1/verification.json) |
+| R232 | 2026-10-26 local GPU generation | 首/尾/双端点共4个条件帧独立解码摘要一致；可编辑入轨、权利/配方工程包往返；已注册Skill实际渲染原/迁移工程，30FPS的170帧逐帧解码摘要相同；片段组重用会重绑图像ID/配方摘要。 | [Evidence](docs/validation/evidence/video-generation-20261026-r1/render-roundtrip-r1/verification.json) |
+| R233 | 2026-10-26 local GPU generation | 模型和输出权利保持unverified/internal，rights.check预期拒绝；实际MP4/GIF和可编辑工程包保留本机，公开目录只含自行绘制CC0条件图，不以输入图冒充生成结果。 | [Evidence](docs/validation/evidence/video-generation-20261026-r1/case-r1/rights-expected-reject.stdout.json) |
+| R234 | 2026-10-26 local GPU generation | 统一Skill新增按需生成工作流，维持1入口/17模块；74 Skill文件和r34 kit114文件；独立注册/安装版核验；模型包校验期限可配置，强制超时保留此前两份配置，无源码回退。 | [Evidence](docs/validation/evidence/video-generation-20261026-r1/kit-r2/verification.json) |
+| R235 | 2026-10-26 local GPU generation | 三语README及61功能/20服务/75声明、使用流程、案例/模型限制和安装包同步；229历史R记录与38项原关闭条件保留，开发失败独立留证。 | [Evidence](docs/validation/evidence/video-generation-20261026-r1/development-attempts-r1/verification.json) |
 
 ## 当前边界与开发方向
 

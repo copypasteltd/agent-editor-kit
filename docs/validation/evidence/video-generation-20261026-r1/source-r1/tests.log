@@ -1,0 +1,123 @@
+test_exact_rational_clock_and_configuration_rebuild (test_video_generation.ConditioningTests.test_exact_rational_clock_and_configuration_rebuild) ... ok
+test_image_fit_flatten_and_reject_are_explicit (test_video_generation.ConditioningTests.test_image_fit_flatten_and_reject_are_explicit) ... ok
+test_raster_clock_resource_and_sampler_rejections (test_video_generation.ConditioningTests.test_raster_clock_resource_and_sampler_rejections) ... ok
+test_text_and_first_last_masks_reach_the_actual_window_processor (test_video_generation.ConditioningTests.test_text_and_first_last_masks_reach_the_actual_window_processor) ... ok
+test_all_modes_native_encode_decode_and_editable_apply (test_video_generation.NativeGenerationTests.test_all_modes_native_encode_decode_and_editable_apply) ... ERROR
+test_cancel_and_timeout_remove_owned_conditions_before_publication (test_video_generation.NativeGenerationTests.test_cancel_and_timeout_remove_owned_conditions_before_publication) ... ERROR
+test_crashed_generation_workspace_cleans_only_owned_uncommitted_files (test_video_generation.NativeGenerationTests.test_crashed_generation_workspace_cleans_only_owned_uncommitted_files) ... ok
+test_dry_run_admits_four_modes_without_mutation_or_inference (test_video_generation.NativeGenerationTests.test_dry_run_admits_four_modes_without_mutation_or_inference) ... ok
+test_invalid_mode_parameters_track_clock_budget_before_worker (test_video_generation.NativeGenerationTests.test_invalid_mode_parameters_track_clock_budget_before_worker) ... ok
+test_metadata_save_failure_rolls_back_already_published_movie (test_video_generation.NativeGenerationTests.test_metadata_save_failure_rolls_back_already_published_movie) ... ERROR
+test_native_bad_worker_rollback_leaves_inputs_and_metadata (test_video_generation.NativeGenerationTests.test_native_bad_worker_rollback_leaves_inputs_and_metadata) ... ok
+test_recipe_tamper_is_rejected_and_fragment_rebinds_both_images (test_video_generation.NativeGenerationTests.test_recipe_tamper_is_rejected_and_fragment_rebinds_both_images) ... ERROR
+test_tampered_image_and_adapter_never_reach_inference (test_video_generation.NativeGenerationTests.test_tampered_image_and_adapter_never_reach_inference) ... ok
+
+======================================================================
+ERROR: test_all_modes_native_encode_decode_and_editable_apply (test_video_generation.NativeGenerationTests.test_all_modes_native_encode_decode_and_editable_apply)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_video_generation.py", line 158, in test_all_modes_native_encode_decode_and_editable_apply
+    self.assertEqual(invoke('validate','--project',self.root)[0],0)
+                     ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_local_matting.py", line 30, in invoke
+    code = main(list(argv))
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\cli.py", line 7275, in main
+    args = parser.parse_args(argv)
+  File "C:\Python313\Lib\argparse.py", line 1889, in parse_args
+    args, argv = self.parse_known_args(args, namespace)
+                 ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\argparse.py", line 1899, in parse_known_args
+    return self._parse_known_args2(args, namespace, intermixed=False)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\argparse.py", line 1928, in _parse_known_args2
+    namespace, args = self._parse_known_args(args, namespace, intermixed)
+                      ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\argparse.py", line 1971, in _parse_known_args
+    option_tuples = self._parse_optional(arg_string)
+  File "C:\Python313\Lib\argparse.py", line 2321, in _parse_optional
+    if not arg_string[0] in self.prefix_chars:
+           ~~~~~~~~~~^^^
+TypeError: 'WindowsPath' object is not subscriptable
+
+======================================================================
+ERROR: test_cancel_and_timeout_remove_owned_conditions_before_publication (test_video_generation.NativeGenerationTests.test_cancel_and_timeout_remove_owned_conditions_before_publication)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_video_generation.py", line 192, in test_cancel_and_timeout_remove_owned_conditions_before_publication
+    self.assertEqual(invoke(*self.command(),'--cancel-file',marker)[0],8); marker.unlink(); self.clean(before)
+                     ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_local_matting.py", line 30, in invoke
+    code = main(list(argv))
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\cli.py", line 7275, in main
+    args = parser.parse_args(argv)
+  File "C:\Python313\Lib\argparse.py", line 1889, in parse_args
+    args, argv = self.parse_known_args(args, namespace)
+                 ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\argparse.py", line 1899, in parse_known_args
+    return self._parse_known_args2(args, namespace, intermixed=False)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\argparse.py", line 1928, in _parse_known_args2
+    namespace, args = self._parse_known_args(args, namespace, intermixed)
+                      ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\argparse.py", line 1971, in _parse_known_args
+    option_tuples = self._parse_optional(arg_string)
+  File "C:\Python313\Lib\argparse.py", line 2321, in _parse_optional
+    if not arg_string[0] in self.prefix_chars:
+           ~~~~~~~~~~^^^
+TypeError: 'WindowsPath' object is not subscriptable
+
+======================================================================
+ERROR: test_metadata_save_failure_rolls_back_already_published_movie (test_video_generation.NativeGenerationTests.test_metadata_save_failure_rolls_back_already_published_movie)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_video_generation.py", line 199, in test_metadata_save_failure_rolls_back_already_published_movie
+    code, value = invoke(*self.command('image-to-video'))
+                  ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_local_matting.py", line 30, in invoke
+    code = main(list(argv))
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\cli.py", line 7301, in main
+    result = handler(args)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\generation_cli.py", line 128, in command
+    cancel(marker); save_project(root, project)
+                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\unittest\mock.py", line 1167, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\unittest\mock.py", line 1171, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\unittest\mock.py", line 1226, in _execute_mock_call
+    raise effect
+OSError: fixture disk failure
+
+======================================================================
+ERROR: test_recipe_tamper_is_rejected_and_fragment_rebinds_both_images (test_video_generation.NativeGenerationTests.test_recipe_tamper_is_rejected_and_fragment_rebinds_both_images)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_video_generation.py", line 210, in test_recipe_tamper_is_rejected_and_fragment_rebinds_both_images
+    code, result = invoke('fragment','save','--project',self.root,'--library',library,'--input',request)
+                   ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_local_matting.py", line 30, in invoke
+    code = main(list(argv))
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\cli.py", line 7275, in main
+    args = parser.parse_args(argv)
+  File "C:\Python313\Lib\argparse.py", line 1889, in parse_args
+    args, argv = self.parse_known_args(args, namespace)
+                 ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\argparse.py", line 1899, in parse_known_args
+    return self._parse_known_args2(args, namespace, intermixed=False)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\argparse.py", line 1928, in _parse_known_args2
+    namespace, args = self._parse_known_args(args, namespace, intermixed)
+                      ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\argparse.py", line 1971, in _parse_known_args
+    option_tuples = self._parse_optional(arg_string)
+  File "C:\Python313\Lib\argparse.py", line 2321, in _parse_optional
+    if not arg_string[0] in self.prefix_chars:
+           ~~~~~~~~~~^^^
+TypeError: 'WindowsPath' object is not subscriptable
+
+----------------------------------------------------------------------
+Ran 13 tests in 59.805s
+
+FAILED (errors=4)

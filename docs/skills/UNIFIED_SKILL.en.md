@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.32 / alpha.4-local.30 / r33 kit · 1 Skill / 17 modules / 73 files.**
+**CLI0.1.33 / alpha.4-local.31 / r34 kit · 1 Skill / 17 modules / 74 files.**
 
-Native PTS tracking now exports as ordinary hold keys. It samples actual clocks, masks and transition visibility, then compares every Float32 display frame before exporting. Original bindings remain in a separate source sidecar; ordinary packages still retain dynamic bindings.
+Local GPU generation now accepts text, a first image, a last image or a first/last pair. Explicit prompt, seed/sampling and bounded windows produce silent video assets and ordinary editable timeline clips, reusing the native VACE engine, GPU admission, rights dependencies and transactional recovery.
 
-[Tracking bake workflow](../product/TRACKING_BAKE.md)
+[Video generation workflow](../product/VIDEO_GENERATION.md)
 
 <!-- /community-current -->
 

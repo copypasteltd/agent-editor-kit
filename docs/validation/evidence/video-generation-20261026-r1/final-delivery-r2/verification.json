@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "goal_complete": false,
+  "at_utc": "2026-10-26T15:47:16.329400+00:00",
+  "source_fallback": false,
+  "virtualization": false,
+  "cli_version": "0.1.33",
+  "product_files": 227,
+  "groups": [
+    {
+      "path": "generation-installed-r1",
+      "tests": 14,
+      "installed": true
+    },
+    {
+      "path": "conversion-installed-r1",
+      "tests": 83,
+      "installed": true
+    },
+    {
+      "path": "legacy-installed-r1",
+      "tests": 192,
+      "installed": true
+    },
+    {
+      "path": "vace-source-r1",
+      "tests": 160,
+      "installed": false
+    }
+  ],
+  "actual_cuda_modes": 4,
+  "actual_rgba_frames": 68,
+  "independent_endpoints": 4,
+  "skill_files": 74,
+  "kit_files": 114,
+  "historical_R_rows_preserved": 229,
+  "current_R_rows": 235,
+  "original_G_closure_cells_preserved": 38,
+  "functional_rows": 61,
+  "services": 20,
+  "modules": 17,
+  "capability_declarations": 75,
+  "local_links_checked": 3314,
+  "model_media_published": false,
+  "natural_quality_accepted": false,
+  "files": 274
+}

@@ -1,0 +1,100 @@
+[
+  {
+    "label": "initial",
+    "frame": 18,
+    "rows": [
+      {
+        "clip": "child/moving_source",
+        "source_time": "3/2",
+        "native_frame_index": 18,
+        "author_animation_tick": "135000",
+        "opacity": 1.0
+      },
+      {
+        "clip": "child/follow_marker",
+        "source_time": "3/2",
+        "native_frame_index": 0,
+        "author_animation_tick": "135000",
+        "opacity": 1.0,
+        "tracking": {
+          "protocol": "native-PTS-float32-tracking-bindings-v1",
+          "source": "child/moving_source",
+          "values": {
+            "opacity": 1.0,
+            "position.x": 0.32638888888888884,
+            "position.y": 0.4512199999999999,
+            "scale": 0.18888888888888902,
+            "rotation": 8.000000000000004
+          },
+          "active": true,
+          "reason": null,
+          "source_fragment": "child/moving_source",
+          "x": 0.32638888888888884,
+          "y": 0.4512199999999999,
+          "roi_width_pixels": 22.22222222222223,
+          "rotation": 0.0,
+          "opacity": 1.0,
+          "native_frame_index": 18,
+          "native_pts": 1500,
+          "native_time": "3/2",
+          "source_author_tick": "135000",
+          "source_time": "3/2",
+          "inside_crop": true,
+          "confidence": 1.0,
+          "held_observation": false,
+          "reference_fallback": false,
+          "scale_clamped": false
+        }
+      }
+    ]
+  },
+  {
+    "label": "edited",
+    "frame": 12,
+    "rows": [
+      {
+        "clip": "child/source_right_after",
+        "source_time": "3/2",
+        "native_frame_index": 18,
+        "author_animation_tick": "135000",
+        "opacity": 1.0
+      },
+      {
+        "clip": "child/follower_right",
+        "source_time": "3/2",
+        "native_frame_index": 0,
+        "author_animation_tick": "135000",
+        "opacity": 1.0,
+        "tracking": {
+          "protocol": "native-PTS-float32-tracking-bindings-v1",
+          "source": "child/source_right_after",
+          "values": {
+            "opacity": 1.0,
+            "position.x": 0.32638888888888884,
+            "position.y": 0.4512199999999999,
+            "scale": 0.18888888888888902,
+            "rotation": 8.000000000000004
+          },
+          "active": true,
+          "reason": null,
+          "source_fragment": "child/source_right_after",
+          "x": 0.32638888888888884,
+          "y": 0.4512199999999999,
+          "roi_width_pixels": 22.22222222222223,
+          "rotation": 0.0,
+          "opacity": 1.0,
+          "native_frame_index": 18,
+          "native_pts": 1500,
+          "native_time": "3/2",
+          "source_author_tick": "135000",
+          "source_time": "3/2",
+          "inside_crop": true,
+          "confidence": 1.0,
+          "held_observation": false,
+          "reference_fallback": false,
+          "scale_clamped": false
+        }
+      }
+    ]
+  }
+]

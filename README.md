@@ -9,9 +9,23 @@
 本页包含完整功能模块、服务与依赖、安装与使用逻辑、Skill 输入输出、真实案例和核验表。长篇原始验收日志继续留档，功能说明与案例入口恢复到首页。
 
 
-<!-- float-tracking-current -->
+<!-- tracking-edits-current -->
 
-**CLI0.1.26 / alpha.4-local.24 / r27 kit · 1 Skill / 17 modules.**
+**CLI0.1.27 / alpha.4-local.25 / r28 kit · 1 Skill / 17 modules.**
+
+带跟踪绑定的原生剪辑已接通：源与标签可分割、裁切、波纹插入/删除及范围编辑；自动重规划保留源分片，固定ROI缩放/旋转基准，源删除后跟随层隐藏，锁定引用冲突整体拒绝。统一Skill实跑C37：36帧剪为30帧，全部保留Float32像素/PTS/绑定坐标一致，完整120000双声道采样误差0，可编辑包重导入相同。
+
+[Workflow](docs/product/TRACKING_EDITS.md) · [C37](docs/product/CASES.md#c37-tracking-edits) · [Local install](docs/releases/CLI_0.1.27_LOCAL.md) · [Evidence](docs/validation/跟踪剪辑实测_2026-10-26.md)
+
+![Actual registered Skill / silent GIF](docs/assets/tracking-edits-20261026-r3/edited.gif)
+
+核验编码明确采用8bit H.264 CRF0；本机10bit同参数并非逐像素无损，反例保留。源slip/真实外扩、容器变速、磁性裁切及中间格式原生烘焙继续有边界；完整目标仍在开发。
+
+<!-- /tracking-edits-current -->
+
+<!-- float-tracking-history -->
+
+**Historical / 历史 / 歷史：CLI0.1.26 / alpha.4-local.24 / r27 kit · 1 Skill / 17 modules.**
 
 原生 PTS 跟踪绑定已接入安装版：贴图/标签复用实际视频帧时钟及 crop/fit/TRS 坐标，支持倒放、变速、定格、嵌套和作者窗口；叠加序列保留声音。统一 Skill 实跑36帧/3秒案例，动画裁切与旋转下逐帧核对锚点和标记像素，取消恢复/队列完整画面时钟与PCM一致，可编辑包保留原始观测。
 
@@ -21,7 +35,7 @@
 
 模板匹配的采样/置信度单独记录；坐标CPU，符合条件的投影/合成/文字用GPU。遮挡、mask/转场可见性、自然身份质量与原生绑定的MLT/OTIO烘焙仍有边界，完整目标继续开发。
 
-<!-- /float-tracking-current -->
+<!-- /float-tracking-history -->
 
 <!-- float-adjustments-history -->
 
@@ -208,7 +222,7 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r27 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r27.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
+**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r28 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r28.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
 
 <!-- /unified-skill-registration -->
 
@@ -579,6 +593,7 @@ flowchart LR
 | F57 | 原生浮点GPU执行层 | 明确GPU策略 → 线性Float32仿射、普通叠加、文字组件/段落与逐词选择；正式渲染/预览/队列/恢复。 | `projection_acceleration; render; preview; queue` | off/prefer/require；实际binary64/次正规探测；任务独占进程和共享段；其余算子CPU，非全部GPU化。 |
 | F58 | Float32全局/区间调整层 | 全轨含字幕合成后按顺序调色；LUT/曝光及既有浮点效果、六类关键帧、选中根只应用一次。 | `settings.adjustments; preview; render; queue` | 显式线性工作域/效果信号；CPU执行；LUT持锁/包迁移；保留作者区间时钟，非完整HDR。 |
 | F59 | 原生PTS跟踪与叠加轨 | 保存源观测→按实际原生帧求跟随位置；共享crop/TRS、ROI缩放/相对旋转、透明度、窗口与嵌套声音。 | `media track-bind; preview; render; queue; package` | 显式Float32，原生PTS不烘焙显示键；预算/循环门禁；模板漂移与遮挡另审，中间格式烘焙未接通。 |
+| F60 | 跟踪后的可编辑剪辑 | 分割/裁切/波纹与范围编辑→保留源分片引用、原始轨迹和ROI/旋转基准；删除源后隐藏标签。 | `timeline compose/edit; preview; render; package` | 显式原生Float32；128分片/绑定，锁定/循环/歧义门禁；源slip/真实外扩/磁性传播仍受限。[流程](docs/product/TRACKING_EDITS.md) |
 
 ## 支持的服务模块与依赖
 
@@ -705,7 +720,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.24/final-r2/installed/`，CLI 0.1.26；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
+本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.25/final-r4/installed/`，CLI 0.1.27；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1089,12 +1104,18 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R191 | 2026-10-26 Native PTS tracking | r27独立kit实际解包/登记/计划/校验；唯一Skill17模块73文件，真实发现目录保持 | [Evidence](docs/validation/evidence/float-tracking-20261026-r1/kit-r2/verification.json) |
 | R192 | 2026-10-26 Native PTS tracking | 三语59功能/20服务/17模块/75实际声明；185历史核验行和38原关闭条件保留；最终交付字节/链接核验 | [Evidence](docs/validation/evidence/float-tracking-20261026-r1/final-delivery-r2/verification.json) |
 | R193 | 2026-10-26 Native PTS tracking | 开发失败保留：首轮overlay schema漏接已修复；另两轮案例插值/图片起点声明错误及原生PTS参照公式已修正；早期71项测试0断言失败但代码变更破坏冻结，不计最终验收 | [Evidence](docs/validation/evidence/float-tracking-20261026-r1/development-attempts-r1/verification.json) |
+| R194 | 2026-10-26 Native tracking edits | 离线ZIP安装220产品文件/随包Schema一致；CLI0.1.27/local.25-final-r4，唯一Skill17模块73文件; final-r4 fixes wheel metadata only, 220 executable files and all resource bytes equal tested final-r3; [distribution proof](docs/validation/evidence/tracking-edits-20261026-r1/distribution-r1/verification.json) | [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/installation-final-r4/verification.json) |
+| R195 | 2026-10-26 Native tracking edits | 安装版分别33跟踪/195编辑/71绑定/192默认CLI预览队列Schema/46原生渲染/65音频/98浮点检查通过，全部0skip；不合并历史计数 | [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/tracking-installed-r3/verification.json) |
+| R196 | 2026-10-26 Native tracking edits | C37实际统一Skill：30保留帧的全部Float32像素/PTS/绑定坐标相同；8bit核验编码解码相同，完整120000双声道PCM误差0；包重导入/队列相同 | [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/case-r3/verification.json) |
+| R197 | 2026-10-26 Native tracking edits | r28独立kit解包、单入口登记、实际CLI计划/校验；73Skill文件/17模块，包内文档与源一致 | [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/kit-r2/verification.json) |
+| R198 | 2026-10-26 Native tracking edits | 三语60功能/20服务/17模块/75实际声明；193历史核验行与全部38关闭条件保持；源码/安装/kit/链接交付核验 | [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/final-delivery-r3/verification.json) |
+| R199 | 2026-10-26 Native tracking edits | 失败保留：首安装2个旧最小绑定读取异常已修复重建；首视频误把本机10bit CRF0当作无损，保留SPS/实际像素反例，最终8bit及全部Float32核验通过 ；链式绑定的当前姿态与ROI基准已分开求值，新增实际像素反例后修复通过。| [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/development-attempts-r1/verification.json) |
 
 ## 当前边界与开发方向
 
 当前可交付的是有明确契约、离线可运行、可编辑、可复查的 Agent CLI 闭环。完整开源素材/模板生态、约定的 AI 特效/美颜/排版、完整色彩管线、指定草稿版本的真实转换质量、广泛自然视听和长片资源性能仍需开发与验收。消费级 GUI、账号、云协作及任意私有版本无损转换不属于当前内核收口门槛。
 
-[当前完整目标差距表](docs/product/GOAL_GAPS_20261025.md)按 CLI 0.1.23 更新全部 G01–G38。单一 Skill、500 风格/预览、359 资源、GPU 配音/翻译、字幕配音联合流程、四轨/恢复及受控词活动边界已交付；自然视听、复杂组合、高级 AI、内容模板、Agent 自主任务、长片可靠性和新版公开包仍开放。R67–R72 分别记录真实执行及限制，不给出总体完成率。[2026-10-24 评估](docs/product/GOAL_GAPS_20261024.md)是历史快照。
+[当前完整目标差距表](docs/product/GOAL_GAPS_20261025.md)按 CLI 0.1.27 更新全部 G01–G38。单一 Skill、500 风格/预览、359 资源、GPU 配音/翻译、字幕配音联合流程、四轨/恢复及受控词活动边界已交付；自然视听、复杂组合、高级 AI、内容模板、Agent 自主任务、长片可靠性和新版公开包仍开放。R67–R72 分别记录真实执行及限制，不给出总体完成率。[2026-10-24 评估](docs/product/GOAL_GAPS_20261024.md)是历史快照。
 
 
 

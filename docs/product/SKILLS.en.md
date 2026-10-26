@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.26 / alpha.4-local.24 / r27 kit · 1 Skill / 17 modules / 73 files.**
+**CLI0.1.27 / alpha.4-local.25 / r28 kit · 1 Skill / 17 modules / 73 files.**
 
-Installed native-PTS tracking bindings now share the picture clock and actual crop/fit/TRS geometry across reversal, retiming, freeze, nesting and author windows. Overlay sequences retain audio. The registered Skill delivers a 3s/36-frame moving-marker case with independent anchor/pixel checks; resume/queue retain complete frame clocks and PCM, and editable packages preserve original observations.
+Native bound clips now support split/trim/ripple and range edits. The planner repairs retained source fragments, pins ROI/rotation references, hides followers after source removal and rejects locked-reference changes atomically. Registered-Skill C37 cuts 36 frames to 30: every retained Float32 pixel/native PTS/binding coordinate matches, all 120,000 stereo samples splice exactly, and editable-package reimport matches.
 
-[Native tracking workflow](FLOAT_TRACKING.md)
+[Native tracking editing workflow](TRACKING_EDITS.md)
 
 <!-- /community-current -->
 

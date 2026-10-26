@@ -20,6 +20,24 @@ from .sequence_canvas import sequence_canvas
 
 BINDING_VERSION = 'timeline-canvas-v1'
 MAX_BINDING_FRAMES = 20_000
+MAX_SOURCE_FRAGMENTS = 128
+
+
+def source_references(binding: dict) -> list[dict]:
+    """Native edit lineage; an explicit empty route is a retained hidden binding."""
+    if 'source_fragments' in binding:return binding['source_fragments']
+    return [dict(track_id=binding.get('source_track_id'),clip_id=binding['source_clip_id'])]
+
+
+def find_sources(sequence: dict, binding: dict) -> list[tuple[dict, dict]]:
+    result = []
+    for reference in source_references(binding):
+        result.append(find_source(sequence, {**binding, 'source_track_id':reference['track_id'],
+            'source_clip_id':reference['clip_id']}, allow_window=True))
+    spans = sorted((c['timeline_start_tick'], c['timeline_start_tick']+c['duration_tick']) for _, c in result)
+    if any(a[1] > b[0] for a, b in zip(spans, spans[1:])):
+        raise invalid('同一绑定的源片段窗口不能重叠；须先明确唯一的源覆盖')
+    return result
 
 
 def invalid(message: str, field: str = 'tracking_binding') -> AppError:
@@ -57,13 +75,26 @@ def validate_binding(project: dict, sequence: dict, track: dict, clip: dict, *, 
     if b is None:
         return
     required = {'version','source_track_id','source_clip_id','asset_id','source_sha256','range','observations','offset','scale_mode','scale_multiplier','rotation_mode','base'}
-    if not isinstance(b, dict) or set(b) != required or b.get('version') != BINDING_VERSION:
+    extra = {'source_fragments','reference_output_tick'} if native_clock else set()
+    if not isinstance(b, dict) or not required <= set(b) or set(b)-required-extra or b.get('version') != BINDING_VERSION:
         raise invalid('绑定字段或版本无效')
     if track.get('kind') == 'audio' or clip.get('sequence_id'):
         raise invalid('绑定目标必须是直接视觉片段')
     if not all(isinstance(b[k], str) and b[k] for k in ('source_track_id','source_clip_id','asset_id')) or b['source_clip_id'] == clip.get('id'):
         raise invalid('绑定源引用无效或源与目标相同')
-    _, source = find_source(sequence, b, allow_window=native_clock)
+    if 'source_fragments' in b:
+        refs = b['source_fragments']
+        if not isinstance(refs,list) or len(refs)>MAX_SOURCE_FRAGMENTS or any(
+            not isinstance(r,dict) or set(r)!={'track_id','clip_id'} or any(not isinstance(v,str) or not v for v in r.values())
+            for r in refs):
+            raise invalid('原生源分片须为0..128个明确轨道/片段引用')
+        if len({(r['track_id'],r['clip_id']) for r in refs})!=len(refs) or any(r['clip_id']==clip.get('id') for r in refs):
+            raise invalid('原生源分片重复或引用目标自身')
+        if refs and (b['source_track_id'],b['source_clip_id'])!=(refs[0]['track_id'],refs[0]['clip_id']):
+            raise invalid('主源引用须与第一项源分片一致')
+    if 'reference_output_tick' in b and (type(b['reference_output_tick']) is not int or not 0<=b['reference_output_tick']<=2**53-1):
+        raise invalid('绑定基准输出tick须为可精确表示的非负整数')
+    sources = find_sources(sequence,b) if native_clock else [find_source(sequence,b)]
     assets = {a.get('id'):a for a in project.get('assets', [])}
     asset = assets.get(b['asset_id'], {})
     if asset.get('kind') != 'video' or not isinstance(b['source_sha256'], str) or not re.fullmatch(r'sha256:[0-9a-f]{64}', b['source_sha256']) or b['source_sha256'] != asset.get('sha256'):
@@ -113,7 +144,7 @@ def validate_binding(project: dict, sequence: dict, track: dict, clip: dict, *, 
             raise invalid('绑定基准透明度 Bezier 控制点无效')
     # Geometry-changing effects need their own inverse mappings, not a guessed
     # affine approximation. Colour/blur effects do not change the point map.
-    for effect in source.get('effects', []):
+    for effect in (effect for _, source in sources for effect in source.get('effects', [])):
         name = str(effect.get('type','') if isinstance(effect, dict) else effect).lower()
         if name in {'lenscorrection','lens_correction','perspective','v360','transpose'}:
             raise invalid('源效果尚无坐标逆映射: '+name)
@@ -356,18 +387,20 @@ def validate_project_bindings(project: dict, root: Path | None = None) -> list[d
                         if not file.is_file() or 'sha256:'+sha256_file(file) != clip['tracking_binding']['source_sha256']:
                             raise invalid('绑定源文件与观测摘要不匹配')
                         checked_assets.add(asset['id'])
-                    links[clip['id']] = clip['tracking_binding']['source_clip_id']
+                    links[clip['id']] = [r['clip_id'] for r in source_references(clip['tracking_binding'])]
                 except (AppError,ValueError,TypeError,KeyError,OSError) as exc:
                     errors.append({'code':'TRACK_BIND_GEOMETRY_INVALID','message':str(exc),'path':path})
         done = set()
-        for origin in links:
-            current,chain = origin,set()
-            while current in links and current not in done:
-                if current in chain:
-                    errors.append({'code':'TRACK_BIND_CYCLE','message':'绑定源引用存在循环','path':f'sequences[{si}]'})
-                    break
-                chain.add(current); current = links[current]
-            done |= chain
+        def visit(current, chain):
+            if current in chain or len(chain)>=16:
+                raise invalid('绑定源引用存在循环或超过16层')
+            if current in done or current not in links:return
+            for reference in links[current]:visit(reference, chain|{current})
+            done.add(current)
+        try:
+            for origin in links:visit(origin,set())
+        except AppError as exc:
+            errors.append({'code':'TRACK_BIND_CYCLE','message':str(exc),'path':f'sequences[{si}]'})
     return errors
 
 

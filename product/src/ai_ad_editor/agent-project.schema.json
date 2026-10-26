@@ -1347,6 +1347,32 @@
               }
             }
           }
+        },
+        "source_fragments": {
+          "type": "array",
+          "maxItems": 128,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "track_id",
+              "clip_id"
+            ],
+            "properties": {
+              "track_id": {
+                "$ref": "#/$defs/id"
+              },
+              "clip_id": {
+                "$ref": "#/$defs/id"
+              }
+            }
+          }
+        },
+        "reference_output_tick": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
         }
       }
     },
@@ -3312,6 +3338,30 @@
                       "kind": {
                         "not": {
                           "const": "overlay"
+                        }
+                      },
+                      "clips": {
+                        "items": {
+                          "properties": {
+                            "tracking_binding": {
+                              "not": {
+                                "anyOf": [
+                                  {
+                                    "required": [
+                                      "source_fragments"
+                                    ],
+                                    "type": "object"
+                                  },
+                                  {
+                                    "required": [
+                                      "reference_output_tick"
+                                    ],
+                                    "type": "object"
+                                  }
+                                ]
+                              }
+                            }
+                          }
                         }
                       }
                     }

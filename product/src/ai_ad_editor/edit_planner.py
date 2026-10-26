@@ -367,6 +367,13 @@ class _Draft:
                     kept.append(clip)
 
     def repair_bindings(self):
+        from .bindings import native_clock_project
+        if native_clock_project(self.project):
+            from .binding_edits import replan
+            changes=replan(self.project,self.sequence,{**self.sequence,'tracks':self.original_tracks},
+                {cid:cid for cid in self.before})
+            self.rebound.extend(c['clip_id'] for c in changes)
+            return
         now = {c['id']: t['id'] for t in self.sequence['tracks'] for c in t['clips']}
         for seq in self.project['sequences']:
             for track in seq['tracks']:

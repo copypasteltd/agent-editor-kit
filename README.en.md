@@ -9,9 +9,23 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- float-tracking-current -->
+<!-- tracking-edits-current -->
 
-**CLI0.1.26 / alpha.4-local.24 / r27 kit · 1 Skill / 17 modules.**
+**CLI0.1.27 / alpha.4-local.25 / r28 kit · 1 Skill / 17 modules.**
+
+Native bound clips now support split/trim/ripple and range edits. The planner repairs retained source fragments, pins ROI/rotation references, hides followers after source removal and rejects locked-reference changes atomically. Registered-Skill C37 cuts 36 frames to 30: every retained Float32 pixel/native PTS/binding coordinate matches, all 120,000 stereo samples splice exactly, and editable-package reimport matches.
+
+[Workflow](docs/product/TRACKING_EDITS.md) · [C37](docs/product/CASES.md#c37-tracking-edits) · [Local install](docs/releases/CLI_0.1.27_LOCAL.md) · [Evidence](docs/validation/跟踪剪辑实测_2026-10-26.md)
+
+![Actual registered Skill / silent GIF](docs/assets/tracking-edits-20261026-r3/edited.gif)
+
+The diagnostic uses explicit 8-bit H.264 CRF0; this machine’s 10-bit setting is not pixel-lossless and its counterexample is retained. Source slip/extension, container retiming, magnetic cut propagation and native interchange baking retain explicit limits. The full goal remains active.
+
+<!-- /tracking-edits-current -->
+
+<!-- float-tracking-history -->
+
+**Historical / 历史 / 歷史：CLI0.1.26 / alpha.4-local.24 / r27 kit · 1 Skill / 17 modules.**
 
 Installed native-PTS tracking bindings now share the picture clock and actual crop/fit/TRS geometry across reversal, retiming, freeze, nesting and author windows. Overlay sequences retain audio. The registered Skill delivers a 3s/36-frame moving-marker case with independent anchor/pixel checks; resume/queue retain complete frame clocks and PCM, and editable packages preserve original observations.
 
@@ -21,7 +35,7 @@ Installed native-PTS tracking bindings now share the picture clock and actual cr
 
 Template sampling/confidence is reported separately. Coordinates use CPU; eligible projection/composition/text use GPU. Occlusion, mask/transition visibility, natural identity quality and native-binding MLT/OTIO baking retain explicit limits. The full goal remains active.
 
-<!-- /float-tracking-current -->
+<!-- /float-tracking-history -->
 
 <!-- float-adjustments-history -->
 
@@ -208,7 +222,7 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r27 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r27.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r28 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r28.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
@@ -579,6 +593,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F57 | Native Float32 GPU execution | Explicit policy → linear Float32 affine, normal over, text components/paragraphs and word selection; real render/preview/queue/resume. | `projection_acceleration; render; preview; queue` | off/prefer/require;actual binary64/subnormal probes;owned process/shared buffers;other operators CPU,not all-GPU editing. |
 | F58 | Float32 global/interval adjustments | Ordered grading after all tracks including subtitles;existing float effects,LUT/exposure,six keyframe modes,selected root once. | `settings.adjustments; preview; render; queue` | Explicit linear working/effect signals;CPU execution;locked/portable LUTs;original interval clocks,not complete HDR. |
 | F59 | Native PTS tracking and overlay tracks | Saved source observations → actual selected-frame anchors;shared crop/TRS,ROI scale/relative rotation,alpha,windows and nested audio. | `media track-bind; preview; render; queue; package` | Explicit Float32,no display-key bake,budget/cycle gates;template drift/occlusion require review;native interchange baking pending. |
+| F60 | Editable native tracking | Split/trim/ripple/range edits → retained source fragments, original observations and pinned ROI/rotation references; removed sources hide followers. | `timeline compose/edit; preview; render; package` | Explicit native Float32;128 fragments/binding,lock/cycle/ambiguity gates;source slip/extension/magnetic propagation retain limits.[Workflow](docs/product/TRACKING_EDITS.md) |
 
 ## Supported service modules and dependencies
 
@@ -705,7 +720,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.24/final-r2/installed/`, CLI 0.1.26. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.25/final-r4/installed/`, CLI 0.1.27. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1091,6 +1106,12 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R191 | 2026-10-26 Native PTS tracking | r27 isolated kit unpack/register/plan/validate;one Skill/17 modules/73 files;actual discovery preserved | [Evidence](docs/validation/evidence/float-tracking-20261026-r1/kit-r2/verification.json) |
 | R192 | 2026-10-26 Native PTS tracking | Three languages59functions/20services/17modules/75actual declarations;185historical rows/38original closure conditions retained;final delivery byte/link checks | [Evidence](docs/validation/evidence/float-tracking-20261026-r1/final-delivery-r2/verification.json) |
 | R193 | 2026-10-26 Native PTS tracking | Failed attempts retained:overlay schema gap fixed;fixture interpolation/image-origin declarations and native-PTS oracle corrected;early71tests had no assertion failure but lost source freeze during edits,excluded from final acceptance | [Evidence](docs/validation/evidence/float-tracking-20261026-r1/development-attempts-r1/verification.json) |
+| R194 | 2026-10-26 Native tracking edits | 220 product files match the installed ZIP/schema;CLI0.1.27/local.25-final-r4;one Skill,17 modules,73 Skill files; final-r4 fixes wheel metadata only, 220 executable files and all resource bytes equal tested final-r3; [distribution proof](docs/validation/evidence/tracking-edits-20261026-r1/distribution-r1/verification.json) | [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/installation-final-r4/verification.json) |
+| R195 | 2026-10-26 Native tracking edits | Installed groups pass separately with zero skips:33 tracking,195 editing,71 bindings,192 legacy CLI/preview/queue/schema,46 native render,65 audio,98 Float32;no historical-count sum | [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/tracking-installed-r3/verification.json) |
+| R196 | 2026-10-26 Native tracking edits | Registered-Skill C37:all 30 retained Float32 pixel frames/native PTS/binding coordinates match;8-bit diagnostic decoded pixels and full120000 stereo PCM match;package/queue match | [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/case-r3/verification.json) |
+| R197 | 2026-10-26 Native tracking edits | Fresh r28 kit unpack/single-entry registration/actual CLI planning and validation;73 Skill files/17 modules;packaged docs match source | [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/kit-r2/verification.json) |
+| R198 | 2026-10-26 Native tracking edits | Three languages preserve60 functions/20 services/17 modules/75 actual declarations;all193 historical R rows and38 original closure cells remain;source/install/kit/link delivery audit | [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/final-delivery-r3/verification.json) |
+| R199 | 2026-10-26 Native tracking edits | Failures retained:first install hit2 legacy minimal-binding read errors,now fixed/rebuilt;first case incorrectly assumed this machine’s10-bit CRF0 was lossless;SPS/pixel counterexample retained;explicit8-bit and complete Float32 checks pass ; chained current-pose evaluation is separated from the pinned ROI reference, with the reproduced pixel failure fixed.| [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/development-attempts-r1/verification.json) |
 
 ## Current limits and development direction
 

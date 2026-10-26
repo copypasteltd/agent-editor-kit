@@ -1,0 +1,316 @@
+test_complete_source_removal_retains_hidden_binding_and_all_observation_evidence (test_tracking_edits.NativeTrackingEditTests.test_complete_source_removal_retains_hidden_binding_and_all_observation_evidence) ... ok
+test_cycle_through_secondary_fragment_and_aggregate_budget_reject (test_tracking_edits.NativeTrackingEditTests.test_cycle_through_secondary_fragment_and_aggregate_budget_reject) ... ok
+test_edited_chain_retains_intermediate_pose_at_later_follower_reference (test_tracking_edits.NativeTrackingEditTests.test_edited_chain_retains_intermediate_pose_at_later_follower_reference) ... 
+  test_edited_chain_retains_intermediate_pose_at_later_follower_reference (test_tracking_edits.NativeTrackingEditTests.test_edited_chain_retains_intermediate_pose_at_later_follower_reference) (frame=2) ... FAIL
+  test_edited_chain_retains_intermediate_pose_at_later_follower_reference (test_tracking_edits.NativeTrackingEditTests.test_edited_chain_retains_intermediate_pose_at_later_follower_reference) (frame=3) ... FAIL
+  test_edited_chain_retains_intermediate_pose_at_later_follower_reference (test_tracking_edits.NativeTrackingEditTests.test_edited_chain_retains_intermediate_pose_at_later_follower_reference) (frame=4) ... FAIL
+  test_edited_chain_retains_intermediate_pose_at_later_follower_reference (test_tracking_edits.NativeTrackingEditTests.test_edited_chain_retains_intermediate_pose_at_later_follower_reference) (frame=5) ... FAIL
+  test_edited_chain_retains_intermediate_pose_at_later_follower_reference (test_tracking_edits.NativeTrackingEditTests.test_edited_chain_retains_intermediate_pose_at_later_follower_reference) (frame=6) ... FAIL
+  test_edited_chain_retains_intermediate_pose_at_later_follower_reference (test_tracking_edits.NativeTrackingEditTests.test_edited_chain_retains_intermediate_pose_at_later_follower_reference) (frame=7) ... FAIL
+  test_edited_chain_retains_intermediate_pose_at_later_follower_reference (test_tracking_edits.NativeTrackingEditTests.test_edited_chain_retains_intermediate_pose_at_later_follower_reference) (frame=8) ... FAIL
+  test_edited_chain_retains_intermediate_pose_at_later_follower_reference (test_tracking_edits.NativeTrackingEditTests.test_edited_chain_retains_intermediate_pose_at_later_follower_reference) (frame=9) ... FAIL
+test_legacy_pipeline_keeps_explicit_guard_and_refuses_native_route_fields (test_tracking_edits.NativeTrackingEditTests.test_legacy_pipeline_keeps_explicit_guard_and_refuses_native_route_fields) ... ok
+test_locked_dependent_and_invalid_split_are_atomic (test_tracking_edits.NativeTrackingEditTests.test_locked_dependent_and_invalid_split_are_atomic) ... ok
+test_native_VFR_reverse_and_freeze_split_uses_same_original_indices (test_tracking_edits.NativeTrackingEditTests.test_native_VFR_reverse_and_freeze_split_uses_same_original_indices) ... ok
+test_nonzero_original_ROI_reference_survives_source_and_target_ripple (test_tracking_edits.NativeTrackingEditTests.test_nonzero_original_ROI_reference_survives_source_and_target_ripple) ... ok
+test_overlap_duplicate_and_missing_fragment_reject_before_fetch (test_tracking_edits.NativeTrackingEditTests.test_overlap_duplicate_and_missing_fragment_reject_before_fetch) ... ok
+test_range_lift_extract_insert_and_overwrite_replan_real_retained_windows (test_tracking_edits.NativeTrackingEditTests.test_range_lift_extract_insert_and_overwrite_replan_real_retained_windows) ... ok
+test_repeated_split_and_trim_keep_only_live_fragments_and_original_reference (test_tracking_edits.NativeTrackingEditTests.test_repeated_split_and_trim_keep_only_live_fragments_and_original_reference) ... ok
+test_retained_roll_preserves_pixels_and_slide_follows_the_new_source_clock (test_tracking_edits.NativeTrackingEditTests.test_retained_roll_preserves_pixels_and_slide_follows_the_new_source_clock) ... ok
+test_ripple_insert_and_delete_preserve_frames_around_exact_blank_gap (test_tracking_edits.NativeTrackingEditTests.test_ripple_insert_and_delete_preserve_frames_around_exact_blank_gap) ... ok
+test_source_only_insert_hides_follower_in_gap_then_follows_shifted_source (test_tracking_edits.NativeTrackingEditTests.test_source_only_insert_hides_follower_in_gap_then_follows_shifted_source) ... ok
+test_source_slip_and_real_extension_stay_explicitly_guarded (test_tracking_edits.NativeTrackingEditTests.test_source_slip_and_real_extension_stay_explicitly_guarded) ... ok
+test_split_source_and_target_in_either_order_preserves_every_pixel_and_authored_keys (test_tracking_edits.NativeTrackingEditTests.test_split_source_and_target_in_either_order_preserves_every_pixel_and_authored_keys) ... ok
+test_VFR_and_nonzero_demux_origin_hold_anchor_on_the_selected_video_frame (test_float_tracking.FloatTrackingTests.test_VFR_and_nonzero_demux_origin_hold_anchor_on_the_selected_video_frame) ... ok
+test_actual_marker_pixels_follow_every_original_CFR_frame_without_mutating_authoring (test_float_tracking.FloatTrackingTests.test_actual_marker_pixels_follow_every_original_CFR_frame_without_mutating_authoring) ... ok
+test_animated_crop_uses_the_same_author_rounding_and_visibility_as_pixels (test_float_tracking.FloatTrackingTests.test_animated_crop_uses_the_same_author_rounding_and_visibility_as_pixels) ... ok
+test_binding_base_opacity_and_source_blend_are_applied_once (test_float_tracking.FloatTrackingTests.test_binding_base_opacity_and_source_blend_are_applied_once) ... ok
+test_chained_binding_cycle_is_rejected_before_any_native_frame_is_fetched (test_float_tracking.FloatTrackingTests.test_chained_binding_cycle_is_rejected_before_any_native_frame_is_fetched) ... ok
+test_chained_video_binding_projects_the_actual_bound_source_geometry_and_alpha (test_float_tracking.FloatTrackingTests.test_chained_video_binding_projects_the_actual_bound_source_geometry_and_alpha) ... ok
+test_crop_stretch_rotation_and_half_pixel_anchor_match_independent_forward_geometry (test_float_tracking.FloatTrackingTests.test_crop_stretch_rotation_and_half_pixel_anchor_match_independent_forward_geometry) ... ok
+test_declarative_plan_does_not_bake_CFR_keys_or_execute_inference (test_float_tracking.FloatTrackingTests.test_declarative_plan_does_not_bake_CFR_keys_or_execute_inference) ... ok
+test_freeze_keeps_source_frame_but_retains_continuous_author_geometry_clock (test_float_tracking.FloatTrackingTests.test_freeze_keeps_source_frame_but_retains_continuous_author_geometry_clock) ... ok
+test_invalid_identity_and_binding_budget_fail_before_pixel_fetch (test_float_tracking.FloatTrackingTests.test_invalid_identity_and_binding_budget_fail_before_pixel_fetch) ... ok
+test_muted_source_hides_target_without_fetching_or_requiring_a_provider (test_float_tracking.FloatTrackingTests.test_muted_source_hides_target_without_fetching_or_requiring_a_provider) ... ok
+test_nested_reverse_and_double_reverse_use_child_canvas_once (test_float_tracking.FloatTrackingTests.test_nested_reverse_and_double_reverse_use_child_canvas_once) ... ok
+test_observed_range_and_source_window_never_bind_outside_visible_source (test_float_tracking.FloatTrackingTests.test_observed_range_and_source_window_never_bind_outside_visible_source) ... ok
+test_partial_native_index_and_clocks_above_float64_integer_precision (test_float_tracking.FloatTrackingTests.test_partial_native_index_and_clocks_above_float64_integer_precision) ... ok
+test_reverse_source_uses_original_half_open_selected_frame (test_float_tracking.FloatTrackingTests.test_reverse_source_uses_original_half_open_selected_frame) ... ok
+test_roi_and_rotation_reference_is_deterministic_when_previewed_out_of_order (test_float_tracking.FloatTrackingTests.test_roi_and_rotation_reference_is_deterministic_when_previewed_out_of_order) ... ok
+test_saved_binding_windows_retain_original_source_and_ROI_reference_clocks (test_float_tracking.FloatTrackingTests.test_saved_binding_windows_retain_original_source_and_ROI_reference_clocks) ... ok
+test_scalar_and_curve_retime_preserve_video_tracking_frame_identity (test_float_tracking.FloatTrackingTests.test_scalar_and_curve_retime_preserve_video_tracking_frame_identity) ... ok
+
+======================================================================
+FAIL: test_edited_chain_retains_intermediate_pose_at_later_follower_reference (test_tracking_edits.NativeTrackingEditTests.test_edited_chain_retains_intermediate_pose_at_later_follower_reference) (frame=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_tracking_edits.py", line 36, in equal
+    with self.subTest(frame=i):np.testing.assert_array_equal(x[0],y[0])
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 1121, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 983, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 8 / 128 (6.25%)
+First 5 mismatches are at indices:
+ [0, 2, 0]: 0.05888893082737923 (ACTUAL), 0.041429128497838974 (DESIRED)
+ [0, 2, 1]: 0.035635534673929214 (ACTUAL), 0.03629665449261665 (DESIRED)
+ [0, 3, 0]: 0.12676110863685608 (ACTUAL), 0.09727509319782257 (DESIRED)
+ [0, 3, 1]: 0.15347115695476532 (ACTUAL), 0.15865330398082733 (DESIRED)
+ [1, 2, 0]: 0.101457878947258 (ACTUAL), 0.07804561406373978 (DESIRED)
+Max absolute difference among violations: 0.02948602
+Max relative difference among violations: 0.42143783
+ ACTUAL: array([[[0.      , 0.      , 0.      , 0.885531],
+        [0.      , 0.      , 0.      , 1.      ],
+        [0.058889, 0.035636, 0.      , 1.      ],...
+ DESIRED: array([[[0.      , 0.      , 0.      , 0.885531],
+        [0.      , 0.      , 0.      , 1.      ],
+        [0.041429, 0.036297, 0.      , 1.      ],...
+
+======================================================================
+FAIL: test_edited_chain_retains_intermediate_pose_at_later_follower_reference (test_tracking_edits.NativeTrackingEditTests.test_edited_chain_retains_intermediate_pose_at_later_follower_reference) (frame=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_tracking_edits.py", line 36, in equal
+    with self.subTest(frame=i):np.testing.assert_array_equal(x[0],y[0])
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 1121, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 983, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 9 / 128 (7.03%)
+First 5 mismatches are at indices:
+ [0, 4, 0]: 0.10029241442680359 (ACTUAL), 0.07500772923231125 (DESIRED)
+ [0, 4, 1]: 0.09956664592027664 (ACTUAL), 0.10236478596925735 (DESIRED)
+ [0, 5, 0]: 0.08814281970262527 (ACTUAL), 0.06261635571718216 (DESIRED)
+ [0, 5, 1]: 0.04439695551991463 (ACTUAL), 0.045639801770448685 (DESIRED)
+ [1, 4, 0]: 0.2129281461238861 (ACTUAL), 0.19253696501255035 (DESIRED)
+Max absolute difference among violations: 0.0375025
+Max relative difference among violations: 0.40766448
+ ACTUAL: array([[[0.      , 0.      , 0.      , 0.318776],
+        [0.      , 0.      , 0.      , 1.      ],
+        [0.      , 0.      , 0.      , 1.      ],...
+ DESIRED: array([[[0.      , 0.      , 0.      , 0.318776],
+        [0.      , 0.      , 0.      , 1.      ],
+        [0.      , 0.      , 0.      , 1.      ],...
+
+======================================================================
+FAIL: test_edited_chain_retains_intermediate_pose_at_later_follower_reference (test_tracking_edits.NativeTrackingEditTests.test_edited_chain_retains_intermediate_pose_at_later_follower_reference) (frame=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_tracking_edits.py", line 36, in equal
+    with self.subTest(frame=i):np.testing.assert_array_equal(x[0],y[0])
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 1121, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 983, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 10 / 128 (7.81%)
+First 5 mismatches are at indices:
+ [0, 6, 0]: 0.03659632429480553 (ACTUAL), 0.0 (DESIRED)
+ [0, 6, 3]: 0.9973879456520081 (ACTUAL), 0.9972890019416809 (DESIRED)
+ [1, 6, 0]: 0.3290802538394928 (ACTUAL), 0.2936680316925049 (DESIRED)
+ [1, 6, 1]: 0.3666069209575653 (ACTUAL), 0.3859570324420929 (DESIRED)
+ [1, 7, 0]: 0.19341398775577545 (ACTUAL), 0.16834133863449097 (DESIRED)
+Max absolute difference among violations: 0.04909036
+Max relative difference among violations: 0.48595703
+ ACTUAL: array([[[0.      , 0.      , 0.      , 0.334251],
+        [0.      , 0.      , 0.      , 0.927207],
+        [0.      , 0.      , 0.      , 1.      ],...
+ DESIRED: array([[[0.      , 0.      , 0.      , 0.334251],
+        [0.      , 0.      , 0.      , 0.927207],
+        [0.      , 0.      , 0.      , 1.      ],...
+
+======================================================================
+FAIL: test_edited_chain_retains_intermediate_pose_at_later_follower_reference (test_tracking_edits.NativeTrackingEditTests.test_edited_chain_retains_intermediate_pose_at_later_follower_reference) (frame=5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_tracking_edits.py", line 36, in equal
+    with self.subTest(frame=i):np.testing.assert_array_equal(x[0],y[0])
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 1121, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 983, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 1 / 128 (0.781%)
+Mismatch at index:
+ [2, 7, 0]: 0.02355002984404564 (ACTUAL), 0.0 (DESIRED)
+Max absolute difference among violations: 0.02355003
+Max relative difference among violations: inf
+ ACTUAL: array([[[0.      , 0.      , 0.      , 0.426837],
+        [0.      , 0.      , 0.      , 1.      ],
+        [0.      , 0.      , 0.      , 1.      ],...
+ DESIRED: array([[[0.      , 0.      , 0.      , 0.426837],
+        [0.      , 0.      , 0.      , 1.      ],
+        [0.      , 0.      , 0.      , 1.      ],...
+
+======================================================================
+FAIL: test_edited_chain_retains_intermediate_pose_at_later_follower_reference (test_tracking_edits.NativeTrackingEditTests.test_edited_chain_retains_intermediate_pose_at_later_follower_reference) (frame=6)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_tracking_edits.py", line 36, in equal
+    with self.subTest(frame=i):np.testing.assert_array_equal(x[0],y[0])
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 1121, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 983, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 1 / 128 (0.781%)
+Mismatch at index:
+ [0, 0, 0]: 0.007453818805515766 (ACTUAL), 0.005476400256156921 (DESIRED)
+Max absolute difference among violations: 0.00197742
+Max relative difference among violations: 0.36108
+ ACTUAL: array([[[0.007454, 0.      , 0.      , 1.      ],
+        [0.      , 0.      , 0.      , 1.      ],
+        [0.      , 0.      , 0.      , 1.      ],...
+ DESIRED: array([[[0.005476, 0.      , 0.      , 1.      ],
+        [0.      , 0.      , 0.      , 1.      ],
+        [0.      , 0.      , 0.      , 1.      ],...
+
+======================================================================
+FAIL: test_edited_chain_retains_intermediate_pose_at_later_follower_reference (test_tracking_edits.NativeTrackingEditTests.test_edited_chain_retains_intermediate_pose_at_later_follower_reference) (frame=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_tracking_edits.py", line 36, in equal
+    with self.subTest(frame=i):np.testing.assert_array_equal(x[0],y[0])
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 1121, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 983, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 3 / 128 (2.34%)
+Mismatch at indices:
+ [0, 1, 0]: 0.18950705230236053 (ACTUAL), 0.1497877687215805 (DESIRED)
+ [0, 1, 1]: 0.11103937774896622 (ACTUAL), 0.1164810061454773 (DESIRED)
+ [0, 2, 0]: 0.11174342036247253 (ACTUAL), 0.07126747816801071 (DESIRED)
+Max absolute difference among violations: 0.04047594
+Max relative difference among violations: 0.56794405
+ ACTUAL: array([[[0.      , 0.      , 0.      , 1.      ],
+        [0.189507, 0.111039, 0.      , 1.      ],
+        [0.111743, 0.      , 0.      , 1.      ],...
+ DESIRED: array([[[0.      , 0.      , 0.      , 1.      ],
+        [0.149788, 0.116481, 0.      , 1.      ],
+        [0.071267, 0.      , 0.      , 1.      ],...
+
+======================================================================
+FAIL: test_edited_chain_retains_intermediate_pose_at_later_follower_reference (test_tracking_edits.NativeTrackingEditTests.test_edited_chain_retains_intermediate_pose_at_later_follower_reference) (frame=8)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_tracking_edits.py", line 36, in equal
+    with self.subTest(frame=i):np.testing.assert_array_equal(x[0],y[0])
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 1121, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 983, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 11 / 128 (8.59%)
+First 5 mismatches are at indices:
+ [0, 2, 0]: 0.1243213340640068 (ACTUAL), 0.07901224493980408 (DESIRED)
+ [0, 2, 1]: 0.057102020829916 (ACTUAL), 0.060056574642658234 (DESIRED)
+ [0, 3, 0]: 0.6017355918884277 (ACTUAL), 0.5881866216659546 (DESIRED)
+ [0, 3, 1]: 0.29610469937324524 (ACTUAL), 0.30617818236351013 (DESIRED)
+ [0, 4, 0]: 0.29684534668922424 (ACTUAL), 0.25983956456184387 (DESIRED)
+Max absolute difference among violations: 0.04907574
+Max relative difference among violations: 1.0649337
+ ACTUAL: array([[[0.      , 0.      , 0.      , 1.      ],
+        [0.      , 0.      , 0.      , 1.      ],
+        [0.124321, 0.057102, 0.      , 1.      ],...
+ DESIRED: array([[[0.      , 0.      , 0.      , 1.      ],
+        [0.      , 0.      , 0.      , 1.      ],
+        [0.079012, 0.060057, 0.      , 1.      ],...
+
+======================================================================
+FAIL: test_edited_chain_retains_intermediate_pose_at_later_follower_reference (test_tracking_edits.NativeTrackingEditTests.test_edited_chain_retains_intermediate_pose_at_later_follower_reference) (frame=9)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_tracking_edits.py", line 36, in equal
+    with self.subTest(frame=i):np.testing.assert_array_equal(x[0],y[0])
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 1121, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 983, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 15 / 128 (11.7%)
+First 5 mismatches are at indices:
+ [0, 5, 0]: 0.10412465780973434 (ACTUAL), 0.06703011691570282 (DESIRED)
+ [0, 5, 1]: 0.0285439845174551 (ACTUAL), 0.029725873842835426 (DESIRED)
+ [1, 4, 0]: 0.1791689097881317 (ACTUAL), 0.12495142966508865 (DESIRED)
+ [1, 4, 1]: 0.0824415385723114 (ACTUAL), 0.08788695931434631 (DESIRED)
+ [1, 5, 0]: 0.5656499862670898 (ACTUAL), 0.532213032245636 (DESIRED)
+Max absolute difference among violations: 0.05421748
+Max relative difference among violations: 6.633285
+ ACTUAL: array([[[0.      , 0.      , 0.      , 0.967962],
+        [0.      , 0.      , 0.      , 1.      ],
+        [0.      , 0.      , 0.      , 1.      ],...
+ DESIRED: array([[[0.      , 0.      , 0.      , 0.967962],
+        [0.      , 0.      , 0.      , 1.      ],
+        [0.      , 0.      , 0.      , 1.      ],...
+
+----------------------------------------------------------------------
+Ran 33 tests in 0.734s
+
+FAILED (failures=8)

@@ -2,15 +2,15 @@
 
 <!-- community-current -->
 
-**CLI 0.1.26 / alpha.4-local.24 / r27 kit · 1 Skill / 17 modules.**
+**CLI 0.1.27 / alpha.4-local.25 / r28 kit · 1 Skill / 17 modules.**
 
-Native-PTS dynamic tracking with shared crop/TRS geometry, editable source observations and overlay child audio; ordered global/interval Float32 grading at the selected root with authored clocks and locked portable LUTs; explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+Native-PTS split/trim/ripple/range editing with retained source fragments, pinned ROI references, hidden removed-source followers and locked-reference atomic guards; dynamic tracking with shared crop/TRS geometry, editable source observations and overlay child audio; ordered global/interval Float32 grading at the selected root with authored clocks and locked portable LUTs; explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
 
-[Native tracking workflow](FLOAT_TRACKING.md) · [Float32 adjustment workflow](FLOAT_ADJUSTMENTS.md) · [Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](float-tracking-capabilities-cli-0.1.26.json). Full target conditions remain open.
+[Tracking edit workflow](TRACKING_EDITS.md) · [Native tracking workflow](FLOAT_TRACKING.md) · [Float32 adjustment workflow](FLOAT_ADJUSTMENTS.md) · [Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](tracking-edits-capabilities-cli-0.1.27.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.zh-TW.md) · [Machine response](float-tracking-capabilities-cli-0.1.26.json) · [Module data](module-catalog.json)
+[README](../../README.zh-TW.md) · [Machine response](tracking-edits-capabilities-cli-0.1.27.json) · [Module data](module-catalog.json)
 
 | 編號 | 功能模塊 | 具體行為與輸入 → 輸出 | 入口 | 依賴/邊界 |
 |---|---|---|---|---|
@@ -73,6 +73,7 @@ Native-PTS dynamic tracking with shared crop/TRS geometry, editable source obser
 | F57 | 原生浮點GPU執行層 | 明確GPU策略 → 線性Float32仿射、一般疊加、文字元件／段落與逐詞選擇；正式算繪／預覽／佇列／恢復。 | `projection_acceleration; render; preview; queue` | off/prefer/require；實際binary64／次正規探測；任務專屬程序與共用段；其餘算子CPU，非全部GPU化。 |
 | F58 | Float32全域／區間調整層 | 全軌含字幕合成後依序調色；LUT／曝光及既有浮點效果、六類關鍵影格、選中根僅套用一次。 | `settings.adjustments; preview; render; queue` | 明確線性工作域／效果訊號；CPU執行；LUT持鎖／封裝遷移；保留作者區間時鐘，非完整HDR。 |
 | F59 | 原生PTS跟蹤及疊加軌 | 保存來源觀測→依實際原生影格求跟隨位置；共用crop/TRS、ROI縮放／相對旋轉、透明度、視窗及巢狀聲音。 | `media track-bind; preview; render; queue; package` | 明確Float32，原生PTS不烘焙顯示鍵；預算／循環門禁；模板漂移及遮擋另審，中間格式烘焙未接通。 |
+| F60 | 跟蹤後的可編輯剪輯 | 分割／裁切／波紋及範圍編輯→保留來源分片引用、原始軌跡及ROI／旋轉基準；刪除來源後隱藏標籤。 | `timeline compose/edit; preview; render; package` | 明確原生Float32；128分片／綁定，鎖定／循環／歧義門禁；來源slip／實際外擴／磁性傳播仍受限。[流程](TRACKING_EDITS.md) |
 
 | 編號 | 服務模塊 | 運行形式 | 需要什么/提供什么 | 入口 | 範圍 |
 |---|---|---|---|---|---|
@@ -897,7 +898,20 @@ Native-PTS dynamic tracking with shared crop/TRS geometry, editable source obser
       "ROI_scale_and_relative_rotation",
       "chained_bindings",
       "cycle_and_aggregate_budget_gates",
-      "editable_package_preserves_source_observations"
+      "editable_package_preserves_source_observations",
+      "split_trim_ripple_insert_delete_source_and_target",
+      "range_insert_overwrite_lift_extract_retained_roll_slide",
+      "retained_source_fragments_and_hidden_deleted_sources",
+      "pinned_ROI_rotation_reference_after_surgery",
+      "locked_reference_atomic_rejection"
+    ],
+    "edit_protocol": "native-tracking-edit-lineage-v1",
+    "max_source_fragments_per_binding": 128,
+    "max_total_source_references": 4096,
+    "edit_limits": [
+      "source_slip_extension_and_container_retime_require_new_binding_plan",
+      "magnetic_cut_propagation_keeps_existing_binding_guard",
+      "overlapping_source_fragments_reject_ambiguous_coverage"
     ],
     "max_bindings": 128,
     "max_total_observations": 64000,

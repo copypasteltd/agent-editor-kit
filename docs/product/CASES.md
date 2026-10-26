@@ -775,3 +775,15 @@ CLI0.1.26/local.24-final-r2, registered unified Skill. Actual local template ana
 [Source video](../assets/float-tracking-20261026-r5/original.native.mkv) · [Source audio](../assets/float-tracking-20261026-r5/original.audio.wav) · [Actual MP4](../assets/float-tracking-20261026-r5/native-tracking.mp4) · [Editable package](../assets/float-tracking-20261026-r5/editable-native-tracking.aevpkg.zip) · [Media hashes](../assets/float-tracking-20261026-r5/media-manifest.json) · [Workflow](FLOAT_TRACKING.md) · [Execution](../validation/evidence/float-tracking-20261026-r1/case-r5/verification.json) · [Reimport](../validation/evidence/float-tracking-20261026-r1/package-r1/verification.json).
 
 Every selected original source index matches. Independent anchor error≤0.018046262px,actual red marker centroid error≤0.42361414px. Full144000 stereo PCM samples match the independent reversal oracle;resume/queue match all decoded frames/clocks/PCM. Package retains observations/license;3RGBA64frames and12Float32rangeframes/full48000stereoPCM match. No natural identity,occlusion,continuous playback,human listening or speed acceptance.
+
+<a id="c37-tracking-edits"></a>
+
+## C37 · Split and ripple-edit native following markers and stereo audio
+
+Native bound clips now support split/trim/ripple and range edits. The planner repairs retained source fragments, pins ROI/rotation references, hides followers after source removal and rejects locked-reference changes atomically. Registered-Skill C37 cuts 36 frames to 30: every retained Float32 pixel/native PTS/binding coordinate matches, all 120,000 stereo samples splice exactly, and editable-package reimport matches.
+
+![Actual silent GIF](../assets/tracking-edits-20261026-r3/edited.gif)
+
+[Workflow, input/output, commands and limits](TRACKING_EDITS.md) · [Before MP4](../assets/tracking-edits-20261026-r3/before.mp4) · [Edited MP4](../assets/tracking-edits-20261026-r3/edited.mp4) · [Editable package](../assets/tracking-edits-20261026-r3/editable-tracking-edits.aevpkg.zip).
+
+2.5s/30frames/12fps/320×180; explicit8bit diagnostic delivery, complete Float32 composition checked separately. Self-authored CC0 source/marker/tones, font license retained. No new model inference, natural quality, continuous playback or human listening acceptance.

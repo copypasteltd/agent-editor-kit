@@ -1,6 +1,7 @@
 """Build a pinned native offline bundle using existing local wheels only."""
 from __future__ import annotations
 import argparse
+import ast
 import hashlib
 import json
 import os
@@ -22,6 +23,15 @@ INSTALLER=runpy.run_path(str(Path(__file__).with_name('install.py')))
 def sha(path):return 'sha256:'+hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+def matching_product_version(metadata_text, source_text):
+    metadata=tomllib.loads(metadata_text)['project']
+    versions=[ast.literal_eval(n.value) for n in ast.parse(source_text).body if isinstance(n,ast.Assign)
+        and any(isinstance(t,ast.Name) and t.id=='VERSION' for t in n.targets)]
+    if len(versions)!=1 or metadata.get('version')!=versions[0]:
+        raise ValueError('Product distribution version differs from source CLI VERSION')
+    return versions[0]
+
+
 def build(output,wheelhouse):
     INSTALLER['native_target']()
     output=INSTALLER['local_path'](output);wheelhouse=INSTALLER['local_path'](wheelhouse)
@@ -32,7 +42,9 @@ def build(output,wheelhouse):
     if lock['target']!='cp313-win_amd64':raise ValueError('Wrong wheelhouse target')
     profile=lock.get('runtime_profile','font-text-v1')
     if profile not in INSTALLER['RUNTIME_PROFILES']:raise ValueError('Unknown offline runtime profile')
-    dependencies=tomllib.loads((ROOT/'product/pyproject.toml').read_text('utf8'))['project'].get('dependencies',[])
+    project_text=(ROOT/'product/pyproject.toml').read_text('utf8')
+    version=matching_product_version(project_text,(ROOT/'product/src/ai_ad_editor/__init__.py').read_text('utf8'))
+    dependencies=tomllib.loads(project_text)['project'].get('dependencies',[])
     if any(re.match(r'(?i)^numpy\b',item) for item in dependencies) and profile!='media-analysis-v1':
         raise ValueError('Product requires NumPy; use the complete media-analysis-v1 wheelhouse')
     pinned=[];names=set()
@@ -62,6 +74,7 @@ def build(output,wheelhouse):
     product=next(wheels.glob('*.whl'))
     with zipfile.ZipFile(product) as archive:
         info=BytesParser().parsebytes(archive.read(next(n for n in archive.namelist() if n.endswith('.dist-info/METADATA'))))
+    if info['Version']!=version:raise ValueError('Built wheel version differs from source CLI VERSION')
     rows=[{'name':'ai-ad-editor','version':info['Version'],'path':'wheels/'+product.name}]
     for entry in pinned:
         source=wheelhouse/entry['filename']

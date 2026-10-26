@@ -54,8 +54,8 @@ def validate_window(clip, *, allow_tracking=False):
     return duration
 
 
-def slice_clip(clip, first, end, *, clip_id=None, start=None):
-    validate_window(clip)
+def slice_clip(clip, first, end, *, clip_id=None, start=None, allow_tracking=False):
+    validate_window(clip,allow_tracking=allow_tracking)
     integer(first, 'start_tick'); integer(end, 'end_tick', 1)
     if first >= end or end > clip['duration_tick']:
         fail('裁切窗口必须为当前可见片段内的非空半开区间')
@@ -69,7 +69,7 @@ def slice_clip(clip, first, end, *, clip_id=None, start=None):
     result['timeline_start_tick'] = clip['timeline_start_tick']+first if start is None else start
     if clip_id is not None:
         result['id'] = clip_id
-    validate_window(result)
+    validate_window(result,allow_tracking=allow_tracking)
     return result
 
 
@@ -77,6 +77,14 @@ def apply_operation(project, sequence_id, request):
     """Detached deterministic compose operation; caller owns validation/commit."""
     candidate = copy.deepcopy(project)
     sequence = next(s for s in candidate['sequences'] if s['id'] == sequence_id)
+    original = copy.deepcopy(sequence)
+    from .bindings import native_clock_project
+    native = native_clock_project(candidate)
+    origins = {c['id']:c['id'] for t in sequence['tracks'] for c in t['clips']}
+    def piece(clip,first,end,**kwargs):
+        result=slice_clip(clip,first,end,allow_tracking=native,**kwargs)
+        origins[result['id']]=origins.get(clip['id'],clip['id'])
+        return result
     op = request['op']
     if op not in OPERATIONS:
         fail('未知的输出窗口操作', 'op')
@@ -106,8 +114,8 @@ def apply_operation(project, sequence_id, request):
     def guard(track, clip):
         if track.get('locked'):
             fail('不能修改锁定轨道', 'track_id', 'EDIT_TRACK_LOCKED')
-        if clip.get('tracking_binding') or any(c.get('tracking_binding', {}).get('source_clip_id') == clip['id']
-            for t in sequence['tracks'] for c in t['clips']):
+        if not native and (clip.get('tracking_binding') or any(c.get('tracking_binding', {}).get('source_clip_id') == clip['id']
+            for t in sequence['tracks'] for c in t['clips'])):
             fail('裁切影响跟踪绑定，尚未实现对应引用重规划', code='CLIP_WINDOW_BINDING_UNSUPPORTED')
         # Transition declarations refer to exact cut endpoints; never silently
         # retarget them after surgery. Other, unaffected declarations survive.
@@ -131,8 +139,8 @@ def apply_operation(project, sequence_id, request):
             cut = integer(request.get('at_tick'), 'at_tick', 1)
             if cut >= clip['duration_tick']:
                 fail('split_clip 的 at_tick 必须位于片段内部', 'at_tick')
-            left = slice_clip(clip, 0, cut, clip_id=new_id(request.get('left_id', clip['id']+'_a')))
-            right = slice_clip(clip, cut, clip['duration_tick'], clip_id=new_id(request.get('right_id', clip['id']+'_b')))
+            left = piece(clip, 0, cut, clip_id=new_id(request.get('left_id', clip['id']+'_a')))
+            right = piece(clip, cut, clip['duration_tick'], clip_id=new_id(request.get('right_id', clip['id']+'_b')))
             position = track['clips'].index(clip)
             track['clips'][position:position+1] = [left, right]
         else:
@@ -141,7 +149,7 @@ def apply_operation(project, sequence_id, request):
             start = request.get('timeline_start_tick')
             if start is not None:
                 integer(start, 'timeline_start_tick')
-            track['clips'][track['clips'].index(clip)] = slice_clip(clip, first, end, start=start)
+            track['clips'][track['clips'].index(clip)] = piece(clip, first, end, start=start)
     else:
         at = integer(request.get('at_tick'), 'at_tick')
         delta = integer(request.get('duration_tick'), 'duration_tick', 1)
@@ -164,19 +172,19 @@ def apply_operation(project, sequence_id, request):
                         # Even whole-clip movement must retain file subtitle
                         # and animation author clocks. A zero-offset window
                         # performs this without rewriting their payload.
-                        retained.append(slice_clip(clip, 0, duration, start=start+delta))
+                        retained.append(piece(clip, 0, duration, start=start+delta))
                     else:
-                        retained.extend([slice_clip(clip, 0, at-start),
-                            slice_clip(clip, at-start, duration, clip_id=generated(clip['id']+'_after'), start=at+delta)])
+                        retained.extend([piece(clip, 0, at-start),
+                            piece(clip, at-start, duration, clip_id=generated(clip['id']+'_after'), start=at+delta)])
                 else:
                     cut_end = at+delta
                     if start >= cut_end:
-                        retained.append(slice_clip(clip, 0, duration, start=start-delta))
+                        retained.append(piece(clip, 0, duration, start=start-delta))
                     else:
                         if start < at:
-                            retained.append(slice_clip(clip, 0, at-start))
+                            retained.append(piece(clip, 0, at-start))
                         if end > cut_end:
-                            retained.append(slice_clip(clip, cut_end-start, duration,
+                            retained.append(piece(clip, cut_end-start, duration,
                                 clip_id=generated(clip['id']+'_after') if start < at else clip['id'], start=at))
             track['clips'] = retained
         natural = max([1, *(c['timeline_start_tick']+c['duration_tick'] for t in sequence['tracks'] for c in t['clips'])])
@@ -184,7 +192,10 @@ def apply_operation(project, sequence_id, request):
     for track in sequence['tracks']:
         validate_track_transitions(track)
     sequence['duration_tick'] = max([sequence['duration_tick'], *(c['timeline_start_tick']+c['duration_tick'] for t in sequence['tracks'] for c in t['clips'])])
+    from .binding_edits import replan
+    binding_changes = replan(candidate,sequence,original,origins)
     return candidate, {'engine': ENGINE, 'operation': op, 'changed_clip_ids': changed,
+        'tracking_binding_changes':binding_changes,
         'clock': 'complete-authored-output-before-visible-window',
         'markers': 'absolute-sequence-ticks-unchanged', 'sequence_id': sequence_id}
 

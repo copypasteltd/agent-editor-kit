@@ -177,9 +177,12 @@ class RangeDraft:
         self.cut_pairs = []
         self.source_changes = []
         self.old_duration = self.sequence['duration_tick']
+        from .bindings import native_clock_project, source_references
+        self.native_tracking = native_clock_project(self.project)
+        self.binding_changes = []
         self.protected = {c['id'] for s in self.project['sequences'] for t in s['tracks'] for c in t['clips'] if c.get('tracking_binding')}
-        self.protected.update(c['tracking_binding']['source_clip_id'] for s in self.project['sequences']
-                              for t in s['tracks'] for c in t['clips'] if c.get('tracking_binding'))
+        self.protected.update(r['clip_id'] for s in self.project['sequences']
+            for t in s['tracks'] for c in t['clips'] if c.get('tracking_binding') for r in source_references(c['tracking_binding']))
         self.transition_refs = {cid for d in self.original.get('source_transitions', []) for cid in
                                 [d['from_clip_id'], d['to_clip_id'],
                                  *(v for pair in d.get('audio_pairs', []) for v in pair.values())]}
@@ -215,14 +218,14 @@ class RangeDraft:
         return value
 
     def guard_cut(self, clip):
-        if clip['id'] in self.protected:
+        if clip['id'] in self.protected and (not self.native_tracking or self.request['action']=='retime'):
             fail('EDIT_RANGE_BINDING_UNSUPPORTED', '裁切涉及跟踪绑定源或目标；需先解除绑定或编辑完整容器')
         if clip['id'] in self.transition_refs:
             fail('EDIT_RANGE_TRANSITION_UNSUPPORTED', '剪口涉及真实源转场端点；需先移除声明或编辑完整容器')
 
     def piece(self, clip, first, last, *, at=None, cid=None):
         self.guard_cut(clip)
-        result = slice_clip(clip, first, last, start=at, clip_id=cid)
+        result = slice_clip(clip, first, last, start=at, clip_id=cid,allow_tracking=self.native_tracking)
         self.origin[result['id']] = self.origin.get(clip['id'], clip['id'])
         self.changed.add(result['id'])
         return result
@@ -246,13 +249,15 @@ class RangeDraft:
         self.guard_cut(clip)
         if duration <= 0 or at < 0:
             fail('EDIT_RANGE_EMPTY_SIDE', '剪口两侧必须保留非空片段与非负落点')
-        validate_window(clip)
+        validate_window(clip,allow_tracking=self.native_tracking)
         result = copy.deepcopy(clip)
         window = result.setdefault('presentation_window', {
             'version': 1, 'authored_start_tick': start(clip),
             'authored_duration_tick': clip['duration_tick'], 'offset_tick': 0})
         offset = window['offset_tick'] + offset_delta
         if offset < 0 or offset + duration > window['authored_duration_tick']:
+            if clip['id'] in self.protected:
+                fail('EDIT_RANGE_BINDING_SOURCE_EXTENSION_UNSUPPORTED','带绑定的真实源外扩需要重新规划观测基准；保留句柄内的窗口调整可用')
             if self.request.get('handle_policy') != 'source' and self.request['action'] != 'extend_source':
                 fail('EDIT_RANGE_HANDLE_SHORTFALL', '原作者输出没有足够保留句柄；可显式选择 handle_policy=source 使用真实源范围')
             from .source_edits import expand_author
@@ -264,7 +269,7 @@ class RangeDraft:
             offset += head
         window['offset_tick'] = offset
         result['duration_tick'], result['timeline_start_tick'] = duration, at
-        validate_window(result)
+        validate_window(result,allow_tracking=self.native_tracking)
         self.changed.add(result['id'])
         return result
 
@@ -346,7 +351,7 @@ class RangeDraft:
         items = self.request['items']
         for item in items:
             clip = item['clip']
-            result = slice_clip(clip, 0, clip['duration_tick'], start=self.request['at_tick']+start(clip))
+            result = slice_clip(clip, 0, clip['duration_tick'], start=self.request['at_tick']+start(clip),allow_tracking=self.native_tracking)
             self.track(item['track_id'])['clips'].append(result)
             self.changed.add(result['id'])
 
@@ -504,7 +509,11 @@ class RangeDraft:
                 declarations.append(declaration)
         if 'source_transitions' in self.sequence:
             self.sequence['source_transitions'] = declarations
-        for s in self.project['sequences']:
+        if self.native_tracking:
+            from .binding_edits import replan
+            self.binding_changes = replan(self.project,self.sequence,self.original,self.origin)
+            self.rebound.update(c['clip_id'] for c in self.binding_changes)
+        for s in ([] if self.native_tracking else self.project['sequences']):
             for track in s['tracks']:
                 for clip in track['clips']:
                     binding = clip.get('tracking_binding')
@@ -561,6 +570,7 @@ class RangeDraft:
             'changes': changes, 'short_tick': 0, 'new_track_ids': self.new_tracks,
             'new_tracks': [copy.deepcopy(t) for t in self.sequence['tracks'] if t['id'] in self.new_tracks],
             'rebound_clip_ids': sorted(self.rebound),
+            'tracking_binding_changes':self.binding_changes,
             'retimed_subtitle_ids': sorted(self.retimed), 'removed_transition_ids': self.removed_transitions,
             'cut_pairs': self.cut_pairs, 'source_changes': self.source_changes,
             'warnings': [{'code': 'SOURCE_EDIT_NESTED_CURVE_RENORMALIZED',
@@ -571,7 +581,7 @@ class RangeDraft:
             'limits': ['markers-remain-absolute', 'roll-and-slide-default-to-retained-authored-handles',
                        'source-handles-require-finite-recorded-local-input-bounds',
                        'source-extension-reauthors-edge-processing-and-native-retiming',
-                       'partial-tracking-and-real-transition-endpoint-cuts-reject',
+                       'native-tracking-replans-retained-fragments; legacy-tracking-and-real-transition-endpoint-cuts-reject',
                        'clip-processing-before-cut-track-and-root-processing-after-edit',
                        'existing-native-window-render-budgets-still-apply'],
         }

@@ -9,9 +9,23 @@
 本頁包含完整功能模塊、服務與依賴、安裝與使用邏輯、Skill 輸入輸出、真實案例和核驗表。長篇原始驗收日志繼續留檔，功能說明與案例入口恢復到首頁。
 
 
-<!-- float-tracking-current -->
+<!-- tracking-edits-current -->
 
-**CLI0.1.26 / alpha.4-local.24 / r27 kit · 1 Skill / 17 modules.**
+**CLI0.1.27 / alpha.4-local.25 / r28 kit · 1 Skill / 17 modules.**
+
+帶跟蹤綁定的原生剪輯已接通：來源與標籤可分割、裁切、波紋插入／刪除及範圍編輯；自動重規劃保留來源分片，固定ROI縮放／旋轉基準，來源刪除後跟隨層隱藏，鎖定引用衝突整體拒絕。統一Skill實跑C37：36影格剪為30影格，全部保留Float32像素／PTS／綁定座標相同，完整120000雙聲道取樣誤差0，可編輯套件重新匯入相同。
+
+[Workflow](docs/product/TRACKING_EDITS.md) · [C37](docs/product/CASES.md#c37-tracking-edits) · [Local install](docs/releases/CLI_0.1.27_LOCAL.md) · [Evidence](docs/validation/跟踪剪辑实测_2026-10-26.md)
+
+![Actual registered Skill / silent GIF](docs/assets/tracking-edits-20261026-r3/edited.gif)
+
+核驗編碼明確採用8bit H.264 CRF0；本機10bit同參數並非逐像素無損，反例保留。來源slip／實際外擴、容器變速、磁性裁切及中介格式原生烘焙繼續有邊界；完整目標持續開發。
+
+<!-- /tracking-edits-current -->
+
+<!-- float-tracking-history -->
+
+**Historical / 历史 / 歷史：CLI0.1.26 / alpha.4-local.24 / r27 kit · 1 Skill / 17 modules.**
 
 原生 PTS 跟蹤綁定已接入安裝版：貼圖／標籤共用實際影片影格時鐘及 crop/fit/TRS 座標，支援倒放、變速、定格、巢狀及作者視窗；疊加序列保留聲音。統一 Skill 實跑36影格／3秒案例，動畫裁切及旋轉下逐影格核對錨點和標記像素，取消恢復／佇列完整畫面時鐘與PCM相同，可編輯套件保留原始觀測。
 
@@ -21,7 +35,7 @@
 
 模板匹配的取樣／置信度分別記錄；座標CPU，符合條件的投影／合成／文字用GPU。遮擋、mask／轉場可見性、自然身份品質及原生綁定的MLT/OTIO烘焙仍有邊界，完整目標持續開發。
 
-<!-- /float-tracking-current -->
+<!-- /float-tracking-history -->
 
 <!-- float-adjustments-history -->
 
@@ -208,7 +222,7 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r27 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r27.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
+**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r28 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r28.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
 
 <!-- /unified-skill-registration -->
 
@@ -579,6 +593,7 @@ flowchart LR
 | F57 | 原生浮點GPU執行層 | 明確GPU策略 → 線性Float32仿射、一般疊加、文字元件／段落與逐詞選擇；正式算繪／預覽／佇列／恢復。 | `projection_acceleration; render; preview; queue` | off/prefer/require；實際binary64／次正規探測；任務專屬程序與共用段；其餘算子CPU，非全部GPU化。 |
 | F58 | Float32全域／區間調整層 | 全軌含字幕合成後依序調色；LUT／曝光及既有浮點效果、六類關鍵影格、選中根僅套用一次。 | `settings.adjustments; preview; render; queue` | 明確線性工作域／效果訊號；CPU執行；LUT持鎖／封裝遷移；保留作者區間時鐘，非完整HDR。 |
 | F59 | 原生PTS跟蹤及疊加軌 | 保存來源觀測→依實際原生影格求跟隨位置；共用crop/TRS、ROI縮放／相對旋轉、透明度、視窗及巢狀聲音。 | `media track-bind; preview; render; queue; package` | 明確Float32，原生PTS不烘焙顯示鍵；預算／循環門禁；模板漂移及遮擋另審，中間格式烘焙未接通。 |
+| F60 | 跟蹤後的可編輯剪輯 | 分割／裁切／波紋及範圍編輯→保留來源分片引用、原始軌跡及ROI／旋轉基準；刪除來源後隱藏標籤。 | `timeline compose/edit; preview; render; package` | 明確原生Float32；128分片／綁定，鎖定／循環／歧義門禁；來源slip／實際外擴／磁性傳播仍受限。[流程](docs/product/TRACKING_EDITS.md) |
 
 ## 支持的服務模塊與依賴
 
@@ -705,7 +720,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.24/final-r2/installed/`，CLI 0.1.26；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
+本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.25/final-r4/installed/`，CLI 0.1.27；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1089,6 +1104,12 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R191 | 2026-10-26 Native PTS tracking | r27獨立kit實際解包／登記／計畫／校驗；唯一Skill17模組73檔案，實際發現目錄保持 | [Evidence](docs/validation/evidence/float-tracking-20261026-r1/kit-r2/verification.json) |
 | R192 | 2026-10-26 Native PTS tracking | 三語59功能／20服務／17模組／75實際宣告；185歷史核驗列及38原關閉條件保留；最終交付位元組／連結核驗 | [Evidence](docs/validation/evidence/float-tracking-20261026-r1/final-delivery-r2/verification.json) |
 | R193 | 2026-10-26 Native PTS tracking | 開發失敗保留：首輪overlay schema漏接已修復；另兩輪案例插值／圖片起點宣告錯誤及原生PTS參照公式已修正；早期71項零斷言失敗但程式變動破壞凍結，不計最終驗收 | [Evidence](docs/validation/evidence/float-tracking-20261026-r1/development-attempts-r1/verification.json) |
+| R194 | 2026-10-26 Native tracking edits | 離線ZIP安裝220產品檔案／隨包Schema相同；CLI0.1.27/local.25-final-r4，唯一Skill17模組73檔案; final-r4 fixes wheel metadata only, 220 executable files and all resource bytes equal tested final-r3; [distribution proof](docs/validation/evidence/tracking-edits-20261026-r1/distribution-r1/verification.json) | [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/installation-final-r4/verification.json) |
+| R195 | 2026-10-26 Native tracking edits | 安裝版分別33跟蹤／195編輯／71綁定／192預設CLI預覽佇列Schema／46原生渲染／65音訊／98浮點檢查通過，全部零略過；未合併歷史計數 | [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/tracking-installed-r3/verification.json) |
+| R196 | 2026-10-26 Native tracking edits | C37實際統一Skill：30保留影格全部Float32像素／PTS／綁定座標相同；8bit核驗編碼解碼相同，完整120000雙聲道PCM誤差0；套件重新匯入／佇列相同 | [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/case-r3/verification.json) |
+| R197 | 2026-10-26 Native tracking edits | r28獨立kit解包、單入口登記、實際CLI規劃／校驗；73Skill檔案／17模組，包內文件與來源相同 | [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/kit-r2/verification.json) |
+| R198 | 2026-10-26 Native tracking edits | 三語60功能／20服務／17模組／75實際宣告；193歷史核驗列及全部38關閉條件保留；原始碼／安裝／kit／連結交付核驗 | [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/final-delivery-r3/verification.json) |
+| R199 | 2026-10-26 Native tracking edits | 失敗保留：首安裝2個舊最小綁定讀取異常已修復重建；首影片誤把本機10bit CRF0當作無損，保留SPS／實際像素反例，最終8bit及全部Float32核驗通過 ；鏈式綁定的目前姿態與ROI基準已分開求值，新增實際像素反例後修復通過。| [Evidence](docs/validation/evidence/tracking-edits-20261026-r1/development-attempts-r1/verification.json) |
 
 ## 當前邊界與開發方向
 

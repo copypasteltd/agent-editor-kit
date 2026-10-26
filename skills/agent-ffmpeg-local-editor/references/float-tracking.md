@@ -64,7 +64,32 @@ project packages to preserve observations: MLT/OTIO/draft export currently
 rejects native bindings until native-clock baking is implemented. Clearing a
 native binding restores authored transforms; it does not bake the current pose.
 
-## Client preview
+## Continue editing a bound clip (CLI 0.1.27)
+
+Use `timeline compose` for split/trim/ripple insert/delete, or `timeline edit`
+for insert/overwrite/lift/extract and retained-handle roll/slide. Preview the
+JSON plan with `--dry-run` before applying the same input. Use the actual IDs
+returned by the previous edit: splitting replaces the source ID with its two
+piece IDs. The native planner updates each surviving follower's
+`tracking_binding.source_fragments` with explicit track/clip references. It
+keeps the observations, source hash, keys and complete author clock intact.
+
+`reference_output_tick` pins the original complete-source output clock used
+for ROI scale/relative rotation. Keep this value on later edits. A gap in the
+route hides the follower; an explicit empty route after source removal is a
+retained hidden binding, not an instruction to restore unbound transforms.
+Inspect that state in the plan and rebind explicitly when replacing footage.
+
+Locked follower references reject atomically. Overlapping source fragments are
+ambiguous and reject; routes admit up to 128 fragments per binding and 4,096
+total references. Source slip, real source extension, bound-clip container
+retime and magnetic cut propagation retain explicit guards. MLT/OTIO/draft
+baking remains separate. Do not remove those guards or bake display-FPS keys
+to force an edit through. Deliver the editable package after verification.
+
+[Editing workflow, real case and silent preview](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/TRACKING_EDITS.md)
+
+## Original C36 preview
 
 Actual controlled C36 case: local template analysis, animated crop/TRS, following
 red marker, reversed overlay child, GPU text and preserved stereo source audio.

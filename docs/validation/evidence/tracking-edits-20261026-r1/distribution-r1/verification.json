@@ -1,0 +1,128 @@
+{
+  "status": "passed",
+  "native_windows": true,
+  "virtualization": false,
+  "source_fallback": false,
+  "functional_evidence_installation": "final-r3",
+  "final_installation": "final-r4",
+  "calls": [
+    {
+      "name": "isolated-distribution-version",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "9bc7cfa4721da1f3fd2dd1132f3ea2604b50c2030e0c03dbc4570eee67b2b50a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "reject-stale-wheel-pin",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "0840f50c6b20cf94908a74c417a13fcf4615914dba986d86734e60d18d448379"
+    },
+    {
+      "name": "registered-version",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "4988f84643c61de0fbc2e7850f15027c0c56922dcb2b9dbc15dceedd54376d50",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "registered-capabilities",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "caaf27763e2f59eb685ff100fb66e00532f951f4f54e6170c2e8738a4e635238",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "registered-schema",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "cbe757df29904fdaaa5ef6a592e9ad6d8b981741a8fd0a72b45249cbd2aec38c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "registered-validate",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "cd1308be1ce5b84daa754c63be6afe962b3cbe37259d39bec6a2f8c4a3ae9ec6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "registered-preview-12",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "feb168e1837b79f9e793f599ade7ae5efb361fad8e302939e470cb26bc78d5c1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "decoded-preview-r3",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "f532b7bed48b3cc4e0c95ad6509f5238486b526b082ae04dd0b6f36dafeb15d7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "decoded-preview-r4",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_sha256": "f532b7bed48b3cc4e0c95ad6509f5238486b526b082ae04dd0b6f36dafeb15d7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checked_at_utc": "2026-10-26T04:46:14.440022+00:00",
+  "product_python_files_equal": 220,
+  "all_wheel_payload_files_equal": 1632,
+  "dependencies_equal": [
+    {
+      "name": "attrs",
+      "version": "25.4.0",
+      "sha256": "adcf7e2a1fb3b36ac48d97835bb6d8ade15b8dcce26aba8bf1d14847b57a3373"
+    },
+    {
+      "name": "jsonschema",
+      "version": "4.26.0",
+      "sha256": "d489f15263b8d200f8387e64b4c3a75f06629559fb73deb8fdfb525f2dab50ce"
+    },
+    {
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1",
+      "sha256": "98802fee3a11ee76ecaca44429fda8a41bff98b00a0f2838151b113f210cc6fe"
+    },
+    {
+      "name": "numpy",
+      "version": "2.4.2",
+      "sha256": "7df2de1e4fba69a51c06c28f5a3de36731eb9639feb8e1cf7e4a7b0daf4cf622"
+    },
+    {
+      "name": "pillow",
+      "version": "12.1.0",
+      "sha256": "461f9dfdafa394c59cd6d818bdfdbab4028b83b02caadaff0ffd433faf4c9a7a"
+    },
+    {
+      "name": "referencing",
+      "version": "0.37.0",
+      "sha256": "381329a9f99628c9069361716891d34ad94af76e461dcb0335825aecc7692231"
+    },
+    {
+      "name": "rpds-py",
+      "version": "2026.6.3",
+      "sha256": "9250a9a0a6fd4648b3f868da8d91a4c52b5811a62df58e753d50ae4454a36f80"
+    }
+  ],
+  "prior_metadata_version": "0.1.26",
+  "final_metadata_version": "0.1.27",
+  "cli_version": "0.1.27",
+  "build_mismatch_rejection": "Product distribution version differs from source CLI VERSION",
+  "stale_pin_rejected_without_mutation": true,
+  "rejected_kit_cli_version": "0.1.26",
+  "incomplete_kit_r1_excluded": true,
+  "registered_new_preview": true,
+  "preview_decoded_rgba64_equal": true,
+  "preview_sha256": "SHA256=f0bee23b30ae3e73f0d0cbead794a4ef4db95da23e3185e4890e371e81a4b939",
+  "project_and_rights_unchanged": true,
+  "new_full_video_renders": 0,
+  "new_model_forwards": 0,
+  "installation": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.25\\final-r3\\installed",
+  "final_installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.25\\final-r4\\installed"
+}

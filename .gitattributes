@@ -1653,3 +1653,14 @@ scripts/*float_adjustments*20261026.py text eol=lf
 docs/product/FLOAT_ADJUSTMENTS.md text eol=lf
 docs/product/float-adjustments-capabilities-cli-0.1.25.json -text -whitespace
 docs/skills/community-unified-skill-package-0.1.25-r26.json -text -whitespace
+
+# Tracking edit receipts and diagnostics are hashed as the original native bytes.
+docs/validation/evidence/tracking-edits-20261026-r1/** -text -whitespace
+docs/assets/tracking-edits-20261026-*/** -text -whitespace
+docs/product/tracking-edits-capabilities-cli-0.1.27.json -text -whitespace
+docs/product/TRACKING_EDITS.md text eol=lf
+docs/releases/CLI_0.1.27_LOCAL.md text eol=lf
+docs/validation/跟踪剪辑实测_2026-10-26.md text eol=lf
+scripts/*tracking_edits*20261026.py text eol=lf
+product/src/ai_ad_editor/binding_edits.py text eol=lf
+product/tests/test_tracking_edits.py text eol=lf

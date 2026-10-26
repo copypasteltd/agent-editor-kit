@@ -1,0 +1,256 @@
+test_cli_batch_dry_run_and_rejected_cut_do_not_write (test_clip_windows.ClipWindowTests.test_cli_batch_dry_run_and_rejected_cut_do_not_write) ... ok
+test_curved_reverse_ripple_matches_removed_original_range (test_clip_windows.ClipWindowTests.test_curved_reverse_ripple_matches_removed_original_range) ... ok
+test_delete_entire_sequence_keeps_valid_empty_one_tick_project (test_clip_windows.ClipWindowTests.test_delete_entire_sequence_keeps_valid_empty_one_tick_project) ... ok
+test_direct_window_budget_rejects_before_building_child_graph (test_clip_windows.ClipWindowTests.test_direct_window_budget_rejects_before_building_child_graph) ... ok
+test_effect_keyframes_do_not_restart_after_trim (test_clip_windows.ClipWindowTests.test_effect_keyframes_do_not_restart_after_trim) ... ok
+test_freeze_window_cut_inside_held_picture_and_silence (test_clip_windows.ClipWindowTests.test_freeze_window_cut_inside_held_picture_and_silence) ... ok
+test_insert_inside_clip_renders_black_and_silence_gap (test_clip_windows.ClipWindowTests.test_insert_inside_clip_renders_black_and_silence_gap) ... ok
+test_insert_past_end_preserves_complete_requested_gap (test_clip_windows.ClipWindowTests.test_insert_past_end_preserves_complete_requested_gap) ... ok
+test_internal_ripple_deletes_middle_not_tail (test_clip_windows.ClipWindowTests.test_internal_ripple_deletes_middle_not_tail) ... ok
+test_isolated_window_preserves_original_opaque_contain_bars (test_clip_windows.ClipWindowTests.test_isolated_window_preserves_original_opaque_contain_bars) ... ok
+test_motion_preset_uses_visible_range_on_original_author_clock (test_clip_windows.ClipWindowTests.test_motion_preset_uses_visible_range_on_original_author_clock) ... ok
+test_neighbor_legacy_transition_rejects_instead_of_disappearing (test_clip_windows.ClipWindowTests.test_neighbor_legacy_transition_rejects_instead_of_disappearing) ... ok
+test_nested_window_sequence_preserves_source_clock (test_clip_windows.ClipWindowTests.test_nested_window_sequence_preserves_source_clock) ... ok
+test_null_window_is_rejected_without_optional_schema (test_clip_windows.ClipWindowTests.test_null_window_is_rejected_without_optional_schema) ... ok
+test_partial_window_curve_duration_edit_rejects_atomically (test_clip_windows.ClipWindowTests.test_partial_window_curve_duration_edit_rejects_atomically) ... ok
+test_partial_window_reverse_rejects_instead_of_selecting_other_source (test_clip_windows.ClipWindowTests.test_partial_window_reverse_rejects_instead_of_selecting_other_source) ... ok
+test_repeated_slice_preserves_authored_payload_and_composes_offset (test_clip_windows.ClipWindowTests.test_repeated_slice_preserves_authored_payload_and_composes_offset) ... ok
+test_ripple_boundary_crossing_removes_correct_head (test_clip_windows.ClipWindowTests.test_ripple_boundary_crossing_removes_correct_head) ... ok
+test_smart_cut_source_analysis_cannot_reinterpret_window (test_clip_windows.ClipWindowTests.test_smart_cut_source_analysis_cannot_reinterpret_window) ... ok
+test_split_is_global_id_safe_and_lock_atomic (test_clip_windows.ClipWindowTests.test_split_is_global_id_safe_and_lock_atomic) ... ok
+test_split_render_is_identical_to_original_frames_and_processed_audio (test_clip_windows.ClipWindowTests.test_split_render_is_identical_to_original_frames_and_processed_audio) ... ok
+test_strict_window_ranges (test_clip_windows.ClipWindowTests.test_strict_window_ranges) ... ok
+test_subtitle_file_split_keeps_original_cues_and_animation (test_clip_windows.ClipWindowTests.test_subtitle_file_split_keeps_original_cues_and_animation) ... ok
+test_track_scoped_ripple_does_not_truncate_unselected_tracks (test_clip_windows.ClipWindowTests.test_track_scoped_ripple_does_not_truncate_unselected_tracks) ... ok
+test_tracking_source_cannot_reinterpret_window (test_clip_windows.ClipWindowTests.test_tracking_source_cannot_reinterpret_window) ... ok
+test_transition_reference_gate_and_whole_project_unchanged (test_clip_windows.ClipWindowTests.test_transition_reference_gate_and_whole_project_unchanged) ... ok
+test_trim_container_keeps_processed_child_bus (test_clip_windows.ClipWindowTests.test_trim_container_keeps_processed_child_bus) ... ok
+test_unknown_request_field_rejects_without_changing_project (test_clip_windows.ClipWindowTests.test_unknown_request_field_rejects_without_changing_project) ... ok
+test_update_window_payload_keeps_original_animation_endpoint (test_clip_windows.ClipWindowTests.test_update_window_payload_keeps_original_animation_endpoint) ... ok
+test_window_validation_keeps_author_keyframes_outside_visible_range (test_clip_windows.ClipWindowTests.test_window_validation_keeps_author_keyframes_outside_visible_range) ... ok
+test_cli_preview_hash_idempotency_and_compose_rollback (test_range_edits.RangeEditMediaTests.test_cli_preview_hash_idempotency_and_compose_rollback) ... ok
+test_real_insert_preserves_frames_and_exact_pcm (test_range_edits.RangeEditMediaTests.test_real_insert_preserves_frames_and_exact_pcm) ... ok
+test_real_lift_and_extract_select_correct_original_ranges (test_range_edits.RangeEditMediaTests.test_real_lift_and_extract_select_correct_original_ranges) ... ok
+test_real_nested_insert_preserves_processed_child_bus (test_range_edits.RangeEditMediaTests.test_real_nested_insert_preserves_processed_child_bus) ... ok
+test_real_overwrite_reverse_curve_animation_keeps_authored_output (test_range_edits.RangeEditMediaTests.test_real_overwrite_reverse_curve_animation_keeps_authored_output) ... ok
+test_real_roll_uses_full_original_author_handles_for_picture_and_audio (test_range_edits.RangeEditMediaTests.test_real_roll_uses_full_original_author_handles_for_picture_and_audio) ... ok
+test_real_slide_keeps_middle_processing_and_reselects_both_original_neighbors (test_range_edits.RangeEditMediaTests.test_real_slide_keeps_middle_processing_and_reselects_both_original_neighbors) ... ok
+test_cutting_tracking_source_rejects (test_range_edits.RangeEditPlannerTests.test_cutting_tracking_source_rejects) ... ERROR
+test_duplicate_incoming_id_rejects (test_range_edits.RangeEditPlannerTests.test_duplicate_incoming_id_rejects) ... ok
+test_effect_bus_collision_rejects_instead_of_changing_sound (test_range_edits.RangeEditPlannerTests.test_effect_bus_collision_rejects_instead_of_changing_sound) ... ok
+test_extract_all_keeps_one_tick_empty_sequence (test_range_edits.RangeEditPlannerTests.test_extract_all_keeps_one_tick_empty_sequence) ... ok
+test_extract_closes_exact_interval (test_range_edits.RangeEditPlannerTests.test_extract_closes_exact_interval) ... ok
+test_extract_never_truncates_unselected_bed (test_range_edits.RangeEditPlannerTests.test_extract_never_truncates_unselected_bed) ... ok
+test_global_incoming_id_collision_includes_markers_assets_and_removed_ids (test_range_edits.RangeEditPlannerTests.test_global_incoming_id_collision_includes_markers_assets_and_removed_ids) ... ok
+test_incoming_cannot_join_existing_link_group (test_range_edits.RangeEditPlannerTests.test_incoming_cannot_join_existing_link_group) ... ok
+test_incoming_ids_reserved_before_generated_cut_ids (test_range_edits.RangeEditPlannerTests.test_incoming_ids_reserved_before_generated_cut_ids) ... ok
+test_incoming_invalid_link_ids_reject_before_hash_lookup (test_range_edits.RangeEditPlannerTests.test_incoming_invalid_link_ids_reject_before_hash_lookup) ... ok
+test_insert_past_end_includes_explicit_blank_range (test_range_edits.RangeEditPlannerTests.test_insert_past_end_includes_explicit_blank_range) ... ok
+test_insert_splits_linked_audio_and_keeps_author_payload (test_range_edits.RangeEditPlannerTests.test_insert_splits_linked_audio_and_keeps_author_payload) ... ok
+test_inserting_at_declared_transition_cut_rejects (test_range_edits.RangeEditPlannerTests.test_inserting_at_declared_transition_cut_rejects) ... ok
+test_invalid_requests_reject_strictly (test_range_edits.RangeEditPlannerTests.test_invalid_requests_reject_strictly) ... ok
+test_lift_all_keeps_duration (test_range_edits.RangeEditPlannerTests.test_lift_all_keeps_duration) ... ok
+test_lift_preserves_gap_and_total_duration (test_range_edits.RangeEditPlannerTests.test_lift_preserves_gap_and_total_duration) ... ok
+test_link_closure_reaches_main_and_riders_from_audio_selection (test_range_edits.RangeEditPlannerTests.test_link_closure_reaches_main_and_riders_from_audio_selection) ... ok
+test_linkage_moves_rider_but_keeps_multi_cut_bed (test_range_edits.RangeEditPlannerTests.test_linkage_moves_rider_but_keeps_multi_cut_bed) ... ok
+test_locked_empty_target_rejects (test_range_edits.RangeEditPlannerTests.test_locked_empty_target_rejects) ... ok
+test_locked_linked_member_rejects_atomically (test_range_edits.RangeEditPlannerTests.test_locked_linked_member_rejects_atomically) ... ok
+test_negative_roll_keeps_correct_head (test_range_edits.RangeEditPlannerTests.test_negative_roll_keeps_correct_head) ... ok
+test_overlapping_incoming_requires_explicit_track_policy (test_range_edits.RangeEditPlannerTests.test_overlapping_incoming_requires_explicit_track_policy) ... ok
+test_overwrite_middle_retains_both_correct_source_sides (test_range_edits.RangeEditPlannerTests.test_overwrite_middle_retains_both_correct_source_sides) ... ok
+test_overwrite_past_end_includes_explicit_trailing_blank (test_range_edits.RangeEditPlannerTests.test_overwrite_past_end_includes_explicit_trailing_blank) ... ok
+test_partial_transition_endpoint_cut_rejects (test_range_edits.RangeEditPlannerTests.test_partial_transition_endpoint_cut_rejects) ... ok
+test_range_past_end_rejects_without_clamp (test_range_edits.RangeEditPlannerTests.test_range_past_end_rejects_without_clamp) ... ok
+test_relative_incoming_offsets_and_explicit_group_tail (test_range_edits.RangeEditPlannerTests.test_relative_incoming_offsets_and_explicit_group_tail) ... ok
+test_removing_bound_source_without_label_rejects (test_range_edits.RangeEditPlannerTests.test_removing_bound_source_without_label_rejects) ... ERROR
+test_removing_entire_transition_removes_declaration (test_range_edits.RangeEditPlannerTests.test_removing_entire_transition_removes_declaration) ... ok
+test_rider_collision_uses_reviewable_processing_equivalent_lane (test_range_edits.RangeEditPlannerTests.test_rider_collision_uses_reviewable_processing_equivalent_lane) ... ok
+test_roll_handle_shortfall_and_empty_side_reject (test_range_edits.RangeEditPlannerTests.test_roll_handle_shortfall_and_empty_side_reject) ... ok
+test_roll_incomplete_link_pair_rejects (test_range_edits.RangeEditPlannerTests.test_roll_incomplete_link_pair_rejects) ... ok
+test_roll_reselects_retained_handles_and_keeps_total (test_range_edits.RangeEditPlannerTests.test_roll_reselects_retained_handles_and_keeps_total) ... ok
+test_roll_shared_split_link_group_selects_cut_sides (test_range_edits.RangeEditPlannerTests.test_roll_shared_split_link_group_selects_cut_sides) ... ok
+test_roll_sync_reaches_unlinked_exact_cut_pairs (test_range_edits.RangeEditPlannerTests.test_roll_sync_reaches_unlinked_exact_cut_pairs) ... ok
+test_roll_updates_linked_audio_cut_pairs (test_range_edits.RangeEditPlannerTests.test_roll_updates_linked_audio_cut_pairs) ... ok
+test_slide_keeps_linked_audio_middle_and_both_edges (test_range_edits.RangeEditPlannerTests.test_slide_keeps_linked_audio_middle_and_both_edges) ... ok
+test_slide_moves_body_unchanged_and_adjusts_both_neighbors (test_range_edits.RangeEditPlannerTests.test_slide_moves_body_unchanged_and_adjusts_both_neighbors) ... ok
+test_slide_requires_continuous_neighbors_and_available_handles (test_range_edits.RangeEditPlannerTests.test_slide_requires_continuous_neighbors_and_available_handles) ... ok
+test_slide_sync_and_main_riders_have_explicit_different_scopes (test_range_edits.RangeEditPlannerTests.test_slide_sync_and_main_riders_have_explicit_different_scopes) ... ok
+test_sync_keeps_locked_bed_and_opted_out_track (test_range_edits.RangeEditPlannerTests.test_sync_keeps_locked_bed_and_opted_out_track) ... ok
+test_unknown_clip_returns_structured_error (test_range_edits.RangeEditPlannerTests.test_unknown_clip_returns_structured_error) ... ok
+test_unknown_track_returns_structured_error (test_range_edits.RangeEditPlannerTests.test_unknown_track_returns_structured_error) ... ok
+test_whole_move_retimes_file_cues_but_not_existing_window (test_range_edits.RangeEditPlannerTests.test_whole_move_retimes_file_cues_but_not_existing_window) ... ok
+test_whole_transition_group_moves_without_reauthoring (test_range_edits.RangeEditPlannerTests.test_whole_transition_group_moves_without_reauthoring) ... ok
+test_zero_roll_and_slide_are_actual_noops (test_range_edits.RangeEditPlannerTests.test_zero_roll_and_slide_are_actual_noops) ... ok
+test_builtin_and_schema_reject_new_configuration_types (test_linked_edit.LinkedEditCliTests.test_builtin_and_schema_reject_new_configuration_types) ... ok
+test_committed_edit_provenance_remains_local_policy_compatible (test_linked_edit.LinkedEditCliTests.test_committed_edit_provenance_remains_local_policy_compatible) ... ok
+test_compose_can_configure_sync_and_batch_edit_then_roll_back_late_failure (test_linked_edit.LinkedEditCliTests.test_compose_can_configure_sync_and_batch_edit_then_roll_back_late_failure) ... ok
+test_compose_rejects_invalid_intermediate_model_before_planning (test_linked_edit.LinkedEditCliTests.test_compose_rejects_invalid_intermediate_model_before_planning) ... ok
+test_dry_run_is_read_only_apply_is_idempotent_and_stale_plan_rejects (test_linked_edit.LinkedEditCliTests.test_dry_run_is_read_only_apply_is_idempotent_and_stale_plan_rejects) ... ok
+test_file_subtitle_clip_clock_moves_without_added_offset (test_linked_edit.LinkedEditCliTests.test_file_subtitle_clip_clock_moves_without_added_offset) ... ok
+test_file_subtitle_offset_survives_reverse_parent_clock (test_linked_edit.LinkedEditCliTests.test_file_subtitle_offset_survives_reverse_parent_clock) ... ok
+test_file_subtitle_sequence_clock_is_preserved_after_repeated_moves (test_linked_edit.LinkedEditCliTests.test_file_subtitle_sequence_clock_is_preserved_after_repeated_moves) ... ok
+test_invalid_link_and_subtitle_offset_are_checked_without_jsonschema (test_linked_edit.LinkedEditCliTests.test_invalid_link_and_subtitle_offset_are_checked_without_jsonschema) ... ok
+test_native_exchange_preserves_links_and_external_formats_report_losses (test_linked_edit.LinkedEditCliTests.test_native_exchange_preserves_links_and_external_formats_report_losses) ... ok
+test_nonzero_subtitle_offset_is_explicitly_lost_in_external_export (test_linked_edit.LinkedEditCliTests.test_nonzero_subtitle_offset_is_explicitly_lost_in_external_export) ... ok
+test_save_then_operation_failure_rolls_back_project_snapshot_and_operations (test_linked_edit.LinkedEditCliTests.test_save_then_operation_failure_rolls_back_project_snapshot_and_operations) ... ok
+test_binding_relocation_updates_source_track_and_missing_or_locked_reference_rejects (test_linked_edit.LinkedEditPlannerTests.test_binding_relocation_updates_source_track_and_missing_or_locked_reference_rejects) ... ok
+test_collision_reuses_compatible_lane_and_rejects_effect_bus_relocation (test_linked_edit.LinkedEditPlannerTests.test_collision_reuses_compatible_lane_and_rejects_effect_bus_relocation) ... ok
+test_large_integer_ticks_retain_one_tick_gap_and_shift (test_linked_edit.LinkedEditPlannerTests.test_large_integer_ticks_retain_one_tick_gap_and_shift) ... ok
+test_link_merges_groups_and_unlink_clears_orphan_without_trimming_tail (test_linked_edit.LinkedEditPlannerTests.test_link_merges_groups_and_unlink_clears_orphan_without_trimming_tail) ... ok
+test_linkage_collision_creates_lane_with_original_audio_processing (test_linked_edit.LinkedEditPlannerTests.test_linkage_collision_creates_lane_with_original_audio_processing) ... ok
+test_linkage_deletes_rider_keeps_long_bed_and_moves_later_title (test_linked_edit.LinkedEditPlannerTests.test_linkage_deletes_rider_keeps_long_bed_and_moves_later_title) ... ok
+test_locked_link_member_rejects_whole_edit (test_linked_edit.LinkedEditPlannerTests.test_locked_link_member_rejects_whole_edit) ... ok
+test_malformed_requests_are_structured_failures (test_linked_edit.LinkedEditPlannerTests.test_malformed_requests_are_structured_failures) ... ok
+test_multiple_removed_spans_are_unioned_then_closed_backwards (test_linked_edit.LinkedEditPlannerTests.test_multiple_removed_spans_are_unioned_then_closed_backwards) ... ok
+test_noop_preserves_tail_and_preexisting_unrelated_overlaps (test_linked_edit.LinkedEditPlannerTests.test_noop_preserves_tail_and_preexisting_unrelated_overlaps) ... ok
+test_planning_uses_no_media_or_network_process (test_linked_edit.LinkedEditPlannerTests.test_planning_uses_no_media_or_network_process) ... ok
+test_sequence_file_subtitle_offsets_accumulate_and_clip_relative_does_not (test_linked_edit.LinkedEditPlannerTests.test_sequence_file_subtitle_offsets_accumulate_and_clip_relative_does_not) ... ok
+test_shift_rejects_negative_and_main_track_collision_atomically (test_linked_edit.LinkedEditPlannerTests.test_shift_rejects_negative_and_main_track_collision_atomically) ... ok
+test_single_tick_gaps_and_fragments_survive_fractional_fps (test_linked_edit.LinkedEditPlannerTests.test_single_tick_gaps_and_fragments_survive_fractional_fps) ... ok
+test_surviving_complex_source_clock_keys_rights_and_nested_references_are_unchanged (test_linked_edit.LinkedEditPlannerTests.test_surviving_complex_source_clock_keys_rights_and_nested_references_are_unchanged) ... ok
+test_sync_remove_moves_voice_but_preserves_locked_bed (test_linked_edit.LinkedEditPlannerTests.test_sync_remove_moves_voice_but_preserves_locked_bed) ... ok
+test_sync_shortfall_uses_common_room_without_single_track_fallback (test_linked_edit.LinkedEditPlannerTests.test_sync_shortfall_uses_common_room_without_single_track_fallback) ... ok
+test_sync_wins_over_linkage_and_does_not_delete_rider (test_linked_edit.LinkedEditPlannerTests.test_sync_wins_over_linkage_and_does_not_delete_rider) ... ok
+test_track_sync_opt_out_stays_but_explicit_selection_still_edits (test_linked_edit.LinkedEditPlannerTests.test_track_sync_opt_out_stays_but_explicit_selection_still_edits) ... ok
+test_cli_source_preview_hash_idempotency_and_late_batch_rollback (test_source_edits.SourceMediaTests.test_cli_source_preview_hash_idempotency_and_late_batch_rollback) ... ok
+test_legacy_compose_slip_keeps_single_default_and_supports_explicit_linked (test_source_edits.SourceMediaTests.test_legacy_compose_slip_keeps_single_default_and_supports_explicit_linked) ... ok
+test_real_both_sided_extension_matches_manual_full_author (test_source_edits.SourceMediaTests.test_real_both_sided_extension_matches_manual_full_author) ... ok
+test_real_frozen_extension_reanchors_hold_and_effect_keys (test_source_edits.SourceMediaTests.test_real_frozen_extension_reanchors_hold_and_effect_keys) ... ok
+test_real_linked_slip_matches_independent_manual_source_ranges (test_source_edits.SourceMediaTests.test_real_linked_slip_matches_independent_manual_source_ranges) ... ok
+test_real_nested_curve_renormalization_is_explicit_and_matches_native_authoring (test_source_edits.SourceMediaTests.test_real_nested_curve_renormalization_is_explicit_and_matches_native_authoring) ... ok
+test_real_nested_extension_keeps_original_child_bus (test_source_edits.SourceMediaTests.test_real_nested_extension_keeps_original_child_bus) ... ok
+test_real_reverse_speed_extension_preserves_physical_source_choice (test_source_edits.SourceMediaTests.test_real_reverse_speed_extension_preserves_physical_source_choice) ... ok
+test_real_slip_with_reverse_curve_and_freeze_keeps_author_automation (test_source_edits.SourceMediaTests.test_real_slip_with_reverse_curve_and_freeze_keeps_author_automation) ... ok
+test_bezier_extension_keeps_original_controls_at_shifted_source_ticks (test_source_edits.SourcePlannerTests.test_bezier_extension_keeps_original_controls_at_shifted_source_ticks) ... ok
+test_extension_requires_actual_timeline_space_at_head (test_source_edits.SourcePlannerTests.test_extension_requires_actual_timeline_space_at_head) ... ok
+test_extension_uses_retained_handles_before_growing_source (test_source_edits.SourcePlannerTests.test_extension_uses_retained_handles_before_growing_source) ... ok
+test_fractional_head_tick_is_rejected_not_rounded (test_source_edits.SourcePlannerTests.test_fractional_head_tick_is_rejected_not_rounded) ... ok
+test_fractional_recorded_source_bound_is_not_rounded_up (test_source_edits.SourcePlannerTests.test_fractional_recorded_source_bound_is_not_rounded_up) ... ok
+test_freeze_and_all_effect_automation_shift_by_new_prefix (test_source_edits.SourcePlannerTests.test_freeze_and_all_effect_automation_shift_by_new_prefix) ... ok
+test_genuine_two_sided_extension (test_source_edits.SourcePlannerTests.test_genuine_two_sided_extension) ... ok
+test_implicit_curve_boundaries_and_original_control_values (test_source_edits.SourcePlannerTests.test_implicit_curve_boundaries_and_original_control_values) ... ok
+test_linked_extension_checks_every_source_before_commit (test_source_edits.SourcePlannerTests.test_linked_extension_checks_every_source_before_commit) ... ok
+test_linked_slip_is_atomic_and_explicitly_optional (test_source_edits.SourcePlannerTests.test_linked_slip_is_atomic_and_explicitly_optional) ... ok
+test_locked_linked_member_rejects_the_whole_slip (test_source_edits.SourcePlannerTests.test_locked_linked_member_rejects_the_whole_slip) ... ok
+test_mixed_retained_and_true_head_extension (test_source_edits.SourcePlannerTests.test_mixed_retained_and_true_head_extension) ... ok
+test_negative_and_reverse_slip_use_physical_source_sign (test_source_edits.SourcePlannerTests.test_negative_and_reverse_slip_use_physical_source_sign) ... ok
+test_nested_slip_uses_child_sequence_bound (test_source_edits.SourcePlannerTests.test_nested_slip_uses_child_sequence_bound) ... ok
+test_nested_source_bounds_and_normalized_curve_are_reported (test_source_edits.SourcePlannerTests.test_nested_source_bounds_and_normalized_curve_are_reported) ... ok
+test_padded_author_and_outside_freeze_are_explicit (test_source_edits.SourcePlannerTests.test_padded_author_and_outside_freeze_are_explicit) ... ok
+test_real_transition_slip_rechecks_its_extra_handles (test_source_edits.SourcePlannerTests.test_real_transition_slip_rechecks_its_extra_handles) ... ok
+test_request_types_unknown_fields_and_policy_are_strict (test_source_edits.SourcePlannerTests.test_request_types_unknown_fields_and_policy_are_strict) ... ok
+test_reverse_constant_speed_extension_maps_physical_sides (test_source_edits.SourcePlannerTests.test_reverse_constant_speed_extension_maps_physical_sides) ... ok
+test_roll_uses_true_source_only_by_explicit_policy (test_source_edits.SourcePlannerTests.test_roll_uses_true_source_only_by_explicit_policy) ... ok
+test_slide_true_handles_leave_middle_source_and_processing_unchanged (test_source_edits.SourcePlannerTests.test_slide_true_handles_leave_middle_source_and_processing_unchanged) ... ok
+test_slip_moves_only_source_and_keeps_timeline (test_source_edits.SourcePlannerTests.test_slip_moves_only_source_and_keeps_timeline) ... ok
+test_slip_preserves_curve_freeze_automation_and_window (test_source_edits.SourcePlannerTests.test_slip_preserves_curve_freeze_automation_and_window) ... ok
+test_slip_rejects_either_media_boundary (test_source_edits.SourcePlannerTests.test_slip_rejects_either_media_boundary) ... ok
+test_source_extension_does_not_remove_cut_reference_gates (test_source_edits.SourcePlannerTests.test_source_extension_does_not_remove_cut_reference_gates) ... ok
+test_source_options_do_not_move_sync_tracks_or_riders (test_source_edits.SourcePlannerTests.test_source_options_do_not_move_sync_tracks_or_riders) ... ok
+test_static_asset_is_not_claimed_as_finite_source_video (test_source_edits.SourcePlannerTests.test_static_asset_is_not_claimed_as_finite_source_video) ... ok
+test_tail_includes_minimal_whole_source_tick_then_crops_output (test_source_edits.SourcePlannerTests.test_tail_includes_minimal_whole_source_tick_then_crops_output) ... ok
+test_tracking_source_and_target_slip_reject (test_source_edits.SourcePlannerTests.test_tracking_source_and_target_slip_reject) ... ok
+test_unknown_and_locked_direct_clip_return_structured_errors (test_source_edits.SourcePlannerTests.test_unknown_and_locked_direct_clip_return_structured_errors) ... ok
+test_unknown_or_nonfinite_source_duration_rejects (test_source_edits.SourcePlannerTests.test_unknown_or_nonfinite_source_duration_rejects) ... ok
+test_zero_source_actions_preserve_entire_project (test_source_edits.SourcePlannerTests.test_zero_source_actions_preserve_entire_project) ... ok
+test_ancestor_knot_projects_back_through_reverse_and_speed (test_retime_edits.CompleteBusTempoClockTests.test_ancestor_knot_projects_back_through_reverse_and_speed) ... ok
+test_constant_nested_audio_keeps_one_native_tempo_context (test_retime_edits.CompleteBusTempoClockTests.test_constant_nested_audio_keeps_one_native_tempo_context) ... ok
+test_hold_knot_is_exact_and_adjacent_equal_tempos_merge (test_retime_edits.CompleteBusTempoClockTests.test_hold_knot_is_exact_and_adjacent_equal_tempos_merge) ... ok
+test_reverse_keeps_source_order_before_pcm_reversal (test_retime_edits.CompleteBusTempoClockTests.test_reverse_keeps_source_order_before_pcm_reversal) ... ok
+test_compose_retime_and_later_failure_roll_back_atomically (test_retime_edits.CompleteOutputRetimeCliTests.test_compose_retime_and_later_failure_roll_back_atomically) ... ok
+test_fragment_save_retains_retime_author_sequence_closure (test_retime_edits.CompleteOutputRetimeCliTests.test_fragment_save_retains_retime_author_sequence_closure) ... ok
+test_native_package_roundtrip_keeps_editable_authors (test_retime_edits.CompleteOutputRetimeCliTests.test_native_package_roundtrip_keeps_editable_authors) ... ok
+test_real_cli_dry_run_and_idempotent_apply (test_retime_edits.CompleteOutputRetimeCliTests.test_real_cli_dry_run_and_idempotent_apply) ... ok
+test_repeat_relative_retime_creates_an_editable_stack (test_retime_edits.CompleteOutputRetimeCliTests.test_repeat_relative_retime_creates_an_editable_stack) ... ok
+test_stale_hash_and_out_of_range_root_automation_leave_bytes_intact (test_retime_edits.CompleteOutputRetimeCliTests.test_stale_hash_and_out_of_range_root_automation_leave_bytes_intact) ... ok
+test_curve_body_uses_full_host_integral_instead_of_own_length (test_retime_edits.CompleteOutputRetimeTests.test_curve_body_uses_full_host_integral_instead_of_own_length) ... ok
+test_curve_uses_existing_bounded_easing_compiler (test_retime_edits.CompleteOutputRetimeTests.test_curve_uses_existing_bounded_easing_compiler) ... ok
+test_explicit_sync_retime_retimes_intersection_only (test_retime_edits.CompleteOutputRetimeTests.test_explicit_sync_retime_retimes_intersection_only) ... ok
+test_freeze_extends_member_that_contains_the_actual_hold_frame (test_retime_edits.CompleteOutputRetimeTests.test_freeze_extends_member_that_contains_the_actual_hold_frame) ... ok
+test_freeze_invalid_ticks_and_unknown_transform_fields_reject (test_retime_edits.CompleteOutputRetimeTests.test_freeze_invalid_ticks_and_unknown_transform_fields_reject) ... ok
+test_ids_avoid_assets_markers_links_and_other_sequences (test_retime_edits.CompleteOutputRetimeTests.test_ids_avoid_assets_markers_links_and_other_sequences) ... ok
+test_linked_main_hosts_expand_without_double_processing (test_retime_edits.CompleteOutputRetimeTests.test_linked_main_hosts_expand_without_double_processing) ... ok
+test_locked_linked_member_rejects_the_whole_edit (test_retime_edits.CompleteOutputRetimeTests.test_locked_linked_member_rejects_the_whole_edit) ... ok
+test_main_fast_keeps_source_graph_and_packs_following_shots (test_retime_edits.CompleteOutputRetimeTests.test_main_fast_keeps_source_graph_and_packs_following_shots) ... ok
+test_malformed_external_blend_and_old_cross_transition_reject (test_retime_edits.CompleteOutputRetimeTests.test_malformed_external_blend_and_old_cross_transition_reject) ... ok
+test_mixed_selection_and_side_to_main_link_reject (test_retime_edits.CompleteOutputRetimeTests.test_mixed_selection_and_side_to_main_link_reject) ... ok
+test_multiple_main_hosts_use_original_domains_right_to_left (test_retime_edits.CompleteOutputRetimeTests.test_multiple_main_hosts_use_original_domains_right_to_left) ... ok
+test_nonfinite_tiny_boolean_and_huge_speed_reject (test_retime_edits.CompleteOutputRetimeTests.test_nonfinite_tiny_boolean_and_huge_speed_reject) ... ok
+test_nonlinked_music_growth_inserts_blank_not_a_stretched_bed (test_retime_edits.CompleteOutputRetimeTests.test_nonlinked_music_growth_inserts_blank_not_a_stretched_bed) ... ok
+test_nonlinked_music_ripple_shortens_without_speed_change (test_retime_edits.CompleteOutputRetimeTests.test_nonlinked_music_ripple_shortens_without_speed_change) ... ok
+test_original_window_curve_reverse_audio_and_keys_remain_in_child (test_retime_edits.CompleteOutputRetimeTests.test_original_window_curve_reverse_audio_and_keys_remain_in_child) ... ok
+test_partial_linked_audio_preserves_before_and_after_clock (test_retime_edits.CompleteOutputRetimeTests.test_partial_linked_audio_preserves_before_and_after_clock) ... ok
+test_request_unknown_fields_and_non_boolean_switches_reject (test_retime_edits.CompleteOutputRetimeTests.test_request_unknown_fields_and_non_boolean_switches_reject) ... ok
+test_resource_limit_uses_exact_created_clips (test_retime_edits.CompleteOutputRetimeTests.test_resource_limit_uses_exact_created_clips) ... ok
+test_reverse_reverses_partial_rider_position_and_content (test_retime_edits.CompleteOutputRetimeTests.test_reverse_reverses_partial_rider_position_and_content) ... ok
+test_rider_retimes_when_linkage_enabled_without_sync (test_retime_edits.CompleteOutputRetimeTests.test_rider_retimes_when_linkage_enabled_without_sync) ... ok
+test_root_track_processing_and_named_routes_stay_on_original_bus (test_retime_edits.CompleteOutputRetimeTests.test_root_track_processing_and_named_routes_stay_on_original_bus) ... ok
+test_same_side_group_selected_twice_rejects_instead_of_retiming_twice (test_retime_edits.CompleteOutputRetimeTests.test_same_side_group_selected_twice_rejects_instead_of_retiming_twice) ... ok
+test_side_selection_does_not_move_main (test_retime_edits.CompleteOutputRetimeTests.test_side_selection_does_not_move_main) ... ok
+test_slow_main_pushes_tail_and_preserves_declared_blank_tail (test_retime_edits.CompleteOutputRetimeTests.test_slow_main_pushes_tail_and_preserves_declared_blank_tail) ... ok
+test_static_blend_remains_outside_and_is_not_baked_against_black (test_retime_edits.CompleteOutputRetimeTests.test_static_blend_remains_outside_and_is_not_baked_against_black) ... ok
+test_sync_false_and_sync_lock_false_leave_background_stationary (test_retime_edits.CompleteOutputRetimeTests.test_sync_false_and_sync_lock_false_leave_background_stationary) ... ok
+test_tracking_reference_and_source_transition_endpoint_reject (test_retime_edits.CompleteOutputRetimeTests.test_tracking_reference_and_source_transition_endpoint_reject) ... ok
+test_transform_shared_interval_boundaries_are_contiguous (test_retime_edits.CompleteOutputRetimeTests.test_transform_shared_interval_boundaries_are_contiguous) ... ok
+test_whole_linked_audio_shares_same_host_domain (test_retime_edits.CompleteOutputRetimeTests.test_whole_linked_audio_shares_same_host_domain) ... ok
+
+======================================================================
+ERROR: test_cutting_tracking_source_rejects (test_range_edits.RangeEditPlannerTests.test_cutting_tracking_source_rejects)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_range_edits.py", line 236, in test_cutting_tracking_source_rejects
+    self.rejects(value, {'action': 'lift', 'at_tick': 10, 'duration_tick': 10, 'track_ids': ['main']}, 'EDIT_RANGE_BINDING_UNSUPPORTED')
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_range_edits.py", line 58, in rejects
+    build_edit_plan(value, 'seq', request)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.25\final-r1\installed\site\ai_ad_editor\edit_planner.py", line 447, in build_edit_plan
+    return build_range_plan(project, sequence_id, request)
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.25\final-r1\installed\site\ai_ad_editor\range_edits.py", line 591, in build_range_plan
+    candidate, plan = RangeDraft(project, sequence_id, request).run()
+                      ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.25\final-r1\installed\site\ai_ad_editor\range_edits.py", line 184, in __init__
+    self.protected.update(r['clip_id'] for s in self.project['sequences']
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        for t in s['tracks'] for c in t['clips'] if c.get('tracking_binding') for r in source_references(c['tracking_binding']))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.25\final-r1\installed\site\ai_ad_editor\range_edits.py", line 185, in <genexpr>
+    for t in s['tracks'] for c in t['clips'] if c.get('tracking_binding') for r in source_references(c['tracking_binding']))
+                                                                                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.25\final-r1\installed\site\ai_ad_editor\bindings.py", line 28, in source_references
+    return binding.get('source_fragments', [dict(track_id=binding['source_track_id'], clip_id=binding['source_clip_id'])])
+                                                          ~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'source_track_id'
+
+======================================================================
+ERROR: test_removing_bound_source_without_label_rejects (test_range_edits.RangeEditPlannerTests.test_removing_bound_source_without_label_rejects)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_range_edits.py", line 240, in test_removing_bound_source_without_label_rejects
+    self.rejects(value, {'action': 'lift', 'at_tick': 0, 'duration_tick': 100, 'track_ids': ['main']}, 'EDIT_BINDING_SOURCE_REMOVED')
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_range_edits.py", line 58, in rejects
+    build_edit_plan(value, 'seq', request)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.25\final-r1\installed\site\ai_ad_editor\edit_planner.py", line 447, in build_edit_plan
+    return build_range_plan(project, sequence_id, request)
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.25\final-r1\installed\site\ai_ad_editor\range_edits.py", line 591, in build_range_plan
+    candidate, plan = RangeDraft(project, sequence_id, request).run()
+                      ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.25\final-r1\installed\site\ai_ad_editor\range_edits.py", line 184, in __init__
+    self.protected.update(r['clip_id'] for s in self.project['sequences']
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        for t in s['tracks'] for c in t['clips'] if c.get('tracking_binding') for r in source_references(c['tracking_binding']))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.25\final-r1\installed\site\ai_ad_editor\range_edits.py", line 185, in <genexpr>
+    for t in s['tracks'] for c in t['clips'] if c.get('tracking_binding') for r in source_references(c['tracking_binding']))
+                                                                                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.25\final-r1\installed\site\ai_ad_editor\bindings.py", line 28, in source_references
+    return binding.get('source_fragments', [dict(track_id=binding['source_track_id'], clip_id=binding['source_clip_id'])])
+                                                          ~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'source_track_id'
+
+----------------------------------------------------------------------
+Ran 195 tests in 97.411s
+
+FAILED (errors=2)

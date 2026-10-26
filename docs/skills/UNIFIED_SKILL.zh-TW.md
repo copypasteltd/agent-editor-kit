@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.26 / alpha.4-local.24 / r27 kit · 1 Skill / 17 modules / 73 files.**
+**CLI0.1.27 / alpha.4-local.25 / r28 kit · 1 Skill / 17 modules / 73 files.**
 
-原生 PTS 跟蹤綁定已接入安裝版：貼圖／標籤共用實際影片影格時鐘及 crop/fit/TRS 座標，支援倒放、變速、定格、巢狀及作者視窗；疊加序列保留聲音。統一 Skill 實跑36影格／3秒案例，動畫裁切及旋轉下逐影格核對錨點和標記像素，取消恢復／佇列完整畫面時鐘與PCM相同，可編輯套件保留原始觀測。
+帶跟蹤綁定的原生剪輯已接通：來源與標籤可分割、裁切、波紋插入／刪除及範圍編輯；自動重規劃保留來源分片，固定ROI縮放／旋轉基準，來源刪除後跟隨層隱藏，鎖定引用衝突整體拒絕。統一Skill實跑C37：36影格剪為30影格，全部保留Float32像素／PTS／綁定座標相同，完整120000雙聲道取樣誤差0，可編輯套件重新匯入相同。
 
-[Native tracking workflow](../product/FLOAT_TRACKING.md)
+[Native tracking editing workflow](../product/TRACKING_EDITS.md)
 
 <!-- /community-current -->
 

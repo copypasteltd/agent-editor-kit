@@ -1,7 +1,10 @@
 # agent editor kit 文档 / Documentation
 
+Current local / 当前本地 / 目前本地：**CLI0.1.27 / local.25 / r28 kit** · [Tracking edits](product/TRACKING_EDITS.md) · [Installation](releases/CLI_0.1.27_LOCAL.md) · [C37](product/CASES.md#c37-tracking-edits).
 
-Current local / 当前本地 / 目前本地：**CLI0.1.24 / local.22 / r25 kit** · [Float32 GPU](product/FLOAT_GPU.md) · [Local bundle](releases/CLI_0.1.24_LOCAL.md) · [C33/C34](product/CASES.md#c33-float-gpu).
+
+
+Historical / 历史 / 歷史：**CLI0.1.24 / local.22 / r25 kit** · [Float32 GPU](product/FLOAT_GPU.md) · [Local bundle](releases/CLI_0.1.24_LOCAL.md) · [C33/C34](product/CASES.md#c33-float-gpu).
 
 
 Historical / 历史 / 歷史：**CLI0.1.23 / local.21 / r24 kit** · [4K text/coverage](product/FLOAT_TEXT_COVERAGE.md) · [Local bundle](releases/CLI_0.1.23_LOCAL.md) · [C31/C32](product/CASES.md#c31-float-text-coverage).

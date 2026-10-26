@@ -1,0 +1,80 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-10-26T04:26:01.330358+00:00",
+  "failed_attempts": [
+    {
+      "path": "docs/validation/evidence/tracking-edits-20261026-r1/editing-installed-r1/verification.json",
+      "sha256": "c0c8741e1235431ed48f75dc1a8a16f409855f60f00c5e8332aa8f64548c7b6a",
+      "reason": "legacy minimal-binding compatibility read, fixed before final build",
+      "tests": 195,
+      "failures": 0,
+      "errors": 2,
+      "excluded_from_final_acceptance": true
+    },
+    {
+      "path": "docs/validation/evidence/tracking-edits-20261026-r1/case-r1/verification.json",
+      "sha256": "3ba0bbeeb4f2d6e007789747fb50b66f8b89058ffc0f2e06a71f31fa2934696c",
+      "reason": "10bit CRF0 was incorrectly assumed pixel-lossless",
+      "tests": null,
+      "failures": null,
+      "errors": null,
+      "excluded_from_final_acceptance": true
+    },
+    {
+      "path": "docs/validation/evidence/tracking-edits-20261026-r1/queue-r1/verification.json",
+      "sha256": "efaf5a3bed32b35550848e5e63d7e44df656d051aaf037cf37a3b8154607a3b9",
+      "reason": "verifier wrongly rejected normal output/provenance/updated_at bookkeeping",
+      "tests": null,
+      "failures": null,
+      "errors": null,
+      "excluded_from_final_acceptance": true
+    },
+    {
+      "path": "docs/validation/evidence/tracking-edits-20261026-r1/chained-reference-source-r1/verification.json",
+      "sha256": "fae46fccdd55a99e972fddc7d7e6d3be68403f822c17c58f97d855f528553516",
+      "reason": "intermediate current pose incorrectly used its pinned ROI reference; fixed and regression-covered",
+      "tests": 33,
+      "failures": 8,
+      "errors": 0,
+      "excluded_from_final_acceptance": true
+    }
+  ],
+  "legacy_errors": 2,
+  "chain_failing_subtests": 8,
+  "chain_test_case_failures": 1,
+  "encoding_counterexample": {
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-hide_banner",
+      "-loglevel",
+      "info",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-edits-20261026-case-r1\\编辑 工程\\renders\\before.mkv",
+      "-map",
+      "0:v:0",
+      "-c",
+      "copy",
+      "-bsf:v",
+      "trace_headers",
+      "-frames:v",
+      "1",
+      "-f",
+      "null",
+      "-"
+    ],
+    "exit_code": 0,
+    "headers": [
+      "[trace_headers @ 000001faba0ec7c0] 45          qpprime_y_zero_transform_bypass_flag                        0 = 0"
+    ],
+    "stderr_sha256": "0257812a34e56fe7a3f1fec7adb5e04e40c3786f3e5db13ba2049c2a936766d3",
+    "movie_sha256": "a5f98ea30cbf790841d7d18b4acbbd410fc4fafc504e3738c802e5796b9c1a01",
+    "first_different_frame_original": 18,
+    "first_different_frame_edited": 12,
+    "first_different_frame_float_pixels_and_geometry_equal": true,
+    "full_PCM_equal": true,
+    "final_diagnostic": "explicit yuv444p 8bit CRF0 plus all retained Float32 pixels"
+  },
+  "final_acceptance_only": "final-r3 installed groups and case-r3; earlier candidates retained separately",
+  "virtualization": false,
+  "new_model_forwards": 0
+}

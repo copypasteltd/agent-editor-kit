@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "reviewer": "Codex static visual inspection",
+  "sheet_sha256": "6a63dfc745e142d559691209f72b5d6367d513efd7ede68a6bcdfca508a981ee",
+  "observations": [
+    "Four before/after frame pairs show the red marker enclosing the green source target.",
+    "After deletion, original frame18 corresponds to edited frame12 and original35 to edited29.",
+    "No missing marker or displaced source is visible in the eight inspected stills."
+  ],
+  "continuous_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "test": "test_float_standard_render.FloatStandardRenderTests.test_changed_registered_original_rejects_before_encoder",
+    "error": {
+      "code": "FLOAT_RENDER_SOURCE_CHANGED",
+      "message": "原始资产实际SHA与登记值不一致",
+      "path": null,
+      "retryable": false,
+      "diagnostics": {
+        "asset_id": "picture"
+      }
+    }
+  },
+  {
+    "test": "test_float_standard_render.FloatStandardRenderTests.test_declared_unsupported_operator_never_falls_back_to_legacy",
+    "error": {
+      "code": "FLOAT_TIMELINE_UNSUPPORTED",
+      "message": "该效果尚未连接浮点时间线",
+      "path": null,
+      "retryable": false
+    }
+  },
+  {
+    "test": "test_float_standard_render.FloatStandardRenderTests.test_known_non_square_source_is_rejected_instead_of_silent_raster",
+    "error": {
+      "code": "FLOAT_RENDER_GEOMETRY",
+      "message": "已知非方形源像素尚未连接浮点投影",
+      "path": null,
+      "retryable": false,
+      "diagnostics": {
+        "asset_id": "picture"
+      }
+    }
+  },
+  {
+    "test": "test_float_standard_render.FloatStandardRenderTests.test_manifest_replace_failure_rolls_back_real_new_movie",
+    "error": {
+      "code": "FLOAT_RENDER_PUBLISH",
+      "message": "成片/manifest发布失败；已尝试恢复原文件",
+      "path": null,
+      "retryable": false,
+      "operation_id": "render_20261026040452_285742be",
+      "diagnostics": {
+        "cause": "injected manifest replacement error after movie install",
+        "rollback_failures": [],
+        "retained_backups": []
+      }
+    }
+  },
+  {
+    "test": "test_float_standard_render.FloatStandardRenderTests.test_manifest_staging_failure_keeps_previous_pair",
+    "error": {
+      "code": "FLOAT_RENDER_PUBLISH",
+      "message": "成片/manifest发布失败；已尝试恢复原文件",
+      "path": null,
+      "retryable": false,
+      "operation_id": "render_20261026040459_bec027b6",
+      "diagnostics": {
+        "cause": "injected disk error",
+        "rollback_failures": [],
+        "retained_backups": []
+      }
+    }
+  },
+  {
+    "test": "test_float_standard_render.FloatStandardRenderTests.test_quality_failure_preserves_existing_movie_and_manifest",
+    "error": {
+      "code": "RENDER_QUALITY_FAILED",
+      "message": "输出未通过结构质量检查",
+      "path": null,
+      "retryable": false,
+      "cause": "['injected quality failure']",
+      "operation_id": "render_20261026040544_3a22d145"
+    }
+  },
+  {
+    "test": "test_float_standard_render.FloatStandardRenderTests.test_transparent_frame_rejects_opaque_output_without_replacing_previous",
+    "error": {
+      "code": "FLOAT_RENDER_ALPHA",
+      "message": "不透明输出不能丢弃实际alpha；请设置不透明背景或选择透明输出",
+      "path": null,
+      "retryable": false,
+      "operation_id": "render_20261026040610_971bfd63"
+    }
+  }
+]

@@ -2,15 +2,15 @@
 
 <!-- community-current -->
 
-**CLI 0.1.31 / alpha.4-local.29 / r32 kit · 1 Skill / 17 modules.**
+**CLI 0.1.32 / alpha.4-local.30 / r33 kit · 1 Skill / 17 modules.**
 
-Actual rendered source alpha and five masks, 59 edge/paired transition point/ROI footprints with retained density and peer-cycle preflight, independent spatial-edge retime; shared-author tracking dependency retime with selected layer outputs, deferred scalar alpha/external blend order, private audio instances and retained outside routes; magnetic synchronized native source/follower partition and pre-cut lineage repair; native-PTS physical source slip/real extension/source-handle roll/slide with per-fragment author offsets and rational constant clocks; split/trim/ripple/range editing with retained source fragments, pinned ROI references, hidden removed-source followers and locked-reference atomic guards; dynamic tracking with shared crop/TRS geometry, editable source observations and overlay child audio; ordered global/interval Float32 grading at the selected root with authored clocks and locked portable LUTs; explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+Frame-verified native tracking bake with ordinary hold keys and original source sidecars; actual rendered source alpha and five masks, 59 edge/paired transition point/ROI footprints with retained density and peer-cycle preflight, independent spatial-edge retime; shared-author tracking dependency retime with selected layer outputs, deferred scalar alpha/external blend order, private audio instances and retained outside routes; magnetic synchronized native source/follower partition and pre-cut lineage repair; native-PTS physical source slip/real extension/source-handle roll/slide with per-fragment author offsets and rational constant clocks; split/trim/ripple/range editing with retained source fragments, pinned ROI references, hidden removed-source followers and locked-reference atomic guards; dynamic tracking with shared crop/TRS geometry, editable source observations and overlay child audio; ordered global/interval Float32 grading at the selected root with authored clocks and locked portable LUTs; explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
 
-[Tracking visibility workflow](TRACKING_VISIBILITY.md) · [Shared-author retime workflow](TRACKING_RETIME.md) · [Magnetic tracking workflow](TRACKING_MAGNETIC.md) · [Tracked source workflow](TRACKING_SOURCE_EDITS.md) · [Tracking edit workflow](TRACKING_EDITS.md) · [Native tracking workflow](FLOAT_TRACKING.md) · [Float32 adjustment workflow](FLOAT_ADJUSTMENTS.md) · [Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](tracking-visibility-capabilities-cli-0.1.31.json). Full target conditions remain open.
+[Tracking bake workflow](TRACKING_BAKE.md) · [Tracking visibility workflow](TRACKING_VISIBILITY.md) · [Shared-author retime workflow](TRACKING_RETIME.md) · [Magnetic tracking workflow](TRACKING_MAGNETIC.md) · [Tracked source workflow](TRACKING_SOURCE_EDITS.md) · [Tracking edit workflow](TRACKING_EDITS.md) · [Native tracking workflow](FLOAT_TRACKING.md) · [Float32 adjustment workflow](FLOAT_ADJUSTMENTS.md) · [Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](tracking-bake-capabilities-cli-0.1.32.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.zh-TW.md) · [Machine response](tracking-visibility-capabilities-cli-0.1.31.json) · [Module data](module-catalog.json)
+[README](../../README.zh-TW.md) · [Machine response](tracking-bake-capabilities-cli-0.1.32.json) · [Module data](module-catalog.json)
 
 | 編號 | 功能模塊 | 具體行為與輸入 → 輸出 | 入口 | 依賴/邊界 |
 |---|---|---|---|---|
@@ -73,7 +73,7 @@ Actual rendered source alpha and five masks, 59 edge/paired transition point/ROI
 | F57 | 原生浮點GPU執行層 | 明確GPU策略 → 線性Float32仿射、一般疊加、文字元件／段落與逐詞選擇；正式算繪／預覽／佇列／恢復。 | `projection_acceleration; render; preview; queue` | off/prefer/require；實際binary64／次正規探測；任務專屬程序與共用段；其餘算子CPU，非全部GPU化。 |
 | F58 | Float32全域／區間調整層 | 全軌含字幕合成後依序調色；LUT／曝光及既有浮點效果、六類關鍵影格、選中根僅套用一次。 | `settings.adjustments; preview; render; queue` | 明確線性工作域／效果訊號；CPU執行；LUT持鎖／封裝遷移；保留作者區間時鐘，非完整HDR。 |
 | F59 | 原生PTS跟蹤及疊加軌 | 保存來源觀測→依實際原生影格求跟隨位置；共用crop/TRS、ROI縮放／相對旋轉、透明度、視窗及巢狀聲音。 | `media track-bind; preview; render; queue; package` | 明確Float32，原生PTS不烘焙顯示鍵；預算／循環門禁；模板漂移及遮擋另審，中間格式烘焙未接通。 |
-| F60 | 原生跟蹤與後續編輯 | 實際alpha/5類遮罩、59轉場錨點與ROI足跡；共享變速、磁性分片、實體來源編輯保留觀察。 | `media track-bind; timeline compose/edit; preview; render; package` | 來源貢獻在更高軌道遮擋前；丟失足跡隱藏；自然身分/遮擋品質與中間格式烘焙待補。 |
+| F60 | 原生跟蹤與烘焙交付 | 實際alpha/5類遮罩/59轉場足跡；剪輯與共享變速保留觀察；原生烘焙逐幀核驗並保留來源旁車。 | `media track-bind; timeline compose/edit; convert export --bake-tracking` | 目前凍結圖/FPS；20,000幀/256,000求值；無法表達的整數步進拒絕；外部播放器與自然身分/遮擋待驗收。 |
 
 | 編號 | 服務模塊 | 運行形式 | 需要什么/提供什么 | 入口 | 範圍 |
 |---|---|---|---|---|---|
@@ -950,9 +950,39 @@ Actual rendered source alpha and five masks, 59 edge/paired transition point/ROI
       "ROI_scale_clamp_0_01_to_20",
       "nonlocal_warps_may_duplicate_or_lose_a_pixel_footprint_no_natural_identity_claim",
       "conservative_transition_peer_visibility_cycles_rejected_before_pixel_fetch",
-      "MLT_OTIO_draft_export_requires_native_clock_bake_not_yet_implemented",
+      "external_OTIO_MLT_draft_playback_requires_independent_renderer_acceptance",
       "not_natural_identity_tracking_or_full_motion_quality_acceptance"
-    ]
+    ],
+    "interchange_bake": {
+      "protocol": "native-PTS-tracking-frame-verified-bake-v1",
+      "entry": "convert export --bake-tracking --target-format agent-json|package; automatic for otio/kdenlive-xml/jianying-draft-json",
+      "sampling": "actual native Float32 frame/visibility evaluation, including nested clocks and transition peers",
+      "verification": "all selected and standalone sequence display frames compared by exact Float32 RGBA hash before export",
+      "max_frames": 20000,
+      "max_samples": 256000,
+      "preserves": [
+        "author_project",
+        "original_media",
+        "retime_clocks",
+        "audio",
+        "masks",
+        "transitions",
+        "source_binding_sidecar"
+      ],
+      "rejects": [
+        "conflicting_author_clock_demands",
+        "unrepresentable_integer_tick_steps",
+        "pixel_mismatch",
+        "budget",
+        "input_change"
+      ],
+      "limits": [
+        "frozen_graph_and_display_FPS_only;re_bake_after_edits",
+        "external_renderer_not_certified",
+        "unsupported_external_effects_still_reported",
+        "muted_unreachable_targets_listed_without_playback_keys"
+      ]
+    }
   },
   "adjustments": {
     "protocol": "selected-sequence-author-clock-float32-adjustments-v1",

@@ -9,9 +9,31 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
+<!-- tracking-bake-current -->
+
+**CLI0.1.32 / alpha.4-local.30 / r33 kit · 1 Skill / 17 modules.**
+
+Native PTS tracking now exports as ordinary hold keys. It samples actual clocks, masks and transition visibility, then compares every Float32 display frame before exporting. Original bindings remain in a separate source sidecar; ordinary packages still retain dynamic bindings.
+
+```powershell
+& $avk convert export --project $avkProject --target-format package `
+  --bake-tracking --output $bakedPackagePath
+& $avk convert import --input $bakedPackagePath --output $newProjectDirectory
+```
+
+[Workflow](docs/product/TRACKING_BAKE.md) · [C42](docs/product/CASES.md#c42-tracking-bake) · [Install](docs/releases/CLI_0.1.32_LOCAL.md) · [Evidence](docs/validation/跟踪原生烘焙导出实测_2026-10-26.md)
+
+![Native tracking left / baked keys right / actual silent GIF](docs/assets/tracking-bake-20261026-r5/comparison.gif)
+
+Actual registered C42 verifies 36 Float32 frames, all 36 decoded package-roundtrip frames and all 144,000 stereo samples, five format export/import paths, strict-draft rejection and source-overwrite protection. Both frame-only GPU passes record operations and cleanup. External players, natural quality, continuous playback and human listening remain unaccepted; all 38 original closure conditions remain.
+
+The 24-frame GIF is 3.01 seconds because delays use 10 ms units; MP4 retains the original 3-second timing.
+
+<!-- /tracking-bake-current -->
+
 <!-- tracking-visibility-current -->
 
-**CLI0.1.31 / alpha.4-local.29 / r32 kit · 1 Skill / 17 modules.**
+**Historical / 历史 / 歷史：CLI0.1.31 / alpha.4-local.29 / r32 kit · 1 Skill / 17 modules.**
 
 Tracking reads actual source pixel/effect alpha and five mask shapes. All 59 edge/paired transitions transport point and ROI footprints, retaining full density between operations; generated mattes carry no source contribution. Independent spatial edges survive shared-output retime.
 
@@ -649,7 +671,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F57 | Native Float32 GPU execution | Explicit policy → linear Float32 affine, normal over, text components/paragraphs and word selection; real render/preview/queue/resume. | `projection_acceleration; render; preview; queue` | off/prefer/require;actual binary64/subnormal probes;owned process/shared buffers;other operators CPU,not all-GPU editing. |
 | F58 | Float32 global/interval adjustments | Ordered grading after all tracks including subtitles;existing float effects,LUT/exposure,six keyframe modes,selected root once. | `settings.adjustments; preview; render; queue` | Explicit linear working/effect signals;CPU execution;locked/portable LUTs;original interval clocks,not complete HDR. |
 | F59 | Native PTS tracking and overlay tracks | Saved source observations → actual selected-frame anchors;shared crop/TRS,ROI scale/relative rotation,alpha,windows and nested audio. | `media track-bind; preview; render; queue; package` | Explicit Float32,no display-key bake,budget/cycle gates;template drift/occlusion require review;native interchange baking pending. |
-| F60 | Native tracking and continued editing | Actual alpha/five masks,59 transition point/ROI footprints; shared retime, magnetic partitions and physical source edits retain observations. | `media track-bind; timeline compose/edit; preview; render; package` | Source contribution precedes higher-track occlusion; lost footprints hide; natural identity/occlusion quality and interchange baking remain open. |
+| F60 | Native tracking and baked delivery | Actual alpha/five masks/59 transition footprints; edits and shared retime retain observations; native bake verifies all frames and retains source sidecars. | `media track-bind; timeline compose/edit; convert export --bake-tracking` | Frozen graph/FPS;20,000 frames/256,000 samples;unrepresentable integer steps reject;external players and natural identity/occlusion remain unaccepted. |
 
 ## Supported service modules and dependencies
 
@@ -776,7 +798,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.29/final-r1/installed/`, CLI 0.1.31. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.30/final-r3/installed/`, CLI 0.1.32. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1192,6 +1214,12 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R221 | 2026-10-26 native tracking visibility | Fresh isolated r32 kit111 files:one registration/17 modules/73 Skill files; real isolated CLI,current visibility protocol and inverse C40 retime dry-run checked; no source fallback/inference. | [Evidence](docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/verification.json) |
 | R222 | 2026-10-26 native tracking visibility | Complete trilingual READMEs/manuals/capability JSON/Skill/media and staged-byte audit; all217 historical R rows and38 original closure cells retained;60 functions/20 services/75 actual declarations. | [Evidence](docs/validation/evidence/tracking-visibility-20261026-r1/final-delivery-r2/verification.json) |
 | R223 | 2026-10-26 native tracking visibility | Failed development runs retained separately:old scalar-only alpha assertion,Fraction progress admission,slide direction/finite-difference precision,missing probe/edge guard and invalid first C41 authoring request. Final gates and goal scope remain explicit. | [Evidence](docs/validation/evidence/tracking-visibility-20261026-r1/development-attempts-r1/verification.json) |
+| R224 | 2026-10-26 native tracking bake | CLI0.1.32/local.30:225 product files/schema equal source; one Skill/17 modules/73 files/four existing model packs. Separate installed groups:149 tracking,83 conversion,192 legacy, with zero failures/errors/skips. | [Evidence](docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r3/verification.json) |
+| R225 | 2026-10-26 native tracking bake | Actual installed C42:45 native binding samples and36 exact Float32 frames; imported baked package retains every decoded frame and144000 complete stereo samples. | [Evidence](docs/validation/evidence/tracking-bake-20261026-r1/case-r5/verification.json) |
+| R226 | 2026-10-26 native tracking bake | Five export/import paths:package,agent-json,OTIO,MLT,draft. Sidecars preserve original observations; strict draft and source overwrite reject. External renderer equivalence is not certified. | [Evidence](docs/validation/evidence/tracking-bake-20261026-r1/case-r5/format-exports.json) |
+| R227 | 2026-10-26 native tracking bake | Each frame-only GPU pass executes90 affine/81 over operations; providers,worker and shared handles close. Prepared transport is distinct from encoded-movie quality acceptance. | [Evidence](docs/validation/evidence/tracking-bake-20261026-r1/case-r5/native-bake-proof.json) |
+| R228 | 2026-10-26 native tracking bake | Fresh r33 kit112 files:one Skill/17 modules/73 Skill files; isolated registration,actual CLI/help/bake dry-run verified,without rendering or source fallback. | [Evidence](docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/verification.json) |
+| R229 | 2026-10-26 native tracking bake | Full trilingual READMEs,60 functions/20 services/75 declarations,workflow,case/GIF,Skill and byte audits updated;223 historical R rows and38 original closure cells preserved. Failed development attempts retained separately. | [Evidence](docs/validation/evidence/tracking-bake-20261026-r1/development-attempts-r4/verification.json) |
 
 ## Current limits and development direction
 

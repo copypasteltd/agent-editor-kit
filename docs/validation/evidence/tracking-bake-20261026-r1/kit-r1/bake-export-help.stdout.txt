@@ -1,0 +1,22 @@
+usage: ai-ad-editor convert export [-h] [--format {json,text}]
+                                   [--request-id REQUEST_ID]
+                                   [--idempotency-key IDEMPOTENCY_KEY]
+                                   [--dry-run] [--no-network]
+                                   [--progress {none,jsonl}] --project PROJECT
+                                   --output OUTPUT
+                                   [--target-format {agent-json,package,otio,kdenlive-xml,jianying-draft-json}]
+                                   [--strict] [--bake-tracking]
+
+options:
+  -h, --help            show this help message and exit
+  --format {json,text}  输出格式
+  --request-id REQUEST_ID
+  --idempotency-key IDEMPOTENCY_KEY
+  --dry-run
+  --no-network
+  --progress {none,jsonl}
+  --project PROJECT
+  --output OUTPUT
+  --target-format {agent-json,package,otio,kdenlive-xml,jianying-draft-json}
+  --strict              明文草稿适配器遇到近似/不支持/失败时拒绝写入
+  --bake-tracking       agent-json/package导出为普通跟踪关键帧并保留源绑定旁车；原生工程逐帧Float32核验

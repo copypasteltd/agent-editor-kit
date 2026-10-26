@@ -408,11 +408,16 @@ def validate_project_bindings(project: dict, root: Path | None = None) -> list[d
     return errors
 
 
-def bake_interchange_bindings(project: dict) -> tuple[dict,list[str]]:
+def bake_interchange_bindings(project: dict, root: Path | None = None, *, receipt: dict | None = None) -> tuple[dict,list[str]]:
     bound = [c['id'] for s in project.get('sequences',[]) for t in s.get('tracks',[]) for c in t.get('clips',[]) if c.get('tracking_binding')]
     if not bound: return project,[]
     if native_clock_project(project):
-        raise AppError('TRACK_BIND_NATIVE_BAKE_REQUIRED', '原生PTS绑定须保留为可编辑工程包；当前中间格式尚未按原生帧时钟烘焙', exit_code=2)
+        if root is None:
+            raise AppError('TRACK_BIND_NATIVE_BAKE_REQUIRED', '原生PTS烘焙需要工程根目录以核验真实原始帧；请通过convert export导出', exit_code=2)
+        from .tracking_bake import bake
+        result, proof = bake(root, project)
+        if receipt is not None: receipt.update(proof)
+        return result, bound
     result = compile_project_bindings(project)
     for sequence in result['sequences']:
         for track in sequence['tracks']:

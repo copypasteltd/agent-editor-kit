@@ -1,0 +1,84 @@
+{
+  "files": [
+    {
+      "path": "baked.mp4",
+      "bytes": 48002,
+      "sha256": "92017849c26bfca3d98915ed0fa4cc770d7a86f57ca75b43a4726d332b3019ca"
+    },
+    {
+      "path": "comparison.gif",
+      "bytes": 100064,
+      "sha256": "4c232137a2694c9e866883f7a67a0d4e97115bd6cc9026fc1ffe88b6ee10f1ed"
+    },
+    {
+      "path": "comparison.png",
+      "bytes": 4770,
+      "sha256": "f3420aa6279a3573747e57c45b1b4abe021554c56485ebb7c60edcf909d27b99"
+    },
+    {
+      "path": "editable-baked-tracking.aevpkg.zip",
+      "bytes": 13172957,
+      "sha256": "b7ab65f87dda5c54ca609b6a7dc02347e06f897bc83204530547eaa1b7f8d10c"
+    },
+    {
+      "path": "editable-baked-tracking.aevpkg.zip.conversion-report.json",
+      "bytes": 12413,
+      "sha256": "9b7e0b7022bd7ccc367e8c4990d3ea51a3e9704ab9f46a1df8d43ab905c0f436"
+    },
+    {
+      "path": "editable-baked-tracking.aevpkg.zip.source-agent.json",
+      "bytes": 39791,
+      "sha256": "ec409a5bbe85bef1d3a1ad6596d9915902e6c90523bcba046d71e3398155aa3d"
+    },
+    {
+      "path": "editable-baked-tracking.aevpkg.zip.source-agent.json.conversion-report.json",
+      "bytes": 411,
+      "sha256": "8bea11ede7ce7f18396655ae1f60d6b700269b62957b1e49f9116ed2bf133093"
+    },
+    {
+      "path": "original.mp4",
+      "bytes": 48002,
+      "sha256": "92017849c26bfca3d98915ed0fa4cc770d7a86f57ca75b43a4726d332b3019ca"
+    },
+    {
+      "path": "SOURCE.txt",
+      "bytes": 406,
+      "sha256": "69c1bbc93cd6de931f6a1e7cd04bcf022bf8fafc0c945f20beaf3612ecf6947b"
+    }
+  ],
+  "frames": 36,
+  "seconds": 3,
+  "fps": 12,
+  "full_pcm_samples_per_channel": 144000,
+  "gif_fps": 8,
+  "gif_frames": 24,
+  "external_renderer_verified": false,
+  "gif_actual_duration_ms": 3010,
+  "gif_frame_durations_ms": [
+    130,
+    120,
+    130,
+    120,
+    130,
+    120,
+    130,
+    120,
+    130,
+    120,
+    130,
+    120,
+    130,
+    120,
+    130,
+    120,
+    130,
+    120,
+    130,
+    120,
+    130,
+    120,
+    130,
+    130
+  ],
+  "gif_timing_note": "GIF uses 10 ms delay units; compare source MP4 for original video timing."
+}

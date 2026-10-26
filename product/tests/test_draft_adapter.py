@@ -108,6 +108,27 @@ class DraftAdapterTests(unittest.TestCase):
             self.assertLess(self.pcm_rms(rendered,1.05,0.1),0.001)
             self.assertNotEqual(invoke("rights","check","--project",str(project))[0],0)
 
+    def test_overlapping_segments_preserve_target_ranges_and_report_approximate_stack_and_mix(self):
+        with tempfile.TemporaryDirectory(prefix='draft-overlap-') as raw:
+            root=Path(raw);payload=self.draft(self.media(root))
+            peer=copy.deepcopy(payload['tracks'][0]['segments'][0]);peer['id']='clip_2'
+            peer['target_timerange']={'start':600_000,'duration':600_000}
+            peer['source_timerange']={'start':0,'duration':600_000};peer['common_keyframes']=[]
+            payload['tracks'][0]['segments'].append(peer);source=self.save(root,payload)
+            code,result=invoke('convert','import','--input',str(source),'--output',str(root/'project'))
+            self.assertEqual(code,0,result)
+            project=json.loads((root/'project/project.json').read_bytes())
+            tracks=[t for t in project['sequences'][0]['tracks'] if t['clips']]
+            self.assertEqual({t['kind'] for t in tracks},{'video','audio'})
+            self.assertTrue(all(t['overlap_policy']=='allow' for t in tracks))
+            visual=next(t for t in tracks if t['kind']=='video')['clips']
+            self.assertEqual([(c['timeline_start_tick'],c['duration_tick']) for c in visual],[(18000,72000),(54000,54000)])
+            self.assertEqual(invoke('validate','--project',str(root/'project'))[0],0)
+            losses=[r for r in result['data']['report_data']['items'] if r['capability']=='timeline-overlap']
+            self.assertEqual(len(losses),2);self.assertTrue(all(r['status']=='Approximate' for r in losses))
+            code,result=invoke('convert','import','--input',str(source),'--output',str(root/'strict'),'--strict')
+            self.assertEqual(code,2,result);self.assertFalse((root/'strict/project.json').exists())
+
     def test_draft_roundtrip_preserves_sound_without_double_mixing_and_frames(self) -> None:
         with tempfile.TemporaryDirectory(prefix="draft-roundtrip-") as raw:
             root = Path(raw)

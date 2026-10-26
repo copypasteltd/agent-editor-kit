@@ -1,0 +1,44 @@
+{
+  "status": "recorded",
+  "failed_attempts": [
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/source-r1/verification.json",
+      "sha256": "0b91b93722d3f94674df9670c0ff56277c0f0b80321976d2872cc9efe2547629",
+      "reason": "Invalid initial window/transition fixtures, corrected before installed tests",
+      "excluded_from_final_acceptance": true
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/source-r5/verification.json",
+      "sha256": "5f4c05758a89941c0dc07a24946951ab4022b9508bb4a1250f1f1e7596acc663",
+      "reason": "Real MLT profile display FPS was not preserved; implementation and regression tests corrected",
+      "excluded_from_final_acceptance": true
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r1/activation.stderr.txt",
+      "sha256": "8d2537e161ef045fa811ee32daca96c28808bca12d85a7d18f0324c9b2435e41",
+      "reason": "Attempted activation before updating the reviewed Skill bundle pin; preserved and corrected",
+      "excluded_from_final_acceptance": true
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r1/verification.json",
+      "sha256": "43e71378cd68a6c182703087388ec20f709dd922160f0a5324b7de9976a3f7e6",
+      "reason": "Incorrect expectation of encoded-quality GPU status during frame-only bake; actual operations and cleanup retained",
+      "excluded_from_final_acceptance": true
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/verification.json",
+      "sha256": "039411e697c30c9b1beaabfebe3fc10801322d8ec8976b2cb95cdb5aeeb81238",
+      "reason": "Real .mlt extension import rejection; importer, fractional profile and OTIO clock roundtrips corrected",
+      "excluded_from_final_acceptance": true
+    }
+  ],
+  "final_installation": "installation-final-r2",
+  "final_installed_tests": [
+    "tracking-installed-r2",
+    "conversion-installed-r2",
+    "legacy-installed-r2"
+  ],
+  "final_case": "case-r3",
+  "final_pixel_comparison_tolerance": 0,
+  "external_renderer_verified": false
+}

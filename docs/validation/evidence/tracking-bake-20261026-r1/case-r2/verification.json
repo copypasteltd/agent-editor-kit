@@ -1,0 +1,489 @@
+{
+  "status": "failed",
+  "cli_version": "0.1.32",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.30\\final-r1\\installed",
+  "registered_skill": true,
+  "source_fallback": false,
+  "virtualization": false,
+  "new_model_forwards": 0,
+  "external_renderer_verified": false,
+  "continuous_playback": false,
+  "human_listening": false,
+  "checks": [
+    {
+      "name": "registered installed version",
+      "ok": true
+    },
+    {
+      "name": "actual installed directory",
+      "ok": true
+    },
+    {
+      "name": "source has both retained native bindings",
+      "ok": true
+    },
+    {
+      "name": "actual full Float32 verification, original preserved",
+      "ok": true
+    },
+    {
+      "name": "actual GPU operations in both frame-only passes and cleanup",
+      "ok": true
+    },
+    {
+      "name": "original observation dictionaries retained in sidecar",
+      "ok": true
+    },
+    {
+      "name": "imported ordinary hold keys without active bindings",
+      "ok": true
+    },
+    {
+      "name": "asset IDs and hashes preserved",
+      "ok": true
+    },
+    {
+      "name": "original all frame clocks/full stereo PCM count",
+      "ok": true
+    },
+    {
+      "name": "baked all frame clocks/full stereo PCM count",
+      "ok": true
+    },
+    {
+      "name": "every decoded frame and complete PCM preserved",
+      "ok": true
+    },
+    {
+      "name": "agent-json verified native bake and explicit external boundary",
+      "ok": true
+    },
+    {
+      "name": "agent-json full source sidecar bindings",
+      "ok": true
+    },
+    {
+      "name": "agent-json reimport contains no active binding",
+      "ok": true
+    },
+    {
+      "name": "otio verified native bake and explicit external boundary",
+      "ok": true
+    },
+    {
+      "name": "otio full source sidecar bindings",
+      "ok": true
+    },
+    {
+      "name": "otio reimport contains no active binding",
+      "ok": true
+    },
+    {
+      "name": "kdenlive-xml verified native bake and explicit external boundary",
+      "ok": true
+    },
+    {
+      "name": "kdenlive-xml full source sidecar bindings",
+      "ok": true
+    }
+  ],
+  "calls": [
+    {
+      "name": "version",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "version"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-bake-20261026-r1\\case-r2\\version.stdout.log",
+      "stdout_sha256": "0c96197a451cc3244284111c3c949d8f7674ff32a68c56653767b384968a81b3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 1.9313139999940176
+    },
+    {
+      "name": "import-original",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "convert",
+        "import",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-visibility-20261026-r2\\editable-tracking-visibility.aevpkg.zip",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\原始 工程"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-bake-20261026-r1\\case-r2\\import-original.stdout.log",
+      "stdout_sha256": "63939b8e65dd8963bff903b3e2599814deceda660037e610fd5d3ff7b5e32501",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 1.9783437000005506
+    },
+    {
+      "name": "export-baked-package",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "convert",
+        "export",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\原始 工程",
+        "--target-format",
+        "package",
+        "--bake-tracking",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-bake-20261026-r2\\editable-baked-tracking.aevpkg.zip"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-bake-20261026-r1\\case-r2\\export-baked-package.stdout.log",
+      "stdout_sha256": "964ffaf32259b71602faba2985b4b5a2ddd12fd633e13dab7fcc1ae55d2b7959",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 49.671327199997904
+    },
+    {
+      "name": "import-baked-package",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "convert",
+        "import",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-bake-20261026-r2\\editable-baked-tracking.aevpkg.zip",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\烘焙 导入"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-bake-20261026-r1\\case-r2\\import-baked-package.stdout.log",
+      "stdout_sha256": "c9ea71aa78d69d265e26945f0c3e1876f88c5979ed346e022d662f0e249830f6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 1.8755952999999863
+    },
+    {
+      "name": "validate-baked-package",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "validate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\烘焙 导入"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-bake-20261026-r1\\case-r2\\validate-baked-package.stdout.log",
+      "stdout_sha256": "8ebc53ce740bdf60c93ffbf4908f2ec5793aa9a4bcb9cdf2284b60d66df5a003",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 2.2022123000060674
+    },
+    {
+      "name": "render-original",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\原始 工程",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\原始 工程\\renders\\original.mkv"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-bake-20261026-r1\\case-r2\\render-original.stdout.log",
+      "stdout_sha256": "eca87de15d8d85c917426070891736260a9de662902b9021613164237cd58aa3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 29.520744899993588
+    },
+    {
+      "name": "render-baked",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\烘焙 导入",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\烘焙 导入\\renders\\baked.mkv"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-bake-20261026-r1\\case-r2\\render-baked.stdout.log",
+      "stdout_sha256": "56beb9849583f158d8c0909e6297c238f15ae75068e344b9d8faf2059ad14322",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 26.92528570000286
+    },
+    {
+      "name": "original-frames",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\原始 工程\\renders\\original.mkv",
+        "-map",
+        "0:v:0",
+        "-pix_fmt",
+        "rgba64le",
+        "-f",
+        "framemd5",
+        "-"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-bake-20261026-r1\\case-r2\\original-frames.stdout.log",
+      "stdout_sha256": "a6a957eb211628819325b3379e23ab008eae0b76a34669b462dc284c879ce300",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 0.10697159999836003
+    },
+    {
+      "name": "original-pcm",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\原始 工程\\renders\\original.mkv",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "-"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\original-pcm.bin",
+      "stdout_sha256": "c33cc4356706c476998a70050d6ca058b73b9d85cf56fff258edb940eacef52c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 0.06789700000081211
+    },
+    {
+      "name": "baked-frames",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\烘焙 导入\\renders\\baked.mkv",
+        "-map",
+        "0:v:0",
+        "-pix_fmt",
+        "rgba64le",
+        "-f",
+        "framemd5",
+        "-"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-bake-20261026-r1\\case-r2\\baked-frames.stdout.log",
+      "stdout_sha256": "a6a957eb211628819325b3379e23ab008eae0b76a34669b462dc284c879ce300",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 0.0876051999948686
+    },
+    {
+      "name": "baked-pcm",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\烘焙 导入\\renders\\baked.mkv",
+        "-map",
+        "0:a:0",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "-"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\baked-pcm.bin",
+      "stdout_sha256": "c33cc4356706c476998a70050d6ca058b73b9d85cf56fff258edb940eacef52c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 0.06929139999556355
+    },
+    {
+      "name": "export-agent-json",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "convert",
+        "export",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\原始 工程",
+        "--target-format",
+        "agent-json",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\原始 工程\\exports\\baked.json",
+        "--bake-tracking"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-bake-20261026-r1\\case-r2\\export-agent-json.stdout.log",
+      "stdout_sha256": "6f43fff93a53bd04849b9cc2278dbeeae9204b3d74f86bde76d4f08996dc8f2a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 53.80345319999469
+    },
+    {
+      "name": "import-agent-json",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "convert",
+        "import",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\原始 工程\\exports\\baked.json",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\导入 agent-json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-bake-20261026-r1\\case-r2\\import-agent-json.stdout.log",
+      "stdout_sha256": "5a29e57072906ba74045ecef01ab0ae67adfed5c2cafb33400ef432c82049bdc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 1.8832498999981908
+    },
+    {
+      "name": "export-otio",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "convert",
+        "export",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\原始 工程",
+        "--target-format",
+        "otio",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\原始 工程\\exports\\baked.otio"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-bake-20261026-r1\\case-r2\\export-otio.stdout.log",
+      "stdout_sha256": "62e820c6133cdd0e88af786d39b009541eb58cd89c8ce1808776b0a561a764d7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 54.68413910000527
+    },
+    {
+      "name": "import-otio",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "convert",
+        "import",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\原始 工程\\exports\\baked.otio",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\导入 otio"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-bake-20261026-r1\\case-r2\\import-otio.stdout.log",
+      "stdout_sha256": "6134f467da4844a15ed1bcdbbe9625e69f1fdf0a6cc489f515d8e3ffc585c158",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 2.3122150000053807
+    },
+    {
+      "name": "export-kdenlive-xml",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "convert",
+        "export",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\原始 工程",
+        "--target-format",
+        "kdenlive-xml",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\原始 工程\\exports\\baked.mlt"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-bake-20261026-r1\\case-r2\\export-kdenlive-xml.stdout.log",
+      "stdout_sha256": "b7c56de291e2d1540a46d75fc2db5b3f59834b20924e8f06b2cfbaf41c2d1814",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 56.61607930000173
+    },
+    {
+      "name": "import-kdenlive-xml",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "convert",
+        "import",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\原始 工程\\exports\\baked.mlt",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r2\\导入 kdenlive-xml"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 0,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-bake-20261026-r1\\case-r2\\import-kdenlive-xml.stdout.log",
+      "stdout_sha256": "e5dc8c76dd643cb9f23ba806746ae710647a668b23d715aa53e50fb5d74082d9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 1.9302055000007385
+    }
+  ],
+  "started_at_utc": "2026-10-26T10:38:57.013639+00:00",
+  "error": "AssertionError(('import-kdenlive-xml', b'{\"ok\":false,\"command\":\"convert.import\",\"request_id\":\"req_20261026104342_a3386330\",\"operation_id\":null,\"status\":\"failed\",\"data\":{},\"artifacts\":[],\"warnings\":[],\"errors\":[{\"code\":\"ARGUMENT_INVALID\",\"message\":\"\\xe4\\xb8\\x8d\\xe6\\x94\\xaf\\xe6\\x8c\\x81\\xe7\\x9a\\x84\\xe5\\xa4\\x96\\xe9\\x83\\xa8\\xe6\\xa0\\xbc\\xe5\\xbc\\x8f: .mlt\",\"path\":\"E:\\\\\\\\dev\\\\\\\\sandbox\\\\\\\\AI\\xe5\\xb9\\xbf\\xe5\\x91\\x8a\\xe5\\x89\\xaa\\xe8\\xbe\\x91\\\\\\\\workspace\\\\\\\\tracking-bake-20261026-case-r2\\\\\\\\\\xe5\\x8e\\x9f\\xe5\\xa7\\x8b \\xe5\\xb7\\xa5\\xe7\\xa8\\x8b\\\\\\\\exports\\\\\\\\baked.mlt\",\"retryable\":false}],\"provenance\":{\"cli_version\":\"0.1.32\",\"schema_version\":\"0.1.0\",\"engine_version\":\"ffmpeg-local\",\"started_at\":\"2026-10-26T10:43:42.779940Z\",\"finished_at\":\"2026-10-26T10:43:42.779950Z\",\"network\":\"disabled\"}}\\r\\n', b''))"
+}

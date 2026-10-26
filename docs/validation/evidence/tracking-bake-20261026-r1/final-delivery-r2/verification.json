@@ -1,0 +1,2384 @@
+{
+  "status": "passed",
+  "goal_complete": false,
+  "virtualization": false,
+  "source_fallback": false,
+  "checked_at_utc": "2026-10-26T12:07:58.662063+00:00",
+  "product_files": 225,
+  "skill_files": 73,
+  "modules": 17,
+  "test_groups": [
+    {
+      "group": "tracking",
+      "tests": 149,
+      "skips": 0
+    },
+    {
+      "group": "conversion",
+      "tests": 83,
+      "skips": 0
+    },
+    {
+      "group": "legacy",
+      "tests": 192,
+      "skips": 0
+    }
+  ],
+  "functions": 60,
+  "services": 20,
+  "declarations": 75,
+  "readme_rows": 229,
+  "historical_rows_preserved": 223,
+  "original_goal_closures_preserved": 38,
+  "local_links_checked": 3299,
+  "actual_registered_skill_frames": 36,
+  "full_pcm_samples_per_channel": 144000,
+  "kit_sha256": "e9ecb72f3b968b5e20963a45714d8745925fa3dce4f1d4a7bdfdf5dbf7216029",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 101952,
+      "sha256": "e715f45794090684af9321a6b425eb1f08b4c8327f9e9bda10469d9e738a8c71"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 2425,
+      "sha256": "6b3e524858a0f251631beede8b35a906d962e1da90e670423e9a836ea5d29c0d"
+    },
+    {
+      "path": "README.en.md",
+      "bytes": 189132,
+      "sha256": "5788bea1120c599e601ad92413797b80881ff3873f76eb7dadd44a114c749f2c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 176546,
+      "sha256": "daefa92ad0694eec2ae353a05d0068fdddb4bde484a86f579f38d1b6cad24563"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "bytes": 177654,
+      "sha256": "25433c2c6465386b7992ff07762e95db69bdbf6e27e90761b45b58686a260479"
+    },
+    {
+      "path": "agent-ffmpeg-local-install-manifest.json",
+      "bytes": 26455,
+      "sha256": "6d9138ea7aae8942e6b15f959de52a5a11b55a5201187c454b949f926e7d0b59"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 12917,
+      "sha256": "c0d24c07503ce6202e36322c885020028afd4962cddefc85d23d47c854ba68e0"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r1/editable-baked-tracking.aevpkg.zip",
+      "bytes": 13170769,
+      "sha256": "47ffbaf539cd9a9c9c1790e4cb05d3b6695b539296f486a92c77817d1fe613f3"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r1/editable-baked-tracking.aevpkg.zip.conversion-report.json",
+      "bytes": 12414,
+      "sha256": "cc363af090c2fb0a7c97ec421597c34d11ee291a4cf20959d554003cc610b98a"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r1/editable-baked-tracking.aevpkg.zip.source-agent.json",
+      "bytes": 39791,
+      "sha256": "d25b2a6b0b13aeaaa7a19c16407f2e53e6259cc851b0aa13447523efe2d48b92"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r1/editable-baked-tracking.aevpkg.zip.source-agent.json.conversion-report.json",
+      "bytes": 411,
+      "sha256": "4635ab811798bd8ee3d9215907453d968e734b70f62ae3f3d204a9584a5bdf9b"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r2/editable-baked-tracking.aevpkg.zip",
+      "bytes": 13170766,
+      "sha256": "42e038236bea0380a6c37d9a9c25c4be1f71e4f1ddc74910ea2244671f50bb4d"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r2/editable-baked-tracking.aevpkg.zip.conversion-report.json",
+      "bytes": 12413,
+      "sha256": "3fe729f3647265258b5c10b6cf57d607240eb9b9776bad1386e11c2e18805d11"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r2/editable-baked-tracking.aevpkg.zip.source-agent.json",
+      "bytes": 39791,
+      "sha256": "3ff0ab2e9349e9d3887823f5025bb85af39cb3a628885e627402f35de9d5bb9e"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r2/editable-baked-tracking.aevpkg.zip.source-agent.json.conversion-report.json",
+      "bytes": 411,
+      "sha256": "604aa6a1033853b05b0a3866cf5c0743bd1c429703fb65e09e0eba160ae0a24b"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r3/editable-baked-tracking.aevpkg.zip",
+      "bytes": 13172957,
+      "sha256": "1cdf91e0355dae9e71b99f63c9bda65b30c841582dbf97d24fde9b85e7ad9cbb"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r3/editable-baked-tracking.aevpkg.zip.conversion-report.json",
+      "bytes": 12414,
+      "sha256": "c49716e2a14c6593345a23e5e0fe1648443c9043947e29b11d11df6eb60099c0"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r3/editable-baked-tracking.aevpkg.zip.source-agent.json",
+      "bytes": 39791,
+      "sha256": "9a8a9de4d4b9e820f3b75a303413de070e8c34ec1512bf18d94f02e1f7b5a3e5"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r3/editable-baked-tracking.aevpkg.zip.source-agent.json.conversion-report.json",
+      "bytes": 411,
+      "sha256": "589e9b6570e9d0671164569dcb0f0e0a70f2100dcd24321aae6353049683e5f4"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r4/editable-baked-tracking.aevpkg.zip",
+      "bytes": 13172954,
+      "sha256": "da7ca86193540ea65bb651f5f19617bb3d1d6b7c94d345650303f8332ed9e91b"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r4/editable-baked-tracking.aevpkg.zip.conversion-report.json",
+      "bytes": 12413,
+      "sha256": "8010e1147afd1abc1c96b6d61b885ea78f4418d34480941a35d61fcbbe3d132c"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r4/editable-baked-tracking.aevpkg.zip.source-agent.json",
+      "bytes": 39791,
+      "sha256": "587879fb4e755ea6add55e48b79b632545fcf94ed57a4b65fb8f7f9922f55d8c"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r4/editable-baked-tracking.aevpkg.zip.source-agent.json.conversion-report.json",
+      "bytes": 411,
+      "sha256": "49ed081ae826fb8746566e8972494674fab3cb98f91cca8f01e42a03917bd157"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r5/SOURCE.txt",
+      "bytes": 406,
+      "sha256": "69c1bbc93cd6de931f6a1e7cd04bcf022bf8fafc0c945f20beaf3612ecf6947b"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r5/baked.mp4",
+      "bytes": 48002,
+      "sha256": "92017849c26bfca3d98915ed0fa4cc770d7a86f57ca75b43a4726d332b3019ca"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r5/comparison.gif",
+      "bytes": 100064,
+      "sha256": "4c232137a2694c9e866883f7a67a0d4e97115bd6cc9026fc1ffe88b6ee10f1ed"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r5/comparison.png",
+      "bytes": 4770,
+      "sha256": "f3420aa6279a3573747e57c45b1b4abe021554c56485ebb7c60edcf909d27b99"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r5/editable-baked-tracking.aevpkg.zip",
+      "bytes": 13172957,
+      "sha256": "b7ab65f87dda5c54ca609b6a7dc02347e06f897bc83204530547eaa1b7f8d10c"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r5/editable-baked-tracking.aevpkg.zip.conversion-report.json",
+      "bytes": 12413,
+      "sha256": "9b7e0b7022bd7ccc367e8c4990d3ea51a3e9704ab9f46a1df8d43ab905c0f436"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r5/editable-baked-tracking.aevpkg.zip.source-agent.json",
+      "bytes": 39791,
+      "sha256": "ec409a5bbe85bef1d3a1ad6596d9915902e6c90523bcba046d71e3398155aa3d"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r5/editable-baked-tracking.aevpkg.zip.source-agent.json.conversion-report.json",
+      "bytes": 411,
+      "sha256": "8bea11ede7ce7f18396655ae1f60d6b700269b62957b1e49f9116ed2bf133093"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r5/media-manifest.json",
+      "bytes": 2064,
+      "sha256": "fc9c479cb09f676feb64a335ba51ee4653096d99cd70f4b41fc34ce86709f3cc"
+    },
+    {
+      "path": "docs/assets/tracking-bake-20261026-r5/original.mp4",
+      "bytes": 48002,
+      "sha256": "92017849c26bfca3d98915ed0fa4cc770d7a86f57ca75b43a4726d332b3019ca"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.en.md",
+      "bytes": 178419,
+      "sha256": "66f57b627597aed7dfddc47d7e5caa50e7dc8526f4b680814ac0e9c5e0f94ede"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.md",
+      "bytes": 176084,
+      "sha256": "9389f9a5640b862c7eaee1c9b04dd83449835cbb7839fec796ab34e01789248a"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.zh-TW.md",
+      "bytes": 176210,
+      "sha256": "392660e3708252fa3ee332b455385bdc60589912341e9216a5ebb7f84c09cbbc"
+    },
+    {
+      "path": "docs/product/CASES.md",
+      "bytes": 110103,
+      "sha256": "a55fd148dd2a6014a4853830def294f5a3e1513125acaba4e84d0f1e5e74eda5"
+    },
+    {
+      "path": "docs/product/COMMUNITY_LOCAL_DELIVERY.md",
+      "bytes": 28600,
+      "sha256": "bca6f02cd1e5076e98bb360c60785989be6cb85eba5e1e5786979a47e3610c0d"
+    },
+    {
+      "path": "docs/product/FLOAT_TRACKING.md",
+      "bytes": 7619,
+      "sha256": "524a50feb6e3124434ad51ead3b5243566b926c8f7c99a6291965bd5e27bd7ae"
+    },
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "bytes": 45083,
+      "sha256": "d847b62d935012ba8949a6540dbac84083ad301ea36318402dacb7a760de1348"
+    },
+    {
+      "path": "docs/product/IMPLEMENTATION_PLAN_20261025.md",
+      "bytes": 17790,
+      "sha256": "5f35d326ad1c1e1f785f36ff6c35be7041743a1491fdacb7249f08fae17624e4"
+    },
+    {
+      "path": "docs/product/SKILLS.en.md",
+      "bytes": 17302,
+      "sha256": "2573281bea535781ce1f0e1dc923614c8e19ae25e7e0979f971b42626b951d46"
+    },
+    {
+      "path": "docs/product/SKILLS.md",
+      "bytes": 16811,
+      "sha256": "df52dd2b7245143eef6a67faef77694ed284945812a9c005187caa5108e529dd"
+    },
+    {
+      "path": "docs/product/SKILLS.zh-TW.md",
+      "bytes": 16838,
+      "sha256": "5a5200132ea94d50155c99d1d9dd7940ae11279bdf6398bd9c3ca54f8a63709f"
+    },
+    {
+      "path": "docs/product/TRACKING_BAKE.md",
+      "bytes": 7204,
+      "sha256": "cc967704729c683bff73d616a28d15c34d78e4cb641a564c600b743966c14710"
+    },
+    {
+      "path": "docs/product/TRACKING_VISIBILITY.md",
+      "bytes": 6217,
+      "sha256": "2808ed4d96e51906d93cf1955da84bb51e2cf65e3b488e29cd7874d5182ee123"
+    },
+    {
+      "path": "docs/product/tracking-bake-capabilities-cli-0.1.32.json",
+      "bytes": 125310,
+      "sha256": "f8a1bf22cd4c2d9a44bf2fcc854fa91c692fb1e4c7d9545cb23148e49b4692c5"
+    },
+    {
+      "path": "docs/releases/CLI_0.1.32_LOCAL.md",
+      "bytes": 1609,
+      "sha256": "8b17bc763cdb082c955ec52f719527c44e08df0283a28583c5c4bdccb2b8e1f4"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.en.md",
+      "bytes": 7555,
+      "sha256": "57582ea86070b3610e344b4e557a68c205249cdd06473f81f8d4e3d143fa8922"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.md",
+      "bytes": 7851,
+      "sha256": "0341b0fdf242441a34127e86b994c8ad7edaccd588bb06e89574742a75a73d95"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.zh-TW.md",
+      "bytes": 7857,
+      "sha256": "9c714062f3de1ccaf3f2c974de62335886d05c1fcbb3138a17551dd0439fb991"
+    },
+    {
+      "path": "docs/skills/agent-editor-kit-community-unified-skill-r33.zip",
+      "bytes": 582076,
+      "sha256": "e9ecb72f3b968b5e20963a45714d8745925fa3dce4f1d4a7bdfdf5dbf7216029"
+    },
+    {
+      "path": "docs/skills/community-unified-skill-package-0.1.32-r33.json",
+      "bytes": 415,
+      "sha256": "3cdb685531401a1ebc95eb8f78260783faee23339e49ba34aec83bba094c8bcc"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r1/activation.stderr.txt",
+      "bytes": 417,
+      "sha256": "8d2537e161ef045fa811ee32daca96c28808bca12d85a7d18f0324c9b2435e41"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r1/activation.stdout.json",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r1/executed-generator.py",
+      "bytes": 2616,
+      "sha256": "1aeeb0e7ce1fcf96505f91dc0f65ef4ce0f729dfff7b6b819fdb499cd4881a7c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r2/activation-and-registration.json",
+      "bytes": 1750,
+      "sha256": "dc10975209c5646b8cf9800755da755b02464823035a5b4b3dadb497fa3c588d"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r2/activation.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r2/activation.stdout.json",
+      "bytes": 706,
+      "sha256": "1f2391a21940594c2ffa5b21c7974c181d530ef426863944658e41691563be49"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r2/executed-generator.py",
+      "bytes": 2796,
+      "sha256": "f9ef577f8632618121415fae99b87d7618292cc4068fc0f7313a1ab14fae3e58"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r2/kokoro-zh-en-cuda13.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r2/kokoro-zh-en-cuda13.stdout.json",
+      "bytes": 659,
+      "sha256": "5054ac93a4a9c946568c5e0f964c7ca3716289658cb965f2e2c46becad79af1d"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r2/kokoro-zh-en-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r2/kokoro-zh-en-int8.stdout.json",
+      "bytes": 655,
+      "sha256": "6ca540ffca67a56765ba73c91192b8203da2d68a97071140b47ae47585e54d5d"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r2/opus-zh-en-cpu-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r2/opus-zh-en-cpu-int8.stdout.json",
+      "bytes": 660,
+      "sha256": "f238d8dfc6eb4b8222b786e0e29b2cd23573512b643addf054c4f40085059bc2"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r2/opus-zh-en-cuda12-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r2/opus-zh-en-cuda12-int8.stdout.json",
+      "bytes": 666,
+      "sha256": "2fd7fe189709e1b2506504b9961595d7817ad4fb53608a372eaf02f5a2657a71"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r2/previous-community-runtime.json",
+      "bytes": 797,
+      "sha256": "215495ee2c7f917d3394f3cae9821f4ad74765e1600af1282f1468b9f228b61c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r2/previous-runtime.json",
+      "bytes": 624,
+      "sha256": "0ed0a738d0c97151271c266fe8401185c799ea5ef537f7ffeaea5aeb3fcd7d59"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r2/registration.json",
+      "bytes": 939,
+      "sha256": "fac70e54016bc2423863d6bfb5ec676373e3b6a33c5c6af58a8e60b5009ecc76"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r2/registration.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r2/registration.stdout.txt",
+      "bytes": 367,
+      "sha256": "43d42a601365ecd5ff0c4068e1ae6ad2ad62ba13f9f58c7e0c730556c56c1056"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r2/verification.json",
+      "bytes": 749,
+      "sha256": "7dd9024327d9be8f20b4311a6bae6621235718a2036d0444fddd6491a7107865"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r3/activation-and-registration.json",
+      "bytes": 1750,
+      "sha256": "991b12f300c79e4632a47c38be32fdeb96fa386d974967190cdcb6968b5f3ad3"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r3/activation.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r3/activation.stdout.json",
+      "bytes": 706,
+      "sha256": "0f54f904e2fcc002e3c13e624406af8f2cf334a0e01be917bf97690a8c8a0680"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r3/executed-generator.py",
+      "bytes": 2796,
+      "sha256": "5d5070be9763415a16bb56792dccbbf0c7893a46b71f1e4062cf4475370e1b86"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r3/kokoro-zh-en-cuda13.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r3/kokoro-zh-en-cuda13.stdout.json",
+      "bytes": 659,
+      "sha256": "02c2befde874b2d52526b93fa23b71b64e391de2ea2b2992a84fd388b349afba"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r3/kokoro-zh-en-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r3/kokoro-zh-en-int8.stdout.json",
+      "bytes": 655,
+      "sha256": "d1b77636445987739428545c055357a7bbecc17af3af19651b15e12e39ee792f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r3/opus-zh-en-cpu-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r3/opus-zh-en-cpu-int8.stdout.json",
+      "bytes": 660,
+      "sha256": "63066f614347586cb3a6118db95718df21f4c3df26b9625c8e04abee467e6489"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r3/opus-zh-en-cuda12-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r3/opus-zh-en-cuda12-int8.stdout.json",
+      "bytes": 666,
+      "sha256": "7bebd20ddb97a7cefb57be8beb5ebbcaecab2a855facb5b86c179873844a4070"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r3/previous-community-runtime.json",
+      "bytes": 797,
+      "sha256": "215495ee2c7f917d3394f3cae9821f4ad74765e1600af1282f1468b9f228b61c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r3/previous-runtime.json",
+      "bytes": 624,
+      "sha256": "9ca6659496438feaa2afaccb75c59bf854ea69e973c278f17bf5944945f7d33f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r3/registration.json",
+      "bytes": 939,
+      "sha256": "19f590e7d4198103daea5fbaec21e5dc310545969ba9fd2b8c98bcceb6e6e4f1"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r3/registration.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r3/registration.stdout.txt",
+      "bytes": 367,
+      "sha256": "9c036ad95e0f0ad86b01ccaf9e7324a592b60e74e92a630cdb31271fc497e2a0"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r3/verification.json",
+      "bytes": 749,
+      "sha256": "a78add8b61dc6ec48777d81eeed59d115a70690511b5f57320f613e3789cad81"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r4/activation-and-registration.json",
+      "bytes": 1750,
+      "sha256": "1bfb0f94b8cc9d111d236d41492dbf33cd15afc9c8babc6eefcfc0f741805946"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r4/activation.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r4/activation.stdout.json",
+      "bytes": 706,
+      "sha256": "34ef7edb3ae39335be31fd5562607a2ffc9a3c713a238e4c190cdef0bd1209c4"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r4/executed-generator.py",
+      "bytes": 2796,
+      "sha256": "d0c1ee908ed733742bc0b99be315163457f0d96a4fd8735a23965950ddd61858"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r4/kokoro-zh-en-cuda13.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r4/kokoro-zh-en-cuda13.stdout.json",
+      "bytes": 659,
+      "sha256": "ad211060dd363fabbc52ddc363ca28cf9dfca9546fb2c8cf047dceef41a3abbb"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r4/kokoro-zh-en-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r4/kokoro-zh-en-int8.stdout.json",
+      "bytes": 655,
+      "sha256": "d88375f1e645b4eee387f36bb9823f3c21b65a892197b19dd089fcc0c30ff08c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r4/opus-zh-en-cpu-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r4/opus-zh-en-cpu-int8.stdout.json",
+      "bytes": 660,
+      "sha256": "88c559d2ffdb044e6abfc6c8ed55417142f92352eeab7034855aa46a638d5da2"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r4/opus-zh-en-cuda12-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r4/opus-zh-en-cuda12-int8.stdout.json",
+      "bytes": 666,
+      "sha256": "dd28d27b0142aca6547825a87df198cce7ffcc4f8ad62a022587d1c705aecaeb"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r4/previous-community-runtime.json",
+      "bytes": 797,
+      "sha256": "215495ee2c7f917d3394f3cae9821f4ad74765e1600af1282f1468b9f228b61c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r4/previous-runtime.json",
+      "bytes": 624,
+      "sha256": "fd1bdf743b5d86672d932b365e398c9860ef0ca704d7511f93cfb26866f4ddd1"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r4/registration.json",
+      "bytes": 939,
+      "sha256": "136100de64857a11f71b4ed5768e5ad66894c8a9d0287f869d7554766788d6b4"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r4/registration.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r4/registration.stdout.txt",
+      "bytes": 367,
+      "sha256": "8768c278cfb76df5616dd3fc10f9627bb02b8675cc8ee871c12483741cefa11d"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/activation-final-r4/verification.json",
+      "bytes": 749,
+      "sha256": "ce758bfe71e16ec263c67bd3ba2030f813c5d72b1b1eb7a466a70bdc54e1e8fc"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r1/executed-generator.py",
+      "bytes": 12308,
+      "sha256": "f0b93dea33549fc0c39d7623a420d92c24e04e52670011c7856d19d6e225e13e"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r1/export-baked-package.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r1/export-baked-package.stdout.log",
+      "bytes": 12226,
+      "sha256": "ec3cf047030d7c56edfdd124c76965b201f3a00e0aaff9669c079da5e4fe5985"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r1/import-original.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r1/import-original.stdout.log",
+      "bytes": 1586,
+      "sha256": "b94a16a3a0a27217299e36dc8df98527f1d006715682b51e74dd8850c9d63835"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r1/native-bake-proof.json",
+      "bytes": 9676,
+      "sha256": "de5f49ed2764c68116c74a29994252848db35c0718d04e09bd4be122303ab158"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r1/verification.json",
+      "bytes": 3723,
+      "sha256": "43e71378cd68a6c182703087388ec20f709dd922160f0a5324b7de9976a3f7e6"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r1/version.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r1/version.stdout.log",
+      "bytes": 1167,
+      "sha256": "43ad104788cfa7af3548f18f67dff92990835f54cbe88bb9fc1ab24976bc0092"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/baked-frames.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/baked-frames.stdout.log",
+      "bytes": 3095,
+      "sha256": "a6a957eb211628819325b3379e23ab008eae0b76a34669b462dc284c879ce300"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/baked-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/decoded-full-media.json",
+      "bytes": 3280,
+      "sha256": "15cd45a643d02e7440c27759b00528131308d779c09fbba1a5b12109be33451a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/executed-generator.py",
+      "bytes": 12605,
+      "sha256": "9da5b43325962bfce0fc2ce24edfee851702f3ba6ba49e6de0d93031673f8357"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/export-agent-json.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/export-agent-json.stdout.log",
+      "bytes": 9235,
+      "sha256": "6f43fff93a53bd04849b9cc2278dbeeae9204b3d74f86bde76d4f08996dc8f2a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/export-baked-package.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/export-baked-package.stdout.log",
+      "bytes": 12225,
+      "sha256": "964ffaf32259b71602faba2985b4b5a2ddd12fd633e13dab7fcc1ae55d2b7959"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/export-kdenlive-xml.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/export-kdenlive-xml.stdout.log",
+      "bytes": 11902,
+      "sha256": "b7c56de291e2d1540a46d75fc2db5b3f59834b20924e8f06b2cfbaf41c2d1814"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/export-otio.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/export-otio.stdout.log",
+      "bytes": 12442,
+      "sha256": "62e820c6133cdd0e88af786d39b009541eb58cd89c8ce1808776b0a561a764d7"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/import-agent-json.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/import-agent-json.stdout.log",
+      "bytes": 1200,
+      "sha256": "5a29e57072906ba74045ecef01ab0ae67adfed5c2cafb33400ef432c82049bdc"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/import-baked-package.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/import-baked-package.stdout.log",
+      "bytes": 1575,
+      "sha256": "c9ea71aa78d69d265e26945f0c3e1876f88c5979ed346e022d662f0e249830f6"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/import-kdenlive-xml.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/import-kdenlive-xml.stdout.log",
+      "bytes": 584,
+      "sha256": "e5dc8c76dd643cb9f23ba806746ae710647a668b23d715aa53e50fb5d74082d9"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/import-original.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/import-original.stdout.log",
+      "bytes": 1586,
+      "sha256": "63939b8e65dd8963bff903b3e2599814deceda660037e610fd5d3ff7b5e32501"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/import-otio.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/import-otio.stdout.log",
+      "bytes": 1155,
+      "sha256": "6134f467da4844a15ed1bcdbbe9625e69f1fdf0a6cc489f515d8e3ffc585c158"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/native-bake-proof.json",
+      "bytes": 9675,
+      "sha256": "f7d4ba34834ac80c7a1bb70c81a96f0dd069b679f58e2bea76e38106cb7430ff"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/original-frames.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/original-frames.stdout.log",
+      "bytes": 3095,
+      "sha256": "a6a957eb211628819325b3379e23ab008eae0b76a34669b462dc284c879ce300"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/original-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/render-baked.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/render-baked.stdout.log",
+      "bytes": 200248,
+      "sha256": "56beb9849583f158d8c0909e6297c238f15ae75068e344b9d8faf2059ad14322"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/render-original.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/render-original.stdout.log",
+      "bytes": 217623,
+      "sha256": "eca87de15d8d85c917426070891736260a9de662902b9021613164237cd58aa3"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/validate-baked-package.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/validate-baked-package.stdout.log",
+      "bytes": 801,
+      "sha256": "8ebc53ce740bdf60c93ffbf4908f2ec5793aa9a4bcb9cdf2284b60d66df5a003"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/verification.json",
+      "bytes": 19553,
+      "sha256": "039411e697c30c9b1beaabfebe3fc10801322d8ec8976b2cb95cdb5aeeb81238"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/version.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r2/version.stdout.log",
+      "bytes": 1167,
+      "sha256": "0c96197a451cc3244284111c3c949d8f7674ff32a68c56653767b384968a81b3"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/baked-frames.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/baked-frames.stdout.log",
+      "bytes": 3095,
+      "sha256": "a6a957eb211628819325b3379e23ab008eae0b76a34669b462dc284c879ce300"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/baked-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/decoded-full-media.json",
+      "bytes": 3280,
+      "sha256": "15cd45a643d02e7440c27759b00528131308d779c09fbba1a5b12109be33451a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/executed-generator.py",
+      "bytes": 12952,
+      "sha256": "c60610f42e62ccbd72dc345e5923a5208acc67dd774e586d2b2f6c55e0eeeb76"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/export-agent-json.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/export-agent-json.stdout.log",
+      "bytes": 9235,
+      "sha256": "94342ad842cf07f2d5a103ab124306eb15dbd12ee96075e510e0172e9b232f6e"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/export-baked-package.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/export-baked-package.stdout.log",
+      "bytes": 12226,
+      "sha256": "4f17a1bc8da5bc6d84564d340606b3edc54f7c32091306b80363d6b30fef1a7e"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/export-jianying-draft-json.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/export-jianying-draft-json.stdout.log",
+      "bytes": 36102,
+      "sha256": "1dfc9e41132cbf1066e1df3df7d92782bdf150a5063ebd388cad523442252aa9"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/export-kdenlive-xml.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/export-kdenlive-xml.stdout.log",
+      "bytes": 11904,
+      "sha256": "e7ae0ffc2e40a6a8299cbc58b3200cdfefa41eadb676db2340aad3875577af56"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/export-otio.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/export-otio.stdout.log",
+      "bytes": 12441,
+      "sha256": "ec84c55af6ec60fa3d4c48011744e8ef3190a670ec4d07ca475d214610b2bd60"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/import-agent-json.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/import-agent-json.stdout.log",
+      "bytes": 1200,
+      "sha256": "6ecbb98e48e2a542f15f731c31830f91658a0dda986d1b9b0a3a2aceef1ea887"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/import-baked-package.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/import-baked-package.stdout.log",
+      "bytes": 1575,
+      "sha256": "11a8db2b1873d8d36fd8acf85decb117b75ed7284536afbe45826aa48e12771c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/import-jianying-draft-json.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/import-jianying-draft-json.stdout.log",
+      "bytes": 696,
+      "sha256": "2317dde051dfe6fcc41f0b423bdbc44af6dfc2d449b89ded907ab4c4b70a0396"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/import-kdenlive-xml.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/import-kdenlive-xml.stdout.log",
+      "bytes": 1168,
+      "sha256": "7fe3da92c8cb41e385653a53da58485905e93d3fc2f74ac4be4dfb984c8c53c6"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/import-original.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/import-original.stdout.log",
+      "bytes": 1586,
+      "sha256": "aaf027308d6f034393ac6db151eb55064c65db00ef85232b65d822c87e00a04c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/import-otio.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/import-otio.stdout.log",
+      "bytes": 1155,
+      "sha256": "1f738642e4a6f11793fcf418c6bd0da68b11b121279c56b5403e63e53f9d7475"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/native-bake-proof.json",
+      "bytes": 9676,
+      "sha256": "3678df188da0384c0c6a6e17c53863d51daedab6088032d60a7ec00194772a50"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/original-frames.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/original-frames.stdout.log",
+      "bytes": 3095,
+      "sha256": "a6a957eb211628819325b3379e23ab008eae0b76a34669b462dc284c879ce300"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/original-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/render-baked.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/render-baked.stdout.log",
+      "bytes": 200247,
+      "sha256": "612ec8950a849cc91e71bc4ae12dec866f2a266a7bfae37f475aeff0b8aac95f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/render-original.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/render-original.stdout.log",
+      "bytes": 217623,
+      "sha256": "4d4acc5ed7b71fa2e30c40a2214f6e21ee3aa083be64d6f64fb0f135704fe3e1"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/validate-baked-package.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/validate-baked-package.stdout.log",
+      "bytes": 801,
+      "sha256": "6a6ab8ddfda3f5dd51d10a695af5ed61a0b2ddda765570895ac1916978fabd69"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/verification.json",
+      "bytes": 22318,
+      "sha256": "d15e4fde1a3b04efa09d767df74ba63d92f4f9159940f83ecaa676db6d89c70a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/version.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r3/version.stdout.log",
+      "bytes": 1167,
+      "sha256": "73ebbff23c327a45f2bb67ed2e18700897b00ef4444b0b5fe1f690691ff8bc4c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/baked-frames.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/baked-frames.stdout.log",
+      "bytes": 3095,
+      "sha256": "a6a957eb211628819325b3379e23ab008eae0b76a34669b462dc284c879ce300"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/baked-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/decoded-full-media.json",
+      "bytes": 3280,
+      "sha256": "15cd45a643d02e7440c27759b00528131308d779c09fbba1a5b12109be33451a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/executed-generator.py",
+      "bytes": 12952,
+      "sha256": "91bf1a277200bfb0be92503a3f1107f4f3eeed24eae5eb970ed099d7d3b222f6"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/export-agent-json.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/export-agent-json.stdout.log",
+      "bytes": 9236,
+      "sha256": "2354713e09c70460a3dfdf7a738f161f9e4dd8175b04ba127274027bf268d200"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/export-baked-package.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/export-baked-package.stdout.log",
+      "bytes": 12225,
+      "sha256": "0b21a4c98d3d6532ad37368e9ae5a0d4e83daafc719af102444e952c5698be2b"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/export-jianying-draft-json.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/export-jianying-draft-json.stdout.log",
+      "bytes": 36100,
+      "sha256": "7aead0ba5536bb6941f61bea3b8d535b10eea65bd1db90747f1bc442b8f749fa"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/export-kdenlive-xml.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/export-kdenlive-xml.stdout.log",
+      "bytes": 11902,
+      "sha256": "b36d70ee1442201231fe8d816629d0a15a6507120fcec23878fc0522439ee9a7"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/export-otio.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/export-otio.stdout.log",
+      "bytes": 12441,
+      "sha256": "0ce456ac825cb734bcc53b4621e26659f1883e87813b08ca3b2378cd5e030e24"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/format-exports.json",
+      "bytes": 1558,
+      "sha256": "4e4ebf2c147322556d3cd9517846de168a131f89f5186fdf333d1fc5821ff243"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/import-agent-json.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/import-agent-json.stdout.log",
+      "bytes": 1200,
+      "sha256": "a203108bac1d616a89fa4906e9d076ea4ec4e2d0bab15cc594777452356b5422"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/import-baked-package.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/import-baked-package.stdout.log",
+      "bytes": 1575,
+      "sha256": "267a837dc8abcb4b1fd026e968bb44543a24922ab545b887cc02f3907f36fad8"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/import-jianying-draft-json.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/import-jianying-draft-json.stdout.log",
+      "bytes": 8634,
+      "sha256": "ccb1c79c404901e63c37446d7a9d5887154ce4db7e70ee4e04c530431b7d81e9"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/import-kdenlive-xml.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/import-kdenlive-xml.stdout.log",
+      "bytes": 1168,
+      "sha256": "2574172934fea2876859f3e299a6f1ffd95fb475cb2358e77d47746478224cea"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/import-original.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/import-original.stdout.log",
+      "bytes": 1586,
+      "sha256": "1712145b9e0d1f26eec1e6d0fdcd5887ce327ec16c23265ac7a1b9954d3a0f1a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/import-otio.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/import-otio.stdout.log",
+      "bytes": 1155,
+      "sha256": "50cbafd20c10f4a4bc38fe87e48522e69cfb31c07e2e9bcc6edddc1284145229"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/native-bake-proof.json",
+      "bytes": 9675,
+      "sha256": "1939cc9b5de2968ab8f17eefb7124733a4517e07f204b412c934998408df7188"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/original-frames.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/original-frames.stdout.log",
+      "bytes": 3095,
+      "sha256": "a6a957eb211628819325b3379e23ab008eae0b76a34669b462dc284c879ce300"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/original-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/render-baked.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/render-baked.stdout.log",
+      "bytes": 200246,
+      "sha256": "761b2e62d6f6620db8efda3ed2c5baf26bc98e6540056a8782b0585e4b897bb3"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/render-original.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/render-original.stdout.log",
+      "bytes": 217617,
+      "sha256": "1b2a050e1a7e6485995e5de0afc3c3a49d348bc67938004c134d01665205c703"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/source-overwrite-rejected.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/source-overwrite-rejected.stdout.log",
+      "bytes": 540,
+      "sha256": "522ab038363ce16e87c79086166d35ac39872026013f0d4fc5b1ffddd0069e6c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/strict-draft-rejected.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/strict-draft-rejected.stdout.log",
+      "bytes": 10987,
+      "sha256": "9bcbde0def493bf6f065f7713cbb8d6d6b420368394e6c6a0fc4bfef2350e2b5"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/validate-baked-package.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/validate-baked-package.stdout.log",
+      "bytes": 801,
+      "sha256": "04391f01e5f7135e3729538f0b9ec7791f62c79c56d125c149ab8dd71d761a6b"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/verification.json",
+      "bytes": 23686,
+      "sha256": "38b9c0194782e3b5b93d63ca6b4746a2076f279d08940014180ddaa7e570926a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/version.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r4/version.stdout.log",
+      "bytes": 1167,
+      "sha256": "57d840216f3e4058373699366c59893e1c297809a081f43a9e8c246d09e5ba5b"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/baked-frames.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/baked-frames.stdout.log",
+      "bytes": 3095,
+      "sha256": "a6a957eb211628819325b3379e23ab008eae0b76a34669b462dc284c879ce300"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/baked-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/comparison-gif.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/comparison-gif.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/decoded-full-media.json",
+      "bytes": 3280,
+      "sha256": "15cd45a643d02e7440c27759b00528131308d779c09fbba1a5b12109be33451a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/executed-generator.py",
+      "bytes": 14783,
+      "sha256": "0db20a7ea00a7cb13fff5e846526f6acab348e0c03dc1f87ebed12f1d0c2e1f5"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/export-agent-json.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/export-agent-json.stdout.log",
+      "bytes": 9234,
+      "sha256": "397753ba35b41c77c512d0c7f79be7b5e29a53aa5fda72f927ac07bb3583ee53"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/export-baked-package.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/export-baked-package.stdout.log",
+      "bytes": 12225,
+      "sha256": "9200cc644d2579c4c235ba97a0a4268dce3dca136e50b8cdc8ccb25b5527756f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/export-jianying-draft-json.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/export-jianying-draft-json.stdout.log",
+      "bytes": 36102,
+      "sha256": "99229ad60433967f7738dd42285b6d688242f44bc48c7517d0634d890c29cb79"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/export-kdenlive-xml.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/export-kdenlive-xml.stdout.log",
+      "bytes": 11903,
+      "sha256": "b6d0448282053836dc55e9153c1a3cb47f00b1472648c4f5af6c8c4c37d28d35"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/export-otio.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/export-otio.stdout.log",
+      "bytes": 12441,
+      "sha256": "39e69dc4ed135f0b924442317d2630258d48cb69fcff243004a68df89ab492c3"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/format-exports.json",
+      "bytes": 1558,
+      "sha256": "4a2d9bc19d4bec7e4b0c60d4eeb2b78a01598a60de0360578cc1e5613b2ae0f7"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/import-agent-json.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/import-agent-json.stdout.log",
+      "bytes": 1200,
+      "sha256": "dc02e262392538e2f687f7dd784cd2c30d3c28c30a9343ee71bcbe230067ccd8"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/import-baked-package.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/import-baked-package.stdout.log",
+      "bytes": 1575,
+      "sha256": "82f8c69a44b443acb4a8f552e36442e5d97c43d5a01d06d0a1322f7cbf2adfde"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/import-jianying-draft-json.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/import-jianying-draft-json.stdout.log",
+      "bytes": 8634,
+      "sha256": "6def6137110cdf3424e6153e1fed0bda8f9385777c4dfae701845733b271e8d9"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/import-kdenlive-xml.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/import-kdenlive-xml.stdout.log",
+      "bytes": 1168,
+      "sha256": "409ae71ee80e0390b7b2cecf50f7fe0b9ff44f635f887f6351305e880defb14a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/import-original.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/import-original.stdout.log",
+      "bytes": 1586,
+      "sha256": "24d80b4a373694854dfe71aa00d9421389e82f0891fe81843e4c3906783b5491"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/import-otio.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/import-otio.stdout.log",
+      "bytes": 1155,
+      "sha256": "0a9368c1e3eb2568d6f018ce097a5fab2328657ec4899b8d54a4865eafc78122"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/native-bake-proof.json",
+      "bytes": 9675,
+      "sha256": "e5904b6e88dff7ec935e209c64c9cad1905eab5202cc7b43f36bc45b4a6b6a95"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/original-frames.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/original-frames.stdout.log",
+      "bytes": 3095,
+      "sha256": "a6a957eb211628819325b3379e23ab008eae0b76a34669b462dc284c879ce300"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/original-pcm.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/public-baked.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/public-baked.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/public-original.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/public-original.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/render-baked.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/render-baked.stdout.log",
+      "bytes": 200245,
+      "sha256": "7dce94301c15fb974cc03cd7537eda75d66d9b98d1201709d98a77a607e19b93"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/render-original.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/render-original.stdout.log",
+      "bytes": 217615,
+      "sha256": "88c4bfebb8d2a49bfe83213eab4d982e8ce2e7da7bb71e0a683191488cce73cf"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/source-before-render.json",
+      "bytes": 39201,
+      "sha256": "1b58730c97fc76565cf992f636c8582853c59ba2e5a9726b6a85fc6247f3902d"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/source-file-checkpoints.json",
+      "bytes": 393,
+      "sha256": "fa876f147f62f0deaecdfda2668968b0fcbc02c13a5458743dc2caed3714def5"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/source-overwrite-rejected.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/source-overwrite-rejected.stdout.log",
+      "bytes": 540,
+      "sha256": "156653fe4f0601f4039766743c753dd9a7781d27c5dc9f3248e492ffad69c3e0"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/still.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/still.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/strict-draft-rejected.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/strict-draft-rejected.stdout.log",
+      "bytes": 10987,
+      "sha256": "f77c4303bab942b60cf3186fa224b522df5814d77d60d812749c5e906b6f6d0a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/validate-baked-package.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/validate-baked-package.stdout.log",
+      "bytes": 801,
+      "sha256": "49173d9993a6e6b3e4ba74a88212b272b65ecd8ddfd0808043b6c10e95bf9614"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/verification.json",
+      "bytes": 35376,
+      "sha256": "47f68d5c3cb5bfbf15fb782569ee558476d08d2cdfae91d3e989cef8c558bc05"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/version.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/case-r5/version.stdout.log",
+      "bytes": 1167,
+      "sha256": "95ecbe9f9676b4ba9fded59605f3b2b6c03c9986dc8fd7a83753b63ecc2a2783"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/conversion-installed-r1/executed-runner.py",
+      "bytes": 5207,
+      "sha256": "6922c2cfc54663988f833ecc2cf3f1aa611797f47df4022d4a5ffd83e778c23f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/conversion-installed-r1/tests.log",
+      "bytes": 13862,
+      "sha256": "f4fbceee7aac8649881c2d6fbccf974ca77736c0207b59ef8c7792dd08d61c47"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/conversion-installed-r1/verification.json",
+      "bytes": 21088,
+      "sha256": "c24021ec654dcfa5185e5843654d3aed81eb361ef77364b82ca4c7c127ce4e61"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/conversion-installed-r2/executed-runner.py",
+      "bytes": 5207,
+      "sha256": "6922c2cfc54663988f833ecc2cf3f1aa611797f47df4022d4a5ffd83e778c23f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/conversion-installed-r2/tests.log",
+      "bytes": 13862,
+      "sha256": "a97e00329b7095c197036184cb1858f1b1b16aeccd1427bd5b58c8a4a9e56107"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/conversion-installed-r2/verification.json",
+      "bytes": 21088,
+      "sha256": "89608737c09010f11ed34a3b6f6363049425ce7c9d238be51f814119d65c0b5d"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/conversion-installed-r3/executed-runner.py",
+      "bytes": 5307,
+      "sha256": "afe9a0ca2199b84015ab0ca658d26891159185ab37da263cd2eb49e206373c55"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/conversion-installed-r3/tests.log",
+      "bytes": 14080,
+      "sha256": "19b148db780c4b83dc402805bdc1b34559eaaec7c53f434f98da4da522861aba"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/conversion-installed-r3/verification.json",
+      "bytes": 21088,
+      "sha256": "73139b040da30211fe049781746308ec835c401ea09f0aca8b2a7737519ff00f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/conversion-source-r1/executed-runner.py",
+      "bytes": 5307,
+      "sha256": "afe9a0ca2199b84015ab0ca658d26891159185ab37da263cd2eb49e206373c55"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/conversion-source-r1/tests.log",
+      "bytes": 14080,
+      "sha256": "3a6f3a2faea916f0f0abe1a25389c5a26f8d0908c39900c6fecbd0add62f363c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/conversion-source-r1/verification.json",
+      "bytes": 21025,
+      "sha256": "eeb1ee39747547a5510e76646d57c3cf16790fc4d4aca1508a92c574f93e6865"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/development-attempts-r1/executed-generator.py",
+      "bytes": 1953,
+      "sha256": "209953a93da83f7fcdc92dde32ddc0fc661ff4417b0b43d40ac7c1cf88c4e00e"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/development-attempts-r1/verification.json",
+      "bytes": 2106,
+      "sha256": "a312550ce9725d7981b8e353ad7eed485a89ea72d50de670058aeabd5431bcd1"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/development-attempts-r2/executed-generator.py",
+      "bytes": 2462,
+      "sha256": "133e177f07770bd004bcc4145d8f3c3c7690478b12d0f8ed2d4c240cf87a64dc"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/development-attempts-r2/verification.json",
+      "bytes": 2867,
+      "sha256": "f159de9ba6d5931771ad6099656eaf333433a23ab83bf45b781a313bf9b4c7c7"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/development-attempts-r3/executed-generator.py",
+      "bytes": 2715,
+      "sha256": "bd4fb73e3902dcda05086cfde43178f3e5a08595e35ac872796ae82fed32b5a0"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/development-attempts-r3/verification.json",
+      "bytes": 3334,
+      "sha256": "f4147dfacf178999a158019c8faed2cd84568b20c3d4c2202b36a751a97809c1"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/development-attempts-r4/executed-generator.py",
+      "bytes": 2952,
+      "sha256": "1518e9c1e87db59a54c6ac8b3f117e6b0590f208aec456d8553e3242cfaee78a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/development-attempts-r4/verification.json",
+      "bytes": 3785,
+      "sha256": "7b3b6fa643e5a05cdab4b8bb23a2e80b00aa4ca4901ceffcf6e8c8d2f5eacec3"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/final-delivery-r1/executed-generator.py",
+      "bytes": 11507,
+      "sha256": "b3f9f365cc56b72ed578e8b20b1662356e8d8241f94906a87fd70199ffd03ae9"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/final-delivery-r1/product-files.json",
+      "bytes": 20222,
+      "sha256": "83e46e5f469cb0e661075f65be6a7381bc96c5fff9fae7bd40a83e9560d0c58d"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/final-delivery-r1/verification.json",
+      "bytes": 226,
+      "sha256": "810d1245b6bed74e7451c509a37e46572889d6282b7d5227f7aa7d506a8cbb8d"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r1/build.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r1/build.stdout.json",
+      "bytes": 448,
+      "sha256": "c8495c2cfeb806018106bfc94fdd6f5bcf0a3cb4af6993f5345bd8f8120baf0b"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r1/calls.json",
+      "bytes": 2616,
+      "sha256": "f76d1e631bfb25f98dc6d34dc5ba68e124c7d3194a7a31e0ebf586b77e93b877"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r1/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r1/capabilities.stdout.json",
+      "bytes": 125310,
+      "sha256": "06ebfb0659bdaba27337c75364dff3590a719ede0a832aa66f1c6bc4464ab5f7"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r1/executed-generator.py",
+      "bytes": 5359,
+      "sha256": "6c84dca3394940c62a851f8dc003df896ada21cecf22c4d668c4aff15d72366a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r1/install.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r1/install.stdout.json",
+      "bytes": 1708,
+      "sha256": "4ed26e738931950c4e95010b8e1ab2888d1b08556a63aac3c7ac851d13717d1a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r1/verification.json",
+      "bytes": 30102,
+      "sha256": "6417200cf5f9bc4b7825b937e19470af8259e44b575e0b3050f45b55bf4f95c5"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r1/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r1/version.stdout.json",
+      "bytes": 1167,
+      "sha256": "2fa0187d963456f390dea6d83f00922780f84f60d3f438c7ff26de30557e9e02"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r2/build.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r2/build.stdout.json",
+      "bytes": 448,
+      "sha256": "26b7f63b2507f0b4331a513c499e38c335068104dadff7e57a9f6508c94d3baf"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r2/calls.json",
+      "bytes": 2616,
+      "sha256": "b23bfd92dcf18cf9bfb7518f338a13dd20a6805f1a616fe676963f589800d9f0"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r2/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r2/capabilities.stdout.json",
+      "bytes": 125310,
+      "sha256": "ef9d50fca95068930cf76786f5ae49dea5860bda7218354399ba74679469dcc2"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r2/executed-generator.py",
+      "bytes": 5359,
+      "sha256": "6c84dca3394940c62a851f8dc003df896ada21cecf22c4d668c4aff15d72366a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r2/install.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r2/install.stdout.json",
+      "bytes": 1708,
+      "sha256": "c4e66c61074323e1d2549bf177de45a8391cf410ccbea720e4bd305ea4afc954"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r2/verification.json",
+      "bytes": 30102,
+      "sha256": "c02653b543ffbe327cd0393d36ca47b83130271a2d3f7b398ed97f80e4e589fe"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r2/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r2/version.stdout.json",
+      "bytes": 1167,
+      "sha256": "6c7ff57ec6740f1e73b08854e8f809aeb9c3f471ee7ce23f2816ba1cf2268e83"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r3/build.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r3/build.stdout.json",
+      "bytes": 448,
+      "sha256": "6ce08c3b5f364010d1b9ac216a82fb6f6f98c9c5de8fec8de3ee21251e90702c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r3/calls.json",
+      "bytes": 2616,
+      "sha256": "54290ab69f74cc831c25dcb21e002b714f74ca2ee2022043947a1d0ce8b3325c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r3/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r3/capabilities.stdout.json",
+      "bytes": 125310,
+      "sha256": "f9a233ce87ade8b5a251ad5f549a4a229809d99339cf67c4cb9a8f8ccab4ffa9"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r3/executed-generator.py",
+      "bytes": 5359,
+      "sha256": "6c84dca3394940c62a851f8dc003df896ada21cecf22c4d668c4aff15d72366a"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r3/install.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r3/install.stdout.json",
+      "bytes": 1708,
+      "sha256": "95d8dab1cafe291e3f982f9fb6b8ff12b4645fa1dde3691b1bee6fd1d0292b50"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r3/verification.json",
+      "bytes": 30102,
+      "sha256": "642ed0e494f9c5df61a6db060f78ee38017dde15ea7d1486f1cfee0d39560a05"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r3/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r3/version.stdout.json",
+      "bytes": 1167,
+      "sha256": "3f299c10da99524eaac8b79999712f87e59e31ca74fb1744058fe6facac68ab6"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/interchange-source-r1/executed-runner.py",
+      "bytes": 5307,
+      "sha256": "afe9a0ca2199b84015ab0ca658d26891159185ab37da263cd2eb49e206373c55"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/interchange-source-r1/tests.log",
+      "bytes": 228,
+      "sha256": "277aee577dfd159fd889f4ba311da81aec2115d42f147af93aba794a0583e291"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/interchange-source-r1/verification.json",
+      "bytes": 21003,
+      "sha256": "9903b6eda48cc4cf030306c7df39683af3518a34e6bfbc3228cdb5c6aecbfc37"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/bake-export-dry-run.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/bake-export-dry-run.stdout.txt",
+      "bytes": 726,
+      "sha256": "67c27697efcd6167196591d746f4a4c2bed3ac956cba0e58869454b5de1275eb"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/bake-export-help.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/bake-export-help.stdout.txt",
+      "bytes": 1139,
+      "sha256": "494b8c2d209c96c8f11b776b0423bcc0dd2683efbf96aba2da8082a97a373d68"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/bake-export-plan.json",
+      "bytes": 374,
+      "sha256": "4cb0cde8e14ebc217d7daeeb04cc8d5b7addf083ee076e3d26a9a52f58edc882"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/calls.json",
+      "bytes": 12285,
+      "sha256": "5d1e3d7004ed1da1e226c464f08852a0d8a81ac70509179f072cc94899fc1fec"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/capabilities.stdout.txt",
+      "bytes": 125310,
+      "sha256": "280f3f9ce1a4c339cddb692c3ea645f5a09f0b350778feb74793c827746b35b2"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/configure.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/configure.stdout.txt",
+      "bytes": 828,
+      "sha256": "0dd45a307eee2d6e143e0463500f51297a6b55ae47f25d52897753e73cb7817b"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/executed-generator.py",
+      "bytes": 13577,
+      "sha256": "15f9a6f6a9a8f7c353fc430576d482afaadc54a5eebd666bbfa9fc873521df0e"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/float-render-dry-run.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/float-render-dry-run.stdout.txt",
+      "bytes": 209440,
+      "sha256": "88308311c89e7c0b816372d412d108c4fbf02bc7cd60c9a4e768a4f35d63cb11"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/import-case.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/import-case.stdout.txt",
+      "bytes": 1601,
+      "sha256": "c26043d5bb8bcfe9dd5f2e5941aa35b3252056f3b68f90325d7b0f2c4252c7a5"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/import-tracking-edit-case.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/import-tracking-edit-case.stdout.txt",
+      "bytes": 1602,
+      "sha256": "fda5cff297b014b85f744f84fc3f728457e0b3ff83825e9f7af15a3095902f6c"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/import-visibility-case.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/import-visibility-case.stdout.txt",
+      "bytes": 1610,
+      "sha256": "7132ca461cb21b27c5b23fcf54b46b7cee2d37d2268ba8d7f0657ecc7ecb9fa5"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/register.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/register.stdout.txt",
+      "bytes": 354,
+      "sha256": "8b51014d67068b2d049fc922ab4da803c103e96cff4e0455fe8563777658c054"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/registration.json",
+      "bytes": 1125,
+      "sha256": "12e7bf9f23e91dcc6867b0739de11bb3ad034da6f4349d85332de439dab77d87"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/tracking-edit-plan.json",
+      "bytes": 13802,
+      "sha256": "57f3a4e2a33baca73cd962c41c6d3dad6c8899b86ec78e5bd9cb0014db6445bd"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/tracking-visibility-dry-run.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/tracking-visibility-dry-run.stdout.txt",
+      "bytes": 8727,
+      "sha256": "6e18f016b42fd9c11cb8d012581c8164d22b9a647061f99145e69152f452517d"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/transition-help.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/transition-help.stdout.txt",
+      "bytes": 930,
+      "sha256": "6ba1c7e3bc0e34c0363aacbe265838ab48f04a0e6d45976ceea2cfeea2fa80a5"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/validate-tracking-edit-case.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/validate-tracking-edit-case.stdout.txt",
+      "bytes": 807,
+      "sha256": "c13a4ea0d2d5b0d514a2b98feb7bcc133673644df5fd12e8384f3c71f516d0ce"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/validate-visibility-case.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/validate-visibility-case.stdout.txt",
+      "bytes": 807,
+      "sha256": "687839c37996e10646acdc9e5368f7a69e988846c7ada570127cc7346b4c33da"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/validate.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/validate.stdout.txt",
+      "bytes": 807,
+      "sha256": "e3d112903855e651e5837e58ecf467fbbb7c329a7eb76597bccbd75f78de4513"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/verification.json",
+      "bytes": 45728,
+      "sha256": "9d1e82624bd96777ef88a7011abf6df37ebb5367519b042dc0f3354f3fbf2308"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/version.stdout.txt",
+      "bytes": 1167,
+      "sha256": "6c8fc99ae5eb7275a998dae574b6c7570164a8c9ddac512b405f07a6fbd0d2ad"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/visibility-render-plan.json",
+      "bytes": 109923,
+      "sha256": "ac34f253547b81dbf0c8cdb6963889afa47423f54489069ced94c7bc27d58929"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/visibility-render-plan.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/visibility-render-plan.stdout.txt",
+      "bytes": 77472,
+      "sha256": "131341c68df3d6b40d13da19f03c37358856cf1a08ac492e0acfa7a21c71d038"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/legacy-installed-r1/executed-runner.py",
+      "bytes": 5207,
+      "sha256": "6922c2cfc54663988f833ecc2cf3f1aa611797f47df4022d4a5ffd83e778c23f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/legacy-installed-r1/tests.log",
+      "bytes": 28167,
+      "sha256": "3fe12869f8f6408cb544a84de419bbd3b8af57af2f1a34f6ba473267a7fc3348"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/legacy-installed-r1/verification.json",
+      "bytes": 21076,
+      "sha256": "e136dfac3d9a6a730fc4864239572516d5c1d4f7016b113189c7a800608264ba"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/legacy-installed-r2/executed-runner.py",
+      "bytes": 5207,
+      "sha256": "6922c2cfc54663988f833ecc2cf3f1aa611797f47df4022d4a5ffd83e778c23f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/legacy-installed-r2/tests.log",
+      "bytes": 29304,
+      "sha256": "b08f703e59d26cd5eff529b04163c512ffa7aecdc8bcaf0e5b0f1b25e2004e74"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/legacy-installed-r2/verification.json",
+      "bytes": 21076,
+      "sha256": "ff3b5f590d88311befa5d371bae49c2aae4fae3909f3837c83662b9b1d501f66"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/legacy-installed-r3/executed-runner.py",
+      "bytes": 5307,
+      "sha256": "afe9a0ca2199b84015ab0ca658d26891159185ab37da263cd2eb49e206373c55"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/legacy-installed-r3/tests.log",
+      "bytes": 28167,
+      "sha256": "1c0df237dbb7c315d92e4a8bfb8c2cc427d9fa604b6b095701f550953fc56d49"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/legacy-installed-r3/verification.json",
+      "bytes": 21076,
+      "sha256": "4b2db3225f4c2e070e154d169cca21c259aa7fe9e5e68cc62322199519f511ac"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/media-inspection-r1/contact-sheet.png",
+      "bytes": 37351,
+      "sha256": "df46fab979dcb4707da334a9c6d3a324d29fc89aa31da766d78381e4af6973e4"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/media-inspection-r1/executed-generator.py",
+      "bytes": 2032,
+      "sha256": "ff09f00bca7891d3b0073b11c7c8f4f015f76e2271c637e5a64c06c1c4cbb7a5"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/media-inspection-r1/recovery-observation.json",
+      "bytes": 756,
+      "sha256": "7357b2617fd45363501a9bc4e82ce6ce6f16adfc6109c3638768c63593d62aab"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/media-inspection-r2/contact-sheet.png",
+      "bytes": 37351,
+      "sha256": "df46fab979dcb4707da334a9c6d3a324d29fc89aa31da766d78381e4af6973e4"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/media-inspection-r2/executed-generator.py",
+      "bytes": 2934,
+      "sha256": "806f0cef84b5b447b5956a6cb055e57ccd19a0b1db401b87501fef120e2a28e2"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/media-inspection-r2/verification.json",
+      "bytes": 1354,
+      "sha256": "01457c570058f890eca1b57e9ae2f6f5793cbada5c29f87b8d168bf1c4931af1"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/registration-current.json",
+      "bytes": 939,
+      "sha256": "15e76e2e494388621f13eaeb7aa5abf9b7f3b19b4212b1ac51f3f63486c51f12"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/registration-final-r1.json",
+      "bytes": 939,
+      "sha256": "a37e626eb274a5a9e9a13bf4697b500c064c171e511bfc1e97cdb4b217be98c7"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/registration-final-r2.json",
+      "bytes": 939,
+      "sha256": "49ca97dbae4fa43117c7b5ac305ed93dd105a119160dbf927f39cfd52d1fef16"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/source-r1/executed-runner.py",
+      "bytes": 5207,
+      "sha256": "6922c2cfc54663988f833ecc2cf3f1aa611797f47df4022d4a5ffd83e778c23f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/source-r1/tests.log",
+      "bytes": 32315,
+      "sha256": "ddb3f4f78c4621fb042bf9de88d11f3ceb6ad6bfe8e1fdf60bd68fefaa70ee6f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/source-r1/verification.json",
+      "bytes": 21157,
+      "sha256": "0b91b93722d3f94674df9670c0ff56277c0f0b80321976d2872cc9efe2547629"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/source-r2/executed-runner.py",
+      "bytes": 5207,
+      "sha256": "6922c2cfc54663988f833ecc2cf3f1aa611797f47df4022d4a5ffd83e778c23f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/source-r2/tests.log",
+      "bytes": 26876,
+      "sha256": "4195734dc17c0c91c9962f36bcd45cad25bd7324137d4dadd5ecd89e6ae03991"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/source-r2/verification.json",
+      "bytes": 21157,
+      "sha256": "e060a103352ffd3d93cb5e788c3303dc75b1db5c4bbf07cb8d9c3db455ada375"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/source-r3/executed-runner.py",
+      "bytes": 5207,
+      "sha256": "6922c2cfc54663988f833ecc2cf3f1aa611797f47df4022d4a5ffd83e778c23f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/source-r3/tests.log",
+      "bytes": 27294,
+      "sha256": "01ab52de888124d7d729e05f74d57af59ec36918fc40892bf086fe44fc221cdb"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/source-r3/verification.json",
+      "bytes": 21157,
+      "sha256": "73a79dc0106fea490753fd8da306716e27b0e4dd34c7292fdd4c4649209b6dc2"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/source-r4/executed-runner.py",
+      "bytes": 5207,
+      "sha256": "6922c2cfc54663988f833ecc2cf3f1aa611797f47df4022d4a5ffd83e778c23f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/source-r4/tests.log",
+      "bytes": 27848,
+      "sha256": "24ae36010a29c52e2610f3ca24419b0c80a12c354ada4847dde6f867886d7e6e"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/source-r4/verification.json",
+      "bytes": 21157,
+      "sha256": "67d948ea3f01037933826171091cb08e40462357b480949528a342e57b718521"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/source-r5/executed-runner.py",
+      "bytes": 5207,
+      "sha256": "6922c2cfc54663988f833ecc2cf3f1aa611797f47df4022d4a5ffd83e778c23f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/source-r5/tests.log",
+      "bytes": 29038,
+      "sha256": "8a8e7cc0ef40efe3a5908d6826218c06bbf6c32e1b4c429c2b2512ca18e8a40b"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/source-r5/verification.json",
+      "bytes": 21157,
+      "sha256": "5f4c05758a89941c0dc07a24946951ab4022b9508bb4a1250f1f1e7596acc663"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/source-r6/executed-runner.py",
+      "bytes": 5207,
+      "sha256": "6922c2cfc54663988f833ecc2cf3f1aa611797f47df4022d4a5ffd83e778c23f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/source-r6/tests.log",
+      "bytes": 28396,
+      "sha256": "6d8f901233cb70ca1a17d035fe66d29e5b8f3f286ba9e9cfc78fd8dc6dab1d57"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/source-r6/verification.json",
+      "bytes": 21157,
+      "sha256": "fc04f0b1f2fd323d11c24a11cf4ecde7334372e2ac5c9a054a115097c2774a2d"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/tracking-installed-r1/executed-runner.py",
+      "bytes": 5207,
+      "sha256": "6922c2cfc54663988f833ecc2cf3f1aa611797f47df4022d4a5ffd83e778c23f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/tracking-installed-r1/tests.log",
+      "bytes": 27848,
+      "sha256": "3150c00adc6299061fa001185bd632a578d4a5e1c8528ab37102d616b9d4fd1b"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/tracking-installed-r1/verification.json",
+      "bytes": 21220,
+      "sha256": "bf2a79b541c5fcdbe8012f0559ff496415800ab99145c3ce4474d79072cec3b5"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/tracking-installed-r2/executed-runner.py",
+      "bytes": 5207,
+      "sha256": "6922c2cfc54663988f833ecc2cf3f1aa611797f47df4022d4a5ffd83e778c23f"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/tracking-installed-r2/tests.log",
+      "bytes": 28396,
+      "sha256": "03b5e74922820a2adc6afa21d1924f677b485d1eb04df41e76781434b4372922"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/tracking-installed-r2/verification.json",
+      "bytes": 21220,
+      "sha256": "4bcde03face4a130a6b908a6d049e09c6ec7112749b4dd2da577eb9e8ecbaed3"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/tracking-installed-r3/executed-runner.py",
+      "bytes": 5307,
+      "sha256": "afe9a0ca2199b84015ab0ca658d26891159185ab37da263cd2eb49e206373c55"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/tracking-installed-r3/tests.log",
+      "bytes": 28396,
+      "sha256": "3de57a19f1674bb369e023184ebfeb5e3f650ab0c1bdc73c572752b18a02c076"
+    },
+    {
+      "path": "docs/validation/evidence/tracking-bake-20261026-r1/tracking-installed-r3/verification.json",
+      "bytes": 21220,
+      "sha256": "d6c3db23f23a4c996eb84ecc2fd416fb0eea239c555bd541ed678615f17418df"
+    },
+    {
+      "path": "docs/validation/跟踪原生烘焙导出实测_2026-10-26.md",
+      "bytes": 3399,
+      "sha256": "407cf8e49eb7e43765bd09b2eb8f18832f3a04558058f18a22d134c78a826419"
+    },
+    {
+      "path": "product/pyproject.toml",
+      "bytes": 1451,
+      "sha256": "82ea86c83e853a3c8bbb58627235974a3224bc34a60d93cd11e336bd6cee344e"
+    },
+    {
+      "path": "product/src/ai_ad_editor/__init__.py",
+      "bytes": 181,
+      "sha256": "bfba28169ef55f7da850711ab6ff0f4f9ddcb66c93e69217c31adf8ed4b94bee"
+    },
+    {
+      "path": "product/src/ai_ad_editor/bindings.py",
+      "bytes": 28535,
+      "sha256": "2822ecee397c7669ca9b277fa5f1316c648ea66cf0c9dc91a1b371f96e5c8d32"
+    },
+    {
+      "path": "product/src/ai_ad_editor/capabilities.py",
+      "bytes": 148760,
+      "sha256": "5e3d6d406e99efa5fdb2c241cb121aa205c7d2df85d1bc6a55d8ca2452cd6849"
+    },
+    {
+      "path": "product/src/ai_ad_editor/cli.py",
+      "bytes": 496974,
+      "sha256": "b51c4c416a97029d2b4e62a407f1e0906b18696025dbaaed50ac390bf3b9251f"
+    },
+    {
+      "path": "product/src/ai_ad_editor/convert.py",
+      "bytes": 65583,
+      "sha256": "a8771bf2571b2db66b3fc817fd1e2bb1f1051d6f4d9393ac360d17f941dc59a1"
+    },
+    {
+      "path": "product/src/ai_ad_editor/draft_adapter.py",
+      "bytes": 57742,
+      "sha256": "30b32897eb2d8da0e664e3e588016376250c370f194da4059c404183924c29a3"
+    },
+    {
+      "path": "product/src/ai_ad_editor/tracking_bake.py",
+      "bytes": 10580,
+      "sha256": "329d59af432a5acdfd60acdf9ddaf3de45ad3b39b7a96cee578fdd2aa8fa7e07"
+    },
+    {
+      "path": "product/tests/test_cli.py",
+      "bytes": 317412,
+      "sha256": "61cc566766fcaa5cfbd6d3b3de3d05cdacd92ad13e08e043c645d6b53f74621d"
+    },
+    {
+      "path": "product/tests/test_draft_adapter.py",
+      "bytes": 24889,
+      "sha256": "68701c0bb6412ca2d9a5e82ac80005096ced524aaa9de2eb1a4c60e37d0d5dcb"
+    },
+    {
+      "path": "product/tests/test_tracking_bake.py",
+      "bytes": 17212,
+      "sha256": "16ddc2bea81937547ae3cc89584861450329b59d46e0f45cfb17a6b97d4107c5"
+    },
+    {
+      "path": "scripts/activate_tracking_bake_20261026.py",
+      "bytes": 2796,
+      "sha256": "d0c1ee908ed733742bc0b99be315163457f0d96a4fd8735a23965950ddd61858"
+    },
+    {
+      "path": "scripts/audit_tracking_bake_delivery_20261026.py",
+      "bytes": 11721,
+      "sha256": "9b26facb5ac59ef40583c0d89a14536c2507bace2271e706ca943ba5e50367ae"
+    },
+    {
+      "path": "scripts/audit_tracking_bake_stage_20261026.py",
+      "bytes": 4847,
+      "sha256": "61c6a3917d55972fc2d46d93c1bc1598bc821372edc989dccd2267f0152706aa"
+    },
+    {
+      "path": "scripts/build_tracking_bake_20261026.py",
+      "bytes": 5359,
+      "sha256": "6c84dca3394940c62a851f8dc003df896ada21cecf22c4d668c4aff15d72366a"
+    },
+    {
+      "path": "scripts/document_tracking_bake_20261026.py",
+      "bytes": 19659,
+      "sha256": "0cf487b62c6ecbf66d2e0990a1044022e63fbfcad25fddc0a4f2a5075be2fbaa"
+    },
+    {
+      "path": "scripts/inspect_tracking_bake_media_20261026.py",
+      "bytes": 2934,
+      "sha256": "806f0cef84b5b447b5956a6cb055e57ccd19a0b1db401b87501fef120e2a28e2"
+    },
+    {
+      "path": "scripts/package_community_skill.py",
+      "bytes": 5096,
+      "sha256": "8a4c43378e7ed0e59f09ecab159a78f2b05d3ab55cdf08273acc205936d380c2"
+    },
+    {
+      "path": "scripts/pin_community_skill.py",
+      "bytes": 3303,
+      "sha256": "e8ddb453af44c6ca5d3716f8b9c3111a7a90e5718c8be8e014905fac90b5756f"
+    },
+    {
+      "path": "scripts/publish_tracking_bake_skill_kit_20261026.py",
+      "bytes": 1243,
+      "sha256": "7b0e3bd09102501156426b1adf2542f7cb15ab181d9842ab82394b11916d5162"
+    },
+    {
+      "path": "scripts/record_tracking_bake_failures_20261026.py",
+      "bytes": 2952,
+      "sha256": "1518e9c1e87db59a54c6ac8b3f117e6b0590f208aec456d8553e3242cfaee78a"
+    },
+    {
+      "path": "scripts/run_tracking_bake_case_20261026.py",
+      "bytes": 14783,
+      "sha256": "0db20a7ea00a7cb13fff5e846526f6acab348e0c03dc1f87ebed12f1d0c2e1f5"
+    },
+    {
+      "path": "scripts/sync_capability_manuals.py",
+      "bytes": 6243,
+      "sha256": "601dfa58c63c9d4581133c5dfe118ad87aaafe2ffdba0166c53ce20085acccfe"
+    },
+    {
+      "path": "scripts/test_tracking_edits_20261026.py",
+      "bytes": 5307,
+      "sha256": "afe9a0ca2199b84015ab0ca658d26891159185ab37da263cd2eb49e206373c55"
+    },
+    {
+      "path": "scripts/verify_tracking_bake_push_20261026.py",
+      "bytes": 2937,
+      "sha256": "3a2632a6ce33cdfc37e4f985141e32b0b3811930e6aacab226ce17ee830b30c1"
+    },
+    {
+      "path": "scripts/verify_tracking_bake_skill_kit_20261026.py",
+      "bytes": 13577,
+      "sha256": "15f9a6f6a9a8f7c353fc430576d482afaadc54a5eebd666bbfa9fc873521df0e"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
+      "bytes": 11328,
+      "sha256": "2c599e373ad0e92d16821b28cb10dedfc5d16831a3fb60de78cb8e688a864922"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/float-tracking.md",
+      "bytes": 15237,
+      "sha256": "b4999c5ae0490a7496b076097b57a3b7670a20bc598a05c151c8afd9f39cca22"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
+      "bytes": 7553,
+      "sha256": "5defd735489967c434d23406ffd10b52dcc1ee274b1c4e20a27b029958d48d2e"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/scripts/run.py",
+      "bytes": 2296,
+      "sha256": "de943acdc852e4bee579218a9ca7bced9d34332a485be7aeb292082372338e54"
+    }
+  ]
+}

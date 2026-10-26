@@ -829,3 +829,15 @@ C41：45次跟踪求值对照独立整数滑动参考，全部36帧Float32及解
 ![Actual silent GIF](../assets/tracking-visibility-20261026-r2/edited.gif)
 
 [Before MP4](../assets/tracking-visibility-20261026-r2/before.mp4) · [Edited MP4](../assets/tracking-visibility-20261026-r2/edited.mp4) · [Editable package](../assets/tracking-visibility-20261026-r2/editable-tracking-visibility.aevpkg.zip) · [Source/rights](../assets/tracking-visibility-20261026-r2/SOURCE.txt) · [Hashes](../assets/tracking-visibility-20261026-r2/media-manifest.json) · [Workflow](TRACKING_VISIBILITY.md).
+
+<a id="c42-tracking-bake"></a>
+
+## C42 · 原生跟踪烘焙交付 · CLI0.1.32
+
+C42 实际注册 Skill：36 帧 Float32 核验、工程包重导入后的36个解码帧与完整144000双声道采样一致；5种格式导出/回读，严格草稿和源文件覆盖拒绝通过。GPU 两轮帧运算及资源关闭有记录。外部播放器、自然质量、连续播放和人工听审未验收；38项原关闭条件继续保留。
+
+左：动态原生绑定；右：普通hold关键帧；实际导出的两份画面，GIF无声。24帧GIF实际3010ms，逐帧延时写入manifest；MP4仍为原始3秒。
+
+![Actual comparison](../assets/tracking-bake-20261026-r5/comparison.gif)
+
+[Native MP4](../assets/tracking-bake-20261026-r5/original.mp4) · [Baked MP4](../assets/tracking-bake-20261026-r5/baked.mp4) · [Baked editable package](../assets/tracking-bake-20261026-r5/editable-baked-tracking.aevpkg.zip) · [Original dynamic package](../assets/tracking-visibility-20261026-r2/editable-tracking-visibility.aevpkg.zip) · [Source/rights](../assets/tracking-bake-20261026-r5/SOURCE.txt) · [Hashes](../assets/tracking-bake-20261026-r5/media-manifest.json) · [Workflow](TRACKING_BAKE.md).

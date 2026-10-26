@@ -1123,6 +1123,7 @@ def build_parser() -> argparse.ArgumentParser:
     cexport.add_argument("--output", required=True)
     cexport.add_argument("--target-format", choices=("agent-json", "package", "otio", "kdenlive-xml", "jianying-draft-json"), default="agent-json")
     cexport.add_argument("--strict", action="store_true", help="明文草稿适配器遇到近似/不支持/失败时拒绝写入")
+    cexport.add_argument("--bake-tracking", action="store_true", help="agent-json/package导出为普通跟踪关键帧并保留源绑定旁车；原生工程逐帧Float32核验")
 
     template = subs.add_parser("template", help="模板实例化")
     ts2 = template.add_subparsers(dest="action", required=True)
@@ -6663,10 +6664,13 @@ def command_convert_import(args: argparse.Namespace) -> dict[str, Any]:
 def command_convert_export(args: argparse.Namespace) -> dict[str, Any]:
     root, project = load_project(args.project)
     output = Path(args.output).expanduser().resolve()
+    if args.bake_tracking and (args.strict or args.target_format not in {'agent-json', 'package'}):
+        raise argument_error('--bake-tracking 适用于 agent-json/package；外部格式自动烘焙并报告损失', '--bake-tracking')
     if args.dry_run:
-        return _envelope("convert.export", args, status="planned", data={"project": str(root), "output": str(output), "format": args.target_format})
+        return _envelope("convert.export", args, status="planned", data={"project": str(root), "output": str(output), "format": args.target_format,
+            "tracking_bake_requested": args.bake_tracking, "tracking_bake_pixel_verification_executed": False})
     try:
-        result = export_external(root, project, output, args.target_format, strict=args.strict)
+        result = export_external(root, project, output, args.target_format, strict=args.strict, bake_tracking=args.bake_tracking)
     except ValueError as exc:
         raise argument_error(str(exc), "--target-format") from exc
     report = result["report_data"]

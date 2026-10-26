@@ -2,15 +2,15 @@
 
 <!-- community-current -->
 
-**CLI 0.1.31 / alpha.4-local.29 / r32 kit · 1 Skill / 17 modules.**
+**CLI 0.1.32 / alpha.4-local.30 / r33 kit · 1 Skill / 17 modules.**
 
-Actual rendered source alpha and five masks, 59 edge/paired transition point/ROI footprints with retained density and peer-cycle preflight, independent spatial-edge retime; shared-author tracking dependency retime with selected layer outputs, deferred scalar alpha/external blend order, private audio instances and retained outside routes; magnetic synchronized native source/follower partition and pre-cut lineage repair; native-PTS physical source slip/real extension/source-handle roll/slide with per-fragment author offsets and rational constant clocks; split/trim/ripple/range editing with retained source fragments, pinned ROI references, hidden removed-source followers and locked-reference atomic guards; dynamic tracking with shared crop/TRS geometry, editable source observations and overlay child audio; ordered global/interval Float32 grading at the selected root with authored clocks and locked portable LUTs; explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
+Frame-verified native tracking bake with ordinary hold keys and original source sidecars; actual rendered source alpha and five masks, 59 edge/paired transition point/ROI footprints with retained density and peer-cycle preflight, independent spatial-edge retime; shared-author tracking dependency retime with selected layer outputs, deferred scalar alpha/external blend order, private audio instances and retained outside routes; magnetic synchronized native source/follower partition and pre-cut lineage repair; native-PTS physical source slip/real extension/source-handle roll/slide with per-fragment author offsets and rational constant clocks; split/trim/ripple/range editing with retained source fragments, pinned ROI references, hidden removed-source followers and locked-reference atomic guards; dynamic tracking with shared crop/TRS geometry, editable source observations and overlay child audio; ordered global/interval Float32 grading at the selected root with authored clocks and locked portable LUTs; explicit native Float32 GPU affine/normal composition/text colors/word selection with owned worker cleanup; 4K text, reusable native byte coverage and linear composition; Float32 titles/inline captions/typewriter/word highlights/plain SRT and transitions/source handles/group edges, native OpenCL crop/affine/child-canvas projection, portable motion/capture, editable ad variants, semantic runtime relocation, joint subtitle dubbing, GPU voice/translation and the existing resource/quality modules.
 
-[Tracking visibility workflow](TRACKING_VISIBILITY.md) · [Shared-author retime workflow](TRACKING_RETIME.md) · [Magnetic tracking workflow](TRACKING_MAGNETIC.md) · [Tracked source workflow](TRACKING_SOURCE_EDITS.md) · [Tracking edit workflow](TRACKING_EDITS.md) · [Native tracking workflow](FLOAT_TRACKING.md) · [Float32 adjustment workflow](FLOAT_ADJUSTMENTS.md) · [Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](tracking-visibility-capabilities-cli-0.1.31.json). Full target conditions remain open.
+[Tracking bake workflow](TRACKING_BAKE.md) · [Tracking visibility workflow](TRACKING_VISIBILITY.md) · [Shared-author retime workflow](TRACKING_RETIME.md) · [Magnetic tracking workflow](TRACKING_MAGNETIC.md) · [Tracked source workflow](TRACKING_SOURCE_EDITS.md) · [Tracking edit workflow](TRACKING_EDITS.md) · [Native tracking workflow](FLOAT_TRACKING.md) · [Float32 adjustment workflow](FLOAT_ADJUSTMENTS.md) · [Float32 GPU workflow](FLOAT_GPU.md) · [4K text/coverage workflow](FLOAT_TEXT_COVERAGE.md) · [Float32 text workflow](FLOAT_TEXT.md) · [Float32 transition workflow](FLOAT_TRANSITIONS.md) · [GPU projection workflow/preview](OPENCL_PROJECTION.md) · [Motion workflow](MOTION_PACKS.md) · [Ad workflow](AD_STORYBOARD.md) · [Runtime relocation](SEMANTIC_RUNTIME_UPGRADE.md) · [Current installation](COMMUNITY_LOCAL_DELIVERY.md) · [75 actual declarations](tracking-bake-capabilities-cli-0.1.32.json). Full target conditions remain open.
 
 <!-- /community-current -->
 
-[README](../../README.en.md) · [Machine response](tracking-visibility-capabilities-cli-0.1.31.json) · [Module data](module-catalog.json)
+[README](../../README.en.md) · [Machine response](tracking-bake-capabilities-cli-0.1.32.json) · [Module data](module-catalog.json)
 
 | ID | Module | Behavior and input → output | Entry | Dependency/limit |
 |---|---|---|---|---|
@@ -73,7 +73,7 @@ Actual rendered source alpha and five masks, 59 edge/paired transition point/ROI
 | F57 | Native Float32 GPU execution | Explicit policy → linear Float32 affine, normal over, text components/paragraphs and word selection; real render/preview/queue/resume. | `projection_acceleration; render; preview; queue` | off/prefer/require;actual binary64/subnormal probes;owned process/shared buffers;other operators CPU,not all-GPU editing. |
 | F58 | Float32 global/interval adjustments | Ordered grading after all tracks including subtitles;existing float effects,LUT/exposure,six keyframe modes,selected root once. | `settings.adjustments; preview; render; queue` | Explicit linear working/effect signals;CPU execution;locked/portable LUTs;original interval clocks,not complete HDR. |
 | F59 | Native PTS tracking and overlay tracks | Saved source observations → actual selected-frame anchors;shared crop/TRS,ROI scale/relative rotation,alpha,windows and nested audio. | `media track-bind; preview; render; queue; package` | Explicit Float32,no display-key bake,budget/cycle gates;template drift/occlusion require review;native interchange baking pending. |
-| F60 | Native tracking and continued editing | Actual alpha/five masks,59 transition point/ROI footprints; shared retime, magnetic partitions and physical source edits retain observations. | `media track-bind; timeline compose/edit; preview; render; package` | Source contribution precedes higher-track occlusion; lost footprints hide; natural identity/occlusion quality and interchange baking remain open. |
+| F60 | Native tracking and baked delivery | Actual alpha/five masks/59 transition footprints; edits and shared retime retain observations; native bake verifies all frames and retains source sidecars. | `media track-bind; timeline compose/edit; convert export --bake-tracking` | Frozen graph/FPS;20,000 frames/256,000 samples;unrepresentable integer steps reject;external players and natural identity/occlusion remain unaccepted. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -950,9 +950,39 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
       "ROI_scale_clamp_0_01_to_20",
       "nonlocal_warps_may_duplicate_or_lose_a_pixel_footprint_no_natural_identity_claim",
       "conservative_transition_peer_visibility_cycles_rejected_before_pixel_fetch",
-      "MLT_OTIO_draft_export_requires_native_clock_bake_not_yet_implemented",
+      "external_OTIO_MLT_draft_playback_requires_independent_renderer_acceptance",
       "not_natural_identity_tracking_or_full_motion_quality_acceptance"
-    ]
+    ],
+    "interchange_bake": {
+      "protocol": "native-PTS-tracking-frame-verified-bake-v1",
+      "entry": "convert export --bake-tracking --target-format agent-json|package; automatic for otio/kdenlive-xml/jianying-draft-json",
+      "sampling": "actual native Float32 frame/visibility evaluation, including nested clocks and transition peers",
+      "verification": "all selected and standalone sequence display frames compared by exact Float32 RGBA hash before export",
+      "max_frames": 20000,
+      "max_samples": 256000,
+      "preserves": [
+        "author_project",
+        "original_media",
+        "retime_clocks",
+        "audio",
+        "masks",
+        "transitions",
+        "source_binding_sidecar"
+      ],
+      "rejects": [
+        "conflicting_author_clock_demands",
+        "unrepresentable_integer_tick_steps",
+        "pixel_mismatch",
+        "budget",
+        "input_change"
+      ],
+      "limits": [
+        "frozen_graph_and_display_FPS_only;re_bake_after_edits",
+        "external_renderer_not_certified",
+        "unsupported_external_effects_still_reported",
+        "muted_unreachable_targets_listed_without_playback_keys"
+      ]
+    }
   },
   "adjustments": {
     "protocol": "selected-sequence-author-clock-float32-adjustments-v1",

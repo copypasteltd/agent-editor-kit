@@ -7,7 +7,12 @@ description: "Edit and deliver local videos with agent editor kit: multitrack ed
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.29` / CLI `0.1.31`.
+The current local runtime is `v0.1.0-alpha.4-local.30` / CLI `0.1.32`.
+Native tracking can be exported as ordinary hold keys with `convert export --bake-tracking`
+for `agent-json` or `package`; OTIO/MLT/draft exports bake automatically. The native
+path verifies every Float32 display frame before export and preserves an original
+binding sidecar. Read [tracking bake](references/float-tracking.md#verified-native-tracking-bake)
+before choosing this export; the certificate covers the frozen graph/display FPS.
 The published alpha.3 downloads retain CLI 0.1.2 and their original scope.
 
 ## Runtime and common workflow

@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\scripts\activate_community_runtime.py", line 115, in <module>
+    main()
+    ~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\scripts\activate_community_runtime.py", line 46, in main
+    raise ValueError('Installed application does not match this reviewed Skill kit')
+ValueError: Installed application does not match this reviewed Skill kit

@@ -1,5 +1,7 @@
 # 原生 PTS 跟踪绑定 / Native PTS tracking bindings
 
+本页保留CLI0.1.26初始契约；当前CLI0.1.32已支持[原生逐帧核验烘焙](TRACKING_BAKE.md)，旧导出门禁为历史状态。
+
 CLI0.1.30 adds [shared-author tracking retime and C40](TRACKING_RETIME.md); prior versioned records retain their historical scope.
 
 CLI0.1.29 now supports synchronized magnetic tracking cuts/reorder; [current workflow and C39](TRACKING_MAGNETIC.md). Earlier versioned records below retain their original scope.
@@ -112,3 +114,5 @@ eligible GPU projection/composition/text retained. Template analysis sampling,
 natural identity/occlusion quality and external interchange baking have the
 separate limits stated above. The controlled C36 input/output and evidence are
 linked alongside its silent GIF.
+
+CLI0.1.32现支持[原生逐帧核验烘焙](TRACKING_BAKE.md)：外部格式自动烘焙，Agent JSON/package显式`--bake-tracking`，保留源绑定旁车。上述CLI0.1.26的导出限制为历史状态。

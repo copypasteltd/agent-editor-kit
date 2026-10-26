@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.31 / alpha.4-local.29 / r32 kit · 1 Skill / 17 modules / 73 files.**
+**CLI0.1.32 / alpha.4-local.30 / r33 kit · 1 Skill / 17 modules / 73 files.**
 
-實際來源像素/效果alpha和5類遮罩已接入跟蹤；59種進出場/雙來源轉場傳遞錨點及ROI足跡，連續轉場保留完整密度，生成黑白幕不偽造來源；獨立空間進出場可共享變速。
+原生 PTS 跟蹤現可烘焙為普通 hold 關鍵幀：保留真實幀時鐘、遮罩與轉場可見度，逐幀比較烘焙前後全部 Float32 顯示幀，再匯出工程。原始綁定另存旁車；普通工程包繼續保留動態綁定。
 
-[Tracking visibility workflow](TRACKING_VISIBILITY.md)
+[Tracking bake workflow](TRACKING_BAKE.md)
 
 <!-- /community-current -->
 

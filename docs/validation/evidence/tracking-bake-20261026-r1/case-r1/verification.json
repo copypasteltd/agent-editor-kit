@@ -1,0 +1,105 @@
+{
+  "status": "failed",
+  "cli_version": "0.1.32",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.30\\final-r1\\installed",
+  "registered_skill": true,
+  "source_fallback": false,
+  "virtualization": false,
+  "new_model_forwards": 0,
+  "external_renderer_verified": false,
+  "continuous_playback": false,
+  "human_listening": false,
+  "checks": [
+    {
+      "name": "registered installed version",
+      "ok": true
+    },
+    {
+      "name": "actual installed directory",
+      "ok": true
+    },
+    {
+      "name": "source has both retained native bindings",
+      "ok": true
+    },
+    {
+      "name": "actual full Float32 verification, original preserved",
+      "ok": true
+    },
+    {
+      "name": "actual GPU sampling/verification and cleanup",
+      "ok": false
+    }
+  ],
+  "calls": [
+    {
+      "name": "version",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "version"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-bake-20261026-r1\\case-r1\\version.stdout.log",
+      "stdout_sha256": "43ad104788cfa7af3548f18f67dff92990835f54cbe88bb9fc1ab24976bc0092",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 4.1769543000045815
+    },
+    {
+      "name": "import-original",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "convert",
+        "import",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-visibility-20261026-r2\\editable-tracking-visibility.aevpkg.zip",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r1\\原始 工程"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-bake-20261026-r1\\case-r1\\import-original.stdout.log",
+      "stdout_sha256": "b94a16a3a0a27217299e36dc8df98527f1d006715682b51e74dd8850c9d63835",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 4.8126319000002695
+    },
+    {
+      "name": "export-baked-package",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "convert",
+        "export",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r1\\原始 工程",
+        "--target-format",
+        "package",
+        "--bake-tracking",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-bake-20261026-r1\\editable-baked-tracking.aevpkg.zip"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout_path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-bake-20261026-r1\\case-r1\\export-baked-package.stdout.log",
+      "stdout_sha256": "ec3cf047030d7c56edfdd124c76965b201f3a00e0aaff9669c079da5e4fe5985",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "seconds": 79.80405980000069
+    }
+  ],
+  "started_at_utc": "2026-10-26T10:33:07.727801+00:00",
+  "error": "AssertionError('actual GPU sampling/verification and cleanup')"
+}

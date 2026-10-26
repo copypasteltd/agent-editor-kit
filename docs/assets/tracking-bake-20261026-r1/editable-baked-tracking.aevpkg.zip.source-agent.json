@@ -1,0 +1,1253 @@
+{
+  "assets": [
+    {
+      "id": "picture",
+      "kind": "video",
+      "probe": {
+        "audio": {
+          "channels": 0,
+          "codec": null,
+          "duration_seconds": 0.0,
+          "sample_rate": 0,
+          "start_time_seconds": 0.0
+        },
+        "duration_seconds": 3.0,
+        "duration_tick": 270000,
+        "format": "matroska,webm",
+        "format_long_name": "Matroska / WebM",
+        "streams": [
+          {
+            "avg_frame_rate": "12/1",
+            "bits_per_raw_sample": "16",
+            "codec_long_name": "FFmpeg video codec #1",
+            "codec_name": "ffv1",
+            "codec_tag": "0x0000",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_type": "video",
+            "coded_height": 180,
+            "coded_width": 320,
+            "color_range": "pc",
+            "color_space": "gbr",
+            "disposition": {
+              "attached_pic": 0,
+              "captions": 0,
+              "clean_effects": 0,
+              "comment": 0,
+              "default": 0,
+              "dependent": 0,
+              "descriptions": 0,
+              "dub": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "karaoke": 0,
+              "lyrics": 0,
+              "metadata": 0,
+              "multilayer": 0,
+              "non_diegetic": 0,
+              "original": 0,
+              "still_image": 0,
+              "timed_thumbnails": 0,
+              "visual_impaired": 0
+            },
+            "extradata_size": 201,
+            "field_order": "progressive",
+            "has_b_frames": 0,
+            "height": 180,
+            "index": 0,
+            "level": -99,
+            "pix_fmt": "gbrp16le",
+            "r_frame_rate": "12/1",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "tags": {
+              "DURATION": "00:00:03.000000000",
+              "ENCODER": "Lavc62.28.100 ffv1"
+            },
+            "time_base": "1/1000",
+            "width": 320
+          }
+        ],
+        "video": {
+          "codec": "ffv1",
+          "color_space": "gbr",
+          "duration_seconds": 0.0,
+          "fps": "12/1",
+          "height": 180,
+          "pix_fmt": "gbrp16le",
+          "start_time_seconds": 0.0,
+          "width": 320
+        }
+      },
+      "rights_ref": "picture",
+      "sha256": "sha256:f5f27ae9c6f3e4b0434c2782e81fac3fea1f1dbc2d456b6536fb90aa2892a368",
+      "uri": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r1\\原始 工程\\assets\\original.native.mkv"
+    },
+    {
+      "id": "marker",
+      "kind": "image",
+      "probe": {
+        "audio": {
+          "channels": 0,
+          "codec": null,
+          "duration_seconds": 0.0,
+          "sample_rate": 0,
+          "start_time_seconds": 0.0
+        },
+        "duration_seconds": 0.0,
+        "duration_tick": 0,
+        "format": "png_pipe",
+        "format_long_name": "piped png sequence",
+        "streams": [
+          {
+            "avg_frame_rate": "25/1",
+            "codec_long_name": "PNG (Portable Network Graphics) image",
+            "codec_name": "png",
+            "codec_tag": "0x0000",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_type": "video",
+            "coded_height": 20,
+            "coded_width": 20,
+            "color_range": "pc",
+            "color_space": "gbr",
+            "disposition": {
+              "attached_pic": 0,
+              "captions": 0,
+              "clean_effects": 0,
+              "comment": 0,
+              "default": 0,
+              "dependent": 0,
+              "descriptions": 0,
+              "dub": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "karaoke": 0,
+              "lyrics": 0,
+              "metadata": 0,
+              "multilayer": 0,
+              "non_diegetic": 0,
+              "original": 0,
+              "still_image": 0,
+              "timed_thumbnails": 0,
+              "visual_impaired": 0
+            },
+            "has_b_frames": 0,
+            "height": 20,
+            "index": 0,
+            "level": -99,
+            "pix_fmt": "rgba",
+            "r_frame_rate": "25/1",
+            "time_base": "1/25",
+            "width": 20
+          }
+        ],
+        "video": {
+          "codec": "png",
+          "color_space": "gbr",
+          "duration_seconds": 0.0,
+          "fps": "25/1",
+          "height": 20,
+          "pix_fmt": "rgba",
+          "start_time_seconds": 0.0,
+          "width": 20
+        }
+      },
+      "rights_ref": "marker",
+      "sha256": "sha256:d4416b239adb1e44846a2a225ee1d1be01c2b7a4649a3590ce13af189c4af4c2",
+      "uri": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r1\\原始 工程\\assets\\tracking-marker.png"
+    },
+    {
+      "id": "sound",
+      "kind": "audio",
+      "probe": {
+        "audio": {
+          "channels": 2,
+          "codec": "pcm_f32le",
+          "duration_seconds": 3.0,
+          "sample_rate": 48000,
+          "start_time_seconds": 0.0
+        },
+        "duration_seconds": 3.0,
+        "duration_tick": 270000,
+        "format": "wav",
+        "format_long_name": "WAV / WAVE (Waveform Audio)",
+        "streams": [
+          {
+            "avg_frame_rate": "0/0",
+            "bit_rate": "3072000",
+            "bits_per_sample": 32,
+            "channels": 2,
+            "codec_long_name": "PCM 32-bit floating point little-endian",
+            "codec_name": "pcm_f32le",
+            "codec_tag": "0x0003",
+            "codec_tag_string": "[3][0][0][0]",
+            "codec_type": "audio",
+            "disposition": {
+              "attached_pic": 0,
+              "captions": 0,
+              "clean_effects": 0,
+              "comment": 0,
+              "default": 0,
+              "dependent": 0,
+              "descriptions": 0,
+              "dub": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "karaoke": 0,
+              "lyrics": 0,
+              "metadata": 0,
+              "multilayer": 0,
+              "non_diegetic": 0,
+              "original": 0,
+              "still_image": 0,
+              "timed_thumbnails": 0,
+              "visual_impaired": 0
+            },
+            "duration": "3.000000",
+            "duration_ts": 144000,
+            "index": 0,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "sample_fmt": "flt",
+            "sample_rate": "48000",
+            "time_base": "1/48000"
+          }
+        ],
+        "video": {
+          "codec": null,
+          "color_space": null,
+          "duration_seconds": 0.0,
+          "fps": null,
+          "height": null,
+          "pix_fmt": null,
+          "start_time_seconds": 0.0,
+          "width": null
+        }
+      },
+      "rights_ref": "sound",
+      "sha256": "sha256:8ed3cd3b5aac18d59699ec3a7f872bd559fcda8dd4de97cb79879037c1169c6a",
+      "uri": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r1\\原始 工程\\assets\\original.audio.wav"
+    },
+    {
+      "id": "font",
+      "kind": "font",
+      "probe": {
+        "streams": []
+      },
+      "rights_ref": "font",
+      "sha256": "sha256:a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "uri": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r1\\原始 工程\\assets\\noto-sans-sc-variable.ttf"
+    }
+  ],
+  "outputs": [
+    {
+      "audio": {
+        "bitrate": "192k",
+        "codec": "pcm_f32le"
+      },
+      "canvas": {
+        "background": "#102030",
+        "height": 180,
+        "pixel_aspect": {
+          "den": 1,
+          "num": 1
+        },
+        "width": 320
+      },
+      "container": "mkv",
+      "id": "output_20261026025730_661ea10d",
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-tracking-20261026-case-r5\\编辑 工程\\renders\\native-tracking.mkv",
+      "profile": null,
+      "target_platform": "generic",
+      "video": {
+        "codec": "libx264",
+        "crf": 0,
+        "pixel_format": "yuv444p10le",
+        "preset": "ultrafast"
+      }
+    },
+    {
+      "audio": {
+        "bitrate": "192k",
+        "codec": "pcm_f32le"
+      },
+      "canvas": {
+        "background": "#102030",
+        "height": 180,
+        "pixel_aspect": {
+          "den": 1,
+          "num": 1
+        },
+        "width": 320
+      },
+      "container": "mkv",
+      "id": "output_20261026025843_4d9f53fd",
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-tracking-20261026-case-r5\\编辑 工程\\renders\\resumed.mkv",
+      "profile": null,
+      "target_platform": "generic",
+      "video": {
+        "codec": "libx264",
+        "crf": 0,
+        "pixel_format": "yuv444p10le",
+        "preset": "ultrafast"
+      }
+    },
+    {
+      "audio": {
+        "bitrate": "192k",
+        "codec": "pcm_f32le"
+      },
+      "canvas": {
+        "background": "#102030",
+        "height": 180,
+        "pixel_aspect": {
+          "den": 1,
+          "num": 1
+        },
+        "width": 320
+      },
+      "container": "mkv",
+      "id": "output_20261026025918_449afa8a",
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-tracking-20261026-case-r5\\编辑 工程\\renders\\queued.mkv",
+      "profile": null,
+      "target_platform": "generic",
+      "video": {
+        "codec": "libx264",
+        "crf": 0,
+        "pixel_format": "yuv444p10le",
+        "preset": "ultrafast"
+      }
+    },
+    {
+      "audio": {
+        "bitrate": "192k",
+        "codec": "pcm_f32le"
+      },
+      "canvas": {
+        "background": "#102030",
+        "height": 180,
+        "pixel_aspect": {
+          "den": 1,
+          "num": 1
+        },
+        "width": 320
+      },
+      "container": "mkv",
+      "id": "output_20261026084705_36642ed2",
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-visibility-20261026-case-r2\\编辑 工程\\renders\\edited.mkv",
+      "profile": null,
+      "target_platform": "generic",
+      "video": {
+        "codec": "libx264",
+        "crf": 0,
+        "pixel_format": "yuv444p",
+        "preset": "ultrafast"
+      }
+    }
+  ],
+  "project": {
+    "created_at": "2026-10-26T02:55:00.826315Z",
+    "creator": "ai-ad-editor",
+    "id": "float_tracking_case",
+    "name": "Native PTS tracking, crop/TRS and reversed overlay child sound",
+    "source_revision": "local",
+    "updated_at": "2026-10-26T08:47:05.695920Z"
+  },
+  "provenance": {
+    "change_log": [
+      {
+        "asset_id": "picture",
+        "at": "2026-10-26T02:55:12.414250Z",
+        "before_snapshot_id": "snap_20261026025511_f2e6a5e4",
+        "command": "media.track-bind",
+        "operation_id": "op_20261026025511_323ff084",
+        "report": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-tracking-20261026-case-r5\\编辑 工程\\validation\\track_bind_follow_marker.json",
+        "target_clip_id": "follow_marker",
+        "target_track_id": "child_labels"
+      },
+      {
+        "at": "2026-10-26T02:57:30.361942Z",
+        "command": "render",
+        "manifest": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-tracking-20261026-case-r5\\编辑 工程\\renders\\native-tracking.mkv.manifest.json",
+        "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-tracking-20261026-case-r5\\编辑 工程\\renders\\native-tracking.mkv"
+      },
+      {
+        "at": "2026-10-26T02:58:43.451778Z",
+        "command": "render",
+        "manifest": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-tracking-20261026-case-r5\\编辑 工程\\renders\\resumed.mkv.manifest.json",
+        "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-tracking-20261026-case-r5\\编辑 工程\\renders\\resumed.mkv"
+      },
+      {
+        "at": "2026-10-26T02:59:18.089998Z",
+        "command": "queue.run",
+        "manifest": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-tracking-20261026-case-r5\\编辑 工程\\renders\\queued.mkv.manifest.json",
+        "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\float-tracking-20261026-case-r5\\编辑 工程\\renders\\queued.mkv",
+        "queue_job_id": "float-tracking"
+      },
+      {
+        "at": "2026-10-26T08:47:05.695903Z",
+        "command": "render",
+        "manifest": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-visibility-20261026-case-r2\\编辑 工程\\renders\\edited.mkv.manifest.json",
+        "output": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-visibility-20261026-case-r2\\编辑 工程\\renders\\edited.mkv"
+      },
+      {
+        "command": "convert.export",
+        "at": "2026-10-26T10:34:36.387359Z",
+        "source_project": "E:\\dev\\sandbox\\AI广告剪辑\\workspace\\tracking-bake-20261026-case-r1\\原始 工程"
+      }
+    ],
+    "cli_version": "0.1.26",
+    "engine_version": "ffmpeg-local",
+    "input_hashes": [],
+    "model_versions": []
+  },
+  "schema_version": "0.1.0",
+  "sequences": [
+    {
+      "canvas": {
+        "height": 180,
+        "width": 320
+      },
+      "duration_tick": 270000,
+      "id": "child",
+      "markers": [],
+      "name": "Editable source and following marker",
+      "tracks": [
+        {
+          "clips": [
+            {
+              "asset_id": "picture",
+              "duration_tick": 202500,
+              "id": "moving_source",
+              "keyframes": [],
+              "mask": {
+                "feather": 0.08,
+                "height": 1,
+                "keyframes": [
+                  {
+                    "keyframes": [
+                      {
+                        "at_tick": 0,
+                        "interpolation": "linear",
+                        "value": 0.7
+                      },
+                      {
+                        "at_tick": 90000,
+                        "interpolation": "linear",
+                        "value": 0.25
+                      },
+                      {
+                        "at_tick": 202500,
+                        "interpolation": "linear",
+                        "value": 0.85
+                      }
+                    ],
+                    "property": "width"
+                  },
+                  {
+                    "keyframes": [
+                      {
+                        "at_tick": 0,
+                        "interpolation": "linear",
+                        "value": 0.08
+                      },
+                      {
+                        "at_tick": 202500,
+                        "interpolation": "linear",
+                        "value": 0.08
+                      }
+                    ],
+                    "property": "feather"
+                  }
+                ],
+                "type": "rectangle",
+                "width": 0.7,
+                "x": 0,
+                "y": 0
+              },
+              "source_in_tick": 0,
+              "source_out_tick": 202500,
+              "timeline_start_tick": 0,
+              "transition_out": {
+                "direction": "left",
+                "duration": 0.75,
+                "type": "slide"
+              }
+            },
+            {
+              "asset_id": "picture",
+              "duration_tick": 135000,
+              "id": "incoming_source",
+              "keyframes": [],
+              "source_in_tick": 0,
+              "source_out_tick": 135000,
+              "timeline_start_tick": 135000,
+              "transition_in": {
+                "direction": "left",
+                "duration": 0.75,
+                "type": "slide"
+              }
+            }
+          ],
+          "id": "child_track_video_1",
+          "kind": "video",
+          "locked": false,
+          "muted": false,
+          "order": 0,
+          "overlap_policy": "allow"
+        },
+        {
+          "clips": [
+            {
+              "asset_id": "sound",
+              "duration_tick": 270000,
+              "id": "child_sound",
+              "source_in_tick": 0,
+              "source_out_tick": 270000,
+              "timeline_start_tick": 0
+            }
+          ],
+          "id": "child_track_audio_1",
+          "kind": "audio",
+          "locked": false,
+          "muted": false,
+          "order": 0
+        },
+        {
+          "clips": [
+            {
+              "asset_id": "marker",
+              "duration_tick": 202500,
+              "id": "follow_marker",
+              "keyframes": [],
+              "source_in_tick": 0,
+              "source_out_tick": 202500,
+              "timeline_start_tick": 0,
+              "tracking_binding": {
+                "asset_id": "picture",
+                "base": {
+                  "opacity": 1.0,
+                  "opacity_keyframes": [],
+                  "rotation": 0.0,
+                  "scale": 0.17
+                },
+                "observations": [
+                  {
+                    "at_seconds": 0.0,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.15625,
+                    "y": 0.411111
+                  },
+                  {
+                    "at_seconds": 0.083333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.16875,
+                    "y": 0.433333
+                  },
+                  {
+                    "at_seconds": 0.166667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.18125,
+                    "y": 0.455556
+                  },
+                  {
+                    "at_seconds": 0.25,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.19375,
+                    "y": 0.477778
+                  },
+                  {
+                    "at_seconds": 0.333333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.20625,
+                    "y": 0.5
+                  },
+                  {
+                    "at_seconds": 0.416667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.21875,
+                    "y": 0.522222
+                  },
+                  {
+                    "at_seconds": 0.5,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.23125,
+                    "y": 0.544444
+                  },
+                  {
+                    "at_seconds": 0.583333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.24375,
+                    "y": 0.566667
+                  },
+                  {
+                    "at_seconds": 0.666667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.25625,
+                    "y": 0.566667
+                  },
+                  {
+                    "at_seconds": 0.75,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.26875,
+                    "y": 0.544444
+                  },
+                  {
+                    "at_seconds": 0.833333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.28125,
+                    "y": 0.522222
+                  },
+                  {
+                    "at_seconds": 0.916667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.29375,
+                    "y": 0.5
+                  },
+                  {
+                    "at_seconds": 1.0,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.30625,
+                    "y": 0.477778
+                  },
+                  {
+                    "at_seconds": 1.083333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.31875,
+                    "y": 0.455556
+                  },
+                  {
+                    "at_seconds": 1.166667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.33125,
+                    "y": 0.433333
+                  },
+                  {
+                    "at_seconds": 1.25,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.34375,
+                    "y": 0.411111
+                  },
+                  {
+                    "at_seconds": 1.333333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.35625,
+                    "y": 0.411111
+                  },
+                  {
+                    "at_seconds": 1.416667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.36875,
+                    "y": 0.433333
+                  },
+                  {
+                    "at_seconds": 1.5,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.38125,
+                    "y": 0.455556
+                  },
+                  {
+                    "at_seconds": 1.583333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.39375,
+                    "y": 0.477778
+                  },
+                  {
+                    "at_seconds": 1.666667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.40625,
+                    "y": 0.5
+                  },
+                  {
+                    "at_seconds": 1.75,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.41875,
+                    "y": 0.522222
+                  },
+                  {
+                    "at_seconds": 1.833333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.43125,
+                    "y": 0.544444
+                  },
+                  {
+                    "at_seconds": 1.916667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.44375,
+                    "y": 0.566667
+                  },
+                  {
+                    "at_seconds": 2.0,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.45625,
+                    "y": 0.566667
+                  },
+                  {
+                    "at_seconds": 2.083333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.46875,
+                    "y": 0.544444
+                  },
+                  {
+                    "at_seconds": 2.166667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.48125,
+                    "y": 0.522222
+                  },
+                  {
+                    "at_seconds": 2.25,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.49375,
+                    "y": 0.5
+                  },
+                  {
+                    "at_seconds": 2.333333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.50625,
+                    "y": 0.477778
+                  },
+                  {
+                    "at_seconds": 2.416667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.51875,
+                    "y": 0.455556
+                  },
+                  {
+                    "at_seconds": 2.5,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.53125,
+                    "y": 0.433333
+                  },
+                  {
+                    "at_seconds": 2.583333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.54375,
+                    "y": 0.411111
+                  },
+                  {
+                    "at_seconds": 2.666667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.55625,
+                    "y": 0.411111
+                  },
+                  {
+                    "at_seconds": 2.75,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.56875,
+                    "y": 0.433333
+                  },
+                  {
+                    "at_seconds": 2.833333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.58125,
+                    "y": 0.455556
+                  },
+                  {
+                    "at_seconds": 2.916667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.59375,
+                    "y": 0.477778
+                  }
+                ],
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "range": {
+                  "end_seconds": 3.0,
+                  "start_seconds": 0.0
+                },
+                "rotation_mode": "none",
+                "scale_mode": "none",
+                "scale_multiplier": 1.0,
+                "source_clip_id": "moving_source",
+                "source_sha256": "sha256:f5f27ae9c6f3e4b0434c2782e81fac3fea1f1dbc2d456b6536fb90aa2892a368",
+                "source_track_id": "child_track_video_1",
+                "version": "timeline-canvas-v1"
+              },
+              "transform": {
+                "scale": 0.17
+              }
+            },
+            {
+              "asset_id": "marker",
+              "duration_tick": 135000,
+              "id": "incoming_marker",
+              "keyframes": [],
+              "source_in_tick": 0,
+              "source_out_tick": 135000,
+              "timeline_start_tick": 135000,
+              "tracking_binding": {
+                "asset_id": "picture",
+                "base": {
+                  "opacity": 1.0,
+                  "opacity_keyframes": [],
+                  "rotation": 0.0,
+                  "scale": 0.17
+                },
+                "observations": [
+                  {
+                    "at_seconds": 0.0,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.15625,
+                    "y": 0.411111
+                  },
+                  {
+                    "at_seconds": 0.083333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.16875,
+                    "y": 0.433333
+                  },
+                  {
+                    "at_seconds": 0.166667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.18125,
+                    "y": 0.455556
+                  },
+                  {
+                    "at_seconds": 0.25,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.19375,
+                    "y": 0.477778
+                  },
+                  {
+                    "at_seconds": 0.333333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.20625,
+                    "y": 0.5
+                  },
+                  {
+                    "at_seconds": 0.416667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.21875,
+                    "y": 0.522222
+                  },
+                  {
+                    "at_seconds": 0.5,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.23125,
+                    "y": 0.544444
+                  },
+                  {
+                    "at_seconds": 0.583333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.24375,
+                    "y": 0.566667
+                  },
+                  {
+                    "at_seconds": 0.666667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.25625,
+                    "y": 0.566667
+                  },
+                  {
+                    "at_seconds": 0.75,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.26875,
+                    "y": 0.544444
+                  },
+                  {
+                    "at_seconds": 0.833333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.28125,
+                    "y": 0.522222
+                  },
+                  {
+                    "at_seconds": 0.916667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.29375,
+                    "y": 0.5
+                  },
+                  {
+                    "at_seconds": 1.0,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.30625,
+                    "y": 0.477778
+                  },
+                  {
+                    "at_seconds": 1.083333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.31875,
+                    "y": 0.455556
+                  },
+                  {
+                    "at_seconds": 1.166667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.33125,
+                    "y": 0.433333
+                  },
+                  {
+                    "at_seconds": 1.25,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.34375,
+                    "y": 0.411111
+                  },
+                  {
+                    "at_seconds": 1.333333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.35625,
+                    "y": 0.411111
+                  },
+                  {
+                    "at_seconds": 1.416667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.36875,
+                    "y": 0.433333
+                  },
+                  {
+                    "at_seconds": 1.5,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.38125,
+                    "y": 0.455556
+                  },
+                  {
+                    "at_seconds": 1.583333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.39375,
+                    "y": 0.477778
+                  },
+                  {
+                    "at_seconds": 1.666667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.40625,
+                    "y": 0.5
+                  },
+                  {
+                    "at_seconds": 1.75,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.41875,
+                    "y": 0.522222
+                  },
+                  {
+                    "at_seconds": 1.833333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.43125,
+                    "y": 0.544444
+                  },
+                  {
+                    "at_seconds": 1.916667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.44375,
+                    "y": 0.566667
+                  },
+                  {
+                    "at_seconds": 2.0,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.45625,
+                    "y": 0.566667
+                  },
+                  {
+                    "at_seconds": 2.083333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.46875,
+                    "y": 0.544444
+                  },
+                  {
+                    "at_seconds": 2.166667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.48125,
+                    "y": 0.522222
+                  },
+                  {
+                    "at_seconds": 2.25,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.49375,
+                    "y": 0.5
+                  },
+                  {
+                    "at_seconds": 2.333333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.50625,
+                    "y": 0.477778
+                  },
+                  {
+                    "at_seconds": 2.416667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.51875,
+                    "y": 0.455556
+                  },
+                  {
+                    "at_seconds": 2.5,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.53125,
+                    "y": 0.433333
+                  },
+                  {
+                    "at_seconds": 2.583333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.54375,
+                    "y": 0.411111
+                  },
+                  {
+                    "at_seconds": 2.666667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.55625,
+                    "y": 0.411111
+                  },
+                  {
+                    "at_seconds": 2.75,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.56875,
+                    "y": 0.433333
+                  },
+                  {
+                    "at_seconds": 2.833333,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.58125,
+                    "y": 0.455556
+                  },
+                  {
+                    "at_seconds": 2.916667,
+                    "confidence": 1.0,
+                    "height": 0.111111,
+                    "width": 0.0625,
+                    "x": 0.59375,
+                    "y": 0.477778
+                  }
+                ],
+                "offset": {
+                  "x": 0.0,
+                  "y": 0.0
+                },
+                "range": {
+                  "end_seconds": 3.0,
+                  "start_seconds": 0.0
+                },
+                "rotation_mode": "none",
+                "scale_mode": "none",
+                "scale_multiplier": 1.0,
+                "source_clip_id": "incoming_source",
+                "source_sha256": "sha256:f5f27ae9c6f3e4b0434c2782e81fac3fea1f1dbc2d456b6536fb90aa2892a368",
+                "source_track_id": "child_track_video_1",
+                "version": "timeline-canvas-v1"
+              },
+              "transform": {
+                "scale": 0.17
+              }
+            }
+          ],
+          "id": "child_labels",
+          "kind": "overlay",
+          "order": 2,
+          "overlap_policy": "allow"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "audio": {
+      "channels": 2,
+      "sample_rate": 48000
+    },
+    "canvas": {
+      "background": "#102030",
+      "height": 180,
+      "pixel_aspect": {
+        "den": 1,
+        "num": 1
+      },
+      "width": 320
+    },
+    "color": {
+      "matrix": "bt709",
+      "primaries": "bt709",
+      "range": "limited",
+      "transfer": "linear"
+    },
+    "output": {
+      "audio": {
+        "codec": "pcm_f32le"
+      },
+      "container": "mkv",
+      "video": {
+        "codec": "libx264",
+        "crf": 0,
+        "pixel_format": "yuv444p",
+        "preset": "ultrafast"
+      }
+    },
+    "pixel_pipeline": {
+      "engine": "float32-native-v1",
+      "output_signal": {
+        "primaries": "bt709",
+        "transfer": "linear"
+      },
+      "sources": {
+        "marker": {
+          "demux_origin": "0",
+          "display_geometry": "square-unrotated",
+          "source_signal": {
+            "primaries": "bt709",
+            "transfer": "linear"
+          }
+        },
+        "picture": {
+          "display_geometry": "square-unrotated",
+          "source_signal": {
+            "primaries": "bt709",
+            "transfer": "linear"
+          }
+        }
+      },
+      "window_frames": 4,
+      "working_signal": {
+        "primaries": "bt709",
+        "transfer": "linear"
+      }
+    },
+    "projection_acceleration": {
+      "device": "0.0",
+      "max_working_bytes": 1073741824,
+      "mode": "require"
+    },
+    "timebase": {
+      "display_fps": {
+        "den": 1,
+        "num": 12
+      },
+      "ticks_per_second": 90000
+    }
+  },
+  "templates": []
+}

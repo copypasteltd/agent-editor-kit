@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.31 / alpha.4-local.29 / r32 kit · 1 Skill / 17 modules / 73 files.**
+**CLI0.1.32 / alpha.4-local.30 / r33 kit · 1 Skill / 17 modules / 73 files.**
 
-Tracking reads actual source pixel/effect alpha and five mask shapes. All 59 edge/paired transitions transport point and ROI footprints, retaining full density between operations; generated mattes carry no source contribution. Independent spatial edges survive shared-output retime.
+Native PTS tracking now exports as ordinary hold keys. It samples actual clocks, masks and transition visibility, then compares every Float32 display frame before exporting. Original bindings remain in a separate source sidecar; ordinary packages still retain dynamic bindings.
 
-[Tracking visibility workflow](TRACKING_VISIBILITY.md)
+[Tracking bake workflow](TRACKING_BAKE.md)
 
 <!-- /community-current -->
 

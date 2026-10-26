@@ -507,6 +507,16 @@ def import_draft(source: Path, destination: Path, payload: dict[str, Any], asset
                         sequence["tracks"].append(audio_track)
                     audio_track["clips"].append(audio_clip)
                     _item(items, "embedded-audio", "Mapped", source_path, linked_id, "视频原声转换为显式关联音轨")
+        for track in sequence['tracks']:
+            end = -1; overlaps = []
+            for clip in sorted(track['clips'], key=lambda c:c['timeline_start_tick']):
+                if clip['timeline_start_tick'] < end: overlaps.append(clip['id'])
+                end = max(end, clip['timeline_start_tick'] + clip['duration_tick'])
+            if overlaps:
+                track['overlap_policy'] = 'allow'
+                _item(items, 'timeline-overlap', 'Approximate', track['id'], track['id'],
+                    '保留原片段目标区间及输入叠放/混音顺序；显式允许重叠，未重建私有转场或推断剪口',
+                    preserved_source={'overlapping_clip_ids':overlaps})
         for identity, (group, material) in materials.items():
             if identity not in used_materials and group not in MEDIA_GROUPS | {"texts", "speeds"}:
                 _item(items, "unused-material", "Unsupported", f"materials.{group}", detail="未消费的附加/全局素材保留供复核", preserved_source=material)
@@ -634,7 +644,8 @@ def export_draft(root: Path, project: dict[str, Any], output: Path, *, strict: b
     if not validation["ok"]:
         raise AppError("CONVERSION_PROJECT_INVALID", "源项目校验失败，拒绝生成草稿", exit_code=2, cause=json.dumps(validation["errors"], ensure_ascii=False))
     from .bindings import bake_interchange_bindings
-    project,bound_clips = bake_interchange_bindings(project)
+    bake_receipt = {}
+    project,bound_clips = bake_interchange_bindings(project, root, receipt=bake_receipt)
     for clip_id in bound_clips:
         _item(items,'tracking-binding','Baked',clip_id,detail='按当前画布和源片段重算为普通关键帧；外部工程不保留活动绑定，完整源保存在旁车')
     tps = int(project["settings"]["timebase"]["ticks_per_second"])
@@ -761,6 +772,7 @@ def export_draft(root: Path, project: dict[str, Any], output: Path, *, strict: b
     payload = {"id":project["project"]["id"],"name":project["project"]["name"],"version":360000,"new_version":"110.0.0","fps":fps["num"]/fps["den"],"duration":_us(sequence["duration_tick"],tps),"canvas_config":{"width":canvas["width"],"height":canvas["height"],"ratio":"original"},"materials":materials,"tracks":tracks,"keyframes":{},"config":{"maintrack_adsorb":False},"platform":{},"last_modified_platform":{},"agent_video_kit":{"profile":DRAFT_PROFILE,"adapter_version":ADAPTER_VERSION,"network":"disabled","source_sha256":f"sha256:{sha256_file(root/'project.json')}"}}
     report = _report(root/"project.json","export",items,strict=strict,source_version=project.get("schema_version"))
     report["runtime_compatibility_verified"] = False
+    if bake_receipt: report['tracking_bake'] = bake_receipt
     report_path = output.with_suffix(output.suffix+".conversion-report.json")
     sidecar = output.with_suffix(output.suffix+".source-agent.json")
     report["preserved_source"] = sidecar.name

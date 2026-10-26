@@ -62,8 +62,8 @@ claim a GPU model tracker or an entirely GPU-resident pipeline.
 Budgets: 128 bindings, 64,000 total observations, 4,000 observations per binding,
 16 dependency levels. Cycles and changed source hashes reject. Sources remain
 square-pixel/unrotated; ROI scale uses the existing 0.01..20 clamp. Use editable
-project packages to preserve observations: MLT/OTIO/draft export currently
-rejects native bindings until native-clock baking is implemented. Clearing a
+project packages to preserve observations. CLI 0.1.32 adds verified native
+baking for MLT/OTIO/draft and explicit baked native exports below. Clearing a
 native binding restores authored transforms; it does not bake the current pose.
 
 ## Continue editing a bound clip (CLI 0.1.27)
@@ -84,9 +84,9 @@ Inspect that state in the plan and rebind explicitly when replacing footage.
 
 Locked follower references reject atomically. Overlapping source fragments are
 ambiguous and reject; routes admit up to 128 fragments per binding and 4,096
-total references. Shared-author retime is supported as described below. MLT/OTIO/draft
-baking remains separate. Do not remove those guards or bake display-FPS keys
-to force an edit through. Deliver the editable package after verification.
+total references. Shared-author retime is supported as described below. Export
+baking freezes the graph after editing; it does not bypass editing guards.
+Deliver the editable package after verification.
 
 ## Actual visibility and spatial transitions (CLI 0.1.31)
 
@@ -215,3 +215,39 @@ against an independent FFmpeg tempo oracle, including package/queue checks.
 Review real client footage and sound separately before delivery.
 
 [Commands, scope and actual C40 preview](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/TRACKING_RETIME.md)
+
+## Verified native tracking bake
+
+CLI 0.1.32 exports a frozen native binding graph as ordinary hold keys. Preserve
+the dynamic project when more retime, geometry or visibility edits are planned.
+
+```powershell
+& $avk convert export --project $avkProject --target-format package `
+  --bake-tracking --output $bakedPackagePath
+& $avk convert export --project $avkProject --target-format agent-json `
+  --bake-tracking --output $bakedJsonPath
+& $avk convert import --input $bakedPackagePath --output $newProjectDirectory
+```
+
+Native exports evaluate actual source PTS, masks and transition visibility,
+including nested instances and transition peers. They rerender the baked graph
+and compare every Float32 RGBA display frame. Limits: 20,000 total sequence
+frames and 256,000 target samples. Conflicting author-clock demands, steps that
+integer ticks cannot represent, changed inputs, or pixel mismatches fail. No
+model is run and no frame values are rounded to hide errors. The original
+bindings are retained in `.source-agent.json`; preserve the source project and
+ordinary editable package too, including fonts, rights and assets. An unsampled
+muted/unreachable target is listed in the receipt and has no playback keys.
+
+OTIO, MLT and plaintext draft exports bake automatically and retain format loss
+reports. Their players still need independent acceptance for unsupported
+effects, graph structure and colour; an internal exact bake is not external
+renderer parity. Draft strict mode continues to reject Baked/Approximate/losses.
+After editing clocks, display FPS, geometry or visibility, bake the original
+dynamic project again. [Workflow](../../../docs/product/TRACKING_BAKE.md).
+
+CLI 0.1.32 also accepts `.mlt` imports, retains rational MLT profile FPS, and
+preserves tick rate/display FPS/duration in local OTIO metadata. Overlapping
+draft segments retain their target ranges with an explicit Approximate stack
+or mix report; strict mode rejects this approximation. Private transition
+semantics still require independent acceptance.

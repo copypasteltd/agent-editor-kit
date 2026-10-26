@@ -292,6 +292,17 @@ class P0CliTests(unittest.TestCase):
             self.assertEqual(imported_clip["transform"]["scale"], 0.74)
             self.assertEqual(imported_clip["transition_in"]["type"], "fade")
 
+            mlt_path=workspace/"timeline.MLT"
+            mlt_path.write_bytes(xml_path.read_bytes())
+            code,mlt_result=invoke("convert","import","--input",str(mlt_path),"--output",str(workspace/"mlt-imported"))
+            self.assertEqual(code,0,mlt_result)
+            mlt_project=json.loads((workspace/"mlt-imported/project.json").read_text(encoding="utf-8"))
+            mlt_clip=next(c for t in mlt_project["sequences"][0]["tracks"] for c in t["clips"] if c["id"]=="mlt_gap_clip")
+            self.assertEqual({k:v for k,v in mlt_clip.items() if k!='asset_id'},
+                             {k:v for k,v in imported_clip.items() if k!='asset_id'})
+            self.assertEqual(next(a['sha256'] for a in mlt_project['assets'] if a['id']==mlt_clip['asset_id']),
+                             next(a['sha256'] for a in imported_project['assets'] if a['id']==imported_clip['asset_id']))
+
     def test_persistent_render_queue_lifecycle(self) -> None:
         with tempfile.TemporaryDirectory(prefix="ai-ad-editor-queue-") as raw:
             workspace = Path(raw)

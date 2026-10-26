@@ -183,7 +183,7 @@ def _zip_write_bytes(archive: zipfile.ZipFile, name: str, data: bytes) -> None:
     archive.writestr(info, data)
 
 
-def _export_project_package(root: Path, project: dict[str, Any], output: Path) -> dict[str, Any]:
+def _export_project_package(root: Path, project: dict[str, Any], output: Path, *, transformation_report: dict | None = None) -> dict[str, Any]:
     """Export a self-contained, local-only Agent Project package."""
     packaged_project, asset_files, failures = _package_asset_map(root, project)
     if failures:
@@ -258,6 +258,10 @@ def _export_project_package(root: Path, project: dict[str, Any], output: Path) -
         report['semantic_data'] = semantic_summary
         report['warnings'].append(report_item('semantic-native-runtime', 'Approximate',
             'external adapter/runtime/model pins', detail='原生模型依赖不打包也不重新信任；实际检索仍验证原 pin'))
+    if transformation_report:
+        report['items'].extend(transformation_report['items'])
+        report['warnings'].extend(transformation_report['items'])
+        report.update({k:v for k,v in transformation_report.items() if k != 'items'})
     report_bytes = _package_json_bytes(report)
     with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED, allowZip64=True) as archive:
         _zip_write_bytes(archive, PROJECT_PACKAGE_MANIFEST, manifest_bytes)
@@ -327,9 +331,32 @@ def _asset_uri(root: Path, asset: dict[str, Any]) -> Path:
     return uri if uri.is_absolute() else root / uri
 
 
+def _protect_export(root: Path, project: dict[str, Any], output: Path) -> None:
+    protected = {(root / name).resolve() for name in PROJECT_PACKAGE_ROOT_FILES}
+    protected.update(_asset_uri(root, asset).resolve() for asset in project.get('assets', []))
+    targets = [output, output.with_suffix(output.suffix + '.conversion-report.json'),
+               output.with_suffix(output.suffix + '.source-agent.json'),
+               output.with_suffix(output.suffix + '.source-agent.json.conversion-report.json')]
+    owned_inputs = [(root / name).resolve() for name in ('assets', 'fonts', 'models', 'templates')]
+    if any(path.resolve() in protected or any(path.resolve().is_relative_to(base) for base in owned_inputs)
+           for path in targets):
+        raise ValueError('导出文件及旁车不能覆盖源工程、已登记素材或工程输入目录')
+
+
+def _tracking_export_receipt(root, original, output, report, receipt, bound):
+    if not bound: return {}
+    sidecar = output.with_suffix(output.suffix + '.source-agent.json')
+    export_agent_project(root, original, sidecar)
+    report['preserved_source'] = sidecar.name
+    report['source_root'] = str(root.resolve())
+    if receipt: report['tracking_bake'] = receipt
+    return {'source_sidecar': str(sidecar)}
+
+
 def _export_otio(root: Path, project: dict[str, Any], output: Path) -> dict[str, Any]:
     from .bindings import bake_interchange_bindings
-    project,bound_clips = bake_interchange_bindings(project)
+    original = project; bake_receipt = {}
+    project,bound_clips = bake_interchange_bindings(project, root, receipt=bake_receipt)
     tps = int(project["settings"]["timebase"]["ticks_per_second"])
     assets = {str(asset.get("id")): asset for asset in project.get("assets", [])}
     tracks: list[dict[str, Any]] = []
@@ -410,6 +437,7 @@ def _export_otio(root: Path, project: dict[str, Any], output: Path) -> dict[str,
         "OTIO_SCHEMA": "Timeline.1",
         "name": project.get("project", {}).get("name", "Agent Project"),
         "metadata": {"ai_ad_editor": {"schema_version": project.get("schema_version"), "ticks_per_second": tps, "duration_tick": int(sequence.get("duration_tick", 1)),
+                                     "display_fps": copy.deepcopy(project['settings']['timebase']['display_fps']),
                                      "canvas": sequence_canvas(project, sequence), "sequence_canvas": copy.deepcopy(sequence.get('canvas')),
                                      "project_canvas": sequence_canvas(project, {'canvas':None})}},
         "tracks": {"OTIO_SCHEMA": "Stack.1", "name": "tracks", "children": tracks},
@@ -417,13 +445,15 @@ def _export_otio(root: Path, project: dict[str, Any], output: Path) -> dict[str,
     atomic_write_json(output, payload)
     report = {"report_version": "0.1.0", "direction": "export", "source_format": "agent-project/0.1.0", "target_format": "opentimelineio-json", "created_at": now_iso(), "items": items, "warnings": [item for item in items if item["status"] in {"Approximate", "Unsupported"}], "failures": [item for item in items if item["status"] == "Failed"]}
     report_path = output.with_suffix(output.suffix + ".conversion-report.json")
+    extra = _tracking_export_receipt(root, original, output, report, bake_receipt, bound_clips)
     atomic_write_json(report_path, report)
-    return {"output": str(output), "report": str(report_path), "report_data": report}
+    return {"output": str(output), "report": str(report_path), "report_data": report, **extra}
 
 
 def _export_kdenlive_xml(root: Path, project: dict[str, Any], output: Path) -> dict[str, Any]:
     from .bindings import bake_interchange_bindings
-    project,bound_clips = bake_interchange_bindings(project)
+    original = project; bake_receipt = {}
+    project,bound_clips = bake_interchange_bindings(project, root, receipt=bake_receipt)
     sequence = project.get('sequences', [{}])[0]
     canvas = sequence_canvas(project, sequence)
     tps = int(project["settings"]["timebase"]["ticks_per_second"])
@@ -497,11 +527,35 @@ def _export_kdenlive_xml(root: Path, project: dict[str, Any], output: Path) -> d
     ET.ElementTree(root_element).write(output, encoding="utf-8", xml_declaration=True)
     report = {"report_version": "0.1.0", "direction": "export", "source_format": "agent-project/0.1.0", "target_format": "kdenlive-mlt-xml", "created_at": now_iso(), "items": items, "warnings": [item for item in items if item["status"] in {"Approximate", "Unsupported"}], "failures": [item for item in items if item["status"] == "Failed"]}
     report_path = output.with_suffix(output.suffix + ".conversion-report.json")
+    extra = _tracking_export_receipt(root, original, output, report, bake_receipt, bound_clips)
     atomic_write_json(report_path, report)
-    return {"output": str(output), "report": str(report_path), "report_data": report}
+    return {"output": str(output), "report": str(report_path), "report_data": report, **extra}
 
 
-def export_external(root: Path, project: dict[str, Any], output: Path, target_format: str, *, strict: bool = False) -> dict[str, Any]:
+def export_external(root: Path, project: dict[str, Any], output: Path, target_format: str, *, strict: bool = False, bake_tracking: bool = False) -> dict[str, Any]:
+    _protect_export(root, project, output)
+    if bake_tracking:
+        if strict or target_format not in {'agent-json', 'package'}:
+            raise ValueError('--bake-tracking 适用于 agent-json/package；外部格式自动烘焙并报告损失')
+        from .bindings import bake_interchange_bindings
+        receipt = {}; baked, bound = bake_interchange_bindings(project, root, receipt=receipt)
+        if not bound: return export_external(root, project, output, target_format)
+        # Reuse the ordinary exporters; no binding-aware runtime is required in
+        # the exported graph. Keep the original author graph in its own sidecar.
+        transformation = dict(items=[report_item('tracking-binding', 'Baked', cid,
+            detail='绑定烘焙为普通hold关键帧；只验收当前工程显示帧；完整原绑定保存在旁车') for cid in bound],
+            preserved_source=output.with_suffix(output.suffix + '.source-agent.json').name,
+            source_root=str(root.resolve()))
+        if receipt: transformation['tracking_bake'] = receipt
+        result = (_export_project_package(root, baked, output, transformation_report=transformation)
+                  if target_format == 'package' else export_external(root, baked, output, target_format))
+        report = result['report_data']
+        if target_format != 'package':
+            report['items'].extend(transformation['items'])
+            report['warnings'].extend(transformation['items'])
+        result.update(_tracking_export_receipt(root, project, output, report, receipt, bound))
+        atomic_write_json(Path(result['report']), report)
+        return result
     if target_format == "jianying-draft-json":
         from .draft_adapter import export_draft
 
@@ -537,6 +591,19 @@ def _import_otio(source: Path, destination: Path, payload: dict[str, Any]) -> tu
     sequence = project["sequences"][0]
     metadata = payload.get('metadata') if isinstance(payload.get('metadata'), dict) else {}
     local = metadata.get('ai_ad_editor') if isinstance(metadata.get('ai_ad_editor'), dict) else {}
+    if 'ticks_per_second' in local:
+        value = local['ticks_per_second']
+        if type(value) is not int or value <= 0: raise ValueError('OTIO本地metadata的ticks_per_second必须为正整数')
+        project['settings']['timebase']['ticks_per_second'] = value
+    if 'display_fps' in local:
+        value = local['display_fps']
+        if not isinstance(value, dict) or set(value) != {'num','den'} or any(type(value.get(k)) is not int or value[k] <= 0 for k in ('num','den')):
+            raise ValueError('OTIO本地metadata的display_fps必须为正整数比')
+        project['settings']['timebase']['display_fps'] = copy.deepcopy(value)
+    if 'duration_tick' in local:
+        value = local['duration_tick']
+        if type(value) is not int or value < 1: raise ValueError('OTIO本地metadata的duration_tick必须为正整数')
+        sequence['duration_tick'] = value
     if local.get('canvas') is not None:
         validate_canvas(local['canvas'], path='metadata.ai_ad_editor.canvas')
         sequence['canvas'] = copy.deepcopy(local['canvas'])
@@ -670,6 +737,7 @@ def _import_kdenlive_xml(source: Path, destination: Path) -> tuple[dict[str, Any
     except (TypeError, ValueError):
         fps_num, fps_den = 30, 1
         report_items.append(report_item("timebase", "Approximate", "Kdenlive MLT XML", "Agent Project JSON", "profile 帧率无效，回退 30/1"))
+    project['settings']['timebase']['display_fps'] = {'num':fps_num, 'den':fps_den}
     producers: dict[str, Path] = {}
     for producer in root_element.findall("./producer"):
         resource = producer.find("property[@name='resource']")
@@ -943,7 +1011,7 @@ def import_external(source: Path, destination: Path, *, strict: bool = False) ->
             atomic_write_json(report_path, report)
             return {"root": str(root), "project": str(root / "project.json"), "report": str(report_path), "report_data": report}
         root, _, items = _import_otio(source, destination, payload)
-    elif source.suffix.lower() in {".xml", ".kdenlive"}:
+    elif source.suffix.lower() in {".xml", ".kdenlive", ".mlt"}:
         root, _, items = _import_kdenlive_xml(source, destination)
     else:
         raise ValueError(f"不支持的外部格式: {source.suffix}")

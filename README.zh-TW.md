@@ -9,9 +9,31 @@
 本頁包含完整功能模塊、服務與依賴、安裝與使用邏輯、Skill 輸入輸出、真實案例和核驗表。長篇原始驗收日志繼續留檔，功能說明與案例入口恢復到首頁。
 
 
+<!-- tracking-bake-current -->
+
+**CLI0.1.32 / alpha.4-local.30 / r33 kit · 1 Skill / 17 modules.**
+
+原生 PTS 跟蹤現可烘焙為普通 hold 關鍵幀：保留真實幀時鐘、遮罩與轉場可見度，逐幀比較烘焙前後全部 Float32 顯示幀，再匯出工程。原始綁定另存旁車；普通工程包繼續保留動態綁定。
+
+```powershell
+& $avk convert export --project $avkProject --target-format package `
+  --bake-tracking --output $bakedPackagePath
+& $avk convert import --input $bakedPackagePath --output $newProjectDirectory
+```
+
+[Workflow](docs/product/TRACKING_BAKE.md) · [C42](docs/product/CASES.md#c42-tracking-bake) · [Install](docs/releases/CLI_0.1.32_LOCAL.md) · [Evidence](docs/validation/跟踪原生烘焙导出实测_2026-10-26.md)
+
+![Native tracking left / baked keys right / actual silent GIF](docs/assets/tracking-bake-20261026-r5/comparison.gif)
+
+C42 實際註冊 Skill：36幀 Float32 核驗，工程包重匯入後36個解碼幀與完整144000雙聲道採樣一致；5種格式匯出/回讀，嚴格草稿與來源覆寫拒絕通過。GPU 兩輪幀運算與資源關閉留證。外部播放器、自然品質、連續播放與人工聽審未驗收；保留38項原關閉條件。
+
+GIF 為 24 幀、實際 3.01 秒（10ms 延遲單位）；MP4 保留原始 3 秒時鐘。
+
+<!-- /tracking-bake-current -->
+
 <!-- tracking-visibility-current -->
 
-**CLI0.1.31 / alpha.4-local.29 / r32 kit · 1 Skill / 17 modules.**
+**Historical / 历史 / 歷史：CLI0.1.31 / alpha.4-local.29 / r32 kit · 1 Skill / 17 modules.**
 
 實際來源像素/效果alpha和5類遮罩已接入跟蹤；59種進出場/雙來源轉場傳遞錨點及ROI足跡，連續轉場保留完整密度，生成黑白幕不偽造來源；獨立空間進出場可共享變速。
 
@@ -649,7 +671,7 @@ flowchart LR
 | F57 | 原生浮點GPU執行層 | 明確GPU策略 → 線性Float32仿射、一般疊加、文字元件／段落與逐詞選擇；正式算繪／預覽／佇列／恢復。 | `projection_acceleration; render; preview; queue` | off/prefer/require；實際binary64／次正規探測；任務專屬程序與共用段；其餘算子CPU，非全部GPU化。 |
 | F58 | Float32全域／區間調整層 | 全軌含字幕合成後依序調色；LUT／曝光及既有浮點效果、六類關鍵影格、選中根僅套用一次。 | `settings.adjustments; preview; render; queue` | 明確線性工作域／效果訊號；CPU執行；LUT持鎖／封裝遷移；保留作者區間時鐘，非完整HDR。 |
 | F59 | 原生PTS跟蹤及疊加軌 | 保存來源觀測→依實際原生影格求跟隨位置；共用crop/TRS、ROI縮放／相對旋轉、透明度、視窗及巢狀聲音。 | `media track-bind; preview; render; queue; package` | 明確Float32，原生PTS不烘焙顯示鍵；預算／循環門禁；模板漂移及遮擋另審，中間格式烘焙未接通。 |
-| F60 | 原生跟蹤與後續編輯 | 實際alpha/5類遮罩、59轉場錨點與ROI足跡；共享變速、磁性分片、實體來源編輯保留觀察。 | `media track-bind; timeline compose/edit; preview; render; package` | 來源貢獻在更高軌道遮擋前；丟失足跡隱藏；自然身分/遮擋品質與中間格式烘焙待補。 |
+| F60 | 原生跟蹤與烘焙交付 | 實際alpha/5類遮罩/59轉場足跡；剪輯與共享變速保留觀察；原生烘焙逐幀核驗並保留來源旁車。 | `media track-bind; timeline compose/edit; convert export --bake-tracking` | 目前凍結圖/FPS；20,000幀/256,000求值；無法表達的整數步進拒絕；外部播放器與自然身分/遮擋待驗收。 |
 
 ## 支持的服務模塊與依賴
 
@@ -776,7 +798,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.29/final-r1/installed/`，CLI 0.1.31；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
+本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.30/final-r3/installed/`，CLI 0.1.32；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1190,6 +1212,12 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R221 | 2026-10-26 native tracking visibility | 新r32獨立kit111檔案，唯一註冊/17模組/73 Skill檔案；獨立CLI、C40反向變速dry-run和新可見度協定已核驗，無原始碼回退/推理。 | [Evidence](docs/validation/evidence/tracking-visibility-20261026-r1/kit-r1/verification.json) |
 | R222 | 2026-10-26 native tracking visibility | 完整三語README/手冊/能力JSON/Skill/媒體及暫存位元組審核；保留217歷史R列與38原關閉條件；60功能/20服務/75實際宣告。 | [Evidence](docs/validation/evidence/tracking-visibility-20261026-r1/final-delivery-r2/verification.json) |
 | R223 | 2026-10-26 native tracking visibility | 開發失敗獨立保留：舊標量alpha斷言、Fraction進度、滑動方向/參考精度、缺少probe/獨立邊緣門禁及第一份無效C41請求。最終門檻與目標邊界明確保留。 | [Evidence](docs/validation/evidence/tracking-visibility-20261026-r1/development-attempts-r1/verification.json) |
+| R224 | 2026-10-26 native tracking bake | CLI0.1.32/local.30：225產品檔案/schema與原始碼一致；唯一Skill/17模組/73檔案/4既有模型包。獨立安裝組：跟蹤149、轉換83、舊流程192，失敗/錯誤/跳過皆0。 | [Evidence](docs/validation/evidence/tracking-bake-20261026-r1/installation-final-r3/verification.json) |
+| R225 | 2026-10-26 native tracking bake | C42實際安裝Skill：45次原生綁定取樣、36幀Float32精確一致；烘焙工程包重匯入後全部36解碼幀及144000完整雙聲道採樣保留。 | [Evidence](docs/validation/evidence/tracking-bake-20261026-r1/case-r5/verification.json) |
+| R226 | 2026-10-26 native tracking bake | 5條格式匯出/回讀：package、agent-json、OTIO、MLT、draft；旁車保留原始觀察；嚴格草稿與來源覆寫拒絕；未宣稱外部渲染器等價。 | [Evidence](docs/validation/evidence/tracking-bake-20261026-r1/case-r5/format-exports.json) |
+| R227 | 2026-10-26 native tracking bake | 每輪純幀運算實際GPU affine90/over81；來源、worker與共享資源已關閉。prepared傳輸狀態與編碼成片品質分開記錄。 | [Evidence](docs/validation/evidence/tracking-bake-20261026-r1/case-r5/native-bake-proof.json) |
+| R228 | 2026-10-26 native tracking bake | 新r33 kit112檔案、唯一Skill/17模組/73 Skill檔案；獨立註冊及CLI/help/烘焙dry-run核驗，無渲染或原始碼回退。 | [Evidence](docs/validation/evidence/tracking-bake-20261026-r1/kit-r1/verification.json) |
+| R229 | 2026-10-26 native tracking bake | 完整三語README、60功能/20服務/75宣告、流程、案例/GIF、Skill與位元組審核同步；223歷史R列及38原關閉條件保留，開發失敗獨立留證。 | [Evidence](docs/validation/evidence/tracking-bake-20261026-r1/development-attempts-r4/verification.json) |
 
 ## 當前邊界與開發方向
 

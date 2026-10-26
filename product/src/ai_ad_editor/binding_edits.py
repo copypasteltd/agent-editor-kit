@@ -12,7 +12,7 @@ from .errors import AppError
 PROTOCOL = 'native-tracking-edit-lineage-v1'
 
 
-def replan(project, sequence, original, origins, *, source_changes=()):
+def replan(project, sequence, original, origins, *, source_changes=(), containerized_sources=()):
     if not native_clock_project(project):return []
     before = {c['id']:(t,c) for t in original['tracks'] for c in t['clips']}
     after = {c['id']:(t,c) for t in sequence['tracks'] for c in t['clips']}
@@ -42,6 +42,11 @@ def replan(project, sequence, original, origins, *, source_changes=()):
                 cid = reference['clip_id']
                 pairs = descendants.get(cid,[]) if cid in before else [after[cid]] if cid in after else []
                 for source_track, source in pairs:
+                    if source['id'] in containerized_sources:
+                        # The matching target interval lives in the same shared
+                        # author graph. Outside retained pieces still use only
+                        # direct sources on the parent clock.
+                        continue
                     if source.get('sequence_id') or source.get('asset_id') != binding['asset_id']:
                         raise AppError('EDIT_BINDING_SOURCE_CHANGED','编辑替换了跟踪源的媒体身份，需重新跟踪或明确解除绑定',exit_code=2)
                     retained=dict(track_id=source_track['id'],clip_id=source['id'],

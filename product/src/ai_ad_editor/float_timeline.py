@@ -187,7 +187,11 @@ class FloatTimeline:
                 if clip.get('sequence_id'):
                     child=clip['sequence_id']
                     if child not in self.sequences:raise error('SEQUENCE','子序列不存在',clip=path)
+                    from .sequence_selection import selected
+                    selected(self.project,clip)
                     self._validate(child,(*stack,sequence_id))
+                elif 'sequence_clip_id' in clip:
+                    raise error('SELECTION','单片段输出必须引用子序列',clip=path)
                 elif not independent_text:
                     asset_id=clip.get('asset_id');asset=self.assets.get(asset_id);source=self.sources.get(asset_id)
                     if not asset or asset.get('kind') not in ('video','image') or not isinstance(source,TimedSurfaceSource):raise error('SOURCE','片段需要已登记本地视频/图片及对应浮点源',clip=path)
@@ -299,14 +303,18 @@ class FloatTimeline:
         source_time,tick,right=self._source_time(clip,local_tick,path,left_limit=left_limit)
         text_plan=self.text_plans.get(path);text_metadata=None;extra_rotation=0.
         text_tick=local_tick+int((clip.get('presentation_window') or {}).get('offset_tick',0))-int((clip.get('_source_handle') or {}).get('head_tick',0))
-        frame_index=None;source=None
+        frame_index=None;source=None;inherited_opacity=1.;inherited_mode='normal'
         start,end=Fraction(int(clip['source_in_tick']),self.tps),Fraction(int(clip['source_out_tick']),self.tps)
         if text_plan and text_plan['independent']:
             source,text_metadata=self.text_host.sample(text_plan,at,text_tick,(canvas['width'],canvas['height']),left_limit=left_limit)
             extra_rotation=self.text_host.rotation(text_plan,tick)
         elif start<=source_time<=end and (source_time!=end or right):
             if clip.get('sequence_id'):
-                source=self._sequence(clip['sequence_id'],source_time,rows,depth=depth+1,left_limit=right)
+                if 'sequence_clip_id' in clip:
+                    source,inherited_opacity,inherited_mode=self._selected(clip['sequence_id'],clip['sequence_clip_id'],
+                        source_time,rows,depth=depth+1,left_limit=right)
+                else:
+                    source=self._sequence(clip['sequence_id'],source_time,rows,depth=depth+1,left_limit=right)
             else:
                 source,frame_index=self.sources[clip['asset_id']].sample(source_time,right_edge=right)
         if source is None:
@@ -331,6 +339,7 @@ class FloatTimeline:
         layer,opacity,inverse,mask_metadata,crop_metadata=self._project(clip,source,canvas,tick,path,extra_rotation=extra_rotation,overrides=binding['values'] if binding else None)
         blend=clip.get('blend') or {}
         opacity*=keyframe_value(clip,('blend.opacity','blend_opacity'),float(blend.get('opacity',1)),float(tick))
+        opacity*=inherited_opacity
         if not math.isfinite(opacity) or not 0<=opacity<=1:raise error('GEOMETRY','合并后的图层透明度须为有限0..1数值')
         row={'clip':path,'source_time':str(source_time),'native_frame_index':frame_index,'right_edge':right,
             'author_animation_tick':str(tick),'inverse_affine':inverse,'opacity':opacity,'effects':effect_metadata,'mask':mask_metadata,'crop':crop_metadata}
@@ -340,7 +349,7 @@ class FloatTimeline:
             'clock_tick':str(text_tick),'placement':'after-media-effects-before-clip-projection' if not text_plan['independent'] else 'sequence-canvas-before-clip-effects-and-projection',
             'rotation_degrees':self.text_host.rotation(text_plan,tick)}
         rows.append(row)
-        return layer,blend.get('mode','normal'),tick,row
+        return layer,blend.get('mode',inherited_mode),tick,row
 
     @staticmethod
     def _transition_opacity(layer,row):
@@ -359,6 +368,29 @@ class FloatTimeline:
             layer,metadata=transition_rgba(a,b,q,kind=edge['type'],max_working_bytes=self.max_working_bytes,cancel=self.poll)
             row.setdefault('edge_transitions',[]).append({**metadata,'edge':edge['edge'],'target':'transparent canvas'})
         return layer
+
+    def _selected(self,sequence_id,clip_id,at,rows,*,depth,left_limit):
+        """One layer, with blend/opacity deferred to its original parent slot.
+
+        Keep scalar opacity separate to avoid an extra Float32 alpha rounding
+        and preserve noncommutative blending with intervening parent layers.
+        Tracking still resolves against every original peer in the child.
+        """
+        sequence=self.sequences[sequence_id];canvas=sequence_canvas(self.project,sequence)
+        track,clip=next((t,c) for t in sequence['tracks'] for c in t['clips'] if c['id']==clip_id)
+        local=at*self.tps-clip['timeline_start_tick']
+        active=0<local<=clip['duration_tick'] if left_limit else 0<=local<clip['duration_tick']
+        duration=Fraction(sequence['duration_tick'],self.tps)
+        active=active and ((0<at<=duration) if left_limit else (0<=at<duration))
+        if track.get('muted') or track['kind'] not in ('video','overlay','subtitle') or not active:
+            return np.zeros((canvas['height'],canvas['width'],4),np.float32),1.,'normal'
+        layer,mode,tick,row=self._layer(sequence_id,clip,at,canvas,rows,depth,left_limit)
+        envelopes=self.transition_plans[sequence_id+'/'+track['id']]['edges'][clip_id]
+        opacity=row.get('opacity',1.)
+        if envelopes:
+            layer=self._edge_transitions(self._transition_opacity(layer,row),envelopes,tick,row);opacity=1.
+        row['selected_author_output']=True
+        return layer,opacity,mode
 
     def _sequence(self,sequence_id,at,rows,*,root=False,depth=0,left_limit=False):
         self.poll();sequence=self.sequences[sequence_id];canvas=sequence_canvas(self.project,sequence);w,h=canvas['width'],canvas['height']

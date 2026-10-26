@@ -609,6 +609,12 @@ def validate_project(root: Path, project: dict[str, Any], *, strict_rights: bool
                     error("REFERENCE_MISSING", "片段引用的资产或序列不存在", cp)
                 if inline_text_layer and (clip.get("asset_id") or clip.get("sequence_id")):
                     error("GENERATOR_REFERENCE_CONFLICT", "文字 generator 不能同时引用 asset_id 或 sequence_id", cp)
+                if 'sequence_clip_id' in clip:
+                    try:
+                        from .sequence_selection import selected
+                        selected(project, clip)
+                    except AppError as exc:
+                        error(exc.code, exc.message, cp+'.sequence_clip_id')
                 if track_kind == "subtitle" and clip.get("asset_id"):
                     subtitle_asset = asset_map(project).get(clip.get("asset_id"))
                     if subtitle_asset and subtitle_asset.get("kind") != "subtitle":

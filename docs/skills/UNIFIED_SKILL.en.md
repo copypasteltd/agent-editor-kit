@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.29 / alpha.4-local.27 / r30 kit · 1 Skill / 17 modules / 73 files.**
+**CLI0.1.30 / alpha.4-local.28 / r31 kit · 1 Skill / 17 modules / 73 files.**
 
-Magnetic reorder now partitions tracked sources, followers and linked audio across main-track cuts. It rebuilds source routes from the complete pre-cut graph, retaining observations, pinned ROI references, fragment offsets and complete authored clocks.
+Tracked sources, followers and linked sound now share a complete author graph during relative output retiming. Each parent layer selects its own output, preserving saved observations, native PTS, ROI references, crop/motion, scalar alpha and external blend order.
 
-[Magnetic tracking workflow](../product/TRACKING_MAGNETIC.md)
+[Shared-author retime workflow](../product/TRACKING_RETIME.md)
 
 <!-- /community-current -->
 

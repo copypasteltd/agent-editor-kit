@@ -1,0 +1,25 @@
+{
+  "protocol": "shared-author-selected-output-v1",
+  "sequence_id": "moving_source_shared_author",
+  "context_clip_ids": [
+    "child_sound",
+    "follow_marker",
+    "moving_source"
+  ],
+  "retimed_clip_ids": [
+    "child_sound",
+    "follow_marker",
+    "moving_source"
+  ],
+  "readonly_context_clip_ids": [],
+  "selected_author_clip_ids": {
+    "child_sound": "child_sound_shared_author",
+    "follow_marker": "follow_marker_shared_author",
+    "moving_source": "moving_source_shared_author_2"
+  },
+  "parent_link_id": "moving_source_shared_output_link",
+  "source_observations_preserved": true,
+  "external_layer_order_preserved": true,
+  "display_keyframes_baked": false,
+  "model_inference": false
+}

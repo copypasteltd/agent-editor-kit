@@ -1401,6 +1401,9 @@
         "sequence_id": {
           "$ref": "#/$defs/id"
         },
+        "sequence_clip_id": {
+          "$ref": "#/$defs/id"
+        },
         "link_id": {
           "oneOf": [
             {

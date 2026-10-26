@@ -1,5 +1,7 @@
 # 原生 PTS 跟踪绑定 / Native PTS tracking bindings
 
+CLI0.1.30 adds [shared-author tracking retime and C40](TRACKING_RETIME.md); prior versioned records retain their historical scope.
+
 CLI0.1.29 now supports synchronized magnetic tracking cuts/reorder; [current workflow and C39](TRACKING_MAGNETIC.md). Earlier versioned records below retain their original scope.
 
 CLI0.1.28 extends tracked physical slip/real source handles; see [current source-edit workflow](TRACKING_SOURCE_EDITS.md). Earlier versioned checks below retain their original scope.

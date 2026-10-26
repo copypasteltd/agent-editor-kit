@@ -9,9 +9,23 @@
 本页包含完整功能模块、服务与依赖、安装与使用逻辑、Skill 输入输出、真实案例和核验表。长篇原始验收日志继续留档，功能说明与案例入口恢复到首页。
 
 
+<!-- tracking-retime-current -->
+
+**CLI0.1.30 / alpha.4-local.28 / r31 kit · 1 Skill / 17 modules.**
+
+跟踪源、标签与关联音轨支持完整输出变速。依赖闭包保存在共享作者子序列，各父层只选择自己的输出；保留原始观察、原生PTS、ROI基准、裁切/运镜、透明度和外部叠放顺序。
+
+[Workflow](docs/product/TRACKING_RETIME.md) · [C40](docs/product/CASES.md#c40-tracking-retime) · [Install](docs/releases/CLI_0.1.30_LOCAL.md) · [Evidence](docs/validation/跟踪共享变速实测_2026-10-26.md)
+
+![Actual registered Skill / silent GIF](docs/assets/tracking-retime-20261026-r1/edited.gif)
+
+实际2倍速案例：全部18帧Float32与解码画面对应原片偶数帧；完整72000双声道采样与独立FFmpeg tempo输出逐样本相等。工程包重导入与队列另行核验。合成诊断素材，未作自然质量、连续播放或人工听审验收。
+
+<!-- /tracking-retime-current -->
+
 <!-- tracking-magnetic-current -->
 
-**CLI0.1.29 / alpha.4-local.27 / r30 kit · 1 Skill / 17 modules.**
+**Historical / 历史 / 歷史：CLI0.1.29 / alpha.4-local.27 / r30 kit · 1 Skill / 17 modules.**
 
 磁性重排支持跟踪源、标签与关联音轨跨主轨剪口同步拆分；从剪切前的完整作者工程重建源引用，保留原始观察、ROI基准、每分片偏移及完整处理时钟。
 
@@ -575,7 +589,7 @@ flowchart LR
 | F11 | 源句柄、滑移与滑动 | 源入出点与邻接片段 → 可逆源编辑、源句柄转场和剪口调整。 | `timeline edit/transition` | 源句柄不足会报错；不以静默复制帧替代。 |
 | F12 | 磁吸、主轨与关联音画 | 主轨重排、原生跟踪跨剪口同步拆分、区域关联ID和音画附着。 | `timeline edit` | 显式同步及拆分策略；锁、转场端点和资源门禁；非原生跟踪跨剪口继续受限。 |
 | F13 | 复合与嵌套序列 | 子序列 → 独立画布合成、父变换/透明度、嵌套时钟与定格。 | `timeline compose/edit` | 独立空间不代表独立色彩/帧率；部分组级空间转场未接受。 |
-| F14 | 变速、倒放与定格 | 显式速度/曲线/Bezier/定格点 → 视频时钟与音频映射。 | `timeline edit; render` | 变速音频后端各有边界；可选 Rubber Band R3 需要已有原生工具。 |
+| F14 | 变速、倒放与定格 | 显式速度/曲线/Bezier/定格点；原生跟踪依赖闭包共享完整作者时钟，各层输出选择保留叠放位置及关联声音。 | `timeline edit; render` | 默认ripple与显式sync_content:retime不同；锁/端点/预算门禁，音频后端与非恒速曲线保留原精度边界。 |
 | F15 | 关键帧与缓动 | 位置、锚点、缩放、旋转、透明度、裁切、蒙版、音量/声像 → 逐帧动画。 | `timeline compose; schema show` | hold/linear/ease_in/ease_out/ease_in_out/bezier；枚举/布尔值不推断为连续动画。 |
 | F16 | 12 套运镜预设 | 推拉、上下左右平移、Ken Burns、旋入/旋出、淡入/淡出、shake → 可编辑关键帧。 | `motion list/inspect/apply` | 参数有界；是明确关键帧预设，不是 AI 三维相机或全部商业运镜库。 |
 | F17 | 转场与剪口效果 | 相邻片段与源句柄 → 淡化、擦除、滑动、黑/白场、圆形等已声明转场。 | `timeline transition; capabilities` | 按渲染路径和层级选择；显式 Float32 已提供 F55 的转场子集，CPU 执行，支持范围见其独立契约。 |
@@ -621,7 +635,7 @@ flowchart LR
 | F57 | 原生浮点GPU执行层 | 明确GPU策略 → 线性Float32仿射、普通叠加、文字组件/段落与逐词选择；正式渲染/预览/队列/恢复。 | `projection_acceleration; render; preview; queue` | off/prefer/require；实际binary64/次正规探测；任务独占进程和共享段；其余算子CPU，非全部GPU化。 |
 | F58 | Float32全局/区间调整层 | 全轨含字幕合成后按顺序调色；LUT/曝光及既有浮点效果、六类关键帧、选中根只应用一次。 | `settings.adjustments; preview; render; queue` | 显式线性工作域/效果信号；CPU执行；LUT持锁/包迁移；保留作者区间时钟，非完整HDR。 |
 | F59 | 原生PTS跟踪与叠加轨 | 保存源观测→按实际原生帧求跟随位置；共享crop/TRS、ROI缩放/相对旋转、透明度、窗口与嵌套声音。 | `media track-bind; preview; render; queue; package` | 显式Float32，原生PTS不烘焙显示键；预算/循环门禁；模板漂移与遮挡另审，中间格式烘焙未接通。 |
-| F60 | 原生跟踪后续编辑 | 磁性重排分片路由、分割/裁切/波纹/范围、物理滑移与外扩；保留原始观察、分片偏移、ROI基准、目标透明度及关联音轨。 | `timeline compose/edit; preview; render; package` | 显式Float32；有限源/锁/重叠/循环预算门禁；带绑定容器变速及中间格式烘焙继续推进。 |
+| F60 | 原生跟踪后续编辑 | 共享作者变速、逐层输出、完整音轨单次选择；磁性分片重排、分割/裁切/波纹/范围、物理滑移与外扩；保留原始观察/基准。 | `timeline compose/edit; preview; render; package` | 显式Float32；父层关联组保留共享输出时钟；显式解除关联会分离完整输出；中间格式烘焙及自然遮挡质量继续推进。 |
 
 ## 支持的服务模块与依赖
 
@@ -748,7 +762,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.27/final-r1/installed/`，CLI 0.1.29；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
+本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.28/final-r1/installed/`，CLI 0.1.30；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1150,6 +1164,12 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R209 | 2026-10-26 原生跟踪磁性重排 | r30独立工具包：唯一注册、17模块、73个Skill文件；真实磁性重排dry-run、绑定改写和工程验证；作者工程及素材不变，实际发现入口不变。 | [Evidence](docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/verification.json) |
 | R210 | 2026-10-26 原生跟踪磁性重排 | 安装版/Skill/媒体/三语文档/暂存字节核验；保留205条历史R记录及38项原关闭条件；60功能、20服务、75组实际能力声明。 | [Evidence](docs/validation/evidence/tracking-magnetic-20261026-r1/final-delivery-r2/verification.json) |
 | R211 | 2026-10-26 原生跟踪磁性重排 | 保留开发失败：新测试请求的片段ID a与资产ID a冲突，正确拒绝；改用shot_a/shot_b/shot_c，未降低像素门槛或移除产品门禁。 | [Evidence](docs/validation/evidence/tracking-magnetic-20261026-r1/development-attempts-r1/verification.json) |
+| R212 | 2026-10-26 原生跟踪共享变速 | 离线安装CLI0.1.30/local.28-final-r1，222个产品Python文件/schema与源码一致；唯一Skill、17模块、73文件。 | [Evidence](docs/validation/evidence/tracking-retime-20261026-r1/installation-final-r1/verification.json) |
+| R213 | 2026-10-26 原生跟踪共享变速 | 安装版分组核验：跟踪79、磁性66、编辑195、绑定71、Float32合成98、渲染46、音频65、旧CLI192；各组独立，无跳过。 | [Evidence](docs/validation/evidence/tracking-retime-20261026-r1/tracking-installed-r1/verification.json) |
+| R214 | 2026-10-26 原生跟踪共享变速 | C40统一Skill实际2倍速：共享作者依赖图、逐层输出；全部18帧Float32/PTS/几何与原偶数帧一致；完整72000双声道采样与独立tempo误差0；包及队列复现。 | [Evidence](docs/validation/evidence/tracking-retime-20261026-r1/case-r1/verification.json) |
+| R215 | 2026-10-26 原生跟踪共享变速 | r31独立工具包：唯一注册、17模块、73个Skill文件；真实共享变速dry-run、原观察保持和工程验证，作者工程及素材不变。 | [Evidence](docs/validation/evidence/tracking-retime-20261026-r1/kit-r1/verification.json) |
+| R216 | 2026-10-26 原生跟踪共享变速 | 安装版/Skill/媒体/三语完整文档及暂存字节核验；保留211条历史R记录及38项原关闭条件；60功能、20服务、75组实际能力声明。 | [Evidence](docs/validation/evidence/tracking-retime-20261026-r1/final-delivery-r1/verification.json) |
+| R217 | 2026-10-26 原生跟踪共享变速 | 保留开发失败：重复嵌套变速的额外alpha取整和缺少显式sync_content:retime的测试场景；修复共享输出路径/明确请求后通过，未放宽逐像素门槛。 | [Evidence](docs/validation/evidence/tracking-retime-20261026-r1/development-attempts-r1/verification.json) |
 
 ## 当前边界与开发方向
 

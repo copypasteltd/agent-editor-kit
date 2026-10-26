@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.29 / alpha.4-local.27 / r30 kit · 1 Skill / 17 modules / 73 files.**
+**CLI0.1.30 / alpha.4-local.28 / r31 kit · 1 Skill / 17 modules / 73 files.**
 
-磁性重排支援追蹤來源、標籤與關聯音軌跨主軌剪口同步拆分；從剪切前的完整作者工程重建來源引用，保留原始觀察、ROI基準、各分片偏移及完整處理時鐘。
+追蹤來源、標籤與關聯音軌支援完整輸出變速。依賴閉包保存在共享作者子序列，各父層只選擇自己的輸出；保留原始觀察、原生PTS、ROI基準、裁切/運鏡、透明度及外部疊放順序。
 
-[Magnetic tracking workflow](TRACKING_MAGNETIC.md)
+[Shared-author retime workflow](TRACKING_RETIME.md)
 
 <!-- /community-current -->
 

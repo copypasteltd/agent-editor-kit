@@ -21,7 +21,8 @@ def project_digest(project):
 
 def prepare(root,project,sequence_id,*,cancel_file=None,persist_clock=True):
     root=Path(root).resolve();marker=Path(cancel_file) if cancel_file is not None else None;cancel(marker)
-    detached=copy.deepcopy(project);detached['settings'].pop('adjustments',None);pruned=0;audio_containers=0
+    from .sequence_selection import specialize_audio
+    detached=specialize_audio(project);detached['settings'].pop('adjustments',None);pruned=0;audio_containers=0
     source_plans=[]
     # Resolve handles and paired audio envelopes while the original visual
     # endpoint references still exist. Declarations are compiler input only;

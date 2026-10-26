@@ -141,7 +141,43 @@ the complete pre-cut graph, including chains, pinned ROI/rotation references
 and per-fragment author offsets. Linked video/audio keep region-specific links.
 Review sync opt-outs, locked dependants, changed source coverage and the encoded
 output. Legacy non-native tracking cuts and true transition endpoints retain
-explicit guards. This does not complete bound-container retime or natural
-identity/occlusion tracking.
+explicit guards. CLI 0.1.30 adds shared-author retime below. Natural identity/
+occlusion quality remains a separate acceptance condition.
 
 [Full workflow and actual C39 preview](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/TRACKING_MAGNETIC.md)
+
+## Shared author output retime (CLI 0.1.30)
+
+```json
+{"action":"retime","clip_ids":["source_clip"],"transform":{"speed":2}}
+```
+
+For intersections following a separate main shot, explicitly request
+`"sync_content":"retime"` and enable sync. The default `ripple` policy keeps
+its existing meaning. Plan with `timeline edit --dry-run`; inspect
+`steps[].shared_author_context`, every retimed member, readonly reference
+context, parent link group, retained outside routes and the clock/duration.
+Apply its project fingerprint with `--expected-project-sha256`.
+
+The native planner closes required tracking dependencies in both directions,
+copies complete author clips into one shared child and makes each parent slot
+select its own output through `sequence_clip_id`. Saved observations, crop/TRS,
+ROI reference, alpha and effects keep their original clock. Layer order and
+noncommutative external blending stay in the parent. Audio selects private
+instances so sibling video/label outputs do not duplicate the sound.
+
+Keep the generated parent link group when moving or retiming these outputs
+together. Edit the shared child's source/binding for subsequent tracking
+changes. Explicit unlink or `linked:false` separates complete authored outputs;
+it does not create live bindings between the independent parent wrappers.
+Locks, disabled dependency sync locks, real-transition endpoints and resource
+limits reject before commit. Default-renderer fallback and intermediate-format
+equivalence are unavailable; retain the native package or agent JSON graph.
+
+Show the actual C40 GIF/MP4 to explain the selected speed and preserve the
+editable package. Its synthetic 2x case verifies all 18 Float32/decoded frames,
+original native PTS/geometry and the complete 72000-sample stereo output
+against an independent FFmpeg tempo oracle, including package/queue checks.
+Review real client footage and sound separately before delivery.
+
+[Commands, scope and actual C40 preview](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/TRACKING_RETIME.md)

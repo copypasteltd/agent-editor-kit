@@ -2,7 +2,7 @@
 
 [使用手册](COMMUNITY_MATERIALS.md) · [繁體中文](COMMUNITY_MATERIALS.zh-TW.md) · [English](COMMUNITY_MATERIALS.en.md)
 
-当前本机版本是 **`v0.1.0-alpha.4-local.27` / CLI 0.1.29**，正式安装在 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.27/final-r1/installed/`。这是本地构建和验收记录；公开 GitHub Release 仍是 alpha.3 / CLI 0.1.2，原附件、标签和摘要不覆盖。
+当前本机版本是 **`v0.1.0-alpha.4-local.28` / CLI 0.1.30**，正式安装在 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.28/final-r1/installed/`。这是本地构建和验收记录；公开 GitHub Release 仍是 alpha.3 / CLI 0.1.2，原附件、标签和摘要不覆盖。
 
 The current build is installed locally. Public alpha.3 downloads remain unchanged and do not contain the new voice, translation, material or GPU commands. The updated Skill kit must be paired with this matching local runtime bundle.
 
@@ -14,9 +14,9 @@ The current build is installed locally. Public alpha.3 downloads remain unchange
 
 | 内容 / Item | 路径 / Path | 校验 / Verification |
 |---|---|---|
-| 编译好的基础运行 ZIP / Application bundle | `local/agent-ffmpeg/v0.1.0-alpha.4-local.27/candidate-r1/bundle.zip` | SHA-256 `055017499795ca1df41d541736952346095f6c3761cfed73b12a4bcee1b6c9ea` |
-| 运行包清单 / Bundle manifest | ZIP 内 / inside ZIP: `manifest.json` | `sha256:9f48fd2750870f8ec1c313a1b2254b0e06d80af269e0cec34cdbada02b5e9e76` |
-| 单入口 Skill kit / Single-entry kit | `docs/skills/agent-editor-kit-community-unified-skill-r30.zip` | [独立包摘要 / Package digest](../skills/community-unified-skill-package-0.1.29-r30.json) |
+| 编译好的基础运行 ZIP / Application bundle | `local/agent-ffmpeg/v0.1.0-alpha.4-local.28/candidate-r1/bundle.zip` | SHA-256 `5d6758c05fdfe05a10d06dc367dbef088e8c938b55f005f3c76f244af0d914ec` |
+| 运行包清单 / Bundle manifest | ZIP 内 / inside ZIP: `manifest.json` | `sha256:327c4f6ebe64d908abc97a9c082258217dd5184dbadaf3a7f983488371671ed8` |
+| 单入口 Skill kit / Single-entry kit | `docs/skills/agent-editor-kit-community-unified-skill-r31.zip` | [独立包摘要 / Package digest](../skills/community-unified-skill-package-0.1.30-r31.json) |
 | 四个模型 ZIP / Four model ZIPs | `local/agent-ffmpeg/community-model-archives-r2/` | 见下表及 / see table and `archives.json` |
 | 可移动模型安装 / Relocated model installation | `local/agent-ffmpeg/community-portable-r1/模型 包/` | 实际从四个 ZIP 安装；路径含中文与空格 / actually installed from all four ZIPs |
 | 当前调用配置 / Runtime configuration | `local/agent-ffmpeg/runtime.json` | 固定应用摘要、原生 Python、启动器摘要 / pinned app, native Python and launcher |
@@ -43,13 +43,13 @@ Requires native Windows x64, existing CPython 3.13 x64 and FFmpeg/ffprobe on PAT
 $aekPython = 'C:/Python313/python.exe'
 $aekSource = 'E:/dev/sandbox/AI广告剪辑'
 $aekHome = 'E:/tools/agent-editor-kit-gpu'
-$aekArchive = Join-Path $aekSource 'local/agent-ffmpeg/v0.1.0-alpha.4-local.27/candidate-r1/bundle.zip'
-$aekExpectedZip = '055017499795ca1df41d541736952346095f6c3761cfed73b12a4bcee1b6c9ea'
+$aekArchive = Join-Path $aekSource 'local/agent-ffmpeg/v0.1.0-alpha.4-local.28/candidate-r1/bundle.zip'
+$aekExpectedZip = '5d6758c05fdfe05a10d06dc367dbef088e8c938b55f005f3c76f244af0d914ec'
 if ((Get-FileHash -LiteralPath $aekArchive -Algorithm SHA256).Hash.ToLowerInvariant() -ne $aekExpectedZip) { throw 'Application archive hash mismatch' }
-Expand-Archive -LiteralPath (Join-Path $aekSource 'docs/skills/agent-editor-kit-community-unified-skill-r30.zip') -DestinationPath $aekHome
+Expand-Archive -LiteralPath (Join-Path $aekSource 'docs/skills/agent-editor-kit-community-unified-skill-r31.zip') -DestinationPath $aekHome
 Expand-Archive -LiteralPath $aekArchive -DestinationPath (Join-Path $aekHome 'bundle')
 Set-Location $aekHome
-& $aekPython -I -B -X utf8 ./bundle/install.py --bundle ./bundle --target ./local/agent-ffmpeg/installed --manifest-sha256 'sha256:9f48fd2750870f8ec1c313a1b2254b0e06d80af269e0cec34cdbada02b5e9e76' --timeout-seconds 600
+& $aekPython -I -B -X utf8 ./bundle/install.py --bundle ./bundle --target ./local/agent-ffmpeg/installed --manifest-sha256 'sha256:327c4f6ebe64d908abc97a9c082258217dd5184dbadaf3a7f983488371671ed8' --timeout-seconds 600
 if ($LASTEXITCODE) { throw 'Native application installation failed' }
 ```
 
@@ -307,3 +307,5 @@ CLI0.1.26 历史新增 [原生PTS跟踪绑定与叠加轨](FLOAT_TRACKING.md)：
 CLI0.1.28/local.26/r29：tracked physical slip/extension and rational constant clocks; [full workflow](TRACKING_SOURCE_EDITS.md), [verified release](../releases/CLI_0.1.28_LOCAL.md). Earlier local versions remain historical.
 
 CLI0.1.29/local.27/r30：native magnetic synchronized tracking cuts/reorder; [workflow](TRACKING_MAGNETIC.md), [verified local release](../releases/CLI_0.1.29_LOCAL.md). Previous versioned records remain historical.
+
+CLI0.1.30/local.28/r31：[shared-author tracking retime](TRACKING_RETIME.md), [verified local delivery](../releases/CLI_0.1.30_LOCAL.md).

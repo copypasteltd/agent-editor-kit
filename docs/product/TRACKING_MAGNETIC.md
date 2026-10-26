@@ -1,5 +1,7 @@
 # 跟踪素材的磁性重排 / Magnetic native tracking
 
+CLI0.1.30 adds [shared-author tracking retime and C40](TRACKING_RETIME.md); prior versioned records retain their historical scope.
+
 CLI0.1.29 在显式 `float32-native-v1` 工程中支持跟踪源和跟随标签跨主轨剪口同步拆分、重排。
 它保留原始观察和完整作者窗口，在移动后重建分片引用；不重新跟踪、不烘焙显示帧率关键帧。
 

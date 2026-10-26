@@ -2,8 +2,8 @@
   "format": "agent-ffmpeg-local-skills-v2",
   "status": "reviewed",
   "registration_mode": "single",
-  "release": "v0.1.0-alpha.4-local.27",
-  "manifest_sha256": "sha256:9f48fd2750870f8ec1c313a1b2254b0e06d80af269e0cec34cdbada02b5e9e76",
+  "release": "v0.1.0-alpha.4-local.28",
+  "manifest_sha256": "sha256:327c4f6ebe64d908abc97a9c082258217dd5184dbadaf3a7f983488371671ed8",
   "runtime_config": "local/agent-ffmpeg/runtime.json",
   "skill_count": 1,
   "module_count": 17,
@@ -13,7 +13,7 @@
     {
       "name": "agent-ffmpeg-local-editor",
       "purpose_zh": "唯一入口：17 项内部模块、原生PTS跟踪绑定/剪辑分片重规划/叠加轨嵌套声音、Float32全局/区间调整层、4K文字覆盖率复用/浮点GPU颜色与投影、逐词/打字机/SRT、浮点转场/真实句柄/组级空间进出场、原生 GPU 投影、可编辑广告分镜/返工、语义检索、字幕配音、四轨与 GPU 配音/翻译",
-      "skill_md_sha256": "c2cfb1b99959a5180a3b5a590ade7152082d27617ea2e0a89b10cf8dac5b8ed5"
+      "skill_md_sha256": "423254ac3f1fbf6dd753e067c0e7137102053f5a7701036c86a10a096a936534"
     }
   ],
   "modules": [
@@ -224,8 +224,8 @@
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/float-tracking.md",
-      "bytes": 8752,
-      "sha256": "9eb52d9fd6ad9c3bdb0148b621f917a7203b98c379dfc53cfec4e9b79b4d2100"
+      "bytes": 10840,
+      "sha256": "8d6f38711153c140e774b94c56412861653f9babccb4cef504cf7f974accb1ba"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/float-transitions.md",
@@ -500,7 +500,7 @@
     {
       "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
       "bytes": 7553,
-      "sha256": "d1b9241c4fa6eb4431cbdde26114bd09e225b23d2a5605304ffebcdc2710ee8d"
+      "sha256": "3d8d2cff760609dcdee4bd787ab01c14ffea524c9f7337d653b6d62a17fa2e2e"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/semantic-package.md",
@@ -530,12 +530,12 @@
     {
       "path": "skills/agent-ffmpeg-local-editor/scripts/run.py",
       "bytes": 2296,
-      "sha256": "109d64cb871f27667d80e9b4be13c9eb2ab2ed5b9c7da569ce48eb6a2f56500e"
+      "sha256": "61b7912f744be4f74d2e626973f65bc7cfb3d4f9d37879113ecb583bb2bfaf51"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
       "bytes": 10800,
-      "sha256": "c2cfb1b99959a5180a3b5a590ade7152082d27617ea2e0a89b10cf8dac5b8ed5"
+      "sha256": "423254ac3f1fbf6dd753e067c0e7137102053f5a7701036c86a10a096a936534"
     }
   ],
   "retired_skills": [
@@ -604,7 +604,7 @@
       "skill_md_sha256": "da31e25b3e641f80367075cdb4e72be99be2c89c332556d8ba58ec419fffd46b"
     }
   ],
-  "cli_version": "0.1.29",
+  "cli_version": "0.1.30",
   "material_count": 359,
   "named_voice_count": 103,
   "optional_model_pack_count": 4

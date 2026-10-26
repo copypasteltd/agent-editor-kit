@@ -9,9 +9,23 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
+<!-- tracking-retime-current -->
+
+**CLI0.1.30 / alpha.4-local.28 / r31 kit · 1 Skill / 17 modules.**
+
+Tracked sources, followers and linked sound now share a complete author graph during relative output retiming. Each parent layer selects its own output, preserving saved observations, native PTS, ROI references, crop/motion, scalar alpha and external blend order.
+
+[Workflow](docs/product/TRACKING_RETIME.md) · [C40](docs/product/CASES.md#c40-tracking-retime) · [Install](docs/releases/CLI_0.1.30_LOCAL.md) · [Evidence](docs/validation/跟踪共享变速实测_2026-10-26.md)
+
+![Actual registered Skill / silent GIF](docs/assets/tracking-retime-20261026-r1/edited.gif)
+
+Actual 2x case: all 18 Float32 and decoded frames match the original even frames; all 72000 stereo samples equal an independent FFmpeg tempo oracle. Package reimport and queue checked separately. Synthetic diagnostics; no natural-quality, continuous-playback or human-listening acceptance.
+
+<!-- /tracking-retime-current -->
+
 <!-- tracking-magnetic-current -->
 
-**CLI0.1.29 / alpha.4-local.27 / r30 kit · 1 Skill / 17 modules.**
+**Historical / 历史 / 歷史：CLI0.1.29 / alpha.4-local.27 / r30 kit · 1 Skill / 17 modules.**
 
 Magnetic reorder now partitions tracked sources, followers and linked audio across main-track cuts. It rebuilds source routes from the complete pre-cut graph, retaining observations, pinned ROI references, fragment offsets and complete authored clocks.
 
@@ -575,7 +589,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F11 | Source handles, slip and slide | Source in/out points and neighbors → reversible source edits, handle transitions and cut adjustments. | `timeline edit/transition` | Insufficient source handles are reported rather than silently inventing coverage. |
 | F12 | Magnetic tracks and linked edits | Main-track reorder, synchronized native tracking cuts, region-specific links and attached audio. | `timeline edit` | Explicit sync/split policies; locks, transition endpoints and resource gates. Non-native tracking cuts remain guarded. |
 | F13 | Compound and nested sequences | Child sequences → independent canvases, parent transforms/opacity, nested clocks and freezes. | `timeline compose/edit` | Independent spatial canvases do not imply independent color/fps; some group spatial transitions remain unsupported. |
-| F14 | Retiming, reverse and freeze | Explicit speed/curves/Bezier/freeze points → video clocks and audio mapping. | `timeline edit; render` | Audio-retime backends differ; optional Rubber Band R3 requires existing native tools. |
+| F14 | Speed, reverse and freeze | Explicit scalar/curve/Bezier/freeze maps; native tracking dependency closure shares complete author time, with per-layer outputs and linked sound. | `timeline edit; render` | Default ripple differs from explicit sync_content:retime; locks/endpoints/budgets apply. Audio backends and nonconstant curves retain their precision limits. |
 | F15 | Keyframes and easing | Position, anchor, scale, rotation, opacity, crop, masks, volume and pan → frame-evaluated animation. | `timeline compose; schema show` | hold/linear/ease_in/ease_out/ease_in_out/bezier; enum/boolean channels are not assumed continuous. |
 | F16 | 12 camera/motion presets | Push/pull, four pan directions, Ken Burns, rotation, fades and shake → editable keyframes. | `motion list/inspect/apply` | Bounded keyframe presets, not AI 3D cameras or an entire commercial motion library. |
 | F17 | Transitions and cut effects | Adjacent clips and handles → declared fades, wipes, slides, black/white fades, circular and other transitions. | `timeline transition; capabilities` | Select by renderer and layer context; the explicit CPU Float32 subset is delivered under the separate F55 contract. |
@@ -621,7 +635,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F57 | Native Float32 GPU execution | Explicit policy → linear Float32 affine, normal over, text components/paragraphs and word selection; real render/preview/queue/resume. | `projection_acceleration; render; preview; queue` | off/prefer/require;actual binary64/subnormal probes;owned process/shared buffers;other operators CPU,not all-GPU editing. |
 | F58 | Float32 global/interval adjustments | Ordered grading after all tracks including subtitles;existing float effects,LUT/exposure,six keyframe modes,selected root once. | `settings.adjustments; preview; render; queue` | Explicit linear working/effect signals;CPU execution;locked/portable LUTs;original interval clocks,not complete HDR. |
 | F59 | Native PTS tracking and overlay tracks | Saved source observations → actual selected-frame anchors;shared crop/TRS,ROI scale/relative rotation,alpha,windows and nested audio. | `media track-bind; preview; render; queue; package` | Explicit Float32,no display-key bake,budget/cycle gates;template drift/occlusion require review;native interchange baking pending. |
-| F60 | Editing native tracking | Magnetic source routes, split/trim/ripple/range and physical slip/extension; retain observations, fragment offsets, ROI references, target opacity and linked audio. | `timeline compose/edit; preview; render; package` | Explicit Float32 with finite-source/lock/overlap/cycle budgets; bound-container retime and interchange baking remain open. |
+| F60 | Editing native tracking | Shared-author retime, selected layer outputs and single sound selection; magnetic partition/reorder, split/trim/ripple/range and physical slip/extension with retained observations/references. | `timeline compose/edit; preview; render; package` | Explicit Float32. Keep the parent link cohort for a shared output clock; explicit unlink separates complete outputs. Interchange baking and natural occlusion quality remain open. |
 
 ## Supported service modules and dependencies
 
@@ -748,7 +762,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.27/final-r1/installed/`, CLI 0.1.29. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.28/final-r1/installed/`, CLI 0.1.30. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1152,6 +1166,12 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R209 | 2026-10-26 Native magnetic tracking | r30 fresh isolated kit:one registration,17 modules,73 Skill files;actual magnetic dry-run,binding rewrites and validation;author/assets and real discovery unchanged. | [Evidence](docs/validation/evidence/tracking-magnetic-20261026-r1/kit-r1/verification.json) |
 | R210 | 2026-10-26 Native magnetic tracking | Installed/Skill/media/three-language docs/staged-byte verification;205 historical rows and38 original closure conditions preserved;60 functions,20 services,75 declarations. | [Evidence](docs/validation/evidence/tracking-magnetic-20261026-r1/final-delivery-r2/verification.json) |
 | R211 | 2026-10-26 Native magnetic tracking | Rejected development fixture retained:clip ID a conflicted with asset a;correctly rejected,then renamed shot_a/shot_b/shot_c without weakening pixels or product guards. | [Evidence](docs/validation/evidence/tracking-magnetic-20261026-r1/development-attempts-r1/verification.json) |
+| R212 | 2026-10-26 Native shared-author tracking retime | Installed CLI 0.1.30/local.28-final-r1: 222 product Python files/schema equal source; one Skill, 17 modules, 73 files. | [Evidence](docs/validation/evidence/tracking-retime-20261026-r1/installation-final-r1/verification.json) |
+| R213 | 2026-10-26 Native shared-author tracking retime | Separate installed groups, with no skips: tracking 79, magnetic 66, editing 195, bindings 71, Float32 98, render 46, audio 65, legacy 192. | [Evidence](docs/validation/evidence/tracking-retime-20261026-r1/tracking-installed-r1/verification.json) |
+| R214 | 2026-10-26 Native shared-author tracking retime | C40 actual registered Skill 2x edit: shared author dependency graph and per-layer outputs; all 18 Float32/PTS/geometry frames equal original even frames; all 72000 stereo samples equal the independent tempo oracle; package and queue reproduced. | [Evidence](docs/validation/evidence/tracking-retime-20261026-r1/case-r1/verification.json) |
+| R215 | 2026-10-26 Native shared-author tracking retime | r31 fresh isolated kit: one registration, 17 modules, 73 Skill files; real shared-retime dry-run/observations/validation with unchanged authored project and assets. | [Evidence](docs/validation/evidence/tracking-retime-20261026-r1/kit-r1/verification.json) |
+| R216 | 2026-10-26 Native shared-author tracking retime | Installed/Skill/media/full trilingual documentation and staged-byte audit; retain 211 historical R rows and 38 original goal closures; 60 functions, 20 services, 75 actual declarations. | [Evidence](docs/validation/evidence/tracking-retime-20261026-r1/final-delivery-r1/verification.json) |
+| R217 | 2026-10-26 Native shared-author tracking retime | Preserved failed development attempt: extra alpha rounding on repeated nesting and missing explicit sync_content:retime in fixtures. Fixed shared outputs/requests; no pixel threshold relaxation. | [Evidence](docs/validation/evidence/tracking-retime-20261026-r1/development-attempts-r1/verification.json) |
 
 ## Current limits and development direction
 

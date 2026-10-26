@@ -1681,3 +1681,13 @@ docs/product/TRACKING_MAGNETIC.md text eol=lf
 docs/product/tracking-magnetic-capabilities-cli-0.1.29.json -text -whitespace
 docs/releases/CLI_0.1.29_LOCAL.md text eol=lf
 docs/validation/跟踪磁性重排实测_2026-10-26.md text eol=lf
+docs/validation/evidence/tracking-retime-20261026-r1/** -text -whitespace
+docs/assets/tracking-retime-20261026-*/** -text -whitespace
+product/src/ai_ad_editor/sequence_selection.py -text -whitespace
+product/src/ai_ad_editor/tracking_retime.py -text -whitespace
+product/tests/test_tracking_retime.py text eol=lf
+scripts/*tracking_retime*20261026.py text eol=lf
+docs/product/TRACKING_RETIME.md text eol=lf
+docs/product/tracking-retime-capabilities-cli-0.1.30.json -text -whitespace
+docs/releases/CLI_0.1.30_LOCAL.md text eol=lf
+docs/validation/跟踪共享变速实测_2026-10-26.md text eol=lf

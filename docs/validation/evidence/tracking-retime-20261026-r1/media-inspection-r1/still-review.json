@@ -1,0 +1,31 @@
+{
+  "status": "reviewed",
+  "contact_sheet_sha256": "9ef07ad65db1977ed9e89c468f65154c0ef92b6a999420ba63353fa072355d70",
+  "method": "Actual view_image inspection of decoded MP4 contact sheet",
+  "pairs": [
+    [
+      0,
+      0
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      10,
+      5
+    ],
+    [
+      24,
+      12
+    ],
+    [
+      34,
+      17
+    ]
+  ],
+  "observations": "Each before/output pair preserves the source crop/rotation, green moving target, red follower outline and lower time-marker squares. Output timestamps are halved.",
+  "continuous_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false
+}

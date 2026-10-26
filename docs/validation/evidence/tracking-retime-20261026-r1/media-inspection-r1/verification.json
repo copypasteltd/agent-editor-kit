@@ -1,0 +1,253 @@
+{
+  "status": "passed",
+  "source": "actual public MP4 decoder output; no reconstructed GUI",
+  "frames": [
+    {
+      "label": "before",
+      "frame": 0,
+      "sha256": "d941ea130a024e144bd4f13f17be6bc5b6e3f83383b5e6ddf094474701f94583"
+    },
+    {
+      "label": "edited",
+      "frame": 0,
+      "sha256": "c2f9ecef766eaaf6fa88947fc77a3e7ca456d050fcb3cb6ae5f65006bdb519c7"
+    },
+    {
+      "label": "before",
+      "frame": 2,
+      "sha256": "7dfed1e77bd88ff4c97f6227afef0ff21652a00663fdc39b83da88f75dfb2b9a"
+    },
+    {
+      "label": "edited",
+      "frame": 1,
+      "sha256": "3a635ebb2c5076ce4edfb6689d0e6a1e61d8042e90ca06e119afe0290cc8e807"
+    },
+    {
+      "label": "before",
+      "frame": 10,
+      "sha256": "2de79d8e06840f84cd593dc01e5ec9b427369378eda6b9fb52b54266c665e764"
+    },
+    {
+      "label": "edited",
+      "frame": 5,
+      "sha256": "c2c99fb3f47401369251394e04a3cb108620f8b89b191ac0b3a57c3dca1a8890"
+    },
+    {
+      "label": "before",
+      "frame": 24,
+      "sha256": "5224b6f907b87afc1cc0fda186fc22b78a1de1174bd05e171274efba6609209c"
+    },
+    {
+      "label": "edited",
+      "frame": 12,
+      "sha256": "2233c5395c8d4896ebff21926327edf5776f14e3d7a11b720c8354e4db9fcd10"
+    },
+    {
+      "label": "before",
+      "frame": 34,
+      "sha256": "4d47332dcf0312d73d08f651d92461f828b7a24e137260b292efec59fbbb7d09"
+    },
+    {
+      "label": "edited",
+      "frame": 17,
+      "sha256": "b4cec349196e55da56af263abe1695937ba0a41f8844107bc45aefe8a38bd3ba"
+    }
+  ],
+  "calls": [
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-retime-20261026-r1\\before.mp4",
+        "-vf",
+        "select=eq(n\\,0)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-retime-20261026-r1\\media-inspection-r1\\before-0.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "d941ea130a024e144bd4f13f17be6bc5b6e3f83383b5e6ddf094474701f94583"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-retime-20261026-r1\\edited.mp4",
+        "-vf",
+        "select=eq(n\\,0)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-retime-20261026-r1\\media-inspection-r1\\edited-0.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "c2f9ecef766eaaf6fa88947fc77a3e7ca456d050fcb3cb6ae5f65006bdb519c7"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-retime-20261026-r1\\before.mp4",
+        "-vf",
+        "select=eq(n\\,2)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-retime-20261026-r1\\media-inspection-r1\\before-2.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "7dfed1e77bd88ff4c97f6227afef0ff21652a00663fdc39b83da88f75dfb2b9a"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-retime-20261026-r1\\edited.mp4",
+        "-vf",
+        "select=eq(n\\,1)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-retime-20261026-r1\\media-inspection-r1\\edited-1.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "3a635ebb2c5076ce4edfb6689d0e6a1e61d8042e90ca06e119afe0290cc8e807"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-retime-20261026-r1\\before.mp4",
+        "-vf",
+        "select=eq(n\\,10)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-retime-20261026-r1\\media-inspection-r1\\before-10.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "2de79d8e06840f84cd593dc01e5ec9b427369378eda6b9fb52b54266c665e764"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-retime-20261026-r1\\edited.mp4",
+        "-vf",
+        "select=eq(n\\,5)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-retime-20261026-r1\\media-inspection-r1\\edited-5.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "c2c99fb3f47401369251394e04a3cb108620f8b89b191ac0b3a57c3dca1a8890"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-retime-20261026-r1\\before.mp4",
+        "-vf",
+        "select=eq(n\\,24)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-retime-20261026-r1\\media-inspection-r1\\before-24.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "5224b6f907b87afc1cc0fda186fc22b78a1de1174bd05e171274efba6609209c"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-retime-20261026-r1\\edited.mp4",
+        "-vf",
+        "select=eq(n\\,12)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-retime-20261026-r1\\media-inspection-r1\\edited-12.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "2233c5395c8d4896ebff21926327edf5776f14e3d7a11b720c8354e4db9fcd10"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-retime-20261026-r1\\before.mp4",
+        "-vf",
+        "select=eq(n\\,34)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-retime-20261026-r1\\media-inspection-r1\\before-34.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "4d47332dcf0312d73d08f651d92461f828b7a24e137260b292efec59fbbb7d09"
+    },
+    {
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-retime-20261026-r1\\edited.mp4",
+        "-vf",
+        "select=eq(n\\,17)",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\tracking-retime-20261026-r1\\media-inspection-r1\\edited-17.png"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "output_sha256": "b4cec349196e55da56af263abe1695937ba0a41f8844107bc45aefe8a38bd3ba"
+    }
+  ],
+  "sheet_sha256": "9ef07ad65db1977ed9e89c468f65154c0ef92b6a999420ba63353fa072355d70",
+  "review_scope": "static frame inspection only",
+  "continuous_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false
+}

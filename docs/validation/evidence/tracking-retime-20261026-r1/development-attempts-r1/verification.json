@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "failed_attempts": [
+    {
+      "path": "docs/validation/evidence/tracking-retime-20261026-r1/source-r1/verification.json",
+      "sha256": "85ec3357e0a32e70c23e43ca8b6168f82ab5e02807edbb751c56b3db83d1dcb8",
+      "excluded_from_final_acceptance": true,
+      "reason": "Repeated per-member containers added a Float32 alpha boundary; two partial-main fixtures omitted explicit sync_content:retime.",
+      "resolution": "Retain selected layer/opacity through a shared graph on repeated retime. Fixtures explicitly request synchronized retime; the default ripple contract is unchanged."
+    }
+  ],
+  "intermediate_passes_excluded": [
+    "source-r2"
+  ],
+  "final_acceptance": "tracking-installed-r1",
+  "pixel_threshold_relaxed": false,
+  "product_guards_removed": false,
+  "source_fallback": false
+}

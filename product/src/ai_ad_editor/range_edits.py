@@ -218,7 +218,8 @@ class RangeDraft:
         return value
 
     def guard_cut(self, clip):
-        if clip['id'] in self.protected and (not self.native_tracking or self.request['action']=='retime'):
+        if clip['id'] in self.protected and (not self.native_tracking or
+                self.request['action']=='retime' and not getattr(self,'binding_retime',False)):
             fail('EDIT_RANGE_BINDING_UNSUPPORTED', '裁切涉及跟踪绑定源或目标；需先解除绑定或编辑完整容器')
         if clip['id'] in self.transition_refs:
             fail('EDIT_RANGE_TRANSITION_UNSUPPORTED', '剪口涉及真实源转场端点；需先移除声明或编辑完整容器')
@@ -511,7 +512,8 @@ class RangeDraft:
             self.sequence['source_transitions'] = declarations
         if self.native_tracking:
             from .binding_edits import replan
-            self.binding_changes = replan(self.project,self.sequence,self.original,self.origin,source_changes=self.source_changes)
+            self.binding_changes = replan(self.project,self.sequence,self.original,self.origin,source_changes=self.source_changes,
+                containerized_sources=getattr(self,'containerized_sources',()))
             self.rebound.update(c['clip_id'] for c in self.binding_changes)
         for s in ([] if self.native_tracking else self.project['sequences']):
             for track in s['tracks']:

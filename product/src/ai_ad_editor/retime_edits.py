@@ -44,35 +44,41 @@ def normalize(sequence, request):
 def _guard(draft, track, clip):
     draft.unlocked([clip['id']])
     draft.guard_cut(clip)
-    if track['kind'] not in ('video','audio','subtitle'):
+    if track['kind'] not in ('video','audio','subtitle') and not (draft.native_tracking and track['kind']=='overlay'):
         _error('EDIT_RETIME_TRACK_UNSUPPORTED', 'retime 需要可渲染的 video/audio/subtitle 轨道')
     if any(isinstance(clip.get(key), dict) and clip[key].get('type') not in FADES
            for key in ('transition_in','transition_out')):
         _error('EDIT_RETIME_TRANSITION_UNSUPPORTED', '完整输出变速需先移除旧跨片段转场或选择其完整上级组')
 
 
-def _wrap(draft, track, clip, host, transform, *, cid, first, last):
+def _wrap(draft, track, clip, host, transform, *, cid, first, last, shared=None):
     """Complete the original clip before sharing the host's output clock."""
     _guard(draft, track, clip)
-    original = copy.deepcopy(clip)
-    blend = retimed_blend(original, host, transform, draft.project['settings'])
-    original.pop('blend', None)
-    original.pop('link_id', None)
-    inner_id = draft.fresh(cid+'_author')
-    inner = slice_clip(original, 0, original['duration_tick'], clip_id=inner_id)
-    sid = draft.fresh(cid+'_author_sequence')
-    child_track = draft.fresh(cid+'_author_track')
-    child = {'id':sid,'name':'Original authored '+clip['id'],
-             'duration_tick':max(end(host),end(clip),1),
-             'canvas':sequence_canvas(draft.project, draft.sequence),
-             'tracks':[{'id':child_track,'kind':track['kind'],'order':0,'clips':[inner]}], 'markers':[]}
-    draft.project['sequences'].append(child)
+    if shared:
+        sid, inner_id = shared['sequence_id'], shared['clips'][clip['id']]
+        blend = None  # Child returns its original scalar alpha and blend slot.
+    else:
+        original = copy.deepcopy(clip)
+        blend = retimed_blend(original, host, transform, draft.project['settings'])
+        original.pop('blend', None)
+        original.pop('link_id', None)
+        inner_id = draft.fresh(cid+'_author')
+        inner = slice_clip(original, 0, original['duration_tick'], clip_id=inner_id,allow_tracking=draft.native_tracking)
+        sid = draft.fresh(cid+'_author_sequence')
+        child_track = draft.fresh(cid+'_author_track')
+        child = {'id':sid,'name':'Original authored '+clip['id'],
+                 'duration_tick':max(end(host),end(clip),1),
+                 'canvas':sequence_canvas(draft.project, draft.sequence),
+                 'tracks':[{'id':child_track,'kind':track['kind'],'order':0,'clips':[inner]}], 'markers':[]}
+        draft.project['sequences'].append(child)
     parent = {'id':cid,'sequence_id':sid,'timeline_start_tick':start(host),
               'duration_tick':transform.output,'source_in_tick':start(host),'source_out_tick':end(host),
               **copy.deepcopy(transform.value)}
     for key in ('link_id','rights_dependencies'):
         if key in clip:
             parent[key] = copy.deepcopy(clip[key])
+    if shared:
+        parent.update(sequence_clip_id=inner_id,link_id=shared['link_id'])
     if blend is not None:
         parent['blend'] = blend
     audio = clip.get('audio', {})
@@ -92,6 +98,7 @@ def _wrap(draft, track, clip, host, transform, *, cid, first, last):
 
 def _one(project, sequence_id, cid, query, *, main_selection):
     draft = RangeDraft(project, sequence_id, None, temporal_options=query['options'])
+    draft.binding_retime = draft.native_tracking
     track, host = draft.before[cid]
     _guard(draft, track, host)
     is_main = track['id'] == query['options']['main_track_id']
@@ -115,6 +122,12 @@ def _one(project, sequence_id, cid, query, *, main_selection):
         body = linked
         if any(draft.before[k][0]['id']==query['options']['main_track_id'] for k in body):
             _error('EDIT_RETIME_MIXED_SELECTION', '副轨变速不能隐式改写关联主轨；请显式选择主轨宿主')
+    closure = None
+    if draft.native_tracking:
+        from .tracking_retime import context
+        body, closure = context(draft, body, host)
+        if not is_main and any(draft.before[k][0]['id']==query['options']['main_track_id'] for k in body):
+            _error('EDIT_RETIME_MIXED_SELECTION', '跟踪依赖包含主轨；请显式选择主轨宿主')
     for other in body:
         lane, clip = draft.before[other]
         if end(clip)<=start(host) or start(clip)>=end(host):
@@ -123,9 +136,17 @@ def _one(project, sequence_id, cid, query, *, main_selection):
     count = sum(len(t['clips']) for s in project['sequences'] for t in s['tracks'])
     projected = count+sum(1+int(start(draft.before[k][1])<start(host))+
                           int(end(draft.before[k][1])>end(host)) for k in body)
+    if closure is not None:
+        projected = count+len(closure)+sum(int(start(draft.before[k][1])<start(host))+
+            int(end(draft.before[k][1])>end(host)) for k in body)
     if projected>MAX_CLIPS:
         _error('EDIT_RETIME_RESOURCE_LIMIT', '预计作者子序列/前后保留片段超过 20000；未降低精度或丢片段')
     reports, original_rows = [], {}
+    shared = None
+    if closure is not None:
+        from .tracking_retime import create
+        shared = create(draft, closure, body, host)
+        draft.containerized_sources = set()
     for other in sorted(body, key=lambda k:(draft.before[k][0]['order'],start(draft.before[k][1]),k)):
         lane, clip = draft.before[other]
         original_rows[other] = (lane, clip)
@@ -144,7 +165,9 @@ def _one(project, sequence_id, cid, query, *, main_selection):
         if start(clip)<first:
             parts.append(draft.piece(clip,0,first-start(clip)))
         body_id = other if not parts else draft.fresh(other+'_retimed')
-        wrapped, report = _wrap(draft,lane,clip,host,transform,cid=body_id,first=first,last=last)
+        wrapped, report = _wrap(draft,lane,clip,host,transform,cid=body_id,first=first,last=last,shared=shared)
+        if shared:
+            draft.containerized_sources.add(body_id)
         parts.append(wrapped);reports.append(report)
         if last<end(clip):
             tail = draft.piece(clip,last-start(clip),clip['duration_tick'],
@@ -166,6 +189,8 @@ def _one(project, sequence_id, cid, query, *, main_selection):
     validate(draft.sequence)
     return draft.project, {'host_clip_id':cid,'track_id':track['id'],'is_main':is_main,
         'clock':transform.report(),'delta_tick':delta,'retimed_members':reports,
+        'shared_author_context':copy.deepcopy(shared['report']) if shared else None,
+        'tracking_binding_changes':copy.deepcopy(draft.binding_changes),
         'new_tracks':draft.new_tracks,'changes':_plan_changes(draft.original,draft.sequence)}
 
 

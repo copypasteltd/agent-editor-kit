@@ -3974,6 +3974,8 @@ def build_filter_graph(root: Path, project: dict[str, Any], sequence: dict[str, 
                        _audio_clock_context=None,
                        _projection_runtime=None,
                        _cancel_file: Path | None = None) -> tuple[list[str], str, list[dict[str, Any]], list[dict[str, Any]]]:
+    if any('sequence_clip_id' in c for s in project['sequences'] for t in s['tracks'] for c in t['clips']):
+        raise AppError('SEQUENCE_SELECTION_NATIVE_REQUIRED', '作者单片段输出必须由浮点宿主渲染；音频需先编译独立选择实例', exit_code=2)
     if _frame_index_context is None:
         from .native_video_index import IndexContext
         _frame_index_context=IndexContext(root,persist=_persist_video_index,cancel_file=_cancel_file)

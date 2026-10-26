@@ -809,3 +809,13 @@ CC0移动几何、动态裁切/运镜、跟随标记和双声道合成音；实�
 ![Actual silent GIF](../assets/tracking-magnetic-20261026-r1/edited.gif)
 
 [Before MP4](../assets/tracking-magnetic-20261026-r1/before.mp4) · [Edited MP4](../assets/tracking-magnetic-20261026-r1/edited.mp4) · [Editable package](../assets/tracking-magnetic-20261026-r1/editable-tracking-magnetic.aevpkg.zip) · [Source/rights](../assets/tracking-magnetic-20261026-r1/SOURCE.txt) · [Hashes](../assets/tracking-magnetic-20261026-r1/media-manifest.json) · [Workflow](TRACKING_MAGNETIC.md) · [Evidence](../validation/跟踪磁性重排实测_2026-10-26.md).
+
+<a id="c40-tracking-retime"></a>
+
+## C40 · 跟踪共享作者变速 · CLI0.1.30
+
+CC0动态裁切/运镜/ROI标签与合成双声道音轨；实际统一Skill执行2倍速，36帧3秒成为18帧1.5秒。全部Float32/解码画面、原生PTS和动态几何对应原偶数帧；完整72000双声道采样与独立tempo输出误差0。工程包及队列分别核验；实际GPU投影和清理留证。静态检查；无自然质量/连续播放/人工听审验收。
+
+![Actual silent GIF](../assets/tracking-retime-20261026-r1/edited.gif)
+
+[Before MP4](../assets/tracking-retime-20261026-r1/before.mp4) · [Edited MP4](../assets/tracking-retime-20261026-r1/edited.mp4) · [Editable package](../assets/tracking-retime-20261026-r1/editable-tracking-retime.aevpkg.zip) · [Source/rights](../assets/tracking-retime-20261026-r1/SOURCE.txt) · [Hashes](../assets/tracking-retime-20261026-r1/media-manifest.json) · [Workflow](TRACKING_RETIME.md) · [Evidence](../validation/跟踪共享变速实测_2026-10-26.md).

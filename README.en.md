@@ -9,7 +9,21 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- gpu-dispatch-current -->
+<!-- emitter-animation-current -->
+
+**CLI0.1.37 / alpha.4-local.35 / r38 kit · 1 Skill / 17 modules.**
+
+New **keyframes for all 21 emitter properties**: integrated birth rate, motion/lifetime sampled at birth and live color/size/shape, with six easing modes and emission pauses. Discover constraints through `vfx animation-properties`; add, explicitly replace or remove a property with `vfx animate`. The original source clock survives trim, reverse, nesting, preview, queues and packages. The four-cell case is actual registered installed Skill GPU output.
+
+[Workflow / usage](docs/product/EMITTER_ANIMATION.md) · [C47](docs/product/CASES.md#c47-emitter-animation) · [Install](docs/releases/CLI_0.1.37_LOCAL.md) · [Evidence](docs/validation/发射器关键帧实测_2026-10-27.md)
+
+![Actual registered Skill GPU output, decoded and labeled](docs/assets/emitter-animation-20261027-r1/emitter-animation.gif)
+
+All 679 installed regressions pass with zero skips. C47 retains 14 tracks, all 48 decoded 10-bit frames and all 384000 Float32 PCM scalars after package reimport. The GIF contains actual rendered frames over four seconds. 3-D, collisions, depth, fluids and the complete CapCut-scale effect library remain open; all 253 earlier R rows and 38 original closure conditions remain.
+
+<!-- /emitter-animation-current -->
+
+<!-- gpu-dispatch-history -->
 
 **CLI0.1.36 / alpha.4-local.34 / r37 kit · 1 Skill / 17 modules.**
 
@@ -21,7 +35,7 @@ Native Float32 GPU control now uses owned native pipes, removing per-operator co
 
 One matched960×360 diagnostic pair on this machine, including startup,encoding and checks; not realtime,4K,long-form or multivendor acceptance. Full CapCut parity remains open; all38 original closure cells and247 historical verification rows remain.
 
-<!-- /gpu-dispatch-current -->
+<!-- /gpu-dispatch-history -->
 
 <!-- procedural-particles-history -->
 
@@ -45,7 +59,7 @@ $avkProject = 'E:/dev/sandbox/particle-demo'
 
 ![Actual registered Skill GPU output, annotated GIF](docs/assets/procedural-particles-20261027-r3/particle-grid.gif)
 
-This is a 2-D diagnostic effect core. 3-D/collisions, depth occlusion, fluids and emitter-parameter keyframes remain open. The legacy FFmpeg graph explicitly rejects this source. Full CapCut parity and all 38 original closure conditions remain open.
+CLI0.1.35 was a 2-D diagnostic core without emitter keyframes; CLI0.1.37 adds them. 3-D/collisions, depth occlusion and fluids remain open. The legacy FFmpeg graph explicitly rejects this source. Full CapCut parity and all 38 original closure conditions remain open.
 
 <!-- /procedural-particles-history -->
 
@@ -390,7 +404,7 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r28 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r28.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r38 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r38.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
@@ -764,7 +778,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F60 | Native tracking and baked delivery | Actual alpha/five masks/59 transition footprints; edits and shared retime retain observations; native bake verifies all frames and retains source sidecars. | `media track-bind; timeline compose/edit; convert export --bake-tracking` | Frozen graph/FPS;20,000 frames/256,000 samples;unrepresentable integer steps reject;external players and natural identity/occlusion remain unaccepted. |
 | F61 | Local GPU video generation | Text,image,last/first-last conditions; prompt/sampling,real model windows,editable clips,endpoint proofs,portable recipes and managed recovery. | `media adapter; media generate` | Existing native VACE/CUDA required;silent8bit SDR;known endpoints retained;natural quality,output rights and complete CapCut AI unaccepted. |
 | F62 | Native GPU model sessions | Reuse weights/embeddings per project/adapter/prompt; reset jobs, transfer live locked digests, retire on cancel/deadline/idle/job budget. | `media model-session; media generate --model-session` | Native Windows VACE; first job still loads; new prompt needs a new serial session; no global VRAM reservation/multi-GPU. |
-| F63 | Editable procedural particles | Six original recipes, five shapes, seed, native CFR and emitters; actual GPU tile rasterization and linear transparency. Ordinary edits, preview, queues, packages and local OTIO roundtrips. | `vfx list/inspect/apply/update/show` | Native Float32 pipeline; CPU hash/motion/binning; 16 emitters, 4096 reserved live particles, 128Mi candidate visits/frame; no 3-D/collision/depth. |
+| F63 | Editable particles and emitter animation | Six original recipes/five shapes/seed/native CFR;21 source-clock animated properties,six easings,emission pauses and actual GPU rasterization. Editing/preview/queue/package/local OTIO. | `vfx list/inspect/apply/update/show/animation-properties/animate` | CPU rate integration/birth evaluation,GPU painting;64 points/property,16 emitters,4096 reserved live particles;no3-D/collision/depth. |
 
 ## Supported service modules and dependencies
 
@@ -892,7 +906,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.34/final-r1/installed/`, CLI 0.1.36. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.35/final-r1/installed/`, CLI 0.1.37. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1338,6 +1352,12 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R251 | 2026-10-27 GPU dispatch | 128KiB packets/single-slot queues reject truncation,nonfinite JSON and duplicate members;actual pipe backpressure/breakage,120 messages,cancel/timeout/resume tested. Atomic project persistence retained;process/thread/stream/shared-memory closure recorded. | [Evidence](docs/validation/evidence/gpu-dispatch-20261027-r1/installed-regression-r1/receipts.json) |
 | R252 | 2026-10-27 GPU dispatch | Fresh r37 kit:one entry,17 modules,76 Skill files/119 package files;independent extraction,complete pack verification,registration and23 calls retain actual discovery. | [Evidence](docs/validation/evidence/gpu-dispatch-20261027-r1/kit-r1/verification.json) |
 | R253 | 2026-10-27 GPU dispatch | Three languages,63 functions/21 services/76 capability snapshots,C46 actual output/timing chart,complete workflow/install/Skill docs synchronized. All247 earlier R rows/38 closure cells preserved;two failed development test-helper attempts retained. | [Evidence](docs/validation/evidence/gpu-dispatch-20261027-r1/final-delivery-r2/verification.json) |
+| R254 | 2026-10-27 emitter animation | CLI0.1.37/local.35 offline bundle:235 product files match source;679 installed regressions pass with zero failures/errors/skips,including18 new numeric/CLI,one new actual GPU andfour new integration tests,counted once. | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/installed-regression-r1/verification.json) |
+| R255 | 2026-10-27 emitter animation | 21 original-source-clock properties tested with independent integrals,six easings,pauses/prewarm,exact birth/hold coincidences,seek/cache invariance,conservative admission and cancellation;constant keys reproduce old static pixels exactly. | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/source-emitters-r2/verification.json) |
+| R256 | 2026-10-27 emitter animation | Actual registered Skill C47:14 tracks,four panels,48frames/12FPS/640×360/four seconds;package reimport retains all tracks,48 decoded10bit frames andall384000 Float32 PCM scalars. Owned GPU process/thread/stream/shared handles closed. | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/case-r1/verification.json) |
+| R257 | 2026-10-27 emitter animation | Single-property add/replace/remove,locks,snapshots,dry-run,file-content idempotency andatomic errors;actual CPU/GPU encoding,package/local OTIO,split/nested reverse,preview invalidation andpersistent queue verified. | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/installed-regression-r1/receipts.json) |
+| R258 | 2026-10-27 emitter animation | Fresh r38 kit:one entry/17 modules/76 Skill files/120 package files,complete pack checks,isolated registration and25 calls retain actual Codex discovery;no new inference or render. | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/kit-r1/verification.json) |
+| R259 | 2026-10-27 emitter animation | Complete trilingual63-function/21-service manuals,76 capability snapshots,Skill/install workflows andC47 actual GIF/editable package synchronized;all253 prior R rows/38 closure cells retained andoverall goal remains open. | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/final-delivery-r1/verification.json) |
 
 ## Current limits and development direction
 

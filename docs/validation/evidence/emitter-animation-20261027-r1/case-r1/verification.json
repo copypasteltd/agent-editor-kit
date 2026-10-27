@@ -1,0 +1,1996 @@
+{
+  "status": "passed",
+  "started_at_utc": "2026-10-27T00:08:35.021531+00:00",
+  "registered_skill": true,
+  "native_windows": true,
+  "virtualization": false,
+  "source_fallback": false,
+  "synthetic_diagnostic": true,
+  "continuous_human_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false,
+  "manifest_sha256": "sha256:3b15c4b609764c0257bafae99901b351d4bf227beef064b785bb95641ad65148",
+  "native_tools": {
+    "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+    "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.EXE": "70872c3ffbc43d0b2c570f9837f54d6e9a832f4ca25463e9735b6a3ec0621478"
+  },
+  "cli_version": "0.1.37",
+  "public": "docs/assets/emitter-animation-20261027-r1",
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\emitter-case-r1\\project",
+  "source_configs": {
+    "moving-trail": {
+      "type": "particles",
+      "protocol": "analytic-seeded-particle-source-v1",
+      "seed": 173,
+      "canvas": {
+        "width": 320,
+        "height": 180
+      },
+      "fps": {
+        "num": 12,
+        "den": 1
+      },
+      "duration_tick": 360000,
+      "ticks_per_second": 90000,
+      "emitters": [
+        {
+          "rate": 38.0,
+          "lifetime": [
+            0.85,
+            0.85
+          ],
+          "position": [
+            0.12,
+            0.7
+          ],
+          "spread": [
+            0.025,
+            0.04
+          ],
+          "velocity": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "acceleration": [
+            0.0,
+            0.0
+          ],
+          "size": [
+            0.012,
+            0.02
+          ],
+          "size_end": 0.35,
+          "aspect": 1.0,
+          "rotation": [
+            0.0,
+            360.0
+          ],
+          "spin": [
+            20.0,
+            50.0
+          ],
+          "shape": "star",
+          "softness": 0.2,
+          "glow": 0.5,
+          "colors": [
+            "#ffe6a0",
+            "#ffab69"
+          ],
+          "color_end": null,
+          "opacity": 0.85,
+          "fade_in": 0.2,
+          "fade_out": 0.45,
+          "prewarm": false,
+          "sway": [
+            0.0,
+            0.0
+          ],
+          "twinkle": [
+            0.2,
+            1.0
+          ],
+          "keyframes": [
+            {
+              "property": "position",
+              "keyframes": [
+                {
+                  "at_tick": 0,
+                  "value": [
+                    0.12,
+                    0.7
+                  ],
+                  "interpolation": "linear"
+                },
+                {
+                  "at_tick": 180000,
+                  "value": [
+                    0.88,
+                    0.3
+                  ],
+                  "interpolation": "ease_in_out"
+                },
+                {
+                  "at_tick": 360000,
+                  "value": [
+                    0.12,
+                    0.7
+                  ],
+                  "interpolation": "linear"
+                }
+              ]
+            },
+            {
+              "property": "rate",
+              "keyframes": [
+                {
+                  "at_tick": 0,
+                  "value": 24.0,
+                  "interpolation": "ease_in"
+                },
+                {
+                  "at_tick": 180000,
+                  "value": 70.0,
+                  "interpolation": "ease_out"
+                },
+                {
+                  "at_tick": 360000,
+                  "value": 24.0,
+                  "interpolation": "linear"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "timed-confetti": {
+      "type": "particles",
+      "protocol": "analytic-seeded-particle-source-v1",
+      "seed": 174,
+      "canvas": {
+        "width": 320,
+        "height": 180
+      },
+      "fps": {
+        "num": 12,
+        "den": 1
+      },
+      "duration_tick": 360000,
+      "ticks_per_second": 90000,
+      "emitters": [
+        {
+          "rate": 0.0,
+          "lifetime": [
+            1.4,
+            1.8
+          ],
+          "position": [
+            0.5,
+            0.04
+          ],
+          "spread": [
+            0.9,
+            0.04
+          ],
+          "velocity": [
+            [
+              -0.16,
+              0.16
+            ],
+            [
+              0.18,
+              0.32
+            ]
+          ],
+          "acceleration": [
+            0.0,
+            0.23
+          ],
+          "size": [
+            0.011,
+            0.019
+          ],
+          "size_end": 0.65,
+          "aspect": 0.5,
+          "rotation": [
+            0.0,
+            360.0
+          ],
+          "spin": [
+            -200.0,
+            200.0
+          ],
+          "shape": "rectangle",
+          "softness": 0.1,
+          "glow": 0.0,
+          "colors": [
+            "#ff4b69",
+            "#ffc83d",
+            "#41cfb7",
+            "#7494ff",
+            "#f5f0dc"
+          ],
+          "color_end": null,
+          "opacity": 0.95,
+          "fade_in": 0.05,
+          "fade_out": 0.25,
+          "prewarm": false,
+          "sway": [
+            0.0,
+            0.0
+          ],
+          "twinkle": [
+            0.0,
+            0.0
+          ],
+          "keyframes": [
+            {
+              "property": "rate",
+              "keyframes": [
+                {
+                  "at_tick": 0,
+                  "value": 0.0,
+                  "interpolation": "hold"
+                },
+                {
+                  "at_tick": 45000,
+                  "value": 85.0,
+                  "interpolation": "hold"
+                },
+                {
+                  "at_tick": 103500,
+                  "value": 0.0,
+                  "interpolation": "hold"
+                },
+                {
+                  "at_tick": 198000,
+                  "value": 85.0,
+                  "interpolation": "hold"
+                },
+                {
+                  "at_tick": 256500,
+                  "value": 0.0,
+                  "interpolation": "hold"
+                },
+                {
+                  "at_tick": 360000,
+                  "value": 0.0,
+                  "interpolation": "hold"
+                }
+              ]
+            },
+            {
+              "property": "rotation",
+              "keyframes": [
+                {
+                  "at_tick": 0,
+                  "value": [
+                    -45.0,
+                    45.0
+                  ],
+                  "interpolation": "linear"
+                },
+                {
+                  "at_tick": 360000,
+                  "value": [
+                    -180.0,
+                    180.0
+                  ],
+                  "interpolation": "linear"
+                }
+              ]
+            },
+            {
+              "property": "spin",
+              "keyframes": [
+                {
+                  "at_tick": 0,
+                  "value": [
+                    -120.0,
+                    120.0
+                  ],
+                  "interpolation": "linear"
+                },
+                {
+                  "at_tick": 360000,
+                  "value": [
+                    -300.0,
+                    300.0
+                  ],
+                  "interpolation": "linear"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "live-look": {
+      "type": "particles",
+      "protocol": "analytic-seeded-particle-source-v1",
+      "seed": 175,
+      "canvas": {
+        "width": 320,
+        "height": 180
+      },
+      "fps": {
+        "num": 12,
+        "den": 1
+      },
+      "duration_tick": 360000,
+      "ticks_per_second": 90000,
+      "emitters": [
+        {
+          "rate": 10.0,
+          "lifetime": [
+            3.0,
+            3.0
+          ],
+          "position": [
+            0.5,
+            0.5
+          ],
+          "spread": [
+            0.9,
+            0.85
+          ],
+          "velocity": [
+            [
+              -0.015,
+              0.015
+            ],
+            [
+              -0.015,
+              0.015
+            ]
+          ],
+          "acceleration": [
+            0.0,
+            0.0
+          ],
+          "size": [
+            0.045,
+            0.065
+          ],
+          "size_end": 1.2,
+          "aspect": 1.0,
+          "rotation": [
+            0.0,
+            360.0
+          ],
+          "spin": [
+            -20.0,
+            20.0
+          ],
+          "shape": "disc",
+          "softness": 0.85,
+          "glow": 0.3,
+          "colors": [
+            "#ffca74",
+            "#ff8d66",
+            "#ffe1a3"
+          ],
+          "color_end": null,
+          "opacity": 0.55,
+          "fade_in": 0.35,
+          "fade_out": 0.5,
+          "prewarm": true,
+          "sway": [
+            0.0,
+            0.0
+          ],
+          "twinkle": [
+            0.0,
+            0.0
+          ],
+          "keyframes": [
+            {
+              "property": "colors",
+              "keyframes": [
+                {
+                  "at_tick": 0,
+                  "value": [
+                    "#ffca74",
+                    "#ff8d66",
+                    "#ffe1a3"
+                  ],
+                  "interpolation": "linear"
+                },
+                {
+                  "at_tick": 180000,
+                  "value": [
+                    "#78caff",
+                    "#9d8dff",
+                    "#a6f3dd"
+                  ],
+                  "interpolation": "linear"
+                },
+                {
+                  "at_tick": 360000,
+                  "value": [
+                    "#ffca74",
+                    "#ff8d66",
+                    "#ffe1a3"
+                  ],
+                  "interpolation": "linear"
+                }
+              ]
+            },
+            {
+              "property": "opacity",
+              "keyframes": [
+                {
+                  "at_tick": 0,
+                  "value": 0.5,
+                  "interpolation": "linear"
+                },
+                {
+                  "at_tick": 180000,
+                  "value": 0.8,
+                  "interpolation": "linear"
+                },
+                {
+                  "at_tick": 360000,
+                  "value": 0.5,
+                  "interpolation": "linear"
+                }
+              ]
+            },
+            {
+              "property": "shape",
+              "keyframes": [
+                {
+                  "at_tick": 0,
+                  "value": "disc",
+                  "interpolation": "hold"
+                },
+                {
+                  "at_tick": 180000,
+                  "value": "ring",
+                  "interpolation": "hold"
+                }
+              ]
+            },
+            {
+              "property": "size",
+              "keyframes": [
+                {
+                  "at_tick": 0,
+                  "value": [
+                    0.03,
+                    0.045
+                  ],
+                  "interpolation": "ease_in_out"
+                },
+                {
+                  "at_tick": 180000,
+                  "value": [
+                    0.075,
+                    0.11
+                  ],
+                  "interpolation": "ease_in_out"
+                },
+                {
+                  "at_tick": 360000,
+                  "value": [
+                    0.03,
+                    0.045
+                  ],
+                  "interpolation": "linear"
+                }
+              ]
+            },
+            {
+              "property": "softness",
+              "keyframes": [
+                {
+                  "at_tick": 0,
+                  "value": 0.8,
+                  "interpolation": "linear"
+                },
+                {
+                  "at_tick": 180000,
+                  "value": 0.2,
+                  "interpolation": "linear"
+                },
+                {
+                  "at_tick": 360000,
+                  "value": 0.8,
+                  "interpolation": "linear"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "star-easing": {
+      "type": "particles",
+      "protocol": "analytic-seeded-particle-source-v1",
+      "seed": 176,
+      "canvas": {
+        "width": 320,
+        "height": 180
+      },
+      "fps": {
+        "num": 12,
+        "den": 1
+      },
+      "duration_tick": 360000,
+      "ticks_per_second": 90000,
+      "emitters": [
+        {
+          "rate": 22.0,
+          "lifetime": [
+            2.0,
+            2.0
+          ],
+          "position": [
+            0.5,
+            0.5
+          ],
+          "spread": [
+            0.9,
+            0.85
+          ],
+          "velocity": [
+            [
+              -0.01,
+              0.01
+            ],
+            [
+              -0.015,
+              0.015
+            ]
+          ],
+          "acceleration": [
+            0.0,
+            0.0
+          ],
+          "size": [
+            0.012,
+            0.035
+          ],
+          "size_end": 0.3,
+          "aspect": 1.0,
+          "rotation": [
+            0.0,
+            360.0
+          ],
+          "spin": [
+            -30.0,
+            30.0
+          ],
+          "shape": "star",
+          "softness": 0.2,
+          "glow": 0.4,
+          "colors": [
+            "#f9edff",
+            "#9eeaff"
+          ],
+          "color_end": null,
+          "opacity": 0.85,
+          "fade_in": 0.2,
+          "fade_out": 0.45,
+          "prewarm": true,
+          "sway": [
+            0.0,
+            0.0
+          ],
+          "twinkle": [
+            0.35,
+            1.0
+          ],
+          "keyframes": [
+            {
+              "property": "glow",
+              "keyframes": [
+                {
+                  "at_tick": 0,
+                  "value": 0.1,
+                  "interpolation": "ease_in"
+                },
+                {
+                  "at_tick": 180000,
+                  "value": 0.8,
+                  "interpolation": "ease_out"
+                },
+                {
+                  "at_tick": 360000,
+                  "value": 0.1,
+                  "interpolation": "linear"
+                }
+              ]
+            },
+            {
+              "property": "opacity",
+              "keyframes": [
+                {
+                  "at_tick": 0,
+                  "value": 0.9,
+                  "interpolation": "ease_out"
+                },
+                {
+                  "at_tick": 180000,
+                  "value": 0.25,
+                  "interpolation": "ease_in"
+                },
+                {
+                  "at_tick": 360000,
+                  "value": 0.9,
+                  "interpolation": "linear"
+                }
+              ]
+            },
+            {
+              "property": "shape",
+              "keyframes": [
+                {
+                  "at_tick": 0,
+                  "value": "diamond",
+                  "interpolation": "hold"
+                },
+                {
+                  "at_tick": 117000,
+                  "value": "star",
+                  "interpolation": "hold"
+                },
+                {
+                  "at_tick": 270000,
+                  "value": "ring",
+                  "interpolation": "hold"
+                }
+              ]
+            },
+            {
+              "property": "size",
+              "keyframes": [
+                {
+                  "at_tick": 0,
+                  "value": [
+                    0.006,
+                    0.012
+                  ],
+                  "interpolation": "bezier",
+                  "control_points": [
+                    0.3,
+                    0.05,
+                    0.7,
+                    0.95
+                  ]
+                },
+                {
+                  "at_tick": 180000,
+                  "value": [
+                    0.025,
+                    0.055
+                  ],
+                  "interpolation": "bezier",
+                  "control_points": [
+                    0.3,
+                    0.05,
+                    0.7,
+                    0.95
+                  ]
+                },
+                {
+                  "at_tick": 360000,
+                  "value": [
+                    0.006,
+                    0.012
+                  ],
+                  "interpolation": "linear"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "frame_count": 48,
+  "frame_sha256": [
+    "4eea4feb23cb867a2e06ec094a8aa78c53308215bbf76ffac9f7f8975b2e1d1e",
+    "fa6c2ebdaa590a783b6695583d9c8baed808c22cd3b99accaf6a7f8a65db610f",
+    "de40da5388ea34a464a5e65035d36bbd0b5e5f05483be8de4465022ebe1bad47",
+    "803a30b2316f8073e53149b2b49cef8056aff48ee55a0e4f65b4c3f62fae5a28",
+    "95c70991693168209a391ab419ed2e3605679aecc33fc9f3d4a57bd5a1b931b7",
+    "aefa8c7bd719bbb77480070a4409dee8041152e452cc993ac86c3ac00970a160",
+    "ce9d761ee24e386bfb56c7c0630a45dc24955ea63231fece6e80cc88b1f873de",
+    "6a851ecbf8a038a1f08beeedad1760faf286c634154b906dc0a03b4076f8ba6d",
+    "69f9b3c870001f6573b235e6d66f46f1f9a048e6c156964e91b2a5c14451a7a3",
+    "98ba81c614b5452e1b458d8ba35e20989ff1d891e605e6f8f328d2f72870fe58",
+    "62a831f13d27a451f932aa1e80c6b9cf0b1efbae102aa8411e04cf261b11637f",
+    "f601ebcd391f53254f188048936bfea47c3d8b2c11059448720e93a109d9c6dd",
+    "93324cdf04482c0d85a4be634271896ead6988d3f2ccd899bb569fda60d28352",
+    "58b6e85e32244272e2e6c6a7614cad2124079fb0f4a0e4d7d63f93284e3353e2",
+    "2d2f7063d69e89c3f56624d665ffb1a7b70478d5bb29cfa71730f9645856dedf",
+    "99d0cedb05f5dff2904acbc5e303312458b1add41c193afdd1e9a6789381cf28",
+    "2e6a97917db30322cdc041faec303af820b7e84b9c0ff6a3d04c1a442671ba31",
+    "5ad686bfb04240dc04b3d67327f1f80935ac20903b93c9587731e6d15a6944cd",
+    "18c35c5652bb06a1d45e0fa58c95248a85d42a93ffa77dc1a31ac316c08166c0",
+    "481e05d6bbce1c12cdf5761cd88b8ed000c942310a645fc3fbc259aa130f101f",
+    "27c93946bc2e0eefc7bdd840e2aef841b491aeb4f24d8c0ecc9d43a021eea60f",
+    "7e02f1e661c41244b5048dd6c4acb817f7cfe394ee9296d0b3a35eb015d71673",
+    "fd3b736e50f6280a19a335008bbed457a38da49b2c3ec95ee4372626e9548ac9",
+    "5e7ef1deb8a7ea810aaca2733e610830e73a7ee7e79c7c25e0077f61679981ee",
+    "64072d53a91f51bd61f0c179f841cb7dfd64f2601434a0c4daf47eec060dc2ff",
+    "374cafd21703d4ab3e6ccc399d2e6aae75051e9bbc053e0f38b9588d7857f45d",
+    "9c9e6cd8316dfea66cb1980628067ca1570d1745cdc3bf43a0b510a59cf7222f",
+    "7e9d324c3d3b53ffd398a105b38bcdf4b0094dff83ce1c8816c4560fd7b83103",
+    "d0a368ffb84835106a7d9597e887a5a573986a181a770a11de00526d95565373",
+    "909429b213db93cd64ff47dfbe5303540a078ef9330b12052bef7835d4e6cb50",
+    "841d9e70e5c3f7099901d7b94ef140e5c72d30ce30002626a0ec1bf68a6a0119",
+    "dd5089459aaacbf346465ab554331419c137b2e87143578bcaf31995ce59b071",
+    "38718fe4a52349c59ba7c73ec8172aef125664e4dc0e1cd127951b8766c7eceb",
+    "31c32444f151056b0dd5c037c9a470929bb25fb5b18ac85c5c26794da9840609",
+    "51e7addb3e4e8d0d899e34ff20bb7b37376c51274096a879fa6861173c9855db",
+    "d8471514e19f571c5982591231ad14f585b96fb2d189fe387932f0ff128e848d",
+    "d296e90bfeb5b973b3592784fad9ea4074f01fd3f15763fb7af0389ab1a97f89",
+    "3752be731c48bb1b752df9b1d777ff9441aaab2d6ee2805d426a9326dc60e6b6",
+    "860e4c267fdeed5f266d22eaab2d0f78c2cfef373539cee6df1ab4a929517342",
+    "0eb31f3be56e71382dced49e1af23d2278990491632b11c6aec16a74b12d3235",
+    "be2220a8fba6dba9c2596e140b6ae5c1cf4f768afc950799f28ba91b9991bb64",
+    "2979093859e86ae33f3cc39a97b01573ced69e77fff7416a38c3b596bcab455b",
+    "daaf37824c92b4f92af9a87ae1dbfaca3c3c212f6c199822cbf50114ef0ac997",
+    "439b591b3d9fb454a22f5a41196ee33120515b4f8676fda9204549630334389c",
+    "a1e131820f86db2d34de998decfe451b7de727343dfe52d6f26afcf76b2e7a24",
+    "0cd78cbea75da101ee1ca6cd2d28f81a93d9f0889afa3bf52974d9d5274b3266",
+    "af875c9316d2783fd8fe8b590a28db938bf6d85c596c1cf048ee29e507ea490b",
+    "00e6e39719c69663c749981b9cd60fc91b42d33417cf73225610dd5ad881054d"
+  ],
+  "video_sha256": "d93d4ce5bc5b2d11dc4a33e183a13000ced756b0e6aebb2356ab33d46d8da594",
+  "audio_sha256": "626db8bea999709c8faead0ec9d60025604676fcc44130abe6c1168b90989b3b",
+  "all_48_decoded_10bit_frames_equal": true,
+  "all_384000_PCM_equal": true,
+  "decoded_audio_all_zero": true,
+  "GPU": {
+    "engine": "render-owned-float32-opencl-v1",
+    "request": {
+      "mode": "require",
+      "device": "0.0",
+      "max_working_bytes": 1073741824,
+      "probe_timeout_seconds": 30
+    },
+    "status": "verified",
+    "dry_run": null,
+    "operations": {
+      "affine": 192,
+      "over": 192,
+      "particles": 184
+    },
+    "CPU_scope": [
+      "glyph-rasterization",
+      "color-conversion",
+      "effects",
+      "masks",
+      "crop",
+      "transitions",
+      "non-normal-blends",
+      "audio",
+      "delivery-encoding"
+    ],
+    "GPU_scope": [
+      "premultiplied-affine",
+      "normal-source-over",
+      "text-color-components",
+      "binary-word-selection",
+      "seeded-particle-rasterization"
+    ],
+    "host_shared_bytes_limit": 1073741824,
+    "retained_host_shared_bytes": 0,
+    "device_bytes_limit": 1073741824,
+    "limits_are_peak_RSS": false,
+    "free_VRAM_reserved": false,
+    "integer_media_conversion": false,
+    "worker_closed": true,
+    "runtime_failure_CPU_fallback": false,
+    "artifacts": [
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu.py",
+        "role": "float-gpu-execution",
+        "bytes": 15280,
+        "sha256": "sha256:bddcbc4e8ff77855505d7d40f3dabf8967291f5b663d9a039376f8feb1c8b651"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_worker.py",
+        "role": "float-gpu-execution",
+        "bytes": 9070,
+        "sha256": "sha256:6603919bb93526723e730cee29b496a59d681ed0259d7261d4edb6c0ce81a5d7"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_native.py",
+        "role": "float-gpu-execution",
+        "bytes": 19068,
+        "sha256": "sha256:c72c82e7d50bcea9e392421324ae5ab428be72c02210037b23dc9e6b19e9e77a"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_control.py",
+        "role": "float-gpu-execution",
+        "bytes": 6648,
+        "sha256": "sha256:717c02fd2ec1801587c4786c391f24a324fd9667aeec3d6be8c3272320c09b8d"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\procedural_particles.py",
+        "role": "float-gpu-execution",
+        "bytes": 17658,
+        "sha256": "sha256:386a2b146997a82ff6065bd599d69ddc602d714e1cfc19157e27807327a55009"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\particle_animation.py",
+        "role": "float-gpu-execution",
+        "bytes": 13223,
+        "sha256": "sha256:37e168c03f0634973ff38e9d265e165b8eb048bb7c9e87c4e0799707f76902c0"
+      }
+    ],
+    "planned_maximum_pixels": 230400,
+    "planned_device_bytes": 11059200,
+    "planned_host_shared_bytes": 7603968,
+    "owned_worker_pid": 26880,
+    "control": {
+      "protocol": "owned-inherited-binary-pipes-v1",
+      "max_packet_bytes": 131072,
+      "queue_capacity_each": 1,
+      "pixel_payload": false,
+      "network": false,
+      "transient_control_persisted": false,
+      "sent_packets": 569,
+      "received_packets": 569,
+      "sent_bytes": 232232,
+      "received_bytes": 464153,
+      "threads_closed": true,
+      "streams_closed": true
+    },
+    "native": {
+      "protocol": "native-opencl-binary64-float32-primitives-v1",
+      "device": {
+        "selection": "0.0",
+        "name": "NVIDIA GeForce RTX 3060",
+        "vendor": "NVIDIA Corporation",
+        "driver": "595.95",
+        "version": "OpenCL 3.0 CUDA",
+        "type": 4,
+        "double_fp_config": 63,
+        "global_memory_bytes": 12884377600,
+        "max_allocation_bytes": 3221094400
+      },
+      "kernel_sha256": "daed9acb931058a2a39f835daad127d97500001f99090335ce6a26f5c37eaf65",
+      "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+      "arithmetic": "binary64 affine/over/text; binary32 particle coverage and ordered accumulation; Float32 surfaces",
+      "device_quota_bytes": 1073741824,
+      "retained_device_bytes": 11059200,
+      "operations": {
+        "over": 194,
+        "affine": 194,
+        "paint": 1,
+        "select_words": 1,
+        "particles": 184
+      },
+      "integer_media_conversion": false
+    },
+    "probe": {
+      "pixels_per_case": 65536,
+      "max_errors": {
+        "over": 0.0,
+        "affine": 0.0,
+        "paint": 0.0,
+        "select": 0.0
+      },
+      "absolute_limit": 3e-07,
+      "all_16bit_levels_present": true,
+      "actual_gpu_operations": 6,
+      "subnormal_over_bit_exact": true,
+      "subnormal_affine_bit_exact": true,
+      "subnormal_alpha_input_bits": [
+        0,
+        1,
+        2,
+        8388607,
+        8388608,
+        8388609,
+        1065353215,
+        1065353216
+      ]
+    },
+    "maximum_host_shared_bytes": 7373056,
+    "operation_elapsed_seconds": 5.523160500160884,
+    "render_exit_code": 0,
+    "worker_returncode": 0,
+    "shared_handles_closed": true
+  },
+  "restored_GPU": {
+    "engine": "render-owned-float32-opencl-v1",
+    "request": {
+      "mode": "require",
+      "device": "0.0",
+      "max_working_bytes": 1073741824,
+      "probe_timeout_seconds": 30
+    },
+    "status": "verified",
+    "dry_run": null,
+    "operations": {
+      "affine": 192,
+      "over": 192,
+      "particles": 184
+    },
+    "CPU_scope": [
+      "glyph-rasterization",
+      "color-conversion",
+      "effects",
+      "masks",
+      "crop",
+      "transitions",
+      "non-normal-blends",
+      "audio",
+      "delivery-encoding"
+    ],
+    "GPU_scope": [
+      "premultiplied-affine",
+      "normal-source-over",
+      "text-color-components",
+      "binary-word-selection",
+      "seeded-particle-rasterization"
+    ],
+    "host_shared_bytes_limit": 1073741824,
+    "retained_host_shared_bytes": 0,
+    "device_bytes_limit": 1073741824,
+    "limits_are_peak_RSS": false,
+    "free_VRAM_reserved": false,
+    "integer_media_conversion": false,
+    "worker_closed": true,
+    "runtime_failure_CPU_fallback": false,
+    "artifacts": [
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu.py",
+        "role": "float-gpu-execution",
+        "bytes": 15280,
+        "sha256": "sha256:bddcbc4e8ff77855505d7d40f3dabf8967291f5b663d9a039376f8feb1c8b651"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_worker.py",
+        "role": "float-gpu-execution",
+        "bytes": 9070,
+        "sha256": "sha256:6603919bb93526723e730cee29b496a59d681ed0259d7261d4edb6c0ce81a5d7"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_native.py",
+        "role": "float-gpu-execution",
+        "bytes": 19068,
+        "sha256": "sha256:c72c82e7d50bcea9e392421324ae5ab428be72c02210037b23dc9e6b19e9e77a"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_control.py",
+        "role": "float-gpu-execution",
+        "bytes": 6648,
+        "sha256": "sha256:717c02fd2ec1801587c4786c391f24a324fd9667aeec3d6be8c3272320c09b8d"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\procedural_particles.py",
+        "role": "float-gpu-execution",
+        "bytes": 17658,
+        "sha256": "sha256:386a2b146997a82ff6065bd599d69ddc602d714e1cfc19157e27807327a55009"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\particle_animation.py",
+        "role": "float-gpu-execution",
+        "bytes": 13223,
+        "sha256": "sha256:37e168c03f0634973ff38e9d265e165b8eb048bb7c9e87c4e0799707f76902c0"
+      }
+    ],
+    "planned_maximum_pixels": 230400,
+    "planned_device_bytes": 11059200,
+    "planned_host_shared_bytes": 7603968,
+    "owned_worker_pid": 12112,
+    "control": {
+      "protocol": "owned-inherited-binary-pipes-v1",
+      "max_packet_bytes": 131072,
+      "queue_capacity_each": 1,
+      "pixel_payload": false,
+      "network": false,
+      "transient_control_persisted": false,
+      "sent_packets": 569,
+      "received_packets": 569,
+      "sent_bytes": 232232,
+      "received_bytes": 464153,
+      "threads_closed": true,
+      "streams_closed": true
+    },
+    "native": {
+      "protocol": "native-opencl-binary64-float32-primitives-v1",
+      "device": {
+        "selection": "0.0",
+        "name": "NVIDIA GeForce RTX 3060",
+        "vendor": "NVIDIA Corporation",
+        "driver": "595.95",
+        "version": "OpenCL 3.0 CUDA",
+        "type": 4,
+        "double_fp_config": 63,
+        "global_memory_bytes": 12884377600,
+        "max_allocation_bytes": 3221094400
+      },
+      "kernel_sha256": "daed9acb931058a2a39f835daad127d97500001f99090335ce6a26f5c37eaf65",
+      "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+      "arithmetic": "binary64 affine/over/text; binary32 particle coverage and ordered accumulation; Float32 surfaces",
+      "device_quota_bytes": 1073741824,
+      "retained_device_bytes": 11059200,
+      "operations": {
+        "over": 194,
+        "affine": 194,
+        "paint": 1,
+        "select_words": 1,
+        "particles": 184
+      },
+      "integer_media_conversion": false
+    },
+    "probe": {
+      "pixels_per_case": 65536,
+      "max_errors": {
+        "over": 0.0,
+        "affine": 0.0,
+        "paint": 0.0,
+        "select": 0.0
+      },
+      "absolute_limit": 3e-07,
+      "all_16bit_levels_present": true,
+      "actual_gpu_operations": 6,
+      "subnormal_over_bit_exact": true,
+      "subnormal_affine_bit_exact": true,
+      "subnormal_alpha_input_bits": [
+        0,
+        1,
+        2,
+        8388607,
+        8388608,
+        8388609,
+        1065353215,
+        1065353216
+      ]
+    },
+    "maximum_host_shared_bytes": 7373056,
+    "operation_elapsed_seconds": 5.6950863999081776,
+    "render_exit_code": 0,
+    "worker_returncode": 0,
+    "shared_handles_closed": true
+  },
+  "static_GPU": {
+    "engine": "render-owned-float32-opencl-v1",
+    "request": {
+      "mode": "require",
+      "device": "0.0",
+      "max_working_bytes": 1073741824,
+      "probe_timeout_seconds": 30
+    },
+    "status": "verified",
+    "dry_run": null,
+    "operations": {
+      "affine": 192,
+      "over": 192,
+      "particles": 143
+    },
+    "CPU_scope": [
+      "glyph-rasterization",
+      "color-conversion",
+      "effects",
+      "masks",
+      "crop",
+      "transitions",
+      "non-normal-blends",
+      "audio",
+      "delivery-encoding"
+    ],
+    "GPU_scope": [
+      "premultiplied-affine",
+      "normal-source-over",
+      "text-color-components",
+      "binary-word-selection",
+      "seeded-particle-rasterization"
+    ],
+    "host_shared_bytes_limit": 1073741824,
+    "retained_host_shared_bytes": 0,
+    "device_bytes_limit": 1073741824,
+    "limits_are_peak_RSS": false,
+    "free_VRAM_reserved": false,
+    "integer_media_conversion": false,
+    "worker_closed": true,
+    "runtime_failure_CPU_fallback": false,
+    "artifacts": [
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu.py",
+        "role": "float-gpu-execution",
+        "bytes": 15280,
+        "sha256": "sha256:bddcbc4e8ff77855505d7d40f3dabf8967291f5b663d9a039376f8feb1c8b651"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_worker.py",
+        "role": "float-gpu-execution",
+        "bytes": 9070,
+        "sha256": "sha256:6603919bb93526723e730cee29b496a59d681ed0259d7261d4edb6c0ce81a5d7"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_native.py",
+        "role": "float-gpu-execution",
+        "bytes": 19068,
+        "sha256": "sha256:c72c82e7d50bcea9e392421324ae5ab428be72c02210037b23dc9e6b19e9e77a"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_control.py",
+        "role": "float-gpu-execution",
+        "bytes": 6648,
+        "sha256": "sha256:717c02fd2ec1801587c4786c391f24a324fd9667aeec3d6be8c3272320c09b8d"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\procedural_particles.py",
+        "role": "float-gpu-execution",
+        "bytes": 17658,
+        "sha256": "sha256:386a2b146997a82ff6065bd599d69ddc602d714e1cfc19157e27807327a55009"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\particle_animation.py",
+        "role": "float-gpu-execution",
+        "bytes": 13223,
+        "sha256": "sha256:37e168c03f0634973ff38e9d265e165b8eb048bb7c9e87c4e0799707f76902c0"
+      }
+    ],
+    "planned_maximum_pixels": 230400,
+    "planned_device_bytes": 11059200,
+    "planned_host_shared_bytes": 7603968,
+    "owned_worker_pid": 6932,
+    "control": {
+      "protocol": "owned-inherited-binary-pipes-v1",
+      "max_packet_bytes": 131072,
+      "queue_capacity_each": 1,
+      "pixel_payload": false,
+      "network": false,
+      "transient_control_persisted": false,
+      "sent_packets": 528,
+      "received_packets": 528,
+      "sent_bytes": 216778,
+      "received_bytes": 430638,
+      "threads_closed": true,
+      "streams_closed": true
+    },
+    "native": {
+      "protocol": "native-opencl-binary64-float32-primitives-v1",
+      "device": {
+        "selection": "0.0",
+        "name": "NVIDIA GeForce RTX 3060",
+        "vendor": "NVIDIA Corporation",
+        "driver": "595.95",
+        "version": "OpenCL 3.0 CUDA",
+        "type": 4,
+        "double_fp_config": 63,
+        "global_memory_bytes": 12884377600,
+        "max_allocation_bytes": 3221094400
+      },
+      "kernel_sha256": "daed9acb931058a2a39f835daad127d97500001f99090335ce6a26f5c37eaf65",
+      "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+      "arithmetic": "binary64 affine/over/text; binary32 particle coverage and ordered accumulation; Float32 surfaces",
+      "device_quota_bytes": 1073741824,
+      "retained_device_bytes": 11059200,
+      "operations": {
+        "over": 194,
+        "affine": 194,
+        "paint": 1,
+        "select_words": 1,
+        "particles": 143
+      },
+      "integer_media_conversion": false
+    },
+    "probe": {
+      "pixels_per_case": 65536,
+      "max_errors": {
+        "over": 0.0,
+        "affine": 0.0,
+        "paint": 0.0,
+        "select": 0.0
+      },
+      "absolute_limit": 3e-07,
+      "all_16bit_levels_present": true,
+      "actual_gpu_operations": 6,
+      "subnormal_over_bit_exact": true,
+      "subnormal_affine_bit_exact": true,
+      "subnormal_alpha_input_bits": [
+        0,
+        1,
+        2,
+        8388607,
+        8388608,
+        8388609,
+        1065353215,
+        1065353216
+      ]
+    },
+    "maximum_host_shared_bytes": 7373056,
+    "operation_elapsed_seconds": 5.247054100153036,
+    "render_exit_code": 0,
+    "worker_returncode": 0,
+    "shared_handles_closed": true
+  },
+  "preview": {
+    "status": "succeeded",
+    "engine": "agent-timeline-preview-v1",
+    "cache_hit": false,
+    "cache_key": "fe13ce93566ba55b141c0de62a8d1863ccc6bb93b1f0445b74b97403986adcd9",
+    "pixel_pipeline": {
+      "protocol": "agent-native-float32-timeline-preview-v1",
+      "engine": "float32-native-v1",
+      "standard_render_selected": false,
+      "author_project_rewritten": false,
+      "whole_movie_pixel_cache": false,
+      "working_signal": {
+        "primaries": "bt709",
+        "transfer": "linear"
+      },
+      "output_signal": {
+        "primaries": "bt709",
+        "transfer": "srgb"
+      },
+      "background_signal": {
+        "primaries": "bt709",
+        "transfer": "srgb"
+      },
+      "range_policy": "clip",
+      "HDR_accepted": false,
+      "network": false,
+      "source_receipts": {},
+      "source_render_protocol": "standard-render-native-float32-v1",
+      "preview_selected": true,
+      "selected_author_frames": [
+        24,
+        25
+      ],
+      "reference_signal": {
+        "primaries": "bt709",
+        "transfer": "srgb"
+      },
+      "reference_pixel_format": "rgba64be",
+      "reference_quantization_bits": 16,
+      "reference_float_component_bits": null,
+      "MP4_view": {
+        "primaries": "bt709",
+        "transfer": "bt709-oetf",
+        "matrix": "bt709",
+        "range": "limited",
+        "background": "black-composited-in-linear-light",
+        "lossless": false
+      },
+      "resampling": "premultiplied-linear-bilinear-after-full-author-composite",
+      "realtime_accepted": false,
+      "source_count": 0,
+      "per_source_cache_limit_bytes": 268435456,
+      "total_source_cache_limit_bytes": 268435456,
+      "cache_limit_is_process_RSS_limit": false,
+      "artifacts": [
+        {
+          "path": "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+          "role": "standard-float-render-runtime",
+          "bytes": 223360000,
+          "sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        },
+        {
+          "path": "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.exe",
+          "role": "standard-float-render-runtime",
+          "bytes": 223153664,
+          "sha256": "sha256:70872c3ffbc43d0b2c570f9837f54d6e9a832f4ca25463e9735b6a3ec0621478"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_standard_render.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 25921,
+          "sha256": "sha256:4e2e247ce5680088fdf299774758a376c0832d7264ad4dafa67f2437d6fa7edf"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_stream.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 13806,
+          "sha256": "sha256:955705b4f87817de34046f5cf979319278fb7815da75c8e3870630daaad574a8"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_audio_graph.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 4549,
+          "sha256": "sha256:189db07b74634fb1c99956c38e0c74c077d5146de7248a5938f8cd6aae346399"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\render.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 328285,
+          "sha256": "sha256:e826ac8e32e24e38826602e339fe4ed966246c952c824169706b79745b0af59f"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_color_signal.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 6848,
+          "sha256": "sha256:b0c07f905c67db85478fc34d5e1b1614a13361bf64ce34f5838512de875d8be1"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_timeline.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 36749,
+          "sha256": "sha256:0374e79a6bd0e985b400b3d0d6d5be14346df93254074e91e2122b684868f694"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_tracking.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 16369,
+          "sha256": "sha256:955978836503f032531d9d603183a3b0ec0609de804326efa69cd7a8b08f2dcf"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\bindings.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 28535,
+          "sha256": "sha256:2822ecee397c7669ca9b277fa5f1316c648ea66cf0c9dc91a1b371f96e5c8d32"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\animation.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 2900,
+          "sha256": "sha256:b90064bd9de4fbe1aea85ba7bb11e5acfefc82a85c2b8078ba36bac64c59b949"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_crop.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 15687,
+          "sha256": "sha256:d6c0bc63be9a4bc179ab986647ae31dfea191b5e78fe04ad1ef565362a50ed63"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_adjustments.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 7073,
+          "sha256": "sha256:fc439a169b5bf353fba54617ae09f5c73b2d0d924909f74fc545962a31df3c58"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_effect_chain.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 9057,
+          "sha256": "sha256:73fa375ee466a069b02f2f1613fccc729c0a00e7dd0c3379c6673cd872c743ab"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_transitions.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 14515,
+          "sha256": "sha256:7de54ec6bd9497c8b9363707262d3b267cceb30576f61bb56747ebae137dd758"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_transition_plan.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 5634,
+          "sha256": "sha256:9081584a60972c789efac8f4405ac54cf4ce4cf2046982dd88932b17c3892912"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\source_transitions.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 17528,
+          "sha256": "sha256:1ec683a3c35285471c07161aa856d6580cb1ecc5dda4cadba609c403be82cb46"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_text.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 20321,
+          "sha256": "sha256:496c87c34db04c6eedbc062fa8883bfc3571d6b10f027fab946f1c688a1e9434"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_text_paint.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 5110,
+          "sha256": "sha256:907cc716268fbf99a2e606afc9bacaf2ecd7b9dd9d23cd9a1c08df29cda948be"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_text_coverage.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 16102,
+          "sha256": "sha256:dc2212f77592b271d2b658348e1cd112d74964f1ccd18cffd221c26d2c605521"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\text_paint.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 6220,
+          "sha256": "sha256:a924644f0396b5204efbb0e085f25d51f6cda5bfc75f2d44febc6796e42cb028"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\text_layout.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 5045,
+          "sha256": "sha256:1f3831478b41ea23c7dd445a66ba08249a4833cce852eb9190ac0a35936a210b"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\text_highlight.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 22841,
+          "sha256": "sha256:fb5745cc3bd4c52aef9fd79d14ad29be9338fc46bd164b7d373c910a3b9ff782"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\text_typing.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 12493,
+          "sha256": "sha256:150d8734c81f599c8a46e43aebe4aeca82ebda5f5fa790e08361c86e848e3544"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\captions.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 13732,
+          "sha256": "sha256:38c500ba0e2697e745d7ad8357d7a9e5cb9e771f4093750b0b6a8b67e7ee0c57"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 15280,
+          "sha256": "sha256:bddcbc4e8ff77855505d7d40f3dabf8967291f5b663d9a039376f8feb1c8b651"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_native.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 19068,
+          "sha256": "sha256:c72c82e7d50bcea9e392421324ae5ab428be72c02210037b23dc9e6b19e9e77a"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_worker.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 9070,
+          "sha256": "sha256:6603919bb93526723e730cee29b496a59d681ed0259d7261d4edb6c0ce81a5d7"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_control.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 6648,
+          "sha256": "sha256:717c02fd2ec1801587c4786c391f24a324fd9667aeec3d6be8c3272320c09b8d"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\procedural_particles.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 17658,
+          "sha256": "sha256:386a2b146997a82ff6065bd599d69ddc602d714e1cfc19157e27807327a55009"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\particle_animation.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 13223,
+          "sha256": "sha256:37e168c03f0634973ff38e9d265e165b8eb048bb7c9e87c4e0799707f76902c0"
+        }
+      ],
+      "projection_working_bytes_limit": 805306368,
+      "projection_budget_scope": "each float projection/composite/delivery call; not total process RSS",
+      "timeline": {
+        "protocol": "author-clock-float32-frame-host-v1",
+        "sequence_id": "seq_main",
+        "display_fps": "12",
+        "frames": 48,
+        "working_signal": {
+          "primaries": "bt709",
+          "transfer": "linear"
+        },
+        "scalar_clock": "exact rational source/display intervals",
+        "curve_clock": "existing adaptive Float64 author clock;see compilation certificate",
+        "native_holds": "original PTS to next PTS;last native duration establishes EOF",
+        "nested_clock": "continuous author time;exact left/right limits propagated through reversal",
+        "transitions": {
+          "protocol": "linear-premultiplied-float32-transitions-v1",
+          "patterns": [
+            "circleclose",
+            "circlecrop",
+            "circleopen",
+            "coverdown",
+            "coverleft",
+            "coverright",
+            "coverup",
+            "diagbl",
+            "diagbr",
+            "diagtl",
+            "diagtr",
+            "dip_black",
+            "dip_white",
+            "distance",
+            "fade",
+            "fadeblack",
+            "fadefast",
+            "fadegrays",
+            "fadeslow",
+            "fadewhite",
+            "hblur",
+            "hlslice",
+            "hlwind",
+            "horzclose",
+            "horzopen",
+            "hrslice",
+            "hrwind",
+            "pixelize",
+            "radial",
+            "rectcrop",
+            "revealdown",
+            "revealleft",
+            "revealright",
+            "revealup",
+            "slidedown",
+            "slideleft",
+            "slideright",
+            "slideup",
+            "smoothdown",
+            "smoothleft",
+            "smoothright",
+            "smoothup",
+            "squeezeh",
+            "squeezev",
+            "vdslice",
+            "vdwind",
+            "vertclose",
+            "vertopen",
+            "vuslice",
+            "vuwind",
+            "wipebl",
+            "wipebr",
+            "wipedown",
+            "wipeleft",
+            "wiperight",
+            "wipetl",
+            "wipetr",
+            "wipeup",
+            "zoomin"
+          ],
+          "source_handle_plans": [],
+          "double_source_over_crossfade": false,
+          "group_spatial_edges": true,
+          "GPU": false
+        },
+        "text": {
+          "protocol": "native-glyph-linear-float32-paint-v1",
+          "authored_color": {
+            "primaries": "bt709",
+            "transfer": "srgb"
+          },
+          "working_signal": {
+            "primaries": "bt709",
+            "transfer": "linear"
+          },
+          "glyph_coverage_bits": 8,
+          "color_component_bits": 32,
+          "media_pixels_in_glyph_process": false,
+          "cache_limit_bytes": 67108864,
+          "requested_cache_limit_bytes": 67108864,
+          "cached_bytes": 0,
+          "cache_hits": 0,
+          "native_snapshots": 0,
+          "plans": [],
+          "coverage_cache_limit_bytes": 67108864,
+          "coverage_cached_bytes": 0,
+          "coverage_cache_hits": 0,
+          "native_coverage_rasters": 0,
+          "admission": {
+            "max_working_bytes": 805306368,
+            "float_surfaces": 4,
+            "native_and_scratch_bytes_per_pixel": 8,
+            "two_cache_limits_reserved": true,
+            "tile_pixels": 16384,
+            "estimate_is_peak_RSS": false
+          },
+          "GPU": false,
+          "GPU_scope": "color-components/paragraph-over/word-selection;glyph-rasterization-on-CPU",
+          "HDR_accepted": false,
+          "whole_movie_cache": false
+        },
+        "adjustments": {
+          "protocol": "selected-sequence-author-clock-float32-adjustments-v1",
+          "selected_sequence_id": "seq_main",
+          "stage": "after-all-video-and-subtitle-tracks-before-delivery-conversion",
+          "clock": "selected sequence tick minus declared layer start; no frame-grid resnap",
+          "nested_application": "once at selected root; child canvases are not graded twice",
+          "intervals": "start-inclusive/end-exclusive; clipped coverage retains original animation clock",
+          "layers": [],
+          "active_plans": 0,
+          "applied_frames": 0,
+          "layer_applications": 0,
+          "integer_intermediate": false,
+          "GPU": false,
+          "audio_changed": false,
+          "workspace_scope": "existing per-effect explicit quota; not aggregate process RSS"
+        },
+        "tracking": {
+          "protocol": "native-PTS-float32-tracking-bindings-v1",
+          "plans": [],
+          "bindings": 0,
+          "observations": 0,
+          "visibility_protocol": "native-transition-point-footprint-v1",
+          "clock": "selected original PTS * native time base minus recorded demux origin; no CFR resnap",
+          "geometry": "same crop/fit/TRS inverse as rendered source; integer pixel centres and half-pixel edges",
+          "ROI_reference": "source geometry at target original author start; first observation if no native frame covers reference",
+          "scale_policy": "existing binding clamp 0.01..20; source projected ROI-width ratio",
+          "alpha": "binding base opacity times actual rendered source canvas alpha and scalar opacity; transition footprint mass clamped to 0..1",
+          "visibility": "source coverage/range/crop/mute, pixel alpha, mask and own edge/paired transition source contribution; higher tracks and natural identity unverified",
+          "transition_geometry": "alpha-weighted bilinear point footprint through the actual 59 transition kernels; centroid; missing required ROI footprint hides target",
+          "model_inference": false,
+          "display_keyframes_baked": false,
+          "integer_intermediate": false,
+          "evaluations": 0,
+          "hidden_evaluations": 0,
+          "cache_hits": 0,
+          "source_references": 0,
+          "edit_lineage": "native-tracking-edit-lineage-v1; empty route is hidden",
+          "pinned_reference_clock": "reference_output_tick on original complete source output"
+        },
+        "particles": {
+          "seq_main/moving-trail": {
+            "sha256": "36fe4a8581e677ed0e33c4d00615f39c85c66919640acfa13a4912146da8c237",
+            "protocol": "analytic-seeded-particle-source-v1",
+            "frames": 48,
+            "source_fps": "12",
+            "source_duration_seconds": "4",
+            "random_access": true,
+            "emitter_animation": {
+              "0": {
+                "protocol": "source-anchored-emitter-keyframes-v1",
+                "clock": "original-generator-ticks",
+                "properties": [
+                  "position",
+                  "rate"
+                ],
+                "birth_sampled": [
+                  "position"
+                ],
+                "live_sampled": [],
+                "birth_rate": "exact-rational-integral;monotone-inverse;stable-integer-birth-ID",
+                "inverse_cache_limit": 122,
+                "birth_cache_limit": 122,
+                "inverse_precision": "64_rational_bisections;lower_bound_error_le_segment_seconds/2^64",
+                "max_keyframes_per_property": 64
+              }
+            },
+            "palette_signal": {
+              "primaries": "bt709",
+              "transfer": "srgb"
+            }
+          },
+          "seq_main/timed-confetti": {
+            "sha256": "eecb54c6ceb3f927f9a2d7bed52cd5abef721008ff01ffd7c974e6ca2e2181f3",
+            "protocol": "analytic-seeded-particle-source-v1",
+            "frames": 48,
+            "source_fps": "12",
+            "source_duration_seconds": "4",
+            "random_access": true,
+            "emitter_animation": {
+              "0": {
+                "protocol": "source-anchored-emitter-keyframes-v1",
+                "clock": "original-generator-ticks",
+                "properties": [
+                  "rate",
+                  "rotation",
+                  "spin"
+                ],
+                "birth_sampled": [
+                  "rotation",
+                  "spin"
+                ],
+                "live_sampled": [],
+                "birth_rate": "exact-rational-integral;monotone-inverse;stable-integer-birth-ID",
+                "inverse_cache_limit": 308,
+                "birth_cache_limit": 308,
+                "inverse_precision": "64_rational_bisections;lower_bound_error_le_segment_seconds/2^64",
+                "max_keyframes_per_property": 64
+              }
+            },
+            "palette_signal": {
+              "primaries": "bt709",
+              "transfer": "srgb"
+            }
+          },
+          "seq_main/live-look": {
+            "sha256": "ba60ac9b4f5a1a1d35f6b3915d195e0e4a21839130793bd82c2d4389684fc0ee",
+            "protocol": "analytic-seeded-particle-source-v1",
+            "frames": 48,
+            "source_fps": "12",
+            "source_duration_seconds": "4",
+            "random_access": true,
+            "emitter_animation": {
+              "0": {
+                "protocol": "source-anchored-emitter-keyframes-v1",
+                "clock": "original-generator-ticks",
+                "properties": [
+                  "colors",
+                  "opacity",
+                  "shape",
+                  "size",
+                  "softness"
+                ],
+                "birth_sampled": [],
+                "live_sampled": [
+                  "colors",
+                  "opacity",
+                  "shape",
+                  "size",
+                  "softness"
+                ],
+                "birth_rate": "exact-rational-integral;monotone-inverse;stable-integer-birth-ID",
+                "inverse_cache_limit": 62,
+                "birth_cache_limit": 62,
+                "inverse_precision": "64_rational_bisections;lower_bound_error_le_segment_seconds/2^64",
+                "max_keyframes_per_property": 64
+              }
+            },
+            "palette_signal": {
+              "primaries": "bt709",
+              "transfer": "srgb"
+            }
+          },
+          "seq_main/star-easing": {
+            "sha256": "e6e5d1ab86f1a8d501db39f4c8cdae1ad42e8ad12aca38ffe779c3be69767209",
+            "protocol": "analytic-seeded-particle-source-v1",
+            "frames": 48,
+            "source_fps": "12",
+            "source_duration_seconds": "4",
+            "random_access": true,
+            "emitter_animation": {
+              "0": {
+                "protocol": "source-anchored-emitter-keyframes-v1",
+                "clock": "original-generator-ticks",
+                "properties": [
+                  "glow",
+                  "opacity",
+                  "shape",
+                  "size"
+                ],
+                "birth_sampled": [],
+                "live_sampled": [
+                  "glow",
+                  "opacity",
+                  "shape",
+                  "size"
+                ],
+                "birth_rate": "exact-rational-integral;monotone-inverse;stable-integer-birth-ID",
+                "inverse_cache_limit": 90,
+                "birth_cache_limit": 90,
+                "inverse_precision": "64_rational_bisections;lower_bound_error_le_segment_seconds/2^64",
+                "max_keyframes_per_property": 64
+              }
+            },
+            "palette_signal": {
+              "primaries": "bt709",
+              "transfer": "srgb"
+            }
+          }
+        },
+        "GPU": {
+          "engine": "render-owned-float32-opencl-v1",
+          "request": {
+            "mode": "off",
+            "device": "0.0",
+            "max_working_bytes": 1073741824,
+            "probe_timeout_seconds": 30
+          },
+          "status": "off",
+          "dry_run": false,
+          "operations": {},
+          "CPU_scope": [
+            "glyph-rasterization",
+            "color-conversion",
+            "effects",
+            "masks",
+            "crop",
+            "transitions",
+            "non-normal-blends",
+            "audio",
+            "delivery-encoding"
+          ],
+          "GPU_scope": [
+            "premultiplied-affine",
+            "normal-source-over",
+            "text-color-components",
+            "binary-word-selection",
+            "seeded-particle-rasterization"
+          ],
+          "host_shared_bytes_limit": 1073741824,
+          "retained_host_shared_bytes": 0,
+          "device_bytes_limit": 1073741824,
+          "limits_are_peak_RSS": false,
+          "free_VRAM_reserved": false,
+          "integer_media_conversion": false,
+          "worker_closed": true,
+          "runtime_failure_CPU_fallback": false,
+          "artifacts": [
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu.py",
+              "role": "float-gpu-execution",
+              "bytes": 15280,
+              "sha256": "sha256:bddcbc4e8ff77855505d7d40f3dabf8967291f5b663d9a039376f8feb1c8b651"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_worker.py",
+              "role": "float-gpu-execution",
+              "bytes": 9070,
+              "sha256": "sha256:6603919bb93526723e730cee29b496a59d681ed0259d7261d4edb6c0ce81a5d7"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_native.py",
+              "role": "float-gpu-execution",
+              "bytes": 19068,
+              "sha256": "sha256:c72c82e7d50bcea9e392421324ae5ab428be72c02210037b23dc9e6b19e9e77a"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_control.py",
+              "role": "float-gpu-execution",
+              "bytes": 6648,
+              "sha256": "sha256:717c02fd2ec1801587c4786c391f24a324fd9667aeec3d6be8c3272320c09b8d"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\procedural_particles.py",
+              "role": "float-gpu-execution",
+              "bytes": 17658,
+              "sha256": "sha256:386a2b146997a82ff6065bd599d69ddc602d714e1cfc19157e27807327a55009"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\particle_animation.py",
+              "role": "float-gpu-execution",
+              "bytes": 13223,
+              "sha256": "sha256:37e168c03f0634973ff38e9d265e165b8eb048bb7c9e87c4e0799707f76902c0"
+            }
+          ],
+          "planned_maximum_pixels": 230400,
+          "planned_device_bytes": 11059200,
+          "planned_host_shared_bytes": 7603968,
+          "shared_handles_closed": true
+        },
+        "input_contract": "validated Agent Project IR;registered SHA and explicit common working RGB signal",
+        "audio_rendered": false,
+        "legacy_render_preview_cache_integrated": false,
+        "HDR_accepted": false,
+        "network": false
+      },
+      "projection_acceleration": {
+        "engine": "render-owned-float32-opencl-v1",
+        "request": {
+          "mode": "off",
+          "device": "0.0",
+          "max_working_bytes": 1073741824,
+          "probe_timeout_seconds": 30
+        },
+        "status": "off",
+        "dry_run": false,
+        "operations": {},
+        "CPU_scope": [
+          "glyph-rasterization",
+          "color-conversion",
+          "effects",
+          "masks",
+          "crop",
+          "transitions",
+          "non-normal-blends",
+          "audio",
+          "delivery-encoding"
+        ],
+        "GPU_scope": [
+          "premultiplied-affine",
+          "normal-source-over",
+          "text-color-components",
+          "binary-word-selection",
+          "seeded-particle-rasterization"
+        ],
+        "host_shared_bytes_limit": 1073741824,
+        "retained_host_shared_bytes": 0,
+        "device_bytes_limit": 1073741824,
+        "limits_are_peak_RSS": false,
+        "free_VRAM_reserved": false,
+        "integer_media_conversion": false,
+        "worker_closed": true,
+        "runtime_failure_CPU_fallback": false,
+        "artifacts": [
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu.py",
+            "role": "float-gpu-execution",
+            "bytes": 15280,
+            "sha256": "sha256:bddcbc4e8ff77855505d7d40f3dabf8967291f5b663d9a039376f8feb1c8b651"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_worker.py",
+            "role": "float-gpu-execution",
+            "bytes": 9070,
+            "sha256": "sha256:6603919bb93526723e730cee29b496a59d681ed0259d7261d4edb6c0ce81a5d7"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_native.py",
+            "role": "float-gpu-execution",
+            "bytes": 19068,
+            "sha256": "sha256:c72c82e7d50bcea9e392421324ae5ab428be72c02210037b23dc9e6b19e9e77a"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_control.py",
+            "role": "float-gpu-execution",
+            "bytes": 6648,
+            "sha256": "sha256:717c02fd2ec1801587c4786c391f24a324fd9667aeec3d6be8c3272320c09b8d"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\procedural_particles.py",
+            "role": "float-gpu-execution",
+            "bytes": 17658,
+            "sha256": "sha256:386a2b146997a82ff6065bd599d69ddc602d714e1cfc19157e27807327a55009"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.35\\final-r1\\installed\\site\\ai_ad_editor\\particle_animation.py",
+            "role": "float-gpu-execution",
+            "bytes": 13223,
+            "sha256": "sha256:37e168c03f0634973ff38e9d265e165b8eb048bb7c9e87c4e0799707f76902c0"
+          }
+        ],
+        "planned_maximum_pixels": 230400,
+        "planned_device_bytes": 11059200,
+        "planned_host_shared_bytes": 7603968,
+        "shared_handles_closed": true
+      },
+      "audio_project_sha256": "sha256:2f449b4b16a8f285dc3dcbf13222170c46ecaa0e8a9ef7641d379c53ac7f1141",
+      "audio_samples_48000": 4000,
+      "original_audio_graph_reused": true,
+      "transport": {
+        "frames": 1,
+        "selected_author_frames": [
+          24,
+          25
+        ],
+        "video_input_bytes": 1843200,
+        "video_input_sha256": "sha256:ec3fc073a93a214b03c7678e2413fd630a1d9910ab36cafa04fb6527d86de915",
+        "clipped_RGB_components": 0,
+        "chunk_bytes": 65536,
+        "stdin_queue_chunks": 4,
+        "maximum_queued_chunks": 1,
+        "owned_process_pid": 32320,
+        "owned_process_exit_code": 0,
+        "owned_threads_closed": true,
+        "whole_movie_pixel_cache": false
+      },
+      "providers_closed_before_publish": true
+    },
+    "cacheable": true,
+    "cache_bypass_reasons": [],
+    "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\emitter-case-r1\\project\\cache\\timeline-previews\\fe13ce93566ba55b141c0de62a8d1863ccc6bb93b1f0445b74b97403986adcd9\\frame.png",
+    "manifest": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\emitter-case-r1\\project\\cache\\timeline-previews\\fe13ce93566ba55b141c0de62a8d1863ccc6bb93b1f0445b74b97403986adcd9\\preview.json",
+    "master": null,
+    "request": {
+      "engine": "agent-timeline-preview-v1",
+      "mode": "frame",
+      "sequence_id": "seq_main",
+      "pixel_pipeline": "float32-native-v1",
+      "pixel_protocol": "agent-native-float32-timeline-preview-v1",
+      "reference_pixel_format": "rgba64be",
+      "reference_signal": {
+        "primaries": "bt709",
+        "transfer": "srgb"
+      },
+      "reference_bytes_per_pixel": 8,
+      "reference_resampling": "premultiplied-linear-bilinear-after-full-author-composite",
+      "start_frame": 24,
+      "end_frame": 25,
+      "frames": 1,
+      "fps": {
+        "num": 12,
+        "den": 1
+      },
+      "author_start_seconds": "2",
+      "author_end_seconds": "25/12",
+      "audio_start_sample_48000": 96000,
+      "audio_end_sample_48000": 100000,
+      "audio_samples_48000": 4000,
+      "width": 640,
+      "height": 360,
+      "budget_bytes": 536870912,
+      "estimated_working_bytes": 4798976,
+      "full_author_graph_before_output_trim": true
+    },
+    "wall_seconds": 9.160213900002418,
+    "verified_clock": {
+      "decoded_video_frames": 1,
+      "decoded_pcm_samples_48000": 0,
+      "lossless_reference": false,
+      "video_pts_rebased": true,
+      "audio_pts_rebased": false
+    },
+    "quality_accepted": false,
+    "warnings": []
+  },
+  "package_sha256": "b673964225fa435b35858e5f4a54823776a0ccfeb0cc549f74a4ba2e9648cdcd",
+  "animation_tracks": 14,
+  "all_animated_tracks_preserved": true,
+  "GIF_frames": 48,
+  "GIF_duration_ms": 4000,
+  "finished_at_utc": "2026-10-27T00:11:55.528286+00:00"
+}

@@ -21,6 +21,18 @@ def add_parser(subs, common):
     parser=subs.add_parser('vfx',help='离线可编辑程序化粒子；真实原生浮点/GPU合成')
     actions=parser.add_subparsers(dest='action',required=True)
     common(actions.add_parser('list',help='列出六种有明确参数和限制的原创建效配方'))
+    common(actions.add_parser('animation-properties',help='查询发射器动画属性、取值约束与原始源时钟'))
+    from .particle_animation import PROPERTIES
+    animate=common(actions.add_parser('animate',help='添加/替换/移除发射器源时钟关键帧；不重置片段剪辑'))
+    for name in ('project','clip-id'):animate.add_argument('--'+name,required=True)
+    animate.add_argument('--sequence-id');animate.add_argument('--track-id')
+    animate.add_argument('--emitter-index',type=int,required=True)
+    animate.add_argument('--property',choices=sorted(PROPERTIES),required=True)
+    edit=animate.add_mutually_exclusive_group(required=True)
+    edit.add_argument('--keyframes',dest='points',help='JSON关键帧数组；时间为原始generator tick')
+    edit.add_argument('--remove',action='store_true')
+    animate.add_argument('--replace',action='store_true',help='显式替换已存在的该发射器属性轨道')
+    animate.set_defaults(config=None,preset=None,seed=None)
     inspect=common(actions.add_parser('inspect',help='查看预设的完整数值配方'))
     inspect.add_argument('--name',required=True)
     for action in ('apply','update','show'):
@@ -48,6 +60,15 @@ def command(args):
         return _envelope('vfx.list',args,data={'catalog_version':VERSION,'presets':catalog(),'count':len(catalog()),'network':False})
     if args.action=='inspect':
         return _envelope('vfx.inspect',args,data={'preset':get(args.name)})
+    if args.action=='animation-properties':
+        from .particle_animation import PROPERTIES,BIRTH,LIVE,PROTOCOL,INTERPOLATIONS,MAX_POINTS
+        from .schema_contract import read_contract
+        definitions=read_contract()[1]['$defs']['particleEmitter']['properties']
+        return _envelope('vfx.animation-properties',args,data={'protocol':PROTOCOL,
+            'clock':'original generator ticks; independent of clip/output retime','max_points':MAX_POINTS,
+            'interpolations':list(INTERPOLATIONS),'properties':[{'property':k,
+                'scope':'integrated-emission-rate' if k=='rate' else 'at-birth' if k in BIRTH else 'live-source-time',
+                'value_schema':definitions[k]} for k in sorted(PROPERTIES)]})
     root,original=load_project(args.project);project=copy.deepcopy(original)
     sequence=find_sequence(project,args.sequence_id);tps=project['settings']['timebase']['ticks_per_second']
     track=clip=None
@@ -85,7 +106,23 @@ def command(args):
             raise AppError('PARTICLE_PIPELINE_EXISTS','已有原生合成配置；请通过普通工程设置接口显式更新信号',exit_code=2)
     if pipeline is None:
         raise AppError('PARTICLE_NATIVE_PIPELINE_REQUIRED','粒子使用原生浮点合成；新工程可使用 --enable-native，已有媒体须显式提供 --source-signals',exit_code=2)
-    if args.config:
+    if args.action=='animate':
+        config=copy.deepcopy(clip['generator']);index=args.emitter_index
+        if not 0<=index<len(config['emitters']):
+            raise AppError('PARTICLE_EMITTER','发射器索引越界；未修改工程',exit_code=2)
+        emitter=config['emitters'][index];tracks=emitter.get('keyframes',[])
+        existing=next((t for t in tracks if t['property']==args.property),None)
+        if args.remove:
+            if args.replace or existing is None:
+                raise AppError('PARTICLE_ANIMATION_CONFLICT','移除要求既有属性且不能同时replace',exit_code=2)
+        elif existing and not args.replace:
+            raise AppError('PARTICLE_ANIMATION_CONFLICT','该属性已有发射器关键帧；须显式replace',exit_code=2)
+        updated=[t for t in tracks if t['property']!=args.property]
+        if not args.remove:updated.append({'property':args.property,'keyframes':read_config(args.points)})
+        if updated:emitter['keyframes']=updated
+        else:emitter.pop('keyframes',None)
+        config=normalize(config)
+    elif args.config:
         config=normalize(read_config(args.config))
         if args.seed is not None:
             config['seed']=args.seed;config=normalize(config)
@@ -122,6 +159,8 @@ def command(args):
     snapshot=create_snapshot(root,original,label='before-vfx-'+args.action);oid=new_id('op')
     record={'operation_id':oid,'command':'vfx.'+args.action,'at':now_iso(),'clip_id':clip['id'],
         'sequence_id':sequence['id'],'source_sha256':identity(config),'preset':args.preset,'before_snapshot_id':snapshot['snapshot_id']}
+    if args.action=='animate':record.update(emitter_index=args.emitter_index,property=args.property,
+        edit='remove' if args.remove else 'replace' if args.replace else 'add')
     project.setdefault('provenance',{}).setdefault('change_log',[]).append(record)
     save_project(root,project);_operation(root,oid,{**record,'status':'succeeded'})
     return _envelope('vfx.'+args.action,args,data={**data,'operation_id':oid,'before_snapshot_id':snapshot['snapshot_id']})

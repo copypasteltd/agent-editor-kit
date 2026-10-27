@@ -7091,7 +7091,7 @@ def command_diagnostics(args):
 
 
 _READ_ONLY_PROJECT_COMMANDS = {
-    ('vfx','list'),('vfx','inspect'),('vfx','show'),
+    ('vfx','list'),('vfx','inspect'),('vfx','show'),('vfx','animation-properties'),
     ("media", "model-session"),
     *(('semantic', action) for action in ('adapter-list','adapter-inspect','index-list','verify','calibration-list','search')),
     ('surface','inspect'),
@@ -7273,7 +7273,7 @@ COMMANDS.update({('ad', action): (lambda args: storyboard_command(args, _envelop
 from .motion_pack_cli import command as motion_pack_command
 COMMANDS[('motion', 'pack')] = lambda args: motion_pack_command(args, _envelope, _operation)
 from .procedural_cli import command as command_vfx
-COMMANDS.update({('vfx',action):command_vfx for action in ('list','inspect','apply','update','show')})
+COMMANDS.update({('vfx',action):command_vfx for action in ('list','inspect','apply','update','show','animate','animation-properties')})
 
 
 def main(argv: list[str] | None = None) -> int:

@@ -55,7 +55,7 @@ class FloatGPUSession:
         self.evidence['planned_device_bytes'] = max_pixels*48
         self.evidence['planned_host_shared_bytes'] = max_pixels*33+768
         self.artifacts = [artifact_entry(Path(__file__).with_name(name+'.py'), 'float-gpu-execution')
-                          for name in ('float_gpu', 'float_gpu_worker', 'float_gpu_native', 'float_gpu_control', 'procedural_particles')]
+                          for name in ('float_gpu', 'float_gpu_worker', 'float_gpu_native', 'float_gpu_control', 'procedural_particles', 'particle_animation')]
         self.evidence['artifacts'] = self.artifacts
 
     @property

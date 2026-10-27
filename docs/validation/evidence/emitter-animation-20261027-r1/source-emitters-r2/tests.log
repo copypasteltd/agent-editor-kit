@@ -1,0 +1,23 @@
+test_animation_budget_uses_rate_and_lifetime_maxima (test_emitter_animation.EmitterNumericTests.test_animation_budget_uses_rate_and_lifetime_maxima) ... ok
+test_bezier_controls_and_unrecognized_fields_reject (test_emitter_animation.EmitterNumericTests.test_bezier_controls_and_unrecognized_fields_reject) ... ok
+test_bezier_integral_matches_independent_dense_trapezoids (test_emitter_animation.EmitterNumericTests.test_bezier_integral_matches_independent_dense_trapezoids) ... ok
+test_birth_parameters_do_not_drag_or_retime_existing_particles (test_emitter_animation.EmitterNumericTests.test_birth_parameters_do_not_drag_or_retime_existing_particles) ... ok
+test_constant_curves_keep_old_static_pixels_bit_exact (test_emitter_animation.EmitterNumericTests.test_constant_curves_keep_old_static_pixels_bit_exact) ... ok
+test_integrals_for_all_polynomial_easings (test_emitter_animation.EmitterNumericTests.test_integrals_for_all_polynomial_easings) ... ok
+test_invalid_tracks_and_discrete_interpolation_rejected (test_emitter_animation.EmitterNumericTests.test_invalid_tracks_and_discrete_interpolation_rejected) ... ok
+test_inverse_cache_is_bounded_and_cancel_is_polled (test_emitter_animation.EmitterNumericTests.test_inverse_cache_is_bounded_and_cancel_is_polled) ... ok
+test_key_time_rate_inverse_preserves_exact_birth_branch (test_emitter_animation.EmitterNumericTests.test_key_time_rate_inverse_preserves_exact_birth_branch) ... ok
+test_linear_rate_count_and_inverse_birth_times (test_emitter_animation.EmitterNumericTests.test_linear_rate_count_and_inverse_birth_times) ... ok
+test_live_size_opacity_and_linear_light_colors (test_emitter_animation.EmitterNumericTests.test_live_size_opacity_and_linear_light_colors) ... ok
+test_prewarm_uses_first_curve_values_at_negative_births (test_emitter_animation.EmitterNumericTests.test_prewarm_uses_first_curve_values_at_negative_births) ... ok
+test_random_access_seed_and_rate_boundary_are_order_independent (test_emitter_animation.EmitterNumericTests.test_random_access_seed_and_rate_boundary_are_order_independent) ... ok
+test_shape_step_and_nullable_color_end_require_hold (test_emitter_animation.EmitterNumericTests.test_shape_step_and_nullable_color_end_require_hold) ... ok
+test_zero_rate_gaps_and_delayed_first_birth (test_emitter_animation.EmitterNumericTests.test_zero_rate_gaps_and_delayed_first_birth) ... ok
+test_animation_discovery_add_replace_remove_and_snapshot (test_emitter_animation.EmitterCLITests.test_animation_discovery_add_replace_remove_and_snapshot) ... ok
+test_animation_files_conflict_idempotency_and_locked_track_are_atomic (test_emitter_animation.EmitterCLITests.test_animation_files_conflict_idempotency_and_locked_track_are_atomic) ... ok
+test_invalid_points_emitter_index_and_missing_file_do_not_mutate (test_emitter_animation.EmitterCLITests.test_invalid_points_emitter_index_and_missing_file_do_not_mutate) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 3.154s
+
+OK

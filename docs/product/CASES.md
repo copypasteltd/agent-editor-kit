@@ -895,3 +895,15 @@ Actual registered installed CLI0.1.35→0.1.36,unchanged C45 author graph/tools/
 [Actual optimized MKV](../assets/gpu-dispatch-20261027-r1/optimized.mkv) · [Timing data](../assets/gpu-dispatch-20261027-r1/timings.json) · [Source/license](../assets/gpu-dispatch-20261027-r1/SOURCE.txt) · [Media manifest](../assets/gpu-dispatch-20261027-r1/media-manifest.json) · [C45 original source/GIF](#c45-procedural-particles) · [Workflow](GPU_DISPATCH.md) · [Evidence](../validation/GPU管道调度实测_2026-10-27.md).
 
 Original synthetic diagnostic scene,silent track;no model inference. Timing includes launcher,startup,encoding and checks. One measured pair,not realtime/4K/long-form/multivendor performance. Full decode equality is separate from natural quality,continuous human playback and listening;those remain unaccepted.
+
+<a id="c47-emitter-animation"></a>
+
+## C47 · 发射器关键帧 / Emitter animation
+
+Registered installed CLI0.1.37 authors14 source-clock tracks across four320×180 panels in a640×360 project: moving trail,paused confetti,live color/size/shape andstar easing.48frames/12FPS/four seconds. Package reimport retains alltracks,all48 decoded10bit frames andcomplete384000 Float32 PCM scalars.
+
+![Actual GPU output, decoded and labeled](../assets/emitter-animation-20261027-r1/emitter-animation.gif)
+
+[Actual MP4](../assets/emitter-animation-20261027-r1/emitter-animation.mp4) · [Lossless master](../assets/emitter-animation-20261027-r1/emitter-animation.mkv) · [Editable project](../assets/emitter-animation-20261027-r1/editable-emitter-animation.aevpkg.zip) · [Without tracks](../assets/emitter-animation-20261027-r1/before.png) · [At2s](../assets/emitter-animation-20261027-r1/contact.png) · [Recipes](../assets/emitter-animation-20261027-r1/recipes.json) · [Source/license](../assets/emitter-animation-20261027-r1/SOURCE.txt) · [Media manifest](../assets/emitter-animation-20261027-r1/media-manifest.json) · [Workflow](EMITTER_ANIMATION.md) · [Evidence](../validation/发射器关键帧实测_2026-10-27.md).
+
+Original synthetic scene;no external media/models. MKV is actual GPU render,MP4 is a playable encode,GIF/contact add labels to decoded master frames. before.png comes from a separate GPU render with only emitter tracks removed. GIF duration is exactly4000ms. Silent diagnostic audio;continuous human playback/listening andnatural-footage/full-product acceptance remain open.

@@ -1,0 +1,19 @@
+{
+  "status": "reviewed",
+  "at_utc": "2026-10-27T00:15:48.913419+00:00",
+  "reviewer": "agent visual inspection with view_image",
+  "images": {
+    "before.png": "9fd9819e9290e4c0532264fedf98c8bf3d6b95d7a73a7b437f4b7c34cce5a644",
+    "contact.png": "24c4ced143744e20766555a8e609aa7179bd25853a227a4dab8e8fa2871ebee1"
+  },
+  "observations": [
+    "All four labels and sampled-time label readable and inside canvas.",
+    "At 2s animated moving trail spans distinct birth origins; static version stays at base origin.",
+    "At 2s animated confetti remains visible after the emission pause; static zero-rate panel is empty.",
+    "Animated live-look panel shows cool rings versus warm static discs; lower-right panel displays eased star appearance."
+  ],
+  "continuous_human_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false,
+  "scope": "Two static decoded labeled frames only; complete encoded-frame and PCM comparisons are separate machine evidence."
+}

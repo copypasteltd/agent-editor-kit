@@ -9,7 +9,21 @@
 本頁包含完整功能模塊、服務與依賴、安裝與使用邏輯、Skill 輸入輸出、真實案例和核驗表。長篇原始驗收日志繼續留檔，功能說明與案例入口恢復到首頁。
 
 
-<!-- gpu-dispatch-current -->
+<!-- emitter-animation-current -->
+
+**CLI0.1.37 / alpha.4-local.35 / r38 kit · 1 Skill / 17 modules.**
+
+新增 **21 項發射器屬性關鍵影格**：積分發射率、出生時的運動/壽命、源時間上的顏色/大小/形狀等外觀，支援六種插值與暫停發射。`vfx animation-properties` 查詢約束，`vfx animate` 新增、明確替換或移除單條屬性；原始源時鐘貫穿裁切、倒放、巢狀、預覽、佇列及工程包。四格案例由已註冊安裝版 Skill 實際 GPU 渲染。
+
+[Workflow / usage](docs/product/EMITTER_ANIMATION.md) · [C47](docs/product/CASES.md#c47-emitter-animation) · [Install](docs/releases/CLI_0.1.37_LOCAL.md) · [Evidence](docs/validation/发射器关键帧实测_2026-10-27.md)
+
+![Actual registered Skill GPU output, decoded and labeled](docs/assets/emitter-animation-20261027-r1/emitter-animation.gif)
+
+安裝版 679 項回歸通過、零跳過；C47 的 14 條屬性軌道和全部 48 個 10bit 解碼影格、384000 個 Float32 PCM 取樣在工程包回讀後相同。GIF 為實際渲染影格，4 秒。二維發射器動畫已接通；3D、碰撞、深度、流體及完整剪映特效庫仍待補齊。保留全部 253 項歷史核驗與 38 項原關閉條件。
+
+<!-- /emitter-animation-current -->
+
+<!-- gpu-dispatch-history -->
 
 **CLI0.1.36 / alpha.4-local.34 / r37 kit · 1 Skill / 17 modules.**
 
@@ -21,7 +35,7 @@
 
 單一960×360診斷工程、同機一次配對，包含啟動、編碼及核驗；不是即時、4K長片或跨裝置保證。完整剪映等價仍未完成；38項原關閉條件與247項歷史核驗保留。
 
-<!-- /gpu-dispatch-current -->
+<!-- /gpu-dispatch-history -->
 
 <!-- procedural-particles-history -->
 
@@ -45,7 +59,7 @@ $avkProject = 'E:/dev/sandbox/particle-demo'
 
 ![Actual registered Skill GPU output, annotated GIF](docs/assets/procedural-particles-20261027-r3/particle-grid.gif)
 
-目前為二維診斷效果；沒有三維碰撞、深度遮擋、流體或發射器參數關鍵幀。舊FFmpeg圖明確拒絕此來源；完整剪映等價與全部38項原關閉條件持續保留。
+CLI0.1.35當時為二維診斷效果，未含發射器參數關鍵影格；CLI0.1.37已補齊。三維碰撞、深度遮擋及流體仍未實作。舊FFmpeg圖明確拒絕此來源；完整剪映等價與全部38項原關閉條件持續保留。
 
 <!-- /procedural-particles-history -->
 
@@ -390,7 +404,7 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r28 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r28.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
+**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r38 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r38.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
 
 <!-- /unified-skill-registration -->
 
@@ -764,7 +778,7 @@ flowchart LR
 | F60 | 原生跟蹤與烘焙交付 | 實際alpha/5類遮罩/59轉場足跡；剪輯與共享變速保留觀察；原生烘焙逐幀核驗並保留來源旁車。 | `media track-bind; timeline compose/edit; convert export --bake-tracking` | 目前凍結圖/FPS；20,000幀/256,000求值；無法表達的整數步進拒絕；外部播放器與自然身分/遮擋待驗收。 |
 | F61 | 本地GPU影片生成 | 文生、圖生、尾幀/首尾幀；原文提示/取樣、真實模型視窗、可編輯入軌、端點核驗、可移植配方與受管恢復。 | `media adapter; media generate` | 既有原生VACE/CUDA依賴；無聲8bit SDR；條件端點合成保留；自然品質/生成權利/完整剪映AI待驗收。 |
 | F62 | 原生GPU模型會話 | 同工程/適配器/提示詞重用權重與嵌入；每任務重設，活連線傳遞持鎖雜湊；取消、期限、閒置及任務數退出。 | `media model-session; media generate --model-session` | 原生Windows VACE；首條仍載入；新提示詞須新會話，串行執行；非全域顯存預留/多GPU。 |
-| F63 | 可編輯程序化粒子 | 六種原創配方、五形狀、seed/獨立CFR/發射器；實際GPU分塊光柵化與線性透明合成。支援一般剪輯、預覽、佇列、工程包及本地OTIO往返。 | `vfx list/inspect/apply/update/show` | 原生浮點管線；CPU負責hash/運動/分塊；16發射器、4096活粒子、128Mi候選像素/幀；無3D/碰撞/深度。 |
+| F63 | 可編輯程序化粒子與發射器動畫 | 六種原創配方、五形狀、seed/獨立CFR；21屬性源時鐘關鍵影格、六種緩動、暫停發射；實際GPU光柵化。剪輯/預覽/佇列/包/本地OTIO貫通。 | `vfx list/inspect/apply/update/show/animation-properties/animate` | CPU積分與出生取樣，GPU繪製；64點/屬性、16發射器、4096預留活粒子；無3D/碰撞/深度。 |
 
 ## 支持的服務模塊與依賴
 
@@ -892,7 +906,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.34/final-r1/installed/`，CLI 0.1.36；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
+本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.35/final-r1/installed/`，CLI 0.1.37；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1336,6 +1350,12 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R251 | 2026-10-27 GPU dispatch | 128KiB包/單槽讀寫佇列，拒絕截斷/非有限/重複鍵；實際滿管道、斷管道、120訊息、取消/逾時/恢復均測試。工程原子寫入不變；實際程序/執行緒/串流/共享段回收留證。 | [Evidence](docs/validation/evidence/gpu-dispatch-20261027-r1/installed-regression-r1/receipts.json) |
 | R252 | 2026-10-27 GPU dispatch | r37獨立工具包：一入口/17模組/76 Skill檔案、119包檔案；獨立目錄解包、完整模型校驗、註冊及23次呼叫，實際發現聯接保持。 | [Evidence](docs/validation/evidence/gpu-dispatch-20261027-r1/kit-r1/verification.json) |
 | R253 | 2026-10-27 GPU dispatch | 三語63功能/21服務及76能力快照、C46實際輸出/耗時圖、完整使用/安裝/Skill手冊更新；247歷史核驗和38原關閉條件保持。開發期兩次測試輔助程序失敗原樣留證。 | [Evidence](docs/validation/evidence/gpu-dispatch-20261027-r1/final-delivery-r2/verification.json) |
+| R254 | 2026-10-27 emitter animation | CLI0.1.37/local.35離線安裝包：235產品檔案與原始碼一致；679項安裝版回歸通過、零失敗/錯誤/跳過，包含18項新數值/CLI、1項新實際GPU及4項新工程整合，不重複加總。 | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/installed-regression-r1/verification.json) |
+| R255 | 2026-10-27 emitter animation | 21屬性與原始源時鐘：獨立積分公式、六緩動、暫停/預熱、精確同時出生與hold邊界、跳幀/快取一致、保守資源預算及取消已測；舊靜態源恆值關鍵影格逐像素相同。 | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/source-emitters-r2/verification.json) |
+| R256 | 2026-10-27 emitter animation | 實際註冊Skill C47：14軌、4格、48幀/12FPS/640×360/4秒；匯出回讀所有軌道、48幀10bit與完整384000 Float32 PCM相同，實際GPU程序/執行緒/串流/共享段關閉。 | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/case-r1/verification.json) |
+| R257 | 2026-10-27 emitter animation | 單屬性增改刪、明確replace、軌道鎖、快照、dry-run、檔案內容冪等與失敗原子性；實際編碼CPU/GPU、工程包/本地OTIO、拆分/巢狀倒放、預覽失效及持久佇列已驗。 | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/installed-regression-r1/receipts.json) |
+| R258 | 2026-10-27 emitter animation | r38獨立工具包：1入口/17模組/76 Skill檔案/120包檔案；新目錄完整校驗、隔離註冊及25次呼叫，原Codex發現聯接保持；無新推論或渲染。 | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/kit-r1/verification.json) |
+| R259 | 2026-10-27 emitter animation | 三語README完整63功能/21服務、76能力快照、Skill、安裝及C47案例/GIF/可編輯包已更新；253歷史核驗與38原關閉條件保留，總目標仍未完成。 | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/final-delivery-r1/verification.json) |
 
 ## 當前邊界與開發方向
 

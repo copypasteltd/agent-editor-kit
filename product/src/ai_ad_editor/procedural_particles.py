@@ -56,6 +56,35 @@ def color(value, field):
     return value.lower()
 
 
+def parameter(key,value):
+    """One validator for static fields and complete scalar/vector key values."""
+    scalar={'rate':(0,1024),'size_end':(0,4),'aspect':(.05,20),
+            **{k:(0,1) for k in ('softness','glow','opacity','fade_in','fade_out')}}
+    vectors={'lifetime':(.01,120,True),'position':(-4,4,False),'spread':(0,8,False),
+             'size':(.0001,.5,True),'rotation':(-36000,36000,True),'spin':(-36000,36000,True),
+             'acceleration':(-8,8,False),'sway':(0,16,False),'twinkle':(0,16,False)}
+    if key in scalar:return number(value,*scalar[key],key)
+    if key in vectors:
+        lo,hi,ordered=vectors[key];result=pair(value,lo,hi,key,ordered=ordered)
+        if (key=='sway' and result[0]>2) or (key=='twinkle' and result[0]>1):
+            raise fail('CONFIG','摆动幅度最多2个画布宽，闪烁深度最多1')
+        return result
+    if key=='velocity':
+        if not isinstance(value,list) or len(value)!=2:raise fail('CONFIG','velocity需要两个随机区间')
+        return [pair(v,-8,8,key,ordered=True) for v in value]
+    if key=='shape':
+        if value not in SHAPES:raise fail('CONFIG','粒子形状不支持')
+        return value
+    if key=='prewarm':
+        if type(value) is not bool:raise fail('CONFIG','粒子预热标记必须为布尔值')
+        return value
+    if key=='colors':
+        if not isinstance(value,list) or not 1<=len(value)<=32:raise fail('CONFIG','粒子调色板要求1..32项')
+        return [color(c,key) for c in value]
+    if key=='color_end':return color(value,key) if value is not None else None
+    raise fail('CONFIG','粒子参数未知',field=key)
+
+
 def normalize(config):
     if not isinstance(config, dict) or set(config) - {'type', 'protocol', 'seed', 'canvas', 'fps', 'duration_tick', 'ticks_per_second', 'emitters'}:
         raise fail('CONFIG', '粒子生成器含未知字段')
@@ -83,32 +112,14 @@ def normalize(config):
         raise fail('BUDGET', '粒子源要求1..16个发射器')
     emitters, active = [], 0
     for index, supplied in enumerate(raw):
-        if not isinstance(supplied, dict) or set(supplied) - set(DEFAULT_EMITTER):
+        if not isinstance(supplied, dict) or set(supplied) - (set(DEFAULT_EMITTER)|{'keyframes'}):
             raise fail('CONFIG', '粒子发射器含未知字段', emitter=index)
         e = {**copy.deepcopy(DEFAULT_EMITTER), **copy.deepcopy(supplied)}
-        for key, bounds in {'rate': (.01, 1024), 'size_end': (0, 4), 'aspect': (.05, 20),
-                            'softness': (0, 1), 'glow': (0, 1), 'opacity': (0, 1),
-                            'fade_in': (0, 1), 'fade_out': (0, 1)}.items():
-            e[key] = number(e[key], *bounds, key)
-        for key, bounds, ordered in [('lifetime', (.01, 120), True), ('position', (-4, 4), False),
-                                    ('spread', (0, 8), False), ('size', (.0001, .5), True),
-                                    ('rotation', (-36000, 36000), True), ('spin', (-36000, 36000), True),
-                                    ('acceleration', (-8, 8), False), ('sway', (0, 16), False),
-                                    ('twinkle', (0, 16), False)]:
-            e[key] = pair(e[key], *bounds, key, ordered=ordered)
-        if e['sway'][0] > 2 or e['twinkle'][0] > 1:
-            raise fail('CONFIG', '摆动幅度最多2个画布宽，闪烁深度最多1')
-        if not isinstance(e['velocity'], list) or len(e['velocity']) != 2:
-            raise fail('CONFIG', 'velocity需要水平和垂直两个随机区间')
-        e['velocity'] = [pair(v, -8, 8, 'velocity', ordered=True) for v in e['velocity']]
-        if e['shape'] not in SHAPES or type(e['prewarm']) is not bool:
-            raise fail('CONFIG', '粒子形状或预热标记不支持')
-        if not isinstance(e['colors'], list) or not 1 <= len(e['colors']) <= 32:
-            raise fail('CONFIG', '粒子调色板要求1..32项')
-        e['colors'] = [color(c, 'colors') for c in e['colors']]
-        if e['color_end'] is not None:
-            e['color_end'] = color(e['color_end'], 'color_end')
-        active += math.ceil(e['rate'] * e['lifetime'][1]) + 1
+        e={key:parameter(key,value) for key,value in e.items() if key!='keyframes'}
+        from .particle_animation import normalize_tracks,maximum
+        if 'keyframes' in supplied:e['keyframes']=normalize_tracks(supplied['keyframes'],duration,parameter)
+        max_rate=maximum(e,'rate');max_life=maximum(e,'lifetime',1)
+        active += math.ceil(max_rate*max_life)+1 if max_rate else 0
         emitters.append(e)
     if active > MAX_ACTIVE:
         raise fail('BUDGET', '发射率与最大寿命的总活动粒子预算超过4096', active_upper_bound=active)
@@ -188,6 +199,10 @@ class ParticleSource:
         self.poll = cancel or (lambda: None)
         self.palette = [[_linear(c) for c in e['colors']] for e in self.config['emitters']]
         self.ends = [_linear(e['color_end']) if e['color_end'] else None for e in self.config['emitters']]
+        from .particle_animation import EmitterAnimation
+        self.animations=[EmitterAnimation(e,self.config['ticks_per_second'],self.config['duration_tick'],_linear,cancel=self.poll)
+                         if e.get('keyframes') else None for e in self.config['emitters']]
+        self.animation_metadata={str(i):a.metadata for i,a in enumerate(self.animations) if a is not None}
 
     def index_at(self, seconds, *, right_edge=False):
         point = Fraction(seconds)
@@ -202,14 +217,24 @@ class ParticleSource:
             raise fail('FRAME', '粒子源帧索引越界')
         self.poll(); at = Fraction(frame, 1) / self.fps; particles = []
         for emitter, e in enumerate(self.config['emitters']):
-            rate = Fraction(str(e['rate']))
-            first = math.ceil((at - Fraction(str(e['lifetime'][1]))) * rate)
-            if not e['prewarm']: first = max(0, first)
-            for birth in range(first, math.floor(at * rate) + 1):
+            animation=self.animations[emitter]
+            if animation:
+                live=animation.live(at);palette=[np.asarray(c,np.float32) for c in live.pop('colors')]
+                end=live.pop('color_end');end=np.asarray(end,np.float32) if end is not None else None
+                births=animation.schedule.births(at,animation.max_lifetime,e['prewarm'])
+            else:
+                rate = Fraction(str(e['rate']))
+                if not rate:continue
+                first = math.ceil((at - Fraction(str(e['lifetime'][1]))) * rate)
+                if not e['prewarm']: first = max(0, first)
+                births=((birth,Fraction(birth,1)/rate) for birth in range(first,math.floor(at*rate)+1))
+                palette=self.palette[emitter];end=self.ends[emitter]
+            for birth,born_at in births:
                 if len(particles) % 32 == 0: self.poll()
                 u = uniform(self.config['seed'], emitter, birth)
+                if animation:e={**e,**animation.born(born_at),**live}
                 def mix(v, random): return v[0] + (v[1] - v[0]) * random
-                life = mix(e['lifetime'], u[0]); age = float(at - Fraction(birth, 1) / rate)
+                life = mix(e['lifetime'], u[0]); age = max(0.,float(at-born_at))
                 if not 0 <= age < life: continue
                 q = age / life
                 opacity = e['opacity']
@@ -223,8 +248,8 @@ class ParticleSource:
                 x += e['sway'][0] * (math.sin(math.tau * e['sway'][1] * age + phase) - math.sin(phase))
                 y = e['position'][1] + (u[2] - .5) * e['spread'][1] + mix(e['velocity'][1], u[5]) * age + .5 * e['acceleration'][1] * age**2
                 angle = math.radians(mix(e['rotation'], u[6]) + mix(e['spin'], u[7]) * age)
-                rgb = self.palette[emitter][min(len(self.palette[emitter])-1, int(u[6] * len(self.palette[emitter])))]
-                if self.ends[emitter] is not None: rgb = rgb * np.float32(1-q) + self.ends[emitter] * np.float32(q)
+                rgb = palette[min(len(palette)-1, int(u[6] * len(palette)))]
+                if end is not None: rgb = rgb * np.float32(1-q) + end * np.float32(q)
                 particles.append([x * self.width - .5, y * self.height - .5, radius, radius / e['aspect'],
                                   math.cos(angle), math.sin(angle), *rgb, opacity,
                                   SHAPES.index(e['shape']), e['softness'], e['glow']])
@@ -239,6 +264,7 @@ class ParticleSource:
         scene = self.scene(index)
         tiles = tile_index(scene, (self.width, self.height), cancel=self.poll)
         self.last_frame_receipt={'source_frame_index':index,'active_particles':len(scene),
+            'emitter_animation':self.animation_metadata,
             'rasterization':'GPU' if len(scene) and gpu is not None and gpu.active else 'CPU',
             'tile_count':math.ceil(self.width/TILE)*math.ceil(self.height/TILE),
             'tile_index_bytes':tiles.nbytes,'maximum_candidate_visits':MAX_RASTER_VISITS}

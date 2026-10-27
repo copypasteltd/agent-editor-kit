@@ -9,7 +9,21 @@
 本页包含完整功能模块、服务与依赖、安装与使用逻辑、Skill 输入输出、真实案例和核验表。长篇原始验收日志继续留档，功能说明与案例入口恢复到首页。
 
 
-<!-- gpu-dispatch-current -->
+<!-- emitter-animation-current -->
+
+**CLI0.1.37 / alpha.4-local.35 / r38 kit · 1 Skill / 17 modules.**
+
+新增 **21 项发射器属性关键帧**：积分发射率、出生时的运动/寿命、源时间上的颜色/大小/形状等外观，支持六种插值和可暂停发射。`vfx animation-properties` 查询约束，`vfx animate` 添加、显式替换或移除单条属性；原始源时钟贯穿裁切、倒放、嵌套、预览、队列和工程包。四格案例由已注册安装版 Skill 实际 GPU 渲染。
+
+[Workflow / usage](docs/product/EMITTER_ANIMATION.md) · [C47](docs/product/CASES.md#c47-emitter-animation) · [Install](docs/releases/CLI_0.1.37_LOCAL.md) · [Evidence](docs/validation/发射器关键帧实测_2026-10-27.md)
+
+![Actual registered Skill GPU output, decoded and labeled](docs/assets/emitter-animation-20261027-r1/emitter-animation.gif)
+
+安装版 679 项回归通过、零跳过；C47 的 14 条属性轨道和全部 48 个 10bit 解码帧、384000 个 Float32 PCM 采样在工程包回读后相同。GIF 为实际渲染帧，4 秒。二维发射器动画已接通；3D、碰撞、深度、流体及完整剪映特效库仍待补齐。保留全部 253 项历史核验与 38 项原关闭条件。
+
+<!-- /emitter-animation-current -->
+
+<!-- gpu-dispatch-history -->
 
 **CLI0.1.36 / alpha.4-local.34 / r37 kit · 1 Skill / 17 modules.**
 
@@ -21,7 +35,7 @@
 
 单个960×360诊断工程的同机一次配对，包含启动、编码及核验；不是实时、4K长片或跨设备保证。完整剪映等价仍未完成；所有38项原关闭条件与247项历史核验保留。
 
-<!-- /gpu-dispatch-current -->
+<!-- /gpu-dispatch-history -->
 
 <!-- procedural-particles-history -->
 
@@ -45,7 +59,7 @@ $avkProject = 'E:/dev/sandbox/particle-demo'
 
 ![Actual registered Skill GPU output, annotated GIF](docs/assets/procedural-particles-20261027-r3/particle-grid.gif)
 
-当前为二维诊断效果；没有三维碰撞、深度遮挡、流体或发射器参数关键帧。旧FFmpeg图会明确拒绝此源；完整剪映等价与全部38项原关闭条件继续保留。
+CLI0.1.35当时为二维诊断效果，未包含发射器参数关键帧；CLI0.1.37已补齐。三维碰撞、深度遮挡和流体仍未实现。旧FFmpeg图会明确拒绝此源；完整剪映等价与全部38项原关闭条件继续保留。
 
 <!-- /procedural-particles-history -->
 
@@ -390,7 +404,7 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r28 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r28.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
+**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r38 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r38.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
 
 <!-- /unified-skill-registration -->
 
@@ -764,7 +778,7 @@ flowchart LR
 | F60 | 原生跟踪与烘焙交付 | 实际alpha/5类遮罩/59转场足迹；剪辑与共享变速保留观察；原生烘焙逐帧核验并保留源旁车。 | `media track-bind; timeline compose/edit; convert export --bake-tracking` | 当前冻结图/FPS；20,000帧/256,000求值；无法表达的整数步进拒绝；外部播放器及自然身份/遮挡待验收。 |
 | F61 | 本地GPU视频生成 | 文生、图生、尾帧/首尾帧；原文提示/采样、真实模型窗口、可编辑入轨、端点核验、可移植配方和受管恢复。 | `media adapter; media generate` | 已有原生VACE/CUDA依赖；无声8bit SDR；条件端点合成保留；自然质量/生成权利/全部剪映AI待验收。 |
 | F62 | 原生GPU模型会话 | 同工程/适配器/提示词复用权重与嵌入；每任务重置，活连接传递持锁摘要；取消、期限、空闲及任务数退出。 | `media model-session; media generate --model-session` | 原生Windows VACE；首条仍载入；新提示词须新会话，串行执行；非全局显存预留/多GPU。 |
-| F63 | 可编辑程序化粒子 | 六种原创建效配方、五形状、seed/独立CFR/发射器；真实GPU分块栅格化与线性透明合成。支持普通剪辑、预览、队列、包及本地OTIO往返。 | `vfx list/inspect/apply/update/show` | 原生浮点管线；CPU负责hash/运动/分块；16发射器、4096活粒子、128Mi候选像素/帧；无3D/碰撞/深度。 |
+| F63 | 可编辑程序化粒子与发射器动画 | 六种原创建效配方、五形状、seed/独立CFR；21属性源时钟关键帧、六种缓动、发射暂停；真实GPU栅格化。剪辑/预览/队列/包/本地OTIO贯通。 | `vfx list/inspect/apply/update/show/animation-properties/animate` | CPU积分与出生采样，GPU绘制；64点/属性、16发射器、4096预留活粒子；无3D/碰撞/深度。 |
 
 ## 支持的服务模块与依赖
 
@@ -892,7 +906,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.34/final-r1/installed/`，CLI 0.1.36；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
+本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.35/final-r1/installed/`，CLI 0.1.37；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1336,6 +1350,12 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R251 | 2026-10-27 GPU dispatch | 128KiB包/单槽读写队列、截断/非有限/重复键拒绝；实际满管道、破管道、120消息、取消/超时/恢复均测试。工程原子写盘不变；实际进程/线程/流/共享段回收留证。 | [Evidence](docs/validation/evidence/gpu-dispatch-20261027-r1/installed-regression-r1/receipts.json) |
 | R252 | 2026-10-27 GPU dispatch | r37独立工具包：一个入口/17模块/76 Skill文件、119包文件；独立目录解包、完整模型校验、注册及23次调用，实际发现联接保持。 | [Evidence](docs/validation/evidence/gpu-dispatch-20261027-r1/kit-r1/verification.json) |
 | R253 | 2026-10-27 GPU dispatch | 三语63功能/21服务及76能力快照、C46真实输出/耗时图、完整使用/安装/Skill手册更新；247历史核验和38原关闭条件保持。开发期两个测试辅助进程失败原样留证。 | [Evidence](docs/validation/evidence/gpu-dispatch-20261027-r1/final-delivery-r2/verification.json) |
+| R254 | 2026-10-27 emitter animation | CLI0.1.37/local.35离线安装包：235产品文件与源码一致；679项安装版回归通过、零失败/错误/跳过，包含18项新数值/CLI、1项新实际GPU及4项新工程集成，不重复加总。 | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/installed-regression-r1/verification.json) |
+| R255 | 2026-10-27 emitter animation | 21属性与原始源时钟：独立积分公式、六缓动、暂停/预热、精确同时出生与hold边界、跳帧/缓存一致、保守资源预算及取消已测；旧静态源恒值关键帧逐像素相同。 | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/source-emitters-r2/verification.json) |
+| R256 | 2026-10-27 emitter animation | 实际注册Skill C47：14轨、4格、48帧/12FPS/640×360/4秒；导出回读所有轨道、48帧10bit与完整384000 Float32 PCM相同，实际GPU进程/线程/流/共享段关闭。 | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/case-r1/verification.json) |
+| R257 | 2026-10-27 emitter animation | 单属性增改删、显式replace、轨道锁、快照、dry-run、文件内容幂等与失败原子性；真实编码CPU/GPU、工程包/本地OTIO、拆分/嵌套倒放、预览失效及持久队列已验。 | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/installed-regression-r1/receipts.json) |
+| R258 | 2026-10-27 emitter animation | r38独立工具包：1入口/17模块/76 Skill文件/120包文件；新目录完整校验、隔离注册及25次调用，原Codex发现联接保持；无新推理或渲染。 | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/kit-r1/verification.json) |
+| R259 | 2026-10-27 emitter animation | 三语README完整63功能/21服务、76能力快照、Skill、安装与C47案例/GIF/可编辑包已更新；253历史核验及38原关闭条件保持，总目标仍未完成。 | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/final-delivery-r1/verification.json) |
 
 ## 当前边界与开发方向
 

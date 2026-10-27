@@ -106,11 +106,12 @@ active particles and raster budgets.
 | sway | Horizontal sinusoidal amplitude in canvas widths (0…2) and frequency Hz (0…16); anchored to each particle's birth position. |
 | twinkle | Opacity modulation depth 0…1 and frequency Hz 0…16, with per-particle phase. |
 
-Source motion parameters are static within a source recipe. Use ordinary clip
+CLI0.1.37 adds [source-clock emitter keyframes](EMITTER_ANIMATION.md) for all 21
+rate, motion and appearance properties. Use ordinary clip
 TRS/opacity keyframes, masks, blend modes, transitions, reverse, speed curves,
 freeze, presentation-window cuts and nesting to animate and edit the result.
-Emitter-parameter keyframe tracks, collisions, 3-D emitters, depth/occlusion,
-fluid simulation and AI-generated effects are not implemented by this source.
+Collisions, 3-D emitters, depth/occlusion, fluid simulation and AI-generated
+effects are not implemented by this source.
 
 ## 有界执行、迁移与验收 / Execution and delivery
 

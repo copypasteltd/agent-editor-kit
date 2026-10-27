@@ -1746,3 +1746,11 @@ scripts/*gpu_dispatch*20261027.py text eol=lf
 docs/product/GPU_DISPATCH.md text eol=lf
 docs/releases/CLI_0.1.36_LOCAL.md text eol=lf
 docs/validation/GPU管道调度实测_2026-10-27.md text eol=lf
+
+# Preserve emitter test/case captures byte-for-byte before initial staging.
+docs/validation/evidence/emitter-animation-20261027-r1/** -text -whitespace
+docs/product/emitter-animation-capabilities-cli-0.1.37.json -text -whitespace
+scripts/*emitter*20261027.py text eol=lf
+docs/product/EMITTER_ANIMATION.md text eol=lf
+docs/releases/CLI_0.1.37_LOCAL.md text eol=lf
+docs/validation/发射器关键帧实测_2026-10-27.md text eol=lf

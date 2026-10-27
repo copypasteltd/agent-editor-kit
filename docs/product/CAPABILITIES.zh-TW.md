@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.36 / alpha.4-local.34 / r37 kit · 1 Skill / 17 modules / 76 files.**
+**CLI0.1.37 / alpha.4-local.35 / r38 kit · 1 Skill / 17 modules / 76 files.**
 
-原生Float32 GPU控制改為任務自有本機管道，消除每個算子的控制檔案寫入與輪詢。相同48幀工程透過實際註冊安裝版對照：**133.95s → 35.19s (3.81×)**；全部10bit解碼幀和384000個Float32音訊取樣相同，數值核心位元組保持。
+新增 **21 項發射器屬性關鍵影格**：積分發射率、出生時的運動/壽命、源時間上的顏色/大小/形狀等外觀，支援六種插值與暫停發射。`vfx animation-properties` 查詢約束，`vfx animate` 新增、明確替換或移除單條屬性；原始源時鐘貫穿裁切、倒放、巢狀、預覽、佇列及工程包。四格案例由已註冊安裝版 Skill 實際 GPU 渲染。
 
-[GPU workflow and limits](GPU_DISPATCH.md)
+[Emitter workflow and limits](EMITTER_ANIMATION.md)
 
 <!-- /community-current -->
 
@@ -76,7 +76,7 @@
 | F60 | 原生跟蹤與烘焙交付 | 實際alpha/5類遮罩/59轉場足跡；剪輯與共享變速保留觀察；原生烘焙逐幀核驗並保留來源旁車。 | `media track-bind; timeline compose/edit; convert export --bake-tracking` | 目前凍結圖/FPS；20,000幀/256,000求值；無法表達的整數步進拒絕；外部播放器與自然身分/遮擋待驗收。 |
 | F61 | 本地GPU影片生成 | 文生、圖生、尾幀/首尾幀；原文提示/取樣、真實模型視窗、可編輯入軌、端點核驗、可移植配方與受管恢復。 | `media adapter; media generate` | 既有原生VACE/CUDA依賴；無聲8bit SDR；條件端點合成保留；自然品質/生成權利/完整剪映AI待驗收。 |
 | F62 | 原生GPU模型會話 | 同工程/適配器/提示詞重用權重與嵌入；每任務重設，活連線傳遞持鎖雜湊；取消、期限、閒置及任務數退出。 | `media model-session; media generate --model-session` | 原生Windows VACE；首條仍載入；新提示詞須新會話，串行執行；非全域顯存預留/多GPU。 |
-| F63 | 可編輯程序化粒子 | 六種原創配方、五形狀、seed/獨立CFR/發射器；實際GPU分塊光柵化與線性透明合成。支援一般剪輯、預覽、佇列、工程包及本地OTIO往返。 | `vfx list/inspect/apply/update/show` | 原生浮點管線；CPU負責hash/運動/分塊；16發射器、4096活粒子、128Mi候選像素/幀；無3D/碰撞/深度。 |
+| F63 | 可編輯程序化粒子與發射器動畫 | 六種原創配方、五形狀、seed/獨立CFR；21屬性源時鐘關鍵影格、六種緩動、暫停發射；實際GPU光柵化。剪輯/預覽/佇列/包/本地OTIO貫通。 | `vfx list/inspect/apply/update/show/animation-properties/animate` | CPU積分與出生取樣，GPU繪製；64點/屬性、16發射器、4096預留活粒子；無3D/碰撞/深度。 |
 
 | 編號 | 服務模塊 | 運行形式 | 需要什么/提供什么 | 入口 | 範圍 |
 |---|---|---|---|---|---|
@@ -4783,7 +4783,9 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
     "vfx.inspect",
     "vfx.apply",
     "vfx.update",
-    "vfx.show"
+    "vfx.show",
+    "vfx.animate",
+    "vfx.animation-properties"
   ],
   "source": "editable_clip_generator_not_baked_media",
   "network": false,
@@ -4799,6 +4801,49 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
     "ordinary_encoder"
   ],
   "source_clock": "declared_rational_CFR_half_open_intervals_exact_reverse_left_limits",
+  "emitter_animation": {
+    "protocol": "source-anchored-emitter-keyframes-v1",
+    "clock": "original_generator_ticks",
+    "properties": 21,
+    "max_points_per_property": 64,
+    "interpolations": [
+      "hold",
+      "linear",
+      "ease_in",
+      "ease_out",
+      "ease_in_out",
+      "bezier"
+    ],
+    "rate": "nonnegative_exact_rational_integral_with_64_step_rational_inverse_and_stable_birth_ID",
+    "birth_sampled": [
+      "lifetime",
+      "position",
+      "spread",
+      "velocity",
+      "acceleration",
+      "rotation",
+      "spin",
+      "sway",
+      "twinkle"
+    ],
+    "live_source_sampled": [
+      "size",
+      "size_end",
+      "aspect",
+      "shape",
+      "softness",
+      "glow",
+      "colors",
+      "color_end",
+      "opacity",
+      "fade_in",
+      "fade_out"
+    ],
+    "palette_interpolation": "linear_BT709_not_hex_or_sRGB_code_interpolation",
+    "discrete": "shape_and_nullable_end_color_changes_hold_only",
+    "budget": "max_animated_rate_times_max_animated_lifetime_across_emitters",
+    "edit": "one_property_per_explicit_emitter;replacement_opt_in;snapshot_and_idempotency"
+  },
   "integration": [
     "native_render",
     "native_preview",
@@ -4830,7 +4875,6 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
   },
   "unsupported": [
     "legacy_FFmpeg_graph",
-    "emitter_parameter_keyframes",
     "3D",
     "collisions",
     "depth_occlusion",
@@ -4847,3 +4891,5 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 [CLI0.1.35 exact installed capability snapshot](procedural-particles-capabilities-cli-0.1.35.json).
 
 [CLI0.1.36 exact installed capability snapshot](gpu-dispatch-capabilities-cli-0.1.36.json).
+
+[CLI0.1.37 exact installed capability snapshot](emitter-animation-capabilities-cli-0.1.37.json).

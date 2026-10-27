@@ -142,6 +142,7 @@ class FloatTimeline:
             'text':self.text_host.metadata,'adjustments':self.adjustments.metadata,'tracking':self.tracking.metadata,
             'particles':{p:{'sha256':s.sha256,'protocol':s.config['protocol'],'frames':s.frames,
                 'source_fps':str(s.fps),'source_duration_seconds':str(s.duration),'random_access':True,
+                'emitter_animation':s.animation_metadata,
                 'palette_signal':{'primaries':'bt709','transfer':'srgb'}} for p,s in self.particle_plans.items()},
             'GPU':gpu.evidence if gpu is not None else {'status':'off'},
             'input_contract':'validated Agent Project IR;registered SHA and explicit common working RGB signal',

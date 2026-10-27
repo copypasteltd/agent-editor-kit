@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.36 / alpha.4-local.34 / r37 kit · 1 Skill / 17 modules / 76 files.**
+**CLI0.1.37 / alpha.4-local.35 / r38 kit · 1 Skill / 17 modules / 76 files.**
 
-Native Float32 GPU control now uses owned native pipes, removing per-operator control-file writes and polling. The same48-frame project through the registered installed Skill measures **133.95s → 35.19s (3.81×)**; all decoded10bit frames and384000 Float32 audio samples match, with byte-identical numeric kernels.
+New **keyframes for all 21 emitter properties**: integrated birth rate, motion/lifetime sampled at birth and live color/size/shape, with six easing modes and emission pauses. Discover constraints through `vfx animation-properties`; add, explicitly replace or remove a property with `vfx animate`. The original source clock survives trim, reverse, nesting, preview, queues and packages. The four-cell case is actual registered installed Skill GPU output.
 
-[GPU workflow and limits](GPU_DISPATCH.md)
+[Emitter workflow and limits](EMITTER_ANIMATION.md)
 
 <!-- /community-current -->
 
@@ -76,7 +76,7 @@ Native Float32 GPU control now uses owned native pipes, removing per-operator co
 | F60 | Native tracking and baked delivery | Actual alpha/five masks/59 transition footprints; edits and shared retime retain observations; native bake verifies all frames and retains source sidecars. | `media track-bind; timeline compose/edit; convert export --bake-tracking` | Frozen graph/FPS;20,000 frames/256,000 samples;unrepresentable integer steps reject;external players and natural identity/occlusion remain unaccepted. |
 | F61 | Local GPU video generation | Text,image,last/first-last conditions; prompt/sampling,real model windows,editable clips,endpoint proofs,portable recipes and managed recovery. | `media adapter; media generate` | Existing native VACE/CUDA required;silent8bit SDR;known endpoints retained;natural quality,output rights and complete CapCut AI unaccepted. |
 | F62 | Native GPU model sessions | Reuse weights/embeddings per project/adapter/prompt; reset jobs, transfer live locked digests, retire on cancel/deadline/idle/job budget. | `media model-session; media generate --model-session` | Native Windows VACE; first job still loads; new prompt needs a new serial session; no global VRAM reservation/multi-GPU. |
-| F63 | Editable procedural particles | Six original recipes, five shapes, seed, native CFR and emitters; actual GPU tile rasterization and linear transparency. Ordinary edits, preview, queues, packages and local OTIO roundtrips. | `vfx list/inspect/apply/update/show` | Native Float32 pipeline; CPU hash/motion/binning; 16 emitters, 4096 reserved live particles, 128Mi candidate visits/frame; no 3-D/collision/depth. |
+| F63 | Editable particles and emitter animation | Six original recipes/five shapes/seed/native CFR;21 source-clock animated properties,six easings,emission pauses and actual GPU rasterization. Editing/preview/queue/package/local OTIO. | `vfx list/inspect/apply/update/show/animation-properties/animate` | CPU rate integration/birth evaluation,GPU painting;64 points/property,16 emitters,4096 reserved live particles;no3-D/collision/depth. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -4783,7 +4783,9 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
     "vfx.inspect",
     "vfx.apply",
     "vfx.update",
-    "vfx.show"
+    "vfx.show",
+    "vfx.animate",
+    "vfx.animation-properties"
   ],
   "source": "editable_clip_generator_not_baked_media",
   "network": false,
@@ -4799,6 +4801,49 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
     "ordinary_encoder"
   ],
   "source_clock": "declared_rational_CFR_half_open_intervals_exact_reverse_left_limits",
+  "emitter_animation": {
+    "protocol": "source-anchored-emitter-keyframes-v1",
+    "clock": "original_generator_ticks",
+    "properties": 21,
+    "max_points_per_property": 64,
+    "interpolations": [
+      "hold",
+      "linear",
+      "ease_in",
+      "ease_out",
+      "ease_in_out",
+      "bezier"
+    ],
+    "rate": "nonnegative_exact_rational_integral_with_64_step_rational_inverse_and_stable_birth_ID",
+    "birth_sampled": [
+      "lifetime",
+      "position",
+      "spread",
+      "velocity",
+      "acceleration",
+      "rotation",
+      "spin",
+      "sway",
+      "twinkle"
+    ],
+    "live_source_sampled": [
+      "size",
+      "size_end",
+      "aspect",
+      "shape",
+      "softness",
+      "glow",
+      "colors",
+      "color_end",
+      "opacity",
+      "fade_in",
+      "fade_out"
+    ],
+    "palette_interpolation": "linear_BT709_not_hex_or_sRGB_code_interpolation",
+    "discrete": "shape_and_nullable_end_color_changes_hold_only",
+    "budget": "max_animated_rate_times_max_animated_lifetime_across_emitters",
+    "edit": "one_property_per_explicit_emitter;replacement_opt_in;snapshot_and_idempotency"
+  },
   "integration": [
     "native_render",
     "native_preview",
@@ -4830,7 +4875,6 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
   },
   "unsupported": [
     "legacy_FFmpeg_graph",
-    "emitter_parameter_keyframes",
     "3D",
     "collisions",
     "depth_occlusion",
@@ -4847,3 +4891,5 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 [CLI0.1.35 exact installed capability snapshot](procedural-particles-capabilities-cli-0.1.35.json).
 
 [CLI0.1.36 exact installed capability snapshot](gpu-dispatch-capabilities-cli-0.1.36.json).
+
+[CLI0.1.37 exact installed capability snapshot](emitter-animation-capabilities-cli-0.1.37.json).

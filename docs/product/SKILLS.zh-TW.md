@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.36 / alpha.4-local.34 / r37 kit · 1 Skill / 17 modules / 76 files.**
+**CLI0.1.37 / alpha.4-local.35 / r38 kit · 1 Skill / 17 modules / 76 files.**
 
-原生Float32 GPU控制改為任務自有本機管道，消除每個算子的控制檔案寫入與輪詢。相同48幀工程透過實際註冊安裝版對照：**133.95s → 35.19s (3.81×)**；全部10bit解碼幀和384000個Float32音訊取樣相同，數值核心位元組保持。
+新增 **21 項發射器屬性關鍵影格**：積分發射率、出生時的運動/壽命、源時間上的顏色/大小/形狀等外觀，支援六種插值與暫停發射。`vfx animation-properties` 查詢約束，`vfx animate` 新增、明確替換或移除單條屬性；原始源時鐘貫穿裁切、倒放、巢狀、預覽、佇列及工程包。四格案例由已註冊安裝版 Skill 實際 GPU 渲染。
 
-[GPU workflow and limits](GPU_DISPATCH.md)
+[Emitter workflow and limits](EMITTER_ANIMATION.md)
 
 <!-- /community-current -->
 

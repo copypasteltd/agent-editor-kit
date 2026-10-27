@@ -2,8 +2,8 @@
   "format": "agent-ffmpeg-local-skills-v2",
   "status": "reviewed",
   "registration_mode": "single",
-  "release": "v0.1.0-alpha.4-local.34",
-  "manifest_sha256": "sha256:4ffe05cbbb0b6797eef49e87cf9076599ef78e9d47b262920698d14b01533f2b",
+  "release": "v0.1.0-alpha.4-local.35",
+  "manifest_sha256": "sha256:3b15c4b609764c0257bafae99901b351d4bf227beef064b785bb95641ad65148",
   "runtime_config": "local/agent-ffmpeg/runtime.json",
   "skill_count": 1,
   "module_count": 17,
@@ -13,7 +13,7 @@
     {
       "name": "agent-ffmpeg-local-editor",
       "purpose_zh": "唯一入口：17内部模块、可编辑GPU粒子、GPU模型会话/视频生成、原生跟踪/烘焙、Float32/GPU合成、500滤镜、语义检索、字幕配音及四轨分离",
-      "skill_md_sha256": "ab8fbd15ad25a15f864d752bbc6e9e29d8a18a507308385bf0b12e5f741546ad"
+      "skill_md_sha256": "cdb99bfedae3e4fdd3252a37fa9b63b8276699c9b9b5e063757b3b7b1aa8b787"
     }
   ],
   "modules": [
@@ -499,8 +499,8 @@
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/procedural-particles.md",
-      "bytes": 4148,
-      "sha256": "d3bf2dc365844aafa0866f3219d5bccfbf48e0fdb9f7a7d25d3a17a939b1ebdc"
+      "bytes": 7186,
+      "sha256": "3d34f9f4f292528cc046999617179e09c763cc86426840211cd6521a8864b084"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/projection-gpu.md",
@@ -510,7 +510,7 @@
     {
       "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
       "bytes": 8019,
-      "sha256": "222c3b48c8fb30d50439177e4ecaf84ec43f54295085dae3dce6b3056a1c24d6"
+      "sha256": "137a38636b43e6ef68ea2b20fb9b9765287bb1800d9bb7168f7919c7ede2700c"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/semantic-package.md",
@@ -545,12 +545,12 @@
     {
       "path": "skills/agent-ffmpeg-local-editor/scripts/run.py",
       "bytes": 2296,
-      "sha256": "5ce855b0f9f511aa7bbbef36cafd8978d5bd9960f6cd5e6d1c65187ce1f36d3c"
+      "sha256": "73c2dd6b0d781c7a1ab03f3561e5cda0bc506b6eee1fabec60306f43c9229189"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
-      "bytes": 12518,
-      "sha256": "ab8fbd15ad25a15f864d752bbc6e9e29d8a18a507308385bf0b12e5f741546ad"
+      "bytes": 12764,
+      "sha256": "cdb99bfedae3e4fdd3252a37fa9b63b8276699c9b9b5e063757b3b7b1aa8b787"
     }
   ],
   "retired_skills": [
@@ -619,7 +619,7 @@
       "skill_md_sha256": "da31e25b3e641f80367075cdb4e72be99be2c89c332556d8ba58ec419fffd46b"
     }
   ],
-  "cli_version": "0.1.36",
+  "cli_version": "0.1.37",
   "material_count": 359,
   "named_voice_count": 103,
   "optional_model_pack_count": 4

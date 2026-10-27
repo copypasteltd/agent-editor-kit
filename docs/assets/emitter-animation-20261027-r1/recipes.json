@@ -1,0 +1,677 @@
+{
+  "moving-trail": {
+    "type": "particles",
+    "protocol": "analytic-seeded-particle-source-v1",
+    "seed": 173,
+    "canvas": {
+      "width": 320,
+      "height": 180
+    },
+    "fps": {
+      "num": 12,
+      "den": 1
+    },
+    "duration_tick": 360000,
+    "ticks_per_second": 90000,
+    "emitters": [
+      {
+        "rate": 38.0,
+        "lifetime": [
+          0.85,
+          0.85
+        ],
+        "position": [
+          0.12,
+          0.7
+        ],
+        "spread": [
+          0.025,
+          0.04
+        ],
+        "velocity": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        "acceleration": [
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.012,
+          0.02
+        ],
+        "size_end": 0.35,
+        "aspect": 1.0,
+        "rotation": [
+          0.0,
+          360.0
+        ],
+        "spin": [
+          20.0,
+          50.0
+        ],
+        "shape": "star",
+        "softness": 0.2,
+        "glow": 0.5,
+        "colors": [
+          "#ffe6a0",
+          "#ffab69"
+        ],
+        "color_end": null,
+        "opacity": 0.85,
+        "fade_in": 0.2,
+        "fade_out": 0.45,
+        "prewarm": false,
+        "sway": [
+          0.0,
+          0.0
+        ],
+        "twinkle": [
+          0.2,
+          1.0
+        ],
+        "keyframes": [
+          {
+            "property": "position",
+            "keyframes": [
+              {
+                "at_tick": 0,
+                "value": [
+                  0.12,
+                  0.7
+                ],
+                "interpolation": "linear"
+              },
+              {
+                "at_tick": 180000,
+                "value": [
+                  0.88,
+                  0.3
+                ],
+                "interpolation": "ease_in_out"
+              },
+              {
+                "at_tick": 360000,
+                "value": [
+                  0.12,
+                  0.7
+                ],
+                "interpolation": "linear"
+              }
+            ]
+          },
+          {
+            "property": "rate",
+            "keyframes": [
+              {
+                "at_tick": 0,
+                "value": 24.0,
+                "interpolation": "ease_in"
+              },
+              {
+                "at_tick": 180000,
+                "value": 70.0,
+                "interpolation": "ease_out"
+              },
+              {
+                "at_tick": 360000,
+                "value": 24.0,
+                "interpolation": "linear"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "timed-confetti": {
+    "type": "particles",
+    "protocol": "analytic-seeded-particle-source-v1",
+    "seed": 174,
+    "canvas": {
+      "width": 320,
+      "height": 180
+    },
+    "fps": {
+      "num": 12,
+      "den": 1
+    },
+    "duration_tick": 360000,
+    "ticks_per_second": 90000,
+    "emitters": [
+      {
+        "rate": 0.0,
+        "lifetime": [
+          1.4,
+          1.8
+        ],
+        "position": [
+          0.5,
+          0.04
+        ],
+        "spread": [
+          0.9,
+          0.04
+        ],
+        "velocity": [
+          [
+            -0.16,
+            0.16
+          ],
+          [
+            0.18,
+            0.32
+          ]
+        ],
+        "acceleration": [
+          0.0,
+          0.23
+        ],
+        "size": [
+          0.011,
+          0.019
+        ],
+        "size_end": 0.65,
+        "aspect": 0.5,
+        "rotation": [
+          0.0,
+          360.0
+        ],
+        "spin": [
+          -200.0,
+          200.0
+        ],
+        "shape": "rectangle",
+        "softness": 0.1,
+        "glow": 0.0,
+        "colors": [
+          "#ff4b69",
+          "#ffc83d",
+          "#41cfb7",
+          "#7494ff",
+          "#f5f0dc"
+        ],
+        "color_end": null,
+        "opacity": 0.95,
+        "fade_in": 0.05,
+        "fade_out": 0.25,
+        "prewarm": false,
+        "sway": [
+          0.0,
+          0.0
+        ],
+        "twinkle": [
+          0.0,
+          0.0
+        ],
+        "keyframes": [
+          {
+            "property": "rate",
+            "keyframes": [
+              {
+                "at_tick": 0,
+                "value": 0.0,
+                "interpolation": "hold"
+              },
+              {
+                "at_tick": 45000,
+                "value": 85.0,
+                "interpolation": "hold"
+              },
+              {
+                "at_tick": 103500,
+                "value": 0.0,
+                "interpolation": "hold"
+              },
+              {
+                "at_tick": 198000,
+                "value": 85.0,
+                "interpolation": "hold"
+              },
+              {
+                "at_tick": 256500,
+                "value": 0.0,
+                "interpolation": "hold"
+              },
+              {
+                "at_tick": 360000,
+                "value": 0.0,
+                "interpolation": "hold"
+              }
+            ]
+          },
+          {
+            "property": "rotation",
+            "keyframes": [
+              {
+                "at_tick": 0,
+                "value": [
+                  -45.0,
+                  45.0
+                ],
+                "interpolation": "linear"
+              },
+              {
+                "at_tick": 360000,
+                "value": [
+                  -180.0,
+                  180.0
+                ],
+                "interpolation": "linear"
+              }
+            ]
+          },
+          {
+            "property": "spin",
+            "keyframes": [
+              {
+                "at_tick": 0,
+                "value": [
+                  -120.0,
+                  120.0
+                ],
+                "interpolation": "linear"
+              },
+              {
+                "at_tick": 360000,
+                "value": [
+                  -300.0,
+                  300.0
+                ],
+                "interpolation": "linear"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "live-look": {
+    "type": "particles",
+    "protocol": "analytic-seeded-particle-source-v1",
+    "seed": 175,
+    "canvas": {
+      "width": 320,
+      "height": 180
+    },
+    "fps": {
+      "num": 12,
+      "den": 1
+    },
+    "duration_tick": 360000,
+    "ticks_per_second": 90000,
+    "emitters": [
+      {
+        "rate": 10.0,
+        "lifetime": [
+          3.0,
+          3.0
+        ],
+        "position": [
+          0.5,
+          0.5
+        ],
+        "spread": [
+          0.9,
+          0.85
+        ],
+        "velocity": [
+          [
+            -0.015,
+            0.015
+          ],
+          [
+            -0.015,
+            0.015
+          ]
+        ],
+        "acceleration": [
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.045,
+          0.065
+        ],
+        "size_end": 1.2,
+        "aspect": 1.0,
+        "rotation": [
+          0.0,
+          360.0
+        ],
+        "spin": [
+          -20.0,
+          20.0
+        ],
+        "shape": "disc",
+        "softness": 0.85,
+        "glow": 0.3,
+        "colors": [
+          "#ffca74",
+          "#ff8d66",
+          "#ffe1a3"
+        ],
+        "color_end": null,
+        "opacity": 0.55,
+        "fade_in": 0.35,
+        "fade_out": 0.5,
+        "prewarm": true,
+        "sway": [
+          0.0,
+          0.0
+        ],
+        "twinkle": [
+          0.0,
+          0.0
+        ],
+        "keyframes": [
+          {
+            "property": "colors",
+            "keyframes": [
+              {
+                "at_tick": 0,
+                "value": [
+                  "#ffca74",
+                  "#ff8d66",
+                  "#ffe1a3"
+                ],
+                "interpolation": "linear"
+              },
+              {
+                "at_tick": 180000,
+                "value": [
+                  "#78caff",
+                  "#9d8dff",
+                  "#a6f3dd"
+                ],
+                "interpolation": "linear"
+              },
+              {
+                "at_tick": 360000,
+                "value": [
+                  "#ffca74",
+                  "#ff8d66",
+                  "#ffe1a3"
+                ],
+                "interpolation": "linear"
+              }
+            ]
+          },
+          {
+            "property": "opacity",
+            "keyframes": [
+              {
+                "at_tick": 0,
+                "value": 0.5,
+                "interpolation": "linear"
+              },
+              {
+                "at_tick": 180000,
+                "value": 0.8,
+                "interpolation": "linear"
+              },
+              {
+                "at_tick": 360000,
+                "value": 0.5,
+                "interpolation": "linear"
+              }
+            ]
+          },
+          {
+            "property": "shape",
+            "keyframes": [
+              {
+                "at_tick": 0,
+                "value": "disc",
+                "interpolation": "hold"
+              },
+              {
+                "at_tick": 180000,
+                "value": "ring",
+                "interpolation": "hold"
+              }
+            ]
+          },
+          {
+            "property": "size",
+            "keyframes": [
+              {
+                "at_tick": 0,
+                "value": [
+                  0.03,
+                  0.045
+                ],
+                "interpolation": "ease_in_out"
+              },
+              {
+                "at_tick": 180000,
+                "value": [
+                  0.075,
+                  0.11
+                ],
+                "interpolation": "ease_in_out"
+              },
+              {
+                "at_tick": 360000,
+                "value": [
+                  0.03,
+                  0.045
+                ],
+                "interpolation": "linear"
+              }
+            ]
+          },
+          {
+            "property": "softness",
+            "keyframes": [
+              {
+                "at_tick": 0,
+                "value": 0.8,
+                "interpolation": "linear"
+              },
+              {
+                "at_tick": 180000,
+                "value": 0.2,
+                "interpolation": "linear"
+              },
+              {
+                "at_tick": 360000,
+                "value": 0.8,
+                "interpolation": "linear"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "star-easing": {
+    "type": "particles",
+    "protocol": "analytic-seeded-particle-source-v1",
+    "seed": 176,
+    "canvas": {
+      "width": 320,
+      "height": 180
+    },
+    "fps": {
+      "num": 12,
+      "den": 1
+    },
+    "duration_tick": 360000,
+    "ticks_per_second": 90000,
+    "emitters": [
+      {
+        "rate": 22.0,
+        "lifetime": [
+          2.0,
+          2.0
+        ],
+        "position": [
+          0.5,
+          0.5
+        ],
+        "spread": [
+          0.9,
+          0.85
+        ],
+        "velocity": [
+          [
+            -0.01,
+            0.01
+          ],
+          [
+            -0.015,
+            0.015
+          ]
+        ],
+        "acceleration": [
+          0.0,
+          0.0
+        ],
+        "size": [
+          0.012,
+          0.035
+        ],
+        "size_end": 0.3,
+        "aspect": 1.0,
+        "rotation": [
+          0.0,
+          360.0
+        ],
+        "spin": [
+          -30.0,
+          30.0
+        ],
+        "shape": "star",
+        "softness": 0.2,
+        "glow": 0.4,
+        "colors": [
+          "#f9edff",
+          "#9eeaff"
+        ],
+        "color_end": null,
+        "opacity": 0.85,
+        "fade_in": 0.2,
+        "fade_out": 0.45,
+        "prewarm": true,
+        "sway": [
+          0.0,
+          0.0
+        ],
+        "twinkle": [
+          0.35,
+          1.0
+        ],
+        "keyframes": [
+          {
+            "property": "glow",
+            "keyframes": [
+              {
+                "at_tick": 0,
+                "value": 0.1,
+                "interpolation": "ease_in"
+              },
+              {
+                "at_tick": 180000,
+                "value": 0.8,
+                "interpolation": "ease_out"
+              },
+              {
+                "at_tick": 360000,
+                "value": 0.1,
+                "interpolation": "linear"
+              }
+            ]
+          },
+          {
+            "property": "opacity",
+            "keyframes": [
+              {
+                "at_tick": 0,
+                "value": 0.9,
+                "interpolation": "ease_out"
+              },
+              {
+                "at_tick": 180000,
+                "value": 0.25,
+                "interpolation": "ease_in"
+              },
+              {
+                "at_tick": 360000,
+                "value": 0.9,
+                "interpolation": "linear"
+              }
+            ]
+          },
+          {
+            "property": "shape",
+            "keyframes": [
+              {
+                "at_tick": 0,
+                "value": "diamond",
+                "interpolation": "hold"
+              },
+              {
+                "at_tick": 117000,
+                "value": "star",
+                "interpolation": "hold"
+              },
+              {
+                "at_tick": 270000,
+                "value": "ring",
+                "interpolation": "hold"
+              }
+            ]
+          },
+          {
+            "property": "size",
+            "keyframes": [
+              {
+                "at_tick": 0,
+                "value": [
+                  0.006,
+                  0.012
+                ],
+                "interpolation": "bezier",
+                "control_points": [
+                  0.3,
+                  0.05,
+                  0.7,
+                  0.95
+                ]
+              },
+              {
+                "at_tick": 180000,
+                "value": [
+                  0.025,
+                  0.055
+                ],
+                "interpolation": "bezier",
+                "control_points": [
+                  0.3,
+                  0.05,
+                  0.7,
+                  0.95
+                ]
+              },
+              {
+                "at_tick": 360000,
+                "value": [
+                  0.006,
+                  0.012
+                ],
+                "interpolation": "linear"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

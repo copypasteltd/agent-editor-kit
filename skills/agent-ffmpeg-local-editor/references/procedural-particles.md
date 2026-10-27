@@ -38,8 +38,49 @@ File contents are included in idempotency checks; use a new key after changing t
 `--source-duration-tick` on apply reserves a longer finite source for later
 slip/extension. Use the actual project clock, sequence/track IDs and normal
 timeline editing APIs. Half-open source FPS samples, reverse, speed curves,
-freeze, windows and nesting preserve particle identity. Source emitter values
-are static; ordinary clip TRS/opacity/mask animation is supported.
+freeze, windows and nesting preserve particle identity. CLI0.1.37 adds source-
+clock emitter tracks for all 21 scalar/vector/palette properties. Ordinary clip
+TRS/opacity/mask keys still act on the composed result.
+
+## Animate the editable emitter
+
+```powershell
+& $avk vfx animation-properties
+# UTF-8 JSON array; original generator ticks, not output frame numbers.
+$emitterKeys = Join-Path $project 'position-keys.json'
+'[{"at_tick":0,"value":[0.2,0.7],"interpolation":"ease_in_out"},{"at_tick":360000,"value":[0.8,0.3]}]' | Set-Content -LiteralPath $emitterKeys -Encoding UTF8
+& $avk vfx animate --project $project --clip-id snow --emitter-index 0 --property position --keyframes $emitterKeys --dry-run
+& $avk vfx animate --project $project --clip-id snow --emitter-index 0 --property position --keyframes $emitterKeys
+& $avk vfx show --project $project --clip-id snow
+```
+
+Use `--replace` only to replace an existing property; `--remove` removes one
+track and restores its static recipe value. Track locks, snapshots, validation,
+dry-run and content-aware idempotency remain active. Change the idempotency key
+when changing a keyframe file. The source must reserve every authored key tick.
+
+- `rate`: integrate particles/second over source time; zero pauses new births.
+  Existing live particles continue. Birth IDs and samples stay stable during seek.
+- Birth-sampled: `lifetime`, `position`, `spread`, `velocity`, `acceleration`,
+  `rotation`, `spin`, `sway`, `twinkle`. A later key affects subsequent births;
+  it does not teleport earlier particles or rewrite their lifetime/motion.
+- Live appearance: `size`, `size_end`, `aspect`, `shape`, `softness`, `glow`,
+  `colors`, `color_end`, `opacity`, `fade_in`, `fade_out`. These affect all live
+  particles at the sampled source time. Colors interpolate in linear BT.709.
+
+Each property accepts up to 64 unique integer ticks in 0…source duration,
+with hold/linear/ease_in/ease_out/ease_in_out/bezier. Whole pairs, velocity
+matrices and palettes are key values, not component paths. Bezier controls are
+two or four numbers in 0…1; overshoot is rejected. Shape and nullable end-color
+switches require hold. Continuous palettes require equal color counts; use hold
+to change that count. Before/after authored keys the first/last value is held.
+Prewarm uses the initial rate and first property values, with negative birth IDs.
+Seed, prewarm, source canvas/FPS and duration are static identity fields.
+
+For clients, show actual C47 GIF/contact, identify the cell, property, clock,
+seed and time. Save accepted key tracks in the project package; do not present
+a recipe label as evidence of rendered appearance. C47 has 14 authored tracks,
+48 decoded frames and full PCM equality after package reimport.
 
 Limits: 16 emitters, 4,096 reserved live particles, 4096×2160 pixel budget,
 1…120 source FPS, 600 seconds and 128Mi candidate pixel visits per frame;
@@ -60,3 +101,5 @@ Full parameters, recipe descriptions and actual media:
 `docs/validation/可编辑粒子实测_2026-10-27.md` in the project checkout.
 
 [Actual contact sheet](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/assets/procedural-particles-20261027-r3/contact.png) · [Actual annotated GIF](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/assets/procedural-particles-20261027-r3/particle-grid.gif) · [Editable C45 workflow](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/PROCEDURAL_PARTICLES.md).
+
+[Emitter animation workflow and all constraints](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/EMITTER_ANIMATION.md) · [Actual C47 animation GIF](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/assets/emitter-animation-20261027-r1/emitter-animation.gif) · [Editable C47 case](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/CASES.md#c47-emitter-animation).

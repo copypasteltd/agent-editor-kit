@@ -914,7 +914,7 @@ def render_fingerprints(project: dict[str, Any], sequence: dict[str, Any], setti
     assets = {str(asset.get("id")): asset for asset in project.get("assets", []) if asset.get("id") in asset_ids}
     input_hashes: dict[str, str | None] = {}
     if particle_sources:
-        for name in ('procedural_particles','float_timeline','float_gpu','float_gpu_worker','float_gpu_native','float_gpu_control'):
+        for name in ('procedural_particles','particle_animation','float_timeline','float_gpu','float_gpu_worker','float_gpu_native','float_gpu_control'):
             input_hashes['runtime:particles:'+name]='sha256:'+sha256_file(Path(__file__).with_name(name+'.py'))
     for asset_id in sorted(assets):
         asset = assets[asset_id]

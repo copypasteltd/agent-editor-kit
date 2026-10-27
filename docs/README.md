@@ -1,6 +1,9 @@
 # agent editor kit 文档 / Documentation
 
-Current local / 当前本地 / 目前本地：**CLI0.1.36 / local.34 / r37 kit** · [GPU dispatch](product/GPU_DISPATCH.md) · [Install](releases/CLI_0.1.36_LOCAL.md) · [C46](product/CASES.md#c46-gpu-dispatch).
+Current local / 当前本地 / 目前本地：**CLI0.1.37 / local.35 / r38 kit** · [Emitter animation](product/EMITTER_ANIMATION.md) · [Install](releases/CLI_0.1.37_LOCAL.md) · [C47](product/CASES.md#c47-emitter-animation).
+
+
+Historical / 历史 / 歷史：**CLI0.1.36 / local.34 / r37 kit** · [GPU dispatch](product/GPU_DISPATCH.md) · [Install](releases/CLI_0.1.36_LOCAL.md) · [C46](product/CASES.md#c46-gpu-dispatch).
 
 
 Historical / 历史 / 歷史：**CLI0.1.35 / local.33 / r36 kit** · [Editable particles](product/PROCEDURAL_PARTICLES.md) · [Install](releases/CLI_0.1.35_LOCAL.md) · [C45](product/CASES.md#c45-procedural-particles).

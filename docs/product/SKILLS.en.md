@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.36 / alpha.4-local.34 / r37 kit · 1 Skill / 17 modules / 76 files.**
+**CLI0.1.37 / alpha.4-local.35 / r38 kit · 1 Skill / 17 modules / 76 files.**
 
-Native Float32 GPU control now uses owned native pipes, removing per-operator control-file writes and polling. The same48-frame project through the registered installed Skill measures **133.95s → 35.19s (3.81×)**; all decoded10bit frames and384000 Float32 audio samples match, with byte-identical numeric kernels.
+New **keyframes for all 21 emitter properties**: integrated birth rate, motion/lifetime sampled at birth and live color/size/shape, with six easing modes and emission pauses. Discover constraints through `vfx animation-properties`; add, explicitly replace or remove a property with `vfx animate`. The original source clock survives trim, reverse, nesting, preview, queues and packages. The four-cell case is actual registered installed Skill GPU output.
 
-[GPU workflow and limits](GPU_DISPATCH.md)
+[Emitter workflow and limits](EMITTER_ANIMATION.md)
 
 <!-- /community-current -->
 

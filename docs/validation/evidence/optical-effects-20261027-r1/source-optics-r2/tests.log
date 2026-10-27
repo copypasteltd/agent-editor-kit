@@ -1,0 +1,21 @@
+test_all_six_easings_keep_original_fractional_author_time (test_float_optics.OpticalNumericTests.test_all_six_easings_keep_original_fractional_author_time) ... ok
+test_bad_surface_signal_budget_and_cancellation_do_not_mutate_input (test_float_optics.OpticalNumericTests.test_bad_surface_signal_budget_and_cancellation_do_not_mutate_input) ... ok
+test_catalog_aliases_are_defensive_and_legacy_execution_rejects (test_float_optics.OpticalNumericTests.test_catalog_aliases_are_defensive_and_legacy_execution_rejects) ... ok
+test_chromatic_integer_maps_match_exact_independent_pixel_indices (test_float_optics.OpticalNumericTests.test_chromatic_integer_maps_match_exact_independent_pixel_indices) ... ok
+test_coverage_bits_include_16bit_ramp_subnormals_and_signed_zero (test_float_optics.OpticalNumericTests.test_coverage_bits_include_16bit_ramp_subnormals_and_signed_zero) ... ok
+test_flare_without_secondary_components_is_radial_gaussian (test_float_optics.OpticalNumericTests.test_flare_without_secondary_components_is_radial_gaussian) ... ok
+test_ghost_count_adds_nonnegative_light_without_changing_coverage (test_float_optics.OpticalNumericTests.test_ghost_count_adds_nonnegative_light_without_changing_coverage) ... ok
+test_hidden_RGB_does_not_bleed_into_visible_channel (test_float_optics.OpticalNumericTests.test_hidden_RGB_does_not_bleed_into_visible_channel) ... ok
+test_invalid_declarations_and_mutated_immutable_plans_fail (test_float_optics.OpticalNumericTests.test_invalid_declarations_and_mutated_immutable_plans_fail) ... ok
+test_isotropic_leak_and_core_only_flare_are_equivalent (test_float_optics.OpticalNumericTests.test_isotropic_leak_and_core_only_flare_are_equivalent) ... ok
+test_leak_center_and_axis_match_closed_gaussian_values (test_float_optics.OpticalNumericTests.test_leak_center_and_axis_match_closed_gaussian_values) ... ok
+test_leak_rotation_swaps_axes_and_is_resolution_isotropic (test_float_optics.OpticalNumericTests.test_leak_rotation_swaps_axes_and_is_resolution_isotropic) ... ok
+test_ordered_chain_and_linear_intensity_add_only_once (test_float_optics.OpticalNumericTests.test_ordered_chain_and_linear_intensity_add_only_once) ... ok
+test_seek_order_tile_shape_and_input_bytes_do_not_change_result (test_float_optics.OpticalNumericTests.test_seek_order_tile_shape_and_input_bytes_do_not_change_result) ... ok
+test_transparent_and_clamped_edges_and_single_pixel (test_float_optics.OpticalNumericTests.test_transparent_and_clamped_edges_and_single_pixel) ... ok
+test_zero_intensity_and_zero_work_are_bit_exact (test_float_optics.OpticalNumericTests.test_zero_intensity_and_zero_work_are_bit_exact) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.206s
+
+OK

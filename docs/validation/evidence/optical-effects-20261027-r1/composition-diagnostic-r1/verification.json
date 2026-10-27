@@ -1,0 +1,787 @@
+{
+  "status": "diagnostic-complete",
+  "frames": [
+    {
+      "frame": 0,
+      "source_straight_max": 1.1920928955078125e-07,
+      "source_alpha_max": 1.0058283805847168e-07,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.1920928955078125e-07,
+      "full_pipeline_max": 1.1920928955078125e-07,
+      "index": [
+        5,
+        33,
+        0
+      ],
+      "CPU_pixel": [
+        0.7392086982727051,
+        0.42941150069236755,
+        0.049136683344841,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.7392085790634155,
+        0.42941156029701233,
+        0.049136683344841,
+        1.0
+      ]
+    },
+    {
+      "frame": 1,
+      "source_straight_max": 3.5762786865234375e-07,
+      "source_alpha_max": 1.1548399925231934e-07,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.1920928955078125e-07,
+      "full_pipeline_max": 1.0989606380462646e-07,
+      "index": [
+        13,
+        11,
+        0
+      ],
+      "CPU_pixel": [
+        0.027044210582971573,
+        0.026848573237657547,
+        0.028971439227461815,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.027044320479035378,
+        0.02684863470494747,
+        0.028971437364816666,
+        1.0
+      ]
+    },
+    {
+      "frame": 2,
+      "source_straight_max": 2.086162567138672e-07,
+      "source_alpha_max": 1.2852251529693604e-07,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.3783574104309082e-07,
+      "full_pipeline_max": 1.3597309589385986e-07,
+      "index": [
+        5,
+        9,
+        0
+      ],
+      "CPU_pixel": [
+        0.018278315663337708,
+        0.015561750158667564,
+        0.02918868698179722,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.018278179690241814,
+        0.015561738051474094,
+        0.029188690707087517,
+        1.0
+      ]
+    },
+    {
+      "frame": 3,
+      "source_straight_max": 4.172325134277344e-07,
+      "source_alpha_max": 9.685754776000977e-08,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.043081283569336e-07,
+      "full_pipeline_max": 1.043081283569336e-07,
+      "index": [
+        14,
+        23,
+        0
+      ],
+      "CPU_pixel": [
+        0.13075707852840424,
+        0.08532384783029556,
+        0.03459261357784271,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.13075697422027588,
+        0.08532379567623138,
+        0.034592609852552414,
+        1.0
+      ]
+    },
+    {
+      "frame": 4,
+      "source_straight_max": 1.430511474609375e-06,
+      "source_alpha_max": 9.872019290924072e-08,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.1920928955078125e-07,
+      "full_pipeline_max": 1.1920928955078125e-07,
+      "index": [
+        6,
+        82,
+        0
+      ],
+      "CPU_pixel": [
+        0.6823422312736511,
+        0.653527557849884,
+        0.5351775288581848,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.6823423504829407,
+        0.653527557849884,
+        0.5351775288581848,
+        1.0
+      ]
+    },
+    {
+      "frame": 5,
+      "source_straight_max": 5.960464477539062e-07,
+      "source_alpha_max": 1.2386590242385864e-07,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.7881393432617188e-07,
+      "full_pipeline_max": 1.7881393432617188e-07,
+      "index": [
+        1,
+        12,
+        2
+      ],
+      "CPU_pixel": [
+        0.08252568542957306,
+        0.11904726177453995,
+        0.25031182169914246,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.08252570033073425,
+        0.11904726922512054,
+        0.2503120005130768,
+        1.0
+      ]
+    },
+    {
+      "frame": 6,
+      "source_straight_max": 1.7881393432617188e-07,
+      "source_alpha_max": 1.1920928955078125e-07,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.7881393432617188e-07,
+      "full_pipeline_max": 1.1920928955078125e-07,
+      "index": [
+        3,
+        33,
+        2
+      ],
+      "CPU_pixel": [
+        0.06456194072961807,
+        0.3615540564060211,
+        0.5730246901512146,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.06456194818019867,
+        0.3615540862083435,
+        0.5730248093605042,
+        1.0
+      ]
+    },
+    {
+      "frame": 7,
+      "source_straight_max": 3.5762786865234375e-07,
+      "source_alpha_max": 1.1734664440155029e-07,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.7881393432617188e-07,
+      "full_pipeline_max": 1.7881393432617188e-07,
+      "index": [
+        3,
+        12,
+        0
+      ],
+      "CPU_pixel": [
+        0.16039417684078217,
+        0.3238416612148285,
+        0.04953860118985176,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.16039399802684784,
+        0.3238416314125061,
+        0.04953859746456146,
+        1.0
+      ]
+    },
+    {
+      "frame": 8,
+      "source_straight_max": 2.086162567138672e-07,
+      "source_alpha_max": 9.685754776000977e-08,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.1920928955078125e-07,
+      "full_pipeline_max": 1.1920928955078125e-07,
+      "index": [
+        13,
+        7,
+        0
+      ],
+      "CPU_pixel": [
+        0.5388254523277283,
+        0.05700385943055153,
+        0.014428863301873207,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.5388253331184387,
+        0.05700385197997093,
+        0.014428865164518356,
+        1.0
+      ]
+    },
+    {
+      "frame": 9,
+      "source_straight_max": 2.086162567138672e-07,
+      "source_alpha_max": 9.685754776000977e-08,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.043081283569336e-07,
+      "full_pipeline_max": 1.1920928955078125e-07,
+      "index": [
+        27,
+        91,
+        0
+      ],
+      "CPU_pixel": [
+        0.4754026532173157,
+        0.04098309203982353,
+        0.0825570821762085,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.4754027724266052,
+        0.04098309576511383,
+        0.08255708962678909,
+        1.0
+      ]
+    },
+    {
+      "frame": 10,
+      "source_straight_max": 2.384185791015625e-07,
+      "source_alpha_max": 1.1920928955078125e-07,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.2665987014770508e-07,
+      "full_pipeline_max": 1.2665987014770508e-07,
+      "index": [
+        11,
+        44,
+        0
+      ],
+      "CPU_pixel": [
+        0.03672412410378456,
+        0.0171620175242424,
+        0.03336399793624878,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.03672399744391441,
+        0.017162006348371506,
+        0.033363983035087585,
+        1.0
+      ]
+    },
+    {
+      "frame": 11,
+      "source_straight_max": 2.980232238769531e-07,
+      "source_alpha_max": 1.1548399925231934e-07,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.2293457984924316e-07,
+      "full_pipeline_max": 1.2293457984924316e-07,
+      "index": [
+        18,
+        6,
+        0
+      ],
+      "CPU_pixel": [
+        0.05848979204893112,
+        0.018810728564858437,
+        0.028047999367117882,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.05848991498351097,
+        0.018810737878084183,
+        0.028047995641827583,
+        1.0
+      ]
+    },
+    {
+      "frame": 12,
+      "source_straight_max": 2.384185791015625e-07,
+      "source_alpha_max": 1.1175870895385742e-07,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.1920928955078125e-07,
+      "full_pipeline_max": 1.1920928955078125e-07,
+      "index": [
+        0,
+        22,
+        0
+      ],
+      "CPU_pixel": [
+        0.6615317463874817,
+        0.43602368235588074,
+        0.18629054725170135,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.6615316271781921,
+        0.4360237419605255,
+        0.18629048764705658,
+        1.0
+      ]
+    },
+    {
+      "frame": 13,
+      "source_straight_max": 1.7881393432617188e-07,
+      "source_alpha_max": 1.043081283569336e-07,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.1920928955078125e-07,
+      "full_pipeline_max": 1.043081283569336e-07,
+      "index": [
+        13,
+        58,
+        0
+      ],
+      "CPU_pixel": [
+        0.08992988616228104,
+        0.09338340908288956,
+        0.09225721657276154,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.08992978185415268,
+        0.0933833196759224,
+        0.09225714951753616,
+        1.0
+      ]
+    },
+    {
+      "frame": 14,
+      "source_straight_max": 7.152557373046875e-07,
+      "source_alpha_max": 1.0011717677116394e-07,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.7881393432617188e-07,
+      "full_pipeline_max": 1.7881393432617188e-07,
+      "index": [
+        0,
+        15,
+        2
+      ],
+      "CPU_pixel": [
+        0.002453417517244816,
+        0.4807671904563904,
+        0.5223460793495178,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.002453417517244816,
+        0.4807671904563904,
+        0.5223462581634521,
+        1.0
+      ]
+    },
+    {
+      "frame": 15,
+      "source_straight_max": 1.7583370208740234e-06,
+      "source_alpha_max": 8.568167686462402e-08,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.1920928955078125e-07,
+      "full_pipeline_max": 1.1920928955078125e-07,
+      "index": [
+        3,
+        74,
+        0
+      ],
+      "CPU_pixel": [
+        0.8932817578315735,
+        0.06517381966114044,
+        0.12975582480430603,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.8932816386222839,
+        0.06517381966114044,
+        0.12975582480430603,
+        1.0
+      ]
+    },
+    {
+      "frame": 16,
+      "source_straight_max": 1.2218952178955078e-06,
+      "source_alpha_max": 1.2665987014770508e-07,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.4901161193847656e-07,
+      "full_pipeline_max": 1.7881393432617188e-07,
+      "index": [
+        4,
+        79,
+        0
+      ],
+      "CPU_pixel": [
+        0.4530332088470459,
+        0.5713844299316406,
+        0.5221132040023804,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.4530330300331116,
+        0.5713844299316406,
+        0.5221132636070251,
+        1.0
+      ]
+    },
+    {
+      "frame": 17,
+      "source_straight_max": 1.2665987014770508e-07,
+      "source_alpha_max": 1.2665987014770508e-07,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.1920928955078125e-07,
+      "full_pipeline_max": 1.4901161193847656e-07,
+      "index": [
+        5,
+        79,
+        0
+      ],
+      "CPU_pixel": [
+        0.3316689729690552,
+        0.5059008002281189,
+        0.4695540964603424,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.33166882395744324,
+        0.5059007406234741,
+        0.4695540964603424,
+        1.0
+      ]
+    },
+    {
+      "frame": 18,
+      "source_straight_max": 2.086162567138672e-07,
+      "source_alpha_max": 1.341104507446289e-07,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.7881393432617188e-07,
+      "full_pipeline_max": 1.1920928955078125e-07,
+      "index": [
+        8,
+        13,
+        2
+      ],
+      "CPU_pixel": [
+        0.06020880490541458,
+        0.09120576828718185,
+        0.2717166543006897,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.06020883470773697,
+        0.09120580554008484,
+        0.27171677350997925,
+        1.0
+      ]
+    },
+    {
+      "frame": 19,
+      "source_straight_max": 1.564621925354004e-07,
+      "source_alpha_max": 1.0803341865539551e-07,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.1920928955078125e-07,
+      "full_pipeline_max": 1.7881393432617188e-07,
+      "index": [
+        10,
+        54,
+        0
+      ],
+      "CPU_pixel": [
+        0.7704717516899109,
+        0.4472760856151581,
+        0.04687975347042084,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.7704715728759766,
+        0.4472760558128357,
+        0.04687975347042084,
+        1.0
+      ]
+    },
+    {
+      "frame": 20,
+      "source_straight_max": 4.470348358154297e-07,
+      "source_alpha_max": 1.150183379650116e-07,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.1920928955078125e-07,
+      "full_pipeline_max": 1.043081283569336e-07,
+      "index": [
+        9,
+        30,
+        0
+      ],
+      "CPU_pixel": [
+        0.15247569978237152,
+        0.09771178662776947,
+        0.03367997705936432,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.15247559547424316,
+        0.09771174192428589,
+        0.03367997705936432,
+        1.0
+      ]
+    },
+    {
+      "frame": 21,
+      "source_straight_max": 2.8312206268310547e-07,
+      "source_alpha_max": 1.043081283569336e-07,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.862645149230957e-07,
+      "full_pipeline_max": 1.862645149230957e-07,
+      "index": [
+        5,
+        76,
+        0
+      ],
+      "CPU_pixel": [
+        0.058241959661245346,
+        0.022692769765853882,
+        0.044510047882795334,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.05824214592576027,
+        0.022692767903208733,
+        0.044510047882795334,
+        1.0
+      ]
+    },
+    {
+      "frame": 22,
+      "source_straight_max": 1.7881393432617188e-07,
+      "source_alpha_max": 1.1944212019443512e-07,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.7881393432617188e-07,
+      "full_pipeline_max": 1.1920928955078125e-07,
+      "index": [
+        2,
+        46,
+        0
+      ],
+      "CPU_pixel": [
+        0.6698145866394043,
+        0.3253934681415558,
+        0.43800628185272217,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.6698147058486938,
+        0.32539355754852295,
+        0.43800628185272217,
+        1.0
+      ]
+    },
+    {
+      "frame": 23,
+      "source_straight_max": 1.1920928955078125e-07,
+      "source_alpha_max": 1.1920928955078125e-07,
+      "optical_same_input_max": 0.0,
+      "inherited_optical_RGB_max": 1.6391277313232422e-06,
+      "full_pipeline_max": 1.6391277313232422e-06,
+      "index": [
+        12,
+        78,
+        0
+      ],
+      "CPU_pixel": [
+        0.14138920605182648,
+        0.1803956776857376,
+        0.14234215021133423,
+        1.0
+      ],
+      "GPU_pixel": [
+        0.1413908451795578,
+        0.18039566278457642,
+        0.14234213531017303,
+        1.0
+      ]
+    }
+  ],
+  "GPU": {
+    "engine": "render-owned-float32-opencl-v1",
+    "request": {
+      "mode": "require",
+      "device": "0.0",
+      "max_working_bytes": 1073741824,
+      "probe_timeout_seconds": 30
+    },
+    "status": "prepared",
+    "dry_run": false,
+    "operations": {
+      "particles": 48,
+      "optics": 144,
+      "affine": 24,
+      "over": 24
+    },
+    "CPU_scope": [
+      "glyph-rasterization",
+      "color-conversion",
+      "effects-except-native-optics",
+      "masks",
+      "crop",
+      "transitions",
+      "non-normal-blends",
+      "audio",
+      "delivery-encoding"
+    ],
+    "GPU_scope": [
+      "premultiplied-affine",
+      "normal-source-over",
+      "text-color-components",
+      "binary-word-selection",
+      "seeded-particle-rasterization",
+      "analytic-optical-effects"
+    ],
+    "host_shared_bytes_limit": 1073741824,
+    "retained_host_shared_bytes": 0,
+    "device_bytes_limit": 1073741824,
+    "limits_are_peak_RSS": false,
+    "free_VRAM_reserved": false,
+    "integer_media_conversion": false,
+    "worker_closed": true,
+    "runtime_failure_CPU_fallback": false,
+    "artifacts": [
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu.py",
+        "role": "float-gpu-execution",
+        "bytes": 15715,
+        "sha256": "sha256:19717ee8912b3afd2ad6330c8a13fcee599c73ca7efedd8d07d7b7559b8d4f4d"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_worker.py",
+        "role": "float-gpu-execution",
+        "bytes": 10010,
+        "sha256": "sha256:a699a52f1feb5d047133335abdd643106562655cad50a371bb39c0f8c6c9dea4"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_native.py",
+        "role": "float-gpu-execution",
+        "bytes": 19934,
+        "sha256": "sha256:a6d7816398a06017d30959c849b3205f0f02b220c0313c914bafedc0b3f48cfa"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_gpu_control.py",
+        "role": "float-gpu-execution",
+        "bytes": 6648,
+        "sha256": "sha256:717c02fd2ec1801587c4786c391f24a324fd9667aeec3d6be8c3272320c09b8d"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\procedural_particles.py",
+        "role": "float-gpu-execution",
+        "bytes": 17658,
+        "sha256": "sha256:386a2b146997a82ff6065bd599d69ddc602d714e1cfc19157e27807327a55009"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\particle_animation.py",
+        "role": "float-gpu-execution",
+        "bytes": 13223,
+        "sha256": "sha256:37e168c03f0634973ff38e9d265e165b8eb048bb7c9e87c4e0799707f76902c0"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_optics.py",
+        "role": "float-gpu-execution",
+        "bytes": 10487,
+        "sha256": "sha256:0e8ffedb07f18304961494f289fdfe2f293a4abb92ed098014b36580b0c274a6"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_optics_kernel.py",
+        "role": "float-gpu-execution",
+        "bytes": 2926,
+        "sha256": "sha256:92d2e83c126ee611831c1b0cf9a67d0130b6b32d8d3e42d0a92efbbee8755440"
+      }
+    ],
+    "planned_maximum_pixels": 6144,
+    "planned_device_bytes": 294912,
+    "planned_host_shared_bytes": 203520,
+    "owned_worker_pid": 6016,
+    "control": {
+      "protocol": "owned-inherited-binary-pipes-v1",
+      "max_packet_bytes": 131072,
+      "queue_capacity_each": 1,
+      "pixel_payload": false,
+      "network": false,
+      "transient_control_persisted": false,
+      "sent_packets": 241,
+      "received_packets": 241,
+      "sent_bytes": 118371,
+      "received_bytes": 200818,
+      "threads_closed": true,
+      "streams_closed": true
+    },
+    "native": {
+      "protocol": "native-opencl-binary64-float32-primitives-v1",
+      "device": {
+        "selection": "0.0",
+        "name": "NVIDIA GeForce RTX 3060",
+        "vendor": "NVIDIA Corporation",
+        "driver": "595.95",
+        "version": "OpenCL 3.0 CUDA",
+        "type": 4,
+        "double_fp_config": 63,
+        "global_memory_bytes": 12884377600,
+        "max_allocation_bytes": 3221094400
+      },
+      "kernel_sha256": "a25f16a51818c50f3e7297d410b8f29f4a332e7306525facf636c0fabfc16333",
+      "build_options": "-cl-std=CL1.2;FP_CONTRACT OFF;no fast math",
+      "arithmetic": "binary64 affine/over/text/optics; binary32 particle coverage and ordered accumulation; Float32 surfaces",
+      "device_quota_bytes": 1073741824,
+      "retained_device_bytes": 3145728,
+      "operations": {
+        "over": 26,
+        "affine": 26,
+        "paint": 1,
+        "select_words": 1,
+        "optics": 147,
+        "particles": 48
+      },
+      "integer_media_conversion": false
+    },
+    "probe": {
+      "pixels_per_case": 65536,
+      "max_errors": {
+        "over": 0.0,
+        "affine": 0.0,
+        "paint": 0.0,
+        "select": 0.0
+      },
+      "absolute_limit": 3e-07,
+      "all_16bit_levels_present": true,
+      "actual_gpu_operations": 9,
+      "optical_max_errors": {
+        "lens_flare": 0.0,
+        "light_leak": 0.0,
+        "chromatic_aberration": 0.0
+      },
+      "optical_absolute_limit": 3e-06,
+      "optical_gpu_operations": 3,
+      "subnormal_over_bit_exact": true,
+      "subnormal_affine_bit_exact": true,
+      "subnormal_alpha_input_bits": [
+        0,
+        1,
+        2,
+        8388607,
+        8388608,
+        8388609,
+        1065353215,
+        1065353216
+      ]
+    },
+    "maximum_host_shared_bytes": 196864,
+    "operation_elapsed_seconds": 0.24670759988657665,
+    "worker_returncode": 0,
+    "shared_handles_closed": true
+  },
+  "max_errors": {
+    "source_straight_max": 1.7583370208740234e-06,
+    "source_alpha_max": 1.341104507446289e-07,
+    "optical_same_input_max": 0.0,
+    "inherited_optical_RGB_max": 1.6391277313232422e-06,
+    "full_pipeline_max": 1.6391277313232422e-06
+  }
+}

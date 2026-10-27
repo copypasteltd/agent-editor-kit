@@ -28,7 +28,7 @@ def read(path):
 
 def execute(gpu, request, nonce):
     op = request.get('op')
-    if op not in {'over', 'affine', 'paint', 'select', 'particles'}:
+    if op not in {'over', 'affine', 'paint', 'select', 'particles','optics'}:
         raise error('PROTOCOL', 'GPU操作未登记')
     specs = request.get('buffers')
     if not isinstance(specs, list) or len(specs) != 3:
@@ -70,7 +70,8 @@ def execute(gpu, request, nonce):
             elif op == 'affine': gpu.affine(b, output, request['inverse'], request['nearest'])
             elif op == 'paint': gpu.paint(b, request['colors'], output, base=a if a.dtype == np.float32 and a.ndim == 3 else None)
             elif op == 'select': gpu.select(a, b, c, output)
-            else: gpu.particles(b, c, output)
+            elif op == 'particles': gpu.particles(b, c, output)
+            else: gpu.optics(b,output,request['kind'],request['parameters'],request['ghosts'],request['edge'])
             gpu.surface(output)
         finally:
             arrays.clear()
@@ -124,8 +125,19 @@ def probe(gpu):
     # source-over, paint and binary selection should normally be bit identical.
     if any(value > 3e-7 for value in errors.values()):
         raise error('PRECISION', 'GPU独立精度探测未通过', max_errors=errors)
+    from .float_optics import SPECS,compile_optics,state_at,apply_optics
+    from .float_color_signal import ColorSignal
+    optical_errors={};optical=np.ascontiguousarray(a[:11,:13]);optical_out=np.empty_like(optical)
+    for kind in SPECS:
+        plan=compile_optics({'type':kind});values=state_at(plan,0)
+        reference,_=apply_optics(optical,plan,0,working_signal=ColorSignal('bt709','linear'))
+        gpu.optics(optical,optical_out,kind,values,plan.ghosts,plan.edge)
+        optical_errors[kind]=float(np.max(np.abs(reference-optical_out)))
+    if any(v>3e-6 for v in optical_errors.values()):
+        raise error('PRECISION','GPU光学精度探测未通过',max_errors=optical_errors)
     return {'pixels_per_case': 65536, 'max_errors': errors, 'absolute_limit': 3e-7,
-            'all_16bit_levels_present': True, 'actual_gpu_operations': 6,
+            'all_16bit_levels_present': True, 'actual_gpu_operations': 9,
+            'optical_max_errors':optical_errors,'optical_absolute_limit':3e-6,'optical_gpu_operations':3,
             'subnormal_over_bit_exact': tiny_over_exact, 'subnormal_affine_bit_exact': tiny_affine_exact,
             'subnormal_alpha_input_bits': bits.tolist()}
 

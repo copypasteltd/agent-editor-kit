@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.37 / alpha.4-local.35 / r38 kit · 1 Skill / 17 modules / 76 files.**
+**CLI0.1.38 / alpha.4-local.36 / r39 kit · 1 Skill / 17 modules / 77 files.**
 
-New **keyframes for all 21 emitter properties**: integrated birth rate, motion/lifetime sampled at birth and live color/size/shape, with six easing modes and emission pauses. Discover constraints through `vfx animation-properties`; add, explicitly replace or remove a property with `vfx animate`. The original source clock survives trim, reverse, nesting, preview, queues and packages. The four-cell case is actual registered installed Skill GPU output.
+New editable **lens flare, light leaks and chromatic aberration**: linear-light Float32 math, numeric keys, original author clocks, clip effects and selected-sequence adjustments, with CPU references and actual OpenCL GPU execution. Discover constraints with `effects list --query optical` / `effects inspect`; author with `timeline compose`. The four-panel case retains the original image, effects-removed control and actual GPU output.
 
-[Emitter workflow and limits](../product/EMITTER_ANIMATION.md)
+[Optical workflow and constraints](../product/OPTICAL_EFFECTS.md)
 
 <!-- /community-current -->
 

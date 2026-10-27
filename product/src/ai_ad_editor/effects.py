@@ -14,7 +14,7 @@ from .effect_automation import SPECS as AUTOMATION_SPECS
 from .selective_hsl import SPECS as HSL_SPECS, ENGINE as HSL_ENGINE
 
 
-EFFECT_CATALOG_VERSION = "0.9.0"
+EFFECT_CATALOG_VERSION = "0.10.0"
 
 
 def _parameter(
@@ -244,6 +244,22 @@ _EFFECTS: tuple[dict[str, Any], ...] = (
 )
 
 
+def _optical_catalog():
+    from .float_optics import SPECS,ALIASES,PROTOCOL
+    rows=[]
+    for name,parameters in SPECS.items():
+        p={k:_parameter('number',v[0],minimum=v[1],maximum=v[2]) for k,v in parameters.items()}
+        if name=='lens_flare':p['ghosts']=_parameter('integer',6,minimum=0,maximum=12)
+        if name=='chromatic_aberration':p['edge']=_parameter('enum','clamp',description='clamp or transparent; static')
+        rows.append(dict(id=name,aliases=[k for k,v in ALIASES.items() if v==name and k!=name],category='optical',
+            backend='native:float32-optics',source='agent-editor-kit-original',license='MIT',keyframable=True,
+            keyframe_parameters=list(parameters),keyframe_engine=PROTOCOL,parameters=p,
+            limits=['explicit_native_linear_working_RGB','coverage_bits_preserved','no_integer_intermediate',
+                'CPU_or_probed_render_owned_OpenCL','no_automatic_light_detection_or_physical_lens_solve',
+                'ghost_count_and_edge_mode_static','extended_RGB_requires_explicit_delivery_range_policy']))
+    return tuple(rows)
+
+_EFFECTS += _optical_catalog()
 _ALIASES = {alias: item["id"] for item in _EFFECTS for alias in [item["id"], *item["aliases"]]}
 
 
@@ -252,7 +268,7 @@ def effect_catalog() -> dict[str, Any]:
     effects = deepcopy(list(_EFFECTS))
     return {
         "catalog_version": EFFECT_CATALOG_VERSION,
-        "source": "ffmpeg-local",
+        "source": "native-and-ffmpeg-local",
         "network": "disabled",
         "count": len(effects),
         "effects": effects,

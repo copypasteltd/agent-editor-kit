@@ -1,0 +1,64 @@
+test_noop_skips_dispatch_invalid_state_is_atomic_and_next_dispatch_works (test_float_optics.OpticalGPUTests.test_noop_skips_dispatch_invalid_state_is_atomic_and_next_dispatch_works) ... ERROR
+test_optical_dispatch_cancellation_closes_owned_worker_and_control (test_float_optics.OpticalGPUTests.test_optical_dispatch_cancellation_closes_owned_worker_and_control) ... ERROR
+test_three_kinds_fractional_edges_extended_RGB_and_coverage_match_CPU (test_float_optics.OpticalGPUTests.test_three_kinds_fractional_edges_extended_RGB_and_coverage_match_CPU) ... ERROR
+
+======================================================================
+ERROR: test_noop_skips_dispatch_invalid_state_is_atomic_and_next_dispatch_works (test_float_optics.OpticalGPUTests.test_noop_skips_dispatch_invalid_state_is_atomic_and_next_dispatch_works)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_optics.py", line 172, in test_noop_skips_dispatch_invalid_state_is_atomic_and_next_dispatch_works
+    value,m=compiler.apply(a,compiler.compile([effect(brightness=.1)]),0)
+            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\float_effect_chain.py", line 143, in apply
+    value,metadata = apply_optics(value,plan,tick,working_signal=self.working,retained_table_bytes=retained,
+                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        max_working_bytes=self.budget,cancel=self.cancel,gpu=self.gpu)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\float_optics.py", line 158, in apply_optics
+    elif used_gpu:result=gpu.optics(surface,plan.effect_type,values,plan.ghosts,plan.edge)
+                         ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\float_gpu.py", line 229, in optics
+    return self._call('optics',source.shape,[self._dummy(),source,self._dummy()],kind=kind,
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        values=values,ghosts=ghosts,edge=edge)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: FloatGPUSession._call() got multiple values for argument 'values'
+
+======================================================================
+ERROR: test_optical_dispatch_cancellation_closes_owned_worker_and_control (test_float_optics.OpticalGPUTests.test_optical_dispatch_cancellation_closes_owned_worker_and_control)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_optics.py", line 185, in test_optical_dispatch_cancellation_closes_owned_worker_and_control
+    p=compile_optics(effect());gpu.optics(image(),p.effect_type,state_at(p,0),p.ghosts,p.edge)
+                               ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\float_gpu.py", line 229, in optics
+    return self._call('optics',source.shape,[self._dummy(),source,self._dummy()],kind=kind,
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        values=values,ghosts=ghosts,edge=edge)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: FloatGPUSession._call() got multiple values for argument 'values'
+
+======================================================================
+ERROR: test_three_kinds_fractional_edges_extended_RGB_and_coverage_match_CPU (test_float_optics.OpticalGPUTests.test_three_kinds_fractional_edges_extended_RGB_and_coverage_match_CPU)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_optics.py", line 157, in test_three_kinds_fractional_edges_extended_RGB_and_coverage_match_CPU
+    ref,_=apply(a,e);actual,m=apply(a,e,gpu=gpu)
+                              ~~~~~^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_optics.py", line 33, in apply
+    def apply(a,e,at=0,**kw):return apply_optics(a,compile_optics(e),at,working_signal=LINEAR,**kw)
+                                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\float_optics.py", line 158, in apply_optics
+    elif used_gpu:result=gpu.optics(surface,plan.effect_type,values,plan.ghosts,plan.edge)
+                         ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\float_gpu.py", line 229, in optics
+    return self._call('optics',source.shape,[self._dummy(),source,self._dummy()],kind=kind,
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        values=values,ghosts=ghosts,edge=edge)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: FloatGPUSession._call() got multiple values for argument 'values'
+
+----------------------------------------------------------------------
+Ran 3 tests in 3.171s
+
+FAILED (errors=3)

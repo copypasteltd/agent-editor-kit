@@ -106,6 +106,10 @@ def validate_project(root: Path, project: dict[str, Any], *, strict_rights: bool
 
     def validate_effect_automation(effect, *, duration_tick=None):
         name = str(effect.get('type','')).strip().lower().replace('-','_')
+        from .float_optics import ALIASES as OPTICAL_ALIASES,validate_optics
+        if name in OPTICAL_ALIASES:
+            if not native_curves:return [{'code':'FLOAT_OPTICS_NATIVE_PIPELINE_REQUIRED','message':'光学效果要求原生线性浮点管线','suffix':'.type'}]
+            return validate_optics(effect,duration_tick=duration_tick)
         if native_curves:
             from .float_keyer import ALIASES as KEYER_ALIASES,validate_keyer
             if name in KEYER_ALIASES:return validate_keyer(effect,duration_tick=duration_tick)
@@ -132,6 +136,8 @@ def validate_project(root: Path, project: dict[str, Any], *, strict_rights: bool
 
     def effect_properties(name):
         if native_curves:
+            from .float_optics import ALIASES as OPTICAL_ALIASES,parameter_names as optical_parameters
+            if name in OPTICAL_ALIASES:return optical_parameters(name)
             from .float_keyer import ALIASES as KEYER_ALIASES,parameter_names as keyer_parameter_names
             if name in KEYER_ALIASES:return keyer_parameter_names()
             from .float_sharpen import ALIASES as SHARPEN_ALIASES,parameter_names as sharpen_parameter_names

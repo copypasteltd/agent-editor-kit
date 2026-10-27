@@ -1,0 +1,10 @@
+{
+  "status": "failed",
+  "stage": "outcome-log-parser",
+  "parsed_tests": 701,
+  "expected_tests": 704,
+  "reason": "Three unittest descriptions occupy a second line; the first parser only recognized single-line test names.",
+  "test_execution_started": false,
+  "product_modified": false,
+  "corrected_report": "../installed-regression-final-r2/verification.json"
+}

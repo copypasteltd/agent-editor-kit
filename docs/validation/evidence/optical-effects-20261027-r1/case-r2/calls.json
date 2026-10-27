@@ -1,0 +1,114 @@
+[
+  {
+    "id": "version",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "seconds": 2.075789000009536,
+    "stdout_bytes": 1168,
+    "stdout_sha256": "57311fb81fa3fd8184a77e0453e07c8fa6d2423e0abf1b9d32088c71980586d5",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "optical-catalog",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "effects",
+      "list",
+      "--query",
+      "native:float32-optics"
+    ],
+    "exit_code": 0,
+    "seconds": 1.7461273999942932,
+    "stdout_bytes": 4599,
+    "stdout_sha256": "4312af4c7e1428b09c58154da4a2efd7631da40288146bc5280b74eff85b39b3",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "init",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "project",
+      "init",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\optical-case-r2\\project",
+      "--name",
+      "C48 editable optical effects"
+    ],
+    "exit_code": 0,
+    "seconds": 1.7633474999893224,
+    "stdout_bytes": 614,
+    "stdout_sha256": "0d67f968b9d6909791d74cf8c57af9c4d1bdd5ae015260a19d4bee403f1c069f",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "ingest",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "media",
+      "ingest",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\optical-case-r2\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\optical-effects-20261027-r2\\original-source.png",
+      "--asset-id",
+      "original-study",
+      "--license-spdx",
+      "CC0-1.0",
+      "--verification-status",
+      "verified",
+      "--permitted-use",
+      "all",
+      "--evidence",
+      "Original contributor-drawn synthetic product chart; no external imagery."
+    ],
+    "exit_code": 0,
+    "seconds": 1.92142500000773,
+    "stdout_bytes": 2814,
+    "stdout_sha256": "4d71c889edb2e734ca21374c40f6983316fbc6dbf5650956e13ede6289c5c424",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "compose",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "timeline",
+      "compose",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\optical-case-r2\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\optical-case-r2\\composition.json"
+    ],
+    "exit_code": 2,
+    "seconds": 2.3124832999892533,
+    "stdout_bytes": 6287,
+    "stdout_sha256": "9d9ca4940fb1b96b304b0ef13eb367c3c8bd0944656d7d1131723f2b5d4d3912",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

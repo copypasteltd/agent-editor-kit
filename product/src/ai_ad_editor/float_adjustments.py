@@ -128,6 +128,9 @@ class FloatAdjustments:
             if left_limit and tick > 0:
                 sampled -= min(Fraction(1, 2**52), Fraction(tick) / 2)
             value, evidence = self.compiler.apply(value, plan.effects, sampled)
+            if any(row.get('GPU') for row in evidence.get('ordered_effects',[])):
+                self.metadata['GPU']=True
+                self.metadata['GPU_scope']='analytic-optical-effects-only;other-adjustment-operators-CPU'
             rows.append(dict(index=plan.index, id=plan.id, author_tick=str(tick),
                 left_limit=left_limit, effects=evidence))
         if rows:

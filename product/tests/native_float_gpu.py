@@ -44,7 +44,9 @@ class NativeFloatGPUTests(unittest.TestCase):
 
     def test_independent_probe_and_subnormal_bits(self):
         self.assertTrue(self.gpu.active)
-        self.assertEqual(self.gpu.evidence['probe']['actual_gpu_operations'], 6)
+        self.assertEqual(self.gpu.evidence['probe']['actual_gpu_operations'], 9)
+        self.assertEqual(self.gpu.evidence['probe']['optical_gpu_operations'],3)
+        self.assertLessEqual(max(self.gpu.evidence['probe']['optical_max_errors'].values()),3e-6)
         self.assertTrue(self.gpu.evidence['probe']['subnormal_over_bit_exact'])
         self.assertTrue(self.gpu.evidence['probe']['subnormal_affine_bit_exact'])
         self.assertLessEqual(max(self.gpu.evidence['probe']['max_errors'].values()), 3e-7)

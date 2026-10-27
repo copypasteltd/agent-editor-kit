@@ -1,0 +1,48 @@
+test_adjustments_use_selected_root_interval_once_and_validate_author_clock (test_float_optics.OpticalIntegrationTests.test_adjustments_use_selected_root_interval_once_and_validate_author_clock) ... ok
+test_package_and_local_OTIO_preserve_curves_and_all_encoded_frames (test_float_optics.OpticalIntegrationTests.test_package_and_local_OTIO_preserve_curves_and_all_encoded_frames) ... ok
+test_particle_composition_preserves_original_float_raster_error_budget (test_float_optics.OpticalIntegrationTests.test_particle_composition_preserves_original_float_raster_error_budget) ... ok
+test_preview_cache_changes_with_effect_key_and_GPU_queue_matches_direct (test_float_optics.OpticalIntegrationTests.test_preview_cache_changes_with_effect_key_and_GPU_queue_matches_direct) ... ok
+test_real_CPU_GPU_encoding_and_complete_PCM (test_float_optics.OpticalIntegrationTests.test_real_CPU_GPU_encoding_and_complete_PCM) ... ERROR
+test_source_clock_survives_clip_split_and_nested_reverse (test_float_optics.OpticalIntegrationTests.test_source_clock_survives_clip_split_and_nested_reverse) ... ok
+
+======================================================================
+ERROR: test_real_CPU_GPU_encoding_and_complete_PCM (test_float_optics.OpticalIntegrationTests.test_real_CPU_GPU_encoding_and_complete_PCM)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_optics.py", line 214, in test_real_CPU_GPU_encoding_and_complete_PCM
+    a=f.execute('cpu.mkv');f.p['settings']['projection_acceleration']={'mode':'require','device':'0.0'}
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_procedural_particles.py", line 285, in execute
+    with project_write_lock(root):result=render.render_project(root,project,project['sequences'][0],root/'renders'/name)
+                                         ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\contextlib.py", line 85, in inner
+    return func(*args, **kwds)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\render.py", line 4930, in render_project
+    return _render_project(root, project, sequence, output, dry_run=dry_run,
+        render_settings=render_settings, profile=profile, cancel_file=cancel_file,
+        progress_callback=progress_callback, resume_of=resume_of, _runtime=runtime)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\render.py", line 4956, in _render_project
+    float_renderer = _runtime.enter_context(FloatRenderContext(root, effective_project, render_sequence,
+        encoder, dry_run=dry_run, cancel_file=cancel_file, operation_id=operation_id))
+  File "C:\Python313\Lib\contextlib.py", line 530, in enter_context
+    result = _enter(cm)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\float_standard_render.py", line 159, in __enter__
+    self._prepare_sources()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\float_standard_render.py", line 246, in _prepare_sources
+    source = self.stack.enter_context(NativeSurfaceSource(self.root, asset,
+                                      ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+        source_signal=_signal(spec['source_signal'], asset_id), working_signal=self.config['working'],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        persist_index=not self.dry_run, decoder=decoder, cancel_file=self.marker,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        timeout=self.config['native_timeout_seconds']))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\float_native_source.py", line 168, in __init__
+    raise error('CLOCK', '容器起点未知，调用者须显式指定')
+ai_ad_editor.errors.AppError: 容器起点未知，调用者须显式指定
+
+----------------------------------------------------------------------
+Ran 6 tests in 77.552s
+
+FAILED (errors=1)

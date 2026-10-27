@@ -907,3 +907,15 @@ Registered installed CLI0.1.37 authors14 source-clock tracks across four320×180
 [Actual MP4](../assets/emitter-animation-20261027-r1/emitter-animation.mp4) · [Lossless master](../assets/emitter-animation-20261027-r1/emitter-animation.mkv) · [Editable project](../assets/emitter-animation-20261027-r1/editable-emitter-animation.aevpkg.zip) · [Without tracks](../assets/emitter-animation-20261027-r1/before.png) · [At2s](../assets/emitter-animation-20261027-r1/contact.png) · [Recipes](../assets/emitter-animation-20261027-r1/recipes.json) · [Source/license](../assets/emitter-animation-20261027-r1/SOURCE.txt) · [Media manifest](../assets/emitter-animation-20261027-r1/media-manifest.json) · [Workflow](EMITTER_ANIMATION.md) · [Evidence](../validation/发射器关键帧实测_2026-10-27.md).
 
 Original synthetic scene;no external media/models. MKV is actual GPU render,MP4 is a playable encode,GIF/contact add labels to decoded master frames. before.png comes from a separate GPU render with only emitter tracks removed. GIF duration is exactly4000ms. Silent diagnostic audio;continuous human playback/listening andnatural-footage/full-product acceptance remain open.
+
+<a id="c48-optical-effects"></a>
+
+## C48 · 可编辑光学效果 / Editable optical effects
+
+Registered installed CLI0.1.38 imports an original CC0 product chart and composes four 480×270 panels in 960×540: original, moving lens flare, warm light leak and radial color split. Nine numeric channels remain editable. 48 frames/12FPS/four seconds. Package reimport retains effects/curves, all 48 decoded 10-bit frames and all 384000 Float32 PCM scalars. Each render executes 143 actual optical GPU dispatches; the first frame has zero shifts and skips chromatic work.
+
+![Actual GPU optical output, decoded and labeled](../assets/optical-effects-20261027-r3/optical-effects.gif)
+
+[MP4](../assets/optical-effects-20261027-r3/optical-effects.mp4) · [Lossless master](../assets/optical-effects-20261027-r3/optical-effects.mkv) · [Editable project](../assets/optical-effects-20261027-r3/editable-optical-effects.aevpkg.zip) · [Original PNG](../assets/optical-effects-20261027-r3/original-source.png) · [Without effects](../assets/optical-effects-20261027-r3/before.png) · [At2s](../assets/optical-effects-20261027-r3/contact.png) · [Recipes](../assets/optical-effects-20261027-r3/recipes.json) · [Source/license](../assets/optical-effects-20261027-r3/SOURCE.txt) · [Media manifest](../assets/optical-effects-20261027-r3/media-manifest.json) · [Workflow](OPTICAL_EFFECTS.md) · [Evidence](../validation/光学效果实测_2026-10-27.md).
+
+The MKV is actual installed GPU output, the MP4 is a playable encode, and GIF/contact images use decoded output with labels. Before is a separate GPU render with only optical effects removed. The GIF contains 48 actual frames over 4000ms. This is a silent synthetic diagnostic without external imagery/models. Continuous human playback/listening, natural footage quality and physical lens/full product acceptance remain open.

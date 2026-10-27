@@ -1,4 +1,12 @@
-# Native GPU projection (CLI 0.1.24)
+# Native GPU projection (initial CLI 0.1.24; current additions below)
+
+CLI0.1.38 additionally runs [analytic optical effects](optical-effects.md) on
+the native linear Float32 GPU backend, alongside the existing seeded particle
+rasterization. Nine named main probe dispatches include three actual optical
+cases; all prior precision/subnormal checks remain. Optics use binary64 math,
+particles retain their existing Float32 raster math. `operations.optics` and
+`operations.particles` report edited-frame work separately from probes.
+The historical CPU-effects statements below exclude these native additions.
 
 Read this for an edit with animated crop, affine camera keys or native child
 canvases when GPU composition is requested. Use the installed launcher from

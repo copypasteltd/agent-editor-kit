@@ -13,6 +13,7 @@ import re
 import numpy as np
 
 from .errors import AppError
+from .float_optics_kernel import SOURCE as OPTICAL_SOURCE
 
 PROTOCOL = 'native-opencl-binary64-float32-primitives-v1'
 MAX_PIXELS = 16777216
@@ -125,7 +126,7 @@ __kernel void particles(__global const float *scene, __global const uint *bins,
     if(sum.w>0.0f)sum.xyz/=sum.w; else sum.xyz=(float3)(0.0f);
     out[i]=sum;
 }
-'''
+''' + OPTICAL_SOURCE
 
 
 def error(code, message, **details):
@@ -156,11 +157,11 @@ class NativeGPU:
                 log=C.create_string_buffer(min(size.value,65536))
                 if len(log):self.lib.clGetProgramBuildInfo(self.program,self.device,0x1183,len(log),log,None)
                 raise error('BUILD','OpenCL浮点内核编译失败',native_code=result,log=log.value.decode('utf8','replace'))
-            for name in ('over','affine','paint','select_words','particles'):
+            for name in ('over','affine','paint','select_words','particles','optics'):
                 self.kernels[name]=self.lib.clCreateKernel(self.program,name.encode(),C.byref(code));self._check(code.value,'kernel')
             self.metadata={'protocol':PROTOCOL,'device':self.info,'kernel_sha256':hashlib.sha256(data).hexdigest(),
                 'build_options':'-cl-std=CL1.2;FP_CONTRACT OFF;no fast math',
-                'arithmetic':'binary64 affine/over/text; binary32 particle coverage and ordered accumulation; Float32 surfaces',
+                'arithmetic':'binary64 affine/over/text/optics; binary32 particle coverage and ordered accumulation; Float32 surfaces',
                 'device_quota_bytes':self.limit,'retained_device_bytes':0,'operations':{},'integer_media_conversion':False}
         except BaseException:
             self.close();raise
@@ -305,6 +306,17 @@ class NativeGPU:
         self._reserve(max(scene.nbytes,tiles.nbytes,output.nbytes));self._write(0,scene);self._write(1,tiles)
         self._run('particles',[C.c_void_p(self.buffers[0]),C.c_void_p(self.buffers[1]),
             C.c_void_p(self.buffers[2]),C.c_int(w),C.c_int(h)],w*h,output)
+
+    def optics(self, source, output, kind, values, ghosts=0, edge='clamp'):
+        from .float_optics import validate_state,FIELDS,KINDS
+        values=validate_state(kind,values,ghosts,edge)
+        self.surface(source);self.output(output)
+        if source.shape!=output.shape:raise error('SURFACE','GPU光学输入输出尺寸不一致')
+        params=np.array([values.get(k,0.) for k in FIELDS],np.float64)
+        self._reserve(max(source.nbytes,params.nbytes));self._write(0,source);self._write(1,params)
+        h,w=source.shape[:2]
+        self._run('optics',[C.c_void_p(self.buffers[0]),C.c_void_p(self.buffers[1]),C.c_void_p(self.buffers[2]),
+            C.c_int(w),C.c_int(h),C.c_int(KINDS.index(kind)),C.c_int(ghosts),C.c_int(edge=='transparent')],w*h,output)
 
     def close(self):
         if not hasattr(self,'lib'):return

@@ -913,6 +913,9 @@ def render_fingerprints(project: dict[str, Any], sequence: dict[str, Any], setti
     collect(sequence)
     assets = {str(asset.get("id")): asset for asset in project.get("assets", []) if asset.get("id") in asset_ids}
     input_hashes: dict[str, str | None] = {}
+    if (project.get('settings',{}).get('pixel_pipeline') or {}).get('engine')=='float32-native-v1':
+        for name in ('float_optics','float_optics_kernel','float_effect_chain','float_gpu','float_gpu_worker','float_gpu_native'):
+            input_hashes['runtime:optics:'+name]='sha256:'+sha256_file(Path(__file__).with_name(name+'.py'))
     if particle_sources:
         for name in ('procedural_particles','particle_animation','float_timeline','float_gpu','float_gpu_worker','float_gpu_native','float_gpu_control'):
             input_hashes['runtime:particles:'+name]='sha256:'+sha256_file(Path(__file__).with_name(name+'.py'))
@@ -1547,6 +1550,9 @@ def _effect_filters(
         else:
             continue
         name = effect_type.strip().lower().replace("-", "_")
+        from .float_optics import ALIASES as OPTICAL_ALIASES
+        if name in OPTICAL_ALIASES:
+            raise AppError('FLOAT_OPTICS_NATIVE_PIPELINE_REQUIRED','光学效果必须通过原生线性Float32管线执行',exit_code=2)
         effect_tracks = _effect_keyframe_tracks(effect_value, parameters)
 
         def expression(aliases: tuple[str, ...], default: float) -> str:

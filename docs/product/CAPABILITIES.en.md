@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.37 / alpha.4-local.35 / r38 kit · 1 Skill / 17 modules / 76 files.**
+**CLI0.1.38 / alpha.4-local.36 / r39 kit · 1 Skill / 17 modules / 77 files.**
 
-New **keyframes for all 21 emitter properties**: integrated birth rate, motion/lifetime sampled at birth and live color/size/shape, with six easing modes and emission pauses. Discover constraints through `vfx animation-properties`; add, explicitly replace or remove a property with `vfx animate`. The original source clock survives trim, reverse, nesting, preview, queues and packages. The four-cell case is actual registered installed Skill GPU output.
+New editable **lens flare, light leaks and chromatic aberration**: linear-light Float32 math, numeric keys, original author clocks, clip effects and selected-sequence adjustments, with CPU references and actual OpenCL GPU execution. Discover constraints with `effects list --query optical` / `effects inspect`; author with `timeline compose`. The four-panel case retains the original image, effects-removed control and actual GPU output.
 
-[Emitter workflow and limits](EMITTER_ANIMATION.md)
+[Optical workflow and constraints](OPTICAL_EFFECTS.md)
 
 <!-- /community-current -->
 
@@ -70,13 +70,14 @@ New **keyframes for all 21 emitter properties**: integrated birth rate, motion/l
 | F54 | Portable parameterized motion | Versioned local JSON / captured authored curves → editable keys, resolved parameters/digests/snapshot and cross-project reuse, with six actual previews. | `motion pack list/inspect/create/capture/apply` | 65-point paths, transform properties; conflicts reject unless whole-property replacement is explicit; tracking bindings reject; CPU performance/natural quality remain open. |
 | F55 | Linear Float32 transitions and group edges | Explicit Float32 projects → 57 xfade patterns+2 dips,premultiplied alpha,real handles/original clocks,linked audio,group wipe/slide,actual preview and encoding. | `timeline transition; preview; render; queue` | CPU;12 real-handle declaration types,other patterns use overlap/edges;normal paired blending;platform-dependent wind,HDR/natural quality open. |
 | F56 | Linear Float32 text and captions | Independent/inline/SRT,joint word/typewriter → native byte coverage,reusable glyphs,tiled linear composition,original clocks,4K titles and actual delivery. | `timeline compose; preview; render; queue` | Explicit local font;CPU/explicit GPU;8bit coverage/Float32 colors;admission is not peak RSS;rich ASS/Bidi/natural quality open. |
-| F57 | Native Float32 GPU execution | Explicit policy for affine,normal over,text components/word selection; owned pipe dispatch/shared pixels;render,preview,queue,resume. | `projection_acceleration; render; preview; queue` | off/prefer/require;actual binary64/subnormal probes;bounded packets/queues and owned process/thread/stream cleanup;other operators CPU. |
-| F58 | Float32 global/interval adjustments | Ordered grading after all tracks including subtitles;existing float effects,LUT/exposure,six keyframe modes,selected root once. | `settings.adjustments; preview; render; queue` | Explicit linear working/effect signals;CPU execution;locked/portable LUTs;original interval clocks,not complete HDR. |
+| F57 | Native Float32 GPU execution | Affine/normal composition, text components/word selection, particle rasterization and three optical effects; owned pipes/shared pixels across render/preview/queue/recovery. | `projection_acceleration; render; preview; queue` | off/prefer/require; binary64/subnormal probes, Float32 particle math; bounded control and owned process/thread/stream cleanup. Other operators remain CPU. |
+| F58 | Float32 global/interval adjustments | Ordered grading/light effects after all tracks/subtitles; existing float effects plus three optical operators, six easings and one application to the selected root. | `settings.adjustments; preview; render; queue` | Explicit linear signals; optics can use GPU, other effects use CPU. LUT locks/package migration retain interval author time; full HDR remains open. |
 | F59 | Native PTS tracking and overlay tracks | Saved source observations → actual selected-frame anchors;shared crop/TRS,ROI scale/relative rotation,alpha,windows and nested audio. | `media track-bind; preview; render; queue; package` | Explicit Float32,no display-key bake,budget/cycle gates;template drift/occlusion require review;native interchange baking pending. |
 | F60 | Native tracking and baked delivery | Actual alpha/five masks/59 transition footprints; edits and shared retime retain observations; native bake verifies all frames and retains source sidecars. | `media track-bind; timeline compose/edit; convert export --bake-tracking` | Frozen graph/FPS;20,000 frames/256,000 samples;unrepresentable integer steps reject;external players and natural identity/occlusion remain unaccepted. |
 | F61 | Local GPU video generation | Text,image,last/first-last conditions; prompt/sampling,real model windows,editable clips,endpoint proofs,portable recipes and managed recovery. | `media adapter; media generate` | Existing native VACE/CUDA required;silent8bit SDR;known endpoints retained;natural quality,output rights and complete CapCut AI unaccepted. |
 | F62 | Native GPU model sessions | Reuse weights/embeddings per project/adapter/prompt; reset jobs, transfer live locked digests, retire on cancel/deadline/idle/job budget. | `media model-session; media generate --model-session` | Native Windows VACE; first job still loads; new prompt needs a new serial session; no global VRAM reservation/multi-GPU. |
 | F63 | Editable particles and emitter animation | Six original recipes/five shapes/seed/native CFR;21 source-clock animated properties,six easings,emission pauses and actual GPU rasterization. Editing/preview/queue/package/local OTIO. | `vfx list/inspect/apply/update/show/animation-properties/animate` | CPU rate integration/birth evaluation,GPU painting;64 points/property,16 emitters,4096 reserved live particles;no3-D/collision/depth. |
+| F64 | Editable GPU optical effects | Flare core/streak/halo/ghosts, rotated elliptical leak and radial red/blue split; all numeric channels animate on original author clocks. Clip/interval adjustments, CPU/OpenCL. | `effects list/inspect` → `timeline compose` → preview/render | Explicit linear RGB; original alpha bits retained; transparent hidden RGB does not bleed. Static ghosts/edge; no physical lens, automatic light detection or bloom. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -95,7 +96,7 @@ New **keyframes for all 21 emitter properties**: integrated birth rate, motion/l
 | S13 | Bundled community resources | Offline catalog | 359 source/license-pinned music/jingle/SFX/font files | `materials list/inspect/verify/ingest` | Per-resource rights; no commercial stock subscription |
 | S14 | Local speech/translation | Native model workers | Four optional pinned CPU/CUDA packs; 103 voice mappings and OPUS text/subtitles | `voice / translate / model-pack` | At least seven distinct voices have real outputs; complete 103-voice auditions and human acceptance remain open |
 | S15 | BGM preparation and mixing | Native FFmpeg audio | Explicit trim/loop/fades, independent voice/music stems and ducking | `music prepare/mix` | No composition, voice truncation or seam-repair promise |
-| S16 | GPU compatibility | Existing native OpenCL ICD / NVIDIA model libraries | Graph projection and independent Float32 affine/normal over/text colors/word selection;off/prefer/require,model auto/cpu/cuda;actual probes/budgets/cleanup | `render --projection-acceleration; gpu inspect; --device` | RTX3060 tested;glyphs/effects/transitions remain CPU,not all-GPU;system-library licenses separate. |
+| S16 | GPU compatibility | Existing native OpenCL ICD / NVIDIA model libraries | Graph projection; independent Float32 affine/normal over/text/words/particles/optics; off/prefer/require and model auto/cpu/cuda; actual probes/budgets/cleanup | `render --projection-acceleration; gpu inspect; --device` | RTX3060 tested; glyphs, other effects and transitions remain CPU. System-library licenses are separate. |
 | S17 | Native Windows capture | FFmpeg gdigrab / DirectShow | Explicit source/device IDs, finite duration, full decode and asset registration | `capture devices/record` | Actual CPU/GPU window test; camera/microphone/AV sync pending |
 | S18 | Visual semantics and empirical calibration | Explicit native SigLIP2 worker | Existing Torch/Transformers/weights; profile binds index/implementation/kind/actual device | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | Scores are not probabilities; cold start, scale and calibrated-project migration remain limited |
 | S19 | Independent four-source separation | Native Torch/TorchAudio HDemucs worker | Explicit native Python, weights/evidence/implementation hashes; auto/cpu/cuda, four float WAV/tracks | `audio adapter; audio separate-stems` | Torch/weights excluded from base ZIP; natural listening and weight licensing remain open |
@@ -1004,7 +1005,7 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "max_layers": 128,
     "max_effects": 4096,
     "max_declaration_bytes": 8388608,
-    "GPU": false,
+    "GPU": "analytic_optical_effects_only;other_adjustment_operators_CPU",
     "audio_changed": false
   },
   "limits": [
@@ -1471,14 +1472,16 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
       "premultiplied_bilinear_affine",
       "normal_source_over",
       "ordered_text_color_components",
-      "binary_word_selection"
+      "binary_word_selection",
+      "seeded_particle_rasterization",
+      "analytic_optical_effects"
     ],
     "probe": "65536_native_levels_and_independent_CPU_oracles_before_execution",
     "lifetime": "one_owned_finite_worker_per_render_or_preview;cancel_timeout_cleanup",
     "budgets": "separate_device_and_host_shared_buffer_limits;not_peak_RSS_or_reserved_free_VRAM",
     "CPU_scope": [
       "glyph_rasterization",
-      "effects",
+      "effects_except_native_optics",
       "masks",
       "crop",
       "transitions",
@@ -3108,7 +3111,7 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "lut3d_project_local",
     "lut3d_static_intensity"
   ],
-  "catalog_version": "0.9.0",
+  "catalog_version": "0.10.0",
   "catalog_features": [
     "avgblur",
     "blur",
@@ -3155,9 +3158,12 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "threshold",
     "tmix",
     "vflip",
-    "vignette"
+    "vignette",
+    "lens_flare",
+    "light_leak",
+    "chromatic_aberration"
   ],
-  "catalog_source": "ffmpeg-local",
+  "catalog_source": "native-and-ffmpeg-local",
   "catalog_contract": "effects.list_and_effects.inspect_return_local_ffmpeg_backend_parameter_limits_and_keyframe_contract",
   "unknown_effect_policy": "RENDER_FEATURE_UNSUPPORTED",
   "effect_keyframe_contract": "brightness_contrast_saturation_hue_hsl_gamma_vignette_use_local_eq_eval_frame_and_hue_frame_expressions",
@@ -4893,3 +4899,53 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 [CLI0.1.36 exact installed capability snapshot](gpu-dispatch-capabilities-cli-0.1.36.json).
 
 [CLI0.1.37 exact installed capability snapshot](emitter-animation-capabilities-cli-0.1.37.json).
+
+### `optical_effects`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "author-clock-linear-float32-optical-effects-v1",
+  "effects": [
+    "lens_flare",
+    "light_leak",
+    "chromatic_aberration"
+  ],
+  "selection": "ordinary_clip_effects_or_selected_sequence_adjustments",
+  "commands": [
+    "effects.list",
+    "effects.inspect",
+    "timeline.compose",
+    "preview.frame",
+    "preview.range",
+    "render",
+    "queue"
+  ],
+  "backend": "CPU_or_actual_render_owned_OpenCL_binary64_math_Float32_surfaces",
+  "signal": "explicit_linear_working_RGB;numeric_tint_in_working_primaries",
+  "alpha": "original_coverage_bits_preserved;hidden_RGB_ignored_in_active_sampling",
+  "sampling": "premultiplied_bilinear_channel_displacement;clamp_or_transparent_edges",
+  "clock": "original_author_tick;shared_hold_linear_ease_in_ease_out_ease_in_out_bezier",
+  "static_fields": [
+    "ghosts_0_to_12",
+    "chromatic_edge_mode"
+  ],
+  "resource_policy": "existing_full_spatial_scratch_admission_and_bounded_CPU_tiles;owned_GPU_quotas",
+  "license": "MIT_original_formulas_and_kernels",
+  "network": false,
+  "external_assets": [],
+  "unsupported": [
+    "legacy_FFmpeg_graph",
+    "automatic_bright_source_detection",
+    "physical_lens_calibration",
+    "bloom",
+    "halation",
+    "depth_occlusion",
+    "HDR_acceptance",
+    "natural_footage_quality_acceptance"
+  ],
+  "goal_G06_complete": false
+}
+```
+
+[CLI0.1.38 exact installed capability snapshot](optical-effects-capabilities-cli-0.1.38.json).

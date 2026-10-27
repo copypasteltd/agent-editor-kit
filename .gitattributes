@@ -1754,3 +1754,12 @@ scripts/*emitter*20261027.py text eol=lf
 docs/product/EMITTER_ANIMATION.md text eol=lf
 docs/releases/CLI_0.1.37_LOCAL.md text eol=lf
 docs/validation/发射器关键帧实测_2026-10-27.md text eol=lf
+
+# Optical test/case captures include preserved failed attempts and raw CLI bytes.
+docs/validation/evidence/optical-effects-20261027-r1/** -text -whitespace
+docs/assets/optical-effects-20261027-*/** -text -whitespace
+docs/product/optical-effects-capabilities-cli-0.1.38.json -text -whitespace
+scripts/*optical*20261027.py text eol=lf
+docs/product/OPTICAL_EFFECTS.md text eol=lf
+docs/releases/CLI_0.1.38_LOCAL.md text eol=lf
+docs/validation/光学效果实测_2026-10-27.md text eol=lf

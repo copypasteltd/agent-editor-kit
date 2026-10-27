@@ -12,13 +12,15 @@ from .float_gaussian import GaussianPlan,compile_gaussian,apply_gaussian,ALIASES
 from .float_spatial import SpatialPlan,compile_spatial,apply_spatial,ALIASES as SPATIAL_ALIASES
 from .float_sharpen import SharpenPlan,compile_sharpen,apply_sharpen,ALIASES as SHARPEN_ALIASES
 from .float_keyer import KeyerPlan,compile_keyer,apply_keyer,ALIASES as KEYER_ALIASES
+from .float_optics import OpticalPlan,compile_optics,apply_optics,ALIASES as OPTICAL_ALIASES
 
 PROTOCOL = 'ordered-author-clock-float32-effect-chain-v1'
 
 
 class EffectCompiler:
-    def __init__(self, *, resource_root, working_signal, max_working_bytes=MAX_WORKING_BYTES, cancel=None):
+    def __init__(self, *, resource_root, working_signal, max_working_bytes=MAX_WORKING_BYTES, cancel=None, gpu=None):
         self.root,self.working,self.budget,self.cancel = resource_root,working_signal,max_working_bytes,cancel
+        self.gpu=gpu
         self.cubes = {}
 
     def compile(self, effects):
@@ -57,6 +59,8 @@ class EffectCompiler:
                 result.append(compile_sharpen(effect))
             elif name in KEYER_ALIASES:
                 result.append(compile_keyer(effect))
+            elif name in OPTICAL_ALIASES:
+                result.append(compile_optics(effect))
             else:
                 raise AppError('FLOAT_TIMELINE_UNSUPPORTED','该效果尚未连接浮点时间线',exit_code=2)
         return tuple(result)
@@ -135,6 +139,10 @@ class EffectCompiler:
                 value,metadata = apply_keyer(value,plan,tick,working_signal=self.working,retained_table_bytes=retained,
                     max_working_bytes=self.budget,cancel=self.cancel)
                 rows.append({'index':index,'type':'chroma_key',**metadata})
+            elif isinstance(plan,OpticalPlan):
+                value,metadata = apply_optics(value,plan,tick,working_signal=self.working,retained_table_bytes=retained,
+                    max_working_bytes=self.budget,cancel=self.cancel,gpu=self.gpu)
+                rows.append({'index':index,'type':plan.effect_type,**metadata})
             else:
                 raise AppError('FLOAT_EFFECT_CHAIN_ARGUMENT','效果链含未编译计划',exit_code=2)
         return value,{'protocol':PROTOCOL,'ordered_effects':rows,'author_tick':str(tick),

@@ -1,0 +1,18 @@
+usage: ai-ad-editor media model-session status [-h] [--format {json,text}]
+                                               [--request-id REQUEST_ID]
+                                               [--idempotency-key IDEMPOTENCY_KEY]
+                                               [--dry-run] [--no-network]
+                                               [--progress {none,jsonl}]
+                                               --project PROJECT
+                                               --session-id SESSION_ID
+
+options:
+  -h, --help            show this help message and exit
+  --format {json,text}  输出格式
+  --request-id REQUEST_ID
+  --idempotency-key IDEMPOTENCY_KEY
+  --dry-run
+  --no-network
+  --progress {none,jsonl}
+  --project PROJECT
+  --session-id SESSION_ID

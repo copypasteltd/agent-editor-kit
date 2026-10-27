@@ -113,7 +113,7 @@ class FloatTimeline:
         self.gpu=gpu
         self.poll=cancel if cancel is not None else lambda:None;self.poll()
         self.effects=EffectCompiler(resource_root=resource_root,working_signal=self.working,
-            max_working_bytes=self.max_working_bytes,cancel=self.poll)
+            max_working_bytes=self.max_working_bytes,cancel=self.poll,gpu=gpu)
         self.settings=self.project['settings'];base=self.settings['timebase'];fps=base['display_fps']
         self.tps=integer(base['ticks_per_second'],1);self.fps=Fraction(integer(fps['num'],1),integer(fps['den'],1))
         if self.tps<1 or self.fps<=0 or self.fps>1000:raise error('CLOCK','作者时间基或帧率无效')

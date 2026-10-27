@@ -1,13 +1,13 @@
 ---
 name: agent-ffmpeg-local-editor
-description: "Edit and generate local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, native tracking, seeded GPU particles, GPU text/image/first-last generation with reusable model sessions, semantic search, voice/translation, subtitle dubbing, music/SFX and quality checks. Also use for ads, reference remakes, long-to-short clips and screen demos."
+description: "Edit and generate local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, native tracking, seeded GPU particles, editable GPU flare/light leaks/chromatic split, GPU text/image/first-last generation with reusable model sessions, semantic search, voice/translation, subtitle dubbing, music/SFX and quality checks. Also use for ads, reference remakes, long-to-short clips and screen demos."
 ---
 
 # agent editor kit / unified local Skill
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.35` / CLI `0.1.37`.
+The current local runtime is `v0.1.0-alpha.4-local.36` / CLI `0.1.38`.
 Native Float32 GPU operations now use bounded owned control pipes. Read
 [GPU execution](references/projection-gpu.md) for policy, actual operator counts,
 cancellation and process/thread/stream cleanup receipts.
@@ -17,6 +17,11 @@ rendering and actual preview evidence; all 21 emitter parameters support source-
 Use `vfx animation-properties` to discover constraints and `vfx animate` to
 add/replace/remove one property. Distinguish integrated birth rate, birth-
 sampled motion/lifetime and live appearance; preview the actual source time.
+For editable lens flare, light leaks and chromatic aberration, read
+[optical effects](references/optical-effects.md). Discover actual constraints
+with `effects list --query optical` / `effects inspect`; use explicit native
+linear RGB and original author-clock keys. Preview additive light/range
+clipping and color-split edges before delivery.
 For repeated GPU generation with the same prompt, read
 [model sessions](references/model-sessions.md). Start one explicit session,
 reuse its ID with `media generate --model-session`, and stop it in `finally`.

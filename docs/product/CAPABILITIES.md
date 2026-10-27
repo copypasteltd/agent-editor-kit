@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.37 / alpha.4-local.35 / r38 kit · 1 Skill / 17 modules / 76 files.**
+**CLI0.1.38 / alpha.4-local.36 / r39 kit · 1 Skill / 17 modules / 77 files.**
 
-新增 **21 项发射器属性关键帧**：积分发射率、出生时的运动/寿命、源时间上的颜色/大小/形状等外观，支持六种插值和可暂停发射。`vfx animation-properties` 查询约束，`vfx animate` 添加、显式替换或移除单条属性；原始源时钟贯穿裁切、倒放、嵌套、预览、队列和工程包。四格案例由已注册安装版 Skill 实际 GPU 渲染。
+新增可编辑 **镜头眩光、漏光和色差**：线性光浮点运算、参数关键帧、原作者时钟、片段及选定序列调整层；CPU参考与实际OpenCL GPU路径已接通。通过 `effects list --query optical` / `effects inspect` 查询约束，用 `timeline compose` 保留参数与动画。四格案例含原图、去除效果的对照和真实GPU输出。
 
-[Emitter workflow and limits](EMITTER_ANIMATION.md)
+[Optical workflow and constraints](OPTICAL_EFFECTS.md)
 
 <!-- /community-current -->
 
@@ -70,13 +70,14 @@
 | F54 | 可复用参数运镜 | 本地版本化 JSON / 已有作者曲线 → 普通关键帧、参数/摘要/快照、跨工程复用。六套真实预览供选型。 | `motion pack list/inspect/create/capture/apply` | 65 点采样、transform 属性；默认拒绝冲突，显式替换整条属性轨；跟踪绑定拒绝，CPU 合成/自然质量未闭。 |
 | F55 | 线性浮点转场与组级进出场 | 显式 Float32 工程 → 57 xfade图案+2 dip、预乘alpha混合、真实句柄/原作者时钟、关联音轨、组级擦除/推移与实际预览成片。 | `timeline transition; preview; render; queue` | CPU；12种真实句柄声明，其他图案用显式重叠/边缘；normal双源混合；风噪有平台差异，HDR/自然质量未闭。 |
 | F56 | 线性浮点文字与字幕 | 独立/内嵌/SRT、联合逐词/打字机 → 原生字节覆盖率、可复用字形、分块线性合成、原作者时钟、4K标题和实际交付。 | `timeline compose; preview; render; queue` | 明确本地字体；CPU/显式GPU；覆盖率8bit/颜色Float32；工作区准入非峰值RSS；富ASS/Bidi/自然质量未闭。 |
-| F57 | 原生Float32 GPU执行 | 显式策略驱动仿射、普通合成、文字组件/逐词选择；任务自有管道调度、共享像素、渲染/预览/队列/恢复。 | `projection_acceleration; render; preview; queue` | off/prefer/require；真实binary64/次正规数探测；有界控制包/队列及进程/线程/流清理；其他算子CPU。 |
-| F58 | Float32全局/区间调整层 | 全轨含字幕合成后按顺序调色；LUT/曝光及既有浮点效果、六类关键帧、选中根只应用一次。 | `settings.adjustments; preview; render; queue` | 显式线性工作域/效果信号；CPU执行；LUT持锁/包迁移；保留作者区间时钟，非完整HDR。 |
+| F57 | 原生Float32 GPU执行 | 仿射、普通合成、文字组件/逐词、粒子栅格及三类光学效果；任务自有管道/共享像素，贯通渲染/预览/队列/恢复。 | `projection_acceleration; render; preview; queue` | off/prefer/require；binary64精度/次正规探测，粒子保持Float32；有界控制及所属进程/线程/流清理，其他算子CPU。 |
+| F58 | Float32全局/区间调整层 | 全轨含字幕合成后按顺序调色/光效；既有浮点效果与三光学效果、六种插值，选中根只应用一次。 | `settings.adjustments; preview; render; queue` | 明确线性工作域/效果信号；光学可GPU，其余CPU；LUT持锁/包迁移，原作者区间时钟，非完整HDR。 |
 | F59 | 原生PTS跟踪与叠加轨 | 保存源观测→按实际原生帧求跟随位置；共享crop/TRS、ROI缩放/相对旋转、透明度、窗口与嵌套声音。 | `media track-bind; preview; render; queue; package` | 显式Float32，原生PTS不烘焙显示键；预算/循环门禁；模板漂移与遮挡另审，中间格式烘焙未接通。 |
 | F60 | 原生跟踪与烘焙交付 | 实际alpha/5类遮罩/59转场足迹；剪辑与共享变速保留观察；原生烘焙逐帧核验并保留源旁车。 | `media track-bind; timeline compose/edit; convert export --bake-tracking` | 当前冻结图/FPS；20,000帧/256,000求值；无法表达的整数步进拒绝；外部播放器及自然身份/遮挡待验收。 |
 | F61 | 本地GPU视频生成 | 文生、图生、尾帧/首尾帧；原文提示/采样、真实模型窗口、可编辑入轨、端点核验、可移植配方和受管恢复。 | `media adapter; media generate` | 已有原生VACE/CUDA依赖；无声8bit SDR；条件端点合成保留；自然质量/生成权利/全部剪映AI待验收。 |
 | F62 | 原生GPU模型会话 | 同工程/适配器/提示词复用权重与嵌入；每任务重置，活连接传递持锁摘要；取消、期限、空闲及任务数退出。 | `media model-session; media generate --model-session` | 原生Windows VACE；首条仍载入；新提示词须新会话，串行执行；非全局显存预留/多GPU。 |
 | F63 | 可编辑程序化粒子与发射器动画 | 六种原创建效配方、五形状、seed/独立CFR；21属性源时钟关键帧、六种缓动、发射暂停；真实GPU栅格化。剪辑/预览/队列/包/本地OTIO贯通。 | `vfx list/inspect/apply/update/show/animation-properties/animate` | CPU积分与出生采样，GPU绘制；64点/属性、16发射器、4096预留活粒子；无3D/碰撞/深度。 |
+| F64 | 可编辑光学效果与GPU运算 | 眩光核心/条纹/光晕/鬼影、旋转椭圆漏光、径向红蓝色差；全部数值通道关键帧、原作者时钟、片段/区间调整层，CPU/OpenCL。 | `effects list/inspect` → `timeline compose` → preview/render | 明确线性RGB；原alpha位保留，透明隐藏色不渗出；ghosts/edge静态，非物理镜头/自动亮源/bloom。 |
 
 | 编号 | 服务模块 | 运行形式 | 需要什么/提供什么 | 入口 | 范围 |
 |---|---|---|---|---|---|
@@ -95,7 +96,7 @@
 | S13 | 内置社区素材服务 | 离线目录 | 359 项有来源/许可的 BGM、短乐、音效、字体 | `materials list/inspect/verify/ingest` | 逐项权利，不是商业素材订阅库 |
 | S14 | 本地配音/翻译 | 原生模型 worker | 4 个可选 CPU/CUDA 包，103 音色映射和 OPUS 文本/字幕 | `voice / translate / model-pack` | 累计至少 7 个不同音色有真实输出；103 音色完整试听及人工验收未完成 |
 | S15 | 配乐准备与混音 | 原生 FFmpeg 音频 | 显式截取/循环/淡化、独立人声/配乐、闪避 | `music prepare/mix` | 不作曲、不静默裁人声、不承诺接缝修复 |
-| S16 | GPU兼容服务 | 已有原生OpenCL ICD / NVIDIA模型库 | 默认图投影及独立Float32仿射/普通叠加/字色/逐词；off/prefer/require，模型auto/cpu/cuda；实际探测/预算/清理 | `render --projection-acceleration; gpu inspect; --device` | RTX3060实测；字形/效果/转场等CPU，非全部算子GPU化，系统库许可另列。 |
+| S16 | GPU兼容服务 | 已有原生OpenCL ICD / NVIDIA模型库 | 图投影及独立Float32仿射/普通叠加/字色/逐词/粒子/光学；off/prefer/require，模型auto/cpu/cuda；实际探测/预算/清理 | `render --projection-acceleration; gpu inspect; --device` | RTX3060实测；字形/其他效果/转场等CPU，系统库许可另列。 |
 | S17 | 原生 Windows 采集 | FFmpeg gdigrab / DirectShow | 明确来源、设备 ID、有限时长、完整解码与素材登记 | `capture devices/record` | 真实窗口 CPU/GPU 已验；相机/麦克风/同步未验 |
 | S18 | 图文语义与经验校准 | 明确登记的原生 SigLIP2 worker | 已有 Torch/Transformers/权重；档案绑定索引/实现/类型/实际设备 | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | 分数非概率；冷启动/大库与校准工程迁移仍有限制 |
 | S19 | 独立四轨分离 | 原生 Torch/TorchAudio HDemucs worker | 显式登记原生 Python、权重/证据/实现哈希；auto/cpu/cuda，4 float WAV/轨道 | `audio adapter; audio separate-stems` | 不随基本 ZIP 分发 Torch/权重；自然听感与权重许可未闭 |
@@ -1004,7 +1005,7 @@
     "max_layers": 128,
     "max_effects": 4096,
     "max_declaration_bytes": 8388608,
-    "GPU": false,
+    "GPU": "analytic_optical_effects_only;other_adjustment_operators_CPU",
     "audio_changed": false
   },
   "limits": [
@@ -1471,14 +1472,16 @@
       "premultiplied_bilinear_affine",
       "normal_source_over",
       "ordered_text_color_components",
-      "binary_word_selection"
+      "binary_word_selection",
+      "seeded_particle_rasterization",
+      "analytic_optical_effects"
     ],
     "probe": "65536_native_levels_and_independent_CPU_oracles_before_execution",
     "lifetime": "one_owned_finite_worker_per_render_or_preview;cancel_timeout_cleanup",
     "budgets": "separate_device_and_host_shared_buffer_limits;not_peak_RSS_or_reserved_free_VRAM",
     "CPU_scope": [
       "glyph_rasterization",
-      "effects",
+      "effects_except_native_optics",
       "masks",
       "crop",
       "transitions",
@@ -3108,7 +3111,7 @@
     "lut3d_project_local",
     "lut3d_static_intensity"
   ],
-  "catalog_version": "0.9.0",
+  "catalog_version": "0.10.0",
   "catalog_features": [
     "avgblur",
     "blur",
@@ -3155,9 +3158,12 @@
     "threshold",
     "tmix",
     "vflip",
-    "vignette"
+    "vignette",
+    "lens_flare",
+    "light_leak",
+    "chromatic_aberration"
   ],
-  "catalog_source": "ffmpeg-local",
+  "catalog_source": "native-and-ffmpeg-local",
   "catalog_contract": "effects.list_and_effects.inspect_return_local_ffmpeg_backend_parameter_limits_and_keyframe_contract",
   "unknown_effect_policy": "RENDER_FEATURE_UNSUPPORTED",
   "effect_keyframe_contract": "brightness_contrast_saturation_hue_hsl_gamma_vignette_use_local_eq_eval_frame_and_hue_frame_expressions",
@@ -4893,3 +4899,53 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 [CLI0.1.36 exact installed capability snapshot](gpu-dispatch-capabilities-cli-0.1.36.json).
 
 [CLI0.1.37 exact installed capability snapshot](emitter-animation-capabilities-cli-0.1.37.json).
+
+### `optical_effects`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "author-clock-linear-float32-optical-effects-v1",
+  "effects": [
+    "lens_flare",
+    "light_leak",
+    "chromatic_aberration"
+  ],
+  "selection": "ordinary_clip_effects_or_selected_sequence_adjustments",
+  "commands": [
+    "effects.list",
+    "effects.inspect",
+    "timeline.compose",
+    "preview.frame",
+    "preview.range",
+    "render",
+    "queue"
+  ],
+  "backend": "CPU_or_actual_render_owned_OpenCL_binary64_math_Float32_surfaces",
+  "signal": "explicit_linear_working_RGB;numeric_tint_in_working_primaries",
+  "alpha": "original_coverage_bits_preserved;hidden_RGB_ignored_in_active_sampling",
+  "sampling": "premultiplied_bilinear_channel_displacement;clamp_or_transparent_edges",
+  "clock": "original_author_tick;shared_hold_linear_ease_in_ease_out_ease_in_out_bezier",
+  "static_fields": [
+    "ghosts_0_to_12",
+    "chromatic_edge_mode"
+  ],
+  "resource_policy": "existing_full_spatial_scratch_admission_and_bounded_CPU_tiles;owned_GPU_quotas",
+  "license": "MIT_original_formulas_and_kernels",
+  "network": false,
+  "external_assets": [],
+  "unsupported": [
+    "legacy_FFmpeg_graph",
+    "automatic_bright_source_detection",
+    "physical_lens_calibration",
+    "bloom",
+    "halation",
+    "depth_occlusion",
+    "HDR_acceptance",
+    "natural_footage_quality_acceptance"
+  ],
+  "goal_G06_complete": false
+}
+```
+
+[CLI0.1.38 exact installed capability snapshot](optical-effects-capabilities-cli-0.1.38.json).

@@ -42,9 +42,9 @@ class FloatGPUSession:
         self.planned_pixels = max_pixels
         self.evidence = {'engine': PROTOCOL, 'request': dict(self.config),
             'status': 'planned' if self.enabled else 'off', 'dry_run': dry_run,
-            'operations': {}, 'CPU_scope': ['glyph-rasterization', 'color-conversion', 'effects', 'masks', 'crop',
+            'operations': {}, 'CPU_scope': ['glyph-rasterization', 'color-conversion', 'effects-except-native-optics', 'masks', 'crop',
                 'transitions', 'non-normal-blends', 'audio', 'delivery-encoding'],
-            'GPU_scope': ['premultiplied-affine', 'normal-source-over', 'text-color-components', 'binary-word-selection', 'seeded-particle-rasterization'],
+            'GPU_scope': ['premultiplied-affine', 'normal-source-over', 'text-color-components', 'binary-word-selection', 'seeded-particle-rasterization','analytic-optical-effects'],
             'host_shared_bytes_limit': self.config['max_working_bytes'], 'retained_host_shared_bytes': 0,
             'device_bytes_limit': self.config['max_working_bytes'], 'limits_are_peak_RSS': False,
             'free_VRAM_reserved': False, 'integer_media_conversion': False, 'worker_closed': False,
@@ -55,7 +55,7 @@ class FloatGPUSession:
         self.evidence['planned_device_bytes'] = max_pixels*48
         self.evidence['planned_host_shared_bytes'] = max_pixels*33+768
         self.artifacts = [artifact_entry(Path(__file__).with_name(name+'.py'), 'float-gpu-execution')
-                          for name in ('float_gpu', 'float_gpu_worker', 'float_gpu_native', 'float_gpu_control', 'procedural_particles', 'particle_animation')]
+                          for name in ('float_gpu', 'float_gpu_worker', 'float_gpu_native', 'float_gpu_control', 'procedural_particles', 'particle_animation','float_optics','float_optics_kernel')]
         self.evidence['artifacts'] = self.artifacts
 
     @property
@@ -222,6 +222,12 @@ class FloatGPUSession:
         from .procedural_particles import validate_scene
         validate_scene(scene, tiles, size)
         return self._call('particles', (size[1], size[0], 4), [self._dummy(), scene, tiles])
+
+    def optics(self, source, kind, values, ghosts=0, edge='clamp'):
+        from .float_optics import validate_state
+        values=validate_state(kind,values,ghosts,edge);NativeGPU.surface(source)
+        return self._call('optics',source.shape,[self._dummy(),source,self._dummy()],kind=kind,
+            parameters=values,ghosts=ghosts,edge=edge)
 
     def finish(self, result):
         if self.ready:

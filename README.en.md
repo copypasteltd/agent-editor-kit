@@ -9,7 +9,21 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- emitter-animation-current -->
+<!-- optical-effects-current -->
+
+**CLI0.1.38 / alpha.4-local.36 / r39 kit · 1 Skill / 17 modules.**
+
+New editable **lens flare, light leaks and chromatic aberration**: linear-light Float32 math, numeric keys, original author clocks, clip effects and selected-sequence adjustments, with CPU references and actual OpenCL GPU execution. Discover constraints with `effects list --query optical` / `effects inspect`; author with `timeline compose`. The four-panel case retains the original image, effects-removed control and actual GPU output.
+
+[Workflow / usage](docs/product/OPTICAL_EFFECTS.md) · [C48](docs/product/CASES.md#c48-optical-effects) · [Install](docs/releases/CLI_0.1.38_LOCAL.md) · [Evidence](docs/validation/光学效果实测_2026-10-27.md)
+
+![Actual registered Skill GPU optical output](docs/assets/optical-effects-20261027-r3/optical-effects.gif)
+
+All 704 distinct installed tests pass: 702 full-run successes plus two corrected catalog retests, with unchanged product files and no skips. C48 preserves nine animation tracks, all 48 decoded 10-bit frames and 384000 Float32 PCM scalars after package reimport; the GIF contains actual decoded frames and lasts 4000ms. Physical lens solving, automatic light detection, bloom/halation/depth and the full CapCut effect library remain open. All 259 prior R rows and 38 original closure conditions remain.
+
+<!-- /optical-effects-current -->
+
+<!-- emitter-animation-history -->
 
 **CLI0.1.37 / alpha.4-local.35 / r38 kit · 1 Skill / 17 modules.**
 
@@ -21,7 +35,7 @@ New **keyframes for all 21 emitter properties**: integrated birth rate, motion/l
 
 All 679 installed regressions pass with zero skips. C47 retains 14 tracks, all 48 decoded 10-bit frames and all 384000 Float32 PCM scalars after package reimport. The GIF contains actual rendered frames over four seconds. 3-D, collisions, depth, fluids and the complete CapCut-scale effect library remain open; all 253 earlier R rows and 38 original closure conditions remain.
 
-<!-- /emitter-animation-current -->
+<!-- /emitter-animation-history -->
 
 <!-- gpu-dispatch-history -->
 
@@ -404,7 +418,7 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r38 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r38.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r39 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r39.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
@@ -772,13 +786,14 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F54 | Portable parameterized motion | Versioned local JSON / captured authored curves → editable keys, resolved parameters/digests/snapshot and cross-project reuse, with six actual previews. | `motion pack list/inspect/create/capture/apply` | 65-point paths, transform properties; conflicts reject unless whole-property replacement is explicit; tracking bindings reject; CPU performance/natural quality remain open. |
 | F55 | Linear Float32 transitions and group edges | Explicit Float32 projects → 57 xfade patterns+2 dips,premultiplied alpha,real handles/original clocks,linked audio,group wipe/slide,actual preview and encoding. | `timeline transition; preview; render; queue` | CPU;12 real-handle declaration types,other patterns use overlap/edges;normal paired blending;platform-dependent wind,HDR/natural quality open. |
 | F56 | Linear Float32 text and captions | Independent/inline/SRT,joint word/typewriter → native byte coverage,reusable glyphs,tiled linear composition,original clocks,4K titles and actual delivery. | `timeline compose; preview; render; queue` | Explicit local font;CPU/explicit GPU;8bit coverage/Float32 colors;admission is not peak RSS;rich ASS/Bidi/natural quality open. |
-| F57 | Native Float32 GPU execution | Explicit policy for affine,normal over,text components/word selection; owned pipe dispatch/shared pixels;render,preview,queue,resume. | `projection_acceleration; render; preview; queue` | off/prefer/require;actual binary64/subnormal probes;bounded packets/queues and owned process/thread/stream cleanup;other operators CPU. |
-| F58 | Float32 global/interval adjustments | Ordered grading after all tracks including subtitles;existing float effects,LUT/exposure,six keyframe modes,selected root once. | `settings.adjustments; preview; render; queue` | Explicit linear working/effect signals;CPU execution;locked/portable LUTs;original interval clocks,not complete HDR. |
+| F57 | Native Float32 GPU execution | Affine/normal composition, text components/word selection, particle rasterization and three optical effects; owned pipes/shared pixels across render/preview/queue/recovery. | `projection_acceleration; render; preview; queue` | off/prefer/require; binary64/subnormal probes, Float32 particle math; bounded control and owned process/thread/stream cleanup. Other operators remain CPU. |
+| F58 | Float32 global/interval adjustments | Ordered grading/light effects after all tracks/subtitles; existing float effects plus three optical operators, six easings and one application to the selected root. | `settings.adjustments; preview; render; queue` | Explicit linear signals; optics can use GPU, other effects use CPU. LUT locks/package migration retain interval author time; full HDR remains open. |
 | F59 | Native PTS tracking and overlay tracks | Saved source observations → actual selected-frame anchors;shared crop/TRS,ROI scale/relative rotation,alpha,windows and nested audio. | `media track-bind; preview; render; queue; package` | Explicit Float32,no display-key bake,budget/cycle gates;template drift/occlusion require review;native interchange baking pending. |
 | F60 | Native tracking and baked delivery | Actual alpha/five masks/59 transition footprints; edits and shared retime retain observations; native bake verifies all frames and retains source sidecars. | `media track-bind; timeline compose/edit; convert export --bake-tracking` | Frozen graph/FPS;20,000 frames/256,000 samples;unrepresentable integer steps reject;external players and natural identity/occlusion remain unaccepted. |
 | F61 | Local GPU video generation | Text,image,last/first-last conditions; prompt/sampling,real model windows,editable clips,endpoint proofs,portable recipes and managed recovery. | `media adapter; media generate` | Existing native VACE/CUDA required;silent8bit SDR;known endpoints retained;natural quality,output rights and complete CapCut AI unaccepted. |
 | F62 | Native GPU model sessions | Reuse weights/embeddings per project/adapter/prompt; reset jobs, transfer live locked digests, retire on cancel/deadline/idle/job budget. | `media model-session; media generate --model-session` | Native Windows VACE; first job still loads; new prompt needs a new serial session; no global VRAM reservation/multi-GPU. |
 | F63 | Editable particles and emitter animation | Six original recipes/five shapes/seed/native CFR;21 source-clock animated properties,six easings,emission pauses and actual GPU rasterization. Editing/preview/queue/package/local OTIO. | `vfx list/inspect/apply/update/show/animation-properties/animate` | CPU rate integration/birth evaluation,GPU painting;64 points/property,16 emitters,4096 reserved live particles;no3-D/collision/depth. |
+| F64 | Editable GPU optical effects | Flare core/streak/halo/ghosts, rotated elliptical leak and radial red/blue split; all numeric channels animate on original author clocks. Clip/interval adjustments, CPU/OpenCL. | `effects list/inspect` → `timeline compose` → preview/render | Explicit linear RGB; original alpha bits retained; transparent hidden RGB does not bleed. Static ghosts/edge; no physical lens, automatic light detection or bloom. |
 
 ## Supported service modules and dependencies
 
@@ -801,7 +816,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | S13 | Bundled community resources | Offline catalog | 359 source/license-pinned music/jingle/SFX/font files | `materials list/inspect/verify/ingest` | Per-resource rights; no commercial stock subscription |
 | S14 | Local speech/translation | Native model workers | Four optional pinned CPU/CUDA packs; 103 voice mappings and OPUS text/subtitles | `voice / translate / model-pack` | At least seven distinct voices have real outputs; complete 103-voice auditions and human acceptance remain open |
 | S15 | BGM preparation and mixing | Native FFmpeg audio | Explicit trim/loop/fades, independent voice/music stems and ducking | `music prepare/mix` | No composition, voice truncation or seam-repair promise |
-| S16 | GPU compatibility | Existing native OpenCL ICD / NVIDIA model libraries | Graph projection and independent Float32 affine/normal over/text colors/word selection;off/prefer/require,model auto/cpu/cuda;actual probes/budgets/cleanup | `render --projection-acceleration; gpu inspect; --device` | RTX3060 tested;glyphs/effects/transitions remain CPU,not all-GPU;system-library licenses separate. |
+| S16 | GPU compatibility | Existing native OpenCL ICD / NVIDIA model libraries | Graph projection; independent Float32 affine/normal over/text/words/particles/optics; off/prefer/require and model auto/cpu/cuda; actual probes/budgets/cleanup | `render --projection-acceleration; gpu inspect; --device` | RTX3060 tested; glyphs, other effects and transitions remain CPU. System-library licenses are separate. |
 | S17 | Native Windows capture | FFmpeg gdigrab / DirectShow | Explicit source/device IDs, finite duration, full decode and asset registration | `capture devices/record` | Actual CPU/GPU window test; camera/microphone/AV sync pending |
 | S18 | Visual semantics and empirical calibration | Explicit native SigLIP2 worker | Existing Torch/Transformers/weights; profile binds index/implementation/kind/actual device | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | Scores are not probabilities; cold start, scale and calibrated-project migration remain limited |
 | S19 | Independent four-source separation | Native Torch/TorchAudio HDemucs worker | Explicit native Python, weights/evidence/implementation hashes; auto/cpu/cuda, four float WAV/tracks | `audio adapter; audio separate-stems` | Torch/weights excluded from base ZIP; natural listening and weight licensing remain open |
@@ -906,7 +921,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.35/final-r1/installed/`, CLI 0.1.37. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.36/final-r1/installed/`, CLI 0.1.38. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1358,6 +1373,12 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R257 | 2026-10-27 emitter animation | Single-property add/replace/remove,locks,snapshots,dry-run,file-content idempotency andatomic errors;actual CPU/GPU encoding,package/local OTIO,split/nested reverse,preview invalidation andpersistent queue verified. | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/installed-regression-r1/receipts.json) |
 | R258 | 2026-10-27 emitter animation | Fresh r38 kit:one entry/17 modules/76 Skill files/120 package files,complete pack checks,isolated registration and25 calls retain actual Codex discovery;no new inference or render. | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/kit-r1/verification.json) |
 | R259 | 2026-10-27 emitter animation | Complete trilingual63-function/21-service manuals,76 capability snapshots,Skill/install workflows andC47 actual GIF/editable package synchronized;all253 prior R rows/38 closure cells retained andoverall goal remains open. | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/final-delivery-r1/verification.json) |
+| R260 | 2026-10-27 optical effects | CLI0.1.38/local.36 offline bundle: 237 product files match source; 704 distinct installed tests pass (702 full-run successes plus two catalog retests), with no unresolved failures/errors/skips. The 25 additions include 16 numeric, three actual GPU and six engineering tests, counted once. | [Evidence](docs/validation/evidence/optical-effects-20261027-r1/installed-regression-final-r2/verification.json) |
+| R261 | 2026-10-27 optical effects | Independent Gaussian closed forms, integer radial maps, premultiplied transparent edges, 65536 alpha levels/subnormals/signed zero, six easings, budgets, cancellation and atomic errors verified; measured optical CPU/GPU output on the same input matches exactly. | [Evidence](docs/validation/evidence/optical-effects-20261027-r1/source-optics-r2/verification.json) |
+| R262 | 2026-10-27 optical effects | Registered installed Skill C48: four panels, nine tracks, 48 frames/12FPS/960×540/four seconds. All editable effects, 48 decoded 10-bit frames and 384000 Float32 PCM scalars match after package import; 143 real optical dispatches with owned resources closed. | [Evidence](docs/validation/evidence/optical-effects-20261027-r1/case-r3/verification.json) |
+| R263 | 2026-10-27 optical effects | CPU/GPU encoding from the same decoded source differs by at most one 10-bit code; particle composition independently stays within its 3e-6 float budget. Split/reverse left limits, root adjustment intervals, package/local OTIO, cache invalidation and persistent queue verified. | [Evidence](docs/validation/evidence/optical-effects-20261027-r1/installed-regression-final-r2/receipts.json) |
+| R264 | 2026-10-27 optical effects | Fresh r39 kit: one entry/17 modules/77 Skill files/122 package files. Complete validation, isolated registration and 29 calls retain actual Codex discovery; no new inference or render. | [Evidence](docs/validation/evidence/optical-effects-20261027-r1/kit-r1/verification.json) |
+| R265 | 2026-10-27 optical effects | Complete trilingual manuals with 64 functions/21 services, 77 capability snapshots, Skill/install workflows and C48 actual GIF/original/control/editable package synchronized. All 259 prior R rows and 38 closure cells retained; the overall goal remains open. | [Evidence](docs/validation/evidence/optical-effects-20261027-r1/final-delivery-r2/verification.json) |
 
 ## Current limits and development direction
 

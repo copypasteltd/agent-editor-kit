@@ -2,8 +2,8 @@
   "format": "agent-ffmpeg-local-skills-v2",
   "status": "reviewed",
   "registration_mode": "single",
-  "release": "v0.1.0-alpha.4-local.35",
-  "manifest_sha256": "sha256:3b15c4b609764c0257bafae99901b351d4bf227beef064b785bb95641ad65148",
+  "release": "v0.1.0-alpha.4-local.36",
+  "manifest_sha256": "sha256:c5c3b57ed62a94e8eac2a66dd872514627263b1a69e2931e29b31c17cc1cd3b0",
   "runtime_config": "local/agent-ffmpeg/runtime.json",
   "skill_count": 1,
   "module_count": 17,
@@ -13,7 +13,7 @@
     {
       "name": "agent-ffmpeg-local-editor",
       "purpose_zh": "唯一入口：17内部模块、可编辑GPU粒子、GPU模型会话/视频生成、原生跟踪/烘焙、Float32/GPU合成、500滤镜、语义检索、字幕配音及四轨分离",
-      "skill_md_sha256": "cdb99bfedae3e4fdd3252a37fa9b63b8276699c9b9b5e063757b3b7b1aa8b787"
+      "skill_md_sha256": "3d1f0196eb7cec6e3ae8364aa9040e482237c5d2e42446e8ee89b1d3efd18009"
     }
   ],
   "modules": [
@@ -498,19 +498,24 @@
       "sha256": "53ea706e02c0d4e3871d86101a921e92335acd8d18c4e2afa7bf7302a69954e4"
     },
     {
+      "path": "skills/agent-ffmpeg-local-editor/references/optical-effects.md",
+      "bytes": 4663,
+      "sha256": "5c8867532d21f69a7d4afc0ff75e8fc4cb7edbd696b9ead464f3dcc80a6fb5c7"
+    },
+    {
       "path": "skills/agent-ffmpeg-local-editor/references/procedural-particles.md",
       "bytes": 7186,
       "sha256": "3d34f9f4f292528cc046999617179e09c763cc86426840211cd6521a8864b084"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/projection-gpu.md",
-      "bytes": 7407,
-      "sha256": "3106723ddc8bd6487fa7db03d5c72c45bbfe01c32858f3952f54d2b56e6ca723"
+      "bytes": 7977,
+      "sha256": "774a26f1e658963057d0579e57cd1d8a683450946e6042b3eb0a4b8c059cda77"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
       "bytes": 8019,
-      "sha256": "137a38636b43e6ef68ea2b20fb9b9765287bb1800d9bb7168f7919c7ede2700c"
+      "sha256": "e1a1dce727b16029d9fd5db156a9532440c3e1c33352c62264832739a028b870"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/semantic-package.md",
@@ -545,12 +550,12 @@
     {
       "path": "skills/agent-ffmpeg-local-editor/scripts/run.py",
       "bytes": 2296,
-      "sha256": "73c2dd6b0d781c7a1ab03f3561e5cda0bc506b6eee1fabec60306f43c9229189"
+      "sha256": "a802c4b05f040897bd85278105fc5db05a9331abb4065bc6217507ff97e4e5d0"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
-      "bytes": 12764,
-      "sha256": "cdb99bfedae3e4fdd3252a37fa9b63b8276699c9b9b5e063757b3b7b1aa8b787"
+      "bytes": 13155,
+      "sha256": "3d1f0196eb7cec6e3ae8364aa9040e482237c5d2e42446e8ee89b1d3efd18009"
     }
   ],
   "retired_skills": [
@@ -619,7 +624,7 @@
       "skill_md_sha256": "da31e25b3e641f80367075cdb4e72be99be2c89c332556d8ba58ec419fffd46b"
     }
   ],
-  "cli_version": "0.1.37",
+  "cli_version": "0.1.38",
   "material_count": 359,
   "named_voice_count": 103,
   "optional_model_pack_count": 4

@@ -1,6 +1,9 @@
 # agent editor kit 文档 / Documentation
 
-Current local / 当前本地 / 目前本地：**CLI0.1.37 / local.35 / r38 kit** · [Emitter animation](product/EMITTER_ANIMATION.md) · [Install](releases/CLI_0.1.37_LOCAL.md) · [C47](product/CASES.md#c47-emitter-animation).
+Current local / 当前本地 / 目前本地：**CLI0.1.38 / local.36 / r39 kit** · [Optical effects](product/OPTICAL_EFFECTS.md) · [Install](releases/CLI_0.1.38_LOCAL.md) · [C48](product/CASES.md#c48-optical-effects).
+
+
+Historical / 历史 / 歷史：**CLI0.1.37 / local.35 / r38 kit** · [Emitter animation](product/EMITTER_ANIMATION.md) · [Install](releases/CLI_0.1.37_LOCAL.md) · [C47](product/CASES.md#c47-emitter-animation).
 
 
 Historical / 历史 / 歷史：**CLI0.1.36 / local.34 / r37 kit** · [GPU dispatch](product/GPU_DISPATCH.md) · [Install](releases/CLI_0.1.36_LOCAL.md) · [C46](product/CASES.md#c46-gpu-dispatch).

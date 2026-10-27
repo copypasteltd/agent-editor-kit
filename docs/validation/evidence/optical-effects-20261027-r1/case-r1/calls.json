@@ -1,0 +1,39 @@
+[
+  {
+    "id": "version",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "seconds": 2.349239100003615,
+    "stdout_bytes": 1168,
+    "stdout_sha256": "ace1b8e3e824459cd03a434f7578903f3d6601cff1d46aed9c3c09b4ecc9a723",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "optical-catalog",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "effects",
+      "list",
+      "--query",
+      "optical"
+    ],
+    "exit_code": 0,
+    "seconds": 1.9303292999975383,
+    "stdout_bytes": 5764,
+    "stdout_sha256": "74fecfaaffa704baebcdc8fcd6398a281928a7eb93a8283da0e70790e99ef457",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

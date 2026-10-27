@@ -4698,7 +4698,7 @@ def command_effects_list(args: argparse.Namespace) -> dict[str, Any]:
         args,
         data={
             "catalog_version": EFFECT_CATALOG_VERSION,
-            "source": "ffmpeg-local",
+            "source": "native-and-ffmpeg-local",
             "network": "disabled",
             "count": len(effects),
             "effects": effects,
@@ -4715,7 +4715,7 @@ def command_effects_inspect(args: argparse.Namespace) -> dict[str, Any]:
         args,
         data={
             "catalog_version": EFFECT_CATALOG_VERSION,
-            "source": "ffmpeg-local",
+            "source": effect.get("source", "ffmpeg-local"),
             "network": "disabled",
             "effect": effect,
         },

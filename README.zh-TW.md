@@ -9,7 +9,21 @@
 本頁包含完整功能模塊、服務與依賴、安裝與使用邏輯、Skill 輸入輸出、真實案例和核驗表。長篇原始驗收日志繼續留檔，功能說明與案例入口恢復到首頁。
 
 
-<!-- emitter-animation-current -->
+<!-- optical-effects-current -->
+
+**CLI0.1.38 / alpha.4-local.36 / r39 kit · 1 Skill / 17 modules.**
+
+新增可編輯 **鏡頭眩光、漏光及色差**：線性光浮點運算、參數關鍵影格、原作者時鐘、片段及選定序列調整層；CPU參考與實際OpenCL GPU路徑已接通。透過 `effects list --query optical` / `effects inspect` 查詢約束，用 `timeline compose` 保留參數及動畫。四格案例包含原圖、移除效果的對照及實際GPU輸出。
+
+[Workflow / usage](docs/product/OPTICAL_EFFECTS.md) · [C48](docs/product/CASES.md#c48-optical-effects) · [Install](docs/releases/CLI_0.1.38_LOCAL.md) · [Evidence](docs/validation/光学效果实测_2026-10-27.md)
+
+![Actual registered Skill GPU optical output](docs/assets/optical-effects-20261027-r3/optical-effects.gif)
+
+安裝版最終704項不同用例通過：全量702項通過，另2項舊目錄斷言更新後定向重測通過，產品檔案未變、無跳過。C48保留9條動畫軌，全部48個10bit解碼影格及384000個Float32 PCM取樣在工程包往返後相同，GIF為實際解碼影格、4000ms。藝術光效已接通；實體鏡頭求解、自動亮源偵測、bloom/halation/深度及完整剪映效果庫持續開發。全部259項既有核驗與38項原關閉條件保留。
+
+<!-- /optical-effects-current -->
+
+<!-- emitter-animation-history -->
 
 **CLI0.1.37 / alpha.4-local.35 / r38 kit · 1 Skill / 17 modules.**
 
@@ -21,7 +35,7 @@
 
 安裝版 679 項回歸通過、零跳過；C47 的 14 條屬性軌道和全部 48 個 10bit 解碼影格、384000 個 Float32 PCM 取樣在工程包回讀後相同。GIF 為實際渲染影格，4 秒。二維發射器動畫已接通；3D、碰撞、深度、流體及完整剪映特效庫仍待補齊。保留全部 253 項歷史核驗與 38 項原關閉條件。
 
-<!-- /emitter-animation-current -->
+<!-- /emitter-animation-history -->
 
 <!-- gpu-dispatch-history -->
 
@@ -404,7 +418,7 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r38 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r38.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
+**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r39 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r39.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
 
 <!-- /unified-skill-registration -->
 
@@ -772,13 +786,14 @@ flowchart LR
 | F54 | 可復用參數運鏡 | 本地版本化 JSON / 既有作者曲線 → 一般關鍵影格、參數/摘要/快照、跨專案復用。六套實際預覽供選型。 | `motion pack list/inspect/create/capture/apply` | 65 點採樣、transform 屬性；預設拒絕衝突，明確取代整條屬性軌；跟蹤綁定拒絕，CPU 合成/自然品質未結案。 |
 | F55 | 線性浮點轉場與群組進出場 | 明確 Float32 專案 → 57 xfade圖案+2 dip、預乘alpha混合、真實句柄/原作者時鐘、關聯音軌、群組擦除/推移及實際預覽成片。 | `timeline transition; preview; render; queue` | CPU；12種真實句柄宣告，其他圖案用明確重疊/邊緣；normal雙源混合；風噪有平台差異，HDR/自然品質未閉。 |
 | F56 | 線性浮點文字與字幕 | 獨立／內嵌／SRT、聯合逐詞／打字機 → 原生位元組覆蓋率、可重用字形、分塊線性合成、原作者時鐘、4K標題及實際交付。 | `timeline compose; preview; render; queue` | 明確本機字型；CPU／明確GPU；覆蓋率8bit／顏色Float32；工作區准入非峰值RSS；富ASS／Bidi／自然品質未閉。 |
-| F57 | 原生Float32 GPU執行 | 顯式策略驅動仿射、一般合成、文字元件/逐詞選擇；任務自有管道調度、共享像素、渲染/預覽/佇列/恢復。 | `projection_acceleration; render; preview; queue` | off/prefer/require；實際binary64/次正規數探測；有界控制包/佇列及程序/執行緒/串流清理；其他算子CPU。 |
-| F58 | Float32全域／區間調整層 | 全軌含字幕合成後依序調色；LUT／曝光及既有浮點效果、六類關鍵影格、選中根僅套用一次。 | `settings.adjustments; preview; render; queue` | 明確線性工作域／效果訊號；CPU執行；LUT持鎖／封裝遷移；保留作者區間時鐘，非完整HDR。 |
+| F57 | 原生Float32 GPU執行 | 仿射、一般合成、文字組件/逐詞、粒子光柵及三類光學效果；任務自有管道/共享像素，貫通渲染/預覽/佇列/恢復。 | `projection_acceleration; render; preview; queue` | off/prefer/require；binary64精度/次正規探測，粒子保留Float32；有界控制及所屬程序/執行緒/串流清理，其他算子CPU。 |
+| F58 | Float32全域/區間調整層 | 全軌含字幕合成後依序調色/光效；既有浮點效果及三光學效果、六種插值，選定根僅套用一次。 | `settings.adjustments; preview; render; queue` | 明確線性工作域/效果訊號；光學可GPU，其餘CPU；LUT持鎖/包遷移，原作者區間時鐘，非完整HDR。 |
 | F59 | 原生PTS跟蹤及疊加軌 | 保存來源觀測→依實際原生影格求跟隨位置；共用crop/TRS、ROI縮放／相對旋轉、透明度、視窗及巢狀聲音。 | `media track-bind; preview; render; queue; package` | 明確Float32，原生PTS不烘焙顯示鍵；預算／循環門禁；模板漂移及遮擋另審，中間格式烘焙未接通。 |
 | F60 | 原生跟蹤與烘焙交付 | 實際alpha/5類遮罩/59轉場足跡；剪輯與共享變速保留觀察；原生烘焙逐幀核驗並保留來源旁車。 | `media track-bind; timeline compose/edit; convert export --bake-tracking` | 目前凍結圖/FPS；20,000幀/256,000求值；無法表達的整數步進拒絕；外部播放器與自然身分/遮擋待驗收。 |
 | F61 | 本地GPU影片生成 | 文生、圖生、尾幀/首尾幀；原文提示/取樣、真實模型視窗、可編輯入軌、端點核驗、可移植配方與受管恢復。 | `media adapter; media generate` | 既有原生VACE/CUDA依賴；無聲8bit SDR；條件端點合成保留；自然品質/生成權利/完整剪映AI待驗收。 |
 | F62 | 原生GPU模型會話 | 同工程/適配器/提示詞重用權重與嵌入；每任務重設，活連線傳遞持鎖雜湊；取消、期限、閒置及任務數退出。 | `media model-session; media generate --model-session` | 原生Windows VACE；首條仍載入；新提示詞須新會話，串行執行；非全域顯存預留/多GPU。 |
 | F63 | 可編輯程序化粒子與發射器動畫 | 六種原創配方、五形狀、seed/獨立CFR；21屬性源時鐘關鍵影格、六種緩動、暫停發射；實際GPU光柵化。剪輯/預覽/佇列/包/本地OTIO貫通。 | `vfx list/inspect/apply/update/show/animation-properties/animate` | CPU積分與出生取樣，GPU繪製；64點/屬性、16發射器、4096預留活粒子；無3D/碰撞/深度。 |
+| F64 | 可編輯光學效果與GPU運算 | 眩光核心/條紋/光暈/鬼影、旋轉橢圓漏光、徑向紅藍色差；全部數值通道關鍵影格、原作者時鐘、片段/區間調整層，CPU/OpenCL。 | `effects list/inspect` → `timeline compose` → preview/render | 明確線性RGB；原alpha位元保留，透明隱藏色不滲出；ghosts/edge靜態，非實體鏡頭/自動亮源/bloom。 |
 
 ## 支持的服務模塊與依賴
 
@@ -801,7 +816,7 @@ flowchart LR
 | S13 | 內建社群素材服務 | 離線目錄 | 359 項有來源/許可的 BGM、短樂、音效、字型 | `materials list/inspect/verify/ingest` | 逐項權利，不是商業素材訂閱庫 |
 | S14 | 本地配音/翻譯 | 原生模型 worker | 4 個可選 CPU/CUDA 包，103 音色對映和 OPUS 文字/字幕 | `voice / translate / model-pack` | 累計至少 7 個不同音色有真實輸出；103 音色完整試聽及人工驗收未完成 |
 | S15 | 配樂準備與混音 | 原生 FFmpeg 音訊 | 顯式擷取/迴圈/淡化、獨立人聲/配樂、閃避 | `music prepare/mix` | 不作曲、不靜默裁人聲、不承諾接縫修復 |
-| S16 | GPU相容服務 | 既有原生OpenCL ICD / NVIDIA模型庫 | 預設圖投影及獨立Float32仿射／一般疊加／字色／逐詞；off/prefer/require，模型auto/cpu/cuda；實際探測／預算／清理 | `render --projection-acceleration; gpu inspect; --device` | RTX3060實測；字形／效果／轉場等CPU，非全部算子GPU化，系統庫授權另列。 |
+| S16 | GPU相容服務 | 既有原生OpenCL ICD / NVIDIA模型庫 | 圖投影及獨立Float32仿射/一般疊加/字色/逐詞/粒子/光學；off/prefer/require，模型auto/cpu/cuda；實際探測/預算/清理 | `render --projection-acceleration; gpu inspect; --device` | RTX3060實測；字形/其他效果/轉場等CPU，系統庫授權另列。 |
 | S17 | 原生 Windows 擷取 | FFmpeg gdigrab / DirectShow | 明確來源、裝置 ID、有限時長、完整解碼與素材登記 | `capture devices/record` | 真實視窗 CPU/GPU 已驗；攝影機/麥克風/同步未驗 |
 | S18 | 圖文語義與經驗校準 | 明確登記的原生 SigLIP2 worker | 既有 Torch/Transformers/權重；檔案綁定索引/實作/類型/實際裝置 | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | 分數非機率；冷啟動/大庫與校準工程遷移仍有限制 |
 | S19 | 獨立四軌分離 | 原生 Torch/TorchAudio HDemucs worker | 明確登記原生 Python、權重/證據/實作雜湊；auto/cpu/cuda，4 float WAV/軌道 | `audio adapter; audio separate-stems` | 基礎 ZIP 不含 Torch/權重；自然聽感與權重許可未閉 |
@@ -906,7 +921,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.35/final-r1/installed/`，CLI 0.1.37；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
+本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.36/final-r1/installed/`，CLI 0.1.38；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1356,6 +1371,12 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R257 | 2026-10-27 emitter animation | 單屬性增改刪、明確replace、軌道鎖、快照、dry-run、檔案內容冪等與失敗原子性；實際編碼CPU/GPU、工程包/本地OTIO、拆分/巢狀倒放、預覽失效及持久佇列已驗。 | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/installed-regression-r1/receipts.json) |
 | R258 | 2026-10-27 emitter animation | r38獨立工具包：1入口/17模組/76 Skill檔案/120包檔案；新目錄完整校驗、隔離註冊及25次呼叫，原Codex發現聯接保持；無新推論或渲染。 | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/kit-r1/verification.json) |
 | R259 | 2026-10-27 emitter animation | 三語README完整63功能/21服務、76能力快照、Skill、安裝及C47案例/GIF/可編輯包已更新；253歷史核驗與38原關閉條件保留，總目標仍未完成。 | [Evidence](docs/validation/evidence/emitter-animation-20261027-r1/final-delivery-r1/verification.json) |
+| R260 | 2026-10-27 optical effects | CLI0.1.38/local.36離線包：237產品檔案與原始碼一致；最終704不同用例通過（全量702+目錄契約定向重測2），無未解決失敗/錯誤/跳過；新增16數值、3實際GPU、6工程整合共25項各計一次。 | [Evidence](docs/validation/evidence/optical-effects-20261027-r1/installed-regression-final-r2/verification.json) |
+| R261 | 2026-10-27 optical effects | 三類光學效果獨立高斯閉式、徑向整數取樣、預乘透明邊緣、65536級alpha/次正規/符號零、六緩動、預算/取消/原子失敗已驗；同輸入CPU/GPU光學實測完全相同。 | [Evidence](docs/validation/evidence/optical-effects-20261027-r1/source-optics-r2/verification.json) |
+| R262 | 2026-10-27 optical effects | 註冊安裝版Skill C48：4格、9軌、48幀/12FPS/960×540/4秒；可編輯效果與全48幀10bit、384000 Float32 PCM往返相同；143次實際光學GPU派發及所屬資源關閉。 | [Evidence](docs/validation/evidence/optical-effects-20261027-r1/case-r3/verification.json) |
+| R263 | 2026-10-27 optical effects | 相同解碼輸入CPU/GPU編碼誤差≤1個10bit碼值；粒子疊加獨立維持≤3e-6浮點預算；拆分/倒放左極限、根調整區間、包/本地OTIO、預覽失效與佇列分別核驗。 | [Evidence](docs/validation/evidence/optical-effects-20261027-r1/installed-regression-final-r2/receipts.json) |
+| R264 | 2026-10-27 optical effects | r39獨立工具包：1入口/17模組/77 Skill檔案/122包檔案；完整校驗、隔離註冊及29次呼叫；實際Codex發現聯接保持，無新推論或渲染。 | [Evidence](docs/validation/evidence/optical-effects-20261027-r1/kit-r1/verification.json) |
+| R265 | 2026-10-27 optical effects | 三語README完整64功能/21服務、77能力快照、Skill、安裝及C48實際GIF/原圖/對照/可編輯包同步；259既有核驗及38原關閉條件保留，總目標持續開發。 | [Evidence](docs/validation/evidence/optical-effects-20261027-r1/final-delivery-r2/verification.json) |
 
 ## 當前邊界與開發方向
 

@@ -1,0 +1,69 @@
+test_adjustments_use_selected_root_interval_once_and_validate_author_clock (test_float_optics.OpticalIntegrationTests.test_adjustments_use_selected_root_interval_once_and_validate_author_clock) ... ok
+test_package_and_local_OTIO_preserve_curves_and_all_encoded_frames (test_float_optics.OpticalIntegrationTests.test_package_and_local_OTIO_preserve_curves_and_all_encoded_frames) ... ERROR
+test_preview_cache_changes_with_effect_key_and_GPU_queue_matches_direct (test_float_optics.OpticalIntegrationTests.test_preview_cache_changes_with_effect_key_and_GPU_queue_matches_direct) ... ok
+test_real_CPU_GPU_encoding_and_complete_PCM (test_float_optics.OpticalIntegrationTests.test_real_CPU_GPU_encoding_and_complete_PCM) ... FAIL
+test_source_clock_survives_clip_split_and_nested_reverse (test_float_optics.OpticalIntegrationTests.test_source_clock_survives_clip_split_and_nested_reverse) ... FAIL
+
+======================================================================
+ERROR: test_package_and_local_OTIO_preserve_curves_and_all_encoded_frames (test_float_optics.OpticalIntegrationTests.test_package_and_local_OTIO_preserve_curves_and_all_encoded_frames)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_optics.py", line 212, in test_package_and_local_OTIO_preserve_curves_and_all_encoded_frames
+    self.assertEqual(p['sequences'][0]['tracks'][0]['clips'][0]['effects'],self.f.c['effects'])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+FAIL: test_real_CPU_GPU_encoding_and_complete_PCM (test_float_optics.OpticalIntegrationTests.test_real_CPU_GPU_encoding_and_complete_PCM)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_optics.py", line 200, in test_real_CPU_GPU_encoding_and_complete_PCM
+    self.f.test_real_cpu_gpu_encoding_and_every_pcm_sample_agree()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_procedural_particles.py", line 299, in test_real_cpu_gpu_encoding_and_every_pcm_sample_agree
+    self.assertEqual(len(x),24*96*64*3);self.assertLessEqual(int(np.max(np.abs(x.astype(int)-y.astype(int)))),1)
+                                        ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 3 not less than or equal to 1
+
+======================================================================
+FAIL: test_source_clock_survives_clip_split_and_nested_reverse (test_float_optics.OpticalIntegrationTests.test_source_clock_survives_clip_split_and_nested_reverse)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_optics.py", line 215, in test_source_clock_survives_clip_split_and_nested_reverse
+    self.f.test_window_split_and_nested_reverse_have_identical_frames_and_source_ids()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_procedural_particles.py", line 344, in test_window_split_and_nested_reverse_have_identical_frames_and_source_ids
+    for i in range(24):np.testing.assert_array_equal(nested.render_frame(i)[0],frames[23-i])
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 1121, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 983, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 1180 / 24576 (4.8%)
+First 5 mismatches are at indices:
+ [0, 39, 0]: 0.013145131058990955 (ACTUAL), 0.01314513199031353 (DESIRED)
+ [0, 47, 0]: 0.20554247498512268 (ACTUAL), 0.2055426687002182 (DESIRED)
+ [0, 47, 1]: 0.027462461963295937 (ACTUAL), 0.027462560683488846 (DESIRED)
+ [0, 47, 2]: 0.05255380645394325 (ACTUAL), 0.052553869783878326 (DESIRED)
+ [0, 48, 0]: 0.6337747573852539 (ACTUAL), 0.6337757110595703 (DESIRED)
+Max absolute difference among violations: 0.01757056
+Max relative difference among violations: 0.2097702
+ ACTUAL: array([[[0.005182, 0.014444, 0.029557, 1.      ],
+        [0.005182, 0.014444, 0.029557, 1.      ],
+        [0.005182, 0.014444, 0.029557, 1.      ],...
+ DESIRED: array([[[0.005182, 0.014444, 0.029557, 1.      ],
+        [0.005182, 0.014444, 0.029557, 1.      ],
+        [0.005182, 0.014444, 0.029557, 1.      ],...
+
+----------------------------------------------------------------------
+Ran 5 tests in 85.948s
+
+FAILED (failures=2, errors=1)

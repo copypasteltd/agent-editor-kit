@@ -1,0 +1,40 @@
+usage: ai-ad-editor interpolate adapter register [-h] [--format {json,text}]
+                                                 [--request-id REQUEST_ID]
+                                                 [--idempotency-key IDEMPOTENCY_KEY]
+                                                 [--dry-run] [--no-network]
+                                                 [--progress {none,jsonl}]
+                                                 --project PROJECT
+                                                 --adapter-id ADAPTER_ID
+                                                 --model-path MODEL_PATH
+                                                 --executable EXECUTABLE
+                                                 --evidence EVIDENCE
+                                                 [--device {cuda}]
+                                                 [--threads THREADS]
+                                                 [--scale {0.25,0.5,1.0,2.0}]
+                                                 [--license-spdx LICENSE_SPDX]
+                                                 [--license-url LICENSE_URL]
+                                                 [--creator CREATOR]
+                                                 [--permitted-use PERMITTED_USE]
+                                                 [--verification-status {unverified,verified,restricted}]
+
+options:
+  -h, --help            show this help message and exit
+  --format {json,text}  输出格式
+  --request-id REQUEST_ID
+  --idempotency-key IDEMPOTENCY_KEY
+  --dry-run
+  --no-network
+  --progress {none,jsonl}
+  --project PROJECT
+  --adapter-id ADAPTER_ID
+  --model-path MODEL_PATH
+  --executable EXECUTABLE
+  --evidence EVIDENCE
+  --device {cuda}
+  --threads THREADS
+  --scale {0.25,0.5,1.0,2.0}
+  --license-spdx LICENSE_SPDX
+  --license-url LICENSE_URL
+  --creator CREATOR
+  --permitted-use PERMITTED_USE
+  --verification-status {unverified,verified,restricted}

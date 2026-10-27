@@ -1,0 +1,337 @@
+test_actual_transport_registers_two_editable_linked_tracks_and_rerun_plan (test_lipsync.CLITests.test_actual_transport_registers_two_editable_linked_tracks_and_rerun_plan) ... FAIL
+test_dry_run_has_no_inference_or_project_mutation (test_lipsync.CLITests.test_dry_run_has_no_inference_or_project_mutation) ... ok
+test_failed_generation_rolls_back_all_project_and_rights_metadata (test_lipsync.CLITests.test_failed_generation_rolls_back_all_project_and_rights_metadata) ... ok
+test_read_only_inspection_preserves_metadata (test_lipsync.CLITests.test_read_only_inspection_preserves_metadata) ... ok
+test_registered_tensor_tamper_is_detected_before_inference (test_lipsync.CLITests.test_registered_tensor_tamper_is_detected_before_inference) ... ok
+test_validation_failure_after_publication_rolls_back_asset_and_metadata (test_lipsync.CLITests.test_validation_failure_after_publication_rolls_back_asset_and_metadata) ... FAIL
+test_array_budget_rejects_before_neural_batch (test_lipsync.PixelTests.test_array_budget_rejects_before_neural_batch) ... ERROR
+test_feather_stays_inside_explicit_box (test_lipsync.PixelTests.test_feather_stays_inside_explicit_box) ... ERROR
+test_fractional_and_hidden_alpha_and_outside_box_are_bit_exact (test_lipsync.PixelTests.test_fractional_and_hidden_alpha_and_outside_box_are_bit_exact) ... ERROR
+test_invalid_neural_batch_and_semantic_mask_rejected (test_lipsync.PixelTests.test_invalid_neural_batch_and_semantic_mask_rejected) ... ERROR
+test_mask_top_protects_upper_face_with_no_feather (test_lipsync.PixelTests.test_mask_top_protects_upper_face_with_no_feather) ... ERROR
+test_partial_pipe_reads_produce_the_same_complete_frames (test_lipsync.PixelTests.test_partial_pipe_reads_produce_the_same_complete_frames) ... ERROR
+test_semantic_zero_mask_is_identity_even_when_prediction_changes (test_lipsync.PixelTests.test_semantic_zero_mask_is_identity_even_when_prediction_changes) ... ERROR
+test_short_write_rejected (test_lipsync.PixelTests.test_short_write_rejected) ... ERROR
+test_truncated_and_extra_frames_rejected (test_lipsync.PixelTests.test_truncated_and_extra_frames_rejected) ... 
+  test_truncated_and_extra_frames_rejected (test_lipsync.PixelTests.test_truncated_and_extra_frames_rejected) (size=61439) ... ERROR
+  test_truncated_and_extra_frames_rejected (test_lipsync.PixelTests.test_truncated_and_extra_frames_rejected) (size=61441) ... ERROR
+test_bad_boxes_rejected (test_lipsync.PlanTests.test_bad_boxes_rejected) ... ok
+test_box_interpolation_and_hold_are_exact_output_frame_clock (test_lipsync.PlanTests.test_box_interpolation_and_hold_are_exact_output_frame_clock) ... ok
+test_ceil_clock_preserves_all_selected_samples_with_less_than_40ms_padding (test_lipsync.PlanTests.test_ceil_clock_preserves_all_selected_samples_with_less_than_40ms_padding) ... ok
+test_cuda_settings_reject_cpu_and_boolean_batch (test_lipsync.PlanTests.test_cuda_settings_reject_cpu_and_boolean_batch) ... ok
+test_image_range_and_source_loop_are_rejected (test_lipsync.PlanTests.test_image_range_and_source_loop_are_rejected) ... ok
+test_options_clocks_and_quotas_reject_before_execution (test_lipsync.PlanTests.test_options_clocks_and_quotas_reject_before_execution) ... ok
+test_portable_recipe_digests_clock_parents_and_rebinding (test_lipsync.PlanTests.test_portable_recipe_digests_clock_parents_and_rebinding) ... ok
+test_source_video_requires_explicit_shortage_strategy (test_lipsync.PlanTests.test_source_video_requires_explicit_shortage_strategy) ... ok
+test_cancel_marker_kills_owned_children (test_lipsync.TransportTests.test_cancel_marker_kills_owned_children) ... ok
+test_complete_actual_qtrle_and_float_pcm_transport_and_cleanup (test_lipsync.TransportTests.test_complete_actual_qtrle_and_float_pcm_transport_and_cleanup) ... ERROR
+test_forged_alpha_response_is_rejected (test_lipsync.TransportTests.test_forged_alpha_response_is_rejected) ... FAIL
+test_timeout_kills_owned_children (test_lipsync.TransportTests.test_timeout_kills_owned_children) ... FAIL
+test_worker_failure_is_diagnosed_and_workspace_recovered (test_lipsync.TransportTests.test_worker_failure_is_diagnosed_and_workspace_recovered) ... ok
+test_reverse_fractional_CFR_cut_in_keeps_partial_end_intervals (test_reverse_video_clock.ReverseVideoClockTests.test_reverse_fractional_CFR_cut_in_keeps_partial_end_intervals) ... ok
+test_reverse_fractional_VFR_cut_in_and_speed_keep_original_time (test_reverse_video_clock.ReverseVideoClockTests.test_reverse_fractional_VFR_cut_in_and_speed_keep_original_time) ... ok
+test_reverse_nonlinear_speed_uses_independent_decimal_inverse (test_reverse_video_clock.ReverseVideoClockTests.test_reverse_nonlinear_speed_uses_independent_decimal_inverse) ... ok
+test_reverse_nonzero_demux_origin_retains_source_interval_phase (test_reverse_video_clock.ReverseVideoClockTests.test_reverse_nonzero_demux_origin_retains_source_interval_phase) ... ok
+test_reverse_one_tick_window_emits_its_exact_global_sample (test_reverse_video_clock.ReverseVideoClockTests.test_reverse_one_tick_window_emits_its_exact_global_sample) ... ok
+test_reverse_partial_alpha_preserves_source_identity_and_composition (test_reverse_video_clock.ReverseVideoClockTests.test_reverse_partial_alpha_preserves_source_identity_and_composition) ... ok
+test_reverse_preserves_each_VFR_frame_interval_duration (test_reverse_video_clock.ReverseVideoClockTests.test_reverse_preserves_each_VFR_frame_interval_duration) ... ok
+test_reverse_preserves_gap_before_a_genuinely_short_source (test_reverse_video_clock.ReverseVideoClockTests.test_reverse_preserves_gap_before_a_genuinely_short_source) ... ok
+test_reverse_window_inside_one_VFR_hold_uses_partial_duration (test_reverse_video_clock.ReverseVideoClockTests.test_reverse_window_inside_one_VFR_hold_uses_partial_duration) ... ok
+test_PCM_tamper_cannot_be_used_or_silently_overwritten (test_native_audio_clock.NativeAudioCacheTests.test_PCM_tamper_cannot_be_used_or_silently_overwritten) ... ok
+test_active_registered_source_is_protected_until_removed_from_the_author_graph (test_native_audio_clock.NativeAudioCacheTests.test_active_registered_source_is_protected_until_removed_from_the_author_graph) ... ok
+test_agent_discovery_agrees_with_the_executed_multicam_and_R3_clock (test_native_audio_clock.NativeAudioCacheTests.test_agent_discovery_agrees_with_the_executed_multicam_and_R3_clock) ... ok
+test_cancellation_before_preparation_does_not_start_processes_or_create_cache (test_native_audio_clock.NativeAudioCacheTests.test_cancellation_before_preparation_does_not_start_processes_or_create_cache) ... ok
+test_cancellation_during_normalization_cleans_only_owned_staging (test_native_audio_clock.NativeAudioCacheTests.test_cancellation_during_normalization_cleans_only_owned_staging) ... ok
+test_content_change_with_identical_size_and_mtime_invalidates_the_old_identity (test_native_audio_clock.NativeAudioCacheTests.test_content_change_with_identical_size_and_mtime_invalidates_the_old_identity) ... ok
+test_continuous_source_stays_on_original_input_without_a_PCM_decode (test_native_audio_clock.NativeAudioCacheTests.test_continuous_source_stays_on_original_input_without_a_PCM_decode) ... ok
+test_disk_admission_rejects_before_materialization (test_native_audio_clock.NativeAudioCacheTests.test_disk_admission_rejects_before_materialization) ... ok
+test_explicit_prune_removes_only_the_selected_unreferenced_key (test_native_audio_clock.NativeAudioCacheTests.test_explicit_prune_removes_only_the_selected_unreferenced_key) ... ok
+test_malformed_metadata_returns_a_structured_cache_error (test_native_audio_clock.NativeAudioCacheTests.test_malformed_metadata_returns_a_structured_cache_error) ... ok
+test_metadata_change_is_caught_at_the_execution_boundary (test_native_audio_clock.NativeAudioCacheTests.test_metadata_change_is_caught_at_the_execution_boundary) ... ok
+test_native_PCM_placement_matches_independent_gap_overlap_and_one_sample_oracles (test_native_audio_clock.NativeAudioCacheTests.test_native_PCM_placement_matches_independent_gap_overlap_and_one_sample_oracles) ... ok
+test_native_index_frame_budget_rejects_before_PCM_materialization (test_native_audio_clock.NativeAudioCacheTests.test_native_index_frame_budget_rejects_before_PCM_materialization) ... ok
+test_real_AAC_coarse_continuous_packets_keep_actual_decoded_samples (test_native_audio_clock.NativeAudioCacheTests.test_real_AAC_coarse_continuous_packets_keep_actual_decoded_samples) ... ok
+test_real_AAC_gap_and_overlap_match_independent_actual_decode_group_placement (test_native_audio_clock.NativeAudioCacheTests.test_real_AAC_gap_and_overlap_match_independent_actual_decode_group_placement) ... ok
+test_rehashed_index_with_false_positions_is_rejected (test_native_audio_clock.NativeAudioCacheTests.test_rehashed_index_with_false_positions_is_rejected) ... ok
+test_unknown_cache_files_are_kept_and_rejected (test_native_audio_clock.NativeAudioCacheTests.test_unknown_cache_files_are_kept_and_rejected) ... ok
+test_unmaterialized_analysis_leaves_no_project_cache_or_transient_directory (test_native_audio_clock.NativeAudioCacheTests.test_unmaterialized_analysis_leaves_no_project_cache_or_transient_directory) ... ok
+test_verified_hit_never_reprobes_or_decodes_the_source (test_native_audio_clock.NativeAudioCacheTests.test_verified_hit_never_reprobes_or_decodes_the_source) ... ok
+test_wrong_source_SHA_rejects_before_any_native_process (test_native_audio_clock.NativeAudioCacheTests.test_wrong_source_SHA_rejects_before_any_native_process) ... ok
+test_blank_frame_lines_are_not_confused_with_end_of_stream (test_native_audio_clock.NativeAudioPipeTests.test_blank_frame_lines_are_not_confused_with_end_of_stream) ... ok
+test_nonzero_process_exit_has_a_bounded_stderr_tail (test_native_audio_clock.NativeAudioPipeTests.test_nonzero_process_exit_has_a_bounded_stderr_tail) ... ok
+test_timeout_terminates_the_owned_native_process (test_native_audio_clock.NativeAudioPipeTests.test_timeout_terminates_the_owned_native_process) ... ok
+test_coarse_gap_and_overlap_keep_cadence_from_each_real_edit_anchor (test_native_audio_clock.NativeAudioPositionTests.test_coarse_gap_and_overlap_keep_cadence_from_each_real_edit_anchor) ... ok
+test_coarse_negative_container_origin_does_not_invent_packet_overlaps (test_native_audio_clock.NativeAudioPositionTests.test_coarse_negative_container_origin_does_not_invent_packet_overlaps) ... ok
+test_coarse_quantization_preserves_1024_sample_packets (test_native_audio_clock.NativeAudioPositionTests.test_coarse_quantization_preserves_1024_sample_packets) ... ok
+test_equal_nonzero_container_and_audio_origins_add_no_silence (test_native_audio_clock.NativeAudioPositionTests.test_equal_nonzero_container_and_audio_origins_add_no_silence) ... ok
+test_exact_native_single_sample_gap_is_retained (test_native_audio_clock.NativeAudioPositionTests.test_exact_native_single_sample_gap_is_retained) ... ok
+test_invalid_sample_rates_channels_and_timebases_are_rejected (test_native_audio_clock.NativeAudioPositionTests.test_invalid_sample_rates_channels_and_timebases_are_rejected) ... ok
+test_missing_and_incomplete_native_frames_are_rejected (test_native_audio_clock.NativeAudioPositionTests.test_missing_and_incomplete_native_frames_are_rejected) ... ok
+test_negative_prefix_is_clipped_from_the_author_origin (test_native_audio_clock.NativeAudioPositionTests.test_negative_prefix_is_clipped_from_the_author_origin) ... ok
+test_overlap_is_mapped_by_later_decoded_frame (test_native_audio_clock.NativeAudioPositionTests.test_overlap_is_mapped_by_later_decoded_frame) ... ok
+test_positive_first_frame_reports_native_leading_silence (test_native_audio_clock.NativeAudioPositionTests.test_positive_first_frame_reports_native_leading_silence) ... ok
+test_sparse_huge_gap_rejects_before_allocating_PCM (test_native_audio_clock.NativeAudioPositionTests.test_sparse_huge_gap_rejects_before_allocating_PCM) ... ok
+test_stored_sample_positions_are_verified_against_native_PTS (test_native_audio_clock.NativeAudioPositionTests.test_stored_sample_positions_are_verified_against_native_PTS) ... ok
+test_zero_negative_and_overlarge_frame_counts_are_rejected (test_native_audio_clock.NativeAudioPositionTests.test_zero_negative_and_overlarge_frame_counts_are_rejected) ... ok
+test_partial_pipe_reads_and_recurrent_states_are_preserved (test_local_matting.MattingFrameTests.test_partial_pipe_reads_and_recurrent_states_are_preserved) ... ok
+test_rejects_incomplete_extra_and_nonfinite_outputs (test_local_matting.MattingFrameTests.test_rejects_incomplete_extra_and_nonfinite_outputs) ... ok
+test_soft_alpha_multiplies_existing_alpha_without_premultiplying_rgb (test_local_matting.MattingFrameTests.test_soft_alpha_multiplies_existing_alpha_without_premultiplying_rgb) ... ok
+test_actual_rotated_sar_source_is_normalized_in_output (test_local_matting.NativeMattingTests.test_actual_rotated_sar_source_is_normalized_in_output) ... ok
+test_audio_delayed_start_preserves_initial_silence_and_content (test_local_matting.NativeMattingTests.test_audio_delayed_start_preserves_initial_silence_and_content) ... ok
+test_cancellation_and_timeout_terminate_all_pipeline_processes (test_local_matting.NativeMattingTests.test_cancellation_and_timeout_terminate_all_pipeline_processes) ... ok
+test_existing_output_and_external_publish_race_are_not_deleted (test_local_matting.NativeMattingTests.test_existing_output_and_external_publish_race_are_not_deleted) ... ok
+test_idempotency_does_not_repeat_inference_and_package_keeps_model_registry (test_local_matting.NativeMattingTests.test_idempotency_does_not_repeat_inference_and_package_keeps_model_registry) ... ok
+test_inputs_changed_during_processing_fail_after_pipeline (test_local_matting.NativeMattingTests.test_inputs_changed_during_processing_fail_after_pipeline) ... ok
+test_matting_adapter_cannot_be_used_as_tracker (test_local_matting.NativeMattingTests.test_matting_adapter_cannot_be_used_as_tracker) ... ok
+test_missing_model_rights_blocks_before_inference (test_local_matting.NativeMattingTests.test_missing_model_rights_blocks_before_inference) ... ok
+test_model_evidence_and_settings_tamper_rejected_before_execution (test_local_matting.NativeMattingTests.test_model_evidence_and_settings_tamper_rejected_before_execution) ... ok
+test_overlap_is_preflighted_and_explicit_replace_keeps_audio_aligned (test_local_matting.NativeMattingTests.test_overlap_is_preflighted_and_explicit_replace_keeps_audio_aligned) ... ok
+test_pipeline_preserves_soft_alpha_exact_frames_audio_and_rights (test_local_matting.NativeMattingTests.test_pipeline_preserves_soft_alpha_exact_frames_audio_and_rights) ... ok
+test_protocol_and_rgba_mismatch_roll_back_all_metadata (test_local_matting.NativeMattingTests.test_protocol_and_rgba_mismatch_roll_back_all_metadata) ... ok
+test_rational_fps_scaled_canvas_and_partial_audio_tail (test_local_matting.NativeMattingTests.test_rational_fps_scaled_canvas_and_partial_audio_tail) ... ok
+test_registration_dry_run_and_inspection_do_not_infer (test_local_matting.NativeMattingTests.test_registration_dry_run_and_inspection_do_not_infer) ... ok
+test_registration_requires_local_python_model_evidence (test_local_matting.NativeMattingTests.test_registration_requires_local_python_model_evidence) ... ok
+test_save_failure_cleans_published_video_and_restores_metadata (test_local_matting.NativeMattingTests.test_save_failure_cleans_published_video_and_restores_metadata) ... ok
+test_selected_range_fractional_clock_resampling_and_no_audio (test_local_matting.NativeMattingTests.test_selected_range_fractional_clock_resampling_and_no_audio) ... ok
+test_snapshot_restore_keeps_registered_adapter_and_removes_derived_metadata (test_local_matting.NativeMattingTests.test_snapshot_restore_keeps_registered_adapter_and_removes_derived_metadata) ... ok
+test_source_rotation_sar_and_hdr_are_explicit_in_plan (test_local_matting.NativeMattingTests.test_source_rotation_sar_and_hdr_are_explicit_in_plan) ... ok
+test_source_tamper_wrong_track_and_invalid_range_rejected_before_execution (test_local_matting.NativeMattingTests.test_source_tamper_wrong_track_and_invalid_range_rejected_before_execution) ... ok
+test_worker_network_guard_blocks_lookup_in_isolated_process (test_local_matting.NativeMattingTests.test_worker_network_guard_blocks_lookup_in_isolated_process) ... ok
+test_budget_and_invalid_selection_reject_before_writes (test_fragments.FragmentTests.test_budget_and_invalid_selection_reject_before_writes) ... ok
+test_copy_failure_never_publishes_partial_library_version (test_fragments.FragmentTests.test_copy_failure_never_publishes_partial_library_version) ... ok
+test_different_target_canvas_preserves_native_saved_canvas (test_fragments.FragmentTests.test_different_target_canvas_preserves_native_saved_canvas) ... ok
+test_dry_run_save_and_apply_do_not_write_any_project_or_library_file (test_fragments.FragmentTests.test_dry_run_save_and_apply_do_not_write_any_project_or_library_file) ... ok
+test_evidence_files_and_list_paths_relocated_with_rights_history (test_fragments.FragmentTests.test_evidence_files_and_list_paths_relocated_with_rights_history) ... ok
+test_explicit_font_lut_and_file_caption_resources_are_portable (test_fragments.FragmentTests.test_explicit_font_lut_and_file_caption_resources_are_portable) ... ok
+test_idempotent_replay_and_changed_request_conflict (test_fragments.FragmentTests.test_idempotent_replay_and_changed_request_conflict) ... ok
+test_immutable_versions_search_and_offline_library_move (test_fragments.FragmentTests.test_immutable_versions_search_and_offline_library_move) ... ok
+test_incompatible_clock_color_and_global_context_rejected (test_fragments.FragmentTests.test_incompatible_clock_color_and_global_context_rejected) ... ok
+test_library_native_lock_conflict_and_save_idempotency (test_fragments.FragmentTests.test_library_native_lock_conflict_and_save_idempotency) ... ok
+test_link_and_nested_sequence_dependency_closure (test_fragments.FragmentTests.test_link_and_nested_sequence_dependency_closure) ... ok
+test_locked_track_collision_and_instance_reuse_rejected (test_fragments.FragmentTests.test_locked_track_collision_and_instance_reuse_rejected) ... ok
+test_manifest_traversal_and_unlisted_runtime_resource_reject (test_fragments.FragmentTests.test_manifest_traversal_and_unlisted_runtime_resource_reject) ... ok
+test_missing_asset_or_rights_dependency_rejects_without_library (test_fragments.FragmentTests.test_missing_asset_or_rights_dependency_rejects_without_library) ... ok
+test_nonzero_author_clock_marker_and_plain_text_not_id_replaced (test_fragments.FragmentTests.test_nonzero_author_clock_marker_and_plain_text_not_id_replaced) ... ok
+test_ordinary_late_failure_rolls_back_project_ledger_and_copied_files (test_fragments.FragmentTests.test_ordinary_late_failure_rolls_back_project_ledger_and_copied_files) ... ok
+test_partial_ducking_bus_rejects_but_complete_sequence_keeps_processing (test_fragments.FragmentTests.test_partial_ducking_bus_rejects_but_complete_sequence_keeps_processing) ... ok
+test_project_native_lock_conflict (test_fragments.FragmentTests.test_project_native_lock_conflict) ... ok
+test_real_cross_project_video_and_pcm_match_isolated_author_clock_reference (test_fragments.FragmentTests.test_real_cross_project_video_and_pcm_match_isolated_author_clock_reference) ... ok
+test_rights_only_model_parent_is_copied_without_model_execution_or_weights (test_fragments.FragmentTests.test_rights_only_model_parent_is_copied_without_model_execution_or_weights) ... ok
+test_rights_revisions_restrictions_and_disposition_history_keep_publish_block (test_fragments.FragmentTests.test_rights_revisions_restrictions_and_disposition_history_keep_publish_block) ... ok
+test_same_name_different_bytes_and_repeated_instances_keep_source_immutable (test_fragments.FragmentTests.test_same_name_different_bytes_and_repeated_instances_keep_source_immutable) ... ok
+test_selected_source_transition_closure_renders_original_video_and_pcm (test_fragments.FragmentTests.test_selected_source_transition_closure_renders_original_video_and_pcm) ... ok
+test_stale_project_and_fragment_plan_hashes_rejected (test_fragments.FragmentTests.test_stale_project_and_fragment_plan_hashes_rejected) ... ok
+test_tampered_source_asset_and_library_resource_rejected (test_fragments.FragmentTests.test_tampered_source_asset_and_library_resource_rejected) ... ok
+test_tracking_binding_source_is_selected_and_rebound_without_model (test_fragments.FragmentTests.test_tracking_binding_source_is_selected_and_rebound_without_model) ... ok
+test_unknown_runtime_clip_reference_rejects_insertion (test_fragments.FragmentTests.test_unknown_runtime_clip_reference_rejects_insertion) ... ok
+test_unpublished_staging_manifest_is_never_a_visible_library_version (test_fragments.FragmentTests.test_unpublished_staging_manifest_is_never_a_visible_library_version) ... ok
+test_version_directory_junction_cannot_escape_the_library_root (test_fragments.FragmentTests.test_version_directory_junction_cannot_escape_the_library_root) ... ok
+test_calendar_and_offset_valid_dates (test_schema_contract.BundledSchemaTests.test_calendar_and_offset_valid_dates) ... ok
+test_changed_resource_is_rejected_by_real_bytes (test_schema_contract.BundledSchemaTests.test_changed_resource_is_rejected_by_real_bytes) ... ok
+test_contract_packaged_and_documented_bytes_match (test_schema_contract.BundledSchemaTests.test_contract_packaged_and_documented_bytes_match) ... ok
+test_doctor_rejects_missing_executor_version_remains_diagnosable (test_schema_contract.BundledSchemaTests.test_doctor_rejects_missing_executor_version_remains_diagnosable) ... ok
+test_export_dry_run_does_not_create_parent (test_schema_contract.BundledSchemaTests.test_export_dry_run_does_not_create_parent) ... ok
+test_export_exact_bytes_and_existing_target_preserved (test_schema_contract.BundledSchemaTests.test_export_exact_bytes_and_existing_target_preserved) ... ok
+test_export_remote_target_rejected (test_schema_contract.BundledSchemaTests.test_export_remote_target_rejected) ... ok
+test_external_refs_cannot_retrieve_network_or_external_files (test_schema_contract.BundledSchemaTests.test_external_refs_cannot_retrieve_network_or_external_files) ... ok
+test_format_failure_cases_in_actual_validator (test_schema_contract.BundledSchemaTests.test_format_failure_cases_in_actual_validator) ... ok
+test_invalid_meta_schema_has_structured_error (test_schema_contract.BundledSchemaTests.test_invalid_meta_schema_has_structured_error) ... ok
+test_missing_executor_is_error_and_preserves_semantic_diagnostics (test_schema_contract.BundledSchemaTests.test_missing_executor_is_error_and_preserves_semantic_diagnostics) ... ok
+test_missing_resource_never_searches_source_repo (test_schema_contract.BundledSchemaTests.test_missing_resource_never_searches_source_repo) ... ok
+test_nonstring_date_is_rejected_by_schema_type (test_schema_contract.BundledSchemaTests.test_nonstring_date_is_rejected_by_schema_type) ... ok
+test_overlay_enum_requires_an_explicit_native_pipeline_in_the_actual_schema (test_schema_contract.BundledSchemaTests.test_overlay_enum_requires_an_explicit_native_pipeline_in_the_actual_schema) ... ok
+test_real_cli_rejects_previously_accepted_invalid_date (test_schema_contract.BundledSchemaTests.test_real_cli_rejects_previously_accepted_invalid_date) ... ok
+test_show_and_validate_are_independent_of_cwd (test_schema_contract.BundledSchemaTests.test_show_and_validate_are_independent_of_cwd) ... ok
+test_unsupported_format_rejected_instead_of_silently_ignored (test_schema_contract.BundledSchemaTests.test_unsupported_format_rejected_instead_of_silently_ignored) ... ok
+
+======================================================================
+ERROR: test_array_budget_rejects_before_neural_batch (test_lipsync.PixelTests.test_array_budget_rejects_before_neural_batch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 72, in test_array_budget_rejects_before_neural_batch
+    with self.assertRaisesRegex(ValueError,'BUDGET'):self.run_frames(budget=1,model=Never())
+                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 38, in run_frames
+    metrics=process_frames(source,destination,width=64,height=48,frames=frames,boxes=box(),options=options or planning.options(mask_top=0,feather_pixels=0),predictor=model or Model(),batch_size=2,budget=budget)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\lipsync_frames.py", line 13, in process_frames
+    import cv2
+ModuleNotFoundError: No module named 'cv2'
+
+======================================================================
+ERROR: test_feather_stays_inside_explicit_box (test_lipsync.PixelTests.test_feather_stays_inside_explicit_box)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 61, in test_feather_stays_inside_explicit_box
+    original,result,_=self.run_frames(options=planning.options(mask_top=.5,feather_pixels=3))
+                      ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 38, in run_frames
+    metrics=process_frames(source,destination,width=64,height=48,frames=frames,boxes=box(),options=options or planning.options(mask_top=0,feather_pixels=0),predictor=model or Model(),batch_size=2,budget=budget)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\lipsync_frames.py", line 13, in process_frames
+    import cv2
+ModuleNotFoundError: No module named 'cv2'
+
+======================================================================
+ERROR: test_fractional_and_hidden_alpha_and_outside_box_are_bit_exact (test_lipsync.PixelTests.test_fractional_and_hidden_alpha_and_outside_box_are_bit_exact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 43, in test_fractional_and_hidden_alpha_and_outside_box_are_bit_exact
+    original,result,m=self.run_frames(alpha=alpha)
+                      ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 38, in run_frames
+    metrics=process_frames(source,destination,width=64,height=48,frames=frames,boxes=box(),options=options or planning.options(mask_top=0,feather_pixels=0),predictor=model or Model(),batch_size=2,budget=budget)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\lipsync_frames.py", line 13, in process_frames
+    import cv2
+ModuleNotFoundError: No module named 'cv2'
+
+======================================================================
+ERROR: test_invalid_neural_batch_and_semantic_mask_rejected (test_lipsync.PixelTests.test_invalid_neural_batch_and_semantic_mask_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 77, in test_invalid_neural_batch_and_semantic_mask_rejected
+    with self.assertRaisesRegex(ValueError,'FRAME_CONTRACT'):self.run_frames(model=Bad())
+                                                             ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 38, in run_frames
+    metrics=process_frames(source,destination,width=64,height=48,frames=frames,boxes=box(),options=options or planning.options(mask_top=0,feather_pixels=0),predictor=model or Model(),batch_size=2,budget=budget)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\lipsync_frames.py", line 13, in process_frames
+    import cv2
+ModuleNotFoundError: No module named 'cv2'
+
+======================================================================
+ERROR: test_mask_top_protects_upper_face_with_no_feather (test_lipsync.PixelTests.test_mask_top_protects_upper_face_with_no_feather)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 57, in test_mask_top_protects_upper_face_with_no_feather
+    original,result,m=self.run_frames(options=planning.options(mask_top=.5,feather_pixels=0))
+                      ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 38, in run_frames
+    metrics=process_frames(source,destination,width=64,height=48,frames=frames,boxes=box(),options=options or planning.options(mask_top=0,feather_pixels=0),predictor=model or Model(),batch_size=2,budget=budget)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\lipsync_frames.py", line 13, in process_frames
+    import cv2
+ModuleNotFoundError: No module named 'cv2'
+
+======================================================================
+ERROR: test_partial_pipe_reads_produce_the_same_complete_frames (test_lipsync.PixelTests.test_partial_pipe_reads_produce_the_same_complete_frames)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 90, in test_partial_pipe_reads_produce_the_same_complete_frames
+    original,expected,_=self.run_frames();sink=io.BytesIO()
+                        ~~~~~~~~~~~~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 38, in run_frames
+    metrics=process_frames(source,destination,width=64,height=48,frames=frames,boxes=box(),options=options or planning.options(mask_top=0,feather_pixels=0),predictor=model or Model(),batch_size=2,budget=budget)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\lipsync_frames.py", line 13, in process_frames
+    import cv2
+ModuleNotFoundError: No module named 'cv2'
+
+======================================================================
+ERROR: test_semantic_zero_mask_is_identity_even_when_prediction_changes (test_lipsync.PixelTests.test_semantic_zero_mask_is_identity_even_when_prediction_changes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 54, in test_semantic_zero_mask_is_identity_even_when_prediction_changes
+    a,b,m=self.run_frames(model=Zero());np.testing.assert_array_equal(a,b);self.assertEqual(m['changed_RGB_pixels'],0)
+          ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 38, in run_frames
+    metrics=process_frames(source,destination,width=64,height=48,frames=frames,boxes=box(),options=options or planning.options(mask_top=0,feather_pixels=0),predictor=model or Model(),batch_size=2,budget=budget)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\lipsync_frames.py", line 13, in process_frames
+    import cv2
+ModuleNotFoundError: No module named 'cv2'
+
+======================================================================
+ERROR: test_short_write_rejected (test_lipsync.PixelTests.test_short_write_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 85, in test_short_write_rejected
+    with self.assertRaisesRegex(ValueError,'SHORT_OUTPUT_WRITE'):self.run_frames(sink=Short())
+                                                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 38, in run_frames
+    metrics=process_frames(source,destination,width=64,height=48,frames=frames,boxes=box(),options=options or planning.options(mask_top=0,feather_pixels=0),predictor=model or Model(),batch_size=2,budget=budget)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\lipsync_frames.py", line 13, in process_frames
+    import cv2
+ModuleNotFoundError: No module named 'cv2'
+
+======================================================================
+ERROR: test_truncated_and_extra_frames_rejected (test_lipsync.PixelTests.test_truncated_and_extra_frames_rejected) (size=61439)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 67, in test_truncated_and_extra_frames_rejected
+    with self.subTest(size=len(raw)),self.assertRaisesRegex(ValueError,'SOURCE_(TRUNCATED|EXTRA)'):self.run_frames(raw=raw)
+                                                                                                   ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 38, in run_frames
+    metrics=process_frames(source,destination,width=64,height=48,frames=frames,boxes=box(),options=options or planning.options(mask_top=0,feather_pixels=0),predictor=model or Model(),batch_size=2,budget=budget)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\lipsync_frames.py", line 13, in process_frames
+    import cv2
+ModuleNotFoundError: No module named 'cv2'
+
+======================================================================
+ERROR: test_truncated_and_extra_frames_rejected (test_lipsync.PixelTests.test_truncated_and_extra_frames_rejected) (size=61441)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 67, in test_truncated_and_extra_frames_rejected
+    with self.subTest(size=len(raw)),self.assertRaisesRegex(ValueError,'SOURCE_(TRUNCATED|EXTRA)'):self.run_frames(raw=raw)
+                                                                                                   ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 38, in run_frames
+    metrics=process_frames(source,destination,width=64,height=48,frames=frames,boxes=box(),options=options or planning.options(mask_top=0,feather_pixels=0),predictor=model or Model(),batch_size=2,budget=budget)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\lipsync_frames.py", line 13, in process_frames
+    import cv2
+ModuleNotFoundError: No module named 'cv2'
+
+======================================================================
+ERROR: test_complete_actual_qtrle_and_float_pcm_transport_and_cleanup (test_lipsync.TransportTests.test_complete_actual_qtrle_and_float_pcm_transport_and_cleanup)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 189, in test_complete_actual_qtrle_and_float_pcm_transport_and_cleanup
+    stage,result=self.execute();self.assertTrue(result['rgba_roundtrip_verified']);self.assertTrue(result['complete_PCM_roundtrip_verified'])
+                 ~~~~~~~~~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 187, in execute
+    return execute(self.root,job,self.plan,self.source,self.audio,self.adapter,timeout=timeout,cancel_file=marker)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\lipsync_pipeline.py", line 112, in execute
+    if any(p.poll()!=0 for p in processes):raise AppError('LIPSYNC_PIPELINE_FAILED','原生口型同步管道失败',exit_code=6,cause=diagnostic.failure_text())
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ai_ad_editor.errors.AppError: 原生口型同步管道失败
+
+======================================================================
+FAIL: test_actual_transport_registers_two_editable_linked_tracks_and_rerun_plan (test_lipsync.CLITests.test_actual_transport_registers_two_editable_linked_tracks_and_rerun_plan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 249, in test_actual_transport_registers_two_editable_linked_tracks_and_rerun_plan
+    self.assertEqual(code,0,value);clips=value['data']['clips'];self.assertEqual(len(clips),2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+AssertionError: 6 != 0 : {'ok': False, 'command': 'lipsync.generate', 'request_id': 'req_20261027084139_5692962e', 'operation_id': 'op_20261027084138_f1c262c6', 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'LIPSYNC_PIPELINE_FAILED', 'message': '原生口型同步管道失败', 'path': None, 'retryable': False, 'cause': '<unavailable-failure-text>\n[vost#0:0/rawvideo @ 000001d4c027b340] Error submitting a packet to the muxer: Broken pipe\r\n    Last message repeated 1 times\r\n[out#0/rawvideo @ 000001d4c0306bc0] Error muxing a packet\r\n[out#0/rawvideo @ 000001d4c0306bc0] Task finished with error code: -32 (Broken pipe)\r\n[out#0/rawvideo @ 000001d4c0306bc0] Terminating thread with return code -32 (Broken pipe)\r\n[out#0/rawvideo @ 000001d4c0306bc0] Error writing trailer: Broken pipe\r\n[out#0/rawvideo @ 000001d4c0306bc0] Error closing file: Broken pipe\r\n\nTraceback (most recent call last):\r\n  File "<redacted-local-path>", line 7, in <module>\r\n    import numpy as np\r\nModuleNotFoundError: No module named \'numpy\'\r\n\n', 'operation_id': 'op_20261027084138_f1c262c6', 'diagnostics': {'protocol': 'agent-native-pipeline-diagnostic-v1', 'status': 'stored', 'diagnostic_id': 'diag_de04ac6bb21046b3aa5b9c227740fa44', 'manifest': 'renders/diagnostics/pipelines/diag_de04ac6bb21046b3aa5b9c227740fa44/manifest.json', 'manifest_sha256': 'sha256:a2b395b64f445bb12291c319409677dc4081e87d293f6b7251e47cdb94d94935', 'warnings': []}}], 'provenance': {'cli_version': '0.1.42', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-10-27T08:41:39.949585Z', 'finished_at': '2026-10-27T08:41:39.949601Z', 'network': 'disabled'}}
+
+======================================================================
+FAIL: test_validation_failure_after_publication_rolls_back_asset_and_metadata (test_lipsync.CLITests.test_validation_failure_after_publication_rolls_back_asset_and_metadata)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 261, in test_validation_failure_after_publication_rolls_back_asset_and_metadata
+    self.assertEqual(code,2,value);self.assertEqual(before,self.metadata());self.assertFalse((self.root/'assets/derived/generated.mov').exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+AssertionError: 6 != 2 : {'ok': False, 'command': 'lipsync.generate', 'request_id': 'req_20261027084151_f46ce76a', 'operation_id': 'op_20261027084149_cc94b919', 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'LIPSYNC_PIPELINE_FAILED', 'message': '原生口型同步管道失败', 'path': None, 'retryable': False, 'cause': '<unavailable-failure-text>\n[vost#0:0/rawvideo @ 0000019cadc5b340] Error submitting a packet to the muxer: Broken pipe\r\n    Last message repeated 1 times\r\n[out#0/rawvideo @ 0000019cadce6bc0] Error muxing a packet\r\n[out#0/rawvideo @ 0000019cadce6bc0] Task finished with error code: -32 (Broken pipe)\r\n[out#0/rawvideo @ 0000019cadce6bc0] Terminating thread with return code -32 (Broken pipe)\r\n[out#0/rawvideo @ 0000019cadce6bc0] Error writing trailer: Broken pipe\r\n[out#0/rawvideo @ 0000019cadce6bc0] Error closing file: Broken pipe\r\n\nTraceback (most recent call last):\r\n  File "<redacted-local-path>", line 7, in <module>\r\n    import numpy as np\r\nModuleNotFoundError: No module named \'numpy\'\r\n\n', 'operation_id': 'op_20261027084149_cc94b919', 'diagnostics': {'protocol': 'agent-native-pipeline-diagnostic-v1', 'status': 'stored', 'diagnostic_id': 'diag_1763200a49424d088dd923acce8dd127', 'manifest': 'renders/diagnostics/pipelines/diag_1763200a49424d088dd923acce8dd127/manifest.json', 'manifest_sha256': 'sha256:352c25102662a5ba4c544d1f0b754b3cfca4ab71d2fe8bc54973853dbfe8bff4', 'warnings': []}}], 'provenance': {'cli_version': '0.1.42', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-10-27T08:41:51.329850Z', 'finished_at': '2026-10-27T08:41:51.329856Z', 'network': 'disabled'}}
+
+======================================================================
+FAIL: test_forged_alpha_response_is_rejected (test_lipsync.TransportTests.test_forged_alpha_response_is_rejected)
+----------------------------------------------------------------------
+ai_ad_editor.errors.AppError: 原生口型同步管道失败
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 197, in test_forged_alpha_response_is_rejected
+    with self.assertRaisesRegex(AppError,'协议校验'):self.execute('bad')
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "协议校验" does not match "原生口型同步管道失败"
+
+======================================================================
+FAIL: test_timeout_kills_owned_children (test_lipsync.TransportTests.test_timeout_kills_owned_children)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 201, in test_timeout_kills_owned_children
+    self.assertEqual(caught.exception.code,'TIMEOUT');self.assertLess(time.monotonic()-started,15)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'LIPSYNC_PIPELINE_FAILED' != 'TIMEOUT'
+- LIPSYNC_PIPELINE_FAILED
++ TIMEOUT
+
+
+----------------------------------------------------------------------
+Ran 143 tests in 252.837s
+
+FAILED (failures=4, errors=11)

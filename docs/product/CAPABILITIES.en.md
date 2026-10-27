@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.41 / alpha.4-local.39 / r42 kit · 1 Skill / 17 modules / 80 files.**
+**CLI0.1.42 / alpha.4-local.40 / r43 kit · 1 Skill / 17 modules / 81 files.**
 
-Adds **actual local CUDA neural lip sync**: MuseTalk1.5, Whisper-tiny, VAE and BiSeNet drive a supplied portrait/video from separate speech. Explicit25FPS face-box keys, complete selected PCM, rerunnable recipes and independent linked video/audio clips remain editable.
+Adds **actual native CUDA RIFE4.25 interpolation and editable slow motion**: native CFR/VFR PTS, every frame duration, all original RGBA anchors and selected original PCM remain intact. Integer2..8 factors,explicit cut holds,premultiplied alpha,rerunnable recipes and linked tracks.
 
-[Neural lip-sync workflow and limits](LIP_SYNC.md)
+[Native interpolation workflow and limits](NEURAL_INTERPOLATION.md)
 
 <!-- /community-current -->
 
@@ -81,6 +81,7 @@ Adds **actual local CUDA neural lip sync**: MuseTalk1.5, Whisper-tiny, VAE and B
 | F65 | Highlight Bloom / film Halation | Actual soft-knee highlight extraction→separable Gaussian spread→core suppression/linear tint; editable numeric author-clock tracks in clips or selected-root adjustment intervals. | `effects list/inspect; timeline compose; preview; render; queue` | sigma0…32 input pixels; transparent/clamp edges; alpha bits preserved; actual four-kernel GPU or CPU reference; bounded workspace/visits; physical film/HDR unaccepted. |
 | F66 | Native PQ/HLG HDR and SDR viewing | Explicit reference white/HLG peak/gamma → display-linear edits; mixed-nit assets, ordinary effects/composition and10-bit BT.2020 NCL delivery; separate SDR trim and PNG/MP4 previews. | `timeline compose; validate; preview; render; convert` | CPU transfer math; existing GPU composition/effects; rejects8-bit/mismatched tags/missing units; alpha bits retained. ICC/dynamic metadata/HDR monitoring unaccepted. |
 | F67 | Local neural lip sync | Image/video + separate speech → actual CUDA MuseTalk mouth;25FPS box keys, semantic lower-face blend, complete PCM/alpha, rerunnable recipe and linked editable video/audio clips. | `lipsync adapter register/list/inspect; lipsync generate` | Explicit local safetensors/native Torch runtime;256×256 face,8bit SDR/source motion,no CPU fallback; natural quality/full digital human remain open. |
+| F68 | CUDA neural interpolation / slow motion | Native CFR/VFR,all original RGBA anchors,premultiplied alpha,complete PCM;factor2..8,cut holds,linked slow-motion tracks,recipes/packages. | `interpolate adapter; interpolate generate` | Explicit RIFE4.25 safetensors/native CUDA Python;no CPU fallback;difficult motion/occlusion/natural-quality/HDR acceptance open. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -106,6 +107,7 @@ Adds **actual local CUDA neural lip sync**: MuseTalk1.5, Whisper-tiny, VAE and B
 | S20 | Joint subtitle dubbing | Existing native OPUS/Kokoro workers + managed project transaction | Plain SRT, explicit languages/voices/tracks, CPU/CUDA/auto, batch reuse | `dub subtitles` | [Workflow](SUBTITLE_DUBBING.md); complete utterances/retries retained; words/lip sync/natural quality open |
 | S21 | Local resident GPU inference session | Native process, authenticated Windows named pipe, JSON/raw frames, overlapping deny-write locks and lifecycle watchdog. | Existing local VACE adapter, repeated variants of one prompt. | `media model-session start/status/stop` | No network port; serial per project; initial loading and reuse of other models remain limited. |
 | S22 | MuseTalk CUDA neural mouth service | Local Whisper-tiny, MuseTalk1.5 UNet, SD VAE and BiSeNet; fixed safetensors, deny-write locks and owned native cleanup. | Explicit existing native Torch/Diffusers/Transformers/OpenCV and model evidence; no automatic install. | `lipsync adapter; lipsync generate` | 256×256 face/25FPS; rights,naturalness,full digital human and HDR acceptance remain separate. |
+| S23 | RIFE CUDA interpolation | Fixed five-stage IFNet/158 FP32 inference tensors,local artifact hashes,actual CUDA;no model-directory code/Pickle. | Existing native Torch/safetensors and MIT model evidence;no installation. | `interpolate adapter; interpolate generate` | Native interval subdivision,complete frame/PCM proofs;RGB threshold is not semantic cuts;quality review required. |
 
 ## Complete installed capability fields
 
@@ -5109,3 +5111,61 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 ```
 
 [CLI0.1.41 exact installed capability snapshot](lip-sync-capabilities-cli-0.1.41.json).
+
+### `native_neural_interpolation`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "agent-native-frame-interpolation-v1",
+  "engine": "rife425-native-cuda-v1",
+  "commands": [
+    "interpolate.adapter.register",
+    "interpolate.adapter.list",
+    "interpolate.adapter.inspect",
+    "interpolate.generate"
+  ],
+  "features": [
+    "actual_RIFE4_25_CUDA_flow",
+    "native_CFR_VFR_PTS_and_packet_duration_subdivision",
+    "arbitrary_integer_factor_2_to_8",
+    "all_original_RGBA_anchors_bit_exact",
+    "premultiplied_RGBA_flow_transport",
+    "explicit_and_RGB_difference_cut_holds",
+    "original_selected_PCM_and_explicit_zero_padding",
+    "portable_rerunnable_recipe",
+    "linked_editable_slow_motion",
+    "owned_cancel_timeout_recovery"
+  ],
+  "limits": {
+    "selected_duration_seconds": 600,
+    "selected_source_frames": 15000,
+    "output_frames": 120000,
+    "raster_edge_pixels": 4096,
+    "owned_CPU_array_bytes": 536870912,
+    "maximum_asset_bytes": 2147483648,
+    "scale": [
+      0.25,
+      0.5,
+      1,
+      2
+    ]
+  },
+  "clock": "actual_source_PTS;each_native_interval_split_equally;last_interval_hold;nearest_original_PCM_sample_boundary",
+  "network": false,
+  "model_downloads": false,
+  "CPU_fallback": false,
+  "weight_format": "fixed_158_tensor_FP32_safetensors",
+  "unsupported": [
+    "native_HDR_or_ICC_inference",
+    "semantic_scene_cut_oracle",
+    "automatic_occlusion_or_naturalness_acceptance",
+    "extrapolated_last_interval",
+    "cross_device_bit_determinism",
+    "full_G10_or_CapCut_parity"
+  ],
+  "goal_G10_complete": false
+}
+```
+
+[CLI0.1.42 exact installed capability snapshot](neural-interpolation-capabilities-cli-0.1.42.json).

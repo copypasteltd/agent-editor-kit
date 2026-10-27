@@ -961,3 +961,17 @@ Actual installed CUDA inference, not a synthetic worker. Full package reimport p
 [Moving input](../assets/native-lipsync-20261027-r1/moving-source.mov) · [Moving box keys](../assets/native-lipsync-20261027-r1/moving-boxes.json) · [Moving output MP4](../assets/native-lipsync-20261027-r1/moving-spoken.mp4) · [Source/provenance](../assets/native-lipsync-20261027-r1/SOURCE.txt) · [All media hashes](../assets/native-lipsync-20261027-r1/media-manifest.json) · [Workflow and dependencies](LIP_SYNC.md) · [Detailed evidence](../validation/本地神经口型实测_2026-10-27.md).
 
 First/middle/last stills visibly vary the mouth; generated lower-face detail is softer than the source. No continuous human playback, listening, naturalness, perceptual synchronization, identity/occlusion, full-body performance, HDR inference or complete digital-human/product acceptance is claimed. Source, voice, model and generated-asset rights remain separate. The model's trained face raster is256×256; explicit boxes require shot review.
+
+<a id="c52-native-neural-interpolation"></a>
+
+## C52 · CUDA神经补帧 / 神經補幀 / Native neural interpolation
+
+实际注册CLI0.1.42/单入口Skill，RTX3060真正RIFE4.25 CUDA。CC-BY-3.0《Sintel》12..14秒动画片段缩至320×180：24FPS原参考的偶数帧组成12FPS/24帧输入，奇数帧不提供给模型。4倍补帧得到96帧/48FPS/2秒，69次实际forward；可编辑0.25倍慢放为8秒，原始源帧RGBA全部相同。
+
+獨立23張原始中間影格平均MSE：模型12.2806、重複24.3586、線性混合14.8733。模型22/23優於重複、13/23優於混合，末段pair22有明顯人臉重影，保留失敗；該處明確保持使MSE169.2437降至5.6454，代價是停頓，不視為自然補幀品質通過。另有原創CC0透明VFR診斷12→36影格，明確切鏡、全部原RGBA/PTS/持續時間及105840原始Float32 PCM標量保留，模型forward20次。
+
+Actual installed output and original/held-out sources are distinct. The editable package preserves both initial masters/recipes; complete ordinary rendered RGBA and decoded PCM match after import. Alternate explicit-hold output is a separate companion. Real CUDA cancellation after emitted neural frames reclaims all three children, rolls back metadata and leaves no partial asset. No continuous human playback/listening or live-action/natural-quality acceptance is claimed.
+
+![Actual slowed source versus neural output](../assets/native-interpolation-20261027-r1/comparison.gif)
+
+[Playable slow-motion edit](../assets/native-interpolation-20261027-r1/slow-motion.mp4) · [Original24FPS reference](../assets/native-interpolation-20261027-r1/original-reference.mp4) · [Lossless full reference](../assets/native-interpolation-20261027-r1/original-reference.mov) · [Actual12FPS model input](../assets/native-interpolation-20261027-r1/sparse-source.mov) · [Original transparentVFR + stereoPCM](../assets/native-interpolation-20261027-r1/alpha-vfr-source.mov) · [Editable package + masters/recipes](../assets/native-interpolation-20261027-r1/editable-interpolation.aevpkg.zip) · [Retained failure/hold comparison](../assets/native-interpolation-20261027-r1/failure-and-hold.png) · [Worst original/model/error4x](../assets/native-interpolation-20261027-r1/held-out-worst.png) · [Separate hold alternative](../assets/native-interpolation-20261027-r1/explicit-hold-slow.mp4) · [Source/license](../assets/native-interpolation-20261027-r1/SOURCE.txt) · [Exact media hashes/clocks](../assets/native-interpolation-20261027-r1/media-manifest.json) · [Workflow](NEURAL_INTERPOLATION.md) · [Evidence](../validation/本地神经补帧实测_2026-10-27.md)

@@ -1,0 +1,3957 @@
+{
+  "status": "passed",
+  "at_utc": "2026-10-27T09:52:47.551233+00:00",
+  "baseline_commit": "656d136f2677d7ce07c4bb9734370cc7f9147e50",
+  "staged_files": 342,
+  "compared_files": 657,
+  "tested_product_files": 257,
+  "skill_files": 81,
+  "staged_bytes_equal_disk": true,
+  "historical_goal_conditions_preserved": 38,
+  "goal_complete": false,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 106751,
+      "sha256": "da4a1954ba5bb703f81d8dcc7692aa4300296caf72796930d8542560697e325d",
+      "staged_change": true
+    },
+    {
+      "path": "README.en.md",
+      "bytes": 230559,
+      "sha256": "3510e685c5f5ab2f7af38c5f0db06cc394e88f58c0192a8e0f6cc6e48bc44cf0",
+      "staged_change": true
+    },
+    {
+      "path": "README.md",
+      "bytes": 215230,
+      "sha256": "f70cfbad5e411e0723894843eaa59e7bafeb280a162c80fd5300ac151c97d452",
+      "staged_change": true
+    },
+    {
+      "path": "README.zh-TW.md",
+      "bytes": 216453,
+      "sha256": "d46041c1b0436284f0cab0d84119afa9242f8e74a4161c8a3629b5738482897f",
+      "staged_change": true
+    },
+    {
+      "path": "agent-ffmpeg-local-install-manifest.json",
+      "bytes": 27775,
+      "sha256": "b0eb3c5254e16ebb6d8c801efd2f6d5d0f8bff3cbeaca4217a976e1977b180bd",
+      "staged_change": true
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 15076,
+      "sha256": "91abb7a2944f9c528ce67e81190e4f0ff23c955a9199860922ed8fcbc957ec7e",
+      "staged_change": true
+    },
+    {
+      "path": "docs/assets/native-interpolation-20261027-r1/SOURCE.txt",
+      "bytes": 678,
+      "sha256": "1f94e64a1326ea38cf3474ee0638cc2e2a78360eef465363bad495b7b9ca1791",
+      "staged_change": true
+    },
+    {
+      "path": "docs/assets/native-interpolation-20261027-r1/alpha-vfr-source.mov",
+      "bytes": 684781,
+      "sha256": "5ca7a074d05c6e39d6e9ee40882c1b74c3135a8aa1624055ff9941509edc7c23",
+      "staged_change": true
+    },
+    {
+      "path": "docs/assets/native-interpolation-20261027-r1/comparison.gif",
+      "bytes": 6569955,
+      "sha256": "c6f90e5a50f3629744022c4458ca92bf1a5e7ba11e733b382f9431d62cdb796b",
+      "staged_change": true
+    },
+    {
+      "path": "docs/assets/native-interpolation-20261027-r1/comparison.png",
+      "bytes": 70453,
+      "sha256": "e9422bd43dc87c0a6a51903fa39467e4425dc1e40aefb00aaadc30a09e704fcf",
+      "staged_change": true
+    },
+    {
+      "path": "docs/assets/native-interpolation-20261027-r1/editable-interpolation.aevpkg.zip",
+      "bytes": 9186478,
+      "sha256": "28839576111015838a2930c0e5d7697c5bedf4004bedce272afe1936c185a473",
+      "staged_change": true
+    },
+    {
+      "path": "docs/assets/native-interpolation-20261027-r1/explicit-hold-slow.mp4",
+      "bytes": 135790,
+      "sha256": "9ca20a9fa8b48a895807dc203cec630643213bbcd4f1122899d4c379eb065380",
+      "staged_change": true
+    },
+    {
+      "path": "docs/assets/native-interpolation-20261027-r1/failure-and-hold.png",
+      "bytes": 173595,
+      "sha256": "d45c1177b647a5c5edaef8d2ae6bc61318bcebb9e2938684de821d2d86961db3",
+      "staged_change": true
+    },
+    {
+      "path": "docs/assets/native-interpolation-20261027-r1/held-out-worst.png",
+      "bytes": 199023,
+      "sha256": "d58deaee9645c05729a115f880ff46ca1de404808002baa538a69d9d60ab1724",
+      "staged_change": true
+    },
+    {
+      "path": "docs/assets/native-interpolation-20261027-r1/media-manifest.json",
+      "bytes": 21228,
+      "sha256": "6c0ebda23194093ba2217ec269c71d3839c439d0702c78305a561bcb1505e44a",
+      "staged_change": true
+    },
+    {
+      "path": "docs/assets/native-interpolation-20261027-r1/original-reference.mov",
+      "bytes": 6473248,
+      "sha256": "25004d0a4198d6b76ee6a601aa7fae0aa7768ae078c7270b3f14606b0e3319cb",
+      "staged_change": true
+    },
+    {
+      "path": "docs/assets/native-interpolation-20261027-r1/original-reference.mp4",
+      "bytes": 61944,
+      "sha256": "fdf11673c6eb61cc3cd8a1aa6ff58a5512832bb700fe64660e7f5caa7825f32d",
+      "staged_change": true
+    },
+    {
+      "path": "docs/assets/native-interpolation-20261027-r1/slow-motion.mp4",
+      "bytes": 198558,
+      "sha256": "3fac7d1afe439f962dec7d865d4f6bd1305004d02e755adb44861c808d37af0c",
+      "staged_change": true
+    },
+    {
+      "path": "docs/assets/native-interpolation-20261027-r1/sparse-source.mov",
+      "bytes": 3406440,
+      "sha256": "6d63eee57f3ada9c44b26a9b09ee6d201980296d4199d76472fd5b1ffab2ac01",
+      "staged_change": true
+    },
+    {
+      "path": "docs/product/CAPABILITIES.en.md",
+      "bytes": 195985,
+      "sha256": "8a8f819facb56a2aae6b817aab7212fe18848d6d8380c331e8ee954e7a43fede",
+      "staged_change": true
+    },
+    {
+      "path": "docs/product/CAPABILITIES.md",
+      "bytes": 193244,
+      "sha256": "dad334f998ba2c6d8a10a4f723bbcc32bd7c400ec95b581156279d80f4caa8e5",
+      "staged_change": true
+    },
+    {
+      "path": "docs/product/CAPABILITIES.zh-TW.md",
+      "bytes": 193368,
+      "sha256": "01171ea7a3128acddaa5d768429a71458383fc218e6a2915ede02ff7aa55ac69",
+      "staged_change": true
+    },
+    {
+      "path": "docs/product/CASES.md",
+      "bytes": 128323,
+      "sha256": "f7099b0c7b12e5d84af26582f4c3ad57855e75fa9ee149e6793b32c5ba965139",
+      "staged_change": true
+    },
+    {
+      "path": "docs/product/COMMUNITY_LOCAL_DELIVERY.md",
+      "bytes": 31434,
+      "sha256": "df2f1cf377bb0c3b2bb7ac624832b5c0cd88841906f4147685261e896d6eae97",
+      "staged_change": true
+    },
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "bytes": 49734,
+      "sha256": "a311148770a8868bf46ec92e823cd58c966b1111c2d9a8dd6bd87fd371882269",
+      "staged_change": true
+    },
+    {
+      "path": "docs/product/IMPLEMENTATION_PLAN_20261025.md",
+      "bytes": 21756,
+      "sha256": "97eaa75b34877a352fe3ada0b74299abac4a74b65f03b0e2aa915b227a060627",
+      "staged_change": true
+    },
+    {
+      "path": "docs/product/NEURAL_INTERPOLATION.md",
+      "bytes": 8146,
+      "sha256": "cedbad822de41089b7296e2b417422c6ff92be90431da6169db6aba6b5e6ce9b",
+      "staged_change": true
+    },
+    {
+      "path": "docs/product/SKILLS.en.md",
+      "bytes": 17332,
+      "sha256": "3017a8ca0bb6734bcc4024a10da0ebf0ba891b6cbf7d731147037c073ab7a139",
+      "staged_change": true
+    },
+    {
+      "path": "docs/product/SKILLS.md",
+      "bytes": 16822,
+      "sha256": "4bcf2c22927e07b0221447963a7ee8737b58f915cc9fbfd7432c98087c77204a",
+      "staged_change": true
+    },
+    {
+      "path": "docs/product/SKILLS.zh-TW.md",
+      "bytes": 16861,
+      "sha256": "7fbc9bf120eeba6f9e946a2d389cf0766bc6e900a929750bddd09315bde4e922",
+      "staged_change": true
+    },
+    {
+      "path": "docs/product/neural-interpolation-capabilities-cli-0.1.42.json",
+      "bytes": 136924,
+      "sha256": "f67a6433462b9cf1bce5af53b9d4a760d607f894f4a7dab06bafb4d97189270c",
+      "staged_change": true
+    },
+    {
+      "path": "docs/releases/CLI_0.1.42_LOCAL.md",
+      "bytes": 2766,
+      "sha256": "35623ca2a8147904a74dad27b4046e18417cb5d5187e06d00e67fa4daa318cd0",
+      "staged_change": true
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.en.md",
+      "bytes": 7585,
+      "sha256": "54627492b08339fe82f50281ad344050bcc92698dff840917b3380cff39111c8",
+      "staged_change": true
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.md",
+      "bytes": 7862,
+      "sha256": "6f4d25b08c272abd213dcb9673886c45c8e3b129f19734347eb567ded14c178c",
+      "staged_change": true
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.zh-TW.md",
+      "bytes": 7880,
+      "sha256": "d246ecda682861a9ba55b8a3afc90b467a6fcb5b61676bb31ec1bbf7ec8c8b5c",
+      "staged_change": true
+    },
+    {
+      "path": "docs/skills/agent-editor-kit-community-unified-skill-r43.zip",
+      "bytes": 655201,
+      "sha256": "19bdc69e65e2f46940689e84c5c711ca9508267ba230dd59ffad878dbe0d8a63",
+      "staged_change": true
+    },
+    {
+      "path": "docs/skills/community-unified-skill-package-0.1.42-r43.json",
+      "bytes": 415,
+      "sha256": "502d6a632ae7262e01c258aef79c11f828370aec6d21afd350b9902c4196f274",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/acquisition-metadata.json",
+      "bytes": 265,
+      "sha256": "4c4490ab7071a1b37ba7438a0ddd18c83aec0cbbac46bc9bc2a0802f31002f0c",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/activation-final-r1/activation-and-registration.json",
+      "bytes": 1866,
+      "sha256": "e4d890aa637182679115bdc575a2cb2891951b5c0d5ac9f087de9c0977c69b3f",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/activation-final-r1/activation.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/activation-final-r1/activation.stdout.json",
+      "bytes": 737,
+      "sha256": "e7aec02468931751e290766c900793c109c3c657bb7e3e98a03bacaa63d3b5c9",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/activation-final-r1/executed-generator.py",
+      "bytes": 2803,
+      "sha256": "7897c8b8bd48055517cf9b1939d4eff1f8432f299a062b3649250151ab512329",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/activation-final-r1/kokoro-zh-en-cuda13.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/activation-final-r1/kokoro-zh-en-cuda13.stdout.json",
+      "bytes": 659,
+      "sha256": "6d8c084109e31ab7658f6142cec5c8b54da1ab6ecb4b81648142716baa4f13ef",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/activation-final-r1/kokoro-zh-en-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/activation-final-r1/kokoro-zh-en-int8.stdout.json",
+      "bytes": 655,
+      "sha256": "96fe17e0f8541d612382281f27b88635ade3a02ac60a1f10ccd36e6ed25d9a96",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/activation-final-r1/opus-zh-en-cpu-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/activation-final-r1/opus-zh-en-cpu-int8.stdout.json",
+      "bytes": 660,
+      "sha256": "527c42d5962efeb49013972049a100ab7eb407045552f1d26d1211dd6d68db1a",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/activation-final-r1/opus-zh-en-cuda12-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/activation-final-r1/opus-zh-en-cuda12-int8.stdout.json",
+      "bytes": 666,
+      "sha256": "ec4ebc8c4c7143ab2af0ced7d2a41e38f7a8620d95bb40fcb6fc13fae7270666",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/activation-final-r1/previous-community-runtime.json",
+      "bytes": 797,
+      "sha256": "215495ee2c7f917d3394f3cae9821f4ad74765e1600af1282f1468b9f228b61c",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/activation-final-r1/previous-runtime.json",
+      "bytes": 624,
+      "sha256": "cffc289bd2565ff72af11705a4a5b22f7c86d3efbf8101d852bd9ff6ea6e9774",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/activation-final-r1/registration.json",
+      "bytes": 1024,
+      "sha256": "631827e9654be4290201ecc85153e482a31258c18d3898d8ab28ca36be61bbcb",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/activation-final-r1/registration.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/activation-final-r1/registration.stdout.txt",
+      "bytes": 374,
+      "sha256": "56a537e721b5aafc1bd5253e9cfcdb063e390ef6c49b5016c7b19c52cec4948b",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/activation-final-r1/verification.json",
+      "bytes": 782,
+      "sha256": "2d0cc58b5c70ea1cd3cd65bc9e51e0eb14a19a4c6f463459de7c5c064eee004e",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/alpha-master.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/alpha-output-pcm.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/alpha-source-audio.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/alpha-source-audio.stdout.json",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/alpha-source-pcm.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/alpha-source-video.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/alpha-source-video.stdout.json",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/dry-run.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/dry-run.stdout.json",
+      "bytes": 4619,
+      "sha256": "f4bb41cf57b96ea4b4ceb398bdccc02f655cf0b075fdf7640f8f6ac9bed7d53a",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/executed-generator.py",
+      "bytes": 15052,
+      "sha256": "cae98044965296c03a8b8968d9b4646d5314c77d7d0e20285518446ac4fa7ac7",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/export.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/export.stdout.json",
+      "bytes": 3764,
+      "sha256": "5cf989c50c94ad7dad7cdc698fcec2e9eb55036614232e77026be1980ecf45e2",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/extract-original.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/generate-alpha.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/generate-alpha.stdout.json",
+      "bytes": 21762,
+      "sha256": "1a81170eff1bc70a792b36aab127edacac7fe91512473d2842724e221da93cd1",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/generate-natural.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/generate-natural.stdout.json",
+      "bytes": 19948,
+      "sha256": "961a9456a60df6a1e86e5753327160530ccd4587d81ad77ecf2d884563451100",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/import.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/import.stdout.json",
+      "bytes": 1620,
+      "sha256": "77c5a1ffd9ecf8109841fbf29b8f5b400071579ec2598c72a28a75c365742efd",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/ingest-alpha.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/ingest-alpha.stdout.json",
+      "bytes": 4015,
+      "sha256": "3f1bd2045bf983793419601d093f94ee3ccee2178e8b1fc34848f16a62dfbe89",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/ingest-natural.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/ingest-natural.stdout.json",
+      "bytes": 3154,
+      "sha256": "fa11521a29fac12bcb1076a33c7cd1f4f722aa249fb09e10d7fddf8427df4211",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/init.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/init.stdout.json",
+      "bytes": 670,
+      "sha256": "db41635f9c16ddb4e918f0574388c9d2c9a0de54bd5555da5e66457d284a1d31",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/natural-master.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/original-preview.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/original-preview.stdout.json",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/original-reference.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/original-reference.stdout.json",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/register.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/register.stdout.json",
+      "bytes": 8502,
+      "sha256": "f490a9e2dd349e32098bc60b9154049b0ce08aba112f047c5c6623e036854e4b",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/render.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/render.stdout.json",
+      "bytes": 10882,
+      "sha256": "0a91046476eacbd0a0aadacede93f3d74fce1453475ff89b430470c9b4e58644",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/rendered-pcm.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/rendered-rgba.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/rerun-plan.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/rerun-plan.stdout.json",
+      "bytes": 4355,
+      "sha256": "2a8d4fb0b7929c1a38f83f8e98c1ae7fd9a383f0aca08bf8e507f0a90171826e",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/restored-pcm.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/restored-render.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/restored-render.stdout.json",
+      "bytes": 10862,
+      "sha256": "047f74ae172423d25d444d13573a3fede32c8c2007a5e30b3e2c4e4bd93ed283",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/restored-rgba.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/sparse-source.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/sparse-source.stdout.json",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/validate.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/validate.stdout.json",
+      "bytes": 8375,
+      "sha256": "678e18350023a360868ef542efa6f0f9144842c82b42b809ddef97cbebb7dd57",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/verification.json",
+      "bytes": 111529,
+      "sha256": "d46b0977705585b3130bf5be0f9767e4123a98020a0d0b1e5f1357ca42042729",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/case-r1/version.stdout.json",
+      "bytes": 1168,
+      "sha256": "ad077a1cc43f05760e51987abdec74179a8b917ffc69c41e1d02dab747fb19e1",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/documentation-r1/executed-generator.py",
+      "bytes": 27736,
+      "sha256": "a94b1ee0a2f8359fe89750a49fc8e7b7e1a14b389586990eff4be5e785ac7ba9",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/documentation-r1/verification.json",
+      "bytes": 240,
+      "sha256": "f67780927bac6447e89687d6319dc18d384192c9f115632d1397b9aea41d40a2",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/drive-attempt-r1.json",
+      "bytes": 354,
+      "sha256": "e864e05eb621a12b81f51ca174f394a921a3d2f30b97e40ecd9aa86668de885a",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/final-delivery-r1/executed-generator.py",
+      "bytes": 13390,
+      "sha256": "dc36d8b5b819f9daae086d917ec873e34d686554f3332fe3a506949204bb78b0",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/final-delivery-r1/files.json",
+      "bytes": 69763,
+      "sha256": "257eb96e282f2b748a248c60a080e0e33893b70cb226f7593eabefe39d6b8d55",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/final-delivery-r1/product-files.json",
+      "bytes": 23200,
+      "sha256": "31460b99953d4c4e1c0c64ded4c5a8d98200b6c9f08479fcf03200beddc7ab26",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/final-delivery-r1/verification.json",
+      "bytes": 1150,
+      "sha256": "e2002c76c549d509cf929fa06546c7a38684343bf8131608fc7776c713446416",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installation-final-r1/build.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installation-final-r1/build.stdout.json",
+      "bytes": 448,
+      "sha256": "dc11582064a55f399aa74af6f2de537e1cb09f77949f09c158fe857c144220bb",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installation-final-r1/calls.json",
+      "bytes": 2616,
+      "sha256": "b7790adfc3bd06b82e75aba464d504bd11c7ac172007701892d8be168b9e102d",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installation-final-r1/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installation-final-r1/capabilities.stdout.json",
+      "bytes": 136924,
+      "sha256": "f67a6433462b9cf1bce5af53b9d4a760d607f894f4a7dab06bafb4d97189270c",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installation-final-r1/executed-generator.py",
+      "bytes": 5366,
+      "sha256": "61fe249ff5432e0e0ee2100a734097d7813d081b8245a3d9ecd58f12b660d498",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installation-final-r1/install.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installation-final-r1/install.stdout.json",
+      "bytes": 1709,
+      "sha256": "79ff7de26c05ff5ed99c9d2e2eadc04f5f82a711753a3b09fb32af7425f9aa9d",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installation-final-r1/verification.json",
+      "bytes": 34360,
+      "sha256": "ae6d8df6c968785e6bcfdde3fe15e9d2b49ded9633960572300f3f4b1a60e857",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installation-final-r1/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installation-final-r1/version.stdout.json",
+      "bytes": 1168,
+      "sha256": "4ed80b57ae3bf23170bb9e4ed5c97d681e2f6736ced69747cba687d90c7dea36",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installed-compat-r2/executed-runner.py",
+      "bytes": 6417,
+      "sha256": "702950764d5cd6e2f93f83a0bdb3b99230048940908e8569e3e25b30414cd9f4",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installed-compat-r2/executed-tests/test_fragments.py",
+      "bytes": 31008,
+      "sha256": "d021051b4a5b48deac872e319407c9dae0cb2e7b3c8f1a7ab71704dff756a35f",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installed-compat-r2/executed-tests/test_lipsync.py",
+      "bytes": 20811,
+      "sha256": "a3faae859edbbe238083f5a9261e7b7896b248812a6c79559df83344a374f4fb",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installed-compat-r2/executed-tests/test_local_matting.py",
+      "bytes": 27579,
+      "sha256": "a85debbad735a845fea169643b20b5e583259b7a19cccd588d6405f9f034a9c2",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installed-compat-r2/executed-tests/test_native_audio_clock.py",
+      "bytes": 20014,
+      "sha256": "0537ba3da192665a26d97a3a39eb5a38b05a30adb6d39a0822696fd493e043c8",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installed-compat-r2/executed-tests/test_reverse_video_clock.py",
+      "bytes": 5643,
+      "sha256": "dd18d94102949775b42c2143a40560fe8335505af4e2d881fb038603603ac883",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installed-compat-r2/executed-tests/test_schema_contract.py",
+      "bytes": 8251,
+      "sha256": "cbffcdb7c2e0c5b9d8bd1cc0bed68004cc30a467bb7a08f2fc7aab64bb71c409",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installed-compat-r2/receipts.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installed-compat-r2/tests.log",
+      "bytes": 23361,
+      "sha256": "696a96362f84b2633bbf2af37e71ecf45222db900c9f27856ecf55178dbfa41d",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installed-compat-r2/verification.json",
+      "bytes": 24830,
+      "sha256": "827f5fa08c71281b762552ae82583b2ada1c74ed1720be1596f93190c3b6bc6c",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installed-interpolation-r1/executed-runner.py",
+      "bytes": 6417,
+      "sha256": "702950764d5cd6e2f93f83a0bdb3b99230048940908e8569e3e25b30414cd9f4",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installed-interpolation-r1/executed-tests/test_interpolation.py",
+      "bytes": 21037,
+      "sha256": "53a6a7ccd44c012e125629ed18555a870ac2014184ca8a229711397959171734",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installed-interpolation-r1/receipts.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installed-interpolation-r1/tests.log",
+      "bytes": 4939,
+      "sha256": "27c1a17d34706c4d11789ae3127faf21479929c4646b900fafb1c84a76a747d1",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/installed-interpolation-r1/verification.json",
+      "bytes": 24201,
+      "sha256": "988277c044f74b6d441b5d42cb2c493727accaac71f6453bb1b8de7c90433e20",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r1/calls.json",
+      "bytes": 5082,
+      "sha256": "00cefae446bba71c24de7f57aac44246c7bd79f558d001f9f1e91a297d8cd6fd",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r1/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r1/capabilities.stdout.txt",
+      "bytes": 136924,
+      "sha256": "90facbfa3bb895cf3114432845b15eb8e8f3e06a702b085811b9f6ce47d30d64",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r1/configure.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r1/configure.stdout.txt",
+      "bytes": 873,
+      "sha256": "9b56a58cf81e8a91beb38d65a2c658011fc793ab2341a3d3a9dba5bbb0c83c8c",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r1/emitter-animate-help.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r1/emitter-animate-help.stdout.txt",
+      "bytes": 1503,
+      "sha256": "c64ff3206a89c603431f276032833f818101e5d0227abf072ae7094fea327489",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r1/emitter-properties.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r1/emitter-properties.stdout.txt",
+      "bytes": 3501,
+      "sha256": "0c1a80def1bb5245668ac559fdcbf40b85867ae59e5c81997a0473f8fb9b4b91",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r1/executed-generator.py",
+      "bytes": 18568,
+      "sha256": "ea259fc9b244ecb4f6cfcf36e3207e1d30c962c245e1206af7aadf270f05a180",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r1/expected-verification-timeout.json",
+      "bytes": 264,
+      "sha256": "a880a011113690949d83a702c697baa5fbdc7b89342339a238c3ac3464eb7e8d",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r1/expected-verification-timeout.stderr.txt",
+      "bytes": 2194,
+      "sha256": "70ff3832d1d9e8ca30679e6ca076e0a98a89d4369dcc6fafe0c8c30e308b0595",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r1/expected-verification-timeout.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r1/failure.json",
+      "bytes": 5424,
+      "sha256": "94831de3535aae1133ef00984a5b141136393d7f94c4ef33c4b080200659470c",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r1/register.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r1/register.stdout.txt",
+      "bytes": 361,
+      "sha256": "4968b106920d718a37002909ac3e7da7eead220e3675696d1bafb82eccbda519",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r1/registration.json",
+      "bytes": 1231,
+      "sha256": "9949a2b240bbb8c37b72def8288ebd1f634a9ea70352a58d23bf240dc0da8f00",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r1/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r1/version.stdout.txt",
+      "bytes": 1168,
+      "sha256": "4e9962877bae2db830a52616d9287feee316f7c3a5a871562541cccf2afbc3f3",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/bake-export-dry-run.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/bake-export-dry-run.stdout.txt",
+      "bytes": 740,
+      "sha256": "497a8e159b7ed1c3f42b734c03a442834b19c3db6bc3caf5612419f5382e4936",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/bake-export-plan.json",
+      "bytes": 388,
+      "sha256": "b2b6c29f11870f98186d3ede1d80064163416136e3b80d7dbe60e907c7c6aaf1",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/calls.json",
+      "bytes": 24813,
+      "sha256": "8242c247c13e41ce50bdfbf89ee00855d4bd5153944faab0cef6b7db21a92c7a",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/capabilities.stdout.txt",
+      "bytes": 136924,
+      "sha256": "6d4eff1da03ab862fb1aa439c8fd7efaf2dae06d9ad169055e8b8ca539b292c2",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/configure.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/configure.stdout.txt",
+      "bytes": 873,
+      "sha256": "852d6eb9490f5be3da871d6f7fd7a93f7c73c00313898eb770c1ce7a6d358d09",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/emitter-animate-help.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/emitter-animate-help.stdout.txt",
+      "bytes": 1503,
+      "sha256": "c64ff3206a89c603431f276032833f818101e5d0227abf072ae7094fea327489",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/emitter-properties.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/emitter-properties.stdout.txt",
+      "bytes": 3501,
+      "sha256": "33f82196c3ff682f16a2172b959c069450a6cc44625f48ec5649c5c5c6d9ed1d",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/executed-generator.py",
+      "bytes": 18562,
+      "sha256": "cb075b2e76d47878acd6c13fb8232d5e9082a27549a45147008ccca0aa8dfd3a",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/expected-verification-timeout.json",
+      "bytes": 264,
+      "sha256": "a880a011113690949d83a702c697baa5fbdc7b89342339a238c3ac3464eb7e8d",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/expected-verification-timeout.stderr.txt",
+      "bytes": 2194,
+      "sha256": "b0342b41271bca4d0f29cb41a87dd964616f705c2735d8fd45d97a05d4fdd9a4",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/expected-verification-timeout.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/float-render-dry-run.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/float-render-dry-run.stdout.txt",
+      "bytes": 229426,
+      "sha256": "50ab7478635cf25266293da6988cb8db5ae028d62c0b43b73bbd1737ee3f9219",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/generation-help.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/generation-help.stdout.txt",
+      "bytes": 3429,
+      "sha256": "57932181eb367c617eef7990abcbafa38bd298a08402bc45551fecd002bbe696",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/glow-catalog.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/glow-catalog.stdout.txt",
+      "bytes": 3525,
+      "sha256": "354aeda159cc5021c1c88b6be9c7e71a16d9269d79accbc4c66a111bddf6e3d6",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/glow-film_halation.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/glow-film_halation.stdout.txt",
+      "bytes": 2044,
+      "sha256": "3b0c42f0ce07ca59f96bdbace5703fc7ceab20b35c4a46137842661bec0a2dd5",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/glow-highlight_bloom.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/glow-highlight_bloom.stdout.txt",
+      "bytes": 1945,
+      "sha256": "ba82e0c663e4e8a22e3f68b72f2a86b94decb87aeaed5d85966056cdd3eaaf42",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/import-case.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/import-case.stdout.txt",
+      "bytes": 1629,
+      "sha256": "8c11b03609cdcbadd05795998f57b9f8d4b50187ece69191dc2df366360bf42c",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/import-tracking-edit-case.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/import-tracking-edit-case.stdout.txt",
+      "bytes": 1630,
+      "sha256": "1626fbd27806b26f50bdf3c6717b4e08354bcdeba7320f9f8c153bb28742e451",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/import-visibility-case.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/import-visibility-case.stdout.txt",
+      "bytes": 1638,
+      "sha256": "931b2eabf19ae669266d788a90995081a2b3ba464dfb010902faa9a6c3dbd7ee",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/interpolation-generate-help.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/interpolation-generate-help.stdout.txt",
+      "bytes": 2539,
+      "sha256": "8d454386cb1ffc749baaeb4a12bc7e52e182ac68135911ea3abdbd75817ccff2",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/interpolation-register-help.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/interpolation-register-help.stdout.txt",
+      "bytes": 1981,
+      "sha256": "fea870528e6bb204a16fe32955b764f7f0801fa01adf6bb29ed719da7b97e7d3",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/lipsync-generate-help.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/lipsync-generate-help.stdout.txt",
+      "bytes": 3044,
+      "sha256": "f3a456b206e3fd216d7da3d1926f59beeb3a01048b63cc6c389e30a2844ef10e",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/lipsync-register-help.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/lipsync-register-help.stdout.txt",
+      "bytes": 1903,
+      "sha256": "3a19ab58632171c7a0117f83b4a156bc89180ab26f3b875657cd0eb19fcdf591",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/optical-catalog.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/optical-catalog.stdout.txt",
+      "bytes": 4599,
+      "sha256": "4f7cedf7af05fe19065a611258bbb8b6a576664dac2b032f12abe46f77234931",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/optical-lens_flare.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/optical-lens_flare.stdout.txt",
+      "bytes": 2128,
+      "sha256": "90c4310af16ddee988faf73e21eb9bf69b1346a4f2bd178b419ec37ae38b3f58",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/optical-light_leak.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/optical-light_leak.stdout.txt",
+      "bytes": 1803,
+      "sha256": "0c434410aeb5e9da98757818f1ea4cae9ee4861243c4d186599679bead134836",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/optical-rgb_split.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/optical-rgb_split.stdout.txt",
+      "bytes": 1604,
+      "sha256": "e86a7ba897d2a7698108eaf4136e97119164c5cdb1df8dbc7925f27dacf11a5e",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/particle-apply-help.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/particle-apply-help.stdout.txt",
+      "bytes": 1663,
+      "sha256": "43ee6620e9b570c5862eca08a09a2f25caa3a4b50e7fc18af814ff0724b708ea",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/particle-inspect.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/particle-inspect.stdout.txt",
+      "bytes": 1101,
+      "sha256": "3ecd7836fb25e66d9326f0e88e4eaa2d969172f725dc4d87c26f9224ed6eee3e",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/particle-list.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/particle-list.stdout.txt",
+      "bytes": 4401,
+      "sha256": "3c8489f89da77fa885f177c59b9673485ac8cd7487ea48712533e6435083fa4a",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/register.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/register.stdout.txt",
+      "bytes": 361,
+      "sha256": "6fc96486f1c3d6eeafb01e9772553080c26bc2a5dbf04bd95368d09a9602886f",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/registration.json",
+      "bytes": 1231,
+      "sha256": "c6d265956023182f4b0d1a9c25cefb467f766e9742035b3eb2b77e7ea60e19c4",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/session-start-help.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/session-start-help.stdout.txt",
+      "bytes": 1369,
+      "sha256": "3db6da53d53626194cca142d7147c72cadca1640055ce233d1e44f9940b6b257",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/session-status-help.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/session-status-help.stdout.txt",
+      "bytes": 796,
+      "sha256": "1c30b6497a1ea641eea7586e07f7ae462ce8c8a599a6ca5f94397a43c68f133b",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/session-stop-help.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/session-stop-help.stdout.txt",
+      "bytes": 782,
+      "sha256": "82f5ca16cbb20a09748387dfa84f7ccbcd1199c67185bd6ffd771df602f7ac0f",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/tracking-edit-plan.json",
+      "bytes": 13802,
+      "sha256": "57f3a4e2a33baca73cd962c41c6d3dad6c8899b86ec78e5bd9cb0014db6445bd",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/tracking-visibility-dry-run.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/tracking-visibility-dry-run.stdout.txt",
+      "bytes": 8727,
+      "sha256": "7eb7c6120900aee8a9a4ec732901a5a871a5d49c0ad7ed9937b9ff360999450f",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/transition-help.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/transition-help.stdout.txt",
+      "bytes": 930,
+      "sha256": "6ba1c7e3bc0e34c0363aacbe265838ab48f04a0e6d45976ceea2cfeea2fa80a5",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/validate-tracking-edit-case.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/validate-tracking-edit-case.stdout.txt",
+      "bytes": 814,
+      "sha256": "9b2ab900548475e721a0fd1ec2ee85a76a7ae7f6a3c9616ced01e4ed45ff4849",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/validate-visibility-case.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/validate-visibility-case.stdout.txt",
+      "bytes": 814,
+      "sha256": "ffcd8adfc1693941880683d05174474a04c0254ce832a39653a1b877cba55130",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/validate.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/validate.stdout.txt",
+      "bytes": 814,
+      "sha256": "a05c1c88fe8fe483671f8406684836c2d3b635720728616156bfae4dbb68898d",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/verification.json",
+      "bytes": 45838,
+      "sha256": "119bbb0de75763423c1492a9bf46ab77418c49710b99fd74320181aadcd45a4c",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/version.stdout.txt",
+      "bytes": 1168,
+      "sha256": "c19c830fcc37871275e51b02678ef03f008a1baa5e9d42eafd6342dd2b58b74c",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/visibility-render-plan.json",
+      "bytes": 136157,
+      "sha256": "3fd7e922889bfbed0989ad0613a6f013c6a761e75bc4ee89c8b1f771bb9e8485",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/visibility-render-plan.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/visibility-render-plan.stdout.txt",
+      "bytes": 97416,
+      "sha256": "7d6c8c6c84fd93e5c97040c0ef97098381d7ee9175fca0ab5e6b74d6597b4300",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/mirror-acquisition.json",
+      "bytes": 6665,
+      "sha256": "11c8bc03a95c0067d7b5623fec56598d5b181eeedd521a177e5180647eb0d500",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/private-cuda-probe-attempt-r1.json",
+      "bytes": 116,
+      "sha256": "da221e26ca8ae6779c03e9f4d9864430c131e09d7d512692031bbb480778c487",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/private-cuda-probe.json",
+      "bytes": 2709,
+      "sha256": "97e40aba783827b6ca0a9607515daab8c5e5d983320fd61ac4e2690c8c37ee91",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/private-probe-0.png",
+      "bytes": 32634,
+      "sha256": "27a5825fa2af8d327c9a7f3a861b173148c90005dc83510d1457d434f107cc4f",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/private-probe-1.png",
+      "bytes": 32132,
+      "sha256": "41a298365c91ae560c7f53ab35b5e9ad55f831c216e7ba03cee91fd6dc62e365",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/private-probe-2.png",
+      "bytes": 33349,
+      "sha256": "6b12a806c9f7cfdb9d6a19242e59fa1265a84dd9afb185d388c019e2affdccd0",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/quality-and-cancel-r1/cancel-diagnostic.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/quality-and-cancel-r1/cancel-diagnostic.stdout.json",
+      "bytes": 4674,
+      "sha256": "ee08a162befc4e0266e81d2b07b3b13e78c5183645910e6596e1ec8e9bfdafae",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/quality-and-cancel-r1/cancel.stderr.jsonl",
+      "bytes": 1147,
+      "sha256": "89ce2ecc6e6cd4351be3e2b7ce431585f56b0955b807a5f884438e46515d3fd8",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/quality-and-cancel-r1/cancel.stdout.json",
+      "bytes": 1001,
+      "sha256": "ac2f57ec4581dfab689552578a483aa943fc4a3a1a68781434970b5850c36001",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/quality-and-cancel-r1/executed-generator.py",
+      "bytes": 8795,
+      "sha256": "0134047af556d74e1c52849a96cbd17b2e53c0421113d6b1a316b5f523063a54",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/quality-and-cancel-r1/explicit-hold.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/quality-and-cancel-r1/explicit-hold.stdout.json",
+      "bytes": 23160,
+      "sha256": "ed4c0244954dbd96a305180918e34ff6fb913c9c91472f018c4bd943c3c4fbd6",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/quality-and-cancel-r1/hold-preview.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/quality-and-cancel-r1/hold-preview.stdout.json",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/quality-and-cancel-r1/hold-rgba.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/quality-and-cancel-r1/reference-rgba.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/quality-and-cancel-r1/unprotected-rgba.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/quality-and-cancel-r1/verification.json",
+      "bytes": 20001,
+      "sha256": "65a693ddda0edf2a193737747d47c90330d907ee9ac8640e8aa245542afe6bf1",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/sintel-acquisition.json",
+      "bytes": 479,
+      "sha256": "4d24de8c3a7ce2bfeb1f84606ab733a7de97f349019b1aa38dd1a4bf0aef1980",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/skill-pin-r1/executed-generator.py",
+      "bytes": 2474,
+      "sha256": "5e60856589934f3b373a5b19e30875e872cd03de761c6d5128d0888459da9a35",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/skill-pin-r1/verification.json",
+      "bytes": 335,
+      "sha256": "33e9e0fe9850d7894f1f0fb7714d3a0a32d9b8ed8a50943560ffa74fd18eb0bb",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-compat-r1/executed-runner.py",
+      "bytes": 6417,
+      "sha256": "702950764d5cd6e2f93f83a0bdb3b99230048940908e8569e3e25b30414cd9f4",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-compat-r1/executed-tests/test_fragments.py",
+      "bytes": 31008,
+      "sha256": "d021051b4a5b48deac872e319407c9dae0cb2e7b3c8f1a7ab71704dff756a35f",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-compat-r1/executed-tests/test_lipsync.py",
+      "bytes": 20811,
+      "sha256": "a3faae859edbbe238083f5a9261e7b7896b248812a6c79559df83344a374f4fb",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-compat-r1/executed-tests/test_local_matting.py",
+      "bytes": 27579,
+      "sha256": "a85debbad735a845fea169643b20b5e583259b7a19cccd588d6405f9f034a9c2",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-compat-r1/executed-tests/test_native_audio_clock.py",
+      "bytes": 20014,
+      "sha256": "0537ba3da192665a26d97a3a39eb5a38b05a30adb6d39a0822696fd493e043c8",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-compat-r1/executed-tests/test_reverse_video_clock.py",
+      "bytes": 5643,
+      "sha256": "dd18d94102949775b42c2143a40560fe8335505af4e2d881fb038603603ac883",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-compat-r1/executed-tests/test_schema_contract.py",
+      "bytes": 8251,
+      "sha256": "cbffcdb7c2e0c5b9d8bd1cc0bed68004cc30a467bb7a08f2fc7aab64bb71c409",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-compat-r1/receipts.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-compat-r1/tests.log",
+      "bytes": 42077,
+      "sha256": "8fc69331b5774604cb55e3050890e052becf5d631b66e0070ad3a3e50f081b52",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-compat-r1/verification.json",
+      "bytes": 24768,
+      "sha256": "df05adc0283ce67a770f404293ab2ab91fe4cdb6fc2f775c333b7c3f82c3df70",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-interpolation-r1/executed-runner.py",
+      "bytes": 6417,
+      "sha256": "702950764d5cd6e2f93f83a0bdb3b99230048940908e8569e3e25b30414cd9f4",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-interpolation-r1/executed-tests/test_interpolation.py",
+      "bytes": 18603,
+      "sha256": "deeeb72a564d5218a1479284a80ffcab09421270e66ad5a41362ef18840feda7",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-interpolation-r1/receipts.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-interpolation-r1/tests.log",
+      "bytes": 12261,
+      "sha256": "6d51b23276289052ce10d1cc84aa195c62ff4447a4d2ded23c09e0db439d0f54",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-interpolation-r1/verification.json",
+      "bytes": 24138,
+      "sha256": "b2966c0933398e58ab11fa9d0945c0388fa6f82bb2ca9ecb608bf72028a3e0c6",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-interpolation-r2/executed-runner.py",
+      "bytes": 6417,
+      "sha256": "702950764d5cd6e2f93f83a0bdb3b99230048940908e8569e3e25b30414cd9f4",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-interpolation-r2/executed-tests/test_interpolation.py",
+      "bytes": 18888,
+      "sha256": "8002cd0d8df35b1d8861569dc82e03e1968e84e7c3a4e71e1c378bc680e169a2",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-interpolation-r2/receipts.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-interpolation-r2/tests.log",
+      "bytes": 4504,
+      "sha256": "15d9cb2126f9a2ac4125b89a8b54b1a310bfd6daa8ad64c45ba93f91ec8a7656",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-interpolation-r2/verification.json",
+      "bytes": 24138,
+      "sha256": "7775dd22f3a265eaa9a1bd41d7c3847209806ae43addd026eae81ccf416382e2",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-interpolation-r3/executed-runner.py",
+      "bytes": 6417,
+      "sha256": "702950764d5cd6e2f93f83a0bdb3b99230048940908e8569e3e25b30414cd9f4",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-interpolation-r3/executed-tests/test_interpolation.py",
+      "bytes": 21037,
+      "sha256": "53a6a7ccd44c012e125629ed18555a870ac2014184ca8a229711397959171734",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-interpolation-r3/receipts.json",
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-interpolation-r3/tests.log",
+      "bytes": 4939,
+      "sha256": "2d3bd5a8d483f41084f5df9842575ccc5608b281f4cb4bbf50e709035a436a56",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/source-interpolation-r3/verification.json",
+      "bytes": 24138,
+      "sha256": "4f021bc1b9f2cf05f827c92e6ef2ec7d60c0550b8b204a522c6ba73718518228",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/static-review.json",
+      "bytes": 544,
+      "sha256": "01be7260316eb12f8083edda1b283da375957732d1b298a8957eee0e6fe82634",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/upstream-code/LICENSE",
+      "bytes": 1062,
+      "sha256": "7932fb49341512b959b1744a6d9cbb39e5a1ec89da438a34d0454d5d8df9fecd",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/upstream-code/README.md",
+      "bytes": 9583,
+      "sha256": "b695ac5d4a69c2f551512678883f8234d784c286d805ca546f4873cb465959b4",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/upstream-code/inference_video.py",
+      "bytes": 11008,
+      "sha256": "72070ee3a8f0f6878179c41a754748440e3dbf1614d3c923ef52f3030f68854c",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/upstream-code/model/warplayer.py",
+      "bytes": 1209,
+      "sha256": "feb3af9475b724749b023d1913c3b135431eff13d0045b8efb472a699058385f",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/upstream-file-inventory.json",
+      "bytes": 1193,
+      "sha256": "c604be7e8ddc5414b2683ffcdf85c1d82c1a0fc594976476fc072573a33cb95a",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/upstream-model-code/IFNet_HDv3.py",
+      "bytes": 6433,
+      "sha256": "655b4c772b037967b86c2dd31c8fa3b5323b79dd9a0e0088708d89149bbc8a32",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/upstream-model-code/RIFE_HDv3.py",
+      "bytes": 3101,
+      "sha256": "81bbd0648e499de79e44768d284005d9d57d0f6eb7c30adae407f22675055730",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/upstream-model-code/refine.py",
+      "bytes": 3510,
+      "sha256": "0c5698b4a05b9f6ab551740575c1c35e248e5b1829bab6445186081ebe15f032",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/vendoring.json",
+      "bytes": 488,
+      "sha256": "782daed6b3df1282d81f3ec569e5f1db62815494a2913ae3889c54c6e4d5b538",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/weight-conversion-attempt-r1.json",
+      "bytes": 474,
+      "sha256": "fef5583ca8c3ebe2be84e382e5a1ec3c1cedb816d13c08ab0695715613a59a58",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/weight-conversion-attempt-r2.json",
+      "bytes": 391,
+      "sha256": "2abbb69556613d6aff6fc718c05020512f3212d042b813b54166d61e3626ef4e",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/evidence/native-interpolation-20261027-r1/weight-conversion.json",
+      "bytes": 2149,
+      "sha256": "c5edb5d74b3a915ad1aafc4c097cc61257cfe77c0149163bf778ef7c1c8085d9",
+      "staged_change": true
+    },
+    {
+      "path": "docs/validation/本地神经补帧实测_2026-10-27.md",
+      "bytes": 3339,
+      "sha256": "00addad04e0ef0c7df6d8142eca0f97c0aa5094f90d474a86dd70121d2531b91",
+      "staged_change": true
+    },
+    {
+      "path": "product/pyproject.toml",
+      "bytes": 1495,
+      "sha256": "3b1873c7b69abadcee26d0f979d923bb75a985aa7e4983cb33aeeaa333c8fbe3",
+      "staged_change": true
+    },
+    {
+      "path": "product/src/ai_ad_editor/RIFE_LICENSE.txt",
+      "bytes": 1062,
+      "sha256": "7932fb49341512b959b1744a6d9cbb39e5a1ec89da438a34d0454d5d8df9fecd",
+      "staged_change": true
+    },
+    {
+      "path": "product/src/ai_ad_editor/__init__.py",
+      "bytes": 181,
+      "sha256": "4a0be542f3ae092862d865f7cdfa704b20b127c32defdf7168c5ee842d38d07b",
+      "staged_change": true
+    },
+    {
+      "path": "product/src/ai_ad_editor/__main__.py",
+      "bytes": 79,
+      "sha256": "307299fda7b77d22c64cb51430ec75e5f59d78e9c948786afb3b2544fe45e4b7",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/ad_plan.py",
+      "bytes": 5506,
+      "sha256": "4d6482f6f0baf87cf60ae01be604af0047069e794c2784a9d0c86f30a1a458ac",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/ad_storyboard.py",
+      "bytes": 21155,
+      "sha256": "cdaf161042900c02a2c1ec7ab0659f10864d0dc5078d9c677fa7820b70bc3d3d",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/ad_storyboard_cli.py",
+      "bytes": 6603,
+      "sha256": "39391166e3be149335b8feeb6909e4e9ad524c384f9ea8eda12b3a3a1748286d",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/animation.py",
+      "bytes": 2900,
+      "sha256": "b90064bd9de4fbe1aea85ba7bb11e5acfefc82a85c2b8078ba36bac64c59b949",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/artifact_locks.py",
+      "bytes": 8901,
+      "sha256": "574149014e79819f0e681f0efba8c6f8ad008cc7a8399d3b24bd9fcc2a06a4be",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/asr_quality.py",
+      "bytes": 3359,
+      "sha256": "e2407215903a2552a3efd1acd04840bae03862b470dce72b489573b36d6c1f90",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/audio_channel_links.py",
+      "bytes": 6741,
+      "sha256": "18e6caaf8370a523efe8a0a747818eb7fa0e058861f7ac982f703ecb648fc691",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/audio_routing.py",
+      "bytes": 21723,
+      "sha256": "40f74750a79ea80f016dd2eb8a353d6103682756f01970ad802c6292be8e5af8",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/audio_separation.py",
+      "bytes": 13921,
+      "sha256": "bb36d993ca948deea171e9569c6b4954105bdd5c7b79c70d2f5c14a79878f0de",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/audio_stretch.py",
+      "bytes": 22988,
+      "sha256": "2286f23b626fe5f5545b585da2c78c50068f3a0d4fa45b414d94d6926ed37973",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/audio_tempo.py",
+      "bytes": 3760,
+      "sha256": "3284a08dc75a25dcbeed30c7088a18898c46d398e6e7ae9380efcf0e366afcee",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/audio_tools.py",
+      "bytes": 4799,
+      "sha256": "9e636d1b27707dad3777811827d3c3c3e69ca393a9a3757733e9876517506f5e",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/batch.py",
+      "bytes": 6398,
+      "sha256": "5a416712628d104c5e9cf1b96bafeb118b2e8bfb44690b51831242b716ff2a92",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/beat_edit.py",
+      "bytes": 9126,
+      "sha256": "0cbc12d37b80417e022741818f812f61d287123d816217c7e5462f872cfd78fb",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/binding_edits.py",
+      "bytes": 5275,
+      "sha256": "e9913b0372fecb165307a1fd0e3200f4bb90ec73566cd47f31a298af0daf73d8",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/bindings.py",
+      "bytes": 28535,
+      "sha256": "2822ecee397c7669ca9b277fa5f1316c648ea66cf0c9dc91a1b371f96e5c8d32",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/blend_automation.py",
+      "bytes": 8353,
+      "sha256": "ca6c28091564fdb28853288f46f4caaeaa96388c4d363e1b139248d89753a1e5",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/browser_process.py",
+      "bytes": 10589,
+      "sha256": "16fc0ec652a21a7604b5e59737800d91a3bf4254e1c44de2c7989b895c130a65",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/capabilities.py",
+      "bytes": 163133,
+      "sha256": "d7c2b3ecc9ce328a96e2781717e904be0277386ebed377fb54ddaa6614c27f57",
+      "staged_change": true
+    },
+    {
+      "path": "product/src/ai_ad_editor/captions.py",
+      "bytes": 13732,
+      "sha256": "38c500ba0e2697e745d7ad8357d7a9e5cb9e771f4093750b0b6a8b67e7ee0c57",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/capture.py",
+      "bytes": 16349,
+      "sha256": "9f8261f0ec5d005605c7e6112731245c92e55b6d252f574e9acb2a5fbef457cf",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/cli.py",
+      "bytes": 499073,
+      "sha256": "c89c6cb407833baa894b089ee2ba45d9bdfec2350f650427932a15c2a3cbea39",
+      "staged_change": true
+    },
+    {
+      "path": "product/src/ai_ad_editor/clip_windows.py",
+      "bytes": 17626,
+      "sha256": "e5dd5203a6d2201b4a05ed44623a4f8e181400e3b536bc2404af235dd345e736",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/community_audio.py",
+      "bytes": 12398,
+      "sha256": "b22b1714e164f0e400b7d53f978e0d0e36b83b519f827cd235826d29a037116a",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/community_cli.py",
+      "bytes": 26976,
+      "sha256": "3911b36f4746b04753932e2af04a53434d4b7789aa32e4025086dcb0cba89ec2",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/community_device.py",
+      "bytes": 3478,
+      "sha256": "c1525a0b20ebd5d9b37a615494b188c7165526df0bb5479338a3e06e5428f4e5",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/community_models.py",
+      "bytes": 5376,
+      "sha256": "646db6e84e480b0252ace647e35cb4bdb4bdbee1cf342cce928c255d9497d89b",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/community_worker.py",
+      "bytes": 9953,
+      "sha256": "85ea135885f895d57156d7a3a8f63dca0057a2ca615c2db114d6ee1649c4e882",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/contact_sheet.py",
+      "bytes": 22804,
+      "sha256": "18e7028d73443cb6173ddbcda949147485e6d99f6742afeeb9c8b3cf7f66165b",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/convert.py",
+      "bytes": 67444,
+      "sha256": "d4bd64b74d509c8afa503dbd927351a1289fb87599d1889f3266fbdbcfa72d7c",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/ctc_activity.py",
+      "bytes": 7367,
+      "sha256": "32e642daa9b2cba6e0946aa6b29f64e1c20b238601a397251b4d32092fc2d289",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/ctc_alignment.py",
+      "bytes": 11422,
+      "sha256": "a475e9b1acd8ceba2be90884729f0b5a4c76ed354853bc0a57b47f1f9787edd7",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/ctc_cli.py",
+      "bytes": 13599,
+      "sha256": "9cd8027ee654c95f42d69055c2decdc4628da11dc49c6927ee57a74e1dc9f8a7",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/ctc_worker.py",
+      "bytes": 10553,
+      "sha256": "18440a7affc7e33169f82e40a0a970d7acd767b5a699559888a6768e1b0589ad",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/cuda_admission.py",
+      "bytes": 11092,
+      "sha256": "8d030f776b09edeb9d6cfecce720caca3f20a1fab058dd3dc406020ed064fd3b",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/curve_automation.py",
+      "bytes": 9374,
+      "sha256": "73c33745ad14cfbce2f937db9e78840eef7794259496a62c6247f609167442f5",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/demucs_worker.py",
+      "bytes": 5409,
+      "sha256": "8a5347b8e2ad0c93fb42b9c1867737ff989914e662753ef11104602c944bba95",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/derived_cache.py",
+      "bytes": 4848,
+      "sha256": "c3cca48d052b6ff4531cafc04005d7936eeb289a67f74bb4ffd0ceb203dd03e0",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/draft_adapter.py",
+      "bytes": 57742,
+      "sha256": "30b32897eb2d8da0e664e3e588016376250c370f194da4059c404183924c29a3",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/dubbing.py",
+      "bytes": 5639,
+      "sha256": "c0ebe30da344a86c028faa382cc8a35dd6a72a4a18ec42847e40bf662e79497b",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/dubbing_cli.py",
+      "bytes": 29830,
+      "sha256": "1e8efd8ad85d207bf380a6561c52286f7492ac3fbcd1965593be98fa9504d92c",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/edit_planner.py",
+      "bytes": 30675,
+      "sha256": "b935231641668b913c1bac137a65f31b6dfe48bf507dd0653c265307997ec26c",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/effect_automation.py",
+      "bytes": 22422,
+      "sha256": "45b3ee4be693cdf1c07cf3fb6f372562ca376c93bf846b9515fc3d0d05ce8dbf",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/effects.py",
+      "bytes": 21565,
+      "sha256": "b96ce9e41885c466332b68a5333d0c380905cd5703ecbb8fb631c5eb294469d4",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/errors.py",
+      "bytes": 1609,
+      "sha256": "1525e91f86ad7f22c061a35c383d3513cdcad77acab2e364510b42adde0a9721",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/execution_control.py",
+      "bytes": 2426,
+      "sha256": "e42328c89685b034b6c79473f8f3c1e20568d4e6eb65d8a433c2ebdd8f2f265d",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/face_cli.py",
+      "bytes": 13902,
+      "sha256": "0b22ce781d350770edcecfddfce4058ed478fccd29e723a78f088e32be2bc8c4",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/face_geometry.py",
+      "bytes": 8744,
+      "sha256": "a3551a4d699e8e5e43622311a1d800be00cbaec70f9152147b3dde4a4f73d380",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/face_landmarks.py",
+      "bytes": 7359,
+      "sha256": "29112cde9c85408d2cf19c7a26e3f17282605bb80e0d0cb67debd44ac36f5793",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/face_worker.py",
+      "bytes": 14509,
+      "sha256": "dbfa64be9cefa760cfe6b31685a6cbcc8008b2c696951848ffd75a4f0e604e56",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_adjustments.py",
+      "bytes": 7322,
+      "sha256": "d2bf1546b3e4f396a831dc95d609f7d7b4c40b0b83b623ec77ed035ff712c1dc",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_audio_graph.py",
+      "bytes": 4549,
+      "sha256": "189db07b74634fb1c99956c38e0c74c077d5146de7248a5938f8cd6aae346399",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_balance.py",
+      "bytes": 14001,
+      "sha256": "16dbfe24290b8bc0b1d77268b6ff34bf813dbbc62b378971d82a5aa49faa9355",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_bundle.py",
+      "bytes": 16300,
+      "sha256": "306b3a55309f4d9902cde2a4c6758b2e5247632002242666f85be9603963c50f",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_bundle_source.py",
+      "bytes": 6188,
+      "sha256": "dcfd6689511449f913432ef7e3e57d11d4379cfa958a8abfeef707a250441300",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_color_signal.py",
+      "bytes": 9834,
+      "sha256": "42e02120543970855e2e037702a1f02f53472b554d0fc8179aaa9852f316dd40",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_composite.py",
+      "bytes": 8830,
+      "sha256": "8275eb65c574407b47b466bbe124015832a92b068e5595a028c04964f884b937",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_crop.py",
+      "bytes": 15687,
+      "sha256": "d6c0bc63be9a4bc179ab986647ae31dfea191b5e78fe04ad1ef565362a50ed63",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_curves.py",
+      "bytes": 15752,
+      "sha256": "74c5c70d04208127e53cba3e888879a4e1704e63517ec08785258faca3684923",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_effect_chain.py",
+      "bytes": 10106,
+      "sha256": "a2dfc942ca8e07c06a2654ca00d9afd6efaf265d2f607a8b2dec56c2b6813c36",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_exposure.py",
+      "bytes": 6270,
+      "sha256": "fceacb925552a4bb44126143f584f4757a76152e87f9224f4e6ce16f5a6c27ed",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_gaussian.py",
+      "bytes": 11516,
+      "sha256": "97e64bcecca4ae7d979f382cff0afd8b91401bdf7020c869282218777ec87bdb",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_geometry.py",
+      "bytes": 6804,
+      "sha256": "57f9af0406663a27e31b35e3463076acf24d3833de5fce98102b6f0b73a9d51a",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_glow.py",
+      "bytes": 11503,
+      "sha256": "4f93c4684760fa9a5d01830163abaf1a91019c25341b08a22c8d736aa3d9b92a",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_glow_kernel.py",
+      "bytes": 2539,
+      "sha256": "052f0483f5c0516c912bf5d3d6f420db6197b07013abe90a9ba1e9ab61b1ef98",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_gpu.py",
+      "bytes": 16269,
+      "sha256": "972bfc93226444f6f89afef5bc083ce859bff8f760c25239404ef8f2aae04369",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_gpu_control.py",
+      "bytes": 6648,
+      "sha256": "717c02fd2ec1801587c4786c391f24a324fd9667aeec3d6be8c3272320c09b8d",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_gpu_native.py",
+      "bytes": 21609,
+      "sha256": "0e5043de7ee44086552b1d66a6386483efe832749c3fecb1fb2c910038d21d89",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_gpu_worker.py",
+      "bytes": 10844,
+      "sha256": "6965e1b1f0eb7117ce48c36973ce8471c44a7685dc9c5ec9a95926349877fefe",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_hdr.py",
+      "bytes": 10410,
+      "sha256": "61b11d47c3da5cfb8076c7dda3932eae213f157bb2efe07a9eb108e943e416cd",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_keyer.py",
+      "bytes": 16743,
+      "sha256": "bb5c5eb5aa0ade318a50e443c8039f7daca99f0d593481da15c530f2b3b22b93",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_levels.py",
+      "bytes": 14977,
+      "sha256": "4b6d1b777da7359a0c3dc3b0c10e3b87b58b2c4aa1522d994d2a17e9c39ec248",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_lut.py",
+      "bytes": 27248,
+      "sha256": "e7e49162162252b77beb27f3bc5ad1845fed1083c64ed72d1e8937191d574ee6",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_mask.py",
+      "bytes": 17505,
+      "sha256": "f85427fa44a9c3723c398314230c0e00c6b6e699c09c3785e5b3ff99a244bbfa",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_native_pipe.py",
+      "bytes": 5346,
+      "sha256": "4b89898462505f58fbbe1ca053a0f4f2ef475f417a99dabeb470f999353eb708",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_native_source.py",
+      "bytes": 20682,
+      "sha256": "01eca6b53ad67d95796fd4b56046619c7656a02d04991d2e4d69ce37bc11a9a7",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_numeric_automation.py",
+      "bytes": 4580,
+      "sha256": "e66c20d09cab1487a86d19104d5637dcdc2bf97e11a781172ab1c431bffe1e09",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_optics.py",
+      "bytes": 10487,
+      "sha256": "0e8ffedb07f18304961494f289fdfe2f293a4abb92ed098014b36580b0c274a6",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_optics_kernel.py",
+      "bytes": 2926,
+      "sha256": "92d2e83c126ee611831c1b0cf9a67d0130b6b32d8d3e42d0a92efbbee8755440",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_pixels.py",
+      "bytes": 7700,
+      "sha256": "863991d7c7e88db619b72e268321fe182baca8d4e8f63d8c5166a945928e127f",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_preview.py",
+      "bytes": 12910,
+      "sha256": "37d86b6848aff00b0d8907d1cad4592af9a551d336ed95f530c06062091a16c5",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_raster.py",
+      "bytes": 9807,
+      "sha256": "ff83b49c999146a4c3479796f34050e81eaf504efdba48c050a4ded8cdb876ba",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_selective_hsl.py",
+      "bytes": 11700,
+      "sha256": "e62d668a6308fb0f034d687532e0f6006cd5b6183d20570cad20c34174319dd1",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_sharpen.py",
+      "bytes": 17456,
+      "sha256": "d261d9b9511f91d6324a95e71209781ad592aee25fe355719dbbb61512c2c846",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_spatial.py",
+      "bytes": 15166,
+      "sha256": "978868786110885597ae91c582562888bfc272400adc788fceaa3a6cb2187bb1",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_spatial_budget.py",
+      "bytes": 2207,
+      "sha256": "ea50453012d384afa9422feb89991fc321b91591817e70ce46e93994b1655a0b",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_standard_render.py",
+      "bytes": 29781,
+      "sha256": "bd4c0c5c8f131405ace7a2ffc7cc4721c88f41b4df3f222560654c02309909f2",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_stream.py",
+      "bytes": 13806,
+      "sha256": "955705b4f87817de34046f5cf979319278fb7815da75c8e3870630daaad574a8",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_text.py",
+      "bytes": 20321,
+      "sha256": "496c87c34db04c6eedbc062fa8883bfc3571d6b10f027fab946f1c688a1e9434",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_text_coverage.py",
+      "bytes": 16102,
+      "sha256": "dc2212f77592b271d2b658348e1cd112d74964f1ccd18cffd221c26d2c605521",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_text_paint.py",
+      "bytes": 5110,
+      "sha256": "907cc716268fbf99a2e606afc9bacaf2ecd7b9dd9d23cd9a1c08df29cda948be",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_timeline.py",
+      "bytes": 36704,
+      "sha256": "ba0ad00a845fe99dfc0de4d6413d63b84e38a85ada109f2b7dd9953412962048",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_tone.py",
+      "bytes": 14263,
+      "sha256": "3e4216a6cd43dbc21afcae33ce527802d414df5fb3e16381abb62fd5c85b9638",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_tracking.py",
+      "bytes": 16369,
+      "sha256": "955978836503f032531d9d603183a3b0ec0609de804326efa69cd7a8b08f2dcf",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_tracking_visibility.py",
+      "bytes": 4229,
+      "sha256": "b5fdd9731c388823828a4707009cab58d04a1d5a247a3b3207379dc998ac43c6",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_transition_plan.py",
+      "bytes": 5634,
+      "sha256": "9081584a60972c789efac8f4405ac54cf4ce4cf2046982dd88932b17c3892912",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_transition_trace.py",
+      "bytes": 6649,
+      "sha256": "da56460b3feff19c8e058b4cd534c686bcd9291711b7e0b4c699a41d0edcfa74",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_transitions.py",
+      "bytes": 14515,
+      "sha256": "7de54ec6bd9497c8b9363707262d3b267cceb30576f61bb56747ebae137dd758",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_video_source.py",
+      "bytes": 9879,
+      "sha256": "79685d1bbe3298b1334b80d429bba0fb6e8c8c57230428f1e08eb9afc56b510a",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_yuv.py",
+      "bytes": 9014,
+      "sha256": "031b34c9b75e141946eda3ace6521c015c99023fdc5c725be34701577a9e5a1b",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_yuv_source.py",
+      "bytes": 2064,
+      "sha256": "bb6eae6288a722a6a256126a0b2f3d47d0b03821880b927d0e3b41c988fc32bb",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/font_coverage.py",
+      "bytes": 8755,
+      "sha256": "2f33b3eb07331ef3b87c78286317df8d903a2c991978e9750a39d6bcd117c243",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/fragments.py",
+      "bytes": 40127,
+      "sha256": "ac5dc80c66aa54b47f91a3d674a17185d51acf084f10020bfff72ceb3d8b9032",
+      "staged_change": true
+    },
+    {
+      "path": "product/src/ai_ad_editor/generation_cli.py",
+      "bytes": 12161,
+      "sha256": "ffc3ef9b0855c87fef7a3ef6b5eeb23d68d6b7f4baf8e345772cbe99330d7cd4",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/hardware_acceleration.py",
+      "bytes": 21826,
+      "sha256": "11e9fdb0dafb204f1abd8642cea80de528f5ba3b20c0d8937168587833d153d3",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/hsl_native.py",
+      "bytes": 4265,
+      "sha256": "236d4af5c4317d57d9e31916472e73d1ed98dde66ed3331d3661830331a0f44e",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/hsl_program.py",
+      "bytes": 2996,
+      "sha256": "a1f7ac34659d6c55ed79bfacaaa7bf997a1bf4d4fef2fede53cde0abbe61ab17",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/html_components.py",
+      "bytes": 16070,
+      "sha256": "1779196590bcff1e638b5c6087698eda80a45f1bb4bc4a74c59cf7ca0125693d",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/html_motion.py",
+      "bytes": 46339,
+      "sha256": "8eca33f78e39367bcf49c8e58a1e2974db3c79165261bff4eefe5657ee92a70a",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/html_quality.py",
+      "bytes": 4215,
+      "sha256": "7abdb2b18bb86a3d87e058e74b908cb0a430f05273ca9b78122a5985c0b5dba0",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/html_shutter.py",
+      "bytes": 7637,
+      "sha256": "c7cc14a47500b4339401af86453c845368eacc8c396b8c414195eda76beeb376",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/html_template.py",
+      "bytes": 7268,
+      "sha256": "f3ad9507632d03df9e7de3e4303638325c9667e1005ae9600c62670b06d1436e",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/inline_sequences.py",
+      "bytes": 9710,
+      "sha256": "ee1596121f7e0ea88c7d1f8e27d75132b57dc03522a768a2716f97343a1ed911",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/inpainting_frames.py",
+      "bytes": 9857,
+      "sha256": "bf86f16db2c99574715464ec789481d1720635091a88578a39717f45e489065f",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/interpolation_cli.py",
+      "bytes": 14856,
+      "sha256": "4b3ab1adb44c8d2ef3962d46f34826c7bec9aeba087a81e3c2d597c1d03882cb",
+      "staged_change": true
+    },
+    {
+      "path": "product/src/ai_ad_editor/interpolation_clock.py",
+      "bytes": 3745,
+      "sha256": "d33387bc1ef39018a04ce4fb423bf69df65ee8a188c8afb9c372451d9bcbf4b2",
+      "staged_change": true
+    },
+    {
+      "path": "product/src/ai_ad_editor/interpolation_frames.py",
+      "bytes": 3938,
+      "sha256": "ea5ac40e471f41a1cbb45e9850a49f47070cd8e16b05889e96fd39a68ca0e2c6",
+      "staged_change": true
+    },
+    {
+      "path": "product/src/ai_ad_editor/interpolation_graph.py",
+      "bytes": 5668,
+      "sha256": "680444e5014ab7daf75eeed5f1d16fbacffbf0b3484363a6c316e8b0fb312d90",
+      "staged_change": true
+    },
+    {
+      "path": "product/src/ai_ad_editor/interpolation_model.py",
+      "bytes": 4434,
+      "sha256": "9de32258367b5d4b90ba4fef33f714fe40e9bb2fd7f298e6a7414cf1a61be330",
+      "staged_change": true
+    },
+    {
+      "path": "product/src/ai_ad_editor/interpolation_pipeline.py",
+      "bytes": 15373,
+      "sha256": "64e9d34d43701c406a6b043bdf4de329f64c3d141617909e3f2eff43357489fe",
+      "staged_change": true
+    },
+    {
+      "path": "product/src/ai_ad_editor/interpolation_plan.py",
+      "bytes": 8624,
+      "sha256": "e001a195e117a1acd40f38a2ce697359005a6d1d741b73e90c0b9e3c9a53008f",
+      "staged_change": true
+    },
+    {
+      "path": "product/src/ai_ad_editor/interpolation_worker.py",
+      "bytes": 4149,
+      "sha256": "5e0fc74ebd14a745ce937c781011fb7ec4b6a9a79d121d487dc5f9039affc09e",
+      "staged_change": true
+    },
+    {
+      "path": "product/src/ai_ad_editor/job_trees.py",
+      "bytes": 6624,
+      "sha256": "1ef279ad6406bc50f2f6a1f11695014ab93037d3cf5aefe8ef1599e04c2f60ea",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/job_workspaces.py",
+      "bytes": 14412,
+      "sha256": "a6c01cf288408973528a5ca5ad6beb0ae0709a385359ce344cbd5a58dde231e6",
+      "staged_change": true
+    },
+    {
+      "path": "product/src/ai_ad_editor/lama_worker.py",
+      "bytes": 5174,
+      "sha256": "c8b78f2e476e417ed54ea62aa502858eeb13b14c8e91b29fdd15021a4c648154",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/library.py",
+      "bytes": 20636,
+      "sha256": "60148ae6a1fd92013f97c78ef87a2f68cf4d3a61398af8a1d3c366ca3495af4e",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/lipsync_cli.py",
+      "bytes": 14795,
+      "sha256": "259df1531633fa6e7c9761ab2fd4260ab0679b8bdffcdc83a490c680cf0ca1d6",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/lipsync_frames.py",
+      "bytes": 4866,
+      "sha256": "20b6270540cfa34e90ce47266c74ea71094f1d1b58a5ffbbc3ef6bdcc56179ae",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/lipsync_model.py",
+      "bytes": 9448,
+      "sha256": "6a7bc1f57c65ca978cf5ec297b941735825de1b44cd4d2b8851e53a8ba3c655b",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/lipsync_parser.py",
+      "bytes": 10747,
+      "sha256": "e2b3bb268b08fe17309102bbbb9cbe95958efe4de182ad4d0d218352198ed779",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/lipsync_pipeline.py",
+      "bytes": 13484,
+      "sha256": "8d0199866ef1581b9f5a9425fc6ec9b6ca1505f7aa34023ee7409aa733f6cfa4",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/lipsync_plan.py",
+      "bytes": 11792,
+      "sha256": "a9844577a3b68a5db749cd30deb803ac1c056964364cee75929b24a952f868d3",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/lipsync_worker.py",
+      "bytes": 5129,
+      "sha256": "2bf447549ccfdc10c6bb6b3b7602e8a37436e6d11b04abab835a7667122bb185",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/local_asr.py",
+      "bytes": 14600,
+      "sha256": "7c8582144a9b17e08558f36777c312099e10fee82f18f49589b07f40b61fb9dc",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/local_ctc.py",
+      "bytes": 17123,
+      "sha256": "1d0b3f85720d620b1d1827952113b424c9f9562174462fa40b6c6cc8a46fd948",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/local_face.py",
+      "bytes": 23764,
+      "sha256": "af5571aab54c303b2c2b24b5f5b5f3caa234470a5cbbff5adf3205aeb6a7eb06",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/local_inpainting.py",
+      "bytes": 14477,
+      "sha256": "34294b2a7184afeda6527db59def5aa6b02efa83e8f3beb6e8e53fec0fe03890",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/local_interpolation.py",
+      "bytes": 7150,
+      "sha256": "459bbceb1bb294371ed8459633dec65bdd00280551b63611878d78db87257a5c",
+      "staged_change": true
+    },
+    {
+      "path": "product/src/ai_ad_editor/local_lipsync.py",
+      "bytes": 10667,
+      "sha256": "f2afec4dffc4f148475848b3da919e129e891337aa65e67f210e624a1182f8b9",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/local_matting.py",
+      "bytes": 46817,
+      "sha256": "2f36f001add7ce39bc5011644b437b7043c214100f3f29b51d35248118b8303e",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/local_ocr.py",
+      "bytes": 17446,
+      "sha256": "cd85a6d7b12ec18b3e024327687c483f1f7cfa0deed2369b968f8ab2bccc14b5",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/local_outpainting.py",
+      "bytes": 10211,
+      "sha256": "577ecf6fe26a0718cc734ba6b526f52e974b97262965f965aa37f431add1bd55",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/local_segmentation.py",
+      "bytes": 13876,
+      "sha256": "30c0acaea0c261f35c5e10b3e0df36ebf10b9137608b18109a1c4739095ed361",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/local_separation.py",
+      "bytes": 13940,
+      "sha256": "8fe3784386cbb125b5707bd01dd5d714058e2556aeda852bd5326e57fa839332",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/local_tts.py",
+      "bytes": 18989,
+      "sha256": "028216041f53481ee2230642a642304eab3adabd32735fecdad7b952650055ba",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/local_vace.py",
+      "bytes": 19651,
+      "sha256": "57efc540420109eda51ba29d0589f7e9e091c683e1fdb5407013ad3ae3ee2505",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/local_vision.py",
+      "bytes": 13179,
+      "sha256": "d69b94220d749e076e485432cc1b70445f398ad876a8582a3ae75b7668e6c329",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/looks.py",
+      "bytes": 14308,
+      "sha256": "52a83791df54582ce778dc77d3f23e964f760c53a464feb6329bb96216659601",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/lut_library.py",
+      "bytes": 17810,
+      "sha256": "a6f89cdcda01318c7163328dca7b54e8606b45582cd9340e2d4d1ad69f0b60be",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/magnetic_mode.py",
+      "bytes": 9034,
+      "sha256": "7b74280ed8df6d94b259548122b44216ca45d6726084504aa6fdd05524f460e1",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/magnetic_reorder.py",
+      "bytes": 17330,
+      "sha256": "1f8c2cc2bf85f07965cf0c936268fc08fa23a54266853313708d35dbd7c591e2",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/magnetic_sync.py",
+      "bytes": 5499,
+      "sha256": "855357b6f8ba013a702801c6d85e55f75d689cf6aba1fbad7a67e066fb4694d3",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/mask_edit.py",
+      "bytes": 13490,
+      "sha256": "952aa4c1cc3f49b2b1c9d5dc0c969901d82d4fcbe660387af2f3f7c044d6bb7a",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/mask_edit_geometry.py",
+      "bytes": 11012,
+      "sha256": "9bf1d101c1aea8d2265b704fab8dcd65b3bb08c4cc45aed95a4a5cb0ee2ae1f9",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/mask_review.py",
+      "bytes": 14812,
+      "sha256": "17de0acd6d76ad9218565302a0f47a577a5001a487bbf0c66432b0b6af278bad",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/mask_tracking.py",
+      "bytes": 11000,
+      "sha256": "724f8f9800536d3ffdc99675fadf79e1262532ec7f9a3d879cf94674ba531b8d",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/material_catalog.py",
+      "bytes": 3869,
+      "sha256": "c5534092c9f744b21ede152137b29a6a00899d665b4ddd6ee00621630b9f544b",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/material_project.py",
+      "bytes": 8689,
+      "sha256": "ee582757cd6bdc9a957a2f4f28bf9fac108ee91f9c1c09c7a7ed85591ac846d1",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/matting_frames.py",
+      "bytes": 4054,
+      "sha256": "e1491c575fe0dff5626439cb27fe422b8e92955ca1dd7503df59bbd6a3509f09",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/media.py",
+      "bytes": 18960,
+      "sha256": "75755c314fe01111d7ca85138efb6f9b0993e45c14c5a2b65cc1046c5e58cfba",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/migration.py",
+      "bytes": 6471,
+      "sha256": "b081ca767872d8bfa04f3aac1cd2f1c4d0c03a92e4ad5be53fba29fec0584fa4",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/model_registry.py",
+      "bytes": 21144,
+      "sha256": "b07fc4138b49acdd74c39a688e2e65a1c956ddc2a9b717af028d58b9e32e54c7",
+      "staged_change": true
+    },
+    {
+      "path": "product/src/ai_ad_editor/model_session.py",
+      "bytes": 13245,
+      "sha256": "7ee0f715e1502689b14d6c8c10605c47472580bd9efa7ae544e2702835c251fc",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/motion_pack.py",
+      "bytes": 21184,
+      "sha256": "5b3556b6bf64e0be27652962150fe519cca6b3986eeada2084a2f70fc6bb18cc",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/motion_pack_cli.py",
+      "bytes": 10056,
+      "sha256": "9f1510708a0048b045a8012a81412aebf5422d28953bb58bec61027deaa26437",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/motion_presets.py",
+      "bytes": 7150,
+      "sha256": "6c3c61a7ed62e6ca0ca9d0d033331430e46aca94b3d15df59845ffea4fea15ea",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/multicam.py",
+      "bytes": 28646,
+      "sha256": "37b4ba0abd2daf0f77b5c6bcebb6c04ed61d8c60c2e47cd7e007af032fb0b620",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/multicam_clock.py",
+      "bytes": 16829,
+      "sha256": "01336373f510a40e8acf02ae6a8749b4cd72ef87fd721a61cc4eb603a891634e",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/native_audio_clock.py",
+      "bytes": 23327,
+      "sha256": "4ede471af5c2ebce98f6839eaa59493daa4cf67e995838a2a6fece77807d19fd",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/native_process_job.py",
+      "bytes": 5444,
+      "sha256": "455e898f6fbf260795b80e12fb18f921d90edb4fd75d967a228c028817b568d7",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/native_video_index.py",
+      "bytes": 12680,
+      "sha256": "2adfefa4826f9fcf187a84647b6b931d134a2627bd6133fd86b61f0332003b71",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/nested_freeze.py",
+      "bytes": 7203,
+      "sha256": "2294d318840e6285550eaf70109702b041c031c2cde4c8dc0bca3d2bad848a35",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/ocr_cli.py",
+      "bytes": 10902,
+      "sha256": "1a818549a1308e78a38a1a5aa9a025772f5be792bacfcdfeacb5599670e0b4ec",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/ocr_geometry.py",
+      "bytes": 5146,
+      "sha256": "a2a4aedf4289ab20bea45000c1be898668239b75ef215386120850d2f7dfce5c",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/ocr_worker.py",
+      "bytes": 11782,
+      "sha256": "ee5a2096ec1ee03fc09d2ac4d0b06b1791d5bbfe011772f448045d1377b50d3f",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/particle_animation.py",
+      "bytes": 13223,
+      "sha256": "37e168c03f0634973ff38e9d265e165b8eb048bb7c9e87c4e0799707f76902c0",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/pipeline_diagnostics.py",
+      "bytes": 32733,
+      "sha256": "10293635791333ef437e592d7a58f8dcf341ade759552a26149c1297bb9cac81",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/policy.py",
+      "bytes": 13791,
+      "sha256": "16100811aae96699ce77245cec6746588953c4f9bc0071a1d04aec0c80ea4d25",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/preview.py",
+      "bytes": 28437,
+      "sha256": "23465415b1d4d07d02ed8681983481c8985acaa096c4a9127a651f9e5ecb398e",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/procedural_cli.py",
+      "bytes": 12045,
+      "sha256": "7f53d20084511e446c6d562909cd2dda9d085740bf2d27a2dd90142565da152b",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/procedural_particles.py",
+      "bytes": 17658,
+      "sha256": "386a2b146997a82ff6065bd599d69ddc602d714e1cfc19157e27807327a55009",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/procedural_presets.py",
+      "bytes": 4365,
+      "sha256": "4e835a83dd14be9bee976d23be61163db2b9417cc2dce3cfc7c6b96ec171d536",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/project.py",
+      "bytes": 24408,
+      "sha256": "b125e3dea953fc9613647edba14bfc0623d9ccca065e1c822241ecadea506e14",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/projection_opencl.py",
+      "bytes": 29078,
+      "sha256": "f7d6ccad0a4f6056a4d2f658194c57e489c3564cca66a04496a2e2e02d9a6b1f",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/quality.py",
+      "bytes": 20246,
+      "sha256": "d4e71c9e6616250b681306d562305dafe4cb5867652ab365275277b155e9e047",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/queue_reuse.py",
+      "bytes": 19279,
+      "sha256": "e41d4f2f3ee3b4dc0d44e6f05447b67b4d3ffd107be895fffa3fc4a917371e1f",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/range_edits.py",
+      "bytes": 33510,
+      "sha256": "9a96cd935ec55a5bfc412a05e50cfd3769251794ed9f675227d2b6050b77c346",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/recommend.py",
+      "bytes": 3579,
+      "sha256": "0747f63b0089e317ac335e0e2bdc19cde9373691ca145c5fb84cb8cb2e88c5a4",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/render.py",
+      "bytes": 329151,
+      "sha256": "cecd18ba99951e455351124c491f4342baedbfdce8ce061a252df99ccdaa5bf0",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/render_queue.py",
+      "bytes": 10183,
+      "sha256": "34e86c2e8552daf55c7a7739cbdfd6f7f53b43bbafae6ee39163fe91d1e14cab",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/repair_blend.py",
+      "bytes": 14157,
+      "sha256": "1d4d01f381444cf13416daf82832edc6aa927180aeb1bc8765cf2b5a2ddaa2c6",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/retime_edits.py",
+      "bytes": 13803,
+      "sha256": "5ecf938272065bcd490dd31ee90185a43beb2188a378288640f64a4a09073d8a",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/retime_transform.py",
+      "bytes": 4935,
+      "sha256": "8b00a27cd939264cece21ddf22ca9949a23a43122dc958c0970cd2526c7bdd35",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/reverse_cache.py",
+      "bytes": 19360,
+      "sha256": "dcb7db025bb4044f569862514c86246cc955ddcb7a1362d49a3757d48235d878",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/reverse_video_clock.py",
+      "bytes": 18118,
+      "sha256": "bac8b9a0098de010b0eed47439056eaab1f91edd3a7c414f473867d1ec49650e",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/rfc3339_dates.py",
+      "bytes": 1217,
+      "sha256": "344d79048ff55a77af00314134c20b57b5301b75d1b6a32b4a7a3f52ce749105",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/rights.py",
+      "bytes": 36660,
+      "sha256": "ee65bdf0e6a4a8d44122e3dba5f933e81ff04c194c5aed3f78cdf276db867195",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/runtime.py",
+      "bytes": 1763,
+      "sha256": "b8a81adbd7b19e2269988a0494b8435b59274fc02db22b73d40b858feabe723e",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/rvm_worker.py",
+      "bytes": 5298,
+      "sha256": "b4ee231349b26fe8d3e94f9bab1ba2f70566b8c2dbe0b806b8864e92957fbeb1",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/sam2_worker.py",
+      "bytes": 9043,
+      "sha256": "a7df14a7edbe22b78a593ef16e87528645b9043168b314884da332c4e0eef554",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/schema_contract.py",
+      "bytes": 5001,
+      "sha256": "4aa449cfe96bbcd2506297701863dfeb200e2dc08e7b4bf1d94fe1b83e1e7ff3",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/scopes.py",
+      "bytes": 2556,
+      "sha256": "e68311f38f64d0afc6ed4aa68421697942fe4ad20ac68f662428fc54c361b746",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/segmentation_frames.py",
+      "bytes": 3162,
+      "sha256": "e934f93150500a9bcb7d386dd91e43d27ae31da4e1c2dc887dd4720ae9fcc5ea",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/selective_hsl.py",
+      "bytes": 7562,
+      "sha256": "cd49c898258916add6f22de414967833d290b0a4f9efdbc4fd1c023d467d5aea",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/semantic.py",
+      "bytes": 34654,
+      "sha256": "f745a523b6d376e53f6e9dd2e51cbcecf82e7088187ab1c261bcfc1919857534",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/semantic_cli.py",
+      "bytes": 7602,
+      "sha256": "ca6405df0cd7e0276429d3848dc48cfb5fefb5f78419a6ec31fee14315d742c2",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/semantic_contract.py",
+      "bytes": 11403,
+      "sha256": "1542f4da06f66e821d014d6298247300359c324e287f05696af0b8807be38524",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/semantic_decision.py",
+      "bytes": 15717,
+      "sha256": "f104c69a1124fa22130051e2dc10f3eb974408721455b0221f48501dc80ac310",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/semantic_jobs.py",
+      "bytes": 2457,
+      "sha256": "30a26a7476818a0e06ded9b338b71c0b545537d09b2add8444fb893bab55812e",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/semantic_package.py",
+      "bytes": 7472,
+      "sha256": "0ff666b5cc578765ab749a38f7f7d8a79e5483e16d2acae11f732052d253c07f",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/semantic_queries.py",
+      "bytes": 6573,
+      "sha256": "69e1e3a05d47c90eb85c9264411851d083907c2d4131dea064af817b307ccd4e",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/semantic_sampling.py",
+      "bytes": 7141,
+      "sha256": "c34cf42e08fedf145eddf969ec82c0d4878aa610d945bba46b15a1338d5498b0",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/semantic_upgrade.py",
+      "bytes": 21685,
+      "sha256": "542d8592c6834eeb23c9686f16169fd30aa5fdaf1d8c8e665612b64e7c1499e6",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/semantic_worker.py",
+      "bytes": 13413,
+      "sha256": "9c60ecf1baceb7d8d952041fcd4fb5cf4c21226030ae9bb4af395172ca2acceb",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/separation_dsp.py",
+      "bytes": 5092,
+      "sha256": "2e32d4159c2906c6d0aceb1846df4f86f3437572ae7127afc30adaf05022965d",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/sequence_canvas.py",
+      "bytes": 1742,
+      "sha256": "462542e26058d350c2d0a29d0cf4127c4054cab7462a763811b85bfca171412f",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/sequence_sampling.py",
+      "bytes": 4745,
+      "sha256": "34dd655b01623516cb62eda9fb25371367c8f995c936a94011cd4092b7a64c45",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/sequence_selection.py",
+      "bytes": 4507,
+      "sha256": "b23b67303b22ca56341a09b82c047a98b63c6a12c90ca8a3015530e9c225de2b",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/smart_cut.py",
+      "bytes": 15350,
+      "sha256": "ba871f7bff0f186ad55d9e22c5fcd75e09032e8d7299a01c7ea7b76b2e1a21a1",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/soulx_worker.py",
+      "bytes": 6412,
+      "sha256": "20dc7a046934925b3620f35922f08a7c97845527a78ee437950e0db9addba3e5",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/source_edits.py",
+      "bytes": 12689,
+      "sha256": "d24a4dfa5aa0df7880a09ce18f3a1b93ff9807a36ac6dcc4d87e2a172f63f419",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/source_transitions.py",
+      "bytes": 17528,
+      "sha256": "1ec683a3c35285471c07161aa856d6580cb1ecc5dda4cadba609c403be82cb46",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/speech.py",
+      "bytes": 6344,
+      "sha256": "26a17ac367475ebe56a498a3f2950cf1529ec0e7d63238ad6399c8b27c713abd",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/speed_curves.py",
+      "bytes": 6776,
+      "sha256": "41fbddd764bfa481e6158e8401333113c871e1c38e34257911f9aa676b9bfff9",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/stem_separation.py",
+      "bytes": 16543,
+      "sha256": "75f88d0c7b2d6ddec0798efe5d0bccb6c5c4d2f9c33eb4adf37a635106d670de",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/stem_separation_cli.py",
+      "bytes": 9729,
+      "sha256": "7f61029b4417ed7d7c76408e31b51b3574eaff6feddfefa2c6097d88cb2ab72d",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/stem_separation_dsp.py",
+      "bytes": 5562,
+      "sha256": "fe5f6e2602f1c450ec9ecc2db8c763d9ce77b846c7226e6e8c88aeee36c6021c",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/stem_separation_worker.py",
+      "bytes": 6177,
+      "sha256": "3ded624662f12880189f7072a68ef902cc980647d9d4af78b697a30ceed072df",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/stroke_motion.py",
+      "bytes": 6423,
+      "sha256": "ba53f586ff12c75c15803e347307c802d977e874ce792159d74ebb2b6b42ae03",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/subtitle_clock.py",
+      "bytes": 2229,
+      "sha256": "49ca2001da0f250d682f5818d95f4f51ee362cbaee979fb9a99649a847cd4645",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/subtitle_segments.py",
+      "bytes": 21218,
+      "sha256": "5590e04147f0b50cb60df3b4e543059a560dbfd684b3085c5f25f8fb04631aea",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/template.py",
+      "bytes": 15317,
+      "sha256": "25cff8f3f5a76d88358c746dabb5adc50b0b0c345ffee53aa3a175f72248ec7d",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/text_highlight.py",
+      "bytes": 22841,
+      "sha256": "fb5745cc3bd4c52aef9fd79d14ad29be9338fc46bd164b7d373c910a3b9ff782",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/text_layout.py",
+      "bytes": 5045,
+      "sha256": "1f3831478b41ea23c7dd445a66ba08249a4833cce852eb9190ac0a35936a210b",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/text_paint.py",
+      "bytes": 6220,
+      "sha256": "a924644f0396b5204efbb0e085f25d51f6cda5bfc75f2d44febc6796e42cb028",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/text_typing.py",
+      "bytes": 12493,
+      "sha256": "150d8734c81f599c8a46e43aebe4aeca82ebda5f5fa790e08361c86e848e3544",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/time_mapping.py",
+      "bytes": 9895,
+      "sha256": "89bd69060b3f10af1197018b735621eadb8ce2858b4281972d989fddf79f2ef1",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/tracking.py",
+      "bytes": 40754,
+      "sha256": "3ef89e454292f7cedec1dbfcb8c6a5a9220c802b9e886e18f5aaffffb6a1934b",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/tracking_bake.py",
+      "bytes": 10580,
+      "sha256": "329d59af432a5acdfd60acdf9ddaf3de45ad3b39b7a96cee578fdd2aa8fa7e07",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/tracking_retime.py",
+      "bytes": 4529,
+      "sha256": "474677769756801cddbc90583da2426902c468679818a80e21c09271ef023f0c",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/transcribe.py",
+      "bytes": 14266,
+      "sha256": "877f1cb336233e70d010d39884b1fde6ab475b3df8d55e929bc793b7cfb17ce7",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/understand.py",
+      "bytes": 5199,
+      "sha256": "3b440295b06683c8b7e0fd8a19a0422239bd86e163081677d47fcc5b1da83a15",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/utils.py",
+      "bytes": 15315,
+      "sha256": "8aba58571ef80cf9cdd8d40b6d738538009a35ee77500935f2e295e2bc8ba98e",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/vace_context.py",
+      "bytes": 9866,
+      "sha256": "aef2d4318720c10a99644e96ea35ba27d48e9b405a332f6b2075b6a558f0e0e6",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/vace_frames.py",
+      "bytes": 15072,
+      "sha256": "aadc7d5785347422ee62b1d4a195e5dfbf1bcb497eeedc43aa4d839aff6f55de",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/vace_model.py",
+      "bytes": 15188,
+      "sha256": "fa6ac6921c2b82239bb7317f95ed97ce3380928af845b4d0a08ba07248bab722",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/vace_session_relay.py",
+      "bytes": 1956,
+      "sha256": "d570273c2fbaf4c41a15c7182715d21e9fab7da33c6dff40ddaca7ce29053857",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/vace_session_worker.py",
+      "bytes": 13239,
+      "sha256": "0561885077d4e43b99267df09e9aa24668c761a096b1dbfa79d88b20f0dba60b",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/vace_worker.py",
+      "bytes": 5775,
+      "sha256": "4084ec1d4ff5a2eddf908849b7fe5623151e3a9602ba763c086ecf6f081985da",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/validator.py",
+      "bytes": 102611,
+      "sha256": "d03292024cbf1f3675493b484abc193df038f32200b0e60384323ecd7cf6833d",
+      "staged_change": true
+    },
+    {
+      "path": "product/src/ai_ad_editor/video_clock.py",
+      "bytes": 3626,
+      "sha256": "24bbd3dbf4d3f384bca30e6e881d900226c56f67302ffa721820d70a972e2e0e",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/video_generation.py",
+      "bytes": 15628,
+      "sha256": "007325db940fc3951d9203ea89d24e2de27b64357ce9b13e109c7dc882a1c991",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/vision_tracker.py",
+      "bytes": 6960,
+      "sha256": "add01f7ecc50a645a1f0e9a0f21f817f5538359aa7f5f268158c23c36769ec4f",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/whisper_worker.py",
+      "bytes": 4364,
+      "sha256": "39220014386155a911d4714c3dc20493c76720dd98312d4410826728a2f59d2a",
+      "staged_change": false
+    },
+    {
+      "path": "product/src/ai_ad_editor/yolo_worker.py",
+      "bytes": 12271,
+      "sha256": "fe93653d9ae37e811325655ca81635311cd9c6504d0e41b8d1e7c6fa43e77e86",
+      "staged_change": false
+    },
+    {
+      "path": "product/tests/test_interpolation.py",
+      "bytes": 21037,
+      "sha256": "53a6a7ccd44c012e125629ed18555a870ac2014184ca8a229711397959171734",
+      "staged_change": true
+    },
+    {
+      "path": "scripts/acquire_interpolation_20261027.py",
+      "bytes": 4077,
+      "sha256": "8465395485d21fa20c2ad6d4fae9c69087fc656742507807e85039782875f0b8",
+      "staged_change": true
+    },
+    {
+      "path": "scripts/acquire_interpolation_mirror_20261027.py",
+      "bytes": 2907,
+      "sha256": "83e18dd7edf344e28e2e8c149c906cb6201b94f0493d708edfe28a0ace6bfead",
+      "staged_change": true
+    },
+    {
+      "path": "scripts/activate_interpolation_20261027.py",
+      "bytes": 2803,
+      "sha256": "7897c8b8bd48055517cf9b1939d4eff1f8432f299a062b3649250151ab512329",
+      "staged_change": true
+    },
+    {
+      "path": "scripts/audit_interpolation_20261027.py",
+      "bytes": 13390,
+      "sha256": "dc36d8b5b819f9daae086d917ec873e34d686554f3332fe3a506949204bb78b0",
+      "staged_change": true
+    },
+    {
+      "path": "scripts/audit_interpolation_stage_20261027.py",
+      "bytes": 3925,
+      "sha256": "fe565f6de654454deb5068f3bb4bc8244e6f8dd7de63b001fa3eb921afd6eb52",
+      "staged_change": true
+    },
+    {
+      "path": "scripts/build_interpolation_20261027.py",
+      "bytes": 5366,
+      "sha256": "61fe249ff5432e0e0ee2100a734097d7813d081b8245a3d9ecd58f12b660d498",
+      "staged_change": true
+    },
+    {
+      "path": "scripts/convert_interpolation_20261027.py",
+      "bytes": 4005,
+      "sha256": "2dd3566e03c16c425d2934287d5faee445aa842574a0b885de1a4cd79a67a520",
+      "staged_change": true
+    },
+    {
+      "path": "scripts/document_interpolation_20261027.py",
+      "bytes": 27736,
+      "sha256": "a94b1ee0a2f8359fe89750a49fc8e7b7e1a14b389586990eff4be5e785ac7ba9",
+      "staged_change": true
+    },
+    {
+      "path": "scripts/extend_interpolation_case_20261027.py",
+      "bytes": 8795,
+      "sha256": "0134047af556d74e1c52849a96cbd17b2e53c0421113d6b1a316b5f523063a54",
+      "staged_change": true
+    },
+    {
+      "path": "scripts/package_community_skill.py",
+      "bytes": 5313,
+      "sha256": "64d845ee0ad0f6597215ac1951c3cbfbdb0e52f06d7b91e28f72b51461e03c2f",
+      "staged_change": true
+    },
+    {
+      "path": "scripts/pin_interpolation_20261027.py",
+      "bytes": 2474,
+      "sha256": "5e60856589934f3b373a5b19e30875e872cd03de761c6d5128d0888459da9a35",
+      "staged_change": true
+    },
+    {
+      "path": "scripts/probe_interpolation_20261027.py",
+      "bytes": 1831,
+      "sha256": "65cd8af8632d2c9b7a4321d2930e0f5d33ec6920a40644b3be318c278c8f55b3",
+      "staged_change": true
+    },
+    {
+      "path": "scripts/publish_interpolation_20261027.py",
+      "bytes": 1119,
+      "sha256": "d8498cf5f7bc940de7fc7c09f83c23963eff2083c86bf60048eab521325b3885",
+      "staged_change": true
+    },
+    {
+      "path": "scripts/run_interpolation_case_20261027.py",
+      "bytes": 15052,
+      "sha256": "cae98044965296c03a8b8968d9b4646d5314c77d7d0e20285518446ac4fa7ac7",
+      "staged_change": true
+    },
+    {
+      "path": "scripts/test_interpolation_20261027.py",
+      "bytes": 6417,
+      "sha256": "702950764d5cd6e2f93f83a0bdb3b99230048940908e8569e3e25b30414cd9f4",
+      "staged_change": true
+    },
+    {
+      "path": "scripts/vendor_interpolation_20261027.py",
+      "bytes": 3137,
+      "sha256": "e18d7d1c1cd32f9343648954700da0e72798967f75dc8456640cd8c67910aab1",
+      "staged_change": true
+    },
+    {
+      "path": "scripts/verify_interpolation_20261027.py",
+      "bytes": 18562,
+      "sha256": "cb075b2e76d47878acd6c13fb8232d5e9082a27549a45147008ccca0aa8dfd3a",
+      "staged_change": true
+    },
+    {
+      "path": "scripts/verify_interpolation_postpush_20261027.py",
+      "bytes": 4496,
+      "sha256": "a52a88203e006ac0168d0a6a2b5f89ad443b2d1223c2d85d4a85da035357e0dc",
+      "staged_change": true
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/LICENSE",
+      "bytes": 1085,
+      "sha256": "8f8f9ec9872f0a6d24e6fc101b10e63406af52e63f8e6214288a7d38c9d08c38",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
+      "bytes": 14556,
+      "sha256": "2daf8cfd6810e33ab978af69b79792caa82abbea32552419d5b75922eba1f7f4",
+      "staged_change": true
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/agents/openai.yaml",
+      "bytes": 286,
+      "sha256": "82450df375698bb3be3c9a477849b9814ad3d3792f763f703d512e7d9b90cc48",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/assets/motion-packs/contact-sheet.png",
+      "bytes": 223319,
+      "sha256": "4aacd418361443b3068387e612d1d6e6084d3606c505f758d275f9efa0a3c8a0",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/ad-storyboard.md",
+      "bytes": 3815,
+      "sha256": "14be2680eac977ff24860aa3b8a99b04cfd9b7f67077d219fae1b025003022d1",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/audio-stems.md",
+      "bytes": 2743,
+      "sha256": "1c5735e863fa9af531514d92eeb8922f4cc74f5e899d317d3bf863ddff4cb3b9",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/client-look-selection.md",
+      "bytes": 4767,
+      "sha256": "9c224b82dad0e949326b958a4111dca4a19a1b8f733752fd01faf53db82bb7ff",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/community-materials.md",
+      "bytes": 5559,
+      "sha256": "e64c863a3ebc161885fb829d6eea9b1dc79590429aef15e79bb36aa3296129b2",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/ctc-alignment.md",
+      "bytes": 2310,
+      "sha256": "1c15d49d42793bdfb01aecd56d95bff063fa35112f69f6aa9f5643af0ea692f2",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/float-adjustments.md",
+      "bytes": 3414,
+      "sha256": "7f2d8936dbc26898e53d4e6eac410fa896644dd794b2130e1214b3e13906723d",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/float-text.md",
+      "bytes": 3342,
+      "sha256": "262187cc89c68f6b984c76aa1ed199ddcdd9bf4e2baeb801c7132e822f2f6e04",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/float-tracking.md",
+      "bytes": 15237,
+      "sha256": "b4999c5ae0490a7496b076097b57a3b7670a20bc598a05c151c8afd9f39cca22",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/float-transitions.md",
+      "bytes": 4238,
+      "sha256": "4d46f3628a2ad81167768bebd894127d2261a41bb03c8e75d82466b316f7a248",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/hdr-display.md",
+      "bytes": 2335,
+      "sha256": "e9137166f7edd21731537ee30230dc6497efc4e37ffd102a6f224d20a27142db",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/highlight-glow.md",
+      "bytes": 4530,
+      "sha256": "6ddb537be286019edab3199cf3d0e9f879b878e5f19417a54a2cf15542bd40d3",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/job-recovery.md",
+      "bytes": 3838,
+      "sha256": "9afab3e277ae4455935ab05d830e8d1c599771c73d571a09f04343d253e48094",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/lip-sync.md",
+      "bytes": 3491,
+      "sha256": "0cdae76b324daba64bfa31934b569c850d2265fa8fd17bf4bff30d45b113ba0d",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/looks.md",
+      "bytes": 4670,
+      "sha256": "2d1372a65afc434271048f4421b60cea6a115bf9685b5bcaf4703f8458af11a6",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/model-sessions.md",
+      "bytes": 3615,
+      "sha256": "69069e06550657a946333a6a9884ae20c52f175c4eb29fea26c14b3175337478",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/module.md",
+      "bytes": 1251,
+      "sha256": "b17fba23ce3d3dbdeb21a9c197d465bd4cdbf0a5358b65fdf9ec332f264d914c",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/LICENSE",
+      "bytes": 1072,
+      "sha256": "a20126646f93d32a8989c3cf4772d59194f405034f7babe7daebeac22b8ab151",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/agents/openai.yaml",
+      "bytes": 233,
+      "sha256": "5eb800b7dc15a26e98dda06a0599897f21fe51cf7d6035d0692508d52934ad15",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/references/creative-frameworks.md",
+      "bytes": 10046,
+      "sha256": "f45bb278e6b5f6e44498dfc52f46d23b785bc0b662e0743b873b02daf3842a0d",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/references/platform-specs.md",
+      "bytes": 6568,
+      "sha256": "c8369e4c2a2e7517da2b8c511193b193dd6d008dfccac946cd739d3a19f9b4b5",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/scripts/ad_copy_validator.py",
+      "bytes": 18209,
+      "sha256": "9e33e1aec4c040b6a334ec3eaf179877a580b2feaef52b2bf2a721adc0aa6c53",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/workflow.md",
+      "bytes": 11656,
+      "sha256": "a246751f9b62bf478ddf0e0d8326f8f00a8c67fe9bfb1045dd311be50130915b",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/module.md",
+      "bytes": 976,
+      "sha256": "f28f24ebd8e2d9d05773a75690caeb9c4dff9307c1e3b0c1ba3f0a2e1e0376f9",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/LICENSE",
+      "bytes": 1072,
+      "sha256": "a20126646f93d32a8989c3cf4772d59194f405034f7babe7daebeac22b8ab151",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/agents/openai.yaml",
+      "bytes": 246,
+      "sha256": "1c3f47e151b72e3bac8151ea22058acde737e9ca74377551d5928e696585dd52",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/assets/ab_test_template.md",
+      "bytes": 3640,
+      "sha256": "a3b1529104389ddfab4e92357f61102d353a4585038bd611353aff2c5e3fa720",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/assets/campaign_report_template.md",
+      "bytes": 4024,
+      "sha256": "448ef109e333b351b0fbc2b2a087352d6abc89d125620585e6518b6aa91e631c",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/assets/channel_comparison_template.md",
+      "bytes": 4974,
+      "sha256": "5c6b30fccafa570192907ad7ff83f1d4b16b83519ab06ceccadbfa195fae69ba",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/assets/expected_output.json",
+      "bytes": 3865,
+      "sha256": "5214cc084d57938e4b92ba592305355597e9f2298c76520ace8d46d4a325c4d7",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/assets/sample_campaign_data.json",
+      "bytes": 4730,
+      "sha256": "6e8604e35126d012d34272e9de8094a1f69e9f21b9ab2c1054ee0c52ab061156",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/references/attribution-models-guide.md",
+      "bytes": 9598,
+      "sha256": "7909ca8534cf68bab00c1f2e2035fa3b6b0dbfd6fb94da2db88948b8616058e5",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/references/campaign-metrics-benchmarks.md",
+      "bytes": 8991,
+      "sha256": "5f83037ed8d13db1febfa5490ad3f21698043057ad859a70c323912091e30cd7",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/references/funnel-optimization-framework.md",
+      "bytes": 10949,
+      "sha256": "9a95040212cf0df227ec40079da50db34b909b7f4ca7ad5c3711a6d0f517d612",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/scripts/attribution_analyzer.py",
+      "bytes": 12499,
+      "sha256": "cc01b84dcd0d2d0659dbb4603ea8499a129d43c38ea5bcf727d12399af74f3e5",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/scripts/campaign_roi_calculator.py",
+      "bytes": 18172,
+      "sha256": "503809b68fc7754cc903e633dbcc8da87d147e8b61160f1b399c445cb94f5782",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/scripts/funnel_analyzer.py",
+      "bytes": 10902,
+      "sha256": "c9d31b4142512aa31e5965ebe7d6222893e78b19f653fbcc3f404e4122fe0463",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/workflow.md",
+      "bytes": 8783,
+      "sha256": "ad2367f6f7a9807976f5ade0c56b8332b667fe96a5634532091dc73d08df88a5",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/editor/module.md",
+      "bytes": 1164,
+      "sha256": "e2c637de687fa1c5e1203a9256af9d97f4dba82e9c795ecd88b9d4f62140ad87",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ffmpeg/module.md",
+      "bytes": 964,
+      "sha256": "e0318cf1530dc78007cf42412d82f70e15aa8f16bbd93080ed39957c2c349039",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ffmpeg/references/upstream/LICENSE",
+      "bytes": 34523,
+      "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ffmpeg/references/upstream/agents/openai.yaml",
+      "bytes": 223,
+      "sha256": "46523706ec3796ad723136cc22cab866560c4837de44e022393e752f3a30835a",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ffmpeg/references/upstream/reference.md",
+      "bytes": 4845,
+      "sha256": "750659d2c3d0c3571c4437895e9f7940e09d5debccf400f59a0ca0ae779960f4",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ffmpeg/references/upstream/workflow.md",
+      "bytes": 13906,
+      "sha256": "7e7d5c5d4d42cd383b5811840721be7b11a7e213c33dfdbd927ee576f3f79757",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/local-models/module.md",
+      "bytes": 2737,
+      "sha256": "61019a0a968fb6fedeebc06c5d5b3a6d3b5790c46815531017737db4aaa6c401",
+      "staged_change": true
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/local-policy/module.md",
+      "bytes": 562,
+      "sha256": "8609b553745050fb2cfd683b4a005efaccb7d9980f7569bcf26f0c441cb6922b",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/long-to-short/module.md",
+      "bytes": 662,
+      "sha256": "a33c44e0a8bbf4a6b24157778a529cba98295b82cd943c02358abcb250eca0d8",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/project-ops/module.md",
+      "bytes": 1236,
+      "sha256": "131299dd4545224349b96fe18163655cd50d2f86d41ee0f313e90791c498e1f0",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/quality/module.md",
+      "bytes": 1598,
+      "sha256": "6aba9eb9e43a87602798c1df502cc6992287c0963bd1d42d5fc81bdfe9758ab7",
+      "staged_change": true
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/reference-remake/module.md",
+      "bytes": 643,
+      "sha256": "2d104be2522df2053fd8037d379f36b3177707da5f702679cc37f46abf92faec",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/rights-ledger/module.md",
+      "bytes": 777,
+      "sha256": "4ef1ec27a9db42d018e10a9635be01bb208a897051b218c7f7a4e31729f79343",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/screen-demo/module.md",
+      "bytes": 934,
+      "sha256": "befcfec2e6826917117ebff621433530ffecc738be5e38dfb756ac4cf41267f5",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/template-library/module.md",
+      "bytes": 649,
+      "sha256": "8975560bf80d56934dd2061a27e42181e5ad0ab8ed258c8eed080320fb1c9b1f",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/timeline/module.md",
+      "bytes": 2488,
+      "sha256": "f25c1ebc26bcc17a6d9825abec6b2aff42dbfd40f45482bdaef2bbaccd69e948",
+      "staged_change": true
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-content-strategist/module.md",
+      "bytes": 882,
+      "sha256": "fabb47181169d2acbe44b7036b74c3448824cac7516e824c5824be577b909ab8",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-content-strategist/references/upstream/LICENSE",
+      "bytes": 1072,
+      "sha256": "a20126646f93d32a8989c3cf4772d59194f405034f7babe7daebeac22b8ab151",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-content-strategist/references/upstream/agents/openai.yaml",
+      "bytes": 259,
+      "sha256": "b74f612c445e8a4e2131e53aaf559dc2487d6c8b2b0078e2118bf109b9f7d919",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-content-strategist/references/upstream/workflow.md",
+      "bytes": 11974,
+      "sha256": "6410439fb3505954dac38adb82f2b0601edbc790775e62741f2892f7ca080bea",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-edit/module.md",
+      "bytes": 873,
+      "sha256": "17848982a48cbe2e848187ff10fc2e420ec438b5b3311ce8657e7e437258373a",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-edit/references/upstream/LICENSE",
+      "bytes": 34523,
+      "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-edit/references/upstream/agents/openai.yaml",
+      "bytes": 231,
+      "sha256": "5bf3dd4472ad6157f54fc6b24c36bd11d8c850f363f9f157cc8a40bde3594bbf",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-edit/references/upstream/references/operations.md",
+      "bytes": 9188,
+      "sha256": "2463a5298822520657e9c63d6bb1caaf4c99cf769d479737a0e078cb538e525b",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-edit/references/upstream/workflow.md",
+      "bytes": 3589,
+      "sha256": "a49b64fc5ad50778ccaf92b568b1a57dbb86c53a076dd7031519798de15ad340",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-understand/module.md",
+      "bytes": 1518,
+      "sha256": "d29178556c5821786ce809f089051beea3ce7a91591f838d233b2a37d814ecf0",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/motion-packs.md",
+      "bytes": 4871,
+      "sha256": "017cf8cc285ec4be2c79adeb3d451f3b2c36f6e742f74d251b2121a2fdb359f4",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/native-capture.md",
+      "bytes": 1608,
+      "sha256": "53ea706e02c0d4e3871d86101a921e92335acd8d18c4e2afa7bf7302a69954e4",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/neural-interpolation.md",
+      "bytes": 4365,
+      "sha256": "4d2c755371292c85a45d831631ed149245327ba028ce8b159608cb2a333bae05",
+      "staged_change": true
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/optical-effects.md",
+      "bytes": 4835,
+      "sha256": "86237dfc8b7dc01258def859d543d3738b0aaf0140e5cea2791fe8f750527095",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/procedural-particles.md",
+      "bytes": 7186,
+      "sha256": "3d34f9f4f292528cc046999617179e09c763cc86426840211cd6521a8864b084",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/projection-gpu.md",
+      "bytes": 8311,
+      "sha256": "bc01f88af30b82a24548151e29fde4d01f793f2062f1f35d0a59b4c0249605c1",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
+      "bytes": 8242,
+      "sha256": "8939277d5d1dfb005d80a7b3bb7f805b3bc4855a885ae752038a44b842510c43",
+      "staged_change": true
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/semantic-package.md",
+      "bytes": 3924,
+      "sha256": "ff9595354efe7a5bc5ba13fbecc84509359e0dca61c3b9964ef04d486eb5a551",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/semantic-retrieval.md",
+      "bytes": 11796,
+      "sha256": "8d4b01ec53ebca82f9c7306311f0fe7e35389beb572e9b0c1c1c9a8de205d83d",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/subtitle-dubbing.md",
+      "bytes": 5154,
+      "sha256": "3eaf0c890b551cf0c7f9052a4988cd9fc82416629ed28b78eb78e2df3a341f81",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/video-generation.md",
+      "bytes": 2680,
+      "sha256": "d64b3c6b1c6761a5f3a465ac7f4f9297bd99f9cfafd0230d101af259a2712f7c",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/scripts/look_gallery.py",
+      "bytes": 6717,
+      "sha256": "445d2e0bc429dd8cc91e5347cbab6e11b7f10a54a1a9e6ff6246eeecbbb48cbf",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+      "bytes": 916,
+      "sha256": "e2c3f94ebce8da8bb114e444d7285606d9fe88b1323433e94d6d90f13d5c1ccb",
+      "staged_change": false
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/scripts/run.py",
+      "bytes": 2296,
+      "sha256": "daf2c0fa71b9f798c221fff7b412f99d145b7aa7d11c8ccf3b789b98e6dabf72",
+      "staged_change": true
+    }
+  ],
+  "scope": "Byte verification only; no new render, model inference or human quality acceptance."
+}

@@ -1,0 +1,11 @@
+{
+  "status": "static-frames-inspected",
+  "reviewer": "agent-visual-review",
+  "continuous_human_playback": false,
+  "human_listening": false,
+  "finding": "Natural comparison is actual Sintel animation. Retained worst pair shows visible duplicated/ghosted face;explicit hold alternative sacrifices motion. No naturalness pass.",
+  "files": {
+    "comparison.png": "e9422bd43dc87c0a6a51903fa39467e4425dc1e40aefb00aaadc30a09e704fcf",
+    "held-out-worst.png": "d58deaee9645c05729a115f880ff46ca1de404808002baa538a69d9d60ab1724"
+  }
+}

@@ -26,6 +26,18 @@ def build_capability_manifest() -> dict[str, Any]:
         "engine": {"id": ENGINE_ID, "version": VERSION, "runtime": "python+ffmpeg-local", "network": "disabled"},
         "ffmpeg": {"version": ffmpeg_version()},
         "capabilities": {
+            'native_neural_interpolation': {
+                'status':'implemented_with_limits','protocol':'agent-native-frame-interpolation-v1','engine':'rife425-native-cuda-v1',
+                'commands':['interpolate.adapter.register','interpolate.adapter.list','interpolate.adapter.inspect','interpolate.generate'],
+                'features':['actual_RIFE4_25_CUDA_flow','native_CFR_VFR_PTS_and_packet_duration_subdivision','arbitrary_integer_factor_2_to_8',
+                    'all_original_RGBA_anchors_bit_exact','premultiplied_RGBA_flow_transport','explicit_and_RGB_difference_cut_holds',
+                    'original_selected_PCM_and_explicit_zero_padding','portable_rerunnable_recipe','linked_editable_slow_motion','owned_cancel_timeout_recovery'],
+                'limits':{'selected_duration_seconds':600,'selected_source_frames':15000,'output_frames':120000,'raster_edge_pixels':4096,
+                    'owned_CPU_array_bytes':512*1024**2,'maximum_asset_bytes':2*1024**3,'scale':[.25,.5,1,2]},
+                'clock':'actual_source_PTS;each_native_interval_split_equally;last_interval_hold;nearest_original_PCM_sample_boundary',
+                'network':False,'model_downloads':False,'CPU_fallback':False,'weight_format':'fixed_158_tensor_FP32_safetensors',
+                'unsupported':['native_HDR_or_ICC_inference','semantic_scene_cut_oracle','automatic_occlusion_or_naturalness_acceptance',
+                    'extrapolated_last_interval','cross_device_bit_determinism','full_G10_or_CapCut_parity'],'goal_G10_complete':False},
             'native_lip_sync': {
                 'status':'implemented_with_limits','protocol':'agent-native-lipsync-v1',
                 'engine':'musetalk-v15-native-cuda-v1',

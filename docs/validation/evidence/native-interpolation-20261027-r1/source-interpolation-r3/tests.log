@@ -1,0 +1,42 @@
+test_dry_run_no_inference_or_metadata_mutation (test_interpolation.CLITests.test_dry_run_no_inference_or_metadata_mutation) ... ok
+test_failed_worker_rolls_back_asset_and_metadata (test_interpolation.CLITests.test_failed_worker_rolls_back_asset_and_metadata) ... ok
+test_linked_slow_motion_and_rerunnable_native_recipe (test_interpolation.CLITests.test_linked_slow_motion_and_rerunnable_native_recipe) ... ok
+test_no_audio_source_yields_one_editable_clip (test_interpolation.CLITests.test_no_audio_source_yields_one_editable_clip) ... ok
+test_portable_recipe_rebind_updates_only_parent_and_digest (test_interpolation.CLITests.test_portable_recipe_rebind_updates_only_parent_and_digest) ... ok
+test_read_only_adapter_commands_preserve_metadata (test_interpolation.CLITests.test_read_only_adapter_commands_preserve_metadata) ... ok
+test_recipe_recomputed_digest_does_not_hide_clock_tamper (test_interpolation.CLITests.test_recipe_recomputed_digest_does_not_hide_clock_tamper) ... ok
+test_validation_failure_after_publication_rolls_back (test_interpolation.CLITests.test_validation_failure_after_publication_rolls_back) ... ok
+test_weight_tamper_rejected_before_inference (test_interpolation.CLITests.test_weight_tamper_rejected_before_inference) ... ok
+test_arbitrary_factors_preserve_every_source_anchor (test_interpolation.ClockTests.test_arbitrary_factors_preserve_every_source_anchor) ... ok
+test_fractional_or_boolean_indices_rejected (test_interpolation.ClockTests.test_fractional_or_boolean_indices_rejected) ... ok
+test_half_open_selection_uses_actual_next_point (test_interpolation.ClockTests.test_half_open_selection_uses_actual_next_point) ... ok
+test_missing_final_duration_rejected (test_interpolation.ClockTests.test_missing_final_duration_rejected) ... ok
+test_native_VFR_all_anchor_times_and_durations (test_interpolation.ClockTests.test_native_VFR_all_anchor_times_and_durations) ... ok
+test_non_unit_timebase_numerator (test_interpolation.ClockTests.test_non_unit_timebase_numerator) ... ok
+test_nonmonotonic_pts_rejected (test_interpolation.ClockTests.test_nonmonotonic_pts_rejected) ... ok
+test_output_AVRational_overflow_rejected (test_interpolation.ClockTests.test_output_AVRational_overflow_rejected) ... ok
+test_packet_expression_sets_PTS_DTS_and_every_duration (test_interpolation.ClockTests.test_packet_expression_sets_PTS_DTS_and_every_duration) ... ok
+test_all_decoded_RGBA_anchors_and_hidden_RGB_unchanged (test_interpolation.PixelTests.test_all_decoded_RGBA_anchors_and_hidden_RGB_unchanged) ... ok
+test_arbitrary_times_and_final_interval_are_explicit (test_interpolation.PixelTests.test_arbitrary_times_and_final_interval_are_explicit) ... ok
+test_array_budget_rejects_before_output (test_interpolation.PixelTests.test_array_budget_rejects_before_output) ... ok
+test_difference_cut_disabled_or_thresholded (test_interpolation.PixelTests.test_difference_cut_disabled_or_thresholded) ... ok
+test_explicit_cut_never_calls_model_across_pair (test_interpolation.PixelTests.test_explicit_cut_never_calls_model_across_pair) ... ok
+test_extra_source_frame_rejected (test_interpolation.PixelTests.test_extra_source_frame_rejected) ... ok
+test_identical_RGBA_pair_is_held_without_fake_forward (test_interpolation.PixelTests.test_identical_RGBA_pair_is_held_without_fake_forward) ... ok
+test_invalid_neural_raster_rejected (test_interpolation.PixelTests.test_invalid_neural_raster_rejected) ... ok
+test_missing_neural_frame_rejected (test_interpolation.PixelTests.test_missing_neural_frame_rejected) ... ok
+test_partial_input_reads_and_output_writes (test_interpolation.PixelTests.test_partial_input_reads_and_output_writes) ... ok
+test_truncated_input_rejected (test_interpolation.PixelTests.test_truncated_input_rejected) ... ok
+test_cancel_reclaims_owned_children (test_interpolation.TransportTests.test_cancel_reclaims_owned_children) ... ok
+test_delayed_audio_has_explicit_leading_and_trailing_zeros (test_interpolation.TransportTests.test_delayed_audio_has_explicit_leading_and_trailing_zeros) ... ok
+test_forged_anchor_report_rejected (test_interpolation.TransportTests.test_forged_anchor_report_rejected) ... ok
+test_original_44100_sample_clock_and_source_selection (test_interpolation.TransportTests.test_original_44100_sample_clock_and_source_selection) ... ok
+test_real_VFR_qtrle_all_PTS_durations_original_anchors_and_PCM (test_interpolation.TransportTests.test_real_VFR_qtrle_all_PTS_durations_original_anchors_and_PCM) ... ok
+test_timeout_reclaims_owned_children (test_interpolation.TransportTests.test_timeout_reclaims_owned_children) ... ok
+test_unknown_original_audio_duration_rejected (test_interpolation.TransportTests.test_unknown_original_audio_duration_rejected) ... ok
+test_worker_failure_diagnoses_and_recovers (test_interpolation.TransportTests.test_worker_failure_diagnoses_and_recovers) ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 42.381s
+
+OK

@@ -2,8 +2,8 @@
   "format": "agent-ffmpeg-local-skills-v2",
   "status": "reviewed",
   "registration_mode": "single",
-  "release": "v0.1.0-alpha.4-local.39",
-  "manifest_sha256": "sha256:d9eadc513068d476aa563221b6f0b245ae113321ea32ca73d83c90021ff67bef",
+  "release": "v0.1.0-alpha.4-local.40",
+  "manifest_sha256": "sha256:cfacdf092eb891f3ef5ff51be507a959fbbee0d3e42b400f1d63f456fcf29743",
   "runtime_config": "local/agent-ffmpeg/runtime.json",
   "skill_count": 1,
   "module_count": 17,
@@ -12,8 +12,8 @@
   "skills": [
     {
       "name": "agent-ffmpeg-local-editor",
-      "purpose_zh": "唯一入口：17内部模块、真实CUDA神经口型、GPU视频生成/会话、原生跟踪、HDR/Float32合成、500滤镜、语义检索、字幕配音与四轨分离",
-      "skill_md_sha256": "37d955d4a4d609af069a0f8351bf1ddb5929b03046117ab31efcff03042841ad"
+      "purpose_zh": "唯一入口：17内部模块、真实CUDA神经补帧/慢动作及口型、GPU视频生成/会话、原生跟踪、HDR/Float32合成、500滤镜、语义检索、字幕配音与四轨分离",
+      "skill_md_sha256": "2daf8cfd6810e33ab978af69b79792caa82abbea32552419d5b75922eba1f7f4"
     }
   ],
   "modules": [
@@ -404,8 +404,8 @@
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/modules/local-models/module.md",
-      "bytes": 2508,
-      "sha256": "3be194be08d1d7e6849caae7dd1694733de798f220f5a05ffdd5326712699a98"
+      "bytes": 2737,
+      "sha256": "61019a0a968fb6fedeebc06c5d5b3a6d3b5790c46815531017737db4aaa6c401"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/modules/local-policy/module.md",
@@ -424,8 +424,8 @@
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/modules/quality/module.md",
-      "bytes": 1369,
-      "sha256": "d0257f33a3a57ca3bfd0ecd32fe0a525046984c8075c7cd7a70610a895cdfde4"
+      "bytes": 1598,
+      "sha256": "6aba9eb9e43a87602798c1df502cc6992287c0963bd1d42d5fc81bdfe9758ab7"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/modules/reference-remake/module.md",
@@ -449,8 +449,8 @@
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/modules/timeline/module.md",
-      "bytes": 2259,
-      "sha256": "66573cbb498c2324f7ad4ddde13df9fa8f2815f38d3dcaf12012f16f92e9ab69"
+      "bytes": 2488,
+      "sha256": "f25c1ebc26bcc17a6d9825abec6b2aff42dbfd40f45482bdaef2bbaccd69e948"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/modules/video-content-strategist/module.md",
@@ -513,6 +513,11 @@
       "sha256": "53ea706e02c0d4e3871d86101a921e92335acd8d18c4e2afa7bf7302a69954e4"
     },
     {
+      "path": "skills/agent-ffmpeg-local-editor/references/neural-interpolation.md",
+      "bytes": 4365,
+      "sha256": "4d2c755371292c85a45d831631ed149245327ba028ce8b159608cb2a333bae05"
+    },
+    {
       "path": "skills/agent-ffmpeg-local-editor/references/optical-effects.md",
       "bytes": 4835,
       "sha256": "86237dfc8b7dc01258def859d543d3738b0aaf0140e5cea2791fe8f750527095"
@@ -529,8 +534,8 @@
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
-      "bytes": 8019,
-      "sha256": "5a90dcc4cbdc2cf9d63cd71e9410923f68c86ef52ca9ebe1f46484173f32c4dd"
+      "bytes": 8242,
+      "sha256": "8939277d5d1dfb005d80a7b3bb7f805b3bc4855a885ae752038a44b842510c43"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/references/semantic-package.md",
@@ -565,12 +570,12 @@
     {
       "path": "skills/agent-ffmpeg-local-editor/scripts/run.py",
       "bytes": 2296,
-      "sha256": "b9104a47e638751d15d4833588f3c819765e6301ea6aa7419e9dbf22ac87a13a"
+      "sha256": "daf2c0fa71b9f798c221fff7b412f99d145b7aa7d11c8ccf3b789b98e6dabf72"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
-      "bytes": 14212,
-      "sha256": "37d955d4a4d609af069a0f8351bf1ddb5929b03046117ab31efcff03042841ad"
+      "bytes": 14556,
+      "sha256": "2daf8cfd6810e33ab978af69b79792caa82abbea32552419d5b75922eba1f7f4"
     }
   ],
   "retired_skills": [
@@ -639,7 +644,7 @@
       "skill_md_sha256": "da31e25b3e641f80367075cdb4e72be99be2c89c332556d8ba58ec419fffd46b"
     }
   ],
-  "cli_version": "0.1.41",
+  "cli_version": "0.1.42",
   "material_count": 359,
   "named_voice_count": 103,
   "optional_model_pack_count": 4

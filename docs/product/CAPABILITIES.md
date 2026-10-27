@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.41 / alpha.4-local.39 / r42 kit · 1 Skill / 17 modules / 80 files.**
+**CLI0.1.42 / alpha.4-local.40 / r43 kit · 1 Skill / 17 modules / 81 files.**
 
-新增**真实本地 CUDA 神经口型同步**：使用 MuseTalk 1.5、Whisper-tiny、VAE 和 BiSeNet，让指定图片／视频随独立语音生成口型。支持25FPS人脸框关键帧、完整PCM保留、可重跑配方，以及分别可编辑的视频／音频关联片段。
+新增**真实本地 CUDA RIFE4.25 神经补帧与可编辑慢动作**：保留CFR/VFR原生PTS、每帧持续时间、全部源RGBA帧及原音轨；2..8倍补帧、显式切镜保持、预乘alpha、可重跑配方和关联双轨。
 
-[Neural lip-sync workflow and limits](LIP_SYNC.md)
+[Native interpolation workflow and limits](NEURAL_INTERPOLATION.md)
 
 <!-- /community-current -->
 
@@ -81,6 +81,7 @@
 | F65 | 真实高光 Bloom / 胶片 Halation | 软膝阈值提取实际高光→分离高斯扩散→核心抑制/线性着色；可编辑数值轨道和原作者时钟，片段或根区间调整层。 | `effects list/inspect; timeline compose; preview; render; queue` | sigma0…32输入像素；透明/复制边界、原alpha位保持；实际四kernel GPU/CPU参考，有界空间/访问预算；非物理胶片/HDR验收。 |
 | F66 | 原生 PQ／HLG HDR 与 SDR 显示 | 明确参考白及HLG峰值/gamma，解码至显示线性光；不同nit素材、普通效果/合成、10-bit BT.2020 NCL交付，单独选择SDR trim及PNG/MP4预览。 | `timeline compose; validate; preview; render; convert` | 传递CPU，已有合成/光效可GPU；拒绝8-bit/标签不符/缺单位；alpha位保留。非ICC/动态元数据或HDR监看验收。 |
 | F67 | 本地神经口型同步 | 图片／视频＋独立声音→真实CUDA MuseTalk口型；25FPS人脸框关键帧、语义下半脸混合、完整PCM及alpha保留，可复用配方并视频/音频关联入轨。 | `lipsync adapter register/list/inspect; lipsync generate` | 本地safetensors及已有原生Torch依赖；脸部256×256、明确8bit SDR与源运镜、无CPU回退；自然口型、完整数字人仍未验收。 |
+| F68 | CUDA神经补帧与慢动作 | 原生CFR/VFR、每源帧RGBA、预乘alpha、完整PCM；2..8倍、切镜保持、关联慢放双轨、配方重跑及工程包。 | `interpolate adapter; interpolate generate` | 显式RIFE4.25 safetensors＋原生CUDA Python；无CPU回退；困难运动/遮挡/自然质量/HDR未广泛验收。 |
 
 | 编号 | 服务模块 | 运行形式 | 需要什么/提供什么 | 入口 | 范围 |
 |---|---|---|---|---|---|
@@ -106,6 +107,7 @@
 | S20 | 字幕翻译配音联合服务 | 既有 OPUS / Kokoro 原生 worker + 受管工程事务 | 普通 SRT、明确语言/音色/轨道，CPU/CUDA/auto，批内复用 | `dub subtitles` | [完整流程](SUBTITLE_DUBBING.md)；保留全句和重试，字词/口型/自然质量未闭 |
 | S21 | 本地GPU常驻推理会话 | 原生进程、认证Windows命名管道、JSON/原始帧、重叠拒写锁和生命周期看门狗。 | 已有本地VACE适配器；同一提示词多方案。 | `media model-session start/status/stop` | 不开放网络端口；同工程串行，首条加载及其他模型复用仍有限。 |
 | S22 | MuseTalk CUDA 神经口型服务 | 本地Whisper-tiny音频特征、MuseTalk1.5 UNet、SD VAE与BiSeNet；固定safetensors与拒写锁、原生任务回收。 | 显式已有Torch/Diffusers/Transformers/OpenCV原生依赖及模型证据；无自动安装。 | `lipsync adapter; lipsync generate` | 模型256×256，25FPS；授权、自然度、完整数字人及HDR另行验收。 |
+| S23 | RIFE CUDA补帧服务 | 固定五阶段IFNet/158个FP32推理张量、严格本地摘要、实际CUDA；不执行模型目录代码/Pickle。 | 已有原生Torch＋safetensors依赖和MIT模型证据；无自动安装。 | `interpolate adapter; interpolate generate` | 原生时间细分、全帧/PCM往返；阈值不是语义切镜；自然质量仍须复核。 |
 
 ## 完整安装版能力字段
 
@@ -5109,3 +5111,61 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 ```
 
 [CLI0.1.41 exact installed capability snapshot](lip-sync-capabilities-cli-0.1.41.json).
+
+### `native_neural_interpolation`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "agent-native-frame-interpolation-v1",
+  "engine": "rife425-native-cuda-v1",
+  "commands": [
+    "interpolate.adapter.register",
+    "interpolate.adapter.list",
+    "interpolate.adapter.inspect",
+    "interpolate.generate"
+  ],
+  "features": [
+    "actual_RIFE4_25_CUDA_flow",
+    "native_CFR_VFR_PTS_and_packet_duration_subdivision",
+    "arbitrary_integer_factor_2_to_8",
+    "all_original_RGBA_anchors_bit_exact",
+    "premultiplied_RGBA_flow_transport",
+    "explicit_and_RGB_difference_cut_holds",
+    "original_selected_PCM_and_explicit_zero_padding",
+    "portable_rerunnable_recipe",
+    "linked_editable_slow_motion",
+    "owned_cancel_timeout_recovery"
+  ],
+  "limits": {
+    "selected_duration_seconds": 600,
+    "selected_source_frames": 15000,
+    "output_frames": 120000,
+    "raster_edge_pixels": 4096,
+    "owned_CPU_array_bytes": 536870912,
+    "maximum_asset_bytes": 2147483648,
+    "scale": [
+      0.25,
+      0.5,
+      1,
+      2
+    ]
+  },
+  "clock": "actual_source_PTS;each_native_interval_split_equally;last_interval_hold;nearest_original_PCM_sample_boundary",
+  "network": false,
+  "model_downloads": false,
+  "CPU_fallback": false,
+  "weight_format": "fixed_158_tensor_FP32_safetensors",
+  "unsupported": [
+    "native_HDR_or_ICC_inference",
+    "semantic_scene_cut_oracle",
+    "automatic_occlusion_or_naturalness_acceptance",
+    "extrapolated_last_interval",
+    "cross_device_bit_determinism",
+    "full_G10_or_CapCut_parity"
+  ],
+  "goal_G10_complete": false
+}
+```
+
+[CLI0.1.42 exact installed capability snapshot](neural-interpolation-capabilities-cli-0.1.42.json).

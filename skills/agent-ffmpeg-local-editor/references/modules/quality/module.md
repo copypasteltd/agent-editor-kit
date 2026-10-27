@@ -23,3 +23,5 @@ For actual native CUDA audio-driven face lip sync, explicit25FPS face-box keys,
 complete RGBA/PCM preservation and editable recipe reruns, read
 [local neural lip sync](../../lip-sync.md). Review natural mouth motion and
 complete speech separately from transport proofs; full-body animation remains separate.
+
+For actual native CUDA RIFE interpolation, CFR/VFR/PCM preservation, editable slow motion and client previews, read [neural interpolation](../../neural-interpolation.md). Keep cut/naturalness/HDR acceptance boundaries explicit.

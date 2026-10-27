@@ -30,3 +30,5 @@ source retiming, and replace conflicting whole property tracks only explicitly.
 ## Dynamic crop and nested projection (CLI 0.1.19)
 
 Read [motion-packs](../../motion-packs.md) for the editable combination workflow. Dynamic crop and child crop/fit/TRS automatically reuse pure scanline parameters. Bilinear and source-axis box area sampling retain their existing precision and alpha contract; area is explicit via `--sequence-sampling area`. Keep `--sequence-memory-mib` explicit for overrides; no silent quality reduction or quota expansion. CPU is the default. For CLI 0.1.20 native GPU samplers, read [projection-gpu](../../projection-gpu.md); hardware encoding is separate.
+
+For actual native CUDA RIFE interpolation, CFR/VFR/PCM preservation, editable slow motion and client previews, read [neural interpolation](../../neural-interpolation.md). Keep cut/naturalness/HDR acceptance boundaries explicit.

@@ -1,0 +1,214 @@
+{
+  "status": "mirrors-acquired",
+  "source": "unofficial mirror of official MIT Practical-RIFE4.25",
+  "endpoint": "https://hf-mirror.com",
+  "models": {
+    "Bash2X/RIFE-Models": {
+      "_id": "6a53df6298352655b736bb6e",
+      "id": "Bash2X/RIFE-Models",
+      "private": false,
+      "tags": [
+        "video-interpolation",
+        "rife",
+        "frame-interpolation",
+        "computer-vision",
+        "license:mit",
+        "region:us"
+      ],
+      "downloads": 0,
+      "likes": 0,
+      "modelId": "Bash2X/RIFE-Models",
+      "author": "Bash2X",
+      "sha": "feaf6d11238b4a1e9f015a5d18c18df152affd20",
+      "lastModified": "2026-07-12T18:50:24.000Z",
+      "gated": false,
+      "disabled": false,
+      "model-index": null,
+      "config": {},
+      "cardData": {
+        "license": "mit",
+        "tags": [
+          "video-interpolation",
+          "rife",
+          "frame-interpolation",
+          "computer-vision"
+        ]
+      },
+      "siblings": [
+        {
+          "rfilename": ".gitattributes",
+          "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "size": 1519
+        },
+        {
+          "rfilename": "README.md",
+          "blobId": "0f085db53f91cd43361cab1032dc5f55c64dbca9",
+          "size": 2645
+        },
+        {
+          "rfilename": "RIFE_v4.22.lite.zip",
+          "blobId": "5c0e3e02a6c1700f9928fa42b9c734699c6eb096",
+          "size": 19878007,
+          "lfs": {
+            "sha256": "5e123e7a9951940e607353906167a903443be4303ac091d6c6a35a43e35cf840",
+            "size": 19878007,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "RIFE_v4.22.zip",
+          "blobId": "3c55869c3fe2e40366d6dbae85a60f17f7e093a5",
+          "size": 38071105,
+          "lfs": {
+            "sha256": "466dfd5f310c5c32ed12904d0e22bfc2f793f17e41808353d4378bbe2c60cb9c",
+            "size": 38071105,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "RIFE_v4.25.lite.zip",
+          "blobId": "dd85ebebf9d1d08fbf88952ea5cf4c6b138c253e",
+          "size": 22765148,
+          "lfs": {
+            "sha256": "e84366c23e0eb1a637a55aad2e4f3442ec2bf4c388043b4aabbf590be289e6e8",
+            "size": 22765148,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "RIFE_v4.25.zip",
+          "blobId": "bab5fcfe1bf1a30b28cf5a1e83f06dcf80e68192",
+          "size": 22919050,
+          "lfs": {
+            "sha256": "e63d481b7ae5d4a4e6ad7ac5b410ff78f3bf7be3b51b2e38ca8152747abde5b4",
+            "size": 22919050,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "RIFE_v4.26.heavy.zip",
+          "blobId": "021278abdc76ff4474dd717c586dfe639a22155c",
+          "size": 23190633,
+          "lfs": {
+            "sha256": "93c0ec3dce359930059c1cc6733cff1d0c075314e30d352864436023bfc13463",
+            "size": 23190633,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "RIFE_v4.26.zip",
+          "blobId": "4f0924f0bf2792d57bed111af2cd6907652267d3",
+          "size": 22867954,
+          "lfs": {
+            "sha256": "c2452dd2b244947d4be580156bbead60d6b72af5736860f7d6b3f99648c9c4cc",
+            "size": 22867954,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "RIFE_v4.6.zip",
+          "blobId": "fedee226b9bcd6904260c6311efe650523f434ac",
+          "size": 19713493,
+          "lfs": {
+            "sha256": "9ca89704081b666c781c597a76e958f3b64ce2bc6129e9b6e53ec2e55bbbfe41",
+            "size": 19713493,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "RIFE_v4.9.2.zip",
+          "blobId": "cc5723fbce5f7e9ecde6327bb57773fe5d530300",
+          "size": 19816778,
+          "lfs": {
+            "sha256": "f57de4828ae902eec5c1c518bec05edd510f37919b29d5c138cc0d9072b5b63c",
+            "size": 19816778,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "inference_video_OpenCV.py",
+          "blobId": "77c02d37263ea11cda2b99bd1ceca775730e3a30",
+          "size": 12898
+        }
+      ],
+      "spaces": [],
+      "createdAt": "2026-07-12T18:39:30.000Z",
+      "usedStorage": 189222168
+    },
+    "simonri/saferife": {
+      "_id": "6a02563996b7a78d6ad08fba",
+      "id": "simonri/saferife",
+      "private": false,
+      "tags": [
+        "region:us"
+      ],
+      "downloads": 0,
+      "likes": 0,
+      "modelId": "simonri/saferife",
+      "author": "simonri",
+      "sha": "ccac5e597786d37c0be8e14d36d20f07206cddc0",
+      "lastModified": "2026-05-25T22:13:06.000Z",
+      "gated": false,
+      "disabled": false,
+      "config": {},
+      "siblings": [
+        {
+          "rfilename": ".gitattributes",
+          "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "size": 1519
+        },
+        {
+          "rfilename": "rife-4.22.lite.safetensors",
+          "blobId": "fc1811014e892d0d2b06468b81ed7a7d67d44c91",
+          "size": 21378572,
+          "lfs": {
+            "sha256": "fecbb048a22c470219b47bcdd7c44187fffea61a3438de32de9ecec50441ab3d",
+            "size": 21378572,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "rife-4.25.safetensors",
+          "blobId": "2fe12060ad6dc992045995a7656b94b9cf26a26d",
+          "size": 22674392,
+          "lfs": {
+            "sha256": "3e13461a3d56104a00d1c93a77e2c531ab6cff82b38abe061c250c2118b68251",
+            "size": 22674392,
+            "pointerSize": 133
+          }
+        },
+        {
+          "rfilename": "rife49.safetensors",
+          "blobId": "3fe4717024646344bbdaba4f621be7bb854c0395",
+          "size": 21312056,
+          "lfs": {
+            "sha256": "f581d759612f324ad13b903cb6bd7c418a0697aaf1fc1125a0d29ba7ad35fdc2",
+            "size": 21312056,
+            "pointerSize": 133
+          }
+        }
+      ],
+      "spaces": [],
+      "createdAt": "2026-05-11T22:20:41.000Z",
+      "usedStorage": 65365020
+    }
+  },
+  "archive_members": [
+    "train_log/",
+    "__MACOSX/._train_log",
+    "train_log/.DS_Store",
+    "__MACOSX/train_log/._.DS_Store",
+    "train_log/flownet.pkl",
+    "__MACOSX/train_log/._flownet.pkl",
+    "train_log/IFNet_HDv3.py",
+    "train_log/refine.py",
+    "__MACOSX/train_log/._refine.py",
+    "train_log/__pycache__/",
+    "train_log/RIFE_HDv3.py",
+    "__MACOSX/train_log/._RIFE_HDv3.py",
+    "train_log/__pycache__/RIFE_HDv3.cpython-311.pyc",
+    "train_log/__pycache__/IFNet_HDv3.cpython-311.pyc"
+  ],
+  "archive_sha256": "e63d481b7ae5d4a4e6ad7ac5b410ff78f3bf7be3b51b2e38ca8152747abde5b4",
+  "official_archive_byte_equality_verified": false
+}

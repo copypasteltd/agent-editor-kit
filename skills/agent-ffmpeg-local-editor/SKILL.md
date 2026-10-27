@@ -1,13 +1,13 @@
 ---
 name: agent-ffmpeg-local-editor
-description: "Edit and generate local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, native CUDA lip sync, tracking, explicit PQ/HLG HDR and SDR previews, seeded GPU particles, editable GPU flare/light leaks/chromatic split and highlight Bloom/Halation, GPU text/image/first-last generation with reusable model sessions, semantic search, voice/translation, subtitle dubbing, music/SFX and quality checks. Also use for ads, reference remakes, long-to-short clips and screen demos."
+description: "Edit and generate local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, native CUDA frame interpolation/slow motion and lip sync, tracking, explicit PQ/HLG HDR and SDR previews, seeded GPU particles, editable GPU flare/light leaks/chromatic split and highlight Bloom/Halation, GPU text/image/first-last generation with reusable model sessions, semantic search, voice/translation, subtitle dubbing, music/SFX and quality checks. Also use for ads, reference remakes, long-to-short clips and screen demos."
 ---
 
 # agent editor kit / unified local Skill
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.39` / CLI `0.1.41`.
+The current local runtime is `v0.1.0-alpha.4-local.40` / CLI `0.1.42`.
 Native Float32 GPU operations now use bounded owned control pipes. Read
 [GPU execution](references/projection-gpu.md) for policy, actual operator counts,
 cancellation and process/thread/stream cleanup receipts.
@@ -42,6 +42,11 @@ path verifies every Float32 display frame before export and preserves an origina
 binding sidecar. Read [tracking bake](references/float-tracking.md#verified-native-tracking-bake)
 before choosing this export; the certificate covers the frozen graph/display FPS.
 The published alpha.3 downloads retain CLI 0.1.2 and their original scope.
+
+For native CFR/VFR neural interpolation and editable slow motion, read
+[neural interpolation](references/neural-interpolation.md). Preserve original
+RGBA anchors and PCM, specify cuts, show actual encoded client previews, and
+use a new asset ID for a rerun. GPU-only inference requires an explicit adapter.
 
 ## Runtime and common workflow
 

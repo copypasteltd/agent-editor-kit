@@ -9,7 +9,23 @@
 本頁包含完整功能模塊、服務與依賴、安裝與使用邏輯、Skill 輸入輸出、真實案例和核驗表。長篇原始驗收日志繼續留檔，功能說明與案例入口恢復到首頁。
 
 
-<!-- native-lip-sync-current -->
+<!-- native-interpolation-current -->
+
+**CLI0.1.42 / alpha.4-local.40 / r43 kit · 1 Skill / 17 modules.**
+
+新增**真正本機 CUDA RIFE4.25 神經補幀與可編輯慢動作**：保留CFR/VFR原生PTS、每影格持續時間、全部來源RGBA影格及原音軌；2..8倍補幀、明確切鏡保持、預乘alpha、可重跑配方及關聯雙軌。
+
+[Workflow / usage](docs/product/NEURAL_INTERPOLATION.md) · [C52](docs/product/CASES.md#c52-native-neural-interpolation) · [Install](docs/releases/CLI_0.1.42_LOCAL.md) · [Evidence](docs/validation/本地神经补帧实测_2026-10-27.md)
+
+![Actual native CUDA interpolation;original versus neural slowed4x](docs/assets/native-interpolation-20261027-r1/comparison.gif)
+
+37項安裝版補幀檢查及143項安裝版相容回歸通過；37項原始碼檢查分列。C52動畫24→96影格，另12→36影格透明VFR與105840個原始PCM標量完整保留，工程包完整音畫重播相同。23張獨立保留參考影格平均MSE：模型12.28／重複24.36／線性混合14.87；**末段模型重影失敗保留**，明確保持以停頓換取去重影。未做人工連續播放／聽審；自然品質、HDR模型及完整目標繼續建置。
+
+[Actual retained failure and explicit hold](docs/assets/native-interpolation-20261027-r1/failure-and-hold.png) · [Held-out per-frame measurements](docs/validation/evidence/native-interpolation-20261027-r1/case-r1/verification.json)
+
+<!-- /native-interpolation-current -->
+
+<!-- native-lip-sync-history -->
 
 **CLI0.1.41 / alpha.4-local.39 / r42 kit · 1 Skill / 17 modules.**
 
@@ -23,7 +39,7 @@
 
 另有30影格移動影片/人臉框實測；真正模型輸出後取消工作，三個子程序回收、工程回滾及診斷均通過。 [Evidence](docs/validation/evidence/native-lipsync-20261027-r1/video-and-cancel-r1/verification.json).
 
-<!-- /native-lip-sync-current -->
+<!-- /native-lip-sync-history -->
 
 <!-- hdr-display-history -->
 
@@ -462,7 +478,7 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r42 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r42.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
+**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r43 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r43.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
 
 <!-- /unified-skill-registration -->
 
@@ -768,7 +784,7 @@ flowchart LR
 5. 若需要選型，展示原圖與少量候選，記錄最終 ID/強度/作用域；在目標素材上復試。
 6. 渲染至工程內新路徑，檢查實際編碼文件、manifest、warning、音畫與權利，再導出專案包。
 
-## 完整的 67 個功能模組
+## 完整的 68 個功能模組
 
 編號用於定位文件；各模塊有依賴與交叉，不是“43 個獨立內核”或完成率。下表直接寫明行為、入口與限制；[完整機器能力清單及每項契約](docs/product/CAPABILITIES.zh-TW.md)保留全部字段。
 
@@ -841,6 +857,7 @@ flowchart LR
 | F65 | 實際高光 Bloom / 膠片 Halation | 軟膝閾值提取實際高光→分離高斯擴散→核心抑制/線性著色；可編輯數值軌道及原作者時鐘，片段或根區間調整層。 | `effects list/inspect; timeline compose; preview; render; queue` | sigma0…32輸入像素；透明/複製邊界、原alpha位元保持；實際四kernel GPU/CPU參考，有界空間/訪問預算；非物理膠片/HDR驗收。 |
 | F66 | 原生 PQ／HLG HDR 與 SDR 顯示 | 明確參考白及HLG峰值/gamma，解碼至顯示線性光；不同nit素材、一般效果/合成、10-bit BT.2020 NCL交付，獨立選擇SDR trim及PNG/MP4預覽。 | `timeline compose; validate; preview; render; convert` | 傳遞CPU，既有合成/光效可GPU；拒絕8-bit/標籤不符/缺單位；alpha位元保留。非ICC/動態中繼資料或HDR監看驗收。 |
 | F67 | 本機神經口型同步 | 圖片／影片＋獨立聲音→真正CUDA MuseTalk口型；25FPS人臉框關鍵影格、語義下半臉混合、完整PCM及alpha保留，可復用配方並影片/音訊關聯入軌。 | `lipsync adapter register/list/inspect; lipsync generate` | 本機safetensors及既有原生Torch依賴；臉部256×256、明確8bit SDR與來源運鏡、無CPU回退；自然口型、完整數位人仍未驗收。 |
+| F68 | CUDA神經補幀與慢動作 | 原生CFR/VFR、每來源影格RGBA、預乘alpha、完整PCM；2..8倍、切鏡保持、關聯慢放雙軌、配方重跑及工程包。 | `interpolate adapter; interpolate generate` | 明確RIFE4.25 safetensors＋原生CUDA Python；無CPU回退；困難運動/遮擋/自然品質/HDR未廣泛驗收。 |
 
 ## 支持的服務模塊與依賴
 
@@ -870,6 +887,7 @@ flowchart LR
 | S20 | 字幕翻譯配音聯合服務 | 既有 OPUS / Kokoro 原生 worker + 受管工程事務 | 普通 SRT、明確語言/音色/軌道，CPU/CUDA/auto，批內復用 | `dub subtitles` | [完整流程](docs/product/SUBTITLE_DUBBING.md)；保留全句與重試，字詞/口型/自然品質未閉 |
 | S21 | 本地GPU常駐推理會話 | 原生行程、認證Windows命名管道、JSON/原始幀、重疊拒寫鎖與生命週期監控。 | 既有本地VACE適配器；同一提示詞多方案。 | `media model-session start/status/stop` | 不開放網路埠；同工程串行，首條載入與其他模型重用仍有限。 |
 | S22 | MuseTalk CUDA 神經口型服務 | 本機Whisper-tiny音訊特徵、MuseTalk1.5 UNet、SD VAE及BiSeNet；固定safetensors與拒寫鎖、原生工作回收。 | 明確既有Torch/Diffusers/Transformers/OpenCV原生依賴及模型證據；無自動安裝。 | `lipsync adapter; lipsync generate` | 模型256×256，25FPS；授權、自然度、完整數位人及HDR另行驗收。 |
+| S23 | RIFE CUDA補幀服務 | 固定五階段IFNet/158個FP32推理張量、嚴格本機雜湊、真正CUDA；不執行模型目錄程式/Pickle。 | 已有原生Torch＋safetensors依賴及MIT模型證據；無自動安裝。 | `interpolate adapter; interpolate generate` | 原生時間細分、全影格/PCM往返；閾值不是語意切鏡；自然品質仍須複核。 |
 
 **本機查詢與交付狀態：** 本輪 doctor 檢測到原生 Python 3.13.1、FFmpeg/ffprobe 8.1 和 Node；這不證明每個模型或瀏覽器適配器均已註冊。doctor 只查到系統存在 Docker/WSL 可執行路徑，沒有運行它們。本專案始終使用原生工具，不調度 Docker/WSL/虛擬環境。
 
@@ -969,7 +987,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.39/final-r1/installed/`，CLI 0.1.41；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
+本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.40/final-r1/installed/`，CLI 0.1.41；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1443,6 +1461,13 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R281 | 2026-10-27 native lip sync | 實際CUDA模型探針通過；首輪舊VAE參數名稱失敗保留，修正使用嚴格明確映射。權重固定來源/雜湊，weights_only轉safetensors並逐張量回讀。 | [Evidence](docs/validation/evidence/native-lipsync-20261027-r1/model-probe-r2/verification.json) |
 | R282 | 2026-10-27 native lip sync | C51真正註冊安裝版Skill：133影格、全部126795個原始PCM標量/alpha/區域外RGB保留；關聯可編輯入軌，工程包完整畫面/聲音重播相同，附合成人物/聲音的MP4/GIF及來源。 | [Evidence](docs/validation/evidence/native-lipsync-20261027-r1/case-r1/verification.json) |
 | R283 | 2026-10-27 native lip sync | r42單入口工具包：1 Skill/17模組/80 Skill檔案/128ZIP項；完整雜湊、獨立註冊及安裝入口核驗；三語F67/S22及全部277既有R紀錄和38原關閉條件保留。 | [Evidence](docs/validation/evidence/native-lipsync-20261027-r1/kit-r1/verification.json) |
+| R284 | 2026-10-27 native interpolation | CLI0.1.42/local.40離線建置、安裝及257程式檔逐位元組相同，81能力；不修改公開alpha.3。 | [Evidence](docs/validation/evidence/native-interpolation-20261027-r1/installation-final-r1/verification.json) |
+| R285 | 2026-10-27 native interpolation | 37項原始碼補幀檢查：任意整數倍率/有理數VFR、部分管道、原始影格/隱藏RGB、切鏡/靜態/末幀保持、PCM、配方遷移、真正FFmpeg、取消/逾時及交易回滾。 | [Evidence](docs/validation/evidence/native-interpolation-20261027-r1/source-interpolation-r3/verification.json) |
+| R286 | 2026-10-27 native interpolation | 37項安裝版補幀檢查通過；另143項安裝版口型/原生時鐘/去背/片段庫/schema相容回歸通過，分別記錄，不與舊993/177合併。基礎解譯器缺依賴的失敗輪保留。 | [Evidence](docs/validation/evidence/native-interpolation-20261027-r1/installed-compat-r2/verification.json) |
+| R287 | 2026-10-27 native interpolation | 固定MIT上游程式、歸檔LFS雜湊；官方Drive逾時保留；158推理張量與獨立鏡像逐張量相同，再轉safetensors回讀，真正CUDA探針通過。 | [Evidence](docs/validation/evidence/native-interpolation-20261027-r1/weight-conversion.json) |
+| R288 | 2026-10-27 native interpolation | C52安裝版真正RIFE動畫24→96影格、透明VFR12→36影格、全105840個PCM標量/原始影格/nativePTS保留；完整工程包音畫一致，附原片/結果/GIF/配方。 | [Evidence](docs/validation/evidence/native-interpolation-20261027-r1/case-r1/verification.json) |
+| R289 | 2026-10-27 native interpolation | 保留真正末段重影失敗，23張參考影格誤差逐幀披露；明確保持減少該處重影但有停頓。真正CUDA輸出後取消，三個子程序回收、無半成品、工程回滾及診斷通過。 | [Evidence](docs/validation/evidence/native-interpolation-20261027-r1/quality-and-cancel-r1/verification.json) |
+| R290 | 2026-10-27 native interpolation | r43統一入口工具包，1 Skill/17模組/81 Skill檔案/130 ZIP項；三語F68/S23及全部283既有R列和38原關閉條件保留。 | [Evidence](docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/verification.json) |
 
 ## 當前邊界與開發方向
 

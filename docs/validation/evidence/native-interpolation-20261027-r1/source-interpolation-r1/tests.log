@@ -1,0 +1,92 @@
+test_dry_run_no_inference_or_metadata_mutation (test_interpolation.CLITests.test_dry_run_no_inference_or_metadata_mutation) ... ok
+test_failed_worker_rolls_back_asset_and_metadata (test_interpolation.CLITests.test_failed_worker_rolls_back_asset_and_metadata) ... ok
+test_linked_slow_motion_and_rerunnable_native_recipe (test_interpolation.CLITests.test_linked_slow_motion_and_rerunnable_native_recipe) ... FAIL
+test_read_only_adapter_commands_preserve_metadata (test_interpolation.CLITests.test_read_only_adapter_commands_preserve_metadata) ... ok
+test_validation_failure_after_publication_rolls_back (test_interpolation.CLITests.test_validation_failure_after_publication_rolls_back) ... FAIL
+test_weight_tamper_rejected_before_inference (test_interpolation.CLITests.test_weight_tamper_rejected_before_inference) ... ok
+test_arbitrary_factors_preserve_every_source_anchor (test_interpolation.ClockTests.test_arbitrary_factors_preserve_every_source_anchor) ... ok
+test_fractional_or_boolean_indices_rejected (test_interpolation.ClockTests.test_fractional_or_boolean_indices_rejected) ... ok
+test_half_open_selection_uses_actual_next_point (test_interpolation.ClockTests.test_half_open_selection_uses_actual_next_point) ... ok
+test_missing_final_duration_rejected (test_interpolation.ClockTests.test_missing_final_duration_rejected) ... ok
+test_native_VFR_all_anchor_times_and_durations (test_interpolation.ClockTests.test_native_VFR_all_anchor_times_and_durations) ... ok
+test_non_unit_timebase_numerator (test_interpolation.ClockTests.test_non_unit_timebase_numerator) ... ok
+test_nonmonotonic_pts_rejected (test_interpolation.ClockTests.test_nonmonotonic_pts_rejected) ... ok
+test_output_AVRational_overflow_rejected (test_interpolation.ClockTests.test_output_AVRational_overflow_rejected) ... ok
+test_packet_expression_sets_PTS_DTS_and_every_duration (test_interpolation.ClockTests.test_packet_expression_sets_PTS_DTS_and_every_duration) ... ok
+test_all_decoded_RGBA_anchors_and_hidden_RGB_unchanged (test_interpolation.PixelTests.test_all_decoded_RGBA_anchors_and_hidden_RGB_unchanged) ... ok
+test_arbitrary_times_and_final_interval_are_explicit (test_interpolation.PixelTests.test_arbitrary_times_and_final_interval_are_explicit) ... ok
+test_array_budget_rejects_before_output (test_interpolation.PixelTests.test_array_budget_rejects_before_output) ... ok
+test_difference_cut_disabled_or_thresholded (test_interpolation.PixelTests.test_difference_cut_disabled_or_thresholded) ... ok
+test_explicit_cut_never_calls_model_across_pair (test_interpolation.PixelTests.test_explicit_cut_never_calls_model_across_pair) ... ok
+test_extra_source_frame_rejected (test_interpolation.PixelTests.test_extra_source_frame_rejected) ... ok
+test_identical_RGBA_pair_is_held_without_fake_forward (test_interpolation.PixelTests.test_identical_RGBA_pair_is_held_without_fake_forward) ... ok
+test_invalid_neural_raster_rejected (test_interpolation.PixelTests.test_invalid_neural_raster_rejected) ... ok
+test_missing_neural_frame_rejected (test_interpolation.PixelTests.test_missing_neural_frame_rejected) ... ok
+test_partial_input_reads_and_output_writes (test_interpolation.PixelTests.test_partial_input_reads_and_output_writes) ... ok
+test_truncated_input_rejected (test_interpolation.PixelTests.test_truncated_input_rejected) ... ok
+test_cancel_reclaims_owned_children (test_interpolation.TransportTests.test_cancel_reclaims_owned_children) ... ok
+test_delayed_audio_has_explicit_leading_and_trailing_zeros (test_interpolation.TransportTests.test_delayed_audio_has_explicit_leading_and_trailing_zeros) ... ok
+test_forged_anchor_report_rejected (test_interpolation.TransportTests.test_forged_anchor_report_rejected) ... FAIL
+test_original_44100_sample_clock_and_source_selection (test_interpolation.TransportTests.test_original_44100_sample_clock_and_source_selection) ... FAIL
+test_real_VFR_qtrle_all_PTS_durations_original_anchors_and_PCM (test_interpolation.TransportTests.test_real_VFR_qtrle_all_PTS_durations_original_anchors_and_PCM) ... ERROR
+test_timeout_reclaims_owned_children (test_interpolation.TransportTests.test_timeout_reclaims_owned_children) ... ok
+test_unknown_original_audio_duration_rejected (test_interpolation.TransportTests.test_unknown_original_audio_duration_rejected) ... ok
+test_worker_failure_diagnoses_and_recovers (test_interpolation.TransportTests.test_worker_failure_diagnoses_and_recovers) ... ok
+
+======================================================================
+ERROR: test_real_VFR_qtrle_all_PTS_durations_original_anchors_and_PCM (test_interpolation.TransportTests.test_real_VFR_qtrle_all_PTS_durations_original_anchors_and_PCM)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_interpolation.py", line 146, in test_real_VFR_qtrle_all_PTS_durations_original_anchors_and_PCM
+    stage,result=self.execute();self.assertTrue(result['all_native_PTS_and_durations_verified']);self.assertTrue(result['all_original_anchors_roundtrip_verified']);self.assertTrue(result['complete_PCM_roundtrip_verified']);self.assertFalse(stage.exists())
+                 ~~~~~~~~~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_interpolation.py", line 144, in execute
+    return execute(self.root,job,self.plan,self.source,self.adapter,timeout=timeout,cancel_file=marker)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\interpolation_pipeline.py", line 118, in execute
+    if any(p.poll()!=0 for p in processes):raise AppError('INTERPOLATION_PIPELINE_FAILED','原生补帧管道失败',exit_code=6,cause=diagnostic.failure_text())
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ai_ad_editor.errors.AppError: 原生补帧管道失败
+
+======================================================================
+FAIL: test_linked_slow_motion_and_rerunnable_native_recipe (test_interpolation.CLITests.test_linked_slow_motion_and_rerunnable_native_recipe)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_interpolation.py", line 194, in test_linked_slow_motion_and_rerunnable_native_recipe
+    self.assertEqual(code,0,value);clips=value['data']['clips'];self.assertEqual(len(clips),2);self.assertEqual(clips[0]['clip']['link_id'],clips[1]['clip']['link_id']);self.assertEqual(clips[0]['clip']['duration_tick'],351000)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+AssertionError: 6 != 0 : {'ok': False, 'command': 'interpolate.generate', 'request_id': 'req_20261027083145_6115418d', 'operation_id': 'op_20261027083143_d5f8aa83', 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'INTERPOLATION_PIPELINE_FAILED', 'message': '原生补帧管道失败', 'path': None, 'retryable': False, 'cause': '<unavailable-failure-text>\n[vost#0:0/rawvideo @ 000002053bd25f80] Error submitting a packet to the muxer: Broken pipe\r\n    Last message repeated 1 times\r\n[out#0/rawvideo @ 000002053bd256c0] Error muxing a packet\r\n[out#0/rawvideo @ 000002053bd256c0] Task finished with error code: -32 (Broken pipe)\r\n[out#0/rawvideo @ 000002053bd256c0] Terminating thread with return code -32 (Broken pipe)\r\n[out#0/rawvideo @ 000002053bd256c0] Error writing trailer: Broken pipe\r\n[out#0/rawvideo @ 000002053bd256c0] Error closing file: Broken pipe\r\n\nTraceback (most recent call last):\r\n  File "<redacted-local-path>", line 12, in <module>\r\n    import numpy as np\r\nModuleNotFoundError: No module named \'numpy\'\r\n\n', 'operation_id': 'op_20261027083143_d5f8aa83', 'diagnostics': {'protocol': 'agent-native-pipeline-diagnostic-v1', 'status': 'stored', 'diagnostic_id': 'diag_ea38e5a3e3cd4b39b08205b35e646639', 'manifest': 'renders/diagnostics/pipelines/diag_ea38e5a3e3cd4b39b08205b35e646639/manifest.json', 'manifest_sha256': 'sha256:6a84796672e5b1babe48c0a7c637b17d320c53a966025dc9e06386578017410a', 'warnings': []}}], 'provenance': {'cli_version': '0.1.42', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-10-27T08:31:45.800310Z', 'finished_at': '2026-10-27T08:31:45.800316Z', 'network': 'disabled'}}
+
+======================================================================
+FAIL: test_validation_failure_after_publication_rolls_back (test_interpolation.CLITests.test_validation_failure_after_publication_rolls_back)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_interpolation.py", line 204, in test_validation_failure_after_publication_rolls_back
+    self.assertEqual(code,2,value);self.assertEqual(before,self.metadata());self.assertFalse((self.root/'assets/derived/generated.mov').exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+AssertionError: 6 != 2 : {'ok': False, 'command': 'interpolate.generate', 'request_id': 'req_20261027083150_5ef9e5de', 'operation_id': 'op_20261027083148_63481e8a', 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'INTERPOLATION_PIPELINE_FAILED', 'message': '原生补帧管道失败', 'path': None, 'retryable': False, 'cause': '<unavailable-failure-text>\n[vost#0:0/rawvideo @ 000001e998125f80] Error submitting a packet to the muxer: Broken pipe\r\n    Last message repeated 1 times\r\n[out#0/rawvideo @ 000001e9981256c0] Error muxing a packet\r\n[out#0/rawvideo @ 000001e9981256c0] Task finished with error code: -32 (Broken pipe)\r\n[out#0/rawvideo @ 000001e9981256c0] Terminating thread with return code -32 (Broken pipe)\r\n[out#0/rawvideo @ 000001e9981256c0] Error writing trailer: Broken pipe\r\n[out#0/rawvideo @ 000001e9981256c0] Error closing file: Broken pipe\r\n\nTraceback (most recent call last):\r\n  File "<redacted-local-path>", line 12, in <module>\r\n    import numpy as np\r\nModuleNotFoundError: No module named \'numpy\'\r\n\n', 'operation_id': 'op_20261027083148_63481e8a', 'diagnostics': {'protocol': 'agent-native-pipeline-diagnostic-v1', 'status': 'stored', 'diagnostic_id': 'diag_c00839ae5f8145f7932f05a07c32084b', 'manifest': 'renders/diagnostics/pipelines/diag_c00839ae5f8145f7932f05a07c32084b/manifest.json', 'manifest_sha256': 'sha256:60a87ee9b70e3a9ba7a68207cff008d3e412e97e5690db9ad63f60718de297c2', 'warnings': []}}], 'provenance': {'cli_version': '0.1.42', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-10-27T08:31:50.672311Z', 'finished_at': '2026-10-27T08:31:50.672320Z', 'network': 'disabled'}}
+
+======================================================================
+FAIL: test_forged_anchor_report_rejected (test_interpolation.TransportTests.test_forged_anchor_report_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_interpolation.py", line 159, in test_forged_anchor_report_rejected
+    self.assertEqual(caught.exception.code,'INTERPOLATION_WORKER_CONTRACT')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'INTERPOLATION_PIPELINE_FAILED' != 'INTERPOLATION_WORKER_CONTRACT'
+- INTERPOLATION_PIPELINE_FAILED
++ INTERPOLATION_WORKER_CONTRACT
+
+
+======================================================================
+FAIL: test_original_44100_sample_clock_and_source_selection (test_interpolation.TransportTests.test_original_44100_sample_clock_and_source_selection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_interpolation.py", line 150, in test_original_44100_sample_clock_and_source_selection
+    self.assertEqual(p['audio']['start_sample'],8820);self.assertEqual(p['audio']['end_sample'],44100);self.assertEqual(p['audio']['samples'],35280)
+                                                      ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 17408 != 44100
+
+----------------------------------------------------------------------
+Ran 34 tests in 26.461s
+
+FAILED (failures=4, errors=1)

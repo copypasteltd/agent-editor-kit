@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "operation": "strict graph state loading before conversion",
+  "error": "Checkpoint includes teacher/caltime training-only parameters commented out of upstream inference graph. Strict load rejected unexpected keys; no output safetensors written.",
+  "source_fallback": false,
+  "resolution": "Separately verify complete fixed training parameter sets/shapes, exclude them explicitly, strict load and independently compare every inference tensor."
+}

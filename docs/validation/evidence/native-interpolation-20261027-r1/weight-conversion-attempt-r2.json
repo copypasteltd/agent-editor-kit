@@ -1,0 +1,6 @@
+{
+  "status": "failed",
+  "operation": "strict training-only shape verification",
+  "error": "Released caltime input head is17->32; commented upstream example is25->8. Exact load rejected both mismatched tensors. No output safetensors written.",
+  "resolution": "Validate the explicit released17->32 head and every remaining training tensor; omit training tensors from inference weights."
+}

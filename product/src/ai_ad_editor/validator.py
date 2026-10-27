@@ -513,6 +513,13 @@ def validate_project(root: Path, project: dict[str, Any], *, strict_rights: bool
             except AppError as exc:
                 error(exc.code, exc.message, f'{path}.source.lipsync')
 
+        if isinstance(asset.get('source'), dict) and 'interpolation' in asset['source']:
+            try:
+                from .interpolation_plan import validate_recipe
+                validate_recipe(asset['source']['interpolation'], asset=asset, assets=asset_map(project))
+            except AppError as exc:
+                error(exc.code, exc.message, f'{path}.source.interpolation')
+
     declared_sequence_ids = {str(item.get("id")) for item in project.get("sequences", []) if item.get("id")}
     sequence_ids: set[str] = set()
     for si, sequence in enumerate(project.get("sequences", [])):

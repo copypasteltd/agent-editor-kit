@@ -1,0 +1,28 @@
+usage: ai-ad-editor vfx animate [-h] [--format {json,text}]
+                                [--request-id REQUEST_ID]
+                                [--idempotency-key IDEMPOTENCY_KEY]
+                                [--dry-run] [--no-network]
+                                [--progress {none,jsonl}] --project PROJECT
+                                --clip-id CLIP_ID [--sequence-id SEQUENCE_ID]
+                                [--track-id TRACK_ID]
+                                --emitter-index EMITTER_INDEX
+                                --property {acceleration,aspect,color_end,colors,fade_in,fade_out,glow,lifetime,opacity,position,rate,rotation,shape,size,size_end,softness,spin,spread,sway,twinkle,velocity}
+                                (--keyframes POINTS | --remove) [--replace]
+
+options:
+  -h, --help            show this help message and exit
+  --format {json,text}  输出格式
+  --request-id REQUEST_ID
+  --idempotency-key IDEMPOTENCY_KEY
+  --dry-run
+  --no-network
+  --progress {none,jsonl}
+  --project PROJECT
+  --clip-id CLIP_ID
+  --sequence-id SEQUENCE_ID
+  --track-id TRACK_ID
+  --emitter-index EMITTER_INDEX
+  --property {acceleration,aspect,color_end,colors,fade_in,fade_out,glow,lifetime,opacity,position,rate,rotation,shape,size,size_end,softness,spin,spread,sway,twinkle,velocity}
+  --keyframes POINTS    JSON关键帧数组；时间为原始generator tick
+  --remove
+  --replace             显式替换已存在的该发射器属性轨道

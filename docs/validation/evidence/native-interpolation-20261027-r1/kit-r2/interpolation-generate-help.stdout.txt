@@ -1,0 +1,51 @@
+usage: ai-ad-editor interpolate generate [-h] [--format {json,text}]
+                                         [--request-id REQUEST_ID]
+                                         [--idempotency-key IDEMPOTENCY_KEY]
+                                         [--dry-run] [--no-network]
+                                         [--progress {none,jsonl}]
+                                         --project PROJECT
+                                         --adapter-id ADAPTER_ID
+                                         --asset-id ASSET_ID
+                                         [--source-asset-id SOURCE_ASSET_ID]
+                                         [--recipe-asset-id RECIPE_ASSET_ID]
+                                         [--factor {2,3,4,5,6,7,8}]
+                                         [--start-frame START_FRAME]
+                                         [--end-frame END_FRAME]
+                                         [--cut-after-frame CUT_AFTER_FRAME]
+                                         [--scene-cut-threshold SCENE_CUT_THRESHOLD]
+                                         [--storage-budget-mib STORAGE_BUDGET_MIB]
+                                         [--timeout-seconds TIMEOUT_SECONDS]
+                                         [--cancel-file CANCEL_FILE] [--apply]
+                                         [--sequence-id SEQUENCE_ID]
+                                         [--video-track-id VIDEO_TRACK_ID]
+                                         [--audio-track-id AUDIO_TRACK_ID]
+                                         [--timeline-start-seconds TIMELINE_START_SECONDS]
+                                         [--playback-speed PLAYBACK_SPEED]
+
+options:
+  -h, --help            show this help message and exit
+  --format {json,text}  输出格式
+  --request-id REQUEST_ID
+  --idempotency-key IDEMPOTENCY_KEY
+  --dry-run
+  --no-network
+  --progress {none,jsonl}
+  --project PROJECT
+  --adapter-id ADAPTER_ID
+  --asset-id ASSET_ID
+  --source-asset-id SOURCE_ASSET_ID
+  --recipe-asset-id RECIPE_ASSET_ID
+  --factor {2,3,4,5,6,7,8}
+  --start-frame START_FRAME
+  --end-frame END_FRAME
+  --cut-after-frame CUT_AFTER_FRAME
+  --scene-cut-threshold SCENE_CUT_THRESHOLD
+  --storage-budget-mib STORAGE_BUDGET_MIB
+  --timeout-seconds TIMEOUT_SECONDS
+  --cancel-file CANCEL_FILE
+  --apply
+  --sequence-id SEQUENCE_ID
+  --video-track-id VIDEO_TRACK_ID
+  --audio-track-id AUDIO_TRACK_ID
+  --timeline-start-seconds TIMELINE_START_SECONDS
+  --playback-speed PLAYBACK_SPEED

@@ -1,5 +1,7 @@
 # 完整目标实施台账（2026-10-25 起）
 
+当前本地 **CLI0.1.42 / alpha.4-local.40 / r43 kit**：[G10真实CUDA RIFE补帧](NEURAL_INTERPOLATION.md)已接通原生CFR/VFR、原始RGBA帧/PCM、切镜保持、配方/慢动作双轨及工程包。[C52](CASES.md#c52-native-neural-interpolation)包含独立参考、透明VFR、实际重影失败/显式保持及输出后取消。37项安装版专项和143项安装版兼容回归通过；完整自然质量/HDR/广泛验收及38原关闭条件继续建设。
+
 当前本地 **CLI0.1.41 / alpha.4-local.39 / r42 kit**：[G24真实CUDA神经口型](LIP_SYNC.md)已接通显式图像/视频、独立语音、人脸框关键帧、完整PCM/alpha、可重跑配方和关联双轨。28项安装版检查及177项既有服务源码兼容通过；[C51](CASES.md#c51-native-lip-sync)实际133帧、30帧移动视频和输出后真实取消通过。完整数字人/身体表演、自动跟踪、自然质量/听审、HDR模型与38条原关闭条件继续建设。
 
 当前本地 **CLI0.1.40 / alpha.4-local.38 / r41 kit**：[G08原生PQ/HLG显示光及SDR预览](HDR_DISPLAY.md)已接通明确nit单位、HLG联动OOTF、10bit BT.2020输出；993安装版回归单轮通过，C50真实GPU混合HDR/SDR素材、全48帧及非静音完整PCM工程包往返相同。ICC、母版/动态元数据、自然HDR监看及38原关闭条件继续开发。

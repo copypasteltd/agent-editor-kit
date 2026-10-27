@@ -1790,3 +1790,13 @@ scripts/*lipsync*20261027.py text eol=lf
 docs/product/LIP_SYNC.md text eol=lf
 docs/releases/CLI_0.1.41_LOCAL.md text eol=lf
 docs/validation/本地神经口型实测_2026-10-27.md text eol=lf
+
+# Native interpolation executed evidence and pinned upstream legal/source bytes.
+docs/validation/evidence/native-interpolation-20261027-r1/** -text -whitespace
+docs/assets/native-interpolation-20261027-*/** -text -whitespace
+docs/product/neural-interpolation-capabilities-cli-0.1.42.json -text -whitespace
+product/src/ai_ad_editor/RIFE_LICENSE.txt -text -whitespace
+scripts/*interpolation*20261027.py text eol=lf
+docs/product/NEURAL_INTERPOLATION.md text eol=lf
+docs/releases/CLI_0.1.42_LOCAL.md text eol=lf
+docs/validation/本地神经补帧实测_2026-10-27.md text eol=lf

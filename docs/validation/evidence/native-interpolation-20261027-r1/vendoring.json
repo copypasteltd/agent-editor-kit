@@ -1,0 +1,11 @@
+{
+  "status": "reviewed-graph-vendored",
+  "source_sha256": "655b4c772b037967b86c2dd31c8fa3b5323b79dd9a0e0088708d89149bbc8a32",
+  "output_sha256": "680444e5014ab7daf75eeed5f1d16fbacffbf0b3484363a6c316e8b0fb312d90",
+  "output": "product\\src\\ai_ad_editor\\interpolation_graph.py",
+  "source_license": "MIT",
+  "remote_code_execution": false,
+  "training_and_unused_branches": false,
+  "bounded_grid_cache_entries": 1,
+  "upstream_warp_grid_sample": "bilinear/border/align_corners=True"
+}

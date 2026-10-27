@@ -9,7 +9,23 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- native-lip-sync-current -->
+<!-- native-interpolation-current -->
+
+**CLI0.1.42 / alpha.4-local.40 / r43 kit · 1 Skill / 17 modules.**
+
+Adds **actual native CUDA RIFE4.25 interpolation and editable slow motion**: native CFR/VFR PTS, every frame duration, all original RGBA anchors and selected original PCM remain intact. Integer2..8 factors,explicit cut holds,premultiplied alpha,rerunnable recipes and linked tracks.
+
+[Workflow / usage](docs/product/NEURAL_INTERPOLATION.md) · [C52](docs/product/CASES.md#c52-native-neural-interpolation) · [Install](docs/releases/CLI_0.1.42_LOCAL.md) · [Evidence](docs/validation/本地神经补帧实测_2026-10-27.md)
+
+![Actual native CUDA interpolation;original versus neural slowed4x](docs/assets/native-interpolation-20261027-r1/comparison.gif)
+
+37 installed interpolation checks and143 installed compatibility regressions pass;37 source checks are separate. C52 animation24→96frames; another transparent VFR12→36 case preserves all105840 original PCM scalars. Complete package-render audio/video match. Across23 held-out originals,mean MSE is12.28 neural/24.36 hold/14.87 blend. **The final-pair ghosting failure is retained**; an explicit hold trades motion for removing it. No continuous human playback/listening,natural-quality/HDR-model or full-product acceptance is claimed.
+
+[Actual retained failure and explicit hold](docs/assets/native-interpolation-20261027-r1/failure-and-hold.png) · [Held-out per-frame measurements](docs/validation/evidence/native-interpolation-20261027-r1/case-r1/verification.json)
+
+<!-- /native-interpolation-current -->
+
+<!-- native-lip-sync-history -->
 
 **CLI0.1.41 / alpha.4-local.39 / r42 kit · 1 Skill / 17 modules.**
 
@@ -23,7 +39,7 @@ This batch passes **28 installed checks with zero failures/errors/skips**, plus1
 
 A separate30-frame moving-video/box case passes; cancellation after actual neural frames reclaims all three children, rolls back metadata and retains diagnostics. [Evidence](docs/validation/evidence/native-lipsync-20261027-r1/video-and-cancel-r1/verification.json).
 
-<!-- /native-lip-sync-current -->
+<!-- /native-lip-sync-history -->
 
 <!-- hdr-display-history -->
 
@@ -462,7 +478,7 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r42 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r42.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r43 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r43.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
@@ -768,7 +784,7 @@ The implementation is **Python CLI + Agent Project schema + FFmpeg**, with an ex
 5. For selection, show the original and a small candidate set, record final IDs/strength/scope and trial them on target media.
 6. Render to a new project-owned path, inspect the encoded output, manifest, warnings, A/V and rights, then export the project package.
 
-## All 67 functional modules
+## All 68 functional modules
 
 IDs locate documentation groups with dependencies/overlap; they are not 43 independent kernels or a completion score. The table describes behavior, commands and limits. The [complete machine capability manual](docs/product/CAPABILITIES.en.md) retains every field.
 
@@ -841,6 +857,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F65 | Highlight Bloom / film Halation | Actual soft-knee highlight extraction→separable Gaussian spread→core suppression/linear tint; editable numeric author-clock tracks in clips or selected-root adjustment intervals. | `effects list/inspect; timeline compose; preview; render; queue` | sigma0…32 input pixels; transparent/clamp edges; alpha bits preserved; actual four-kernel GPU or CPU reference; bounded workspace/visits; physical film/HDR unaccepted. |
 | F66 | Native PQ/HLG HDR and SDR viewing | Explicit reference white/HLG peak/gamma → display-linear edits; mixed-nit assets, ordinary effects/composition and10-bit BT.2020 NCL delivery; separate SDR trim and PNG/MP4 previews. | `timeline compose; validate; preview; render; convert` | CPU transfer math; existing GPU composition/effects; rejects8-bit/mismatched tags/missing units; alpha bits retained. ICC/dynamic metadata/HDR monitoring unaccepted. |
 | F67 | Local neural lip sync | Image/video + separate speech → actual CUDA MuseTalk mouth;25FPS box keys, semantic lower-face blend, complete PCM/alpha, rerunnable recipe and linked editable video/audio clips. | `lipsync adapter register/list/inspect; lipsync generate` | Explicit local safetensors/native Torch runtime;256×256 face,8bit SDR/source motion,no CPU fallback; natural quality/full digital human remain open. |
+| F68 | CUDA neural interpolation / slow motion | Native CFR/VFR,all original RGBA anchors,premultiplied alpha,complete PCM;factor2..8,cut holds,linked slow-motion tracks,recipes/packages. | `interpolate adapter; interpolate generate` | Explicit RIFE4.25 safetensors/native CUDA Python;no CPU fallback;difficult motion/occlusion/natural-quality/HDR acceptance open. |
 
 ## Supported service modules and dependencies
 
@@ -870,6 +887,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | S20 | Joint subtitle dubbing | Existing native OPUS/Kokoro workers + managed project transaction | Plain SRT, explicit languages/voices/tracks, CPU/CUDA/auto, batch reuse | `dub subtitles` | [Workflow](docs/product/SUBTITLE_DUBBING.md); complete utterances/retries retained; words/lip sync/natural quality open |
 | S21 | Local resident GPU inference session | Native process, authenticated Windows named pipe, JSON/raw frames, overlapping deny-write locks and lifecycle watchdog. | Existing local VACE adapter, repeated variants of one prompt. | `media model-session start/status/stop` | No network port; serial per project; initial loading and reuse of other models remain limited. |
 | S22 | MuseTalk CUDA neural mouth service | Local Whisper-tiny, MuseTalk1.5 UNet, SD VAE and BiSeNet; fixed safetensors, deny-write locks and owned native cleanup. | Explicit existing native Torch/Diffusers/Transformers/OpenCV and model evidence; no automatic install. | `lipsync adapter; lipsync generate` | 256×256 face/25FPS; rights,naturalness,full digital human and HDR acceptance remain separate. |
+| S23 | RIFE CUDA interpolation | Fixed five-stage IFNet/158 FP32 inference tensors,local artifact hashes,actual CUDA;no model-directory code/Pickle. | Existing native Torch/safetensors and MIT model evidence;no installation. | `interpolate adapter; interpolate generate` | Native interval subdivision,complete frame/PCM proofs;RGB threshold is not semantic cuts;quality review required. |
 
 **Observed local environment:** this update’s doctor sees native Python 3.13.1, FFmpeg/ffprobe 8.1 and Node; this does not establish registration of every model/browser adapter. doctor merely discovers Docker/WSL executable paths and does not run them. This project uses native tools without invoking Docker/WSL/virtual environments.
 
@@ -969,7 +987,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.39/final-r1/installed/`, CLI 0.1.41. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.40/final-r1/installed/`, CLI 0.1.41. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1445,6 +1463,13 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R281 | 2026-10-27 native lip sync | Actual CUDA model probe passes; first legacy-VAE key failure retained and corrected with strict explicit mapping. Pinned weights use weights_only conversion to safetensors and exact tensor reload. | [Evidence](docs/validation/evidence/native-lipsync-20261027-r1/model-probe-r2/verification.json) |
 | R282 | 2026-10-27 native lip sync | Registered installed Skill C51:actual133 frames,all126795 original PCM scalars,alpha and outside-region RGB preserved;linked editable tracks and complete package-render audio/video equality;synthetic portrait/speech MP4/GIF and provenance. | [Evidence](docs/validation/evidence/native-lipsync-20261027-r1/case-r1/verification.json) |
 | R283 | 2026-10-27 native lip sync | r42:one Skill/17 modules/80 Skill files/128 ZIP entries;full hashes,isolated registration and installed entry checks. Trilingual F67/S22 retain all277 earlier R rows and38 original closure cells. | [Evidence](docs/validation/evidence/native-lipsync-20261027-r1/kit-r1/verification.json) |
+| R284 | 2026-10-27 native interpolation | CLI0.1.42/local.40 offline build/install:257 byte-identical product files,81 capabilities;public alpha.3 untouched. | [Evidence](docs/validation/evidence/native-interpolation-20261027-r1/installation-final-r1/verification.json) |
+| R285 | 2026-10-27 native interpolation | 37 source interpolation checks:integer factors/rational VFR,partial pipes,original anchors/hidden RGB,cuts/static/final holds,PCM,portable recipes,real FFmpeg,cancel/deadline and rollback. | [Evidence](docs/validation/evidence/native-interpolation-20261027-r1/source-interpolation-r3/verification.json) |
+| R286 | 2026-10-27 native interpolation | 37 installed interpolation checks plus143 separately recorded installed lip-sync/native-clock/matting/fragments/schema regressions pass. Prior993/177 counts are not aggregated. Missing-dependency base-interpreter failures remain recorded. | [Evidence](docs/validation/evidence/native-interpolation-20261027-r1/installed-compat-r2/verification.json) |
+| R287 | 2026-10-27 native interpolation | Pinned MIT source/archive LFS hashes;official Drive timeout retained. All158 inference tensors equal an independent mirror,with strict safetensors reload and actual CUDA graph probe. | [Evidence](docs/validation/evidence/native-interpolation-20261027-r1/weight-conversion.json) |
+| R288 | 2026-10-27 native interpolation | Installed RIFE C52:animation24→96 frames;transparent VFR12→36;all105840 original PCM scalars,anchors/native PTS retained;complete package-render audio/video equality,originals/results/GIF/recipes. | [Evidence](docs/validation/evidence/native-interpolation-20261027-r1/case-r1/verification.json) |
+| R289 | 2026-10-27 native interpolation | Actual final-pair ghosting is retained with23 per-frame held-out comparisons. Explicit hold reduces this error by sacrificing motion. Cancellation after neural output reclaims three children,rolls back metadata and retains diagnostics. | [Evidence](docs/validation/evidence/native-interpolation-20261027-r1/quality-and-cancel-r1/verification.json) |
+| R290 | 2026-10-27 native interpolation | r43:one Skill/17 modules/81 Skill files/130 ZIP entries;trilingual F68/S23 retain all283 prior R rows and38 original goal closure cells. | [Evidence](docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/verification.json) |
 
 ## Current limits and development direction
 

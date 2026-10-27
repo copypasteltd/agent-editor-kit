@@ -25,6 +25,7 @@ from .convert import export_external, import_external
 from .errors import AppError, argument_error, dependency_error
 from .media import classify_path, ffmpeg_version, generate_proxy, generate_thumbnail, generate_waveform, probe_media, relink_missing_assets, stabilize_media
 from .local_lipsync import ENGINE as LIPSYNC_ENGINE
+from .local_interpolation import ENGINE as INTERPOLATION_ENGINE
 from .project import (
     asset_map,
     create_project,
@@ -152,6 +153,8 @@ def build_parser() -> argparse.ArgumentParser:
     add_vfx_parser(subs,_leaf_common)
     from .lipsync_cli import add_parser as add_lipsync_parser
     add_lipsync_parser(subs,_leaf_common)
+    from .interpolation_cli import add_parser as add_interpolation_parser
+    add_interpolation_parser(subs,_leaf_common)
 
     project = subs.add_parser("project", help="项目管理")
     ps = project.add_subparsers(dest="action", required=True)
@@ -1998,7 +2001,7 @@ def command_audio_adapter(args: argparse.Namespace) -> dict[str, Any]:
 
 def command_media_adapter_register(args: argparse.Namespace) -> dict[str, Any]:
     root, project = load_project(args.project)
-    if args.engine not in {LIPSYNC_ENGINE, SEGMENTATION_ENGINE, INPAINT_ENGINE, VACE_ENGINE} and args.device != 'cpu' or args.engine != MATTING_ENGINE and args.downsample_ratio is not None:
+    if args.engine not in {INTERPOLATION_ENGINE, LIPSYNC_ENGINE, SEGMENTATION_ENGINE, INPAINT_ENGINE, VACE_ENGINE} and args.device != 'cpu' or args.engine != MATTING_ENGINE and args.downsample_ratio is not None:
         raise argument_error('device=cuda 只适用于 MuseTalk/SAM2/LaMa/VACE；downsample-ratio 只适用于 RVM', 'device/downsample_ratio')
     if args.engine != VACE_ENGINE and (args.text_gpu_budget_mib is not None or args.text_cpu_budget_mib is not None):
         raise argument_error('text 权重预算只适用于 VACE', 'text_gpu_budget_mib/text_cpu_budget_mib')
@@ -2019,7 +2022,7 @@ def command_media_adapter_register(args: argparse.Namespace) -> dict[str, Any]:
         verification_status=args.verification_status,
         evidence=evidence,
         root=root,
-        native_options=({'threads':args.threads,'device':args.device} if args.engine == LIPSYNC_ENGINE else {'threads':args.threads,'device':args.device,'text_gpu_budget_mib':7168 if args.text_gpu_budget_mib is None else args.text_gpu_budget_mib,'text_cpu_budget_mib':8192 if args.text_cpu_budget_mib is None else args.text_cpu_budget_mib} if args.engine == VACE_ENGINE else {'threads': args.threads, 'device': args.device} if args.engine in {SEGMENTATION_ENGINE, INPAINT_ENGINE} else {'threads': args.threads, 'downsample_ratio': args.downsample_ratio} if args.engine == MATTING_ENGINE else {'threads':args.threads, 'confidence':args.confidence, 'low_confidence':args.low_confidence, 'match_iou':args.match_iou, 'max_gap_seconds':args.max_gap_seconds, 'class_ids':args.class_id}),
+        native_options=({'threads':args.threads,'device':args.device} if args.engine in {INTERPOLATION_ENGINE,LIPSYNC_ENGINE} else {'threads':args.threads,'device':args.device,'text_gpu_budget_mib':7168 if args.text_gpu_budget_mib is None else args.text_gpu_budget_mib,'text_cpu_budget_mib':8192 if args.text_cpu_budget_mib is None else args.text_cpu_budget_mib} if args.engine == VACE_ENGINE else {'threads': args.threads, 'device': args.device} if args.engine in {SEGMENTATION_ENGINE, INPAINT_ENGINE} else {'threads': args.threads, 'downsample_ratio': args.downsample_ratio} if args.engine == MATTING_ENGINE else {'threads':args.threads, 'confidence':args.confidence, 'low_confidence':args.low_confidence, 'match_iou':args.match_iou, 'max_gap_seconds':args.max_gap_seconds, 'class_ids':args.class_id}),
     )
     if args.dry_run:
         return _envelope("media.adapter.register", args, status="planned", data={"registry": str(visual_registry_path(root)), "adapter": adapter_record, "rights": rights_record})
@@ -7128,7 +7131,7 @@ def _project_operation_lock(args: argparse.Namespace):
     """Return the operation-wide lock for a mutating project command."""
     project = getattr(args, "project", None)
     key = (getattr(args, "domain", None), getattr(args, "action", None))
-    adapter_read_only = (key in {("lipsync", "adapter"), ("audio", "adapter"), ("media", "adapter")} and getattr(args, "adapter_action", None) in {"list", "inspect"}) or (key in {("tts", "adapter"), ("tts", "voice"), ("asr", "adapter"), ('ocr','adapter'), ('face','adapter')} and getattr(args, "registration_action", None) in {"list", "inspect"})
+    adapter_read_only = (key in {("interpolate", "adapter"), ("lipsync", "adapter"), ("audio", "adapter"), ("media", "adapter")} and getattr(args, "adapter_action", None) in {"list", "inspect"}) or (key in {("tts", "adapter"), ("tts", "voice"), ("asr", "adapter"), ('ocr','adapter'), ('face','adapter')} and getattr(args, "registration_action", None) in {"list", "inspect"})
     pack_read_only = key == ('motion', 'pack') and getattr(args, 'pack_action', None) != 'apply'
     if not project or getattr(args, "dry_run", False) or key in _READ_ONLY_PROJECT_COMMANDS or adapter_read_only or pack_read_only or key == ("queue", "cancel"):
         return contextlib.nullcontext()
@@ -7136,10 +7139,13 @@ def _project_operation_lock(args: argparse.Namespace):
 
 
 from .lipsync_cli import adapter_command as command_lipsync_adapter, generate_command as command_lipsync_generate
+from .interpolation_cli import adapter_command as command_interpolation_adapter, generate_command as command_interpolation_generate
 
 COMMANDS: dict[tuple[str, str | None], Callable[[argparse.Namespace], dict[str, Any]]] = {
     ('lipsync','adapter'): command_lipsync_adapter,
     ('lipsync','generate'): command_lipsync_generate,
+    ('interpolate','adapter'): command_interpolation_adapter,
+    ('interpolate','generate'): command_interpolation_generate,
     ('surface','export'):command_surface,
     ('surface','inspect'):command_surface,
     ('cache','list'):command_cache,
@@ -7299,7 +7305,7 @@ def main(argv: list[str] | None = None) -> int:
         with _project_operation_lock(args):
             transaction_root = getattr(args, "project", None)
             command_key = (args.domain, getattr(args, "action", None))
-            adapter_read_only = (command_key in {("lipsync", "adapter"), ("audio", "adapter"), ("media", "adapter")} and getattr(args, "adapter_action", None) in {"list", "inspect"}) or (command_key in {("tts", "adapter"), ("tts", "voice"), ("asr", "adapter"), ('ocr','adapter'), ('face','adapter')} and getattr(args, "registration_action", None) in {"list", "inspect"})
+            adapter_read_only = (command_key in {("interpolate", "adapter"), ("lipsync", "adapter"), ("audio", "adapter"), ("media", "adapter")} and getattr(args, "adapter_action", None) in {"list", "inspect"}) or (command_key in {("tts", "adapter"), ("tts", "voice"), ("asr", "adapter"), ('ocr','adapter'), ('face','adapter')} and getattr(args, "registration_action", None) in {"list", "inspect"})
             pack_read_only = command_key == ('motion', 'pack') and getattr(args, 'pack_action', None) != 'apply'
             transaction_enabled = bool(transaction_root) and not getattr(args, "dry_run", False) and command_key not in _READ_ONLY_PROJECT_COMMANDS and not adapter_read_only and not pack_read_only and command_key not in {("project", "recover"), ("queue", "cancel")}
             with (project_transaction(transaction_root, command=_command_name(args)) if transaction_enabled else contextlib.nullcontext({"active": False, "recovered": False})) as transaction:

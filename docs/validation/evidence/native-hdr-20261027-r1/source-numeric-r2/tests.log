@@ -1,0 +1,26 @@
+test_HLG_inverse_peak_gamma_and_PQ_cross_conversion_match_scalar (test_float_hdr.HDRNumericTests.test_HLG_inverse_peak_gamma_and_PQ_cross_conversion_match_scalar) ... ok
+test_HLG_uses_coupled_RGB_OOTF_not_three_independent_power_curves (test_float_hdr.HDRNumericTests.test_HLG_uses_coupled_RGB_OOTF_not_three_independent_power_curves) ... FAIL
+test_PQ_EOTF_matches_independent_50_digit_oracle_and_known_nits (test_float_hdr.HDRNumericTests.test_PQ_EOTF_matches_independent_50_digit_oracle_and_known_nits) ... ok
+test_display_mapping_matches_scalar_neutral_shoulder_and_alpha (test_float_hdr.HDRNumericTests.test_display_mapping_matches_scalar_neutral_shoulder_and_alpha) ... ok
+test_explicit_reference_white_rescales_absolute_light_and_PQ_is_invariant (test_float_hdr.HDRNumericTests.test_explicit_reference_white_rescales_absolute_light_and_PQ_is_invariant) ... ok
+test_identical_signals_preserve_bits_but_do_not_bypass_HDR_domain_checks (test_float_hdr.HDRNumericTests.test_identical_signals_preserve_bits_but_do_not_bypass_HDR_domain_checks) ... ok
+test_inverse_PQ_has_standard_nonzero_black_code_and_roundtrips (test_float_hdr.HDRNumericTests.test_inverse_PQ_has_standard_nonzero_black_code_and_roundtrips) ... ok
+test_mapping_rejects_or_counts_gamut_excess_and_peak_overflow (test_float_hdr.HDRNumericTests.test_mapping_rejects_or_counts_gamut_excess_and_peak_overflow) ... ok
+test_mapping_validates_full_context_budgets_exposure_and_cancellation (test_float_hdr.HDRNumericTests.test_mapping_validates_full_context_budgets_exposure_and_cancellation) ... ok
+test_source_and_output_domain_policies_report_every_clamp (test_float_hdr.HDRNumericTests.test_source_and_output_domain_policies_report_every_clamp) ... ok
+test_tiles_cancel_and_budgets_preserve_caller_surface (test_float_hdr.HDRNumericTests.test_tiles_cancel_and_budgets_preserve_caller_surface) ... ok
+test_units_and_HLG_context_are_required_and_bad_types_are_rejected (test_float_hdr.HDRNumericTests.test_units_and_HLG_context_are_required_and_bad_types_are_rejected) ... ok
+
+======================================================================
+FAIL: test_HLG_uses_coupled_RGB_OOTF_not_three_independent_power_curves (test_float_hdr.HDRNumericTests.test_HLG_uses_coupled_RGB_OOTF_not_three_independent_power_curves)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_hdr.py", line 84, in test_HLG_uses_coupled_RGB_OOTF_not_three_independent_power_curves
+    self.assertGreater(abs(float(out[0,0,0])*203-hlg_scalar([.75]*3)[0]),30)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 27.692104533774966 not greater than 30
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.108s
+
+FAILED (failures=1)

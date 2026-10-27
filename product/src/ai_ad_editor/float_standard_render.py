@@ -19,6 +19,7 @@ import numpy as np
 from .artifact_locks import artifact_entry
 from .errors import AppError
 from .float_color_signal import ColorSignal, convert_rgba
+from .float_hdr import HDR_TRANSFERS, has_luminance, parse_signal, mapping_configuration, map_display
 from .float_native_source import NativeSurfaceSource
 from .float_stream import _EncoderPipe, _chunks, CHUNK_BYTES, QUEUE_CHUNKS
 from .float_timeline import FloatTimeline
@@ -40,14 +41,13 @@ def error(code, message, **details):
 
 
 def _signal(value, field):
-    if not isinstance(value, dict) or set(value) != {'primaries', 'transfer'}:
-        raise error('SIGNAL', 'RGB信号必须明确指定primaries/transfer', field=field)
-    return ColorSignal(**value)
+    return parse_signal(value)
 
 
 def configuration(value, settings, encoder):
     allowed = {'engine', 'working_signal', 'output_signal', 'background_signal', 'range_policy',
-               'window_frames', 'max_source_cache_bytes', 'max_open_sources', 'native_timeout_seconds', 'sources'}
+               'window_frames', 'max_source_cache_bytes', 'max_open_sources', 'native_timeout_seconds', 'sources',
+               'display_mapping', 'preview_mapping'}
     if not isinstance(value, dict) or set(value) - allowed or value.get('engine') != ENGINE:
         raise error('CONFIG', 'pixel_pipeline必须使用完整且受支持的浮点配置')
     working = _signal(value.get('working_signal'), 'working_signal')
@@ -55,17 +55,23 @@ def configuration(value, settings, encoder):
     background = _signal(value.get('background_signal', {'primaries': 'bt709', 'transfer': 'srgb'}), 'background_signal')
     if working.transfer != 'linear':
         raise error('SIGNAL', '标准浮点合成要求显式线性光工作域')
-    if output.primaries != 'bt709' or output.transfer not in {'linear', 'srgb', 'bt709-oetf'}:
-        raise error('SIGNAL', '当前交付边界要求BT.709基色与明确相对传递函数')
+    hdr_output = output.transfer in HDR_TRANSFERS
+    if not hdr_output and (output.primaries != 'bt709' or output.transfer not in {'linear', 'srgb', 'bt709-oetf'}):
+        raise error('SIGNAL', 'SDR交付要求BT.709基色；HDR交付要求明确BT.2100信号')
+    if hdr_output and encoder['video']['pixel_format'] not in {'yuv420p10le', 'yuv422p10le', 'yuv444p10le'}:
+        raise error('PRECISION', '原生HDR交付要求明确10-bit非透明YCbCr，禁止8-bit回退')
     color = settings.get('color') or {}
     if not isinstance(color, dict):
         raise error('CONFIG', '输出色彩配置必须是对象')
-    transfer = {'linear': 'linear', 'srgb': 'iec61966-2-1', 'bt709-oetf': 'bt709'}[output.transfer]
-    if (color.get('primaries') != 'bt709' or color.get('transfer') != transfer or
-            color.get('matrix') != 'bt709' or color.get('range') not in {'limited', 'full', 'tv', 'pc'}):
+    transfer = {'linear': 'linear', 'srgb': 'iec61966-2-1', 'bt709-oetf': 'bt709',
+                'pq-st2084': 'smpte2084', 'hlg-bt2100': 'arib-std-b67'}[output.transfer]
+    primaries = 'bt2020' if hdr_output else 'bt709'
+    matrix = 'bt2020nc' if hdr_output else 'bt709'
+    if (color.get('primaries') != primaries or color.get('transfer') != transfer or
+            color.get('matrix') != matrix or color.get('range') not in {'limited', 'full', 'tv', 'pc'}):
         raise error('COLOR_TAGS', '输出色彩标签必须与实际浮点交付转换一致')
     if color.get('tone_map', 'none') != 'none' or color.get('tone_mapping', 'none') != 'none':
-        raise error('UNSUPPORTED', 'HDR色调映射尚未连接浮点标准渲染')
+        raise error('UNSUPPORTED', '浮点管线使用pixel_pipeline.display_mapping；不能叠加旧整数路径色调映射')
     acceleration = settings.get('acceleration') or {}
     if not isinstance(acceleration, dict):
         raise error('CONFIG', '硬件加速配置必须是对象')
@@ -91,11 +97,14 @@ def configuration(value, settings, encoder):
     sources = value.get('sources')
     if not isinstance(sources, dict) or len(sources) > 4096:
         raise error('CONFIG', 'sources必须是按已登记资产ID索引的显式信号表')
+    source_signals = []
     for asset_id, spec in sources.items():
-        allowed_source = {'source_signal', 'yuv_spec', 'scan', 'demux_origin', 'alpha_association', 'decoder', 'display_geometry'}
+        allowed_source = {'source_signal', 'yuv_spec', 'scan', 'demux_origin', 'alpha_association', 'decoder', 'display_geometry', 'hdr_input_range_policy'}
         if not isinstance(asset_id, str) or not isinstance(spec, dict) or set(spec) - allowed_source:
             raise error('CONFIG', '原始源信号配置字段无效', asset_id=asset_id)
-        _signal(spec.get('source_signal'), asset_id)
+        source_signals.append(_signal(spec.get('source_signal'), asset_id))
+        if not isinstance(spec.get('hdr_input_range_policy','reject'),str) or spec.get('hdr_input_range_policy','reject') not in {'reject','clip'}:
+            raise error('SIGNAL','HDR输入编码域策略须明确reject/clip',asset_id=asset_id)
         if spec.get('display_geometry') != 'square-unrotated':
             raise error('GEOMETRY', '须明确声明方形像素及未旋转原始栅格', asset_id=asset_id)
         if spec.get('alpha_association', 'straight') not in {'straight', 'premultiplied'}:
@@ -121,10 +130,27 @@ def configuration(value, settings, encoder):
             YUVSpec(**yuv)
             if spec.get('scan') != 'progressive':
                 raise error('SIGNAL', 'YCbCr须明确逐行采样', asset_id=asset_id)
+    hdr_active = hdr_output or any(s.transfer in HDR_TRANSFERS for s in source_signals)
+    if hdr_active:
+        if not has_luminance(working) or not has_luminance(output) or any(not has_luminance(s) for s in source_signals):
+            raise error('SIGNAL', 'HDR工程须为工作、输出及全部视觉资产明确reference_white_nits')
+        if 'background_signal' in value and not has_luminance(background):
+            raise error('SIGNAL', 'HDR工程显式背景信号须声明reference_white_nits')
+    mappings = {}
+    for field in ('display_mapping', 'preview_mapping'):
+        if field in value:
+            mappings[field] = mapping_configuration(value[field])
+            if not has_luminance(working):
+                raise error('SIGNAL', '显示映射要求明确亮度单位的线性工作域')
+    if 'display_mapping' in mappings:
+        if hdr_output or not has_luminance(output) or output.reference_white_nits != mappings['display_mapping']['target_peak_nits']:
+            raise error('MAPPING', 'SDR显示映射的目标峰值须等于明确SDR输出reference_white_nits')
     normalized.update(working=working, output=output, background=background, range_policy=policy,
                       projection_working_bytes_limit=min(768 * 1024**2, sampling['max_working_bytes']),
                       alpha_output=encoder['video']['pixel_format'] == 'yuva420p',
-                      output_range='pc' if color['range'] in {'pc', 'full'} else 'tv', transfer_tag=transfer)
+                      output_range='pc' if color['range'] in {'pc', 'full'} else 'tv', transfer_tag=transfer,
+                      output_primaries_tag=primaries, output_matrix_tag=matrix,
+                      hdr_active=hdr_active, hdr_output=hdr_output, mappings=mappings)
     return normalized
 
 
@@ -150,6 +176,11 @@ class FloatRenderContext:
                          'working_signal': vars(self.config['working']), 'output_signal': vars(self.config['output']),
                          'background_signal': vars(self.config['background']), 'range_policy': self.config['range_policy'],
                          'HDR_accepted': False, 'network': False, 'source_receipts': {}}
+        if self.config['hdr_active'] or self.config['mappings']:
+            self.metadata.update(display_light_nits_explicit=True, hdr_output=self.config['hdr_output'],
+                display_mapping=self.config['mappings'].get('display_mapping'),
+                hdr_metadata_scope='matching BT2020 NCL VUI transfer/primaries/range; no mastering-display/CLL/dynamic metadata',
+                color_transforms_backend='CPU Float64 tiled -> Float32; composition uses selected CPU/OpenCL backend')
 
     def poll(self):
         cancel(self.marker)
@@ -200,7 +231,7 @@ class FloatRenderContext:
                   ('float_standard_render', 'float_stream', 'float_audio_graph', 'render', 'float_color_signal',
                    'float_timeline', 'float_tracking', 'bindings', 'animation', 'float_crop', 'float_adjustments', 'float_effect_chain', 'float_transitions', 'float_transition_plan', 'source_transitions',
                    'float_text','float_text_paint','float_text_coverage','text_paint','text_layout','text_highlight','text_typing','captions',
-                   'float_gpu','float_gpu_native','float_gpu_worker','float_gpu_control','procedural_particles','particle_animation','float_optics','float_optics_kernel')]
+                   'float_gpu','float_gpu_native','float_gpu_worker','float_gpu_control','procedural_particles','particle_animation','float_optics','float_optics_kernel','float_glow','float_glow_kernel','float_hdr')]
         self.artifacts = [artifact_entry(p, 'standard-float-render-runtime') for p in paths]
         context = IndexContext(self.root, persist=not self.dry_run, cancel_file=self.marker)
         per_source = min(256 * 1024**2, self.config['max_source_cache_bytes'] // max(1, len(needed)))
@@ -250,7 +281,7 @@ class FloatRenderContext:
                 alpha_association=spec.get('alpha_association', 'straight'),
                 window_frames=self.config['window_frames'], cache_bytes=per_source, index_context=context,
                 persist_index=not self.dry_run, decoder=decoder, cancel_file=self.marker,
-                timeout=self.config['native_timeout_seconds']))
+                timeout=self.config['native_timeout_seconds'], hdr_input_range_policy=spec.get('hdr_input_range_policy','reject')))
             self.sources[asset_id] = source
             self.metadata['source_receipts'][asset_id] = source.metadata
         from .float_gpu import FloatGPUSession
@@ -284,13 +315,15 @@ class FloatRenderContext:
         number = audio['inputs'].count('-i')
         raw = ['-thread_queue_size', '2', '-f', 'rawvideo', '-pixel_format', 'gbrap16le',
                '-video_size', f'{canvas["width"]}x{canvas["height"]}', '-framerate', str(self.timeline.fps),
-               '-color_range', 'pc', '-colorspace', 'rgb', '-color_primaries', 'bt709',
+               '-color_range', 'pc', '-colorspace', 'rgb', '-color_primaries', self.config['output_primaries_tag'],
                '-color_trc', self.config['transfer_tag'], '-i', 'pipe:0']
         pixel = self.encoder['video']['pixel_format']
-        transfer = {'linear': 'linear', 'srgb': 'iec61966-2-1', 'bt709-oetf': '709'}[self.config['output'].transfer]
+        transfer = {'bt709':'709'}.get(self.config['transfer_tag'],self.config['transfer_tag'])
+        primaries = '2020' if self.config['hdr_output'] else '709'
+        matrix = '2020_ncl' if self.config['hdr_output'] else '709'
         output_range = 'full' if self.config['output_range'] == 'pc' else 'limited'
-        scale = (f'zscale=primariesin=709:transferin={transfer}:matrixin=gbr:rangein=full:'
-                 f'primaries=709:transfer={transfer}:matrix=709:range={output_range}:chromal=left:dither=none')
+        scale = (f'zscale=primariesin={primaries}:transferin={transfer}:matrixin=gbr:rangein=full:'
+                 f'primaries={primaries}:transfer={transfer}:matrix={matrix}:range={output_range}:chromal=left:dither=none')
         if self.config['alpha_output']:
             visual = (f'[{number}:v:0]split=2[float_rgb][float_a];'
                       '[float_a]alphaextract,format=gray[float_alpha];'
@@ -301,7 +334,7 @@ class FloatRenderContext:
         self.metadata.update(audio_project_sha256=audio['project_sha256'],
                              audio_samples_48000=audio['expected_samples_48000'],
                              delivery_pixel_format=pixel, alpha_quantization_bits=8 if self.config['alpha_output'] else None,
-                             integer_colour_conversion='zscale explicit RGB full/BT709 YCbCr; unchanged transfer; left chroma',
+                             integer_colour_conversion=f'zscale explicit RGB full/{matrix} YCbCr; unchanged transfer; left chroma',
                              source_lifecycle='original inputs locked through publication; providers closed on render context exit')
         self.audio_plan = audio
         meta = list(audio['metadata']) + [{'kind': 'float-native-video', 'float_pipeline': self.metadata}]
@@ -390,8 +423,19 @@ class FloatRenderContext:
                 surface, _ = self.timeline.render_frame(index)
                 if not self.config['alpha_output'] and np.any(surface[:, :, 3] != 1):
                     raise error('ALPHA', '不透明输出不能丢弃实际alpha；请设置不透明背景或选择透明输出')
-                delivered, _ = convert_rgba(surface, self.config['working'], self.config['output'],
-                    max_working_bytes=self.config['projection_working_bytes_limit'], cancel=self.poll)
+                signal = self.config['working']
+                if 'display_mapping' in self.config['mappings']:
+                    surface, signal, mapping = map_display(surface, signal, self.config['mappings']['display_mapping'],
+                        max_working_bytes=self.config['projection_working_bytes_limit'], cancel=self.poll)
+                    self.metadata['last_display_mapping'] = mapping
+                    for key in ('negative_components_clipped','over_one_components_clipped','above_declared_peak_pixels'):
+                        stats[key] = stats.get(key, 0) + mapping[key]
+                delivered, boundary = convert_rgba(surface, signal, self.config['output'],
+                    max_working_bytes=self.config['projection_working_bytes_limit'], cancel=self.poll,
+                    hdr_range_policy=self.config['range_policy'])
+                if self.config['hdr_active'] or self.config['mappings']:
+                    self.metadata['last_output_color_boundary'] = boundary
+                    stats['HDR_output_components_clipped'] = stats.get('HDR_output_components_clipped', 0) + boundary.get('hdr_output_components_clipped', 0)
                 for chunk in _chunks(delivered, range_policy=self.config['range_policy'], poll=pipe.check,
                                      stats=stats, alpha_bits=8 if self.config['alpha_output'] else 16):
                     payload.update(chunk)

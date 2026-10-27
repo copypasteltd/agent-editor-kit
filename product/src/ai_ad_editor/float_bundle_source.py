@@ -34,7 +34,8 @@ class BundleSurfaceSource(TimedSurfaceSource):
         if (asset.get('kind') not in ('video','image') or asset.get('id')!=manifest.get('source_asset_id') or asset.get('sha256')!=manifest.get('source_sha256')
             or recipe.get('source_sha256')!=asset.get('sha256') or recipe.get('asset_id')!=asset.get('id')):raise error('ASSET','浮点包与已登记原始资产不一致')
         if recipe.get('geometry') is not None or manifest.get('geometry_boundary') is not None:raise error('GEOMETRY','宿主只接收未预变换的源表面，防止重复应用作者变换')
-        try:signal=ColorSignal(**recipe['working_signal'])
+        from .float_hdr import parse_signal
+        try:signal=parse_signal(recipe['working_signal'])
         except (KeyError,TypeError) as caught:raise error('SIGNAL','浮点包缺少明确工作RGB信号') from caught
         recorded=(manifest.get('source_reader') or {}).get('format_info',{}).get('start_time')
         try:recorded=Fraction(recorded) if recorded not in (None,'N/A','') else None

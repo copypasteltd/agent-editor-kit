@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.39 / alpha.4-local.37 / r40 kit · 1 Skill / 17 modules / 78 files.**
+**CLI0.1.40 / alpha.4-local.38 / r41 kit · 1 Skill / 17 modules / 79 files.**
 
-新增 **Bloom 高光擴散與 Halation 膠片光暈**：從畫面實際高光提取亮源，在明確線性 RGB 域執行軟膝閾值、分離高斯鄰域擴散、核心抑制及著色疊加。支援作者時鐘關鍵影格、片段及根調整層，CPU 參考與實際 GPU 四階段實作同步交付。
+新增**原生 PQ／HLG HDR 訊號、明確 nit 單位、10-bit BT.2020 交付及獨立 SDR 預覽**。HLG 包含 RGB 聯動 OOTF；不同參考白的 SDR 圖形與 HDR 高光可在線性光域合成。明確選擇輸入／輸出截斷、SDR 映射及其色域策略，保留作者時鐘、效果及可編輯工程。
 
-[Highlight workflow and constraints](../product/HIGHLIGHT_GLOW.md)
+[HDR workflow and constraints](../product/HDR_DISPLAY.md)
 
 <!-- /community-current -->
 

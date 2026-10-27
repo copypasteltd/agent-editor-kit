@@ -1769,3 +1769,12 @@ docs/validation/evidence/highlight-glow-20261027-r1/** -text -whitespace
 docs/assets/highlight-glow-20261027-*/** -text -whitespace
 docs/product/highlight-glow-capabilities-cli-0.1.39.json -text -whitespace
 scripts/*glow*20261027.py text eol=lf
+
+# Native HDR executed bytes, retained attempts, standard captures and media.
+docs/validation/evidence/native-hdr-20261027-r1/** -text -whitespace
+docs/assets/native-hdr-20261027-*/** -text -whitespace
+docs/product/native-hdr-capabilities-cli-0.1.40.json -text -whitespace
+scripts/*hdr*20261027.py text eol=lf
+docs/product/HDR_DISPLAY.md text eol=lf
+docs/releases/CLI_0.1.40_LOCAL.md text eol=lf
+docs/validation/HDR显示光实测_2026-10-27.md text eol=lf

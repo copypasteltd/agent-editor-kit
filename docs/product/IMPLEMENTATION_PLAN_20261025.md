@@ -1,5 +1,8 @@
 # 完整目标实施台账（2026-10-25 起）
 
+当前本地 **CLI0.1.40 / alpha.4-local.38 / r41 kit**：[G08原生PQ/HLG显示光及SDR预览](HDR_DISPLAY.md)已接通明确nit单位、HLG联动OOTF、10bit BT.2020输出；993安装版回归单轮通过，C50真实GPU混合HDR/SDR素材、全48帧及非静音完整PCM工程包往返相同。ICC、母版/动态元数据、自然HDR监看及38原关闭条件继续开发。
+
+
 当前本地 **CLI0.1.39 / alpha.4-local.37 / r40 kit**：[G06真实高光Bloom/Halation](HIGHLIGHT_GLOW.md)已接通CPU/实际四阶段GPU、数值关键帧及根区间调整层；734安装版回归单轮通过，C49六轨全48帧及完整PCM工程包往返相同。物理胶片/镜头、深度/完整效果库、自然质量/HDR及38原关闭条件继续开发。
 
 

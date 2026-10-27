@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.39 / alpha.4-local.37 / r40 kit · 1 Skill / 17 modules / 78 files.**
+**CLI0.1.40 / alpha.4-local.38 / r41 kit · 1 Skill / 17 modules / 79 files.**
 
-新增 **Bloom 高光扩散与 Halation 胶片光晕**：从画面真实高光提取亮源，在明确线性 RGB 域执行软膝阈值、分离高斯邻域扩散、核心抑制与着色叠加。支持作者时钟关键帧、片段及根调整层，CPU 参考和真实 GPU 四阶段实现同步交付。
+新增**原生 PQ／HLG HDR 信号、明确 nit 单位、10-bit BT.2020 交付和独立 SDR 预览**。HLG 包含 RGB 联动 OOTF；不同参考白的 SDR 图形与 HDR 高光可在线性光域合成。明确选择输入／输出截断、SDR 映射及其色域策略，保留作者时钟、效果和可编辑工程。
 
-[Highlight workflow and constraints](HIGHLIGHT_GLOW.md)
+[HDR workflow and constraints](HDR_DISPLAY.md)
 
 <!-- /community-current -->
 
@@ -79,6 +79,7 @@
 | F63 | 可编辑程序化粒子与发射器动画 | 六种原创建效配方、五形状、seed/独立CFR；21属性源时钟关键帧、六种缓动、发射暂停；真实GPU栅格化。剪辑/预览/队列/包/本地OTIO贯通。 | `vfx list/inspect/apply/update/show/animation-properties/animate` | CPU积分与出生采样，GPU绘制；64点/属性、16发射器、4096预留活粒子；无3D/碰撞/深度。 |
 | F64 | 可编辑光学效果与GPU运算 | 眩光核心/条纹/光晕/鬼影、旋转椭圆漏光、径向红蓝色差；全部数值通道关键帧、原作者时钟、片段/区间调整层，CPU/OpenCL。 | `effects list/inspect` → `timeline compose` → preview/render | 明确线性RGB；原alpha位保留，透明隐藏色不渗出；ghosts/edge静态，非物理镜头/自动亮源/bloom。 |
 | F65 | 真实高光 Bloom / 胶片 Halation | 软膝阈值提取实际高光→分离高斯扩散→核心抑制/线性着色；可编辑数值轨道和原作者时钟，片段或根区间调整层。 | `effects list/inspect; timeline compose; preview; render; queue` | sigma0…32输入像素；透明/复制边界、原alpha位保持；实际四kernel GPU/CPU参考，有界空间/访问预算；非物理胶片/HDR验收。 |
+| F66 | 原生 PQ／HLG HDR 与 SDR 显示 | 明确参考白及HLG峰值/gamma，解码至显示线性光；不同nit素材、普通效果/合成、10-bit BT.2020 NCL交付，单独选择SDR trim及PNG/MP4预览。 | `timeline compose; validate; preview; render; convert` | 传递CPU，已有合成/光效可GPU；拒绝8-bit/标签不符/缺单位；alpha位保留。非ICC/动态元数据或HDR监看验收。 |
 
 | 编号 | 服务模块 | 运行形式 | 需要什么/提供什么 | 入口 | 范围 |
 |---|---|---|---|---|---|
@@ -5007,3 +5008,41 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 ```
 
 [CLI0.1.39 exact installed capability snapshot](highlight-glow-capabilities-cli-0.1.39.json).
+
+### `native_hdr_display_pipeline`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "explicit-display-nits-PQ-HLG-float32-v1",
+  "selection": "settings.pixel_pipeline.engine=float32-native-v1; explicit reference_white_nits on every HDR project source/working/output signal",
+  "transfers": [
+    "pq-st2084",
+    "hlg-bt2100"
+  ],
+  "working": "display-linear Float32 D65 RGB; declared reference_white_nits per signal",
+  "features": [
+    "PQ_display_EOTF_and_inverse_10000_nits",
+    "HLG_RGB_coupled_OOTF_and_inverse",
+    "explicit_HLG_display_peak_and_system_gamma_ideal_zero_black",
+    "absolute_nit_unit_scaling_and_D65_primary_conversion",
+    "native_RGB_and_explicit_progressive_YCbCr_inputs",
+    "explicit_input_domain_reject_or_counted_clip",
+    "original_author_clock_effects_linear_composition_and_editable_packages",
+    "BT2020_NCL_PQ_HLG_ten_bit_delivery_with_matching_VUI",
+    "explicit_modified_Reinhard_luminance_SDR_trim_and_SDR_preview",
+    "preserved_alpha_bits_tiled_budgets_and_cancellation"
+  ],
+  "limits": [
+    "CPU_tiled_color_conversion_not_GPU_transfer_kernels",
+    "only_BT2020_PQ_HLG_native_ten_bit_nonalpha_delivery",
+    "no_inferred_luminance_or_metadata_or_automatic_tone_map",
+    "no_ICC_chromatic_adaptation_mastering_CLL_dynamic_metadata_or_DolbyVision",
+    "HLG_ideal_zero_black_only_explicit_peak_and_gamma",
+    "SDR_trim_is_explicit_creative_Reinhard_not_BT2390_or_perceptual_gamut_mapping",
+    "natural_HDR_monitor_long_form_and_full_CapCut_acceptance_pending"
+  ]
+}
+```
+
+[CLI0.1.40 exact installed capability snapshot](native-hdr-capabilities-cli-0.1.40.json).

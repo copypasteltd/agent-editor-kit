@@ -132,7 +132,7 @@ class FloatTimeline:
         self._layer_cache_budget=min(self.max_working_bytes//4,64*1024**2)
         self.frame_count=math.ceil(Fraction(int(sequence['duration_tick']),self.tps)*self.fps)
         self.metadata={'protocol':PROTOCOL,'sequence_id':sequence_id,'display_fps':str(self.fps),'frames':self.frame_count,
-            'working_signal':{'primaries':working_signal.primaries,'transfer':working_signal.transfer},
+            'working_signal':vars(working_signal),
             'scalar_clock':'exact rational source/display intervals','curve_clock':'existing adaptive Float64 author clock;see compilation certificate',
             'native_holds':'original PTS to next PTS;last native duration establishes EOF',
             'nested_clock':'continuous author time;exact left/right limits propagated through reversal',

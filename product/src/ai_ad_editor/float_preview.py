@@ -12,6 +12,7 @@ import numpy as np
 
 from .float_audio_graph import prepare as prepare_audio
 from .float_color_signal import ColorSignal, convert_rgba
+from .float_hdr import LuminanceSignal, parse_signal, map_display
 from .float_geometry import resample_rgba
 from .float_standard_render import FloatRenderContext, configuration, error
 from .float_stream import _EncoderPipe, _chunks, CHUNK_BYTES, QUEUE_CHUNKS
@@ -37,9 +38,17 @@ def reference_plan(project, mode):
     if mode not in {'frame', 'range'}:
         raise error('CONFIG', '浮点预览模式必须是frame/range')
     config = configuration(project['settings']['pixel_pipeline'], project['settings'], output_settings(project['settings']))
+    mapped = config['hdr_active'] or 'preview_mapping' in config['mappings']
+    if mapped and 'preview_mapping' not in config['mappings']:
+        raise error('HDR_PREVIEW', 'HDR工程预览须明确pixel_pipeline.preview_mapping；禁止默认截断或将PQ/HLG当作SDR图')
+    signal = (LuminanceSignal('bt709', 'srgb' if mode == 'frame' else 'linear',
+                  config['mappings']['preview_mapping']['target_peak_nits']) if mapped
+              else config['output'] if mode == 'frame' else REFERENCE_SIGNAL)
     return {'pixel_pipeline': config['engine'], 'pixel_protocol': PROTOCOL,
             'reference_pixel_format': 'rgba64be' if mode == 'frame' else 'gbrapf32le',
-            'reference_signal': vars(config['output'] if mode == 'frame' else REFERENCE_SIGNAL),
+            'reference_signal': vars(signal),
+            **({'display_mapping': config['mappings']['preview_mapping'], 'HDR_reference_preserved':False,
+                 'reference_scope':'explicit SDR viewing trim; original HDR render and author graph unchanged'} if mapped else {}),
             'reference_bytes_per_pixel': 8 if mode == 'frame' else 16,
             'reference_resampling': 'premultiplied-linear-bilinear-after-full-author-composite'}
 
@@ -99,10 +108,11 @@ class FloatPreviewContext:
             audio_samples_48000=request['audio_samples_48000'], original_audio_graph_reused=True)
         number = audio['inputs'].count('-i')
         pixel_format = 'gbrap16le' if request['mode'] == 'frame' else 'gbrapf32le'
+        preview_transfer = {'linear':'linear','srgb':'iec61966-2-1','bt709-oetf':'bt709'}[request['reference_signal']['transfer']]
         raw = ['-thread_queue_size', '2', '-f', 'rawvideo', '-pixel_format', pixel_format,
             '-video_size', f'{request["width"]}x{request["height"]}', '-framerate', str(r.timeline.fps),
             '-color_range', 'pc', '-colorspace', 'rgb', '-color_primaries', 'bt709',
-            '-color_trc', r.config['transfer_tag'] if request['mode'] == 'frame' else 'linear', '-i', 'pipe:0']
+            '-color_trc', preview_transfer, '-i', 'pipe:0']
         graph = audio['filter_complex'] + f';[{number}:v:0]null[preview_v]'
         if request['mode'] == 'frame' or request['audio_samples_48000'] == 0:
             graph += ';[aout]anullsink'
@@ -119,7 +129,7 @@ class FloatPreviewContext:
         if request['mode'] == 'frame':
             name = 'frame.png'
             args += ['-frames:v', '1', '-c:v', 'png', '-pix_fmt', 'rgba64be', '-update', '1',
-                '-color_primaries', 'bt709', '-color_trc', self.renderer.config['transfer_tag'],
+                '-color_primaries', 'bt709', '-color_trc', {'linear':'linear','srgb':'iec61966-2-1','bt709-oetf':'bt709'}[request['reference_signal']['transfer']],
                 '-colorspace', 'rgb', '-color_range', 'pc', str(temporary/name)]
         else:
             name = 'master.nut'
@@ -155,7 +165,7 @@ class FloatPreviewContext:
         start, end = request['start_frame'], request['end_frame']
         if type(start) is not int or type(end) is not int or not 0 <= start < end <= r.timeline.frame_count:
             raise error('CLOCK', '预览区间不是有效的完整作者帧范围')
-        target = r.config['output'] if request['mode'] == 'frame' else REFERENCE_SIGNAL
+        target = parse_signal(request['reference_signal'])
         frames, payload = 0, hashlib.sha256()
         stats = {'clipped_RGB_components': 0}
         pipe = _EncoderPipe(command, cwd=self.root, cancel_file=r.marker, timeout=3600)
@@ -171,7 +181,14 @@ class FloatPreviewContext:
                     surface, geometry = r.timeline.resample(surface, [request['width'], request['height']],
                         [[sx, 0, (sx-1)/2], [0, sy, (sy-1)/2]])
                     self.metadata['preview_geometry'] = geometry
-                delivered, _ = convert_rgba(surface, r.config['working'], target,
+                signal = r.config['working']
+                if 'display_mapping' in request:
+                    surface, signal, mapping = map_display(surface, signal, request['display_mapping'],
+                        max_working_bytes=r.config['projection_working_bytes_limit'], cancel=r.poll)
+                    self.metadata['last_preview_mapping'] = mapping
+                    for key in ('negative_components_clipped','over_one_components_clipped','above_declared_peak_pixels'):
+                        stats[key] = stats.get(key, 0) + mapping[key]
+                delivered, _ = convert_rgba(surface, signal, target,
                     max_working_bytes=r.config['projection_working_bytes_limit'], cancel=r.poll)
                 chunks = _chunks if request['mode'] == 'frame' else _float_chunks
                 for block in chunks(delivered, range_policy=r.config['range_policy'], poll=pipe.check, stats=stats):

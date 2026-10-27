@@ -2,8 +2,10 @@
 
 The caller chooses a relative transfer interpretation; a video 'bt709' tag
 alone cannot choose scene inverse-OETF versus a reference-display EOTF.
-No ICC, chromatic adaptation, absolute nits, gamut mapping, PQ/HLG or HDR
-display acceptance is implied. RGB is never clipped; alpha is not a colour.
+The optional LuminanceSignal adapter adds explicitly declared display-light
+PQ/HLG/nit units. Legacy two-field relative signals retain their exact v1
+semantics. No ICC, chromatic adaptation or HDR display acceptance is implied.
+Only an explicitly requested HDR output domain policy can clamp RGB.
 
 Primary xy coordinates: ITU-R BT.709-6, BT.2020-2 and W3C CSS Color 4
 (2026-10-20). sRGB uses its signed extension; other power curves use an
@@ -65,7 +67,7 @@ def _from_linear(values,transfer):
     return sign*absolute**(1/(2.2 if transfer=='gamma22' else 2.4))
 
 def convert_rgba(source,source_signal,target_signal,*,tile_pixels=65536,
-                 max_working_bytes=MAX_WORKING_BYTES,cancel=None):
+                 max_working_bytes=MAX_WORKING_BYTES,cancel=None,hdr_range_policy='reject',hdr_input_range_policy='reject'):
     """Return owned straight RGBA Float32 with explicit signal metadata.
 
     Source inverse transfer -> linear-light D65 gamut matrix -> target transfer.
@@ -75,6 +77,13 @@ def convert_rgba(source,source_signal,target_signal,*,tile_pixels=65536,
     """
     if not isinstance(source_signal,ColorSignal) or not isinstance(target_signal,ColorSignal):
         raise error('SIGNAL','输入与输出必须提供明确ColorSignal')
+    from .float_hdr import HDR_TRANSFERS, has_luminance, to_linear, from_linear, domain
+    absolute=has_luminance(source_signal) or has_luminance(target_signal)
+    hdr=source_signal.transfer in HDR_TRANSFERS or target_signal.transfer in HDR_TRANSFERS
+    if hdr and not (has_luminance(source_signal) and has_luminance(target_signal)):
+        raise error('SIGNAL','PQ/HLG转换两端均须明确reference_white_nits；不能猜测相对RGB的亮度')
+    if not isinstance(hdr_range_policy,str) or hdr_range_policy not in {'reject','clip'}:raise error('SIGNAL','HDR输出域策略须明确reject/clip')
+    if not isinstance(hdr_input_range_policy,str) or hdr_input_range_policy not in {'reject','clip'}:raise error('SIGNAL','HDR输入域策略须明确reject/clip')
     if cancel is not None and not callable(cancel):raise error('ARGUMENT','取消回调无效')
     poll=cancel if cancel is not None else lambda:None;poll()
     if not isinstance(source,np.ndarray) or source.dtype!=np.dtype('float32') or source.ndim!=3 or source.shape[-1]!=4 or not source.flags.c_contiguous:
@@ -85,29 +94,44 @@ def convert_rgba(source,source_signal,target_signal,*,tile_pixels=65536,
     for value,limit in ((tile_pixels,MAX_TILE_PIXELS),(max_working_bytes,MAX_WORKING_BYTES)):
         if isinstance(value,bool) or not isinstance(value,(int,np.integer)) or not 1<=value<=limit:
             raise error('BUDGET','色彩分块或工作区预算无效')
-    tile_pixels=int(tile_pixels);estimated=source.nbytes+pixels*16+min(tile_pixels,pixels)*384+4096
+    tile_pixels=int(tile_pixels);estimated=source.nbytes+pixels*16+min(tile_pixels,pixels)*(512 if absolute else 384)+4096
     if estimated>max_working_bytes:raise error('BUDGET','相对RGB转换超过工作区估算')
     source_rows=source.reshape(-1,4);output=np.empty_like(source_rows)
     same=source_signal==target_signal;matrix=np.eye(3,dtype=np.float64)
+    unit_scale=(source_signal.reference_white_nits/target_signal.reference_white_nits
+                if has_luminance(source_signal) and has_luminance(target_signal) else 1.)
+    hdr_clipped=0;hdr_input_clipped=0
     if source_signal.primaries!=target_signal.primaries:
         matrix=np.linalg.solve(_rgb_to_xyz(target_signal.primaries),_rgb_to_xyz(source_signal.primaries))
     for start in range(0,pixels,tile_pixels):
         poll();value=source_rows[start:start+tile_pixels];out=output[start:start+len(value)]
         if not np.isfinite(value).all() or np.any(value[:,3]<0) or np.any(value[:,3]>1):
             raise error('SURFACE','RGB须有限且alpha须在0..1范围')
-        if same:out[:]=value;continue
+        incoming=None
+        if source_signal.transfer in HDR_TRANSFERS:
+            incoming=value[:,:3].astype(np.float64)
+            incoming,clipped=domain(incoming,0,1,policy=hdr_input_range_policy,stage='输入PQ/HLG编码RGB')
+            hdr_input_clipped+=clipped
+        if same:
+            out[:]=value
+            if source_signal.transfer in HDR_TRANSFERS:out[:,:3]=incoming
+            continue
+        if incoming is None:incoming=value[:,:3].astype(np.float64)
         with np.errstate(over='ignore',invalid='ignore'):
-            linear=_to_linear(value[:,:3].astype(np.float64),source_signal.transfer)
+            linear=to_linear(incoming,source_signal) if absolute else _to_linear(incoming,source_signal.transfer)
             # Explicit scalar column expressions avoid BLAS reduction choices
             # changing output rounding with the chosen tile length.
             transformed=np.empty_like(linear)
             for c in range(3):transformed[:,c]=linear[:,0]*matrix[c,0]+linear[:,1]*matrix[c,1]+linear[:,2]*matrix[c,2]
-            result=_from_linear(transformed,target_signal.transfer)
+            if unit_scale!=1:transformed*=unit_scale
+            if absolute:
+                result,clipped=from_linear(transformed,target_signal,policy=hdr_range_policy);hdr_clipped+=clipped
+            else:result=_from_linear(transformed,target_signal.transfer)
             out[:,:3]=result
         out[:,3]=value[:,3]
         if not np.isfinite(out).all():raise error('VALUES','转换结果超过Float32有限范围')
     poll()
-    return output.reshape(height,width,4),{
+    metadata={
         'protocol':PROTOCOL,'source_signal':{'primaries':source_signal.primaries,'transfer':source_signal.transfer},
         'target_signal':{'primaries':target_signal.primaries,'transfer':target_signal.transfer},
         'linear_gamut_matrix':matrix.tolist(),'white':'D65;relative-white=1;physical-white-matching-is-caller-contract',
@@ -117,3 +141,17 @@ def convert_rgba(source,source_signal,target_signal,*,tile_pixels=65536,
         'same_signal_byte_exact':same,'chromatic_adaptation':False,'absolute_nits_managed':False,
         'estimated_working_bytes':estimated,'estimated_bytes_are_peak_RSS':False,
         'HDR_accepted':False,'editor_integrated':False}
+    if absolute:
+        metadata.update(protocol='explicit-display-nits-PQ-HLG-float32-v1',
+            source_signal=vars(source_signal),target_signal=vars(target_signal),
+            linear_unit_scale=unit_scale,absolute_nits_managed=hdr or
+                (has_luminance(source_signal) and has_luminance(target_signal)),
+            relative_author_color_unit_inherited=not (has_luminance(source_signal) and has_luminance(target_signal)),
+            white='D65; explicit declared reference_white_nits; display-linear working RGB',
+            hdr_output_domain_policy=hdr_range_policy,hdr_output_components_clipped=hdr_clipped,
+            hdr_input_domain_policy=hdr_input_range_policy,hdr_input_components_clipped=hdr_input_clipped,
+            same_signal_byte_exact=same and hdr_input_clipped==0,
+            RGB_clipping='explicit-HDR-input-or-output-domain-only' if hdr_clipped or hdr_input_clipped else 'none',
+            HLG_black_level_nits=0,HLG_RGB_coupled_OOTF=True,
+            negative_extension='legacy relative transfers only; standard PQ/HLG domains enforced')
+    return output.reshape(height,width,4),metadata

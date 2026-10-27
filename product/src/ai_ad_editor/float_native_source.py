@@ -69,7 +69,7 @@ class NativeSurfaceSource(TimedSurfaceSource):
                  alpha_association='straight', window_frames=16,
                  cache_bytes=MAX_CACHE_BYTES, index_context=None,
                  persist_index=False, decoder=None, cancel_file=None,
-                 timeout=300):
+                 timeout=300, hdr_input_range_policy='reject'):
         self.closed = True
         self.guard = None
         self.pipe = None
@@ -81,6 +81,9 @@ class NativeSurfaceSource(TimedSurfaceSource):
             raise error('PLATFORM', '该原生持锁实现当前要求Windows')
         if not isinstance(source_signal, ColorSignal) or not isinstance(working_signal, ColorSignal):
             raise error('SIGNAL', '原始与工作RGB信号须明确提供')
+        if not isinstance(hdr_input_range_policy, str) or hdr_input_range_policy not in {'reject','clip'}:
+            raise error('SIGNAL', 'HDR输入编码域策略须明确reject/clip')
+        self.hdr_input_range_policy=hdr_input_range_policy
         if not isinstance(asset, dict) or asset.get('kind') not in ('image', 'video'):
             raise error('ASSET', '帧源要求已登记的视频或图片资产')
         if not re.fullmatch(r'sha256:[0-9a-f]{64}', str(asset.get('sha256', ''))):
@@ -123,7 +126,7 @@ class NativeSurfaceSource(TimedSurfaceSource):
             files = {'source': self.source, 'ffmpeg': Path(ffmpeg_path()).resolve(),
                      'ffprobe': Path(ffprobe_path()).resolve()}
             for name in ('float_native_source', 'float_native_pipe', 'float_pixels', 'float_yuv',
-                         'float_color_signal', 'float_timeline', 'native_video_index',
+                         'float_color_signal', 'float_hdr', 'float_timeline', 'native_video_index',
                          'reverse_video_clock', 'artifact_locks', 'native_audio_clock', 'policy', 'media'):
                 files[name] = Path(__file__).with_name(name + '.py')
             self.artifacts = {name: self.guard.entry(path, 'float-native-source-' + name)
@@ -277,7 +280,10 @@ class NativeSurfaceSource(TimedSurfaceSource):
                     value, pixel_metadata = self.pixel_module.decode_frame(raw, self.pixel_format,
                         self.width, self.height, alpha_association=self.alpha_association,
                         cancel=self.poll, **options)
-                    value, color_metadata = convert_rgba(value, self.input_signal, self.target_signal, cancel=self.poll)
+                    value, color_metadata = convert_rgba(value, self.input_signal, self.target_signal, cancel=self.poll,
+                        hdr_input_range_policy=self.hdr_input_range_policy)
+                    if 'hdr_input_components_clipped' in color_metadata:
+                        self.metadata['HDR_input_components_clipped_across_decoded_windows'] = self.metadata.get('HDR_input_components_clipped_across_decoded_windows',0) + color_metadata['hdr_input_components_clipped']
                     frames.append(value)
                 if pipe.read(1):
                     raise error('COUNT', '局部解码返回了额外帧字节')

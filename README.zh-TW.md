@@ -9,7 +9,21 @@
 本頁包含完整功能模塊、服務與依賴、安裝與使用邏輯、Skill 輸入輸出、真實案例和核驗表。長篇原始驗收日志繼續留檔，功能說明與案例入口恢復到首頁。
 
 
-<!-- highlight-glow-current -->
+<!-- hdr-display-current -->
+
+**CLI0.1.40 / alpha.4-local.38 / r41 kit · 1 Skill / 17 modules.**
+
+新增**原生 PQ／HLG HDR 訊號、明確 nit 單位、10-bit BT.2020 交付及獨立 SDR 預覽**。HLG 包含 RGB 聯動 OOTF；不同參考白的 SDR 圖形與 HDR 高光可在線性光域合成。明確選擇輸入／輸出截斷、SDR 映射及其色域策略，保留作者時鐘、效果及可編輯工程。
+
+[Workflow / usage](docs/product/HDR_DISPLAY.md) · [C50](docs/product/CASES.md#c50-native-hdr) · [Install](docs/releases/CLI_0.1.40_LOCAL.md) · [Evidence](docs/validation/HDR显示光实测_2026-10-27.md)
+
+![Actual SDR viewing trim of HDR edit](docs/assets/native-hdr-20261027-r3/hdr-sdr-view.gif)
+
+安裝版單輪 **993 項回歸通過，零失敗／錯誤／跳過**：保留上輪734項，加入20項HDR數值／實際工程核驗及239項相關色彩相容檢查。C50 為實際註冊 Skill 輸出，48影格／12FPS／4秒，非靜音雙聲道384000個Float32 PCM標量及全部10bit影格在工程包遷移後相同。色彩傳遞數學目前CPU，已接通合成／光效持續實際GPU；HDR監看、自然品質、ICC、非零黑位HLG、母版／動態中繼資料及完整目標持續建設。
+
+<!-- /hdr-display-current -->
+
+<!-- highlight-glow-history -->
 
 **CLI0.1.39 / alpha.4-local.37 / r40 kit · 1 Skill / 17 modules.**
 
@@ -21,7 +35,7 @@
 
 安裝版單輪 734 項回歸通過、零失敗/錯誤/跳過；新增21數值、3實際GPU、6工程整合，共30項。C49四格保留六條數值軌道，工程包往返全48個10bit影格及384000個Float32 PCM相同；每次內容渲染192個glow操作、768個裝置kernel（啟動探測另計）。自然素材品質、物理膠片、HDR、即時/4K長片、完整效果庫與原38項關閉條件持續開發。既有265條核驗逐行保留。
 
-<!-- /highlight-glow-current -->
+<!-- /highlight-glow-history -->
 
 <!-- optical-effects-history -->
 
@@ -432,7 +446,7 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r40 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r40.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
+**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r41 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r41.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
 
 <!-- /unified-skill-registration -->
 
@@ -809,6 +823,7 @@ flowchart LR
 | F63 | 可編輯程序化粒子與發射器動畫 | 六種原創配方、五形狀、seed/獨立CFR；21屬性源時鐘關鍵影格、六種緩動、暫停發射；實際GPU光柵化。剪輯/預覽/佇列/包/本地OTIO貫通。 | `vfx list/inspect/apply/update/show/animation-properties/animate` | CPU積分與出生取樣，GPU繪製；64點/屬性、16發射器、4096預留活粒子；無3D/碰撞/深度。 |
 | F64 | 可編輯光學效果與GPU運算 | 眩光核心/條紋/光暈/鬼影、旋轉橢圓漏光、徑向紅藍色差；全部數值通道關鍵影格、原作者時鐘、片段/區間調整層，CPU/OpenCL。 | `effects list/inspect` → `timeline compose` → preview/render | 明確線性RGB；原alpha位元保留，透明隱藏色不滲出；ghosts/edge靜態，非實體鏡頭/自動亮源/bloom。 |
 | F65 | 實際高光 Bloom / 膠片 Halation | 軟膝閾值提取實際高光→分離高斯擴散→核心抑制/線性著色；可編輯數值軌道及原作者時鐘，片段或根區間調整層。 | `effects list/inspect; timeline compose; preview; render; queue` | sigma0…32輸入像素；透明/複製邊界、原alpha位元保持；實際四kernel GPU/CPU參考，有界空間/訪問預算；非物理膠片/HDR驗收。 |
+| F66 | 原生 PQ／HLG HDR 與 SDR 顯示 | 明確參考白及HLG峰值/gamma，解碼至顯示線性光；不同nit素材、一般效果/合成、10-bit BT.2020 NCL交付，獨立選擇SDR trim及PNG/MP4預覽。 | `timeline compose; validate; preview; render; convert` | 傳遞CPU，既有合成/光效可GPU；拒絕8-bit/標籤不符/缺單位；alpha位元保留。非ICC/動態中繼資料或HDR監看驗收。 |
 
 ## 支持的服務模塊與依賴
 
@@ -936,7 +951,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.37/final-r2/installed/`，CLI 0.1.39；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
+本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.38/final-r1/installed/`，CLI 0.1.40；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1398,6 +1413,12 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R269 | 2026-10-27 highlight glow | 6項整合驗證同源編碼≤1個10bit碼、完整PCM、粒子組合≤3e-6、拆分/倒放左極限、包/本地OTIO、預覽鍵失效/佇列、根區間僅套用一次。 | [Evidence](docs/validation/evidence/highlight-glow-20261027-r1/installed-regression-r2/receipts.json) |
 | R270 | 2026-10-27 highlight glow | 註冊安裝版Skill C49：原圖/Bloom/Halation/組合四格，6數值軌、48影格/12FPS/4秒；全影格10bit及384000 PCM工程包往返相同，192glow內容操作及所屬資源關閉。 | [Evidence](docs/validation/evidence/highlight-glow-20261027-r1/case-r1/verification.json) |
 | R271 | 2026-10-27 highlight glow | r40獨立工具包1入口/17模組/78 Skill檔案/124包檔案，完整校驗/隔離註冊32次呼叫；三語README65功能/21服務及所有265既有核驗和38原關閉條件保留。 | [Evidence](docs/validation/evidence/highlight-glow-20261027-r1/kit-r1/verification.json) |
+| R272 | 2026-10-27 native HDR | CLI0.1.40/local.38，240產品檔案原始碼/安裝一致；993安裝版用例單輪全過，零失敗/錯誤/跳過，保留原734項並加入20項HDR及239項色彩相容核驗。 | [Evidence](docs/validation/evidence/native-hdr-20261027-r1/installed-regression-r2/verification.json) |
+| R273 | 2026-10-27 native HDR | 12數值項：獨立50位Decimal PQ oracle、HLG彩色聯動OOTF/逆變換、多峰值gamma、絕對nit換算、明確域/色域截斷計數、alpha位元、分塊一致、取消及預算。 | [Evidence](docs/validation/evidence/native-hdr-20261027-r1/source-numeric-r4/verification.json) |
+| R274 | 2026-10-27 native HDR | 8實際整合項：PQ/HLG原生10bit與VUI、PQ→HLG、獨立標量SDR trim、真正10bit YCbCr輸入、PNG/MP4預覽、缺映射/8bit/缺單位拒絕、schema及完整音畫工程包。 | [Evidence](docs/validation/evidence/native-hdr-20261027-r1/installed-regression-r2/receipts.json) |
+| R275 | 2026-10-27 native HDR | 239既有色彩/曲線/LUT/浮點包/色階/三路平衡/色調專項回歸通過，原二欄位相對訊號、精度、資源及遷移約束保留。 | [Evidence](docs/validation/evidence/native-hdr-20261027-r1/source-compat-r1/verification.json) |
+| R276 | 2026-10-27 native HDR | 註冊安裝版Skill C50實際混合100nit SDR圖形及203nit參考白HDR；48影格、非靜音雙聲道384000 PCM及10bit畫面工程包往返相同，輸出PQ/HLG母版、獨立SDR trim及4000ms GIF。 | [Evidence](docs/validation/evidence/native-hdr-20261027-r1/case-r3/verification.json) |
+| R277 | 2026-10-27 native HDR | r41工具包1入口/17模組/79 Skill檔案/126包檔案，完整校驗與獨立註冊32次呼叫；三語F66/S21，271既有R記錄及38原關閉條件保留。 | [Evidence](docs/validation/evidence/native-hdr-20261027-r1/kit-r1/verification.json) |
 
 ## 當前邊界與開發方向
 

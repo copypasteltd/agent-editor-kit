@@ -1,13 +1,13 @@
 ---
 name: agent-ffmpeg-local-editor
-description: "Edit and generate local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, native tracking, seeded GPU particles, editable GPU flare/light leaks/chromatic split and highlight Bloom/Halation, GPU text/image/first-last generation with reusable model sessions, semantic search, voice/translation, subtitle dubbing, music/SFX and quality checks. Also use for ads, reference remakes, long-to-short clips and screen demos."
+description: "Edit and generate local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, native tracking, explicit PQ/HLG HDR and SDR previews, seeded GPU particles, editable GPU flare/light leaks/chromatic split and highlight Bloom/Halation, GPU text/image/first-last generation with reusable model sessions, semantic search, voice/translation, subtitle dubbing, music/SFX and quality checks. Also use for ads, reference remakes, long-to-short clips and screen demos."
 ---
 
 # agent editor kit / unified local Skill
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.37` / CLI `0.1.39`.
+The current local runtime is `v0.1.0-alpha.4-local.38` / CLI `0.1.40`.
 Native Float32 GPU operations now use bounded owned control pipes. Read
 [GPU execution](references/projection-gpu.md) for policy, actual operator counts,
 cancellation and process/thread/stream cleanup receipts.
@@ -26,6 +26,10 @@ For actual image-highlight Bloom and film Halation, read
 [highlight glow](references/highlight-glow.md). Inspect `native:float32-glow`,
 author radius/threshold/knee/tint keys in explicit linear RGB, and preview
 the original alongside actual encoded light spread before client selection.
+For PQ/HLG HDR media and client SDR viewing, read
+[HDR display](references/hdr-display.md). Declare source/working/output
+reference white, HLG display peak/system gamma and a separate SDR preview
+mapping; inspect actual 10-bit pixels and matching VUI after rendering.
 For repeated GPU generation with the same prompt, read
 [model sessions](references/model-sessions.md). Start one explicit session,
 reuse its ID with `media generate --model-session`, and stop it in `finally`.

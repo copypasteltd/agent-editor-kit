@@ -1,0 +1,105 @@
+test_HLG_inverse_peak_gamma_and_PQ_cross_conversion_match_scalar (test_float_hdr.HDRNumericTests.test_HLG_inverse_peak_gamma_and_PQ_cross_conversion_match_scalar) ... FAIL
+test_HLG_uses_coupled_RGB_OOTF_not_three_independent_power_curves (test_float_hdr.HDRNumericTests.test_HLG_uses_coupled_RGB_OOTF_not_three_independent_power_curves) ... FAIL
+test_PQ_EOTF_matches_independent_50_digit_oracle_and_known_nits (test_float_hdr.HDRNumericTests.test_PQ_EOTF_matches_independent_50_digit_oracle_and_known_nits) ... ok
+test_display_mapping_matches_scalar_neutral_shoulder_and_alpha (test_float_hdr.HDRNumericTests.test_display_mapping_matches_scalar_neutral_shoulder_and_alpha) ... ok
+test_explicit_reference_white_rescales_absolute_light_and_PQ_is_invariant (test_float_hdr.HDRNumericTests.test_explicit_reference_white_rescales_absolute_light_and_PQ_is_invariant) ... ok
+test_identical_signals_preserve_bits_but_do_not_bypass_HDR_domain_checks (test_float_hdr.HDRNumericTests.test_identical_signals_preserve_bits_but_do_not_bypass_HDR_domain_checks) ... ok
+test_inverse_PQ_has_standard_nonzero_black_code_and_roundtrips (test_float_hdr.HDRNumericTests.test_inverse_PQ_has_standard_nonzero_black_code_and_roundtrips) ... ERROR
+test_mapping_rejects_or_counts_gamut_excess_and_peak_overflow (test_float_hdr.HDRNumericTests.test_mapping_rejects_or_counts_gamut_excess_and_peak_overflow) ... ok
+test_mapping_validates_full_context_budgets_exposure_and_cancellation (test_float_hdr.HDRNumericTests.test_mapping_validates_full_context_budgets_exposure_and_cancellation) ... ok
+test_source_and_output_domain_policies_report_every_clamp (test_float_hdr.HDRNumericTests.test_source_and_output_domain_policies_report_every_clamp) ... ok
+test_tiles_cancel_and_budgets_preserve_caller_surface (test_float_hdr.HDRNumericTests.test_tiles_cancel_and_budgets_preserve_caller_surface) ... ok
+test_units_and_HLG_context_are_required_and_bad_types_are_rejected (test_float_hdr.HDRNumericTests.test_units_and_HLG_context_are_required_and_bad_types_are_rejected) ... ok
+
+======================================================================
+ERROR: test_inverse_PQ_has_standard_nonzero_black_code_and_roundtrips (test_float_hdr.HDRNumericTests.test_inverse_PQ_has_standard_nonzero_black_code_and_roundtrips)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_hdr.py", line 68, in test_inverse_PQ_has_standard_nonzero_black_code_and_roundtrips
+    s=surface([[v/203]*3 for v in nits]);out,_=convert_rgba(s,WORK,PQ)
+                                               ~~~~~~~~~~~~^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\float_color_signal.py", line 126, in convert_rgba
+    result,clipped=from_linear(transformed,target_signal,policy=hdr_range_policy);hdr_clipped+=clipped
+                   ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\float_hdr.py", line 108, in from_linear
+    absolute, clipped = domain(absolute, 0, maximum, policy=policy, stage='输出display-linear RGB亮度')
+                        ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\float_hdr.py", line 78, in domain
+    raise error('DOMAIN', stage + '超出明确HDR信号域；须修正输入或显式选择输出clip')
+ai_ad_editor.errors.AppError: 输出display-linear RGB亮度超出明确HDR信号域；须修正输入或显式选择输出clip
+
+======================================================================
+FAIL: test_HLG_inverse_peak_gamma_and_PQ_cross_conversion_match_scalar (test_float_hdr.HDRNumericTests.test_HLG_inverse_peak_gamma_and_PQ_cross_conversion_match_scalar)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_hdr.py", line 90, in test_HLG_inverse_peak_gamma_and_PQ_cross_conversion_match_scalar
+    np.testing.assert_allclose(linear[0,:,:3],expected,rtol=7e-8,atol=3e-8)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 1768, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header=header, equal_nan=equal_nan,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 983, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=7e-08, atol=3e-08
+
+Mismatched elements: 4 / 12 (33.3%)
+Mismatch at indices:
+ [1, 0]: 0.8637305498123169 (ACTUAL), 0.8637306701960822 (DESIRED)
+ [2, 0]: 4.926108360290527 (ACTUAL), 4.926108758676103 (DESIRED)
+ [2, 1]: 4.926108360290527 (ACTUAL), 4.926108758676103 (DESIRED)
+ [2, 2]: 4.926108360290527 (ACTUAL), 4.926108758676103 (DESIRED)
+Max absolute difference among violations: 3.98385576e-07
+Max relative difference among violations: 1.39376509e-07
+ ACTUAL: array([[0.008691, 0.078221, 0.893765],
+       [0.863731, 0.271652, 0.043464],
+       [4.926108, 4.926108, 4.926108],
+       [0.      , 0.      , 0.      ]], dtype=float32)
+ DESIRED: array([[0.008691, 0.078221, 0.893765],
+       [0.863731, 0.271652, 0.043464],
+       [4.926109, 4.926109, 4.926109],
+       [0.      , 0.      , 0.      ]])
+
+======================================================================
+FAIL: test_HLG_uses_coupled_RGB_OOTF_not_three_independent_power_curves (test_float_hdr.HDRNumericTests.test_HLG_uses_coupled_RGB_OOTF_not_three_independent_power_curves)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_hdr.py", line 79, in test_HLG_uses_coupled_RGB_OOTF_not_three_independent_power_curves
+    np.testing.assert_allclose(out[0,:,:3],expected,rtol=6e-8,atol=3e-8)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 1768, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header=header, equal_nan=equal_nan,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 983, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=6e-08, atol=3e-08
+
+Mismatched elements: 3 / 12 (25%)
+Mismatch at indices:
+ [3, 0]: 1.0007494688034058 (ACTUAL), 1.000749628762651 (DESIRED)
+ [3, 1]: 1.0007494688034058 (ACTUAL), 1.000749628762651 (DESIRED)
+ [3, 2]: 1.0007494688034058 (ACTUAL), 1.000749628762651 (DESIRED)
+Max absolute difference among violations: 1.59959245e-07
+Max relative difference among violations: 1.59839425e-07
+ ACTUAL: array([[0.864335, 0.271842, 0.06796 ],
+       [3.847442, 0.115423, 0.492458],
+       [0.      , 0.      , 0.      ],
+       [1.000749, 1.000749, 1.000749]], dtype=float32)
+ DESIRED: array([[0.864335, 0.271842, 0.06796 ],
+       [3.847442, 0.115423, 0.492458],
+       [0.      , 0.      , 0.      ],
+       [1.00075 , 1.00075 , 1.00075 ]])
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.148s
+
+FAILED (failures=2, errors=1)

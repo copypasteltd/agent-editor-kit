@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.39 / alpha.4-local.37 / r40 kit · 1 Skill / 17 modules / 78 files.**
+**CLI0.1.40 / alpha.4-local.38 / r41 kit · 1 Skill / 17 modules / 79 files.**
 
-New **highlight Bloom and film Halation** extract actual image highlights in explicit linear RGB, with soft-knee thresholds, separable Gaussian neighborhood spread, core suppression and tinted addition. Numeric author-clock keys, clip effects and selected-root adjustments use CPU references or actual four-stage GPU execution.
+Adds **native display-light PQ/HLG, explicit nit units, 10-bit BT.2020 delivery and separate SDR previews**. HLG includes the RGB-coupled OOTF; SDR graphics and HDR highlights with different reference whites compose in linear light. Author clocks, effects and editable projects retain explicit input/output clipping and SDR mapping decisions.
 
-[Highlight workflow and constraints](../product/HIGHLIGHT_GLOW.md)
+[HDR workflow and constraints](../product/HDR_DISPLAY.md)
 
 <!-- /community-current -->
 

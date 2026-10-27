@@ -1,0 +1,31 @@
+test_HDR_previews_are_explicit_SDR_views_and_preserve_author_bytes (test_float_hdr.HDRIntegrationTests.test_HDR_previews_are_explicit_SDR_views_and_preserve_author_bytes) ... FAIL
+test_HLG_ten_bit_roundtrip_and_PQ_to_HLG_absolute_light_conversion (test_float_hdr.HDRIntegrationTests.test_HLG_ten_bit_roundtrip_and_PQ_to_HLG_absolute_light_conversion) ... ok
+test_PQ_ten_bit_actual_pixels_VUI_and_complete_PCM (test_float_hdr.HDRIntegrationTests.test_PQ_ten_bit_actual_pixels_VUI_and_complete_PCM) ... ok
+test_actual_explicit_SDR_trim_matches_independent_scalar_luminance (test_float_hdr.HDRIntegrationTests.test_actual_explicit_SDR_trim_matches_independent_scalar_luminance) ... ok
+test_editable_package_retains_absolute_signals_and_complete_encoded_audio_video (test_float_hdr.HDRIntegrationTests.test_editable_package_retains_absolute_signals_and_complete_encoded_audio_video) ... ok
+test_missing_preview_mapping_or_invalid_delivery_is_rejected_before_mutation (test_float_hdr.HDRIntegrationTests.test_missing_preview_mapping_or_invalid_delivery_is_rejected_before_mutation) ... ok
+test_native_ten_bit_YCbCr_input_preserves_codes_without_eight_bit_stage (test_float_hdr.HDRIntegrationTests.test_native_ten_bit_YCbCr_input_preserves_codes_without_eight_bit_stage) ... ERROR
+test_schema_accepts_explicit_HDR_and_rejects_missing_HLG_context (test_float_hdr.HDRIntegrationTests.test_schema_accepts_explicit_HDR_and_rejects_missing_HLG_context) ... ok
+
+======================================================================
+ERROR: test_native_ten_bit_YCbCr_input_preserves_codes_without_eight_bit_stage (test_float_hdr.HDRIntegrationTests.test_native_ten_bit_YCbCr_input_preserves_codes_without_eight_bit_stage)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_hdr.py", line 302, in test_native_ten_bit_YCbCr_input_preserves_codes_without_eight_bit_stage
+    self.assertEqual(source['native_pixel_format'],'yuv444p10le')
+                     ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'native_pixel_format'
+
+======================================================================
+FAIL: test_HDR_previews_are_explicit_SDR_views_and_preserve_author_bytes (test_float_hdr.HDRIntegrationTests.test_HDR_previews_are_explicit_SDR_views_and_preserve_author_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_hdr.py", line 266, in test_HDR_previews_are_explicit_SDR_views_and_preserve_author_bytes
+    self.assertEqual(code,0,result);data=result['data'];self.assertEqual(data['request']['reference_signal']['primaries'],'bt709')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: 6 != 0 : {'ok': False, 'command': 'preview.frame', 'request_id': 'req_20261027043240_b45a1bf1', 'operation_id': None, 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'PREVIEW_ARGUMENT_INVALID', 'message': '高度为 64..2160 偶数；预算为 8..8192 MiB', 'path': None, 'retryable': False}], 'provenance': {'cli_version': '0.1.40', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-10-27T04:32:40.874856Z', 'finished_at': '2026-10-27T04:32:40.874863Z', 'network': 'disabled'}}
+
+----------------------------------------------------------------------
+Ran 8 tests in 77.727s
+
+FAILED (failures=1, errors=1)

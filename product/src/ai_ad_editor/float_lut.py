@@ -236,9 +236,8 @@ def _parse_cube(path, root, poll, max_working_bytes):
 
 
 def _signal(value):
-    if not isinstance(value, dict) or set(value) != {'primaries', 'transfer'}:
-        raise error('SIGNAL', '每个浮点LUT须明确input_signal与output_signal的primaries/transfer')
-    return ColorSignal(value['primaries'], value['transfer'])
+    from .float_hdr import parse_signal
+    return parse_signal(value)
 
 
 def _tracks(effect, parameters):

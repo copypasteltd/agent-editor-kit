@@ -73,8 +73,8 @@ def prepare(root,project,asset_id,output,*,source_signal,target_signal,pixel_fam
     probe=asset.get('probe',{});width,height=int(probe.get('width',0)),int(probe.get('height',0))
     geometry,width,height=_geometry(geometry,width,height)
     recipe={'protocol':PROTOCOL,'asset_id':asset_id,'source':str(source),'source_sha256':asset['sha256'],
-        'source_signal':{'primaries':source_signal.primaries,'transfer':source_signal.transfer},
-        'working_signal':{'primaries':target_signal.primaries,'transfer':target_signal.transfer},
+        'source_signal':vars(source_signal),
+        'working_signal':vars(target_signal),
         'pixel_family':pixel_family,'YCbCr':None if yuv_spec is None else {'matrix':yuv_spec.matrix,'range':yuv_spec.range,'chroma_location':yuv_spec.chroma_location},
         'scan':scan,'alpha_association':alpha_association,'start_frame':start_frame,'stop_frame_exclusive':stop_frame,
         'geometry':geometry,'max_output_bytes':max_output_bytes}
@@ -84,7 +84,7 @@ def prepare(root,project,asset_id,output,*,source_signal,target_signal,pixel_fam
 
 def _implementation_artifacts():
     directory=Path(__file__).resolve().parent
-    paths={name:directory/(name+'.py') for name in ('float_bundle','float_color_signal','float_geometry')}
+    paths={name:directory/(name+'.py') for name in ('float_bundle','float_color_signal','float_hdr','float_geometry')}
     paths['numpy_init']=Path(np.__file__).resolve()
     # These files are the numerical boundary's entry module and native code.
     # This is not advertised as an exhaustive NumPy package inventory.
@@ -113,7 +113,8 @@ def export_bundle(root,plan,*,cancel_file=None,progress=None):
     count=stop-start;pixel_bytes=count*width*height*16;clock_bytes=count*24;required=pixel_bytes+clock_bytes+MAX_METADATA_BYTES
     if required>recipe['max_output_bytes']:raise error('BUDGET','浮点帧选区超过产物字节预算',required_bytes=required,budget_bytes=recipe['max_output_bytes'])
     if shutil.disk_usage(root).free<required+HEADROOM_BYTES:raise error('DISK','浮点产物加64MiB余量超过可用磁盘')
-    implementations=_implementation_artifacts();source_signal=ColorSignal(**recipe['source_signal']);target_signal=ColorSignal(**recipe['working_signal'])
+    from .float_hdr import parse_signal
+    implementations=_implementation_artifacts();source_signal=parse_signal(recipe['source_signal']);target_signal=parse_signal(recipe['working_signal'])
     kwargs={'root':root,'source':source,'source_sha256':recipe['source_sha256'],'alpha_association':recipe['alpha_association'],
         'stop_frame':stop,'cancel_file':marker,'index_context':context}
     reader=(NativeRGBSource(**kwargs) if recipe['pixel_family']=='rgb' else

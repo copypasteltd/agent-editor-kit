@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "at_utc": "2026-10-27T04:56:32.794280+00:00",
+  "exact_documented_workflow_executed": true,
+  "guide_sha256": "ceb71138d21877d01dc115bd38c4ad2932de4486661ee814973f8395673c5d85",
+  "script_sha256": "e8449a112a86b1e2bb49825113c5a5b5313a507de9e69dad546c979de7fe8684",
+  "CLI_calls": 5,
+  "registered_skill": true,
+  "source_fallback": false,
+  "all_48_frames_match_case": true,
+  "decoded_outputs": [
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-hdr-20261027-r3\\pq-master.mkv",
+      "bytes": 66355200,
+      "sha256": "990be293acf218358f18fe84df42a997d8eaadd023bfd358f40bcb2fd59dd379"
+    },
+    {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\hdr-usage-r1\\renders\\usage-pq.mkv",
+      "bytes": 66355200,
+      "sha256": "990be293acf218358f18fe84df42a997d8eaadd023bfd358f40bcb2fd59dd379"
+    }
+  ],
+  "native_windows": true,
+  "virtualization": false,
+  "human_listening": false,
+  "HDR_monitor_accepted": false
+}

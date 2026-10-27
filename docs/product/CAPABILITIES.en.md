@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.39 / alpha.4-local.37 / r40 kit · 1 Skill / 17 modules / 78 files.**
+**CLI0.1.40 / alpha.4-local.38 / r41 kit · 1 Skill / 17 modules / 79 files.**
 
-New **highlight Bloom and film Halation** extract actual image highlights in explicit linear RGB, with soft-knee thresholds, separable Gaussian neighborhood spread, core suppression and tinted addition. Numeric author-clock keys, clip effects and selected-root adjustments use CPU references or actual four-stage GPU execution.
+Adds **native display-light PQ/HLG, explicit nit units, 10-bit BT.2020 delivery and separate SDR previews**. HLG includes the RGB-coupled OOTF; SDR graphics and HDR highlights with different reference whites compose in linear light. Author clocks, effects and editable projects retain explicit input/output clipping and SDR mapping decisions.
 
-[Highlight workflow and constraints](HIGHLIGHT_GLOW.md)
+[HDR workflow and constraints](HDR_DISPLAY.md)
 
 <!-- /community-current -->
 
@@ -79,6 +79,7 @@ New **highlight Bloom and film Halation** extract actual image highlights in exp
 | F63 | Editable particles and emitter animation | Six original recipes/five shapes/seed/native CFR;21 source-clock animated properties,six easings,emission pauses and actual GPU rasterization. Editing/preview/queue/package/local OTIO. | `vfx list/inspect/apply/update/show/animation-properties/animate` | CPU rate integration/birth evaluation,GPU painting;64 points/property,16 emitters,4096 reserved live particles;no3-D/collision/depth. |
 | F64 | Editable GPU optical effects | Flare core/streak/halo/ghosts, rotated elliptical leak and radial red/blue split; all numeric channels animate on original author clocks. Clip/interval adjustments, CPU/OpenCL. | `effects list/inspect` → `timeline compose` → preview/render | Explicit linear RGB; original alpha bits retained; transparent hidden RGB does not bleed. Static ghosts/edge; no physical lens, automatic light detection or bloom. |
 | F65 | Highlight Bloom / film Halation | Actual soft-knee highlight extraction→separable Gaussian spread→core suppression/linear tint; editable numeric author-clock tracks in clips or selected-root adjustment intervals. | `effects list/inspect; timeline compose; preview; render; queue` | sigma0…32 input pixels; transparent/clamp edges; alpha bits preserved; actual four-kernel GPU or CPU reference; bounded workspace/visits; physical film/HDR unaccepted. |
+| F66 | Native PQ/HLG HDR and SDR viewing | Explicit reference white/HLG peak/gamma → display-linear edits; mixed-nit assets, ordinary effects/composition and10-bit BT.2020 NCL delivery; separate SDR trim and PNG/MP4 previews. | `timeline compose; validate; preview; render; convert` | CPU transfer math; existing GPU composition/effects; rejects8-bit/mismatched tags/missing units; alpha bits retained. ICC/dynamic metadata/HDR monitoring unaccepted. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -5007,3 +5008,41 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 ```
 
 [CLI0.1.39 exact installed capability snapshot](highlight-glow-capabilities-cli-0.1.39.json).
+
+### `native_hdr_display_pipeline`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "explicit-display-nits-PQ-HLG-float32-v1",
+  "selection": "settings.pixel_pipeline.engine=float32-native-v1; explicit reference_white_nits on every HDR project source/working/output signal",
+  "transfers": [
+    "pq-st2084",
+    "hlg-bt2100"
+  ],
+  "working": "display-linear Float32 D65 RGB; declared reference_white_nits per signal",
+  "features": [
+    "PQ_display_EOTF_and_inverse_10000_nits",
+    "HLG_RGB_coupled_OOTF_and_inverse",
+    "explicit_HLG_display_peak_and_system_gamma_ideal_zero_black",
+    "absolute_nit_unit_scaling_and_D65_primary_conversion",
+    "native_RGB_and_explicit_progressive_YCbCr_inputs",
+    "explicit_input_domain_reject_or_counted_clip",
+    "original_author_clock_effects_linear_composition_and_editable_packages",
+    "BT2020_NCL_PQ_HLG_ten_bit_delivery_with_matching_VUI",
+    "explicit_modified_Reinhard_luminance_SDR_trim_and_SDR_preview",
+    "preserved_alpha_bits_tiled_budgets_and_cancellation"
+  ],
+  "limits": [
+    "CPU_tiled_color_conversion_not_GPU_transfer_kernels",
+    "only_BT2020_PQ_HLG_native_ten_bit_nonalpha_delivery",
+    "no_inferred_luminance_or_metadata_or_automatic_tone_map",
+    "no_ICC_chromatic_adaptation_mastering_CLL_dynamic_metadata_or_DolbyVision",
+    "HLG_ideal_zero_black_only_explicit_peak_and_gamma",
+    "SDR_trim_is_explicit_creative_Reinhard_not_BT2390_or_perceptual_gamut_mapping",
+    "natural_HDR_monitor_long_form_and_full_CapCut_acceptance_pending"
+  ]
+}
+```
+
+[CLI0.1.40 exact installed capability snapshot](native-hdr-capabilities-cli-0.1.40.json).

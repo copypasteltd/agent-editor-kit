@@ -1,0 +1,12 @@
+{
+  "voice": {
+    "cpu_pack": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-portable-r1\\模型 包\\kokoro-zh-en-int8",
+    "gpu_pack": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-portable-r1\\模型 包\\kokoro-zh-en-cuda13",
+    "cuda_library_directory": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\lib"
+  },
+  "translation": {
+    "cpu_pack": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-portable-r1\\模型 包\\opus-zh-en-cpu-int8",
+    "gpu_pack": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-portable-r1\\模型 包\\opus-zh-en-cuda12-int8",
+    "cuda_library_directory": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.4\\bin"
+  }
+}

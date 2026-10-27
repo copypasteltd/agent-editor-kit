@@ -1,0 +1,60 @@
+test_HDR_previews_are_explicit_SDR_views_and_preserve_author_bytes (test_float_hdr.HDRIntegrationTests.test_HDR_previews_are_explicit_SDR_views_and_preserve_author_bytes) ... FAIL
+test_HLG_ten_bit_roundtrip_and_PQ_to_HLG_absolute_light_conversion (test_float_hdr.HDRIntegrationTests.test_HLG_ten_bit_roundtrip_and_PQ_to_HLG_absolute_light_conversion) ... ERROR
+test_PQ_ten_bit_actual_pixels_VUI_and_complete_PCM (test_float_hdr.HDRIntegrationTests.test_PQ_ten_bit_actual_pixels_VUI_and_complete_PCM) ... ERROR
+test_actual_explicit_SDR_trim_matches_independent_scalar_luminance (test_float_hdr.HDRIntegrationTests.test_actual_explicit_SDR_trim_matches_independent_scalar_luminance) ... ok
+test_missing_preview_mapping_or_invalid_delivery_is_rejected_before_mutation (test_float_hdr.HDRIntegrationTests.test_missing_preview_mapping_or_invalid_delivery_is_rejected_before_mutation) ... ok
+test_schema_accepts_explicit_HDR_and_rejects_missing_HLG_context (test_float_hdr.HDRIntegrationTests.test_schema_accepts_explicit_HDR_and_rejects_missing_HLG_context) ... FAIL
+
+======================================================================
+ERROR: test_HLG_ten_bit_roundtrip_and_PQ_to_HLG_absolute_light_conversion (test_float_hdr.HDRIntegrationTests.test_HLG_ten_bit_roundtrip_and_PQ_to_HLG_absolute_light_conversion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_hdr.py", line 229, in test_HLG_ten_bit_roundtrip_and_PQ_to_HLG_absolute_light_conversion
+    video=next(v for v in probe_media(first['path'])['streams'] if v.get('codec_type')=='video');self.assertEqual(video['color_transfer'],'arib-std-b67')
+                          ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\media.py", line 89, in probe_media
+    if not path.exists() or not path.is_file():
+           ^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'exists'
+
+======================================================================
+ERROR: test_PQ_ten_bit_actual_pixels_VUI_and_complete_PCM (test_float_hdr.HDRIntegrationTests.test_PQ_ten_bit_actual_pixels_VUI_and_complete_PCM)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_hdr.py", line 221, in test_PQ_ten_bit_actual_pixels_VUI_and_complete_PCM
+    video=next(v for v in probe_media(result['path'])['streams'] if v.get('codec_type')=='video')
+                          ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\media.py", line 89, in probe_media
+    if not path.exists() or not path.is_file():
+           ^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'exists'
+
+======================================================================
+FAIL: test_HDR_previews_are_explicit_SDR_views_and_preserve_author_bytes (test_float_hdr.HDRIntegrationTests.test_HDR_previews_are_explicit_SDR_views_and_preserve_author_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_hdr.py", line 250, in test_HDR_previews_are_explicit_SDR_views_and_preserve_author_bytes
+    self.assertEqual(code,0,result);data=result['data'];self.assertEqual(data['request']['reference_signal']['primaries'],'bt709')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : {'ok': False, 'command': 'preview.frame', 'request_id': 'req_20261027042629_fbdbf57b', 'operation_id': None, 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'PROJECT_INVALID', 'message': '项目验证失败，拒绝预览', 'path': None, 'retryable': False, 'cause': '{"ok": false, "errors": [{"code": "SCHEMA_VALIDATION_FAILED", "message": "\'rights_ref\' is a required property", "path": "assets.1", "retryable": false}, {"code": "RIGHTS_REF_MISSING", "message": "资产 rights_ref 缺失", "path": "assets[1].rights_ref", "retryable": false}, {"code": "ID_DUPLICATE", "message": "重复 ID: sound", "path": "sequences[0].tracks[1].clips[0].id", "retryable": false}, {"code": "CLIP_OUTSIDE_SEQUENCE", "message": "片段超出序列时长", "path": "sequences[0].tracks[1].clips[0]", "retryable": false}], "warnings": [], "rights": {"ok": false, "target": "commercial_ad", "checked": 2, "required_records": 1, "failures": [{"asset_id": "sound", "context": "project_asset", "code": "RIGHTS_RECORD_MISSING", "message": "没有对应 Rights Ledger 记录"}], "warnings": [], "disposition_decisions": [], "effective_disposition_decisions": []}, "schema_engine": "jsonschema", "asset_count": 2, "sequence_count": 1}'}], 'provenance': {'cli_version': '0.1.40', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-10-27T04:26:29.341654Z', 'finished_at': '2026-10-27T04:26:29.341660Z', 'network': 'disabled'}}
+
+======================================================================
+FAIL: test_schema_accepts_explicit_HDR_and_rejects_missing_HLG_context (test_float_hdr.HDRIntegrationTests.test_schema_accepts_explicit_HDR_and_rejects_missing_HLG_context)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_hdr.py", line 268, in test_schema_accepts_explicit_HDR_and_rejects_missing_HLG_context
+    self.assertEqual(list(validator.iter_errors(self.f.p)),[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [<ValidationError: "'rights_ref' is a required property">] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+<ValidationError: "'rights_ref' is a required property">
+
+- [<ValidationError: "'rights_ref' is a required property">]
++ []
+
+----------------------------------------------------------------------
+Ran 6 tests in 31.071s
+
+FAILED (failures=2, errors=2)

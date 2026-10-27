@@ -1,0 +1,19 @@
+{
+  "status": "failed",
+  "started_at_utc": "2026-10-27T04:45:05.700549+00:00",
+  "registered_skill": true,
+  "native_windows": true,
+  "virtualization": false,
+  "source_fallback": false,
+  "synthetic_diagnostic": true,
+  "continuous_human_playback": false,
+  "human_listening": false,
+  "HDR_monitor_accepted": false,
+  "natural_quality_accepted": false,
+  "native_tools": {
+    "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+    "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.EXE": "70872c3ffbc43d0b2c570f9837f54d6e9a832f4ca25463e9735b6a3ec0621478"
+  },
+  "manifest_sha256": "sha256:737f8b87d3aa95bd07cbc3323332ef1a18684e78407c7cae821f99f079f170c7",
+  "error": "AssertionError(('compose', b'{\"ok\":false,\"command\":\"timeline.compose\",\"request_id\":\"req_20261027044526_5eff4d4b\",\"operation_id\":null,\"status\":\"failed\",\"data\":{},\"artifacts\":[],\"warnings\":[],\"errors\":[{\"code\":\"PROJECT_INVALID\",\"message\":\"\\xe6\\x97\\xb6\\xe9\\x97\\xb4\\xe7\\xba\\xbf\\xe5\\x8f\\x98\\xe6\\x9b\\xb4\\xe4\\xbc\\x9a\\xe7\\x94\\x9f\\xe6\\x88\\x90\\xe6\\x97\\xa0\\xe6\\x95\\x88\\xe9\\xa1\\xb9\\xe7\\x9b\\xae\",\"path\":null,\"retryable\":false,\"cause\":\"{\\\\\"ok\\\\\": false, \\\\\"errors\\\\\": [{\\\\\"code\\\\\": \\\\\"FLOAT_RENDER_PRECISION\\\\\", \\\\\"message\\\\\": \\\\\"\\xe5\\x8e\\x9f\\xe7\\x94\\x9fHDR\\xe4\\xba\\xa4\\xe4\\xbb\\x98\\xe8\\xa6\\x81\\xe6\\xb1\\x82\\xe6\\x98\\x8e\\xe7\\xa1\\xae10-bit\\xe9\\x9d\\x9e\\xe9\\x80\\x8f\\xe6\\x98\\x8eYCbCr\\xef\\xbc\\x8c\\xe7\\xa6\\x81\\xe6\\xad\\xa28-bit\\xe5\\x9b\\x9e\\xe9\\x80\\x80\\\\\", \\\\\"path\\\\\": \\\\\"settings.pixel_pipeline\\\\\", \\\\\"retryable\\\\\": false}], \\\\\"warnings\\\\\": [], \\\\\"rights\\\\\": {\\\\\"ok\\\\\": true, \\\\\"target\\\\\": \\\\\"commercial_ad\\\\\", \\\\\"checked\\\\\": 3, \\\\\"required_records\\\\\": 3, \\\\\"failures\\\\\": [], \\\\\"warnings\\\\\": [], \\\\\"disposition_decisions\\\\\": [], \\\\\"effective_disposition_decisions\\\\\": []}, \\\\\"schema_engine\\\\\": \\\\\"jsonschema\\\\\", \\\\\"asset_count\\\\\": 3, \\\\\"sequence_count\\\\\": 1}\"}],\"provenance\":{\"cli_version\":\"0.1.40\",\"schema_version\":\"0.1.0\",\"engine_version\":\"ffmpeg-local\",\"started_at\":\"2026-10-27T04:45:26.863757Z\",\"finished_at\":\"2026-10-27T04:45:26.863767Z\",\"network\":\"disabled\"}}\\r\\n', b''))"
+}

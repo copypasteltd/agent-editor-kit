@@ -9,7 +9,21 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- highlight-glow-current -->
+<!-- hdr-display-current -->
+
+**CLI0.1.40 / alpha.4-local.38 / r41 kit · 1 Skill / 17 modules.**
+
+Adds **native display-light PQ/HLG, explicit nit units, 10-bit BT.2020 delivery and separate SDR previews**. HLG includes the RGB-coupled OOTF; SDR graphics and HDR highlights with different reference whites compose in linear light. Author clocks, effects and editable projects retain explicit input/output clipping and SDR mapping decisions.
+
+[Workflow / usage](docs/product/HDR_DISPLAY.md) · [C50](docs/product/CASES.md#c50-native-hdr) · [Install](docs/releases/CLI_0.1.40_LOCAL.md) · [Evidence](docs/validation/HDR显示光实测_2026-10-27.md)
+
+![Actual SDR viewing trim of HDR edit](docs/assets/native-hdr-20261027-r3/hdr-sdr-view.gif)
+
+One installed run passes **993 regressions with zero failures/errors/skips**: all prior734, 20 HDR numeric/actual-engineering checks and239 related color compatibility tests. Registered Skill C50 retains all48 decoded10-bit frames and384000 nonzero stereo Float32 PCM scalars after package import (12FPS/four seconds). Transfer math is tiled CPU; supported composition/effects retain actual GPU use. HDR monitor/natural quality, ICC, nonzero-black HLG, mastering/dynamic metadata and the complete goal remain open.
+
+<!-- /hdr-display-current -->
+
+<!-- highlight-glow-history -->
 
 **CLI0.1.39 / alpha.4-local.37 / r40 kit · 1 Skill / 17 modules.**
 
@@ -21,7 +35,7 @@ New **highlight Bloom and film Halation** extract actual image highlights in exp
 
 A single installed run passes all 734 regressions with zero failures/errors/skips, adding 21 numeric, 3 real GPU and 6 engineering tests. C49 retains six numeric tracks, all 48 decoded 10-bit frames and 384000 Float32 PCM scalars after package import. Each content render uses 192 glow operations/768 device kernels, excluding startup probes. Natural-footage quality, physical film accuracy, HDR, real-time/4K long-form performance, the full effect library and all 38 original closure conditions remain open. All 265 prior R rows are preserved.
 
-<!-- /highlight-glow-current -->
+<!-- /highlight-glow-history -->
 
 <!-- optical-effects-history -->
 
@@ -432,7 +446,7 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r40 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r40.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r41 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r41.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
@@ -809,6 +823,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F63 | Editable particles and emitter animation | Six original recipes/five shapes/seed/native CFR;21 source-clock animated properties,six easings,emission pauses and actual GPU rasterization. Editing/preview/queue/package/local OTIO. | `vfx list/inspect/apply/update/show/animation-properties/animate` | CPU rate integration/birth evaluation,GPU painting;64 points/property,16 emitters,4096 reserved live particles;no3-D/collision/depth. |
 | F64 | Editable GPU optical effects | Flare core/streak/halo/ghosts, rotated elliptical leak and radial red/blue split; all numeric channels animate on original author clocks. Clip/interval adjustments, CPU/OpenCL. | `effects list/inspect` → `timeline compose` → preview/render | Explicit linear RGB; original alpha bits retained; transparent hidden RGB does not bleed. Static ghosts/edge; no physical lens, automatic light detection or bloom. |
 | F65 | Highlight Bloom / film Halation | Actual soft-knee highlight extraction→separable Gaussian spread→core suppression/linear tint; editable numeric author-clock tracks in clips or selected-root adjustment intervals. | `effects list/inspect; timeline compose; preview; render; queue` | sigma0…32 input pixels; transparent/clamp edges; alpha bits preserved; actual four-kernel GPU or CPU reference; bounded workspace/visits; physical film/HDR unaccepted. |
+| F66 | Native PQ/HLG HDR and SDR viewing | Explicit reference white/HLG peak/gamma → display-linear edits; mixed-nit assets, ordinary effects/composition and10-bit BT.2020 NCL delivery; separate SDR trim and PNG/MP4 previews. | `timeline compose; validate; preview; render; convert` | CPU transfer math; existing GPU composition/effects; rejects8-bit/mismatched tags/missing units; alpha bits retained. ICC/dynamic metadata/HDR monitoring unaccepted. |
 
 ## Supported service modules and dependencies
 
@@ -936,7 +951,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.37/final-r2/installed/`, CLI 0.1.39. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.38/final-r1/installed/`, CLI 0.1.40. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1400,6 +1415,12 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R269 | 2026-10-27 highlight glow | Six integration tests cover same-source encoding within one 10-bit code/full PCM, particle composition≤3e-6, split/reverse left limits, package/local OTIO, preview invalidation/queue and one selected-root interval application. | [Evidence](docs/validation/evidence/highlight-glow-20261027-r1/installed-regression-r2/receipts.json) |
 | R270 | 2026-10-27 highlight glow | Registered installed Skill C49: original/Bloom/Halation/combined, six numeric tracks, 48 frames/12FPS/four seconds. All 10-bit frames and 384000 PCM scalars match after package import; 192 content glow operations and owned cleanup verified. | [Evidence](docs/validation/evidence/highlight-glow-20261027-r1/case-r1/verification.json) |
 | R271 | 2026-10-27 highlight glow | Fresh r40 kit: one entry/17 modules/78 Skill files/124 entries, complete verification/isolated registration and 32 calls. Trilingual 65-function/21-service manuals retain all 265 prior R rows and 38 original closure cells. | [Evidence](docs/validation/evidence/highlight-glow-20261027-r1/kit-r1/verification.json) |
+| R272 | 2026-10-27 native HDR | CLI0.1.40/local.38:240 source/installed product files match; one installed run passes993 tests, zero failures/errors/skips, retaining all734 prior checks plus20 HDR and239 related color tests. | [Evidence](docs/validation/evidence/native-hdr-20261027-r1/installed-regression-r2/verification.json) |
+| R273 | 2026-10-27 native HDR | 12 numeric tests use independent50-digit Decimal PQ and scalar coupled-HLG oracles; explicit nits/peak/gamma, domain/gamut counters, alpha bits, tiles, cancellation and budgets. | [Evidence](docs/validation/evidence/native-hdr-20261027-r1/source-numeric-r4/verification.json) |
+| R274 | 2026-10-27 native HDR | 8 actual integration tests: native PQ/HLG10-bit pixels/VUI, PQ→HLG, scalar SDR trim, real10-bit YCbCr input, PNG/MP4 previews, invalid configuration rejection, schema and complete package audio/video. | [Evidence](docs/validation/evidence/native-hdr-20261027-r1/installed-regression-r2/receipts.json) |
+| R275 | 2026-10-27 native HDR | 239 existing color/curves/LUT/float-bundle/levels/balance/tone tests preserve two-field relative signal semantics, precision, resource and migration contracts. | [Evidence](docs/validation/evidence/native-hdr-20261027-r1/source-compat-r1/verification.json) |
+| R276 | 2026-10-27 native HDR | Registered installed Skill C50 mixes100-nit SDR graphics with203-nit reference-white HDR. All48 frames/nonzero384000 stereo PCM scalars match after package import; actual PQ/HLG masters, SDR trim and4000ms GIF. | [Evidence](docs/validation/evidence/native-hdr-20261027-r1/case-r3/verification.json) |
+| R277 | 2026-10-27 native HDR | r41:one Skill/17 modules/79 Skill files/126 kit entries; full verification and32 isolated registration calls. Trilingual F66/S21 retain all271 prior R rows and38 original closure cells. | [Evidence](docs/validation/evidence/native-hdr-20261027-r1/kit-r1/verification.json) |
 
 ## Current limits and development direction
 

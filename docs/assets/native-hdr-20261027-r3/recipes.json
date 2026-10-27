@@ -1,0 +1,48 @@
+{
+  "PQ": {
+    "primaries": "bt2020",
+    "transfer": "pq-st2084",
+    "reference_white_nits": 203
+  },
+  "working": {
+    "primaries": "bt2020",
+    "transfer": "linear",
+    "reference_white_nits": 203
+  },
+  "preview_mapping": {
+    "operator": "reinhard-luminance",
+    "source_peak_nits": 1000,
+    "target_peak_nits": 100,
+    "exposure_stops": 0,
+    "gamut_policy": "clip"
+  },
+  "effect": {
+    "type": "bloom",
+    "parameters": {
+      "threshold": 1,
+      "knee": 0.2,
+      "radius": 4,
+      "gain": 0.25,
+      "intensity": 0.4
+    },
+    "keyframes": [
+      {
+        "property": "intensity",
+        "keyframes": [
+          {
+            "at_tick": 0,
+            "value": 0.15,
+            "interpolation": "ease_in_out"
+          },
+          {
+            "at_tick": 360000,
+            "value": 0.6,
+            "interpolation": "linear"
+          }
+        ]
+      }
+    ]
+  },
+  "HDR_output": "BT2020 NCL 10bit",
+  "SDR_badge_white_nits": 100
+}

@@ -63,9 +63,8 @@ def parse_points(raw):
 
 
 def signal(value):
-    if not isinstance(value,dict) or set(value)!={'primaries','transfer'}:
-        raise error('SIGNAL','浮点曲线须明确input_signal和output_signal的primaries/transfer')
-    return ColorSignal(value['primaries'],value['transfer'])
+    from .float_hdr import parse_signal
+    return parse_signal(value)
 
 
 @dataclass(frozen=True)

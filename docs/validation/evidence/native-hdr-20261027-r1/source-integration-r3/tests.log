@@ -1,0 +1,22 @@
+test_HDR_previews_are_explicit_SDR_views_and_preserve_author_bytes (test_float_hdr.HDRIntegrationTests.test_HDR_previews_are_explicit_SDR_views_and_preserve_author_bytes) ... ok
+test_HLG_ten_bit_roundtrip_and_PQ_to_HLG_absolute_light_conversion (test_float_hdr.HDRIntegrationTests.test_HLG_ten_bit_roundtrip_and_PQ_to_HLG_absolute_light_conversion) ... ok
+test_PQ_ten_bit_actual_pixels_VUI_and_complete_PCM (test_float_hdr.HDRIntegrationTests.test_PQ_ten_bit_actual_pixels_VUI_and_complete_PCM) ... ok
+test_actual_explicit_SDR_trim_matches_independent_scalar_luminance (test_float_hdr.HDRIntegrationTests.test_actual_explicit_SDR_trim_matches_independent_scalar_luminance) ... ok
+test_editable_package_retains_absolute_signals_and_complete_encoded_audio_video (test_float_hdr.HDRIntegrationTests.test_editable_package_retains_absolute_signals_and_complete_encoded_audio_video) ... ok
+test_missing_preview_mapping_or_invalid_delivery_is_rejected_before_mutation (test_float_hdr.HDRIntegrationTests.test_missing_preview_mapping_or_invalid_delivery_is_rejected_before_mutation) ... ok
+test_native_ten_bit_YCbCr_input_preserves_codes_without_eight_bit_stage (test_float_hdr.HDRIntegrationTests.test_native_ten_bit_YCbCr_input_preserves_codes_without_eight_bit_stage) ... ERROR
+test_schema_accepts_explicit_HDR_and_rejects_missing_HLG_context (test_float_hdr.HDRIntegrationTests.test_schema_accepts_explicit_HDR_and_rejects_missing_HLG_context) ... ok
+
+======================================================================
+ERROR: test_native_ten_bit_YCbCr_input_preserves_codes_without_eight_bit_stage (test_float_hdr.HDRIntegrationTests.test_native_ten_bit_YCbCr_input_preserves_codes_without_eight_bit_stage)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_hdr.py", line 303, in test_native_ten_bit_YCbCr_input_preserves_codes_without_eight_bit_stage
+    self.assertEqual(source['pixel_format'],'yuv444p10le')
+                     ~~~~~~^^^^^^^^^^^^^^^^
+KeyError: 'pixel_format'
+
+----------------------------------------------------------------------
+Ran 8 tests in 109.932s
+
+FAILED (errors=1)

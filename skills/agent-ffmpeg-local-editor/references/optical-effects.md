@@ -60,7 +60,8 @@ range policy and preview highlight clipping. Tint values are not sRGB hex colors
 `off|prefer|require` retains the existing render-owned GPU policy. Actual OpenCL
 optics use binary64 math with Float32 boundaries. Read the actual
 `operations.optics`, probe/device/kernel hashes and worker/shared/thread/stream
-cleanup. Nine named main probe dispatches include three optical cases; probe
+cleanup. Seventeen named main probe kernels include three analytic optical cases and
+eight highlight-glow kernels; auxiliary subnormal probes are separate. Probe
 success is separate from edited-frame operations. Other effects remain CPU.
 Do not conflate GPU optical work with hardware encoding or model inference.
 
@@ -75,6 +76,7 @@ Full parameters, runnable import/edit/render workflow, original PNG, recipes,
 license and editable package:
 [optical workflow](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/OPTICAL_EFFECTS.md).
 These are artistic analytic effects. No automatic bright-source detection,
-physical lens calibration, bloom/halation/depth or complete CapCut library claim.
+physical lens calibration, depth or complete CapCut library claim. Actual
+image-highlight Bloom/Halation is separately available in [highlight glow](highlight-glow.md).
 Package/local OTIO retain data; external renderers may not execute the operators.
 Keep still inspection, continuous playback and human quality/listening distinct.

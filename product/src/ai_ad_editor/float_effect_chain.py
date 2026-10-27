@@ -13,6 +13,7 @@ from .float_spatial import SpatialPlan,compile_spatial,apply_spatial,ALIASES as 
 from .float_sharpen import SharpenPlan,compile_sharpen,apply_sharpen,ALIASES as SHARPEN_ALIASES
 from .float_keyer import KeyerPlan,compile_keyer,apply_keyer,ALIASES as KEYER_ALIASES
 from .float_optics import OpticalPlan,compile_optics,apply_optics,ALIASES as OPTICAL_ALIASES
+from .float_glow import GlowPlan,compile_glow,apply_glow,ALIASES as GLOW_ALIASES
 
 PROTOCOL = 'ordered-author-clock-float32-effect-chain-v1'
 
@@ -61,6 +62,8 @@ class EffectCompiler:
                 result.append(compile_keyer(effect))
             elif name in OPTICAL_ALIASES:
                 result.append(compile_optics(effect))
+            elif name in GLOW_ALIASES:
+                result.append(compile_glow(effect))
             else:
                 raise AppError('FLOAT_TIMELINE_UNSUPPORTED','该效果尚未连接浮点时间线',exit_code=2)
         return tuple(result)
@@ -141,6 +144,10 @@ class EffectCompiler:
                 rows.append({'index':index,'type':'chroma_key',**metadata})
             elif isinstance(plan,OpticalPlan):
                 value,metadata = apply_optics(value,plan,tick,working_signal=self.working,retained_table_bytes=retained,
+                    max_working_bytes=self.budget,cancel=self.cancel,gpu=self.gpu)
+                rows.append({'index':index,'type':plan.effect_type,**metadata})
+            elif isinstance(plan,GlowPlan):
+                value,metadata = apply_glow(value,plan,tick,working_signal=self.working,retained_table_bytes=retained,
                     max_working_bytes=self.budget,cancel=self.cancel,gpu=self.gpu)
                 rows.append({'index':index,'type':plan.effect_type,**metadata})
             else:

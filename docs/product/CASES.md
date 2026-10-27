@@ -919,3 +919,15 @@ Registered installed CLI0.1.38 imports an original CC0 product chart and compose
 [MP4](../assets/optical-effects-20261027-r3/optical-effects.mp4) · [Lossless master](../assets/optical-effects-20261027-r3/optical-effects.mkv) · [Editable project](../assets/optical-effects-20261027-r3/editable-optical-effects.aevpkg.zip) · [Original PNG](../assets/optical-effects-20261027-r3/original-source.png) · [Without effects](../assets/optical-effects-20261027-r3/before.png) · [At2s](../assets/optical-effects-20261027-r3/contact.png) · [Recipes](../assets/optical-effects-20261027-r3/recipes.json) · [Source/license](../assets/optical-effects-20261027-r3/SOURCE.txt) · [Media manifest](../assets/optical-effects-20261027-r3/media-manifest.json) · [Workflow](OPTICAL_EFFECTS.md) · [Evidence](../validation/光学效果实测_2026-10-27.md).
 
 The MKV is actual installed GPU output, the MP4 is a playable encode, and GIF/contact images use decoded output with labels. Before is a separate GPU render with only optical effects removed. The GIF contains 48 actual frames over 4000ms. This is a silent synthetic diagnostic without external imagery/models. Continuous human playback/listening, natural footage quality and physical lens/full product acceptance remain open.
+
+<a id="c49-highlight-glow"></a>
+
+## C49 · 高光扩散与胶片光晕 / Bloom and Halation
+
+Registered installed CLI0.1.39 imports an original CC0 product/highlight chart into four 480×270 panels in 960×540: original, Bloom, warm core-suppressed Halation and both combined. Six numeric tracks remain editable. 48 frames/12FPS/four seconds. Package reimport retains all effects/keys, all 48 decoded 10-bit frames and 384000 Float32 PCM scalars. Each content render executes192 glow operations/768 actual kernels, excluding startup probes; all owned resources close.
+
+![Actual GPU highlight output, decoded and labeled](../assets/highlight-glow-20261027-r1/highlight-glow.gif)
+
+[MP4](../assets/highlight-glow-20261027-r1/highlight-glow.mp4) · [Lossless master](../assets/highlight-glow-20261027-r1/highlight-glow.mkv) · [Editable project](../assets/highlight-glow-20261027-r1/editable-highlight-glow.aevpkg.zip) · [Original PNG](../assets/highlight-glow-20261027-r1/original-source.png) · [Without effects](../assets/highlight-glow-20261027-r1/before.png) · [At2s](../assets/highlight-glow-20261027-r1/contact.png) · [Recipes](../assets/highlight-glow-20261027-r1/recipes.json) · [Source/license](../assets/highlight-glow-20261027-r1/SOURCE.txt) · [Media manifest](../assets/highlight-glow-20261027-r1/media-manifest.json)
+
+[Workflow](HIGHLIGHT_GLOW.md) · [Evidence](../validation/高光扩散实测_2026-10-27.md). The MKV is actual installed GPU output; the MP4 is a playable encode and GIF/contact images add labels to decoded master frames. Before is a separate effects-removed GPU render. GIF 48 frames/4000ms. This silent synthetic diagnostic has no external footage/model; still review, continuous human playback/listening, natural quality and physical film/full product acceptance are separate.

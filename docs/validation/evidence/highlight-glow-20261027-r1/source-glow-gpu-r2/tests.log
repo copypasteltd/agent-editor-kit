@@ -1,0 +1,8 @@
+test_GPU_operator_cancellation_releases_worker_shared_memory_and_control (test_float_glow.GlowGPUTests.test_GPU_operator_cancellation_releases_worker_shared_memory_and_control) ... ok
+test_noop_and_invalid_dispatch_are_atomic_then_ordered_GPU_chain_works (test_float_glow.GlowGPUTests.test_noop_and_invalid_dispatch_are_atomic_then_ordered_GPU_chain_works) ... ok
+test_real_four_stage_kernels_match_CPU_for_edges_fractional_radii_and_primaries (test_float_glow.GlowGPUTests.test_real_four_stage_kernels_match_CPU_for_edges_fractional_radii_and_primaries) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 2.698s
+
+OK

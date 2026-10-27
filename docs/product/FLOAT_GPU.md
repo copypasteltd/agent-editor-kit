@@ -1,5 +1,8 @@
 # 线性 Float32 GPU 执行层
 
+CLI0.1.39 新增[真实高光Bloom与Halation](HIGHLIGHT_GLOW.md)：亮源提取、横向/纵向FIR和合成为四个实际GPU kernel，中间图保留在显存，只下载最终图。命名主探测更新为17（glow占8），次正规辅助探测另计；编辑帧读 `operations.glow`。下文CLI0.1.38的9次主探测是历史版本范围。
+
+
 CLI0.1.38 当前新增[眩光、漏光和色差](OPTICAL_EFFECTS.md)实际GPU运算，沿用原有粒子与
 投影/合成路径。命名主探测为9次，其中3次为真实光学算子；此前65536级和次正规alpha
 校验继续保留。编辑帧的 `operations.optics` 与探测数分开记录。光学算子用binary64，

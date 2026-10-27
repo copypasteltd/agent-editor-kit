@@ -14,6 +14,7 @@ import numpy as np
 
 from .errors import AppError
 from .float_optics_kernel import SOURCE as OPTICAL_SOURCE
+from .float_glow_kernel import SOURCE as GLOW_SOURCE
 
 PROTOCOL = 'native-opencl-binary64-float32-primitives-v1'
 MAX_PIXELS = 16777216
@@ -126,7 +127,7 @@ __kernel void particles(__global const float *scene, __global const uint *bins,
     if(sum.w>0.0f)sum.xyz/=sum.w; else sum.xyz=(float3)(0.0f);
     out[i]=sum;
 }
-''' + OPTICAL_SOURCE
+''' + OPTICAL_SOURCE + GLOW_SOURCE
 
 
 def error(code, message, **details):
@@ -157,11 +158,11 @@ class NativeGPU:
                 log=C.create_string_buffer(min(size.value,65536))
                 if len(log):self.lib.clGetProgramBuildInfo(self.program,self.device,0x1183,len(log),log,None)
                 raise error('BUILD','OpenCL浮点内核编译失败',native_code=result,log=log.value.decode('utf8','replace'))
-            for name in ('over','affine','paint','select_words','particles','optics'):
+            for name in ('over','affine','paint','select_words','particles','optics','glow_bright','glow_blur','glow_merge'):
                 self.kernels[name]=self.lib.clCreateKernel(self.program,name.encode(),C.byref(code));self._check(code.value,'kernel')
             self.metadata={'protocol':PROTOCOL,'device':self.info,'kernel_sha256':hashlib.sha256(data).hexdigest(),
                 'build_options':'-cl-std=CL1.2;FP_CONTRACT OFF;no fast math',
-                'arithmetic':'binary64 affine/over/text/optics; binary32 particle coverage and ordered accumulation; Float32 surfaces',
+                'arithmetic':'binary64 affine/over/text/optics/highlight-FIR-glow; binary32 particle coverage and ordered accumulation; Float32 surfaces',
                 'device_quota_bytes':self.limit,'retained_device_bytes':0,'operations':{},'integer_media_conversion':False}
         except BaseException:
             self.close();raise
@@ -233,7 +234,8 @@ class NativeGPU:
         for index,value in enumerate(arguments):self._check(self.lib.clSetKernelArg(kernel,index,C.sizeof(value),C.byref(value)),'argument')
         size=(C.c_size_t*1)(count)
         self._check(self.lib.clEnqueueNDRangeKernel(self.queue,kernel,1,None,size,None,0,None,None),'enqueue')
-        self._check(self.lib.clEnqueueReadBuffer(self.queue,self.buffers[buffer],1,0,output.nbytes,C.c_void_p(output.ctypes.data),0,None,None),'download')
+        if output is not None:
+            self._check(self.lib.clEnqueueReadBuffer(self.queue,self.buffers[buffer],1,0,output.nbytes,C.c_void_p(output.ctypes.data),0,None,None),'download')
         self.metadata['operations'][name]=self.metadata['operations'].get(name,0)+1
 
     @staticmethod
@@ -317,6 +319,27 @@ class NativeGPU:
         h,w=source.shape[:2]
         self._run('optics',[C.c_void_p(self.buffers[0]),C.c_void_p(self.buffers[1]),C.c_void_p(self.buffers[2]),
             C.c_int(w),C.c_int(h),C.c_int(KINDS.index(kind)),C.c_int(ghosts),C.c_int(edge=='transparent')],w*h,output)
+
+    def glow(self, source, output, kind, values, edge, primaries):
+        from .float_glow import validate_state,luma_coefficients,admit_neighborhood
+        values=validate_state(kind,values,edge)
+        coefficients=luma_coefficients(primaries)
+        self.surface(source);self.output(output)
+        if source.shape!=output.shape:raise error('SURFACE','GPU高光扩散输入输出尺寸不一致')
+        h,w=source.shape[:2];count=w*h
+        support,_,norm,_=admit_neighborhood(count,values['radius'])
+        self._reserve(source.nbytes);self._write(0,source)
+        pointer=lambda i:C.c_void_p(self.buffers[i])
+        signal=[C.c_double(v) for v in (values['threshold'],values['knee'],*coefficients)]
+        # Keep source in buffer 0; all intermediates stay on device. In-order
+        # queue semantics make the single final blocking read sufficient.
+        self._run('glow_bright',[pointer(0),pointer(1),C.c_ulonglong(count),*signal],count,None)
+        for axis,src,dest in ((1,1,2),(0,2,1)):
+            self._run('glow_blur',[pointer(src),pointer(dest),C.c_int(w),C.c_int(h),C.c_int(axis),
+                C.c_int(support),C.c_double(values['radius']),C.c_double(norm),C.c_int(edge=='transparent')],count,None)
+        self._run('glow_merge',[pointer(0),pointer(1),pointer(2),C.c_ulonglong(count),C.c_int(kind=='halation'),
+            *signal,*(C.c_double(values[k]) for k in ('intensity','gain','red','green','blue')),
+            C.c_double(values.get('core_suppression',0.))],count,output)
 
     def close(self):
         if not hasattr(self,'lib'):return

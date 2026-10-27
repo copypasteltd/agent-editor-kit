@@ -1505,7 +1505,7 @@ print(json.dumps({
         self.assertIn("track_volume", manifest["capabilities"]["audio"]["features"])
         self.assertIn("offline_adapter_registry", manifest["capabilities"]["audio"]["features"])
         self.assertIn("unknown_audio_adapter_never_falls_back_to_mid_side", manifest["capabilities"]["audio"]["limits"])
-        self.assertEqual(manifest["capabilities"]["effects"]["catalog_version"], "0.10.0")
+        self.assertEqual(manifest["capabilities"]["effects"]["catalog_version"], "0.11.0")
         self.assertIn("exposure", manifest["capabilities"]["effects"]["catalog_features"])
         self.assertIn("hsl", manifest["capabilities"]["effects"]["catalog_features"])
         self.assertIn("rgb_curves", manifest["capabilities"]["effects"]["catalog_features"])
@@ -1542,12 +1542,15 @@ print(json.dumps({
 
         code, catalog = invoke("effects", "list")
         self.assertEqual(code, 0, catalog)
-        self.assertEqual(catalog["data"]["catalog_version"], "0.10.0")
-        self.assertEqual(catalog["data"]["count"], 49)
-        optical = {item['id']: item for item in catalog['data']['effects'] if item['category']=='optical'}
+        self.assertEqual(catalog["data"]["catalog_version"], "0.11.0")
+        self.assertEqual(catalog["data"]["count"], 51)
+        optical = {item['id']: item for item in catalog['data']['effects'] if item['backend']=='native:float32-optics'}
         self.assertEqual(set(optical), {'lens_flare','light_leak','chromatic_aberration'})
         self.assertTrue(all(item['backend']=='native:float32-optics' and item['source']=='agent-editor-kit-original'
             and item['keyframable'] for item in optical.values()))
+        glow = {item['id']: item for item in catalog['data']['effects'] if item['backend']=='native:float32-glow'}
+        self.assertEqual(set(glow), {'bloom','halation'})
+        self.assertTrue(all(item['category']=='optical' and item['keyframable'] for item in glow.values()))
         frame_interpolation = next(item for item in catalog["data"]["effects"] if item["id"] == "frame_interpolation")
         self.assertEqual(frame_interpolation["backend"], "ffmpeg:minterpolate")
         self.assertIn("fps", frame_interpolation["parameters"])

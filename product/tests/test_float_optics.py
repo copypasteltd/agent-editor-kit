@@ -136,7 +136,7 @@ class OpticalNumericTests(unittest.TestCase):
     def test_catalog_aliases_are_defensive_and_legacy_execution_rejects(self):
         from ai_ad_editor.effects import get_effect,effect_catalog
         from ai_ad_editor.render import _effect_filters
-        self.assertEqual(effect_catalog()['count'],49)
+        self.assertEqual(effect_catalog()['count'],51)
         for alias,canonical in [('lensflare','lens_flare'),('lightleak','light_leak'),('rgb_split','chromatic_aberration')]:
             item=get_effect(alias);self.assertEqual(item['id'],canonical);item['parameters'].clear();self.assertTrue(get_effect(alias)['parameters'])
             with self.assertRaises(AppError) as caught:_effect_filters([effect(alias)],[],'optics')

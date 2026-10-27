@@ -1,5 +1,8 @@
 # 光学效果 / 光學效果 / Optical effects
 
+CLI0.1.39 另提供[从实际画面高光提取亮源的Bloom与Halation](HIGHLIGHT_GLOW.md)。本页仍描述CLI0.1.38首次接通的解析眩光/漏光/色差范围；其缺少Bloom/Halation的历史边界由该独立后续算子补充。当前命名主GPU探测为17，编辑帧计数与探测分开。
+
+
 CLI0.1.38 / alpha.4-local.36 adds original MIT **lens flare, light leaks and
 chromatic aberration** to the editable native Float32 effect chain. They work
 on clips and selected-sequence adjustment intervals, with numeric keyframes,

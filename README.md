@@ -9,7 +9,21 @@
 本页包含完整功能模块、服务与依赖、安装与使用逻辑、Skill 输入输出、真实案例和核验表。长篇原始验收日志继续留档，功能说明与案例入口恢复到首页。
 
 
-<!-- optical-effects-current -->
+<!-- highlight-glow-current -->
+
+**CLI0.1.39 / alpha.4-local.37 / r40 kit · 1 Skill / 17 modules.**
+
+新增 **Bloom 高光扩散与 Halation 胶片光晕**：从画面真实高光提取亮源，在明确线性 RGB 域执行软膝阈值、分离高斯邻域扩散、核心抑制与着色叠加。支持作者时钟关键帧、片段及根调整层，CPU 参考和真实 GPU 四阶段实现同步交付。
+
+[Workflow / usage](docs/product/HIGHLIGHT_GLOW.md) · [C49](docs/product/CASES.md#c49-highlight-glow) · [Install](docs/releases/CLI_0.1.39_LOCAL.md) · [Evidence](docs/validation/高光扩散实测_2026-10-27.md)
+
+![Actual registered Skill GPU highlight output](docs/assets/highlight-glow-20261027-r1/highlight-glow.gif)
+
+安装版单轮 734 项回归通过、零失败/错误/跳过；新增 21 数值、3 真实 GPU、6 工程集成，共30项。C49四格保留六条数值轨道，工程包往返全48个10bit帧与384000个Float32 PCM相同；每次内容渲染192个glow操作、768个设备kernel（另计启动探测）。真实素材质量、物理胶片、HDR、实时/4K长片、完整效果库及原38项关闭条件继续开发。既有265条核验逐行保留。
+
+<!-- /highlight-glow-current -->
+
+<!-- optical-effects-history -->
 
 **CLI0.1.38 / alpha.4-local.36 / r39 kit · 1 Skill / 17 modules.**
 
@@ -21,7 +35,7 @@
 
 安装版最终704项不同用例通过：全量702项通过，另2项旧目录断言更新后定向重测通过，产品文件未变、无跳过。C48保留9条动画轨，全部48个10bit解码帧及384000个Float32 PCM采样在工程包往返后相同，GIF为实际解码帧、4000ms。艺术化光效已接通；真实镜头求解、自动亮源检测、bloom/halation/深度和完整剪映效果库继续开发。全部259项既有核验及38项原关闭条件保留。
 
-<!-- /optical-effects-current -->
+<!-- /optical-effects-history -->
 
 <!-- emitter-animation-history -->
 
@@ -418,7 +432,7 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r39 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r39.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
+**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r40 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r40.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
 
 <!-- /unified-skill-registration -->
 
@@ -786,14 +800,15 @@ flowchart LR
 | F54 | 可复用参数运镜 | 本地版本化 JSON / 已有作者曲线 → 普通关键帧、参数/摘要/快照、跨工程复用。六套真实预览供选型。 | `motion pack list/inspect/create/capture/apply` | 65 点采样、transform 属性；默认拒绝冲突，显式替换整条属性轨；跟踪绑定拒绝，CPU 合成/自然质量未闭。 |
 | F55 | 线性浮点转场与组级进出场 | 显式 Float32 工程 → 57 xfade图案+2 dip、预乘alpha混合、真实句柄/原作者时钟、关联音轨、组级擦除/推移与实际预览成片。 | `timeline transition; preview; render; queue` | CPU；12种真实句柄声明，其他图案用显式重叠/边缘；normal双源混合；风噪有平台差异，HDR/自然质量未闭。 |
 | F56 | 线性浮点文字与字幕 | 独立/内嵌/SRT、联合逐词/打字机 → 原生字节覆盖率、可复用字形、分块线性合成、原作者时钟、4K标题和实际交付。 | `timeline compose; preview; render; queue` | 明确本地字体；CPU/显式GPU；覆盖率8bit/颜色Float32；工作区准入非峰值RSS；富ASS/Bidi/自然质量未闭。 |
-| F57 | 原生Float32 GPU执行 | 仿射、普通合成、文字组件/逐词、粒子栅格及三类光学效果；任务自有管道/共享像素，贯通渲染/预览/队列/恢复。 | `projection_acceleration; render; preview; queue` | off/prefer/require；binary64精度/次正规探测，粒子保持Float32；有界控制及所属进程/线程/流清理，其他算子CPU。 |
-| F58 | Float32全局/区间调整层 | 全轨含字幕合成后按顺序调色/光效；既有浮点效果与三光学效果、六种插值，选中根只应用一次。 | `settings.adjustments; preview; render; queue` | 明确线性工作域/效果信号；光学可GPU，其余CPU；LUT持锁/包迁移，原作者区间时钟，非完整HDR。 |
+| F57 | 原生Float32 GPU执行 | 仿射、普通合成、文字组件/逐词、粒子栅格及光学/高光扩散效果；任务自有管道/共享像素，贯通渲染/预览/队列/恢复。 | `projection_acceleration; render; preview; queue` | off/prefer/require；binary64精度/次正规探测，粒子保持Float32；有界控制及所属进程/线程/流清理，其他算子CPU。 |
+| F58 | Float32全局/区间调整层 | 全轨含字幕合成后按顺序调色/光效；既有浮点效果与光学/高光扩散效果、六种插值，选中根只应用一次。 | `settings.adjustments; preview; render; queue` | 明确线性工作域/效果信号；光学/高光扩散可GPU，其余CPU；LUT持锁/包迁移，原作者区间时钟，非完整HDR。 |
 | F59 | 原生PTS跟踪与叠加轨 | 保存源观测→按实际原生帧求跟随位置；共享crop/TRS、ROI缩放/相对旋转、透明度、窗口与嵌套声音。 | `media track-bind; preview; render; queue; package` | 显式Float32，原生PTS不烘焙显示键；预算/循环门禁；模板漂移与遮挡另审，中间格式烘焙未接通。 |
 | F60 | 原生跟踪与烘焙交付 | 实际alpha/5类遮罩/59转场足迹；剪辑与共享变速保留观察；原生烘焙逐帧核验并保留源旁车。 | `media track-bind; timeline compose/edit; convert export --bake-tracking` | 当前冻结图/FPS；20,000帧/256,000求值；无法表达的整数步进拒绝；外部播放器及自然身份/遮挡待验收。 |
 | F61 | 本地GPU视频生成 | 文生、图生、尾帧/首尾帧；原文提示/采样、真实模型窗口、可编辑入轨、端点核验、可移植配方和受管恢复。 | `media adapter; media generate` | 已有原生VACE/CUDA依赖；无声8bit SDR；条件端点合成保留；自然质量/生成权利/全部剪映AI待验收。 |
 | F62 | 原生GPU模型会话 | 同工程/适配器/提示词复用权重与嵌入；每任务重置，活连接传递持锁摘要；取消、期限、空闲及任务数退出。 | `media model-session; media generate --model-session` | 原生Windows VACE；首条仍载入；新提示词须新会话，串行执行；非全局显存预留/多GPU。 |
 | F63 | 可编辑程序化粒子与发射器动画 | 六种原创建效配方、五形状、seed/独立CFR；21属性源时钟关键帧、六种缓动、发射暂停；真实GPU栅格化。剪辑/预览/队列/包/本地OTIO贯通。 | `vfx list/inspect/apply/update/show/animation-properties/animate` | CPU积分与出生采样，GPU绘制；64点/属性、16发射器、4096预留活粒子；无3D/碰撞/深度。 |
 | F64 | 可编辑光学效果与GPU运算 | 眩光核心/条纹/光晕/鬼影、旋转椭圆漏光、径向红蓝色差；全部数值通道关键帧、原作者时钟、片段/区间调整层，CPU/OpenCL。 | `effects list/inspect` → `timeline compose` → preview/render | 明确线性RGB；原alpha位保留，透明隐藏色不渗出；ghosts/edge静态，非物理镜头/自动亮源/bloom。 |
+| F65 | 真实高光 Bloom / 胶片 Halation | 软膝阈值提取实际高光→分离高斯扩散→核心抑制/线性着色；可编辑数值轨道和原作者时钟，片段或根区间调整层。 | `effects list/inspect; timeline compose; preview; render; queue` | sigma0…32输入像素；透明/复制边界、原alpha位保持；实际四kernel GPU/CPU参考，有界空间/访问预算；非物理胶片/HDR验收。 |
 
 ## 支持的服务模块与依赖
 
@@ -816,7 +831,7 @@ flowchart LR
 | S13 | 内置社区素材服务 | 离线目录 | 359 项有来源/许可的 BGM、短乐、音效、字体 | `materials list/inspect/verify/ingest` | 逐项权利，不是商业素材订阅库 |
 | S14 | 本地配音/翻译 | 原生模型 worker | 4 个可选 CPU/CUDA 包，103 音色映射和 OPUS 文本/字幕 | `voice / translate / model-pack` | 累计至少 7 个不同音色有真实输出；103 音色完整试听及人工验收未完成 |
 | S15 | 配乐准备与混音 | 原生 FFmpeg 音频 | 显式截取/循环/淡化、独立人声/配乐、闪避 | `music prepare/mix` | 不作曲、不静默裁人声、不承诺接缝修复 |
-| S16 | GPU兼容服务 | 已有原生OpenCL ICD / NVIDIA模型库 | 图投影及独立Float32仿射/普通叠加/字色/逐词/粒子/光学；off/prefer/require，模型auto/cpu/cuda；实际探测/预算/清理 | `render --projection-acceleration; gpu inspect; --device` | RTX3060实测；字形/其他效果/转场等CPU，系统库许可另列。 |
+| S16 | GPU兼容服务 | 已有原生OpenCL ICD / NVIDIA模型库 | 图投影及独立Float32仿射/普通叠加/字色/逐词/粒子/光学/高光扩散；off/prefer/require，模型auto/cpu/cuda；实际探测/预算/清理 | `render --projection-acceleration; gpu inspect; --device` | RTX3060实测；字形/其他效果/转场等CPU，系统库许可另列。 |
 | S17 | 原生 Windows 采集 | FFmpeg gdigrab / DirectShow | 明确来源、设备 ID、有限时长、完整解码与素材登记 | `capture devices/record` | 真实窗口 CPU/GPU 已验；相机/麦克风/同步未验 |
 | S18 | 图文语义与经验校准 | 明确登记的原生 SigLIP2 worker | 已有 Torch/Transformers/权重；档案绑定索引/实现/类型/实际设备 | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | 分数非概率；冷启动/大库与校准工程迁移仍有限制 |
 | S19 | 独立四轨分离 | 原生 Torch/TorchAudio HDemucs worker | 显式登记原生 Python、权重/证据/实现哈希；auto/cpu/cuda，4 float WAV/轨道 | `audio adapter; audio separate-stems` | 不随基本 ZIP 分发 Torch/权重；自然听感与权重许可未闭 |
@@ -921,7 +936,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.36/final-r1/installed/`，CLI 0.1.38；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
+本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.37/final-r2/installed/`，CLI 0.1.39；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1377,6 +1392,12 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R263 | 2026-10-27 optical effects | 相同解码输入CPU/GPU编码误差≤1个10bit码值；粒子叠加独立保持≤3e-6浮点预算；拆分/倒放左极限、根调整区间、包/本地OTIO、预览失效与队列分别核验。 | [Evidence](docs/validation/evidence/optical-effects-20261027-r1/installed-regression-final-r2/receipts.json) |
 | R264 | 2026-10-27 optical effects | r39独立工具包：1入口/17模块/77 Skill文件/122包文件；完整校验、隔离注册和29次调用；实际Codex发现联接保持，无新推理或渲染。 | [Evidence](docs/validation/evidence/optical-effects-20261027-r1/kit-r1/verification.json) |
 | R265 | 2026-10-27 optical effects | 三语README完整64功能/21服务、77能力快照、Skill、安装和C48实际GIF/原图/对照/可编辑包同步；259既有核验和38原关闭条件保留，总目标继续开发。 | [Evidence](docs/validation/evidence/optical-effects-20261027-r1/final-delivery-r2/verification.json) |
+| R266 | 2026-10-27 highlight glow | CLI0.1.39/local.37离线包239产品文件与源码逐字节相同；734安装版用例单轮全过，零失败/错误/跳过，含30新增项，旧704项保留。 | [Evidence](docs/validation/evidence/highlight-glow-20261027-r1/installed-regression-r2/verification.json) |
+| R267 | 2026-10-27 highlight glow | 独立二维高斯冲激/软膝能量/基色亮度/阈值单调/胶片去核心、透明亮源与65536级alpha位、六缓动/分块/取消/配额/溢出21项通过。 | [Evidence](docs/validation/evidence/highlight-glow-20261027-r1/source-glow-r2/verification.json) |
+| R268 | 2026-10-27 highlight glow | 3项实际GPU核验包含72组效果×边界×半径×基色；每个操作4kernel、原alpha位一致，CPU参考误差≤3e-6，无操作/非法请求原子拒绝和取消资源关闭通过。 | [Evidence](docs/validation/evidence/highlight-glow-20261027-r1/source-glow-gpu-r2/verification.json) |
+| R269 | 2026-10-27 highlight glow | 6项集成验证同源编码≤1个10bit码、全部PCM、粒子组合≤3e-6、拆分/倒放左极限、包/本地OTIO、预览键失效/队列、根区间仅应用一次。 | [Evidence](docs/validation/evidence/highlight-glow-20261027-r1/installed-regression-r2/receipts.json) |
+| R270 | 2026-10-27 highlight glow | 注册安装版Skill C49：原图/Bloom/Halation/组合四格，6数值轨、48帧/12FPS/4秒；全帧10bit和384000 PCM工程包往返相同，192glow内容操作及所属资源关闭。 | [Evidence](docs/validation/evidence/highlight-glow-20261027-r1/case-r1/verification.json) |
+| R271 | 2026-10-27 highlight glow | r40独立工具包1入口/17模块/78 Skill文件/124包文件，完整校验/隔离注册32次调用；三语README65功能/21服务及全部265既有核验和38原关闭条件保留。 | [Evidence](docs/validation/evidence/highlight-glow-20261027-r1/kit-r1/verification.json) |
 
 ## 当前边界与开发方向
 

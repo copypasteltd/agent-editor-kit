@@ -1,5 +1,12 @@
 # Native GPU projection (initial CLI 0.1.24; current additions below)
 
+CLI0.1.39 also runs [highlight Bloom and Halation](highlight-glow.md).
+Each active glow operation uses four device kernels with one final
+readback; intermediate images stay on device. Seventeen named main
+probe kernels include eight glow kernels; auxiliary subnormal probes
+are separate. `operations.glow` counts edited-frame work.
+
+
 CLI0.1.38 additionally runs [analytic optical effects](optical-effects.md) on
 the native linear Float32 GPU backend, alongside the existing seeded particle
 rasterization. Nine named main probe dispatches include three actual optical

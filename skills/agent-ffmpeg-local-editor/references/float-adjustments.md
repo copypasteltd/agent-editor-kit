@@ -1,5 +1,11 @@
 # Global and interval Float32 grading
 
+CLI0.1.39 adds [highlight Bloom/Halation](highlight-glow.md) to selected-root
+intervals, using the same local author clock and one post-composition
+application. Native optics/glow can use the actual owned GPU; other
+adjustment operators retain their existing CPU implementation.
+
+
 Use the installed CLI 0.1.25 for `settings.adjustments` in an explicit
 `float32-native-v1` project. Read the actual capability field
 `standard_native_float_render.adjustments`. This uses the same supported

@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.38 / alpha.4-local.36 / r39 kit · 1 Skill / 17 modules / 77 files.**
+**CLI0.1.39 / alpha.4-local.37 / r40 kit · 1 Skill / 17 modules / 78 files.**
 
-New editable **lens flare, light leaks and chromatic aberration**: linear-light Float32 math, numeric keys, original author clocks, clip effects and selected-sequence adjustments, with CPU references and actual OpenCL GPU execution. Discover constraints with `effects list --query optical` / `effects inspect`; author with `timeline compose`. The four-panel case retains the original image, effects-removed control and actual GPU output.
+New **highlight Bloom and film Halation** extract actual image highlights in explicit linear RGB, with soft-knee thresholds, separable Gaussian neighborhood spread, core suppression and tinted addition. Numeric author-clock keys, clip effects and selected-root adjustments use CPU references or actual four-stage GPU execution.
 
-[Optical workflow and constraints](OPTICAL_EFFECTS.md)
+[Highlight workflow and constraints](HIGHLIGHT_GLOW.md)
 
 <!-- /community-current -->
 

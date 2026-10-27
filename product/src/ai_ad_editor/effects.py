@@ -14,7 +14,7 @@ from .effect_automation import SPECS as AUTOMATION_SPECS
 from .selective_hsl import SPECS as HSL_SPECS, ENGINE as HSL_ENGINE
 
 
-EFFECT_CATALOG_VERSION = "0.10.0"
+EFFECT_CATALOG_VERSION = "0.11.0"
 
 
 def _parameter(
@@ -260,6 +260,27 @@ def _optical_catalog():
     return tuple(rows)
 
 _EFFECTS += _optical_catalog()
+
+
+def _glow_catalog():
+    from .float_glow import SPECS,ALIASES,PROTOCOL
+    rows=[]
+    for name,parameters in SPECS.items():
+        p={k:_parameter('number',v[0],minimum=v[1],maximum=v[2]) for k,v in parameters.items()}
+        p['edge']=_parameter('enum','transparent',description='transparent or clamp; static')
+        rows.append(dict(id=name,aliases=[k for k,v in ALIASES.items() if v==name and k!=name],category='optical',
+            backend='native:float32-glow',source='agent-editor-kit-original',license='MIT',keyframable=True,
+            keyframe_parameters=list(parameters),keyframe_engine=PROTOCOL,parameters=p,
+            limits=['explicit_native_linear_working_RGB','actual_coverage_weighted_highlight_extraction',
+                'relative_D65_luminance_soft_knee','normalized_separable_three_sigma_Gaussian_FIR',
+                'sigma_0_to_32_source_pixels','Float32_stage_boundaries_binary64_accumulation',
+                'coverage_bits_preserved','four_OpenCL_kernels_per_active_operation_or_CPU_reference',
+                'bounded_full_spatial_workspace_and_neighbor_visits','no_physical_film_or_HDR_acceptance',
+                'extended_RGB_requires_explicit_delivery_range_policy']))
+    return tuple(rows)
+
+
+_EFFECTS += _glow_catalog()
 _ALIASES = {alias: item["id"] for item in _EFFECTS for alias in [item["id"], *item["aliases"]]}
 
 

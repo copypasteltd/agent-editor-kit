@@ -1,5 +1,8 @@
 # Float32 全局与区间调整层
 
+CLI0.1.39 的根区间支持[真实高光Bloom/Halation](HIGHLIGHT_GLOW.md)，保持区间局部原作者时钟和全轨合成后只应用一次。解析光学及高光扩散可使用实际GPU；其他调整算子保留既有CPU实现。
+
+
 agent editor kit CLI 0.1.25 / `v0.1.0-alpha.4-local.23`，统一入口
 `$agent-ffmpeg-local-editor`。本次补上显式浮点渲染原先拒绝
 `settings.adjustments` 的缺口，复用已有浮点效果、关键帧和 LUT 实现。

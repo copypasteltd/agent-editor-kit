@@ -28,7 +28,7 @@ def read(path):
 
 def execute(gpu, request, nonce):
     op = request.get('op')
-    if op not in {'over', 'affine', 'paint', 'select', 'particles','optics'}:
+    if op not in {'over', 'affine', 'paint', 'select', 'particles','optics','glow'}:
         raise error('PROTOCOL', 'GPU操作未登记')
     specs = request.get('buffers')
     if not isinstance(specs, list) or len(specs) != 3:
@@ -71,7 +71,8 @@ def execute(gpu, request, nonce):
             elif op == 'paint': gpu.paint(b, request['colors'], output, base=a if a.dtype == np.float32 and a.ndim == 3 else None)
             elif op == 'select': gpu.select(a, b, c, output)
             elif op == 'particles': gpu.particles(b, c, output)
-            else: gpu.optics(b,output,request['kind'],request['parameters'],request['ghosts'],request['edge'])
+            elif op == 'optics': gpu.optics(b,output,request['kind'],request['parameters'],request['ghosts'],request['edge'])
+            else: gpu.glow(b,output,request['kind'],request['parameters'],request['edge'],request['primaries'])
             gpu.surface(output)
         finally:
             arrays.clear()
@@ -135,9 +136,19 @@ def probe(gpu):
         optical_errors[kind]=float(np.max(np.abs(reference-optical_out)))
     if any(v>3e-6 for v in optical_errors.values()):
         raise error('PRECISION','GPU光学精度探测未通过',max_errors=optical_errors)
+    from .float_glow import compile_glow,state_at as glow_state,apply_glow
+    glow_errors={}
+    for kind in ('bloom','halation'):
+        plan=compile_glow({'type':kind,'parameters':{'radius':2.25,'threshold':.2}})
+        reference,_=apply_glow(optical,plan,0,working_signal=ColorSignal('bt709','linear'))
+        gpu.glow(optical,optical_out,kind,glow_state(plan,0),plan.edge,'bt709')
+        glow_errors[kind]=float(np.max(np.abs(reference-optical_out)))
+    if any(v>3e-6 for v in glow_errors.values()):
+        raise error('PRECISION','GPU高光扩散精度探测未通过',max_errors=glow_errors)
     return {'pixels_per_case': 65536, 'max_errors': errors, 'absolute_limit': 3e-7,
-            'all_16bit_levels_present': True, 'actual_gpu_operations': 9,
+            'all_16bit_levels_present': True, 'actual_gpu_operations': 17,
             'optical_max_errors':optical_errors,'optical_absolute_limit':3e-6,'optical_gpu_operations':3,
+            'glow_max_errors':glow_errors,'glow_absolute_limit':3e-6,'glow_gpu_operations':8,
             'subnormal_over_bit_exact': tiny_over_exact, 'subnormal_affine_bit_exact': tiny_affine_exact,
             'subnormal_alpha_input_bits': bits.tolist()}
 

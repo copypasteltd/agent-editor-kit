@@ -1763,3 +1763,9 @@ scripts/*optical*20261027.py text eol=lf
 docs/product/OPTICAL_EFFECTS.md text eol=lf
 docs/releases/CLI_0.1.38_LOCAL.md text eol=lf
 docs/validation/光学效果实测_2026-10-27.md text eol=lf
+
+# Highlight-glow raw executed captures and actual media.
+docs/validation/evidence/highlight-glow-20261027-r1/** -text -whitespace
+docs/assets/highlight-glow-20261027-*/** -text -whitespace
+docs/product/highlight-glow-capabilities-cli-0.1.39.json -text -whitespace
+scripts/*glow*20261027.py text eol=lf

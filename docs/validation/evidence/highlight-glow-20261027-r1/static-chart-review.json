@@ -1,0 +1,29 @@
+{
+  "status": "reviewed",
+  "at_utc": "2026-10-27T03:46:00.220992+00:00",
+  "method": "agent_view_image_static_contact_and_separately_rendered_before",
+  "images": [
+    {
+      "path": "docs/assets/highlight-glow-20261027-r1/contact.png",
+      "sha256": "4bc467344fb6cc074c0483bdc01628ebcc947973aabc15c5efb3e827781b382c"
+    },
+    {
+      "path": "docs/assets/highlight-glow-20261027-r1/before.png",
+      "sha256": "1d6765ca00554948f922ef218dc1c36995a37ed5db895f72f4f3e5205158f4a2"
+    }
+  ],
+  "findings": [
+    "Before panels share the original sharp unlit chart.",
+    "Bloom spreads actual bright text, bottle edges, ring and dots with white light.",
+    "Halation retains bright cores with warm red light on neighboring pixels.",
+    "Combined panel displays both operators; labels identify all four choices.",
+    "Strong demo gain plus explicit clip delivery produces intentional highlight clipping; client gain/exposure still needs tuning."
+  ],
+  "continuous_human_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false,
+  "physical_film_accepted": false,
+  "HDR_accepted": false,
+  "new_renders": 0,
+  "new_model_forwards": 0
+}

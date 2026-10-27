@@ -1,0 +1,43 @@
+{
+  "status": "corrected_pending_final_installed_validation",
+  "at_utc": "2026-10-27T03:35:17.298890+00:00",
+  "reproduced_original_cases": [
+    {
+      "radius": 1e-05,
+      "result": [
+        1,
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        1.0
+      ]
+    },
+    {
+      "radius": 1e-160,
+      "error": "OverflowError",
+      "message": "(34, 'Result too large')"
+    },
+    {
+      "radius": 5e-324,
+      "result": [
+        1,
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        1.0
+      ]
+    }
+  ],
+  "original_source_sha256": "e12e568a4aba1b51ca502f453a377bc20b92c17560d0471699a1c1091c8c6c50",
+  "corrected_source_sha256": "4f93c4684760fa9a5d01830163abaf1a91019c25341b08a22c8d736aa3d9b92a",
+  "prior_installed_run_status": "failed",
+  "prior_installed_tests": 733,
+  "final_numeric_tests": 21,
+  "final_GPU_parameter_combinations": 72,
+  "final_expected_regressions": 734,
+  "scope": "Scalar squaring overflow fixed by IEEE multiplication; tiny nonzero sigma tends to an identity kernel. No acceptance threshold relaxed."
+}

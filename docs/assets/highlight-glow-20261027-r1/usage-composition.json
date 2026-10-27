@@ -1,0 +1,38 @@
+{
+  "operations": [
+    {
+      "op": "update_clip",
+      "clip_id": "bloom",
+      "patch": {
+        "effects": [
+          {
+            "type": "bloom",
+            "parameters": {
+              "radius": 10,
+              "threshold": 0.4,
+              "knee": 0.15,
+              "gain": 1.5
+            },
+            "keyframes": [
+              {
+                "property": "intensity",
+                "keyframes": [
+                  {
+                    "at_tick": 0,
+                    "value": 0.2,
+                    "interpolation": "ease_in_out"
+                  },
+                  {
+                    "at_tick": 360000,
+                    "value": 0.9,
+                    "interpolation": "linear"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

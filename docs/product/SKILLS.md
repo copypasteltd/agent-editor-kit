@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.38 / alpha.4-local.36 / r39 kit · 1 Skill / 17 modules / 77 files.**
+**CLI0.1.39 / alpha.4-local.37 / r40 kit · 1 Skill / 17 modules / 78 files.**
 
-新增可编辑 **镜头眩光、漏光和色差**：线性光浮点运算、参数关键帧、原作者时钟、片段及选定序列调整层；CPU参考与实际OpenCL GPU路径已接通。通过 `effects list --query optical` / `effects inspect` 查询约束，用 `timeline compose` 保留参数与动画。四格案例含原图、去除效果的对照和真实GPU输出。
+新增 **Bloom 高光扩散与 Halation 胶片光晕**：从画面真实高光提取亮源，在明确线性 RGB 域执行软膝阈值、分离高斯邻域扩散、核心抑制与着色叠加。支持作者时钟关键帧、片段及根调整层，CPU 参考和真实 GPU 四阶段实现同步交付。
 
-[Optical workflow and constraints](OPTICAL_EFFECTS.md)
+[Highlight workflow and constraints](HIGHLIGHT_GLOW.md)
 
 <!-- /community-current -->
 

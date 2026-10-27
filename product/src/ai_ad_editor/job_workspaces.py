@@ -16,7 +16,7 @@ from .utils import atomic_write_json, load_json, now_iso, sha256_file
 FORMAT = 'agent-owned-job-workspace-v1'
 JOB_RE = re.compile(r'job-[0-9a-f]{32}')
 KINDS = {'four-stem-separation', 'subtitle-dubbing', 'semantic-register', 'semantic-index',
-         'semantic-calibrate', 'semantic-search', 'video-generation'}
+         'semantic-calibrate', 'semantic-search', 'video-generation', 'lip-sync'}
 MAX_OUTPUTS = 4096
 MAX_MANIFEST_BYTES = 2 * 1024 * 1024
 _SCOPE = ContextVar('agent_owned_job_scope', default=None)

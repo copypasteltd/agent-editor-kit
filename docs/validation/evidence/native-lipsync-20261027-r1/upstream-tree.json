@@ -1,0 +1,1045 @@
+{
+  "sha": "0a89dec45a0192b824e3cf4daf96c239440c5ed8",
+  "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/0a89dec45a0192b824e3cf4daf96c239440c5ed8",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c83750f51776a98d20129216718f1b191f6fb56a",
+      "size": 167,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/c83750f51776a98d20129216718f1b191f6fb56a"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "132bf6fc803b84b40fee6c2132907dfaa396dc3b",
+      "size": 13427,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/132bf6fc803b84b40fee6c2132907dfaa396dc3b"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49e76c449c13ec29daef1bdf9b48457cb8909d33",
+      "size": 22817,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/49e76c449c13ec29daef1bdf9b48457cb8909d33"
+    },
+    {
+      "path": "app.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "448e641fcc4d824031695dfb5ce27ade1eb32b74",
+      "size": 21534,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/448e641fcc4d824031695dfb5ce27ade1eb32b74"
+    },
+    {
+      "path": "assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d36577f5033cecc80301c6a78cb3f1cc0556424d",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/d36577f5033cecc80301c6a78cb3f1cc0556424d"
+    },
+    {
+      "path": "assets/BBOX_SHIFT.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b164f4a2953ccd4dd34e331520151e0898e01e8b",
+      "size": 2697,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/b164f4a2953ccd4dd34e331520151e0898e01e8b"
+    },
+    {
+      "path": "assets/demo",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0027723d0ac1bd15f3c50cae468cac353090530b",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/0027723d0ac1bd15f3c50cae468cac353090530b"
+    },
+    {
+      "path": "assets/demo/man",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fb1ba677c5626ab2ee41e6daa863e73b4ee139b0",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/fb1ba677c5626ab2ee41e6daa863e73b4ee139b0"
+    },
+    {
+      "path": "assets/demo/man/man.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "06a85a28be847b4b3958b5dc565ff56600712d98",
+      "size": 3093908,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/06a85a28be847b4b3958b5dc565ff56600712d98"
+    },
+    {
+      "path": "assets/demo/monalisa",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c49ae57cf5f8f267b90c0ba6dd6bb6c63109decb",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/c49ae57cf5f8f267b90c0ba6dd6bb6c63109decb"
+    },
+    {
+      "path": "assets/demo/monalisa/monalisa.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6157ea423971b21aab456d74a1141e214029e1a9",
+      "size": 275396,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/6157ea423971b21aab456d74a1141e214029e1a9"
+    },
+    {
+      "path": "assets/demo/musk",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ef425b41bbb574156450b9879938fe9f030daee7",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/ef425b41bbb574156450b9879938fe9f030daee7"
+    },
+    {
+      "path": "assets/demo/musk/musk.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "06522be6fdf87df099596069eb624e712a970c0e",
+      "size": 256661,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/06522be6fdf87df099596069eb624e712a970c0e"
+    },
+    {
+      "path": "assets/demo/sit",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6d785375e58eb0b0020b408580ea2879dbb9c9ad",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/6d785375e58eb0b0020b408580ea2879dbb9c9ad"
+    },
+    {
+      "path": "assets/demo/sit/sit.jpeg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7178a6becb6bc05bc256b0bad5035bd2fa70d3c6",
+      "size": 44435,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/7178a6becb6bc05bc256b0bad5035bd2fa70d3c6"
+    },
+    {
+      "path": "assets/demo/sun1",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "813d4848298a5c4b77d2889a7ab50ed1938d42a4",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/813d4848298a5c4b77d2889a7ab50ed1938d42a4"
+    },
+    {
+      "path": "assets/demo/sun1/sun.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11f7b85c1a7df1b4f3d95a5f3511b47092232777",
+      "size": 773418,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/11f7b85c1a7df1b4f3d95a5f3511b47092232777"
+    },
+    {
+      "path": "assets/demo/sun2",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "813d4848298a5c4b77d2889a7ab50ed1938d42a4",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/813d4848298a5c4b77d2889a7ab50ed1938d42a4"
+    },
+    {
+      "path": "assets/demo/sun2/sun.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11f7b85c1a7df1b4f3d95a5f3511b47092232777",
+      "size": 773418,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/11f7b85c1a7df1b4f3d95a5f3511b47092232777"
+    },
+    {
+      "path": "assets/demo/video1",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3a25cef3358f7420a86ecbda8ab0b8c949e720e6",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/3a25cef3358f7420a86ecbda8ab0b8c949e720e6"
+    },
+    {
+      "path": "assets/demo/video1/video1.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f9288c9d47b45de865893b8e7a1fbeeb9eb1586d",
+      "size": 127249,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/f9288c9d47b45de865893b8e7a1fbeeb9eb1586d"
+    },
+    {
+      "path": "assets/demo/yongen",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "88794c9205b39703021541b340cf63011d32bc77",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/88794c9205b39703021541b340cf63011d32bc77"
+    },
+    {
+      "path": "assets/demo/yongen/yongen.jpeg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "953e8fa94343f7838c93d5506b27d937d8355833",
+      "size": 95653,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/953e8fa94343f7838c93d5506b27d937d8355833"
+    },
+    {
+      "path": "assets/figs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c9e2db4049e24e64104351c83f5d6f5b49a4d4d7",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/c9e2db4049e24e64104351c83f5d6f5b49a4d4d7"
+    },
+    {
+      "path": "assets/figs/gradio.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "07bb1953db171ca9b67e8357a3b7fb6525af3737",
+      "size": 13911,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/07bb1953db171ca9b67e8357a3b7fb6525af3737"
+    },
+    {
+      "path": "assets/figs/gradio_2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd0c092c9a7912a168301d8297dccb9677ce08a6",
+      "size": 75170,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/cd0c092c9a7912a168301d8297dccb9677ce08a6"
+    },
+    {
+      "path": "assets/figs/landmark_ref.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e166ac9caa98c877d839357310f14b7c208ffa9",
+      "size": 92936,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/2e166ac9caa98c877d839357310f14b7c208ffa9"
+    },
+    {
+      "path": "assets/figs/musetalk_arc.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b3356a965c0461d773d79de1643ed65f53110c5",
+      "size": 804782,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/6b3356a965c0461d773d79de1643ed65f53110c5"
+    },
+    {
+      "path": "configs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "982065b21c1940f5e3ee62cbc49b6847071e75b0",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/982065b21c1940f5e3ee62cbc49b6847071e75b0"
+    },
+    {
+      "path": "configs/inference",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4e86bf7f1525bc8a7de80743a98fa8fb8db2ff7b",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/4e86bf7f1525bc8a7de80743a98fa8fb8db2ff7b"
+    },
+    {
+      "path": "configs/inference/realtime.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9319e987611d63e79cbd2471f3d14c06bfcd4cde",
+      "size": 259,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/9319e987611d63e79cbd2471f3d14c06bfcd4cde"
+    },
+    {
+      "path": "configs/inference/test.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4a64f3bce334a424ff9668b7cd2bbdcc7e0b0b26",
+      "size": 182,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/4a64f3bce334a424ff9668b7cd2bbdcc7e0b0b26"
+    },
+    {
+      "path": "configs/training",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8bb80a657d167cac8248bd03e949dd4d1bc3c405",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/8bb80a657d167cac8248bd03e949dd4d1bc3c405"
+    },
+    {
+      "path": "configs/training/gpu.yaml",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "e2ccee1953d18dc23759ea53d2dae5a758969566",
+      "size": 511,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/e2ccee1953d18dc23759ea53d2dae5a758969566"
+    },
+    {
+      "path": "configs/training/preprocess.yaml",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "c7c12e7459fe8cbefa50e72d873f5f83e5f3bfe7",
+      "size": 964,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/c7c12e7459fe8cbefa50e72d873f5f83e5f3bfe7"
+    },
+    {
+      "path": "configs/training/stage1.yaml",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "952e7b6f5891a08ed769324c8808a6ef790511c0",
+      "size": 4581,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/952e7b6f5891a08ed769324c8808a6ef790511c0"
+    },
+    {
+      "path": "configs/training/stage2.yaml",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "9431fbbd806577530e2d7f36773a8e64fd13b4aa",
+      "size": 4606,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/9431fbbd806577530e2d7f36773a8e64fd13b4aa"
+    },
+    {
+      "path": "configs/training/syncnet.yaml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "88494a72a57cea455f8e6cd7a76396c31f24cee9",
+      "size": 834,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/88494a72a57cea455f8e6cd7a76396c31f24cee9"
+    },
+    {
+      "path": "data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9ca803f50f342a9c37fe10ec68edbbbb0e0bb963",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/9ca803f50f342a9c37fe10ec68edbbbb0e0bb963"
+    },
+    {
+      "path": "data/audio",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c47962406bfae8cd1f9bccfc383eaa37f84116bb",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/c47962406bfae8cd1f9bccfc383eaa37f84116bb"
+    },
+    {
+      "path": "data/audio/eng.wav",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "61c55b669b94a06e3483496aa517238a1afcfa41",
+      "size": 1920078,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/61c55b669b94a06e3483496aa517238a1afcfa41"
+    },
+    {
+      "path": "data/audio/sun.wav",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d431e2b9092dfb255d38ed21c96a50cfc2941093",
+      "size": 1983572,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/d431e2b9092dfb255d38ed21c96a50cfc2941093"
+    },
+    {
+      "path": "data/audio/yongen.wav",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ec389e3e3367740a098165ebd85bcd4f4500ef28",
+      "size": 1536078,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/ec389e3e3367740a098165ebd85bcd4f4500ef28"
+    },
+    {
+      "path": "data/video",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c15903f9c91a37273a333555ac342189df7c025c",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/c15903f9c91a37273a333555ac342189df7c025c"
+    },
+    {
+      "path": "data/video/sun.mp4",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "30221a34e3871b86aa08442fd1b63679ce0d41bc",
+      "size": 2217973,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/30221a34e3871b86aa08442fd1b63679ce0d41bc"
+    },
+    {
+      "path": "data/video/yongen.mp4",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3253cbc2bef3cfc878760f5a0a8631f5e4abda44",
+      "size": 1870923,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/3253cbc2bef3cfc878760f5a0a8631f5e4abda44"
+    },
+    {
+      "path": "download_weights.bat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2407f52bbbd10b7fcbbe7d2587289ddd7dfac0b3",
+      "size": 1406,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/2407f52bbbd10b7fcbbe7d2587289ddd7dfac0b3"
+    },
+    {
+      "path": "download_weights.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "affa5a9d970cc90e0dfcc778e593adab9c261fdd",
+      "size": 1734,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/affa5a9d970cc90e0dfcc778e593adab9c261fdd"
+    },
+    {
+      "path": "entrypoint.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d32018fd432fad496f5ef3d9182fd4482823b8c6",
+      "size": 143,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/d32018fd432fad496f5ef3d9182fd4482823b8c6"
+    },
+    {
+      "path": "inference.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8bc0c3938f683cd5a9515fd757b8c6a4067d6f18",
+      "size": 1949,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/8bc0c3938f683cd5a9515fd757b8c6a4067d6f18"
+    },
+    {
+      "path": "musetalk",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5a849ad6265b65bb9db859db3292e11ee4633ae8",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/5a849ad6265b65bb9db859db3292e11ee4633ae8"
+    },
+    {
+      "path": "musetalk/data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7a6736eea35643a27c9148e6f753ca2ffa2ba681",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/7a6736eea35643a27c9148e6f753ca2ffa2ba681"
+    },
+    {
+      "path": "musetalk/data/audio.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "d80ba4f1e98cc83f271c2e46251c416b227b0045",
+      "size": 5471,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/d80ba4f1e98cc83f271c2e46251c416b227b0045"
+    },
+    {
+      "path": "musetalk/data/dataset.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "94c90c7647599a58d9c99607af6173852e24c279",
+      "size": 22776,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/94c90c7647599a58d9c99607af6173852e24c279"
+    },
+    {
+      "path": "musetalk/data/sample_method.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "c7d12658af97825198069103a3636e5d07b1f1e5",
+      "size": 10979,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/c7d12658af97825198069103a3636e5d07b1f1e5"
+    },
+    {
+      "path": "musetalk/loss",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8ad85f9a2fcc0cbfe09e955ea54e018a1a909801",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/8ad85f9a2fcc0cbfe09e955ea54e018a1a909801"
+    },
+    {
+      "path": "musetalk/loss/basic_loss.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "4159525a7ce94bdd0d2e3fdfc241fa30ae276d8a",
+      "size": 3338,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/4159525a7ce94bdd0d2e3fdfc241fa30ae276d8a"
+    },
+    {
+      "path": "musetalk/loss/conv.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "92751dbafa9422965b27ab2ffa687aa9f9e4c759",
+      "size": 1619,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/92751dbafa9422965b27ab2ffa687aa9f9e4c759"
+    },
+    {
+      "path": "musetalk/loss/discriminator.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "6a506ede9f565767035b81040a669ea8ec5e6b88",
+      "size": 5145,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/6a506ede9f565767035b81040a669ea8ec5e6b88"
+    },
+    {
+      "path": "musetalk/loss/resnet.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "b9b1082ebe0b8eb9048e641b4b2e0600c542b07b",
+      "size": 4645,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/b9b1082ebe0b8eb9048e641b4b2e0600c542b07b"
+    },
+    {
+      "path": "musetalk/loss/syncnet.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "8593efdb63665d0a79a305765fa31b9a6a3a976b",
+      "size": 4214,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/8593efdb63665d0a79a305765fa31b9a6a3a976b"
+    },
+    {
+      "path": "musetalk/loss/vgg_face.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "b41faadf0ae9883bded3cba9bfbbb74175c84019",
+      "size": 8307,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/b41faadf0ae9883bded3cba9bfbbb74175c84019"
+    },
+    {
+      "path": "musetalk/models",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "08b7dc290895e9d937324e5e3913268716872b29",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/08b7dc290895e9d937324e5e3913268716872b29"
+    },
+    {
+      "path": "musetalk/models/syncnet.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "185b236622a470b98c26b70aeb0cea00fe588658",
+      "size": 8987,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/185b236622a470b98c26b70aeb0cea00fe588658"
+    },
+    {
+      "path": "musetalk/models/unet.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "575e79af26e04b9c37d9c233d406e67a206c6a90",
+      "size": 1686,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/575e79af26e04b9c37d9c233d406e67a206c6a90"
+    },
+    {
+      "path": "musetalk/models/vae.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "51efef420f46ec0dc01d5c8ac12825e6e4c355c0",
+      "size": 5419,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/51efef420f46ec0dc01d5c8ac12825e6e4c355c0"
+    },
+    {
+      "path": "musetalk/utils",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3d63c5d8fc7cd7370e6496d04ec0358845dbddb1",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/3d63c5d8fc7cd7370e6496d04ec0358845dbddb1"
+    },
+    {
+      "path": "musetalk/utils/__init__.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "b58c41d239fae3136e82e0d680cd7ab4e9f78aaf",
+      "size": 160,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/b58c41d239fae3136e82e0d680cd7ab4e9f78aaf"
+    },
+    {
+      "path": "musetalk/utils/audio_processor.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "dbdee25393f721bc27b35bc4cb5bda7a82b2b9bc",
+      "size": 4227,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/dbdee25393f721bc27b35bc4cb5bda7a82b2b9bc"
+    },
+    {
+      "path": "musetalk/utils/audio_utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d1387ed675343ff249ac27df115d0ac60dd9b96",
+      "size": 718,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/2d1387ed675343ff249ac27df115d0ac60dd9b96"
+    },
+    {
+      "path": "musetalk/utils/blending.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "fa3effcdd2db04b531255fec72a0afd549d35ec6",
+      "size": 5337,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/fa3effcdd2db04b531255fec72a0afd549d35ec6"
+    },
+    {
+      "path": "musetalk/utils/dwpose",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fc92ebbe1d442bbf44bf0ce2a98b6c8c4ea07cb5",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/fc92ebbe1d442bbf44bf0ce2a98b6c8c4ea07cb5"
+    },
+    {
+      "path": "musetalk/utils/dwpose/default_runtime.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "6f27c0345a6cf1b7bc4b035eb456e2c9f3126804",
+      "size": 1431,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/6f27c0345a6cf1b7bc4b035eb456e2c9f3126804"
+    },
+    {
+      "path": "musetalk/utils/dwpose/rtmpose-l_8xb32-270e_coco-ubody-wholebody-384x288.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "293efad219b835650bf3659a33826c51b04cfad4",
+      "size": 7364,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/293efad219b835650bf3659a33826c51b04cfad4"
+    },
+    {
+      "path": "musetalk/utils/face_detection",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8a8dec745af16a9fdfae70f129e49cee83fe520b",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/8a8dec745af16a9fdfae70f129e49cee83fe520b"
+    },
+    {
+      "path": "musetalk/utils/face_detection/README.md",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "c073376e4eeda6d4b29cc31c50cb7e88ab42bb73",
+      "size": 209,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/c073376e4eeda6d4b29cc31c50cb7e88ab42bb73"
+    },
+    {
+      "path": "musetalk/utils/face_detection/__init__.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "31c3e227b0b61c2270225cea370ffd35c4e24b99",
+      "size": 196,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/31c3e227b0b61c2270225cea370ffd35c4e24b99"
+    },
+    {
+      "path": "musetalk/utils/face_detection/api.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "0a6a8d665c3c680848fbf6dc81b4d094a8f51c77",
+      "size": 10100,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/0a6a8d665c3c680848fbf6dc81b4d094a8f51c77"
+    },
+    {
+      "path": "musetalk/utils/face_detection/detection",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "12d971cf883c18416c6fd75a1932d9c9f2a5bd8a",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/12d971cf883c18416c6fd75a1932d9c9f2a5bd8a"
+    },
+    {
+      "path": "musetalk/utils/face_detection/detection/__init__.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "1a6b0402dae864a3cc5dc2a90a412fd842a0efc7",
+      "size": 30,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/1a6b0402dae864a3cc5dc2a90a412fd842a0efc7"
+    },
+    {
+      "path": "musetalk/utils/face_detection/detection/core.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "0f8275e8e53143f66298f75f0517c234a68778cd",
+      "size": 4868,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/0f8275e8e53143f66298f75f0517c234a68778cd"
+    },
+    {
+      "path": "musetalk/utils/face_detection/detection/sfd",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "53e3e8afa0d1e0d4e365ded5b83f70fb103627f0",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/53e3e8afa0d1e0d4e365ded5b83f70fb103627f0"
+    },
+    {
+      "path": "musetalk/utils/face_detection/detection/sfd/__init__.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "5a63ecd45658f22e66c171ada751fb33764d4559",
+      "size": 53,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/5a63ecd45658f22e66c171ada751fb33764d4559"
+    },
+    {
+      "path": "musetalk/utils/face_detection/detection/sfd/bbox.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "4bd7222e5e5f78a51944cbeed3cccbacddc46bed",
+      "size": 4279,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/4bd7222e5e5f78a51944cbeed3cccbacddc46bed"
+    },
+    {
+      "path": "musetalk/utils/face_detection/detection/sfd/detect.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "15ccdc5abf5df22937f997ec59993f5da4a14ed6",
+      "size": 3792,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/15ccdc5abf5df22937f997ec59993f5da4a14ed6"
+    },
+    {
+      "path": "musetalk/utils/face_detection/detection/sfd/net_s3fd.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "fc64313c277ab594d0257585c70f147606693452",
+      "size": 5291,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/fc64313c277ab594d0257585c70f147606693452"
+    },
+    {
+      "path": "musetalk/utils/face_detection/detection/sfd/sfd_detector.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "8fbce15253251d403754ab4348f93ae85a6ba2fb",
+      "size": 1809,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/8fbce15253251d403754ab4348f93ae85a6ba2fb"
+    },
+    {
+      "path": "musetalk/utils/face_detection/models.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "ee2dde32bdf72c25a4600e48efa73ffc0d4a3893",
+      "size": 8619,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/ee2dde32bdf72c25a4600e48efa73ffc0d4a3893"
+    },
+    {
+      "path": "musetalk/utils/face_detection/utils.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "3dc4cf3e328efaa227cbcfdd969e1056688adad5",
+      "size": 11808,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/3dc4cf3e328efaa227cbcfdd969e1056688adad5"
+    },
+    {
+      "path": "musetalk/utils/face_parsing",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cbe4cee61ae2ab4531a6a40c98b47925a11a3866",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/cbe4cee61ae2ab4531a6a40c98b47925a11a3866"
+    },
+    {
+      "path": "musetalk/utils/face_parsing/__init__.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "09c1c02a2e736a1f579e0e53ff380418b5c8eb66",
+      "size": 4700,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/09c1c02a2e736a1f579e0e53ff380418b5c8eb66"
+    },
+    {
+      "path": "musetalk/utils/face_parsing/model.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "13d13e03b38508216615ac15cb42e3ea0db2d76a",
+      "size": 10676,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/13d13e03b38508216615ac15cb42e3ea0db2d76a"
+    },
+    {
+      "path": "musetalk/utils/face_parsing/resnet.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "e2e5d87e34439e42f85b1cf80e83b750b4a38eac",
+      "size": 3706,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/e2e5d87e34439e42f85b1cf80e83b750b4a38eac"
+    },
+    {
+      "path": "musetalk/utils/preprocessing.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "978480c6d7ab21c290c67996f0d8adc8ce2fa10f",
+      "size": 6963,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/978480c6d7ab21c290c67996f0d8adc8ce2fa10f"
+    },
+    {
+      "path": "musetalk/utils/training_utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "010f01f12149481df27dc8caf0515a76289be6ac",
+      "size": 12167,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/010f01f12149481df27dc8caf0515a76289be6ac"
+    },
+    {
+      "path": "musetalk/utils/utils.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "100c35c76359b99df0a3d42cc61b2a4d69d67894",
+      "size": 11737,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/100c35c76359b99df0a3d42cc61b2a4d69d67894"
+    },
+    {
+      "path": "musetalk/whisper",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e759f9684521e3a3a01181c941a4eba9ff6b61ad",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/e759f9684521e3a3a01181c941a4eba9ff6b61ad"
+    },
+    {
+      "path": "musetalk/whisper/audio2feature.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "2cfd3a9af14ff2fa4c77944371b264c7dd759d7c",
+      "size": 4859,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/2cfd3a9af14ff2fa4c77944371b264c7dd759d7c"
+    },
+    {
+      "path": "musetalk/whisper/whisper",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "64a5276963c0ee4b24bd7b68b16ee517b57653aa",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/64a5276963c0ee4b24bd7b68b16ee517b57653aa"
+    },
+    {
+      "path": "musetalk/whisper/whisper/__init__.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "b9255534ceae3014481780ab0571b4edb6523212",
+      "size": 5442,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/b9255534ceae3014481780ab0571b4edb6523212"
+    },
+    {
+      "path": "musetalk/whisper/whisper/__main__.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "bc9b04a39283f71082f46ec8bb11fe15f8cf75b2",
+      "size": 36,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/bc9b04a39283f71082f46ec8bb11fe15f8cf75b2"
+    },
+    {
+      "path": "musetalk/whisper/whisper/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "21e8538b7af2914294e5f0b95c885595d923196a",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/21e8538b7af2914294e5f0b95c885595d923196a"
+    },
+    {
+      "path": "musetalk/whisper/whisper/assets/gpt2",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3d1b13e016fb8f4e3199237e1dab038f4a83661a",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/3d1b13e016fb8f4e3199237e1dab038f4a83661a"
+    },
+    {
+      "path": "musetalk/whisper/whisper/assets/gpt2/merges.txt",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "6636bda4a1fd7a63653dffb22683b8162c8de956",
+      "size": 456356,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/6636bda4a1fd7a63653dffb22683b8162c8de956"
+    },
+    {
+      "path": "musetalk/whisper/whisper/assets/gpt2/special_tokens_map.json",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "817762d631ad6f9c799f6b9dc713c46420e65546",
+      "size": 90,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/817762d631ad6f9c799f6b9dc713c46420e65546"
+    },
+    {
+      "path": "musetalk/whisper/whisper/assets/gpt2/tokenizer_config.json",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "c92208ce39324aadabc239d73dd9bb3ec1cd45ca",
+      "size": 236,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/c92208ce39324aadabc239d73dd9bb3ec1cd45ca"
+    },
+    {
+      "path": "musetalk/whisper/whisper/assets/gpt2/vocab.json",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "84ef7fb594b5c0979e48bdeddb60a0adef33df0b",
+      "size": 798156,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/84ef7fb594b5c0979e48bdeddb60a0adef33df0b"
+    },
+    {
+      "path": "musetalk/whisper/whisper/assets/mel_filters.npz",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "1a7839244dfb6b1cc02e4f3cfe12e4817a073bc7",
+      "size": 2048,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/1a7839244dfb6b1cc02e4f3cfe12e4817a073bc7"
+    },
+    {
+      "path": "musetalk/whisper/whisper/assets/multilingual",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "30f63c4d27185a225f0ff3f926d2d6a97e744337",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/30f63c4d27185a225f0ff3f926d2d6a97e744337"
+    },
+    {
+      "path": "musetalk/whisper/whisper/assets/multilingual/added_tokens.json",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "5c509999d68b2eb119d8a4d1218376910beac339",
+      "size": 25,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/5c509999d68b2eb119d8a4d1218376910beac339"
+    },
+    {
+      "path": "musetalk/whisper/whisper/assets/multilingual/merges.txt",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "afde9f4fa8bcf6d4762c5780977825666dc49eac",
+      "size": 493855,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/afde9f4fa8bcf6d4762c5780977825666dc49eac"
+    },
+    {
+      "path": "musetalk/whisper/whisper/assets/multilingual/special_tokens_map.json",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "817762d631ad6f9c799f6b9dc713c46420e65546",
+      "size": 90,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/817762d631ad6f9c799f6b9dc713c46420e65546"
+    },
+    {
+      "path": "musetalk/whisper/whisper/assets/multilingual/tokenizer_config.json",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "0235ccff90efbc022fbe30360220375c5bad68da",
+      "size": 604,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/0235ccff90efbc022fbe30360220375c5bad68da"
+    },
+    {
+      "path": "musetalk/whisper/whisper/assets/multilingual/vocab.json",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "406c3f2600089389bd8bf3920c2fa3770d11789a",
+      "size": 936041,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/406c3f2600089389bd8bf3920c2fa3770d11789a"
+    },
+    {
+      "path": "musetalk/whisper/whisper/audio.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "6a1986d630105eeacbcb007338bd8ce54d2a69d6",
+      "size": 4071,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/6a1986d630105eeacbcb007338bd8ce54d2a69d6"
+    },
+    {
+      "path": "musetalk/whisper/whisper/decoding.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "183505481e40a4f3779933e5fde8086d79e4cc39",
+      "size": 30930,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/183505481e40a4f3779933e5fde8086d79e4cc39"
+    },
+    {
+      "path": "musetalk/whisper/whisper/model.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "acb6a0be88109a884b2c4d0e2d50daaf00870307",
+      "size": 10591,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/acb6a0be88109a884b2c4d0e2d50daaf00870307"
+    },
+    {
+      "path": "musetalk/whisper/whisper/normalizers",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8a0ba57e664b8e552503ff0657cd3e14b529b59d",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/8a0ba57e664b8e552503ff0657cd3e14b529b59d"
+    },
+    {
+      "path": "musetalk/whisper/whisper/normalizers/__init__.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "0b10d5a9d6389368fe7f3bac38e3b3cd9cc1470f",
+      "size": 82,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/0b10d5a9d6389368fe7f3bac38e3b3cd9cc1470f"
+    },
+    {
+      "path": "musetalk/whisper/whisper/normalizers/basic.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "ef8d249bfca2cd10bccdd56950504581e2598560",
+      "size": 1882,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/ef8d249bfca2cd10bccdd56950504581e2598560"
+    },
+    {
+      "path": "musetalk/whisper/whisper/normalizers/english.json",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "bd84ae73faeb4dfa75214b99c4b392a51be90336",
+      "size": 56145,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/bd84ae73faeb4dfa75214b99c4b392a51be90336"
+    },
+    {
+      "path": "musetalk/whisper/whisper/normalizers/english.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "d5c2bb4ebef1a04b9ab14970c10c3fb0d4e948d4",
+      "size": 20793,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/d5c2bb4ebef1a04b9ab14970c10c3fb0d4e948d4"
+    },
+    {
+      "path": "musetalk/whisper/whisper/tokenizer.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "88142c43c9ca0d951a36b5b30baf54dd7bc7efbf",
+      "size": 9837,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/88142c43c9ca0d951a36b5b30baf54dd7bc7efbf"
+    },
+    {
+      "path": "musetalk/whisper/whisper/transcribe.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "745e77554b90c63db69ce7da40156676c7a990de",
+      "size": 10580,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/745e77554b90c63db69ce7da40156676c7a990de"
+    },
+    {
+      "path": "musetalk/whisper/whisper/utils.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "87c91f2e969c4d2ebfc311266bced76a52cb3ef3",
+      "size": 2660,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/87c91f2e969c4d2ebfc311266bced76a52cb3ef3"
+    },
+    {
+      "path": "requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e87aa41d2e8e8068eff4dcc897e1f88bf3f5d728",
+      "size": 287,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/e87aa41d2e8e8068eff4dcc897e1f88bf3f5d728"
+    },
+    {
+      "path": "scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "32ed374fb4e296d02836cfb11a9944eb19e0471a",
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/trees/32ed374fb4e296d02836cfb11a9944eb19e0471a"
+    },
+    {
+      "path": "scripts/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b137891791fe96927ad78e64b0aad7bded08bdc",
+      "size": 1,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/8b137891791fe96927ad78e64b0aad7bded08bdc"
+    },
+    {
+      "path": "scripts/inference.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "428afb99a8fbb3175598e18c096b12dbfdf943d5",
+      "size": 13461,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/428afb99a8fbb3175598e18c096b12dbfdf943d5"
+    },
+    {
+      "path": "scripts/preprocess.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "979c9fccef285b3e718e0b55f678128993df1ca4",
+      "size": 12463,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/979c9fccef285b3e718e0b55f678128993df1ca4"
+    },
+    {
+      "path": "scripts/realtime_inference.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "579b050fa278421176468fe7073bfcf5df8800f8",
+      "size": 19277,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/579b050fa278421176468fe7073bfcf5df8800f8"
+    },
+    {
+      "path": "test_ffmpeg.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3788817c791e11adf952feb1a304e07f1df27b40",
+      "size": 1085,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/3788817c791e11adf952feb1a304e07f1df27b40"
+    },
+    {
+      "path": "train.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "2c9f0ecd24aad8b681e41df19e693bb91b158731",
+      "size": 26013,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/2c9f0ecd24aad8b681e41df19e693bb91b158731"
+    },
+    {
+      "path": "train.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d4ebf3be566f4aa40a6f4f26d0c7031d3e361447",
+      "size": 1141,
+      "url": "https://api.github.com/repos/TMElyralab/MuseTalk/git/blobs/d4ebf3be566f4aa40a6f4f26d0c7031d3e361447"
+    }
+  ],
+  "truncated": false
+}

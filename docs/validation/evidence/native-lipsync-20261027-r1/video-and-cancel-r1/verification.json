@@ -1,0 +1,752 @@
+{
+  "status": "passed",
+  "registered_installed_skill": true,
+  "source_fallback": false,
+  "fake_worker": false,
+  "native_windows": true,
+  "virtualization": false,
+  "calls": [
+    {
+      "name": "moving-source-rgba",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-lipsync-20261027-r1\\moving-source.mov",
+        "-an",
+        "-pix_fmt",
+        "rgba",
+        "-fps_mode",
+        "passthrough",
+        "-f",
+        "rawvideo",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.7946053000050597,
+      "stdout_sha256": "c8622cc31699f1cd3aff5f0d1238d33371bb99fcf9011e21ad1df20f91abcff5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ingest-moving",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "media",
+        "ingest",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-lipsync-20261027-r1\\moving-source.mov",
+        "--license-spdx",
+        "LicenseRef-Generated-Demo",
+        "--evidence",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-lipsync-20261027-r1\\SOURCE.txt"
+      ],
+      "exit_code": 0,
+      "seconds": 4.155215300008422,
+      "stdout_sha256": "4c94ef4aa85588f11f7a845cf53e8b07f24765cd16f1a49b295b2508841c6b31",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "generate-moving",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "lipsync",
+        "generate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程",
+        "--adapter-id",
+        "musetalk_local",
+        "--recipe-asset-id",
+        "spoken_portrait",
+        "--asset-id",
+        "moving_spoken",
+        "--source-asset-id",
+        "asset_20261027064916_7db4d5bb",
+        "--boxes-file",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-lipsync-20261027-r1\\moving-boxes.json",
+        "--source-mode",
+        "once",
+        "--source-start-seconds",
+        "0",
+        "--source-end-seconds",
+        "1.2",
+        "--audio-start-seconds",
+        "0",
+        "--audio-end-seconds",
+        "1.2",
+        "--apply",
+        "--video-track-id",
+        "track_video_1",
+        "--audio-track-id",
+        "track_audio_1",
+        "--timeline-start-seconds",
+        "5.5200000000000005"
+      ],
+      "exit_code": 0,
+      "seconds": 106.44433860000572,
+      "stdout_sha256": "682b6d2ae4133d4abd9739f6141f4d8c85298775469e3fdf3932168452a6a657",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "moving-output-rgba",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程\\assets\\derived\\moving_spoken.mov",
+        "-an",
+        "-pix_fmt",
+        "rgba",
+        "-fps_mode",
+        "passthrough",
+        "-f",
+        "rawvideo",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.5823069999896688,
+      "stdout_sha256": "a4b85cb9b8000015acf1412c20c5391c958a4501de6668914582165c5568582d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "moving-preview",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程\\assets\\derived\\moving_spoken.mov",
+        "-c:v",
+        "libx264",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-c:a",
+        "aac",
+        "-movflags",
+        "+faststart",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-lipsync-20261027-r1\\moving-spoken.mp4"
+      ],
+      "exit_code": 0,
+      "seconds": 0.15833640001073945,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "validate-moving",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "validate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程"
+      ],
+      "exit_code": 0,
+      "seconds": 2.4864984000014374,
+      "stdout_sha256": "2a8bdeb44f1944528557084910c1e794dba1b36a376d9d73fcbd90bfebb6b285",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "cancel-diagnostic",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "diagnostics",
+        "show",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程",
+        "--diagnostic-id",
+        "diag_d42b31e5fd67417f87293fc92fab2b3f"
+      ],
+      "exit_code": 0,
+      "seconds": 1.9997170999995433,
+      "stdout_sha256": "86621f46dd156d532a6ec68742e65a5a02d05b9ff08c15c82f5a2d32511f6cc5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": [
+    {
+      "name": "source encoding succeeds",
+      "ok": true
+    },
+    {
+      "name": "all moving source frames lossless",
+      "ok": true
+    },
+    {
+      "name": "ingest-moving actual registered CLI",
+      "ok": true
+    },
+    {
+      "name": "generate-moving actual registered CLI",
+      "ok": true
+    },
+    {
+      "name": "all moving alpha bytes preserved",
+      "ok": true
+    },
+    {
+      "name": "moving frame 0 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 1 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 2 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 3 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 4 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 5 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 6 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 7 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 8 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 9 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 10 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 11 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 12 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 13 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 14 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 15 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 16 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 17 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 18 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 19 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 20 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 21 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 22 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 23 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 24 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 25 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 26 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 27 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 28 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "moving frame 29 outside box RGB",
+      "ok": true
+    },
+    {
+      "name": "actual moving neural CUDA and all 30 frames",
+      "ok": true
+    },
+    {
+      "name": "recipe carries source override and moving box keys",
+      "ok": true
+    },
+    {
+      "name": "validate-moving actual registered CLI",
+      "ok": true
+    },
+    {
+      "name": "real cancellation follows emitted model frames",
+      "ok": true
+    },
+    {
+      "name": "real cancellation rolls back all project metadata",
+      "ok": true
+    },
+    {
+      "name": "no partial asset or owned workspace remains",
+      "ok": true
+    },
+    {
+      "name": "real cancellation retains diagnostic evidence",
+      "ok": true
+    },
+    {
+      "name": "cancel-diagnostic actual registered CLI",
+      "ok": true
+    },
+    {
+      "name": "all cancelled native pipeline children exited",
+      "ok": true
+    }
+  ],
+  "human_listening": false,
+  "natural_quality_accepted": false,
+  "moving_frames": 30,
+  "model_execution": {
+    "engine": "musetalk-v15-native-cuda-v1",
+    "versions": {
+      "torch": "2.13.0+cu130",
+      "numpy": "2.4.2",
+      "diffusers": "0.39.0",
+      "transformers": "5.14.1",
+      "safetensors": "0.8.0"
+    },
+    "weight_reader": "safetensors-pread",
+    "CUDA_admission": {
+      "policy": "cuda-uuid-physical-and-torch-free-v1",
+      "stage": "lipsync-load",
+      "required_free_bytes": 4831838208,
+      "reservation": false,
+      "oom_guarantee": false,
+      "query_started_at_utc": "2026-10-27T06:50:49.708112+00:00",
+      "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+      "logical_device_index": 0,
+      "idle_cache_release": {
+        "scope": "current-worker",
+        "synchronized": true,
+        "empty_cache_called": true,
+        "completed": true,
+        "active_allocation_preserved": true,
+        "allocated_before_bytes": 0,
+        "reserved_before_bytes": 0,
+        "allocated_after_bytes": 0,
+        "reserved_after_bytes": 0,
+        "released_reserved_bytes": 0
+      },
+      "query_command": [
+        "C:\\Windows\\System32\\nvidia-smi.EXE",
+        "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+        "--query-gpu=uuid,memory.total,memory.free",
+        "--format=csv,noheader,nounits"
+      ],
+      "torch_free_bytes": 11799625728,
+      "torch_total_bytes": 12884377600,
+      "physical_free_bytes": 10902044672,
+      "physical_total_bytes": 12884901888,
+      "effective_free_bytes": 10902044672,
+      "query_finished_at_utc": "2026-10-27T06:50:49.856021+00:00",
+      "sample_seconds": 0.14791149999655318,
+      "status": "admitted"
+    },
+    "precision": {
+      "unet": "float16",
+      "vae": "float32",
+      "whisper": "float16",
+      "parser": "float32"
+    },
+    "device": "NVIDIA GeForce RTX 3060",
+    "load_seconds": 3.304939200010267,
+    "model_loads": 1,
+    "calls": {
+      "audio_encoder": 1,
+      "vae_encoder": 2,
+      "unet": 15,
+      "vae_decoder": 15,
+      "face_parser": 1
+    },
+    "cache_hits": 29,
+    "batch_frames": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "CPU_fallback": false,
+    "network": "disabled",
+    "trained_face_raster": [
+      256,
+      256
+    ],
+    "attention_backend": "torch-SDPA-math",
+    "seed": 17,
+    "audio_feature_bytes": 291840,
+    "cuda_peak_allocated_bytes": 2802346496
+  },
+  "all_moving_source_alpha_and_outside_RGB_equal": true,
+  "moving_recipe": {
+    "protocol": "agent-native-lipsync-v1",
+    "source_asset_id": "asset_20261027064916_7db4d5bb",
+    "audio_asset_id": "asset_20261027063835_40af9adc",
+    "source_sha256": "sha256:348f81a445c5d413c6133c990c4af82cd1514de008a84912e8cc66d9ec594715",
+    "audio_sha256": "sha256:c1ec3bd51d3b58f422709d205ec45ec2e220dc0e8f0c79e21f5f712b87084113",
+    "source_kind": "video",
+    "video": {
+      "width": 512,
+      "height": 512,
+      "frames": 30,
+      "fps": "25",
+      "duration_seconds": 1.2
+    },
+    "range": {
+      "start_seconds": 0.0,
+      "end_seconds": 1.2,
+      "source_mode": "once"
+    },
+    "audio": {
+      "start_sample": 0,
+      "end_sample": 28800,
+      "samples": 28800,
+      "sample_rate": 24000,
+      "channels": 1,
+      "padded_samples": 0,
+      "output_samples": 28800,
+      "preserve": true,
+      "padding_seconds": 0.0
+    },
+    "boxes": {
+      "clock": "output-frame-25fps",
+      "keys": [
+        {
+          "frame": 0,
+          "box": [
+            164,
+            84,
+            348,
+            300
+          ]
+        },
+        {
+          "frame": 15,
+          "box": [
+            176,
+            84,
+            360,
+            300
+          ]
+        },
+        {
+          "frame": 29,
+          "box": [
+            164,
+            84,
+            348,
+            300
+          ]
+        }
+      ]
+    },
+    "options": {
+      "seed": 17,
+      "mask_top": 0.45,
+      "feather_pixels": 3.0
+    },
+    "sha256": "sha256:c37c2194fd38c12f86a05799bb14d3b40aa4ed4b648d92328e298644da377b0f"
+  },
+  "real_cancel_after_neural_frames": true,
+  "cancel_seconds": 38.014420799998334,
+  "cancel_progress": [
+    {
+      "event_id": "event_20261027065117_785ae3f8",
+      "operation_id": "op_20261027065117_565aa175",
+      "type": "started",
+      "at": "2026-10-27T06:51:17.053787Z",
+      "stage": "lipsync.generate",
+      "percent": 0,
+      "message": "执行本地CUDA音频驱动口型同步",
+      "artifacts": []
+    },
+    {
+      "event_id": "event_20261027065138_c7be1118",
+      "operation_id": "op_20261027065117_565aa175",
+      "type": "progress",
+      "at": "2026-10-27T06:51:38.833123Z",
+      "stage": "lipsync.generate",
+      "percent": 0,
+      "message": "口型 0/133 帧",
+      "artifacts": []
+    },
+    {
+      "event_id": "event_20261027065142_fdb4222f",
+      "operation_id": "op_20261027065117_565aa175",
+      "type": "progress",
+      "at": "2026-10-27T06:51:42.667738Z",
+      "stage": "lipsync.generate",
+      "percent": 1,
+      "message": "口型 1/133 帧",
+      "artifacts": []
+    }
+  ],
+  "cancellation_diagnostic": {
+    "manifest": {
+      "binding": {
+        "adapter_sha256": "sha256:4822c721c3085c1e66489ab4c1a718b1c897fef0defec043b7d64903cdd463f2",
+        "artifacts_sha256": "sha256:a5eed2811005bf81367de4d885773e460e60c768a1347318e10ac3c327444fa3",
+        "engine": "musetalk-v15-native-cuda-v1",
+        "generation": {},
+        "model_sha256": "sha256:658dda2be89a6276d5d969184c3cd5bdd60b7cbd3fc95517aa9f84b087a16dd5",
+        "parameters_sha256": "sha256:1943203d51903849e1207295fc968d42e9bf014c77b76c85a3bbaded14befa50",
+        "python_executable_sha256": "sha256:ef8f51028ac5329641985112f8efb1c2d4c47c86b8011ddf7e6fae21e2b4e5a1",
+        "request_sha256": "sha256:65738e8e582d9915afd6993b5c860830874bd870c36140cfd443828da7154080",
+        "runtime_versions": "not_probed_by_diagnostics",
+        "source_sha256": "sha256:4d3f617e44f1b58e34c7fb120ea26f38952007fb6671ec4f906e62a5566af477"
+      },
+      "created_at_utc": "2026-10-27T06:51:42.933503+00:00",
+      "diagnostic_id": "diag_d42b31e5fd67417f87293fc92fab2b3f",
+      "error": {
+        "code": "CANCELLED",
+        "exit_code": 8,
+        "python_type": "AppError"
+      },
+      "files": {
+        "decoder.stderr.log": {
+          "bytes": 0,
+          "input": {
+            "bytes_read": 0,
+            "input_bytes": 0,
+            "input_segment_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "input_truncated": false,
+            "invalid_utf8_replaced": false,
+            "offset": 0,
+            "output_truncated": false,
+            "partial_first_line_removed": false,
+            "redacted": true,
+            "state": "read"
+          },
+          "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "encoder.stderr.log": {
+          "bytes": 0,
+          "input": {
+            "bytes_read": 0,
+            "input_bytes": 0,
+            "input_segment_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "input_truncated": false,
+            "invalid_utf8_replaced": false,
+            "offset": 0,
+            "output_truncated": false,
+            "partial_first_line_removed": false,
+            "redacted": true,
+            "state": "read"
+          },
+          "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "request.json": {
+          "bytes": 753,
+          "input": {
+            "redacted_summary": true
+          },
+          "sha256": "sha256:50f71c1484d5be7d035376991a9bb88a27a19d6ef542d6289c4594023a04c163"
+        },
+        "response.json": {
+          "bytes": 56,
+          "input": {
+            "redacted_summary": true
+          },
+          "sha256": "sha256:5601fbb82a280775f5d512c96882cff973562b9bc67068cecdfa8acbc9e62d13"
+        },
+        "worker.stderr.log": {
+          "bytes": 443,
+          "input": {
+            "bytes_read": 443,
+            "input_bytes": 443,
+            "input_segment_sha256": "sha256:b7b11ebfa6ccefb9b5c8c5cda9c98f5098f340bb9bc2ed458601d43d2aa5791e",
+            "input_truncated": false,
+            "invalid_utf8_replaced": false,
+            "offset": 0,
+            "output_truncated": false,
+            "partial_first_line_removed": false,
+            "redacted": true,
+            "state": "read"
+          },
+          "sha256": "sha256:b7b11ebfa6ccefb9b5c8c5cda9c98f5098f340bb9bc2ed458601d43d2aa5791e"
+        }
+      },
+      "limits": {
+        "archive_bytes": 786432,
+        "files": 8,
+        "history_bytes": 67108864,
+        "history_days": 14,
+        "history_records": 32,
+        "manifest_bytes": 65536,
+        "record_bytes": 524288,
+        "response_read_bytes": 131072,
+        "stderr_bytes_each": 65536,
+        "summary_bytes": 32768
+      },
+      "network": "disabled",
+      "operation_id": "op_20261027065117_565aa175",
+      "platform": "win32",
+      "processes": [
+        {
+          "cleanup_requested": true,
+          "cleanup_requested_at_utc": "2026-10-27T06:51:42.718492+00:00",
+          "final_exit": {
+            "hex": "0x00000001",
+            "raw": 1,
+            "unsigned": 1
+          },
+          "observed_exit": null,
+          "pid": 17572,
+          "role": "decoder",
+          "started_at_utc": "2026-10-27T06:51:18.497225+00:00",
+          "state": "terminated_by_cleanup"
+        },
+        {
+          "cleanup_requested": true,
+          "cleanup_requested_at_utc": "2026-10-27T06:51:42.718508+00:00",
+          "final_exit": {
+            "hex": "0x00000001",
+            "raw": 1,
+            "unsigned": 1
+          },
+          "observed_exit": null,
+          "pid": 22556,
+          "role": "worker",
+          "started_at_utc": "2026-10-27T06:51:18.505236+00:00",
+          "state": "terminated_by_cleanup"
+        },
+        {
+          "cleanup_requested": true,
+          "cleanup_requested_at_utc": "2026-10-27T06:51:42.718511+00:00",
+          "final_exit": {
+            "hex": "0x00000001",
+            "raw": 1,
+            "unsigned": 1
+          },
+          "observed_exit": null,
+          "pid": 33988,
+          "role": "encoder",
+          "started_at_utc": "2026-10-27T06:51:18.512392+00:00",
+          "state": "terminated_by_cleanup"
+        }
+      ],
+      "progress": {
+        "bytes_read": 54,
+        "frames": 1,
+        "input_bytes": 54,
+        "input_segment_sha256": "sha256:d8cc1efbc7d627dac0326809bf8f4d7aec0e9e946a824b29118e98fae1e81bd6",
+        "input_truncated": false,
+        "last_reported_frame": 1,
+        "offset": 0,
+        "older_than_reported": false,
+        "stage_sha256": "sha256:5a125f499fc97f9bc70f78fb23305fe5584c9b46cae45b43eb79fe9a8bebdd5f",
+        "stage_state": "unknown",
+        "state": "read"
+      },
+      "protocol": "agent-native-pipeline-diagnostic-v1",
+      "root_cause": "unknown",
+      "trigger": {
+        "first_failure_at_utc": null,
+        "first_failure_roles": [],
+        "stage": "running",
+        "start_failure_role": null
+      },
+      "warnings": []
+    },
+    "manifest_sha256": "sha256:fb3cb4c73725413f9a2eb93d91a4705796027a7f680afef50182e0d12a38e8cd"
+  },
+  "public_files": [
+    {
+      "path": "docs/assets/native-lipsync-20261027-r1/moving-source.mov",
+      "bytes": 25421078,
+      "sha256": "348f81a445c5d413c6133c990c4af82cd1514de008a84912e8cc66d9ec594715"
+    },
+    {
+      "path": "docs/assets/native-lipsync-20261027-r1/moving-boxes.json",
+      "bytes": 398,
+      "sha256": "869f0709d041a0b8848fe126b9f6eab76422dfa5bc12d71aa7a0447eb94290b7"
+    },
+    {
+      "path": "docs/assets/native-lipsync-20261027-r1/moving-spoken.mp4",
+      "bytes": 90607,
+      "sha256": "f83f113c40cdeb9b5caf29555c2f3d2bae6e434eac5904fe553d1d1755fac321"
+    }
+  ]
+}

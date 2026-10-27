@@ -34,3 +34,8 @@ Inspect `media adapter --help`, `media adapter register --help` and the advertis
 Require explicit existing weights, native dependencies, adapter settings and rights evidence. The base package
 contains no model weights. Verify returned artifacts and actual inference reports; do not claim a missing adapter
 is integrated or copy experimental post-release commands from old notes.
+
+For actual native CUDA audio-driven face lip sync, explicit25FPS face-box keys,
+complete RGBA/PCM preservation and editable recipe reruns, read
+[local neural lip sync](../../lip-sync.md). Review natural mouth motion and
+complete speech separately from transport proofs; full-body animation remains separate.

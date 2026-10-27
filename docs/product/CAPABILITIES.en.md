@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.40 / alpha.4-local.38 / r41 kit · 1 Skill / 17 modules / 79 files.**
+**CLI0.1.41 / alpha.4-local.39 / r42 kit · 1 Skill / 17 modules / 80 files.**
 
-Adds **native display-light PQ/HLG, explicit nit units, 10-bit BT.2020 delivery and separate SDR previews**. HLG includes the RGB-coupled OOTF; SDR graphics and HDR highlights with different reference whites compose in linear light. Author clocks, effects and editable projects retain explicit input/output clipping and SDR mapping decisions.
+Adds **actual local CUDA neural lip sync**: MuseTalk1.5, Whisper-tiny, VAE and BiSeNet drive a supplied portrait/video from separate speech. Explicit25FPS face-box keys, complete selected PCM, rerunnable recipes and independent linked video/audio clips remain editable.
 
-[HDR workflow and constraints](HDR_DISPLAY.md)
+[Neural lip-sync workflow and limits](LIP_SYNC.md)
 
 <!-- /community-current -->
 
@@ -80,6 +80,7 @@ Adds **native display-light PQ/HLG, explicit nit units, 10-bit BT.2020 delivery 
 | F64 | Editable GPU optical effects | Flare core/streak/halo/ghosts, rotated elliptical leak and radial red/blue split; all numeric channels animate on original author clocks. Clip/interval adjustments, CPU/OpenCL. | `effects list/inspect` → `timeline compose` → preview/render | Explicit linear RGB; original alpha bits retained; transparent hidden RGB does not bleed. Static ghosts/edge; no physical lens, automatic light detection or bloom. |
 | F65 | Highlight Bloom / film Halation | Actual soft-knee highlight extraction→separable Gaussian spread→core suppression/linear tint; editable numeric author-clock tracks in clips or selected-root adjustment intervals. | `effects list/inspect; timeline compose; preview; render; queue` | sigma0…32 input pixels; transparent/clamp edges; alpha bits preserved; actual four-kernel GPU or CPU reference; bounded workspace/visits; physical film/HDR unaccepted. |
 | F66 | Native PQ/HLG HDR and SDR viewing | Explicit reference white/HLG peak/gamma → display-linear edits; mixed-nit assets, ordinary effects/composition and10-bit BT.2020 NCL delivery; separate SDR trim and PNG/MP4 previews. | `timeline compose; validate; preview; render; convert` | CPU transfer math; existing GPU composition/effects; rejects8-bit/mismatched tags/missing units; alpha bits retained. ICC/dynamic metadata/HDR monitoring unaccepted. |
+| F67 | Local neural lip sync | Image/video + separate speech → actual CUDA MuseTalk mouth;25FPS box keys, semantic lower-face blend, complete PCM/alpha, rerunnable recipe and linked editable video/audio clips. | `lipsync adapter register/list/inspect; lipsync generate` | Explicit local safetensors/native Torch runtime;256×256 face,8bit SDR/source motion,no CPU fallback; natural quality/full digital human remain open. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -104,6 +105,7 @@ Adds **native display-light PQ/HLG, explicit nit units, 10-bit BT.2020 delivery 
 | S19 | Independent four-source separation | Native Torch/TorchAudio HDemucs worker | Explicit native Python, weights/evidence/implementation hashes; auto/cpu/cuda, four float WAV/tracks | `audio adapter; audio separate-stems` | Torch/weights excluded from base ZIP; natural listening and weight licensing remain open |
 | S20 | Joint subtitle dubbing | Existing native OPUS/Kokoro workers + managed project transaction | Plain SRT, explicit languages/voices/tracks, CPU/CUDA/auto, batch reuse | `dub subtitles` | [Workflow](SUBTITLE_DUBBING.md); complete utterances/retries retained; words/lip sync/natural quality open |
 | S21 | Local resident GPU inference session | Native process, authenticated Windows named pipe, JSON/raw frames, overlapping deny-write locks and lifecycle watchdog. | Existing local VACE adapter, repeated variants of one prompt. | `media model-session start/status/stop` | No network port; serial per project; initial loading and reuse of other models remain limited. |
+| S22 | MuseTalk CUDA neural mouth service | Local Whisper-tiny, MuseTalk1.5 UNet, SD VAE and BiSeNet; fixed safetensors, deny-write locks and owned native cleanup. | Explicit existing native Torch/Diffusers/Transformers/OpenCV and model evidence; no automatic install. | `lipsync adapter; lipsync generate` | 256×256 face/25FPS; rights,naturalness,full digital human and HDR acceptance remain separate. |
 
 ## Complete installed capability fields
 
@@ -5046,3 +5048,64 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 ```
 
 [CLI0.1.40 exact installed capability snapshot](native-hdr-capabilities-cli-0.1.40.json).
+
+### `native_lip_sync`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "agent-native-lipsync-v1",
+  "engine": "musetalk-v15-native-cuda-v1",
+  "commands": [
+    "lipsync.adapter.register",
+    "lipsync.adapter.list",
+    "lipsync.adapter.inspect",
+    "lipsync.generate"
+  ],
+  "features": [
+    "actual_MuseTalk_1_5_UNet_Whisper_tiny_VAE_BiSeNet_CUDA",
+    "explicit_image_or_video_and_audio_assets",
+    "output_25fps_face_box_linear_keys",
+    "explicit_once_hold_or_full_video_loop",
+    "semantic_lower_face_blend",
+    "straight_alpha_and_outside_region_RGB_preserved",
+    "complete_lossless_RGBA_and_PCM_roundtrip",
+    "portable_rerunnable_recipe",
+    "independent_video_and_audio_clips",
+    "owned_cancel_timeout_recovery"
+  ],
+  "clock": {
+    "video_fps": 25,
+    "model_audio_sample_rate": 16000,
+    "audio_preservation": "original_decoded_float_PCM_sample_rate_and_channels",
+    "tail_padding": "less_than_one_video_frame_no_selected_samples_dropped"
+  },
+  "limits": {
+    "trained_face_pixels": [
+      256,
+      256
+    ],
+    "duration_seconds": 600,
+    "raster_edge_pixels": 4096,
+    "batch_frames": [
+      1,
+      8
+    ],
+    "owned_array_bytes": 536870912,
+    "maximum_asset_bytes": 2147483648
+  },
+  "network": false,
+  "model_downloads": false,
+  "CPU_fallback": false,
+  "unsupported": [
+    "full_body_pose_or_expression_generation",
+    "automatic_face_detection_or_tracking",
+    "automatic_identity_or_naturalness_acceptance",
+    "native_HDR_or_ICC_face_inference",
+    "cross_device_bit_determinism",
+    "full_digital_human_or_CapCut_parity"
+  ]
+}
+```
+
+[CLI0.1.41 exact installed capability snapshot](lip-sync-capabilities-cli-0.1.41.json).

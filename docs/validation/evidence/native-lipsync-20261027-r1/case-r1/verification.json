@@ -1,0 +1,1828 @@
+{
+  "status": "passed",
+  "started_at_utc": "2026-10-27T06:38:26.764088+00:00",
+  "source_fallback": false,
+  "native_windows": true,
+  "virtualization": false,
+  "registered_skill": true,
+  "synthetic_protocol_worker": false,
+  "real_person_reference": false,
+  "continuous_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false,
+  "full_digital_human_accepted": false,
+  "calls": [
+    {
+      "name": "version",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "version"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 2.1415016999962972,
+      "stdout_sha256": "86c3b2b9b79f69a765e50efed7c5f5c5dca808914f8f3a3fb055cc4d8490c6e8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "init",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "project",
+        "init",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 2.0014187000051606,
+      "stdout_sha256": "b9889e3c87b7436f456d7872c40b57e8ed0472db6916f4fd44b1ac0d3430d0a0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "source-frame",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-ss",
+        "0.08",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\lipsync-portrait-source-r1\\assets\\derived\\fictional_portrait.mov",
+        "-frames:v",
+        "1",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-lipsync-20261027-r1\\portrait-base.png"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.09460130000661593,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ingest-image",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "media",
+        "ingest",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-lipsync-20261027-r1\\portrait.png",
+        "--license-spdx",
+        "LicenseRef-Generated-Demo",
+        "--evidence",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-lipsync-20261027-r1\\SOURCE.txt"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 2.0832886999996845,
+      "stdout_sha256": "a1d2aa19fc619a5d7efec917dd2803b5c93db3124e7c95b2216b2e3133b1f5d4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ingest-speech",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "media",
+        "ingest",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-lipsync-20261027-r1\\speech.wav",
+        "--license-spdx",
+        "LicenseRef-Generated-Demo",
+        "--evidence",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-lipsync-20261027-r1\\SOURCE.txt"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 2.014820199998212,
+      "stdout_sha256": "62d02167c26fc77f7d3a18207db949cd2b08be98570f9d583d1244f5e7fe21ce",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "register",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "lipsync",
+        "adapter",
+        "register",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程",
+        "--adapter-id",
+        "musetalk_local",
+        "--model-path",
+        "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\musetalk-v15-20261027",
+        "--executable",
+        "D:/dev/comfyui/ComfyUI_windows_portable_nvidia_0_30_0/ComfyUI_windows_portable/python_embeded/python.exe",
+        "--evidence",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\native-lipsync-20261027-r1\\acquisition-metadata.json",
+        "--device",
+        "cuda",
+        "--threads",
+        "4",
+        "--batch-size",
+        "2",
+        "--license-spdx",
+        "MIT AND Apache-2.0",
+        "--creator",
+        "MuseTalk and model contributors"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 60.67453179998847,
+      "stdout_sha256": "5c4988d7fd3f876453b16f5ed70ed38525a732c9bfbb98fb854fe2ad204ff641",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "dry-run",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "lipsync",
+        "generate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程",
+        "--adapter-id",
+        "musetalk_local",
+        "--source-asset-id",
+        "asset_20261027063832_6dd88353",
+        "--audio-asset-id",
+        "asset_20261027063835_40af9adc",
+        "--asset-id",
+        "spoken_portrait",
+        "--face-box",
+        "164",
+        "84",
+        "348",
+        "300",
+        "--seed",
+        "17",
+        "--mask-top",
+        ".45",
+        "--feather-pixels",
+        "3",
+        "--apply",
+        "--video-track-id",
+        "track_video_1",
+        "--audio-track-id",
+        "track_audio_1",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 60.081848500005435,
+      "stdout_sha256": "95e32415881f7f0600b4cf963e1b8fbd244e8f43baae1a3f5fd7b92244cdca54",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "generate-image",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "lipsync",
+        "generate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程",
+        "--adapter-id",
+        "musetalk_local",
+        "--source-asset-id",
+        "asset_20261027063832_6dd88353",
+        "--audio-asset-id",
+        "asset_20261027063835_40af9adc",
+        "--asset-id",
+        "spoken_portrait",
+        "--face-box",
+        "164",
+        "84",
+        "348",
+        "300",
+        "--seed",
+        "17",
+        "--mask-top",
+        ".45",
+        "--feather-pixels",
+        "3",
+        "--apply",
+        "--video-track-id",
+        "track_video_1",
+        "--audio-track-id",
+        "track_audio_1"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 298.6499812000111,
+      "stdout_sha256": "2d1dad476da16f2568f23feccff8e4a40525b59f6de3f0cfd1f1838310b195c1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "master-rgba",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程\\assets\\derived\\spoken_portrait.mov",
+        "-an",
+        "-pix_fmt",
+        "rgba",
+        "-fps_mode",
+        "passthrough",
+        "-f",
+        "rawvideo",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 3.6724433999916073,
+      "stdout_sha256": "6a8e8cb8b4832e76262c830ae31885606b2b860fbffc3a36397cc7252ac7afcf",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "source-pcm",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-lipsync-20261027-r1\\speech.wav",
+        "-vn",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.08085040000150912,
+      "stdout_sha256": "91def8f908a684a76ba337403b94990c16af4779f75fcfdd42b8c9d057a9e934",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "master-pcm",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程\\assets\\derived\\spoken_portrait.mov",
+        "-vn",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.0593838000058895,
+      "stdout_sha256": "f367115bc0ad0ae15ffe6af385198b71b3f38be085dbf5355b272bea170427d8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "validate",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "validate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 2.4900266000040574,
+      "stdout_sha256": "f4239eaefb3aa17a46e7760a3779a142002028c61415038cefd029abce7c0c57",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "render",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程\\renders\\spoken.mp4"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 4.728123900000355,
+      "stdout_sha256": "42b8b5e9d7028a11ec3d70c0845a433988c571ef648d044a5d30fdc1412eea4a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "export",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "convert",
+        "export",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程",
+        "--target-format",
+        "package",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程\\exports\\lipsync.aevpkg.zip"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 3.5486897000082536,
+      "stdout_sha256": "641aafee268264865f25bf5c75308f433b4ee27bc889a5c113fe56687f98a501",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "import",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "convert",
+        "import",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程\\exports\\lipsync.aevpkg.zip",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\restored"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 2.524106600001687,
+      "stdout_sha256": "9f61779ebb3afc7178876be893ba6992119e84315d0e2d5cdcdb468369aaf111",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "restored-render",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\restored",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\restored\\renders\\restored.mp4"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 5.730081600006088,
+      "stdout_sha256": "5221880de515d25a90f65c0c1b0631e9c57fc54701a0bfec65449d46d5ed2383",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "rendered-rgba",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程\\renders\\spoken.mp4",
+        "-an",
+        "-pix_fmt",
+        "rgba",
+        "-fps_mode",
+        "passthrough",
+        "-f",
+        "rawvideo",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 4.755562500009546,
+      "stdout_sha256": "6c4d8a889a8bc9e95f842e8217428db8c5827326ee84378f2034708cc1c1fe37",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "restored-rgba",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\restored\\renders\\restored.mp4",
+        "-an",
+        "-pix_fmt",
+        "rgba",
+        "-fps_mode",
+        "passthrough",
+        "-f",
+        "rawvideo",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 4.669519999995828,
+      "stdout_sha256": "6c4d8a889a8bc9e95f842e8217428db8c5827326ee84378f2034708cc1c1fe37",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "rendered-pcm",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程\\renders\\spoken.mp4",
+        "-vn",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.08268809999572113,
+      "stdout_sha256": "d908277f825fbc09022af25e7a9b9e1d58cab481152a69615559b8284c04c2e0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "restored-pcm",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\restored\\renders\\restored.mp4",
+        "-vn",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.07546979999460746,
+      "stdout_sha256": "d908277f825fbc09022af25e7a9b9e1d58cab481152a69615559b8284c04c2e0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "rerun-plan",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "lipsync",
+        "generate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程",
+        "--adapter-id",
+        "musetalk_local",
+        "--recipe-asset-id",
+        "spoken_portrait",
+        "--asset-id",
+        "spoken_new_seed",
+        "--seed",
+        "23",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 9.977996400004486,
+      "stdout_sha256": "41a6cecc255f7d75465b7b3c8e9c760c8e404251936448c86cc536e6fa907ec3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "preview-rgb",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程\\renders\\spoken.mp4",
+        "-an",
+        "-pix_fmt",
+        "rgb24",
+        "-fps_mode",
+        "passthrough",
+        "-f",
+        "rawvideo",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 3.4084975000005215,
+      "stdout_sha256": "4335ebbff88238f48a8c7e4194641926b149b86485dce48747c8044c49db42e6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": [
+    {
+      "name": "version registered CLI0.1.41",
+      "ok": true
+    },
+    {
+      "name": "init registered CLI0.1.41",
+      "ok": true
+    },
+    {
+      "name": "ingest-image registered CLI0.1.41",
+      "ok": true
+    },
+    {
+      "name": "ingest-speech registered CLI0.1.41",
+      "ok": true
+    },
+    {
+      "name": "register registered CLI0.1.41",
+      "ok": true
+    },
+    {
+      "name": "dry-run registered CLI0.1.41",
+      "ok": true
+    },
+    {
+      "name": "dry-run leaves project bytes unchanged",
+      "ok": true
+    },
+    {
+      "name": "generate-image registered CLI0.1.41",
+      "ok": true
+    },
+    {
+      "name": "all generated RGBA frames match real worker hash",
+      "ok": true
+    },
+    {
+      "name": "actual real CUDA MuseTalk UNet and all audio frames",
+      "ok": true
+    },
+    {
+      "name": "all source alpha samples preserved",
+      "ok": true
+    },
+    {
+      "name": "all outside-region and invisible RGB preserved",
+      "ok": true
+    },
+    {
+      "name": "all original selected PCM scalars bit equal",
+      "ok": true
+    },
+    {
+      "name": "only explicit tail silence added",
+      "ok": true
+    },
+    {
+      "name": "real output changes mouth across time",
+      "ok": true
+    },
+    {
+      "name": "two independently editable linked clips",
+      "ok": true
+    },
+    {
+      "name": "all owned child processes and stdout handles closed",
+      "ok": true
+    },
+    {
+      "name": "validate registered CLI0.1.41",
+      "ok": true
+    },
+    {
+      "name": "render registered CLI0.1.41",
+      "ok": true
+    },
+    {
+      "name": "export registered CLI0.1.41",
+      "ok": true
+    },
+    {
+      "name": "import registered CLI0.1.41",
+      "ok": true
+    },
+    {
+      "name": "package carries unchanged master source and rerunnable recipe",
+      "ok": true
+    },
+    {
+      "name": "restored-render registered CLI0.1.41",
+      "ok": true
+    },
+    {
+      "name": "all rendered frames match after editable package import",
+      "ok": true
+    },
+    {
+      "name": "all rendered decoded PCM matches after package import",
+      "ok": true
+    },
+    {
+      "name": "rerun-plan registered CLI0.1.41",
+      "ok": true
+    },
+    {
+      "name": "resume retains original neural master bytes",
+      "ok": true
+    },
+    {
+      "name": "resume retains complete decoded neural frame evidence",
+      "ok": true
+    },
+    {
+      "name": "GIF uses complete neural master clock",
+      "ok": true
+    }
+  ],
+  "image_result": {
+    "protocol": "agent-native-lipsync-v1",
+    "operation_id": "op_20261027064132_ae1b9d6c",
+    "asset": {
+      "id": "spoken_portrait",
+      "kind": "video",
+      "uri": "assets/derived/spoken_portrait.mov",
+      "sha256": "sha256:26366fda294bb4a045812ad28664f42a91188edb439c0fe504f7d5d25956cc87",
+      "rights_ref": "spoken_portrait",
+      "probe": {
+        "duration_seconds": 5.32,
+        "duration_tick": 478800,
+        "format": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "qtrle",
+            "codec_long_name": "QuickTime Animation (RLE) video",
+            "codec_type": "video",
+            "codec_tag_string": "rle ",
+            "codec_tag": "0x20656c72",
+            "width": 512,
+            "height": 512,
+            "coded_width": 512,
+            "coded_height": 512,
+            "has_b_frames": 0,
+            "pix_fmt": "argb",
+            "level": -99,
+            "field_order": "progressive",
+            "id": "0x1",
+            "r_frame_rate": "25/1",
+            "avg_frame_rate": "25/1",
+            "time_base": "1/12800",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 68096,
+            "duration": "5.320000",
+            "bit_rate": "26258219",
+            "nb_frames": "133",
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "handler_name": "VideoHandler",
+              "vendor_id": "FFMP",
+              "encoder": "Lavc62.28.100 qtrle"
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "pcm_f32le",
+            "codec_long_name": "PCM 32-bit floating point little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "fl32",
+            "codec_tag": "0x32336c66",
+            "sample_fmt": "flt",
+            "sample_rate": "24000",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bits_per_sample": 32,
+            "initial_padding": 0,
+            "id": "0x2",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/24000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 127680,
+            "duration": "5.320000",
+            "bit_rate": "768000",
+            "nb_frames": "127680",
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "handler_name": "SoundHandler",
+              "vendor_id": "[0][0][0][0]"
+            }
+          }
+        ],
+        "video": {
+          "codec": "qtrle",
+          "width": 512,
+          "height": 512,
+          "pix_fmt": "argb",
+          "fps": "25/1",
+          "color_space": null,
+          "duration_seconds": 5.32,
+          "start_time_seconds": 0.0
+        },
+        "audio": {
+          "codec": "pcm_f32le",
+          "sample_rate": 24000,
+          "channels": 1,
+          "duration_seconds": 5.32,
+          "start_time_seconds": 0.0
+        }
+      },
+      "source": {
+        "source_url": "local://lipsync/op_20261027064132_ae1b9d6c",
+        "retrieved_at": "2026-10-27T06:45:34.003877Z",
+        "original_name": "spoken_portrait.mov",
+        "derived_from": [
+          "asset_20261027063832_6dd88353",
+          "asset_20261027063835_40af9adc"
+        ],
+        "lipsync": {
+          "protocol": "agent-native-lipsync-v1",
+          "source_asset_id": "asset_20261027063832_6dd88353",
+          "audio_asset_id": "asset_20261027063835_40af9adc",
+          "source_sha256": "sha256:4d3f617e44f1b58e34c7fb120ea26f38952007fb6671ec4f906e62a5566af477",
+          "audio_sha256": "sha256:c1ec3bd51d3b58f422709d205ec45ec2e220dc0e8f0c79e21f5f712b87084113",
+          "source_kind": "image",
+          "video": {
+            "width": 512,
+            "height": 512,
+            "frames": 133,
+            "fps": "25",
+            "duration_seconds": 5.32
+          },
+          "range": {
+            "start_seconds": 0,
+            "end_seconds": null,
+            "source_mode": "once"
+          },
+          "audio": {
+            "start_sample": 0,
+            "end_sample": 126795,
+            "samples": 126795,
+            "sample_rate": 24000,
+            "channels": 1,
+            "padded_samples": 885,
+            "output_samples": 127680,
+            "preserve": true,
+            "padding_seconds": 0.036875
+          },
+          "boxes": {
+            "clock": "output-frame-25fps",
+            "keys": [
+              {
+                "frame": 0,
+                "box": [
+                  164.0,
+                  84.0,
+                  348.0,
+                  300.0
+                ]
+              }
+            ]
+          },
+          "options": {
+            "seed": 17,
+            "mask_top": 0.45,
+            "feather_pixels": 3.0
+          },
+          "sha256": "sha256:46b859cec5ded7e24f395db87c35b32def0985661dedc497da99e885f85eb14b"
+        }
+      }
+    },
+    "rights": {
+      "asset_id": "spoken_portrait",
+      "kind": "video",
+      "sha256": "sha256:26366fda294bb4a045812ad28664f42a91188edb439c0fe504f7d5d25956cc87",
+      "source_url": "local://lipsync/op_20261027064132_ae1b9d6c",
+      "source_version": "agent-native-lipsync-v1",
+      "retrieved_at": "2026-10-27T06:45:34.003908Z",
+      "creator": "local-neural-lipsync",
+      "license_spdx": "LicenseRef-UNVERIFIED",
+      "license_url": "",
+      "attribution": "",
+      "permitted_uses": [
+        "internal"
+      ],
+      "permitted_channels": [],
+      "restrictions": [],
+      "derived_from": [
+        "visual_adapter_musetalk_local",
+        "asset_20261027063832_6dd88353",
+        "asset_20261027063835_40af9adc"
+      ],
+      "evidence": "",
+      "verification_status": "unverified",
+      "verified_by": "",
+      "takedown_status": "clear",
+      "notes": "Audio-driven synthetic face; source, voice, model and generated rights remain separate.",
+      "record_id": "rights_20261027064534_678c4c1a",
+      "record_version": 1,
+      "active": true,
+      "recorded_at": "2026-10-27T06:45:34.004078Z"
+    },
+    "clips": [
+      {
+        "track_id": "track_video_1",
+        "clip": {
+          "id": "clip_lipsync_20261027064534_6531faf9",
+          "asset_id": "spoken_portrait",
+          "timeline_start_tick": 0,
+          "source_in_tick": 0,
+          "source_out_tick": 478800,
+          "duration_tick": 478800,
+          "link_id": "link_lipsync_20261027064534_f64f2310"
+        }
+      },
+      {
+        "track_id": "track_audio_1",
+        "clip": {
+          "id": "clip_lipsync_20261027064534_a8e24163",
+          "asset_id": "spoken_portrait",
+          "timeline_start_tick": 0,
+          "source_in_tick": 0,
+          "source_out_tick": 478800,
+          "duration_tick": 478800,
+          "link_id": "link_lipsync_20261027064534_f64f2310"
+        }
+      }
+    ],
+    "generation": {
+      "protocol": "agent-native-lipsync-v1",
+      "recipe": {
+        "protocol": "agent-native-lipsync-v1",
+        "source_asset_id": "asset_20261027063832_6dd88353",
+        "audio_asset_id": "asset_20261027063835_40af9adc",
+        "source_sha256": "sha256:4d3f617e44f1b58e34c7fb120ea26f38952007fb6671ec4f906e62a5566af477",
+        "audio_sha256": "sha256:c1ec3bd51d3b58f422709d205ec45ec2e220dc0e8f0c79e21f5f712b87084113",
+        "source_kind": "image",
+        "video": {
+          "width": 512,
+          "height": 512,
+          "frames": 133,
+          "fps": "25",
+          "duration_seconds": 5.32
+        },
+        "range": {
+          "start_seconds": 0,
+          "end_seconds": null,
+          "source_mode": "once"
+        },
+        "audio": {
+          "start_sample": 0,
+          "end_sample": 126795,
+          "samples": 126795,
+          "sample_rate": 24000,
+          "channels": 1,
+          "padded_samples": 885,
+          "output_samples": 127680,
+          "preserve": true,
+          "padding_seconds": 0.036875
+        },
+        "boxes": {
+          "clock": "output-frame-25fps",
+          "keys": [
+            {
+              "frame": 0,
+              "box": [
+                164.0,
+                84.0,
+                348.0,
+                300.0
+              ]
+            }
+          ]
+        },
+        "options": {
+          "seed": 17,
+          "mask_top": 0.45,
+          "feather_pixels": 3.0
+        },
+        "sha256": "sha256:46b859cec5ded7e24f395db87c35b32def0985661dedc497da99e885f85eb14b"
+      },
+      "sha256": "sha256:26366fda294bb4a045812ad28664f42a91188edb439c0fe504f7d5d25956cc87",
+      "probe": {
+        "duration_seconds": 5.32,
+        "duration_tick": 478800,
+        "format": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "qtrle",
+            "codec_long_name": "QuickTime Animation (RLE) video",
+            "codec_type": "video",
+            "codec_tag_string": "rle ",
+            "codec_tag": "0x20656c72",
+            "width": 512,
+            "height": 512,
+            "coded_width": 512,
+            "coded_height": 512,
+            "has_b_frames": 0,
+            "pix_fmt": "argb",
+            "level": -99,
+            "field_order": "progressive",
+            "id": "0x1",
+            "r_frame_rate": "25/1",
+            "avg_frame_rate": "25/1",
+            "time_base": "1/12800",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 68096,
+            "duration": "5.320000",
+            "bit_rate": "26258219",
+            "nb_frames": "133",
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "handler_name": "VideoHandler",
+              "vendor_id": "FFMP",
+              "encoder": "Lavc62.28.100 qtrle"
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "pcm_f32le",
+            "codec_long_name": "PCM 32-bit floating point little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "fl32",
+            "codec_tag": "0x32336c66",
+            "sample_fmt": "flt",
+            "sample_rate": "24000",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bits_per_sample": 32,
+            "initial_padding": 0,
+            "id": "0x2",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/24000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 127680,
+            "duration": "5.320000",
+            "bit_rate": "768000",
+            "nb_frames": "127680",
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "handler_name": "SoundHandler",
+              "vendor_id": "[0][0][0][0]"
+            }
+          }
+        ],
+        "video": {
+          "codec": "qtrle",
+          "width": 512,
+          "height": 512,
+          "pix_fmt": "argb",
+          "fps": "25/1",
+          "color_space": null,
+          "duration_seconds": 5.32,
+          "start_time_seconds": 0.0
+        },
+        "audio": {
+          "codec": "pcm_f32le",
+          "sample_rate": 24000,
+          "channels": 1,
+          "duration_seconds": 5.32,
+          "start_time_seconds": 0.0
+        }
+      },
+      "worker": {
+        "status": "succeeded",
+        "protocol": "agent-native-lipsync-v1",
+        "engine": "musetalk-v15-native-cuda-v1",
+        "network": "disabled",
+        "blocked_network_events": [],
+        "request_sha256": "sha256:17d4c97b07b630a8b05ecb4cd22a5515ec4c886bb11948976e0d7502dd8ad788",
+        "adapter_sha256": "sha256:4822c721c3085c1e66489ab4c1a718b1c897fef0defec043b7d64903cdd463f2",
+        "source_sha256": "sha256:4d3f617e44f1b58e34c7fb120ea26f38952007fb6671ec4f906e62a5566af477",
+        "audio_sha256": "sha256:c1ec3bd51d3b58f422709d205ec45ec2e220dc0e8f0c79e21f5f712b87084113",
+        "metrics": {
+          "frames": 133,
+          "width": 512,
+          "height": 512,
+          "rgba_bytes": 139460608,
+          "source_rgba_sha256": "sha256:0f862336e342e910a1cb64566c50772d07481fdf9236b02aa442b79ca5415928",
+          "rgba_sha256": "sha256:6a8e8cb8b4832e76262c830ae31885606b2b860fbffc3a36397cc7252ac7afcf",
+          "input_alpha_sha256": "sha256:72e8975ce0daad914988d1ca2ff2101591ac811a6a52dedf630ae4b84914c2b1",
+          "output_alpha_sha256": "sha256:72e8975ce0daad914988d1ca2ff2101591ac811a6a52dedf630ae4b84914c2b1",
+          "changed_RGB_pixels": 1646919,
+          "semantic_mask_pixels": 2153669,
+          "minimum_mask_pixels": 16193,
+          "maximum_mask_pixels": 16193,
+          "batches": 67,
+          "model_frames": 133,
+          "owned_array_peak_bytes": 22969088,
+          "owned_array_budget_bytes": 536870912,
+          "alpha_mode": "straight",
+          "outside_region_RGB": "preserve",
+          "blend_domain": "encoded-8bit-SDR-RGB",
+          "source_alpha": "bit-exact"
+        },
+        "model_execution": {
+          "engine": "musetalk-v15-native-cuda-v1",
+          "versions": {
+            "torch": "2.13.0+cu130",
+            "numpy": "2.4.2",
+            "diffusers": "0.39.0",
+            "transformers": "5.14.1",
+            "safetensors": "0.8.0"
+          },
+          "weight_reader": "safetensors-pread",
+          "CUDA_admission": {
+            "policy": "cuda-uuid-physical-and-torch-free-v1",
+            "stage": "lipsync-load",
+            "required_free_bytes": 4831838208,
+            "reservation": false,
+            "oom_guarantee": false,
+            "query_started_at_utc": "2026-10-27T06:44:43.239561+00:00",
+            "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+            "logical_device_index": 0,
+            "idle_cache_release": {
+              "scope": "current-worker",
+              "synchronized": true,
+              "empty_cache_called": true,
+              "completed": true,
+              "active_allocation_preserved": true,
+              "allocated_before_bytes": 0,
+              "reserved_before_bytes": 0,
+              "allocated_after_bytes": 0,
+              "reserved_after_bytes": 0,
+              "released_reserved_bytes": 0
+            },
+            "query_command": [
+              "C:\\Windows\\System32\\nvidia-smi.EXE",
+              "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+              "--query-gpu=uuid,memory.total,memory.free",
+              "--format=csv,noheader,nounits"
+            ],
+            "torch_free_bytes": 11799625728,
+            "torch_total_bytes": 12884377600,
+            "physical_free_bytes": 10909384704,
+            "physical_total_bytes": 12884901888,
+            "effective_free_bytes": 10909384704,
+            "query_finished_at_utc": "2026-10-27T06:44:43.585957+00:00",
+            "sample_seconds": 0.34640690000378527,
+            "status": "admitted"
+          },
+          "precision": {
+            "unet": "float16",
+            "vae": "float32",
+            "whisper": "float16",
+            "parser": "float32"
+          },
+          "device": "NVIDIA GeForce RTX 3060",
+          "load_seconds": 11.639627399999881,
+          "model_loads": 1,
+          "calls": {
+            "audio_encoder": 1,
+            "vae_encoder": 2,
+            "unet": 67,
+            "vae_decoder": 67,
+            "face_parser": 1
+          },
+          "cache_hits": 132,
+          "batch_frames": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          "CPU_fallback": false,
+          "network": "disabled",
+          "trained_face_raster": [
+            256,
+            256
+          ],
+          "attention_backend": "torch-SDPA-math",
+          "seed": 17,
+          "audio_feature_bytes": 1082880,
+          "cuda_peak_allocated_bytes": 2802346496
+        },
+        "model_loaded": true,
+        "providers": [
+          "torch-cuda"
+        ],
+        "versions": {
+          "torch": "2.13.0+cu130",
+          "numpy": "2.4.2",
+          "diffusers": "0.39.0",
+          "transformers": "5.14.1",
+          "safetensors": "0.8.0"
+        },
+        "artifact_verification": {
+          "mode": "windows-read-lock-command-scope",
+          "files_hashed": 29,
+          "bytes_hashed": 2240467943,
+          "digest_reuses_while_locked": 26,
+          "write_and_delete_sharing": false,
+          "persists_across_commands": false
+        },
+        "elapsed_seconds": 225.3618393999932
+      },
+      "rgba_roundtrip_verified": true,
+      "complete_PCM_roundtrip_verified": true,
+      "PCM_sha256": "sha256:f367115bc0ad0ae15ffe6af385198b71b3f38be085dbf5355b272bea170427d8",
+      "ffmpeg": {
+        "path": "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+        "role": "ffmpeg",
+        "bytes": 223360000,
+        "sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+      },
+      "artifact_verification": {
+        "mode": "windows-read-lock-command-scope",
+        "files_hashed": 29,
+        "bytes_hashed": 2463487463,
+        "digest_reuses_while_locked": 55,
+        "write_and_delete_sharing": false,
+        "persists_across_commands": false
+      },
+      "elapsed_seconds": 241.19558630000392,
+      "cleanup": {
+        "processes": [
+          {
+            "role": "decoder",
+            "pid": 9092,
+            "returncode": 0,
+            "exited": true,
+            "stdout_closed": true
+          },
+          {
+            "role": "worker",
+            "pid": 7928,
+            "returncode": 0,
+            "exited": true,
+            "stdout_closed": true
+          },
+          {
+            "role": "encoder",
+            "pid": 7084,
+            "returncode": 0,
+            "exited": true,
+            "stdout_closed": true
+          }
+        ],
+        "warnings": []
+      },
+      "natural_quality_accepted": false
+    },
+    "configuration": {
+      "engine": "musetalk-v15-native-cuda-v1",
+      "protocol": "agent-native-lipsync-v1",
+      "network": "disabled",
+      "video": {
+        "width": 512,
+        "height": 512,
+        "frames": 133,
+        "fps": "25",
+        "duration_seconds": 5.32
+      },
+      "range": {
+        "start_seconds": 0,
+        "end_seconds": null,
+        "source_mode": "once"
+      },
+      "audio": {
+        "start_sample": 0,
+        "end_sample": 126795,
+        "samples": 126795,
+        "sample_rate": 24000,
+        "channels": 1,
+        "padded_samples": 885,
+        "output_samples": 127680,
+        "preserve": true,
+        "padding_seconds": 0.036875
+      },
+      "boxes": {
+        "clock": "output-frame-25fps",
+        "keys": [
+          {
+            "frame": 0,
+            "box": [
+              164.0,
+              84.0,
+              348.0,
+              300.0
+            ]
+          }
+        ]
+      },
+      "options": {
+        "seed": 17,
+        "mask_top": 0.45,
+        "feather_pixels": 3.0
+      },
+      "storage_budget_bytes": 2147483648,
+      "estimated_workspace_bytes": 357326336,
+      "estimated_array_bytes": 76518912
+    },
+    "snapshot_id": "snap_20261027064132_63bcd107",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "asset_20261027063832_6dd88353",
+          "rights_ref": "asset_20261027063832_6dd88353",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "asset_20261027063832_6dd88353",
+          "rights_ref": "asset_20261027063832_6dd88353",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "asset_20261027063835_40af9adc",
+          "rights_ref": "asset_20261027063835_40af9adc",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "asset_20261027063835_40af9adc",
+          "rights_ref": "asset_20261027063835_40af9adc",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "spoken_portrait",
+          "rights_ref": "spoken_portrait",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "spoken_portrait",
+          "rights_ref": "spoken_portrait",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_EVIDENCE_INCOMPLETE",
+          "message": "来源、许可证或证据字段缺失",
+          "asset_id": "spoken_portrait",
+          "rights_ref": "spoken_portrait",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "visual_adapter_musetalk_local",
+          "rights_ref": "visual_adapter_musetalk_local",
+          "record_version": 1,
+          "context": "derived_dependency"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "visual_adapter_musetalk_local",
+          "rights_ref": "visual_adapter_musetalk_local",
+          "record_version": 1,
+          "context": "derived_dependency"
+        }
+      ],
+      "rights": {
+        "ok": true,
+        "target": "commercial_ad",
+        "checked": 3,
+        "required_records": 4,
+        "failures": [],
+        "warnings": [
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "asset_20261027063832_6dd88353",
+            "rights_ref": "asset_20261027063832_6dd88353",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "asset_20261027063832_6dd88353",
+            "rights_ref": "asset_20261027063832_6dd88353",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "asset_20261027063835_40af9adc",
+            "rights_ref": "asset_20261027063835_40af9adc",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "asset_20261027063835_40af9adc",
+            "rights_ref": "asset_20261027063835_40af9adc",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "spoken_portrait",
+            "rights_ref": "spoken_portrait",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "spoken_portrait",
+            "rights_ref": "spoken_portrait",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_EVIDENCE_INCOMPLETE",
+            "message": "来源、许可证或证据字段缺失",
+            "asset_id": "spoken_portrait",
+            "rights_ref": "spoken_portrait",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "visual_adapter_musetalk_local",
+            "rights_ref": "visual_adapter_musetalk_local",
+            "record_version": 1,
+            "context": "derived_dependency"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "visual_adapter_musetalk_local",
+            "rights_ref": "visual_adapter_musetalk_local",
+            "record_version": 1,
+            "context": "derived_dependency"
+          }
+        ],
+        "disposition_decisions": [],
+        "effective_disposition_decisions": []
+      },
+      "schema_engine": "jsonschema",
+      "asset_count": 3,
+      "sequence_count": 1
+    },
+    "job_cleanup": [
+      {
+        "job_id": "job-fdb1b3d5217347a19c418f31f9df31f2",
+        "kind": "lip-sync",
+        "files": 12,
+        "workspace_bytes": 1380544,
+        "outputs": [
+          {
+            "path": "assets/derived/spoken_portrait.mov",
+            "status": "referenced_preserved",
+            "identity": {
+              "device": 6713111436524353518,
+              "inode": 15481123719763568,
+              "bytes": 17975265
+            },
+            "sha256": "sha256:26366fda294bb4a045812ad28664f42a91188edb439c0fe504f7d5d25956cc87"
+          }
+        ],
+        "status": "cleaned",
+        "removed_outputs": []
+      }
+    ]
+  },
+  "presentation_resume": true,
+  "initial_presentation_failure": "verification.first-attempt.json",
+  "frames": 133,
+  "fps": 25,
+  "duration_seconds": 5.32,
+  "selected_PCM_scalars": 126795,
+  "padded_PCM_scalars": 885,
+  "all_source_PCM_equal": true,
+  "all_source_alpha_equal": true,
+  "all_outside_region_RGB_equal": true,
+  "all_package_rendered_frames_equal": true,
+  "all_package_rendered_PCM_equal": true,
+  "GIF_duration_ms": 5320,
+  "rendered_frames": 160,
+  "rendered_fps": "30/1",
+  "rendered_duration_seconds": 5.333333,
+  "presentation_clock_note": "GIF: complete 25 fps RGBA neural master; MP4: project display_fps 30, complete package render equivalence verified separately.",
+  "adapter_sha256": "sha256:4822c721c3085c1e66489ab4c1a718b1c897fef0defec043b7d64903cdd463f2",
+  "model_execution": {
+    "engine": "musetalk-v15-native-cuda-v1",
+    "versions": {
+      "torch": "2.13.0+cu130",
+      "numpy": "2.4.2",
+      "diffusers": "0.39.0",
+      "transformers": "5.14.1",
+      "safetensors": "0.8.0"
+    },
+    "weight_reader": "safetensors-pread",
+    "CUDA_admission": {
+      "policy": "cuda-uuid-physical-and-torch-free-v1",
+      "stage": "lipsync-load",
+      "required_free_bytes": 4831838208,
+      "reservation": false,
+      "oom_guarantee": false,
+      "query_started_at_utc": "2026-10-27T06:44:43.239561+00:00",
+      "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+      "logical_device_index": 0,
+      "idle_cache_release": {
+        "scope": "current-worker",
+        "synchronized": true,
+        "empty_cache_called": true,
+        "completed": true,
+        "active_allocation_preserved": true,
+        "allocated_before_bytes": 0,
+        "reserved_before_bytes": 0,
+        "allocated_after_bytes": 0,
+        "reserved_after_bytes": 0,
+        "released_reserved_bytes": 0
+      },
+      "query_command": [
+        "C:\\Windows\\System32\\nvidia-smi.EXE",
+        "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+        "--query-gpu=uuid,memory.total,memory.free",
+        "--format=csv,noheader,nounits"
+      ],
+      "torch_free_bytes": 11799625728,
+      "torch_total_bytes": 12884377600,
+      "physical_free_bytes": 10909384704,
+      "physical_total_bytes": 12884901888,
+      "effective_free_bytes": 10909384704,
+      "query_finished_at_utc": "2026-10-27T06:44:43.585957+00:00",
+      "sample_seconds": 0.34640690000378527,
+      "status": "admitted"
+    },
+    "precision": {
+      "unet": "float16",
+      "vae": "float32",
+      "whisper": "float16",
+      "parser": "float32"
+    },
+    "device": "NVIDIA GeForce RTX 3060",
+    "load_seconds": 11.639627399999881,
+    "model_loads": 1,
+    "calls": {
+      "audio_encoder": 1,
+      "vae_encoder": 2,
+      "unet": 67,
+      "vae_decoder": 67,
+      "face_parser": 1
+    },
+    "cache_hits": 132,
+    "batch_frames": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1
+    ],
+    "CPU_fallback": false,
+    "network": "disabled",
+    "trained_face_raster": [
+      256,
+      256
+    ],
+    "attention_backend": "torch-SDPA-math",
+    "seed": 17,
+    "audio_feature_bytes": 1082880,
+    "cuda_peak_allocated_bytes": 2802346496
+  },
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-case-r1\\可编辑 口型工程",
+  "public_files": [
+    {
+      "path": "docs/assets/native-lipsync-20261027-r1/comparison.gif",
+      "bytes": 29013886,
+      "sha256": "a9db3348e54e8b8ce01af4d74c2613bb328c063c5a3e6ee259c48771ca3366b6"
+    },
+    {
+      "path": "docs/assets/native-lipsync-20261027-r1/editable-lipsync.aevpkg.zip",
+      "bytes": 10092625,
+      "sha256": "38f774792c507fabe9531cff94761a1e6b33524777407900ad429910ab3a21de"
+    },
+    {
+      "path": "docs/assets/native-lipsync-20261027-r1/frame-first.png",
+      "bytes": 237726,
+      "sha256": "6fada96ad9dd25c74b06d9cc87a366bc20cfd55e795445fc59c9173a058ae31a"
+    },
+    {
+      "path": "docs/assets/native-lipsync-20261027-r1/frame-last.png",
+      "bytes": 237681,
+      "sha256": "a8893addace192cb037376e210c7555b1e6973468232f4863678568aa6c2d53e"
+    },
+    {
+      "path": "docs/assets/native-lipsync-20261027-r1/frame-middle.png",
+      "bytes": 237802,
+      "sha256": "ddd9477bce03f5f2b07527eb05c14a76f75b077cb7f0a949976e7368b9f9a87f"
+    },
+    {
+      "path": "docs/assets/native-lipsync-20261027-r1/portrait-base.png",
+      "bytes": 407261,
+      "sha256": "ccc0dc10531e80125de9028de603dfe5dd5e481ea4bef6cf517ec5a6dfc31f7c"
+    },
+    {
+      "path": "docs/assets/native-lipsync-20261027-r1/portrait.png",
+      "bytes": 398350,
+      "sha256": "4d3f617e44f1b58e34c7fb120ea26f38952007fb6671ec4f906e62a5566af477"
+    },
+    {
+      "path": "docs/assets/native-lipsync-20261027-r1/SOURCE.txt",
+      "bytes": 442,
+      "sha256": "9031adf16c2d285eb582c987a2d5937e67bf816647c838ae31ad8d16b2fdc9ef"
+    },
+    {
+      "path": "docs/assets/native-lipsync-20261027-r1/speech.wav",
+      "bytes": 253634,
+      "sha256": "c1ec3bd51d3b58f422709d205ec45ec2e220dc0e8f0c79e21f5f712b87084113"
+    },
+    {
+      "path": "docs/assets/native-lipsync-20261027-r1/spoken.mp4",
+      "bytes": 189024,
+      "sha256": "37df5e8ed30197a82d43fb91348d54677d9902bafe8429a14c199a781adb572a"
+    }
+  ],
+  "finished_at_utc": "2026-10-27T06:48:50.017293+00:00"
+}

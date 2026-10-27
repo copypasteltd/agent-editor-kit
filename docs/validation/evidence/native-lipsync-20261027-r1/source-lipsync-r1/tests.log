@@ -1,0 +1,39 @@
+test_array_budget_rejects_before_neural_batch (test_lipsync.PixelTests.test_array_budget_rejects_before_neural_batch) ... ok
+test_feather_stays_inside_explicit_box (test_lipsync.PixelTests.test_feather_stays_inside_explicit_box) ... ok
+test_fractional_and_hidden_alpha_and_outside_box_are_bit_exact (test_lipsync.PixelTests.test_fractional_and_hidden_alpha_and_outside_box_are_bit_exact) ... ok
+test_invalid_neural_batch_and_semantic_mask_rejected (test_lipsync.PixelTests.test_invalid_neural_batch_and_semantic_mask_rejected) ... ok
+test_mask_top_protects_upper_face_with_no_feather (test_lipsync.PixelTests.test_mask_top_protects_upper_face_with_no_feather) ... ok
+test_partial_pipe_reads_produce_the_same_complete_frames (test_lipsync.PixelTests.test_partial_pipe_reads_produce_the_same_complete_frames) ... ok
+test_semantic_zero_mask_is_identity_even_when_prediction_changes (test_lipsync.PixelTests.test_semantic_zero_mask_is_identity_even_when_prediction_changes) ... ok
+test_short_write_rejected (test_lipsync.PixelTests.test_short_write_rejected) ... ok
+test_truncated_and_extra_frames_rejected (test_lipsync.PixelTests.test_truncated_and_extra_frames_rejected) ... ok
+test_bad_boxes_rejected (test_lipsync.PlanTests.test_bad_boxes_rejected) ... ok
+test_box_interpolation_and_hold_are_exact_output_frame_clock (test_lipsync.PlanTests.test_box_interpolation_and_hold_are_exact_output_frame_clock) ... ok
+test_ceil_clock_preserves_all_selected_samples_with_less_than_40ms_padding (test_lipsync.PlanTests.test_ceil_clock_preserves_all_selected_samples_with_less_than_40ms_padding) ... ok
+test_cuda_settings_reject_cpu_and_boolean_batch (test_lipsync.PlanTests.test_cuda_settings_reject_cpu_and_boolean_batch) ... ok
+test_image_range_and_source_loop_are_rejected (test_lipsync.PlanTests.test_image_range_and_source_loop_are_rejected) ... ok
+test_options_clocks_and_quotas_reject_before_execution (test_lipsync.PlanTests.test_options_clocks_and_quotas_reject_before_execution) ... ok
+test_portable_recipe_digests_clock_parents_and_rebinding (test_lipsync.PlanTests.test_portable_recipe_digests_clock_parents_and_rebinding) ... ERROR
+test_source_video_requires_explicit_shortage_strategy (test_lipsync.PlanTests.test_source_video_requires_explicit_shortage_strategy) ... ok
+test_cancel_marker_kills_owned_children (test_lipsync.TransportTests.test_cancel_marker_kills_owned_children) ... ok
+test_complete_actual_qtrle_and_float_pcm_transport_and_cleanup (test_lipsync.TransportTests.test_complete_actual_qtrle_and_float_pcm_transport_and_cleanup) ... ok
+test_forged_alpha_response_is_rejected (test_lipsync.TransportTests.test_forged_alpha_response_is_rejected) ... ok
+test_timeout_kills_owned_children (test_lipsync.TransportTests.test_timeout_kills_owned_children) ... ok
+test_worker_failure_is_diagnosed_and_workspace_recovered (test_lipsync.TransportTests.test_worker_failure_is_diagnosed_and_workspace_recovered) ... ok
+
+======================================================================
+ERROR: test_portable_recipe_digests_clock_parents_and_rebinding (test_lipsync.PlanTests.test_portable_recipe_digests_clock_parents_and_rebinding)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 130, in test_portable_recipe_digests_clock_parents_and_rebinding
+    planning.validate_recipe(value,asset=asset,assets=assets)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\lipsync_plan.py", line 104, in validate_recipe
+    if not isinstance(value,dict) or set(value)!=expected or value['protocol']!=PROTOCOL or digest(value)!=value['sha256']:raise ValueError('recipe protocol/digest')
+                                                                                            ^^^^^^
+UnboundLocalError: cannot access local variable 'digest' where it is not associated with a value
+
+----------------------------------------------------------------------
+Ran 22 tests in 28.775s
+
+FAILED (errors=1)

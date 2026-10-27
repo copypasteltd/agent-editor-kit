@@ -29,6 +29,7 @@ from .local_matting import MATTING_ENGINE, prepare_adapter as prepare_native_mat
 from .local_segmentation import SEGMENTATION_ENGINE, prepare_adapter as prepare_native_segmentation, verify_adapter as verify_native_segmentation
 from .local_inpainting import INPAINT_ENGINE, prepare_adapter as prepare_native_inpainting, verify_adapter as verify_native_inpainting
 from .local_vace import VACE_ENGINE, prepare_adapter as prepare_native_vace, verify_adapter as verify_native_vace
+from .local_lipsync import ENGINE as LIPSYNC_ENGINE, prepare_adapter as prepare_lipsync, verify_adapter as verify_lipsync
 
 
 MODEL_REGISTRY_VERSION = "0.1.0"
@@ -45,6 +46,7 @@ VALID_AUDIO_ADAPTER_ENGINES = {
     "uvr-local-v1",
 }
 VALID_VISUAL_ADAPTER_ENGINES = {
+    LIPSYNC_ENGINE,
     VACE_ENGINE,
     INPAINT_ENGINE,
     SEGMENTATION_ENGINE,
@@ -281,6 +283,8 @@ def prepare_visual_adapter(
     """Validate and register an explicitly supplied offline visual runner."""
     assert_id(str(adapter_id), "adapter_id")
     engine = str(engine or "").strip()
+    if engine == LIPSYNC_ENGINE:
+        return prepare_lipsync(root or Path.cwd(), adapter_id=adapter_id, model_path=str(model_path or ''), executable=str(executable or ''), evidence=evidence, creator=creator, license_spdx=license_spdx, license_url=license_url, permitted_uses=permitted_uses, verification_status=verification_status, options=native_options or {})
     if engine == VACE_ENGINE:
         return prepare_native_vace(root or Path.cwd(), adapter_id=adapter_id, model_path=str(model_path or ''), executable=str(executable or ''), evidence=evidence, creator=creator, license_spdx=license_spdx, license_url=license_url, permitted_uses=permitted_uses, verification_status=verification_status, options=native_options or {})
     if engine == INPAINT_ENGINE:
@@ -355,6 +359,8 @@ def prepare_visual_adapter(
 
 def verify_visual_adapter(adapter: dict[str, Any]) -> dict[str, Any]:
     """Verify registered visual model and runner paths without executing them."""
+    if adapter.get('engine') == LIPSYNC_ENGINE:
+        return verify_lipsync(adapter)
     if adapter.get('engine') == VACE_ENGINE:
         return verify_native_vace(adapter)
     if adapter.get('engine') == INPAINT_ENGINE:

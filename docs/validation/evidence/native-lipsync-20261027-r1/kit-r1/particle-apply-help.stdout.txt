@@ -1,0 +1,35 @@
+usage: ai-ad-editor vfx apply [-h] [--format {json,text}]
+                              [--request-id REQUEST_ID]
+                              [--idempotency-key IDEMPOTENCY_KEY] [--dry-run]
+                              [--no-network] [--progress {none,jsonl}]
+                              --project PROJECT [--sequence-id SEQUENCE_ID]
+                              [--track-id TRACK_ID] [--clip-id CLIP_ID]
+                              (--preset {snow,confetti,embers,bokeh,rain,sparkles} |
+                              --config CONFIG) [--seed SEED]
+                              [--start-tick START_TICK]
+                              --duration-tick DURATION_TICK
+                              [--source-duration-tick SOURCE_DURATION_TICK]
+                              [--enable-native]
+                              [--source-signals SOURCE_SIGNALS]
+
+options:
+  -h, --help            show this help message and exit
+  --format {json,text}  输出格式
+  --request-id REQUEST_ID
+  --idempotency-key IDEMPOTENCY_KEY
+  --dry-run
+  --no-network
+  --progress {none,jsonl}
+  --project PROJECT
+  --sequence-id SEQUENCE_ID
+  --track-id TRACK_ID
+  --clip-id CLIP_ID
+  --preset {snow,confetti,embers,bokeh,rain,sparkles}
+  --config CONFIG       完整粒子源JSON；未知字段会拒绝
+  --seed SEED
+  --start-tick START_TICK
+  --duration-tick DURATION_TICK
+  --source-duration-tick SOURCE_DURATION_TICK
+  --enable-native       明确切换到BT.709线性合成/sRGB交付；已有视觉媒体须给出信号
+  --source-signals SOURCE_SIGNALS
+                        已有视觉媒体的显式 pixel_pipeline.sources JSON

@@ -1,13 +1,13 @@
 ---
 name: agent-ffmpeg-local-editor
-description: "Edit and generate local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, native tracking, explicit PQ/HLG HDR and SDR previews, seeded GPU particles, editable GPU flare/light leaks/chromatic split and highlight Bloom/Halation, GPU text/image/first-last generation with reusable model sessions, semantic search, voice/translation, subtitle dubbing, music/SFX and quality checks. Also use for ads, reference remakes, long-to-short clips and screen demos."
+description: "Edit and generate local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, native CUDA lip sync, tracking, explicit PQ/HLG HDR and SDR previews, seeded GPU particles, editable GPU flare/light leaks/chromatic split and highlight Bloom/Halation, GPU text/image/first-last generation with reusable model sessions, semantic search, voice/translation, subtitle dubbing, music/SFX and quality checks. Also use for ads, reference remakes, long-to-short clips and screen demos."
 ---
 
 # agent editor kit / unified local Skill
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.38` / CLI `0.1.40`.
+The current local runtime is `v0.1.0-alpha.4-local.39` / CLI `0.1.41`.
 Native Float32 GPU operations now use bounded owned control pipes. Read
 [GPU execution](references/projection-gpu.md) for policy, actual operator counts,
 cancellation and process/thread/stream cleanup receipts.
@@ -129,6 +129,11 @@ media. Add other modules when the request needs them. For example:
   Use the registered local CUDA model, explicit image fit and a fresh asset ID;
   inspect generated interior frames separately from retained endpoints, then
   edit the returned video asset normally. Generation is silent and rights need review.
+- Drive an existing face from local speech: read [lip-sync.md](references/lip-sync.md).
+  Select the actual portrait/video and speech assets, author an explicit face box
+  or output-frame keys, inspect the 25FPS/PCM plan, then review real mouth frames
+  and complete audio. Use a new asset ID for recipe reruns and retain the editable
+  video/audio pair. The native CUDA model does not generate a full body performance.
 - Translate and dub reviewed subtitles: read [subtitle-dubbing.md](references/subtitle-dubbing.md).
   Inspect actual complete WAV durations, retain original/retry speech and source/
   translated/bilingual SRTs, then apply to explicit audio/subtitle tracks. Prefer

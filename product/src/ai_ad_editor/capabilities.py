@@ -26,6 +26,22 @@ def build_capability_manifest() -> dict[str, Any]:
         "engine": {"id": ENGINE_ID, "version": VERSION, "runtime": "python+ffmpeg-local", "network": "disabled"},
         "ffmpeg": {"version": ffmpeg_version()},
         "capabilities": {
+            'native_lip_sync': {
+                'status':'implemented_with_limits','protocol':'agent-native-lipsync-v1',
+                'engine':'musetalk-v15-native-cuda-v1',
+                'commands':['lipsync.adapter.register','lipsync.adapter.list','lipsync.adapter.inspect','lipsync.generate'],
+                'features':['actual_MuseTalk_1_5_UNet_Whisper_tiny_VAE_BiSeNet_CUDA','explicit_image_or_video_and_audio_assets',
+                    'output_25fps_face_box_linear_keys','explicit_once_hold_or_full_video_loop','semantic_lower_face_blend',
+                    'straight_alpha_and_outside_region_RGB_preserved','complete_lossless_RGBA_and_PCM_roundtrip',
+                    'portable_rerunnable_recipe','independent_video_and_audio_clips','owned_cancel_timeout_recovery'],
+                'clock':{'video_fps':25,'model_audio_sample_rate':16000,'audio_preservation':'original_decoded_float_PCM_sample_rate_and_channels',
+                    'tail_padding':'less_than_one_video_frame_no_selected_samples_dropped'},
+                'limits':{'trained_face_pixels':[256,256],'duration_seconds':600,'raster_edge_pixels':4096,
+                    'batch_frames':[1,8],'owned_array_bytes':512*1024**2,'maximum_asset_bytes':2*1024**3},
+                'network':False,'model_downloads':False,'CPU_fallback':False,
+                'unsupported':['full_body_pose_or_expression_generation','automatic_face_detection_or_tracking',
+                    'automatic_identity_or_naturalness_acceptance','native_HDR_or_ICC_face_inference','cross_device_bit_determinism',
+                    'full_digital_human_or_CapCut_parity']},
             'highlight_glow': {
                 'status':'implemented_with_limits','protocol':'highlight-derived-separable-float32-glow-v1',
                 'effects':['bloom','halation'],'aliases':['highlight_bloom','film_halation'],

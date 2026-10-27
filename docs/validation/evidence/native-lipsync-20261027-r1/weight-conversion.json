@@ -1,0 +1,24 @@
+[
+  {
+    "source": "upstream/unet.pth",
+    "source_sha256": "7ebf6c98c181e20838e4c0054e96e944ac60d5d692cc01db42839fe11b787007",
+    "path": "unet/diffusion_pytorch_model.safetensors",
+    "sha256": "5dc0b6b747aeccf89afa1e081f3847d722511d67117a90f6cc7557f7324c8b7d",
+    "bytes": 1699979168,
+    "tensors": 686,
+    "precision": "float16",
+    "safetensors_exact": true,
+    "weights_only": true
+  },
+  {
+    "source": "upstream/face-parser.pth",
+    "source_sha256": "468e13ca13a9b43cc0881a9f99083a430e9c0a38abd935431d1c28ee94b26567",
+    "path": "parser/model.safetensors",
+    "sha256": "f8513daf9ddbe17867d4240e98283b16b69bb0555271a971494eb154d0d78990",
+    "bytes": 53271296,
+    "tensors": 191,
+    "precision": "source-precision",
+    "safetensors_exact": true,
+    "weights_only": true
+  }
+]

@@ -943,3 +943,21 @@ Actual registered installed CLI0.1.40 creates a48-frame/12FPS/four-second640×36
 [SDR viewing MP4](../assets/native-hdr-20261027-r3/sdr-preview.mp4) · [PQ10-bit master](../assets/native-hdr-20261027-r3/pq-master.mkv) · [HLG10-bit master](../assets/native-hdr-20261027-r3/hlg-master.mkv) · [Separate SDR trim](../assets/native-hdr-20261027-r3/sdr-master.mkv) · [Editable project](../assets/native-hdr-20261027-r3/editable-native-hdr.aevpkg.zip) · [Actual SDR PNG](../assets/native-hdr-20261027-r3/preview-frame.png) · [Original PQ input](../assets/native-hdr-20261027-r3/source-pq.mkv) · [Original SDR badge](../assets/native-hdr-20261027-r3/source-sdr-badge.png) · [Original stereo tones](../assets/native-hdr-20261027-r3/source-stereo.wav) · [Recipes](../assets/native-hdr-20261027-r3/recipes.json) · [Source/license](../assets/native-hdr-20261027-r3/SOURCE.txt) · [Media manifest](../assets/native-hdr-20261027-r3/media-manifest.json)
 
 [Usage](HDR_DISPLAY.md) · [Evidence](../validation/HDR显示光实测_2026-10-27.md). MP4/GIF/PNG are explicit SDR previews using the declared modified-Reinhard mapping, not evidence of HDR monitor quality. Original PQ/HLG masters retain their matching actual10-bit pixel/VUI boundaries. Synthetic charts/tones are CC0; source scripts and algorithms are MIT. No continuous human playback/listening, natural-footage acceptance, display calibration or full product parity is claimed.
+
+<a id="c51-native-lip-sync"></a>
+
+## C51 · 本地神经口型 / 本機神經口型 / Native neural lip sync
+
+实际注册的 CLI0.1.41/单入口 Skill，在 RTX3060 上执行 MuseTalk1.5、Whisper-tiny、SD VAE 与 BiSeNet。原图为本机 Wan2.1 VACE1.3B 生成的虚构成年人物，语音为 CUDA Kokoro 合成普通话，无真人参考。生成 **512×512、133帧/25FPS/5.32秒** RGBA母版；完整126795个原始Float32 PCM标量保留，仅尾部增加885个静音样本（36.875ms）。全部透明度、人脸框外及alpha0隐藏RGB保留。视频/音频为可独立编辑的关联片段，配方可更改种子或素材重跑。
+
+本機實測亦包含30影格/1.2秒移動來源和人臉框關鍵影格。逐影格透明度及框外RGB完全保留。真正CUDA推理開始輸出影格後觸發取消：三個自有子程序全數退出、工程中繼資料回滾，無半成品資產或工作目錄，診斷保留。
+
+Actual installed CUDA inference, not a synthetic worker. Full package reimport preserves every master byte and rerunnable recipe; complete rendered RGBA and decoded PCM match. The neural master/GIF use25FPS (133frames/5320ms). The ordinary project export uses its default30FPS (160frames/5.333333s), recorded separately. The editable package contains the initial portrait/speech result; moving-video source, key plan and result are separate companion files.
+
+![All actual master frames, source versus neural output](../assets/native-lipsync-20261027-r1/comparison.gif)
+
+[Playable speech MP4](../assets/native-lipsync-20261027-r1/spoken.mp4) · [Editable initial project + lossless master](../assets/native-lipsync-20261027-r1/editable-lipsync.aevpkg.zip) · [Original generated portrait](../assets/native-lipsync-20261027-r1/portrait-base.png) · [Diagnostic RGBA input](../assets/native-lipsync-20261027-r1/portrait.png) · [Complete synthetic speech](../assets/native-lipsync-20261027-r1/speech.wav) · [First](../assets/native-lipsync-20261027-r1/frame-first.png) · [Middle](../assets/native-lipsync-20261027-r1/frame-middle.png) · [Last](../assets/native-lipsync-20261027-r1/frame-last.png)
+
+[Moving input](../assets/native-lipsync-20261027-r1/moving-source.mov) · [Moving box keys](../assets/native-lipsync-20261027-r1/moving-boxes.json) · [Moving output MP4](../assets/native-lipsync-20261027-r1/moving-spoken.mp4) · [Source/provenance](../assets/native-lipsync-20261027-r1/SOURCE.txt) · [All media hashes](../assets/native-lipsync-20261027-r1/media-manifest.json) · [Workflow and dependencies](LIP_SYNC.md) · [Detailed evidence](../validation/本地神经口型实测_2026-10-27.md).
+
+First/middle/last stills visibly vary the mouth; generated lower-face detail is softer than the source. No continuous human playback, listening, naturalness, perceptual synchronization, identity/occlusion, full-body performance, HDR inference or complete digital-human/product acceptance is claimed. Source, voice, model and generated-asset rights remain separate. The model's trained face raster is256×256; explicit boxes require shot review.

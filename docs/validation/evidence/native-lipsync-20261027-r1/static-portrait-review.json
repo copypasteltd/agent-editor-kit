@@ -1,0 +1,20 @@
+{
+  "status": "reviewed",
+  "at_utc": "2026-10-27T06:58:41.659430+00:00",
+  "reviewer": "Codex visual inspection of actual local images",
+  "files": {
+    "frame-first.png": "6fada96ad9dd25c74b06d9cc87a366bc20cfd55e795445fc59c9173a058ae31a",
+    "frame-middle.png": "ddd9477bce03f5f2b07527eb05c14a76f75b077cb7f0a949976e7368b9f9a87f",
+    "frame-last.png": "a8893addace192cb037376e210c7555b1e6973468232f4863678568aa6c2d53e"
+  },
+  "observations": [
+    "Visible open/closed mouth variation in sampled frames.",
+    "Face patch is softer than source, especially lower cheeks/mouth.",
+    "Hair, shirt, background and frame boundaries appear stable in sampled comparisons."
+  ],
+  "scope": "Three still comparisons only; complete pixel/PCM invariants are separately machine-checked.",
+  "continuous_human_playback": false,
+  "human_listening": false,
+  "perceptual_sync_accepted": false,
+  "natural_quality_accepted": false
+}

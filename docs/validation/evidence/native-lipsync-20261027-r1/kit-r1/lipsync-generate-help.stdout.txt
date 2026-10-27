@@ -1,0 +1,61 @@
+usage: ai-ad-editor lipsync generate [-h] [--format {json,text}]
+                                     [--request-id REQUEST_ID]
+                                     [--idempotency-key IDEMPOTENCY_KEY]
+                                     [--dry-run] [--no-network]
+                                     [--progress {none,jsonl}]
+                                     --project PROJECT --adapter-id ADAPTER_ID
+                                     --asset-id ASSET_ID
+                                     [--source-asset-id SOURCE_ASSET_ID]
+                                     [--audio-asset-id AUDIO_ASSET_ID]
+                                     [--recipe-asset-id RECIPE_ASSET_ID]
+                                     [--face-box X0 Y0 X1 Y1 |
+                                     --boxes-file BOXES_FILE]
+                                     [--audio-start-seconds AUDIO_START_SECONDS]
+                                     [--audio-end-seconds AUDIO_END_SECONDS]
+                                     [--source-start-seconds SOURCE_START_SECONDS]
+                                     [--source-end-seconds SOURCE_END_SECONDS]
+                                     [--mask-top MASK_TOP]
+                                     [--feather-pixels FEATHER_PIXELS]
+                                     [--source-mode {once,hold,loop}]
+                                     [--seed SEED]
+                                     [--storage-budget-mib STORAGE_BUDGET_MIB]
+                                     [--timeout-seconds TIMEOUT_SECONDS]
+                                     [--cancel-file CANCEL_FILE] [--apply]
+                                     [--sequence-id SEQUENCE_ID]
+                                     [--video-track-id VIDEO_TRACK_ID]
+                                     [--audio-track-id AUDIO_TRACK_ID]
+                                     [--timeline-start-seconds TIMELINE_START_SECONDS]
+
+options:
+  -h, --help            show this help message and exit
+  --format {json,text}  输出格式
+  --request-id REQUEST_ID
+  --idempotency-key IDEMPOTENCY_KEY
+  --dry-run
+  --no-network
+  --progress {none,jsonl}
+  --project PROJECT
+  --adapter-id ADAPTER_ID
+  --asset-id ASSET_ID
+  --source-asset-id SOURCE_ASSET_ID
+  --audio-asset-id AUDIO_ASSET_ID
+  --recipe-asset-id RECIPE_ASSET_ID
+                        复用既有口型配方，参数可显式覆盖；新输出须使用新asset-id
+  --face-box X0 Y0 X1 Y1
+  --boxes-file BOXES_FILE
+  --audio-start-seconds AUDIO_START_SECONDS
+  --audio-end-seconds AUDIO_END_SECONDS
+  --source-start-seconds SOURCE_START_SECONDS
+  --source-end-seconds SOURCE_END_SECONDS
+  --mask-top MASK_TOP
+  --feather-pixels FEATHER_PIXELS
+  --source-mode {once,hold,loop}
+  --seed SEED
+  --storage-budget-mib STORAGE_BUDGET_MIB
+  --timeout-seconds TIMEOUT_SECONDS
+  --cancel-file CANCEL_FILE
+  --apply
+  --sequence-id SEQUENCE_ID
+  --video-track-id VIDEO_TRACK_ID
+  --audio-track-id AUDIO_TRACK_ID
+  --timeline-start-seconds TIMELINE_START_SECONDS

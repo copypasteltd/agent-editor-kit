@@ -1,0 +1,16 @@
+{
+  "upstream_commit": "0a89dec45a0192b824e3cf4daf96c239440c5ed8",
+  "source_files": [
+    {
+      "path": "resnet.py",
+      "sha256": "a3419dabeff41c535e24f4d056b054c1bfc70d56f9ee430808b440005cc3189f"
+    },
+    {
+      "path": "model.py",
+      "sha256": "05d69d1bd77fbca7b537602fe3f7851e8b2e1a3ea0279f383b4223598157e2d2"
+    }
+  ],
+  "product_sha256": "e2b3bb268b08fe17309102bbbb9cbe95958efe4de182ad4d0d218352198ed779",
+  "modified": "merged architecture; no pickle/backbone loads or training helpers",
+  "license": "MIT"
+}

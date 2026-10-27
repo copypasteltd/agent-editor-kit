@@ -1778,3 +1778,15 @@ scripts/*hdr*20261027.py text eol=lf
 docs/product/HDR_DISPLAY.md text eol=lf
 docs/releases/CLI_0.1.40_LOCAL.md text eol=lf
 docs/validation/HDR显示光实测_2026-10-27.md text eol=lf
+
+# Native lip-sync receipts and upstream/legal captures retain their exact bytes.
+docs/validation/evidence/native-lipsync-20261027-r1/** -text -whitespace
+docs/assets/native-lipsync-20261027-*/** -text whitespace=cr-at-eol
+docs/product/lip-sync-capabilities-cli-0.1.41.json -text -whitespace
+product/src/ai_ad_editor/LIPSYNC_LICENSES.txt -text -whitespace
+# Preserve the pinned MIT parser graph's final blank line without altering code.
+product/src/ai_ad_editor/lipsync_parser.py whitespace=-blank-at-eof
+scripts/*lipsync*20261027.py text eol=lf
+docs/product/LIP_SYNC.md text eol=lf
+docs/releases/CLI_0.1.41_LOCAL.md text eol=lf
+docs/validation/本地神经口型实测_2026-10-27.md text eol=lf

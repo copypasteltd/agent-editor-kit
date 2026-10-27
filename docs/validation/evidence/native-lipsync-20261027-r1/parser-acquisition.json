@@ -1,0 +1,62 @@
+{
+  "_id": "661b239420b47b0dad89093b",
+  "id": "ManyOtherFunctions/face-parse-bisent",
+  "private": false,
+  "tags": [
+    "license:wtfpl",
+    "region:us"
+  ],
+  "downloads": 0,
+  "likes": 3,
+  "modelId": "ManyOtherFunctions/face-parse-bisent",
+  "author": "ManyOtherFunctions",
+  "sha": "0073b233a5a3c4b1377d4dbf49245017938a72b5",
+  "lastModified": "2024-04-25T05:34:23.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "license": "wtfpl"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+      "size": 1519
+    },
+    {
+      "rfilename": "79999_iter.pth",
+      "blobId": "ca57f3257ca7715bc340d065764bc249d985c287",
+      "size": 53289463,
+      "lfs": {
+        "sha256": "468e13ca13a9b43cc0881a9f99083a430e9c0a38abd935431d1c28ee94b26567",
+        "size": 53289463,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "167c11127b46e209e181b5d2c848d49449fcd531",
+      "size": 138
+    },
+    {
+      "rfilename": "resnet18-5c106cde.pth",
+      "blobId": "f432c3ad51f84df5837f2f38ac7972e6c2a15503",
+      "size": 46827520,
+      "lfs": {
+        "sha256": "5c106cde386e87d4033832f2996f5493238eda96ccf559d1d62760c4de0613f8",
+        "size": 46827520,
+        "pointerSize": 133
+      }
+    }
+  ],
+  "spaces": [
+    "build-small-hackathon/ai-avatar-assistant",
+    "Bread-F/Intelligent-Medical-Guidance-Large-Model",
+    "eshwar06/personaxgemini",
+    "loki5545/personaxgemini"
+  ],
+  "createdAt": "2024-04-14T00:30:12.000Z",
+  "usedStorage": 100116983
+}

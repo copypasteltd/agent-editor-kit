@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.40 / alpha.4-local.38 / r41 kit · 1 Skill / 17 modules / 79 files.**
+**CLI0.1.41 / alpha.4-local.39 / r42 kit · 1 Skill / 17 modules / 80 files.**
 
-新增**原生 PQ／HLG HDR 信号、明确 nit 单位、10-bit BT.2020 交付和独立 SDR 预览**。HLG 包含 RGB 联动 OOTF；不同参考白的 SDR 图形与 HDR 高光可在线性光域合成。明确选择输入／输出截断、SDR 映射及其色域策略，保留作者时钟、效果和可编辑工程。
+新增**真实本地 CUDA 神经口型同步**：使用 MuseTalk 1.5、Whisper-tiny、VAE 和 BiSeNet，让指定图片／视频随独立语音生成口型。支持25FPS人脸框关键帧、完整PCM保留、可重跑配方，以及分别可编辑的视频／音频关联片段。
 
-[HDR workflow and constraints](../product/HDR_DISPLAY.md)
+[Neural lip-sync workflow and limits](../product/LIP_SYNC.md)
 
 <!-- /community-current -->
 

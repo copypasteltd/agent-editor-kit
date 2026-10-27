@@ -1,0 +1,1006 @@
+{
+  "at_utc": "2026-10-27T05:27:30.828684+00:00",
+  "github_commit": "0a89dec45a0192b824e3cf4daf96c239440c5ed8",
+  "transport_endpoint": "https://hf-mirror.com",
+  "models": {
+    "TMElyralab/MuseTalk": {
+      "_id": "660b86ba8695a785ed1e344c",
+      "id": "TMElyralab/MuseTalk",
+      "private": false,
+      "tags": [
+        "en",
+        "license:mit",
+        "region:us"
+      ],
+      "downloads": 0,
+      "likes": 170,
+      "modelId": "TMElyralab/MuseTalk",
+      "author": "TMElyralab",
+      "sha": "2bcb936e2fddb4d86db4c62fd45b387d0c061571",
+      "lastModified": "2026-09-22T03:56:47.000Z",
+      "gated": false,
+      "disabled": false,
+      "model-index": null,
+      "config": {},
+      "cardData": {
+        "license": "mit",
+        "language": [
+          "en"
+        ]
+      },
+      "siblings": [
+        {
+          "rfilename": ".gitattributes",
+          "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+          "size": 1519
+        },
+        {
+          "rfilename": "LICENSE.txt",
+          "blobId": "132bf6fc803b84b40fee6c2132907dfaa396dc3b",
+          "size": 13427
+        },
+        {
+          "rfilename": "README.md",
+          "blobId": "9eb8d3b4b6b23938e13c4d637be28e596c89a83f",
+          "size": 11127
+        },
+        {
+          "rfilename": "musetalk/musetalk.json",
+          "blobId": "b822db87e503a283fbbee73617f89dcd294cb91c",
+          "size": 748
+        },
+        {
+          "rfilename": "musetalk/pytorch_model.bin",
+          "blobId": "47380c1e7002ad96eae4dab43d64958abcd5fed3",
+          "size": 3400076549,
+          "lfs": {
+            "sha256": "0ee7d5ea03ea75d8dca50ea7a76df791e90633687a135c4a69393abfc0475ffe",
+            "size": 3400076549,
+            "pointerSize": 135
+          }
+        },
+        {
+          "rfilename": "musetalkV15/musetalk.json",
+          "blobId": "b822db87e503a283fbbee73617f89dcd294cb91c",
+          "size": 748
+        },
+        {
+          "rfilename": "musetalkV15/unet.pth",
+          "blobId": "ad33c410815bf12300e8cac58b10255df3e61d88",
+          "size": 3400074924,
+          "lfs": {
+            "sha256": "7ebf6c98c181e20838e4c0054e96e944ac60d5d692cc01db42839fe11b787007",
+            "size": 3400074924,
+            "pointerSize": 135
+          }
+        }
+      ],
+      "spaces": [
+        "fffiloni/LatentSync",
+        "shaiksuleman81/musetalk-interviewer",
+        "TMElyralab/MuseTalk",
+        "SunderAli17/LatentSync",
+        "Dwight009/MuseTal",
+        "svjack/LatentSync_ver_1_6",
+        "build-small-hackathon/ai-avatar-assistant",
+        "Arkuuu777/LatentSync",
+        "codewdhruv/latent-sync-testing",
+        "sk61tc4j53obiq/lipsmusemodel",
+        "anhhayghen/dopgiongnoi",
+        "anhhayghen/MuseTalkV",
+        "Hyathi/SoundImage-LipSync",
+        "dominic1021/LatentSync",
+        "raulmmorais/LatentSync",
+        "welher/LatentSync",
+        "Nuzhatwa/_my_lip_sync_tool_",
+        "thebuzzlydotcom/MuseTalk",
+        "VIDraft/korean-talking-avatar",
+        "Bread-F/Intelligent-Medical-Guidance-Large-Model",
+        "Nymbo/LatentSync",
+        "Francke/LatentSync",
+        "AniruddhaChattopadhyay/LatentSync",
+        "muchaco/LatentSync",
+        "David960/LatentSync",
+        "TechSmashers/LatentSync",
+        "bkoos/LatentSync",
+        "Ascetu/LatentSync",
+        "svjack/LatentSync",
+        "HiPeking/latentSync",
+        "Spanicin/aiavatarnew",
+        "Moon11111/avatar",
+        "aobatroz/LatentSync",
+        "Moon11111/Avatar2.0",
+        "bep40/LatentSync",
+        "talipturkmen/LatentSync",
+        "jcsancho/LatentSync2",
+        "muhammad-mobeen/LatentSync",
+        "mervebyrk/MuseTal",
+        "e-commint/MuseTal",
+        "JLLG/LatentSync",
+        "faizhashmi614/MusetalkLivekitSetup",
+        "eugenepiggy/LatentSync",
+        "Spanicin/cacauavatar",
+        "oKen38461/M2TlatentSync",
+        "LennyInTech/LatentSync",
+        "xxcttn/LatentSync",
+        "xxcttn/LatentSync3",
+        "Carlex40/LatentSync",
+        "Flux9665/LatentSync",
+        "linuxkali/Lipsync",
+        "segestic/MusetalkLive",
+        "mahmoudelembaby/LatentSync",
+        "EUIA/LatentSync_ver_1_6",
+        "sk61tc4j53obiq/MuseTalkVM",
+        "lionfxxx/LatentSync",
+        "honeisunnie/LatentSync",
+        "caoxuandungecom/LatentSync-1.6",
+        "caoxuandungecom/LatentSync_ver_1_6",
+        "hoanganh1233/LatentSync_ver_1_6",
+        "hoanganh1233/LatentSync",
+        "t3chjames/LatentSync",
+        "PILOTOZL/LatentSync2",
+        "scratchyourbrain123/MuseTalk",
+        "eshwar06/lipsmusemodel1",
+        "some1priv/main",
+        "sjk4367/MuseTalk",
+        "muaffaq/LatentSync",
+        "edabdoub/LatentSync",
+        "Marllybonz/LatentSync",
+        "gaston2025/LatentSync",
+        "evreg15/LatentSync",
+        "jnrlucci/LatentSync",
+        "wisdomuk/LatentSync",
+        "kkkkghf/LatentSync",
+        "Semibit/LatentSync",
+        "yoplay/LatentSync",
+        "johnnybs/LatentSync-1.6",
+        "Nzucn/LatentSyncnzu",
+        "djadrianobotelho/LatentSync",
+        "MonaddAI/LatentSync-uncut-infinity-long-lip-syncing",
+        "dasddasdsadsad/LatentSync",
+        "dasddasdsadsad/LatentSync2",
+        "JAJANGAV/LatentSync",
+        "anisaash/LatentSync",
+        "comprasitsmo/LatentSync_propio",
+        "FloatinggOnion/LatentSync",
+        "peterlllmm/LatentSync",
+        "naicoi/lipsync-docker",
+        "eshwar06/personaxgemini",
+        "loki5545/personaxgemini",
+        "Alex11039/LatentSync",
+        "vdmpeniel/LatentSync",
+        "salitha21/LatentSync",
+        "sokhei3d/LatentSync",
+        "Bohdanio2408/LIP_SYNC_FACTORY_SKETCH",
+        "Tanjalein/LatentSync",
+        "prakhar-adaf/LatentSync",
+        "DemonSaint/MuseTalk",
+        "nexusnephro/LatentSync"
+      ],
+      "createdAt": "2024-04-02T04:16:58.000Z",
+      "usedStorage": 6805519471
+    },
+    "stabilityai/sd-vae-ft-mse": {
+      "_id": "634809aff8823e10755f8e60",
+      "id": "stabilityai/sd-vae-ft-mse",
+      "private": false,
+      "library_name": "diffusers",
+      "tags": [
+        "diffusers",
+        "safetensors",
+        "stable-diffusion",
+        "stable-diffusion-diffusers",
+        "license:mit",
+        "region:us"
+      ],
+      "downloads": 252275,
+      "likes": 418,
+      "modelId": "stabilityai/sd-vae-ft-mse",
+      "author": "stabilityai",
+      "sha": "31f26fdeee1355a5c34592e401dd41e45d25a493",
+      "lastModified": "2023-06-06T11:39:15.000Z",
+      "gated": false,
+      "disabled": false,
+      "model-index": null,
+      "config": {},
+      "cardData": {
+        "license": "mit",
+        "tags": [
+          "stable-diffusion",
+          "stable-diffusion-diffusers"
+        ],
+        "inference": false
+      },
+      "siblings": [
+        {
+          "rfilename": ".gitattributes",
+          "blobId": "99f243ff7947dfc5afddaf3d818da3d0124d5ca2",
+          "size": 1456
+        },
+        {
+          "rfilename": "README.md",
+          "blobId": "61d3c7cf571c574a406544612b857ac1b26f4439",
+          "size": 6844
+        },
+        {
+          "rfilename": "config.json",
+          "blobId": "0db26717579be63eb0ddbf15b43faa43700dfe5a",
+          "size": 547
+        },
+        {
+          "rfilename": "diffusion_pytorch_model.bin",
+          "blobId": "ba36f34d64ad3be997b7cab94b0b9acd61272851",
+          "size": 334707217,
+          "lfs": {
+            "sha256": "1b4889b6b1d4ce7ae320a02dedaeff1780ad77d415ea0d744b476155c6377ddc",
+            "size": 334707217,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "diffusion_pytorch_model.safetensors",
+          "blobId": "90464d67ac7303d0ee4696334df13da130a948ea",
+          "size": 334643276,
+          "lfs": {
+            "sha256": "a1d993488569e928462932c8c38a0760b874d166399b14414135bd9c42df5815",
+            "size": 334643276,
+            "pointerSize": 134
+          }
+        }
+      ],
+      "spaces": [
+        "FlameF0X/Tiny-T2I-Arena",
+        "fffiloni/LatentSync",
+        "shaiksuleman81/musetalk-interviewer",
+        "Maxilicious20/EchoVision-Playground",
+        "AP123/IllusionDiffusion",
+        "zcxu-eric/magicanimate",
+        "multimodalart/Ip-Adapter-FaceID",
+        "lnyan/stablediffusion-infinity",
+        "editing-images/leditsplusplus",
+        "fantaxy/Sound-AI-SFX",
+        "zhengchong/CatVTON",
+        "xunsong/Moore-AnimateAnyone",
+        "LanguageBind/Open-Sora-Plan-v1.0.0",
+        "unity/IP-Adapter-Instruct",
+        "1aurent/TryOffAnyone",
+        "fffiloni/echomimic-v2",
+        "fffiloni/DiffuEraser-demo",
+        "TMElyralab/MuseTalk",
+        "LanguageBind/Open-Sora-Plan-v1.1.0",
+        "feishen29/IMAGDressing-v1",
+        "Sony/genwarp",
+        "rizavelioglu/vae-comparison",
+        "wpeebles/DiT",
+        "rizavelioglu/tryoffdiff",
+        "fffiloni/Open-Sora-Plan-v1-0-0",
+        "naver-ai/VisualStylePrompting",
+        "fffiloni/MEMO",
+        "andyaii/IllusionDiffusion",
+        "ghoskno/ColorCanny-Controlnet",
+        "FaceAdapter/FaceAdapter",
+        "naver-ai/VisualStylePrompting_Controlnet",
+        "kinsung/qraf",
+        "Fabrice-TIERCELIN/Text-to-Audio",
+        "FQiao/GenStereo",
+        "jhj0517/musepose",
+        "ironbar/IP-Adapter-FaceID-Plus",
+        "samir-fama/Image-Adapter-With-Face-ID",
+        "svjack/Moore-AnimateAnyone",
+        "yizhezhu/MoMA_zeroGPU",
+        "SupraLabs/supra2-img-demo",
+        "HusseinHE/psis",
+        "Deadmon/Ip-Adapter-FaceID",
+        "HikariDawn/This-and-That",
+        "yizhezhu/MoMA_demo",
+        "fantaxy/musepose",
+        "MohamedTalaat91/Image-Adapter-With-Face-ID",
+        "shgao/MDT",
+        "John6666/magicanimate",
+        "John6666/magicanimate2024",
+        "cocktailpeanut/Open-Sora-Plan-v1-0-0",
+        "cbensimon/magicanimate",
+        "measmonysuon/IllusionDiffusion",
+        "bradarrML/stablediffusion-infinity",
+        "PKUWilliamYang/FRESCO",
+        "SunderAli17/LatentSync",
+        "ErasmoAA/illusiondiffusionsEAA",
+        "Imosu/Sound-AI-SFX",
+        "ixarchakos/TryOffAnyone",
+        "Dwight009/MuseTal",
+        "svjack/LatentSync_ver_1_6",
+        "yuxinjiang11/Anomagic",
+        "BenchLabs/Demo-FAST",
+        "preran123/silhouette-studio",
+        "rwitz/Supra2-IMG-Demo",
+        "svjack/musepose",
+        "huzey/VibeSpace",
+        "BenchLabs/Demo",
+        "xiaoyao9184/reverse-from-synthid",
+        "bigslime/stablediffusion-infinity",
+        "ahmedghani/Editing-Tools",
+        "LightningDrag/LightningDrag",
+        "build-small-hackathon/ai-avatar-assistant",
+        "PirateHFH/IllusionDiffusion",
+        "amazonaws-la/zapatic",
+        "amazonaws-la/zapatic4",
+        "sidd-genmo/Open-Sora-Plan-v1.0.0",
+        "Neurify/IllusionDiffusion",
+        "Gyufyjk/magicanimate",
+        "K00B404/AnimateDiff-Lightning",
+        "K00B404/chatQwenne",
+        "decodingchris/LatComp",
+        "Arkuuu777/LatentSync",
+        "codewdhruv/latent-sync-testing",
+        "VLAI-AIVN/AIO2024M09_Project_Emoji_Generation",
+        "i0switch/my-image-generation",
+        "Froleptan/stablediffusion-infinity",
+        "Jeremygrd/IllusionDiffusion",
+        "dhanilka/illusion-image-ai",
+        "Joeythemonster/IllusionDiffusionhq",
+        "cocktailpeanut/leditsplusplus",
+        "vakilrathod67/nacho",
+        "yxbob/h94-IP-Adapter-FaceID",
+        "amazonaws-la/zapatic1",
+        "vittore/pattern-into-image",
+        "loooooong/StableGarment",
+        "khawir/cg-gen-ai",
+        "anhhayghen/dopgiongnoi",
+        "cbensimon/IllusionDiffusion3",
+        "seawolf2357/facefix",
+        "anhhayghen/MuseTalkV"
+      ],
+      "createdAt": "2022-10-13T12:50:55.000Z",
+      "safetensors": {
+        "parameters": {
+          "F32": 83653863
+        },
+        "total": 83653863
+      },
+      "usedStorage": 669350493
+    },
+    "openai/whisper-tiny": {
+      "_id": "63314bb6acb6472115aa55a9",
+      "id": "openai/whisper-tiny",
+      "private": false,
+      "pipeline_tag": "automatic-speech-recognition",
+      "library_name": "transformers",
+      "tags": [
+        "transformers",
+        "pytorch",
+        "tf",
+        "jax",
+        "safetensors",
+        "whisper",
+        "automatic-speech-recognition",
+        "audio",
+        "hf-asr-leaderboard",
+        "en",
+        "zh",
+        "de",
+        "es",
+        "ru",
+        "ko",
+        "fr",
+        "ja",
+        "pt",
+        "tr",
+        "pl",
+        "ca",
+        "nl",
+        "ar",
+        "sv",
+        "it",
+        "id",
+        "hi",
+        "fi",
+        "vi",
+        "he",
+        "uk",
+        "el",
+        "ms",
+        "cs",
+        "ro",
+        "da",
+        "hu",
+        "ta",
+        "no",
+        "th",
+        "ur",
+        "hr",
+        "bg",
+        "lt",
+        "la",
+        "mi",
+        "ml",
+        "cy",
+        "sk",
+        "te",
+        "fa",
+        "lv",
+        "bn",
+        "sr",
+        "az",
+        "sl",
+        "kn",
+        "et",
+        "mk",
+        "br",
+        "eu",
+        "is",
+        "hy",
+        "ne",
+        "mn",
+        "bs",
+        "kk",
+        "sq",
+        "sw",
+        "gl",
+        "mr",
+        "pa",
+        "si",
+        "km",
+        "sn",
+        "yo",
+        "so",
+        "af",
+        "oc",
+        "ka",
+        "be",
+        "tg",
+        "sd",
+        "gu",
+        "am",
+        "yi",
+        "lo",
+        "uz",
+        "fo",
+        "ht",
+        "ps",
+        "tk",
+        "nn",
+        "mt",
+        "sa",
+        "lb",
+        "my",
+        "bo",
+        "tl",
+        "mg",
+        "as",
+        "tt",
+        "haw",
+        "ln",
+        "ha",
+        "ba",
+        "jw",
+        "su",
+        "arxiv:2212.04356",
+        "license:apache-2.0",
+        "model-index",
+        "endpoints_compatible",
+        "deploy:sagemaker",
+        "deploy:azure",
+        "region:us"
+      ],
+      "downloads": 700902,
+      "likes": 471,
+      "modelId": "openai/whisper-tiny",
+      "author": "openai",
+      "sha": "169d4a4341b33bc18d8881c4b69c2e104e1cc0af",
+      "lastModified": "2024-02-29T10:57:33.000Z",
+      "gated": false,
+      "disabled": false,
+      "widgetData": [
+        {
+          "example_title": "Librispeech sample 1",
+          "src": "https://cdn-media.huggingface.co/speech_samples/sample1.flac"
+        },
+        {
+          "example_title": "Librispeech sample 2",
+          "src": "https://cdn-media.huggingface.co/speech_samples/sample2.flac"
+        }
+      ],
+      "model-index": [
+        {
+          "name": "whisper-tiny",
+          "results": [
+            {
+              "task": {
+                "name": "Automatic Speech Recognition",
+                "type": "automatic-speech-recognition"
+              },
+              "dataset": {
+                "name": "LibriSpeech (clean)",
+                "type": "librispeech_asr",
+                "config": "clean",
+                "split": "test",
+                "args": {
+                  "language": "en"
+                }
+              },
+              "metrics": [
+                {
+                  "name": "Test WER",
+                  "type": "wer",
+                  "value": 7.54,
+                  "verified": false
+                }
+              ]
+            },
+            {
+              "task": {
+                "name": "Automatic Speech Recognition",
+                "type": "automatic-speech-recognition"
+              },
+              "dataset": {
+                "name": "LibriSpeech (other)",
+                "type": "librispeech_asr",
+                "config": "other",
+                "split": "test",
+                "args": {
+                  "language": "en"
+                }
+              },
+              "metrics": [
+                {
+                  "name": "Test WER",
+                  "type": "wer",
+                  "value": 17.15,
+                  "verified": false
+                }
+              ]
+            },
+            {
+              "task": {
+                "name": "Automatic Speech Recognition",
+                "type": "automatic-speech-recognition"
+              },
+              "dataset": {
+                "name": "Common Voice 11.0",
+                "type": "mozilla-foundation/common_voice_11_0",
+                "config": "hi",
+                "split": "test",
+                "args": {
+                  "language": "hi"
+                }
+              },
+              "metrics": [
+                {
+                  "name": "Test WER",
+                  "type": "wer",
+                  "value": 141,
+                  "verified": false
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "config": {
+        "architectures": [
+          "WhisperForConditionalGeneration"
+        ],
+        "model_type": "whisper",
+        "tokenizer_config": {
+          "bos_token": "<|endoftext|>",
+          "eos_token": "<|endoftext|>",
+          "pad_token": "<|endoftext|>",
+          "unk_token": "<|endoftext|>"
+        }
+      },
+      "cardData": {
+        "language": [
+          "en",
+          "zh",
+          "de",
+          "es",
+          "ru",
+          "ko",
+          "fr",
+          "ja",
+          "pt",
+          "tr",
+          "pl",
+          "ca",
+          "nl",
+          "ar",
+          "sv",
+          "it",
+          "id",
+          "hi",
+          "fi",
+          "vi",
+          "he",
+          "uk",
+          "el",
+          "ms",
+          "cs",
+          "ro",
+          "da",
+          "hu",
+          "ta",
+          "no",
+          "th",
+          "ur",
+          "hr",
+          "bg",
+          "lt",
+          "la",
+          "mi",
+          "ml",
+          "cy",
+          "sk",
+          "te",
+          "fa",
+          "lv",
+          "bn",
+          "sr",
+          "az",
+          "sl",
+          "kn",
+          "et",
+          "mk",
+          "br",
+          "eu",
+          "is",
+          "hy",
+          "ne",
+          "mn",
+          "bs",
+          "kk",
+          "sq",
+          "sw",
+          "gl",
+          "mr",
+          "pa",
+          "si",
+          "km",
+          "sn",
+          "yo",
+          "so",
+          "af",
+          "oc",
+          "ka",
+          "be",
+          "tg",
+          "sd",
+          "gu",
+          "am",
+          "yi",
+          "lo",
+          "uz",
+          "fo",
+          "ht",
+          "ps",
+          "tk",
+          "nn",
+          "mt",
+          "sa",
+          "lb",
+          "my",
+          "bo",
+          "tl",
+          "mg",
+          "as",
+          "tt",
+          "haw",
+          "ln",
+          "ha",
+          "ba",
+          "jw",
+          "su"
+        ],
+        "tags": [
+          "audio",
+          "automatic-speech-recognition",
+          "hf-asr-leaderboard"
+        ],
+        "widget": [
+          {
+            "example_title": "Librispeech sample 1",
+            "src": "https://cdn-media.huggingface.co/speech_samples/sample1.flac"
+          },
+          {
+            "example_title": "Librispeech sample 2",
+            "src": "https://cdn-media.huggingface.co/speech_samples/sample2.flac"
+          }
+        ],
+        "model-index": [
+          {
+            "name": "whisper-tiny",
+            "results": [
+              {
+                "task": {
+                  "name": "Automatic Speech Recognition",
+                  "type": "automatic-speech-recognition"
+                },
+                "dataset": {
+                  "name": "LibriSpeech (clean)",
+                  "type": "librispeech_asr",
+                  "config": "clean",
+                  "split": "test",
+                  "args": {
+                    "language": "en"
+                  }
+                },
+                "metrics": [
+                  {
+                    "name": "Test WER",
+                    "type": "wer",
+                    "value": 7.54,
+                    "verified": false
+                  }
+                ]
+              },
+              {
+                "task": {
+                  "name": "Automatic Speech Recognition",
+                  "type": "automatic-speech-recognition"
+                },
+                "dataset": {
+                  "name": "LibriSpeech (other)",
+                  "type": "librispeech_asr",
+                  "config": "other",
+                  "split": "test",
+                  "args": {
+                    "language": "en"
+                  }
+                },
+                "metrics": [
+                  {
+                    "name": "Test WER",
+                    "type": "wer",
+                    "value": 17.15,
+                    "verified": false
+                  }
+                ]
+              },
+              {
+                "task": {
+                  "name": "Automatic Speech Recognition",
+                  "type": "automatic-speech-recognition"
+                },
+                "dataset": {
+                  "name": "Common Voice 11.0",
+                  "type": "mozilla-foundation/common_voice_11_0",
+                  "config": "hi",
+                  "split": "test",
+                  "args": {
+                    "language": "hi"
+                  }
+                },
+                "metrics": [
+                  {
+                    "name": "Test WER",
+                    "type": "wer",
+                    "value": 141,
+                    "verified": false
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "pipeline_tag": "automatic-speech-recognition",
+        "license": "apache-2.0"
+      },
+      "transformersInfo": {
+        "auto_model": "AutoModelForSpeechSeq2Seq",
+        "pipeline_tag": "automatic-speech-recognition",
+        "processor": "AutoProcessor"
+      },
+      "siblings": [
+        {
+          "rfilename": ".gitattributes",
+          "blobId": "3476589a58942b0e9ef94ae0efb29355707f95bb",
+          "size": 1438
+        },
+        {
+          "rfilename": "README.md",
+          "blobId": "0ebbf1f524ea117e0fd826f593cde4be3897f70f",
+          "size": 19787
+        },
+        {
+          "rfilename": "added_tokens.json",
+          "blobId": "e3d256c988462aa153dcabe2aa38b8e9b436c06f",
+          "size": 34604
+        },
+        {
+          "rfilename": "config.json",
+          "blobId": "417aa9de49a132dd3eb6a56d3be2718b15f08917",
+          "size": 1983
+        },
+        {
+          "rfilename": "flax_model.msgpack",
+          "blobId": "50c61f83a376325e956b45587edbe01de01c5cda",
+          "size": 151048591,
+          "lfs": {
+            "sha256": "a695f537d9f018eb43a9eb05bc22f4524351061bbf2890b2c01ac9b51b43ff4e",
+            "size": 151048591,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "generation_config.json",
+          "blobId": "4b26dd66b8f7bca37d851d259fdc118315cacc62",
+          "size": 3747
+        },
+        {
+          "rfilename": "merges.txt",
+          "blobId": "6038932a2a1f09a66991b1c2adae0d14066fa29e",
+          "size": 493869
+        },
+        {
+          "rfilename": "model.safetensors",
+          "blobId": "fe42acd740b2c47cb34cf7b92426e3f82c1ce357",
+          "size": 151061672,
+          "lfs": {
+            "sha256": "7ebd0e69e78190ffe1438491fa05cc1f5c1aa3a4c4db3bc1723adbb551ea2395",
+            "size": 151061672,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "normalizer.json",
+          "blobId": "dd6ae819ad738ac1a546e9f9282ef325c33b9ea0",
+          "size": 52666
+        },
+        {
+          "rfilename": "preprocessor_config.json",
+          "blobId": "c2048dfa9fd94a052e62e908d2c4dfb18534b4d2",
+          "size": 184990
+        },
+        {
+          "rfilename": "pytorch_model.bin",
+          "blobId": "12d457f94da296f66fc3f07657abb6bc3665c48c",
+          "size": 151095027,
+          "lfs": {
+            "sha256": "9607f98a2b22d9e229ae43c52ecea79dcede9e0c5cfae67e8da6eda86d8aac1d",
+            "size": 151095027,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "special_tokens_map.json",
+          "blobId": "bf69932dca4b3719b59fdd8f6cc1978109509f6c",
+          "size": 2194
+        },
+        {
+          "rfilename": "tf_model.h5",
+          "blobId": "4cf29e6844094542038d97b85707c409f08760ac",
+          "size": 151253960,
+          "lfs": {
+            "sha256": "4144af98f9f31730fd565591248e046f56a6adbe1461d7306339769e09ec8ed0",
+            "size": 151253960,
+            "pointerSize": 134
+          }
+        },
+        {
+          "rfilename": "tokenizer.json",
+          "blobId": "1e95340ff836fad1b5932e800fb7b8c5e6d78a74",
+          "size": 2480466
+        },
+        {
+          "rfilename": "tokenizer_config.json",
+          "blobId": "d13b786c04765fb1a06492b53587752cd67665ea",
+          "size": 282683
+        },
+        {
+          "rfilename": "vocab.json",
+          "blobId": "d7016e21da8776c8a9d577d0f559600f09a240eb",
+          "size": 835550
+        }
+      ],
+      "spaces": [
+        "AlekseyCalvin/SLM_Bistro",
+        "treble-technologies/ffasr",
+        "shaiksuleman81/musetalk-interviewer",
+        "Steveeeeeeen/smallest-s2s",
+        "VIDraft/Portrait-Animation",
+        "Ailyth/Multi-voice-TTS-GPT-SoVITS",
+        "sanchit-gandhi/whisper-jax-spaces",
+        "OpenSound/CapSpeech-TTS",
+        "Matthijs/whisper_word_timestamps",
+        "radames/whisper-word-level-trim",
+        "lmz/candle-whisper",
+        "gobeldan/insanely-fast-whisper-webui",
+        "devilent2/whisper-v3-zero",
+        "kadirnar/Whisper_M2M100_BioGpt",
+        "speechbox/whisper-speaker-diarization",
+        "nvidia/audio-flamingo-2",
+        "Splend1dchan/BreezyVoice-Playground",
+        "GenAISecurityProject/OWASP-AIBOM-Generator",
+        "ardha27/Youtube-AI-Summarizer",
+        "souljoy/ChatPDF",
+        "RyeAI/danish-asr-leaderboard",
+        "mozilla-ai/transcribe",
+        "JacobLinCool/BreezyVoice",
+        "innev/whisper-Base",
+        "abidlabs/hfstudio",
+        "hchcsuim/Automatic-Speech-Recognition-Speech-to-Text",
+        "joaogante/assisted_generation_benchmarks",
+        "eustlb/whisper-vs-distil-whisper-fr",
+        "ghostai1/Audio-Translator",
+        "banao-tech/musetalk-avatar",
+        "CeibalUY/transcribir_audio",
+        "RaviNaik/MultiModal-Phi2",
+        "TaiYouWeb/whisper-multi-model",
+        "kevinwang676/GPT-SoVITS-Trilingual",
+        "devilent2/whisper-v3-zero-dev",
+        "ardha27/VideoAnalyzer",
+        "Anupam007/Automated-Meeting-Minutes",
+        "ranialahassn/languagedetectorWhisper",
+        "Johnyquest7/medical-transcription-notes",
+        "build-small-hackathon/ai-avatar-assistant",
+        "renatotn7/editarVideoAtravesDeTexto",
+        "radames/candle-whisper",
+        "sampsontan/llama3-rag",
+        "vakodiya/streamlit-gpt2",
+        "seepine/Multi-voice-TTS-GPT-SoVITS",
+        "invincible-jha/MentalHealthVocalBiomarkers",
+        "lele1894/dubbing",
+        "Ericboi229-gmx-co-uk/insanely-fast-whisper-webui",
+        "Hamam12/Hoama",
+        "yolloo/VoiceQ",
+        "sk61tc4j53obiq/lipsmusemodel",
+        "qwvdggg/newtryEsp",
+        "Speedofmastery/orynxml-backend",
+        "Piyush1225/talkmateai-backend",
+        "AlexWortega/transformer-xray",
+        "Yash030/claude-code-proxy",
+        "build-small-hackathon/TrailHead",
+        "ArtFix0/speech-to-speech-dashboard",
+        "renatotn7/EspacoTeste",
+        "joaogabriellima/openai-whisper-tiny",
+        "ahmedghani/Inference-Endpoint-Deployment",
+        "abrar-adnan/speech-analyzer",
+        "IstvanPeter/openai-whisper-tiny",
+        "GiorgiSekhniashvili/geo-whisper",
+        "reach-vb/whisper_word_timestamps",
+        "jamesyoung999/whisper_word_timestamps",
+        "OdiaGenAI/Olive_Whisper_ASR",
+        "filben/transcrever_audio_pt",
+        "seiching/ainotes",
+        "Tonic/WhisperFusionTest",
+        "Aryan619348/google-calendar-agent",
+        "ricardo-lsantos/openai-whisper-tiny",
+        "Tohidichi/Semantic-chunker-yt-vid",
+        "sdlc/Multi-Voice",
+        "devilent2/whisper-v3-zero-canary",
+        "MikeTangoEcho/asrnersbx",
+        "GatinhoEducado/speech-to-speech-translation",
+        "RenanOF/AudioTexto",
+        "Jwrockon/ArtemisAIWhisper",
+        "Anupam251272/Real-Time-Language-Translator-AI",
+        "garyd1/AI_Mock_Interview",
+        "Anupam007/RealTime-Meeting-Notes",
+        "chakchakAI/CrossTalk-Translation-AI",
+        "ZealAI/Zeal-AI",
+        "AhmedKElsayed/NonToxicMe",
+        "abdullahbilal-y/ML_Playground_Dashboard",
+        "GMI-AI/Speech-Processing-Lab-Project-App",
+        "anushka027/Whispr.ai",
+        "Draxgabe/acuspeak-demo",
+        "sebibibaba/Transcripteur-Vocal",
+        "pareek-voicearena/test-hindi-2",
+        "dwitee/ai-powered-symptom-triage",
+        "amurienne/sambot",
+        "KNipun/Whisper-AI-Psychiatric",
+        "notojasv/voice-assistant-demo",
+        "PoojaDinesh99/breath-easy-thesis",
+        "Oscargad/twi-chinese-translator",
+        "JeovaniPB/AIBORA-VOICE-AI",
+        "shushukimura/whisper-asr-space",
+        "Esurupooja/Voice_Bot"
+      ],
+      "createdAt": "2022-09-26T06:50:30.000Z",
+      "safetensors": {
+        "parameters": {
+          "F32": 37760640
+        },
+        "total": 37760640
+      },
+      "usedStorage": 1831289730
+    }
+  }
+}

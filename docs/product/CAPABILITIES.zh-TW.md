@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.40 / alpha.4-local.38 / r41 kit · 1 Skill / 17 modules / 79 files.**
+**CLI0.1.41 / alpha.4-local.39 / r42 kit · 1 Skill / 17 modules / 80 files.**
 
-新增**原生 PQ／HLG HDR 訊號、明確 nit 單位、10-bit BT.2020 交付及獨立 SDR 預覽**。HLG 包含 RGB 聯動 OOTF；不同參考白的 SDR 圖形與 HDR 高光可在線性光域合成。明確選擇輸入／輸出截斷、SDR 映射及其色域策略，保留作者時鐘、效果及可編輯工程。
+新增**真正本機 CUDA 神經口型同步**：使用 MuseTalk 1.5、Whisper-tiny、VAE 及 BiSeNet，讓指定圖片／影片隨獨立語音生成口型。支援25FPS人臉框關鍵影格、完整PCM保留、可重跑配方，以及分別可編輯的影片／音訊關聯片段。
 
-[HDR workflow and constraints](HDR_DISPLAY.md)
+[Neural lip-sync workflow and limits](LIP_SYNC.md)
 
 <!-- /community-current -->
 
@@ -80,6 +80,7 @@
 | F64 | 可編輯光學效果與GPU運算 | 眩光核心/條紋/光暈/鬼影、旋轉橢圓漏光、徑向紅藍色差；全部數值通道關鍵影格、原作者時鐘、片段/區間調整層，CPU/OpenCL。 | `effects list/inspect` → `timeline compose` → preview/render | 明確線性RGB；原alpha位元保留，透明隱藏色不滲出；ghosts/edge靜態，非實體鏡頭/自動亮源/bloom。 |
 | F65 | 實際高光 Bloom / 膠片 Halation | 軟膝閾值提取實際高光→分離高斯擴散→核心抑制/線性著色；可編輯數值軌道及原作者時鐘，片段或根區間調整層。 | `effects list/inspect; timeline compose; preview; render; queue` | sigma0…32輸入像素；透明/複製邊界、原alpha位元保持；實際四kernel GPU/CPU參考，有界空間/訪問預算；非物理膠片/HDR驗收。 |
 | F66 | 原生 PQ／HLG HDR 與 SDR 顯示 | 明確參考白及HLG峰值/gamma，解碼至顯示線性光；不同nit素材、一般效果/合成、10-bit BT.2020 NCL交付，獨立選擇SDR trim及PNG/MP4預覽。 | `timeline compose; validate; preview; render; convert` | 傳遞CPU，既有合成/光效可GPU；拒絕8-bit/標籤不符/缺單位；alpha位元保留。非ICC/動態中繼資料或HDR監看驗收。 |
+| F67 | 本機神經口型同步 | 圖片／影片＋獨立聲音→真正CUDA MuseTalk口型；25FPS人臉框關鍵影格、語義下半臉混合、完整PCM及alpha保留，可復用配方並影片/音訊關聯入軌。 | `lipsync adapter register/list/inspect; lipsync generate` | 本機safetensors及既有原生Torch依賴；臉部256×256、明確8bit SDR與來源運鏡、無CPU回退；自然口型、完整數位人仍未驗收。 |
 
 | 編號 | 服務模塊 | 運行形式 | 需要什么/提供什么 | 入口 | 範圍 |
 |---|---|---|---|---|---|
@@ -104,6 +105,7 @@
 | S19 | 獨立四軌分離 | 原生 Torch/TorchAudio HDemucs worker | 明確登記原生 Python、權重/證據/實作雜湊；auto/cpu/cuda，4 float WAV/軌道 | `audio adapter; audio separate-stems` | 基礎 ZIP 不含 Torch/權重；自然聽感與權重許可未閉 |
 | S20 | 字幕翻譯配音聯合服務 | 既有 OPUS / Kokoro 原生 worker + 受管工程事務 | 普通 SRT、明確語言/音色/軌道，CPU/CUDA/auto，批內復用 | `dub subtitles` | [完整流程](SUBTITLE_DUBBING.md)；保留全句與重試，字詞/口型/自然品質未閉 |
 | S21 | 本地GPU常駐推理會話 | 原生行程、認證Windows命名管道、JSON/原始幀、重疊拒寫鎖與生命週期監控。 | 既有本地VACE適配器；同一提示詞多方案。 | `media model-session start/status/stop` | 不開放網路埠；同工程串行，首條載入與其他模型重用仍有限。 |
+| S22 | MuseTalk CUDA 神經口型服務 | 本機Whisper-tiny音訊特徵、MuseTalk1.5 UNet、SD VAE及BiSeNet；固定safetensors與拒寫鎖、原生工作回收。 | 明確既有Torch/Diffusers/Transformers/OpenCV原生依賴及模型證據；無自動安裝。 | `lipsync adapter; lipsync generate` | 模型256×256，25FPS；授權、自然度、完整數位人及HDR另行驗收。 |
 
 ## 完整安裝版能力字段
 
@@ -5046,3 +5048,64 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 ```
 
 [CLI0.1.40 exact installed capability snapshot](native-hdr-capabilities-cli-0.1.40.json).
+
+### `native_lip_sync`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "agent-native-lipsync-v1",
+  "engine": "musetalk-v15-native-cuda-v1",
+  "commands": [
+    "lipsync.adapter.register",
+    "lipsync.adapter.list",
+    "lipsync.adapter.inspect",
+    "lipsync.generate"
+  ],
+  "features": [
+    "actual_MuseTalk_1_5_UNet_Whisper_tiny_VAE_BiSeNet_CUDA",
+    "explicit_image_or_video_and_audio_assets",
+    "output_25fps_face_box_linear_keys",
+    "explicit_once_hold_or_full_video_loop",
+    "semantic_lower_face_blend",
+    "straight_alpha_and_outside_region_RGB_preserved",
+    "complete_lossless_RGBA_and_PCM_roundtrip",
+    "portable_rerunnable_recipe",
+    "independent_video_and_audio_clips",
+    "owned_cancel_timeout_recovery"
+  ],
+  "clock": {
+    "video_fps": 25,
+    "model_audio_sample_rate": 16000,
+    "audio_preservation": "original_decoded_float_PCM_sample_rate_and_channels",
+    "tail_padding": "less_than_one_video_frame_no_selected_samples_dropped"
+  },
+  "limits": {
+    "trained_face_pixels": [
+      256,
+      256
+    ],
+    "duration_seconds": 600,
+    "raster_edge_pixels": 4096,
+    "batch_frames": [
+      1,
+      8
+    ],
+    "owned_array_bytes": 536870912,
+    "maximum_asset_bytes": 2147483648
+  },
+  "network": false,
+  "model_downloads": false,
+  "CPU_fallback": false,
+  "unsupported": [
+    "full_body_pose_or_expression_generation",
+    "automatic_face_detection_or_tracking",
+    "automatic_identity_or_naturalness_acceptance",
+    "native_HDR_or_ICC_face_inference",
+    "cross_device_bit_determinism",
+    "full_digital_human_or_CapCut_parity"
+  ]
+}
+```
+
+[CLI0.1.41 exact installed capability snapshot](lip-sync-capabilities-cli-0.1.41.json).

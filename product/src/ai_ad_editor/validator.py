@@ -506,6 +506,13 @@ def validate_project(root: Path, project: dict[str, Any], *, strict_rights: bool
             except AppError as exc:
                 error(exc.code, exc.message, f'{path}.source.video_generation')
 
+        if isinstance(asset.get('source'), dict) and 'lipsync' in asset['source']:
+            try:
+                from .lipsync_plan import validate_recipe
+                validate_recipe(asset['source']['lipsync'], asset=asset, assets=asset_map(project))
+            except AppError as exc:
+                error(exc.code, exc.message, f'{path}.source.lipsync')
+
     declared_sequence_ids = {str(item.get("id")) for item in project.get("sequences", []) if item.get("id")}
     sequence_ids: set[str] = set()
     for si, sequence in enumerate(project.get("sequences", [])):

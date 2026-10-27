@@ -1,0 +1,99 @@
+{
+  "status": "passed",
+  "source": "local scikit-image public-domain NASA astronaut; private engineering probe only",
+  "public_media": false,
+  "source_sha256": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5",
+  "frames": 25,
+  "fps": 25,
+  "network_events": [],
+  "execution": {
+    "engine": "musetalk-v15-native-cuda-v1",
+    "versions": {
+      "torch": "2.13.0+cu130",
+      "numpy": "2.4.6"
+    },
+    "weight_reader": "safetensors-pread",
+    "CUDA_admission": {
+      "policy": "cuda-uuid-physical-and-torch-free-v1",
+      "stage": "lipsync-load",
+      "required_free_bytes": 4831838208,
+      "reservation": false,
+      "oom_guarantee": false,
+      "query_started_at_utc": "2026-10-27T05:54:44.423137+00:00",
+      "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+      "logical_device_index": 0,
+      "idle_cache_release": {
+        "scope": "current-worker",
+        "synchronized": true,
+        "empty_cache_called": true,
+        "completed": true,
+        "active_allocation_preserved": true,
+        "allocated_before_bytes": 0,
+        "reserved_before_bytes": 0,
+        "allocated_after_bytes": 0,
+        "reserved_after_bytes": 0,
+        "released_reserved_bytes": 0
+      },
+      "query_command": [
+        "C:\\Windows\\System32\\nvidia-smi.EXE",
+        "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+        "--query-gpu=uuid,memory.total,memory.free",
+        "--format=csv,noheader,nounits"
+      ],
+      "torch_free_bytes": 11799625728,
+      "torch_total_bytes": 12884377600,
+      "physical_free_bytes": 10864295936,
+      "physical_total_bytes": 12884901888,
+      "effective_free_bytes": 10864295936,
+      "query_finished_at_utc": "2026-10-27T05:54:44.593716+00:00",
+      "sample_seconds": 0.1705826999968849,
+      "status": "admitted"
+    },
+    "precision": {
+      "unet": "float16",
+      "vae": "float32",
+      "whisper": "float16",
+      "parser": "float32"
+    },
+    "device": "NVIDIA GeForce RTX 3060",
+    "load_seconds": 5.49857750000956,
+    "model_loads": 1,
+    "calls": {
+      "audio_encoder": 1,
+      "vae_encoder": 2,
+      "unet": 13,
+      "vae_decoder": 13,
+      "face_parser": 1
+    },
+    "cache_hits": 0,
+    "batch_frames": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      1
+    ],
+    "CPU_fallback": false,
+    "network": "disabled",
+    "trained_face_raster": [
+      256,
+      256
+    ],
+    "attention_backend": "torch-SDPA-math",
+    "seed": 17,
+    "audio_feature_bytes": 253440,
+    "cuda_peak_allocated_bytes": 2802346496
+  },
+  "output_rgb_sha256": "cd2f79ca16da4ba9bc8770732d9b58430c17a64a78c52e00c5543cc792df9c96",
+  "first_last_mean_difference": 2.375157674153646,
+  "semantic_mask_pixels": 53926,
+  "elapsed_seconds": 30.68246929999441
+}

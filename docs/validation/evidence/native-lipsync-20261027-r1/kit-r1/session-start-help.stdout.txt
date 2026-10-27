@@ -1,0 +1,28 @@
+usage: ai-ad-editor media model-session start [-h] [--format {json,text}]
+                                              [--request-id REQUEST_ID]
+                                              [--idempotency-key IDEMPOTENCY_KEY]
+                                              [--dry-run] [--no-network]
+                                              [--progress {none,jsonl}]
+                                              --project PROJECT
+                                              --adapter-id ADAPTER_ID
+                                              [--startup-timeout-seconds STARTUP_TIMEOUT_SECONDS]
+                                              [--idle-seconds IDLE_SECONDS]
+                                              [--lifetime-seconds LIFETIME_SECONDS]
+                                              [--max-jobs MAX_JOBS]
+                                              [--cancel-file CANCEL_FILE]
+
+options:
+  -h, --help            show this help message and exit
+  --format {json,text}  输出格式
+  --request-id REQUEST_ID
+  --idempotency-key IDEMPOTENCY_KEY
+  --dry-run
+  --no-network
+  --progress {none,jsonl}
+  --project PROJECT
+  --adapter-id ADAPTER_ID
+  --startup-timeout-seconds STARTUP_TIMEOUT_SECONDS
+  --idle-seconds IDLE_SECONDS
+  --lifetime-seconds LIFETIME_SECONDS
+  --max-jobs MAX_JOBS
+  --cancel-file CANCEL_FILE

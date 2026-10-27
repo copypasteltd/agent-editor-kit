@@ -1,0 +1,80 @@
+[
+  {
+    "command": [
+      "project",
+      "init",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\lipsync-portrait-source-r1",
+      "--name",
+      "Fictional synthetic portrait source"
+    ],
+    "exit_code": 0,
+    "seconds": 1.8165426000050502
+  },
+  {
+    "command": [
+      "media",
+      "adapter",
+      "register",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\lipsync-portrait-source-r1",
+      "--adapter-id",
+      "portrait_generator",
+      "--engine",
+      "diffusers-wan-vace-local-v1",
+      "--model-path",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\wan2.1-vace-1.3b",
+      "--executable",
+      "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+      "--evidence",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\generative\\vace-evidence.json",
+      "--device",
+      "cuda",
+      "--license-spdx",
+      "Apache-2.0",
+      "--verification-status",
+      "unverified",
+      "--permitted-use",
+      "internal"
+    ],
+    "exit_code": 0,
+    "seconds": 520.4480766000052
+  },
+  {
+    "command": [
+      "media",
+      "generate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\lipsync-portrait-source-r1",
+      "--adapter-id",
+      "portrait_generator",
+      "--asset-id",
+      "fictional_portrait",
+      "--mode",
+      "text-to-video",
+      "--width",
+      "512",
+      "--height",
+      "512",
+      "--frames",
+      "5",
+      "--fps",
+      "25",
+      "--inference-steps",
+      "25",
+      "--window-frames",
+      "5",
+      "--window-overlap",
+      "0",
+      "--seed",
+      "1027",
+      "--prompt",
+      "A clear studio head-and-shoulders portrait of one fictional adult woman, directly facing the camera, symmetrical frontal face, closed lips, unobstructed mouth and chin, long dark hair behind shoulders, simple teal shirt, neutral light gray background, soft even light, realistic skin, eyes open, static camera, no writing.",
+      "--negative-prompt",
+      "text, logo, watermark, duplicate face, hand, profile, teeth, open mouth, beard, face covering, blur",
+      "--timeout-seconds",
+      "1800"
+    ],
+    "exit_code": 2,
+    "seconds": 5.730529399996158
+  }
+]

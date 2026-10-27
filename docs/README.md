@@ -1,6 +1,8 @@
 # agent editor kit 文档 / Documentation
 
-Current local / 当前本地 / 目前本地：**CLI0.1.40 / local.38 / r41 kit** · [HDR/SDR](product/HDR_DISPLAY.md) · [Install](releases/CLI_0.1.40_LOCAL.md) · [C50](product/CASES.md#c50-native-hdr).
+Current local / 当前本地 / 目前本地：**CLI0.1.41 / local.39 / r42 kit** · [Neural lip sync / 神经口型 / 神經口型](product/LIP_SYNC.md) · [Install](releases/CLI_0.1.41_LOCAL.md) · [C51](product/CASES.md#c51-native-lip-sync).
+
+Historical / 历史 / 歷史：**CLI0.1.40 / local.38 / r41 kit** · [HDR/SDR](product/HDR_DISPLAY.md) · [Install](releases/CLI_0.1.40_LOCAL.md) · [C50](product/CASES.md#c50-native-hdr).
 
 
 Historical / 历史 / 歷史：**CLI0.1.39 / local.37 / r40 kit** · [Highlight glow](product/HIGHLIGHT_GLOW.md) · [Install](releases/CLI_0.1.39_LOCAL.md) · [C49](product/CASES.md#c49-highlight-glow).

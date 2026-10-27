@@ -9,7 +9,23 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- hdr-display-current -->
+<!-- native-lip-sync-current -->
+
+**CLI0.1.41 / alpha.4-local.39 / r42 kit · 1 Skill / 17 modules.**
+
+Adds **actual local CUDA neural lip sync**: MuseTalk1.5, Whisper-tiny, VAE and BiSeNet drive a supplied portrait/video from separate speech. Explicit25FPS face-box keys, complete selected PCM, rerunnable recipes and independent linked video/audio clips remain editable.
+
+[Workflow / usage](docs/product/LIP_SYNC.md) · [C51](docs/product/CASES.md#c51-native-lip-sync) · [Install](docs/releases/CLI_0.1.41_LOCAL.md) · [Evidence](docs/validation/本地神经口型实测_2026-10-27.md)
+
+![Actual local neural lip sync / synthetic portrait and voice](docs/assets/native-lipsync-20261027-r1/comparison.gif)
+
+This batch passes **28 installed checks with zero failures/errors/skips**, plus177 source regressions for existing services; all248 source/installed files match. Actual C51 retains133 frames, all126795 original PCM scalars, all alpha and outside-region RGB; full rendered audio/video match after package import. Earlier993-test HDR results remain historical. The256×256 face model does not close full-body performance, automatic tracking, natural lip/listening quality, HDR inference or the complete goal.
+
+A separate30-frame moving-video/box case passes; cancellation after actual neural frames reclaims all three children, rolls back metadata and retains diagnostics. [Evidence](docs/validation/evidence/native-lipsync-20261027-r1/video-and-cancel-r1/verification.json).
+
+<!-- /native-lip-sync-current -->
+
+<!-- hdr-display-history -->
 
 **CLI0.1.40 / alpha.4-local.38 / r41 kit · 1 Skill / 17 modules.**
 
@@ -21,7 +37,7 @@ Adds **native display-light PQ/HLG, explicit nit units, 10-bit BT.2020 delivery 
 
 One installed run passes **993 regressions with zero failures/errors/skips**: all prior734, 20 HDR numeric/actual-engineering checks and239 related color compatibility tests. Registered Skill C50 retains all48 decoded10-bit frames and384000 nonzero stereo Float32 PCM scalars after package import (12FPS/four seconds). Transfer math is tiled CPU; supported composition/effects retain actual GPU use. HDR monitor/natural quality, ICC, nonzero-black HLG, mastering/dynamic metadata and the complete goal remain open.
 
-<!-- /hdr-display-current -->
+<!-- /hdr-display-history -->
 
 <!-- highlight-glow-history -->
 
@@ -446,7 +462,7 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r41 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r41.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r42 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r42.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
@@ -752,7 +768,7 @@ The implementation is **Python CLI + Agent Project schema + FFmpeg**, with an ex
 5. For selection, show the original and a small candidate set, record final IDs/strength/scope and trial them on target media.
 6. Render to a new project-owned path, inspect the encoded output, manifest, warnings, A/V and rights, then export the project package.
 
-## All 63 functional modules
+## All 67 functional modules
 
 IDs locate documentation groups with dependencies/overlap; they are not 43 independent kernels or a completion score. The table describes behavior, commands and limits. The [complete machine capability manual](docs/product/CAPABILITIES.en.md) retains every field.
 
@@ -824,6 +840,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F64 | Editable GPU optical effects | Flare core/streak/halo/ghosts, rotated elliptical leak and radial red/blue split; all numeric channels animate on original author clocks. Clip/interval adjustments, CPU/OpenCL. | `effects list/inspect` → `timeline compose` → preview/render | Explicit linear RGB; original alpha bits retained; transparent hidden RGB does not bleed. Static ghosts/edge; no physical lens, automatic light detection or bloom. |
 | F65 | Highlight Bloom / film Halation | Actual soft-knee highlight extraction→separable Gaussian spread→core suppression/linear tint; editable numeric author-clock tracks in clips or selected-root adjustment intervals. | `effects list/inspect; timeline compose; preview; render; queue` | sigma0…32 input pixels; transparent/clamp edges; alpha bits preserved; actual four-kernel GPU or CPU reference; bounded workspace/visits; physical film/HDR unaccepted. |
 | F66 | Native PQ/HLG HDR and SDR viewing | Explicit reference white/HLG peak/gamma → display-linear edits; mixed-nit assets, ordinary effects/composition and10-bit BT.2020 NCL delivery; separate SDR trim and PNG/MP4 previews. | `timeline compose; validate; preview; render; convert` | CPU transfer math; existing GPU composition/effects; rejects8-bit/mismatched tags/missing units; alpha bits retained. ICC/dynamic metadata/HDR monitoring unaccepted. |
+| F67 | Local neural lip sync | Image/video + separate speech → actual CUDA MuseTalk mouth;25FPS box keys, semantic lower-face blend, complete PCM/alpha, rerunnable recipe and linked editable video/audio clips. | `lipsync adapter register/list/inspect; lipsync generate` | Explicit local safetensors/native Torch runtime;256×256 face,8bit SDR/source motion,no CPU fallback; natural quality/full digital human remain open. |
 
 ## Supported service modules and dependencies
 
@@ -852,6 +869,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | S19 | Independent four-source separation | Native Torch/TorchAudio HDemucs worker | Explicit native Python, weights/evidence/implementation hashes; auto/cpu/cuda, four float WAV/tracks | `audio adapter; audio separate-stems` | Torch/weights excluded from base ZIP; natural listening and weight licensing remain open |
 | S20 | Joint subtitle dubbing | Existing native OPUS/Kokoro workers + managed project transaction | Plain SRT, explicit languages/voices/tracks, CPU/CUDA/auto, batch reuse | `dub subtitles` | [Workflow](docs/product/SUBTITLE_DUBBING.md); complete utterances/retries retained; words/lip sync/natural quality open |
 | S21 | Local resident GPU inference session | Native process, authenticated Windows named pipe, JSON/raw frames, overlapping deny-write locks and lifecycle watchdog. | Existing local VACE adapter, repeated variants of one prompt. | `media model-session start/status/stop` | No network port; serial per project; initial loading and reuse of other models remain limited. |
+| S22 | MuseTalk CUDA neural mouth service | Local Whisper-tiny, MuseTalk1.5 UNet, SD VAE and BiSeNet; fixed safetensors, deny-write locks and owned native cleanup. | Explicit existing native Torch/Diffusers/Transformers/OpenCV and model evidence; no automatic install. | `lipsync adapter; lipsync generate` | 256×256 face/25FPS; rights,naturalness,full digital human and HDR acceptance remain separate. |
 
 **Observed local environment:** this update’s doctor sees native Python 3.13.1, FFmpeg/ffprobe 8.1 and Node; this does not establish registration of every model/browser adapter. doctor merely discovers Docker/WSL executable paths and does not run them. This project uses native tools without invoking Docker/WSL/virtual environments.
 
@@ -869,7 +887,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 
 These interfaces do not mean the base bundle contains the weights. A historical model execution does not establish configuration of the current project; inspect its registry and results. Model, voice and media licenses are separate from software MIT.
 
-## 46 effect operators and 12 motion presets
+## 51 effect operators and 12 motion presets
 
 | Effect category | Actual discoverable operators |
 |---|---|
@@ -951,7 +969,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.38/final-r1/installed/`, CLI 0.1.40. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.39/final-r1/installed/`, CLI 0.1.41. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1421,6 +1439,12 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R275 | 2026-10-27 native HDR | 239 existing color/curves/LUT/float-bundle/levels/balance/tone tests preserve two-field relative signal semantics, precision, resource and migration contracts. | [Evidence](docs/validation/evidence/native-hdr-20261027-r1/source-compat-r1/verification.json) |
 | R276 | 2026-10-27 native HDR | Registered installed Skill C50 mixes100-nit SDR graphics with203-nit reference-white HDR. All48 frames/nonzero384000 stereo PCM scalars match after package import; actual PQ/HLG masters, SDR trim and4000ms GIF. | [Evidence](docs/validation/evidence/native-hdr-20261027-r1/case-r3/verification.json) |
 | R277 | 2026-10-27 native HDR | r41:one Skill/17 modules/79 Skill files/126 kit entries; full verification and32 isolated registration calls. Trilingual F66/S21 retain all271 prior R rows and38 original closure cells. | [Evidence](docs/validation/evidence/native-hdr-20261027-r1/kit-r1/verification.json) |
+| R278 | 2026-10-27 native lip sync | CLI0.1.41/local.39 offline build/install:248 byte-identical source/installed files,80 capabilities;28 installed checks pass with zero failures/errors/skips. | [Evidence](docs/validation/evidence/native-lipsync-20261027-r1/installed-lipsync-r1/verification.json) |
+| R279 | 2026-10-27 native lip sync | 28 source tests cover partial pipes,semantic/box/alpha0 protection,44.1k sample clocks,recipe digests/rebinding,real FFmpeg,cancel/deadline,diagnostics and transaction rollback. | [Evidence](docs/validation/evidence/native-lipsync-20261027-r1/source-lipsync-r3/verification.json) |
+| R280 | 2026-10-27 native lip sync | 177 existing matting/segmentation/inpainting/generation/fragments/schema source compatibility tests pass. Earlier993 installed HDR tests remain a separate historical run. | [Evidence](docs/validation/evidence/native-lipsync-20261027-r1/source-service-compat-r1/verification.json) |
+| R281 | 2026-10-27 native lip sync | Actual CUDA model probe passes; first legacy-VAE key failure retained and corrected with strict explicit mapping. Pinned weights use weights_only conversion to safetensors and exact tensor reload. | [Evidence](docs/validation/evidence/native-lipsync-20261027-r1/model-probe-r2/verification.json) |
+| R282 | 2026-10-27 native lip sync | Registered installed Skill C51:actual133 frames,all126795 original PCM scalars,alpha and outside-region RGB preserved;linked editable tracks and complete package-render audio/video equality;synthetic portrait/speech MP4/GIF and provenance. | [Evidence](docs/validation/evidence/native-lipsync-20261027-r1/case-r1/verification.json) |
+| R283 | 2026-10-27 native lip sync | r42:one Skill/17 modules/80 Skill files/128 ZIP entries;full hashes,isolated registration and installed entry checks. Trilingual F67/S22 retain all277 earlier R rows and38 original closure cells. | [Evidence](docs/validation/evidence/native-lipsync-20261027-r1/kit-r1/verification.json) |
 
 ## Current limits and development direction
 

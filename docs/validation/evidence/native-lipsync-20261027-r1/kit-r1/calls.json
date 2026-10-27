@@ -1,0 +1,669 @@
+[
+  {
+    "id": "configure",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\独立工具 包\\scripts\\activate_community_runtime.py",
+      "--installed",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.39\\final-r1\\installed",
+      "--packs",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-portable-r1\\模型 包",
+      "--voice-cuda-lib",
+      "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\lib",
+      "--translation-cuda-lib",
+      "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.4\\bin",
+      "--semantic-config",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\semantic-runtime.json",
+      "--verify-timeout-seconds",
+      "600"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "a2e0d13a400688c1f294a2be61d70840ffaea811e806a6b42843090f6b9dbd60",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "expected-verification-timeout",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\独立工具 包\\scripts\\activate_community_runtime.py",
+      "--installed",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.39\\final-r1\\installed",
+      "--packs",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-portable-r1\\模型 包",
+      "--verify-timeout-seconds",
+      "1"
+    ],
+    "exit_code": 1,
+    "json_cli": false,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "d01edda07c1656e46342a7bde156c82f8f4f03e7e6fb02c687c33c2ef6d9f7db"
+  },
+  {
+    "id": "register",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\独立工具 包\\register-agent-ffmpeg-local-skills.ps1",
+      "-SkillsDirectory",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery",
+      "-ReceiptPath",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\native-lipsync-20261027-r1\\kit-r1\\registration.json"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "62c6615b4826373ff01a55052e4d4b06e6123181a192608d2ce8f28de002be62",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "version",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "af204084441d0f87f5ebf4d7293ba5d8b9c1653cc0418f3987c04b3c63665622",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "capabilities",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "capabilities"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "72d5b81ac9e935f13cca6cf494b3d8a3760b59d78b04cb2862a622897766d08a",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "emitter-properties",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "vfx",
+      "animation-properties"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "8e47423853b2a509c9b86ec70a1f50115f5b7c518dd3d54fcb224bc198eafbbc",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "emitter-animate-help",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "vfx",
+      "animate",
+      "--help"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "c64ff3206a89c603431f276032833f818101e5d0227abf072ae7094fea327489",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "lipsync-generate-help",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "lipsync",
+      "generate",
+      "--help"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "f3a456b206e3fd216d7da3d1926f59beeb3a01048b63cc6c389e30a2844ef10e",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "lipsync-register-help",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "lipsync",
+      "adapter",
+      "register",
+      "--help"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "3a19ab58632171c7a0117f83b4a156bc89180ab26f3b875657cd0eb19fcdf591",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "optical-catalog",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "effects",
+      "list",
+      "--query",
+      "native:float32-optics"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "b5400c1f67a19349746545937809ba0023429779e481eb70c803e3fe0b48a059",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "optical-lens_flare",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "effects",
+      "inspect",
+      "--name",
+      "lens_flare"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "4124384f739c61f5192ea8e5e0a773eacb63be769629074c7461214cb1e8af93",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "optical-light_leak",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "effects",
+      "inspect",
+      "--name",
+      "light_leak"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "45bc2a05d33ec9855f5f10b5f9e918c0d40dd8ce561a6d13a061d6875d4d0d06",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "optical-rgb_split",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "effects",
+      "inspect",
+      "--name",
+      "rgb_split"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "ef3d988078e534f3eb9ee4b510319a1ddca6132af8da85b92bd25523cc553024",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "glow-catalog",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "effects",
+      "list",
+      "--query",
+      "native:float32-glow"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "d3dfb21d608cfae08f1a95312370bdb971cbfffb2221514af3d4f1cf806e22d0",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "glow-highlight_bloom",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "effects",
+      "inspect",
+      "--name",
+      "highlight_bloom"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "3be57bace92257ec6df37632fd73c82fcdee54b4be15a95ad53227e7ab66c9ea",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "glow-film_halation",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "effects",
+      "inspect",
+      "--name",
+      "film_halation"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "468d03262faad4ee8eaf99f30184d2612e6e2f51d2a9bc0f4742de081d5f5e5b",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "particle-list",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "vfx",
+      "list"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "68b1af921cd0a64d1f6de03cfb698b38c6996f6947231bdc9e72fa7e4d8765b3",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "particle-inspect",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "vfx",
+      "inspect",
+      "--name",
+      "rain"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "02dc4f359ca3406ef242942b7afffd3664b2625528911280485584f640ab4642",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "particle-apply-help",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "vfx",
+      "apply",
+      "--help"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "43ee6620e9b570c5862eca08a09a2f25caa3a4b50e7fc18af814ff0724b708ea",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "session-start-help",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "media",
+      "model-session",
+      "start",
+      "--help"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "3db6da53d53626194cca142d7147c72cadca1640055ce233d1e44f9940b6b257",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "session-status-help",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "media",
+      "model-session",
+      "status",
+      "--help"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "1c30b6497a1ea641eea7586e07f7ae462ce8c8a599a6ca5f94397a43c68f133b",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "session-stop-help",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "media",
+      "model-session",
+      "stop",
+      "--help"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "82f5ca16cbb20a09748387dfa84f7ccbcd1199c67185bd6ffd771df602f7ac0f",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "generation-help",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "media",
+      "generate",
+      "--help"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "57932181eb367c617eef7990abcbafa38bd298a08402bc45551fecd002bbe696",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "transition-help",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "timeline",
+      "transition",
+      "--help"
+    ],
+    "exit_code": 0,
+    "json_cli": false,
+    "stdout_sha256": "6ba1c7e3bc0e34c0363aacbe265838ab48f04a0e6d45976ceea2cfeea2fa80a5",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "import-case",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\float-tracking-20261026-r5\\editable-native-tracking.aevpkg.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\独立验收 工程"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "115f88ae422d319e95b76c28d5f54234c526036fe1b385574eab0f40c63387d6",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "float-render-dry-run",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\独立验收 工程",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\独立验收 工程\\renders\\isolated-plan.mkv",
+      "--container",
+      "mkv",
+      "--hardware-encode",
+      "off",
+      "--dry-run"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "09133b92b6551e1c642c9c2cdacf2d814c52d300951cfa1d281e71534c32df44",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "validate",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\独立验收 工程"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "74f1e1e2821384c93ef01600d33f5161b79198d4dbe3b4541350499ab7fb8da3",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "import-tracking-edit-case",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-retime-20261026-r1\\editable-tracking-retime.aevpkg.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\跟踪剪辑 工程"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "a2c536a14f7adc7435a13b9341bcd457ce933fd26264bc55c8806ecd5b2a6dfa",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "tracking-visibility-dry-run",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "timeline",
+      "edit",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\跟踪剪辑 工程",
+      "--sequence-id",
+      "child",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\tracking-edit.json",
+      "--dry-run"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "4c37586fd41ed8aaa0bce2a02ecd51a4267b115b16fb107730ec40ebd84e04b8",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "validate-tracking-edit-case",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\跟踪剪辑 工程"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "cf133f164affa41112d4c54bdf405f472efe44db0ce3552a71f045c805a5eae4",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "import-visibility-case",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\tracking-visibility-20261026-r2\\editable-tracking-visibility.aevpkg.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\遮罩转场 工程"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "90d15eba33b4480f37349a8223e741cb64d22d6d83368d034c09c43b2110ed08",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "validate-visibility-case",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\遮罩转场 工程"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "62596b36da78d31ba26742b47874504557930fc44e4c81c27fc7521417c24b39",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "visibility-render-plan",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\遮罩转场 工程",
+      "--sequence-id",
+      "child",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\遮罩转场 工程\\renders\\planned.mkv",
+      "--dry-run"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "c435fca731baa28dc09d3a61540de919267afb294559a99aeb24e34447647929",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "id": "bake-export-dry-run",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "export",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\遮罩转场 工程",
+      "--target-format",
+      "package",
+      "--bake-tracking",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-lipsync-kit-r1\\遮罩转场 工程\\exports\\planned-bake.aevpkg.zip",
+      "--dry-run"
+    ],
+    "exit_code": 0,
+    "json_cli": true,
+    "stdout_sha256": "55ef55ef99e1575b04ea3ce3aad2f98869d9d33e21479b79efc571e0a6217b96",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.40 / alpha.4-local.38 / r41 kit · 1 Skill / 17 modules / 79 files.**
+**CLI0.1.41 / alpha.4-local.39 / r42 kit · 1 Skill / 17 modules / 80 files.**
 
-Adds **native display-light PQ/HLG, explicit nit units, 10-bit BT.2020 delivery and separate SDR previews**. HLG includes the RGB-coupled OOTF; SDR graphics and HDR highlights with different reference whites compose in linear light. Author clocks, effects and editable projects retain explicit input/output clipping and SDR mapping decisions.
+Adds **actual local CUDA neural lip sync**: MuseTalk1.5, Whisper-tiny, VAE and BiSeNet drive a supplied portrait/video from separate speech. Explicit25FPS face-box keys, complete selected PCM, rerunnable recipes and independent linked video/audio clips remain editable.
 
-[HDR workflow and constraints](../product/HDR_DISPLAY.md)
+[Neural lip-sync workflow and limits](../product/LIP_SYNC.md)
 
 <!-- /community-current -->
 

@@ -9,7 +9,23 @@
 本页包含完整功能模块、服务与依赖、安装与使用逻辑、Skill 输入输出、真实案例和核验表。长篇原始验收日志继续留档，功能说明与案例入口恢复到首页。
 
 
-<!-- hdr-display-current -->
+<!-- native-lip-sync-current -->
+
+**CLI0.1.41 / alpha.4-local.39 / r42 kit · 1 Skill / 17 modules.**
+
+新增**真实本地 CUDA 神经口型同步**：使用 MuseTalk 1.5、Whisper-tiny、VAE 和 BiSeNet，让指定图片／视频随独立语音生成口型。支持25FPS人脸框关键帧、完整PCM保留、可重跑配方，以及分别可编辑的视频／音频关联片段。
+
+[Workflow / usage](docs/product/LIP_SYNC.md) · [C51](docs/product/CASES.md#c51-native-lip-sync) · [Install](docs/releases/CLI_0.1.41_LOCAL.md) · [Evidence](docs/validation/本地神经口型实测_2026-10-27.md)
+
+![Actual local neural lip sync / synthetic portrait and voice](docs/assets/native-lipsync-20261027-r1/comparison.gif)
+
+本批 **28项安装版检查通过，零失败／错误／跳过**；另177项既有服务源码兼容回归通过，源码与安装版248文件一致。C51实际生成133帧，原始126795个PCM标量、全部alpha及区域外RGB保留，完整音画在工程包迁移后相同。既有993项HDR整轮记录保留为历史结果。脸部模型256×256；完整身体／表演、自动跟踪、自然口型／听审、HDR推理及完整目标仍需建设。
+
+另有30帧移动视频/人脸框实测；实际模型输出后取消任务，三个子进程回收、工程回滚和诊断均通过。 [Evidence](docs/validation/evidence/native-lipsync-20261027-r1/video-and-cancel-r1/verification.json).
+
+<!-- /native-lip-sync-current -->
+
+<!-- hdr-display-history -->
 
 **CLI0.1.40 / alpha.4-local.38 / r41 kit · 1 Skill / 17 modules.**
 
@@ -21,7 +37,7 @@
 
 安装版单轮 **993 项回归通过，零失败／错误／跳过**：保留上轮734项，加入20项HDR数值／实际工程核验及239项相关色彩兼容检查。C50 为实际注册 Skill 输出，48帧／12FPS／4秒，非静音双声道384000个Float32 PCM标量及全部10bit帧在包迁移后相同。色彩传递数学当前CPU，已接通合成／光效继续实际GPU；HDR监看、自然质量、ICC、非零黑位HLG、母版／动态元数据及完整目标继续建设。
 
-<!-- /hdr-display-current -->
+<!-- /hdr-display-history -->
 
 <!-- highlight-glow-history -->
 
@@ -446,7 +462,7 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r41 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r41.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
+**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r42 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r42.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
 
 <!-- /unified-skill-registration -->
 
@@ -752,7 +768,7 @@ flowchart LR
 5. 若需要选型，展示原图与少量候选，记录最终 ID/强度/作用域；在目标素材上复试。
 6. 渲染至工程内新路径，检查实际编码文件、manifest、warning、音画与权利，再导出项目包。
 
-## 完整的 63 个功能模块
+## 完整的 67 个功能模块
 
 编号用于定位文档；各模块有依赖与交叉，不是“43 个独立内核”或完成率。下表直接写明行为、入口与限制；[完整机器能力清单及每项契约](docs/product/CAPABILITIES.md)保留全部字段。
 
@@ -824,6 +840,7 @@ flowchart LR
 | F64 | 可编辑光学效果与GPU运算 | 眩光核心/条纹/光晕/鬼影、旋转椭圆漏光、径向红蓝色差；全部数值通道关键帧、原作者时钟、片段/区间调整层，CPU/OpenCL。 | `effects list/inspect` → `timeline compose` → preview/render | 明确线性RGB；原alpha位保留，透明隐藏色不渗出；ghosts/edge静态，非物理镜头/自动亮源/bloom。 |
 | F65 | 真实高光 Bloom / 胶片 Halation | 软膝阈值提取实际高光→分离高斯扩散→核心抑制/线性着色；可编辑数值轨道和原作者时钟，片段或根区间调整层。 | `effects list/inspect; timeline compose; preview; render; queue` | sigma0…32输入像素；透明/复制边界、原alpha位保持；实际四kernel GPU/CPU参考，有界空间/访问预算；非物理胶片/HDR验收。 |
 | F66 | 原生 PQ／HLG HDR 与 SDR 显示 | 明确参考白及HLG峰值/gamma，解码至显示线性光；不同nit素材、普通效果/合成、10-bit BT.2020 NCL交付，单独选择SDR trim及PNG/MP4预览。 | `timeline compose; validate; preview; render; convert` | 传递CPU，已有合成/光效可GPU；拒绝8-bit/标签不符/缺单位；alpha位保留。非ICC/动态元数据或HDR监看验收。 |
+| F67 | 本地神经口型同步 | 图片／视频＋独立声音→真实CUDA MuseTalk口型；25FPS人脸框关键帧、语义下半脸混合、完整PCM及alpha保留，可复用配方并视频/音频关联入轨。 | `lipsync adapter register/list/inspect; lipsync generate` | 本地safetensors及已有原生Torch依赖；脸部256×256、明确8bit SDR与源运镜、无CPU回退；自然口型、完整数字人仍未验收。 |
 
 ## 支持的服务模块与依赖
 
@@ -852,6 +869,7 @@ flowchart LR
 | S19 | 独立四轨分离 | 原生 Torch/TorchAudio HDemucs worker | 显式登记原生 Python、权重/证据/实现哈希；auto/cpu/cuda，4 float WAV/轨道 | `audio adapter; audio separate-stems` | 不随基本 ZIP 分发 Torch/权重；自然听感与权重许可未闭 |
 | S20 | 字幕翻译配音联合服务 | 既有 OPUS / Kokoro 原生 worker + 受管工程事务 | 普通 SRT、明确语言/音色/轨道，CPU/CUDA/auto，批内复用 | `dub subtitles` | [完整流程](docs/product/SUBTITLE_DUBBING.md)；保留全句和重试，字词/口型/自然质量未闭 |
 | S21 | 本地GPU常驻推理会话 | 原生进程、认证Windows命名管道、JSON/原始帧、重叠拒写锁和生命周期看门狗。 | 已有本地VACE适配器；同一提示词多方案。 | `media model-session start/status/stop` | 不开放网络端口；同工程串行，首条加载及其他模型复用仍有限。 |
+| S22 | MuseTalk CUDA 神经口型服务 | 本地Whisper-tiny音频特征、MuseTalk1.5 UNet、SD VAE与BiSeNet；固定safetensors与拒写锁、原生任务回收。 | 显式已有Torch/Diffusers/Transformers/OpenCV原生依赖及模型证据；无自动安装。 | `lipsync adapter; lipsync generate` | 模型256×256，25FPS；授权、自然度、完整数字人及HDR另行验收。 |
 
 **本机查询与交付状态：** 本轮 doctor 检测到原生 Python 3.13.1、FFmpeg/ffprobe 8.1 和 Node；这不证明每个模型或浏览器适配器均已注册。doctor 只查到系统存在 Docker/WSL 可执行路径，没有运行它们。本项目始终使用原生工具，不调度 Docker/WSL/虚拟环境。
 
@@ -869,7 +887,7 @@ flowchart LR
 
 以上接口不代表这些权重随基础包分发。历史某模型实测也不等于当前工程已配置；应读取实际 registry 和命令结果。外部模型、音色和素材的许可分别核验，软件 MIT 不覆盖它们。
 
-## 46 个效果算子与 12 个运镜预设
+## 51 个效果算子与 12 个运镜预设
 
 | 效果类别 | 可查询的实际算子 |
 |---|---|
@@ -951,7 +969,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.38/final-r1/installed/`，CLI 0.1.40；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
+本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.39/final-r1/installed/`，CLI 0.1.41；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1419,6 +1437,12 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R275 | 2026-10-27 native HDR | 239既有色彩/曲线/LUT/浮点包/色阶/三路平衡/色调专项回归通过，原有二字段相对信号、精度、资源及迁移约束保留。 | [Evidence](docs/validation/evidence/native-hdr-20261027-r1/source-compat-r1/verification.json) |
 | R276 | 2026-10-27 native HDR | 注册安装版Skill C50实际混合100nit SDR图形与203nit参考白HDR；48帧、非静音双声道384000 PCM及10bit画面包往返相同，输出PQ/HLG母版、独立SDR trim和4000ms GIF。 | [Evidence](docs/validation/evidence/native-hdr-20261027-r1/case-r3/verification.json) |
 | R277 | 2026-10-27 native HDR | r41工具包1入口/17模块/79 Skill文件/126包文件，完整校验与独立注册32次调用；三语F66/S21，271既有R记录及38原关闭条件保留。 | [Evidence](docs/validation/evidence/native-hdr-20261027-r1/kit-r1/verification.json) |
+| R278 | 2026-10-27 native lip sync | CLI0.1.41/local.39离线构建与安装：248文件逐字节相同，80项能力；28项安装版检查全过，零失败/错误/跳过。 | [Evidence](docs/validation/evidence/native-lipsync-20261027-r1/installed-lipsync-r1/verification.json) |
+| R279 | 2026-10-27 native lip sync | 28项源码检查：部分管道读取、蒙版/区域外/alpha0隐藏RGB、44.1k精确样本、配方摘要/迁移、真实FFmpeg、取消/超时、错误诊断和事务回滚。 | [Evidence](docs/validation/evidence/native-lipsync-20261027-r1/source-lipsync-r3/verification.json) |
+| R280 | 2026-10-27 native lip sync | 177项既有抠像/分割/修复/生成/片段库/schema源码兼容检查全过；不与此前993项历史安装回归合并为本轮总数。 | [Evidence](docs/validation/evidence/native-lipsync-20261027-r1/source-service-compat-r1/verification.json) |
+| R281 | 2026-10-27 native lip sync | 实际CUDA模型探针通过；首轮旧VAE参数名失败保留，修复使用严格显式映射。权重固定来源/哈希，weights_only转safetensors并逐张量回读。 | [Evidence](docs/validation/evidence/native-lipsync-20261027-r1/model-probe-r2/verification.json) |
+| R282 | 2026-10-27 native lip sync | C51真实注册安装版Skill：133帧、全部126795个原始PCM标量/alpha/区域外RGB保留；关联可编辑入轨，工程包完整画面/声音重放相同，带合成人物/声音的MP4/GIF与来源。 | [Evidence](docs/validation/evidence/native-lipsync-20261027-r1/case-r1/verification.json) |
+| R283 | 2026-10-27 native lip sync | r42单入口工具包：1 Skill/17模块/80 Skill文件/128ZIP项；完整哈希、独立注册及安装入口核验；三语F67/S22及全部277既有R记录和38原关闭条件保留。 | [Evidence](docs/validation/evidence/native-lipsync-20261027-r1/kit-r1/verification.json) |
 
 ## 当前边界与开发方向
 

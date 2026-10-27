@@ -1,0 +1,93 @@
+{
+  "status": "actual-installed-CUDA-case",
+  "cli_version": "0.1.41",
+  "native_windows": true,
+  "virtualization": false,
+  "source_fallback": false,
+  "synthetic_protocol_worker": false,
+  "real_person_reference": false,
+  "master_frames": 133,
+  "master_fps": 25,
+  "master_duration_seconds": 5.32,
+  "preview_frames": 160,
+  "preview_fps": 30,
+  "GIF_frames": 133,
+  "GIF_duration_ms": 5320,
+  "moving_frames": 30,
+  "moving_fps": 25,
+  "files": [
+    {
+      "path": "comparison.gif",
+      "bytes": 29013886,
+      "sha256": "a9db3348e54e8b8ce01af4d74c2613bb328c063c5a3e6ee259c48771ca3366b6"
+    },
+    {
+      "path": "editable-lipsync.aevpkg.zip",
+      "bytes": 10092625,
+      "sha256": "38f774792c507fabe9531cff94761a1e6b33524777407900ad429910ab3a21de"
+    },
+    {
+      "path": "frame-first.png",
+      "bytes": 237726,
+      "sha256": "6fada96ad9dd25c74b06d9cc87a366bc20cfd55e795445fc59c9173a058ae31a"
+    },
+    {
+      "path": "frame-last.png",
+      "bytes": 237681,
+      "sha256": "a8893addace192cb037376e210c7555b1e6973468232f4863678568aa6c2d53e"
+    },
+    {
+      "path": "frame-middle.png",
+      "bytes": 237802,
+      "sha256": "ddd9477bce03f5f2b07527eb05c14a76f75b077cb7f0a949976e7368b9f9a87f"
+    },
+    {
+      "path": "moving-boxes.json",
+      "bytes": 398,
+      "sha256": "869f0709d041a0b8848fe126b9f6eab76422dfa5bc12d71aa7a0447eb94290b7"
+    },
+    {
+      "path": "moving-source.mov",
+      "bytes": 25421078,
+      "sha256": "348f81a445c5d413c6133c990c4af82cd1514de008a84912e8cc66d9ec594715"
+    },
+    {
+      "path": "moving-spoken.mp4",
+      "bytes": 90607,
+      "sha256": "f83f113c40cdeb9b5caf29555c2f3d2bae6e434eac5904fe553d1d1755fac321"
+    },
+    {
+      "path": "portrait-base.png",
+      "bytes": 407261,
+      "sha256": "ccc0dc10531e80125de9028de603dfe5dd5e481ea4bef6cf517ec5a6dfc31f7c"
+    },
+    {
+      "path": "portrait.png",
+      "bytes": 398350,
+      "sha256": "4d3f617e44f1b58e34c7fb120ea26f38952007fb6671ec4f906e62a5566af477"
+    },
+    {
+      "path": "SOURCE.txt",
+      "bytes": 442,
+      "sha256": "9031adf16c2d285eb582c987a2d5937e67bf816647c838ae31ad8d16b2fdc9ef"
+    },
+    {
+      "path": "speech.wav",
+      "bytes": 253634,
+      "sha256": "c1ec3bd51d3b58f422709d205ec45ec2e220dc0e8f0c79e21f5f712b87084113"
+    },
+    {
+      "path": "spoken.mp4",
+      "bytes": 189024,
+      "sha256": "37df5e8ed30197a82d43fb91348d54677d9902bafe8429a14c199a781adb572a"
+    }
+  ],
+  "evidence": [
+    "../../validation/evidence/native-lipsync-20261027-r1/case-r1/verification.json",
+    "../../validation/evidence/native-lipsync-20261027-r1/video-and-cancel-r1/verification.json"
+  ],
+  "editable_package_scope": "Initial portrait + full synthetic speech + neural output + linked clips + recipe. Moving-video companion is supplied separately.",
+  "natural_quality_accepted": false,
+  "continuous_human_playback": false,
+  "human_listening": false
+}

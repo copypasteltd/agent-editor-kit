@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "at_utc": "2026-10-27T07:11:45.297404+00:00",
+  "goal_complete": false,
+  "native_windows": true,
+  "virtualization": false,
+  "source_fallback": false,
+  "product_files": 248,
+  "capabilities": 80,
+  "installed_tests": 28,
+  "source_lipsync_tests": 28,
+  "source_compatibility_tests": 177,
+  "earlier_HDR_tests_aggregated": false,
+  "source_and_installed_equal": true,
+  "actual_neural_master_frames": 133,
+  "moving_video_frames": 30,
+  "actual_neural_cancellation": true,
+  "skill_files": 80,
+  "kit_files": 128,
+  "readme_prior_R_rows_preserved": 277,
+  "readme_R_rows": 283,
+  "goal_closure_cells_preserved": 38,
+  "changed_files": 328,
+  "local_links_verified": 3736,
+  "verbatim_upstream_link_scope": [
+    {
+      "path": "docs/validation/evidence/native-lipsync-20261027-r1/upstream-code/README.md",
+      "sha256": "63587c38fa53bd3292654a71aa6978628db02dd02cc93153030f3d0dca7721bf",
+      "scope": "Verbatim upstream capture; relative links resolve in pinned upstream repository."
+    }
+  ]
+}

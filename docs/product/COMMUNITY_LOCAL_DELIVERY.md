@@ -2,7 +2,7 @@
 
 [使用手册](COMMUNITY_MATERIALS.md) · [繁體中文](COMMUNITY_MATERIALS.zh-TW.md) · [English](COMMUNITY_MATERIALS.en.md)
 
-当前本机版本是 **`v0.1.0-alpha.4-local.38` / CLI 0.1.40**，正式安装在 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.38/final-r1/installed/`。这是本地构建和验收记录；公开 GitHub Release 仍是 alpha.3 / CLI 0.1.2，原附件、标签和摘要不覆盖。
+当前本机版本是 **`v0.1.0-alpha.4-local.39` / CLI 0.1.41**，正式安装在 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.39/final-r1/installed/`。这是本地构建和验收记录；公开 GitHub Release 仍是 alpha.3 / CLI 0.1.2，原附件、标签和摘要不覆盖。
 
 The current build is installed locally. Public alpha.3 downloads remain unchanged and do not contain the new voice, translation, material or GPU commands. The updated Skill kit must be paired with this matching local runtime bundle.
 
@@ -14,9 +14,9 @@ The current build is installed locally. Public alpha.3 downloads remain unchange
 
 | 内容 / Item | 路径 / Path | 校验 / Verification |
 |---|---|---|
-| 编译好的基础运行 ZIP / Application bundle | `local/agent-ffmpeg/v0.1.0-alpha.4-local.38/candidate-r1/bundle.zip` | SHA-256 `c2448325021ec73c6dd182b9a9ffcb31df7e04e250ea3bc7826b57e653ece39a` |
-| 运行包清单 / Bundle manifest | ZIP 内 / inside ZIP: `manifest.json` | `sha256:737f8b87d3aa95bd07cbc3323332ef1a18684e78407c7cae821f99f079f170c7` |
-| 单入口 Skill kit / Single-entry kit | `docs/skills/agent-editor-kit-community-unified-skill-r41.zip` | [独立包摘要 / Package digest](../skills/community-unified-skill-package-0.1.40-r41.json) |
+| 编译好的基础运行 ZIP / Application bundle | `local/agent-ffmpeg/v0.1.0-alpha.4-local.39/candidate-r1/bundle.zip` | SHA-256 `088f532524f56b700e8b40780c809a1e90525a842c2402c355bf9825f7a0292f` |
+| 运行包清单 / Bundle manifest | ZIP 内 / inside ZIP: `manifest.json` | `sha256:d9eadc513068d476aa563221b6f0b245ae113321ea32ca73d83c90021ff67bef` |
+| 单入口 Skill kit / Single-entry kit | `docs/skills/agent-editor-kit-community-unified-skill-r42.zip` | [独立包摘要 / Package digest](../skills/community-unified-skill-package-0.1.41-r42.json) |
 | 四个模型 ZIP / Four model ZIPs | `local/agent-ffmpeg/community-model-archives-r2/` | 见下表及 / see table and `archives.json` |
 | 可移动模型安装 / Relocated model installation | `local/agent-ffmpeg/community-portable-r1/模型 包/` | 实际从四个 ZIP 安装；路径含中文与空格 / actually installed from all four ZIPs |
 | 当前调用配置 / Runtime configuration | `local/agent-ffmpeg/runtime.json` | 固定应用摘要、原生 Python、启动器摘要 / pinned app, native Python and launcher |
@@ -43,13 +43,13 @@ Requires native Windows x64, existing CPython 3.13 x64 and FFmpeg/ffprobe on PAT
 $aekPython = 'C:/Python313/python.exe'
 $aekSource = 'E:/dev/sandbox/AI广告剪辑'
 $aekHome = 'E:/tools/agent-editor-kit-gpu'
-$aekArchive = Join-Path $aekSource 'local/agent-ffmpeg/v0.1.0-alpha.4-local.38/candidate-r1/bundle.zip'
-$aekExpectedZip = 'c2448325021ec73c6dd182b9a9ffcb31df7e04e250ea3bc7826b57e653ece39a'
+$aekArchive = Join-Path $aekSource 'local/agent-ffmpeg/v0.1.0-alpha.4-local.39/candidate-r1/bundle.zip'
+$aekExpectedZip = '088f532524f56b700e8b40780c809a1e90525a842c2402c355bf9825f7a0292f'
 if ((Get-FileHash -LiteralPath $aekArchive -Algorithm SHA256).Hash.ToLowerInvariant() -ne $aekExpectedZip) { throw 'Application archive hash mismatch' }
-Expand-Archive -LiteralPath (Join-Path $aekSource 'docs/skills/agent-editor-kit-community-unified-skill-r41.zip') -DestinationPath $aekHome
+Expand-Archive -LiteralPath (Join-Path $aekSource 'docs/skills/agent-editor-kit-community-unified-skill-r42.zip') -DestinationPath $aekHome
 Expand-Archive -LiteralPath $aekArchive -DestinationPath (Join-Path $aekHome 'bundle')
 Set-Location $aekHome
-& $aekPython -I -B -X utf8 ./bundle/install.py --bundle ./bundle --target ./local/agent-ffmpeg/installed --manifest-sha256 'sha256:737f8b87d3aa95bd07cbc3323332ef1a18684e78407c7cae821f99f079f170c7' --timeout-seconds 600
+& $aekPython -I -B -X utf8 ./bundle/install.py --bundle ./bundle --target ./local/agent-ffmpeg/installed --manifest-sha256 'sha256:d9eadc513068d476aa563221b6f0b245ae113321ea32ca73d83c90021ff67bef' --timeout-seconds 600
 if ($LASTEXITCODE) { throw 'Native application installation failed' }
 ```
 
@@ -333,3 +333,5 @@ CLI0.1.38/local.36/r39: [optical effects](OPTICAL_EFFECTS.md), [C48 actual edita
 CLI0.1.39/local.37/r40: [highlight Bloom and Halation](HIGHLIGHT_GLOW.md), [C49 actual editable output](CASES.md#c49-highlight-glow), [local installation](../releases/CLI_0.1.39_LOCAL.md).
 
 CLI0.1.40/local.38/r41: [native PQ/HLG and SDR viewing](HDR_DISPLAY.md), [C50](CASES.md#c50-native-hdr), [installation](../releases/CLI_0.1.40_LOCAL.md).
+
+CLI0.1.41/local.39/r42: [local neural lip sync](LIP_SYNC.md), [C51](CASES.md#c51-native-lip-sync), [local installation](../releases/CLI_0.1.41_LOCAL.md). MuseTalk safetensors and the native CUDA model interpreter are separate explicit dependencies from the four existing community packs; registration does not install them.

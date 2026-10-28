@@ -1058,3 +1058,19 @@ Independent first-surface reference:230400 pixels,max error 1.18875433497e-07. A
 [Original source](../assets/native-hlg-black-20261028-r1/source-hlg-black.mkv) · [Actual master](../assets/native-hlg-black-20261028-r1/edited-master.mkv) · [Actual MP4](../assets/native-hlg-black-20261028-r1/actual-preview.mp4) · [Actual frame](../assets/native-hlg-black-20261028-r1/actual-frame.png) · [Signals](../assets/native-hlg-black-20261028-r1/signals.json) · [Comparison](../assets/native-hlg-black-20261028-r1/comparison.png) · [Editable package](../assets/native-hlg-black-20261028-r1/editable-hlg-black.aevpkg.zip) · [Manifest](../assets/native-hlg-black-20261028-r1/edited-master.mkv.manifest.json) · [Provenance](../assets/native-hlg-black-20261028-r1/SOURCE.txt) · [Media hashes](../assets/native-hlg-black-20261028-r1/media-manifest.json)
 
 Left:independent ideal-zero-black/no-glow control;right:actual declared0.5-nit black/GPU Bloom at the same frame index. Diagnostic declaration,not measured display calibration or matched natural-image artistic A/B. No human continuous playback/listening or HDR-monitor acceptance. Full ACES,dynamic HDR,subblack PLUGE and natural-image acceptance remain open.
+
+<a id="c58-native-icc-output"></a>
+
+## C58 · 原生ICC输出与软打样 / 原生ICC輸出與軟打樣 / Native ICC output and proof
+
+Actual installed CLI0.1.48 through registered unified Skill. Original CC0 linear RGB16 chart/stereo tones and original synthetic bidirectional RGB/XYZ ICC CLUT. Editable native GPU Bloom → actual profile-embedded PNG16/PCM device delivery;separate native SOFTPROOFING → actual standard ten-bit sRGB master and previews. The synthetic profile is a numerical diagnostic,not a printer or monitor characterization.
+
+All384 frame/patch B2A comparisons:max error 0.493822257981 of65535. All48 PNG frames/files (88473600 decoded pixel bytes),all66355200 decoded proof-movie bytes and384000 nonzero PCM scalars replay exactly after editable-package import;48 actual GPU Bloom calls per sequence. Every PNG embeds the exact ICC and passes full CRC/decompression checking.
+
+Independent soft-proof oracle separately checks384 Y/Cb/Cr triplets (1152 encoded components),with maximum errors [0.3125144402845308, 0.41786817608738147, 0.4896329778106292] codes,using original table interpolation,independent XYZ matrices,sRGB and limited-range BT709 math;no product/CMM functions.
+
+![Actual native ICC soft proof](../assets/native-icc-output-20261028-r3/actual-preview.gif)
+
+[Original source](../assets/native-icc-output-20261028-r3/source-linear.mkv) · [Original tones](../assets/native-icc-output-20261028-r3/source-stereo.wav) · [Original ICC](../assets/native-icc-output-20261028-r3/original-proof.icc) · [Profile descriptor](../assets/native-icc-output-20261028-r3/profile.json) · [Device PNG16](../assets/native-icc-output-20261028-r3/actual-device-frame.png) · [Actual proof master](../assets/native-icc-output-20261028-r3/proof-master.mkv) · [Actual MP4](../assets/native-icc-output-20261028-r3/actual-preview.mp4) · [Actual frame](../assets/native-icc-output-20261028-r3/actual-frame.png) · [Comparison](../assets/native-icc-output-20261028-r3/comparison.png) · [Editable package](../assets/native-icc-output-20261028-r3/editable-icc-output.aevpkg.zip) · [Sequence receipt](../assets/native-icc-output-20261028-r3/sequence.json) · [Master manifest](../assets/native-icc-output-20261028-r3/proof-master.mkv.manifest.json) · [Provenance](../assets/native-icc-output-20261028-r3/SOURCE.txt) · [Media hashes](../assets/native-icc-output-20261028-r3/media-manifest.json)
+
+Left:independent source-to-sRGB/no-glow mathematical control;right:actual native proof preview plus GPU Bloom at the same frame. Not a matched device/artistic A/B. Actual GIF24 frames/4 seconds. No human continuous playback/listening or physical display/printer matching acceptance. CMYK,ICC5,full ACES,dynamic HDR and natural-image artistic acceptance remain open.

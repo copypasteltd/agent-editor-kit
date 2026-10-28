@@ -926,6 +926,12 @@ def render_fingerprints(project: dict[str, Any], sequence: dict[str, Any], setti
                 input_hashes['icc-profile:'+signal.icc_profile]=signal.sha256 if root is None else 'sha256:'+sha256_file(profile_path(root,signal))
                 for path in runtime_paths():
                     input_hashes['runtime:icc:'+str(path)]='sha256:'+sha256_file(path)
+        if 'proofing' in project['settings']['pixel_pipeline']:
+            from .icc_output import proof_configuration
+            signal,_=proof_configuration(project['settings']['pixel_pipeline']['proofing'])
+            input_hashes['icc-proof:'+signal.icc_profile]=signal.sha256 if root is None else 'sha256:'+sha256_file(profile_path(root,signal))
+            for path in [*runtime_paths(),Path(__file__).with_name('icc_output.py')]:
+                input_hashes['runtime:icc-proof:'+str(path)]='sha256:'+sha256_file(path)
     if particle_sources:
         for name in ('procedural_particles','particle_animation','float_timeline','float_gpu','float_gpu_worker','float_gpu_native','float_gpu_control'):
             input_hashes['runtime:particles:'+name]='sha256:'+sha256_file(Path(__file__).with_name(name+'.py'))

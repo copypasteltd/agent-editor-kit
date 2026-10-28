@@ -1,0 +1,14 @@
+{
+  "status": "failed",
+  "registered_skill": true,
+  "native_windows": true,
+  "virtualization": false,
+  "source_fallback": false,
+  "started_at_utc": "2026-10-28T16:07:24.517420+00:00",
+  "human_listening": false,
+  "continuous_human_playback": false,
+  "display_or_printer_accepted": false,
+  "full_goal_complete": false,
+  "error": "AssertionError(('compose', b'{\"ok\":false,\"command\":\"timeline.compose\",\"request_id\":\"req_20261028160801_ab9560c8\",\"operation_id\":null,\"status\":\"failed\",\"data\":{},\"artifacts\":[],\"warnings\":[],\"errors\":[{\"code\":\"PROJECT_INVALID\",\"message\":\"\\xe6\\x97\\xb6\\xe9\\x97\\xb4\\xe7\\xba\\xbf\\xe5\\x8f\\x98\\xe6\\x9b\\xb4\\xe4\\xbc\\x9a\\xe7\\x94\\x9f\\xe6\\x88\\x90\\xe6\\x97\\xa0\\xe6\\x95\\x88\\xe9\\xa1\\xb9\\xe7\\x9b\\xae\",\"path\":null,\"retryable\":false,\"cause\":\"{\\\\\"ok\\\\\": false, \\\\\"errors\\\\\": [{\\\\\"code\\\\\": \\\\\"SCHEMA_VALIDATION_FAILED\\\\\", \\\\\"message\\\\\": \\\\\"{\\'engine\\': \\'float32-native-v1\\', \\'working_signal\\': {\\'primaries\\': \\'bt709\\', \\'transfer\\': \\'linear\\'}, \\'output_signal\\': {\\'primaries\\': \\'bt709\\', \\'transfer\\': \\'srgb\\'}, \\'range_policy\\': \\'clip\\', \\'sources\\': {\\'chart\\': {\\'source_signal\\': {\\'primaries\\': \\'bt709\\', \\'transfer\\': \\'linear\\'}, \\'demux_origin\\': 0, \\'display_geometry\\': \\'square-unrotated\\'}}, \\'proofing\\': {\\'profile\\': {\\'icc_profile\\': \\'original-proof.icc\\', \\'sha256\\': \\'sha256:0b2f4dad1ae9c7873080a4be0ca0042c132e067c09adcc2aad54a4905a7fe8ed\\', \\'intent\\': \\'relative-colorimetric\\', \\'black_point_compensation\\': False, \\'reference_white_nits\\': None}, \\'simulation_intent\\': \\'relative-colorimetric\\'}} is not valid under any of the given schemas\\\\\", \\\\\"path\\\\\": \\\\\"settings.pixel_pipeline\\\\\", \\\\\"retryable\\\\\": false}], \\\\\"warnings\\\\\": [], \\\\\"rights\\\\\": {\\\\\"ok\\\\\": true, \\\\\"target\\\\\": \\\\\"commercial_ad\\\\\", \\\\\"checked\\\\\": 2, \\\\\"required_records\\\\\": 2, \\\\\"failures\\\\\": [], \\\\\"warnings\\\\\": [], \\\\\"disposition_decisions\\\\\": [], \\\\\"effective_disposition_decisions\\\\\": []}, \\\\\"schema_engine\\\\\": \\\\\"jsonschema\\\\\", \\\\\"asset_count\\\\\": 2, \\\\\"sequence_count\\\\\": 1}\"}],\"provenance\":{\"cli_version\":\"0.1.48\",\"schema_version\":\"0.1.0\",\"engine_version\":\"ffmpeg-local\",\"started_at\":\"2026-10-28T16:08:01.615959Z\",\"finished_at\":\"2026-10-28T16:08:01.615980Z\",\"network\":\"disabled\"}}\\r\\n', b''))",
+  "checks": []
+}

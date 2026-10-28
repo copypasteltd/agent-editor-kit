@@ -1,0 +1,33 @@
+{
+  "report_version": "0.1.0",
+  "direction": "export",
+  "source_format": "agent-project/0.1.0",
+  "target_format": "agent-project-package/0.1.0",
+  "created_at": "2026-10-28T16:15:04.129556Z",
+  "items": [
+    {
+      "capability": "project-package",
+      "status": "Exact",
+      "source": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-icc-output-case-r3\\project",
+      "target": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-icc-output-20261028-r3\\editable-icc-output.aevpkg.zip",
+      "detail": "项目、登记权利和本地素材已写入自包含 ZIP"
+    },
+    {
+      "capability": "icc-source-profiles",
+      "status": "Mapped",
+      "source": "explicit pixel_pipeline source signals",
+      "target": "assets/ / assets/color-profiles/",
+      "detail": "1 个原生检查并持锁读取的ICC配置保留原字节和SHA；作者工程不改写，权利证据不推定"
+    }
+  ],
+  "warnings": [
+    {
+      "capability": "package-excluded-runtime",
+      "status": "Approximate",
+      "source": "project runtime",
+      "target": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-icc-output-20261028-r3\\editable-icc-output.aevpkg.zip",
+      "detail": "renders/cache/operations/history 未打包"
+    }
+  ],
+  "failures": []
+}

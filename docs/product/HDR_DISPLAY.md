@@ -159,3 +159,5 @@ CLI0.1.45: [explicit reference-white conversion](CHROMATIC_ADAPTATION.md) extend
 CLI0.1.46 adds a separate [native ICC source-profile path](ICC_PROFILES.md): explicit RGB v2/v4 matrix/table files, rendering intent/BPC and direct linear working RGB conversion. Existing mathematical reference-white conversion still infers no profile or physical illuminant. ICC white tags do not supply HDR luminance; declare source/working/output nits separately.
 
 CLI0.1.47 adds [HLG display black and complete source/working signal JSON for raw surface CLI](HLG_BLACK_LEVEL.md). Explicit nits,black/peak/gamma and reject/clip policies are required; no monitor inference. Existing RGB/ICC individual flags remain supported.
+
+CLI0.1.48 adds [native RGB ICC output,profile-embedded PNG16 timeline delivery/authored PCM and real native soft proof](ICC_OUTPUT.md). Arbitrary device RGB is never relabelled as standard YUV;physical-device matching remains open.

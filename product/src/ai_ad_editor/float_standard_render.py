@@ -48,7 +48,7 @@ def _signal(value, field):
 def configuration(value, settings, encoder):
     allowed = {'engine', 'working_signal', 'output_signal', 'background_signal', 'range_policy',
                'window_frames', 'max_source_cache_bytes', 'max_open_sources', 'native_timeout_seconds', 'sources',
-               'display_mapping', 'preview_mapping'}
+               'display_mapping', 'preview_mapping','proofing'}
     if not isinstance(value, dict) or set(value) - allowed or value.get('engine') != ENGINE:
         raise error('CONFIG', 'pixel_pipeline必须使用完整且受支持的浮点配置')
     working = _signal(value.get('working_signal'), 'working_signal')
@@ -149,6 +149,9 @@ def configuration(value, settings, encoder):
     if 'display_mapping' in mappings:
         if hdr_output or not has_luminance(output) or output.reference_white_nits != mappings['display_mapping']['target_peak_nits']:
             raise error('MAPPING', 'SDR显示映射的目标峰值须等于明确SDR输出reference_white_nits')
+    if 'proofing' in value:
+        from .icc_output import proof_configuration
+        proof_configuration(value['proofing'])
     normalized.update(working=working, output=output, background=background, range_policy=policy,
                       projection_working_bytes_limit=min(768 * 1024**2, sampling['max_working_bytes']),
                       alpha_output=encoder['video']['pixel_format'] == 'yuva420p',
@@ -171,6 +174,7 @@ class FloatRenderContext:
         self.config = configuration(project['settings']['pixel_pipeline'], project['settings'], encoder)
         self.stack = ExitStack()
         self.sources = {}
+        self.proof_transforms = {}
         self.timeline = None
         self.receipt = None
         self.sources_closed = False
@@ -238,7 +242,7 @@ class FloatRenderContext:
                   ('float_standard_render', 'float_stream', 'float_audio_graph', 'render', 'float_color_signal',
                    'float_timeline', 'float_tracking', 'bindings', 'animation', 'float_crop', 'float_adjustments', 'float_effect_chain', 'float_transitions', 'float_transition_plan', 'source_transitions',
                    'float_text','float_text_paint','float_text_coverage','text_paint','text_layout','text_highlight','text_typing','captions',
-                   'float_gpu','float_gpu_native','float_gpu_worker','float_gpu_control','procedural_particles','particle_animation','float_optics','float_optics_kernel','float_glow','float_glow_kernel','float_hdr','float_hlg_black','hdr_metadata','float_chromatic','icc_profiles')]
+                   'float_gpu','float_gpu_native','float_gpu_worker','float_gpu_control','procedural_particles','particle_animation','float_optics','float_optics_kernel','float_glow','float_glow_kernel','float_hdr','float_hlg_black','hdr_metadata','float_chromatic','icc_profiles','icc_output')]
         self.artifacts = [artifact_entry(p, 'standard-float-render-runtime') for p in paths]
         context = IndexContext(self.root, persist=not self.dry_run, cancel_file=self.marker)
         per_source = min(256 * 1024**2, self.config['max_source_cache_bytes'] // max(1, len(needed)))
@@ -314,6 +318,35 @@ class FloatRenderContext:
                              projection_budget_scope='each float projection/composite/delivery call; not total process RSS')
         self.metadata['timeline'] = self.timeline.metadata
         self.metadata['projection_acceleration'] = self.gpu.evidence
+        if 'proofing' in self.config:
+            from .icc_output import proof_configuration
+            from .icc_profiles import profile_path,runtime_paths
+            proof,_=proof_configuration(self.config['proofing'])
+            for path in [profile_path(self.root,proof),*runtime_paths()]:
+                entry=artifact_entry(path,'float-proof-publication-dependency')
+                if path==profile_path(self.root,proof) and entry['sha256']!=proof.sha256:
+                    raise error('INPUT_CHANGED','软打样配置在声明与发布持锁之间变化')
+                self.artifacts.append(entry)
+            self._proof_transform(self.config['working'])
+
+    def _proof_transform(self,signal):
+        from .icc_output import proof_configuration,SoftProofTransform
+        key=repr(sorted(vars(signal).items()))
+        if key not in self.proof_transforms:
+            if len(self.proof_transforms)>=3:raise error('BUDGET','单任务软打样工作信号超过3种')
+            profile,intent=proof_configuration(self.config['proofing'])
+            transform=self.stack.enter_context(SoftProofTransform(self.root,profile,signal,intent,cancel=self.poll))
+            self.proof_transforms[key]=transform
+            info=self.metadata.setdefault('ICC_proofing',{'converted_frames':0,'converted_pixels':0,'contexts':[]})
+            info['contexts'].append(transform.metadata)
+        return self.proof_transforms[key]
+
+    def proof_surface(self,surface,signal):
+        if 'proofing' not in self.config:return surface
+        result,receipt=self._proof_transform(signal).convert(surface,max_working_bytes=self.config['projection_working_bytes_limit'])
+        info=self.metadata['ICC_proofing'];info['converted_frames']+=1;info['converted_pixels']+=receipt['converted_pixels']
+        info['last_surface']=receipt
+        return result
 
     def graph(self):
         from .float_audio_graph import prepare
@@ -364,6 +397,8 @@ class FloatRenderContext:
         self.stack.close()
         self.sources_closed = True
         self.metadata['providers_closed_before_publish'] = all(s.closed for s in self.sources.values())
+        if 'ICC_proofing' in self.metadata:
+            self.metadata['ICC_proofing']['native_handles_closed']=all(t.closed for t in self.proof_transforms.values())
 
     def publish(self, temporary, output, manifest, operation_id):
         """Rollback the movie/manifest pair on caught publication IO errors.
@@ -437,6 +472,7 @@ class FloatRenderContext:
                     self.metadata['last_display_mapping'] = mapping
                     for key in ('negative_components_clipped','over_one_components_clipped','above_declared_peak_pixels'):
                         stats[key] = stats.get(key, 0) + mapping[key]
+                surface = self.proof_surface(surface,signal)
                 delivered, boundary = convert_rgba(surface, signal, self.config['output'],
                     max_working_bytes=self.config['projection_working_bytes_limit'], cancel=self.poll,
                     hdr_range_policy=self.config['range_policy'])

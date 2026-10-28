@@ -283,15 +283,19 @@ def _package_icc_profiles(root,project,files):
     pipeline=(project.get('settings',{}).get('pixel_pipeline') or {})
     snapshots={}
     if pipeline.get('engine')!='float32-native-v1':return snapshots
-    for spec in pipeline.get('sources',{}).values():
-        signal=parse_source_signal(spec['source_signal'])
+    descriptors=[spec['source_signal'] for spec in pipeline.get('sources',{}).values()]
+    if 'proofing' in pipeline:
+        from .icc_output import proof_configuration
+        proof_configuration(pipeline['proofing']);descriptors.append(pipeline['proofing']['profile'])
+    for descriptor in descriptors:
+        signal=parse_source_signal(descriptor)
         if not isinstance(signal,ICCSourceSignal):continue
         path=profile_path(root,signal)
         with ProfileTransform(root,signal):data=path.read_bytes()
         relative=path.relative_to(Path(root).resolve())
         target=relative.as_posix() if relative.parts[0]=='assets' else 'assets/color-profiles/'+signal.sha256[7:]+'.icc'
         if target in files and files[target]!=path:raise ValueError('ICC工程包依赖路径冲突')
-        files[target]=path;snapshots[target]=data;spec['source_signal']['icc_profile']=target
+        files[target]=path;snapshots[target]=data;descriptor['icc_profile']=target
     return snapshots
 
 

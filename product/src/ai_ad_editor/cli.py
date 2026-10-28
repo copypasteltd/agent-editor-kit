@@ -1059,6 +1059,20 @@ def build_parser() -> argparse.ArgumentParser:
     surface_profile=_leaf_common(surface_sub.add_parser('inspect-profile',help='只读核验工程内RGB ICC v2/v4与固定原生色彩引擎'))
     surface_profile.add_argument('--project',required=True)
     surface_profile.add_argument('--input',required=True,help='工程内ICC相对路径')
+    surface_render=_leaf_common(surface_sub.add_parser('render',help='作者时间线交付嵌入RGB ICC的16位PNG序列及48kHz立体声PCM'))
+    surface_render.add_argument('--project',required=True)
+    surface_render.add_argument('--sequence-id',required=True)
+    surface_render.add_argument('--output',required=True)
+    surface_render.add_argument('--output-profile-json',required=True,help='本地JSON：icc_profile/sha256/intent及显式可选项')
+    surface_render.add_argument('--start-frame',type=int,default=0)
+    surface_render.add_argument('--stop-frame',type=int)
+    surface_render.add_argument('--range-policy',choices=('reject','clip'),default='reject')
+    surface_render.add_argument('--max-output-mib',type=int,default=8192)
+    surface_render.add_argument('--cancel-file')
+    surface_verify=_leaf_common(surface_sub.add_parser('inspect-output',help='只读逐帧核验ICC序列全部PNG CRC/像素/嵌入配置和PCM字节'))
+    surface_verify.add_argument('--project',required=True)
+    surface_verify.add_argument('--input',required=True)
+    surface_verify.add_argument('--cancel-file')
 
     queue = subs.add_parser("queue", help="项目内持久化渲染队列")
     queue_sub = queue.add_subparsers(dest="action", required=True)
@@ -6036,6 +6050,20 @@ def command_surface(args: argparse.Namespace) -> dict[str, Any]:
     if args.action=='inspect-profile':
         from .icc_profiles import inspect_profile
         return _envelope('surface.inspect-profile',args,data=inspect_profile(root,args.input))
+    if args.action=='inspect-output':
+        from . import icc_sequence
+        return _envelope('surface.inspect-output',args,data=icc_sequence.inspect(root,args.input,cancel_file=args.cancel_file))
+    if args.action=='render':
+        from . import icc_sequence
+        plan=icc_sequence.prepare(root,project,args.sequence_id,args.output,_load_changes(args.output_profile_json),
+            start_frame=args.start_frame,stop_frame=args.stop_frame,range_policy=args.range_policy,max_output_bytes=args.max_output_mib*1024**2)
+        if args.dry_run:return _envelope('surface.render',args,status='planned',data=plan)
+        operation_id=new_id('icc_sequence')
+        result=icc_sequence.export(root,project,plan,cancel_file=args.cancel_file,
+            progress=lambda done,total:_progress(args,operation_id,'progress','surface.render',done/total*100,'转换实际ICC并交付PNG16作者帧'))
+        _operation(root,operation_id,{'operation_id':operation_id,'command':'surface.render','status':'succeeded',
+            'created_at':now_iso(),'output':result['output'],'manifest_sha256':result['manifest_sha256']})
+        return _envelope('surface.render',args,data=result,operation_id=operation_id)
     geometry=_load_changes(args.transform_json) if args.transform_json else None
     supplied=any(value is not None for value in (args.yuv_matrix,args.yuv_range,args.chroma_location))
     spec=YUVSpec(args.yuv_matrix,args.yuv_range,args.chroma_location) if supplied else None
@@ -7149,6 +7177,7 @@ _READ_ONLY_PROJECT_COMMANDS = {
     *(('semantic', action) for action in ('adapter-list','adapter-inspect','index-list','verify','calibration-list','search')),
     ('surface','inspect'),
     ('surface','inspect-profile'),
+    ('surface','inspect-output'),
     ('diagnostics', 'list'), ('diagnostics', 'show'), ('diagnostics', 'export'),
     ("project", "inspect"),
     ("operation", "inspect"),
@@ -7195,6 +7224,8 @@ COMMANDS: dict[tuple[str, str | None], Callable[[argparse.Namespace], dict[str, 
     ('interpolate','adapter'): command_interpolation_adapter,
     ('interpolate','generate'): command_interpolation_generate,
     ('surface','export'):command_surface,
+    ('surface','render'):command_surface,
+    ('surface','inspect-output'):command_surface,
     ('surface','inspect'):command_surface,
     ('surface','inspect-profile'):command_surface,
     ('cache','list'):command_cache,

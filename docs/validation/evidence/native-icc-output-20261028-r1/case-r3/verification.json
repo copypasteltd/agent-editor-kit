@@ -1,0 +1,158 @@
+{
+  "status": "passed",
+  "registered_skill": true,
+  "native_windows": true,
+  "virtualization": false,
+  "source_fallback": false,
+  "started_at_utc": "2026-10-28T16:12:29.966594+00:00",
+  "human_listening": false,
+  "continuous_human_playback": false,
+  "display_or_printer_accepted": false,
+  "full_goal_complete": false,
+  "checks": [
+    {
+      "name": "icc-delivery-GPU",
+      "ok": true,
+      "glow_calls": 48
+    },
+    {
+      "name": "icc-delivery-all-frames-and-PCM",
+      "ok": true
+    },
+    {
+      "name": "independent-every-frame-B2A-patches",
+      "ok": true,
+      "comparisons": 384,
+      "maximum_error_codes": 0.49382225798126456
+    },
+    {
+      "name": "actual-common-native-proof",
+      "ok": true
+    },
+    {
+      "name": "previews-preserve-author",
+      "ok": true
+    },
+    {
+      "name": "proof-profile-portable",
+      "ok": true
+    },
+    {
+      "name": "icc-replayed-GPU",
+      "ok": true,
+      "glow_calls": 48
+    },
+    {
+      "name": "icc-replayed-all-frames-and-PCM",
+      "ok": true
+    },
+    {
+      "name": "all-PNG-pixels-replay-exact",
+      "ok": true
+    },
+    {
+      "name": "all-PNG-file-bytes-exact",
+      "ok": true
+    },
+    {
+      "name": "all-PCM-replay-exact",
+      "ok": true
+    },
+    {
+      "name": "all-proof-master-video-and-audio-exact",
+      "ok": true
+    },
+    {
+      "name": "GIF-clock",
+      "ok": true
+    }
+  ],
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-icc-output-case-r3\\project",
+  "restored": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-icc-output-case-r3\\restored",
+  "public_directory": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-icc-output-20261028-r3",
+  "PNG_frames": 48,
+  "PNG_pixel_bytes": 88473600,
+  "PCM_scalar_samples": 384000,
+  "decoded_video_bytes": 66355200,
+  "maximum_patch_error_codes": 0.49382225798126456,
+  "comparisons": 384,
+  "GPU_glow_calls_per_sequence": 48,
+  "files": [
+    {
+      "path": "actual-device-frame.png",
+      "bytes": 115759,
+      "sha256": "58bbe144802c5d3c9e7c48541aa7dfac49a0c91e658b681cd1eb72035dfef4b6"
+    },
+    {
+      "path": "actual-frame.png",
+      "bytes": 88004,
+      "sha256": "fa948ce5604b2f96a69249b579100c17dc68f11b1324e4280e35fc0e8b4ce36b"
+    },
+    {
+      "path": "actual-preview.gif",
+      "bytes": 104057,
+      "sha256": "670d4d5dbc73ec5c209d6c01fc6feba6ecfd979e04d8d8e4f0aa67646f8a0a65"
+    },
+    {
+      "path": "actual-preview.mp4",
+      "bytes": 85577,
+      "sha256": "96442dbc3929b4fad6ab0caa750ae673dcf05080ba56d7d44edc5acd6a1d43c2"
+    },
+    {
+      "path": "comparison.png",
+      "bytes": 53226,
+      "sha256": "c91fec3ec4fc564d1c41a41a24a1fbe53662a962bf75196f9d3bb4012c68cf9e"
+    },
+    {
+      "path": "editable-icc-output.aevpkg.zip",
+      "bytes": 3466058,
+      "sha256": "39a5c6bc166624dc76b17baf1e05e5beea696262a9c1b98af9035e9a96e8ce8c"
+    },
+    {
+      "path": "editable-icc-output.aevpkg.zip.conversion-report.json",
+      "bytes": 1284,
+      "sha256": "c2abdd0ebad5fc2ac334d68fa00b13dadd85ac20ce4fd5c9db9ba43f2931e914"
+    },
+    {
+      "path": "original-proof.icc",
+      "bytes": 118436,
+      "sha256": "f79bb3a6dc4fbd02b8d2309e3fb2cd7402feb822f973016ba1089be9c889e4d7"
+    },
+    {
+      "path": "profile.json",
+      "bytes": 203,
+      "sha256": "1c4b3e30dcfae9561264ee574e9c31cc0973f9a83f23c328580d29de83e7eb6a"
+    },
+    {
+      "path": "proof-master.mkv",
+      "bytes": 1647194,
+      "sha256": "6cf3b7caf38a54c149348b52bc1f807fdcc202b365d0b1668cb7c77c7bccdbbf"
+    },
+    {
+      "path": "proof-master.mkv.manifest.json",
+      "bytes": 492649,
+      "sha256": "1a9cd5cf7143b17ccba5518257d3e5086f8cd80ffb12dbc8b7cfda9aa566a367"
+    },
+    {
+      "path": "sequence.json",
+      "bytes": 316454,
+      "sha256": "c3bb3d376db3f57de97f6a06c8bd8f5c03ee2642c9ad79eaede733d84f87e1ce"
+    },
+    {
+      "path": "source-linear.mkv",
+      "bytes": 2373687,
+      "sha256": "f13902a95044e31e754720cc63dcdc723d99a60181e9ffeca5ef7f69671c48a1"
+    },
+    {
+      "path": "source-stereo.wav",
+      "bytes": 1536092,
+      "sha256": "29cd231559476c51f4afca3a17362f40f01212d62d545a2f627cb3e49ef5ac14"
+    },
+    {
+      "path": "SOURCE.txt",
+      "bytes": 611,
+      "sha256": "52c67d453177c3d91ddad526d455d39fc6337bc3fcf117aecaf40138eb3835de"
+    }
+  ],
+  "finished_at_utc": "2026-10-28T16:16:43.629091+00:00"
+}

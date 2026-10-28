@@ -1,0 +1,22 @@
+test_actual_CLUT_output_uses_B2A_and_independent_PCS_oracle (test_icc_output.OutputTests.test_actual_CLUT_output_uses_B2A_and_independent_PCS_oracle) ... ok
+test_all_output_intents_and_BPC_are_native (test_icc_output.OutputTests.test_all_output_intents_and_BPC_are_native) ... ok
+test_input_only_CLUT_cannot_be_silently_used_as_output_or_proof (test_icc_output.OutputTests.test_input_only_CLUT_cannot_be_silently_used_as_output_or_proof) ... ok
+test_invalid_descriptors_and_paths_rejected (test_icc_output.OutputTests.test_invalid_descriptors_and_paths_rejected) ... ok
+test_inverse_gamma_matches_independent_oracle_and_alpha_bits (test_icc_output.OutputTests.test_inverse_gamma_matches_independent_oracle_and_alpha_bits) ... ok
+test_nits_conversion_is_before_encoding (test_icc_output.OutputTests.test_nits_conversion_is_before_encoding) ... ok
+test_png_all_alpha_codes_profile_identity_crc_and_independent_pixels (test_icc_output.OutputTests.test_png_all_alpha_codes_profile_identity_crc_and_independent_pixels) ... ok
+test_png_corrupt_CRC_truncation_and_wrong_profile_rejected (test_icc_output.OutputTests.test_png_corrupt_CRC_truncation_and_wrong_profile_rejected) ... ok
+test_png_failed_write_preserves_existing_and_removes_own_partial (test_icc_output.OutputTests.test_png_failed_write_preserves_existing_and_removes_own_partial) ... ok
+test_range_is_explicit_and_clipping_counted (test_icc_output.OutputTests.test_range_is_explicit_and_clipping_counted) ... ok
+test_softproof_is_native_and_returns_linear_with_exact_alpha (test_icc_output.OutputTests.test_softproof_is_native_and_returns_linear_with_exact_alpha) ... ok
+test_tiles_match_and_budget_cancellation_closes (test_icc_output.OutputTests.test_tiles_match_and_budget_cancellation_closes) ... ok
+test_working_gamut_matrix_before_output_gamma (test_icc_output.OutputTests.test_working_gamut_matrix_before_output_gamma) ... ok
+test_actual_timeline_all_frames_embedded_profile_and_authored_pcm (test_icc_output.TimelineTests.test_actual_timeline_all_frames_embedded_profile_and_authored_pcm) ... ok
+test_dry_run_budget_and_complete_CLI_descriptor (test_icc_output.TimelineTests.test_dry_run_budget_and_complete_CLI_descriptor) ... ok
+test_partial_clock_pcm_and_cancellation_preserves_no_partial_output (test_icc_output.TimelineTests.test_partial_clock_pcm_and_cancellation_preserves_no_partial_output) ... ok
+test_softproof_common_render_and_source_profile_packaging (test_icc_output.TimelineTests.test_softproof_common_render_and_source_profile_packaging) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 53.655s
+
+OK

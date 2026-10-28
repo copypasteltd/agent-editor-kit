@@ -3267,6 +3267,27 @@
         },
         "display_mapping": {
           "$ref": "#/$defs/nativeDisplayMapping"
+        },
+        "proofing": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "profile",
+            "simulation_intent"
+          ],
+          "properties": {
+            "profile": {
+              "$ref": "#/$defs/nativeICCProofProfile"
+            },
+            "simulation_intent": {
+              "enum": [
+                "perceptual",
+                "relative-colorimetric",
+                "saturation",
+                "absolute-colorimetric"
+              ]
+            }
+          }
         }
       }
     },
@@ -5348,6 +5369,37 @@
           "type": "number",
           "minimum": 0.01,
           "maximum": 10000
+        }
+      }
+    },
+    "nativeICCProofProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "icc_profile",
+        "sha256",
+        "intent"
+      ],
+      "properties": {
+        "icc_profile": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "intent": {
+          "enum": [
+            "perceptual",
+            "relative-colorimetric",
+            "saturation",
+            "absolute-colorimetric"
+          ]
+        },
+        "black_point_compensation": {
+          "type": "boolean"
         }
       }
     }

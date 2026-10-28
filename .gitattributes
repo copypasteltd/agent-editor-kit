@@ -1849,3 +1849,12 @@ scripts/*hlg*20261028.py text eol=lf
 docs/product/HLG_BLACK_LEVEL.md text eol=lf
 docs/releases/CLI_0.1.47_LOCAL.md text eol=lf
 docs/validation/HLG显示黑位实测_2026-10-28.md text eol=lf
+
+# Preserve ICC output receipts/media and pinned capability bytes.
+docs/validation/evidence/native-icc-output-20261028-r1/** -text -whitespace
+docs/assets/native-icc-output-20261028-*/** -text -whitespace
+docs/product/icc-output-capabilities-cli-0.1.48.json -text -whitespace
+scripts/*icc_output*20261028.py text eol=lf
+docs/product/ICC_OUTPUT.md text eol=lf
+docs/releases/CLI_0.1.48_LOCAL.md text eol=lf
+docs/validation/原生ICC输出与软打样实测_2026-10-29.md text eol=lf

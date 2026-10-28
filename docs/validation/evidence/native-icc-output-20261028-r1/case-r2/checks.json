@@ -1,0 +1,25 @@
+[
+  {
+    "name": "icc-delivery-GPU",
+    "ok": true,
+    "glow_calls": 48
+  },
+  {
+    "name": "icc-delivery-all-frames-and-PCM",
+    "ok": true
+  },
+  {
+    "name": "independent-every-frame-B2A-patches",
+    "ok": true,
+    "comparisons": 384,
+    "maximum_error_codes": 0.49382225798126456
+  },
+  {
+    "name": "actual-common-native-proof",
+    "ok": true
+  },
+  {
+    "name": "previews-preserve-author",
+    "ok": false
+  }
+]

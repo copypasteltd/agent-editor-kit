@@ -1,0 +1,39 @@
+{
+  "checked_date_local": "2026-10-28/29",
+  "native_windows": true,
+  "GUI_browser_tabs_opened": 0,
+  "sources": [
+    {
+      "url": "https://www.w3.org/TR/2025/REC-png-3-20250624/",
+      "facts": [
+        "RGBA color type6 supports16-bit channels",
+        "iCCP embeds zlib-compressed actual RGB ICC profile",
+        "avoid conflicting alternate color interpretation chunks"
+      ]
+    },
+    {
+      "url": "https://github.com/mm2/Little-CMS/tree/lcms2.19.1",
+      "commit": "21c582a594fe5279f90c0b93437c398f93bf62b0",
+      "local_files": [
+        {
+          "path": "sources\\littlecms-2.19.1\\source\\src\\cmsxform.c",
+          "sha256": "635ed931ffa9174d7dc3957c40c83f521b4311cd05374b03c43607292b4d3b29"
+        },
+        {
+          "path": "sources\\littlecms-2.19.1\\source\\src\\cmsio1.c",
+          "sha256": "ffba117ba649a8c09c7c771eafd8c87f1be9e5c694198d1167884a290fb38474"
+        },
+        {
+          "path": "sources\\littlecms-2.19.1\\source\\include\\lcms2.h",
+          "sha256": "67f73413d7168a0cf7fa94ff3eb0d795fb75668b07d02e6ff583110166ca0f38"
+        }
+      ],
+      "facts": [
+        "cmsCreateProofingTransformTHR builds input/proof/proof/output profile chain",
+        "SOFTPROOFING is0x4000; BPC is0x2000",
+        "cmsIsIntentSupported checks output direction1; proof chain also requires relative-colorimetric input support"
+      ]
+    }
+  ],
+  "copyright": "Original paraphrase/API facts; no standard pages or vendor profile collection redistributed"
+}

@@ -1,0 +1,16 @@
+{
+  "status": "static-image-inspected",
+  "at_utc": "2026-10-28T16:17:36.651153+00:00",
+  "path": "docs\\assets\\native-icc-output-20261028-r3\\comparison.png",
+  "sha256": "c91fec3ec4fc564d1c41a41a24a1fbe53662a962bf75196f9d3bb4012c68cf9e",
+  "frame": 24,
+  "observations": [
+    "Both panels and all bottom labels are visible.",
+    "Left is explicitly labelled independent source-to-sRGB without glow or proof.",
+    "Right is actual encoded native proof/GPU Bloom; the original synthetic CLUT intentionally compresses the view into a narrow output range.",
+    "Strongly muted diagnostic colors are not presented as a calibrated printer/display or artist-approved look."
+  ],
+  "human_continuous_playback": false,
+  "human_listening": false,
+  "physical_device_accepted": false
+}

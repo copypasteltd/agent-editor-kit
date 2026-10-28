@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.47 / alpha.4-local.45 / r48 kit · 1 Skill / 17 modules / 86 files.**
+**CLI0.1.48 / alpha.4-local.46 / r49 kit · 1 Skill / 17 modules / 87 files.**
 
-Added **nonzero HLG display black and complete signal JSON CLI**: explicit black/peak/gamma/reference-white nits across sources, outputs, raw surfaces, previews and packages; below-black outputs reject or explicitly clip with counts.
+Added **native RGB ICC output, profile-embedded16-bit PNG sequence delivery and soft proof**: actual B2A tables,intents/BPC,explicit nits scaling,authored frames and synchronized PCM;native simulation in normal render/previews and portable profile dependencies.
 
-[HLG black workflow](../product/HLG_BLACK_LEVEL.md)
+[ICC output / soft proof workflow](../product/ICC_OUTPUT.md)
 
 <!-- /community-current -->
 

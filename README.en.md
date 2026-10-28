@@ -9,7 +9,21 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- native-hlg-black-current -->
+<!-- native-icc-output-current -->
+
+**CLI0.1.48 / alpha.4-local.46 / r49 kit · 1 Skill / 17 modules.**
+
+Added **native RGB ICC output, profile-embedded16-bit PNG sequence delivery and soft proof**: actual B2A tables,intents/BPC,explicit nits scaling,authored frames and synchronized PCM;native simulation in normal render/previews and portable profile dependencies.
+
+[Workflow / usage](docs/product/ICC_OUTPUT.md) · [C58](docs/product/CASES.md#c58-native-icc-output) · [Install](docs/releases/CLI_0.1.48_LOCAL.md) · [Evidence](docs/validation/原生ICC输出与软打样实测_2026-10-29.md)
+
+![Actual ICC soft proof](docs/assets/native-icc-output-20261028-r3/actual-preview.gif)
+
+17 source checks,17 installed checks and335 installed compatibility checks pass separately. C58 embeds ICC per frame,independently checks384 B2A patches and384 soft-proof Y/Cb/Cr triplets,and replays all48 PNG frames/files,66355200 decoded soft-proof movie bytes and384000 nonzero PCM scalars identically,with48 actual GPU Bloom calls/sequence. ICC uses CPU;supported editing uses GPU. The synthetic diagnostic profile is not printer/display calibration or artistic acceptance.
+
+<!-- /native-icc-output-current -->
+
+<!-- native-hlg-black-history -->
 
 **CLI0.1.47 / alpha.4-local.45 / r48 kit · 1 Skill / 17 modules.**
 
@@ -21,7 +35,7 @@ Added **nonzero HLG display black and complete signal JSON CLI**: explicit black
 
 21 source checks,21 installed checks and314 installed compatibility checks pass separately. C57 checks230400 working pixels,384 encoded frame/patch pairs and all48 frames/384000 nonzero PCM scalars after package replay,with48 actual GPU Bloom calls/render. Color math uses CPU; supported composition uses GPU. The0.5-nit black is a diagnostic declaration,not monitor calibration; dynamic HDR,full ACES and natural-image monitoring remain open.
 
-<!-- /native-hlg-black-current -->
+<!-- /native-hlg-black-history -->
 
 <!-- native-icc-history -->
 
@@ -554,7 +568,7 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r48 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r48.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r49 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r49.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
@@ -860,7 +874,7 @@ The implementation is **Python CLI + Agent Project schema + FFmpeg**, with an ex
 5. For selection, show the original and a small candidate set, record final IDs/strength/scope and trial them on target media.
 6. Render to a new project-owned path, inspect the encoded output, manifest, warnings, A/V and rights, then export the project package.
 
-## All 73 functional modules
+## All 74 functional modules
 
 IDs locate documentation groups with dependencies/overlap; they are not 43 independent kernels or a completion score. The table describes behavior, commands and limits. The [complete machine capability manual](docs/product/CAPABILITIES.en.md) retains every field.
 
@@ -939,6 +953,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F71 | Explicit-white and wide-gamut working configurations | ProPhoto D50/AP1 D60/explicit xy → linear XYZ Bradford,nit scaling,actual D65 previews and editable packages. | `native_chromatic_adaptation; render; preview; surface export; convert` | CPU color math,working-white-aware GPU glow; no ICC parsing/full ACES/automatic white balance. |
 | F72 | Native ICC source color management | RGB ICC v2/v4 matrix/CLUT, explicit SHA/intent/BPC → linear working RGB, Float32/alpha, actual previews and portable profile dependencies. | `native_icc_source_profiles; surface inspect-profile; surface export; render; preview; convert` | Pinned MIT LittleCMS/native CPU; no arbitrary output ICC, softproofing, CMYK or embedded-profile inference. |
 | F73 | HLG display black and complete signal CLI | BT.2100 black lift/inverse,explicit nits,unchanged zero-black numeric path,complete RGB/HDR/ICC JSON and explicit domain policies. | `native_hlg_black_level; surface export; render; preview; convert` | No monitor inference; nominal0..1; reject or explicit counted clipping; no dynamic HDR/full ACES. |
+| F74 | Native ICC output and soft proof | RGB v2/v4 matrix/B2A CLUT,intents/BPC,explicit nits,individually ICC-embedded RGBA16 PNGs and authored PCM,real SOFTPROOFING and complete delivery verification. | `native_icc_output_profiles; surface render; surface inspect-output; render; preview; convert` | CPU CMM;separate GPU editing;8GiB file budget;no CMYK/ICC5/physical-device calibration. |
 
 ## Supported service modules and dependencies
 
@@ -974,6 +989,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | S26 | Explicit-white RGB conversion service | Native tiled Float64 math/Float32 surfaces,ProPhoto piecewise transfer,Bradford matrices and white geometry checks. | Existing NumPy; no new model/service. | `render; preview; surface` | D65 encoded delivery,alpha bits retained; no ICC or scene-illuminant inference. |
 | S27 | Native ICC CMM service | Pinned LittleCMS2.19.1 Windows x64 DLL, private contexts, tiled Float32, read locks/cancellation/cleanup and actual profile-byte verification. | Bundled DLL/MIT license; no new model/global installation. | `surface; render; preview; convert` | 16MiB/4096 tags and surface budgets; CPU conversion, independently selected GPU composition. |
 | S28 | Explicit HLG black service | Tiled Float32/alpha,beta validation,source/target black,domain counts and native-clock raw bundles. | Native Windows CPU math; separately configured GPU composition. | `surface; render; preview; convert` | No new model/global install; no replacement for display measurement/HDR monitor acceptance. |
+| S29 | ICC delivery and simulation service | Per-frame device-profile output,standard-movie soft proof,owned CMM handles/read locks,PNG CRC/all-pixel/PCM verification. | Pinned MIT LittleCMS on native Windows;no new model. | `surface render; surface inspect-output; render; preview; convert` | Separate native profile mapping from application clipping;PNG sequence/PCM,never relabel arbitrary device RGB as standard YUV. |
 
 **Observed local environment:** this update’s doctor sees native Python 3.13.1, FFmpeg/ffprobe 8.1 and Node; this does not establish registration of every model/browser adapter. doctor merely discovers Docker/WSL executable paths and does not run them. This project uses native tools without invoking Docker/WSL/virtual environments.
 
@@ -1073,7 +1089,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.45/final-r1/installed/`, CLI 0.1.47. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.46/final-r1/installed/`, CLI 0.1.48. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1587,6 +1603,12 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R319 | 2026-10-28 HLG | C57:230400 independent working pixels,384 encoded patch comparisons,48 actual GPU Bloom calls/render;authored HLG black,no monitor inference. | [Evidence](docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/verification.json) |
 | R320 | 2026-10-28 HLG | C57:all48 frames/66355200 decoded video bytes and384000 nonzero PCM scalars replay byte-identically;actual PNG/MP4/GIF and read-only previews. | [Evidence](docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/verification.json) |
 | R321 | 2026-10-28 HLG | r48 unified Skill:one entry/17 modules/86 files,pinned installed release;independent extraction/configuration/registration/HLG plan and read-only author validation. | [Evidence](docs/validation/evidence/native-hlg-black-20261028-r1/kit-r1/verification.json) |
+| R322 | 2026-10-29 ICC | CLI0.1.48/local.46:273 Python files/native CMM match tested source bytes;87 capabilities. | [Evidence](docs/validation/evidence/native-icc-output-20261028-r1/installation-final-r1/verification.json) |
+| R323 | 2026-10-29 ICC | 17 source checks:independent matrix/gamma/B2A,intents/BPC,all65536 alpha codes,PNG integrity,timeline/CLI/PCM. | [Evidence](docs/validation/evidence/native-icc-output-20261028-r1/source-r2/verification.json) |
+| R324 | 2026-10-29 ICC | 17 installed checks and335 separate compatibility checks retain HLG/ICC/HDR/white/glow/render/preview/schema/queue coverage. | [Evidence](docs/validation/evidence/native-icc-output-20261028-r1/installed-compat-r1/verification.json) |
+| R325 | 2026-10-29 ICC | C58:384 independent B2A patches,all48 ICC-embedded frames/full pixels/CRCs,and48 GPU Bloom calls per sequence. | [Evidence](docs/validation/evidence/native-icc-output-20261028-r1/case-r3/verification.json) |
+| R326 | 2026-10-29 ICC | C58:portable proof profile;all PNG files/pixels,66355200 movie bytes and384000 nonzero PCM scalars replay exactly;actual PNG/MP4/GIF. | [Evidence](docs/validation/evidence/native-icc-output-20261028-r1/case-r3/verification.json) |
+| R327 | 2026-10-29 ICC | r49 single Skill:one entry/17 modules/87 files,pinned local installation,independent extraction/verification and installed delivery plan. | [Evidence](docs/validation/evidence/native-icc-output-20261028-r1/kit-r1/verification.json) |
 
 ## Current limits and development direction
 

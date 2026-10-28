@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.47 / alpha.4-local.45 / r48 kit · 1 Skill / 17 modules / 86 files.**
+**CLI0.1.48 / alpha.4-local.46 / r49 kit · 1 Skill / 17 modules / 87 files.**
 
-新增**HLG 非零顯示黑位與完整訊號 JSON CLI**：明確黑位、峰值、伽馬及參考白亮度，貫通來源／輸出、浮點中間包、預覽與專案包；低於目標黑位嚴格拒絕或明確裁切計數。
+新增**原生 RGB ICC 輸出、16位內嵌設定 PNG 序列與軟打樣**：實際B2A查找表、四意圖／BPC、明確亮度縮放、作者時間線逐影格交付及同步PCM；一般算繪／預覽原生模擬，設定依賴可移植。
 
-[HLG black workflow](HLG_BLACK_LEVEL.md)
+[ICC output / soft proof workflow](ICC_OUTPUT.md)
 
 <!-- /community-current -->
 
@@ -87,6 +87,7 @@
 | F71 | 白點適應與寬色域工作設定 | ProPhoto D50／AP1 D60／明確xy → 線性XYZ Bradford、nit縮放、實際D65預覽與專案封裝。 | `native_chromatic_adaptation; render; preview; surface export; convert` | CPU色彩數學，GPU光暈依聲明白點；不含ICC解析／完整ACES／自動白平衡。 |
 | F72 | 原生ICC來源色彩管理 | RGB ICC v2/v4矩陣/CLUT、明確SHA/意圖/BPC → 線性RGB工作域，Float32/alpha、實際預覽與專案依賴閉合。 | `native_icc_source_profiles; surface inspect-profile; surface export; render; preview; convert` | 固定MIT LittleCMS原生CPU；不含任意輸出ICC/軟打樣/CMYK/自動內嵌推斷。 |
 | F73 | HLG顯示黑位與完整訊號CLI | BT.2100黑位提升／逆變換、明確nit與黑位、零黑位原數值路徑、完整RGB/HDR/ICC JSON與明確域策略。 | `native_hlg_black_level; surface export; render; preview; convert` | 不推測螢幕；nominal0..1；超限拒絕或明確裁切；無動態HDR／完整ACES。 |
+| F74 | 原生ICC輸出與軟打樣 | RGB v2/v4矩陣／B2A CLUT、四意圖／BPC、明確nits、逐影格內嵌ICC的RGBA16 PNG與作者PCM、真實SOFTPROOFING及完整交付檢查。 | `native_icc_output_profiles; surface render; surface inspect-output; render; preview; convert` | CPU CMM；GPU剪輯獨立；8GiB產物預算；無CMYK／ICC5／物理設備校準。 |
 
 | 編號 | 服務模塊 | 運行形式 | 需要什么/提供什么 | 入口 | 範圍 |
 |---|---|---|---|---|---|
@@ -118,6 +119,7 @@
 | S26 | 明確白點RGB轉換服務 | 原生分塊Float64計算／Float32表面、ProPhoto分段傳遞、Bradford矩陣與白點幾何核驗。 | 既有NumPy；無新增模型／服務。 | `render; preview; surface` | 編碼交付D65，alpha保位；不推斷素材ICC或場景光源。 |
 | S27 | 原生ICC CMM服務 | 固定LittleCMS2.19.1 Windows x64 DLL、私有上下文、分塊Float32、持鎖/取消/關閉、實際設定檔位元組核驗。 | 包內原生DLL與MIT授權；無需新模型/全域安裝。 | `surface; render; preview; convert` | 16MiB/4096標籤與表面預算；CPU轉換，GPU合成獨立選擇。 |
 | S28 | 明確HLG黑位服務 | 分塊Float32/alpha、beta校驗、來源／目標黑位、輸出域計數及原生時鐘中間包。 | 包內原生Windows CPU數學；既有GPU合成獨立設定。 | `surface; render; preview; convert` | 無新增模型／全域安裝；不替代螢幕測量或HDR監看驗收。 |
+| S29 | ICC交付與模擬服務 | 逐影格ICC設備輸出、標準影片軟打樣、原生CMM控制代碼／位元組持鎖、PNG CRC及完整像素／PCM核驗。 | 固定MIT LittleCMS原生Windows；無需新模型。 | `surface render; surface inspect-output; render; preview; convert` | 設定本身映射與程式裁切分開；PNG序列與PCM，不將任意ICC RGB冒充標準YUV。 |
 
 ## 完整安裝版能力字段
 
@@ -5368,7 +5370,7 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
     "RGB_input_only_not_CMYK_device_link_named_color_or_abstract_profiles",
     "encoded_ICC_source_RGB_in_0_1_without_silent_clip",
     "ICC_source_white_nits_are_author_declarations",
-    "target_is_declared_linear_working_RGB_not_arbitrary_output_profile_or_softproof",
+    "source_converter_targets_linear_RGB_use_native_icc_output_profiles_for_output_and_proof",
     "max_16MiB_profile_4096_tags_and_existing_surface_budgets_not_total_RSS_acceptance",
     "no_complete_ACES_dynamic_HDR_or_monitor_calibration_acceptance"
   ]
@@ -5406,3 +5408,42 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 ```
 
 [CLI0.1.47 exact installed capabilities](hlg-black-capabilities-cli-0.1.47.json).
+
+### `native_icc_output_profiles`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "agent-icc-png16-timeline-sequence-v1",
+  "selection": "surface render --output-profile-json; pixel_pipeline.proofing",
+  "commands": [
+    "surface render",
+    "surface inspect-output",
+    "render",
+    "preview frame",
+    "preview range",
+    "convert export",
+    "convert import"
+  ],
+  "features": [
+    "native_LittleCMS_RGB_ICC_v2_v4_output_and_real_B2A_CLUTs",
+    "explicit_four_intents_BPC_reference_nits_and_reject_or_counted_clip",
+    "editable_timeline_RGBA16_PNG_sequence_each_frame_embeds_exact_ICC",
+    "authored_48000Hz_stereo_Float32LE_PCM_with_selected_CFR_sample_clock",
+    "native_SOFTPROOFING_simulation_in_common_render_and_preview",
+    "portable_proof_profile_snapshots_and_actual_byte_cache_dependencies",
+    "all_frame_CRC_decompressed_pixels_embedded_profile_and_PCM_verifier"
+  ],
+  "limits": [
+    "CPU_native_CMM_supported_timeline_GPU_operators_selected_separately",
+    "RGB_only_not_CMYK_ICC5_device_links_or_physical_display_calibration",
+    "ICC_device_output_is_PNG16_sequence_plus_raw_PCM_not_mislabeled_YUV_movie",
+    "native_profile_mapping_may_bound_values_before_explicit_application_clip",
+    "softproof_is_view_simulation_not_applied_twice_to_device_profile_output",
+    "8GiB_output_budget_16MiB_profile_and_bounded_tiles_not_total_RSS_acceptance",
+    "no_full_ACES_dynamic_HDR_or_natural_image_artistic_acceptance"
+  ]
+}
+```
+
+[CLI0.1.48 exact installed capabilities](icc-output-capabilities-cli-0.1.48.json).

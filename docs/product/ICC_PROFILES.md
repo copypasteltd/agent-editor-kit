@@ -109,3 +109,5 @@ This release implements RGB v2/v4 source profiles. Arbitrary output ICC,softproo
 LittleCMS source: [release2.19.1](https://github.com/mm2/Little-CMS/releases/tag/lcms2.19.1), [MIT license](https://github.com/mm2/Little-CMS/blob/lcms2.19.1/LICENSE), commit `21c582a594fe5279f90c0b93437c398f93bf62b0`. The DLL/manifest/license are shipped as package data; `scripts/build_native_icc_20261028.py` records the pinned archive/source/compiler hashes and actual native build command. Encoded CMM version2190 is the upstream header value for this hotfix release.
 
 CLI0.1.47 adds [HLG display black and complete source/working signal JSON for raw surface CLI](HLG_BLACK_LEVEL.md). Explicit nits,black/peak/gamma and reject/clip policies are required; no monitor inference. Existing RGB/ICC individual flags remain supported.
+
+CLI0.1.48 adds [native RGB ICC output,profile-embedded PNG16 timeline delivery/authored PCM and real native soft proof](ICC_OUTPUT.md). Arbitrary device RGB is never relabelled as standard YUV;physical-device matching remains open.

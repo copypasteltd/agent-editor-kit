@@ -188,6 +188,7 @@ class FloatPreviewContext:
                     self.metadata['last_preview_mapping'] = mapping
                     for key in ('negative_components_clipped','over_one_components_clipped','above_declared_peak_pixels'):
                         stats[key] = stats.get(key, 0) + mapping[key]
+                surface = r.proof_surface(surface,signal)
                 delivered, _ = convert_rgba(surface, signal, target,
                     max_working_bytes=r.config['projection_working_bytes_limit'], cancel=r.poll)
                 chunks = _chunks if request['mode'] == 'frame' else _float_chunks

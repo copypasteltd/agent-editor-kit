@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.47 / alpha.4-local.45 / r48 kit · 1 Skill / 17 modules / 86 files.**
+**CLI0.1.48 / alpha.4-local.46 / r49 kit · 1 Skill / 17 modules / 87 files.**
 
-Added **nonzero HLG display black and complete signal JSON CLI**: explicit black/peak/gamma/reference-white nits across sources, outputs, raw surfaces, previews and packages; below-black outputs reject or explicitly clip with counts.
+Added **native RGB ICC output, profile-embedded16-bit PNG sequence delivery and soft proof**: actual B2A tables,intents/BPC,explicit nits scaling,authored frames and synchronized PCM;native simulation in normal render/previews and portable profile dependencies.
 
-[HLG black workflow](HLG_BLACK_LEVEL.md)
+[ICC output / soft proof workflow](ICC_OUTPUT.md)
 
 <!-- /community-current -->
 
@@ -87,6 +87,7 @@ Added **nonzero HLG display black and complete signal JSON CLI**: explicit black
 | F71 | Explicit-white and wide-gamut working configurations | ProPhoto D50/AP1 D60/explicit xy → linear XYZ Bradford,nit scaling,actual D65 previews and editable packages. | `native_chromatic_adaptation; render; preview; surface export; convert` | CPU color math,working-white-aware GPU glow; no ICC parsing/full ACES/automatic white balance. |
 | F72 | Native ICC source color management | RGB ICC v2/v4 matrix/CLUT, explicit SHA/intent/BPC → linear working RGB, Float32/alpha, actual previews and portable profile dependencies. | `native_icc_source_profiles; surface inspect-profile; surface export; render; preview; convert` | Pinned MIT LittleCMS/native CPU; no arbitrary output ICC, softproofing, CMYK or embedded-profile inference. |
 | F73 | HLG display black and complete signal CLI | BT.2100 black lift/inverse,explicit nits,unchanged zero-black numeric path,complete RGB/HDR/ICC JSON and explicit domain policies. | `native_hlg_black_level; surface export; render; preview; convert` | No monitor inference; nominal0..1; reject or explicit counted clipping; no dynamic HDR/full ACES. |
+| F74 | Native ICC output and soft proof | RGB v2/v4 matrix/B2A CLUT,intents/BPC,explicit nits,individually ICC-embedded RGBA16 PNGs and authored PCM,real SOFTPROOFING and complete delivery verification. | `native_icc_output_profiles; surface render; surface inspect-output; render; preview; convert` | CPU CMM;separate GPU editing;8GiB file budget;no CMYK/ICC5/physical-device calibration. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -118,6 +119,7 @@ Added **nonzero HLG display black and complete signal JSON CLI**: explicit black
 | S26 | Explicit-white RGB conversion service | Native tiled Float64 math/Float32 surfaces,ProPhoto piecewise transfer,Bradford matrices and white geometry checks. | Existing NumPy; no new model/service. | `render; preview; surface` | D65 encoded delivery,alpha bits retained; no ICC or scene-illuminant inference. |
 | S27 | Native ICC CMM service | Pinned LittleCMS2.19.1 Windows x64 DLL, private contexts, tiled Float32, read locks/cancellation/cleanup and actual profile-byte verification. | Bundled DLL/MIT license; no new model/global installation. | `surface; render; preview; convert` | 16MiB/4096 tags and surface budgets; CPU conversion, independently selected GPU composition. |
 | S28 | Explicit HLG black service | Tiled Float32/alpha,beta validation,source/target black,domain counts and native-clock raw bundles. | Native Windows CPU math; separately configured GPU composition. | `surface; render; preview; convert` | No new model/global install; no replacement for display measurement/HDR monitor acceptance. |
+| S29 | ICC delivery and simulation service | Per-frame device-profile output,standard-movie soft proof,owned CMM handles/read locks,PNG CRC/all-pixel/PCM verification. | Pinned MIT LittleCMS on native Windows;no new model. | `surface render; surface inspect-output; render; preview; convert` | Separate native profile mapping from application clipping;PNG sequence/PCM,never relabel arbitrary device RGB as standard YUV. |
 
 ## Complete installed capability fields
 
@@ -5368,7 +5370,7 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
     "RGB_input_only_not_CMYK_device_link_named_color_or_abstract_profiles",
     "encoded_ICC_source_RGB_in_0_1_without_silent_clip",
     "ICC_source_white_nits_are_author_declarations",
-    "target_is_declared_linear_working_RGB_not_arbitrary_output_profile_or_softproof",
+    "source_converter_targets_linear_RGB_use_native_icc_output_profiles_for_output_and_proof",
     "max_16MiB_profile_4096_tags_and_existing_surface_budgets_not_total_RSS_acceptance",
     "no_complete_ACES_dynamic_HDR_or_monitor_calibration_acceptance"
   ]
@@ -5406,3 +5408,42 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 ```
 
 [CLI0.1.47 exact installed capabilities](hlg-black-capabilities-cli-0.1.47.json).
+
+### `native_icc_output_profiles`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "agent-icc-png16-timeline-sequence-v1",
+  "selection": "surface render --output-profile-json; pixel_pipeline.proofing",
+  "commands": [
+    "surface render",
+    "surface inspect-output",
+    "render",
+    "preview frame",
+    "preview range",
+    "convert export",
+    "convert import"
+  ],
+  "features": [
+    "native_LittleCMS_RGB_ICC_v2_v4_output_and_real_B2A_CLUTs",
+    "explicit_four_intents_BPC_reference_nits_and_reject_or_counted_clip",
+    "editable_timeline_RGBA16_PNG_sequence_each_frame_embeds_exact_ICC",
+    "authored_48000Hz_stereo_Float32LE_PCM_with_selected_CFR_sample_clock",
+    "native_SOFTPROOFING_simulation_in_common_render_and_preview",
+    "portable_proof_profile_snapshots_and_actual_byte_cache_dependencies",
+    "all_frame_CRC_decompressed_pixels_embedded_profile_and_PCM_verifier"
+  ],
+  "limits": [
+    "CPU_native_CMM_supported_timeline_GPU_operators_selected_separately",
+    "RGB_only_not_CMYK_ICC5_device_links_or_physical_display_calibration",
+    "ICC_device_output_is_PNG16_sequence_plus_raw_PCM_not_mislabeled_YUV_movie",
+    "native_profile_mapping_may_bound_values_before_explicit_application_clip",
+    "softproof_is_view_simulation_not_applied_twice_to_device_profile_output",
+    "8GiB_output_budget_16MiB_profile_and_bounded_tiles_not_total_RSS_acceptance",
+    "no_full_ACES_dynamic_HDR_or_natural_image_artistic_acceptance"
+  ]
+}
+```
+
+[CLI0.1.48 exact installed capabilities](icc-output-capabilities-cli-0.1.48.json).

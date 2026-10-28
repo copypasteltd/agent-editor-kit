@@ -149,3 +149,5 @@ required.
 Primary specifications: [W3C CSS Color4 color spaces and conversion](https://www.w3.org/TR/css-color-4/)
 and [Academy ACEScg encoding/AP1](https://docs.acescentral.com/encodings/acescg/).
 Implementation is original; the numerical constants describe those encodings.
+
+CLI0.1.46 adds a separate [native ICC source-profile path](ICC_PROFILES.md): explicit RGB v2/v4 matrix/table files, rendering intent/BPC and direct linear working RGB conversion. Existing mathematical reference-white conversion still infers no profile or physical illuminant. ICC white tags do not supply HDR luminance; declare source/working/output nits separately.

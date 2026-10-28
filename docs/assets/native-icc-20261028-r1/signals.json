@@ -1,0 +1,21 @@
+{
+  "source": {
+    "icc_profile": "assets/source.icc",
+    "sha256": "sha256:4ca00a5375757057c10a1704c0ef48d2ca03ea3d4ea06986aa380cbffd1214db",
+    "intent": "relative-colorimetric",
+    "black_point_compensation": false
+  },
+  "working": {
+    "primaries": "aces-ap1",
+    "transfer": "linear",
+    "white_xy": [
+      0.32168,
+      0.33767
+    ]
+  },
+  "output": {
+    "primaries": "bt709",
+    "transfer": "srgb"
+  },
+  "automatic_ICC_inference": false
+}

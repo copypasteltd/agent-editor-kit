@@ -9,7 +9,21 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- native-chromatic-current -->
+<!-- native-icc-current -->
+
+**CLI0.1.46 / alpha.4-local.44 / r47 kit · 1 Skill / 17 modules.**
+
+Added **native ICC source color management**: explicit local RGB ICC v2/v4 files, SHA pins, four rendering intents and black-point compensation. LittleCMS 2.19.1 converts directly to linear working RGB across source decoding, raw surfaces, preview caches and editable packages.
+
+[Workflow / usage](docs/product/ICC_PROFILES.md) · [C56](docs/product/CASES.md#c56-native-icc-profiles) · [Install](docs/releases/CLI_0.1.46_LOCAL.md) · [Evidence](docs/validation/原生ICC色彩管理实测_2026-10-28.md)
+
+![Actual ICC client preview](docs/assets/native-icc-20261028-r1/actual-preview.gif)
+
+26 source checks, 26 installed checks and 287 installed compatibility checks pass separately. C56 independently checks 230400 first-frame pixels, patches across all 48 encoded frames and full non-silent video/PCM package replay, with 48 actual GPU Bloom calls per render. ICC uses CPU; supported composition/glow uses native GPU. Arbitrary output ICC, softproofing, CMYK, embedded-profile inference, full ACES and natural HDR monitoring remain open. All 38 original goal closure conditions are retained.
+
+<!-- /native-icc-current -->
+
+<!-- native-chromatic-history -->
 
 **CLI0.1.45 / alpha.4-local.43 / r46 kit · 1 Skill / 17 modules.**
 
@@ -23,7 +37,7 @@ Added **Bradford reference-white adaptation, ProPhoto RGB D50 and linear ACES AP
 
 20 source checks,20 installed checks and267 installed compatibility checks pass separately. C55 independently checks230400 first-frame pixels and patches across all48 encoded frames,actual GPU Bloom and full video/PCM package replay. Color math uses CPU; composition/glow can use GPU. BT.709/BT.2100 delivery remains D65. Reference-white conversion does not parse ICC, infer physical white balance or provide full ACES output rendering. Perceptual gamut mapping,natural HDR monitoring and all38 original goal closure conditions remain ongoing.
 
-<!-- /native-chromatic-current -->
+<!-- /native-chromatic-history -->
 
 <!-- native-hdr-metadata-history -->
 
@@ -526,7 +540,7 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r46 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r46.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r47 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r47.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
@@ -832,7 +846,7 @@ The implementation is **Python CLI + Agent Project schema + FFmpeg**, with an ex
 5. For selection, show the original and a small candidate set, record final IDs/strength/scope and trial them on target media.
 6. Render to a new project-owned path, inspect the encoded output, manifest, warnings, A/V and rights, then export the project package.
 
-## All 71 functional modules
+## All 72 functional modules
 
 IDs locate documentation groups with dependencies/overlap; they are not 43 independent kernels or a completion score. The table describes behavior, commands and limits. The [complete machine capability manual](docs/product/CAPABILITIES.en.md) retains every field.
 
@@ -909,6 +923,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F69 | CUDA speech denoising | Native sample clock/mono-stereo,actual model,dry/wet attenuation,editable audio,portable recipes/packages,owned cancel/rollback. | `audio enhancement-adapter; audio enhance` | Fixed DF3 safetensors/existing native CUDA;segment state resets,CPU frontend;full dereverb/music fidelity open. |
 | F70 | HDR10 static metadata delivery | Mastering RGB/white xy,min/max nits,MaxCLL/MaxFALL → actual HEVC SEI and decoded verification receipt. | `settings.output.hdr10; validate; render; convert` | Explicit native PQ/BT2020 NCL limited range,libx265/10bit420/MP4 or MKV; author declarations,prefix32-packet verification. |
 | F71 | Explicit-white and wide-gamut working configurations | ProPhoto D50/AP1 D60/explicit xy → linear XYZ Bradford,nit scaling,actual D65 previews and editable packages. | `native_chromatic_adaptation; render; preview; surface export; convert` | CPU color math,working-white-aware GPU glow; no ICC parsing/full ACES/automatic white balance. |
+| F72 | Native ICC source color management | RGB ICC v2/v4 matrix/CLUT, explicit SHA/intent/BPC → linear working RGB, Float32/alpha, actual previews and portable profile dependencies. | `native_icc_source_profiles; surface inspect-profile; surface export; render; preview; convert` | Pinned MIT LittleCMS/native CPU; no arbitrary output ICC, softproofing, CMYK or embedded-profile inference. |
 
 ## Supported service modules and dependencies
 
@@ -942,6 +957,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | S24 | DeepFilterNet3 speech service | Fixed133-tensor48kHz full-band model;CUDA neural graph,NumPy CPU frontend,FFmpeg resampling. | Explicit local weights/native Torch/safetensors and MIT OR Apache-2.0 evidence. | `audio enhancement-adapter; audio enhance` | 8..96kHz,mono/stereo,source≤1800s/selection≤600s;no downloads,installs or CPU fallback. |
 | S25 | x265 static HDR10 SEI service | Fixed encoder grammar plus exact rational checks of actual native ffprobe decoded side data before publication. | Existing native FFmpeg/libx265/ffprobe; no new model. | `render` | CPU encoding; observed prefix,not whole-movie certification or peak measurement. |
 | S26 | Explicit-white RGB conversion service | Native tiled Float64 math/Float32 surfaces,ProPhoto piecewise transfer,Bradford matrices and white geometry checks. | Existing NumPy; no new model/service. | `render; preview; surface` | D65 encoded delivery,alpha bits retained; no ICC or scene-illuminant inference. |
+| S27 | Native ICC CMM service | Pinned LittleCMS2.19.1 Windows x64 DLL, private contexts, tiled Float32, read locks/cancellation/cleanup and actual profile-byte verification. | Bundled DLL/MIT license; no new model/global installation. | `surface; render; preview; convert` | 16MiB/4096 tags and surface budgets; CPU conversion, independently selected GPU composition. |
 
 **Observed local environment:** this update’s doctor sees native Python 3.13.1, FFmpeg/ffprobe 8.1 and Node; this does not establish registration of every model/browser adapter. doctor merely discovers Docker/WSL executable paths and does not run them. This project uses native tools without invoking Docker/WSL/virtual environments.
 
@@ -1041,7 +1057,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.43/final-r1/installed/`, CLI 0.1.45. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.44/final-r1/installed/`, CLI 0.1.46. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1543,6 +1559,12 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R307 | 2026-10-28 chromatic | C55 registered Skill:230400-pixel independent AP1 oracle,eight patches over all48 encoded frames;48 actual GPU Bloom calls/render. Initial SDR-range refusal retained;delivery explicitly selects clip. | [Evidence](docs/validation/evidence/native-chromatic-20261028-r1/case-r3/verification.json) |
 | R308 | 2026-10-28 chromatic | C55 package replay preserves all48 decoded frames and384000 nonzero PCM scalars;previews preserve author data,GIF24frames/4seconds,mathematical control explicitly labelled. | [Evidence](docs/validation/evidence/native-chromatic-20261028-r1/case-r3/verification.json) |
 | R309 | 2026-10-28 chromatic | r46 independent extraction/configuration/registration:1entry/17modules/84Skill files/136ZIP entries;all303 prior R rows and38 original closure conditions retained. | [Evidence](docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/verification.json) |
+| R310 | 2026-10-28 ICC | CLI0.1.46/local.44 offline build: 269 Python files plus native ICC DLL/license match source byte-for-byte; 85 capabilities. Public older artifacts retained. | [Evidence](docs/validation/evidence/native-icc-20261028-r1/installation-final-r1/verification.json) |
+| R311 | 2026-10-28 ICC | 26 source checks: actual v2/v4 matrix/nonlinear CLUT profiles, four intents/BPC, independent matrix/Pillow2.17 CMM reference, nits/alpha/negative RGB, cancellation/locks, raw-surface CLI/cache/package closure. Initial gamma-quantization/version-query and missing-intent-table failures retained. | [Evidence](docs/validation/evidence/native-icc-20261028-r1/source-r3/verification.json) |
+| R312 | 2026-10-28 ICC | 26 installed checks plus a separate 287-check installed compatibility run covering white points/HDR10/glow/color/curves/LUT/render/preview/packages/schema/queues; zero failures/errors/skips. | [Evidence](docs/validation/evidence/native-icc-20261028-r1/installed-compat-r1/verification.json) |
+| R313 | 2026-10-28 ICC | C56 registered Skill: original CC0 RGB ICC v4 profile, independent 230400-pixel working-space reference and 48×8 encoded patches, with 48 actual GPU Bloom calls/render and CMM cleanup receipts. | [Evidence](docs/validation/evidence/native-icc-20261028-r1/case-r1/verification.json) |
+| R314 | 2026-10-28 ICC | C56 editable package retains exact ICC bytes/signals; all 48 decoded frames/66355200 bytes and 384000 nonzero PCM scalars replay identically; actual PNG/MP4/GIF and author-preserving previews. | [Evidence](docs/validation/evidence/native-icc-20261028-r1/case-r1/verification.json) |
+| R315 | 2026-10-28 ICC | r47 unified Skill: one entry/17 modules/85 files, pinned installed runtime and independent extraction/registration/ICC project plan. First activation correctly refused an incomplete pin update; activation succeeded after the pin finished. | [Evidence](docs/validation/evidence/native-icc-20261028-r1/kit-r1/verification.json) |
 
 ## Current limits and development direction
 

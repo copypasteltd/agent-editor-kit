@@ -1,0 +1,15 @@
+{
+  "format": "agent-native-icc-cmm-v1",
+  "platform": "win32-amd64",
+  "binary_filename": "avk_lcms_b0149bbc4fa977a2.dll",
+  "binary_sha256": "b0149bbc4fa977a23faeddf3a006b9c04cd8e6748dd3a6f19d868828842c3350",
+  "source_repository": "https://github.com/mm2/Little-CMS",
+  "source_commit": "21c582a594fe5279f90c0b93437c398f93bf62b0",
+  "source_tag": "lcms2.19.1",
+  "source_archive_sha256": "24c57a21fb055f7de81907b111b11726b486ab923e96e168336b71f6addd236b",
+  "license": "LITTLECMS_LICENSE.txt",
+  "license_sha256": "6dbd60437f8ef91d8de1f08ad75882547fd4931bfcc3566a0735f28db1484d31",
+  "encoded_version": 2190,
+  "compiler": "llvm-mingw 20261020 ucrt x86_64 clang -O2 -std=c99 -shared",
+  "runtime_compilation": false
+}

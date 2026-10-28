@@ -1030,3 +1030,17 @@ The comparison left panel is an independent mathematical no-adaptation control w
 Initial case-r1 correctly refused out-of-range SDR integers. Case-r3 explicitly selects final clip;negative/superwhite linear intermediates remain available. Case-r2 retained an independent oracle that omitted final clip;the corrected oracle checks the declared integer boundary. A separate check compares all48x8 frame/patch pairs individually,not only the sequence mean. Initial source-r1 retained two test-only issues:NumPy weak scalar promotion rounded the independent scalar copysign oracle early,and tuple/list metadata was compared without JSON normalization. Source-r3/installed-r1 are the final frozen20-check rounds.
 
 [Workflow](CHROMATIC_ADAPTATION.md) · [Evidence](../validation/明确白点色适应实测_2026-10-28.md).
+
+<a id="c56-native-icc-profiles"></a>
+
+## C56 · 原生ICC色彩管理 / 原生ICC色彩管理 / Native ICC source profiles
+
+Actual installed CLI0.1.46 and registered unified Skill. Original CC0 RGB16 chart/stereo tones and an original RGB ICC v4.3 gamma1.8 ProPhoto D50 profile are edited in explicit linear AP1 D60, with48 actual GPU Bloom calls per render,then encoded as D65/sRGB ten-bit video. The CMM inspects and converts the actual profile,with private handles and read locks.
+
+Independent published-matrix/gamma reference:230400 first-surface pixels,maximum absolute error 6.35132007243e-06;384 encoded frame/patch pairs,maximum luma-code error 0.445342799313. ICC serialization quantizes tags; these approximate numeric comparisons are distinct from exact alpha and package replay. All48 decoded video frames (66355200bytes) and384000 nonzero PCM scalars are byte-identical after package import. The exact ICC file and source declarations survive migration. Actual previews preserve author data;GIF24frames/4seconds.
+
+![Actual native ICC preview](../assets/native-icc-20261028-r1/actual-preview.gif)
+
+[Original source](../assets/native-icc-20261028-r1/source-prophoto-d50.mkv) · [Original ICC](../assets/native-icc-20261028-r1/source.icc) · [Actual master](../assets/native-icc-20261028-r1/edited-master.mkv) · [Actual MP4](../assets/native-icc-20261028-r1/actual-preview.mp4) · [Actual frame](../assets/native-icc-20261028-r1/actual-frame.png) · [Signals](../assets/native-icc-20261028-r1/signals.json) · [Comparison](../assets/native-icc-20261028-r1/comparison.png) · [Editable package](../assets/native-icc-20261028-r1/editable-icc.aevpkg.zip) · [Manifest](../assets/native-icc-20261028-r1/edited-master.mkv.manifest.json) · [Provenance](../assets/native-icc-20261028-r1/SOURCE.txt) · [Media hashes](../assets/native-icc-20261028-r1/media-manifest.json)
+
+Left comparison: independent mathematical no-adaptation/no-Bloom control; right: actual native ICC/GPU Bloom engine frame at the same frame index. This is a numeric diagnostic,not a matched artistic A/B. The generated gamma1.8 source values stay above the ProPhoto toe. No vendor profile is copied or presumed licensed. No human continuous playback/listening,natural-image artistic or HDR-monitor acceptance. RGB source profiles do not provide arbitrary output ICC,softproofing,CMYK,embedded-profile inference or full ACES rendering.

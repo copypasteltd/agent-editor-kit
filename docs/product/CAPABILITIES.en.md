@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.45 / alpha.4-local.43 / r46 kit · 1 Skill / 17 modules / 84 files.**
+**CLI0.1.46 / alpha.4-local.44 / r47 kit · 1 Skill / 17 modules / 85 files.**
 
-Added **Bradford reference-white adaptation, ProPhoto RGB D50 and linear ACES AP1 D60** across sources, working RGB, effect signals, raw surfaces, actual previews and editable packages. Glow luminance follows the declared white; existing D65 behavior is retained.
+Added **native ICC source color management**: explicit local RGB ICC v2/v4 files, SHA pins, four rendering intents and black-point compensation. LittleCMS 2.19.1 converts directly to linear working RGB across source decoding, raw surfaces, preview caches and editable packages.
 
-[Explicit-white workflow](CHROMATIC_ADAPTATION.md)
+[Native ICC workflow](ICC_PROFILES.md)
 
 <!-- /community-current -->
 
@@ -85,6 +85,7 @@ Added **Bradford reference-white adaptation, ProPhoto RGB D50 and linear ACES AP
 | F69 | CUDA speech denoising | Native sample clock/mono-stereo,actual model,dry/wet attenuation,editable audio,portable recipes/packages,owned cancel/rollback. | `audio enhancement-adapter; audio enhance` | Fixed DF3 safetensors/existing native CUDA;segment state resets,CPU frontend;full dereverb/music fidelity open. |
 | F70 | HDR10 static metadata delivery | Mastering RGB/white xy,min/max nits,MaxCLL/MaxFALL → actual HEVC SEI and decoded verification receipt. | `settings.output.hdr10; validate; render; convert` | Explicit native PQ/BT2020 NCL limited range,libx265/10bit420/MP4 or MKV; author declarations,prefix32-packet verification. |
 | F71 | Explicit-white and wide-gamut working configurations | ProPhoto D50/AP1 D60/explicit xy → linear XYZ Bradford,nit scaling,actual D65 previews and editable packages. | `native_chromatic_adaptation; render; preview; surface export; convert` | CPU color math,working-white-aware GPU glow; no ICC parsing/full ACES/automatic white balance. |
+| F72 | Native ICC source color management | RGB ICC v2/v4 matrix/CLUT, explicit SHA/intent/BPC → linear working RGB, Float32/alpha, actual previews and portable profile dependencies. | `native_icc_source_profiles; surface inspect-profile; surface export; render; preview; convert` | Pinned MIT LittleCMS/native CPU; no arbitrary output ICC, softproofing, CMYK or embedded-profile inference. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -114,6 +115,7 @@ Added **Bradford reference-white adaptation, ProPhoto RGB D50 and linear ACES AP
 | S24 | DeepFilterNet3 speech service | Fixed133-tensor48kHz full-band model;CUDA neural graph,NumPy CPU frontend,FFmpeg resampling. | Explicit local weights/native Torch/safetensors and MIT OR Apache-2.0 evidence. | `audio enhancement-adapter; audio enhance` | 8..96kHz,mono/stereo,source≤1800s/selection≤600s;no downloads,installs or CPU fallback. |
 | S25 | x265 static HDR10 SEI service | Fixed encoder grammar plus exact rational checks of actual native ffprobe decoded side data before publication. | Existing native FFmpeg/libx265/ffprobe; no new model. | `render` | CPU encoding; observed prefix,not whole-movie certification or peak measurement. |
 | S26 | Explicit-white RGB conversion service | Native tiled Float64 math/Float32 surfaces,ProPhoto piecewise transfer,Bradford matrices and white geometry checks. | Existing NumPy; no new model/service. | `render; preview; surface` | D65 encoded delivery,alpha bits retained; no ICC or scene-illuminant inference. |
+| S27 | Native ICC CMM service | Pinned LittleCMS2.19.1 Windows x64 DLL, private contexts, tiled Float32, read locks/cancellation/cleanup and actual profile-byte verification. | Bundled DLL/MIT license; no new model/global installation. | `surface; render; preview; convert` | 16MiB/4096 tags and surface budgets; CPU conversion, independently selected GPU composition. |
 
 ## Complete installed capability fields
 
@@ -5330,3 +5332,45 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 ```
 
 [CLI0.1.45 exact installed capabilities](chromatic-capabilities-cli-0.1.45.json).
+
+### `native_icc_source_profiles`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "explicit-native-icc-source-float32-v1",
+  "selection": "settings.pixel_pipeline.sources.<asset_id>.source_signal: icc_profile,sha256,intent",
+  "commands": [
+    "surface inspect-profile",
+    "surface export",
+    "validate",
+    "render",
+    "preview frame",
+    "preview range",
+    "convert export",
+    "convert import"
+  ],
+  "features": [
+    "explicit_project_local_RGB_ICC_v2_v4_sources",
+    "pinned_MIT_LittleCMS_2_19_1_native_Windows_x64",
+    "perceptual_relative_saturation_absolute_intents",
+    "explicit_black_point_compensation",
+    "direct_Float32_to_declared_linear_RGB_working_profile",
+    "independent_alpha_bits_and_explicit_reference_nits",
+    "owned_read_locks_tiled_conversion_cancel_and_closed_CMM_handles",
+    "profile_binary_cache_fingerprints_and_portable_profile_dependencies"
+  ],
+  "limits": [
+    "CPU_CMM_not_GPU_ICC_kernels",
+    "explicit_profile_files_not_automatic_embedded_profile_inference",
+    "RGB_input_only_not_CMYK_device_link_named_color_or_abstract_profiles",
+    "encoded_ICC_source_RGB_in_0_1_without_silent_clip",
+    "ICC_source_white_nits_are_author_declarations",
+    "target_is_declared_linear_working_RGB_not_arbitrary_output_profile_or_softproof",
+    "max_16MiB_profile_4096_tags_and_existing_surface_budgets_not_total_RSS_acceptance",
+    "no_complete_ACES_dynamic_HDR_or_monitor_calibration_acceptance"
+  ]
+}
+```
+
+[CLI0.1.46 exact installed capabilities](icc-capabilities-cli-0.1.46.json).

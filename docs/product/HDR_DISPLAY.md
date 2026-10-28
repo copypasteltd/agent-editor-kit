@@ -155,3 +155,5 @@ ICC support, dynamic metadata or full product parity. Optional declared HDR10
 static metadata is documented in [HDR10 metadata](HDR_METADATA.md).
 
 CLI0.1.45: [explicit reference-white conversion](CHROMATIC_ADAPTATION.md) extends source/linear working/effect signals to ProPhoto D50,AP1 D60 and explicit xy. BT.2100 encoded signals/output remain D65; this does not parse ICC or provide full ACES rendering.
+
+CLI0.1.46 adds a separate [native ICC source-profile path](ICC_PROFILES.md): explicit RGB v2/v4 matrix/table files, rendering intent/BPC and direct linear working RGB conversion. Existing mathematical reference-white conversion still infers no profile or physical illuminant. ICC white tags do not supply HDR luminance; declare source/working/output nits separately.

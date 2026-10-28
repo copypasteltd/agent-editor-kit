@@ -18,6 +18,7 @@ import sys
 from .artifact_locks import _Verification
 from .errors import AppError
 from .float_color_signal import ColorSignal, convert_rgba
+from .icc_profiles import ICCSourceSignal,ProfileTransform
 from .float_native_pipe import NativePipe
 from . import float_pixels, float_yuv
 from .float_timeline import TimedSurfaceSource, MAX_SURFACE_BYTES
@@ -73,13 +74,14 @@ class NativeSurfaceSource(TimedSurfaceSource):
         self.closed = True
         self.guard = None
         self.pipe = None
+        self.profile_transform = None
         self.cache = []
         self.cache_start = -1
         self.metadata = {'protocol': PROTOCOL, 'network': False,
                          'default_renderer_integrated': False, 'HDR_accepted': False}
         if sys.platform != 'win32':
             raise error('PLATFORM', '该原生持锁实现当前要求Windows')
-        if not isinstance(source_signal, ColorSignal) or not isinstance(working_signal, ColorSignal):
+        if not isinstance(source_signal, (ColorSignal,ICCSourceSignal)) or not isinstance(working_signal, ColorSignal):
             raise error('SIGNAL', '原始与工作RGB信号须明确提供')
         if not isinstance(hdr_input_range_policy, str) or hdr_input_range_policy not in {'reject','clip'}:
             raise error('SIGNAL', 'HDR输入编码域策略须明确reject/clip')
@@ -126,11 +128,14 @@ class NativeSurfaceSource(TimedSurfaceSource):
             files = {'source': self.source, 'ffmpeg': Path(ffmpeg_path()).resolve(),
                      'ffprobe': Path(ffprobe_path()).resolve()}
             for name in ('float_native_source', 'float_native_pipe', 'float_pixels', 'float_yuv',
-                         'float_color_signal', 'float_hdr', 'float_chromatic', 'float_timeline', 'native_video_index',
+                         'float_color_signal', 'float_hdr', 'float_chromatic', 'icc_profiles', 'float_timeline', 'native_video_index',
                          'reverse_video_clock', 'artifact_locks', 'native_audio_clock', 'policy', 'media'):
                 files[name] = Path(__file__).with_name(name + '.py')
             self.artifacts = {name: self.guard.entry(path, 'float-native-source-' + name)
                               for name, path in files.items()}
+            if isinstance(source_signal,ICCSourceSignal):
+                self.profile_transform=ProfileTransform(self.root,source_signal,working_signal,cancel=self.poll)
+                self.metadata['ICC_transform']=self.profile_transform.metadata
             if self.artifacts['source']['sha256'] != self.expected_sha:
                 raise error('INPUT_CHANGED', '原始资产字节与登记SHA不一致')
             def probe(path, *, cancel_file=None, decoder=None):
@@ -238,6 +243,7 @@ class NativeSurfaceSource(TimedSurfaceSource):
 
     def _verify(self):
         self._check()
+        if self.profile_transform is not None:self.profile_transform.verify()
         for row in self.artifacts.values():
             if self.guard.entry(Path(row['path']), row['role'])['sha256'] != row['sha256']:
                 raise error('INPUT_CHANGED', '原始素材、索引、实现或工具发生变化')
@@ -280,8 +286,11 @@ class NativeSurfaceSource(TimedSurfaceSource):
                     value, pixel_metadata = self.pixel_module.decode_frame(raw, self.pixel_format,
                         self.width, self.height, alpha_association=self.alpha_association,
                         cancel=self.poll, **options)
-                    value, color_metadata = convert_rgba(value, self.input_signal, self.target_signal, cancel=self.poll,
-                        hdr_input_range_policy=self.hdr_input_range_policy)
+                    if self.profile_transform is not None:
+                        value,color_metadata=self.profile_transform.convert(value)
+                    else:
+                        value, color_metadata = convert_rgba(value, self.input_signal, self.target_signal, cancel=self.poll,
+                            hdr_input_range_policy=self.hdr_input_range_policy)
                     if 'hdr_input_components_clipped' in color_metadata:
                         self.metadata['HDR_input_components_clipped_across_decoded_windows'] = self.metadata.get('HDR_input_components_clipped_across_decoded_windows',0) + color_metadata['hdr_input_components_clipped']
                     frames.append(value)
@@ -342,6 +351,8 @@ class NativeSurfaceSource(TimedSurfaceSource):
             finally:
                 self.pipe = None
                 self.cache.clear()
+                if self.profile_transform is not None:
+                    self.profile_transform.close(verify=False)
                 if self.guard is not None:
                     self.metadata['locks_at_close'] = self.guard.summary()
                     self.guard.close()

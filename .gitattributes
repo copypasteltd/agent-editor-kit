@@ -1828,3 +1828,15 @@ scripts/*chromatic*20261028.py text eol=lf
 docs/product/CHROMATIC_ADAPTATION.md text eol=lf
 docs/releases/CLI_0.1.45_LOCAL.md text eol=lf
 docs/validation/明确白点色适应实测_2026-10-28.md text eol=lf
+
+# Preserve native CMM, profile and actual ICC evidence bytes.
+product/src/ai_ad_editor/avk_lcms_*.dll -text -diff
+product/src/ai_ad_editor/native_icc_manifest.json -text -whitespace
+product/src/ai_ad_editor/LITTLECMS_LICENSE.txt -text -whitespace
+docs/validation/evidence/native-icc-20261028-r1/** -text -whitespace
+docs/assets/native-icc-20261028-*/** -text -whitespace
+docs/product/icc-capabilities-cli-0.1.46.json -text -whitespace
+scripts/*icc*20261028.py text eol=lf
+docs/product/ICC_PROFILES.md text eol=lf
+docs/releases/CLI_0.1.46_LOCAL.md text eol=lf
+docs/validation/原生ICC色彩管理实测_2026-10-28.md text eol=lf

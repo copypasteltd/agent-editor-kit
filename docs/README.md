@@ -1,6 +1,8 @@
 # agent editor kit 文档 / Documentation
 
-Current local / 当前本地 / 目前本地：**CLI0.1.45 / local.43 / r46 kit** · [White adaptation](product/CHROMATIC_ADAPTATION.md) · [Install](releases/CLI_0.1.45_LOCAL.md) · [C55](product/CASES.md#c55-native-chromatic-adaptation).
+Current local / 当前本地 / 目前本地：**CLI0.1.46 / local.44 / r47 kit** · [Native ICC](product/ICC_PROFILES.md) · [Install](releases/CLI_0.1.46_LOCAL.md) · [C56](product/CASES.md#c56-native-icc-profiles).
+
+Historical / 历史 / 歷史：**CLI0.1.45 / local.43 / r46 kit** · [White adaptation](product/CHROMATIC_ADAPTATION.md) · [Install](releases/CLI_0.1.45_LOCAL.md) · [C55](product/CASES.md#c55-native-chromatic-adaptation).
 
 Historical / 历史 / 歷史：**CLI0.1.44 / local.42 / r45 kit** · [HDR10 static SEI](product/HDR_METADATA.md) · [Install](releases/CLI_0.1.44_LOCAL.md) · [C54](product/CASES.md#c54-native-hdr10-metadata).
 

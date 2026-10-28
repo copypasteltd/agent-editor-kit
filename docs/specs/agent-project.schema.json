@@ -3182,7 +3182,14 @@
             ],
             "properties": {
               "source_signal": {
-                "$ref": "#/$defs/nativeFloatSignal"
+                "oneOf": [
+                  {
+                    "$ref": "#/$defs/nativeFloatSignal"
+                  },
+                  {
+                    "$ref": "#/$defs/nativeICCSourceSignal"
+                  }
+                ]
               },
               "display_geometry": {
                 "const": "square-unrotated"
@@ -5281,6 +5288,42 @@
               "maximum": 10000
             }
           }
+        }
+      }
+    },
+    "nativeICCSourceSignal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "icc_profile",
+        "sha256",
+        "intent"
+      ],
+      "properties": {
+        "icc_profile": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "intent": {
+          "enum": [
+            "perceptual",
+            "relative-colorimetric",
+            "saturation",
+            "absolute-colorimetric"
+          ]
+        },
+        "black_point_compensation": {
+          "type": "boolean"
+        },
+        "reference_white_nits": {
+          "type": "number",
+          "minimum": 0.01,
+          "maximum": 10000
         }
       }
     }

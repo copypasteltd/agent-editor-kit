@@ -30,6 +30,7 @@ from .native_video_index import IndexContext
 from .policy import resolve_local_path
 from .sequence_sampling import configuration as sampling_configuration
 from .utils import sha256_file, atomic_write_json
+from .icc_profiles import parse_source_signal,source_has_luminance
 
 ENGINE = 'float32-native-v1'
 PROTOCOL = 'standard-render-native-float32-v1'
@@ -105,7 +106,7 @@ def configuration(value, settings, encoder):
         allowed_source = {'source_signal', 'yuv_spec', 'scan', 'demux_origin', 'alpha_association', 'decoder', 'display_geometry', 'hdr_input_range_policy'}
         if not isinstance(asset_id, str) or not isinstance(spec, dict) or set(spec) - allowed_source:
             raise error('CONFIG', '原始源信号配置字段无效', asset_id=asset_id)
-        source_signals.append(_signal(spec.get('source_signal'), asset_id))
+        source_signals.append(parse_source_signal(spec.get('source_signal')))
         if not isinstance(spec.get('hdr_input_range_policy','reject'),str) or spec.get('hdr_input_range_policy','reject') not in {'reject','clip'}:
             raise error('SIGNAL','HDR输入编码域策略须明确reject/clip',asset_id=asset_id)
         if spec.get('display_geometry') != 'square-unrotated':
@@ -135,7 +136,7 @@ def configuration(value, settings, encoder):
                 raise error('SIGNAL', 'YCbCr须明确逐行采样', asset_id=asset_id)
     hdr_active = hdr_output or any(s.transfer in HDR_TRANSFERS for s in source_signals)
     if hdr_active:
-        if not has_luminance(working) or not has_luminance(output) or any(not has_luminance(s) for s in source_signals):
+        if not has_luminance(working) or not has_luminance(output) or any(not source_has_luminance(s) for s in source_signals):
             raise error('SIGNAL', 'HDR工程须为工作、输出及全部视觉资产明确reference_white_nits')
         if 'background_signal' in value and not has_luminance(background):
             raise error('SIGNAL', 'HDR工程显式背景信号须声明reference_white_nits')
@@ -281,7 +282,7 @@ class FloatRenderContext:
             if required_decoder and decoder != required_decoder:
                 raise error('ALPHA', 'WebM透明源须使用保留alpha的解码器', asset_id=asset_id)
             source = self.stack.enter_context(NativeSurfaceSource(self.root, asset,
-                source_signal=_signal(spec['source_signal'], asset_id), working_signal=self.config['working'],
+                source_signal=parse_source_signal(spec['source_signal']), working_signal=self.config['working'],
                 yuv_spec=YUVSpec(**spec['yuv_spec']) if spec.get('yuv_spec') is not None else None,
                 scan=spec.get('scan'), demux_origin=spec.get('demux_origin'),
                 alpha_association=spec.get('alpha_association', 'straight'),

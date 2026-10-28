@@ -39,3 +39,5 @@ CLI0.1.44 adds optional actual HDR10 static SEI. Read [HDR10 metadata](hdr-metad
 CLI0.1.45 adds explicit Bradford reference-white conversion,ProPhoto D50 and
 linear AP1 D60. Read [chromatic adaptation](chromatic-adaptation.md). HDR encoded
 BT.2100/output white remains D65; chromaticity is separate from reference nits.
+
+CLI0.1.46 adds [explicit native RGB ICC source profiles](icc-profiles.md). HDR projects require authored reference-white nits on every source, including ICC inputs; ICC tags do not measure luminance.

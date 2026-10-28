@@ -919,6 +919,13 @@ def render_fingerprints(project: dict[str, Any], sequence: dict[str, Any], setti
     if (project.get('settings',{}).get('pixel_pipeline') or {}).get('engine')=='float32-native-v1':
         for name in ('float_optics','float_optics_kernel','float_glow','float_glow_kernel','float_color_signal','float_hdr','hdr_metadata','float_chromatic','float_effect_chain','float_gpu','float_gpu_worker','float_gpu_native'):
             input_hashes['runtime:optics:'+name]='sha256:'+sha256_file(Path(__file__).with_name(name+'.py'))
+        from .icc_profiles import ICCSourceSignal,parse_source_signal,profile_path,runtime_paths
+        for spec in project['settings']['pixel_pipeline'].get('sources',{}).values():
+            signal=parse_source_signal(spec['source_signal'])
+            if isinstance(signal,ICCSourceSignal):
+                input_hashes['icc-profile:'+signal.icc_profile]=signal.sha256 if root is None else 'sha256:'+sha256_file(profile_path(root,signal))
+                for path in runtime_paths():
+                    input_hashes['runtime:icc:'+str(path)]='sha256:'+sha256_file(path)
     if particle_sources:
         for name in ('procedural_particles','particle_animation','float_timeline','float_gpu','float_gpu_worker','float_gpu_native','float_gpu_control'):
             input_hashes['runtime:particles:'+name]='sha256:'+sha256_file(Path(__file__).with_name(name+'.py'))

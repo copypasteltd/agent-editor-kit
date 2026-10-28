@@ -1,0 +1,2703 @@
+{
+  "status": "passed",
+  "frames": 48,
+  "patches_per_frame": 8,
+  "comparisons": 384,
+  "maximum_luma_code_error": 0.44534279931326637,
+  "tolerance": 1.6,
+  "output_RGB_clip_explicit": true,
+  "source_sha256": "6b8708c6214ac670048cd64eb670ab79d525659d53c331e9ba58d8a94acb640c",
+  "decoded_video_sha256": "5b4a11747eb79c735d4b0872bec1f7cc56f7c294c781969c313b1de0a0fd0d6c",
+  "product_code_imported": false,
+  "new_renders": 0,
+  "records": [
+    {
+      "frame": 0,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 0,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 0,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 0,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 0,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 0,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 0,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 0,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 1,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 1,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 1,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 1,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 1,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 1,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 1,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 1,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 2,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 2,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 2,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 2,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 2,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 2,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 2,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 2,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 3,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 3,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 3,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 3,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 3,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 3,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 3,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 3,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 4,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 4,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 4,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 4,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 4,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 4,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 4,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 4,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 5,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 5,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 5,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 5,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 5,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 5,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 5,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 5,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 6,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 6,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 6,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 6,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 6,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 6,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 6,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 6,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 7,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 7,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 7,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 7,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 7,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 7,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 7,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 7,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 8,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 8,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 8,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 8,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 8,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 8,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 8,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 8,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 9,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 9,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 9,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 9,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 9,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 9,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 9,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 9,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 10,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 10,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 10,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 10,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 10,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 10,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 10,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 10,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 11,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 11,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 11,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 11,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 11,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 11,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 11,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 11,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 12,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 12,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 12,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 12,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 12,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 12,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 12,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 12,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 13,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 13,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 13,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 13,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 13,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 13,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 13,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 13,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 14,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 14,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 14,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 14,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 14,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 14,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 14,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 14,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 15,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 15,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 15,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 15,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 15,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 15,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 15,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 15,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 16,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 16,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 16,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 16,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 16,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 16,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 16,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 16,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 17,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 17,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 17,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 17,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 17,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 17,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 17,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 17,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 18,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 18,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 18,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 18,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 18,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 18,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 18,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 18,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 19,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 19,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 19,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 19,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 19,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 19,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 19,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 19,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 20,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 20,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 20,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 20,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 20,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 20,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 20,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 20,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 21,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 21,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 21,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 21,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 21,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 21,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 21,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 21,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 22,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 22,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 22,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 22,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 22,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 22,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 22,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 22,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 23,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 23,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 23,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 23,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 23,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 23,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 23,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 23,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 24,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 24,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 24,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 24,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 24,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 24,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 24,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 24,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 25,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 25,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 25,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 25,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 25,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 25,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 25,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 25,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 26,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 26,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 26,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 26,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 26,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 26,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 26,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 26,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 27,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 27,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 27,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 27,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 27,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 27,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 27,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 27,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 28,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 28,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 28,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 28,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 28,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 28,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 28,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 28,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 29,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 29,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 29,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 29,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 29,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 29,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 29,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 29,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 30,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 30,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 30,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 30,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 30,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 30,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 30,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 30,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 31,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 31,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 31,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 31,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 31,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 31,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 31,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 31,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 32,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 32,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 32,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 32,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 32,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 32,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 32,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 32,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 33,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 33,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 33,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 33,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 33,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 33,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 33,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 33,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 34,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 34,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 34,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 34,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 34,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 34,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 34,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 34,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 35,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 35,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 35,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 35,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 35,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 35,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 35,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 35,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 36,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 36,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 36,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 36,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 36,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 36,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 36,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 36,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 37,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 37,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 37,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 37,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 37,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 37,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 37,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 37,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 38,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 38,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 38,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 38,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 38,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 38,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 38,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 38,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 39,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 39,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 39,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 39,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 39,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 39,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 39,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 39,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 40,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 40,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 40,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 40,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 40,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 40,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 40,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 40,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 41,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 41,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 41,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 41,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 41,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 41,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 41,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 41,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 42,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 42,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 42,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 42,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 42,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 42,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 42,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 42,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 43,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 43,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 43,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 43,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 43,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 43,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 43,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 43,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 44,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 44,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 44,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 44,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 44,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 44,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 44,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 44,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 45,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 45,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 45,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 45,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 45,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 45,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 45,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 45,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 46,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 46,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 46,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 46,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 46,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 46,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 46,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 46,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    },
+    {
+      "frame": 47,
+      "patch": 0,
+      "expected_luma": 180.17443216181033,
+      "actual_luma": 180.0,
+      "absolute_error": 0.17443216181032994
+    },
+    {
+      "frame": 47,
+      "patch": 1,
+      "expected_luma": 342.57071183370743,
+      "actual_luma": 343.0,
+      "absolute_error": 0.42928816629256517
+    },
+    {
+      "frame": 47,
+      "patch": 2,
+      "expected_luma": 565.3470045251281,
+      "actual_luma": 565.0,
+      "absolute_error": 0.34700452512811353
+    },
+    {
+      "frame": 47,
+      "patch": 3,
+      "expected_luma": 723.0758366473568,
+      "actual_luma": 723.0,
+      "absolute_error": 0.07583664735682305
+    },
+    {
+      "frame": 47,
+      "patch": 4,
+      "expected_luma": 545.4453427993133,
+      "actual_luma": 545.0,
+      "absolute_error": 0.44534279931326637
+    },
+    {
+      "frame": 47,
+      "patch": 5,
+      "expected_luma": 541.9860008058903,
+      "actual_luma": 542.0,
+      "absolute_error": 0.013999194109715063
+    },
+    {
+      "frame": 47,
+      "patch": 6,
+      "expected_luma": 434.41641907974474,
+      "actual_luma": 434.0,
+      "absolute_error": 0.4164190797447418
+    },
+    {
+      "frame": 47,
+      "patch": 7,
+      "expected_luma": 528.2502118626376,
+      "actual_luma": 528.0,
+      "absolute_error": 0.25021186263757045
+    }
+  ]
+}

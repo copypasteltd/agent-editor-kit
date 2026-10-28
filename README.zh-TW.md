@@ -9,7 +9,21 @@
 本頁包含完整功能模塊、服務與依賴、安裝與使用邏輯、Skill 輸入輸出、真實案例和核驗表。長篇原始驗收日志繼續留檔，功能說明與案例入口恢復到首頁。
 
 
-<!-- native-chromatic-current -->
+<!-- native-icc-current -->
+
+**CLI0.1.46 / alpha.4-local.44 / r47 kit · 1 Skill / 17 modules.**
+
+新增**原生 ICC 色彩管理**：明確本機 RGB ICC v2/v4、SHA、四種算圖意圖與黑點補償，由 LittleCMS 2.19.1 直接轉換至線性工作 RGB；貫通素材、浮點匯出、預覽快取及可編輯專案封裝。
+
+[Workflow / usage](docs/product/ICC_PROFILES.md) · [C56](docs/product/CASES.md#c56-native-icc-profiles) · [Install](docs/releases/CLI_0.1.46_LOCAL.md) · [Evidence](docs/validation/原生ICC色彩管理实测_2026-10-28.md)
+
+![Actual ICC client preview](docs/assets/native-icc-20261028-r1/actual-preview.gif)
+
+26項原始碼專項、26項安裝專項與287項安裝相容檢查分別通過。C56獨立核對首影格230400像素、全48影格色塊及完整非靜音音畫專案封裝重播；每次48次實際GPU Bloom。ICC CMM使用CPU，支援的合成／光暈使用原生GPU。範圍為RGB來源設定：任意ICC輸出、軟打樣、CMYK、內嵌設定自動識別、完整ACES與自然HDR監看仍待補齊，保留38項原目標關閉條件。
+
+<!-- /native-icc-current -->
+
+<!-- native-chromatic-history -->
 
 **CLI0.1.45 / alpha.4-local.43 / r46 kit · 1 Skill / 17 modules.**
 
@@ -23,7 +37,7 @@
 
 20項原始碼專項、20項安裝專項和267項安裝相容檢查分別通過。C55獨立對照首影格230400像素及全48影格色塊，實際GPU Bloom與完整音畫封裝重播通過。顏色數學CPU，合成／光暈可用GPU；最終BT.709／BT.2100交付D65。參考白點轉換並非ICC解析、自動物理白平衡或完整ACES輸出變換；感知色域映射、自然HDR監看及38項完整目標持續開發。
 
-<!-- /native-chromatic-current -->
+<!-- /native-chromatic-history -->
 
 <!-- native-hdr-metadata-history -->
 
@@ -526,7 +540,7 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r46 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r46.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
+**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r47 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r47.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
 
 <!-- /unified-skill-registration -->
 
@@ -832,7 +846,7 @@ flowchart LR
 5. 若需要選型，展示原圖與少量候選，記錄最終 ID/強度/作用域；在目標素材上復試。
 6. 渲染至工程內新路徑，檢查實際編碼文件、manifest、warning、音畫與權利，再導出專案包。
 
-## 完整的 71 個功能模組
+## 完整的 72 個功能模組
 
 編號用於定位文件；各模塊有依賴與交叉，不是“43 個獨立內核”或完成率。下表直接寫明行為、入口與限制；[完整機器能力清單及每項契約](docs/product/CAPABILITIES.zh-TW.md)保留全部字段。
 
@@ -909,6 +923,7 @@ flowchart LR
 | F69 | CUDA對白降噪與增強 | 原生取樣時鐘/單雙聲道、真正模型、乾濕強度/衰減、可編輯獨立音軌、配方重跑/工程包、取消回滾。 | `audio enhancement-adapter; audio enhance` | DeepFilterNet3固定safetensors＋既有原生CUDA依賴；分段狀態重置、CPU前端；完整去混響/音樂保真待完成。 |
 | F70 | HDR10靜態中繼資料交付 | 母版RGB/白點xy、最小/最大nit、MaxCLL/MaxFALL → 實際HEVC SEI與解碼核驗清單。 | `settings.output.hdr10; validate; render; convert` | 明確原生PQ/BT2020 NCL有限範圍、libx265/10bit420/MP4或MKV；作者聲明、前32封包核驗。 |
 | F71 | 白點適應與寬色域工作設定 | ProPhoto D50／AP1 D60／明確xy → 線性XYZ Bradford、nit縮放、實際D65預覽與專案封裝。 | `native_chromatic_adaptation; render; preview; surface export; convert` | CPU色彩數學，GPU光暈依聲明白點；不含ICC解析／完整ACES／自動白平衡。 |
+| F72 | 原生ICC來源色彩管理 | RGB ICC v2/v4矩陣/CLUT、明確SHA/意圖/BPC → 線性RGB工作域，Float32/alpha、實際預覽與專案依賴閉合。 | `native_icc_source_profiles; surface inspect-profile; surface export; render; preview; convert` | 固定MIT LittleCMS原生CPU；不含任意輸出ICC/軟打樣/CMYK/自動內嵌推斷。 |
 
 ## 支持的服務模塊與依賴
 
@@ -942,6 +957,7 @@ flowchart LR
 | S24 | DeepFilterNet3對白服務 | 固定133張量/48kHz全頻模型；神經推論CUDA、NumPy前端CPU、FFmpeg重取樣。 | 明確本機權重/原生Torch/safetensors及MIT OR Apache-2.0證據。 | `audio enhancement-adapter; audio enhance` | 8..96kHz、1/2聲道、完整來源≤1800秒/選區≤600秒；無自動下載/依賴安裝/CPU回退。 |
 | S25 | x265 HDR10靜態SEI服務 | 固定語法參數寫入＋原生ffprobe解碼逐有理數核對，發布前失敗關閉。 | 既有原生FFmpeg/libx265/ffprobe；無新模型。 | `render` | 編碼CPU；觀察解碼前綴，非全片認證/峰值量測。 |
 | S26 | 明確白點RGB轉換服務 | 原生分塊Float64計算／Float32表面、ProPhoto分段傳遞、Bradford矩陣與白點幾何核驗。 | 既有NumPy；無新增模型／服務。 | `render; preview; surface` | 編碼交付D65，alpha保位；不推斷素材ICC或場景光源。 |
+| S27 | 原生ICC CMM服務 | 固定LittleCMS2.19.1 Windows x64 DLL、私有上下文、分塊Float32、持鎖/取消/關閉、實際設定檔位元組核驗。 | 包內原生DLL與MIT授權；無需新模型/全域安裝。 | `surface; render; preview; convert` | 16MiB/4096標籤與表面預算；CPU轉換，GPU合成獨立選擇。 |
 
 **本機查詢與交付狀態：** 本輪 doctor 檢測到原生 Python 3.13.1、FFmpeg/ffprobe 8.1 和 Node；這不證明每個模型或瀏覽器適配器均已註冊。doctor 只查到系統存在 Docker/WSL 可執行路徑，沒有運行它們。本專案始終使用原生工具，不調度 Docker/WSL/虛擬環境。
 
@@ -1041,7 +1057,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.43/final-r1/installed/`，CLI 0.1.45；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
+本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.44/final-r1/installed/`，CLI 0.1.46；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1541,6 +1557,12 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R307 | 2026-10-28 chromatic | C55真實註冊Skill：230400像素獨立AP1對照、48影格8色塊實際編碼核對；每次48次GPU Bloom。首輪超出SDR整數範圍正確拒絕，明確clip後交付。 | [Evidence](docs/validation/evidence/native-chromatic-20261028-r1/case-r3/verification.json) |
 | R308 | 2026-10-28 chromatic | C55完整48影格與384000個非零PCM純量專案封裝重播相同；預覽不改作者內容，實際GIF24影格／4秒；數學控制圖明確標示。 | [Evidence](docs/validation/evidence/native-chromatic-20261028-r1/case-r3/verification.json) |
 | R309 | 2026-10-28 chromatic | r46獨立解壓縮／設定／註冊：1入口／17模組／84Skill檔／136ZIP項；全部303條舊R與38原關閉條件保留。 | [Evidence](docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/verification.json) |
+| R310 | 2026-10-28 ICC | CLI0.1.46/local.44離線包：269個Python檔案及ICC DLL/授權逐位元組一致，85能力；保留舊公開包。 | [Evidence](docs/validation/evidence/native-icc-20261028-r1/installation-final-r1/verification.json) |
+| R311 | 2026-10-28 ICC | 26原始碼專項通過：真實v2/v4矩陣/非線性CLUT、四意圖/BPC、獨立矩陣與Pillow2.17 CMM對照、nits/alpha/負值、取消/持鎖、surface CLI/快取/專案包。保留初輪Gamma量化/版本查詢與缺意圖表失敗。 | [Evidence](docs/validation/evidence/native-icc-20261028-r1/source-r3/verification.json) |
+| R312 | 2026-10-28 ICC | 安裝版26專項通過；另列287項既有白點/HDR10/光暈/色彩/曲線/LUT/浮點算圖/預覽/專案包/schema/佇列相容，零失敗/錯誤/略過。 | [Evidence](docs/validation/evidence/native-icc-20261028-r1/installed-compat-r1/verification.json) |
+| R313 | 2026-10-28 ICC | C56真實註冊Skill：原創CC0 RGB ICC v4設定、230400像素獨立工作域對照、48影格×8色塊編碼核對；每次48次實際GPU Bloom及CMM關閉收據。 | [Evidence](docs/validation/evidence/native-icc-20261028-r1/case-r1/verification.json) |
+| R314 | 2026-10-28 ICC | C56專案包保留ICC原位元組/訊號；完整48影格66355200解碼位元組與384000個非零PCM標量重播一致，實際PNG/MP4/GIF及作者唯讀預覽。 | [Evidence](docs/validation/evidence/native-icc-20261028-r1/case-r1/verification.json) |
+| R315 | 2026-10-28 ICC | r47統一Skill：1入口/17內部模組/85檔案、安裝版固定摘要與獨立解包註冊/ICC專案計畫；首次啟用因清單更新先後被攔截，完成清單後重新成功。 | [Evidence](docs/validation/evidence/native-icc-20261028-r1/kit-r1/verification.json) |
 
 ## 當前邊界與開發方向
 

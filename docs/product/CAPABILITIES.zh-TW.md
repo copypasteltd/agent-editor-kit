@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.45 / alpha.4-local.43 / r46 kit · 1 Skill / 17 modules / 84 files.**
+**CLI0.1.46 / alpha.4-local.44 / r47 kit · 1 Skill / 17 modules / 85 files.**
 
-新增**Bradford 白點適應、ProPhoto RGB D50 和線性 ACES AP1 D60**：貫通來源、工作域、效果訊號、浮點中間封裝、實際預覽與可編輯專案；光暈依聲明白點計算亮度，保留既有 D65 行為。
+新增**原生 ICC 色彩管理**：明確本機 RGB ICC v2/v4、SHA、四種算圖意圖與黑點補償，由 LittleCMS 2.19.1 直接轉換至線性工作 RGB；貫通素材、浮點匯出、預覽快取及可編輯專案封裝。
 
-[Explicit-white workflow](CHROMATIC_ADAPTATION.md)
+[Native ICC workflow](ICC_PROFILES.md)
 
 <!-- /community-current -->
 
@@ -85,6 +85,7 @@
 | F69 | CUDA對白降噪與增強 | 原生取樣時鐘/單雙聲道、真正模型、乾濕強度/衰減、可編輯獨立音軌、配方重跑/工程包、取消回滾。 | `audio enhancement-adapter; audio enhance` | DeepFilterNet3固定safetensors＋既有原生CUDA依賴；分段狀態重置、CPU前端；完整去混響/音樂保真待完成。 |
 | F70 | HDR10靜態中繼資料交付 | 母版RGB/白點xy、最小/最大nit、MaxCLL/MaxFALL → 實際HEVC SEI與解碼核驗清單。 | `settings.output.hdr10; validate; render; convert` | 明確原生PQ/BT2020 NCL有限範圍、libx265/10bit420/MP4或MKV；作者聲明、前32封包核驗。 |
 | F71 | 白點適應與寬色域工作設定 | ProPhoto D50／AP1 D60／明確xy → 線性XYZ Bradford、nit縮放、實際D65預覽與專案封裝。 | `native_chromatic_adaptation; render; preview; surface export; convert` | CPU色彩數學，GPU光暈依聲明白點；不含ICC解析／完整ACES／自動白平衡。 |
+| F72 | 原生ICC來源色彩管理 | RGB ICC v2/v4矩陣/CLUT、明確SHA/意圖/BPC → 線性RGB工作域，Float32/alpha、實際預覽與專案依賴閉合。 | `native_icc_source_profiles; surface inspect-profile; surface export; render; preview; convert` | 固定MIT LittleCMS原生CPU；不含任意輸出ICC/軟打樣/CMYK/自動內嵌推斷。 |
 
 | 編號 | 服務模塊 | 運行形式 | 需要什么/提供什么 | 入口 | 範圍 |
 |---|---|---|---|---|---|
@@ -114,6 +115,7 @@
 | S24 | DeepFilterNet3對白服務 | 固定133張量/48kHz全頻模型；神經推論CUDA、NumPy前端CPU、FFmpeg重取樣。 | 明確本機權重/原生Torch/safetensors及MIT OR Apache-2.0證據。 | `audio enhancement-adapter; audio enhance` | 8..96kHz、1/2聲道、完整來源≤1800秒/選區≤600秒；無自動下載/依賴安裝/CPU回退。 |
 | S25 | x265 HDR10靜態SEI服務 | 固定語法參數寫入＋原生ffprobe解碼逐有理數核對，發布前失敗關閉。 | 既有原生FFmpeg/libx265/ffprobe；無新模型。 | `render` | 編碼CPU；觀察解碼前綴，非全片認證/峰值量測。 |
 | S26 | 明確白點RGB轉換服務 | 原生分塊Float64計算／Float32表面、ProPhoto分段傳遞、Bradford矩陣與白點幾何核驗。 | 既有NumPy；無新增模型／服務。 | `render; preview; surface` | 編碼交付D65，alpha保位；不推斷素材ICC或場景光源。 |
+| S27 | 原生ICC CMM服務 | 固定LittleCMS2.19.1 Windows x64 DLL、私有上下文、分塊Float32、持鎖/取消/關閉、實際設定檔位元組核驗。 | 包內原生DLL與MIT授權；無需新模型/全域安裝。 | `surface; render; preview; convert` | 16MiB/4096標籤與表面預算；CPU轉換，GPU合成獨立選擇。 |
 
 ## 完整安裝版能力字段
 
@@ -5330,3 +5332,45 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 ```
 
 [CLI0.1.45 exact installed capabilities](chromatic-capabilities-cli-0.1.45.json).
+
+### `native_icc_source_profiles`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "explicit-native-icc-source-float32-v1",
+  "selection": "settings.pixel_pipeline.sources.<asset_id>.source_signal: icc_profile,sha256,intent",
+  "commands": [
+    "surface inspect-profile",
+    "surface export",
+    "validate",
+    "render",
+    "preview frame",
+    "preview range",
+    "convert export",
+    "convert import"
+  ],
+  "features": [
+    "explicit_project_local_RGB_ICC_v2_v4_sources",
+    "pinned_MIT_LittleCMS_2_19_1_native_Windows_x64",
+    "perceptual_relative_saturation_absolute_intents",
+    "explicit_black_point_compensation",
+    "direct_Float32_to_declared_linear_RGB_working_profile",
+    "independent_alpha_bits_and_explicit_reference_nits",
+    "owned_read_locks_tiled_conversion_cancel_and_closed_CMM_handles",
+    "profile_binary_cache_fingerprints_and_portable_profile_dependencies"
+  ],
+  "limits": [
+    "CPU_CMM_not_GPU_ICC_kernels",
+    "explicit_profile_files_not_automatic_embedded_profile_inference",
+    "RGB_input_only_not_CMYK_device_link_named_color_or_abstract_profiles",
+    "encoded_ICC_source_RGB_in_0_1_without_silent_clip",
+    "ICC_source_white_nits_are_author_declarations",
+    "target_is_declared_linear_working_RGB_not_arbitrary_output_profile_or_softproof",
+    "max_16MiB_profile_4096_tags_and_existing_surface_budgets_not_total_RSS_acceptance",
+    "no_complete_ACES_dynamic_HDR_or_monitor_calibration_acceptance"
+  ]
+}
+```
+
+[CLI0.1.46 exact installed capabilities](icc-capabilities-cli-0.1.46.json).

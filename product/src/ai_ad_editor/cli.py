@@ -1025,8 +1025,15 @@ def build_parser() -> argparse.ArgumentParser:
     surface_export.add_argument('--project',required=True)
     surface_export.add_argument('--asset-id',required=True)
     surface_export.add_argument('--output',required=True,help='工程内新目录，包含Float32像素、int64帧时钟与JSON清单')
-    surface_export.add_argument('--source-primaries',required=True,choices=('bt709','display-p3','bt2020','prophoto-rgb','aces-ap1'))
-    surface_export.add_argument('--source-transfer',required=True,choices=('linear','srgb','bt709-oetf','gamma22','gamma24','prophoto-rgb'))
+    surface_source=surface_export.add_mutually_exclusive_group(required=True)
+    surface_source.add_argument('--source-primaries',choices=('bt709','display-p3','bt2020','prophoto-rgb','aces-ap1'))
+    surface_source.add_argument('--source-icc-profile',help='工程内RGB ICC v2/v4相对路径；须同时明确SHA和渲染意图')
+    surface_export.add_argument('--source-transfer',choices=('linear','srgb','bt709-oetf','gamma22','gamma24','prophoto-rgb'))
+    surface_export.add_argument('--source-icc-sha256')
+    surface_export.add_argument('--source-icc-intent',choices=('perceptual','relative-colorimetric','saturation','absolute-colorimetric'))
+    surface_export.add_argument('--source-icc-black-point-compensation',action='store_true')
+    surface_export.add_argument('--source-reference-white-nits',type=float)
+    surface_export.add_argument('--working-reference-white-nits',type=float)
     surface_export.add_argument('--working-primaries',default='bt709',choices=('bt709','display-p3','bt2020','prophoto-rgb','aces-ap1'))
     surface_export.add_argument('--working-transfer',default='linear',choices=('linear','srgb','bt709-oetf','gamma22','gamma24','prophoto-rgb'))
     surface_export.add_argument('--source-white-xy',type=float,nargs=2,metavar=('X','Y'),help='明确RGB参考白点CIE1931 xy；默认随基色配置')
@@ -1045,6 +1052,9 @@ def build_parser() -> argparse.ArgumentParser:
     surface_inspect=_leaf_common(surface_sub.add_parser('inspect',help='只读核验浮点包的像素与原生时钟字节'))
     surface_inspect.add_argument('--project',required=True)
     surface_inspect.add_argument('--input',required=True)
+    surface_profile=_leaf_common(surface_sub.add_parser('inspect-profile',help='只读核验工程内RGB ICC v2/v4与固定原生色彩引擎'))
+    surface_profile.add_argument('--project',required=True)
+    surface_profile.add_argument('--input',required=True,help='工程内ICC相对路径')
 
     queue = subs.add_parser("queue", help="项目内持久化渲染队列")
     queue_sub = queue.add_subparsers(dest="action", required=True)
@@ -6019,16 +6029,29 @@ def command_surface(args: argparse.Namespace) -> dict[str, Any]:
     root,project=load_project(args.project)
     if args.action=='inspect':
         return _envelope('surface.inspect',args,data=float_bundle.inspect_bundle(root,args.input))
+    if args.action=='inspect-profile':
+        from .icc_profiles import inspect_profile
+        return _envelope('surface.inspect-profile',args,data=inspect_profile(root,args.input))
     geometry=_load_changes(args.transform_json) if args.transform_json else None
     supplied=any(value is not None for value in (args.yuv_matrix,args.yuv_range,args.chroma_location))
     spec=YUVSpec(args.yuv_matrix,args.yuv_range,args.chroma_location) if supplied else None
-    def signal(primaries,transfer,white):
+    def signal(primaries,transfer,white,nits):
         value=dict(primaries=primaries,transfer=transfer)
         if white is not None:value['white_xy']=white
+        if nits is not None:value['reference_white_nits']=nits
         return parse_signal(value)
+    if args.source_icc_profile:
+        from .icc_profiles import ICCSourceSignal
+        if args.source_transfer is not None or args.source_white_xy is not None:raise argument_error('ICC源不能混入RGB传递或参考白点标签')
+        source_signal=ICCSourceSignal(args.source_icc_profile,args.source_icc_sha256,args.source_icc_intent,
+            args.source_icc_black_point_compensation,args.source_reference_white_nits)
+    else:
+        if args.source_transfer is None:raise argument_error('RGB源必须明确--source-transfer')
+        if args.source_icc_sha256 or args.source_icc_intent or args.source_icc_black_point_compensation:raise argument_error('ICC参数要求明确--source-icc-profile')
+        source_signal=signal(args.source_primaries,args.source_transfer,args.source_white_xy,args.source_reference_white_nits)
     plan=float_bundle.prepare(root,project,args.asset_id,args.output,
-        source_signal=signal(args.source_primaries,args.source_transfer,args.source_white_xy),
-        target_signal=signal(args.working_primaries,args.working_transfer,args.working_white_xy),pixel_family=args.pixel_family,
+        source_signal=source_signal,
+        target_signal=signal(args.working_primaries,args.working_transfer,args.working_white_xy,args.working_reference_white_nits),pixel_family=args.pixel_family,
         yuv_spec=spec,scan=args.scan,alpha_association=args.alpha_association,start_frame=args.start_frame,
         stop_frame=args.stop_frame,geometry=geometry,max_output_bytes=args.max_output_mib*1024**2)
     if args.dry_run:return _envelope('surface.export',args,status='planned',data=plan)
@@ -7109,6 +7132,7 @@ _READ_ONLY_PROJECT_COMMANDS = {
     ("media", "model-session"),
     *(('semantic', action) for action in ('adapter-list','adapter-inspect','index-list','verify','calibration-list','search')),
     ('surface','inspect'),
+    ('surface','inspect-profile'),
     ('diagnostics', 'list'), ('diagnostics', 'show'), ('diagnostics', 'export'),
     ("project", "inspect"),
     ("operation", "inspect"),
@@ -7156,6 +7180,7 @@ COMMANDS: dict[tuple[str, str | None], Callable[[argparse.Namespace], dict[str, 
     ('interpolate','generate'): command_interpolation_generate,
     ('surface','export'):command_surface,
     ('surface','inspect'):command_surface,
+    ('surface','inspect-profile'):command_surface,
     ('cache','list'):command_cache,
     ('cache','prune'):command_cache,
     ('preview','frame'): command_preview,

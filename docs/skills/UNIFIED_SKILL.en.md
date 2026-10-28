@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.45 / alpha.4-local.43 / r46 kit · 1 Skill / 17 modules / 84 files.**
+**CLI0.1.46 / alpha.4-local.44 / r47 kit · 1 Skill / 17 modules / 85 files.**
 
-Added **Bradford reference-white adaptation, ProPhoto RGB D50 and linear ACES AP1 D60** across sources, working RGB, effect signals, raw surfaces, actual previews and editable packages. Glow luminance follows the declared white; existing D65 behavior is retained.
+Added **native ICC source color management**: explicit local RGB ICC v2/v4 files, SHA pins, four rendering intents and black-point compensation. LittleCMS 2.19.1 converts directly to linear working RGB across source decoding, raw surfaces, preview caches and editable packages.
 
-[Explicit-white workflow](../product/CHROMATIC_ADAPTATION.md)
+[Native ICC workflow](../product/ICC_PROFILES.md)
 
 <!-- /community-current -->
 

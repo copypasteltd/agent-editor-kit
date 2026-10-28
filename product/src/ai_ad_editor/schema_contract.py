@@ -9,7 +9,7 @@ from . import SCHEMA_VERSION
 from .errors import AppError
 from .rfc3339_dates import RFC3339_REGEX, validate_rfc3339
 
-SCHEMA_SHA256='e186920c8a7794d708fb83e31969b76f0e1b70cea98177435c73c97159a4d513'
+SCHEMA_SHA256='cfcb772e180c432515d92045ceab39b21edc541b0cc3e4684ac9bc9de5d72f39'
 SCHEMA_NAME='agent-project.schema.json'
 
 

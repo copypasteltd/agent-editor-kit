@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.45 / alpha.4-local.43 / r46 kit · 1 Skill / 17 modules / 84 files.**
+**CLI0.1.46 / alpha.4-local.44 / r47 kit · 1 Skill / 17 modules / 85 files.**
 
-新增**Bradford 白点适应、ProPhoto RGB D50 和线性 ACES AP1 D60**：贯通来源、工作域、效果信号、浮点中间包、实际预览和可编辑工程包；光晕按声明白点计算亮度，现有 D65 行为保留。
+新增**原生 ICC 色彩管理**：明确本地 RGB ICC v2/v4、SHA、四种渲染意图与黑点补偿，由 LittleCMS 2.19.1 直接转换到线性工作 RGB；贯通素材、浮点导出、预览缓存和可编辑工程包。
 
-[Explicit-white workflow](CHROMATIC_ADAPTATION.md)
+[Native ICC workflow](ICC_PROFILES.md)
 
 <!-- /community-current -->
 

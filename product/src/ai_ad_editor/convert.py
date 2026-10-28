@@ -189,6 +189,7 @@ def _export_project_package(root: Path, project: dict[str, Any], output: Path, *
     if failures:
         raise ValueError("项目包含缺失素材，无法生成可移植项目包")
     lut_count = _package_luts(root, packaged_project, asset_files)
+    icc_files=_package_icc_profiles(root,packaged_project,asset_files)
     from .semantic_package import prepare as prepare_semantic
     semantic_files, semantic_ledger, semantic_summary = prepare_semantic(root, project, packaged_project)
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -220,7 +221,7 @@ def _export_project_package(root: Path, project: dict[str, Any], output: Path, *
             continue
         source_files.setdefault(relative, path.read_bytes())
     for package_path, source in asset_files.items():
-        source_files[package_path] = source.read_bytes()
+        source_files[package_path] = icc_files[package_path] if package_path in icc_files else source.read_bytes()
     source_files.update(semantic_files)
     entries = [
         {"path": name, "size": len(data), "sha256": sha256_file_bytes(data)}
@@ -251,6 +252,9 @@ def _export_project_package(root: Path, project: dict[str, Any], output: Path, *
     if lut_count:
         report['items'].append(report_item('lut-resources', 'Mapped', 'local paths / lut_id',
             'assets/luts/', f'{lut_count} 个引用改写为包内内容寻址路径；关键帧及 LUT 原字节保留，缓存不打包'))
+    if icc_files:
+        report['items'].append(report_item('icc-source-profiles','Mapped','explicit pixel_pipeline source signals',
+            'assets/ / assets/color-profiles/',f'{len(icc_files)} 个原生检查并持锁读取的ICC配置保留原字节和SHA；作者工程不改写，权利证据不推定'))
     if semantic_summary['indexes'] or semantic_summary['calibrations']:
         report['items'].append(report_item('semantic-project-data', 'Mapped', 'local_semantic',
             'assets/semantic/ + assets/semantic-calibration/',
@@ -271,6 +275,24 @@ def _export_project_package(root: Path, project: dict[str, Any], output: Path, *
     report_path = output.with_suffix(output.suffix + ".conversion-report.json")
     atomic_write_json(report_path, report)
     return {"output": str(output), "report": str(report_path), "report_data": report, "manifest": manifest}
+
+
+def _package_icc_profiles(root,project,files):
+    """Close explicit native source-profile dependencies before any ZIP publish."""
+    from .icc_profiles import ICCSourceSignal,parse_source_signal,profile_path,ProfileTransform
+    pipeline=(project.get('settings',{}).get('pixel_pipeline') or {})
+    snapshots={}
+    if pipeline.get('engine')!='float32-native-v1':return snapshots
+    for spec in pipeline.get('sources',{}).values():
+        signal=parse_source_signal(spec['source_signal'])
+        if not isinstance(signal,ICCSourceSignal):continue
+        path=profile_path(root,signal)
+        with ProfileTransform(root,signal):data=path.read_bytes()
+        relative=path.relative_to(Path(root).resolve())
+        target=relative.as_posix() if relative.parts[0]=='assets' else 'assets/color-profiles/'+signal.sha256[7:]+'.icc'
+        if target in files and files[target]!=path:raise ValueError('ICC工程包依赖路径冲突')
+        files[target]=path;snapshots[target]=data;spec['source_signal']['icc_profile']=target
+    return snapshots
 
 
 def _package_luts(root: Path, project: dict[str, Any], files: dict[str, Path]) -> int:

@@ -31,3 +31,5 @@ and the actual C55 diagnostic media/package workflow.
 - Explicit D65 equivalents keep alpha and identical-signal RGB bits. Other
   conversions preserve alpha, signed/above-one RGB until a separately declared
   output boundary. There is no implicit perceptual gamut mapping or ICC parsing.
+
+For actual explicit ICC source files use the separate [native ICC path](icc-profiles.md), added in CLI0.1.46. The mathematical RGB/white conversion above still performs no profile inference.

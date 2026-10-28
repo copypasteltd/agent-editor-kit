@@ -13,6 +13,7 @@ import numpy as np
 from .artifact_locks import artifact_entry,verification_scope
 from .errors import AppError
 from .float_color_signal import ColorSignal,convert_rgba
+from .icc_profiles import ICCSourceSignal,ProfileTransform,parse_source_signal
 from .float_geometry import resample_rgba
 from .float_video_source import NativeRGBSource,cancelled
 from .float_yuv import YUVSpec
@@ -55,7 +56,9 @@ def _geometry(value,width,height):
 def prepare(root,project,asset_id,output,*,source_signal,target_signal,pixel_family='rgb',yuv_spec=None,
             scan=None,alpha_association='straight',start_frame=0,stop_frame=None,geometry=None,max_output_bytes=MAX_OUTPUT_BYTES):
     root=Path(root).resolve()
-    if not isinstance(source_signal,ColorSignal) or not isinstance(target_signal,ColorSignal):raise error('SIGNAL','输入和工作RGB信号须明确')
+    if not isinstance(source_signal,(ColorSignal,ICCSourceSignal)) or not isinstance(target_signal,ColorSignal):raise error('SIGNAL','输入和工作RGB信号须明确')
+    if isinstance(source_signal,ICCSourceSignal):
+        with ProfileTransform(root,source_signal,target_signal):pass
     if pixel_family not in ('rgb','yuv'):raise error('FORMAT','原生像素族须明确为rgb或yuv')
     if alpha_association not in ('straight','premultiplied'):raise error('ALPHA','源透明度表示须明确')
     if pixel_family=='yuv' and (not isinstance(yuv_spec,YUVSpec) or scan!='progressive'):
@@ -84,7 +87,7 @@ def prepare(root,project,asset_id,output,*,source_signal,target_signal,pixel_fam
 
 def _implementation_artifacts():
     directory=Path(__file__).resolve().parent
-    paths={name:directory/(name+'.py') for name in ('float_bundle','float_color_signal','float_hdr','float_chromatic','float_geometry')}
+    paths={name:directory/(name+'.py') for name in ('float_bundle','float_color_signal','float_hdr','float_chromatic','float_geometry','icc_profiles')}
     paths['numpy_init']=Path(np.__file__).resolve()
     # These files are the numerical boundary's entry module and native code.
     # This is not advertised as an exhaustive NumPy package inventory.
@@ -114,7 +117,7 @@ def export_bundle(root,plan,*,cancel_file=None,progress=None):
     if required>recipe['max_output_bytes']:raise error('BUDGET','浮点帧选区超过产物字节预算',required_bytes=required,budget_bytes=recipe['max_output_bytes'])
     if shutil.disk_usage(root).free<required+HEADROOM_BYTES:raise error('DISK','浮点产物加64MiB余量超过可用磁盘')
     from .float_hdr import parse_signal
-    implementations=_implementation_artifacts();source_signal=parse_signal(recipe['source_signal']);target_signal=parse_signal(recipe['working_signal'])
+    implementations=_implementation_artifacts();source_signal=parse_source_signal(recipe['source_signal']);target_signal=parse_signal(recipe['working_signal'])
     kwargs={'root':root,'source':source,'source_sha256':recipe['source_sha256'],'alpha_association':recipe['alpha_association'],
         'stop_frame':stop,'cancel_file':marker,'index_context':context}
     reader=(NativeRGBSource(**kwargs) if recipe['pixel_family']=='rgb' else
@@ -122,14 +125,16 @@ def export_bundle(root,plan,*,cancel_file=None,progress=None):
     # Parent creation begins only after native index, budgets and input checks.
     destination.parent.mkdir(parents=True,exist_ok=True);_owned(root,destination.parent)
     temporary=Path(tempfile.mkdtemp(prefix='.float-bundle-',dir=destination.parent));_owned(root,temporary)
-    committed=False;colour_metadata=None;geometry_metadata=None
+    committed=False;colour_metadata=None;geometry_metadata=None;icc_transform=None
     try:
+        if isinstance(source_signal,ICCSourceSignal):icc_transform=ProfileTransform(root,source_signal,target_signal,cancel=lambda:cancelled(marker))
         with (temporary/FILES['pixels']).open('xb') as pixels,(temporary/FILES['clock']).open('xb') as clock:
             with reader:
                 for frame in reader:
                     if frame.index<start:continue
                     cancelled(marker)
-                    value,colour_metadata=convert_rgba(frame.rgba,source_signal,target_signal,cancel=lambda:cancelled(marker))
+                    value,colour_metadata=(icc_transform.convert(frame.rgba) if icc_transform else
+                        convert_rgba(frame.rgba,source_signal,target_signal,cancel=lambda:cancelled(marker)))
                     if geometry is not None:
                         value,geometry_metadata=resample_rgba(value,(width,height),geometry['inverse'],cancel=lambda:cancelled(marker))
                     pixels.write(value.astype('<f4',copy=False).tobytes());clock.write(np.array([frame.index,frame.pts,frame.duration],dtype='<i8').tobytes())
@@ -138,6 +143,8 @@ def export_bundle(root,plan,*,cancel_file=None,progress=None):
         if (temporary/FILES['pixels']).stat().st_size!=pixel_bytes or (temporary/FILES['clock']).stat().st_size!=clock_bytes:
             raise error('TRUNCATED','浮点产物未覆盖声明的全部选择帧')
         _verify(implementations,marker);reader.verify()
+        if icc_transform:
+            icc_transform.close();colour_metadata.update(closed=True,native_handles_closed=True)
         manifest={'protocol':PROTOCOL,'created_at_utc':datetime.now(timezone.utc).isoformat(),'recipe':recipe,
             'recipe_sha256':plan['recipe_sha256'],'source_asset_id':recipe['asset_id'],'source_sha256':recipe['source_sha256'],
             'frames':count,'width':width,'height':height,'pixel_format':'interleaved-straight-RGBA-f32le',
@@ -149,7 +156,8 @@ def export_bundle(root,plan,*,cancel_file=None,progress=None):
                 'owned_threads_terminated':all(not thread.is_alive() for thread in reader.pipe.threads)},
             'colour_boundary':colour_metadata,'geometry_boundary':geometry_metadata,
             'implementation_artifacts':implementations,'numpy_version':np.__version__,'numpy_whole_package_inventory':False,
-            'working_white':('explicit RGB reference white; Bradford in linear XYZ; physical illuminant not inferred'
+            'working_white':('native ICC rendering intent to explicit linear working RGB; physical illuminant not inferred' if icc_transform else
+                'explicit RGB reference white; Bradford in linear XYZ; physical illuminant not inferred'
                 if colour_metadata.get('chromatic_transform',{}).get('extended')
                 else 'relative D65;physical white matching must be supplied by caller'),
             'alpha':'independent-straight;not-a-transfer-component','encoded_movie':False,'audio_exported':False,
@@ -168,6 +176,7 @@ def export_bundle(root,plan,*,cancel_file=None,progress=None):
     except OSError as caught:
         raise error('IO','浮点包本地读写失败；保留源文件并清理未提交产物',cause=str(caught)) from caught
     finally:
+        if icc_transform:icc_transform.close(verify=False)
         reader.close()
         if not committed and temporary.exists():
             _owned(root,temporary);shutil.rmtree(temporary)

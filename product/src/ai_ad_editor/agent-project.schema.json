@@ -5237,7 +5237,8 @@
         "gamut_policy": {
           "enum": [
             "reject",
-            "clip"
+            "clip",
+            "oklab-chroma"
           ]
         }
       }

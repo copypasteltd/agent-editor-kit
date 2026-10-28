@@ -1875,3 +1875,11 @@ scripts/*hdr_media_measure*20261029.py -text -whitespace
 # Preserve installed HDR420 proof media and exact CLI0.1.50 capabilities.
 docs/assets/native-hdr-media-installed-20261029-*/** -text -whitespace
 docs/product/hdr-media-measure-capabilities-cli-0.1.50.json -text -whitespace
+
+# Preserve source OKLab numerical evidence and actual encoded comparisons.
+docs/validation/evidence/oklab-gamut-20261029-r1/** -text -whitespace
+docs/assets/oklab-gamut-20261029-*/** -text -whitespace
+docs/product/oklab-gamut-capabilities-cli-0.1.51.json -text -whitespace
+scripts/*oklab_gamut*20261029.py text eol=lf
+product/src/ai_ad_editor/float_gamut.py text eol=lf
+product/tests/test_float_gamut.py text eol=lf

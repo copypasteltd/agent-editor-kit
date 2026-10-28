@@ -186,6 +186,10 @@ class FloatPreviewContext:
                     surface, signal, mapping = map_display(surface, signal, request['display_mapping'],
                         max_working_bytes=r.config['projection_working_bytes_limit'], cancel=r.poll)
                     self.metadata['last_preview_mapping'] = mapping
+                    if 'perceptual_gamut' in mapping:
+                        from .colour_audit import GAMUT_COUNTERS
+                        for key in GAMUT_COUNTERS:
+                            stats[key] = stats.get(key, 0) + mapping['perceptual_gamut'][key]
                     for key in ('negative_components_clipped','over_one_components_clipped','above_declared_peak_pixels'):
                         stats[key] = stats.get(key, 0) + mapping[key]
                 surface = r.proof_surface(surface,signal)

@@ -1,0 +1,11 @@
+{
+  "status": "failed",
+  "exit_code": 1,
+  "provenance": "Observed original exec process result; recorded after diagnosis; not a new case execution.",
+  "details": {
+    "exception": "AssertionError: (2.279996982236298, 2)",
+    "analytic_threshold_codes": 3,
+    "native_reference_threshold_codes": 1,
+    "native_reference_did_not_include_codec": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "agent_static_PNG_view_completed": true,
+  "static_observation": "Full 8x3 patch grids side-by-side; left clip, right less saturated OKLab; no captions expected.",
+  "human_continuous_playback": false,
+  "human_listening": false,
+  "physical_HDR_monitor": false,
+  "GIF": {
+    "frames": 10,
+    "duration_ms": 1000
+  },
+  "MP4": {
+    "frames": 10,
+    "fps": 10,
+    "width": 768,
+    "height": 216
+  },
+  "files": {
+    "comparison.png": "d413732bd401facde6892feee061911dd92f352d04a780d90637a1eeabaaf2e8",
+    "comparison.mp4": "55129394fcebfad7daec7fec1bfd92976c7326181f6bb917c67389eca6947f1e",
+    "comparison.gif": "af1337c4ee87c07d79d24102443cfdb9cf25c8632e234356aa04e66c670de53e"
+  }
+}

@@ -5493,3 +5493,6 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 [CLI0.1.49 exact installed capabilities](hdr-measure-capabilities-cli-0.1.49.json).
 
 [CLI0.1.50 exact installed capabilities](hdr-media-measure-capabilities-cli-0.1.50.json).
+
+
+源码CLI0.1.51 / Source only: [OKLab gamut](OKLAB_GAMUT.md)。安装声明仍以CLI0.1.50为准；新源码能力见[实际capabilities](oklab-gamut-capabilities-cli-0.1.51.json)。

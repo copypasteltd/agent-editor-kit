@@ -1119,3 +1119,19 @@ Both reject-mode calls fail specifically at the out-of-range RGB boundary;the su
 [PQ420 master](../assets/native-hdr-media-installed-20261029-r1/pq420.mkv) · [HLG420 master](../assets/native-hdr-media-installed-20261029-r1/hlg420.mkv) · [PQ measurement](../assets/native-hdr-media-installed-20261029-r1/pq420-measurement.json) · [HLG measurement](../assets/native-hdr-media-installed-20261029-r1/hlg420-measurement.json) · [Actual SDR MP4](../assets/native-hdr-media-installed-20261029-r1/author-SDR-preview.mp4) · [Actual SDR PNG](../assets/native-hdr-media-installed-20261029-r1/author-SDR-frame.png) · [Editable HLG package](../assets/native-hdr-media-installed-20261029-r1/editable-hlg420.aevpkg.zip) · [Provenance](../assets/native-hdr-media-installed-20261029-r1/SOURCE.json) · [Media hashes](../assets/native-hdr-media-installed-20261029-r1/media-manifest.json)
 
 The preview is an explicit Reinhard SDR view of the authored working timeline,not a decoded-output420 comparison or physical HDR monitor.GIF24frames/4000ms;MP448frames/4s;PNG reviewed statically by the agent.No continuous-playback,human-listening,natural-image or full-HDR-quality acceptance.See [actual checks](../validation/evidence/native-hdr-media-measure-20261029-r1/installed-case-r1/checks.json).
+
+<a id="c61-oklab-gamut"></a>
+
+## C61 · Source CLI0.1.51 OKLab色域映射真实对照 / 實際對照 / actual comparison
+
+**源码执行，非已安装Skill。** 原创CC0 BT.2020线性图卡，10帧/10FPS/1秒/384×216，具有变化亮度、原色/间色/灰阶和随机色块。明确203nit工作单位、100nit BT.709/sRGB输出，两次同源真实渲染仅改变gamut_policy：左clip，右oklab-chroma。
+
+![Actual encoded comparison](../assets/oklab-gamut-20261029-r3/comparison.gif)
+
+全部829440像素/三YUV平面与独立xy矩阵/标量OKLab/48次搜索参考核对；解析YCbCr最大差2.279996982code，独立RGB16经原生zscale参考最大差0code。工程包保留配置，重放全部像素及源/原片/重放完整PCM一致（384000bytes）。全帧事件记录：[raw](../validation/evidence/oklab-gamut-20261029-r1/case-r3/verification.json)。
+
+[clip MKV](../assets/oklab-gamut-20261029-r3/clip.mkv) · [OKLab MKV](../assets/oklab-gamut-20261029-r3/oklab.mkv) · [MP4](../assets/oklab-gamut-20261029-r3/comparison.mp4) · [PNG](../assets/oklab-gamut-20261029-r3/comparison.png) · [editable package](../assets/oklab-gamut-20261029-r3/editable-oklab.aevpkg.zip) · [sources](../assets/oklab-gamut-20261029-r3/SOURCE.json)
+
+繁體：固定感知明度/色相縮色度，黑白端點另計，CPU/D65 BT.709；仍待自然畫面、安裝版及物理監看。
+
+English: Real source-phase encoded comparisons and full editable-package replay; CPU-only BT.709/D65 chroma boundary reduction. Preserve OKLab L/hue except counted endpoints, not CIE Y. Diagnostic chart, not natural quality, installed delivery or physical monitor acceptance.

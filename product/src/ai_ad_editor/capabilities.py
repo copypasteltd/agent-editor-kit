@@ -545,6 +545,7 @@ def build_capability_manifest() -> dict[str, Any]:
                     'original_author_clock_effects_linear_composition_and_editable_packages',
                     'BT2020_NCL_PQ_HLG_ten_bit_delivery_with_matching_VUI',
                     'explicit_modified_Reinhard_luminance_SDR_trim_and_SDR_preview',
+                    'opt_in_OKLab_constant_lightness_hue_BT709_chroma_boundary_reduction',
                     'preserved_alpha_bits_tiled_budgets_and_cancellation'],
                 'limits':['CPU_tiled_color_conversion_not_GPU_transfer_kernels',
                     'only_BT2020_PQ_HLG_native_ten_bit_nonalpha_delivery',
@@ -553,7 +554,8 @@ def build_capability_manifest() -> dict[str, Any]:
                     'explicit_Bradford_whites_use_native_chromatic_adaptation_capability',
                     'explicit_RGB_ICC_sources_use_native_icc_source_profiles_no_dynamic_metadata_or_DolbyVision',
                     'HLG_explicit_black_lift_uses_native_hlg_black_level_with_peak_and_gamma',
-                    'SDR_trim_is_explicit_creative_Reinhard_not_BT2390_or_perceptual_gamut_mapping',
+                    'SDR_trim_is_explicit_creative_Reinhard_not_BT2390',
+                    'OKLab_chroma_is_CPU_BT709_D65_only_not_ACES_or_soft_knee_or_constant_CIE_Y',
                     'natural_HDR_monitor_long_form_and_full_CapCut_acceptance_pending'],
             },
             'native_hdr_light_measurement': {

@@ -5,6 +5,8 @@ import json
 COUNTERS = ('hdr_input_components_clipped', 'hdr_output_components_clipped',
             'encoded_output_components_clipped', 'negative_components_clipped',
             'over_one_components_clipped', 'above_declared_peak_pixels')
+GAMUT_COUNTERS = ('gamut_pixels_mapped', 'gamut_lightness_to_black_pixels',
+                  'gamut_lightness_to_white_pixels', 'gamut_chroma_reduced_pixels')
 
 
 class ColourAudit:
@@ -20,7 +22,10 @@ class ColourAudit:
     def add(self, index, receipt):
         if type(index) is not int or index < 0 or (self.last is not None and index != self.last + 1):
             raise ValueError('Colour receipt frames must be contiguous nonnegative integers')
-        counts = {name: receipt.get(name, 0) for name in COUNTERS}
+        for name in GAMUT_COUNTERS:
+            if name in receipt and name not in self.totals:
+                self.totals[name] = self.maximum[name] = 0
+        counts = {name: receipt.get(name, 0) for name in self.totals}
         if any(type(value) is not int or value < 0 for value in counts.values()):
             raise ValueError('Colour receipt counters must be nonnegative integers')
         encoded = json.dumps(dict(frame=index, receipt=receipt), sort_keys=True,

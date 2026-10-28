@@ -96,7 +96,7 @@ def prepare(root,project,asset_id,output,*,source_signal,target_signal,pixel_fam
 
 def _implementation_artifacts():
     directory=Path(__file__).resolve().parent
-    paths={name:directory/(name+'.py') for name in ('float_bundle','float_color_signal','float_hdr','float_hlg_black','float_chromatic','float_geometry','icc_profiles','colour_audit')}
+    paths={name:directory/(name+'.py') for name in ('float_bundle','float_color_signal','float_hdr','float_gamut','float_hlg_black','float_chromatic','float_geometry','icc_profiles','colour_audit')}
     paths['numpy_init']=Path(np.__file__).resolve()
     # These files are the numerical boundary's entry module and native code.
     # This is not advertised as an exhaustive NumPy package inventory.

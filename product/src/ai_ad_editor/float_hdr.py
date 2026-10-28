@@ -148,8 +148,8 @@ def mapping_configuration(value):
     source = number(value['source_peak_nits'], 1, 10000, 'source_peak_nits')
     target = number(value['target_peak_nits'], 1, 1000, 'target_peak_nits')
     exposure = number(value['exposure_stops'], -16, 16, 'exposure_stops')
-    if source < target or not isinstance(value['gamut_policy'], str) or value['gamut_policy'] not in {'reject', 'clip'}:
-        raise error('MAPPING', '源峰值须不小于目标峰值；色域策略须明确reject/clip')
+    if source < target or not isinstance(value['gamut_policy'], str) or value['gamut_policy'] not in {'reject', 'clip', 'oklab-chroma'}:
+        raise error('MAPPING', '源峰值须不小于目标峰值；色域策略须明确reject/clip/oklab-chroma')
     return {**value, 'source_peak_nits': source, 'target_peak_nits': target, 'exposure_stops': exposure}
 
 
@@ -164,6 +164,9 @@ def map_display(surface, working_signal, mapping, *, target_primaries='bt709',
     """
     from .float_color_signal import _rgb_to_xyz, convert_rgba
     mapping = mapping_configuration(mapping)
+    perceptual = mapping['gamut_policy'] == 'oklab-chroma'
+    if perceptual and target_primaries != 'bt709':
+        raise error('GAMUT', 'OKLab色域映射当前明确支持D65 BT.709目标，不近似替代其他基色')
     if not has_luminance(working_signal) or working_signal.transfer != 'linear':
         raise error('MAPPING', '显示映射要求明确reference_white_nits的线性RGB工作域')
     target = LuminanceSignal(target_primaries, 'linear', mapping['target_peak_nits'])
@@ -183,6 +186,8 @@ def map_display(surface, working_signal, mapping, *, target_primaries='bt709',
     exposure = 2 ** mapping['exposure_stops']
     counts = {'negative_components_clipped': 0, 'over_one_components_clipped': 0,
               'above_declared_peak_pixels': 0}
+    gamut_counts = dict(gamut_pixels_mapped=0, gamut_lightness_to_black_pixels=0,
+                        gamut_lightness_to_white_pixels=0, gamut_chroma_reduced_pixels=0)
     for start in range(0, len(rows), 65536):
         if cancel is not None: cancel()
         rgb = rows[start:start+65536, :3].astype(np.float64)
@@ -190,14 +195,23 @@ def map_display(surface, working_signal, mapping, *, target_primaries='bt709',
         count = int(np.count_nonzero(negative))
         if count and mapping['gamut_policy'] == 'reject':
             raise error('GAMUT', '映射目标RGB含负值；须修正色域或显式选择clip')
-        counts['negative_components_clipped'] += count
-        rgb = np.maximum(rgb, 0)
+        if not perceptual:
+            counts['negative_components_clipped'] += count
+            rgb = np.maximum(rgb, 0)
         y = (rgb[:, 0]*weights[0] + rgb[:, 1]*weights[1] + rgb[:, 2]*weights[2]) * exposure
+        if perceptual and np.any(y < 0):
+            raise error('GAMUT', 'OKLab显示映射要求非负CIE Y；不静默裁切负亮度')
         counts['above_declared_peak_pixels'] += int(np.count_nonzero(y > white))
         shoulder = y * (1 + y / (white * white)) / (1 + y)
         ratio = np.zeros_like(y)
         np.divide(shoulder * exposure, y, out=ratio, where=y > 0)
         rgb *= ratio[:, None]
+        if perceptual:
+            from .float_gamut import reduce_chroma
+            rgb, receipt = reduce_chroma(rgb, cancel=cancel)
+            for key,value in receipt.items(): gamut_counts[key] += value
+            rows[start:start+len(rgb), :3] = rgb
+            continue
         outside = rgb > 1
         count = int(np.count_nonzero(outside))
         if count and mapping['gamut_policy'] == 'reject':
@@ -208,6 +222,12 @@ def map_display(surface, working_signal, mapping, *, target_primaries='bt709',
     return result, target, {'protocol': PROTOCOL, 'operator': 'modified-Reinhard-on-target-linear-luminance',
         'configuration': mapping, 'source_signal': vars(working_signal), 'target_signal': vars(target),
         'gamut_matrix': conversion['linear_gamut_matrix'], **counts,
+        **({'perceptual_gamut': {'protocol': 'oklab-constant-lightness-hue-bt709-v1',
+            'target': 'linear-BT709-D65', 'iterations': 24, **gamut_counts,
+            'preserves': 'OKLab lightness and hue for 0<L<1-1e-7; not CIE Y',
+            'lightness_endpoints': 'L<=0 black; L>=1-1e-7 white (published-matrix precision guard)',
+            'in_gamut': 'unchanged after luminance shoulder', 'component_clipping': False,
+            'CPU': True, 'soft_knee': False, 'ACES': False}} if perceptual else {}),
         'alpha': 'bit-exact', 'automatic_peak_inference': False, 'BT2390_claimed': False,
         'estimated_working_bytes': estimate, 'estimated_bytes_are_peak_RSS': False,
         'HDR_monitor_accepted': False}

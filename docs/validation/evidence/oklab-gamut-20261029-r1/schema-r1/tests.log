@@ -1,0 +1,22 @@
+test_calendar_and_offset_valid_dates (test_schema_contract.BundledSchemaTests.test_calendar_and_offset_valid_dates) ... ok
+test_changed_resource_is_rejected_by_real_bytes (test_schema_contract.BundledSchemaTests.test_changed_resource_is_rejected_by_real_bytes) ... ok
+test_contract_packaged_and_documented_bytes_match (test_schema_contract.BundledSchemaTests.test_contract_packaged_and_documented_bytes_match) ... ok
+test_doctor_rejects_missing_executor_version_remains_diagnosable (test_schema_contract.BundledSchemaTests.test_doctor_rejects_missing_executor_version_remains_diagnosable) ... ok
+test_export_dry_run_does_not_create_parent (test_schema_contract.BundledSchemaTests.test_export_dry_run_does_not_create_parent) ... ok
+test_export_exact_bytes_and_existing_target_preserved (test_schema_contract.BundledSchemaTests.test_export_exact_bytes_and_existing_target_preserved) ... ok
+test_export_remote_target_rejected (test_schema_contract.BundledSchemaTests.test_export_remote_target_rejected) ... ok
+test_external_refs_cannot_retrieve_network_or_external_files (test_schema_contract.BundledSchemaTests.test_external_refs_cannot_retrieve_network_or_external_files) ... ok
+test_format_failure_cases_in_actual_validator (test_schema_contract.BundledSchemaTests.test_format_failure_cases_in_actual_validator) ... ok
+test_invalid_meta_schema_has_structured_error (test_schema_contract.BundledSchemaTests.test_invalid_meta_schema_has_structured_error) ... ok
+test_missing_executor_is_error_and_preserves_semantic_diagnostics (test_schema_contract.BundledSchemaTests.test_missing_executor_is_error_and_preserves_semantic_diagnostics) ... ok
+test_missing_resource_never_searches_source_repo (test_schema_contract.BundledSchemaTests.test_missing_resource_never_searches_source_repo) ... ok
+test_nonstring_date_is_rejected_by_schema_type (test_schema_contract.BundledSchemaTests.test_nonstring_date_is_rejected_by_schema_type) ... ok
+test_overlay_enum_requires_an_explicit_native_pipeline_in_the_actual_schema (test_schema_contract.BundledSchemaTests.test_overlay_enum_requires_an_explicit_native_pipeline_in_the_actual_schema) ... ok
+test_real_cli_rejects_previously_accepted_invalid_date (test_schema_contract.BundledSchemaTests.test_real_cli_rejects_previously_accepted_invalid_date) ... ok
+test_show_and_validate_are_independent_of_cwd (test_schema_contract.BundledSchemaTests.test_show_and_validate_are_independent_of_cwd) ... ok
+test_unsupported_format_rejected_instead_of_silently_ignored (test_schema_contract.BundledSchemaTests.test_unsupported_format_rejected_instead_of_silently_ignored) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 2.720s
+
+OK

@@ -12,6 +12,19 @@ Development reporting: every round ends with numbered completed-work and pending
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
+
+<!-- oklab-gamut-source -->
+
+**Source CLI0.1.51 adds opt-in OKLab lightness/hue-preserving chroma reduction for HDR-to-BT.709 SDR delivery and previews. Installed Skill remains CLI0.1.50/local.48/r51; matching installation and independent kit acceptance are pending.**
+
+[Workflow](docs/product/OKLAB_GAMUT.md) · [Source release](docs/releases/CLI_0.1.51_SOURCE.md) · [C61](docs/product/CASES.md#c61-oklab-gamut) · [Evidence](docs/validation/OKLab色域映射源码实测_2026-10-29.md)
+
+![Left clip / right OKLab — actual SDR outputs](docs/assets/oklab-gamut-20261029-r3/comparison.gif)
+
+Source-specific62/62 passes; compatibility initially passes351/352, then the documented Schema copy is synchronized and Schema17/17 passes. C61 contains real encoded comparisons, an independent full-frame oracle and complete editable-package pixel/PCM replay. Diagnostic charts do not certify natural-image aesthetics or physical HDR monitoring.
+
+<!-- /oklab-gamut-source -->
+
 <!-- native-hdr-media-current -->
 
 **CLI0.1.50 / alpha.4-local.48 / r51 kit · 1 Skill / 17 modules / 89 files.**
@@ -978,7 +991,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F63 | Editable particles and emitter animation | Six original recipes/five shapes/seed/native CFR;21 source-clock animated properties,six easings,emission pauses and actual GPU rasterization. Editing/preview/queue/package/local OTIO. | `vfx list/inspect/apply/update/show/animation-properties/animate` | CPU rate integration/birth evaluation,GPU painting;64 points/property,16 emitters,4096 reserved live particles;no3-D/collision/depth. |
 | F64 | Editable GPU optical effects | Flare core/streak/halo/ghosts, rotated elliptical leak and radial red/blue split; all numeric channels animate on original author clocks. Clip/interval adjustments, CPU/OpenCL. | `effects list/inspect` → `timeline compose` → preview/render | Explicit linear RGB; original alpha bits retained; transparent hidden RGB does not bleed. Static ghosts/edge; no physical lens, automatic light detection or bloom. |
 | F65 | Highlight Bloom / film Halation | Actual soft-knee highlight extraction→separable Gaussian spread→core suppression/linear tint; editable numeric author-clock tracks in clips or selected-root adjustment intervals. | `effects list/inspect; timeline compose; preview; render; queue` | sigma0…32 input pixels; transparent/clamp edges; alpha bits preserved; actual four-kernel GPU or CPU reference; bounded workspace/visits; physical film/HDR unaccepted. |
-| F66 | Native PQ/HLG HDR and SDR viewing | Explicit reference white/HLG peak/gamma → display-linear edits; mixed-nit assets, ordinary effects/composition and10-bit BT.2020 NCL delivery; separate SDR trim and PNG/MP4 previews. | `timeline compose; validate; preview; render; convert` | CPU transfer math; existing GPU composition/effects; rejects8-bit/mismatched tags/missing units; alpha bits retained. ICC/dynamic metadata/HDR monitoring unaccepted. |
+| F66 | Native PQ/HLG HDR and SDR viewing | Explicit reference white/HLG peak/gamma → display-linear edits; mixed-nit assets, ordinary effects/composition and10-bit BT.2020 NCL delivery; separate SDR trim and PNG/MP4 previews.  Source51 adds OKLab lightness/hue chroma reduction; installed50 does not include it yet.| `timeline compose; validate; preview; render; convert` | CPU transfer math; existing GPU composition/effects; rejects8-bit/mismatched tags/missing units; alpha bits retained. ICC/dynamic metadata/HDR monitoring unaccepted. |
 | F67 | Local neural lip sync | Image/video + separate speech → actual CUDA MuseTalk mouth;25FPS box keys, semantic lower-face blend, complete PCM/alpha, rerunnable recipe and linked editable video/audio clips. | `lipsync adapter register/list/inspect; lipsync generate` | Explicit local safetensors/native Torch runtime;256×256 face,8bit SDR/source motion,no CPU fallback; natural quality/full digital human remain open. |
 | F68 | CUDA neural interpolation / slow motion | Native CFR/VFR,all original RGBA anchors,premultiplied alpha,complete PCM;factor2..8,cut holds,linked slow-motion tracks,recipes/packages. | `interpolate adapter; interpolate generate` | Explicit RIFE4.25 safetensors/native CUDA Python;no CPU fallback;difficult motion/occlusion/natural-quality/HDR acceptance open. |
 | F69 | CUDA speech denoising | Native sample clock/mono-stereo,actual model,dry/wet attenuation,editable audio,portable recipes/packages,owned cancel/rollback. | `audio enhancement-adapter; audio enhance` | Fixed DF3 safetensors/existing native CUDA;segment state resets,CPU frontend;full dereverb/music fidelity open. |
@@ -1657,6 +1670,10 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R338 | 2026-10-29 CLI0.1.50 installed | Installed compatibility352/352;separate from29/42 and historical runs. | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/installed-compat-r1/verification.json) |
 | R339 | 2026-10-29 CLI0.1.50 installed | C60 actual registered Skill:PQ/HLG H.265 4:2:0,two48-frame independent pixel/light oracles;HLG package replay preserves all pixels/PCM. | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/installed-case-r1/verification.json) |
 | R340 | 2026-10-29 CLI0.1.50 installed | r51 independent kit acceptance:1entry/17modules/89Skill files;no source fallback. | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/kit-r1/verification.json) |
+| R341 | Source CLI0.1.51 OKLab/native HDR measurement | 62/62; 0fail/error/skip; source only | 2026-10-29 | [raw](docs/validation/evidence/oklab-gamut-20261029-r1/source-r3/verification.json) | CPU BT709/D65; not installed |
+| R342 | Source CLI0.1.51 compatibility | 351/352 initially; documented-Schema mismatch fixed; Schema17/17 rerun passes | 2026-10-29 | [raw](docs/validation/evidence/oklab-gamut-20261029-r1/compat-r1/verification.json) | natural quality/long-form pending |
+| R343 | C61 actual clip/OKLab encoded comparison + package replay | 10frames/384x216; full YUV/native reference; complete PCM | 2026-10-29 | [raw](docs/validation/evidence/oklab-gamut-20261029-r1/case-r3/verification.json) | source execution; SDR diagnostic; failed r1/r2 preserved |
+| R344 | Source OKLab 4K operator | 8294400 pixels vs independent oracle; max linear RGB error 1.53837053e-07; 17.354s | 2026-10-29 | [raw](docs/validation/evidence/oklab-gamut-20261029-r1/4k-r1/verification.json) | one CPU surface; nonexclusive timing; not encoded/real-time/long-form |
 
 ## Current limits and development direction
 

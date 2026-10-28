@@ -148,6 +148,8 @@ def configuration(value, settings, encoder):
             if not has_luminance(working):
                 raise error('SIGNAL', '显示映射要求明确亮度单位的线性工作域')
     if 'display_mapping' in mappings:
+        if mappings['display_mapping']['gamut_policy'] == 'oklab-chroma' and output.primaries != 'bt709':
+            raise error('MAPPING', 'OKLab显示映射要求明确D65 BT.709输出')
         if hdr_output or not has_luminance(output) or output.reference_white_nits != mappings['display_mapping']['target_peak_nits']:
             raise error('MAPPING', 'SDR显示映射的目标峰值须等于明确SDR输出reference_white_nits')
     if 'proofing' in value:
@@ -243,7 +245,7 @@ class FloatRenderContext:
                   ('float_standard_render', 'float_stream', 'float_audio_graph', 'render', 'float_color_signal',
                    'float_timeline', 'float_tracking', 'bindings', 'animation', 'float_crop', 'float_adjustments', 'float_effect_chain', 'float_transitions', 'float_transition_plan', 'source_transitions',
                    'float_text','float_text_paint','float_text_coverage','text_paint','text_layout','text_highlight','text_typing','captions',
-                   'float_gpu','float_gpu_native','float_gpu_worker','float_gpu_control','procedural_particles','particle_animation','float_optics','float_optics_kernel','float_glow','float_glow_kernel','float_hdr','float_hlg_black','colour_audit','hdr_metadata','float_chromatic','icc_profiles','icc_output')]
+                   'float_gpu','float_gpu_native','float_gpu_worker','float_gpu_control','procedural_particles','particle_animation','float_optics','float_optics_kernel','float_glow','float_glow_kernel','float_hdr','float_gamut','float_hlg_black','colour_audit','hdr_metadata','float_chromatic','icc_profiles','icc_output')]
         self.artifacts = [artifact_entry(p, 'standard-float-render-runtime') for p in paths]
         context = IndexContext(self.root, persist=not self.dry_run, cancel_file=self.marker)
         per_source = min(256 * 1024**2, self.config['max_source_cache_bytes'] // max(1, len(needed)))
@@ -468,6 +470,12 @@ class FloatRenderContext:
         delivered, boundary = convert_rgba(surface, signal, self.config['output'],
             max_working_bytes=self.config['projection_working_bytes_limit'], cancel=self.poll,
             hdr_range_policy=self.config['range_policy'])
+        if 'display_mapping' in self.config['mappings'] and 'perceptual_gamut' in mapping:
+            from .colour_audit import GAMUT_COUNTERS
+            boundary['perceptual_gamut'] = mapping['perceptual_gamut']
+            for key in GAMUT_COUNTERS:
+                boundary[key] = mapping['perceptual_gamut'][key]
+                stats[key] = stats.get(key, 0) + boundary[key]
         if self.config['hdr_active'] or self.config['mappings']:
             self.metadata['last_output_color_boundary'] = boundary
             stats['HDR_output_components_clipped'] = stats.get('HDR_output_components_clipped', 0) + boundary.get('hdr_output_components_clipped', 0)

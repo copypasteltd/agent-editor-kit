@@ -26,6 +26,19 @@ def build_capability_manifest() -> dict[str, Any]:
         "engine": {"id": ENGINE_ID, "version": VERSION, "runtime": "python+ffmpeg-local", "network": "disabled"},
         "ffmpeg": {"version": ffmpeg_version()},
         "capabilities": {
+            'native_speech_enhancement': {
+                'status':'implemented_with_limits','protocol':'agent-native-speech-enhancement-v1','engine':'deepfilternet3-native-cuda-v1',
+                'commands':['audio.enhancement-adapter.register','audio.enhancement-adapter.list','audio.enhancement-adapter.inspect','audio.enhance'],
+                'features':['actual_48kHz_DeepFilterNet3_CUDA_graph','strict_133_tensor_safetensors','native_decoded_audio_interval_clock',
+                    'independent_mono_or_stereo_model_rows','explicit_segment_overlap_add','native_rate_and_sample_count_preserved',
+                    'native_rate_strength_and_attenuation_limit_mix','Float32_bypass_bit_exact','complete_encoded_PCM_hash_verification',
+                    'portable_rerunnable_recipe','editable_independent_audio_clip','owned_Windows_process_tree_cancel_timeout_recovery'],
+                'backend':{'neural':'CUDA_FP32','analysis_features_synthesis':'NumPy_CPU','sample_rate_conversion':'FFmpeg_swr'},
+                'limits':{'selected_seconds':600,'full_source_seconds':1800,'input_sample_rate':[8000,96000],'channels':[1,2],
+                    'segment_seconds':[1,30],'segment_overlap':[0,.75],'storage_mib':[64,8192],'managed_array_budget_bytes':512*1024**2},
+                'network':False,'model_downloads':False,'CPU_fallback':False,'state':'reset_per_overlapping_segment',
+                'unsupported':['full_dereverberation','music_fidelity_guarantee','automatic_listening_acceptance','stereo_phase_coherence_guarantee',
+                    'cross_device_bit_determinism','full_G17_or_CapCut_parity'],'goal_G17_complete':False},
             'native_neural_interpolation': {
                 'status':'implemented_with_limits','protocol':'agent-native-frame-interpolation-v1','engine':'rife425-native-cuda-v1',
                 'commands':['interpolate.adapter.register','interpolate.adapter.list','interpolate.adapter.inspect','interpolate.generate'],

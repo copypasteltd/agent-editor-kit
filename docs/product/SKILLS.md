@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.42 / alpha.4-local.40 / r43 kit · 1 Skill / 17 modules / 81 files.**
+**CLI0.1.43 / alpha.4-local.41 / r44 kit · 1 Skill / 17 modules / 82 files.**
 
-新增**真实本地 CUDA RIFE4.25 神经补帧与可编辑慢动作**：保留CFR/VFR原生PTS、每帧持续时间、全部源RGBA帧及原音轨；2..8倍补帧、显式切镜保持、预乘alpha、可重跑配方和关联双轨。
+新增**真实本地 CUDA DeepFilterNet3 对白降噪**：原生采样时钟、单/双声道、独立增强资产与可编辑音轨、强度/衰减上限、分段重叠、配方重跑、工程包和取消回滚。
 
-[Native interpolation workflow and limits](NEURAL_INTERPOLATION.md)
+[Speech enhancement workflow](SPEECH_ENHANCEMENT.md)
 
 <!-- /community-current -->
 

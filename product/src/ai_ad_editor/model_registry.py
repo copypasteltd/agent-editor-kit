@@ -25,6 +25,7 @@ from .utils import atomic_write_json, assert_id, load_json, now_iso, sha256_byte
 from .local_vision import YOLO_ENGINE, prepare_adapter as prepare_native_vision, verify_adapter as verify_native_vision
 from .local_separation import DEMUCS_ENGINE, prepare_adapter as prepare_native_separation, verify_adapter as verify_native_separation
 from .stem_separation import ENGINE as FOUR_STEM_ENGINE, prepare_adapter as prepare_four_stem, verify_adapter as verify_four_stem
+from .local_enhancement import ENGINE as ENHANCEMENT_ENGINE, prepare_adapter as prepare_enhancement, verify_adapter as verify_enhancement
 from .local_matting import MATTING_ENGINE, prepare_adapter as prepare_native_matting, verify_adapter as verify_native_matting
 from .local_segmentation import SEGMENTATION_ENGINE, prepare_adapter as prepare_native_segmentation, verify_adapter as verify_native_segmentation
 from .local_inpainting import INPAINT_ENGINE, prepare_adapter as prepare_native_inpainting, verify_adapter as verify_native_inpainting
@@ -37,6 +38,7 @@ MODEL_REGISTRY_VERSION = "0.1.0"
 MODEL_REGISTRY_RELATIVE = Path("models") / "audio-adapters.json"
 VISUAL_MODEL_REGISTRY_RELATIVE = Path("models") / "visual-adapters.json"
 VALID_AUDIO_ADAPTER_ENGINES = {
+    ENHANCEMENT_ENGINE,
     FOUR_STEM_ENGINE,
     DEMUCS_ENGINE,
     "ffmpeg-local-mid-side-v1",
@@ -135,8 +137,8 @@ def prepare_audio_adapter(
     except AppError:
         raise
     engine = str(engine or "").strip()
-    if engine in {DEMUCS_ENGINE, FOUR_STEM_ENGINE}:
-        prepare = prepare_four_stem if engine == FOUR_STEM_ENGINE else prepare_native_separation
+    if engine in {DEMUCS_ENGINE, FOUR_STEM_ENGINE, ENHANCEMENT_ENGINE}:
+        prepare = {FOUR_STEM_ENGINE:prepare_four_stem,ENHANCEMENT_ENGINE:prepare_enhancement,DEMUCS_ENGINE:prepare_native_separation}[engine]
         return prepare(root or Path.cwd(),adapter_id=adapter_id,model_path=str(model_path or ''),executable=str(executable or ''),evidence=evidence,creator=creator,license_spdx=license_spdx,license_url=license_url,permitted_uses=permitted_uses,verification_status=verification_status,options=native_options)
     if engine not in VALID_AUDIO_ADAPTER_ENGINES:
         raise argument_error(f"不支持的本地音频适配器 engine: {engine}", "engine")
@@ -210,6 +212,8 @@ def prepare_audio_adapter(
 
 def verify_audio_adapter(adapter: dict[str, Any]) -> dict[str, Any]:
     """Verify registered artifact existence and hashes without executing it."""
+    if adapter.get('engine') == ENHANCEMENT_ENGINE:
+        return verify_enhancement(adapter)
     if adapter.get('engine') == FOUR_STEM_ENGINE:
         return verify_four_stem(adapter)
     if adapter.get('engine') == DEMUCS_ENGINE:

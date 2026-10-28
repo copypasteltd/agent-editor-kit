@@ -1,0 +1,54 @@
+test_erb_feature_initial_state_and_causal_update (test_speech_enhancement.FrontendTests.test_erb_feature_initial_state_and_causal_update) ... ok
+test_feature_channels_have_no_shared_normalization_state (test_speech_enhancement.FrontendTests.test_feature_channels_have_no_shared_normalization_state) ... ok
+test_frontend_rejects_nonfinite_and_unsupported_input (test_speech_enhancement.FrontendTests.test_frontend_rejects_nonfinite_and_unsupported_input) ... ok
+test_independent_stereo_channels_without_downmix (test_speech_enhancement.FrontendTests.test_independent_stereo_channels_without_downmix) ... ok
+test_unity_spectrum_roundtrip_native_tail_and_impulses (test_speech_enhancement.FrontendTests.test_unity_spectrum_roundtrip_native_tail_and_impulses) ... ok
+test_window_has_unit_overlap_power (test_speech_enhancement.FrontendTests.test_window_has_unit_overlap_power) ... ok
+test_actual_worker_bypass_complete_PCM_clock_and_owned_cleanup (test_speech_enhancement.NativeTransportTests.test_actual_worker_bypass_complete_PCM_clock_and_owned_cleanup) ... ok
+test_cancel_before_worker_does_not_start_or_publish (test_speech_enhancement.NativeTransportTests.test_cancel_before_worker_does_not_start_or_publish) ... ok
+test_cli_adapter_list_is_read_only (test_speech_enhancement.NativeTransportTests.test_cli_adapter_list_is_read_only) ... ok
+test_cli_missing_model_no_metadata_changes (test_speech_enhancement.NativeTransportTests.test_cli_missing_model_no_metadata_changes) ... ok
+test_invalid_apply_and_storage_fail_before_mutation (test_speech_enhancement.NativeTransportTests.test_invalid_apply_and_storage_fail_before_mutation) ... ok
+test_native_audio_gap_and_overlap_clock (test_speech_enhancement.NativeTransportTests.test_native_audio_gap_and_overlap_clock) ... ok
+test_real_worker_failure_retains_diagnostic_no_public_asset (test_speech_enhancement.NativeTransportTests.test_real_worker_failure_retains_diagnostic_no_public_asset) ... ok
+test_running_worker_cancellation_reaps_owned_process (test_speech_enhancement.NativeTransportTests.test_running_worker_cancellation_reaps_owned_process) ... FAIL
+test_running_worker_timeout_reaps_owned_process (test_speech_enhancement.NativeTransportTests.test_running_worker_timeout_reaps_owned_process) ... FAIL
+test_all_OLA_samples_covered_and_last_partial_segment_preserved (test_speech_enhancement.OLATests.test_all_OLA_samples_covered_and_last_partial_segment_preserved) ... ok
+test_bad_model_shape_removes_only_owned_outputs (test_speech_enhancement.OLATests.test_bad_model_shape_removes_only_owned_outputs) ... ok
+test_cancellation_cleans_owned_PCM (test_speech_enhancement.OLATests.test_cancellation_cleans_owned_PCM) ... ok
+test_existing_output_preserved (test_speech_enhancement.OLATests.test_existing_output_preserved) ... ok
+test_full_silence_does_not_fake_forward (test_speech_enhancement.OLATests.test_full_silence_does_not_fake_forward) ... ok
+test_malformed_PCM_and_channels_rejected (test_speech_enhancement.OLATests.test_malformed_PCM_and_channels_rejected) ... ok
+test_nonfinite_estimate_rejected (test_speech_enhancement.OLATests.test_nonfinite_estimate_rejected) ... ok
+test_strength_and_attenuation_mix_have_independent_expected_values (test_speech_enhancement.OLATests.test_strength_and_attenuation_mix_have_independent_expected_values) ... ok
+test_strength_zero_is_every_bit_exact_including_negative_zero (test_speech_enhancement.OLATests.test_strength_zero_is_every_bit_exact_including_negative_zero) ... ok
+test_native_nearest_sample_rounding (test_speech_enhancement.RecipeTests.test_native_nearest_sample_rounding) ... ok
+test_nonfinite_and_boolean_settings_rejected (test_speech_enhancement.RecipeTests.test_nonfinite_and_boolean_settings_rejected) ... ok
+test_out_of_source_selection_rejected (test_speech_enhancement.RecipeTests.test_out_of_source_selection_rejected) ... ok
+test_rebinding_source_rehashes_recipe (test_speech_enhancement.RecipeTests.test_rebinding_source_rehashes_recipe) ... ok
+test_recipe_has_no_runtime_absolute_paths (test_speech_enhancement.RecipeTests.test_recipe_has_no_runtime_absolute_paths) ... ok
+test_recipe_tamper_digest_and_source_hash_rejected (test_speech_enhancement.RecipeTests.test_recipe_tamper_digest_and_source_hash_rejected) ... ok
+test_wrong_encoded_native_clock_rejected (test_speech_enhancement.RecipeTests.test_wrong_encoded_native_clock_rejected) ... ok
+
+======================================================================
+FAIL: test_running_worker_cancellation_reaps_owned_process (test_speech_enhancement.NativeTransportTests.test_running_worker_cancellation_reaps_owned_process)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_speech_enhancement.py", line 186, in test_running_worker_cancellation_reaps_owned_process
+    self.assertEqual(len(children),1);self.assertIsNotNone(children[0].poll());self.assertFalse(job.path.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_running_worker_timeout_reaps_owned_process (test_speech_enhancement.NativeTransportTests.test_running_worker_timeout_reaps_owned_process)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_speech_enhancement.py", line 176, in test_running_worker_timeout_reaps_owned_process
+    self.assertEqual(len(children),1);self.assertIsNotNone(children[0].poll());self.assertFalse(job.path.exists())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1
+
+----------------------------------------------------------------------
+Ran 31 tests in 12.898s
+
+FAILED (failures=2)

@@ -516,6 +516,8 @@ def build_parser() -> argparse.ArgumentParser:
     separate.add_argument("--creator", default="unknown")
     from .stem_separation_cli import add_parser as add_stem_parser
     add_stem_parser(aus, _leaf_common)
+    from .enhancement_cli import add_parser as add_enhancement_parser
+    add_enhancement_parser(aus, _leaf_common)
     adapter = _leaf_common(aus.add_parser("adapter", help="注册或检查本地音频模型适配器"))
     aas = adapter.add_subparsers(dest="adapter_action", required=True)
     adapter_register = _leaf_common(aas.add_parser("register", help="登记本地模型/执行器路径与哈希"))
@@ -7131,7 +7133,7 @@ def _project_operation_lock(args: argparse.Namespace):
     """Return the operation-wide lock for a mutating project command."""
     project = getattr(args, "project", None)
     key = (getattr(args, "domain", None), getattr(args, "action", None))
-    adapter_read_only = (key in {("interpolate", "adapter"), ("lipsync", "adapter"), ("audio", "adapter"), ("media", "adapter")} and getattr(args, "adapter_action", None) in {"list", "inspect"}) or (key in {("tts", "adapter"), ("tts", "voice"), ("asr", "adapter"), ('ocr','adapter'), ('face','adapter')} and getattr(args, "registration_action", None) in {"list", "inspect"})
+    adapter_read_only = (key in {("audio", "enhancement-adapter"), ("interpolate", "adapter"), ("lipsync", "adapter"), ("audio", "adapter"), ("media", "adapter")} and getattr(args, "adapter_action", None) in {"list", "inspect"}) or (key in {("tts", "adapter"), ("tts", "voice"), ("asr", "adapter"), ('ocr','adapter'), ('face','adapter')} and getattr(args, "registration_action", None) in {"list", "inspect"})
     pack_read_only = key == ('motion', 'pack') and getattr(args, 'pack_action', None) != 'apply'
     if not project or getattr(args, "dry_run", False) or key in _READ_ONLY_PROJECT_COMMANDS or adapter_read_only or pack_read_only or key == ("queue", "cancel"):
         return contextlib.nullcontext()
@@ -7279,6 +7281,9 @@ from .semantic_upgrade import command as semantic_upgrade_command
 COMMANDS[('project', 'upgrade-semantic')] = lambda args: semantic_upgrade_command(args, _envelope)
 from .stem_separation_cli import command as stem_separation_command
 COMMANDS[('audio', 'separate-stems')] = lambda args: stem_separation_command(args, _envelope)
+from .enhancement_cli import command as enhancement_command, adapter_command as enhancement_adapter_command
+COMMANDS[('audio', 'enhance')] = enhancement_command
+COMMANDS[('audio', 'enhancement-adapter')] = enhancement_adapter_command
 from .dubbing_cli import command as dubbing_command
 COMMANDS[('dub', 'subtitles')] = lambda args: dubbing_command(args, _envelope)
 from .ad_storyboard_cli import ACTIONS as STORYBOARD_ACTIONS, command as storyboard_command
@@ -7305,7 +7310,7 @@ def main(argv: list[str] | None = None) -> int:
         with _project_operation_lock(args):
             transaction_root = getattr(args, "project", None)
             command_key = (args.domain, getattr(args, "action", None))
-            adapter_read_only = (command_key in {("interpolate", "adapter"), ("lipsync", "adapter"), ("audio", "adapter"), ("media", "adapter")} and getattr(args, "adapter_action", None) in {"list", "inspect"}) or (command_key in {("tts", "adapter"), ("tts", "voice"), ("asr", "adapter"), ('ocr','adapter'), ('face','adapter')} and getattr(args, "registration_action", None) in {"list", "inspect"})
+            adapter_read_only = (command_key in {("audio", "enhancement-adapter"), ("interpolate", "adapter"), ("lipsync", "adapter"), ("audio", "adapter"), ("media", "adapter")} and getattr(args, "adapter_action", None) in {"list", "inspect"}) or (command_key in {("tts", "adapter"), ("tts", "voice"), ("asr", "adapter"), ('ocr','adapter'), ('face','adapter')} and getattr(args, "registration_action", None) in {"list", "inspect"})
             pack_read_only = command_key == ('motion', 'pack') and getattr(args, 'pack_action', None) != 'apply'
             transaction_enabled = bool(transaction_root) and not getattr(args, "dry_run", False) and command_key not in _READ_ONLY_PROJECT_COMMANDS and not adapter_read_only and not pack_read_only and command_key not in {("project", "recover"), ("queue", "cancel")}
             with (project_transaction(transaction_root, command=_command_name(args)) if transaction_enabled else contextlib.nullcontext({"active": False, "recovered": False})) as transaction:

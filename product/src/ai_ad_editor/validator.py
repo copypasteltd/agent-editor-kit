@@ -513,6 +513,12 @@ def validate_project(root: Path, project: dict[str, Any], *, strict_rights: bool
             except AppError as exc:
                 error(exc.code, exc.message, f'{path}.source.lipsync')
 
+        if isinstance(asset.get('source'), dict) and 'speech_enhancement' in asset['source']:
+            try:
+                from .enhancement_plan import validate_recipe
+                validate_recipe(asset['source']['speech_enhancement'], asset=asset, assets=asset_map(project))
+            except AppError as exc:
+                error(exc.code, exc.message, f'{path}.source.speech_enhancement')
         if isinstance(asset.get('source'), dict) and 'interpolation' in asset['source']:
             try:
                 from .interpolation_plan import validate_recipe

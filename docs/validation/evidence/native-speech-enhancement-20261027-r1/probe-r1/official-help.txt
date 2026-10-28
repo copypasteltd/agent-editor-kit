@@ -1,0 +1,34 @@
+Noise supression using deep filtering
+
+Usage: deep-filter-0.5.6-x86_64-pc-windows-msvc.exe [OPTIONS] <FILES>...
+
+Arguments:
+  <FILES>...  
+
+Options:
+  -m, --model <MODEL>
+          Path to model tar.gz
+      --pf
+          Enable post-filter
+      --pf-beta <POST_FILTER_BETA>
+          Post-filter beta. Higher beta results in stronger attenuation [default: 0.02]
+  -D, --compensate-delay
+          Compensate delay of STFT and model lookahead
+  -a, --atten-lim-db <ATTEN_LIM_DB>
+          Attenuation limit in dB by mixing the enhanced signal with the noisy signal. An attenuation limit of 0 dB means no noise reduction will be performed, 100 dB means full noise reduction, i.e. no attenuation limit [default: 100]
+      --min-db-thresh <MIN_DB_THRESH>
+          Min dB local SNR threshold for running the decoder DNN side [default: -15]
+      --max-db-erb-thresh <MAX_DB_ERB_THRESH>
+          Max dB local SNR threshold for running ERB decoder [default: 35]
+      --max-db-df-thresh <MAX_DB_DF_THRESH>
+          Max dB local SNR threshold for running DF decoder [default: 35]
+      --reduce-mask <REDUCE_MASK>
+          If used with multiple channels, reduce the mask with max (1) or mean (2) [default: 1]
+  -v, --verbose...
+          Increase logging verbosity with multiple `-vv`
+  -o, --output-dir <OUTPUT_DIR>
+          [default: out]
+  -h, --help
+          Print help
+  -V, --version
+          Print version

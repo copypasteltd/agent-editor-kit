@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ai-ad-editor"
-version = "0.1.42"
+version = "0.1.43"
 description = "Local-only Agent-first video editing CLI built on Python and FFmpeg"
 requires-python = ">=3.11"
 dependencies = ["jsonschema>=4.26,<5", "Pillow>=12.1,<13", "numpy>=2.4.2,<3"]
@@ -19,4 +19,4 @@ package-dir = {"" = "src"}
 where = ["src"]
 
 [tool.setuptools.package-data]
-ai_ad_editor = ["RIFE_LICENSE.txt", "LIPSYNC_LICENSES.txt", "material_data/*.json", "material_data/audio/*", "material_data/fonts/*", "material_data/licenses/*", "material_data/sources/*", "look_data/*.json", "look_data/luts/*.cube.gz", "look_data/previews/*", "look_data/licenses/*", "native_hsl.c", "native_hsl_manifest.json", "avk_hsl_*.dll", "NATIVE_HSL_LICENSE.txt", "OPENSEEFACE_LICENSE.txt", "OPENSEEFACE_NOTICE.txt", "PADDLE_OCR_LICENSE.txt", "PADDLE_OCR_NOTICE.txt", "openfilm_stroke.mjs", "OPENFILM_EXAMPLES_LICENSE.txt", "PDOOM_VIDEO_LICENSE.txt", "OPENFILM_LICENSE.txt", "RFC3339_VALIDATOR_LICENSE.txt", "agent-project.schema.json", "openfilm_subtitle_segments.mjs", "subtitle_segment_worker.mjs", "openfilm_frame_clock.mjs", "html_motion_worker.mjs", "openfilm_template_fields.mjs", "openfilm_overrides.mjs", "html_template_dom.mjs", "openfilm_text_bounds.mjs", "html_quality_dom.mjs", "float_gaussian_NOTICE.txt", "float_transitions_NOTICE.txt", "COPYING.LGPLv2.1.txt"]
+ai_ad_editor = ["DEEPFILTER_LICENSE_MIT.txt", "DEEPFILTER_LICENSE_APACHE.txt", "RIFE_LICENSE.txt", "LIPSYNC_LICENSES.txt", "material_data/*.json", "material_data/audio/*", "material_data/fonts/*", "material_data/licenses/*", "material_data/sources/*", "look_data/*.json", "look_data/luts/*.cube.gz", "look_data/previews/*", "look_data/licenses/*", "native_hsl.c", "native_hsl_manifest.json", "avk_hsl_*.dll", "NATIVE_HSL_LICENSE.txt", "OPENSEEFACE_LICENSE.txt", "OPENSEEFACE_NOTICE.txt", "PADDLE_OCR_LICENSE.txt", "PADDLE_OCR_NOTICE.txt", "openfilm_stroke.mjs", "OPENFILM_EXAMPLES_LICENSE.txt", "PDOOM_VIDEO_LICENSE.txt", "OPENFILM_LICENSE.txt", "RFC3339_VALIDATOR_LICENSE.txt", "agent-project.schema.json", "openfilm_subtitle_segments.mjs", "subtitle_segment_worker.mjs", "openfilm_frame_clock.mjs", "html_motion_worker.mjs", "openfilm_template_fields.mjs", "openfilm_overrides.mjs", "html_template_dom.mjs", "openfilm_text_bounds.mjs", "html_quality_dom.mjs", "float_gaussian_NOTICE.txt", "float_transitions_NOTICE.txt", "COPYING.LGPLv2.1.txt"]

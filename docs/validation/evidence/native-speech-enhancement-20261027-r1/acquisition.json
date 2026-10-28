@@ -1,0 +1,159 @@
+{
+  "status": "official-source-and-model-acquired",
+  "at_utc": "2026-10-27T10:35:31.884392+00:00",
+  "repository": "https://github.com/Rikorose/DeepFilterNet",
+  "commit": "d375b2d8309e0935d165700c91da9de862a99c31",
+  "records": [
+    {
+      "source": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/LICENSE",
+      "transport": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/LICENSE",
+      "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/LICENSE",
+      "bytes": 495,
+      "sha256": "f7ef673bf046d823dcd775bdd0768432bd8855f81d0e5e1290a0a48c42e2dca3"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/LICENSE-MIT",
+      "transport": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/LICENSE-MIT",
+      "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/LICENSE-MIT",
+      "bytes": 1083,
+      "sha256": "24e6bb09c928af8d8e56268082f87413247ce36b39dd5d33add2f9893968065e"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/LICENSE-APACHE",
+      "transport": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/LICENSE-APACHE",
+      "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/LICENSE-APACHE",
+      "bytes": 10837,
+      "sha256": "1eaee808c5fb6b4e895ba30425285a5cdc5dd25bba2cd230f264c2200c331aec"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/README.md",
+      "transport": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/README.md",
+      "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/README.md",
+      "bytes": 13031,
+      "sha256": "9de21807df78381ae1dc859bbd826b957afd7599e907e1b1591df3e27d766680"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/DeepFilterNet/df/deepfilternet3.py",
+      "transport": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/DeepFilterNet/df/deepfilternet3.py",
+      "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/DeepFilterNet/df/deepfilternet3.py",
+      "bytes": 17559,
+      "sha256": "7eeab313004af51b0fcf9f9c224d65d026baaea883ca2af8859acd5daef696be"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/DeepFilterNet/df/modules.py",
+      "transport": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/DeepFilterNet/df/modules.py",
+      "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/DeepFilterNet/df/modules.py",
+      "bytes": 37036,
+      "sha256": "347fac96a3de03f65d10a7b994ca37f255439b16df5d41c26949d13c4b96207d"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/DeepFilterNet/df/multiframe.py",
+      "transport": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/DeepFilterNet/df/multiframe.py",
+      "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/DeepFilterNet/df/multiframe.py",
+      "bytes": 24454,
+      "sha256": "0d7b38ccd9732c979a2557199bcb6e1d0c8ee338693ed266d09851774b0e1fd6"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/DeepFilterNet/df/enhance.py",
+      "transport": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/DeepFilterNet/df/enhance.py",
+      "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/DeepFilterNet/df/enhance.py",
+      "bytes": 14130,
+      "sha256": "a9bc8e9b54cae2598e6fbdfa198113194f97c332504b2e2571500c7965fd3353"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/DeepFilterNet/df/config.py",
+      "transport": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/DeepFilterNet/df/config.py",
+      "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/DeepFilterNet/df/config.py",
+      "bytes": 10763,
+      "sha256": "3e5a1d211a0e2b65e820c874f644607cfd33d273d44e0e595d7714786c448a99"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/DeepFilterNet/df/checkpoint.py",
+      "transport": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/DeepFilterNet/df/checkpoint.py",
+      "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/DeepFilterNet/df/checkpoint.py",
+      "bytes": 7976,
+      "sha256": "04e5776592f47d0ac2b28974d51ec9c825ca4dabbf9f0db490d46cf4f6436da2"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/DeepFilterNet/df/model.py",
+      "transport": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/DeepFilterNet/df/model.py",
+      "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/DeepFilterNet/df/model.py",
+      "bytes": 779,
+      "sha256": "1e9e2436a89fc65a6dd76c2823afd5bd37cc849fd1fd63740faef94955d85eca"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/DeepFilterNet/df/utils.py",
+      "transport": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/DeepFilterNet/df/utils.py",
+      "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/DeepFilterNet/df/utils.py",
+      "bytes": 7430,
+      "sha256": "19c39c7f3277ab13cc7f6755a4138ac4b0f226216e3c48201b8ec52aec21f9c4"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/DeepFilterNet/df/scripts/export.py",
+      "transport": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/DeepFilterNet/df/scripts/export.py",
+      "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/DeepFilterNet/df/scripts/export.py",
+      "bytes": 10883,
+      "sha256": "22e2b539ab5f68866a14417f2c9072967ba0bcc6b83149eca2b023f05a07c433"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/libDF/src/lib.rs",
+      "transport": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/libDF/src/lib.rs",
+      "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/libDF/src/lib.rs",
+      "bytes": 20005,
+      "sha256": "716b6274c60344b25b7824a55d06d0fac0e58603faedbb86b3f3bd1ea6a256d3"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/libDF/src/transforms.rs",
+      "transport": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/libDF/src/transforms.rs",
+      "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/libDF/src/transforms.rs",
+      "bytes": 25672,
+      "sha256": "bae9af1f2f3192aeab95cba52e0412763d17fad8e2ad17b691b42b1cee92d087"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/libDF/src/tract.rs",
+      "transport": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/libDF/src/tract.rs",
+      "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/libDF/src/tract.rs",
+      "bytes": 37746,
+      "sha256": "0f080a766955cf037a1642ebfe6de645b9161985379d5c7cc790a21a04f1e580"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/libDF/src/bin/enhance_wav.rs",
+      "transport": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/libDF/src/bin/enhance_wav.rs",
+      "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/libDF/src/bin/enhance_wav.rs",
+      "bytes": 6736,
+      "sha256": "59668d26551c1176cd915dcfca14705835f7530a4869de383c5e0799b351a777"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/pyDF/src/lib.rs",
+      "transport": "https://api.github.com/repos/Rikorose/DeepFilterNet/contents/pyDF/src/lib.rs?ref=d375b2d8309e0935d165700c91da9de862a99c31",
+      "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/pyDF/src/lib.rs",
+      "bytes": 10892,
+      "sha256": "021a9a81b10c708b1e22661fa47f903d064df0459ffa8d334d15862203e8bf5b"
+    },
+    {
+      "source": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/models/DeepFilterNet3.zip",
+      "transport": "https://raw.githubusercontent.com/Rikorose/DeepFilterNet/d375b2d8309e0935d165700c91da9de862a99c31/models/DeepFilterNet3.zip",
+      "path": "product/.runtime/models/deepfilternet3-20261027/upstream/DeepFilterNet3.zip",
+      "bytes": 7986207,
+      "sha256": "49c52edc8947ae1f9bf50d81530beaf3a2c3245aeaf34b6f31ff535cd22284d2"
+    }
+  ],
+  "model_members": [
+    {
+      "path": "DeepFilterNet3/",
+      "bytes": 0
+    },
+    {
+      "path": "DeepFilterNet3/checkpoints/",
+      "bytes": 0
+    },
+    {
+      "path": "DeepFilterNet3/checkpoints/model_120.ckpt.best",
+      "bytes": 8714073
+    },
+    {
+      "path": "DeepFilterNet3/config.ini",
+      "bytes": 2067
+    }
+  ]
+}

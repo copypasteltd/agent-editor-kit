@@ -9,7 +9,23 @@
 本頁包含完整功能模塊、服務與依賴、安裝與使用邏輯、Skill 輸入輸出、真實案例和核驗表。長篇原始驗收日志繼續留檔，功能說明與案例入口恢復到首頁。
 
 
-<!-- native-interpolation-current -->
+<!-- native-speech-enhancement-current -->
+
+**CLI0.1.43 / alpha.4-local.41 / r44 kit · 1 Skill / 17 modules.**
+
+新增**真正本機 CUDA DeepFilterNet3 對白降噪**：原生取樣時鐘、單/雙聲道、獨立增強資產與可編輯音軌、強度/衰減上限、分段重疊、配方重跑、工程包及取消回滾。
+
+[Workflow / usage](docs/product/SPEECH_ENHANCEMENT.md) · [C53](docs/product/CASES.md#c53-native-speech-enhancement) · [Install](docs/releases/CLI_0.1.43_LOCAL.md) · [Evidence](docs/validation/本地对白增强实测_2026-10-27.md)
+
+![Actual speech waveforms; silent GIF](docs/assets/native-speech-enhancement-20261027-r2/comparison.gif)
+
+[Listen: clean → noisy → actual enhanced](docs/assets/native-speech-enhancement-20261027-r2/audible-comparison.mp4) · [Original16k human source](docs/assets/native-speech-enhancement-20261027-r2/original-human-16k.flac) · [Enhanced WAV](docs/assets/native-speech-enhancement-20261027-r2/english-enhanced.wav) · [Scientific spectra](docs/assets/native-speech-enhancement-20261027-r2/spectra-and-waveforms.png)
+
+33項原始碼、33項安裝版專項及156項安裝版相容回歸分別通過。C53英語真人錄音由0 dB輸入提升至SNR 12.25 dB，中文合成人聲提升至9.69 dB；完整原生樣本數與工程包PCM相同。保留乾淨對白損傷、混響控制及首輪暫存檔競態失敗。未做人類聽審；分段狀態重置、前端CPU/神經圖CUDA；完整去混響/音樂保真及38原目標關閉條件持續開發。
+
+<!-- /native-speech-enhancement-current -->
+
+<!-- native-interpolation-history -->
 
 **CLI0.1.42 / alpha.4-local.40 / r43 kit · 1 Skill / 17 modules.**
 
@@ -23,7 +39,7 @@
 
 [Actual retained failure and explicit hold](docs/assets/native-interpolation-20261027-r1/failure-and-hold.png) · [Held-out per-frame measurements](docs/validation/evidence/native-interpolation-20261027-r1/case-r1/verification.json)
 
-<!-- /native-interpolation-current -->
+<!-- /native-interpolation-history -->
 
 <!-- native-lip-sync-history -->
 
@@ -478,7 +494,7 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r43 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r43.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
+**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r44 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r44.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
 
 <!-- /unified-skill-registration -->
 
@@ -784,7 +800,7 @@ flowchart LR
 5. 若需要選型，展示原圖與少量候選，記錄最終 ID/強度/作用域；在目標素材上復試。
 6. 渲染至工程內新路徑，檢查實際編碼文件、manifest、warning、音畫與權利，再導出專案包。
 
-## 完整的 68 個功能模組
+## 完整的 69 個功能模組
 
 編號用於定位文件；各模塊有依賴與交叉，不是“43 個獨立內核”或完成率。下表直接寫明行為、入口與限制；[完整機器能力清單及每項契約](docs/product/CAPABILITIES.zh-TW.md)保留全部字段。
 
@@ -809,7 +825,7 @@ flowchart LR
 | F17 | 轉場與剪口效果 | 相鄰片段與源句柄 → 淡化、擦除、滑動、黑/白場、圓形等已聲明轉場。 | `timeline transition; capabilities` | 依算繪路徑和層級選擇；明確 Float32 已提供 F55 的轉場子集，CPU 執行，支援範圍見獨立契約。 |
 | F18 | 幾何蒙版與逐影格修正 | 矩形/圓/橢圓/路徑/多邊形 → 反選、羽化、動畫、編碼蒙版與修正。 | `timeline compose; media mask-edit; quality mask` | 路徑點數和取樣受限；幾何通過不等於語義分割/身份正確。 |
 | F19 | 圖層合成與混合 | 多軌視覺層 → normal/multiply/screen/overlay/difference/addition/softlight/hardlight。 | `timeline compose; capabilities` | 預設路徑主要為編碼 8-bit RGB；不宣稱線性光/HDR 合成等價。 |
-| F20 | 46 個效果處理算子 | 模糊/銳化、降噪、色調、曲線、HSL、色鍵、暗角、顆粒等 → 可配置效果鏈。 | `effects list/inspect` | 可動畫參數與實際後端逐項查詢；46 算子與 500 成品 LUT 是不同統計。 |
+| F20 | 51 個效果處理算子 | 模糊/銳化、降噪、色調、曲線、HSL、色鍵、暗角、顆粒等 → 可配置效果鏈。 | `effects list/inspect` | 可動畫參數與實際後端逐項查詢；51 算子與 500 成品 LUT 是不同統計。 |
 | F21 | 500 套離線風格 | 名稱/ID/類別/許可檢索 → 詳情、圖片預覽、片段或全局應用與來源副本。 | `look list/inspect/preview/apply` | 500 個不同數值變換含同系列曲線；SDR 創意映射，不是 500 個獨立家族。 |
 | F22 | 自定義 LUT 與色彩自動化 | 本地 .cube/.3dl/.csp/.dat → 登記、檢查；支持的 3D LUT 強度與色彩參數按契約動畫。 | `lut register/list/inspect; effects inspect` | 格式登記不等於所有路徑都完整解析；完整 CUBE 才有對應強度/浮點支持。 |
 | F23 | 顯式 Float32 像素路徑 | 聲明輸入/工作/輸出信號、順序與預算 → 原生浮點色彩、LUT/shaper、選定空間處理和 surface。 | `render; preview; surface export/inspect` | 必須顯式選擇 float32-native-v1；能力子集，拒絕不支持項，非完整 HDR/ICC 管線。 |
@@ -858,6 +874,7 @@ flowchart LR
 | F66 | 原生 PQ／HLG HDR 與 SDR 顯示 | 明確參考白及HLG峰值/gamma，解碼至顯示線性光；不同nit素材、一般效果/合成、10-bit BT.2020 NCL交付，獨立選擇SDR trim及PNG/MP4預覽。 | `timeline compose; validate; preview; render; convert` | 傳遞CPU，既有合成/光效可GPU；拒絕8-bit/標籤不符/缺單位；alpha位元保留。非ICC/動態中繼資料或HDR監看驗收。 |
 | F67 | 本機神經口型同步 | 圖片／影片＋獨立聲音→真正CUDA MuseTalk口型；25FPS人臉框關鍵影格、語義下半臉混合、完整PCM及alpha保留，可復用配方並影片/音訊關聯入軌。 | `lipsync adapter register/list/inspect; lipsync generate` | 本機safetensors及既有原生Torch依賴；臉部256×256、明確8bit SDR與來源運鏡、無CPU回退；自然口型、完整數位人仍未驗收。 |
 | F68 | CUDA神經補幀與慢動作 | 原生CFR/VFR、每來源影格RGBA、預乘alpha、完整PCM；2..8倍、切鏡保持、關聯慢放雙軌、配方重跑及工程包。 | `interpolate adapter; interpolate generate` | 明確RIFE4.25 safetensors＋原生CUDA Python；無CPU回退；困難運動/遮擋/自然品質/HDR未廣泛驗收。 |
+| F69 | CUDA對白降噪與增強 | 原生取樣時鐘/單雙聲道、真正模型、乾濕強度/衰減、可編輯獨立音軌、配方重跑/工程包、取消回滾。 | `audio enhancement-adapter; audio enhance` | DeepFilterNet3固定safetensors＋既有原生CUDA依賴；分段狀態重置、CPU前端；完整去混響/音樂保真待完成。 |
 
 ## 支持的服務模塊與依賴
 
@@ -888,6 +905,7 @@ flowchart LR
 | S21 | 本地GPU常駐推理會話 | 原生行程、認證Windows命名管道、JSON/原始幀、重疊拒寫鎖與生命週期監控。 | 既有本地VACE適配器；同一提示詞多方案。 | `media model-session start/status/stop` | 不開放網路埠；同工程串行，首條載入與其他模型重用仍有限。 |
 | S22 | MuseTalk CUDA 神經口型服務 | 本機Whisper-tiny音訊特徵、MuseTalk1.5 UNet、SD VAE及BiSeNet；固定safetensors與拒寫鎖、原生工作回收。 | 明確既有Torch/Diffusers/Transformers/OpenCV原生依賴及模型證據；無自動安裝。 | `lipsync adapter; lipsync generate` | 模型256×256，25FPS；授權、自然度、完整數位人及HDR另行驗收。 |
 | S23 | RIFE CUDA補幀服務 | 固定五階段IFNet/158個FP32推理張量、嚴格本機雜湊、真正CUDA；不執行模型目錄程式/Pickle。 | 已有原生Torch＋safetensors依賴及MIT模型證據；無自動安裝。 | `interpolate adapter; interpolate generate` | 原生時間細分、全影格/PCM往返；閾值不是語意切鏡；自然品質仍須複核。 |
+| S24 | DeepFilterNet3對白服務 | 固定133張量/48kHz全頻模型；神經推論CUDA、NumPy前端CPU、FFmpeg重取樣。 | 明確本機權重/原生Torch/safetensors及MIT OR Apache-2.0證據。 | `audio enhancement-adapter; audio enhance` | 8..96kHz、1/2聲道、完整來源≤1800秒/選區≤600秒；無自動下載/依賴安裝/CPU回退。 |
 
 **本機查詢與交付狀態：** 本輪 doctor 檢測到原生 Python 3.13.1、FFmpeg/ffprobe 8.1 和 Node；這不證明每個模型或瀏覽器適配器均已註冊。doctor 只查到系統存在 Docker/WSL 可執行路徑，沒有運行它們。本專案始終使用原生工具，不調度 Docker/WSL/虛擬環境。
 
@@ -987,7 +1005,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.40/final-r1/installed/`，CLI 0.1.41；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
+本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.41/final-r3/installed/`，CLI 0.1.41；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1468,6 +1486,13 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R288 | 2026-10-27 native interpolation | C52安裝版真正RIFE動畫24→96影格、透明VFR12→36影格、全105840個PCM標量/原始影格/nativePTS保留；完整工程包音畫一致，附原片/結果/GIF/配方。 | [Evidence](docs/validation/evidence/native-interpolation-20261027-r1/case-r1/verification.json) |
 | R289 | 2026-10-27 native interpolation | 保留真正末段重影失敗，23張參考影格誤差逐幀披露；明確保持減少該處重影但有停頓。真正CUDA輸出後取消，三個子程序回收、無半成品、工程回滾及診斷通過。 | [Evidence](docs/validation/evidence/native-interpolation-20261027-r1/quality-and-cancel-r1/verification.json) |
 | R290 | 2026-10-27 native interpolation | r43統一入口工具包，1 Skill/17模組/81 Skill檔案/130 ZIP項；三語F68/S23及全部283既有R列和38原關閉條件保留。 | [Evidence](docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/verification.json) |
+| R291 | 2026-10-27 speech enhancement | CLI0.1.43/local.41修正版離線建置安裝，266程式檔逐位元組相同、82能力；原公開alpha.3保留。 | [Evidence](docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r3/verification.json) |
+| R292 | 2026-10-27 speech enhancement | 33項原始碼專項：FFT原生尾部/獨立聲道/OLA/配方/Float32精確旁路/真正worker/取消逾時、持久診斷及暫存回應檔原子替換競態。 | [Evidence](docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r6/verification.json) |
+| R293 | 2026-10-27 speech enhancement | 33項安裝版專項及156項安裝版四軌/時鐘/片段/schema/補幀回歸分開記錄，均零失敗/錯誤/跳過；首輪安裝及失敗案例保留。 | [Evidence](docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r3/verification.json) |
+| R294 | 2026-10-27 speech enhancement | 固定官方DeepFilterNet3 commit/雙授權/133張量；weights_only開發轉換、safetensors逐張量相同；真正CUDA及獨立官方Windows CPU參考差異保留。 | [Evidence](docs/validation/evidence/native-speech-enhancement-20261027-r1/conversion.json) |
+| R295 | 2026-10-27 speech enhancement | C53真人英語/中文合成人聲加噪輸入、真正增強、乾淨/混響控制、全部原生樣本、配方重跑及完整工程包PCM相同；附聲音對照/頻譜/GIF。 | [Evidence](docs/validation/evidence/native-speech-enhancement-20261027-r1/case-complete-r1/verification.json) |
+| R296 | 2026-10-27 speech enhancement | 首輪真正雙聲道觸發暫存檔競態已修復；真正神經段完成後取消，owned程序回收、原中繼資料回滾、無半成品；真正片段匯入重綁通過。 | [Evidence](docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/verification.json) |
+| R297 | 2026-10-27 speech enhancement | r44統一入口工具包：1 Skill/17模組/82 Skill檔案/132 ZIP項；三語F69/S24，全部290既有R列及38原關閉條件保留。 | [Evidence](docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/verification.json) |
 
 ## 當前邊界與開發方向
 

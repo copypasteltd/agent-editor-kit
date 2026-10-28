@@ -9,7 +9,23 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- native-interpolation-current -->
+<!-- native-speech-enhancement-current -->
+
+**CLI0.1.43 / alpha.4-local.41 / r44 kit · 1 Skill / 17 modules.**
+
+Adds **actual native CUDA DeepFilterNet3 speech denoising** with native sample clocks, mono/stereo, separate enhanced assets and editable audio tracks, strength/attenuation controls, overlapping segments, portable rerun recipes, packages and owned cancellation.
+
+[Workflow / usage](docs/product/SPEECH_ENHANCEMENT.md) · [C53](docs/product/CASES.md#c53-native-speech-enhancement) · [Install](docs/releases/CLI_0.1.43_LOCAL.md) · [Evidence](docs/validation/本地对白增强实测_2026-10-27.md)
+
+![Actual speech waveforms; silent GIF](docs/assets/native-speech-enhancement-20261027-r2/comparison.gif)
+
+[Listen: clean → noisy → actual enhanced](docs/assets/native-speech-enhancement-20261027-r2/audible-comparison.mp4) · [Original16k human source](docs/assets/native-speech-enhancement-20261027-r2/original-human-16k.flac) · [Enhanced WAV](docs/assets/native-speech-enhancement-20261027-r2/english-enhanced.wav) · [Scientific spectra](docs/assets/native-speech-enhancement-20261027-r2/spectra-and-waveforms.png)
+
+33 source checks,33 installed checks and156 installed compatibility regressions pass separately. C53 real English human speech improves from0 dB input to SNR 12.25 dB; synthetic Mandarin reaches9.69 dB. Native samples and complete package-render PCM are preserved. Clean-speech damage,reverb controls and the initial atomic-temp-file race remain recorded. No human listening acceptance; per-segment state resets,CPU frontend/CUDA neural graph. Full dereverberation,music fidelity and all38 original closure conditions remain ongoing.
+
+<!-- /native-speech-enhancement-current -->
+
+<!-- native-interpolation-history -->
 
 **CLI0.1.42 / alpha.4-local.40 / r43 kit · 1 Skill / 17 modules.**
 
@@ -23,7 +39,7 @@ Adds **actual native CUDA RIFE4.25 interpolation and editable slow motion**: nat
 
 [Actual retained failure and explicit hold](docs/assets/native-interpolation-20261027-r1/failure-and-hold.png) · [Held-out per-frame measurements](docs/validation/evidence/native-interpolation-20261027-r1/case-r1/verification.json)
 
-<!-- /native-interpolation-current -->
+<!-- /native-interpolation-history -->
 
 <!-- native-lip-sync-history -->
 
@@ -478,7 +494,7 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r43 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r43.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r44 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r44.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
@@ -784,7 +800,7 @@ The implementation is **Python CLI + Agent Project schema + FFmpeg**, with an ex
 5. For selection, show the original and a small candidate set, record final IDs/strength/scope and trial them on target media.
 6. Render to a new project-owned path, inspect the encoded output, manifest, warnings, A/V and rights, then export the project package.
 
-## All 68 functional modules
+## All 69 functional modules
 
 IDs locate documentation groups with dependencies/overlap; they are not 43 independent kernels or a completion score. The table describes behavior, commands and limits. The [complete machine capability manual](docs/product/CAPABILITIES.en.md) retains every field.
 
@@ -809,7 +825,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F17 | Transitions and cut effects | Adjacent clips and handles → declared fades, wipes, slides, black/white fades, circular and other transitions. | `timeline transition; capabilities` | Select by renderer and layer context; the explicit CPU Float32 subset is delivered under the separate F55 contract. |
 | F18 | Geometric masks and frame corrections | Rectangles/circles/ellipses/paths/polygons → inversion, feathering, animation, encoded masks and corrections. | `timeline compose; media mask-edit; quality mask` | Point topology and sampling are bounded; geometric checks do not prove semantic identity. |
 | F19 | Layer compositing and blending | Visual layers → normal/multiply/screen/overlay/difference/addition/softlight/hardlight. | `timeline compose; capabilities` | The default path mainly uses encoded 8-bit RGB, without general linear-light/HDR equivalence. |
-| F20 | 46 processing operators | Blur/sharpen, denoise, tone, curves, HSL, keying, vignette, noise and more → configurable chains. | `effects list/inspect` | Inspect animated parameters and backends individually; 46 operators and 500 LUT looks are separate inventories. |
+| F20 | 51 processing operators | Blur/sharpen, denoise, tone, curves, HSL, keying, vignette, noise and more → configurable chains. | `effects list/inspect` | Inspect animated parameters and backends individually; 51 operators and 500 LUT looks are separate inventories. |
 | F21 | 500 offline looks | Name/ID/category/license search → details, still previews, clip/global application and provenance copies. | `look list/inspect/preview/apply` | 500 distinct transforms include related curve variants; creative SDR mapping, not 500 unrelated families. |
 | F22 | Custom LUTs and color automation | Local .cube/.3dl/.csp/.dat → registration/inspection; supported 3D LUT strength and color channels follow automation contracts. | `lut register/list/inspect; effects inspect` | Registration does not imply complete parsing on every path; full CUBE data is required for the corresponding intensity/float features. |
 | F23 | Explicit Float32 pixel pipeline | Declared source/working/output signals, ordering and budgets → float color, LUT/shaper, selected spatial processing and surfaces. | `render; preview; surface export/inspect` | Explicit float32-native-v1 selection; a bounded subset that refuses unsupported features, not a complete HDR/ICC pipeline. |
@@ -858,6 +874,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F66 | Native PQ/HLG HDR and SDR viewing | Explicit reference white/HLG peak/gamma → display-linear edits; mixed-nit assets, ordinary effects/composition and10-bit BT.2020 NCL delivery; separate SDR trim and PNG/MP4 previews. | `timeline compose; validate; preview; render; convert` | CPU transfer math; existing GPU composition/effects; rejects8-bit/mismatched tags/missing units; alpha bits retained. ICC/dynamic metadata/HDR monitoring unaccepted. |
 | F67 | Local neural lip sync | Image/video + separate speech → actual CUDA MuseTalk mouth;25FPS box keys, semantic lower-face blend, complete PCM/alpha, rerunnable recipe and linked editable video/audio clips. | `lipsync adapter register/list/inspect; lipsync generate` | Explicit local safetensors/native Torch runtime;256×256 face,8bit SDR/source motion,no CPU fallback; natural quality/full digital human remain open. |
 | F68 | CUDA neural interpolation / slow motion | Native CFR/VFR,all original RGBA anchors,premultiplied alpha,complete PCM;factor2..8,cut holds,linked slow-motion tracks,recipes/packages. | `interpolate adapter; interpolate generate` | Explicit RIFE4.25 safetensors/native CUDA Python;no CPU fallback;difficult motion/occlusion/natural-quality/HDR acceptance open. |
+| F69 | CUDA speech denoising | Native sample clock/mono-stereo,actual model,dry/wet attenuation,editable audio,portable recipes/packages,owned cancel/rollback. | `audio enhancement-adapter; audio enhance` | Fixed DF3 safetensors/existing native CUDA;segment state resets,CPU frontend;full dereverb/music fidelity open. |
 
 ## Supported service modules and dependencies
 
@@ -888,6 +905,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | S21 | Local resident GPU inference session | Native process, authenticated Windows named pipe, JSON/raw frames, overlapping deny-write locks and lifecycle watchdog. | Existing local VACE adapter, repeated variants of one prompt. | `media model-session start/status/stop` | No network port; serial per project; initial loading and reuse of other models remain limited. |
 | S22 | MuseTalk CUDA neural mouth service | Local Whisper-tiny, MuseTalk1.5 UNet, SD VAE and BiSeNet; fixed safetensors, deny-write locks and owned native cleanup. | Explicit existing native Torch/Diffusers/Transformers/OpenCV and model evidence; no automatic install. | `lipsync adapter; lipsync generate` | 256×256 face/25FPS; rights,naturalness,full digital human and HDR acceptance remain separate. |
 | S23 | RIFE CUDA interpolation | Fixed five-stage IFNet/158 FP32 inference tensors,local artifact hashes,actual CUDA;no model-directory code/Pickle. | Existing native Torch/safetensors and MIT model evidence;no installation. | `interpolate adapter; interpolate generate` | Native interval subdivision,complete frame/PCM proofs;RGB threshold is not semantic cuts;quality review required. |
+| S24 | DeepFilterNet3 speech service | Fixed133-tensor48kHz full-band model;CUDA neural graph,NumPy CPU frontend,FFmpeg resampling. | Explicit local weights/native Torch/safetensors and MIT OR Apache-2.0 evidence. | `audio enhancement-adapter; audio enhance` | 8..96kHz,mono/stereo,source≤1800s/selection≤600s;no downloads,installs or CPU fallback. |
 
 **Observed local environment:** this update’s doctor sees native Python 3.13.1, FFmpeg/ffprobe 8.1 and Node; this does not establish registration of every model/browser adapter. doctor merely discovers Docker/WSL executable paths and does not run them. This project uses native tools without invoking Docker/WSL/virtual environments.
 
@@ -987,7 +1005,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.40/final-r1/installed/`, CLI 0.1.41. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.41/final-r3/installed/`, CLI 0.1.41. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1470,6 +1488,13 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R288 | 2026-10-27 native interpolation | Installed RIFE C52:animation24→96 frames;transparent VFR12→36;all105840 original PCM scalars,anchors/native PTS retained;complete package-render audio/video equality,originals/results/GIF/recipes. | [Evidence](docs/validation/evidence/native-interpolation-20261027-r1/case-r1/verification.json) |
 | R289 | 2026-10-27 native interpolation | Actual final-pair ghosting is retained with23 per-frame held-out comparisons. Explicit hold reduces this error by sacrificing motion. Cancellation after neural output reclaims three children,rolls back metadata and retains diagnostics. | [Evidence](docs/validation/evidence/native-interpolation-20261027-r1/quality-and-cancel-r1/verification.json) |
 | R290 | 2026-10-27 native interpolation | r43:one Skill/17 modules/81 Skill files/130 ZIP entries;trilingual F68/S23 retain all283 prior R rows and38 original goal closure cells. | [Evidence](docs/validation/evidence/native-interpolation-20261027-r1/kit-r2/verification.json) |
+| R291 | 2026-10-27 speech enhancement | CLI0.1.43/local.41 corrected native offline build/install:266 byte-identical product files,82 capabilities;published alpha.3 preserved. | [Evidence](docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r3/verification.json) |
+| R292 | 2026-10-27 speech enhancement | 33 source checks:FFT native tails,independent channels,OLA,recipes,bit-exact Float32 bypass,real worker,cancel/deadline,persistent rollback diagnostics and atomic receipt removal race. | [Evidence](docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r6/verification.json) |
+| R293 | 2026-10-27 speech enhancement | 33 installed checks and156 installed stem/clock/fragment/schema/interpolation regressions pass separately with no failures/errors/skips;initial builds and failed case retained. | [Evidence](docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r3/verification.json) |
+| R294 | 2026-10-27 speech enhancement | Pinned official DF3 commit/dual licenses/133 tensors;weights_only development conversion and complete safetensors equality;actual CUDA and independent official native CPU differences retained. | [Evidence](docs/validation/evidence/native-speech-enhancement-20261027-r1/conversion.json) |
+| R295 | 2026-10-27 speech enhancement | C53 real English/synthetic Mandarin noisy inputs,actual outputs,clean/reverb controls,native samples,recipe rerun and complete package-render PCM equality;audible video/spectra/GIF. | [Evidence](docs/validation/evidence/native-speech-enhancement-20261027-r1/case-complete-r1/verification.json) |
+| R296 | 2026-10-27 speech enhancement | The real stereo case exposed a fixed atomic-temp-file race. Cancel after actual neural output reclaims owned worker,rolls back metadata,leaves no partial asset;real fragment rebinding passes. | [Evidence](docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/verification.json) |
+| R297 | 2026-10-27 speech enhancement | r44:one Skill/17 modules/82 Skill files/132 ZIP entries;trilingual F69/S24 retain all290 prior R rows and38 original closure cells. | [Evidence](docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/verification.json) |
 
 ## Current limits and development direction
 

@@ -1,0 +1,1943 @@
+{
+  "status": "passed",
+  "started_at_utc": "2026-10-27T12:50:05.254081+00:00",
+  "registered_installed_skill": true,
+  "source_fallback": false,
+  "native_windows": true,
+  "virtualization": false,
+  "fake_worker": false,
+  "human_listening": false,
+  "continuous_playback": false,
+  "natural_quality_accepted": false,
+  "quality": {
+    "english_seeded_noise": {
+      "input": {
+        "samples_per_channel": 281040,
+        "channels": 1,
+        "MSE": 0.0038193302819459697,
+        "SNR_dB": -7.793525828076303e-10,
+        "SI_SDR_dB": 0.00799138339398716,
+        "fitted_gain": 1.000920041843898,
+        "peak": 0.47638916969299316,
+        "RMS": 0.08743962746121119,
+        "quality_pass_threshold": null
+      },
+      "enhanced": {
+        "samples_per_channel": 281040,
+        "channels": 1,
+        "MSE": 0.0002272693356757256,
+        "SNR_dB": 12.25446373666869,
+        "SI_SDR_dB": 12.206064997796101,
+        "fitted_gain": 0.8923283959487011,
+        "peak": 0.3653547763824463,
+        "RMS": 0.05678144751031143,
+        "quality_pass_threshold": null
+      }
+    },
+    "chinese_synthetic_seeded_noise": {
+      "input": {
+        "samples_per_channel": 232638,
+        "channels": 2,
+        "MSE": 0.004193120428651831,
+        "SNR_dB": 0.0068418210133662696,
+        "SI_SDR_dB": 0.010452879682328421,
+        "fitted_gain": 1.000415738332851,
+        "peak": 0.5584664940834045,
+        "RMS": 0.09163156569435156,
+        "quality_pass_threshold": null
+      },
+      "enhanced": {
+        "samples_per_channel": 232638,
+        "channels": 2,
+        "MSE": 0.0004505610780797404,
+        "SNR_dB": 9.694678455677426,
+        "SI_SDR_dB": 9.23440930054633,
+        "fitted_gain": 0.8681291746102344,
+        "peak": 0.41149020195007324,
+        "RMS": 0.05952015124038562,
+        "quality_pass_threshold": null
+      },
+      "selection": {
+        "start_sample": 137,
+        "end_sample": 232775,
+        "sample_rate": 44100
+      },
+      "upsampled_source": true,
+      "independent_channels": true
+    },
+    "clean_control": {
+      "input": {
+        "samples_per_channel": 281040,
+        "channels": 1,
+        "MSE": 0.0,
+        "SNR_dB": 275.81987216144125,
+        "SI_SDR_dB": 330.307553529281,
+        "fitted_gain": 1.0,
+        "peak": 0.42702844738960266,
+        "RMS": 0.06180073042659432,
+        "quality_pass_threshold": null
+      },
+      "enhanced": {
+        "samples_per_channel": 281040,
+        "channels": 1,
+        "MSE": 4.225382228175607e-06,
+        "SNR_dB": 29.56121214792356,
+        "SI_SDR_dB": 33.970123891038604,
+        "fitted_gain": 0.9730411133775333,
+        "peak": 0.41606295108795166,
+        "RMS": 0.060146702980597655,
+        "quality_pass_threshold": null
+      },
+      "no_quality_acceptance": true
+    },
+    "reverb_control": {
+      "input": {
+        "samples_per_channel": 281040,
+        "channels": 1,
+        "MSE": 0.0071007365052525,
+        "SNR_dB": -2.693161809662369,
+        "SI_SDR_dB": -2.7551932363577043,
+        "fitted_gain": 0.9928702350024052,
+        "peak": 0.5563470721244812,
+        "RMS": 0.10423821243577569,
+        "quality_pass_threshold": null
+      },
+      "enhanced": {
+        "samples_per_channel": 281040,
+        "channels": 1,
+        "MSE": 0.000988033040846722,
+        "SNR_dB": 5.8721574805703,
+        "SI_SDR_dB": 4.573567616385286,
+        "fitted_gain": 0.7345341804102261,
+        "peak": 0.42463913559913635,
+        "RMS": 0.05272153293778108,
+        "quality_pass_threshold": null
+      },
+      "no_quality_acceptance": true
+    }
+  },
+  "prior_attempt": "case-r2",
+  "prior_attempt_retained_status": "failed-VIDEO_TRACK_EMPTY",
+  "checks": [
+    {
+      "name": "retained actual master assets still match recorded output bytes",
+      "ok": true
+    },
+    {
+      "name": "waveform-ingest installed CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "waveform-compose installed CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "validate installed CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "render installed CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "package installed CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "restore installed CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "package every original enhanced asset byte and recipe retained",
+      "ok": true
+    },
+    {
+      "name": "restored-render installed CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "complete package rendered decoded PCM identical",
+      "ok": true
+    }
+  ],
+  "calls": [
+    {
+      "name": "waveform-ingest",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "media",
+        "ingest",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\timeline-waveform.png",
+        "--license-spdx",
+        "CC0-1.0",
+        "--evidence",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\SOURCE.txt"
+      ],
+      "exit_code": 0,
+      "seconds": 2.4756536000058986,
+      "stdout_sha256": "8613e2c1a8492e91b780285e3950f2d9010c8ef63de7308b5177877be0738030",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "waveform-compose",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "timeline",
+        "compose",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\waveform-compose.json"
+      ],
+      "exit_code": 0,
+      "seconds": 2.51988770000753,
+      "stdout_sha256": "74d2fff83b8f89661bec24542b82720a6447b967027383d97fe9296f68b40dfd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "validate",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "validate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程"
+      ],
+      "exit_code": 0,
+      "seconds": 2.541315999988001,
+      "stdout_sha256": "ff2897e9dbe2e9beaf29abaa6f02c9cf40795fa84d24b7dfee06e84daddb9963",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "render",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程\\renders\\enhanced-with-waveform.mp4"
+      ],
+      "exit_code": 0,
+      "seconds": 5.114350399991963,
+      "stdout_sha256": "2c61c4d922c816bebb641a6b3c8ba29d06f0b73414350abf8dfbfb9e0cc0f78a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "package",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "convert",
+        "export",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--target-format",
+        "package",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程\\exports\\enhanced.aevpkg.zip"
+      ],
+      "exit_code": 0,
+      "seconds": 3.1326397000229917,
+      "stdout_sha256": "605a3978b15acecfae9031d2298c8a603768c86cbe42f75039a5ee46358a775b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "restore",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "convert",
+        "import",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程\\exports\\enhanced.aevpkg.zip",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\restored"
+      ],
+      "exit_code": 0,
+      "seconds": 2.1108547000039835,
+      "stdout_sha256": "7367b76ae4e47389fa3d2f2f103711c7561415cea8d6517ba552c8e32692784c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "restored-render",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\restored",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\restored\\renders\\restored.mp4"
+      ],
+      "exit_code": 0,
+      "seconds": 4.5708109000115655,
+      "stdout_sha256": "b3dcd74fca751ba65837b31331e4c6301c3901966d076c4200d06be78cc9563d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "original-render-pcm",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程\\renders\\enhanced-with-waveform.mp4",
+        "-vn",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.07038850002572872,
+      "stdout_sha256": "a8f85e6bb8f4a6ec57ea53f049b8eda2655a8a3b81e3ebe45972e5bef9608c7f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "restored-render-pcm",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\restored\\renders\\restored.mp4",
+        "-vn",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.062794199999189,
+      "stdout_sha256": "a8f85e6bb8f4a6ec57ea53f049b8eda2655a8a3b81e3ebe45972e5bef9608c7f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "finished_at_utc": "2026-10-27T13:06:47.600552+00:00",
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+  "public": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2",
+  "source_ids": {
+    "english-clean": "asset_20261027125013_23054963",
+    "english-noisy": "asset_20261027125015_6f39bbc5",
+    "chinese-clean": "asset_20261027125017_9c652f30",
+    "chinese-noisy": "asset_20261027125020_674b679b",
+    "english-reverb-noisy": "asset_20261027125023_7c30a0fa"
+  },
+  "english_result": {
+    "protocol": "agent-native-speech-enhancement-v1",
+    "operation_id": "op_20261027125031_60f53cf5",
+    "asset": {
+      "id": "english_enhanced",
+      "kind": "audio",
+      "uri": "assets/derived/english_enhanced.wav",
+      "sha256": "sha256:c2d0da14ed8ff778abb383a34492c0fba06f4c8b3d115d0bcb988bcde0dd297e",
+      "rights_ref": "english_enhanced",
+      "probe": {
+        "duration_seconds": 5.855,
+        "duration_tick": 526950,
+        "format": "wav",
+        "format_long_name": "WAV / WAVE (Waveform Audio)",
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_f32le",
+            "codec_long_name": "PCM 32-bit floating point little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[3][0][0][0]",
+            "codec_tag": "0x0003",
+            "sample_fmt": "flt",
+            "sample_rate": "48000",
+            "channels": 1,
+            "bits_per_sample": 32,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "duration_ts": 281040,
+            "duration": "5.855000",
+            "bit_rate": "1536000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "video": {
+          "codec": null,
+          "width": null,
+          "height": null,
+          "pix_fmt": null,
+          "fps": null,
+          "color_space": null,
+          "duration_seconds": 0.0,
+          "start_time_seconds": 0.0
+        },
+        "audio": {
+          "codec": "pcm_f32le",
+          "sample_rate": 48000,
+          "channels": 1,
+          "duration_seconds": 5.855,
+          "start_time_seconds": 0.0
+        }
+      },
+      "source": {
+        "source_url": "local://speech-enhancement/op_20261027125031_60f53cf5",
+        "retrieved_at": "2026-10-27T12:52:31.081681Z",
+        "original_name": "english_enhanced.wav",
+        "derived_from": [
+          "asset_20261027125015_6f39bbc5"
+        ],
+        "speech_enhancement": {
+          "protocol": "agent-native-speech-enhancement-v1",
+          "engine": "deepfilternet3-native-cuda-v1",
+          "source_asset_id": "asset_20261027125015_6f39bbc5",
+          "source_sha256": "sha256:6037a35481869830f5543630000b6c6aca47c2bf28842f99c06e7b5b30887ff8",
+          "model_sha256": "sha256:27339eb250a4c9924cfb6bfc69fc0ace9b17e5135fc51388c8fcfa798986de4d",
+          "range": {
+            "start_sample": 0,
+            "end_sample": 281040,
+            "samples": 281040,
+            "sample_rate": 48000
+          },
+          "channels": 1,
+          "selection": {
+            "start_seconds": 0.0,
+            "end_seconds": null
+          },
+          "options": {
+            "strength": 1.0,
+            "attenuation_limit_db": null
+          },
+          "model_settings": {
+            "threads": 4,
+            "segment_seconds": 2.0,
+            "overlap": 0.25
+          },
+          "sha256": "sha256:836f7d4f4053ab47449013e2e76fe95230b97e1b6f0a732ab28408c3db352ae4"
+        }
+      }
+    },
+    "rights": {
+      "asset_id": "english_enhanced",
+      "kind": "audio",
+      "sha256": "sha256:c2d0da14ed8ff778abb383a34492c0fba06f4c8b3d115d0bcb988bcde0dd297e",
+      "source_url": "local://speech-enhancement/op_20261027125031_60f53cf5",
+      "source_version": "agent-native-speech-enhancement-v1",
+      "retrieved_at": "2026-10-27T12:52:31.081695Z",
+      "creator": "local-speech-enhancement",
+      "license_spdx": "LicenseRef-UNVERIFIED",
+      "license_url": "",
+      "attribution": "",
+      "permitted_uses": [
+        "internal"
+      ],
+      "permitted_channels": [],
+      "restrictions": [],
+      "derived_from": [
+        "asset_20261027125015_6f39bbc5",
+        "audio_adapter_df3_local"
+      ],
+      "evidence": "",
+      "verification_status": "unverified",
+      "verified_by": "",
+      "takedown_status": "clear",
+      "notes": "Enhanced audio inherits source/model rights; requires listening review.",
+      "record_id": "rights_20261027125231_0d78cc97",
+      "record_version": 1,
+      "active": true,
+      "recorded_at": "2026-10-27T12:52:31.081793Z"
+    },
+    "generation": {
+      "protocol": "agent-native-speech-enhancement-v1",
+      "sha256": "sha256:c2d0da14ed8ff778abb383a34492c0fba06f4c8b3d115d0bcb988bcde0dd297e",
+      "probe": {
+        "duration_seconds": 5.855,
+        "duration_tick": 526950,
+        "format": "wav",
+        "format_long_name": "WAV / WAVE (Waveform Audio)",
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_f32le",
+            "codec_long_name": "PCM 32-bit floating point little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[3][0][0][0]",
+            "codec_tag": "0x0003",
+            "sample_fmt": "flt",
+            "sample_rate": "48000",
+            "channels": 1,
+            "bits_per_sample": 32,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "duration_ts": 281040,
+            "duration": "5.855000",
+            "bit_rate": "1536000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "video": {
+          "codec": null,
+          "width": null,
+          "height": null,
+          "pix_fmt": null,
+          "fps": null,
+          "color_space": null,
+          "duration_seconds": 0.0,
+          "start_time_seconds": 0.0
+        },
+        "audio": {
+          "codec": "pcm_f32le",
+          "sample_rate": 48000,
+          "channels": 1,
+          "duration_seconds": 5.855,
+          "start_time_seconds": 0.0
+        }
+      },
+      "worker": {
+        "protocol": "agent-native-speech-enhancement-v1",
+        "status": "succeeded",
+        "network": "disabled",
+        "blocked_network_events": [],
+        "request_sha256": "sha256:aa0b8a00a845a71fa702187f3e7f626ed8c831c8301a14a351868de0741b86c4",
+        "source_sha256": "sha256:6037a35481869830f5543630000b6c6aca47c2bf28842f99c06e7b5b30887ff8",
+        "adapter_sha256": "sha256:043a19d6b5cf166c5976179fbb0a3fc0677c23e7b1238d8f6f34f6010ff2fecd",
+        "range": {
+          "start_sample": 0,
+          "end_sample": 281040,
+          "samples": 281040,
+          "sample_rate": 48000
+        },
+        "channels": 1,
+        "model_samples": 281040,
+        "model": {
+          "engine": "deepfilternet3-native-cuda-v1",
+          "device": "NVIDIA GeForce RTX 3060",
+          "precision": "float32",
+          "CPU_fallback": false,
+          "neural_backend": "cuda",
+          "frontend_backend": "numpy-cpu",
+          "sample_rate": 48000,
+          "model_loads": 1,
+          "model_forwards": 4,
+          "channel_forwards": 4,
+          "CUDA_admission": {
+            "policy": "cuda-uuid-physical-and-torch-free-v1",
+            "stage": "speech-enhancement-load",
+            "required_free_bytes": 1073741824,
+            "reservation": false,
+            "oom_guarantee": false,
+            "query_started_at_utc": "2026-10-27T12:52:02.976312+00:00",
+            "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+            "logical_device_index": 0,
+            "idle_cache_release": {
+              "scope": "current-worker",
+              "synchronized": true,
+              "empty_cache_called": true,
+              "completed": true,
+              "active_allocation_preserved": true,
+              "allocated_before_bytes": 0,
+              "reserved_before_bytes": 0,
+              "allocated_after_bytes": 0,
+              "reserved_after_bytes": 0,
+              "released_reserved_bytes": 0
+            },
+            "query_command": [
+              "C:\\Windows\\System32\\nvidia-smi.EXE",
+              "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+              "--query-gpu=uuid,memory.total,memory.free",
+              "--format=csv,noheader,nounits"
+            ],
+            "torch_free_bytes": 11799625728,
+            "torch_total_bytes": 12884377600,
+            "physical_free_bytes": 10466885632,
+            "physical_total_bytes": 12884901888,
+            "effective_free_bytes": 10466885632,
+            "query_finished_at_utc": "2026-10-27T12:52:03.440053+00:00",
+            "sample_seconds": 0.4637362000066787,
+            "status": "admitted"
+          },
+          "load_seconds": 3.7262430999835487,
+          "weight_reader": "safetensors-pread",
+          "versions": {
+            "torch": "2.13.0+cu130",
+            "numpy": "2.4.2",
+            "safetensors": "0.8.0"
+          },
+          "cuda_peak_allocated_bytes": 67397120
+        },
+        "metrics": {
+          "samples": 281040,
+          "channels": 1,
+          "segments": 4,
+          "model_calls": 4,
+          "bypass_segments": 0,
+          "input_peak": 0.47638916969299316,
+          "output_peak": 0.3653547763824463,
+          "input_rms": 0.08743962746121119,
+          "output_rms": 0.05678144750978618,
+          "segment_state": "reset-per-segment",
+          "channel_mode": "independent-model-batch-rows",
+          "ola": "symmetric-positive-triangle-normalized",
+          "clipping": false,
+          "normalization": false,
+          "strength": 1.0,
+          "attenuation_limit_db": null
+        },
+        "effective_wet": 1.0,
+        "native_clock": {
+          "logical_frames": 281040,
+          "native_sample_rate": 48000,
+          "channels": 1,
+          "channel_layout": "",
+          "native_time_base": "1/48000",
+          "demux_origin": "0",
+          "frame_count": 69,
+          "decoded_frames": 281040,
+          "gap_count": 0,
+          "overlap_count": 0,
+          "leading_gap_samples": 0,
+          "negative_first_sample": 0,
+          "gap_samples": 0,
+          "overlap_samples": 0,
+          "events": [],
+          "events_truncated": false,
+          "normalization_needed": false,
+          "quantization_tolerance_samples_rational": "1/2",
+          "relative_coarse_anchor_tolerance_samples_rational": "1/2",
+          "subtick_clock_jumps_recoverable": true,
+          "soft_async_resampling": false
+        },
+        "decoded_pcm_sha256": "sha256:cea5329016f98148718309588c1418eecc6db4b3a59a5cc15776090adae4b9eb",
+        "input_PCM_sha256": "sha256:cea5329016f98148718309588c1418eecc6db4b3a59a5cc15776090adae4b9eb",
+        "output_PCM_sha256": "sha256:83354f670149b119a676c978e21a5a08b3e5a936bbcc1f33dd836cf42ddb2d12",
+        "output_bytes": 1124160,
+        "output_peak": 0.3653547763824463,
+        "output_rms": 0.05678144751031143,
+        "output_sha256": "sha256:c2d0da14ed8ff778abb383a34492c0fba06f4c8b3d115d0bcb988bcde0dd297e",
+        "output_wav_bytes": 1124252,
+        "resampler": "none",
+        "native_rate_preserved": true,
+        "channel_count_preserved": true,
+        "estimated_storage_bytes": 77226304,
+        "bypass_bit_exact": false,
+        "natural_quality_accepted": false,
+        "elapsed_seconds": 108.94324279998546
+      },
+      "cleanup": {
+        "worker_pid": 36980,
+        "returncode": 0,
+        "worker_exited": true,
+        "process_tree": "native-Windows-KILL_ON_JOB_CLOSE-before-worker-code",
+        "owner_job_closed": true
+      },
+      "complete_PCM_roundtrip_verified": true,
+      "native_sample_clock_verified": true,
+      "original_channels_verified": true,
+      "recipe": {
+        "protocol": "agent-native-speech-enhancement-v1",
+        "engine": "deepfilternet3-native-cuda-v1",
+        "source_asset_id": "asset_20261027125015_6f39bbc5",
+        "source_sha256": "sha256:6037a35481869830f5543630000b6c6aca47c2bf28842f99c06e7b5b30887ff8",
+        "model_sha256": "sha256:27339eb250a4c9924cfb6bfc69fc0ace9b17e5135fc51388c8fcfa798986de4d",
+        "range": {
+          "start_sample": 0,
+          "end_sample": 281040,
+          "samples": 281040,
+          "sample_rate": 48000
+        },
+        "channels": 1,
+        "selection": {
+          "start_seconds": 0.0,
+          "end_seconds": null
+        },
+        "options": {
+          "strength": 1.0,
+          "attenuation_limit_db": null
+        },
+        "model_settings": {
+          "threads": 4,
+          "segment_seconds": 2.0,
+          "overlap": 0.25
+        },
+        "sha256": "sha256:836f7d4f4053ab47449013e2e76fe95230b97e1b6f0a732ab28408c3db352ae4"
+      },
+      "elapsed_seconds": 119.68471240001963,
+      "natural_quality_accepted": false
+    },
+    "clip": {
+      "id": "clip_enhance_20261027125231_0bdaf3f3",
+      "asset_id": "english_enhanced",
+      "timeline_start_tick": 0,
+      "duration_tick": 526950,
+      "source_in_tick": 0,
+      "source_out_tick": 526950
+    },
+    "snapshot_id": "snap_20261027125031_2ed7d8e9",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "asset_20261027125013_23054963",
+          "rights_ref": "asset_20261027125013_23054963",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "asset_20261027125013_23054963",
+          "rights_ref": "asset_20261027125013_23054963",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "asset_20261027125015_6f39bbc5",
+          "rights_ref": "asset_20261027125015_6f39bbc5",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "asset_20261027125015_6f39bbc5",
+          "rights_ref": "asset_20261027125015_6f39bbc5",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "asset_20261027125017_9c652f30",
+          "rights_ref": "asset_20261027125017_9c652f30",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "asset_20261027125017_9c652f30",
+          "rights_ref": "asset_20261027125017_9c652f30",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "asset_20261027125020_674b679b",
+          "rights_ref": "asset_20261027125020_674b679b",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "asset_20261027125020_674b679b",
+          "rights_ref": "asset_20261027125020_674b679b",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "asset_20261027125023_7c30a0fa",
+          "rights_ref": "asset_20261027125023_7c30a0fa",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "asset_20261027125023_7c30a0fa",
+          "rights_ref": "asset_20261027125023_7c30a0fa",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "english_enhanced",
+          "rights_ref": "english_enhanced",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "english_enhanced",
+          "rights_ref": "english_enhanced",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_EVIDENCE_INCOMPLETE",
+          "message": "来源、许可证或证据字段缺失",
+          "asset_id": "english_enhanced",
+          "rights_ref": "english_enhanced",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "audio_adapter_df3_local",
+          "rights_ref": "audio_adapter_df3_local",
+          "record_version": 1,
+          "context": "derived_dependency"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "audio_adapter_df3_local",
+          "rights_ref": "audio_adapter_df3_local",
+          "record_version": 1,
+          "context": "derived_dependency"
+        }
+      ],
+      "rights": {
+        "ok": true,
+        "target": "commercial_ad",
+        "checked": 6,
+        "required_records": 7,
+        "failures": [],
+        "warnings": [
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "asset_20261027125013_23054963",
+            "rights_ref": "asset_20261027125013_23054963",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "asset_20261027125013_23054963",
+            "rights_ref": "asset_20261027125013_23054963",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "asset_20261027125015_6f39bbc5",
+            "rights_ref": "asset_20261027125015_6f39bbc5",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "asset_20261027125015_6f39bbc5",
+            "rights_ref": "asset_20261027125015_6f39bbc5",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "asset_20261027125017_9c652f30",
+            "rights_ref": "asset_20261027125017_9c652f30",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "asset_20261027125017_9c652f30",
+            "rights_ref": "asset_20261027125017_9c652f30",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "asset_20261027125020_674b679b",
+            "rights_ref": "asset_20261027125020_674b679b",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "asset_20261027125020_674b679b",
+            "rights_ref": "asset_20261027125020_674b679b",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "asset_20261027125023_7c30a0fa",
+            "rights_ref": "asset_20261027125023_7c30a0fa",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "asset_20261027125023_7c30a0fa",
+            "rights_ref": "asset_20261027125023_7c30a0fa",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "english_enhanced",
+            "rights_ref": "english_enhanced",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "english_enhanced",
+            "rights_ref": "english_enhanced",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_EVIDENCE_INCOMPLETE",
+            "message": "来源、许可证或证据字段缺失",
+            "asset_id": "english_enhanced",
+            "rights_ref": "english_enhanced",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "audio_adapter_df3_local",
+            "rights_ref": "audio_adapter_df3_local",
+            "record_version": 1,
+            "context": "derived_dependency"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "audio_adapter_df3_local",
+            "rights_ref": "audio_adapter_df3_local",
+            "record_version": 1,
+            "context": "derived_dependency"
+          }
+        ],
+        "disposition_decisions": [],
+        "effective_disposition_decisions": []
+      },
+      "schema_engine": "jsonschema",
+      "asset_count": 6,
+      "sequence_count": 1
+    },
+    "job_cleanup": [
+      {
+        "job_id": "job-77f32fec58254fbeaab7f65d92ffdf0a",
+        "kind": "speech-enhancement",
+        "files": 17,
+        "workspace_bytes": 6760373,
+        "outputs": [
+          {
+            "path": "assets/derived/english_enhanced.wav",
+            "status": "referenced_preserved",
+            "identity": {
+              "device": 6713111436524353518,
+              "inode": 1688849863916127,
+              "bytes": 1124252
+            },
+            "sha256": "sha256:c2d0da14ed8ff778abb383a34492c0fba06f4c8b3d115d0bcb988bcde0dd297e"
+          }
+        ],
+        "status": "cleaned",
+        "removed_outputs": []
+      }
+    ]
+  },
+  "chinese_result": {
+    "protocol": "agent-native-speech-enhancement-v1",
+    "operation_id": "op_20261027125234_27b6cbec",
+    "asset": {
+      "id": "chinese_enhanced",
+      "kind": "audio",
+      "uri": "assets/derived/chinese_enhanced.wav",
+      "sha256": "sha256:17e05998d39e48d610575fc8b13d7aa8f2fecc228eeea45811a58a482588c9f5",
+      "rights_ref": "chinese_enhanced",
+      "probe": {
+        "duration_seconds": 5.275238,
+        "duration_tick": 474771,
+        "format": "wav",
+        "format_long_name": "WAV / WAVE (Waveform Audio)",
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_f32le",
+            "codec_long_name": "PCM 32-bit floating point little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[3][0][0][0]",
+            "codec_tag": "0x0003",
+            "sample_fmt": "flt",
+            "sample_rate": "44100",
+            "channels": 2,
+            "bits_per_sample": 32,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/44100",
+            "duration_ts": 232638,
+            "duration": "5.275238",
+            "bit_rate": "2822400",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "video": {
+          "codec": null,
+          "width": null,
+          "height": null,
+          "pix_fmt": null,
+          "fps": null,
+          "color_space": null,
+          "duration_seconds": 0.0,
+          "start_time_seconds": 0.0
+        },
+        "audio": {
+          "codec": "pcm_f32le",
+          "sample_rate": 44100,
+          "channels": 2,
+          "duration_seconds": 5.275238,
+          "start_time_seconds": 0.0
+        }
+      },
+      "source": {
+        "source_url": "local://speech-enhancement/op_20261027125234_27b6cbec",
+        "retrieved_at": "2026-10-27T12:52:43.895209Z",
+        "original_name": "chinese_enhanced.wav",
+        "derived_from": [
+          "asset_20261027125020_674b679b"
+        ],
+        "speech_enhancement": {
+          "protocol": "agent-native-speech-enhancement-v1",
+          "engine": "deepfilternet3-native-cuda-v1",
+          "source_asset_id": "asset_20261027125020_674b679b",
+          "source_sha256": "sha256:f36284277db567a39b5882f3c0ce4f1b52581d7cbfe25164fcb8adcef62a3b0e",
+          "model_sha256": "sha256:27339eb250a4c9924cfb6bfc69fc0ace9b17e5135fc51388c8fcfa798986de4d",
+          "range": {
+            "start_sample": 137,
+            "end_sample": 232775,
+            "samples": 232638,
+            "sample_rate": 44100
+          },
+          "channels": 2,
+          "selection": {
+            "start_seconds": 0.0031065759637188208,
+            "end_seconds": 5.278344671201814
+          },
+          "options": {
+            "strength": 0.85,
+            "attenuation_limit_db": 24.0
+          },
+          "model_settings": {
+            "threads": 4,
+            "segment_seconds": 2.0,
+            "overlap": 0.25
+          },
+          "sha256": "sha256:af9ca0a2e2cf324d4f62ba3d66c302833d2d88b4c7fbba7b1d9ba57d85e6c3a7"
+        }
+      }
+    },
+    "rights": {
+      "asset_id": "chinese_enhanced",
+      "kind": "audio",
+      "sha256": "sha256:17e05998d39e48d610575fc8b13d7aa8f2fecc228eeea45811a58a482588c9f5",
+      "source_url": "local://speech-enhancement/op_20261027125234_27b6cbec",
+      "source_version": "agent-native-speech-enhancement-v1",
+      "retrieved_at": "2026-10-27T12:52:43.895226Z",
+      "creator": "local-speech-enhancement",
+      "license_spdx": "LicenseRef-UNVERIFIED",
+      "license_url": "",
+      "attribution": "",
+      "permitted_uses": [
+        "internal"
+      ],
+      "permitted_channels": [],
+      "restrictions": [],
+      "derived_from": [
+        "asset_20261027125020_674b679b",
+        "audio_adapter_df3_local"
+      ],
+      "evidence": "",
+      "verification_status": "unverified",
+      "verified_by": "",
+      "takedown_status": "clear",
+      "notes": "Enhanced audio inherits source/model rights; requires listening review.",
+      "record_id": "rights_20261027125243_cfaa90d0",
+      "record_version": 1,
+      "active": true,
+      "recorded_at": "2026-10-27T12:52:43.895342Z"
+    },
+    "generation": {
+      "protocol": "agent-native-speech-enhancement-v1",
+      "sha256": "sha256:17e05998d39e48d610575fc8b13d7aa8f2fecc228eeea45811a58a482588c9f5",
+      "probe": {
+        "duration_seconds": 5.275238,
+        "duration_tick": 474771,
+        "format": "wav",
+        "format_long_name": "WAV / WAVE (Waveform Audio)",
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_f32le",
+            "codec_long_name": "PCM 32-bit floating point little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[3][0][0][0]",
+            "codec_tag": "0x0003",
+            "sample_fmt": "flt",
+            "sample_rate": "44100",
+            "channels": 2,
+            "bits_per_sample": 32,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/44100",
+            "duration_ts": 232638,
+            "duration": "5.275238",
+            "bit_rate": "2822400",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "video": {
+          "codec": null,
+          "width": null,
+          "height": null,
+          "pix_fmt": null,
+          "fps": null,
+          "color_space": null,
+          "duration_seconds": 0.0,
+          "start_time_seconds": 0.0
+        },
+        "audio": {
+          "codec": "pcm_f32le",
+          "sample_rate": 44100,
+          "channels": 2,
+          "duration_seconds": 5.275238,
+          "start_time_seconds": 0.0
+        }
+      },
+      "worker": {
+        "protocol": "agent-native-speech-enhancement-v1",
+        "status": "succeeded",
+        "network": "disabled",
+        "blocked_network_events": [],
+        "request_sha256": "sha256:83a8a4bde7a205bc3d5e5d615e07d41bd8e1217b0e563db48a6dfbc8051b3f0a",
+        "source_sha256": "sha256:f36284277db567a39b5882f3c0ce4f1b52581d7cbfe25164fcb8adcef62a3b0e",
+        "adapter_sha256": "sha256:043a19d6b5cf166c5976179fbb0a3fc0677c23e7b1238d8f6f34f6010ff2fecd",
+        "range": {
+          "start_sample": 137,
+          "end_sample": 232775,
+          "samples": 232638,
+          "sample_rate": 44100
+        },
+        "channels": 2,
+        "model_samples": 253211,
+        "model": {
+          "engine": "deepfilternet3-native-cuda-v1",
+          "device": "NVIDIA GeForce RTX 3060",
+          "precision": "float32",
+          "CPU_fallback": false,
+          "neural_backend": "cuda",
+          "frontend_backend": "numpy-cpu",
+          "sample_rate": 48000,
+          "model_loads": 1,
+          "model_forwards": 4,
+          "channel_forwards": 8,
+          "CUDA_admission": {
+            "policy": "cuda-uuid-physical-and-torch-free-v1",
+            "stage": "speech-enhancement-load",
+            "required_free_bytes": 1073741824,
+            "reservation": false,
+            "oom_guarantee": false,
+            "query_started_at_utc": "2026-10-27T12:52:40.024058+00:00",
+            "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+            "logical_device_index": 0,
+            "idle_cache_release": {
+              "scope": "current-worker",
+              "synchronized": true,
+              "empty_cache_called": true,
+              "completed": true,
+              "active_allocation_preserved": true,
+              "allocated_before_bytes": 0,
+              "reserved_before_bytes": 0,
+              "allocated_after_bytes": 0,
+              "reserved_after_bytes": 0,
+              "released_reserved_bytes": 0
+            },
+            "query_command": [
+              "C:\\Windows\\System32\\nvidia-smi.EXE",
+              "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+              "--query-gpu=uuid,memory.total,memory.free",
+              "--format=csv,noheader,nounits"
+            ],
+            "torch_free_bytes": 11799625728,
+            "torch_total_bytes": 12884377600,
+            "physical_free_bytes": 10467934208,
+            "physical_total_bytes": 12884901888,
+            "effective_free_bytes": 10467934208,
+            "query_finished_at_utc": "2026-10-27T12:52:40.210998+00:00",
+            "sample_seconds": 0.18693999998504296,
+            "status": "admitted"
+          },
+          "load_seconds": 0.06585260000429116,
+          "weight_reader": "safetensors-pread",
+          "versions": {
+            "torch": "2.13.0+cu130",
+            "numpy": "2.4.2",
+            "safetensors": "0.8.0"
+          },
+          "cuda_peak_allocated_bytes": 89209856
+        },
+        "metrics": {
+          "samples": 253211,
+          "channels": 2,
+          "segments": 4,
+          "model_calls": 4,
+          "bypass_segments": 0,
+          "input_peak": 0.5279311537742615,
+          "output_peak": 0.3989209532737732,
+          "input_rms": 0.09106008178618173,
+          "output_rms": 0.056181151260668936,
+          "segment_state": "reset-per-segment",
+          "channel_mode": "independent-model-batch-rows",
+          "ola": "symmetric-positive-triangle-normalized",
+          "clipping": false,
+          "normalization": false,
+          "strength": 1.0,
+          "attenuation_limit_db": null
+        },
+        "effective_wet": 0.7963686257191835,
+        "native_clock": {
+          "logical_frames": 232986,
+          "native_sample_rate": 44100,
+          "channels": 2,
+          "channel_layout": "",
+          "native_time_base": "1/44100",
+          "demux_origin": "0",
+          "frame_count": 57,
+          "decoded_frames": 232986,
+          "gap_count": 0,
+          "overlap_count": 0,
+          "leading_gap_samples": 0,
+          "negative_first_sample": 0,
+          "gap_samples": 0,
+          "overlap_samples": 0,
+          "events": [],
+          "events_truncated": false,
+          "normalization_needed": false,
+          "quantization_tolerance_samples_rational": "1/2",
+          "relative_coarse_anchor_tolerance_samples_rational": "1/2",
+          "subtick_clock_jumps_recoverable": true,
+          "soft_async_resampling": false
+        },
+        "decoded_pcm_sha256": "sha256:517ab1650e86cceeb2009eb8ebbf130d49f09c3706e4995af7d65e2421790a80",
+        "input_PCM_sha256": "sha256:831c41ec34636e5dafc76427973e0f597433066438b69c2b629c143a65d97bdf",
+        "output_PCM_sha256": "sha256:49904e2b9120d4e39f20ad80d4a5da7ca2b046f4df1745f53047ef99bb3ab337",
+        "output_bytes": 1861104,
+        "output_peak": 0.41149020195007324,
+        "output_rms": 0.05952015124038562,
+        "output_sha256": "sha256:17e05998d39e48d610575fc8b13d7aa8f2fecc228eeea45811a58a482588c9f5",
+        "output_wav_bytes": 1861196,
+        "resampler": "ffmpeg-swr-filter_size32-explicit-nearest-sample-count",
+        "native_rate_preserved": true,
+        "channel_count_preserved": true,
+        "estimated_storage_bytes": 84355336,
+        "bypass_bit_exact": false,
+        "natural_quality_accepted": false,
+        "elapsed_seconds": 7.085739600006491
+      },
+      "cleanup": {
+        "worker_pid": 6836,
+        "returncode": 0,
+        "worker_exited": true,
+        "process_tree": "native-Windows-KILL_ON_JOB_CLOSE-before-worker-code",
+        "owner_job_closed": true
+      },
+      "complete_PCM_roundtrip_verified": true,
+      "native_sample_clock_verified": true,
+      "original_channels_verified": true,
+      "recipe": {
+        "protocol": "agent-native-speech-enhancement-v1",
+        "engine": "deepfilternet3-native-cuda-v1",
+        "source_asset_id": "asset_20261027125020_674b679b",
+        "source_sha256": "sha256:f36284277db567a39b5882f3c0ce4f1b52581d7cbfe25164fcb8adcef62a3b0e",
+        "model_sha256": "sha256:27339eb250a4c9924cfb6bfc69fc0ace9b17e5135fc51388c8fcfa798986de4d",
+        "range": {
+          "start_sample": 137,
+          "end_sample": 232775,
+          "samples": 232638,
+          "sample_rate": 44100
+        },
+        "channels": 2,
+        "selection": {
+          "start_seconds": 0.0031065759637188208,
+          "end_seconds": 5.278344671201814
+        },
+        "options": {
+          "strength": 0.85,
+          "attenuation_limit_db": 24.0
+        },
+        "model_settings": {
+          "threads": 4,
+          "segment_seconds": 2.0,
+          "overlap": 0.25
+        },
+        "sha256": "sha256:af9ca0a2e2cf324d4f62ba3d66c302833d2d88b4c7fbba7b1d9ba57d85e6c3a7"
+      },
+      "elapsed_seconds": 9.817797299998347,
+      "natural_quality_accepted": false
+    },
+    "clip": null,
+    "snapshot_id": "snap_20261027125234_fcf7a96b",
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "asset_20261027125013_23054963",
+          "rights_ref": "asset_20261027125013_23054963",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "asset_20261027125013_23054963",
+          "rights_ref": "asset_20261027125013_23054963",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "asset_20261027125015_6f39bbc5",
+          "rights_ref": "asset_20261027125015_6f39bbc5",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "asset_20261027125015_6f39bbc5",
+          "rights_ref": "asset_20261027125015_6f39bbc5",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "asset_20261027125017_9c652f30",
+          "rights_ref": "asset_20261027125017_9c652f30",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "asset_20261027125017_9c652f30",
+          "rights_ref": "asset_20261027125017_9c652f30",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "asset_20261027125020_674b679b",
+          "rights_ref": "asset_20261027125020_674b679b",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "asset_20261027125020_674b679b",
+          "rights_ref": "asset_20261027125020_674b679b",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "asset_20261027125023_7c30a0fa",
+          "rights_ref": "asset_20261027125023_7c30a0fa",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "asset_20261027125023_7c30a0fa",
+          "rights_ref": "asset_20261027125023_7c30a0fa",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "english_enhanced",
+          "rights_ref": "english_enhanced",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "english_enhanced",
+          "rights_ref": "english_enhanced",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_EVIDENCE_INCOMPLETE",
+          "message": "来源、许可证或证据字段缺失",
+          "asset_id": "english_enhanced",
+          "rights_ref": "english_enhanced",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "chinese_enhanced",
+          "rights_ref": "chinese_enhanced",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "chinese_enhanced",
+          "rights_ref": "chinese_enhanced",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "code": "RIGHTS_EVIDENCE_INCOMPLETE",
+          "message": "来源、许可证或证据字段缺失",
+          "asset_id": "chinese_enhanced",
+          "rights_ref": "chinese_enhanced",
+          "record_version": 1,
+          "context": "project_asset"
+        },
+        {
+          "status": "unverified",
+          "code": "RIGHTS_STATUS_BLOCKED",
+          "message": "状态 unverified 不允许发布",
+          "asset_id": "audio_adapter_df3_local",
+          "rights_ref": "audio_adapter_df3_local",
+          "record_version": 1,
+          "context": "derived_dependency"
+        },
+        {
+          "code": "RIGHTS_USE_NOT_PERMITTED",
+          "message": "记录未允许目标用途: commercial_ad",
+          "asset_id": "audio_adapter_df3_local",
+          "rights_ref": "audio_adapter_df3_local",
+          "record_version": 1,
+          "context": "derived_dependency"
+        }
+      ],
+      "rights": {
+        "ok": true,
+        "target": "commercial_ad",
+        "checked": 7,
+        "required_records": 8,
+        "failures": [],
+        "warnings": [
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "asset_20261027125013_23054963",
+            "rights_ref": "asset_20261027125013_23054963",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "asset_20261027125013_23054963",
+            "rights_ref": "asset_20261027125013_23054963",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "asset_20261027125015_6f39bbc5",
+            "rights_ref": "asset_20261027125015_6f39bbc5",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "asset_20261027125015_6f39bbc5",
+            "rights_ref": "asset_20261027125015_6f39bbc5",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "asset_20261027125017_9c652f30",
+            "rights_ref": "asset_20261027125017_9c652f30",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "asset_20261027125017_9c652f30",
+            "rights_ref": "asset_20261027125017_9c652f30",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "asset_20261027125020_674b679b",
+            "rights_ref": "asset_20261027125020_674b679b",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "asset_20261027125020_674b679b",
+            "rights_ref": "asset_20261027125020_674b679b",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "asset_20261027125023_7c30a0fa",
+            "rights_ref": "asset_20261027125023_7c30a0fa",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "asset_20261027125023_7c30a0fa",
+            "rights_ref": "asset_20261027125023_7c30a0fa",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "english_enhanced",
+            "rights_ref": "english_enhanced",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "english_enhanced",
+            "rights_ref": "english_enhanced",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_EVIDENCE_INCOMPLETE",
+            "message": "来源、许可证或证据字段缺失",
+            "asset_id": "english_enhanced",
+            "rights_ref": "english_enhanced",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "chinese_enhanced",
+            "rights_ref": "chinese_enhanced",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "chinese_enhanced",
+            "rights_ref": "chinese_enhanced",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "code": "RIGHTS_EVIDENCE_INCOMPLETE",
+            "message": "来源、许可证或证据字段缺失",
+            "asset_id": "chinese_enhanced",
+            "rights_ref": "chinese_enhanced",
+            "record_version": 1,
+            "context": "project_asset"
+          },
+          {
+            "status": "unverified",
+            "code": "RIGHTS_STATUS_BLOCKED",
+            "message": "状态 unverified 不允许发布",
+            "asset_id": "audio_adapter_df3_local",
+            "rights_ref": "audio_adapter_df3_local",
+            "record_version": 1,
+            "context": "derived_dependency"
+          },
+          {
+            "code": "RIGHTS_USE_NOT_PERMITTED",
+            "message": "记录未允许目标用途: commercial_ad",
+            "asset_id": "audio_adapter_df3_local",
+            "rights_ref": "audio_adapter_df3_local",
+            "record_version": 1,
+            "context": "derived_dependency"
+          }
+        ],
+        "disposition_decisions": [],
+        "effective_disposition_decisions": []
+      },
+      "schema_engine": "jsonschema",
+      "asset_count": 7,
+      "sequence_count": 1
+    },
+    "job_cleanup": [
+      {
+        "job_id": "job-ecb96cf4b05d41b1831c49c313bd5e0b",
+        "kind": "speech-enhancement",
+        "files": 17,
+        "workspace_bytes": 11514088,
+        "outputs": [
+          {
+            "path": "assets/derived/chinese_enhanced.wav",
+            "status": "referenced_preserved",
+            "identity": {
+              "device": 6713111436524353518,
+              "inode": 1407374887209361,
+              "bytes": 1861196
+            },
+            "sha256": "sha256:17e05998d39e48d610575fc8b13d7aa8f2fecc228eeea45811a58a482588c9f5"
+          }
+        ],
+        "status": "cleaned",
+        "removed_outputs": []
+      }
+    ]
+  },
+  "English_model_calls": 4,
+  "Chinese_model_calls": 4,
+  "human_input_rate": 16000,
+  "english_working_rate": 48000,
+  "chinese_source_rate": 24000,
+  "chinese_native_rate": 44100,
+  "retained_prior_checks": [
+    {
+      "name": "version registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "init registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "ingest-english-clean registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "ingest-english-noisy registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "ingest-chinese-clean registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "ingest-chinese-noisy registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "ingest-english-reverb-noisy registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "register registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "dry-run registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "dry-run leaves project byte-identical",
+      "ok": true
+    },
+    {
+      "name": "english-enhance registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "English complete native samples retained",
+      "ok": true
+    },
+    {
+      "name": "actual CUDA full graph with no network and no fallback",
+      "ok": true
+    },
+    {
+      "name": "chinese-enhance registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "Chinese exact odd native range and both independent channels preserved",
+      "ok": true
+    },
+    {
+      "name": "clean_control registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "reverb_control registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "bit-exact-bypass registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "all selected native stereo Float32 bits bypass exactly",
+      "ok": true
+    },
+    {
+      "name": "recipe-rerun registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "recipe rerun equals explicit native dry wet mix within Float32 rounding",
+      "ok": true
+    },
+    {
+      "name": "validate registered CLI0.1.43",
+      "ok": true
+    }
+  ],
+  "public_files": [
+    {
+      "path": "docs/assets/native-speech-enhancement-20261027-r2/chinese-clean.wav",
+      "bytes": 1863980,
+      "sha256": "347c15f0753b4c75be9ff49d8d5387d0d28cf469573e9d5eb74e5e789ff727b8"
+    },
+    {
+      "path": "docs/assets/native-speech-enhancement-20261027-r2/chinese-enhanced.wav",
+      "bytes": 1861196,
+      "sha256": "17e05998d39e48d610575fc8b13d7aa8f2fecc228eeea45811a58a482588c9f5"
+    },
+    {
+      "path": "docs/assets/native-speech-enhancement-20261027-r2/chinese-noisy.wav",
+      "bytes": 1863980,
+      "sha256": "f36284277db567a39b5882f3c0ce4f1b52581d7cbfe25164fcb8adcef62a3b0e"
+    },
+    {
+      "path": "docs/assets/native-speech-enhancement-20261027-r2/clean_control.wav",
+      "bytes": 1124252,
+      "sha256": "b0786d3f5523fb825485baea7360939fea897da8e84a6339a83dbef4b05fe57e"
+    },
+    {
+      "path": "docs/assets/native-speech-enhancement-20261027-r2/editable-enhancement.aevpkg.zip",
+      "bytes": 14010654,
+      "sha256": "b10d2c049378f31930f653ae4d9e80d290d414d53ee8436bb408edf0a9c8dd3d"
+    },
+    {
+      "path": "docs/assets/native-speech-enhancement-20261027-r2/english-clean.wav",
+      "bytes": 1124252,
+      "sha256": "32af8f010f35c02a9e949b27962792d6f73e5bf6aea1117d0e8c4087486cfc2c"
+    },
+    {
+      "path": "docs/assets/native-speech-enhancement-20261027-r2/english-enhanced.wav",
+      "bytes": 1124252,
+      "sha256": "c2d0da14ed8ff778abb383a34492c0fba06f4c8b3d115d0bcb988bcde0dd297e"
+    },
+    {
+      "path": "docs/assets/native-speech-enhancement-20261027-r2/english-noisy.wav",
+      "bytes": 1124252,
+      "sha256": "6037a35481869830f5543630000b6c6aca47c2bf28842f99c06e7b5b30887ff8"
+    },
+    {
+      "path": "docs/assets/native-speech-enhancement-20261027-r2/english-reverb-noisy.wav",
+      "bytes": 1124252,
+      "sha256": "2b4b552977109e401b2d44f22a3982d7f1e97591731566989eb958bea017015b"
+    },
+    {
+      "path": "docs/assets/native-speech-enhancement-20261027-r2/original-human-16k.flac",
+      "bytes": 120041,
+      "sha256": "4e25e22555cd16e90edb0a3b49fdcf1fe652b2a1250ab643634db33895c75b41"
+    },
+    {
+      "path": "docs/assets/native-speech-enhancement-20261027-r2/reverb_control.wav",
+      "bytes": 1124252,
+      "sha256": "41153f09a600438a1c4cc5268c1f46adbc85226bc4706c7d0b52502f8a8447a6"
+    },
+    {
+      "path": "docs/assets/native-speech-enhancement-20261027-r2/SOURCE.txt",
+      "bytes": 1528,
+      "sha256": "0792b093bca7f304004a438a9302d6f421458b2f354611878d7dd98eff3edb77"
+    },
+    {
+      "path": "docs/assets/native-speech-enhancement-20261027-r2/timeline-waveform.png",
+      "bytes": 12729,
+      "sha256": "bf76c3798d547afb3f49a17727a8e0b30c78447bf32275a65e4098bc30eb14f2"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{"event_id":"event_20261027132015_0ed39b2b","operation_id":"op_20261027132014_ac75c06e","type":"started","at":"2026-10-27T13:20:15.009109Z","stage":"audio.enhance","percent":0,"message":"执行原生CUDA对白增强","artifacts":[]}
+{"event_id":"event_20261027132017_b667f668","operation_id":"op_20261027132014_ac75c06e","type":"progress","at":"2026-10-27T13:20:17.713280Z","stage":"audio.enhance","percent":0,"message":"indexing-native-audio-clock","artifacts":[]}
+{"event_id":"event_20261027132018_65d20173","operation_id":"op_20261027132014_ac75c06e","type":"progress","at":"2026-10-27T13:20:18.442110Z","stage":"audio.enhance","percent":0,"message":"decoding-native-clock","artifacts":[]}
+{"event_id":"event_20261027132018_33d99c07","operation_id":"op_20261027132014_ac75c06e","type":"progress","at":"2026-10-27T13:20:18.851877Z","stage":"audio.enhance","percent":0,"message":"resampling-to-model-clock","artifacts":[]}
+{"event_id":"event_20261027132021_c2277173","operation_id":"op_20261027132014_ac75c06e","type":"progress","at":"2026-10-27T13:20:21.179810Z","stage":"audio.enhance","percent":0,"message":"loading-fixed-deepfilternet3","artifacts":[]}
+{"event_id":"event_20261027132021_8b802820","operation_id":"op_20261027132014_ac75c06e","type":"progress","at":"2026-10-27T13:20:21.282706Z","stage":"audio.enhance","percent":0,"message":"neural-enhancement","artifacts":[]}

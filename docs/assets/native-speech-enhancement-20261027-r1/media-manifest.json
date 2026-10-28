@@ -1,0 +1,48 @@
+{
+  "case": "C53-retained-incomplete-first-attempt",
+  "status": "failed-stereo-atomic-receipt-race",
+  "human_listening": false,
+  "original_attempt": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/verification.json",
+  "files": [
+    {
+      "path": "chinese-clean.wav",
+      "bytes": 1863980,
+      "sha256": "347c15f0753b4c75be9ff49d8d5387d0d28cf469573e9d5eb74e5e789ff727b8"
+    },
+    {
+      "path": "chinese-noisy.wav",
+      "bytes": 1863980,
+      "sha256": "f36284277db567a39b5882f3c0ce4f1b52581d7cbfe25164fcb8adcef62a3b0e"
+    },
+    {
+      "path": "english-clean.wav",
+      "bytes": 1124252,
+      "sha256": "32af8f010f35c02a9e949b27962792d6f73e5bf6aea1117d0e8c4087486cfc2c"
+    },
+    {
+      "path": "english-enhanced.wav",
+      "bytes": 1124252,
+      "sha256": "c2d0da14ed8ff778abb383a34492c0fba06f4c8b3d115d0bcb988bcde0dd297e"
+    },
+    {
+      "path": "english-noisy.wav",
+      "bytes": 1124252,
+      "sha256": "6037a35481869830f5543630000b6c6aca47c2bf28842f99c06e7b5b30887ff8"
+    },
+    {
+      "path": "english-reverb-noisy.wav",
+      "bytes": 1124252,
+      "sha256": "2b4b552977109e401b2d44f22a3982d7f1e97591731566989eb958bea017015b"
+    },
+    {
+      "path": "original-human-16k.flac",
+      "bytes": 120041,
+      "sha256": "4e25e22555cd16e90edb0a3b49fdcf1fe652b2a1250ab643634db33895c75b41"
+    },
+    {
+      "path": "SOURCE.txt",
+      "bytes": 1528,
+      "sha256": "0792b093bca7f304004a438a9302d6f421458b2f354611878d7dd98eff3edb77"
+    }
+  ]
+}

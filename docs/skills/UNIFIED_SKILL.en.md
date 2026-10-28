@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.42 / alpha.4-local.40 / r43 kit · 1 Skill / 17 modules / 81 files.**
+**CLI0.1.43 / alpha.4-local.41 / r44 kit · 1 Skill / 17 modules / 82 files.**
 
-Adds **actual native CUDA RIFE4.25 interpolation and editable slow motion**: native CFR/VFR PTS, every frame duration, all original RGBA anchors and selected original PCM remain intact. Integer2..8 factors,explicit cut holds,premultiplied alpha,rerunnable recipes and linked tracks.
+Adds **actual native CUDA DeepFilterNet3 speech denoising** with native sample clocks, mono/stereo, separate enhanced assets and editable audio tracks, strength/attenuation controls, overlapping segments, portable rerun recipes, packages and owned cancellation.
 
-[Native interpolation workflow and limits](../product/NEURAL_INTERPOLATION.md)
+[Speech enhancement workflow](../product/SPEECH_ENHANCEMENT.md)
 
 <!-- /community-current -->
 

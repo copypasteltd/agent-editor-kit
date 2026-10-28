@@ -975,3 +975,26 @@ Actual installed output and original/held-out sources are distinct. The editable
 ![Actual slowed source versus neural output](../assets/native-interpolation-20261027-r1/comparison.gif)
 
 [Playable slow-motion edit](../assets/native-interpolation-20261027-r1/slow-motion.mp4) · [Original24FPS reference](../assets/native-interpolation-20261027-r1/original-reference.mp4) · [Lossless full reference](../assets/native-interpolation-20261027-r1/original-reference.mov) · [Actual12FPS model input](../assets/native-interpolation-20261027-r1/sparse-source.mov) · [Original transparentVFR + stereoPCM](../assets/native-interpolation-20261027-r1/alpha-vfr-source.mov) · [Editable package + masters/recipes](../assets/native-interpolation-20261027-r1/editable-interpolation.aevpkg.zip) · [Retained failure/hold comparison](../assets/native-interpolation-20261027-r1/failure-and-hold.png) · [Worst original/model/error4x](../assets/native-interpolation-20261027-r1/held-out-worst.png) · [Separate hold alternative](../assets/native-interpolation-20261027-r1/explicit-hold-slow.mp4) · [Source/license](../assets/native-interpolation-20261027-r1/SOURCE.txt) · [Exact media hashes/clocks](../assets/native-interpolation-20261027-r1/media-manifest.json) · [Workflow](NEURAL_INTERPOLATION.md) · [Evidence](../validation/本地神经补帧实测_2026-10-27.md)
+
+<a id="c53-native-speech-enhancement"></a>
+
+## C53 · CUDA对白增强 / 對白增強 / Speech enhancement
+
+实际注册CLI0.1.43/统一Skill，RTX3060真实DeepFilterNet3/133张量。LibriSpeech CC-BY-4.0英语真人原始16kHz录音明确升采样48kHz；281040个原生样本，4次模型forward。另有原始24kHz Kokoro中文合成人声转44.1kHz双声道，显式范围137..232775、4次batch forward，两个声道独立处理。这不是原生全频真人/真实双声道录制。
+
+| Controlled case | Input SNR dB | Enhanced SNR dB | Enhanced SI-SDR dB |
+|---|---:|---:|---:|
+| english_seeded_noise | -0.0000 | 12.2545 | 12.2061 |
+| chinese_synthetic_seeded_noise | 0.0068 | 9.6947 | 9.2344 |
+| clean_control | 275.8199 | 29.5612 | 33.9701 |
+| reverb_control | -2.6932 | 5.8722 | 4.5736 |
+
+干净对白的输入误差为0；该行极大的输入SNR仅为公式分母1e-30保护值，不是实测动态范围。已知干净源/固定噪声指标不替代听感；混响仅三个离散延时的控制，不证明完整去混响。Segment2s/overlap0.25，每段特征/GRU重置，神经CUDA/前端CPU。
+
+![Actual waveform preview; silent GIF](../assets/native-speech-enhancement-20261027-r2/comparison.gif)
+
+[Audible clean/noisy/enhanced](../assets/native-speech-enhancement-20261027-r2/audible-comparison.mp4) · [Original human16k FLAC](../assets/native-speech-enhancement-20261027-r2/original-human-16k.flac) · [Clean48k WAV](../assets/native-speech-enhancement-20261027-r2/english-clean.wav) · [Noisy English input](../assets/native-speech-enhancement-20261027-r2/english-noisy.wav) · [Actual English enhanced](../assets/native-speech-enhancement-20261027-r2/english-enhanced.wav) · [Synthetic Mandarin clean](../assets/native-speech-enhancement-20261027-r2/chinese-clean.wav) · [Mandarin noisy input](../assets/native-speech-enhancement-20261027-r2/chinese-noisy.wav) · [Actual Mandarin enhanced selected range](../assets/native-speech-enhancement-20261027-r2/chinese-enhanced.wav) · [Clean-speech control output](../assets/native-speech-enhancement-20261027-r2/clean_control.wav) · [Reverb/noise input](../assets/native-speech-enhancement-20261027-r2/english-reverb-noisy.wav) · [Reverb control output](../assets/native-speech-enhancement-20261027-r2/reverb_control.wav) · [Scientific spectra/waveforms](../assets/native-speech-enhancement-20261027-r2/spectra-and-waveforms.png) · [Editable package](../assets/native-speech-enhancement-20261027-r2/editable-enhancement.aevpkg.zip) · [Rerun recipes](../assets/native-speech-enhancement-20261027-r2/recipes.json) · [License/provenance](../assets/native-speech-enhancement-20261027-r2/SOURCE.txt) · [Exact media hashes/probes](../assets/native-speech-enhancement-20261027-r2/media-manifest.json)
+
+All selected Float32 samples bypass bit-exactly at strength0. Complete source/output assets and immutable recipes survive package import; full rendered decoded PCM matches. Actual fragment import rebinds source/output IDs. Real cancellation after a completed neural segment terminates the owned worker,rolls back metadata,retains bounded diagnostics and leaves no half asset. No human listening/continuous playback or complete G17/product acceptance.
+
+[Workflow](SPEECH_ENHANCEMENT.md) · [Evidence](../validation/本地对白增强实测_2026-10-27.md)

@@ -606,6 +606,10 @@ def prepare_apply(project: dict, ledger: dict, payload: dict, info: dict, reques
     original_assets = {a['id']: a for a in source_project['assets']}
     for original, asset in zip(source_project['assets'], imported['assets'], strict=True):
         source = original.get('source') or {}
+        if source.get('speech_enhancement') is not None:
+            from .enhancement_plan import rebind_recipe
+            asset['source']['speech_enhancement'] = rebind_recipe(source['speech_enhancement'], mapping=maps['asset'], asset=original, assets=original_assets)
+            asset['source']['derived_from'] = [maps['asset'][v] for v in source['derived_from']]
         if source.get('interpolation') is not None:
             from .interpolation_plan import rebind_recipe
             asset['source']['interpolation'] = rebind_recipe(source['interpolation'], mapping=maps['asset'], asset=original, assets=original_assets)

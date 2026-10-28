@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.41\final-r1\installed\run.py", line 7, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.41\final-r1\installed\site\ai_ad_editor\cli.py", line 7330, in main
+    result = handler(args)
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.41\final-r1\installed\site\ai_ad_editor\enhancement_cli.py", line 107, in command
+    stage,result=execute(root,job,source,adapter,selection=selection,options=opts,storage_budget_bytes=args.storage_budget_mib*1024**2,
+                 ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        timeout=args.timeout_seconds,cancel_file=marker,operation_id=operation_id,progress=progress)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.41\final-r1\installed\site\ai_ad_editor\enhancement_pipeline.py", line 59, in execute
+    if sum(p.stat().st_size for p in work.rglob('*') if p.is_file())>storage_budget_bytes:raise error('STORAGE','实际增强工作空间超过预算')
+       ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\v0.1.0-alpha.4-local.41\final-r1\installed\site\ai_ad_editor\enhancement_pipeline.py", line 59, in <genexpr>
+    if sum(p.stat().st_size for p in work.rglob('*') if p.is_file())>storage_budget_bytes:raise error('STORAGE','实际增强工作空间超过预算')
+           ~~~~~~^^
+  File "C:\Python313\Lib\pathlib\_local.py", line 515, in stat
+    return os.stat(self, follow_symlinks=follow_symlinks)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] 系统找不到指定的文件。: 'E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r1\\可编辑 对白增强工程\\cache\\managed-jobs\\job-a8cb4fa756f84b0b9bf118d06c312dcd\\.response.json.sm4tglo3.tmp'

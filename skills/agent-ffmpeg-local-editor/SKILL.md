@@ -1,13 +1,13 @@
 ---
 name: agent-ffmpeg-local-editor
-description: "Edit and generate local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, native CUDA frame interpolation/slow motion and lip sync, tracking, explicit PQ/HLG HDR and SDR previews, seeded GPU particles, editable GPU flare/light leaks/chromatic split and highlight Bloom/Halation, GPU text/image/first-last generation with reusable model sessions, semantic search, voice/translation, subtitle dubbing, music/SFX and quality checks. Also use for ads, reference remakes, long-to-short clips and screen demos."
+description: "Edit and generate local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, native CUDA speech denoising, frame interpolation/slow motion and lip sync, tracking, explicit PQ/HLG HDR and SDR previews, seeded GPU particles, editable GPU flare/light leaks/chromatic split and highlight Bloom/Halation, GPU text/image/first-last generation with reusable model sessions, semantic search, voice/translation, subtitle dubbing, music/SFX and quality checks. Also use for ads, reference remakes, long-to-short clips and screen demos."
 ---
 
 # agent editor kit / unified local Skill
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.40` / CLI `0.1.42`.
+The current local runtime is `v0.1.0-alpha.4-local.41` / CLI `0.1.43`.
 Native Float32 GPU operations now use bounded owned control pipes. Read
 [GPU execution](references/projection-gpu.md) for policy, actual operator counts,
 cancellation and process/thread/stream cleanup receipts.
@@ -147,6 +147,10 @@ media. Add other modules when the request needs them. For example:
   Register the existing native CTC runtime explicitly. Use `activity` only for
   whitespace words, inspect preserved raw times and review decisions, and retain
   the continuous-speech/Chinese/lyrics quality limits.
+- Enhance noisy local dialogue: read [speech enhancement](references/speech-enhancement.md).
+  Use the registered CUDA model, retain source and enhanced tracks, and show actual
+  audio comparisons. Native sample counts/mono-stereo remain explicit; model
+  state resets per overlapping segment. Listening quality requires review.
 - Separate drums, bass, other instruments and vocals: read
   [audio-stems.md](references/audio-stems.md). Register the existing four-source
   runtime explicitly, prefer GPU with `auto`, retain the four editable tracks,

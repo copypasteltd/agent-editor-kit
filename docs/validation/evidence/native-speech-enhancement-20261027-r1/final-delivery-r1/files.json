@@ -1,0 +1,2752 @@
+[
+  {
+    "path": ".gitattributes",
+    "bytes": 107408,
+    "sha256": "684a11fc08dc3d1b6ad47f1b1dba64c55fd629e151af12dca89db930481c3c17"
+  },
+  {
+    "path": "README.en.md",
+    "bytes": 235223,
+    "sha256": "0ff19239bb666676748ccaf0a27fc013a606c373279125e2083c8b1924b700f0"
+  },
+  {
+    "path": "README.md",
+    "bytes": 219683,
+    "sha256": "cc78a0a58f9289b388d9acbea90bd3b324b1c96bcd16e8ba1ddbd562d4b9d6a5"
+  },
+  {
+    "path": "README.zh-TW.md",
+    "bytes": 220909,
+    "sha256": "e512bea15a74e87831c1510cf29056ddcb55197421c07d1b3c3be8daa0055fdf"
+  },
+  {
+    "path": "agent-ffmpeg-local-install-manifest.json",
+    "bytes": 27976,
+    "sha256": "67987047894fca7020b6dc73ca0832900e7ebc46631c1d5a6b4f71e0f5137c48"
+  },
+  {
+    "path": "docs/README.md",
+    "bytes": 15349,
+    "sha256": "a3b184de5010e0a838e44312f78172a3244954d11c308c5c3d5ad6cf71fd39a5"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r1/SOURCE.txt",
+    "bytes": 1528,
+    "sha256": "0792b093bca7f304004a438a9302d6f421458b2f354611878d7dd98eff3edb77"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r1/chinese-clean.wav",
+    "bytes": 1863980,
+    "sha256": "347c15f0753b4c75be9ff49d8d5387d0d28cf469573e9d5eb74e5e789ff727b8"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r1/chinese-noisy.wav",
+    "bytes": 1863980,
+    "sha256": "f36284277db567a39b5882f3c0ce4f1b52581d7cbfe25164fcb8adcef62a3b0e"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r1/english-clean.wav",
+    "bytes": 1124252,
+    "sha256": "32af8f010f35c02a9e949b27962792d6f73e5bf6aea1117d0e8c4087486cfc2c"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r1/english-enhanced.wav",
+    "bytes": 1124252,
+    "sha256": "c2d0da14ed8ff778abb383a34492c0fba06f4c8b3d115d0bcb988bcde0dd297e"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r1/english-noisy.wav",
+    "bytes": 1124252,
+    "sha256": "6037a35481869830f5543630000b6c6aca47c2bf28842f99c06e7b5b30887ff8"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r1/english-reverb-noisy.wav",
+    "bytes": 1124252,
+    "sha256": "2b4b552977109e401b2d44f22a3982d7f1e97591731566989eb958bea017015b"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r1/media-manifest.json",
+    "bytes": 1555,
+    "sha256": "97ca7d5813a368fb793e1c561829f31f0625797165a398073d99dea0be0a0f41"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r1/original-human-16k.flac",
+    "bytes": 120041,
+    "sha256": "4e25e22555cd16e90edb0a3b49fdcf1fe652b2a1250ab643634db33895c75b41"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r2/SOURCE.txt",
+    "bytes": 1528,
+    "sha256": "0792b093bca7f304004a438a9302d6f421458b2f354611878d7dd98eff3edb77"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r2/audible-comparison.mp4",
+    "bytes": 445203,
+    "sha256": "db6aaea221f686644bdd62aa332aa56c7e7f20c62ee665da20d6f0a51c1bcd42"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r2/chinese-clean.wav",
+    "bytes": 1863980,
+    "sha256": "347c15f0753b4c75be9ff49d8d5387d0d28cf469573e9d5eb74e5e789ff727b8"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r2/chinese-enhanced.wav",
+    "bytes": 1861196,
+    "sha256": "17e05998d39e48d610575fc8b13d7aa8f2fecc228eeea45811a58a482588c9f5"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r2/chinese-noisy.wav",
+    "bytes": 1863980,
+    "sha256": "f36284277db567a39b5882f3c0ce4f1b52581d7cbfe25164fcb8adcef62a3b0e"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r2/clean_control.wav",
+    "bytes": 1124252,
+    "sha256": "b0786d3f5523fb825485baea7360939fea897da8e84a6339a83dbef4b05fe57e"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r2/comparison.gif",
+    "bytes": 1339026,
+    "sha256": "cdea0a9e112d1507e1f8a3d8cb7d840e7029e7b7610433a86a2d7ae34f156a56"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r2/comparison.png",
+    "bytes": 24991,
+    "sha256": "bb14fe47931c740a9c12c9c1d8b2bcbb2d87039e6dc36a3d75fc1c0095b034e9"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r2/editable-enhancement.aevpkg.zip",
+    "bytes": 14010654,
+    "sha256": "b10d2c049378f31930f653ae4d9e80d290d414d53ee8436bb408edf0a9c8dd3d"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r2/english-clean.wav",
+    "bytes": 1124252,
+    "sha256": "32af8f010f35c02a9e949b27962792d6f73e5bf6aea1117d0e8c4087486cfc2c"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r2/english-enhanced.wav",
+    "bytes": 1124252,
+    "sha256": "c2d0da14ed8ff778abb383a34492c0fba06f4c8b3d115d0bcb988bcde0dd297e"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r2/english-noisy.wav",
+    "bytes": 1124252,
+    "sha256": "6037a35481869830f5543630000b6c6aca47c2bf28842f99c06e7b5b30887ff8"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r2/english-reverb-noisy.wav",
+    "bytes": 1124252,
+    "sha256": "2b4b552977109e401b2d44f22a3982d7f1e97591731566989eb958bea017015b"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r2/media-manifest.json",
+    "bytes": 27043,
+    "sha256": "e72ef49f2c7715ea7b8b473458b6ff8c72254d962ed3e40633ba92a78327e640"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r2/original-human-16k.flac",
+    "bytes": 120041,
+    "sha256": "4e25e22555cd16e90edb0a3b49fdcf1fe652b2a1250ab643634db33895c75b41"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r2/recipes.json",
+    "bytes": 1843,
+    "sha256": "e0be7c5982f23c9801be13a04ca8dd67faf09d17878ee67853559ddb9d406c95"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r2/reverb_control.wav",
+    "bytes": 1124252,
+    "sha256": "41153f09a600438a1c4cc5268c1f46adbc85226bc4706c7d0b52502f8a8447a6"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r2/spectra-and-waveforms.png",
+    "bytes": 920449,
+    "sha256": "ae4ef05e48fb5eb01882dff1949da77ec78d2b29927cb0b41beaf2705bb16e77"
+  },
+  {
+    "path": "docs/assets/native-speech-enhancement-20261027-r2/timeline-waveform.png",
+    "bytes": 12729,
+    "sha256": "bf76c3798d547afb3f49a17727a8e0b30c78447bf32275a65e4098bc30eb14f2"
+  },
+  {
+    "path": "docs/product/CAPABILITIES.en.md",
+    "bytes": 198493,
+    "sha256": "7abfc3dccac5ff2ff6b1ddb8ed43e41013d1b6ceccb1c8a6979ed3659f703f98"
+  },
+  {
+    "path": "docs/product/CAPABILITIES.md",
+    "bytes": 195782,
+    "sha256": "18ee4a3ca1be15a7784273efec35cf7d67b124bc055bd6fabaed50a24aa0de7b"
+  },
+  {
+    "path": "docs/product/CAPABILITIES.zh-TW.md",
+    "bytes": 195900,
+    "sha256": "3ee8bf897ed2f7b8d15b1ea360900b351757576ee16297f087031a29f27b9de2"
+  },
+  {
+    "path": "docs/product/CASES.md",
+    "bytes": 131651,
+    "sha256": "a6126c0287b1af9c04e508694ce277c73c45a27c657de487d729889ad28c88a9"
+  },
+  {
+    "path": "docs/product/COMMUNITY_LOCAL_DELIVERY.md",
+    "bytes": 31734,
+    "sha256": "fc15a8f8d34dd464e87542e19bf11bfad4493c4d88d46e37bee00b8fcc2500b0"
+  },
+  {
+    "path": "docs/product/GOAL_GAPS_20261025.md",
+    "bytes": 50294,
+    "sha256": "c4e8932cd67d004446332b53d0087c8be387e0f1043cc114624faa8439b117cc"
+  },
+  {
+    "path": "docs/product/IMPLEMENTATION_PLAN_20261025.md",
+    "bytes": 22272,
+    "sha256": "afe9c785000f51143c66fc2d873835e9b0d9442e24e5dfdca714998938e01ab0"
+  },
+  {
+    "path": "docs/product/SKILLS.en.md",
+    "bytes": 17296,
+    "sha256": "f7d48b3c43e387d90de48f088965957d3b2d29d92306ccb50b1776a79ccd72ee"
+  },
+  {
+    "path": "docs/product/SKILLS.md",
+    "bytes": 16786,
+    "sha256": "965da7388be3cf90c33a9c4a5491d4452f01a49997721a04146edb763da7a8b3"
+  },
+  {
+    "path": "docs/product/SKILLS.zh-TW.md",
+    "bytes": 16816,
+    "sha256": "ed16172ee30dc7af170702b8a2e67d349a1aea91528defa077e7ec0cd3f4a66e"
+  },
+  {
+    "path": "docs/product/SPEECH_ENHANCEMENT.md",
+    "bytes": 8625,
+    "sha256": "9d653a8912385f840021f5d157e03cd561d13fd9a8dabdfdf82753ab3ed69df1"
+  },
+  {
+    "path": "docs/product/speech-enhancement-capabilities-cli-0.1.43.json",
+    "bytes": 138341,
+    "sha256": "712bb6c16d09ff9ea770b6893d56c6c8a776a582635d07893f380c42bb9061f9"
+  },
+  {
+    "path": "docs/releases/CLI_0.1.43_LOCAL.md",
+    "bytes": 2817,
+    "sha256": "1dadd63ca4b2f24799ae5dc851867a93e5e023fd22ce9d9bd93f5d683f0dd925"
+  },
+  {
+    "path": "docs/skills/UNIFIED_SKILL.en.md",
+    "bytes": 7549,
+    "sha256": "8b8ce7595207266f25fd27e338f740b1e337c94405bd1a34fe8a73b1c877a2ff"
+  },
+  {
+    "path": "docs/skills/UNIFIED_SKILL.md",
+    "bytes": 7826,
+    "sha256": "64e0ab7094a2121bcc58dbb3a85fc44548a030d64093416a24a28f1e31cf0fef"
+  },
+  {
+    "path": "docs/skills/UNIFIED_SKILL.zh-TW.md",
+    "bytes": 7835,
+    "sha256": "c40dd36aa06789be15cf2d4edf96fc4ddd304d56f461fe3c8ca5968d1c17f482"
+  },
+  {
+    "path": "docs/skills/agent-editor-kit-community-unified-skill-r44.zip",
+    "bytes": 661493,
+    "sha256": "28c44d9f6d65cc4d4881a83b615a4697fa4bfdc857edec3394b74e9b79f634f6"
+  },
+  {
+    "path": "docs/skills/community-unified-skill-package-0.1.43-r44.json",
+    "bytes": 415,
+    "sha256": "e6948d283e6d119cf8be1d3f304eaccdcdee3addd44ea2786d93e055d2243416"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/acquisition.json",
+    "bytes": 10570,
+    "sha256": "01bd58b7d8af8c96513df950d13099dc7afa1162b8bd16cf33cf44caf1dad015"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r1/activation-and-registration.json",
+    "bytes": 1866,
+    "sha256": "7b7186e8ad4332ef05ede16602df9449591c875e7902c94ace6768d4f22f904c"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r1/activation.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r1/activation.stdout.json",
+    "bytes": 737,
+    "sha256": "498ed755ad2a377223babdb26fec48b26b530dbec0b97e419a699f43ec833031"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r1/executed-generator.py",
+    "bytes": 2808,
+    "sha256": "3166b73365b1ad1bffa74bca50d89ee734b0e0ec0053e29d751003907e31507b"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r1/kokoro-zh-en-cuda13.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r1/kokoro-zh-en-cuda13.stdout.json",
+    "bytes": 659,
+    "sha256": "020d998853a5bb7ac92dcacaff09d21bfe7fe0e32d07c3424d15541fd24e80c4"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r1/kokoro-zh-en-int8.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r1/kokoro-zh-en-int8.stdout.json",
+    "bytes": 655,
+    "sha256": "a61c6e98624df7c5929093dd518b685a8641ff55a8901eab1e37860fb53af384"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r1/opus-zh-en-cpu-int8.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r1/opus-zh-en-cpu-int8.stdout.json",
+    "bytes": 660,
+    "sha256": "9126849ef7fc2ae1d3b1c918f1e12fc0c1d205d0e669e95ff19ddbbf92a73de2"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r1/opus-zh-en-cuda12-int8.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r1/opus-zh-en-cuda12-int8.stdout.json",
+    "bytes": 666,
+    "sha256": "cde8ff16a9cf4e47af3622659422d0d7f1e0adba1370ee386444a620591e9bf8"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r1/previous-community-runtime.json",
+    "bytes": 797,
+    "sha256": "215495ee2c7f917d3394f3cae9821f4ad74765e1600af1282f1468b9f228b61c"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r1/previous-runtime.json",
+    "bytes": 624,
+    "sha256": "489e0b86c92b78b6d2479eb092e64f8d016bb622c924eee05b52891017e9d1bc"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r1/registration.json",
+    "bytes": 1024,
+    "sha256": "11f6130b02a4426aab1fb74849b0300878bf146e4e43a6d6ac0cf9e988422e05"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r1/registration.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r1/registration.stdout.txt",
+    "bytes": 379,
+    "sha256": "e11c904f7bb44d200e1abc4c9dcfac59b9a4ceed831273f205c0d08392692a53"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r1/verification.json",
+    "bytes": 782,
+    "sha256": "09b2b6f45e3e73d54bc2f63a67275c08463c19133f339dfa487b3ceac1da0e1d"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r2/activation-and-registration.json",
+    "bytes": 1866,
+    "sha256": "d87cc73daf1961f5dfe460250825a2e1a5ccce7d1a3a148ddf8bef52de08e630"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r2/activation.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r2/activation.stdout.json",
+    "bytes": 737,
+    "sha256": "7a3665cd1bc4ad48a7da40a5f139b7503d9193c1fae19a825693c3d3a7211073"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r2/executed-generator.py",
+    "bytes": 2808,
+    "sha256": "a8fa954a38b5f85bab1c73161ee12e8218cea16a84f6e159342ba6f964c9d372"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r2/kokoro-zh-en-cuda13.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r2/kokoro-zh-en-cuda13.stdout.json",
+    "bytes": 659,
+    "sha256": "38afb8cd9a05e8836abd75e9f25456fbe338580acced8a264c8d386361a103fd"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r2/kokoro-zh-en-int8.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r2/kokoro-zh-en-int8.stdout.json",
+    "bytes": 655,
+    "sha256": "3853276130ec7f0f21b52aa2ef8c24eaf56a25b4edb555d5afa9a6586661108a"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r2/opus-zh-en-cpu-int8.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r2/opus-zh-en-cpu-int8.stdout.json",
+    "bytes": 660,
+    "sha256": "f2ba707a5b5cc6f708f4427467a4326c817b5c8bd69b1ff86fa2ca4471c04f03"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r2/opus-zh-en-cuda12-int8.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r2/opus-zh-en-cuda12-int8.stdout.json",
+    "bytes": 666,
+    "sha256": "5b0a862e1846b6dc300d0e3d8def096a54ee36ba8555adf365c328f33fa5b9b6"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r2/previous-community-runtime.json",
+    "bytes": 797,
+    "sha256": "215495ee2c7f917d3394f3cae9821f4ad74765e1600af1282f1468b9f228b61c"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r2/previous-runtime.json",
+    "bytes": 624,
+    "sha256": "51af63b67d443ebc025c5b38a8ca9195feb7579419e8ea16594e7ae743edeba9"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r2/registration.json",
+    "bytes": 1024,
+    "sha256": "54a0812f70ac15daf12a9348c459d625f54a1e5bfb9a61ff697497f2ae180b90"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r2/registration.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r2/registration.stdout.txt",
+    "bytes": 379,
+    "sha256": "d290273d6977a874cbb16c2be1151f9e502062e08938a851a24cf8b527ed12be"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r2/verification.json",
+    "bytes": 782,
+    "sha256": "f45ad264c9e2c62eed6a93501c492749bd590519bcfce0a6e28505fc14eb0d2d"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r3/activation-and-registration.json",
+    "bytes": 1866,
+    "sha256": "ae7635951e002300df0f78c0fa933f4be3a52ddfb4c3da29aeb1e000171ddec8"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r3/activation.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r3/activation.stdout.json",
+    "bytes": 737,
+    "sha256": "33c18fea8fcafb843833cbd80fc62734798fb76b30fb5116ac82ab373b31d1a2"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r3/executed-generator.py",
+    "bytes": 2808,
+    "sha256": "917be07a58dc1167889196700c8c7a8603282bac78a9a86293e0525b781a06a0"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r3/kokoro-zh-en-cuda13.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r3/kokoro-zh-en-cuda13.stdout.json",
+    "bytes": 659,
+    "sha256": "4a5d685682f4aa66b64c0566efbf4cec9b859788379cfcd385fa551e4f934940"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r3/kokoro-zh-en-int8.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r3/kokoro-zh-en-int8.stdout.json",
+    "bytes": 655,
+    "sha256": "a4a5ca889fda0fa5745549992cd27f8bcfda6284dc4ac71c0ffe7ad37fe66243"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r3/opus-zh-en-cpu-int8.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r3/opus-zh-en-cpu-int8.stdout.json",
+    "bytes": 660,
+    "sha256": "9f088c8521eff84f6c6c6af5e33dc404fca47e0bed7acabe625d78fb3b8e79b8"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r3/opus-zh-en-cuda12-int8.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r3/opus-zh-en-cuda12-int8.stdout.json",
+    "bytes": 666,
+    "sha256": "417da860039c416c338c92f361a284663742ab892606e60ad8cbfd203578aa73"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r3/previous-community-runtime.json",
+    "bytes": 797,
+    "sha256": "215495ee2c7f917d3394f3cae9821f4ad74765e1600af1282f1468b9f228b61c"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r3/previous-runtime.json",
+    "bytes": 624,
+    "sha256": "b63f54050a35d0c63f4a3e4b1564709a5dbbd66d05d33d2fd7015ff24f0b88d1"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r3/registration.json",
+    "bytes": 1024,
+    "sha256": "039dbaf93eea93ee32a9b4410db694c1f47dbaa2c8a740443c68b452a41537c0"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r3/registration.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r3/registration.stdout.txt",
+    "bytes": 379,
+    "sha256": "f0842835ee14abc3eced712af887628520f5b00ac3fb20f7113a552aacafd1a7"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/activation-final-r3/verification.json",
+    "bytes": 782,
+    "sha256": "54a6c4d2e84ac70947bb4e85f89bf51f95533705726493ef07513cd44b21b366"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-complete-r1/executed-generator.py",
+    "bytes": 6796,
+    "sha256": "f12c6a59bf270844ac4a13be73bd51c841da367018d58777c432e86b28e655f0"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-complete-r1/original-render-pcm.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-complete-r1/package.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-complete-r1/package.stdout.json",
+    "bytes": 5766,
+    "sha256": "605a3978b15acecfae9031d2298c8a603768c86cbe42f75039a5ee46358a775b"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-complete-r1/render.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-complete-r1/render.stdout.json",
+    "bytes": 15376,
+    "sha256": "2c61c4d922c816bebb641a6b3c8ba29d06f0b73414350abf8dfbfb9e0cc0f78a"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-complete-r1/restore.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-complete-r1/restore.stdout.json",
+    "bytes": 1646,
+    "sha256": "7367b76ae4e47389fa3d2f2f103711c7561415cea8d6517ba552c8e32692784c"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-complete-r1/restored-render-pcm.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-complete-r1/restored-render.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-complete-r1/restored-render.stdout.json",
+    "bytes": 15308,
+    "sha256": "b3dcd74fca751ba65837b31331e4c6301c3901966d076c4200d06be78cc9563d"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-complete-r1/validate.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-complete-r1/validate.stdout.json",
+    "bytes": 21097,
+    "sha256": "ff2897e9dbe2e9beaf29abaa6f02c9cf40795fa84d24b7dfee06e84daddb9963"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-complete-r1/verification.json",
+    "bytes": 68929,
+    "sha256": "debdcf5b7c64e6f2a78bfd30372234e70af4c7ae002b9240ed18004771c84eab"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-complete-r1/waveform-compose.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-complete-r1/waveform-compose.stdout.json",
+    "bytes": 14780,
+    "sha256": "74d2fff83b8f89661bec24542b82720a6447b967027383d97fe9296f68b40dfd"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-complete-r1/waveform-ingest.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-complete-r1/waveform-ingest.stdout.json",
+    "bytes": 2967,
+    "sha256": "8613e2c1a8492e91b780285e3950f2d9010c8ef63de7308b5177877be0738030"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/chinese-enhance.stderr.txt",
+    "bytes": 2227,
+    "sha256": "53f13bd0868d1d9a73086a3d0bd8e80df9aa067617f31a9d9a14b5748f60a5f9"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/chinese-enhance.stdout.json",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/decode-chinese.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/decode-english-enhanced.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/decode-human.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/dry-run.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/dry-run.stdout.json",
+    "bytes": 1532,
+    "sha256": "0bb356f1531b549ba11361ab737546992e09c2885ae3bae47afd1ab332947667"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/encode-chinese-clean.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/encode-chinese-clean.stdout.json",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/encode-chinese-noisy.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/encode-chinese-noisy.stdout.json",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/encode-english-clean.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/encode-english-clean.stdout.json",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/encode-english-noisy.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/encode-english-noisy.stdout.json",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/encode-english-reverb-noisy.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/encode-english-reverb-noisy.stdout.json",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/english-enhance.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/english-enhance.stdout.json",
+    "bytes": 17366,
+    "sha256": "eef4431137a4d0dc38fda2fb5a69151a73f61616a08f3354a5490b5ae103c5cc"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/executed-generator.py",
+    "bytes": 13772,
+    "sha256": "866a13f71ae0b620ec76659378f548637868ab4ab515ac239ceaf833177c1061"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/ingest-chinese-clean.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/ingest-chinese-clean.stdout.json",
+    "bytes": 3021,
+    "sha256": "fb51f50c6e2b7f061c51062bb1d297938686c5cb9e0a2c20979ab425e82fef6a"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/ingest-chinese-noisy.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/ingest-chinese-noisy.stdout.json",
+    "bytes": 3021,
+    "sha256": "13357491c7898edbdceb389d9fce27e97427c5fcddb0dd24f3a0fd35b9816659"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/ingest-english-clean.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/ingest-english-clean.stdout.json",
+    "bytes": 3005,
+    "sha256": "9ca26ab5af68894ebdba224d2bdee26e0e47b01bb5d08cacbfb2e5c3956c2e67"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/ingest-english-noisy.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/ingest-english-noisy.stdout.json",
+    "bytes": 3005,
+    "sha256": "1780ecd3eb61e48be555785317444b91dd64e8881dba2371f3d2d03b71b21e7c"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/ingest-english-reverb-noisy.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/ingest-english-reverb-noisy.stdout.json",
+    "bytes": 3040,
+    "sha256": "421ec233ec9b6a1f6ef8689ef6003e372a9c4e426e9e14417ae5a555b58f9f98"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/init.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/init.stdout.json",
+    "bytes": 692,
+    "sha256": "ec06d05ca2c7167532cae4f632141deb409aeb12284ba7d01cfc870cffd2c12a"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/register.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/register.stdout.json",
+    "bytes": 8637,
+    "sha256": "89c8d2d61ee578ba8145fca3c40f25e5b9e2e606bbcc44c905f717bc254d4a62"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/verification.json",
+    "bytes": 21983,
+    "sha256": "a601db243d181ad7f67ebec2236fb382294c1d596554decb38611b5e22f639ee"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/version.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r1/version.stdout.json",
+    "bytes": 1168,
+    "sha256": "bf49808b9a4bc6fb25d92625770abfb846109521defee4d7ae5247b8ff6f5f5b"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/bit-exact-bypass.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/bit-exact-bypass.stdout.json",
+    "bytes": 20161,
+    "sha256": "304fec8fce20e15f13017a4f04c2606ffbfdcd0d02d427df13cd7736d85b3942"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/chinese-enhance.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/chinese-enhance.stdout.json",
+    "bytes": 18560,
+    "sha256": "1b1a29e3e20f8e1e4451b2a61f9e925baffce3acd172b9577f91953ea21ae60c"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/clean_control.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/clean_control.stdout.json",
+    "bytes": 19567,
+    "sha256": "91830dbe10a226b2006198cf64c32206314cbcac7546927491ab20ad779d9dbe"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/decode-bypass.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/decode-chinese-enhanced.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/decode-chinese.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/decode-clean_control.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/decode-english-enhanced.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/decode-gentle.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/decode-human.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/decode-reverb_control.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/dry-run.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/dry-run.stdout.json",
+    "bytes": 1532,
+    "sha256": "bcfaa7877ff0dbc6a81f947bb228b66825c27c186bdd70ff44cb8e564d6cf1c0"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/encode-chinese-clean.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/encode-chinese-clean.stdout.json",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/encode-chinese-noisy.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/encode-chinese-noisy.stdout.json",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/encode-english-clean.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/encode-english-clean.stdout.json",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/encode-english-noisy.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/encode-english-noisy.stdout.json",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/encode-english-reverb-noisy.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/encode-english-reverb-noisy.stdout.json",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/english-enhance.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/english-enhance.stdout.json",
+    "bytes": 17368,
+    "sha256": "0031363f280633ad18837246e4642f4a7772a3de48e40d6c3d8c752a64a6803c"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/executed-generator.py",
+    "bytes": 13772,
+    "sha256": "866a13f71ae0b620ec76659378f548637868ab4ab515ac239ceaf833177c1061"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/ingest-chinese-clean.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/ingest-chinese-clean.stdout.json",
+    "bytes": 3021,
+    "sha256": "b67f7af6f6a8fe88c5df42e41e357f2671bd745b6a965b363afba06e940635aa"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/ingest-chinese-noisy.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/ingest-chinese-noisy.stdout.json",
+    "bytes": 3021,
+    "sha256": "d11997722c2c8e4b151dfa6e1a9e185067d751aaa0274a3d715831a618d70d1f"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/ingest-english-clean.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/ingest-english-clean.stdout.json",
+    "bytes": 3005,
+    "sha256": "362e2fc026c1a79a6615da1b8c776f6b00972feeb2f73fd62659d71427a432ee"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/ingest-english-noisy.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/ingest-english-noisy.stdout.json",
+    "bytes": 3005,
+    "sha256": "5fa696e222091461af2f682597df0ef601d591fa3eaa37a8c49e28be3424d717"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/ingest-english-reverb-noisy.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/ingest-english-reverb-noisy.stdout.json",
+    "bytes": 3040,
+    "sha256": "7d7819b919730159c93758bf0d6cb0cec7cf1fcf0c09045698b2f99c74933bf6"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/init.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/init.stdout.json",
+    "bytes": 692,
+    "sha256": "5fef973e0d70a5434c9e87da4c311b35692609d6451eb14b0ae21671c3e6bd6c"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/recipe-rerun.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/recipe-rerun.stdout.json",
+    "bytes": 23124,
+    "sha256": "6d7e8d8500f1c39e76b30969b8b916e5e7428ea996c623fac1a52a5c3fad8b15"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/register.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/register.stdout.json",
+    "bytes": 8637,
+    "sha256": "32ff34c7a70fc7ea7a0c5baef619b28d82c0f0a7ee20b4e12d9e1ddad053dc89"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/render.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/render.stdout.json",
+    "bytes": 506,
+    "sha256": "5ea86d2e099f401fd74b46a2424e55532050e302529cb7f5cacba448c685b6af"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/reverb_control.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/reverb_control.stdout.json",
+    "bytes": 20754,
+    "sha256": "a65d15e0d4ccaa482ed0836122003312cb10a39755bf91101de955c4928aafc6"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/validate.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/validate.stdout.json",
+    "bytes": 19723,
+    "sha256": "819a18ec492bf5b651a22a3afa40b9a683e173cd0b5377b4240043e4ad6bf074"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/verification.json",
+    "bytes": 32866,
+    "sha256": "77d359f75196bf732ed2e1b5ee6efd1390d64b4fe0a7a3c80ae9e222a1fe2962"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/version.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/case-r2/version.stdout.json",
+    "bytes": 1168,
+    "sha256": "1b3b4f41835f9d78ebf2dea218872b452caa6aaea70f8136d51c069e1b11b90b"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/conversion.json",
+    "bytes": 650,
+    "sha256": "dd776a03c76af779c51f698d52b5cb58d9b34bcb1038aaed7202d490657c5a5c"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/documentation-r1/executed-generator.py",
+    "bytes": 26656,
+    "sha256": "ee59ab47135c4f825179aa5725aa86a22c1c20e2ad7b189a1d5243298c328eac"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/documentation-r1/verification.json",
+    "bytes": 240,
+    "sha256": "1b86d2b1319b2212f752bcfd599869d5205a9134af9eb66b5aaaf9618bdffece"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/human-speech-acquisition.json",
+    "bytes": 820,
+    "sha256": "77e3b3d3b1ab951e421118e1701b296e79fbda07ac0a8115118c7c208c0b0ef2"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r1/build.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r1/build.stdout.json",
+    "bytes": 448,
+    "sha256": "46c344f665a07f9a75f2072a4f8b1a420e6bd8d4d4428065044bfd183d104bef"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r1/calls.json",
+    "bytes": 2616,
+    "sha256": "d530926e2cb670657a915ca3b4b35a1e31e6fd42e6e0ec692d3db80455ab19c8"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r1/capabilities.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r1/capabilities.stdout.json",
+    "bytes": 138341,
+    "sha256": "d22c9feaf72ca4154877b7d2a35a8916b10a5d2c288e690badade8f6f0494c21"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r1/executed-generator.py",
+    "bytes": 5371,
+    "sha256": "f6bbb3ebd5d3ea46bb9bfff6c17080c51f808c8935a8eb74ce026e2eb62cf921"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r1/install.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r1/install.stdout.json",
+    "bytes": 1709,
+    "sha256": "549e233e47f5dfc2141985033ff0b759096432008d532f640e876148efe5f94c"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r1/verification.json",
+    "bytes": 35566,
+    "sha256": "8f02b1fee9e9433eb7a825cdac075fcf3c373759d91884190df103846e5e0a08"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r1/version.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r1/version.stdout.json",
+    "bytes": 1168,
+    "sha256": "f5a2a69d12b480d365d4db0d8ded82fa18288f43ade78f281ce3555cee3cb73a"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r2/build.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r2/build.stdout.json",
+    "bytes": 448,
+    "sha256": "2174db3570aae947d66495a8888adf593b619c89b2ab77d542e27c79cc56081e"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r2/calls.json",
+    "bytes": 2616,
+    "sha256": "028f220d044ace9f9b76a0be92af2bbda78d397d79ec5d147b1b64ce527da358"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r2/capabilities.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r2/capabilities.stdout.json",
+    "bytes": 138341,
+    "sha256": "9a80dedd7b409707c4266cbcb77bdc0ca2cac2b1d695a9e2d489412fd5f590c2"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r2/executed-generator.py",
+    "bytes": 5371,
+    "sha256": "f6bbb3ebd5d3ea46bb9bfff6c17080c51f808c8935a8eb74ce026e2eb62cf921"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r2/install.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r2/install.stdout.json",
+    "bytes": 1709,
+    "sha256": "d25dc7d942dfc253249d9618627bb58d642c4f597fc830398f6c2e0be8ace4f0"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r2/verification.json",
+    "bytes": 35566,
+    "sha256": "fb3b134bb88fe6e159a44cbad3ace85db1ca1866fb809139e1f3e19bf1fb93de"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r2/version.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r2/version.stdout.json",
+    "bytes": 1168,
+    "sha256": "1c50de9f98ac04d1c8d5f18286b43be25f851f0aa61290035b68d15227b44a5a"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r3/build.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r3/build.stdout.json",
+    "bytes": 448,
+    "sha256": "0a73e876a1c4a7a4f15263dc663aa7080ee2c6668fa5ef0b3747e6ab41b02547"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r3/calls.json",
+    "bytes": 2616,
+    "sha256": "0abf1e5cac6b8fe9663fadbe8cc874dd27f7f4ea5c49f9b5ed3214652938fd0c"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r3/capabilities.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r3/capabilities.stdout.json",
+    "bytes": 138341,
+    "sha256": "712bb6c16d09ff9ea770b6893d56c6c8a776a582635d07893f380c42bb9061f9"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r3/executed-generator.py",
+    "bytes": 5371,
+    "sha256": "f6bbb3ebd5d3ea46bb9bfff6c17080c51f808c8935a8eb74ce026e2eb62cf921"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r3/install.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r3/install.stdout.json",
+    "bytes": 1709,
+    "sha256": "b7d3be29a814a04c350d64e1b82321bef4be737d0d66ef24ebe87992638d56cc"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r3/verification.json",
+    "bytes": 35566,
+    "sha256": "04359ff7be1a6132f07f5bddc406325c9c12f018ff843f31689df8d664b10c90"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r3/version.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installation-final-r3/version.stdout.json",
+    "bytes": 1168,
+    "sha256": "f699e5d605a837381c547eba2193cedd3298b294a244f70d5b091580236d0278"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r1/executed-runner.py",
+    "bytes": 2925,
+    "sha256": "6f4440c68806d28b3c8015c48edc85bd81a5be6adc269ac9d003c3b46f1d7fdd"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r1/executed-tests/test_fragments.py",
+    "bytes": 31008,
+    "sha256": "d021051b4a5b48deac872e319407c9dae0cb2e7b3c8f1a7ab71704dff756a35f"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r1/executed-tests/test_interpolation.py",
+    "bytes": 21037,
+    "sha256": "53a6a7ccd44c012e125629ed18555a870ac2014184ca8a229711397959171734"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r1/executed-tests/test_local_separation.py",
+    "bytes": 22286,
+    "sha256": "16c8807ea75de1e172bff6c5a73e90c4d7e148e4ce2866c1f2077d66708c26c0"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r1/executed-tests/test_native_audio_clock.py",
+    "bytes": 20014,
+    "sha256": "0537ba3da192665a26d97a3a39eb5a38b05a30adb6d39a0822696fd493e043c8"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r1/executed-tests/test_schema_contract.py",
+    "bytes": 8251,
+    "sha256": "cbffcdb7c2e0c5b9d8bd1cc0bed68004cc30a467bb7a08f2fc7aab64bb71c409"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r1/executed-tests/test_stem_separation.py",
+    "bytes": 15589,
+    "sha256": "d25fd94aed99c36263eddf1e83399ed9caba968c78b4ddac8e411bb2366fa0ed"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r1/tests.log",
+    "bytes": 24923,
+    "sha256": "cd69d178d28006c024da0791aecac21903e9c3d6a09f1226dd36669e1e2e9af4"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r1/verification.json",
+    "bytes": 25956,
+    "sha256": "7e61449766b5241a790fd068db8da283659b23d94bbf435516d684448020ce2e"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r2/executed-runner.py",
+    "bytes": 2925,
+    "sha256": "6f4440c68806d28b3c8015c48edc85bd81a5be6adc269ac9d003c3b46f1d7fdd"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r2/executed-tests/test_fragments.py",
+    "bytes": 31008,
+    "sha256": "d021051b4a5b48deac872e319407c9dae0cb2e7b3c8f1a7ab71704dff756a35f"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r2/executed-tests/test_interpolation.py",
+    "bytes": 21037,
+    "sha256": "53a6a7ccd44c012e125629ed18555a870ac2014184ca8a229711397959171734"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r2/executed-tests/test_local_separation.py",
+    "bytes": 22286,
+    "sha256": "16c8807ea75de1e172bff6c5a73e90c4d7e148e4ce2866c1f2077d66708c26c0"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r2/executed-tests/test_native_audio_clock.py",
+    "bytes": 20014,
+    "sha256": "0537ba3da192665a26d97a3a39eb5a38b05a30adb6d39a0822696fd493e043c8"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r2/executed-tests/test_schema_contract.py",
+    "bytes": 8251,
+    "sha256": "cbffcdb7c2e0c5b9d8bd1cc0bed68004cc30a467bb7a08f2fc7aab64bb71c409"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r2/executed-tests/test_stem_separation.py",
+    "bytes": 15589,
+    "sha256": "d25fd94aed99c36263eddf1e83399ed9caba968c78b4ddac8e411bb2366fa0ed"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r2/tests.log",
+    "bytes": 24923,
+    "sha256": "618e8b0f1a32ed271f96153018ec6684b5d900332567f4e9eaf57a39cf459150"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r2/verification.json",
+    "bytes": 25956,
+    "sha256": "cb0edfd2451f1dbc04eb1a44d984f6e36e60c8706fdfd6d747330731eabb2adf"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r3/executed-runner.py",
+    "bytes": 2925,
+    "sha256": "6f4440c68806d28b3c8015c48edc85bd81a5be6adc269ac9d003c3b46f1d7fdd"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r3/executed-tests/test_fragments.py",
+    "bytes": 31008,
+    "sha256": "d021051b4a5b48deac872e319407c9dae0cb2e7b3c8f1a7ab71704dff756a35f"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r3/executed-tests/test_interpolation.py",
+    "bytes": 21037,
+    "sha256": "53a6a7ccd44c012e125629ed18555a870ac2014184ca8a229711397959171734"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r3/executed-tests/test_local_separation.py",
+    "bytes": 22286,
+    "sha256": "16c8807ea75de1e172bff6c5a73e90c4d7e148e4ce2866c1f2077d66708c26c0"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r3/executed-tests/test_native_audio_clock.py",
+    "bytes": 20014,
+    "sha256": "0537ba3da192665a26d97a3a39eb5a38b05a30adb6d39a0822696fd493e043c8"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r3/executed-tests/test_schema_contract.py",
+    "bytes": 8251,
+    "sha256": "cbffcdb7c2e0c5b9d8bd1cc0bed68004cc30a467bb7a08f2fc7aab64bb71c409"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r3/executed-tests/test_stem_separation.py",
+    "bytes": 15589,
+    "sha256": "d25fd94aed99c36263eddf1e83399ed9caba968c78b4ddac8e411bb2366fa0ed"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r3/tests.log",
+    "bytes": 24923,
+    "sha256": "e37273269fe896488b6723f46356c4230e01b52f8103196ae4f92d4884d03405"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-compat-r3/verification.json",
+    "bytes": 25956,
+    "sha256": "4fe7320cd47067654ec6d0a7c5b33722462dce76649eacabfe3e5f685f4a2be5"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-enhancement-r1/executed-runner.py",
+    "bytes": 2925,
+    "sha256": "6f4440c68806d28b3c8015c48edc85bd81a5be6adc269ac9d003c3b46f1d7fdd"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-enhancement-r1/executed-tests/test_speech_enhancement.py",
+    "bytes": 16950,
+    "sha256": "216a843de7348b41967a81802912dbcbc22ea8e55d472068afb0875edf3a9dfc"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-enhancement-r1/tests.log",
+    "bytes": 4475,
+    "sha256": "79247beaf0123da9506c4423792f27d2658607032d6e47746fa0882808a5a3e3"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-enhancement-r1/verification.json",
+    "bytes": 25329,
+    "sha256": "9851136ff029d170ca03c14ea9f780217251e03dcf34d23c393596b835418c98"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-enhancement-r2/executed-runner.py",
+    "bytes": 2925,
+    "sha256": "6f4440c68806d28b3c8015c48edc85bd81a5be6adc269ac9d003c3b46f1d7fdd"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-enhancement-r2/executed-tests/test_speech_enhancement.py",
+    "bytes": 17874,
+    "sha256": "1ff0c31dce536b24ba62bbc2a3cdfc6892a5b67c9f3cf26d13a568bc4594b063"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-enhancement-r2/tests.log",
+    "bytes": 4674,
+    "sha256": "a05db4a27b618dcc45276429fb887725dbd276a1453d32399d432498e1fbd40a"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-enhancement-r2/verification.json",
+    "bytes": 25329,
+    "sha256": "252b296fa01294535ba1cd498edeeb286a8124b7171581e235e94cdaff1f6c70"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-enhancement-r3/executed-runner.py",
+    "bytes": 2925,
+    "sha256": "6f4440c68806d28b3c8015c48edc85bd81a5be6adc269ac9d003c3b46f1d7fdd"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-enhancement-r3/executed-tests/test_speech_enhancement.py",
+    "bytes": 19027,
+    "sha256": "1af6dfd0297bfb758ecf2e7f12194057b4818a23c9115a7a23b745d53cc869c1"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-enhancement-r3/tests.log",
+    "bytes": 4872,
+    "sha256": "a82d88964d692b0979853aaa69f8a7887315608c5a0d13f934bc6324d9efaaa7"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/installed-enhancement-r3/verification.json",
+    "bytes": 25329,
+    "sha256": "3f037c778a077b403194362c9f3383692507e310e24b10b3b3c4869957bc0082"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/calls.json",
+    "bytes": 6596,
+    "sha256": "cd1e4c8c7ac35596e5258430aa9384e3f84acd638e7ddc48af83f865f79caf9b"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/capabilities.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/capabilities.stdout.txt",
+    "bytes": 138341,
+    "sha256": "bbb26cb47e59806137dc9a0cf997a4f186fc7bf52e93396e15ed25482afabdfd"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/configure.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/configure.stdout.txt",
+    "bytes": 883,
+    "sha256": "8de24c5ccd727a8b132cb80eddc0ba545c29b643f8d09095c18ed0d5659d4c43"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/enhance-help.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/enhance-help.stdout.txt",
+    "bytes": 1992,
+    "sha256": "14a85a8f484bcee9ea5ede90d8aee4d0073e62dbfc44dab6ba1215a23bd0235c"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/executed-generator.py",
+    "bytes": 6803,
+    "sha256": "104e4a425f88fac3ad58236b4e6dc65cc5e623a618d52661e16f1c55ec0beae8"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/failure.json",
+    "bytes": 7016,
+    "sha256": "4d47b72976a7e7787138c38f06feb8d66761635cb5e1712dde1818cfeb34e831"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/import.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/import.stdout.txt",
+    "bytes": 1660,
+    "sha256": "734bd12c84aa25951f5e8d004565ce8728768c1c7acd9a4883fb15093c398817"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/list.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/list.stdout.txt",
+    "bytes": 7690,
+    "sha256": "e6fd1c27d90de99205198afe93e242688ebf2011c1587d369106a8cf7a0212f3"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/register-help.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/register-help.stdout.txt",
+    "bytes": 2219,
+    "sha256": "d20cd8095cad523ccc356cb0f9159ab3844bcec1db9606a2e1cc68be391ec7ec"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/register.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/register.stdout.txt",
+    "bytes": 366,
+    "sha256": "5b278616afb67a309ebd4355909740c932c495979e7d5a92d63ab91760bd0140"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/registration.json",
+    "bytes": 1246,
+    "sha256": "3f397a0e513d9d9276bbc1d0f6f0ebc0ed865c8e2f388902d6ee804012f9f417"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/retained-input-kit.zip",
+    "bytes": 661269,
+    "sha256": "a8b0b4f546ec749f633db3225d162bb6ca4e816503e2782b91b4bd891fc3cd9e"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/validate.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/validate.stdout.txt",
+    "bytes": 21088,
+    "sha256": "fdeabd2db745eb0a83faa26264ef7b804bad6ed5ba443e461b5b80f941c52ad2"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/version.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r1/version.stdout.txt",
+    "bytes": 1168,
+    "sha256": "e532f55b11434070da3baca4ea3bbc5e888b1292ffe2531c3ddcf59b9e121269"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/calls.json",
+    "bytes": 7948,
+    "sha256": "39313fd110076bed982008d260bc7cf3b86b4b30b5932ea2fd808fd80fc8cc33"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/capabilities.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/capabilities.stdout.txt",
+    "bytes": 138341,
+    "sha256": "165d38bd0244352853e7401b011c13d6c40dd5e01342317017505c7cc4a59d4d"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/configure.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/configure.stdout.txt",
+    "bytes": 883,
+    "sha256": "908b332fea04fb08004a85b1ea9f110f91dd727c7a18c8560f6172d017ad7719"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/enhance-help.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/enhance-help.stdout.txt",
+    "bytes": 1992,
+    "sha256": "14a85a8f484bcee9ea5ede90d8aee4d0073e62dbfc44dab6ba1215a23bd0235c"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/executed-generator.py",
+    "bytes": 6872,
+    "sha256": "b4118791fd4a012c0d0205bed062471115bf6f64246ea986264c0170635b54ba"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/import.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/import.stdout.txt",
+    "bytes": 1660,
+    "sha256": "575b48d50bd03b1e5d5bfd135038c0dbdf504aaff46e58e2bbdb4f715497d0b2"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/list.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/list.stdout.txt",
+    "bytes": 7690,
+    "sha256": "ad7eb4f5b69dab3253b86ea4ed287d1e6473b88de464af1906a753c2be1108ac"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/register-help.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/register-help.stdout.txt",
+    "bytes": 2219,
+    "sha256": "d20cd8095cad523ccc356cb0f9159ab3844bcec1db9606a2e1cc68be391ec7ec"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/register-plan.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/register-plan.stdout.txt",
+    "bytes": 8483,
+    "sha256": "835e0c7975ea4e7f4aa64a8010f310e99e6443c1a6694e5dee34baaa6db6a127"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/register.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/register.stdout.txt",
+    "bytes": 366,
+    "sha256": "6d1bdf2ec76a870c71a30954e611c50bae1453583a56597eb5a1a847723ce104"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/registration.json",
+    "bytes": 1246,
+    "sha256": "fcc06b2304f31944efad6854190375398e91b06399eae1c891763328b6865d09"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/validate.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/validate.stdout.txt",
+    "bytes": 21088,
+    "sha256": "fb157419d021d62711b310c41d37dfa6fd067924419c18e59dbaa5e6dd0527d8"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/verification.json",
+    "bytes": 712,
+    "sha256": "6ab3e82092f70103824abf0efa53582c477f34a4afd1a78019c972ebe8834cb8"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/version.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/version.stdout.txt",
+    "bytes": 1168,
+    "sha256": "96e964bf75099fec6908a8618a4d5a38f169097464960e6c77f891c4a00a64e6"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/librispeech-license-page.html",
+    "bytes": 8245,
+    "sha256": "9b012c60f8fe6a5435f96cf034c042ffe4222e7936c88cb835671413e74a5301"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/comparison-encode.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/decode-english-clean.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/decode-english-clean.stdout.txt",
+    "bytes": 1124160,
+    "sha256": "a483eaaae2757449ba7364e99477a0ea67483c218abb422211d68f24d632e288"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/decode-english-enhanced.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/decode-english-enhanced.stdout.txt",
+    "bytes": 1124160,
+    "sha256": "83354f670149b119a676c978e21a5a08b3e5a936bbcc1f33dd836cf42ddb2d12"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/decode-english-noisy.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/decode-english-noisy.stdout.txt",
+    "bytes": 1124160,
+    "sha256": "cea5329016f98148718309588c1418eecc6db4b3a59a5cc15776090adae4b9eb"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/encode-comparison-audio.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/encode-comparison-audio.stdout.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/executed-generator.py",
+    "bytes": 7396,
+    "sha256": "a72c9f0e8dcbeb09b10f92f104f536e4ffa92a52abe813585c6b6cf97c428b1c"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/probe-audible-comparison.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/probe-audible-comparison.stdout.txt",
+    "bytes": 4474,
+    "sha256": "0aa1c0ecabea464ae69eb36d814d0fd1452ce02f39f9861a26c38d42ed1a2abf"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/probe-chinese-clean.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/probe-chinese-clean.stdout.txt",
+    "bytes": 1911,
+    "sha256": "9b2806e17f5d8b4b4d047df6d435c024e02d56cfd6ff03fa2a0ab97912beb777"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/probe-chinese-enhanced.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/probe-chinese-enhanced.stdout.txt",
+    "bytes": 1914,
+    "sha256": "0894a6a6a29c673cb13fe2cb16adbd8f4349bf6ac939e75cf1cf50513eddd27a"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/probe-chinese-noisy.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/probe-chinese-noisy.stdout.txt",
+    "bytes": 1911,
+    "sha256": "0247e64beb6b07df27cf38fdeac3227a63f2c6e687a9f5f0f24e8f4f3a52520d"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/probe-clean_control.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/probe-clean_control.stdout.txt",
+    "bytes": 1911,
+    "sha256": "4111aa13206d23371ba893613e7cf27e593d427a6ddf1cfdcfbd6d59b2338283"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/probe-english-clean.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/probe-english-clean.stdout.txt",
+    "bytes": 1911,
+    "sha256": "d9347c7986476b374a64b844a1b49997b048f3dac526c0ee9f963d7086b688d8"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/probe-english-enhanced.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/probe-english-enhanced.stdout.txt",
+    "bytes": 1914,
+    "sha256": "15326a1ac6cba32d70e8d30a3023c12f84c3cc84267bd142630007bf6966d95e"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/probe-english-noisy.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/probe-english-noisy.stdout.txt",
+    "bytes": 1911,
+    "sha256": "205596851a65dd7068c3793e76e0e3581e7d9b49175e78863242da54757d1a2d"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/probe-english-reverb-noisy.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/probe-english-reverb-noisy.stdout.txt",
+    "bytes": 1918,
+    "sha256": "96eebe836828ffc63971f051ea63e24582da1ff419560b1b5b3184f4665d9bec"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/probe-original-human-16k.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/probe-original-human-16k.stdout.txt",
+    "bytes": 2038,
+    "sha256": "39dab5c200e88bdb8913326f00c74682c82c8326bdc47d18a9e5a256bde53a17"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/probe-reverb_control.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/probe-reverb_control.stdout.txt",
+    "bytes": 1912,
+    "sha256": "0d6631c69192be7566aaa8e495d51a2b19c1d9fc3e1a7559e89538197433af5c"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/media-r1/verification.json",
+    "bytes": 1790,
+    "sha256": "0a2fb6005ced868c79f70faf9abbc7833c2e24b81238e8d8cdb35ea7e72e225f"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/probe-r1/cuda-output.f32",
+    "bytes": 576548,
+    "sha256": "3521eb0e3c4f4a6db76ed37f8202fff0a5f5d4553c195f04edb46d2413762570"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/probe-r1/independent-reference.json",
+    "bytes": 1016,
+    "sha256": "169983be660375ee94b82d5629c879d02d82391d5028628a8adc67952f53fc9d"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/probe-r1/official-help.txt",
+    "bytes": 1450,
+    "sha256": "b1509fd489d70df41c07e7928a506269ccaa8a03308cb910e5b73c47fdb8af29"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/probe-r1/official-r2.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/probe-r1/official-r2.stdout.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/probe-r1/official-r2/official.f32",
+    "bytes": 570788,
+    "sha256": "1c4edbb7032f8006d9966371622b8572c4c29ee4c6c71364015ea8a1fb706280"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/probe-r1/official-r2/source.wav",
+    "bytes": 285438,
+    "sha256": "489cf995f2a9acfdcb734e1278822bee2048db5b52c2e46c6ffad76e47eec44d"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/probe-r1/official-run.stderr.txt",
+    "bytes": 194,
+    "sha256": "966a9adbe807ba3e07275398758e4f8ee54ff7c415526407355a362cb7d395e0"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/probe-r1/official-run.stdout.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/probe-r1/probe.json",
+    "bytes": 2178,
+    "sha256": "1c1ae4bde905e4dce59f939430403532c309a77ca123261d4e7612c7e8d703df"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/probe-r1/source.f32",
+    "bytes": 576548,
+    "sha256": "94e235d62f3d7275057f085d2988a94e72a61deb2d75b73a67c0b17aa92eb2cd"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/probe-r1/source.wav",
+    "bytes": 576640,
+    "sha256": "c99ef0b69ce3b887574e439477e9a17e468e8cf92e8521fde8bc02f250fd24bd"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r1/collision-ingest.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r1/collision-ingest.stdout.json",
+    "bytes": 2928,
+    "sha256": "4248635105665121ffeb1e82d6acc569fe43bde2a63c51bed1e8398eb8dd1668"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r1/executed-generator.py",
+    "bytes": 9109,
+    "sha256": "a78725b3ddec7e9494f1a665b64f7089ef99b3010945bd2c774d6985dd09d31a"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r1/fragment-apply.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r1/fragment-apply.stdout.json",
+    "bytes": 510,
+    "sha256": "96a952ed64eacd4b349e3043f94013badfd2068b632b06f8eb6c822d3012ab4b"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r1/fragment-init.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r1/fragment-init.stdout.json",
+    "bytes": 666,
+    "sha256": "7d53cff8e0e3515802e7c161acad09d7cea90c49e2f433c1f14ddf2a16bb2082"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r1/fragment-save.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r1/fragment-save.stdout.json",
+    "bytes": 11505,
+    "sha256": "203c36e9c9e931e895b67d3532733f3aaeb565da3d25519ab9c1ef46ceef131c"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r1/verification.json",
+    "bytes": 4964,
+    "sha256": "9fa332a7c469ba5e159538a40063e583395a58e1329b36d397b102db058985bc"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r2/cancel.stderr.jsonl",
+    "bytes": 1388,
+    "sha256": "ceb9481688a3cd511e70bd66869a8c03b4f01f9ef32614813530e5c861fb889e"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r2/cancel.stdout.json",
+    "bytes": 597,
+    "sha256": "99c2e9f619b7d9665277133a4b6838c76f4024b8c3c6119ad0542ff95187a5a2"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r2/collision-ingest.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r2/collision-ingest.stdout.json",
+    "bytes": 2931,
+    "sha256": "ecf5e7a36a5ad33235bd70947fbb7593cdeb241d7248572c1ac3dbfa96674565"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r2/executed-generator.py",
+    "bytes": 9141,
+    "sha256": "82e5c7a9d4f38d5f79df2e3469f21fcd340a12460dfa937967fd185b473a9e27"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r2/fragment-apply.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r2/fragment-apply.stdout.json",
+    "bytes": 9001,
+    "sha256": "0d97c2d2decae3ddb9874d4d310118ab0d060876f016687b704f55f1ab2dceb5"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r2/fragment-init.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r2/fragment-init.stdout.json",
+    "bytes": 672,
+    "sha256": "8f68e7cc91a82dc14e6b6f0adbabfe6f5cfb8dd1fcb29f5716e93ff3be17aeae"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r2/fragment-save.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r2/fragment-save.stdout.json",
+    "bytes": 11508,
+    "sha256": "8059f4ae6c3bcb4ff9e0c7f47d641e136210648083eb87fda2510e67aed0c69b"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r2/fragment-validate.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r2/fragment-validate.stdout.json",
+    "bytes": 7443,
+    "sha256": "5f4ac0262fa8e6cc6ad2c7916de5881636b8542e2f9475135dcf0fdb98203d1b"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r2/long-ingest.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r2/long-ingest.stdout.json",
+    "bytes": 3020,
+    "sha256": "b1b6f57ecec29a43ec1ceed58f4d89fdaa8d039889dacc99206debeb0f7ccd2e"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r2/long-source.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r2/long-source.stdout.json",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r2/verification.json",
+    "bytes": 7426,
+    "sha256": "cfac1c64012e09d9eab794f5994c33e5d9bc7f62ee08f4c531d54933ae435f2b"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r3/executed-generator.py",
+    "bytes": 10060,
+    "sha256": "0eb24d0b07c86a6a43525af6ad8e7d12ccaa0b174ea80dcbf2a0292b2d354fe8"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r3/final-replay-english.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r3/final-replay-english.stdout.json",
+    "bytes": 518,
+    "sha256": "fc7f6f3529b5357676591a91f5831812a72a45f7bef23f64f74067fc2724ed5e"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r3/verification.json",
+    "bytes": 1959,
+    "sha256": "377fb6edd7df96f9af2dc388747f70962eab39347e8c2f4d8304ba86fcb0a8cf"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/cancel-diagnostic.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/cancel-diagnostic.stdout.json",
+    "bytes": 3492,
+    "sha256": "b2aefa5950586dcbf733064fa0d12b62911adc047238c03d6c324842a08499a3"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/cancel.stderr.jsonl",
+    "bytes": 1378,
+    "sha256": "d20e4ba46ac209358bd42185db1116faa51d255b1ad35be736e81f3987ff366b"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/cancel.stdout.json",
+    "bytes": 1117,
+    "sha256": "1cb5e11640a0931cf57df1f8c17a04c3e6133366513c571590398a9885c15d69"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/collision-ingest.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/collision-ingest.stdout.json",
+    "bytes": 2931,
+    "sha256": "7eb00301f41166a3105ace53970b1c6acf4a13c21a4eca770c341e83e25ae0b4"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/executed-generator.py",
+    "bytes": 10605,
+    "sha256": "1c47627dba48101c782001f08f8dda45b929749108bfd1d2fcb55ca4e6ddbe13"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/final-replay-chinese.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/final-replay-chinese.stdout.json",
+    "bytes": 28646,
+    "sha256": "4aa902585abb38733012801a2eca5c671ddfbcf4bc7c622e218980088a419582"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/final-replay-english.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/final-replay-english.stdout.json",
+    "bytes": 27207,
+    "sha256": "eac8418eb7118d83384bf9a919d0ce40aedb6c8bbaf4745c2617b0e91a7b150e"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/fragment-apply.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/fragment-apply.stdout.json",
+    "bytes": 9001,
+    "sha256": "ec2c71c4ce2db31cd89510c2ec00b3817937cbcca8b3fd8bd25e5e19d8ffe153"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/fragment-init.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/fragment-init.stdout.json",
+    "bytes": 672,
+    "sha256": "6016d16a753ff020e36bcfc046d971fb6201095f6ce90e68cfe8325d777d8fea"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/fragment-save.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/fragment-save.stdout.json",
+    "bytes": 11508,
+    "sha256": "fbb2b4b3e148769cc2a7b7bd6e505f01f21f073cd6dd9f085ebf25faa3a14442"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/fragment-validate.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/fragment-validate.stdout.json",
+    "bytes": 7443,
+    "sha256": "f8cdec4841a7cc91fdde525c8c7cad91a06eac33a01903d5dd4d0edf9a860b8a"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/long-ingest.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/long-ingest.stdout.json",
+    "bytes": 3035,
+    "sha256": "55c42104be528b6e7162661bb16e0aa90e75269d994cc9d50696c23230211164"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/long-source.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/long-source.stdout.json",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/register-final.stderr.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/register-final.stdout.json",
+    "bytes": 8650,
+    "sha256": "c68f12db5defa32b60b48a3b0b8ae479e30c46ce39c810bf2da64022aac740b9"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/retained-manifest.json",
+    "bytes": 3010,
+    "sha256": "15befe02cd9afbd1c592d14fc6ae4cc8a086c5a4dbb0d69f47f361f8b7cc22ca"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/retained-request.json",
+    "bytes": 755,
+    "sha256": "53a692ffa32c770f38ae29022a8774fe045bb728f4ec884c257b63a3790de996"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/retained-response.json",
+    "bytes": 56,
+    "sha256": "5601fbb82a280775f5d512c96882cff973562b9bc67068cecdfa8acbc9e62d13"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/retained-worker.stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/verification.json",
+    "bytes": 17650,
+    "sha256": "6330102673ec40fac3523de32659bdccf6658b3040d0ab3de4766bd7dfb05b0f"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/reference-acquisition.json",
+    "bytes": 579,
+    "sha256": "7caf55b23d303faa02915e904b5c24ce15b49183999ec52556130c578b9a7fb9"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/skill-pin-r1/executed-generator.py",
+    "bytes": 3392,
+    "sha256": "fa0533dccd757f4dec591fe908ffcb383a5661f8d2dfb9fc2f80422dd10e2604"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/skill-pin-r1/verification.json",
+    "bytes": 335,
+    "sha256": "3bc0860b9e11844cdd63f5abd3cd088c5b7166a8ff8b4fa676990861df5d7922"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/skill-pin-r2/executed-generator.py",
+    "bytes": 3466,
+    "sha256": "d16acc92c9bd25b2a20183ce9864be9d1552b8e10fb4ced552ea6830c62c004a"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/skill-pin-r2/verification.json",
+    "bytes": 335,
+    "sha256": "e278a2d9125fdb507b2a9c66140a739821fcf7d0493d1f053b6d9c9ce924ce79"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/skill-pin-r3/executed-generator.py",
+    "bytes": 3466,
+    "sha256": "bd7c318c7b40020dc5e39c50241396dcbe01a34cc583b57b6d95371fbb218a5c"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/skill-pin-r3/verification.json",
+    "bytes": 335,
+    "sha256": "85a97bdb7bb163408ddf8d0809f2ca650b4317f96a2d1fba69ffa1364624161a"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r1/executed-runner.py",
+    "bytes": 2925,
+    "sha256": "6f4440c68806d28b3c8015c48edc85bd81a5be6adc269ac9d003c3b46f1d7fdd"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r1/executed-tests/test_speech_enhancement.py",
+    "bytes": 12351,
+    "sha256": "a02cd79ee8039fefd6f0ed2a8b4bbebf9f562349fa93fb0df51223abfc63df1b"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r1/tests.log",
+    "bytes": 4540,
+    "sha256": "609021321c55dc45074a9da00e718ff0f95b0dbd05f489d9d9b1cc0570d1844f"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r1/verification.json",
+    "bytes": 25266,
+    "sha256": "86908b02075fc7fdcc7f7805d70d3daf2b2650ed6b96205c5228a3ef6f004b84"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r2/executed-runner.py",
+    "bytes": 2925,
+    "sha256": "6f4440c68806d28b3c8015c48edc85bd81a5be6adc269ac9d003c3b46f1d7fdd"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r2/executed-tests/test_speech_enhancement.py",
+    "bytes": 12427,
+    "sha256": "6724f625b718d3ae9cc0bb21158b47ea0e3593e84ca69b4cbaa054ae318ff3af"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r2/tests.log",
+    "bytes": 3810,
+    "sha256": "67e0ad5609947075f92ba78dcf109a8b7d990364e598344eddd39c2d09e9bf1b"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r2/verification.json",
+    "bytes": 25266,
+    "sha256": "8dbf6a183bfeedc394b46eb655059fd33441363981768a5c31ae6b9a6a5e104d"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r3/executed-runner.py",
+    "bytes": 2925,
+    "sha256": "6f4440c68806d28b3c8015c48edc85bd81a5be6adc269ac9d003c3b46f1d7fdd"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r3/executed-tests/test_speech_enhancement.py",
+    "bytes": 16882,
+    "sha256": "a6ce23b20e157c50fb024df8154ddd4dd32899b9c7d29657bfb996c6d8a2e4d4"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r3/tests.log",
+    "bytes": 5801,
+    "sha256": "5cfc87d900bb51c92faa778c4e9dfeb5167afa48ec4dbd5abbd7cb168644da64"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r3/verification.json",
+    "bytes": 25266,
+    "sha256": "02137c44e98348112d9c3721c12a85b6970148bd550e1d7993ae073c004f58b0"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r4/executed-runner.py",
+    "bytes": 2925,
+    "sha256": "6f4440c68806d28b3c8015c48edc85bd81a5be6adc269ac9d003c3b46f1d7fdd"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r4/executed-tests/test_speech_enhancement.py",
+    "bytes": 16950,
+    "sha256": "216a843de7348b41967a81802912dbcbc22ea8e55d472068afb0875edf3a9dfc"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r4/tests.log",
+    "bytes": 4475,
+    "sha256": "9bf75620b6d5ec84f94f2b4a2922ffa260fa5d5cc0692e36adebbeada67f5c00"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r4/verification.json",
+    "bytes": 25266,
+    "sha256": "dbb63c01d1858319924a8c853b6c4e5b8f69a18e7716a868f837a22052b0f7ac"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r5/executed-runner.py",
+    "bytes": 2925,
+    "sha256": "6f4440c68806d28b3c8015c48edc85bd81a5be6adc269ac9d003c3b46f1d7fdd"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r5/executed-tests/test_speech_enhancement.py",
+    "bytes": 17874,
+    "sha256": "1ff0c31dce536b24ba62bbc2a3cdfc6892a5b67c9f3cf26d13a568bc4594b063"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r5/tests.log",
+    "bytes": 4674,
+    "sha256": "47c365a187ae14536ce57a866d04fcbf124c55fb8d2e51258195e639f2b7c7fe"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r5/verification.json",
+    "bytes": 25266,
+    "sha256": "e34f0f000769fbf0a06b1887cac42d0f7c96f58d0fbfb1a2feaf5336855ddaa6"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r6/executed-runner.py",
+    "bytes": 2925,
+    "sha256": "6f4440c68806d28b3c8015c48edc85bd81a5be6adc269ac9d003c3b46f1d7fdd"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r6/executed-tests/test_speech_enhancement.py",
+    "bytes": 19027,
+    "sha256": "1af6dfd0297bfb758ecf2e7f12194057b4818a23c9115a7a23b745d53cc869c1"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r6/tests.log",
+    "bytes": 4872,
+    "sha256": "2a71d14fd8f2777c3ab4dc7d0794ede9f1696537f1e27688525879d411a2b7f1"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/source-enhancement-r6/verification.json",
+    "bytes": 25266,
+    "sha256": "c5c66eb5f8277fab74500a96ad8b891a91e3e02dad59680a74b109ba09e1059d"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/static-review.json",
+    "bytes": 508,
+    "sha256": "d4686be8f8c6260ec3aeb929ef0bada75bc8575052ad2e4da1e7f4d99ea08936"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/DeepFilterNet/df/checkpoint.py",
+    "bytes": 7976,
+    "sha256": "04e5776592f47d0ac2b28974d51ec9c825ca4dabbf9f0db490d46cf4f6436da2"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/DeepFilterNet/df/config.py",
+    "bytes": 10763,
+    "sha256": "3e5a1d211a0e2b65e820c874f644607cfd33d273d44e0e595d7714786c448a99"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/DeepFilterNet/df/deepfilternet3.py",
+    "bytes": 17559,
+    "sha256": "7eeab313004af51b0fcf9f9c224d65d026baaea883ca2af8859acd5daef696be"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/DeepFilterNet/df/enhance.py",
+    "bytes": 14130,
+    "sha256": "a9bc8e9b54cae2598e6fbdfa198113194f97c332504b2e2571500c7965fd3353"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/DeepFilterNet/df/model.py",
+    "bytes": 779,
+    "sha256": "1e9e2436a89fc65a6dd76c2823afd5bd37cc849fd1fd63740faef94955d85eca"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/DeepFilterNet/df/modules.py",
+    "bytes": 37036,
+    "sha256": "347fac96a3de03f65d10a7b994ca37f255439b16df5d41c26949d13c4b96207d"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/DeepFilterNet/df/multiframe.py",
+    "bytes": 24454,
+    "sha256": "0d7b38ccd9732c979a2557199bcb6e1d0c8ee338693ed266d09851774b0e1fd6"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/DeepFilterNet/df/scripts/export.py",
+    "bytes": 10883,
+    "sha256": "22e2b539ab5f68866a14417f2c9072967ba0bcc6b83149eca2b023f05a07c433"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/DeepFilterNet/df/utils.py",
+    "bytes": 7430,
+    "sha256": "19c39c7f3277ab13cc7f6755a4138ac4b0f226216e3c48201b8ec52aec21f9c4"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/LICENSE",
+    "bytes": 495,
+    "sha256": "f7ef673bf046d823dcd775bdd0768432bd8855f81d0e5e1290a0a48c42e2dca3"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/LICENSE-APACHE",
+    "bytes": 10837,
+    "sha256": "1eaee808c5fb6b4e895ba30425285a5cdc5dd25bba2cd230f264c2200c331aec"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/LICENSE-MIT",
+    "bytes": 1083,
+    "sha256": "24e6bb09c928af8d8e56268082f87413247ce36b39dd5d33add2f9893968065e"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/README.md",
+    "bytes": 13031,
+    "sha256": "9de21807df78381ae1dc859bbd826b957afd7599e907e1b1591df3e27d766680"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/libDF/src/bin/enhance_wav.rs",
+    "bytes": 6736,
+    "sha256": "59668d26551c1176cd915dcfca14705835f7530a4869de383c5e0799b351a777"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/libDF/src/lib.rs",
+    "bytes": 20005,
+    "sha256": "716b6274c60344b25b7824a55d06d0fac0e58603faedbb86b3f3bd1ea6a256d3"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/libDF/src/tract.rs",
+    "bytes": 37746,
+    "sha256": "0f080a766955cf037a1642ebfe6de645b9161985379d5c7cc790a21a04f1e580"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/libDF/src/transforms.rs",
+    "bytes": 25672,
+    "sha256": "bae9af1f2f3192aeab95cba52e0412763d17fad8e2ad17b691b42b1cee92d087"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/upstream-code/pyDF/src/lib.rs",
+    "bytes": 10892,
+    "sha256": "021a9a81b10c708b1e22661fa47f903d064df0459ffa8d334d15862203e8bf5b"
+  },
+  {
+    "path": "docs/validation/evidence/native-speech-enhancement-20261027-r1/vendoring.json",
+    "bytes": 1409,
+    "sha256": "fbfbe0e6fe56577884f8edb95fade242e5e017676d29337b6711300bf16665b5"
+  },
+  {
+    "path": "docs/validation/本地对白增强实测_2026-10-27.md",
+    "bytes": 4613,
+    "sha256": "529b4b0f959ec435942c71397459ac9247e8357705f75a4cc34cbf712d3b69fa"
+  },
+  {
+    "path": "product/pyproject.toml",
+    "bytes": 1558,
+    "sha256": "3fc343d41960e1bd9cbee2ed21080e6a104b66e0e759a7a8a82f306e909c9b2f"
+  },
+  {
+    "path": "product/src/ai_ad_editor/DEEPFILTER_LICENSE_APACHE.txt",
+    "bytes": 10837,
+    "sha256": "1eaee808c5fb6b4e895ba30425285a5cdc5dd25bba2cd230f264c2200c331aec"
+  },
+  {
+    "path": "product/src/ai_ad_editor/DEEPFILTER_LICENSE_MIT.txt",
+    "bytes": 1083,
+    "sha256": "24e6bb09c928af8d8e56268082f87413247ce36b39dd5d33add2f9893968065e"
+  },
+  {
+    "path": "product/src/ai_ad_editor/__init__.py",
+    "bytes": 181,
+    "sha256": "fe29f56fa12c9853cb2e3b43150fe7112a65174155db5d810512c9e29e9da2d0"
+  },
+  {
+    "path": "product/src/ai_ad_editor/capabilities.py",
+    "bytes": 164789,
+    "sha256": "bf1b310006b1975858dc80b29fae60a445c8360f4100d59ad9641cecdf06486b"
+  },
+  {
+    "path": "product/src/ai_ad_editor/cli.py",
+    "bytes": 499491,
+    "sha256": "de074762fa4127848f32229a09f31a34359f8850ecd811c7dee3011649f868e0"
+  },
+  {
+    "path": "product/src/ai_ad_editor/enhancement_cli.py",
+    "bytes": 14231,
+    "sha256": "093f584742dfc8c7e5a1600567d43361d71966de9a3eacb643a0e96f45cc6da2"
+  },
+  {
+    "path": "product/src/ai_ad_editor/enhancement_dsp.py",
+    "bytes": 6831,
+    "sha256": "6000918dcdb851a8a05293375937290284ce0cbdffcfa79dd475edb8797fc3fc"
+  },
+  {
+    "path": "product/src/ai_ad_editor/enhancement_graph.py",
+    "bytes": 13656,
+    "sha256": "12ff9cae34f8bec847a02179f76aa922f559e94c9a2d57566248b317a6e404ed"
+  },
+  {
+    "path": "product/src/ai_ad_editor/enhancement_layers.py",
+    "bytes": 7055,
+    "sha256": "75a0afdc03f5bd5198defa0265da2bc16512cdae8737cd055e9a650aede1ff75"
+  },
+  {
+    "path": "product/src/ai_ad_editor/enhancement_model.py",
+    "bytes": 3280,
+    "sha256": "2fd331630bd9696486ee03c973427498dd3e617a1c2ba3183a824e7aa7553ed8"
+  },
+  {
+    "path": "product/src/ai_ad_editor/enhancement_pipeline.py",
+    "bytes": 10373,
+    "sha256": "32a9a5ff28c4b005e65b9f51ec2ce0f4c473d8c961f7a13f70271ab025101aae"
+  },
+  {
+    "path": "product/src/ai_ad_editor/enhancement_plan.py",
+    "bytes": 4582,
+    "sha256": "009c24582068679fa4a1a9a60de937a87c561b5d9e0c405067723adde10a669e"
+  },
+  {
+    "path": "product/src/ai_ad_editor/enhancement_worker.py",
+    "bytes": 9585,
+    "sha256": "4212a31a9a33cce3ca42830b674b19100f6ce48e0ba2b132026e355199dd9e38"
+  },
+  {
+    "path": "product/src/ai_ad_editor/fragments.py",
+    "bytes": 40496,
+    "sha256": "418b34fc7f6a153e4c9c999736d37132590e31c36187508cc7e7feb41e283fd3"
+  },
+  {
+    "path": "product/src/ai_ad_editor/job_workspaces.py",
+    "bytes": 14434,
+    "sha256": "b186d8b6642bd1eb88d5f8442665042f4df142e153926eec13436356834fcee0"
+  },
+  {
+    "path": "product/src/ai_ad_editor/local_enhancement.py",
+    "bytes": 7126,
+    "sha256": "9042ab984c4be67b98c9aebe0f604ee7898b7d61007f88f9bd9aae2c28625ada"
+  },
+  {
+    "path": "product/src/ai_ad_editor/model_registry.py",
+    "bytes": 21466,
+    "sha256": "d1e8b19bec59795d80aed894e8c71cc28f74928292bbd1d8f1cf4a6c28c58e71"
+  },
+  {
+    "path": "product/src/ai_ad_editor/validator.py",
+    "bytes": 103013,
+    "sha256": "2553a139a18559eeffea62acf90576c548c47e8e2ea730e62bb0357d4e3423e8"
+  },
+  {
+    "path": "product/tests/test_speech_enhancement.py",
+    "bytes": 19027,
+    "sha256": "1af6dfd0297bfb758ecf2e7f12194057b4818a23c9115a7a23b745d53cc869c1"
+  },
+  {
+    "path": "scripts/acquire_speech_case_20261027.py",
+    "bytes": 1533,
+    "sha256": "d25430b397e78f096647c11ca0bda3940a7ab1a70da5ae09d1d6eb18395a69a1"
+  },
+  {
+    "path": "scripts/acquire_speech_enhancement_20261027.py",
+    "bytes": 3901,
+    "sha256": "adf443a67a49c18a91be4a7e12cd6ccd32dd4befda3250f9f4427c2ea7563492"
+  },
+  {
+    "path": "scripts/acquire_speech_reference_20261027.py",
+    "bytes": 1379,
+    "sha256": "2fb96c6904ca5b1161b6f8b9b4f84c67efa6ab307238617f5115119156d73f61"
+  },
+  {
+    "path": "scripts/activate_speech_enhancement_20261027.py",
+    "bytes": 2808,
+    "sha256": "917be07a58dc1167889196700c8c7a8603282bac78a9a86293e0525b781a06a0"
+  },
+  {
+    "path": "scripts/audit_speech_enhancement_20261027.py",
+    "bytes": 12524,
+    "sha256": "adda0c5c0d960a5be01a010fa7ffd53cc475e51d1266ab456f8268f71dbc4e55"
+  },
+  {
+    "path": "scripts/audit_speech_enhancement_stage_20261027.py",
+    "bytes": 3930,
+    "sha256": "5d600818fbba1b9b68625eff1d279881a7ce4152a0e4978a615a2eaff121c664"
+  },
+  {
+    "path": "scripts/build_speech_enhancement_20261027.py",
+    "bytes": 5371,
+    "sha256": "f6bbb3ebd5d3ea46bb9bfff6c17080c51f808c8935a8eb74ce026e2eb62cf921"
+  },
+  {
+    "path": "scripts/compare_speech_reference_20261027.py",
+    "bytes": 2039,
+    "sha256": "7a5939800e107ec1989d8d0f1df06574701a86f9f5b26526fc37d837a9321ea8"
+  },
+  {
+    "path": "scripts/convert_speech_enhancement_20261027.py",
+    "bytes": 2684,
+    "sha256": "da938970da9e2eff88fbfd547f1935400e71b2fe65eb3e67d8a8610712d69679"
+  },
+  {
+    "path": "scripts/derive_speech_audits_20261027.py",
+    "bytes": 1296,
+    "sha256": "674c8b689464575f2c510edd9c2a0e9fab3bcff8406d727c1326a094e295d41d"
+  },
+  {
+    "path": "scripts/derive_speech_delivery_20261027.py",
+    "bytes": 738,
+    "sha256": "129ce51b969bdd74f84448c75f59669d3cc0850a84e94894ffeb9f99790294f4"
+  },
+  {
+    "path": "scripts/document_speech_enhancement_20261027.py",
+    "bytes": 26656,
+    "sha256": "ee59ab47135c4f825179aa5725aa86a22c1c20e2ad7b189a1d5243298c328eac"
+  },
+  {
+    "path": "scripts/extend_speech_enhancement_case_20261027.py",
+    "bytes": 10605,
+    "sha256": "1c47627dba48101c782001f08f8dda45b929749108bfd1d2fcb55ca4e6ddbe13"
+  },
+  {
+    "path": "scripts/finish_speech_enhancement_case_20261027.py",
+    "bytes": 6796,
+    "sha256": "f12c6a59bf270844ac4a13be73bd51c841da367018d58777c432e86b28e655f0"
+  },
+  {
+    "path": "scripts/package_community_skill.py",
+    "bytes": 5338,
+    "sha256": "700e69abd3e9da12f1fb0e08baa3d337bd8734e29ae34913c033f5eb6fd8f71c"
+  },
+  {
+    "path": "scripts/pin_speech_enhancement_20261027.py",
+    "bytes": 3466,
+    "sha256": "bd7c318c7b40020dc5e39c50241396dcbe01a34cc583b57b6d95371fbb218a5c"
+  },
+  {
+    "path": "scripts/prepare_speech_documents_20261027.py",
+    "bytes": 3558,
+    "sha256": "932a42a5f4ff84199e21c19d8a6d9c0e2eba9222da7bcd8af8d6dde02cefe7d5"
+  },
+  {
+    "path": "scripts/prepare_speech_enhancement_20261027.py",
+    "bytes": 1005,
+    "sha256": "14b0949d00f6a8b436a35df3c65822fcc2050f59fbc494e4a145bd6960e03a91"
+  },
+  {
+    "path": "scripts/preview_speech_enhancement_20261027.py",
+    "bytes": 7396,
+    "sha256": "a72c9f0e8dcbeb09b10f92f104f536e4ffa92a52abe813585c6b6cf97c428b1c"
+  },
+  {
+    "path": "scripts/probe_speech_enhancement_20261027.py",
+    "bytes": 1902,
+    "sha256": "4a5adfb63c7ffeeb0fbb7be4b990534b15ffe572fef6afb773f9eaa8bffac759"
+  },
+  {
+    "path": "scripts/publish_speech_enhancement_20261027.py",
+    "bytes": 1124,
+    "sha256": "3d25d1ef8e75704766818c7d1e7306cbe031e58f10a9ac4fbbf7f44ea6784fd2"
+  },
+  {
+    "path": "scripts/refresh_speech_kit_20261027.py",
+    "bytes": 2024,
+    "sha256": "7f1614cc27c23b4e7bde94b487e7a8998e4eb761c0edbf1512c6ec90e39fa6a8"
+  },
+  {
+    "path": "scripts/run_speech_enhancement_case_20261027.py",
+    "bytes": 13772,
+    "sha256": "866a13f71ae0b620ec76659378f548637868ab4ab515ac239ceaf833177c1061"
+  },
+  {
+    "path": "scripts/test_speech_enhancement_20261027.py",
+    "bytes": 2925,
+    "sha256": "6f4440c68806d28b3c8015c48edc85bd81a5be6adc269ac9d003c3b46f1d7fdd"
+  },
+  {
+    "path": "scripts/vendor_speech_enhancement_20261027.py",
+    "bytes": 4667,
+    "sha256": "3535a6c64b965954b70706c3088b89f179ebb7bf589e9b0064440f026ae22cd2"
+  },
+  {
+    "path": "scripts/verify_speech_enhancement_20261027.py",
+    "bytes": 6872,
+    "sha256": "b4118791fd4a012c0d0205bed062471115bf6f64246ea986264c0170635b54ba"
+  },
+  {
+    "path": "scripts/verify_speech_enhancement_postpush_20261027.py",
+    "bytes": 4504,
+    "sha256": "c4da85a91a9f0b27040c303b588ae5f055865ba850a0a04f7e2584aa2dcf3790"
+  },
+  {
+    "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
+    "bytes": 14903,
+    "sha256": "77e2b4f8f03755575943cb9e5a82ba3c57694cc097765e116212d722c18cb812"
+  },
+  {
+    "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
+    "bytes": 8242,
+    "sha256": "05379fe9c77787bd276719ff1aa4365f8ee49437083af545cb741125aac2a313"
+  },
+  {
+    "path": "skills/agent-ffmpeg-local-editor/references/speech-enhancement.md",
+    "bytes": 3036,
+    "sha256": "4bfd1eaf8561936538ee719a89323c4b4def4c60f9fbe4cc48136d3d5f5d7c81"
+  },
+  {
+    "path": "skills/agent-ffmpeg-local-editor/scripts/run.py",
+    "bytes": 2296,
+    "sha256": "8348ac5a5dd0a2b71c3153d64301e66adfa0927985b9783f7f3ab780dddf8eea"
+  }
+]

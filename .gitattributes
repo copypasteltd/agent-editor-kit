@@ -1800,3 +1800,14 @@ scripts/*interpolation*20261027.py text eol=lf
 docs/product/NEURAL_INTERPOLATION.md text eol=lf
 docs/releases/CLI_0.1.42_LOCAL.md text eol=lf
 docs/validation/本地神经补帧实测_2026-10-27.md text eol=lf
+
+# Preserve executed speech-enhancement evidence and exact upstream legal bytes.
+docs/validation/evidence/native-speech-enhancement-20261027-r1/** -text -whitespace
+docs/assets/native-speech-enhancement-20261027-*/** -text -whitespace
+docs/product/speech-enhancement-capabilities-cli-0.1.43.json -text -whitespace
+product/src/ai_ad_editor/DEEPFILTER_LICENSE_MIT.txt -text -whitespace
+product/src/ai_ad_editor/DEEPFILTER_LICENSE_APACHE.txt -text -whitespace
+scripts/*speech*20261027.py text eol=lf
+docs/product/SPEECH_ENHANCEMENT.md text eol=lf
+docs/releases/CLI_0.1.43_LOCAL.md text eol=lf
+docs/validation/本地对白增强实测_2026-10-27.md text eol=lf

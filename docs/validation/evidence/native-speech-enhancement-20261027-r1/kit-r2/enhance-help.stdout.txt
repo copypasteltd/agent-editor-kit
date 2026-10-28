@@ -1,0 +1,43 @@
+usage: ai-ad-editor audio enhance [-h] [--format {json,text}]
+                                  [--request-id REQUEST_ID]
+                                  [--idempotency-key IDEMPOTENCY_KEY]
+                                  [--dry-run] [--no-network]
+                                  [--progress {none,jsonl}] --project PROJECT
+                                  --adapter-id ADAPTER_ID --asset-id ASSET_ID
+                                  [--source-asset-id SOURCE_ASSET_ID]
+                                  [--recipe-asset-id RECIPE_ASSET_ID]
+                                  [--start-seconds START_SECONDS]
+                                  [--end-seconds END_SECONDS]
+                                  [--strength STRENGTH]
+                                  [--attenuation-limit-db ATTENUATION_LIMIT_DB]
+                                  [--storage-budget-mib STORAGE_BUDGET_MIB]
+                                  [--timeout-seconds TIMEOUT_SECONDS]
+                                  [--cancel-file CANCEL_FILE] [--apply]
+                                  [--sequence-id SEQUENCE_ID]
+                                  [--track-id TRACK_ID]
+                                  [--timeline-start-seconds TIMELINE_START_SECONDS]
+
+options:
+  -h, --help            show this help message and exit
+  --format {json,text}  输出格式
+  --request-id REQUEST_ID
+  --idempotency-key IDEMPOTENCY_KEY
+  --dry-run
+  --no-network
+  --progress {none,jsonl}
+  --project PROJECT
+  --adapter-id ADAPTER_ID
+  --asset-id ASSET_ID   新输出ID
+  --source-asset-id SOURCE_ASSET_ID
+  --recipe-asset-id RECIPE_ASSET_ID
+  --start-seconds START_SECONDS
+  --end-seconds END_SECONDS
+  --strength STRENGTH
+  --attenuation-limit-db ATTENUATION_LIMIT_DB
+  --storage-budget-mib STORAGE_BUDGET_MIB
+  --timeout-seconds TIMEOUT_SECONDS
+  --cancel-file CANCEL_FILE
+  --apply
+  --sequence-id SEQUENCE_ID
+  --track-id TRACK_ID
+  --timeline-start-seconds TIMELINE_START_SECONDS

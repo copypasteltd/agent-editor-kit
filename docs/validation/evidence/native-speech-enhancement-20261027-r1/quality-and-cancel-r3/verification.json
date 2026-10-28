@@ -1,0 +1,40 @@
+{
+  "status": "failed",
+  "registered_installed_skill": true,
+  "source_fallback": false,
+  "fake_worker": false,
+  "native_windows": true,
+  "virtualization": false,
+  "human_listening": false,
+  "continuous_playback": false,
+  "natural_quality_accepted": false,
+  "calls": [
+    {
+      "name": "final-replay-english",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "audio",
+        "enhance",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--adapter-id",
+        "df3_local",
+        "--recipe-asset-id",
+        "english_enhanced",
+        "--asset-id",
+        "final_replay_english_r3"
+      ],
+      "exit_code": 6,
+      "seconds": 4.678602200001478,
+      "stdout_sha256": "fc7f6f3529b5357676591a91f5831812a72a45f7bef23f64f74067fc2724ed5e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": [],
+  "error": "AssertionError(('final-replay-english', b'{\"ok\":false,\"command\":\"audio.enhance\",\"request_id\":\"req_20261027141529_0c07466c\",\"operation_id\":null,\"status\":\"failed\",\"data\":{},\"artifacts\":[],\"warnings\":[],\"errors\":[{\"code\":\"ENHANCEMENT_ADAPTER_UNAVAILABLE\",\"message\":\"\\xe9\\xa1\\xbb\\xe6\\x98\\xbe\\xe5\\xbc\\x8f\\xe7\\x99\\xbb\\xe8\\xae\\xb0\\xe4\\xb8\\x94\\xe5\\xad\\x97\\xe8\\x8a\\x82\\xe5\\x8c\\xb9\\xe9\\x85\\x8d\\xe7\\x9a\\x84DeepFilterNet3 CUDA\\xe6\\xa8\\xa1\\xe5\\x9e\\x8b\",\"path\":null,\"retryable\":false}],\"provenance\":{\"cli_version\":\"0.1.43\",\"schema_version\":\"0.1.0\",\"engine_version\":\"ffmpeg-local\",\"started_at\":\"2026-10-27T14:15:29.697481Z\",\"finished_at\":\"2026-10-27T14:15:29.697489Z\",\"network\":\"disabled\"}}\\r\\n', b''))"
+}

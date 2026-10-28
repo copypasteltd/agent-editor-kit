@@ -1,0 +1,20 @@
+{
+  "status": "converted-strict-tensor-equality",
+  "source_sha256": "23b92884f63ccf54bb026014604625ab231657b6480df65db4095c4c171e6003",
+  "target_sha256": "e216108cbf28509e11153bc89630cbd4a68abf1d58ab942b76a41b478915f6bb",
+  "target_bytes": 8684200,
+  "config_sha256": "7c609e234c5acf6c7dc436d4ffcee0fc0e6f7742faf48531843698f9963a90db",
+  "tensor_count": 133,
+  "tensor_dtypes": [
+    "torch.float32",
+    "torch.int64"
+  ],
+  "weights_only_development_conversion": true,
+  "pickle_in_product_runtime": false,
+  "strict_full_graph": true,
+  "blocked_network_events": [],
+  "versions": {
+    "torch": "2.13.0+cu130",
+    "safetensors": "0.8.0"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "status": "actual-audio-previews-created",
+  "human_listening": false,
+  "continuous_playback": false,
+  "synthetic_result": false,
+  "English_samples": 281040,
+  "native_rate": 48000,
+  "English_duration_seconds": 5.855,
+  "GIF_frames": 71,
+  "GIF_duration_ms": 5860,
+  "comparison_order": [
+    "english-clean",
+    "english-noisy",
+    "english-enhanced"
+  ],
+  "MP4_audio_codec": "AAC160k_lossy_preview_originals_are_Float32WAV",
+  "scientific_plot": "matplotlib_Agg_specgram_actual_PCM",
+  "files": [
+    {
+      "path": "docs/assets/native-speech-enhancement-20261027-r2/audible-comparison.mp4",
+      "bytes": 445203,
+      "sha256": "db6aaea221f686644bdd62aa332aa56c7e7f20c62ee665da20d6f0a51c1bcd42"
+    },
+    {
+      "path": "docs/assets/native-speech-enhancement-20261027-r2/comparison.gif",
+      "bytes": 1339026,
+      "sha256": "cdea0a9e112d1507e1f8a3d8cb7d840e7029e7b7610433a86a2d7ae34f156a56"
+    },
+    {
+      "path": "docs/assets/native-speech-enhancement-20261027-r2/comparison.png",
+      "bytes": 24991,
+      "sha256": "bb14fe47931c740a9c12c9c1d8b2bcbb2d87039e6dc36a3d75fc1c0095b034e9"
+    },
+    {
+      "path": "docs/assets/native-speech-enhancement-20261027-r2/media-manifest.json",
+      "bytes": 27043,
+      "sha256": "e72ef49f2c7715ea7b8b473458b6ff8c72254d962ed3e40633ba92a78327e640"
+    },
+    {
+      "path": "docs/assets/native-speech-enhancement-20261027-r2/recipes.json",
+      "bytes": 1843,
+      "sha256": "e0be7c5982f23c9801be13a04ca8dd67faf09d17878ee67853559ddb9d406c95"
+    },
+    {
+      "path": "docs/assets/native-speech-enhancement-20261027-r2/spectra-and-waveforms.png",
+      "bytes": 920449,
+      "sha256": "ae4ef05e48fb5eb01882dff1949da77ec78d2b29927cb0b41beaf2705bb16e77"
+    }
+  ]
+}

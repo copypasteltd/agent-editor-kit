@@ -1,0 +1,6 @@
+{"event_id":"event_20261027144058_4e51f817","operation_id":"op_20261027144058_65da4eb8","type":"started","at":"2026-10-27T14:40:58.015686Z","stage":"audio.enhance","percent":0,"message":"执行原生CUDA对白增强","artifacts":[]}
+{"event_id":"event_20261027144100_72a7f8ae","operation_id":"op_20261027144058_65da4eb8","type":"progress","at":"2026-10-27T14:41:00.324703Z","stage":"audio.enhance","percent":0,"message":"indexing-native-audio-clock","artifacts":[]}
+{"event_id":"event_20261027144101_bd405103","operation_id":"op_20261027144058_65da4eb8","type":"progress","at":"2026-10-27T14:41:01.145977Z","stage":"audio.enhance","percent":0,"message":"decoding-native-clock","artifacts":[]}
+{"event_id":"event_20261027144102_9cc831c8","operation_id":"op_20261027144058_65da4eb8","type":"progress","at":"2026-10-27T14:41:02.053842Z","stage":"audio.enhance","percent":0,"message":"resampling-to-model-clock","artifacts":[]}
+{"event_id":"event_20261027144104_555fea11","operation_id":"op_20261027144058_65da4eb8","type":"progress","at":"2026-10-27T14:41:04.214929Z","stage":"audio.enhance","percent":0,"message":"neural-enhancement","artifacts":[]}
+{"event_id":"event_20261027144104_2fc3e0c8","operation_id":"op_20261027144058_65da4eb8","type":"progress","at":"2026-10-27T14:41:04.533957Z","stage":"audio.enhance","percent":2,"message":"neural-enhancement","artifacts":[]}

@@ -1,0 +1,217 @@
+{
+  "status": "failed",
+  "registered_installed_skill": true,
+  "source_fallback": false,
+  "fake_worker": false,
+  "native_windows": true,
+  "virtualization": false,
+  "human_listening": false,
+  "continuous_playback": false,
+  "natural_quality_accepted": false,
+  "calls": [
+    {
+      "name": "fragment-save",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "fragment",
+        "save",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--library",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\reusable-denoised-fragment-r2",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\fragment-save-r2.json"
+      ],
+      "exit_code": 0,
+      "seconds": 3.4708480999979656,
+      "stdout_sha256": "8059f4ae6c3bcb4ff9e0c7f47d641e136210648083eb87fda2510e67aed0c69b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fragment-init",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "project",
+        "init",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\fragment-target-r2"
+      ],
+      "exit_code": 0,
+      "seconds": 2.223962499992922,
+      "stdout_sha256": "8f68e7cc91a82dc14e6b6f0adbabfe6f5cfb8dd1fcb29f5716e93ff3be17aeae",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "collision-ingest",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "media",
+        "ingest",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\fragment-target-r2",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\chinese-noisy.wav",
+        "--asset-id",
+        "english_enhanced",
+        "--evidence",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\SOURCE.txt"
+      ],
+      "exit_code": 0,
+      "seconds": 2.7403861999919172,
+      "stdout_sha256": "ecf5e7a36a5ad33235bd70947fbb7593cdeb241d7248572c1ac3dbfa96674565",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fragment-apply",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "fragment",
+        "apply",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\fragment-target-r2",
+        "--library",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\reusable-denoised-fragment-r2",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\fragment-apply-r2.json"
+      ],
+      "exit_code": 0,
+      "seconds": 2.6242236999969464,
+      "stdout_sha256": "0d97c2d2decae3ddb9874d4d310118ab0d060876f016687b704f55f1ab2dceb5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fragment-validate",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "validate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\fragment-target-r2"
+      ],
+      "exit_code": 0,
+      "seconds": 2.453430699999444,
+      "stdout_sha256": "5f4ac0262fa8e6cc6ad2c7916de5881636b8542e2f9475135dcf0fdb98203d1b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "long-source",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-f",
+        "f32le",
+        "-ar",
+        "48000",
+        "-ac",
+        "1",
+        "-i",
+        "pipe:0",
+        "-c:a",
+        "pcm_f32le",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\long-cancel-source.wav"
+      ],
+      "exit_code": 0,
+      "seconds": 0.07673959998646751,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "long-ingest",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "media",
+        "ingest",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\long-cancel-source.wav",
+        "--evidence",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\SOURCE.txt",
+        "--license-spdx",
+        "CC-BY-4.0"
+      ],
+      "exit_code": 0,
+      "seconds": 2.940489799977513,
+      "stdout_sha256": "b1b6f57ecec29a43ec1ceed58f4d89fdaa8d039889dacc99206debeb0f7ccd2e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": [
+    {
+      "name": "fragment-save actual installed CLI",
+      "ok": true
+    },
+    {
+      "name": "fragment-init actual installed CLI",
+      "ok": true
+    },
+    {
+      "name": "collision-ingest actual installed CLI",
+      "ok": true
+    },
+    {
+      "name": "fragment-apply actual installed CLI",
+      "ok": true
+    },
+    {
+      "name": "real fragment asset collision rebinds generated and source IDs",
+      "ok": true
+    },
+    {
+      "name": "fragment source and master bytes preserved",
+      "ok": true
+    },
+    {
+      "name": "fragment-validate actual installed CLI",
+      "ok": true
+    },
+    {
+      "name": "long-ingest actual installed CLI",
+      "ok": true
+    },
+    {
+      "name": "actual CUDA cancellation after completed neural inference",
+      "ok": true
+    },
+    {
+      "name": "all frozen project metadata unchanged",
+      "ok": true
+    },
+    {
+      "name": "no half asset and no managed job remains",
+      "ok": true
+    }
+  ],
+  "error": "AssertionError()"
+}

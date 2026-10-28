@@ -1,0 +1,826 @@
+{
+  "case": "C53",
+  "human_listening": false,
+  "continuous_playback": false,
+  "files": [
+    {
+      "path": "audible-comparison.mp4",
+      "bytes": 445203,
+      "sha256": "db6aaea221f686644bdd62aa332aa56c7e7f20c62ee665da20d6f0a51c1bcd42",
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "mime_codec_string": "avc1.640016",
+            "width": 720,
+            "height": 414,
+            "coded_width": 720,
+            "coded_height": 414,
+            "has_b_frames": 2,
+            "pix_fmt": "yuv420p",
+            "level": 22,
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "12/1",
+            "avg_frame_rate": "12/1",
+            "time_base": "1/12288",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 216064,
+            "duration": "17.583333",
+            "bit_rate": "41504",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "211",
+            "extradata_size": 46,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "VideoHandler",
+              "encoder": "Lavc62.28.100 libx264"
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "aac",
+            "codec_long_name": "AAC (Advanced Audio Coding)",
+            "profile": "LC",
+            "codec_type": "audio",
+            "codec_tag_string": "mp4a",
+            "codec_tag": "0x6134706d",
+            "mime_codec_string": "mp4a.40.2",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bits_per_sample": 0,
+            "initial_padding": 0,
+            "id": "0x2",
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 843120,
+            "duration": "17.565000",
+            "bit_rate": "156799",
+            "nb_frames": "825",
+            "extradata_size": 5,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "language": "und",
+              "handler_name": "SoundHandler"
+            }
+          }
+        ],
+        "format": {
+          "filename": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\audible-comparison.mp4",
+          "nb_streams": 2,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "17.583333",
+          "size": "445203",
+          "bit_rate": "202556",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "isom",
+            "minor_version": "512",
+            "compatible_brands": "isomiso2avc1mp41",
+            "encoder": "Lavf62.12.100"
+          }
+        }
+      }
+    },
+    {
+      "path": "chinese-clean.wav",
+      "bytes": 1863980,
+      "sha256": "347c15f0753b4c75be9ff49d8d5387d0d28cf469573e9d5eb74e5e789ff727b8",
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_f32le",
+            "codec_long_name": "PCM 32-bit floating point little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[3][0][0][0]",
+            "codec_tag": "0x0003",
+            "sample_fmt": "flt",
+            "sample_rate": "44100",
+            "channels": 2,
+            "bits_per_sample": 32,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/44100",
+            "duration_ts": 232986,
+            "duration": "5.283129",
+            "bit_rate": "2822400",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "format": {
+          "filename": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\chinese-clean.wav",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "wav",
+          "format_long_name": "WAV / WAVE (Waveform Audio)",
+          "duration": "5.283129",
+          "size": "1863980",
+          "bit_rate": "2822539",
+          "probe_score": 99,
+          "tags": {
+            "encoder": "Lavf62.12.100"
+          }
+        }
+      }
+    },
+    {
+      "path": "chinese-enhanced.wav",
+      "bytes": 1861196,
+      "sha256": "17e05998d39e48d610575fc8b13d7aa8f2fecc228eeea45811a58a482588c9f5",
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_f32le",
+            "codec_long_name": "PCM 32-bit floating point little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[3][0][0][0]",
+            "codec_tag": "0x0003",
+            "sample_fmt": "flt",
+            "sample_rate": "44100",
+            "channels": 2,
+            "bits_per_sample": 32,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/44100",
+            "duration_ts": 232638,
+            "duration": "5.275238",
+            "bit_rate": "2822400",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "format": {
+          "filename": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\chinese-enhanced.wav",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "wav",
+          "format_long_name": "WAV / WAVE (Waveform Audio)",
+          "duration": "5.275238",
+          "size": "1861196",
+          "bit_rate": "2822539",
+          "probe_score": 99,
+          "tags": {
+            "encoder": "Lavf62.12.100"
+          }
+        }
+      }
+    },
+    {
+      "path": "chinese-noisy.wav",
+      "bytes": 1863980,
+      "sha256": "f36284277db567a39b5882f3c0ce4f1b52581d7cbfe25164fcb8adcef62a3b0e",
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_f32le",
+            "codec_long_name": "PCM 32-bit floating point little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[3][0][0][0]",
+            "codec_tag": "0x0003",
+            "sample_fmt": "flt",
+            "sample_rate": "44100",
+            "channels": 2,
+            "bits_per_sample": 32,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/44100",
+            "duration_ts": 232986,
+            "duration": "5.283129",
+            "bit_rate": "2822400",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "format": {
+          "filename": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\chinese-noisy.wav",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "wav",
+          "format_long_name": "WAV / WAVE (Waveform Audio)",
+          "duration": "5.283129",
+          "size": "1863980",
+          "bit_rate": "2822539",
+          "probe_score": 99,
+          "tags": {
+            "encoder": "Lavf62.12.100"
+          }
+        }
+      }
+    },
+    {
+      "path": "clean_control.wav",
+      "bytes": 1124252,
+      "sha256": "b0786d3f5523fb825485baea7360939fea897da8e84a6339a83dbef4b05fe57e",
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_f32le",
+            "codec_long_name": "PCM 32-bit floating point little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[3][0][0][0]",
+            "codec_tag": "0x0003",
+            "sample_fmt": "flt",
+            "sample_rate": "48000",
+            "channels": 1,
+            "bits_per_sample": 32,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "duration_ts": 281040,
+            "duration": "5.855000",
+            "bit_rate": "1536000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "format": {
+          "filename": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\clean_control.wav",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "wav",
+          "format_long_name": "WAV / WAVE (Waveform Audio)",
+          "duration": "5.855000",
+          "size": "1124252",
+          "bit_rate": "1536125",
+          "probe_score": 99,
+          "tags": {
+            "encoder": "Lavf62.12.100"
+          }
+        }
+      }
+    },
+    {
+      "path": "comparison.gif",
+      "bytes": 1339026,
+      "sha256": "cdea0a9e112d1507e1f8a3d8cb7d840e7029e7b7610433a86a2d7ae34f156a56",
+      "frames": 71,
+      "duration_ms": 5860
+    },
+    {
+      "path": "comparison.png",
+      "bytes": 24991,
+      "sha256": "bb14fe47931c740a9c12c9c1d8b2bcbb2d87039e6dc36a3d75fc1c0095b034e9"
+    },
+    {
+      "path": "editable-enhancement.aevpkg.zip",
+      "bytes": 14010654,
+      "sha256": "b10d2c049378f31930f653ae4d9e80d290d414d53ee8436bb408edf0a9c8dd3d"
+    },
+    {
+      "path": "english-clean.wav",
+      "bytes": 1124252,
+      "sha256": "32af8f010f35c02a9e949b27962792d6f73e5bf6aea1117d0e8c4087486cfc2c",
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_f32le",
+            "codec_long_name": "PCM 32-bit floating point little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[3][0][0][0]",
+            "codec_tag": "0x0003",
+            "sample_fmt": "flt",
+            "sample_rate": "48000",
+            "channels": 1,
+            "bits_per_sample": 32,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "duration_ts": 281040,
+            "duration": "5.855000",
+            "bit_rate": "1536000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "format": {
+          "filename": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\english-clean.wav",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "wav",
+          "format_long_name": "WAV / WAVE (Waveform Audio)",
+          "duration": "5.855000",
+          "size": "1124252",
+          "bit_rate": "1536125",
+          "probe_score": 99,
+          "tags": {
+            "encoder": "Lavf62.12.100"
+          }
+        }
+      }
+    },
+    {
+      "path": "english-enhanced.wav",
+      "bytes": 1124252,
+      "sha256": "c2d0da14ed8ff778abb383a34492c0fba06f4c8b3d115d0bcb988bcde0dd297e",
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_f32le",
+            "codec_long_name": "PCM 32-bit floating point little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[3][0][0][0]",
+            "codec_tag": "0x0003",
+            "sample_fmt": "flt",
+            "sample_rate": "48000",
+            "channels": 1,
+            "bits_per_sample": 32,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "duration_ts": 281040,
+            "duration": "5.855000",
+            "bit_rate": "1536000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "format": {
+          "filename": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\english-enhanced.wav",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "wav",
+          "format_long_name": "WAV / WAVE (Waveform Audio)",
+          "duration": "5.855000",
+          "size": "1124252",
+          "bit_rate": "1536125",
+          "probe_score": 99,
+          "tags": {
+            "encoder": "Lavf62.12.100"
+          }
+        }
+      }
+    },
+    {
+      "path": "english-noisy.wav",
+      "bytes": 1124252,
+      "sha256": "6037a35481869830f5543630000b6c6aca47c2bf28842f99c06e7b5b30887ff8",
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_f32le",
+            "codec_long_name": "PCM 32-bit floating point little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[3][0][0][0]",
+            "codec_tag": "0x0003",
+            "sample_fmt": "flt",
+            "sample_rate": "48000",
+            "channels": 1,
+            "bits_per_sample": 32,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "duration_ts": 281040,
+            "duration": "5.855000",
+            "bit_rate": "1536000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "format": {
+          "filename": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\english-noisy.wav",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "wav",
+          "format_long_name": "WAV / WAVE (Waveform Audio)",
+          "duration": "5.855000",
+          "size": "1124252",
+          "bit_rate": "1536125",
+          "probe_score": 99,
+          "tags": {
+            "encoder": "Lavf62.12.100"
+          }
+        }
+      }
+    },
+    {
+      "path": "english-reverb-noisy.wav",
+      "bytes": 1124252,
+      "sha256": "2b4b552977109e401b2d44f22a3982d7f1e97591731566989eb958bea017015b",
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_f32le",
+            "codec_long_name": "PCM 32-bit floating point little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[3][0][0][0]",
+            "codec_tag": "0x0003",
+            "sample_fmt": "flt",
+            "sample_rate": "48000",
+            "channels": 1,
+            "bits_per_sample": 32,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "duration_ts": 281040,
+            "duration": "5.855000",
+            "bit_rate": "1536000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "format": {
+          "filename": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\english-reverb-noisy.wav",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "wav",
+          "format_long_name": "WAV / WAVE (Waveform Audio)",
+          "duration": "5.855000",
+          "size": "1124252",
+          "bit_rate": "1536125",
+          "probe_score": 99,
+          "tags": {
+            "encoder": "Lavf62.12.100"
+          }
+        }
+      }
+    },
+    {
+      "path": "original-human-16k.flac",
+      "bytes": 120041,
+      "sha256": "4e25e22555cd16e90edb0a3b49fdcf1fe652b2a1250ab643634db33895c75b41",
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "flac",
+            "codec_long_name": "FLAC (Free Lossless Audio Codec)",
+            "codec_type": "audio",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "flac",
+            "sample_fmt": "s16",
+            "sample_rate": "16000",
+            "channels": 1,
+            "channel_layout": "mono",
+            "bits_per_sample": 0,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/16000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 93680,
+            "duration": "5.855000",
+            "bits_per_raw_sample": "16",
+            "extradata_size": 34,
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "format": {
+          "filename": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\original-human-16k.flac",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "flac",
+          "format_long_name": "raw FLAC",
+          "start_time": "0.000000",
+          "duration": "5.855000",
+          "size": "120041",
+          "bit_rate": "164018",
+          "probe_score": 100
+        }
+      }
+    },
+    {
+      "path": "recipes.json",
+      "bytes": 1843,
+      "sha256": "e0be7c5982f23c9801be13a04ca8dd67faf09d17878ee67853559ddb9d406c95"
+    },
+    {
+      "path": "reverb_control.wav",
+      "bytes": 1124252,
+      "sha256": "41153f09a600438a1c4cc5268c1f46adbc85226bc4706c7d0b52502f8a8447a6",
+      "probe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "pcm_f32le",
+            "codec_long_name": "PCM 32-bit floating point little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[3][0][0][0]",
+            "codec_tag": "0x0003",
+            "sample_fmt": "flt",
+            "sample_rate": "48000",
+            "channels": 1,
+            "bits_per_sample": 32,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/48000",
+            "duration_ts": 281040,
+            "duration": "5.855000",
+            "bit_rate": "1536000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "format": {
+          "filename": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\reverb_control.wav",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "wav",
+          "format_long_name": "WAV / WAVE (Waveform Audio)",
+          "duration": "5.855000",
+          "size": "1124252",
+          "bit_rate": "1536125",
+          "probe_score": 99,
+          "tags": {
+            "encoder": "Lavf62.12.100"
+          }
+        }
+      }
+    },
+    {
+      "path": "SOURCE.txt",
+      "bytes": 1528,
+      "sha256": "0792b093bca7f304004a438a9302d6f421458b2f354611878d7dd98eff3edb77"
+    },
+    {
+      "path": "spectra-and-waveforms.png",
+      "bytes": 920449,
+      "sha256": "ae4ef05e48fb5eb01882dff1949da77ec78d2b29927cb0b41beaf2705bb16e77"
+    },
+    {
+      "path": "timeline-waveform.png",
+      "bytes": 12729,
+      "sha256": "bf76c3798d547afb3f49a17727a8e0b30c78447bf32275a65e4098bc30eb14f2"
+    }
+  ]
+}

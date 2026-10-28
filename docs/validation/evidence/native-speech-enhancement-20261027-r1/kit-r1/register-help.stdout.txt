@@ -1,0 +1,42 @@
+usage: ai-ad-editor audio enhancement-adapter register [-h]
+                                                       [--format {json,text}]
+                                                       [--request-id REQUEST_ID]
+                                                       [--idempotency-key IDEMPOTENCY_KEY]
+                                                       [--dry-run]
+                                                       [--no-network]
+                                                       [--progress {none,jsonl}]
+                                                       --project PROJECT
+                                                       --adapter-id ADAPTER_ID
+                                                       --model-path MODEL_PATH
+                                                       --executable EXECUTABLE
+                                                       --evidence EVIDENCE
+                                                       [--threads THREADS]
+                                                       [--segment-seconds SEGMENT_SECONDS]
+                                                       [--overlap OVERLAP]
+                                                       [--license-spdx LICENSE_SPDX]
+                                                       [--license-url LICENSE_URL]
+                                                       [--creator CREATOR]
+                                                       [--permitted-use PERMITTED_USE]
+                                                       [--verification-status {unverified,verified,restricted}]
+
+options:
+  -h, --help            show this help message and exit
+  --format {json,text}  输出格式
+  --request-id REQUEST_ID
+  --idempotency-key IDEMPOTENCY_KEY
+  --dry-run
+  --no-network
+  --progress {none,jsonl}
+  --project PROJECT
+  --adapter-id ADAPTER_ID
+  --model-path MODEL_PATH
+  --executable EXECUTABLE
+  --evidence EVIDENCE
+  --threads THREADS
+  --segment-seconds SEGMENT_SECONDS
+  --overlap OVERLAP
+  --license-spdx LICENSE_SPDX
+  --license-url LICENSE_URL
+  --creator CREATOR
+  --permitted-use PERMITTED_USE
+  --verification-status {unverified,verified,restricted}

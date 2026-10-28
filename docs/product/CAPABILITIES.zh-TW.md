@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.42 / alpha.4-local.40 / r43 kit · 1 Skill / 17 modules / 81 files.**
+**CLI0.1.43 / alpha.4-local.41 / r44 kit · 1 Skill / 17 modules / 82 files.**
 
-新增**真正本機 CUDA RIFE4.25 神經補幀與可編輯慢動作**：保留CFR/VFR原生PTS、每影格持續時間、全部來源RGBA影格及原音軌；2..8倍補幀、明確切鏡保持、預乘alpha、可重跑配方及關聯雙軌。
+新增**真正本機 CUDA DeepFilterNet3 對白降噪**：原生取樣時鐘、單/雙聲道、獨立增強資產與可編輯音軌、強度/衰減上限、分段重疊、配方重跑、工程包及取消回滾。
 
-[Native interpolation workflow and limits](NEURAL_INTERPOLATION.md)
+[Speech enhancement workflow](SPEECH_ENHANCEMENT.md)
 
 <!-- /community-current -->
 
@@ -33,7 +33,7 @@
 | F17 | 轉場與剪口效果 | 相鄰片段與源句柄 → 淡化、擦除、滑動、黑/白場、圓形等已聲明轉場。 | `timeline transition; capabilities` | 依算繪路徑和層級選擇；明確 Float32 已提供 F55 的轉場子集，CPU 執行，支援範圍見獨立契約。 |
 | F18 | 幾何蒙版與逐影格修正 | 矩形/圓/橢圓/路徑/多邊形 → 反選、羽化、動畫、編碼蒙版與修正。 | `timeline compose; media mask-edit; quality mask` | 路徑點數和取樣受限；幾何通過不等於語義分割/身份正確。 |
 | F19 | 圖層合成與混合 | 多軌視覺層 → normal/multiply/screen/overlay/difference/addition/softlight/hardlight。 | `timeline compose; capabilities` | 預設路徑主要為編碼 8-bit RGB；不宣稱線性光/HDR 合成等價。 |
-| F20 | 46 個效果處理算子 | 模糊/銳化、降噪、色調、曲線、HSL、色鍵、暗角、顆粒等 → 可配置效果鏈。 | `effects list/inspect` | 可動畫參數與實際後端逐項查詢；46 算子與 500 成品 LUT 是不同統計。 |
+| F20 | 51 個效果處理算子 | 模糊/銳化、降噪、色調、曲線、HSL、色鍵、暗角、顆粒等 → 可配置效果鏈。 | `effects list/inspect` | 可動畫參數與實際後端逐項查詢；51 算子與 500 成品 LUT 是不同統計。 |
 | F21 | 500 套離線風格 | 名稱/ID/類別/許可檢索 → 詳情、圖片預覽、片段或全局應用與來源副本。 | `look list/inspect/preview/apply` | 500 個不同數值變換含同系列曲線；SDR 創意映射，不是 500 個獨立家族。 |
 | F22 | 自定義 LUT 與色彩自動化 | 本地 .cube/.3dl/.csp/.dat → 登記、檢查；支持的 3D LUT 強度與色彩參數按契約動畫。 | `lut register/list/inspect; effects inspect` | 格式登記不等於所有路徑都完整解析；完整 CUBE 才有對應強度/浮點支持。 |
 | F23 | 顯式 Float32 像素路徑 | 聲明輸入/工作/輸出信號、順序與預算 → 原生浮點色彩、LUT/shaper、選定空間處理和 surface。 | `render; preview; surface export/inspect` | 必須顯式選擇 float32-native-v1；能力子集，拒絕不支持項，非完整 HDR/ICC 管線。 |
@@ -82,6 +82,7 @@
 | F66 | 原生 PQ／HLG HDR 與 SDR 顯示 | 明確參考白及HLG峰值/gamma，解碼至顯示線性光；不同nit素材、一般效果/合成、10-bit BT.2020 NCL交付，獨立選擇SDR trim及PNG/MP4預覽。 | `timeline compose; validate; preview; render; convert` | 傳遞CPU，既有合成/光效可GPU；拒絕8-bit/標籤不符/缺單位；alpha位元保留。非ICC/動態中繼資料或HDR監看驗收。 |
 | F67 | 本機神經口型同步 | 圖片／影片＋獨立聲音→真正CUDA MuseTalk口型；25FPS人臉框關鍵影格、語義下半臉混合、完整PCM及alpha保留，可復用配方並影片/音訊關聯入軌。 | `lipsync adapter register/list/inspect; lipsync generate` | 本機safetensors及既有原生Torch依賴；臉部256×256、明確8bit SDR與來源運鏡、無CPU回退；自然口型、完整數位人仍未驗收。 |
 | F68 | CUDA神經補幀與慢動作 | 原生CFR/VFR、每來源影格RGBA、預乘alpha、完整PCM；2..8倍、切鏡保持、關聯慢放雙軌、配方重跑及工程包。 | `interpolate adapter; interpolate generate` | 明確RIFE4.25 safetensors＋原生CUDA Python；無CPU回退；困難運動/遮擋/自然品質/HDR未廣泛驗收。 |
+| F69 | CUDA對白降噪與增強 | 原生取樣時鐘/單雙聲道、真正模型、乾濕強度/衰減、可編輯獨立音軌、配方重跑/工程包、取消回滾。 | `audio enhancement-adapter; audio enhance` | DeepFilterNet3固定safetensors＋既有原生CUDA依賴；分段狀態重置、CPU前端；完整去混響/音樂保真待完成。 |
 
 | 編號 | 服務模塊 | 運行形式 | 需要什么/提供什么 | 入口 | 範圍 |
 |---|---|---|---|---|---|
@@ -108,6 +109,7 @@
 | S21 | 本地GPU常駐推理會話 | 原生行程、認證Windows命名管道、JSON/原始幀、重疊拒寫鎖與生命週期監控。 | 既有本地VACE適配器；同一提示詞多方案。 | `media model-session start/status/stop` | 不開放網路埠；同工程串行，首條載入與其他模型重用仍有限。 |
 | S22 | MuseTalk CUDA 神經口型服務 | 本機Whisper-tiny音訊特徵、MuseTalk1.5 UNet、SD VAE及BiSeNet；固定safetensors與拒寫鎖、原生工作回收。 | 明確既有Torch/Diffusers/Transformers/OpenCV原生依賴及模型證據；無自動安裝。 | `lipsync adapter; lipsync generate` | 模型256×256，25FPS；授權、自然度、完整數位人及HDR另行驗收。 |
 | S23 | RIFE CUDA補幀服務 | 固定五階段IFNet/158個FP32推理張量、嚴格本機雜湊、真正CUDA；不執行模型目錄程式/Pickle。 | 已有原生Torch＋safetensors依賴及MIT模型證據；無自動安裝。 | `interpolate adapter; interpolate generate` | 原生時間細分、全影格/PCM往返；閾值不是語意切鏡；自然品質仍須複核。 |
+| S24 | DeepFilterNet3對白服務 | 固定133張量/48kHz全頻模型；神經推論CUDA、NumPy前端CPU、FFmpeg重取樣。 | 明確本機權重/原生Torch/safetensors及MIT OR Apache-2.0證據。 | `audio enhancement-adapter; audio enhance` | 8..96kHz、1/2聲道、完整來源≤1800秒/選區≤600秒；無自動下載/依賴安裝/CPU回退。 |
 
 ## 完整安裝版能力字段
 
@@ -5169,3 +5171,78 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 ```
 
 [CLI0.1.42 exact installed capability snapshot](neural-interpolation-capabilities-cli-0.1.42.json).
+
+### `native_speech_enhancement`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "agent-native-speech-enhancement-v1",
+  "engine": "deepfilternet3-native-cuda-v1",
+  "commands": [
+    "audio.enhancement-adapter.register",
+    "audio.enhancement-adapter.list",
+    "audio.enhancement-adapter.inspect",
+    "audio.enhance"
+  ],
+  "features": [
+    "actual_48kHz_DeepFilterNet3_CUDA_graph",
+    "strict_133_tensor_safetensors",
+    "native_decoded_audio_interval_clock",
+    "independent_mono_or_stereo_model_rows",
+    "explicit_segment_overlap_add",
+    "native_rate_and_sample_count_preserved",
+    "native_rate_strength_and_attenuation_limit_mix",
+    "Float32_bypass_bit_exact",
+    "complete_encoded_PCM_hash_verification",
+    "portable_rerunnable_recipe",
+    "editable_independent_audio_clip",
+    "owned_Windows_process_tree_cancel_timeout_recovery"
+  ],
+  "backend": {
+    "neural": "CUDA_FP32",
+    "analysis_features_synthesis": "NumPy_CPU",
+    "sample_rate_conversion": "FFmpeg_swr"
+  },
+  "limits": {
+    "selected_seconds": 600,
+    "full_source_seconds": 1800,
+    "input_sample_rate": [
+      8000,
+      96000
+    ],
+    "channels": [
+      1,
+      2
+    ],
+    "segment_seconds": [
+      1,
+      30
+    ],
+    "segment_overlap": [
+      0,
+      0.75
+    ],
+    "storage_mib": [
+      64,
+      8192
+    ],
+    "managed_array_budget_bytes": 536870912
+  },
+  "network": false,
+  "model_downloads": false,
+  "CPU_fallback": false,
+  "state": "reset_per_overlapping_segment",
+  "unsupported": [
+    "full_dereverberation",
+    "music_fidelity_guarantee",
+    "automatic_listening_acceptance",
+    "stereo_phase_coherence_guarantee",
+    "cross_device_bit_determinism",
+    "full_G17_or_CapCut_parity"
+  ],
+  "goal_G17_complete": false
+}
+```
+
+[CLI0.1.43 exact installed capabilities](speech-enhancement-capabilities-cli-0.1.43.json).

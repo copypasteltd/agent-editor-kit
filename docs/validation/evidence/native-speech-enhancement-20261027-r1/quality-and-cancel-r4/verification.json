@@ -1,0 +1,530 @@
+{
+  "status": "passed",
+  "registered_installed_skill": true,
+  "source_fallback": false,
+  "fake_worker": false,
+  "native_windows": true,
+  "virtualization": false,
+  "human_listening": false,
+  "continuous_playback": false,
+  "natural_quality_accepted": false,
+  "calls": [
+    {
+      "name": "register-final",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "audio",
+        "enhancement-adapter",
+        "register",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--adapter-id",
+        "df3_final_r4",
+        "--model-path",
+        "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\deepfilternet3-20261027",
+        "--executable",
+        "D:/dev/comfyui/ComfyUI_windows_portable_nvidia_0_30_0/ComfyUI_windows_portable/python_embeded/python.exe",
+        "--evidence",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\native-speech-enhancement-20261027-r1\\conversion.json",
+        "--license-spdx",
+        "MIT OR Apache-2.0",
+        "--creator",
+        "DeepFilterNet contributors",
+        "--threads",
+        "4",
+        "--segment-seconds",
+        "2",
+        "--overlap",
+        ".25"
+      ],
+      "exit_code": 0,
+      "seconds": 7.931566700019175,
+      "stdout_sha256": "c68f12db5defa32b60b48a3b0b8ae479e30c46ce39c810bf2da64022aac740b9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "final-replay-english",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "audio",
+        "enhance",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--adapter-id",
+        "df3_final_r4",
+        "--recipe-asset-id",
+        "english_enhanced",
+        "--asset-id",
+        "final_replay_english_r4"
+      ],
+      "exit_code": 0,
+      "seconds": 116.1154022999981,
+      "stdout_sha256": "eac8418eb7118d83384bf9a919d0ce40aedb6c8bbaf4745c2617b0e91a7b150e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "final-replay-chinese",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "audio",
+        "enhance",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--adapter-id",
+        "df3_final_r4",
+        "--recipe-asset-id",
+        "chinese_enhanced",
+        "--asset-id",
+        "final_replay_chinese_r4"
+      ],
+      "exit_code": 0,
+      "seconds": 12.139511700021103,
+      "stdout_sha256": "4aa902585abb38733012801a2eca5c671ddfbcf4bc7c622e218980088a419582",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fragment-save",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "fragment",
+        "save",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--library",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\reusable-denoised-fragment-r4",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\fragment-save-r4.json"
+      ],
+      "exit_code": 0,
+      "seconds": 3.502996900002472,
+      "stdout_sha256": "fbb2b4b3e148769cc2a7b7bd6e505f01f21f073cd6dd9f085ebf25faa3a14442",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fragment-init",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "project",
+        "init",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\fragment-target-r4"
+      ],
+      "exit_code": 0,
+      "seconds": 2.2086680000065826,
+      "stdout_sha256": "6016d16a753ff020e36bcfc046d971fb6201095f6ce90e68cfe8325d777d8fea",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "collision-ingest",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "media",
+        "ingest",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\fragment-target-r4",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\chinese-noisy.wav",
+        "--asset-id",
+        "english_enhanced",
+        "--evidence",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\SOURCE.txt"
+      ],
+      "exit_code": 0,
+      "seconds": 2.3574675999989267,
+      "stdout_sha256": "7eb00301f41166a3105ace53970b1c6acf4a13c21a4eca770c341e83e25ae0b4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fragment-apply",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "fragment",
+        "apply",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\fragment-target-r4",
+        "--library",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\reusable-denoised-fragment-r4",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\fragment-apply-r4.json"
+      ],
+      "exit_code": 0,
+      "seconds": 2.626795900025172,
+      "stdout_sha256": "ec2c71c4ce2db31cd89510c2ec00b3817937cbcca8b3fd8bd25e5e19d8ffe153",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fragment-validate",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "validate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\fragment-target-r4"
+      ],
+      "exit_code": 0,
+      "seconds": 2.6732172000047285,
+      "stdout_sha256": "f8cdec4841a7cc91fdde525c8c7cad91a06eac33a01903d5dd4d0edf9a860b8a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "long-source",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-f",
+        "f32le",
+        "-ar",
+        "48000",
+        "-ac",
+        "1",
+        "-i",
+        "pipe:0",
+        "-c:a",
+        "pcm_f32le",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\long-cancel-source-r4.wav"
+      ],
+      "exit_code": 0,
+      "seconds": 0.07658880000235513,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "long-ingest",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "media",
+        "ingest",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\long-cancel-source-r4.wav",
+        "--evidence",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\SOURCE.txt",
+        "--license-spdx",
+        "CC-BY-4.0"
+      ],
+      "exit_code": 0,
+      "seconds": 2.889856099995086,
+      "stdout_sha256": "55c42104be528b6e7162661bb16e0aa90e75269d994cc9d50696c23230211164",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "cancel-diagnostic",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "diagnostics",
+        "show",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--diagnostic-id",
+        "diag_2734d8fc94eb4892829741455342ce4f"
+      ],
+      "exit_code": 0,
+      "seconds": 2.0579127999953926,
+      "stdout_sha256": "b2aefa5950586dcbf733064fa0d12b62911adc047238c03d6c324842a08499a3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": [
+    {
+      "name": "register-final actual installed CLI",
+      "ok": true
+    },
+    {
+      "name": "final-replay-english actual installed CLI",
+      "ok": true
+    },
+    {
+      "name": "english final installed inference exactly matches published master WAV",
+      "ok": true
+    },
+    {
+      "name": "final-replay-chinese actual installed CLI",
+      "ok": true
+    },
+    {
+      "name": "chinese final installed inference exactly matches published master WAV",
+      "ok": true
+    },
+    {
+      "name": "fragment-save actual installed CLI",
+      "ok": true
+    },
+    {
+      "name": "fragment-init actual installed CLI",
+      "ok": true
+    },
+    {
+      "name": "collision-ingest actual installed CLI",
+      "ok": true
+    },
+    {
+      "name": "fragment-apply actual installed CLI",
+      "ok": true
+    },
+    {
+      "name": "real fragment asset collision rebinds generated and source IDs",
+      "ok": true
+    },
+    {
+      "name": "fragment source and master bytes preserved",
+      "ok": true
+    },
+    {
+      "name": "fragment-validate actual installed CLI",
+      "ok": true
+    },
+    {
+      "name": "long-ingest actual installed CLI",
+      "ok": true
+    },
+    {
+      "name": "actual CUDA cancellation after completed neural inference",
+      "ok": true
+    },
+    {
+      "name": "all frozen project metadata unchanged",
+      "ok": true
+    },
+    {
+      "name": "no half asset and no managed job remains",
+      "ok": true
+    },
+    {
+      "name": "CLI exposes persistent bounded diagnostic",
+      "ok": true
+    },
+    {
+      "name": "cancel-diagnostic actual installed CLI",
+      "ok": true
+    },
+    {
+      "name": "owned Windows worker exited and bounded diagnostic retained",
+      "ok": true
+    },
+    {
+      "name": "internal decoder and encoder were not misreported as separately observed children",
+      "ok": true
+    }
+  ],
+  "fragment_generated_id": "fg_80bbb2bd395bd6485fd582ffb303283fe74b86b8",
+  "fragment_source_id": "fg_5b0c3d38499d6b7c0a34c8c80ef7f0e7bdd4ff37",
+  "fragment_recipe": {
+    "channels": 1,
+    "engine": "deepfilternet3-native-cuda-v1",
+    "model_settings": {
+      "overlap": 0.25,
+      "segment_seconds": 2.0,
+      "threads": 4
+    },
+    "model_sha256": "sha256:27339eb250a4c9924cfb6bfc69fc0ace9b17e5135fc51388c8fcfa798986de4d",
+    "options": {
+      "attenuation_limit_db": null,
+      "strength": 1.0
+    },
+    "protocol": "agent-native-speech-enhancement-v1",
+    "range": {
+      "end_sample": 281040,
+      "sample_rate": 48000,
+      "samples": 281040,
+      "start_sample": 0
+    },
+    "selection": {
+      "end_seconds": null,
+      "start_seconds": 0.0
+    },
+    "sha256": "sha256:72bf2a4a72eb00728bcf214b521e216b1b60a92a704aa0d85c5ad16e09b084f8",
+    "source_asset_id": "fg_5b0c3d38499d6b7c0a34c8c80ef7f0e7bdd4ff37",
+    "source_sha256": "sha256:6037a35481869830f5543630000b6c6aca47c2bf28842f99c06e7b5b30887ff8"
+  },
+  "cancellation_trigger": {
+    "phase": "neural-enhancement",
+    "done": 1,
+    "total": 40,
+    "worker_pid": 24544
+  },
+  "cancellation_diagnostic": {
+    "binding": {
+      "adapter_sha256": "sha256:cc8b88706d690caa46b8e00304805146ad4e45849d37422ba0a94a35cb3ba5ca",
+      "artifacts_sha256": "sha256:3198ad4acb387aba93752819be34bb80ada3acb2ebe46e97960cea18e7fdd28e",
+      "engine": "deepfilternet3-native-cuda-v1",
+      "generation": {},
+      "model_sha256": "sha256:27339eb250a4c9924cfb6bfc69fc0ace9b17e5135fc51388c8fcfa798986de4d",
+      "parameters_sha256": "sha256:6209a09d1ad2094f20972ea6fb8fab7b66f3b99a4010007c5b8d39f16a781d4d",
+      "python_executable_sha256": "sha256:ef8f51028ac5329641985112f8efb1c2d4c47c86b8011ddf7e6fae21e2b4e5a1",
+      "request_sha256": "sha256:bc89c1e41b82745ceeaab08f8ccab9c55c6b8f1bf637befc6b89261a26965651",
+      "runtime_versions": "not_probed_by_diagnostics",
+      "source_sha256": "sha256:cf2c039b36899ee159d94287f95fc8eef87b6b9d85a33793bbf257485d9119df"
+    },
+    "created_at_utc": "2026-10-27T14:41:04.675995+00:00",
+    "diagnostic_id": "diag_2734d8fc94eb4892829741455342ce4f",
+    "error": {
+      "code": "CANCELLED",
+      "exit_code": 8,
+      "python_type": "AppError"
+    },
+    "files": {
+      "request.json": {
+        "bytes": 755,
+        "input": {
+          "redacted_summary": true
+        },
+        "sha256": "sha256:53a692ffa32c770f38ae29022a8774fe045bb728f4ec884c257b63a3790de996"
+      },
+      "response.json": {
+        "bytes": 56,
+        "input": {
+          "redacted_summary": true
+        },
+        "sha256": "sha256:5601fbb82a280775f5d512c96882cff973562b9bc67068cecdfa8acbc9e62d13"
+      },
+      "worker.stderr.log": {
+        "bytes": 0,
+        "input": {
+          "bytes_read": 0,
+          "input_bytes": 0,
+          "input_segment_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "input_truncated": false,
+          "invalid_utf8_replaced": false,
+          "offset": 0,
+          "output_truncated": false,
+          "partial_first_line_removed": false,
+          "redacted": true,
+          "state": "read"
+        },
+        "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "limits": {
+      "archive_bytes": 786432,
+      "files": 8,
+      "history_bytes": 67108864,
+      "history_days": 14,
+      "history_records": 32,
+      "manifest_bytes": 65536,
+      "record_bytes": 524288,
+      "response_read_bytes": 131072,
+      "stderr_bytes_each": 65536,
+      "summary_bytes": 32768
+    },
+    "network": "disabled",
+    "operation_id": "op_20261027144058_65da4eb8",
+    "platform": "win32",
+    "processes": [
+      {
+        "cleanup_requested": false,
+        "final_exit": null,
+        "observed_exit": null,
+        "pid": null,
+        "role": "decoder",
+        "started_at_utc": null,
+        "state": "not_started"
+      },
+      {
+        "cleanup_requested": true,
+        "cleanup_requested_at_utc": "2026-10-27T14:41:04.634373+00:00",
+        "final_exit": {
+          "hex": "0x00000000",
+          "raw": 0,
+          "unsigned": 0
+        },
+        "observed_exit": null,
+        "pid": 24544,
+        "role": "worker",
+        "started_at_utc": "2026-10-27T14:40:59.228816+00:00",
+        "state": "terminated_by_cleanup"
+      },
+      {
+        "cleanup_requested": false,
+        "final_exit": null,
+        "observed_exit": null,
+        "pid": null,
+        "role": "encoder",
+        "started_at_utc": null,
+        "state": "not_started"
+      }
+    ],
+    "progress": {
+      "last_reported_frame": null,
+      "older_than_reported": false,
+      "phase": "neural-enhancement",
+      "segments_done": 1,
+      "segments_total": 40,
+      "state": "read",
+      "worker_pid": 24544
+    },
+    "protocol": "agent-native-pipeline-diagnostic-v1",
+    "root_cause": "unknown",
+    "trigger": {
+      "first_failure_at_utc": null,
+      "first_failure_roles": [],
+      "stage": "running",
+      "start_failure_role": null
+    },
+    "warnings": [
+      {
+        "code": "DIAGNOSTIC_LOG_UNAVAILABLE",
+        "role": "decoder"
+      },
+      {
+        "code": "DIAGNOSTIC_LOG_UNAVAILABLE",
+        "role": "encoder"
+      }
+    ]
+  },
+  "worker_pid_confirmed_exited": true,
+  "cancel_elapsed_seconds": 13.196557599992957,
+  "partial_asset_absent": true,
+  "metadata_rollback_verified": true
+}

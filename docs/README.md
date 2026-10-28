@@ -1,5 +1,7 @@
 # agent editor kit 文档 / Documentation
 
+Current local / 当前本地 / 目前本地：**CLI0.1.43 / local.41 / r44 kit** · [CUDA speech enhancement / 对白增强 / 對白增強](product/SPEECH_ENHANCEMENT.md) · [Install](releases/CLI_0.1.43_LOCAL.md) · [C53](product/CASES.md#c53-native-speech-enhancement).
+
 Current local / 当前本地 / 目前本地：**CLI0.1.42 / local.40 / r43 kit** · [CUDA interpolation / 神经补帧 / 神經補幀](product/NEURAL_INTERPOLATION.md) · [Install](releases/CLI_0.1.42_LOCAL.md) · [C52](product/CASES.md#c52-native-neural-interpolation).
 
 Current local / 当前本地 / 目前本地：**CLI0.1.41 / local.39 / r42 kit** · [Neural lip sync / 神经口型 / 神經口型](product/LIP_SYNC.md) · [Install](releases/CLI_0.1.41_LOCAL.md) · [C51](product/CASES.md#c51-native-lip-sync).

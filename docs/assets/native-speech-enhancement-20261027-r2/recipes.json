@@ -1,0 +1,58 @@
+{
+  "english_result": {
+    "protocol": "agent-native-speech-enhancement-v1",
+    "engine": "deepfilternet3-native-cuda-v1",
+    "source_asset_id": "asset_20261027125015_6f39bbc5",
+    "source_sha256": "sha256:6037a35481869830f5543630000b6c6aca47c2bf28842f99c06e7b5b30887ff8",
+    "model_sha256": "sha256:27339eb250a4c9924cfb6bfc69fc0ace9b17e5135fc51388c8fcfa798986de4d",
+    "range": {
+      "start_sample": 0,
+      "end_sample": 281040,
+      "samples": 281040,
+      "sample_rate": 48000
+    },
+    "channels": 1,
+    "selection": {
+      "start_seconds": 0.0,
+      "end_seconds": null
+    },
+    "options": {
+      "strength": 1.0,
+      "attenuation_limit_db": null
+    },
+    "model_settings": {
+      "threads": 4,
+      "segment_seconds": 2.0,
+      "overlap": 0.25
+    },
+    "sha256": "sha256:836f7d4f4053ab47449013e2e76fe95230b97e1b6f0a732ab28408c3db352ae4"
+  },
+  "chinese_result": {
+    "protocol": "agent-native-speech-enhancement-v1",
+    "engine": "deepfilternet3-native-cuda-v1",
+    "source_asset_id": "asset_20261027125020_674b679b",
+    "source_sha256": "sha256:f36284277db567a39b5882f3c0ce4f1b52581d7cbfe25164fcb8adcef62a3b0e",
+    "model_sha256": "sha256:27339eb250a4c9924cfb6bfc69fc0ace9b17e5135fc51388c8fcfa798986de4d",
+    "range": {
+      "start_sample": 137,
+      "end_sample": 232775,
+      "samples": 232638,
+      "sample_rate": 44100
+    },
+    "channels": 2,
+    "selection": {
+      "start_seconds": 0.0031065759637188208,
+      "end_seconds": 5.278344671201814
+    },
+    "options": {
+      "strength": 0.85,
+      "attenuation_limit_db": 24.0
+    },
+    "model_settings": {
+      "threads": 4,
+      "segment_seconds": 2.0,
+      "overlap": 0.25
+    },
+    "sha256": "sha256:af9ca0a2e2cf324d4f62ba3d66c302833d2d88b4c7fbba7b1d9ba57d85e6c3a7"
+  }
+}

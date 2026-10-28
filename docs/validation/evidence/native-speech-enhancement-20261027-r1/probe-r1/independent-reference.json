@@ -1,0 +1,23 @@
+{
+  "status": "independent-reference-compared",
+  "argv": [
+    "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\product\\.runtime\\models\\deepfilternet3-20261027\\reference\\deep-filter-0.5.6-x86_64-pc-windows-msvc.exe",
+    "-D",
+    "--min-db-thresh=-100",
+    "--max-db-erb-thresh=100",
+    "--max-db-df-thresh=100",
+    "-o",
+    "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\docs\\validation\\evidence\\native-speech-enhancement-20261027-r1\\probe-r1\\official-r2",
+    "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\docs\\validation\\evidence\\native-speech-enhancement-20261027-r1\\probe-r1\\source.wav"
+  ],
+  "cuda_samples": 144137,
+  "official_samples": 142697,
+  "max_abs_error": 0.007717737462371588,
+  "rms_error": 0.00019511976600272352,
+  "official_peak": 0.00994873046875,
+  "cuda_peak": 0.002404113532975316,
+  "best_sample_offset": 0,
+  "best_mse": 3.8071723084957576e-08,
+  "independent_runtime": "official-Rust-Tract-ONNX-native-Windows-v0.5.6",
+  "not_bit_exact": true
+}

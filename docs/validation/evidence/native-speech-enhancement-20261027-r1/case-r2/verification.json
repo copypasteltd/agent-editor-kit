@@ -1,0 +1,962 @@
+{
+  "status": "failed",
+  "started_at_utc": "2026-10-27T12:50:05.254081+00:00",
+  "registered_installed_skill": true,
+  "source_fallback": false,
+  "native_windows": true,
+  "virtualization": false,
+  "fake_worker": false,
+  "human_listening": false,
+  "continuous_playback": false,
+  "natural_quality_accepted": false,
+  "calls": [
+    {
+      "name": "version",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "version"
+      ],
+      "exit_code": 0,
+      "seconds": 2.8971700000111014,
+      "stdout_sha256": "1b3b4f41835f9d78ebf2dea218872b452caa6aaea70f8136d51c069e1b11b90b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "init",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "project",
+        "init",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程"
+      ],
+      "exit_code": 0,
+      "seconds": 2.3351885000010952,
+      "stdout_sha256": "5fef973e0d70a5434c9e87da4c311b35692609d6451eb14b0ae21671c3e6bd6c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "decode-human",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\original-human-16k.flac",
+        "-vn",
+        "-ar",
+        "48000",
+        "-ac",
+        "1",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.08716630001435988,
+      "stdout_sha256": "a483eaaae2757449ba7364e99477a0ea67483c218abb422211d68f24d632e288",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "decode-chinese",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-lipsync-20261027-r1\\speech.wav",
+        "-vn",
+        "-ar",
+        "44100",
+        "-ac",
+        "1",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.1162280999997165,
+      "stdout_sha256": "63f99fe117067a146e299fac82ec34ba7681cf5071cce69009ed482f8d5e465d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "encode-english-clean",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-f",
+        "f32le",
+        "-ar",
+        "48000",
+        "-ac",
+        "1",
+        "-i",
+        "pipe:0",
+        "-map_metadata",
+        "-1",
+        "-c:a",
+        "pcm_f32le",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\english-clean.wav"
+      ],
+      "exit_code": 0,
+      "seconds": 0.06806089999736287,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ingest-english-clean",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "media",
+        "ingest",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\english-clean.wav",
+        "--evidence",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\SOURCE.txt",
+        "--creator",
+        "LibriSpeech contributors",
+        "--license-spdx",
+        "CC-BY-4.0"
+      ],
+      "exit_code": 0,
+      "seconds": 2.2967462000087835,
+      "stdout_sha256": "362e2fc026c1a79a6615da1b8c776f6b00972feeb2f73fd62659d71427a432ee",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "encode-english-noisy",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-f",
+        "f32le",
+        "-ar",
+        "48000",
+        "-ac",
+        "1",
+        "-i",
+        "pipe:0",
+        "-map_metadata",
+        "-1",
+        "-c:a",
+        "pcm_f32le",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\english-noisy.wav"
+      ],
+      "exit_code": 0,
+      "seconds": 0.06832699998631142,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ingest-english-noisy",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "media",
+        "ingest",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\english-noisy.wav",
+        "--evidence",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\SOURCE.txt",
+        "--creator",
+        "LibriSpeech contributors",
+        "--license-spdx",
+        "CC-BY-4.0"
+      ],
+      "exit_code": 0,
+      "seconds": 2.35490760000539,
+      "stdout_sha256": "5fa696e222091461af2f682597df0ef601d591fa3eaa37a8c49e28be3424d717",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "encode-chinese-clean",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-f",
+        "f32le",
+        "-ar",
+        "44100",
+        "-ac",
+        "2",
+        "-i",
+        "pipe:0",
+        "-map_metadata",
+        "-1",
+        "-c:a",
+        "pcm_f32le",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\chinese-clean.wav"
+      ],
+      "exit_code": 0,
+      "seconds": 0.07049579999875277,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ingest-chinese-clean",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "media",
+        "ingest",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\chinese-clean.wav",
+        "--evidence",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\SOURCE.txt",
+        "--creator",
+        "local synthetic Kokoro",
+        "--license-spdx",
+        "LicenseRef-See-Source"
+      ],
+      "exit_code": 0,
+      "seconds": 2.33739770000102,
+      "stdout_sha256": "b67f7af6f6a8fe88c5df42e41e357f2671bd745b6a965b363afba06e940635aa",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "encode-chinese-noisy",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-f",
+        "f32le",
+        "-ar",
+        "44100",
+        "-ac",
+        "2",
+        "-i",
+        "pipe:0",
+        "-map_metadata",
+        "-1",
+        "-c:a",
+        "pcm_f32le",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\chinese-noisy.wav"
+      ],
+      "exit_code": 0,
+      "seconds": 0.07053389999782667,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ingest-chinese-noisy",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "media",
+        "ingest",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\chinese-noisy.wav",
+        "--evidence",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\SOURCE.txt",
+        "--creator",
+        "local synthetic Kokoro",
+        "--license-spdx",
+        "LicenseRef-See-Source"
+      ],
+      "exit_code": 0,
+      "seconds": 2.785232399997767,
+      "stdout_sha256": "d11997722c2c8e4b151dfa6e1a9e185067d751aaa0274a3d715831a618d70d1f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "encode-english-reverb-noisy",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-n",
+        "-f",
+        "f32le",
+        "-ar",
+        "48000",
+        "-ac",
+        "1",
+        "-i",
+        "pipe:0",
+        "-map_metadata",
+        "-1",
+        "-c:a",
+        "pcm_f32le",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\english-reverb-noisy.wav"
+      ],
+      "exit_code": 0,
+      "seconds": 0.071438599989051,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ingest-english-reverb-noisy",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "media",
+        "ingest",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\english-reverb-noisy.wav",
+        "--evidence",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\SOURCE.txt",
+        "--creator",
+        "LibriSpeech contributors",
+        "--license-spdx",
+        "CC-BY-4.0"
+      ],
+      "exit_code": 0,
+      "seconds": 2.6999204000167083,
+      "stdout_sha256": "7d7819b919730159c93758bf0d6cb0cec7cf1fcf0c09045698b2f99c74933bf6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "register",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "audio",
+        "enhancement-adapter",
+        "register",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--adapter-id",
+        "df3_local",
+        "--model-path",
+        "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\deepfilternet3-20261027",
+        "--executable",
+        "D:/dev/comfyui/ComfyUI_windows_portable_nvidia_0_30_0/ComfyUI_windows_portable/python_embeded/python.exe",
+        "--evidence",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\native-speech-enhancement-20261027-r1\\conversion.json",
+        "--license-spdx",
+        "MIT OR Apache-2.0",
+        "--creator",
+        "DeepFilterNet contributors",
+        "--threads",
+        "4",
+        "--segment-seconds",
+        "2",
+        "--overlap",
+        ".25"
+      ],
+      "exit_code": 0,
+      "seconds": 2.5612435000075493,
+      "stdout_sha256": "32ff34c7a70fc7ea7a0c5baef619b28d82c0f0a7ee20b4e12d9e1ddad053dc89",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "dry-run",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "audio",
+        "enhance",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--adapter-id",
+        "df3_local",
+        "--source-asset-id",
+        "asset_20261027125015_6f39bbc5",
+        "--asset-id",
+        "english_enhanced",
+        "--apply",
+        "--track-id",
+        "track_audio_1",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "seconds": 2.5405866999935824,
+      "stdout_sha256": "bcfaa7877ff0dbc6a81f947bb228b66825c27c186bdd70ff44cb8e564d6cf1c0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "english-enhance",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "audio",
+        "enhance",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--adapter-id",
+        "df3_local",
+        "--source-asset-id",
+        "asset_20261027125015_6f39bbc5",
+        "--asset-id",
+        "english_enhanced",
+        "--apply",
+        "--track-id",
+        "track_audio_1"
+      ],
+      "exit_code": 0,
+      "seconds": 122.75822990000597,
+      "stdout_sha256": "0031363f280633ad18837246e4642f4a7772a3de48e40d6c3d8c752a64a6803c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "decode-english-enhanced",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\english-enhanced.wav",
+        "-vn",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.06596840001293458,
+      "stdout_sha256": "83354f670149b119a676c978e21a5a08b3e5a936bbcc1f33dd836cf42ddb2d12",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "chinese-enhance",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "audio",
+        "enhance",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--adapter-id",
+        "df3_local",
+        "--source-asset-id",
+        "asset_20261027125020_674b679b",
+        "--asset-id",
+        "chinese_enhanced",
+        "--start-seconds",
+        "0.0031065759637188208",
+        "--end-seconds",
+        "5.278344671201814",
+        "--strength",
+        ".85",
+        "--attenuation-limit-db",
+        "24"
+      ],
+      "exit_code": 0,
+      "seconds": 12.962426100013545,
+      "stdout_sha256": "1b1a29e3e20f8e1e4451b2a61f9e925baffce3acd172b9577f91953ea21ae60c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "decode-chinese-enhanced",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\chinese-enhanced.wav",
+        "-vn",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.08317470000474714,
+      "stdout_sha256": "49904e2b9120d4e39f20ad80d4a5da7ca2b046f4df1745f53047ef99bb3ab337",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "clean_control",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "audio",
+        "enhance",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--adapter-id",
+        "df3_local",
+        "--source-asset-id",
+        "asset_20261027125013_23054963",
+        "--asset-id",
+        "clean_control"
+      ],
+      "exit_code": 0,
+      "seconds": 10.322158599999966,
+      "stdout_sha256": "91830dbe10a226b2006198cf64c32206314cbcac7546927491ab20ad779d9dbe",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "decode-clean_control",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\clean_control.wav",
+        "-vn",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.0646384000137914,
+      "stdout_sha256": "e76166b9e29b7b33365ed87b318969149cd9786dcf376a735f30baafce571d41",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "reverb_control",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "audio",
+        "enhance",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--adapter-id",
+        "df3_local",
+        "--source-asset-id",
+        "asset_20261027125023_7c30a0fa",
+        "--asset-id",
+        "reverb_control"
+      ],
+      "exit_code": 0,
+      "seconds": 9.248072500020498,
+      "stdout_sha256": "a65d15e0d4ccaa482ed0836122003312cb10a39755bf91101de955c4928aafc6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "decode-reverb_control",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\reverb_control.wav",
+        "-vn",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.06506309998803772,
+      "stdout_sha256": "8ce72de4691d745f3f894793dbee4f49cc6da7438c9c3d056ddc87ec34e097b1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "bit-exact-bypass",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "audio",
+        "enhance",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--adapter-id",
+        "df3_local",
+        "--recipe-asset-id",
+        "chinese_enhanced",
+        "--asset-id",
+        "native_bypass",
+        "--strength",
+        "0"
+      ],
+      "exit_code": 0,
+      "seconds": 6.519470400002319,
+      "stdout_sha256": "304fec8fce20e15f13017a4f04c2606ffbfdcd0d02d427df13cd7736d85b3942",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "decode-bypass",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程\\assets\\derived\\native_bypass.wav",
+        "-vn",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.07301760002155788,
+      "stdout_sha256": "831c41ec34636e5dafc76427973e0f597433066438b69c2b629c143a65d97bdf",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "recipe-rerun",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "audio",
+        "enhance",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--adapter-id",
+        "df3_local",
+        "--recipe-asset-id",
+        "english_enhanced",
+        "--asset-id",
+        "english_gentler",
+        "--strength",
+        ".5"
+      ],
+      "exit_code": 0,
+      "seconds": 9.368845800025156,
+      "stdout_sha256": "6d7e8d8500f1c39e76b30969b8b916e5e7428ea996c623fac1a52a5c3fad8b15",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "decode-gentle",
+      "command": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程\\assets\\derived\\english_gentler.wav",
+        "-vn",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "seconds": 0.05942229999345727,
+      "stdout_sha256": "983d749ae6fb7d2315d20339c7d397f12b6183ae34cdcb1f4484de358f4f59ac",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "validate",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "validate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程"
+      ],
+      "exit_code": 0,
+      "seconds": 2.204994200001238,
+      "stdout_sha256": "819a18ec492bf5b651a22a3afa40b9a683e173cd0b5377b4240043e4ad6bf074",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "render",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-speech-enhancement-case-r2\\可编辑 对白增强工程\\renders\\enhanced.mp4"
+      ],
+      "exit_code": 2,
+      "seconds": 3.9714224000053946,
+      "stdout_sha256": "5ea86d2e099f401fd74b46a2424e55532050e302529cb7f5cacba448c685b6af",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": [
+    {
+      "name": "version registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "init registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "ingest-english-clean registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "ingest-english-noisy registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "ingest-chinese-clean registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "ingest-chinese-noisy registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "ingest-english-reverb-noisy registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "register registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "dry-run registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "dry-run leaves project byte-identical",
+      "ok": true
+    },
+    {
+      "name": "english-enhance registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "English complete native samples retained",
+      "ok": true
+    },
+    {
+      "name": "actual CUDA full graph with no network and no fallback",
+      "ok": true
+    },
+    {
+      "name": "chinese-enhance registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "Chinese exact odd native range and both independent channels preserved",
+      "ok": true
+    },
+    {
+      "name": "clean_control registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "reverb_control registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "bit-exact-bypass registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "all selected native stereo Float32 bits bypass exactly",
+      "ok": true
+    },
+    {
+      "name": "recipe-rerun registered CLI0.1.43",
+      "ok": true
+    },
+    {
+      "name": "recipe rerun equals explicit native dry wet mix within Float32 rounding",
+      "ok": true
+    },
+    {
+      "name": "validate registered CLI0.1.43",
+      "ok": true
+    }
+  ],
+  "quality": {
+    "english_seeded_noise": {
+      "input": {
+        "samples_per_channel": 281040,
+        "channels": 1,
+        "MSE": 0.0038193302819459697,
+        "SNR_dB": -7.793525828076303e-10,
+        "SI_SDR_dB": 0.00799138339398716,
+        "fitted_gain": 1.000920041843898,
+        "peak": 0.47638916969299316,
+        "RMS": 0.08743962746121119,
+        "quality_pass_threshold": null
+      },
+      "enhanced": {
+        "samples_per_channel": 281040,
+        "channels": 1,
+        "MSE": 0.0002272693356757256,
+        "SNR_dB": 12.25446373666869,
+        "SI_SDR_dB": 12.206064997796101,
+        "fitted_gain": 0.8923283959487011,
+        "peak": 0.3653547763824463,
+        "RMS": 0.05678144751031143,
+        "quality_pass_threshold": null
+      }
+    },
+    "chinese_synthetic_seeded_noise": {
+      "input": {
+        "samples_per_channel": 232638,
+        "channels": 2,
+        "MSE": 0.004193120428651831,
+        "SNR_dB": 0.0068418210133662696,
+        "SI_SDR_dB": 0.010452879682328421,
+        "fitted_gain": 1.000415738332851,
+        "peak": 0.5584664940834045,
+        "RMS": 0.09163156569435156,
+        "quality_pass_threshold": null
+      },
+      "enhanced": {
+        "samples_per_channel": 232638,
+        "channels": 2,
+        "MSE": 0.0004505610780797404,
+        "SNR_dB": 9.694678455677426,
+        "SI_SDR_dB": 9.23440930054633,
+        "fitted_gain": 0.8681291746102344,
+        "peak": 0.41149020195007324,
+        "RMS": 0.05952015124038562,
+        "quality_pass_threshold": null
+      },
+      "selection": {
+        "start_sample": 137,
+        "end_sample": 232775,
+        "sample_rate": 44100
+      },
+      "upsampled_source": true,
+      "independent_channels": true
+    },
+    "clean_control": {
+      "input": {
+        "samples_per_channel": 281040,
+        "channels": 1,
+        "MSE": 0.0,
+        "SNR_dB": 275.81987216144125,
+        "SI_SDR_dB": 330.307553529281,
+        "fitted_gain": 1.0,
+        "peak": 0.42702844738960266,
+        "RMS": 0.06180073042659432,
+        "quality_pass_threshold": null
+      },
+      "enhanced": {
+        "samples_per_channel": 281040,
+        "channels": 1,
+        "MSE": 4.225382228175607e-06,
+        "SNR_dB": 29.56121214792356,
+        "SI_SDR_dB": 33.970123891038604,
+        "fitted_gain": 0.9730411133775333,
+        "peak": 0.41606295108795166,
+        "RMS": 0.060146702980597655,
+        "quality_pass_threshold": null
+      },
+      "no_quality_acceptance": true
+    },
+    "reverb_control": {
+      "input": {
+        "samples_per_channel": 281040,
+        "channels": 1,
+        "MSE": 0.0071007365052525,
+        "SNR_dB": -2.693161809662369,
+        "SI_SDR_dB": -2.7551932363577043,
+        "fitted_gain": 0.9928702350024052,
+        "peak": 0.5563470721244812,
+        "RMS": 0.10423821243577569,
+        "quality_pass_threshold": null
+      },
+      "enhanced": {
+        "samples_per_channel": 281040,
+        "channels": 1,
+        "MSE": 0.000988033040846722,
+        "SNR_dB": 5.8721574805703,
+        "SI_SDR_dB": 4.573567616385286,
+        "fitted_gain": 0.7345341804102261,
+        "peak": 0.42463913559913635,
+        "RMS": 0.05272153293778108,
+        "quality_pass_threshold": null
+      },
+      "no_quality_acceptance": true
+    }
+  },
+  "error": "AssertionError(('render', b'{\"ok\":false,\"command\":\"render\",\"request_id\":\"req_20261027125326_1e8bf173\",\"operation_id\":null,\"status\":\"failed\",\"data\":{},\"artifacts\":[],\"warnings\":[],\"errors\":[{\"code\":\"VIDEO_TRACK_EMPTY\",\"message\":\"\\xe6\\xb2\\xa1\\xe6\\x9c\\x89\\xe5\\x8f\\xaf\\xe6\\xb8\\xb2\\xe6\\x9f\\x93\\xe7\\x9a\\x84\\xe8\\xa7\\x86\\xe9\\xa2\\x91\\xe7\\x89\\x87\\xe6\\xae\\xb5\\xe6\\x88\\x96\\xe7\\x8b\\xac\\xe7\\xab\\x8b\\xe6\\x96\\x87\\xe5\\xad\\x97\\xe8\\xbd\\xa8\\xe9\\x81\\x93\",\"path\":\"sequences[].tracks\",\"retryable\":false}],\"provenance\":{\"cli_version\":\"0.1.43\",\"schema_version\":\"0.1.0\",\"engine_version\":\"ffmpeg-local\",\"started_at\":\"2026-10-27T12:53:26.905839Z\",\"finished_at\":\"2026-10-27T12:53:26.905847Z\",\"network\":\"disabled\"}}\\r\\n', b''))"
+}

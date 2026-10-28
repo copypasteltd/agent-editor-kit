@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.42 / alpha.4-local.40 / r43 kit · 1 Skill / 17 modules / 81 files.**
+**CLI0.1.43 / alpha.4-local.41 / r44 kit · 1 Skill / 17 modules / 82 files.**
 
-Adds **actual native CUDA RIFE4.25 interpolation and editable slow motion**: native CFR/VFR PTS, every frame duration, all original RGBA anchors and selected original PCM remain intact. Integer2..8 factors,explicit cut holds,premultiplied alpha,rerunnable recipes and linked tracks.
+Adds **actual native CUDA DeepFilterNet3 speech denoising** with native sample clocks, mono/stereo, separate enhanced assets and editable audio tracks, strength/attenuation controls, overlapping segments, portable rerun recipes, packages and owned cancellation.
 
-[Native interpolation workflow and limits](NEURAL_INTERPOLATION.md)
+[Speech enhancement workflow](SPEECH_ENHANCEMENT.md)
 
 <!-- /community-current -->
 
@@ -33,7 +33,7 @@ Adds **actual native CUDA RIFE4.25 interpolation and editable slow motion**: nat
 | F17 | Transitions and cut effects | Adjacent clips and handles → declared fades, wipes, slides, black/white fades, circular and other transitions. | `timeline transition; capabilities` | Select by renderer and layer context; the explicit CPU Float32 subset is delivered under the separate F55 contract. |
 | F18 | Geometric masks and frame corrections | Rectangles/circles/ellipses/paths/polygons → inversion, feathering, animation, encoded masks and corrections. | `timeline compose; media mask-edit; quality mask` | Point topology and sampling are bounded; geometric checks do not prove semantic identity. |
 | F19 | Layer compositing and blending | Visual layers → normal/multiply/screen/overlay/difference/addition/softlight/hardlight. | `timeline compose; capabilities` | The default path mainly uses encoded 8-bit RGB, without general linear-light/HDR equivalence. |
-| F20 | 46 processing operators | Blur/sharpen, denoise, tone, curves, HSL, keying, vignette, noise and more → configurable chains. | `effects list/inspect` | Inspect animated parameters and backends individually; 46 operators and 500 LUT looks are separate inventories. |
+| F20 | 51 processing operators | Blur/sharpen, denoise, tone, curves, HSL, keying, vignette, noise and more → configurable chains. | `effects list/inspect` | Inspect animated parameters and backends individually; 51 operators and 500 LUT looks are separate inventories. |
 | F21 | 500 offline looks | Name/ID/category/license search → details, still previews, clip/global application and provenance copies. | `look list/inspect/preview/apply` | 500 distinct transforms include related curve variants; creative SDR mapping, not 500 unrelated families. |
 | F22 | Custom LUTs and color automation | Local .cube/.3dl/.csp/.dat → registration/inspection; supported 3D LUT strength and color channels follow automation contracts. | `lut register/list/inspect; effects inspect` | Registration does not imply complete parsing on every path; full CUBE data is required for the corresponding intensity/float features. |
 | F23 | Explicit Float32 pixel pipeline | Declared source/working/output signals, ordering and budgets → float color, LUT/shaper, selected spatial processing and surfaces. | `render; preview; surface export/inspect` | Explicit float32-native-v1 selection; a bounded subset that refuses unsupported features, not a complete HDR/ICC pipeline. |
@@ -82,6 +82,7 @@ Adds **actual native CUDA RIFE4.25 interpolation and editable slow motion**: nat
 | F66 | Native PQ/HLG HDR and SDR viewing | Explicit reference white/HLG peak/gamma → display-linear edits; mixed-nit assets, ordinary effects/composition and10-bit BT.2020 NCL delivery; separate SDR trim and PNG/MP4 previews. | `timeline compose; validate; preview; render; convert` | CPU transfer math; existing GPU composition/effects; rejects8-bit/mismatched tags/missing units; alpha bits retained. ICC/dynamic metadata/HDR monitoring unaccepted. |
 | F67 | Local neural lip sync | Image/video + separate speech → actual CUDA MuseTalk mouth;25FPS box keys, semantic lower-face blend, complete PCM/alpha, rerunnable recipe and linked editable video/audio clips. | `lipsync adapter register/list/inspect; lipsync generate` | Explicit local safetensors/native Torch runtime;256×256 face,8bit SDR/source motion,no CPU fallback; natural quality/full digital human remain open. |
 | F68 | CUDA neural interpolation / slow motion | Native CFR/VFR,all original RGBA anchors,premultiplied alpha,complete PCM;factor2..8,cut holds,linked slow-motion tracks,recipes/packages. | `interpolate adapter; interpolate generate` | Explicit RIFE4.25 safetensors/native CUDA Python;no CPU fallback;difficult motion/occlusion/natural-quality/HDR acceptance open. |
+| F69 | CUDA speech denoising | Native sample clock/mono-stereo,actual model,dry/wet attenuation,editable audio,portable recipes/packages,owned cancel/rollback. | `audio enhancement-adapter; audio enhance` | Fixed DF3 safetensors/existing native CUDA;segment state resets,CPU frontend;full dereverb/music fidelity open. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -108,6 +109,7 @@ Adds **actual native CUDA RIFE4.25 interpolation and editable slow motion**: nat
 | S21 | Local resident GPU inference session | Native process, authenticated Windows named pipe, JSON/raw frames, overlapping deny-write locks and lifecycle watchdog. | Existing local VACE adapter, repeated variants of one prompt. | `media model-session start/status/stop` | No network port; serial per project; initial loading and reuse of other models remain limited. |
 | S22 | MuseTalk CUDA neural mouth service | Local Whisper-tiny, MuseTalk1.5 UNet, SD VAE and BiSeNet; fixed safetensors, deny-write locks and owned native cleanup. | Explicit existing native Torch/Diffusers/Transformers/OpenCV and model evidence; no automatic install. | `lipsync adapter; lipsync generate` | 256×256 face/25FPS; rights,naturalness,full digital human and HDR acceptance remain separate. |
 | S23 | RIFE CUDA interpolation | Fixed five-stage IFNet/158 FP32 inference tensors,local artifact hashes,actual CUDA;no model-directory code/Pickle. | Existing native Torch/safetensors and MIT model evidence;no installation. | `interpolate adapter; interpolate generate` | Native interval subdivision,complete frame/PCM proofs;RGB threshold is not semantic cuts;quality review required. |
+| S24 | DeepFilterNet3 speech service | Fixed133-tensor48kHz full-band model;CUDA neural graph,NumPy CPU frontend,FFmpeg resampling. | Explicit local weights/native Torch/safetensors and MIT OR Apache-2.0 evidence. | `audio enhancement-adapter; audio enhance` | 8..96kHz,mono/stereo,source≤1800s/selection≤600s;no downloads,installs or CPU fallback. |
 
 ## Complete installed capability fields
 
@@ -5169,3 +5171,78 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 ```
 
 [CLI0.1.42 exact installed capability snapshot](neural-interpolation-capabilities-cli-0.1.42.json).
+
+### `native_speech_enhancement`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "agent-native-speech-enhancement-v1",
+  "engine": "deepfilternet3-native-cuda-v1",
+  "commands": [
+    "audio.enhancement-adapter.register",
+    "audio.enhancement-adapter.list",
+    "audio.enhancement-adapter.inspect",
+    "audio.enhance"
+  ],
+  "features": [
+    "actual_48kHz_DeepFilterNet3_CUDA_graph",
+    "strict_133_tensor_safetensors",
+    "native_decoded_audio_interval_clock",
+    "independent_mono_or_stereo_model_rows",
+    "explicit_segment_overlap_add",
+    "native_rate_and_sample_count_preserved",
+    "native_rate_strength_and_attenuation_limit_mix",
+    "Float32_bypass_bit_exact",
+    "complete_encoded_PCM_hash_verification",
+    "portable_rerunnable_recipe",
+    "editable_independent_audio_clip",
+    "owned_Windows_process_tree_cancel_timeout_recovery"
+  ],
+  "backend": {
+    "neural": "CUDA_FP32",
+    "analysis_features_synthesis": "NumPy_CPU",
+    "sample_rate_conversion": "FFmpeg_swr"
+  },
+  "limits": {
+    "selected_seconds": 600,
+    "full_source_seconds": 1800,
+    "input_sample_rate": [
+      8000,
+      96000
+    ],
+    "channels": [
+      1,
+      2
+    ],
+    "segment_seconds": [
+      1,
+      30
+    ],
+    "segment_overlap": [
+      0,
+      0.75
+    ],
+    "storage_mib": [
+      64,
+      8192
+    ],
+    "managed_array_budget_bytes": 536870912
+  },
+  "network": false,
+  "model_downloads": false,
+  "CPU_fallback": false,
+  "state": "reset_per_overlapping_segment",
+  "unsupported": [
+    "full_dereverberation",
+    "music_fidelity_guarantee",
+    "automatic_listening_acceptance",
+    "stereo_phase_coherence_guarantee",
+    "cross_device_bit_determinism",
+    "full_G17_or_CapCut_parity"
+  ],
+  "goal_G17_complete": false
+}
+```
+
+[CLI0.1.43 exact installed capabilities](speech-enhancement-capabilities-cli-0.1.43.json).

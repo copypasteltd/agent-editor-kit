@@ -1,0 +1,66 @@
+{
+  "status": "actual-cuda-probed",
+  "identity_max_abs_error": 4.470348358154297e-08,
+  "samples": 144137,
+  "output_shape": [
+    1,
+    144137
+  ],
+  "metadata": {
+    "engine": "deepfilternet3-native-cuda-v1",
+    "device": "NVIDIA GeForce RTX 3060",
+    "precision": "float32",
+    "CPU_fallback": false,
+    "neural_backend": "cuda",
+    "frontend_backend": "numpy-cpu",
+    "sample_rate": 48000,
+    "model_loads": 1,
+    "model_forwards": 1,
+    "channel_forwards": 1,
+    "CUDA_admission": {
+      "policy": "cuda-uuid-physical-and-torch-free-v1",
+      "stage": "speech-enhancement-load",
+      "required_free_bytes": 1073741824,
+      "reservation": false,
+      "oom_guarantee": false,
+      "query_started_at_utc": "2026-10-27T10:51:47.797933+00:00",
+      "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+      "logical_device_index": 0,
+      "idle_cache_release": {
+        "scope": "current-worker",
+        "synchronized": true,
+        "empty_cache_called": true,
+        "completed": true,
+        "active_allocation_preserved": true,
+        "allocated_before_bytes": 0,
+        "reserved_before_bytes": 0,
+        "allocated_after_bytes": 0,
+        "reserved_after_bytes": 0,
+        "released_reserved_bytes": 0
+      },
+      "query_command": [
+        "C:\\Windows\\System32\\nvidia-smi.EXE",
+        "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+        "--query-gpu=uuid,memory.total,memory.free",
+        "--format=csv,noheader,nounits"
+      ],
+      "torch_free_bytes": 11799625728,
+      "torch_total_bytes": 12884377600,
+      "physical_free_bytes": 10600054784,
+      "physical_total_bytes": 12884901888,
+      "effective_free_bytes": 10600054784,
+      "query_finished_at_utc": "2026-10-27T10:51:47.992549+00:00",
+      "sample_seconds": 0.19437079998897389,
+      "status": "admitted"
+    },
+    "load_seconds": 0.7707059000094887,
+    "weight_reader": "safetensors-pread",
+    "versions": {
+      "torch": "2.13.0+cu130",
+      "numpy": "2.4.6",
+      "safetensors": "0.8.0"
+    },
+    "cuda_peak_allocated_bytes": 50877952
+  },
+  "blocked_network_events": []
+}

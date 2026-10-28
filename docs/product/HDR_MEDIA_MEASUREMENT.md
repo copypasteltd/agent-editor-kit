@@ -1,6 +1,6 @@
 # 编码后原生成片光量复核
 
-本轮新增源码命令 `surface measure-media`，与 CLI 0.1.49 已安装版本的 `surface measure` 分开。前者复核编码后文件；后者测量编码器 RGB16 输入。当前新增入口尚未进入本地发行 ZIP 或统一 Skill 安装版，完成安装验收前不要向客户声明已可从安装版调用。
+本地 CLI 0.1.50 / alpha.4-local.48 已安装并加载统一 `$agent-ffmpeg-local-editor`。`surface measure-media` 复核编码后文件，`surface measure` 测量编码器RGB16输入；两者不可混称。[安装流程](../releases/CLI_0.1.50_LOCAL.md)。
 
 ## 输入与调用
 
@@ -10,11 +10,14 @@
 {"primaries":"bt2020","transfer":"pq-st2084","reference_white_nits":203}
 ```
 
-源码入口示例（工作目录为本仓库根目录，使用具备本项目依赖的原生 Python；这里显式加载源码，不能用已安装的 CLI 0.1.49 代替）：
+通过已注册本地统一Skill调用（原生PowerShell）：
 
-```text
-python -E -B -X utf8 -c "import sys; sys.path.insert(0,'product/src'); from ai_ad_editor.cli import main; raise SystemExit(main())" surface measure-media --project PROJECT --input output/master.mkv --signal-json SIGNAL.json --pixel-family yuv --yuv-matrix bt2020nc --yuv-range limited --chroma-location left --scan progressive --dry-run
+```powershell
+$aekSkill = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1'
+& $aekSkill surface measure-media --project PROJECT --input renders/master.mkv --signal-json SIGNAL.json --pixel-family yuv --yuv-matrix bt2020nc --yuv-range limited --chroma-location left --scan progressive --dry-run
 ```
+
+`--signal-json` 使用实际本地JSON的绝对路径；不要调用旧版安装，也不要静默回落到源码。
 
 去掉 `--dry-run` 执行实际测量。参数不从成片标签或工程输出配置自动推断；标签不能替代明确的 HLG 显示峰值、gamma、黑位或 SDR 参考白。只接受工程内本地文件。RGB 成片用 `--pixel-family rgb`，不附 YCbCr 参数。默认量程策略 `reject`，检测越界即失败；只有显式 `--range-policy clip` 才截断到 [0,1] 并报告负值、超一及裁切分量数量。
 
@@ -34,6 +37,9 @@ python -E -B -X utf8 -c "import sys; sys.path.insert(0,'product/src'); from ai_a
 - 不自动选择 MaxCLL/MaxFALL 母版约定，不实现动态 HDR、Dolby Vision、完整 ACES 或自然 HDR 监看。
 - 只支持已有原生 RGB/YCbCr 像素适配；隔行图像、隐式旋转、自动背景、隐式色度语义不被当作已支持。
 - YCbCr 重建可产生负值或超一；显式 clip 会改变测量结果，必须与计数一同展示。
-- 这一轮尚未完成新增命令的发行包构建、安装版回归与公开客户端案例；正式可用版本仍以当前安装版为准。
+- 当前已完成本地包、安装专项/边界/兼容与C60 PQ/HLG 4:2:0实测；公开alpha.3附件仍为旧版，不能当作CLI0.1.50下载。4K/长片/更广编解码与物理监看验收继续开发。
 
 核验记录见 [本轮实测](../validation/编码后成片光量核验_2026-10-29.md)。原目标 G08 的其他要求继续保留。
+
+
+[本地安装版跨编码实测](../validation/编码后成片安装与跨编码实测_2026-10-29.md) · [C60](CASES.md#c60-post-codec-hdr420)。

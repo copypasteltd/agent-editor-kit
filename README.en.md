@@ -4,7 +4,6 @@
 
 [简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit) · [Docs](docs/README.md)
 
-**Source development: CLI 0.1.50 (not yet packaged or installed).** Adds native post-codec light metering with `surface measure-media`: 29/29 source tests and an independent full 48-frame encoded-master pixel/light oracle pass. The installed runtime and unified Skill remain CLI 0.1.49 / local.47 / r50 kit and cannot invoke this new command. [Workflow and limits](docs/product/HDR_MEDIA_MEASUREMENT.md) · [Evidence](docs/validation/编码后成片光量核验_2026-10-29.md).
 
 Development reporting: every round ends with numbered completed-work and pending-work tables, including verification evidence and remaining limits. See the [reporting convention](docs/DEVELOPMENT_REPORTING.md).
 
@@ -13,7 +12,23 @@ Development reporting: every round ends with numbered completed-work and pending
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- native-hdr-measure-current -->
+<!-- native-hdr-media-current -->
+
+**CLI0.1.50 / alpha.4-local.48 / r51 kit · 1 Skill / 17 modules / 89 files.**
+
+Added **native post-codec media light metering**:original PTS/exposures,explicit RGB/YCbCr interpretation,separate MaxRGB/CIE Y,range/clipping counts,and full decoded-pixel/clock digests.`surface measure` remains the pre-codec boundary;`surface measure-media` checks the encoded file.
+
+[Workflow](docs/product/HDR_MEDIA_MEASUREMENT.md) · [C60](docs/product/CASES.md#c60-post-codec-hdr420) · [Install](docs/releases/CLI_0.1.50_LOCAL.md) · [Evidence](docs/validation/编码后成片安装与跨编码实测_2026-10-29.md)
+
+![Actual authored timeline SDR view](docs/assets/native-hdr-media-installed-20261029-r1/author-SDR-preview.gif)
+
+Installed focused29,boundary42 and compatibility352 tests pass separately.C60 uses the actual registered unified Skill to render PQ/HLG H.265 Main10 4:2:0;both48-frame movies match independent pixel/light oracles.HLG package replay preserves decoded pixels and complete PCM.The GIF is an explicit authored-timeline SDR view,not encoded-output or physical HDR acceptance.
+
+C59/R331 correction:384000 total PCM scalars,383999 nonzero.Historical rows remain archived;see the [current correction and evidence](docs/validation/编码后成片安装与跨编码实测_2026-10-29.md).
+
+<!-- /native-hdr-media-current -->
+
+<!-- native-hdr-measure-history -->
 
 **CLI0.1.49 / alpha.4-local.47 / r50 kit · 1 Skill / 17 modules.**
 
@@ -25,7 +40,7 @@ Added **all-frame HDR light metering and colour-clipping ledgers**: actual autho
 
 19 source checks,19 installed checks and352 installed compatibility checks pass separately. C59 independently checks all48 frames/11059200 pixels and the RGB16 input digest,then replays the complete PQ master/audio/measurements after package import. Another48-frame actual GPU Bloom/native ICC proof run has identical meter/render input. No post-codec peak,physical display or artistic-quality acceptance is claimed.
 
-<!-- /native-hdr-measure-current -->
+<!-- /native-hdr-measure-history -->
 
 <!-- native-icc-output-history -->
 
@@ -972,7 +987,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F72 | Native ICC source color management | RGB ICC v2/v4 matrix/CLUT, explicit SHA/intent/BPC → linear working RGB, Float32/alpha, actual previews and portable profile dependencies. | `native_icc_source_profiles; surface inspect-profile; surface export; render; preview; convert` | Pinned MIT LittleCMS/native CPU; no arbitrary output ICC, softproofing, CMYK or embedded-profile inference. |
 | F73 | HLG display black and complete signal CLI | BT.2100 black lift/inverse,explicit nits,unchanged zero-black numeric path,complete RGB/HDR/ICC JSON and explicit domain policies. | `native_hlg_black_level; surface export; render; preview; convert` | No monitor inference; nominal0..1; reject or explicit counted clipping; no dynamic HDR/full ACES. |
 | F74 | Native ICC output and soft proof | RGB v2/v4 matrix/B2A CLUT,intents/BPC,explicit nits,individually ICC-embedded RGBA16 PNGs and authored PCM,real SOFTPROOFING and complete delivery verification. | `native_icc_output_profiles; surface render; surface inspect-output; render; preview; convert` | CPU CMM;separate GPU editing;8GiB file budget;no CMYK/ICC5/physical-device calibration. |
-| F75 | All-frame HDR light and conversion receipts | Explicit nits,actual timeline/RGB16 edge;MaxRGB/CIE Y peaks,frame averages,locations/regions/exposure;all-frame native-bundle clipping totals. | `native_hdr_light_measurement; surface measure; surface export; render` | CPU meter,separate GPU editing;no inferred monitor brightness,implicit SEI or post-codec measurement claim. |
+| F75 | Pre/post-codec HDR light and colour receipts | Explicit nits;separate authored RGB16 input/native decoded RGB/YCbCr measurements;MaxRGB/CIE Y,locations/durations,pixel/clock digests and all-frame clipping ledgers. | `native_hdr_light_measurement; surface measure; surface measure-media; surface export; render` | CPU meter;no inferred monitor or automatic SEI;native exposure gaps/overlaps not filled. |
 
 ## Supported service modules and dependencies
 
@@ -1009,7 +1024,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | S27 | Native ICC CMM service | Pinned LittleCMS2.19.1 Windows x64 DLL, private contexts, tiled Float32, read locks/cancellation/cleanup and actual profile-byte verification. | Bundled DLL/MIT license; no new model/global installation. | `surface; render; preview; convert` | 16MiB/4096 tags and surface budgets; CPU conversion, independently selected GPU composition. |
 | S28 | Explicit HLG black service | Tiled Float32/alpha,beta validation,source/target black,domain counts and native-clock raw bundles. | Native Windows CPU math; separately configured GPU composition. | `surface; render; preview; convert` | No new model/global install; no replacement for display measurement/HDR monitor acceptance. |
 | S29 | ICC delivery and simulation service | Per-frame device-profile output,standard-movie soft proof,owned CMM handles/read locks,PNG CRC/all-pixel/PCM verification. | Pinned MIT LittleCMS on native Windows;no new model. | `surface render; surface inspect-output; render; preview; convert` | Separate native profile mapping from application clipping;PNG sequence/PCM,never relabel arbitrary device RGB as standard YUV. |
-| S30 | Light diagnostics and all-frame colour audit | Readonly native timeline,cancellable tiled meter,complete RGB16 digest,all-frame conversion receipts and actual source/GPU cleanup. | Existing FFmpeg/NumPy,optional OpenCL;no new model download. | `surface measure; surface export; render` | Partial frames/active area do not certify the full canvas;768MiB owned-operator estimate is not total RSS/VRAM. |
+| S30 | Pre/post-codec light diagnostics and colour audit | Readonly native timeline/media,cancellable tiled metering,RGB16/decoded RGBA/native-clock digests,all-frame receipts and owned-process/thread cleanup. | Existing FFmpeg/NumPy,optional OpenCL;no model downloads. | `surface measure; surface measure-media; surface export; render` | Explicit colour/progressive YCbCr and positive native durations;partial regions not full-canvas certification;768MiB operator estimate not total RSS. |
 
 **Observed local environment:** this update’s doctor sees native Python 3.13.1, FFmpeg/ffprobe 8.1 and Node; this does not establish registration of every model/browser adapter. doctor merely discovers Docker/WSL executable paths and does not run them. This project uses native tools without invoking Docker/WSL/virtual environments.
 
@@ -1637,6 +1652,11 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R333 | 2026-10-29 source tests | Post-codec metering and prior pre-codec regressions:29/29,zero failures/errors/skips;first 27-test run retained with one corrected error.Source CLI0.1.50,not installed acceptance. | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/source-r3/verification.json) |
 | R334 | 2026-10-29 actual encoded-master source run | C59:48 frames/11,059,200 pixels,independent RGBA digest equal,maximum light error1.14e-13 nit;original movie/project unchanged.Not an installed Skill run or physical HDR acceptance. | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/case-r2/verification.json) |
 | R335 | 2026-10-29 source boundary regressions | Native YCbCr,native video reader and schema contracts:42/42,zero failures/errors/skips;separate from29 focused tests.No new installed-runtime regression. | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/boundary-r2/verification.json) |
+| R336 | 2026-10-29 CLI0.1.50 installed | Installed focused tests29/29;276Python source/installed files identical. | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/installed-r1/verification.json) |
+| R337 | 2026-10-29 CLI0.1.50 installed | Installed boundary regressions42/42:native YCbCr/video/schema. | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/installed-boundary-r1/verification.json) |
+| R338 | 2026-10-29 CLI0.1.50 installed | Installed compatibility352/352;separate from29/42 and historical runs. | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/installed-compat-r1/verification.json) |
+| R339 | 2026-10-29 CLI0.1.50 installed | C60 actual registered Skill:PQ/HLG H.265 4:2:0,two48-frame independent pixel/light oracles;HLG package replay preserves all pixels/PCM. | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/installed-case-r1/verification.json) |
+| R340 | 2026-10-29 CLI0.1.50 installed | r51 independent kit acceptance:1entry/17modules/89Skill files;no source fallback. | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/kit-r1/verification.json) |
 
 ## Current limits and development direction
 

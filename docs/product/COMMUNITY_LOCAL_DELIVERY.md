@@ -2,7 +2,7 @@
 
 [使用手册](COMMUNITY_MATERIALS.md) · [繁體中文](COMMUNITY_MATERIALS.zh-TW.md) · [English](COMMUNITY_MATERIALS.en.md)
 
-当前本机版本是 **`v0.1.0-alpha.4-local.47` / CLI 0.1.49**，正式安装在 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.47/final-r1/installed/`。这是本地构建和验收记录；公开 GitHub Release 仍是 alpha.3 / CLI 0.1.2，原附件、标签和摘要不覆盖。
+当前本机版本是 **`v0.1.0-alpha.4-local.48` / CLI 0.1.50**，正式安装在 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.48/final-r1/installed/`。这是本地构建和验收记录；公开 GitHub Release 仍是 alpha.3 / CLI 0.1.2，原附件、标签和摘要不覆盖。
 
 The current build is installed locally. Public alpha.3 downloads remain unchanged and do not contain the new voice, translation, material or GPU commands. The updated Skill kit must be paired with this matching local runtime bundle.
 
@@ -14,9 +14,9 @@ The current build is installed locally. Public alpha.3 downloads remain unchange
 
 | 内容 / Item | 路径 / Path | 校验 / Verification |
 |---|---|---|
-| 编译好的基础运行 ZIP / Application bundle | `local/agent-ffmpeg/v0.1.0-alpha.4-local.47/candidate-r1/bundle.zip` | SHA-256 `fc42ba3e5057573048e0aab4aa5b02e94b1ceae2fc07b7e05cb8461ff0cabf04` |
-| 运行包清单 / Bundle manifest | ZIP 内 / inside ZIP: `manifest.json` | `sha256:e612767df92bda5212592285403e5a0dd4ce9b9d41a40680de328a705420214a` |
-| 单入口 Skill kit / Single-entry kit | `docs/skills/agent-editor-kit-community-unified-skill-r50.zip` | [独立包摘要 / Package digest](../skills/community-unified-skill-package-0.1.49-r50.json) |
+| 编译好的基础运行 ZIP / Application bundle | `local/agent-ffmpeg/v0.1.0-alpha.4-local.48/candidate-r1/bundle.zip` | SHA-256 `d1907d2c1037b72833d0950866364fa1136d3880eb36a1435dbe0a6242a2611b` |
+| 运行包清单 / Bundle manifest | ZIP 内 / inside ZIP: `manifest.json` | `sha256:964eae07d10658ccf0b5e9f3b3941d58c1480603366a61613560654a9e3b0cff` |
+| 单入口 Skill kit / Single-entry kit | `docs/skills/agent-editor-kit-community-unified-skill-r51.zip` | [独立包摘要 / Package digest](../skills/community-unified-skill-package-0.1.50-r51.json) |
 | 四个模型 ZIP / Four model ZIPs | `local/agent-ffmpeg/community-model-archives-r2/` | 见下表及 / see table and `archives.json` |
 | 可移动模型安装 / Relocated model installation | `local/agent-ffmpeg/community-portable-r1/模型 包/` | 实际从四个 ZIP 安装；路径含中文与空格 / actually installed from all four ZIPs |
 | 当前调用配置 / Runtime configuration | `local/agent-ffmpeg/runtime.json` | 固定应用摘要、原生 Python、启动器摘要 / pinned app, native Python and launcher |
@@ -43,13 +43,13 @@ Requires native Windows x64, existing CPython 3.13 x64 and FFmpeg/ffprobe on PAT
 $aekPython = 'C:/Python313/python.exe'
 $aekSource = 'E:/dev/sandbox/AI广告剪辑'
 $aekHome = 'E:/tools/agent-editor-kit-gpu'
-$aekArchive = Join-Path $aekSource 'local/agent-ffmpeg/v0.1.0-alpha.4-local.47/candidate-r1/bundle.zip'
-$aekExpectedZip = 'fc42ba3e5057573048e0aab4aa5b02e94b1ceae2fc07b7e05cb8461ff0cabf04'
+$aekArchive = Join-Path $aekSource 'local/agent-ffmpeg/v0.1.0-alpha.4-local.48/candidate-r1/bundle.zip'
+$aekExpectedZip = 'd1907d2c1037b72833d0950866364fa1136d3880eb36a1435dbe0a6242a2611b'
 if ((Get-FileHash -LiteralPath $aekArchive -Algorithm SHA256).Hash.ToLowerInvariant() -ne $aekExpectedZip) { throw 'Application archive hash mismatch' }
-Expand-Archive -LiteralPath (Join-Path $aekSource 'docs/skills/agent-editor-kit-community-unified-skill-r50.zip') -DestinationPath $aekHome
+Expand-Archive -LiteralPath (Join-Path $aekSource 'docs/skills/agent-editor-kit-community-unified-skill-r51.zip') -DestinationPath $aekHome
 Expand-Archive -LiteralPath $aekArchive -DestinationPath (Join-Path $aekHome 'bundle')
 Set-Location $aekHome
-& $aekPython -I -B -X utf8 ./bundle/install.py --bundle ./bundle --target ./local/agent-ffmpeg/installed --manifest-sha256 'sha256:e612767df92bda5212592285403e5a0dd4ce9b9d41a40680de328a705420214a' --timeout-seconds 600
+& $aekPython -I -B -X utf8 ./bundle/install.py --bundle ./bundle --target ./local/agent-ffmpeg/installed --manifest-sha256 'sha256:964eae07d10658ccf0b5e9f3b3941d58c1480603366a61613560654a9e3b0cff' --timeout-seconds 600
 if ($LASTEXITCODE) { throw 'Native application installation failed' }
 ```
 
@@ -348,4 +348,6 @@ Current CLI0.1.47: [HLG black and complete signal CLI](HLG_BLACK_LEVEL.md) · [C
 
 Current CLI0.1.48: [ICC output and native soft proof](ICC_OUTPUT.md) · [C58](CASES.md#c58-native-icc-output) · [Install](../releases/CLI_0.1.48_LOCAL.md).
 
-Current CLI0.1.49: [all-frame light metering](HDR_MEASUREMENT.md) · [C59](CASES.md#c59-native-hdr-measurement) · [Install](../releases/CLI_0.1.49_LOCAL.md).
+Current CLI0.1.50: [all-frame light metering](HDR_MEASUREMENT.md) · [C59](CASES.md#c59-native-hdr-measurement) · [Install](../releases/CLI_0.1.50_LOCAL.md).
+
+Current post-codec workflow:[HDR_MEDIA_MEASUREMENT](HDR_MEDIA_MEASUREMENT.md) · [C60](CASES.md#c60-post-codec-hdr420).

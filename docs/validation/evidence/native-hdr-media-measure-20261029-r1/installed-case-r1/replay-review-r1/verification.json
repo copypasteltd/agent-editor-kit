@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "complete_source_original_replay_PCM_equal": true,
+  "PCM_bytes": 1536000,
+  "PCM_scalars": 384000,
+  "nonzero_PCM_scalars": 383999,
+  "PCM_sha256": "56bac9559e3532940c40a9c1d0c63f0559fafab35de8ae06fda3040fd6339cf8",
+  "equal_meter_fields": [
+    "decoded_RGBA32_sha256",
+    "native_clock_sha256",
+    "framed_metrics_sha256",
+    "frames",
+    "peak_pixel",
+    "maximum_frame_average",
+    "duration_weighted_frame_average_nits",
+    "minimum_RGB_component_nits",
+    "analyzed_duration_seconds",
+    "range_counts"
+  ],
+  "input_receipts": {
+    "hlg420-clip.stdout.json": "f941a4c158db8e52e46981baa4e9bcd970e96e509ecab151c49285cadd8db988",
+    "replay-measure.stdout.json": "5347b6aba1fe57a79d443783a85af8136071f011fd5cf4eaa0dbef9484d52bc9"
+  },
+  "command": [
+    "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+    "-v",
+    "error",
+    "-i",
+    "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\local\\agent-ffmpeg\\native-hdr-media-installed-case-r1\\project\\assets\\tones_source-stereo.wav",
+    "-map",
+    "0:a:0",
+    "-vn",
+    "-c:a",
+    "pcm_f32le",
+    "-f",
+    "f32le",
+    "pipe:1"
+  ],
+  "source_asset_sha256": "sha256:e59d4ada9fcddac1b8e462320abb524e81b7795843b708d26861e5ecf4e7c539",
+  "human_listening_acceptance": false
+}

@@ -1,0 +1,439 @@
+{
+  "assets": [
+    {
+      "id": "chart",
+      "kind": "video",
+      "probe": {
+        "audio": {
+          "channels": 0,
+          "codec": null,
+          "duration_seconds": 0.0,
+          "sample_rate": 0,
+          "start_time_seconds": 0.0
+        },
+        "duration_seconds": 4.0,
+        "duration_tick": 360000,
+        "format": "matroska,webm",
+        "format_long_name": "Matroska / WebM",
+        "streams": [
+          {
+            "avg_frame_rate": "12/1",
+            "bits_per_raw_sample": "16",
+            "codec_long_name": "FFmpeg video codec #1",
+            "codec_name": "ffv1",
+            "codec_tag": "0x0000",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_type": "video",
+            "coded_height": 360,
+            "coded_width": 640,
+            "color_range": "pc",
+            "color_space": "gbr",
+            "disposition": {
+              "attached_pic": 0,
+              "captions": 0,
+              "clean_effects": 0,
+              "comment": 0,
+              "default": 0,
+              "dependent": 0,
+              "descriptions": 0,
+              "dub": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "karaoke": 0,
+              "lyrics": 0,
+              "metadata": 0,
+              "multilayer": 0,
+              "non_diegetic": 0,
+              "original": 0,
+              "still_image": 0,
+              "timed_thumbnails": 0,
+              "visual_impaired": 0
+            },
+            "extradata_size": 201,
+            "field_order": "progressive",
+            "has_b_frames": 0,
+            "height": 360,
+            "index": 0,
+            "level": -99,
+            "pix_fmt": "gbrp16le",
+            "r_frame_rate": "12/1",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "tags": {
+              "DURATION": "00:00:04.000000000",
+              "ENCODER": "Lavc62.28.100 ffv1"
+            },
+            "time_base": "1/1000",
+            "width": 640
+          }
+        ],
+        "video": {
+          "codec": "ffv1",
+          "color_space": "gbr",
+          "duration_seconds": 0.0,
+          "fps": "12/1",
+          "height": 360,
+          "pix_fmt": "gbrp16le",
+          "start_time_seconds": 0.0,
+          "width": 640
+        }
+      },
+      "rights_ref": "chart",
+      "sha256": "sha256:df1b91675eac30cff344246714066412a7bd67fedd01ac26bb1dae7c6956f943",
+      "source": {
+        "original_name": "source-linear.mkv",
+        "retrieved_at": "2026-10-28T17:09:17.249543Z",
+        "source_url": "local://E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-hdr-measure-20261029-r2\\source-linear.mkv"
+      },
+      "uri": "assets/chart_source-linear.mkv"
+    },
+    {
+      "id": "tones",
+      "kind": "audio",
+      "probe": {
+        "audio": {
+          "channels": 2,
+          "codec": "pcm_f32le",
+          "duration_seconds": 4.0,
+          "sample_rate": 48000,
+          "start_time_seconds": 0.0
+        },
+        "duration_seconds": 4.0,
+        "duration_tick": 360000,
+        "format": "wav",
+        "format_long_name": "WAV / WAVE (Waveform Audio)",
+        "streams": [
+          {
+            "avg_frame_rate": "0/0",
+            "bit_rate": "3072000",
+            "bits_per_sample": 32,
+            "channels": 2,
+            "codec_long_name": "PCM 32-bit floating point little-endian",
+            "codec_name": "pcm_f32le",
+            "codec_tag": "0x0003",
+            "codec_tag_string": "[3][0][0][0]",
+            "codec_type": "audio",
+            "disposition": {
+              "attached_pic": 0,
+              "captions": 0,
+              "clean_effects": 0,
+              "comment": 0,
+              "default": 0,
+              "dependent": 0,
+              "descriptions": 0,
+              "dub": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "karaoke": 0,
+              "lyrics": 0,
+              "metadata": 0,
+              "multilayer": 0,
+              "non_diegetic": 0,
+              "original": 0,
+              "still_image": 0,
+              "timed_thumbnails": 0,
+              "visual_impaired": 0
+            },
+            "duration": "4.000000",
+            "duration_ts": 192000,
+            "index": 0,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "sample_fmt": "flt",
+            "sample_rate": "48000",
+            "time_base": "1/48000"
+          }
+        ],
+        "video": {
+          "codec": null,
+          "color_space": null,
+          "duration_seconds": 0.0,
+          "fps": null,
+          "height": null,
+          "pix_fmt": null,
+          "start_time_seconds": 0.0,
+          "width": null
+        }
+      },
+      "rights_ref": "tones",
+      "sha256": "sha256:e59d4ada9fcddac1b8e462320abb524e81b7795843b708d26861e5ecf4e7c539",
+      "source": {
+        "original_name": "source-stereo.wav",
+        "retrieved_at": "2026-10-28T17:09:20.560359Z",
+        "source_url": "local://E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-hdr-measure-20261029-r2\\source-stereo.wav"
+      },
+      "uri": "assets/tones_source-stereo.wav"
+    }
+  ],
+  "outputs": [
+    {
+      "audio": {
+        "bitrate": "192k",
+        "codec": "pcm_f32le"
+      },
+      "canvas": {
+        "background": "#000000",
+        "height": 360,
+        "pixel_aspect": {
+          "den": 1,
+          "num": 1
+        },
+        "width": 640
+      },
+      "container": "mkv",
+      "id": "output_20261028171124_d7ec7ea8",
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\renders\\hdr-master.mkv",
+      "profile": null,
+      "target_platform": "generic",
+      "video": {
+        "codec": "libx264",
+        "crf": 0,
+        "pixel_format": "yuv444p10le",
+        "preset": "ultrafast"
+      }
+    }
+  ],
+  "project": {
+    "created_at": "2026-10-28T17:09:13.634927Z",
+    "creator": "ai-ad-editor",
+    "id": "proj_20261028170913_a2cf178f",
+    "name": "C59 all-frame HDR metering",
+    "source_revision": "local",
+    "updated_at": "2026-10-28T17:11:24.804644Z"
+  },
+  "provenance": {
+    "change_log": [
+      {
+        "asset_id": "chart",
+        "at": "2026-10-28T17:09:17.249977Z",
+        "command": "media.ingest",
+        "operation_id": "op_20261028170917_c285e962"
+      },
+      {
+        "asset_id": "tones",
+        "at": "2026-10-28T17:09:20.560841Z",
+        "command": "media.ingest",
+        "operation_id": "op_20261028170920_009386c4"
+      },
+      {
+        "at": "2026-10-28T17:09:24.508193Z",
+        "before_snapshot_id": "snap_20261028170924_85b75d4d",
+        "changes": [
+          {
+            "op": "add_track",
+            "sequence_id": "seq_main",
+            "track": {
+              "clips": [
+                {
+                  "asset_id": "chart",
+                  "duration_tick": 360000,
+                  "id": "picture-clip",
+                  "source_in_tick": 0,
+                  "source_out_tick": 360000,
+                  "timeline_start_tick": 0
+                }
+              ],
+              "id": "picture",
+              "kind": "video",
+              "locked": false,
+              "muted": false,
+              "order": 3
+            }
+          },
+          {
+            "clip": {
+              "asset_id": "chart",
+              "duration_tick": 360000,
+              "id": "picture-clip",
+              "source_in_tick": 0,
+              "source_out_tick": 360000,
+              "timeline_start_tick": 0
+            },
+            "op": "append_clip",
+            "track_id": "picture"
+          },
+          {
+            "op": "add_track",
+            "sequence_id": "seq_main",
+            "track": {
+              "clips": [
+                {
+                  "asset_id": "tones",
+                  "duration_tick": 360000,
+                  "id": "sound-clip",
+                  "source_in_tick": 0,
+                  "source_out_tick": 360000,
+                  "timeline_start_tick": 0
+                }
+              ],
+              "id": "sound",
+              "kind": "audio",
+              "locked": false,
+              "muted": false,
+              "order": 4
+            }
+          },
+          {
+            "clip": {
+              "asset_id": "tones",
+              "duration_tick": 360000,
+              "id": "sound-clip",
+              "source_in_tick": 0,
+              "source_out_tick": 360000,
+              "timeline_start_tick": 0
+            },
+            "op": "append_clip",
+            "track_id": "sound"
+          }
+        ],
+        "command": "timeline.compose",
+        "input": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\compose.json",
+        "operation_id": "op_20261028170924_8d57b54e"
+      },
+      {
+        "at": "2026-10-28T17:11:24.804619Z",
+        "command": "render",
+        "manifest": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\renders\\hdr-master.mkv.manifest.json",
+        "output": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\renders\\hdr-master.mkv"
+      }
+    ],
+    "cli_version": "0.1.49",
+    "engine_version": "ffmpeg-local",
+    "input_hashes": [],
+    "model_versions": []
+  },
+  "schema_version": "0.1.0",
+  "sequences": [
+    {
+      "duration_tick": 360000,
+      "id": "seq_main",
+      "markers": [],
+      "name": "Main",
+      "tracks": [
+        {
+          "clips": [],
+          "id": "track_video_1",
+          "kind": "video",
+          "locked": false,
+          "muted": false,
+          "order": 0
+        },
+        {
+          "clips": [],
+          "id": "track_audio_1",
+          "kind": "audio",
+          "locked": false,
+          "muted": false,
+          "order": 0
+        },
+        {
+          "clips": [
+            {
+              "asset_id": "chart",
+              "duration_tick": 360000,
+              "id": "picture-clip",
+              "source_in_tick": 0,
+              "source_out_tick": 360000,
+              "timeline_start_tick": 0
+            }
+          ],
+          "id": "picture",
+          "kind": "video",
+          "locked": false,
+          "muted": false,
+          "order": 3
+        },
+        {
+          "clips": [
+            {
+              "asset_id": "tones",
+              "duration_tick": 360000,
+              "id": "sound-clip",
+              "source_in_tick": 0,
+              "source_out_tick": 360000,
+              "timeline_start_tick": 0
+            }
+          ],
+          "id": "sound",
+          "kind": "audio",
+          "locked": false,
+          "muted": false,
+          "order": 4
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "audio": {
+      "channels": 2,
+      "sample_rate": 48000
+    },
+    "canvas": {
+      "background": "#000000",
+      "height": 360,
+      "pixel_aspect": {
+        "den": 1,
+        "num": 1
+      },
+      "width": 640
+    },
+    "color": {
+      "matrix": "bt2020nc",
+      "primaries": "bt2020",
+      "range": "limited",
+      "transfer": "smpte2084"
+    },
+    "output": {
+      "audio": {
+        "codec": "pcm_f32le"
+      },
+      "container": "mkv",
+      "video": {
+        "codec": "libx265",
+        "crf": 18,
+        "pixel_format": "yuv420p10le",
+        "preset": "ultrafast"
+      }
+    },
+    "pixel_pipeline": {
+      "engine": "float32-native-v1",
+      "output_signal": {
+        "primaries": "bt2020",
+        "transfer": "pq-st2084",
+        "reference_white_nits": 203
+      },
+      "preview_mapping": {
+        "exposure_stops": 0,
+        "gamut_policy": "clip",
+        "operator": "reinhard-luminance",
+        "source_peak_nits": 1000,
+        "target_peak_nits": 100
+      },
+      "range_policy": "clip",
+      "sources": {
+        "chart": {
+          "demux_origin": 0,
+          "display_geometry": "square-unrotated",
+          "source_signal": {
+            "primaries": "bt2020",
+            "reference_white_nits": 1000,
+            "transfer": "linear"
+          }
+        }
+      },
+      "working_signal": {
+        "primaries": "bt2020",
+        "reference_white_nits": 203,
+        "transfer": "linear"
+      }
+    },
+    "timebase": {
+      "display_fps": {
+        "den": 1,
+        "num": 12
+      },
+      "ticks_per_second": 90000
+    }
+  },
+  "templates": []
+}

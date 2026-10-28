@@ -1081,7 +1081,7 @@ Left:independent source-to-sRGB/no-glow mathematical control;right:actual native
 
 Actual registered CLI0.1.49/one unified Skill. Original CC0 RGB16 BT2020 linear chart (unit white1000nit),203nit linear working/PQ output,and stereo347/523Hz tones;640×360,48frames,12fps,4seconds. Early bright patch and later bright frame average deliberately differ. Full,active-area and partial reports preserve author bytes.
 
-Independent equations cover all11059200 pixels and the complete RGB16 input digest;maximum nit error 5.68434188608e-14. Real PQ master/all66355200 decoded video bytes and384000 nonzero PCM scalars replay exactly after editable-package import;all reported measurements also replay exactly. A separate actual48-frame GPU Bloom/native ICC proof run has identical meter/render input and closed native handles/GPU worker. No speed benchmark is inferred.
+Independent equations cover all11059200 pixels and the complete RGB16 input digest;maximum nit error 5.68434188608e-14. Real PQ master/all66355200 decoded video bytes and384000 total PCM scalars replay exactly after editable-package import;all reported measurements also replay exactly. A separate actual48-frame GPU Bloom/native ICC proof run has identical meter/render input and closed native handles/GPU worker. No speed benchmark is inferred.
 
 | Metric / 指标 / 指標 | Peak nit / 峰值 | Peak frame / 峰值影格 | Maximum frame average nit | Average peak frame |
 |---|---|---|---|---|
@@ -1095,3 +1095,27 @@ CIE Y peaks in frame0;MaxRGB peaks in frame18. The late warm highlight and broad
 [Original source](../assets/native-hdr-measure-20261029-r2/source-linear.mkv) · [Original tones](../assets/native-hdr-measure-20261029-r2/source-stereo.wav) · [PQ master](../assets/native-hdr-measure-20261029-r2/hdr-master.mkv) · [Master manifest](../assets/native-hdr-measure-20261029-r2/hdr-master.manifest.json) · [Actual MP4 SDR view](../assets/native-hdr-measure-20261029-r2/actual-preview.mp4) · [Actual frame](../assets/native-hdr-measure-20261029-r2/actual-frame.png) · [Full measurement](../assets/native-hdr-measure-20261029-r2/measurement.json) · [Active-area measurement](../assets/native-hdr-measure-20261029-r2/active-area-measurement.json) · [Partial measurement](../assets/native-hdr-measure-20261029-r2/partial-measurement.json) · [GPU/proof measurement](../assets/native-hdr-measure-20261029-r2/GPU-proof-measurement.json) · [Editable package](../assets/native-hdr-measure-20261029-r2/editable-hdr-measure.aevpkg.zip) · [Provenance](../assets/native-hdr-measure-20261029-r2/SOURCE.txt) · [Hashes](../assets/native-hdr-measure-20261029-r2/media-manifest.json)
 
 Preview is an explicit Reinhard SDR viewing copy,not physical HDR monitoring. Measurements are before YUV/codec,not post-codec/filtered MaxCLL certification. No automatic SEI/mastering rewrite,human listening,continuous playback or artistic-quality acceptance.
+
+C59 count correction (C60 follow-up):the same registered source tones decode to384000 total Float32 scalars,383999 nonzero.The earlier nonzero count overstated by one;original historical R331/receipts remain archived.See [source/original/replay PCM recount](../validation/evidence/native-hdr-media-measure-20261029-r1/installed-case-r1/replay-review-r1/verification.json).
+
+
+<a id="c60-post-codec-hdr420"></a>
+
+## C60 · 编码后HDR420 / 解碼後HDR420 / Post-codec HDR420
+
+Actual registered CLI0.1.50/local.48 unified Skill,one entry/17modules/89files.Native Windows;no source fallback or new neural-model forward.CC0 C59 synthetic chart and stereo tones are imported as an editable project;the actual native renderer produces separate PQ and HLG (1000nit peak,gamma1.2,explicit1nit black) H.265 Main10 limited BT2020,left-sited progressive4:2:0 movies at640×360,48frames,12fps.
+
+The independent oracle imports no product colour/meter modules.It decodes complete native10bit planes,reconstructs left-sited chroma using two-pass NumPy interpolation,and independently applies PQ/HLG/BT2020 Y equations.The complete Float32 RGBA and native PTS/duration digests match for both11059200-pixel movies.Maximum peak/average/minimum nit error is below1e-7.HLG package import/rerender preserves all decoded RGB/clock bytes and complete1536000-byte stereoFloat32PCM.
+
+| Movie | MaxRGB peak nit | CIE Y peak nit | Negative RGB components | Over-one components | Oracle max error nit |
+| --- | --- | --- | --- | --- | --- |
+| pq420 | 1228.258224115617 | 1187.5514942556333 | 674289 | 0 | 5.684341886080802e-14 |
+| hlg420 | 1000.0000323217693 | 1000.0000323217694 | 732015 | 39 | 2.842170943040401e-14 |
+
+Both reject-mode calls fail specifically at the out-of-range RGB boundary;the successful explicit clip runs retain all component counts.No automatic metadata rewrite or gamut repair is inferred.Native millisecond exposure totals3.984s while the source span is4s;the16 one-millisecond gaps are reported rather than filled.
+
+![Actual authored-timeline SDR preview](../assets/native-hdr-media-installed-20261029-r1/author-SDR-preview.gif)
+
+[PQ420 master](../assets/native-hdr-media-installed-20261029-r1/pq420.mkv) · [HLG420 master](../assets/native-hdr-media-installed-20261029-r1/hlg420.mkv) · [PQ measurement](../assets/native-hdr-media-installed-20261029-r1/pq420-measurement.json) · [HLG measurement](../assets/native-hdr-media-installed-20261029-r1/hlg420-measurement.json) · [Actual SDR MP4](../assets/native-hdr-media-installed-20261029-r1/author-SDR-preview.mp4) · [Actual SDR PNG](../assets/native-hdr-media-installed-20261029-r1/author-SDR-frame.png) · [Editable HLG package](../assets/native-hdr-media-installed-20261029-r1/editable-hlg420.aevpkg.zip) · [Provenance](../assets/native-hdr-media-installed-20261029-r1/SOURCE.json) · [Media hashes](../assets/native-hdr-media-installed-20261029-r1/media-manifest.json)
+
+The preview is an explicit Reinhard SDR view of the authored working timeline,not a decoded-output420 comparison or physical HDR monitor.GIF24frames/4000ms;MP448frames/4s;PNG reviewed statically by the agent.No continuous-playback,human-listening,natural-image or full-HDR-quality acceptance.See [actual checks](../validation/evidence/native-hdr-media-measure-20261029-r1/installed-case-r1/checks.json).

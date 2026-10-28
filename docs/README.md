@@ -1,8 +1,10 @@
 # agent editor kit 文档 / Documentation
 
-Source development / 源码开发 / 原始碼開發：**CLI0.1.50，尚未安装 / not installed** · [Post-codec workflow](product/HDR_MEDIA_MEASUREMENT.md) · [Status](releases/CLI_0.1.50_SOURCE.md) · [Evidence](validation/编码后成片光量核验_2026-10-29.md).
+Current local / 当前本地 / 目前本地：**CLI0.1.50 / local.48 / r51 kit** · [Workflow](product/HDR_MEDIA_MEASUREMENT.md) · [Install](releases/CLI_0.1.50_LOCAL.md) · [C60](product/CASES.md#c60-post-codec-hdr420).
 
-Current local / 当前本地 / 目前本地：**CLI0.1.49 / local.47 / r50 kit** · [Light measurement](product/HDR_MEASUREMENT.md) · [Install](releases/CLI_0.1.49_LOCAL.md) · [C59](product/CASES.md#c59-native-hdr-measurement).
+Historical source stage / 历史源码阶段 / 歷史原始碼階段：**CLI0.1.50，尚未安装 / not installed** · [Post-codec workflow](product/HDR_MEDIA_MEASUREMENT.md) · [Status](releases/CLI_0.1.50_SOURCE.md) · [Evidence](validation/编码后成片光量核验_2026-10-29.md).
+
+Historical / 历史 / 歷史：**CLI0.1.49 / local.47 / r50 kit** · [Light measurement](product/HDR_MEASUREMENT.md) · [Install](releases/CLI_0.1.49_LOCAL.md) · [C59](product/CASES.md#c59-native-hdr-measurement).
 
 Historical / 历史 / 歷史：**CLI0.1.48 / local.46 / r49 kit** · [ICC output](product/ICC_OUTPUT.md) · [Install](releases/CLI_0.1.48_LOCAL.md) · [C58](product/CASES.md#c58-native-icc-output).
 

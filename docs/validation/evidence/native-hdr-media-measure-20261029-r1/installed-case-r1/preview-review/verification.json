@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "PNG": {
+    "width": 640,
+    "height": 360,
+    "mode": "RGBA"
+  },
+  "GIF": {
+    "frames": 24,
+    "width": 480,
+    "height": 270,
+    "total_duration_ms": 4000,
+    "frame_durations_ms": [
+      170,
+      160,
+      170,
+      170,
+      160,
+      170,
+      170,
+      160,
+      170,
+      170,
+      160,
+      170,
+      170,
+      160,
+      170,
+      170,
+      160,
+      170,
+      170,
+      160,
+      170,
+      170,
+      160,
+      170
+    ]
+  },
+  "MP4": {
+    "frames": 48,
+    "width": 640,
+    "height": 360,
+    "fps": "12/1",
+    "duration_seconds": 4
+  },
+  "files": {
+    "author-SDR-frame.png": "b95e78acce6994c732b35534364bd4acef1291110fe14e6cc570c347421e6498",
+    "author-SDR-preview.gif": "910d51fb941f8cc184dc9126b10b4a571b08733464799fea14be7c3f884e5850",
+    "author-SDR-preview.mp4": "103768c81b52b88aebb768c275c78ae699d8258ca6547275741bc0e147575ffa"
+  },
+  "agent_static_PNG_view_completed": true,
+  "static_observation": "Full title, colour patches, highlight and footer visible without text overlap.",
+  "preview_scope": "authored working-timeline explicit Reinhard SDR view; not decoded PQ/HLG movie or physical HDR monitoring",
+  "continuous_playback_review": false,
+  "human_listening_acceptance": false,
+  "physical_HDR_acceptance": false
+}

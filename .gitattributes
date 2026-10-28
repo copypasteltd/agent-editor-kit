@@ -1871,3 +1871,7 @@ docs/validation/全帧HDR光量与裁切汇总实测_2026-10-29.md text eol=lf
 # Preserve post-codec media metering source evidence.
 docs/validation/evidence/native-hdr-media-measure-20261029-r1/** -text -whitespace
 scripts/*hdr_media_measure*20261029.py -text -whitespace
+
+# Preserve installed HDR420 proof media and exact CLI0.1.50 capabilities.
+docs/assets/native-hdr-media-installed-20261029-*/** -text -whitespace
+docs/product/hdr-media-measure-capabilities-cli-0.1.50.json -text -whitespace

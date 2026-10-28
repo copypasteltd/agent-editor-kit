@@ -137,4 +137,4 @@ brightness is guessed. This does not implement dynamic HDR10+, Dolby Vision,
 full ACES, perceptual gamut mapping or natural HDR monitor calibration.
 
 
-后续源码开发：编码后文件复核见[HDR_MEDIA_MEASUREMENT.md](HDR_MEDIA_MEASUREMENT.md)，新增命令尚未进入当前CLI0.1.49安装版。
+编码后文件复核见[HDR_MEDIA_MEASUREMENT.md](HDR_MEDIA_MEASUREMENT.md)，CLI0.1.50本地安装已支持该命令。

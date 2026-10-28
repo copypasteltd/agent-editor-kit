@@ -1,0 +1,40 @@
+{
+  "frames": 48,
+  "pixels": 11059200,
+  "peak_pixel": {
+    "maxrgb": {
+      "nits": 1228.258224115617,
+      "frame": 0,
+      "x": 54,
+      "y": 241
+    },
+    "cie_y": {
+      "nits": 1187.5514942556333,
+      "frame": 0,
+      "x": 54,
+      "y": 241
+    }
+  },
+  "maximum_frame_average": {
+    "maxrgb": {
+      "nits": 273.89914868920584,
+      "frame": 19
+    },
+    "cie_y": {
+      "nits": 229.46832506207,
+      "frame": 22
+    }
+  },
+  "duration_weighted_frame_average_nits": {
+    "maxrgb": 131.5019661241199,
+    "cie_y": 87.4242795612225
+  },
+  "minimum_RGB_component_nits": 0.0,
+  "decoded_RGBA32_sha256": "sha256:93e5ace2ae7b9349e56e551a6653016392100e926dd0cdbc423c9d8c42b3e2dd",
+  "native_clock_sha256": "sha256:20e2629d8de93e4cd87ab9868ce840055a3574b1896c726a44f51510ac1c9096",
+  "analyzed_duration_seconds": "498/125",
+  "negative_components": 674289,
+  "over_one_components": 0,
+  "no_product_colour_or_meter_helpers": true,
+  "upsampling": "independent two-pass numpy.interp horizontal and vertical bilinear; explicit left progressive"
+}

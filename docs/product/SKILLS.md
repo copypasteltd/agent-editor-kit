@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.49 / alpha.4-local.47 / r50 kit · 1 Skill / 17 modules / 88 files.**
+**CLI0.1.50 / alpha.4-local.48 / r51 kit · 1 Skill / 17 modules / 89 files.**
 
-新增**全帧 HDR 光量测量与色彩裁切汇总**：实际作者时间线、明确nit、MaxRGB与CIE Y分别报告、峰值位置/最大帧平均/精确时长加权、可选有效画面范围。测量与正式渲染共用实际RGB16输入路径；中间包补齐所有帧的转换收据。
+新增**编码后原生成片光量复核**：实际原生PTS/曝光、明确RGB与YCbCr解释、MaxRGB/CIE Y、越界与裁切计数、完整解码像素/时钟摘要。保留编码前 `surface measure`，新增 `surface measure-media`，两种测量边界分别报告。
 
-[Light metering workflow](HDR_MEASUREMENT.md)
+[Post-codec workflow](HDR_MEDIA_MEASUREMENT.md)
 
 <!-- /community-current -->
 

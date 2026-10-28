@@ -4,7 +4,6 @@
 
 [简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit) · [Docs](docs/README.md)
 
-**源码开发进展：CLI 0.1.50（尚未打包安装）** 新增编码后原生成片光量复核 `surface measure-media`；源码专项29/29、实际48帧成片独立像素/光量核对通过。当前已安装运行版与统一 Skill 仍为 CLI 0.1.49 / local.47 / r50 kit，新入口不能通过该安装版调用。[使用流程与限制](docs/product/HDR_MEDIA_MEASUREMENT.md) · [本轮核验](docs/validation/编码后成片光量核验_2026-10-29.md)。
 
 开发轮次汇报：每轮结束均提供编号完成项与待办表，列明验证依据及未完成边界，见[汇报规范](docs/DEVELOPMENT_REPORTING.md)。
 
@@ -13,7 +12,23 @@
 本页包含完整功能模块、服务与依赖、安装与使用逻辑、Skill 输入输出、真实案例和核验表。长篇原始验收日志继续留档，功能说明与案例入口恢复到首页。
 
 
-<!-- native-hdr-measure-current -->
+<!-- native-hdr-media-current -->
+
+**CLI0.1.50 / alpha.4-local.48 / r51 kit · 1 Skill / 17 modules / 89 files.**
+
+新增**编码后原生成片光量复核**：实际原生PTS/曝光、明确RGB与YCbCr解释、MaxRGB/CIE Y、越界与裁切计数、完整解码像素/时钟摘要。保留编码前 `surface measure`，新增 `surface measure-media`，两种测量边界分别报告。
+
+[Workflow](docs/product/HDR_MEDIA_MEASUREMENT.md) · [C60](docs/product/CASES.md#c60-post-codec-hdr420) · [Install](docs/releases/CLI_0.1.50_LOCAL.md) · [Evidence](docs/validation/编码后成片安装与跨编码实测_2026-10-29.md)
+
+![Actual authored timeline SDR view](docs/assets/native-hdr-media-installed-20261029-r1/author-SDR-preview.gif)
+
+安装版29项专项、42项边界回归与352项兼容回归分别通过。C60由真实本地统一Skill执行PQ/HLG H.265 Main10 4:2:0渲染；两条48帧成片逐像素独立核验，HLG可编辑工程包重放像素与完整PCM一致。GIF为作者时间线的明确SDR查看副本，非编码后或物理HDR监看验收。
+
+C59/R331计数更正：384000个PCM总标量中383999非零；旧历史行保留，[当前纠正与证据](docs/validation/编码后成片安装与跨编码实测_2026-10-29.md)。
+
+<!-- /native-hdr-media-current -->
+
+<!-- native-hdr-measure-history -->
 
 **CLI0.1.49 / alpha.4-local.47 / r50 kit · 1 Skill / 17 modules.**
 
@@ -25,7 +40,7 @@
 
 19项源码专项、19项安装专项和352项安装兼容分别通过。C59以独立公式核对全部48帧/11059200像素与RGB16输入摘要，真实PQ成片完整音画及测量工程包重放一致；另验48次实际GPU Bloom与原生ICC软打样的测量/渲染输入相同。不是编码后峰值、物理显示器或艺术质量验收。
 
-<!-- /native-hdr-measure-current -->
+<!-- /native-hdr-measure-history -->
 
 <!-- native-icc-output-history -->
 
@@ -972,7 +987,7 @@ flowchart LR
 | F72 | 原生ICC来源色彩管理 | RGB ICC v2/v4矩阵/CLUT、明确SHA/意图/BPC → 线性RGB工作域，Float32/alpha、实际预览与工程包依赖闭合。 | `native_icc_source_profiles; surface inspect-profile; surface export; render; preview; convert` | 固定MIT LittleCMS原生CPU；不含任意输出ICC/软打样/CMYK/自动内嵌推断。 |
 | F73 | HLG显示黑位与完整信号CLI | BT.2100黑位提升/逆变换、明确nit与黑位、零黑位原数值路径、完整RGB/HDR/ICC JSON与显式域策略。 | `native_hlg_black_level; surface export; render; preview; convert` | 不推测屏幕；nominal0..1；超限拒绝或明确裁切；不含动态HDR/完整ACES。 |
 | F74 | 原生ICC输出与软打样 | RGB v2/v4矩阵/B2A CLUT、四意图/BPC、明确nits、逐帧内嵌ICC的RGBA16 PNG及作者PCM、真实SOFTPROOFING和完整交付检查。 | `native_icc_output_profiles; surface render; surface inspect-output; render; preview; convert` | CPU CMM；GPU剪辑独立；8GiB产物预算；无CMYK/ICC5/物理设备校准。 |
-| F75 | 全帧HDR光量与转换收据 | 明确nit、实际时间线与RGB16边界；MaxRGB/CIE Y峰值、帧平均、位置/范围/时长；原生中间包所有帧裁切汇总。 | `native_hdr_light_measurement; surface measure; surface export; render` | CPU测量、独立GPU剪辑；不推断监看亮度、不自动写SEI、不冒充编码后测量。 |
+| F75 | 编码前后HDR光量与转换收据 | 明确nit；实际作者RGB16输入与编码后原生RGB/YCbCr分别测量，MaxRGB/CIE Y、位置/时长、完整像素与时钟摘要、全帧裁切账本。 | `native_hdr_light_measurement; surface measure; surface measure-media; surface export; render` | CPU测量；不推断显示器、不自动写SEI；原生曝光缺口/重叠不填补。 |
 
 ## 支持的服务模块与依赖
 
@@ -1009,7 +1024,7 @@ flowchart LR
 | S27 | 原生ICC CMM服务 | 固定LittleCMS2.19.1 Windows x64 DLL、私有上下文、分块Float32、持锁/取消/关闭、实际配置字节核验。 | 包内原生DLL与MIT许可；无需新模型/全局安装。 | `surface; render; preview; convert` | 16MiB/4096标签及表面预算；CPU转换，GPU合成独立选择。 |
 | S28 | 明确HLG黑位服务 | 分块Float32/alpha、beta校验、源/目标黑位、输出域计数与原生时钟中间包。 | 包内原生Windows CPU数学；既有GPU合成独立配置。 | `surface; render; preview; convert` | 无新增模型/全局安装；不替代屏幕测量或HDR监看验收。 |
 | S29 | ICC交付与模拟服务 | 逐帧ICC设备输出、标准电影软打样、原生CMM句柄/字节持锁、PNG CRC与完整像素/PCM核验。 | 固定MIT LittleCMS原生Windows；无需新模型。 | `surface render; surface inspect-output; render; preview; convert` | 配置自身映射和程序裁切分开；PNG序列与PCM，不把任意ICC RGB冒充标准YUV。 |
-| S30 | 光量诊断与全帧色彩审计 | 只读原生时间线、可取消分块测量、完整RGB16摘要、所有帧转换收据；实际源/GPU资源回收。 | 既有FFmpeg/NumPy与可选OpenCL；不下载模型。 | `surface measure; surface export; render` | 部分帧或有效区域不代表整片全画布；768MiB自有算子估算非总RSS/VRAM。 |
+| S30 | 编码前后光量诊断与全帧色彩审计 | 只读原生时间线与成片、可取消分块测量、RGB16/解码RGBA与原生时钟摘要、所有帧转换收据及进程线程回收。 | 既有FFmpeg/NumPy与可选OpenCL；不下载模型。 | `surface measure; surface measure-media; surface export; render` | 明确色彩/逐行YCbCr与正原生时长；部分有效区域不代表整片全画布；768MiB算子估算非总RSS。 |
 
 **本机查询与交付状态：** 本轮 doctor 检测到原生 Python 3.13.1、FFmpeg/ffprobe 8.1 和 Node；这不证明每个模型或浏览器适配器均已注册。doctor 只查到系统存在 Docker/WSL 可执行路径，没有运行它们。本项目始终使用原生工具，不调度 Docker/WSL/虚拟环境。
 
@@ -1635,6 +1650,11 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R333 | 2026-10-29 源码专项 | 编码后测量＋旧编码前回归29/29，0失败/错误/跳过；首轮27项有1错误已留档并修复。源码CLI0.1.50，未作安装版验收。 | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/source-r3/verification.json) |
 | R334 | 2026-10-29 成片源码实测 | C59实际48帧/11,059,200像素独立RGBA摘要一致，光量最大误差1.14e-13 nit；原工程/成片未改。非安装Skill调用、非物理HDR监看。 | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/case-r2/verification.json) |
 | R335 | 2026-10-29 源码边界回归 | 原生YCbCr、原生视频读取、schema契约42/42，0失败/错误/跳过；与29项专项分列，未执行新安装版回归。 | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/boundary-r2/verification.json) |
+| R336 | 2026-10-29 CLI0.1.50 installed | 安装专项29/29，源码/安装276份Python文件相同。 | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/installed-r1/verification.json) |
+| R337 | 2026-10-29 CLI0.1.50 installed | 安装边界回归42/42，原生YCbCr/视频读取/schema。 | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/installed-boundary-r1/verification.json) |
+| R338 | 2026-10-29 CLI0.1.50 installed | 安装兼容回归352/352；与29/42专项分列，不累加历史次数。 | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/installed-compat-r1/verification.json) |
+| R339 | 2026-10-29 CLI0.1.50 installed | C60真实注册Skill：PQ/HLG H.265 4:2:0两条48帧独立像素/光量核验，HLG工程包重放全像素与PCM一致。 | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/installed-case-r1/verification.json) |
+| R340 | 2026-10-29 CLI0.1.50 installed | r51独立工具包核验，1入口/17模块/89 Skill文件；无源码回落。 | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/kit-r1/verification.json) |
 
 ## 当前边界与开发方向
 

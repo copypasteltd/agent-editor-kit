@@ -1,6 +1,6 @@
 # agent editor kit
 
-**CLI53 完整離線包已建置並成功安裝。** 1,704 個包內程式碼／資源經嚴格複用校驗；安裝版 280 個程式碼模組及原生資源位元組一致，90 項能力可列舉，實際隨包 OCIO DLL 載入與轉換核驗通過。最終原始碼及安裝版完整回歸仍在進行，本機註冊 Skill 暫維持 CLI52。[安裝位置、使用與驗收命令](docs/validation/ACES离线交付进度_2026-10-29.md)。
+**CLI53 完整離線包已建置並成功安裝。** 1,704 個包內程式碼／資源經嚴格複用校驗；安裝版 280 個程式碼模組及原生資源位元組一致，90 項能力可列舉，實際隨包 OCIO DLL 載入與轉換核驗通過。最終原始碼 373 項相容性已通過，安裝版廣泛回歸仍在進行，本機註冊 Skill 暫維持 CLI52。[安裝位置、使用與驗收命令](docs/validation/ACES离线交付进度_2026-10-29.md)。
 
 新版統一 Skill 候選入口已實際通過 7 次 CLI53 呼叫（含原生設定、PNG16 預覽和逐幀測量），維持 1 個入口／17 個模組／92 個檔案；原註冊入口與設定未改變。完整相容性回歸後再註冊新版。
 
@@ -1772,6 +1772,9 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R373 | C66 actual isolated installed ACES media and project replay | Full589824-byte YUV /307200-byte PCM equal across source case, installed output and replay; PNG16 decode equal | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-case-r1/verification.json) | Installed CLI53; registered Skill unchanged; no new model forwards |
 | R374 | C66 actual viewing-media verification | GIF288x384 / MP4 48x64; both8 frames/800ms; static PNG viewed | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-case-media-r1/verification.json) | Numeric chart; no continuous human viewing/listening, natural quality or physical monitor acceptance |
 | R375 | Actual unregistered CLI53 unified Skill candidate | 7 real pinned-launcher calls; PNG file byte-equal to C66; readonly all-frame measurement; 92 Skill files | [raw](docs/validation/evidence/aces-delivery-20261029-r1/candidate-skill-r1/verification.json) | One entry /17 modules; actual registered Skill and runtime unchanged; broad compatibility pending |
+| R376 | Independently extracted/registered CLI53 Skill candidate kit | 153 entries /92 Skill files; actual E-drive registration; two ACES renders and complete YUV/PCM/PNG replay equal | [raw](docs/validation/evidence/aces-delivery-20261029-r1/candidate-kit-r1/verification.json) | Candidate only; original C-drive discovery/runtime unchanged; no new model inference |
+| R377 | Staged Skill packaging source boundaries | Four actual CLI refusals; outside-root/parent escapes/backslash aliases create no output | [raw](docs/validation/evidence/aces-delivery-20261029-r1/packager-source-refusals-r1/verification.json) | Valid candidate packaging and independent runtime acceptance separately proven |
+| R378 | Frozen final-source CLI53 broad compatibility | 373 tests passed; zero failures/errors/skips; unchanged final-source bytes and no source delta | [raw](docs/validation/evidence/aces-pipeline-20261029-r1/compat-r5.json) | Separate from preliminary r3 and installed compatibility, which remains running |
 
 ## 當前邊界與開發方向
 

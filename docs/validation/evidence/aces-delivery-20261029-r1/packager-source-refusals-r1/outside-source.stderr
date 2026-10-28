@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\scripts\package_community_skill.py", line 105, in <module>
+    main()
+    ~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\scripts\package_community_skill.py", line 39, in main
+    source=checked_source(a.skill_source)
+  File "E:\dev\sandbox\AI广告剪辑\scripts\package_community_skill.py", line 19, in checked_source
+    if not source.is_relative_to(ROOT):raise ValueError('Skill source must stay inside the repository')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Skill source must stay inside the repository

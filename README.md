@@ -1,6 +1,6 @@
 # agent editor kit
 
-**CLI53 完整离线包已构建并成功安装。** 1,704 个包内代码／资源经严格复用校验；安装版 280 个代码模块及原生资源字节一致，90 项能力可枚举，实际随包 OCIO DLL 加载与变换核验通过。最终源码及安装版完整回归仍在进行，本地注册 Skill 暂保持 CLI52。[安装位置、使用与验收命令](docs/validation/ACES离线交付进度_2026-10-29.md)。
+**CLI53 完整离线包已构建并成功安装。** 1,704 个包内代码／资源经严格复用校验；安装版 280 个代码模块及原生资源字节一致，90 项能力可枚举，实际随包 OCIO DLL 加载与变换核验通过。最终源码 373 项兼容性已通过，安装版广泛回归仍在进行，本地注册 Skill 暂保持 CLI52。[安装位置、使用与验收命令](docs/validation/ACES离线交付进度_2026-10-29.md)。
 
 新版统一 Skill 候选入口已实际通过 7 次 CLI53 调用（含原生配置、PNG16 预览和逐帧测量），保持 1 个入口／17 个模块／92 个文件；原注册入口与配置未改变。完整兼容性回归后再注册新版。
 
@@ -1772,6 +1772,9 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R373 | C66 actual isolated installed ACES media and project replay | Full589824-byte YUV /307200-byte PCM equal across source case, installed output and replay; PNG16 decode equal | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-case-r1/verification.json) | Installed CLI53; registered Skill unchanged; no new model forwards |
 | R374 | C66 actual viewing-media verification | GIF288x384 / MP4 48x64; both8 frames/800ms; static PNG viewed | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-case-media-r1/verification.json) | Numeric chart; no continuous human viewing/listening, natural quality or physical monitor acceptance |
 | R375 | Actual unregistered CLI53 unified Skill candidate | 7 real pinned-launcher calls; PNG file byte-equal to C66; readonly all-frame measurement; 92 Skill files | [raw](docs/validation/evidence/aces-delivery-20261029-r1/candidate-skill-r1/verification.json) | One entry /17 modules; actual registered Skill and runtime unchanged; broad compatibility pending |
+| R376 | Independently extracted/registered CLI53 Skill candidate kit | 153 entries /92 Skill files; actual E-drive registration; two ACES renders and complete YUV/PCM/PNG replay equal | [raw](docs/validation/evidence/aces-delivery-20261029-r1/candidate-kit-r1/verification.json) | Candidate only; original C-drive discovery/runtime unchanged; no new model inference |
+| R377 | Staged Skill packaging source boundaries | Four actual CLI refusals; outside-root/parent escapes/backslash aliases create no output | [raw](docs/validation/evidence/aces-delivery-20261029-r1/packager-source-refusals-r1/verification.json) | Valid candidate packaging and independent runtime acceptance separately proven |
+| R378 | Frozen final-source CLI53 broad compatibility | 373 tests passed; zero failures/errors/skips; unchanged final-source bytes and no source delta | [raw](docs/validation/evidence/aces-pipeline-20261029-r1/compat-r5.json) | Separate from preliminary r3 and installed compatibility, which remains running |
 
 ## 当前边界与开发方向
 

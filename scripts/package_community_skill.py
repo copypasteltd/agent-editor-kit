@@ -1,34 +1,58 @@
 """Package the current single Skill and native local installation helpers."""
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import argparse
 import hashlib
 import json
 import re
+import os
+import stat
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def checked_source(value):
+    raw=os.fspath(value)
+    if raw.replace('\\','/').startswith('//') or ':' in raw[2:]:
+        raise ValueError('Skill source must be a local repository directory')
+    source=Path(os.path.abspath(raw))
+    if not source.is_relative_to(ROOT):raise ValueError('Skill source must stay inside the repository')
+    for item in reversed((source,*source.parents)):
+        details=item.stat(follow_symlinks=False)
+        if stat.S_ISLNK(details.st_mode) or getattr(details,'st_file_attributes',0)&0x400:
+            raise ValueError('Reparse Skill source paths are forbidden')
+    return source
 
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--archive-name', default='agent-editor-kit-community-unified-skill-r2.zip')
+    p.add_argument('--skill-source',type=Path,default=ROOT,
+                   help='Reviewed local staging root containing its own Skill inventory; live registration is unchanged')
     a = p.parse_args()
     out = a.output.resolve()
     if out.exists() or not out.is_relative_to(ROOT):
         raise ValueError('Select a new owned output directory')
     if Path(a.archive_name).name != a.archive_name or not a.archive_name.endswith('.zip'):
         raise ValueError('Use a local ZIP basename')
-    manifest = json.loads((ROOT / 'agent-ffmpeg-local-install-manifest.json').read_bytes())
+    source=checked_source(a.skill_source)
+    manifest_path=source/'agent-ffmpeg-local-install-manifest.json'
+    checked_source(manifest_path)
+    manifest = json.loads(manifest_path.read_bytes())
     files = {}
     for row in manifest['files']:
-        data = (ROOT / row['path']).read_bytes()
+        relative=PurePosixPath(row['path'])
+        if relative.as_posix()!=row['path'] or '\\' in row['path'] or ':' in row['path'] or '..' in relative.parts or relative.parts[:2]!=('skills','agent-ffmpeg-local-editor') or len(relative.parts)<3:
+            raise ValueError('Skill inventory path is not canonical')
+        path=checked_source(source/Path(*relative.parts))
+        data = path.read_bytes()
         assert hashlib.sha256(data).hexdigest() == row['sha256'] and len(data) == row['bytes']
         files[row['path']] = data
     for name in ('agent-ffmpeg-local-install-manifest.json', 'register-agent-ffmpeg-local-skills.ps1',
                  'scripts/register_unified_skill.ps1', 'scripts/install_community_pack.py',
                  'scripts/activate_community_runtime.py', 'LICENSE'):
-        files[name] = (ROOT / name).read_bytes()
+        files[name] = (manifest_path if name=='agent-ffmpeg-local-install-manifest.json' else ROOT/name).read_bytes()
     guide = ROOT / 'docs/product/COMMUNITY_LOCAL_DELIVERY.md'
     if not guide.exists():
         raise ValueError('Write the actual local package/installation guide before packaging')

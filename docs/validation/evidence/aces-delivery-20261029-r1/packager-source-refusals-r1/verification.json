@@ -1,0 +1,92 @@
+{
+  "status": "passed",
+  "refusals": 4,
+  "calls": [
+    {
+      "name": "outside-source",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\scripts\\package_community_skill.py",
+        "--skill-source",
+        "C:/dev/sandbox",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\aces-packager-source-refusals-r1\\outside-source-output",
+        "--archive-name",
+        "refused.zip"
+      ],
+      "exit_code": 1,
+      "output_created": false
+    },
+    {
+      "name": "escaping-parent",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\scripts\\package_community_skill.py",
+        "--skill-source",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\aces-packager-source-refusals-r1\\escaping-parent",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\aces-packager-source-refusals-r1\\escaping-parent-output",
+        "--archive-name",
+        "refused.zip"
+      ],
+      "exit_code": 1,
+      "output_created": false
+    },
+    {
+      "name": "normalized-parent",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\scripts\\package_community_skill.py",
+        "--skill-source",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\aces-packager-source-refusals-r1\\normalized-parent",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\aces-packager-source-refusals-r1\\normalized-parent-output",
+        "--archive-name",
+        "refused.zip"
+      ],
+      "exit_code": 1,
+      "output_created": false
+    },
+    {
+      "name": "backslash-alias",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\scripts\\package_community_skill.py",
+        "--skill-source",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\aces-packager-source-refusals-r1\\backslash-alias",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\aces-packager-source-refusals-r1\\backslash-alias-output",
+        "--archive-name",
+        "refused.zip"
+      ],
+      "exit_code": 1,
+      "output_created": false
+    }
+  ],
+  "live_namespace_unchanged": true,
+  "source_fallback": false
+}

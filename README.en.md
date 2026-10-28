@@ -1,6 +1,6 @@
 # agent editor kit
 
-**The complete CLI53 offline bundle is built and installed.** Strict reuse checked 1,704 package files; all 280 installed code modules and native resources match source bytes. Version/capabilities report CLI53 and 90 capabilities; actual bundled OCIO DLL loading and native transformation passed. Final-source and installed regressions remain running; the registered Skill stays CLI52. [Installation location, usage and acceptance commands](docs/validation/ACES离线交付进度_2026-10-29.md).
+**The complete CLI53 offline bundle is built and installed.** Strict reuse checked 1,704 package files; all 280 installed code modules and native resources match source bytes. Version/capabilities report CLI53 and 90 capabilities; actual bundled OCIO DLL loading and native transformation passed. Final-source compatibility passed 373 tests; installed broad compatibility remains running; the registered Skill stays CLI52. [Installation location, usage and acceptance commands](docs/validation/ACES离线交付进度_2026-10-29.md).
 
 The unified Skill candidate passed seven actual CLI53 calls, including native configuration, PNG16 preview and all-frame metering. It retains one entry, 17 modules and 92 files; live discovery and configuration remain unchanged. Registration awaits the complete compatibility gates.
 
@@ -1774,6 +1774,9 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R373 | C66 actual isolated installed ACES media and project replay | Full589824-byte YUV /307200-byte PCM equal across source case, installed output and replay; PNG16 decode equal | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-case-r1/verification.json) | Installed CLI53; registered Skill unchanged; no new model forwards |
 | R374 | C66 actual viewing-media verification | GIF288x384 / MP4 48x64; both8 frames/800ms; static PNG viewed | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-case-media-r1/verification.json) | Numeric chart; no continuous human viewing/listening, natural quality or physical monitor acceptance |
 | R375 | Actual unregistered CLI53 unified Skill candidate | 7 real pinned-launcher calls; PNG file byte-equal to C66; readonly all-frame measurement; 92 Skill files | [raw](docs/validation/evidence/aces-delivery-20261029-r1/candidate-skill-r1/verification.json) | One entry /17 modules; actual registered Skill and runtime unchanged; broad compatibility pending |
+| R376 | Independently extracted/registered CLI53 Skill candidate kit | 153 entries /92 Skill files; actual E-drive registration; two ACES renders and complete YUV/PCM/PNG replay equal | [raw](docs/validation/evidence/aces-delivery-20261029-r1/candidate-kit-r1/verification.json) | Candidate only; original C-drive discovery/runtime unchanged; no new model inference |
+| R377 | Staged Skill packaging source boundaries | Four actual CLI refusals; outside-root/parent escapes/backslash aliases create no output | [raw](docs/validation/evidence/aces-delivery-20261029-r1/packager-source-refusals-r1/verification.json) | Valid candidate packaging and independent runtime acceptance separately proven |
+| R378 | Frozen final-source CLI53 broad compatibility | 373 tests passed; zero failures/errors/skips; unchanged final-source bytes and no source delta | [raw](docs/validation/evidence/aces-pipeline-20261029-r1/compat-r5.json) | Separate from preliminary r3 and installed compatibility, which remains running |
 
 ## Current limits and development direction
 

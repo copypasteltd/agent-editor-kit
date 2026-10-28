@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\scripts\package_community_skill.py", line 105, in <module>
+    main()
+    ~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\scripts\package_community_skill.py", line 47, in main
+    raise ValueError('Skill inventory path is not canonical')
+ValueError: Skill inventory path is not canonical

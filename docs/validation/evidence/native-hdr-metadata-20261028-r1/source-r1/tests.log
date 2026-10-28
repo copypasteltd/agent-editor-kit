@@ -1,0 +1,160 @@
+test_SDR_previews_preserve_HDR_author_declaration_and_have_no_HDR_SEI (test_hdr_metadata.MetadataIntegrationTests.test_SDR_previews_preserve_HDR_author_declaration_and_have_no_HDR_SEI) ... ok
+test_actual_HEVC_SEI_is_verified_before_publishing (test_hdr_metadata.MetadataIntegrationTests.test_actual_HEVC_SEI_is_verified_before_publishing) ... ERROR
+test_actual_MP4_main10_and_SEI_are_retained (test_hdr_metadata.MetadataIntegrationTests.test_actual_MP4_main10_and_SEI_are_retained) ... ERROR
+test_actual_unknown_content_levels_are_written_as_zero (test_hdr_metadata.MetadataIntegrationTests.test_actual_unknown_content_levels_are_written_as_zero) ... ERROR
+test_configuration_rejects_SDR_HLG_legacy_eight_bit_wrong_encoder_and_full_range (test_hdr_metadata.MetadataIntegrationTests.test_configuration_rejects_SDR_HLG_legacy_eight_bit_wrong_encoder_and_full_range) ... ok
+test_dry_run_contains_fixed_declaration_and_SEI_flags_without_publication (test_hdr_metadata.MetadataIntegrationTests.test_dry_run_contains_fixed_declaration_and_SEI_flags_without_publication) ... ok
+test_editable_package_retains_declaration_and_identical_decoded_picture (test_hdr_metadata.MetadataIntegrationTests.test_editable_package_retains_declaration_and_identical_decoded_picture) ... ERROR
+test_metadata_absent_after_real_encoder_prevents_replacing_existing_delivery (test_hdr_metadata.MetadataIntegrationTests.test_metadata_absent_after_real_encoder_prevents_replacing_existing_delivery) ... FAIL
+test_probe_respects_cancel_before_start_and_never_publishes (test_hdr_metadata.MetadataIntegrationTests.test_probe_respects_cancel_before_start_and_never_publishes) ... ok
+test_schema_and_runtime_validate_explicit_metadata_without_rewriting (test_hdr_metadata.MetadataIntegrationTests.test_schema_and_runtime_validate_explicit_metadata_without_rewriting) ... ok
+test_fixed_units_match_independent_documented_x265_string (test_hdr_metadata.MetadataUnitTests.test_fixed_units_match_independent_documented_x265_string) ... ok
+test_gamut_triangle_white_point_and_xy_domain_are_checked (test_hdr_metadata.MetadataUnitTests.test_gamut_triangle_white_point_and_xy_domain_are_checked) ... ok
+test_no_silent_rounding_for_color_coordinates_or_nits (test_hdr_metadata.MetadataUnitTests.test_no_silent_rounding_for_color_coordinates_or_nits) ... ok
+test_normalization_owns_nested_values (test_hdr_metadata.MetadataUnitTests.test_normalization_owns_nested_values) ... ok
+test_probe_accepts_equal_rationals_and_discloses_prefix_not_measured (test_hdr_metadata.MetadataUnitTests.test_probe_accepts_equal_rationals_and_discloses_prefix_not_measured) ... ok
+test_probe_malformed_transport_is_structured_error (test_hdr_metadata.MetadataUnitTests.test_probe_malformed_transport_is_structured_error) ... ok
+test_probe_rejects_missing_duplicate_changed_and_later_conflicting_SEI (test_hdr_metadata.MetadataUnitTests.test_probe_rejects_missing_duplicate_changed_and_later_conflicting_SEI) ... ok
+test_probe_requires_actual_matching_hevc_ten_bit_PQ_VUI (test_hdr_metadata.MetadataUnitTests.test_probe_requires_actual_matching_hevc_ten_bit_PQ_VUI) ... ok
+test_rejects_invalid_luminance_intervals_and_content_light_relations (test_hdr_metadata.MetadataUnitTests.test_rejects_invalid_luminance_intervals_and_content_light_relations) ... ok
+test_rejects_nonfinite_boolean_unknown_missing_and_injected_values (test_hdr_metadata.MetadataUnitTests.test_rejects_nonfinite_boolean_unknown_missing_and_injected_values) ... ok
+test_zero_content_levels_explicitly_mean_unknown (test_hdr_metadata.MetadataUnitTests.test_zero_content_levels_explicitly_mean_unknown) ... ok
+
+======================================================================
+ERROR: test_actual_HEVC_SEI_is_verified_before_publishing (test_hdr_metadata.MetadataIntegrationTests.test_actual_HEVC_SEI_is_verified_before_publishing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\hdr_metadata.py", line 153, in verify_probe
+    actual = {k: Fraction(str(mastering[0][k])) for k in expected}
+                              ~~~~~~~~~~~~^^^
+KeyError: 'white_x'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_hdr_metadata.py", line 118, in test_actual_HEVC_SEI_is_verified_before_publishing
+    result=self.f.execute();r=result['delivery']['hdr10_static_metadata']
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_standard_render.py", line 110, in execute
+    result = render.render_project(self.root, self.p, self.s, self.root/'renders'/name, **kwargs)
+  File "C:\Python313\Lib\contextlib.py", line 85, in inner
+    return func(*args, **kwds)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\render.py", line 4936, in render_project
+    return _render_project(root, project, sequence, output, dry_run=dry_run,
+        render_settings=render_settings, profile=profile, cancel_file=cancel_file,
+        progress_callback=progress_callback, resume_of=resume_of, _runtime=runtime)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\render.py", line 5132, in _render_project
+    delivery['hdr10_static_metadata'] = verify_hdr_output(temp_output, encoder['hdr10'], cancel_file=cancel_file)
+                                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\hdr_metadata.py", line 180, in verify_output
+    return verify_probe(raw, value)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\hdr_metadata.py", line 156, in verify_probe
+    raise error('PROBE', '解码SEI字段无效', frame=index) from exc
+ai_ad_editor.errors.AppError: 解码SEI字段无效
+
+======================================================================
+ERROR: test_actual_MP4_main10_and_SEI_are_retained (test_hdr_metadata.MetadataIntegrationTests.test_actual_MP4_main10_and_SEI_are_retained)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\hdr_metadata.py", line 153, in verify_probe
+    actual = {k: Fraction(str(mastering[0][k])) for k in expected}
+                              ~~~~~~~~~~~~^^^
+KeyError: 'white_x'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_hdr_metadata.py", line 133, in test_actual_MP4_main10_and_SEI_are_retained
+    r=self.f.execute('actual.mp4');self.assertEqual(r['probe']['video']['codec'],'hevc')
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_standard_render.py", line 110, in execute
+    result = render.render_project(self.root, self.p, self.s, self.root/'renders'/name, **kwargs)
+  File "C:\Python313\Lib\contextlib.py", line 85, in inner
+    return func(*args, **kwds)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\render.py", line 4936, in render_project
+    return _render_project(root, project, sequence, output, dry_run=dry_run,
+        render_settings=render_settings, profile=profile, cancel_file=cancel_file,
+        progress_callback=progress_callback, resume_of=resume_of, _runtime=runtime)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\render.py", line 5132, in _render_project
+    delivery['hdr10_static_metadata'] = verify_hdr_output(temp_output, encoder['hdr10'], cancel_file=cancel_file)
+                                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\hdr_metadata.py", line 180, in verify_output
+    return verify_probe(raw, value)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\hdr_metadata.py", line 156, in verify_probe
+    raise error('PROBE', '解码SEI字段无效', frame=index) from exc
+ai_ad_editor.errors.AppError: 解码SEI字段无效
+
+======================================================================
+ERROR: test_actual_unknown_content_levels_are_written_as_zero (test_hdr_metadata.MetadataIntegrationTests.test_actual_unknown_content_levels_are_written_as_zero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\hdr_metadata.py", line 153, in verify_probe
+    actual = {k: Fraction(str(mastering[0][k])) for k in expected}
+                              ~~~~~~~~~~~~^^^
+KeyError: 'white_x'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_hdr_metadata.py", line 128, in test_actual_unknown_content_levels_are_written_as_zero
+    r=self.f.execute();self.assertEqual(r['delivery']['hdr10_static_metadata']['declaration']['content_light'],dict(max_cll_nits=0,max_fall_nits=0))
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_standard_render.py", line 110, in execute
+    result = render.render_project(self.root, self.p, self.s, self.root/'renders'/name, **kwargs)
+  File "C:\Python313\Lib\contextlib.py", line 85, in inner
+    return func(*args, **kwds)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\render.py", line 4936, in render_project
+    return _render_project(root, project, sequence, output, dry_run=dry_run,
+        render_settings=render_settings, profile=profile, cancel_file=cancel_file,
+        progress_callback=progress_callback, resume_of=resume_of, _runtime=runtime)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\render.py", line 5132, in _render_project
+    delivery['hdr10_static_metadata'] = verify_hdr_output(temp_output, encoder['hdr10'], cancel_file=cancel_file)
+                                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\hdr_metadata.py", line 180, in verify_output
+    return verify_probe(raw, value)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\hdr_metadata.py", line 156, in verify_probe
+    raise error('PROBE', '解码SEI字段无效', frame=index) from exc
+ai_ad_editor.errors.AppError: 解码SEI字段无效
+
+======================================================================
+ERROR: test_editable_package_retains_declaration_and_identical_decoded_picture (test_hdr_metadata.MetadataIntegrationTests.test_editable_package_retains_declaration_and_identical_decoded_picture)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\hdr_metadata.py", line 153, in verify_probe
+    actual = {k: Fraction(str(mastering[0][k])) for k in expected}
+                              ~~~~~~~~~~~~^^^
+KeyError: 'white_x'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_hdr_metadata.py", line 188, in test_editable_package_retains_declaration_and_identical_decoded_picture
+    f=self.f;first=f.execute('before.mkv');archive=f.root/'exports/hdr10.zip'
+                   ~~~~~~~~~^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_standard_render.py", line 110, in execute
+    result = render.render_project(self.root, self.p, self.s, self.root/'renders'/name, **kwargs)
+  File "C:\Python313\Lib\contextlib.py", line 85, in inner
+    return func(*args, **kwds)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\render.py", line 4936, in render_project
+    return _render_project(root, project, sequence, output, dry_run=dry_run,
+        render_settings=render_settings, profile=profile, cancel_file=cancel_file,
+        progress_callback=progress_callback, resume_of=resume_of, _runtime=runtime)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\render.py", line 5132, in _render_project
+    delivery['hdr10_static_metadata'] = verify_hdr_output(temp_output, encoder['hdr10'], cancel_file=cancel_file)
+                                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\hdr_metadata.py", line 180, in verify_output
+    return verify_probe(raw, value)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\hdr_metadata.py", line 156, in verify_probe
+    raise error('PROBE', '解码SEI字段无效', frame=index) from exc
+ai_ad_editor.errors.AppError: 解码SEI字段无效
+
+======================================================================
+FAIL: test_metadata_absent_after_real_encoder_prevents_replacing_existing_delivery (test_hdr_metadata.MetadataIntegrationTests.test_metadata_absent_after_real_encoder_prevents_replacing_existing_delivery)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_hdr_metadata.py", line 145, in test_metadata_absent_after_real_encoder_prevents_replacing_existing_delivery
+    self.assertEqual((self.f.root/'project.json').read_bytes(),before)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: b'{\n[197 chars]8:36.893313Z",\n    "creator": "ai-ad-editor",[8556 chars]n}\n' != b'{\n[197 chars]8:36.263317Z",\n    "creator": "ai-ad-editor",[8556 chars]n}\n'
+
+----------------------------------------------------------------------
+Ran 21 tests in 185.046s
+
+FAILED (failures=1, errors=4)

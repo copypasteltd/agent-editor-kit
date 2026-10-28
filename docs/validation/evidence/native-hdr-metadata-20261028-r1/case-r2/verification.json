@@ -1,0 +1,132 @@
+{
+  "status": "passed",
+  "native_windows": true,
+  "virtualization": false,
+  "registered_skill": true,
+  "source_fallback": false,
+  "started_at_utc": "2026-10-28T09:32:18.678379+00:00",
+  "content_peaks_measured": false,
+  "HDR_monitor_accepted": false,
+  "human_listening": false,
+  "continuous_human_playback": false,
+  "checks": [
+    {
+      "name": "new-capability",
+      "ok": true
+    },
+    {
+      "name": "dry-run-declared-flags",
+      "ok": true
+    },
+    {
+      "name": "hdr10-actual-GPU",
+      "ok": true
+    },
+    {
+      "name": "production-prefix-verification",
+      "ok": true,
+      "decoded_frames": 32
+    },
+    {
+      "name": "independent-all-48-frames",
+      "ok": true
+    },
+    {
+      "name": "SDR-view-does-not-change-author",
+      "ok": true
+    },
+    {
+      "name": "SDR-copy-has-no-HDR-SEI",
+      "ok": true
+    },
+    {
+      "name": "portable-declarations",
+      "ok": true
+    },
+    {
+      "name": "replayed-actual-GPU",
+      "ok": true
+    },
+    {
+      "name": "all-decoded-video-identical",
+      "ok": true,
+      "decoded_frames": 48,
+      "bytes": 33177600
+    },
+    {
+      "name": "all-PCM-identical",
+      "ok": true,
+      "samples": 384000,
+      "bytes": 1536000
+    },
+    {
+      "name": "actual-GIF-clock",
+      "ok": true,
+      "frames": 24,
+      "duration_ms": 4000
+    }
+  ],
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-metadata-case-r2\\project",
+  "restored": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-metadata-case-r2\\restored",
+  "public_directory": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-hdr-metadata-20261028-r2",
+  "prefix_frames": 32,
+  "independent_case_frames": 48,
+  "decoded_video_bytes": 33177600,
+  "PCM_scalar_samples": 384000,
+  "GPU_glow_calls_per_render": 48,
+  "render_count": 2,
+  "cli_calls": 12,
+  "files": [
+    {
+      "path": "comparison.png",
+      "bytes": 105786,
+      "sha256": "867e3f055981f4b0e5beac74361199306086125e9cfb06b1f7ebadf37b6a5177"
+    },
+    {
+      "path": "declaration.json",
+      "bytes": 368,
+      "sha256": "27b32c30e2285d67b7124cfa0af3764a71a796549b53dfccd117f412f7fd7beb"
+    },
+    {
+      "path": "editable-hdr10.aevpkg.zip",
+      "bytes": 3274601,
+      "sha256": "ec70a8ded06b4daf144779d1f33f327c4fda122f9c86a6408739d8f76cbe15b8"
+    },
+    {
+      "path": "editable-hdr10.aevpkg.zip.conversion-report.json",
+      "bytes": 956,
+      "sha256": "37b68d1e258f8291d9ae16da5629e087488245d4d07950412fa0a9f410a0df09"
+    },
+    {
+      "path": "hdr10-master.mkv",
+      "bytes": 1570153,
+      "sha256": "e133391723136fcee4fbd34ea313f70309f800c0e56882a51236bae73731b2f6"
+    },
+    {
+      "path": "hdr10-master.mkv.manifest.json",
+      "bytes": 514225,
+      "sha256": "788832d083e778186c5509811180c376d53484e668c3ba7a5e7ed4e643865c3e"
+    },
+    {
+      "path": "sdr-frame.png",
+      "bytes": 141440,
+      "sha256": "030c23366c0e3bbd8a34748ac88d789bd06d06e6cf4d684d20876a3b62c79b82"
+    },
+    {
+      "path": "sdr-preview.mp4",
+      "bytes": 133739,
+      "sha256": "be80c101ed5f2c42d13541bd7b3cb5a8502732f4df8d94e29c892af34c382c5c"
+    },
+    {
+      "path": "sdr-view.gif",
+      "bytes": 276532,
+      "sha256": "6c3ee985af8c2c8312b63c560366e3e4f1022e6a6da12989655fc9a3c75e4214"
+    },
+    {
+      "path": "SOURCE.txt",
+      "bytes": 450,
+      "sha256": "ddda3e8b5bfdd317a42b4beb4abe83b89470940d17790993efc0f6bdf1f572e9"
+    }
+  ],
+  "finished_at_utc": "2026-10-28T09:35:08.146089+00:00"
+}

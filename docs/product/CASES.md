@@ -998,3 +998,17 @@ Actual installed output and original/held-out sources are distinct. The editable
 All selected Float32 samples bypass bit-exactly at strength0. Complete source/output assets and immutable recipes survive package import; full rendered decoded PCM matches. Actual fragment import rebinds source/output IDs. Real cancellation after a completed neural segment terminates the owned worker,rolls back metadata,retains bounded diagnostics and leaves no half asset. No human listening/continuous playback or complete G17/product acceptance.
 
 [Workflow](SPEECH_ENHANCEMENT.md) · [Evidence](../validation/本地对白增强实测_2026-10-27.md)
+
+<a id="c54-native-hdr10-metadata"></a>
+
+## C54 · 实际HDR10 SEI / 實際HDR10 SEI / Actual HDR10 static metadata
+
+Actual installed CLI0.1.44 and registered unified Skill. C50 original contributor-generated CC0 chart,SDR badge and stereo tones are imported as an editable project. Native PQ display-linear edit,48 actual GPU glow calls per render and CPU x265 ten-bit420 output. Declared P3-D65 mastering display0.0001–1000nits,MaxCLL1000/MaxFALL400 are not measured peaks.
+
+Production verifies frames decoded from the first32 packets; C54 separately checks all48 frames with an independent rational oracle. All48 decoded frames and384000 nonzero PCM scalars match after package import/render. The separate SDR preview has BT.709 tags and no HDR static SEI. GIF24frames/4seconds; static figure reviewed,no human continuous playback/listening or HDR monitor acceptance.
+
+![Actual SDR view; separate HDR master](../assets/native-hdr-metadata-20261028-r2/sdr-view.gif)
+
+[HDR10 master](../assets/native-hdr-metadata-20261028-r2/hdr10-master.mkv) · [Actual SDR MP4](../assets/native-hdr-metadata-20261028-r2/sdr-preview.mp4) · [SDR frame](../assets/native-hdr-metadata-20261028-r2/sdr-frame.png) · [Declared values](../assets/native-hdr-metadata-20261028-r2/declaration.json) · [Master manifest](../assets/native-hdr-metadata-20261028-r2/hdr10-master.mkv.manifest.json) · [Editable package](../assets/native-hdr-metadata-20261028-r2/editable-hdr10.aevpkg.zip) · [Selection sheet](../assets/native-hdr-metadata-20261028-r2/comparison.png) · [Provenance](../assets/native-hdr-metadata-20261028-r2/SOURCE.txt) · [Media hashes](../assets/native-hdr-metadata-20261028-r2/media-manifest.json)
+
+[Workflow](HDR_METADATA.md) · [Evidence](../validation/HDR10静态元数据实测_2026-10-28.md). Initial case r1 retained: its author-byte check spanned the normal render operation timestamp. The corrected r2 snapshots bytes immediately before previews. Initial source round also retained the fixed ffprobe white-point mapping failure; no failed round is counted as final success.

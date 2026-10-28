@@ -1,0 +1,1101 @@
+{
+  "status": "passed",
+  "at_utc": "2026-10-28T09:59:59.856007+00:00",
+  "whole_goal_complete": false,
+  "product_files": 267,
+  "capabilities": 83,
+  "skill_files": 83,
+  "public_skills": 1,
+  "internal_modules": 17,
+  "source_tests": 21,
+  "installed_tests": 21,
+  "installed_compat_tests": 105,
+  "F": 70,
+  "S": 25,
+  "K": 17,
+  "R": 303,
+  "prior_R_retained": 297,
+  "G_closure_cells_retained": 38,
+  "local_links_checked": 3703,
+  "files_checked": 215,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 107875,
+      "sha256": "1256a58152dbd434dffa260a728aa0ced341bc4c95bca920aeda23ec57c7366a"
+    },
+    {
+      "path": "README.en.md",
+      "bytes": 239064,
+      "sha256": "e9260a07fd9fd3e19eb5cc749f7c1bb33e50fb6239c9e8fa81d6149cba7ebbb9"
+    },
+    {
+      "path": "README.md",
+      "bytes": 223176,
+      "sha256": "f508e039c5cede25aa966815ae6dccdbde98b04229724c4b79db5e97760fb6aa"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "bytes": 224447,
+      "sha256": "47002ce648a6ef03ebd4ba0d85528a7949bcc9348420b66956a0617341a65b98"
+    },
+    {
+      "path": "agent-ffmpeg-local-install-manifest.json",
+      "bytes": 28170,
+      "sha256": "7d57a4d063a96b3388c3effd0d9158535c7ffb4d5aeb2680e99289ccc215ac86"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 15530,
+      "sha256": "eaa1ddcf4115137637bcd75b6608f7baa4f2ae30e3fcf4abebc638f59efaac80"
+    },
+    {
+      "path": "docs/assets/native-hdr-metadata-20261028-r2/SOURCE.txt",
+      "bytes": 450,
+      "sha256": "ddda3e8b5bfdd317a42b4beb4abe83b89470940d17790993efc0f6bdf1f572e9"
+    },
+    {
+      "path": "docs/assets/native-hdr-metadata-20261028-r2/comparison.png",
+      "bytes": 105786,
+      "sha256": "867e3f055981f4b0e5beac74361199306086125e9cfb06b1f7ebadf37b6a5177"
+    },
+    {
+      "path": "docs/assets/native-hdr-metadata-20261028-r2/declaration.json",
+      "bytes": 368,
+      "sha256": "27b32c30e2285d67b7124cfa0af3764a71a796549b53dfccd117f412f7fd7beb"
+    },
+    {
+      "path": "docs/assets/native-hdr-metadata-20261028-r2/editable-hdr10.aevpkg.zip",
+      "bytes": 3274601,
+      "sha256": "ec70a8ded06b4daf144779d1f33f327c4fda122f9c86a6408739d8f76cbe15b8"
+    },
+    {
+      "path": "docs/assets/native-hdr-metadata-20261028-r2/editable-hdr10.aevpkg.zip.conversion-report.json",
+      "bytes": 956,
+      "sha256": "37b68d1e258f8291d9ae16da5629e087488245d4d07950412fa0a9f410a0df09"
+    },
+    {
+      "path": "docs/assets/native-hdr-metadata-20261028-r2/hdr10-master.mkv",
+      "bytes": 1570153,
+      "sha256": "e133391723136fcee4fbd34ea313f70309f800c0e56882a51236bae73731b2f6"
+    },
+    {
+      "path": "docs/assets/native-hdr-metadata-20261028-r2/hdr10-master.mkv.manifest.json",
+      "bytes": 514225,
+      "sha256": "788832d083e778186c5509811180c376d53484e668c3ba7a5e7ed4e643865c3e"
+    },
+    {
+      "path": "docs/assets/native-hdr-metadata-20261028-r2/media-manifest.json",
+      "bytes": 1813,
+      "sha256": "8db04a53d4bb3717c994515c3d3aa2f44b6d2b348ba0805f4e6b97b8ea2d4fc8"
+    },
+    {
+      "path": "docs/assets/native-hdr-metadata-20261028-r2/sdr-frame.png",
+      "bytes": 141440,
+      "sha256": "030c23366c0e3bbd8a34748ac88d789bd06d06e6cf4d684d20876a3b62c79b82"
+    },
+    {
+      "path": "docs/assets/native-hdr-metadata-20261028-r2/sdr-preview.mp4",
+      "bytes": 133739,
+      "sha256": "be80c101ed5f2c42d13541bd7b3cb5a8502732f4df8d94e29c892af34c382c5c"
+    },
+    {
+      "path": "docs/assets/native-hdr-metadata-20261028-r2/sdr-view.gif",
+      "bytes": 276532,
+      "sha256": "6c3ee985af8c2c8312b63c560366e3e4f1022e6a6da12989655fc9a3c75e4214"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.en.md",
+      "bytes": 200434,
+      "sha256": "e1cf7e6649669dc78a95a2233db6c344ba4be7650fedcc019c56918c712cb6e9"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.md",
+      "bytes": 197668,
+      "sha256": "ac09d28c2c48680355a94bbf72b8028aaf1abd80f6717d456c0b56ca0acaedbc"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.zh-TW.md",
+      "bytes": 197795,
+      "sha256": "9deb2c7e64696bc10924f76dd48338a1d230ccf37cafd73fc643ce81820382d8"
+    },
+    {
+      "path": "docs/product/CASES.md",
+      "bytes": 133729,
+      "sha256": "bdb80c6f192ede70c304557fa19f5696af5a82b83eae06feb585f71b8eb712e8"
+    },
+    {
+      "path": "docs/product/COMMUNITY_LOCAL_DELIVERY.md",
+      "bytes": 31734,
+      "sha256": "dde80c226f6fefaf0e5fec89dd0d30a61217e80b99110bf532877fe0219be2af"
+    },
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "bytes": 50369,
+      "sha256": "715e5c1e5be3a3947b1c71290ec32327d71d6db2277298c4de10c07413546a3f"
+    },
+    {
+      "path": "docs/product/HDR_DISPLAY.md",
+      "bytes": 9470,
+      "sha256": "d193fc72dd1f1dd5f7bd8b7e3161c215a576eedef0f7389a055925b2bc378bda"
+    },
+    {
+      "path": "docs/product/HDR_METADATA.md",
+      "bytes": 5395,
+      "sha256": "fa8b4688c41402d01b4eaf502722830753bfded209f46f4a129f1fa1e1fac98f"
+    },
+    {
+      "path": "docs/product/SKILLS.en.md",
+      "bytes": 17264,
+      "sha256": "e7ddf0005661e623e2ed915fa539ac7aee11fb1376bfc098a1db6fa8d56321aa"
+    },
+    {
+      "path": "docs/product/SKILLS.md",
+      "bytes": 16772,
+      "sha256": "b5c8cd2d63e0646493b8af76ac55a0b8ca1a5ad8b2d1bc3f3ab770e7bcae9b8b"
+    },
+    {
+      "path": "docs/product/SKILLS.zh-TW.md",
+      "bytes": 16805,
+      "sha256": "0226559a5011b192976f8f7948d199ef6982ddee48349e034c6546094f5e9ef2"
+    },
+    {
+      "path": "docs/product/hdr-metadata-capabilities-cli-0.1.44.json",
+      "bytes": 139456,
+      "sha256": "578651ded2e15f784b90aa3dcfb29203e75c999092cc08672b4f2a0c85755598"
+    },
+    {
+      "path": "docs/releases/CLI_0.1.44_LOCAL.md",
+      "bytes": 2082,
+      "sha256": "bd2e7626609e81bbd69167364e1a6bceb974da3ac7ef30990a41a3c0305da991"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.en.md",
+      "bytes": 7517,
+      "sha256": "864533d27f1fb0c04b02c7667014b9cb2e0a14cc41703a55ee6a5940ae86f8b9"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.md",
+      "bytes": 7812,
+      "sha256": "c641ef0aabd580d75ba2ab3ba938661fc773152a87e68c3daa6989b7fda54903"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.zh-TW.md",
+      "bytes": 7824,
+      "sha256": "7c57fc24cd71a368a799faaffdee3eff5bafed6c8a2d925fce682386968ea0e2"
+    },
+    {
+      "path": "docs/skills/agent-editor-kit-community-unified-skill-r45.zip",
+      "bytes": 665959,
+      "sha256": "8cf09ab4af81b4bac3db6e47eea5dc6df34f9ffe674331810382a2ace30449b2"
+    },
+    {
+      "path": "docs/skills/community-unified-skill-package-0.1.44-r45.json",
+      "bytes": 415,
+      "sha256": "4681b5c6cdbf9b433ed7e3c466e5a42fc082f76bc19a59185a73fa2890036ce4"
+    },
+    {
+      "path": "docs/specs/agent-project.schema.json",
+      "bytes": 146876,
+      "sha256": "60398ab209f05e1331d6ab4bc97e0eafe8178d0d9786440bc2d89f63fb7e424d"
+    },
+    {
+      "path": "docs/validation/HDR10静态元数据实测_2026-10-28.md",
+      "bytes": 3194,
+      "sha256": "8ce19edec921b6405381e8a081bd4c887f016a773084ab7fdd4a6721a7cc48f2"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/activation-final-r1/activation-and-registration.json",
+      "bytes": 1866,
+      "sha256": "649ad9083063ab0179b19df20bca9cc4c455160f3ff79bb9a2a445d2dad047fc"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/activation-final-r1/activation.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/activation-final-r1/activation.stdout.json",
+      "bytes": 737,
+      "sha256": "89d00774ca66bfa3d0e391b2756609af1d1d60e01d25a041c461409166167d3b"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/activation-final-r1/executed-generator.py",
+      "bytes": 2802,
+      "sha256": "0df7119084d4850895a24d14cd00f9b07e751f5b8f1e7d50df2c54c45d821cd9"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/activation-final-r1/kokoro-zh-en-cuda13.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/activation-final-r1/kokoro-zh-en-cuda13.stdout.json",
+      "bytes": 659,
+      "sha256": "ce0857817998838549faa3859478396d9c71a1ccf3fce5d5960c29e88cb8709b"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/activation-final-r1/kokoro-zh-en-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/activation-final-r1/kokoro-zh-en-int8.stdout.json",
+      "bytes": 655,
+      "sha256": "f60e9d0f4a8e424005b95d636070fca148d51fdc44402f17194eeb6a85cefd9e"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/activation-final-r1/opus-zh-en-cpu-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/activation-final-r1/opus-zh-en-cpu-int8.stdout.json",
+      "bytes": 660,
+      "sha256": "573f420c637457efd2bd51232d658363581d793ef60a2ed0a2da34471e9ebb70"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/activation-final-r1/opus-zh-en-cuda12-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/activation-final-r1/opus-zh-en-cuda12-int8.stdout.json",
+      "bytes": 666,
+      "sha256": "833d2978b409fe0dce5c238580ddadaecd3f504cea4cd5a6edbbe6d9f2683c47"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/activation-final-r1/previous-community-runtime.json",
+      "bytes": 797,
+      "sha256": "215495ee2c7f917d3394f3cae9821f4ad74765e1600af1282f1468b9f228b61c"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/activation-final-r1/previous-runtime.json",
+      "bytes": 624,
+      "sha256": "302c93ec1ad9ce2031760ab0934214c738a844a1746b5d26d384e9fbbf930746"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/activation-final-r1/registration.json",
+      "bytes": 1024,
+      "sha256": "ca448aa19d2e698019dc212feda12ee62f48e0fdc7e201ad52d38fb6206cf557"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/activation-final-r1/registration.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/activation-final-r1/registration.stdout.txt",
+      "bytes": 373,
+      "sha256": "8e32422c49b0a911256c9541e5d47499ecaa71d9e7dfee27d8791e34cd9d82b6"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/activation-final-r1/verification.json",
+      "bytes": 782,
+      "sha256": "001f5c750932f3b5e6fbf304625ccba166d5d2365ab030860b665eb88968b6f3"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r1/calls.json",
+      "bytes": 6655,
+      "sha256": "df8fb26ed55c162c26f373b04e723ecff4a613a9d768982c77c99c16bbedf0d5"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r1/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r1/capabilities.stdout.json",
+      "bytes": 139456,
+      "sha256": "1dd884d2036526b110105a02453378f871089f541567fca32d74dc236e3172c3"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r1/checks.json",
+      "bytes": 408,
+      "sha256": "95222a99109cc62d059c87d8a643490c4e663907bd702aa272b64b2bc4dcc802"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r1/executed-generator.py",
+      "bytes": 11813,
+      "sha256": "0c5898d3aa0fd95d2dc92ac190db2876bec3f2446991509f846e6b7454f3329a"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r1/hdr10.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r1/hdr10.stdout.json",
+      "bytes": 201096,
+      "sha256": "87ad547042a429e5e1fd92f44a00cf795b534b0e7e7c216be07816557036001d"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r1/import-original.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r1/import-original.stdout.json",
+      "bytes": 1572,
+      "sha256": "bf39ac1a150dfc01623936391fc93da80b65f1d6560db22e792d6c336e8e8256"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r1/independent-all-frame-sei.json",
+      "bytes": 38033,
+      "sha256": "eafb5e6321dccceebdf0593249cafefc1b0f9b7e2c4ed6363c08c35b3ab2e8f5"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r1/independent-all-frame-sei.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r1/plan.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r1/plan.stdout.json",
+      "bytes": 98081,
+      "sha256": "9afd5f6298a1fc55fa29b863ff3c0995e3973fc1f4f7fde2b5955b1c7ee95292"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r1/preview-frame.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r1/preview-frame.stdout.json",
+      "bytes": 58687,
+      "sha256": "2f35cc8891e395529b530e1bc643175e54066e9b1406dbb78e4df3c4a92ae8d3"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r1/preview-range.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r1/preview-range.stdout.json",
+      "bytes": 60654,
+      "sha256": "e96df6b0cd3c2128f8a206a56fb8ae930077dbc42933743eb0e45120daa73c8b"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r1/validate.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r1/validate.stdout.json",
+      "bytes": 802,
+      "sha256": "e5a11c312e687353457e499c178906be2a576fabc267c7f752c8d833eb5acaee"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r1/verification.json",
+      "bytes": 861,
+      "sha256": "3be26d2e2e0cb800259de095cace50e35dbe9abcf7d7ddc76d0db4300eb13e6f"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r1/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r1/version.stdout.json",
+      "bytes": 1168,
+      "sha256": "57111a502745e68053771bf9379798e533f13595271895d8f51769ed11928bc2"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/calls.json",
+      "bytes": 14823,
+      "sha256": "9c724628d5ea4c374e080109ca0c989429a7bf3509e76db2be25aa2f6f7db7df"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/capabilities.stdout.json",
+      "bytes": 139456,
+      "sha256": "f778cfb745967a6d4cf1e2294b72d8aed2a95de11eb01d1512f24bbdd3458a73"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/checks.json",
+      "bytes": 907,
+      "sha256": "0a95879d2032a90728e3f4d5682aa499f66d660d0f6ad3636e768850f4ed5b77"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/executed-generator.py",
+      "bytes": 11821,
+      "sha256": "991117361b7bc82fd1d0d886f17031099ef3518c1e12cb3597a0f58da7c877b0"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/export.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/export.stdout.json",
+      "bytes": 3262,
+      "sha256": "2c693c2b7782de5f1d8c4ebc6ce7adccc57d78a11b6dcbae197c54a63905a02f"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/gif.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/hdr10.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/hdr10.stdout.json",
+      "bytes": 201092,
+      "sha256": "13101300cc4dbeb99e3b68f6f9c23839c7396d5d0ebc08fe889fd66252514eb8"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/import-original.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/import-original.stdout.json",
+      "bytes": 1572,
+      "sha256": "25afef0ac9815511da8b9f4dc88324ffc567b631d17c665df9a1af47fb07e2ae"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/import-replay.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/import-replay.stdout.json",
+      "bytes": 1580,
+      "sha256": "ffc375063d8b8c7e4dd787b78d7f211a1d65800747f9dda6af46766bf4cdeef3"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/independent-SDR-probe.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/independent-all-frame-sei.json",
+      "bytes": 38033,
+      "sha256": "eafb5e6321dccceebdf0593249cafefc1b0f9b7e2c4ed6363c08c35b3ab2e8f5"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/independent-all-frame-sei.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/original-all-PCM.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/original-all-video.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/plan.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/plan.stdout.json",
+      "bytes": 98081,
+      "sha256": "a09f441daffe982bea336328d63b69671fc6cc14c21d2625b2e634ad9dabdd26"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/preview-frame.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/preview-frame.stdout.json",
+      "bytes": 58688,
+      "sha256": "0c4c224251cdd50d8e0e7bcdbac84b2e3124fc809888b787f32ae63ac09d0be4"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/preview-range.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/preview-range.stdout.json",
+      "bytes": 60655,
+      "sha256": "61ea6c6f125407feb6a0c4da2f70f3b91c730dddbac592d2769e72836eb5f6ae"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/replayed-all-PCM.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/replayed-all-video.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/replayed.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/replayed.stdout.json",
+      "bytes": 201127,
+      "sha256": "816fb64893460e8e0918d9b5e14725b4e070cbbc04eac52a9e2cc5375cc601ff"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/validate-replay.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/validate-replay.stdout.json",
+      "bytes": 803,
+      "sha256": "eeda9436e45f11b79b81cb1ae9c752906a2fd60af87ce410696110d13524d592"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/validate.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/validate.stdout.json",
+      "bytes": 802,
+      "sha256": "12db2929621684f666e7f268150957eb6392ac04389451460d3923be6360301f"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/verification.json",
+      "bytes": 3513,
+      "sha256": "b469bc8e860c8e5842629545dcbeddc59a92a6ce0c925e8c14cf2794e38e2233"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/version.stdout.json",
+      "bytes": 1168,
+      "sha256": "f17a7c72f6df290bbd8e46da61b0dd34de8728b96e39e6cc31ff335127bac386"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/documentation-r1/executed-generator.py",
+      "bytes": 20757,
+      "sha256": "ce96d68beb6a73be582fb33f44568e97eb08136c1c8fef9be8f489c24a00b91c"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/documentation-r1/verification.json",
+      "bytes": 150,
+      "sha256": "7e88a914bf2e5ba868529ae9486716d1cc3860693de999b8829ccb5bd898cbfd"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/final-r1/executed-auditor.py",
+      "bytes": 9659,
+      "sha256": "f3197b72e9dc2142ab561663af80c76e72226ec544d60c3482335b48b3a97fee"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/final-r1/verification.json",
+      "bytes": 175,
+      "sha256": "054d055c74b836cd226188046a5c929165eedd69bef971006bb0694c90eeba22"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/final-r2/executed-auditor.py",
+      "bytes": 9709,
+      "sha256": "0f4603afd72453037b2f14683f41dc918869e413c065054fe8c3e656f373cc5a"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installation-final-r1/build.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installation-final-r1/build.stdout.json",
+      "bytes": 448,
+      "sha256": "83a5f7aea45653bf3a2621a1f27095cd6c1eebdb8e1184d0aa53788c35b8f43b"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installation-final-r1/calls.json",
+      "bytes": 2616,
+      "sha256": "f5cc23079fe4cfcb13f08e526f93fcd8a9ce11d75595e5bf963c5e623c2e06df"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installation-final-r1/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installation-final-r1/capabilities.stdout.json",
+      "bytes": 139456,
+      "sha256": "578651ded2e15f784b90aa3dcfb29203e75c999092cc08672b4f2a0c85755598"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installation-final-r1/executed-generator.py",
+      "bytes": 5365,
+      "sha256": "f041e86186b6bd8a2a668cda392bc00bf6159539009c2b614737febee409711a"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installation-final-r1/install.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installation-final-r1/install.stdout.json",
+      "bytes": 1709,
+      "sha256": "7531ecfa68e7f480ff9b220e3ebc8b1ee96c57ee917228fee9e0758af2f51336"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installation-final-r1/verification.json",
+      "bytes": 35695,
+      "sha256": "df6a92d6d28adec3bc1a0d9c5b1b9433ea062b3d5615c7de0629612f297d8c59"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installation-final-r1/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installation-final-r1/version.stdout.json",
+      "bytes": 1168,
+      "sha256": "7d9a1436ca2bef9fafdeddbe12764e19c4cc718d7af79a6c1a80fc960cfa582e"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installed-compat-r1/executed-runner.py",
+      "bytes": 2945,
+      "sha256": "c65e645a76fc256768a8211307234c3861a5405b5281d8736dfa069e26d8dfbd"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installed-compat-r1/executed-tests/test_float_hdr.py",
+      "bytes": 21259,
+      "sha256": "ad50d09368f7829efc5c2bb40119021c0141eac392179b88868e86dde0fe2e04"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installed-compat-r1/executed-tests/test_float_preview.py",
+      "bytes": 18395,
+      "sha256": "d07efe6d79493b97d64f7a6a9511c14b4fb1620a1820ef2897fca48510bd7dab"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installed-compat-r1/executed-tests/test_float_standard_render.py",
+      "bytes": 22886,
+      "sha256": "28952ffc3933dd3641c16b877ff2379992493b573d916d8efbdb4e675b2c1975"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installed-compat-r1/executed-tests/test_queue_reuse.py",
+      "bytes": 27030,
+      "sha256": "c8e9fc997ca69b20ad4196bc718ecbfddb3cfe01722914d6547624cc12870cc1"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installed-compat-r1/executed-tests/test_schema_contract.py",
+      "bytes": 8251,
+      "sha256": "cbffcdb7c2e0c5b9d8bd1cc0bed68004cc30a467bb7a08f2fc7aab64bb71c409"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installed-compat-r1/receipts.json",
+      "bytes": 587736,
+      "sha256": "6b48e4e08e4ed8ba9c372ec28ec2a31b868380187f7ba7f367999ab51bdc1600"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installed-compat-r1/tests.log",
+      "bytes": 17764,
+      "sha256": "cfdfbe853840284ca7b69a0145c4b29042cfd9e9dee08364d2ce5e84ed349f41"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installed-compat-r1/verification.json",
+      "bytes": 25453,
+      "sha256": "db2110fbe84eb85059d37e0bd4bbbbd8a9b1ee111ed10f510d49afbad46cd483"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installed-r1/executed-runner.py",
+      "bytes": 2945,
+      "sha256": "c65e645a76fc256768a8211307234c3861a5405b5281d8736dfa069e26d8dfbd"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installed-r1/executed-tests/test_float_hdr.py",
+      "bytes": 21259,
+      "sha256": "ad50d09368f7829efc5c2bb40119021c0141eac392179b88868e86dde0fe2e04"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installed-r1/executed-tests/test_float_standard_render.py",
+      "bytes": 22886,
+      "sha256": "28952ffc3933dd3641c16b877ff2379992493b573d916d8efbdb4e675b2c1975"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installed-r1/executed-tests/test_hdr_metadata.py",
+      "bytes": 14049,
+      "sha256": "86613011baf6d5b58f0dc72e8c82bc151e528dde550a31f0a951eee949c1d27e"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installed-r1/receipts.json",
+      "bytes": 538993,
+      "sha256": "2cd9854ef578e80d28c66a86bc7f6fd1ce94946ba83d6b62bac17f2f913d37d8"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installed-r1/tests.log",
+      "bytes": 3701,
+      "sha256": "55d6b4ef47624fd068ba001919f199fb998ff00ecd303059a9e1059ebfc8c8bc"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/installed-r1/verification.json",
+      "bytes": 25265,
+      "sha256": "782d79583ab5f02d53c8cfd8c81db2ffb430eeefb436ccf452b78b49c4a6872c"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/calls.json",
+      "bytes": 6111,
+      "sha256": "f8156ff6421c947744456260a0aec9935dbf0b61f1029b871b8033a1594a1e7c"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/capabilities.stdout.txt",
+      "bytes": 139456,
+      "sha256": "809568dae5b3a41018401f86fc6d7af79ce869e29961e2c82ef06d3e6f8493c2"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/configure.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/configure.stdout.txt",
+      "bytes": 871,
+      "sha256": "514745f8da3a76a8a2317afd7ea6c6e68b8a72fc5e6d63ddf0b78b671cfe73cc"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/executed-generator.py",
+      "bytes": 6274,
+      "sha256": "402ea3a98035c201c6bbc7bb3a0646bb9022b8b0bdfca98feb1fc667490e0dee"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/import.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/import.stdout.txt",
+      "bytes": 1600,
+      "sha256": "b088a0cbd4735084de0adb8772b54bea69d66dd5edc9f1c206a42ef013d16a93"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/plan.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/plan.stdout.txt",
+      "bytes": 98237,
+      "sha256": "8b2149ca31f878afb3c54abe24fc4ad482cc684d3b34b4b1d7b2849ba97d39c6"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/register.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/register.stdout.txt",
+      "bytes": 360,
+      "sha256": "745436048ac2ee62e4146bd780001b2f09a031bf45fe490f0fbf9142796a67d7"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/registration.json",
+      "bytes": 1228,
+      "sha256": "53fc9c365aae32bdcbb31419331537eaeb9b00eb9bda2473d90e76eb1601044d"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/render-help.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/render-help.stdout.txt",
+      "bytes": 4142,
+      "sha256": "ae678d329e5635e7c93774ecdfd98e4ae9a654a98fb7e409514b603ca819cf82"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/validate.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/validate.stdout.txt",
+      "bytes": 808,
+      "sha256": "d218fe310a4dbb2477c5dca3bd3b8b7e41327319035c5a3a0894f003fd7fc7e4"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/verification.json",
+      "bytes": 681,
+      "sha256": "c4856d571bd5f69327210b198610519c5db4a1c04ddff374480c6dc6ca8cbbdb"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/version.stdout.txt",
+      "bytes": 1168,
+      "sha256": "867ffb9d9788d4bde292593cf8514a4951097bf6e94cdbf931d50ade33a52d56"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/skill-pin-r1/executed-generator.py",
+      "bytes": 4947,
+      "sha256": "1f564cb5331c3e7b35768c261ca7c56874682cd85bdd5eb11ce355d341d44b2b"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/skill-pin-r1/verification.json",
+      "bytes": 335,
+      "sha256": "b007355cf2c18e60b43b61624d6fa804031d52d35144f3b2fe56348ca83ddcd9"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r1/executed-runner.py",
+      "bytes": 2945,
+      "sha256": "c65e645a76fc256768a8211307234c3861a5405b5281d8736dfa069e26d8dfbd"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r1/executed-tests/test_float_hdr.py",
+      "bytes": 21259,
+      "sha256": "ad50d09368f7829efc5c2bb40119021c0141eac392179b88868e86dde0fe2e04"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r1/executed-tests/test_float_standard_render.py",
+      "bytes": 22886,
+      "sha256": "28952ffc3933dd3641c16b877ff2379992493b573d916d8efbdb4e675b2c1975"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r1/executed-tests/test_hdr_metadata.py",
+      "bytes": 13384,
+      "sha256": "58809e303da39be4d2430d6f0132625cc19b5a9e8c0dedf2825dfae1b54a38f4"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r1/receipts.json",
+      "bytes": 62220,
+      "sha256": "5628cacab1927283160031f488618b1ad53fcd59ff4be8ea713e20a062baf464"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r1/tests.log",
+      "bytes": 13763,
+      "sha256": "07763d32a2ef40bcad923d0f2a24f593c888359b552db28fb597c6b3a4b25eb7"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r1/verification.json",
+      "bytes": 25202,
+      "sha256": "8518b765579654e287d6fb8a286ba591d4adb521e1b62876ae730f4638fc736e"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r2/executed-runner.py",
+      "bytes": 2945,
+      "sha256": "c65e645a76fc256768a8211307234c3861a5405b5281d8736dfa069e26d8dfbd"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r2/executed-tests/test_float_hdr.py",
+      "bytes": 21259,
+      "sha256": "ad50d09368f7829efc5c2bb40119021c0141eac392179b88868e86dde0fe2e04"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r2/executed-tests/test_float_standard_render.py",
+      "bytes": 22886,
+      "sha256": "28952ffc3933dd3641c16b877ff2379992493b573d916d8efbdb4e675b2c1975"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r2/executed-tests/test_hdr_metadata.py",
+      "bytes": 13459,
+      "sha256": "cfaae67127e2b2ded11e8456ab91f2939a6a5411bbce0e301c7fb90ebc573f80"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r2/receipts.json",
+      "bytes": 509255,
+      "sha256": "35b980af8a3aab4e452abbf4d588c03aa7056e34f977616014c3f7a904e3f88e"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r2/tests.log",
+      "bytes": 3702,
+      "sha256": "5a1c2eb613ca02a2e7c03265eeed0be38b811176ee6d2c438f2438067ace74a3"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r2/verification.json",
+      "bytes": 25202,
+      "sha256": "958adf8ca721e25fff9ac28354231d79aec00835a15ae17b5f03995ce91ceff4"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r3/executed-runner.py",
+      "bytes": 2945,
+      "sha256": "c65e645a76fc256768a8211307234c3861a5405b5281d8736dfa069e26d8dfbd"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r3/executed-tests/test_float_hdr.py",
+      "bytes": 21259,
+      "sha256": "ad50d09368f7829efc5c2bb40119021c0141eac392179b88868e86dde0fe2e04"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r3/executed-tests/test_float_standard_render.py",
+      "bytes": 22886,
+      "sha256": "28952ffc3933dd3641c16b877ff2379992493b573d916d8efbdb4e675b2c1975"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r3/executed-tests/test_hdr_metadata.py",
+      "bytes": 14049,
+      "sha256": "86613011baf6d5b58f0dc72e8c82bc151e528dde550a31f0a951eee949c1d27e"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r3/receipts.json",
+      "bytes": 509255,
+      "sha256": "89d2bf5f31266d7ac60852c28e347ca61eb8bbabf26e73b566be114e2af43705"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r3/tests.log",
+      "bytes": 3701,
+      "sha256": "414d6bae759b47b28f6398ab8eb0fce6f2c188dd660fe3f687050883bfd2ccba"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r3/verification.json",
+      "bytes": 25202,
+      "sha256": "b5bee36918a4d0cef1ce266363541e7bfc8fa939418489790e7f53066a9ea34f"
+    },
+    {
+      "path": "docs/validation/evidence/native-hdr-metadata-20261028-r1/static-review.json",
+      "bytes": 374,
+      "sha256": "83711284de91ed2e16afb7e360d0c642e6f3a98318c8e385e30e5ed6a1496e7a"
+    },
+    {
+      "path": "product/pyproject.toml",
+      "bytes": 1558,
+      "sha256": "b019bdea6686f48d6f32c5e50f7aff419408666ba2945ff332020cf716379831"
+    },
+    {
+      "path": "product/src/ai_ad_editor/__init__.py",
+      "bytes": 181,
+      "sha256": "89ab79e596895c0ed2049922249a7391139b7a01324b30bb6e59f15818e5f551"
+    },
+    {
+      "path": "product/src/ai_ad_editor/agent-project.schema.json",
+      "bytes": 146876,
+      "sha256": "60398ab209f05e1331d6ab4bc97e0eafe8178d0d9786440bc2d89f63fb7e424d"
+    },
+    {
+      "path": "product/src/ai_ad_editor/capabilities.py",
+      "bytes": 166248,
+      "sha256": "673d3f24b9d00cf41cabb6cf028c93c831925de4eae00b1129b19f565e9f06fa"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_standard_render.py",
+      "bytes": 30047,
+      "sha256": "11116c9a1192ca37907292d63c661cb9afb85a8b2ec6de614b6f344867d8d5cf"
+    },
+    {
+      "path": "product/src/ai_ad_editor/hdr_metadata.py",
+      "bytes": 9887,
+      "sha256": "b6df3573305bb7920d2748c2e2910f90c2e40a839d5c4cc7c3d0ca383e8b40bd"
+    },
+    {
+      "path": "product/src/ai_ad_editor/render.py",
+      "bytes": 329668,
+      "sha256": "0dcc10174a2cae2e0274ea925830b4188f61b5590c2566762889e790654f053f"
+    },
+    {
+      "path": "product/src/ai_ad_editor/schema_contract.py",
+      "bytes": 5001,
+      "sha256": "739032f9b567ad7cc2cd1366fcd5aaa9c4f6ef02d7f8e6dc15257b71b947d55e"
+    },
+    {
+      "path": "product/tests/test_hdr_metadata.py",
+      "bytes": 14049,
+      "sha256": "86613011baf6d5b58f0dc72e8c82bc151e528dde550a31f0a951eee949c1d27e"
+    },
+    {
+      "path": "scripts/activate_hdr_metadata_20261028.py",
+      "bytes": 2802,
+      "sha256": "0df7119084d4850895a24d14cd00f9b07e751f5b8f1e7d50df2c54c45d821cd9"
+    },
+    {
+      "path": "scripts/audit_hdr_metadata_20261028.py",
+      "bytes": 9709,
+      "sha256": "0f4603afd72453037b2f14683f41dc918869e413c065054fe8c3e656f373cc5a"
+    },
+    {
+      "path": "scripts/build_hdr_metadata_20261028.py",
+      "bytes": 5365,
+      "sha256": "f041e86186b6bd8a2a668cda392bc00bf6159539009c2b614737febee409711a"
+    },
+    {
+      "path": "scripts/configure_hdr_metadata_20261028.py",
+      "bytes": 1967,
+      "sha256": "3039cfbbaf56dbe73aebc1de2a0fa6fbf2b263e6b8200eee0df539f643e8fc88"
+    },
+    {
+      "path": "scripts/document_hdr_metadata_20261028.py",
+      "bytes": 20757,
+      "sha256": "ce96d68beb6a73be582fb33f44568e97eb08136c1c8fef9be8f489c24a00b91c"
+    },
+    {
+      "path": "scripts/package_community_skill.py",
+      "bytes": 5357,
+      "sha256": "7b1774d00bbff53150d319c460d670993c3c12508cf9db569be39c4ba9431f28"
+    },
+    {
+      "path": "scripts/pin_hdr_metadata_20261028.py",
+      "bytes": 4947,
+      "sha256": "1f564cb5331c3e7b35768c261ca7c56874682cd85bdd5eb11ce355d341d44b2b"
+    },
+    {
+      "path": "scripts/prepare_hdr_metadata_delivery_20261028.py",
+      "bytes": 798,
+      "sha256": "bc0912be881940b1b27a41adebd012019445c237d5e259763268ff073078b3d7"
+    },
+    {
+      "path": "scripts/publish_hdr_metadata_20261028.py",
+      "bytes": 1031,
+      "sha256": "ba56e11766ebdaf4d767d5ac86b22ca35a68b4a413a1bb2c2b13ff0bfd12e432"
+    },
+    {
+      "path": "scripts/run_hdr_metadata_case_20261028.py",
+      "bytes": 11821,
+      "sha256": "991117361b7bc82fd1d0d886f17031099ef3518c1e12cb3597a0f58da7c877b0"
+    },
+    {
+      "path": "scripts/test_hdr_metadata_20261028.py",
+      "bytes": 2945,
+      "sha256": "c65e645a76fc256768a8211307234c3861a5405b5281d8736dfa069e26d8dfbd"
+    },
+    {
+      "path": "scripts/verify_hdr_metadata_kit_20261028.py",
+      "bytes": 6274,
+      "sha256": "402ea3a98035c201c6bbc7bb3a0646bb9022b8b0bdfca98feb1fc667490e0dee"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
+      "bytes": 15230,
+      "sha256": "08107347baf72c1a8005819d358b3091ba2420e5765b4ca42308ef32a5adb166"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/hdr-display.md",
+      "bytes": 2425,
+      "sha256": "809aea350cae6d031b22f5aeb2fcc353c10b5fdea15a5bb52053b6a697e0e2d1"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/hdr-metadata.md",
+      "bytes": 1623,
+      "sha256": "3fa7d08bb730a94993dcb5e02ac8d7440bf501d2d33bc8077686a577abd29491"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
+      "bytes": 8242,
+      "sha256": "fd39d6c8641b37e07bc2659567ef4e9a92ad16048dec3f7163244f6223e9ae8d"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/scripts/run.py",
+      "bytes": 2296,
+      "sha256": "4555cedb630fe4803c4160fb9d910704d554e29de7fae720ba1ed5c4ebc979bd"
+    }
+  ],
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.42\\final-r1\\installed",
+  "staged": false,
+  "postpush": false
+}

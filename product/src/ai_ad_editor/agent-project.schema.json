@@ -519,6 +519,9 @@
                   "type": "string"
                 }
               }
+            },
+            "hdr10": {
+              "$ref": "#/$defs/hdr10StaticMetadata"
             }
           }
         },
@@ -567,7 +570,33 @@
             }
           }
         }
-      }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "output"
+            ],
+            "properties": {
+              "output": {
+                "required": [
+                  "hdr10"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "pixel_pipeline"
+            ],
+            "properties": {
+              "pixel_pipeline": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      ]
     },
     "asset": {
       "type": "object",
@@ -5145,6 +5174,100 @@
             "reject",
             "clip"
           ]
+        }
+      }
+    },
+    "hdr10StaticMetadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mastering_display",
+        "content_light"
+      ],
+      "properties": {
+        "mastering_display": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "red_xy",
+            "green_xy",
+            "blue_xy",
+            "white_xy",
+            "min_luminance_nits",
+            "max_luminance_nits"
+          ],
+          "properties": {
+            "red_xy": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "green_xy": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "blue_xy": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "white_xy": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "min_luminance_nits": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10000
+            },
+            "max_luminance_nits": {
+              "type": "number",
+              "minimum": 0.0001,
+              "maximum": 10000
+            }
+          }
+        },
+        "content_light": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "max_cll_nits",
+            "max_fall_nits"
+          ],
+          "properties": {
+            "max_cll_nits": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10000
+            },
+            "max_fall_nits": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10000
+            }
+          }
         }
       }
     }

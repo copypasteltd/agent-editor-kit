@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.43 / alpha.4-local.41 / r44 kit · 1 Skill / 17 modules / 82 files.**
+**CLI0.1.44 / alpha.4-local.42 / r45 kit · 1 Skill / 17 modules / 83 files.**
 
-新增**真正本機 CUDA DeepFilterNet3 對白降噪**：原生取樣時鐘、單/雙聲道、獨立增強資產與可編輯音軌、強度/衰減上限、分段重疊、配方重跑、工程包及取消回滾。
+新增**HDR10母版顯示與MaxCLL/MaxFALL靜態中繼資料**：明確xy/nit單位，實際寫入HEVC SEI，發布前核驗解碼影格；支援可編輯專案封裝，沿用GPU合成和獨立SDR預覽。
 
-[Speech enhancement workflow](SPEECH_ENHANCEMENT.md)
+[HDR10 static metadata workflow](HDR_METADATA.md)
 
 <!-- /community-current -->
 

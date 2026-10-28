@@ -1,0 +1,40 @@
+{
+  "status": "failed",
+  "native_windows": true,
+  "virtualization": false,
+  "registered_skill": true,
+  "source_fallback": false,
+  "started_at_utc": "2026-10-28T09:20:48.039059+00:00",
+  "content_peaks_measured": false,
+  "HDR_monitor_accepted": false,
+  "human_listening": false,
+  "continuous_human_playback": false,
+  "error": "AssertionError('SDR-view-does-not-change-author')",
+  "checks": [
+    {
+      "name": "new-capability",
+      "ok": true
+    },
+    {
+      "name": "dry-run-declared-flags",
+      "ok": true
+    },
+    {
+      "name": "hdr10-actual-GPU",
+      "ok": true
+    },
+    {
+      "name": "production-prefix-verification",
+      "ok": true,
+      "decoded_frames": 32
+    },
+    {
+      "name": "independent-all-48-frames",
+      "ok": true
+    },
+    {
+      "name": "SDR-view-does-not-change-author",
+      "ok": false
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "name": "new-capability",
+    "ok": true
+  },
+  {
+    "name": "dry-run-declared-flags",
+    "ok": true
+  },
+  {
+    "name": "hdr10-actual-GPU",
+    "ok": true
+  },
+  {
+    "name": "production-prefix-verification",
+    "ok": true,
+    "decoded_frames": 32
+  },
+  {
+    "name": "independent-all-48-frames",
+    "ok": true
+  },
+  {
+    "name": "SDR-view-does-not-change-author",
+    "ok": true
+  },
+  {
+    "name": "SDR-copy-has-no-HDR-SEI",
+    "ok": true
+  },
+  {
+    "name": "portable-declarations",
+    "ok": true
+  },
+  {
+    "name": "replayed-actual-GPU",
+    "ok": true
+  },
+  {
+    "name": "all-decoded-video-identical",
+    "ok": true,
+    "decoded_frames": 48,
+    "bytes": 33177600
+  },
+  {
+    "name": "all-PCM-identical",
+    "ok": true,
+    "samples": 384000,
+    "bytes": 1536000
+  },
+  {
+    "name": "actual-GIF-clock",
+    "ok": true,
+    "frames": 24,
+    "duration_ms": 4000
+  }
+]

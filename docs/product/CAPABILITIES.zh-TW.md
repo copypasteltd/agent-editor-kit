@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.43 / alpha.4-local.41 / r44 kit · 1 Skill / 17 modules / 82 files.**
+**CLI0.1.44 / alpha.4-local.42 / r45 kit · 1 Skill / 17 modules / 83 files.**
 
-新增**真正本機 CUDA DeepFilterNet3 對白降噪**：原生取樣時鐘、單/雙聲道、獨立增強資產與可編輯音軌、強度/衰減上限、分段重疊、配方重跑、工程包及取消回滾。
+新增**HDR10母版顯示與MaxCLL/MaxFALL靜態中繼資料**：明確xy/nit單位，實際寫入HEVC SEI，發布前核驗解碼影格；支援可編輯專案封裝，沿用GPU合成和獨立SDR預覽。
 
-[Speech enhancement workflow](SPEECH_ENHANCEMENT.md)
+[HDR10 static metadata workflow](HDR_METADATA.md)
 
 <!-- /community-current -->
 
@@ -83,6 +83,7 @@
 | F67 | 本機神經口型同步 | 圖片／影片＋獨立聲音→真正CUDA MuseTalk口型；25FPS人臉框關鍵影格、語義下半臉混合、完整PCM及alpha保留，可復用配方並影片/音訊關聯入軌。 | `lipsync adapter register/list/inspect; lipsync generate` | 本機safetensors及既有原生Torch依賴；臉部256×256、明確8bit SDR與來源運鏡、無CPU回退；自然口型、完整數位人仍未驗收。 |
 | F68 | CUDA神經補幀與慢動作 | 原生CFR/VFR、每來源影格RGBA、預乘alpha、完整PCM；2..8倍、切鏡保持、關聯慢放雙軌、配方重跑及工程包。 | `interpolate adapter; interpolate generate` | 明確RIFE4.25 safetensors＋原生CUDA Python；無CPU回退；困難運動/遮擋/自然品質/HDR未廣泛驗收。 |
 | F69 | CUDA對白降噪與增強 | 原生取樣時鐘/單雙聲道、真正模型、乾濕強度/衰減、可編輯獨立音軌、配方重跑/工程包、取消回滾。 | `audio enhancement-adapter; audio enhance` | DeepFilterNet3固定safetensors＋既有原生CUDA依賴；分段狀態重置、CPU前端；完整去混響/音樂保真待完成。 |
+| F70 | HDR10靜態中繼資料交付 | 母版RGB/白點xy、最小/最大nit、MaxCLL/MaxFALL → 實際HEVC SEI與解碼核驗清單。 | `settings.output.hdr10; validate; render; convert` | 明確原生PQ/BT2020 NCL有限範圍、libx265/10bit420/MP4或MKV；作者聲明、前32封包核驗。 |
 
 | 編號 | 服務模塊 | 運行形式 | 需要什么/提供什么 | 入口 | 範圍 |
 |---|---|---|---|---|---|
@@ -110,6 +111,7 @@
 | S22 | MuseTalk CUDA 神經口型服務 | 本機Whisper-tiny音訊特徵、MuseTalk1.5 UNet、SD VAE及BiSeNet；固定safetensors與拒寫鎖、原生工作回收。 | 明確既有Torch/Diffusers/Transformers/OpenCV原生依賴及模型證據；無自動安裝。 | `lipsync adapter; lipsync generate` | 模型256×256，25FPS；授權、自然度、完整數位人及HDR另行驗收。 |
 | S23 | RIFE CUDA補幀服務 | 固定五階段IFNet/158個FP32推理張量、嚴格本機雜湊、真正CUDA；不執行模型目錄程式/Pickle。 | 已有原生Torch＋safetensors依賴及MIT模型證據；無自動安裝。 | `interpolate adapter; interpolate generate` | 原生時間細分、全影格/PCM往返；閾值不是語意切鏡；自然品質仍須複核。 |
 | S24 | DeepFilterNet3對白服務 | 固定133張量/48kHz全頻模型；神經推論CUDA、NumPy前端CPU、FFmpeg重取樣。 | 明確本機權重/原生Torch/safetensors及MIT OR Apache-2.0證據。 | `audio enhancement-adapter; audio enhance` | 8..96kHz、1/2聲道、完整來源≤1800秒/選區≤600秒；無自動下載/依賴安裝/CPU回退。 |
+| S25 | x265 HDR10靜態SEI服務 | 固定語法參數寫入＋原生ffprobe解碼逐有理數核對，發布前失敗關閉。 | 既有原生FFmpeg/libx265/ffprobe；無新模型。 | `render` | 編碼CPU；觀察解碼前綴，非全片認證/峰值量測。 |
 
 ## 完整安裝版能力字段
 
@@ -5043,7 +5045,8 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
     "CPU_tiled_color_conversion_not_GPU_transfer_kernels",
     "only_BT2020_PQ_HLG_native_ten_bit_nonalpha_delivery",
     "no_inferred_luminance_or_metadata_or_automatic_tone_map",
-    "no_ICC_chromatic_adaptation_mastering_CLL_dynamic_metadata_or_DolbyVision",
+    "explicit_HDR10_static_declarations_use_native_hdr10_static_metadata_capability",
+    "no_ICC_chromatic_adaptation_dynamic_metadata_or_DolbyVision",
     "HLG_ideal_zero_black_only_explicit_peak_and_gamma",
     "SDR_trim_is_explicit_creative_Reinhard_not_BT2390_or_perceptual_gamut_mapping",
     "natural_HDR_monitor_long_form_and_full_CapCut_acceptance_pending"
@@ -5246,3 +5249,38 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 ```
 
 [CLI0.1.43 exact installed capabilities](speech-enhancement-capabilities-cli-0.1.43.json).
+
+### `native_hdr10_static_metadata`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "declared-hdr10-static-sei-v1",
+  "selection": "settings.output.hdr10; explicit native PQ/BT2020 limited-range libx265 yuv420p10le MP4/MKV",
+  "commands": [
+    "validate",
+    "render",
+    "render --dry-run",
+    "convert export",
+    "convert import"
+  ],
+  "features": [
+    "explicit_CIE1931_xy_and_mastering_min_max_nits",
+    "exact_1_50000_xy_and_1_10000_nit_quantization_without_silent_rounding",
+    "nondegenerate_mastering_triangle_and_interior_white_point",
+    "explicit_MaxCLL_MaxFALL_zero_means_unknown",
+    "fixed_x265_SEI_arguments_and_matching_ten_bit_PQ_VUI",
+    "decoded_prefix_SEI_rational_equality_before_atomic_publication",
+    "portable_editable_project_declarations_and_render_manifest_receipt"
+  ],
+  "limits": [
+    "author_declarations_not_measured_content_peaks_or_display_calibration",
+    "libx265_CPU_encoding_only_not_NVENC_metadata",
+    "only_ten_bit_420_limited_range_PQ_not_HLG_or_SDR",
+    "probe_first_32_video_packets_not_all_frame_metadata_certification",
+    "no_HDR10plus_dynamic_metadata_DolbyVision_or_HDR_monitor_acceptance"
+  ]
+}
+```
+
+[CLI0.1.44 exact installed capabilities](hdr-metadata-capabilities-cli-0.1.44.json).

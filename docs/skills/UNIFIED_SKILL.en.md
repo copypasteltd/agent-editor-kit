@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.43 / alpha.4-local.41 / r44 kit · 1 Skill / 17 modules / 82 files.**
+**CLI0.1.44 / alpha.4-local.42 / r45 kit · 1 Skill / 17 modules / 83 files.**
 
-Adds **actual native CUDA DeepFilterNet3 speech denoising** with native sample clocks, mono/stereo, separate enhanced assets and editable audio tracks, strength/attenuation controls, overlapping segments, portable rerun recipes, packages and owned cancellation.
+Added **HDR10 mastering-display and MaxCLL/MaxFALL static metadata**: exact xy/nit units, actual HEVC SEI writing and decoded-frame verification before publication; editable packages, GPU composition and separate SDR viewing copies.
 
-[Speech enhancement workflow](../product/SPEECH_ENHANCEMENT.md)
+[HDR10 static metadata workflow](../product/HDR_METADATA.md)
 
 <!-- /community-current -->
 

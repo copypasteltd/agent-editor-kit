@@ -1,0 +1,26 @@
+{
+  "mastering_display": {
+    "red_xy": [
+      0.68,
+      0.32
+    ],
+    "green_xy": [
+      0.265,
+      0.69
+    ],
+    "blue_xy": [
+      0.15,
+      0.06
+    ],
+    "white_xy": [
+      0.3127,
+      0.329
+    ],
+    "min_luminance_nits": 0.0001,
+    "max_luminance_nits": 1000
+  },
+  "content_light": {
+    "max_cll_nits": 1000,
+    "max_fall_nits": 400
+  }
+}

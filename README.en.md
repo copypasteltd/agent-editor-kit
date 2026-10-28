@@ -9,7 +9,23 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- native-speech-enhancement-current -->
+<!-- native-hdr-metadata-current -->
+
+**CLI0.1.44 / alpha.4-local.42 / r45 kit · 1 Skill / 17 modules.**
+
+Added **HDR10 mastering-display and MaxCLL/MaxFALL static metadata**: exact xy/nit units, actual HEVC SEI writing and decoded-frame verification before publication; editable packages, GPU composition and separate SDR viewing copies.
+
+[Workflow / usage](docs/product/HDR_METADATA.md) · [C54](docs/product/CASES.md#c54-native-hdr10-metadata) · [Install](docs/releases/CLI_0.1.44_LOCAL.md) · [Evidence](docs/validation/HDR10静态元数据实测_2026-10-28.md)
+
+![Actual mapped SDR preview; separate HDR10 master](docs/assets/native-hdr-metadata-20261028-r2/sdr-view.gif)
+
+[HDR10 master](docs/assets/native-hdr-metadata-20261028-r2/hdr10-master.mkv) · [SDR preview](docs/assets/native-hdr-metadata-20261028-r2/sdr-preview.mp4) · [Declared values](docs/assets/native-hdr-metadata-20261028-r2/declaration.json) · [Editable package](docs/assets/native-hdr-metadata-20261028-r2/editable-hdr10.aevpkg.zip)
+
+21 source checks,21 installed checks and105 installed compatibility checks pass separately. C54 independently checks all48 frames of SEI; package replay preserves every decoded video frame and384000 PCM scalars. Production verifies frames decoded from the first32 video packets. Values are author declarations, not measured peaks. x265 encoding uses CPU; composition uses GPU. Dynamic HDR,ICC/monitoring,natural quality and all38 original goal closure conditions remain ongoing.
+
+<!-- /native-hdr-metadata-current -->
+
+<!-- native-speech-enhancement-history -->
 
 **CLI0.1.43 / alpha.4-local.41 / r44 kit · 1 Skill / 17 modules.**
 
@@ -23,7 +39,7 @@ Adds **actual native CUDA DeepFilterNet3 speech denoising** with native sample c
 
 33 source checks,33 installed checks and156 installed compatibility regressions pass separately. C53 real English human speech improves from0 dB input to SNR 12.25 dB; synthetic Mandarin reaches9.69 dB. Native samples and complete package-render PCM are preserved. Clean-speech damage,reverb controls and the initial atomic-temp-file race remain recorded. No human listening acceptance; per-segment state resets,CPU frontend/CUDA neural graph. Full dereverberation,music fidelity and all38 original closure conditions remain ongoing.
 
-<!-- /native-speech-enhancement-current -->
+<!-- /native-speech-enhancement-history -->
 
 <!-- native-interpolation-history -->
 
@@ -494,7 +510,7 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r44 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r44.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r45 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r45.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
@@ -800,7 +816,7 @@ The implementation is **Python CLI + Agent Project schema + FFmpeg**, with an ex
 5. For selection, show the original and a small candidate set, record final IDs/strength/scope and trial them on target media.
 6. Render to a new project-owned path, inspect the encoded output, manifest, warnings, A/V and rights, then export the project package.
 
-## All 69 functional modules
+## All 70 functional modules
 
 IDs locate documentation groups with dependencies/overlap; they are not 43 independent kernels or a completion score. The table describes behavior, commands and limits. The [complete machine capability manual](docs/product/CAPABILITIES.en.md) retains every field.
 
@@ -875,6 +891,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F67 | Local neural lip sync | Image/video + separate speech → actual CUDA MuseTalk mouth;25FPS box keys, semantic lower-face blend, complete PCM/alpha, rerunnable recipe and linked editable video/audio clips. | `lipsync adapter register/list/inspect; lipsync generate` | Explicit local safetensors/native Torch runtime;256×256 face,8bit SDR/source motion,no CPU fallback; natural quality/full digital human remain open. |
 | F68 | CUDA neural interpolation / slow motion | Native CFR/VFR,all original RGBA anchors,premultiplied alpha,complete PCM;factor2..8,cut holds,linked slow-motion tracks,recipes/packages. | `interpolate adapter; interpolate generate` | Explicit RIFE4.25 safetensors/native CUDA Python;no CPU fallback;difficult motion/occlusion/natural-quality/HDR acceptance open. |
 | F69 | CUDA speech denoising | Native sample clock/mono-stereo,actual model,dry/wet attenuation,editable audio,portable recipes/packages,owned cancel/rollback. | `audio enhancement-adapter; audio enhance` | Fixed DF3 safetensors/existing native CUDA;segment state resets,CPU frontend;full dereverb/music fidelity open. |
+| F70 | HDR10 static metadata delivery | Mastering RGB/white xy,min/max nits,MaxCLL/MaxFALL → actual HEVC SEI and decoded verification receipt. | `settings.output.hdr10; validate; render; convert` | Explicit native PQ/BT2020 NCL limited range,libx265/10bit420/MP4 or MKV; author declarations,prefix32-packet verification. |
 
 ## Supported service modules and dependencies
 
@@ -906,6 +923,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | S22 | MuseTalk CUDA neural mouth service | Local Whisper-tiny, MuseTalk1.5 UNet, SD VAE and BiSeNet; fixed safetensors, deny-write locks and owned native cleanup. | Explicit existing native Torch/Diffusers/Transformers/OpenCV and model evidence; no automatic install. | `lipsync adapter; lipsync generate` | 256×256 face/25FPS; rights,naturalness,full digital human and HDR acceptance remain separate. |
 | S23 | RIFE CUDA interpolation | Fixed five-stage IFNet/158 FP32 inference tensors,local artifact hashes,actual CUDA;no model-directory code/Pickle. | Existing native Torch/safetensors and MIT model evidence;no installation. | `interpolate adapter; interpolate generate` | Native interval subdivision,complete frame/PCM proofs;RGB threshold is not semantic cuts;quality review required. |
 | S24 | DeepFilterNet3 speech service | Fixed133-tensor48kHz full-band model;CUDA neural graph,NumPy CPU frontend,FFmpeg resampling. | Explicit local weights/native Torch/safetensors and MIT OR Apache-2.0 evidence. | `audio enhancement-adapter; audio enhance` | 8..96kHz,mono/stereo,source≤1800s/selection≤600s;no downloads,installs or CPU fallback. |
+| S25 | x265 static HDR10 SEI service | Fixed encoder grammar plus exact rational checks of actual native ffprobe decoded side data before publication. | Existing native FFmpeg/libx265/ffprobe; no new model. | `render` | CPU encoding; observed prefix,not whole-movie certification or peak measurement. |
 
 **Observed local environment:** this update’s doctor sees native Python 3.13.1, FFmpeg/ffprobe 8.1 and Node; this does not establish registration of every model/browser adapter. doctor merely discovers Docker/WSL executable paths and does not run them. This project uses native tools without invoking Docker/WSL/virtual environments.
 
@@ -1005,7 +1023,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.41/final-r3/installed/`, CLI 0.1.41. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.42/final-r1/installed/`, CLI 0.1.44. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1495,6 +1513,12 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R295 | 2026-10-27 speech enhancement | C53 real English/synthetic Mandarin noisy inputs,actual outputs,clean/reverb controls,native samples,recipe rerun and complete package-render PCM equality;audible video/spectra/GIF. | [Evidence](docs/validation/evidence/native-speech-enhancement-20261027-r1/case-complete-r1/verification.json) |
 | R296 | 2026-10-27 speech enhancement | The real stereo case exposed a fixed atomic-temp-file race. Cancel after actual neural output reclaims owned worker,rolls back metadata,leaves no partial asset;real fragment rebinding passes. | [Evidence](docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/verification.json) |
 | R297 | 2026-10-27 speech enhancement | r44:one Skill/17 modules/82 Skill files/132 ZIP entries;trilingual F69/S24 retain all290 prior R rows and38 original closure cells. | [Evidence](docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/verification.json) |
+| R298 | 2026-10-28 HDR10 SEI | CLI0.1.44/local.42 native build/install:267 matching product files,83 capabilities;published releases retained. | [Evidence](docs/validation/evidence/native-hdr-metadata-20261028-r1/installation-final-r1/verification.json) |
+| R299 | 2026-10-28 HDR10 SEI | 21 source checks cover exact units/geometry/unknown light,real MP4/MKV SEI,missing-SEI publication refusal,preview/package. Initial white-point mapping and test timestamp errors retained and corrected. | [Evidence](docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r3/verification.json) |
+| R300 | 2026-10-28 HDR10 SEI | Final installed21 checks and105 existing HDR/render/preview/schema/queue regressions pass separately,zero failures/errors/skips. | [Evidence](docs/validation/evidence/native-hdr-metadata-20261028-r1/installed-compat-r1/verification.json) |
+| R301 | 2026-10-28 HDR10 SEI | C54 registered Skill,actual GPU composition/CPU HEVC;production32-packet prefix and independent all48-frame SEI/VUI verification. | [Evidence](docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/verification.json) |
+| R302 | 2026-10-28 HDR10 SEI | C54 package replay preserves all48 decoded frames and384000 PCM scalars;separate SDR preview has no HDR SEI,GIF24frames/4seconds. | [Evidence](docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/verification.json) |
+| R303 | 2026-10-28 HDR10 SEI | r45 independent extraction/configuration/registration:1entry/17modules/83Skill files/134ZIP entries;all297 prior R rows and38 original closure conditions retained. | [Evidence](docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/verification.json) |
 
 ## Current limits and development direction
 

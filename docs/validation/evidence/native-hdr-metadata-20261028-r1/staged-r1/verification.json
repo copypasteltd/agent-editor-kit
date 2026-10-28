@@ -1,0 +1,6 @@
+{
+  "status": "failed",
+  "at_utc": "2026-10-28T10:03:06.700075+00:00",
+  "whole_goal_complete": false,
+  "error": "CalledProcessError(128, ['C:/Users/carzy/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/git/cmd/git.exe', '--no-optional-locks', '-c', 'core.fsmonitor=false', '-c', 'gc.auto=0', '-c', 'maintenance.auto=false', 'show', ':docs/validation/evidence/native-hdr-metadata-20261028-r1/staged-r1/executed-auditor.py'])"
+}

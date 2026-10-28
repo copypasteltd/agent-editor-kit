@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.43 / alpha.4-local.41 / r44 kit · 1 Skill / 17 modules / 82 files.**
+**CLI0.1.44 / alpha.4-local.42 / r45 kit · 1 Skill / 17 modules / 83 files.**
 
-Adds **actual native CUDA DeepFilterNet3 speech denoising** with native sample clocks, mono/stereo, separate enhanced assets and editable audio tracks, strength/attenuation controls, overlapping segments, portable rerun recipes, packages and owned cancellation.
+Added **HDR10 mastering-display and MaxCLL/MaxFALL static metadata**: exact xy/nit units, actual HEVC SEI writing and decoded-frame verification before publication; editable packages, GPU composition and separate SDR viewing copies.
 
-[Speech enhancement workflow](SPEECH_ENHANCEMENT.md)
+[HDR10 static metadata workflow](HDR_METADATA.md)
 
 <!-- /community-current -->
 
@@ -83,6 +83,7 @@ Adds **actual native CUDA DeepFilterNet3 speech denoising** with native sample c
 | F67 | Local neural lip sync | Image/video + separate speech → actual CUDA MuseTalk mouth;25FPS box keys, semantic lower-face blend, complete PCM/alpha, rerunnable recipe and linked editable video/audio clips. | `lipsync adapter register/list/inspect; lipsync generate` | Explicit local safetensors/native Torch runtime;256×256 face,8bit SDR/source motion,no CPU fallback; natural quality/full digital human remain open. |
 | F68 | CUDA neural interpolation / slow motion | Native CFR/VFR,all original RGBA anchors,premultiplied alpha,complete PCM;factor2..8,cut holds,linked slow-motion tracks,recipes/packages. | `interpolate adapter; interpolate generate` | Explicit RIFE4.25 safetensors/native CUDA Python;no CPU fallback;difficult motion/occlusion/natural-quality/HDR acceptance open. |
 | F69 | CUDA speech denoising | Native sample clock/mono-stereo,actual model,dry/wet attenuation,editable audio,portable recipes/packages,owned cancel/rollback. | `audio enhancement-adapter; audio enhance` | Fixed DF3 safetensors/existing native CUDA;segment state resets,CPU frontend;full dereverb/music fidelity open. |
+| F70 | HDR10 static metadata delivery | Mastering RGB/white xy,min/max nits,MaxCLL/MaxFALL → actual HEVC SEI and decoded verification receipt. | `settings.output.hdr10; validate; render; convert` | Explicit native PQ/BT2020 NCL limited range,libx265/10bit420/MP4 or MKV; author declarations,prefix32-packet verification. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -110,6 +111,7 @@ Adds **actual native CUDA DeepFilterNet3 speech denoising** with native sample c
 | S22 | MuseTalk CUDA neural mouth service | Local Whisper-tiny, MuseTalk1.5 UNet, SD VAE and BiSeNet; fixed safetensors, deny-write locks and owned native cleanup. | Explicit existing native Torch/Diffusers/Transformers/OpenCV and model evidence; no automatic install. | `lipsync adapter; lipsync generate` | 256×256 face/25FPS; rights,naturalness,full digital human and HDR acceptance remain separate. |
 | S23 | RIFE CUDA interpolation | Fixed five-stage IFNet/158 FP32 inference tensors,local artifact hashes,actual CUDA;no model-directory code/Pickle. | Existing native Torch/safetensors and MIT model evidence;no installation. | `interpolate adapter; interpolate generate` | Native interval subdivision,complete frame/PCM proofs;RGB threshold is not semantic cuts;quality review required. |
 | S24 | DeepFilterNet3 speech service | Fixed133-tensor48kHz full-band model;CUDA neural graph,NumPy CPU frontend,FFmpeg resampling. | Explicit local weights/native Torch/safetensors and MIT OR Apache-2.0 evidence. | `audio enhancement-adapter; audio enhance` | 8..96kHz,mono/stereo,source≤1800s/selection≤600s;no downloads,installs or CPU fallback. |
+| S25 | x265 static HDR10 SEI service | Fixed encoder grammar plus exact rational checks of actual native ffprobe decoded side data before publication. | Existing native FFmpeg/libx265/ffprobe; no new model. | `render` | CPU encoding; observed prefix,not whole-movie certification or peak measurement. |
 
 ## Complete installed capability fields
 
@@ -5043,7 +5045,8 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
     "CPU_tiled_color_conversion_not_GPU_transfer_kernels",
     "only_BT2020_PQ_HLG_native_ten_bit_nonalpha_delivery",
     "no_inferred_luminance_or_metadata_or_automatic_tone_map",
-    "no_ICC_chromatic_adaptation_mastering_CLL_dynamic_metadata_or_DolbyVision",
+    "explicit_HDR10_static_declarations_use_native_hdr10_static_metadata_capability",
+    "no_ICC_chromatic_adaptation_dynamic_metadata_or_DolbyVision",
     "HLG_ideal_zero_black_only_explicit_peak_and_gamma",
     "SDR_trim_is_explicit_creative_Reinhard_not_BT2390_or_perceptual_gamut_mapping",
     "natural_HDR_monitor_long_form_and_full_CapCut_acceptance_pending"
@@ -5246,3 +5249,38 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 ```
 
 [CLI0.1.43 exact installed capabilities](speech-enhancement-capabilities-cli-0.1.43.json).
+
+### `native_hdr10_static_metadata`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "declared-hdr10-static-sei-v1",
+  "selection": "settings.output.hdr10; explicit native PQ/BT2020 limited-range libx265 yuv420p10le MP4/MKV",
+  "commands": [
+    "validate",
+    "render",
+    "render --dry-run",
+    "convert export",
+    "convert import"
+  ],
+  "features": [
+    "explicit_CIE1931_xy_and_mastering_min_max_nits",
+    "exact_1_50000_xy_and_1_10000_nit_quantization_without_silent_rounding",
+    "nondegenerate_mastering_triangle_and_interior_white_point",
+    "explicit_MaxCLL_MaxFALL_zero_means_unknown",
+    "fixed_x265_SEI_arguments_and_matching_ten_bit_PQ_VUI",
+    "decoded_prefix_SEI_rational_equality_before_atomic_publication",
+    "portable_editable_project_declarations_and_render_manifest_receipt"
+  ],
+  "limits": [
+    "author_declarations_not_measured_content_peaks_or_display_calibration",
+    "libx265_CPU_encoding_only_not_NVENC_metadata",
+    "only_ten_bit_420_limited_range_PQ_not_HLG_or_SDR",
+    "probe_first_32_video_packets_not_all_frame_metadata_certification",
+    "no_HDR10plus_dynamic_metadata_DolbyVision_or_HDR_monitor_acceptance"
+  ]
+}
+```
+
+[CLI0.1.44 exact installed capabilities](hdr-metadata-capabilities-cli-0.1.44.json).

@@ -162,6 +162,9 @@ def output_settings(settings: dict[str, Any]) -> dict[str, Any]:
             raise AppError("OUTPUT_BITRATE_INVALID", "码率必须是正数及可选 k/M 后缀，例如 192k 或 8M", exit_code=2, path=f"settings.output.{branch}.bitrate")
     if normalized["video"]["preset"] not in {"ultrafast", "superfast", "veryfast", "faster", "fast", "medium", "slow", "slower", "veryslow", "placebo"}:
         raise AppError("OUTPUT_PRESET_INVALID", "编码 preset 不在支持列表中", exit_code=2, path="settings.output.video.preset")
+    if 'hdr10' in raw:
+        from .hdr_metadata import validate_context
+        normalized['hdr10'] = validate_context(raw['hdr10'], settings, normalized)
     return normalized
 
 
@@ -914,7 +917,7 @@ def render_fingerprints(project: dict[str, Any], sequence: dict[str, Any], setti
     assets = {str(asset.get("id")): asset for asset in project.get("assets", []) if asset.get("id") in asset_ids}
     input_hashes: dict[str, str | None] = {}
     if (project.get('settings',{}).get('pixel_pipeline') or {}).get('engine')=='float32-native-v1':
-        for name in ('float_optics','float_optics_kernel','float_glow','float_glow_kernel','float_color_signal','float_hdr','float_effect_chain','float_gpu','float_gpu_worker','float_gpu_native'):
+        for name in ('float_optics','float_optics_kernel','float_glow','float_glow_kernel','float_color_signal','float_hdr','hdr_metadata','float_effect_chain','float_gpu','float_gpu_worker','float_gpu_native'):
             input_hashes['runtime:optics:'+name]='sha256:'+sha256_file(Path(__file__).with_name(name+'.py'))
     if particle_sources:
         for name in ('procedural_particles','particle_animation','float_timeline','float_gpu','float_gpu_worker','float_gpu_native','float_gpu_control'):
@@ -5028,6 +5031,8 @@ def _render_project(root, project, sequence, output, *, dry_run=False, render_se
         args.extend(['-lossless', '1'])
     if video_encoder['codec'] == 'libvpx' and video_encoder['pixel_format'] in ALPHA_OUTPUT_PIXEL_FORMATS:
         args.extend(['-auto-alt-ref', '0'])
+    from .hdr_metadata import encoder_arguments
+    args.extend(encoder_arguments(encoder.get('hdr10')))
     args.extend(["-pix_fmt", str(video_encoder.get("pixel_format", "yuv420p"))])
     args.extend(_output_color_args(effective_project["settings"]))
     if float_renderer is not None:
@@ -5122,6 +5127,9 @@ def _render_project(root, project, sequence, output, *, dry_run=False, render_se
         if not temp_output.exists() or temp_output.stat().st_size == 0:
             raise AppError("RENDER_EMPTY", "FFmpeg 未生成有效输出", exit_code=6)
         inspected = probe_media(temp_output)
+        if encoder.get('hdr10') is not None:
+            from .hdr_metadata import verify_output as verify_hdr_output
+            delivery['hdr10_static_metadata'] = verify_hdr_output(temp_output, encoder['hdr10'], cancel_file=cancel_file)
         if acceleration.enabled:
             acceleration.verify_output(inspected, temp_output)
         quality = check_output(temp_output, effective_project["settings"], _sec(_tick(sequence.get("duration_tick"), 1), int(effective_project["settings"]["timebase"]["ticks_per_second"])), run_expensive=False)

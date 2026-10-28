@@ -89,8 +89,10 @@ YCbCr 源还须声明 `yuv_spec`（例如 `bt2020nc`、`limited`、`left`）与
 `scan: "progressive"`。既有几何、时间基、范围窗口、源持锁与依赖校验约束继续适用。
 选择 HLG 峰值不同的接收设备时，应据目标条件明确给出新的 system gamma。
 
-输出当前携带匹配的 BT.2020、传递函数、NCL 矩阵和量程 VUI 标签；不会伪造
-mastering-display、MaxCLL/MaxFALL、动态元数据或 Dolby Vision 元数据。
+输出携带匹配的 BT.2020、传递函数、NCL 矩阵和量程 VUI 标签。
+CLI0.1.44另支持可选的[HDR10母版显示与MaxCLL/MaxFALL声明](HDR_METADATA.md)：
+明确PQ/10-bit4:2:0/libx265时写入实际SEI并核验解码前缀；这些数值是作者声明，
+不自动测量内容峰值。动态元数据或Dolby Vision仍未接通。
 
 ## SDR 映射与预览
 
@@ -149,4 +151,5 @@ For client previews, supply `preview_mapping`. Show the generated SDR PNG/MP4
 alongside the declared mapping and keep the original HDR master available.
 `display_mapping` produces a separate SDR trim; its target peak must match the
 SDR output reference white. Neither operation establishes HDR monitor acceptance,
-ICC support, dynamic metadata, mastering metadata or full product parity.
+ICC support, dynamic metadata or full product parity. Optional declared HDR10
+static metadata is documented in [HDR10 metadata](HDR_METADATA.md).

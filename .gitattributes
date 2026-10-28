@@ -1811,3 +1811,11 @@ scripts/*speech*20261027.py text eol=lf
 docs/product/SPEECH_ENHANCEMENT.md text eol=lf
 docs/releases/CLI_0.1.43_LOCAL.md text eol=lf
 docs/validation/本地对白增强实测_2026-10-27.md text eol=lf
+# Preserve actual HDR10 evidence and media bytes.
+docs/validation/evidence/native-hdr-metadata-20261028-r1/** -text -whitespace
+docs/assets/native-hdr-metadata-20261028-*/** -text -whitespace
+docs/product/hdr-metadata-capabilities-cli-0.1.44.json -text -whitespace
+scripts/*hdr_metadata*20261028.py text eol=lf
+docs/product/HDR_METADATA.md text eol=lf
+docs/releases/CLI_0.1.44_LOCAL.md text eol=lf
+docs/validation/HDR10静态元数据实测_2026-10-28.md text eol=lf

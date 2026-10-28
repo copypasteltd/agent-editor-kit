@@ -33,3 +33,5 @@ Keep the original HDR master available for a proper HDR display review.
 This does not implement ICC, nonzero-black HLG display calibration, perceptual
 gamut mapping, mastering-display/CLL/dynamic metadata or Dolby Vision. Synthetic
 numeric/encoded checks do not establish natural-footage or HDR monitor quality.
+
+CLI0.1.44 adds optional actual HDR10 static SEI. Read [HDR10 metadata](hdr-metadata.md).

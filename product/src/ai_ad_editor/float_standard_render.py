@@ -179,8 +179,11 @@ class FloatRenderContext:
         if self.config['hdr_active'] or self.config['mappings']:
             self.metadata.update(display_light_nits_explicit=True, hdr_output=self.config['hdr_output'],
                 display_mapping=self.config['mappings'].get('display_mapping'),
-                hdr_metadata_scope='matching BT2020 NCL VUI transfer/primaries/range; no mastering-display/CLL/dynamic metadata',
+                hdr_metadata_scope=('declared HDR10 mastering-display/CLL with decoded-prefix verification' if encoder.get('hdr10') else
+                    'matching BT2020 NCL VUI transfer/primaries/range; no author mastering-display/CLL declaration'),
                 color_transforms_backend='CPU Float64 tiled -> Float32; composition uses selected CPU/OpenCL backend')
+        if encoder.get('hdr10') is not None:
+            self.metadata['hdr10_declaration'] = copy.deepcopy(encoder['hdr10'])
 
     def poll(self):
         cancel(self.marker)
@@ -231,7 +234,7 @@ class FloatRenderContext:
                   ('float_standard_render', 'float_stream', 'float_audio_graph', 'render', 'float_color_signal',
                    'float_timeline', 'float_tracking', 'bindings', 'animation', 'float_crop', 'float_adjustments', 'float_effect_chain', 'float_transitions', 'float_transition_plan', 'source_transitions',
                    'float_text','float_text_paint','float_text_coverage','text_paint','text_layout','text_highlight','text_typing','captions',
-                   'float_gpu','float_gpu_native','float_gpu_worker','float_gpu_control','procedural_particles','particle_animation','float_optics','float_optics_kernel','float_glow','float_glow_kernel','float_hdr')]
+                   'float_gpu','float_gpu_native','float_gpu_worker','float_gpu_control','procedural_particles','particle_animation','float_optics','float_optics_kernel','float_glow','float_glow_kernel','float_hdr','hdr_metadata')]
         self.artifacts = [artifact_entry(p, 'standard-float-render-runtime') for p in paths]
         context = IndexContext(self.root, persist=not self.dry_run, cancel_file=self.marker)
         per_source = min(256 * 1024**2, self.config['max_source_cache_bytes'] // max(1, len(needed)))

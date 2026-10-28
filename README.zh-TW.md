@@ -9,7 +9,23 @@
 本頁包含完整功能模塊、服務與依賴、安裝與使用邏輯、Skill 輸入輸出、真實案例和核驗表。長篇原始驗收日志繼續留檔，功能說明與案例入口恢復到首頁。
 
 
-<!-- native-speech-enhancement-current -->
+<!-- native-hdr-metadata-current -->
+
+**CLI0.1.44 / alpha.4-local.42 / r45 kit · 1 Skill / 17 modules.**
+
+新增**HDR10母版顯示與MaxCLL/MaxFALL靜態中繼資料**：明確xy/nit單位，實際寫入HEVC SEI，發布前核驗解碼影格；支援可編輯專案封裝，沿用GPU合成和獨立SDR預覽。
+
+[Workflow / usage](docs/product/HDR_METADATA.md) · [C54](docs/product/CASES.md#c54-native-hdr10-metadata) · [Install](docs/releases/CLI_0.1.44_LOCAL.md) · [Evidence](docs/validation/HDR10静态元数据实测_2026-10-28.md)
+
+![Actual mapped SDR preview; separate HDR10 master](docs/assets/native-hdr-metadata-20261028-r2/sdr-view.gif)
+
+[HDR10 master](docs/assets/native-hdr-metadata-20261028-r2/hdr10-master.mkv) · [SDR preview](docs/assets/native-hdr-metadata-20261028-r2/sdr-preview.mp4) · [Declared values](docs/assets/native-hdr-metadata-20261028-r2/declaration.json) · [Editable package](docs/assets/native-hdr-metadata-20261028-r2/editable-hdr10.aevpkg.zip)
+
+21項原始碼、21項安裝版專項與105項安裝版相容檢查分別通過。C54獨立核對全部48影格SEI；專案封裝重播全部視訊影格和384000個PCM純量相同。產品預設核驗前32個視訊封包解出的影格；數值為作者聲明，並非自動峰值量測。x265編碼CPU、合成GPU。動態HDR、ICC/監看、自然品質及原38項完整目標持續建置。
+
+<!-- /native-hdr-metadata-current -->
+
+<!-- native-speech-enhancement-history -->
 
 **CLI0.1.43 / alpha.4-local.41 / r44 kit · 1 Skill / 17 modules.**
 
@@ -23,7 +39,7 @@
 
 33項原始碼、33項安裝版專項及156項安裝版相容回歸分別通過。C53英語真人錄音由0 dB輸入提升至SNR 12.25 dB，中文合成人聲提升至9.69 dB；完整原生樣本數與工程包PCM相同。保留乾淨對白損傷、混響控制及首輪暫存檔競態失敗。未做人類聽審；分段狀態重置、前端CPU/神經圖CUDA；完整去混響/音樂保真及38原目標關閉條件持續開發。
 
-<!-- /native-speech-enhancement-current -->
+<!-- /native-speech-enhancement-history -->
 
 <!-- native-interpolation-history -->
 
@@ -494,7 +510,7 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r44 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r44.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
+**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r45 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r45.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
 
 <!-- /unified-skill-registration -->
 
@@ -800,7 +816,7 @@ flowchart LR
 5. 若需要選型，展示原圖與少量候選，記錄最終 ID/強度/作用域；在目標素材上復試。
 6. 渲染至工程內新路徑，檢查實際編碼文件、manifest、warning、音畫與權利，再導出專案包。
 
-## 完整的 69 個功能模組
+## 完整的 70 個功能模組
 
 編號用於定位文件；各模塊有依賴與交叉，不是“43 個獨立內核”或完成率。下表直接寫明行為、入口與限制；[完整機器能力清單及每項契約](docs/product/CAPABILITIES.zh-TW.md)保留全部字段。
 
@@ -875,6 +891,7 @@ flowchart LR
 | F67 | 本機神經口型同步 | 圖片／影片＋獨立聲音→真正CUDA MuseTalk口型；25FPS人臉框關鍵影格、語義下半臉混合、完整PCM及alpha保留，可復用配方並影片/音訊關聯入軌。 | `lipsync adapter register/list/inspect; lipsync generate` | 本機safetensors及既有原生Torch依賴；臉部256×256、明確8bit SDR與來源運鏡、無CPU回退；自然口型、完整數位人仍未驗收。 |
 | F68 | CUDA神經補幀與慢動作 | 原生CFR/VFR、每來源影格RGBA、預乘alpha、完整PCM；2..8倍、切鏡保持、關聯慢放雙軌、配方重跑及工程包。 | `interpolate adapter; interpolate generate` | 明確RIFE4.25 safetensors＋原生CUDA Python；無CPU回退；困難運動/遮擋/自然品質/HDR未廣泛驗收。 |
 | F69 | CUDA對白降噪與增強 | 原生取樣時鐘/單雙聲道、真正模型、乾濕強度/衰減、可編輯獨立音軌、配方重跑/工程包、取消回滾。 | `audio enhancement-adapter; audio enhance` | DeepFilterNet3固定safetensors＋既有原生CUDA依賴；分段狀態重置、CPU前端；完整去混響/音樂保真待完成。 |
+| F70 | HDR10靜態中繼資料交付 | 母版RGB/白點xy、最小/最大nit、MaxCLL/MaxFALL → 實際HEVC SEI與解碼核驗清單。 | `settings.output.hdr10; validate; render; convert` | 明確原生PQ/BT2020 NCL有限範圍、libx265/10bit420/MP4或MKV；作者聲明、前32封包核驗。 |
 
 ## 支持的服務模塊與依賴
 
@@ -906,6 +923,7 @@ flowchart LR
 | S22 | MuseTalk CUDA 神經口型服務 | 本機Whisper-tiny音訊特徵、MuseTalk1.5 UNet、SD VAE及BiSeNet；固定safetensors與拒寫鎖、原生工作回收。 | 明確既有Torch/Diffusers/Transformers/OpenCV原生依賴及模型證據；無自動安裝。 | `lipsync adapter; lipsync generate` | 模型256×256，25FPS；授權、自然度、完整數位人及HDR另行驗收。 |
 | S23 | RIFE CUDA補幀服務 | 固定五階段IFNet/158個FP32推理張量、嚴格本機雜湊、真正CUDA；不執行模型目錄程式/Pickle。 | 已有原生Torch＋safetensors依賴及MIT模型證據；無自動安裝。 | `interpolate adapter; interpolate generate` | 原生時間細分、全影格/PCM往返；閾值不是語意切鏡；自然品質仍須複核。 |
 | S24 | DeepFilterNet3對白服務 | 固定133張量/48kHz全頻模型；神經推論CUDA、NumPy前端CPU、FFmpeg重取樣。 | 明確本機權重/原生Torch/safetensors及MIT OR Apache-2.0證據。 | `audio enhancement-adapter; audio enhance` | 8..96kHz、1/2聲道、完整來源≤1800秒/選區≤600秒；無自動下載/依賴安裝/CPU回退。 |
+| S25 | x265 HDR10靜態SEI服務 | 固定語法參數寫入＋原生ffprobe解碼逐有理數核對，發布前失敗關閉。 | 既有原生FFmpeg/libx265/ffprobe；無新模型。 | `render` | 編碼CPU；觀察解碼前綴，非全片認證/峰值量測。 |
 
 **本機查詢與交付狀態：** 本輪 doctor 檢測到原生 Python 3.13.1、FFmpeg/ffprobe 8.1 和 Node；這不證明每個模型或瀏覽器適配器均已註冊。doctor 只查到系統存在 Docker/WSL 可執行路徑，沒有運行它們。本專案始終使用原生工具，不調度 Docker/WSL/虛擬環境。
 
@@ -1005,7 +1023,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.41/final-r3/installed/`，CLI 0.1.41；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
+本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.42/final-r1/installed/`，CLI 0.1.44；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1493,6 +1511,12 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R295 | 2026-10-27 speech enhancement | C53真人英語/中文合成人聲加噪輸入、真正增強、乾淨/混響控制、全部原生樣本、配方重跑及完整工程包PCM相同；附聲音對照/頻譜/GIF。 | [Evidence](docs/validation/evidence/native-speech-enhancement-20261027-r1/case-complete-r1/verification.json) |
 | R296 | 2026-10-27 speech enhancement | 首輪真正雙聲道觸發暫存檔競態已修復；真正神經段完成後取消，owned程序回收、原中繼資料回滾、無半成品；真正片段匯入重綁通過。 | [Evidence](docs/validation/evidence/native-speech-enhancement-20261027-r1/quality-and-cancel-r4/verification.json) |
 | R297 | 2026-10-27 speech enhancement | r44統一入口工具包：1 Skill/17模組/82 Skill檔案/132 ZIP項；三語F69/S24，全部290既有R列及38原關閉條件保留。 | [Evidence](docs/validation/evidence/native-speech-enhancement-20261027-r1/kit-r2/verification.json) |
+| R298 | 2026-10-28 HDR10 SEI | CLI0.1.44/local.42原生建置安裝：267程式檔一致、83能力，舊公開版本保留。 | [Evidence](docs/validation/evidence/native-hdr-metadata-20261028-r1/installation-final-r1/verification.json) |
+| R299 | 2026-10-28 HDR10 SEI | 21原始碼專項：單位/幾何/未知亮度、實際MP4/MKV SEI、無SEI拒絕覆蓋、預覽與封裝遷移；首輪白點映射/測試時間戳錯誤修正並保留失敗。 | [Evidence](docs/validation/evidence/native-hdr-metadata-20261028-r1/source-r3/verification.json) |
+| R300 | 2026-10-28 HDR10 SEI | 最終安裝版21專項通過，105既有HDR/渲染/預覽/schema/佇列相容回歸另列，零失敗/錯誤/略過。 | [Evidence](docs/validation/evidence/native-hdr-metadata-20261028-r1/installed-compat-r1/verification.json) |
+| R301 | 2026-10-28 HDR10 SEI | C54真實Skill/GPU合成/CPU HEVC，預設前32封包核驗通過；獨立檢查全部48影格SEI與VUI。 | [Evidence](docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/verification.json) |
+| R302 | 2026-10-28 HDR10 SEI | C54專案封裝重播全部48影格與384000 PCM純量相同；獨立SDR預覽無HDR SEI，GIF24影格/4秒。 | [Evidence](docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/verification.json) |
+| R303 | 2026-10-28 HDR10 SEI | r45獨立解壓縮/設定/註冊：1入口/17內部模組/83Skill檔/134ZIP項，既有297條R和38原關閉條件全部保留。 | [Evidence](docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/verification.json) |
 
 ## 當前邊界與開發方向
 

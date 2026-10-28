@@ -1,0 +1,51 @@
+{
+  "at_utc": "2026-10-28T22:58:44.304519+00:00",
+  "goal": "active_not_complete",
+  "source_cli": "0.1.53",
+  "independent_installed_cli": "0.1.53",
+  "registered_skill_cli": "0.1.52",
+  "completed": {
+    "wheel_reuse_tests": 9,
+    "exact_payload_files": 1704,
+    "installed_code_modules": 280,
+    "installed_capabilities": 90,
+    "actual_installed_native_DLL": "passed",
+    "installed_special": 18,
+    "installed_meter_schema": 46,
+    "installed_case": "C66 complete YUV/PCM/PNG16 and editable replay passed",
+    "GIF_MP4_frames": 8,
+    "GIF_MP4_duration_ms": 800,
+    "candidate_skill_structure": "92 files, one entry/17 modules; unregistered"
+  },
+  "historical": {
+    "compat_r3": "373 tests with no failures/errors/skips; frozen_equal=false (hdr_measure.py); not final-source acceptance",
+    "initial_full_build": "900-second timeout, preserved failure"
+  },
+  "running": [
+    {
+      "name": "final-source-compat-r5",
+      "session_id": 78697,
+      "pid": 30492,
+      "expected_tests": 373,
+      "observed_live": true,
+      "requires_repoll": true,
+      "command": "C:/Python313/python.exe -E -B -u -X utf8 docs/validation/verify_aces_pipeline.py --group compat --run-id r5"
+    },
+    {
+      "name": "installed-compat-r1",
+      "session_id": 65579,
+      "pid": 24424,
+      "expected_tests": 373,
+      "observed_live": true,
+      "requires_repoll": true,
+      "command": "C:/Python313/python.exe -I -S -B -u -X utf8 docs/validation/test_aces_delivery.py --installed E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.51/final-r2/installed --group compat --run installed-compat-r1"
+    }
+  ],
+  "pending": [
+    "Collect both compatibility terminal receipts; never restart solely on observation timeout.",
+    "Run pin_aces_skill.py only after matching frozen final-source/installed gates.",
+    "Activate local51/CLI53; preserve four existing model packs; verify actual registered Skill case.",
+    "Package and independently verify r54 unified Skill kit; preserve old releases.",
+    "Continue all38 original closure conditions without narrowing goal."
+  ]
+}

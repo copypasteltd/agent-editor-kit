@@ -8,6 +8,8 @@
 
 ![Source ACES numeric viewing copy](docs/assets/aces-timeline-20261029-r1/preview.gif)
 
+The installed package separately passed **18 ACES + 46 metering/Schema tests**. [C66: actual video, GIF, PNG16 and editable project](docs/product/CASES.md#c66-installed-aces-timeline) verifies complete decoded video/audio replay. The 373-test broad compatibility gates and new registered-Skill activation remain pending.
+
 <!-- aces-native-kernel-source -->
 
 **Historical kernel stage: native ACES kernel and configuration discovery.** Pinned OCIO 2.6.0 provides ACES 1.3/2.0/2.1 display/view transforms and scene exposure. Source stage only: timeline, preview and installed Skill integration remain pending. [Workflow, evidence and remaining work](docs/product/ACES_NATIVE.md).
@@ -1765,6 +1767,10 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R368 | Preliminary ACES compatibility audit | 373 tests, no failures/errors/skips; final source differs in hdr_measure.py | [audit](docs/validation/evidence/aces-delivery-20261029-r1/compat-preliminary-audit-r1/verification.json) | Not final-source acceptance; final-source and installed 373-test runs remain pending |
 | R369 | Complete CLI53 offline installation | ZIP305677502 bytes; 280 code modules and native resources byte-exact; CLI53 / 90 capabilities | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installation-final-r2/verification.json) | Installed regressions and registered Skill activation remain pending |
 | R370 | Actual installed OCIO DLL execution | Isolated/no-site process; actual loaded DLL path and hashes; Float32 transform equals direct native reference | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-native-r1/verification.json) | Two-pixel native smoke; not complete-video, GPU or monitor acceptance |
+| R371 | Frozen installed native OCIO / ACES timeline acceptance | 18 tests passed; zero failures/errors/skips; actual installed package and no source fallback | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-special-r1/verification.json) | Separate from source tests; broad 373-test compatibility remains running |
+| R372 | Frozen installed metering / post-codec / Schema acceptance | 46 tests passed; zero failures/errors/skips; isolated/no-site runtime and exact frozen files | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-meter-r1/verification.json) | Separate group; not natural HDR, physical-monitor or full-product acceptance |
+| R373 | C66 actual isolated installed ACES media and project replay | Full589824-byte YUV /307200-byte PCM equal across source case, installed output and replay; PNG16 decode equal | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-case-r1/verification.json) | Installed CLI53; registered Skill unchanged; no new model forwards |
+| R374 | C66 actual viewing-media verification | GIF288x384 / MP4 48x64; both8 frames/800ms; static PNG viewed | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-case-media-r1/verification.json) | Numeric chart; no continuous human viewing/listening, natural quality or physical monitor acceptance |
 
 ## Current limits and development direction
 

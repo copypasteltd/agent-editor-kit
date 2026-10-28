@@ -1198,3 +1198,19 @@ CLI0.1.53源码，固定OCIO2.6.0/ACES2.1配置，正式sRGB视图采用原配�
 案例执行真实正式渲染、frame7预览、8帧range与工程包导出。GIF已程序化核对8帧/800ms；PNG16全通道与直接原生处理器参考最大误差不超过2code。渲染与预览的冻结源码摘要保留在收据中，测量入口后续修正与专项回归分列，不能拿案例替代全部验收。静态PNG已查看；未做连续人工观片、听审、自然HDR或物理监看。
 
 繁體：原始碼ACES正式交付與單次顯示轉換的觀看副本，已安裝Skill仍CLI52。English: Source-stage native ACES rendering and a real encoded SDR viewing copy; installed-Skill, GPU ACES and monitor acceptance remain separate work.
+
+<a id="c66-installed-aces-timeline"></a>
+
+## C66 · Isolated installed ACES delivery / 隔离安装版 ACES 交付
+
+CLI0.1.53/local51/final-r2 独立安装目录，以 `-I -S -B` 运行原生 Windows CLI，未通过源码执行或全局 site-packages 回退。本地注册 Skill 仍为 CLI52；本案例不冒充新版注册入口验收。
+
+![Actual installed ACES viewing copy](../assets/aces-installed-20261029-r1/preview.gif)
+
+[正式影片](../assets/aces-installed-20261029-r1/aces.mkv) · [重放影片](../assets/aces-installed-20261029-r1/replay.mkv) · [MP4](../assets/aces-installed-20261029-r1/preview.mp4) · [PNG16](../assets/aces-installed-20261029-r1/frame7.png) · [可编辑工程包](../assets/aces-installed-20261029-r1/editable-aces.zip) · [来源及摘要](../assets/aces-installed-20261029-r1/SOURCE.json) · [完整核验](../validation/evidence/aces-delivery-20261029-r1/installed-case-r1/verification.json) · [GIF/MP4帧数核验](../validation/evidence/aces-delivery-20261029-r1/installed-case-media-r1/verification.json)
+
+素材沿用 C65 的 CC0 原创场景线性 AP1 数值色条与立体声音调。实际完成正式渲染、frame7／8帧 range 预览、逐帧测量、工程包导出／导入／再渲染。完整 589,824 byte YUV 与 307,200 byte PCM，在原源码案例、本次安装版及工程包重放之间完全一致；PNG16 全通道解码字节与 C65 预览一致。预览、测量和导出未改变渲染后的作者工程字节；原注册 Skill 清单保持不变。
+
+实际 GIF 为 288×384，MP4 为 48×64，均核对 8帧／800ms。正式影片为 96×128；GIF 是放大的技术查看副本，不是新增分辨率质量。静态 PNG 已查看；未连续人工观片或听审，不作自然素材艺术质量、物理监看、GPU ACES 或完整剪映等价结论。
+
+繁體：獨立安裝版原生ACES影片、完整音畫與專案重播已留證；新版註冊Skill切換另驗。English: Isolated installed CLI53 rendering and complete decoded video/audio replay passed; registered-Skill activation and broad compatibility remain separate gates.

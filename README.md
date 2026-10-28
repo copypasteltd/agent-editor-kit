@@ -8,6 +8,8 @@
 
 ![Source ACES numeric viewing copy](docs/assets/aces-timeline-20261029-r1/preview.gif)
 
+安装版另外独立通过 **18 项 ACES + 46 项测量／Schema**；[C66：实际影片、GIF、PNG16 与工程包](docs/product/CASES.md#c66-installed-aces-timeline)已核验完整视频／音频往返一致。373 项广泛兼容性与新版注册 Skill 切换仍待完成。
+
 <!-- aces-native-kernel-source -->
 
 **内核首轮记录（历史阶段）：原生 ACES 内核与配置发现。** 固定 OCIO 2.6.0，支持 ACES 1.3/2.0/2.1 显示视图及场景曝光；当前仍为源码阶段，尚未接入时间线、预览和已安装 Skill。[使用流程、证据与待办](docs/product/ACES_NATIVE.md)。
@@ -1763,6 +1765,10 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R368 | Preliminary ACES compatibility audit | 373 tests, no failures/errors/skips; final source differs in hdr_measure.py | [audit](docs/validation/evidence/aces-delivery-20261029-r1/compat-preliminary-audit-r1/verification.json) | Not final-source acceptance; final-source and installed 373-test runs remain pending |
 | R369 | Complete CLI53 offline installation | ZIP305677502 bytes; 280 code modules and native resources byte-exact; CLI53 / 90 capabilities | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installation-final-r2/verification.json) | Installed regressions and registered Skill activation remain pending |
 | R370 | Actual installed OCIO DLL execution | Isolated/no-site process; actual loaded DLL path and hashes; Float32 transform equals direct native reference | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-native-r1/verification.json) | Two-pixel native smoke; not complete-video, GPU or monitor acceptance |
+| R371 | Frozen installed native OCIO / ACES timeline acceptance | 18 tests passed; zero failures/errors/skips; actual installed package and no source fallback | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-special-r1/verification.json) | Separate from source tests; broad 373-test compatibility remains running |
+| R372 | Frozen installed metering / post-codec / Schema acceptance | 46 tests passed; zero failures/errors/skips; isolated/no-site runtime and exact frozen files | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-meter-r1/verification.json) | Separate group; not natural HDR, physical-monitor or full-product acceptance |
+| R373 | C66 actual isolated installed ACES media and project replay | Full589824-byte YUV /307200-byte PCM equal across source case, installed output and replay; PNG16 decode equal | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-case-r1/verification.json) | Installed CLI53; registered Skill unchanged; no new model forwards |
+| R374 | C66 actual viewing-media verification | GIF288x384 / MP4 48x64; both8 frames/800ms; static PNG viewed | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-case-media-r1/verification.json) | Numeric chart; no continuous human viewing/listening, natural quality or physical monitor acceptance |
 
 ## 当前边界与开发方向
 

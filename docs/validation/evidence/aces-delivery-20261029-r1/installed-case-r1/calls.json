@@ -1,0 +1,378 @@
+[
+  {
+    "name": "import",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.51\\final-r2\\installed\\run.py",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\aces-timeline-20261029-r1\\editable-project.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed-aces-case-r1\\project"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "492c6060007eb9e2d233de0f13c509d8852a4906d8b04817bc2ca116f53be770"
+  },
+  {
+    "name": "render",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.51\\final-r2\\installed\\run.py",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed-aces-case-r1\\project",
+      "--sequence-id",
+      "seq_main",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed-aces-case-r1\\project\\renders\\installed-aces.mkv"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "4baf143dbee8b4e37b261ec2c5479fce98c5070ffc54baad64b73c72abddc58e"
+  },
+  {
+    "name": "frame",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.51\\final-r2\\installed\\run.py",
+      "preview",
+      "frame",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed-aces-case-r1\\project",
+      "--frame",
+      "7",
+      "--height",
+      "128"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "f2c13a39df597037d5e1253bcbdda42bb2fc80a32016c7cefd051291ec6f523c"
+  },
+  {
+    "name": "range",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.51\\final-r2\\installed\\run.py",
+      "preview",
+      "range",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed-aces-case-r1\\project",
+      "--start-frame",
+      "0",
+      "--end-frame",
+      "8",
+      "--height",
+      "64"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "398e7f7e6058ee603aa210c865487e3cfe9ec19d2bddca0e76273a65972dc728"
+  },
+  {
+    "name": "meter",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.51\\final-r2\\installed\\run.py",
+      "surface",
+      "measure",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed-aces-case-r1\\project",
+      "--sequence-id",
+      "seq_main"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "6fc59b187b553c13df18c5defc0fad17968a9e18813f4dd37fc5bd374379c81c"
+  },
+  {
+    "name": "export",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.51\\final-r2\\installed\\run.py",
+      "convert",
+      "export",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed-aces-case-r1\\project",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed-aces-case-r1\\project\\exports\\editable-aces.zip",
+      "--target-format",
+      "package"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "4edd7438f39f736ae7efc3ce22bf35d456ad18ed363827780947f33f0acb5344"
+  },
+  {
+    "name": "reimport",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.51\\final-r2\\installed\\run.py",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed-aces-case-r1\\project\\exports\\editable-aces.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed-aces-case-r1\\replay"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "b62b874d6d17dcce47d35dc05fe435ee4c68e79e65d4a16fa200c4293ba4ff68"
+  },
+  {
+    "name": "revalidate",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.51\\final-r2\\installed\\run.py",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed-aces-case-r1\\replay"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "a1bb944cf73e7cad9670a76b75bfd49bcefcae73e541d04f60ea5ced8395c15c"
+  },
+  {
+    "name": "replay-render",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.51\\final-r2\\installed\\run.py",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed-aces-case-r1\\replay",
+      "--sequence-id",
+      "seq_main",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed-aces-case-r1\\replay\\renders\\installed-aces.mkv"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "637bae646b0ce66ec4eee5a205a17b0c17bba6d692f6579a3d44293c581a1ab7"
+  },
+  {
+    "name": "render-yuv",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed-aces-case-r1\\project\\renders\\installed-aces.mkv",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-pix_fmt",
+      "yuv444p10le",
+      "-f",
+      "rawvideo",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "5e9677b44c14bc1a1d5975e6643970bc8c280f657482b85561107c0fb2dfd26c"
+  },
+  {
+    "name": "replay-yuv",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed-aces-case-r1\\replay\\renders\\installed-aces.mkv",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-pix_fmt",
+      "yuv444p10le",
+      "-f",
+      "rawvideo",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "5e9677b44c14bc1a1d5975e6643970bc8c280f657482b85561107c0fb2dfd26c"
+  },
+  {
+    "name": "source-case-yuv",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\aces-timeline-20261029-r1\\author-aces.mkv",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-pix_fmt",
+      "yuv444p10le",
+      "-f",
+      "rawvideo",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "5e9677b44c14bc1a1d5975e6643970bc8c280f657482b85561107c0fb2dfd26c"
+  },
+  {
+    "name": "render-pcm",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed-aces-case-r1\\project\\renders\\installed-aces.mkv",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "596acbf54e4ce41c7aacf795b3c33aa52efe253946348392a2e789c83e32f644"
+  },
+  {
+    "name": "replay-pcm",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed-aces-case-r1\\replay\\renders\\installed-aces.mkv",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "596acbf54e4ce41c7aacf795b3c33aa52efe253946348392a2e789c83e32f644"
+  },
+  {
+    "name": "source-case-pcm",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\aces-timeline-20261029-r1\\author-aces.mkv",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "596acbf54e4ce41c7aacf795b3c33aa52efe253946348392a2e789c83e32f644"
+  },
+  {
+    "name": "frame-rgba",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed-aces-case-r1\\project\\cache\\timeline-previews\\28e82d9823d95a5777f686fca812fd437dd476996ba1f87b956a5201da05d69e\\frame.png",
+      "-pix_fmt",
+      "rgba64le",
+      "-f",
+      "rawvideo",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "34a5cbdce7e5b96bf59a2f6c8f6d3a886cf7cbb3e7fe3c5668d659a830a57d23"
+  },
+  {
+    "name": "source-case-rgba",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\aces-timeline-20261029-r1\\frame7.png",
+      "-pix_fmt",
+      "rgba64le",
+      "-f",
+      "rawvideo",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "34a5cbdce7e5b96bf59a2f6c8f6d3a886cf7cbb3e7fe3c5668d659a830a57d23"
+  },
+  {
+    "name": "gif",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\aces-installed-20261029-r1\\preview.mp4",
+      "-filter_complex",
+      "[0:v]fps=10,scale=288:384:flags=neighbor,split[a][b];[a]palettegen[p];[b][p]paletteuse",
+      "-loop",
+      "0",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\aces-installed-20261029-r1\\preview.gif"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

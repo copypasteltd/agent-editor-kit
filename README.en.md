@@ -4,6 +4,8 @@
 
 [简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit) · [Docs](docs/README.md)
 
+Development reporting: every round ends with numbered completed-work and pending-work tables, including verification evidence and remaining limits. See the [reporting convention](docs/DEVELOPMENT_REPORTING.md).
+
 **Public release: v0.1.0-alpha.3 prerelease · CLI 0.1.2 · 500 looks · 17 historical separate Skills.** Downloads provide a complete runtime ZIP, Agent kit, optional gallery and checksums. The verified runtime bytes are unchanged; portable installation and a runnable example are added. Complete Jianying/CapCut parity remains an unaccepted development target.
 
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.

@@ -110,6 +110,11 @@ def _dependency_paths(root: Path, project: dict, settings: dict) -> set[Path]:
             or settings.get('audio_stretch') is not None):
         raise _error('QUEUE_REUSE_UNSUPPORTED', '逐作业硬件/投影探测或外部音频伸缩尚不支持结果复用')
     paths: set[Path] = set()
+    from .aces_pipeline import dependency_paths
+    paths.update(dependency_paths(settings.get('pixel_pipeline')))
+    if settings.get('pixel_pipeline') is not None:
+        from .float_preview import runtime_paths
+        paths.update(p for p in runtime_paths() if p.stat().st_size>0)
     assets = {a['id']: a for a in project.get('assets', [])}
     for asset in assets.values():
         if not asset.get('uri'):

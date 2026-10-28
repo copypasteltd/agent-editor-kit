@@ -49,7 +49,7 @@ def _signal(value, field):
 def configuration(value, settings, encoder):
     allowed = {'engine', 'working_signal', 'output_signal', 'background_signal', 'range_policy',
                'window_frames', 'max_source_cache_bytes', 'max_open_sources', 'native_timeout_seconds', 'sources',
-               'display_mapping', 'preview_mapping','proofing'}
+               'display_mapping', 'preview_mapping','proofing','aces_display','aces_preview'}
     if not isinstance(value, dict) or set(value) - allowed or value.get('engine') != ENGINE:
         raise error('CONFIG', 'pixel_pipeline必须使用完整且受支持的浮点配置')
     working = _signal(value.get('working_signal'), 'working_signal')
@@ -155,6 +155,13 @@ def configuration(value, settings, encoder):
     if 'proofing' in value:
         from .icc_output import proof_configuration
         proof_configuration(value['proofing'])
+    if 'aces_display' in value or 'aces_preview' in value:
+        from .aces_pipeline import validate
+        if 'proofing' in value:raise error('ACES','ACES与ICC软打样的复合验收尚未完成；禁止隐式串接')
+        if 'aces_display' in value and 'display_mapping' in value:raise error('ACES','正式ACES与Reinhard不能重复显示映射')
+        if 'aces_preview' in value and 'preview_mapping' in value:raise error('ACES','预览只能明确选择一种观看变换')
+        for name in ('aces_display','aces_preview'):
+            if name in value:normalized[name]=validate(value[name],working,output,preview=name=='aces_preview')
     normalized.update(working=working, output=output, background=background, range_policy=policy,
                       projection_working_bytes_limit=min(768 * 1024**2, sampling['max_working_bytes']),
                       alpha_output=encoder['video']['pixel_format'] == 'yuva420p',
@@ -178,6 +185,7 @@ class FloatRenderContext:
         self.stack = ExitStack()
         self.sources = {}
         self.proof_transforms = {}
+        self.aces_transforms = {}
         self.timeline = None
         self.receipt = None
         self.sources_closed = False
@@ -302,11 +310,12 @@ class FloatRenderContext:
         self.gpu = self.stack.enter_context(FloatGPUSession(self.root, self.project['settings'],
             operation_id=self.operation_id, dry_run=self.dry_run, cancel=self.poll,
             timeout=self.config['native_timeout_seconds'], max_pixels=planned_pixels))
-        if self.gpu.active:
+        if self.gpu.active or any(k in self.config for k in ('aces_display','aces_preview')):
             from .float_preview import runtime_paths
-            paths = runtime_paths() | {Path(sys.executable).resolve(), Path('C:/Windows/System32/OpenCL.dll')}
+            paths = runtime_paths() | {Path(sys.executable).resolve()}
+            if self.gpu.active:paths.add(Path('C:/Windows/System32/OpenCL.dll'))
             self.metadata['empty_numerical_package_markers'] = [str(p) for p in sorted(paths) if p.stat().st_size == 0]
-            self.artifacts.extend(artifact_entry(p, 'float-gpu-numerical-runtime') for p in sorted(paths) if p.stat().st_size > 0)
+            self.artifacts.extend(artifact_entry(p, 'float-gpu-numerical-runtime' if self.gpu.active else 'float-aces-numerical-runtime') for p in sorted(paths) if p.stat().st_size > 0)
         self.timeline = FloatTimeline(self.project, self.sequence['id'], self.sources,
             working_signal=self.config['working'], background_signal=self.config['background'], cancel=self.poll,
             max_working_bytes=self.config['projection_working_bytes_limit'],resource_root=self.root,gpu=self.gpu)
@@ -321,6 +330,14 @@ class FloatRenderContext:
                              projection_budget_scope='each float projection/composite/delivery call; not total process RSS')
         self.metadata['timeline'] = self.timeline.metadata
         self.metadata['projection_acceleration'] = self.gpu.evidence
+        from .aces_pipeline import dependency_paths
+        for path in dependency_paths(self.config):
+            self.artifacts.append(artifact_entry(path,'float-aces-publication-dependency'))
+        for name in ('aces_display','aces_preview'):
+            if name in self.config:
+                from .ocio_runtime import DisplayTransform
+                self.aces_transforms[name]=self.stack.enter_context(DisplayTransform(self.config[name]))
+                self.metadata[name]=self.aces_transforms[name].metadata
         if 'proofing' in self.config:
             from .icc_output import proof_configuration
             from .icc_profiles import profile_path,runtime_paths
@@ -399,6 +416,8 @@ class FloatRenderContext:
         self.verify()
         self.stack.close()
         self.sources_closed = True
+        if self.aces_transforms:
+            self.metadata['ACES_processors_closed']=all(t.closed for t in self.aces_transforms.values())
         self.metadata['providers_closed_before_publish'] = all(s.closed for s in self.sources.values())
         if 'ICC_proofing' in self.metadata:
             self.metadata['ICC_proofing']['native_handles_closed']=all(t.closed for t in self.proof_transforms.values())
@@ -460,6 +479,11 @@ class FloatRenderContext:
         if not self.config['alpha_output'] and np.any(surface[:, :, 3] != 1):
             raise error('ALPHA', '不透明输出不能丢弃实际alpha；请设置不透明背景或选择透明输出')
         signal = self.config['working']
+        if 'aces_display' in self.config:
+            from .aces_pipeline import native_signal
+            surface,receipt=self.aces_transforms['aces_display'].apply(surface,cancel=self.poll,max_working_bytes=self.config['projection_working_bytes_limit'])
+            signal=native_signal(self.config['aces_display'],self.config['output'])
+            self.metadata['last_aces_display']=receipt
         if 'display_mapping' in self.config['mappings']:
             surface, signal, mapping = map_display(surface, signal, self.config['mappings']['display_mapping'],
                 max_working_bytes=self.config['projection_working_bytes_limit'], cancel=self.poll, gpu=self.gpu)

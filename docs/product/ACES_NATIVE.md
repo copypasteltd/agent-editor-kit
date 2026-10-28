@@ -1,6 +1,6 @@
 # 原生 ACES 开发阶段：运行内核与配置发现
 
-本轮新增源码阶段的 OpenColorIO 2.6.0 CPU 内核。当前安装包及 `$agent-ffmpeg-local-editor` 仍为已验 CLI 0.1.52 / local.50 / r53；本轮没有重新发行或激活 Skill。
+源码 CLI0.1.53 已将 OpenColorIO 2.6.0 CPU 内核接入正式时间线、测量与预览，使用流程见 [ACES 时间线](ACES_TIMELINE.md)。本页保留首轮内核实现与独立上游对照证据。当前安装包及 `$agent-ffmpeg-local-editor` 仍为已验 CLI0.1.52 / local.50 / r53；新安装与 Skill 激活尚待交付。
 
 ## 当前实际能力
 
@@ -54,10 +54,8 @@ C:/Python313/python.exe -E -B -u -X utf8 docs/validation/verify_ocio_kernel.py
 
 | 编号 | 下一步 | 原目标 |
 | --- | --- | --- |
-| P01 | 接入正式时间线的统一交付边界，声明源场景解释、输出信号与冲突规则 | G08 |
-| P02 | 接入预览并证明只执行一次 Output Transform，明确 HDR 母版的 SDR 观看视图 | G08 |
-| P03 | 绑定队列、预览缓存、工程包的 OCIO 原生依赖摘要并验证篡改拒绝 | G08/G32 |
-| P04 | 新离线包构建、实际安装、统一 Skill 激活与完整音画重放 | G32 |
-| P05 | 相机 IDT、AMF/LMT、其他交付制式、ACES GPU、自然素材及显示验收 | G08 |
+| P01 | 新离线包构建、实际安装、统一 Skill 激活与安装版完整音画重放 | 交付/G32 |
+| P02 | 在最终交付版本继续完成兼容与组合验收，不沿用测量修复前快照冒充最终全套通过 | G08/G32 |
+| P03 | 相机 IDT、AMF/LMT、其他交付制式、ACES GPU、自然素材及显示验收 | G08 |
 
 以上是原目标的一部分进展；[完整 38 项差距清单](GOAL_GAPS_20261025.md)继续有效，未关闭其原始验收条件。

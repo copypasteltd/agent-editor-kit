@@ -1901,3 +1901,11 @@ product/tests/test_gpu_gamut.py text eol=lf
 
 docs/assets/gpu-gamut-registered-20261029-*/** -text -whitespace
 docs/product/gpu-gamut-installed-capabilities-cli-0.1.52.json -text -whitespace
+
+# Pinned native ACES runtime and evidence must survive Windows checkout unchanged.
+product/src/ai_ad_editor/native_ocio/** -text -whitespace
+product/src/ai_ad_editor/native_ocio_manifest.json -text -whitespace
+docs/validation/evidence/aces-kernel-20261029-r1/** -text -whitespace
+docs/validation/evidence/aces-pipeline-20261029-r1/** -text -whitespace
+docs/validation/verify_aces_pipeline.py text eol=lf
+docs/validation/verify_ocio_kernel.py text eol=lf

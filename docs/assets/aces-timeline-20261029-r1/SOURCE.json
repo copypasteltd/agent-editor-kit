@@ -1,0 +1,40 @@
+{
+  "scope": "source-CLI53-ACES-integration-numeric-case",
+  "license_spdx": "CC0-1.0",
+  "source_type": "original-synthetic-numeric-fixture",
+  "scene": "Explicit scene-linear ACEScg/AP1/D60 RGB stripes; no camera IDT or natural-footage claim",
+  "generator": "product/tests/test_aces_pipeline.py:ACESPipelineTests.visual",
+  "generator_sha256": "4a2508224a554ca2ef2bce3e1f4cb7daac6d3a9abe163e53b2c83318d90c7548",
+  "width": 96,
+  "height": 128,
+  "fps": 10,
+  "frames": 8,
+  "duration_seconds": 0.8,
+  "original_audio": "347Hz left sine / 619Hz right cosine, synthetic float32 stereo",
+  "verification": "../../validation/evidence/aces-pipeline-20261029-r1/case-r1.json",
+  "media": {
+    "author-aces.mkv": {
+      "bytes": 339088,
+      "sha256": "0f11396fb13268060559337400bbadc9c71b2d5f258b4280be32a983fc2493b8"
+    },
+    "editable-project.zip": {
+      "bytes": 348746,
+      "sha256": "da8fde81c755e0a211896436d73e139f97af9a2ec9af07094f5139cecc0ac0eb"
+    },
+    "frame7.png": {
+      "bytes": 616,
+      "sha256": "9bb476226905c4426e663c4c5d37b424fe2bbcf251d094fa2fd598a7ec38f2d3"
+    },
+    "preview.gif": {
+      "bytes": 40130,
+      "sha256": "996b695115fec644ddb1e67c7c8c256a293bdd0086d670cf9daead8e3df26d8f"
+    },
+    "preview.mp4": {
+      "bytes": 20245,
+      "sha256": "9113722c8b6d1f4e116c32d2ae465de84a68fcccc0a4cadb06e5f37a40546881"
+    }
+  },
+  "installed_skill": false,
+  "GUI": false,
+  "human_continuous_watch_or_listening": false
+}

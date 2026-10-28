@@ -138,8 +138,11 @@ def prepare(project, sequence_id, *, start_frame=0, stop_frame=None, region=None
     if sequence is None: raise error('SEQUENCE', '测量序列不存在')
     encoder = output_settings(project['settings'])
     cfg = configuration(project['settings'].get('pixel_pipeline'), project['settings'], encoder)
-    if not has_luminance(cfg['working']) or not has_luminance(cfg['output']):
-        raise error('SIGNAL', '测量要求显式工作和输出reference_white_nits')
+    # An ACES scene-relative input has no display-light nit unit. Its explicit
+    # Output Transform defines the display edge; only that output needs nits.
+    # Other pipelines retain the existing two-sided display-light contract.
+    if not has_luminance(cfg['output']) or (not has_luminance(cfg['working']) and 'aces_display' not in cfg):
+        raise error('SIGNAL', '测量须明确输出reference_white_nits；非ACES工作域也须明确亮度单位')
     if cfg['alpha_output']: raise error('ALPHA', '光量测量要求不透明交付；透明交付须先明确背景')
     canvas = sequence_canvas(project, sequence); width, height = canvas['width'], canvas['height']
     meter = LightMeter(cfg['output'], width, height, region=region)

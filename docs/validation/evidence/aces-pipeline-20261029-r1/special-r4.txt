@@ -1,0 +1,23 @@
+test_cancel_does_not_count_partial_frame (test_ocio_runtime.OCIORuntimeTests.test_cancel_does_not_count_partial_frame) ... ok
+test_closed_processor_rejects_work (test_ocio_runtime.OCIORuntimeTests.test_closed_processor_rejects_work) ... ok
+test_exposure_before_display_transform (test_ocio_runtime.OCIORuntimeTests.test_exposure_before_display_transform) ... ok
+test_invalid_configuration (test_ocio_runtime.OCIORuntimeTests.test_invalid_configuration) ... ok
+test_invalid_surfaces_and_budgets (test_ocio_runtime.OCIORuntimeTests.test_invalid_surfaces_and_budgets) ... ok
+test_native_processor_equivalence (test_ocio_runtime.OCIORuntimeTests.test_native_processor_equivalence) ... ok
+test_runtime_file_hashes (test_ocio_runtime.OCIORuntimeTests.test_runtime_file_hashes) ... ok
+test_three_real_configs (test_ocio_runtime.OCIORuntimeTests.test_three_real_configs) ... ok
+test_tile_alpha_and_input_ownership (test_ocio_runtime.OCIORuntimeTests.test_tile_alpha_and_input_ownership) ... ok
+test_HDR_HLG_conditions_are_not_silently_reinterpreted (test_aces_pipeline.ACESPipelineTests.test_HDR_HLG_conditions_are_not_silently_reinterpreted) ... ok
+test_HDR_preview_requires_explicit_SDR_view (test_aces_pipeline.ACESPipelineTests.test_HDR_preview_requires_explicit_SDR_view) ... ok
+test_Rec1886_and_Gamma22_delivery_decode_native_display_transfer (test_aces_pipeline.ACESPipelineTests.test_Rec1886_and_Gamma22_delivery_decode_native_display_transfer) ... ok
+test_actual_PQ_and_HLG_delivery_and_separate_SDR_view (test_aces_pipeline.ACESPipelineTests.test_actual_PQ_and_HLG_delivery_and_separate_SDR_view) ... ok
+test_actual_SDR_transport_native_reference_and_complete_package_replay (test_aces_pipeline.ACESPipelineTests.test_actual_SDR_transport_native_reference_and_complete_package_replay) ... ok
+test_actual_dependency_snapshots_and_corrupt_runtime_refusal (test_aces_pipeline.ACESPipelineTests.test_actual_dependency_snapshots_and_corrupt_runtime_refusal) ... ok
+test_actual_preview_maps_once_before_display_linear_resize (test_aces_pipeline.ACESPipelineTests.test_actual_preview_maps_once_before_display_linear_resize) ... ok
+test_invalid_working_and_conflicting_mappings (test_aces_pipeline.ACESPipelineTests.test_invalid_working_and_conflicting_mappings) ... ok
+test_meter_accepts_relative_scene_ACES_only_with_explicit_output_nits (test_aces_pipeline.ACESPipelineTests.test_meter_accepts_relative_scene_ACES_only_with_explicit_output_nits) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 232.958s
+
+OK

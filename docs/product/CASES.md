@@ -1184,3 +1184,17 @@ CLI0.1.52/local50，91个Skill文件、1外层入口/17内部模块。通过真�
 正式渲染10次gamut_map、frame预览1次、range预览10次。全部4,976,640 byte YUV、384,000 byte PCM与历史CPU独立参考已验成片及再次GPU工程包重放一致。全部RGB16编码器输入摘要等于独立参考，frame9 PNG16最大误差0code。预览/导出不改作者字节；render仅追加输出、操作日志和更新时间，作者图其余字段保持。
 
 GPU执行曝光/亮度肩部/24步缩色度，CPU执行信号转换/ICC。GIF与MP4均为真实SDR查看副本，10帧/1000ms；不是物理HDR或自然素材艺术质量验收。四个既有模型包重新核验，没有新增模型推理。繁體：實際註冊入口與完整音畫/專案重播留證。English: Actual registered-Skill execution and complete encoded media replay; no full CapCut, natural-quality, ACES or monitor-certification claim.
+
+<a id="c65-source-aces-timeline"></a>
+
+## C65 · Source native ACES timeline / 源码原生 ACES 时间线
+
+CLI0.1.53源码，固定OCIO2.6.0/ACES2.1配置，正式sRGB视图采用原配置中的ACES2.0 SDR100nit Output Transform。原创数值色条与立体声音调，96×128/10FPS/8帧/0.8秒；不是自然素材或已安装Skill案例。
+
+![Source ACES viewing copy](../assets/aces-timeline-20261029-r1/preview.gif)
+
+[Author movie](../assets/aces-timeline-20261029-r1/author-aces.mkv) · [MP4](../assets/aces-timeline-20261029-r1/preview.mp4) · [Frame7 PNG16](../assets/aces-timeline-20261029-r1/frame7.png) · [Editable package](../assets/aces-timeline-20261029-r1/editable-project.zip) · [Source](../assets/aces-timeline-20261029-r1/SOURCE.json) · [Case verification](../validation/evidence/aces-pipeline-20261029-r1/case-r1.json) · [Workflow](ACES_TIMELINE.md)
+
+案例执行真实正式渲染、frame7预览、8帧range与工程包导出。GIF已程序化核对8帧/800ms；PNG16全通道与直接原生处理器参考最大误差不超过2code。渲染与预览的冻结源码摘要保留在收据中，测量入口后续修正与专项回归分列，不能拿案例替代全部验收。静态PNG已查看；未做连续人工观片、听审、自然HDR或物理监看。
+
+繁體：原始碼ACES正式交付與單次顯示轉換的觀看副本，已安裝Skill仍CLI52。English: Source-stage native ACES rendering and a real encoded SDR viewing copy; installed-Skill, GPU ACES and monitor acceptance remain separate work.

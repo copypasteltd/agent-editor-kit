@@ -38,6 +38,16 @@ def reference_plan(project, mode):
     if mode not in {'frame', 'range'}:
         raise error('CONFIG', '浮点预览模式必须是frame/range')
     config = configuration(project['settings']['pixel_pipeline'], project['settings'], output_settings(project['settings']))
+    aces_origin=('aces_preview' if 'aces_preview' in config else 'aces_display'
+        if 'aces_display' in config and 'preview_mapping' not in config['mappings'] and not config['hdr_output'] else None)
+    if aces_origin:
+        signal=LuminanceSignal('bt709','srgb' if mode=='frame' else 'linear',100)
+        return dict(pixel_pipeline=config['engine'],pixel_protocol=PROTOCOL,
+            reference_pixel_format='rgba64be' if mode=='frame' else 'gbrapf32le',reference_signal=vars(signal),
+            aces_display=config[aces_origin],aces_display_source=aces_origin,
+            reference_scope='explicit ACES SDR view; display transform once before display-linear resize',
+            reference_bytes_per_pixel=8 if mode=='frame' else 16,
+            reference_resampling='premultiplied-linear-bilinear-after-full-author-composite')
     mapping = config['mappings'].get('preview_mapping', config['mappings'].get('display_mapping'))
     origin = 'preview_mapping' if 'preview_mapping' in config['mappings'] else 'display_mapping'
     mapped = config['hdr_active'] or mapping is not None
@@ -176,8 +186,21 @@ class FloatPreviewContext:
                 r.poll(); pipe.check()
                 surface, _ = r.timeline.render_frame(index)
                 signal = r.config['working']
-                inherited = request.get('display_mapping_source') == 'display_mapping'
-                if inherited:
+                inherited_mapping = request.get('display_mapping_source') == 'display_mapping'
+                inherited = inherited_mapping or 'aces_display' in request
+                if 'aces_display' in request:
+                    if request['aces_display_source']=='aces_display':
+                        surface,boundary=r.delivery_surface(surface,stats=stats)
+                        signal=r.config['output'];receipt=r.metadata['last_aces_display']
+                        self.metadata['preview_delivery_boundary']=boundary
+                    else:
+                        from .aces_pipeline import native_signal
+                        surface,receipt=r.aces_transforms['aces_preview'].apply(surface,cancel=r.poll,max_working_bytes=r.config['projection_working_bytes_limit'])
+                        signal=native_signal(request['aces_display'],LuminanceSignal('bt709','srgb',100))
+                    linear=LuminanceSignal('bt709','linear',100)
+                    surface,_=convert_rgba(surface,signal,linear,max_working_bytes=r.config['projection_working_bytes_limit'],cancel=r.poll)
+                    signal=linear;self.metadata['last_preview_aces']=receipt
+                if inherited_mapping:
                     # Match the actual SDR delivery edge before downsampling:
                     # mapping, proof and output conversion must not be omitted
                     # or applied twice. Resize in display-linear BT.709.

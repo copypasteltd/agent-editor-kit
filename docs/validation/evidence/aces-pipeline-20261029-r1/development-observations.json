@@ -1,0 +1,34 @@
+{
+  "scope": "development observations before the frozen-source r3 gates",
+  "r1": {
+    "tests": 6,
+    "failures": 2,
+    "errors": 1,
+    "observed": [
+      "Actual SDR transport and complete package replay passed.",
+      "CLI preview rejected the stale packaged Schema hash.",
+      "Preview validation also caught missing synthetic audio rights, duplicate clip ID and an audio clip longer than the fixture sequence.",
+      "Reusing a fixture for the second HDR mode caused RIGHTS_RECORD_EXISTS."
+    ],
+    "raw_terminal_log_persisted": false,
+    "changes": [
+      "Updated the canonical Schema digest.",
+      "Registered the synthetic audio rights and corrected its clip ID/duration.",
+      "Used separate projects for PQ and HLG."
+    ]
+  },
+  "r2": {
+    "result": "Six integration tests passed; see verification-r2.json and tests-r2.txt.",
+    "limitation": "Development run, not frozen-source acceptance. Additional metering, numerical dependency and display-transfer coverage were added before r3."
+  },
+  "final_gate": "special-r4.json and meter-r4.json verify final frozen product bytes. case-r1.json preserves the earlier frozen render/preview snapshot; the only later product delta is hdr_measure.py. compat-r3 is a longer preliminary run begun before that metering delta, not a final-source frozen gate.",
+  "r3": {
+    "tests": 17,
+    "failures": 1,
+    "errors": 0,
+    "frozen_equal": true,
+    "failure": "surface.measure rejected valid scene-relative ACES because it required working-domain nits.",
+    "fix": "Only the output requires explicit nits for an ACES Output Transform; non-ACES retains the existing two-sided requirement.",
+    "raw_log": "special-r3.txt"
+  }
+}

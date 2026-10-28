@@ -1,8 +1,14 @@
 # agent editor kit
 
+<!-- aces-timeline-source53 -->
+
+**Source CLI0.1.53 connects ACES rendering and previews.** Formal delivery, all-frame metering, one display transform before display-linear resizing, and a separate SDR view for HDR masters; 18 specialized tests and 46 metering/Schema regressions passed separately. [Workflow](docs/product/ACES_TIMELINE.md) · [C65: video, GIF, PNG16, editable project](docs/product/CASES.md#c65-source-aces-timeline). Installed Skill remains CLI52. ACES runs on CPU; new installed delivery and full parity remain pending.
+
+![Source ACES numeric viewing copy](docs/assets/aces-timeline-20261029-r1/preview.gif)
+
 <!-- aces-native-kernel-source -->
 
-**In development: native ACES kernel and configuration discovery.** Pinned OCIO 2.6.0 provides ACES 1.3/2.0/2.1 display/view transforms and scene exposure. Source stage only: timeline, preview and installed Skill integration remain pending. [Workflow, evidence and remaining work](docs/product/ACES_NATIVE.md).
+**Historical kernel stage: native ACES kernel and configuration discovery.** Pinned OCIO 2.6.0 provides ACES 1.3/2.0/2.1 display/view transforms and scene exposure. Source stage only: timeline, preview and installed Skill integration remain pending. [Workflow, evidence and remaining work](docs/product/ACES_NATIVE.md).
 
 **An open-source local video-editing CLI for Agents.** Turn structured plans into editable projects, previews, video, quality reports and recoverable deliveries, retaining real artifacts and provenance.
 
@@ -1056,6 +1062,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F73 | HLG display black and complete signal CLI | BT.2100 black lift/inverse,explicit nits,unchanged zero-black numeric path,complete RGB/HDR/ICC JSON and explicit domain policies. | `native_hlg_black_level; surface export; render; preview; convert` | No monitor inference; nominal0..1; reject or explicit counted clipping; no dynamic HDR/full ACES. |
 | F74 | Native ICC output and soft proof | RGB v2/v4 matrix/B2A CLUT,intents/BPC,explicit nits,individually ICC-embedded RGBA16 PNGs and authored PCM,real SOFTPROOFING and complete delivery verification. | `native_icc_output_profiles; surface render; surface inspect-output; render; preview; convert` | CPU CMM;separate GPU editing;8GiB file budget;no CMYK/ICC5/physical-device calibration. |
 | F75 | Pre/post-codec HDR light and colour receipts | Explicit nits;separate authored RGB16 input/native decoded RGB/YCbCr measurements;MaxRGB/CIE Y,locations/durations,pixel/clock digests and all-frame clipping ledgers. | `native_hdr_light_measurement; surface measure; surface measure-media; surface export; render` | CPU meter;no inferred monitor or automatic SEI;native exposure gaps/overlaps not filled. |
+| F76 | Native ACES timeline/display views | PinnedACES1.3/2.0/2.1,AP1/D60 scene input,exposure,formal SDR/PQ/HLG,separate viewing trim,display-linear resize and metering. | `native_aces_display; surface ocio-configs; render; preview; surface measure` | SourceCLI53/CPU;no automatic camera IDT/AMF/LMT/GPU or monitor acceptance;installed Skill still52. |
 
 ## Supported service modules and dependencies
 
@@ -1093,6 +1100,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | S28 | Explicit HLG black service | Tiled Float32/alpha,beta validation,source/target black,domain counts and native-clock raw bundles. | Native Windows CPU math; separately configured GPU composition. | `surface; render; preview; convert` | No new model/global install; no replacement for display measurement/HDR monitor acceptance. |
 | S29 | ICC delivery and simulation service | Per-frame device-profile output,standard-movie soft proof,owned CMM handles/read locks,PNG CRC/all-pixel/PCM verification. | Pinned MIT LittleCMS on native Windows;no new model. | `surface render; surface inspect-output; render; preview; convert` | Separate native profile mapping from application clipping;PNG sequence/PCM,never relabel arbitrary device RGB as standard YUV. |
 | S30 | Pre/post-codec light diagnostics and colour audit | Readonly native timeline/media,cancellable tiled metering,RGB16/decoded RGBA/native-clock digests,all-frame receipts and owned-process/thread cleanup. | Existing FFmpeg/NumPy,optional OpenCL;no model downloads. | `surface measure; surface measure-media; surface export; render` | Explicit colour/progressive YCbCr and positive native durations;partial regions not full-canvas certification;768MiB operator estimate not total RSS. |
+| S31 | Local native ACES service | PinnedWindows CPython3.13 x64 runtime,config/processor hashes,alpha,cancellation,close receipts,native/numerical dependency verification. | BundledOCIO2.6.0 BSD-3-Clause/third-party licenses;noGUI/global install/network LUTs. | `surface ocio-configs; aces_display; aces_preview` | SourceCLI53;HLG1000nit/gamma1.2/zero black;ICC compound and installed delivery unaccepted. |
 
 **Observed local environment:** this update’s doctor sees native Python 3.13.1, FFmpeg/ffprobe 8.1 and Node; this does not establish registration of every model/browser adapter. doctor merely discovers Docker/WSL executable paths and does not run them. This project uses native tools without invoking Docker/WSL/virtual environments.
 
@@ -1748,6 +1756,9 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R361 | C64 actual registered CLI52 GPU Skill | 2 renders; 10-frame YUV and complete PCM replay equal; frame9 PNG16 error 0 | [raw](docs/validation/evidence/gpu-gamut-20261029-r1/registered-case-r1/verification.json) | 1 Skill / 17 modules / 91 files; synthetic SDR; no full parity claim |
 | R362 | Independent r53 kit extraction and real isolated registration | 150 entries/149 inventory/91 Skill files; actual GPU OKLab frame/range and48-frame post-codec meter | 2026-10-29 | [kit](docs/validation/evidence/gpu-gamut-20261029-r1/kit-r1/verification.json), [digest](docs/skills/community-unified-skill-package-0.1.52-r53.json) | real discovery junction unchanged;1 Skill/17 modules; no clean-host claim |
 | R363 | Native OCIO ACES source kernel / configuration CLI | 9 native tests; 3 original-wheel process comparisons, exact pixels | [evidence](docs/validation/evidence/aces-kernel-20261029-r1/verification.json) | Source only; timeline/preview/installed Skill pending; G08/G32 remain open |
+| R364 | Source CLI53 native ACES timeline/preview | 18 specialized tests, frozen final source, no failures/skips | [raw](docs/validation/evidence/aces-pipeline-20261029-r1/special-r4.json) | CPU; installed Skill52 unchanged; G08 remains open |
+| R365 | Final-source metering and Schema regression | 46 tests, frozen final source, no failures/skips; relative-scene ACES metering fixed | [raw](docs/validation/evidence/aces-pipeline-20261029-r1/meter-r4.json) | Separate group; preliminary long compatibility run not final-source proof |
+| R366 | C65 real source ACES media | 8-frame/800ms GIF; actual MP4/PNG16/editable project; PNG16 native reference error0 | [raw](docs/validation/evidence/aces-pipeline-20261029-r1/case-r1.json) | Numeric scene; pre-meter-fix render snapshot; no installed/GPU/natural/monitor acceptance |
 
 ## Current limits and development direction
 

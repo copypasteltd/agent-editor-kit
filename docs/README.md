@@ -1,5 +1,7 @@
 # agent editor kit 文档 / Documentation
 
+Source / 源码 / 原始碼：**CLI0.1.53 native ACES timeline** · [Workflow](product/ACES_TIMELINE.md) · [C65 media](product/CASES.md#c65-source-aces-timeline). 18项专项及46项测量/Schema回归分列通过；已安装Skill仍CLI52，候选wheel不等于完整安装交付。
+
 Current local / 当前本地 / 目前本地：**CLI0.1.52 / local.50 / r53 kit** · [GPU colour](product/GPU_GAMUT.md) · [Install](releases/CLI_0.1.52_LOCAL.md) · [C64](product/CASES.md#c64-installed-gpu-gamut).
 
 Historical source CLI52 stage, superseded by installed delivery: 源码CLI52新增实际GPU亮度肩部及OKLab缩色度，信号转换与ICC仍由CPU处理。70项专项、12项控制管道测试、4K单表面独立参考及C63完整音画/工程包重放通过；本地注册Skill仍CLI51/local49/r52。352项兼容回归及新版安装交付另行验收。 [Workflow](product/GPU_GAMUT.md).

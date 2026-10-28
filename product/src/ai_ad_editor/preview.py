@@ -153,6 +153,8 @@ def identity(root, project, sequence, request, marker):
     if project['settings'].get('pixel_pipeline') is not None:
         from .float_preview import runtime_paths
         runtime.update(runtime_paths())
+        from .aces_pipeline import dependency_paths
+        runtime.update(dependency_paths(project['settings']['pixel_pipeline']))
     runtime.update(p for p in Path(__file__).resolve().parent.iterdir() if p.is_file() and p.suffix in {'.c', '.dll'})
     if len(paths | runtime) > MAX_FILES:
         raise fail('PREVIEW_BUDGET', '预览依赖超过 4096 个文件')

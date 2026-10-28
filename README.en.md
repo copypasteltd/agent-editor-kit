@@ -9,7 +9,21 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- native-icc-output-current -->
+<!-- native-hdr-measure-current -->
+
+**CLI0.1.49 / alpha.4-local.47 / r50 kit · 1 Skill / 17 modules.**
+
+Added **all-frame HDR light metering and colour-clipping ledgers**: actual authored timeline,explicit nits,separate MaxRGB/CIE Y,peak locations/maximum frame averages/exact exposure weighting,and explicit active regions. Metering shares the real RGB16 encoder-input path;intermediate bundles now retain all-frame conversion receipts.
+
+[Workflow](docs/product/HDR_MEASUREMENT.md) · [C59](docs/product/CASES.md#c59-native-hdr-measurement) · [Install](docs/releases/CLI_0.1.49_LOCAL.md) · [Evidence](docs/validation/全帧HDR光量与裁切汇总实测_2026-10-29.md)
+
+![Actual SDR view of HDR metering case](docs/assets/native-hdr-measure-20261029-r2/actual-preview.gif)
+
+19 source checks,19 installed checks and352 installed compatibility checks pass separately. C59 independently checks all48 frames/11059200 pixels and the RGB16 input digest,then replays the complete PQ master/audio/measurements after package import. Another48-frame actual GPU Bloom/native ICC proof run has identical meter/render input. No post-codec peak,physical display or artistic-quality acceptance is claimed.
+
+<!-- /native-hdr-measure-current -->
+
+<!-- native-icc-output-history -->
 
 **CLI0.1.48 / alpha.4-local.46 / r49 kit · 1 Skill / 17 modules.**
 
@@ -21,7 +35,7 @@ Added **native RGB ICC output, profile-embedded16-bit PNG sequence delivery and 
 
 17 source checks,17 installed checks and335 installed compatibility checks pass separately. C58 embeds ICC per frame,independently checks384 B2A patches and384 soft-proof Y/Cb/Cr triplets,and replays all48 PNG frames/files,66355200 decoded soft-proof movie bytes and384000 nonzero PCM scalars identically,with48 actual GPU Bloom calls/sequence. ICC uses CPU;supported editing uses GPU. The synthetic diagnostic profile is not printer/display calibration or artistic acceptance.
 
-<!-- /native-icc-output-current -->
+<!-- /native-icc-output-history -->
 
 <!-- native-hlg-black-history -->
 
@@ -568,7 +582,7 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r49 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r49.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r50 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r50.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
@@ -874,7 +888,7 @@ The implementation is **Python CLI + Agent Project schema + FFmpeg**, with an ex
 5. For selection, show the original and a small candidate set, record final IDs/strength/scope and trial them on target media.
 6. Render to a new project-owned path, inspect the encoded output, manifest, warnings, A/V and rights, then export the project package.
 
-## All 74 functional modules
+## All 75 functional modules
 
 IDs locate documentation groups with dependencies/overlap; they are not 43 independent kernels or a completion score. The table describes behavior, commands and limits. The [complete machine capability manual](docs/product/CAPABILITIES.en.md) retains every field.
 
@@ -954,6 +968,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F72 | Native ICC source color management | RGB ICC v2/v4 matrix/CLUT, explicit SHA/intent/BPC → linear working RGB, Float32/alpha, actual previews and portable profile dependencies. | `native_icc_source_profiles; surface inspect-profile; surface export; render; preview; convert` | Pinned MIT LittleCMS/native CPU; no arbitrary output ICC, softproofing, CMYK or embedded-profile inference. |
 | F73 | HLG display black and complete signal CLI | BT.2100 black lift/inverse,explicit nits,unchanged zero-black numeric path,complete RGB/HDR/ICC JSON and explicit domain policies. | `native_hlg_black_level; surface export; render; preview; convert` | No monitor inference; nominal0..1; reject or explicit counted clipping; no dynamic HDR/full ACES. |
 | F74 | Native ICC output and soft proof | RGB v2/v4 matrix/B2A CLUT,intents/BPC,explicit nits,individually ICC-embedded RGBA16 PNGs and authored PCM,real SOFTPROOFING and complete delivery verification. | `native_icc_output_profiles; surface render; surface inspect-output; render; preview; convert` | CPU CMM;separate GPU editing;8GiB file budget;no CMYK/ICC5/physical-device calibration. |
+| F75 | All-frame HDR light and conversion receipts | Explicit nits,actual timeline/RGB16 edge;MaxRGB/CIE Y peaks,frame averages,locations/regions/exposure;all-frame native-bundle clipping totals. | `native_hdr_light_measurement; surface measure; surface export; render` | CPU meter,separate GPU editing;no inferred monitor brightness,implicit SEI or post-codec measurement claim. |
 
 ## Supported service modules and dependencies
 
@@ -990,6 +1005,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | S27 | Native ICC CMM service | Pinned LittleCMS2.19.1 Windows x64 DLL, private contexts, tiled Float32, read locks/cancellation/cleanup and actual profile-byte verification. | Bundled DLL/MIT license; no new model/global installation. | `surface; render; preview; convert` | 16MiB/4096 tags and surface budgets; CPU conversion, independently selected GPU composition. |
 | S28 | Explicit HLG black service | Tiled Float32/alpha,beta validation,source/target black,domain counts and native-clock raw bundles. | Native Windows CPU math; separately configured GPU composition. | `surface; render; preview; convert` | No new model/global install; no replacement for display measurement/HDR monitor acceptance. |
 | S29 | ICC delivery and simulation service | Per-frame device-profile output,standard-movie soft proof,owned CMM handles/read locks,PNG CRC/all-pixel/PCM verification. | Pinned MIT LittleCMS on native Windows;no new model. | `surface render; surface inspect-output; render; preview; convert` | Separate native profile mapping from application clipping;PNG sequence/PCM,never relabel arbitrary device RGB as standard YUV. |
+| S30 | Light diagnostics and all-frame colour audit | Readonly native timeline,cancellable tiled meter,complete RGB16 digest,all-frame conversion receipts and actual source/GPU cleanup. | Existing FFmpeg/NumPy,optional OpenCL;no new model download. | `surface measure; surface export; render` | Partial frames/active area do not certify the full canvas;768MiB owned-operator estimate is not total RSS/VRAM. |
 
 **Observed local environment:** this update’s doctor sees native Python 3.13.1, FFmpeg/ffprobe 8.1 and Node; this does not establish registration of every model/browser adapter. doctor merely discovers Docker/WSL executable paths and does not run them. This project uses native tools without invoking Docker/WSL/virtual environments.
 
@@ -1089,7 +1105,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.46/final-r1/installed/`, CLI 0.1.48. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.47/final-r1/installed/`, CLI 0.1.49. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1609,6 +1625,11 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R325 | 2026-10-29 ICC | C58:384 independent B2A patches,all48 ICC-embedded frames/full pixels/CRCs,and48 GPU Bloom calls per sequence. | [Evidence](docs/validation/evidence/native-icc-output-20261028-r1/case-r3/verification.json) |
 | R326 | 2026-10-29 ICC | C58:portable proof profile;all PNG files/pixels,66355200 movie bytes and384000 nonzero PCM scalars replay exactly;actual PNG/MP4/GIF. | [Evidence](docs/validation/evidence/native-icc-output-20261028-r1/case-r3/verification.json) |
 | R327 | 2026-10-29 ICC | r49 single Skill:one entry/17 modules/87 files,pinned local installation,independent extraction/verification and installed delivery plan. | [Evidence](docs/validation/evidence/native-icc-output-20261028-r1/kit-r1/verification.json) |
+| R328 | 2026-10-29 HDR meter | CLI0.1.49/local.47:275 product Python files match tested installation;88 capabilities,one public Skill/17 modules/88 files. | [Evidence](docs/validation/evidence/native-hdr-measure-20261028-r1/installation-final-r1/verification.json) |
+| R329 | 2026-10-29 HDR meter | 19 source checks:independent PQ/HLG/MaxRGB/CIE Y,exposure/regions/alpha,real readonly CLI/cancellation,and early clipping with a clear last frame. | [Evidence](docs/validation/evidence/native-hdr-measure-20261028-r1/source-r4/verification.json) |
+| R330 | 2026-10-29 HDR meter | 19 installed checks and352 separate installed compatibility checks;display-map/native-proof meter and actual render RGB16 digests agree. | [Evidence](docs/validation/evidence/native-hdr-measure-20261028-r1/installed-compat-r1/verification.json) |
+| R331 | 2026-10-29 HDR meter | C59:independent equations for all48 frames/11059200 pixels and RGB16 input digest;actual PQ master66355200 video bytes and384000 nonzero PCM scalars. | [Evidence](docs/validation/evidence/native-hdr-measure-20261028-r1/case-r2/verification.json) |
+| R332 | 2026-10-29 HDR meter | C59:complete media/all measurements replay after package import;another48-frame actual GPU Bloom/native-proof run matches render input;actual MP4/GIF. | [Evidence](docs/validation/evidence/native-hdr-measure-20261028-r1/case-r2/verification.json) |
 
 ## Current limits and development direction
 

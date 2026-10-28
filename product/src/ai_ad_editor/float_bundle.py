@@ -15,6 +15,7 @@ from .errors import AppError
 from .float_color_signal import ColorSignal,convert_rgba
 from .icc_profiles import ICCSourceSignal,ProfileTransform,parse_source_signal
 from .float_geometry import resample_rgba
+from .colour_audit import ColourAudit
 from .float_video_source import NativeRGBSource,cancelled
 from .float_yuv import YUVSpec
 from .float_yuv_source import NativeYUVSource
@@ -95,7 +96,7 @@ def prepare(root,project,asset_id,output,*,source_signal,target_signal,pixel_fam
 
 def _implementation_artifacts():
     directory=Path(__file__).resolve().parent
-    paths={name:directory/(name+'.py') for name in ('float_bundle','float_color_signal','float_hdr','float_hlg_black','float_chromatic','float_geometry','icc_profiles')}
+    paths={name:directory/(name+'.py') for name in ('float_bundle','float_color_signal','float_hdr','float_hlg_black','float_chromatic','float_geometry','icc_profiles','colour_audit')}
     paths['numpy_init']=Path(np.__file__).resolve()
     # These files are the numerical boundary's entry module and native code.
     # This is not advertised as an exhaustive NumPy package inventory.
@@ -133,7 +134,7 @@ def export_bundle(root,plan,*,cancel_file=None,progress=None):
     # Parent creation begins only after native index, budgets and input checks.
     destination.parent.mkdir(parents=True,exist_ok=True);_owned(root,destination.parent)
     temporary=Path(tempfile.mkdtemp(prefix='.float-bundle-',dir=destination.parent));_owned(root,temporary)
-    committed=False;colour_metadata=None;geometry_metadata=None;icc_transform=None
+    committed=False;colour_audit=ColourAudit();colour_metadata=None;geometry_metadata=None;icc_transform=None
     try:
         if isinstance(source_signal,ICCSourceSignal):icc_transform=ProfileTransform(root,source_signal,target_signal,cancel=lambda:cancelled(marker))
         with (temporary/FILES['pixels']).open('xb') as pixels,(temporary/FILES['clock']).open('xb') as clock:
@@ -144,6 +145,7 @@ def export_bundle(root,plan,*,cancel_file=None,progress=None):
                     value,colour_metadata=(icc_transform.convert(frame.rgba) if icc_transform else
                         convert_rgba(frame.rgba,source_signal,target_signal,cancel=lambda:cancelled(marker),
                             hdr_range_policy=recipe.get('hdr_range_policy','reject'),hdr_input_range_policy=recipe.get('hdr_input_range_policy','reject')))
+                    colour_audit.add(frame.index,colour_metadata)
                     if geometry is not None:
                         value,geometry_metadata=resample_rgba(value,(width,height),geometry['inverse'],cancel=lambda:cancelled(marker))
                     pixels.write(value.astype('<f4',copy=False).tobytes());clock.write(np.array([frame.index,frame.pts,frame.duration],dtype='<i8').tobytes())
@@ -163,7 +165,8 @@ def export_bundle(root,plan,*,cancel_file=None,progress=None):
             'files':{key:{'name':name,'bytes':(temporary/name).stat().st_size,'sha256':digest(temporary/name)} for key,name in FILES.items()},
             'source_reader':reader.metadata,'source_reader_process':{'exit_code':reader.pipe.process.poll(),
                 'owned_threads_terminated':all(not thread.is_alive() for thread in reader.pipe.threads)},
-            'colour_boundary':colour_metadata,'geometry_boundary':geometry_metadata,
+            'colour_boundary':colour_metadata,'colour_boundary_scope':'last-selected-frame',
+            'colour_boundary_all_frames':colour_audit.result(),'geometry_boundary':geometry_metadata,
             'implementation_artifacts':implementations,'numpy_version':np.__version__,'numpy_whole_package_inventory':False,
             'working_white':('native ICC rendering intent to explicit linear working RGB; physical illuminant not inferred' if icc_transform else
                 'explicit RGB reference white; Bradford in linear XYZ; physical illuminant not inferred'

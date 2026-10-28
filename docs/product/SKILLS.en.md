@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.48 / alpha.4-local.46 / r49 kit · 1 Skill / 17 modules / 87 files.**
+**CLI0.1.49 / alpha.4-local.47 / r50 kit · 1 Skill / 17 modules / 88 files.**
 
-Added **native RGB ICC output, profile-embedded16-bit PNG sequence delivery and soft proof**: actual B2A tables,intents/BPC,explicit nits scaling,authored frames and synchronized PCM;native simulation in normal render/previews and portable profile dependencies.
+Added **all-frame HDR light metering and colour-clipping ledgers**: actual authored timeline,explicit nits,separate MaxRGB/CIE Y,peak locations/maximum frame averages/exact exposure weighting,and explicit active regions. Metering shares the real RGB16 encoder-input path;intermediate bundles now retain all-frame conversion receipts.
 
-[ICC output / soft proof workflow](ICC_OUTPUT.md)
+[Light metering workflow](HDR_MEASUREMENT.md)
 
 <!-- /community-current -->
 

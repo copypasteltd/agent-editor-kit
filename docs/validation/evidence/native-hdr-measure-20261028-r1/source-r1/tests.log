@@ -1,0 +1,100 @@
+test_actual_native_bundle_retains_early_HLG_black_clip_when_last_frame_clear (test_hdr_measure.LightIntegrationTests.test_actual_native_bundle_retains_early_HLG_black_clip_when_last_frame_clear) ... ok
+test_cancellation_after_real_first_frame_returns_no_partial_metrics (test_hdr_measure.LightIntegrationTests.test_cancellation_after_real_first_frame_returns_no_partial_metrics) ... FAIL
+test_partial_and_active_regions_cannot_claim_whole_content (test_hdr_measure.LightIntegrationTests.test_partial_and_active_regions_cannot_claim_whole_content) ... ERROR
+test_plan_mutation_and_actual_project_change_fail_before_decode (test_hdr_measure.LightIntegrationTests.test_plan_mutation_and_actual_project_change_fail_before_decode) ... ERROR
+test_real_CLI_readonly_all_frames_and_dryrun_without_decode (test_hdr_measure.LightIntegrationTests.test_real_CLI_readonly_all_frames_and_dryrun_without_decode) ... FAIL
+test_same_common_encoder_RGB16_digest_as_actual_render (test_hdr_measure.LightIntegrationTests.test_same_common_encoder_RGB16_digest_as_actual_render) ... ERROR
+test_HLG_coupled_decode_black_and_peak_follow_explicit_display (test_hdr_measure.LightUnitTests.test_HLG_coupled_decode_black_and_peak_follow_explicit_display) ... ok
+test_PQ_float64_decode_matches_independent_decimal_oracle (test_hdr_measure.LightUnitTests.test_PQ_float64_decode_matches_independent_decimal_oracle) ... ok
+test_all_frame_colour_totals_peak_and_ordered_hash (test_hdr_measure.LightUnitTests.test_all_frame_colour_totals_peak_and_ordered_hash) ... ok
+test_cancel_and_source_immutability (test_hdr_measure.LightUnitTests.test_cancel_and_source_immutability) ... ok
+test_colour_ledger_rejects_invalid_counter_and_noncontiguous_frames (test_hdr_measure.LightUnitTests.test_colour_ledger_rejects_invalid_counter_and_noncontiguous_frames) ... ok
+test_early_peak_and_bright_average_are_not_last_frame_values (test_hdr_measure.LightUnitTests.test_early_peak_and_bright_average_are_not_last_frame_values) ... ok
+test_explicit_active_region_preserves_canvas_coordinates (test_hdr_measure.LightUnitTests.test_explicit_active_region_preserves_canvas_coordinates) ... ok
+test_invalid_clock_nonfinite_alpha_and_layout_fail_closed (test_hdr_measure.LightUnitTests.test_invalid_clock_nonfinite_alpha_and_layout_fail_closed) ... ok
+test_maxRGB_and_CIE_Y_differ_for_saturated_colors (test_hdr_measure.LightUnitTests.test_maxRGB_and_CIE_Y_differ_for_saturated_colors) ... FAIL
+test_quantization_and_explicit_clip_match_integer_delivery (test_hdr_measure.LightUnitTests.test_quantization_and_explicit_clip_match_integer_delivery) ... ok
+test_rejects_relative_units_invalid_regions_dimensions_and_empty_results (test_hdr_measure.LightUnitTests.test_rejects_relative_units_invalid_regions_dimensions_and_empty_results) ... ok
+
+======================================================================
+ERROR: test_partial_and_active_regions_cannot_claim_whole_content (test_hdr_measure.LightIntegrationTests.test_partial_and_active_regions_cannot_claim_whole_content)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_hdr_measure.py", line 157, in test_partial_and_active_regions_cannot_claim_whole_content
+    f=self.f;r=hdr_measure.measure(f.root,f.p,self.plan(start_frame=1,stop_frame=3,region=[2,3,8,7]))
+                                              ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_hdr_measure.py", line 135, in plan
+    def plan(self,**kw):return hdr_measure.prepare(self.f.p,self.f.s['id'],**kw)
+                               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\hdr_measure.py", line 137, in prepare
+    cfg = configuration(project['settings'].get('pixel_pipeline'), project['settings'], encoder)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\float_standard_render.py", line 65, in configuration
+    raise error('SIGNAL', 'SDR交付要求BT.709基色；HDR交付要求明确BT.2100信号')
+ai_ad_editor.errors.AppError: SDR交付要求BT.709基色；HDR交付要求明确BT.2100信号
+
+======================================================================
+ERROR: test_plan_mutation_and_actual_project_change_fail_before_decode (test_hdr_measure.LightIntegrationTests.test_plan_mutation_and_actual_project_change_fail_before_decode)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_hdr_measure.py", line 162, in test_plan_mutation_and_actual_project_change_fail_before_decode
+    f=self.f;plan=self.plan();changed=copy.deepcopy(plan);changed['recipe']['stop_frame_exclusive']=1
+                  ~~~~~~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_hdr_measure.py", line 135, in plan
+    def plan(self,**kw):return hdr_measure.prepare(self.f.p,self.f.s['id'],**kw)
+                               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\hdr_measure.py", line 137, in prepare
+    cfg = configuration(project['settings'].get('pixel_pipeline'), project['settings'], encoder)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\float_standard_render.py", line 65, in configuration
+    raise error('SIGNAL', 'SDR交付要求BT.709基色；HDR交付要求明确BT.2100信号')
+ai_ad_editor.errors.AppError: SDR交付要求BT.709基色；HDR交付要求明确BT.2100信号
+
+======================================================================
+ERROR: test_same_common_encoder_RGB16_digest_as_actual_render (test_hdr_measure.LightIntegrationTests.test_same_common_encoder_RGB16_digest_as_actual_render)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_hdr_measure.py", line 149, in test_same_common_encoder_RGB16_digest_as_actual_render
+    f=self.f;measurement=hdr_measure.measure(f.root,f.p,self.plan());result=f.execute('meter-match.mkv')
+                                                        ~~~~~~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_hdr_measure.py", line 135, in plan
+    def plan(self,**kw):return hdr_measure.prepare(self.f.p,self.f.s['id'],**kw)
+                               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\hdr_measure.py", line 137, in prepare
+    cfg = configuration(project['settings'].get('pixel_pipeline'), project['settings'], encoder)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\float_standard_render.py", line 65, in configuration
+    raise error('SIGNAL', 'SDR交付要求BT.709基色；HDR交付要求明确BT.2100信号')
+ai_ad_editor.errors.AppError: SDR交付要求BT.709基色；HDR交付要求明确BT.2100信号
+
+======================================================================
+FAIL: test_cancellation_after_real_first_frame_returns_no_partial_metrics (test_hdr_measure.LightIntegrationTests.test_cancellation_after_real_first_frame_returns_no_partial_metrics)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_hdr_measure.py", line 173, in test_cancellation_after_real_first_frame_returns_no_partial_metrics
+    self.assertEqual(c.exception.code,'CANCELLED');self.assertEqual(before,(f.root/'project.json').read_bytes())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'FLOAT_RENDER_SIGNAL' != 'CANCELLED'
+- FLOAT_RENDER_SIGNAL
++ CANCELLED
+
+
+======================================================================
+FAIL: test_real_CLI_readonly_all_frames_and_dryrun_without_decode (test_hdr_measure.LightIntegrationTests.test_real_CLI_readonly_all_frames_and_dryrun_without_decode)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_hdr_measure.py", line 140, in test_real_CLI_readonly_all_frames_and_dryrun_without_decode
+    code,r=f.invoke(*args,'--dry-run');self.assertEqual(code,0,r);self.assertEqual(r['status'],'planned')
+                                       ~~~~~~~~~~~~~~~~^^^^^^^^^^
+AssertionError: 2 != 0 : {'ok': False, 'command': 'surface.measure', 'request_id': 'req_20261028165545_2a7f89f2', 'operation_id': None, 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'FLOAT_RENDER_SIGNAL', 'message': 'SDR交付要求BT.709基色；HDR交付要求明确BT.2100信号', 'path': None, 'retryable': False}], 'provenance': {'cli_version': '0.1.49', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-10-28T16:55:45.761813Z', 'finished_at': '2026-10-28T16:55:45.761818Z', 'network': 'disabled'}}
+
+======================================================================
+FAIL: test_maxRGB_and_CIE_Y_differ_for_saturated_colors (test_hdr_measure.LightUnitTests.test_maxRGB_and_CIE_Y_differ_for_saturated_colors)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_hdr_measure.py", line 37, in test_maxRGB_and_CIE_Y_differ_for_saturated_colors
+    self.assertAlmostEqual(result['maximum_frame_average']['cie_y']['nits'], 16.1001645, places=5)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 16.100096424056446 != 16.1001645 within 5 places (6.807594355606739e-05 difference)
+
+----------------------------------------------------------------------
+Ran 17 tests in 7.818s
+
+FAILED (failures=3, errors=3)

@@ -7,7 +7,7 @@ description: "Edit and generate local videos with agent editor kit: multitrack e
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.46` / CLI `0.1.48`.
+The current local runtime is `v0.1.0-alpha.4-local.47` / CLI `0.1.49`.
 Native Float32 GPU operations now use bounded owned control pipes. Read
 [GPU execution](references/projection-gpu.md) for policy, actual operator counts,
 cancellation and process/thread/stream cleanup receipts.
@@ -26,6 +26,9 @@ For actual image-highlight Bloom and film Halation, read
 [highlight glow](references/highlight-glow.md). Inspect `native:float32-glow`,
 author radius/threshold/knee/tint keys in explicit linear RGB, and preview
 the original alongside actual encoded light spread before client selection.
+For all-frame HDR light metering and colour-clipping receipts, read
+[light measurement](references/hdr-measurement.md). Use actual native frames,
+explicit nits and the full/partial scope flags; keep MaxRGB separate from CIE Y.
 For actual RGB ICC output, 16-bit profile-embedded frame delivery and native
 soft proof, read [ICC output](references/icc-output.md). Keep device RGB delivery
 separate from standard YUV movie encoding; inspect every PNG and the PCM clock.

@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.48 / alpha.4-local.46 / r49 kit · 1 Skill / 17 modules / 87 files.**
+**CLI0.1.49 / alpha.4-local.47 / r50 kit · 1 Skill / 17 modules / 88 files.**
 
-新增**原生 RGB ICC 輸出、16位內嵌設定 PNG 序列與軟打樣**：實際B2A查找表、四意圖／BPC、明確亮度縮放、作者時間線逐影格交付及同步PCM；一般算繪／預覽原生模擬，設定依賴可移植。
+新增**全影格 HDR 光量測量與色彩裁切彙總**：實際作者時間線、明確nit、MaxRGB與CIE Y分別報告、峰值位置／最大影格平均／精確時長加權、可選有效畫面範圍。測量與正式算繪共用實際RGB16輸入路徑；中間包補齊所有影格轉換收據。
 
-[ICC output / soft proof workflow](ICC_OUTPUT.md)
+[Light metering workflow](HDR_MEASUREMENT.md)
 
 <!-- /community-current -->
 
@@ -88,6 +88,7 @@
 | F72 | 原生ICC來源色彩管理 | RGB ICC v2/v4矩陣/CLUT、明確SHA/意圖/BPC → 線性RGB工作域，Float32/alpha、實際預覽與專案依賴閉合。 | `native_icc_source_profiles; surface inspect-profile; surface export; render; preview; convert` | 固定MIT LittleCMS原生CPU；不含任意輸出ICC/軟打樣/CMYK/自動內嵌推斷。 |
 | F73 | HLG顯示黑位與完整訊號CLI | BT.2100黑位提升／逆變換、明確nit與黑位、零黑位原數值路徑、完整RGB/HDR/ICC JSON與明確域策略。 | `native_hlg_black_level; surface export; render; preview; convert` | 不推測螢幕；nominal0..1；超限拒絕或明確裁切；無動態HDR／完整ACES。 |
 | F74 | 原生ICC輸出與軟打樣 | RGB v2/v4矩陣／B2A CLUT、四意圖／BPC、明確nits、逐影格內嵌ICC的RGBA16 PNG與作者PCM、真實SOFTPROOFING及完整交付檢查。 | `native_icc_output_profiles; surface render; surface inspect-output; render; preview; convert` | CPU CMM；GPU剪輯獨立；8GiB產物預算；無CMYK／ICC5／物理設備校準。 |
+| F75 | 全影格HDR光量與轉換收據 | 明確nit、實際時間線與RGB16邊界；MaxRGB/CIE Y峰值、影格平均、位置／範圍／時長；原生中間包全影格裁切彙總。 | `native_hdr_light_measurement; surface measure; surface export; render` | CPU測量、獨立GPU剪輯；不推斷監看亮度、不自動寫SEI、不冒充編碼後測量。 |
 
 | 編號 | 服務模塊 | 運行形式 | 需要什么/提供什么 | 入口 | 範圍 |
 |---|---|---|---|---|---|
@@ -120,6 +121,7 @@
 | S27 | 原生ICC CMM服務 | 固定LittleCMS2.19.1 Windows x64 DLL、私有上下文、分塊Float32、持鎖/取消/關閉、實際設定檔位元組核驗。 | 包內原生DLL與MIT授權；無需新模型/全域安裝。 | `surface; render; preview; convert` | 16MiB/4096標籤與表面預算；CPU轉換，GPU合成獨立選擇。 |
 | S28 | 明確HLG黑位服務 | 分塊Float32/alpha、beta校驗、來源／目標黑位、輸出域計數及原生時鐘中間包。 | 包內原生Windows CPU數學；既有GPU合成獨立設定。 | `surface; render; preview; convert` | 無新增模型／全域安裝；不替代螢幕測量或HDR監看驗收。 |
 | S29 | ICC交付與模擬服務 | 逐影格ICC設備輸出、標準影片軟打樣、原生CMM控制代碼／位元組持鎖、PNG CRC及完整像素／PCM核驗。 | 固定MIT LittleCMS原生Windows；無需新模型。 | `surface render; surface inspect-output; render; preview; convert` | 設定本身映射與程式裁切分開；PNG序列與PCM，不將任意ICC RGB冒充標準YUV。 |
+| S30 | 光量診斷與全影格色彩稽核 | 唯讀原生時間線、可取消分塊測量、完整RGB16摘要、全影格轉換收據；實際來源／GPU資源回收。 | 既有FFmpeg／NumPy與可選OpenCL；不下載模型。 | `surface measure; surface export; render` | 部分影格或有效區域不代表整片全畫布；768MiB自有算子估算非總RSS／VRAM。 |
 
 ## 完整安裝版能力字段
 
@@ -5447,3 +5449,38 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 ```
 
 [CLI0.1.48 exact installed capabilities](icc-output-capabilities-cli-0.1.48.json).
+
+### `native_hdr_light_measurement`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "authored-delivery-rgb16-light-measure-v1",
+  "commands": [
+    "surface.measure",
+    "surface.measure --dry-run"
+  ],
+  "features": [
+    "all_authored_CFR_frames_or_explicit_half_open_selection",
+    "common_native_CPU_OpenCL_timeline_display_mapping_proof_and_delivery_edge",
+    "explicit_working_and_output_nit_units",
+    "exact_encoder_RGB16_input_digest",
+    "separate_decoded_linear_MaxRGB_and_CIE_Y_peak_and_frame_average",
+    "explicit_active_region_and_exact_duration_weighted_average",
+    "all_selected_frame_colour_counts_and_framed_receipt_digest",
+    "bounded_row_tiles_cancel_read_locks_and_owned_source_cleanup",
+    "readonly_author_project_and_no_implicit_SEI_or_monitor_inference"
+  ],
+  "limits": [
+    "before_YUV_codec_not_encoded_movie_or_physical_display_measurement",
+    "opaque_explicit_output_only_no_transparent_background_guess",
+    "no_automatic_outlier_filter_mastering_metadata_or_tone_mapping",
+    "partial_frame_or_active_region_results_not_full_content_certification",
+    "CPU_meter_and_colour_math_supported_editing_GPU_selected_separately",
+    "768MiB_operator_estimate_not_total_RSS_or_VRAM_guarantee",
+    "HDR10plus_DolbyVision_perceptual_gamut_and_natural_HDR_monitor_acceptance_pending"
+  ]
+}
+```
+
+[CLI0.1.49 exact installed capabilities](hdr-measure-capabilities-cli-0.1.49.json).

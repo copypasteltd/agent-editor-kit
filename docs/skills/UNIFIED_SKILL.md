@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.48 / alpha.4-local.46 / r49 kit · 1 Skill / 17 modules / 87 files.**
+**CLI0.1.49 / alpha.4-local.47 / r50 kit · 1 Skill / 17 modules / 88 files.**
 
-新增**原生 RGB ICC 输出、16位内嵌配置 PNG 序列与软打样**：实际B2A查找表、四意图/BPC、明确亮度缩放、作者时间线逐帧交付和同步PCM；普通渲染/预览原生模拟，配置依赖可移植。
+新增**全帧 HDR 光量测量与色彩裁切汇总**：实际作者时间线、明确nit、MaxRGB与CIE Y分别报告、峰值位置/最大帧平均/精确时长加权、可选有效画面范围。测量与正式渲染共用实际RGB16输入路径；中间包补齐所有帧的转换收据。
 
-[ICC output / soft proof workflow](../product/ICC_OUTPUT.md)
+[Light metering workflow](../product/HDR_MEASUREMENT.md)
 
 <!-- /community-current -->
 

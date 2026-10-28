@@ -1,0 +1,3459 @@
+{
+  "manifest_version": "0.1.0",
+  "operation_id": "render_20261028171057_e1c31af4",
+  "project_id": "proj_20261028170913_a2cf178f",
+  "sequence_id": "seq_main",
+  "output": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\renders\\hdr-master.mkv",
+  "sha256": "84a1370b6fbdead33e202cec2ec4cabf4278bcbbbe2c19f43a1a6bf1060dea91",
+  "probe": {
+    "duration_seconds": 4.0,
+    "duration_tick": 360000,
+    "format": "matroska,webm",
+    "format_long_name": "Matroska / WebM",
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High 4:4:4 Predictive",
+        "codec_type": "video",
+        "codec_tag_string": "[0][0][0][0]",
+        "codec_tag": "0x0000",
+        "mime_codec_string": "avc1.f40016",
+        "width": 640,
+        "height": 360,
+        "coded_width": 640,
+        "coded_height": 360,
+        "has_b_frames": 0,
+        "pix_fmt": "yuv444p10le",
+        "level": 22,
+        "color_range": "tv",
+        "color_space": "bt2020nc",
+        "color_transfer": "smpte2084",
+        "color_primaries": "bt2020",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "r_frame_rate": "12/1",
+        "avg_frame_rate": "12/1",
+        "time_base": "1/1000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "bits_per_raw_sample": "10",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 0,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "ENCODER": "Lavc62.28.100 libx264",
+          "DURATION": "00:00:04.000000000"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "pcm_f32le",
+        "codec_long_name": "PCM 32-bit floating point little-endian",
+        "codec_type": "audio",
+        "codec_tag_string": "[0][0][0][0]",
+        "codec_tag": "0x0000",
+        "sample_fmt": "flt",
+        "sample_rate": "48000",
+        "channels": 2,
+        "bits_per_sample": 32,
+        "initial_padding": 0,
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/1000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "bit_rate": "3072000",
+        "disposition": {
+          "default": 0,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "ENCODER": "Lavc62.28.100 pcm_f32le",
+          "DURATION": "00:00:04.000000000"
+        }
+      }
+    ],
+    "video": {
+      "codec": "h264",
+      "width": 640,
+      "height": 360,
+      "pix_fmt": "yuv444p10le",
+      "fps": "12/1",
+      "color_space": "bt2020nc",
+      "duration_seconds": 0.0,
+      "start_time_seconds": 0.0
+    },
+    "audio": {
+      "codec": "pcm_f32le",
+      "sample_rate": 48000,
+      "channels": 2,
+      "duration_seconds": 0.0,
+      "start_time_seconds": 0.0
+    }
+  },
+  "command": [
+    "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+    "-hide_banner",
+    "-y",
+    "-loglevel",
+    "error",
+    "-nostdin",
+    "-filter_complex_threads",
+    "1",
+    "-progress",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\renders\\.tmp\\render_20261028171057_e1c31af4\\ffmpeg-progress.log",
+    "-i",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\assets\\tones_source-stereo.wav",
+    "-thread_queue_size",
+    "2",
+    "-f",
+    "rawvideo",
+    "-pixel_format",
+    "gbrap16le",
+    "-video_size",
+    "640x360",
+    "-framerate",
+    "12",
+    "-color_range",
+    "pc",
+    "-colorspace",
+    "rgb",
+    "-color_primaries",
+    "bt2020",
+    "-color_trc",
+    "smpte2084",
+    "-i",
+    "pipe:0",
+    "-filter_complex",
+    "[0:a]aresample=48000:osf=flt:first_pts=0,apad=whole_len=192000,atrim=start=0.000000:end=4.000000,asetpts=PTS-STARTPTS,aresample=48000,apad=whole_len=192000,atrim=end_sample=192000,asetpts=N/SR/TB,adelay=0S:all=1[a0];color=c=black:s=640x360:r=12/1:d=4.000000[base];[base]null[vout];[a0]amix=inputs=1:duration=longest:dropout_transition=0:normalize=0[abus1];[abus1]amix=inputs=1:duration=longest:dropout_transition=0:normalize=0[abus2];[abus2]aresample=48000,apad=whole_len=192000,atrim=end_sample=192000,asetpts=N/SR/TB[aout];[vout]nullsink;[1:v:0]format=gbrp16le,zscale=primariesin=2020:transferin=smpte2084:matrixin=gbr:rangein=full:primaries=2020:transfer=smpte2084:matrix=2020_ncl:range=limited:chromal=left:dither=none,format=yuv444p10le[float_vout]",
+    "-map",
+    "[float_vout]",
+    "-map",
+    "[aout]",
+    "-c:v",
+    "libx264",
+    "-preset",
+    "ultrafast",
+    "-crf",
+    "0",
+    "-pix_fmt",
+    "yuv444p10le",
+    "-color_primaries",
+    "bt2020",
+    "-color_trc",
+    "smpte2084",
+    "-colorspace",
+    "bt2020nc",
+    "-color_range",
+    "tv",
+    "-chroma_sample_location",
+    "left",
+    "-c:a",
+    "pcm_f32le",
+    "-f",
+    "matroska",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\renders\\.tmp\\render_20261028171057_e1c31af4\\hdr-master.mkv"
+  ],
+  "filter_graph_transport": {
+    "mode": "inline",
+    "sha256": "sha256:98962e15a357a8831c1c7a43a69f3bd395e4bfb2829bacd3ff6673f2bf8ee6d7",
+    "utf8_bytes": 753,
+    "logical_command_utf16_units": 1779
+  },
+  "filter_complex": "[0:a]aresample=48000:osf=flt:first_pts=0,apad=whole_len=192000,atrim=start=0.000000:end=4.000000,asetpts=PTS-STARTPTS,aresample=48000,apad=whole_len=192000,atrim=end_sample=192000,asetpts=N/SR/TB,adelay=0S:all=1[a0];color=c=black:s=640x360:r=12/1:d=4.000000[base];[base]null[vout];[a0]amix=inputs=1:duration=longest:dropout_transition=0:normalize=0[abus1];[abus1]amix=inputs=1:duration=longest:dropout_transition=0:normalize=0[abus2];[abus2]aresample=48000,apad=whole_len=192000,atrim=end_sample=192000,asetpts=N/SR/TB[aout];[vout]nullsink;[1:v:0]format=gbrp16le,zscale=primariesin=2020:transferin=smpte2084:matrixin=gbr:rangein=full:primaries=2020:transfer=smpte2084:matrix=2020_ncl:range=limited:chromal=left:dither=none,format=yuv444p10le[float_vout]",
+  "inputs": [
+    {
+      "kind": "sequence-projection-budget",
+      "method": "bilinear",
+      "max_working_bytes": 1073741824,
+      "nodes": [],
+      "estimated_working_bytes": 0,
+      "scope": "reachable-sequence-projection-instances-only-not-process-rss",
+      "time_disjoint_instances_charged": true,
+      "unused_sequences_charged": false
+    },
+    {
+      "asset_id": "tones",
+      "clip_id": "sound-clip",
+      "track_id": "sound",
+      "input": 0,
+      "kind": "audio",
+      "source_in_tick": 0,
+      "source_out_tick": 360000,
+      "timeline_start_sample": 0,
+      "duration_samples": 192000,
+      "sample_rate": 48000,
+      "group_id": null,
+      "native_audio_clock": {
+        "protocol": "native-decoded-audio-interval-clock-v1",
+        "kind": "native-audio-clock",
+        "key": "5a42268ff4bde106b9a4f69f254343e70da5b5ecde72ac141be1806891b489d4",
+        "status": "created",
+        "source_index_decode_calls": 1,
+        "recipe": {
+          "protocol": "native-decoded-audio-interval-clock-v1",
+          "artifacts": {
+            "source": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\assets\\tones_source-stereo.wav",
+              "role": "native-audio-clock",
+              "bytes": 1536092,
+              "sha256": "sha256:e59d4ada9fcddac1b8e462320abb524e81b7795843b708d26861e5ecf4e7c539"
+            },
+            "ffmpeg": {
+              "path": "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+              "role": "native-audio-clock",
+              "bytes": 223360000,
+              "sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+            },
+            "ffprobe": {
+              "path": "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.exe",
+              "role": "native-audio-clock",
+              "bytes": 223153664,
+              "sha256": "sha256:70872c3ffbc43d0b2c570f9837f54d6e9a832f4ca25463e9735b6a3ec0621478"
+            },
+            "implementation": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\native_audio_clock.py",
+              "role": "native-audio-clock",
+              "bytes": 23327,
+              "sha256": "sha256:4ede471af5c2ebce98f6839eaa59493daa4cf67e995838a2a6fece77807d19fd"
+            }
+          },
+          "format": "native-rate-native-layout-f32le",
+          "quantization": "half-tick-per-PTS-with-coarse-relative-anchor-uncertainty;exact-native-sample-grid-keeps-single-sample-jumps",
+          "overlap": "later-decoded-frame-overwrites-earlier-samples",
+          "soft_async_resampling": false,
+          "max_frames": 2000000,
+          "max_index_bytes": 67108864,
+          "max_pcm_bytes": 8589934592,
+          "max_frame_bytes": 524288
+        },
+        "index_path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\cache\\native-audio-clock\\5a42268ff4bde106b9a4f69f254343e70da5b5ecde72ac141be1806891b489d4\\index.json",
+        "metadata_sha256": "sha256:2955b7b342288b44cf59dbbc3a116dc5fad57529287be50fd25f77c8d1601e00",
+        "pcm_path": null,
+        "input_args": [
+          "-i",
+          "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\assets\\tones_source-stereo.wav"
+        ],
+        "materialized": true,
+        "stats": {
+          "logical_frames": 192000,
+          "native_sample_rate": 48000,
+          "channels": 2,
+          "channel_layout": "",
+          "native_time_base": "1/48000",
+          "demux_origin": "0",
+          "frame_count": 47,
+          "decoded_frames": 192000,
+          "gap_count": 0,
+          "overlap_count": 0,
+          "leading_gap_samples": 0,
+          "negative_first_sample": 0,
+          "gap_samples": 0,
+          "overlap_samples": 0,
+          "events": [],
+          "events_truncated": false,
+          "normalization_needed": false,
+          "quantization_tolerance_samples_rational": "1/2",
+          "relative_coarse_anchor_tolerance_samples_rational": "1/2",
+          "subtick_clock_jumps_recoverable": true,
+          "soft_async_resampling": false
+        },
+        "files": {
+          "frames.i64le": {
+            "bytes": 1128,
+            "sha256": "sha256:82497964973d7e5f769962649cae5a200c5714f304803f94674f73f2f17fdd61"
+          },
+          "audio.pcm": {
+            "bytes": 0,
+            "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        }
+      }
+    },
+    {
+      "kind": "audio-track-bus",
+      "track_id": "sound",
+      "scope_id": null,
+      "child_input_count": 1,
+      "mixing": "float-sum-normalize-disabled",
+      "processing": {},
+      "sample_rate": 48000
+    },
+    {
+      "kind": "sequence-audio-root",
+      "sample_rate": 48000,
+      "output_samples": 192000,
+      "child_input_count": 1,
+      "mixing": "float-sum-normalize-disabled",
+      "automatic_limiter": false,
+      "has_audible_inputs": true
+    },
+    {
+      "kind": "float-native-video",
+      "float_pipeline": {
+        "protocol": "standard-render-native-float32-v1",
+        "engine": "float32-native-v1",
+        "standard_render_selected": true,
+        "author_project_rewritten": false,
+        "whole_movie_pixel_cache": false,
+        "working_signal": {
+          "primaries": "bt2020",
+          "transfer": "linear",
+          "reference_white_nits": 203,
+          "display_peak_nits": null,
+          "system_gamma": null
+        },
+        "output_signal": {
+          "primaries": "bt2020",
+          "transfer": "pq-st2084",
+          "reference_white_nits": 203,
+          "display_peak_nits": null,
+          "system_gamma": null
+        },
+        "background_signal": {
+          "primaries": "bt709",
+          "transfer": "srgb"
+        },
+        "range_policy": "reject",
+        "HDR_accepted": false,
+        "network": false,
+        "source_receipts": {
+          "chart": {
+            "protocol": "locked-native-clock-window-float32-source-v1",
+            "network": false,
+            "default_renderer_integrated": false,
+            "HDR_accepted": false,
+            "source": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\assets\\chart_source-linear.mkv",
+            "source_sha256": "sha256:df1b91675eac30cff344246714066412a7bd67fedd01ac26bb1dae7c6956f943",
+            "native_frame_clock": true,
+            "native_time_base": "1/1000",
+            "demux_origin": "0",
+            "origin_from_caller": false,
+            "native_stream": {
+              "chroma_location": "unspecified",
+              "color_primaries": "unknown",
+              "color_range": "pc",
+              "color_space": "gbr",
+              "color_transfer": "unknown",
+              "height": "360",
+              "pix_fmt": "gbrp16le",
+              "sample_aspect_ratio": "N/A",
+              "time_base": "1/1000",
+              "width": "640"
+            },
+            "format_info": {
+              "start_time": "0.000000"
+            },
+            "native_index": {
+              "protocol": "native-video-frame-index-v1",
+              "key": "7ec3503d432fd5970949bbc4045786dc53b4f35c0f26876269a6de916b4bf642",
+              "status": "cache-hit",
+              "source_index_decode_calls": 0,
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\cache\\native-video-index\\7ec3503d432fd5970949bbc4045786dc53b4f35c0f26876269a6de916b4bf642",
+              "frames": 48,
+              "byte_validation": true,
+              "files": {
+                "metadata": {
+                  "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\cache\\native-video-index\\7ec3503d432fd5970949bbc4045786dc53b4f35c0f26876269a6de916b4bf642\\index.json",
+                  "bytes": 1892,
+                  "sha256": "sha256:1e2b8476e9cb54c8497c2dc35551b2ad3f5f8a850108736bb2c0bd8764d7908c"
+                },
+                "durations": {
+                  "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\cache\\native-video-index\\7ec3503d432fd5970949bbc4045786dc53b4f35c0f26876269a6de916b4bf642\\durations.i64le",
+                  "bytes": 384,
+                  "sha256": "sha256:d98e49b7138e696ae387d491e67f3091aa6496f698a5ef2f7160518617748c06"
+                },
+                "pts": {
+                  "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\cache\\native-video-index\\7ec3503d432fd5970949bbc4045786dc53b4f35c0f26876269a6de916b4bf642\\pts.i64le",
+                  "bytes": 384,
+                  "sha256": "sha256:7339b72cd7f31c6ce25e1fc7059dd9884f649b128e653a3f87f8b56236b2cc67"
+                }
+              },
+              "artifacts": {
+                "source": {
+                  "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\assets\\chart_source-linear.mkv",
+                  "role": "native-index-source",
+                  "bytes": 1518773,
+                  "sha256": "sha256:df1b91675eac30cff344246714066412a7bd67fedd01ac26bb1dae7c6956f943"
+                },
+                "ffprobe": {
+                  "path": "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.exe",
+                  "role": "native-index-ffprobe",
+                  "bytes": 223153664,
+                  "sha256": "sha256:70872c3ffbc43d0b2c570f9837f54d6e9a832f4ca25463e9735b6a3ec0621478"
+                },
+                "implementation": {
+                  "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\native_video_index.py",
+                  "role": "native-index-implementation",
+                  "bytes": 12680,
+                  "sha256": "sha256:2adfefa4826f9fcf187a84647b6b931d134a2627bd6133fd86b61f0332003b71"
+                },
+                "probe_implementation": {
+                  "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\reverse_video_clock.py",
+                  "role": "native-index-probe_implementation",
+                  "bytes": 18118,
+                  "sha256": "sha256:bac8b9a0098de010b0eed47439056eaab1f91edd3a7c414f473867d1ec49650e"
+                }
+              }
+            },
+            "native_format": "gbrp16le",
+            "pixel_byte_layout": "gbrp16le",
+            "source_signal": {
+              "primaries": "bt2020",
+              "transfer": "linear",
+              "reference_white_nits": 1000,
+              "display_peak_nits": null,
+              "system_gamma": null
+            },
+            "working_signal": {
+              "primaries": "bt2020",
+              "transfer": "linear",
+              "reference_white_nits": 203,
+              "display_peak_nits": null,
+              "system_gamma": null
+            },
+            "source_color_spec": null,
+            "color_spec_overrides_tags": false,
+            "alpha_association": "straight",
+            "field_order": "progressive",
+            "scan_assumption": null,
+            "scan_automatically_verified": true,
+            "progressive_only": true,
+            "native_raster_orientation_applied": false,
+            "sample_aspect_ratio_applied": false,
+            "CFR_normalization": false,
+            "source_frames": 48,
+            "key_probe": {
+              "command": [
+                "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.exe",
+                "-v",
+                "error",
+                "-protocol_whitelist",
+                "file,pipe",
+                "-select_streams",
+                "v:0",
+                "-skip_frame",
+                "nokey",
+                "-show_frames",
+                "-show_streams",
+                "-show_entries",
+                "frame=key_frame,best_effort_timestamp:frame_side_data=:stream=field_order:stream_disposition=:stream_tags=:stream_side_data=",
+                "-of",
+                "compact=p=1:nk=0",
+                "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\assets\\chart_source-linear.mkv"
+              ],
+              "exit_code": 0,
+              "keyframes": 4,
+              "field_order": "progressive",
+              "stdout_bytes": 2225,
+              "maximum_queued_chunks": 2,
+              "chunk_bytes": 65536,
+              "queue_chunks_limit": 4,
+              "all_owned_threads_exited": true
+            },
+            "requested_window_frames": 16,
+            "effective_window_frames": 16,
+            "cache_limit_bytes": 268435456,
+            "maximum_cached_float_bytes": 58982400,
+            "cache_hits": 45,
+            "decoded_windows": 3,
+            "delivered_native_frames": 48,
+            "logical_preroll_frame_distance_total": 12,
+            "logical_preroll_is_actual_decoder_work": false,
+            "frame_copies_owned": true,
+            "recent_windows_limit": 64,
+            "whole_movie_pixel_cache": false,
+            "cache_budget_is_total_RSS_limit": false,
+            "index_maximum_frames": 1000000,
+            "reverse_complexity_guaranteed_linear": false,
+            "artifacts": {
+              "source": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\assets\\chart_source-linear.mkv",
+                "role": "float-native-source-source",
+                "bytes": 1518773,
+                "sha256": "sha256:df1b91675eac30cff344246714066412a7bd67fedd01ac26bb1dae7c6956f943"
+              },
+              "ffmpeg": {
+                "path": "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+                "role": "float-native-source-ffmpeg",
+                "bytes": 223360000,
+                "sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+              },
+              "ffprobe": {
+                "path": "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.exe",
+                "role": "float-native-source-ffprobe",
+                "bytes": 223153664,
+                "sha256": "sha256:70872c3ffbc43d0b2c570f9837f54d6e9a832f4ca25463e9735b6a3ec0621478"
+              },
+              "float_native_source": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_native_source.py",
+                "role": "float-native-source-float_native_source",
+                "bytes": 21473,
+                "sha256": "sha256:a76aaa6343ea97c0c25e8e3d355c3948a8e8c2201ba7d7f36c2a140a56d841dd"
+              },
+              "float_native_pipe": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_native_pipe.py",
+                "role": "float-native-source-float_native_pipe",
+                "bytes": 5346,
+                "sha256": "sha256:4b89898462505f58fbbe1ca053a0f4f2ef475f417a99dabeb470f999353eb708"
+              },
+              "float_pixels": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_pixels.py",
+                "role": "float-native-source-float_pixels",
+                "bytes": 7700,
+                "sha256": "sha256:863991d7c7e88db619b72e268321fe182baca8d4e8f63d8c5166a945928e127f"
+              },
+              "float_yuv": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_yuv.py",
+                "role": "float-native-source-float_yuv",
+                "bytes": 9014,
+                "sha256": "sha256:031b34c9b75e141946eda3ace6521c015c99023fdc5c725be34701577a9e5a1b"
+              },
+              "float_color_signal": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_color_signal.py",
+                "role": "float-native-source-float_color_signal",
+                "bytes": 11155,
+                "sha256": "sha256:62f4bf0ada897af57edc3d1c8c44728a7dad0161ea28803663f84e9531182b93"
+              },
+              "float_hdr": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_hdr.py",
+                "role": "float-native-source-float_hdr",
+                "bytes": 11344,
+                "sha256": "sha256:21314466b99d1b8ab9fb52b1868a30d20bde126c7ab5a0253b7487f7d87746e9"
+              },
+              "float_hlg_black": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_hlg_black.py",
+                "role": "float-native-source-float_hlg_black",
+                "bytes": 1748,
+                "sha256": "sha256:f601d145b26e7da72884e157d54519704cb213d5cd6da76be7792579bc2b1c8e"
+              },
+              "float_chromatic": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_chromatic.py",
+                "role": "float-native-source-float_chromatic",
+                "bytes": 4534,
+                "sha256": "sha256:8e2b46d73db3e19a4534eda68519d374a5dc6aff79ca2fc7085bac3f89d675d6"
+              },
+              "icc_profiles": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\icc_profiles.py",
+                "role": "float-native-source-icc_profiles",
+                "bytes": 13816,
+                "sha256": "sha256:ba1ddcdba127f4c7f9f51794b28b91a0b99f4aa0fa01cb20ea772e7f6b211bff"
+              },
+              "float_timeline": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_timeline.py",
+                "role": "float-native-source-float_timeline",
+                "bytes": 36704,
+                "sha256": "sha256:ba0ad00a845fe99dfc0de4d6413d63b84e38a85ada109f2b7dd9953412962048"
+              },
+              "native_video_index": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\native_video_index.py",
+                "role": "float-native-source-native_video_index",
+                "bytes": 12680,
+                "sha256": "sha256:2adfefa4826f9fcf187a84647b6b931d134a2627bd6133fd86b61f0332003b71"
+              },
+              "reverse_video_clock": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\reverse_video_clock.py",
+                "role": "float-native-source-reverse_video_clock",
+                "bytes": 18118,
+                "sha256": "sha256:bac8b9a0098de010b0eed47439056eaab1f91edd3a7c414f473867d1ec49650e"
+              },
+              "artifact_locks": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\artifact_locks.py",
+                "role": "float-native-source-artifact_locks",
+                "bytes": 8901,
+                "sha256": "sha256:574149014e79819f0e681f0efba8c6f8ad008cc7a8399d3b24bd9fcc2a06a4be"
+              },
+              "native_audio_clock": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\native_audio_clock.py",
+                "role": "float-native-source-native_audio_clock",
+                "bytes": 23327,
+                "sha256": "sha256:4ede471af5c2ebce98f6839eaa59493daa4cf67e995838a2a6fece77807d19fd"
+              },
+              "policy": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\policy.py",
+                "role": "float-native-source-policy",
+                "bytes": 13791,
+                "sha256": "sha256:16100811aae96699ce77245cec6746588953c4f9bc0071a1d04aec0c80ea4d25"
+              },
+              "media": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\media.py",
+                "role": "float-native-source-media",
+                "bytes": 18960,
+                "sha256": "sha256:75755c314fe01111d7ca85138efb6f9b0993e45c14c5a2b65cc1046c5e58cfba"
+              },
+              "index-metadata": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\cache\\native-video-index\\7ec3503d432fd5970949bbc4045786dc53b4f35c0f26876269a6de916b4bf642\\index.json",
+                "role": "float-native-index-metadata",
+                "bytes": 1892,
+                "sha256": "sha256:1e2b8476e9cb54c8497c2dc35551b2ad3f5f8a850108736bb2c0bd8764d7908c"
+              },
+              "index-durations": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\cache\\native-video-index\\7ec3503d432fd5970949bbc4045786dc53b4f35c0f26876269a6de916b4bf642\\durations.i64le",
+                "role": "float-native-index-durations",
+                "bytes": 384,
+                "sha256": "sha256:d98e49b7138e696ae387d491e67f3091aa6496f698a5ef2f7160518617748c06"
+              },
+              "index-pts": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\cache\\native-video-index\\7ec3503d432fd5970949bbc4045786dc53b4f35c0f26876269a6de916b4bf642\\pts.i64le",
+                "role": "float-native-index-pts",
+                "bytes": 384,
+                "sha256": "sha256:7339b72cd7f31c6ce25e1fc7059dd9884f649b128e653a3f87f8b56236b2cc67"
+              }
+            },
+            "locks": {
+              "mode": "windows-read-lock-command-scope",
+              "files_hashed": 22,
+              "bytes_hashed": 448253708,
+              "digest_reuses_while_locked": 290,
+              "write_and_delete_sharing": false,
+              "persists_across_commands": false
+            },
+            "HDR_input_components_clipped_across_decoded_windows": 0,
+            "pixel_boundary": {
+              "protocol": "native-RGB-gray-to-straight-float32-v1",
+              "native_pixel_format": "gbrp16le",
+              "frame_bytes": 1382400,
+              "component_bits": 16,
+              "storage_bits": 16,
+              "native_floating": false,
+              "native_alpha_association": "straight",
+              "source_has_alpha": false,
+              "output": "straight-float32-RGBA",
+              "colour_transform": "none;source-numeric-values-only",
+              "estimated_working_bytes": 6916096,
+              "estimated_bytes_are_peak_RSS": false,
+              "hidden_straight_RGB": "retained;premultiplied-zero-alpha-canonicalized",
+              "HDR_accepted": false,
+              "editor_integrated": false
+            },
+            "color_boundary": {
+              "protocol": "explicit-display-nits-PQ-HLG-float32-v1",
+              "source_signal": {
+                "primaries": "bt2020",
+                "transfer": "linear",
+                "reference_white_nits": 1000,
+                "display_peak_nits": null,
+                "system_gamma": null
+              },
+              "target_signal": {
+                "primaries": "bt2020",
+                "transfer": "linear",
+                "reference_white_nits": 203,
+                "display_peak_nits": null,
+                "system_gamma": null
+              },
+              "linear_gamut_matrix": [
+                [
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  1.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "white": "D65; explicit declared reference_white_nits; display-linear working RGB",
+              "alpha": "bit-exact-independent-straight-coverage",
+              "RGB_clipping": "none",
+              "gamut_mapping": "none",
+              "negative_extension": "legacy relative transfers only; standard PQ/HLG domains enforced",
+              "bt709_interpretation": "published rounded camera OETF/inverse;not-BT1886-display-EOTF",
+              "same_signal_byte_exact": false,
+              "chromatic_adaptation": false,
+              "absolute_nits_managed": true,
+              "estimated_working_bytes": 40931328,
+              "estimated_bytes_are_peak_RSS": false,
+              "HDR_accepted": false,
+              "editor_integrated": false,
+              "linear_unit_scale": 4.926108374384237,
+              "relative_author_color_unit_inherited": false,
+              "hdr_output_domain_policy": "reject",
+              "hdr_output_components_clipped": 0,
+              "hdr_input_domain_policy": "reject",
+              "hdr_input_components_clipped": 0,
+              "HLG_black_level_nits": 0,
+              "HLG_RGB_coupled_OOTF": true
+            },
+            "recent_windows": [
+              {
+                "first_frame": 0,
+                "end_frame_exclusive": 16,
+                "command": [
+                  "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+                  "-nostdin",
+                  "-hide_banner",
+                  "-loglevel",
+                  "error",
+                  "-copyts",
+                  "-protocol_whitelist",
+                  "file,pipe",
+                  "-threads",
+                  "1",
+                  "-filter_threads",
+                  "1",
+                  "-noautorotate",
+                  "-i",
+                  "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\assets\\chart_source-linear.mkv",
+                  "-map",
+                  "0:v:0",
+                  "-an",
+                  "-sn",
+                  "-dn",
+                  "-vf",
+                  "trim=start_pts=0:end_pts=1333",
+                  "-fps_mode",
+                  "passthrough",
+                  "-pix_fmt",
+                  "+gbrp16le",
+                  "-frames:v",
+                  "16",
+                  "-f",
+                  "rawvideo",
+                  "pipe:1"
+                ],
+                "seek_seconds": null,
+                "previous_known_key_pts": 0,
+                "logical_preroll_frame_distance": 0,
+                "owned_pid": 37140,
+                "status": "passed",
+                "exit_code": 0,
+                "stdout_bytes": 22118400,
+                "maximum_queued_chunks": 4,
+                "all_owned_threads_exited": true
+              },
+              {
+                "first_frame": 16,
+                "end_frame_exclusive": 32,
+                "command": [
+                  "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+                  "-nostdin",
+                  "-hide_banner",
+                  "-loglevel",
+                  "error",
+                  "-copyts",
+                  "-protocol_whitelist",
+                  "file,pipe",
+                  "-threads",
+                  "1",
+                  "-filter_threads",
+                  "1",
+                  "-noautorotate",
+                  "-noaccurate_seek",
+                  "-ss",
+                  "1.000000",
+                  "-i",
+                  "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\assets\\chart_source-linear.mkv",
+                  "-map",
+                  "0:v:0",
+                  "-an",
+                  "-sn",
+                  "-dn",
+                  "-vf",
+                  "trim=start_pts=1333:end_pts=2667",
+                  "-fps_mode",
+                  "passthrough",
+                  "-pix_fmt",
+                  "+gbrp16le",
+                  "-frames:v",
+                  "16",
+                  "-f",
+                  "rawvideo",
+                  "pipe:1"
+                ],
+                "seek_seconds": "1.000000",
+                "previous_known_key_pts": 1000,
+                "logical_preroll_frame_distance": 4,
+                "owned_pid": 39468,
+                "status": "passed",
+                "exit_code": 0,
+                "stdout_bytes": 22118400,
+                "maximum_queued_chunks": 4,
+                "all_owned_threads_exited": true
+              },
+              {
+                "first_frame": 32,
+                "end_frame_exclusive": 48,
+                "command": [
+                  "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+                  "-nostdin",
+                  "-hide_banner",
+                  "-loglevel",
+                  "error",
+                  "-copyts",
+                  "-protocol_whitelist",
+                  "file,pipe",
+                  "-threads",
+                  "1",
+                  "-filter_threads",
+                  "1",
+                  "-noautorotate",
+                  "-noaccurate_seek",
+                  "-ss",
+                  "2.000000",
+                  "-i",
+                  "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\assets\\chart_source-linear.mkv",
+                  "-map",
+                  "0:v:0",
+                  "-an",
+                  "-sn",
+                  "-dn",
+                  "-vf",
+                  "trim=start_pts=2667",
+                  "-fps_mode",
+                  "passthrough",
+                  "-pix_fmt",
+                  "+gbrp16le",
+                  "-frames:v",
+                  "16",
+                  "-f",
+                  "rawvideo",
+                  "pipe:1"
+                ],
+                "seek_seconds": "2.000000",
+                "previous_known_key_pts": 2000,
+                "logical_preroll_frame_distance": 8,
+                "owned_pid": 33976,
+                "status": "passed",
+                "exit_code": 0,
+                "stdout_bytes": 22118400,
+                "maximum_queued_chunks": 4,
+                "all_owned_threads_exited": true
+              }
+            ],
+            "window_history_sha256": "sha256:d8b5f9ebac5a86b7483bec414abfa4f35da81bc5c21ade309651237d2123c269",
+            "locks_at_close": {
+              "mode": "windows-read-lock-command-scope",
+              "files_hashed": 22,
+              "bytes_hashed": 448253708,
+              "digest_reuses_while_locked": 290,
+              "write_and_delete_sharing": false,
+              "persists_across_commands": false
+            },
+            "closed": true
+          }
+        },
+        "display_light_nits_explicit": true,
+        "hdr_output": true,
+        "display_mapping": null,
+        "hdr_metadata_scope": "matching BT2020 NCL VUI transfer/primaries/range; no author mastering-display/CLL declaration",
+        "color_transforms_backend": "CPU Float64 tiled -> Float32; composition uses selected CPU/OpenCL backend",
+        "source_count": 1,
+        "per_source_cache_limit_bytes": 268435456,
+        "total_source_cache_limit_bytes": 268435456,
+        "cache_limit_is_process_RSS_limit": false,
+        "artifacts": [
+          {
+            "path": "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+            "role": "standard-float-render-runtime",
+            "bytes": 223360000,
+            "sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+          },
+          {
+            "path": "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.exe",
+            "role": "standard-float-render-runtime",
+            "bytes": 223153664,
+            "sha256": "sha256:70872c3ffbc43d0b2c570f9837f54d6e9a832f4ca25463e9735b6a3ec0621478"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_standard_render.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 32999,
+            "sha256": "sha256:02f664a986e0654b9f0d75508b0601d8f0feb62fd46f19d9a0accf534774dd6f"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_stream.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 13941,
+            "sha256": "sha256:d7c9262babc0eacb10e50245ccbdd08714543b0a51047c395d625d956e4ceb13"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_audio_graph.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 4549,
+            "sha256": "sha256:189db07b74634fb1c99956c38e0c74c077d5146de7248a5938f8cd6aae346399"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\render.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 330809,
+            "sha256": "sha256:2ba1fb627595e61118bf4f1c5141b8f90ab1e4da1f977297a44038b6ef3809cd"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_color_signal.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 11155,
+            "sha256": "sha256:62f4bf0ada897af57edc3d1c8c44728a7dad0161ea28803663f84e9531182b93"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_timeline.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 36704,
+            "sha256": "sha256:ba0ad00a845fe99dfc0de4d6413d63b84e38a85ada109f2b7dd9953412962048"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_tracking.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 16369,
+            "sha256": "sha256:955978836503f032531d9d603183a3b0ec0609de804326efa69cd7a8b08f2dcf"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\bindings.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 28535,
+            "sha256": "sha256:2822ecee397c7669ca9b277fa5f1316c648ea66cf0c9dc91a1b371f96e5c8d32"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\animation.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 2900,
+            "sha256": "sha256:b90064bd9de4fbe1aea85ba7bb11e5acfefc82a85c2b8078ba36bac64c59b949"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_crop.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 15687,
+            "sha256": "sha256:d6c0bc63be9a4bc179ab986647ae31dfea191b5e78fe04ad1ef565362a50ed63"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_adjustments.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 7322,
+            "sha256": "sha256:d2bf1546b3e4f396a831dc95d609f7d7b4c40b0b83b623ec77ed035ff712c1dc"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_effect_chain.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 10106,
+            "sha256": "sha256:a2dfc942ca8e07c06a2654ca00d9afd6efaf265d2f607a8b2dec56c2b6813c36"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_transitions.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 14515,
+            "sha256": "sha256:7de54ec6bd9497c8b9363707262d3b267cceb30576f61bb56747ebae137dd758"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_transition_plan.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 5634,
+            "sha256": "sha256:9081584a60972c789efac8f4405ac54cf4ce4cf2046982dd88932b17c3892912"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\source_transitions.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 17528,
+            "sha256": "sha256:1ec683a3c35285471c07161aa856d6580cb1ecc5dda4cadba609c403be82cb46"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_text.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 20321,
+            "sha256": "sha256:496c87c34db04c6eedbc062fa8883bfc3571d6b10f027fab946f1c688a1e9434"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_text_paint.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 5110,
+            "sha256": "sha256:907cc716268fbf99a2e606afc9bacaf2ecd7b9dd9d23cd9a1c08df29cda948be"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_text_coverage.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 16102,
+            "sha256": "sha256:dc2212f77592b271d2b658348e1cd112d74964f1ccd18cffd221c26d2c605521"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\text_paint.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 6220,
+            "sha256": "sha256:a924644f0396b5204efbb0e085f25d51f6cda5bfc75f2d44febc6796e42cb028"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\text_layout.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 5045,
+            "sha256": "sha256:1f3831478b41ea23c7dd445a66ba08249a4833cce852eb9190ac0a35936a210b"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\text_highlight.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 22841,
+            "sha256": "sha256:fb5745cc3bd4c52aef9fd79d14ad29be9338fc46bd164b7d373c910a3b9ff782"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\text_typing.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 12493,
+            "sha256": "sha256:150d8734c81f599c8a46e43aebe4aeca82ebda5f5fa790e08361c86e848e3544"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\captions.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 13732,
+            "sha256": "sha256:38c500ba0e2697e745d7ad8357d7a9e5cb9e771f4093750b0b6a8b67e7ee0c57"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 16348,
+            "sha256": "sha256:ad8b4533bd588449bda24f3e76fb5770f5ea3ea0d37cbb7775155c3ec9039f00"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_native.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 21634,
+            "sha256": "sha256:e066a6904ebc20f823b92781e3d687abc669e5016923a2de4ffaa49f4fa3c0cc"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_worker.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 10877,
+            "sha256": "sha256:6b223cd6190bf06f951447fb902271d5f1cd0d3f1fcade5fab811f81731cd2b2"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_control.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 6648,
+            "sha256": "sha256:717c02fd2ec1801587c4786c391f24a324fd9667aeec3d6be8c3272320c09b8d"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\procedural_particles.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 17658,
+            "sha256": "sha256:386a2b146997a82ff6065bd599d69ddc602d714e1cfc19157e27807327a55009"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\particle_animation.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 13223,
+            "sha256": "sha256:37e168c03f0634973ff38e9d265e165b8eb048bb7c9e87c4e0799707f76902c0"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_optics.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 10487,
+            "sha256": "sha256:0e8ffedb07f18304961494f289fdfe2f293a4abb92ed098014b36580b0c274a6"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_optics_kernel.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 2926,
+            "sha256": "sha256:92d2e83c126ee611831c1b0cf9a67d0130b6b32d8d3e42d0a92efbbee8755440"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_glow.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 11821,
+            "sha256": "sha256:e2541e639984aee370a19831ed72ba3d067e724331e9b06457ec1ec9f0843af0"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_glow_kernel.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 2539,
+            "sha256": "sha256:052f0483f5c0516c912bf5d3d6f420db6197b07013abe90a9ba1e9ab61b1ef98"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_hdr.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 11344,
+            "sha256": "sha256:21314466b99d1b8ab9fb52b1868a30d20bde126c7ab5a0253b7487f7d87746e9"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_hlg_black.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 1748,
+            "sha256": "sha256:f601d145b26e7da72884e157d54519704cb213d5cd6da76be7792579bc2b1c8e"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\colour_audit.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 2485,
+            "sha256": "sha256:50f15bb81fbd73a09c3cecaeacf74002894fadfbefe30eba90a3c06bdaf7bed8"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\hdr_metadata.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 9887,
+            "sha256": "sha256:b6df3573305bb7920d2748c2e2910f90c2e40a839d5c4cc7c3d0ca383e8b40bd"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_chromatic.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 4534,
+            "sha256": "sha256:8e2b46d73db3e19a4534eda68519d374a5dc6aff79ca2fc7085bac3f89d675d6"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\icc_profiles.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 13816,
+            "sha256": "sha256:ba1ddcdba127f4c7f9f51794b28b91a0b99f4aa0fa01cb20ea772e7f6b211bff"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\icc_output.py",
+            "role": "standard-float-render-runtime",
+            "bytes": 10740,
+            "sha256": "sha256:33fd6af8f46cf6ad4ea4e1a82dc6d20651303cf13b68c30c94d18973bde11bc8"
+          }
+        ],
+        "projection_working_bytes_limit": 805306368,
+        "projection_budget_scope": "each float projection/composite/delivery call; not total process RSS",
+        "timeline": {
+          "protocol": "author-clock-float32-frame-host-v1",
+          "sequence_id": "seq_main",
+          "display_fps": "12",
+          "frames": 48,
+          "working_signal": {
+            "primaries": "bt2020",
+            "transfer": "linear",
+            "reference_white_nits": 203,
+            "display_peak_nits": null,
+            "system_gamma": null
+          },
+          "scalar_clock": "exact rational source/display intervals",
+          "curve_clock": "existing adaptive Float64 author clock;see compilation certificate",
+          "native_holds": "original PTS to next PTS;last native duration establishes EOF",
+          "nested_clock": "continuous author time;exact left/right limits propagated through reversal",
+          "transitions": {
+            "protocol": "linear-premultiplied-float32-transitions-v1",
+            "patterns": [
+              "circleclose",
+              "circlecrop",
+              "circleopen",
+              "coverdown",
+              "coverleft",
+              "coverright",
+              "coverup",
+              "diagbl",
+              "diagbr",
+              "diagtl",
+              "diagtr",
+              "dip_black",
+              "dip_white",
+              "distance",
+              "fade",
+              "fadeblack",
+              "fadefast",
+              "fadegrays",
+              "fadeslow",
+              "fadewhite",
+              "hblur",
+              "hlslice",
+              "hlwind",
+              "horzclose",
+              "horzopen",
+              "hrslice",
+              "hrwind",
+              "pixelize",
+              "radial",
+              "rectcrop",
+              "revealdown",
+              "revealleft",
+              "revealright",
+              "revealup",
+              "slidedown",
+              "slideleft",
+              "slideright",
+              "slideup",
+              "smoothdown",
+              "smoothleft",
+              "smoothright",
+              "smoothup",
+              "squeezeh",
+              "squeezev",
+              "vdslice",
+              "vdwind",
+              "vertclose",
+              "vertopen",
+              "vuslice",
+              "vuwind",
+              "wipebl",
+              "wipebr",
+              "wipedown",
+              "wipeleft",
+              "wiperight",
+              "wipetl",
+              "wipetr",
+              "wipeup",
+              "zoomin"
+            ],
+            "source_handle_plans": [],
+            "double_source_over_crossfade": false,
+            "group_spatial_edges": true,
+            "GPU": false
+          },
+          "text": {
+            "protocol": "native-glyph-linear-float32-paint-v1",
+            "authored_color": {
+              "primaries": "bt709",
+              "transfer": "srgb"
+            },
+            "working_signal": {
+              "primaries": "bt2020",
+              "transfer": "linear",
+              "reference_white_nits": 203,
+              "display_peak_nits": null,
+              "system_gamma": null
+            },
+            "glyph_coverage_bits": 8,
+            "color_component_bits": 32,
+            "media_pixels_in_glyph_process": false,
+            "cache_limit_bytes": 67108864,
+            "requested_cache_limit_bytes": 67108864,
+            "cached_bytes": 0,
+            "cache_hits": 0,
+            "native_snapshots": 0,
+            "plans": [],
+            "coverage_cache_limit_bytes": 67108864,
+            "coverage_cached_bytes": 0,
+            "coverage_cache_hits": 0,
+            "native_coverage_rasters": 0,
+            "admission": {
+              "max_working_bytes": 805306368,
+              "float_surfaces": 4,
+              "native_and_scratch_bytes_per_pixel": 8,
+              "two_cache_limits_reserved": true,
+              "tile_pixels": 16384,
+              "estimate_is_peak_RSS": false
+            },
+            "GPU": false,
+            "GPU_scope": "color-components/paragraph-over/word-selection;glyph-rasterization-on-CPU",
+            "HDR_accepted": false,
+            "whole_movie_cache": false
+          },
+          "adjustments": {
+            "protocol": "selected-sequence-author-clock-float32-adjustments-v1",
+            "selected_sequence_id": "seq_main",
+            "stage": "after-all-video-and-subtitle-tracks-before-delivery-conversion",
+            "clock": "selected sequence tick minus declared layer start; no frame-grid resnap",
+            "nested_application": "once at selected root; child canvases are not graded twice",
+            "intervals": "start-inclusive/end-exclusive; clipped coverage retains original animation clock",
+            "layers": [],
+            "active_plans": 0,
+            "applied_frames": 0,
+            "layer_applications": 0,
+            "integer_intermediate": false,
+            "GPU": false,
+            "audio_changed": false,
+            "workspace_scope": "existing per-effect explicit quota; not aggregate process RSS"
+          },
+          "tracking": {
+            "protocol": "native-PTS-float32-tracking-bindings-v1",
+            "plans": [],
+            "bindings": 0,
+            "observations": 0,
+            "visibility_protocol": "native-transition-point-footprint-v1",
+            "clock": "selected original PTS * native time base minus recorded demux origin; no CFR resnap",
+            "geometry": "same crop/fit/TRS inverse as rendered source; integer pixel centres and half-pixel edges",
+            "ROI_reference": "source geometry at target original author start; first observation if no native frame covers reference",
+            "scale_policy": "existing binding clamp 0.01..20; source projected ROI-width ratio",
+            "alpha": "binding base opacity times actual rendered source canvas alpha and scalar opacity; transition footprint mass clamped to 0..1",
+            "visibility": "source coverage/range/crop/mute, pixel alpha, mask and own edge/paired transition source contribution; higher tracks and natural identity unverified",
+            "transition_geometry": "alpha-weighted bilinear point footprint through the actual 59 transition kernels; centroid; missing required ROI footprint hides target",
+            "model_inference": false,
+            "display_keyframes_baked": false,
+            "integer_intermediate": false,
+            "evaluations": 0,
+            "hidden_evaluations": 0,
+            "cache_hits": 0,
+            "source_references": 0,
+            "edit_lineage": "native-tracking-edit-lineage-v1; empty route is hidden",
+            "pinned_reference_clock": "reference_output_tick on original complete source output"
+          },
+          "particles": {},
+          "GPU": {
+            "engine": "render-owned-float32-opencl-v1",
+            "request": {
+              "mode": "off",
+              "device": "0.0",
+              "max_working_bytes": 1073741824,
+              "probe_timeout_seconds": 30
+            },
+            "status": "off",
+            "dry_run": null,
+            "operations": {},
+            "CPU_scope": [
+              "glyph-rasterization",
+              "color-conversion",
+              "effects-except-native-optics-and-glow",
+              "masks",
+              "crop",
+              "transitions",
+              "non-normal-blends",
+              "audio",
+              "delivery-encoding"
+            ],
+            "GPU_scope": [
+              "premultiplied-affine",
+              "normal-source-over",
+              "text-color-components",
+              "binary-word-selection",
+              "seeded-particle-rasterization",
+              "analytic-optical-effects"
+            ],
+            "host_shared_bytes_limit": 1073741824,
+            "retained_host_shared_bytes": 0,
+            "device_bytes_limit": 1073741824,
+            "limits_are_peak_RSS": false,
+            "free_VRAM_reserved": false,
+            "integer_media_conversion": false,
+            "worker_closed": true,
+            "runtime_failure_CPU_fallback": false,
+            "artifacts": [
+              {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu.py",
+                "role": "float-gpu-execution",
+                "bytes": 16348,
+                "sha256": "sha256:ad8b4533bd588449bda24f3e76fb5770f5ea3ea0d37cbb7775155c3ec9039f00"
+              },
+              {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_worker.py",
+                "role": "float-gpu-execution",
+                "bytes": 10877,
+                "sha256": "sha256:6b223cd6190bf06f951447fb902271d5f1cd0d3f1fcade5fab811f81731cd2b2"
+              },
+              {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_native.py",
+                "role": "float-gpu-execution",
+                "bytes": 21634,
+                "sha256": "sha256:e066a6904ebc20f823b92781e3d687abc669e5016923a2de4ffaa49f4fa3c0cc"
+              },
+              {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_control.py",
+                "role": "float-gpu-execution",
+                "bytes": 6648,
+                "sha256": "sha256:717c02fd2ec1801587c4786c391f24a324fd9667aeec3d6be8c3272320c09b8d"
+              },
+              {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\procedural_particles.py",
+                "role": "float-gpu-execution",
+                "bytes": 17658,
+                "sha256": "sha256:386a2b146997a82ff6065bd599d69ddc602d714e1cfc19157e27807327a55009"
+              },
+              {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\particle_animation.py",
+                "role": "float-gpu-execution",
+                "bytes": 13223,
+                "sha256": "sha256:37e168c03f0634973ff38e9d265e165b8eb048bb7c9e87c4e0799707f76902c0"
+              },
+              {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_optics.py",
+                "role": "float-gpu-execution",
+                "bytes": 10487,
+                "sha256": "sha256:0e8ffedb07f18304961494f289fdfe2f293a4abb92ed098014b36580b0c274a6"
+              },
+              {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_optics_kernel.py",
+                "role": "float-gpu-execution",
+                "bytes": 2926,
+                "sha256": "sha256:92d2e83c126ee611831c1b0cf9a67d0130b6b32d8d3e42d0a92efbbee8755440"
+              },
+              {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_glow.py",
+                "role": "float-gpu-execution",
+                "bytes": 11821,
+                "sha256": "sha256:e2541e639984aee370a19831ed72ba3d067e724331e9b06457ec1ec9f0843af0"
+              },
+              {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_glow_kernel.py",
+                "role": "float-gpu-execution",
+                "bytes": 2539,
+                "sha256": "sha256:052f0483f5c0516c912bf5d3d6f420db6197b07013abe90a9ba1e9ab61b1ef98"
+              },
+              {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_color_signal.py",
+                "role": "float-gpu-execution",
+                "bytes": 11155,
+                "sha256": "sha256:62f4bf0ada897af57edc3d1c8c44728a7dad0161ea28803663f84e9531182b93"
+              },
+              {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_hdr.py",
+                "role": "float-gpu-execution",
+                "bytes": 11344,
+                "sha256": "sha256:21314466b99d1b8ab9fb52b1868a30d20bde126c7ab5a0253b7487f7d87746e9"
+              },
+              {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_hlg_black.py",
+                "role": "float-gpu-execution",
+                "bytes": 1748,
+                "sha256": "sha256:f601d145b26e7da72884e157d54519704cb213d5cd6da76be7792579bc2b1c8e"
+              },
+              {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_chromatic.py",
+                "role": "float-gpu-execution",
+                "bytes": 4534,
+                "sha256": "sha256:8e2b46d73db3e19a4534eda68519d374a5dc6aff79ca2fc7085bac3f89d675d6"
+              }
+            ],
+            "planned_maximum_pixels": 230400,
+            "planned_device_bytes": 11059200,
+            "planned_host_shared_bytes": 7603968,
+            "shared_handles_closed": true
+          },
+          "input_contract": "validated Agent Project IR;registered SHA and explicit common working RGB signal",
+          "audio_rendered": false,
+          "legacy_render_preview_cache_integrated": false,
+          "HDR_accepted": false,
+          "network": false
+        },
+        "projection_acceleration": {
+          "engine": "render-owned-float32-opencl-v1",
+          "request": {
+            "mode": "off",
+            "device": "0.0",
+            "max_working_bytes": 1073741824,
+            "probe_timeout_seconds": 30
+          },
+          "status": "off",
+          "dry_run": null,
+          "operations": {},
+          "CPU_scope": [
+            "glyph-rasterization",
+            "color-conversion",
+            "effects-except-native-optics-and-glow",
+            "masks",
+            "crop",
+            "transitions",
+            "non-normal-blends",
+            "audio",
+            "delivery-encoding"
+          ],
+          "GPU_scope": [
+            "premultiplied-affine",
+            "normal-source-over",
+            "text-color-components",
+            "binary-word-selection",
+            "seeded-particle-rasterization",
+            "analytic-optical-effects"
+          ],
+          "host_shared_bytes_limit": 1073741824,
+          "retained_host_shared_bytes": 0,
+          "device_bytes_limit": 1073741824,
+          "limits_are_peak_RSS": false,
+          "free_VRAM_reserved": false,
+          "integer_media_conversion": false,
+          "worker_closed": true,
+          "runtime_failure_CPU_fallback": false,
+          "artifacts": [
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu.py",
+              "role": "float-gpu-execution",
+              "bytes": 16348,
+              "sha256": "sha256:ad8b4533bd588449bda24f3e76fb5770f5ea3ea0d37cbb7775155c3ec9039f00"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_worker.py",
+              "role": "float-gpu-execution",
+              "bytes": 10877,
+              "sha256": "sha256:6b223cd6190bf06f951447fb902271d5f1cd0d3f1fcade5fab811f81731cd2b2"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_native.py",
+              "role": "float-gpu-execution",
+              "bytes": 21634,
+              "sha256": "sha256:e066a6904ebc20f823b92781e3d687abc669e5016923a2de4ffaa49f4fa3c0cc"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_control.py",
+              "role": "float-gpu-execution",
+              "bytes": 6648,
+              "sha256": "sha256:717c02fd2ec1801587c4786c391f24a324fd9667aeec3d6be8c3272320c09b8d"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\procedural_particles.py",
+              "role": "float-gpu-execution",
+              "bytes": 17658,
+              "sha256": "sha256:386a2b146997a82ff6065bd599d69ddc602d714e1cfc19157e27807327a55009"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\particle_animation.py",
+              "role": "float-gpu-execution",
+              "bytes": 13223,
+              "sha256": "sha256:37e168c03f0634973ff38e9d265e165b8eb048bb7c9e87c4e0799707f76902c0"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_optics.py",
+              "role": "float-gpu-execution",
+              "bytes": 10487,
+              "sha256": "sha256:0e8ffedb07f18304961494f289fdfe2f293a4abb92ed098014b36580b0c274a6"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_optics_kernel.py",
+              "role": "float-gpu-execution",
+              "bytes": 2926,
+              "sha256": "sha256:92d2e83c126ee611831c1b0cf9a67d0130b6b32d8d3e42d0a92efbbee8755440"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_glow.py",
+              "role": "float-gpu-execution",
+              "bytes": 11821,
+              "sha256": "sha256:e2541e639984aee370a19831ed72ba3d067e724331e9b06457ec1ec9f0843af0"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_glow_kernel.py",
+              "role": "float-gpu-execution",
+              "bytes": 2539,
+              "sha256": "sha256:052f0483f5c0516c912bf5d3d6f420db6197b07013abe90a9ba1e9ab61b1ef98"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_color_signal.py",
+              "role": "float-gpu-execution",
+              "bytes": 11155,
+              "sha256": "sha256:62f4bf0ada897af57edc3d1c8c44728a7dad0161ea28803663f84e9531182b93"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_hdr.py",
+              "role": "float-gpu-execution",
+              "bytes": 11344,
+              "sha256": "sha256:21314466b99d1b8ab9fb52b1868a30d20bde126c7ab5a0253b7487f7d87746e9"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_hlg_black.py",
+              "role": "float-gpu-execution",
+              "bytes": 1748,
+              "sha256": "sha256:f601d145b26e7da72884e157d54519704cb213d5cd6da76be7792579bc2b1c8e"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_chromatic.py",
+              "role": "float-gpu-execution",
+              "bytes": 4534,
+              "sha256": "sha256:8e2b46d73db3e19a4534eda68519d374a5dc6aff79ca2fc7085bac3f89d675d6"
+            }
+          ],
+          "planned_maximum_pixels": 230400,
+          "planned_device_bytes": 11059200,
+          "planned_host_shared_bytes": 7603968,
+          "shared_handles_closed": true
+        },
+        "audio_project_sha256": "sha256:cea19a7fecea265ed0b53c05dcf0350611358a1083180794d78b963130541fb7",
+        "audio_samples_48000": 192000,
+        "delivery_pixel_format": "yuv444p10le",
+        "alpha_quantization_bits": null,
+        "integer_colour_conversion": "zscale explicit RGB full/2020_ncl YCbCr; unchanged transfer; left chroma",
+        "source_lifecycle": "original inputs locked through publication; providers closed on render context exit",
+        "last_output_color_boundary": {
+          "protocol": "explicit-display-nits-PQ-HLG-float32-v1",
+          "source_signal": {
+            "primaries": "bt2020",
+            "transfer": "linear",
+            "reference_white_nits": 203,
+            "display_peak_nits": null,
+            "system_gamma": null
+          },
+          "target_signal": {
+            "primaries": "bt2020",
+            "transfer": "pq-st2084",
+            "reference_white_nits": 203,
+            "display_peak_nits": null,
+            "system_gamma": null
+          },
+          "linear_gamut_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "white": "D65; explicit declared reference_white_nits; display-linear working RGB",
+          "alpha": "bit-exact-independent-straight-coverage",
+          "RGB_clipping": "none",
+          "gamut_mapping": "none",
+          "negative_extension": "legacy relative transfers only; standard PQ/HLG domains enforced",
+          "bt709_interpretation": "published rounded camera OETF/inverse;not-BT1886-display-EOTF",
+          "same_signal_byte_exact": false,
+          "chromatic_adaptation": false,
+          "absolute_nits_managed": true,
+          "estimated_working_bytes": 40931328,
+          "estimated_bytes_are_peak_RSS": false,
+          "HDR_accepted": false,
+          "editor_integrated": false,
+          "linear_unit_scale": 1.0,
+          "relative_author_color_unit_inherited": false,
+          "hdr_output_domain_policy": "reject",
+          "hdr_output_components_clipped": 0,
+          "hdr_input_domain_policy": "reject",
+          "hdr_input_components_clipped": 0,
+          "HLG_black_level_nits": 0,
+          "HLG_RGB_coupled_OOTF": true
+        },
+        "transport": {
+          "protocol": "standard-render-native-float32-v1",
+          "frames": 48,
+          "video_input_bytes": 88473600,
+          "video_input_sha256": "sha256:0cd84f5aa81c3933bfb1af1a4c360512ef41c011770ae5a613f618f821ec2108",
+          "clipped_RGB_components": 0,
+          "HDR_output_components_clipped": 0,
+          "RGB_quantization_bits": 16,
+          "alpha_quantization_bits": 16,
+          "quantization": "Float64 nearest-even at declared final delivery; alpha8 expanded by 257 for isolated alpha plane",
+          "chunk_bytes": 65536,
+          "stdin_queue_chunks": 4,
+          "maximum_queued_chunks": 2,
+          "whole_movie_pixel_cache": false,
+          "owned_process_pid": 33740,
+          "owned_process_exit_code": 0,
+          "owned_threads_closed": true,
+          "network": false
+        },
+        "colour_boundary_all_frames": {
+          "protocol": "all-selected-frame-colour-audit-v1",
+          "frames": 48,
+          "first_frame": 0,
+          "last_frame": 47,
+          "frames_with_counted_events": 0,
+          "first_affected_frame": null,
+          "last_affected_frame": null,
+          "totals": {
+            "hdr_input_components_clipped": 0,
+            "hdr_output_components_clipped": 0,
+            "encoded_output_components_clipped": 0,
+            "negative_components_clipped": 0,
+            "over_one_components_clipped": 0,
+            "above_declared_peak_pixels": 0
+          },
+          "maximum_per_frame": {
+            "hdr_input_components_clipped": 0,
+            "hdr_output_components_clipped": 0,
+            "encoded_output_components_clipped": 0,
+            "negative_components_clipped": 0,
+            "over_one_components_clipped": 0,
+            "above_declared_peak_pixels": 0
+          },
+          "framed_receipts_sha256": "sha256:8285eebdb9d8766e441c25ce27dd69795b6d7807a3c1dcc757fb46101cd180f2",
+          "receipt_hash_covers_all_frames": true,
+          "whole_movie_receipt_cache": false,
+          "native_CMM_internal_gamut_mapping_counted": false
+        },
+        "providers_closed_before_publish": true
+      }
+    }
+  ],
+  "profile": null,
+  "settings": {
+    "timebase": {
+      "ticks_per_second": 90000,
+      "display_fps": {
+        "num": 12,
+        "den": 1
+      }
+    },
+    "canvas": {
+      "width": 640,
+      "height": 360,
+      "pixel_aspect": {
+        "num": 1,
+        "den": 1
+      },
+      "background": "#000000"
+    },
+    "color": {
+      "primaries": "bt2020",
+      "transfer": "smpte2084",
+      "matrix": "bt2020nc",
+      "range": "limited"
+    },
+    "audio": {
+      "sample_rate": 48000,
+      "channels": 2
+    },
+    "output": {
+      "container": "mkv",
+      "video": {
+        "codec": "libx264",
+        "preset": "ultrafast",
+        "crf": 0,
+        "pixel_format": "yuv444p10le"
+      },
+      "audio": {
+        "codec": "pcm_f32le",
+        "bitrate": "192k"
+      }
+    },
+    "pixel_pipeline": {
+      "engine": "float32-native-v1",
+      "working_signal": {
+        "primaries": "bt2020",
+        "transfer": "linear",
+        "reference_white_nits": 203
+      },
+      "output_signal": {
+        "primaries": "bt2020",
+        "transfer": "pq-st2084",
+        "reference_white_nits": 203
+      },
+      "range_policy": "reject",
+      "preview_mapping": {
+        "operator": "reinhard-luminance",
+        "source_peak_nits": 1000,
+        "target_peak_nits": 100,
+        "exposure_stops": 0,
+        "gamut_policy": "clip"
+      },
+      "sources": {
+        "chart": {
+          "source_signal": {
+            "primaries": "bt2020",
+            "transfer": "linear",
+            "reference_white_nits": 1000
+          },
+          "demux_origin": 0,
+          "display_geometry": "square-unrotated"
+        }
+      }
+    }
+  },
+  "delivery": {
+    "pixel_pipeline": {
+      "protocol": "standard-render-native-float32-v1",
+      "engine": "float32-native-v1",
+      "standard_render_selected": true,
+      "author_project_rewritten": false,
+      "whole_movie_pixel_cache": false,
+      "working_signal": {
+        "primaries": "bt2020",
+        "transfer": "linear",
+        "reference_white_nits": 203,
+        "display_peak_nits": null,
+        "system_gamma": null
+      },
+      "output_signal": {
+        "primaries": "bt2020",
+        "transfer": "pq-st2084",
+        "reference_white_nits": 203,
+        "display_peak_nits": null,
+        "system_gamma": null
+      },
+      "background_signal": {
+        "primaries": "bt709",
+        "transfer": "srgb"
+      },
+      "range_policy": "reject",
+      "HDR_accepted": false,
+      "network": false,
+      "source_receipts": {
+        "chart": {
+          "protocol": "locked-native-clock-window-float32-source-v1",
+          "network": false,
+          "default_renderer_integrated": false,
+          "HDR_accepted": false,
+          "source": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\assets\\chart_source-linear.mkv",
+          "source_sha256": "sha256:df1b91675eac30cff344246714066412a7bd67fedd01ac26bb1dae7c6956f943",
+          "native_frame_clock": true,
+          "native_time_base": "1/1000",
+          "demux_origin": "0",
+          "origin_from_caller": false,
+          "native_stream": {
+            "chroma_location": "unspecified",
+            "color_primaries": "unknown",
+            "color_range": "pc",
+            "color_space": "gbr",
+            "color_transfer": "unknown",
+            "height": "360",
+            "pix_fmt": "gbrp16le",
+            "sample_aspect_ratio": "N/A",
+            "time_base": "1/1000",
+            "width": "640"
+          },
+          "format_info": {
+            "start_time": "0.000000"
+          },
+          "native_index": {
+            "protocol": "native-video-frame-index-v1",
+            "key": "7ec3503d432fd5970949bbc4045786dc53b4f35c0f26876269a6de916b4bf642",
+            "status": "cache-hit",
+            "source_index_decode_calls": 0,
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\cache\\native-video-index\\7ec3503d432fd5970949bbc4045786dc53b4f35c0f26876269a6de916b4bf642",
+            "frames": 48,
+            "byte_validation": true,
+            "files": {
+              "metadata": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\cache\\native-video-index\\7ec3503d432fd5970949bbc4045786dc53b4f35c0f26876269a6de916b4bf642\\index.json",
+                "bytes": 1892,
+                "sha256": "sha256:1e2b8476e9cb54c8497c2dc35551b2ad3f5f8a850108736bb2c0bd8764d7908c"
+              },
+              "durations": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\cache\\native-video-index\\7ec3503d432fd5970949bbc4045786dc53b4f35c0f26876269a6de916b4bf642\\durations.i64le",
+                "bytes": 384,
+                "sha256": "sha256:d98e49b7138e696ae387d491e67f3091aa6496f698a5ef2f7160518617748c06"
+              },
+              "pts": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\cache\\native-video-index\\7ec3503d432fd5970949bbc4045786dc53b4f35c0f26876269a6de916b4bf642\\pts.i64le",
+                "bytes": 384,
+                "sha256": "sha256:7339b72cd7f31c6ce25e1fc7059dd9884f649b128e653a3f87f8b56236b2cc67"
+              }
+            },
+            "artifacts": {
+              "source": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\assets\\chart_source-linear.mkv",
+                "role": "native-index-source",
+                "bytes": 1518773,
+                "sha256": "sha256:df1b91675eac30cff344246714066412a7bd67fedd01ac26bb1dae7c6956f943"
+              },
+              "ffprobe": {
+                "path": "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.exe",
+                "role": "native-index-ffprobe",
+                "bytes": 223153664,
+                "sha256": "sha256:70872c3ffbc43d0b2c570f9837f54d6e9a832f4ca25463e9735b6a3ec0621478"
+              },
+              "implementation": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\native_video_index.py",
+                "role": "native-index-implementation",
+                "bytes": 12680,
+                "sha256": "sha256:2adfefa4826f9fcf187a84647b6b931d134a2627bd6133fd86b61f0332003b71"
+              },
+              "probe_implementation": {
+                "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\reverse_video_clock.py",
+                "role": "native-index-probe_implementation",
+                "bytes": 18118,
+                "sha256": "sha256:bac8b9a0098de010b0eed47439056eaab1f91edd3a7c414f473867d1ec49650e"
+              }
+            }
+          },
+          "native_format": "gbrp16le",
+          "pixel_byte_layout": "gbrp16le",
+          "source_signal": {
+            "primaries": "bt2020",
+            "transfer": "linear",
+            "reference_white_nits": 1000,
+            "display_peak_nits": null,
+            "system_gamma": null
+          },
+          "working_signal": {
+            "primaries": "bt2020",
+            "transfer": "linear",
+            "reference_white_nits": 203,
+            "display_peak_nits": null,
+            "system_gamma": null
+          },
+          "source_color_spec": null,
+          "color_spec_overrides_tags": false,
+          "alpha_association": "straight",
+          "field_order": "progressive",
+          "scan_assumption": null,
+          "scan_automatically_verified": true,
+          "progressive_only": true,
+          "native_raster_orientation_applied": false,
+          "sample_aspect_ratio_applied": false,
+          "CFR_normalization": false,
+          "source_frames": 48,
+          "key_probe": {
+            "command": [
+              "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.exe",
+              "-v",
+              "error",
+              "-protocol_whitelist",
+              "file,pipe",
+              "-select_streams",
+              "v:0",
+              "-skip_frame",
+              "nokey",
+              "-show_frames",
+              "-show_streams",
+              "-show_entries",
+              "frame=key_frame,best_effort_timestamp:frame_side_data=:stream=field_order:stream_disposition=:stream_tags=:stream_side_data=",
+              "-of",
+              "compact=p=1:nk=0",
+              "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\assets\\chart_source-linear.mkv"
+            ],
+            "exit_code": 0,
+            "keyframes": 4,
+            "field_order": "progressive",
+            "stdout_bytes": 2225,
+            "maximum_queued_chunks": 2,
+            "chunk_bytes": 65536,
+            "queue_chunks_limit": 4,
+            "all_owned_threads_exited": true
+          },
+          "requested_window_frames": 16,
+          "effective_window_frames": 16,
+          "cache_limit_bytes": 268435456,
+          "maximum_cached_float_bytes": 58982400,
+          "cache_hits": 45,
+          "decoded_windows": 3,
+          "delivered_native_frames": 48,
+          "logical_preroll_frame_distance_total": 12,
+          "logical_preroll_is_actual_decoder_work": false,
+          "frame_copies_owned": true,
+          "recent_windows_limit": 64,
+          "whole_movie_pixel_cache": false,
+          "cache_budget_is_total_RSS_limit": false,
+          "index_maximum_frames": 1000000,
+          "reverse_complexity_guaranteed_linear": false,
+          "artifacts": {
+            "source": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\assets\\chart_source-linear.mkv",
+              "role": "float-native-source-source",
+              "bytes": 1518773,
+              "sha256": "sha256:df1b91675eac30cff344246714066412a7bd67fedd01ac26bb1dae7c6956f943"
+            },
+            "ffmpeg": {
+              "path": "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+              "role": "float-native-source-ffmpeg",
+              "bytes": 223360000,
+              "sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+            },
+            "ffprobe": {
+              "path": "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.exe",
+              "role": "float-native-source-ffprobe",
+              "bytes": 223153664,
+              "sha256": "sha256:70872c3ffbc43d0b2c570f9837f54d6e9a832f4ca25463e9735b6a3ec0621478"
+            },
+            "float_native_source": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_native_source.py",
+              "role": "float-native-source-float_native_source",
+              "bytes": 21473,
+              "sha256": "sha256:a76aaa6343ea97c0c25e8e3d355c3948a8e8c2201ba7d7f36c2a140a56d841dd"
+            },
+            "float_native_pipe": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_native_pipe.py",
+              "role": "float-native-source-float_native_pipe",
+              "bytes": 5346,
+              "sha256": "sha256:4b89898462505f58fbbe1ca053a0f4f2ef475f417a99dabeb470f999353eb708"
+            },
+            "float_pixels": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_pixels.py",
+              "role": "float-native-source-float_pixels",
+              "bytes": 7700,
+              "sha256": "sha256:863991d7c7e88db619b72e268321fe182baca8d4e8f63d8c5166a945928e127f"
+            },
+            "float_yuv": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_yuv.py",
+              "role": "float-native-source-float_yuv",
+              "bytes": 9014,
+              "sha256": "sha256:031b34c9b75e141946eda3ace6521c015c99023fdc5c725be34701577a9e5a1b"
+            },
+            "float_color_signal": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_color_signal.py",
+              "role": "float-native-source-float_color_signal",
+              "bytes": 11155,
+              "sha256": "sha256:62f4bf0ada897af57edc3d1c8c44728a7dad0161ea28803663f84e9531182b93"
+            },
+            "float_hdr": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_hdr.py",
+              "role": "float-native-source-float_hdr",
+              "bytes": 11344,
+              "sha256": "sha256:21314466b99d1b8ab9fb52b1868a30d20bde126c7ab5a0253b7487f7d87746e9"
+            },
+            "float_hlg_black": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_hlg_black.py",
+              "role": "float-native-source-float_hlg_black",
+              "bytes": 1748,
+              "sha256": "sha256:f601d145b26e7da72884e157d54519704cb213d5cd6da76be7792579bc2b1c8e"
+            },
+            "float_chromatic": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_chromatic.py",
+              "role": "float-native-source-float_chromatic",
+              "bytes": 4534,
+              "sha256": "sha256:8e2b46d73db3e19a4534eda68519d374a5dc6aff79ca2fc7085bac3f89d675d6"
+            },
+            "icc_profiles": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\icc_profiles.py",
+              "role": "float-native-source-icc_profiles",
+              "bytes": 13816,
+              "sha256": "sha256:ba1ddcdba127f4c7f9f51794b28b91a0b99f4aa0fa01cb20ea772e7f6b211bff"
+            },
+            "float_timeline": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_timeline.py",
+              "role": "float-native-source-float_timeline",
+              "bytes": 36704,
+              "sha256": "sha256:ba0ad00a845fe99dfc0de4d6413d63b84e38a85ada109f2b7dd9953412962048"
+            },
+            "native_video_index": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\native_video_index.py",
+              "role": "float-native-source-native_video_index",
+              "bytes": 12680,
+              "sha256": "sha256:2adfefa4826f9fcf187a84647b6b931d134a2627bd6133fd86b61f0332003b71"
+            },
+            "reverse_video_clock": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\reverse_video_clock.py",
+              "role": "float-native-source-reverse_video_clock",
+              "bytes": 18118,
+              "sha256": "sha256:bac8b9a0098de010b0eed47439056eaab1f91edd3a7c414f473867d1ec49650e"
+            },
+            "artifact_locks": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\artifact_locks.py",
+              "role": "float-native-source-artifact_locks",
+              "bytes": 8901,
+              "sha256": "sha256:574149014e79819f0e681f0efba8c6f8ad008cc7a8399d3b24bd9fcc2a06a4be"
+            },
+            "native_audio_clock": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\native_audio_clock.py",
+              "role": "float-native-source-native_audio_clock",
+              "bytes": 23327,
+              "sha256": "sha256:4ede471af5c2ebce98f6839eaa59493daa4cf67e995838a2a6fece77807d19fd"
+            },
+            "policy": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\policy.py",
+              "role": "float-native-source-policy",
+              "bytes": 13791,
+              "sha256": "sha256:16100811aae96699ce77245cec6746588953c4f9bc0071a1d04aec0c80ea4d25"
+            },
+            "media": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\media.py",
+              "role": "float-native-source-media",
+              "bytes": 18960,
+              "sha256": "sha256:75755c314fe01111d7ca85138efb6f9b0993e45c14c5a2b65cc1046c5e58cfba"
+            },
+            "index-metadata": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\cache\\native-video-index\\7ec3503d432fd5970949bbc4045786dc53b4f35c0f26876269a6de916b4bf642\\index.json",
+              "role": "float-native-index-metadata",
+              "bytes": 1892,
+              "sha256": "sha256:1e2b8476e9cb54c8497c2dc35551b2ad3f5f8a850108736bb2c0bd8764d7908c"
+            },
+            "index-durations": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\cache\\native-video-index\\7ec3503d432fd5970949bbc4045786dc53b4f35c0f26876269a6de916b4bf642\\durations.i64le",
+              "role": "float-native-index-durations",
+              "bytes": 384,
+              "sha256": "sha256:d98e49b7138e696ae387d491e67f3091aa6496f698a5ef2f7160518617748c06"
+            },
+            "index-pts": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\cache\\native-video-index\\7ec3503d432fd5970949bbc4045786dc53b4f35c0f26876269a6de916b4bf642\\pts.i64le",
+              "role": "float-native-index-pts",
+              "bytes": 384,
+              "sha256": "sha256:7339b72cd7f31c6ce25e1fc7059dd9884f649b128e653a3f87f8b56236b2cc67"
+            }
+          },
+          "locks": {
+            "mode": "windows-read-lock-command-scope",
+            "files_hashed": 22,
+            "bytes_hashed": 448253708,
+            "digest_reuses_while_locked": 290,
+            "write_and_delete_sharing": false,
+            "persists_across_commands": false
+          },
+          "HDR_input_components_clipped_across_decoded_windows": 0,
+          "pixel_boundary": {
+            "protocol": "native-RGB-gray-to-straight-float32-v1",
+            "native_pixel_format": "gbrp16le",
+            "frame_bytes": 1382400,
+            "component_bits": 16,
+            "storage_bits": 16,
+            "native_floating": false,
+            "native_alpha_association": "straight",
+            "source_has_alpha": false,
+            "output": "straight-float32-RGBA",
+            "colour_transform": "none;source-numeric-values-only",
+            "estimated_working_bytes": 6916096,
+            "estimated_bytes_are_peak_RSS": false,
+            "hidden_straight_RGB": "retained;premultiplied-zero-alpha-canonicalized",
+            "HDR_accepted": false,
+            "editor_integrated": false
+          },
+          "color_boundary": {
+            "protocol": "explicit-display-nits-PQ-HLG-float32-v1",
+            "source_signal": {
+              "primaries": "bt2020",
+              "transfer": "linear",
+              "reference_white_nits": 1000,
+              "display_peak_nits": null,
+              "system_gamma": null
+            },
+            "target_signal": {
+              "primaries": "bt2020",
+              "transfer": "linear",
+              "reference_white_nits": 203,
+              "display_peak_nits": null,
+              "system_gamma": null
+            },
+            "linear_gamut_matrix": [
+              [
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "white": "D65; explicit declared reference_white_nits; display-linear working RGB",
+            "alpha": "bit-exact-independent-straight-coverage",
+            "RGB_clipping": "none",
+            "gamut_mapping": "none",
+            "negative_extension": "legacy relative transfers only; standard PQ/HLG domains enforced",
+            "bt709_interpretation": "published rounded camera OETF/inverse;not-BT1886-display-EOTF",
+            "same_signal_byte_exact": false,
+            "chromatic_adaptation": false,
+            "absolute_nits_managed": true,
+            "estimated_working_bytes": 40931328,
+            "estimated_bytes_are_peak_RSS": false,
+            "HDR_accepted": false,
+            "editor_integrated": false,
+            "linear_unit_scale": 4.926108374384237,
+            "relative_author_color_unit_inherited": false,
+            "hdr_output_domain_policy": "reject",
+            "hdr_output_components_clipped": 0,
+            "hdr_input_domain_policy": "reject",
+            "hdr_input_components_clipped": 0,
+            "HLG_black_level_nits": 0,
+            "HLG_RGB_coupled_OOTF": true
+          },
+          "recent_windows": [
+            {
+              "first_frame": 0,
+              "end_frame_exclusive": 16,
+              "command": [
+                "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+                "-nostdin",
+                "-hide_banner",
+                "-loglevel",
+                "error",
+                "-copyts",
+                "-protocol_whitelist",
+                "file,pipe",
+                "-threads",
+                "1",
+                "-filter_threads",
+                "1",
+                "-noautorotate",
+                "-i",
+                "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\assets\\chart_source-linear.mkv",
+                "-map",
+                "0:v:0",
+                "-an",
+                "-sn",
+                "-dn",
+                "-vf",
+                "trim=start_pts=0:end_pts=1333",
+                "-fps_mode",
+                "passthrough",
+                "-pix_fmt",
+                "+gbrp16le",
+                "-frames:v",
+                "16",
+                "-f",
+                "rawvideo",
+                "pipe:1"
+              ],
+              "seek_seconds": null,
+              "previous_known_key_pts": 0,
+              "logical_preroll_frame_distance": 0,
+              "owned_pid": 37140,
+              "status": "passed",
+              "exit_code": 0,
+              "stdout_bytes": 22118400,
+              "maximum_queued_chunks": 4,
+              "all_owned_threads_exited": true
+            },
+            {
+              "first_frame": 16,
+              "end_frame_exclusive": 32,
+              "command": [
+                "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+                "-nostdin",
+                "-hide_banner",
+                "-loglevel",
+                "error",
+                "-copyts",
+                "-protocol_whitelist",
+                "file,pipe",
+                "-threads",
+                "1",
+                "-filter_threads",
+                "1",
+                "-noautorotate",
+                "-noaccurate_seek",
+                "-ss",
+                "1.000000",
+                "-i",
+                "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\assets\\chart_source-linear.mkv",
+                "-map",
+                "0:v:0",
+                "-an",
+                "-sn",
+                "-dn",
+                "-vf",
+                "trim=start_pts=1333:end_pts=2667",
+                "-fps_mode",
+                "passthrough",
+                "-pix_fmt",
+                "+gbrp16le",
+                "-frames:v",
+                "16",
+                "-f",
+                "rawvideo",
+                "pipe:1"
+              ],
+              "seek_seconds": "1.000000",
+              "previous_known_key_pts": 1000,
+              "logical_preroll_frame_distance": 4,
+              "owned_pid": 39468,
+              "status": "passed",
+              "exit_code": 0,
+              "stdout_bytes": 22118400,
+              "maximum_queued_chunks": 4,
+              "all_owned_threads_exited": true
+            },
+            {
+              "first_frame": 32,
+              "end_frame_exclusive": 48,
+              "command": [
+                "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+                "-nostdin",
+                "-hide_banner",
+                "-loglevel",
+                "error",
+                "-copyts",
+                "-protocol_whitelist",
+                "file,pipe",
+                "-threads",
+                "1",
+                "-filter_threads",
+                "1",
+                "-noautorotate",
+                "-noaccurate_seek",
+                "-ss",
+                "2.000000",
+                "-i",
+                "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\assets\\chart_source-linear.mkv",
+                "-map",
+                "0:v:0",
+                "-an",
+                "-sn",
+                "-dn",
+                "-vf",
+                "trim=start_pts=2667",
+                "-fps_mode",
+                "passthrough",
+                "-pix_fmt",
+                "+gbrp16le",
+                "-frames:v",
+                "16",
+                "-f",
+                "rawvideo",
+                "pipe:1"
+              ],
+              "seek_seconds": "2.000000",
+              "previous_known_key_pts": 2000,
+              "logical_preroll_frame_distance": 8,
+              "owned_pid": 33976,
+              "status": "passed",
+              "exit_code": 0,
+              "stdout_bytes": 22118400,
+              "maximum_queued_chunks": 4,
+              "all_owned_threads_exited": true
+            }
+          ],
+          "window_history_sha256": "sha256:d8b5f9ebac5a86b7483bec414abfa4f35da81bc5c21ade309651237d2123c269",
+          "locks_at_close": {
+            "mode": "windows-read-lock-command-scope",
+            "files_hashed": 22,
+            "bytes_hashed": 448253708,
+            "digest_reuses_while_locked": 290,
+            "write_and_delete_sharing": false,
+            "persists_across_commands": false
+          },
+          "closed": true
+        }
+      },
+      "display_light_nits_explicit": true,
+      "hdr_output": true,
+      "display_mapping": null,
+      "hdr_metadata_scope": "matching BT2020 NCL VUI transfer/primaries/range; no author mastering-display/CLL declaration",
+      "color_transforms_backend": "CPU Float64 tiled -> Float32; composition uses selected CPU/OpenCL backend",
+      "source_count": 1,
+      "per_source_cache_limit_bytes": 268435456,
+      "total_source_cache_limit_bytes": 268435456,
+      "cache_limit_is_process_RSS_limit": false,
+      "artifacts": [
+        {
+          "path": "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+          "role": "standard-float-render-runtime",
+          "bytes": 223360000,
+          "sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+        },
+        {
+          "path": "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.exe",
+          "role": "standard-float-render-runtime",
+          "bytes": 223153664,
+          "sha256": "sha256:70872c3ffbc43d0b2c570f9837f54d6e9a832f4ca25463e9735b6a3ec0621478"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_standard_render.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 32999,
+          "sha256": "sha256:02f664a986e0654b9f0d75508b0601d8f0feb62fd46f19d9a0accf534774dd6f"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_stream.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 13941,
+          "sha256": "sha256:d7c9262babc0eacb10e50245ccbdd08714543b0a51047c395d625d956e4ceb13"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_audio_graph.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 4549,
+          "sha256": "sha256:189db07b74634fb1c99956c38e0c74c077d5146de7248a5938f8cd6aae346399"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\render.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 330809,
+          "sha256": "sha256:2ba1fb627595e61118bf4f1c5141b8f90ab1e4da1f977297a44038b6ef3809cd"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_color_signal.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 11155,
+          "sha256": "sha256:62f4bf0ada897af57edc3d1c8c44728a7dad0161ea28803663f84e9531182b93"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_timeline.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 36704,
+          "sha256": "sha256:ba0ad00a845fe99dfc0de4d6413d63b84e38a85ada109f2b7dd9953412962048"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_tracking.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 16369,
+          "sha256": "sha256:955978836503f032531d9d603183a3b0ec0609de804326efa69cd7a8b08f2dcf"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\bindings.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 28535,
+          "sha256": "sha256:2822ecee397c7669ca9b277fa5f1316c648ea66cf0c9dc91a1b371f96e5c8d32"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\animation.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 2900,
+          "sha256": "sha256:b90064bd9de4fbe1aea85ba7bb11e5acfefc82a85c2b8078ba36bac64c59b949"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_crop.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 15687,
+          "sha256": "sha256:d6c0bc63be9a4bc179ab986647ae31dfea191b5e78fe04ad1ef565362a50ed63"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_adjustments.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 7322,
+          "sha256": "sha256:d2bf1546b3e4f396a831dc95d609f7d7b4c40b0b83b623ec77ed035ff712c1dc"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_effect_chain.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 10106,
+          "sha256": "sha256:a2dfc942ca8e07c06a2654ca00d9afd6efaf265d2f607a8b2dec56c2b6813c36"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_transitions.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 14515,
+          "sha256": "sha256:7de54ec6bd9497c8b9363707262d3b267cceb30576f61bb56747ebae137dd758"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_transition_plan.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 5634,
+          "sha256": "sha256:9081584a60972c789efac8f4405ac54cf4ce4cf2046982dd88932b17c3892912"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\source_transitions.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 17528,
+          "sha256": "sha256:1ec683a3c35285471c07161aa856d6580cb1ecc5dda4cadba609c403be82cb46"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_text.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 20321,
+          "sha256": "sha256:496c87c34db04c6eedbc062fa8883bfc3571d6b10f027fab946f1c688a1e9434"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_text_paint.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 5110,
+          "sha256": "sha256:907cc716268fbf99a2e606afc9bacaf2ecd7b9dd9d23cd9a1c08df29cda948be"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_text_coverage.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 16102,
+          "sha256": "sha256:dc2212f77592b271d2b658348e1cd112d74964f1ccd18cffd221c26d2c605521"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\text_paint.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 6220,
+          "sha256": "sha256:a924644f0396b5204efbb0e085f25d51f6cda5bfc75f2d44febc6796e42cb028"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\text_layout.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 5045,
+          "sha256": "sha256:1f3831478b41ea23c7dd445a66ba08249a4833cce852eb9190ac0a35936a210b"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\text_highlight.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 22841,
+          "sha256": "sha256:fb5745cc3bd4c52aef9fd79d14ad29be9338fc46bd164b7d373c910a3b9ff782"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\text_typing.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 12493,
+          "sha256": "sha256:150d8734c81f599c8a46e43aebe4aeca82ebda5f5fa790e08361c86e848e3544"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\captions.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 13732,
+          "sha256": "sha256:38c500ba0e2697e745d7ad8357d7a9e5cb9e771f4093750b0b6a8b67e7ee0c57"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 16348,
+          "sha256": "sha256:ad8b4533bd588449bda24f3e76fb5770f5ea3ea0d37cbb7775155c3ec9039f00"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_native.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 21634,
+          "sha256": "sha256:e066a6904ebc20f823b92781e3d687abc669e5016923a2de4ffaa49f4fa3c0cc"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_worker.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 10877,
+          "sha256": "sha256:6b223cd6190bf06f951447fb902271d5f1cd0d3f1fcade5fab811f81731cd2b2"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_control.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 6648,
+          "sha256": "sha256:717c02fd2ec1801587c4786c391f24a324fd9667aeec3d6be8c3272320c09b8d"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\procedural_particles.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 17658,
+          "sha256": "sha256:386a2b146997a82ff6065bd599d69ddc602d714e1cfc19157e27807327a55009"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\particle_animation.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 13223,
+          "sha256": "sha256:37e168c03f0634973ff38e9d265e165b8eb048bb7c9e87c4e0799707f76902c0"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_optics.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 10487,
+          "sha256": "sha256:0e8ffedb07f18304961494f289fdfe2f293a4abb92ed098014b36580b0c274a6"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_optics_kernel.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 2926,
+          "sha256": "sha256:92d2e83c126ee611831c1b0cf9a67d0130b6b32d8d3e42d0a92efbbee8755440"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_glow.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 11821,
+          "sha256": "sha256:e2541e639984aee370a19831ed72ba3d067e724331e9b06457ec1ec9f0843af0"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_glow_kernel.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 2539,
+          "sha256": "sha256:052f0483f5c0516c912bf5d3d6f420db6197b07013abe90a9ba1e9ab61b1ef98"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_hdr.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 11344,
+          "sha256": "sha256:21314466b99d1b8ab9fb52b1868a30d20bde126c7ab5a0253b7487f7d87746e9"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_hlg_black.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 1748,
+          "sha256": "sha256:f601d145b26e7da72884e157d54519704cb213d5cd6da76be7792579bc2b1c8e"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\colour_audit.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 2485,
+          "sha256": "sha256:50f15bb81fbd73a09c3cecaeacf74002894fadfbefe30eba90a3c06bdaf7bed8"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\hdr_metadata.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 9887,
+          "sha256": "sha256:b6df3573305bb7920d2748c2e2910f90c2e40a839d5c4cc7c3d0ca383e8b40bd"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_chromatic.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 4534,
+          "sha256": "sha256:8e2b46d73db3e19a4534eda68519d374a5dc6aff79ca2fc7085bac3f89d675d6"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\icc_profiles.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 13816,
+          "sha256": "sha256:ba1ddcdba127f4c7f9f51794b28b91a0b99f4aa0fa01cb20ea772e7f6b211bff"
+        },
+        {
+          "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\icc_output.py",
+          "role": "standard-float-render-runtime",
+          "bytes": 10740,
+          "sha256": "sha256:33fd6af8f46cf6ad4ea4e1a82dc6d20651303cf13b68c30c94d18973bde11bc8"
+        }
+      ],
+      "projection_working_bytes_limit": 805306368,
+      "projection_budget_scope": "each float projection/composite/delivery call; not total process RSS",
+      "timeline": {
+        "protocol": "author-clock-float32-frame-host-v1",
+        "sequence_id": "seq_main",
+        "display_fps": "12",
+        "frames": 48,
+        "working_signal": {
+          "primaries": "bt2020",
+          "transfer": "linear",
+          "reference_white_nits": 203,
+          "display_peak_nits": null,
+          "system_gamma": null
+        },
+        "scalar_clock": "exact rational source/display intervals",
+        "curve_clock": "existing adaptive Float64 author clock;see compilation certificate",
+        "native_holds": "original PTS to next PTS;last native duration establishes EOF",
+        "nested_clock": "continuous author time;exact left/right limits propagated through reversal",
+        "transitions": {
+          "protocol": "linear-premultiplied-float32-transitions-v1",
+          "patterns": [
+            "circleclose",
+            "circlecrop",
+            "circleopen",
+            "coverdown",
+            "coverleft",
+            "coverright",
+            "coverup",
+            "diagbl",
+            "diagbr",
+            "diagtl",
+            "diagtr",
+            "dip_black",
+            "dip_white",
+            "distance",
+            "fade",
+            "fadeblack",
+            "fadefast",
+            "fadegrays",
+            "fadeslow",
+            "fadewhite",
+            "hblur",
+            "hlslice",
+            "hlwind",
+            "horzclose",
+            "horzopen",
+            "hrslice",
+            "hrwind",
+            "pixelize",
+            "radial",
+            "rectcrop",
+            "revealdown",
+            "revealleft",
+            "revealright",
+            "revealup",
+            "slidedown",
+            "slideleft",
+            "slideright",
+            "slideup",
+            "smoothdown",
+            "smoothleft",
+            "smoothright",
+            "smoothup",
+            "squeezeh",
+            "squeezev",
+            "vdslice",
+            "vdwind",
+            "vertclose",
+            "vertopen",
+            "vuslice",
+            "vuwind",
+            "wipebl",
+            "wipebr",
+            "wipedown",
+            "wipeleft",
+            "wiperight",
+            "wipetl",
+            "wipetr",
+            "wipeup",
+            "zoomin"
+          ],
+          "source_handle_plans": [],
+          "double_source_over_crossfade": false,
+          "group_spatial_edges": true,
+          "GPU": false
+        },
+        "text": {
+          "protocol": "native-glyph-linear-float32-paint-v1",
+          "authored_color": {
+            "primaries": "bt709",
+            "transfer": "srgb"
+          },
+          "working_signal": {
+            "primaries": "bt2020",
+            "transfer": "linear",
+            "reference_white_nits": 203,
+            "display_peak_nits": null,
+            "system_gamma": null
+          },
+          "glyph_coverage_bits": 8,
+          "color_component_bits": 32,
+          "media_pixels_in_glyph_process": false,
+          "cache_limit_bytes": 67108864,
+          "requested_cache_limit_bytes": 67108864,
+          "cached_bytes": 0,
+          "cache_hits": 0,
+          "native_snapshots": 0,
+          "plans": [],
+          "coverage_cache_limit_bytes": 67108864,
+          "coverage_cached_bytes": 0,
+          "coverage_cache_hits": 0,
+          "native_coverage_rasters": 0,
+          "admission": {
+            "max_working_bytes": 805306368,
+            "float_surfaces": 4,
+            "native_and_scratch_bytes_per_pixel": 8,
+            "two_cache_limits_reserved": true,
+            "tile_pixels": 16384,
+            "estimate_is_peak_RSS": false
+          },
+          "GPU": false,
+          "GPU_scope": "color-components/paragraph-over/word-selection;glyph-rasterization-on-CPU",
+          "HDR_accepted": false,
+          "whole_movie_cache": false
+        },
+        "adjustments": {
+          "protocol": "selected-sequence-author-clock-float32-adjustments-v1",
+          "selected_sequence_id": "seq_main",
+          "stage": "after-all-video-and-subtitle-tracks-before-delivery-conversion",
+          "clock": "selected sequence tick minus declared layer start; no frame-grid resnap",
+          "nested_application": "once at selected root; child canvases are not graded twice",
+          "intervals": "start-inclusive/end-exclusive; clipped coverage retains original animation clock",
+          "layers": [],
+          "active_plans": 0,
+          "applied_frames": 0,
+          "layer_applications": 0,
+          "integer_intermediate": false,
+          "GPU": false,
+          "audio_changed": false,
+          "workspace_scope": "existing per-effect explicit quota; not aggregate process RSS"
+        },
+        "tracking": {
+          "protocol": "native-PTS-float32-tracking-bindings-v1",
+          "plans": [],
+          "bindings": 0,
+          "observations": 0,
+          "visibility_protocol": "native-transition-point-footprint-v1",
+          "clock": "selected original PTS * native time base minus recorded demux origin; no CFR resnap",
+          "geometry": "same crop/fit/TRS inverse as rendered source; integer pixel centres and half-pixel edges",
+          "ROI_reference": "source geometry at target original author start; first observation if no native frame covers reference",
+          "scale_policy": "existing binding clamp 0.01..20; source projected ROI-width ratio",
+          "alpha": "binding base opacity times actual rendered source canvas alpha and scalar opacity; transition footprint mass clamped to 0..1",
+          "visibility": "source coverage/range/crop/mute, pixel alpha, mask and own edge/paired transition source contribution; higher tracks and natural identity unverified",
+          "transition_geometry": "alpha-weighted bilinear point footprint through the actual 59 transition kernels; centroid; missing required ROI footprint hides target",
+          "model_inference": false,
+          "display_keyframes_baked": false,
+          "integer_intermediate": false,
+          "evaluations": 0,
+          "hidden_evaluations": 0,
+          "cache_hits": 0,
+          "source_references": 0,
+          "edit_lineage": "native-tracking-edit-lineage-v1; empty route is hidden",
+          "pinned_reference_clock": "reference_output_tick on original complete source output"
+        },
+        "particles": {},
+        "GPU": {
+          "engine": "render-owned-float32-opencl-v1",
+          "request": {
+            "mode": "off",
+            "device": "0.0",
+            "max_working_bytes": 1073741824,
+            "probe_timeout_seconds": 30
+          },
+          "status": "off",
+          "dry_run": null,
+          "operations": {},
+          "CPU_scope": [
+            "glyph-rasterization",
+            "color-conversion",
+            "effects-except-native-optics-and-glow",
+            "masks",
+            "crop",
+            "transitions",
+            "non-normal-blends",
+            "audio",
+            "delivery-encoding"
+          ],
+          "GPU_scope": [
+            "premultiplied-affine",
+            "normal-source-over",
+            "text-color-components",
+            "binary-word-selection",
+            "seeded-particle-rasterization",
+            "analytic-optical-effects"
+          ],
+          "host_shared_bytes_limit": 1073741824,
+          "retained_host_shared_bytes": 0,
+          "device_bytes_limit": 1073741824,
+          "limits_are_peak_RSS": false,
+          "free_VRAM_reserved": false,
+          "integer_media_conversion": false,
+          "worker_closed": true,
+          "runtime_failure_CPU_fallback": false,
+          "artifacts": [
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu.py",
+              "role": "float-gpu-execution",
+              "bytes": 16348,
+              "sha256": "sha256:ad8b4533bd588449bda24f3e76fb5770f5ea3ea0d37cbb7775155c3ec9039f00"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_worker.py",
+              "role": "float-gpu-execution",
+              "bytes": 10877,
+              "sha256": "sha256:6b223cd6190bf06f951447fb902271d5f1cd0d3f1fcade5fab811f81731cd2b2"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_native.py",
+              "role": "float-gpu-execution",
+              "bytes": 21634,
+              "sha256": "sha256:e066a6904ebc20f823b92781e3d687abc669e5016923a2de4ffaa49f4fa3c0cc"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_control.py",
+              "role": "float-gpu-execution",
+              "bytes": 6648,
+              "sha256": "sha256:717c02fd2ec1801587c4786c391f24a324fd9667aeec3d6be8c3272320c09b8d"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\procedural_particles.py",
+              "role": "float-gpu-execution",
+              "bytes": 17658,
+              "sha256": "sha256:386a2b146997a82ff6065bd599d69ddc602d714e1cfc19157e27807327a55009"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\particle_animation.py",
+              "role": "float-gpu-execution",
+              "bytes": 13223,
+              "sha256": "sha256:37e168c03f0634973ff38e9d265e165b8eb048bb7c9e87c4e0799707f76902c0"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_optics.py",
+              "role": "float-gpu-execution",
+              "bytes": 10487,
+              "sha256": "sha256:0e8ffedb07f18304961494f289fdfe2f293a4abb92ed098014b36580b0c274a6"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_optics_kernel.py",
+              "role": "float-gpu-execution",
+              "bytes": 2926,
+              "sha256": "sha256:92d2e83c126ee611831c1b0cf9a67d0130b6b32d8d3e42d0a92efbbee8755440"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_glow.py",
+              "role": "float-gpu-execution",
+              "bytes": 11821,
+              "sha256": "sha256:e2541e639984aee370a19831ed72ba3d067e724331e9b06457ec1ec9f0843af0"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_glow_kernel.py",
+              "role": "float-gpu-execution",
+              "bytes": 2539,
+              "sha256": "sha256:052f0483f5c0516c912bf5d3d6f420db6197b07013abe90a9ba1e9ab61b1ef98"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_color_signal.py",
+              "role": "float-gpu-execution",
+              "bytes": 11155,
+              "sha256": "sha256:62f4bf0ada897af57edc3d1c8c44728a7dad0161ea28803663f84e9531182b93"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_hdr.py",
+              "role": "float-gpu-execution",
+              "bytes": 11344,
+              "sha256": "sha256:21314466b99d1b8ab9fb52b1868a30d20bde126c7ab5a0253b7487f7d87746e9"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_hlg_black.py",
+              "role": "float-gpu-execution",
+              "bytes": 1748,
+              "sha256": "sha256:f601d145b26e7da72884e157d54519704cb213d5cd6da76be7792579bc2b1c8e"
+            },
+            {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_chromatic.py",
+              "role": "float-gpu-execution",
+              "bytes": 4534,
+              "sha256": "sha256:8e2b46d73db3e19a4534eda68519d374a5dc6aff79ca2fc7085bac3f89d675d6"
+            }
+          ],
+          "planned_maximum_pixels": 230400,
+          "planned_device_bytes": 11059200,
+          "planned_host_shared_bytes": 7603968,
+          "shared_handles_closed": true
+        },
+        "input_contract": "validated Agent Project IR;registered SHA and explicit common working RGB signal",
+        "audio_rendered": false,
+        "legacy_render_preview_cache_integrated": false,
+        "HDR_accepted": false,
+        "network": false
+      },
+      "projection_acceleration": {
+        "engine": "render-owned-float32-opencl-v1",
+        "request": {
+          "mode": "off",
+          "device": "0.0",
+          "max_working_bytes": 1073741824,
+          "probe_timeout_seconds": 30
+        },
+        "status": "off",
+        "dry_run": null,
+        "operations": {},
+        "CPU_scope": [
+          "glyph-rasterization",
+          "color-conversion",
+          "effects-except-native-optics-and-glow",
+          "masks",
+          "crop",
+          "transitions",
+          "non-normal-blends",
+          "audio",
+          "delivery-encoding"
+        ],
+        "GPU_scope": [
+          "premultiplied-affine",
+          "normal-source-over",
+          "text-color-components",
+          "binary-word-selection",
+          "seeded-particle-rasterization",
+          "analytic-optical-effects"
+        ],
+        "host_shared_bytes_limit": 1073741824,
+        "retained_host_shared_bytes": 0,
+        "device_bytes_limit": 1073741824,
+        "limits_are_peak_RSS": false,
+        "free_VRAM_reserved": false,
+        "integer_media_conversion": false,
+        "worker_closed": true,
+        "runtime_failure_CPU_fallback": false,
+        "artifacts": [
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu.py",
+            "role": "float-gpu-execution",
+            "bytes": 16348,
+            "sha256": "sha256:ad8b4533bd588449bda24f3e76fb5770f5ea3ea0d37cbb7775155c3ec9039f00"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_worker.py",
+            "role": "float-gpu-execution",
+            "bytes": 10877,
+            "sha256": "sha256:6b223cd6190bf06f951447fb902271d5f1cd0d3f1fcade5fab811f81731cd2b2"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_native.py",
+            "role": "float-gpu-execution",
+            "bytes": 21634,
+            "sha256": "sha256:e066a6904ebc20f823b92781e3d687abc669e5016923a2de4ffaa49f4fa3c0cc"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_control.py",
+            "role": "float-gpu-execution",
+            "bytes": 6648,
+            "sha256": "sha256:717c02fd2ec1801587c4786c391f24a324fd9667aeec3d6be8c3272320c09b8d"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\procedural_particles.py",
+            "role": "float-gpu-execution",
+            "bytes": 17658,
+            "sha256": "sha256:386a2b146997a82ff6065bd599d69ddc602d714e1cfc19157e27807327a55009"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\particle_animation.py",
+            "role": "float-gpu-execution",
+            "bytes": 13223,
+            "sha256": "sha256:37e168c03f0634973ff38e9d265e165b8eb048bb7c9e87c4e0799707f76902c0"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_optics.py",
+            "role": "float-gpu-execution",
+            "bytes": 10487,
+            "sha256": "sha256:0e8ffedb07f18304961494f289fdfe2f293a4abb92ed098014b36580b0c274a6"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_optics_kernel.py",
+            "role": "float-gpu-execution",
+            "bytes": 2926,
+            "sha256": "sha256:92d2e83c126ee611831c1b0cf9a67d0130b6b32d8d3e42d0a92efbbee8755440"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_glow.py",
+            "role": "float-gpu-execution",
+            "bytes": 11821,
+            "sha256": "sha256:e2541e639984aee370a19831ed72ba3d067e724331e9b06457ec1ec9f0843af0"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_glow_kernel.py",
+            "role": "float-gpu-execution",
+            "bytes": 2539,
+            "sha256": "sha256:052f0483f5c0516c912bf5d3d6f420db6197b07013abe90a9ba1e9ab61b1ef98"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_color_signal.py",
+            "role": "float-gpu-execution",
+            "bytes": 11155,
+            "sha256": "sha256:62f4bf0ada897af57edc3d1c8c44728a7dad0161ea28803663f84e9531182b93"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_hdr.py",
+            "role": "float-gpu-execution",
+            "bytes": 11344,
+            "sha256": "sha256:21314466b99d1b8ab9fb52b1868a30d20bde126c7ab5a0253b7487f7d87746e9"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_hlg_black.py",
+            "role": "float-gpu-execution",
+            "bytes": 1748,
+            "sha256": "sha256:f601d145b26e7da72884e157d54519704cb213d5cd6da76be7792579bc2b1c8e"
+          },
+          {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_chromatic.py",
+            "role": "float-gpu-execution",
+            "bytes": 4534,
+            "sha256": "sha256:8e2b46d73db3e19a4534eda68519d374a5dc6aff79ca2fc7085bac3f89d675d6"
+          }
+        ],
+        "planned_maximum_pixels": 230400,
+        "planned_device_bytes": 11059200,
+        "planned_host_shared_bytes": 7603968,
+        "shared_handles_closed": true
+      },
+      "audio_project_sha256": "sha256:cea19a7fecea265ed0b53c05dcf0350611358a1083180794d78b963130541fb7",
+      "audio_samples_48000": 192000,
+      "delivery_pixel_format": "yuv444p10le",
+      "alpha_quantization_bits": null,
+      "integer_colour_conversion": "zscale explicit RGB full/2020_ncl YCbCr; unchanged transfer; left chroma",
+      "source_lifecycle": "original inputs locked through publication; providers closed on render context exit",
+      "last_output_color_boundary": {
+        "protocol": "explicit-display-nits-PQ-HLG-float32-v1",
+        "source_signal": {
+          "primaries": "bt2020",
+          "transfer": "linear",
+          "reference_white_nits": 203,
+          "display_peak_nits": null,
+          "system_gamma": null
+        },
+        "target_signal": {
+          "primaries": "bt2020",
+          "transfer": "pq-st2084",
+          "reference_white_nits": 203,
+          "display_peak_nits": null,
+          "system_gamma": null
+        },
+        "linear_gamut_matrix": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "white": "D65; explicit declared reference_white_nits; display-linear working RGB",
+        "alpha": "bit-exact-independent-straight-coverage",
+        "RGB_clipping": "none",
+        "gamut_mapping": "none",
+        "negative_extension": "legacy relative transfers only; standard PQ/HLG domains enforced",
+        "bt709_interpretation": "published rounded camera OETF/inverse;not-BT1886-display-EOTF",
+        "same_signal_byte_exact": false,
+        "chromatic_adaptation": false,
+        "absolute_nits_managed": true,
+        "estimated_working_bytes": 40931328,
+        "estimated_bytes_are_peak_RSS": false,
+        "HDR_accepted": false,
+        "editor_integrated": false,
+        "linear_unit_scale": 1.0,
+        "relative_author_color_unit_inherited": false,
+        "hdr_output_domain_policy": "reject",
+        "hdr_output_components_clipped": 0,
+        "hdr_input_domain_policy": "reject",
+        "hdr_input_components_clipped": 0,
+        "HLG_black_level_nits": 0,
+        "HLG_RGB_coupled_OOTF": true
+      },
+      "transport": {
+        "protocol": "standard-render-native-float32-v1",
+        "frames": 48,
+        "video_input_bytes": 88473600,
+        "video_input_sha256": "sha256:0cd84f5aa81c3933bfb1af1a4c360512ef41c011770ae5a613f618f821ec2108",
+        "clipped_RGB_components": 0,
+        "HDR_output_components_clipped": 0,
+        "RGB_quantization_bits": 16,
+        "alpha_quantization_bits": 16,
+        "quantization": "Float64 nearest-even at declared final delivery; alpha8 expanded by 257 for isolated alpha plane",
+        "chunk_bytes": 65536,
+        "stdin_queue_chunks": 4,
+        "maximum_queued_chunks": 2,
+        "whole_movie_pixel_cache": false,
+        "owned_process_pid": 33740,
+        "owned_process_exit_code": 0,
+        "owned_threads_closed": true,
+        "network": false
+      },
+      "colour_boundary_all_frames": {
+        "protocol": "all-selected-frame-colour-audit-v1",
+        "frames": 48,
+        "first_frame": 0,
+        "last_frame": 47,
+        "frames_with_counted_events": 0,
+        "first_affected_frame": null,
+        "last_affected_frame": null,
+        "totals": {
+          "hdr_input_components_clipped": 0,
+          "hdr_output_components_clipped": 0,
+          "encoded_output_components_clipped": 0,
+          "negative_components_clipped": 0,
+          "over_one_components_clipped": 0,
+          "above_declared_peak_pixels": 0
+        },
+        "maximum_per_frame": {
+          "hdr_input_components_clipped": 0,
+          "hdr_output_components_clipped": 0,
+          "encoded_output_components_clipped": 0,
+          "negative_components_clipped": 0,
+          "over_one_components_clipped": 0,
+          "above_declared_peak_pixels": 0
+        },
+        "framed_receipts_sha256": "sha256:8285eebdb9d8766e441c25ce27dd69795b6d7807a3c1dcc757fb46101cd180f2",
+        "receipt_hash_covers_all_frames": true,
+        "whole_movie_receipt_cache": false,
+        "native_CMM_internal_gamut_mapping_counted": false
+      },
+      "providers_closed_before_publish": true
+    },
+    "clock": {
+      "authored_duration_tick": 360000,
+      "ticks_per_second": 90000,
+      "expected_video_frames": 48,
+      "expected_video_end_seconds": 4.0,
+      "expected_audio_samples_48000": 192000
+    }
+  },
+  "acceleration": {
+    "version": "1",
+    "request": {
+      "encode": "off",
+      "decode": "off",
+      "encoder": "auto",
+      "decoder": "auto",
+      "probe_max_bytes": 536870912
+    },
+    "status": "planned",
+    "probes": [],
+    "attempts": [],
+    "decisions": [],
+    "device": "driver-default; identity not certified",
+    "report": null
+  },
+  "projection_acceleration": {
+    "engine": "render-owned-float32-opencl-v1",
+    "request": {
+      "mode": "off",
+      "device": "0.0",
+      "max_working_bytes": 1073741824,
+      "probe_timeout_seconds": 30
+    },
+    "status": "off",
+    "dry_run": null,
+    "operations": {},
+    "CPU_scope": [
+      "glyph-rasterization",
+      "color-conversion",
+      "effects-except-native-optics-and-glow",
+      "masks",
+      "crop",
+      "transitions",
+      "non-normal-blends",
+      "audio",
+      "delivery-encoding"
+    ],
+    "GPU_scope": [
+      "premultiplied-affine",
+      "normal-source-over",
+      "text-color-components",
+      "binary-word-selection",
+      "seeded-particle-rasterization",
+      "analytic-optical-effects"
+    ],
+    "host_shared_bytes_limit": 1073741824,
+    "retained_host_shared_bytes": 0,
+    "device_bytes_limit": 1073741824,
+    "limits_are_peak_RSS": false,
+    "free_VRAM_reserved": false,
+    "integer_media_conversion": false,
+    "worker_closed": true,
+    "runtime_failure_CPU_fallback": false,
+    "artifacts": [
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu.py",
+        "role": "float-gpu-execution",
+        "bytes": 16348,
+        "sha256": "sha256:ad8b4533bd588449bda24f3e76fb5770f5ea3ea0d37cbb7775155c3ec9039f00"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_worker.py",
+        "role": "float-gpu-execution",
+        "bytes": 10877,
+        "sha256": "sha256:6b223cd6190bf06f951447fb902271d5f1cd0d3f1fcade5fab811f81731cd2b2"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_native.py",
+        "role": "float-gpu-execution",
+        "bytes": 21634,
+        "sha256": "sha256:e066a6904ebc20f823b92781e3d687abc669e5016923a2de4ffaa49f4fa3c0cc"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_gpu_control.py",
+        "role": "float-gpu-execution",
+        "bytes": 6648,
+        "sha256": "sha256:717c02fd2ec1801587c4786c391f24a324fd9667aeec3d6be8c3272320c09b8d"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\procedural_particles.py",
+        "role": "float-gpu-execution",
+        "bytes": 17658,
+        "sha256": "sha256:386a2b146997a82ff6065bd599d69ddc602d714e1cfc19157e27807327a55009"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\particle_animation.py",
+        "role": "float-gpu-execution",
+        "bytes": 13223,
+        "sha256": "sha256:37e168c03f0634973ff38e9d265e165b8eb048bb7c9e87c4e0799707f76902c0"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_optics.py",
+        "role": "float-gpu-execution",
+        "bytes": 10487,
+        "sha256": "sha256:0e8ffedb07f18304961494f289fdfe2f293a4abb92ed098014b36580b0c274a6"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_optics_kernel.py",
+        "role": "float-gpu-execution",
+        "bytes": 2926,
+        "sha256": "sha256:92d2e83c126ee611831c1b0cf9a67d0130b6b32d8d3e42d0a92efbbee8755440"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_glow.py",
+        "role": "float-gpu-execution",
+        "bytes": 11821,
+        "sha256": "sha256:e2541e639984aee370a19831ed72ba3d067e724331e9b06457ec1ec9f0843af0"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_glow_kernel.py",
+        "role": "float-gpu-execution",
+        "bytes": 2539,
+        "sha256": "sha256:052f0483f5c0516c912bf5d3d6f420db6197b07013abe90a9ba1e9ab61b1ef98"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_color_signal.py",
+        "role": "float-gpu-execution",
+        "bytes": 11155,
+        "sha256": "sha256:62f4bf0ada897af57edc3d1c8c44728a7dad0161ea28803663f84e9531182b93"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_hdr.py",
+        "role": "float-gpu-execution",
+        "bytes": 11344,
+        "sha256": "sha256:21314466b99d1b8ab9fb52b1868a30d20bde126c7ab5a0253b7487f7d87746e9"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_hlg_black.py",
+        "role": "float-gpu-execution",
+        "bytes": 1748,
+        "sha256": "sha256:f601d145b26e7da72884e157d54519704cb213d5cd6da76be7792579bc2b1c8e"
+      },
+      {
+        "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.47\\final-r1\\installed\\site\\ai_ad_editor\\float_chromatic.py",
+        "role": "float-gpu-execution",
+        "bytes": 4534,
+        "sha256": "sha256:8e2b46d73db3e19a4534eda68519d374a5dc6aff79ca2fc7085bac3f89d675d6"
+      }
+    ],
+    "planned_maximum_pixels": 230400,
+    "planned_device_bytes": 11059200,
+    "planned_host_shared_bytes": 7603968,
+    "shared_handles_closed": true
+  },
+  "warnings": [],
+  "quality": {
+    "ok": true,
+    "errors": [],
+    "warnings": [],
+    "metrics": {
+      "duration_seconds": 4.0,
+      "width": 640,
+      "height": 360,
+      "audio_codec": "pcm_f32le",
+      "video_duration_seconds": 4.0,
+      "audio_duration_seconds": 4.0,
+      "av_duration_delta_seconds": 0.0,
+      "av_start_delta_seconds": 0.0,
+      "av_end_delta_seconds": 0.0,
+      "av_sync_residual_seconds": 0.0,
+      "av_sync_residuals": {
+        "start_delta_seconds": 0.0,
+        "end_delta_seconds": 0.0,
+        "video_start_seconds": 0.0,
+        "audio_start_seconds": 0.0,
+        "video_end_seconds": 0.0,
+        "audio_end_seconds": 0.0
+      },
+      "stream_timing": {
+        "video": {
+          "start_seconds": 0.0,
+          "start_source": "stream-start-time",
+          "duration_seconds": 4.0,
+          "duration_source": "matroska-duration-tag",
+          "end_seconds": 4.0
+        },
+        "audio": {
+          "start_seconds": 0.0,
+          "start_source": "stream-start-time",
+          "duration_seconds": 4.0,
+          "duration_source": "matroska-duration-tag",
+          "end_seconds": 4.0
+        }
+      },
+      "expected_video_frames": 48,
+      "expected_audio_samples": 192000,
+      "expected_video_duration_seconds": 4.0,
+      "expected_audio_duration_seconds": 4.0,
+      "expected_quantization_delta_seconds": 0.0,
+      "probe": {
+        "duration_seconds": 4.0,
+        "duration_tick": 360000,
+        "format": "matroska,webm",
+        "format_long_name": "Matroska / WebM",
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "High 4:4:4 Predictive",
+            "codec_type": "video",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "avc1.f40016",
+            "width": 640,
+            "height": 360,
+            "coded_width": 640,
+            "coded_height": 360,
+            "has_b_frames": 0,
+            "pix_fmt": "yuv444p10le",
+            "level": 22,
+            "color_range": "tv",
+            "color_space": "bt2020nc",
+            "color_transfer": "smpte2084",
+            "color_primaries": "bt2020",
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "r_frame_rate": "12/1",
+            "avg_frame_rate": "12/1",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "bits_per_raw_sample": "10",
+            "extradata_size": 50,
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "ENCODER": "Lavc62.28.100 libx264",
+              "DURATION": "00:00:04.000000000"
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "pcm_f32le",
+            "codec_long_name": "PCM 32-bit floating point little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "sample_fmt": "flt",
+            "sample_rate": "48000",
+            "channels": 2,
+            "bits_per_sample": 32,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/1000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "bit_rate": "3072000",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "ENCODER": "Lavc62.28.100 pcm_f32le",
+              "DURATION": "00:00:04.000000000"
+            }
+          }
+        ],
+        "video": {
+          "codec": "h264",
+          "width": 640,
+          "height": 360,
+          "pix_fmt": "yuv444p10le",
+          "fps": "12/1",
+          "color_space": "bt2020nc",
+          "duration_seconds": 0.0,
+          "start_time_seconds": 0.0
+        },
+        "audio": {
+          "codec": "pcm_f32le",
+          "sample_rate": 48000,
+          "channels": 2,
+          "duration_seconds": 0.0,
+          "start_time_seconds": 0.0
+        }
+      }
+    }
+  },
+  "project_fingerprint": "3a9eb8858827dfcc01abb8f98c267bc0b17debaf2bfd3cd51f10987ee4d31820",
+  "input_hashes": {
+    "runtime:optics:float_optics": "sha256:0e8ffedb07f18304961494f289fdfe2f293a4abb92ed098014b36580b0c274a6",
+    "runtime:optics:float_optics_kernel": "sha256:92d2e83c126ee611831c1b0cf9a67d0130b6b32d8d3e42d0a92efbbee8755440",
+    "runtime:optics:float_glow": "sha256:e2541e639984aee370a19831ed72ba3d067e724331e9b06457ec1ec9f0843af0",
+    "runtime:optics:float_glow_kernel": "sha256:052f0483f5c0516c912bf5d3d6f420db6197b07013abe90a9ba1e9ab61b1ef98",
+    "runtime:optics:float_color_signal": "sha256:62f4bf0ada897af57edc3d1c8c44728a7dad0161ea28803663f84e9531182b93",
+    "runtime:optics:float_hdr": "sha256:21314466b99d1b8ab9fb52b1868a30d20bde126c7ab5a0253b7487f7d87746e9",
+    "runtime:optics:float_hlg_black": "sha256:f601d145b26e7da72884e157d54519704cb213d5cd6da76be7792579bc2b1c8e",
+    "runtime:optics:hdr_metadata": "sha256:b6df3573305bb7920d2748c2e2910f90c2e40a839d5c4cc7c3d0ca383e8b40bd",
+    "runtime:optics:float_chromatic": "sha256:8e2b46d73db3e19a4534eda68519d374a5dc6aff79ca2fc7085bac3f89d675d6",
+    "runtime:optics:float_effect_chain": "sha256:a2dfc942ca8e07c06a2654ca00d9afd6efaf265d2f607a8b2dec56c2b6813c36",
+    "runtime:optics:float_gpu": "sha256:ad8b4533bd588449bda24f3e76fb5770f5ea3ea0d37cbb7775155c3ec9039f00",
+    "runtime:optics:float_gpu_worker": "sha256:6b223cd6190bf06f951447fb902271d5f1cd0d3f1fcade5fab811f81731cd2b2",
+    "runtime:optics:float_gpu_native": "sha256:e066a6904ebc20f823b92781e3d687abc669e5016923a2de4ffaa49f4fa3c0cc",
+    "chart": "sha256:df1b91675eac30cff344246714066412a7bd67fedd01ac26bb1dae7c6956f943",
+    "tones": "sha256:e59d4ada9fcddac1b8e462320abb524e81b7795843b708d26861e5ecf4e7c539"
+  },
+  "resume_of": null
+}

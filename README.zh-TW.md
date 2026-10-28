@@ -9,7 +9,21 @@
 本頁包含完整功能模塊、服務與依賴、安裝與使用邏輯、Skill 輸入輸出、真實案例和核驗表。長篇原始驗收日志繼續留檔，功能說明與案例入口恢復到首頁。
 
 
-<!-- native-icc-output-current -->
+<!-- native-hdr-measure-current -->
+
+**CLI0.1.49 / alpha.4-local.47 / r50 kit · 1 Skill / 17 modules.**
+
+新增**全影格 HDR 光量測量與色彩裁切彙總**：實際作者時間線、明確nit、MaxRGB與CIE Y分別報告、峰值位置／最大影格平均／精確時長加權、可選有效畫面範圍。測量與正式算繪共用實際RGB16輸入路徑；中間包補齊所有影格轉換收據。
+
+[Workflow](docs/product/HDR_MEASUREMENT.md) · [C59](docs/product/CASES.md#c59-native-hdr-measurement) · [Install](docs/releases/CLI_0.1.49_LOCAL.md) · [Evidence](docs/validation/全帧HDR光量与裁切汇总实测_2026-10-29.md)
+
+![Actual SDR view of HDR metering case](docs/assets/native-hdr-measure-20261029-r2/actual-preview.gif)
+
+19項原始碼專項、19項安裝專項與352項安裝相容分別通過。C59以獨立公式核對全部48影格／11059200像素及RGB16輸入摘要，真實PQ成片完整音畫與測量專案重播一致；另驗48次實際GPU Bloom及原生ICC軟打樣的測量／算繪輸入相同。非編碼後峰值、實體顯示器或藝術品質驗收。
+
+<!-- /native-hdr-measure-current -->
+
+<!-- native-icc-output-history -->
 
 **CLI0.1.48 / alpha.4-local.46 / r49 kit · 1 Skill / 17 modules.**
 
@@ -21,7 +35,7 @@
 
 17項原始碼專項、17項安裝專項及335項安裝相容分別通過。C58逐影格內嵌ICC，獨立核對384組B2A色塊及384組軟打樣Y/Cb/Cr；全48影格PNG像素／檔案、66355200位元組軟打樣成片及384000非零PCM標量專案重播一致，每次序列48次實際GPU Bloom。ICC用CPU，支援的剪輯算子用GPU；合成診斷設定非印表機／顯示器校準或藝術品質驗收。
 
-<!-- /native-icc-output-current -->
+<!-- /native-icc-output-history -->
 
 <!-- native-hlg-black-history -->
 
@@ -568,7 +582,7 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r49 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r49.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
+**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r50 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r50.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
 
 <!-- /unified-skill-registration -->
 
@@ -874,7 +888,7 @@ flowchart LR
 5. 若需要選型，展示原圖與少量候選，記錄最終 ID/強度/作用域；在目標素材上復試。
 6. 渲染至工程內新路徑，檢查實際編碼文件、manifest、warning、音畫與權利，再導出專案包。
 
-## 完整的 74 個功能模組
+## 完整的 75 個功能模組
 
 編號用於定位文件；各模塊有依賴與交叉，不是“43 個獨立內核”或完成率。下表直接寫明行為、入口與限制；[完整機器能力清單及每項契約](docs/product/CAPABILITIES.zh-TW.md)保留全部字段。
 
@@ -954,6 +968,7 @@ flowchart LR
 | F72 | 原生ICC來源色彩管理 | RGB ICC v2/v4矩陣/CLUT、明確SHA/意圖/BPC → 線性RGB工作域，Float32/alpha、實際預覽與專案依賴閉合。 | `native_icc_source_profiles; surface inspect-profile; surface export; render; preview; convert` | 固定MIT LittleCMS原生CPU；不含任意輸出ICC/軟打樣/CMYK/自動內嵌推斷。 |
 | F73 | HLG顯示黑位與完整訊號CLI | BT.2100黑位提升／逆變換、明確nit與黑位、零黑位原數值路徑、完整RGB/HDR/ICC JSON與明確域策略。 | `native_hlg_black_level; surface export; render; preview; convert` | 不推測螢幕；nominal0..1；超限拒絕或明確裁切；無動態HDR／完整ACES。 |
 | F74 | 原生ICC輸出與軟打樣 | RGB v2/v4矩陣／B2A CLUT、四意圖／BPC、明確nits、逐影格內嵌ICC的RGBA16 PNG與作者PCM、真實SOFTPROOFING及完整交付檢查。 | `native_icc_output_profiles; surface render; surface inspect-output; render; preview; convert` | CPU CMM；GPU剪輯獨立；8GiB產物預算；無CMYK／ICC5／物理設備校準。 |
+| F75 | 全影格HDR光量與轉換收據 | 明確nit、實際時間線與RGB16邊界；MaxRGB/CIE Y峰值、影格平均、位置／範圍／時長；原生中間包全影格裁切彙總。 | `native_hdr_light_measurement; surface measure; surface export; render` | CPU測量、獨立GPU剪輯；不推斷監看亮度、不自動寫SEI、不冒充編碼後測量。 |
 
 ## 支持的服務模塊與依賴
 
@@ -990,6 +1005,7 @@ flowchart LR
 | S27 | 原生ICC CMM服務 | 固定LittleCMS2.19.1 Windows x64 DLL、私有上下文、分塊Float32、持鎖/取消/關閉、實際設定檔位元組核驗。 | 包內原生DLL與MIT授權；無需新模型/全域安裝。 | `surface; render; preview; convert` | 16MiB/4096標籤與表面預算；CPU轉換，GPU合成獨立選擇。 |
 | S28 | 明確HLG黑位服務 | 分塊Float32/alpha、beta校驗、來源／目標黑位、輸出域計數及原生時鐘中間包。 | 包內原生Windows CPU數學；既有GPU合成獨立設定。 | `surface; render; preview; convert` | 無新增模型／全域安裝；不替代螢幕測量或HDR監看驗收。 |
 | S29 | ICC交付與模擬服務 | 逐影格ICC設備輸出、標準影片軟打樣、原生CMM控制代碼／位元組持鎖、PNG CRC及完整像素／PCM核驗。 | 固定MIT LittleCMS原生Windows；無需新模型。 | `surface render; surface inspect-output; render; preview; convert` | 設定本身映射與程式裁切分開；PNG序列與PCM，不將任意ICC RGB冒充標準YUV。 |
+| S30 | 光量診斷與全影格色彩稽核 | 唯讀原生時間線、可取消分塊測量、完整RGB16摘要、全影格轉換收據；實際來源／GPU資源回收。 | 既有FFmpeg／NumPy與可選OpenCL；不下載模型。 | `surface measure; surface export; render` | 部分影格或有效區域不代表整片全畫布；768MiB自有算子估算非總RSS／VRAM。 |
 
 **本機查詢與交付狀態：** 本輪 doctor 檢測到原生 Python 3.13.1、FFmpeg/ffprobe 8.1 和 Node；這不證明每個模型或瀏覽器適配器均已註冊。doctor 只查到系統存在 Docker/WSL 可執行路徑，沒有運行它們。本專案始終使用原生工具，不調度 Docker/WSL/虛擬環境。
 
@@ -1089,7 +1105,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.46/final-r1/installed/`，CLI 0.1.48；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
+本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.47/final-r1/installed/`，CLI 0.1.49；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1607,6 +1623,11 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R325 | 2026-10-29 ICC | C58：384組獨立B2A色塊、全48影格內嵌ICC輸出／逐影格像素／CRC檢查、每序列48次GPU Bloom。 | [Evidence](docs/validation/evidence/native-icc-output-20261028-r1/case-r3/verification.json) |
 | R326 | 2026-10-29 ICC | C58：可移植軟打樣設定，專案重播全部PNG檔案／像素、66355200影片位元組及384000非零PCM標量一致；實際PNG／MP4／GIF。 | [Evidence](docs/validation/evidence/native-icc-output-20261028-r1/case-r3/verification.json) |
 | R327 | 2026-10-29 ICC | r49單Skill：1入口／17模組／87檔案；固定本機安裝，獨立解包核驗及安裝版交付計畫。 | [Evidence](docs/validation/evidence/native-icc-output-20261028-r1/kit-r1/verification.json) |
+| R328 | 2026-10-29 HDR meter | CLI0.1.49/local.47：275個產品Python檔案與受測安裝版相同；88能力、1公開Skill／17模組／88檔案。 | [Evidence](docs/validation/evidence/native-hdr-measure-20261028-r1/installation-final-r1/verification.json) |
+| R329 | 2026-10-29 HDR meter | 19項原始碼專項：獨立PQ／HLG／MaxRGB／CIE Y、時長／範圍／alpha、真實CLI唯讀／取消、首影格裁切末影格正常。 | [Evidence](docs/validation/evidence/native-hdr-measure-20261028-r1/source-r4/verification.json) |
+| R330 | 2026-10-29 HDR meter | 19項安裝專項與352項安裝相容分別通過；顯示映射／原生軟打樣測量及正式算繪RGB16摘要相同。 | [Evidence](docs/validation/evidence/native-hdr-measure-20261028-r1/installed-compat-r1/verification.json) |
+| R331 | 2026-10-29 HDR meter | C59：獨立全部48影格／11059200像素公式與RGB16輸入摘要；真實PQ成片66355200影片位元組及384000非零PCM標量。 | [Evidence](docs/validation/evidence/native-hdr-measure-20261028-r1/case-r2/verification.json) |
+| R332 | 2026-10-29 HDR meter | C59：專案全音畫／全部測量重播一致；另有48影格真實GPU Bloom／原生軟打樣輸入同正式算繪；實際MP4／GIF。 | [Evidence](docs/validation/evidence/native-hdr-measure-20261028-r1/case-r2/verification.json) |
 
 ## 當前邊界與開發方向
 

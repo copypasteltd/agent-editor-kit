@@ -1074,3 +1074,24 @@ Independent soft-proof oracle separately checks384 Y/Cb/Cr triplets (1152 encode
 [Original source](../assets/native-icc-output-20261028-r3/source-linear.mkv) · [Original tones](../assets/native-icc-output-20261028-r3/source-stereo.wav) · [Original ICC](../assets/native-icc-output-20261028-r3/original-proof.icc) · [Profile descriptor](../assets/native-icc-output-20261028-r3/profile.json) · [Device PNG16](../assets/native-icc-output-20261028-r3/actual-device-frame.png) · [Actual proof master](../assets/native-icc-output-20261028-r3/proof-master.mkv) · [Actual MP4](../assets/native-icc-output-20261028-r3/actual-preview.mp4) · [Actual frame](../assets/native-icc-output-20261028-r3/actual-frame.png) · [Comparison](../assets/native-icc-output-20261028-r3/comparison.png) · [Editable package](../assets/native-icc-output-20261028-r3/editable-icc-output.aevpkg.zip) · [Sequence receipt](../assets/native-icc-output-20261028-r3/sequence.json) · [Master manifest](../assets/native-icc-output-20261028-r3/proof-master.mkv.manifest.json) · [Provenance](../assets/native-icc-output-20261028-r3/SOURCE.txt) · [Media hashes](../assets/native-icc-output-20261028-r3/media-manifest.json)
 
 Left:independent source-to-sRGB/no-glow mathematical control;right:actual native proof preview plus GPU Bloom at the same frame. Not a matched device/artistic A/B. Actual GIF24 frames/4 seconds. No human continuous playback/listening or physical display/printer matching acceptance. CMYK,ICC5,full ACES,dynamic HDR and natural-image artistic acceptance remain open.
+
+<a id="c59-native-hdr-measurement"></a>
+
+## C59 · 全帧HDR光量 / 全影格HDR光量 / All-frame HDR light metering
+
+Actual registered CLI0.1.49/one unified Skill. Original CC0 RGB16 BT2020 linear chart (unit white1000nit),203nit linear working/PQ output,and stereo347/523Hz tones;640×360,48frames,12fps,4seconds. Early bright patch and later bright frame average deliberately differ. Full,active-area and partial reports preserve author bytes.
+
+Independent equations cover all11059200 pixels and the complete RGB16 input digest;maximum nit error 5.68434188608e-14. Real PQ master/all66355200 decoded video bytes and384000 nonzero PCM scalars replay exactly after editable-package import;all reported measurements also replay exactly. A separate actual48-frame GPU Bloom/native ICC proof run has identical meter/render input and closed native handles/GPU worker. No speed benchmark is inferred.
+
+| Metric / 指标 / 指標 | Peak nit / 峰值 | Peak frame / 峰值影格 | Maximum frame average nit | Average peak frame |
+|---|---|---|---|---|
+| `maxrgb` | 1000.0015744055038 | 18 | 274.5471184536973 | 18 |
+| `cie_y` | 955.1791290044763 | 0 | 229.3402507429883 | 18 |
+
+CIE Y peaks in frame0;MaxRGB peaks in frame18. The late warm highlight and broad bright area distinguish the metrics. PQ/RGB16 quantization can move decoded maxima slightly above the original1000nit source component;the meter does not silently cap them.
+
+![Actual explicit SDR view of HDR chart](../assets/native-hdr-measure-20261029-r2/actual-preview.gif)
+
+[Original source](../assets/native-hdr-measure-20261029-r2/source-linear.mkv) · [Original tones](../assets/native-hdr-measure-20261029-r2/source-stereo.wav) · [PQ master](../assets/native-hdr-measure-20261029-r2/hdr-master.mkv) · [Master manifest](../assets/native-hdr-measure-20261029-r2/hdr-master.manifest.json) · [Actual MP4 SDR view](../assets/native-hdr-measure-20261029-r2/actual-preview.mp4) · [Actual frame](../assets/native-hdr-measure-20261029-r2/actual-frame.png) · [Full measurement](../assets/native-hdr-measure-20261029-r2/measurement.json) · [Active-area measurement](../assets/native-hdr-measure-20261029-r2/active-area-measurement.json) · [Partial measurement](../assets/native-hdr-measure-20261029-r2/partial-measurement.json) · [GPU/proof measurement](../assets/native-hdr-measure-20261029-r2/GPU-proof-measurement.json) · [Editable package](../assets/native-hdr-measure-20261029-r2/editable-hdr-measure.aevpkg.zip) · [Provenance](../assets/native-hdr-measure-20261029-r2/SOURCE.txt) · [Hashes](../assets/native-hdr-measure-20261029-r2/media-manifest.json)
+
+Preview is an explicit Reinhard SDR viewing copy,not physical HDR monitoring. Measurements are before YUV/codec,not post-codec/filtered MaxCLL certification. No automatic SEI/mastering rewrite,human listening,continuous playback or artistic-quality acceptance.

@@ -157,3 +157,5 @@ and natural-image artistic matching remain open goal conditions.
 Primary facts: [W3C PNG Third Edition](https://www.w3.org/TR/2025/REC-png-3-20250624/)
 and the pinned [LittleCMS source](https://github.com/mm2/Little-CMS/tree/lcms2.19.1).
 No vendor ICC collection, standard PDF pages or proprietary presets are bundled.
+
+CLI0.1.49 adds [actual all-frame light metering and colour receipt totals](HDR_MEASUREMENT.md). MaxRGB/CIE Y and declared SEI remain separate;the measurement is before YUV/codec,not physical monitor acceptance.

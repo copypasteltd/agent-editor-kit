@@ -1069,6 +1069,13 @@ def build_parser() -> argparse.ArgumentParser:
     surface_render.add_argument('--range-policy',choices=('reject','clip'),default='reject')
     surface_render.add_argument('--max-output-mib',type=int,default=8192)
     surface_render.add_argument('--cancel-file')
+    surface_measure=_leaf_common(surface_sub.add_parser('measure',help='只读逐帧测量实际作者交付RGB16的MaxRGB与CIE Y光量，禁止隐式写入母版声明'))
+    surface_measure.add_argument('--project',required=True)
+    surface_measure.add_argument('--sequence-id',required=True)
+    surface_measure.add_argument('--start-frame',type=int,default=0)
+    surface_measure.add_argument('--stop-frame',type=int)
+    surface_measure.add_argument('--active-region',type=int,nargs=4,metavar=('X','Y','WIDTH','HEIGHT'))
+    surface_measure.add_argument('--cancel-file')
     surface_verify=_leaf_common(surface_sub.add_parser('inspect-output',help='只读逐帧核验ICC序列全部PNG CRC/像素/嵌入配置和PCM字节'))
     surface_verify.add_argument('--project',required=True)
     surface_verify.add_argument('--input',required=True)
@@ -6045,6 +6052,12 @@ def command_surface(args: argparse.Namespace) -> dict[str, Any]:
     from .float_hdr import parse_signal
     from .float_yuv import YUVSpec
     root,project=load_project(args.project)
+    if args.action=='measure':
+        from . import hdr_measure
+        plan=hdr_measure.prepare(project,args.sequence_id,start_frame=args.start_frame,stop_frame=args.stop_frame,region=args.active_region)
+        if args.dry_run:return _envelope('surface.measure',args,status='planned',data=plan)
+        result=hdr_measure.measure(root,project,plan,cancel_file=args.cancel_file)
+        return _envelope('surface.measure',args,data=result)
     if args.action=='inspect':
         return _envelope('surface.inspect',args,data=float_bundle.inspect_bundle(root,args.input))
     if args.action=='inspect-profile':
@@ -7178,6 +7191,7 @@ _READ_ONLY_PROJECT_COMMANDS = {
     ('surface','inspect'),
     ('surface','inspect-profile'),
     ('surface','inspect-output'),
+    ('surface','measure'),
     ('diagnostics', 'list'), ('diagnostics', 'show'), ('diagnostics', 'export'),
     ("project", "inspect"),
     ("operation", "inspect"),
@@ -7225,6 +7239,7 @@ COMMANDS: dict[tuple[str, str | None], Callable[[argparse.Namespace], dict[str, 
     ('interpolate','generate'): command_interpolation_generate,
     ('surface','export'):command_surface,
     ('surface','render'):command_surface,
+    ('surface','measure'):command_surface,
     ('surface','inspect-output'):command_surface,
     ('surface','inspect'):command_surface,
     ('surface','inspect-profile'):command_surface,

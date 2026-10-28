@@ -99,3 +99,5 @@ validate HDR monitoring. Export/import retains the editable declarations;
 the C54 case compares all decoded video frames and all PCM samples after
 package replay. Complete-project checks and historical closure conditions
 remain in the product roadmap.
+
+CLI0.1.49 adds [actual all-frame light metering and colour receipt totals](HDR_MEASUREMENT.md). MaxRGB/CIE Y and declared SEI remain separate;the measurement is before YUV/codec,not physical monitor acceptance.

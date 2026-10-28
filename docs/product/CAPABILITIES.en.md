@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.48 / alpha.4-local.46 / r49 kit · 1 Skill / 17 modules / 87 files.**
+**CLI0.1.49 / alpha.4-local.47 / r50 kit · 1 Skill / 17 modules / 88 files.**
 
-Added **native RGB ICC output, profile-embedded16-bit PNG sequence delivery and soft proof**: actual B2A tables,intents/BPC,explicit nits scaling,authored frames and synchronized PCM;native simulation in normal render/previews and portable profile dependencies.
+Added **all-frame HDR light metering and colour-clipping ledgers**: actual authored timeline,explicit nits,separate MaxRGB/CIE Y,peak locations/maximum frame averages/exact exposure weighting,and explicit active regions. Metering shares the real RGB16 encoder-input path;intermediate bundles now retain all-frame conversion receipts.
 
-[ICC output / soft proof workflow](ICC_OUTPUT.md)
+[Light metering workflow](HDR_MEASUREMENT.md)
 
 <!-- /community-current -->
 
@@ -88,6 +88,7 @@ Added **native RGB ICC output, profile-embedded16-bit PNG sequence delivery and 
 | F72 | Native ICC source color management | RGB ICC v2/v4 matrix/CLUT, explicit SHA/intent/BPC → linear working RGB, Float32/alpha, actual previews and portable profile dependencies. | `native_icc_source_profiles; surface inspect-profile; surface export; render; preview; convert` | Pinned MIT LittleCMS/native CPU; no arbitrary output ICC, softproofing, CMYK or embedded-profile inference. |
 | F73 | HLG display black and complete signal CLI | BT.2100 black lift/inverse,explicit nits,unchanged zero-black numeric path,complete RGB/HDR/ICC JSON and explicit domain policies. | `native_hlg_black_level; surface export; render; preview; convert` | No monitor inference; nominal0..1; reject or explicit counted clipping; no dynamic HDR/full ACES. |
 | F74 | Native ICC output and soft proof | RGB v2/v4 matrix/B2A CLUT,intents/BPC,explicit nits,individually ICC-embedded RGBA16 PNGs and authored PCM,real SOFTPROOFING and complete delivery verification. | `native_icc_output_profiles; surface render; surface inspect-output; render; preview; convert` | CPU CMM;separate GPU editing;8GiB file budget;no CMYK/ICC5/physical-device calibration. |
+| F75 | All-frame HDR light and conversion receipts | Explicit nits,actual timeline/RGB16 edge;MaxRGB/CIE Y peaks,frame averages,locations/regions/exposure;all-frame native-bundle clipping totals. | `native_hdr_light_measurement; surface measure; surface export; render` | CPU meter,separate GPU editing;no inferred monitor brightness,implicit SEI or post-codec measurement claim. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -120,6 +121,7 @@ Added **native RGB ICC output, profile-embedded16-bit PNG sequence delivery and 
 | S27 | Native ICC CMM service | Pinned LittleCMS2.19.1 Windows x64 DLL, private contexts, tiled Float32, read locks/cancellation/cleanup and actual profile-byte verification. | Bundled DLL/MIT license; no new model/global installation. | `surface; render; preview; convert` | 16MiB/4096 tags and surface budgets; CPU conversion, independently selected GPU composition. |
 | S28 | Explicit HLG black service | Tiled Float32/alpha,beta validation,source/target black,domain counts and native-clock raw bundles. | Native Windows CPU math; separately configured GPU composition. | `surface; render; preview; convert` | No new model/global install; no replacement for display measurement/HDR monitor acceptance. |
 | S29 | ICC delivery and simulation service | Per-frame device-profile output,standard-movie soft proof,owned CMM handles/read locks,PNG CRC/all-pixel/PCM verification. | Pinned MIT LittleCMS on native Windows;no new model. | `surface render; surface inspect-output; render; preview; convert` | Separate native profile mapping from application clipping;PNG sequence/PCM,never relabel arbitrary device RGB as standard YUV. |
+| S30 | Light diagnostics and all-frame colour audit | Readonly native timeline,cancellable tiled meter,complete RGB16 digest,all-frame conversion receipts and actual source/GPU cleanup. | Existing FFmpeg/NumPy,optional OpenCL;no new model download. | `surface measure; surface export; render` | Partial frames/active area do not certify the full canvas;768MiB owned-operator estimate is not total RSS/VRAM. |
 
 ## Complete installed capability fields
 
@@ -5447,3 +5449,38 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 ```
 
 [CLI0.1.48 exact installed capabilities](icc-output-capabilities-cli-0.1.48.json).
+
+### `native_hdr_light_measurement`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "authored-delivery-rgb16-light-measure-v1",
+  "commands": [
+    "surface.measure",
+    "surface.measure --dry-run"
+  ],
+  "features": [
+    "all_authored_CFR_frames_or_explicit_half_open_selection",
+    "common_native_CPU_OpenCL_timeline_display_mapping_proof_and_delivery_edge",
+    "explicit_working_and_output_nit_units",
+    "exact_encoder_RGB16_input_digest",
+    "separate_decoded_linear_MaxRGB_and_CIE_Y_peak_and_frame_average",
+    "explicit_active_region_and_exact_duration_weighted_average",
+    "all_selected_frame_colour_counts_and_framed_receipt_digest",
+    "bounded_row_tiles_cancel_read_locks_and_owned_source_cleanup",
+    "readonly_author_project_and_no_implicit_SEI_or_monitor_inference"
+  ],
+  "limits": [
+    "before_YUV_codec_not_encoded_movie_or_physical_display_measurement",
+    "opaque_explicit_output_only_no_transparent_background_guess",
+    "no_automatic_outlier_filter_mastering_metadata_or_tone_mapping",
+    "partial_frame_or_active_region_results_not_full_content_certification",
+    "CPU_meter_and_colour_math_supported_editing_GPU_selected_separately",
+    "768MiB_operator_estimate_not_total_RSS_or_VRAM_guarantee",
+    "HDR10plus_DolbyVision_perceptual_gamut_and_natural_HDR_monitor_acceptance_pending"
+  ]
+}
+```
+
+[CLI0.1.49 exact installed capabilities](hdr-measure-capabilities-cli-0.1.49.json).

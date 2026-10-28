@@ -18,6 +18,7 @@ import numpy as np
 
 from .artifact_locks import artifact_entry
 from .errors import AppError
+from .colour_audit import ColourAudit
 from .float_color_signal import ColorSignal, convert_rgba
 from .float_hdr import HDR_TRANSFERS, has_luminance, parse_signal, mapping_configuration, map_display
 from .float_native_source import NativeSurfaceSource
@@ -242,7 +243,7 @@ class FloatRenderContext:
                   ('float_standard_render', 'float_stream', 'float_audio_graph', 'render', 'float_color_signal',
                    'float_timeline', 'float_tracking', 'bindings', 'animation', 'float_crop', 'float_adjustments', 'float_effect_chain', 'float_transitions', 'float_transition_plan', 'source_transitions',
                    'float_text','float_text_paint','float_text_coverage','text_paint','text_layout','text_highlight','text_typing','captions',
-                   'float_gpu','float_gpu_native','float_gpu_worker','float_gpu_control','procedural_particles','particle_animation','float_optics','float_optics_kernel','float_glow','float_glow_kernel','float_hdr','float_hlg_black','hdr_metadata','float_chromatic','icc_profiles','icc_output')]
+                   'float_gpu','float_gpu_native','float_gpu_worker','float_gpu_control','procedural_particles','particle_animation','float_optics','float_optics_kernel','float_glow','float_glow_kernel','float_hdr','float_hlg_black','colour_audit','hdr_metadata','float_chromatic','icc_profiles','icc_output')]
         self.artifacts = [artifact_entry(p, 'standard-float-render-runtime') for p in paths]
         context = IndexContext(self.root, persist=not self.dry_run, cancel_file=self.marker)
         per_source = min(256 * 1024**2, self.config['max_source_cache_bytes'] // max(1, len(needed)))
@@ -452,10 +453,31 @@ class FloatRenderContext:
                 self.metadata.setdefault('retained_publication_backups', []).append(str(backup))
         return manifest_path
 
+    def delivery_surface(self, surface, *, stats):
+        """The common final signal edge, shared by rendering and measurement."""
+        if not self.config['alpha_output'] and np.any(surface[:, :, 3] != 1):
+            raise error('ALPHA', '不透明输出不能丢弃实际alpha；请设置不透明背景或选择透明输出')
+        signal = self.config['working']
+        if 'display_mapping' in self.config['mappings']:
+            surface, signal, mapping = map_display(surface, signal, self.config['mappings']['display_mapping'],
+                max_working_bytes=self.config['projection_working_bytes_limit'], cancel=self.poll)
+            self.metadata['last_display_mapping'] = mapping
+            for key in ('negative_components_clipped','over_one_components_clipped','above_declared_peak_pixels'):
+                stats[key] = stats.get(key, 0) + mapping[key]
+        surface = self.proof_surface(surface, signal)
+        delivered, boundary = convert_rgba(surface, signal, self.config['output'],
+            max_working_bytes=self.config['projection_working_bytes_limit'], cancel=self.poll,
+            hdr_range_policy=self.config['range_policy'])
+        if self.config['hdr_active'] or self.config['mappings']:
+            self.metadata['last_output_color_boundary'] = boundary
+            stats['HDR_output_components_clipped'] = stats.get('HDR_output_components_clipped', 0) + boundary.get('hdr_output_components_clipped', 0)
+        return delivered, boundary
+
     def run(self, command, *, timeout=3600):
         self.verify()
         payload = hashlib.sha256()
         stats = {'clipped_RGB_components': 0}
+        colour_audit = ColourAudit()
         frames = 0
         pipe = _EncoderPipe(command, cwd=self.root, cancel_file=self.marker, timeout=timeout)
         try:
@@ -463,22 +485,8 @@ class FloatRenderContext:
                 self.poll()
                 pipe.check()
                 surface, _ = self.timeline.render_frame(index)
-                if not self.config['alpha_output'] and np.any(surface[:, :, 3] != 1):
-                    raise error('ALPHA', '不透明输出不能丢弃实际alpha；请设置不透明背景或选择透明输出')
-                signal = self.config['working']
-                if 'display_mapping' in self.config['mappings']:
-                    surface, signal, mapping = map_display(surface, signal, self.config['mappings']['display_mapping'],
-                        max_working_bytes=self.config['projection_working_bytes_limit'], cancel=self.poll)
-                    self.metadata['last_display_mapping'] = mapping
-                    for key in ('negative_components_clipped','over_one_components_clipped','above_declared_peak_pixels'):
-                        stats[key] = stats.get(key, 0) + mapping[key]
-                surface = self.proof_surface(surface,signal)
-                delivered, boundary = convert_rgba(surface, signal, self.config['output'],
-                    max_working_bytes=self.config['projection_working_bytes_limit'], cancel=self.poll,
-                    hdr_range_policy=self.config['range_policy'])
-                if self.config['hdr_active'] or self.config['mappings']:
-                    self.metadata['last_output_color_boundary'] = boundary
-                    stats['HDR_output_components_clipped'] = stats.get('HDR_output_components_clipped', 0) + boundary.get('hdr_output_components_clipped', 0)
+                delivered, boundary = self.delivery_surface(surface, stats=stats)
+                colour_audit.add(index, boundary)
                 for chunk in _chunks(delivered, range_policy=self.config['range_policy'], poll=pipe.check,
                                      stats=stats, alpha_bits=8 if self.config['alpha_output'] else 16):
                     payload.update(chunk)
@@ -500,6 +508,7 @@ class FloatRenderContext:
                 'owned_process_pid': pipe.process.pid, 'owned_process_exit_code': pipe.process.returncode,
                 'owned_threads_closed': all(not t.is_alive() for t in pipe.threads), 'network': False}
             self.metadata['transport'] = self.receipt
+            self.metadata['colour_boundary_all_frames'] = colour_audit.result()
             return subprocess.CompletedProcess(command, 0, stdout='', stderr=pipe.stderr())
         finally:
             pipe.close()

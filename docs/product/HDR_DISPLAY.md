@@ -161,3 +161,5 @@ CLI0.1.46 adds a separate [native ICC source-profile path](ICC_PROFILES.md): exp
 CLI0.1.47 adds [HLG display black and complete source/working signal JSON for raw surface CLI](HLG_BLACK_LEVEL.md). Explicit nits,black/peak/gamma and reject/clip policies are required; no monitor inference. Existing RGB/ICC individual flags remain supported.
 
 CLI0.1.48 adds [native RGB ICC output,profile-embedded PNG16 timeline delivery/authored PCM and real native soft proof](ICC_OUTPUT.md). Arbitrary device RGB is never relabelled as standard YUV;physical-device matching remains open.
+
+CLI0.1.49 adds [actual all-frame light metering and colour receipt totals](HDR_MEASUREMENT.md). MaxRGB/CIE Y and declared SEI remain separate;the measurement is before YUV/codec,not physical monitor acceptance.

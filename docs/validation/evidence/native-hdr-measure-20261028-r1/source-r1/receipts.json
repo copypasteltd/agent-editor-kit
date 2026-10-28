@@ -1,0 +1,462 @@
+{
+  "test_hdr_measure": [
+    {
+      "test": "test_hdr_measure.LightIntegrationTests.test_actual_native_bundle_retains_early_HLG_black_clip_when_last_frame_clear",
+      "manifest": {
+        "protocol": "agent-native-clock-float32-bundle-v1",
+        "created_at_utc": "2026-10-28T16:55:44.561688+00:00",
+        "recipe": {
+          "protocol": "agent-native-clock-float32-bundle-v1",
+          "asset_id": "picture",
+          "source": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\temp\\float-standard-0gy51e4n\\project\\assets\\source.mkv",
+          "source_sha256": "sha256:45bba842cf04588f04e1c379523766e82a44261042733b2e5955dd342a3898e4",
+          "source_signal": {
+            "primaries": "bt2020",
+            "transfer": "linear",
+            "reference_white_nits": 100,
+            "display_peak_nits": null,
+            "system_gamma": null
+          },
+          "working_signal": {
+            "primaries": "bt2020",
+            "transfer": "hlg-bt2100",
+            "reference_white_nits": 100,
+            "display_peak_nits": 1000,
+            "system_gamma": 1.2,
+            "display_black_nits": 1
+          },
+          "pixel_family": "rgb",
+          "YCbCr": null,
+          "scan": null,
+          "alpha_association": "straight",
+          "start_frame": 0,
+          "stop_frame_exclusive": null,
+          "geometry": null,
+          "max_output_bytes": 2147483648,
+          "hdr_range_policy": "clip",
+          "hdr_input_range_policy": "reject"
+        },
+        "recipe_sha256": "sha256:e02367b5acacaa0e2ed12af69a3e7bd96c058a4fa1db0b48543ba3f57686edfa",
+        "source_asset_id": "picture",
+        "source_sha256": "sha256:45bba842cf04588f04e1c379523766e82a44261042733b2e5955dd342a3898e4",
+        "frames": 2,
+        "width": 32,
+        "height": 16,
+        "pixel_format": "interleaved-straight-RGBA-f32le",
+        "native_time_base": "1/1000",
+        "clock_columns": [
+          "source_frame_index",
+          "original_pts",
+          "original_duration"
+        ],
+        "selected_source_frame_start": 0,
+        "selected_source_frame_end_exclusive": 2,
+        "source_frame_count": 2,
+        "all_source_frames_exported": true,
+        "all_selected_frames_exported": true,
+        "files": {
+          "pixels": {
+            "name": "frames.rgba-f32le",
+            "bytes": 16384,
+            "sha256": "sha256:83c0a87de5f7383f54c05616a5bd57f97ab6cc8c5c000db644eb9c03f0afa57b"
+          },
+          "clock": {
+            "name": "clock.i64le",
+            "bytes": 48,
+            "sha256": "sha256:9c27be83816d36bd5b4eac84bcc0444fd5e81ed533c763d812193ba3cff27720"
+          }
+        },
+        "source_reader": {
+          "protocol": "native-RGB-float32-frame-source-v1",
+          "source": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\temp\\float-standard-0gy51e4n\\project\\assets\\source.mkv",
+          "source_sha256": "sha256:45bba842cf04588f04e1c379523766e82a44261042733b2e5955dd342a3898e4",
+          "native_frame_clock": true,
+          "network": false,
+          "autorotation": false,
+          "CFR_normalization": false,
+          "colour_transform": "none;native-RGB/gray-values-only",
+          "editor_integrated": false,
+          "HDR_accepted": false,
+          "native_index": {
+            "protocol": "native-video-frame-index-v1",
+            "key": "75f9ee1840aa053defc7ac9e7d0f96574f819d4121617d15221ea01faccea99f",
+            "status": "memory-reuse",
+            "source_index_decode_calls": 0,
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\temp\\float-standard-0gy51e4n\\project\\cache\\native-video-index\\75f9ee1840aa053defc7ac9e7d0f96574f819d4121617d15221ea01faccea99f",
+            "frames": 2,
+            "byte_validation": false
+          },
+          "native_stream": {
+            "width": "32",
+            "height": "16",
+            "sample_aspect_ratio": "N/A",
+            "pix_fmt": "gbrap16le",
+            "color_range": "pc",
+            "color_space": "gbr",
+            "color_transfer": "unknown",
+            "color_primaries": "unknown",
+            "chroma_location": "unspecified",
+            "time_base": "1/1000"
+          },
+          "format_info": {
+            "start_time": "0.000000"
+          },
+          "source_frame_count": 2,
+          "requested_prefix_frame_count": 2,
+          "native_time_base": "1/1000",
+          "alpha_association": "straight",
+          "source_has_alpha": true,
+          "frame_bytes": 4096,
+          "command": [
+            "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+            "-nostdin",
+            "-hide_banner",
+            "-loglevel",
+            "error",
+            "-protocol_whitelist",
+            "file,pipe",
+            "-noautorotate",
+            "-i",
+            "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\temp\\float-standard-0gy51e4n\\project\\assets\\source.mkv",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-sn",
+            "-dn",
+            "-frames:v",
+            "2",
+            "-fps_mode",
+            "passthrough",
+            "-pix_fmt",
+            "gbrap16le",
+            "-f",
+            "rawvideo",
+            "pipe:1"
+          ],
+          "artifacts": {
+            "source": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\temp\\float-standard-0gy51e4n\\project\\assets\\source.mkv",
+              "role": "float-video-source",
+              "bytes": 1049,
+              "sha256": "sha256:45bba842cf04588f04e1c379523766e82a44261042733b2e5955dd342a3898e4"
+            },
+            "ffmpeg": {
+              "path": "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+              "role": "float-video-source",
+              "bytes": 223360000,
+              "sha256": "sha256:d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31"
+            },
+            "ffprobe": {
+              "path": "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.exe",
+              "role": "float-video-source",
+              "bytes": 223153664,
+              "sha256": "sha256:70872c3ffbc43d0b2c570f9837f54d6e9a832f4ca25463e9735b6a3ec0621478"
+            },
+            "implementation": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_video_source.py",
+              "role": "float-video-source",
+              "bytes": 9879,
+              "sha256": "sha256:79685d1bbe3298b1334b80d429bba0fb6e8c8c57230428f1e08eb9afc56b510a"
+            },
+            "pixels_implementation": {
+              "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_pixels.py",
+              "role": "float-video-source",
+              "bytes": 7700,
+              "sha256": "sha256:863991d7c7e88db619b72e268321fe182baca8d4e8f63d8c5166a945928e127f"
+            }
+          },
+          "bounded_stdout_chunks": 4,
+          "chunk_bytes": 65536,
+          "bounded_stderr_chunks": 2,
+          "decoded_frames": 2,
+          "pixel_boundary": {
+            "protocol": "native-RGB-gray-to-straight-float32-v1",
+            "native_pixel_format": "gbrap16le",
+            "frame_bytes": 4096,
+            "component_bits": 16,
+            "storage_bits": 16,
+            "native_floating": false,
+            "native_alpha_association": "straight",
+            "source_has_alpha": true,
+            "output": "straight-float32-RGBA",
+            "colour_transform": "none;source-numeric-values-only",
+            "estimated_working_bytes": 20480,
+            "estimated_bytes_are_peak_RSS": false,
+            "hidden_straight_RGB": "retained;premultiplied-zero-alpha-canonicalized",
+            "HDR_accepted": false,
+            "editor_integrated": false
+          },
+          "requested_prefix_complete": true,
+          "all_source_frames_decoded": true,
+          "closed": true
+        },
+        "source_reader_process": {
+          "exit_code": 0,
+          "owned_threads_terminated": true
+        },
+        "colour_boundary": {
+          "protocol": "explicit-display-nits-PQ-HLG-float32-v1",
+          "source_signal": {
+            "primaries": "bt2020",
+            "transfer": "linear",
+            "reference_white_nits": 100,
+            "display_peak_nits": null,
+            "system_gamma": null
+          },
+          "target_signal": {
+            "primaries": "bt2020",
+            "transfer": "hlg-bt2100",
+            "reference_white_nits": 100,
+            "display_peak_nits": 1000,
+            "system_gamma": 1.2,
+            "display_black_nits": 1
+          },
+          "linear_gamut_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "white": "D65; explicit declared reference_white_nits; display-linear working RGB",
+          "alpha": "bit-exact-independent-straight-coverage",
+          "RGB_clipping": "none",
+          "gamut_mapping": "none",
+          "negative_extension": "legacy relative transfers only; standard PQ/HLG domains enforced",
+          "bt709_interpretation": "published rounded camera OETF/inverse;not-BT1886-display-EOTF",
+          "same_signal_byte_exact": false,
+          "chromatic_adaptation": false,
+          "absolute_nits_managed": true,
+          "estimated_working_bytes": 282624,
+          "estimated_bytes_are_peak_RSS": false,
+          "HDR_accepted": false,
+          "editor_integrated": false,
+          "linear_unit_scale": 1.0,
+          "relative_author_color_unit_inherited": false,
+          "hdr_output_domain_policy": "clip",
+          "hdr_output_components_clipped": 0,
+          "hdr_input_domain_policy": "reject",
+          "hdr_input_components_clipped": 0,
+          "HLG_RGB_coupled_OOTF": true,
+          "HLG_black_level": {
+            "protocol": "explicit-HLG-display-black-float32-v1",
+            "source": null,
+            "target": {
+              "display_black_nits": 1,
+              "black_lift_beta": 0.09740037464252967,
+              "explicitly_declared": true,
+              "display_peak_nits": 1000,
+              "system_gamma": 1.2,
+              "reference_white_nits": 100
+            },
+            "black_luminance_inferred": false,
+            "below_black_output_policy": "clip"
+          }
+        },
+        "colour_boundary_scope": "last-selected-frame",
+        "colour_boundary_all_frames": {
+          "protocol": "all-selected-frame-colour-audit-v1",
+          "frames": 2,
+          "first_frame": 0,
+          "last_frame": 1,
+          "frames_with_counted_events": 1,
+          "first_affected_frame": 0,
+          "last_affected_frame": 0,
+          "totals": {
+            "hdr_input_components_clipped": 0,
+            "hdr_output_components_clipped": 1536,
+            "encoded_output_components_clipped": 0,
+            "negative_components_clipped": 0,
+            "over_one_components_clipped": 0,
+            "above_declared_peak_pixels": 0
+          },
+          "maximum_per_frame": {
+            "hdr_input_components_clipped": 0,
+            "hdr_output_components_clipped": 1536,
+            "encoded_output_components_clipped": 0,
+            "negative_components_clipped": 0,
+            "over_one_components_clipped": 0,
+            "above_declared_peak_pixels": 0
+          },
+          "framed_receipts_sha256": "sha256:d2bc559fea25f0f5795d834f408898d41bd7c95c63842f477f5d4efda666597b",
+          "receipt_hash_covers_all_frames": true,
+          "whole_movie_receipt_cache": false,
+          "native_CMM_internal_gamut_mapping_counted": false
+        },
+        "geometry_boundary": null,
+        "implementation_artifacts": {
+          "float_bundle": {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_bundle.py",
+            "role": "float-bundle-implementation",
+            "bytes": 18614,
+            "sha256": "sha256:98d74fd212b437611c23037b3b92c184ff21a7d090790ff2077869bb2cd623b5"
+          },
+          "float_color_signal": {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_color_signal.py",
+            "role": "float-bundle-implementation",
+            "bytes": 11155,
+            "sha256": "sha256:62f4bf0ada897af57edc3d1c8c44728a7dad0161ea28803663f84e9531182b93"
+          },
+          "float_hdr": {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_hdr.py",
+            "role": "float-bundle-implementation",
+            "bytes": 11344,
+            "sha256": "sha256:21314466b99d1b8ab9fb52b1868a30d20bde126c7ab5a0253b7487f7d87746e9"
+          },
+          "float_hlg_black": {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_hlg_black.py",
+            "role": "float-bundle-implementation",
+            "bytes": 1748,
+            "sha256": "sha256:f601d145b26e7da72884e157d54519704cb213d5cd6da76be7792579bc2b1c8e"
+          },
+          "float_chromatic": {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_chromatic.py",
+            "role": "float-bundle-implementation",
+            "bytes": 4534,
+            "sha256": "sha256:8e2b46d73db3e19a4534eda68519d374a5dc6aff79ca2fc7085bac3f89d675d6"
+          },
+          "float_geometry": {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_geometry.py",
+            "role": "float-bundle-implementation",
+            "bytes": 6804,
+            "sha256": "sha256:57f9af0406663a27e31b35e3463076acf24d3833de5fce98102b6f0b73a9d51a"
+          },
+          "icc_profiles": {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\icc_profiles.py",
+            "role": "float-bundle-implementation",
+            "bytes": 13816,
+            "sha256": "sha256:ba1ddcdba127f4c7f9f51794b28b91a0b99f4aa0fa01cb20ea772e7f6b211bff"
+          },
+          "colour_audit": {
+            "path": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\colour_audit.py",
+            "role": "float-bundle-implementation",
+            "bytes": 2485,
+            "sha256": "sha256:50f15bb81fbd73a09c3cecaeacf74002894fadfbefe30eba90a3c06bdaf7bed8"
+          },
+          "numpy_init": {
+            "path": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\__init__.py",
+            "role": "float-bundle-implementation",
+            "bytes": 27212,
+            "sha256": "sha256:b16a4f347c6583c878e1973a208564e01686b79cc70911ad0157e05d8eecda37"
+          },
+          "numpy_native_0": {
+            "path": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy\\_core\\_multiarray_umath.cp313-win_amd64.pyd",
+            "role": "float-bundle-implementation",
+            "bytes": 3709440,
+            "sha256": "sha256:a072e5eddbee33b2f73aaf698222d8db2e43e5dcc0146d0a3011de4daebf3600"
+          },
+          "numpy_dll_0": {
+            "path": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy.libs\\libscipy_openblas64_-74a408729250596b0973e69fdd954eea.dll",
+            "role": "float-bundle-implementation",
+            "bytes": 20404736,
+            "sha256": "sha256:74a408729250596b0973e69fdd954eea07a70ff527a1dbaccf9ae21247b80377"
+          },
+          "numpy_dll_1": {
+            "path": "C:\\Users\\carzy\\AppData\\Roaming\\Python\\Python313\\site-packages\\numpy.libs\\msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll",
+            "role": "float-bundle-implementation",
+            "bytes": 575056,
+            "sha256": "sha256:a4c2229bdc2a2a630acdc095b4d86008e5c3e3bc7773174354f3da4f5beb9cde"
+          }
+        },
+        "numpy_version": "2.4.2",
+        "numpy_whole_package_inventory": false,
+        "working_white": "relative D65;physical white matching must be supplied by caller",
+        "alpha": "independent-straight;not-a-transfer-component",
+        "encoded_movie": false,
+        "audio_exported": false,
+        "timeline_renderer_integrated": false,
+        "HDR_accepted": true,
+        "native_windows": true,
+        "network": false,
+        "budget": {
+          "required_bytes_estimate": 147504,
+          "limit_bytes": 2147483648,
+          "peak_RSS_accepted": false
+        }
+      }
+    },
+    {
+      "test": "test_hdr_measure.LightUnitTests.test_PQ_float64_decode_matches_independent_decimal_oracle",
+      "measured": {
+        "protocol": "authored-delivery-rgb16-light-measure-v1",
+        "frames": 1,
+        "first_frame": 0,
+        "last_frame": 0,
+        "active_region_xywh": [
+          0,
+          0,
+          5,
+          1
+        ],
+        "active_pixels_per_frame": 5,
+        "analyzed_duration_seconds": "1/25",
+        "minimum_RGB_component_nits": 0.0023078620849521884,
+        "peak_pixel": {
+          "maxrgb": {
+            "nits": 10000.0,
+            "frame": 0,
+            "x": 4,
+            "y": 0
+          },
+          "cie_y": {
+            "nits": 10000.0,
+            "frame": 0,
+            "x": 4,
+            "y": 0
+          }
+        },
+        "maximum_frame_average": {
+          "maxrgb": {
+            "nits": 2215.1846277112554,
+            "frame": 0
+          },
+          "cie_y": {
+            "nits": 2215.1846277112554,
+            "frame": 0
+          }
+        },
+        "duration_weighted_frame_average_nits": {
+          "maxrgb": 2215.1846277112554,
+          "cie_y": 2215.1846277112554
+        },
+        "framed_metrics_sha256": "sha256:f74a37eb195929edd99c54eb711687cd824b4fad819e10d4ce8777e42be75a6e",
+        "input_signal": {
+          "primaries": "bt2020",
+          "transfer": "pq-st2084",
+          "reference_white_nits": 203,
+          "display_peak_nits": null,
+          "system_gamma": null
+        },
+        "RGB16_quantization": "Float64 nearest-even; exactly common encoder input",
+        "metric_definitions": {
+          "maxrgb": "max of decoded display-linear R/G/B nit components at each pixel",
+          "cie_y": "decoded display-linear RGB dot declared-primary XYZ Y row in nits"
+        },
+        "measurement_edge": "after display mapping, native proof, signal conversion, range policy and RGB16 quantization; before YUV/codec",
+        "codec_output_measured": false,
+        "automatically_written_SEI": false,
+        "filtered_outliers": false,
+        "whole_movie_pixel_cache": false,
+        "HDR_monitor_accepted": false
+      },
+      "independent_decimal_nits": [
+        0.0023078620849521937,
+        0.3246307290684469,
+        92.25276076002935,
+        983.3434392050818,
+        10000.0
+      ]
+    }
+  ],
+  "test_float_hdr": []
+}

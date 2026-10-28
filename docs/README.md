@@ -1,6 +1,8 @@
 # agent editor kit 文档 / Documentation
 
-Current local / 当前本地 / 目前本地：**CLI0.1.48 / local.46 / r49 kit** · [ICC output](product/ICC_OUTPUT.md) · [Install](releases/CLI_0.1.48_LOCAL.md) · [C58](product/CASES.md#c58-native-icc-output).
+Current local / 当前本地 / 目前本地：**CLI0.1.49 / local.47 / r50 kit** · [Light measurement](product/HDR_MEASUREMENT.md) · [Install](releases/CLI_0.1.49_LOCAL.md) · [C59](product/CASES.md#c59-native-hdr-measurement).
+
+Historical / 历史 / 歷史：**CLI0.1.48 / local.46 / r49 kit** · [ICC output](product/ICC_OUTPUT.md) · [Install](releases/CLI_0.1.48_LOCAL.md) · [C58](product/CASES.md#c58-native-icc-output).
 
 Historical / 历史 / 歷史：**CLI0.1.47 / local.45 / r48 kit** · [HLG black](product/HLG_BLACK_LEVEL.md) · [Install](releases/CLI_0.1.47_LOCAL.md) · [C57](product/CASES.md#c57-hlg-display-black).
 

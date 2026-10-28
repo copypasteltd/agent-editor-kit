@@ -1858,3 +1858,12 @@ scripts/*icc_output*20261028.py text eol=lf
 docs/product/ICC_OUTPUT.md text eol=lf
 docs/releases/CLI_0.1.48_LOCAL.md text eol=lf
 docs/validation/原生ICC输出与软打样实测_2026-10-29.md text eol=lf
+
+# Preserve all-frame HDR light measurement receipts and diagnostic media.
+docs/validation/evidence/native-hdr-measure-20261028-r1/** -text -whitespace
+docs/assets/native-hdr-measure-20261029-*/** -text -whitespace
+docs/product/hdr-measure-capabilities-cli-0.1.49.json -text -whitespace
+scripts/*hdr_measure*20261029.py text eol=lf
+docs/product/HDR_MEASUREMENT.md text eol=lf
+docs/releases/CLI_0.1.49_LOCAL.md text eol=lf
+docs/validation/全帧HDR光量与裁切汇总实测_2026-10-29.md text eol=lf

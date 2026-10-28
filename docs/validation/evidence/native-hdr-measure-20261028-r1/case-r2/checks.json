@@ -1,0 +1,71 @@
+[
+  {
+    "name": "readonly-author",
+    "ok": true
+  },
+  {
+    "name": "all-frame-scope",
+    "ok": true
+  },
+  {
+    "name": "partial-active-not-full",
+    "ok": true
+  },
+  {
+    "name": "independent-maxrgb-frames",
+    "ok": true
+  },
+  {
+    "name": "independent-cie_y-frames",
+    "ok": true
+  },
+  {
+    "name": "independent-all-frame-transport",
+    "ok": true
+  },
+  {
+    "name": "independent-nit-metrics",
+    "ok": true,
+    "maximum_error_nits": 5.684341886080802e-14
+  },
+  {
+    "name": "actual-render-input-match",
+    "ok": true
+  },
+  {
+    "name": "all-master-video-and-audio",
+    "ok": true,
+    "video_bytes": 66355200,
+    "PCM_scalar_count": 384000
+  },
+  {
+    "name": "preview-readonly",
+    "ok": true
+  },
+  {
+    "name": "all-replay-metrics",
+    "ok": true
+  },
+  {
+    "name": "complete-master-replay",
+    "ok": true
+  },
+  {
+    "name": "gpu-measure-readonly",
+    "ok": true
+  },
+  {
+    "name": "actual-GPU-and-native-proof",
+    "ok": true
+  },
+  {
+    "name": "GPU-proof-transport-match",
+    "ok": true
+  },
+  {
+    "name": "actual-GIF",
+    "ok": true,
+    "gif_frames": 24,
+    "gif_duration_ms": 4000
+  }
+]

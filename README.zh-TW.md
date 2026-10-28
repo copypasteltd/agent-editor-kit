@@ -1,5 +1,7 @@
 # agent editor kit
 
+**CLI53 離線交付正在驗證。** 統一 Skill 候選包維持 1 個入口、17 個模組，增加 ACES 說明；結構校驗通過。完整安裝包、最終原始碼相容性及安裝版行為仍待驗收，目前本機入口仍 CLI52。[本輪實作、待辦與安裝驗收命令](docs/validation/ACES离线交付进度_2026-10-29.md)。
+
 <!-- aces-timeline-source53 -->
 
 **原始碼 CLI0.1.53：ACES 時間軸與預覽已接通。** 正式交付、逐幀測量、單次顯示轉換後的線性縮圖，以及 HDR 母版的獨立 SDR 視圖；18 項專項與 46 項測量／Schema 回歸分別通過。[使用流程](docs/product/ACES_TIMELINE.md) · [C65：影片、GIF、PNG16、專案包](docs/product/CASES.md#c65-source-aces-timeline)。目前安裝 Skill 仍為 CLI52；ACES 在 CPU 執行，新安裝交付與完整目標仍待完成。

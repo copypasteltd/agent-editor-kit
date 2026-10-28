@@ -1,5 +1,7 @@
 # agent editor kit
 
+**CLI53 offline delivery is under verification.** The unified Skill candidate retains one entry and 17 modules, adds ACES guidance, and passes structural validation. Full installation, final-source compatibility and installed behavior remain pending; the registered local entry stays CLI52. [Completed work, pending gates and installation acceptance commands](docs/validation/ACES离线交付进度_2026-10-29.md).
+
 <!-- aces-timeline-source53 -->
 
 **Source CLI0.1.53 connects ACES rendering and previews.** Formal delivery, all-frame metering, one display transform before display-linear resizing, and a separate SDR view for HDR masters; 18 specialized tests and 46 metering/Schema regressions passed separately. [Workflow](docs/product/ACES_TIMELINE.md) · [C65: video, GIF, PNG16, editable project](docs/product/CASES.md#c65-source-aces-timeline). Installed Skill remains CLI52. ACES runs on CPU; new installed delivery and full parity remain pending.

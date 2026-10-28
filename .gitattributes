@@ -1909,3 +1909,9 @@ docs/validation/evidence/aces-kernel-20261029-r1/** -text -whitespace
 docs/validation/evidence/aces-pipeline-20261029-r1/** -text -whitespace
 docs/validation/verify_aces_pipeline.py text eol=lf
 docs/validation/verify_ocio_kernel.py text eol=lf
+
+# Offline ACES delivery receipts and executed runners are byte-exact artifacts.
+docs/validation/evidence/aces-delivery-20261029-r1/** -text -whitespace
+docs/validation/*aces*.py text eol=lf
+docs/validation/test_offline_wheel_reuse.py text eol=lf
+product/offline/build.py text eol=lf

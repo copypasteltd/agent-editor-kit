@@ -1,10 +1,10 @@
 # agent editor kit
 
-**CLI53 offline delivery is under verification.** The unified Skill candidate retains one entry and 17 modules, adds ACES guidance, and passes structural validation. Full installation, final-source compatibility and installed behavior remain pending; the registered local entry stays CLI52. [Completed work, pending gates and installation acceptance commands](docs/validation/ACES离线交付进度_2026-10-29.md).
+**The complete CLI53 offline bundle is built and installed.** Strict reuse checked 1,704 package files; all 280 installed code modules and native resources match source bytes. Version/capabilities report CLI53 and 90 capabilities; actual bundled OCIO DLL loading and native transformation passed. Final-source and installed regressions remain running; the registered Skill stays CLI52. [Installation location, usage and acceptance commands](docs/validation/ACES离线交付进度_2026-10-29.md).
 
 <!-- aces-timeline-source53 -->
 
-**Source CLI0.1.53 connects ACES rendering and previews.** Formal delivery, all-frame metering, one display transform before display-linear resizing, and a separate SDR view for HDR masters; 18 specialized tests and 46 metering/Schema regressions passed separately. [Workflow](docs/product/ACES_TIMELINE.md) · [C65: video, GIF, PNG16, editable project](docs/product/CASES.md#c65-source-aces-timeline). Installed Skill remains CLI52. ACES runs on CPU; new installed delivery and full parity remain pending.
+**Source CLI0.1.53 connects ACES rendering and previews.** Formal delivery, all-frame metering, one display transform before display-linear resizing, and a separate SDR view for HDR masters; 18 specialized tests and 46 metering/Schema regressions passed separately. [Workflow](docs/product/ACES_TIMELINE.md) · [C65: video, GIF, PNG16, editable project](docs/product/CASES.md#c65-source-aces-timeline). Installed Skill remains CLI52. ACES runs on CPU; installed behavioral acceptance, Skill activation and full parity remain pending.
 
 ![Source ACES numeric viewing copy](docs/assets/aces-timeline-20261029-r1/preview.gif)
 
@@ -1761,6 +1761,10 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R364 | Source CLI53 native ACES timeline/preview | 18 specialized tests, frozen final source, no failures/skips | [raw](docs/validation/evidence/aces-pipeline-20261029-r1/special-r4.json) | CPU; installed Skill52 unchanged; G08 remains open |
 | R365 | Final-source metering and Schema regression | 46 tests, frozen final source, no failures/skips; relative-scene ACES metering fixed | [raw](docs/validation/evidence/aces-pipeline-20261029-r1/meter-r4.json) | Separate group; preliminary long compatibility run not final-source proof |
 | R366 | C65 real source ACES media | 8-frame/800ms GIF; actual MP4/PNG16/editable project; PNG16 native reference error0 | [raw](docs/validation/evidence/aces-pipeline-20261029-r1/case-r1.json) | Numeric scene; pre-meter-fix render snapshot; no installed/GPU/natural/monitor acceptance |
+| R367 | Exact-payload offline wheel reuse | 9 acceptance tests passed; rejects mismatched pins, payloads, metadata and unsafe destinations | [raw](docs/validation/evidence/aces-delivery-20261029-r1/wheel-reuse-tests-r1/verification.json) | Build infrastructure; no new rendering or model-inference claim |
+| R368 | Preliminary ACES compatibility audit | 373 tests, no failures/errors/skips; final source differs in hdr_measure.py | [audit](docs/validation/evidence/aces-delivery-20261029-r1/compat-preliminary-audit-r1/verification.json) | Not final-source acceptance; final-source and installed 373-test runs remain pending |
+| R369 | Complete CLI53 offline installation | ZIP305677502 bytes; 280 code modules and native resources byte-exact; CLI53 / 90 capabilities | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installation-final-r2/verification.json) | Installed regressions and registered Skill activation remain pending |
+| R370 | Actual installed OCIO DLL execution | Isolated/no-site process; actual loaded DLL path and hashes; Float32 transform equals direct native reference | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-native-r1/verification.json) | Two-pixel native smoke; not complete-video, GPU or monitor acceptance |
 
 ## Current limits and development direction
 

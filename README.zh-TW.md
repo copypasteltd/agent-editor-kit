@@ -1,10 +1,10 @@
 # agent editor kit
 
-**CLI53 離線交付正在驗證。** 統一 Skill 候選包維持 1 個入口、17 個模組，增加 ACES 說明；結構校驗通過。完整安裝包、最終原始碼相容性及安裝版行為仍待驗收，目前本機入口仍 CLI52。[本輪實作、待辦與安裝驗收命令](docs/validation/ACES离线交付进度_2026-10-29.md)。
+**CLI53 完整離線包已建置並成功安裝。** 1,704 個包內程式碼／資源經嚴格複用校驗；安裝版 280 個程式碼模組及原生資源位元組一致，90 項能力可列舉，實際隨包 OCIO DLL 載入與轉換核驗通過。最終原始碼及安裝版完整回歸仍在進行，本機註冊 Skill 暫維持 CLI52。[安裝位置、使用與驗收命令](docs/validation/ACES离线交付进度_2026-10-29.md)。
 
 <!-- aces-timeline-source53 -->
 
-**原始碼 CLI0.1.53：ACES 時間軸與預覽已接通。** 正式交付、逐幀測量、單次顯示轉換後的線性縮圖，以及 HDR 母版的獨立 SDR 視圖；18 項專項與 46 項測量／Schema 回歸分別通過。[使用流程](docs/product/ACES_TIMELINE.md) · [C65：影片、GIF、PNG16、專案包](docs/product/CASES.md#c65-source-aces-timeline)。目前安裝 Skill 仍為 CLI52；ACES 在 CPU 執行，新安裝交付與完整目標仍待完成。
+**原始碼 CLI0.1.53：ACES 時間軸與預覽已接通。** 正式交付、逐幀測量、單次顯示轉換後的線性縮圖，以及 HDR 母版的獨立 SDR 視圖；18 項專項與 46 項測量／Schema 回歸分別通過。[使用流程](docs/product/ACES_TIMELINE.md) · [C65：影片、GIF、PNG16、專案包](docs/product/CASES.md#c65-source-aces-timeline)。目前安裝 Skill 仍為 CLI52；ACES 在 CPU 執行，新安裝版完整回歸、Skill 切換與完整目標仍待完成。
 
 ![Source ACES numeric viewing copy](docs/assets/aces-timeline-20261029-r1/preview.gif)
 
@@ -1759,6 +1759,10 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R364 | Source CLI53 native ACES timeline/preview | 18 specialized tests, frozen final source, no failures/skips | [raw](docs/validation/evidence/aces-pipeline-20261029-r1/special-r4.json) | CPU; installed Skill52 unchanged; G08 remains open |
 | R365 | Final-source metering and Schema regression | 46 tests, frozen final source, no failures/skips; relative-scene ACES metering fixed | [raw](docs/validation/evidence/aces-pipeline-20261029-r1/meter-r4.json) | Separate group; preliminary long compatibility run not final-source proof |
 | R366 | C65 real source ACES media | 8-frame/800ms GIF; actual MP4/PNG16/editable project; PNG16 native reference error0 | [raw](docs/validation/evidence/aces-pipeline-20261029-r1/case-r1.json) | Numeric scene; pre-meter-fix render snapshot; no installed/GPU/natural/monitor acceptance |
+| R367 | Exact-payload offline wheel reuse | 9 acceptance tests passed; rejects mismatched pins, payloads, metadata and unsafe destinations | [raw](docs/validation/evidence/aces-delivery-20261029-r1/wheel-reuse-tests-r1/verification.json) | Build infrastructure; no new rendering or model-inference claim |
+| R368 | Preliminary ACES compatibility audit | 373 tests, no failures/errors/skips; final source differs in hdr_measure.py | [audit](docs/validation/evidence/aces-delivery-20261029-r1/compat-preliminary-audit-r1/verification.json) | Not final-source acceptance; final-source and installed 373-test runs remain pending |
+| R369 | Complete CLI53 offline installation | ZIP305677502 bytes; 280 code modules and native resources byte-exact; CLI53 / 90 capabilities | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installation-final-r2/verification.json) | Installed regressions and registered Skill activation remain pending |
+| R370 | Actual installed OCIO DLL execution | Isolated/no-site process; actual loaded DLL path and hashes; Float32 transform equals direct native reference | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-native-r1/verification.json) | Two-pixel native smoke; not complete-video, GPU or monitor acceptance |
 
 ## 當前邊界與開發方向
 

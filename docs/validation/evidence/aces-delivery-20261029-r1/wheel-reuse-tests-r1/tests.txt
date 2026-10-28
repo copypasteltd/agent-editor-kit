@@ -1,0 +1,14 @@
+test_alias_destination_is_refused (__main__.ReuseTests.test_alias_destination_is_refused) ... ok
+test_exact_data_scheme_payload_is_accepted (__main__.ReuseTests.test_exact_data_scheme_payload_is_accepted) ... ok
+test_metadata_version_is_refused (__main__.ReuseTests.test_metadata_version_is_refused) ... ok
+test_missing_current_resource_is_refused (__main__.ReuseTests.test_missing_current_resource_is_refused) ... ok
+test_missing_pin_is_refused (__main__.ReuseTests.test_missing_pin_is_refused) ... ok
+test_modified_current_source_is_refused (__main__.ReuseTests.test_modified_current_source_is_refused) ... ok
+test_parent_traversal_is_refused (__main__.ReuseTests.test_parent_traversal_is_refused) ... ok
+test_pin_mismatch_is_refused (__main__.ReuseTests.test_pin_mismatch_is_refused) ... ok
+test_unexpected_payload_is_refused (__main__.ReuseTests.test_unexpected_payload_is_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 4.382s
+
+OK

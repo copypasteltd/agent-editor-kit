@@ -1,0 +1,20 @@
+{
+  "status": "preliminary-only-not-final-source-acceptance",
+  "tests": 373,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "frozen_equal": false,
+  "source_changes": {
+    "product\\src\\ai_ad_editor\\hdr_measure.py": {
+      "at_start": "8df23c15899866dead6357feb27a62c580c557d0645f2fc03dd2f810e3101a28",
+      "current": "e22182419bba9323d69b04a12eb0685dee8e79a03dbd9ffcead3556bbffef718"
+    }
+  },
+  "old_compatibility_actual_tests": 352,
+  "current_compatibility_tests": 373,
+  "additional_selected_modules": {
+    "test_float_gamut": 15,
+    "test_gpu_gamut": 6
+  }
+}

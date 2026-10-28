@@ -9,17 +9,17 @@ def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def save(p,value):p.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--run',required=True);a=p.parse_args();assert a.run.replace('-','').isalnum()
-    installation=load(BASE/'installation-final-r1/verification.json')
+    p=argparse.ArgumentParser();p.add_argument('--run',required=True);p.add_argument('--installation-run',default='r2');a=p.parse_args();assert a.run.replace('-','').isalnum() and a.installation_run.replace('-','').isalnum()
+    installation=load(BASE/('installation-final-'+a.installation_run)/'verification.json')
     assert installation['status']=='installed-and-byte-verified' and installation['cli_version']=='0.1.53'
     package=Path(installation['installed'])/'site/ai_ad_editor';source=ROOT/'product/src/ai_ad_editor'
     pins={p.name:sha(p) for p in source.glob('*.py')};assert len(pins)==280
     assert pins=={p.name:sha(p) for p in package.glob('*.py')}
-    for name,n in [('special-r4',18),('meter-r4',46),('compat-r5',352)]:
+    for name,n in [('special-r4',18),('meter-r4',46),('compat-r5',373)]:
         v=load(SOURCE/(name+'.json'))
         assert v['status']=='passed' and v['tests']==n and v['skipped']==0 and v['frozen_equal']
         assert all(sha(ROOT/name)==digest for name,digest in v['source_files'].items())
-    for name,n in [('installed-special-r1',18),('installed-meter-r1',46),('installed-compat-r1',352)]:
+    for name,n in [('installed-special-r1',18),('installed-meter-r1',46),('installed-compat-r1',373)]:
         v=load(BASE/name/'verification.json')
         assert v['status']=='passed' and v['tests']==n and v['skipped']==0 and v['frozen_equal']
         assert v['source_fallback'] is False and v['isolated'] and v['no_site']
@@ -54,7 +54,7 @@ def main():
     assert len(manifest['files'])==92 and sum(Path(row['path']).name=='SKILL.md' for row in manifest['files'])==1
     save(ns,manifest)
     report=dict(status='pinned-for-runtime-activation',cli_version='0.1.53',public_entries=1,modules=17,skill_files=92,
-        source_special=18,source_meter=46,source_compatibility=352,installed_special=18,installed_meter=46,installed_compatibility=352,
+        source_special=18,source_meter=46,source_compatibility=373,installed_special=18,installed_meter=46,installed_compatibility=373,
         actual_installed_native_DLL=True,source_fallback=False,namespace_manifest_sha256=sha(ns),changed_files=sorted(changes))
     save(out/'verification.json',report);print(json.dumps(report))
 

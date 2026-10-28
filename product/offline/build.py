@@ -32,7 +32,51 @@ def matching_product_version(metadata_text, source_text):
     return versions[0]
 
 
-def build(output,wheelhouse):
+def validate_product_wheel(path,version,project_text,source_root,expected_sha256):
+    """Reuse only an explicitly pinned wheel with the exact current package payload."""
+    if not isinstance(expected_sha256,str) or not re.fullmatch(r'sha256:[0-9a-f]{64}',expected_sha256):
+        raise ValueError('Reused product wheel requires an explicit SHA256 pin')
+    path=Path(path);INSTALLER['no_reparse'](path)
+    if not path.is_file() or not path.name.endswith('.whl') or sha(path)!=expected_sha256:
+        raise ValueError('Reused product wheel digest differs from its explicit pin')
+    patterns=tomllib.loads(project_text)['tool']['setuptools']['package-data']['ai_ad_editor']
+    expected={p.relative_to(source_root).as_posix():p for p in source_root.glob('*.py') if p.is_file()}
+    for pattern in patterns:
+        expected.update({p.relative_to(source_root).as_posix():p for p in source_root.glob(pattern) if p.is_file()})
+    if not expected:raise ValueError('Empty source package payload')
+    prefix='ai_ad_editor-'+version
+    metadata_prefix=prefix+'.dist-info/'
+    allowed_metadata={'METADATA','WHEEL','entry_points.txt','top_level.txt','RECORD'}
+    payload={};metadata={}
+    with zipfile.ZipFile(path) as archive:
+        names=archive.namelist()
+        if len(names)!=len(set(names)):raise ValueError('Duplicate product wheel members')
+        for entry in archive.infolist():
+            name=entry.filename
+            if entry.is_dir() or '\\' in name or ':' in name or name.startswith('/') or '..' in name.split('/') or ((entry.external_attr>>16)&0o170000)==0o120000:
+                raise ValueError('Unsafe product wheel member')
+            if name.startswith(metadata_prefix) and name[len(metadata_prefix):] in allowed_metadata:
+                metadata[name[len(metadata_prefix):]]=archive.read(entry);continue
+            relative=None
+            for base in ('ai_ad_editor/',prefix+'.data/purelib/ai_ad_editor/',prefix+'.data/platlib/ai_ad_editor/'):
+                if name.startswith(base):relative=name[len(base):];break
+            if relative is None or relative not in expected or relative in payload:
+                raise ValueError('Unexpected or duplicate product payload: '+name)
+            source=expected[relative];INSTALLER['no_reparse'](source)
+            if entry.file_size!=source.stat().st_size:raise ValueError('Product wheel payload size differs: '+relative)
+            with archive.open(entry) as stream:digest='sha256:'+hashlib.file_digest(stream,'sha256').hexdigest()
+            if digest!=sha(source):raise ValueError('Product wheel payload bytes differ: '+relative)
+            payload[relative]=digest
+    if set(payload)!=set(expected) or not {'METADATA','WHEEL','RECORD'}<=metadata.keys():
+        raise ValueError('Incomplete product wheel payload or metadata')
+    info=BytesParser().parsebytes(metadata['METADATA'])
+    if re.sub('[-_.]+','-',str(info['Name'])).lower()!='ai-ad-editor' or info['Version']!=version:
+        raise ValueError('Reused product wheel metadata differs from source')
+    if sha(path)!=expected_sha256:raise ValueError('Product wheel changed during verification')
+    return {'sha256':expected_sha256,'payload_files':len(payload),'payload_byte_exact':True}
+
+
+def build(output,wheelhouse,product_wheel=None,product_wheel_sha256=None):
     INSTALLER['native_target']()
     output=INSTALLER['local_path'](output);wheelhouse=INSTALLER['local_path'](wheelhouse)
     INSTALLER['no_reparse'](output);INSTALLER['no_reparse'](wheelhouse)
@@ -58,19 +102,29 @@ def build(output,wheelhouse):
         names.add(entry['name']);pinned.append(entry)
     if names!=INSTALLER['RUNTIME_PROFILES'][profile]-{'ai-ad-editor'}:
         raise ValueError('Incomplete '+profile+' pinned dependency wheelhouse; NumPy is required for media-analysis-v1')
+    reused=None
+    if product_wheel is not None:
+        product_wheel=INSTALLER['local_path'](product_wheel)
+        reused=validate_product_wheel(product_wheel,version,project_text,ROOT/'product/src/ai_ad_editor',product_wheel_sha256)
+    elif product_wheel_sha256 is not None:raise ValueError('Product wheel pin requires --product-wheel')
     # Setuptools can retain removed package-data files in product/build/lib.
     # Rebuild this generated directory so a removed LUT is not redistributed.
     generated=ROOT/'product/build'
     INSTALLER['no_reparse'](generated)
     if generated.resolve().parent!=(ROOT/'product').resolve():raise ValueError('Generated build directory escaped product')
-    if generated.exists():shutil.rmtree(generated)
+    if product_wheel is None and generated.exists():shutil.rmtree(generated)
     output.mkdir(parents=True);wheels=output/'wheels';wheels.mkdir()
     work=ROOT/'product/.runtime/offline-build';work.mkdir(parents=True,exist_ok=True)
     env=dict(os.environ);env.update(TEMP=str(work),TMP=str(work),TMPDIR=str(work),PIP_CONFIG_FILE=os.devnull,PIP_NO_INDEX='1',PIP_NO_CACHE_DIR='1',PIP_DISABLE_PIP_VERSION_CHECK='1',PYTHONDONTWRITEBYTECODE='1')
     command=[sys.executable,'-I','-B','-m','pip','wheel','--no-index','--no-deps','--no-build-isolation','--wheel-dir',str(wheels),str(ROOT/'product')]
-    with (output/'build.log').open('wb') as stream:
-        result=subprocess.run(command,cwd=work,env=env,stdout=stream,stderr=subprocess.STDOUT,timeout=900)
-    if result.returncode:raise RuntimeError((output/'build.log').read_text(encoding='utf-8',errors='replace'))
+    if reused is not None:
+        shutil.copyfile(product_wheel,wheels/product_wheel.name)
+        validate_product_wheel(wheels/product_wheel.name,version,project_text,ROOT/'product/src/ai_ad_editor',product_wheel_sha256)
+        (output/'build.log').write_text(json.dumps({'mode':'verified-existing-product-wheel',**reused})+'\n',encoding='utf-8')
+    else:
+        with (output/'build.log').open('wb') as stream:
+            result=subprocess.run(command,cwd=work,env=env,stdout=stream,stderr=subprocess.STDOUT,timeout=900)
+        if result.returncode:raise RuntimeError((output/'build.log').read_text(encoding='utf-8',errors='replace'))
     product=next(wheels.glob('*.whl'))
     with zipfile.ZipFile(product) as archive:
         info=BytesParser().parsebytes(archive.read(next(n for n in archive.namelist() if n.endswith('.dist-info/METADATA'))))
@@ -108,4 +162,6 @@ def build(output,wheelhouse):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,required=True);parser.add_argument('--wheelhouse',type=Path,default=ROOT/'sources/python-runtime/cp313-win_amd64-media')
-    args=parser.parse_args();print(json.dumps(build(args.output,args.wheelhouse),ensure_ascii=False))
+    parser.add_argument('--product-wheel',type=Path,help='Reuse an explicitly pinned, byte-verified current product wheel')
+    parser.add_argument('--product-wheel-sha256',help='Required sha256:<64 lowercase hex> pin for --product-wheel')
+    args=parser.parse_args();print(json.dumps(build(args.output,args.wheelhouse,args.product_wheel,args.product_wheel_sha256),ensure_ascii=False))

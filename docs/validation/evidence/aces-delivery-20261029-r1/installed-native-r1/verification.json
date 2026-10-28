@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "isolated": true,
+  "no_site": true,
+  "source_fallback": false,
+  "actual_pyd": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.51\\final-r2\\installed\\site\\ai_ad_editor\\native_ocio\\PyOpenColorIO.pyd",
+  "actual_DLL": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.51\\final-r2\\installed\\site\\ai_ad_editor\\native_ocio\\OpenColorIO_2_6.dll",
+  "actual_pyd_sha256": "7a51078f32a656fa147567c356a47cdadc7ca5ca29ef439a352b2f747af10593",
+  "actual_DLL_sha256": "fdab9f2171bea9ec4d1b766534d50edaa95883e80767f72ce27fa646aeb13320",
+  "native_version": "2.6.0",
+  "actual_native_transform": true,
+  "direct_native_reference_equal": true,
+  "alpha_bit_exact": true,
+  "processor_closed": true,
+  "selection": {
+    "config": "aces-2.1",
+    "display": "sRGB - Display",
+    "view": "ACES 2.0 - SDR 100 nits (Rec.709)",
+    "exposure_stops": 0,
+    "input_interpretation": "scene-linear-ACEScg"
+  },
+  "output": [
+    [
+      [
+        0.3491874039173126,
+        0.3491881191730499,
+        0.34918779134750366,
+        0.375
+      ],
+      [
+        0.8710260391235352,
+        0.2040163278579712,
+        0.005482708569616079,
+        1.0
+      ]
+    ]
+  ],
+  "metadata": {
+    "protocol": "native-ocio-aces-display-float32-v1",
+    "version": "2.6.0",
+    "selection": {
+      "config": "aces-2.1",
+      "display": "sRGB - Display",
+      "view": "ACES 2.0 - SDR 100 nits (Rec.709)",
+      "exposure_stops": 0.0,
+      "input_interpretation": "scene-linear-ACEScg"
+    },
+    "config_uri": "ocio://studio-config-v5.0.0_aces-v2.1_ocio-v2.6",
+    "config_sha256": "1748717664d82dd7a53f01e23d0692d2444049ac7d7f5c08d19618cec48506bf",
+    "processor_cache_id": "53face6a-f4b6-1c6a-b0af-5088d6ed6ab8",
+    "CPU": true,
+    "GPU": false,
+    "source_space": "ACEScg",
+    "input_is_scene_relative": true,
+    "automatic_camera_IDT": false,
+    "frames": 1,
+    "pixels": 2,
+    "alpha": "bit-exact",
+    "integer_intermediate": false,
+    "external_LUT_files": false,
+    "environment_configuration": false,
+    "estimated_working_bytes": 4320,
+    "estimate_is_peak_RSS": false
+  }
+}

@@ -1135,3 +1135,6 @@ The preview is an explicit Reinhard SDR view of the authored working timeline,no
 繁體：固定感知明度/色相縮色度，黑白端點另計，CPU/D65 BT.709；仍待自然畫面、安裝版及物理監看。
 
 English: Real source-phase encoded comparisons and full editable-package replay; CPU-only BT.709/D65 chroma boundary reduction. Preserve OKLab L/hue except counted endpoints, not CIE Y. Diagnostic chart, not natural quality, installed delivery or physical monitor acceptance.
+
+
+**2026-10-29 follow-up / 后续勘误 / 後續勘誤：** [SDR预览映射修复与C61包ID勘误](../validation/SDR预览映射修复_2026-10-29.md)。CLI51候选r2已构建与安装专项核验；统一Skill仍50；完整兼容、新kit、自然画面及物理监看待完成。

@@ -1883,3 +1883,6 @@ docs/product/oklab-gamut-capabilities-cli-0.1.51.json -text -whitespace
 scripts/*oklab_gamut*20261029.py text eol=lf
 product/src/ai_ad_editor/float_gamut.py text eol=lf
 product/tests/test_float_gamut.py text eol=lf
+
+docs/assets/oklab-preview-candidate-20261029-r1/** -text -whitespace
+scripts/*oklab_preview*20261029.py text eol=lf

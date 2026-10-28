@@ -1,0 +1,93 @@
+{
+  "status": "confirmed-preview-defect",
+  "installed": "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.49\\final-r1\\installed",
+  "source_fallback": false,
+  "calls": [
+    {
+      "name": "import",
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "utf8",
+        "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.49\\final-r1\\installed\\run.py",
+        "convert",
+        "import",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\oklab-gamut-20261029-r3\\editable-oklab.aevpkg.zip",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-preview-probe-r1"
+      ],
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "name": "frame",
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "utf8",
+        "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.49\\final-r1\\installed\\run.py",
+        "preview",
+        "frame",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-preview-probe-r1",
+        "--frame",
+        "9",
+        "--height",
+        "216"
+      ],
+      "exit_code": 2,
+      "ok": false
+    },
+    {
+      "name": "range",
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "utf8",
+        "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.49\\final-r1\\installed\\run.py",
+        "preview",
+        "range",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-preview-probe-r1",
+        "--start-frame",
+        "0",
+        "--end-frame",
+        "10",
+        "--height",
+        "216"
+      ],
+      "exit_code": 2,
+      "ok": false
+    }
+  ],
+  "frame_errors": [
+    {
+      "code": "PROJECT_INVALID",
+      "message": "项目验证失败，拒绝预览",
+      "path": null,
+      "retryable": false,
+      "cause": "{\"ok\": false, \"errors\": [{\"code\": \"ID_DUPLICATE\", \"message\": \"重复 ID: sound\", \"path\": \"sequences[0].tracks[1].clips[0].id\", \"retryable\": false}], \"warnings\": [], \"rights\": {\"ok\": true, \"target\": \"commercial_ad\", \"checked\": 2, \"required_records\": 2, \"failures\": [], \"warnings\": [], \"disposition_decisions\": [], \"effective_disposition_decisions\": []}, \"schema_engine\": \"jsonschema\", \"asset_count\": 2, \"sequence_count\": 1}"
+    }
+  ],
+  "range_errors": [
+    {
+      "code": "PROJECT_INVALID",
+      "message": "项目验证失败，拒绝预览",
+      "path": null,
+      "retryable": false,
+      "cause": "{\"ok\": false, \"errors\": [{\"code\": \"ID_DUPLICATE\", \"message\": \"重复 ID: sound\", \"path\": \"sequences[0].tracks[1].clips[0].id\", \"retryable\": false}], \"warnings\": [], \"rights\": {\"ok\": true, \"target\": \"commercial_ad\", \"checked\": 2, \"required_records\": 2, \"failures\": [], \"warnings\": [], \"disposition_decisions\": [], \"effective_disposition_decisions\": []}, \"schema_engine\": \"jsonschema\", \"asset_count\": 2, \"sequence_count\": 1}"
+    }
+  ],
+  "author_unchanged": true,
+  "scope": "Candidate has valid display_mapping but no preview_mapping; previews omit the declared SDR delivery map."
+}

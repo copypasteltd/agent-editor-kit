@@ -38,16 +38,18 @@ def reference_plan(project, mode):
     if mode not in {'frame', 'range'}:
         raise error('CONFIG', '浮点预览模式必须是frame/range')
     config = configuration(project['settings']['pixel_pipeline'], project['settings'], output_settings(project['settings']))
-    mapped = config['hdr_active'] or 'preview_mapping' in config['mappings']
-    if mapped and 'preview_mapping' not in config['mappings']:
+    mapping = config['mappings'].get('preview_mapping', config['mappings'].get('display_mapping'))
+    origin = 'preview_mapping' if 'preview_mapping' in config['mappings'] else 'display_mapping'
+    mapped = config['hdr_active'] or mapping is not None
+    if mapped and mapping is None:
         raise error('HDR_PREVIEW', 'HDR工程预览须明确pixel_pipeline.preview_mapping；禁止默认截断或将PQ/HLG当作SDR图')
     signal = (LuminanceSignal('bt709', 'srgb' if mode == 'frame' else 'linear',
-                  config['mappings']['preview_mapping']['target_peak_nits']) if mapped
+                  mapping['target_peak_nits']) if mapped
               else config['output'] if mode == 'frame' else REFERENCE_SIGNAL)
     return {'pixel_pipeline': config['engine'], 'pixel_protocol': PROTOCOL,
             'reference_pixel_format': 'rgba64be' if mode == 'frame' else 'gbrapf32le',
             'reference_signal': vars(signal),
-            **({'display_mapping': config['mappings']['preview_mapping'], 'HDR_reference_preserved':False,
+            **({'display_mapping': mapping, 'display_mapping_source': origin, 'HDR_reference_preserved':False,
                  'reference_scope':'explicit SDR viewing trim; original HDR render and author graph unchanged'} if mapped else {}),
             'reference_bytes_per_pixel': 8 if mode == 'frame' else 16,
             'reference_resampling': 'premultiplied-linear-bilinear-after-full-author-composite'}
@@ -173,6 +175,19 @@ class FloatPreviewContext:
             for index in range(start, end):
                 r.poll(); pipe.check()
                 surface, _ = r.timeline.render_frame(index)
+                signal = r.config['working']
+                inherited = request.get('display_mapping_source') == 'display_mapping'
+                if inherited:
+                    # Match the actual SDR delivery edge before downsampling:
+                    # mapping, proof and output conversion must not be omitted
+                    # or applied twice. Resize in display-linear BT.709.
+                    surface, boundary = r.delivery_surface(surface, stats=stats)
+                    linear = LuminanceSignal('bt709', 'linear', request['display_mapping']['target_peak_nits'])
+                    surface, _ = convert_rgba(surface, r.config['output'], linear,
+                        max_working_bytes=r.config['projection_working_bytes_limit'], cancel=r.poll)
+                    signal = linear
+                    self.metadata['last_preview_mapping'] = r.metadata['last_display_mapping']
+                    self.metadata['preview_delivery_boundary'] = boundary
                 if not r.config['alpha_output'] and np.any(surface[:, :, 3] != 1):
                     raise error('ALPHA', '不透明作者输出不能在预览中静默丢弃alpha')
                 height, width = surface.shape[:2]
@@ -181,8 +196,7 @@ class FloatPreviewContext:
                     surface, geometry = r.timeline.resample(surface, [request['width'], request['height']],
                         [[sx, 0, (sx-1)/2], [0, sy, (sy-1)/2]])
                     self.metadata['preview_geometry'] = geometry
-                signal = r.config['working']
-                if 'display_mapping' in request:
+                if 'display_mapping' in request and not inherited:
                     surface, signal, mapping = map_display(surface, signal, request['display_mapping'],
                         max_working_bytes=r.config['projection_working_bytes_limit'], cancel=r.poll)
                     self.metadata['last_preview_mapping'] = mapping
@@ -192,7 +206,8 @@ class FloatPreviewContext:
                             stats[key] = stats.get(key, 0) + mapping['perceptual_gamut'][key]
                     for key in ('negative_components_clipped','over_one_components_clipped','above_declared_peak_pixels'):
                         stats[key] = stats.get(key, 0) + mapping[key]
-                surface = r.proof_surface(surface,signal)
+                if not inherited:
+                    surface = r.proof_surface(surface,signal)
                 delivered, _ = convert_rgba(surface, signal, target,
                     max_working_bytes=r.config['projection_working_bytes_limit'], cancel=r.poll)
                 chunks = _chunks if request['mode'] == 'frame' else _float_chunks

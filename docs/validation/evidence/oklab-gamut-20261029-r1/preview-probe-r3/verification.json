@@ -1,0 +1,176 @@
+{
+  "status": "passed",
+  "corrected_package": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-preview-probe-r3\\exports\\corrected-oklab.aevpkg.zip",
+  "corrected_package_sha256": "a2993b728828ded3c51ea9fed8249952b46da6798fdae6338ad2dcba61468cf6",
+  "installed": "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.49\\final-r2\\installed",
+  "source_fallback": false,
+  "calls": [
+    {
+      "name": "import",
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "utf8",
+        "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.49\\final-r2\\installed\\run.py",
+        "convert",
+        "import",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\oklab-gamut-20261029-r3\\editable-oklab.aevpkg.zip",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-preview-probe-r3"
+      ],
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "name": "validate",
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "utf8",
+        "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.49\\final-r2\\installed\\run.py",
+        "validate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-preview-probe-r3"
+      ],
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "name": "frame",
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "utf8",
+        "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.49\\final-r2\\installed\\run.py",
+        "preview",
+        "frame",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-preview-probe-r3",
+        "--frame",
+        "9",
+        "--height",
+        "216"
+      ],
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "name": "range",
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "utf8",
+        "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.49\\final-r2\\installed\\run.py",
+        "preview",
+        "range",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-preview-probe-r3",
+        "--start-frame",
+        "0",
+        "--end-frame",
+        "10",
+        "--height",
+        "216"
+      ],
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "name": "export-corrected",
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "utf8",
+        "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.49\\final-r2\\installed\\run.py",
+        "convert",
+        "export",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-preview-probe-r3",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-preview-probe-r3\\exports\\corrected-oklab.aevpkg.zip",
+        "--target-format",
+        "package"
+      ],
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "name": "import-corrected",
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "utf8",
+        "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.49\\final-r2\\installed\\run.py",
+        "convert",
+        "import",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-preview-probe-r3\\exports\\corrected-oklab.aevpkg.zip",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-preview-probe-r3-replay"
+      ],
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "name": "validate-corrected",
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "utf8",
+        "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.49\\final-r2\\installed\\run.py",
+        "validate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-preview-probe-r3-replay"
+      ],
+      "exit_code": 0,
+      "ok": true
+    },
+    {
+      "name": "preview-corrected",
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-X",
+        "utf8",
+        "local\\agent-ffmpeg\\v0.1.0-alpha.4-local.49\\final-r2\\installed\\run.py",
+        "preview",
+        "frame",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-preview-probe-r3-replay",
+        "--frame",
+        "9",
+        "--height",
+        "216"
+      ],
+      "exit_code": 0,
+      "ok": true
+    }
+  ],
+  "author_unchanged": true,
+  "fixture_correction": "Imported historical C61 audio clip ID sound -> audio_clip; validated before preview.",
+  "scope": "Actual installed frame and 10-frame range previews inherit formal SDR display mapping; no source fallback."
+}

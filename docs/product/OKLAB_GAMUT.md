@@ -24,3 +24,6 @@
 繁體：新增明確選用的OKLab固定明度/色相縮色度；僅D65 BT.709目標，CPU分塊，端點與全幀計數可查。已安裝Skill尚未升級，完整自然HDR/藝術品質仍待驗收。
 
 English: Source CLI0.1.51 adds explicit `oklab-chroma` for BT.709/D65 SDR trims and previews. It reduces chroma along a fixed OKLab lightness/hue ray, with counted black/near-white endpoints. This preserves perceptual L, not CIE Y. CPU tiled execution; no soft knee, ACES or monitor-certification claim. Installed Skill remains CLI0.1.50 pending matching delivery.
+
+
+**2026-10-29 follow-up / 后续勘误 / 後續勘誤：** [SDR预览映射修复与C61包ID勘误](../validation/SDR预览映射修复_2026-10-29.md)。CLI51候选r2已构建与安装专项核验；统一Skill仍50；完整兼容、新kit、自然画面及物理监看待完成。

@@ -9,3 +9,6 @@
 繁體：目前僅原始碼功能驗收；CPU分塊、D65 BT.709、非軟拐點/ACES/物理監看，安裝版和自然畫面驗收待完成。
 
 English: Source-only addition; the installed unified Skill remains CLI0.1.50. Explicit CPU-tiled BT.709/D65 OKLab chroma boundary reduction, with counted endpoints and full-frame receipts. Matching offline delivery, natural-image quality, ACES/dynamic HDR and physical-monitor validation remain open.
+
+
+**2026-10-29 follow-up / 后续勘误 / 後續勘誤：** [SDR预览映射修复与C61包ID勘误](../validation/SDR预览映射修复_2026-10-29.md)。CLI51候选r2已构建与安装专项核验；统一Skill仍50；完整兼容、新kit、自然画面及物理监看待完成。

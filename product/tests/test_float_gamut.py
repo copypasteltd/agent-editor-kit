@@ -125,6 +125,63 @@ class GamutIntegrationTests(unittest.TestCase):
         self.f=self.h.f;self.h.source()
         self.f.p['settings']['pixel_pipeline']['preview_mapping']=copy.deepcopy(MAPPING)
 
+    def configure_SDR(self):
+        from ai_ad_editor.project import save_project
+        p=self.f.p['settings'];p['color'].update(primaries='bt709',transfer='iec61966-2-1',matrix='bt709')
+        p['pixel_pipeline'].update(output_signal=dict(primaries='bt709',transfer='srgb',reference_white_nits=100),display_mapping=copy.deepcopy(MAPPING))
+        p['pixel_pipeline'].pop('preview_mapping',None);save_project(self.f.root,self.f.p)
+
+    def test_SDR_delivery_mapping_is_inherited_before_preview_resize(self):
+        import hashlib
+        from test_float_hdr import pq_decimal
+        from ai_ad_editor.media import ffmpeg_path,probe_media
+        from ai_ad_editor.rights import load_ledger,save_ledger
+        f=self.f;asset=next(a for a in f.p['assets'] if a['id']=='picture');expanded=f.root/'assets/expanded.mkv'
+        # CLI thumbnails have a 64px minimum requested height. Three-wide
+        # source stripes make a 2:1 resize cross actual luminance boundaries.
+        # Repeat native planes exactly: swscale's RGB scaling can introduce
+        # unequal RGB rounding, invalidating an independent neutral oracle.
+        original_planes=np.frombuffer((f.root/'assets/source.gbrap16').read_bytes(),'<u2').reshape(8,4,16,32)
+        expanded_raw=f.root/'assets/expanded.gbrap16'
+        expanded_raw.write_bytes(original_planes.repeat(8,axis=2).repeat(3,axis=3).tobytes())
+        f.native([ffmpeg_path(),'-nostdin','-v','error','-f','rawvideo','-pixel_format','gbrap16le',
+            '-video_size','96x128','-framerate','10','-i',expanded_raw,
+            '-c:v','ffv1','-level','3','-g','1',expanded])
+        asset.update(uri='assets/expanded.mkv',sha256='sha256:'+hashlib.sha256(expanded.read_bytes()).hexdigest(),probe=probe_media(expanded))
+        ledger=load_ledger(f.root)
+        for row in ledger['records']:
+            if row['asset_id']=='picture':row['sha256']=asset['sha256']
+        save_ledger(f.root,ledger);f.p['settings']['canvas'].update(width=96,height=128)
+        self.configure_SDR();before=(f.root/'project.json').read_bytes()
+        code,value=f.invoke('preview','frame','--project',f.root,'--frame','0','--height','128')
+        self.assertEqual(code,0,value);frame=value['data'];self.assertEqual(frame['request']['display_mapping_source'],'display_mapping')
+        data=f.native([ffmpeg_path(),'-nostdin','-v','error','-i',frame['path'],'-an','-pix_fmt','rgba64le','-f','rawvideo','pipe:1'])
+        pixels=np.frombuffer(data,'<u2').reshape(128,96,4)
+        original=f.native([ffmpeg_path(),'-nostdin','-v','error','-i',expanded,'-frames:v','1',
+            '-pix_fmt','gbrap16le','-f','rawvideo','pipe:1'])
+        codes=(np.frombuffer(original,'<u2').reshape(4,128,96)[2,0].astype(np.float64)/65535).astype(np.float32)
+        y=np.array([pq_decimal(v)/100 for v in codes]);shoulder=y*(1+y/100)/(1+y)
+        srgb=np.where(shoulder<=.0031308,shoulder*12.92,1.055*shoulder**(1/2.4)-.055)
+        self.assertLessEqual(float(np.max(np.abs(pixels[:,:,0]-np.rint(srgb*65535)[None,:]))),2)
+        code,value=f.invoke('preview','range','--project',f.root,'--start-frame','0','--end-frame','1','--height','64')
+        self.assertEqual(code,0,value);window=value['data'];self.assertEqual(window['request']['display_mapping_source'],'display_mapping')
+        raw=f.native([ffmpeg_path(),'-nostdin','-v','error','-i',window['master'],'-map','0:v:0','-an','-pix_fmt','gbrapf32le','-f','rawvideo','pipe:1'])
+        linear=np.frombuffer(raw,'<f4').reshape(1,4,64,48)
+        # Nonlinear shoulder first, then linear pair average. Mapping the
+        # average source first would give a different (incorrect) result.
+        expected=shoulder.reshape(48,2).mean(axis=1)
+        np.testing.assert_allclose(linear[0,:3],np.broadcast_to(expected,(3,64,48)),rtol=3e-6,atol=5e-7)
+        self.assertEqual((f.root/'project.json').read_bytes(),before);f.assert_clean()
+        RECEIPTS.append(dict(scope='actual-inherited-SDR-preview-and-linear-resize',frame=frame,window=window))
+
+    def test_explicit_preview_mapping_has_priority_over_delivery_mapping(self):
+        from ai_ad_editor.float_preview import reference_plan
+        self.configure_SDR();pipeline=self.f.p['settings']['pixel_pipeline']
+        pipeline['preview_mapping']={**MAPPING,'exposure_stops':-1,'gamut_policy':'clip'}
+        request=reference_plan(self.f.p,'frame')
+        self.assertEqual(request['display_mapping_source'],'preview_mapping')
+        self.assertEqual(request['display_mapping'],pipeline['preview_mapping'])
+
     def test_actual_HDR_preview_keeps_author_project_and_reports_mapping(self):
         from ai_ad_editor.project import save_project
         f=self.f;save_project(f.root,f.p);before=(f.root/'project.json').read_bytes()

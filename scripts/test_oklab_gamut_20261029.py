@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse,hashlib,json,os,sys,tempfile,unittest
 from datetime import datetime,timezone
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'docs/validation/evidence/oklab-gamut-20261029-r1'
-GROUPS={'schema':['test_schema_contract'], 'boundary':['test_float_yuv','test_float_video_source','test_schema_contract'], 'measure':['test_float_gamut','test_float_hdr','test_hdr_media_measure','test_hdr_measure'], 'compat':['test_icc_output','test_float_hlg_black','test_icc_profiles','test_float_chromatic','test_float_color_signal','test_float_hdr','test_hdr_metadata','test_float_glow','test_float_standard_render','test_float_preview','test_float_bundle','test_float_bundle_source','test_float_lut','test_float_curves','test_schema_contract','test_queue_reuse']}
+GROUPS={'preview':['test_float_preview'], 'gamut':['test_float_gamut'], 'schema':['test_schema_contract'], 'boundary':['test_float_yuv','test_float_video_source','test_schema_contract'], 'measure':['test_float_gamut','test_float_hdr','test_hdr_media_measure','test_hdr_measure'], 'compat':['test_icc_output','test_float_hlg_black','test_icc_profiles','test_float_chromatic','test_float_color_signal','test_float_hdr','test_hdr_metadata','test_float_glow','test_float_standard_render','test_float_preview','test_float_bundle','test_float_bundle_source','test_float_lut','test_float_curves','test_schema_contract','test_queue_reuse']}
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--run',required=True);ap.add_argument('--installed',type=Path);ap.add_argument('--group',choices=GROUPS,default='measure');a=ap.parse_args()

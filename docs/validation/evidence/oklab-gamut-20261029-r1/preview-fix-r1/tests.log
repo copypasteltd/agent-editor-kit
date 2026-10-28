@@ -1,0 +1,29 @@
+test_SDR_delivery_mapping_is_inherited_before_preview_resize (test_float_gamut.GamutIntegrationTests.test_SDR_delivery_mapping_is_inherited_before_preview_resize) ... FAIL
+test_actual_HDR_preview_keeps_author_project_and_reports_mapping (test_float_gamut.GamutIntegrationTests.test_actual_HDR_preview_keeps_author_project_and_reports_mapping) ... ok
+test_actual_SDR_render_and_editable_package_complete_pixels_PCM (test_float_gamut.GamutIntegrationTests.test_actual_SDR_render_and_editable_package_complete_pixels_PCM) ... ok
+test_explicit_preview_mapping_has_priority_over_delivery_mapping (test_float_gamut.GamutIntegrationTests.test_explicit_preview_mapping_has_priority_over_delivery_mapping) ... ok
+test_cancellation_inside_search_leaves_input_unchanged (test_float_gamut.GamutTests.test_cancellation_inside_search_leaves_input_unchanged) ... ok
+test_in_gamut_and_neutral_bits_unchanged (test_float_gamut.GamutTests.test_in_gamut_and_neutral_bits_unchanged) ... ok
+test_invalid_and_unbounded_tiles_rejected (test_float_gamut.GamutTests.test_invalid_and_unbounded_tiles_rejected) ... ok
+test_lightness_endpoints_counted_not_claimed_preserved (test_float_gamut.GamutTests.test_lightness_endpoints_counted_not_claimed_preserved) ... ok
+test_mapping_domain_configuration_and_budget (test_float_gamut.GamutTests.test_mapping_domain_configuration_and_budget) ... ok
+test_mapping_keeps_alpha_input_and_exposes_no_component_clip (test_float_gamut.GamutTests.test_mapping_keeps_alpha_input_and_exposes_no_component_clip) ... ok
+test_near_white_matrix_precision_guard_is_counted (test_float_gamut.GamutTests.test_near_white_matrix_precision_guard_is_counted) ... ok
+test_negative_luminance_explicitly_rejected (test_float_gamut.GamutTests.test_negative_luminance_explicitly_rejected) ... ok
+test_preserves_lightness_hue_and_reduces_chroma (test_float_gamut.GamutTests.test_preserves_lightness_hue_and_reduces_chroma) ... ok
+test_scalar_reference_all_hues_and_lightness (test_float_gamut.GamutTests.test_scalar_reference_all_hues_and_lightness) ... ok
+test_target_rejected_before_mapping (test_float_gamut.GamutTests.test_target_rejected_before_mapping) ... ok
+
+======================================================================
+FAIL: test_SDR_delivery_mapping_is_inherited_before_preview_resize (test_float_gamut.GamutIntegrationTests.test_SDR_delivery_mapping_is_inherited_before_preview_resize)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_gamut.py", line 157, in test_SDR_delivery_mapping_is_inherited_before_preview_resize
+    self.assertLessEqual(float(np.max(np.abs(pixels[:,:,0]-np.rint(np.repeat(srgb,3)*65535)[None,:]))),2)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 15.0 not less than or equal to 2
+
+----------------------------------------------------------------------
+Ran 15 tests in 47.321s
+
+FAILED (failures=1)

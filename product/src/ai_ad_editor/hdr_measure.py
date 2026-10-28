@@ -40,7 +40,7 @@ def canonical(value):
 
 class LightMeter:
     """One bounded row/tile at a time; no movie or per-frame result cache."""
-    def __init__(self, signal, width, height, *, region=None, cancel=None):
+    def __init__(self, signal, width, height, *, region=None, cancel=None, quantize_rgb16=True):
         if not has_luminance(signal): raise error('SIGNAL', '测量须明确输出reference_white_nits，禁止由标签推断')
         if any(type(v) is not int or v < 1 or v > 16384 for v in (width, height)) or width * height > 16777216:
             raise error('BUDGET', '测量表面尺寸超出预算')
@@ -51,6 +51,8 @@ class LightMeter:
         x, y, w, h = region
         if min(x, y) < 0 or min(w, h) < 1 or x + w > width or y + h > height:
             raise error('REGION', '有效画面范围必须完全位于画布内')
+        if type(quantize_rgb16) is not bool: raise error('ARGUMENT', 'RGB16量化模式须为布尔值')
+        self.quantize_rgb16 = quantize_rgb16
         self.signal, self.width, self.height = signal, width, height
         self.region = list(region)
         self.poll = cancel or (lambda: None)
@@ -87,8 +89,9 @@ class LightMeter:
             for column in range(x, x + w, TILE_PIXELS):
                 self.poll()
                 values = surface[row_index, column:min(column + TILE_PIXELS, x + w), :3].astype(np.float64)
-                codes = np.rint(np.clip(values, 0, 1) * 65535)
-                rgb = to_linear(codes / 65535, self.signal) * self.signal.reference_white_nits
+                values = np.clip(values, 0, 1)
+                if self.quantize_rgb16: values = np.rint(values * 65535) / 65535
+                rgb = to_linear(values, self.signal) * self.signal.reference_white_nits
                 if not np.isfinite(rgb).all() or np.any(rgb < 0):
                     raise error('DOMAIN', '交付光量必须是有限非负的显示线性nit')
                 self.minimum = min(self.minimum, float(np.min(rgb)))
@@ -122,11 +125,11 @@ class LightMeter:
                     peak_pixel=self.peaks, maximum_frame_average=self.falls,
                     duration_weighted_frame_average_nits={k: v / float(self.duration) for k, v in self.weighted.items()},
                     framed_metrics_sha256='sha256:' + self.frame_hash.hexdigest(),
-                    input_signal=vars(self.signal), RGB16_quantization='Float64 nearest-even; exactly common encoder input',
+                    input_signal=vars(self.signal), RGB16_quantization=('Float64 nearest-even; exactly common encoder input' if self.quantize_rgb16 else 'none; native decoded Float32 code values promoted to Float64'),
                     metric_definitions={'maxrgb': 'max of decoded display-linear R/G/B nit components at each pixel',
                                         'cie_y': 'decoded display-linear RGB dot declared-primary XYZ Y row in nits'},
-                    measurement_edge='after display mapping, native proof, signal conversion, range policy and RGB16 quantization; before YUV/codec',
-                    codec_output_measured=False, automatically_written_SEI=False, filtered_outliers=False,
+                    measurement_edge=('after display mapping, native proof, signal conversion, range policy and RGB16 quantization; before YUV/codec' if self.quantize_rgb16 else 'after native media decode and explicit YCbCr reconstruction; no RGB16 requantization'),
+                    codec_output_measured=not self.quantize_rgb16, automatically_written_SEI=False, filtered_outliers=False,
                     whole_movie_pixel_cache=False, HDR_monitor_accepted=False)
 
 

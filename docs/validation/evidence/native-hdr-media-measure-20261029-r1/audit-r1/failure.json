@@ -1,0 +1,4 @@
+{
+  "status": "failed",
+  "reason": "Audit incorrectly assumed unpadded R1..R9; existing IDs are R01..R09. No historical rows changed. Corrected numeric comparison while retaining exact old-row equality."
+}

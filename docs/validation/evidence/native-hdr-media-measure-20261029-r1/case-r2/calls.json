@@ -1,0 +1,49 @@
+[
+  {
+    "name": "native-code-decode",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-noautorotate",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\renders\\hdr-master.mkv",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-sn",
+      "-dn",
+      "-fps_mode",
+      "passthrough",
+      "-pix_fmt",
+      "yuv444p10le",
+      "-f",
+      "rawvideo",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "a6f84210a78c36c7edb415d095b9e6492a48ac606b65c40d0bde5563f1214aad",
+    "stdout_bytes": 66355200
+  },
+  {
+    "name": "native-clock",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.EXE",
+      "-v",
+      "error",
+      "-select_streams",
+      "v:0",
+      "-show_frames",
+      "-show_streams",
+      "-show_entries",
+      "frame=best_effort_timestamp,pkt_duration,duration:stream=time_base,width,height",
+      "-of",
+      "json",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hdr-measure-case-r2\\project\\renders\\hdr-master.mkv"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "5911c10d66a8bf6907122637ea2c51c24323647740ada70bc3d9841341fd23e7",
+    "stdout_bytes": 5776
+  }
+]

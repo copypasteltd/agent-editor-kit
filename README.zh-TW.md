@@ -4,6 +4,8 @@
 
 [簡體中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit) · [Docs](docs/README.md)
 
+**原始碼開發進展：CLI 0.1.50（尚未打包安裝）** 新增解碼後成片光量複核 `surface measure-media`；原始碼專項29/29、實際48影格成片獨立像素／光量核對通過。目前已安裝執行版與統一 Skill 仍為 CLI 0.1.49 / local.47 / r50 kit，新入口無法透過該安裝版呼叫。[使用流程與限制](docs/product/HDR_MEDIA_MEASUREMENT.md) · [本輪核驗](docs/validation/编码后成片光量核验_2026-10-29.md)。
+
 開發輪次彙報：每輪結束均提供編號完成項與待辦表，列明驗證依據及未完成邊界，見[彙報規範](docs/DEVELOPMENT_REPORTING.md)。
 
 **公開發行版本：v0.1.0-alpha.3 預發布版 · CLI 0.1.2 · 500 套風格 · 17 個歷史拆分 Skill。** 提供完整運行 ZIP、Agent kit、可選圖冊及校驗摘要。運行內核保持原已驗包位元組；新增可移植安裝和可執行示例。完整剪映等價仍是開發目標，尚未驗收。
@@ -1630,6 +1632,9 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R330 | 2026-10-29 HDR meter | 19項安裝專項與352項安裝相容分別通過；顯示映射／原生軟打樣測量及正式算繪RGB16摘要相同。 | [Evidence](docs/validation/evidence/native-hdr-measure-20261028-r1/installed-compat-r1/verification.json) |
 | R331 | 2026-10-29 HDR meter | C59：獨立全部48影格／11059200像素公式與RGB16輸入摘要；真實PQ成片66355200影片位元組及384000非零PCM標量。 | [Evidence](docs/validation/evidence/native-hdr-measure-20261028-r1/case-r2/verification.json) |
 | R332 | 2026-10-29 HDR meter | C59：專案全音畫／全部測量重播一致；另有48影格真實GPU Bloom／原生軟打樣輸入同正式算繪；實際MP4／GIF。 | [Evidence](docs/validation/evidence/native-hdr-measure-20261028-r1/case-r2/verification.json) |
+| R333 | 2026-10-29 原始碼專項 | 解碼後測量＋既有編碼前回歸29/29，0失敗／錯誤／略過；首輪27項有1錯誤已留存並修復。原始碼CLI0.1.50，尚非安裝版驗收。 | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/source-r3/verification.json) |
+| R334 | 2026-10-29 成片原始碼實測 | C59實際48影格／11,059,200像素獨立RGBA摘要一致，光量最大誤差1.14e-13 nit；原專案／成片未改。非安裝Skill呼叫、非實體HDR監看。 | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/case-r2/verification.json) |
+| R335 | 2026-10-29 原始碼邊界回歸 | 原生YCbCr、原生影片讀取、schema契約42/42，0失敗／錯誤／略過；與29項專項分列，尚未執行新安裝版回歸。 | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/boundary-r2/verification.json) |
 
 ## 當前邊界與開發方向
 

@@ -1076,6 +1076,18 @@ def build_parser() -> argparse.ArgumentParser:
     surface_measure.add_argument('--stop-frame',type=int)
     surface_measure.add_argument('--active-region',type=int,nargs=4,metavar=('X','Y','WIDTH','HEIGHT'))
     surface_measure.add_argument('--cancel-file')
+    media_measure=_leaf_common(surface_sub.add_parser('measure-media',help='只读测量编码后原生帧；须明确RGB/HDR与YCbCr信号'))
+    media_measure.add_argument('--project',required=True)
+    media_measure.add_argument('--input',required=True)
+    media_measure.add_argument('--signal-json',required=True)
+    media_measure.add_argument('--pixel-family',choices=('rgb','yuv'),required=True)
+    media_measure.add_argument('--yuv-matrix',choices=('bt709','bt470bg','smpte170m','bt2020nc'))
+    media_measure.add_argument('--yuv-range',choices=('limited','full'))
+    media_measure.add_argument('--chroma-location',choices=('left','center','topleft','top','bottomleft','bottom'))
+    media_measure.add_argument('--scan',choices=('progressive',))
+    media_measure.add_argument('--active-region',type=int,nargs=4,metavar=('X','Y','WIDTH','HEIGHT'))
+    media_measure.add_argument('--range-policy',choices=('reject','clip'),default='reject')
+    media_measure.add_argument('--cancel-file')
     surface_verify=_leaf_common(surface_sub.add_parser('inspect-output',help='只读逐帧核验ICC序列全部PNG CRC/像素/嵌入配置和PCM字节'))
     surface_verify.add_argument('--project',required=True)
     surface_verify.add_argument('--input',required=True)
@@ -6052,6 +6064,15 @@ def command_surface(args: argparse.Namespace) -> dict[str, Any]:
     from .float_hdr import parse_signal
     from .float_yuv import YUVSpec
     root,project=load_project(args.project)
+    if args.action=='measure-media':
+        from . import hdr_media_measure
+        yuv = None
+        if any(v is not None for v in (args.yuv_matrix,args.yuv_range,args.chroma_location)):
+            yuv = dict(matrix=args.yuv_matrix,range=args.yuv_range,chroma_location=args.chroma_location)
+        plan=hdr_media_measure.prepare(root,args.input,_load_changes(args.signal_json),pixel_family=args.pixel_family,
+            yuv=yuv,scan=args.scan,region=args.active_region,range_policy=args.range_policy)
+        if args.dry_run:return _envelope('surface.measure-media',args,status='planned',data=plan)
+        return _envelope('surface.measure-media',args,data=hdr_media_measure.measure(root,plan,cancel_file=args.cancel_file))
     if args.action=='measure':
         from . import hdr_measure
         plan=hdr_measure.prepare(project,args.sequence_id,start_frame=args.start_frame,stop_frame=args.stop_frame,region=args.active_region)
@@ -7192,6 +7213,7 @@ _READ_ONLY_PROJECT_COMMANDS = {
     ('surface','inspect-profile'),
     ('surface','inspect-output'),
     ('surface','measure'),
+    ('surface','measure-media'),
     ('diagnostics', 'list'), ('diagnostics', 'show'), ('diagnostics', 'export'),
     ("project", "inspect"),
     ("operation", "inspect"),
@@ -7240,6 +7262,7 @@ COMMANDS: dict[tuple[str, str | None], Callable[[argparse.Namespace], dict[str, 
     ('surface','export'):command_surface,
     ('surface','render'):command_surface,
     ('surface','measure'):command_surface,
+    ('surface','measure-media'):command_surface,
     ('surface','inspect-output'):command_surface,
     ('surface','inspect'):command_surface,
     ('surface','inspect-profile'):command_surface,

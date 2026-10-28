@@ -4,6 +4,8 @@
 
 [简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [Repository](https://github.com/copypasteltd/agent-editor-kit) · [Docs](docs/README.md)
 
+**Source development: CLI 0.1.50 (not yet packaged or installed).** Adds native post-codec light metering with `surface measure-media`: 29/29 source tests and an independent full 48-frame encoded-master pixel/light oracle pass. The installed runtime and unified Skill remain CLI 0.1.49 / local.47 / r50 kit and cannot invoke this new command. [Workflow and limits](docs/product/HDR_MEDIA_MEASUREMENT.md) · [Evidence](docs/validation/编码后成片光量核验_2026-10-29.md).
+
 Development reporting: every round ends with numbered completed-work and pending-work tables, including verification evidence and remaining limits. See the [reporting convention](docs/DEVELOPMENT_REPORTING.md).
 
 **Public release: v0.1.0-alpha.3 prerelease · CLI 0.1.2 · 500 looks · 17 historical separate Skills.** Downloads provide a complete runtime ZIP, Agent kit, optional gallery and checksums. The verified runtime bytes are unchanged; portable installation and a runnable example are added. Complete Jianying/CapCut parity remains an unaccepted development target.
@@ -1632,6 +1634,9 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R330 | 2026-10-29 HDR meter | 19 installed checks and352 separate installed compatibility checks;display-map/native-proof meter and actual render RGB16 digests agree. | [Evidence](docs/validation/evidence/native-hdr-measure-20261028-r1/installed-compat-r1/verification.json) |
 | R331 | 2026-10-29 HDR meter | C59:independent equations for all48 frames/11059200 pixels and RGB16 input digest;actual PQ master66355200 video bytes and384000 nonzero PCM scalars. | [Evidence](docs/validation/evidence/native-hdr-measure-20261028-r1/case-r2/verification.json) |
 | R332 | 2026-10-29 HDR meter | C59:complete media/all measurements replay after package import;another48-frame actual GPU Bloom/native-proof run matches render input;actual MP4/GIF. | [Evidence](docs/validation/evidence/native-hdr-measure-20261028-r1/case-r2/verification.json) |
+| R333 | 2026-10-29 source tests | Post-codec metering and prior pre-codec regressions:29/29,zero failures/errors/skips;first 27-test run retained with one corrected error.Source CLI0.1.50,not installed acceptance. | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/source-r3/verification.json) |
+| R334 | 2026-10-29 actual encoded-master source run | C59:48 frames/11,059,200 pixels,independent RGBA digest equal,maximum light error1.14e-13 nit;original movie/project unchanged.Not an installed Skill run or physical HDR acceptance. | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/case-r2/verification.json) |
+| R335 | 2026-10-29 source boundary regressions | Native YCbCr,native video reader and schema contracts:42/42,zero failures/errors/skips;separate from29 focused tests.No new installed-runtime regression. | [Evidence](docs/validation/evidence/native-hdr-media-measure-20261029-r1/boundary-r2/verification.json) |
 
 ## Current limits and development direction
 

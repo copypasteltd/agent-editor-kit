@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.50 / alpha.4-local.48 / r51 kit · 1 Skill / 17 modules / 89 files.**
+**CLI0.1.51 / local.49 / r52 kit · 1 Skill / 17 modules / 90 files.**
 
-新增**解碼後原生成片光量複核**：實際原生PTS／曝光、明確RGB與YCbCr解釋、MaxRGB／CIE Y、越界與裁切計數、完整解碼像素／時鐘摘要。保留編碼前 `surface measure`，新增 `surface measure-media`，兩種測量邊界分別報告。
+本地安裝CLI51已接通明確OKLab縮色度、正式SDR交付映射繼承與映射後線性預覽縮小。顯式preview_mapping仍優先。實際統一Skill執行C62，完整像素／PCM專案重播通過；CPU色彩核心，不等於完整剪映／ACES／實體監看。
 
-[Post-codec workflow](HDR_MEDIA_MEASUREMENT.md)
+[OKLab / SDR workflow](OKLAB_GAMUT.md)
 
 <!-- /community-current -->
 
@@ -5049,6 +5049,7 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
     "original_author_clock_effects_linear_composition_and_editable_packages",
     "BT2020_NCL_PQ_HLG_ten_bit_delivery_with_matching_VUI",
     "explicit_modified_Reinhard_luminance_SDR_trim_and_SDR_preview",
+    "opt_in_OKLab_constant_lightness_hue_BT709_chroma_boundary_reduction",
     "preserved_alpha_bits_tiled_budgets_and_cancellation"
   ],
   "limits": [
@@ -5059,7 +5060,8 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
     "explicit_Bradford_whites_use_native_chromatic_adaptation_capability",
     "explicit_RGB_ICC_sources_use_native_icc_source_profiles_no_dynamic_metadata_or_DolbyVision",
     "HLG_explicit_black_lift_uses_native_hlg_black_level_with_peak_and_gamma",
-    "SDR_trim_is_explicit_creative_Reinhard_not_BT2390_or_perceptual_gamut_mapping",
+    "SDR_trim_is_explicit_creative_Reinhard_not_BT2390",
+    "OKLab_chroma_is_CPU_BT709_D65_only_not_ACES_or_soft_knee_or_constant_CIE_Y",
     "natural_HDR_monitor_long_form_and_full_CapCut_acceptance_pending"
   ]
 }
@@ -5496,3 +5498,5 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 
 
 源码CLI0.1.51 / Source only: [OKLab gamut](OKLAB_GAMUT.md)。安装声明仍以CLI0.1.50为准；新源码能力见[实际capabilities](oklab-gamut-capabilities-cli-0.1.51.json)。
+
+[CLI51 exact installed capabilities](oklab-gamut-installed-capabilities-cli-0.1.51.json).

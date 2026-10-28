@@ -1,8 +1,10 @@
 # agent editor kit 文档 / Documentation
 
+Current local / 当前本地 / 目前本地：**CLI0.1.51 / local.49 / r52 kit** · [Workflow](product/OKLAB_GAMUT.md) · [Install](releases/CLI_0.1.51_LOCAL.md) · [C62](product/CASES.md#c62-installed-oklab).
+
 源码CLI0.1.51：[OKLab色域映射](product/OKLAB_GAMUT.md) / [实测](validation/OKLab色域映射源码实测_2026-10-29.md)。安装仍CLI0.1.50，匹配新包待交付。
 
-Current local / 当前本地 / 目前本地：**CLI0.1.50 / local.48 / r51 kit** · [Workflow](product/HDR_MEDIA_MEASUREMENT.md) · [Install](releases/CLI_0.1.50_LOCAL.md) · [C60](product/CASES.md#c60-post-codec-hdr420).
+Historical / 历史 / 歷史：**CLI0.1.50 / local.48 / r51 kit** · [Workflow](product/HDR_MEDIA_MEASUREMENT.md) · [Install](releases/CLI_0.1.50_LOCAL.md) · [C60](product/CASES.md#c60-post-codec-hdr420).
 
 Historical source stage / 历史源码阶段 / 歷史原始碼階段：**CLI0.1.50，尚未安装 / not installed** · [Post-codec workflow](product/HDR_MEDIA_MEASUREMENT.md) · [Status](releases/CLI_0.1.50_SOURCE.md) · [Evidence](validation/编码后成片光量核验_2026-10-29.md).
 

@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.50 / alpha.4-local.48 / r51 kit · 1 Skill / 17 modules / 89 files.**
+**CLI0.1.51 / local.49 / r52 kit · 1 Skill / 17 modules / 90 files.**
 
-Added **native post-codec media light metering**:original PTS/exposures,explicit RGB/YCbCr interpretation,separate MaxRGB/CIE Y,range/clipping counts,and full decoded-pixel/clock digests.`surface measure` remains the pre-codec boundary;`surface measure-media` checks the encoded file.
+Installed CLI51 provides explicit OKLab chroma reduction, inherited formal SDR mapping and display-linear preview resizing after mapping. Explicit preview_mapping takes priority. C62 runs through the actual unified Skill with full pixel/PCM package replay. CPU colour math; no complete CapCut/ACES/physical-monitor claim.
 
-[Post-codec workflow](../product/HDR_MEDIA_MEASUREMENT.md)
+[OKLab / SDR workflow](../product/OKLAB_GAMUT.md)
 
 <!-- /community-current -->
 

@@ -1,0 +1,177 @@
+[
+  {
+    "name": "import",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\oklab-preview-candidate-20261029-r1\\corrected-oklab.aevpkg.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-registered-case-r1\\project"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "a23de69093c62c7f80975d30f8adfaa639413cad1396d0e049f25e6ad31ae99e"
+  },
+  {
+    "name": "validate",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-registered-case-r1\\project"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "79178b88d34ceba6e947684d1d9d9336b08bd926189e43c1a770d4e1f977b7e3"
+  },
+  {
+    "name": "render",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-registered-case-r1\\project",
+      "--sequence-id",
+      "seq_main",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-registered-case-r1\\project\\renders\\oklab.mkv"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "3addded1ae1e4a244851450b9579cd4d24dbe9e03459fc5d1668e51ee09c16e3"
+  },
+  {
+    "name": "frame",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "preview",
+      "frame",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-registered-case-r1\\project",
+      "--frame",
+      "9",
+      "--height",
+      "216"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "ebad4849b49376123a153274e7c1b6d90c48bfda93c1b2b578308727ec3b2f5e"
+  },
+  {
+    "name": "range",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "preview",
+      "range",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-registered-case-r1\\project",
+      "--start-frame",
+      "0",
+      "--end-frame",
+      "10",
+      "--height",
+      "216"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "31b5ab1bc8c7c9431e09cebc9d609aa405179a62e10cc2bdf8f08dcd829fb666"
+  },
+  {
+    "name": "export",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "export",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-registered-case-r1\\project",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-registered-case-r1\\project\\exports\\editable-oklab.aevpkg.zip",
+      "--target-format",
+      "package"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "2fb5e0ef0879c61187218c38fb87fff7b4989882af13c257c7d1c640faf9951a"
+  },
+  {
+    "name": "reimport",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-registered-case-r1\\project\\exports\\editable-oklab.aevpkg.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-registered-case-r1\\replay"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "da59eadb6c5f4aeb10dbaf1d9f7296a19f1b45d1d1791d1d222ad905827e9324"
+  },
+  {
+    "name": "revalidate",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-registered-case-r1\\replay"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "9e90cc43d55eddff73970497a2cf8ea7bf6f97faadfee4b65cdfebf6ce1b5585"
+  },
+  {
+    "name": "replay-render",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-registered-case-r1\\replay",
+      "--sequence-id",
+      "seq_main",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\oklab-registered-case-r1\\replay\\renders\\oklab.mkv"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "771155b1806a73130684fa97d200ecc3de7f7533eae2b55f9f39be0371cadd16"
+  }
+]

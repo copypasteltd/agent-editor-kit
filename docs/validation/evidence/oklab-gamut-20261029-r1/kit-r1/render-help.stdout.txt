@@ -1,0 +1,71 @@
+usage: ai-ad-editor render [-h] [--format {json,text}]
+                           [--request-id REQUEST_ID]
+                           [--idempotency-key IDEMPOTENCY_KEY] [--dry-run]
+                           [--no-network] [--progress {none,jsonl}]
+                           --project PROJECT [--sequence-id SEQUENCE_ID]
+                           [--output OUTPUT] [--publish]
+                           [--profile {vertical,square,landscape,vertical_720,landscape_720,custom}]
+                           [--width WIDTH] [--height HEIGHT]
+                           [--cancel-file CANCEL_FILE] [--resume RESUME]
+                           [--container {mp4,webm,mkv}]
+                           [--video-codec {libx264,libx265,libvpx-vp9,libvpx,libaom-av1}]
+                           [--audio-codec {aac,libopus,opus,pcm_s16le,pcm_s24le,pcm_s32le,pcm_f32le}]
+                           [--crf CRF] [--video-bitrate VIDEO_BITRATE]
+                           [--audio-bitrate AUDIO_BITRATE]
+                           [--pixel-format {yuv420p,yuv422p,yuv444p,yuv420p10le,yuv422p10le,yuv444p10le,yuva420p}]
+                           [--hardware-encode {off,prefer,require}]
+                           [--hardware-decode {off,prefer,require}]
+                           [--hardware-encoder {auto,nvenc,qsv,amf,mf}]
+                           [--hardware-decoder {auto,d3d11va,cuda}]
+                           [--hardware-probe-mib HARDWARE_PROBE_MIB]
+                           [--projection-acceleration {off,prefer,require}]
+                           [--projection-device PROJECTION_DEVICE]
+                           [--projection-memory-mib PROJECTION_MEMORY_MIB]
+                           [--sequence-sampling {bilinear,area}]
+                           [--sequence-memory-mib SEQUENCE_MEMORY_MIB]
+
+options:
+  -h, --help            show this help message and exit
+  --format {json,text}  输出格式
+  --request-id REQUEST_ID
+  --idempotency-key IDEMPOTENCY_KEY
+  --dry-run
+  --no-network
+  --progress {none,jsonl}
+  --project PROJECT
+  --sequence-id SEQUENCE_ID
+  --output OUTPUT
+  --publish
+  --profile {vertical,square,landscape,vertical_720,landscape_720,custom}
+                        输出画布档案
+  --width WIDTH         自定义输出宽度；必须与 --height 一起使用
+  --height HEIGHT       自定义输出高度；必须与 --width 一起使用
+  --cancel-file CANCEL_FILE
+                        存在该文件时取消渲染并清理临时产物
+  --resume RESUME       从此前失败/取消且依赖未变化的 render 操作重建
+  --container {mp4,webm,mkv}
+                        输出容器：mp4、webm 或 mkv
+  --video-codec {libx264,libx265,libvpx-vp9,libvpx,libaom-av1}
+  --audio-codec {aac,libopus,opus,pcm_s16le,pcm_s24le,pcm_s32le,pcm_f32le}
+  --crf CRF             视频 CRF，范围 0..63
+  --video-bitrate VIDEO_BITRATE
+                        可选视频码率，例如 8M
+  --audio-bitrate AUDIO_BITRATE
+                        音频码率，例如 192k
+  --pixel-format {yuv420p,yuv422p,yuv444p,yuv420p10le,yuv422p10le,yuv444p10le,yuva420p}
+  --hardware-encode {off,prefer,require}
+  --hardware-decode {off,prefer,require}
+  --hardware-encoder {auto,nvenc,qsv,amf,mf}
+  --hardware-decoder {auto,d3d11va,cuda}
+  --hardware-probe-mib HARDWARE_PROBE_MIB
+                        四帧像素工作量预算 1..1024 MiB，不是全部显存上限
+  --projection-acceleration {off,prefer,require}
+                        动态裁切/仿射/子序列投影的OpenCL策略，独立于硬件编码
+  --projection-device PROJECTION_DEVICE
+                        原生OpenCL platform.device索引，例如0.0
+  --projection-memory-mib PROJECTION_MEMORY_MIB
+                        GPU投影工作栅格准入配额MiB，1..65536；不是总VRAM上界
+  --sequence-sampling {bilinear,area}
+                        本次输出的序列容器投影采样，不改写作者工程
+  --sequence-memory-mib SEQUENCE_MEMORY_MIB
+                        序列投影工作配额 MiB，1..65536；不是进程总内存上界

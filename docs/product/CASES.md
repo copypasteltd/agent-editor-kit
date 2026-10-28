@@ -1138,3 +1138,19 @@ English: Real source-phase encoded comparisons and full editable-package replay;
 
 
 **2026-10-29 follow-up / 后续勘误 / 後續勘誤：** [SDR预览映射修复与C61包ID勘误](../validation/SDR预览映射修复_2026-10-29.md)。CLI51候选r2已构建与安装专项核验；统一Skill仍50；完整兼容、新kit、自然画面及物理监看待完成。
+
+<a id="c62-installed-oklab"></a>
+
+## C62 · Actual registered unified Skill OKLab delivery / 實際統一Skill
+
+CLI0.1.51/local.49，原创CC0图卡10帧/10FPS/1秒/384×216。使用真正C盘发现联接的统一Skill，经固定安装入口执行validate、正式渲染、frame9及全10帧range预览、工程包导出/导入/再次validate与渲染。旧C61重复ID已在新包修正，无绕过验证。
+
+![Actual SDR viewing copy](../assets/oklab-registered-20261029-r2/preview.gif)
+
+[Movie](../assets/oklab-registered-20261029-r2/oklab.mkv) · [Preview MP4](../assets/oklab-registered-20261029-r2/preview.mp4) · [PNG](../assets/oklab-registered-20261029-r2/frame.png) · [Editable package](../assets/oklab-registered-20261029-r2/editable-oklab.aevpkg.zip) · [Provenance](../assets/oklab-registered-20261029-r2/SOURCE.json) · [Raw verification](../validation/evidence/oklab-gamut-20261029-r1/registered-case-r2/verification.json)
+
+全部10帧三YUV平面与独立标量参考已核验的历史成片及本轮包重放一致；完整384000byte PCM一致。frame9 PNG16对独立RGB16参考≤2code。正式SDR映射仅应用一次，之后显示线性缩小；显式preview_mapping优先。GIF是实际压缩SDR查看副本，不是浮点母版或物理HDR监看。
+
+繁體：真實已註冊Skill執行、完整音畫重播及獨立像素參考；自然素材、完整ACES與實體監看仍待驗收。
+
+English: Real registered-Skill execution, full-frame YUV and complete PCM replay, plus independent RGB16 frame preview checks. CPU-tiled colour math; no natural-footage, full ACES or physical-monitor acceptance.

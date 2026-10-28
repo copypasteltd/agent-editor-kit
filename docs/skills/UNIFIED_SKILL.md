@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.50 / alpha.4-local.48 / r51 kit · 1 Skill / 17 modules / 89 files.**
+**CLI0.1.51 / local.49 / r52 kit · 1 Skill / 17 modules / 90 files.**
 
-新增**编码后原生成片光量复核**：实际原生PTS/曝光、明确RGB与YCbCr解释、MaxRGB/CIE Y、越界与裁切计数、完整解码像素/时钟摘要。保留编码前 `surface measure`，新增 `surface measure-media`，两种测量边界分别报告。
+本地安装CLI51已接通明确OKLab缩色度、正式SDR交付映射继承及映射后线性预览缩小。显式preview_mapping仍优先。实际统一Skill执行C62，完整像素/PCM工程包重放通过；CPU色彩内核，不等于完整剪映/ACES/物理监看。
 
-[Post-codec workflow](../product/HDR_MEDIA_MEASUREMENT.md)
+[OKLab / SDR workflow](../product/OKLAB_GAMUT.md)
 
 <!-- /community-current -->
 

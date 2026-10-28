@@ -1,5 +1,7 @@
 # OKLab 色度边界映射 / OKLab 色度邊界映射 / OKLab chroma boundary reduction
 
+**当前已安装CLI0.1.51/local.49，统一Skill已加载；以下初始源码阶段状态保留为历史。** [实际安装与使用](../releases/CLI_0.1.51_LOCAL.md) · [C62](CASES.md#c62-installed-oklab)。
+
 **源码 CLI0.1.51；当前安装与统一Skill仍CLI0.1.50/local.48/r51。** 本功能尚未安装打包，不要给旧Skill传入新枚举或回退到源码。[本轮源码证据](../validation/OKLab色域映射源码实测_2026-10-29.md)。
 
 在 `settings.pixel_pipeline.display_mapping` 或 `preview_mapping` 中明确设置：

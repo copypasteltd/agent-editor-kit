@@ -13,7 +13,22 @@
 
 
 
-<!-- oklab-gamut-source -->
+<!-- oklab-installed-current -->
+
+**CLI0.1.51 / local.49 / r52 kit · 1 Skill / 17 modules / 90 files.**
+
+本地安裝CLI51已接通明確OKLab縮色度、正式SDR交付映射繼承與映射後線性預覽縮小。顯式preview_mapping仍優先。實際統一Skill執行C62，完整像素／PCM專案重播通過；CPU色彩核心，不等於完整剪映／ACES／實體監看。
+
+[Workflow](docs/product/OKLAB_GAMUT.md) · [Install](docs/releases/CLI_0.1.51_LOCAL.md) · [C62](docs/product/CASES.md#c62-installed-oklab)
+
+![Actual registered Skill SDR view](docs/assets/oklab-registered-20261029-r2/preview.gif)
+
+<!-- /oklab-installed-current -->
+
+<!-- oklab-gamut-source-history -->
+
+Historical source/candidate stage; superseded by the installed workflow above.
+
 
 本輪已修復正式SDR映射的預覽繼承，CLI51候選r2完成原始碼/安裝版專項與實際工程包往返；統一Skill仍50，完整相容與新kit待完成。 [Fix / evidence / C61 errata](docs/validation/SDR预览映射修复_2026-10-29.md).
 
@@ -25,9 +40,11 @@
 
 專項62/62；相容初跑351/352，文件Schema副本同步後專項17/17通過；C61真實成片、全幀獨立參考與工程包完整音畫重放留證。數值圖卡不代替自然畫面及物理HDR監看驗收。
 
-<!-- /oklab-gamut-source -->
+<!-- /oklab-gamut-source-history -->
 
-<!-- native-hdr-media-current -->
+<!-- native-hdr-media-history -->
+
+Historical CLI50 delivery; current CLI51 is described above.
 
 **CLI0.1.50 / alpha.4-local.48 / r51 kit · 1 Skill / 17 modules / 89 files.**
 
@@ -41,7 +58,7 @@
 
 C59／R331計數更正：384000個PCM總標量中383999非零；原歷史行保留，[目前更正與證據](docs/validation/编码后成片安装与跨编码实测_2026-10-29.md)。
 
-<!-- /native-hdr-media-current -->
+<!-- /native-hdr-media-history -->
 
 <!-- native-hdr-measure-history -->
 
@@ -1679,6 +1696,10 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R347 | Native CLI51 candidate r2 offline build/install | 277 Python files byte-exact;88 capabilities; native ICC unchanged | 2026-10-29 | [build](docs/validation/evidence/oklab-gamut-20261029-r1/installation-final-r2/verification.json) | candidate only; registered Skill remains50 |
 | R348 | Actual candidate-installed HDR/measure and preview regression | 64/64 and18/18, separate groups, zero skips | 2026-10-29 | [measure](docs/validation/evidence/oklab-gamut-20261029-r1/installed-measure-r1/verification.json), [preview](docs/validation/evidence/oklab-gamut-20261029-r1/installed-preview-r1/verification.json) | final full compatibility and unified kit pending |
 | R349 | Actual installed valid C61 frame/range and corrected editable package | frame9 +10frame range; export/import/validate/preview; author JSON unchanged | 2026-10-29 | [CLI](docs/validation/evidence/oklab-gamut-20261029-r1/preview-probe-r3/verification.json), [outputs](docs/validation/SDR预览映射修复_2026-10-29.md) | isolated candidate -I -S; no registered-Skill or human-monitor claim |
+| R350 | Final CLI51 installed compatibility | 352/352 with zero failures/errors/skips; frozen277 files | 2026-10-29 | [compat](docs/validation/evidence/oklab-gamut-20261029-r1/installed-compat-r2/verification.json) | separate from64/18 focused gates; not full product parity |
+| R351 | Unified Skill51 pin, native activation and registration | 1 public Skill/17 modules/90 files; actual junction and4 existing packs verified | 2026-10-29 | [activation](docs/validation/evidence/oklab-gamut-20261029-r1/activation-final-r1/activation-and-registration.json) | no new model forwards; public alpha.3 unchanged |
+| R352 | C62 actual registered-Skill OKLab render/preview/package | Full10frame YUV replay,384000byte complete PCM,frame9 independent RGB16 oracle | 2026-10-29 | [case](docs/validation/evidence/oklab-gamut-20261029-r1/registered-case-r2/verification.json) | diagnostic synthetic SDR; CPU; no natural/physical acceptance |
+| R353 | Independent r52 kit extraction and real isolated registration | 148 entries/147 inventory/90 Skill files; actual OKLab frame/range and48-frame post-codec meter | 2026-10-29 | [kit](docs/validation/evidence/oklab-gamut-20261029-r1/kit-r1/verification.json), [digest](docs/skills/community-unified-skill-package-0.1.51-r52.json) | real discovery junction unchanged;1 Skill/17 modules; no clean-host claim |
 
 ## 當前邊界與開發方向
 

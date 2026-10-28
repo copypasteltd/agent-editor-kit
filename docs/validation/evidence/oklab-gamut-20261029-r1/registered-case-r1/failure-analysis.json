@@ -1,0 +1,8 @@
+{
+  "status": "failed-harness-assumption",
+  "calls": 9,
+  "render_and_replay_succeeded": true,
+  "cause": "Whole project.json byte-invariance incorrectly included normal render output/provenance ledger additions.",
+  "next": "r2 separately verifies unchanged author graph, exact allowed output ledger additions, and byte-invariant preview/export operations.",
+  "product_code_changed": false
+}

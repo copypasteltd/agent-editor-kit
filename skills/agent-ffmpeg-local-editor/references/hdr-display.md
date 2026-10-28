@@ -6,8 +6,7 @@ and the actual versioned case before authoring a new HDR project.
 
 - Every HDR project's source/working/output signal declares `reference_white_nits`.
   Working transfer is `linear`. PQ/HLG primaries are `bt2020`.
-- HLG additionally declares `display_peak_nits` and `system_gamma`; zero black is
-  the explicit implementation assumption. PQ uses display EOTF/inverse, not
+- HLG additionally declares `display_peak_nits` and `system_gamma`; black lift is explicit; read `hlg-black-level.md` for nonzero display black. PQ uses display EOTF/inverse, not
   a camera OETF. Never infer these quantities from a file's color tags.
 - HDR output uses explicit `yuv420p10le`, `yuv422p10le` or `yuv444p10le`,
   `bt2020` primaries, `bt2020nc` matrix and `smpte2084` / `arib-std-b67` transfer
@@ -17,7 +16,7 @@ and the actual versioned case before authoring a new HDR project.
   Show clamping counts to the reviewer; never silently change either policy.
 - For `preview frame/range`, explicitly set `preview_mapping` with all five
   fields: `operator=reinhard-luminance`, `source_peak_nits`, `target_peak_nits`,
-  `exposure_stops`, `gamut_policy=reject|clip`. PNG and MP4 are SDR viewing trims,
+  `exposure_stops`, `gamut_policy=reject|clip|oklab-chroma`. PNG and MP4 are SDR viewing trims,
   distinct from the original HDR master. Show the mapping along with the image.
 - Optional `display_mapping` makes a separate SDR delivery. Its target peak
   must equal the SDR output signal's `reference_white_nits`.
@@ -30,8 +29,9 @@ the HDR master and inspect actual decoded pixels/VUI and complete audio. Export
 an editable package and test it after importing into a new local directory.
 Keep the original HDR master available for a proper HDR display review.
 
-This does not implement ICC, nonzero-black HLG display calibration, perceptual
-gamut mapping, mastering-display/CLL/dynamic metadata or Dolby Vision. Synthetic
+Current CLI adds RGB ICC, nonzero HLG black, optional HDR10 static metadata
+and explicit OKLab chroma reduction through their linked references. Dynamic
+metadata, Dolby Vision and physical display calibration remain unimplemented. Synthetic
 numeric/encoded checks do not establish natural-footage or HDR monitor quality.
 
 CLI0.1.44 adds optional actual HDR10 static SEI. Read [HDR10 metadata](hdr-metadata.md).

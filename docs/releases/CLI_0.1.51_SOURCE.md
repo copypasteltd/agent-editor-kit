@@ -1,5 +1,7 @@
 # CLI0.1.51 源码阶段 / 原始碼階段 / source phase
 
+Historical source stage; superseded by [actual CLI51 local delivery](CLI_0.1.51_LOCAL.md).
+
 新增显式 `gamut_policy=oklab-chroma`，贯通正式SDR渲染、HDR的SDR预览、光量测量、可编辑工程包和全帧色域计数。算法、完整配置及边界见[功能使用说明](../product/OKLAB_GAMUT.md)，实际输出见[C61](../product/CASES.md#c61-oklab-gamut)。
 
 **已安装版本仍CLI0.1.50/local.48/r51。** 本源码版本没有可宣称已验收的离线安装包；不要修改旧Skill的版本针或让其回退源码。下一轮需重新构建ZIP、冻结277份产品文件、安装核验、注册统一Skill并独立解压测试匹配kit。

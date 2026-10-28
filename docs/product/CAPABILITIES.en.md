@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.50 / alpha.4-local.48 / r51 kit · 1 Skill / 17 modules / 89 files.**
+**CLI0.1.51 / local.49 / r52 kit · 1 Skill / 17 modules / 90 files.**
 
-Added **native post-codec media light metering**:original PTS/exposures,explicit RGB/YCbCr interpretation,separate MaxRGB/CIE Y,range/clipping counts,and full decoded-pixel/clock digests.`surface measure` remains the pre-codec boundary;`surface measure-media` checks the encoded file.
+Installed CLI51 provides explicit OKLab chroma reduction, inherited formal SDR mapping and display-linear preview resizing after mapping. Explicit preview_mapping takes priority. C62 runs through the actual unified Skill with full pixel/PCM package replay. CPU colour math; no complete CapCut/ACES/physical-monitor claim.
 
-[Post-codec workflow](HDR_MEDIA_MEASUREMENT.md)
+[OKLab / SDR workflow](OKLAB_GAMUT.md)
 
 <!-- /community-current -->
 
@@ -5049,6 +5049,7 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
     "original_author_clock_effects_linear_composition_and_editable_packages",
     "BT2020_NCL_PQ_HLG_ten_bit_delivery_with_matching_VUI",
     "explicit_modified_Reinhard_luminance_SDR_trim_and_SDR_preview",
+    "opt_in_OKLab_constant_lightness_hue_BT709_chroma_boundary_reduction",
     "preserved_alpha_bits_tiled_budgets_and_cancellation"
   ],
   "limits": [
@@ -5059,7 +5060,8 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
     "explicit_Bradford_whites_use_native_chromatic_adaptation_capability",
     "explicit_RGB_ICC_sources_use_native_icc_source_profiles_no_dynamic_metadata_or_DolbyVision",
     "HLG_explicit_black_lift_uses_native_hlg_black_level_with_peak_and_gamma",
-    "SDR_trim_is_explicit_creative_Reinhard_not_BT2390_or_perceptual_gamut_mapping",
+    "SDR_trim_is_explicit_creative_Reinhard_not_BT2390",
+    "OKLab_chroma_is_CPU_BT709_D65_only_not_ACES_or_soft_knee_or_constant_CIE_Y",
     "natural_HDR_monitor_long_form_and_full_CapCut_acceptance_pending"
   ]
 }
@@ -5496,3 +5498,5 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 
 
 源码CLI0.1.51 / Source only: [OKLab gamut](OKLAB_GAMUT.md)。安装声明仍以CLI0.1.50为准；新源码能力见[实际capabilities](oklab-gamut-capabilities-cli-0.1.51.json)。
+
+[CLI51 exact installed capabilities](oklab-gamut-installed-capabilities-cli-0.1.51.json).

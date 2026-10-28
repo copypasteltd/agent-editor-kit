@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "files": 150,
+  "skill_files": 91,
+  "cli_version": "0.1.52",
+  "kit_sha256": "e43354629090d0c339ec3e752bc54670455cabc5ac1a15cc3f72911aae2a126f",
+  "registered_skills": 1,
+  "internal_modules": 17,
+  "process_calls": 13,
+  "json_cli_calls": 10,
+  "native_windows": true,
+  "virtualization": false,
+  "source_fallback": false,
+  "real_discovery_changed": false,
+  "full_inventory_verified": true,
+  "portable_HDR_measurement_validated": true,
+  "actual_post_codec_48_frames_validated": true,
+  "actual_GPU_OKLab_frame_and_range_validated": true,
+  "dry_run_metadata_unchanged": true,
+  "new_model_forwards": 0,
+  "new_renders": 0,
+  "scope": "Independent extraction/configuration/junction registration,installed HDR measurement plan,actual48-frame post-codec result and portable package validation."
+}

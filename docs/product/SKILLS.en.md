@@ -2,11 +2,13 @@
 
 <!-- community-current -->
 
-**CLI0.1.51 / local.49 / r52 kit · 1 Skill / 17 modules / 90 files.**
+**CLI0.1.52 / local.50 / r53 kit · 1 Skill / 17 modules / 91 files.**
 
-Installed CLI51 provides explicit OKLab chroma reduction, inherited formal SDR mapping and display-linear preview resizing after mapping. Explicit preview_mapping takes priority. C62 runs through the actual unified Skill with full pixel/PCM package replay. CPU colour math; no complete CapCut/ACES/physical-monitor claim.
+[Verified small kit](../skills/agent-editor-kit-community-unified-skill-r53.zip) · [SHA256 / inventory](../skills/community-unified-skill-package-0.1.52-r53.json)
 
-[OKLab / SDR workflow](OKLAB_GAMUT.md)
+The registered unified Skill now uses CLI52: GPU luminance shoulder and OKLab chroma search, with signal conversion and ICC on CPU. Separate source and installed 70-test and 352-test groups passed. C64 exercised real registered-Skill GPU rendering, previews and complete video/audio editable-package replay.
+
+[GPU colour workflow](GPU_GAMUT.md)
 
 <!-- /community-current -->
 

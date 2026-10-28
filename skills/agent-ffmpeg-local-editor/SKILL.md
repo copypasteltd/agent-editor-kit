@@ -7,7 +7,7 @@ description: "Edit and generate local videos with agent editor kit: multitrack e
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.49` / CLI `0.1.51`.
+The current local runtime is `v0.1.0-alpha.4-local.50` / CLI `0.1.52`.
 Native Float32 GPU operations now use bounded owned control pipes. Read
 [GPU execution](references/projection-gpu.md) for policy, actual operator counts,
 cancellation and process/thread/stream cleanup receipts.
@@ -32,6 +32,8 @@ explicit nits and the full/partial scope flags; keep MaxRGB separate from CIE Y.
 For HDR-to-SDR colour selection and wide-gamut previews, read
 [OKLab mapping and preview inheritance](references/oklab-gamut.md). Show actual
 clip/OKLab outputs with their mapping settings before client selection.
+For GPU HDR-to-SDR mapping, read [native GPU colour](references/gpu-gamut.md).
+Check actual `gamut_map` dispatch; signal conversion and ICC remain CPU.
 For final encoded HDR media, read [post-codec metering](references/hdr-media-measurement.md).
 Use `surface measure-media` with explicit signal/YCbCr declarations; keep native
 PTS/exposure gaps, decoded-pixel measurements and pre-codec results distinct.

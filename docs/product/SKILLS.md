@@ -2,11 +2,13 @@
 
 <!-- community-current -->
 
-**CLI0.1.51 / local.49 / r52 kit · 1 Skill / 17 modules / 90 files.**
+**CLI0.1.52 / local.50 / r53 kit · 1 Skill / 17 modules / 91 files.**
 
-本地安装CLI51已接通明确OKLab缩色度、正式SDR交付映射继承及映射后线性预览缩小。显式preview_mapping仍优先。实际统一Skill执行C62，完整像素/PCM工程包重放通过；CPU色彩内核，不等于完整剪映/ACES/物理监看。
+[Verified small kit](../skills/agent-editor-kit-community-unified-skill-r53.zip) · [SHA256 / inventory](../skills/community-unified-skill-package-0.1.52-r53.json)
 
-[OKLab / SDR workflow](OKLAB_GAMUT.md)
+本地统一Skill已升级CLI52：GPU执行亮度肩部与OKLab缩色度，信号转换与ICC仍由CPU处理。源码与安装版各70项专项、各352项兼容分别通过；C64由实际注册入口完成GPU成片/预览及完整音画工程包重放。
+
+[GPU colour workflow](GPU_GAMUT.md)
 
 <!-- /community-current -->
 

@@ -1170,3 +1170,17 @@ English: Real registered-Skill execution, full-frame YUV and complete PCM replay
 r1与r2均有完整通过收据、18条成功子调用，冻结的278个产品模块一致。早期观察r1时尚未见完整收据，后来误记为中断；终态复核后已纠正，不把观察暂缺视作运行失败，也不将两次运行重复计为不同功能。页面选用r2的媒体与核验。静态PNG已查看，GIF/MP4帧数与时长程序化核验；没有连续人工观片、听审、自然HDR或物理监看验收。
 
 繁體：完整CPU/GPU音畫與專案重播核對；源碼、已安裝Skill與公開發行分開。English: Full decoded CPU/GPU video/audio and editable-package replay were checked; this source execution is not registered-Skill or physical-HDR acceptance.
+
+<a id="c64-installed-gpu-gamut"></a>
+
+## C64 · Actual registered Skill GPU colour delivery / 實際已註冊GPU色彩
+
+CLI0.1.52/local50，91个Skill文件、1外层入口/17内部模块。通过真实C盘发现联接、固定离线安装启动器执行验证、两次正式GPU渲染、frame9与全10帧range预览及工程包往返；无源码回退。素材为既有CC0原创图卡与音调，10帧/10FPS/1秒/384×216。
+
+![Actual registered Skill SDR view](../assets/gpu-gamut-registered-20261029-r1/preview.gif)
+
+[Movie](../assets/gpu-gamut-registered-20261029-r1/oklab.mkv) · [MP4](../assets/gpu-gamut-registered-20261029-r1/preview.mp4) · [PNG](../assets/gpu-gamut-registered-20261029-r1/frame.png) · [Editable package](../assets/gpu-gamut-registered-20261029-r1/editable-oklab.aevpkg.zip) · [Provenance](../assets/gpu-gamut-registered-20261029-r1/SOURCE.json) · [Actual CLI receipts](../validation/evidence/gpu-gamut-20261029-r1/registered-case-r1/verification.json)
+
+正式渲染10次gamut_map、frame预览1次、range预览10次。全部4,976,640 byte YUV、384,000 byte PCM与历史CPU独立参考已验成片及再次GPU工程包重放一致。全部RGB16编码器输入摘要等于独立参考，frame9 PNG16最大误差0code。预览/导出不改作者字节；render仅追加输出、操作日志和更新时间，作者图其余字段保持。
+
+GPU执行曝光/亮度肩部/24步缩色度，CPU执行信号转换/ICC。GIF与MP4均为真实SDR查看副本，10帧/1000ms；不是物理HDR或自然素材艺术质量验收。四个既有模型包重新核验，没有新增模型推理。繁體：實際註冊入口與完整音畫/專案重播留證。English: Actual registered-Skill execution and complete encoded media replay; no full CapCut, natural-quality, ACES or monitor-certification claim.

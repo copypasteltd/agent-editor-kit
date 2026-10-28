@@ -1,6 +1,6 @@
 # GPU SDR 显示映射 / GPU SDR 顯示映射 / GPU SDR display mapping
 
-开发源码 CLI **0.1.52** 新增原生 OpenCL 色彩算子。本地已注册统一 Skill 仍为 **CLI0.1.51 / local.49 / r52**；新源码、新候选包与已激活安装版分别核验，不能混用版本。公开 alpha.3 附件保持原字节。
+本地已注册统一 Skill 为 **CLI0.1.52 / local.50**，实际安装与源码各自的70项专项、352项兼容分别通过；[C64](CASES.md#c64-installed-gpu-gamut)通过实际注册入口执行。[安装与使用](../releases/CLI_0.1.52_LOCAL.md)。公开 alpha.3 附件保持原字节。
 
 ## 功能与执行范围
 
@@ -45,10 +45,10 @@ GPU 复用三块设备缓冲，计划预算为每像素 48 字节；工作进程
 
 [4K 单表面实测](../validation/evidence/gpu-gamut-20261029-r1/4k-r1/verification.json)：3840×2160，8,294,400 像素全部核对独立标量参考；最大线性 RGB 误差约 1.54×10⁻⁷，CPU/GPU 最大差约 1.78×10⁻¹⁵。一次非独占运行中 CPU 18.10 秒、GPU 映射路径 1.74 秒，另有约 0.94 秒工作进程启动。这是算子实测，不是编码后 4K 影片、实时预览、长片或普遍加速保证。
 
-[12 项控制管道测试](../validation/evidence/gpu-gamut-20261029-r1/gpu-control-r1/verification.json)另行留证。专项、兼容、案例及安装门槛的最新状态见 [本轮核验报告](../validation/GPU色域映射源码实测_2026-10-29.md)，不得将运行中测试写为通过。
+[12 项控制管道测试](../validation/evidence/gpu-gamut-20261029-r1/gpu-control-r1/verification.json)另行留证。专项、兼容、案例及安装门槛的最新状态见 [本轮安装交付报告](../validation/GPU色域映射安装与统一Skill交付_2026-10-29.md)，不得将运行中测试写为通过。
 
 尚未覆盖完整 ACES、软拐点、BT.2390、动态 HDR、物理显示校准、自然素材广泛艺术质量验收、跨厂商 GPU 和实时调度。全部原产品关闭条件继续保留。
 
-繁體：原生 GPU 執行亮度肩部及 OKLab 縮色度；訊號轉換與 ICC 仍由 CPU 處理。必須區分源碼 CLI52、候選安裝與目前已註冊 CLI51；完整剪映等價、自然畫面與實體 HDR 監看仍未完成。
+繁體：原生 GPU 執行亮度肩部及 OKLab 縮色度；訊號轉換與 ICC 仍由 CPU 處理。已註冊 CLI52 與源碼各自核驗；完整剪映等價、自然畫面與實體 HDR 監看仍未完成。
 
-English: Source CLI52 adds a native GPU luminance shoulder and 24-step OKLab chroma search. Signal conversion and ICC remain on CPU. Verify the actual executable, per-operation receipts, full decoded video/audio and editable-package replay. The installed unified Skill remains CLI51 until matching installation gates pass. One 4K operator surface is not real-time, long-form or full product-parity acceptance.
+English: Installed CLI52 adds a native GPU luminance shoulder and 24-step OKLab chroma search. Signal conversion and ICC remain on CPU. Verify the actual executable, per-operation receipts, full decoded video/audio and editable-package replay. The actual registered CLI52 Skill and native installation passed separate matching gates. One 4K operator surface is not real-time, long-form or full product-parity acceptance.

@@ -1,6 +1,6 @@
 # Explicit OKLab gamut reduction and SDR preview selection
 
-Available in pinned installed CLI0.1.51. In native `float32-native-v1`, author
+Available in pinned installed CLI0.1.52. In native `float32-native-v1`, author
 all source/working/output signals and nits explicitly. Use the mapping object:
 
 ```json
@@ -36,7 +36,9 @@ Keep `last_preview_mapping`, `preview_delivery_boundary`, full-frame gamut and
 clipping counters with delivery reports. PNG16 and Float32 range reference are
 not the same as the compressed viewing MP4 or a physical HDR master.
 
-CPU tiled execution; no GPU colour-kernel, soft-knee, ACES or monitor claim.
+CPU tiled execution remains available. For explicit GPU shoulder/chroma mapping,
+read [gpu-gamut.md](gpu-gamut.md); signal conversion and ICC remain CPU.
+No soft-knee, full ACES or physical-monitor claim.
 Reject invalid targets, negative CIE Y or undeclared signal assumptions.
 C61 historical source package reused `sound` as both asset and clip ID; use the
 corrected package in the preview-fix report, validate after import, then export

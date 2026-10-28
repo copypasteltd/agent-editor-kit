@@ -13,7 +13,23 @@ This page includes functional modules, services/dependencies, installation/usage
 
 
 
-<!-- gpu-gamut-source-current -->
+<!-- gpu-gamut-installed-current -->
+
+**CLI0.1.52 / local.50 / r53 kit · 1 Skill / 17 modules / 91 files.**
+
+[Verified small kit](docs/skills/agent-editor-kit-community-unified-skill-r53.zip) · [SHA256 / inventory](docs/skills/community-unified-skill-package-0.1.52-r53.json)
+
+The registered unified Skill now uses CLI52: GPU luminance shoulder and OKLab chroma search, with signal conversion and ICC on CPU. Separate source and installed 70-test and 352-test groups passed. C64 exercised real registered-Skill GPU rendering, previews and complete video/audio editable-package replay.
+
+[Workflow](docs/product/GPU_GAMUT.md) · [Install / usage](docs/releases/CLI_0.1.52_LOCAL.md) · [C64](docs/product/CASES.md#c64-installed-gpu-gamut)
+
+![Actual registered Skill GPU SDR view](docs/assets/gpu-gamut-registered-20261029-r1/preview.gif)
+
+<!-- /gpu-gamut-installed-current -->
+
+<!-- gpu-gamut-source-history -->
+
+Historical source/candidate stage; superseded by installed CLI52 above.
 
 **Development source CLI0.1.52 · installed Skill CLI0.1.51 / local.49 / r52 unchanged.**
 
@@ -25,9 +41,11 @@ Source CLI52 adds a real GPU luminance shoulder and OKLab chroma reduction; sign
 
 The candidate installation passed its separate 70-test group. Source and installed 352-test compatibility runs are still active; the unified Skill has not switched.
 
-<!-- /gpu-gamut-source-current -->
+<!-- /gpu-gamut-source-history -->
 
-<!-- oklab-installed-current -->
+<!-- oklab-installed-history -->
+
+Historical installed CLI51; superseded by CLI52 above.
 
 **CLI0.1.51 / local.49 / r52 kit · 1 Skill / 17 modules / 90 files.**
 
@@ -37,7 +55,7 @@ Installed CLI51 provides explicit OKLab chroma reduction, inherited formal SDR m
 
 ![Actual registered Skill SDR view](docs/assets/oklab-registered-20261029-r2/preview.gif)
 
-<!-- /oklab-installed-current -->
+<!-- /oklab-installed-history -->
 
 <!-- oklab-gamut-source-history -->
 
@@ -1721,6 +1739,10 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R356 | Actual 3840×2160 GPU colour operator | all 8,294,400 pixels vs independent reference | [raw](docs/validation/evidence/gpu-gamut-20261029-r1/4k-r1/verification.json) | one surface; not encoded 4K, real-time or long-form |
 | R357 | C63 source GPU full encoded media/package replay | 10 frames; 4,976,640 YUV bytes; 384,000 PCM bytes equal; PNG16 error 0 | [raw](docs/validation/evidence/gpu-gamut-20261029-r1/case-r2/verification.json) | source CLI52, synthetic SDR chart; installed Skill remains CLI51 |
 | R358 | CLI52 native candidate installed HDR/GPU/measurement | 70/70; no failures/errors/skips; all 278 source files frozen | [raw](docs/validation/evidence/gpu-gamut-20261029-r1/installed-measure-r1/verification.json) | independent candidate installation; registered Skill remains CLI51; installed compatibility pending |
+| R359 | CLI52 frozen source compatibility | 352/352; no failures/errors/skips | [raw](docs/validation/evidence/gpu-gamut-20261029-r1/compat-r1/verification.json) | separate source gate; contains 18 preview tests |
+| R360 | CLI52 byte-matched installed compatibility | 352/352; 278 source modules equal | [raw](docs/validation/evidence/gpu-gamut-20261029-r1/installed-compat-r1/verification.json) | source and installed groups reported separately |
+| R361 | C64 actual registered CLI52 GPU Skill | 2 renders; 10-frame YUV and complete PCM replay equal; frame9 PNG16 error 0 | [raw](docs/validation/evidence/gpu-gamut-20261029-r1/registered-case-r1/verification.json) | 1 Skill / 17 modules / 91 files; synthetic SDR; no full parity claim |
+| R362 | Independent r53 kit extraction and real isolated registration | 150 entries/149 inventory/91 Skill files; actual GPU OKLab frame/range and48-frame post-codec meter | 2026-10-29 | [kit](docs/validation/evidence/gpu-gamut-20261029-r1/kit-r1/verification.json), [digest](docs/skills/community-unified-skill-package-0.1.52-r53.json) | real discovery junction unchanged;1 Skill/17 modules; no clean-host claim |
 
 ## Current limits and development direction
 

@@ -143,3 +143,9 @@ commands, author clocks and kernel precision remain the same.
 For measured all-frame/PCM before-after checks and their scope, read
 [GPU dispatch](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/GPU_DISPATCH.md).
 Do not promise realtime or extrapolate one diagnostic timing to client footage.
+
+## CLI52 GPU colour addition
+
+Read [gpu-gamut.md](gpu-gamut.md) for actual luminance shoulder/OKLab chroma
+search. Native GPU scope now includes this operator; signal conversion and ICC
+remain CPU. Inspect `operations.gamut_map`, not merely GPU preparation status.

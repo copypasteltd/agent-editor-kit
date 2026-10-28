@@ -1,14 +1,16 @@
 # 當前功能模塊與服務清單
 
-Source CLI52 GPU update (installed Skill remains CLI51): 源碼CLI52新增實際GPU亮度肩部與OKLab縮色度，訊號轉換與ICC仍由CPU處理。70項專項、12項控制管道測試、4K單表面獨立參考及C63完整音畫／專案重播通過；本地註冊Skill仍CLI51/local49/r52。352項相容回歸與新版安裝交付另行驗收。 [Workflow](GPU_GAMUT.md).
+Historical source CLI52 stage, superseded by installed delivery: 源碼CLI52新增實際GPU亮度肩部與OKLab縮色度，訊號轉換與ICC仍由CPU處理。70項專項、12項控制管道測試、4K單表面獨立參考及C63完整音畫／專案重播通過；本地註冊Skill仍CLI51/local49/r52。352項相容回歸與新版安裝交付另行驗收。 [Workflow](GPU_GAMUT.md).
 
 <!-- community-current -->
 
-**CLI0.1.51 / local.49 / r52 kit · 1 Skill / 17 modules / 90 files.**
+**CLI0.1.52 / local.50 / r53 kit · 1 Skill / 17 modules / 91 files.**
 
-本地安裝CLI51已接通明確OKLab縮色度、正式SDR交付映射繼承與映射後線性預覽縮小。顯式preview_mapping仍優先。實際統一Skill執行C62，完整像素／PCM專案重播通過；CPU色彩核心，不等於完整剪映／ACES／實體監看。
+[Verified small kit](../skills/agent-editor-kit-community-unified-skill-r53.zip) · [SHA256 / inventory](../skills/community-unified-skill-package-0.1.52-r53.json)
 
-[OKLab / SDR workflow](OKLAB_GAMUT.md)
+本地統一Skill已升級CLI52：GPU執行亮度肩部與OKLab縮色度，訊號轉換與ICC仍由CPU處理。源碼與安裝版各70項專項、各352項相容分別通過；C64由實際註冊入口完成GPU成片／預覽與完整音畫專案重播。
+
+[GPU colour workflow](GPU_GAMUT.md)
 
 <!-- /community-current -->
 
@@ -5502,3 +5504,33 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 源码CLI0.1.51 / Source only: [OKLab gamut](OKLAB_GAMUT.md)。安装声明仍以CLI0.1.50为准；新源码能力见[实际capabilities](oklab-gamut-capabilities-cli-0.1.51.json)。
 
 [CLI51 exact installed capabilities](oklab-gamut-installed-capabilities-cli-0.1.51.json).
+
+### `native_sdr_gamut_mapping`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "oklab-constant-lightness-hue-bt709-v1",
+  "selection": "explicit display_mapping or preview_mapping gamut_policy=oklab-chroma",
+  "features": [
+    "D65_BT709_target_with_explicit_reference_nits",
+    "modified_Reinhard_target_luminance_shoulder",
+    "fixed_OKLab_lightness_hue_24_step_chroma_boundary_search",
+    "CPU_binary64_tiles_or_owned_OpenCL_binary64_GPU",
+    "formal_SDR_map_inherited_before_display_linear_preview_resize",
+    "explicit_preview_mapping_priority",
+    "per_frame_and_all_frame_chroma_black_white_endpoint_and_peak_counts",
+    "independent_straight_alpha_bits",
+    "owned_worker_cancellation_shared_buffer_and_control_cleanup_no_runtime_CPU_fallback"
+  ],
+  "limits": [
+    "signal_conversion_and_ICC_remain_CPU",
+    "GPU_selected_with_projection_acceleration_prefer_or_require",
+    "OKLab_L_not_CIE_Y_preserved_except_counted_lightness_endpoints",
+    "negative_CIE_Y_rejected",
+    "no_soft_knee_ACES_BT2390_dynamic_HDR_or_physical_monitor_acceptance"
+  ]
+}
+```
+
+[CLI52 exact installed capabilities](gpu-gamut-installed-capabilities-cli-0.1.52.json).

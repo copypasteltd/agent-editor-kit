@@ -1,5 +1,7 @@
 # CLI0.1.52 源码开发版 / Source development
 
+Historical source stage; superseded by [actual installed CLI52 delivery](CLI_0.1.52_LOCAL.md).
+
 新增原生GPU亮度肩部/OKLab缩色度，复用受管OpenCL工作进程与共享缓冲；正式SDR交付、明确HDR预览和正式映射继承使用同一路径。已有CPU reject/clip/oklab语义保持。
 
 [完整使用流程与执行边界](../product/GPU_GAMUT.md) · [C63实际案例](../product/CASES.md#c63-source-gpu-gamut) · [专项/独立参考/待办](../validation/GPU色域映射源码实测_2026-10-29.md) · [源码89项能力原始收据](../product/gpu-gamut-source-capabilities-cli-0.1.52.json)

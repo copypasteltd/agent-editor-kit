@@ -1898,3 +1898,6 @@ docs/product/gpu-gamut-source-capabilities-cli-0.1.52.json -text -whitespace
 scripts/*gpu_gamut*20261029.py text eol=lf
 product/src/ai_ad_editor/float_gamut_kernel.py text eol=lf
 product/tests/test_gpu_gamut.py text eol=lf
+
+docs/assets/gpu-gamut-registered-20261029-*/** -text -whitespace
+docs/product/gpu-gamut-installed-capabilities-cli-0.1.52.json -text -whitespace

@@ -1,16 +1,25 @@
 # agent editor kit
 
-**CLI53 完整离线包已构建并成功安装。** 1,704 个包内代码／资源经严格复用校验；安装版 280 个代码模块及原生资源字节一致，90 项能力可枚举，实际随包 OCIO DLL 加载与变换核验通过。最终源码 373 项兼容性已通过，安装版广泛回归仍在进行，本地注册 Skill 暂保持 CLI52。[安装位置、使用与验收命令](docs/validation/ACES离线交付进度_2026-10-29.md)。
+**当前本地 CLI0.1.53 / local.51 已安装并注册。** 源码和安装版各自通过 18 项 ACES、46 项测量／Schema、373 项兼容性回归。唯一 `$agent-ffmpeg-local-editor` 保持 1 个入口／17 个模块／92 个文件；[C67 实际注册入口案例](docs/product/CASES.md#c67-registered-aces-timeline)已核验完整视频、音频、预览和工程包往返。[正式 r54 包](docs/skills/agent-editor-kit-community-unified-skill-r54.zip)已通过独立解包、配置、注册及完整音画重放验收。[使用与安装流程](docs/releases/CLI_0.1.53_LOCAL.md)。
 
-新版统一 Skill 候选入口已实际通过 7 次 CLI53 调用（含原生配置、PNG16 预览和逐帧测量），保持 1 个入口／17 个模块／92 个文件；原注册入口与配置未改变。完整兼容性回归后再注册新版。
+候选阶段历史核验：新版统一 Skill 候选入口已实际通过 7 次 CLI53 调用（含原生配置、PNG16 预览和逐帧测量），保持 1 个入口／17 个模块／92 个文件；原注册入口与配置未改变。两组兼容性现已通过，正式入口已升级。
 
 <!-- aces-timeline-source53 -->
 
-**源码 CLI0.1.53：ACES 时间线与预览已接通。** 正式交付、逐帧测量、单次显示变换后的线性缩图，以及 HDR 母版的独立 SDR 视图；18 项专项和 46 项测量／Schema 回归分别通过。[使用流程](docs/product/ACES_TIMELINE.md) · [C65：视频、GIF、PNG16、工程包](docs/product/CASES.md#c65-source-aces-timeline)。当前安装 Skill 仍 CLI52；ACES 为 CPU 执行，新安装版完整回归、Skill 切换与完整目标仍待完成。
+**源码 CLI0.1.53：ACES 时间线与预览已接通。** 正式交付、逐帧测量、单次显示变换后的线性缩图，以及 HDR 母版的独立 SDR 视图；18 项专项和 46 项测量／Schema 回归分别通过。[使用流程](docs/product/ACES_TIMELINE.md) · [C65：视频、GIF、PNG16、工程包](docs/product/CASES.md#c65-source-aces-timeline)。此段保留早期源码阶段记录；当前入口已升级 CLI53，ACES 仍为 CPU，完整目标继续开放。
 
-![Source ACES numeric viewing copy](docs/assets/aces-timeline-20261029-r1/preview.gif)
+![Actual registered CLI53 ACES technical viewing copy](docs/assets/aces-registered-20261029-r1/preview.gif)
 
-安装版另外独立通过 **18 项 ACES + 46 项测量／Schema**；[C66：实际影片、GIF、PNG16 与工程包](docs/product/CASES.md#c66-installed-aces-timeline)已核验完整视频／音频往返一致。373 项广泛兼容性与新版注册 Skill 切换仍待完成。
+CLI53 当前入口快速核实（ACES 使用前先枚举实际配置／显示／视图；完整工程流程见上方使用文档）：
+
+```powershell
+$aekSkill = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1'
+& $aekSkill version
+& $aekSkill capabilities
+& $aekSkill surface ocio-configs --config aces-2.1
+```
+
+安装版另外独立通过 **18 项 ACES + 46 项测量／Schema**；[C66：实际影片、GIF、PNG16 与工程包](docs/product/CASES.md#c66-installed-aces-timeline)已核验完整视频／音频往返一致。两组 373 项广泛兼容性和正式注册切换现已完成。
 
 <!-- aces-native-kernel-source -->
 
@@ -1775,6 +1784,9 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R376 | Independently extracted/registered CLI53 Skill candidate kit | 153 entries /92 Skill files; actual E-drive registration; two ACES renders and complete YUV/PCM/PNG replay equal | [raw](docs/validation/evidence/aces-delivery-20261029-r1/candidate-kit-r1/verification.json) | Candidate only; original C-drive discovery/runtime unchanged; no new model inference |
 | R377 | Staged Skill packaging source boundaries | Four actual CLI refusals; outside-root/parent escapes/backslash aliases create no output | [raw](docs/validation/evidence/aces-delivery-20261029-r1/packager-source-refusals-r1/verification.json) | Valid candidate packaging and independent runtime acceptance separately proven |
 | R378 | Frozen final-source CLI53 broad compatibility | 373 tests passed; zero failures/errors/skips; unchanged final-source bytes and no source delta | [raw](docs/validation/evidence/aces-pipeline-20261029-r1/compat-r5.json) | Separate from preliminary r3 and installed compatibility, which remains running |
+| R379 | Frozen installed CLI53 broad compatibility | 373 tests passed; zero failures/errors/skips; exact source/installed resources and tests frozen before/after | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-compat-r1/verification.json) | Separate run from final-source373 and specialized18/metering46 groups |
+| R380 | C67 actual C-drive registered CLI53 Skill | 1 entry/17 modules/92 files; two ACES renders; full589824-byte YUV/307200-byte PCM and PNG16 replay equal | [raw](docs/validation/evidence/aces-delivery-20261029-r1/registered-case-r1/verification.json) | Native CPU ACES; four existing model packs reverified; no new model inference or full-parity claim |
+| R381 | Final r54 unified Skill independent installation | 153 entries; 1 entry/17 modules/92 Skill files; independent extraction, configuration, registration and two complete renders; YUV/PCM/PNG replay equal | [raw](docs/validation/evidence/aces-delivery-20261029-r1/final-kit-r1/verification.json) | CPU ACES; no source fallback; live registration unchanged; public alpha.3 remains historical |
 
 ## 当前边界与开发方向
 

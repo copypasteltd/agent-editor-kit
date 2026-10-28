@@ -1,6 +1,6 @@
 # 原生 ACES 开发阶段：运行内核与配置发现
 
-源码 CLI0.1.53 已将 OpenColorIO 2.6.0 CPU 内核接入正式时间线、测量与预览，使用流程见 [ACES 时间线](ACES_TIMELINE.md)。本页保留首轮内核实现与独立上游对照证据。当前安装包及 `$agent-ffmpeg-local-editor` 仍为已验 CLI0.1.52 / local.50 / r53；新安装与 Skill 激活尚待交付。
+源码 CLI0.1.53 已将 OpenColorIO 2.6.0 CPU 内核接入正式时间线、测量与预览，使用流程见 [ACES 时间线](ACES_TIMELINE.md)。本页保留首轮内核实现与独立上游对照证据。当前基础包和唯一已注册 `$agent-ffmpeg-local-editor` 已升级为 CLI0.1.53 / local.51，源码与安装各自18／46／373分组通过；正式r54最终分发包独立验收另行留证。旧local.50/r53保留。
 
 ## 当前实际能力
 

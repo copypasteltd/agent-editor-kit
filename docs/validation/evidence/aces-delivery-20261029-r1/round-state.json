@@ -1,9 +1,9 @@
 {
-  "at_utc": "2026-10-28T23:18:08.087243+00:00",
+  "at_utc": "2026-10-28T23:43:36.149905+00:00",
   "goal": "active_not_complete",
   "source_cli": "0.1.53",
   "independent_installed_cli": "0.1.53",
-  "registered_skill_cli": "0.1.52",
+  "registered_skill_cli": "0.1.53",
   "completed": {
     "wheel_reuse_tests": 9,
     "exact_payload_files": 1704,
@@ -20,28 +20,45 @@
     "future_kit_workflow_documents": "Packager includes ACES_NATIVE.md and ACES_TIMELINE.md; new kit not yet built",
     "final_source_compatibility": 373,
     "candidate_kit": "153 entries/92 Skill files; independent E-drive extraction/configuration/registration and complete video/PCM/PNG replay passed; C-drive live entry unchanged",
-    "packager_staged_source_guards": "Four actual CLI refusals; no output generated"
+    "packager_staged_source_guards": "Four actual CLI refusals; no output generated",
+    "installed_compatibility": 373,
+    "actual_registered_case": "C67 passed full video/PCM/PNG and editable replay",
+    "final_kit": {
+      "status": "passed",
+      "kit_sha256": "bb368702ae26f1b97749501099ac1adc003574716c634cbb99989894ad006e86",
+      "kit_entries": 153,
+      "inventory_files": 152,
+      "skill_files": 92,
+      "public_entries": 1,
+      "modules": 17,
+      "independently_extracted": true,
+      "independent_E_drive_registration": true,
+      "actual_registered_kit_used": true,
+      "actual_live_discovery_changed": false,
+      "live_skill_cli": "0.1.53",
+      "kit_cli": "0.1.53",
+      "source_fallback": false,
+      "new_renders": 2,
+      "new_model_forwards": 0,
+      "complete_YUV_equal": true,
+      "YUV_bytes": 589824,
+      "complete_PCM_equal": true,
+      "PCM_bytes": 307200,
+      "PNG_file_byte_equal": true,
+      "author_bytes_unchanged_by_readonly_operations": true,
+      "ACES_docs_included": true
+    },
+    "registered_namespace": "b7b849859c586f46a461ca8c4f8a7107df52344aba3f7c812b6cb02766bae6a0"
   },
   "historical": {
     "compat_r3": "373 tests with no failures/errors/skips; frozen_equal=false (hdr_measure.py); not final-source acceptance",
     "initial_full_build": "900-second timeout, preserved failure"
   },
-  "running": [
-    {
-      "name": "installed-compat-r1",
-      "session_id": 65579,
-      "pid": 24424,
-      "expected_tests": 373,
-      "observed_live": true,
-      "requires_repoll": true,
-      "command": "C:/Python313/python.exe -I -S -B -u -X utf8 docs/validation/test_aces_delivery.py --installed E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.51/final-r2/installed --group compat --run installed-compat-r1"
-    }
-  ],
+  "running": [],
   "pending": [
-    "Collect installed-compat-r1 terminal receipt; final frozen source373 has passed. Never restart solely on observation timeout.",
-    "Run pin_aces_skill.py only after matching frozen final-source/installed gates.",
-    "Activate local51/CLI53; preserve four existing model packs; verify actual registered Skill case.",
-    "Package and independently verify r54 unified Skill kit; preserve old releases.",
-    "Continue all38 original closure conditions without narrowing goal."
+    "Commit/push final local CLI53 delivery and verify Windows checkout byte preservation.",
+    "Continue all38 original closure conditions without narrowing goal.",
+    "Camera automatic IDT, AMF/LMT, GPU ACES and natural quality/physical monitoring remain open.",
+    "Full product parity, natural advertising tasks, clean-host and public new-release acceptance remain open."
   ]
 }

@@ -1,16 +1,25 @@
 # agent editor kit
 
-**The complete CLI53 offline bundle is built and installed.** Strict reuse checked 1,704 package files; all 280 installed code modules and native resources match source bytes. Version/capabilities report CLI53 and 90 capabilities; actual bundled OCIO DLL loading and native transformation passed. Final-source compatibility passed 373 tests; installed broad compatibility remains running; the registered Skill stays CLI52. [Installation location, usage and acceptance commands](docs/validation/ACES离线交付进度_2026-10-29.md).
+**Local CLI0.1.53 / local.51 is installed and registered.** Source and installed packages independently passed 18 ACES, 46 metering/Schema and 373 compatibility tests. The sole `$agent-ffmpeg-local-editor` retains one entry, 17 modules and 92 files. [C67 actual registered-entry acceptance](docs/product/CASES.md#c67-registered-aces-timeline) verifies complete video, audio, previews and editable-project replay. The [final r54 kit](docs/skills/agent-editor-kit-community-unified-skill-r54.zip) passed independent extraction, configuration, registration and complete video/audio replay acceptance. [Usage and installation](docs/releases/CLI_0.1.53_LOCAL.md).
 
-The unified Skill candidate passed seven actual CLI53 calls, including native configuration, PNG16 preview and all-frame metering. It retains one entry, 17 modules and 92 files; live discovery and configuration remain unchanged. Registration awaits the complete compatibility gates.
+Candidate-stage history: the unified Skill candidate passed seven actual CLI53 calls, including native configuration, PNG16 preview and all-frame metering. It retains one entry, 17 modules and 92 files; live discovery and configuration remain unchanged. Both compatibility gates have since passed and the live entry is upgraded.
 
 <!-- aces-timeline-source53 -->
 
-**Source CLI0.1.53 connects ACES rendering and previews.** Formal delivery, all-frame metering, one display transform before display-linear resizing, and a separate SDR view for HDR masters; 18 specialized tests and 46 metering/Schema regressions passed separately. [Workflow](docs/product/ACES_TIMELINE.md) · [C65: video, GIF, PNG16, editable project](docs/product/CASES.md#c65-source-aces-timeline). Installed Skill remains CLI52. ACES runs on CPU; installed behavioral acceptance, Skill activation and full parity remain pending.
+**Source CLI0.1.53 connects ACES rendering and previews.** Formal delivery, all-frame metering, one display transform before display-linear resizing, and a separate SDR view for HDR masters; 18 specialized tests and 46 metering/Schema regressions passed separately. [Workflow](docs/product/ACES_TIMELINE.md) · [C65: video, GIF, PNG16, editable project](docs/product/CASES.md#c65-source-aces-timeline). This preserves the earlier source-stage record. The live entry is now CLI53; ACES remains CPU, and full product parity is still open.
 
-![Source ACES numeric viewing copy](docs/assets/aces-timeline-20261029-r1/preview.gif)
+![Actual registered CLI53 ACES technical viewing copy](docs/assets/aces-registered-20261029-r1/preview.gif)
 
-The installed package separately passed **18 ACES + 46 metering/Schema tests**. [C66: actual video, GIF, PNG16 and editable project](docs/product/CASES.md#c66-installed-aces-timeline) verifies complete decoded video/audio replay. The 373-test broad compatibility gates and new registered-Skill activation remain pending.
+Verify the current CLI53 entry before editing. Enumerate the actual ACES configuration, display and view names; follow the linked workflow for an editable project:
+
+```powershell
+$aekSkill = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1'
+& $aekSkill version
+& $aekSkill capabilities
+& $aekSkill surface ocio-configs --config aces-2.1
+```
+
+The installed package separately passed **18 ACES + 46 metering/Schema tests**. [C66: actual video, GIF, PNG16 and editable project](docs/product/CASES.md#c66-installed-aces-timeline) verifies complete decoded video/audio replay. Both 373-test broad compatibility gates and live Skill activation have since passed.
 
 <!-- aces-native-kernel-source -->
 
@@ -1777,6 +1786,9 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R376 | Independently extracted/registered CLI53 Skill candidate kit | 153 entries /92 Skill files; actual E-drive registration; two ACES renders and complete YUV/PCM/PNG replay equal | [raw](docs/validation/evidence/aces-delivery-20261029-r1/candidate-kit-r1/verification.json) | Candidate only; original C-drive discovery/runtime unchanged; no new model inference |
 | R377 | Staged Skill packaging source boundaries | Four actual CLI refusals; outside-root/parent escapes/backslash aliases create no output | [raw](docs/validation/evidence/aces-delivery-20261029-r1/packager-source-refusals-r1/verification.json) | Valid candidate packaging and independent runtime acceptance separately proven |
 | R378 | Frozen final-source CLI53 broad compatibility | 373 tests passed; zero failures/errors/skips; unchanged final-source bytes and no source delta | [raw](docs/validation/evidence/aces-pipeline-20261029-r1/compat-r5.json) | Separate from preliminary r3 and installed compatibility, which remains running |
+| R379 | Frozen installed CLI53 broad compatibility | 373 tests passed; zero failures/errors/skips; exact source/installed resources and tests frozen before/after | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-compat-r1/verification.json) | Separate run from final-source373 and specialized18/metering46 groups |
+| R380 | C67 actual C-drive registered CLI53 Skill | 1 entry/17 modules/92 files; two ACES renders; full589824-byte YUV/307200-byte PCM and PNG16 replay equal | [raw](docs/validation/evidence/aces-delivery-20261029-r1/registered-case-r1/verification.json) | Native CPU ACES; four existing model packs reverified; no new model inference or full-parity claim |
+| R381 | Final r54 unified Skill independent installation | 153 entries; 1 entry/17 modules/92 Skill files; independent extraction, configuration, registration and two complete renders; YUV/PCM/PNG replay equal | [raw](docs/validation/evidence/aces-delivery-20261029-r1/final-kit-r1/verification.json) | CPU ACES; no source fallback; live registration unchanged; public alpha.3 remains historical |
 
 ## Current limits and development direction
 

@@ -1,13 +1,13 @@
 ---
 name: agent-ffmpeg-local-editor
-description: "Edit and generate local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, native CUDA speech denoising, frame interpolation/slow motion and lip sync, tracking, explicit PQ/HLG HDR, verified HDR10 static metadata, D50/D60 white adaptation, native RGB ICC profiles and SDR previews, seeded GPU particles, editable GPU flare/light leaks/chromatic split and highlight Bloom/Halation, GPU text/image/first-last generation with reusable model sessions, semantic search, voice/translation, subtitle dubbing, music/SFX and quality checks. Also use for ads, reference remakes, long-to-short clips and screen demos."
+description: "Edit and generate local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, native CUDA speech denoising, frame interpolation/slow motion and lip sync, tracking, explicit PQ/HLG HDR and native ACES display/view transforms, verified HDR10 static metadata, D50/D60 white adaptation, native RGB ICC profiles and SDR previews, seeded GPU particles, editable GPU flare/light leaks/chromatic split and highlight Bloom/Halation, GPU text/image/first-last generation with reusable model sessions, semantic search, voice/translation, subtitle dubbing, music/SFX and quality checks. Also use for ads, reference remakes, long-to-short clips and screen demos."
 ---
 
 # agent editor kit / unified local Skill
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.50` / CLI `0.1.52`.
+The current local runtime is `v0.1.0-alpha.4-local.51` / CLI `0.1.53`.
 Native Float32 GPU operations now use bounded owned control pipes. Read
 [GPU execution](references/projection-gpu.md) for policy, actual operator counts,
 cancellation and process/thread/stream cleanup receipts.
@@ -26,6 +26,9 @@ For actual image-highlight Bloom and film Halation, read
 [highlight glow](references/highlight-glow.md). Inspect `native:float32-glow`,
 author radius/threshold/knee/tint keys in explicit linear RGB, and preview
 the original alongside actual encoded light spread before client selection.
+For scene-linear ACEScg delivery and explicit display/view selection, read
+[native ACES](references/aces-display.md). Use actual previews and preserve
+the selected config/view; ACES runs on CPU, not the projection GPU.
 For all-frame HDR light metering and colour-clipping receipts, read
 [light measurement](references/hdr-measurement.md). Use actual native frames,
 explicit nits and the full/partial scope flags; keep MaxRGB separate from CIE Y.

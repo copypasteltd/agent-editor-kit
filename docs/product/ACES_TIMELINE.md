@@ -1,6 +1,6 @@
-# ACES 时间线、预览与工程重放（源码 CLI 0.1.53）
+# ACES 时间线、预览与工程重放（CLI 0.1.53，已本地安装）
 
-正式交付、逐帧测量和预览已接到原生 OpenColorIO 2.6.0 显示/视图变换。CLI53 完整离线包现已在 E 盘构建并成功安装：280 个代码模块和原生资源逐字节一致，90 项能力可枚举，隔离进程实际加载随包提供的 OCIO DLL 并完成原生变换。本地已注册 `$agent-ffmpeg-local-editor` 仍为 CLI52；完整安装版回归与新 Skill 激活尚未完成。[安装路径、验收命令及当前状态](../validation/ACES离线交付进度_2026-10-29.md)。
+正式交付、逐帧测量和预览已接到原生 OpenColorIO 2.6.0 显示/视图变换。CLI53 完整离线包现已在 E 盘构建并成功安装：280 个代码模块和原生资源逐字节一致，90 项能力可枚举，隔离进程实际加载随包提供的 OCIO DLL 并完成原生变换。本地唯一已注册 `$agent-ffmpeg-local-editor` 已为 CLI53/local51；源码与安装各自18／46／373分组全部通过。正式最终r54包的独立验收另行记录。[安装路径、验收命令及当前状态](../validation/ACES离线交付进度_2026-10-29.md)。
 
 ## 输入语义与显示选择
 
@@ -20,7 +20,7 @@ ACES 使用场景线性 ACEScg（AP1、D60）作为工作输入。`input_interpr
 
 ## Agent 使用步骤
 
-1. 确认运行的是源码 CLI53 或已验证的独立安装 CLI53：`version` 和 `capabilities` 中应出现 `native_aces_display`。已安装 CLI52 暂不包含它。
+1. 确认运行的是源码 CLI53 或已验证的独立安装 CLI53：`version` 和 `capabilities` 中应出现 `native_aces_display`。旧安装 CLI52 不包含它；当前注册入口已升级为 CLI53。
 2. 查询 `surface ocio-configs --config aces-2.1`，记录固定 URI、配置摘要和准确的 display/view 名称。
 3. 把下列字段合并到已有 `settings.pixel_pipeline`；保留 `engine`、素材 `sources`、预算等其他必要字段。这不是独立完整工程。
 

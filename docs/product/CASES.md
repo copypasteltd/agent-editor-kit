@@ -1214,3 +1214,19 @@ CLI0.1.53/local51/final-r2 独立安装目录，以 `-I -S -B` 运行原生 Wind
 实际 GIF 为 288×384，MP4 为 48×64，均核对 8帧／800ms。正式影片为 96×128；GIF 是放大的技术查看副本，不是新增分辨率质量。静态 PNG 已查看；未连续人工观片或听审，不作自然素材艺术质量、物理监看、GPU ACES 或完整剪映等价结论。
 
 繁體：獨立安裝版原生ACES影片、完整音畫與專案重播已留證；新版註冊Skill切換另驗。English: Isolated installed CLI53 rendering and complete decoded video/audio replay passed; registered-Skill activation and broad compatibility remain separate gates.
+
+<a id="c67-registered-aces-timeline"></a>
+
+## C67 · Actual registered ACES Skill / 實際註冊ACES入口
+
+CLI0.1.53/local51，1个公开Skill／17个内部模块／92个文件，经真实 `C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor` 发现联接调用固定E盘离线安装；无源码回退。源码和安装版的18／46／373分组已分别通过后才切换注册入口。原四个CPU／GPU配音／翻译包重新核验，无新模型推理。
+
+![Actual registered CLI53 ACES view](../assets/aces-registered-20261029-r1/preview.gif)
+
+[正式影片](../assets/aces-registered-20261029-r1/aces.mkv) · [重放影片](../assets/aces-registered-20261029-r1/replay.mkv) · [MP4](../assets/aces-registered-20261029-r1/preview.mp4) · [PNG16](../assets/aces-registered-20261029-r1/frame7.png) · [可编辑工程包](../assets/aces-registered-20261029-r1/editable-aces.zip) · [来源与文件摘要](../assets/aces-registered-20261029-r1/SOURCE.json) · [真实入口核验](../validation/evidence/aces-delivery-20261029-r1/registered-case-r1/verification.json) · [实际媒体核验](../validation/evidence/aces-delivery-20261029-r1/registered-case-media-r1/verification.json)
+
+实际完成正式渲染、frame7、8帧range、全帧测量、导出／导入／验证／再渲染。完整589,824字节YUV及307,200字节PCM与原C65及工程包重放完全一致，PNG16全通道解码一致。只读操作不改变渲染后的作者工程字节，调用期间固定Skill清单未变。
+
+沿用CC0原创场景线性AP1色条与立体声音调：正式影片96×128／10FPS／8帧／0.8秒，GIF放大为288×384，MP4查看副本48×64；GIF与MP4均独立核对8帧／800ms。静态PNG已查看，无连续人工观片／听审或物理显示验收，不作为自然素材艺术质量、GPU ACES或完整剪映对标结论。
+
+繁體：實際C盤唯一註冊Skill已完成完整音畫與專案重播，原生ACES仍CPU執行。English: The actual registered CLI53 Skill passed complete encoded video/audio and editable-project replay; full product parity, natural quality and physical-monitor acceptance remain open.

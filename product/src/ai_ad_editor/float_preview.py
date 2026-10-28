@@ -198,7 +198,7 @@ class FloatPreviewContext:
                     self.metadata['preview_geometry'] = geometry
                 if 'display_mapping' in request and not inherited:
                     surface, signal, mapping = map_display(surface, signal, request['display_mapping'],
-                        max_working_bytes=r.config['projection_working_bytes_limit'], cancel=r.poll)
+                        max_working_bytes=r.config['projection_working_bytes_limit'], cancel=r.poll, gpu=r.gpu)
                     self.metadata['last_preview_mapping'] = mapping
                     if 'perceptual_gamut' in mapping:
                         from .colour_audit import GAMUT_COUNTERS

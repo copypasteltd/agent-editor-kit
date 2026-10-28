@@ -1,5 +1,7 @@
 # agent editor kit 文档 / Documentation
 
+Source CLI52 GPU update (installed Skill remains CLI51): 源码CLI52新增实际GPU亮度肩部及OKLab缩色度，信号转换与ICC仍由CPU处理。70项专项、12项控制管道测试、4K单表面独立参考及C63完整音画/工程包重放通过；本地注册Skill仍CLI51/local49/r52。352项兼容回归及新版安装交付另行验收。 [Workflow](product/GPU_GAMUT.md).
+
 Current local / 当前本地 / 目前本地：**CLI0.1.51 / local.49 / r52 kit** · [Workflow](product/OKLAB_GAMUT.md) · [Install](releases/CLI_0.1.51_LOCAL.md) · [C62](product/CASES.md#c62-installed-oklab).
 
 源码CLI0.1.51：[OKLab色域映射](product/OKLAB_GAMUT.md) / [实测](validation/OKLab色域映射源码实测_2026-10-29.md)。安装仍CLI0.1.50，匹配新包待交付。

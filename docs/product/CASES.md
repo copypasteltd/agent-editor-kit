@@ -1154,3 +1154,19 @@ CLI0.1.51/local.49，原创CC0图卡10帧/10FPS/1秒/384×216。使用真正C盘
 繁體：真實已註冊Skill執行、完整音畫重播及獨立像素參考；自然素材、完整ACES與實體監看仍待驗收。
 
 English: Real registered-Skill execution, full-frame YUV and complete PCM replay, plus independent RGB16 frame preview checks. CPU-tiled colour math; no natural-footage, full ACES or physical-monitor acceptance.
+
+<a id="c63-source-gpu-gamut"></a>
+
+## C63 · Source CLI52 GPU SDR mapping / 源碼 GPU 映射
+
+源码CLI0.1.52，CC0合成图卡与原创音调10帧/10FPS/1秒/384×216。独立源码入口执行验证、GPU正式渲染、frame9与全10帧range预览、工程包导入/导出及再次GPU渲染。**未调用已注册Skill；后者仍CLI51。**
+
+![Actual GPU SDR viewing copy](../assets/gpu-gamut-20261029-r2/preview.gif)
+
+[Movie](../assets/gpu-gamut-20261029-r2/oklab.mkv) · [MP4](../assets/gpu-gamut-20261029-r2/preview.mp4) · [PNG](../assets/gpu-gamut-20261029-r2/frame.png) · [Editable package](../assets/gpu-gamut-20261029-r2/editable-oklab.aevpkg.zip) · [Media provenance](../assets/gpu-gamut-20261029-r2/SOURCE.json) · [Verification](../validation/evidence/gpu-gamut-20261029-r1/case-r2/verification.json)
+
+实际正式渲染派发10次GPU gamut_map，完整4,976,640 byte YUV及384,000 byte PCM与旧独立标量参考已验的CPU成片、再次GPU工程包重放一致；RGB16编码器输入摘要等于独立参考，frame9 PNG16最大误差0code。预览/导出不改作者工程；正常render仅追加输出与变更日志、更新时间，作者图其余字段保持。
+
+r1中断未形成完整核验，不作为通过证据；确认原进程已停止后执行r2。r2完整18条子调用均留存退出码及摘要。静态PNG已查看，GIF/MP4帧数与时长程序化核验；没有连续人工观片、听审、自然HDR或物理监看验收。
+
+繁體：完整CPU/GPU音畫與專案重播核對；源碼、已安裝Skill與公開發行分開。English: Full decoded CPU/GPU video/audio and editable-package replay were checked; this source execution is not registered-Skill or physical-HDR acceptance.

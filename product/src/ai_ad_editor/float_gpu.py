@@ -44,7 +44,7 @@ class FloatGPUSession:
             'status': 'planned' if self.enabled else 'off', 'dry_run': dry_run,
             'operations': {}, 'CPU_scope': ['glyph-rasterization', 'color-conversion', 'effects-except-native-optics-and-glow', 'masks', 'crop',
                 'transitions', 'non-normal-blends', 'audio', 'delivery-encoding'],
-            'GPU_scope': ['premultiplied-affine', 'normal-source-over', 'text-color-components', 'binary-word-selection', 'seeded-particle-rasterization','analytic-optical-effects'],
+            'GPU_scope': ['premultiplied-affine', 'normal-source-over', 'text-color-components', 'binary-word-selection', 'seeded-particle-rasterization','analytic-optical-effects','highlight-bloom-halation','OKLab-luminance-shoulder-and-chroma-search'],
             'host_shared_bytes_limit': self.config['max_working_bytes'], 'retained_host_shared_bytes': 0,
             'device_bytes_limit': self.config['max_working_bytes'], 'limits_are_peak_RSS': False,
             'free_VRAM_reserved': False, 'integer_media_conversion': False, 'worker_closed': False,
@@ -55,7 +55,7 @@ class FloatGPUSession:
         self.evidence['planned_device_bytes'] = max_pixels*48
         self.evidence['planned_host_shared_bytes'] = max_pixels*33+768
         self.artifacts = [artifact_entry(Path(__file__).with_name(name+'.py'), 'float-gpu-execution')
-                          for name in ('float_gpu', 'float_gpu_worker', 'float_gpu_native', 'float_gpu_control', 'procedural_particles', 'particle_animation','float_optics','float_optics_kernel','float_glow','float_glow_kernel','float_color_signal','float_hdr','float_hlg_black','float_chromatic')]
+                          for name in ('float_gpu', 'float_gpu_worker', 'float_gpu_native', 'float_gpu_control', 'procedural_particles', 'particle_animation','float_optics','float_optics_kernel','float_glow','float_glow_kernel','float_gamut','float_gamut_kernel','float_color_signal','float_hdr','float_hlg_black','float_chromatic')]
         self.evidence['artifacts'] = self.artifacts
 
     @property
@@ -235,6 +235,13 @@ class FloatGPUSession:
         admit_neighborhood(source.shape[0]*source.shape[1],values['radius'])
         return self._call('glow',source.shape,[self._dummy(),source,self._dummy()],kind=kind,
             parameters=values,edge=edge,primaries=primaries,white_xy=white_xy)
+
+    def gamut_map(self, source, mapping):
+        from .float_hdr import mapping_configuration
+        mapping=mapping_configuration(mapping);NativeGPU.surface(source)
+        if mapping['gamut_policy']!='oklab-chroma':raise error('GAMUT','GPU色域算子要求明确oklab-chroma')
+        output=self._call('gamut_map',source.shape,[self._dummy(),source,self._dummy()],mapping=mapping)
+        return output,dict(self.evidence['native']['last_gamut_counts'])
 
     def finish(self, result):
         if self.ready:

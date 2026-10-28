@@ -1,5 +1,7 @@
 # 當前功能模塊與服務清單
 
+Source CLI52 GPU update (installed Skill remains CLI51): 源碼CLI52新增實際GPU亮度肩部與OKLab縮色度，訊號轉換與ICC仍由CPU處理。70項專項、12項控制管道測試、4K單表面獨立參考及C63完整音畫／專案重播通過；本地註冊Skill仍CLI51/local49/r52。352項相容回歸與新版安裝交付另行驗收。 [Workflow](GPU_GAMUT.md).
+
 <!-- community-current -->
 
 **CLI0.1.51 / local.49 / r52 kit · 1 Skill / 17 modules / 90 files.**

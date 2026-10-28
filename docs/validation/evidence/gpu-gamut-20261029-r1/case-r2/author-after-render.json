@@ -1,0 +1,330 @@
+{
+  "assets": [
+    {
+      "id": "picture",
+      "kind": "video",
+      "probe": {
+        "audio": {
+          "channels": 0,
+          "codec": null,
+          "duration_seconds": 0.0,
+          "sample_rate": 0,
+          "start_time_seconds": 0.0
+        },
+        "duration_seconds": 1.0,
+        "duration_tick": 90000,
+        "format": "matroska,webm",
+        "format_long_name": "Matroska / WebM",
+        "streams": [
+          {
+            "avg_frame_rate": "10/1",
+            "bits_per_raw_sample": "16",
+            "codec_long_name": "FFmpeg video codec #1",
+            "codec_name": "ffv1",
+            "codec_tag": "0x0000",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_type": "video",
+            "coded_height": 216,
+            "coded_width": 384,
+            "color_range": "pc",
+            "color_space": "gbr",
+            "disposition": {
+              "attached_pic": 0,
+              "captions": 0,
+              "clean_effects": 0,
+              "comment": 0,
+              "default": 0,
+              "dependent": 0,
+              "descriptions": 0,
+              "dub": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "karaoke": 0,
+              "lyrics": 0,
+              "metadata": 0,
+              "multilayer": 0,
+              "non_diegetic": 0,
+              "original": 0,
+              "still_image": 0,
+              "timed_thumbnails": 0,
+              "visual_impaired": 0
+            },
+            "extradata_size": 201,
+            "field_order": "progressive",
+            "has_b_frames": 0,
+            "height": 216,
+            "index": 0,
+            "level": -99,
+            "pix_fmt": "gbrap16le",
+            "r_frame_rate": "10/1",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "tags": {
+              "DURATION": "00:00:01.000000000",
+              "ENCODER": "Lavc62.28.100 ffv1"
+            },
+            "time_base": "1/1000",
+            "width": 384
+          }
+        ],
+        "video": {
+          "codec": "ffv1",
+          "color_space": "gbr",
+          "duration_seconds": 0.0,
+          "fps": "10/1",
+          "height": 216,
+          "pix_fmt": "gbrap16le",
+          "start_time_seconds": 0.0,
+          "width": 384
+        }
+      },
+      "rights_ref": "rights_picture",
+      "sha256": "sha256:74c313f020408055c81d144f4bb0d372dc61319b1b5ad81fd45b548650cd1dac",
+      "uri": "assets/source.mkv"
+    },
+    {
+      "id": "sound",
+      "kind": "audio",
+      "probe": {
+        "audio": {
+          "channels": 2,
+          "codec": "pcm_f32le",
+          "duration_seconds": 1.0,
+          "sample_rate": 48000,
+          "start_time_seconds": 0.0
+        },
+        "duration_seconds": 1.0,
+        "duration_tick": 90000,
+        "format": "wav",
+        "format_long_name": "WAV / WAVE (Waveform Audio)",
+        "streams": [
+          {
+            "avg_frame_rate": "0/0",
+            "bit_rate": "3072000",
+            "bits_per_sample": 32,
+            "channels": 2,
+            "codec_long_name": "PCM 32-bit floating point little-endian",
+            "codec_name": "pcm_f32le",
+            "codec_tag": "0x0003",
+            "codec_tag_string": "[3][0][0][0]",
+            "codec_type": "audio",
+            "disposition": {
+              "attached_pic": 0,
+              "captions": 0,
+              "clean_effects": 0,
+              "comment": 0,
+              "default": 0,
+              "dependent": 0,
+              "descriptions": 0,
+              "dub": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "karaoke": 0,
+              "lyrics": 0,
+              "metadata": 0,
+              "multilayer": 0,
+              "non_diegetic": 0,
+              "original": 0,
+              "still_image": 0,
+              "timed_thumbnails": 0,
+              "visual_impaired": 0
+            },
+            "duration": "1.000000",
+            "duration_ts": 48000,
+            "index": 0,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "sample_fmt": "flt",
+            "sample_rate": "48000",
+            "time_base": "1/48000"
+          }
+        ],
+        "video": {
+          "codec": null,
+          "color_space": null,
+          "duration_seconds": 0.0,
+          "fps": null,
+          "height": null,
+          "pix_fmt": null,
+          "start_time_seconds": 0.0,
+          "width": null
+        }
+      },
+      "rights_ref": "rights_audio",
+      "sha256": "sha256:9abf15c950abaf49d8fa8eb18dbfa2669b7c803be7aac04a1c9321f1114d1d2c",
+      "uri": "assets/audio.wav"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "output_20261028203949_1fdde886",
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-gamut-case-r2\\project\\renders\\oklab.mkv",
+      "container": "mkv",
+      "profile": null,
+      "canvas": {
+        "background": "#000000",
+        "height": 216,
+        "pixel_aspect": {
+          "den": 1,
+          "num": 1
+        },
+        "width": 384
+      },
+      "video": {
+        "codec": "libx264",
+        "preset": "ultrafast",
+        "crf": 0,
+        "pixel_format": "yuv444p10le"
+      },
+      "audio": {
+        "codec": "pcm_f32le",
+        "bitrate": "192k"
+      },
+      "target_platform": "generic"
+    }
+  ],
+  "project": {
+    "created_at": "2026-10-28T19:05:09.145003Z",
+    "creator": "ai-ad-editor",
+    "id": "proj_20261028190509_e0326558",
+    "name": "project",
+    "source_revision": "local",
+    "updated_at": "2026-10-28T20:39:49.368263Z"
+  },
+  "provenance": {
+    "change_log": [
+      {
+        "command": "render",
+        "at": "2026-10-28T20:39:49.368253Z",
+        "output": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-gamut-case-r2\\project\\renders\\oklab.mkv",
+        "manifest": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-gamut-case-r2\\project\\renders\\oklab.mkv.manifest.json"
+      }
+    ],
+    "cli_version": "0.1.51",
+    "engine_version": "ffmpeg-local",
+    "input_hashes": [],
+    "model_versions": []
+  },
+  "schema_version": "0.1.0",
+  "sequences": [
+    {
+      "duration_tick": 90000,
+      "id": "seq_main",
+      "markers": [],
+      "name": "Main",
+      "tracks": [
+        {
+          "clips": [
+            {
+              "asset_id": "picture",
+              "duration_tick": 90000,
+              "id": "visual_clip",
+              "source_in_tick": 0,
+              "source_out_tick": 90000,
+              "timeline_start_tick": 0
+            }
+          ],
+          "id": "track_video_1",
+          "kind": "video",
+          "locked": false,
+          "muted": false,
+          "order": 0
+        },
+        {
+          "clips": [
+            {
+              "asset_id": "sound",
+              "duration_tick": 90000,
+              "id": "audio_clip",
+              "source_in_tick": 0,
+              "source_out_tick": 90000,
+              "timeline_start_tick": 0
+            }
+          ],
+          "id": "track_audio_1",
+          "kind": "audio",
+          "locked": false,
+          "muted": false,
+          "order": 0
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "audio": {
+      "channels": 2,
+      "sample_rate": 48000
+    },
+    "canvas": {
+      "background": "#000000",
+      "height": 216,
+      "pixel_aspect": {
+        "den": 1,
+        "num": 1
+      },
+      "width": 384
+    },
+    "color": {
+      "matrix": "bt709",
+      "primaries": "bt709",
+      "range": "limited",
+      "transfer": "iec61966-2-1"
+    },
+    "output": {
+      "audio": {
+        "codec": "pcm_f32le"
+      },
+      "container": "mkv",
+      "video": {
+        "codec": "libx264",
+        "crf": 0,
+        "pixel_format": "yuv444p10le",
+        "preset": "ultrafast"
+      }
+    },
+    "pixel_pipeline": {
+      "display_mapping": {
+        "exposure_stops": 0,
+        "gamut_policy": "oklab-chroma",
+        "operator": "reinhard-luminance",
+        "source_peak_nits": 1000,
+        "target_peak_nits": 100
+      },
+      "engine": "float32-native-v1",
+      "output_signal": {
+        "primaries": "bt709",
+        "reference_white_nits": 100,
+        "transfer": "srgb"
+      },
+      "range_policy": "reject",
+      "sources": {
+        "picture": {
+          "display_geometry": "square-unrotated",
+          "source_signal": {
+            "primaries": "bt2020",
+            "reference_white_nits": 203,
+            "transfer": "linear"
+          }
+        }
+      },
+      "window_frames": 2,
+      "working_signal": {
+        "primaries": "bt2020",
+        "reference_white_nits": 203,
+        "transfer": "linear"
+      }
+    },
+    "timebase": {
+      "display_fps": {
+        "den": 1,
+        "num": 10
+      },
+      "ticks_per_second": 90000
+    },
+    "projection_acceleration": {
+      "mode": "require",
+      "device": "0.0"
+    }
+  },
+  "templates": []
+}

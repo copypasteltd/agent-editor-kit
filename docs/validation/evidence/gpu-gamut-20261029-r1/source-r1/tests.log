@@ -1,0 +1,11 @@
+test_explicit_HDR_viewing_mapping_uses_GPU_without_author_change (test_gpu_gamut.GPUColourIntegrationTests.test_explicit_HDR_viewing_mapping_uses_GPU_without_author_change) ... ok
+test_formal_SDR_render_preview_and_complete_encoded_video_PCM (test_gpu_gamut.GPUColourIntegrationTests.test_formal_SDR_render_preview_and_complete_encoded_video_PCM) ... ok
+test_binary64_random_extended_RGB_exposure_alpha_and_counts (test_gpu_gamut.GPUColourTests.test_binary64_random_extended_RGB_exposure_alpha_and_counts) ... ok
+test_cancellation_closes_worker_shared_handles_and_control (test_gpu_gamut.GPUColourTests.test_cancellation_closes_worker_shared_handles_and_control) ... ok
+test_invalid_policy_is_atomic_and_valid_operation_still_works (test_gpu_gamut.GPUColourTests.test_invalid_policy_is_atomic_and_valid_operation_still_works) ... ok
+test_negative_CIE_Y_worker_failure_is_not_CPU_fallback (test_gpu_gamut.GPUColourTests.test_negative_CIE_Y_worker_failure_is_not_CPU_fallback) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 71.449s
+
+OK

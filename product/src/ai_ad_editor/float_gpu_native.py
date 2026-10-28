@@ -15,6 +15,7 @@ import numpy as np
 from .errors import AppError
 from .float_optics_kernel import SOURCE as OPTICAL_SOURCE
 from .float_glow_kernel import SOURCE as GLOW_SOURCE
+from .float_gamut_kernel import SOURCE as GAMUT_SOURCE
 
 PROTOCOL = 'native-opencl-binary64-float32-primitives-v1'
 MAX_PIXELS = 16777216
@@ -127,7 +128,7 @@ __kernel void particles(__global const float *scene, __global const uint *bins,
     if(sum.w>0.0f)sum.xyz/=sum.w; else sum.xyz=(float3)(0.0f);
     out[i]=sum;
 }
-''' + OPTICAL_SOURCE + GLOW_SOURCE
+''' + OPTICAL_SOURCE + GLOW_SOURCE + GAMUT_SOURCE
 
 
 def error(code, message, **details):
@@ -158,11 +159,11 @@ class NativeGPU:
                 log=C.create_string_buffer(min(size.value,65536))
                 if len(log):self.lib.clGetProgramBuildInfo(self.program,self.device,0x1183,len(log),log,None)
                 raise error('BUILD','OpenCL浮点内核编译失败',native_code=result,log=log.value.decode('utf8','replace'))
-            for name in ('over','affine','paint','select_words','particles','optics','glow_bright','glow_blur','glow_merge'):
+            for name in ('over','affine','paint','select_words','particles','optics','glow_bright','glow_blur','glow_merge','gamut_map'):
                 self.kernels[name]=self.lib.clCreateKernel(self.program,name.encode(),C.byref(code));self._check(code.value,'kernel')
             self.metadata={'protocol':PROTOCOL,'device':self.info,'kernel_sha256':hashlib.sha256(data).hexdigest(),
                 'build_options':'-cl-std=CL1.2;FP_CONTRACT OFF;no fast math',
-                'arithmetic':'binary64 affine/over/text/optics/highlight-FIR-glow; binary32 particle coverage and ordered accumulation; Float32 surfaces',
+                'arithmetic':'binary64 affine/over/text/optics/highlight-FIR-glow/SDR-OKLab; binary32 particle coverage and ordered accumulation; Float32 surfaces',
                 'device_quota_bytes':self.limit,'retained_device_bytes':0,'operations':{},'integer_media_conversion':False}
         except BaseException:
             self.close();raise
@@ -340,6 +341,35 @@ class NativeGPU:
         self._run('glow_merge',[pointer(0),pointer(1),pointer(2),C.c_ulonglong(count),C.c_int(kind=='halation'),
             *signal,*(C.c_double(values[k]) for k in ('intensity','gain','red','green','blue')),
             C.c_double(values.get('core_suppression',0.))],count,output)
+
+    def gamut_map(self, source, output, mapping):
+        from .float_hdr import mapping_configuration
+        from .float_color_signal import _rgb_to_xyz
+        mapping=mapping_configuration(mapping)
+        if mapping['gamut_policy']!='oklab-chroma':raise error('GAMUT','GPU色域算子要求明确oklab-chroma')
+        self.surface(source);self.output(output)
+        if source.shape!=output.shape:raise error('SURFACE','GPU色域输入输出形状不一致')
+        count=source.shape[0]*source.shape[1];self._reserve(source.nbytes);self._write(0,source)
+        pointer=lambda i:C.c_void_p(self.buffers[i])
+        weights=_rgb_to_xyz('bt709')[1]
+        self._run('gamut_map',[pointer(0),pointer(2),pointer(1),C.c_ulonglong(count),
+            *(C.c_double(v) for v in weights),C.c_double(2**mapping['exposure_stops']),
+            C.c_double(mapping['source_peak_nits']/mapping['target_peak_nits'])],count,output)
+        flags=np.empty(count,np.uint32)
+        self._check(self.lib.clEnqueueReadBuffer(self.queue,self.buffers[1],1,0,flags.nbytes,
+            C.c_void_p(flags.ctypes.data),0,None,None),'gamut-flags-download')
+        counts=dict(gamut_pixels_mapped=0,gamut_lightness_to_black_pixels=0,
+            gamut_lightness_to_white_pixels=0,gamut_chroma_reduced_pixels=0,
+            above_declared_peak_pixels=0,negative_components_clipped=0,over_one_components_clipped=0)
+        keys=list(counts)[:5]
+        for start in range(0,count,65536):
+            block=flags[start:start+65536]
+            if np.any(block&32):raise AppError('FLOAT_HDR_GAMUT','OKLab显示映射要求非负有限CIE Y',exit_code=2)
+            for bit,key in enumerate(keys):counts[key]+=int(np.count_nonzero(block&(1<<bit)))
+        if not np.isfinite(output).all() or np.any((output[...,:3]<0)|(output[...,:3]>1)):
+            raise error('GAMUT_DOMAIN','GPU色域结果不在有限RGB单位域')
+        self.metadata['last_gamut_counts']=counts
+        self.metadata['gamut_host_flag_bytes']=int(flags.nbytes)
 
     def close(self):
         if not hasattr(self,'lib'):return

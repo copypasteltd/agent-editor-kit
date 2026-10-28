@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "source_cli": "0.1.52",
+  "source_files": 278,
+  "source_capabilities": 89,
+  "source_tests": 70,
+  "gpu_control_tests": 12,
+  "source_case_calls": 18,
+  "independent_4K_pixels": 8294400,
+  "installed_candidate_byte_exact": true,
+  "registered_skill_cli": "0.1.51",
+  "registered_skill_files_unchanged": 90,
+  "namespace_byte_unchanged": true,
+  "runtime_still_uses_previous_CLI51": true,
+  "history": {
+    "README.md": {
+      "old": 353,
+      "current": 357,
+      "all_previous_rows_preserved": true
+    },
+    "README.zh-TW.md": {
+      "old": 353,
+      "current": 357,
+      "all_previous_rows_preserved": true
+    },
+    "README.en.md": {
+      "old": 353,
+      "current": 357,
+      "all_previous_rows_preserved": true
+    }
+  },
+  "all_original_38_closure_cells_unchanged": true,
+  "local_doc_links": 17,
+  "live_tests_not_counted_as_passed": [
+    "compat-r1",
+    "installed-measure-r1",
+    "installed-compat-r1"
+  ],
+  "goal_complete": false
+}

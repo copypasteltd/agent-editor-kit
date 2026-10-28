@@ -13,6 +13,18 @@ This page includes functional modules, services/dependencies, installation/usage
 
 
 
+<!-- gpu-gamut-source-current -->
+
+**Development source CLI0.1.52 · installed Skill CLI0.1.51 / local.49 / r52 unchanged.**
+
+Source CLI52 adds a real GPU luminance shoulder and OKLab chroma reduction; signal conversion and ICC remain on CPU. Separate 70-test and 12-test groups, an independent 4K single-surface check and full C63 video/audio/package replay passed. Registered Skill remains CLI51/local49/r52. The 352-test compatibility run and new installed delivery require separate acceptance.
+
+[Workflow](docs/product/GPU_GAMUT.md) · [Source release](docs/releases/CLI_0.1.52_SOURCE.md) · [C63](docs/product/CASES.md#c63-source-gpu-gamut) · [Evidence](docs/validation/GPU色域映射源码实测_2026-10-29.md)
+
+![Actual GPU SDR preview](docs/assets/gpu-gamut-20261029-r2/preview.gif)
+
+<!-- /gpu-gamut-source-current -->
+
 <!-- oklab-installed-current -->
 
 **CLI0.1.51 / local.49 / r52 kit · 1 Skill / 17 modules / 90 files.**
@@ -1702,6 +1714,10 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R351 | Unified Skill51 pin, native activation and registration | 1 public Skill/17 modules/90 files; actual junction and4 existing packs verified | 2026-10-29 | [activation](docs/validation/evidence/oklab-gamut-20261029-r1/activation-final-r1/activation-and-registration.json) | no new model forwards; public alpha.3 unchanged |
 | R352 | C62 actual registered-Skill OKLab render/preview/package | Full10frame YUV replay,384000byte complete PCM,frame9 independent RGB16 oracle | 2026-10-29 | [case](docs/validation/evidence/oklab-gamut-20261029-r1/registered-case-r2/verification.json) | diagnostic synthetic SDR; CPU; no natural/physical acceptance |
 | R353 | Independent r52 kit extraction and real isolated registration | 148 entries/147 inventory/90 Skill files; actual OKLab frame/range and48-frame post-codec meter | 2026-10-29 | [kit](docs/validation/evidence/oklab-gamut-20261029-r1/kit-r1/verification.json), [digest](docs/skills/community-unified-skill-package-0.1.51-r52.json) | real discovery junction unchanged;1 Skill/17 modules; no clean-host claim |
+| R354 | CLI52 source GPU + HDR/measurement | 70/70; frozen 278 source files | [raw](docs/validation/evidence/gpu-gamut-20261029-r1/source-r2/verification.json) | source, not installed-Skill acceptance |
+| R355 | CLI52 native GPU control lifecycle | 12/12; no skipped tests | [raw](docs/validation/evidence/gpu-gamut-20261029-r1/gpu-control-r1/verification.json) | owned worker/pipes/shared handles; not GPU instruction preemption |
+| R356 | Actual 3840×2160 GPU colour operator | all 8,294,400 pixels vs independent reference | [raw](docs/validation/evidence/gpu-gamut-20261029-r1/4k-r1/verification.json) | one surface; not encoded 4K, real-time or long-form |
+| R357 | C63 source GPU full encoded media/package replay | 10 frames; 4,976,640 YUV bytes; 384,000 PCM bytes equal; PNG16 error 0 | [raw](docs/validation/evidence/gpu-gamut-20261029-r1/case-r2/verification.json) | source CLI52, synthetic SDR chart; installed Skill remains CLI51 |
 
 ## Current limits and development direction
 

@@ -154,7 +154,7 @@ def mapping_configuration(value):
 
 
 def map_display(surface, working_signal, mapping, *, target_primaries='bt709',
-                max_working_bytes=768*1024**2, cancel=None):
+                max_working_bytes=768*1024**2, cancel=None, gpu=None):
     """An explicit creative SDR trim; not BT.2390 or automatic mastering.
 
     Modified Reinhard is applied to target-gamut linear luminance; source peak
@@ -188,7 +188,13 @@ def map_display(surface, working_signal, mapping, *, target_primaries='bt709',
               'above_declared_peak_pixels': 0}
     gamut_counts = dict(gamut_pixels_mapped=0, gamut_lightness_to_black_pixels=0,
                         gamut_lightness_to_white_pixels=0, gamut_chroma_reduced_pixels=0)
-    for start in range(0, len(rows), 65536):
+    gpu_used=perceptual and gpu is not None and gpu.active
+    if gpu_used:
+        result,device_counts=gpu.gamut_map(np.ascontiguousarray(result),mapping)
+        rows=result.reshape(-1,4)
+        counts={key:device_counts[key] for key in counts}
+        gamut_counts={key:device_counts[key] for key in gamut_counts}
+    for start in range(0, 0 if gpu_used else len(rows), 65536):
         if cancel is not None: cancel()
         rgb = rows[start:start+65536, :3].astype(np.float64)
         negative = rgb < 0
@@ -227,7 +233,7 @@ def map_display(surface, working_signal, mapping, *, target_primaries='bt709',
             'preserves': 'OKLab lightness and hue for 0<L<1-1e-7; not CIE Y',
             'lightness_endpoints': 'L<=0 black; L>=1-1e-7 white (published-matrix precision guard)',
             'in_gamut': 'unchanged after luminance shoulder', 'component_clipping': False,
-            'CPU': True, 'soft_knee': False, 'ACES': False}} if perceptual else {}),
+            'CPU': not gpu_used, 'GPU': bool(gpu_used), 'GPU_scope': 'luminance-shoulder-and-OKLab-chroma' if gpu_used else None, 'soft_knee': False, 'ACES': False}} if perceptual else {}),
         'alpha': 'bit-exact', 'automatic_peak_inference': False, 'BT2390_claimed': False,
         'estimated_working_bytes': estimate, 'estimated_bytes_are_peak_RSS': False,
         'HDR_monitor_accepted': False}

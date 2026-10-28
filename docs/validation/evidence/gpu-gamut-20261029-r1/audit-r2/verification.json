@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "scope": "audit-harness",
+  "reason": "Auditor tried Git baseline for ignored local runtime.json; replaced with exact prior activation identity and launcher hash verification. No product change.",
+  "superseded_by": "audit-r3",
+  "counted_as_product_test": false
+}

@@ -1,0 +1,372 @@
+[
+  {
+    "name": "import",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-X",
+      "utf8",
+      "-c",
+      "import sys;sys.path[:0]=['E:\\\\dev\\\\sandbox\\\\AI广告剪辑\\\\product\\\\src', 'C:\\\\Users\\\\carzy\\\\AppData\\\\Roaming\\\\Python\\\\Python313\\\\site-packages'];from ai_ad_editor.cli import main;main()",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\oklab-preview-candidate-20261029-r1\\corrected-oklab.aevpkg.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-gamut-case-r1\\project"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "6f72fc91fd5b7324ba56d3a1d9fc0f29ef75c7f6f65b71f0eab5cb4f2e678823"
+  },
+  {
+    "name": "validate",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-X",
+      "utf8",
+      "-c",
+      "import sys;sys.path[:0]=['E:\\\\dev\\\\sandbox\\\\AI广告剪辑\\\\product\\\\src', 'C:\\\\Users\\\\carzy\\\\AppData\\\\Roaming\\\\Python\\\\Python313\\\\site-packages'];from ai_ad_editor.cli import main;main()",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-gamut-case-r1\\project"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e487874e56af9053ffdc828b09724d773c945d166433b41f78addbb4b9a7a10b"
+  },
+  {
+    "name": "render",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-X",
+      "utf8",
+      "-c",
+      "import sys;sys.path[:0]=['E:\\\\dev\\\\sandbox\\\\AI广告剪辑\\\\product\\\\src', 'C:\\\\Users\\\\carzy\\\\AppData\\\\Roaming\\\\Python\\\\Python313\\\\site-packages'];from ai_ad_editor.cli import main;main()",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-gamut-case-r1\\project",
+      "--sequence-id",
+      "seq_main",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-gamut-case-r1\\project\\renders\\oklab.mkv"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "9530ea80d4571fdca048de090ae630c653e59070fdd24546a693a464816f2c71"
+  },
+  {
+    "name": "frame",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-X",
+      "utf8",
+      "-c",
+      "import sys;sys.path[:0]=['E:\\\\dev\\\\sandbox\\\\AI广告剪辑\\\\product\\\\src', 'C:\\\\Users\\\\carzy\\\\AppData\\\\Roaming\\\\Python\\\\Python313\\\\site-packages'];from ai_ad_editor.cli import main;main()",
+      "preview",
+      "frame",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-gamut-case-r1\\project",
+      "--frame",
+      "9",
+      "--height",
+      "216"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "3f26f3f3536730cc6a54a780c46f1af249b7598fa86a1fbdfd7a410eeb9c2b7c"
+  },
+  {
+    "name": "range",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-X",
+      "utf8",
+      "-c",
+      "import sys;sys.path[:0]=['E:\\\\dev\\\\sandbox\\\\AI广告剪辑\\\\product\\\\src', 'C:\\\\Users\\\\carzy\\\\AppData\\\\Roaming\\\\Python\\\\Python313\\\\site-packages'];from ai_ad_editor.cli import main;main()",
+      "preview",
+      "range",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-gamut-case-r1\\project",
+      "--start-frame",
+      "0",
+      "--end-frame",
+      "10",
+      "--height",
+      "216"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "3ae6ff3feb711b7a30c03068e4f1c51e6df6013d91a75356c42d76aa64d043e9"
+  },
+  {
+    "name": "export",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-X",
+      "utf8",
+      "-c",
+      "import sys;sys.path[:0]=['E:\\\\dev\\\\sandbox\\\\AI广告剪辑\\\\product\\\\src', 'C:\\\\Users\\\\carzy\\\\AppData\\\\Roaming\\\\Python\\\\Python313\\\\site-packages'];from ai_ad_editor.cli import main;main()",
+      "convert",
+      "export",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-gamut-case-r1\\project",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-gamut-case-r1\\project\\exports\\editable-oklab.aevpkg.zip",
+      "--target-format",
+      "package"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "b10606691ea01f3cd03755e9c1efafe6812a4adcc29b9b2a73c898e6930c4af1"
+  },
+  {
+    "name": "reimport",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-X",
+      "utf8",
+      "-c",
+      "import sys;sys.path[:0]=['E:\\\\dev\\\\sandbox\\\\AI广告剪辑\\\\product\\\\src', 'C:\\\\Users\\\\carzy\\\\AppData\\\\Roaming\\\\Python\\\\Python313\\\\site-packages'];from ai_ad_editor.cli import main;main()",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-gamut-case-r1\\project\\exports\\editable-oklab.aevpkg.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-gamut-case-r1\\replay"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "5fed910291cf691969b982fa22723fac4fe09b13a4786ea4d20a0f59980a6697"
+  },
+  {
+    "name": "revalidate",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-X",
+      "utf8",
+      "-c",
+      "import sys;sys.path[:0]=['E:\\\\dev\\\\sandbox\\\\AI广告剪辑\\\\product\\\\src', 'C:\\\\Users\\\\carzy\\\\AppData\\\\Roaming\\\\Python\\\\Python313\\\\site-packages'];from ai_ad_editor.cli import main;main()",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-gamut-case-r1\\replay"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "a9b720eb53cee089bedfa316f0199f2b4967d5c804f899b4a10b88da35a73716"
+  },
+  {
+    "name": "replay-render",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-X",
+      "utf8",
+      "-c",
+      "import sys;sys.path[:0]=['E:\\\\dev\\\\sandbox\\\\AI广告剪辑\\\\product\\\\src', 'C:\\\\Users\\\\carzy\\\\AppData\\\\Roaming\\\\Python\\\\Python313\\\\site-packages'];from ai_ad_editor.cli import main;main()",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-gamut-case-r1\\replay",
+      "--sequence-id",
+      "seq_main",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-gamut-case-r1\\replay\\renders\\oklab.mkv"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "bbee5c807207154598d1b6db572914cc11c8d199f9083820914721801e2e473f"
+  },
+  {
+    "name": "old-full-yuv",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\oklab-gamut-20261029-r3\\oklab.mkv",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-pix_fmt",
+      "yuv444p10le",
+      "-f",
+      "rawvideo",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "c35d33a79e6997e392c624aa6b21de5aa309cd41845ae0ea77ec168ee5974e94"
+  },
+  {
+    "name": "new-full-yuv",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-gamut-case-r1\\project\\renders\\oklab.mkv",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-pix_fmt",
+      "yuv444p10le",
+      "-f",
+      "rawvideo",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "c35d33a79e6997e392c624aa6b21de5aa309cd41845ae0ea77ec168ee5974e94"
+  },
+  {
+    "name": "replay-full-yuv",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-gamut-case-r1\\replay\\renders\\oklab.mkv",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-pix_fmt",
+      "yuv444p10le",
+      "-f",
+      "rawvideo",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "c35d33a79e6997e392c624aa6b21de5aa309cd41845ae0ea77ec168ee5974e94"
+  },
+  {
+    "name": "old-pcm",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\oklab-gamut-20261029-r3\\oklab.mkv",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "24a4251fdd038c567fb22b6f463d5ccae4f2f5836207b42baee9271a9aa84c61"
+  },
+  {
+    "name": "new-pcm",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-gamut-case-r1\\project\\renders\\oklab.mkv",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "24a4251fdd038c567fb22b6f463d5ccae4f2f5836207b42baee9271a9aa84c61"
+  },
+  {
+    "name": "replay-pcm",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-gamut-case-r1\\replay\\renders\\oklab.mkv",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "24a4251fdd038c567fb22b6f463d5ccae4f2f5836207b42baee9271a9aa84c61"
+  },
+  {
+    "name": "preview-png-rgba16",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\gpu-gamut-case-r1\\project\\cache\\timeline-previews\\73d90467a56263aa1cd04657ec85feb1b76843166888780d17d465260d0fbe39\\frame.png",
+      "-pix_fmt",
+      "rgba64le",
+      "-f",
+      "rawvideo",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "40382e7acb274d130f86067770833915641f97592529da674044d6c6ca1cc94e"
+  },
+  {
+    "name": "gif",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\gpu-gamut-20261029-r1\\preview.mp4",
+      "-filter_complex",
+      "[0:v]split[a][b];[a]palettegen[p];[b][p]paletteuse",
+      "-loop",
+      "0",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\gpu-gamut-20261029-r1\\preview.gif"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "view-probe",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.EXE",
+      "-v",
+      "error",
+      "-count_frames",
+      "-show_streams",
+      "-of",
+      "json",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\gpu-gamut-20261029-r1\\preview.mp4"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "62e7a7db6c85c8a2757139301a433e8ab1a87a4b7d600cae99532c3044f8695f"
+  }
+]

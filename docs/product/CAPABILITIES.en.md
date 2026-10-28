@@ -1,5 +1,7 @@
 # Current modules and services
 
+Source CLI52 GPU update (installed Skill remains CLI51): Source CLI52 adds a real GPU luminance shoulder and OKLab chroma reduction; signal conversion and ICC remain on CPU. Separate 70-test and 12-test groups, an independent 4K single-surface check and full C63 video/audio/package replay passed. Registered Skill remains CLI51/local49/r52. The 352-test compatibility run and new installed delivery require separate acceptance. [Workflow](GPU_GAMUT.md).
+
 <!-- community-current -->
 
 **CLI0.1.51 / local.49 / r52 kit · 1 Skill / 17 modules / 90 files.**

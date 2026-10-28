@@ -28,7 +28,7 @@ def read(path):
 
 def execute(gpu, request, nonce):
     op = request.get('op')
-    if op not in {'over', 'affine', 'paint', 'select', 'particles','optics','glow'}:
+    if op not in {'over', 'affine', 'paint', 'select', 'particles','optics','glow','gamut_map'}:
         raise error('PROTOCOL', 'GPU操作未登记')
     specs = request.get('buffers')
     if not isinstance(specs, list) or len(specs) != 3:
@@ -72,6 +72,7 @@ def execute(gpu, request, nonce):
             elif op == 'select': gpu.select(a, b, c, output)
             elif op == 'particles': gpu.particles(b, c, output)
             elif op == 'optics': gpu.optics(b,output,request['kind'],request['parameters'],request['ghosts'],request['edge'])
+            elif op == 'gamut_map': gpu.gamut_map(b,output,request['mapping'])
             else: gpu.glow(b,output,request['kind'],request['parameters'],request['edge'],request['primaries'],white_xy=request.get('white_xy'))
             gpu.surface(output)
         finally:

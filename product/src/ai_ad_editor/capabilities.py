@@ -599,6 +599,18 @@ def build_capability_manifest() -> dict[str, Any]:
                     'probe_first_32_video_packets_not_all_frame_metadata_certification',
                     'no_HDR10plus_dynamic_metadata_DolbyVision_or_HDR_monitor_acceptance'],
             },
+            'native_sdr_gamut_mapping': {
+                'status':'implemented_with_limits','protocol':'oklab-constant-lightness-hue-bt709-v1',
+                'selection':'explicit display_mapping or preview_mapping gamut_policy=oklab-chroma',
+                'features':['D65_BT709_target_with_explicit_reference_nits','modified_Reinhard_target_luminance_shoulder',
+                    'fixed_OKLab_lightness_hue_24_step_chroma_boundary_search','CPU_binary64_tiles_or_owned_OpenCL_binary64_GPU',
+                    'formal_SDR_map_inherited_before_display_linear_preview_resize','explicit_preview_mapping_priority',
+                    'per_frame_and_all_frame_chroma_black_white_endpoint_and_peak_counts','independent_straight_alpha_bits',
+                    'owned_worker_cancellation_shared_buffer_and_control_cleanup_no_runtime_CPU_fallback'],
+                'limits':['signal_conversion_and_ICC_remain_CPU','GPU_selected_with_projection_acceleration_prefer_or_require',
+                    'OKLab_L_not_CIE_Y_preserved_except_counted_lightness_endpoints','negative_CIE_Y_rejected',
+                    'no_soft_knee_ACES_BT2390_dynamic_HDR_or_physical_monitor_acceptance'],
+            },
             'native_hlg_black_level': {
                 'status':'implemented_with_limits','protocol':'explicit-HLG-display-black-float32-v1',
                 'selection':'HLG source/output signal display_black_nits with reference_white_nits,display_peak_nits,system_gamma',

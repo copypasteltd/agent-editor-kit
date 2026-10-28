@@ -52,6 +52,9 @@ def configuration(value, settings, encoder):
         raise error('CONFIG', 'pixel_pipeline必须使用完整且受支持的浮点配置')
     working = _signal(value.get('working_signal'), 'working_signal')
     output = _signal(value.get('output_signal'), 'output_signal')
+    from .float_chromatic import white_of,D65
+    if white_of(output)!=D65:
+        raise error('OUTPUT_WHITE','当前BT.709/BT.2100编码交付要求D65输出白点；工作域与来源可明确其他白点')
     background = _signal(value.get('background_signal', {'primaries': 'bt709', 'transfer': 'srgb'}), 'background_signal')
     if working.transfer != 'linear':
         raise error('SIGNAL', '标准浮点合成要求显式线性光工作域')
@@ -234,7 +237,7 @@ class FloatRenderContext:
                   ('float_standard_render', 'float_stream', 'float_audio_graph', 'render', 'float_color_signal',
                    'float_timeline', 'float_tracking', 'bindings', 'animation', 'float_crop', 'float_adjustments', 'float_effect_chain', 'float_transitions', 'float_transition_plan', 'source_transitions',
                    'float_text','float_text_paint','float_text_coverage','text_paint','text_layout','text_highlight','text_typing','captions',
-                   'float_gpu','float_gpu_native','float_gpu_worker','float_gpu_control','procedural_particles','particle_animation','float_optics','float_optics_kernel','float_glow','float_glow_kernel','float_hdr','hdr_metadata')]
+                   'float_gpu','float_gpu_native','float_gpu_worker','float_gpu_control','procedural_particles','particle_animation','float_optics','float_optics_kernel','float_glow','float_glow_kernel','float_hdr','hdr_metadata','float_chromatic')]
         self.artifacts = [artifact_entry(p, 'standard-float-render-runtime') for p in paths]
         context = IndexContext(self.root, persist=not self.dry_run, cancel_file=self.marker)
         per_source = min(256 * 1024**2, self.config['max_source_cache_bytes'] // max(1, len(needed)))

@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "tool": "skill-creator/scripts/quick_validate.py",
+  "argv": [
+    "C:/Python313/python.exe",
+    "-E",
+    "-B",
+    "-u",
+    "-X",
+    "utf8",
+    "C:/Users/carzy/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+    "skills/agent-ffmpeg-local-editor"
+  ],
+  "exit_code": 0,
+  "observed_stdout": "Skill is valid!\n",
+  "skill_md_sha256": "5106cda1d40349955b142b2171e8e7749f48fc892f244447131b04bdc8b67fab",
+  "at_utc": "2026-10-28T11:26:53.706400+00:00",
+  "scope": "Frontmatter/name/scaffold validation; real installed behavior separately tested by C55 and isolated kit registration."
+}

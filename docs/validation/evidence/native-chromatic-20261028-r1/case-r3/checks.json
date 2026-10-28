@@ -1,0 +1,50 @@
+[
+  {
+    "name": "independent-entire-first-surface",
+    "ok": true,
+    "pixels": 230400,
+    "maximum_error": 2.979730118202184e-08
+  },
+  {
+    "name": "edited-actual-GPU",
+    "ok": true,
+    "glow_calls": 48
+  },
+  {
+    "name": "actual-encoded-neutral-and-colour-patches",
+    "ok": true,
+    "patch_count": 8,
+    "frames": 48,
+    "maximum_luma_code_error": 0.44534279931326637
+  },
+  {
+    "name": "previews-preserve-author",
+    "ok": true
+  },
+  {
+    "name": "package-preserves-all-signals",
+    "ok": true
+  },
+  {
+    "name": "replayed-actual-GPU",
+    "ok": true,
+    "glow_calls": 48
+  },
+  {
+    "name": "all-decoded-video-identical",
+    "ok": true,
+    "frames": 48,
+    "bytes": 66355200
+  },
+  {
+    "name": "all-PCM-identical",
+    "ok": true,
+    "scalar_samples": 384000
+  },
+  {
+    "name": "actual-GIF-clock",
+    "ok": true,
+    "frames": 24,
+    "duration_ms": 4000
+  }
+]

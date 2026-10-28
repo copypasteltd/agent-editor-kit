@@ -5025,7 +5025,9 @@
           "enum": [
             "bt709",
             "display-p3",
-            "bt2020"
+            "bt2020",
+            "prophoto-rgb",
+            "aces-ap1"
           ]
         },
         "transfer": {
@@ -5036,7 +5038,8 @@
             "gamma22",
             "gamma24",
             "pq-st2084",
-            "hlg-bt2100"
+            "hlg-bt2100",
+            "prophoto-rgb"
           ]
         },
         "reference_white_nits": {
@@ -5059,6 +5062,16 @@
           ],
           "minimum": 0.5,
           "maximum": 3
+        },
+        "white_xy": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number",
+            "minimum": 0.0001,
+            "maximum": 0.9998
+          }
         }
       },
       "allOf": [

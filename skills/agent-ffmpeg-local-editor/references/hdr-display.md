@@ -35,3 +35,7 @@ gamut mapping, mastering-display/CLL/dynamic metadata or Dolby Vision. Synthetic
 numeric/encoded checks do not establish natural-footage or HDR monitor quality.
 
 CLI0.1.44 adds optional actual HDR10 static SEI. Read [HDR10 metadata](hdr-metadata.md).
+
+CLI0.1.45 adds explicit Bradford reference-white conversion,ProPhoto D50 and
+linear AP1 D60. Read [chromatic adaptation](chromatic-adaptation.md). HDR encoded
+BT.2100/output white remains D65; chromaticity is separate from reference nits.

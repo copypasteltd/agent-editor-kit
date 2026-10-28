@@ -9,7 +9,23 @@
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
 
-<!-- native-hdr-metadata-current -->
+<!-- native-chromatic-current -->
+
+**CLI0.1.45 / alpha.4-local.43 / r46 kit · 1 Skill / 17 modules.**
+
+Added **Bradford reference-white adaptation, ProPhoto RGB D50 and linear ACES AP1 D60** across sources, working RGB, effect signals, raw surfaces, actual previews and editable packages. Glow luminance follows the declared white; existing D65 behavior is retained.
+
+[Workflow / usage](docs/product/CHROMATIC_ADAPTATION.md) · [C55](docs/product/CASES.md#c55-native-chromatic-adaptation) · [Install](docs/releases/CLI_0.1.45_LOCAL.md) · [Evidence](docs/validation/明确白点色适应实测_2026-10-28.md)
+
+![Actual D65 encoded preview](docs/assets/native-chromatic-20261028-r3/actual-preview.gif)
+
+[Actual MP4](docs/assets/native-chromatic-20261028-r3/actual-preview.mp4) · [Signals](docs/assets/native-chromatic-20261028-r3/signals.json) · [Comparison](docs/assets/native-chromatic-20261028-r3/comparison.png) · [Editable package](docs/assets/native-chromatic-20261028-r3/editable-chromatic.aevpkg.zip)
+
+20 source checks,20 installed checks and267 installed compatibility checks pass separately. C55 independently checks230400 first-frame pixels and patches across all48 encoded frames,actual GPU Bloom and full video/PCM package replay. Color math uses CPU; composition/glow can use GPU. BT.709/BT.2100 delivery remains D65. Reference-white conversion does not parse ICC, infer physical white balance or provide full ACES output rendering. Perceptual gamut mapping,natural HDR monitoring and all38 original goal closure conditions remain ongoing.
+
+<!-- /native-chromatic-current -->
+
+<!-- native-hdr-metadata-history -->
 
 **CLI0.1.44 / alpha.4-local.42 / r45 kit · 1 Skill / 17 modules.**
 
@@ -23,7 +39,7 @@ Added **HDR10 mastering-display and MaxCLL/MaxFALL static metadata**: exact xy/n
 
 21 source checks,21 installed checks and105 installed compatibility checks pass separately. C54 independently checks all48 frames of SEI; package replay preserves every decoded video frame and384000 PCM scalars. Production verifies frames decoded from the first32 video packets. Values are author declarations, not measured peaks. x265 encoding uses CPU; composition uses GPU. Dynamic HDR,ICC/monitoring,natural quality and all38 original goal closure conditions remain ongoing.
 
-<!-- /native-hdr-metadata-current -->
+<!-- /native-hdr-metadata-history -->
 
 <!-- native-speech-enhancement-history -->
 
@@ -510,7 +526,7 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 
 <!-- unified-skill-registration -->
 
-**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r45 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r45.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
+**One registered entry: `$agent-ffmpeg-local-editor`.** The current local GPU extension uses the [r46 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r46.zip) and matching [local bundle/model installation](docs/product/COMMUNITY_LOCAL_DELIVERY.md). Its 17 internal modules are loaded as needed. The historical r1 kit remains paired with the unchanged public alpha.3 runtime below.
 
 <!-- /unified-skill-registration -->
 
@@ -816,7 +832,7 @@ The implementation is **Python CLI + Agent Project schema + FFmpeg**, with an ex
 5. For selection, show the original and a small candidate set, record final IDs/strength/scope and trial them on target media.
 6. Render to a new project-owned path, inspect the encoded output, manifest, warnings, A/V and rights, then export the project package.
 
-## All 70 functional modules
+## All 71 functional modules
 
 IDs locate documentation groups with dependencies/overlap; they are not 43 independent kernels or a completion score. The table describes behavior, commands and limits. The [complete machine capability manual](docs/product/CAPABILITIES.en.md) retains every field.
 
@@ -892,6 +908,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F68 | CUDA neural interpolation / slow motion | Native CFR/VFR,all original RGBA anchors,premultiplied alpha,complete PCM;factor2..8,cut holds,linked slow-motion tracks,recipes/packages. | `interpolate adapter; interpolate generate` | Explicit RIFE4.25 safetensors/native CUDA Python;no CPU fallback;difficult motion/occlusion/natural-quality/HDR acceptance open. |
 | F69 | CUDA speech denoising | Native sample clock/mono-stereo,actual model,dry/wet attenuation,editable audio,portable recipes/packages,owned cancel/rollback. | `audio enhancement-adapter; audio enhance` | Fixed DF3 safetensors/existing native CUDA;segment state resets,CPU frontend;full dereverb/music fidelity open. |
 | F70 | HDR10 static metadata delivery | Mastering RGB/white xy,min/max nits,MaxCLL/MaxFALL → actual HEVC SEI and decoded verification receipt. | `settings.output.hdr10; validate; render; convert` | Explicit native PQ/BT2020 NCL limited range,libx265/10bit420/MP4 or MKV; author declarations,prefix32-packet verification. |
+| F71 | Explicit-white and wide-gamut working configurations | ProPhoto D50/AP1 D60/explicit xy → linear XYZ Bradford,nit scaling,actual D65 previews and editable packages. | `native_chromatic_adaptation; render; preview; surface export; convert` | CPU color math,working-white-aware GPU glow; no ICC parsing/full ACES/automatic white balance. |
 
 ## Supported service modules and dependencies
 
@@ -924,6 +941,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | S23 | RIFE CUDA interpolation | Fixed five-stage IFNet/158 FP32 inference tensors,local artifact hashes,actual CUDA;no model-directory code/Pickle. | Existing native Torch/safetensors and MIT model evidence;no installation. | `interpolate adapter; interpolate generate` | Native interval subdivision,complete frame/PCM proofs;RGB threshold is not semantic cuts;quality review required. |
 | S24 | DeepFilterNet3 speech service | Fixed133-tensor48kHz full-band model;CUDA neural graph,NumPy CPU frontend,FFmpeg resampling. | Explicit local weights/native Torch/safetensors and MIT OR Apache-2.0 evidence. | `audio enhancement-adapter; audio enhance` | 8..96kHz,mono/stereo,source≤1800s/selection≤600s;no downloads,installs or CPU fallback. |
 | S25 | x265 static HDR10 SEI service | Fixed encoder grammar plus exact rational checks of actual native ffprobe decoded side data before publication. | Existing native FFmpeg/libx265/ffprobe; no new model. | `render` | CPU encoding; observed prefix,not whole-movie certification or peak measurement. |
+| S26 | Explicit-white RGB conversion service | Native tiled Float64 math/Float32 surfaces,ProPhoto piecewise transfer,Bradford matrices and white geometry checks. | Existing NumPy; no new model/service. | `render; preview; surface` | D65 encoded delivery,alpha bits retained; no ICC or scene-illuminant inference. |
 
 **Observed local environment:** this update’s doctor sees native Python 3.13.1, FFmpeg/ffprobe 8.1 and Node; this does not establish registration of every model/browser adapter. doctor merely discovers Docker/WSL executable paths and does not run them. This project uses native tools without invoking Docker/WSL/virtual environments.
 
@@ -1023,7 +1041,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.42/final-r1/installed/`, CLI 0.1.44. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.43/final-r1/installed/`, CLI 0.1.45. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1519,6 +1537,12 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R301 | 2026-10-28 HDR10 SEI | C54 registered Skill,actual GPU composition/CPU HEVC;production32-packet prefix and independent all48-frame SEI/VUI verification. | [Evidence](docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/verification.json) |
 | R302 | 2026-10-28 HDR10 SEI | C54 package replay preserves all48 decoded frames and384000 PCM scalars;separate SDR preview has no HDR SEI,GIF24frames/4seconds. | [Evidence](docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/verification.json) |
 | R303 | 2026-10-28 HDR10 SEI | r45 independent extraction/configuration/registration:1entry/17modules/83Skill files/134ZIP entries;all297 prior R rows and38 original closure conditions retained. | [Evidence](docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/verification.json) |
+| R304 | 2026-10-28 chromatic | CLI0.1.45/local.43 native offline build/install:268 matching product files,84 capabilities;immutable public downloads retained. | [Evidence](docs/validation/evidence/native-chromatic-20261028-r1/installation-final-r1/verification.json) |
+| R305 | 2026-10-28 chromatic | 20 source checks:independent published matrices/scalar transfers,D50/D60/custom whites,nits/alpha,actual GPU,surface CLI,encoded output/previews/packages. Initial two oracle/assertion errors retained and corrected. | [Evidence](docs/validation/evidence/native-chromatic-20261028-r1/source-r3/verification.json) |
+| R306 | 2026-10-28 chromatic | 20 installed checks and267 existing color/HDR10/glow/LUT/curves/render/preview/package/schema/queue compatibility checks pass separately,zero failures/errors/skips. | [Evidence](docs/validation/evidence/native-chromatic-20261028-r1/installed-compat-r1/verification.json) |
+| R307 | 2026-10-28 chromatic | C55 registered Skill:230400-pixel independent AP1 oracle,eight patches over all48 encoded frames;48 actual GPU Bloom calls/render. Initial SDR-range refusal retained;delivery explicitly selects clip. | [Evidence](docs/validation/evidence/native-chromatic-20261028-r1/case-r3/verification.json) |
+| R308 | 2026-10-28 chromatic | C55 package replay preserves all48 decoded frames and384000 nonzero PCM scalars;previews preserve author data,GIF24frames/4seconds,mathematical control explicitly labelled. | [Evidence](docs/validation/evidence/native-chromatic-20261028-r1/case-r3/verification.json) |
+| R309 | 2026-10-28 chromatic | r46 independent extraction/configuration/registration:1entry/17modules/84Skill files/136ZIP entries;all303 prior R rows and38 original closure conditions retained. | [Evidence](docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/verification.json) |
 
 ## Current limits and development direction
 

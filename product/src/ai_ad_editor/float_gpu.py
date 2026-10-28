@@ -55,7 +55,7 @@ class FloatGPUSession:
         self.evidence['planned_device_bytes'] = max_pixels*48
         self.evidence['planned_host_shared_bytes'] = max_pixels*33+768
         self.artifacts = [artifact_entry(Path(__file__).with_name(name+'.py'), 'float-gpu-execution')
-                          for name in ('float_gpu', 'float_gpu_worker', 'float_gpu_native', 'float_gpu_control', 'procedural_particles', 'particle_animation','float_optics','float_optics_kernel','float_glow','float_glow_kernel','float_color_signal','float_hdr')]
+                          for name in ('float_gpu', 'float_gpu_worker', 'float_gpu_native', 'float_gpu_control', 'procedural_particles', 'particle_animation','float_optics','float_optics_kernel','float_glow','float_glow_kernel','float_color_signal','float_hdr','float_chromatic')]
         self.evidence['artifacts'] = self.artifacts
 
     @property
@@ -229,12 +229,12 @@ class FloatGPUSession:
         return self._call('optics',source.shape,[self._dummy(),source,self._dummy()],kind=kind,
             parameters=values,ghosts=ghosts,edge=edge)
 
-    def glow(self, source, kind, values, edge, primaries):
+    def glow(self, source, kind, values, edge, primaries,*,white_xy=None):
         from .float_glow import validate_state,luma_coefficients,admit_neighborhood
-        values=validate_state(kind,values,edge);luma_coefficients(primaries);NativeGPU.surface(source)
+        values=validate_state(kind,values,edge);luma_coefficients(primaries,white_xy);NativeGPU.surface(source)
         admit_neighborhood(source.shape[0]*source.shape[1],values['radius'])
         return self._call('glow',source.shape,[self._dummy(),source,self._dummy()],kind=kind,
-            parameters=values,edge=edge,primaries=primaries)
+            parameters=values,edge=edge,primaries=primaries,white_xy=white_xy)
 
     def finish(self, result):
         if self.ready:

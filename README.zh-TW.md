@@ -9,7 +9,23 @@
 本頁包含完整功能模塊、服務與依賴、安裝與使用邏輯、Skill 輸入輸出、真實案例和核驗表。長篇原始驗收日志繼續留檔，功能說明與案例入口恢復到首頁。
 
 
-<!-- native-hdr-metadata-current -->
+<!-- native-chromatic-current -->
+
+**CLI0.1.45 / alpha.4-local.43 / r46 kit · 1 Skill / 17 modules.**
+
+新增**Bradford 白點適應、ProPhoto RGB D50 和線性 ACES AP1 D60**：貫通來源、工作域、效果訊號、浮點中間封裝、實際預覽與可編輯專案；光暈依聲明白點計算亮度，保留既有 D65 行為。
+
+[Workflow / usage](docs/product/CHROMATIC_ADAPTATION.md) · [C55](docs/product/CASES.md#c55-native-chromatic-adaptation) · [Install](docs/releases/CLI_0.1.45_LOCAL.md) · [Evidence](docs/validation/明确白点色适应实测_2026-10-28.md)
+
+![Actual D65 encoded preview](docs/assets/native-chromatic-20261028-r3/actual-preview.gif)
+
+[Actual MP4](docs/assets/native-chromatic-20261028-r3/actual-preview.mp4) · [Signals](docs/assets/native-chromatic-20261028-r3/signals.json) · [Comparison](docs/assets/native-chromatic-20261028-r3/comparison.png) · [Editable package](docs/assets/native-chromatic-20261028-r3/editable-chromatic.aevpkg.zip)
+
+20項原始碼專項、20項安裝專項和267項安裝相容檢查分別通過。C55獨立對照首影格230400像素及全48影格色塊，實際GPU Bloom與完整音畫封裝重播通過。顏色數學CPU，合成／光暈可用GPU；最終BT.709／BT.2100交付D65。參考白點轉換並非ICC解析、自動物理白平衡或完整ACES輸出變換；感知色域映射、自然HDR監看及38項完整目標持續開發。
+
+<!-- /native-chromatic-current -->
+
+<!-- native-hdr-metadata-history -->
 
 **CLI0.1.44 / alpha.4-local.42 / r45 kit · 1 Skill / 17 modules.**
 
@@ -23,7 +39,7 @@
 
 21項原始碼、21項安裝版專項與105項安裝版相容檢查分別通過。C54獨立核對全部48影格SEI；專案封裝重播全部視訊影格和384000個PCM純量相同。產品預設核驗前32個視訊封包解出的影格；數值為作者聲明，並非自動峰值量測。x265編碼CPU、合成GPU。動態HDR、ICC/監看、自然品質及原38項完整目標持續建置。
 
-<!-- /native-hdr-metadata-current -->
+<!-- /native-hdr-metadata-history -->
 
 <!-- native-speech-enhancement-history -->
 
@@ -510,7 +526,7 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r45 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r45.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
+**只註冊一個入口：`$agent-ffmpeg-local-editor`。** 當前本機 GPU 擴充套件使用 [r46 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r46.zip) 與匹配的[本地執行包/模型安裝流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 項內部模組按需載入。歷史 r1 kit 繼續匹配下方保持原版的公開 alpha.3 執行包。
 
 <!-- /unified-skill-registration -->
 
@@ -816,7 +832,7 @@ flowchart LR
 5. 若需要選型，展示原圖與少量候選，記錄最終 ID/強度/作用域；在目標素材上復試。
 6. 渲染至工程內新路徑，檢查實際編碼文件、manifest、warning、音畫與權利，再導出專案包。
 
-## 完整的 70 個功能模組
+## 完整的 71 個功能模組
 
 編號用於定位文件；各模塊有依賴與交叉，不是“43 個獨立內核”或完成率。下表直接寫明行為、入口與限制；[完整機器能力清單及每項契約](docs/product/CAPABILITIES.zh-TW.md)保留全部字段。
 
@@ -892,6 +908,7 @@ flowchart LR
 | F68 | CUDA神經補幀與慢動作 | 原生CFR/VFR、每來源影格RGBA、預乘alpha、完整PCM；2..8倍、切鏡保持、關聯慢放雙軌、配方重跑及工程包。 | `interpolate adapter; interpolate generate` | 明確RIFE4.25 safetensors＋原生CUDA Python；無CPU回退；困難運動/遮擋/自然品質/HDR未廣泛驗收。 |
 | F69 | CUDA對白降噪與增強 | 原生取樣時鐘/單雙聲道、真正模型、乾濕強度/衰減、可編輯獨立音軌、配方重跑/工程包、取消回滾。 | `audio enhancement-adapter; audio enhance` | DeepFilterNet3固定safetensors＋既有原生CUDA依賴；分段狀態重置、CPU前端；完整去混響/音樂保真待完成。 |
 | F70 | HDR10靜態中繼資料交付 | 母版RGB/白點xy、最小/最大nit、MaxCLL/MaxFALL → 實際HEVC SEI與解碼核驗清單。 | `settings.output.hdr10; validate; render; convert` | 明確原生PQ/BT2020 NCL有限範圍、libx265/10bit420/MP4或MKV；作者聲明、前32封包核驗。 |
+| F71 | 白點適應與寬色域工作設定 | ProPhoto D50／AP1 D60／明確xy → 線性XYZ Bradford、nit縮放、實際D65預覽與專案封裝。 | `native_chromatic_adaptation; render; preview; surface export; convert` | CPU色彩數學，GPU光暈依聲明白點；不含ICC解析／完整ACES／自動白平衡。 |
 
 ## 支持的服務模塊與依賴
 
@@ -924,6 +941,7 @@ flowchart LR
 | S23 | RIFE CUDA補幀服務 | 固定五階段IFNet/158個FP32推理張量、嚴格本機雜湊、真正CUDA；不執行模型目錄程式/Pickle。 | 已有原生Torch＋safetensors依賴及MIT模型證據；無自動安裝。 | `interpolate adapter; interpolate generate` | 原生時間細分、全影格/PCM往返；閾值不是語意切鏡；自然品質仍須複核。 |
 | S24 | DeepFilterNet3對白服務 | 固定133張量/48kHz全頻模型；神經推論CUDA、NumPy前端CPU、FFmpeg重取樣。 | 明確本機權重/原生Torch/safetensors及MIT OR Apache-2.0證據。 | `audio enhancement-adapter; audio enhance` | 8..96kHz、1/2聲道、完整來源≤1800秒/選區≤600秒；無自動下載/依賴安裝/CPU回退。 |
 | S25 | x265 HDR10靜態SEI服務 | 固定語法參數寫入＋原生ffprobe解碼逐有理數核對，發布前失敗關閉。 | 既有原生FFmpeg/libx265/ffprobe；無新模型。 | `render` | 編碼CPU；觀察解碼前綴，非全片認證/峰值量測。 |
+| S26 | 明確白點RGB轉換服務 | 原生分塊Float64計算／Float32表面、ProPhoto分段傳遞、Bradford矩陣與白點幾何核驗。 | 既有NumPy；無新增模型／服務。 | `render; preview; surface` | 編碼交付D65，alpha保位；不推斷素材ICC或場景光源。 |
 
 **本機查詢與交付狀態：** 本輪 doctor 檢測到原生 Python 3.13.1、FFmpeg/ffprobe 8.1 和 Node；這不證明每個模型或瀏覽器適配器均已註冊。doctor 只查到系統存在 Docker/WSL 可執行路徑，沒有運行它們。本專案始終使用原生工具，不調度 Docker/WSL/虛擬環境。
 
@@ -1023,7 +1041,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.42/final-r1/installed/`，CLI 0.1.44；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
+本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.43/final-r1/installed/`，CLI 0.1.45；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1517,6 +1535,12 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R301 | 2026-10-28 HDR10 SEI | C54真實Skill/GPU合成/CPU HEVC，預設前32封包核驗通過；獨立檢查全部48影格SEI與VUI。 | [Evidence](docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/verification.json) |
 | R302 | 2026-10-28 HDR10 SEI | C54專案封裝重播全部48影格與384000 PCM純量相同；獨立SDR預覽無HDR SEI，GIF24影格/4秒。 | [Evidence](docs/validation/evidence/native-hdr-metadata-20261028-r1/case-r2/verification.json) |
 | R303 | 2026-10-28 HDR10 SEI | r45獨立解壓縮/設定/註冊：1入口/17內部模組/83Skill檔/134ZIP項，既有297條R和38原關閉條件全部保留。 | [Evidence](docs/validation/evidence/native-hdr-metadata-20261028-r1/kit-r1/verification.json) |
+| R304 | 2026-10-28 chromatic | CLI0.1.45/local.43原生離線建置安裝：268程式檔一致、84能力；既有公開包保留。 | [Evidence](docs/validation/evidence/native-chromatic-20261028-r1/installation-final-r1/verification.json) |
+| R305 | 2026-10-28 chromatic | 20原始碼專項：獨立公開矩陣／純量傳遞、D50/D60/自定白、nit與alpha、實際GPU、surface CLI、成片／預覽／專案；首輪兩項斷言錯誤保留並修正。 | [Evidence](docs/validation/evidence/native-chromatic-20261028-r1/source-r3/verification.json) |
+| R306 | 2026-10-28 chromatic | 安裝版20專項通過，267項既有色彩／HDR10／光暈／LUT／曲線／渲染／預覽／封裝／schema／佇列相容另列，零失敗／錯誤／略過。 | [Evidence](docs/validation/evidence/native-chromatic-20261028-r1/installed-compat-r1/verification.json) |
+| R307 | 2026-10-28 chromatic | C55真實註冊Skill：230400像素獨立AP1對照、48影格8色塊實際編碼核對；每次48次GPU Bloom。首輪超出SDR整數範圍正確拒絕，明確clip後交付。 | [Evidence](docs/validation/evidence/native-chromatic-20261028-r1/case-r3/verification.json) |
+| R308 | 2026-10-28 chromatic | C55完整48影格與384000個非零PCM純量專案封裝重播相同；預覽不改作者內容，實際GIF24影格／4秒；數學控制圖明確標示。 | [Evidence](docs/validation/evidence/native-chromatic-20261028-r1/case-r3/verification.json) |
+| R309 | 2026-10-28 chromatic | r46獨立解壓縮／設定／註冊：1入口／17模組／84Skill檔／136ZIP項；全部303條舊R與38原關閉條件保留。 | [Evidence](docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/verification.json) |
 
 ## 當前邊界與開發方向
 

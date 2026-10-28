@@ -1,0 +1,19 @@
+{
+  "source": {
+    "primaries": "prophoto-rgb",
+    "transfer": "prophoto-rgb"
+  },
+  "working": {
+    "primaries": "aces-ap1",
+    "transfer": "linear",
+    "white_xy": [
+      0.32168,
+      0.33767
+    ]
+  },
+  "output": {
+    "primaries": "bt709",
+    "transfer": "srgb"
+  },
+  "automatic_ICC_inference": false
+}

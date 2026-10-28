@@ -1025,10 +1025,12 @@ def build_parser() -> argparse.ArgumentParser:
     surface_export.add_argument('--project',required=True)
     surface_export.add_argument('--asset-id',required=True)
     surface_export.add_argument('--output',required=True,help='工程内新目录，包含Float32像素、int64帧时钟与JSON清单')
-    surface_export.add_argument('--source-primaries',required=True,choices=('bt709','display-p3','bt2020'))
-    surface_export.add_argument('--source-transfer',required=True,choices=('linear','srgb','bt709-oetf','gamma22','gamma24'))
-    surface_export.add_argument('--working-primaries',default='bt709',choices=('bt709','display-p3','bt2020'))
-    surface_export.add_argument('--working-transfer',default='linear',choices=('linear','srgb','bt709-oetf','gamma22','gamma24'))
+    surface_export.add_argument('--source-primaries',required=True,choices=('bt709','display-p3','bt2020','prophoto-rgb','aces-ap1'))
+    surface_export.add_argument('--source-transfer',required=True,choices=('linear','srgb','bt709-oetf','gamma22','gamma24','prophoto-rgb'))
+    surface_export.add_argument('--working-primaries',default='bt709',choices=('bt709','display-p3','bt2020','prophoto-rgb','aces-ap1'))
+    surface_export.add_argument('--working-transfer',default='linear',choices=('linear','srgb','bt709-oetf','gamma22','gamma24','prophoto-rgb'))
+    surface_export.add_argument('--source-white-xy',type=float,nargs=2,metavar=('X','Y'),help='明确RGB参考白点CIE1931 xy；默认随基色配置')
+    surface_export.add_argument('--working-white-xy',type=float,nargs=2,metavar=('X','Y'),help='明确工作RGB参考白点；D65交付限制不适用于中间浮点包')
     surface_export.add_argument('--pixel-family',default='rgb',choices=('rgb','yuv'))
     surface_export.add_argument('--yuv-matrix',choices=('bt709','bt470bg','smpte170m','bt2020nc'))
     surface_export.add_argument('--yuv-range',choices=('full','limited'))
@@ -6012,7 +6014,7 @@ def command_preview(args: argparse.Namespace) -> dict[str, Any]:
 
 def command_surface(args: argparse.Namespace) -> dict[str, Any]:
     from . import float_bundle
-    from .float_color_signal import ColorSignal
+    from .float_hdr import parse_signal
     from .float_yuv import YUVSpec
     root,project=load_project(args.project)
     if args.action=='inspect':
@@ -6020,9 +6022,13 @@ def command_surface(args: argparse.Namespace) -> dict[str, Any]:
     geometry=_load_changes(args.transform_json) if args.transform_json else None
     supplied=any(value is not None for value in (args.yuv_matrix,args.yuv_range,args.chroma_location))
     spec=YUVSpec(args.yuv_matrix,args.yuv_range,args.chroma_location) if supplied else None
+    def signal(primaries,transfer,white):
+        value=dict(primaries=primaries,transfer=transfer)
+        if white is not None:value['white_xy']=white
+        return parse_signal(value)
     plan=float_bundle.prepare(root,project,args.asset_id,args.output,
-        source_signal=ColorSignal(args.source_primaries,args.source_transfer),
-        target_signal=ColorSignal(args.working_primaries,args.working_transfer),pixel_family=args.pixel_family,
+        source_signal=signal(args.source_primaries,args.source_transfer,args.source_white_xy),
+        target_signal=signal(args.working_primaries,args.working_transfer,args.working_white_xy),pixel_family=args.pixel_family,
         yuv_spec=spec,scan=args.scan,alpha_association=args.alpha_association,start_frame=args.start_frame,
         stop_frame=args.stop_frame,geometry=geometry,max_output_bytes=args.max_output_mib*1024**2)
     if args.dry_run:return _envelope('surface.export',args,status='planned',data=plan)

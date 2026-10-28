@@ -1,0 +1,142 @@
+{
+  "status": "passed",
+  "started_at_utc": "2026-10-28T11:07:42.473587+00:00",
+  "registered_skill": true,
+  "native_windows": true,
+  "virtualization": false,
+  "source_fallback": false,
+  "synthetic_diagnostic": true,
+  "continuous_human_playback": false,
+  "human_listening": false,
+  "HDR_monitor_accepted": false,
+  "ICC_profile_parsed": false,
+  "full_ACES_transform": false,
+  "checks": [
+    {
+      "name": "independent-entire-first-surface",
+      "ok": true,
+      "pixels": 230400,
+      "maximum_error": 2.979730118202184e-08
+    },
+    {
+      "name": "edited-actual-GPU",
+      "ok": true,
+      "glow_calls": 48
+    },
+    {
+      "name": "actual-encoded-neutral-and-colour-patches",
+      "ok": true,
+      "patch_count": 8,
+      "frames": 48,
+      "maximum_luma_code_error": 0.44534279931326637
+    },
+    {
+      "name": "previews-preserve-author",
+      "ok": true
+    },
+    {
+      "name": "package-preserves-all-signals",
+      "ok": true
+    },
+    {
+      "name": "replayed-actual-GPU",
+      "ok": true,
+      "glow_calls": 48
+    },
+    {
+      "name": "all-decoded-video-identical",
+      "ok": true,
+      "frames": 48,
+      "bytes": 66355200
+    },
+    {
+      "name": "all-PCM-identical",
+      "ok": true,
+      "scalar_samples": 384000
+    },
+    {
+      "name": "actual-GIF-clock",
+      "ok": true,
+      "frames": 24,
+      "duration_ms": 4000
+    }
+  ],
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-chromatic-case-r3\\project",
+  "restored": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-chromatic-case-r3\\restored",
+  "public_directory": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-chromatic-20261028-r3",
+  "decoded_video_bytes": 66355200,
+  "PCM_scalar_samples": 384000,
+  "GPU_glow_calls_per_render": 48,
+  "render_count": 2,
+  "independent_surface_pixels": 230400,
+  "maximum_surface_error": 2.979730118202184e-08,
+  "maximum_patch_luma_code_error": 0.44534279931326637,
+  "files": [
+    {
+      "path": "actual-frame.png",
+      "bytes": 107280,
+      "sha256": "a8941d0228ed5cf5e09aa4464ed97809fc46f6372363b252ee60937848a817e9"
+    },
+    {
+      "path": "actual-preview.gif",
+      "bytes": 194833,
+      "sha256": "3a24080b0565e3c2f2a6823efe51d2857672c0e6a3533c0b0cdb05eb9926f647"
+    },
+    {
+      "path": "actual-preview.mp4",
+      "bytes": 117520,
+      "sha256": "5c92d43d85efe84d004896dcbef05aa5f40546369fd52db2b6081b4c889dd395"
+    },
+    {
+      "path": "comparison.png",
+      "bytes": 68761,
+      "sha256": "1df0fc9af96901ac5b64e2739cc1372dff435564e92f517fcd7661a274ebbb96"
+    },
+    {
+      "path": "editable-chromatic.aevpkg.zip",
+      "bytes": 3542944,
+      "sha256": "ba1a1739b9118c38773213f4a164ae82505cb44d88a1998ac2037be95508f936"
+    },
+    {
+      "path": "editable-chromatic.aevpkg.zip.conversion-report.json",
+      "bytes": 955,
+      "sha256": "ecea816a908b660535610fabdb0b38cad42760e7604c4d6236c63c8ec8729ae7"
+    },
+    {
+      "path": "edited-master.mkv",
+      "bytes": 1836831,
+      "sha256": "524f951ee9634a7500a2cd48a4f35ed744c49d83696c18f096e699bfd9e8eef4"
+    },
+    {
+      "path": "edited-master.mkv.manifest.json",
+      "bytes": 466092,
+      "sha256": "6e59f33afb511baf4ef2ae7280ed2def677d654e6fdd393fcb7b38c10bc12e3c"
+    },
+    {
+      "path": "independent-no-CAT-control.png",
+      "bytes": 28953,
+      "sha256": "2e0b752368215363c51292a892de12d2c8b216881cc215d2c5b4658222c38479"
+    },
+    {
+      "path": "signals.json",
+      "bytes": 318,
+      "sha256": "53cf6381864f1116cfbce9bf5807d99c26bd3c521cda438e127d2d01d4bbfc6b"
+    },
+    {
+      "path": "source-prophoto-d50.mkv",
+      "bytes": 2474880,
+      "sha256": "29d7b9f0a5ba1750e8f6d338c1c835ac29cac5ed4362fb837888b65bedd2fce8"
+    },
+    {
+      "path": "source-stereo.wav",
+      "bytes": 1536092,
+      "sha256": "29cd231559476c51f4afca3a17362f40f01212d62d545a2f627cb3e49ef5ac14"
+    },
+    {
+      "path": "SOURCE.txt",
+      "bytes": 641,
+      "sha256": "fb21dc4421a92781700e5bcb63ec482ad493b42e43f5ac814031d01caaf38141"
+    }
+  ],
+  "finished_at_utc": "2026-10-28T11:10:37.580068+00:00"
+}

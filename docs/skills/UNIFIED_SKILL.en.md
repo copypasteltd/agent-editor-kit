@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.44 / alpha.4-local.42 / r45 kit · 1 Skill / 17 modules / 83 files.**
+**CLI0.1.45 / alpha.4-local.43 / r46 kit · 1 Skill / 17 modules / 84 files.**
 
-Added **HDR10 mastering-display and MaxCLL/MaxFALL static metadata**: exact xy/nit units, actual HEVC SEI writing and decoded-frame verification before publication; editable packages, GPU composition and separate SDR viewing copies.
+Added **Bradford reference-white adaptation, ProPhoto RGB D50 and linear ACES AP1 D60** across sources, working RGB, effect signals, raw surfaces, actual previews and editable packages. Glow luminance follows the declared white; existing D65 behavior is retained.
 
-[HDR10 static metadata workflow](../product/HDR_METADATA.md)
+[Explicit-white workflow](../product/CHROMATIC_ADAPTATION.md)
 
 <!-- /community-current -->
 

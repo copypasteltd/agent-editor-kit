@@ -1,13 +1,13 @@
 ---
 name: agent-ffmpeg-local-editor
-description: "Edit and generate local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, native CUDA speech denoising, frame interpolation/slow motion and lip sync, tracking, explicit PQ/HLG HDR, verified HDR10 static metadata and SDR previews, seeded GPU particles, editable GPU flare/light leaks/chromatic split and highlight Bloom/Halation, GPU text/image/first-last generation with reusable model sessions, semantic search, voice/translation, subtitle dubbing, music/SFX and quality checks. Also use for ads, reference remakes, long-to-short clips and screen demos."
+description: "Edit and generate local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, native CUDA speech denoising, frame interpolation/slow motion and lip sync, tracking, explicit PQ/HLG HDR, verified HDR10 static metadata, D50/D60 white adaptation and SDR previews, seeded GPU particles, editable GPU flare/light leaks/chromatic split and highlight Bloom/Halation, GPU text/image/first-last generation with reusable model sessions, semantic search, voice/translation, subtitle dubbing, music/SFX and quality checks. Also use for ads, reference remakes, long-to-short clips and screen demos."
 ---
 
 # agent editor kit / unified local Skill
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.42` / CLI `0.1.44`.
+The current local runtime is `v0.1.0-alpha.4-local.43` / CLI `0.1.45`.
 Native Float32 GPU operations now use bounded owned control pipes. Read
 [GPU execution](references/projection-gpu.md) for policy, actual operator counts,
 cancellation and process/thread/stream cleanup receipts.
@@ -34,6 +34,11 @@ For HDR10 mastering-display/MaxCLL/MaxFALL declarations, read
 [HDR10 static metadata](references/hdr-metadata.md). Use exact xy/nit units,
 explicit native PQ and libx265 ten-bit 4:2:0. Inspect decoded SEI verification
 before delivery; declarations are not measured peaks or monitor calibration.
+For ProPhoto RGB D50, linear AP1 D60 or explicit RGB reference whites, read
+[chromatic adaptation](references/chromatic-adaptation.md). Declare source and
+working signals; use actual D65 viewing copies for client selection. This
+reference-white conversion does not infer a physical illuminant or ICC profile,
+and linear AP1 alone is not a complete ACES output transform.
 For repeated GPU generation with the same prompt, read
 [model sessions](references/model-sessions.md). Start one explicit session,
 reuse its ID with `media generate --model-session`, and stop it in `finally`.

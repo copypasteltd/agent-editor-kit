@@ -917,7 +917,7 @@ def render_fingerprints(project: dict[str, Any], sequence: dict[str, Any], setti
     assets = {str(asset.get("id")): asset for asset in project.get("assets", []) if asset.get("id") in asset_ids}
     input_hashes: dict[str, str | None] = {}
     if (project.get('settings',{}).get('pixel_pipeline') or {}).get('engine')=='float32-native-v1':
-        for name in ('float_optics','float_optics_kernel','float_glow','float_glow_kernel','float_color_signal','float_hdr','hdr_metadata','float_effect_chain','float_gpu','float_gpu_worker','float_gpu_native'):
+        for name in ('float_optics','float_optics_kernel','float_glow','float_glow_kernel','float_color_signal','float_hdr','hdr_metadata','float_chromatic','float_effect_chain','float_gpu','float_gpu_worker','float_gpu_native'):
             input_hashes['runtime:optics:'+name]='sha256:'+sha256_file(Path(__file__).with_name(name+'.py'))
     if particle_sources:
         for name in ('procedural_particles','particle_animation','float_timeline','float_gpu','float_gpu_worker','float_gpu_native','float_gpu_control'):

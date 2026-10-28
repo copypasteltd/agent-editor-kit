@@ -1012,3 +1012,21 @@ Production verifies frames decoded from the first32 packets; C54 separately chec
 [HDR10 master](../assets/native-hdr-metadata-20261028-r2/hdr10-master.mkv) · [Actual SDR MP4](../assets/native-hdr-metadata-20261028-r2/sdr-preview.mp4) · [SDR frame](../assets/native-hdr-metadata-20261028-r2/sdr-frame.png) · [Declared values](../assets/native-hdr-metadata-20261028-r2/declaration.json) · [Master manifest](../assets/native-hdr-metadata-20261028-r2/hdr10-master.mkv.manifest.json) · [Editable package](../assets/native-hdr-metadata-20261028-r2/editable-hdr10.aevpkg.zip) · [Selection sheet](../assets/native-hdr-metadata-20261028-r2/comparison.png) · [Provenance](../assets/native-hdr-metadata-20261028-r2/SOURCE.txt) · [Media hashes](../assets/native-hdr-metadata-20261028-r2/media-manifest.json)
 
 [Workflow](HDR_METADATA.md) · [Evidence](../validation/HDR10静态元数据实测_2026-10-28.md). Initial case r1 retained: its author-byte check spanned the normal render operation timestamp. The corrected r2 snapshots bytes immediately before previews. Initial source round also retained the fixed ffprobe white-point mapping failure; no failed round is counted as final success.
+
+<a id="c55-native-chromatic-adaptation"></a>
+
+## C55 · 明确参考白点 / 明確參考白點 / Explicit reference-white adaptation
+
+Actual installed CLI0.1.45 and registered unified Skill. Original CC0 RGB16 ProPhoto D50 diagnostic chart and stereo tones are edited in explicit linear AP1 D60,with48 actual GPU Bloom calls/render,and delivered as D65/sRGB ten-bit video. An independent published-matrix/transfer oracle checks all230400 first-surface pixels;neutral/color patches are checked across every encoded frame.
+
+Maximum first-surface absolute error: 2.9797301182e-08; maximum encoded patch luma-code error: 0.445342799313. All48 decoded video frames (66355200bytes) and384000 nonzero PCM scalars are identical after editable-package replay. Actual previews preserve author data;GIF24frames/4seconds.
+
+![Actual D65 client preview](../assets/native-chromatic-20261028-r3/actual-preview.gif)
+
+[Original ProPhoto source](../assets/native-chromatic-20261028-r3/source-prophoto-d50.mkv) · [Actual master](../assets/native-chromatic-20261028-r3/edited-master.mkv) · [Actual MP4](../assets/native-chromatic-20261028-r3/actual-preview.mp4) · [Actual frame](../assets/native-chromatic-20261028-r3/actual-frame.png) · [Signals](../assets/native-chromatic-20261028-r3/signals.json) · [Comparison](../assets/native-chromatic-20261028-r3/comparison.png) · [Editable package](../assets/native-chromatic-20261028-r3/editable-chromatic.aevpkg.zip) · [Manifest](../assets/native-chromatic-20261028-r3/edited-master.mkv.manifest.json) · [Provenance](../assets/native-chromatic-20261028-r3/SOURCE.txt) · [Media hashes](../assets/native-chromatic-20261028-r3/media-manifest.json)
+
+The comparison left panel is an independent mathematical no-adaptation control without Bloom;the right is an actual engine frame with Bloom. This is an explicitly labelled numerical diagnostic,not a matched artistic A/B. No human continuous playback/listening,natural-footage or HDR-monitor acceptance. Reference-white adaptation does not infer physical white balance,parse ICC or implement full ACES rendering.
+
+Initial case-r1 correctly refused out-of-range SDR integers. Case-r3 explicitly selects final clip;negative/superwhite linear intermediates remain available. Case-r2 retained an independent oracle that omitted final clip;the corrected oracle checks the declared integer boundary. A separate check compares all48x8 frame/patch pairs individually,not only the sequence mean. Initial source-r1 retained two test-only issues:NumPy weak scalar promotion rounded the independent scalar copysign oracle early,and tuple/list metadata was compared without JSON normalization. Source-r3/installed-r1 are the final frozen20-check rounds.
+
+[Workflow](CHROMATIC_ADAPTATION.md) · [Evidence](../validation/明确白点色适应实测_2026-10-28.md).

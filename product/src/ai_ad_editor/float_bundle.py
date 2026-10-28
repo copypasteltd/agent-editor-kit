@@ -84,7 +84,7 @@ def prepare(root,project,asset_id,output,*,source_signal,target_signal,pixel_fam
 
 def _implementation_artifacts():
     directory=Path(__file__).resolve().parent
-    paths={name:directory/(name+'.py') for name in ('float_bundle','float_color_signal','float_hdr','float_geometry')}
+    paths={name:directory/(name+'.py') for name in ('float_bundle','float_color_signal','float_hdr','float_chromatic','float_geometry')}
     paths['numpy_init']=Path(np.__file__).resolve()
     # These files are the numerical boundary's entry module and native code.
     # This is not advertised as an exhaustive NumPy package inventory.
@@ -149,7 +149,9 @@ def export_bundle(root,plan,*,cancel_file=None,progress=None):
                 'owned_threads_terminated':all(not thread.is_alive() for thread in reader.pipe.threads)},
             'colour_boundary':colour_metadata,'geometry_boundary':geometry_metadata,
             'implementation_artifacts':implementations,'numpy_version':np.__version__,'numpy_whole_package_inventory':False,
-            'working_white':'relative D65;physical white matching must be supplied by caller',
+            'working_white':('explicit RGB reference white; Bradford in linear XYZ; physical illuminant not inferred'
+                if colour_metadata.get('chromatic_transform',{}).get('extended')
+                else 'relative D65;physical white matching must be supplied by caller'),
             'alpha':'independent-straight;not-a-transfer-component','encoded_movie':False,'audio_exported':False,
             'timeline_renderer_integrated':False,'HDR_accepted':False,'native_windows':True,'network':False,
             'budget':{'required_bytes_estimate':required,'limit_bytes':recipe['max_output_bytes'],'peak_RSS_accepted':False}}

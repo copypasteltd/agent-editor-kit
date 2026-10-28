@@ -41,7 +41,7 @@ class LuminanceSignal(ColorSignal):
 
     def __post_init__(self):
         if not isinstance(self.primaries, str) or self.primaries not in PRIMARIES:
-            raise error('SIGNAL', '须明确支持的D65 RGB基色')
+            raise error('SIGNAL', '须明确支持的RGB基色')
         if not isinstance(self.transfer, str) or self.transfer not in TRANSFERS | HDR_TRANSFERS:
             raise error('SIGNAL', '须明确相对传递函数或display-light PQ/HLG解释')
         number(self.reference_white_nits, .01, 10000, 'reference_white_nits')
@@ -59,9 +59,15 @@ def parse_signal(value):
         raise error('SIGNAL', 'RGB信号须是明确的对象')
     if set(value) == {'primaries', 'transfer'}:
         return ColorSignal(**value)
-    allowed = {'primaries', 'transfer', 'reference_white_nits', 'display_peak_nits', 'system_gamma'}
+    if set(value)=={'primaries','transfer','white_xy'}:
+        from .float_chromatic import WhitePointSignal
+        return WhitePointSignal(**value)
+    allowed = {'primaries', 'transfer', 'reference_white_nits', 'display_peak_nits', 'system_gamma', 'white_xy'}
     if set(value) - allowed or not {'primaries', 'transfer', 'reference_white_nits'} <= set(value):
         raise error('SIGNAL', 'RGB信号字段无效；绝对亮度须明确reference_white_nits')
+    if 'white_xy' in value:
+        from .float_chromatic import WhitePointLuminanceSignal
+        return WhitePointLuminanceSignal(**value)
     return LuminanceSignal(**value)
 
 

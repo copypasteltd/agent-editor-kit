@@ -1,0 +1,23 @@
+{
+  "status": "failed",
+  "started_at_utc": "2026-10-28T10:59:16.949569+00:00",
+  "registered_skill": true,
+  "native_windows": true,
+  "virtualization": false,
+  "source_fallback": false,
+  "synthetic_diagnostic": true,
+  "continuous_human_playback": false,
+  "human_listening": false,
+  "HDR_monitor_accepted": false,
+  "ICC_profile_parsed": false,
+  "full_ACES_transform": false,
+  "error": "AssertionError(('edited', b'{\"ok\":false,\"command\":\"render\",\"request_id\":\"req_20261028110014_ba189c44\",\"operation_id\":\"render_20261028110001_abaed410\",\"status\":\"failed\",\"data\":{},\"artifacts\":[],\"warnings\":[],\"errors\":[{\"code\":\"FLOAT_STREAM_RANGE\",\"message\":\"\\xe6\\x95\\xb4\\xe6\\x95\\xb0\\xe4\\xba\\xa4\\xe4\\xbb\\x98\\xe8\\x8c\\x83\\xe5\\x9b\\xb4\\xe4\\xb9\\x8b\\xe5\\xa4\\x96\\xe7\\x9a\\x84RGB\\xe9\\xa1\\xbb\\xe6\\x98\\xbe\\xe5\\xbc\\x8f\\xe9\\x80\\x89\\xe6\\x8b\\xa9clip\\xe7\\xad\\x96\\xe7\\x95\\xa5\",\"path\":null,\"retryable\":false,\"operation_id\":\"render_20261028110001_abaed410\"}],\"provenance\":{\"cli_version\":\"0.1.45\",\"schema_version\":\"0.1.0\",\"engine_version\":\"ffmpeg-local\",\"started_at\":\"2026-10-28T11:00:14.273789Z\",\"finished_at\":\"2026-10-28T11:00:14.273807Z\",\"network\":\"disabled\"}}\\r\\n', b''))",
+  "checks": [
+    {
+      "name": "independent-entire-first-surface",
+      "ok": true,
+      "pixels": 230400,
+      "maximum_error": 2.979730118202184e-08
+    }
+  ]
+}

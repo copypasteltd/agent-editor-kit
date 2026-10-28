@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.44 / alpha.4-local.42 / r45 kit · 1 Skill / 17 modules / 83 files.**
+**CLI0.1.45 / alpha.4-local.43 / r46 kit · 1 Skill / 17 modules / 84 files.**
 
-新增**HDR10母版显示与MaxCLL/MaxFALL静态元数据**：明确xy/nit单位，实际写入HEVC SEI，发布前核验解码帧；支持可编辑工程包，继续使用GPU合成和独立SDR预览。
+新增**Bradford 白点适应、ProPhoto RGB D50 和线性 ACES AP1 D60**：贯通来源、工作域、效果信号、浮点中间包、实际预览和可编辑工程包；光晕按声明白点计算亮度，现有 D65 行为保留。
 
-[HDR10 static metadata workflow](HDR_METADATA.md)
+[Explicit-white workflow](CHROMATIC_ADAPTATION.md)
 
 <!-- /community-current -->
 
@@ -84,6 +84,7 @@
 | F68 | CUDA神经补帧与慢动作 | 原生CFR/VFR、每源帧RGBA、预乘alpha、完整PCM；2..8倍、切镜保持、关联慢放双轨、配方重跑及工程包。 | `interpolate adapter; interpolate generate` | 显式RIFE4.25 safetensors＋原生CUDA Python；无CPU回退；困难运动/遮挡/自然质量/HDR未广泛验收。 |
 | F69 | CUDA对白降噪与增强 | 原生采样时钟/单双声道、真实模型、干湿强度/衰减、可编辑独立音轨、配方重跑/工程包、取消回滚。 | `audio enhancement-adapter; audio enhance` | DeepFilterNet3固定safetensors＋已有原生CUDA依赖；分段状态重置、CPU前端；不是完整去混响/音乐保真。 |
 | F70 | HDR10静态元数据交付 | 母版RGB/白点xy、最小/最大nit、MaxCLL/MaxFALL → 实际HEVC SEI与解码核验清单。 | `settings.output.hdr10; validate; render; convert` | 明确原生PQ/BT2020 NCL有限量程、libx265/10bit420/MP4或MKV；作者声明、前32包核验。 |
+| F71 | 白点适应与宽色域工作配置 | ProPhoto D50／AP1 D60／明确xy → 线性XYZ Bradford、nit缩放、实际D65预览与工程包。 | `native_chromatic_adaptation; render; preview; surface export; convert` | CPU色彩数学，GPU光晕按声明白点；不含ICC解析／完整ACES／自动白平衡。 |
 
 | 编号 | 服务模块 | 运行形式 | 需要什么/提供什么 | 入口 | 范围 |
 |---|---|---|---|---|---|
@@ -112,6 +113,7 @@
 | S23 | RIFE CUDA补帧服务 | 固定五阶段IFNet/158个FP32推理张量、严格本地摘要、实际CUDA；不执行模型目录代码/Pickle。 | 已有原生Torch＋safetensors依赖和MIT模型证据；无自动安装。 | `interpolate adapter; interpolate generate` | 原生时间细分、全帧/PCM往返；阈值不是语义切镜；自然质量仍须复核。 |
 | S24 | DeepFilterNet3对白服务 | 固定133张量/48kHz全带宽模型；神经推理CUDA、NumPy前端CPU、FFmpeg重采样。 | 显式本地权重/原生Torch/safetensors及MIT OR Apache-2.0证据。 | `audio enhancement-adapter; audio enhance` | 8..96kHz、1/2声道、完整源≤1800秒/选区≤600秒；无自动下载/依赖安装/CPU回退。 |
 | S25 | x265 HDR10静态SEI服务 | 固定语法参数写入＋原生ffprobe解码逐有理数核对，发布前失败关闭。 | 已有原生FFmpeg/libx265/ffprobe；无新模型。 | `render` | 编码CPU；观察解码前缀，非全片认证/峰值测量。 |
+| S26 | 明确白点RGB转换服务 | 原生分块Float64计算／Float32表面、ProPhoto分段传递、Bradford矩阵及白点几何校验。 | 已有NumPy；无新增模型／服务。 | `render; preview; surface` | 编码交付D65，alpha保位；不推断素材ICC或场景光源。 |
 
 ## 完整安装版能力字段
 
@@ -4985,7 +4987,7 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
     "queue"
   ],
   "selection": "ordinary_clip_effects_or_selected_sequence_adjustments",
-  "signal": "explicit_linear_working_RGB;D65_bt709_display_p3_or_bt2020_luminance",
+  "signal": "explicit_linear_working_RGB;declared_reference_white_aware_luminance",
   "highlight_extraction": "positive_RGB_coverage_weighted_soft_knee_no_hidden_RGB_light",
   "spread": "normalized_three_sigma_separable_Gaussian_FIR;Float32_per_stage;binary64_accumulation",
   "halation": "nonnegative_blurred_light_minus_editable_bright_core;linear_RGB_tint",
@@ -5028,7 +5030,7 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
     "pq-st2084",
     "hlg-bt2100"
   ],
-  "working": "display-linear Float32 D65 RGB; declared reference_white_nits per signal",
+  "working": "display-linear Float32 RGB; declared reference_white_nits; explicit reference whites use native_chromatic_adaptation",
   "features": [
     "PQ_display_EOTF_and_inverse_10000_nits",
     "HLG_RGB_coupled_OOTF_and_inverse",
@@ -5046,7 +5048,8 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
     "only_BT2020_PQ_HLG_native_ten_bit_nonalpha_delivery",
     "no_inferred_luminance_or_metadata_or_automatic_tone_map",
     "explicit_HDR10_static_declarations_use_native_hdr10_static_metadata_capability",
-    "no_ICC_chromatic_adaptation_dynamic_metadata_or_DolbyVision",
+    "explicit_Bradford_whites_use_native_chromatic_adaptation_capability",
+    "no_ICC_dynamic_metadata_or_DolbyVision",
     "HLG_ideal_zero_black_only_explicit_peak_and_gamma",
     "SDR_trim_is_explicit_creative_Reinhard_not_BT2390_or_perceptual_gamut_mapping",
     "natural_HDR_monitor_long_form_and_full_CapCut_acceptance_pending"
@@ -5284,3 +5287,46 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 ```
 
 [CLI0.1.44 exact installed capabilities](hdr-metadata-capabilities-cli-0.1.44.json).
+
+### `native_chromatic_adaptation`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "explicit-white-Bradford-float32-v1",
+  "selection": "explicit white_xy in native RGB signals; native D50 ProPhoto RGB and D60 ACES AP1",
+  "commands": [
+    "validate",
+    "render",
+    "preview frame",
+    "preview range",
+    "surface export",
+    "surface inspect",
+    "convert export",
+    "convert import"
+  ],
+  "features": [
+    "CIE1931_xy_reference_whites",
+    "Bradford_cone_scaling_in_linear_XYZ",
+    "D50_ProPhoto_primaries_and_signed_piecewise_transfer",
+    "D60_ACES_AP1_linear_configuration",
+    "source_working_effect_and_output_signal_adaptation",
+    "explicit_reference_nit_scaling",
+    "bit_preserved_alpha_and_no_implicit_RGB_clipping",
+    "owned_tiled_Float32_conversion",
+    "working_white_aware_CPU_and_OpenCL_Bloom_Halation",
+    "native_D65_legacy_matrix_and_transfer_behavior",
+    "editable_project_package_declarations"
+  ],
+  "limits": [
+    "conversion_math_CPU_composition_and_glow_can_use_OpenCL",
+    "BT709_and_BT2100_delivery_white_remains_D65",
+    "RGB_reference_white_not_automatic_physical_illuminant_detection_or_white_balance",
+    "no_ICC_profile_parsing_or_embedded_profile_inference",
+    "ACES_AP1_linear_not_complete_ACES_IDT_RRT_ODT_or_DRT",
+    "no_perceptual_gamut_mapping_or_HDR_monitor_acceptance"
+  ]
+}
+```
+
+[CLI0.1.45 exact installed capabilities](chromatic-capabilities-cli-0.1.45.json).

@@ -1,0 +1,66 @@
+test_real_GPU_Bloom_Halation_match_CPU_for_D50_D60_and_custom_white (test_float_chromatic.ChromaticGPUTests.test_real_GPU_Bloom_Halation_match_CPU_for_D50_D60_and_custom_white) ... ok
+test_actual_SDR_previews_keep_author_signals_and_timebase (test_float_chromatic.ChromaticIntegrationTests.test_actual_SDR_previews_keep_author_signals_and_timebase) ... ok
+test_actual_encoded_ProPhoto_D50_to_D60_edit_to_D65_matches_independent_oracle (test_float_chromatic.ChromaticIntegrationTests.test_actual_encoded_ProPhoto_D50_to_D60_edit_to_D65_matches_independent_oracle) ... FAIL
+test_custom_white_effect_signals_use_common_conversion (test_float_chromatic.ChromaticIntegrationTests.test_custom_white_effect_signals_use_common_conversion) ... ok
+test_editable_package_preserves_white_signals_complete_decoded_picture_and_PCM (test_float_chromatic.ChromaticIntegrationTests.test_editable_package_preserves_white_signals_complete_decoded_picture_and_PCM) ... ok
+test_schema_and_rejected_output_white_preserve_author_project (test_float_chromatic.ChromaticIntegrationTests.test_schema_and_rejected_output_white_preserve_author_project) ... ok
+test_D50_to_D65_Bradford_matches_published_matrix (test_float_chromatic.ChromaticNumericTests.test_D50_to_D65_Bradford_matches_published_matrix) ... ok
+test_ProPhoto_D50_and_ACES_AP1_D60_primary_matrices (test_float_chromatic.ChromaticNumericTests.test_ProPhoto_D50_and_ACES_AP1_D60_primary_matrices) ... ok
+test_ProPhoto_piecewise_toe_signed_extension_and_inverse (test_float_chromatic.ChromaticNumericTests.test_ProPhoto_piecewise_toe_signed_extension_and_inverse) ... ok
+test_ProPhoto_to_sRGB_matches_independent_matrix_and_scalar_transfer (test_float_chromatic.ChromaticNumericTests.test_ProPhoto_to_sRGB_matches_independent_matrix_and_scalar_transfer) ... FAIL
+test_absolute_nit_scaling_and_chromatic_adaptation_are_both_applied (test_float_chromatic.ChromaticNumericTests.test_absolute_nit_scaling_and_chromatic_adaptation_are_both_applied) ... ok
+test_adaptation_maps_equal_RGB_to_equal_RGB_across_all_reference_whites (test_float_chromatic.ChromaticNumericTests.test_adaptation_maps_equal_RGB_to_equal_RGB_across_all_reference_whites) ... ok
+test_chunk_sizes_do_not_change_rounding_and_cancel_does_not_change_source (test_float_chromatic.ChromaticNumericTests.test_chunk_sizes_do_not_change_rounding_and_cancel_does_not_change_source) ... ok
+test_custom_D50_BT709_transforms_using_Bradford_in_XYZ (test_float_chromatic.ChromaticNumericTests.test_custom_D50_BT709_transforms_using_Bradford_in_XYZ) ... ok
+test_custom_white_is_owned_immutable_and_JSON_roundtrips (test_float_chromatic.ChromaticNumericTests.test_custom_white_is_owned_immutable_and_JSON_roundtrips) ... ok
+test_explicit_equivalent_D65_is_bit_exact_and_keeps_signed_zero_alpha (test_float_chromatic.ChromaticNumericTests.test_explicit_equivalent_D65_is_bit_exact_and_keeps_signed_zero_alpha) ... ok
+test_glow_threshold_luma_uses_declared_white (test_float_chromatic.ChromaticNumericTests.test_glow_threshold_luma_uses_declared_white) ... ok
+test_invalid_white_types_geometry_and_HDR_non_D65_are_rejected (test_float_chromatic.ChromaticNumericTests.test_invalid_white_types_geometry_and_HDR_non_D65_are_rejected) ... ok
+test_negative_and_superwhite_values_and_hidden_RGB_are_not_clipped (test_float_chromatic.ChromaticNumericTests.test_negative_and_superwhite_values_and_hidden_RGB_are_not_clipped) ... ok
+
+======================================================================
+FAIL: test_actual_encoded_ProPhoto_D50_to_D60_edit_to_D65_matches_independent_oracle (test_float_chromatic.ChromaticIntegrationTests.test_actual_encoded_ProPhoto_D50_to_D60_edit_to_D65_matches_independent_oracle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_chromatic.py", line 167, in test_actual_encoded_ProPhoto_D50_to_D60_edit_to_D65_matches_independent_oracle
+    self.assertEqual(source['working_signal']['white_xy'],list(D60))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (0.32168, 0.33767) != [0.32168, 0.33767]
+
+======================================================================
+FAIL: test_ProPhoto_to_sRGB_matches_independent_matrix_and_scalar_transfer (test_float_chromatic.ChromaticNumericTests.test_ProPhoto_to_sRGB_matches_independent_matrix_and_scalar_transfer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_chromatic.py", line 47, in test_ProPhoto_to_sRGB_matches_independent_matrix_and_scalar_transfer
+    np.testing.assert_array_equal(result[...,:3],expected)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 1121, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header='Arrays are not equal',
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 983, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+
+Mismatched elements: 3 / 9 (33.3%)
+Mismatch at indices:
+ [0, 0, 1]: 0.13958963751792908 (ACTUAL), 0.13958965241909027 (DESIRED)
+ [0, 2, 1]: -0.03744509443640709 (ACTUAL), -0.03744509816169739 (DESIRED)
+ [0, 2, 2]: 0.006013558246195316 (ACTUAL), 0.006013558711856604 (DESIRED)
+Max absolute difference among violations: 1.4901161e-08
+Max relative difference among violations: 1.0674975e-07
+ ACTUAL: array([[[-0.20308 ,  0.13959 ,  0.445687],
+        [-0.638669,  0.350104,  1.569124],
+        [ 0.891844, -0.037445,  0.006014]]], dtype=float32)
+ DESIRED: array([[[-0.20308 ,  0.13959 ,  0.445687],
+        [-0.638669,  0.350104,  1.569124],
+        [ 0.891844, -0.037445,  0.006014]]], dtype=float32)
+
+----------------------------------------------------------------------
+Ran 19 tests in 146.018s
+
+FAILED (failures=2)

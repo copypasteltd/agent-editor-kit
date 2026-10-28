@@ -320,10 +320,10 @@ class NativeGPU:
         self._run('optics',[C.c_void_p(self.buffers[0]),C.c_void_p(self.buffers[1]),C.c_void_p(self.buffers[2]),
             C.c_int(w),C.c_int(h),C.c_int(KINDS.index(kind)),C.c_int(ghosts),C.c_int(edge=='transparent')],w*h,output)
 
-    def glow(self, source, output, kind, values, edge, primaries):
+    def glow(self, source, output, kind, values, edge, primaries,*,white_xy=None):
         from .float_glow import validate_state,luma_coefficients,admit_neighborhood
         values=validate_state(kind,values,edge)
-        coefficients=luma_coefficients(primaries)
+        coefficients=luma_coefficients(primaries,white_xy)
         self.surface(source);self.output(output)
         if source.shape!=output.shape:raise error('SURFACE','GPU高光扩散输入输出尺寸不一致')
         h,w=source.shape[:2];count=w*h

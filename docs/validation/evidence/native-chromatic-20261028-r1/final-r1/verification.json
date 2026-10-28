@@ -1,0 +1,1413 @@
+{
+  "status": "passed",
+  "at_utc": "2026-10-28T11:25:42.969033+00:00",
+  "whole_goal_complete": false,
+  "product_files": 268,
+  "capabilities": 84,
+  "skill_files": 84,
+  "public_skills": 1,
+  "internal_modules": 17,
+  "tests": {
+    "source-r3": 20,
+    "installed-r1": 20,
+    "installed-compat-r1": 267
+  },
+  "F": 71,
+  "S": 26,
+  "K": 17,
+  "R": 309,
+  "prior_R_retained": 303,
+  "G_closure_cells_retained": 38,
+  "local_links_checked": 3891,
+  "files_checked": 277,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 108350,
+      "sha256": "36e33436d89a36ca5483db0b76ecb40a37105ed93a4a6a9ec8579f4859dacec6"
+    },
+    {
+      "path": "README.en.md",
+      "bytes": 243164,
+      "sha256": "1643c759c8d30a12bdc5a40bbef317174876267b1e63b45150ae2cbfb43a0929"
+    },
+    {
+      "path": "README.md",
+      "bytes": 226921,
+      "sha256": "1dc02591f850cde6bdd49f6640532d7b5442e994284bb79034948c23177bacbe"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "bytes": 228226,
+      "sha256": "efe412c5843f74dbc683b28461aea79507e2aae150eb14ed6649ce00adf415ed"
+    },
+    {
+      "path": "agent-ffmpeg-local-install-manifest.json",
+      "bytes": 28372,
+      "sha256": "a65faed247770b2355de61065430af01409ecf90112de8d41afb64dbabc9ffae"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 15755,
+      "sha256": "ce5dc59f13565de5d2c4ade0a05d8e0cc2ead036f84d0e284d84aa416f556380"
+    },
+    {
+      "path": "docs/assets/native-chromatic-20261028-r1/source-prophoto-d50.mkv",
+      "bytes": 2474880,
+      "sha256": "5a17acf10600731db74055062d3b9fd18e765a1afbb295054d9db7573a67a2a0"
+    },
+    {
+      "path": "docs/assets/native-chromatic-20261028-r1/source-stereo.wav",
+      "bytes": 1536092,
+      "sha256": "29cd231559476c51f4afca3a17362f40f01212d62d545a2f627cb3e49ef5ac14"
+    },
+    {
+      "path": "docs/assets/native-chromatic-20261028-r2/source-prophoto-d50.mkv",
+      "bytes": 2474880,
+      "sha256": "365ece5ce3b008f61da29715c82324d5c0a3a2a78f382bb57668792e790d0ac9"
+    },
+    {
+      "path": "docs/assets/native-chromatic-20261028-r2/source-stereo.wav",
+      "bytes": 1536092,
+      "sha256": "29cd231559476c51f4afca3a17362f40f01212d62d545a2f627cb3e49ef5ac14"
+    },
+    {
+      "path": "docs/assets/native-chromatic-20261028-r3/SOURCE.txt",
+      "bytes": 641,
+      "sha256": "fb21dc4421a92781700e5bcb63ec482ad493b42e43f5ac814031d01caaf38141"
+    },
+    {
+      "path": "docs/assets/native-chromatic-20261028-r3/actual-frame.png",
+      "bytes": 107280,
+      "sha256": "a8941d0228ed5cf5e09aa4464ed97809fc46f6372363b252ee60937848a817e9"
+    },
+    {
+      "path": "docs/assets/native-chromatic-20261028-r3/actual-preview.gif",
+      "bytes": 194833,
+      "sha256": "3a24080b0565e3c2f2a6823efe51d2857672c0e6a3533c0b0cdb05eb9926f647"
+    },
+    {
+      "path": "docs/assets/native-chromatic-20261028-r3/actual-preview.mp4",
+      "bytes": 117520,
+      "sha256": "5c92d43d85efe84d004896dcbef05aa5f40546369fd52db2b6081b4c889dd395"
+    },
+    {
+      "path": "docs/assets/native-chromatic-20261028-r3/comparison.png",
+      "bytes": 68761,
+      "sha256": "1df0fc9af96901ac5b64e2739cc1372dff435564e92f517fcd7661a274ebbb96"
+    },
+    {
+      "path": "docs/assets/native-chromatic-20261028-r3/editable-chromatic.aevpkg.zip",
+      "bytes": 3542944,
+      "sha256": "ba1a1739b9118c38773213f4a164ae82505cb44d88a1998ac2037be95508f936"
+    },
+    {
+      "path": "docs/assets/native-chromatic-20261028-r3/editable-chromatic.aevpkg.zip.conversion-report.json",
+      "bytes": 955,
+      "sha256": "ecea816a908b660535610fabdb0b38cad42760e7604c4d6236c63c8ec8729ae7"
+    },
+    {
+      "path": "docs/assets/native-chromatic-20261028-r3/edited-master.mkv",
+      "bytes": 1836831,
+      "sha256": "524f951ee9634a7500a2cd48a4f35ed744c49d83696c18f096e699bfd9e8eef4"
+    },
+    {
+      "path": "docs/assets/native-chromatic-20261028-r3/edited-master.mkv.manifest.json",
+      "bytes": 466092,
+      "sha256": "6e59f33afb511baf4ef2ae7280ed2def677d654e6fdd393fcb7b38c10bc12e3c"
+    },
+    {
+      "path": "docs/assets/native-chromatic-20261028-r3/independent-no-CAT-control.png",
+      "bytes": 28953,
+      "sha256": "2e0b752368215363c51292a892de12d2c8b216881cc215d2c5b4658222c38479"
+    },
+    {
+      "path": "docs/assets/native-chromatic-20261028-r3/media-manifest.json",
+      "bytes": 2327,
+      "sha256": "7fc55f6b19028524b0be6e1258b33b3068071fbb5567f5277eb5eebd217c3f1b"
+    },
+    {
+      "path": "docs/assets/native-chromatic-20261028-r3/signals.json",
+      "bytes": 318,
+      "sha256": "53cf6381864f1116cfbce9bf5807d99c26bd3c521cda438e127d2d01d4bbfc6b"
+    },
+    {
+      "path": "docs/assets/native-chromatic-20261028-r3/source-prophoto-d50.mkv",
+      "bytes": 2474880,
+      "sha256": "29d7b9f0a5ba1750e8f6d338c1c835ac29cac5ed4362fb837888b65bedd2fce8"
+    },
+    {
+      "path": "docs/assets/native-chromatic-20261028-r3/source-stereo.wav",
+      "bytes": 1536092,
+      "sha256": "29cd231559476c51f4afca3a17362f40f01212d62d545a2f627cb3e49ef5ac14"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.en.md",
+      "bytes": 202681,
+      "sha256": "a0a5df3f049a43b00b74fd2ea8f660aa785729f6329d1c5d2895c8d34beebe92"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.md",
+      "bytes": 199863,
+      "sha256": "768e91fa555a6924f1aaa2e691718cce14ac4b64b529b0b452356858ece05183"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.zh-TW.md",
+      "bytes": 199990,
+      "sha256": "f6f062b274aa15c06fc45716e88422fc2d7b0ff383e588cc718223389681efed"
+    },
+    {
+      "path": "docs/product/CASES.md",
+      "bytes": 136559,
+      "sha256": "9ad0aa2c831323a35f0ab28511c74f35f579dbf5eb8f857c3e93267267248413"
+    },
+    {
+      "path": "docs/product/CHROMATIC_ADAPTATION.md",
+      "bytes": 9368,
+      "sha256": "47027b1e9b7fb488345c53e073fefc30d361e83b184041dccfd563fa9d8ec4c0"
+    },
+    {
+      "path": "docs/product/COMMUNITY_LOCAL_DELIVERY.md",
+      "bytes": 32017,
+      "sha256": "fbc9d35cbaf0eb33e6cbfd526d937d0986638d3d8b4033ff4078169592b3570a"
+    },
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "bytes": 50763,
+      "sha256": "a9f79d31ea19155624173b358e92c12d0fd09d9faeba866c9875567499bab672"
+    },
+    {
+      "path": "docs/product/HDR_DISPLAY.md",
+      "bytes": 9876,
+      "sha256": "ea14bda03dfeefd588a499dedbd39c9c411939783a1e143466e5e8c8586e052e"
+    },
+    {
+      "path": "docs/product/SKILLS.en.md",
+      "bytes": 17296,
+      "sha256": "cf61c200369c3aad0ed09fe864ec941874e446db2a3e795935e46c973bee4dd5"
+    },
+    {
+      "path": "docs/product/SKILLS.md",
+      "bytes": 16805,
+      "sha256": "76acc9de59bc73faec07104a438050397f915536d0703e896b2c3e729493be49"
+    },
+    {
+      "path": "docs/product/SKILLS.zh-TW.md",
+      "bytes": 16835,
+      "sha256": "1b0e9857d93e90e826381b72f15e469e178122eeed66ec416ae268fba7b1b1d0"
+    },
+    {
+      "path": "docs/product/chromatic-capabilities-cli-0.1.45.json",
+      "bytes": 140741,
+      "sha256": "94c3ad147e92a17ca45cea2e9f9690d0b24b7ab4cf49e0fa469f5de19bc4c6ca"
+    },
+    {
+      "path": "docs/releases/CLI_0.1.45_LOCAL.md",
+      "bytes": 2370,
+      "sha256": "3ec4ef20ef32b1c7abae5b1b3c46555a5b6c8a81ece60b334c5eb49f7914729d"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.en.md",
+      "bytes": 7549,
+      "sha256": "ae655aa1ddf4d6bd0096082aec0fe54a7bcc7964c7974acc8a01c1282bbed15e"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.md",
+      "bytes": 7845,
+      "sha256": "5756a55fcb05b31c4cd9d11f28a496bd6005ae2e4614d744d8535cdb73dabe32"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.zh-TW.md",
+      "bytes": 7854,
+      "sha256": "d57e988209771109292853af7c0822c11258b94f96160464927b8ce3d5d9016a"
+    },
+    {
+      "path": "docs/skills/agent-editor-kit-community-unified-skill-r46.zip",
+      "bytes": 672648,
+      "sha256": "e6f6401740d8262d8374fa67a6f9518c5c52b07bd4488e648208d3aec6ad11ec"
+    },
+    {
+      "path": "docs/skills/community-unified-skill-package-0.1.45-r46.json",
+      "bytes": 415,
+      "sha256": "bd8cbb4a1a52177ce156bdc0bffb289e60c55c466120aeef5c73ba4da280c14b"
+    },
+    {
+      "path": "docs/specs/agent-project.schema.json",
+      "bytes": 147190,
+      "sha256": "e186920c8a7794d708fb83e31969b76f0e1b70cea98177435c73c97159a4d513"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/activation-final-r1/activation-and-registration.json",
+      "bytes": 1866,
+      "sha256": "485b590ff57fb14397f9d9db37b9592d3a1b624b9210487cec8ac9d7bbf36309"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/activation-final-r1/activation.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/activation-final-r1/activation.stdout.json",
+      "bytes": 737,
+      "sha256": "99a84ffec5c8f451d5dabf24fcba754f154e83ba618c4603e12f947362b5a315"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/activation-final-r1/executed-generator.py",
+      "bytes": 2799,
+      "sha256": "544a5659471c3d5a754359ea4bff92636cc1829c265791ede39fbd80459cd880"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/activation-final-r1/kokoro-zh-en-cuda13.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/activation-final-r1/kokoro-zh-en-cuda13.stdout.json",
+      "bytes": 659,
+      "sha256": "ce248a29231e6f172ca160304892415e3b4efc2232114a93ccc92ccfbd1dcfff"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/activation-final-r1/kokoro-zh-en-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/activation-final-r1/kokoro-zh-en-int8.stdout.json",
+      "bytes": 655,
+      "sha256": "9af38b9a50e10ee35c94d7f50f05c7269fd7becd774961cf2ef5a4e18433117c"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/activation-final-r1/opus-zh-en-cpu-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/activation-final-r1/opus-zh-en-cpu-int8.stdout.json",
+      "bytes": 660,
+      "sha256": "dd6ccd6dcad2344b5036de555e1f7f281048254dcdbcbaee2f008861fcd47bd9"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/activation-final-r1/opus-zh-en-cuda12-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/activation-final-r1/opus-zh-en-cuda12-int8.stdout.json",
+      "bytes": 666,
+      "sha256": "f7014ca27a25dc005624b59a390464e328c48e97b1fd2efbf6136f9798fb26da"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/activation-final-r1/previous-community-runtime.json",
+      "bytes": 797,
+      "sha256": "215495ee2c7f917d3394f3cae9821f4ad74765e1600af1282f1468b9f228b61c"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/activation-final-r1/previous-runtime.json",
+      "bytes": 624,
+      "sha256": "6312f29e6d146b450fe6b5a9427a2e8d44d57ba2d25feac36b5ca0982a10cb84"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/activation-final-r1/registration.json",
+      "bytes": 1024,
+      "sha256": "c6988a7f41698735b605750949dd1c28d035b9e4a2a5538a4dced0dc7afcc0de"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/activation-final-r1/registration.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/activation-final-r1/registration.stdout.txt",
+      "bytes": 370,
+      "sha256": "a5ad876906d413e1a1fa59eb1454a9d7a6105010f7ce24079fbef801db24282c"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/activation-final-r1/verification.json",
+      "bytes": 782,
+      "sha256": "2349f33f579d4e361b3a5cb17b3756c4c6d8caa5830dac9617cee83293d575ce"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/calls.json",
+      "bytes": 9037,
+      "sha256": "b7631d1b716130bdcefc7a71c55ee4fe4a1b1dc8f8f62301e7d3a671606e3baa"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/capabilities.stdout.json",
+      "bytes": 140741,
+      "sha256": "88ce6b8f419bff9fa12c41cbc18741b63756d70387816b160b85c3deeab96c4a"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/checks.json",
+      "bytes": 141,
+      "sha256": "2e9bce7ed06c1cfcabf9d912bf247c0c6e418b937fb8c01cf78f788a7a2a6eab"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/compose.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/compose.stdout.json",
+      "bytes": 2118,
+      "sha256": "c89a9953c96c921ef94d484a2ed0d5ab25791cccea02420feba0b311fea0855e"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/edited.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/edited.stdout.json",
+      "bytes": 571,
+      "sha256": "9e10a8e7d1664925805c6711061cbf11aae158d8baeea91f7d93d9f6650efdb3"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/executed-generator.py",
+      "bytes": 15776,
+      "sha256": "f67d78721563a0ba62c009a066492d999393f2cb955db4fc8de5f4becc41e2dc"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/ingest-chart.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/ingest-chart.stdout.json",
+      "bytes": 2988,
+      "sha256": "fc4344e679d2901c6a22595a1728c724d914cb98a9f462a64eb8290ebca9cebb"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/ingest-tones.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/ingest-tones.stdout.json",
+      "bytes": 2806,
+      "sha256": "2ae662e0330cb8d546eb3985efd26dbe9c9c4feb304ae25e7d0de8ea62c86fdd"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/init.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/init.stdout.json",
+      "bytes": 632,
+      "sha256": "da3e66a19d88e67152a5143d96b1d57e9ff591fe389caa011c1d22f59acdd976"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/original-audio.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/original-encode.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/surface.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/surface.stdout.json",
+      "bytes": 1047,
+      "sha256": "572b9eaf0c3b826d29a511c7e8c8a85bec85827dc967bd0cec4e6a0d2edf6e10"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/validate.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/validate.stdout.json",
+      "bytes": 799,
+      "sha256": "a52e20557107060eacf153ea606d71c3c6008ac817d3e7dc56716aea8aa1d48b"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/verification.json",
+      "bytes": 1438,
+      "sha256": "d51f6d629c555615a2fc6a4535fcb208f72a990f39c828fa78f643300139eed8"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r1/version.stdout.json",
+      "bytes": 1168,
+      "sha256": "76dcd8f8b4541dfa1d4c43343ef3b4280c03b91a28d1b9bc67ba41177c93a42a"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/calls.json",
+      "bytes": 9868,
+      "sha256": "bb5318556ccf8cd1835956e5b71c6f81b46718f18952e541af7eb4fed8455999"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/capabilities.stdout.json",
+      "bytes": 140741,
+      "sha256": "ec2fa7102d8319e4ccf78e6f03331f43b1a95aaed954653ad28170aa71b2e0a0"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/checks.json",
+      "bytes": 392,
+      "sha256": "314b6b0f060461ed30dec78bfc7e948d50f2eae4db27b67fbd33c8b148ab166e"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/compose.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/compose.stdout.json",
+      "bytes": 2118,
+      "sha256": "5127ab2e0107001a5b3f14bbf9051821cbbf9e0bcf43a8dbc84bd4955eae3892"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/edited.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/edited.stdout.json",
+      "bytes": 183642,
+      "sha256": "800e2576f38310525b00e851f90a1e0c7db7c0a1cb382fb413ba0a1ae1636c1f"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/executed-generator.py",
+      "bytes": 15796,
+      "sha256": "aab4f276dc8106e60145bc354f81ac2bca6f7838bb897baee800e9dac19030d2"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/ingest-chart.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/ingest-chart.stdout.json",
+      "bytes": 2988,
+      "sha256": "99c2a206fdfeaf1a5373cd19a4b437e34bf60b8c8249d23f690e977d3cb366b0"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/ingest-tones.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/ingest-tones.stdout.json",
+      "bytes": 2806,
+      "sha256": "16af632517a0b39a619a908239b94b955e3390b45a6bdc00fd05be12296c39c6"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/init.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/init.stdout.json",
+      "bytes": 632,
+      "sha256": "82d4648876e188dd52bfe75c5b8e9618ae939b41d2cd77fef65ff13db30e73ee"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/oracle-analysis.json",
+      "bytes": 1888,
+      "sha256": "c2873accb1074fbbea0f944e7f08608f922e51a71e50aa87419a1d87861959b0"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/original-all-video.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/original-audio.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/original-encode.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/surface.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/surface.stdout.json",
+      "bytes": 1047,
+      "sha256": "03faac997e726686882dbb74f5b2d9e65fc27067da49a19b563a875d73829940"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/validate.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/validate.stdout.json",
+      "bytes": 799,
+      "sha256": "95a2ff20284d4c4f6578cb46682685c2bfdcfa5fb63354617f642a8111d4e505"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/verification.json",
+      "bytes": 901,
+      "sha256": "6dbd3d76b3a6a695d5404aab05407eabb984c069ba4b267b7f2fc10dc5f5205b"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r2/version.stdout.json",
+      "bytes": 1168,
+      "sha256": "876147a78759dfc109ed26f774213d76e88dc0f17b5a11ec2631ebb7f3e45a43"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/calls.json",
+      "bytes": 17722,
+      "sha256": "5f68296560d95a9d3735ad3adf3cb81d65618a9f7ba81f03f56de32e99376290"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/capabilities.stdout.json",
+      "bytes": 140741,
+      "sha256": "15d213f57f9c5a6281a9f5e30e70ae98a5ac01e86226d3cdc04ae0990889e6fd"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/checks.json",
+      "bytes": 901,
+      "sha256": "f7968f3384a39a162afcffbaae65b3e627defd350140ff70246b0f87093837dc"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/compose.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/compose.stdout.json",
+      "bytes": 2118,
+      "sha256": "782f95fd5b51d8d61dad8f211247717c30210f025b52377c10a2fe860bb52a79"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/edited.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/edited.stdout.json",
+      "bytes": 183643,
+      "sha256": "71090d4d98b906c37b84277908cf737c20ffe5bddf90a1cb77fedcf4cce4de27"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/executed-every-frame-oracle.py",
+      "bytes": 2624,
+      "sha256": "4bdc3967e0d6e0aaabfa6eaee1aca8fa5adedfad2b54df863f38556a11108503"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/executed-generator.py",
+      "bytes": 16016,
+      "sha256": "29714df69ad552635e76dbe8dd286f0c2cdf6117d3a3dc427ee70b4d0037bd24"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/export.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/export.stdout.json",
+      "bytes": 2819,
+      "sha256": "233ee8216324d09cc63675041484302b18686ce0781101df57a6d76d9a7d0ed0"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/gif.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/import-replay.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/import-replay.stdout.json",
+      "bytes": 1569,
+      "sha256": "bc71fe3a5bf47a3f87eca7cab50b66cac63c0a31454c0c2c61c5a33ac31d5d52"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/independent-every-frame-patches.json",
+      "bytes": 63489,
+      "sha256": "9815ae69e305b039b3aa14d9621fbae9a079d2cae9bdb946de22afc99e5ba24a"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/ingest-chart.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/ingest-chart.stdout.json",
+      "bytes": 2988,
+      "sha256": "01d8841386206f92629de14c71eb264f335d2e142921845afb171aba25404d06"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/ingest-tones.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/ingest-tones.stdout.json",
+      "bytes": 2806,
+      "sha256": "309f244d579ef7e87b7bab06614524b029d0cc38c6147b894c0860728ed0ed9f"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/init.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/init.stdout.json",
+      "bytes": 632,
+      "sha256": "4a5c5c80066f175f25085471535a16b6606701dd9e58df5c99ce5b10c7afbc3f"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/original-all-PCM.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/original-all-video.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/original-audio.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/original-encode.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/preview-frame.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/preview-frame.stdout.json",
+      "bytes": 43201,
+      "sha256": "92656e69e79cdbaa09c3bd601d0405cde85298e4430f2e30b2e3fbfda78f1988"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/preview-range.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/preview-range.stdout.json",
+      "bytes": 45174,
+      "sha256": "fac066e73511d819107770c81a07ecaa0ce4c20b4ff8ce3259eb08a06d511096"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/replayed-all-PCM.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/replayed-all-video.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/replayed.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/replayed.stdout.json",
+      "bytes": 183662,
+      "sha256": "98842677c05e1d84e31341db1b470c63d90fa590f1943f4be312d3afb0a8d355"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/surface.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/surface.stdout.json",
+      "bytes": 1047,
+      "sha256": "0e88509c0b57176e0b202b522d2abc009a7ef90acc621d0a4862e9a1d90f894a"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/validate-replay.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/validate-replay.stdout.json",
+      "bytes": 800,
+      "sha256": "f43dfa3108ee5fcf56775e3df8a2823e5685089bf7b04797427c52fc476d8741"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/validate.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/validate.stdout.json",
+      "bytes": 799,
+      "sha256": "44028aa69361f912f89e5619750c5e9b8c95e04ec53fc5287bac4c9ee3ca1037"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/verification.json",
+      "bytes": 4114,
+      "sha256": "46cc7cb5b0e1c5448d3e0b4d0a2a6f144a9b773c40b863a3b7c40172d38cb96d"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/case-r3/version.stdout.json",
+      "bytes": 1168,
+      "sha256": "a6d111c6f050e46bf65710a967c09ada6f99283df2a088114dfa4a35a86b620f"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/documentation-r1/executed-generator.py",
+      "bytes": 26002,
+      "sha256": "9412748d60768f80b088c2414a088b236e64d58b45984541922c5435af2f2341"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/documentation-r1/verification.json",
+      "bytes": 260,
+      "sha256": "ee3d2addb703bc10107864acaefec6ab3b4aec23a0d668837bd1dddf1efbdcc8"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installation-final-r1/build.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installation-final-r1/build.stdout.json",
+      "bytes": 448,
+      "sha256": "12b39ddb6b5e88f74a6dfabd97b8095037e617587b2cced33035080ea0cbeb19"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installation-final-r1/calls.json",
+      "bytes": 2616,
+      "sha256": "c3b9e67ea522f93c1870f7b88aa3d7a3694b6bcc4ae59ce30ff1c5f5ed7a8dd7"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installation-final-r1/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installation-final-r1/capabilities.stdout.json",
+      "bytes": 140741,
+      "sha256": "94c3ad147e92a17ca45cea2e9f9690d0b24b7ab4cf49e0fa469f5de19bc4c6ca"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installation-final-r1/executed-generator.py",
+      "bytes": 5362,
+      "sha256": "6b4d46eb7cb908225ed1a3a59199c05298e99ca96fb41ebf45bbdb4c8645b7c6"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installation-final-r1/install.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installation-final-r1/install.stdout.json",
+      "bytes": 1709,
+      "sha256": "39e475dd3226b8fa0a59df464fe033e3b5f8482f52df765bdaf432a337c989f3"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installation-final-r1/verification.json",
+      "bytes": 35827,
+      "sha256": "5a1bfa55ed3450a723425af1a3e5a8cdaa9b09fb5d698d90735862e14693f9f3"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installation-final-r1/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installation-final-r1/version.stdout.json",
+      "bytes": 1168,
+      "sha256": "1ec5ee8bfed1906d4cabc4f0dfac760d74dcf8596233c03d93e8b9816b31c09a"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-compat-r1/executed-runner.py",
+      "bytes": 3118,
+      "sha256": "46ebe9badbd73a491dd06f61b12d5b21f5eed649bcc28370f1c83193af67a2c2"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-compat-r1/executed-tests/test_float_bundle.py",
+      "bytes": 14746,
+      "sha256": "e343962126cc328cb623d3664f49abafaf38feee38e1caa7c695a543045d73ba"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-compat-r1/executed-tests/test_float_bundle_source.py",
+      "bytes": 5669,
+      "sha256": "42769a1344ac03381bdfe96b13de01856be1d7c2eb94f1e6ef5654f0619585f0"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-compat-r1/executed-tests/test_float_color_signal.py",
+      "bytes": 9629,
+      "sha256": "a791301cf81ef48c9ed2c591cd299dc29a1889968c2584f951c4aba4ac09db88"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-compat-r1/executed-tests/test_float_curves.py",
+      "bytes": 27662,
+      "sha256": "fb9de4c9fd847e81d1e16588e2f1912b3273bcfc90ac722988182081e0b63029"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-compat-r1/executed-tests/test_float_glow.py",
+      "bytes": 23494,
+      "sha256": "1551aac0d925006528e66d874f0d80c3f3ca83c80c110abb68e4581ba2541133"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-compat-r1/executed-tests/test_float_hdr.py",
+      "bytes": 21259,
+      "sha256": "ad50d09368f7829efc5c2bb40119021c0141eac392179b88868e86dde0fe2e04"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-compat-r1/executed-tests/test_float_lut.py",
+      "bytes": 28477,
+      "sha256": "c3620c60d4373a44801c1eee73dd3e00239820cb39000aad48a75b311e8b1fb9"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-compat-r1/executed-tests/test_float_preview.py",
+      "bytes": 18395,
+      "sha256": "d07efe6d79493b97d64f7a6a9511c14b4fb1620a1820ef2897fca48510bd7dab"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-compat-r1/executed-tests/test_float_standard_render.py",
+      "bytes": 22886,
+      "sha256": "28952ffc3933dd3641c16b877ff2379992493b573d916d8efbdb4e675b2c1975"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-compat-r1/executed-tests/test_hdr_metadata.py",
+      "bytes": 14049,
+      "sha256": "86613011baf6d5b58f0dc72e8c82bc151e528dde550a31f0a951eee949c1d27e"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-compat-r1/executed-tests/test_queue_reuse.py",
+      "bytes": 27030,
+      "sha256": "c8e9fc997ca69b20ad4196bc718ecbfddb3cfe01722914d6547624cc12870cc1"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-compat-r1/executed-tests/test_schema_contract.py",
+      "bytes": 8251,
+      "sha256": "cbffcdb7c2e0c5b9d8bd1cc0bed68004cc30a467bb7a08f2fc7aab64bb71c409"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-compat-r1/receipts.json",
+      "bytes": 2609872,
+      "sha256": "1ef6f5e7d5d9e451581fa3ec1a09250a57971d105a0fdd26dc9a4688b90f2e06"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-compat-r1/tests.log",
+      "bytes": 45502,
+      "sha256": "635274dbb15612c6895b35e5074e8c12efef2cee13f064d90d443076c31eac31"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-compat-r1/verification.json",
+      "bytes": 26206,
+      "sha256": "e103586baf275804b55aac966a2d70df9b6abb4f1144f22e086f56371b26ec54"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-r1/executed-runner.py",
+      "bytes": 3118,
+      "sha256": "46ebe9badbd73a491dd06f61b12d5b21f5eed649bcc28370f1c83193af67a2c2"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-r1/executed-tests/test_float_chromatic.py",
+      "bytes": 16554,
+      "sha256": "1831bae3cfd4f02cb09cf53b7a6c49aba6760a6230143efa0d8d561f532a49aa"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-r1/executed-tests/test_float_color_signal.py",
+      "bytes": 9629,
+      "sha256": "a791301cf81ef48c9ed2c591cd299dc29a1889968c2584f951c4aba4ac09db88"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-r1/executed-tests/test_float_hdr.py",
+      "bytes": 21259,
+      "sha256": "ad50d09368f7829efc5c2bb40119021c0141eac392179b88868e86dde0fe2e04"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-r1/executed-tests/test_float_standard_render.py",
+      "bytes": 22886,
+      "sha256": "28952ffc3933dd3641c16b877ff2379992493b573d916d8efbdb4e675b2c1975"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-r1/receipts.json",
+      "bytes": 451741,
+      "sha256": "b4e40ecb2826a99071e8db4bcbae03167672d254bc81a2d0f301a459fb927800"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-r1/tests.log",
+      "bytes": 3722,
+      "sha256": "fcac82ea73de2870740403d4a4e1953c81828c488463c42ae7834d4d2e52a034"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/installed-r1/verification.json",
+      "bytes": 25462,
+      "sha256": "2f2b8e50fbf1330141d5f8d7bc11541049510ec54dcd46f4bf05e2a4fa17f673"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/calls.json",
+      "bytes": 6070,
+      "sha256": "254744b2f8d632ee3125250c24928faecc0727e15b902fb91f5c54c2c6aa2371"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/capabilities.stdout.txt",
+      "bytes": 140741,
+      "sha256": "52c18e59bf0c3bf016ca4cc3098254f4d770fd6f86f88364bbf2c2c309a1c6ab"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/configure.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/configure.stdout.txt",
+      "bytes": 865,
+      "sha256": "11cbc4c2d313f004cd569899249ceed141cc95e043ef15ba9f9c15cb7db5db88"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/executed-generator.py",
+      "bytes": 6306,
+      "sha256": "188612e548db01bd63bf11c7e636fcf44de7abe45dcfc5fa88d5875787391744"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/import.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/import.stdout.txt",
+      "bytes": 1589,
+      "sha256": "ef343a0e3a3b266dd58ee1c51a9aaaacca8ee835f6e9c608337980a8e4d67500"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/plan.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/plan.stdout.txt",
+      "bytes": 81866,
+      "sha256": "0bd8f8bd4dfe07377f104bf02bc0f827cd09f96e02f305bb4b4edf5160c04fab"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/register.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/register.stdout.txt",
+      "bytes": 357,
+      "sha256": "902778aad607bacf77ba9a8ac187e889bd95c38dffcf5095ee80b0d280738b20"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/registration.json",
+      "bytes": 1219,
+      "sha256": "6e78974bb1bc4e77154042daa455286151ee479a5dd0d957c4d438b4ed2adb07"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/render-help.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/render-help.stdout.txt",
+      "bytes": 4142,
+      "sha256": "ae678d329e5635e7c93774ecdfd98e4ae9a654a98fb7e409514b603ca819cf82"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/validate.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/validate.stdout.txt",
+      "bytes": 805,
+      "sha256": "b7447762b0a26d09e27345da2be88483b954fe404cfc91e0ef58faf2d9c3934c"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/verification.json",
+      "bytes": 680,
+      "sha256": "0a7277cf176749319a77e736ebf5752ac41363b71fe1542822fefc976363b962"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/kit-r1/version.stdout.txt",
+      "bytes": 1168,
+      "sha256": "a4ce2605a7a2424100cb1d9a83254db671bda91ef8dd49e243f4058ffa59fc2f"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/skill-pin-r1/executed-generator.py",
+      "bytes": 5960,
+      "sha256": "9ae33e9c25f1706f54109ca37fe0c4317ad392af60b73923bb73da752bebe295"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/skill-pin-r1/verification.json",
+      "bytes": 335,
+      "sha256": "1c6610399c37a1d7d0fcb4c80500d11d0f36efabd71b2459ceb73d1df9516445"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r1/executed-runner.py",
+      "bytes": 3118,
+      "sha256": "46ebe9badbd73a491dd06f61b12d5b21f5eed649bcc28370f1c83193af67a2c2"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r1/executed-tests/test_float_chromatic.py",
+      "bytes": 14593,
+      "sha256": "5bc859e614326a3c17500dc007eff0d931cfa7f8c09d589a68157929f7543578"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r1/executed-tests/test_float_color_signal.py",
+      "bytes": 9629,
+      "sha256": "a791301cf81ef48c9ed2c591cd299dc29a1889968c2584f951c4aba4ac09db88"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r1/executed-tests/test_float_hdr.py",
+      "bytes": 21259,
+      "sha256": "ad50d09368f7829efc5c2bb40119021c0141eac392179b88868e86dde0fe2e04"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r1/executed-tests/test_float_standard_render.py",
+      "bytes": 22886,
+      "sha256": "28952ffc3933dd3641c16b877ff2379992493b573d916d8efbdb4e675b2c1975"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r1/receipts.json",
+      "bytes": 323516,
+      "sha256": "47362ea58af4d3478c497dcca3b24f2c2a6faff94419091b46b4a7af0a8fe3c6"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r1/tests.log",
+      "bytes": 6347,
+      "sha256": "76ae0422c286b402761356d0a8bd52a68dc33b683f4f4dbbee6425d49258871e"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r1/verification.json",
+      "bytes": 25399,
+      "sha256": "6bc2e0605d6c2d9d9de5d11505bf21f1f939f158516e9abc2b4a3469026902db"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r2/executed-runner.py",
+      "bytes": 3118,
+      "sha256": "46ebe9badbd73a491dd06f61b12d5b21f5eed649bcc28370f1c83193af67a2c2"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r2/executed-tests/test_float_chromatic.py",
+      "bytes": 14759,
+      "sha256": "f9d18550a0733eaea180274d351e121db29a2ac50bca61084ff561d1d95c4780"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r2/executed-tests/test_float_color_signal.py",
+      "bytes": 9629,
+      "sha256": "a791301cf81ef48c9ed2c591cd299dc29a1889968c2584f951c4aba4ac09db88"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r2/executed-tests/test_float_hdr.py",
+      "bytes": 21259,
+      "sha256": "ad50d09368f7829efc5c2bb40119021c0141eac392179b88868e86dde0fe2e04"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r2/executed-tests/test_float_standard_render.py",
+      "bytes": 22886,
+      "sha256": "28952ffc3933dd3641c16b877ff2379992493b573d916d8efbdb4e675b2c1975"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r2/receipts.json",
+      "bytes": 408513,
+      "sha256": "55c8d95ff95af170e513b1d86c8321d918aacd921e25a86d9ea5ec9a14b3d0ef"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r2/tests.log",
+      "bytes": 3504,
+      "sha256": "9f21b7b8c5ce3ad9455164d44b1496d05dd7da77ead3392a8edc89295ec790a1"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r2/verification.json",
+      "bytes": 25399,
+      "sha256": "3ec9b3a9851e721fc758fad1376983033850c765be038ff1a27084766e8fd612"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r3/executed-runner.py",
+      "bytes": 3118,
+      "sha256": "46ebe9badbd73a491dd06f61b12d5b21f5eed649bcc28370f1c83193af67a2c2"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r3/executed-tests/test_float_chromatic.py",
+      "bytes": 16554,
+      "sha256": "1831bae3cfd4f02cb09cf53b7a6c49aba6760a6230143efa0d8d561f532a49aa"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r3/executed-tests/test_float_color_signal.py",
+      "bytes": 9629,
+      "sha256": "a791301cf81ef48c9ed2c591cd299dc29a1889968c2584f951c4aba4ac09db88"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r3/executed-tests/test_float_hdr.py",
+      "bytes": 21259,
+      "sha256": "ad50d09368f7829efc5c2bb40119021c0141eac392179b88868e86dde0fe2e04"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r3/executed-tests/test_float_standard_render.py",
+      "bytes": 22886,
+      "sha256": "28952ffc3933dd3641c16b877ff2379992493b573d916d8efbdb4e675b2c1975"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r3/receipts.json",
+      "bytes": 424338,
+      "sha256": "bd338d0e38007c6bd0905d417a188c7b08a1febc2f45a46e94a82deabec19d05"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r3/tests.log",
+      "bytes": 3722,
+      "sha256": "baf549b70710916d6c470cd6382a24aec0f48db71f2cbc54ac3c5c53aa49ef35"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/source-r3/verification.json",
+      "bytes": 25399,
+      "sha256": "a51b91e9a4992336920c061a7d87941e2dfb852f722ee56fa01eaed9c2116de8"
+    },
+    {
+      "path": "docs/validation/evidence/native-chromatic-20261028-r1/static-review.json",
+      "bytes": 581,
+      "sha256": "2b1b7293a606e98b8fa6a0d9341897c9b1dafd2ee640cd7c1c19bbf227a97e7b"
+    },
+    {
+      "path": "docs/validation/明确白点色适应实测_2026-10-28.md",
+      "bytes": 3996,
+      "sha256": "d45e434cf90f579b9ca6f2212f12da66396c2c15705666b1708b337ddf501604"
+    },
+    {
+      "path": "product/pyproject.toml",
+      "bytes": 1558,
+      "sha256": "fd75a8a703ef545b671cdba6b0e377faef0278ee98fdcd8c4b7a315141e91b5a"
+    },
+    {
+      "path": "product/src/ai_ad_editor/__init__.py",
+      "bytes": 181,
+      "sha256": "7da6d17bd79eb5e13dd267fcb15679fca06865300f61e95f29e735199c990e67"
+    },
+    {
+      "path": "product/src/ai_ad_editor/agent-project.schema.json",
+      "bytes": 147190,
+      "sha256": "e186920c8a7794d708fb83e31969b76f0e1b70cea98177435c73c97159a4d513"
+    },
+    {
+      "path": "product/src/ai_ad_editor/capabilities.py",
+      "bytes": 167877,
+      "sha256": "ed52e8e9355ebe0ecaf088f6270670d83e8e389dd05eba4538321686b9195624"
+    },
+    {
+      "path": "product/src/ai_ad_editor/cli.py",
+      "bytes": 500110,
+      "sha256": "922331bb9b45229259922526b58c6244bd67be97758cd5ac72d4ca02796360cd"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_bundle.py",
+      "bytes": 16511,
+      "sha256": "33e86240149eacb14ade024b5b44fbe99ea5d76b6af0fca89f4f95cb037525c2"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_chromatic.py",
+      "bytes": 4471,
+      "sha256": "b32355d72cc088918596cae5c5ce8db5a2a6ec9867e4d80f7af8a74031afc2c2"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_color_signal.py",
+      "bytes": 10697,
+      "sha256": "3d0fa42b1619333fba5aaf0f277a29d4e07ae57f3eda5683507dec6a7fe2169b"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_glow.py",
+      "bytes": 11821,
+      "sha256": "e2541e639984aee370a19831ed72ba3d067e724331e9b06457ec1ec9f0843af0"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_gpu.py",
+      "bytes": 16330,
+      "sha256": "0e4d91e8f506d76377354ecd28bb772e48662e9da21757d243381c2c6574dd60"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_gpu_native.py",
+      "bytes": 21634,
+      "sha256": "e066a6904ebc20f823b92781e3d687abc669e5016923a2de4ffaa49f4fa3c0cc"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_gpu_worker.py",
+      "bytes": 10877,
+      "sha256": "6b223cd6190bf06f951447fb902271d5f1cd0d3f1fcade5fab811f81731cd2b2"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_hdr.py",
+      "bytes": 10710,
+      "sha256": "0c0c53c9263d68d0b21fd44eea695bae506b55b88904eca478c5a77312290be6"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_native_source.py",
+      "bytes": 20701,
+      "sha256": "56f105030e646dc5275086393c04937b23aba0bec4559fc8729bbd6042e6e71d"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_standard_render.py",
+      "bytes": 30275,
+      "sha256": "1c5490db24d287ce2dae714e3b6fd18b15569297bcef06e8e70c0bddc40e312f"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_stream.py",
+      "bytes": 13894,
+      "sha256": "55817c0c9fc042d9fa71bbfdcc2cb5f9ae2ef5e8aa9a579a43cbe55f798ac1a7"
+    },
+    {
+      "path": "product/src/ai_ad_editor/render.py",
+      "bytes": 329686,
+      "sha256": "7e9d3a144bc1128fed93b6266ab1aa80cdccf1ed639790ffff7377e91d1a8692"
+    },
+    {
+      "path": "product/src/ai_ad_editor/schema_contract.py",
+      "bytes": 5001,
+      "sha256": "66d8ab0a9202f206149bf4531ee1e9ac2529cf6595d6e1bc4a1ba6ae90ccadad"
+    },
+    {
+      "path": "product/tests/test_float_chromatic.py",
+      "bytes": 16554,
+      "sha256": "1831bae3cfd4f02cb09cf53b7a6c49aba6760a6230143efa0d8d561f532a49aa"
+    },
+    {
+      "path": "scripts/activate_chromatic_20261028.py",
+      "bytes": 2799,
+      "sha256": "544a5659471c3d5a754359ea4bff92636cc1829c265791ede39fbd80459cd880"
+    },
+    {
+      "path": "scripts/audit_chromatic_20261028.py",
+      "bytes": 10518,
+      "sha256": "1cf2acef3c897aade8d1276543edd3fa1d43dffaef3218c890e454ff5a1b41c7"
+    },
+    {
+      "path": "scripts/build_chromatic_20261028.py",
+      "bytes": 5362,
+      "sha256": "6b4d46eb7cb908225ed1a3a59199c05298e99ca96fb41ebf45bbdb4c8645b7c6"
+    },
+    {
+      "path": "scripts/configure_chromatic_20261028.py",
+      "bytes": 981,
+      "sha256": "bb0b407d13f27cc228db05dc5c6922a8f6ec1f8755fcc9e59f9590550076752d"
+    },
+    {
+      "path": "scripts/document_chromatic_20261028.py",
+      "bytes": 26002,
+      "sha256": "9412748d60768f80b088c2414a088b236e64d58b45984541922c5435af2f2341"
+    },
+    {
+      "path": "scripts/package_community_skill.py",
+      "bytes": 5384,
+      "sha256": "463a459a12a719a1e12ddefe38fa54500ade7388114d7620221faee4aec06d6b"
+    },
+    {
+      "path": "scripts/pin_chromatic_20261028.py",
+      "bytes": 5960,
+      "sha256": "9ae33e9c25f1706f54109ca37fe0c4317ad392af60b73923bb73da752bebe295"
+    },
+    {
+      "path": "scripts/prepare_chromatic_20261028.py",
+      "bytes": 1444,
+      "sha256": "e0ac9a6b53d92352cdc6d083f5e54e14b92b8485cfb038d062397a9415cc0c2a"
+    },
+    {
+      "path": "scripts/prepare_chromatic_delivery_20261028.py",
+      "bytes": 3009,
+      "sha256": "c71c80e05acccbc16d67e0e29e8b4e03d11d167becc88459ab971f0078d48f16"
+    },
+    {
+      "path": "scripts/publish_chromatic_20261028.py",
+      "bytes": 1028,
+      "sha256": "cd02bb72634de411e44cbe6ddc9526f22b062bb09b321a4d97104e068d8ba31b"
+    },
+    {
+      "path": "scripts/run_chromatic_case_20261028.py",
+      "bytes": 16016,
+      "sha256": "29714df69ad552635e76dbe8dd286f0c2cdf6117d3a3dc427ee70b4d0037bd24"
+    },
+    {
+      "path": "scripts/test_chromatic_20261028.py",
+      "bytes": 3118,
+      "sha256": "46ebe9badbd73a491dd06f61b12d5b21f5eed649bcc28370f1c83193af67a2c2"
+    },
+    {
+      "path": "scripts/verify_chromatic_kit_20261028.py",
+      "bytes": 6306,
+      "sha256": "188612e548db01bd63bf11c7e636fcf44de7abe45dcfc5fa88d5875787391744"
+    },
+    {
+      "path": "scripts/verify_chromatic_pixels_20261028.py",
+      "bytes": 2624,
+      "sha256": "4bdc3967e0d6e0aaabfa6eaee1aca8fa5adedfad2b54df863f38556a11108503"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
+      "bytes": 15627,
+      "sha256": "5106cda1d40349955b142b2171e8e7749f48fc892f244447131b04bdc8b67fab"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/chromatic-adaptation.md",
+      "bytes": 2322,
+      "sha256": "814ce3f893614d3f12898382ef407ea11b002e732eadf0b0096b141278244225"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/hdr-display.md",
+      "bytes": 2665,
+      "sha256": "ce2da4c69aa65014cef0cacca197174b091533a483b61036b1d4ceb980c29a89"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
+      "bytes": 8242,
+      "sha256": "c9987a796ba71f437557add8328d77f245743e685491664354b48f61af9081fe"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/scripts/run.py",
+      "bytes": 2296,
+      "sha256": "a28a7bb1e46c387c72558f4e08e3f35e254cb02b907cf5f8afead17392b9aab3"
+    }
+  ],
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.43\\final-r1\\installed",
+  "staged": false,
+  "postpush": false
+}

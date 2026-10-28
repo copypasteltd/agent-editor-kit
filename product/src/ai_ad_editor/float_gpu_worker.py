@@ -72,7 +72,7 @@ def execute(gpu, request, nonce):
             elif op == 'select': gpu.select(a, b, c, output)
             elif op == 'particles': gpu.particles(b, c, output)
             elif op == 'optics': gpu.optics(b,output,request['kind'],request['parameters'],request['ghosts'],request['edge'])
-            else: gpu.glow(b,output,request['kind'],request['parameters'],request['edge'],request['primaries'])
+            else: gpu.glow(b,output,request['kind'],request['parameters'],request['edge'],request['primaries'],white_xy=request.get('white_xy'))
             gpu.surface(output)
         finally:
             arrays.clear()

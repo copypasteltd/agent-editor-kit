@@ -1,10 +1,11 @@
-"""Explicit D65 RGB signal conversion on bounded straight Float32 surfaces.
+"""Explicit RGB signal conversion on bounded straight Float32 surfaces.
 
 The caller chooses a relative transfer interpretation; a video 'bt709' tag
 alone cannot choose scene inverse-OETF versus a reference-display EOTF.
 The optional LuminanceSignal adapter adds explicitly declared display-light
 PQ/HLG/nit units. Legacy two-field relative signals retain their exact v1
-semantics. No ICC, chromatic adaptation or HDR display acceptance is implied.
+semantics. Explicit whites add Bradford adaptation; ICC and HDR display
+acceptance require separate handling.
 Only an explicitly requested HDR output domain policy can clamp RGB.
 
 Primary xy coordinates: ITU-R BT.709-6, BT.2020-2 and W3C CSS Color 4
@@ -20,8 +21,10 @@ from .errors import AppError
 PROTOCOL='explicit-D65-relative-RGB-float32-v1'
 PRIMARIES={'bt709':((.640,.330),(.300,.600),(.150,.060)),
            'display-p3':((.680,.320),(.265,.690),(.150,.060)),
-           'bt2020':((.708,.292),(.170,.797),(.131,.046))}
-TRANSFERS={'linear','srgb','bt709-oetf','gamma22','gamma24'}
+           'bt2020':((.708,.292),(.170,.797),(.131,.046)),
+           'prophoto-rgb':((.734699,.265301),(.159597,.840403),(.036598,.000105)),
+           'aces-ap1':((.713,.293),(.165,.830),(.128,.044))}
+TRANSFERS={'linear','srgb','bt709-oetf','gamma22','gamma24','prophoto-rgb'}
 MAX_DIMENSION=16384
 MAX_PIXELS=16777216
 MAX_WORKING_BYTES=768*1024*1024
@@ -36,15 +39,16 @@ class ColorSignal:
 
     def __post_init__(self):
         if not isinstance(self.primaries,str) or self.primaries not in PRIMARIES:
-            raise error('SIGNAL','RGB基色须明确且属于支持的D65集合')
+            raise error('SIGNAL','RGB基色须明确且属于支持的集合')
         if not isinstance(self.transfer,str) or self.transfer not in TRANSFERS:
             raise error('SIGNAL','须明确选择相对RGB传递解释；禁止由色彩标签猜测')
 
-def _rgb_to_xyz(primaries):
+def _rgb_to_xyz(primaries,white_xy=None):
+    from .float_chromatic import white_for_primaries,xyz_white
     coordinates=np.array(PRIMARIES[primaries],dtype=np.float64)
     x,y=coordinates[:,0],coordinates[:,1]
     columns=np.stack((x/y,np.ones(3),(1-x-y)/y))
-    white=np.array([.3127/.3290,1.,(1-.3127-.3290)/.3290])
+    white=xyz_white(white_for_primaries(primaries) if white_xy is None else white_xy)
     scales=np.linalg.solve(columns,white)
     return columns*scales
 
@@ -55,6 +59,8 @@ def _to_linear(values,transfer):
         return np.where(absolute<=.04045,values/12.92,sign*((absolute+.055)/1.055)**2.4)
     if transfer=='bt709-oetf':
         return np.where(absolute<.081,values/4.5,sign*((absolute+.099)/1.099)**(1/.45))
+    if transfer=='prophoto-rgb':
+        return np.where(absolute<=1/32,values/16,sign*absolute**1.8)
     return sign*absolute**(2.2 if transfer=='gamma22' else 2.4)
 
 def _from_linear(values,transfer):
@@ -64,13 +70,15 @@ def _from_linear(values,transfer):
         return np.where(absolute<=.0031308,values*12.92,sign*(1.055*absolute**(1/2.4)-.055))
     if transfer=='bt709-oetf':
         return np.where(absolute<.018,values*4.5,sign*(1.099*absolute**.45-.099))
+    if transfer=='prophoto-rgb':
+        return np.where(absolute<1/512,values*16,sign*absolute**(1/1.8))
     return sign*absolute**(1/(2.2 if transfer=='gamma22' else 2.4))
 
 def convert_rgba(source,source_signal,target_signal,*,tile_pixels=65536,
                  max_working_bytes=MAX_WORKING_BYTES,cancel=None,hdr_range_policy='reject',hdr_input_range_policy='reject'):
     """Return owned straight RGBA Float32 with explicit signal metadata.
 
-    Source inverse transfer -> linear-light D65 gamut matrix -> target transfer.
+    Source inverse transfer -> explicit-white linear XYZ/adaptation -> target transfer.
     Identical signals use a byte-exact copy after validation. Finite RGB may be
     negative or above one. Relative white is 1; matching physical white/nits is
     a caller contract and is not inferred or managed here.
@@ -97,12 +105,11 @@ def convert_rgba(source,source_signal,target_signal,*,tile_pixels=65536,
     tile_pixels=int(tile_pixels);estimated=source.nbytes+pixels*16+min(tile_pixels,pixels)*(512 if absolute else 384)+4096
     if estimated>max_working_bytes:raise error('BUDGET','相对RGB转换超过工作区估算')
     source_rows=source.reshape(-1,4);output=np.empty_like(source_rows)
-    same=source_signal==target_signal;matrix=np.eye(3,dtype=np.float64)
+    from .float_chromatic import conversion,equivalent
+    same=equivalent(source_signal,target_signal);matrix,chromatic=conversion(source_signal,target_signal)
     unit_scale=(source_signal.reference_white_nits/target_signal.reference_white_nits
                 if has_luminance(source_signal) and has_luminance(target_signal) else 1.)
     hdr_clipped=0;hdr_input_clipped=0
-    if source_signal.primaries!=target_signal.primaries:
-        matrix=np.linalg.solve(_rgb_to_xyz(target_signal.primaries),_rgb_to_xyz(source_signal.primaries))
     for start in range(0,pixels,tile_pixels):
         poll();value=source_rows[start:start+tile_pixels];out=output[start:start+len(value)]
         if not np.isfinite(value).all() or np.any(value[:,3]<0) or np.any(value[:,3]>1):
@@ -154,4 +161,9 @@ def convert_rgba(source,source_signal,target_signal,*,tile_pixels=65536,
             RGB_clipping='explicit-HDR-input-or-output-domain-only' if hdr_clipped or hdr_input_clipped else 'none',
             HLG_black_level_nits=0,HLG_RGB_coupled_OOTF=True,
             negative_extension='legacy relative transfers only; standard PQ/HLG domains enforced')
+    if chromatic['extended']:
+        metadata.update(base_protocol=metadata['protocol'],protocol='explicit-white-Bradford-float32-v1',
+            source_signal=vars(source_signal),target_signal=vars(target_signal),
+            chromatic_adaptation=chromatic['chromatic_adaptation'],chromatic_transform=chromatic,
+            white='explicit RGB reference white; Bradford on linear XYZ; no automatic physical illuminant estimation')
     return output.reshape(height,width,4),metadata

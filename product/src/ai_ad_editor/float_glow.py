@@ -94,9 +94,12 @@ def validate_glow(effect, *, duration_tick=None):
     return []
 
 
-def luma_coefficients(primaries):
+def luma_coefficients(primaries,white_xy=None):
     ColorSignal(primaries, 'linear')
-    return tuple(float(v) for v in _rgb_to_xyz(primaries)[1])
+    if white_xy is not None:
+        from .float_chromatic import validate_RGB_white
+        validate_RGB_white(primaries,white_xy)
+    return tuple(float(v) for v in _rgb_to_xyz(primaries,white_xy)[1])
 
 
 def kernel(radius):
@@ -182,11 +185,13 @@ def apply_glow(surface, plan, author_tick, *, working_signal, retained_table_byt
     if plan.effect_type == 'halation' and values['radius'] == 0 and values['core_suppression'] == 1:
         active = False
     used_gpu = bool(active and gpu is not None and gpu.active)
-    coefficients = luma_coefficients(working_signal.primaries)
+    white_xy=getattr(working_signal,'white_xy',None)
+    coefficients = luma_coefficients(working_signal.primaries,white_xy)
     if not active:
         result = surface.copy()
     elif used_gpu:
-        result = gpu.glow(surface, plan.effect_type, values, plan.edge, working_signal.primaries)
+        result = gpu.glow(surface, plan.effect_type, values, plan.edge, working_signal.primaries,
+                          **({'white_xy':list(white_xy)} if white_xy is not None else {}))
     else:
         bright = np.zeros_like(surface)
         flat = bright.reshape(-1, 4)
@@ -219,7 +224,7 @@ def apply_glow(surface, plan, author_tick, *, working_signal, retained_table_byt
             raise error('OVERFLOW', '高光扩散产生非有限Float32像素')
     return result, dict(protocol=PROTOCOL, effect_type=plan.effect_type, author_tick=str(author_tick),
         parameters=values, edge=plan.edge, alpha='input-bits-preserved', zero_alpha_RGB='zero-when-active',
-        bright_pass='coverage-weighted-positive-linear-RGB;relative-D65-luminance;soft-knee',
+        bright_pass='coverage-weighted-positive-linear-RGB;declared-working-white-luminance;soft-knee',
         luma_coefficients=list(coefficients), working_primaries=working_signal.primaries,
         kernel='normalized-three-sigma-separable-Gaussian-FIR', sigma_source_pixels=values['radius'],
         support_radius_pixels=support, taps_per_axis=len(weights), planned_neighbor_samples=visits,

@@ -14,7 +14,7 @@ BT.2020 NCL 10-bit 编码及可选 SDR 显示映射。源素材、合成工作�
 
 | 字段 | 解释与约束 |
 |---|---|
-| `primaries` | D65 `bt709`、`display-p3`、`bt2020`；PQ/HLG 当前要求 `bt2020` |
+| `primaries` | `bt709`、`display-p3`、`bt2020` 默认D65；CLI0.1.45另支持ProPhoto D50/AP1 D60和明确white_xy，见[白点适应](CHROMATIC_ADAPTATION.md)；PQ/HLG编码端要求BT.2020/D65 |
 | `transfer` | 原有 `linear`、`srgb`、`bt709-oetf`、`gamma22`、`gamma24`，另有 `pq-st2084`、`hlg-bt2100` |
 | `reference_white_nits` | 明确有限数值 0.01–10000；HDR 工程的所有视觉源、工作信号与输出均须声明 |
 | `display_peak_nits` | HLG 必须声明，100–10000 cd/m²；其他传递函数不用此项 |
@@ -35,7 +35,7 @@ HLG 用同一标准表 5 的逆 OETF 和 RGB 联动 OOTF，明确峰值与 syste
 ## 实际处理顺序
 
 原生帧与 PTS → 明确 YCbCr 矩阵/量程/采样位置（若需要）→ PQ/HLG 解码 →
-参考白单位换算与 D65 基色矩阵 → Float32 显示线性光剪辑、效果与合成 →
+参考白亮度单位换算、RGB基色矩阵与明确白点Bradford适应 → Float32 显示线性光剪辑、效果与合成 →
 可选 SDR 显示映射 → 输出传递函数 → 明确的整数边界 → 10-bit 编码。
 
 数值转换按块使用 Float64 计算，并写回 Float32 工作表面；其算子预算与取消检查沿用
@@ -153,3 +153,5 @@ alongside the declared mapping and keep the original HDR master available.
 SDR output reference white. Neither operation establishes HDR monitor acceptance,
 ICC support, dynamic metadata or full product parity. Optional declared HDR10
 static metadata is documented in [HDR10 metadata](HDR_METADATA.md).
+
+CLI0.1.45: [explicit reference-white conversion](CHROMATIC_ADAPTATION.md) extends source/linear working/effect signals to ProPhoto D50,AP1 D60 and explicit xy. BT.2100 encoded signals/output remain D65; this does not parse ICC or provide full ACES rendering.

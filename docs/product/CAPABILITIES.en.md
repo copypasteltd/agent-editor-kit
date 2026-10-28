@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.44 / alpha.4-local.42 / r45 kit · 1 Skill / 17 modules / 83 files.**
+**CLI0.1.45 / alpha.4-local.43 / r46 kit · 1 Skill / 17 modules / 84 files.**
 
-Added **HDR10 mastering-display and MaxCLL/MaxFALL static metadata**: exact xy/nit units, actual HEVC SEI writing and decoded-frame verification before publication; editable packages, GPU composition and separate SDR viewing copies.
+Added **Bradford reference-white adaptation, ProPhoto RGB D50 and linear ACES AP1 D60** across sources, working RGB, effect signals, raw surfaces, actual previews and editable packages. Glow luminance follows the declared white; existing D65 behavior is retained.
 
-[HDR10 static metadata workflow](HDR_METADATA.md)
+[Explicit-white workflow](CHROMATIC_ADAPTATION.md)
 
 <!-- /community-current -->
 
@@ -84,6 +84,7 @@ Added **HDR10 mastering-display and MaxCLL/MaxFALL static metadata**: exact xy/n
 | F68 | CUDA neural interpolation / slow motion | Native CFR/VFR,all original RGBA anchors,premultiplied alpha,complete PCM;factor2..8,cut holds,linked slow-motion tracks,recipes/packages. | `interpolate adapter; interpolate generate` | Explicit RIFE4.25 safetensors/native CUDA Python;no CPU fallback;difficult motion/occlusion/natural-quality/HDR acceptance open. |
 | F69 | CUDA speech denoising | Native sample clock/mono-stereo,actual model,dry/wet attenuation,editable audio,portable recipes/packages,owned cancel/rollback. | `audio enhancement-adapter; audio enhance` | Fixed DF3 safetensors/existing native CUDA;segment state resets,CPU frontend;full dereverb/music fidelity open. |
 | F70 | HDR10 static metadata delivery | Mastering RGB/white xy,min/max nits,MaxCLL/MaxFALL → actual HEVC SEI and decoded verification receipt. | `settings.output.hdr10; validate; render; convert` | Explicit native PQ/BT2020 NCL limited range,libx265/10bit420/MP4 or MKV; author declarations,prefix32-packet verification. |
+| F71 | Explicit-white and wide-gamut working configurations | ProPhoto D50/AP1 D60/explicit xy → linear XYZ Bradford,nit scaling,actual D65 previews and editable packages. | `native_chromatic_adaptation; render; preview; surface export; convert` | CPU color math,working-white-aware GPU glow; no ICC parsing/full ACES/automatic white balance. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -112,6 +113,7 @@ Added **HDR10 mastering-display and MaxCLL/MaxFALL static metadata**: exact xy/n
 | S23 | RIFE CUDA interpolation | Fixed five-stage IFNet/158 FP32 inference tensors,local artifact hashes,actual CUDA;no model-directory code/Pickle. | Existing native Torch/safetensors and MIT model evidence;no installation. | `interpolate adapter; interpolate generate` | Native interval subdivision,complete frame/PCM proofs;RGB threshold is not semantic cuts;quality review required. |
 | S24 | DeepFilterNet3 speech service | Fixed133-tensor48kHz full-band model;CUDA neural graph,NumPy CPU frontend,FFmpeg resampling. | Explicit local weights/native Torch/safetensors and MIT OR Apache-2.0 evidence. | `audio enhancement-adapter; audio enhance` | 8..96kHz,mono/stereo,source≤1800s/selection≤600s;no downloads,installs or CPU fallback. |
 | S25 | x265 static HDR10 SEI service | Fixed encoder grammar plus exact rational checks of actual native ffprobe decoded side data before publication. | Existing native FFmpeg/libx265/ffprobe; no new model. | `render` | CPU encoding; observed prefix,not whole-movie certification or peak measurement. |
+| S26 | Explicit-white RGB conversion service | Native tiled Float64 math/Float32 surfaces,ProPhoto piecewise transfer,Bradford matrices and white geometry checks. | Existing NumPy; no new model/service. | `render; preview; surface` | D65 encoded delivery,alpha bits retained; no ICC or scene-illuminant inference. |
 
 ## Complete installed capability fields
 
@@ -4985,7 +4987,7 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
     "queue"
   ],
   "selection": "ordinary_clip_effects_or_selected_sequence_adjustments",
-  "signal": "explicit_linear_working_RGB;D65_bt709_display_p3_or_bt2020_luminance",
+  "signal": "explicit_linear_working_RGB;declared_reference_white_aware_luminance",
   "highlight_extraction": "positive_RGB_coverage_weighted_soft_knee_no_hidden_RGB_light",
   "spread": "normalized_three_sigma_separable_Gaussian_FIR;Float32_per_stage;binary64_accumulation",
   "halation": "nonnegative_blurred_light_minus_editable_bright_core;linear_RGB_tint",
@@ -5028,7 +5030,7 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
     "pq-st2084",
     "hlg-bt2100"
   ],
-  "working": "display-linear Float32 D65 RGB; declared reference_white_nits per signal",
+  "working": "display-linear Float32 RGB; declared reference_white_nits; explicit reference whites use native_chromatic_adaptation",
   "features": [
     "PQ_display_EOTF_and_inverse_10000_nits",
     "HLG_RGB_coupled_OOTF_and_inverse",
@@ -5046,7 +5048,8 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
     "only_BT2020_PQ_HLG_native_ten_bit_nonalpha_delivery",
     "no_inferred_luminance_or_metadata_or_automatic_tone_map",
     "explicit_HDR10_static_declarations_use_native_hdr10_static_metadata_capability",
-    "no_ICC_chromatic_adaptation_dynamic_metadata_or_DolbyVision",
+    "explicit_Bradford_whites_use_native_chromatic_adaptation_capability",
+    "no_ICC_dynamic_metadata_or_DolbyVision",
     "HLG_ideal_zero_black_only_explicit_peak_and_gamma",
     "SDR_trim_is_explicit_creative_Reinhard_not_BT2390_or_perceptual_gamut_mapping",
     "natural_HDR_monitor_long_form_and_full_CapCut_acceptance_pending"
@@ -5284,3 +5287,46 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 ```
 
 [CLI0.1.44 exact installed capabilities](hdr-metadata-capabilities-cli-0.1.44.json).
+
+### `native_chromatic_adaptation`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "explicit-white-Bradford-float32-v1",
+  "selection": "explicit white_xy in native RGB signals; native D50 ProPhoto RGB and D60 ACES AP1",
+  "commands": [
+    "validate",
+    "render",
+    "preview frame",
+    "preview range",
+    "surface export",
+    "surface inspect",
+    "convert export",
+    "convert import"
+  ],
+  "features": [
+    "CIE1931_xy_reference_whites",
+    "Bradford_cone_scaling_in_linear_XYZ",
+    "D50_ProPhoto_primaries_and_signed_piecewise_transfer",
+    "D60_ACES_AP1_linear_configuration",
+    "source_working_effect_and_output_signal_adaptation",
+    "explicit_reference_nit_scaling",
+    "bit_preserved_alpha_and_no_implicit_RGB_clipping",
+    "owned_tiled_Float32_conversion",
+    "working_white_aware_CPU_and_OpenCL_Bloom_Halation",
+    "native_D65_legacy_matrix_and_transfer_behavior",
+    "editable_project_package_declarations"
+  ],
+  "limits": [
+    "conversion_math_CPU_composition_and_glow_can_use_OpenCL",
+    "BT709_and_BT2100_delivery_white_remains_D65",
+    "RGB_reference_white_not_automatic_physical_illuminant_detection_or_white_balance",
+    "no_ICC_profile_parsing_or_embedded_profile_inference",
+    "ACES_AP1_linear_not_complete_ACES_IDT_RRT_ODT_or_DRT",
+    "no_perceptual_gamut_mapping_or_HDR_monitor_acceptance"
+  ]
+}
+```
+
+[CLI0.1.45 exact installed capabilities](chromatic-capabilities-cli-0.1.45.json).

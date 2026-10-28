@@ -1,0 +1,20 @@
+[
+  {
+    "name": "independent-entire-first-surface",
+    "ok": true,
+    "pixels": 230400,
+    "maximum_error": 2.979730118202184e-08
+  },
+  {
+    "name": "edited-actual-GPU",
+    "ok": true,
+    "glow_calls": 48
+  },
+  {
+    "name": "actual-encoded-neutral-and-colour-patches",
+    "ok": false,
+    "patch_count": 8,
+    "frames": 48,
+    "maximum_luma_code_error": 74.54539575283394
+  }
+]

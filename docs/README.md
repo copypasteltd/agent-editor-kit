@@ -1,6 +1,8 @@
 # agent editor kit 文档 / Documentation
 
-Current local / 当前本地 / 目前本地：**CLI0.1.44 / local.42 / r45 kit** · [HDR10 static SEI](product/HDR_METADATA.md) · [Install](releases/CLI_0.1.44_LOCAL.md) · [C54](product/CASES.md#c54-native-hdr10-metadata).
+Current local / 当前本地 / 目前本地：**CLI0.1.45 / local.43 / r46 kit** · [White adaptation](product/CHROMATIC_ADAPTATION.md) · [Install](releases/CLI_0.1.45_LOCAL.md) · [C55](product/CASES.md#c55-native-chromatic-adaptation).
+
+Historical / 历史 / 歷史：**CLI0.1.44 / local.42 / r45 kit** · [HDR10 static SEI](product/HDR_METADATA.md) · [Install](releases/CLI_0.1.44_LOCAL.md) · [C54](product/CASES.md#c54-native-hdr10-metadata).
 
 Historical / 历史 / 歷史：**CLI0.1.43 / local.41 / r44 kit** · [CUDA speech enhancement / 对白增强 / 對白增強](product/SPEECH_ENHANCEMENT.md) · [Install](releases/CLI_0.1.43_LOCAL.md) · [C53](product/CASES.md#c53-native-speech-enhancement).
 

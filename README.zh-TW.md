@@ -2,6 +2,8 @@
 
 **CLI53 完整離線包已建置並成功安裝。** 1,704 個包內程式碼／資源經嚴格複用校驗；安裝版 280 個程式碼模組及原生資源位元組一致，90 項能力可列舉，實際隨包 OCIO DLL 載入與轉換核驗通過。最終原始碼及安裝版完整回歸仍在進行，本機註冊 Skill 暫維持 CLI52。[安裝位置、使用與驗收命令](docs/validation/ACES离线交付进度_2026-10-29.md)。
 
+新版統一 Skill 候選入口已實際通過 7 次 CLI53 呼叫（含原生設定、PNG16 預覽和逐幀測量），維持 1 個入口／17 個模組／92 個檔案；原註冊入口與設定未改變。完整相容性回歸後再註冊新版。
+
 <!-- aces-timeline-source53 -->
 
 **原始碼 CLI0.1.53：ACES 時間軸與預覽已接通。** 正式交付、逐幀測量、單次顯示轉換後的線性縮圖，以及 HDR 母版的獨立 SDR 視圖；18 項專項與 46 項測量／Schema 回歸分別通過。[使用流程](docs/product/ACES_TIMELINE.md) · [C65：影片、GIF、PNG16、專案包](docs/product/CASES.md#c65-source-aces-timeline)。目前安裝 Skill 仍為 CLI52；ACES 在 CPU 執行，新安裝版完整回歸、Skill 切換與完整目標仍待完成。
@@ -1769,6 +1771,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R372 | Frozen installed metering / post-codec / Schema acceptance | 46 tests passed; zero failures/errors/skips; isolated/no-site runtime and exact frozen files | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-meter-r1/verification.json) | Separate group; not natural HDR, physical-monitor or full-product acceptance |
 | R373 | C66 actual isolated installed ACES media and project replay | Full589824-byte YUV /307200-byte PCM equal across source case, installed output and replay; PNG16 decode equal | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-case-r1/verification.json) | Installed CLI53; registered Skill unchanged; no new model forwards |
 | R374 | C66 actual viewing-media verification | GIF288x384 / MP4 48x64; both8 frames/800ms; static PNG viewed | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-case-media-r1/verification.json) | Numeric chart; no continuous human viewing/listening, natural quality or physical monitor acceptance |
+| R375 | Actual unregistered CLI53 unified Skill candidate | 7 real pinned-launcher calls; PNG file byte-equal to C66; readonly all-frame measurement; 92 Skill files | [raw](docs/validation/evidence/aces-delivery-20261029-r1/candidate-skill-r1/verification.json) | One entry /17 modules; actual registered Skill and runtime unchanged; broad compatibility pending |
 
 ## 當前邊界與開發方向
 

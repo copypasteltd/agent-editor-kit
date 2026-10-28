@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-28T22:58:44.304519+00:00",
+  "at_utc": "2026-10-28T23:05:17.276535+00:00",
   "goal": "active_not_complete",
   "source_cli": "0.1.53",
   "independent_installed_cli": "0.1.53",
@@ -15,7 +15,9 @@
     "installed_case": "C66 complete YUV/PCM/PNG16 and editable replay passed",
     "GIF_MP4_frames": 8,
     "GIF_MP4_duration_ms": 800,
-    "candidate_skill_structure": "92 files, one entry/17 modules; unregistered"
+    "candidate_skill_structure": "92 files, one entry/17 modules; unregistered",
+    "candidate_skill_behavior": "7 actual pinned CLI53 calls passed; one entry/17 modules/92 files; unregistered; live namespace/runtime/junction unchanged",
+    "future_kit_workflow_documents": "Packager includes ACES_NATIVE.md and ACES_TIMELINE.md; new kit not yet built"
   },
   "historical": {
     "compat_r3": "373 tests with no failures/errors/skips; frozen_equal=false (hdr_measure.py); not final-source acceptance",

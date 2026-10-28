@@ -2,6 +2,8 @@
 
 **The complete CLI53 offline bundle is built and installed.** Strict reuse checked 1,704 package files; all 280 installed code modules and native resources match source bytes. Version/capabilities report CLI53 and 90 capabilities; actual bundled OCIO DLL loading and native transformation passed. Final-source and installed regressions remain running; the registered Skill stays CLI52. [Installation location, usage and acceptance commands](docs/validation/ACES离线交付进度_2026-10-29.md).
 
+The unified Skill candidate passed seven actual CLI53 calls, including native configuration, PNG16 preview and all-frame metering. It retains one entry, 17 modules and 92 files; live discovery and configuration remain unchanged. Registration awaits the complete compatibility gates.
+
 <!-- aces-timeline-source53 -->
 
 **Source CLI0.1.53 connects ACES rendering and previews.** Formal delivery, all-frame metering, one display transform before display-linear resizing, and a separate SDR view for HDR masters; 18 specialized tests and 46 metering/Schema regressions passed separately. [Workflow](docs/product/ACES_TIMELINE.md) · [C65: video, GIF, PNG16, editable project](docs/product/CASES.md#c65-source-aces-timeline). Installed Skill remains CLI52. ACES runs on CPU; installed behavioral acceptance, Skill activation and full parity remain pending.
@@ -1771,6 +1773,7 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R372 | Frozen installed metering / post-codec / Schema acceptance | 46 tests passed; zero failures/errors/skips; isolated/no-site runtime and exact frozen files | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-meter-r1/verification.json) | Separate group; not natural HDR, physical-monitor or full-product acceptance |
 | R373 | C66 actual isolated installed ACES media and project replay | Full589824-byte YUV /307200-byte PCM equal across source case, installed output and replay; PNG16 decode equal | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-case-r1/verification.json) | Installed CLI53; registered Skill unchanged; no new model forwards |
 | R374 | C66 actual viewing-media verification | GIF288x384 / MP4 48x64; both8 frames/800ms; static PNG viewed | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-case-media-r1/verification.json) | Numeric chart; no continuous human viewing/listening, natural quality or physical monitor acceptance |
+| R375 | Actual unregistered CLI53 unified Skill candidate | 7 real pinned-launcher calls; PNG file byte-equal to C66; readonly all-frame measurement; 92 Skill files | [raw](docs/validation/evidence/aces-delivery-20261029-r1/candidate-skill-r1/verification.json) | One entry /17 modules; actual registered Skill and runtime unchanged; broad compatibility pending |
 
 ## Current limits and development direction
 

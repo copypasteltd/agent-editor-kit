@@ -65,7 +65,7 @@ def main():
 
 实际正式渲染派发10次GPU gamut_map，完整4,976,640 byte YUV及384,000 byte PCM与旧独立标量参考已验的CPU成片、再次GPU工程包重放一致；RGB16编码器输入摘要等于独立参考，frame9 PNG16最大误差0code。预览/导出不改作者工程；正常render仅追加输出与变更日志、更新时间，作者图其余字段保持。
 
-r1中断未形成完整核验，不作为通过证据；确认原进程已停止后执行r2。r2完整18条子调用均留存退出码及摘要。静态PNG已查看，GIF/MP4帧数与时长程序化核验；没有连续人工观片、听审、自然HDR或物理监看验收。
+r1、r2最终均通过，选用r2演示且只计一个案例能力；观察暂缺终态不代表中断。静态PNG已查看，GIF/MP4帧数与时长程序化核验；没有连续人工观片、听审、自然HDR或物理监看验收。
 
 繁體：完整CPU/GPU音畫與專案重播核對；源碼、已安裝Skill與公開發行分開。English: Full decoded CPU/GPU video/audio and editable-package replay were checked; this source execution is not registered-Skill or physical-HDR acceptance.
 ''';write(path,s)
@@ -83,7 +83,7 @@ r1中断未形成完整核验，不作为通过证据；确认原进程已停止
 
 随机测试四种曝光、66049像素、负RGB分量及alpha特殊位；计数/输出对CPU核对。负CIE Y工作进程拒绝、不回退；错误策略派发前拒绝；取消关闭工作进程/管道/共享句柄。4K独立参考采用独立xy矩阵与48步标量搜索，产品采用24步；最大线性RGB误差1.54e-7，CPU/GPU最大差1.78e-15。18.10s CPU / 1.74s GPU另加0.94s启动只是一轮非独占算子测量。
 
-源码source-r1初次6项专项属于早期能力元数据；最终source-r2的70项与当前278模块摘要逐个核对。C63 r1未完成留存，r2才为成功证据，不能把中断写成产品故障或通过。
+源码source-r1初次6项专项属于早期能力元数据；最终source-r2的70项与当前278模块摘要逐个核对。C63 r1与r2最终均通过，只计一个案例能力；以实际终态收据为准。
 
 | 编号 | 待完成 | 原目标 |
 | --- | --- | --- |

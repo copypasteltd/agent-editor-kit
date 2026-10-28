@@ -23,6 +23,8 @@ Source CLI52 adds a real GPU luminance shoulder and OKLab chroma reduction; sign
 
 ![Actual GPU SDR preview](docs/assets/gpu-gamut-20261029-r2/preview.gif)
 
+The candidate installation passed its separate 70-test group. Source and installed 352-test compatibility runs are still active; the unified Skill has not switched.
+
 <!-- /gpu-gamut-source-current -->
 
 <!-- oklab-installed-current -->
@@ -1718,6 +1720,7 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R355 | CLI52 native GPU control lifecycle | 12/12; no skipped tests | [raw](docs/validation/evidence/gpu-gamut-20261029-r1/gpu-control-r1/verification.json) | owned worker/pipes/shared handles; not GPU instruction preemption |
 | R356 | Actual 3840×2160 GPU colour operator | all 8,294,400 pixels vs independent reference | [raw](docs/validation/evidence/gpu-gamut-20261029-r1/4k-r1/verification.json) | one surface; not encoded 4K, real-time or long-form |
 | R357 | C63 source GPU full encoded media/package replay | 10 frames; 4,976,640 YUV bytes; 384,000 PCM bytes equal; PNG16 error 0 | [raw](docs/validation/evidence/gpu-gamut-20261029-r1/case-r2/verification.json) | source CLI52, synthetic SDR chart; installed Skill remains CLI51 |
+| R358 | CLI52 native candidate installed HDR/GPU/measurement | 70/70; no failures/errors/skips; all 278 source files frozen | [raw](docs/validation/evidence/gpu-gamut-20261029-r1/installed-measure-r1/verification.json) | independent candidate installation; registered Skill remains CLI51; installed compatibility pending |
 
 ## Current limits and development direction
 

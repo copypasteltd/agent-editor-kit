@@ -1,8 +1,8 @@
 {
-  "status": "incomplete",
-  "scope": "source-case-harness",
-  "complete_verification_receipt": false,
-  "termination_cause": "not established",
-  "not_counted_as_passed": true,
-  "superseded_by": "case-r2"
+  "status": "passed",
+  "complete_verification_receipt": true,
+  "successful_calls": 18,
+  "source_files": 278,
+  "correction": "Earlier incomplete observation was wrongly documented as interrupted; actual terminal receipt proves passed. Case r2 is a second execution of the same case, not a separate functional acceptance.",
+  "counted_as_one_case_with": "case-r2"
 }

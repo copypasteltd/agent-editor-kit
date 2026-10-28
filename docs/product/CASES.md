@@ -1167,6 +1167,6 @@ English: Real registered-Skill execution, full-frame YUV and complete PCM replay
 
 实际正式渲染派发10次GPU gamut_map，完整4,976,640 byte YUV及384,000 byte PCM与旧独立标量参考已验的CPU成片、再次GPU工程包重放一致；RGB16编码器输入摘要等于独立参考，frame9 PNG16最大误差0code。预览/导出不改作者工程；正常render仅追加输出与变更日志、更新时间，作者图其余字段保持。
 
-r1中断未形成完整核验，不作为通过证据；确认原进程已停止后执行r2。r2完整18条子调用均留存退出码及摘要。静态PNG已查看，GIF/MP4帧数与时长程序化核验；没有连续人工观片、听审、自然HDR或物理监看验收。
+r1与r2均有完整通过收据、18条成功子调用，冻结的278个产品模块一致。早期观察r1时尚未见完整收据，后来误记为中断；终态复核后已纠正，不把观察暂缺视作运行失败，也不将两次运行重复计为不同功能。页面选用r2的媒体与核验。静态PNG已查看，GIF/MP4帧数与时长程序化核验；没有连续人工观片、听审、自然HDR或物理监看验收。
 
 繁體：完整CPU/GPU音畫與專案重播核對；源碼、已安裝Skill與公開發行分開。English: Full decoded CPU/GPU video/audio and editable-package replay were checked; this source execution is not registered-Skill or physical-HDR acceptance.

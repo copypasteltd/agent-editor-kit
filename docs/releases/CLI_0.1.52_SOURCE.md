@@ -13,3 +13,5 @@
 已解压、校验并独立安装在 `local/agent-ffmpeg/v0.1.0-alpha.4-local.50/final-r1/installed`；通过 `-I -S` 安装入口核对实际版本52、89项能力与全部278个源码文件一致。见[实际构建/安装收据](../validation/evidence/gpu-gamut-20261029-r1/installation-final-r1/verification.json)。这只是候选安装，**尚未替换已注册CLI51 Skill**；完整安装专项与兼容回归仍须读取终态。
 
 繁體：源碼GPU路徑已實作並留存真實音畫核驗，安裝版與新版Skill交付另行驗收。English: Source GPU mapping is implemented and checked against real media and independent references; installed runtime and Skill delivery remain a separate gate.
+
+候选安装版专项已完成：[70/70通过、无失败/跳过](../validation/evidence/gpu-gamut-20261029-r1/installed-measure-r1/verification.json)。安装版352项兼容组仍在运行，统一Skill保持51。

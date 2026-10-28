@@ -103,5 +103,5 @@ def main():
                 complete_independent_RGB16_input_equal=True,independent_RGB16_oracle_sha256=oracle['RGB16_sha256'],frame9_RGBA16_maximum_code_error=png_error,
                 actual_preview_inherits_delivery_mapping=True,author_graph_unchanged=True,preview_project_bytes_unchanged=True,render_output_ledger_appended=True,new_renders=2,new_model_forwards=0,
                 GIF_frames=10,GIF_duration_ms=1000,MP4_decoded_frames=10,namespace_manifest_sha256=pin,public=str(public),calls=len(calls))
-    save(out/'verification.json',result);print(json.dumps(result),flush=True)
+    save(out/'verification.json',result);print(json.dumps({k:v for k,v in result.items() if k!='source_files'}),flush=True)
 if __name__=='__main__':main()

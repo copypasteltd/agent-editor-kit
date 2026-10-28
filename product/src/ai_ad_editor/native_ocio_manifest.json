@@ -1,0 +1,33 @@
+{
+  "format": "agent-native-ocio-runtime-v1",
+  "version": "2.6.0",
+  "target": "cp313-win_amd64",
+  "wheel": "opencolorio-2.6.0-cp313-cp313-win_amd64.whl",
+  "wheel_sha256": "9f389e858b7cb075a4fa6a0ab893b2cecd0267ac582d6d9992c755d69209a80c",
+  "source_archive": "opencolorio-2.6.0.tar.gz",
+  "source_sha256": "b124f4573e425e17764e64d1fdac51a956e066b905c8a7f8712410b3103d2ef0",
+  "source": "https://pypi.org/project/opencolorio/2.6.0/",
+  "files": [
+    {
+      "path": "native_ocio/LICENSE.txt",
+      "bytes": 1511,
+      "sha256": "8850b0c83cd41d26ad0e080861d47ee00afb685386a459a1cbe8c347555621a7"
+    },
+    {
+      "path": "native_ocio/OpenColorIO_2_6.dll",
+      "bytes": 5341696,
+      "sha256": "fdab9f2171bea9ec4d1b766534d50edaa95883e80767f72ce27fa646aeb13320"
+    },
+    {
+      "path": "native_ocio/PyOpenColorIO.pyd",
+      "bytes": 2498048,
+      "sha256": "7a51078f32a656fa147567c356a47cdadc7ca5ca29ef439a352b2f747af10593"
+    },
+    {
+      "path": "native_ocio/THIRD-PARTY.md",
+      "bytes": 10893,
+      "sha256": "2e0df1b675fcd133b78360b4d40539518ea1c2081be68e91a456fb9db51c5009"
+    }
+  ],
+  "gui_tools_included": false
+}

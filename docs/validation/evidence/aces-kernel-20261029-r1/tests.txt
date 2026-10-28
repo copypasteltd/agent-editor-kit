@@ -1,0 +1,14 @@
+test_cancel_does_not_count_partial_frame (test_ocio_runtime.OCIORuntimeTests.test_cancel_does_not_count_partial_frame) ... ok
+test_closed_processor_rejects_work (test_ocio_runtime.OCIORuntimeTests.test_closed_processor_rejects_work) ... ok
+test_exposure_before_display_transform (test_ocio_runtime.OCIORuntimeTests.test_exposure_before_display_transform) ... ok
+test_invalid_configuration (test_ocio_runtime.OCIORuntimeTests.test_invalid_configuration) ... ok
+test_invalid_surfaces_and_budgets (test_ocio_runtime.OCIORuntimeTests.test_invalid_surfaces_and_budgets) ... ok
+test_native_processor_equivalence (test_ocio_runtime.OCIORuntimeTests.test_native_processor_equivalence) ... ok
+test_runtime_file_hashes (test_ocio_runtime.OCIORuntimeTests.test_runtime_file_hashes) ... ok
+test_three_real_configs (test_ocio_runtime.OCIORuntimeTests.test_three_real_configs) ... ok
+test_tile_alpha_and_input_ownership (test_ocio_runtime.OCIORuntimeTests.test_tile_alpha_and_input_ownership) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.047s
+
+OK

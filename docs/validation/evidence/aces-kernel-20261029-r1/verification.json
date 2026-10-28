@@ -1,0 +1,135 @@
+{
+  "status": "passed",
+  "scope": "source-kernel-and-discovery-only",
+  "tests": 9,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "official_wheel_sha256": "9f389e858b7cb075a4fa6a0ab893b2cecd0267ac582d6d9992c755d69209a80c",
+  "reference_scope": "independent process and original wheel; same upstream algorithm, not independent colour science",
+  "comparisons": [
+    {
+      "config": "aces-1.3",
+      "max_absolute_error": 0.0,
+      "upstream": {
+        "version": "2.6.0",
+        "module": "E:\\dev\\sandbox\\AI广告剪辑\\local\\upstream-ocio-hy1o7b8y\\PyOpenColorIO\\__init__.py",
+        "product_imported": false
+      },
+      "metadata": {
+        "protocol": "native-ocio-aces-display-float32-v1",
+        "version": "2.6.0",
+        "selection": {
+          "config": "aces-1.3",
+          "display": "sRGB - Display",
+          "view": "ACES 1.0 - SDR Video",
+          "exposure_stops": 0.0,
+          "input_interpretation": "scene-linear-ACEScg"
+        },
+        "config_uri": "ocio://studio-config-v2.2.0_aces-v1.3_ocio-v2.4",
+        "config_sha256": "df4526820a4c3c45c587b7d41306d3e2b4eb81bf2a1b1c8580237dc29133bd22",
+        "processor_cache_id": "e7c55134-201c-ed95-6270-e5f6c22d5311",
+        "CPU": true,
+        "GPU": false,
+        "source_space": "ACEScg",
+        "input_is_scene_relative": true,
+        "automatic_camera_IDT": false,
+        "frames": 1,
+        "pixels": 1517,
+        "alpha": "bit-exact",
+        "integer_intermediate": false,
+        "external_LUT_files": false,
+        "environment_configuration": false,
+        "estimated_working_bytes": 174000,
+        "estimate_is_peak_RSS": false
+      }
+    },
+    {
+      "config": "aces-2.0",
+      "max_absolute_error": 0.0,
+      "upstream": {
+        "version": "2.6.0",
+        "module": "E:\\dev\\sandbox\\AI广告剪辑\\local\\upstream-ocio-hy1o7b8y\\PyOpenColorIO\\__init__.py",
+        "product_imported": false
+      },
+      "metadata": {
+        "protocol": "native-ocio-aces-display-float32-v1",
+        "version": "2.6.0",
+        "selection": {
+          "config": "aces-2.0",
+          "display": "sRGB - Display",
+          "view": "ACES 2.0 - SDR 100 nits (Rec.709)",
+          "exposure_stops": 0.0,
+          "input_interpretation": "scene-linear-ACEScg"
+        },
+        "config_uri": "ocio://studio-config-v4.0.0_aces-v2.0_ocio-v2.5",
+        "config_sha256": "3a48b0421e51d4284ec07187f86b74387321550b65f5a2f237885bf269dbc99e",
+        "processor_cache_id": "53face6a-f4b6-1c6a-b0af-5088d6ed6ab8",
+        "CPU": true,
+        "GPU": false,
+        "source_space": "ACEScg",
+        "input_is_scene_relative": true,
+        "automatic_camera_IDT": false,
+        "frames": 1,
+        "pixels": 1517,
+        "alpha": "bit-exact",
+        "integer_intermediate": false,
+        "external_LUT_files": false,
+        "environment_configuration": false,
+        "estimated_working_bytes": 174000,
+        "estimate_is_peak_RSS": false
+      }
+    },
+    {
+      "config": "aces-2.1",
+      "max_absolute_error": 0.0,
+      "upstream": {
+        "version": "2.6.0",
+        "module": "E:\\dev\\sandbox\\AI广告剪辑\\local\\upstream-ocio-hy1o7b8y\\PyOpenColorIO\\__init__.py",
+        "product_imported": false
+      },
+      "metadata": {
+        "protocol": "native-ocio-aces-display-float32-v1",
+        "version": "2.6.0",
+        "selection": {
+          "config": "aces-2.1",
+          "display": "sRGB - Display",
+          "view": "ACES 2.0 - SDR 100 nits (Rec.709)",
+          "exposure_stops": 0.0,
+          "input_interpretation": "scene-linear-ACEScg"
+        },
+        "config_uri": "ocio://studio-config-v5.0.0_aces-v2.1_ocio-v2.6",
+        "config_sha256": "1748717664d82dd7a53f01e23d0692d2444049ac7d7f5c08d19618cec48506bf",
+        "processor_cache_id": "53face6a-f4b6-1c6a-b0af-5088d6ed6ab8",
+        "CPU": true,
+        "GPU": false,
+        "source_space": "ACEScg",
+        "input_is_scene_relative": true,
+        "automatic_camera_IDT": false,
+        "frames": 1,
+        "pixels": 1517,
+        "alpha": "bit-exact",
+        "integer_intermediate": false,
+        "external_LUT_files": false,
+        "environment_configuration": false,
+        "estimated_working_bytes": 174000,
+        "estimate_is_peak_RSS": false
+      }
+    }
+  ],
+  "source_files": {
+    "product\\src\\ai_ad_editor\\ocio_runtime.py": "f908a05531f65b24db13effcd502e626cca9d266cdf1a23795360085965b0e74",
+    "product\\src\\ai_ad_editor\\native_ocio_manifest.json": "35de74936b689a955fbb953af369c680dcb91e69afb8897d3d59f6ed737d479b",
+    "product\\src\\ai_ad_editor\\native_ocio\\LICENSE.txt": "8850b0c83cd41d26ad0e080861d47ee00afb685386a459a1cbe8c347555621a7",
+    "product\\src\\ai_ad_editor\\native_ocio\\OpenColorIO_2_6.dll": "fdab9f2171bea9ec4d1b766534d50edaa95883e80767f72ce27fa646aeb13320",
+    "product\\src\\ai_ad_editor\\native_ocio\\PyOpenColorIO.pyd": "7a51078f32a656fa147567c356a47cdadc7ca5ca29ef439a352b2f747af10593",
+    "product\\src\\ai_ad_editor\\native_ocio\\THIRD-PARTY.md": "2e0df1b675fcd133b78360b4d40539518ea1c2081be68e91a456fb9db51c5009",
+    "product\\src\\ai_ad_editor\\cli.py": "b21f2540e1791f88504aaad5dec3e919efa9158bd349f9a308545f6e4598bea5",
+    "product\\pyproject.toml": "41735c204e06fb3fa8c88bdbc990d0c852b962963181bf6c7e13bae3cbd841e3",
+    "product\\tests\\test_ocio_runtime.py": "573cb0d88ac3830c3cc65442a01958a9382460ea06f5619df38b439560b62d94"
+  },
+  "timeline_integrated": false,
+  "preview_integrated": false,
+  "installed_skill_updated": false,
+  "GPU": false
+}

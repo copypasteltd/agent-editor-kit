@@ -1056,6 +1056,8 @@ def build_parser() -> argparse.ArgumentParser:
     surface_inspect=_leaf_common(surface_sub.add_parser('inspect',help='只读核验浮点包的像素与原生时钟字节'))
     surface_inspect.add_argument('--project',required=True)
     surface_inspect.add_argument('--input',required=True)
+    surface_ocio=_leaf_common(surface_sub.add_parser('ocio-configs',help='列出固定原生OpenColorIO ACES显示/视图配置；无需工程'))
+    surface_ocio.add_argument('--config',choices=('aces-1.3','aces-2.0','aces-2.1'))
     surface_profile=_leaf_common(surface_sub.add_parser('inspect-profile',help='只读核验工程内RGB ICC v2/v4与固定原生色彩引擎'))
     surface_profile.add_argument('--project',required=True)
     surface_profile.add_argument('--input',required=True,help='工程内ICC相对路径')
@@ -6060,6 +6062,9 @@ def command_preview(args: argparse.Namespace) -> dict[str, Any]:
 
 
 def command_surface(args: argparse.Namespace) -> dict[str, Any]:
+    if args.action=='ocio-configs':
+        from .ocio_runtime import catalog
+        return _envelope('surface.ocio-configs',args,data=catalog(args.config))
     from . import float_bundle
     from .float_hdr import parse_signal
     from .float_yuv import YUVSpec
@@ -7206,6 +7211,7 @@ def command_diagnostics(args):
 
 
 _READ_ONLY_PROJECT_COMMANDS = {
+    ('surface','ocio-configs'),
     ('vfx','list'),('vfx','inspect'),('vfx','show'),('vfx','animation-properties'),
     ("media", "model-session"),
     *(('semantic', action) for action in ('adapter-list','adapter-inspect','index-list','verify','calibration-list','search')),
@@ -7255,6 +7261,7 @@ from .lipsync_cli import adapter_command as command_lipsync_adapter, generate_co
 from .interpolation_cli import adapter_command as command_interpolation_adapter, generate_command as command_interpolation_generate
 
 COMMANDS: dict[tuple[str, str | None], Callable[[argparse.Namespace], dict[str, Any]]] = {
+    ('surface','ocio-configs'):command_surface,
     ('lipsync','adapter'): command_lipsync_adapter,
     ('lipsync','generate'): command_lipsync_generate,
     ('interpolate','adapter'): command_interpolation_adapter,

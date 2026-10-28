@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.46 / alpha.4-local.44 / r47 kit · 1 Skill / 17 modules / 85 files.**
+**CLI0.1.47 / alpha.4-local.45 / r48 kit · 1 Skill / 17 modules / 86 files.**
 
-新增**原生 ICC 色彩管理**：明確本機 RGB ICC v2/v4、SHA、四種算圖意圖與黑點補償，由 LittleCMS 2.19.1 直接轉換至線性工作 RGB；貫通素材、浮點匯出、預覽快取及可編輯專案封裝。
+新增**HLG 非零顯示黑位與完整訊號 JSON CLI**：明確黑位、峰值、伽馬及參考白亮度，貫通來源／輸出、浮點中間包、預覽與專案包；低於目標黑位嚴格拒絕或明確裁切計數。
 
-[Native ICC workflow](ICC_PROFILES.md)
+[HLG black workflow](HLG_BLACK_LEVEL.md)
 
 <!-- /community-current -->
 
@@ -86,6 +86,7 @@
 | F70 | HDR10靜態中繼資料交付 | 母版RGB/白點xy、最小/最大nit、MaxCLL/MaxFALL → 實際HEVC SEI與解碼核驗清單。 | `settings.output.hdr10; validate; render; convert` | 明確原生PQ/BT2020 NCL有限範圍、libx265/10bit420/MP4或MKV；作者聲明、前32封包核驗。 |
 | F71 | 白點適應與寬色域工作設定 | ProPhoto D50／AP1 D60／明確xy → 線性XYZ Bradford、nit縮放、實際D65預覽與專案封裝。 | `native_chromatic_adaptation; render; preview; surface export; convert` | CPU色彩數學，GPU光暈依聲明白點；不含ICC解析／完整ACES／自動白平衡。 |
 | F72 | 原生ICC來源色彩管理 | RGB ICC v2/v4矩陣/CLUT、明確SHA/意圖/BPC → 線性RGB工作域，Float32/alpha、實際預覽與專案依賴閉合。 | `native_icc_source_profiles; surface inspect-profile; surface export; render; preview; convert` | 固定MIT LittleCMS原生CPU；不含任意輸出ICC/軟打樣/CMYK/自動內嵌推斷。 |
+| F73 | HLG顯示黑位與完整訊號CLI | BT.2100黑位提升／逆變換、明確nit與黑位、零黑位原數值路徑、完整RGB/HDR/ICC JSON與明確域策略。 | `native_hlg_black_level; surface export; render; preview; convert` | 不推測螢幕；nominal0..1；超限拒絕或明確裁切；無動態HDR／完整ACES。 |
 
 | 編號 | 服務模塊 | 運行形式 | 需要什么/提供什么 | 入口 | 範圍 |
 |---|---|---|---|---|---|
@@ -116,6 +117,7 @@
 | S25 | x265 HDR10靜態SEI服務 | 固定語法參數寫入＋原生ffprobe解碼逐有理數核對，發布前失敗關閉。 | 既有原生FFmpeg/libx265/ffprobe；無新模型。 | `render` | 編碼CPU；觀察解碼前綴，非全片認證/峰值量測。 |
 | S26 | 明確白點RGB轉換服務 | 原生分塊Float64計算／Float32表面、ProPhoto分段傳遞、Bradford矩陣與白點幾何核驗。 | 既有NumPy；無新增模型／服務。 | `render; preview; surface` | 編碼交付D65，alpha保位；不推斷素材ICC或場景光源。 |
 | S27 | 原生ICC CMM服務 | 固定LittleCMS2.19.1 Windows x64 DLL、私有上下文、分塊Float32、持鎖/取消/關閉、實際設定檔位元組核驗。 | 包內原生DLL與MIT授權；無需新模型/全域安裝。 | `surface; render; preview; convert` | 16MiB/4096標籤與表面預算；CPU轉換，GPU合成獨立選擇。 |
+| S28 | 明確HLG黑位服務 | 分塊Float32/alpha、beta校驗、來源／目標黑位、輸出域計數及原生時鐘中間包。 | 包內原生Windows CPU數學；既有GPU合成獨立設定。 | `surface; render; preview; convert` | 無新增模型／全域安裝；不替代螢幕測量或HDR監看驗收。 |
 
 ## 完整安裝版能力字段
 
@@ -1026,7 +1028,7 @@
     "explicit_opt_in_not_default_migration",
     "unported_operators_reject_without_legacy_fallback",
     "square_unrotated_native_sources_only",
-    "BT709_relative_delivery_not_HDR_or_ICC",
+    "HDR_whites_ICC_extensions_have_separate_explicit_signal_contracts",
     "source_cache_and_projection_quotas_are_not_total_RSS",
     "publication_pair_not_crash_atomic",
     "no_natural_longform_or_full_CapCut_parity_acceptance"
@@ -1048,7 +1050,7 @@
     "registered_local_RGB_gray_YCbCr_sources",
     "owned_straight_RGBA_Float32",
     "original_int64_frame_index_PTS_duration",
-    "explicit_D65_relative_colour_signals",
+    "explicit_relative_RGB_CLI_and_API_HDR_nit_white_signals",
     "BT709_DisplayP3_BT2020_linear_gamut_matrix",
     "explicit_source_transfer_interpretation",
     "bounded_static_affine_sampling",
@@ -1060,10 +1062,10 @@
   ],
   "limits": [
     "intermediate_bundle_is_not_an_encoded_movie",
-    "not_yet_timeline_render_preview_or_cache_backend",
+    "intermediate_bundle_storage_not_timeline_audio_or_encoded_movie",
     "YCbCr_requires_matrix_range_siting_and_caller_progressive_declaration",
     "BT709_camera_inverse_OETF_differs_from_display_gamma",
-    "relative_D65_only_no_absolute_nits_ICC_or_HDR",
+    "HDR_signals_require_complete_JSON_descriptors_and_explicit_nits",
     "native_prefix_decode_before_selected_window",
     "maximum_2GiB_bundle_not_peak_RSS_acceptance",
     "point_bilinear_affine_without_severe_minification_antialiasing_acceptance",
@@ -1315,7 +1317,7 @@
   "limits": [
     "explicit_opt_in_not_default_migration",
     "same_unported_operator_rejections_as_float_render",
-    "relative_D65_not_HDR_or_ICC",
+    "SDR_review_output_of_explicit_HDR_white_ICC_source_extensions_not_HDR_monitor_acceptance",
     "bilinear_minification_not_area_antialiasing",
     "cache_budget_is_disk_admission_not_total_RSS",
     "source_seek_preroll_may_decode_earlier_frames",
@@ -5051,8 +5053,8 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
     "no_inferred_luminance_or_metadata_or_automatic_tone_map",
     "explicit_HDR10_static_declarations_use_native_hdr10_static_metadata_capability",
     "explicit_Bradford_whites_use_native_chromatic_adaptation_capability",
-    "no_ICC_dynamic_metadata_or_DolbyVision",
-    "HLG_ideal_zero_black_only_explicit_peak_and_gamma",
+    "explicit_RGB_ICC_sources_use_native_icc_source_profiles_no_dynamic_metadata_or_DolbyVision",
+    "HLG_explicit_black_lift_uses_native_hlg_black_level_with_peak_and_gamma",
     "SDR_trim_is_explicit_creative_Reinhard_not_BT2390_or_perceptual_gamut_mapping",
     "natural_HDR_monitor_long_form_and_full_CapCut_acceptance_pending"
   ]
@@ -5374,3 +5376,33 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 ```
 
 [CLI0.1.46 exact installed capabilities](icc-capabilities-cli-0.1.46.json).
+
+### `native_hlg_black_level`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "explicit-HLG-display-black-float32-v1",
+  "selection": "HLG source/output signal display_black_nits with reference_white_nits,display_peak_nits,system_gamma",
+  "features": [
+    "explicit_BT2100_3_HLG_user_black_lift_and_inverse",
+    "RGB_coupled_OOTF_not_per_channel_gamma",
+    "declared_0_to_10_nit_black_with_beta_less_than_one",
+    "zero_black_legacy_bits_and_metadata_retained",
+    "independent_alpha_and_reference_nit_units",
+    "below_black_output_reject_or_explicit_counted_clip",
+    "source_working_output_previews_bundles_and_portable_project_signals",
+    "source_target_beta_and_domain_policy_receipts"
+  ],
+  "limits": [
+    "CPU_tiled_transfer_math_supported_composition_GPU_selected_separately",
+    "explicit_BT2020_D65_HLG_nominal_0_to_1_inputs_not_subblack_PLUGE_input_acceptance",
+    "black_luminance_is_author_declaration_not_measured_display_calibration",
+    "unrepresentable_below_black_components_and_roundoff_require_explicit_clip_if_not_rejected",
+    "surface_HDR_uses_complete_source_working_signal_JSON_descriptors",
+    "no_dynamic_metadata_BT2390_perceptual_gamut_or_natural_HDR_monitor_acceptance"
+  ]
+}
+```
+
+[CLI0.1.47 exact installed capabilities](hlg-black-capabilities-cli-0.1.47.json).

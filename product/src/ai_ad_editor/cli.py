@@ -1028,14 +1028,18 @@ def build_parser() -> argparse.ArgumentParser:
     surface_source=surface_export.add_mutually_exclusive_group(required=True)
     surface_source.add_argument('--source-primaries',choices=('bt709','display-p3','bt2020','prophoto-rgb','aces-ap1'))
     surface_source.add_argument('--source-icc-profile',help='工程内RGB ICC v2/v4相对路径；须同时明确SHA和渲染意图')
+    surface_source.add_argument('--source-signal-json',help='本地JSON：完整来源RGB/HDR/ICC信号；禁止混用单项来源参数')
     surface_export.add_argument('--source-transfer',choices=('linear','srgb','bt709-oetf','gamma22','gamma24','prophoto-rgb'))
     surface_export.add_argument('--source-icc-sha256')
     surface_export.add_argument('--source-icc-intent',choices=('perceptual','relative-colorimetric','saturation','absolute-colorimetric'))
     surface_export.add_argument('--source-icc-black-point-compensation',action='store_true')
     surface_export.add_argument('--source-reference-white-nits',type=float)
     surface_export.add_argument('--working-reference-white-nits',type=float)
-    surface_export.add_argument('--working-primaries',default='bt709',choices=('bt709','display-p3','bt2020','prophoto-rgb','aces-ap1'))
-    surface_export.add_argument('--working-transfer',default='linear',choices=('linear','srgb','bt709-oetf','gamma22','gamma24','prophoto-rgb'))
+    surface_export.add_argument('--working-primaries',choices=('bt709','display-p3','bt2020','prophoto-rgb','aces-ap1'),help='默认bt709；不能与完整工作信号JSON混用')
+    surface_export.add_argument('--working-transfer',choices=('linear','srgb','bt709-oetf','gamma22','gamma24','prophoto-rgb'),help='默认linear；HDR传递使用完整工作信号JSON')
+    surface_export.add_argument('--working-signal-json',help='本地JSON：完整目标RGB/HDR信号，含明确nit/HLG黑位等声明')
+    surface_export.add_argument('--hdr-range-policy',default='reject',choices=('reject','clip'),help='HDR输出域及黑位逆变换超限策略；裁切须明确选择并计数')
+    surface_export.add_argument('--hdr-input-range-policy',default='reject',choices=('reject','clip'))
     surface_export.add_argument('--source-white-xy',type=float,nargs=2,metavar=('X','Y'),help='明确RGB参考白点CIE1931 xy；默认随基色配置')
     surface_export.add_argument('--working-white-xy',type=float,nargs=2,metavar=('X','Y'),help='明确工作RGB参考白点；D65交付限制不适用于中间浮点包')
     surface_export.add_argument('--pixel-family',default='rgb',choices=('rgb','yuv'))
@@ -6040,7 +6044,12 @@ def command_surface(args: argparse.Namespace) -> dict[str, Any]:
         if white is not None:value['white_xy']=white
         if nits is not None:value['reference_white_nits']=nits
         return parse_signal(value)
-    if args.source_icc_profile:
+    if args.source_signal_json:
+        from .icc_profiles import parse_source_signal
+        if any(value is not None for value in (args.source_transfer,args.source_white_xy,args.source_icc_sha256,args.source_icc_intent,args.source_reference_white_nits)) or args.source_icc_black_point_compensation:
+            raise argument_error('完整来源信号JSON不能混入单项来源参数')
+        source_signal=parse_source_signal(_load_changes(args.source_signal_json))
+    elif args.source_icc_profile:
         from .icc_profiles import ICCSourceSignal
         if args.source_transfer is not None or args.source_white_xy is not None:raise argument_error('ICC源不能混入RGB传递或参考白点标签')
         source_signal=ICCSourceSignal(args.source_icc_profile,args.source_icc_sha256,args.source_icc_intent,
@@ -6049,11 +6058,18 @@ def command_surface(args: argparse.Namespace) -> dict[str, Any]:
         if args.source_transfer is None:raise argument_error('RGB源必须明确--source-transfer')
         if args.source_icc_sha256 or args.source_icc_intent or args.source_icc_black_point_compensation:raise argument_error('ICC参数要求明确--source-icc-profile')
         source_signal=signal(args.source_primaries,args.source_transfer,args.source_white_xy,args.source_reference_white_nits)
+    if args.working_signal_json:
+        if any(value is not None for value in (args.working_primaries,args.working_transfer,args.working_white_xy,args.working_reference_white_nits)):
+            raise argument_error('完整工作信号JSON不能混入单项工作参数')
+        target_signal=parse_signal(_load_changes(args.working_signal_json))
+    else:
+        target_signal=signal(args.working_primaries or 'bt709',args.working_transfer or 'linear',args.working_white_xy,args.working_reference_white_nits)
     plan=float_bundle.prepare(root,project,args.asset_id,args.output,
         source_signal=source_signal,
-        target_signal=signal(args.working_primaries,args.working_transfer,args.working_white_xy,args.working_reference_white_nits),pixel_family=args.pixel_family,
+        target_signal=target_signal,pixel_family=args.pixel_family,
         yuv_spec=spec,scan=args.scan,alpha_association=args.alpha_association,start_frame=args.start_frame,
-        stop_frame=args.stop_frame,geometry=geometry,max_output_bytes=args.max_output_mib*1024**2)
+        stop_frame=args.stop_frame,geometry=geometry,max_output_bytes=args.max_output_mib*1024**2,
+        hdr_range_policy=args.hdr_range_policy,hdr_input_range_policy=args.hdr_input_range_policy)
     if args.dry_run:return _envelope('surface.export',args,status='planned',data=plan)
     operation_id=new_id('surface')
     result=float_bundle.export_bundle(root,plan,cancel_file=args.cancel_file,

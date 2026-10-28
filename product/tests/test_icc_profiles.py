@@ -40,6 +40,13 @@ class ICCNumericTests(unittest.TestCase):
             self.assertTrue(t.metadata['matrix_shaper']);self.assertEqual(t.metadata['CMM_encoded_version'],2190)
         self.assertTrue(t.metadata['native_handles_closed']);self.assertTrue(t.closed)
         with self.assertRaises(AppError):t.convert(surface([[.2,.3,.4]]))
+    def test_native_runtime_is_rechecked_after_read_locks_and_changed_paths_close(self):
+        from unittest.mock import patch
+        paths=icc.runtime_paths()
+        with patch.object(icc,'runtime_paths',side_effect=[paths,paths[:-1]+[self.root/'different-license.txt']]):
+            with self.assertRaises(AppError) as caught:icc.ProfileTransform(self.root,self.signal,ColorSignal('bt709','linear'))
+        self.assertEqual(caught.exception.code,'ICC_RUNTIME')
+        before=self.path.read_bytes();self.path.write_bytes(before)
     def test_gamma_matrix_matches_independent_double_precision_oracle(self):
         a=surface([[.02,.1,.5],[.3,.6,.8],[1,0,0]])
         with icc.ProfileTransform(self.root,self.signal,ColorSignal('bt2020','linear')) as t:b,m=t.convert(a)

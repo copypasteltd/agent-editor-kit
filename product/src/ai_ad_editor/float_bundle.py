@@ -54,9 +54,16 @@ def _geometry(value,width,height):
     return {'width':w,'height':h,'inverse':m.tolist()},w,h
 
 def prepare(root,project,asset_id,output,*,source_signal,target_signal,pixel_family='rgb',yuv_spec=None,
-            scan=None,alpha_association='straight',start_frame=0,stop_frame=None,geometry=None,max_output_bytes=MAX_OUTPUT_BYTES):
+            scan=None,alpha_association='straight',start_frame=0,stop_frame=None,geometry=None,max_output_bytes=MAX_OUTPUT_BYTES,
+            hdr_range_policy='reject',hdr_input_range_policy='reject'):
     root=Path(root).resolve()
     if not isinstance(source_signal,(ColorSignal,ICCSourceSignal)) or not isinstance(target_signal,ColorSignal):raise error('SIGNAL','输入和工作RGB信号须明确')
+    from .float_hdr import HDR_TRANSFERS,has_luminance
+    hdr=getattr(source_signal,'transfer',None) in HDR_TRANSFERS or target_signal.transfer in HDR_TRANSFERS
+    if hdr and not (has_luminance(source_signal) and has_luminance(target_signal)):raise error('SIGNAL','HDR中间包两端须明确reference_white_nits')
+    if any(type(v) is not str or v not in ('reject','clip') for v in (hdr_range_policy,hdr_input_range_policy)):
+        raise error('SIGNAL','HDR输入/输出域策略须为reject或明确clip')
+    if not hdr and (hdr_range_policy!='reject' or hdr_input_range_policy!='reject'):raise error('SIGNAL','HDR域策略不应用于非HDR来源/目标')
     if isinstance(source_signal,ICCSourceSignal):
         with ProfileTransform(root,source_signal,target_signal):pass
     if pixel_family not in ('rgb','yuv'):raise error('FORMAT','原生像素族须明确为rgb或yuv')
@@ -81,13 +88,14 @@ def prepare(root,project,asset_id,output,*,source_signal,target_signal,pixel_fam
         'pixel_family':pixel_family,'YCbCr':None if yuv_spec is None else {'matrix':yuv_spec.matrix,'range':yuv_spec.range,'chroma_location':yuv_spec.chroma_location},
         'scan':scan,'alpha_association':alpha_association,'start_frame':start_frame,'stop_frame_exclusive':stop_frame,
         'geometry':geometry,'max_output_bytes':max_output_bytes}
+    if hdr:recipe.update(hdr_range_policy=hdr_range_policy,hdr_input_range_policy=hdr_input_range_policy)
     return {'status':'planned','recipe':recipe,'recipe_sha256':'sha256:'+hashlib.sha256(canonical(recipe)).hexdigest(),
         'output':str(destination),'native_decode_started':False,'frames_and_dimensions_authoritative_only_after_native_index':True,
-        'encoded_movie':False,'timeline_renderer_integrated':False,'HDR_accepted':False}
+        'encoded_movie':False,'timeline_renderer_integrated':False,'HDR_accepted':hdr}
 
 def _implementation_artifacts():
     directory=Path(__file__).resolve().parent
-    paths={name:directory/(name+'.py') for name in ('float_bundle','float_color_signal','float_hdr','float_chromatic','float_geometry','icc_profiles')}
+    paths={name:directory/(name+'.py') for name in ('float_bundle','float_color_signal','float_hdr','float_hlg_black','float_chromatic','float_geometry','icc_profiles')}
     paths['numpy_init']=Path(np.__file__).resolve()
     # These files are the numerical boundary's entry module and native code.
     # This is not advertised as an exhaustive NumPy package inventory.
@@ -134,7 +142,8 @@ def export_bundle(root,plan,*,cancel_file=None,progress=None):
                     if frame.index<start:continue
                     cancelled(marker)
                     value,colour_metadata=(icc_transform.convert(frame.rgba) if icc_transform else
-                        convert_rgba(frame.rgba,source_signal,target_signal,cancel=lambda:cancelled(marker)))
+                        convert_rgba(frame.rgba,source_signal,target_signal,cancel=lambda:cancelled(marker),
+                            hdr_range_policy=recipe.get('hdr_range_policy','reject'),hdr_input_range_policy=recipe.get('hdr_input_range_policy','reject')))
                     if geometry is not None:
                         value,geometry_metadata=resample_rgba(value,(width,height),geometry['inverse'],cancel=lambda:cancelled(marker))
                     pixels.write(value.astype('<f4',copy=False).tobytes());clock.write(np.array([frame.index,frame.pts,frame.duration],dtype='<i8').tobytes())
@@ -161,7 +170,7 @@ def export_bundle(root,plan,*,cancel_file=None,progress=None):
                 if colour_metadata.get('chromatic_transform',{}).get('extended')
                 else 'relative D65;physical white matching must be supplied by caller'),
             'alpha':'independent-straight;not-a-transfer-component','encoded_movie':False,'audio_exported':False,
-            'timeline_renderer_integrated':False,'HDR_accepted':False,'native_windows':True,'network':False,
+            'timeline_renderer_integrated':False,'HDR_accepted':plan['HDR_accepted'],'native_windows':True,'network':False,
             'budget':{'required_bytes_estimate':required,'limit_bytes':recipe['max_output_bytes'],'peak_RSS_accepted':False}}
         payload=json.dumps(manifest,ensure_ascii=False,indent=2,allow_nan=False).encode('utf8')+b'\n'
         if len(payload)>MAX_METADATA_BYTES:raise error('BUDGET','浮点清单超过128KiB预算')
@@ -172,7 +181,7 @@ def export_bundle(root,plan,*,cancel_file=None,progress=None):
             'manifest_sha256':digest(destination/'bundle.json'),'frames':count,'width':width,'height':height,
             'native_time_base':manifest['native_time_base'],'recipe_sha256':plan['recipe_sha256'],
             'all_source_frames_exported':manifest['all_source_frames_exported'],'encoded_movie':False,
-            'timeline_renderer_integrated':False,'HDR_accepted':False}
+            'timeline_renderer_integrated':False,'HDR_accepted':plan['HDR_accepted']}
     except OSError as caught:
         raise error('IO','浮点包本地读写失败；保留源文件并清理未提交产物',cause=str(caught)) from caught
     finally:

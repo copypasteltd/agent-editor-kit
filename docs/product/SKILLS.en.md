@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.46 / alpha.4-local.44 / r47 kit · 1 Skill / 17 modules / 85 files.**
+**CLI0.1.47 / alpha.4-local.45 / r48 kit · 1 Skill / 17 modules / 86 files.**
 
-Added **native ICC source color management**: explicit local RGB ICC v2/v4 files, SHA pins, four rendering intents and black-point compensation. LittleCMS 2.19.1 converts directly to linear working RGB across source decoding, raw surfaces, preview caches and editable packages.
+Added **nonzero HLG display black and complete signal JSON CLI**: explicit black/peak/gamma/reference-white nits across sources, outputs, raw surfaces, previews and packages; below-black outputs reject or explicitly clip with counts.
 
-[Native ICC workflow](ICC_PROFILES.md)
+[HLG black workflow](HLG_BLACK_LEVEL.md)
 
 <!-- /community-current -->
 

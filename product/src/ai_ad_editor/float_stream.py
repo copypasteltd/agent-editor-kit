@@ -156,7 +156,7 @@ def render_ffv1(root,timeline,output,*,output_signal,range_policy='reject',audio
         if any(row.get('audio_stretch') for row in audio_plan['metadata']):
             raise error('AUDIO_STRETCH_UNCONNECTED','文件型本地变速Job尚未连接此编码传输')
     tools={str(Path(p).resolve()):digest(p) for p in (ffmpeg_path(),__file__,Path(__file__).with_name('float_audio_graph.py'),
-        Path(__file__).with_name('float_color_signal.py'),Path(__file__).with_name('float_hdr.py'),Path(__file__).with_name('float_chromatic.py'),Path(__file__).with_name('float_timeline.py'))}
+        Path(__file__).with_name('float_color_signal.py'),Path(__file__).with_name('float_hdr.py'),Path(__file__).with_name('float_hlg_black.py'),Path(__file__).with_name('float_chromatic.py'),Path(__file__).with_name('float_timeline.py'))}
     temporary=output.with_name('.float-'+uuid.uuid4().hex+'.mkv');pipe=None
     inputs=[] if audio_plan is None else list(audio_plan['inputs']);video_input=inputs.count('-i')
     command=[ffmpeg_path(),'-nostdin','-hide_banner','-v','error','-filter_complex_threads','1',*inputs,

@@ -2,8 +2,8 @@
 
 Original MIT implementation of ITU-R BT.2100-3 tables 4/5. PQ is the
 display EOTF/inverse, not the camera OETF. HLG includes the RGB-coupled
-OOTF, with caller-declared display peak/system gamma and ideal zero black.
-No automatic luminance inference, ICC, dynamic metadata or monitor acceptance.
+OOTF, with caller-declared display peak/system gamma and optional black lift.
+No automatic luminance inference, dynamic metadata or monitor acceptance.
 """
 from dataclasses import dataclass
 import math
@@ -62,9 +62,12 @@ def parse_signal(value):
     if set(value)=={'primaries','transfer','white_xy'}:
         from .float_chromatic import WhitePointSignal
         return WhitePointSignal(**value)
-    allowed = {'primaries', 'transfer', 'reference_white_nits', 'display_peak_nits', 'system_gamma', 'white_xy'}
+    allowed = {'primaries', 'transfer', 'reference_white_nits', 'display_peak_nits', 'system_gamma', 'white_xy', 'display_black_nits'}
     if set(value) - allowed or not {'primaries', 'transfer', 'reference_white_nits'} <= set(value):
         raise error('SIGNAL', 'RGB信号字段无效；绝对亮度须明确reference_white_nits')
+    if 'display_black_nits' in value:
+        from .float_hlg_black import HLGBlackSignal,HLGBlackWhiteSignal
+        return (HLGBlackWhiteSignal if 'white_xy' in value else HLGBlackSignal)(**value)
     if 'white_xy' in value:
         from .float_chromatic import WhitePointLuminanceSignal
         return WhitePointLuminanceSignal(**value)
@@ -94,6 +97,9 @@ def to_linear(values, signal):
     if signal.transfer == 'pq-st2084':
         root = values ** (1 / M2)
         return 10000 / signal.reference_white_nits * (np.maximum(root - C1, 0) / (C2 - C3 * root)) ** (1 / M1)
+    if getattr(signal,'display_black_nits',0):
+        from .float_hlg_black import beta
+        lift=beta(signal);values=(1-lift)*values+lift
     scene = np.empty_like(values)
     toe = values <= .5
     scene[toe] = values[toe] ** 2 / 3
@@ -127,6 +133,11 @@ def from_linear(values, signal, *, policy='reject'):
     toe = scene <= 1 / 12
     encoded[toe] = np.sqrt(3 * scene[toe])
     encoded[~toe] = HLG_A * np.log(12 * scene[~toe] - HLG_B) + HLG_C
+    if getattr(signal,'display_black_nits',0):
+        from .float_hlg_black import beta
+        lift=beta(signal);encoded=(encoded-lift)/(1-lift)
+        encoded,more_black=domain(encoded,0,1,policy=policy,stage='输出HLG黑位调整编码RGB')
+        more+=more_black
     return encoded, clipped + more
 
 

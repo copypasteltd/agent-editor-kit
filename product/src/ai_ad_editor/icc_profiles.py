@@ -118,6 +118,7 @@ class ProfileTransform:
         try:
             self.poll();path=profile_path(root,signal);paths=runtime_paths()
             self.artifacts={str(p):self.guard.entry(p,'native-icc-profile' if p==path else 'native-icc-runtime') for p in [path,*paths]}
+            if runtime_paths()!=paths:raise error('RUNTIME','ICC运行清单在持锁前发生变化')
             if self.artifacts[str(path)]['sha256']!=signal.sha256:raise error('CHANGED','ICC实际字节与作者锁定SHA不同')
             data=path.read_bytes();h=header(data);self.buffer=C.create_string_buffer(data)
             self.a=api(paths[2]);self.context=self.a.cmsCreateContext(None,None)

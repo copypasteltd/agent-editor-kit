@@ -161,6 +161,12 @@ def convert_rgba(source,source_signal,target_signal,*,tile_pixels=65536,
             RGB_clipping='explicit-HDR-input-or-output-domain-only' if hdr_clipped or hdr_input_clipped else 'none',
             HLG_black_level_nits=0,HLG_RGB_coupled_OOTF=True,
             negative_extension='legacy relative transfers only; standard PQ/HLG domains enforced')
+        if any(hasattr(s,'display_black_nits') for s in (source_signal,target_signal)):
+            from .float_hlg_black import describe
+            metadata.pop('HLG_black_level_nits')
+            metadata['HLG_black_level']={'protocol':'explicit-HLG-display-black-float32-v1',
+                'source':describe(source_signal),'target':describe(target_signal),'black_luminance_inferred':False,
+                'below_black_output_policy':hdr_range_policy}
     if chromatic['extended']:
         metadata.update(base_protocol=metadata['protocol'],protocol='explicit-white-Bradford-float32-v1',
             source_signal=vars(source_signal),target_signal=vars(target_signal),

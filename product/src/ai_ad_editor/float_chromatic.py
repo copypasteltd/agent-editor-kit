@@ -102,4 +102,6 @@ def conversion(source,target):
 def equivalent(source,target):
     if source==target:return True
     if source.primaries!=target.primaries or source.transfer!=target.transfer or white_of(source)!=white_of(target):return False
-    return {k:v for k,v in vars(source).items() if k!='white_xy'}=={k:v for k,v in vars(target).items() if k!='white_xy'}
+    def semantic(signal):
+        return {k:v for k,v in vars(signal).items() if k!='white_xy' and not (k=='display_black_nits' and v==0)}
+    return semantic(source)==semantic(target)

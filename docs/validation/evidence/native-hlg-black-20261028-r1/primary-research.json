@@ -1,0 +1,21 @@
+{
+  "status": "primary-standard-checked",
+  "at_utc": "2026-10-28T14:43:41.475782+00:00",
+  "source": "https://www.itu.int/dms_pubrec/itu-r/rec/bt/R-REC-BT.2100-3-202502-I!!PDF-E.pdf",
+  "recommendation": "ITU-R BT.2100-3 (02/2025)",
+  "location": "Table5, HLG Reference EOTF and Notes5h/5i",
+  "equations": {
+    "beta": "sqrt(3 * (L_B/L_W) ** (1/gamma))",
+    "decode": "Lift encoded RGB by beta+(1-beta)*code before the inverse OETF and coupled RGB OOTF",
+    "encode": "Invert the coupled OOTF/OETF, then remove lift by (encoded-beta)/(1-beta)",
+    "neutral_check": "For encoded neutral zero, output luminance is L_W * (beta**2/3)**gamma = L_B"
+  },
+  "implementation": "Original scalar/vector math; no copied standard PDF, tables or library code",
+  "limits": [
+    "Nominal encoded 0..1 inputs; subblack PLUGE input not added",
+    "Explicit 0..10 nit black and beta<1",
+    "Author-declared display properties; not measured monitor calibration",
+    "Below-black/roundoff output requires reject or explicitly counted clip"
+  ],
+  "GUI_browser_tabs_opened": 0
+}

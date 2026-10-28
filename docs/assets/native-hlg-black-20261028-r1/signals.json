@@ -1,0 +1,21 @@
+{
+  "source": {
+    "primaries": "bt2020",
+    "transfer": "hlg-bt2100",
+    "reference_white_nits": 203,
+    "display_peak_nits": 1000,
+    "system_gamma": 1.2,
+    "display_black_nits": 0.5
+  },
+  "working": {
+    "primaries": "bt2020",
+    "transfer": "linear",
+    "reference_white_nits": 203
+  },
+  "output": {
+    "primaries": "bt2020",
+    "transfer": "pq-st2084",
+    "reference_white_nits": 203
+  },
+  "automatic_ICC_inference": false
+}

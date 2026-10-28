@@ -41,3 +41,5 @@ linear AP1 D60. Read [chromatic adaptation](chromatic-adaptation.md). HDR encode
 BT.2100/output white remains D65; chromaticity is separate from reference nits.
 
 CLI0.1.46 adds [explicit native RGB ICC source profiles](icc-profiles.md). HDR projects require authored reference-white nits on every source, including ICC inputs; ICC tags do not measure luminance.
+
+CLI0.1.47 adds [complete HDR/HLG black signal JSON for surface export](hlg-black-level.md), with explicit nits and reject/clip policies. Existing individual RGB/ICC flags remain supported.

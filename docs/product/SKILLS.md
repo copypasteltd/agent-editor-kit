@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.46 / alpha.4-local.44 / r47 kit · 1 Skill / 17 modules / 85 files.**
+**CLI0.1.47 / alpha.4-local.45 / r48 kit · 1 Skill / 17 modules / 86 files.**
 
-新增**原生 ICC 色彩管理**：明确本地 RGB ICC v2/v4、SHA、四种渲染意图与黑点补偿，由 LittleCMS 2.19.1 直接转换到线性工作 RGB；贯通素材、浮点导出、预览缓存和可编辑工程包。
+新增**HLG 非零显示黑位和完整信号 JSON CLI**：明确黑位、峰值、伽马和参考白亮度，贯通源/输出、浮点中间包、预览与工程包；低于目标黑位严格拒绝或显式裁切计数。
 
-[Native ICC workflow](ICC_PROFILES.md)
+[HLG black workflow](HLG_BLACK_LEVEL.md)
 
 <!-- /community-current -->
 

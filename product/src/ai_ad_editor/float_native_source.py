@@ -128,7 +128,7 @@ class NativeSurfaceSource(TimedSurfaceSource):
             files = {'source': self.source, 'ffmpeg': Path(ffmpeg_path()).resolve(),
                      'ffprobe': Path(ffprobe_path()).resolve()}
             for name in ('float_native_source', 'float_native_pipe', 'float_pixels', 'float_yuv',
-                         'float_color_signal', 'float_hdr', 'float_chromatic', 'icc_profiles', 'float_timeline', 'native_video_index',
+                         'float_color_signal', 'float_hdr', 'float_hlg_black', 'float_chromatic', 'icc_profiles', 'float_timeline', 'native_video_index',
                          'reverse_video_clock', 'artifact_locks', 'native_audio_clock', 'policy', 'media'):
                 files[name] = Path(__file__).with_name(name + '.py')
             self.artifacts = {name: self.guard.entry(path, 'float-native-source-' + name)

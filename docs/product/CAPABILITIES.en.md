@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.46 / alpha.4-local.44 / r47 kit · 1 Skill / 17 modules / 85 files.**
+**CLI0.1.47 / alpha.4-local.45 / r48 kit · 1 Skill / 17 modules / 86 files.**
 
-Added **native ICC source color management**: explicit local RGB ICC v2/v4 files, SHA pins, four rendering intents and black-point compensation. LittleCMS 2.19.1 converts directly to linear working RGB across source decoding, raw surfaces, preview caches and editable packages.
+Added **nonzero HLG display black and complete signal JSON CLI**: explicit black/peak/gamma/reference-white nits across sources, outputs, raw surfaces, previews and packages; below-black outputs reject or explicitly clip with counts.
 
-[Native ICC workflow](ICC_PROFILES.md)
+[HLG black workflow](HLG_BLACK_LEVEL.md)
 
 <!-- /community-current -->
 
@@ -86,6 +86,7 @@ Added **native ICC source color management**: explicit local RGB ICC v2/v4 files
 | F70 | HDR10 static metadata delivery | Mastering RGB/white xy,min/max nits,MaxCLL/MaxFALL → actual HEVC SEI and decoded verification receipt. | `settings.output.hdr10; validate; render; convert` | Explicit native PQ/BT2020 NCL limited range,libx265/10bit420/MP4 or MKV; author declarations,prefix32-packet verification. |
 | F71 | Explicit-white and wide-gamut working configurations | ProPhoto D50/AP1 D60/explicit xy → linear XYZ Bradford,nit scaling,actual D65 previews and editable packages. | `native_chromatic_adaptation; render; preview; surface export; convert` | CPU color math,working-white-aware GPU glow; no ICC parsing/full ACES/automatic white balance. |
 | F72 | Native ICC source color management | RGB ICC v2/v4 matrix/CLUT, explicit SHA/intent/BPC → linear working RGB, Float32/alpha, actual previews and portable profile dependencies. | `native_icc_source_profiles; surface inspect-profile; surface export; render; preview; convert` | Pinned MIT LittleCMS/native CPU; no arbitrary output ICC, softproofing, CMYK or embedded-profile inference. |
+| F73 | HLG display black and complete signal CLI | BT.2100 black lift/inverse,explicit nits,unchanged zero-black numeric path,complete RGB/HDR/ICC JSON and explicit domain policies. | `native_hlg_black_level; surface export; render; preview; convert` | No monitor inference; nominal0..1; reject or explicit counted clipping; no dynamic HDR/full ACES. |
 
 | ID | Service module | Execution | Needs/provides | Entry | Scope |
 |---|---|---|---|---|---|
@@ -116,6 +117,7 @@ Added **native ICC source color management**: explicit local RGB ICC v2/v4 files
 | S25 | x265 static HDR10 SEI service | Fixed encoder grammar plus exact rational checks of actual native ffprobe decoded side data before publication. | Existing native FFmpeg/libx265/ffprobe; no new model. | `render` | CPU encoding; observed prefix,not whole-movie certification or peak measurement. |
 | S26 | Explicit-white RGB conversion service | Native tiled Float64 math/Float32 surfaces,ProPhoto piecewise transfer,Bradford matrices and white geometry checks. | Existing NumPy; no new model/service. | `render; preview; surface` | D65 encoded delivery,alpha bits retained; no ICC or scene-illuminant inference. |
 | S27 | Native ICC CMM service | Pinned LittleCMS2.19.1 Windows x64 DLL, private contexts, tiled Float32, read locks/cancellation/cleanup and actual profile-byte verification. | Bundled DLL/MIT license; no new model/global installation. | `surface; render; preview; convert` | 16MiB/4096 tags and surface budgets; CPU conversion, independently selected GPU composition. |
+| S28 | Explicit HLG black service | Tiled Float32/alpha,beta validation,source/target black,domain counts and native-clock raw bundles. | Native Windows CPU math; separately configured GPU composition. | `surface; render; preview; convert` | No new model/global install; no replacement for display measurement/HDR monitor acceptance. |
 
 ## Complete installed capability fields
 
@@ -1026,7 +1028,7 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "explicit_opt_in_not_default_migration",
     "unported_operators_reject_without_legacy_fallback",
     "square_unrotated_native_sources_only",
-    "BT709_relative_delivery_not_HDR_or_ICC",
+    "HDR_whites_ICC_extensions_have_separate_explicit_signal_contracts",
     "source_cache_and_projection_quotas_are_not_total_RSS",
     "publication_pair_not_crash_atomic",
     "no_natural_longform_or_full_CapCut_parity_acceptance"
@@ -1048,7 +1050,7 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
     "registered_local_RGB_gray_YCbCr_sources",
     "owned_straight_RGBA_Float32",
     "original_int64_frame_index_PTS_duration",
-    "explicit_D65_relative_colour_signals",
+    "explicit_relative_RGB_CLI_and_API_HDR_nit_white_signals",
     "BT709_DisplayP3_BT2020_linear_gamut_matrix",
     "explicit_source_transfer_interpretation",
     "bounded_static_affine_sampling",
@@ -1060,10 +1062,10 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
   ],
   "limits": [
     "intermediate_bundle_is_not_an_encoded_movie",
-    "not_yet_timeline_render_preview_or_cache_backend",
+    "intermediate_bundle_storage_not_timeline_audio_or_encoded_movie",
     "YCbCr_requires_matrix_range_siting_and_caller_progressive_declaration",
     "BT709_camera_inverse_OETF_differs_from_display_gamma",
-    "relative_D65_only_no_absolute_nits_ICC_or_HDR",
+    "HDR_signals_require_complete_JSON_descriptors_and_explicit_nits",
     "native_prefix_decode_before_selected_window",
     "maximum_2GiB_bundle_not_peak_RSS_acceptance",
     "point_bilinear_affine_without_severe_minification_antialiasing_acceptance",
@@ -1315,7 +1317,7 @@ Below are every capability’s fields/status/commands/limits/budgets read from t
   "limits": [
     "explicit_opt_in_not_default_migration",
     "same_unported_operator_rejections_as_float_render",
-    "relative_D65_not_HDR_or_ICC",
+    "SDR_review_output_of_explicit_HDR_white_ICC_source_extensions_not_HDR_monitor_acceptance",
     "bilinear_minification_not_area_antialiasing",
     "cache_budget_is_disk_admission_not_total_RSS",
     "source_seek_preroll_may_decode_earlier_frames",
@@ -5051,8 +5053,8 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
     "no_inferred_luminance_or_metadata_or_automatic_tone_map",
     "explicit_HDR10_static_declarations_use_native_hdr10_static_metadata_capability",
     "explicit_Bradford_whites_use_native_chromatic_adaptation_capability",
-    "no_ICC_dynamic_metadata_or_DolbyVision",
-    "HLG_ideal_zero_black_only_explicit_peak_and_gamma",
+    "explicit_RGB_ICC_sources_use_native_icc_source_profiles_no_dynamic_metadata_or_DolbyVision",
+    "HLG_explicit_black_lift_uses_native_hlg_black_level_with_peak_and_gamma",
     "SDR_trim_is_explicit_creative_Reinhard_not_BT2390_or_perceptual_gamut_mapping",
     "natural_HDR_monitor_long_form_and_full_CapCut_acceptance_pending"
   ]
@@ -5374,3 +5376,33 @@ Original CLI 0.1.5 query failures and raw mode remain historical evidence; they 
 ```
 
 [CLI0.1.46 exact installed capabilities](icc-capabilities-cli-0.1.46.json).
+
+### `native_hlg_black_level`
+
+```json
+{
+  "status": "implemented_with_limits",
+  "protocol": "explicit-HLG-display-black-float32-v1",
+  "selection": "HLG source/output signal display_black_nits with reference_white_nits,display_peak_nits,system_gamma",
+  "features": [
+    "explicit_BT2100_3_HLG_user_black_lift_and_inverse",
+    "RGB_coupled_OOTF_not_per_channel_gamma",
+    "declared_0_to_10_nit_black_with_beta_less_than_one",
+    "zero_black_legacy_bits_and_metadata_retained",
+    "independent_alpha_and_reference_nit_units",
+    "below_black_output_reject_or_explicit_counted_clip",
+    "source_working_output_previews_bundles_and_portable_project_signals",
+    "source_target_beta_and_domain_policy_receipts"
+  ],
+  "limits": [
+    "CPU_tiled_transfer_math_supported_composition_GPU_selected_separately",
+    "explicit_BT2020_D65_HLG_nominal_0_to_1_inputs_not_subblack_PLUGE_input_acceptance",
+    "black_luminance_is_author_declaration_not_measured_display_calibration",
+    "unrepresentable_below_black_components_and_roundoff_require_explicit_clip_if_not_rejected",
+    "surface_HDR_uses_complete_source_working_signal_JSON_descriptors",
+    "no_dynamic_metadata_BT2390_perceptual_gamut_or_natural_HDR_monitor_acceptance"
+  ]
+}
+```
+
+[CLI0.1.47 exact installed capabilities](hlg-black-capabilities-cli-0.1.47.json).

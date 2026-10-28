@@ -1044,3 +1044,17 @@ Independent published-matrix/gamma reference:230400 first-surface pixels,maximum
 [Original source](../assets/native-icc-20261028-r1/source-prophoto-d50.mkv) · [Original ICC](../assets/native-icc-20261028-r1/source.icc) · [Actual master](../assets/native-icc-20261028-r1/edited-master.mkv) · [Actual MP4](../assets/native-icc-20261028-r1/actual-preview.mp4) · [Actual frame](../assets/native-icc-20261028-r1/actual-frame.png) · [Signals](../assets/native-icc-20261028-r1/signals.json) · [Comparison](../assets/native-icc-20261028-r1/comparison.png) · [Editable package](../assets/native-icc-20261028-r1/editable-icc.aevpkg.zip) · [Manifest](../assets/native-icc-20261028-r1/edited-master.mkv.manifest.json) · [Provenance](../assets/native-icc-20261028-r1/SOURCE.txt) · [Media hashes](../assets/native-icc-20261028-r1/media-manifest.json)
 
 Left comparison: independent mathematical no-adaptation/no-Bloom control; right: actual native ICC/GPU Bloom engine frame at the same frame index. This is a numeric diagnostic,not a matched artistic A/B. The generated gamma1.8 source values stay above the ProPhoto toe. No vendor profile is copied or presumed licensed. No human continuous playback/listening,natural-image artistic or HDR-monitor acceptance. RGB source profiles do not provide arbitrary output ICC,softproofing,CMYK,embedded-profile inference or full ACES rendering.
+
+<a id="c57-hlg-display-black"></a>
+
+## C57 · HLG显示黑位 / HLG顯示黑位 / HLG display black
+
+Actual installed CLI0.1.47 and registered unified Skill. Original CC0 RGB16 diagnostic/stereo tones;BT.2020 HLG,203-nit reference,1000-nit peak,gamma1.2,explicit0.5-nit black → linear working RGB → actual GPU Bloom → ten-bit PQ master. Separate explicit Reinhard SDR previews.
+
+Independent first-surface reference:230400 pixels,max error 1.18875433497e-07. All384 frame/patch comparisons:max luma code error 0.294453866295. Two renders each execute48 actual GPU Bloom calls. All48 decoded frames (66355200bytes) and384000 nonzero PCM scalars replay identically after editable package import. Actual previews preserve author data;GIF24frames/4seconds.
+
+![Actual HLG black preview](../assets/native-hlg-black-20261028-r1/actual-preview.gif)
+
+[Original source](../assets/native-hlg-black-20261028-r1/source-hlg-black.mkv) · [Actual master](../assets/native-hlg-black-20261028-r1/edited-master.mkv) · [Actual MP4](../assets/native-hlg-black-20261028-r1/actual-preview.mp4) · [Actual frame](../assets/native-hlg-black-20261028-r1/actual-frame.png) · [Signals](../assets/native-hlg-black-20261028-r1/signals.json) · [Comparison](../assets/native-hlg-black-20261028-r1/comparison.png) · [Editable package](../assets/native-hlg-black-20261028-r1/editable-hlg-black.aevpkg.zip) · [Manifest](../assets/native-hlg-black-20261028-r1/edited-master.mkv.manifest.json) · [Provenance](../assets/native-hlg-black-20261028-r1/SOURCE.txt) · [Media hashes](../assets/native-hlg-black-20261028-r1/media-manifest.json)
+
+Left:independent ideal-zero-black/no-glow control;right:actual declared0.5-nit black/GPU Bloom at the same frame index. Diagnostic declaration,not measured display calibration or matched natural-image artistic A/B. No human continuous playback/listening or HDR-monitor acceptance. Full ACES,dynamic HDR,subblack PLUGE and natural-image acceptance remain open.

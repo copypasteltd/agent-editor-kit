@@ -1,0 +1,1173 @@
+{
+  "status": "passed",
+  "at_utc": "2026-10-28T15:31:42.546791+00:00",
+  "whole_goal_complete": false,
+  "product_files": 270,
+  "capabilities": 86,
+  "skill_files": 86,
+  "public_skills": 1,
+  "internal_modules": 17,
+  "tests": {
+    "source-r3": 21,
+    "installed-r1": 21,
+    "installed-compat-r1": 314
+  },
+  "F": 73,
+  "S": 28,
+  "K": 17,
+  "R": 321,
+  "prior_R_retained": 315,
+  "G_closure_cells_retained": 38,
+  "local_links_checked": 3992,
+  "files_checked": 229,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 109450,
+      "sha256": "23c3d29095c8c442447f144b8fcd8261f07a51c664e1f0326d9390948fec1bb8"
+    },
+    {
+      "path": "README.en.md",
+      "bytes": 250597,
+      "sha256": "f65cc92bf47b78f83f8de876ca380669ebb9a173cccf79b10f607656659ee67f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 233625,
+      "sha256": "514f9754d2b0c3c41e73966e6fc78fc0207807aa6aeb508357ddf06d05eb05ee"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "bytes": 235021,
+      "sha256": "b86d1be51b5e53c5b11623fa336550461d80931e214a3cc7c881c00275f4d43d"
+    },
+    {
+      "path": "agent-ffmpeg-local-install-manifest.json",
+      "bytes": 28763,
+      "sha256": "20bb0004bc8d2185333fee98d75806c16752e2d603c8c585cc28b685a75aa0aa"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 16161,
+      "sha256": "870f15dd2625906c8d95388d663ba7b4929584164ef821d43e325251d93a34cd"
+    },
+    {
+      "path": "docs/assets/native-hlg-black-20261028-r1/SOURCE.txt",
+      "bytes": 621,
+      "sha256": "bd5ee62d282bd8a2ea1b797c82662be629240c6b814aa037bd4aac9979b02fe6"
+    },
+    {
+      "path": "docs/assets/native-hlg-black-20261028-r1/actual-frame.png",
+      "bytes": 100642,
+      "sha256": "241b03da4a02c3ff4bea0a5e8e53c0ff97935b02f5ad447124f9c7656bd4cc2a"
+    },
+    {
+      "path": "docs/assets/native-hlg-black-20261028-r1/actual-preview.gif",
+      "bytes": 198130,
+      "sha256": "84b98f037c8b27631b1c3e2b94853fb6d3aff87563402e3ba3fa06d6c9eb861c"
+    },
+    {
+      "path": "docs/assets/native-hlg-black-20261028-r1/actual-preview.mp4",
+      "bytes": 116312,
+      "sha256": "50bcd8813f535810013a7526d084ee60b1c966641ab2880aa460a1a799422d52"
+    },
+    {
+      "path": "docs/assets/native-hlg-black-20261028-r1/comparison.png",
+      "bytes": 65085,
+      "sha256": "edc71d69a4e0605a252210cbbea7a0ed34b5063b6e906055b15b96fa7dc46308"
+    },
+    {
+      "path": "docs/assets/native-hlg-black-20261028-r1/editable-hlg-black.aevpkg.zip",
+      "bytes": 3551717,
+      "sha256": "31d92d5d9d620f8df8f7d65a3d704ddd516252f858b70c97562549098ddf27b9"
+    },
+    {
+      "path": "docs/assets/native-hlg-black-20261028-r1/editable-hlg-black.aevpkg.zip.conversion-report.json",
+      "bytes": 955,
+      "sha256": "0833655d7a0f052dc93376fae33579a7357d25c6dfc8486caa0b7523b860b8cd"
+    },
+    {
+      "path": "docs/assets/native-hlg-black-20261028-r1/edited-master.mkv",
+      "bytes": 1755052,
+      "sha256": "a51d3716f5b0a2e5f02c892f994fe0038ceb7f3b525a2016d2a00e5c1bc04693"
+    },
+    {
+      "path": "docs/assets/native-hlg-black-20261028-r1/edited-master.mkv.manifest.json",
+      "bytes": 476419,
+      "sha256": "2287b4dd7cdc0ab8b46d6b9d4942a5441da12439428cb748010367f2041455f6"
+    },
+    {
+      "path": "docs/assets/native-hlg-black-20261028-r1/independent-zero-black-control.png",
+      "bytes": 27511,
+      "sha256": "dc0b50c685bf377c8a1147f3401ce99c841734632317032b1ec09eb0823ca0d4"
+    },
+    {
+      "path": "docs/assets/native-hlg-black-20261028-r1/media-manifest.json",
+      "bytes": 2358,
+      "sha256": "b2cba80c60f831313a71052f0f7d5b0bad5478a65af9041cd0b36ca68831f846"
+    },
+    {
+      "path": "docs/assets/native-hlg-black-20261028-r1/signals.json",
+      "bytes": 446,
+      "sha256": "d889bc294695df2676b0265cfd9906efbde066cdd9b78e04033635f0f6080d8d"
+    },
+    {
+      "path": "docs/assets/native-hlg-black-20261028-r1/source-hlg-black.mkv",
+      "bytes": 2482954,
+      "sha256": "1e6156d00fa9b039ac4c23c8dee197c98dfdc96fff547d3e67c742e905d464d8"
+    },
+    {
+      "path": "docs/assets/native-hlg-black-20261028-r1/source-stereo.wav",
+      "bytes": 1536092,
+      "sha256": "29cd231559476c51f4afca3a17362f40f01212d62d545a2f627cb3e49ef5ac14"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.en.md",
+      "bytes": 207195,
+      "sha256": "6c9ce39596ac1fe5664918174e1652374fcf42f0273b6d37c5ca2096bcb21a4e"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.md",
+      "bytes": 204270,
+      "sha256": "d68339cdeee3e39fe3441a3ce33fb4264bc662167c99ccb91ea06d4f9f01778c"
+    },
+    {
+      "path": "docs/product/CAPABILITIES.zh-TW.md",
+      "bytes": 204413,
+      "sha256": "3435b86cc93fe296420396c862af4de0b6b4a5a794fafa61606f7ecff5c76a69"
+    },
+    {
+      "path": "docs/product/CASES.md",
+      "bytes": 140946,
+      "sha256": "d260982cf18a547641c9a830cac15df2689ce5f6e456e7758a0d28637f339030"
+    },
+    {
+      "path": "docs/product/COMMUNITY_LOCAL_DELIVERY.md",
+      "bytes": 32426,
+      "sha256": "9b1d494168fa18ff11267cc011645076a7b60f41ec043fac53b320d47d62343c"
+    },
+    {
+      "path": "docs/product/GOAL_GAPS_20261025.md",
+      "bytes": 51569,
+      "sha256": "c733fa3efb5ba247d228e6b42900d23dd75bff3213695ce90bae2177e56a0930"
+    },
+    {
+      "path": "docs/product/HDR_DISPLAY.md",
+      "bytes": 10505,
+      "sha256": "d7ac7114551baf16c56724f135974100e9cc41375a61a47bb035a411b6caf814"
+    },
+    {
+      "path": "docs/product/HLG_BLACK_LEVEL.md",
+      "bytes": 6859,
+      "sha256": "1b472b320fe46747523b247d9ae4b5dc0bb5ad8bfcfa34d737fafc665206e329"
+    },
+    {
+      "path": "docs/product/ICC_PROFILES.md",
+      "bytes": 11516,
+      "sha256": "6baa9c8c03e55b10902091fa99d006d63431249c507403374c3fe2d5483fe65e"
+    },
+    {
+      "path": "docs/product/SKILLS.en.md",
+      "bytes": 17256,
+      "sha256": "57faf4634dd4ee0efce0e159c80a7b6c11779b447681bece4a192c0de007a993"
+    },
+    {
+      "path": "docs/product/SKILLS.md",
+      "bytes": 16783,
+      "sha256": "8a05ce14532f428690a43f69f7da632a47824f01bde36a57d4e9f2ccedb80178"
+    },
+    {
+      "path": "docs/product/SKILLS.zh-TW.md",
+      "bytes": 16818,
+      "sha256": "a9be74968c9197e667d49fedaa641d906a0ec8914b3aeb06b6d6056376080549"
+    },
+    {
+      "path": "docs/product/hlg-black-capabilities-cli-0.1.47.json",
+      "bytes": 143389,
+      "sha256": "1e56c99ad6622968b74261c9985a1162b7df7f08d0848330e2249179c26363bb"
+    },
+    {
+      "path": "docs/releases/CLI_0.1.47_LOCAL.md",
+      "bytes": 2521,
+      "sha256": "9b11f4a9970b4faa230023191123bf3f9ff40c403f292b2b0eede7b5da4b159a"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.en.md",
+      "bytes": 7509,
+      "sha256": "1725aac76da34d8964f80e22571c61cd9d773419498ae8dd1a95a9bf96bca24e"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.md",
+      "bytes": 7823,
+      "sha256": "d876a3e935c6b3da1d34a89282e57a0a0e0c06942d7263404f294a406613bc9e"
+    },
+    {
+      "path": "docs/skills/UNIFIED_SKILL.zh-TW.md",
+      "bytes": 7837,
+      "sha256": "c6ced8cf8ca6bb76b585a1c88414799e0a8ffd73768c206e0324900ac2301d91"
+    },
+    {
+      "path": "docs/skills/agent-editor-kit-community-unified-skill-r48.zip",
+      "bytes": 687041,
+      "sha256": "392ea8caf10d3cf29efab4cc0a966b45125f43e11532d57226f43378e1beedb5"
+    },
+    {
+      "path": "docs/skills/community-unified-skill-package-0.1.47-r48.json",
+      "bytes": 415,
+      "sha256": "80053fe845efa7ba6d7a62681e5bd69e26cd7845f570ff3b271c5849e7b6619a"
+    },
+    {
+      "path": "docs/specs/agent-project.schema.json",
+      "bytes": 148754,
+      "sha256": "7d978135562fceba9d86b773d6266740b3165c01ce31324945b071d58be480ee"
+    },
+    {
+      "path": "docs/validation/HLG显示黑位实测_2026-10-28.md",
+      "bytes": 2383,
+      "sha256": "9da45cd27522055233ab428db8375771a77f04e7507dc15f17cb46cf6c7be62e"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/activation-final-r1/activation-and-registration.json",
+      "bytes": 1866,
+      "sha256": "8f4261a80eca622e10f5731e73d6c4f01ef1554b790056b59dac2beab4b6a4a8"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/activation-final-r1/activation.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/activation-final-r1/activation.stdout.json",
+      "bytes": 737,
+      "sha256": "597f0abfc27cb91e0dfaf74538b744f94a0946df350b6ff0bb833724aca2de64"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/activation-final-r1/executed-generator.py",
+      "bytes": 2799,
+      "sha256": "45b3045aaf81ec857953f3599ffc52b9f9a10fdf29497903c44a9f7974d58513"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/activation-final-r1/kokoro-zh-en-cuda13.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/activation-final-r1/kokoro-zh-en-cuda13.stdout.json",
+      "bytes": 659,
+      "sha256": "835b612770994b5e92b934b2ad46a1c9e88741c4449d36e27396adf38655cf6b"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/activation-final-r1/kokoro-zh-en-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/activation-final-r1/kokoro-zh-en-int8.stdout.json",
+      "bytes": 655,
+      "sha256": "bde1fcc6b2d4ac9fb2b2e07e741e8f86f656e362f8e20cd7a21f7bcc30fb6d97"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/activation-final-r1/opus-zh-en-cpu-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/activation-final-r1/opus-zh-en-cpu-int8.stdout.json",
+      "bytes": 660,
+      "sha256": "cb6dab6f61a5446f01f4a04e14b68e0a372dc44866884b75f22a71bfa7a99ae1"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/activation-final-r1/opus-zh-en-cuda12-int8.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/activation-final-r1/opus-zh-en-cuda12-int8.stdout.json",
+      "bytes": 666,
+      "sha256": "e5bc295c242fdcc1b7d8b4ef1464399470f6b56627a17a8144a29e6f6b9d5419"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/activation-final-r1/previous-community-runtime.json",
+      "bytes": 797,
+      "sha256": "215495ee2c7f917d3394f3cae9821f4ad74765e1600af1282f1468b9f228b61c"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/activation-final-r1/previous-runtime.json",
+      "bytes": 624,
+      "sha256": "2eb2bec32ab3d40214a807fa4c4f1fb5c3d510f1a70d79e7049bdefc92a86aa5"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/activation-final-r1/registration.json",
+      "bytes": 1024,
+      "sha256": "97442c1667be34e2c96be6ad949a1eb5acbea5708a7f1b66c1c38d11fc3f6ca2"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/activation-final-r1/registration.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/activation-final-r1/registration.stdout.txt",
+      "bytes": 370,
+      "sha256": "11e780fbb9d418f530cc9e091056a3385204b54d985e45ebe05b3f5529ac471e"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/activation-final-r1/verification.json",
+      "bytes": 782,
+      "sha256": "937c2e6ef61aec3306aa975edee811cd588fb3bf0d1d686ed0294b8625b5a08a"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/calls.json",
+      "bytes": 17741,
+      "sha256": "011d3c36aa0ba37f512285f20eec16f128a0a7054394d7b71707313a90f11353"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/capabilities.stdout.json",
+      "bytes": 143389,
+      "sha256": "92b3bde95742b82d701789a44d9b88fb0e5c74f598e051a2df7fc153b5e2abfd"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/checks.json",
+      "bytes": 901,
+      "sha256": "52b95f4a58651ca0198bab7cc1ca5bfa514f0f6b460cd028d27c04e626a5b5ac"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/compose.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/compose.stdout.json",
+      "bytes": 2112,
+      "sha256": "24bbff3731dcf900211ee7b1f7b150bf937eac8dfd9c329241bb3697c8d57979"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/edited.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/edited.stdout.json",
+      "bytes": 187985,
+      "sha256": "a70f05f0c7505f54bc1b13f62418d42461cbecf0a2d79125b5101783b5f02fc6"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/executed-generator.py",
+      "bytes": 16371,
+      "sha256": "0b72499c885af91bca85c1965c7e4b0bfa86c95ddadccb66a109e49e11eaf3f1"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/export.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/export.stdout.json",
+      "bytes": 2816,
+      "sha256": "b65be015e4a5e454f7e2b27b46de3901a10cc323f66c408c4287a66cff535d18"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/gif.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/import-replay.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/import-replay.stdout.json",
+      "bytes": 1569,
+      "sha256": "8ff191a5d0353480e2b03775fab4341d8969ffbdf1cc02ff9148ed74dd43a10a"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/independent-every-frame-patches.json",
+      "bytes": 56038,
+      "sha256": "f9e8e30f66413956790b7964a9b496936db92eef32898e778363577d4e0afe3c"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/ingest-chart.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/ingest-chart.stdout.json",
+      "bytes": 2973,
+      "sha256": "33dea5053deeb2b38321972f73ead81e153b95f335ddbc243fc5a64ff0709343"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/ingest-tones.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/ingest-tones.stdout.json",
+      "bytes": 2806,
+      "sha256": "d1a8a9d77102cb2c10b521746754d1c7921d3e0ff44b44f80c712873e6e790e2"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/init.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/init.stdout.json",
+      "bytes": 632,
+      "sha256": "22d5e2554d71860dbcce74303591df6754f5aee4549a837d30d7a02c39c75299"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/original-all-PCM.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/original-all-video.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/original-audio.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/original-encode.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/preview-frame.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/preview-frame.stdout.json",
+      "bytes": 47169,
+      "sha256": "8ba4eeadc37a0a73f41dae990ac158bf176e7066f6f2aa9510612af499f3b3fc"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/preview-range.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/preview-range.stdout.json",
+      "bytes": 49137,
+      "sha256": "8997577f2bb78003eb7978fb5774be6efb3bccb3008352ed606056fc16ba503e"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/replayed-all-PCM.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/replayed-all-video.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/replayed.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/replayed.stdout.json",
+      "bytes": 188005,
+      "sha256": "05aa785030109674d5494fb7549bb543f245743af91ffd399b4835b4bd3fc2ad"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/surface.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/surface.stdout.json",
+      "bytes": 1052,
+      "sha256": "9d603db2623d3568162c4c183a3788f5c7b7453c27864c6926562b73a27fa8e8"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/validate-replay.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/validate-replay.stdout.json",
+      "bytes": 800,
+      "sha256": "758ec5a089f1b65cf621cc324ee287e544201376e1b3d17bfe252034f4670327"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/validate.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/validate.stdout.json",
+      "bytes": 799,
+      "sha256": "373f8f3046c8a53af18399cc6c165a407a02941b5750b279fc739a94fa0b6359"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/verification.json",
+      "bytes": 4115,
+      "sha256": "b234ac691c48849eb0ecf8c4bd55551457018fa871f1d86f717e63d3c23fa495"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/version.stdout.json",
+      "bytes": 1168,
+      "sha256": "7c6443c4aa847f3834a5101c564201fd130b5a1f3b83e3fad525d5f398b4ab2d"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/documentation-r1/executed-generator.py",
+      "bytes": 18182,
+      "sha256": "2a2eeb72c6516570d86bc5d37fbc853e52a4b329fa10764daeaf176d5d92da4d"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/documentation-r1/verification.json",
+      "bytes": 257,
+      "sha256": "a3ce537c997f91f470beb304b0d44b520d59c9a58cc3fb5472d7ae269036ce2e"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/final-r1/executed-auditor.py",
+      "bytes": 10844,
+      "sha256": "f27a76fbe6bc5902e24d9e1e90087d5582dc90296a6ee7e301d674845e53637a"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/final-r1/verification.json",
+      "bytes": 136,
+      "sha256": "64189b544896bb42abb38dd88db3dd6ecaf75be66bf32447e2d1da658b736562"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installation-final-r1/build.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installation-final-r1/build.stdout.json",
+      "bytes": 448,
+      "sha256": "03cf7d807cd4f4360f6beb25eb5c002507cc58ee4bda5c4f0e9df332329fcb95"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installation-final-r1/calls.json",
+      "bytes": 2616,
+      "sha256": "434b05f7e98a96eb08b503ae9c4285b1062cc82c5444389599006f00f3cdb352"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installation-final-r1/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installation-final-r1/capabilities.stdout.json",
+      "bytes": 143389,
+      "sha256": "1e56c99ad6622968b74261c9985a1162b7df7f08d0848330e2249179c26363bb"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installation-final-r1/executed-generator.py",
+      "bytes": 5779,
+      "sha256": "507644964acc881874d2aa75f320d57358b719e59d4022589c36ea0c76212253"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installation-final-r1/install.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installation-final-r1/install.stdout.json",
+      "bytes": 1709,
+      "sha256": "6d9ca98d4590c26418e792eecba663e553dd26865cc3dc594e125d06c1a18eda"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installation-final-r1/verification.json",
+      "bytes": 36422,
+      "sha256": "3b1f24b89cb5868346d679080f207b98047b1c7c2fe15036b517c48f72813287"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installation-final-r1/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installation-final-r1/version.stdout.json",
+      "bytes": 1168,
+      "sha256": "448c583a9c615391f6bf0fc209e73c126cb465f9371896bc40614d5a63e45357"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-compat-r1/executed-runner.py",
+      "bytes": 3153,
+      "sha256": "52bc0d13d7cd415c5ec28e7e719fa5c39dc1017c4f07f74211e4e02f54b0668f"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-compat-r1/executed-tests/test_float_bundle.py",
+      "bytes": 14746,
+      "sha256": "e343962126cc328cb623d3664f49abafaf38feee38e1caa7c695a543045d73ba"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-compat-r1/executed-tests/test_float_bundle_source.py",
+      "bytes": 5669,
+      "sha256": "42769a1344ac03381bdfe96b13de01856be1d7c2eb94f1e6ef5654f0619585f0"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-compat-r1/executed-tests/test_float_chromatic.py",
+      "bytes": 16554,
+      "sha256": "1831bae3cfd4f02cb09cf53b7a6c49aba6760a6230143efa0d8d561f532a49aa"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-compat-r1/executed-tests/test_float_color_signal.py",
+      "bytes": 9629,
+      "sha256": "a791301cf81ef48c9ed2c591cd299dc29a1889968c2584f951c4aba4ac09db88"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-compat-r1/executed-tests/test_float_curves.py",
+      "bytes": 27662,
+      "sha256": "fb9de4c9fd847e81d1e16588e2f1912b3273bcfc90ac722988182081e0b63029"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-compat-r1/executed-tests/test_float_glow.py",
+      "bytes": 23494,
+      "sha256": "1551aac0d925006528e66d874f0d80c3f3ca83c80c110abb68e4581ba2541133"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-compat-r1/executed-tests/test_float_hdr.py",
+      "bytes": 21259,
+      "sha256": "ad50d09368f7829efc5c2bb40119021c0141eac392179b88868e86dde0fe2e04"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-compat-r1/executed-tests/test_float_lut.py",
+      "bytes": 28477,
+      "sha256": "c3620c60d4373a44801c1eee73dd3e00239820cb39000aad48a75b311e8b1fb9"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-compat-r1/executed-tests/test_float_preview.py",
+      "bytes": 18395,
+      "sha256": "d07efe6d79493b97d64f7a6a9511c14b4fb1620a1820ef2897fca48510bd7dab"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-compat-r1/executed-tests/test_float_standard_render.py",
+      "bytes": 22886,
+      "sha256": "28952ffc3933dd3641c16b877ff2379992493b573d916d8efbdb4e675b2c1975"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-compat-r1/executed-tests/test_hdr_metadata.py",
+      "bytes": 14049,
+      "sha256": "86613011baf6d5b58f0dc72e8c82bc151e528dde550a31f0a951eee949c1d27e"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-compat-r1/executed-tests/test_icc_profiles.py",
+      "bytes": 23970,
+      "sha256": "4c1836adbf9e7d831253ff89516c176cc84f82515bd0369a173b6e370383ba44"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-compat-r1/executed-tests/test_queue_reuse.py",
+      "bytes": 27030,
+      "sha256": "c8e9fc997ca69b20ad4196bc718ecbfddb3cfe01722914d6547624cc12870cc1"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-compat-r1/executed-tests/test_schema_contract.py",
+      "bytes": 8251,
+      "sha256": "cbffcdb7c2e0c5b9d8bd1cc0bed68004cc30a467bb7a08f2fc7aab64bb71c409"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-compat-r1/receipts.json",
+      "bytes": 3463144,
+      "sha256": "00da714aeb035b183141cecf28c3b3c006cc4c402908af4b3eede7d1bd7c6c96"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-compat-r1/tests.log",
+      "bytes": 53498,
+      "sha256": "1edc956ddebe4ad10c3238ebd6df233c69bd473c39d868fbb1d2c1bab6570bd0"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-compat-r1/verification.json",
+      "bytes": 26580,
+      "sha256": "2d6455260b223752c873b17a12e52c5a0ec8a53462fd3e75ab3c91ed511f04db"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-r1/executed-runner.py",
+      "bytes": 3153,
+      "sha256": "52bc0d13d7cd415c5ec28e7e719fa5c39dc1017c4f07f74211e4e02f54b0668f"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-r1/executed-tests/test_float_color_signal.py",
+      "bytes": 9629,
+      "sha256": "a791301cf81ef48c9ed2c591cd299dc29a1889968c2584f951c4aba4ac09db88"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-r1/executed-tests/test_float_hdr.py",
+      "bytes": 21259,
+      "sha256": "ad50d09368f7829efc5c2bb40119021c0141eac392179b88868e86dde0fe2e04"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-r1/executed-tests/test_float_hlg_black.py",
+      "bytes": 17299,
+      "sha256": "a65ef8d4a9406329520550422f8756b60285cd86e234e376a8b7429ad6518dcd"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-r1/executed-tests/test_float_standard_render.py",
+      "bytes": 22886,
+      "sha256": "28952ffc3933dd3641c16b877ff2379992493b573d916d8efbdb4e675b2c1975"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-r1/receipts.json",
+      "bytes": 406734,
+      "sha256": "28b15ee6ab25c0cea872151459cdf9f3ebde8c6341cdaa558df670c5f0ff7a0e"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-r1/tests.log",
+      "bytes": 3970,
+      "sha256": "a3a73e2550204333cf7b6a2be2adef272166d2c2514d0f12eba09940e575c722"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/installed-r1/verification.json",
+      "bytes": 25643,
+      "sha256": "6f73f0fc14bb42beac21abf32aa1a3b0a25a208d4e3684428045e90e911a65a4"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/kit-r1/calls.json",
+      "bytes": 6086,
+      "sha256": "1f20660834cac6745cf2a98381a1334bf7c1a988d61047fb8d60b3daba40453a"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/kit-r1/capabilities.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/kit-r1/capabilities.stdout.txt",
+      "bytes": 143389,
+      "sha256": "22ff0ef29ce91203f60d8d0c07605a8b75eae85fea6f56c872e6d323cac6749c"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/kit-r1/configure.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/kit-r1/configure.stdout.txt",
+      "bytes": 865,
+      "sha256": "30fbbe897d9696ed3619d436e6d22f97b88f31a8f6b5f0864a618ba4ba116a00"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/kit-r1/executed-generator.py",
+      "bytes": 6524,
+      "sha256": "e52827dac1b5c67db8140d5915e6cf91624ba259cbf27f30f46afbf0fd0e030d"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/kit-r1/import.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/kit-r1/import.stdout.txt",
+      "bytes": 1605,
+      "sha256": "6eb89a4d61629de7dcb38da981d0a9a8042b7ae57d74f9dafdc4d0a65f4ca9e2"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/kit-r1/plan.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/kit-r1/plan.stdout.txt",
+      "bytes": 87028,
+      "sha256": "27f91ba09b0fabf6a090d0ea9a7f64b93dd2bf429da50a98605dbbb5a438bec5"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/kit-r1/register.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/kit-r1/register.stdout.txt",
+      "bytes": 357,
+      "sha256": "7a49335a38342a9b3723ab77caa91f631309c8c9a96053259d8dcb50e350cb72"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/kit-r1/registration.json",
+      "bytes": 1219,
+      "sha256": "bf3e6a62ab8d8c9ab3a4fb594b894ff9a4772cfb89a700c42724a305c044b52c"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/kit-r1/render-help.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/kit-r1/render-help.stdout.txt",
+      "bytes": 4142,
+      "sha256": "ae678d329e5635e7c93774ecdfd98e4ae9a654a98fb7e409514b603ca819cf82"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/kit-r1/validate.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/kit-r1/validate.stdout.txt",
+      "bytes": 809,
+      "sha256": "f354277ee9e1c23a51060185518b014ec9675d292562e86d1383eecd532c42bd"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/kit-r1/verification.json",
+      "bytes": 677,
+      "sha256": "db40964a4e4d748cbc53193c32788a2f9bb2c06f6d36d7a1480fa2a35098a338"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/kit-r1/version.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/kit-r1/version.stdout.txt",
+      "bytes": 1168,
+      "sha256": "e4fc4212ddf57d15f10a486e7b92334c9412a2b99d3b5749e2e2859a38a29dc2"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/primary-research.json",
+      "bytes": 1069,
+      "sha256": "5cf7c346a4727723811f010a85870a3d5b2578e51de5a7e919438b484a5fcdd9"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/skill-pin-r1/executed-generator.py",
+      "bytes": 5858,
+      "sha256": "27b4101da4c4695e03dee0930c14083361789cd18bab892436c3fd3f050df984"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/skill-pin-r1/verification.json",
+      "bytes": 335,
+      "sha256": "c5eaf25d13728374eeb8e24d6ca0f2a565e41d39f5d78c5819f1270db9b2c3e7"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r1/executed-runner.py",
+      "bytes": 3153,
+      "sha256": "52bc0d13d7cd415c5ec28e7e719fa5c39dc1017c4f07f74211e4e02f54b0668f"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r1/executed-tests/test_float_color_signal.py",
+      "bytes": 9629,
+      "sha256": "a791301cf81ef48c9ed2c591cd299dc29a1889968c2584f951c4aba4ac09db88"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r1/executed-tests/test_float_hdr.py",
+      "bytes": 21259,
+      "sha256": "ad50d09368f7829efc5c2bb40119021c0141eac392179b88868e86dde0fe2e04"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r1/executed-tests/test_float_hlg_black.py",
+      "bytes": 14648,
+      "sha256": "694436adb31b96e2d0b108c642f244a6b77c4bccf2e0656fd592e7c4725b446e"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r1/executed-tests/test_float_standard_render.py",
+      "bytes": 22886,
+      "sha256": "28952ffc3933dd3641c16b877ff2379992493b573d916d8efbdb4e675b2c1975"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r1/receipts.json",
+      "bytes": 184255,
+      "sha256": "5aea7dafffeedf368d184eafbb105068b25e366a60f03c242784b02f6a66a1aa"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r1/tests.log",
+      "bytes": 14675,
+      "sha256": "7dbcaaf4d686dc7aa9078eb8e48b05336c77b93e84e719d3adc5315e32ca3aa0"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r1/verification.json",
+      "bytes": 25580,
+      "sha256": "4d971c0f17e3735c3efdce8ceba16bad46874643065a500dd3fb79b4ba6230ea"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r2/executed-runner.py",
+      "bytes": 3153,
+      "sha256": "52bc0d13d7cd415c5ec28e7e719fa5c39dc1017c4f07f74211e4e02f54b0668f"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r2/executed-tests/test_float_color_signal.py",
+      "bytes": 9629,
+      "sha256": "a791301cf81ef48c9ed2c591cd299dc29a1889968c2584f951c4aba4ac09db88"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r2/executed-tests/test_float_hdr.py",
+      "bytes": 21259,
+      "sha256": "ad50d09368f7829efc5c2bb40119021c0141eac392179b88868e86dde0fe2e04"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r2/executed-tests/test_float_hlg_black.py",
+      "bytes": 17299,
+      "sha256": "a65ef8d4a9406329520550422f8756b60285cd86e234e376a8b7429ad6518dcd"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r2/executed-tests/test_float_standard_render.py",
+      "bytes": 22886,
+      "sha256": "28952ffc3933dd3641c16b877ff2379992493b573d916d8efbdb4e675b2c1975"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r2/receipts.json",
+      "bytes": 382928,
+      "sha256": "fb61d687df345429570e60b9504c36442c63c56e0ca33d266d0ef13a62d3440d"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r2/tests.log",
+      "bytes": 3970,
+      "sha256": "35ea115f7c3b2ad50b73ce790e55eadd2e0f93a4ecb97319c077fdf602375c58"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r2/verification.json",
+      "bytes": 25580,
+      "sha256": "445746f011d79e46ac45e11ec6780ce9cea04166e55e66742e0e0518aafac481"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r3/executed-runner.py",
+      "bytes": 3153,
+      "sha256": "52bc0d13d7cd415c5ec28e7e719fa5c39dc1017c4f07f74211e4e02f54b0668f"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r3/executed-tests/test_float_color_signal.py",
+      "bytes": 9629,
+      "sha256": "a791301cf81ef48c9ed2c591cd299dc29a1889968c2584f951c4aba4ac09db88"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r3/executed-tests/test_float_hdr.py",
+      "bytes": 21259,
+      "sha256": "ad50d09368f7829efc5c2bb40119021c0141eac392179b88868e86dde0fe2e04"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r3/executed-tests/test_float_hlg_black.py",
+      "bytes": 17299,
+      "sha256": "a65ef8d4a9406329520550422f8756b60285cd86e234e376a8b7429ad6518dcd"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r3/executed-tests/test_float_standard_render.py",
+      "bytes": 22886,
+      "sha256": "28952ffc3933dd3641c16b877ff2379992493b573d916d8efbdb4e675b2c1975"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r3/receipts.json",
+      "bytes": 382926,
+      "sha256": "cd06057c3798c68f0574f8b19347b86c0fd0afda68bf1a39effa02e0b3db6b9f"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r3/tests.log",
+      "bytes": 3970,
+      "sha256": "17051d67c1f60c823b1b4099a50a43188b58554c73fa163436a8cff3cd3600d8"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/source-r3/verification.json",
+      "bytes": 25580,
+      "sha256": "4e5c9984f3097693e8e123adc746d073671c15fa20c7033148592c7d55acceb1"
+    },
+    {
+      "path": "docs/validation/evidence/native-hlg-black-20261028-r1/static-review.json",
+      "bytes": 439,
+      "sha256": "c6bf487200ad968c944b0d4eaa4020ca47a7bd7898d4ba334eb0c5e013e57372"
+    },
+    {
+      "path": "product/pyproject.toml",
+      "bytes": 1629,
+      "sha256": "a6e8d2a1a29f0e151989621861384786e4884b2eb573e43efa27c6d210543ed5"
+    },
+    {
+      "path": "product/src/ai_ad_editor/__init__.py",
+      "bytes": 181,
+      "sha256": "5ea719f4f42726dd22e3bd20f8159586cc0247d5abbbe665c5bca51845e54598"
+    },
+    {
+      "path": "product/src/ai_ad_editor/agent-project.schema.json",
+      "bytes": 148754,
+      "sha256": "7d978135562fceba9d86b773d6266740b3165c01ce31324945b071d58be480ee"
+    },
+    {
+      "path": "product/src/ai_ad_editor/capabilities.py",
+      "bytes": 171112,
+      "sha256": "cc857e4735d2a942a5650a8b5348d80314578dd74a2b091dc36b19d2d9421e80"
+    },
+    {
+      "path": "product/src/ai_ad_editor/cli.py",
+      "bytes": 503817,
+      "sha256": "a5919113d19d7bbd8d1b572eca6847289419c788e22454ea42a38939d758fa97"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_bundle.py",
+      "bytes": 18358,
+      "sha256": "51b8cc113b62d791239861769d42bbcd76e8cc359eed75e1933f2a2f9728b84d"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_chromatic.py",
+      "bytes": 4534,
+      "sha256": "8e2b46d73db3e19a4534eda68519d374a5dc6aff79ca2fc7085bac3f89d675d6"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_color_signal.py",
+      "bytes": 11155,
+      "sha256": "62f4bf0ada897af57edc3d1c8c44728a7dad0161ea28803663f84e9531182b93"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_gpu.py",
+      "bytes": 16348,
+      "sha256": "ad8b4533bd588449bda24f3e76fb5770f5ea3ea0d37cbb7775155c3ec9039f00"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_hdr.py",
+      "bytes": 11344,
+      "sha256": "21314466b99d1b8ab9fb52b1868a30d20bde126c7ab5a0253b7487f7d87746e9"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_hlg_black.py",
+      "bytes": 1748,
+      "sha256": "f601d145b26e7da72884e157d54519704cb213d5cd6da76be7792579bc2b1c8e"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_native_source.py",
+      "bytes": 21473,
+      "sha256": "a76aaa6343ea97c0c25e8e3d355c3948a8e8c2201ba7d7f36c2a140a56d841dd"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_standard_render.py",
+      "bytes": 30386,
+      "sha256": "c56d3c4f80d531b26129a97de3c2e6f6eecced87b36a979675978ec25d9307df"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_stream.py",
+      "bytes": 13941,
+      "sha256": "d7c9262babc0eacb10e50245ccbdd08714543b0a51047c395d625d956e4ceb13"
+    },
+    {
+      "path": "product/src/ai_ad_editor/icc_profiles.py",
+      "bytes": 13816,
+      "sha256": "ba1ddcdba127f4c7f9f51794b28b91a0b99f4aa0fa01cb20ea772e7f6b211bff"
+    },
+    {
+      "path": "product/src/ai_ad_editor/render.py",
+      "bytes": 330280,
+      "sha256": "35704d101f904f1571523edcbf01dae0aadfa8c6cb844257c7afde11b74cd3b5"
+    },
+    {
+      "path": "product/src/ai_ad_editor/schema_contract.py",
+      "bytes": 5001,
+      "sha256": "58793f5c6b274179b33784801b6c30f0d9d89f572d383f562803385d37f9e3d1"
+    },
+    {
+      "path": "product/tests/test_float_hlg_black.py",
+      "bytes": 17299,
+      "sha256": "a65ef8d4a9406329520550422f8756b60285cd86e234e376a8b7429ad6518dcd"
+    },
+    {
+      "path": "product/tests/test_icc_profiles.py",
+      "bytes": 23970,
+      "sha256": "4c1836adbf9e7d831253ff89516c176cc84f82515bd0369a173b6e370383ba44"
+    },
+    {
+      "path": "scripts/activate_hlg_black_20261028.py",
+      "bytes": 2799,
+      "sha256": "45b3045aaf81ec857953f3599ffc52b9f9a10fdf29497903c44a9f7974d58513"
+    },
+    {
+      "path": "scripts/audit_hlg_black_20261028.py",
+      "bytes": 10885,
+      "sha256": "1d45c4050ff92a7a93b4708b3376141838a528a00bab792530f9d5bb44b539ac"
+    },
+    {
+      "path": "scripts/build_hlg_black_20261028.py",
+      "bytes": 5779,
+      "sha256": "507644964acc881874d2aa75f320d57358b719e59d4022589c36ea0c76212253"
+    },
+    {
+      "path": "scripts/document_hlg_black_20261028.py",
+      "bytes": 18182,
+      "sha256": "2a2eeb72c6516570d86bc5d37fbc853e52a4b329fa10764daeaf176d5d92da4d"
+    },
+    {
+      "path": "scripts/package_community_skill.py",
+      "bytes": 5425,
+      "sha256": "1e6e79acde7c529b6fd4b06fc9f96867399e849c88551566d18c1094dd937462"
+    },
+    {
+      "path": "scripts/pin_hlg_black_20261028.py",
+      "bytes": 5858,
+      "sha256": "27b4101da4c4695e03dee0930c14083361789cd18bab892436c3fd3f050df984"
+    },
+    {
+      "path": "scripts/prepare_hlg_audit_20261028.py",
+      "bytes": 2069,
+      "sha256": "a41927788f4782b089e28e63e3234f7485e9d26d906ea1567336f0d1fc87b81e"
+    },
+    {
+      "path": "scripts/prepare_hlg_black_20261028.py",
+      "bytes": 4408,
+      "sha256": "b5e9dfcf57115ed4827415222464cb7d653cb4c9f51cf4cba7f47fc63fee04ed"
+    },
+    {
+      "path": "scripts/prepare_hlg_case_20261028.py",
+      "bytes": 6802,
+      "sha256": "5f870c819e22737b1a2d0d51d4cd54357a4098f17e3d4c77d004031269fe0fdc"
+    },
+    {
+      "path": "scripts/prepare_hlg_delivery_20261028.py",
+      "bytes": 2489,
+      "sha256": "29e38a889dd0c4fa2e23aba6a9d5667ead7b34edf42051375c5202fb5459658a"
+    },
+    {
+      "path": "scripts/publish_hlg_20261028.py",
+      "bytes": 1028,
+      "sha256": "385ad6697c16f506aef388c7b959166327ec9e651fa231403d8d58e4db6baeec"
+    },
+    {
+      "path": "scripts/run_hlg_case_20261028.py",
+      "bytes": 16371,
+      "sha256": "0b72499c885af91bca85c1965c7e4b0bfa86c95ddadccb66a109e49e11eaf3f1"
+    },
+    {
+      "path": "scripts/test_hlg_black_20261028.py",
+      "bytes": 3153,
+      "sha256": "52bc0d13d7cd415c5ec28e7e719fa5c39dc1017c4f07f74211e4e02f54b0668f"
+    },
+    {
+      "path": "scripts/verify_hlg_kit_20261028.py",
+      "bytes": 6524,
+      "sha256": "e52827dac1b5c67db8140d5915e6cf91624ba259cbf27f30f46afbf0fd0e030d"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
+      "bytes": 16316,
+      "sha256": "080016e83dd7202d3fddd861341e1423311c5c0ac0ef79aa81f5d012b14eecff"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/hdr-display.md",
+      "bytes": 3056,
+      "sha256": "6c4f1f3fa8f12d336512a0ad224af7fb0328be288036d15cf743bb1448bd2bd1"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/hlg-black-level.md",
+      "bytes": 2654,
+      "sha256": "7ff6aee71c828b304562df64f33d430ff80e6ba448bd58f4f5627fc7bc64ab86"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/icc-profiles.md",
+      "bytes": 3727,
+      "sha256": "d215b65b19020a4a180bb245467fb658e7b6f8cc20ba49da37d955e1f73564a3"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
+      "bytes": 8242,
+      "sha256": "f00bb71d39a6bcb12fa60208aaf88a8d2831bbc839091cf1ed566e6d838bacac"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/scripts/run.py",
+      "bytes": 2296,
+      "sha256": "23a55508bddf3b2b246fdf84bd316673245542ae95dfba698bfa58f42e90c7fa"
+    }
+  ],
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.45\\final-r1\\installed",
+  "staged": false,
+  "postpush": false
+}

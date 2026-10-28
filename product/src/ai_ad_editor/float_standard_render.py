@@ -238,7 +238,7 @@ class FloatRenderContext:
                   ('float_standard_render', 'float_stream', 'float_audio_graph', 'render', 'float_color_signal',
                    'float_timeline', 'float_tracking', 'bindings', 'animation', 'float_crop', 'float_adjustments', 'float_effect_chain', 'float_transitions', 'float_transition_plan', 'source_transitions',
                    'float_text','float_text_paint','float_text_coverage','text_paint','text_layout','text_highlight','text_typing','captions',
-                   'float_gpu','float_gpu_native','float_gpu_worker','float_gpu_control','procedural_particles','particle_animation','float_optics','float_optics_kernel','float_glow','float_glow_kernel','float_hdr','hdr_metadata','float_chromatic')]
+                   'float_gpu','float_gpu_native','float_gpu_worker','float_gpu_control','procedural_particles','particle_animation','float_optics','float_optics_kernel','float_glow','float_glow_kernel','float_hdr','float_hlg_black','hdr_metadata','float_chromatic','icc_profiles')]
         self.artifacts = [artifact_entry(p, 'standard-float-render-runtime') for p in paths]
         context = IndexContext(self.root, persist=not self.dry_run, cancel_file=self.marker)
         per_source = min(256 * 1024**2, self.config['max_source_cache_bytes'] // max(1, len(needed)))

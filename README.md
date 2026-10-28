@@ -9,7 +9,21 @@
 本页包含完整功能模块、服务与依赖、安装与使用逻辑、Skill 输入输出、真实案例和核验表。长篇原始验收日志继续留档，功能说明与案例入口恢复到首页。
 
 
-<!-- native-icc-current -->
+<!-- native-hlg-black-current -->
+
+**CLI0.1.47 / alpha.4-local.45 / r48 kit · 1 Skill / 17 modules.**
+
+新增**HLG 非零显示黑位和完整信号 JSON CLI**：明确黑位、峰值、伽马和参考白亮度，贯通源/输出、浮点中间包、预览与工程包；低于目标黑位严格拒绝或显式裁切计数。
+
+[Workflow / usage](docs/product/HLG_BLACK_LEVEL.md) · [C57](docs/product/CASES.md#c57-hlg-display-black) · [Install](docs/releases/CLI_0.1.47_LOCAL.md) · [Evidence](docs/validation/HLG显示黑位实测_2026-10-28.md)
+
+![Actual HLG black preview](docs/assets/native-hlg-black-20261028-r1/actual-preview.gif)
+
+21项源码专项、21项安装专项与314项安装兼容分别通过。C57核对230400个工作域像素、384组编码色块及完整48帧/384000个非零PCM标量工程包重放；每次48次实际GPU Bloom。色彩数学使用CPU，支持的合成使用GPU。0.5nit黑位是诊断声明，不是屏幕校准；动态HDR、完整ACES与自然监看仍未验收。
+
+<!-- /native-hlg-black-current -->
+
+<!-- native-icc-history -->
 
 **CLI0.1.46 / alpha.4-local.44 / r47 kit · 1 Skill / 17 modules.**
 
@@ -21,7 +35,7 @@
 
 26项源码专项、26项安装专项和287项安装兼容检查分别通过。C56独立核对首帧230400像素、全48帧色块与完整非静音音画工程包重放；每次48次实际GPU Bloom。ICC CMM使用CPU，支持的合成/光晕使用原生GPU。范围是RGB源配置：任意ICC输出、软打样、CMYK、内嵌配置自动识别、完整ACES和自然HDR监看仍待补齐，38项原目标关闭条件保留。
 
-<!-- /native-icc-current -->
+<!-- /native-icc-history -->
 
 <!-- native-chromatic-history -->
 
@@ -540,7 +554,7 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 
 <!-- unified-skill-registration -->
 
-**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r47 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r47.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
+**只注册一个入口：`$agent-ffmpeg-local-editor`。** 当前本机 GPU 扩展使用 [r48 Skill kit](docs/skills/agent-editor-kit-community-unified-skill-r48.zip) 与匹配的[本地运行包/模型安装流程](docs/product/COMMUNITY_LOCAL_DELIVERY.md)，17 项内部模块按需加载。历史 r1 kit 继续匹配下方保持原版的公开 alpha.3 运行包。
 
 <!-- /unified-skill-registration -->
 
@@ -846,7 +860,7 @@ flowchart LR
 5. 若需要选型，展示原图与少量候选，记录最终 ID/强度/作用域；在目标素材上复试。
 6. 渲染至工程内新路径，检查实际编码文件、manifest、warning、音画与权利，再导出项目包。
 
-## 完整的 72 个功能模块
+## 完整的 73 个功能模块
 
 编号用于定位文档；各模块有依赖与交叉，不是“43 个独立内核”或完成率。下表直接写明行为、入口与限制；[完整机器能力清单及每项契约](docs/product/CAPABILITIES.md)保留全部字段。
 
@@ -924,6 +938,7 @@ flowchart LR
 | F70 | HDR10静态元数据交付 | 母版RGB/白点xy、最小/最大nit、MaxCLL/MaxFALL → 实际HEVC SEI与解码核验清单。 | `settings.output.hdr10; validate; render; convert` | 明确原生PQ/BT2020 NCL有限量程、libx265/10bit420/MP4或MKV；作者声明、前32包核验。 |
 | F71 | 白点适应与宽色域工作配置 | ProPhoto D50／AP1 D60／明确xy → 线性XYZ Bradford、nit缩放、实际D65预览与工程包。 | `native_chromatic_adaptation; render; preview; surface export; convert` | CPU色彩数学，GPU光晕按声明白点；不含ICC解析／完整ACES／自动白平衡。 |
 | F72 | 原生ICC来源色彩管理 | RGB ICC v2/v4矩阵/CLUT、明确SHA/意图/BPC → 线性RGB工作域，Float32/alpha、实际预览与工程包依赖闭合。 | `native_icc_source_profiles; surface inspect-profile; surface export; render; preview; convert` | 固定MIT LittleCMS原生CPU；不含任意输出ICC/软打样/CMYK/自动内嵌推断。 |
+| F73 | HLG显示黑位与完整信号CLI | BT.2100黑位提升/逆变换、明确nit与黑位、零黑位原数值路径、完整RGB/HDR/ICC JSON与显式域策略。 | `native_hlg_black_level; surface export; render; preview; convert` | 不推测屏幕；nominal0..1；超限拒绝或明确裁切；不含动态HDR/完整ACES。 |
 
 ## 支持的服务模块与依赖
 
@@ -958,6 +973,7 @@ flowchart LR
 | S25 | x265 HDR10静态SEI服务 | 固定语法参数写入＋原生ffprobe解码逐有理数核对，发布前失败关闭。 | 已有原生FFmpeg/libx265/ffprobe；无新模型。 | `render` | 编码CPU；观察解码前缀，非全片认证/峰值测量。 |
 | S26 | 明确白点RGB转换服务 | 原生分块Float64计算／Float32表面、ProPhoto分段传递、Bradford矩阵及白点几何校验。 | 已有NumPy；无新增模型／服务。 | `render; preview; surface` | 编码交付D65，alpha保位；不推断素材ICC或场景光源。 |
 | S27 | 原生ICC CMM服务 | 固定LittleCMS2.19.1 Windows x64 DLL、私有上下文、分块Float32、持锁/取消/关闭、实际配置字节核验。 | 包内原生DLL与MIT许可；无需新模型/全局安装。 | `surface; render; preview; convert` | 16MiB/4096标签及表面预算；CPU转换，GPU合成独立选择。 |
+| S28 | 明确HLG黑位服务 | 分块Float32/alpha、beta校验、源/目标黑位、输出域计数与原生时钟中间包。 | 包内原生Windows CPU数学；既有GPU合成独立配置。 | `surface; render; preview; convert` | 无新增模型/全局安装；不替代屏幕测量或HDR监看验收。 |
 
 **本机查询与交付状态：** 本轮 doctor 检测到原生 Python 3.13.1、FFmpeg/ffprobe 8.1 和 Node；这不证明每个模型或浏览器适配器均已注册。doctor 只查到系统存在 Docker/WSL 可执行路径，没有运行它们。本项目始终使用原生工具，不调度 Docker/WSL/虚拟环境。
 
@@ -1057,7 +1073,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.44/final-r1/installed/`，CLI 0.1.46；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
+本机当前安装到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.45/final-r1/installed/`，CLI 0.1.47；上面的公开 alpha.3 下载包保留 CLI 0.1.2 及对应旧手册。唯一入口正文/脚本及 17 项模块位于 `skills/agent-ffmpeg-local-editor/`，Codex 仅注册该目录的联接。移动仓库后重新登记；注册脚本保护同名无关目录。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1563,6 +1579,12 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R313 | 2026-10-28 ICC | C56真实注册Skill：原创CC0 RGB ICC v4配置、230400像素独立工作域对照、48帧×8色块编码核对；每次48次实际GPU Bloom及CMM关闭收据。 | [Evidence](docs/validation/evidence/native-icc-20261028-r1/case-r1/verification.json) |
 | R314 | 2026-10-28 ICC | C56工程包保留ICC原字节/信号；完整48帧66355200解码字节和384000个非零PCM标量重放一致，实际PNG/MP4/GIF和作者只读预览。 | [Evidence](docs/validation/evidence/native-icc-20261028-r1/case-r1/verification.json) |
 | R315 | 2026-10-28 ICC | r47统一Skill：1入口/17内部模块/85文件、安装版固定摘要及独立解包注册/ICC工程计划；首次激活因清单更新先后被拦截，完成清单后重新成功。 | [Evidence](docs/validation/evidence/native-icc-20261028-r1/kit-r1/verification.json) |
+| R316 | 2026-10-28 HLG | CLI0.1.47/local.45：270个Python文件与原生ICC依赖字节一致，86能力；旧包保留。 | [Evidence](docs/validation/evidence/native-hlg-black-20261028-r1/installation-final-r1/verification.json) |
+| R317 | 2026-10-28 HLG | 21源码专项通过；保留初轮共享测试夹具污染与严格白点端点拒绝记录，未加入隐藏epsilon裁切。 | [Evidence](docs/validation/evidence/native-hlg-black-20261028-r1/source-r3/verification.json) |
+| R318 | 2026-10-28 HLG | 21安装专项和另列314安装兼容通过，含27项ICC及旧有HDR/白点/渲染/预览/schema/队列；零失败/错误/跳过。 | [Evidence](docs/validation/evidence/native-hlg-black-20261028-r1/installed-compat-r1/verification.json) |
+| R319 | 2026-10-28 HLG | C57：230400工作域像素独立对照、384编码色块，每次48次GPU Bloom；明确HLG黑位，不推测屏幕。 | [Evidence](docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/verification.json) |
+| R320 | 2026-10-28 HLG | C57：工程包48帧66355200视频字节与384000非零PCM标量逐字节重放，真实PNG/MP4/GIF、只读预览。 | [Evidence](docs/validation/evidence/native-hlg-black-20261028-r1/case-r1/verification.json) |
+| R321 | 2026-10-28 HLG | r48统一Skill：1入口/17模块/86文件，固定安装包；独立解包配置/注册/HLG计划与作者只读核验。 | [Evidence](docs/validation/evidence/native-hlg-black-20261028-r1/kit-r1/verification.json) |
 
 ## 当前边界与开发方向
 

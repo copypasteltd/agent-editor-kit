@@ -55,3 +55,5 @@ or HDR-monitor acceptance is claimed. Scope: RGB matrix/shaper and table source
 profiles, not CMYK/device links, arbitrary output ICC, softproofing, embedded
 profile auto-detection, ICC v5 or complete ACES rendering. The profile is limited
 to 16MiB/4096 tags; surface budgets are estimates, not total process peak RSS.
+
+CLI0.1.47 adds [complete HDR/HLG black signal JSON for surface export](hlg-black-level.md), with explicit nits and reject/clip policies. Existing individual RGB/ICC flags remain supported.

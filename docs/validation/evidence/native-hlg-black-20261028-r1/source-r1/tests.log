@@ -1,0 +1,140 @@
+test_actual_HLG_black_source_to_PQ_all_encoded_pixels_VUI_and_PCM (test_float_hlg_black.HLGBlackIntegrationTests.test_actual_HLG_black_source_to_PQ_all_encoded_pixels_VUI_and_PCM) ... ok
+test_actual_PQ_to_HLG_black_output_counts_unrepresentable_black_and_VUI (test_float_hlg_black.HLGBlackIntegrationTests.test_actual_PQ_to_HLG_black_output_counts_unrepresentable_black_and_VUI) ... ok
+test_invalid_black_context_is_rejected_before_movie_publication (test_float_hlg_black.HLGBlackIntegrationTests.test_invalid_black_context_is_rejected_before_movie_publication) ... ok
+test_previews_and_portable_package_keep_black_signals_all_video_and_PCM (test_float_hlg_black.HLGBlackIntegrationTests.test_previews_and_portable_package_keep_black_signals_all_video_and_PCM) ... FAIL
+test_raw_native_clock_bundle_keeps_black_interpretation_and_pixels (test_float_hlg_black.HLGBlackIntegrationTests.test_raw_native_clock_bundle_keeps_black_interpretation_and_pixels) ... FAIL
+test_HLG_black_to_PQ_matches_independent_fifty_digit_PQ_oracle (test_float_hlg_black.HLGBlackNumericTests.test_HLG_black_to_PQ_matches_independent_fifty_digit_PQ_oracle) ... FAIL
+test_alpha_signed_zero_and_subnormal_bits_are_independent (test_float_hlg_black.HLGBlackNumericTests.test_alpha_signed_zero_and_subnormal_bits_are_independent) ... ok
+test_below_black_output_requires_reject_or_explicit_counted_clip (test_float_hlg_black.HLGBlackNumericTests.test_below_black_output_requires_reject_or_explicit_counted_clip) ... ok
+test_colored_coupled_EOTF_matches_independent_scalar_reference (test_float_hlg_black.HLGBlackNumericTests.test_colored_coupled_EOTF_matches_independent_scalar_reference) ... ok
+test_declared_neutral_black_and_peak_match_physical_nits (test_float_hlg_black.HLGBlackNumericTests.test_declared_neutral_black_and_peak_match_physical_nits) ... ok
+test_different_black_declarations_never_take_identical_signal_shortcut (test_float_hlg_black.HLGBlackNumericTests.test_different_black_declarations_never_take_identical_signal_shortcut) ... FAIL
+test_explicit_D65_is_equivalent_but_nonD65_HLG_is_rejected (test_float_hlg_black.HLGBlackNumericTests.test_explicit_D65_is_equivalent_but_nonD65_HLG_is_rejected) ... FAIL
+test_invalid_black_values_degenerate_beta_and_wrong_transfer_are_rejected (test_float_hlg_black.HLGBlackNumericTests.test_invalid_black_values_degenerate_beta_and_wrong_transfer_are_rejected) ... ok
+test_inverse_coupled_transform_matches_scalar_and_double_precision_roundtrip (test_float_hlg_black.HLGBlackNumericTests.test_inverse_coupled_transform_matches_scalar_and_double_precision_roundtrip) ... ERROR
+test_nominal_input_domain_is_checked_even_for_identical_signals (test_float_hlg_black.HLGBlackNumericTests.test_nominal_input_domain_is_checked_even_for_identical_signals) ... ok
+test_omitted_and_explicit_zero_preserve_legacy_math_metadata_and_source_bits (test_float_hlg_black.HLGBlackNumericTests.test_omitted_and_explicit_zero_preserve_legacy_math_metadata_and_source_bits) ... ok
+test_schema_requires_HLG_context_and_numeric_black (test_float_hlg_black.HLGBlackNumericTests.test_schema_requires_HLG_context_and_numeric_black) ... ok
+test_tiles_are_byte_identical_and_cancel_budget_preserve_caller (test_float_hlg_black.HLGBlackNumericTests.test_tiles_are_byte_identical_and_cancel_budget_preserve_caller) ... ok
+
+======================================================================
+ERROR: test_inverse_coupled_transform_matches_scalar_and_double_precision_roundtrip (test_float_hlg_black.HLGBlackNumericTests.test_inverse_coupled_transform_matches_scalar_and_double_precision_roundtrip)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_hlg_black.py", line 56, in test_inverse_coupled_transform_matches_scalar_and_double_precision_roundtrip
+    nits=np.array([scalar(v) for v in codes]);actual,clipped=from_linear(nits/203,BLACK)
+                                                             ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\float_hdr.py", line 120, in from_linear
+    absolute, clipped = domain(absolute, 0, maximum, policy=policy, stage='输出display-linear RGB亮度')
+                        ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\float_hdr.py", line 87, in domain
+    raise error('DOMAIN', stage + '超出明确HDR信号域；须修正输入或显式选择输出clip')
+ai_ad_editor.errors.AppError: 输出display-linear RGB亮度超出明确HDR信号域；须修正输入或显式选择输出clip
+
+======================================================================
+FAIL: test_previews_and_portable_package_keep_black_signals_all_video_and_PCM (test_float_hlg_black.HLGBlackIntegrationTests.test_previews_and_portable_package_keep_black_signals_all_video_and_PCM)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_hlg_black.py", line 160, in test_previews_and_portable_package_keep_black_signals_all_video_and_PCM
+    f=self.f;self.parent.source(BLACK);first=f.execute('before.mkv');before=(f.root/'project.json').read_bytes()
+             ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_hdr.py", line 224, in source
+    checked=validate_project(f.root,f.p);self.assertTrue(checked['ok'],checked)
+                                         ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : {'ok': False, 'errors': [{'code': 'SCHEMA_VALIDATION_FAILED', 'message': "{'engine': 'float32-native-v1', 'working_signal': {'primaries': 'bt2020', 'transfer': 'linear', 'reference_white_nits': 203, 'display_peak_nits': None, 'system_gamma': None}, 'output_signal': {'primaries': 'bt2020', 'transfer': 'pq-st2084', 'reference_white_nits': 203, 'display_peak_nits': None, 'system_gamma': None}, 'window_frames': 2, 'sources': {'picture': {'source_signal': {'primaries': 'bt2020', 'transfer': 'hlg-bt2100', 'reference_white_nits': 203, 'display_peak_nits': 1000, 'system_gamma': 1.2, 'display_black_nits': 11}, 'display_geometry': 'square-unrotated'}}, 'range_policy': 'reject', 'preview_mapping': {'operator': 'reinhard-luminance', 'source_peak_nits': 1000, 'target_peak_nits': 100, 'exposure_stops': 0, 'gamut_policy': 'clip'}} is not valid under any of the given schemas", 'path': 'settings.pixel_pipeline', 'retryable': False}, {'code': 'FLOAT_HDR_SIGNAL', 'message': 'display_black_nits须是明确、有限且在支持范围内的数值', 'path': 'settings.pixel_pipeline', 'retryable': False}], 'warnings': [], 'rights': {'ok': True, 'target': 'commercial_ad', 'checked': 2, 'required_records': 2, 'failures': [], 'warnings': [], 'disposition_decisions': [], 'effective_disposition_decisions': []}, 'schema_engine': 'jsonschema', 'asset_count': 2, 'sequence_count': 1}
+
+======================================================================
+FAIL: test_raw_native_clock_bundle_keeps_black_interpretation_and_pixels (test_float_hlg_black.HLGBlackIntegrationTests.test_raw_native_clock_bundle_keeps_black_interpretation_and_pixels)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_hlg_black.py", line 150, in test_raw_native_clock_bundle_keeps_black_interpretation_and_pixels
+    f=self.f;source=self.parent.source(BLACK);output=f.root/'renders/black-surface'
+                    ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_hdr.py", line 224, in source
+    checked=validate_project(f.root,f.p);self.assertTrue(checked['ok'],checked)
+                                         ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : {'ok': False, 'errors': [{'code': 'SCHEMA_VALIDATION_FAILED', 'message': "{'engine': 'float32-native-v1', 'working_signal': {'primaries': 'bt2020', 'transfer': 'linear', 'reference_white_nits': 203, 'display_peak_nits': None, 'system_gamma': None}, 'output_signal': {'primaries': 'bt2020', 'transfer': 'pq-st2084', 'reference_white_nits': 203, 'display_peak_nits': None, 'system_gamma': None}, 'window_frames': 2, 'sources': {'picture': {'source_signal': {'primaries': 'bt2020', 'transfer': 'hlg-bt2100', 'reference_white_nits': 203, 'display_peak_nits': 1000, 'system_gamma': 1.2, 'display_black_nits': 11}, 'display_geometry': 'square-unrotated'}}, 'range_policy': 'reject', 'preview_mapping': {'operator': 'reinhard-luminance', 'source_peak_nits': 1000, 'target_peak_nits': 100, 'exposure_stops': 0, 'gamut_policy': 'clip'}} is not valid under any of the given schemas", 'path': 'settings.pixel_pipeline', 'retryable': False}, {'code': 'FLOAT_HDR_SIGNAL', 'message': 'display_black_nits须是明确、有限且在支持范围内的数值', 'path': 'settings.pixel_pipeline', 'retryable': False}], 'warnings': [], 'rights': {'ok': True, 'target': 'commercial_ad', 'checked': 2, 'required_records': 2, 'failures': [], 'warnings': [], 'disposition_decisions': [], 'effective_disposition_decisions': []}, 'schema_engine': 'jsonschema', 'asset_count': 2, 'sequence_count': 1}
+
+======================================================================
+FAIL: test_HLG_black_to_PQ_matches_independent_fifty_digit_PQ_oracle (test_float_hlg_black.HLGBlackNumericTests.test_HLG_black_to_PQ_matches_independent_fifty_digit_PQ_oracle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_hlg_black.py", line 81, in test_HLG_black_to_PQ_matches_independent_fifty_digit_PQ_oracle
+    np.testing.assert_allclose(b[0,:,:3],expected,rtol=0,atol=3e-8)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 1768, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header=header, equal_nan=equal_nan,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 983, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=0, atol=3e-08
+
+Mismatched elements: 12 / 12 (100%)
+First 5 mismatches are at indices:
+ [0, 0]: 0.3072655200958252 (ACTUAL), 0.01507639904236802 (DESIRED)
+ [0, 1]: 0.3072655200958252 (ACTUAL), 0.01507639904236802 (DESIRED)
+ [0, 2]: 0.3072655200958252 (ACTUAL), 0.01507639904236802 (DESIRED)
+ [1, 0]: 0.3236539661884308 (ACTUAL), 0.06387908083479597 (DESIRED)
+ [1, 1]: 0.35586896538734436 (ACTUAL), 0.1665823480940377 (DESIRED)
+Max absolute difference among violations: 0.29218912
+Max relative difference among violations: 19.3805643
+ ACTUAL: array([[0.307266, 0.307266, 0.307266],
+       [0.323654, 0.355869, 0.420781],
+       [0.553067, 0.553067, 0.553067],
+       [0.626867, 0.417494, 0.448526]], dtype=float32)
+ DESIRED: array([[0.015076, 0.015076, 0.015076],
+       [0.063879, 0.166582, 0.305608],
+       [0.494011, 0.494011, 0.494011],
+       [0.589064, 0.293156, 0.356992]])
+
+======================================================================
+FAIL: test_different_black_declarations_never_take_identical_signal_shortcut (test_float_hlg_black.HLGBlackNumericTests.test_different_black_declarations_never_take_identical_signal_shortcut)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_hlg_black.py", line 73, in test_different_black_declarations_never_take_identical_signal_shortcut
+    np.testing.assert_allclose(b[0,:,:3],expected,rtol=0,atol=3e-8);self.assertFalse(m['same_signal_byte_exact'])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 1768, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         verbose=verbose, header=header, equal_nan=equal_nan,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         strict=strict)
+                         ^^^^^^^^^^^^^^
+  File "C:\Users\carzy\AppData\Roaming\Python\Python313\site-packages\numpy\testing\_private\utils.py", line 983, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Not equal to tolerance rtol=0, atol=3e-08
+
+Mismatched elements: 6 / 6 (100%)
+First 5 mismatches are at indices:
+ [0, 0]: 0.523983895778656 (ACTUAL), 0.3597052091634256 (DESIRED)
+ [0, 1]: 0.523983895778656 (ACTUAL), 0.3597052091634256 (DESIRED)
+ [0, 2]: 0.523983895778656 (ACTUAL), 0.3597052091634256 (DESIRED)
+ [1, 0]: 0.7619919180870056 (ACTUAL), 0.6798525886798195 (DESIRED)
+ [1, 1]: 0.6033198833465576 (ACTUAL), 0.4664210023355569 (DESIRED)
+Max absolute difference among violations: 0.19165846
+Max relative difference among violations: 0.75757502
+ ACTUAL: array([[0.523984, 0.523984, 0.523984],
+       [0.761992, 0.60332 , 0.444648]], dtype=float32)
+ DESIRED: array([[0.359705, 0.359705, 0.359705],
+       [0.679853, 0.466421, 0.252989]])
+
+======================================================================
+FAIL: test_explicit_D65_is_equivalent_but_nonD65_HLG_is_rejected (test_float_hlg_black.HLGBlackNumericTests.test_explicit_D65_is_equivalent_but_nonD65_HLG_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_float_hlg_black.py", line 115, in test_explicit_D65_is_equivalent_but_nonD65_HLG_is_rejected
+    signal=parse_signal(BASE|dict(display_black_nits=.005,white_xy=[.3127,.329]));self.assertTrue(equivalent(signal,BLACK))
+                                                                                  ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 18 tests in 159.694s
+
+FAILED (failures=5, errors=1)

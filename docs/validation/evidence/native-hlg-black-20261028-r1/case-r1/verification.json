@@ -1,0 +1,142 @@
+{
+  "status": "passed",
+  "started_at_utc": "2026-10-28T15:18:46.637359+00:00",
+  "registered_skill": true,
+  "native_windows": true,
+  "virtualization": false,
+  "source_fallback": false,
+  "synthetic_diagnostic": true,
+  "continuous_human_playback": false,
+  "human_listening": false,
+  "HDR_monitor_accepted": false,
+  "ICC_profile_parsed": false,
+  "full_ACES_transform": false,
+  "checks": [
+    {
+      "name": "independent-entire-first-surface",
+      "ok": true,
+      "pixels": 230400,
+      "maximum_error": 1.188754334968678e-07
+    },
+    {
+      "name": "edited-actual-GPU",
+      "ok": true,
+      "glow_calls": 48
+    },
+    {
+      "name": "actual-encoded-neutral-and-colour-patches",
+      "ok": true,
+      "patch_count": 8,
+      "frames": 48,
+      "maximum_luma_code_error": 0.29445386629461723
+    },
+    {
+      "name": "previews-preserve-author",
+      "ok": true
+    },
+    {
+      "name": "package-preserves-all-signals",
+      "ok": true
+    },
+    {
+      "name": "replayed-actual-GPU",
+      "ok": true,
+      "glow_calls": 48
+    },
+    {
+      "name": "all-decoded-video-identical",
+      "ok": true,
+      "frames": 48,
+      "bytes": 66355200
+    },
+    {
+      "name": "all-PCM-identical",
+      "ok": true,
+      "scalar_samples": 384000
+    },
+    {
+      "name": "actual-GIF-clock",
+      "ok": true,
+      "frames": 24,
+      "duration_ms": 4000
+    }
+  ],
+  "project": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hlg-black-case-r1\\project",
+  "restored": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-hlg-black-case-r1\\restored",
+  "public_directory": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-hlg-black-20261028-r1",
+  "decoded_video_bytes": 66355200,
+  "PCM_scalar_samples": 384000,
+  "GPU_glow_calls_per_render": 48,
+  "render_count": 2,
+  "independent_surface_pixels": 230400,
+  "maximum_surface_error": 1.188754334968678e-07,
+  "maximum_patch_luma_code_error": 0.29445386629461723,
+  "files": [
+    {
+      "path": "actual-frame.png",
+      "bytes": 100642,
+      "sha256": "241b03da4a02c3ff4bea0a5e8e53c0ff97935b02f5ad447124f9c7656bd4cc2a"
+    },
+    {
+      "path": "actual-preview.gif",
+      "bytes": 198130,
+      "sha256": "84b98f037c8b27631b1c3e2b94853fb6d3aff87563402e3ba3fa06d6c9eb861c"
+    },
+    {
+      "path": "actual-preview.mp4",
+      "bytes": 116312,
+      "sha256": "50bcd8813f535810013a7526d084ee60b1c966641ab2880aa460a1a799422d52"
+    },
+    {
+      "path": "comparison.png",
+      "bytes": 65085,
+      "sha256": "edc71d69a4e0605a252210cbbea7a0ed34b5063b6e906055b15b96fa7dc46308"
+    },
+    {
+      "path": "editable-hlg-black.aevpkg.zip",
+      "bytes": 3551717,
+      "sha256": "31d92d5d9d620f8df8f7d65a3d704ddd516252f858b70c97562549098ddf27b9"
+    },
+    {
+      "path": "editable-hlg-black.aevpkg.zip.conversion-report.json",
+      "bytes": 955,
+      "sha256": "0833655d7a0f052dc93376fae33579a7357d25c6dfc8486caa0b7523b860b8cd"
+    },
+    {
+      "path": "edited-master.mkv",
+      "bytes": 1755052,
+      "sha256": "a51d3716f5b0a2e5f02c892f994fe0038ceb7f3b525a2016d2a00e5c1bc04693"
+    },
+    {
+      "path": "edited-master.mkv.manifest.json",
+      "bytes": 476419,
+      "sha256": "2287b4dd7cdc0ab8b46d6b9d4942a5441da12439428cb748010367f2041455f6"
+    },
+    {
+      "path": "independent-zero-black-control.png",
+      "bytes": 27511,
+      "sha256": "dc0b50c685bf377c8a1147f3401ce99c841734632317032b1ec09eb0823ca0d4"
+    },
+    {
+      "path": "signals.json",
+      "bytes": 446,
+      "sha256": "d889bc294695df2676b0265cfd9906efbde066cdd9b78e04033635f0f6080d8d"
+    },
+    {
+      "path": "source-hlg-black.mkv",
+      "bytes": 2482954,
+      "sha256": "1e6156d00fa9b039ac4c23c8dee197c98dfdc96fff547d3e67c742e905d464d8"
+    },
+    {
+      "path": "source-stereo.wav",
+      "bytes": 1536092,
+      "sha256": "29cd231559476c51f4afca3a17362f40f01212d62d545a2f627cb3e49ef5ac14"
+    },
+    {
+      "path": "SOURCE.txt",
+      "bytes": 621,
+      "sha256": "bd5ee62d282bd8a2ea1b797c82662be629240c6b814aa037bd4aac9979b02fe6"
+    }
+  ],
+  "finished_at_utc": "2026-10-28T15:22:29.245866+00:00"
+}

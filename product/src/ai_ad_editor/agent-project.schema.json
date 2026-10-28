@@ -5079,6 +5079,11 @@
             "minimum": 0.0001,
             "maximum": 0.9998
           }
+        },
+        "display_black_nits": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10
         }
       },
       "allOf": [
@@ -5156,6 +5161,25 @@
             "required": [
               "reference_white_nits"
             ]
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "display_black_nits"
+            ]
+          },
+          "then": {
+            "required": [
+              "reference_white_nits",
+              "display_peak_nits",
+              "system_gamma"
+            ],
+            "properties": {
+              "transfer": {
+                "const": "hlg-bt2100"
+              }
+            }
           }
         }
       ]

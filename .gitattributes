@@ -1840,3 +1840,12 @@ scripts/*icc*20261028.py text eol=lf
 docs/product/ICC_PROFILES.md text eol=lf
 docs/releases/CLI_0.1.46_LOCAL.md text eol=lf
 docs/validation/原生ICC色彩管理实测_2026-10-28.md text eol=lf
+
+# Preserve actual HLG black evidence/media and pinned capability bytes.
+docs/validation/evidence/native-hlg-black-20261028-r1/** -text -whitespace
+docs/assets/native-hlg-black-20261028-*/** -text -whitespace
+docs/product/hlg-black-capabilities-cli-0.1.47.json -text -whitespace
+scripts/*hlg*20261028.py text eol=lf
+docs/product/HLG_BLACK_LEVEL.md text eol=lf
+docs/releases/CLI_0.1.47_LOCAL.md text eol=lf
+docs/validation/HLG显示黑位实测_2026-10-28.md text eol=lf

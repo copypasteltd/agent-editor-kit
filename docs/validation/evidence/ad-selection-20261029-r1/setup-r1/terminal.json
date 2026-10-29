@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "driver_exit_code": 1,
+  "command_exit_code": 2,
+  "failed_call": "ingest-asset_a7",
+  "reason": "local-only policy rejects remote source-url; original upstream URLs remain in local evidence",
+  "model_forwards": 0
+}

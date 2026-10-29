@@ -215,7 +215,7 @@ def plan_storyboard(project: dict, brief: Any) -> dict:
             fail('镜头 ID 重复', 'shots[].id')
         number(item.get('weight', 1), 'shots[].weight', Fraction(1, 10000), 10000)
         if 'rationale' in item:
-            text(item['rationale'], 'shots[].rationale')
+            text(item['rationale'], 'shots[].rationale', limit=8192)
         shot_map[key] = copy.deepcopy(item)
     assets, sequences, warnings = asset_map(project), [], []
     tps = project['settings']['timebase']['ticks_per_second']

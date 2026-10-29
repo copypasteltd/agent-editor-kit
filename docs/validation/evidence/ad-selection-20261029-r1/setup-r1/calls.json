@@ -1,0 +1,55 @@
+[
+  {
+    "name": "init",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "-c",
+      "import sys;sys.path.insert(0,'product/src');from ai_ad_editor.cli import main;raise SystemExit(main())",
+      "project",
+      "init",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-20261029-r1\\project",
+      "--project-id",
+      "semantic_ad54"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "b21eb308759d406a8379210b4692f26c6bc2fa30ebad175c5e9a701866e622e6"
+  },
+  {
+    "name": "ingest-asset_a7",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "-c",
+      "import sys;sys.path.insert(0,'product/src');from ai_ad_editor.cli import main;raise SystemExit(main())",
+      "media",
+      "ingest",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-20261029-r1\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\semantic-20261025-r1\\asset_a7.png",
+      "--asset-id",
+      "asset_a7",
+      "--license-spdx",
+      "CC0-1.0",
+      "--creator",
+      "Lav Varshney",
+      "--source-url",
+      "https://scikit-image.org/docs/stable/api/skimage.data.html#skimage.data.camera",
+      "--verification-status",
+      "verified",
+      "--evidence",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\semantic-20261025-r1\\SOURCE.json"
+    ],
+    "exit_code": 2,
+    "stdout_sha256": "38fc83cdba25d68dbe1c74645be5c25e55c61af74ca51deeb0b09c46b764aca3"
+  }
+]

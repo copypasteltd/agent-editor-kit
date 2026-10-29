@@ -1918,3 +1918,15 @@ product/offline/build.py text eol=lf
 docs/assets/aces-installed-20261029-*/** -text -whitespace
 
 docs/assets/aces-registered-20261029-*/** -text -whitespace
+
+docs/validation/evidence/ad-selection-20261029-r1/** -text -whitespace
+
+docs/validation/run_ad_selection.py text eol=lf
+
+product/src/ai_ad_editor/ad_selection.py -text whitespace=cr-at-eol
+
+product/src/ai_ad_editor/ad_storyboard.py -text whitespace=cr-at-eol
+
+product/src/ai_ad_editor/ad_storyboard_cli.py -text whitespace=cr-at-eol
+
+product/tests/test_ad_selection.py -text whitespace=cr-at-eol

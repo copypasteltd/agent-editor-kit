@@ -1,5 +1,7 @@
 # agent editor kit
 
+**原始碼 CLI0.1.54：校準語義選材已接入廣告分鏡。** 新增 `ad select`，依所有變體的來源長度、明確原音及已核驗權利過濾候選，再聯合分配素材，產生可編輯計畫及逐鏡頭依據；45項原始碼測試通過，實際CUDA整條流程另驗。目前安裝與唯一Skill仍CLI53／r54。[方案與使用](docs/product/AD_SEMANTIC_SELECTION.md)。
+
 **目前本機 CLI0.1.53 / local.51 已安裝並註冊。** 原始碼與安裝版各自通過 18 項 ACES、46 項測量／Schema、373 項相容性回歸。唯一 `$agent-ffmpeg-local-editor` 維持 1 個入口／17 個模組／92 個檔案；[C67 實際註冊入口案例](docs/product/CASES.md#c67-registered-aces-timeline)已核驗完整視訊、音訊、預覽與專案包往返。[正式 r54 包](docs/skills/agent-editor-kit-community-unified-skill-r54.zip)已通過獨立解包、設定、註冊及完整音畫重放驗收。[使用與安裝流程](docs/releases/CLI_0.1.53_LOCAL.md)。
 
 候選階段歷史核驗：新版統一 Skill 候選入口已實際通過 7 次 CLI53 呼叫（含原生設定、PNG16 預覽和逐幀測量），維持 1 個入口／17 個模組／92 個檔案；原註冊入口與設定未改變。兩組相容性現已通過，正式入口已升級。
@@ -1077,7 +1079,8 @@ flowchart LR
 | F73 | HLG顯示黑位與完整訊號CLI | BT.2100黑位提升／逆變換、明確nit與黑位、零黑位原數值路徑、完整RGB/HDR/ICC JSON與明確域策略。 | `native_hlg_black_level; surface export; render; preview; convert` | 不推測螢幕；nominal0..1；超限拒絕或明確裁切；無動態HDR／完整ACES。 |
 | F74 | 原生ICC輸出與軟打樣 | RGB v2/v4矩陣／B2A CLUT、四意圖／BPC、明確nits、逐影格內嵌ICC的RGBA16 PNG與作者PCM、真實SOFTPROOFING及完整交付檢查。 | `native_icc_output_profiles; surface render; surface inspect-output; render; preview; convert` | CPU CMM；GPU剪輯獨立；8GiB產物預算；無CMYK／ICC5／物理設備校準。 |
 | F75 | 編碼前後HDR光量與轉換收據 | 明確nit；實際作者RGB16輸入與解碼後原生RGB／YCbCr分別測量，MaxRGB／CIE Y、位置／時長、完整像素與時鐘摘要、全影格裁切帳本。 | `native_hdr_light_measurement; surface measure; surface measure-media; surface export; render` | CPU測量；不推斷顯示器、不自動寫SEI；原生曝光缺口／重疊不填補。 |
-| F76 | 原生 ACES 時間軸與顯示視圖 | 固定ACES1.3/2.0/2.1；AP1/D60場景輸入、曝光、正式SDR/PQ/HLG輸出、獨立觀看視圖、顯示線性縮圖與測量。 | `native_aces_display; surface ocio-configs; render; preview; surface measure` | 原始碼CLI53、CPU；不是自動相機IDT/AMF/LMT/GPU或實體監看；安裝Skill仍52。 |
+| F76 | 原生 ACES 時間軸與顯示視圖 | 固定ACES1.3/2.0/2.1；AP1/D60場景輸入、曝光、正式SDR/PQ/HLG輸出、獨立觀看視圖、顯示線性縮圖與測量。 | `native_aces_display; surface ocio-configs; render; preview; surface measure` | 原始碼CLI53、CPU；不是自動相機IDT/AMF/LMT/GPU或實體監看；安裝Skill已53。 |
+| F77 | 校準語義廣告聯合選材 | 單批真實語義介面、所有變體來源範圍／原音／權利篩選、全域去重分配、可攜逐鏡頭依據與普通分鏡計畫。 | `ad select; ad build; ad revise` | 原始碼CLI54；45項測試通過，實際CUDA／安裝／Skill另驗；不證明整段語義或自然廣告品質。 |
 
 ## 支持的服務模塊與依賴
 
@@ -1787,6 +1790,8 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R379 | Frozen installed CLI53 broad compatibility | 373 tests passed; zero failures/errors/skips; exact source/installed resources and tests frozen before/after | [raw](docs/validation/evidence/aces-delivery-20261029-r1/installed-compat-r1/verification.json) | Separate run from final-source373 and specialized18/metering46 groups |
 | R380 | C67 actual C-drive registered CLI53 Skill | 1 entry/17 modules/92 files; two ACES renders; full589824-byte YUV/307200-byte PCM and PNG16 replay equal | [raw](docs/validation/evidence/aces-delivery-20261029-r1/registered-case-r1/verification.json) | Native CPU ACES; four existing model packs reverified; no new model inference or full-parity claim |
 | R381 | Final r54 unified Skill independent installation | 153 entries; 1 entry/17 modules/92 Skill files; independent extraction, configuration, registration and two complete renders; YUV/PCM/PNG replay equal | [raw](docs/validation/evidence/aces-delivery-20261029-r1/final-kit-r1/verification.json) | CPU ACES; no source fallback; live registration unchanged; public alpha.3 remains historical |
+| R382 | Source CLI54 semantic ad selection/controller | 45 selection/storyboard tests;100 random assignment graphs matched exhaustive oracle; actual CLI plans/builds and refusal paths tested | [raw](docs/validation/evidence/ad-selection-20261029-r1/tests-r1/verification.json) · [count](docs/validation/evidence/ad-selection-20261029-r1/tests-r1/test-count.json) | Includes service-mocked CLI unit tests; actual CUDA case separate; installed Skill remains53 |
+| R383 | Source CLI54 semantic compatibility | 104 tests passed across retrieval, decisions, jobs, packages and runtime upgrades; frozen source bytes unchanged | [raw](docs/validation/evidence/ad-selection-20261029-r1/compat-r1/verification.json) | Separate from45 new-selection/storyboard tests and actual GPU workflow; no full-product coverage claim |
 
 ## 當前邊界與開發方向
 

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "tests",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "-c",
+      "import sys,unittest;sys.path[:0]=['product/src','product/tests'];s=unittest.defaultTestLoader.loadTestsFromNames(['test_ad_selection','test_ad_storyboard']);r=unittest.TextTestRunner(verbosity=2).run(s);sys.exit(not r.wasSuccessful())"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

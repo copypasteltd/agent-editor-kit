@@ -1,5 +1,7 @@
 # agent editor kit 文档 / Documentation
 
+Source / 源码 / 原始碼 CLI0.1.54：[校准语义广告联合选材](product/AD_SEMANTIC_SELECTION.md)，45项源码测试通过；实际CUDA和安装／Skill另验。
+
 Current local / 当前本地 / 目前本地：**CLI0.1.53 / local.51 / r54 kit**，唯一注册Skill 1入口／17模块／92文件。源码及安装18／46／373分组分别通过，C67实际注册案例与r54独立安装完整音画重放通过。[使用／安装](releases/CLI_0.1.53_LOCAL.md) · [ACES流程](product/ACES_TIMELINE.md) · [C67](product/CASES.md#c67-registered-aces-timeline) · [r54 ZIP](skills/agent-editor-kit-community-unified-skill-r54.zip)。
 
 Historical source stage / 历史源码阶段：**CLI0.1.53 native ACES timeline** · [Workflow](product/ACES_TIMELINE.md) · [C65 media](product/CASES.md#c65-source-aces-timeline). 18项专项及46项测量/Schema回归分列通过；已安装Skill仍CLI52，候选wheel不等于完整安装交付。

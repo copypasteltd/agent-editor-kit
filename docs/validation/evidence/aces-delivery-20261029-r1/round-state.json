@@ -48,7 +48,10 @@
       "author_bytes_unchanged_by_readonly_operations": true,
       "ACES_docs_included": true
     },
-    "registered_namespace": "b7b849859c586f46a461ca8c4f8a7107df52344aba3f7c812b6cb02766bae6a0"
+    "registered_namespace": "b7b849859c586f46a461ca8c4f8a7107df52344aba3f7c812b6cb02766bae6a0",
+    "delivery_commit": "a1e1e0d19fe3bd230a456c554a486579f0b87174",
+    "delivery_HEAD_origin_remote_equal": true,
+    "HEAD_Windows_checkout_byte_equal_files": 95
   },
   "historical": {
     "compat_r3": "373 tests with no failures/errors/skips; frozen_equal=false (hdr_measure.py); not final-source acceptance",
@@ -56,7 +59,6 @@
   },
   "running": [],
   "pending": [
-    "Commit/push final local CLI53 delivery and verify Windows checkout byte preservation.",
     "Continue all38 original closure conditions without narrowing goal.",
     "Camera automatic IDT, AMF/LMT, GPU ACES and natural quality/physical monitoring remain open.",
     "Full product parity, natural advertising tasks, clean-host and public new-release acceptance remain open."

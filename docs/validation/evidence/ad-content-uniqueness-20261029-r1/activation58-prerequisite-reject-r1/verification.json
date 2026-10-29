@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "scope": "activation-prerequisite-rejection-only",
+  "mutated": false,
+  "activated": false,
+  "protected_files": 95,
+  "product_functional_tests": 0,
+  "script_sha256": "a3304b57aad4c251fbdf210a20c5c4054f4b455aeae54cc4edd0fa9d642954c4",
+  "missing": [
+    "candidate",
+    "staged_gpu",
+    "installed58_contracts"
+  ],
+  "exit_code": 2
+}

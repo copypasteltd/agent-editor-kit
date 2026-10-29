@@ -1943,6 +1943,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R452 | CLI58 installed bootstrap/control/selection/semantic | 31/19/57/104 tests passed separately;zero failures/errors/skips;installed package only,source and tests frozen |
 | R453 | CLI58 installed actual DF3 CUDA | 4 forwards;1124160-byte complete PCM equal to source and editable package replay;controlled quality only |
 | R454 | CLI58 installed actual content case | All120 frames/27648000 RGBA bytes equal to source and package replay;explicit synthetic search,no semantic-quality acceptance |
+| R455 | CLI58統一Skill切換工具 | 已準備候選入口、實際PowerShell CUDA及真實C入口核驗與備份切換；缺少前置收據時實際拒絕且95個受保護檔案不變；尚未啟用 |
 
 ## 當前邊界與開發方向
 

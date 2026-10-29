@@ -1945,6 +1945,7 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R452 | CLI58 installed bootstrap/control/selection/semantic | 31/19/57/104 tests passed separately;zero failures/errors/skips;installed package only,source and tests frozen |
 | R453 | CLI58 installed actual DF3 CUDA | 4 forwards;1124160-byte complete PCM equal to source and editable package replay;controlled quality only |
 | R454 | CLI58 installed actual content case | All120 frames/27648000 RGBA bytes equal to source and package replay;explicit synthetic search,no semantic-quality acceptance |
+| R455 | CLI58 unified Skill rollout tooling | Prepared staged/registered PowerShell CUDA verification and backed-up activation;missing prerequisites actually rejected with95 protected files unchanged;not yet activated |
 
 ## Current limits and development direction
 

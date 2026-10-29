@@ -2053,6 +2053,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R497 | CLI62 source / CLI61 candidate failure | 修復口型同步容量觀察與進度暫存檔原子重新命名的競爭；新增真實 FFmpeg 故障注入、完整 RGBA/PCM、錯誤傳播及超預算清理回歸。保留 CLI61 候選實際 MuseTalk 失敗，正式 Skill 仍 CLI59；新版本完整交付門檻待完成。[變更與證據](docs/validation/CLI62口型存储竞争修复_2026-10-29.md) |
 | R498 | CLI62 delivery gates | 控制/操作預算/程序回歸19項通過；CLI62/local60建置入口在缺少當前版本驗收結果時實際拒絕，未建立安裝候選，95個正式註冊檔案不變。406項完整合同、真實CUDA及其他回歸另行執行，尚未交付新安裝包或Skill。[證據](docs/validation/CLI62口型存储竞争修复_2026-10-29.md#后续交付门禁实测) |
 | R499 | CLI62 installation / Skill preparation | 素材選擇與廣告分鏡57項回歸通過；補齊安裝版強制406項合同與實際案例流程、單一Skill暫存入口。兩個入口缺前置材料時實際回傳pending/2，未建立目錄，95個正式檔案不變；尚未交付新安裝或註冊。[證據](docs/validation/CLI62口型存储竞争修复_2026-10-29.md#安装版与单一-skill-暂存准备) |
+| R500 | CLI62 serial delivery controller | 補齊依既有Windows程序控制代碼串行交付的流程，不重啟原驗證任務。真實子程序觀察/正常退出/不存在程序拒絕/控制代碼釋放實測通過。完整控制器仍等待MuseTalk，尚未完成新安裝或Skill交付。[證據與邊界](docs/validation/CLI62口型存储竞争修复_2026-10-29.md#串行交付控制与实际进程观察) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

@@ -1,0 +1,20 @@
+test_own_application_and_native_model_dependencies_do_not_shadow_each_other (__main__.SemanticWorkerImportTests.test_own_application_and_native_model_dependencies_do_not_shadow_each_other) ... FAIL
+
+======================================================================
+FAIL: test_own_application_and_native_model_dependencies_do_not_shadow_each_other (__main__.SemanticWorkerImportTests.test_own_application_and_native_model_dependencies_do_not_shadow_each_other)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_semantic_worker_imports.py", line 46, in test_own_application_and_native_model_dependencies_do_not_shadow_each_other
+    self.assertEqual(json.loads(result.stdout),
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                     dict(application='owned application', dependency='registered model runtime'))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'app[15 chars]ed application', 'dependency': 'bundled controller dependency'} != {'app[15 chars]ed application', 'dependency': 'registered model runtime'}
++ {'application': 'owned application', 'dependency': 'registered model runtime'}
+- {'application': 'owned application',
+-  'dependency': 'bundled controller dependency'}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.169s
+
+FAILED (failures=1)

@@ -1,0 +1,32 @@
+{
+  "at_utc": "2026-10-29T02:16:29.685145+00:00",
+  "goal": "active_not_complete",
+  "source_cli": "0.1.56",
+  "source_groups": {
+    "bootstrap": 1,
+    "deadline": 15,
+    "selection": 45,
+    "semantic": 104
+  },
+  "source_modules": 281,
+  "live_handles": {
+    "full11_source56_setup_r5": 6482,
+    "complete_native56_bundle_install_r1": 42204
+  },
+  "registered_skill": "CLI53/local51/r54;1entry/17modules/92files",
+  "verified_pushed_before_this_commit": "f92ff499",
+  "historical55_source_cases": [
+    "case-r3 passed D native runtime",
+    "case-r4 passed E native runtime"
+  ],
+  "historical55_installed_case": "installed-case-r1 failed SEMANTIC_RUNTIME_CHANGED;bundled NumPy/Pillow shadow model runtime",
+  "pin55": "do not activate;failed actual installed gate rejects --apply",
+  "next": [
+    "Await same live56 handles,do not restart on observation timeout.",
+    "When native56 installation terminal passes,run isolated installed bootstrap1/deadline15/selection45/semantic104;use test_ad_selection_delivery.py -I -S -B and new evidence series.",
+    "When full11 source56 setup-r5 terminal passes,run actual source56 case --run r5;then installed56 actual case after source case passes.",
+    "Stage/activate/formal-package unified56 Skill only after actual source/installed cases and matching gates;keep four offline model packs and historical releases.",
+    "Verify HEAD/origin/advertised remote after scoped fix commit terminal.",
+    "All38 original full-goal closure conditions retained."
+  ]
+}

@@ -1,5 +1,9 @@
 # agent editor kit
 
+**源码 CLI56 已修复语义工作进程依赖遮蔽。** 仅在固定自身应用包时临时置顶应用路径，随后恢复模型环境的依赖搜索顺序，保留版本／路径指纹检查。1项真实原生引导回归、15项进程控制、45项选材／分镜、104项语义兼容分别通过；完整新包与11素材GPU流程正在执行，安装版及正式Skill尚未验收。正式入口仍53／r54。[根因、修复与证据](docs/product/SEMANTIC_WORKER_ISOLATION.md)。
+
+**CLI55 安装版实际GPU验收发现依赖遮蔽问题，尚未通过。** 模型环境原本的NumPy／Pillow被应用安装site里的不同版本覆盖，指纹检查返回SEMANTIC_RUNTIME_CHANGED；没有安装版成片。已保留原始失败并用独立原生进程重现根因，正在修复；正式Skill保持53／r54。[问题、证据及修复路径](docs/product/SEMANTIC_WORKER_ISOLATION.md)。
+
 **CLI55 源码的实际 CUDA 选材与完整音画重放已通过。** 11项素材建立索引／校准，3条固定查询选中预期素材；横竖版各90帧，工程导出后重放的完整RGB与非静音PCM分别一致。[C68案例、视频、GIF及边界](docs/product/CASES.md#c68-source-semantic-ad-selection)。独立安装版同范围任务正在运行，正式Skill仍53／r54；[统一Skill切换流程](docs/validation/CLI55统一Skill切换_2026-10-29.md)已实现缺失案例时拒绝改动。
 
 ![Actual source CLI55 semantic selection](docs/assets/ad-selection-source55-20261029-r1/wide.gif)
@@ -1823,6 +1827,15 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R401 | Source CLI55 actual semantic ad selection and replay | All3 fixed queries matched expected assets;4 renders;wide/vertical90frames each;complete RGB and finite non-silent PCM replay equal | [raw](docs/validation/evidence/process-budget-20261029-r1/case-r3/verification.json) | Familiar static scope;installed/registered cases separate;no independent Agent benchmark |
 | R402 | Actual source55 demo media | Two unchanged source movies,two GIFs,two frame images and source/rights metadata | [media](docs/assets/ad-selection-source55-20261029-r1/SOURCE.json) | Technical small-resolution demo;no continuous human viewing/listening acceptance |
 | R403 | Unified55 Skill pin preflight | Missing source/installed-case gates returned pending,exit2;namespace/runtime/all92 live files unchanged | [raw](docs/validation/evidence/process-budget-20261029-r1/skill-pin-preflight-r1/verification.json) | Refusal branch only;positive pin/activation/registration not yet accepted |
+| R404 | Actual installed55 semantic case failure retained | Import and explicit migration passed;actual search rejected SEMANTIC_RUNTIME_CHANGED due to bundled NumPy/Pillow shadowing;zero renders | [raw](docs/validation/evidence/process-budget-20261029-r1/installed-case-r1/verification.json) | Failed;not installed GPU acceptance;registered Skill stays53 |
+| R405 | Native worker dependency-shadow regression | Actual installed response and isolated bootstrap fixture reproduce model dependency displacement | [raw](docs/validation/evidence/process-budget-20261029-r1/installed-import-shadow-r1/verification.json) | Defect reproduced,not fixed;bootstrap fixture is not neural-quality evidence |
+| R406 | Second existing native environment full11 CUDA setup | E-drive Torch2.14/Transformers5.17 registration/index/calibration passed;identical frozen corpus/queries/calibration source | [raw](docs/validation/evidence/process-budget-20261029-r1/setup-r4/verification.json) | Same host;actual case separate;no new dependency install or virtualization |
+| R407 | Actual --apply refuses failed installed case | Rejected installed_case;no pin directory;namespace/runtime/all92 live files unchanged | [raw](docs/validation/evidence/process-budget-20261029-r1/skill-pin-preflight-r2/verification.json) | Refusal path only;successful pin/activation/registration remain unaccepted |
+| R408 | Source CLI56 native worker isolation fix | Actual isolated subprocess resolves own application and native model dependency despite both name collisions;1 regression passed | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/bootstrap-r1/verification.json) | Bootstrap contract only;actual installed GPU workflow not yet accepted |
+| R409 | Source CLI56 inherited process controls | 15 passed;zero failures/errors/skips;281 modules frozen | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/deadline-r1/verification.json) | Cooperative budgets,not hard real-time preemption |
+| R410 | Source CLI56 selection/storyboard compatibility | 45 passed;zero failures/errors/skips;281 modules frozen | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/selection-r1/verification.json) | Mocked retrieval contract is separate from actual new-version inference |
+| R411 | Source CLI56 semantic compatibility | 104 passed;zero failures/errors/skips;281 modules frozen | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/semantic-r1/verification.json) | Index/calibration/native installation and formal Skill separately accepted |
+| R412 | Source CLI55 second native-runtime actual case | E environment passed same3 frozen labels;4renders;both90frames;fullRGB/non-silentPCM replay equal | [raw](docs/validation/evidence/process-budget-20261029-r1/case-r4/verification.json) | Same host and familiar static corpus;not installed55 acceptance or independent Agent benchmark |
 
 ## 当前边界与开发方向
 

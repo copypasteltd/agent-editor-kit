@@ -40,7 +40,7 @@ def main():
     parser.add_argument('--run', required=True)
     parser.add_argument('--attempt', help='New case evidence identity; retains the same frozen project and queries')
     parser.add_argument('--timeout-seconds', type=float, default=900)
-    parser.add_argument('--cli-version', choices=('0.1.54', '0.1.55'), default='0.1.54')
+    parser.add_argument('--cli-version', choices=('0.1.54', '0.1.55', '0.1.56'), default='0.1.54')
     parser.add_argument('--full-corpus', action='store_true')
     parser.add_argument('--evidence-series', default='ad-selection-20261029-r1')
     parser.add_argument('--python-executable', type=Path, help='Explicit existing native model runtime; registration attests all dependencies')

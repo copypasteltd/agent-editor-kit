@@ -12,7 +12,17 @@ import traceback
 
 def main() -> int:
     sys.dont_write_bytecode=True
-    sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+    application_root = str(Path(__file__).resolve().parents[1])
+    # Pin only our own application package. Leaving the controller's site
+    # directory first would replace the separately registered model runtime's
+    # NumPy/Pillow in an installed bundle, invalidating its attested profile.
+    sys.path.insert(0, application_root)
+    try:
+        import ai_ad_editor
+    finally:
+        sys.path.remove(application_root)
+    if Path(ai_ad_editor.__file__).resolve() != Path(__file__).resolve().with_name('__init__.py'):
+        raise RuntimeError('SEMANTIC_APPLICATION_CHANGED')
     from ai_ad_editor.semantic_contract import PROTOCOL, fingerprint, json_object, local_file
     request=json_object(Path(sys.argv[1]),max_bytes=2*1024**2)
     response_path=Path(request['response'])

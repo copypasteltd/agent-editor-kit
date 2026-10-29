@@ -1,0 +1,14 @@
+{
+  "status": "defect-reproduced",
+  "source_cli": "0.1.55",
+  "actual_installed_case": "installed-case-r1",
+  "actual_worker_code": "SEMANTIC_RUNTIME_CHANGED",
+  "actual_model_environment_numpy": "2.4.6",
+  "actual_installed_shadow_numpy": "2.4.2",
+  "actual_installed_shadow_PIL": "12.1.0",
+  "native_bootstrap_test_exit_code": 1,
+  "bootstrap_oracle_expected": "registered model runtime",
+  "bootstrap_observed": "bundled controller dependency",
+  "fixed": false,
+  "registered_skill_unchanged": true
+}

@@ -28,13 +28,13 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--run', required=True)
     parser.add_argument('--resume-from', help='Reuse a completed, hash-checked candidate build; never reuse an installation')
-    parser.add_argument('--cli-version', choices=('0.1.54', '0.1.55'), default='0.1.54')
-    parser.add_argument('--local-release', choices=('v0.1.0-alpha.4-local.52', 'v0.1.0-alpha.4-local.53'), default='v0.1.0-alpha.4-local.52')
+    parser.add_argument('--cli-version', choices=('0.1.54', '0.1.55', '0.1.56'), default='0.1.54')
+    parser.add_argument('--local-release', choices=('v0.1.0-alpha.4-local.52', 'v0.1.0-alpha.4-local.53', 'v0.1.0-alpha.4-local.54'), default='v0.1.0-alpha.4-local.52')
     parser.add_argument('--evidence-series', default='ad-selection-20261029-r1')
     args = parser.parse_args()
     assert args.run.replace('-', '').isalnum()
     assert args.evidence_series.replace('-', '').isalnum()
-    assert (args.cli_version, args.local_release) in [('0.1.54', 'v0.1.0-alpha.4-local.52'), ('0.1.55', 'v0.1.0-alpha.4-local.53')]
+    assert (args.cli_version, args.local_release) in [('0.1.54', 'v0.1.0-alpha.4-local.52'), ('0.1.55', 'v0.1.0-alpha.4-local.53'), ('0.1.56', 'v0.1.0-alpha.4-local.54')]
     if args.resume_from:
         assert args.resume_from.replace('-', '').isalnum() and args.resume_from != args.run
     base = ROOT/'local/agent-ffmpeg'/args.local_release

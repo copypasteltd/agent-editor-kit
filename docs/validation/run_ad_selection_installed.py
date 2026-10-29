@@ -34,7 +34,7 @@ def main():
     parser.add_argument('--run', required=True)
     parser.add_argument('--source-case', type=Path)
     parser.add_argument('--source-run', default='r2')
-    parser.add_argument('--cli-version', choices=('0.1.54', '0.1.55'), default='0.1.54')
+    parser.add_argument('--cli-version', choices=('0.1.54', '0.1.55', '0.1.56'), default='0.1.54')
     parser.add_argument('--evidence-series', default='ad-selection-20261029-r1')
     parser.add_argument('--timeout-seconds', type=float, default=1800)
     parser.add_argument('--skill-entry', type=Path, help='Optional actual unified PowerShell entry; its runtime must match --installed')
@@ -53,7 +53,7 @@ def main():
     assert source_case['status'] == 'passed' and source_case['full_project_replay_equal']
     assert source_case['source_cli'] == args.cli_version
     groups = [('selection', 45), ('semantic', 104)]
-    if args.cli_version == '0.1.55':
+    if args.cli_version in ('0.1.55', '0.1.56'):
         groups.append(('deadline', 15))
     for group, count in groups:
         gate = load(BASE/('installed-'+group+'-r1')/'verification.json')

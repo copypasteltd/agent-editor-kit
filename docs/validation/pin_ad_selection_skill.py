@@ -48,6 +48,12 @@ def main():
                               mutated=False, activated=False), ensure_ascii=False))
         return 2
     reports = {name: load(path) for name, path in gates.items()}
+    rejected = [name for name, report in reports.items()
+                if report.get('status') != ('installed-and-byte-verified' if name == 'installation' else 'passed')]
+    if rejected:
+        print(json.dumps(dict(status='rejected', ready=False, failed_gates=rejected,
+                              mutated=False, activated=False), ensure_ascii=False))
+        return 2
     installation = reports['installation']
     assert installation['status'] == 'installed-and-byte-verified'
     assert installation['cli_version'] == '0.1.55'

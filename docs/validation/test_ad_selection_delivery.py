@@ -17,9 +17,9 @@ def digest(path):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--installed', type=Path, required=True)
-    parser.add_argument('--group', choices=('deadline', 'selection', 'semantic'), required=True)
+    parser.add_argument('--group', choices=('deadline', 'selection', 'semantic', 'bootstrap'), required=True)
     parser.add_argument('--run', required=True)
-    parser.add_argument('--cli-version', choices=('0.1.54', '0.1.55'), default='0.1.54')
+    parser.add_argument('--cli-version', choices=('0.1.54', '0.1.55', '0.1.56'), default='0.1.54')
     parser.add_argument('--evidence-series', default='ad-selection-20261029-r1')
     args = parser.parse_args()
     assert sys.flags.isolated and sys.flags.no_site and sys.dont_write_bytecode
@@ -35,7 +35,8 @@ def main():
     package = site/'ai_ad_editor'
     source = ROOT/'product/src/ai_ad_editor'
     tests = ROOT/'product/tests'
-    modules = (['test_process_operation_budget', 'test_execution_control'] if args.group == 'deadline' else
+    modules = (['test_semantic_worker_imports'] if args.group == 'bootstrap' else
+               ['test_process_operation_budget', 'test_execution_control'] if args.group == 'deadline' else
                ['test_ad_selection', 'test_ad_storyboard'] if args.group == 'selection' else
         ['test_semantic', 'test_semantic_decisions', 'test_semantic_jobs',
          'test_semantic_package', 'test_semantic_upgrade'])

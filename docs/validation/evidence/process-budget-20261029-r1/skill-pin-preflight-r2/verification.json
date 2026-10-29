@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "scope": "explicit-apply-with-actual-failed-installed-case-refuses-pin",
+  "child_exit_code": 2,
+  "gate_result": {
+    "status": "rejected",
+    "ready": false,
+    "failed_gates": [
+      "installed_case"
+    ],
+    "mutated": false,
+    "activated": false
+  },
+  "namespace_runtime_and_all92_live_files_unchanged": true,
+  "no_pin_directory_created": true,
+  "activation_executed": false,
+  "positive_pin_path_accepted": false
+}

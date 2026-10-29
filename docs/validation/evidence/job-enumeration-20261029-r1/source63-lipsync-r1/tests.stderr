@@ -1,0 +1,39 @@
+test_actual_transport_registers_two_editable_linked_tracks_and_rerun_plan (test_lipsync.CLITests.test_actual_transport_registers_two_editable_linked_tracks_and_rerun_plan) ... ok
+test_dry_run_has_no_inference_or_project_mutation (test_lipsync.CLITests.test_dry_run_has_no_inference_or_project_mutation) ... ok
+test_failed_generation_rolls_back_all_project_and_rights_metadata (test_lipsync.CLITests.test_failed_generation_rolls_back_all_project_and_rights_metadata) ... ok
+test_read_only_inspection_preserves_metadata (test_lipsync.CLITests.test_read_only_inspection_preserves_metadata) ... ok
+test_registered_tensor_tamper_is_detected_before_inference (test_lipsync.CLITests.test_registered_tensor_tamper_is_detected_before_inference) ... ok
+test_validation_failure_after_publication_rolls_back_asset_and_metadata (test_lipsync.CLITests.test_validation_failure_after_publication_rolls_back_asset_and_metadata) ... ok
+test_array_budget_rejects_before_neural_batch (test_lipsync.PixelTests.test_array_budget_rejects_before_neural_batch) ... ok
+test_feather_stays_inside_explicit_box (test_lipsync.PixelTests.test_feather_stays_inside_explicit_box) ... ok
+test_fractional_and_hidden_alpha_and_outside_box_are_bit_exact (test_lipsync.PixelTests.test_fractional_and_hidden_alpha_and_outside_box_are_bit_exact) ... ok
+test_invalid_neural_batch_and_semantic_mask_rejected (test_lipsync.PixelTests.test_invalid_neural_batch_and_semantic_mask_rejected) ... ok
+test_mask_top_protects_upper_face_with_no_feather (test_lipsync.PixelTests.test_mask_top_protects_upper_face_with_no_feather) ... ok
+test_partial_pipe_reads_produce_the_same_complete_frames (test_lipsync.PixelTests.test_partial_pipe_reads_produce_the_same_complete_frames) ... ok
+test_semantic_zero_mask_is_identity_even_when_prediction_changes (test_lipsync.PixelTests.test_semantic_zero_mask_is_identity_even_when_prediction_changes) ... ok
+test_short_write_rejected (test_lipsync.PixelTests.test_short_write_rejected) ... ok
+test_truncated_and_extra_frames_rejected (test_lipsync.PixelTests.test_truncated_and_extra_frames_rejected) ... ok
+test_bad_boxes_rejected (test_lipsync.PlanTests.test_bad_boxes_rejected) ... ok
+test_box_interpolation_and_hold_are_exact_output_frame_clock (test_lipsync.PlanTests.test_box_interpolation_and_hold_are_exact_output_frame_clock) ... ok
+test_ceil_clock_preserves_all_selected_samples_with_less_than_40ms_padding (test_lipsync.PlanTests.test_ceil_clock_preserves_all_selected_samples_with_less_than_40ms_padding) ... ok
+test_cuda_settings_reject_cpu_and_boolean_batch (test_lipsync.PlanTests.test_cuda_settings_reject_cpu_and_boolean_batch) ... ok
+test_image_range_and_source_loop_are_rejected (test_lipsync.PlanTests.test_image_range_and_source_loop_are_rejected) ... ok
+test_options_clocks_and_quotas_reject_before_execution (test_lipsync.PlanTests.test_options_clocks_and_quotas_reject_before_execution) ... ok
+test_portable_recipe_digests_clock_parents_and_rebinding (test_lipsync.PlanTests.test_portable_recipe_digests_clock_parents_and_rebinding) ... ok
+test_source_video_requires_explicit_shortage_strategy (test_lipsync.PlanTests.test_source_video_requires_explicit_shortage_strategy) ... ok
+test_atomic_progress_rename_during_storage_scan_preserves_complete_transport (test_lipsync.TransportTests.test_atomic_progress_rename_during_storage_scan_preserves_complete_transport) ... ok
+test_cancel_marker_kills_owned_children (test_lipsync.TransportTests.test_cancel_marker_kills_owned_children) ... ok
+test_complete_actual_qtrle_and_float_pcm_transport_and_cleanup (test_lipsync.TransportTests.test_complete_actual_qtrle_and_float_pcm_transport_and_cleanup) ... ok
+test_deadline_after_worker_start_reclaims_actual_pipeline_children (test_lipsync.TransportTests.test_deadline_after_worker_start_reclaims_actual_pipeline_children) ... ok
+test_forged_alpha_response_is_rejected (test_lipsync.TransportTests.test_forged_alpha_response_is_rejected) ... ok
+test_preprocessing_non_timeout_errors_are_not_reclassified (test_lipsync.TransportTests.test_preprocessing_non_timeout_errors_are_not_reclassified) ... ok
+test_preprocessing_timeout_normalizes_code_after_real_child_cleanup (test_lipsync.TransportTests.test_preprocessing_timeout_normalizes_code_after_real_child_cleanup) ... ok
+test_storage_budget_still_rejects_and_reclaims_pipeline (test_lipsync.TransportTests.test_storage_budget_still_rejects_and_reclaims_pipeline) ... ok
+test_storage_scan_counts_regular_files_and_keeps_io_errors_visible (test_lipsync.TransportTests.test_storage_scan_counts_regular_files_and_keeps_io_errors_visible) ... ok
+test_timeout_kills_owned_children (test_lipsync.TransportTests.test_timeout_kills_owned_children) ... ok
+test_worker_failure_is_diagnosed_and_workspace_recovered (test_lipsync.TransportTests.test_worker_failure_is_diagnosed_and_workspace_recovered) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 82.398s
+
+OK

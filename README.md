@@ -2062,6 +2062,7 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R504 | CLI62 cleanup diagnosis | 原失败作曲用例增加原生枚举观察后单独重复10次均通过，39个真实快照未见不完整列表，无伪造计数。仅未重现，原37项组失败不撤销，不宣称修复或恢复交付。[证据](docs/validation/evidence/lipsync-storage-race-20261029-r1/score-cleanup-probe-r1/verification.json) |
 | R505 | CLI63 source cleanup fix | 有界重查不完整进程列表/ERROR_MORE_DATA，保留自有句柄，4096上限与权限错误不放宽，增加计数诊断及共享10秒截止时间。真实Windows子进程配合API边界注入11项通过；CLI62基线拒绝同一不完整列表。其他交付另验，不声称自然故障唯一根因已证实。[实现与证据](docs/validation/CLI63原生进程清理_2026-10-29.md) |
 | R506 | CLI63 source consumers | 隔离启动31项、控制26项、音乐/作曲37项分别通过，均零失败/错误/跳过，源与测试冻结一致。26控制已含11原生测试，不重复累计。保留CLI62音乐失败；口型/完整合同/真实模型/安装与Skill另验。[证据](docs/validation/CLI63原生进程清理_2026-10-29.md#已完成的消费链回归) |
+| R507 | CLI63 source lip transport | 口型协议、真实FFmpeg/合成worker输送、超时/取消/回滚34项通过，零失败/错误/跳过且冻结一致。406合同与本版本真实MuseTalk/DF3 CUDA另行执行；未声称模型或新安装/Skill已通过。[证据](docs/validation/CLI63原生进程清理_2026-10-29.md#已完成的消费链回归) |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

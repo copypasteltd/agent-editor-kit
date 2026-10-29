@@ -1,5 +1,9 @@
 # agent editor kit
 
+**CLI55 原始碼的實際 CUDA 選材與完整音畫重播已通過。** 11項素材建立索引／校準，3條固定查詢選中預期素材；橫直版各90幀，專案匯出後重播的完整RGB與非靜音PCM分別一致。[C68案例、影片、GIF及邊界](docs/product/CASES.md#c68-source-semantic-ad-selection)。獨立安裝版同範圍任務正在執行，正式Skill仍53／r54；[統一Skill切換流程](docs/validation/CLI55统一Skill切换_2026-10-29.md)已實作缺少案例時拒絕改動。
+
+![Actual source CLI55 semantic selection](docs/assets/ad-selection-source55-20261029-r1/wide.gif)
+
 **目前 CLI55 完整候選已原生離線安裝，原始碼與安裝版各自通過15／45／104分組核驗。** 281模組／8原生資源一致；新統一Skill候選維持1入口／17模組／93檔案，實際PowerShell入口已核驗，但尚未啟用。完整11素材的GPU註冊／索引／校準、實際選材與音畫重放繼續獨立驗收。正式入口仍CLI53／r54。[候選包、摘要與實際使用入口](docs/validation/CLI55原生交付_2026-10-29.md)。
 
 **原始碼 CLI55：修復原生子程序繼承命令預算。** 等待期間檢查外層期限與取消檔案，關閉自有程序作業並回收讀取執行緒；15項控制、45項選材／分鏡、104項語義相容分組分別通過。CLI54實際選材逾時且未產生成片，失敗保留；CLI55新包與完整GPU流程另驗。正式Skill仍CLI53／r54。[行為、原生前後對照與邊界](docs/product/PROCESS_OPERATION_BUDGET.md)。
@@ -1815,6 +1819,10 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R397 | Installed CLI55 selection/storyboard compatibility | 45 passed;zero failures/errors/skips;installed-only;source/installed bytes frozen equal | [raw](docs/validation/evidence/process-budget-20261029-r1/installed-selection-r1/verification.json) | Includes mocked semantic-service CLI plumbing;not actual GPU selection acceptance |
 | R398 | Installed CLI55 semantic compatibility | 104 passed;zero failures/errors/skips;independent isolated installed package;281 modules frozen equal | [raw](docs/validation/evidence/process-budget-20261029-r1/installed-semantic-r1/verification.json) | Retrieval/decisions/jobs/packages/upgrades;actual new-runtime GPU flow remains separate |
 | R399 | Unified CLI55 candidate actual PowerShell entry | Skill format valid;actual run.ps1→pinned installed version/capabilities passed;1 entry/17 modules/93 files;live namespace/runtime unchanged | [raw](docs/validation/evidence/process-budget-20261029-r1/skill-candidate-r1/verification.json) | Candidate unregistered;zero model forwards in these2 checks;live Skill remains53/r54 |
+| R400 | Source CLI55 full11-source CUDA setup | Registration/index/calibration passed;281 source modules frozen | [raw](docs/validation/evidence/process-budget-20261029-r1/setup-r3/verification.json) | Empirical calibration;not universal rejection or natural quality |
+| R401 | Source CLI55 actual semantic ad selection and replay | All3 fixed queries matched expected assets;4 renders;wide/vertical90frames each;complete RGB and finite non-silent PCM replay equal | [raw](docs/validation/evidence/process-budget-20261029-r1/case-r3/verification.json) | Familiar static scope;installed/registered cases separate;no independent Agent benchmark |
+| R402 | Actual source55 demo media | Two unchanged source movies,two GIFs,two frame images and source/rights metadata | [media](docs/assets/ad-selection-source55-20261029-r1/SOURCE.json) | Technical small-resolution demo;no continuous human viewing/listening acceptance |
+| R403 | Unified55 Skill pin preflight | Missing source/installed-case gates returned pending,exit2;namespace/runtime/all92 live files unchanged | [raw](docs/validation/evidence/process-budget-20261029-r1/skill-pin-preflight-r1/verification.json) | Refusal branch only;positive pin/activation/registration not yet accepted |
 
 ## 當前邊界與開發方向
 

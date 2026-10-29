@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "scope": "missing-actual-cases-refuses-pin",
+  "child_exit_code": 2,
+  "missing": [
+    "source_case",
+    "installed_case"
+  ],
+  "namespace_runtime_and_all92_live_files_unchanged": true,
+  "activation_executed": false,
+  "positive_pin_path_accepted": false,
+  "gate_result": {
+    "status": "pending",
+    "ready": false,
+    "missing": [
+      "source_case",
+      "installed_case"
+    ],
+    "mutated": false,
+    "activated": false
+  },
+  "script_sha256": "7e19e2e4b7d71613538c0fdeb3d8d71f5b32be07cc09385e2addaca77d2f1e9b"
+}

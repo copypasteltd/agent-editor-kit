@@ -1,5 +1,9 @@
 # agent editor kit
 
+**Source CLI55 passed actual CUDA selection and complete audiovisual project replay.** Eleven indexed/calibrated sources, three fixed queries and both90-frame aspect ratios passed;complete RGB and finite non-silent PCM match their editable-project replays.[C68,movies,GIFs and limits](docs/product/CASES.md#c68-source-semantic-ad-selection).The isolated installed case is running;the live Skill remains53/r54.[Unified Skill pinning](docs/validation/CLI55统一Skill切换_2026-10-29.md)now refuses mutation when actual cases are missing.
+
+![Actual source CLI55 semantic selection](docs/assets/ad-selection-source55-20261029-r1/wide.gif)
+
 **The complete CLI55 candidate is installed natively and offline;source and installed15/45/104 groups each passed independently.**281 modules/8 native resources match.The unified candidate has1 entry/17 modules/93 files and a verified PowerShell front door;it remains unregistered.Actual full11-source GPU registration/index/calibration,selection and audiovisual replay are separate gates.The live Skill remains53/r54.[Candidate bundle,hashes and actual entry](docs/validation/CLI55原生交付_2026-10-29.md).
 
 **Source CLI55 fixes inherited command budgets while awaiting native subprocesses.** It checks outer deadlines/cancellation and closes owned process jobs/readers.15 control,45 selection/storyboard and104 semantic tests passed separately. Actual CLI54 selection timed out without a plan or movie;its failure is preserved.CLI55 packaging and the full GPU workflow remain separate gates;registered Skill stays53/r54.[Native before/after and limits](docs/product/PROCESS_OPERATION_BUDGET.md).
@@ -1817,6 +1821,10 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R397 | Installed CLI55 selection/storyboard compatibility | 45 passed;zero failures/errors/skips;installed-only;source/installed bytes frozen equal | [raw](docs/validation/evidence/process-budget-20261029-r1/installed-selection-r1/verification.json) | Includes mocked semantic-service CLI plumbing;not actual GPU selection acceptance |
 | R398 | Installed CLI55 semantic compatibility | 104 passed;zero failures/errors/skips;independent isolated installed package;281 modules frozen equal | [raw](docs/validation/evidence/process-budget-20261029-r1/installed-semantic-r1/verification.json) | Retrieval/decisions/jobs/packages/upgrades;actual new-runtime GPU flow remains separate |
 | R399 | Unified CLI55 candidate actual PowerShell entry | Skill format valid;actual run.ps1→pinned installed version/capabilities passed;1 entry/17 modules/93 files;live namespace/runtime unchanged | [raw](docs/validation/evidence/process-budget-20261029-r1/skill-candidate-r1/verification.json) | Candidate unregistered;zero model forwards in these2 checks;live Skill remains53/r54 |
+| R400 | Source CLI55 full11-source CUDA setup | Registration/index/calibration passed;281 source modules frozen | [raw](docs/validation/evidence/process-budget-20261029-r1/setup-r3/verification.json) | Empirical calibration;not universal rejection or natural quality |
+| R401 | Source CLI55 actual semantic ad selection and replay | All3 fixed queries matched expected assets;4 renders;wide/vertical90frames each;complete RGB and finite non-silent PCM replay equal | [raw](docs/validation/evidence/process-budget-20261029-r1/case-r3/verification.json) | Familiar static scope;installed/registered cases separate;no independent Agent benchmark |
+| R402 | Actual source55 demo media | Two unchanged source movies,two GIFs,two frame images and source/rights metadata | [media](docs/assets/ad-selection-source55-20261029-r1/SOURCE.json) | Technical small-resolution demo;no continuous human viewing/listening acceptance |
+| R403 | Unified55 Skill pin preflight | Missing source/installed-case gates returned pending,exit2;namespace/runtime/all92 live files unchanged | [raw](docs/validation/evidence/process-budget-20261029-r1/skill-pin-preflight-r1/verification.json) | Refusal branch only;positive pin/activation/registration not yet accepted |
 
 ## Current limits and development direction
 

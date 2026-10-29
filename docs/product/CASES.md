@@ -1230,3 +1230,28 @@ CLI0.1.53/local51，1个公开Skill／17个内部模块／92个文件，经真�
 沿用CC0原创场景线性AP1色条与立体声音调：正式影片96×128／10FPS／8帧／0.8秒，GIF放大为288×384，MP4查看副本48×64；GIF与MP4均独立核对8帧／800ms。静态PNG已查看，无连续人工观片／听审或物理显示验收，不作为自然素材艺术质量、GPU ACES或完整剪映对标结论。
 
 繁體：實際C盤唯一註冊Skill已完成完整音畫與專案重播，原生ACES仍CPU執行。English: The actual registered CLI53 Skill passed complete encoded video/audio and editable-project replay; full product parity, natural quality and physical-monitor acceptance remain open.
+
+<a id="c68-source-semantic-ad-selection"></a>
+
+## C68 · Actual CUDA semantic ad selection / 实际GPU语义选材
+
+源码CLI0.1.55，从完整11项来源（10项不同图像）索引与CUDA校准，到3条预先固定查询的联合去重选材、可编辑广告构建、两画幅渲染及工程包往返。正式已注册Skill仍CLI53，本案例不是注册入口验收。
+
+![Actual source CLI55 wide demo](../assets/ad-selection-source55-20261029-r1/wide.gif)
+
+[横版视频](../assets/ad-selection-source55-20261029-r1/wide.mp4) · [竖版视频](../assets/ad-selection-source55-20261029-r1/vertical.mp4) · [竖版GIF](../assets/ad-selection-source55-20261029-r1/vertical.gif) · [截图](../assets/ad-selection-source55-20261029-r1/wide.png) · [来源与权利记录](../assets/ad-selection-source55-20261029-r1/SOURCE.json) · [实际完整核验](../validation/evidence/process-budget-20261029-r1/case-r3/verification.json)
+
+| 编号 | 实际行为 | 结果 |
+| --- | --- | --- |
+| C68.1 | 咖啡／猫／相机3条固定查询，CUDA批量推理 | 分别选择asset_b4／asset_c2／asset_a7，与推理前冻结标签一致 |
+| C68.2 | 横版320×180／竖版180×320，各3秒、30FPS | 原始及重放共4次渲染；独立FFprobe分别确认90帧 |
+| C68.3 | 工程导出、导入、重新渲染 | 每画幅完整15,552,000字节RGB、1,155,072字节Float32 PCM分别相同；PCM有限且非静音 |
+| C68.4 | 选材只读及版本冻结 | 选材不改变作者工程；281模块前后摘要相同 |
+
+真实RTX3060文本推理采用一次模型加载、一次前向、3项768维结果。工作进程收据记录神经前向约0.301秒，模型加载约0.813秒；原生导入约15.756秒、模型／实现锁定核验约131.206秒。不能用前向时间冒充命令端到端耗时，首次加载和摘要核验成本仍须优化。
+
+图像分别为Rachel Michetti的咖啡、Stefan van der Walt的猫、Lav Varshney的相机照片，原本地来源证据均为CC0；配乐Juhani Junkala、CC0，字体Noto Sans SC、OFL-1.1。原工程Rights Ledger仅记录internal用途，已原样保留，不伪造发布授权或修改模型／素材许可。完整可编辑ZIP保留本地，未在本案例媒体目录再发布。
+
+已实际查看静态截图。GIF只用于技术演示；小尺寸字幕、静态熟悉图集、3秒时长不代表自然运动广告、连续听审或艺术质量通过。CUDA校准保留20/20正确正例接受、1/20负例误接受的实际结果；不是零误差保证。原CLI54超时失败仍保留。
+
+繁體：原始碼實際CUDA選材、橫直版完整音畫與專案重播通過；安裝／註冊入口及自然廣告品質另驗。English: Actual source CLI55 GPU selection and complete two-aspect audiovisual replay passed;installed/registered entry acceptance,natural-motion quality and independent Agent success remain separate.

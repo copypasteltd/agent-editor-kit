@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "source": "0.1.62",
+  "actual_build_exit_code": 1,
+  "rejection": {
+    "status": "rejected",
+    "reason": "missing acceptance gates",
+    "missing": [
+      "docs\\validation\\evidence\\lipsync-storage-race-20261029-r1\\source62-loop-r1\\verification.json",
+      "docs\\validation\\evidence\\lipsync-storage-race-20261029-r1\\source62-selection-r1\\verification.json",
+      "docs\\validation\\evidence\\lipsync-storage-race-20261029-r1\\source62-semantic-r1\\verification.json",
+      "docs\\validation\\evidence\\lipsync-storage-race-20261029-r1\\source62-contracts-r1\\verification.json",
+      "docs\\validation\\evidence\\lipsync-storage-race-20261029-r1\\actual-case-r1\\verification.json",
+      "docs\\validation\\evidence\\lipsync-storage-race-20261029-r1\\publication-r1\\verification.json",
+      "docs\\validation\\evidence\\lipsync-storage-race-20261029-r1\\source62-gpu-r1\\verification.json",
+      "docs\\validation\\evidence\\lipsync-storage-race-20261029-r1\\source62-lipsync-cuda-r1\\verification.json"
+    ],
+    "skill_activation": false
+  },
+  "formal_cli": "0.1.59",
+  "protected_files": 95,
+  "registered_files_unchanged": true,
+  "no_candidate_created": true,
+  "full_goal_closed": false
+}

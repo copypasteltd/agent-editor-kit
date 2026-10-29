@@ -2051,6 +2051,7 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R495 | CLI61 Skill candidate | CLI61候选Skill已通过静态校验及实际PowerShell循环／DF3 CUDA：完整2557440／1124160字节PCM与源码及工程包重放一致；候选MuseTalk与正式切换仍另验。 [Evidence / sync](docs/validation/CLI61Skill音色说明同步_2026-10-29.md) |
 | R496 | CLI61 Skill candidate | 103音色Skill说明同步已备妥并验证：只变更community-materials说明，其余92个已测试文件相同；静态及四类错误拒绝通过。新版激活仍拒绝缺少候选MuseTalk；95正式文件不变，未假称已同步注册。 [Evidence / sync](docs/validation/CLI61Skill音色说明同步_2026-10-29.md) |
 | R497 | CLI62 source / CLI61 candidate failure | 修复口型同步容量观察与进度临时文件原子重命名的竞争；增加真实 FFmpeg 故障注入、完整 RGBA/PCM、错误传播及超预算清理回归。CLI61 候选实际 MuseTalk 失败保留，正式 Skill 仍 CLI59。新的完整交付门禁待完成。[改动与证据](docs/validation/CLI62口型存储竞争修复_2026-10-29.md) |
+| R498 | CLI62 delivery gates | 控制/操作预算/进程回归19项通过；CLI62/local60构建入口在缺少当前版验收结果时实际拒绝，未创建安装候选，95个正式注册文件不变。406项完整合同、真实CUDA及其他回归另行执行，尚不宣称新包或Skill已交付。[证据](docs/validation/CLI62口型存储竞争修复_2026-10-29.md#后续交付门禁实测) |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

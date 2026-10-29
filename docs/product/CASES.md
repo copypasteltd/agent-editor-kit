@@ -1449,3 +1449,15 @@ GIF为10fps预览，截图已查看；没有声称连续人工观看、听审、
 ![原始图与8套实际中间帧](../assets/optical-pack-20261029-r1/contact.png)
 
 样片为原创几何产品图与诊断双音，输入PNG／WAV为CC0。不是自然素材审美、真实品牌成片、人类听审、新神经模型或完整效果库验收。模板替换目标整条effects数组，需审阅原效果、原作者时钟与源像素尺度；完整406-r2及Skill63交付另验。
+
+
+<a id="c78-native-neural-music"></a>
+## C78：源码64原生CUDA神经配乐与工程包
+
+[完整请求与实际GPU收据](../validation/evidence/music-generation-20261030-r1/actual-piano4/verification.json) · [母带／配方／全部音画回放](../validation/evidence/music-generation-20261030-r1/package-r1/verification.json) · [接口与当前使用流程](NEURAL_MUSIC_GENERATION.md)。
+
+输入为原创室内爵士纯音乐提示，10秒、90BPM、D小调、种子20261030、8步。RTX3060原生运行ACE-Step1.5 Turbo，文本2／语言模型50／扩散8／VAE1次实际神经前向均在CUDA0。输出48kHz双声道Float32 WAV，480000样本，完整PCM与入轨通过。母带和请求配方在工程包中完整保留；300帧成片全部69120000字节RGBA和3842048字节AAC解码Float32 PCM与包回放分别相同，未重新执行模型。
+
+本机首次完整生成命令 3979.74 秒，交互性能未达目标；完整兼容431中仍有1项启动等待失败。音频、诊断波形PNG、样片MP4和ZIP的本机绝对路径见回放收据artifacts。诊断图属于实际测量波形，不是GUI截图、质量评分或人工试听。生成音频权利保持unverified／internal，未上传演示音频；AAC成片不冒称无损母带。正式入口仍63，安装版独立生成、Skill、自然质量与G25完整范围继续开放。
+
+C78后续独立安装验证：[候选Skill实际PowerShell入口](../validation/evidence/music-generation-20261030-r1/installed-package-stage1/verification.json)已导入同一工程包并重新渲染，全量母带／配方／RGBA／PCM一致；288安装模块及94候选文件原样。新增模型前向0，正式入口仍63；不视作安装版独立生成或新的自然质量案例。

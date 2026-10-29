@@ -1,0 +1,93 @@
+[
+  {
+    "name": "version",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music64-skill-stage-r1\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 23.993876600001386
+  },
+  {
+    "name": "import",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music64-skill-stage-r1\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-package-r1\\editable-neural-music.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music64-installed-package-stage1\\project"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.7878808999994362
+  },
+  {
+    "name": "render",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music64-skill-stage-r1\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music64-installed-package-stage1\\project",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music64-installed-package-stage1\\project\\renders\\installed-neural-music.mp4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 7.436204800000269
+  },
+  {
+    "name": "decode-RGBA",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-n",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music64-installed-package-stage1\\project\\renders\\installed-neural-music.mp4",
+      "-an",
+      "-pix_fmt",
+      "rgba",
+      "-f",
+      "rawvideo",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music64-installed-package-stage1\\installed.rgba"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13952079999944544
+  },
+  {
+    "name": "decode-PCM",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-n",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music64-installed-package-stage1\\project\\renders\\installed-neural-music.mp4",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music64-installed-package-stage1\\installed.pcm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.15127790000042296
+  }
+]

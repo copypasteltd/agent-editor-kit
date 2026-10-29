@@ -1,0 +1,17 @@
+Process 33912: E:\dev\sandbox\模型配乐\ComfyUI_windows_portable\python_embeded\python.exe -I -B -u -X utf8 E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\music_generation_worker.py E:\dev\sandbox\AI广告剪辑\local\agent-ffmpeg\music-generation64-piano3\project\cache\managed-jobs\job-38d0f8885684494ba427bccae59e5fc8\request.json
+Python v3.13.14 (E:\dev\sandbox\模型配乐\ComfyUI_windows_portable\python_embeded\python.exe)
+
+Thread 2680 (idle): "MainThread"
+    process_tokens (sd1_clip.py:258)
+    forward (sd1_clip.py:266)
+    _call_impl (torch\nn\modules\module.py:1794)
+    _wrapped_call_impl (torch\nn\modules\module.py:1783)
+    encode (sd1_clip.py:306)
+    encode_token_weights (sd1_clip.py:45)
+    encode_token_weights (ace15.py:345)
+    encode_from_tokens (sd.py:417)
+    encode_from_tokens_scheduled (sd.py:346)
+    execute (nodes_ace.py:60)
+    generate (ai_ad_editor\music_generation_model.py:88)
+    main (ai_ad_editor\music_generation_worker.py:70)
+    <module> (ai_ad_editor\music_generation_worker.py:107)

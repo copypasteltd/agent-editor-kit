@@ -1,0 +1,9 @@
+Process 5888: D:\dev\comfyui\ComfyUI_windows_portable_nvidia_0_30_0\ComfyUI_windows_portable\python_embeded\python.exe -I -B -X utf8 -c "import time,json;from pathlib import Path;tracefile=Path('E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\music-generation-20261030-r1\\source64-session-control-r3\\child-startup.jsonl');trace=lambda phase:tracefile.open(\"a\",encoding=\"utf8\").write(json.dumps(dict(phase=phase,monotonic=time.monotonic()))+\"\n\");trace(\"interpreter-ready\");import sys;sys.path[:0]=['E:\\dev\\sandbox\\AI广告剪辑\\product\\src', 'D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages'];trace(\"before-cli-import\");from ai_ad_editor.cli import main;trace(\"after-cli-import\");raise SystemExit(main(sys.argv[1:]))" media generate --project E:\dev\sandbox\AI广告剪辑\product\.runtime\temp\agent-matting-qqzmx1xy\中文项目 --adapter-id vace --asset-id generated --width 64 --height 64 --frames 7 --fps 12 --prompt "A red cube moves slowly." --window-frames 5 --window-overlap 2 --mode text-to-video --apply --track-id track_video_1 --model-session 33df51d2-d86f-410c-999d-966507c36ec0
+Python v3.13.14 (D:\dev\comfyui\ComfyUI_windows_portable_nvidia_0_30_0\ComfyUI_windows_portable\python_embeded\python.exe)
+
+Thread 28872 (idle): "MainThread"
+    prepare_project_transaction (ai_ad_editor\project.py:142)
+    project_transaction (ai_ad_editor\project.py:276)
+    __enter__ (contextlib.py:141)
+    main (ai_ad_editor\cli.py:7443)
+    <module> (<string>:1)

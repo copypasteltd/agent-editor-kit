@@ -1,0 +1,12 @@
+{
+  "status": "failed",
+  "kind": "audit-runner-assumption-error",
+  "assertion": "Expected R1 through R9; existing stable identifiers are R01 through R09.",
+  "README_rows": 555,
+  "historical_rows_modified": false,
+  "staging_started": false,
+  "HEAD_changed": false,
+  "formal_skill_changed": false,
+  "product_regression_result": false,
+  "correction": "Preserve all original row strings and compare numeric ordering. Re-run the corrected audit in a new directory."
+}

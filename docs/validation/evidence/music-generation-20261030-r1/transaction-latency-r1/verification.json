@@ -1,0 +1,172 @@
+{
+  "status": "passed",
+  "cli_version": "0.1.64",
+  "actual_neural_inference": false,
+  "synthetic_metadata_fixture": true,
+  "fsync_disabled": false,
+  "product_code_changed": false,
+  "timing_target_accepted": false,
+  "full_431_group_accepted": false,
+  "metadata_files": 11,
+  "metadata_bytes": 35637,
+  "prepare_seconds": 0.07045649999781745,
+  "recover_seconds": 0.17479489999823272,
+  "prepare_fsync_seconds": 0.030150899994623614,
+  "prepare_fsync_calls": 12,
+  "recover_fsync_seconds": 0.030851500014250632,
+  "recover_fsync_calls": 11,
+  "fsync_events": [
+    {
+      "phase": "prepare",
+      "seconds": 0.010136499997315696,
+      "bytes": 4168
+    },
+    {
+      "phase": "prepare",
+      "seconds": 0.0018258999989484437,
+      "bytes": 4168
+    },
+    {
+      "phase": "prepare",
+      "seconds": 0.0018299000003025867,
+      "bytes": 4168
+    },
+    {
+      "phase": "prepare",
+      "seconds": 0.002682700000150362,
+      "bytes": 4168
+    },
+    {
+      "phase": "prepare",
+      "seconds": 0.0016805000013846438,
+      "bytes": 4168
+    },
+    {
+      "phase": "prepare",
+      "seconds": 0.0017951999980141409,
+      "bytes": 4168
+    },
+    {
+      "phase": "prepare",
+      "seconds": 0.0016335000000253785,
+      "bytes": 4168
+    },
+    {
+      "phase": "prepare",
+      "seconds": 0.001734299999952782,
+      "bytes": 4168
+    },
+    {
+      "phase": "prepare",
+      "seconds": 0.0014986000023782253,
+      "bytes": 1764
+    },
+    {
+      "phase": "prepare",
+      "seconds": 0.0017757999994501006,
+      "bytes": 308
+    },
+    {
+      "phase": "prepare",
+      "seconds": 0.0019299999985378236,
+      "bytes": 221
+    },
+    {
+      "phase": "prepare",
+      "seconds": 0.0016279999981634319,
+      "bytes": 3088
+    },
+    {
+      "phase": "recover",
+      "seconds": 0.0034025000022666063,
+      "bytes": 4168
+    },
+    {
+      "phase": "recover",
+      "seconds": 0.0021221000024524983,
+      "bytes": 4168
+    },
+    {
+      "phase": "recover",
+      "seconds": 0.00209760000143433,
+      "bytes": 4168
+    },
+    {
+      "phase": "recover",
+      "seconds": 0.0023535000000265427,
+      "bytes": 4168
+    },
+    {
+      "phase": "recover",
+      "seconds": 0.002370300000620773,
+      "bytes": 4168
+    },
+    {
+      "phase": "recover",
+      "seconds": 0.0024365000026591588,
+      "bytes": 4168
+    },
+    {
+      "phase": "recover",
+      "seconds": 0.004656400000385474,
+      "bytes": 4168
+    },
+    {
+      "phase": "recover",
+      "seconds": 0.003988800002844073,
+      "bytes": 4168
+    },
+    {
+      "phase": "recover",
+      "seconds": 0.0024695000029169023,
+      "bytes": 1764
+    },
+    {
+      "phase": "recover",
+      "seconds": 0.0023369999980786815,
+      "bytes": 308
+    },
+    {
+      "phase": "recover",
+      "seconds": 0.002617300000565592,
+      "bytes": 221
+    }
+  ],
+  "backup_transaction_version": "0.1.0",
+  "recovery_status": "recovered",
+  "metadata_restored_exactly": true,
+  "metadata_before": {
+    "operations/latency-fixture-0.json": "ab8b19302da148cf67ac65e44a2434926ab84ae9d8b2f0b712b9c952a9002381",
+    "operations/latency-fixture-1.json": "020150f2f04e00c7ce4f8125e294e190880dd3d0a818bdf393a8d10978816036",
+    "operations/latency-fixture-2.json": "19c41ceeebc233333d31fcca07212bdd30686429961e2b3bbde5adb134be712f",
+    "operations/latency-fixture-3.json": "a60c976a5820e37c013d468ab6e1a586a514ace2eac99779264a2353b8e7786c",
+    "operations/latency-fixture-4.json": "96b92cde2117d27c8857ceaa0ec5c315b9247daf79a31f8e748307fd314e5cb1",
+    "operations/latency-fixture-5.json": "835cfbf8244c6b98a53f56f8d15e1406d9a07c1bf9860c4d256764d961f0dc0b",
+    "operations/latency-fixture-6.json": "72c25a5499ae3c9fae859d159cdee311ecfe30c017ef791ce3434b3eb133252f",
+    "operations/latency-fixture-7.json": "0c2617f7384ba00d55381cfe353bf57a3aff2585b8533c21466302f8a8e1e0b5",
+    "project.json": "4651f162699bd155d662a4e1b26b25ae4dafdd7e4070a3d8b10fdad8b366f58a",
+    "project.lock.json": "81604a370657f281fac09d67a0a97c3dd0c1c1f180f15d33319a512f05e7cb56",
+    "rights-ledger.json": "96188d5fe1cf9aff94230619fc07e31b77bf86f50e5271f5284d920a70907dce"
+  },
+  "metadata_after": {
+    "operations/latency-fixture-0.json": "ab8b19302da148cf67ac65e44a2434926ab84ae9d8b2f0b712b9c952a9002381",
+    "operations/latency-fixture-1.json": "020150f2f04e00c7ce4f8125e294e190880dd3d0a818bdf393a8d10978816036",
+    "operations/latency-fixture-2.json": "19c41ceeebc233333d31fcca07212bdd30686429961e2b3bbde5adb134be712f",
+    "operations/latency-fixture-3.json": "a60c976a5820e37c013d468ab6e1a586a514ace2eac99779264a2353b8e7786c",
+    "operations/latency-fixture-4.json": "96b92cde2117d27c8857ceaa0ec5c315b9247daf79a31f8e748307fd314e5cb1",
+    "operations/latency-fixture-5.json": "835cfbf8244c6b98a53f56f8d15e1406d9a07c1bf9860c4d256764d961f0dc0b",
+    "operations/latency-fixture-6.json": "72c25a5499ae3c9fae859d159cdee311ecfe30c017ef791ce3434b3eb133252f",
+    "operations/latency-fixture-7.json": "0c2617f7384ba00d55381cfe353bf57a3aff2585b8533c21466302f8a8e1e0b5",
+    "project.json": "4651f162699bd155d662a4e1b26b25ae4dafdd7e4070a3d8b10fdad8b366f58a",
+    "project.lock.json": "81604a370657f281fac09d67a0a97c3dd0c1c1f180f15d33319a512f05e7cb56",
+    "rights-ledger.json": "96188d5fe1cf9aff94230619fc07e31b77bf86f50e5271f5284d920a70907dce"
+  },
+  "implementation_sha256": {
+    "__init__.py": "1dc0fb75f152a86bda18838dff88e107591498b484fa09f9cabd2e73ae1c2f96",
+    "project.py": "b125e3dea953fc9613647edba14bfc0623d9ccca065e1c822241ecadea506e14",
+    "utils.py": "6be05b9d022e94e402fa456b18c97a1855cd6992645e6cb35e9952d050f84788",
+    "errors.py": "1525e91f86ad7f22c061a35c383d3513cdcad77acab2e364510b42adde0a9721"
+  },
+  "project": "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\local\\agent-ffmpeg\\music64-transaction-latency-r1\\project",
+  "limitations": "One native E-drive synthetic metadata workload under concurrent activity; no broad hardware or CLI performance guarantee."
+}

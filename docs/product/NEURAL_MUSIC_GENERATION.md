@@ -2,7 +2,7 @@
 
 开发中的 ACE-Step 1.5 Turbo 接入通过现有原生 ComfyUI 核心直接执行，不启动 GUI、HTTP 服务或共享队列。正式注册入口目前仍为 CLI0.1.63；本页的新增命令须由 CLI0.1.64 执行。真实推理、安装与正式 Skill 的验收状态分别记录，不能从接口或单元测试通过推断后续步骤已经完成。
 
-目前 local62 已独立离线构建并安装，[288应用模块与源码精确一致](../validation/evidence/music-generation-20261030-r1/candidate-r1/verification.json)；[94文件统一Skill候选](../validation/evidence/music-generation-20261030-r1/skill-stage-r1/verification.json)的正文与实际PowerShell version／help通过，但尚未正式注册。首个生成任务在1800秒工作进程预算内未取得模型结果并超时；[失败记录](../validation/evidence/music-generation-20261030-r1/actual-piano3/verification.json)保留，不能当作GPU音乐生成通过。完整开发与验收状态见[本轮记录](../validation/CLI64原生神经配乐_2026-10-30.md)。
+目前 local62 已独立离线构建并安装，[288应用模块与源码精确一致](../validation/evidence/music-generation-20261030-r1/candidate-r1/verification.json)；[94文件统一Skill候选](../validation/evidence/music-generation-20261030-r1/skill-stage-r1/verification.json)的正文与实际PowerShell version／help通过，但尚未正式注册。[源码首个真实GPU生成](../validation/evidence/music-generation-20261030-r1/actual-piano4/verification.json)和[候选PowerShell入口的安装版工程包回放](../validation/evidence/music-generation-20261030-r1/installed-package-stage1/verification.json)已通过。此前1800秒预算超时的[失败记录](../validation/evidence/music-generation-20261030-r1/actual-piano3/verification.json)保留。独立安装版的新生成和完整回归尚待验收。完整开发与验收状态见[本轮记录](../validation/CLI64原生神经配乐_2026-10-30.md)。
 
 它与已有 `music compose` 不同：`compose` 从可编辑音符谱面做 CPU 解析合成；`generate` 从风格提示或歌词运行神经模型，输出完整的 48kHz、双声道 Float32 WAV。神经配乐保存可编辑的生成请求与来源配方，不将音频声称为可编辑 MIDI、乐器分轨或逐音符谱面。
 
@@ -112,3 +112,22 @@ $musicLauncher = 'E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.
 - [首次完整生成调用超时](../validation/evidence/music-generation-20261030-r1/actual-piano3/verification.json)，没有音乐输出或自然质量结论；失败诊断记录原生工作进程被回收。最后报告的阶段较粗，不能由这一阶段文本确认具体导入栈或推理耗时。
 
 完整G25、跨显卡矩阵、干净主机、自然音乐听审、输出权利和完整剪映等价验收仍未关闭。
+
+## 首个实测结果
+
+[源码64首个真实案例](../validation/evidence/music-generation-20261030-r1/actual-piano4/verification.json)已产生10秒、48kHz双声道Float32 WAV，480000样本；文本2、语言模型50、扩散8和VAE1次实际前向均在CUDA0，完整PCM回读和入轨通过。首次完整生成命令 3979.74 秒，工作进程 3397.72 秒；模型函数 1192.00 秒不包含此前导入，也包含各阶段权重载入，不能当作纯计算时间。这仍是开发候选，正式入口63不含新命令；完整兼容组431中有1项启动等待失败。新音乐的安装版、Skill、人类听审和更广案例仍按各自收据验收。[源码工程包回放](../validation/evidence/music-generation-20261030-r1/package-r1/verification.json)已确认母带WAV与配方完整相同，成片全部RGBA与解码PCM重放相同；AAC成片不是无损母带。
+
+## 使用已生成的本地工程包
+
+本机已实际执行下面的候选入口流程，完整命令及退出码见[回放记录](../validation/evidence/music-generation-20261030-r1/installed-package-stage1/calls.json)。将`$musicReplayProject`设为E盘尚不存在的目录，将`$musicProjectZip`设为调用方拥有的工程包。本轮内部音频未提交到公开仓库；公开克隆本身不包含这个ZIP。
+
+```powershell
+$avk = 'E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/music64-skill-stage-r1/skills/agent-ffmpeg-local-editor/scripts/run.ps1'
+$musicProjectZip = 'E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/music-generation64-package-r1/editable-neural-music.zip'
+$musicReplayProject = 'E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/my-music-replay'
+& $avk version
+& $avk convert import --input $musicProjectZip --output $musicReplayProject
+& $avk render --project $musicReplayProject --output "$musicReplayProject/renders/replay.mp4"
+```
+
+这条流程只使用工程包内既有音频和配方，模型前向为0。重新生成须重新登记外部模型／核心／Python并调用`music generate`。本轮安装回放通过不能代替独立安装版新生成、正式Skill切换、人类完整听审或具体输出权利结论。

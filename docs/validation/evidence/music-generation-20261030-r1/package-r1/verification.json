@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "cli_version": "0.1.64",
+  "actual_case_sha256": "4f26637195d6e3fad7c0d64b49804ec35fdfcceae86311572fce59cd6d7972eb",
+  "entrypoint": [
+    "C:/Python313/python.exe",
+    "-E",
+    "-B",
+    "-u",
+    "-X",
+    "utf8",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano4\\source_entry.py"
+  ],
+  "installed": null,
+  "source_fallback": null,
+  "actual_PowerShell_entry": false,
+  "source_frozen_equal": true,
+  "complete_master_WAV_equal": true,
+  "complete_generation_recipe_equal": true,
+  "complete_rendered_RGBA_PCM_equal": true,
+  "decoded": {
+    "original_RGBA": {
+      "bytes": 69120000,
+      "sha256": "f3e95c03ddb4a2af0c617f7794c8e2d169257fce6f519c049d949874ea356f16"
+    },
+    "original_PCM": {
+      "bytes": 3842048,
+      "sha256": "1e4b7b8abe19b96383b9d031b147fff97449303e5b51b48e9f03b62b35f83723"
+    },
+    "replay_RGBA": {
+      "bytes": 69120000,
+      "sha256": "f3e95c03ddb4a2af0c617f7794c8e2d169257fce6f519c049d949874ea356f16"
+    },
+    "replay_PCM": {
+      "bytes": 3842048,
+      "sha256": "1e4b7b8abe19b96383b9d031b147fff97449303e5b51b48e9f03b62b35f83723"
+    }
+  },
+  "original_model_forwards": {
+    "text": 2,
+    "language_model": 50,
+    "diffusion": 8,
+    "vae": 1
+  },
+  "new_model_forwards": 0,
+  "generated_audio_rights": "unverified/internal",
+  "media_published": false,
+  "human_listening": false,
+  "natural_quality_accepted": false,
+  "AAC_movie_is_not_lossless_master": true,
+  "artifacts": {
+    "movie": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano3\\project\\renders\\neural-music.mp4",
+    "replay_movie": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-package-r1\\replay\\renders\\neural-music.mp4",
+    "wav": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano3\\project\\assets\\derived\\piano.wav",
+    "png": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-package-r1\\actual.png",
+    "package": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-package-r1\\editable-neural-music.zip",
+    "replay": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-package-r1\\replay"
+  }
+}

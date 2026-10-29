@@ -1,0 +1,83 @@
+[
+  {
+    "name": "version",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano4\\source_entry.py",
+      "version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 45.50321780000013
+  },
+  {
+    "name": "existing-adapters",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano4\\source_entry.py",
+      "music",
+      "generator-adapter",
+      "list",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano3\\project"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.755006499999581
+  },
+  {
+    "name": "inspect",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano4\\source_entry.py",
+      "music",
+      "inspect-generation",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano4\\request.json"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 5.945486799999344
+  },
+  {
+    "name": "generate",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano4\\source_entry.py",
+      "music",
+      "generate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano3\\project",
+      "--adapter-id",
+      "ace15",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano4\\request.json",
+      "--new-asset-id",
+      "piano",
+      "--apply",
+      "--track-id",
+      "track_audio_1",
+      "--timeout-seconds",
+      "3600"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 3979.740787499999
+  }
+]

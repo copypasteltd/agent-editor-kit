@@ -1,0 +1,233 @@
+[
+  {
+    "name": "decode-master",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-n",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano3\\project\\assets\\derived\\piano.wav",
+      "-map",
+      "0:a:0",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-package-r1\\master.f32"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.11267740000039339
+  },
+  {
+    "name": "ingest-diagnostic",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano4\\source_entry.py",
+      "media",
+      "ingest",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano3\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-package-r1\\actual.png",
+      "--asset-id",
+      "music_diagnostic",
+      "--license-spdx",
+      "CC0-1.0",
+      "--verification-status",
+      "verified",
+      "--creator",
+      "Agent Editor Kit diagnostic visualization",
+      "--evidence",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-package-r1\\SOURCE.txt"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 8.205333300000348
+  },
+  {
+    "name": "timeline",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano4\\source_entry.py",
+      "timeline",
+      "compose",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano3\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-package-r1\\timeline.json"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 5.1845202000004065
+  },
+  {
+    "name": "render-original",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano4\\source_entry.py",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano3\\project",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano3\\project\\renders\\neural-music.mp4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 10.213684900001681
+  },
+  {
+    "name": "export",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano4\\source_entry.py",
+      "convert",
+      "export",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano3\\project",
+      "--target-format",
+      "package",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-package-r1\\editable-neural-music.zip"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 4.619617099997413
+  },
+  {
+    "name": "import",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano4\\source_entry.py",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-package-r1\\editable-neural-music.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-package-r1\\replay"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.7706093999986479
+  },
+  {
+    "name": "render-replay",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano4\\source_entry.py",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-package-r1\\replay",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-package-r1\\replay\\renders\\neural-music.mp4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 5.811614700000064
+  },
+  {
+    "name": "original-RGBA",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-n",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano3\\project\\renders\\neural-music.mp4",
+      "-an",
+      "-pix_fmt",
+      "rgba",
+      "-f",
+      "rawvideo",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-package-r1\\original.rgba"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.20350210000106017
+  },
+  {
+    "name": "original-PCM",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-n",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano3\\project\\renders\\neural-music.mp4",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-package-r1\\original.pcm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.09697849999793107
+  },
+  {
+    "name": "replay-RGBA",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-n",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-package-r1\\replay\\renders\\neural-music.mp4",
+      "-an",
+      "-pix_fmt",
+      "rgba",
+      "-f",
+      "rawvideo",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-package-r1\\replay.rgba"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13267930000074557
+  },
+  {
+    "name": "replay-PCM",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-n",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-package-r1\\replay\\renders\\neural-music.mp4",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-package-r1\\replay.pcm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08728089999931399
+  }
+]

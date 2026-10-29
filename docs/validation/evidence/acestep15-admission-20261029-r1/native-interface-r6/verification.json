@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "native_windows": true,
+  "runtime_root": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\ComfyUI",
+  "model_loaded": false,
+  "music_generated": false,
+  "model_forwards": 0,
+  "service_started": false,
+  "shared_queue_touched": false,
+  "offline_cli_flag_supported": false,
+  "offline_environment": true,
+  "network_guard_installed": true,
+  "product_cli_legacy_compatibility_accepted": false,
+  "python": "3.13.14",
+  "executable": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+  "torch": "2.13.0+cu130",
+  "cuda": "13.0",
+  "device": "NVIDIA GeForce RTX 3060",
+  "comfy_version": "0.31.0",
+  "signatures": {
+    "TextEncodeAceStepAudio15": "(clip, tags, lyrics, seed, bpm, duration, timesignature, language, keyscale, generate_audio_codes, cfg_scale, temperature, top_p, top_k, min_p) -> comfy_api.latest._io.NodeOutput",
+    "EmptyAceStep15LatentAudio": "(seconds, batch_size) -> comfy_api.latest._io.NodeOutput",
+    "VAEDecodeAudio": "(vae, samples) -> comfy_api.latest._io.NodeOutput"
+  },
+  "latent_shape": [
+    1,
+    64,
+    250
+  ],
+  "inventory_files": 580,
+  "imported_runtime_files": 278,
+  "outside_inventory": []
+}

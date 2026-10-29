@@ -61,8 +61,12 @@ def main():
             gates[mode + '_' + group] = BASE / (mode + '-' + group + '-r1/verification.json')
         gates[mode + '_preflight'] = BASE / (mode + '-preflight-r1/verification.json')
     missing = [name for name,path in gates.items() if not path.is_file()]
-    if missing:
-        print(json.dumps(dict(status='pending', missing=missing, mutated=False, activated=False)), flush=True)
+    failed = {name:dict(path=path.relative_to(ROOT).as_posix(), status=load(path).get('status'))
+              for name,path in gates.items() if path.is_file()
+              and load(path).get('status') != ('installed-and-byte-verified' if name == 'candidate' else 'passed')}
+    if missing or failed:
+        print(json.dumps(dict(status='rejected' if failed else 'pending', missing=missing,
+                              failed=failed, mutated=False, activated=False)), flush=True)
         return 2
     reports = {name:load(path) for name,path in gates.items()}
     for name,report in reports.items():

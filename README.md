@@ -1,7 +1,7 @@
 # agent editor kit
 
 <!-- aek-cli64-current -->
-**CLI0.1.64 开发中：新增原生GPU神经配乐接口。** 请求、隔离和部分安装回归通过；完整兼容组发现会话启动等待失败，真实配乐尚未成功，继续定位。当前正式入口仍为下述CLI0.1.63。 [完整配乐接口、参数与边界](docs/product/NEURAL_MUSIC_GENERATION.md)
+**CLI0.1.64 开发中：真实GPU神经配乐及工程包回放通过。** 10秒纯音乐完成四阶段CUDA、完整PCM和入轨；候选Skill的PowerShell入口也完成独立安装版工程包回放。首次生成约66分钟。完整431兼容组仍有1项失败，独立安装版新生成尚待验收。正式入口：CLI0.1.63／local61／r58。 [Music](docs/product/NEURAL_MUSIC_GENERATION.md)
 <!-- /aek-cli64-current -->
 
 **r58统一Skill工具包已独立验收。** 161条目／160清单文件／93 Skill文件；中文和空格目录解包、四包配置、独立注册、实际谱面与循环修复、完整ACES YUV／PCM／PNG及工程包重放通过。未新增模型推理，不等于干净主机或自然质量验收。
@@ -2157,6 +2157,15 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R544 | CLI64安装版实际启动前失败处理 | 6通过；取消、无效预算／时钟／歌词及缺适配器均在模型启动前拒绝，工程与权利台账字节不变。 [Proof](docs/validation/evidence/music-generation-20261030-r1/installed64-preflight-r1/verification.json) |
 | R545 | CLI64安装版语义兼容回归 | 104通过，零失败／错误／跳过，288安装模块匹配源码，无源码回落；不代表音乐模型生成通过。 [Proof](docs/validation/evidence/music-generation-20261030-r1/installed64-semantic-r1/verification.json) |
 | R546 | CLI64会话控制兼容失败复现 | 失败：1项原断言单独复测，生成子命令在20秒内未进入active_inference；尚未执行状态／停止断言，原因继续定位，完整431组不验收。 [Proof](docs/validation/evidence/music-generation-20261030-r1/source64-session-control-r1/verification.json) |
+| R547 | CLI64完整兼容回归（失败） | 431执行：430通过、1失败，零错误／跳过，288应用与193测试源冻结一致；失败为20秒启动等待，不计整组通过。 [Proof](docs/validation/evidence/music-generation-20261030-r1/source64-contracts-r1/verification.json) |
+| R548 | CLI64正式切换拒绝验证 | 实际带--apply调用因失败的兼容前提被拒绝；93个正式Skill文件与2份配置摘要原样。不是64已注册。 [Proof](docs/validation/evidence/music-generation-20261030-r1/activation-refusal-r2/verification.json) |
+| R549 | CLI64原生运行栈诊断 | 同一音乐进程身份下保存导入、文本和权重载入采样；不请求局部变量。栈采样不等于模型生成验收。 [Proof](docs/validation/evidence/music-generation-20261030-r1/process-diagnostic-r4/verification.json) |
+| R550 | CLI64真实CUDA神经配乐 | RTX3060：10秒／48kHz双声道Float32／480000样本；前向2／50／8／1均CUDA0，全量PCM与入轨通过。完整命令／工作进程／模型函数耗时3979.74s / 3397.72s / 1192.00s；模型函数不含此前导入。仅1个纯音乐样例，未听审。 [Proof](docs/validation/evidence/music-generation-20261030-r1/actual-piano4/verification.json) |
+| R551 | CLI64小型事务时延测量 | 11文件／35637字节：准备0.070s，恢复0.175s；12／11次真实fsync，精确恢复。未复现启动等待，不能据栈采样确认写盘是主因。 [Proof](docs/validation/evidence/music-generation-20261030-r1/transaction-latency-r1/verification.json) |
+| R552 | CLI64神经配乐工程包闭环 | 母带WAV与生成请求配方保持完整；原始及包回放成片全部69120000字节RGBA、3842048字节解码PCM分别相同。没有重新生成模型，AAC成片不等于无损母带；音频仅本地internal。 [Proof](docs/validation/evidence/music-generation-20261030-r1/package-r1/verification.json) |
+| R553 | CLI64候选Skill实际工程包回放 | 实际未注册PowerShell入口→独立安装64：母带、配方、完整RGBA／PCM相同，94候选文件与正式93文件原样，无源码回落；新模型前向0，不代表安装版独立生成或正式切换。 [Proof](docs/validation/evidence/music-generation-20261030-r1/installed-package-stage1/verification.json) |
+| R554 | CLI64原会话控制断言复测通过 | 相同源码／测试字节与20秒启动、30秒控制时限，单项通过，状态／停止断言已执行；此前完整431组和单项失败原样保留，负载相关原因未定位。 [Proof](docs/validation/evidence/music-generation-20261030-r1/source64-session-control-r4/verification.json) |
+| R555 | ACE-Step另一原生核心接口探测 | D盘Python／Comfy0.31接口通过，580登记文件覆盖278实际导入；模型前向0。探测器按实际参数启用离线保护；产品64尚未适配此核心，未验收其生成兼容或速度。 [Proof](docs/validation/evidence/acestep15-admission-20261029-r1/native-interface-r6/verification.json) |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

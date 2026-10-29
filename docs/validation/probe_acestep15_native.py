@@ -1,5 +1,6 @@
 """Check the existing native headless ACE interfaces; does not load weights."""
 import argparse
+import ast
 import inspect
 import json
 import os
@@ -26,6 +27,7 @@ def main():
     work.mkdir()
     proof = ROOT / f'docs/validation/evidence/acestep15-admission-20261029-r1/native-interface-{run}'
     proof.mkdir()
+    (proof / 'executed-runner.py').write_bytes(Path(__file__).read_bytes())
     runtime = args.runtime_root.resolve()
     if not runtime.is_dir() or not (runtime / 'comfy_extras/nodes_ace.py').is_file():
         raise ValueError('An existing native Comfy core is required')
@@ -45,7 +47,13 @@ def main():
                   music_generated=False, model_forwards=0, service_started=False, shared_queue_touched=False)
     try:
         sys.path.insert(0, str(runtime))
-        sys.argv = ['ace-interface-probe', '--base-directory', str(work), '--models-directory', str(work / 'empty-models'), '--offline']
+        options_ast = ast.parse((runtime / 'comfy/cli_args.py').read_bytes())
+        offline_flag = any(isinstance(node, ast.Constant) and node.value == '--offline' for node in ast.walk(options_ast))
+        sys.argv = ['ace-interface-probe', '--base-directory', str(work), '--models-directory', str(work / 'empty-models')]
+        if offline_flag:
+            sys.argv.append('--offline')
+        report.update(offline_cli_flag_supported=offline_flag, offline_environment=True, network_guard_installed=True,
+                      product_cli_legacy_compatibility_accepted=False)
         import comfy.options
         comfy.options.enable_args_parsing()
         import torch

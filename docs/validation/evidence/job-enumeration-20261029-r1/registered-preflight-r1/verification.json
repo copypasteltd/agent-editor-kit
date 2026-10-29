@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "calls": [
+    {
+      "script": "run_source63_registered_acceptance.py",
+      "exit_code": 2,
+      "reply": {
+        "status": "pending",
+        "missing": [
+          "skill63-activation-r1"
+        ],
+        "mutated": false
+      }
+    },
+    {
+      "script": "build_source63_final_kit.py",
+      "exit_code": 2,
+      "reply": {
+        "status": "pending",
+        "missing": [
+          "docs\\validation\\evidence\\job-enumeration-20261029-r1\\skill63-activation-r1\\verification.json",
+          "docs\\validation\\evidence\\job-enumeration-20261029-r1\\registered-controller-r1\\verification.json"
+        ],
+        "mutated": false
+      }
+    }
+  ],
+  "compiled_scripts": {
+    "prepare_source63_registered_checks.py": "9cb5ebe2945c28a44ae41b0f60ecf832588a0aca9e341ebd9170869a572c292c",
+    "run_source63_registered_acceptance.py": "64241eca799bb8b5e7252d6c4d130ed64e002142c040a57ed29728c319867e9f",
+    "build_source63_final_kit.py": "17f4baa590b9fe5df9bbb6b0efea1d04f8a4c73784dffe8eb74864b7c9456e68",
+    "verify_source63_final_kit.py": "e7ff904cc4a9a258177dc5e774fec0198d81491481a0bda90426331e57b29f6f",
+    "run_registered63_loop_case.py": "5ff2d133cf4e07d710f23a0271fe5106bc8716de65bf7d485fc1c266ffdc8ece",
+    "run_registered63_gpu_case.py": "7f57aa4261c153037c6aa593e1d867f6a5a4fdeb85327cea06240fa4aeb08ef8",
+    "run_registered63_lipsync_case.py": "4a6b64302ab94c9ecfb89fa6d900dc19391475df0dd2456b7ffbeb6f839a2d27"
+  },
+  "formal_files_unchanged": 95,
+  "registered_case_executed": false,
+  "final_kit_built": false,
+  "formal_activation": false,
+  "model_inference": false,
+  "full_goal_closed": false
+}

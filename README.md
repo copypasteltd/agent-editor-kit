@@ -2074,6 +2074,8 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R516 | CLI63 native installation | local61候选ZIP原生离线安装及1707载荷/283模块精确核对通过；不等于安装版406或正式Skill验收。 [Evidence](docs/validation/evidence/job-enumeration-20261029-r1/installation-candidate-r1/verification.json) |
 | R517 | CLI63 exact-tested-byte activation preparation | 正式切换脚本要求注册最终实测93文件，禁止测后文档覆盖；缺门禁时普通/--apply两种调用均实际返回pending/exit2，95正式文件不变；真实原子替换及失败临时文件清理通过，完整切换/回滚尚未执行。 [Evidence](docs/validation/evidence/job-enumeration-20261029-r1/activation-preflight-r1/verification.json) |
 | R518 | CLI63 installed regression groups | 安装版隔离启动31、循环37、进程控制26、选材57各组通过，源码/安装模块相同、冻结一致，分组零失败/错误/跳过；104语义、406完整合同与真实模型继续另验。 [Details](docs/validation/CLI63候选交付门禁_2026-10-29.md#cli63-本地候选安装) |
+| R519 | CLI63 registered-entry and final-kit preparation | 正式C盘入口循环/DF3/MuseTalk复核与r58工具包独立解包流程已准备；未激活时复核和构建均实际拒绝/exit2，95正式文件不变。仅编译及拒绝检查，不是实际正式入口模型或工具包通过；循环功能手册同步CLI63候选边界。 [Evidence](docs/validation/evidence/job-enumeration-20261029-r1/registered-preflight-r1/verification.json) |
+| R520 | CLI63 installed semantic regression | 104项安装版语义/决策/任务/工程包/升级回归全部通过，零失败/错误/跳过，源码与安装相同且冻结。406完整合同和真实模型仍另验，非独立Agent成功率或真实语义质量接受。 [Evidence](docs/validation/evidence/job-enumeration-20261029-r1/installed63-semantic-r1/verification.json) |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

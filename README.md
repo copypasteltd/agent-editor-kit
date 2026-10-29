@@ -24,6 +24,10 @@ r57已在独立中文／空格目录解包、配置四个模型包、独立注�
 
 新增可编辑谱面解析合成：8类音色、4类电子音效、5分轨实际案例与完整PCM重合成。正式Skill59已真实生成；不是神经文本生曲。先检查谱面／dry-run，再生成、试听、挂接、渲染及导出工程包。[完整JSON与命令](docs/product/MUSIC_SCORE.md) · [C75真实WAV／MP4／GIF及可编辑工程](docs/product/CASES.md#c75-source59-editable-score)。独立r57工具包也通过实际配乐生成，3072000字节PCM与源码相同。
 
+新增103音色本地试听流程：先按语言／音色ID听样音，确认后再用于配音。全量WAV已实际生成，听感、发音、情绪及输出权利仍待审核。 [Workflow / 逐音色数据](docs/validation/CLI61全音色试听_2026-10-29.md)
+
+![Actual local103 voice gallery](docs/assets/voice-gallery61-20261029-r1/actual.png)
+
 <!-- aek-history-summary -->
 <details>
 <summary>完整开发历史（保留全部原文，点击展开）</summary>
@@ -2041,6 +2045,11 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R489 | CLI61 installed cases | 独立安装版循环修复完整2557440字节PCM、三次循环、未处理主体及工程包配方重做均一致；CPU DSP缩短每周期50ms，未宣称神经音乐或听感无缝。 [Evidence / workflow](docs/validation/CLI61安装版实际案例_2026-10-29.md) |
 | R490 | CLI61 installed cases | 三个正式C盘入口案例和最终打包程序已实际验证缺少激活时提前停止；95正式文件不变，未创建案例／归档。正向入口及最终r58包仍须实际验收。 [Evidence / workflow](docs/validation/CLI61安装版实际案例_2026-10-29.md) |
 | R491 | CLI61 installed MuseTalk | 安装版MuseTalk实际CUDA133帧／67次UNet通过，无CPU回退；主文件139460608字节RGBA及成片167772160字节RGBA和完整PCM与源码／工程包重放一致。下半脸柔化、自然口型、连续播放／听审仍未验收；正式Skill仍59，安装403另验。 [Evidence / limits](docs/validation/CLI61安装版实际案例_2026-10-29.md) |
+| R492 | CLI61 voice delivery | 独立安装403项完整契约终态通过，零失败／错误／跳过；283应用模块与源码及测试冻结一致。实际CUDA口型及完整音画重放另列，不将契约数当自然质量通过数。 [Evidence / use](docs/validation/CLI61全音色试听_2026-10-29.md) |
+| R493 | CLI61 voice delivery | 103音色已逐项实际生成WAV：中文100／英文3，显式CUDA及provider DLL加载、两批各一次初始化，无应用层CPU回退；完整32157758字节PCM工程包往返一致。新增本地逐音色试听页与逐项元数据，未听审／权利未核验。 [Evidence / use](docs/validation/CLI61全音色试听_2026-10-29.md) |
+| R494 | CLI61 voice delivery | 真实原生Chrome截图展示本地103音色试听页；无头浏览器已退出，未留对应进程或交互标签页。截图不等于播放／听审，未将内部声音文件公开发布。 [Evidence / use](docs/validation/CLI61全音色试听_2026-10-29.md) |
+| R495 | CLI61 Skill candidate | CLI61候选Skill已通过静态校验及实际PowerShell循环／DF3 CUDA：完整2557440／1124160字节PCM与源码及工程包重放一致；候选MuseTalk与正式切换仍另验。 [Evidence / sync](docs/validation/CLI61Skill音色说明同步_2026-10-29.md) |
+| R496 | CLI61 Skill candidate | 103音色Skill说明同步已备妥并验证：只变更community-materials说明，其余92个已测试文件相同；静态及四类错误拒绝通过。新版激活仍拒绝缺少候选MuseTalk；95正式文件不变，未假称已同步注册。 [Evidence / sync](docs/validation/CLI61Skill音色说明同步_2026-10-29.md) |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

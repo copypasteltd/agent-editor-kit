@@ -47,6 +47,8 @@ def main():
     assert sha(ROOT/'agent-ffmpeg-local-install-manifest.json')==activation['namespace_sha256']
     assert sha(ROOT/'local/agent-ffmpeg/runtime.json')==activation['runtime_sha256']
     stage=load(ROOT/'local/agent-ffmpeg/music61-skill-stage-r1/STAGING.json')
+    from source61_voice_skill_overlay import validate_registered
+    stage=validate_registered(stage,activation)
     assert stage['status']=='unregistered-candidate' and stage['cli_version']=='0.1.61'
     assert Path(stage['installed']).resolve()==installed
     assert stage['candidate_files']=={p.relative_to(skill).as_posix():sha(p) for p in skill.rglob('*') if p.is_file()}

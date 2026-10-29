@@ -1,0 +1,56 @@
+{
+  "status": "running",
+  "completed_voices": 103,
+  "batches": [
+    {
+      "language": "en",
+      "voices": 3,
+      "model_initializations": 1,
+      "total_generations": 3,
+      "device": "cuda",
+      "CPU_fallback": false,
+      "CUDA_provider_loaded": true,
+      "translation_inference": false,
+      "report": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\voice-preview61-r2\\en-project\\assets\\derived\\dubbing\\en_auditions\\report.json",
+      "archive": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\voice-preview61-r2\\en-auditions.zip",
+      "pack": {
+        "id": "kokoro-zh-en-cuda13",
+        "manifest_sha256": "fb46a9cfc9823f4cb18d1c669a145e2fec772e39e0e32f1a7a68eae18cc4d987",
+        "verified_files": 47,
+        "engine": {
+          "id": "kokoro-sherpa-cuda13-v1",
+          "sherpa_onnx": "2.0.0",
+          "onnxruntime": "1.28.2",
+          "provider": "cuda"
+        },
+        "provider": "cuda"
+      },
+      "rights_ledger_sha256": "642c85cc0a5ed9e6c72dad293e703b1cfd6c627b4e02790a8e201be9c722cb4e"
+    },
+    {
+      "language": "zh",
+      "voices": 100,
+      "model_initializations": 1,
+      "total_generations": 100,
+      "device": "cuda",
+      "CPU_fallback": false,
+      "CUDA_provider_loaded": true,
+      "translation_inference": false,
+      "report": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\voice-preview61-r2\\zh-project\\assets\\derived\\dubbing\\zh_auditions\\report.json",
+      "archive": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\voice-preview61-r2\\zh-auditions.zip",
+      "pack": {
+        "id": "kokoro-zh-en-cuda13",
+        "manifest_sha256": "fb46a9cfc9823f4cb18d1c669a145e2fec772e39e0e32f1a7a68eae18cc4d987",
+        "verified_files": 47,
+        "engine": {
+          "id": "kokoro-sherpa-cuda13-v1",
+          "sherpa_onnx": "2.0.0",
+          "onnxruntime": "1.28.2",
+          "provider": "cuda"
+        },
+        "provider": "cuda"
+      },
+      "rights_ledger_sha256": "f6ed7a74767d33aa7f924091ccd5f87cbc92f90b31a3528799251c407ad0d149"
+    }
+  ]
+}

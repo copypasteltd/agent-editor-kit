@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "actual_activation_requested": true,
+  "actual_exit_code": 2,
+  "mutated": false,
+  "activated": false,
+  "protected_files_unchanged": 95,
+  "missing": [
+    "staged61_lipsync"
+  ],
+  "formal_cli": "0.1.59",
+  "activation_runner_sha256": "91728c4d2cc0509f6d61f4bdcab7e121d0ba38e2196955632c4d080edf97c33b",
+  "installed403_still_required": true,
+  "voice103_evidence_required": true
+}

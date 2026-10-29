@@ -1,0 +1,6 @@
+{
+  "status": "failed",
+  "error": "AssertionError(('en-synthesize', b'{\"ok\":false,\"command\":\"dub.subtitles\",\"request_id\":\"req_20261029102929_db3cf396\",\"operation_id\":\"op_dub_20261029102929_d14a1c1d\",\"status\":\"failed\",\"data\":{},\"artifacts\":[],\"warnings\":[],\"errors\":[{\"code\":\"ARGUMENT_INVALID\",\"message\":\"\\xe9\\x9c\\x80\\xe8\\xa6\\x81\\xe6\\x98\\xbe\\xe5\\xbc\\x8f --pack \\xe6\\x88\\x96\\xe5\\xb7\\xb2\\xe7\\x99\\xbb\\xe8\\xae\\xb0\\xe6\\x9c\\xac\\xe5\\x9c\\xb0 CPU/GPU \\xe9\\x85\\x8d\\xe7\\xbd\\xae\\xef\\xbc\\x9b\\xe4\\xb8\\x8d\\xe8\\x87\\xaa\\xe5\\x8a\\xa8\\xe4\\xb8\\x8b\\xe8\\xbd\\xbd\\xe6\\xa8\\xa1\\xe5\\x9e\\x8b\",\"path\":\"pack\",\"retryable\":false,\"operation_id\":\"op_dub_20261029102929_d14a1c1d\"}],\"provenance\":{\"cli_version\":\"0.1.61\",\"schema_version\":\"0.1.0\",\"engine_version\":\"ffmpeg-local\",\"started_at\":\"2026-10-29T10:29:29.954766Z\",\"finished_at\":\"2026-10-29T10:29:29.954779Z\",\"network\":\"disabled\"}}\\r\\n', b''))",
+  "completed_voices": 0,
+  "batches": []
+}

@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\docs\validation\run_registered61_gpu_case.py", line 177, in <module>
+    main()
+    ~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\docs\validation\run_registered61_gpu_case.py", line 44, in main
+    activation=load(BASE/'skill61-activation-r1/verification.json')
+  File "E:\dev\sandbox\AI广告剪辑\docs\validation\run_registered61_gpu_case.py", line 18, in load
+    return json.loads(path.read_bytes())
+                      ~~~~~~~~~~~~~~~^^
+  File "pathlib\_abc.py", line 625, in read_bytes
+  File "pathlib\_local.py", line 537, in open
+FileNotFoundError: [Errno 2] No such file or directory: 'E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\lipsync-timeout-20261029-r1\\skill61-activation-r1\\verification.json'

@@ -46,7 +46,8 @@ def main():
     parser.add_argument('--apply', action='store_true')
     args = parser.parse_args()
     assert all(v.replace('-', '').isalnum() for v in [args.run, args.stage_run])
-    gates = {'installation':BASE/'installation-candidate-r1/verification.json',
+    gates = {'voice_auditions':ROOT/'docs/validation/evidence/voice-auditions-20261029-r1/r2/verification.json',
+            'installation':BASE/'installation-candidate-r1/verification.json',
         'candidate':BASE/'staged-actual-case-r1/verification.json',
         'staged_gpu':BASE/'staged61-gpu-r1/verification.json',
         'source_gpu':BASE/'source61-gpu-r1/verification.json',
@@ -125,6 +126,8 @@ def main():
     stage = ROOT/'local/agent-ffmpeg/music61-skill-stage-r1/skills/agent-ffmpeg-local-editor'
     files = {p.relative_to(stage).as_posix():sha(p) for p in stage.rglob('*') if p.is_file()}
     assert files==candidate['candidate_files'] and len(files)==93
+    from source61_voice_skill_overlay import prepare
+    contents,registered_files,documentation_overlay=prepare(stage,files,reports['voice_auditions'])
     assert sum(Path(n).name=='SKILL.md' for n in files)==1
     assert len(list((stage/'references/modules').glob('*/module.md')))==17
     for row in manifest['files']:
@@ -164,7 +167,7 @@ def main():
         atomic(runtime,encoded(transition))
         for name in files:
             target=folder/name
-            content=(stage/name).read_bytes()
+            content=contents[name]
             if content!=old_files[name]:
                 atomic(target,content)
         manifest.update(release=next_config['release'],cli_version='0.1.61',manifest_sha256=installation['manifest_sha256'])
@@ -183,7 +186,7 @@ def main():
             assert result.returncode==0,(command,result.stderr[-1000:])
             value=json.loads(result.stdout)
             assert value['ok'] and value['provenance']['cli_version']=='0.1.61'
-        assert files=={p.relative_to(folder).as_posix():sha(p) for p in folder.rglob('*') if p.is_file()}
+        assert registered_files=={p.relative_to(folder).as_posix():sha(p) for p in folder.rglob('*') if p.is_file()}
         assert discovery.resolve(strict=True)==folder.resolve()
         assert all(sha(ROOT/row['path'])==row['sha256'] for row in manifest['files'])
         assert all(sha(gates[name])==pin['sha256'] for name,pin in gate_pins.items())
@@ -201,6 +204,7 @@ def main():
         public_entries=1,modules=17,skill_files=93,discovery_unchanged=True,native_windows=True,
         virtual_environment=False,source_fallback=False,actual_C_drive_entry=True,calls=calls,gates=gate_pins,
         namespace_sha256=sha(namespace),runtime_sha256=sha(runtime),registered_model_case_pending=True,
+        tested_candidate_files=files,registered_files=registered_files,documentation_overlay=documentation_overlay,
         natural_quality_accepted=False,full_product_goal_closed=False)
     journal.update(status='committed')
     (out/'journal.json').write_bytes(encoded(journal))

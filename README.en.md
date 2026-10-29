@@ -24,6 +24,10 @@ The detailed feature/service modules,500-filter previews,Skill modules and cases
 
 New editable analytical score synthesis:8 instruments,4 electronic effects,actual5-stem case and full PCM recomposition. Registered Skill59 generated it;this is not neural text-to-music. Inspect/dry-run,compose,audition,place,render and export an editable package. [JSON and commands](docs/product/MUSIC_SCORE.md) · [C75 actual WAV/MP4/GIF and project](docs/product/CASES.md#c75-source59-editable-score). The independently registered r57 kit also generated all3072000 PCM bytes matching source.
 
+New local103-voice audition workflow:listen by language/voice ID and confirm before dubbing.All WAVs are real outputs;pronunciation,emotion,naturalness and output rights still need review. [Workflow / 逐音色数据](docs/validation/CLI61全音色试听_2026-10-29.md)
+
+![Actual local103 voice gallery](docs/assets/voice-gallery61-20261029-r1/actual.png)
+
 <!-- aek-history-summary -->
 <details>
 <summary>Complete development history — all original content retained</summary>
@@ -2043,6 +2047,11 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R489 | CLI61 installed cases | Installed loop repair verified all2557440 PCM bytes,three repeats,untouched body and package recipe reconstruction.CPU DSP shortens each cycle by50ms;neural music and perceptual seamlessness remain unaccepted. [Evidence / workflow](docs/validation/CLI61安装版实际案例_2026-10-29.md) |
 | R490 | CLI61 installed cases | Three real C-drive entry runners and the final kit builder actually rejected absent activation before creating cases/archives;95 formal files unchanged.Positive registered cases and the final r58 archive still require execution. [Evidence / workflow](docs/validation/CLI61安装版实际案例_2026-10-29.md) |
 | R491 | CLI61 installed MuseTalk | Installed MuseTalk completed133 real CUDA frames/67 UNet forwards,without CPU fallback.All139460608 master RGBA bytes,167772160 rendered RGBA bytes and complete PCM match source/package replay.Lower-face softness,natural lip-sync,continuous playback and listening remain unaccepted;formal Skill remains59,installed403 is separate. [Evidence / limits](docs/validation/CLI61安装版实际案例_2026-10-29.md) |
+| R492 | CLI61 voice delivery | Independent installed403 contracts passed with zero failures/errors/skips;283 app modules and tests frozen against source.Actual CUDA lip-sync and full media replay are separate;contract counts do not establish natural quality. [Evidence / use](docs/validation/CLI61全音色试听_2026-10-29.md) |
+| R493 | CLI61 voice delivery | All103 voices produced actual WAVs:100 Chinese/3 English,explicit CUDA with provider DLL loaded,one initialization per language batch,and no application-level CPU fallback.All32157758 PCM bytes survived package replay.A local per-voice audition gallery and metadata are available;listening and output rights remain unaccepted. [Evidence / use](docs/validation/CLI61全音色试听_2026-10-29.md) |
+| R494 | CLI61 voice delivery | An actual native Chrome screenshot shows the local103-voice gallery.The owned headless browser exited with no matching process or interactive tab left.Screenshot capture is not playback/listening,and internal audio files were not publicly published. [Evidence / use](docs/validation/CLI61全音色试听_2026-10-29.md) |
+| R495 | CLI61 Skill candidate | CLI61 candidate Skill passed static validation and actual PowerShell loop/DF3 CUDA cases.All2557440/1124160 PCM bytes match source and package replay.Candidate MuseTalk and formal activation remain separate gates. [Evidence / sync](docs/validation/CLI61Skill音色说明同步_2026-10-29.md) |
+| R496 | CLI61 Skill candidate | The103-voice Skill documentation update is prepared and verified:only community-materials changes,the other92 tested files remain exact.Static validation and four mismatch refusals passed.Activation still rejects missing candidate MuseTalk;95 formal files unchanged.No registered update is claimed. [Evidence / sync](docs/validation/CLI61Skill音色说明同步_2026-10-29.md) |
 
 ### Development preview: C76 loop overlap repair(source CLI60)
 

@@ -1,7 +1,7 @@
 # agent editor kit
 
 <!-- aek-cli64-current -->
-**CLI0.1.64 in development: native GPU neural music commands.** The 25 request/BF16/recipe checks and 33 worker isolation checks passed. Actual generation, installed execution and Skill rollout have separate gates. The registered runtime remains CLI0.1.63 as described below. [Complete music interface, parameters and limits](docs/product/NEURAL_MUSIC_GENERATION.md)
+**CLI0.1.64 in development: native GPU neural music commands.** Request, isolation and some installed regressions passed. Full compatibility found a session-start wait failure; actual music has not succeeded. Investigation continues. The registered runtime remains CLI0.1.63. [Complete music interface, parameters and limits](docs/product/NEURAL_MUSIC_GENERATION.md)
 <!-- /aek-cli64-current -->
 
 **The r58 unified Skill kit passed independent acceptance.** 161 entries/160 inventory files/93 Skill files; Chinese/space extraction, four-pack setup, isolated registration, actual score and loop generation, full ACES YUV/PCM/PNG and project replay passed. No new neural inference; clean-host and natural-quality acceptance remain open.
@@ -2155,6 +2155,10 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R540 | CLI64 installed music regression | 62 passed with byte-identical installed modules and no source fallback. Includes the25 R529 contracts; do not add twice. [Proof](docs/validation/evidence/music-generation-20261030-r1/installed64-music-r1/verification.json) |
 | R541 | CLI64 installed worker isolation | 33 passed, zero failures/errors/skips, frozen installed/source bytes equal. No music model inference. [Proof](docs/validation/evidence/music-generation-20261030-r1/installed64-bootstrap-r1/verification.json) |
 | R542 | CLI64 installed execution control | 26 passed, zero failures/errors/skips, frozen installed/source bytes equal. New music cancellation during inference remains separate. [Proof](docs/validation/evidence/music-generation-20261030-r1/installed64-control-r1/verification.json) |
+| R543 | CLI64 installed selection and storyboard regression | 57 passed with no failures/errors/skips; 288 installed modules match source exactly, without source fallback. Not new music quality acceptance. [Proof](docs/validation/evidence/music-generation-20261030-r1/installed64-selection-r1/verification.json) |
+| R544 | CLI64 installed actual pre-launch failures | Six passed: cancellation, invalid budgets/clock/lyrics and missing adapter rejected before model launch. Project and rights bytes unchanged. [Proof](docs/validation/evidence/music-generation-20261030-r1/installed64-preflight-r1/verification.json) |
+| R545 | CLI64 installed semantic compatibility | 104 passed with no failures/errors/skips; all 288 installed modules match source without fallback. Not acceptance of music model generation. [Proof](docs/validation/evidence/music-generation-20261030-r1/installed64-semantic-r1/verification.json) |
+| R546 | CLI64 session-control compatibility failure reproduced | FAILED: the unchanged single test did not reach active_inference within20s. Status/stop assertions were not reached. Cause under investigation; full431 group not accepted. [Proof](docs/validation/evidence/music-generation-20261030-r1/source64-session-control-r1/verification.json) |
 
 ### Development preview: C76 loop overlap repair(source CLI60)
 

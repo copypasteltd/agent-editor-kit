@@ -1,0 +1,20 @@
+test_control_cli_remains_available_during_active_project_write (test_model_session.NativeSessionTests.test_control_cli_remains_available_during_active_project_write) ... ERROR
+
+======================================================================
+ERROR: test_control_cli_remains_available_during_active_project_write (test_model_session.NativeSessionTests.test_control_cli_remains_available_during_active_project_write)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_model_session.py", line 195, in test_control_cli_remains_available_during_active_project_write
+    generation_process=subprocess.Popen([*prefix,*map(str,self.command()),'--model-session',self.identity],
+        stdin=subprocess.DEVNULL,stdout=subprocess.PIPE,stderr=subprocess.PIPE,creationflags=subprocess.CREATE_NO_WINDOW)
+  File "unittest\mock.py", line 1169, in __call__
+  File "unittest\mock.py", line 1173, in _mock_call
+  File "unittest\mock.py", line 1240, in _execute_mock_call
+  File "E:\dev\sandbox\AI广告剪辑\docs\validation\check_music64_session_control.py", line 56, in spawn
+    from diagnose_music64_process import identity, TOOL_PIN
+ModuleNotFoundError: No module named 'diagnose_music64_process'
+
+----------------------------------------------------------------------
+Ran 1 test in 8.324s
+
+FAILED (errors=1)

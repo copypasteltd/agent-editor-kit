@@ -1,0 +1,27 @@
+{
+  "status": "captured",
+  "tool": "py-spy0.4.2",
+  "tool_source": "https://pypi.org/project/py-spy/0.4.2/",
+  "archive_url": "https://files.pythonhosted.org/packages/6f/ed/1409cdb557e558a6c98003ab12fdd4284699e158c167c187cb0f124eea4c/py_spy-0.4.2-py2.py3-none-win_amd64.whl",
+  "archive_sha256": "8b06a353c177677e4e1701b288d8c58e2f8d4208ee81a8048d9f72ba800918f8",
+  "tool_sha256": "6e83ab095f40453742d01a2719a178f308534015da519ec0659d2584139dc995",
+  "worker_before": {
+    "pid": 33912,
+    "created_filetime": 134377692373303718,
+    "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+  },
+  "worker_after": {
+    "pid": 33912,
+    "created_filetime": 134377692373303718,
+    "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+  },
+  "request_sha256": "52bd5eb6620ce3ebe1bf6637720c509c648d73efc9eb61381666d0f3b15470f8",
+  "phase_observed": "verifying-music-artifacts",
+  "exit_code": 0,
+  "local_variables_requested": false,
+  "global_environment_changed": false,
+  "model_forwards_proven": false,
+  "generation_accepted": false,
+  "stack_stdout_sha256": "979eeaafd1e60cc07e3e0655ac2884a64d16eeab2aa9ac629241711a1ad7288a",
+  "stack_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

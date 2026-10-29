@@ -1,0 +1,12 @@
+{
+  "status": "failed",
+  "native_windows": true,
+  "runtime_root": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\ComfyUI",
+  "model_loaded": false,
+  "music_generated": false,
+  "model_forwards": 0,
+  "service_started": false,
+  "shared_queue_touched": false,
+  "error": "SystemExit(2)",
+  "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\probe_acestep15_native.py\", line 52, in main\n    import comfy.sd\n  File \"D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\ComfyUI\\comfy\\sd.py\", line 6, in <module>\n    from comfy import model_management\n  File \"D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\ComfyUI\\comfy\\model_management.py\", line 23, in <module>\n    from comfy.cli_args import args, PerformanceFeature\n  File \"D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\ComfyUI\\comfy\\cli_args.py\", line 276, in <module>\n    args = parser.parse_args()\n  File \"argparse.py\", line 1930, in parse_args\n  File \"argparse.py\", line 2686, in error\n  File \"argparse.py\", line 2673, in exit\nSystemExit: 2\n"
+}

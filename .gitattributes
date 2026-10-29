@@ -1996,3 +1996,29 @@ docs/validation/evidence/music-loop-20261029-r1/** -text -whitespace
 docs/assets/music-loop60-20261029-r1/** -text -whitespace
 
 docs/assets/music-loop60-installed-20261029-r1/** -text -whitespace
+
+# Preserve native music receipts and captured process streams byte for byte.
+docs/validation/evidence/acestep15-admission-20261029-r1/** -text -whitespace
+docs/validation/evidence/music-generation-20261030-r1/** -text -whitespace
+docs/validation/evidence/music-generation-20261030-r2/** -text -whitespace
+docs/validation/evidence/music-generation-20261030-r3/** -text -whitespace
+docs/validation/evidence/music-generation-20261030-r4/** -text -whitespace
+docs/validation/evidence/music-generation-20261030-r5/** -text -whitespace
+docs/validation/acquire_acestep15_backend.py text eol=lf
+docs/validation/acquire_acestep15_notices.py text eol=lf
+docs/validation/probe_acestep15_native.py text eol=lf
+docs/validation/validate_music_generation_unit.py text eol=lf
+docs/validation/run_source64_regressions.py text eol=lf
+docs/validation/run_neural_music_case.py text eol=lf
+docs/validation/replay_neural_music_package.py text eol=lf
+docs/validation/build_music64_candidate.py text eol=lf
+docs/validation/prepare_music64_skill.py text eol=lf
+docs/validation/update_source64_readmes.py text eol=lf
+docs/validation/check_music64_preflight.py text eol=lf
+docs/validation/activate_music64_skill.py text eol=lf
+docs/validation/check_music64_skill_stage.py text eol=lf
+docs/validation/record_music64_checkpoint.py text eol=lf
+docs/validation/record_music64_timeout.py text eol=lf
+docs/validation/record_music64_followup.py text eol=lf
+docs/validation/diagnose_music64_process.py text eol=lf
+docs/validation/check_music64_session_control.py text eol=lf

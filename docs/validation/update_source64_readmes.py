@@ -46,21 +46,33 @@ CURRENT_ROWS = {
         ('R539', 'CLI64真实音乐生成超时与回收', '实际生成失败：1800秒工作进程预算内无模型结果；完整命令2398秒。清理检查通过，原工作进程退出／临时目录清空／未发布音频；不是配乐生成通过。', 'timeout-piano3-r1/verification.json'),
         ('R540', 'CLI64安装版配乐回归', '62通过，独立安装模块与源码一致，无源码回落；包含R529的25项，不重复累计。', 'installed64-music-r1/verification.json'),
         ('R541', 'CLI64安装版工作进程隔离', '33通过，零失败／错误／跳过，安装与源码字节冻结一致；无音乐模型推理。', 'installed64-bootstrap-r1/verification.json'),
-        ('R542', 'CLI64安装版执行控制', '26通过，零失败／错误／跳过，安装与源码字节冻结一致；新音乐的中途取消另验。', 'installed64-control-r1/verification.json')],
+        ('R542', 'CLI64安装版执行控制', '26通过，零失败／错误／跳过，安装与源码字节冻结一致；新音乐的中途取消另验。', 'installed64-control-r1/verification.json'),
+        ('R543', 'CLI64安装版选型与分镜回归', '57通过，零失败／错误／跳过，288安装模块精确匹配源码；无源码回落，不代表新音乐质量。', 'installed64-selection-r1/verification.json'),
+        ('R544', 'CLI64安装版实际启动前失败处理', '6通过；取消、无效预算／时钟／歌词及缺适配器均在模型启动前拒绝，工程与权利台账字节不变。', 'installed64-preflight-r1/verification.json'),
+        ('R545', 'CLI64安装版语义兼容回归', '104通过，零失败／错误／跳过，288安装模块匹配源码，无源码回落；不代表音乐模型生成通过。', 'installed64-semantic-r1/verification.json'),
+        ('R546', 'CLI64会话控制兼容失败复现', '失败：1项原断言单独复测，生成子命令在20秒内未进入active_inference；尚未执行状态／停止断言，原因继续定位，完整431组不验收。', 'source64-session-control-r1/verification.json')],
     'README.zh-TW.md': [
         ('R539', 'CLI64真實音樂生成逾時與回收', '實際生成失敗：1800秒工作進程預算內無模型結果；完整命令2398秒。清理檢查通過，原工作進程退出／暫存目錄清空／未發布音訊；不是配樂生成通過。', 'timeout-piano3-r1/verification.json'),
         ('R540', 'CLI64安裝版配樂回歸', '62通過，獨立安裝模組與原始碼一致，無原始碼回落；包含R529的25項，不重複累計。', 'installed64-music-r1/verification.json'),
         ('R541', 'CLI64安裝版工作進程隔離', '33通過，零失敗／錯誤／跳過，安裝與原始碼位元組凍結一致；無音樂模型推理。', 'installed64-bootstrap-r1/verification.json'),
-        ('R542', 'CLI64安裝版執行控制', '26通過，零失敗／錯誤／跳過，安裝與原始碼位元組凍結一致；新音樂的中途取消另驗。', 'installed64-control-r1/verification.json')],
+        ('R542', 'CLI64安裝版執行控制', '26通過，零失敗／錯誤／跳過，安裝與原始碼位元組凍結一致；新音樂的中途取消另驗。', 'installed64-control-r1/verification.json'),
+        ('R543', 'CLI64安裝版選型與分鏡回歸', '57通過，零失敗／錯誤／跳過，288安裝模組精確符合原始碼；無原始碼回落，不代表新音樂品質。', 'installed64-selection-r1/verification.json'),
+        ('R544', 'CLI64安裝版實際啟動前失敗處理', '6通過；取消、無效預算／時鐘／歌詞及缺適配器均在模型啟動前拒絕，工程與權利台帳位元組不變。', 'installed64-preflight-r1/verification.json'),
+        ('R545', 'CLI64安裝版語義相容回歸', '104通過，零失敗／錯誤／跳過，288安裝模組符合原始碼，無原始碼回落；不代表音樂模型生成通過。', 'installed64-semantic-r1/verification.json'),
+        ('R546', 'CLI64會話控制相容失敗重現', '失敗：1項原斷言單獨複測，生成子命令在20秒內未進入active_inference；尚未執行狀態／停止斷言，原因繼續定位，完整431組不驗收。', 'source64-session-control-r1/verification.json')],
     'README.en.md': [
         ('R539', 'CLI64 actual music timeout and cleanup', 'Generation FAILED: no model result within the 1800s worker budget; full command2398s. Cleanup passed: original worker exited, workspace empty, no audio published. Not music-generation acceptance.', 'timeout-piano3-r1/verification.json'),
         ('R540', 'CLI64 installed music regression', '62 passed with byte-identical installed modules and no source fallback. Includes the25 R529 contracts; do not add twice.', 'installed64-music-r1/verification.json'),
         ('R541', 'CLI64 installed worker isolation', '33 passed, zero failures/errors/skips, frozen installed/source bytes equal. No music model inference.', 'installed64-bootstrap-r1/verification.json'),
-        ('R542', 'CLI64 installed execution control', '26 passed, zero failures/errors/skips, frozen installed/source bytes equal. New music cancellation during inference remains separate.', 'installed64-control-r1/verification.json')],
+        ('R542', 'CLI64 installed execution control', '26 passed, zero failures/errors/skips, frozen installed/source bytes equal. New music cancellation during inference remains separate.', 'installed64-control-r1/verification.json'),
+        ('R543', 'CLI64 installed selection and storyboard regression', '57 passed with no failures/errors/skips; 288 installed modules match source exactly, without source fallback. Not new music quality acceptance.', 'installed64-selection-r1/verification.json'),
+        ('R544', 'CLI64 installed actual pre-launch failures', 'Six passed: cancellation, invalid budgets/clock/lyrics and missing adapter rejected before model launch. Project and rights bytes unchanged.', 'installed64-preflight-r1/verification.json'),
+        ('R545', 'CLI64 installed semantic compatibility', '104 passed with no failures/errors/skips; all 288 installed modules match source without fallback. Not acceptance of music model generation.', 'installed64-semantic-r1/verification.json'),
+        ('R546', 'CLI64 session-control compatibility failure reproduced', 'FAILED: the unchanged single test did not reach active_inference within20s. Status/stop assertions were not reached. Cause under investigation; full431 group not accepted.', 'source64-session-control-r1/verification.json')],
 }
 WORDS = {
     'README.md':dict(
-        status='**CLI0.1.64 开发中：新增原生GPU神经配乐接口。** 25项请求／BF16载荷／配方检查及33项工作进程隔离检查已通过；真实生成、安装和Skill更新分别验收。当前正式入口仍为下述CLI0.1.63。',
+        status='**CLI0.1.64 开发中：新增原生GPU神经配乐接口。** 请求、隔离和部分安装回归通过；完整兼容组发现会话启动等待失败，真实配乐尚未成功，继续定位。当前正式入口仍为下述CLI0.1.63。',
         label='完整配乐接口、参数与边界',
         feature='原生GPU神经配乐（开发中）',
         detail='显式风格／歌词请求、固定ACE-Step1.5 Turbo、CUDA前向证据、原生48kHz双声道Float32 WAV、生成配方与独立音轨。',
@@ -70,7 +82,7 @@ WORDS = {
             ('R530','CLI64工作进程隔离','33通过，含新增音乐进程的依赖归属与拒绝外部应用加载；无模型推理。',BOOT),
             ('R531','ACE1.5权重与原生接口准入','4组件完整SHA256校验；673运行文件覆盖393实际导入文件；本项不是音乐生成或听审通过。',ACQUIRED)]),
     'README.zh-TW.md':dict(
-        status='**CLI0.1.64 開發中：新增原生GPU神經配樂介面。** 25項請求／BF16載荷／配方檢查及33項工作進程隔離檢查已通過；真實生成、安裝和Skill更新分別驗收。目前正式入口仍為下述CLI0.1.63。',
+        status='**CLI0.1.64 開發中：新增原生GPU神經配樂介面。** 請求、隔離和部分安裝回歸通過；完整相容組發現會話啟動等待失敗，真實配樂尚未成功，繼續定位。目前正式入口仍為下述CLI0.1.63。',
         label='完整配樂介面、參數與邊界',
         feature='原生GPU神經配樂（開發中）',
         detail='明確風格／歌詞請求、固定ACE-Step1.5 Turbo、CUDA前向證據、原生48kHz雙聲道Float32 WAV、生成配方與獨立音軌。',
@@ -80,7 +92,7 @@ WORDS = {
             ('R530','CLI64工作進程隔離','33通過，含新增音樂進程的依賴歸屬與拒絕外部應用載入；無模型推理。',BOOT),
             ('R531','ACE1.5權重與原生介面準入','4組件完整SHA256校驗；673執行檔案涵蓋393實際匯入檔案；本項不是音樂生成或聽審通過。',ACQUIRED)]),
     'README.en.md':dict(
-        status='**CLI0.1.64 in development: native GPU neural music commands.** The 25 request/BF16/recipe checks and 33 worker isolation checks passed. Actual generation, installed execution and Skill rollout have separate gates. The registered runtime remains CLI0.1.63 as described below.',
+        status='**CLI0.1.64 in development: native GPU neural music commands.** Request, isolation and some installed regressions passed. Full compatibility found a session-start wait failure; actual music has not succeeded. Investigation continues. The registered runtime remains CLI0.1.63.',
         label='Complete music interface, parameters and limits',
         feature='Native GPU neural music (development)',
         detail='Explicit style/lyrics, pinned ACE-Step1.5 Turbo, observed CUDA forwards, native48kHz stereo Float32 WAV, generation recipes and an independent audio track.',
@@ -101,7 +113,7 @@ def main():
     assert json.loads((ROOT / BASE / 'candidate-r1/verification.json').read_bytes())['status'] == 'installed-and-byte-verified'
     assert json.loads((ROOT / BASE / 'skill-stage-r1/verification.json').read_bytes())['status'] == 'passed'
     for row in CURRENT_ROWS['README.md']:
-        assert json.loads((ROOT / BASE / row[3]).read_bytes())['status'] == 'passed'
+        assert json.loads((ROOT / BASE / row[3]).read_bytes())['status'] == ('failed' if row[0] == 'R546' else 'passed')
     changes = []
     for filename, words in WORDS.items():
         path = ROOT / filename
@@ -143,7 +155,7 @@ def main():
             anchor = identifier
         current_rows = re.findall(r'^\| (R\d+) \|', text, re.M)
         assert original_rows <= set(current_rows) and len(current_rows) == len(set(current_rows))
-        assert len(current_rows) == 542
+        assert len(current_rows) == 546
         path.write_text(text, encoding='utf-8', newline='\n')
         changes.append(dict(path=filename, numbered_checks=len(current_rows), history_removed=False))
     print(json.dumps(changes), flush=True)

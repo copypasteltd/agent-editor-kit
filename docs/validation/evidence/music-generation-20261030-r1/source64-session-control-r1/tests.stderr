@@ -1,0 +1,15 @@
+test_control_cli_remains_available_during_active_project_write (test_model_session.NativeSessionTests.test_control_cli_remains_available_during_active_project_write) ... FAIL
+
+======================================================================
+FAIL: test_control_cli_remains_available_during_active_project_write (test_model_session.NativeSessionTests.test_control_cli_remains_available_during_active_project_write)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_model_session.py", line 201, in test_control_cli_remains_available_during_active_project_write
+    self.assertTrue(session.status(self.root,self.identity)['active_inference'])
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 1 test in 49.020s
+
+FAILED (failures=1)

@@ -1,0 +1,11 @@
+{
+  "status": "failed",
+  "native_windows": true,
+  "model_loaded": false,
+  "music_generated": false,
+  "model_forwards": 0,
+  "service_started": false,
+  "shared_queue_touched": false,
+  "error": "ModuleNotFoundError(\"No module named 'comfy_aimdo.storage'\")",
+  "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\probe_acestep15_native.py\", line 47, in main\n    import comfy.sd\n  File \"E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\ComfyUI\\comfy\\sd.py\", line 6, in <module>\n    from comfy import model_management\n  File \"E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\ComfyUI\\comfy\\model_management.py\", line 34, in <module>\n    import comfy.utils\n  File \"E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\ComfyUI\\comfy\\utils.py\", line 26, in <module>\n    import comfy.storage\n  File \"E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\ComfyUI\\comfy\\storage.py\", line 7, in <module>\n    import comfy_aimdo.storage\nModuleNotFoundError: No module named 'comfy_aimdo.storage'\n"
+}

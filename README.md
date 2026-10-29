@@ -1,7 +1,7 @@
 # agent editor kit
 
 <!-- aek-cli64-current -->
-**CLI0.1.64 开发中：新增原生GPU神经配乐接口。** 25项请求／BF16载荷／配方检查及33项工作进程隔离检查已通过；真实生成、安装和Skill更新分别验收。当前正式入口仍为下述CLI0.1.63。 [完整配乐接口、参数与边界](docs/product/NEURAL_MUSIC_GENERATION.md)
+**CLI0.1.64 开发中：新增原生GPU神经配乐接口。** 请求、隔离和部分安装回归通过；完整兼容组发现会话启动等待失败，真实配乐尚未成功，继续定位。当前正式入口仍为下述CLI0.1.63。 [完整配乐接口、参数与边界](docs/product/NEURAL_MUSIC_GENERATION.md)
 <!-- /aek-cli64-current -->
 
 **r58统一Skill工具包已独立验收。** 161条目／160清单文件／93 Skill文件；中文和空格目录解包、四包配置、独立注册、实际谱面与循环修复、完整ACES YUV／PCM／PNG及工程包重放通过。未新增模型推理，不等于干净主机或自然质量验收。
@@ -2153,6 +2153,10 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R540 | CLI64安装版配乐回归 | 62通过，独立安装模块与源码一致，无源码回落；包含R529的25项，不重复累计。 [Proof](docs/validation/evidence/music-generation-20261030-r1/installed64-music-r1/verification.json) |
 | R541 | CLI64安装版工作进程隔离 | 33通过，零失败／错误／跳过，安装与源码字节冻结一致；无音乐模型推理。 [Proof](docs/validation/evidence/music-generation-20261030-r1/installed64-bootstrap-r1/verification.json) |
 | R542 | CLI64安装版执行控制 | 26通过，零失败／错误／跳过，安装与源码字节冻结一致；新音乐的中途取消另验。 [Proof](docs/validation/evidence/music-generation-20261030-r1/installed64-control-r1/verification.json) |
+| R543 | CLI64安装版选型与分镜回归 | 57通过，零失败／错误／跳过，288安装模块精确匹配源码；无源码回落，不代表新音乐质量。 [Proof](docs/validation/evidence/music-generation-20261030-r1/installed64-selection-r1/verification.json) |
+| R544 | CLI64安装版实际启动前失败处理 | 6通过；取消、无效预算／时钟／歌词及缺适配器均在模型启动前拒绝，工程与权利台账字节不变。 [Proof](docs/validation/evidence/music-generation-20261030-r1/installed64-preflight-r1/verification.json) |
+| R545 | CLI64安装版语义兼容回归 | 104通过，零失败／错误／跳过，288安装模块匹配源码，无源码回落；不代表音乐模型生成通过。 [Proof](docs/validation/evidence/music-generation-20261030-r1/installed64-semantic-r1/verification.json) |
+| R546 | CLI64会话控制兼容失败复现 | 失败：1项原断言单独复测，生成子命令在20秒内未进入active_inference；尚未执行状态／停止断言，原因继续定位，完整431组不验收。 [Proof](docs/validation/evidence/music-generation-20261030-r1/source64-session-control-r1/verification.json) |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

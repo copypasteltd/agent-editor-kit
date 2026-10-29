@@ -16,14 +16,19 @@ def main():
         raise ValueError('Use the native embedded Python with -I -B')
     parser = argparse.ArgumentParser()
     parser.add_argument('--run', required=True)
-    run = parser.parse_args().run
+    parser.add_argument('--runtime-root', type=Path,
+                        default=Path('E:/dev/sandbox/模型配乐/ComfyUI_windows_portable/ComfyUI'))
+    args = parser.parse_args()
+    run = args.run
     if not run.isalnum():
         raise ValueError('Run must be an alphanumeric identifier')
     work = ROOT / f'local/agent-ffmpeg/acestep15-native-probe-{run}'
     work.mkdir()
     proof = ROOT / f'docs/validation/evidence/acestep15-admission-20261029-r1/native-interface-{run}'
     proof.mkdir()
-    runtime = Path('E:/dev/sandbox/模型配乐/ComfyUI_windows_portable/ComfyUI')
+    runtime = args.runtime_root.resolve()
+    if not runtime.is_dir() or not (runtime / 'comfy_extras/nodes_ace.py').is_file():
+        raise ValueError('An existing native Comfy core is required')
     for key in ('TEMP', 'TMP', 'HF_HOME', 'TORCH_HOME', 'CUDA_CACHE_PATH', 'MPLCONFIGDIR', 'XDG_CACHE_HOME'):
         p = work / key.lower()
         p.mkdir()
@@ -36,7 +41,7 @@ def main():
     socket.socket.connect_ex = deny
     socket.socket.bind = deny
     socket.socket.listen = deny
-    report = dict(status='failed', native_windows=os.name == 'nt', model_loaded=False,
+    report = dict(status='failed', native_windows=os.name == 'nt', runtime_root=str(runtime), model_loaded=False,
                   music_generated=False, model_forwards=0, service_started=False, shared_queue_touched=False)
     try:
         sys.path.insert(0, str(runtime))

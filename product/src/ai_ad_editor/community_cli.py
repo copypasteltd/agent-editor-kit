@@ -108,6 +108,8 @@ def add_parser(subs, leaf):
 
     music = subs.add_parser('music', help='本地可编辑谱面合成、音效、BGM准备和侧链闪避')
     actions = music.add_subparsers(dest='action', required=True)
+    from .music_generation_cli import add_parser as add_music_generation_parser
+    add_music_generation_parser(actions, leaf)
     inspect_score = leaf(actions.add_parser('inspect-score', help='校验并规范化本地可编辑谱面，不生成文件'))
     inspect_score.add_argument('--input', required=True)
     compose = leaf(actions.add_parser('compose', help='用本地解析合成器生成谱面音频；不是神经文本生曲'))

@@ -1,0 +1,36 @@
+{
+  "status": "failed",
+  "native_windows": true,
+  "model_loaded": false,
+  "music_generated": false,
+  "model_forwards": 0,
+  "service_started": false,
+  "shared_queue_touched": false,
+  "python": "3.13.14",
+  "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+  "torch": "2.14.0+cu130",
+  "cuda": "13.0",
+  "device": "NVIDIA GeForce RTX 3060",
+  "comfy_version": "0.41.0",
+  "signatures": {
+    "TextEncodeAceStepAudio15": "(clip, tags, lyrics, seed, bpm, duration, timesignature, language, keyscale, generate_audio_codes, cfg_scale, temperature, top_p, top_k, min_p) -> comfy_api.latest._io.NodeOutput",
+    "EmptyAceStep15LatentAudio": "(seconds, batch_size) -> comfy_api.latest._io.NodeOutput",
+    "VAEDecodeAudio": "(vae, samples) -> comfy_api.latest._io.NodeOutput"
+  },
+  "latent_shape": [
+    1,
+    64,
+    250
+  ],
+  "inventory_files": 665,
+  "imported_runtime_files": 393,
+  "outside_inventory": [
+    "middleware\\__init__.py",
+    "middleware\\cache_middleware.py",
+    "utils\\__init__.py",
+    "utils\\ed25519.py",
+    "utils\\install_util.py",
+    "utils\\json_util.py",
+    "utils\\mime_types.py"
+  ]
+}

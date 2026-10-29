@@ -32,12 +32,14 @@ from .local_inpainting import INPAINT_ENGINE, prepare_adapter as prepare_native_
 from .local_vace import VACE_ENGINE, prepare_adapter as prepare_native_vace, verify_adapter as verify_native_vace
 from .local_lipsync import ENGINE as LIPSYNC_ENGINE, prepare_adapter as prepare_lipsync, verify_adapter as verify_lipsync
 from .local_interpolation import ENGINE as INTERPOLATION_ENGINE, prepare_adapter as prepare_interpolation, verify_adapter as verify_interpolation
+from .local_music_generation import ENGINE as MUSIC_GENERATION_ENGINE, verify_adapter as verify_music_generation
 
 
 MODEL_REGISTRY_VERSION = "0.1.0"
 MODEL_REGISTRY_RELATIVE = Path("models") / "audio-adapters.json"
 VISUAL_MODEL_REGISTRY_RELATIVE = Path("models") / "visual-adapters.json"
 VALID_AUDIO_ADAPTER_ENGINES = {
+    MUSIC_GENERATION_ENGINE,
     ENHANCEMENT_ENGINE,
     FOUR_STEM_ENGINE,
     DEMUCS_ENGINE,
@@ -137,6 +139,8 @@ def prepare_audio_adapter(
     except AppError:
         raise
     engine = str(engine or "").strip()
+    if engine == MUSIC_GENERATION_ENGINE:
+        raise argument_error('神经音乐请使用music generator-adapter register，显式提供runtime-root', 'engine')
     if engine in {DEMUCS_ENGINE, FOUR_STEM_ENGINE, ENHANCEMENT_ENGINE}:
         prepare = {FOUR_STEM_ENGINE:prepare_four_stem,ENHANCEMENT_ENGINE:prepare_enhancement,DEMUCS_ENGINE:prepare_native_separation}[engine]
         return prepare(root or Path.cwd(),adapter_id=adapter_id,model_path=str(model_path or ''),executable=str(executable or ''),evidence=evidence,creator=creator,license_spdx=license_spdx,license_url=license_url,permitted_uses=permitted_uses,verification_status=verification_status,options=native_options)
@@ -212,6 +216,8 @@ def prepare_audio_adapter(
 
 def verify_audio_adapter(adapter: dict[str, Any]) -> dict[str, Any]:
     """Verify registered artifact existence and hashes without executing it."""
+    if adapter.get('engine') == MUSIC_GENERATION_ENGINE:
+        return verify_music_generation(adapter)
     if adapter.get('engine') == ENHANCEMENT_ENGINE:
         return verify_enhancement(adapter)
     if adapter.get('engine') == FOUR_STEM_ENGINE:

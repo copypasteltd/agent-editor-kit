@@ -1,0 +1,11 @@
+{
+  "status": "failed",
+  "native_windows": true,
+  "model_loaded": false,
+  "music_generated": false,
+  "model_forwards": 0,
+  "service_started": false,
+  "shared_queue_touched": false,
+  "error": "SystemExit(2)",
+  "traceback": "Traceback (most recent call last):\n  File \"argparse.py\", line 2579, in _get_value\n  File \"E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\ComfyUI\\comfy\\cli_args.py\", line 249, in is_valid_directory\n    raise argparse.ArgumentTypeError(f\"The path '{path}' does not exist.\")\nargparse.ArgumentTypeError: The path 'E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\acestep15-native-probe-r1\\empty-models' does not exist.\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"argparse.py\", line 1965, in _parse_known_args2\n  File \"argparse.py\", line 2216, in _parse_known_args\n  File \"argparse.py\", line 2140, in consume_optional\n  File \"argparse.py\", line 2026, in take_action\n  File \"argparse.py\", line 2546, in _get_values\n  File \"argparse.py\", line 2584, in _get_value\nargparse.ArgumentError: argument --models-directory: The path 'E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\acestep15-native-probe-r1\\empty-models' does not exist.\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\probe_acestep15_native.py\", line 38, in main\n    import comfy.sd\n  File \"E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\ComfyUI\\comfy\\sd.py\", line 6, in <module>\n    from comfy import model_management\n  File \"E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\ComfyUI\\comfy\\model_management.py\", line 23, in <module>\n    from comfy.cli_args import args, PerformanceFeature\n  File \"E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\ComfyUI\\comfy\\cli_args.py\", line 286, in <module>\n    args = parser.parse_args()\n  File \"argparse.py\", line 1926, in parse_args\n  File \"argparse.py\", line 1936, in parse_known_args\n  File \"argparse.py\", line 1967, in _parse_known_args2\n  File \"argparse.py\", line 2686, in error\n  File \"argparse.py\", line 2673, in exit\nSystemExit: 2\n"
+}

@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "notices": [
+    {
+      "file": "comfy-repack-README.md",
+      "bytes": 5498,
+      "sha256": "632298ada1899b1547b060940a08f1d6d9fc1bd0336a121dec0687e4d1b28a59",
+      "primary_url": "https://huggingface.co/Comfy-Org/ACE-Step-1.5/blob/371bb1680f8c88d8c1083f6ffb6330d3d55bff76/README.md",
+      "transport": "hf-mirror.com",
+      "revision": "371bb1680f8c88d8c1083f6ffb6330d3d55bff76",
+      "declared_spdx": "Apache-2.0"
+    },
+    {
+      "file": "Apache-2.0.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "primary_url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+    },
+    {
+      "file": "native-comfy-LICENSE.txt",
+      "bytes": 35823,
+      "sha256": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809",
+      "local_source": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\ComfyUI\\LICENSE",
+      "primary_url": "https://github.com/Comfy-Org/ComfyUI/blob/master/LICENSE"
+    }
+  ],
+  "unavailable": [
+    {
+      "source": "optional upstream code license capture",
+      "reason": "No preinstalled GitHub client on PATH; not installed"
+    }
+  ],
+  "model_revision": "371bb1680f8c88d8c1083f6ffb6330d3d55bff76",
+  "generated_output_license_verified": false,
+  "external_native_runtime_bundled": false
+}

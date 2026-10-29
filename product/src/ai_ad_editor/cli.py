@@ -7250,7 +7250,7 @@ def _project_operation_lock(args: argparse.Namespace):
     """Return the operation-wide lock for a mutating project command."""
     project = getattr(args, "project", None)
     key = (getattr(args, "domain", None), getattr(args, "action", None))
-    adapter_read_only = (key in {("audio", "enhancement-adapter"), ("interpolate", "adapter"), ("lipsync", "adapter"), ("audio", "adapter"), ("media", "adapter")} and getattr(args, "adapter_action", None) in {"list", "inspect"}) or (key in {("tts", "adapter"), ("tts", "voice"), ("asr", "adapter"), ('ocr','adapter'), ('face','adapter')} and getattr(args, "registration_action", None) in {"list", "inspect"})
+    adapter_read_only = (key in {("music", "generator-adapter"), ("audio", "enhancement-adapter"), ("interpolate", "adapter"), ("lipsync", "adapter"), ("audio", "adapter"), ("media", "adapter")} and getattr(args, "adapter_action", None) in {"list", "inspect"}) or (key in {("tts", "adapter"), ("tts", "voice"), ("asr", "adapter"), ('ocr','adapter'), ('face','adapter')} and getattr(args, "registration_action", None) in {"list", "inspect"})
     pack_read_only = key == ('motion', 'pack') and getattr(args, 'pack_action', None) != 'apply'
     if not project or getattr(args, "dry_run", False) or key in _READ_ONLY_PROJECT_COMMANDS or adapter_read_only or pack_read_only or key == ("queue", "cancel"):
         return contextlib.nullcontext()
@@ -7407,6 +7407,10 @@ COMMANDS[('audio', 'separate-stems')] = lambda args: stem_separation_command(arg
 from .enhancement_cli import command as enhancement_command, adapter_command as enhancement_adapter_command
 COMMANDS[('audio', 'enhance')] = enhancement_command
 COMMANDS[('audio', 'enhancement-adapter')] = enhancement_adapter_command
+from .music_generation_cli import adapter_command as music_adapter_command, generate_command as music_generate_command, inspect_command as music_inspect_command
+COMMANDS[('music', 'generator-adapter')] = music_adapter_command
+COMMANDS[('music', 'generate')] = music_generate_command
+COMMANDS[('music', 'inspect-generation')] = music_inspect_command
 from .dubbing_cli import command as dubbing_command
 COMMANDS[('dub', 'subtitles')] = lambda args: dubbing_command(args, _envelope)
 from .ad_storyboard_cli import ACTIONS as STORYBOARD_ACTIONS, command as storyboard_command
@@ -7433,7 +7437,7 @@ def main(argv: list[str] | None = None) -> int:
         with _project_operation_lock(args):
             transaction_root = getattr(args, "project", None)
             command_key = (args.domain, getattr(args, "action", None))
-            adapter_read_only = (command_key in {("audio", "enhancement-adapter"), ("interpolate", "adapter"), ("lipsync", "adapter"), ("audio", "adapter"), ("media", "adapter")} and getattr(args, "adapter_action", None) in {"list", "inspect"}) or (command_key in {("tts", "adapter"), ("tts", "voice"), ("asr", "adapter"), ('ocr','adapter'), ('face','adapter')} and getattr(args, "registration_action", None) in {"list", "inspect"})
+            adapter_read_only = (command_key in {("music", "generator-adapter"), ("audio", "enhancement-adapter"), ("interpolate", "adapter"), ("lipsync", "adapter"), ("audio", "adapter"), ("media", "adapter")} and getattr(args, "adapter_action", None) in {"list", "inspect"}) or (command_key in {("tts", "adapter"), ("tts", "voice"), ("asr", "adapter"), ('ocr','adapter'), ('face','adapter')} and getattr(args, "registration_action", None) in {"list", "inspect"})
             pack_read_only = command_key == ('motion', 'pack') and getattr(args, 'pack_action', None) != 'apply'
             transaction_enabled = bool(transaction_root) and not getattr(args, "dry_run", False) and command_key not in _READ_ONLY_PROJECT_COMMANDS and not adapter_read_only and not pack_read_only and command_key not in {("project", "recover"), ("queue", "cancel")}
             with (project_transaction(transaction_root, command=_command_name(args)) if transaction_enabled else contextlib.nullcontext({"active": False, "recovered": False})) as transaction:

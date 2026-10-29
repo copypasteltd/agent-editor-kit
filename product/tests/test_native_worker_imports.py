@@ -18,7 +18,7 @@ CONTRACTS = {
     'rvm': 'local_matting', 'face': 'local_face', 'ocr': 'local_ocr',
     'yolo': 'local_vision', 'demucs': 'local_separation', 'ctc': 'whisper_worker',
     'vace_session': 'model_session', 'stem_separation': 'demucs_worker',
-    'whisper': 'local_asr',
+    'whisper': 'local_asr', 'music_generation': 'rvm_worker',
 }
 
 

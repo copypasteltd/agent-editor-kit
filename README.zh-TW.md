@@ -1,5 +1,9 @@
 # agent editor kit
 
+<!-- aek-cli64-current -->
+**CLI0.1.64 開發中：新增原生GPU神經配樂介面。** 25項請求／BF16載荷／配方檢查及33項工作進程隔離檢查已通過；真實生成、安裝和Skill更新分別驗收。目前正式入口仍為下述CLI0.1.63。 [完整配樂介面、參數與邊界](docs/product/NEURAL_MUSIC_GENERATION.md)
+<!-- /aek-cli64-current -->
+
 **r58統一Skill工具包已獨立驗收。** 161條目／160清單檔案／93 Skill檔案；中文與空格目錄解包、四包配置、獨立註冊、實際譜面與循環修復、完整ACES YUV／PCM／PNG及專案重播通過。未新增模型推理，不等於乾淨主機或自然品質驗收。
 
 [r58 Skill ZIP](docs/skills/agent-editor-kit-community-unified-skill-r58.zip) · [SHA256](docs/skills/community-unified-skill-package-0.1.63-r58.json) · [使用流程 / Workflow](docs/validation/CLI63统一Skill切换_2026-10-29.md)
@@ -1278,6 +1282,7 @@ flowchart LR
 | F84 | 循環接縫交疊修復（正式CLI63） | 樣本時鐘、雙曲線、可編輯配方、權利繼承、取消與交易回復；週期明確縮短。 | `music repair-loop` | [流程與C76試聽](docs/product/MUSIC_LOOP.md)；安裝、候選與正式入口完整PCM/專案重播通過，仍須聽審。 |
 | F85 | 8套可編輯複合光效內容包 | OP01—OP08完整參數、作者時鐘動畫、實際MP4/GIF與可編輯專案；重用已有光學內核。 | `template apply` | [完整參數與樣片](docs/product/OPTICAL_EFFECT_PACK.md)；會替換完整effects陣列，須審閱既有效果；不是8個新算子。 |
 | F86 | N002母圖光效選型 | 同一N002、同一2秒時刻的8張實際PNG；頁面選擇輸出ID/版本/摘要，電腦與手機寬度互動/截圖已核驗。 | `preview frame; template apply` | [母圖預覽與選型](docs/product/OPTICAL_N002_PREVIEWS.md)；480×270參考，另有動態樣片；母圖權利與MIT模板分開，不增加500 LUT數量。 |
+| F87 | 原生GPU神經配樂（開發中） | 明確風格／歌詞請求、固定ACE-Step1.5 Turbo、CUDA前向證據、原生48kHz雙聲道Float32 WAV、生成配方與獨立音軌。 | `music generator-adapter; music inspect-generation; music generate` | [完整配樂介面、參數與邊界](docs/product/NEURAL_MUSIC_GENERATION.md)；CLI64開發介面；正式63暫不含。不是MIDI、樂器分軌或已驗收自然音質。 |
 
 ## 支持的服務模塊與依賴
 
@@ -2071,7 +2076,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R463 | C75安裝版完整配樂重放 | 保留r1驗收腳本變數衝突失敗，修復後r2完整重做；3072000位元組原PCM、110592000位元組RGBA、6144000位元組成片PCM與原始碼和專案重放相同；不計聽審 |
 | R464 | CLI59原始碼與安裝實際CUDA | 各4次DF3前向、完整1124160位元組PCM相同並完成包重放；12.25dB受控噪聲MSE改善，不計自然品質；原收據模組計數另有更正稽核 |
 | R465 | 單入口Skill59候選 | 1入口／17模組／93檔案，靜態驗證及真實PowerShell配樂、5分軌、音效與唯讀預檢通過；完整PCM與原始碼相同；尚未正式註冊，安裝400繼續 |
-| R466 | CLI59安裝400項終態 | 400通過，零失敗／錯誤／跳過，281原始碼與安裝模組及測試凍結一致；[證據](docs/validation/evidence/music-score-20261029-r1/installed58-contracts-r1/verification.json) |
+| R466 | CLI59安裝400項終態 | 400通過，零失敗／錯誤／跳過，282原始碼與安裝模組及測試凍結一致；[證據](docs/validation/evidence/music-score-20261029-r1/installed59-contracts-r1/verification.json) |
 | R467 | CLI59統一Skill實際切換 | 候選及真實C盤入口CUDA各4次前向；完整PCM與原始碼及專案重播相同，1入口／17模組／93檔案，舊版備份保留；[流程](docs/validation/CLI59统一Skill切换_2026-10-29.md) |
 | R468 | r57獨立工具包 | 160條目／159清單檔案，四包配置、獨立註冊、兩次渲染及完整YUV／PCM／PNG重播通過；首輪換行校驗失敗保留，未新增模型推理；[證據](docs/validation/evidence/music-score-20261029-r1/formal-kit-r1/verification.json) |
 | R469 | CLI60循環修復專項 | 18項新修復＋19項譜面回歸全部通過；獨立混合公式、完整中段、取消回復、權利與專案包重做；[收據](docs/validation/evidence/music-loop-20261029-r1/targeted-r1/verification.json) |
@@ -2134,6 +2139,20 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R526 | CLI63安裝完整回歸 | 31/37/26/57/104/406, zero failures/errors/skips; exact installed/source bytes. [406-r2 proof](docs/validation/evidence/job-enumeration-20261029-r1/installed63-contracts-r2/verification.json) |
 | R527 | CLI63統一Skill正式切換 | 1 entry/17 modules/93 tested files; actual loop/DF3 CUDA/MuseTalk CUDA, full PCM/RGBA and package replay. Historical CLI61 103-voice guidance included before testing. Natural quality/clean host open. [Workflow](docs/validation/CLI63统一Skill切换_2026-10-29.md) |
 | R528 | CLI63/r58 independent kit | 161/160/93 entries/inventory/Skill files; isolated setup/registration, full score/loop PCM and ACES YUV/PCM/PNG package replay. No new neural forwards or clean-host acceptance. [Proof](docs/validation/evidence/job-enumeration-20261029-r1/formal-kit-r1/verification.json) |
+| R529 | CLI64配樂請求與載荷檢查 | 25通過；含BF16、大詞表、原生時鐘、歌詞、配方及偽GPU回應拒絕；無模型推理。 [Proof](docs/validation/evidence/music-generation-20261030-r5/unit/verification.json) |
+| R530 | CLI64工作進程隔離 | 33通過，含新增音樂進程的依賴歸屬與拒絕外部應用載入；無模型推理。 [Proof](docs/validation/evidence/music-generation-20261030-r1/source64-bootstrap-r1/verification.json) |
+| R531 | ACE1.5權重與原生介面準入 | 4組件完整SHA256校驗；673執行檔案涵蓋393實際匯入檔案；本項不是音樂生成或聽審通過。 [Proof](docs/validation/evidence/acestep15-admission-20261029-r1/acquisition-r1/verification.json) |
+| R532 | CLI64配樂回歸組 | 62通過，含新增25項與既有循環18／譜面19；該25項與R529重疊，不累計。 [Proof](docs/validation/evidence/music-generation-20261030-r1/source64-music-r1/verification.json) |
+| R533 | CLI64原生進程與執行預算 | 26通過；原生子進程歸屬、清理與預算，不等於新增模型中途取消已經驗收。 [Proof](docs/validation/evidence/music-generation-20261030-r1/source64-control-r1/verification.json) |
+| R534 | CLI64語義服務相容回歸 | 104通過，零失敗／錯誤／跳過，原始碼凍結一致；不是自然語義準確率。 [Proof](docs/validation/evidence/music-generation-20261030-r1/source64-semantic-r1/verification.json) |
+| R535 | CLI64素材選型與分鏡相容回歸 | 57通過，零失敗／錯誤／跳過，原始碼凍結一致；不是新模型品質驗收。 [Proof](docs/validation/evidence/music-generation-20261030-r1/source64-selection-r1/verification.json) |
+| R536 | CLI64實際CLI啟動前失敗處理 | 6通過：取消、無效逾時／儲存／時鐘／歌詞和缺適配器；工程與權利台帳原樣，模型前向0。 [Proof](docs/validation/evidence/music-generation-20261030-r1/source64-preflight-r1/verification.json) |
+| R537 | CLI64獨立候選套件與安裝 | local62離線構建／安裝通過，288應用模組逐位元組符合原始碼；正式入口63不變。實際音樂與完整安裝驗收另驗。 [Proof](docs/validation/evidence/music-generation-20261030-r1/candidate-r1/verification.json) |
+| R538 | CLI64統一Skill候選入口 | 未註冊94檔案／17內部模組，正文校驗、腳本編譯、實際PowerShell version／help通過；本項沒有執行模型。 [Proof](docs/validation/evidence/music-generation-20261030-r1/skill-stage-r1/verification.json) |
+| R539 | CLI64真實音樂生成逾時與回收 | 實際生成失敗：1800秒工作進程預算內無模型結果；完整命令2398秒。清理檢查通過，原工作進程退出／暫存目錄清空／未發布音訊；不是配樂生成通過。 [Proof](docs/validation/evidence/music-generation-20261030-r1/timeout-piano3-r1/verification.json) |
+| R540 | CLI64安裝版配樂回歸 | 62通過，獨立安裝模組與原始碼一致，無原始碼回落；包含R529的25項，不重複累計。 [Proof](docs/validation/evidence/music-generation-20261030-r1/installed64-music-r1/verification.json) |
+| R541 | CLI64安裝版工作進程隔離 | 33通過，零失敗／錯誤／跳過，安裝與原始碼位元組凍結一致；無音樂模型推理。 [Proof](docs/validation/evidence/music-generation-20261030-r1/installed64-bootstrap-r1/verification.json) |
+| R542 | CLI64安裝版執行控制 | 26通過，零失敗／錯誤／跳過，安裝與原始碼位元組凍結一致；新音樂的中途取消另驗。 [Proof](docs/validation/evidence/music-generation-20261030-r1/installed64-control-r1/verification.json) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

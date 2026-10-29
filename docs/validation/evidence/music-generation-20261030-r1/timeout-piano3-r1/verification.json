@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "acceptance": "actual-timeout-cleanup-only",
+  "cli_version": "0.1.64",
+  "actual_generation_status": "failed",
+  "actual_generation_error": "MUSIC_GENERATION_TIMEOUT",
+  "original_worker_exited": true,
+  "original_pid_reused": true,
+  "process_cleanup": {
+    "cleanup_requested": true,
+    "cleanup_requested_at_utc": "2026-10-29T17:29:07.128150+00:00",
+    "final_exit": {
+      "hex": "0x00000001",
+      "raw": 1,
+      "unsigned": 1
+    },
+    "observed_exit": null,
+    "pid": 8324,
+    "role": "worker",
+    "started_at_utc": "2026-10-29T16:59:12.460044+00:00",
+    "state": "terminated_by_cleanup"
+  },
+  "assets_after_failure": 0,
+  "output_published": false,
+  "managed_workspace_empty": true,
+  "pre_generation_metadata_hashes_persisted": false,
+  "complete_metadata_byte_rollback_accepted": false,
+  "command_elapsed_seconds": 2398.188355100001,
+  "worker_budget_seconds": 1800,
+  "last_reported_phase": "verifying-music-artifacts",
+  "root_cause": "unknown",
+  "model_result_observed": false,
+  "inference_time_measured": false,
+  "musical_quality_accepted": false,
+  "checked_at_utc": "2026-10-29T17:33:00.831009+00:00",
+  "original_case_sha256": "ba7d03692d651c17da2dd0584ebc9ae86dcdda5a2378ebd90cc4b29201946d7a"
+}

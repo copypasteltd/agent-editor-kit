@@ -1,0 +1,37 @@
+usage: ai-ad-editor music generate [-h] [--format {json,text}]
+                                   [--request-id REQUEST_ID]
+                                   [--idempotency-key IDEMPOTENCY_KEY]
+                                   [--dry-run] [--no-network]
+                                   [--progress {none,jsonl}] --project PROJECT
+                                   --adapter-id ADAPTER_ID (--input INPUT |
+                                   --recipe-asset-id RECIPE_ASSET_ID)
+                                   --new-asset-id NEW_ASSET_ID
+                                   [--storage-budget-mib STORAGE_BUDGET_MIB]
+                                   [--timeout-seconds TIMEOUT_SECONDS]
+                                   [--cancel-file CANCEL_FILE] [--apply]
+                                   [--sequence-id SEQUENCE_ID]
+                                   [--track-id TRACK_ID]
+                                   [--timeline-start-seconds TIMELINE_START_SECONDS]
+
+options:
+  -h, --help            show this help message and exit
+  --format {json,text}  输出格式
+  --request-id REQUEST_ID
+  --idempotency-key IDEMPOTENCY_KEY
+  --dry-run
+  --no-network
+  --progress {none,jsonl}
+  --project PROJECT
+  --adapter-id ADAPTER_ID
+  --input INPUT         agent-neural-music-v1本地JSON
+  --recipe-asset-id RECIPE_ASSET_ID
+                        使用已有资产中保持不变的请求重新生成
+  --new-asset-id NEW_ASSET_ID
+  --storage-budget-mib STORAGE_BUDGET_MIB
+  --timeout-seconds TIMEOUT_SECONDS
+                        工作进程与输出核验的总秒数；不含登记及命令预检
+  --cancel-file CANCEL_FILE
+  --apply
+  --sequence-id SEQUENCE_ID
+  --track-id TRACK_ID
+  --timeline-start-seconds TIMELINE_START_SECONDS

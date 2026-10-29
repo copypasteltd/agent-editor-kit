@@ -1,0 +1,75 @@
+[
+  {
+    "name": "wheel",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-B",
+      "-m",
+      "pip",
+      "wheel",
+      "--no-index",
+      "--no-deps",
+      "--no-build-isolation",
+      "--wheel-dir",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.62\\source-wheel-r1",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "bundle",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\offline\\build.py",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.62\\candidate-r1\\bundle",
+      "--product-wheel",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.62\\source-wheel-r1\\ai_ad_editor-0.1.64-py3-none-win_amd64.whl",
+      "--product-wheel-sha256",
+      "sha256:f83d51f9d0a78609d4677fa570a3077255b3903e4ec98fc9abf781e36ff44a58"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "install",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.62\\unpacked-r1\\install.py",
+      "--bundle",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.62\\unpacked-r1",
+      "--target",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.62\\final-r1\\installed",
+      "--manifest-sha256",
+      "sha256:dc89fd35ee429e8db53ea5183a1b93c5c8e71a0ade5e3175e2b5b0e5d5181fa7",
+      "--timeout-seconds",
+      "600"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "version",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.62\\final-r1\\installed\\run.py",
+      "version"
+    ],
+    "exit_code": 0
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "scope": "input, immutable recipe and worker response contracts; no inference",
+  "tests": 23,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "elapsed_seconds": 0.47974600000088685,
+  "music_generated": false,
+  "files": [
+    {
+      "path": "product/tests/test_music_generation.py",
+      "sha256": "c4391cba4c11b1de0c0b8de3832fb30022f41912cbdc0f5666fffd06a097e40c"
+    },
+    {
+      "path": "product/src/ai_ad_editor/local_music_generation.py",
+      "sha256": "684e0f7d77d6d84e9b70d71a939eff1cec92f8c6cca1c4556241b4e86030bbf0"
+    },
+    {
+      "path": "product/src/ai_ad_editor/music_generation_model.py",
+      "sha256": "bb24a79a336525c77f643a0ede06d163f588c0d1c5aeb746ecc1e3731ad32ea0"
+    },
+    {
+      "path": "product/src/ai_ad_editor/music_generation_worker.py",
+      "sha256": "167ec3ddcbaf18fc472da43607cc42ddc21aa0ea890562227384fb9f12e312c5"
+    },
+    {
+      "path": "product/src/ai_ad_editor/music_generation_pipeline.py",
+      "sha256": "b7c07396e6b81e9b5bb390f36ba55642e3bdb9a6485a6cc0804ce2772f8b6308"
+    },
+    {
+      "path": "product/src/ai_ad_editor/music_generation_cli.py",
+      "sha256": "0abc95a8558b5e11cd23876926c6a1b033e259124fbf52e2e5644ae7412cb969"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "status": "failed",
+  "case": "piano",
+  "cli_version": "0.1.64",
+  "source_only": true,
+  "error": "AssertionError(('register', {'ok': False, 'command': 'music.generator-adapter', 'request_id': 'req_20261029163037_f7d59f09', 'operation_id': None, 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'ARGUMENT_INVALID', 'message': '只允许本地路径或 local/file URI，禁止远程服务和网络素材', 'path': 'license_url', 'retryable': False}], 'provenance': {'cli_version': '0.1.64', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-10-29T16:30:37.089698Z', 'finished_at': '2026-10-29T16:30:37.089715Z', 'network': 'disabled'}}))",
+  "calls": [
+    {
+      "name": "version",
+      "argv": [
+        "C:/Python313/python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano2\\source_entry.py",
+        "version"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 12.703413200000796
+    },
+    {
+      "name": "init",
+      "argv": [
+        "C:/Python313/python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano2\\source_entry.py",
+        "project",
+        "init",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano2\\project"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 15.54257250000046
+    },
+    {
+      "name": "register",
+      "argv": [
+        "C:/Python313/python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano2\\source_entry.py",
+        "music",
+        "generator-adapter",
+        "register",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-generation64-piano2\\project",
+        "--adapter-id",
+        "ace15",
+        "--model-path",
+        "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\acestep15-20261029",
+        "--runtime-root",
+        "E:/dev/sandbox/模型配乐/ComfyUI_windows_portable/ComfyUI",
+        "--executable",
+        "E:/dev/sandbox/模型配乐/ComfyUI_windows_portable/python_embeded/python.exe",
+        "--evidence",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\acestep15-admission-20261029-r1\\notices-r2\\verification.json",
+        "--creator",
+        "ACE-Step / Comfy-Org; existing native ComfyUI core",
+        "--license-spdx",
+        "Apache-2.0 AND GPL-3.0-only",
+        "--license-url",
+        "https://huggingface.co/Comfy-Org/ACE-Step-1.5",
+        "--threads",
+        "4"
+      ],
+      "exit_code": 2,
+      "elapsed_seconds": 457.1264919000005
+    }
+  ]
+}

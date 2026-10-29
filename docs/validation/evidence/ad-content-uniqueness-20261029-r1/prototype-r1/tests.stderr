@@ -1,0 +1,17 @@
+test_content_flag_rejects_non_boolean_values_during_preflight (test_ad_content_uniqueness.ContentUniquenessTests.test_content_flag_rejects_non_boolean_values_during_preflight) ... ok
+test_default_uniqueness_rejects_distinct_ids_of_identical_content (test_ad_content_uniqueness.ContentUniquenessTests.test_default_uniqueness_rejects_distinct_ids_of_identical_content) ... ok
+test_explicit_content_policy_is_enforced_even_with_asset_reuse_enabled (test_ad_content_uniqueness.ContentUniquenessTests.test_explicit_content_policy_is_enforced_even_with_asset_reuse_enabled) ... ok
+test_explicit_id_only_mode_preserves_original_distinct_id_behavior (test_ad_content_uniqueness.ContentUniquenessTests.test_explicit_id_only_mode_preserves_original_distinct_id_behavior) ... ok
+test_explicit_reuse_inherits_content_reuse_unless_overridden (test_ad_content_uniqueness.ContentUniquenessTests.test_explicit_reuse_inherits_content_reuse_unless_overridden) ... ok
+test_explicit_shot_reserves_all_aliases_of_its_source_content (test_ad_content_uniqueness.ContentUniquenessTests.test_explicit_shot_reserves_all_aliases_of_its_source_content) ... ok
+test_global_content_assignment_avoids_alias_greedy_dead_end (test_ad_content_uniqueness.ContentUniquenessTests.test_global_content_assignment_avoids_alias_greedy_dead_end) ... ok
+test_malformed_content_identity_is_not_an_asset_id_fallback (test_ad_content_uniqueness.ContentUniquenessTests.test_malformed_content_identity_is_not_an_asset_id_fallback) ... ok
+test_random_alias_graphs_match_independent_exhaustive_content_oracle (test_ad_content_uniqueness.ContentUniquenessTests.test_random_alias_graphs_match_independent_exhaustive_content_oracle) ... ok
+test_same_content_keeps_best_usable_alias_and_exact_window (test_ad_content_uniqueness.ContentUniquenessTests.test_same_content_keeps_best_usable_alias_and_exact_window) ... ok
+test_same_score_alias_ties_are_stable_across_response_order (test_ad_content_uniqueness.ContentUniquenessTests.test_same_score_alias_ties_are_stable_across_response_order) ... ok
+test_unverified_alias_cannot_replace_verified_representative (test_ad_content_uniqueness.ContentUniquenessTests.test_unverified_alias_cannot_replace_verified_representative) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.145s
+
+OK

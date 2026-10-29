@@ -1,0 +1,15 @@
+test_default_uniqueness_rejects_distinct_ids_of_identical_content (test_ad_content_uniqueness.ContentUniquenessTests.test_default_uniqueness_rejects_distinct_ids_of_identical_content) ... FAIL
+
+======================================================================
+FAIL: test_default_uniqueness_rejects_distinct_ids_of_identical_content (test_ad_content_uniqueness.ContentUniquenessTests.test_default_uniqueness_rejects_distinct_ids_of_identical_content)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_ad_content_uniqueness.py", line 28, in test_default_uniqueness_rejects_distinct_ids_of_identical_content
+    with self.assertRaises(AppError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+AssertionError: AppError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.004s
+
+FAILED (failures=1)

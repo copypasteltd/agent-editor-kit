@@ -1,5 +1,7 @@
 # 校准语义选材 → 可编辑广告分镜
 
+源码58新增 `unique_content` 精确SHA256内容去重，默认继承 `unique_assets`；正式56仍为ID去重。新字段仅对58生效，完整规则见[内容去重](AD_CONTENT_UNIQUENESS.md)。下方56使用流程及54历史保持原版行为。
+
 ## 当前 CLI56 / local54：实际统一入口
 
 CLI56已经原生离线安装并注册为唯一 `$agent-ffmpeg-local-editor`（1入口／17模块／93文件）。源码与安装版分别通过1项原生引导、15项预算控制、45项选材／分镜、104项语义兼容；两者实际CUDA三镜头选材、横竖版四次渲染及完整RGB／PCM工程重放均已通过。[安装与运行证据](../validation/CLI56原生交付_2026-10-29.md)。真实C盘入口完整GPU案例现已通过：[C70实际影片／GIF／完整证据](CASES.md#c70-registered-semantic-selection)。新正式工具包独立验收另列。

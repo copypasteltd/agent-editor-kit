@@ -1,0 +1,48 @@
+{
+  "status": "source-patched-awaiting-regressions",
+  "cli_version": "0.1.58",
+  "files": [
+    {
+      "path": "product/src/ai_ad_editor/native_process_job.py",
+      "before_sha256": "455e898f6fbf260795b80e12fb18f921d90edb4fd75d967a228c028817b568d7",
+      "after_sha256": "16d611d8e620e991195420eb2e4781aaac8d4e42390deb0d83c2d9013c14f7f7"
+    },
+    {
+      "path": "product/src/ai_ad_editor/interpolation_pipeline.py",
+      "before_sha256": "64e9d34d43701c406a6b043bdf4de329f64c3d141617909e3f2eff43357489fe",
+      "after_sha256": "53f457224c60831fe2772caccbe0360f2731b7ac817cd73335b1fe687c7521cf"
+    },
+    {
+      "path": "product/src/ai_ad_editor/ad_selection.py",
+      "before_sha256": "894679e1946c48c964fd0b1961cf54d8d8e16470e77b744b017f1a02ade37e47",
+      "after_sha256": "e449a03b270363e42c5bf5920ea0b8883c399abd9086aab8e5c2fa881b0ea907"
+    },
+    {
+      "path": "product/src/ai_ad_editor/capabilities.py",
+      "before_sha256": "5950da4a3e7345ac0c4766fb6e3e7ca62ddd438708b93c9ae39794d845ca5cae",
+      "after_sha256": "62f37c5c1bbfdafc68098bd08ea90746da0356280a26899e4babb920a1ab83db"
+    },
+    {
+      "path": "product/src/ai_ad_editor/__init__.py",
+      "before_sha256": "74982de1b9a007edc6f918fcf33432cfee215fe8c4bb3d238c035b6407ad14ec",
+      "after_sha256": "d9f118898e1dbb41fdb51bafcc44e7477dbdf13983d94a59773ca5cf8b9c5e44"
+    },
+    {
+      "path": "product/pyproject.toml",
+      "before_sha256": "fc24131426c26a4bf338983d470041e4b6ea28e534dd61d6622a2107a735ca56",
+      "after_sha256": "c569b1985ef5519891f601133bfd470b5cf4cde2f573e56e093288c551aedbef"
+    },
+    {
+      "path": "product/tests/test_ad_selection.py",
+      "before_sha256": "eb924113f8a9e847b7b698b7808d8aea6505a99b6fa1e49ee1220b69cdf7cd88",
+      "after_sha256": "c0b47e5f353e1a34a014924e82bd5b25c15ae0bd1d6b52112f82353dd390d601"
+    }
+  ],
+  "registered_skill_cli": "0.1.56",
+  "candidate57_unchanged": true,
+  "features": [
+    "exact-content-ad-assignment",
+    "synchronous-owned-job-cleanup",
+    "native-interpolation-timeout-contract"
+  ]
+}

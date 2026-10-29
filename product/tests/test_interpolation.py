@@ -166,6 +166,28 @@ class TransportTests(unittest.TestCase):
         started=time.monotonic()
         with self.assertRaises(AppError) as caught:self.execute('wait',timeout=2)
         self.assertEqual(caught.exception.code,'TIMEOUT');self.assertLess(time.monotonic()-started,15)
+    def test_preprocessing_tool_timeout_reclaims_actual_file_writer(self):
+        from ai_ad_editor.utils import run_process as owned_run
+        marker=self.base/'preprocess-writer.pid'
+        def delayed(command,**options):
+            target=Path(command[-1])
+            self.assertEqual(target.name,'selected.wav')
+            code=('import os,time;from pathlib import Path;f=open('+repr(str(target))+',"wb");'
+                'f.write(b"owned preprocessing output");f.flush();Path('+repr(str(marker))+').write_text(str(os.getpid()));time.sleep(30)')
+            return owned_run([sys.executable,'-I','-S','-B','-c',code],timeout=1,cancel_file=options.get('cancel_file'))
+        with patch('ai_ad_editor.interpolation_pipeline.run_process',side_effect=delayed):
+            with self.assertRaises(AppError) as caught:self.execute(timeout=60)
+        self.assertEqual(caught.exception.code,'TIMEOUT')
+        self.assertTrue(marker.exists())
+        self.assertFalse(list((self.root/'cache/managed-jobs').glob('job-*')))
+        self.assertFalse(any(t.name=='ai-ad-editor-process-reader' for t in threading.enumerate()))
+    def test_outer_preprocessing_interruption_preserves_original_budget_exception(self):
+        from ai_ad_editor.execution_control import ExecutionInterrupted
+        failure=ExecutionInterrupted('PROCESS_TIMEOUT','outer budget expired',exit_code=6)
+        with patch('ai_ad_editor.interpolation_pipeline.run_process',side_effect=failure):
+            with self.assertRaises(ExecutionInterrupted) as caught:self.execute(timeout=60)
+        self.assertIs(caught.exception,failure)
+        self.assertFalse(list((self.root/'cache/managed-jobs').glob('job-*')))
     def test_cancel_reclaims_owned_children(self):
         marker=self.base/'cancel';timer=threading.Timer(1,lambda:marker.write_text('cancel'));timer.start()
         try:

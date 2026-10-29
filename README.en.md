@@ -1,5 +1,10 @@
 # agent editor kit
 
+Development source is **CLI0.1.58**: exact-source SHA256 selection deduplication, synchronous owned Windows process cleanup, and interpolation preprocessing timeout mapping. Separate source groups passed 57 / 19 / 31 / 104 tests, plus 3 targeted timeout tests; the full 400-test run is pending. The registered Skill remains CLI56 / local54 / r55. Candidate57 failed its installed398 run (1 failure, 1 error) and has not been promoted. [Implementation and evidence](docs/validation/CLI58开发核验_2026-10-29.md).
+
+Installed57 MuseTalk actual CUDA and complete rendered-media replay passed: 67 UNet calls; native133 frames at25fps, delivered160 frames at30fps. Natural lip-sync quality and12 other actual-model validations remain open. [C73 video / provenance / evidence](docs/product/CASES.md#c73-installed57-musetalk).
+
+
 Native CLI56/local54 is installed and registered as one `$agent-ffmpeg-local-editor` entry with17modules and93files. Source,isolated installed and actual C-discovered CUDA cases separately passed full two-aspect video/audio package replay. The four existing voice/translation packs were reverified. The final r55 kit passed independent extraction/configuration/registration and complete ACES video/audio replay.
 
 The CLI57/local55 offline candidate is independently installed:1705 payload files,281 modules and8 native resources match. Source398 and installed31 regressions passed;actual installed CUDA denoising matches complete source PCM and package replay. Installed398 remains running;the live Skill stays56/r55. [CLI57 delivery / usage](docs/validation/CLI57独立安装交付_2026-10-29.md)
@@ -1144,6 +1149,8 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F78 | Inherited native-process controls | Under an operation-budget context,check ancestor deadline/cancel before spawn,during wait and before return;close owned jobs/readers on interruption. | `run_process / operation_budget` | SourceCLI55;15 control tests passed;no hard real-time preemption of blocked OS calls. |
 | F79 | Native semantic dependency isolation | Pin the owned app package,then restore model-Python dependency resolution;retain version/path/hash checks so controller NumPy/Pillow cannot silently override the model runtime. | `semantic / ad select / project upgrade-semantic` | CLI56 source/installed bootstrap and actual CUDA cases passed;changed implementation requires fresh binding,not arbitrary-environment compatibility. |
 | F80 | Native-worker dependency isolation | Temporarily pin the owned application,restore the model runtime dependency search order,reject preloaded foreign packages,and preserve version/path/hash checks. | Native ASR/CTC/matting/segmentation/tracking/inpainting/generation/lip-sync/interpolation/denoising/separation entries | Source CLI57 passed31 subprocess regressions;new installed/model acceptance remains separate;live Skill stays56. |
+| F81 | 精确内容去重 / Exact-content deduplication / 精確內容去重 | 源码58：规范SHA256、全局联合分配、显式复用选项；非感知去重 | [规则与验证](docs/product/AD_CONTENT_UNIQUENESS.md) |
+| F82 | 自有进程同步回收 / Owned-process cleanup / 自有程序同步回收 | 源码58：持有成员句柄等待退出；独立作业互不影响；58安装另验 | [行为与证据](docs/product/OWNED_PROCESS_CLEANUP.md) |
 
 ## Supported service modules and dependencies
 
@@ -1916,6 +1923,11 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R440 | Installed57 actual CUDA denoising and complete source parity | Fresh DF3 binding;RTX3060/4forwards/nativeNumPy2.4.6;1124160 Float32 PCM bytes identical to source57 and package replay;controlled MSE improvement12.25446dB | [raw](docs/validation/evidence/native-worker-bootstrap-20261029-r1/installed57-gpu-r1/verification.json) · [C71 audio](docs/product/CASES.md#c71-source57-native-worker-gpu) | One actual model;other14 models,full installed contracts,liveSkill switch and natural listening separate |
 | R441 | Source57 complete native service-contract rerun |16 groups/398 tests;zero failures/errors/skips;source/tests frozen;existing native Python dependencies;original failed run preserved | [passed r2](docs/validation/evidence/native-worker-bootstrap-20261029-r1/source57-contracts-r2/verification.json) · [retained failed r1](docs/validation/evidence/native-worker-bootstrap-20261029-r1/source57-contracts-r1/verification.json) | Contract coverage,not all real-model or broad natural-quality acceptance;installed398 still running |
 | R442 | Installed57 actual RIFE CUDA / C72 |Fresh bindings and ingest IDs;69+20 actual CUDA forwards;nativeNumPy2.4.6;96 animation/36 VFR-alpha frames retain every original anchor and match accepted baseline;full movie RGBA/PCM package replay equal | [raw](docs/validation/evidence/native-worker-bootstrap-20261029-r1/installed57-interpolation-r2/verification.json) · [C72 MP4/GIF](docs/product/CASES.md#c72-installed57-rife) · [retained harness failure](docs/validation/evidence/native-worker-bootstrap-20261029-r1/installed57-interpolation-r1/verification.json) | Revalidation of installed dependency repair;not newly invented interpolation capability or natural-motion/all-model/Skill acceptance |
+| R443 | C73：独立安装57 MuseTalk实际CUDA | UNet67次、133帧原生master；成片160帧／30fps完整RGBA与PCM工程重放一致；无自然质量验收 |
+| R444 | CLI57安装398项失败保留 | 1失败／1错误，未提升正式Skill；源码58修复原生清理与超时映射 |
+| R445 | CLI58精确内容去重 | 57项源码选材／分镜通过，含12项新增与随机图独立最优解比较；非感知去重 |
+| R446 | CLI58自有进程同步清理 | 修正后19项控制及3项超时专项分别通过；首次失败与旧实现20轮重现保留 |
+| R447 | CLI58入口与语义兼容 | 31项及104项分别通过，完整400项仍在运行；58未安装、正式Skill仍56 |
 
 ## Current limits and development direction
 

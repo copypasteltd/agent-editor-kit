@@ -19,13 +19,26 @@ def fail(message, **details):
     raise AppError('AD_SELECTION_INVALID', message, exit_code=2, diagnostics=details or None)
 
 
+
+def content_identity(asset):
+    """Exact registered source bytes, never a perceptual-similarity claim."""
+    value = asset.get('sha256')
+    if (not isinstance(value, str) or not value.startswith('sha256:') or len(value) != 71
+            or any(c not in '0123456789abcdef' for c in value[7:])):
+        fail('内容去重需要有效的素材 SHA256，不能回退为素材 ID', asset_id=asset.get('id'))
+    return value
+
+
 def prepare(project, payload):
     """Validate the complete storyboard before spending a model forward."""
-    if not isinstance(payload, dict) or set(payload) - {'brief', 'queries', 'unique_assets'}:
-        fail('选材输入只接受 brief、queries、unique_assets')
+    if not isinstance(payload, dict) or set(payload) - {'brief', 'queries', 'unique_assets', 'unique_content'}:
+        fail('选材输入只接受 brief、queries、unique_assets、unique_content')
     unique = payload.get('unique_assets', True)
     if type(unique) is not bool:
         fail('unique_assets 必须为布尔值')
+    unique_content = payload.get('unique_content', unique)
+    if type(unique_content) is not bool:
+        fail('unique_content 必须为布尔值')
     brief, queries = payload.get('brief'), payload.get('queries')
     if not isinstance(brief, dict) or not isinstance(queries, list) or not 1 <= len(queries) <= 50:
         fail('需要 brief 和 1..50 项镜头查询')
@@ -95,7 +108,7 @@ def prepare(project, payload):
     if not all(durations.values()):
         fail('每项查询必须至少用于一个变体')
     return dict(brief=copy.deepcopy(brief), queries=copy.deepcopy(queries),
-                unique_assets=unique, required_duration_ticks=durations,
+                unique_assets=unique, unique_content=unique_content, required_duration_ticks=durations,
                 required_source_audio=sorted(audio), reserved_assets=sorted(reserved))
 
 
@@ -163,6 +176,8 @@ def resolve(project, prepared, search):
     if not isinstance(results, list) or len(results) != len(queries):
         fail('检索返回的查询数量不匹配')
     assets, rows, candidates, rejected = asset_map(project), [], [], []
+    unique_content = prepared['unique_content']
+    reserved_content = {content_identity(assets[aid]) for aid in prepared['reserved_assets']} if unique_content else set()
     for query, result in zip(queries, results):
         checkpoint()
         if result.get('query') != query or result.get('calibration_id') != search['calibration_id']:
@@ -189,11 +204,14 @@ def resolve(project, prepared, search):
             if (reference.get('asset_id') != aid or type(start) is not int or start < 0
                     or reference.get('point_sample_only') is not True):
                 fail('候选必须具有真实点采样的可编辑来源引用')
+            identity = content_identity(asset) if unique_content else None
             reason = None
             if hit.get('rights_verification_status') != 'verified':
                 reason = 'rights_not_verified'
             if prepared['unique_assets'] and aid in prepared['reserved_assets']:
                 reason = 'reserved_by_explicit_shot'
+            elif unique_content and identity in reserved_content:
+                reason = 'reserved_content_by_explicit_shot'
             if (query['id'] in prepared['required_source_audio']
                     and not asset.get('probe', {}).get('audio', {}).get('codec')):
                 reason = 'source_audio_missing'
@@ -211,7 +229,25 @@ def resolve(project, prepared, search):
                 valid[aid] = copy.deepcopy(hit)
         candidates.append(valid)
         rows.append({aid: hit['decision_score'] for aid, hit in valid.items()})
-    chosen = maximum_assignment(rows, unique=prepared['unique_assets'])
+    if unique_content:
+        # One column per exact source hash. For each shot retain the highest
+        # scoring usable alias; stable asset-ID then sample-clock tie breaks.
+        representatives, grouped_rows = [], []
+        for valid in candidates:
+            by_content = {}
+            for aid, hit in valid.items():
+                key = content_identity(assets[aid])
+                old_aid = by_content.get(key)
+                rank = lambda name: (-valid[name]['decision_score'], name,
+                                     valid[name]['editable_reference']['source_in_tick'])
+                if old_aid is None or rank(aid) < rank(old_aid):
+                    by_content[key] = aid
+            representatives.append(by_content)
+            grouped_rows.append({key:valid[aid]['decision_score'] for key,aid in by_content.items()})
+        groups = maximum_assignment(grouped_rows, unique=True)
+        chosen = [aliases[key] for aliases,key in zip(representatives, groups)]
+    else:
+        chosen = maximum_assignment(rows, unique=prepared['unique_assets'])
     brief, receipts = copy.deepcopy(prepared['brief']), []
     shots = {s['id']: s for s in brief['shots']}
     for query, valid, aid in zip(queries, candidates, chosen):
@@ -221,6 +257,7 @@ def resolve(project, prepared, search):
             source_in_tick=hit['editable_reference']['source_in_tick'], decision_score=hit['decision_score'],
             required_duration_tick=prepared['required_duration_ticks'][query['id']],
             preview_asset_id=hit.get('preview_asset_id'), semantic_truth_verified=False,
+            uniqueness_group=hit['source_sha256'] if unique_content else aid,
             scope='calibrated_sampled_visual_similarity_not_whole_shot_semantics')
         shot = shots[query['id']]
         shot.update(asset_id=aid, source_in_tick=receipt['source_in_tick'])
@@ -231,5 +268,6 @@ def resolve(project, prepared, search):
         receipts.append(receipt)
     plan = storyboard.plan_storyboard(project, brief)
     return plan, dict(selected=receipts, rejected=rejected, unique_assets=prepared['unique_assets'],
+        unique_content=unique_content, content_identity='exact_source_sha256_not_perceptual_similarity',
         assignment='global_maximum_quantized_1e-8_cosine', semantic_truth_verified=False,
         whole_shot_content_requires_review=True, rights_checked_for_publication=False)

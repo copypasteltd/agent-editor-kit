@@ -1,0 +1,9 @@
+{
+  "status": "refined-awaiting-regressions",
+  "reason": "ActiveProcesses zero alone did not wait descendant process signaling;retained owned handles now explicitly waited",
+  "before_sha256": "16d611d8e620e991195420eb2e4781aaac8d4e42390deb0d83c2d9013c14f7f7",
+  "after_sha256": "af32883679b5bb53bd80b18d7966111891803033358482b86df3af5a479046cd",
+  "maximum_enumerated_processes": 4096,
+  "cleanup_seconds": 10,
+  "foreign_PID_reuse_checked_with_IsProcessInJob": true
+}

@@ -1354,3 +1354,24 @@ English: Real source CLI57 CUDA denoising retained the model runtime NumPy2.4.6,
 Sintel片段版权Blender Foundation／durian.blender.org，CC BY3.0；沿用C52固定12–14秒片段、缩放与抽帧，动画不是真人实拍。透明诊断与测试音CC0，RIFE代码／模型MIT；原始出处及变换说明保留。没有人工连续运动／听觉质量验收；其余13类实际模型、HDR补帧、自然遮挡／快速运动、正式Skill切换及全部38组完整目标继续开放。
 
 [首轮脚本ID错误保留](../validation/evidence/native-worker-bootstrap-20261029-r1/installed57-interpolation-r1/verification.json) · [CLI57本地包与使用流程](../validation/CLI57独立安装交付_2026-10-29.md)。
+
+
+<a id="c73-installed57-musetalk"></a>
+
+## C73 · Installed CLI57 actual MuseTalk / 原生CUDA口型复核
+
+独立CLI57／local55重新登记MuseTalk，使用既有C51虚构生成肖像及本地Kokoro合成普通话，没有真人参考、模型下载或虚拟化。RTX3060实际UNet 67次、VAE解码67次、VAE编码2次、音频编码1次、面部解析1次；保留原生NumPy2.4.6，无神经CPU回退。
+
+![Actual installed CLI57 MuseTalk](../assets/native-worker-musetalk57-20261029-r1/actual.gif)
+
+[实际MP4](../assets/native-worker-musetalk57-20261029-r1/actual.mp4) · [截图](../assets/native-worker-musetalk57-20261029-r1/actual.png) · [来源与许可](../assets/native-worker-musetalk57-20261029-r1/SOURCE.txt) · [媒体摘要](../assets/native-worker-musetalk57-20261029-r1/SOURCE.json) · [完整执行收据](../validation/evidence/native-worker-bootstrap-20261029-r1/installed57-lipsync-r1/verification.json)
+
+| 编号 | 实际核验 | 结果 |
+| --- | --- | --- |
+| C73.1 | 原生512×512 master | 133帧／25fps，139460608字节RGBA；来源alpha、脸框外与透明RGB保持，嘴部随时间改变 |
+| C73.2 | 原生选定配音 | 507180字节PCM逐字节保持；显式885样本尾静音，不超过0.04秒 |
+| C73.3 | 成片时钟 | H264为160帧／30fps／5.333333秒；AAC为48kHz单声道／5.32秒，与原生25fps时钟分别记录 |
+| C73.4 | 可编辑轨道与工程重放 | master／配方保留，完整成片167772160字节RGBA及1024000字节解码PCM与导入后重放一致 |
+| C73.5 | 程序与正式入口 | 运行时281源码／安装模块冻结一致；注册Skill仍56／r55，未激活57候选 |
+
+GIF为10fps预览，截图已查看；没有声称连续人工观看、听审、自然口型质量或真人泛化验收。来源为LicenseRef-Generated-Demo，模型MIT AND Apache-2.0，完整原始来源与生成变换说明在SOURCE中。其余12类实际模型、完整自然质量及全部38组目标继续开放。57安装398项失败另保留，不能以本例抵销。

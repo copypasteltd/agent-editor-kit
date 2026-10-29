@@ -65,7 +65,13 @@ def execute(root,job,plan,source,adapter,*,timeout,cancel_file=None,progress=Non
     if shutil.disk_usage(work).free<plan['estimated_workspace_bytes']+128*1024**2:raise error('DISK_BUDGET','可用磁盘不足保守工作空间估算')
     base=[str(ffmpeg),'-nostdin','-v','error','-threads','1','-filter_threads','1','-protocol_whitelist','file,pipe']
     def tool(command):
-        result=run_process(command,timeout=remaining(),cancel_file=cancel_file)
+        try:
+            result=run_process(command,timeout=remaining(),cancel_file=cancel_file)
+        except AppError as exc:
+            from .execution_control import ExecutionInterrupted
+            if exc.code=='PROCESS_TIMEOUT' and not isinstance(exc,ExecutionInterrupted):
+                raise AppError('TIMEOUT','补帧预处理超过完整管道时间预算',exit_code=8,cause=exc.cause) from exc
+            raise
         if result.returncode:raise error('MEDIA_TOOL','本地补帧媒体处理失败',stderr=result.stderr[-2500:])
         return result
     def hash_stream(path,role,filters=None):

@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "case": "C73",
+  "cli_version": "0.1.57",
+  "actual_MuseTalk_CUDA": true,
+  "UNet_calls": 67,
+  "native_master_frames": 133,
+  "native_master_fps": 25,
+  "rendered_frames": 160,
+  "rendered_fps": 30,
+  "native_numpy": "2.4.6",
+  "source_portrait": "fictional generated VACE portrait;no real-person reference",
+  "speech": "original local synthetic Kokoro Mandarin",
+  "model_terms": "MIT AND Apache-2.0;original provenance retained",
+  "source_terms": "LicenseRef-Generated-Demo",
+  "evidence": "docs/validation/evidence/native-worker-bootstrap-20261029-r1/installed57-lipsync-r1/verification.json",
+  "evidence_sha256": "9e13d0ad319668022654f5c65caf2053807253f97f8c20c831d54f0e9f0641f6",
+  "files": [
+    {
+      "path": "docs/assets/native-worker-musetalk57-20261029-r1/actual.gif",
+      "bytes": 385043,
+      "sha256": "bb877abee3a9088c9270cdb70db29361b5c9de9db21a1d48218de57171d1428c"
+    },
+    {
+      "path": "docs/assets/native-worker-musetalk57-20261029-r1/actual.mp4",
+      "bytes": 189024,
+      "sha256": "37df5e8ed30197a82d43fb91348d54677d9902bafe8429a14c199a781adb572a"
+    },
+    {
+      "path": "docs/assets/native-worker-musetalk57-20261029-r1/actual.png",
+      "bytes": 265685,
+      "sha256": "ab58ffb31e97c10029eba40dd252dde6c98836608276927f9ee476185b777805"
+    },
+    {
+      "path": "docs/assets/native-worker-musetalk57-20261029-r1/SOURCE.txt",
+      "bytes": 1128,
+      "sha256": "f7db28f8015019155acdc6edf9d825fbe24a019c0a7233017e1c23c597e32bb5"
+    }
+  ],
+  "human_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false
+}

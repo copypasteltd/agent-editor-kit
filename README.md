@@ -1,8 +1,13 @@
 # agent editor kit
 
+当前开发源码 **CLI0.1.58**：新增精确内容SHA256去重选材，修复Windows自有进程同步回收与补帧预处理超时映射。57／19／31／104项源码分组及3项超时专项分别通过，完整400项仍在运行。正式加载仍CLI56／local54／r55；CLI57候选安装398项出现1失败／1错误，未提升版本，原失败保留。[58实现与核验](docs/validation/CLI58开发核验_2026-10-29.md)。
+
+独立安装57第三类实际模型MuseTalk已通过CUDA与完整成片重放：67次UNet，原生133帧／25fps，成片160帧／30fps。自然口型质量与其余12类实际模型仍另验。[C73影片／来源／证据](docs/product/CASES.md#c73-installed57-musetalk)。
+
+
 当前本机 CLI56／local54 已安装并注册为唯一 `$agent-ffmpeg-local-editor`：1入口／17模块／93文件。源码、独立安装与真实C盘入口的CUDA选材及两画幅完整音画工程重放分别通过；四个原配音／翻译包已重新核验。r55工具包独立解包／配置／注册及完整ACES音画重放已通过。
 
-CLI57／local55 独立离线候选已安装：1705载荷、281模块及8原生资源一致；源码398项、安装31项回归及安装版真实CUDA降噪／完整PCM与源码、工程重放一致均已通过。安装398项仍在运行，正式Skill保持CLI56／r55。 [CLI57 delivery / usage](docs/validation/CLI57独立安装交付_2026-10-29.md)
+CLI57／local55 独立离线候选已安装：1705载荷、281模块及8原生资源一致；源码398项、安装31项回归及安装版真实CUDA降噪／完整PCM与源码、工程重放一致均已通过。安装398项已失败（1失败／1错误），58修复另验，正式Skill保持CLI56／r55。 [CLI57 delivery / usage](docs/validation/CLI57独立安装交付_2026-10-29.md)
 
 CLI57源码及独立安装版真实CUDA降噪均已通过，受控噪声MSE改善12.25dB；完整PCM逐字节一致。398项源码重跑已通过，首轮测试环境失败记录保留。 [C71 actual audio / waveforms](docs/product/CASES.md#c71-source57-native-worker-gpu)
 
@@ -1144,6 +1149,8 @@ flowchart LR
 | F78 | 原生子进程继承预算 | 在预算上下文内，启动／等待／返回时检查外层期限和取消标记，中断时关闭自有Job并回收读取线程。 | `run_process / operation_budget` | 源码CLI55；15项控制回归通过；不承诺OS阻塞调用硬实时抢占。 |
 | F79 | 语义模型原生依赖隔离 | 工作进程固定自己的应用包后恢复模型Python的依赖搜索顺序，保留版本／模块路径／摘要检查，避免安装site覆盖模型NumPy／Pillow。 | `semantic / ad select / project upgrade-semantic` | CLI56源码／安装原生回归与实际CUDA案例通过；新实现须重新登记绑定，非任意环境兼容保证。 |
 | F80 | 15类原生工作进程依赖隔离 | 临时固定所属应用包后恢复模型Python依赖搜索顺序，拒绝预加载外部同名包，保留原版本／路径／摘要校验。 | 原生ASR／CTC／分割／抠像／跟踪／修复／生成／口型／补帧／降噪／分离等入口 | CLI57源码31项子进程回归通过；安装和实际模型另验，正式Skill仍CLI56。 |
+| F81 | 精确内容去重 / Exact-content deduplication / 精確內容去重 | 源码58：规范SHA256、全局联合分配、显式复用选项；非感知去重 | [规则与验证](docs/product/AD_CONTENT_UNIQUENESS.md) |
+| F82 | 自有进程同步回收 / Owned-process cleanup / 自有程序同步回收 | 源码58：持有成员句柄等待退出；独立作业互不影响；58安装另验 | [行为与证据](docs/product/OWNED_PROCESS_CLEANUP.md) |
 
 ## 支持的服务模块与依赖
 
@@ -1914,6 +1921,11 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R440 | Installed57 actual CUDA denoising and complete source parity | Fresh DF3 binding;RTX3060/4forwards/nativeNumPy2.4.6;1124160 Float32 PCM bytes identical to source57 and package replay;controlled MSE improvement12.25446dB | [raw](docs/validation/evidence/native-worker-bootstrap-20261029-r1/installed57-gpu-r1/verification.json) · [C71 audio](docs/product/CASES.md#c71-source57-native-worker-gpu) | One actual model;other14 models,full installed contracts,liveSkill switch and natural listening separate |
 | R441 | Source57 complete native service-contract rerun |16 groups/398 tests;zero failures/errors/skips;source/tests frozen;existing native Python dependencies;original failed run preserved | [passed r2](docs/validation/evidence/native-worker-bootstrap-20261029-r1/source57-contracts-r2/verification.json) · [retained failed r1](docs/validation/evidence/native-worker-bootstrap-20261029-r1/source57-contracts-r1/verification.json) | Contract coverage,not all real-model or broad natural-quality acceptance;installed398 still running |
 | R442 | Installed57 actual RIFE CUDA / C72 |Fresh bindings and ingest IDs;69+20 actual CUDA forwards;nativeNumPy2.4.6;96 animation/36 VFR-alpha frames retain every original anchor and match accepted baseline;full movie RGBA/PCM package replay equal | [raw](docs/validation/evidence/native-worker-bootstrap-20261029-r1/installed57-interpolation-r2/verification.json) · [C72 MP4/GIF](docs/product/CASES.md#c72-installed57-rife) · [retained harness failure](docs/validation/evidence/native-worker-bootstrap-20261029-r1/installed57-interpolation-r1/verification.json) | Revalidation of installed dependency repair;not newly invented interpolation capability or natural-motion/all-model/Skill acceptance |
+| R443 | C73：独立安装57 MuseTalk实际CUDA | UNet67次、133帧原生master；成片160帧／30fps完整RGBA与PCM工程重放一致；无自然质量验收 |
+| R444 | CLI57安装398项失败保留 | 1失败／1错误，未提升正式Skill；源码58修复原生清理与超时映射 |
+| R445 | CLI58精确内容去重 | 57项源码选材／分镜通过，含12项新增与随机图独立最优解比较；非感知去重 |
+| R446 | CLI58自有进程同步清理 | 修正后19项控制及3项超时专项分别通过；首次失败与旧实现20轮重现保留 |
+| R447 | CLI58入口与语义兼容 | 31项及104项分别通过，完整400项仍在运行；58未安装、正式Skill仍56 |
 
 ## 当前边界与开发方向
 

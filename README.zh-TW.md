@@ -1,5 +1,10 @@
 # agent editor kit
 
+目前開發原始碼為 **CLI0.1.58**：新增精確內容SHA256選材去重，修正Windows自有程序同步回收及補幀前處理逾時映射。57／19／31／104項原始碼分組與3項逾時專項分別通過；完整400項仍執行中。正式載入仍CLI56／local54／r55；57候選安裝398項出現1失敗／1錯誤，未提升版本，失敗紀錄保留。[58實作與核驗](docs/validation/CLI58开发核验_2026-10-29.md)。
+
+獨立安裝57第三類實際模型MuseTalk已通過CUDA及完整成片重放：67次UNet，原生133幀／25fps，成片160幀／30fps。自然口型品質及其餘12類實際模型仍另驗。[C73影片／來源／證據](docs/product/CASES.md#c73-installed57-musetalk)。
+
+
 目前本機CLI56／local54已安裝並註冊為唯一 `$agent-ffmpeg-local-editor`：1入口／17模組／93檔案。原始碼、獨立安裝與實際C盤入口的CUDA選材及兩畫幅完整音畫專案重播分別通過；四個原配音／翻譯套件已重新核驗。r55工具包獨立解壓／配置／註冊及完整ACES音畫重播已通過。
 
 CLI57／local55獨立離線候選已安裝：1705載荷、281模組及8原生資源一致；原始碼398項、安裝31項回歸及安裝版實際CUDA降噪／完整PCM與原始碼、專案重播一致均已通過。安裝398項仍在執行，正式Skill維持CLI56／r55。 [CLI57 delivery / usage](docs/validation/CLI57独立安装交付_2026-10-29.md)
@@ -1144,6 +1149,8 @@ flowchart LR
 | F78 | 原生子程序繼承預算 | 在預算上下文內，啟動／等待／返回時檢查外層期限和取消標記，中斷時關閉自有Job並回收讀取執行緒。 | `run_process / operation_budget` | 原始碼CLI55；15項控制回歸通過；不承諾OS阻塞呼叫硬即時搶占。 |
 | F79 | 語義模型原生依賴隔離 | 工作程序固定自己的應用套件後恢復模型Python的依賴搜尋順序，保留版本／模組路徑／摘要檢查，避免安裝site覆蓋模型NumPy／Pillow。 | `semantic / ad select / project upgrade-semantic` | CLI56原始碼／安裝原生回歸與實際CUDA案例通過；新實作須重新登記綁定，非任意環境相容保證。 |
 | F80 | 15類原生工作程序依賴隔離 | 暫時固定所屬應用套件後恢復模型Python依賴搜尋順序，拒絕預載外部同名套件，保留原版本／路徑／摘要校驗。 | 原生ASR／CTC／分割／摳像／跟蹤／修復／生成／口型／補幀／降噪／分離等入口 | CLI57原始碼31項子程序回歸通過；安裝與實際模型另驗，正式Skill仍CLI56。 |
+| F81 | 精确内容去重 / Exact-content deduplication / 精確內容去重 | 源码58：规范SHA256、全局联合分配、显式复用选项；非感知去重 | [规则与验证](docs/product/AD_CONTENT_UNIQUENESS.md) |
+| F82 | 自有进程同步回收 / Owned-process cleanup / 自有程序同步回收 | 源码58：持有成员句柄等待退出；独立作业互不影响；58安装另验 | [行为与证据](docs/product/OWNED_PROCESS_CLEANUP.md) |
 
 ## 支持的服務模塊與依賴
 
@@ -1914,6 +1921,11 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R440 | Installed57 actual CUDA denoising and complete source parity | Fresh DF3 binding;RTX3060/4forwards/nativeNumPy2.4.6;1124160 Float32 PCM bytes identical to source57 and package replay;controlled MSE improvement12.25446dB | [raw](docs/validation/evidence/native-worker-bootstrap-20261029-r1/installed57-gpu-r1/verification.json) · [C71 audio](docs/product/CASES.md#c71-source57-native-worker-gpu) | One actual model;other14 models,full installed contracts,liveSkill switch and natural listening separate |
 | R441 | Source57 complete native service-contract rerun |16 groups/398 tests;zero failures/errors/skips;source/tests frozen;existing native Python dependencies;original failed run preserved | [passed r2](docs/validation/evidence/native-worker-bootstrap-20261029-r1/source57-contracts-r2/verification.json) · [retained failed r1](docs/validation/evidence/native-worker-bootstrap-20261029-r1/source57-contracts-r1/verification.json) | Contract coverage,not all real-model or broad natural-quality acceptance;installed398 still running |
 | R442 | Installed57 actual RIFE CUDA / C72 |Fresh bindings and ingest IDs;69+20 actual CUDA forwards;nativeNumPy2.4.6;96 animation/36 VFR-alpha frames retain every original anchor and match accepted baseline;full movie RGBA/PCM package replay equal | [raw](docs/validation/evidence/native-worker-bootstrap-20261029-r1/installed57-interpolation-r2/verification.json) · [C72 MP4/GIF](docs/product/CASES.md#c72-installed57-rife) · [retained harness failure](docs/validation/evidence/native-worker-bootstrap-20261029-r1/installed57-interpolation-r1/verification.json) | Revalidation of installed dependency repair;not newly invented interpolation capability or natural-motion/all-model/Skill acceptance |
+| R443 | C73：独立安装57 MuseTalk实际CUDA | UNet67次、133帧原生master；成片160帧／30fps完整RGBA与PCM工程重放一致；无自然质量验收 |
+| R444 | CLI57安装398项失败保留 | 1失败／1错误，未提升正式Skill；源码58修复原生清理与超时映射 |
+| R445 | CLI58精确内容去重 | 57项源码选材／分镜通过，含12项新增与随机图独立最优解比较；非感知去重 |
+| R446 | CLI58自有进程同步清理 | 修正后19项控制及3项超时专项分别通过；首次失败与旧实现20轮重现保留 |
+| R447 | CLI58入口与语义兼容 | 31项及104项分别通过，完整400项仍在运行；58未安装、正式Skill仍56 |
 
 ## 當前邊界與開發方向
 

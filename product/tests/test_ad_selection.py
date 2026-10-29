@@ -1,4 +1,5 @@
 import copy
+import hashlib
 import itertools
 import json
 import random
@@ -16,6 +17,9 @@ from test_ad_storyboard import fixture
 
 def setup_request():
     project, brief = fixture()
+    # Distinct fixture resources need distinct source bytes; aliases are explicit in their own tests.
+    for asset in project['assets']:
+        asset['sha256'] = 'sha256:'+hashlib.sha256(asset['id'].encode()).hexdigest()
     brief['shots'] = brief['shots'][:2]
     brief['variants'] = brief['variants'][:2]
     for shot in brief['shots']:

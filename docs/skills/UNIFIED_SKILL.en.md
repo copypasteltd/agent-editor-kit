@@ -2,11 +2,17 @@
 
 <!-- community-current -->
 
-**CLI0.1.59 / local57 / r57: one `$agent-ffmpeg-local-editor` entry,17 modules,93 files.** Source and independently installed31/19/57/104/400 groups passed separately. Staged and actual C-discovered CUDA denoising passed full PCM replay. The r57 kit independently passed extraction,four-pack configuration,isolated registration and complete ACES YUV/PCM/PNG replay without changing live discovery. The kit also generated the actual score with complete3072000-byte PCM matching source;no new neural inference is claimed for that kit check.
+**CLI0.1.63 / local61: one `$agent-ffmpeg-local-editor` entry, 17 modules, 93 files.** Source and installed 31/37/26/57/104/406 groups passed separately. Actual staged and C-discovered loop repair, DF3 CUDA, MuseTalk CUDA and complete AV package replay passed. Loop overlap shortens the sample period; natural quality, listening approval, clean hosts and all38 original closure conditions remain open.
 
-[Download r57 kit](agent-editor-kit-community-unified-skill-r57.zip) · [SHA-256](community-unified-skill-package-0.1.59-r57.json) · [Installation and use](../validation/CLI59独立安装交付_2026-10-29.md) · [Rollout proof](../validation/CLI59统一Skill切换_2026-10-29.md) · [Exact-content selection and C74 preview](../product/AD_CONTENT_UNIQUENESS.md)
+[使用流程 / Workflow](../validation/CLI63统一Skill切换_2026-10-29.md) · [Loop repair and WAVs](../product/MUSIC_LOOP.md) · [103 local voice auditions](../validation/CLI61全音色试听_2026-10-29.md)
 
-Pair this kit with the separate CLI59/local57 application bundle and existing model packs. It adds editable analytical score synthesis and4 procedural effects;exact-SHA256 content deduplication remains,not perceptual duplicate detection. Same-host native Windows acceptance does not establish clean-host,natural-quality or full CapCut parity. Previous r55/runtime56 downloads remain immutable.
+[8 editable optical templates and MP4/GIF](../product/OPTICAL_EFFECT_PACK.md) · [Real N002 optical previews and selection](../product/OPTICAL_N002_PREVIEWS.md)
+
+Use the selected OP ID and template SHA256, then re-preview on client footage. Template application replaces the complete effects array; explicitly preserve or merge existing LUT/effects. N002 image rights are separate from MIT template parameters.
+
+The independently accepted r58 kit has161 entries/160 inventory files/93 Skill files. Four-pack setup, independent registration, score/loop PCM and ACES YUV/PCM/PNG package replay passed; no new neural inference in this kit check. Application ZIP, Python/FFmpeg and models remain separate.
+
+[r58 Skill ZIP](agent-editor-kit-community-unified-skill-r58.zip) · [SHA256](community-unified-skill-package-0.1.63-r58.json)
 
 <!-- /community-current -->
 
@@ -97,3 +103,35 @@ The registered unified Skill now uses CLI52: GPU luminance shoulder and OKLab ch
 [GPU colour workflow](../product/GPU_GAMUT.md)
 
 <!-- /historical-community-current -->
+
+
+<details>
+<summary>CLI63 delivery history / 保留先前交付状态</summary>
+
+
+**CLI0.1.59 / local57 / r57: one `$agent-ffmpeg-local-editor` entry,17 modules,93 files.** Source and independently installed31/19/57/104/400 groups passed separately. Staged and actual C-discovered CUDA denoising passed full PCM replay. The r57 kit independently passed extraction,four-pack configuration,isolated registration and complete ACES YUV/PCM/PNG replay without changing live discovery. The kit also generated the actual score with complete3072000-byte PCM matching source;no new neural inference is claimed for that kit check.
+
+[Download r57 kit](agent-editor-kit-community-unified-skill-r57.zip) · [SHA-256](community-unified-skill-package-0.1.59-r57.json) · [Installation and use](../validation/CLI59独立安装交付_2026-10-29.md) · [Rollout proof](../validation/CLI59统一Skill切换_2026-10-29.md) · [Exact-content selection and C74 preview](../product/AD_CONTENT_UNIQUENESS.md)
+
+Pair this kit with the separate CLI59/local57 application bundle and existing model packs. It adds editable analytical score synthesis and4 procedural effects;exact-SHA256 content deduplication remains,not perceptual duplicate detection. Same-host native Windows acceptance does not establish clean-host,natural-quality or full CapCut parity. Previous r55/runtime56 downloads remain immutable.
+
+
+</details>
+
+
+<details>
+<summary>CLI63 delivery history / 保留先前交付状态</summary>
+
+
+**CLI0.1.63 / local61: one `$agent-ffmpeg-local-editor` entry, 17 modules, 93 files.** Source and installed 31/37/26/57/104/406 groups passed separately. Actual staged and C-discovered loop repair, DF3 CUDA, MuseTalk CUDA and complete AV package replay passed. Loop overlap shortens the sample period; natural quality, listening approval, clean hosts and all38 original closure conditions remain open.
+
+[使用流程 / Workflow](../validation/CLI63统一Skill切换_2026-10-29.md) · [Loop repair and WAVs](../product/MUSIC_LOOP.md) · [103 local voice auditions](../validation/CLI61全音色试听_2026-10-29.md)
+
+[8 editable optical templates and MP4/GIF](../product/OPTICAL_EFFECT_PACK.md) · [Real N002 optical previews and selection](../product/OPTICAL_N002_PREVIEWS.md)
+
+Use the selected OP ID and template SHA256, then re-preview on client footage. Template application replaces the complete effects array; explicitly preserve or merge existing LUT/effects. N002 image rights are separate from MIT template parameters.
+
+Independent r58 kit acceptance is pending; no new kit download is claimed. Public alpha.3/CLI0.1.2 is unchanged.
+
+
+</details>

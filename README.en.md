@@ -1,5 +1,49 @@
 # agent editor kit
 
+**The r58 unified Skill kit passed independent acceptance.** 161 entries/160 inventory files/93 Skill files; Chinese/space extraction, four-pack setup, isolated registration, actual score and loop generation, full ACES YUV/PCM/PNG and project replay passed. No new neural inference; clean-host and natural-quality acceptance remain open.
+
+[r58 Skill ZIP](docs/skills/agent-editor-kit-community-unified-skill-r58.zip) · [SHA256](docs/skills/community-unified-skill-package-0.1.63-r58.json) · [使用流程 / Workflow](docs/validation/CLI63统一Skill切换_2026-10-29.md)
+
+**Current registered local version: CLI0.1.63 / local61.** One `$agent-ffmpeg-local-editor` entry, 17 modules, 93 files. Source and installed 31/37/26/57/104/406 groups passed separately; staged and C-discovered loop repair, DF3/MuseTalk CUDA and full AV project replay passed. The r58 kit passed independent acceptance; public alpha.3 still contains CLI0.1.2. Full CapCut parity remains open.
+
+[简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [CLI63 workflow](docs/validation/CLI63统一Skill切换_2026-10-29.md) · [500 look previews](docs/assets/looks-n002-20261024-r1/index.html) · [103 voice auditions](docs/validation/CLI61全音色试听_2026-10-29.md) · [8 editable optical templates](docs/product/OPTICAL_EFFECT_PACK.md) · [Actual optical gallery](docs/assets/optical-pack-20261029-r1/index.html) · [Browser screenshots and checks](docs/validation/光效选型页实测_2026-10-29.md) · [N002 original-image previews](docs/product/OPTICAL_N002_PREVIEWS.md) · [N002 selection gallery](docs/assets/optical-n002-20261029-r1/index.html)
+
+```powershell
+$entry = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1'
+& $entry version # 0.1.63
+& $entry doctor
+& $entry music repair-loop --help
+```
+
+Confirm the version, check dependencies, create a project and register authorized media. Present real 500-look previews and local 103-voice WAVs, record selections, then dry-run, generate, audition, place, preview, render and export. Loop overlap shortens the cycle; it does not establish listening approval or the original duration.
+
+[Loop commands and before/after WAVs](docs/product/MUSIC_LOOP.md) · [Editable score](docs/product/MUSIC_SCORE.md)
+
+![Actual C76 boundary diagnostic](docs/assets/music-loop60-20261029-r1/actual.png)
+
+![Actual CLI61 local103 voice gallery](docs/assets/voice-gallery61-20261029-r1/actual.png)
+
+![Actual original and eight editable optical outputs](docs/assets/optical-pack-20261029-r1/contact.png)
+
+![Actual eight optical previews on the user-provided N002 image](docs/assets/optical-n002-20261029-r1/contact.png)
+
+<!-- aek-history-summary -->
+<details>
+<summary>Complete development history — all original content retained</summary>
+
+**Eight real optical stills are now available on the original N002 image.** The same input/time and stable template IDs support client selection for portrait/interior footage; these templates are separate from the500 LUT count. [Actual N002 previews](docs/product/OPTICAL_N002_PREVIEWS.md) · [N002 selection gallery](docs/assets/optical-n002-20261029-r1/index.html)
+
+![Actual N002 optical comparison](docs/assets/optical-n002-20261029-r1/contact.png)
+
+**The optical gallery passed actual browser interaction checks.** All8 selections matched real template IDs/hashes; H.264 playback, play-one/pause-others and desktop/mobile-width screenshots passed. The owned browser was closed. [Offline gallery](docs/assets/optical-pack-20261029-r1/index.html) · [Actual screenshots and checks](docs/validation/光效选型页实测_2026-10-29.md)
+
+<details>
+<summary>Actual gallery screenshot / 实际页面 / 實際頁面</summary>
+
+![Actual offline optical gallery](docs/assets/optical-pack-gallery-20261029-r1/desktop.png)
+
+</details>
+
 **Eight editable composite optical templates are available.** Each includes full parameters, actual MP4/GIF, original input and an editable project. All eight passed installed GPU/full-AV replay; registered Skill59 actually reselected OP08. [Preview / 完整选型](docs/product/OPTICAL_EFFECT_PACK.md)
 
 ![Actual editable optical templates](docs/assets/optical-pack-20261029-r1/contact.png)
@@ -36,9 +80,7 @@ New local103-voice audition workflow:listen by language/voice ID and confirm bef
 
 ![Actual local103 voice gallery](docs/assets/voice-gallery61-20261029-r1/actual.png)
 
-<!-- aek-history-summary -->
-<details>
-<summary>Complete development history — all original content retained</summary>
+
 
 **CLI59 installed candidate passed complete music/AV replay**:all16s/5-track PCM,480 frames and decoded soundtrack match source and portable replay. Actual CUDA denoising also matches complete source PCM across4 forwards. The unregistered single-entry Skill generated music through its real PowerShell entry. Installed400 continues;registered Skill remains CLI58. [Usage and limits](docs/validation/CLI59独立安装交付_2026-10-29.md).
 
@@ -1197,7 +1239,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F45 | Kokoro Chinese/English voices | Text, 103 named voices and speed → complete WAV, actual duration and editable speech assets. | `voice list/synthesize; model-pack` | Optional CPU/CUDA packs; at least seven distinct voices generated; complete auditions, emotion/dialects and human listening unaccepted. |
 | F46 | Translation and bilingual captions | Text/plain SRT → Chinese-English translation, simplified/traditional conversion, bilingual SRT and explicit post-translation glossary. | `translate text/subtitles` | Existing OPUS models required; cue order/milliseconds retained; awkward translations remain and semantic acceptance is pending. |
 | F47 | GPU voice/translation selection | Explicit CPU/CUDA/auto and free-VRAM checks → actual provider/device and explicit fallback/failure. | `gpu inspect; voice; translate; --device` | RTX 3060 tested; CUDA 13 voice / CUDA 12 translation, voice device 0 only; this does not accelerate all filters. |
-| F48 | Music preparation and mixing | Actual music/speech assets → trim, loop, fades, explicit gain and speech-ducked mix. | `music prepare/mix` | Retains original stems and complete speech; no composition, automatic loop-seam repair or guaranteed visual semantic matching. |
+| F48 | Music preparation and mixing | Actual music/speech assets → trim, loop, fades, explicit gain and speech-ducked mix. | `music prepare/mix` | Preserves stems and complete speech. Editable score synthesis is F83; overlap repair is F84. Automatic visual semantic matching remains open. |
 | F49 | Native capture | Explicit window/desktop/region/camera/microphone → finite recording, CPU/NVENC, cancellation and project assets. | `capture devices/record` | Actual CPU/GPU window evidence; camera/microphone, joint AV sync, device faults and long recording unaccepted. |
 | F50 | Offline visual semantic retrieval and conditions | Local index, Chinese/English/reference images, same-frame positive/negative clauses, empirical profiles, actual previews/source times and editable references. | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | URI-only portable semantic package; all 80 decisions retained with 3 known errors; same-host runtime pins remain external; G26/G31 open |
 | F51 | Joint subtitle translation/dubbing | Plain Chinese/English SRT and explicit voices/tracks → translation or preserved same-language copy, complete batched WAV, actual fit, editable audio/captions and atomic application. | `dub subtitles` | Same-language mode initializes only voice; preserves originals/retries/awkward translations; cue fit does not establish word precision, naturalness or lip sync. |
@@ -1233,7 +1275,9 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F81 | Exact-content selection deduplication | Canonical SHA256 groups with global assignment; explicit ID-only or reuse options. | ad select; byte-identical assets under different IDs; not perceptual deduplication | Source58 passed57 selection/storyboard tests; [rules and evidence](docs/product/AD_CONTENT_UNIQUENESS.md); installed58 remains unaccepted. |
 | F82 | Synchronous owned-process cleanup | Retain and wait owned process handles; independent jobs remain unaffected; preserve outer-budget exceptions. | Windows model/tool children and interpolation preprocessing deadlines | Source58 passed19 control and3 targeted timeout tests separately; [behavior and evidence](docs/product/OWNED_PROCESS_CLEANUP.md). |
 | F83 | Editable score and procedural effects(CLI59) | Beat/MIDI score and8 analytical instruments →48kHz stereo WAV,stems and editable package;4 electronic effects. | `music inspect-score/compose/effect` | [Implementation,workflow and limits](docs/product/MUSIC_SCORE.md);not neural text-to-music,available in registered CLI59. |
-| F84 | Loop overlap repair(source CLI60) | Sample-clock crossfade,two curves,editable recipe,inherited rights,cancel and transactional rollback;explicit shorter cycle. | `music repair-loop` | [Workflow and C76 audio](docs/product/MUSIC_LOOP.md);registered Skill remains59,no listening acceptance. |
+| F84 | Loop overlap repair (registered CLI63) | Sample-clock crossfade, two curves, editable recipe, inherited rights, cancellation and transactional rollback; explicitly shorter cycle. | `music repair-loop` | [Workflow and C76 audio](docs/product/MUSIC_LOOP.md); installed, staged and registered complete PCM/project replay passed. Listening approval remains separate. |
+| F85 | Eight editable composite optical templates | OP01–OP08 parameters, author-clock animation, actual MP4/GIF and editable projects reuse existing optical kernels. | `template apply` | [Parameters and samples](docs/product/OPTICAL_EFFECT_PACK.md); replaces the full effects array, so review existing effects. These are content templates, not eight new operators. |
+| F86 | N002 optical preview selection | Eight actual PNGs use the same N002 input/time (2seconds). Selection returns ID/version/hash; desktop/mobile-width interaction and screenshots passed. | `preview frame; template apply` | [N002 previews and selection](docs/product/OPTICAL_N002_PREVIEWS.md); reference480×270 stills plus separate animated samples. Image rights differ from MIT templates; the500 LUT count is unchanged. |
 
 ## Supported service modules and dependencies
 
@@ -1255,7 +1299,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | S12 | Creative and campaign assistance | Agent task guidance | Uses supplied business information and data to produce scripts/suggestions/analysis. | `$agent-ffmpeg-local-editor` / K01–K17 | No ad-account integration, buying or automatic data collection. |
 | S13 | Bundled community resources | Offline catalog | 359 source/license-pinned music/jingle/SFX/font files | `materials list/inspect/verify/ingest` | Per-resource rights; no commercial stock subscription |
 | S14 | Local speech/translation | Native model workers | Four optional pinned CPU/CUDA packs; 103 voice mappings and OPUS text/subtitles | `voice / translate / model-pack` | At least seven distinct voices have real outputs; complete 103-voice auditions and human acceptance remain open |
-| S15 | BGM preparation and mixing | Native FFmpeg audio | Explicit trim/loop/fades, independent voice/music stems and ducking | `music prepare/mix` | No composition, voice truncation or seam-repair promise |
+| S15 | Music preparation, score and loop repair | Native FFmpeg + CPU DSP | Explicit trim/loop/fades, independent stems, ducking, editable score synthesis and sample overlap repair. | `music prepare/mix/compose/repair-loop` | Score synthesis and overlap use CPU DSP. Neural music generation is separate; verify shortened timing, auditions and rights. |
 | S16 | GPU compatibility | Existing native OpenCL ICD / NVIDIA model libraries | Graph projection; independent Float32 affine/normal over/text/words/particles/optics/highlight-glow; off/prefer/require and model auto/cpu/cuda; actual probes/budgets/cleanup | `render --projection-acceleration; gpu inspect; --device` | RTX3060 tested; glyphs, other effects and transitions remain CPU. System-library licenses are separate. |
 | S17 | Native Windows capture | FFmpeg gdigrab / DirectShow | Explicit source/device IDs, finite duration, full decode and asset registration | `capture devices/record` | Actual CPU/GPU window test; camera/microphone/AV sync pending |
 | S18 | Visual semantics and empirical calibration | Explicit native SigLIP2 worker | Existing Torch/Transformers/weights; profile binds index/implementation/kind/actual device | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | Scores are not probabilities; cold start, scale and calibrated-project migration remain limited |
@@ -2088,6 +2132,10 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R522 | Second native Windows read-only preflight | Second Windows host read-only identity/metadata probe completed:RTX3080/10GiB,embedded Python3.13.14 x64. Default Python3.15,jsonschema missing,no FFmpeg/FFprobe on PATH;cv2 module exists. No remote install,inference or configuration change;not multi-device GPU or clean-host acceptance. [Evidence](docs/validation/第二台Windows原生环境预检_2026-10-29.md) |
 | R523 | CLI63 interrupted installation recovery | Original PIDs verified absent; five completed groups retained. Full406 reruns as r2; GPU/staged/formal promotion remain separate. Four isolated rollback cases passed for the r2 gate script; no new core feature or natural-quality acceptance. [Evidence](docs/validation/CLI63安装回归中断与恢复_2026-10-29.md) |
 | R524 | Optical template pack v1 | Eight4s/48-frame templates used RTX3060 OpenCL and passed full RGBA/PCM package replay. Actual C-discovered CLI59 OP08 reselection matches candidate63 completely. Original diagnostic study/tones; no natural-footage or listening acceptance, no eight new kernels. [Evidence](docs/product/OPTICAL_EFFECT_PACK.md) |
+| R525 | Optical gallery in native Chrome | All8 actual selections/IDs/SHA256/author clocks, 44 local targets, real H.264 playback, pause-others, desktop/mobile-width screenshots; owned page/browser closed. [Evidence](docs/validation/evidence/optical-pack-gallery-20261029-r1/verification.json) |
+| R526 | CLI63 installed full regression | 31/37/26/57/104/406, zero failures/errors/skips; exact installed/source bytes. [406-r2 proof](docs/validation/evidence/job-enumeration-20261029-r1/installed63-contracts-r2/verification.json) |
+| R527 | CLI63 registered unified Skill | 1 entry/17 modules/93 tested files; actual loop/DF3 CUDA/MuseTalk CUDA, full PCM/RGBA and package replay. Historical CLI61 103-voice guidance included before testing. Natural quality/clean host open. [Workflow](docs/validation/CLI63统一Skill切换_2026-10-29.md) |
+| R528 | CLI63/r58 independent kit | 161/160/93 entries/inventory/Skill files; isolated setup/registration, full score/loop PCM and ACES YUV/PCM/PNG package replay. No new neural forwards or clean-host acceptance. [Proof](docs/validation/evidence/job-enumeration-20261029-r1/formal-kit-r1/verification.json) |
 
 ### Development preview: C76 loop overlap repair(source CLI60)
 

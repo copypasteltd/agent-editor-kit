@@ -1,0 +1,87 @@
+{
+  "status": "passed",
+  "actual_native_browser": "Chrome 156.0.8078.73",
+  "html_sha256": "62c14b2b9d52de6299e5d06b5abba1f0c04a32c9c616a856d5acbdbe1ec6d257",
+  "catalog_sha256": "7502c84bacb2c3e163eb17520be00f1567114679594c9ee8716503d811871b46",
+  "choices": [
+    {
+      "id": "OP01",
+      "selected_template_id": "aek.optical.warm-memory",
+      "selected_sha256": "1b3867640fabfe4b2419281505ed0fd3e2182dff789c7583b96dcab36f0e303e",
+      "exactly_one_pressed": true
+    },
+    {
+      "id": "OP02",
+      "selected_template_id": "aek.optical.pearl-soft",
+      "selected_sha256": "476db992606d83a2d481f2e815c37928bd76f5f73a0bc85de32cb829425ece38",
+      "exactly_one_pressed": true
+    },
+    {
+      "id": "OP03",
+      "selected_template_id": "aek.optical.cyan-tech",
+      "selected_sha256": "b8e8aea3a388d620a58a18ea1aafeea2b44674a519a1f917ecc1001fdd162a0c",
+      "exactly_one_pressed": true
+    },
+    {
+      "id": "OP04",
+      "selected_template_id": "aek.optical.gold-launch",
+      "selected_sha256": "d6f40d37cfca9771e2fd10efe02acc6dac9e214b874b2f36785e9e5d91d6bf50",
+      "exactly_one_pressed": true
+    },
+    {
+      "id": "OP05",
+      "selected_template_id": "aek.optical.rose-dream",
+      "selected_sha256": "409a729166fa8c36cdb6d4247c69648eedb6c44c61b90b51e5f1e12dd5df53dc",
+      "exactly_one_pressed": true
+    },
+    {
+      "id": "OP06",
+      "selected_template_id": "aek.optical.prism-pulse",
+      "selected_sha256": "90a890e9cd38a14cd79554736901228cccab8326af28f04f54cb6d273e86b91c",
+      "exactly_one_pressed": true
+    },
+    {
+      "id": "OP07",
+      "selected_template_id": "aek.optical.silver-glass",
+      "selected_sha256": "8d6f8f7f61c69f733f4b0e5038cd5516dd63d362601843ea886b1978fed170ea",
+      "exactly_one_pressed": true
+    },
+    {
+      "id": "OP08",
+      "selected_template_id": "aek.optical.sunset-halo",
+      "selected_sha256": "8a6190ace9dc16afa3eef83ab708b42d182f2687d3249bce268029c36961f121",
+      "exactly_one_pressed": true
+    }
+  ],
+  "local_links_checked": 44,
+  "video_preload_none": 8,
+  "actual_H264_playback": {
+    "time": 0.212798,
+    "width": 480,
+    "height": 270
+  },
+  "second_play_pauses_first": true,
+  "mobile_selection_passed": true,
+  "mobile_horizontal_overflow": false,
+  "external_requests": [],
+  "page_errors": [],
+  "screenshots": [
+    {
+      "path": "docs/assets/optical-pack-gallery-20261029-r1/desktop.png",
+      "sha256": "babf7e96335390d7496085a5411a162a88fe4c8f3f6880c388eda5f27c1b662e"
+    },
+    {
+      "path": "docs/assets/optical-pack-gallery-20261029-r1/mobile.png",
+      "sha256": "9694db3ef91f53156aaa32dee258034348216aeb3dc8ced9e9ecf715b82535be"
+    }
+  ],
+  "native_browser_used_E_drive_temporary_directory": true,
+  "source_or_formal_skill_modified": false,
+  "natural_client_footage_quality_accepted": false,
+  "human_listening_approval": false,
+  "cleanup": {
+    "owned_pages_closed": 1,
+    "context_closed": true,
+    "browser_closed": true
+  }
+}

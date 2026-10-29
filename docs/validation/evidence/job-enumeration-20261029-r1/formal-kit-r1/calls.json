@@ -1,0 +1,542 @@
+[
+  {
+    "name": "configure",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\独立工具 包\\scripts\\activate_community_runtime.py",
+      "--installed",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.61\\final-r1\\installed",
+      "--packs",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-portable-r1\\模型 包",
+      "--voice-cuda-lib",
+      "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\lib",
+      "--translation-cuda-lib",
+      "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.4\\bin",
+      "--semantic-config",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\semantic-runtime.json",
+      "--verify-timeout-seconds",
+      "600"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "1f13dee63ae856ac349ed8c3fce12c970066ca0731b9b4f8eb1c2236e50f32de"
+  },
+  {
+    "name": "register",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\独立工具 包\\register-agent-ffmpeg-local-skills.ps1",
+      "-SkillsDirectory",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\isolated-discovery",
+      "-ReceiptPath",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\job-enumeration-20261029-r1\\formal-kit-r1\\registration.json"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "ed7e02a1af86eab3d2f8cac3330ca35aa54464e0a3ff9ffea2ca34dc8ed69a31"
+  },
+  {
+    "name": "version",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "863f63d22c07a4cd760c42fe66c1fb5170bc0466eb3e39779e46c52e7005da0d"
+  },
+  {
+    "name": "capabilities",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "capabilities"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "a7160a2eca4ad38c4b55bf3af6f6b48bb1327c40d13a8327fcf947f9ba23d587"
+  },
+  {
+    "name": "score-inspect",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "music",
+      "inspect-score",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\music-score59-20261029-r1\\score.json"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "0ea8366f8cc1486a837fa53b494afd1f79ea4c1e565b838dc21cfc66624df2c5"
+  },
+  {
+    "name": "score-init",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "project",
+      "init",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\score-project"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "4e94f9adb2da7689307df2bd14b40296d5e72b182b3900638908993fa8bf8595"
+  },
+  {
+    "name": "score-compose",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "music",
+      "compose",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\score-project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\music-score59-20261029-r1\\score.json",
+      "--new-asset-id",
+      "kit_song",
+      "--stems",
+      "--apply",
+      "--track-id",
+      "track_audio_1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "92c496436bf8c9e42274d1d5c602f5c6bfeab7c7c6f4c7f221d21e8363664cd3"
+  },
+  {
+    "name": "loop-ingest",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "media",
+      "ingest",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\score-project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\music-loop60-20261029-r1\\source.wav",
+      "--asset-id",
+      "loop_source",
+      "--license-spdx",
+      "CC0-1.0",
+      "--verification-status",
+      "verified",
+      "--creator",
+      "Agent Editor Kit original C75 fragment",
+      "--evidence",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\music-loop60-20261029-r1\\SOURCE.txt"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "5cb28dc83fcaaa0e33c331f83b09c465d3551bb2acf6cf6ae821184786ac7999"
+  },
+  {
+    "name": "loop-repair",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "music",
+      "repair-loop",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\score-project",
+      "--asset-id",
+      "loop_source",
+      "--crossfade-ms",
+      "50",
+      "--new-asset-id",
+      "kit_loop"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "2b9e52202b9257e8e2e1b45aab01b602605c1c7d4a6ccf3c50f185b473f7f7ec"
+  },
+  {
+    "name": "loop-export",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "export",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\score-project",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\score-loop.zip",
+      "--target-format",
+      "package"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "d78b8ca957345b8bbd25259c4a012ad8835aa97d16dbf1e7bfaf23a23e573f24"
+  },
+  {
+    "name": "loop-import",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\score-loop.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\score-loop-replay"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "7d1c86a2db633707e7e296f4cacf4c0f16211f0d8319f6f8cebe5018d29b7a04"
+  },
+  {
+    "name": "loop-repair-replay",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "music",
+      "repair-loop",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\score-loop-replay",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\score-loop-replay\\assets\\music-loops\\loop_074e53e2ac1eae919a091ff8\\recipe.json",
+      "--new-asset-id",
+      "kit_loop_again"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "80576b70d46179aa68ccc5a4e39642db7d918c1047a7f00f3441caab36eae822"
+  },
+  {
+    "name": "catalog",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "surface",
+      "ocio-configs",
+      "--config",
+      "aces-2.1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "25779e986cb4e09be39e56eebb26dab702f4cc34b8c0d655c7cd1fdb16a328e7"
+  },
+  {
+    "name": "import",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\aces-installed-20261029-r1\\editable-aces.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\project"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "5a92ccdaba607f83ec080ebc1ae324f1cb1ba4d2d6073d50f93ab3d539928207"
+  },
+  {
+    "name": "validate",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\project"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e6441137fae4401cb922f28bf6bec2066aa3cf406eb8572c95d97c9f206fbfdf"
+  },
+  {
+    "name": "render",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\project",
+      "--sequence-id",
+      "seq_main",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\project\\renders\\kit-aces.mkv"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "1473ea8a376f4f1a82ba5b09d83467954ab06e1a1371f71bdda48d3c9e0c1198"
+  },
+  {
+    "name": "frame",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "preview",
+      "frame",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\project",
+      "--frame",
+      "7",
+      "--height",
+      "128"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "bb7f71d5cb189da39bdcb19eec0d497583050d745c87197d341fb97b3f80edb9"
+  },
+  {
+    "name": "measure",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "surface",
+      "measure",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\project",
+      "--sequence-id",
+      "seq_main"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "3993471309f4e4fe00fad67dc327caa09b83a8b076962ec1f2624ca7e1aaf0d4"
+  },
+  {
+    "name": "export",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "export",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\project",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\project\\exports\\kit-aces.zip",
+      "--target-format",
+      "package"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "0360ac452d6034a62aab1e07ba5d4f572c1c3cc9a03c84c4f33bca242a764d59"
+  },
+  {
+    "name": "reimport",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\project\\exports\\kit-aces.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\replay"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "0d9f127e0bcf9ccd5002922fa4c2339a424eb6ef2a59a0df8273f93662d8119f"
+  },
+  {
+    "name": "replay-render",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\replay",
+      "--sequence-id",
+      "seq_main",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\replay\\renders\\kit-aces.mkv"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "9bb5152108e8f1ef37aa5159f9b995974e0dc0cce30532ebc44a06c46973bd2d"
+  },
+  {
+    "name": "render-yuv",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\project\\renders\\kit-aces.mkv",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-pix_fmt",
+      "yuv444p10le",
+      "-f",
+      "rawvideo",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "5e9677b44c14bc1a1d5975e6643970bc8c280f657482b85561107c0fb2dfd26c"
+  },
+  {
+    "name": "replay-yuv",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\replay\\renders\\kit-aces.mkv",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-pix_fmt",
+      "yuv444p10le",
+      "-f",
+      "rawvideo",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "5e9677b44c14bc1a1d5975e6643970bc8c280f657482b85561107c0fb2dfd26c"
+  },
+  {
+    "name": "reference-yuv",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\aces-installed-20261029-r1\\aces.mkv",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-pix_fmt",
+      "yuv444p10le",
+      "-f",
+      "rawvideo",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "5e9677b44c14bc1a1d5975e6643970bc8c280f657482b85561107c0fb2dfd26c"
+  },
+  {
+    "name": "render-pcm",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\project\\renders\\kit-aces.mkv",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "596acbf54e4ce41c7aacf795b3c33aa52efe253946348392a2e789c83e32f644"
+  },
+  {
+    "name": "replay-pcm",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music63-independent-kit-r1\\replay\\renders\\kit-aces.mkv",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "596acbf54e4ce41c7aacf795b3c33aa52efe253946348392a2e789c83e32f644"
+  },
+  {
+    "name": "reference-pcm",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\aces-installed-20261029-r1\\aces.mkv",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "596acbf54e4ce41c7aacf795b3c33aa52efe253946348392a2e789c83e32f644"
+  }
+]

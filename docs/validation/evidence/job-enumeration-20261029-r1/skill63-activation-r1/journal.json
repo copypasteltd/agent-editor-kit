@@ -1,0 +1,103 @@
+{
+  "status": "committed",
+  "cli_version": "0.1.63",
+  "gates": {
+    "voice_auditions": {
+      "path": "docs/validation/evidence/voice-auditions-20261029-r1/r2/verification.json",
+      "sha256": "d97c236f479bc36ebc8e8b7f8d6d022e847acad05c43bb1634e2063de94a22e6"
+    },
+    "installation": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/installation-candidate-r1/verification.json",
+      "sha256": "8fb53f4c3b1106c35a1f1abc55b9db0248fd6afa3e35ac866a6192629cb84091"
+    },
+    "candidate": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/staged-actual-case-r1/verification.json",
+      "sha256": "920468df1e407cc587e4b21c40b81b8725fa328863b92c6fd81500d2c3921d98"
+    },
+    "staged_gpu": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/staged63-gpu-r1/verification.json",
+      "sha256": "ad74408a412997f69e81fd00abadae226b268bdb8a6a3a9ddce7f125b7046f68"
+    },
+    "source_gpu": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/source63-gpu-r1/verification.json",
+      "sha256": "06cb3735ebce43fcdcc20f0b8a6c1945d3c238b4b1389b6167895d3640b92dcb"
+    },
+    "installed_gpu": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/installed63-gpu-r1/verification.json",
+      "sha256": "5b65c5009328d1178e0560c17e4e09f3e4339800b3f6640be1268af6a231de8b"
+    },
+    "source_loop": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/actual-case-r1/verification.json",
+      "sha256": "8a3c0ebc7b5e535d61a53eba5d95604f8621da27ef7ffdf8aaa768b2538322ce"
+    },
+    "installed_loop": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/installed-actual-case-r1/verification.json",
+      "sha256": "22148bfdc2278e7ff772268f65676744b93de5323ebe42a70078a96c2cbaca44"
+    },
+    "source_loop_tests": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/source63-loop-r1/verification.json",
+      "sha256": "89285d7e21169a13fa47b43fa3e75c253b870ba4df045e0b517f98ed99a254ab"
+    },
+    "installed_loop_tests": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/installed63-loop-r1/verification.json",
+      "sha256": "fc89a990822995e599b27726bd6ed6b6570bd0b3fc80ad8a63650d2f9216a7fb"
+    },
+    "source63_bootstrap": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/source63-bootstrap-r1/verification.json",
+      "sha256": "164e1a2ccbec6de32cdbea98e0846b12fc670a343ea507103a9b1560af58b88d"
+    },
+    "source63_control": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/source63-control-r1/verification.json",
+      "sha256": "c78fe37da6c0641cdda0118b8ea9895a72cec4b482aaa09bf00370351d890917"
+    },
+    "source63_selection": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/source63-selection-r1/verification.json",
+      "sha256": "226d8cf585b29496992ca610b1abac724dcb1ae0dab89d2059530e54ef36ee05"
+    },
+    "source63_semantic": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/source63-semantic-r1/verification.json",
+      "sha256": "caf4f50a11692382c371f21a309bfb53513f38e15779912eb498676e98422d44"
+    },
+    "source63_contracts": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/source63-contracts-r1/verification.json",
+      "sha256": "cb8411bb644a3bcd5e6a92d6e1c77e81367f122c8dc089b9000aa8ffee42ece1"
+    },
+    "installed63_bootstrap": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/installed63-bootstrap-r1/verification.json",
+      "sha256": "699862732bb64dcc081abe0b32711e3d6f2ece2c4a733cd3e5fd038cb246e177"
+    },
+    "installed63_control": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/installed63-control-r1/verification.json",
+      "sha256": "9ef8659e46fc415590a5d8a5e4f12091a4e967e57d4ca860e8b81d288e8f0ebf"
+    },
+    "installed63_selection": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/installed63-selection-r1/verification.json",
+      "sha256": "9260cb28a44674f601fba462ecde3b42c31ed83ac5d6e6273e7fc7a5dd2884b3"
+    },
+    "installed63_semantic": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/installed63-semantic-r1/verification.json",
+      "sha256": "b1c9bfcb5341106d9092f5d508ce305044e8ba87f26600ccfc95dded578949fc"
+    },
+    "installed63_contracts": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/installed63-contracts-r2/verification.json",
+      "sha256": "712dd84a53ca897578ac7ace2213fdf4a7a5f1e0c9643c145e061d96e7767c9e"
+    },
+    "source63_lipsync": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/source63-lipsync-cuda-r1/verification.json",
+      "sha256": "7416fc5c74782753140752d5bb8dce33de027f8c07190592242cad80fea25c2d"
+    },
+    "installed63_lipsync": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/installed63-lipsync-cuda-r1/verification.json",
+      "sha256": "80bb008b7ca02cfc405d5568cbd72e9e55720c536c6916559ec1eeeabdf2d45c"
+    },
+    "staged63_lipsync": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/staged63-lipsync-cuda-r1/verification.json",
+      "sha256": "c67cfe6616c88533726a5981ca6f301d0ed3797eaf9727e0fc22249aa8c556b7"
+    },
+    "skill_controller": {
+      "path": "docs/validation/evidence/job-enumeration-20261029-r1/skill-controller-r1/verification.json",
+      "sha256": "53f3c3b963fc4a537b863a077b88ff1952ec96d6c720f3df1f898ccbdef5bd1c"
+    }
+  },
+  "crash_recovery": "restore previous-skill,previous-namespace.json,previous-runtime.json;backup retained on E"
+}

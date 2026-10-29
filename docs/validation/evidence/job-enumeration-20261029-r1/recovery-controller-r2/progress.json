@@ -1,0 +1,42 @@
+{
+  "status": "running",
+  "timestamp_utc": "2026-10-29T14:45:34.298124+00:00",
+  "elapsed_seconds": 3915.2949676000003,
+  "calls": [
+    {
+      "phase": "installed406-r2",
+      "exit_code": 0
+    },
+    {
+      "phase": "run_source63_gpu_case.py",
+      "exit_code": 0
+    },
+    {
+      "phase": "run_installed63_loop_case.py",
+      "exit_code": 0
+    },
+    {
+      "phase": "run_installed63_lipsync_case.py",
+      "exit_code": 0
+    },
+    {
+      "phase": "stage",
+      "exit_code": 0
+    }
+  ],
+  "current": {
+    "phase": "staged-Skill",
+    "pid": 23528,
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\run_source63_skill_acceptance.py"
+    ],
+    "started_at_utc": "2026-10-29T14:45:34.298100+00:00"
+  },
+  "formal_activation": false
+}

@@ -1,0 +1,182 @@
+[
+  {
+    "name": "init",
+    "exit_code": 0,
+    "stdout_sha256": "3e910268611afa4bf2532a20dc9bf7b9f94eb0867e581ce25841052c51fa34af"
+  },
+  {
+    "name": "ingest",
+    "exit_code": 0,
+    "stdout_sha256": "4f933849d19017ed75f27d14e2dd1a6839c890aa070880145b0a5e0c042820ef"
+  },
+  {
+    "name": "base-validate",
+    "exit_code": 0,
+    "stdout_sha256": "b17c607bc571224d922ec847030d3903ffe670d693a4dfa5a1154ec0e16fa397"
+  },
+  {
+    "name": "baseline",
+    "exit_code": 0,
+    "stdout_sha256": "c22a86c049cc3f8dc50d592729f8d0e988b25800789e51a18508a439d705601b"
+  },
+  {
+    "name": "OP01-dry-run",
+    "exit_code": 0,
+    "stdout_sha256": "49c622be34929dd98b16ebc895d4f8779c73ff073091b09ae55c0920029d6f36"
+  },
+  {
+    "name": "OP01-apply",
+    "exit_code": 0,
+    "stdout_sha256": "73210e0980c4d0887d0fb6809bb30cf272051a6a5bce45d500b06244ce508ad1"
+  },
+  {
+    "name": "OP01-validate",
+    "exit_code": 0,
+    "stdout_sha256": "c300ebcd44bac9dc8c9404f01e3b8f9ff3658d65bbc466ff4ee34ef524a0c3ca"
+  },
+  {
+    "name": "OP01-preview",
+    "exit_code": 0,
+    "stdout_sha256": "371e1f136356056058747f61c5bda11728a01535dffdd8f22e236048bbbb0c20"
+  },
+  {
+    "name": "OP02-dry-run",
+    "exit_code": 0,
+    "stdout_sha256": "2138b361647becbf5ad43e04886262008682bfd5aad9dd88c139f5f6f12c2cb7"
+  },
+  {
+    "name": "OP02-apply",
+    "exit_code": 0,
+    "stdout_sha256": "1634cec68d7bfa31aa10e88bac6d6a945c57e58ddcb5eda512432a59212679a1"
+  },
+  {
+    "name": "OP02-validate",
+    "exit_code": 0,
+    "stdout_sha256": "917648ca64da560f39d3ed78c8b81e58528901a6f776e5a4f56431b7385d9024"
+  },
+  {
+    "name": "OP02-preview",
+    "exit_code": 0,
+    "stdout_sha256": "870802d7195e0cead9f51bfda449d8c43fcca6db63bdeef0f869984e1baa7f9d"
+  },
+  {
+    "name": "OP03-dry-run",
+    "exit_code": 0,
+    "stdout_sha256": "48ac90b8f4c2cfa4f88b88a8a76fe1e5c4ead1582337f414a2c9e2f236985ae2"
+  },
+  {
+    "name": "OP03-apply",
+    "exit_code": 0,
+    "stdout_sha256": "454ef901d99ac0e7d5432331b0ad5970ea52c3b39834c3ffb7bbe57539e5af23"
+  },
+  {
+    "name": "OP03-validate",
+    "exit_code": 0,
+    "stdout_sha256": "2163b3ed03097ece28f5a36a88349c484a82d1f04c703cfdfb7994b55e0be7a7"
+  },
+  {
+    "name": "OP03-preview",
+    "exit_code": 0,
+    "stdout_sha256": "8e2abf0d8d4d08503cc2cc7e52d92d1ccfe0387b56cd4c8dfb79ad7b8d874440"
+  },
+  {
+    "name": "OP04-dry-run",
+    "exit_code": 0,
+    "stdout_sha256": "14de48007185570019697df06c7b274de0bf18c0a2c1db1f55d73b99962d4fdb"
+  },
+  {
+    "name": "OP04-apply",
+    "exit_code": 0,
+    "stdout_sha256": "cb79b976e964a4f8d0b9382a5ad6aa4c0afba4f1e36ec54e1270ca064f133a56"
+  },
+  {
+    "name": "OP04-validate",
+    "exit_code": 0,
+    "stdout_sha256": "cd520a08fec0bd5859a95a7c8f30cc0357be30b4eacccfb9f887dfcab35f029d"
+  },
+  {
+    "name": "OP04-preview",
+    "exit_code": 0,
+    "stdout_sha256": "1ae7ab0797ae08bee65cb130aaba736f69809724e831e2bf6f7d08bee9c784b9"
+  },
+  {
+    "name": "OP05-dry-run",
+    "exit_code": 0,
+    "stdout_sha256": "4b8f03ac638ddded6869bb9a8cbaaaba15e40179c4c423f7444b6f0e6d5f1972"
+  },
+  {
+    "name": "OP05-apply",
+    "exit_code": 0,
+    "stdout_sha256": "b0154acaf9fbd42b1b23d59355d7f414c0766908d9455bca227cd6302b435ebd"
+  },
+  {
+    "name": "OP05-validate",
+    "exit_code": 0,
+    "stdout_sha256": "d413ff9367ba8091320f4ab0aec76e104bc7ea1fa2888a3cc771bbb3a4d23382"
+  },
+  {
+    "name": "OP05-preview",
+    "exit_code": 0,
+    "stdout_sha256": "bf747077044af5cf960c4a720270507c9250d935d3ba3c55f4e844a404d08b53"
+  },
+  {
+    "name": "OP06-dry-run",
+    "exit_code": 0,
+    "stdout_sha256": "3afd7526594e7cf4f95437b5a03bebeb494e835b6941571224640a03aca1aaa7"
+  },
+  {
+    "name": "OP06-apply",
+    "exit_code": 0,
+    "stdout_sha256": "17b926dea6d91098fc3f6e3e85f10e25aa720c769b2adbc8676283f3099958d9"
+  },
+  {
+    "name": "OP06-validate",
+    "exit_code": 0,
+    "stdout_sha256": "1ea7a2b2afaceaa7ebaa78d73525b2901a781e2247344c0575111489504f6294"
+  },
+  {
+    "name": "OP06-preview",
+    "exit_code": 0,
+    "stdout_sha256": "35adb5b8cdd30c11278c44a511e0cfa5ad4b966dbfe84ab96d3b30208e300e32"
+  },
+  {
+    "name": "OP07-dry-run",
+    "exit_code": 0,
+    "stdout_sha256": "52e260f74a7e742ce68c914c6e0f9edabbaa1b4c9d8ea19c30ee5ab44e3a9a13"
+  },
+  {
+    "name": "OP07-apply",
+    "exit_code": 0,
+    "stdout_sha256": "8c2abd6221162d076744da463589234860e9724f1288c63a7e7396a62f2d6356"
+  },
+  {
+    "name": "OP07-validate",
+    "exit_code": 0,
+    "stdout_sha256": "3591dac65a4a18a8ccde5ca809e2a7d64c6da0804c95b5538ad2449de66d21a3"
+  },
+  {
+    "name": "OP07-preview",
+    "exit_code": 0,
+    "stdout_sha256": "92010980405fcf16fb88a3a015ad77dbfc2bd8c3c1bc976eb59de07531dec630"
+  },
+  {
+    "name": "OP08-dry-run",
+    "exit_code": 0,
+    "stdout_sha256": "d7bbfba88450ab5c794a180bb06c66c97bd043bc66f2c09c276c05bfbdafd467"
+  },
+  {
+    "name": "OP08-apply",
+    "exit_code": 0,
+    "stdout_sha256": "5bda8663a4af542b2afbdb6cad471b104ed6928598a522ce83f20139b316606f"
+  },
+  {
+    "name": "OP08-validate",
+    "exit_code": 0,
+    "stdout_sha256": "1c79958bbdf756691cf26d5e71019a1cc3e746fd2a3525ca6f9903b2dcf33c15"
+  },
+  {
+    "name": "OP08-preview",
+    "exit_code": 0,
+    "stdout_sha256": "cd1f443671f2fc1e9440f6d8e1cc073db96fa7bf00a2942650e3c63243836e8b"
+  }
+]

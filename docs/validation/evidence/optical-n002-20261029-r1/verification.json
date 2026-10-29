@@ -1,0 +1,150 @@
+{
+  "status": "passed",
+  "cli_version": "0.1.63",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.61\\final-r1\\installed",
+  "source_fallback": false,
+  "original_N002_sha256": "babaa64ce3434a23133c41a1d2b4fad384a5e6707546b527508d4731ba83ab4b",
+  "resized_source_sha256": "951a95e2025eff070cbbe4dc1c1b0e9e7f2996258ee555cd37e924a11b11ae3f",
+  "templates": [
+    {
+      "id": "OP01",
+      "template_id": "aek.optical.warm-memory",
+      "template_sha256": "1b3867640fabfe4b2419281505ed0fd3e2182dff789c7583b96dcab36f0e303e",
+      "output": "docs/assets/optical-n002-20261029-r1/OP01.png",
+      "PNG_sha256": "5b3b77a9582c85495f9c35ecd9e84a8d1299f1173152c3b34b2d04b871e3963f",
+      "RGB_sha256": "f0fd44c211031a734b722b2d0581fb9fefa4fbcb9a10f71658b628f2e169cb86",
+      "frame": 24,
+      "seconds": 2,
+      "size": [
+        480,
+        270
+      ],
+      "dry_run_preserved_project": true,
+      "different_from_baseline": true
+    },
+    {
+      "id": "OP02",
+      "template_id": "aek.optical.pearl-soft",
+      "template_sha256": "476db992606d83a2d481f2e815c37928bd76f5f73a0bc85de32cb829425ece38",
+      "output": "docs/assets/optical-n002-20261029-r1/OP02.png",
+      "PNG_sha256": "dd9b0c626f2827ca780d6153bc313ca2094848e085cb0b88b227159bda7e7e84",
+      "RGB_sha256": "6d0491fc926b476b7c2c2cd5030b8d91071ac50a2308842ee5fabafd110b69b2",
+      "frame": 24,
+      "seconds": 2,
+      "size": [
+        480,
+        270
+      ],
+      "dry_run_preserved_project": true,
+      "different_from_baseline": true
+    },
+    {
+      "id": "OP03",
+      "template_id": "aek.optical.cyan-tech",
+      "template_sha256": "b8e8aea3a388d620a58a18ea1aafeea2b44674a519a1f917ecc1001fdd162a0c",
+      "output": "docs/assets/optical-n002-20261029-r1/OP03.png",
+      "PNG_sha256": "4ddbb688f1006b731922678cbed06bd1244918904ccb1eb9e57cda0564165a9b",
+      "RGB_sha256": "dd4da909ec63bd4ce7a4eb220399692cdf5687073dd4d5e205e7a43f8bdf5b86",
+      "frame": 24,
+      "seconds": 2,
+      "size": [
+        480,
+        270
+      ],
+      "dry_run_preserved_project": true,
+      "different_from_baseline": true
+    },
+    {
+      "id": "OP04",
+      "template_id": "aek.optical.gold-launch",
+      "template_sha256": "d6f40d37cfca9771e2fd10efe02acc6dac9e214b874b2f36785e9e5d91d6bf50",
+      "output": "docs/assets/optical-n002-20261029-r1/OP04.png",
+      "PNG_sha256": "b47f8f988eae93da4cef36f0e34e07f386ef0f7f0a9e69f08f353c024922599f",
+      "RGB_sha256": "fcb09b16911000e2bbd497da3746d954f5aa0c260595822b8c8e54b41954ebb7",
+      "frame": 24,
+      "seconds": 2,
+      "size": [
+        480,
+        270
+      ],
+      "dry_run_preserved_project": true,
+      "different_from_baseline": true
+    },
+    {
+      "id": "OP05",
+      "template_id": "aek.optical.rose-dream",
+      "template_sha256": "409a729166fa8c36cdb6d4247c69648eedb6c44c61b90b51e5f1e12dd5df53dc",
+      "output": "docs/assets/optical-n002-20261029-r1/OP05.png",
+      "PNG_sha256": "5a4aed3dfb8ab12234b4e0fad95ac27bfdd743211067b08203f4ef958c22ec50",
+      "RGB_sha256": "9a138488795b6e1a1e0a6295f558a15a59b642e71ffb854b63eee473823850ef",
+      "frame": 24,
+      "seconds": 2,
+      "size": [
+        480,
+        270
+      ],
+      "dry_run_preserved_project": true,
+      "different_from_baseline": true
+    },
+    {
+      "id": "OP06",
+      "template_id": "aek.optical.prism-pulse",
+      "template_sha256": "90a890e9cd38a14cd79554736901228cccab8326af28f04f54cb6d273e86b91c",
+      "output": "docs/assets/optical-n002-20261029-r1/OP06.png",
+      "PNG_sha256": "cf50bcb0b173c9575355f702ef80e89b02c6eb6139ed87fe15286b082b719507",
+      "RGB_sha256": "e4ad6b656b0e4f74ed8a5e49282077552398a3ede98bc17cd04cb200b48b58ea",
+      "frame": 24,
+      "seconds": 2,
+      "size": [
+        480,
+        270
+      ],
+      "dry_run_preserved_project": true,
+      "different_from_baseline": true
+    },
+    {
+      "id": "OP07",
+      "template_id": "aek.optical.silver-glass",
+      "template_sha256": "8d6f8f7f61c69f733f4b0e5038cd5516dd63d362601843ea886b1978fed170ea",
+      "output": "docs/assets/optical-n002-20261029-r1/OP07.png",
+      "PNG_sha256": "6f9bafa7a9cd5f47e4b27aed6bcded94073f73f1167feef8c741ab8e78aefd50",
+      "RGB_sha256": "ad1e14ce28022e5aae9ba2bddf6147202622f9cd9a1f828a5ef56e64d98230ab",
+      "frame": 24,
+      "seconds": 2,
+      "size": [
+        480,
+        270
+      ],
+      "dry_run_preserved_project": true,
+      "different_from_baseline": true
+    },
+    {
+      "id": "OP08",
+      "template_id": "aek.optical.sunset-halo",
+      "template_sha256": "8a6190ace9dc16afa3eef83ab708b42d182f2687d3249bce268029c36961f121",
+      "output": "docs/assets/optical-n002-20261029-r1/OP08.png",
+      "PNG_sha256": "1465815f005b9a2f7bed6295096ee33b04018f0f2e244321b8cf442bfce22968",
+      "RGB_sha256": "c7b8aa662f47f8b5a59f8ccd95fc120519dbef339932e04fa016702d266a9f77",
+      "frame": 24,
+      "seconds": 2,
+      "size": [
+        480,
+        270
+      ],
+      "dry_run_preserved_project": true,
+      "different_from_baseline": true
+    }
+  ],
+  "all8_distinct": true,
+  "all8_different_from_baseline": true,
+  "complete_frame_RGB_bytes": 388800,
+  "explicit_sRGB_interpretation": true,
+  "source_and_formal_files_unchanged": true,
+  "formal_cli_at_execution": "0.1.59",
+  "image_rights": "LicenseRef-User-Supplied-Preview",
+  "image_rights_verification": "unverified",
+  "new_video_footage": false,
+  "human_quality_accepted": false,
+  "model_forwards": 0,
+  "full_goal_closed": false
+}

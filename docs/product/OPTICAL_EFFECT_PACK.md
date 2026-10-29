@@ -648,3 +648,9 @@ A low orange flare descends over warm highlight edges; no scene relighting.
 
 
 公开MP4视频轨各48帧／12fps；GIF各32帧，制作目标8fps，实际GIF时间基和容器时长逐文件记录在媒体清单。MP4／GIF是分发预览，工程重放比较使用项目渲染的完整MKV解码音画，不将有损MP4视作原始PCM。
+
+## 选型页面实际交互
+
+[真实浏览器核验与电脑／手机截图](../validation/光效选型页实测_2026-10-29.md)：8个选择按钮输出的模板ID、SHA256和作者时钟逐项一致，44个本地资源目标存在，H.264实际播放／切换通过。本次独立页面和浏览器已关闭。这里验证选型操作；客户真实素材与人类视听验收仍须另做。
+
+![真实电脑宽度选型页面](../assets/optical-pack-gallery-20261029-r1/desktop.png)

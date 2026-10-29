@@ -1,0 +1,84 @@
+{
+  "status": "passed",
+  "calls": [
+    {
+      "phase": "static",
+      "command": [
+        "C:/Python313/python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "C:/Users/carzy/.codex/skills/.system/skill-creator/scripts/quick_validate.py",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor"
+      ],
+      "exit_code": 0
+    },
+    {
+      "phase": "loop",
+      "command": [
+        "C:/Python313/python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\run_registered63_loop_case.py",
+        "--run",
+        "r1",
+        "--installed",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.61\\final-r1\\installed",
+        "--skill",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor"
+      ],
+      "exit_code": 0
+    },
+    {
+      "phase": "gpu",
+      "command": [
+        "C:/Python313/python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\run_registered63_gpu_case.py",
+        "--run",
+        "r1",
+        "--installed",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.61\\final-r1\\installed",
+        "--skill",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor"
+      ],
+      "exit_code": 0
+    },
+    {
+      "phase": "lipsync",
+      "command": [
+        "C:/Python313/python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\run_registered63_lipsync_case.py",
+        "--run",
+        "r1",
+        "--installed",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.61\\final-r1\\installed",
+        "--skill",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "cli_version": "0.1.63",
+  "actual_C_drive_entry": true,
+  "actual_loop_DF3_MuseTalk_passed": true,
+  "documentation_voice_samples": 103,
+  "static_skill_validation_passed": true,
+  "registered_skill_files_frozen": 93,
+  "discovery_unchanged": true,
+  "full_product_goal_closed": false
+}

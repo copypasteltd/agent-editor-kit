@@ -98,7 +98,7 @@ $project = 'E:/video-work/customer-edit' # 新工程路径
 
 1. `version`应返回`0.1.63`。通过统一Skill的启动器运行安装版，不静默退回源码。先用`doctor`检查实际依赖，模型功能按其内部说明登记已有本地权重和显式设备配置。
 2. 导入授权素材，登记来源／许可／证据，保留原文件。用稳定资产ID建立时间线；声音需要明确音轨。按命令`--help`查看所选模型与效果的具体输入，不能根据模型目录存在推断已经推理成功。
-3. 选滤镜时先向客户展示[500项母图实测](../assets/looks-n002-20261024-r1/index.html)的真实候选图，保留ID／强度，再在客户实际素材上预览。母图效果不代表所有光源、肤色和动态镜头都适用。
+3. 选滤镜时先向客户展示[500项母图实测](../assets/looks-n002-20261024-r1/index.html)的真实候选图，保留ID／强度，再在客户实际素材上预览。复合光效另有[8套完整参数与动态样片](../product/OPTICAL_EFFECT_PACK.md)及[同一N002母图的实际光效选型](../product/OPTICAL_N002_PREVIEWS.md)。页面选中ID／摘要后再应用；`template apply`会替换完整effects数组，需要与LUT等既有效果共存时先明确合并。母图效果不代表所有光源、肤色和动态镜头都适用。
 4. 配音前打开本地`local/agent-ffmpeg/voice-preview61-r2/preview/index.html`，按语言、音色ID提供真实WAV供内部试听。103项音频来自CLI61实际CUDA生成，尚无人类听审，也未公开发布音频；不能直接承诺客户文本的发音、情绪或商业授权。
 5. 配乐可用[可编辑谱面](../product/MUSIC_SCORE.md)或既有授权音乐。循环接缝用下面的预检／生成命令；核对缩短后的长度，提供原始与修复后的WAV，客户听审后再挂接。配乐合成与交叠修复是CPU DSP，DF3／MuseTalk实际CUDA不算GPU音乐生成。
 6. 先预览、再渲染并检查实际编码音画，导出可编辑工程包；来源、配方、权重依赖和权利状态须保留。更换新资产ID修订，不覆盖已接受版本。
@@ -169,7 +169,11 @@ def main():
             '先确认版本，再检查依赖、建立工程并登记授权素材。展示500滤镜实际候选图及103音色本地WAV，记录选择；先预检，再生成、试听、挂接时间线、预览、渲染和导出工程包。循环修复会缩短周期，不能承诺原时长或未经听审的无缝效果。',
             '先確認版本，再檢查依賴、建立專案並登記授權素材。展示500濾鏡實際候選圖與103音色本地WAV，記錄選擇；先預檢，再生成、試聽、掛接時間線、預覽、渲染與匯出專案。循環修復會縮短週期，不能承諾原時長或未經聽審的無縫效果。',
             'Confirm the version, check dependencies, create a project and register authorized media. Present real 500-look previews and local 103-voice WAVs, record selections, then dry-run, generate, audition, place, preview, render and export. Loop overlap shortens the cycle; it does not establish listening approval or the original duration.']
-        links = f'[简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [CLI63 workflow]({NOTE}) · [500 look previews](docs/assets/looks-n002-20261024-r1/index.html) · [103 voice auditions](docs/validation/CLI61全音色试听_2026-10-29.md)'
+        links = f'[简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [CLI63 workflow]({NOTE}) · [500 look previews](docs/assets/looks-n002-20261024-r1/index.html) · [103 voice auditions](docs/validation/CLI61全音色试听_2026-10-29.md) · [8 editable optical templates](docs/product/OPTICAL_EFFECT_PACK.md) · [Actual optical gallery](docs/assets/optical-pack-20261029-r1/index.html) · [Browser screenshots and checks](docs/validation/光效选型页实测_2026-10-29.md)'
+        n002_publication = ROOT / 'docs/validation/evidence/optical-n002-publication-20261029-r1/verification.json'
+        n002_ready = n002_publication.is_file() and load(n002_publication)['status'] == 'published-and-documented'
+        if n002_ready:
+            links += ' · [N002 original-image previews](docs/product/OPTICAL_N002_PREVIEWS.md) · [N002 selection gallery](docs/assets/optical-n002-20261029-r1/index.html)'
         command = '''```powershell
 $entry = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1'
 & $entry version # 0.1.63
@@ -189,11 +193,46 @@ $entry = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1
             prefix += '\n\n[Loop commands and before/after WAVs](docs/product/MUSIC_LOOP.md) · [Editable score](docs/product/MUSIC_SCORE.md)\n\n'
             prefix += '![Actual C76 boundary diagnostic](docs/assets/music-loop60-20261029-r1/actual.png)\n\n'
             prefix += '![Actual CLI61 local103 voice gallery](docs/assets/voice-gallery61-20261029-r1/actual.png)\n\n'
+            prefix += '![Actual original and eight editable optical outputs](docs/assets/optical-pack-20261029-r1/contact.png)\n\n'
+            if n002_ready:
+                prefix += '![Actual eight optical previews on the user-provided N002 image](docs/assets/optical-n002-20261029-r1/contact.png)\n\n'
             new = title + '\n\n' + prefix + marker + kept
             old_rows = rows(text, 'R')
             extra = [f'| R{expected_rows + 1} | {labels[i][0]} | 31/37/26/57/104/406, zero failures/errors/skips; exact installed/source bytes. [406-r2 proof](docs/validation/evidence/job-enumeration-20261029-r1/installed63-contracts-r2/verification.json) |',
                      f'| R{expected_rows + 2} | {labels[i][1]} | 1 entry/17 modules/93 tested files; actual loop/DF3 CUDA/MuseTalk CUDA, full PCM/RGBA and package replay. Historical CLI61 103-voice guidance included before testing. Natural quality/clean host open. [Workflow]({NOTE}) |']
             new = new.replace(old_rows[-1], old_rows[-1] + '\n' + '\n'.join(extra), 1)
+            feature_updates = [
+                {
+                    'F48': '| F48 | 配乐准备与声音混合 | 实际音乐/人声资产 → 截取、循环、淡入淡出、显式增益和人声闪避混音。 | `music prepare/mix` | 保留原分轨，不静默裁人声；谱面合成见F83，接缝交叠修复见F84，画面语义匹配仍未完成。 |',
+                    'F84': '| F84 | 循环接缝交叠修复（正式CLI63） | 样本时钟、双曲线、可编辑配方、权利继承、取消与事务回滚；周期明确缩短。 | `music repair-loop` | [流程与C76试听](docs/product/MUSIC_LOOP.md)；安装、候选与正式入口完整PCM/工程重放通过，仍须听审。 |',
+                    'S15': '| S15 | 配乐准备、谱面与循环修复 | 原生FFmpeg + CPU DSP | 明确截取/循环/淡变、独立分轨、闪避；可编辑谱面合成与样本交叠修复。 | `music prepare/mix/compose/repair-loop` | 谱面与交叠为CPU DSP；不是神经音乐生成，周期缩短与试听/权利需核对。 |',
+                },
+                {
+                    'F48': '| F48 | 配樂準備與聲音混合 | 實際音樂/人聲資產 → 截取、循環、淡入淡出、明確增益與人聲閃避混音。 | `music prepare/mix` | 保留原分軌，不靜默裁人聲；譜面合成見F83，接縫交疊修復見F84，畫面語義匹配仍未完成。 |',
+                    'F84': '| F84 | 循環接縫交疊修復（正式CLI63） | 樣本時鐘、雙曲線、可編輯配方、權利繼承、取消與交易回復；週期明確縮短。 | `music repair-loop` | [流程與C76試聽](docs/product/MUSIC_LOOP.md)；安裝、候選與正式入口完整PCM/專案重播通過，仍須聽審。 |',
+                    'S15': '| S15 | 配樂準備、譜面與循環修復 | 原生FFmpeg + CPU DSP | 明確截取/循環/淡變、獨立分軌、閃避；可編輯譜面合成與樣本交疊修復。 | `music prepare/mix/compose/repair-loop` | 譜面與交疊為CPU DSP；不是神經音樂生成，週期縮短與試聽/權利須核對。 |',
+                },
+                {
+                    'F48': '| F48 | Music preparation and mixing | Actual music/speech assets → trim, loop, fades, explicit gain and speech-ducked mix. | `music prepare/mix` | Preserves stems and complete speech. Editable score synthesis is F83; overlap repair is F84. Automatic visual semantic matching remains open. |',
+                    'F84': '| F84 | Loop overlap repair (registered CLI63) | Sample-clock crossfade, two curves, editable recipe, inherited rights, cancellation and transactional rollback; explicitly shorter cycle. | `music repair-loop` | [Workflow and C76 audio](docs/product/MUSIC_LOOP.md); installed, staged and registered complete PCM/project replay passed. Listening approval remains separate. |',
+                    'S15': '| S15 | Music preparation, score and loop repair | Native FFmpeg + CPU DSP | Explicit trim/loop/fades, independent stems, ducking, editable score synthesis and sample overlap repair. | `music prepare/mix/compose/repair-loop` | Score synthesis and overlap use CPU DSP. Neural music generation is separate; verify shortened timing, auditions and rights. |',
+                },
+            ]
+            for ident, replacement in feature_updates[i].items():
+                pattern = r'^\| ' + ident + r' \|.*$'
+                assert len(re.findall(pattern, new, re.M)) == 1
+                new = re.sub(pattern, lambda m: replacement, new, count=1, flags=re.M)
+            additions = [
+                ['| F85 | 8套可编辑复合光效内容包 | OP01—OP08完整参数、作者时钟动画、实际MP4/GIF与可编辑工程；复用已有光学内核。 | `template apply` | [完整参数与样片](docs/product/OPTICAL_EFFECT_PACK.md)；会替换完整effects数组，需审阅既有效果；不是8个新算子。 |',
+                 '| F86 | N002母图光效选型 | 同一N002、同一2秒时刻的8张实际PNG；页面选择输出ID/版本/摘要，电脑与手机宽度交互/截图已核验。 | `preview frame; template apply` | [母图预览与选型](docs/product/OPTICAL_N002_PREVIEWS.md)；480×270参考，另有动态样片；母图权利与MIT模板分开，不增加500 LUT数量。 |'],
+                ['| F85 | 8套可編輯複合光效內容包 | OP01—OP08完整參數、作者時鐘動畫、實際MP4/GIF與可編輯專案；重用已有光學內核。 | `template apply` | [完整參數與樣片](docs/product/OPTICAL_EFFECT_PACK.md)；會替換完整effects陣列，須審閱既有效果；不是8個新算子。 |',
+                 '| F86 | N002母圖光效選型 | 同一N002、同一2秒時刻的8張實際PNG；頁面選擇輸出ID/版本/摘要，電腦與手機寬度互動/截圖已核驗。 | `preview frame; template apply` | [母圖預覽與選型](docs/product/OPTICAL_N002_PREVIEWS.md)；480×270參考，另有動態樣片；母圖權利與MIT模板分開，不增加500 LUT數量。 |'],
+                ['| F85 | Eight editable composite optical templates | OP01–OP08 parameters, author-clock animation, actual MP4/GIF and editable projects reuse existing optical kernels. | `template apply` | [Parameters and samples](docs/product/OPTICAL_EFFECT_PACK.md); replaces the full effects array, so review existing effects. These are content templates, not eight new operators. |',
+                 '| F86 | N002 optical preview selection | Eight actual PNGs use the same N002 input/time (2seconds). Selection returns ID/version/hash; desktop/mobile-width interaction and screenshots passed. | `preview frame; template apply` | [N002 previews and selection](docs/product/OPTICAL_N002_PREVIEWS.md); reference480×270 stills plus separate animated samples. Image rights differ from MIT templates; the500 LUT count is unchanged. |'],
+            ]
+            anchor = feature_updates[i]['F84']
+            assert not re.search(r'^\| F8[56] \|', new, re.M)
+            new = new.replace(anchor, anchor + '\n' + '\n'.join(additions[i]), 1)
             assert rows(new, 'R')[:expected_rows] == old_rows
             assert old_top.strip() in new and len(rows(new, 'R')) == expected_rows + 2
             planned[path] = new
@@ -254,6 +293,13 @@ $entry = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1
                     '[使用流程 / Workflow](../validation/CLI63统一Skill切换_2026-10-29.md) · '
                     '[Loop repair and WAVs](../product/MUSIC_LOOP.md) · '
                     '[103 local voice auditions](../validation/CLI61全音色试听_2026-10-29.md)\n\n')
+    n002_publication = ROOT / 'docs/validation/evidence/optical-n002-publication-20261029-r1/verification.json'
+    if n002_publication.is_file() and load(n002_publication)['status'] == 'published-and-documented':
+        current_text += ('[8 editable optical templates and MP4/GIF](../product/OPTICAL_EFFECT_PACK.md) · '
+                         '[Real N002 optical previews and selection](../product/OPTICAL_N002_PREVIEWS.md)\n\n'
+                         'Use the selected OP ID and template SHA256, then re-preview on client footage. '
+                         'Template application replaces the complete effects array; explicitly preserve or merge existing LUT/effects. '
+                         'N002 image rights are separate from MIT template parameters.\n\n')
     if a.phase == 'kit':
         current_text += ('The independently accepted r58 kit has161 entries/160 inventory files/93 Skill files. '
                          'Four-pack setup, independent registration, score/loop PCM and ACES YUV/PCM/PNG package replay passed; '

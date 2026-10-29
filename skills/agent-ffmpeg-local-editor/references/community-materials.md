@@ -11,11 +11,26 @@ tracks, 85 jingles, 228 unique SFX and two Noto SC/TC OFL fonts. Search by ID,
 kind, tags and language. `ingest` copies source, license and attribution into the
 project. Each resource keeps its own license; not all assets use the core license.
 
-`voice list` lists 103 upstream named Kokoro voices. Three voices (`zf_001`,
-`zm_009`, `af_maple`) have actual generated auditions; the remaining mappings
-are verified but not individually inferred or listened to. Do not invent age,
-tone or commercial suitability from IDs. Generate the actual client's text and
-show the local WAV before recording their selection.
+`voice list` lists 103 upstream named Kokoro voices. Installed CLI0.1.61
+actually generated all 103 auditions (100 Chinese, three English), with one
+explicit CUDA initialization per language batch and complete PCM package replay.
+CUDA provider loading was verified; per-operator GPU placement was not profiled.
+These samples remain internal/unverified and have not passed human listening,
+pronunciation, emotional delivery or naturalness acceptance. Do not invent age,
+tone or commercial suitability from IDs.
+
+On the development machine, the local selection gallery is under the project
+root at `local/agent-ffmpeg/voice-preview61-r2/preview/index.html`; its 103 WAVs
+and `voices.json` are separate local outputs, not bundled in the Skill kit.
+Show the client candidate WAVs, record their exact `voice_id`, then generate
+the actual task text before recording approval. On other machines use
+`voice list` and `voice synthesize --project PROJECT --voice VOICE_ID
+--input TEXT_FILE --device cuda --asset-id NEW_ID` with explicitly configured
+local packs; do not assume this machine's gallery or accept an audition by ID.
+For editable subtitle dubbing, provide the original cue IDs in `--voice-map`
+JSON `{"cues":{"1":"zf_001"}}`; this is explicit casting, not speaker detection.
+Full generated-sample metadata, local preview and reproduction workflow:
+https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/validation/CLI61全音色试听_2026-10-29.md
 
 ## GPU is the preferred configured path
 
@@ -137,3 +152,35 @@ Full schema, quotas and original16-second/5-track audition:
 https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/MUSIC_SCORE.md
 Actual source WAV, MP4, editable score/package and GIF:
 https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/CASES.md#c75-source59-editable-score
+
+
+## Sample-clock loop overlap repair (CLI0.1.63)
+
+Use `music repair-loop --project PROJECT --asset-id SOURCE --crossfade-ms 50
+--curve raised-cosine --new-asset-id loop1 --dry-run`, inspect the plan,
+then omit `--dry-run` to create an audition. Optional `--apply --track-id
+track_audio_1` places it on an editable audio track. Use a new ID per revision.
+Supported curves are linear and raised-cosine; default overlap is100ms,
+maximum5000ms,at least2 samples. Source length must exceed twice the overlap
+and be no longer than600seconds. Decode is explicitly48kHz stereo16bit.
+The decoded body remains bit-identical; original24bit/compressed precision
+is not preserved. Output cycle N-M is shorter by the overlap; do not promise
+the original duration or silently pad. Dry-run does not decode and cannot
+confirm the final exact sample count or sufficient source length.
+
+Keep `assets/music-loops/loop_<asset-ID-hash>/master.wav`, `recipe.json`
+and `SOURCE.json`. A portable project package keeps them and the source.
+Re-render with `music repair-loop --project PROJECT --input RECIPE
+--new-asset-id loop2`; input requires the original imported asset ID and
+exact SHA256. Recipe input cannot be combined with source/curve/overlap
+options. Rights, restrictions and verification are inherited, never promoted.
+The CPU DSP engine has zero neural forwards and no hidden normalization.
+
+Present the original and repaired WAVs, plus the actual boundary metrics
+and shortened duration. A diagnostic PNG/GIF is not an audio audition or
+GUI recording. Lower sample-boundary jumps do not prove inaudibility,
+phase coherence,beat/phrase continuity,true peak or natural-music quality.
+Obtain client selection before treating an audition as approved. Structural
+rewriting,neural music and automatic visual semantic matching remain open.
+Full commands,C76 before/after three-cycle audio,recipe and editable package:
+https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/MUSIC_LOOP.md

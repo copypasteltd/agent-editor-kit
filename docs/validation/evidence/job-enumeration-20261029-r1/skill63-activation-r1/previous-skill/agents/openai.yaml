@@ -1,0 +1,4 @@
+interface:
+  display_name: "agent editor kit"
+  short_description: "Local video editing, GPU speech and translation"
+  default_prompt: "Use $agent-ffmpeg-local-editor to edit and deliver a local video, using configured GPU speech/translation and relevant internal modules when needed."

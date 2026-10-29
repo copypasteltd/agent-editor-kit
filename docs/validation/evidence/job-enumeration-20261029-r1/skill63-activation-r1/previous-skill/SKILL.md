@@ -1,0 +1,240 @@
+---
+name: agent-ffmpeg-local-editor
+description: "Edit and generate local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, native CUDA speech denoising, frame interpolation/slow motion and lip sync, tracking, explicit PQ/HLG HDR and native ACES display/view transforms, verified HDR10 static metadata, D50/D60 white adaptation, native RGB ICC profiles and SDR previews, seeded GPU particles, editable GPU flare/light leaks/chromatic split and highlight Bloom/Halation, GPU text/image/first-last generation with reusable model sessions, calibrated semantic ad selection, semantic search, voice/translation, subtitle dubbing, music/SFX and quality checks. Also use for ads, reference remakes, long-to-short clips and screen demos."
+---
+
+# agent editor kit / unified local Skill
+
+One public entry, 17 internal task modules. Select the relevant references below;
+do not load every module or invoke separately registered specialist Skills.
+The current local runtime is `v0.1.0-alpha.4-local.57` / CLI `0.1.59`.
+For calibrated visual selection into editable ads, read
+[semantic ad selection](references/ad-selection.md). Inspect actual previews
+and per-shot receipts before client approval. CLI58 defaults to exact-source
+SHA256 uniqueness; this excludes byte-identical aliases, not perceptually
+similar shots. The reference explains explicit reuse and actual previews.
+Native Float32 GPU operations now use bounded owned control pipes. Read
+[GPU execution](references/projection-gpu.md) for policy, actual operator counts,
+cancellation and process/thread/stream cleanup receipts.
+For editable snow/confetti/embers/bokeh/rain/sparkles, read
+[procedural particles](references/procedural-particles.md). Use native Float32
+rendering and actual preview evidence; all 21 emitter parameters support source-clock keyframes.
+Use `vfx animation-properties` to discover constraints and `vfx animate` to
+add/replace/remove one property. Distinguish integrated birth rate, birth-
+sampled motion/lifetime and live appearance; preview the actual source time.
+For editable lens flare, light leaks and chromatic aberration, read
+[optical effects](references/optical-effects.md). Discover actual constraints
+with `effects list --query optical` / `effects inspect`; use explicit native
+linear RGB and original author-clock keys. Preview additive light/range
+clipping and color-split edges before delivery.
+For actual image-highlight Bloom and film Halation, read
+[highlight glow](references/highlight-glow.md). Inspect `native:float32-glow`,
+author radius/threshold/knee/tint keys in explicit linear RGB, and preview
+the original alongside actual encoded light spread before client selection.
+For scene-linear ACEScg delivery and explicit display/view selection, read
+[native ACES](references/aces-display.md). Use actual previews and preserve
+the selected config/view; ACES runs on CPU, not the projection GPU.
+For all-frame HDR light metering and colour-clipping receipts, read
+[light measurement](references/hdr-measurement.md). Use actual native frames,
+explicit nits and the full/partial scope flags; keep MaxRGB separate from CIE Y.
+For HDR-to-SDR colour selection and wide-gamut previews, read
+[OKLab mapping and preview inheritance](references/oklab-gamut.md). Show actual
+clip/OKLab outputs with their mapping settings before client selection.
+For GPU HDR-to-SDR mapping, read [native GPU colour](references/gpu-gamut.md).
+Check actual `gamut_map` dispatch; signal conversion and ICC remain CPU.
+For final encoded HDR media, read [post-codec metering](references/hdr-media-measurement.md).
+Use `surface measure-media` with explicit signal/YCbCr declarations; keep native
+PTS/exposure gaps, decoded-pixel measurements and pre-codec results distinct.
+For actual RGB ICC output, 16-bit profile-embedded frame delivery and native
+soft proof, read [ICC output](references/icc-output.md). Keep device RGB delivery
+separate from standard YUV movie encoding; inspect every PNG and the PCM clock.
+For declared nonzero HLG display black and complete signal JSON in CLI, read
+[HLG black level](references/hlg-black-level.md). Never infer monitor black,
+peak or gamma; output below the target black must reject or explicitly clip.
+For PQ/HLG HDR media and client SDR viewing, read
+[HDR display](references/hdr-display.md). Declare source/working/output
+reference white, HLG display peak/system gamma and a separate SDR preview
+mapping; inspect actual 10-bit pixels and matching VUI after rendering.
+For HDR10 mastering-display/MaxCLL/MaxFALL declarations, read
+[HDR10 static metadata](references/hdr-metadata.md). Use exact xy/nit units,
+explicit native PQ and libx265 ten-bit 4:2:0. Inspect decoded SEI verification
+before delivery; declarations are not measured peaks or monitor calibration.
+For explicit project-local RGB ICC v2/v4 source profiles, read
+[ICC color management](references/icc-profiles.md). Inspect the actual file,
+lock its SHA-256 and choose rendering intent/BPC; native LittleCMS converts
+directly to linear working RGB. This also supports native-clock surface
+export, actual previews and portable profile dependencies. Never substitute
+an arbitrary profile for a creative look or infer embedded metadata.
+For ProPhoto RGB D50, linear AP1 D60 or explicit RGB reference whites, read
+[chromatic adaptation](references/chromatic-adaptation.md). Declare source and
+working signals; use actual D65 viewing copies for client selection. This
+reference-white conversion does not infer a physical illuminant or ICC profile,
+and linear AP1 alone is not a complete ACES output transform.
+For repeated GPU generation with the same prompt, read
+[model sessions](references/model-sessions.md). Start one explicit session,
+reuse its ID with `media generate --model-session`, and stop it in `finally`.
+Weights and prompt embeddings persist; scheduler and previous-frame context
+reset for every job. A new prompt pair requires a new session. Session startup
+verifies the complete model; the first generation still pays the loading cost.
+Native tracking can be exported as ordinary hold keys with `convert export --bake-tracking`
+for `agent-json` or `package`; OTIO/MLT/draft exports bake automatically. The native
+path verifies every Float32 display frame before export and preserves an original
+binding sidecar. Read [tracking bake](references/float-tracking.md#verified-native-tracking-bake)
+before choosing this export; the certificate covers the frozen graph/display FPS.
+The published alpha.3 downloads retain CLI 0.1.2 and their original scope.
+
+For native CFR/VFR neural interpolation and editable slow motion, read
+[neural interpolation](references/neural-interpolation.md). Preserve original
+RGBA anchors and PCM, specify cuts, show actual encoded client previews, and
+use a new asset ID for a rerun. GPU-only inference requires an explicit adapter.
+
+## Runtime and common workflow
+
+Read [runtime.md](references/runtime.md) for the installed-release contract and
+response format. Use the pinned installation through this Skill's launcher:
+
+```powershell
+$aekSkills = if ($env:CODEX_HOME) { Join-Path $env:CODEX_HOME 'skills' } else { Join-Path $env:USERPROFILE '.codex/skills' }
+$avk = Join-Path $aekSkills 'agent-ffmpeg-local-editor/scripts/run.ps1'
+& $avk version
+& $avk doctor
+& $avk capabilities
+& $avk schema show
+& $avk COMMAND --help
+```
+
+For an edit, turn the brief and actual local media into an explicit plan, ingest
+assets, author a timeline, validate, preview, render, check the encoded output
+and export an editable project package. Use returned asset/clip IDs. Audio needs
+an explicit audio track. Planning-only requests do not require rendering.
+
+## Choose the task references
+
+| ID | Task / when to read | Internal reference |
+|---|---|---|
+| K01 | Editing and delivery entrypoint / 项目总入口与交付 | [editor](references/modules/editor/module.md) |
+| K02 | Timeline, keys and motion / 时间线、关键帧与运镜 | [timeline](references/modules/timeline/module.md) |
+| K03 | Output and pixel review / 成片与像素核验 | [quality](references/modules/quality/module.md) |
+| K04 | Project operations, recovery and queues / 工程运维、恢复与队列 | [project-ops](references/modules/project-ops/module.md) |
+| K05 | Local execution policy / 本地执行约束 | [local-policy](references/modules/local-policy/module.md) |
+| K06 | Media and model rights evidence / 素材与模型权利证据 | [rights-ledger](references/modules/rights-ledger/module.md) |
+| K07 | Existing offline model registration / 已有离线模型登记 | [local-models](references/modules/local-models/module.md) |
+| K08 | Scene/silence, visual semantic search and video evidence / 镜头、静音、图文语义检索与视频证据 | [video-understand](references/modules/video-understand/module.md) |
+| K09 | Templates and reusable fragments / 模板与片段组复用 | [template-library](references/modules/template-library/module.md) |
+| K10 | Long video to short clips / 长视频转短片 | [long-to-short](references/modules/long-to-short/module.md) |
+| K11 | Screen demos and camera anchors / 录屏与锚点运镜 | [screen-demo](references/modules/screen-demo/module.md) |
+| K12 | Reference pacing/layout remake / 参考片节奏与布局重建 | [reference-remake](references/modules/reference-remake/module.md) |
+| K13 | Native media tools / 原生音视频工具 | [ffmpeg](references/modules/ffmpeg/module.md) |
+| K14 | General video-edit workflows / 通用视频剪切流程 | [video-edit](references/modules/video-edit/module.md) |
+| K15 | Ad creative and variants / 广告创意与变体 | [ad-creative](references/modules/ad-creative/module.md) |
+| K16 | Video content strategy / 视频内容策略 | [video-content-strategist](references/modules/video-content-strategist/module.md) |
+| K17 | Supplied campaign-data analysis / 提供数据的投放分析 | [campaign-analytics](references/modules/campaign-analytics/module.md) |
+
+For ordinary edits, start with editor/timeline and use quality for delivered
+media. Add other modules when the request needs them. For example:
+
+- Long interview to shorts: video-understand → long-to-short → timeline → quality.
+- Product ad: ad-creative or content strategy → editor → timeline/template → quality.
+  For reviewed briefs and local assets, read [ad-storyboard.md](references/ad-storyboard.md)
+  to build multiple editable canvases/durations and revise selected shots.
+- Client filter choice: [client-look-selection.md](references/client-look-selection.md)
+  and [looks.md](references/looks.md); show actual candidate images, IDs, strength
+  and license, record the chosen target, then test it on the client's footage.
+- Reusable camera paths or accepted keyframe animation: read
+  [motion-packs.md](references/motion-packs.md). Show actual previews, compile
+  bounded parameters to editable keys and review property conflicts before replacing.
+- Combining animated crop, child canvases and camera motion: read
+  [motion-packs.md](references/motion-packs.md). The installed renderer
+  reuses pure row parameters for bilinear and area projection. Keep the target
+  canvas, sampling choice and explicit working-raster quota; review actual
+  frames before delivery. This CPU composition improvement is separate from
+  hardware encoding. For GPU projection, read
+  [projection-gpu.md](references/projection-gpu.md), select an explicit
+  `off|prefer|require` policy and inspect actual device/probe/fallback evidence.
+- Float32 transitions, source handles or group entrance/exit: read
+  [float-transitions.md](references/float-transitions.md). Use actual overlaps
+  or real registered source windows, retain original author clocks and paired
+  audio, preview the selected cut, then inspect the encoded result. The explicit
+  linear Float32 path has its own signal/budget requirements. Its optional
+  GPU geometry/normal composition is described in `projection-gpu.md`;
+  transitions and source-handle clocks keep their existing CPU implementation.
+- Float32 titles, typewriter, word highlights or SRT: read
+  [float-text.md](references/float-text.md). Register a local font, retain
+  original author clocks and preview actual cue/word boundaries. Glyph coverage
+  is 8-bit; authored color/component composition uses linear arithmetic with an
+  explicit CPU or probed OpenCL backend. Read `projection-gpu.md` for GPU
+  policy and actual operation/cleanup receipts. The default workspace admits 4K text; read the resource estimate and
+  actual cache/clock diagnostics before delivery.
+- Global or interval Float32 grading: read [float-adjustments.md](references/float-adjustments.md).
+  Grade the complete selected sequence once, retain authored interval clocks and
+  explicit LUT signals, then inspect actual previews, encoded pixels and audio.
+- Local AI task: local-models plus the relevant media module; require existing
+  registered dependencies and check actual inference artifacts.
+- Text/image/first-last video generation: read [video-generation.md](references/video-generation.md).
+  Use the registered local CUDA model, explicit image fit and a fresh asset ID;
+  inspect generated interior frames separately from retained endpoints, then
+  edit the returned video asset normally. Generation is silent and rights need review.
+- Drive an existing face from local speech: read [lip-sync.md](references/lip-sync.md).
+  Select the actual portrait/video and speech assets, author an explicit face box
+  or output-frame keys, inspect the 25FPS/PCM plan, then review real mouth frames
+  and complete audio. Use a new asset ID for recipe reruns and retain the editable
+  video/audio pair. The native CUDA model does not generate a full body performance.
+- Translate and dub reviewed subtitles: read [subtitle-dubbing.md](references/subtitle-dubbing.md).
+  Inspect actual complete WAV durations, retain original/retry speech and source/
+  translated/bilingual SRTs, then apply to explicit audio/subtitle tracks. Prefer
+  configured GPU; cue-window fit does not establish naturalness or lip sync.
+- Align corrected words to speech: read [ctc-alignment.md](references/ctc-alignment.md).
+  Register the existing native CTC runtime explicitly. Use `activity` only for
+  whitespace words, inspect preserved raw times and review decisions, and retain
+  the continuous-speech/Chinese/lyrics quality limits.
+- Enhance noisy local dialogue: read [speech enhancement](references/speech-enhancement.md).
+  Use the registered CUDA model, retain source and enhanced tracks, and show actual
+  audio comparisons. Native sample counts/mono-stereo remain explicit; model
+  state resets per overlapping segment. Listening quality requires review.
+- Separate drums, bass, other instruments and vocals: read
+  [audio-stems.md](references/audio-stems.md). Register the existing four-source
+  runtime explicitly, prefer GPU with `auto`, retain the four editable tracks,
+  and review leakage, artifacts, float peaks and source/model rights.
+- Interrupted four-source, subtitle-dubbing or semantic job: read [job-recovery.md](references/job-recovery.md).
+  Preview owned workspace cleanup, recover pending metadata first, and preserve
+  committed assets, live jobs, changed files and legacy unmanaged caches.
+- Find footage from a description or reference image: read
+  [semantic-retrieval.md](references/semantic-retrieval.md). Use an explicit local
+  adapter/index and show returned previews, source times and scores. Review the
+  clip duration separately. Inspect explicit conditions and an applicable index/device
+  calibration before treating a hit as accepted; keep empty results and known errors
+  visible. Candidate scores alone do not establish semantic correctness.
+- Move an indexed/calibrated project: read [semantic-package.md](references/semantic-package.md).
+  Export a package, inspect the conversion report, import into a new directory
+  and run a real query. Use its explicit runtime-upgrade flow if the old
+  installation path changed; byte-identical implementations can reuse vectors.
+- Native window/screen/camera/microphone capture: read
+  [native-capture.md](references/native-capture.md), select an explicit source,
+  record for a finite duration, then edit the returned asset ID normally.
+- Voice, translation, BGM or editable score/SFX synthesis: read [community-materials.md](references/community-materials.md).
+  The configured `auto` device prefers GPU for speech/translation, reports the
+  actual provider and explicitly records CPU fallback. Preserve source stems.
+- Campaign report: campaign-analytics; use its findings to propose an edit brief.
+
+These are internal references, not separate registrations or autonomous agents.
+Detailed source credits and licenses remain beside the relevant module resources.
+
+For native Float32 source-following markers/labels, actual mask/alpha visibility,
+59 spatial transition footprints and shared-author retime, read [tracking](references/float-tracking.md).
+
+## Execution invariants
+
+- Use the installed release, never silently fall back to `product/src` or the
+  source launcher. Missing dependencies are a reported capability gap.
+- Native Windows tools only; no Docker, WSL, containers or virtual environments.
+  Media and inference dependencies must already be local. No implicit downloads.
+- Use argument arrays for paths, keep new artifacts in the owned project and
+  preserve input files and existing output. Check exit code plus `ok`, `status`,
+  `errors`, `warnings` and `artifacts`; a dry run is not a render.
+- Consult installed capabilities and command help before using an effect or model.
+  Candidate development commands are not installed release capabilities.
+- Record actual source/license evidence. Unknown rights stay unverified;
+  `render --publish` is a local rights gate, not an upload.
+- Distinguish automatic decode/PCM checks, still inspection, continuous playback
+  and human listening. This release has not achieved full CapCut parity.
+- Close unused browser tabs after any separately used browser operation.

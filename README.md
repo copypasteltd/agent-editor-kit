@@ -1,5 +1,49 @@
 # agent editor kit
 
+**r58统一Skill工具包已独立验收。** 161条目／160清单文件／93 Skill文件；中文和空格目录解包、四包配置、独立注册、实际谱面与循环修复、完整ACES YUV／PCM／PNG及工程包重放通过。未新增模型推理，不等于干净主机或自然质量验收。
+
+[r58 Skill ZIP](docs/skills/agent-editor-kit-community-unified-skill-r58.zip) · [SHA256](docs/skills/community-unified-skill-package-0.1.63-r58.json) · [使用流程 / Workflow](docs/validation/CLI63统一Skill切换_2026-10-29.md)
+
+**当前正式本地版本：CLI0.1.63 / local61。** 唯一入口 `$agent-ffmpeg-local-editor`，17内部模块、93文件。源码与安装分别31／37／26／57／104／406组通过；候选与真实C盘入口CPU循环修复、DF3及MuseTalk CUDA和完整音画工程包重放分别通过。r58工具包已独立验收，公开Release保持alpha.3／CLI0.1.2；完整剪映等价未完成。
+
+[简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [CLI63 workflow](docs/validation/CLI63统一Skill切换_2026-10-29.md) · [500 look previews](docs/assets/looks-n002-20261024-r1/index.html) · [103 voice auditions](docs/validation/CLI61全音色试听_2026-10-29.md) · [8 editable optical templates](docs/product/OPTICAL_EFFECT_PACK.md) · [Actual optical gallery](docs/assets/optical-pack-20261029-r1/index.html) · [Browser screenshots and checks](docs/validation/光效选型页实测_2026-10-29.md) · [N002 original-image previews](docs/product/OPTICAL_N002_PREVIEWS.md) · [N002 selection gallery](docs/assets/optical-n002-20261029-r1/index.html)
+
+```powershell
+$entry = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1'
+& $entry version # 0.1.63
+& $entry doctor
+& $entry music repair-loop --help
+```
+
+先确认版本，再检查依赖、建立工程并登记授权素材。展示500滤镜实际候选图及103音色本地WAV，记录选择；先预检，再生成、试听、挂接时间线、预览、渲染和导出工程包。循环修复会缩短周期，不能承诺原时长或未经听审的无缝效果。
+
+[Loop commands and before/after WAVs](docs/product/MUSIC_LOOP.md) · [Editable score](docs/product/MUSIC_SCORE.md)
+
+![Actual C76 boundary diagnostic](docs/assets/music-loop60-20261029-r1/actual.png)
+
+![Actual CLI61 local103 voice gallery](docs/assets/voice-gallery61-20261029-r1/actual.png)
+
+![Actual original and eight editable optical outputs](docs/assets/optical-pack-20261029-r1/contact.png)
+
+![Actual eight optical previews on the user-provided N002 image](docs/assets/optical-n002-20261029-r1/contact.png)
+
+<!-- aek-history-summary -->
+<details>
+<summary>完整开发历史（保留全部原文，点击展开）</summary>
+
+**N002母图也已补齐8套实际光效静帧。** 同一母图、同一时刻与明确模板ID，方便客户比较人物和室内镜头的方向；与500套LUT数量分开。 [Actual N002 previews](docs/product/OPTICAL_N002_PREVIEWS.md) · [N002 selection gallery](docs/assets/optical-n002-20261029-r1/index.html)
+
+![Actual N002 optical comparison](docs/assets/optical-n002-20261029-r1/contact.png)
+
+**光效选型交互已实测。** 8个按钮逐项核对模板ID／摘要，真实视频播放与切换、电脑／手机宽度截图通过；本次浏览器已关闭。 [Offline gallery](docs/assets/optical-pack-20261029-r1/index.html) · [Actual screenshots and checks](docs/validation/光效选型页实测_2026-10-29.md)
+
+<details>
+<summary>Actual gallery screenshot / 实际页面 / 實際頁面</summary>
+
+![Actual offline optical gallery](docs/assets/optical-pack-gallery-20261029-r1/desktop.png)
+
+</details>
+
 **新增8套可编辑复合光效内容包。** 每套含完整参数、实际MP4／GIF、原始图和可编辑工程；8套安装版GPU渲染及完整音画包重放通过，正式Skill59实际改选OP08通过。 [Preview / 完整选型](docs/product/OPTICAL_EFFECT_PACK.md)
 
 ![Actual editable optical templates](docs/assets/optical-pack-20261029-r1/contact.png)
@@ -36,9 +80,7 @@ r57已在独立中文／空格目录解包、配置四个模型包、独立注�
 
 ![Actual local103 voice gallery](docs/assets/voice-gallery61-20261029-r1/actual.png)
 
-<!-- aek-history-summary -->
-<details>
-<summary>完整开发历史（保留全部原文，点击展开）</summary>
+
 
 **CLI59安装候选完整音画复核通过**：16秒／5分轨的全部PCM、480帧画面及成片音频与源码和工程包重放一致；实际CUDA降噪4次前向的完整PCM也一致。单入口Skill候选已通过真实PowerShell生成配乐。安装400继续，正式注册仍CLI58。[安装版流程及边界](docs/validation/CLI59独立安装交付_2026-10-29.md)。
 
@@ -1197,7 +1239,7 @@ flowchart LR
 | F45 | Kokoro 中英配音库 | 文本、103 具名音色和语速 → 完整 WAV、实际时长与可编辑声音资产。 | `voice list/synthesize; model-pack` | 可选 CPU/CUDA 包；累计至少 7 个音色实际生成，完整试听、情绪/方言与人类听审未验收。 |
 | F46 | 中英翻译与双语字幕 | 文本或普通 SRT → 中英双向译文、简繁转换、双语 SRT与显式术语译后替换。 | `translate text/subtitles` | OPUS 需本地模型；保留 cue 顺序/毫秒，错译仍保留，不能替代人工语义接受。 |
 | F47 | GPU 配音与翻译选择 | 明确 CPU/CUDA/auto 和显存预检 → 实际 provider、设备与明确回退/失败。 | `gpu inspect; voice; translate; --device` | RTX 3060 实测；配音 CUDA 13 / 翻译 CUDA 12、配音当前仅设备 0，其他滤镜不因此 GPU 化。 |
-| F48 | 配乐准备与声音混合 | 实际音乐/人声资产 → 截取、循环、淡入淡出、显式增益和人声闪避混音。 | `music prepare/mix` | 保留原分轨，不静默裁人声；不作曲、不自动修复循环接缝或保证画面语义匹配。 |
+| F48 | 配乐准备与声音混合 | 实际音乐/人声资产 → 截取、循环、淡入淡出、显式增益和人声闪避混音。 | `music prepare/mix` | 保留原分轨，不静默裁人声；谱面合成见F83，接缝交叠修复见F84，画面语义匹配仍未完成。 |
 | F49 | 原生采集 | 明确窗口/屏幕/区域/相机/麦克风 → 有限录制、CPU/NVENC、取消和项目资产登记。 | `capture devices/record` | 真实窗口 CPU/GPU 已验；相机/麦克风、联合音画同步、设备故障和长录制未验。 |
 | F50 | 离线图文语义检索与条件选择 | 本地索引、中英/参考图、同帧正负条件、经验校准档案、实际预览/源时间及可编辑引用。 | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | 工程包按需派生路径绑定；同机 80 条迁移决策保留，仍有 3 条已知错误；运行时另备，G26/G31 开放 |
 | F51 | 字幕翻译配音联合流程 | 普通中英 SRT、显式音色/轨道 → 译文或保留同语种原文、完整批量 WAV、实际时窗、可编辑声音/字幕和原子提交。 | `dub subtitles` | 同语种只初始化配音模型；保留原声/重试/错译；cue 时窗不证明字词精度、自然韵律或口型同步。 |
@@ -1233,7 +1275,9 @@ flowchart LR
 | F81 | 精确内容去重选材 | 规范SHA256内容分组、全局联合分配，支持显式ID去重或复用。 | ad select；不同ID相同文件；非感知去重 | 源码58选材／分镜57项通过；[规则与证据](docs/product/AD_CONTENT_UNIQUENESS.md)，58安装另验。 |
 | F82 | 自有原生进程同步回收 | 持有自有成员句柄并等待退出，独立Job互不影响，保留外层预算异常。 | Windows模型／工具子进程及补帧预处理超时 | 源码58控制19项、超时3项分别通过；[行为与证据](docs/product/OWNED_PROCESS_CLEANUP.md)。 |
 | F83 | 可编辑谱面与程序音效（正式CLI59） | 谱面拍点／MIDI音高／8解析乐器 → 48kHz双声道WAV、分轨和可编辑工程；4种电子音效。 | `music inspect-score/compose/effect` | [实际内容、命令、配器与限制](docs/product/MUSIC_SCORE.md)；不是神经生曲，正式Skill59已支持。 |
-| F84 | 循环接缝交叠修复（开发CLI60） | 样本时钟、双曲线、可编辑配方、权利继承、取消与事务回滚；周期明确缩短。 | `music repair-loop` | [流程与C76试听](docs/product/MUSIC_LOOP.md)；正式Skill仍59，未计自然听感验收。 |
+| F84 | 循环接缝交叠修复（正式CLI63） | 样本时钟、双曲线、可编辑配方、权利继承、取消与事务回滚；周期明确缩短。 | `music repair-loop` | [流程与C76试听](docs/product/MUSIC_LOOP.md)；安装、候选与正式入口完整PCM/工程重放通过，仍须听审。 |
+| F85 | 8套可编辑复合光效内容包 | OP01—OP08完整参数、作者时钟动画、实际MP4/GIF与可编辑工程；复用已有光学内核。 | `template apply` | [完整参数与样片](docs/product/OPTICAL_EFFECT_PACK.md)；会替换完整effects数组，需审阅既有效果；不是8个新算子。 |
+| F86 | N002母图光效选型 | 同一N002、同一2秒时刻的8张实际PNG；页面选择输出ID/版本/摘要，电脑与手机宽度交互/截图已核验。 | `preview frame; template apply` | [母图预览与选型](docs/product/OPTICAL_N002_PREVIEWS.md)；480×270参考，另有动态样片；母图权利与MIT模板分开，不增加500 LUT数量。 |
 
 ## 支持的服务模块与依赖
 
@@ -1255,7 +1299,7 @@ flowchart LR
 | S12 | 创意与运营支持 | Agent 任务指导 | 依赖调用方提供业务信息与数据，产出脚本/建议/分析。 | `$agent-ffmpeg-local-editor` / K01–K17 | 不包含广告平台账号接入、投放或自动采集数据。 |
 | S13 | 内置社区素材服务 | 离线目录 | 359 项有来源/许可的 BGM、短乐、音效、字体 | `materials list/inspect/verify/ingest` | 逐项权利，不是商业素材订阅库 |
 | S14 | 本地配音/翻译 | 原生模型 worker | 4 个可选 CPU/CUDA 包，103 音色映射和 OPUS 文本/字幕 | `voice / translate / model-pack` | 累计至少 7 个不同音色有真实输出；103 音色完整试听及人工验收未完成 |
-| S15 | 配乐准备与混音 | 原生 FFmpeg 音频 | 显式截取/循环/淡化、独立人声/配乐、闪避 | `music prepare/mix` | 不作曲、不静默裁人声、不承诺接缝修复 |
+| S15 | 配乐准备、谱面与循环修复 | 原生FFmpeg + CPU DSP | 明确截取/循环/淡变、独立分轨、闪避；可编辑谱面合成与样本交叠修复。 | `music prepare/mix/compose/repair-loop` | 谱面与交叠为CPU DSP；不是神经音乐生成，周期缩短与试听/权利需核对。 |
 | S16 | GPU兼容服务 | 已有原生OpenCL ICD / NVIDIA模型库 | 图投影及独立Float32仿射/普通叠加/字色/逐词/粒子/光学/高光扩散；off/prefer/require，模型auto/cpu/cuda；实际探测/预算/清理 | `render --projection-acceleration; gpu inspect; --device` | RTX3060实测；字形/其他效果/转场等CPU，系统库许可另列。 |
 | S17 | 原生 Windows 采集 | FFmpeg gdigrab / DirectShow | 明确来源、设备 ID、有限时长、完整解码与素材登记 | `capture devices/record` | 真实窗口 CPU/GPU 已验；相机/麦克风/同步未验 |
 | S18 | 图文语义与经验校准 | 明确登记的原生 SigLIP2 worker | 已有 Torch/Transformers/权重；档案绑定索引/实现/类型/实际设备 | `semantic adapter-register/index/calibrate/calibration-list/search/verify` | 分数非概率；冷启动/大库与校准工程迁移仍有限制 |
@@ -2086,6 +2130,10 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R522 | Second native Windows read-only preflight | 第二台Windows只读身份/元数据检查完成：RTX3080/10GiB、嵌入式Python3.13.14 x64；默认Python3.15，缺jsonschema，PATH无FFmpeg/FFprobe，cv2模块实际存在。无远端安装、模型推理或配置修改，不是多设备GPU/干净主机验收。 [Evidence](docs/validation/第二台Windows原生环境预检_2026-10-29.md) |
 | R523 | CLI63 interrupted installation recovery | 原PID已确认退出，五个已完成分组保留；完整406在新r2重跑，GPU／候选／正式切换另验。r2门禁脚本四种隔离回滚通过；无新增内核或自然质量验收。 [Evidence](docs/validation/CLI63安装回归中断与恢复_2026-10-29.md) |
 | R524 | Optical template pack v1 | 8套各48帧／4秒，RTX3060 OpenCL；全部RGBA／PCM工程包重放一致，正式C盘CLI59改选OP08与候选63完整音画一致。原创诊断图／双音，非自然素材审美或人类听审；没有8个新内核。 [Evidence](docs/product/OPTICAL_EFFECT_PACK.md) |
+| R525 | 光效选型页真实浏览器 | All8 actual selections/IDs/SHA256/author clocks, 44 local targets, real H.264 playback, pause-others, desktop/mobile-width screenshots; owned page/browser closed. [Evidence](docs/validation/evidence/optical-pack-gallery-20261029-r1/verification.json) |
+| R526 | CLI63安装完整回归 | 31/37/26/57/104/406, zero failures/errors/skips; exact installed/source bytes. [406-r2 proof](docs/validation/evidence/job-enumeration-20261029-r1/installed63-contracts-r2/verification.json) |
+| R527 | CLI63统一Skill正式切换 | 1 entry/17 modules/93 tested files; actual loop/DF3 CUDA/MuseTalk CUDA, full PCM/RGBA and package replay. Historical CLI61 103-voice guidance included before testing. Natural quality/clean host open. [Workflow](docs/validation/CLI63统一Skill切换_2026-10-29.md) |
+| R528 | CLI63/r58 independent kit | 161/160/93 entries/inventory/Skill files; isolated setup/registration, full score/loop PCM and ACES YUV/PCM/PNG package replay. No new neural forwards or clean-host acceptance. [Proof](docs/validation/evidence/job-enumeration-20261029-r1/formal-kit-r1/verification.json) |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

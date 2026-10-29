@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "cli_version": "0.1.63",
+  "calls": [
+    {
+      "phase": "activation-dry-run",
+      "exit_code": 0
+    },
+    {
+      "phase": "activation-apply",
+      "exit_code": 0
+    },
+    {
+      "phase": "registered-cases",
+      "exit_code": 0
+    },
+    {
+      "phase": "registered-docs",
+      "exit_code": 0
+    },
+    {
+      "phase": "kit-build",
+      "exit_code": 0
+    },
+    {
+      "phase": "kit-independent",
+      "exit_code": 0
+    },
+    {
+      "phase": "kit-docs",
+      "exit_code": 0
+    }
+  ],
+  "formal": "0.1.63/local61/r58",
+  "actual_registered_cases_passed": true,
+  "independently_accepted_kit": true,
+  "native_windows": true,
+  "virtualization": false,
+  "commit_pending": true,
+  "public_release_changed": false,
+  "full_goal_closed": false
+}

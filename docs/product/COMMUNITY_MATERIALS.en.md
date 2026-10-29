@@ -1,6 +1,6 @@
 # Community materials, voice, translation, music and GPU workflow
 
-The current runtime is **CLI 0.1.8 / `v0.1.0-alpha.4-local.6`**, paired with the [matching local bundle and r7 kit](COMMUNITY_LOCAL_DELIVERY.md). This page preserves the materials/voice/translation/GPU evidence from **CLI 0.1.3 / local.1**; those tasks were not all rerun in this increment. The public GitHub Release remains alpha.3 / CLI 0.1.2; its old archive does not contain these commands. Invoke only `$agent-ffmpeg-local-editor`; its 17 internal modules remain available.
+The current runtime is **CLI0.1.58 / `v0.1.0-alpha.4-local.56` / r56 kit**, paired with the [matching application and unified Skill workflow](COMMUNITY_LOCAL_DELIVERY.md). This page preserves materials/voice/translation/GPU evidence from **CLI0.1.3 / local.1**. Four model packs were reconfigured and verified this round;their inference tasks were not all rerun. CLI58 actual DF3 CUDA,exact-content selection,ACES and installation checks are recorded separately in the [delivery evidence](../validation/CLI58统一Skill切换_2026-10-29.md). Public alpha.3/CLI0.1.2 attachments remain unchanged and lack these newer local commands. Invoke one `$agent-ffmpeg-local-editor` with17 internal modules. The copy of this manual inside r56 is a historical packaging snapshot;use its COMMUNITY_LOCAL_DELIVERY and the current repository entry for version pairing.
 
 | ID | Module | Implemented | Limits |
 |---|---|---|---|

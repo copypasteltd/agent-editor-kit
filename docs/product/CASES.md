@@ -1391,3 +1391,21 @@ GIF为10fps预览，截图已查看；没有声称连续人工观看、听审、
 ![Actual source58 content deduplication](../assets/ad-content58-20261029-r1/actual.gif)
 
 [实际视频／输入／完整核验与边界](../validation/CLI58内容去重实测_2026-10-29.md) · [来源／许可](../assets/ad-content58-20261029-r1/SOURCE.txt)。原创诊断图CC0，Noto字体OFL-1.1；GIF10fps。无作者音轨，无自然素材或连续人工播放结论。
+
+
+<a id="c75-source59-editable-score"></a>
+## C75：源码CLI59可编辑谱面与原创程序音频
+
+原生CPU解析合成，16秒／48kHz双声道16bit，5条实际分轨，8种可用乐器和4种不同电子音效；没有模型前向、采样音色库或复制录音。谱面与程序生成的诊断图／音频属于本例原创CC0素材，源代码MIT。它不是神经生曲、人类演奏或自然质量验收。
+
+[原始完整WAV](../assets/music-score59-20261029-r1/actual.wav) · [实际成片MP4](../assets/music-score59-20261029-r1/actual.mp4) · [可编辑谱面](../assets/music-score59-20261029-r1/score.json) · [完整工程包](../assets/music-score59-20261029-r1/editable-score.zip) · [来源与摘要](../assets/music-score59-20261029-r1/SOURCE.json)
+
+![Measured source59 waveform and authored score](../assets/music-score59-20261029-r1/actual.png)
+
+![Actual source59 diagnostic movie](../assets/music-score59-20261029-r1/actual.gif)
+
+音效试听：[whoosh](../assets/music-score59-20261029-r1/whoosh.wav) · [riser](../assets/music-score59-20261029-r1/riser.wav) · [impact](../assets/music-score59-20261029-r1/impact.wav) · [chime](../assets/music-score59-20261029-r1/chime.wav)。四项实际生成，完整文件摘要各不相同；不是重命名同一音频。
+
+完整3072000字节原始PCM在导出／导入后重新合成逐字节相同。实际成片为320×180／30fps／480帧，完整110592000字节RGBA和6144000字节解码Float32 PCM与工程包重放相同。成片画面是实际测得波形及谱面诊断图，不是GUI截图或神经视频。PNG已目检，无连续视听／听审结论；AAC成片不声称与原16bit母带无损相同。
+
+引擎对用户输入默认保持unverified／internal，不自动确认商用权利；本例明确的CC0来源说明不泛化到其他输入。正式注册仍CLI58，源码59的新安装／Skill交付、自然质量及G25完整范围继续开放。[接口与限制](MUSIC_SCORE.md) · [核验记录](../validation/CLI59谱面合成_2026-10-29.md) · [原始实测收据](../validation/evidence/music-score-20261029-r1/actual-case-r1/verification.json)

@@ -1,0 +1,57 @@
+{
+  "format": "agent-original-fixture-v1",
+  "cli_version": "0.1.59",
+  "license": "CC0-1.0",
+  "source_code_license": "MIT",
+  "copied_recordings": false,
+  "model_weights": false,
+  "neural_generation": false,
+  "human_listening": false,
+  "case_receipt_sha256": "1f304262771297a3a2d006875e52143619a25063c015038b3a7fe1c024b3dc4b",
+  "files": {
+    "actual.gif": {
+      "bytes": 35507,
+      "sha256": "acb9803e86a3339bd4842ee5f57d5f707d8b8ea555731796e482784de9123825"
+    },
+    "actual.mp4": {
+      "bytes": 445077,
+      "sha256": "f7bb0ec58dc872a016a844de752939db1ec05c43e15a2965fbb5023d112e5a95"
+    },
+    "actual.png": {
+      "bytes": 15885,
+      "sha256": "c46236da762f7cae3d4a1631f628a7562f71d146780a7cc19003ea445d211d70"
+    },
+    "actual.wav": {
+      "bytes": 3072044,
+      "sha256": "1c223ed454c152eede8058df26b8383e2f96402b715fd7842539cb7891b5a7e6"
+    },
+    "chime.wav": {
+      "bytes": 384044,
+      "sha256": "618aa360a87a21198c6ca4e630e1e3be7395d54a52e67601af6d8c3278fbb1b5"
+    },
+    "editable-score.zip": {
+      "bytes": 6880623,
+      "sha256": "bd38f6a73a6dfe654dba479e0cee424fef60ba618609e18f55d00350e39a6a9c"
+    },
+    "impact.wav": {
+      "bytes": 384044,
+      "sha256": "f00ad98d4e8a2410290e42e7c150dd7f00452b670c2c538580c76a1da6fef680"
+    },
+    "riser.wav": {
+      "bytes": 384044,
+      "sha256": "ee574b941a03790b4f26f10ace16470e12310c27d8c2549fb650400817b8783a"
+    },
+    "score.json": {
+      "bytes": 16402,
+      "sha256": "467fa1f5494377c9452c34c84068a451a9d138c8ba103498f538646e9f8fe141"
+    },
+    "SOURCE.txt": {
+      "bytes": 323,
+      "sha256": "34b3ff6695b47160e36cb5be48732838c1e4edac168c9c914b7d896fc1f8bbe2"
+    },
+    "whoosh.wav": {
+      "bytes": 384044,
+      "sha256": "ec6ba5c0be105d4e50134de27f6c54a00d1c7fe80b0628b327df09bb6e78a6f8"
+    }
+  }
+}

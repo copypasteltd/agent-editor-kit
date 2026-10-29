@@ -1,5 +1,14 @@
 # agent editor kit
 
+**CLI59 source update: all400 service contracts passed; all19 formal control regressions passed after atomic publication of the PID test marker.** The original failed receipt is retained. Independent CLI59 installation and Skill delivery remain pending; the registered entry is CLI58. [Evidence](docs/validation/CLI59谱面合成_2026-10-29.md).
+
+
+**Development CLI0.1.59 adds editable-score synthesis and4 procedural effects**:8 analytical instruments,stems,timeline placement and portable score recomposition. The19 targeted and31 bootstrap/57 selection/104 semantic groups passed separately. C75 passed actual16s/5-track synthesis,full PCM recomposition and full rendered AV replay. One control test hit an empty PID fixture marker;400 contracts continue. The registered Skill remains CLI58 and never falls back to source.
+
+[Score workflow / 谱面流程](docs/product/MUSIC_SCORE.md) · [C75 WAV / MP4 / editable package](docs/product/CASES.md#c75-source59-editable-score)
+
+![Actual source59 score audition](docs/assets/music-score59-20261029-r1/actual.gif)
+
 **Current local version: CLI0.1.58 / local56 / r56 unified Skill kit.** One `$agent-ffmpeg-local-editor` entry,17 internal modules,93 files. Source and installed 31/19/57/104/400 groups passed separately. Staged and actual C-discovered CUDA denoising passed complete1124160-byte PCM package replay. Full CapCut parity remains incomplete.
 
 [简体中文](README.md) · [繁體中文](README.zh-TW.md) · [r56 Skill ZIP](docs/skills/agent-editor-kit-community-unified-skill-r56.zip) · [Delivery and workflow](docs/validation/CLI58统一Skill切换_2026-10-29.md)
@@ -1180,6 +1189,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F80 | Native-worker dependency isolation | Temporarily pin the owned application,restore the model runtime dependency search order,reject preloaded foreign packages,and preserve version/path/hash checks. | Native ASR/CTC/matting/segmentation/tracking/inpainting/generation/lip-sync/interpolation/denoising/separation entries | Source CLI57 passed31 subprocess regressions;new installed/model acceptance remains separate;live Skill stays56. |
 | F81 | Exact-content selection deduplication | Canonical SHA256 groups with global assignment; explicit ID-only or reuse options. | ad select; byte-identical assets under different IDs; not perceptual deduplication | Source58 passed57 selection/storyboard tests; [rules and evidence](docs/product/AD_CONTENT_UNIQUENESS.md); installed58 remains unaccepted. |
 | F82 | Synchronous owned-process cleanup | Retain and wait owned process handles; independent jobs remain unaffected; preserve outer-budget exceptions. | Windows model/tool children and interpolation preprocessing deadlines | Source58 passed19 control and3 targeted timeout tests separately; [behavior and evidence](docs/product/OWNED_PROCESS_CLEANUP.md). |
+| F83 | Editable score and procedural effects(source59) | Beat/MIDI score and8 analytical instruments →48kHz stereo WAV,stems and editable package;4 electronic effects. | `music inspect-score/compose/effect` | [Implementation,workflow and limits](docs/product/MUSIC_SCORE.md);not neural text-to-music,not yet in registered CLI58. |
 
 ## Supported service modules and dependencies
 
@@ -1968,6 +1978,9 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R456 | CLI58 installed400 terminal | All400 passed with zero failures/errors/skips;281 source/installed modules and tests frozen;[proof](docs/validation/evidence/ad-content-uniqueness-20261029-r1/installed58-contracts-r1/verification.json) |
 | R457 | Actual unified CLI58 activation | Staged and actual C-discovered CUDA each ran4 forwards;full PCM matches source and project replay;one entry/17 modules/93 files,old backups retained;[workflow](docs/validation/CLI58统一Skill切换_2026-10-29.md) |
 | R458 | Independent r56 kit | 159 entries/158 inventory files;four-pack configuration,isolated registration,two renders and full YUV/PCM/PNG replay passed;initial newline-check failure retained,no new model inference;[proof](docs/validation/evidence/ad-content-uniqueness-20261029-r1/formal-kit-r3/verification.json) |
+| R459 | CLI59 score core and transactions | Targeted19/bootstrap31/selection57/semantic104 passed separately;initial device-field error retained and fixed;[evidence and scope](docs/validation/CLI59谱面合成_2026-10-29.md) |
+| R460 | C75 actual source audio and movie |16s/5 stems/4 distinct effects;complete3072000-byte PCM recomposition and110592000-byte RGBA/6144000-byte Float32 PCM replay match;no neural inference or listening acceptance;[case](docs/product/CASES.md#c75-source59-editable-score) |
+| R461 | CLI59 delivery boundaries | One empty-PID-marker error in19 control tests;atomic-publication fixture prototype passed4 tests without changing formal tests;400 contracts running,installed Skill remains58;older manual version banners synchronized |
 
 ## Current limits and development direction
 

@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "source_version": "0.1.59",
+  "registered_version": "0.1.58",
+  "results": [
+    {
+      "name": "version",
+      "returncode": 0,
+      "command": "version"
+    },
+    {
+      "name": "inspect",
+      "returncode": 0,
+      "command": "music.inspect-score"
+    }
+  ]
+}

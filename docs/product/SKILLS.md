@@ -2,11 +2,13 @@
 
 <!-- community-current -->
 
-**CLI0.1.52 / local.50 / r53 kit · 1 Skill / 17 modules / 91 files.**
+**CLI0.1.58 / local56 / r56 kit · 1 Skill / 17 modules / 93 files.**
 
-[Verified small kit](../skills/agent-editor-kit-community-unified-skill-r53.zip) · [SHA256 / inventory](../skills/community-unified-skill-package-0.1.52-r53.json)
+[Verified small kit](../skills/agent-editor-kit-community-unified-skill-r56.zip) · [SHA256 / inventory](../skills/community-unified-skill-package-0.1.58-r56.json) · [实际切换与完整流程](../validation/CLI58统一Skill切换_2026-10-29.md)
 
-本地统一Skill已升级CLI52：GPU执行亮度肩部与OKLab缩色度，信号转换与ICC仍由CPU处理。源码与安装版各70项专项、各352项兼容分别通过；C64由实际注册入口完成GPU成片/预览及完整音画工程包重放。
+本地统一Skill已实际升级CLI58：保留GPU亮度肩部／OKLab缩色度和CPU信号转换／ICC，新增精确内容SHA256去重选材与原生自有进程回收修复。源码与安装各31／19／57／104／400分组分别通过；候选及真实C盘入口实际CUDA降噪、完整PCM工程重放分别通过；r56独立解包／配置／注册与完整ACES音画重放通过。原C64等案例保持历史范围，不以最新测试数覆盖旧收据。
+
+外层只需指定 `$agent-ffmpeg-local-editor`；启动器固定调用匹配的已安装CLI58，不回落源码。`version`／`capabilities`确认版本及能力后，再按下表K01–K17路由，不注册新的音乐或其他独立Skill。选材的 `unique_content` 默认继承 `unique_assets`，精确SHA256不是感知重复；[配置和实际预览](AD_CONTENT_UNIQUENESS.md)。500滤镜母图选型仍按原画廊使用。四个配音／翻译包重新配置核验不代表本轮新增推理；其余模型、自然质量和全部产品目标另验。
 
 [GPU colour workflow](GPU_GAMUT.md)
 

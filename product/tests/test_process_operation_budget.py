@@ -27,7 +27,8 @@ class ProcessOperationBudgetTests(unittest.TestCase):
 
     def child(self, *, cancel=False):
         script = ('import os,time;from pathlib import Path;'
-            'Path('+repr(str(self.pid_file))+').write_text(str(os.getpid()));'
+            'p=Path('+repr(str(self.pid_file))+');tmp=p.with_suffix(".publishing");'
+            'tmp.write_text(str(os.getpid()));os.replace(tmp,p);'
             + ('Path('+repr(str(self.cancel))+').touch();' if cancel else '')
             + 'time.sleep(2);Path('+repr(str(self.completed))+').touch()')
         return [sys.executable, '-I', '-S', '-B', '-c', script]

@@ -1,6 +1,6 @@
 # 開源素材、配音、翻譯、配樂與 GPU 使用手冊
 
-目前執行版本為 **CLI 0.1.8 / `v0.1.0-alpha.4-local.6`**，使用[相符的本地包與 r7 kit](COMMUNITY_LOCAL_DELIVERY.md)。本頁保留的素材/配音/翻譯/GPU 專項實測基線為 **CLI 0.1.3 / local.1**，未在本輪重新推理全部這些任務。公開 GitHub Release 仍為 alpha.3 / CLI 0.1.2；不要把這些新命令用於舊附件。註冊入口仍只有 `$agent-ffmpeg-local-editor`，17 項內部模組繼續保留。
+目前執行版本為 **CLI0.1.58 / `v0.1.0-alpha.4-local.56` / r56 kit**，使用[配套本地應用包與統一Skill流程](COMMUNITY_LOCAL_DELIVERY.md)。本頁素材／配音／翻譯／GPU專項實測基線仍為 **CLI0.1.3 / local.1**，本輪四個模型套件僅重新配置核驗，沒有重新推理全部任務；CLI58實際DF3 CUDA、精確去重、ACES及安裝回歸分別見[交付證據](../validation/CLI58统一Skill切换_2026-10-29.md)。公開alpha.3 / CLI0.1.2舊附件保持，不含本地全部新命令。仍只註冊 `$agent-ffmpeg-local-editor`，17內部模組。r56壓縮包內本手冊為打包時歷史快照，目前版本及配套以包內COMMUNITY_LOCAL_DELIVERY與本倉庫最新入口為準。
 
 ## 能力與交付層級
 

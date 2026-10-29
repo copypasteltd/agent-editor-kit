@@ -27,7 +27,7 @@ PROJECT_PACKAGE_ROOT_FILES = ("project.json", "rights-ledger.json", "project.loc
 # rewritten into the portable package namespace.  The remaining directories
 # are small project-owned support payloads; render/cache/operation/history
 # trees stay machine-local and are excluded.
-PROJECT_PACKAGE_DIRECTORIES = ("fonts", "templates", "validation", "assets/look-evidence")
+PROJECT_PACKAGE_DIRECTORIES = ("fonts", "templates", "validation", "assets/look-evidence", "assets/music-scores")
 
 
 def report_item(capability: str, status: str, source: str, target: str | None = None, detail: str = "") -> dict[str, Any]:

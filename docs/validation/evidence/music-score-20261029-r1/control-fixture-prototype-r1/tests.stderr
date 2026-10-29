@@ -1,0 +1,9 @@
+test_child_specific_deadline_remains_effective (budget_prototype.ProcessOperationBudgetTests.test_child_specific_deadline_remains_effective) ... ok
+test_expired_outer_budget_refuses_process_start (budget_prototype.ProcessOperationBudgetTests.test_expired_outer_budget_refuses_process_start) ... ok
+test_inherited_shorter_deadline_stops_longer_child_budget (budget_prototype.ProcessOperationBudgetTests.test_inherited_shorter_deadline_stops_longer_child_budget) ... ok
+test_relative_outer_cancel_is_observed_without_child_cancel_argument (budget_prototype.ProcessOperationBudgetTests.test_relative_outer_cancel_is_observed_without_child_cancel_argument) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.920s
+
+OK

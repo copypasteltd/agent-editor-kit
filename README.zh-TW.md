@@ -1,5 +1,14 @@
 # agent editor kit
 
+**CLI59 原始碼驗證更新：400項服務契約全部通過；PID測試標記改為原子發布後，正式19項控制回歸重新通過。** 保留先前失敗收據。新配樂尚待獨立安裝與Skill59交付；已註冊入口仍CLI58。[本輪證據](docs/validation/CLI59谱面合成_2026-10-29.md)。
+
+
+**開發原始碼CLI0.1.59新增可編輯譜面合成及4類程序音效**：8種解析樂器、分軌、時間線掛接與譜面專案重合成；19項專項、31入口／57選材／104語義分組分別通過。C75實際16秒／5軌、完整PCM重合成及成片音畫重播通過。控制回歸有1個PID測試標記空讀錯誤，400項仍執行；正式Skill維持CLI58，不自動呼叫原始碼。
+
+[Score workflow / 谱面流程](docs/product/MUSIC_SCORE.md) · [C75 WAV / MP4 / editable package](docs/product/CASES.md#c75-source59-editable-score)
+
+![Actual source59 score audition](docs/assets/music-score59-20261029-r1/actual.gif)
+
 **目前本地版本：CLI0.1.58 / local56 / r56統一Skill工具包。** 唯一入口 `$agent-ffmpeg-local-editor`，17內部模組、93檔案。原始碼與安裝版各31／19／57／104／400五組分別通過；候選與真實C盤入口實際CUDA降噪及完整1124160位元組PCM專案重播分別通過。完整剪映等價仍未完成。
 
 [简体中文](README.md) · [English](README.en.md) · [r56 Skill ZIP](docs/skills/agent-editor-kit-community-unified-skill-r56.zip) · [交付與流程](docs/validation/CLI58统一Skill切换_2026-10-29.md)
@@ -1180,6 +1189,7 @@ flowchart LR
 | F80 | 15類原生工作程序依賴隔離 | 暫時固定所屬應用套件後恢復模型Python依賴搜尋順序，拒絕預載外部同名套件，保留原版本／路徑／摘要校驗。 | 原生ASR／CTC／分割／摳像／跟蹤／修復／生成／口型／補幀／降噪／分離等入口 | CLI57原始碼31項子程序回歸通過；安裝與實際模型另驗，正式Skill仍CLI56。 |
 | F81 | 精確內容選材去重 | 規範SHA256內容分組、全域聯合分配，支援明確ID去重或重用。 | ad select；不同ID相同檔案；非感知去重 | 原始碼58選材／分鏡57項通過；[規則與證據](docs/product/AD_CONTENT_UNIQUENESS.md)，58安裝另驗。 |
 | F82 | 自有原生程序同步回收 | 持有自有成員控制代碼並等待退出，獨立Job互不影響，保留外層預算例外。 | Windows模型／工具子程序與補幀前處理逾時 | 原始碼58控制19項、逾時3項分別通過；[行為與證據](docs/product/OWNED_PROCESS_CLEANUP.md)。 |
+| F83 | 可編輯譜面與程序音效（原始碼59） | 譜面拍點／MIDI音高／8解析樂器 → 48kHz雙聲道WAV、分軌與可編輯專案；4種電子音效。 | `music inspect-score/compose/effect` | [實際內容、命令、配器及限制](docs/product/MUSIC_SCORE.md)；不是神經生曲，正式Skill58暫不支援。 |
 
 ## 支持的服務模塊與依賴
 
@@ -1966,6 +1976,9 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R456 | CLI58安裝400項終態 | 400通過，零失敗／錯誤／跳過，281原始碼與安裝模組及測試凍結一致；[證據](docs/validation/evidence/ad-content-uniqueness-20261029-r1/installed58-contracts-r1/verification.json) |
 | R457 | CLI58統一Skill實際切換 | 候選及真實C盤入口CUDA各4次前向；完整PCM與原始碼及專案重播相同，1入口／17模組／93檔案，舊版備份保留；[流程](docs/validation/CLI58统一Skill切换_2026-10-29.md) |
 | R458 | r56獨立工具包 | 159條目／158清單檔案，四包配置、獨立註冊、兩次渲染及完整YUV／PCM／PNG重播通過；首輪換行校驗失敗保留，未新增模型推理；[證據](docs/validation/evidence/ad-content-uniqueness-20261029-r1/formal-kit-r3/verification.json) |
+| R459 | CLI59譜面核心與事務 | 19專項、31入口、57選材、104語義分組分別通過；首輪設備欄位錯誤保留，修正後複驗；[證據與範圍](docs/validation/CLI59谱面合成_2026-10-29.md) |
+| R460 | C75實際原始碼音訊與成片 | 16秒5分軌、4種不同音效、完整3072000位元組PCM重合成與110592000位元組RGBA／6144000位元組Float32 PCM重播相同；無神經推理或聽審；[案例](docs/product/CASES.md#c75-source59-editable-score) |
+| R461 | CLI59交付前檢查邊界 | 控制19項1個PID標記空讀錯誤；原子發佈夾具原型4項通過，未替換正式測試；400項執行中，正式安裝／Skill仍58；舊手冊版本已同步 |
 
 ## 當前邊界與開發方向
 

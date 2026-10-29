@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "scope": "native-import-and-interface-only",
+  "music_generated": false,
+  "model_loaded": false,
+  "model_forwards": 0,
+  "model_weight_sha256_verified": false,
+  "commercial_backend_admitted": false,
+  "product_cli_integrated": false,
+  "service_started": false,
+  "shared_queue_touched": false,
+  "native_windows": true,
+  "virtual_environment": false,
+  "python_socket_connections_denied": true,
+  "model_license": "CC-BY-NC-4.0",
+  "license_sources": [
+    "https://huggingface.co/m-a-p/YuE2-3B/raw/main/LICENSE",
+    "https://huggingface.co/Comfy-Org/YuE2/raw/main/README.md"
+  ],
+  "python": "3.13.14",
+  "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+  "torch": "2.14.0+cu130",
+  "cuda": "13.0",
+  "device": "NVIDIA GeForce RTX 3060",
+  "checkpoint_bytes": 3960938800,
+  "checkpoint": "E:\\dev\\sandbox\\模型配乐\\models\\checkpoints\\yue2_3b_int8_convrot.safetensors",
+  "node_signatures": {
+    "YuE2GenerateMusic": "(clip, style, lyrics, seed, mode, max_duration, temperature, top_p, top_k, repetition_penalty, abc='', cfg_scale=None)",
+    "EmptyYuE2LatentAudio": "(seconds, batch_size)",
+    "VAEDecodeAudio": "(vae, samples) -> comfy_api.latest._io.NodeOutput"
+  },
+  "checkpoint_loader_signature": "(ckpt_path, output_vae=True, output_clip=True, output_clipvision=False, embedding_directory=None, output_model=True, model_options={}, te_model_options={}, disable_dynamic=False)",
+  "code_hashes": {
+    "comfy_extras/nodes_yue2.py": "4eeab7b1bf75dc1b78bfe104a84b4f960aa835b907629d0449bc238159540ac3",
+    "comfy_extras/nodes_audio.py": "37352d586a50845f1cb0375652583aa7c662f759298de0f904f56d107d709267",
+    "comfy/sd.py": "d6147b3710dc6c9f65da542a8ec81f50eec54c2826c798cd6f56fdf11ede9dcd",
+    "comfy/sample.py": "d19263c4aa14262bf6f2462ca0256c038396640ee3d88c9a4a5c0c2c219311ee",
+    "comfy/text_encoders/yue2.py": "909751cfeaaab80025a27c193108ac6b37b74b7f83723db6e01bd394116a0588"
+  }
+}

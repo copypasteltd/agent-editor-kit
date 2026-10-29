@@ -2,7 +2,7 @@
 
 <!-- community-current -->
 
-当前本机已更新到 **CLI 0.1.5 / alpha.4-local.3 / 离线图文检索 / GPU 配音与翻译 / 359 项资源 / 单一 Skill**。以下安装记录按其历史版本保留。 [当前离线交付与摘要](../product/COMMUNITY_LOCAL_DELIVERY.md) · [检索使用流程](../product/SEMANTIC_RETRIEVAL.md) · [当前 38 组差距](../product/GOAL_GAPS_20261025.md)
+当前本机已更新到 **CLI0.1.58 / alpha.4-local.56 / r56统一Skill工具包**，1入口／17内部模块／93文件。源码和安装版五组31／19／57／104／400分别通过，真实C盘入口CUDA完整PCM重放和独立工具包完整ACES音画重放分别通过。请先按[当前安装、摘要与使用命令](../validation/CLI58独立安装交付_2026-10-29.md)准备配套应用包，再按[统一Skill配置与注册](../validation/CLI58统一Skill切换_2026-10-29.md)操作；以下alpha.3安装记录按原版本保留，不能与CLI58混装。[当前离线交付](../product/COMMUNITY_LOCAL_DELIVERY.md) · [检索流程](../product/SEMANTIC_RETRIEVAL.md) · [完整38组差距](../product/GOAL_GAPS_20261025.md)
 
 <!-- /community-current -->
 

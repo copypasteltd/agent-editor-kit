@@ -1,0 +1,24 @@
+test_clipping_and_cancellation_remove_owned_outputs_and_restore_metadata (test_music_score.ScoreCliTests.test_clipping_and_cancellation_remove_owned_outputs_and_restore_metadata) ... ok
+test_compose_applies_audio_and_retains_unverified_rights (test_music_score.ScoreCliTests.test_compose_applies_audio_and_retains_unverified_rights) ... ok
+test_failure_after_asset_commit_rolls_back_project_and_rights (test_music_score.ScoreCliTests.test_failure_after_asset_commit_rolls_back_project_and_rights) ... ok
+test_four_effects_are_actual_editable_non_silent_audio (test_music_score.ScoreCliTests.test_four_effects_are_actual_editable_non_silent_audio) ... ok
+test_inspect_and_dry_run_leave_metadata_and_asset_tree_unchanged (test_music_score.ScoreCliTests.test_inspect_and_dry_run_leave_metadata_and_asset_tree_unchanged) ... ok
+test_invalid_target_precedes_synthesis_and_mutation (test_music_score.ScoreCliTests.test_invalid_target_precedes_synthesis_and_mutation) ... ok
+test_package_preserves_editable_score_stems_and_full_PCM_recomposition (test_music_score.ScoreCliTests.test_package_preserves_editable_score_stems_and_full_PCM_recomposition) ... ok
+test_A4_fundamental_from_independent_FFT (test_music_score.ScoreTests.test_A4_fundamental_from_independent_FFT) ... ok
+test_all_instruments_have_finite_non_silent_bounded_PCM (test_music_score.ScoreTests.test_all_instruments_have_finite_non_silent_bounded_PCM) ... ok
+test_explicit_limiter_records_overload_without_hard_clip (test_music_score.ScoreTests.test_explicit_limiter_records_overload_without_hard_clip) ... ok
+test_exported_stems_recombine_within_quantization_error (test_music_score.ScoreTests.test_exported_stems_recombine_within_quantization_error) ... ok
+test_noise_samples_independent_of_stream_chunk_size (test_music_score.ScoreTests.test_noise_samples_independent_of_stream_chunk_size) ... ok
+test_pan_extremes_produce_exact_silent_opposite_channel (test_music_score.ScoreTests.test_pan_extremes_produce_exact_silent_opposite_channel) ... ok
+test_quotas_reject_without_output (test_music_score.ScoreTests.test_quotas_reject_without_output) ... ok
+test_rational_beat_clock_matches_independent_fraction_oracle (test_music_score.ScoreTests.test_rational_beat_clock_matches_independent_fraction_oracle) ... ok
+test_reject_note_outside_score_and_subsample_events (test_music_score.ScoreTests.test_reject_note_outside_score_and_subsample_events) ... ok
+test_seed_changes_noise_but_not_pitched_tone (test_music_score.ScoreTests.test_seed_changes_noise_but_not_pitched_tone) ... ok
+test_strict_numeric_duplicate_and_unknown_field_rejection (test_music_score.ScoreTests.test_strict_numeric_duplicate_and_unknown_field_rejection) ... ok
+test_track_and_note_reordering_keeps_full_PCM_identity (test_music_score.ScoreTests.test_track_and_note_reordering_keeps_full_PCM_identity) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 355.526s
+
+OK

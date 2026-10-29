@@ -106,8 +106,22 @@ def add_parser(subs, leaf):
     verify.add_argument('--id', required=True)
     verify.add_argument('--pack', required=True)
 
-    music = subs.add_parser('music', help='本地 BGM 准备、语音混合和侧链闪避')
+    music = subs.add_parser('music', help='本地可编辑谱面合成、音效、BGM准备和侧链闪避')
     actions = music.add_subparsers(dest='action', required=True)
+    inspect_score = leaf(actions.add_parser('inspect-score', help='校验并规范化本地可编辑谱面，不生成文件'))
+    inspect_score.add_argument('--input', required=True)
+    compose = leaf(actions.add_parser('compose', help='用本地解析合成器生成谱面音频；不是神经文本生曲'))
+    compose.add_argument('--input', required=True)
+    effect = leaf(actions.add_parser('effect', help='生成可编辑的程序whoosh/riser/impact/chime音效'))
+    effect.add_argument('--preset', choices=['whoosh', 'riser', 'impact', 'chime'], required=True)
+    effect.add_argument('--duration-seconds', type=float, required=True)
+    effect.add_argument('--seed', type=int, default=0)
+    effect.add_argument('--pitch', type=int, default=60)
+    for parser in (compose, effect):
+        parser.add_argument('--project', required=True)
+        parser.add_argument('--new-asset-id', default=None)
+        parser.add_argument('--stems', action='store_true')
+        placement_parser(parser)
     prepare = leaf(actions.add_parser('prepare', help='裁切或显式循环、增益、淡入淡出并保留源记录'))
     prepare.add_argument('--asset-id', required=True)
     prepare.add_argument('--duration-seconds', type=float, required=True)
@@ -401,6 +415,30 @@ def command(args, envelope):
             path, manifest = community_models.verify_pack(args.pack, args.id)
             data = dict(id=args.id, path=str(path), verified=True, files=len(manifest['files']),
                         manifest_sha256=sha256_file(path / 'manifest.json'), network='disabled')
+    elif args.domain == 'music' and args.action in ['inspect-score', 'compose', 'effect']:
+        from . import music_score
+        if args.action == 'effect':
+            payload = music_score.effect_score(args.preset, args.duration_seconds, args.seed, args.pitch)
+        else:
+            require_local_reference(args.input, field='input')
+            path = Path(args.input).expanduser().resolve()
+            if not path.is_file() or path.stat().st_size > 1024*1024:
+                raise argument_error('Score requires a local UTF-8 JSON file of at most1MiB', 'input')
+            try:
+                payload = json.loads(path.read_text('utf-8-sig'))
+            except (ValueError, UnicodeError) as error:
+                raise argument_error('Invalid UTF-8 score JSON', 'input') from error
+        if args.action == 'inspect-score':
+            canonical, plan = music_score.prepare(payload)
+            data = dict(engine=music_score.ENGINE, canonical_score=canonical, frames=plan['frames'],
+                        duration_seconds=plan['frames']/music_score.RATE, notes=plan['notes'],
+                        device=dict(selected='cpu', backend='numpy-analytical'),
+                        neural_model=False, network='disabled')
+        else:
+            root, project = load_project(args.project)
+            data = music_score.generate(root, project, payload, new_id=args.new_asset_id,
+                                        stems=args.stems, placement=placement(args), dry_run=args.dry_run,
+                                        command='music.'+args.action)
     else:
         root, project = load_project(args.project)
         common = dict(output=args.output, new_id=args.new_asset_id, placement=placement(args), dry_run=args.dry_run)
@@ -423,4 +461,5 @@ def command(args, envelope):
 
 COMMAND_KEYS = [('materials', a) for a in ('list', 'inspect', 'verify', 'ingest')] + [
     ('voice', 'list'), ('voice', 'synthesize'), ('translate', 'text'), ('translate', 'subtitles'),
-    ('model-pack', 'list'), ('model-pack', 'verify'), ('music', 'prepare'), ('music', 'mix'), ('gpu', 'inspect')]
+    ('model-pack', 'list'), ('model-pack', 'verify'), ('music', 'prepare'), ('music', 'mix'),
+    ('music', 'inspect-score'), ('music', 'compose'), ('music', 'effect'), ('gpu', 'inspect')]

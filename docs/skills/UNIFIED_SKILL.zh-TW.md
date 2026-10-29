@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.58 / local56 / r56: one `$agent-ffmpeg-local-editor` entry,17 modules,93 files.** Source and independently installed31/19/57/104/400 groups passed separately. Staged and actual C-discovered CUDA denoising passed full PCM replay. The r56 kit independently passed extraction,four-pack configuration,isolated registration and complete ACES YUV/PCM/PNG replay without changing live discovery. No new model inference is claimed for that kit check.
+**CLI0.1.59 / local57 / r57: one `$agent-ffmpeg-local-editor` entry,17 modules,93 files.** Source and independently installed31/19/57/104/400 groups passed separately. Staged and actual C-discovered CUDA denoising passed full PCM replay. The r57 kit independently passed extraction,four-pack configuration,isolated registration and complete ACES YUV/PCM/PNG replay without changing live discovery. The kit also generated the actual score with complete3072000-byte PCM matching source;no new neural inference is claimed for that kit check.
 
-[Download r56 kit](agent-editor-kit-community-unified-skill-r56.zip) · [SHA-256](community-unified-skill-package-0.1.58-r56.json) · [Installation and use](../validation/CLI58独立安装交付_2026-10-29.md) · [Rollout proof](../validation/CLI58统一Skill切换_2026-10-29.md) · [Exact-content selection and C74 preview](../product/AD_CONTENT_UNIQUENESS.md)
+[Download r57 kit](agent-editor-kit-community-unified-skill-r57.zip) · [SHA-256](community-unified-skill-package-0.1.59-r57.json) · [Installation and use](../validation/CLI59独立安装交付_2026-10-29.md) · [Rollout proof](../validation/CLI59统一Skill切换_2026-10-29.md) · [Exact-content selection and C74 preview](../product/AD_CONTENT_UNIQUENESS.md)
 
-Pair this kit with the separate CLI58/local56 application bundle and existing model packs. It adds exact-SHA256 content deduplication,not perceptual duplicate detection. Same-host native Windows acceptance does not establish clean-host,natural-quality or full CapCut parity. Previous r55/runtime56 downloads remain immutable.
+Pair this kit with the separate CLI59/local57 application bundle and existing model packs. It adds editable analytical score synthesis and4 procedural effects;exact-SHA256 content deduplication remains,not perceptual duplicate detection. Same-host native Windows acceptance does not establish clean-host,natural-quality or full CapCut parity. Previous r55/runtime56 downloads remain immutable.
 
 <!-- /community-current -->
 

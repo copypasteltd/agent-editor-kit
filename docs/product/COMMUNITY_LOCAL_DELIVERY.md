@@ -1,5 +1,20 @@
 # 本机 GPU 扩展离线包与安装 / Native GPU extension delivery
 
+**当前正式本地版本为CLI0.1.59 / local57，单入口Skill为`$agent-ffmpeg-local-editor`，17内部模块／93文件。** 源码与安装31／19控制／57／104／400分别通过，另有配乐19专项；真实C盘入口的配乐完整PCM与实际CUDA完整PCM均通过。新配乐为CPU解析合成，不是神经音乐。全部38组原产品目标继续保留。
+
+应用ZIP：`local/agent-ffmpeg/v0.1.0-alpha.4-local.57/candidate-r1/bundle.zip`，305692864字节，SHA256 `d89e49ebbc996ac960db0cbe5852578d48ecc24032791042fe9dd65235ec9eef`；安装：同版本`final-r1/installed`。r57统一Skill工具包配套此CLI59/local57应用，四个既有模型包另备，旧r56及CLI58不覆盖。工具包独立验收状态以仓库README顶部和正式工具包收据为准。
+
+[CLI59安装文件与完整命令](../validation/CLI59独立安装交付_2026-10-29.md) · [实际注册切换与使用流程](../validation/CLI59统一Skill切换_2026-10-29.md) · [可编辑谱面／音效与C75](MUSIC_SCORE.md)
+
+English: The registered runtime is CLI59/local57, one entry/17 modules/93 files. Source and installed31/19-control/57/104/400 groups and separate19-score groups passed. Actual C-discovery music and CUDA full-PCM cases passed. Pair the r57 Skill with the matching application; model archives are separate. Music synthesis is analytical CPU,not neural text-to-music. Older delivery sections below are immutable history.
+
+繁體：正式入口已為CLI59/local57，維持單入口／17模組／93檔案。原始碼與安裝各相容分組及配樂專項通過，真實C盤入口配樂與CUDA完整PCM通過。r57工具包需配套CLI59應用，模型包另備；配樂為CPU解析合成，非神經生曲。以下舊版交付為歷史。
+
+本機先執行`powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1 version`，確認`0.1.59`。其餘建工程、權利登記、預檢、配樂、預覽、渲染及工程包流程見上述連結。
+
+<details>
+<summary>CLI58及更早版本交付歷史（完整保留）</summary>
+
 **当前正式本地入口为 CLI0.1.58 / local56**：仍为一个 `$agent-ffmpeg-local-editor`、17内部模块、93文件。源码与独立安装版各31／19／57／104／400五组分别通过；候选和真实C盘入口的DF3 CUDA及完整PCM工程重放也分别通过。该模型案例不代表其余模型或自然音质验收。
 
 应用包位于 `local/agent-ffmpeg/v0.1.0-alpha.4-local.56/candidate-r1/bundle.zip`，安装位于同版本 `final-r1/installed`。应用ZIP SHA-256为 `1a54301297080bc91cdc469179730585457431b0bb34755155a11b1084971834`。r56统一Skill工具包与此CLI58/local56配套，应用包和四个既有模型包另备；保留旧r55及其CLI56运行时。工具包独立解包／配置／注册／ACES完整音画重放的实际状态见[CLI58交付日志](../validation/CLI58统一Skill切换_2026-10-29.md)。
@@ -379,3 +394,5 @@ Retained GPU colour workflow: [parameters](GPU_GAMUT.md) · [C64](CASES.md#c64-i
 当前唯一注册入口仍名为 `$agent-ffmpeg-local-editor`，已绑定 CLI53/local51，1入口／17模块／92文件。原生ACES使用CPU OCIO2.6.0；原有GPU配音／翻译配置和四个模型包保持，不能把ACES描述成GPU变换。源码与安装各自通过18项ACES、46项测量／Schema、373项兼容性；候选kit已独立解包、配置、E盘临时注册并核对完整音画。正式r54最终包的独立核验以其版本化摘要记录为准。旧local50/r53与公开alpha.3保留，不覆盖。
 
 [本地CLI53发行说明与最小使用流程](../releases/CLI_0.1.53_LOCAL.md) · [ACES参数与信号语义](ACES_TIMELINE.md) · [C66完整音画案例](CASES.md#c66-installed-aces-timeline)
+
+</details>

@@ -1,6 +1,9 @@
 # Agent可编辑谱面、原创程序配乐与音效
 
-当前范围为**开发源码及独立安装候选CLI0.1.59**。正式默认安装及 `$agent-ffmpeg-local-editor` 仍CLI58/local56/r56；候选59已通过原生安装、配乐专项、完整音画重放及实际CUDA，安装400与正式切换尚未完成，不会静默回落源码。这里实现的是谱面驱动的解析合成器，不是神经文本生曲，也不将其视作完整AI配乐目标已完成。[直接使用已安装候选59](../validation/CLI59独立安装交付_2026-10-29.md)。
+**当前已正式安装并注册CLI59/local57。** 真实C盘Skill入口已完成谱面／音效生成与完整PCM核验；安装400项亦通过。[当前使用流程](../validation/CLI59统一Skill切换_2026-10-29.md)。下方候选等待描述保留为阶段历史。
+
+
+当前版本为**已正式安装及注册CLI0.1.59/local57/r57**。原生安装、配乐专项、400安装回归、完整音画重放及实际C盘入口均已通过；统一Skill不回落源码。这里实现的是谱面驱动的解析合成器，不是神经文本生曲，也不将其视作完整AI配乐目标已完成。[直接使用已安装候选59](../validation/CLI59独立安装交付_2026-10-29.md)。
 
 ## 已实现的接口与使用顺序
 
@@ -13,7 +16,7 @@
 | M05 | `music effect --preset whoosh/riser/impact/chime --duration-seconds 2` | 使用解析噪声、振荡器与包络生成4类可编辑电子音效，非环境录音拟真模型 |
 | M06 | `convert export/import --target-format package` | 工程包保留谱面、音频、分轨、来源与权利；可在导入后重新合成 |
 
-以下明确调用开发源码，需现有原生Python、NumPy、Pillow、jsonschema、FFmpeg/ffprobe。正式Skill不能执行CLI59新命令；不需要新虚拟环境、模型下载或音乐服务。
+以下明确调用开发源码，需现有原生Python、NumPy、Pillow、jsonschema、FFmpeg/ffprobe。正式Skill59也支持同一命令，生产使用顶部统一Skill入口；不需要新虚拟环境、模型下载或音乐服务。
 
 ```powershell
 $python = 'C:/Python313/python.exe'

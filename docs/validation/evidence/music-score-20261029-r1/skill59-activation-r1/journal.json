@@ -1,0 +1,87 @@
+{
+  "status": "committed",
+  "cli_version": "0.1.59",
+  "gates": {
+    "installation": {
+      "path": "docs/validation/evidence/music-score-20261029-r1/installation-candidate-r1/verification.json",
+      "sha256": "e5007917d8693fafd13ff922a0984f2d1f17b888e92696b2d6cfd20b26c112d6"
+    },
+    "candidate": {
+      "path": "docs/validation/evidence/music-score-20261029-r1/skill59-draft-entry-r1/verification.json",
+      "sha256": "84459716047dd57e909565eaab03f4001bbc9bd8f78dae9bdb760e3b8970bf27"
+    },
+    "staged_gpu": {
+      "path": "docs/validation/evidence/music-score-20261029-r1/staged59-gpu-r1/verification.json",
+      "sha256": "cb5561d41b5a5c2893b0b418bb6a268d5cbe19a3decb711887e638e4bea359a6"
+    },
+    "source_gpu": {
+      "path": "docs/validation/evidence/music-score-20261029-r1/source59-gpu-r1/verification.json",
+      "sha256": "636f0d458a4f16370abc50418bac2386ad7e7de88e91203f6fac0c23eabf045a"
+    },
+    "installed_gpu": {
+      "path": "docs/validation/evidence/music-score-20261029-r1/installed59-gpu-r1/verification.json",
+      "sha256": "1f628047849891b40101ef158ef673c0e0c8f6643226b95a8cfb96c5901be584"
+    },
+    "source_score": {
+      "path": "docs/validation/evidence/music-score-20261029-r1/actual-case-r1/verification.json",
+      "sha256": "1f304262771297a3a2d006875e52143619a25063c015038b3a7fe1c024b3dc4b"
+    },
+    "content": {
+      "path": "docs/validation/evidence/music-score-20261029-r1/installed59-score-case-r2/verification.json",
+      "sha256": "3fd03ec5e533c6b5bf3ac00f16367b10e75848c7ecb0f35cf0676cc77f80e504"
+    },
+    "source_score_tests": {
+      "path": "docs/validation/evidence/music-score-20261029-r1/contracts-r3/verification.json",
+      "sha256": "ab9155752d95df5db6571acfea6528d9d6c895eb73a512ec49c9990fc2702626"
+    },
+    "installed_score_tests": {
+      "path": "docs/validation/evidence/music-score-20261029-r1/installed59-score-r1/verification.json",
+      "sha256": "39ebbe749f3c7d96671f84fbd0b8ab5b9f6285bbb32bba21422a68354f6b39fc"
+    },
+    "fixture_audit": {
+      "path": "docs/validation/evidence/music-score-20261029-r1/post-control-audit-r2/verification.json",
+      "sha256": "30dc6cea9426308e562de558f1694759041d39632cb7e876ca2e7f4e5ec5336d"
+    },
+    "source59_bootstrap": {
+      "path": "docs/validation/evidence/music-score-20261029-r1/source59-bootstrap-r1/verification.json",
+      "sha256": "e6fff33b645b64d8dd690db23e001c479f39dfa44cb22dbc9ef7a6b3991e4ca2"
+    },
+    "source59_control": {
+      "path": "docs/validation/evidence/music-score-20261029-r1/source59-control-r2/verification.json",
+      "sha256": "d6ea7b310e5af3ee8d4c7bea66f8a3cae18c08bec3ac7a21c513a5f40e6e0c0b"
+    },
+    "source59_selection": {
+      "path": "docs/validation/evidence/music-score-20261029-r1/source59-selection-r1/verification.json",
+      "sha256": "d64c5779fa1fff2b40d55d48abda7de218642df0b3ebd2f7844a8ff16d075a51"
+    },
+    "source59_semantic": {
+      "path": "docs/validation/evidence/music-score-20261029-r1/source59-semantic-r1/verification.json",
+      "sha256": "545d136eff2e45e80726146c47afbd6b76fbc4c912eba99190a5f0a2cf0a4a0c"
+    },
+    "source59_contracts": {
+      "path": "docs/validation/evidence/music-score-20261029-r1/source59-contracts-r1/verification.json",
+      "sha256": "d82218ce89f70957b9ef7ffce08d092daf3a0d3b9119efe0eb9a32772ed5a961"
+    },
+    "installed59_bootstrap": {
+      "path": "docs/validation/evidence/music-score-20261029-r1/installed59-bootstrap-r1/verification.json",
+      "sha256": "4895a5695baf32559b32368104db2e60288c1427a520ef627e0be6597e334b64"
+    },
+    "installed59_control": {
+      "path": "docs/validation/evidence/music-score-20261029-r1/installed59-control-r1/verification.json",
+      "sha256": "8625ce249fb073c83f239bd5d80aef1d9a954076500e4b9ad6799802bcc682e2"
+    },
+    "installed59_selection": {
+      "path": "docs/validation/evidence/music-score-20261029-r1/installed59-selection-r1/verification.json",
+      "sha256": "2f4ee17929f960c05bb129209017de95de6a18bf990cd62fef0fade0fd18c4c8"
+    },
+    "installed59_semantic": {
+      "path": "docs/validation/evidence/music-score-20261029-r1/installed59-semantic-r1/verification.json",
+      "sha256": "e772b4ee9cad78b334cb5e1332ebc7dbcb425ddb1da2ceeb277264027c82b472"
+    },
+    "installed59_contracts": {
+      "path": "docs/validation/evidence/music-score-20261029-r1/installed59-contracts-r1/verification.json",
+      "sha256": "e309bc85f596a37eb7d6cb12f7e84d88fa964e8b7d890c7679d4525a9da7edf6"
+    }
+  },
+  "crash_recovery": "restore previous-skill,previous-namespace.json,previous-runtime.json;backup retained on E"
+}

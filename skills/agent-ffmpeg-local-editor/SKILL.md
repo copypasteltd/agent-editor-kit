@@ -7,7 +7,7 @@ description: "Edit and generate local videos with agent editor kit: multitrack e
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.56` / CLI `0.1.58`.
+The current local runtime is `v0.1.0-alpha.4-local.57` / CLI `0.1.59`.
 For calibrated visual selection into editable ads, read
 [semantic ad selection](references/ad-selection.md). Inspect actual previews
 and per-shot receipts before client approval. CLI58 defaults to exact-source
@@ -211,7 +211,7 @@ media. Add other modules when the request needs them. For example:
 - Native window/screen/camera/microphone capture: read
   [native-capture.md](references/native-capture.md), select an explicit source,
   record for a finite duration, then edit the returned asset ID normally.
-- Voice, translation or music: read [community-materials.md](references/community-materials.md).
+- Voice, translation, BGM or editable score/SFX synthesis: read [community-materials.md](references/community-materials.md).
   The configured `auto` device prefers GPU for speech/translation, reports the
   actual provider and explicitly records CPU fallback. Preserve source stems.
 - Campaign report: campaign-analytics; use its findings to propose an edit brief.

@@ -1,5 +1,8 @@
 # Community materials, voice, translation, music and GPU workflow
 
+Current registered runtime / 当前正式入口 / 目前正式入口：**CLI0.1.59 / local57**，r57配套单入口Skill。新增解析谱面配乐与4类程序音效；[完整流程、实际C盘入口及边界](../validation/CLI59统一Skill切换_2026-10-29.md)。以下原版素材／配音／翻译基线及CLI58段落保留为历史，不代表本轮重新推理所有任务。
+
+
 The current runtime is **CLI0.1.58 / `v0.1.0-alpha.4-local.56` / r56 kit**, paired with the [matching application and unified Skill workflow](COMMUNITY_LOCAL_DELIVERY.md). This page preserves materials/voice/translation/GPU evidence from **CLI0.1.3 / local.1**. Four model packs were reconfigured and verified this round;their inference tasks were not all rerun. CLI58 actual DF3 CUDA,exact-content selection,ACES and installation checks are recorded separately in the [delivery evidence](../validation/CLI58统一Skill切换_2026-10-29.md). Public alpha.3/CLI0.1.2 attachments remain unchanged and lack these newer local commands. Invoke one `$agent-ffmpeg-local-editor` with17 internal modules. The copy of this manual inside r56 is a historical packaging snapshot;use its COMMUNITY_LOCAL_DELIVERY and the current repository entry for version pairing.
 
 | ID | Module | Implemented | Limits |

@@ -1,5 +1,29 @@
 # agent editor kit
 
+**Current local version: CLI0.1.59 / local57 / r57 unified Skill kit.** One `$agent-ffmpeg-local-editor` entry,17 internal modules,93 files. Source and installed 31/19/57/104/400 groups passed separately. Staged and actual C-discovered CUDA denoising passed complete1124160-byte PCM package replay. Full CapCut parity remains incomplete.
+
+[简体中文](README.md) · [繁體中文](README.zh-TW.md) · [r57 Skill ZIP](docs/skills/agent-editor-kit-community-unified-skill-r57.zip) · [Delivery and workflow](docs/validation/CLI59统一Skill切换_2026-10-29.md)
+
+```powershell
+$skill = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor'
+& "$skill/scripts/run.ps1" version
+& "$skill/scripts/run.ps1" capabilities
+```
+
+Confirm version `0.1.59`;follow the [matching application installation](docs/validation/CLI59独立安装交付_2026-10-29.md),register media and rights,create a project,select and preview,render,and export an editable package. [Exact-content selection](docs/product/AD_CONTENT_UNIQUENESS.md) explains SHA256 deduplication,default inheritance,reuse and perceptual-duplicate limits.
+
+The r57 kit independently passed extraction into a Chinese/space path,four-model-pack configuration,isolated registration,and actual re-rendering. Complete589824-byte YUV and307200-byte PCM match the reference and project replay;PNG bytes also match. This kit check adds no model inference and is not natural-quality or clean-host acceptance.
+
+![Actual installed59 score and measured waveform](docs/assets/music-score59-installed-20261029-r1/actual.gif)
+
+The detailed feature/service modules,500-filter previews,Skill modules and cases remain below;expand the preserved development history for earlier stages.
+
+New editable analytical score synthesis:8 instruments,4 electronic effects,actual5-stem case and full PCM recomposition. Registered Skill59 generated it;this is not neural text-to-music. Inspect/dry-run,compose,audition,place,render and export an editable package. [JSON and commands](docs/product/MUSIC_SCORE.md) · [C75 actual WAV/MP4/GIF and project](docs/product/CASES.md#c75-source59-editable-score). The independently registered r57 kit also generated all3072000 PCM bytes matching source.
+
+<!-- aek-history-summary -->
+<details>
+<summary>Complete development history — all original content retained</summary>
+
 **CLI59 installed candidate passed complete music/AV replay**:all16s/5-track PCM,480 frames and decoded soundtrack match source and portable replay. Actual CUDA denoising also matches complete source PCM across4 forwards. The unregistered single-entry Skill generated music through its real PowerShell entry. Installed400 continues;registered Skill remains CLI58. [Usage and limits](docs/validation/CLI59独立安装交付_2026-10-29.md).
 
 
@@ -33,9 +57,6 @@ The r56 kit independently passed extraction into a Chinese/space path,four-model
 
 The detailed feature/service modules,500-filter previews,Skill modules and cases remain below;expand the preserved development history for earlier stages.
 
-<!-- aek-history-summary -->
-<details>
-<summary>Complete development history — all original content retained</summary>
 
 CLI58/local56 is independently installed with1705 exact payload files,281 modules and8 native resources. Installed31/19/57/104 groups passed separately. Actual CUDA PCM matches source;all120 content-case RGBA frames match source and package replay. Installed400 is running;the live Skill remains56/r55. [Local package / usage](docs/validation/CLI58独立安装交付_2026-10-29.md)
 
@@ -1195,7 +1216,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F80 | Native-worker dependency isolation | Temporarily pin the owned application,restore the model runtime dependency search order,reject preloaded foreign packages,and preserve version/path/hash checks. | Native ASR/CTC/matting/segmentation/tracking/inpainting/generation/lip-sync/interpolation/denoising/separation entries | Source CLI57 passed31 subprocess regressions;new installed/model acceptance remains separate;live Skill stays56. |
 | F81 | Exact-content selection deduplication | Canonical SHA256 groups with global assignment; explicit ID-only or reuse options. | ad select; byte-identical assets under different IDs; not perceptual deduplication | Source58 passed57 selection/storyboard tests; [rules and evidence](docs/product/AD_CONTENT_UNIQUENESS.md); installed58 remains unaccepted. |
 | F82 | Synchronous owned-process cleanup | Retain and wait owned process handles; independent jobs remain unaffected; preserve outer-budget exceptions. | Windows model/tool children and interpolation preprocessing deadlines | Source58 passed19 control and3 targeted timeout tests separately; [behavior and evidence](docs/product/OWNED_PROCESS_CLEANUP.md). |
-| F83 | Editable score and procedural effects(source59) | Beat/MIDI score and8 analytical instruments →48kHz stereo WAV,stems and editable package;4 electronic effects. | `music inspect-score/compose/effect` | [Implementation,workflow and limits](docs/product/MUSIC_SCORE.md);not neural text-to-music,not yet in registered CLI58. |
+| F83 | Editable score and procedural effects(CLI59) | Beat/MIDI score and8 analytical instruments →48kHz stereo WAV,stems and editable package;4 electronic effects. | `music inspect-score/compose/effect` | [Implementation,workflow and limits](docs/product/MUSIC_SCORE.md);not neural text-to-music,available in registered CLI59. |
 
 ## Supported service modules and dependencies
 
@@ -1991,6 +2012,9 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R463 | C75 installed full music replay | Retained r1 harness-variable failure;r2 fully rerun passed;all3072000 original PCM/110592000 RGBA/6144000 decoded PCM bytes match source and portable replay;no listening acceptance |
 | R464 | Actual source/installed CLI59 CUDA |4 DF3 forwards each,complete1124160-byte PCM matches source and replay;12.25dB controlled-noise MSE improvement,not natural quality;source report count corrected by separate audit |
 | R465 | Single-entry Skill59 candidate |1 entry/17 modules/93 files;static validation and actual PowerShell score,5 stems,effect,readonly preflight passed;complete PCM matches source;unregistered,installed400 pending |
+| R466 | CLI59 installed400 terminal | All400 passed with zero failures/errors/skips;282 source/installed modules and tests frozen;[proof](docs/validation/evidence/music-score-20261029-r1/installed58-contracts-r1/verification.json) |
+| R467 | Actual unified CLI59 activation | Staged and actual C-discovered CUDA each ran4 forwards;full PCM matches source and project replay;one entry/17 modules/93 files,old backups retained;[workflow](docs/validation/CLI59统一Skill切换_2026-10-29.md) |
+| R468 | Independent r57 kit | 160 entries/159 inventory files;four-pack configuration,isolated registration,two renders and full YUV/PCM/PNG replay passed;initial newline-check failure retained,no new model inference;[proof](docs/validation/evidence/music-score-20261029-r1/formal-kit-r1/verification.json) |
 
 ## Current limits and development direction
 

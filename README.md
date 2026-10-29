@@ -1,5 +1,29 @@
 # agent editor kit
 
+**当前本地版本：CLI0.1.59 / local57 / r57统一Skill工具包。** 唯一入口 `$agent-ffmpeg-local-editor`，17内部模块、93文件。源码与安装版各31／19／57／104／400五组分别通过；候选及真实C盘入口的实际CUDA降噪、完整1124160字节PCM工程重放分别通过。完整剪映等价仍未完成。
+
+[繁體中文](README.zh-TW.md) · [English](README.en.md) · [r57 Skill ZIP](docs/skills/agent-editor-kit-community-unified-skill-r57.zip) · [完整交付与流程](docs/validation/CLI59统一Skill切换_2026-10-29.md) · [500滤镜母图预览](docs/assets/looks-n002-20261024-r1/index.html)
+
+```powershell
+$skill = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor'
+& "$skill/scripts/run.ps1" version
+& "$skill/scripts/run.ps1" capabilities
+```
+
+确认版本为 `0.1.59`；按[安装使用流程](docs/validation/CLI59独立安装交付_2026-10-29.md)准备匹配应用包及原生依赖，再登记素材与权利、建立工程、执行选材与预览、渲染并导出可编辑工程包。`unique_content`默认按精确SHA256去重；[选材规则与实际案例](docs/product/AD_CONTENT_UNIQUENESS.md)说明继承、复用、查询分配及感知重复边界。
+
+r57已在独立中文／空格目录解包、配置四个模型包、独立注册并实际重渲染；完整589824字节YUV、307200字节PCM与参考及工程包重放相同，PNG也逐字节相同。此工具包验收没有新增模型推理，不代替自然视听质量或干净机器验收。
+
+![Actual installed59 score and measured waveform](docs/assets/music-score59-installed-20261029-r1/actual.gif)
+
+母图滤镜、功能／服务模块、Skill内部模块和完整案例说明均保留在下方；完整开发历史可展开查看。
+
+新增可编辑谱面解析合成：8类音色、4类电子音效、5分轨实际案例与完整PCM重合成。正式Skill59已真实生成；不是神经文本生曲。先检查谱面／dry-run，再生成、试听、挂接、渲染及导出工程包。[完整JSON与命令](docs/product/MUSIC_SCORE.md) · [C75真实WAV／MP4／GIF及可编辑工程](docs/product/CASES.md#c75-source59-editable-score)。独立r57工具包也通过实际配乐生成，3072000字节PCM与源码相同。
+
+<!-- aek-history-summary -->
+<details>
+<summary>完整开发历史（保留全部原文，点击展开）</summary>
+
 **CLI59安装候选完整音画复核通过**：16秒／5分轨的全部PCM、480帧画面及成片音频与源码和工程包重放一致；实际CUDA降噪4次前向的完整PCM也一致。单入口Skill候选已通过真实PowerShell生成配乐。安装400继续，正式注册仍CLI58。[安装版流程及边界](docs/validation/CLI59独立安装交付_2026-10-29.md)。
 
 
@@ -33,9 +57,6 @@ r56已在独立中文／空格目录解包、配置四个模型包、独立注�
 
 母图滤镜、功能／服务模块、Skill内部模块和完整案例说明均保留在下方；完整开发历史可展开查看。
 
-<!-- aek-history-summary -->
-<details>
-<summary>完整开发历史（保留全部原文，点击展开）</summary>
 
 CLI58／local56独立候选已原生安装：1705载荷、281模块及8原生资源一致；安装31／19／57／104分组分别通过。实际CUDA完整PCM与源码一致；去重成片120帧完整RGBA与源码及工程重放一致。安装400项继续运行，正式Skill仍56／r55。 [Local package / usage](docs/validation/CLI58独立安装交付_2026-10-29.md)
 
@@ -1195,7 +1216,7 @@ flowchart LR
 | F80 | 15类原生工作进程依赖隔离 | 临时固定所属应用包后恢复模型Python依赖搜索顺序，拒绝预加载外部同名包，保留原版本／路径／摘要校验。 | 原生ASR／CTC／分割／抠像／跟踪／修复／生成／口型／补帧／降噪／分离等入口 | CLI57源码31项子进程回归通过；安装和实际模型另验，正式Skill仍CLI56。 |
 | F81 | 精确内容去重选材 | 规范SHA256内容分组、全局联合分配，支持显式ID去重或复用。 | ad select；不同ID相同文件；非感知去重 | 源码58选材／分镜57项通过；[规则与证据](docs/product/AD_CONTENT_UNIQUENESS.md)，58安装另验。 |
 | F82 | 自有原生进程同步回收 | 持有自有成员句柄并等待退出，独立Job互不影响，保留外层预算异常。 | Windows模型／工具子进程及补帧预处理超时 | 源码58控制19项、超时3项分别通过；[行为与证据](docs/product/OWNED_PROCESS_CLEANUP.md)。 |
-| F83 | 可编辑谱面与程序音效（源码59） | 谱面拍点／MIDI音高／8解析乐器 → 48kHz双声道WAV、分轨和可编辑工程；4种电子音效。 | `music inspect-score/compose/effect` | [实际内容、命令、配器与限制](docs/product/MUSIC_SCORE.md)；不是神经生曲，正式Skill58暂不支持。 |
+| F83 | 可编辑谱面与程序音效（正式CLI59） | 谱面拍点／MIDI音高／8解析乐器 → 48kHz双声道WAV、分轨和可编辑工程；4种电子音效。 | `music inspect-score/compose/effect` | [实际内容、命令、配器与限制](docs/product/MUSIC_SCORE.md)；不是神经生曲，正式Skill59已支持。 |
 
 ## 支持的服务模块与依赖
 
@@ -1989,6 +2010,9 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R463 | C75安装版完整配乐重放 | r1验收脚本变量冲突失败保留，修复后r2完整重做；3072000字节原PCM、110592000字节RGBA、6144000字节成片PCM与源码和工程重放相同；不计听审 |
 | R464 | CLI59源码及安装实际CUDA | 各4次DF3前向、完整1124160字节PCM相同并完成包重放；12.25dB受控噪声MSE改善，不计自然质量；源收据旧模块计数字段另有更正审计 |
 | R465 | 单入口Skill59候选 | 1入口／17模块／93文件，静态验证及真实PowerShell配乐、5分轨、音效和只读预检通过；完整PCM与源码相同；尚未正式注册，安装400继续 |
+| R466 | CLI59安装400项终态 | 400通过，零失败／错误／跳过，281源码与安装模块及测试冻结一致；[证据](docs/validation/evidence/music-score-20261029-r1/installed58-contracts-r1/verification.json) |
+| R467 | CLI59统一Skill实际切换 | 候选及真实C盘入口CUDA分别4次前向；完整PCM与源码及工程重放相同，1入口／17模块／93文件，旧版备份保留；[流程](docs/validation/CLI59统一Skill切换_2026-10-29.md) |
+| R468 | r57独立工具包 | 160条目／159清单文件，四包配置、独立注册、两次渲染及完整YUV／PCM／PNG重放通过；首轮换行校验失败保留，无新增模型推理；[证据](docs/validation/evidence/music-score-20261029-r1/formal-kit-r1/verification.json) |
 
 ## 当前边界与开发方向
 

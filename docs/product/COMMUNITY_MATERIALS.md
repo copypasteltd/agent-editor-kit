@@ -1,5 +1,8 @@
 # 开源素材、配音、翻译、配乐与 GPU 使用手册
 
+Current registered runtime / 当前正式入口 / 目前正式入口：**CLI0.1.59 / local57**，r57配套单入口Skill。新增解析谱面配乐与4类程序音效；[完整流程、实际C盘入口及边界](../validation/CLI59统一Skill切换_2026-10-29.md)。以下原版素材／配音／翻译基线及CLI58段落保留为历史，不代表本轮重新推理所有任务。
+
+
 当前运行版本为 **CLI0.1.58 / `v0.1.0-alpha.4-local.56` / r56 kit**，使用[匹配的本地应用包及统一Skill流程](COMMUNITY_LOCAL_DELIVERY.md)。本页素材／配音／翻译／GPU专项实测基线仍为 **CLI0.1.3 / local.1**，本轮四个模型包仅重新配置校验，没有重新推理全部这些任务；CLI58实际DF3 CUDA、精确去重、ACES及安装回归分别见[交付证据](../validation/CLI58统一Skill切换_2026-10-29.md)。公开alpha.3 / CLI0.1.2旧附件保持，不含本地全部新命令。仍只注册 `$agent-ffmpeg-local-editor`，17内部模块。r56压缩包内本手册是打包时的历史快照，当前版本及配套以包内COMMUNITY_LOCAL_DELIVERY和本仓库最新入口为准。
 
 ## 能力与交付层级

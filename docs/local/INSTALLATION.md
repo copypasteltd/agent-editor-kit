@@ -2,7 +2,11 @@
 
 <!-- community-current -->
 
-当前本机已更新到 **CLI0.1.58 / alpha.4-local.56 / r56统一Skill工具包**，1入口／17内部模块／93文件。源码和安装版五组31／19／57／104／400分别通过，真实C盘入口CUDA完整PCM重放和独立工具包完整ACES音画重放分别通过。请先按[当前安装、摘要与使用命令](../validation/CLI58独立安装交付_2026-10-29.md)准备配套应用包，再按[统一Skill配置与注册](../validation/CLI58统一Skill切换_2026-10-29.md)操作；以下alpha.3安装记录按原版本保留，不能与CLI58混装。[当前离线交付](../product/COMMUNITY_LOCAL_DELIVERY.md) · [检索流程](../product/SEMANTIC_RETRIEVAL.md) · [完整38组差距](../product/GOAL_GAPS_20261025.md)
+**CLI0.1.59 / local57 / r57 · 1 Skill / 17 internal modules / 93 files.**
+
+[Verified r57 kit](../skills/agent-editor-kit-community-unified-skill-r57.zip) · [SHA256 / inventory](../skills/community-unified-skill-package-0.1.59-r57.json) · [当前注册、安装和完整使用流程](../validation/CLI59统一Skill切换_2026-10-29.md)
+
+正式入口`$agent-ffmpeg-local-editor`固定调用已安装CLI59，不回落源码。8类解析音色、4类程序音效、分轨及可编辑谱面已通过实际C盘入口完整PCM核验；源码与安装31／19控制／57／104／400和独立配乐19分别通过。独立r57解包／四包配置／注册后的实际配乐及完整ACES音画重放亦通过。它不是神经音乐；GPU降噪不等于GPU生曲，四包配置不等于全部配音／翻译重新推理，完整38组目标仍开放。按原K01–K17路由，保留500滤镜母图预览。
 
 <!-- /community-current -->
 

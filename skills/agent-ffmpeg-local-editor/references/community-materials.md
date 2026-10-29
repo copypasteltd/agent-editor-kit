@@ -1,7 +1,7 @@
 # Community voice, translation, music and GPU
 
 Read this reference for narration, bilingual subtitles, BGM, SFX or fonts. These
-commands require the current installed CLI 0.1.3; alpha.3 public archives do not
+older commands require CLI 0.1.3 or newer; score synthesis requires CLI0.1.59. Alpha.3 public archives do not
 provide them. Use the common launcher from SKILL.md and inspect current help.
 
 ## Choose actual local resources
@@ -91,3 +91,49 @@ The base application and media remain separate from optional model packs.
 Inspect actual WAV/PCM and encoded video. Automatic non-silence/decode checks,
 still inspection, playback, listening and translation acceptance are separate.
 The current extension has not achieved complete CapCut parity.
+
+## Editable original scores and procedural effects (CLI0.1.59)
+
+Use `music inspect-score --input score.json` before `music compose --project
+PROJECT --input score.json --new-asset-id song --stems --apply --track-id
+track_audio_1`. Inspect with `--dry-run` first when placement is uncertain.
+The input format is `agent-music-score-v1`: tempo_bpm, duration_beats, seed,
+master_gain_db, limiter and tracks. Each track has id, instrument, gain_db,
+pan and notes; each note has id, start_beat, duration_beats, MIDI pitch and
+velocity. Supported instruments are sine/pluck/bell/pad/kick/snare/hihat/sweep.
+
+Example minimal score:
+```json
+{"format":"agent-music-score-v1","tempo_bpm":120,"duration_beats":8,
+ "seed":42,"master_gain_db":-6,"limiter":"none","tracks":[
+ {"id":"lead","instrument":"pluck","gain_db":-12,"pan":0,
+  "notes":[{"id":"n1","start_beat":0,"duration_beats":2,"pitch":62,"velocity":0.7}]}]}
+```
+
+For editable electronic SFX, use `music effect --project PROJECT --preset
+whoosh --duration-seconds 2 --new-asset-id whoosh`. Other presets: riser,
+impact and chime. Save each revision under a new asset ID. Do not overwrite
+an accepted audition. The source score, master, optional pre-master stems
+and provenance live together under `assets/music-scores/ASSET_ID/` and
+travel in portable project packages. Modify the score and recompose to edit.
+
+This is 48kHz stereo analytical CPU synthesis, not a neural text-to-music
+model. The agent must author notes and structure; a prose prompt is not
+valid score input. CPU is the declared backend, with zero model forwards.
+Do not start YuE2, download weights, or promise GPU music inference for this
+command. Explicit tanh limiting is optional; no implicit normalization.
+Clipping under limiter:none is rejected. Limits include600seconds,16tracks,
+2048notes,1800 accumulated note-seconds and512MiB output PCM.
+
+Present the actual WAV and distinguish it from a waveform/GIF diagnostic.
+Listen/ask for client selection before claiming creative approval. Product
+outputs default to unverified/internal rights; never infer commercial rights
+from procedurally generated audio. The original C75 fixture has an explicit
+CC0 source notice; that notice does not automatically license user inputs.
+No neural generation, automatic semantic matching, structural rewriting or
+seamless-loop repair is implemented by these commands.
+
+Full schema, quotas and original16-second/5-track audition:
+https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/MUSIC_SCORE.md
+Actual source WAV, MP4, editable score/package and GIF:
+https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/CASES.md#c75-source59-editable-score

@@ -1,6 +1,6 @@
 # 原创配乐后端的产品接入边界
 
-G25仍未关闭：开发源码CLI59已新增[可编辑谱面解析合成内核](MUSIC_SCORE.md)，支持8类音色、4类程序音效及分轨。它是CPU解析合成，不是神经文本生曲；正式CLI58及已注册Skill尚不包含这些新命令。本机独立YuE2音乐Skill也不代表产品已集成神经音乐生成核心。
+G25仍未关闭：正式CLI59已新增[可编辑谱面解析合成内核](MUSIC_SCORE.md)，支持8类音色、4类程序音效及分轨。它是CPU解析合成，不是神经文本生曲；正式CLI59及已注册统一Skill现已包含这些新命令。本机独立YuE2音乐Skill也不代表产品已集成神经音乐生成核心。
 
 2026-10-29检查原始发布方的[YuE2-3B权重许可](https://huggingface.co/m-a-p/YuE2-3B/raw/main/LICENSE)及[Comfy-Org重打包模型卡](https://huggingface.co/Comfy-Org/YuE2/raw/main/README.md)，两者均标明CC BY-NC 4.0。不能将其列为默认可商用广告配乐后端；开放下载、量化或可由CLI调用不改变该许可。未来若提供可选适用用途的适配器，必须与默认广告工作流区分，保留明确来源和许可。
 

@@ -2065,6 +2065,9 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R507 | CLI63 source lip transport | 口型協議、真實FFmpeg/合成worker輸送、逾時/取消/回滾34項通過，零失敗/錯誤/跳過且凍結一致。406合同與本版本真實MuseTalk/DF3 CUDA另行執行；未宣稱模型或新安裝/Skill已通過。[證據](docs/validation/CLI63原生进程清理_2026-10-29.md#已完成的消费链回归) |
 | R508 | CLI63 gated delivery | 補齊local61建置/安裝驗收/單一Skill暫存與平行觀察控制器。四項缺材料呼叫實際拒絕；真實子程序模擬單任務失敗約5.074秒即停止後續交付，其餘任務仍存活，95正式檔案不變。真實完整交付仍執行中，未建置或註冊。[流程與證據](docs/validation/CLI63候选交付门禁_2026-10-29.md) |
 | R509 | CLI63 source selection | 選擇/廣告分鏡57項通過，零失敗/錯誤/跳過，283應用模組/192測試檔案凍結一致。僅原始碼回歸；真實模型、安裝版及獨立Agent自主選材另驗。[證據](docs/validation/evidence/job-enumeration-20261029-r1/source63-selection-r1/verification.json) |
+| R510 | CLI63 source semantic | 語義索引/決策/任務/工程包/升級104項通過，零失敗/錯誤/跳過，283應用與192測試檔案凍結一致。原始碼回歸不替代真實語義模型或獨立Agent驗收。[證據](docs/validation/evidence/job-enumeration-20261029-r1/source63-semantic-r1/verification.json) |
+| R511 | CLI63 actual CPU loop | 原創片段13.37→13.32秒/50ms重疊，主體PCM不變；完整2557440位元組PCM三次重複及工程包配方重做一致。CPU DSP、無神經模型；未驗收人類聽審、true peak或自然無縫。[實際案例](docs/validation/evidence/job-enumeration-20261029-r1/actual-case-r1/verification.json) |
+| R512 | CLI63 actual MuseTalk CUDA | RTX3060實際133幀/67批，無CPU回退；母版/渲染全量RGBA與PCM、alpha/框外RGB、工程包音畫重播與程序清理通過。內部未核驗素材，不公開人物成片；無人類連續播放/聽審/自然度接受。[詳情](docs/validation/CLI63候选交付门禁_2026-10-29.md#新增实际通过结果) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

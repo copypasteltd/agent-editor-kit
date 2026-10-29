@@ -4,6 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
+from source61_voice_skill_overlay import prepare, VOICE
 
 ROOT=Path(__file__).resolve().parents[2]
 BASE=ROOT/'docs/validation/evidence/job-enumeration-20261029-r1'
@@ -16,6 +17,7 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--run',required=True);a=parser.parse_args()
     assert a.run.replace('-','').isalnum()
     paths={'installation':BASE/'installation-candidate-r1/verification.json',
+        'voice_auditions':VOICE,
         'source_case':BASE/'actual-case-r1/verification.json',
         'installed_case':BASE/'installed-actual-case-r1/verification.json'}
     for mode in ['source63','installed63']:
@@ -66,11 +68,15 @@ def main():
         p=ROOT/item['path'];assert sha(p)==item['sha256'];guard[p]=item['sha256']
     source=ROOT/'product/src/ai_ad_editor';pins={p.name:sha(p) for p in source.glob('*.py')}
     assert len(pins)==283 and pins=={p.name:sha(p) for p in (installed/'site/ai_ad_editor').glob('*.py')}
+    original_files={Path(item['path']).relative_to('skills/agent-ffmpeg-local-editor').as_posix():item['sha256'] for item in live['files']}
+    prepared,_,voice_overlay=prepare(ROOT/'skills/agent-ffmpeg-local-editor',original_files,reports['voice_auditions'])
+    voice_provenance={k:v for k,v in voice_overlay.items() if k!='tested_other92_files_byte_equal'}
+    voice_provenance.update(applied_before_candidate_tests=True,source_cli_version='0.1.61',audio_bundled=False)
     home=ROOT/'local/agent-ffmpeg'/('music63-skill-stage-'+a.run);home.mkdir(exist_ok=False)
     skill=home/'skills/agent-ffmpeg-local-editor'
     for item in live['files']:
         target=home/item['path'];target.parent.mkdir(parents=True,exist_ok=True)
-        target.write_bytes((ROOT/item['path']).read_bytes())
+        target.write_bytes(prepared[Path(item['path']).relative_to('skills/agent-ffmpeg-local-editor').as_posix()])
     release='v0.1.0-alpha.4-local.61'
     p=skill/'SKILL.md';text=p.read_text(encoding='utf-8')
     marker='`v0.1.0-alpha.4-local.57` / CLI `0.1.59`';assert text.count(marker)==1
@@ -126,7 +132,8 @@ https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/MUSIC_LO
     report=dict(status='unregistered-candidate',cli_version='0.1.63',skill=str(skill),installed=str(installed),
         public_entries=1,modules=17,files=93,live_skill_changed=False,activated=False,candidate_files=candidate,
         protected_files={str(p):pin for p,pin in guard.items()},
-        gates={str(p):sha(p) for p in paths.values()},requires_actual_PowerShell_loop_and_CUDA_before_activation=True,requires_installed403=True,requires_actual_installed_MuseTalk=True)
+        voice_auditions=voice_provenance,
+        gates={str(p):sha(p) for p in paths.values()},requires_actual_PowerShell_loop_and_CUDA_before_activation=True,requires_installed406=True,requires_actual_installed_MuseTalk=True)
     save(home/'STAGING.json',report);print(json.dumps(report,ensure_ascii=False),flush=True);return 0
 
 if __name__=='__main__':raise SystemExit(main())

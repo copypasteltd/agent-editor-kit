@@ -1,6 +1,6 @@
 # agent editor kit
 
-**Development status: source CLI0.1.63 adds bounded process-list requery and count diagnostics;11 native-process tests passed, further gates run separately. Preserve the CLI62 music failure and interrupted contracts; no new installation promoted. Formal Skill remains CLI59/local57/r57.** [Implementation and limits](docs/validation/CLI63原生进程清理_2026-10-29.md)
+**Development status: source CLI0.1.63 passed all406 contracts and native-process fix checks. Native local61 candidate installed with exact1707 payloads/283 modules; installed regression continues. Existing103-voice audition guidance is prepared before candidate testing,not relabeled as new CLI63 inference. Formal Skill remains CLI59/local57/r57;the full goal is open.** [Delivery details](docs/validation/CLI63候选交付门禁_2026-10-29.md)
 
 **Historical source CLI61 full403 service contracts passed,zero failures/errors/skips,app and tests frozen.Independent installation and registered Skill promotion require separate acceptance.** [Evidence](docs/validation/CLI61完整源码验收_2026-10-29.md)
 
@@ -2071,6 +2071,9 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R511 | CLI63 actual CPU loop | Original fragment13.37→13.32s/50ms overlap,body PCM unchanged;complete2557440-byte PCM repeats3 times and package recipe redo equal. CPU DSP/no neural model; no human listening,true-peak or perceptual seamlessness acceptance. [Actual case](docs/validation/evidence/job-enumeration-20261029-r1/actual-case-r1/verification.json) |
 | R512 | CLI63 actual MuseTalk CUDA | Actual RTX3060/133 frames/67 batches,no CPU fallback;complete master/render RGBA+PCM,alpha/outside RGB,package replay and cleanup passed. Internal/unverified media,no public portrait video or human continuous playback/listening/natural-quality acceptance. [Details](docs/validation/CLI63候选交付门禁_2026-10-29.md#新增实际通过结果) |
 | R513 | CLI63 actual DF3 CUDA | Actual RTX3060/4 model forwards/no CPU fallback,complete1124160-byte PCM package replay equal. Audio frontend stays CPU;no human listening acceptance. Actual-model controller2 cases and CPU controller3 cases passed;406 contracts/installation/Skill remain separate. [Evidence](docs/validation/evidence/job-enumeration-20261029-r1/source63-gpu-r1/verification.json) |
+| R514 | CLI63 full source contracts | All406 source contracts passed,zero failures/errors/skips;283 app modules and192 test files frozen. Installed and Skill acceptance remain separate. [Evidence](docs/validation/evidence/job-enumeration-20261029-r1/source63-contracts-r1/verification.json) |
+| R515 | CLI63 pre-test voice documentation | Audited103 existing CLI61 WAV hashes before staging;93-file Skill static validation passed,other92 files equal before runtime binding. Missing gates actually refused;95 formal files unchanged. No new inference or human listening acceptance. [Evidence](docs/validation/evidence/job-enumeration-20261029-r1/voice-preparation-r1/verification.json) |
+| R516 | CLI63 native installation | Native offline local61 candidate installation and exact1707-payload/283-module comparison passed. Installed406 and formal Skill acceptance remain separate. [Evidence](docs/validation/evidence/job-enumeration-20261029-r1/installation-candidate-r1/verification.json) |
 
 ### Development preview: C76 loop overlap repair(source CLI60)
 

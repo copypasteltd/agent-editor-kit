@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "audited_existing_samples": 103,
+  "source_audio_cli": "0.1.61",
+  "candidate_target_cli": "0.1.63",
+  "static_validation_exit_code": 0,
+  "changed_document": "references/community-materials.md",
+  "other92_files_equal_before_runtime_binding": true,
+  "formal_files_unchanged": 95,
+  "stage_script_sha256": "31b7a0497f7c9ce8d0c19ac4fc79953bc923e1811d6e10ecdbf836f2aa49f2db",
+  "missing_gate_refusal": {
+    "status": "pending",
+    "ready": false,
+    "missing": [
+      "installation",
+      "installed_case",
+      "installed63_bootstrap",
+      "installed63_control",
+      "installed63_selection",
+      "installed63_semantic",
+      "installed63_contracts",
+      "installed63_gpu",
+      "installed63_lipsync",
+      "installed_loop"
+    ],
+    "mutated": false
+  },
+  "voice_evidence_sha256": "d97c236f479bc36ebc8e8b7f8d6d022e847acad05c43bb1634e2063de94a22e6",
+  "registered": false,
+  "new_neural_inference": false,
+  "human_listening": false,
+  "full_goal_closed": false
+}

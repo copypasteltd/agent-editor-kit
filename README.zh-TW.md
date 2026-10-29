@@ -1,6 +1,6 @@
 # agent editor kit
 
-**目前開發狀態：原始碼 CLI0.1.63 新增有界程序列舉重查與計數診斷；11項原生程序測試通過，其他驗收正在分組執行。保留CLI62音樂組失敗及中止的完整合同，未晉升新安裝。正式Skill仍CLI59/local57/r57。** [實作與邊界](docs/validation/CLI63原生进程清理_2026-10-29.md)
+**目前開發狀態：原始碼 CLI0.1.63 的406項完整合同及原生程序修復核驗通過；local61候選已原生安裝、1707載荷與283模組精確一致，安裝版回歸繼續。103音色預覽說明已準備在候選實測前寫入，未冒充CLI63重新生成。正式Skill仍CLI59/local57/r57，完整目標未完成。** [Delivery details](docs/validation/CLI63候选交付门禁_2026-10-29.md)
 
 **歷史原始碼CLI61完整403項服務契約已通過，零失敗／錯誤／跳過，應用與測試凍結一致；獨立安裝及正式Skill升級仍須另驗。** [Evidence](docs/validation/CLI61完整源码验收_2026-10-29.md)
 
@@ -2069,6 +2069,9 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R511 | CLI63 actual CPU loop | 原創片段13.37→13.32秒/50ms重疊，主體PCM不變；完整2557440位元組PCM三次重複及工程包配方重做一致。CPU DSP、無神經模型；未驗收人類聽審、true peak或自然無縫。[實際案例](docs/validation/evidence/job-enumeration-20261029-r1/actual-case-r1/verification.json) |
 | R512 | CLI63 actual MuseTalk CUDA | RTX3060實際133幀/67批，無CPU回退；母版/渲染全量RGBA與PCM、alpha/框外RGB、工程包音畫重播與程序清理通過。內部未核驗素材，不公開人物成片；無人類連續播放/聽審/自然度接受。[詳情](docs/validation/CLI63候选交付门禁_2026-10-29.md#新增实际通过结果) |
 | R513 | CLI63 actual DF3 CUDA | RTX3060實際4次模型前向、無CPU回退，完整1124160位元組PCM工程包重播一致。音訊前端仍CPU，無人類聽審接受；真實模型控制器兩項與CPU控制器三項均終態通過，406合同/新安裝/Skill另驗。[證據](docs/validation/evidence/job-enumeration-20261029-r1/source63-gpu-r1/verification.json) |
+| R514 | CLI63 full source contracts | 406項原始碼合同全部通過，零失敗/錯誤/跳過；應用283模組及測試192檔案凍結一致。安裝與Skill另驗。 [Evidence](docs/validation/evidence/job-enumeration-20261029-r1/source63-contracts-r1/verification.json) |
+| R515 | CLI63 pre-test voice documentation | 候選暫存前核對103個CLI61既有WAV雜湊，93檔案Skill靜態校驗通過，綁定前其餘92檔案相同；缺門禁實際拒絕且95正式檔案不變。未重新推理、未經人工聽審。 [Evidence](docs/validation/evidence/job-enumeration-20261029-r1/voice-preparation-r1/verification.json) |
+| R516 | CLI63 native installation | local61候選ZIP原生離線安裝及1707載荷/283模組精確核對通過；不等於安裝版406或正式Skill驗收。 [Evidence](docs/validation/evidence/job-enumeration-20261029-r1/installation-candidate-r1/verification.json) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "source_cli": "0.1.61",
+  "candidate_cli": "0.1.61",
+  "formal_cli": "0.1.59",
+  "README_rows": 490,
+  "previous486_rows_preserved": true,
+  "protected_files_unchanged": 95,
+  "installed_semantic_tests": 104,
+  "actual_installed_DF3": true,
+  "actual_installed_loop": true,
+  "actual_registered_delivery_negative_checks": 4,
+  "pending_status_at_publication": {
+    "installed61-contracts-r1": "not-terminal",
+    "installed61-lipsync-cuda-r1": "passed"
+  },
+  "formal_activation": false,
+  "file_hashes": {
+    "README.md": "298bc8aaa25c9ab5199c58acf65bfd671f3216eb83140706aecdbf178c17dcd5",
+    "README.zh-TW.md": "9eead71a51b58caa5f66274af96748fa9404c0a54cac3ab4a735d74fa14712c6",
+    "README.en.md": "d6b8d6e70ce19d187a4cda192f5e964072a261904eb06fdf218ffde46d5077c9",
+    "docs/validation/CLI61安装版实际案例_2026-10-29.md": "a8adef210d3c08e124e87d82f8cecf94b3d547cc56efbb0b711ad22a0482fd35",
+    "docs/validation/CLI61独立安装交付_2026-10-29.md": "7540e8a46ba8665f80439c5b5a31cc8b9bc838d406655f4bc9e2048af4b799e0"
+  }
+}

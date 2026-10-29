@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "runner": "run_registered61_loop_case.py",
+      "exit_code": 1,
+      "SHA256": "b88a7e3ef2514828e773ed24277d8008d2f3268926f959030dc44b57882cf10d",
+      "rejected_before_case": true
+    },
+    {
+      "runner": "run_registered61_gpu_case.py",
+      "exit_code": 1,
+      "SHA256": "f84c9b09f035b5b08fc5146c8f06cab7d5f5ac4fb23b5d5d9054f3ed23fe3ef7",
+      "rejected_before_case": true
+    },
+    {
+      "runner": "run_registered61_lipsync_case.py",
+      "exit_code": 1,
+      "SHA256": "9aeeb399a763315b4ff2f3ce9e08731f4790907a4279e26060ec099e91c389cf",
+      "rejected_before_case": true
+    },
+    {
+      "runner": "build_source61_final_kit.py",
+      "exit_code": 1,
+      "SHA256": "3c9fb22442690283b0b9fe0c99f1f2c58a527d90370f222074ecc1425a78ef7c",
+      "rejected_before_case": true
+    }
+  ],
+  "protected_files": 95,
+  "protected_files_unchanged": true,
+  "no_case_or_archive_created": true,
+  "activation_performed": false,
+  "positive_registered_cases_accepted": false
+}

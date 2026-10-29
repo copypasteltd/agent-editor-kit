@@ -2036,6 +2036,11 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R484 | CLI61 native candidate | CLI61/local59原生ZIP已建置並獨立安裝；1707載荷／283模組／8項ICC與OCIO資源一致，版本及能力查詢通過。 [Package / usage](docs/validation/CLI61独立安装交付_2026-10-29.md) |
 | R485 | CLI61 native candidate | 安裝31入口／37配樂／19控制／57選材分別通過，零失敗／錯誤／跳過，原始碼與安裝及測試凍結一致。語義104及完整403以獨立終態為準，不重複彙總。 [Package / usage](docs/validation/CLI61独立安装交付_2026-10-29.md) |
 | R486 | CLI61 native candidate | 缺證時實際要求建立Skill及--apply啟用均遭拒，95個正式檔案不變。CLI61啟用仍要求完整安裝403及實際PowerShell循環／DF3／MuseTalk；正式仍CLI59。 [Package / usage](docs/validation/CLI61独立安装交付_2026-10-29.md) |
+| R487 | CLI61 installed cases | 獨立安裝版語義104項全部通過，零失敗／錯誤／跳過；283模組與原始碼及測試凍結一致。 [Evidence / workflow](docs/validation/CLI61安装版实际案例_2026-10-29.md) |
+| R488 | CLI61 installed cases | 獨立安裝版DF3實際RTX3060 CUDA四次前向通過；完整1124160位元組PCM與原始碼及工程包重播相同，無CPU回退。受控雜訊MSE改善不等於自然聽審。 [Evidence / workflow](docs/validation/CLI61安装版实际案例_2026-10-29.md) |
+| R489 | CLI61 installed cases | 獨立安裝版循環修復完整2557440位元組PCM、三次循環、未處理主體及工程包配方重做皆一致；CPU DSP縮短每週期50ms，未宣稱神經音樂或聽感無縫。 [Evidence / workflow](docs/validation/CLI61安装版实际案例_2026-10-29.md) |
+| R490 | CLI61 installed cases | 三個正式C磁碟入口案例及最終打包程式已實際驗證缺少啟用時提前停止；95正式檔案不變，未建立案例／歸檔。正向入口及最終r58包仍須實際驗收。 [Evidence / workflow](docs/validation/CLI61安装版实际案例_2026-10-29.md) |
+| R491 | CLI61 installed MuseTalk | 安裝版MuseTalk實際CUDA133幀／67次UNet通過，無CPU回退；主檔139460608位元組RGBA及成片167772160位元組RGBA和完整PCM與原始碼／工程包重播一致。下半臉柔化、自然口型、連續播放／聽審仍未驗收；正式Skill仍59，安裝403另驗。 [Evidence / limits](docs/validation/CLI61安装版实际案例_2026-10-29.md) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

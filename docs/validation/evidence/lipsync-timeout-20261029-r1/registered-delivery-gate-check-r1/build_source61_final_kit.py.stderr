@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\docs\validation\build_source61_final_kit.py", line 84, in <module>
+    main()
+    ~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\docs\validation\build_source61_final_kit.py", line 29, in main
+    assert manifest['cli_version'] == '0.1.61' and manifest['skill_count'] == 1
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

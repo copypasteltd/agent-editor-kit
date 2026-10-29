@@ -1,0 +1,458 @@
+[
+  {
+    "name": "import-original",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-20261029-r5\\project\\exports\\editable.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\project"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "8d626f65761889ca422dbf5141ffb69347629136f26a02e786544d2a9202ac9a"
+  },
+  {
+    "name": "upgrade-semantic",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "project",
+      "upgrade-semantic",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\project",
+      "--adapter-id",
+      "source56",
+      "--new-adapter-id",
+      "installed56",
+      "--id-prefix",
+      "i56",
+      "--index-id",
+      "visual56",
+      "--timeout-seconds",
+      "1800.0"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "1d84d16ed0d9ff39d3766370af7b537af8c186a62c1106c95dc0cddbcb962f44"
+  },
+  {
+    "name": "select",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "ad",
+      "select",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\request.json",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\project\\validation\\installed-selected.json",
+      "--index-id",
+      "i56_i_5eb364ed555f57d4277a",
+      "--calibration-id",
+      "i56_c_bad61adc4492f8a5e2b4",
+      "--kind",
+      "image",
+      "--device",
+      "cuda",
+      "--timeout-seconds",
+      "1800.0"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "2de04556cc6e079c9f6a4af80b8ca75f898729d73875dac92ac882e8e48db9d7"
+  },
+  {
+    "name": "build",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "ad",
+      "build",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\project\\validation\\installed-selected.json"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "85a4e5f3f2206988726e1bc3e042810ec3c4fb26174a23ca514cf6d8645401d3"
+  },
+  {
+    "name": "render-wide",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\project",
+      "--sequence-id",
+      "ad_installeddemo_wide_sequence",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\project\\renders\\installed-wide.mp4"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "55c6f255fb1ec3ea337fc0f103373010d718724d3d247d9d537a92feb56dd854"
+  },
+  {
+    "name": "render-vertical",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\project",
+      "--sequence-id",
+      "ad_installeddemo_vertical_sequence",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\project\\renders\\installed-vertical.mp4"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "566176d244669d7513eda3c25d121593d164017522a166f5ae8b9374a6f41acc"
+  },
+  {
+    "name": "export",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "export",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\project",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\project\\exports\\installed-editable.zip",
+      "--target-format",
+      "package"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "57e1488b0c3511f878c08c82f666a7a78f3d35724fdd803f7fcb2bfa072ec4db"
+  },
+  {
+    "name": "import-replay",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\project\\exports\\installed-editable.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\replay"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "51be13721153a13b2925431246532cb019ef2fd86513cb4cdf73ee75d07756b5"
+  },
+  {
+    "name": "render-replay-wide",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\replay",
+      "--sequence-id",
+      "ad_installeddemo_wide_sequence",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\replay\\renders\\installed-wide.mp4"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "b198869f237163ecb64cb3a4318d2a35827e4179377f2e25c612185b07cac132"
+  },
+  {
+    "name": "wide-original-probe",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.EXE",
+      "-v",
+      "error",
+      "-count_frames",
+      "-select_streams",
+      "v:0",
+      "-show_entries",
+      "stream=width,height,nb_read_frames,r_frame_rate",
+      "-of",
+      "json",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\project\\renders\\installed-wide.mp4"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "97e3ff7b02467771e4c46a319e29f641a33e6e932b5fc7c8414e91c4259c7c58"
+  },
+  {
+    "name": "wide-replay-probe",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.EXE",
+      "-v",
+      "error",
+      "-count_frames",
+      "-select_streams",
+      "v:0",
+      "-show_entries",
+      "stream=width,height,nb_read_frames,r_frame_rate",
+      "-of",
+      "json",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\replay\\renders\\installed-wide.mp4"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "97e3ff7b02467771e4c46a319e29f641a33e6e932b5fc7c8414e91c4259c7c58"
+  },
+  {
+    "name": "wide-original-rgb",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\project\\renders\\installed-wide.mp4",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-pix_fmt",
+      "rgb24",
+      "-f",
+      "rawvideo",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "51a6473e80c748fa1bf902fda7d13b26b6e0018dfff80209fa9cc19dc285c7f1"
+  },
+  {
+    "name": "wide-original-pcm",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\project\\renders\\installed-wide.mp4",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "bc81f7b5f48be2545b3fb8feb378bc5ff9adb94a83c4ea2938d58dc47d3b7a32"
+  },
+  {
+    "name": "wide-replay-rgb",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\replay\\renders\\installed-wide.mp4",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-pix_fmt",
+      "rgb24",
+      "-f",
+      "rawvideo",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "51a6473e80c748fa1bf902fda7d13b26b6e0018dfff80209fa9cc19dc285c7f1"
+  },
+  {
+    "name": "wide-replay-pcm",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\replay\\renders\\installed-wide.mp4",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "bc81f7b5f48be2545b3fb8feb378bc5ff9adb94a83c4ea2938d58dc47d3b7a32"
+  },
+  {
+    "name": "render-replay-vertical",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\replay",
+      "--sequence-id",
+      "ad_installeddemo_vertical_sequence",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\replay\\renders\\installed-vertical.mp4"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "a35d2feb16911d1fe9a3ae5a5619cea0b0d1fafaf2c0fe1b470231a216a30550"
+  },
+  {
+    "name": "vertical-original-probe",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.EXE",
+      "-v",
+      "error",
+      "-count_frames",
+      "-select_streams",
+      "v:0",
+      "-show_entries",
+      "stream=width,height,nb_read_frames,r_frame_rate",
+      "-of",
+      "json",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\project\\renders\\installed-vertical.mp4"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "28c99d029ae5a98754f51d921c09232afc065be430255abebf6ea4e6e271bd82"
+  },
+  {
+    "name": "vertical-replay-probe",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.EXE",
+      "-v",
+      "error",
+      "-count_frames",
+      "-select_streams",
+      "v:0",
+      "-show_entries",
+      "stream=width,height,nb_read_frames,r_frame_rate",
+      "-of",
+      "json",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\replay\\renders\\installed-vertical.mp4"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "28c99d029ae5a98754f51d921c09232afc065be430255abebf6ea4e6e271bd82"
+  },
+  {
+    "name": "vertical-original-rgb",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\project\\renders\\installed-vertical.mp4",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-pix_fmt",
+      "rgb24",
+      "-f",
+      "rawvideo",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "04a708356df0a2ee6d445a73732d61517916dea02b8efb11429aa587e39f6106"
+  },
+  {
+    "name": "vertical-original-pcm",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\project\\renders\\installed-vertical.mp4",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "bc81f7b5f48be2545b3fb8feb378bc5ff9adb94a83c4ea2938d58dc47d3b7a32"
+  },
+  {
+    "name": "vertical-replay-rgb",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\replay\\renders\\installed-vertical.mp4",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-pix_fmt",
+      "rgb24",
+      "-f",
+      "rawvideo",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "04a708356df0a2ee6d445a73732d61517916dea02b8efb11429aa587e39f6106"
+  },
+  {
+    "name": "vertical-replay-pcm",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-installed-cli56-20261029-registered-r1\\replay\\renders\\installed-vertical.mp4",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "bc81f7b5f48be2545b3fb8feb378bc5ff9adb94a83c4ea2938d58dc47d3b7a32"
+  }
+]

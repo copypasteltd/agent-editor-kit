@@ -1,0 +1,27 @@
+{
+  "status": "built-awaiting-independent-verification",
+  "package": {
+    "format": "agent-community-single-skill-package-v1",
+    "release": "v0.1.0-alpha.4-local.54",
+    "cli_version": "0.1.56",
+    "archive": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-kit56-final-r1\\agent-editor-kit-community-unified-skill-r55.zip",
+    "bytes": 741928,
+    "sha256": "6af63dc173c91f8a040e402deeed0e3261477d67879619c247486c0d563dc585",
+    "files": 157,
+    "skill_count": 1,
+    "module_count": 17,
+    "base_application_and_model_archives_separate": true
+  },
+  "registered_case_sha256": "86c3ebf882e570e7c177b66f8483fb2b99f3cd632a7d2d7d1453bdc527bd78cd",
+  "namespace_sha256": "0d32d7cf0b0e7964a7ffad38a02c0e61ec9e450ea08475f79433f07a829552bc",
+  "public_entries": 1,
+  "modules": 17,
+  "skill_files": 93,
+  "product_docs_added": [
+    "AD_SEMANTIC_SELECTION.md",
+    "PROCESS_OPERATION_BUDGET.md",
+    "SEMANTIC_WORKER_ISOLATION.md"
+  ],
+  "actual_registered_GPU_case_accepted": true,
+  "independent_kit_accepted": false
+}

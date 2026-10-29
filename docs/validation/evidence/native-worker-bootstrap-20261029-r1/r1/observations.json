@@ -1,0 +1,206 @@
+[
+  {
+    "scope": "source",
+    "worker": "enhancement_worker.py",
+    "worker_sha256": "4212a31a9a33cce3ca42830b674b19100f6ce48e0ba2b132026e355199dd9e38",
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "bundled controller dependency"
+    },
+    "bootstrap_passed": false,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "source",
+    "worker": "interpolation_worker.py",
+    "worker_sha256": "5e0fc74ebd14a745ce937c781011fb7ec4b6a9a79d121d487dc5f9039affc09e",
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "bundled controller dependency"
+    },
+    "bootstrap_passed": false,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "source",
+    "worker": "lama_worker.py",
+    "worker_sha256": "c8b78f2e476e417ed54ea62aa502858eeb13b14c8e91b29fdd15021a4c648154",
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "bundled controller dependency"
+    },
+    "bootstrap_passed": false,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "source",
+    "worker": "lipsync_worker.py",
+    "worker_sha256": "2bf447549ccfdc10c6bb6b3b7602e8a37436e6d11b04abab835a7667122bb185",
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "bundled controller dependency"
+    },
+    "bootstrap_passed": false,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "source",
+    "worker": "sam2_worker.py",
+    "worker_sha256": "a7df14a7edbe22b78a593ef16e87528645b9043168b314884da332c4e0eef554",
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "bundled controller dependency"
+    },
+    "bootstrap_passed": false,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "source",
+    "worker": "vace_worker.py",
+    "worker_sha256": "4084ec1d4ff5a2eddf908849b7fe5623151e3a9602ba763c086ecf6f081985da",
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "bundled controller dependency"
+    },
+    "bootstrap_passed": false,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "installed",
+    "worker": "enhancement_worker.py",
+    "worker_sha256": "4212a31a9a33cce3ca42830b674b19100f6ce48e0ba2b132026e355199dd9e38",
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "bundled controller dependency"
+    },
+    "bootstrap_passed": false,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "installed",
+    "worker": "interpolation_worker.py",
+    "worker_sha256": "5e0fc74ebd14a745ce937c781011fb7ec4b6a9a79d121d487dc5f9039affc09e",
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "bundled controller dependency"
+    },
+    "bootstrap_passed": false,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "installed",
+    "worker": "lama_worker.py",
+    "worker_sha256": "c8b78f2e476e417ed54ea62aa502858eeb13b14c8e91b29fdd15021a4c648154",
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "bundled controller dependency"
+    },
+    "bootstrap_passed": false,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "installed",
+    "worker": "lipsync_worker.py",
+    "worker_sha256": "2bf447549ccfdc10c6bb6b3b7602e8a37436e6d11b04abab835a7667122bb185",
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "bundled controller dependency"
+    },
+    "bootstrap_passed": false,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "installed",
+    "worker": "sam2_worker.py",
+    "worker_sha256": "a7df14a7edbe22b78a593ef16e87528645b9043168b314884da332c4e0eef554",
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "bundled controller dependency"
+    },
+    "bootstrap_passed": false,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "installed",
+    "worker": "vace_worker.py",
+    "worker_sha256": "4084ec1d4ff5a2eddf908849b7fe5623151e3a9602ba763c086ecf6f081985da",
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "bundled controller dependency"
+    },
+    "bootstrap_passed": false,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  }
+]

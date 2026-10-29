@@ -1,0 +1,244 @@
+{
+  "status": "passed",
+  "observations": [
+    {
+      "scope": "source",
+      "worker": "enhancement_worker.py",
+      "worker_sha256": "4212a31a9a33cce3ca42830b674b19100f6ce48e0ba2b132026e355199dd9e38",
+      "executed_fixture_sha256": "4d15837f54375a99742cd7c9f4effbfe18a1292115422a7c8d75e0a2b0928d0d",
+      "proposed_fix_only": true,
+      "exit_code": 0,
+      "expected": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "observed": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "bootstrap_passed": true,
+      "actual_worker_entry_executed": true,
+      "model_forwards": 0
+    },
+    {
+      "scope": "source",
+      "worker": "interpolation_worker.py",
+      "worker_sha256": "5e0fc74ebd14a745ce937c781011fb7ec4b6a9a79d121d487dc5f9039affc09e",
+      "executed_fixture_sha256": "624ac6dcfe722722a221c8ecf12bd1ac7d3d326e4f5861d204eb8376fccf8c8e",
+      "proposed_fix_only": true,
+      "exit_code": 0,
+      "expected": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "observed": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "bootstrap_passed": true,
+      "actual_worker_entry_executed": true,
+      "model_forwards": 0
+    },
+    {
+      "scope": "source",
+      "worker": "lama_worker.py",
+      "worker_sha256": "c8b78f2e476e417ed54ea62aa502858eeb13b14c8e91b29fdd15021a4c648154",
+      "executed_fixture_sha256": "d2216b4bccb3193e592bf35dc86b587248ceef90e4cd055c42558aca80f04e4d",
+      "proposed_fix_only": true,
+      "exit_code": 0,
+      "expected": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "observed": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "bootstrap_passed": true,
+      "actual_worker_entry_executed": true,
+      "model_forwards": 0
+    },
+    {
+      "scope": "source",
+      "worker": "lipsync_worker.py",
+      "worker_sha256": "2bf447549ccfdc10c6bb6b3b7602e8a37436e6d11b04abab835a7667122bb185",
+      "executed_fixture_sha256": "00cf268a6daee101160270cebb0811be65c428a3d00d3bd7528de9847c5a1953",
+      "proposed_fix_only": true,
+      "exit_code": 0,
+      "expected": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "observed": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "bootstrap_passed": true,
+      "actual_worker_entry_executed": true,
+      "model_forwards": 0
+    },
+    {
+      "scope": "source",
+      "worker": "sam2_worker.py",
+      "worker_sha256": "a7df14a7edbe22b78a593ef16e87528645b9043168b314884da332c4e0eef554",
+      "executed_fixture_sha256": "c8242c1f7741346ebf11497e29ffe8ff628ed34e3c64d28029bddcca0cf4f5e2",
+      "proposed_fix_only": true,
+      "exit_code": 0,
+      "expected": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "observed": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "bootstrap_passed": true,
+      "actual_worker_entry_executed": true,
+      "model_forwards": 0
+    },
+    {
+      "scope": "source",
+      "worker": "vace_worker.py",
+      "worker_sha256": "4084ec1d4ff5a2eddf908849b7fe5623151e3a9602ba763c086ecf6f081985da",
+      "executed_fixture_sha256": "80e8de8009d4e386b7bdca89a75c102ff814421981cfa4676a64a46a24ac9e2d",
+      "proposed_fix_only": true,
+      "exit_code": 0,
+      "expected": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "observed": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "bootstrap_passed": true,
+      "actual_worker_entry_executed": true,
+      "model_forwards": 0
+    },
+    {
+      "scope": "installed",
+      "worker": "enhancement_worker.py",
+      "worker_sha256": "4212a31a9a33cce3ca42830b674b19100f6ce48e0ba2b132026e355199dd9e38",
+      "executed_fixture_sha256": "4d15837f54375a99742cd7c9f4effbfe18a1292115422a7c8d75e0a2b0928d0d",
+      "proposed_fix_only": true,
+      "exit_code": 0,
+      "expected": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "observed": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "bootstrap_passed": true,
+      "actual_worker_entry_executed": true,
+      "model_forwards": 0
+    },
+    {
+      "scope": "installed",
+      "worker": "interpolation_worker.py",
+      "worker_sha256": "5e0fc74ebd14a745ce937c781011fb7ec4b6a9a79d121d487dc5f9039affc09e",
+      "executed_fixture_sha256": "624ac6dcfe722722a221c8ecf12bd1ac7d3d326e4f5861d204eb8376fccf8c8e",
+      "proposed_fix_only": true,
+      "exit_code": 0,
+      "expected": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "observed": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "bootstrap_passed": true,
+      "actual_worker_entry_executed": true,
+      "model_forwards": 0
+    },
+    {
+      "scope": "installed",
+      "worker": "lama_worker.py",
+      "worker_sha256": "c8b78f2e476e417ed54ea62aa502858eeb13b14c8e91b29fdd15021a4c648154",
+      "executed_fixture_sha256": "d2216b4bccb3193e592bf35dc86b587248ceef90e4cd055c42558aca80f04e4d",
+      "proposed_fix_only": true,
+      "exit_code": 0,
+      "expected": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "observed": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "bootstrap_passed": true,
+      "actual_worker_entry_executed": true,
+      "model_forwards": 0
+    },
+    {
+      "scope": "installed",
+      "worker": "lipsync_worker.py",
+      "worker_sha256": "2bf447549ccfdc10c6bb6b3b7602e8a37436e6d11b04abab835a7667122bb185",
+      "executed_fixture_sha256": "00cf268a6daee101160270cebb0811be65c428a3d00d3bd7528de9847c5a1953",
+      "proposed_fix_only": true,
+      "exit_code": 0,
+      "expected": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "observed": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "bootstrap_passed": true,
+      "actual_worker_entry_executed": true,
+      "model_forwards": 0
+    },
+    {
+      "scope": "installed",
+      "worker": "sam2_worker.py",
+      "worker_sha256": "a7df14a7edbe22b78a593ef16e87528645b9043168b314884da332c4e0eef554",
+      "executed_fixture_sha256": "c8242c1f7741346ebf11497e29ffe8ff628ed34e3c64d28029bddcca0cf4f5e2",
+      "proposed_fix_only": true,
+      "exit_code": 0,
+      "expected": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "observed": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "bootstrap_passed": true,
+      "actual_worker_entry_executed": true,
+      "model_forwards": 0
+    },
+    {
+      "scope": "installed",
+      "worker": "vace_worker.py",
+      "worker_sha256": "4084ec1d4ff5a2eddf908849b7fe5623151e3a9602ba763c086ecf6f081985da",
+      "executed_fixture_sha256": "80e8de8009d4e386b7bdca89a75c102ff814421981cfa4676a64a46a24ac9e2d",
+      "proposed_fix_only": true,
+      "exit_code": 0,
+      "expected": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "observed": {
+        "application": "owned application",
+        "dependency": "registered model runtime"
+      },
+      "bootstrap_passed": true,
+      "actual_worker_entry_executed": true,
+      "model_forwards": 0
+    }
+  ],
+  "cases": 12,
+  "passed": 12,
+  "failed": 0,
+  "code_files": 281,
+  "frozen_equal": true,
+  "neural_inference_test": false,
+  "model_forwards": 0,
+  "proposed_fix_only": true,
+  "shipped_source_unchanged": true,
+  "downloads": false,
+  "virtual_environment": false
+}

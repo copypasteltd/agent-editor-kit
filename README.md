@@ -1,5 +1,28 @@
 # agent editor kit
 
+当前本机 CLI56／local54 已安装并注册为唯一 `$agent-ffmpeg-local-editor`：1入口／17模块／93文件。源码、独立安装与真实C盘入口的CUDA选材及两画幅完整音画工程重放分别通过；四个原配音／翻译包已重新核验。r55工具包独立解包／配置／注册及完整ACES音画重放已通过。
+
+## 当前使用流程与核验
+
+以下命令使用本机已注册安装；新机器请先按交付日志准备匹配应用包与原生依赖。选材前登记素材／权利、模型、索引和设备校准，dry-run后实际选材，再构建分镜、逐变体预览／渲染及工程包重放。
+
+```powershell
+$agentEditor = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1'
+& $agentEditor version
+& $agentEditor doctor
+& $agentEditor capabilities
+```
+
+[CLI56 delivery / usage](docs/validation/CLI56原生交付_2026-10-29.md) · [Functional modules](#feature-modules) · [Unified Skill](docs/skills/UNIFIED_SKILL.md) · [C70 videos / GIF / receipts](docs/product/CASES.md#c70-registered-semantic-selection)
+
+![Actual registered CLI56 CUDA selection](docs/assets/ad-selection-registered56-20261029-r1/wide.gif)
+
+本轮还复现15个其他原生工作进程的依赖遮蔽。复制件修复和30项新回归原型已通过，正式下一版及实际模型验收继续进行；不把这部分标为已发布。 [Native worker diagnosis](docs/product/NATIVE_WORKER_BOOTSTRAP.md)
+
+<!-- aek-history-summary -->
+<details>
+<summary>完整开发历史（保留全部原文，点击展开）</summary>
+
 **当前本地 CLI56／local54 已安装并注册，唯一 `$agent-ffmpeg-local-editor` 保持1入口／17模块／93文件。** 源码与独立安装版各1／15／45／104四组通过，二者实际CUDA选材及两画幅完整RGB／非静音PCM重放均通过；安装版与源码输出也逐字节一致。四个原有配音／翻译模型包已重新核验。真实C盘入口的完整GPU案例仍在运行，新正式工具包另验。[实际交付与使用流程](docs/validation/CLI56原生交付_2026-10-29.md)。以下较早版本段落保留为历史记录，以顶部当前状态为准。
 
 **CLI56 源码实际CUDA选材与两画幅完整音画重放已通过。** 重新建立11来源索引／校准，3条固定查询与预期标签一致；横竖版各90帧，导出／导入后完整RGB与非静音PCM分别相同。[C69影片、GIF与截图](docs/product/CASES.md#c69-source56-semantic-selection)。安装版实际GPU任务正在运行，正式Skill仍53／r54。
@@ -932,6 +955,9 @@ C19 六张卡片各 2 秒，真实 12 秒/360 帧 MP4 和 60 帧 GIF，包含全
 
 <!-- /native-capture-r1 -->
 
+
+</details>
+
 ## 公开 alpha.3：下载并跑通第一条视频
 
 **环境：Windows x64、已有 CPython 3.13 x64、FFmpeg/ffprobe 在 PATH。** 基础流程不需要模型、Node 或浏览器；安装不使用 Docker、WSL、虚拟环境或全局 pip。Python 路径按实际安装位置修改。
@@ -1022,7 +1048,9 @@ flowchart LR
 5. 若需要选型，展示原图与少量候选，记录最终 ID/强度/作用域；在目标素材上复试。
 6. 渲染至工程内新路径，检查实际编码文件、manifest、warning、音画与权利，再导出项目包。
 
-## 完整的 75 个功能模块
+<a id="feature-modules"></a>
+
+## 功能模块与实际支持边界
 
 编号用于定位文档；各模块有依赖与交叉，不是“43 个独立内核”或完成率。下表直接写明行为、入口与限制；[完整机器能力清单及每项契约](docs/product/CAPABILITIES.md)保留全部字段。
 
@@ -1862,6 +1890,11 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R425 | Actual installed native dependency and source/render parity | NumPy2.4.6/Pillow12.3.0 loaded from registered native model runtime;versions/paths match;complete RGB/PCM byte equal to source for both variants | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/installed-native-parity-r1/verification.json) | Exact observed runtime;not arbitrary host/dependency compatibility |
 | R426 | Unified56 positive pin | All source/installed1/15/45/104 gates plus actual GPU cases verified;1entry/17modules/93files pinned to native56/local54 | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/skill-pin-r1/verification.json) | Pin receipt alone is not activation or registered-case acceptance |
 | R427 | CLI56 activation and actual C discovery registration | Four existing CPU/GPU voice/translation packs integrity-verified;native runtime configured;single C junction/preflight verified;93Skill files | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/activation-r1/activation-and-registration.json) | Registration passed;full registered GPU case still running;no new voice/translation forwards in activation |
+| R428 | Actual C-discovered CLI56 GPU selection/replay | All3 frozen labels;4renders;both90frames;complete RGB/finite non-silentPCM equal after package replay;281modules and live namespace frozen | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/installed-case-registered-r1/verification.json) | Familiar static corpus;not natural-motion quality or independent-Agent success |
+| R429 | C70 actual registered media | Two actual MP4s,twoGIFs,twoPNGs with original image/music/font rights and hashes;verticalPNG inspected | [C70](docs/product/CASES.md#c70-registered-semantic-selection) | No continuous human viewing/listening or publication clearance inferred |
+| R430 | Other15 native worker bootstrap failures reproduced | Source and installed15each:all30 actual entry probes load the controller dependency marker;original runtime281files unchanged | [raw](docs/validation/evidence/native-worker-bootstrap-20261029-r1/full-r1/verification.json) | Import-order fixture only;not neural quality or proof all registered models fail |
+| R431 | Copied worker repair and foreign-package regression prototype | Proposed copies pass30 source/installed bootstrap probes;separate30-test prototype verifies native dependencies and preloaded foreign-package rejection | [candidate](docs/validation/evidence/native-worker-bootstrap-20261029-r1/full-proposed-r1/verification.json) · [prototype](docs/validation/evidence/native-worker-bootstrap-20261029-r1/prototype-tests-r1/verification.json) | Proposed copies only;not yet shipped source/installed repair;zero model forwards |
+| R432 | Final r55 kit independently accepted | 157ZIP entries/156inventory/93Skill files;four packs configured;isolated E registration;2newACESrenders;complete589824YUV/307200PCM and PNG equal;live discovery unchanged | [proof](docs/validation/evidence/semantic-worker-isolation-20261029-r1/formal-kit-r1/verification.json) · [kit](docs/skills/agent-editor-kit-community-unified-skill-r55.zip) | Same-host native Windows;no new model forwards in kit test;public alpha.3 preserved |
 
 ## 当前边界与开发方向
 

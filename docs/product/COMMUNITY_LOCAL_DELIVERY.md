@@ -1,10 +1,10 @@
 # 本机 GPU 扩展离线包与安装 / Native GPU extension delivery
 
-**当前本机 CLI0.1.56／local54 已原生安装并注册**，1个统一Skill／17模块／93文件。源码及独立安装版各1／15／45／104分组通过，实际CUDA选材与两画幅完整音画重放分别通过；原四个配音／翻译模型包保持并重新核验。安装目录为 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.54/final-r1/installed`。[包摘要、实际入口和完整使用流程](../validation/CLI56原生交付_2026-10-29.md)。公开alpha.3与旧r54工具包保留，旧包匹配各自运行时；新正式工具包需独立验收。
+**当前本机 CLI0.1.56／local54 已原生安装并注册**，1个统一Skill／17模块／93文件。源码及独立安装版各1／15／45／104分组通过，实际CUDA选材与两画幅完整音画重放分别通过；原四个配音／翻译模型包保持并重新核验。安装目录为 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.54/final-r1/installed`。[包摘要、实际入口和完整使用流程](../validation/CLI56原生交付_2026-10-29.md)。公开alpha.3与旧r54工具包保留，旧包匹配各自运行时；真实C盘入口CUDA／完整音画重放也已通过：[C70](CASES.md#c70-registered-semantic-selection)。新r55统一工具包需匹配此CLI56／local54运行包，独立工具包终态见上述交付日志。其他原生模型入口的依赖隔离问题见[已复现缺口](NATIVE_WORKER_BOOTSTRAP.md)，下一版处理。
 
-English: Native CLI56/local54 is installed and registered with one entry,17modules and93files.The existing four CPU/GPU voice/translation packs are retained.Source and installed actual semantic cases passed;registered full-GPU and new formal-kit acceptance are recorded separately in the linked delivery log.
+English: Native CLI56/local54 is installed and registered with one entry,17modules and93files.The existing four CPU/GPU voice/translation packs are retained.Source, installed and actual C-discovered CUDA cases passed separately;the new portable kit acceptance is recorded in the linked delivery log.
 
-繁體：目前CLI56／local54已原生安裝並註冊，四個既有模型套件保留；來源及安裝版實際語義案例通過，註冊入口完整GPU與新正式工具包驗收另列。較早版本段落保留為歷史紀錄。
+繁體：目前CLI56／local54已原生安裝並註冊，四個既有模型套件保留；來源、安裝版及真實C盤註冊入口的實際語義案例分別通過，新正式工具包驗收另列。較早版本段落保留為歷史紀錄。
 
 [使用手册](COMMUNITY_MATERIALS.md) · [繁體中文](COMMUNITY_MATERIALS.zh-TW.md) · [English](COMMUNITY_MATERIALS.en.md)
 

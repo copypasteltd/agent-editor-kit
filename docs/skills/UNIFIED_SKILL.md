@@ -2,9 +2,11 @@
 
 <!-- community-current -->
 
-**当前 CLI56／local54 已安装并注册：1个入口／17模块／93文件。** 源码与安装版各1／15／45／104分组及实际CUDA选材／完整音画重放通过；四个原模型包保留。真实C盘入口GPU案例和新正式工具包另验。
+**CLI0.1.56 / local54 / r55: one `$agent-ffmpeg-local-editor` entry,17 modules,93 Skill files.** Source,isolated installed and actual C-discovered CUDA ad cases passed separately. The final kit independently passed extraction/configuration/E-drive registration and complete ACES YUV/PCM/PNG replay,without changing live discovery. Four existing voice/translation packs were reverified.
 
-[CLI56 delivery and usage](../validation/CLI56原生交付_2026-10-29.md) · [Calibrated ad selection](../../skills/agent-ffmpeg-local-editor/references/ad-selection.md)
+[Download r55 kit](agent-editor-kit-community-unified-skill-r55.zip) · [Package SHA-256](community-unified-skill-package-0.1.56-r55.json) · [Actual installation and use](../validation/CLI56原生交付_2026-10-29.md) · [Independent proof](../validation/evidence/semantic-worker-isolation-20261029-r1/formal-kit-r1/verification.json) · [C70 videos/GIF](../product/CASES.md#c70-registered-semantic-selection)
+
+The kit contains instructions and launchers; the matching CLI56/local54 application bundle and existing model packs remain separate. Keep alpha.3 and older kits paired with their own runtimes. This is same-host native Windows acceptance,not clean-host or full product-parity certification.
 
 <!-- /community-current -->
 

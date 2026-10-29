@@ -1276,3 +1276,25 @@ CLI0.1.53/local51，1个公开Skill／17个内部模块／92个文件，经真�
 使用与C68相同的CC0照片／Juhani Junkala配乐及OFL-1.1 Noto字体，原Rights Ledger内的internal记录原样保留，不伪造商业发布授权。完整可编辑包保留本地，未重复公开发布。已查看本次竖版静态截图；其黑边为技术演示的contain适配，不作为竖屏广告美感通过。连续观片／听审、自然运动和完整Agent自主任务成功率仍开放。
 
 繁體：CLI56原始碼實際CUDA選材與兩畫幅完整專案重播通過；安裝／註冊入口和自然廣告品質另驗。English: Source CLI56 passed actual CUDA selection and full audiovisual two-aspect replay;installed/registered acceptance and natural-quality validation remain separate.
+
+
+<a id="c70-registered-semantic-selection"></a>
+
+## C70 · Actual registered CLI56 CUDA selection / 真實註冊Skill選材
+
+唯一公開 `$agent-ffmpeg-local-editor` 經真實C盤發現聯接調用E盤CLI0.1.56／local54安裝包，完成實際CUDA選材、可編輯廣告構建、兩畫幅渲染與完整工程重放，沒有源碼回退。此案例獨立於源碼C69及直接安裝入口測試。
+
+![Actual registered CLI56 wide selection](../assets/ad-selection-registered56-20261029-r1/wide.gif)
+
+[橫版MP4](../assets/ad-selection-registered56-20261029-r1/wide.mp4) · [豎版MP4](../assets/ad-selection-registered56-20261029-r1/vertical.mp4) · [豎版GIF](../assets/ad-selection-registered56-20261029-r1/vertical.gif) · [實際截圖](../assets/ad-selection-registered56-20261029-r1/vertical.png) · [來源／權利／檔案摘要](../assets/ad-selection-registered56-20261029-r1/SOURCE.json) · [真實C盤入口完整驗收](../validation/evidence/semantic-worker-isolation-20261029-r1/installed-case-registered-r1/verification.json) · [媒體產出核驗](../validation/evidence/semantic-worker-isolation-20261029-r1/demo-registered-r1/verification.json)
+
+| 編號 | 實際執行 | 結果 |
+| --- | --- | --- |
+| C70.1 | 咖啡／貓／相機三個原先凍結查詢，實際CUDA批次推理 | 分別選中asset_b4／asset_c2／asset_a7，符合事先凍結標籤 |
+| C70.2 | 橫版320×180、豎版180×320，各3秒／30FPS | 原工程及導入重放共四次渲染，各90幀，由獨立ffprobe核對 |
+| C70.3 | 工程導出／導入／再渲染、完整解碼 | 每畫幅15,552,000 RGB位元組、1,155,072 Float32 PCM位元組完全一致；PCM有限且非靜音 |
+| C70.4 | 正式Skill與程式碼凍結、選材只讀 | 93個Skill檔案所屬命名空間不變，281個程式模組前後一致，選材不修改作者工程 |
+
+原圖三項CC0、配樂與字型各自來源和工程權利紀錄保存在SOURCE.json；不推定其他商標／肖像／使用限制已清除。已查看實際豎版PNG，畫面為contain排版及黑邊；未做連續人工觀片／聽審、自然動作或獨立Agent自主廣告品質驗收。這是熟悉靜態語料的完整技術閉環，不關閉原38項完整產品目標。
+
+English: The actual C-discovered unified Skill completed CUDA selection, four renders and byte-identical full RGB/PCM package replay. This does not establish natural-motion quality or independent-agent advertising success.

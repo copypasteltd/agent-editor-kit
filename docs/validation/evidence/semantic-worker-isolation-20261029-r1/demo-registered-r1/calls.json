@@ -1,0 +1,66 @@
+[
+  {
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\docs\\assets\\ad-selection-registered56-20261029-r1\\wide.mp4",
+      "-vf",
+      "fps=10,split[a][b];[a]palettegen[p];[b][p]paletteuse",
+      "-loop",
+      "0",
+      "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\docs\\assets\\ad-selection-registered56-20261029-r1\\wide.gif"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\docs\\assets\\ad-selection-registered56-20261029-r1\\wide.mp4",
+      "-ss",
+      "0.5",
+      "-frames:v",
+      "1",
+      "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\docs\\assets\\ad-selection-registered56-20261029-r1\\wide.png"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\docs\\assets\\ad-selection-registered56-20261029-r1\\vertical.mp4",
+      "-vf",
+      "fps=10,split[a][b];[a]palettegen[p];[b][p]paletteuse",
+      "-loop",
+      "0",
+      "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\docs\\assets\\ad-selection-registered56-20261029-r1\\vertical.gif"
+    ],
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\docs\\assets\\ad-selection-registered56-20261029-r1\\vertical.mp4",
+      "-ss",
+      "0.5",
+      "-frames:v",
+      "1",
+      "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\docs\\assets\\ad-selection-registered56-20261029-r1\\vertical.png"
+    ],
+    "exit_code": 0
+  }
+]

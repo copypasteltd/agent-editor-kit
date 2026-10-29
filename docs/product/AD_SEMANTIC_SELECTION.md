@@ -2,7 +2,7 @@
 
 ## 当前 CLI56 / local54：实际统一入口
 
-CLI56已经原生离线安装并注册为唯一 `$agent-ffmpeg-local-editor`（1入口／17模块／93文件）。源码与安装版分别通过1项原生引导、15项预算控制、45项选材／分镜、104项语义兼容；两者实际CUDA三镜头选材、横竖版四次渲染及完整RGB／PCM工程重放均已通过。[安装与运行证据](../validation/CLI56原生交付_2026-10-29.md)。真实C盘入口完整GPU案例和新正式工具包仍独立验收。
+CLI56已经原生离线安装并注册为唯一 `$agent-ffmpeg-local-editor`（1入口／17模块／93文件）。源码与安装版分别通过1项原生引导、15项预算控制、45项选材／分镜、104项语义兼容；两者实际CUDA三镜头选材、横竖版四次渲染及完整RGB／PCM工程重放均已通过。[安装与运行证据](../validation/CLI56原生交付_2026-10-29.md)。真实C盘入口完整GPU案例现已通过：[C70实际影片／GIF／完整证据](CASES.md#c70-registered-semantic-selection)。新正式工具包独立验收另列。
 
 以下为已经注册的真实入口；项目路径、字体／音乐资产、索引和校准ID必须替换成自己的已登记内容。此示例不代替素材登记、索引构建和校准。
 
@@ -23,7 +23,7 @@ $agentEditor = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/r
 
 随后按build响应中的实际sequence ID逐变体预览／渲染，再导出可编辑工程包、导入新路径并复核。不要把示例ID或源码案例的绑定直接套给自己的库；实现发生变化时使用显式 `project upgrade-semantic`，保留旧记录，不手工改摘要或复用不匹配的设备校准。完整请求及S01–S14规则见下方；默认仍只去重资产ID，不保证不同ID的同内容去重。
 
-繁體：目前CLI56已原生安裝並註冊一個統一入口；原始碼與安裝版實際CUDA案例分別通過。English: CLI56 is natively installed and registered through one unified Skill. Source and installed CUDA selection/replay cases passed separately; acceptance through the live discovery entry and the new portable kit is tracked independently.
+繁體：目前CLI56已原生安裝並註冊一個統一入口；原始碼與安裝版實際CUDA案例分別通過。English: CLI56 is natively installed and registered through one unified Skill. Source and installed CUDA selection/replay cases passed separately; the actual live discovery CUDA case also passed; portable-kit acceptance is tracked independently.
 
 ## CLI54 首次实现与交付历史（原文保留）
 

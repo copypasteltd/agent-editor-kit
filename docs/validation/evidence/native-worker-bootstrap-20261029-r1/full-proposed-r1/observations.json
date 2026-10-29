@@ -1,0 +1,572 @@
+[
+  {
+    "scope": "source",
+    "worker": "enhancement_worker.py",
+    "worker_sha256": "4212a31a9a33cce3ca42830b674b19100f6ce48e0ba2b132026e355199dd9e38",
+    "executed_fixture_sha256": "4d15837f54375a99742cd7c9f4effbfe18a1292115422a7c8d75e0a2b0928d0d",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "source",
+    "worker": "interpolation_worker.py",
+    "worker_sha256": "5e0fc74ebd14a745ce937c781011fb7ec4b6a9a79d121d487dc5f9039affc09e",
+    "executed_fixture_sha256": "624ac6dcfe722722a221c8ecf12bd1ac7d3d326e4f5861d204eb8376fccf8c8e",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "source",
+    "worker": "lama_worker.py",
+    "worker_sha256": "c8b78f2e476e417ed54ea62aa502858eeb13b14c8e91b29fdd15021a4c648154",
+    "executed_fixture_sha256": "d2216b4bccb3193e592bf35dc86b587248ceef90e4cd055c42558aca80f04e4d",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "source",
+    "worker": "lipsync_worker.py",
+    "worker_sha256": "2bf447549ccfdc10c6bb6b3b7602e8a37436e6d11b04abab835a7667122bb185",
+    "executed_fixture_sha256": "00cf268a6daee101160270cebb0811be65c428a3d00d3bd7528de9847c5a1953",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "source",
+    "worker": "sam2_worker.py",
+    "worker_sha256": "a7df14a7edbe22b78a593ef16e87528645b9043168b314884da332c4e0eef554",
+    "executed_fixture_sha256": "c8242c1f7741346ebf11497e29ffe8ff628ed34e3c64d28029bddcca0cf4f5e2",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "source",
+    "worker": "vace_worker.py",
+    "worker_sha256": "4084ec1d4ff5a2eddf908849b7fe5623151e3a9602ba763c086ecf6f081985da",
+    "executed_fixture_sha256": "80e8de8009d4e386b7bdca89a75c102ff814421981cfa4676a64a46a24ac9e2d",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "source",
+    "worker": "rvm_worker.py",
+    "worker_sha256": "b4ee231349b26fe8d3e94f9bab1ba2f70566b8c2dbe0b806b8864e92957fbeb1",
+    "executed_fixture_sha256": "cb7d802c62bf4c18557fcd5faeefa41cb77b2e752f352b6fb80c517314e36e17",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "source",
+    "worker": "face_worker.py",
+    "worker_sha256": "dbfa64be9cefa760cfe6b31685a6cbcc8008b2c696951848ffd75a4f0e604e56",
+    "executed_fixture_sha256": "4d28c2879cf851b4064b80f445a6651a5c857767a20f4a5973079b8da8447da3",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "source",
+    "worker": "ocr_worker.py",
+    "worker_sha256": "ee5a2096ec1ee03fc09d2ac4d0b06b1791d5bbfe011772f448045d1377b50d3f",
+    "executed_fixture_sha256": "bd4a679a64ccf03cd25752b1f9f45edaf6dd1b470a90e148775867f750d12ab9",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "source",
+    "worker": "yolo_worker.py",
+    "worker_sha256": "fe93653d9ae37e811325655ca81635311cd9c6504d0e41b8d1e7c6fa43e77e86",
+    "executed_fixture_sha256": "47a3a6fa12ab99d81172b5e05414764e802f2898e2ea7792f96c9700d42a57ae",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "source",
+    "worker": "demucs_worker.py",
+    "worker_sha256": "8a5347b8e2ad0c93fb42b9c1867737ff989914e662753ef11104602c944bba95",
+    "executed_fixture_sha256": "93625243d8b5542d04c5d26e748c3f66c8c07a052f124aa72bae013a062e1f29",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "source",
+    "worker": "ctc_worker.py",
+    "worker_sha256": "18440a7affc7e33169f82e40a0a970d7acd767b5a699559888a6768e1b0589ad",
+    "executed_fixture_sha256": "f601598c15513b7a5f612c9f088d68f0509dbc7b54473325e109a055826b80ac",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "source",
+    "worker": "vace_session_worker.py",
+    "worker_sha256": "0561885077d4e43b99267df09e9aa24668c761a096b1dbfa79d88b20f0dba60b",
+    "executed_fixture_sha256": "111e35f1eb0b8f1557126d0771ce42b0ff84c4f72bda2908d76e6f407bb27fa4",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "source",
+    "worker": "stem_separation_worker.py",
+    "worker_sha256": "3ded624662f12880189f7072a68ef902cc980647d9d4af78b697a30ceed072df",
+    "executed_fixture_sha256": "eeddd9b2f7ac4425ccbeba96005fcf442aacc31c3121c1793d1cdd9b18094422",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "source",
+    "worker": "whisper_worker.py",
+    "worker_sha256": "39220014386155a911d4714c3dc20493c76720dd98312d4410826728a2f59d2a",
+    "executed_fixture_sha256": "5f2e3224e81ed250dfadb44ab362a92cccb9ca9821052e64fe821610a827a131",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "installed",
+    "worker": "enhancement_worker.py",
+    "worker_sha256": "4212a31a9a33cce3ca42830b674b19100f6ce48e0ba2b132026e355199dd9e38",
+    "executed_fixture_sha256": "4d15837f54375a99742cd7c9f4effbfe18a1292115422a7c8d75e0a2b0928d0d",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "installed",
+    "worker": "interpolation_worker.py",
+    "worker_sha256": "5e0fc74ebd14a745ce937c781011fb7ec4b6a9a79d121d487dc5f9039affc09e",
+    "executed_fixture_sha256": "624ac6dcfe722722a221c8ecf12bd1ac7d3d326e4f5861d204eb8376fccf8c8e",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "installed",
+    "worker": "lama_worker.py",
+    "worker_sha256": "c8b78f2e476e417ed54ea62aa502858eeb13b14c8e91b29fdd15021a4c648154",
+    "executed_fixture_sha256": "d2216b4bccb3193e592bf35dc86b587248ceef90e4cd055c42558aca80f04e4d",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "installed",
+    "worker": "lipsync_worker.py",
+    "worker_sha256": "2bf447549ccfdc10c6bb6b3b7602e8a37436e6d11b04abab835a7667122bb185",
+    "executed_fixture_sha256": "00cf268a6daee101160270cebb0811be65c428a3d00d3bd7528de9847c5a1953",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "installed",
+    "worker": "sam2_worker.py",
+    "worker_sha256": "a7df14a7edbe22b78a593ef16e87528645b9043168b314884da332c4e0eef554",
+    "executed_fixture_sha256": "c8242c1f7741346ebf11497e29ffe8ff628ed34e3c64d28029bddcca0cf4f5e2",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "installed",
+    "worker": "vace_worker.py",
+    "worker_sha256": "4084ec1d4ff5a2eddf908849b7fe5623151e3a9602ba763c086ecf6f081985da",
+    "executed_fixture_sha256": "80e8de8009d4e386b7bdca89a75c102ff814421981cfa4676a64a46a24ac9e2d",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "installed",
+    "worker": "rvm_worker.py",
+    "worker_sha256": "b4ee231349b26fe8d3e94f9bab1ba2f70566b8c2dbe0b806b8864e92957fbeb1",
+    "executed_fixture_sha256": "cb7d802c62bf4c18557fcd5faeefa41cb77b2e752f352b6fb80c517314e36e17",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "installed",
+    "worker": "face_worker.py",
+    "worker_sha256": "dbfa64be9cefa760cfe6b31685a6cbcc8008b2c696951848ffd75a4f0e604e56",
+    "executed_fixture_sha256": "4d28c2879cf851b4064b80f445a6651a5c857767a20f4a5973079b8da8447da3",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "installed",
+    "worker": "ocr_worker.py",
+    "worker_sha256": "ee5a2096ec1ee03fc09d2ac4d0b06b1791d5bbfe011772f448045d1377b50d3f",
+    "executed_fixture_sha256": "bd4a679a64ccf03cd25752b1f9f45edaf6dd1b470a90e148775867f750d12ab9",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "installed",
+    "worker": "yolo_worker.py",
+    "worker_sha256": "fe93653d9ae37e811325655ca81635311cd9c6504d0e41b8d1e7c6fa43e77e86",
+    "executed_fixture_sha256": "47a3a6fa12ab99d81172b5e05414764e802f2898e2ea7792f96c9700d42a57ae",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "installed",
+    "worker": "demucs_worker.py",
+    "worker_sha256": "8a5347b8e2ad0c93fb42b9c1867737ff989914e662753ef11104602c944bba95",
+    "executed_fixture_sha256": "93625243d8b5542d04c5d26e748c3f66c8c07a052f124aa72bae013a062e1f29",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "installed",
+    "worker": "ctc_worker.py",
+    "worker_sha256": "18440a7affc7e33169f82e40a0a970d7acd767b5a699559888a6768e1b0589ad",
+    "executed_fixture_sha256": "f601598c15513b7a5f612c9f088d68f0509dbc7b54473325e109a055826b80ac",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "installed",
+    "worker": "vace_session_worker.py",
+    "worker_sha256": "0561885077d4e43b99267df09e9aa24668c761a096b1dbfa79d88b20f0dba60b",
+    "executed_fixture_sha256": "111e35f1eb0b8f1557126d0771ce42b0ff84c4f72bda2908d76e6f407bb27fa4",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "installed",
+    "worker": "stem_separation_worker.py",
+    "worker_sha256": "3ded624662f12880189f7072a68ef902cc980647d9d4af78b697a30ceed072df",
+    "executed_fixture_sha256": "eeddd9b2f7ac4425ccbeba96005fcf442aacc31c3121c1793d1cdd9b18094422",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  },
+  {
+    "scope": "installed",
+    "worker": "whisper_worker.py",
+    "worker_sha256": "39220014386155a911d4714c3dc20493c76720dd98312d4410826728a2f59d2a",
+    "executed_fixture_sha256": "5f2e3224e81ed250dfadb44ab362a92cccb9ca9821052e64fe821610a827a131",
+    "proposed_fix_only": true,
+    "exit_code": 0,
+    "expected": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "observed": {
+      "application": "owned application",
+      "dependency": "registered model runtime"
+    },
+    "bootstrap_passed": true,
+    "actual_worker_entry_executed": true,
+    "model_forwards": 0
+  }
+]

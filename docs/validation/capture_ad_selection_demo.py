@@ -1,4 +1,4 @@
-"""Capture actual source CLI55 semantic-selection movies, GIFs and source credits."""
+"""Capture actual source or installed semantic-selection media with provenance."""
 import argparse
 import hashlib
 import json
@@ -18,18 +18,24 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--cli-version', choices=('0.1.55', '0.1.56'), default='0.1.55')
     parser.add_argument('--source-run', default='r3')
+    parser.add_argument('--installed-run', help='Completed installed case, including an actual registered PowerShell run')
     parser.add_argument('--run', default='r1')
     parser.add_argument('--evidence-series', default='process-budget-20261029-r1')
     args = parser.parse_args()
     assert all(s.replace('-', '').isalnum() for s in (args.source_run, args.run, args.evidence_series))
+    assert args.installed_run is None or args.installed_run.replace('-', '').isalnum()
     base = ROOT/'docs/validation/evidence'/args.evidence_series
-    case = base/('case-'+args.source_run)
+    case = base/(('installed-case-'+args.installed_run) if args.installed_run else ('case-'+args.source_run))
     proof = json.loads((case/'verification.json').read_bytes())
-    assert proof['status'] == 'passed' and proof['source_cli'] == args.cli_version
+    assert proof['status'] == 'passed' and proof.get('cli_version', proof.get('source_cli')) == args.cli_version
     assert proof['actual_GPU_semantic_search'] and proof['full_project_replay_equal']
-    project = ROOT/'local/agent-ffmpeg'/('ad-selection-20261029-'+args.source_run)/'project'
-    out = ROOT/'docs/assets'/('ad-selection-source'+args.cli_version.rsplit('.', 1)[1]+'-20261029-'+args.run)
-    evidence = base/('demo-'+args.run)
+    suffix = args.cli_version.rsplit('.', 1)[1]
+    project = ROOT/'local/agent-ffmpeg'/(
+        ('ad-selection-installed-cli'+suffix+'-20261029-'+args.installed_run)
+        if args.installed_run else ('ad-selection-20261029-'+args.source_run))/'project'
+    scope = 'registered' if proof.get('actual_PowerShell_entry') else ('installed' if args.installed_run else 'source')
+    out = ROOT/'docs/assets'/('ad-selection-'+scope+suffix+'-20261029-'+args.run)
+    evidence = base/('demo-'+(scope+'-' if args.installed_run else '')+args.run)
     out.mkdir(parents=True, exist_ok=False)
     evidence.mkdir(exist_ok=False)
     (evidence/'executed-generator.py').write_bytes(Path(__file__).read_bytes())
@@ -37,7 +43,7 @@ def main():
     assert ffmpeg
     calls = []
     for variant in ('wide', 'vertical'):
-        original = project/('renders/'+variant+'.mp4')
+        original = project/('renders/'+('installed-' if args.installed_run else '')+variant+'.mp4')
         movie = out/(variant+'.mp4')
         shutil.copyfile(original, movie)
         assert sha(original) == sha(movie)
@@ -62,11 +68,12 @@ def main():
     rights = {p.name: json.loads(p.read_bytes()) for p in rights_files if p.suffix == '.json'}
     assert rights, 'Missing project rights records'
     source = dict(cli_version=args.cli_version, generated_from_actual_case=True,
+                  actual_case_scope=scope, actual_PowerShell_entry=proof.get('actual_PowerShell_entry', False),
                   source_case=(case/'verification.json').relative_to(ROOT).as_posix(),
                   selected=proof['selection'], selected_image_credits=credits,
                   font_and_music_assets=[a for a in metadata['assets'] if a['id'] in ('font', 'music')],
                   project_rights=rights, selection_receipts=selection['selected'],
-                  editable_package_local=str(project/'exports/editable.zip'),
+                  editable_package_local=str(project/('exports/installed-editable.zip' if args.installed_run else 'exports/editable.zip')),
                   editable_package_published=False, natural_quality_accepted=False,
                   independent_agent_benchmark=False,
                   files=[dict(path=p.name, bytes=p.stat().st_size, sha256=sha(p))

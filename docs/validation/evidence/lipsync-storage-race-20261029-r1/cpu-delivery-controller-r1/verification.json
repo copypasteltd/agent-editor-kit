@@ -1,0 +1,23 @@
+{
+  "status": "failed",
+  "calls": [
+    {
+      "name": "control",
+      "exit_code": 0
+    },
+    {
+      "name": "selection",
+      "exit_code": 0
+    },
+    {
+      "name": "semantic",
+      "exit_code": 0
+    },
+    {
+      "name": "loop",
+      "exit_code": 1
+    }
+  ],
+  "formal_activation": false,
+  "complete_contracts_separate": true
+}

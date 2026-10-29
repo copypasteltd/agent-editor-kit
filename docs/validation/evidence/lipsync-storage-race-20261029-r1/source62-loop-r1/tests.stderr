@@ -1,0 +1,80 @@
+test_blocked_parent_rights_cannot_be_laundered (test_music_loop.LoopCLITests.test_blocked_parent_rights_cannot_be_laundered) ... ok
+test_cancel_during_PCM_write_cleans_owned_tree (test_music_loop.LoopCLITests.test_cancel_during_PCM_write_cleans_owned_tree) ... ok
+test_dry_run_is_readonly_and_does_not_promise_exact_decoded_length (test_music_loop.LoopCLITests.test_dry_run_is_readonly_and_does_not_promise_exact_decoded_length) ... ok
+test_failure_after_real_asset_commit_restores_project_and_rights (test_music_loop.LoopCLITests.test_failure_after_real_asset_commit_restores_project_and_rights) ... ok
+test_invalid_placement_rejected_before_decode (test_music_loop.LoopCLITests.test_invalid_placement_rejected_before_decode) ... ok
+test_mismatched_recipe_and_explicit_option_conflict_rejected_readonly (test_music_loop.LoopCLITests.test_mismatched_recipe_and_explicit_option_conflict_rejected_readonly) ... ok
+test_package_keeps_recipe_parent_rights_and_complete_PCM_repair (test_music_loop.LoopCLITests.test_package_keeps_recipe_parent_rights_and_complete_PCM_repair) ... ok
+test_real_apply_preserves_unverified_permissions_and_source (test_music_loop.LoopCLITests.test_real_apply_preserves_unverified_permissions_and_source) ... ok
+test_actual_boundary_metric_matches_independent_PCM_measurement (test_music_loop.LoopDSPTests.test_actual_boundary_metric_matches_independent_PCM_measurement) ... ok
+test_channel_polarity_and_no_normalization (test_music_loop.LoopDSPTests.test_channel_polarity_and_no_normalization) ... ok
+test_exact_cycle_shortening_and_bit_identical_unprocessed_body (test_music_loop.LoopDSPTests.test_exact_cycle_shortening_and_bit_identical_unprocessed_body) ... ok
+test_independent_scalar_cosine_oracle_and_complementary_gains (test_music_loop.LoopDSPTests.test_independent_scalar_cosine_oracle_and_complementary_gains) ... ok
+test_independent_scalar_linear_overlap_oracle (test_music_loop.LoopDSPTests.test_independent_scalar_linear_overlap_oracle) ... ok
+test_recipe_strict_fields_source_hash_and_parameter_contract (test_music_loop.LoopDSPTests.test_recipe_strict_fields_source_hash_and_parameter_contract) ... ok
+test_reject_invalid_overlap_curves_bool_and_nonfinite (test_music_loop.LoopDSPTests.test_reject_invalid_overlap_curves_bool_and_nonfinite) ... ok
+test_reject_short_wrong_rate_and_silent_PCM (test_music_loop.LoopDSPTests.test_reject_short_wrong_rate_and_silent_PCM) ... ok
+test_stream_chunk_size_does_not_change_any_output_PCM (test_music_loop.LoopDSPTests.test_stream_chunk_size_does_not_change_any_output_PCM) ... ok
+test_truncated_declared_PCM_rejected (test_music_loop.LoopDSPTests.test_truncated_declared_PCM_rejected) ... ok
+test_clipping_and_cancellation_remove_owned_outputs_and_restore_metadata (test_music_score.ScoreCliTests.test_clipping_and_cancellation_remove_owned_outputs_and_restore_metadata) ... ok
+test_compose_applies_audio_and_retains_unverified_rights (test_music_score.ScoreCliTests.test_compose_applies_audio_and_retains_unverified_rights) ... ok
+test_failure_after_asset_commit_rolls_back_project_and_rights (test_music_score.ScoreCliTests.test_failure_after_asset_commit_rolls_back_project_and_rights) ... ok
+test_four_effects_are_actual_editable_non_silent_audio (test_music_score.ScoreCliTests.test_four_effects_are_actual_editable_non_silent_audio) ... ERROR
+test_inspect_and_dry_run_leave_metadata_and_asset_tree_unchanged (test_music_score.ScoreCliTests.test_inspect_and_dry_run_leave_metadata_and_asset_tree_unchanged) ... ok
+test_invalid_target_precedes_synthesis_and_mutation (test_music_score.ScoreCliTests.test_invalid_target_precedes_synthesis_and_mutation) ... ok
+test_package_preserves_editable_score_stems_and_full_PCM_recomposition (test_music_score.ScoreCliTests.test_package_preserves_editable_score_stems_and_full_PCM_recomposition) ... ok
+test_A4_fundamental_from_independent_FFT (test_music_score.ScoreTests.test_A4_fundamental_from_independent_FFT) ... ok
+test_all_instruments_have_finite_non_silent_bounded_PCM (test_music_score.ScoreTests.test_all_instruments_have_finite_non_silent_bounded_PCM) ... ok
+test_explicit_limiter_records_overload_without_hard_clip (test_music_score.ScoreTests.test_explicit_limiter_records_overload_without_hard_clip) ... ok
+test_exported_stems_recombine_within_quantization_error (test_music_score.ScoreTests.test_exported_stems_recombine_within_quantization_error) ... ok
+test_noise_samples_independent_of_stream_chunk_size (test_music_score.ScoreTests.test_noise_samples_independent_of_stream_chunk_size) ... ok
+test_pan_extremes_produce_exact_silent_opposite_channel (test_music_score.ScoreTests.test_pan_extremes_produce_exact_silent_opposite_channel) ... ok
+test_quotas_reject_without_output (test_music_score.ScoreTests.test_quotas_reject_without_output) ... ok
+test_rational_beat_clock_matches_independent_fraction_oracle (test_music_score.ScoreTests.test_rational_beat_clock_matches_independent_fraction_oracle) ... ok
+test_reject_note_outside_score_and_subsample_events (test_music_score.ScoreTests.test_reject_note_outside_score_and_subsample_events) ... ok
+test_seed_changes_noise_but_not_pitched_tone (test_music_score.ScoreTests.test_seed_changes_noise_but_not_pitched_tone) ... ok
+test_strict_numeric_duplicate_and_unknown_field_rejection (test_music_score.ScoreTests.test_strict_numeric_duplicate_and_unknown_field_rejection) ... ok
+test_track_and_note_reordering_keeps_full_PCM_identity (test_music_score.ScoreTests.test_track_and_note_reordering_keeps_full_PCM_identity) ... ok
+
+======================================================================
+ERROR: test_four_effects_are_actual_editable_non_silent_audio (test_music_score.ScoreCliTests.test_four_effects_are_actual_editable_non_silent_audio)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_music_score.py", line 243, in test_four_effects_are_actual_editable_non_silent_audio
+    code, value = self.cli('music', 'effect', '--project', self.project, '--preset', preset,
+                  ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                           '--duration-seconds', '.1', '--new-asset-id', preset)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_music_score.py", line 167, in cli
+    code = main(list(map(str, argv)))
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\cli.py", line 7453, in main
+    result = handler(args)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\cli.py", line 7398, in <lambda>
+    COMMANDS.update({key: (lambda args: community_command(args, _envelope)) for key in COMMUNITY_COMMAND_KEYS})
+                                        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\community_cli.py", line 447, in command
+    data = music_score.generate(root, project, payload, new_id=args.new_asset_id,
+                                stems=args.stems, placement=placement(args), dry_run=args.dry_run,
+                                command='music.'+args.action)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\music_score.py", line 272, in generate
+    probe=probe_media(output), rights_ref=ident,
+          ~~~~~~~~~~~^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\media.py", line 117, in probe_media
+    result = run_process(
+        [ffprobe_path(), "-v", "error", "-protocol_whitelist", "file,pipe", "-show_format", "-show_streams", "-of", "json", str(path)],
+        timeout=60,
+    )
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\utils.py", line 379, in run_process
+    job.close()
+    ~~~~~~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\native_process_job.py", line 174, in close
+    retain_owned_process_handles()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\native_process_job.py", line 151, in retain_owned_process_handles
+    raise OSError('Owned process enumeration exceeds cleanup budget')
+OSError: Owned process enumeration exceeds cleanup budget
+
+----------------------------------------------------------------------
+Ran 37 tests in 170.534s
+
+FAILED (errors=1)

@@ -1,0 +1,100 @@
+[
+  {
+    "name": "wheel",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-B",
+      "-m",
+      "pip",
+      "wheel",
+      "--no-index",
+      "--no-deps",
+      "--no-build-isolation",
+      "--wheel-dir",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.58\\source-wheel-r1",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "a936107b00a7bed2b18f28a88be835bc92837f875cf98c1a565633114785c3d3",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "bundle",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\offline\\build.py",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.58\\candidate-r1\\bundle",
+      "--product-wheel",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.58\\source-wheel-r1\\ai_ad_editor-0.1.60-py3-none-win_amd64.whl",
+      "--product-wheel-sha256",
+      "sha256:3ecf8c41425453687125f2c10003d3fee289d977ba1f6ba7a8c134facbaec91d"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e89c4ee86f7e28b70fa5b3fd017a0ec4ce3775c277ecdcaf97aef14080ea35a4",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "install",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.58\\unpacked-r1\\install.py",
+      "--bundle",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.58\\unpacked-r1",
+      "--target",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.58\\final-r1\\installed",
+      "--manifest-sha256",
+      "sha256:bd7547218c42f1284cf75f9947616121b787750bd19cf95240b4a886a2a71eb2",
+      "--timeout-seconds",
+      "600"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "25945ac3854deb58c1796585e1762a6e1859f5a6ea45301fdddbd078a5ab022e",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "version",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.58\\final-r1\\installed\\run.py",
+      "version"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "3da0bed66239968967fbcb1113661f1b290756f6befef613243c8aa3e59a779b",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "capabilities",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.58\\final-r1\\installed\\run.py",
+      "capabilities"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "c4fd3c20b822a38750e8c5dde5df9cbe94d82a326c8c47bee5f4e96fdf94b058",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

@@ -2018,6 +2018,9 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R468 | Independent r57 kit | 160 entries/159 inventory files;four-pack configuration,isolated registration,two renders and full YUV/PCM/PNG replay passed;initial newline-check failure retained,no new model inference;[proof](docs/validation/evidence/music-score-20261029-r1/formal-kit-r1/verification.json) |
 | R469 | CLI60 loop regression | 18 new loop and19 score tests passed;independent mix oracle,body identity,cancel/rollback,rights and package re-repair;[receipt](docs/validation/evidence/music-loop-20261029-r1/targeted-r1/verification.json) |
 | R470 | C76 actual loop repair | 13.37→13.32s,50ms overlap;complete2557440-byte PCM identical after package recipe replay;three-cycle before/after audio;[case](docs/product/MUSIC_LOOP.md).CPU,no neural forwards or listening acceptance |
+| R471 | CLI60 complete source contracts | 400 passed;zero failures/errors/skips;283 application and192 test modules frozen;[receipt](docs/validation/evidence/music-loop-20261029-r1/source60-contracts-r1/verification.json).Independent installation is separate |
+| R472 | CLI60 Skill delivery gate | Actual exit2 with missing install/case receipts;95 formal configuration/Skill files unchanged,no candidate generated;[proof](docs/validation/evidence/music-loop-20261029-r1/stage-gate-check-r1/verification.json).Registered Skill remains59 |
+| R473 | CLI60/local58 native candidate | Independently extracted/installed ZIP;1707 payloads,283 application modules and8 native resources byte-verified;version/capabilities succeeded;[local package,hashes and workflow](docs/validation/CLI60独立安装交付_2026-10-29.md).Installed functional checks ongoing,registered Skill remains59 |
 
 ### Development preview: C76 loop overlap repair(source CLI60)
 

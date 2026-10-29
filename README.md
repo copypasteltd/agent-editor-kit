@@ -2016,6 +2016,9 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R468 | r57独立工具包 | 160条目／159清单文件，四包配置、独立注册、两次渲染及完整YUV／PCM／PNG重放通过；首轮换行校验失败保留，无新增模型推理；[证据](docs/validation/evidence/music-score-20261029-r1/formal-kit-r1/verification.json) |
 | R469 | CLI60循环修复专项 | 18项新修复＋19项谱面回归全部通过；独立混合公式、完整中段、取消回滚、权利与工程包重做；[收据](docs/validation/evidence/music-loop-20261029-r1/targeted-r1/verification.json) |
 | R470 | C76实际音乐接缝 | 13.37→13.32秒，50ms交叠；完整2557440字节PCM在导入后配方重做一致，前三／后三循环可试听；[案例](docs/product/MUSIC_LOOP.md)。CPU，无神经推理或听审 |
+| R471 | CLI60完整源码契约终态 | 400通过，零失败／错误／跳过；283应用模块与192测试模块冻结一致；[收据](docs/validation/evidence/music-loop-20261029-r1/source60-contracts-r1/verification.json)。独立安装另验 |
+| R472 | CLI60统一Skill交付拦截 | 缺少安装与真实案例前置收据时实际返回2，95个正式配置／Skill文件不变且不生成候选；[证据](docs/validation/evidence/music-loop-20261029-r1/stage-gate-check-r1/verification.json)。正式Skill仍59 |
+| R473 | CLI60/local58独立原生候选 | 已从ZIP解包安装，1707载荷／283应用模块／8原生资源逐字节核对，版本和能力查询成功；[包位置、摘要与使用流程](docs/validation/CLI60独立安装交付_2026-10-29.md)。安装功能回归进行中，正式Skill仍59 |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

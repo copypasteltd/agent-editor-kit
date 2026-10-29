@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "actual_gate_exit_code": 2,
+  "missing": [
+    "installation",
+    "installed_case",
+    "source60_contracts",
+    "installed60_bootstrap",
+    "installed60_control",
+    "installed60_selection",
+    "installed60_semantic",
+    "installed60_contracts",
+    "installed60_gpu",
+    "installed_loop"
+  ],
+  "protected_files": 95,
+  "live_cli": "0.1.59",
+  "live_skill_unchanged": true,
+  "candidate_created": false,
+  "actual_installed60_acceptance": false,
+  "actual_skill60_activation": false,
+  "runner_sha256": "786e14aad83c677adb78bef35555d22c8edb420c08e584693f62f5430a137a1d"
+}

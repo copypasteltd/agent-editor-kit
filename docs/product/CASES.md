@@ -1380,3 +1380,14 @@ GIF为10fps预览，截图已查看；没有声称连续人工观看、听审、
 ### C71 源码58实际CUDA重验
 
 源码58清理修复后新工程重新登记DF3，实际4次CUDA前向、完整1124160字节PCM工程重放通过，摘要与C71相同，未复制相同媒体冒充新案例。受控改善12.25dB，自然质量与人工听审未验收。[58实际模型收据及边界](../validation/CLI58真实CUDA复核_2026-10-29.md)。
+
+
+<a id="c74-source58-content-dedup"></a>
+
+## C74 · Source58 actual exact-content selection / 精确内容去重实测
+
+真实蓝图重复导入两个ID，与独立琥珀图联合选材、构建可编辑分镜并实际渲染。默认选择不同内容，显式关闭内容去重时保留旧版ID行为。120帧／30fps，完整27648000字节RGBA在工程包重放后相同，截图已查看。检索响应明确合成，无神经推理或语义质量验收。
+
+![Actual source58 content deduplication](../assets/ad-content58-20261029-r1/actual.gif)
+
+[实际视频／输入／完整核验与边界](../validation/CLI58内容去重实测_2026-10-29.md) · [来源／许可](../assets/ad-content58-20261029-r1/SOURCE.txt)。原创诊断图CC0，Noto字体OFL-1.1；GIF10fps。无作者音轨，无自然素材或连续人工播放结论。

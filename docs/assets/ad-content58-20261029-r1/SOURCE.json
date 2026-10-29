@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "case": "C74",
+  "cli_version": "0.1.58",
+  "synthetic_search_response": true,
+  "neural_inference": false,
+  "semantic_quality_accepted": false,
+  "human_continuous_playback": false,
+  "evidence": "docs/validation/evidence/ad-content-uniqueness-20261029-r1/actual-content-case-r1/verification.json",
+  "evidence_sha256": "1b6c4e879518a8cfa08e90073ea84841b308718fb6959fb680c0d1afe4555a5d",
+  "complete_RGBA_replay_bytes": 27648000,
+  "files": [
+    {
+      "path": "docs/assets/ad-content58-20261029-r1/actual.gif",
+      "bytes": 9910,
+      "sha256": "db918936907394e5be6b1bbbc1931f6947bc21b3ecf6517893edaf348153b3c0"
+    },
+    {
+      "path": "docs/assets/ad-content58-20261029-r1/actual.mp4",
+      "bytes": 13364,
+      "sha256": "c7816e8a13b2032da70a46e7d25224056cfe825b3d841807b7611f339f58b5d8"
+    },
+    {
+      "path": "docs/assets/ad-content58-20261029-r1/actual.png",
+      "bytes": 12581,
+      "sha256": "a89ae0b751899fb427250a644a23e14bed08b65e699a32d6b58899ca4f93ac3e"
+    },
+    {
+      "path": "docs/assets/ad-content58-20261029-r1/first-shot.png",
+      "bytes": 6853,
+      "sha256": "098eba3c9d46b8de7a220b8e7d6e2b69fc286b8f93a6beba68bb6b7675094b8f"
+    },
+    {
+      "path": "docs/assets/ad-content58-20261029-r1/second-shot.png",
+      "bytes": 6490,
+      "sha256": "1aaf68ecb4ac856103f8c9a1141b1fedf7433f43700d55977e189d86d10dd1b2"
+    },
+    {
+      "path": "docs/assets/ad-content58-20261029-r1/source-other.png",
+      "bytes": 1823,
+      "sha256": "88da8dcb8de8648efb913b2454d1e596540de850c27da2a21b200f79b0a0b68f"
+    },
+    {
+      "path": "docs/assets/ad-content58-20261029-r1/source-picture.png",
+      "bytes": 1549,
+      "sha256": "055b90a436cf789f0ae9584dd6c715cfc5b7957297106510a216112d30297001"
+    },
+    {
+      "path": "docs/assets/ad-content58-20261029-r1/source-picture_alias.png",
+      "bytes": 1549,
+      "sha256": "055b90a436cf789f0ae9584dd6c715cfc5b7957297106510a216112d30297001"
+    },
+    {
+      "path": "docs/assets/ad-content58-20261029-r1/SOURCE.txt",
+      "bytes": 5671,
+      "sha256": "d46f91fb84712d6cd5cc41e76d1c2f24fefa2ca3370bd18ab66f1aa311ed8955"
+    }
+  ]
+}

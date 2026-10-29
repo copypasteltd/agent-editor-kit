@@ -1,5 +1,9 @@
 # agent editor kit
 
+C74 精确内容去重已完成真实媒体闭环：两个ID导入同一蓝图，默认选择琥珀图与蓝图；显式仅ID策略允许两个蓝图别名。120帧完整RGBA工程重放一致。检索响应是显式合成数据，不计AI语义质量通过。 [C74 video / evidence](docs/validation/CLI58内容去重实测_2026-10-29.md)
+
+![Actual source58 content deduplication](docs/assets/ad-content58-20261029-r1/actual.gif)
+
 源码58实际DF3 CUDA复核已通过：4次神经前向，完整1124160字节PCM工程重放一致；受控MSE改善12.25dB，无自然质量／人工听审结论。 [CUDA evidence](docs/validation/CLI58真实CUDA复核_2026-10-29.md)
 
 当前开发源码 **CLI0.1.58**：新增精确内容SHA256去重选材，修复Windows自有进程同步回收与补帧预处理超时映射。57／19／31／104项源码分组及3项超时专项分别通过，完整400项仍在运行。正式加载仍CLI56／local54／r55；CLI57候选安装398项出现1失败／1错误，未提升版本，原失败保留。[58实现与核验](docs/validation/CLI58开发核验_2026-10-29.md)。
@@ -1929,6 +1933,7 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R446 | CLI58自有进程同步清理 | 修正后19项控制及3项超时专项分别通过；首次失败与旧实现20轮重现保留 |
 | R447 | CLI58入口与语义兼容 | 31项及104项分别通过，完整400项仍在运行；58未安装、正式Skill仍56 |
 | R448 | Source58 actual DF3 CUDA / 原生CUDA复核 | 4 forwards;complete1124160-byte PCM replay equal;controlled12.25dB MSE improvement;no natural-quality acceptance |
+| R449 | C74 actual content-dedup render / 精确内容去重实测 | Real aliases/default vs ID-only selection;120frames,27648000 RGBA bytes equal after package replay;explicit synthetic search,no neural inference |
 
 ## 当前边界与开发方向
 

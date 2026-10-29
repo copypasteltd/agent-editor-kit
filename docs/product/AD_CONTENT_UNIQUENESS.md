@@ -26,3 +26,8 @@
 [源码57项收据](../validation/evidence/ad-content-uniqueness-20261029-r1/source58-selection-r1/verification.json) · [旧版问题重现](../validation/evidence/ad-content-uniqueness-20261029-r1/baseline-r1/verification.json)
 
 这是精确文件字节身份，不是感知相似度、镜头语义去重、跨转码重复识别或完整广告质量验收。联合最优仅相对于服务实际返回并通过约束的有限候选集合。正式注册Skill仍CLI56；源码58尚未完成独立安装交付，勿向旧入口假定新默认行为。
+
+
+## 实际媒体／渲染闭环
+
+[C74实际媒体案例](../validation/CLI58内容去重实测_2026-10-29.md)已通过：同字节文件两ID导入、默认／仅ID策略对照、可编辑分镜构建、120帧成片与完整RGBA工程重放。检索分数为显式合成服务响应，不是实际语义模型验收。原文件、GIF、截图及权利来源可供agent向客户解释内容选择。

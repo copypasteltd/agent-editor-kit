@@ -1,5 +1,9 @@
 # agent editor kit
 
+C74 verifies exact-content deduplication with actual media:two IDs share identical blue-image bytes;default selection picks amber then blue,while explicit ID-only selection allows both blue aliases. All120 frames replay identically after package import. Search responses are explicitly synthetic;this is not neural or semantic-quality acceptance. [C74 video / evidence](docs/validation/CLI58内容去重实测_2026-10-29.md)
+
+![Actual source58 content deduplication](docs/assets/ad-content58-20261029-r1/actual.gif)
+
 Source58 actual DF3 CUDA verification passed:4 neural forwards and complete1124160-byte PCM package replay equality;12.25dB controlled-noise MSE improvement, without natural-quality or human-listening acceptance. [CUDA evidence](docs/validation/CLI58真实CUDA复核_2026-10-29.md)
 
 Development source is **CLI0.1.58**: exact-source SHA256 selection deduplication, synchronous owned Windows process cleanup, and interpolation preprocessing timeout mapping. Separate source groups passed 57 / 19 / 31 / 104 tests, plus 3 targeted timeout tests; the full 400-test run is pending. The registered Skill remains CLI56 / local54 / r55. Candidate57 failed its installed398 run (1 failure, 1 error) and has not been promoted. [Implementation and evidence](docs/validation/CLI58开发核验_2026-10-29.md).
@@ -1931,6 +1935,7 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R446 | Source58 synchronous owned-process cleanup | 19 control and3 targeted timeout tests passed separately;first repair failure and20 old-behavior reproductions retained |
 | R447 | Source58 bootstrap and semantic compatibility | 31 and104 tests passed separately;full400 pending;58 not installed,registered Skill stays56 |
 | R448 | Source58 actual DF3 CUDA / 原生CUDA复核 | 4 forwards;complete1124160-byte PCM replay equal;controlled12.25dB MSE improvement;no natural-quality acceptance |
+| R449 | C74 actual content-dedup render / 精确内容去重实测 | Real aliases/default vs ID-only selection;120frames,27648000 RGBA bytes equal after package replay;explicit synthetic search,no neural inference |
 
 ## Current limits and development direction
 

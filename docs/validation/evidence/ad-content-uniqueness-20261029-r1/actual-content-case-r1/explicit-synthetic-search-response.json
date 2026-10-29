@@ -1,0 +1,65 @@
+{
+  "task": "text",
+  "query_mode": "clauses",
+  "index_id": "synthetic-fixture",
+  "calibration_id": "synthetic-cal",
+  "network": "disabled",
+  "results": [
+    {
+      "query": {
+        "id": "hook",
+        "text": "synthetic hook query"
+      },
+      "calibration_id": "synthetic-cal",
+      "decision": "calibrated_match",
+      "hits": [
+        {
+          "asset_id": "picture_alias",
+          "source_sha256": "sha256:055b90a436cf789f0ae9584dd6c715cfc5b7957297106510a216112d30297001",
+          "decision_score": 0.99,
+          "editable_reference": {
+            "asset_id": "picture_alias",
+            "source_in_tick": 0,
+            "point_sample_only": true
+          },
+          "rights_verification_status": "verified",
+          "preview_asset_id": null
+        },
+        {
+          "asset_id": "other",
+          "source_sha256": "sha256:88da8dcb8de8648efb913b2454d1e596540de850c27da2a21b200f79b0a0b68f",
+          "decision_score": 0.8,
+          "editable_reference": {
+            "asset_id": "other",
+            "source_in_tick": 0,
+            "point_sample_only": true
+          },
+          "rights_verification_status": "verified",
+          "preview_asset_id": null
+        }
+      ]
+    },
+    {
+      "query": {
+        "id": "proof",
+        "text": "synthetic proof query"
+      },
+      "calibration_id": "synthetic-cal",
+      "decision": "calibrated_match",
+      "hits": [
+        {
+          "asset_id": "picture",
+          "source_sha256": "sha256:055b90a436cf789f0ae9584dd6c715cfc5b7957297106510a216112d30297001",
+          "decision_score": 0.9,
+          "editable_reference": {
+            "asset_id": "picture",
+            "source_in_tick": 0,
+            "point_sample_only": true
+          },
+          "rights_verification_status": "verified",
+          "preview_asset_id": null
+        }
+      ]
+    }
+  ]
+}

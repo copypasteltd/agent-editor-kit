@@ -53,7 +53,14 @@ def infer(request,response, *, source=None, sink=None, model_cache=None):
 
 
 def main():
-    sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+    application_root = str(Path(__file__).resolve().parents[1])
+    sys.path.insert(0, application_root)
+    try:
+        import ai_ad_editor
+    finally:
+        sys.path.remove(application_root)
+    if Path(ai_ad_editor.__file__).resolve() != Path(__file__).resolve().with_name('__init__.py'):
+        raise RuntimeError('NATIVE_WORKER_APPLICATION_CHANGED')
     from ai_ad_editor.rvm_worker import install_network_guard
     from ai_ad_editor.utils import atomic_write_json
     request=json.loads(Path(sys.argv[1]).read_text(encoding='utf-8'))

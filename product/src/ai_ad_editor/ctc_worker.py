@@ -126,7 +126,14 @@ def main() -> int:
         if request.get('protocol') != PROTOCOL or request.get('network') != 'disabled':
             raise ValueError('Invalid offline CTC request')
         # This module is loaded from the same installed package, without model code.
-        sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+        application_root = str(Path(__file__).resolve().parents[1])
+        sys.path.insert(0, application_root)
+        try:
+            import ai_ad_editor
+        finally:
+            sys.path.remove(application_root)
+        if Path(ai_ad_editor.__file__).resolve() != Path(__file__).resolve().with_name('__init__.py'):
+            raise RuntimeError('NATIVE_WORKER_APPLICATION_CHANGED')
         from ai_ad_editor.whisper_worker import install_network_guard
         install_network_guard(response['blocked_network_events'])
         runtime = Path(request['runtime_root'])

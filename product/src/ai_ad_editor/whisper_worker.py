@@ -37,7 +37,14 @@ def main() -> int:
             os.environ[key] = str(path)
         os.environ.update({"HF_HUB_OFFLINE": "1", "TRANSFORMERS_OFFLINE": "1", "HF_HUB_DISABLE_TELEMETRY": "1", "DO_NOT_TRACK": "1", "TOKENIZERS_PARALLELISM": "false", "TQDM_DISABLE": "1"})
         sys.dont_write_bytecode = True
-        sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+        application_root = str(Path(__file__).resolve().parents[1])
+        sys.path.insert(0, application_root)
+        try:
+            import ai_ad_editor
+        finally:
+            sys.path.remove(application_root)
+        if Path(ai_ad_editor.__file__).resolve() != Path(__file__).resolve().with_name('__init__.py'):
+            raise RuntimeError('NATIVE_WORKER_APPLICATION_CHANGED')
         from ai_ad_editor.local_asr import verify_adapter, checked_transcription
         from ai_ad_editor.utils import sha256_file
         adapter = request["adapter"]

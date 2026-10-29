@@ -1,0 +1,35 @@
+{
+  "cli_version": "0.1.57",
+  "actual_source_GPU_case": true,
+  "proof": "docs/validation/evidence/native-worker-bootstrap-20261029-r1/source57-gpu-r1/verification.json",
+  "source_noisy": "docs/assets/native-speech-enhancement-20261027-r2/english-noisy.wav",
+  "source_noisy_sha256": "6037a35481869830f5543630000b6c6aca47c2bf28842f99c06e7b5b30887ff8",
+  "source_license": "CC-BY-4.0",
+  "model_license": "MIT OR Apache-2.0",
+  "samples": 281040,
+  "sample_rate": 48000,
+  "channels": 1,
+  "full_PCM_bytes": 1124160,
+  "MSE_improvement_dB": 12.254463737448042,
+  "native_numpy_version": "2.4.6",
+  "human_listening": false,
+  "natural_quality_accepted": false,
+  "other14_models_accepted": false,
+  "files": [
+    {
+      "path": "enhanced.wav",
+      "bytes": 1124252,
+      "sha256": "c2d0da14ed8ff778abb383a34492c0fba06f4c8b3d115d0bcb988bcde0dd297e"
+    },
+    {
+      "path": "SOURCE.txt",
+      "bytes": 933,
+      "sha256": "c48bc01c0152c2d838442bb7d46eeecf5b4a2864db5623fa26d370d50fbdc820"
+    },
+    {
+      "path": "waveforms.png",
+      "bytes": 6257,
+      "sha256": "1e4d7bc1954d5577a2abbc82a23b1d857186705933a2bbf1ed7547e1547e5d53"
+    }
+  ]
+}

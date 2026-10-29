@@ -1,0 +1,25 @@
+{
+  "scope": "synthetic_lipsync_transport_only",
+  "neural_model": false,
+  "status": "failure-reproduced",
+  "error": "AppError(code='LIPSYNC_PIPELINE_FAILED', message='原生口型同步管道失败', exit_code=6, path=None, retryable=False, cause='<unavailable-failure-text>\\n[vost#0:0/rawvideo @ 0000021217e5ba80] Error submitting a packet to the muxer: Broken pipe\\r\\n    Last message repeated 1 times\\r\\n[out#0/rawvideo @ 0000021217e5c740] Error muxing a packet\\r\\n[out#0/rawvideo @ 0000021217e5c740] Task finished with error code: -32 (Broken pipe)\\r\\n[out#0/rawvideo @ 0000021217e5c740] Terminating thread with return code -32 (Broken pipe)\\r\\n[out#0/rawvideo @ 0000021217e5c740] Error writing trailer: Broken pipe\\r\\n[out#0/rawvideo @ 0000021217e5c740] Error closing file: Broken pipe\\r\\n\\nTraceback (most recent call last):\\r\\n  File \"<redacted-local-path>\", line 7, in <module>\\r\\n    import numpy as np\\r\\nModuleNotFoundError: No module named \\'numpy\\'\\r\\n\\n', hint=None, operation_id=None, diagnostics={'protocol': 'agent-native-pipeline-diagnostic-v1', 'status': 'stored', 'diagnostic_id': 'diag_2235720e188242be9feb01c29831186e', 'manifest': 'renders/diagnostics/pipelines/diag_2235720e188242be9feb01c29831186e/manifest.json', 'manifest_sha256': 'sha256:de910bcf73f8fd4480ad61ef1d42646743338ea6451f4b186d6f78e2d7556ceb', 'warnings': []})",
+  "details": {
+    "code": "LIPSYNC_PIPELINE_FAILED",
+    "message": "原生口型同步管道失败",
+    "exit_code": 6,
+    "path": null,
+    "retryable": false,
+    "cause": "<unavailable-failure-text>\n[vost#0:0/rawvideo @ 0000021217e5ba80] Error submitting a packet to the muxer: Broken pipe\r\n    Last message repeated 1 times\r\n[out#0/rawvideo @ 0000021217e5c740] Error muxing a packet\r\n[out#0/rawvideo @ 0000021217e5c740] Task finished with error code: -32 (Broken pipe)\r\n[out#0/rawvideo @ 0000021217e5c740] Terminating thread with return code -32 (Broken pipe)\r\n[out#0/rawvideo @ 0000021217e5c740] Error writing trailer: Broken pipe\r\n[out#0/rawvideo @ 0000021217e5c740] Error closing file: Broken pipe\r\n\nTraceback (most recent call last):\r\n  File \"<redacted-local-path>\", line 7, in <module>\r\n    import numpy as np\r\nModuleNotFoundError: No module named 'numpy'\r\n\n",
+    "hint": null,
+    "operation_id": null,
+    "diagnostics": {
+      "protocol": "agent-native-pipeline-diagnostic-v1",
+      "status": "stored",
+      "diagnostic_id": "diag_2235720e188242be9feb01c29831186e",
+      "manifest": "renders/diagnostics/pipelines/diag_2235720e188242be9feb01c29831186e/manifest.json",
+      "manifest_sha256": "sha256:de910bcf73f8fd4480ad61ef1d42646743338ea6451f4b186d6f78e2d7556ceb",
+      "warnings": []
+    }
+  },
+  "traceback": "Traceback (most recent call last):\n  File \"<stdin>\", line 11, in <module>\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 187, in execute\n    return execute(self.root,job,self.plan,self.source,self.audio,self.adapter,timeout=timeout,cancel_file=marker)\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\lipsync_pipeline.py\", line 112, in execute\n    if any(p.poll()!=0 for p in processes):raise AppError('LIPSYNC_PIPELINE_FAILED','原生口型同步管道失败',exit_code=6,cause=diagnostic.failure_text())\n                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nai_ad_editor.errors.AppError: 原生口型同步管道失败\n"
+}

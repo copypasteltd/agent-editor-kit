@@ -2,6 +2,10 @@
 
 Native CLI56/local54 is installed and registered as one `$agent-ffmpeg-local-editor` entry with17modules and93files. Source,isolated installed and actual C-discovered CUDA cases separately passed full two-aspect video/audio package replay. The four existing voice/translation packs were reverified. The final r55 kit passed independent extraction/configuration/registration and complete ACES video/audio replay.
 
+**Development source CLI57 repairs dependency isolation in15 native workers and rejects preloaded foreign application packages;31 actual-subprocess regressions passed.** Sixteen service-contract groups and an actual CUDA denoising case are running;the accepted live Skill remains CLI56/r55. [CLI57](docs/validation/CLI57原生工作进程修复_2026-10-29.md)
+
+Source CLI57 passed actual CUDA denoising and complete PCM package replay,with12.25dB controlled-noise MSE improvement.The first398-test broad run failed on missing test-runtime dependencies and is retained;a rerun uses the existing native model Python. [C71 actual audio / waveforms](docs/product/CASES.md#c71-source57-native-worker-gpu)
+
 ## Current workflow and verification
 
 These commands use this machine’s registered installation. A new host needs the matching application bundle and native dependencies described in the delivery log. Register assets/rights,model,index and device calibration;dry-run,select,build,preview/render each variant,then verify editable-package replay.
@@ -17,7 +21,7 @@ $agentEditor = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/r
 
 ![Actual registered CLI56 CUDA selection](docs/assets/ad-selection-registered56-20261029-r1/wide.gif)
 
-Import shadowing was reproduced in15 other native workers. Proposed copies and the30-test regression prototype passed;the shipped next-version repair and actual model acceptance remain pending. [Native worker diagnosis](docs/product/NATIVE_WORKER_BOOTSTRAP.md)
+Source CLI57 now repairs the15 native entry bootstraps;31 actual subprocess regressions passed.Broader service contracts and real model acceptance remain in progress.The live Skill stays on accepted CLI56/r55. [Native worker diagnosis](docs/product/NATIVE_WORKER_BOOTSTRAP.md)
 
 <!-- aek-history-summary -->
 <details>
@@ -1135,6 +1139,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F77 | Calibrated semantic ad selection | Batched semantic service, all-variant source/audio/rights gates, global distinct-asset assignment, portable shot receipts and ordinary editable plans. | `ad select; ad build; ad revise` | SourceCLI54;45 tests passed; actual CUDA/install/Skill acceptance separate; not whole-shot semantics or natural ad quality. |
 | F78 | Inherited native-process controls | Under an operation-budget context,check ancestor deadline/cancel before spawn,during wait and before return;close owned jobs/readers on interruption. | `run_process / operation_budget` | SourceCLI55;15 control tests passed;no hard real-time preemption of blocked OS calls. |
 | F79 | Native semantic dependency isolation | Pin the owned app package,then restore model-Python dependency resolution;retain version/path/hash checks so controller NumPy/Pillow cannot silently override the model runtime. | `semantic / ad select / project upgrade-semantic` | CLI56 source/installed bootstrap and actual CUDA cases passed;changed implementation requires fresh binding,not arbitrary-environment compatibility. |
+| F80 | Native-worker dependency isolation | Temporarily pin the owned application,restore the model runtime dependency search order,reject preloaded foreign packages,and preserve version/path/hash checks. | Native ASR/CTC/matting/segmentation/tracking/inpainting/generation/lip-sync/interpolation/denoising/separation entries | Source CLI57 passed31 subprocess regressions;new installed/model acceptance remains separate;live Skill stays56. |
 
 ## Supported service modules and dependencies
 
@@ -1897,6 +1902,11 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R430 | Other15 native worker bootstrap failures reproduced | Source and installed15each:all30 actual entry probes load the controller dependency marker;original runtime281files unchanged | [raw](docs/validation/evidence/native-worker-bootstrap-20261029-r1/full-r1/verification.json) | Import-order fixture only;not neural quality or proof all registered models fail |
 | R431 | Copied worker repair and foreign-package regression prototype | Proposed copies pass30 source/installed bootstrap probes;separate30-test prototype verifies native dependencies and preloaded foreign-package rejection | [candidate](docs/validation/evidence/native-worker-bootstrap-20261029-r1/full-proposed-r1/verification.json) · [prototype](docs/validation/evidence/native-worker-bootstrap-20261029-r1/prototype-tests-r1/verification.json) | Proposed copies only;not yet shipped source/installed repair;zero model forwards |
 | R432 | Final r55 kit independently accepted | 157ZIP entries/156inventory/93Skill files;four packs configured;isolated E registration;2newACESrenders;complete589824YUV/307200PCM and PNG equal;live discovery unchanged | [proof](docs/validation/evidence/semantic-worker-isolation-20261029-r1/formal-kit-r1/verification.json) · [kit](docs/skills/agent-editor-kit-community-unified-skill-r55.zip) | Same-host native Windows;no new model forwards in kit test;public alpha.3 preserved |
+| R433 | Source CLI57 native-worker dependency isolation | All15 remaining native entry bootstraps temporarily pin owned application and restore model dependency search order;reject already-loaded foreign packages;281module count unchanged | [change record](docs/validation/evidence/native-worker-bootstrap-20261029-r1/source57-apply-r1/verification.json) | Source repair;installed Skill remains accepted56/local54/r55;new model/installation gates separate |
+| R434 | Source57 actual subprocess bootstrap regressions | 15native-dependency tests+15preloaded foreign-package rejection tests+original semantic regression;31tests,zero failures/errors/skips;source/test hashes frozen | [raw](docs/validation/evidence/native-worker-bootstrap-20261029-r1/source57-bootstrap-r1/verification.json) | Import ownership and dependency priority;not neural quality,all-model GPU or installed57 acceptance |
+| R435 | Source57 actual native CUDA enhancement and C71 | FreshDF3 binding;RTX3060/4forwards;nativeNumPy2.4.6;fixed-noiseMSE improvement12.25446dB;complete1124160PCM package replay equal;281modules/liveSkill frozen | [raw](docs/validation/evidence/native-worker-bootstrap-20261029-r1/source57-gpu-r1/verification.json) · [C71 audio/waveforms](docs/product/CASES.md#c71-source57-native-worker-gpu) | Controlled English noise;no human listening,other14-model or installed57 acceptance |
+| R436 | Broader57 first398-test run failed and retained | Four failures/12errors/zero skips;frozen code/tests;missingcv2 in controller pixel tests and missingNumPy in isolated synthetic transport child independently reproduced | [failed run](docs/validation/evidence/native-worker-bootstrap-20261029-r1/source57-contracts-r1/verification.json) · [diagnostic](docs/validation/evidence/native-worker-bootstrap-20261029-r1/source57-lipsync-diagnostic-r1/verification.json) | Preserved failure;not counted as passed;synthetic transport is not neural inference |
+| R437 | Native contract-runner prerequisite guard | Checks dependencies inside the exact isolated child interpreter before loading broad contracts;newr2 uses the existing native model Python;no installs or weaker product checks | [runner](docs/validation/run_native_worker_regressions.py) | Complete398-test r2 result pending;driver preparation is not a passed functional test |
 
 ## Current limits and development direction
 

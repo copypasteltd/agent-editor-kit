@@ -171,7 +171,14 @@ def main() -> int:
             os.environ[key] = str(runtime/'temp')
         (runtime/'temp').mkdir(parents=True, exist_ok=True)
         tempfile.tempdir = str(runtime/'temp')
-        sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+        application_root = str(Path(__file__).resolve().parents[1])
+        sys.path.insert(0, application_root)
+        try:
+            import ai_ad_editor
+        finally:
+            sys.path.remove(application_root)
+        if Path(ai_ad_editor.__file__).resolve() != Path(__file__).resolve().with_name('__init__.py'):
+            raise RuntimeError('NATIVE_WORKER_APPLICATION_CHANGED')
         infer(request, response)
     except Exception as exc:
         response.update({'status':'failed', 'error_type':type(exc).__name__, 'message':str(exc)[:3000]})

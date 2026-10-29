@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import json,sys,numpy,PIL,jsonschema,cv2;print(json.dumps(dict(python=sys.executable,numpy=numpy.__version__,numpy_path=numpy.__file__,PIL=PIL.__version__,PIL_path=PIL.__file__,jsonschema_path=jsonschema.__file__,cv2=cv2.__version__,cv2_path=cv2.__file__)))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'numpy'

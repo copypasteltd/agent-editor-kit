@@ -35,3 +35,10 @@ CLI56已修复语义工作进程的应用包／原生模型依赖隔离，但不
 随后扩展到15个采用该加载方式的入口，补充RVM抠像、人脸、OCR、YOLO跟踪、Demucs、CTC、常驻VACE、四轨分离和Whisper。源码及安装版分别执行15次，共30次均观察到**应用包正确／控制器依赖优先**：[完整失败记录](../validation/evidence/native-worker-bootstrap-20261029-r1/full-r1/verification.json)。已核对30项输出全部是来源标记，不是请求格式失败。
 
 在另外的复制工作区应用拟议的临时导入／归还搜索顺序／包路径核验修复后，同样30次隔离入口观察全部符合原生依赖预期：[候选复制件结果](../validation/evidence/native-worker-bootstrap-20261029-r1/full-proposed-r1/verification.json)。原六入口的12项候选记录也保留在[首轮复制件结果](../validation/evidence/native-worker-bootstrap-20261029-r1/proposed-r1/verification.json)。这些记录明确 `proposed_fix_only=true` 和 `shipped_source_unchanged=true`，不能计为正式源码、安装或模型GPU任务已经修复；完整功能回归／新安装仍须独立执行。
+
+
+## 正式源码CLI57已修复
+
+在CLI56/r55独立工具包验收终态通过后，才将已验证的15入口修复合入正式源码，版本提升到0.1.57；281模块数量不变，当前安装／Skill仍56。新增15项原生依赖优先、15项预加载外部包拒绝及原语义1项，共[31项实际独立子进程回归通过](../validation/evidence/native-worker-bootstrap-20261029-r1/source57-bootstrap-r1/verification.json)，零失败／错误／跳过。原始30项失败和复制件记录保留，不改写为通过。
+
+更广的16组服务契约及真实DeepFilterNet3 CUDA降噪正在分别执行；[CLI57当前状态](../validation/CLI57原生工作进程修复_2026-10-29.md)。单一模型实际成功也不替代其他14类模型、新安装或自然质量验收。

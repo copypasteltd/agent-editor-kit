@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "negative_controller_guard": {
+    "status": "prerequisite-failed",
+    "group": "contracts",
+    "interpreter": "C:\\Python313\\python.exe",
+    "tests": 0,
+    "reason": "isolated transport interpreter lacks required native dependencies"
+  },
+  "positive_native_dependencies": {
+    "python": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+    "numpy": "2.4.6",
+    "numpy_path": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\numpy\\__init__.py",
+    "PIL": "12.3.0",
+    "jsonschema_path": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\jsonschema\\__init__.py",
+    "cv2": "5.0.0",
+    "cv2_path": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\cv2\\__init__.py"
+  },
+  "full_contract_suite_accepted": false,
+  "tests_run_by_negative_guard": 0,
+  "new_installs": false
+}

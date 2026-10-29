@@ -219,7 +219,14 @@ def infer(plan,response):
 def main():
     if sys.stdin.buffer.readline() != b'run\n':
         return 2
-    sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+    application_root = str(Path(__file__).resolve().parents[1])
+    sys.path.insert(0, application_root)
+    try:
+        import ai_ad_editor
+    finally:
+        sys.path.remove(application_root)
+    if Path(ai_ad_editor.__file__).resolve() != Path(__file__).resolve().with_name('__init__.py'):
+        raise RuntimeError('NATIVE_WORKER_APPLICATION_CHANGED')
     from ai_ad_editor.local_face import PROTOCOL,MAX_REPORT_BYTES
     from ai_ad_editor.yolo_worker import install_network_guard
     path = Path(sys.argv[1])

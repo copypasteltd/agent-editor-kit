@@ -1298,3 +1298,27 @@ CLI0.1.53/local51，1个公开Skill／17个内部模块／92个文件，经真�
 原圖三項CC0、配樂與字型各自來源和工程權利紀錄保存在SOURCE.json；不推定其他商標／肖像／使用限制已清除。已查看實際豎版PNG，畫面為contain排版及黑邊；未做連續人工觀片／聽審、自然動作或獨立Agent自主廣告品質驗收。這是熟悉靜態語料的完整技術閉環，不關閉原38項完整產品目標。
 
 English: The actual C-discovered unified Skill completed CUDA selection, four renders and byte-identical full RGB/PCM package replay. This does not establish natural-motion quality or independent-agent advertising success.
+
+
+<a id="c71-source57-native-worker-gpu"></a>
+
+## C71 · Source CLI57 actual CUDA denoising / 原生依赖隔离后的真实降噪
+
+源码CLI57重新登记DeepFilterNet3实现，使用原有D盘原生模型Python和原授权英语人声／固定噪声，未下载或安装依赖。RTX3060实际CUDA、FP32、一次模型加载／四次神经前向，无CPU神经回退；分析／合成前端仍为NumPy CPU。实际NumPy版本为模型运行时2.4.6，控制器版本2.4.2不再遮蔽。
+
+![Actual noisy/enhanced waveforms](../assets/native-worker-source57-20261029-r1/waveforms.png)
+
+上图上方灰色为原始含噪音频，下方绿色为本轮实际增强输出；波形不代替听审。
+
+[原含噪WAV](../assets/native-speech-enhancement-20261027-r2/english-noisy.wav) · [本轮增强WAV](../assets/native-worker-source57-20261029-r1/enhanced.wav) · [来源／模型许可／文件摘要](../assets/native-worker-source57-20261029-r1/SOURCE.json) · [完整出处](../assets/native-worker-source57-20261029-r1/SOURCE.txt) · [真实模型及完整PCM验收](../validation/evidence/native-worker-bootstrap-20261029-r1/source57-gpu-r1/verification.json)
+
+| 编号 | 实际核验 | 结果 |
+| --- | --- | --- |
+| C71.1 | 48kHz／单声道／281040样本，完整解码 | 1124160字节Float32 PCM，全部有限且非静音，原生时钟保持 |
+| C71.2 | 已知干净英语＋固定0dB噪声的独立均方误差 | 0.0038193303降至0.0002272693，改善12.25446dB；超过预定3dB受控检查点 |
+| C71.3 | 可编辑音轨入轨、工程导出／导入 | 输出WAV及完整解码PCM逐字节相同 |
+| C71.4 | 程序及现有Skill保持 | 281源码模块前后冻结；已注册CLI56／r55保持，未冒充CLI57安装验收 |
+
+原始英语为LibriSpeech dev-clean/1272/128104/1272-128104-0000，LibriSpeech／LibriVox contributors，语料由Vassil Panayotov等提供，CC BY4.0；原16kHz显式上采样至48kHz，不是真实全频带采集。模型为DeepFilterNet3（MIT OR Apache-2.0）。原始来源和变换说明保留在SOURCE文件。没有连续人工听审、自然噪声广泛质量或其余14类模型验收；不构成完整剪映等价结论。
+
+English: Real source CLI57 CUDA denoising retained the model runtime NumPy2.4.6,improved the controlled-noise MSE by12.25dB,and preserved complete PCM through editable-package replay. Other-model,installed57 and natural-listening acceptance remain separate.

@@ -1,5 +1,9 @@
 # agent editor kit
 
+**Source CLI56 passed actual CUDA selection and complete two-aspect audiovisual replay.**Eleven sources were freshly indexed/calibrated;all3 fixed queries matched frozen labels.Both90-frame variants retain identical complete RGB and non-silentPCM after export/import replay.[C69 movies,GIFs and frames](docs/product/CASES.md#c69-source56-semantic-selection).Actual installed GPU acceptance is running;the live Skill remains53/r54.
+
+![Actual CLI56 source selection](docs/assets/ad-selection-source56-20261029-r1/wide.gif)
+
 **The independently installed CLI56 passed all four1/15/45/104 groups.**The unified candidate retains1entry/17modules/93files and passed actual PowerShell version/capabilities checks.These metadata calls perform no inference;the candidate remains unregistered and the live Skill stays53/r54.[Delivery records and usage](docs/validation/CLI56原生交付_2026-10-29.md).
 
 **The complete CLI56 candidate is installed natively and offline.**1705 payload files match;281 modules/8 native resources are identical.Installed1 bootstrap,15 control and45 selection/storyboard tests passed;installed104 semantic tests and full11-source GPU acceptance remain in progress.The live Skill stays53/r54.[Local bundle,hashes and actual entry](docs/validation/CLI56原生交付_2026-10-29.md).
@@ -1849,6 +1853,10 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R417 | Installed CLI56 semantic compatibility | 104 passed;zero failures/errors/skips;isolated installed-only package;281 modules frozen | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/installed-semantic-r1/verification.json) | Actual source/installed/registered GPU cases remain separate |
 | R418 | Unified CLI56 candidate actual PowerShell entry | version/capabilities passed;1entry/17modules/93files;pinned installed56;live namespace/runtime/92files unchanged | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/skill-candidate-r1/verification.json) | Two metadata calls,zero model forwards;candidate unregistered |
 | R419 | Unified CLI56 explicit apply refuses missing actual cases | pending/source_case+installed_case;exit2;no pin directory;namespace/runtime/all92 live files unchanged | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/skill-pin-preflight-r1/verification.json) | Refusal path only;positive pin/activation/registration remain open |
+| R420 | Source CLI56 fresh full11-source CUDA setup | Registration/index/calibration passed;original corpus/queries/calibration source retained;281 modules frozen | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/setup-r5/verification.json) | New implementation binding;no hand-edited hashes;empirical calibration only |
+| R421 | Source CLI56 actual GPU selection and complete replay | All3 labels matched;4renders;wide/vertical90frames;fullRGB and finite non-silentPCM equal after project replay | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/case-r5/verification.json) | Familiar static scope;not actual installed/registered acceptance or independent Agent benchmark |
+| R422 | CLI56 actual demo media | Two unchanged source movies,twoGIFs,twoPNG frames,source/rights metadata;vertical PNG inspected | [media](docs/assets/ad-selection-source56-20261029-r1/SOURCE.json) | Technical contain layout,not natural ad aesthetic or continuous listening acceptance |
+| R423 | Installed56 validation workspace collision preserved and driver repaired | Historical CLI55 work basename collision stopped before CLI/model execution;new workspaces include explicit CLI version;actual attempt r2 uses a new folder | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/installed-case-r1/preparation-failure.json) | Preparation failure retained;actual r2 result separately required |
 
 ## Current limits and development direction
 

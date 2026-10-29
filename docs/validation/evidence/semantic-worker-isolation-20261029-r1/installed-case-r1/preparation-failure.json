@@ -1,0 +1,12 @@
+{
+  "status": "failed-before-cli-execution",
+  "scope": "validation-workspace-allocation",
+  "cli_version": "0.1.56",
+  "error": "FileExistsError [WinError 183]",
+  "existing_workspace": "local/agent-ffmpeg/ad-selection-installed-20261029-r1",
+  "cause": "Validation driver reused the existing historical CLI55 workspace basename across CLI versions.",
+  "actual_GPU_forwards": 0,
+  "renders": 0,
+  "existing_workspace_preserved": true,
+  "repair": "New workspaces include the explicit CLI version. New actual attempt uses installed-case-r2;do not overwrite r1."
+}

@@ -1255,3 +1255,24 @@ CLI0.1.53/local51，1个公开Skill／17个内部模块／92个文件，经真�
 已实际查看静态截图。GIF只用于技术演示；小尺寸字幕、静态熟悉图集、3秒时长不代表自然运动广告、连续听审或艺术质量通过。CUDA校准保留20/20正确正例接受、1/20负例误接受的实际结果；不是零误差保证。原CLI54超时失败仍保留。
 
 繁體：原始碼實際CUDA選材、橫直版完整音畫與專案重播通過；安裝／註冊入口及自然廣告品質另驗。English: Actual source CLI55 GPU selection and complete two-aspect audiovisual replay passed;installed/registered entry acceptance,natural-motion quality and independent Agent success remain separate.
+
+<a id="c69-source56-semantic-selection"></a>
+
+## C69 · CLI56 CUDA selection / CLI56原生依赖隔离后选材
+
+源码CLI56完成全11来源重新注册／索引／校准；原素材、三条查询、预期标签和20正／20负校准集均未调整。工作进程固定自己的应用包后恢复模型Python依赖搜索顺序，版本／模块路径／模型指纹检查保留。
+
+![Actual source CLI56 selection](../assets/ad-selection-source56-20261029-r1/wide.gif)
+
+[横版影片](../assets/ad-selection-source56-20261029-r1/wide.mp4) · [竖版影片](../assets/ad-selection-source56-20261029-r1/vertical.mp4) · [竖版GIF](../assets/ad-selection-source56-20261029-r1/vertical.gif) · [竖版截图](../assets/ad-selection-source56-20261029-r1/vertical.png) · [来源／权利／摘要](../assets/ad-selection-source56-20261029-r1/SOURCE.json) · [全链路结果](../validation/evidence/semantic-worker-isolation-20261029-r1/case-r5/verification.json)
+
+| 编号 | 实际结果 | 范围 |
+| --- | --- | --- |
+| C69.1 | CUDA选中asset_b4咖啡／asset_c2猫／asset_a7相机 | 三条固定查询，非独立自然视频语料 |
+| C69.2 | 横320×180／竖180×320，各30FPS、90帧 | 原始和工程重放共四次渲染；独立FFprobe核对尺寸／帧率／帧数 |
+| C69.3 | 每画幅完整15,552,000字节RGB、1,155,072字节Float32 PCM | 与各自工程重放一致；PCM有限且非静音，未作人工听审 |
+| C69.4 | 选材期间作者工程不变，281模块前后冻结 | 未手工改旧绑定；正式注册Skill仍53，安装版实际案例另验 |
+
+使用与C68相同的CC0照片／Juhani Junkala配乐及OFL-1.1 Noto字体，原Rights Ledger内的internal记录原样保留，不伪造商业发布授权。完整可编辑包保留本地，未重复公开发布。已查看本次竖版静态截图；其黑边为技术演示的contain适配，不作为竖屏广告美感通过。连续观片／听审、自然运动和完整Agent自主任务成功率仍开放。
+
+繁體：CLI56原始碼實際CUDA選材與兩畫幅完整專案重播通過；安裝／註冊入口和自然廣告品質另驗。English: Source CLI56 passed actual CUDA selection and full audiovisual two-aspect replay;installed/registered acceptance and natural-quality validation remain separate.

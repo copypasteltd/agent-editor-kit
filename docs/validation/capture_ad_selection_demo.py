@@ -1,4 +1,5 @@
 """Capture actual source CLI55 semantic-selection movies, GIFs and source credits."""
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -14,12 +15,21 @@ def sha(path):
 
 
 def main():
-    proof = json.loads((BASE/'case-r3/verification.json').read_bytes())
-    assert proof['status'] == 'passed' and proof['source_cli'] == '0.1.55'
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--cli-version', choices=('0.1.55', '0.1.56'), default='0.1.55')
+    parser.add_argument('--source-run', default='r3')
+    parser.add_argument('--run', default='r1')
+    parser.add_argument('--evidence-series', default='process-budget-20261029-r1')
+    args = parser.parse_args()
+    assert all(s.replace('-', '').isalnum() for s in (args.source_run, args.run, args.evidence_series))
+    base = ROOT/'docs/validation/evidence'/args.evidence_series
+    case = base/('case-'+args.source_run)
+    proof = json.loads((case/'verification.json').read_bytes())
+    assert proof['status'] == 'passed' and proof['source_cli'] == args.cli_version
     assert proof['actual_GPU_semantic_search'] and proof['full_project_replay_equal']
-    project = ROOT/'local/agent-ffmpeg/ad-selection-20261029-r3/project'
-    out = ROOT/'docs/assets/ad-selection-source55-20261029-r1'
-    evidence = BASE/'demo-r1'
+    project = ROOT/'local/agent-ffmpeg'/('ad-selection-20261029-'+args.source_run)/'project'
+    out = ROOT/'docs/assets'/('ad-selection-source'+args.cli_version.rsplit('.', 1)[1]+'-20261029-'+args.run)
+    evidence = base/('demo-'+args.run)
     out.mkdir(parents=True, exist_ok=False)
     evidence.mkdir(exist_ok=False)
     (evidence/'executed-generator.py').write_bytes(Path(__file__).read_bytes())
@@ -41,7 +51,7 @@ def main():
             (evidence/(variant+'-'+kind+'.stderr')).write_bytes(result.stderr)
             calls.append(dict(argv=command, exit_code=result.returncode))
             assert result.returncode == 0, result.stderr.decode('utf-8', 'replace')
-    selection = json.loads((BASE/'case-r3/select.stdout').read_bytes())['data']['selection']
+    selection = json.loads((case/'select.stdout').read_bytes())['data']['selection']
     upstream = json.loads((ROOT/'docs/assets/semantic-package-20261025-r1/SOURCE.json').read_bytes())
     selected_ids = set(proof['selection'].values())
     credits = [row for row in upstream['assets'] if row['asset_id'] in selected_ids]
@@ -51,8 +61,8 @@ def main():
     rights_files = sorted(project.glob('*rights*'))
     rights = {p.name: json.loads(p.read_bytes()) for p in rights_files if p.suffix == '.json'}
     assert rights, 'Missing project rights records'
-    source = dict(cli_version='0.1.55', generated_from_actual_case=True,
-                  source_case='docs/validation/evidence/process-budget-20261029-r1/case-r3/verification.json',
+    source = dict(cli_version=args.cli_version, generated_from_actual_case=True,
+                  source_case=(case/'verification.json').relative_to(ROOT).as_posix(),
                   selected=proof['selection'], selected_image_credits=credits,
                   font_and_music_assets=[a for a in metadata['assets'] if a['id'] in ('font', 'music')],
                   project_rights=rights, selection_receipts=selection['selected'],

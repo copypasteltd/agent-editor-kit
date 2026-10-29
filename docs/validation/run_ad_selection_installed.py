@@ -62,7 +62,7 @@ def main():
     out = BASE/('installed-case-'+args.run)
     out.mkdir(parents=True, exist_ok=False)
     (out/'executed-runner.py').write_bytes(Path(__file__).read_bytes())
-    work = ROOT/'local/agent-ffmpeg'/('ad-selection-installed-20261029-'+args.run)
+    work = ROOT/'local/agent-ffmpeg'/('ad-selection-installed-cli'+args.cli_version.rsplit('.', 1)[1]+'-20261029-'+args.run)
     work.mkdir(parents=True, exist_ok=False)
     original_work = ROOT/'local/agent-ffmpeg'/('ad-selection-20261029-'+args.source_run)
     setup_file = BASE/('complete-'+args.source_run)/'verification.json'

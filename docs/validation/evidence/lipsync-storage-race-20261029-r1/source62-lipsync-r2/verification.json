@@ -1,0 +1,19 @@
+{
+  "status": "failed",
+  "version": "0.1.62",
+  "tests": 34,
+  "failures": 1,
+  "errors": 0,
+  "skips": 0,
+  "legacy_race_reproduced": true,
+  "real_FFmpeg": true,
+  "worker": "synthetic",
+  "neural_inference": false,
+  "formal_activation": false,
+  "file_hashes": {
+    "product/src/ai_ad_editor/__init__.py": "18fe0cfda398b25b4a73d4ff8c2ed7f4ed36c8d6a62abb4272f99f02844bfe8e",
+    "product/src/ai_ad_editor/lipsync_pipeline.py": "d5fe2830ffaf9c2b16e6d4f00260c2cc41fd386105d881f0749deb69e10ca010",
+    "product/pyproject.toml": "b0e0b1bddd6decf4d7964462a8b7ce598bed139bd78de3d921d742320c03e3df",
+    "product/tests/test_lipsync.py": "fc1c3c966dab80b079ba08386d45adda07ec6e1dcf5c36345369ea53f14b6d46"
+  }
+}

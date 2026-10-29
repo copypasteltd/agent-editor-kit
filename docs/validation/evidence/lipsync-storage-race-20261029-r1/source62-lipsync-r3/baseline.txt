@@ -1,0 +1,29 @@
+test_atomic_progress_rename_during_storage_scan_preserves_complete_transport (test_lipsync.TransportTests.test_atomic_progress_rename_during_storage_scan_preserves_complete_transport) ... ERROR
+
+======================================================================
+ERROR: test_atomic_progress_rename_during_storage_scan_preserves_complete_transport (test_lipsync.TransportTests.test_atomic_progress_rename_during_storage_scan_preserves_complete_transport)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 207, in test_atomic_progress_rename_during_storage_scan_preserves_complete_transport
+    stage,result=self.execute()
+                 ~~~~~~~~~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 187, in execute
+    return execute(self.root,job,self.plan,self.source,self.audio,self.adapter,timeout=timeout,cancel_file=marker)
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\lipsync_pipeline.py", line 132, in execute
+    if workspace_bytes(work)>plan['storage_budget_bytes'] or storage_bytes(staged)>MAX_INPUT_BYTES:raise error('OUTPUT_BUDGET','实际输出超过存储预算')
+       ~~~~~~~~~~~~~~~^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\docs\validation\run_source62_storage_race.py", line 17, in legacy
+    def legacy(work):return sum(p.stat().st_size for p in work.iterdir() if p.is_file())
+                            ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\dev\sandbox\AI广告剪辑\docs\validation\run_source62_storage_race.py", line 17, in <genexpr>
+    def legacy(work):return sum(p.stat().st_size for p in work.iterdir() if p.is_file())
+                                ~~~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_lipsync.py", line 205, in observe
+    return actual_stat(path,*args,**kwargs)
+  File "pathlib\_local.py", line 515, in stat
+FileNotFoundError: [WinError 2] 系统找不到指定的文件。: 'E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\temp\\tmp1uxscuzf\\project\\cache\\managed-jobs\\job-d785995b8270452c8593edffc792e956\\pipeline\\.progress.race.tmp'
+
+----------------------------------------------------------------------
+Ran 1 test in 2.338s
+
+FAILED (errors=1)

@@ -2050,6 +2050,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R494 | CLI61 voice delivery | 真實原生Chrome截圖展示本地103音色試聽頁；無頭瀏覽器已退出，未留對應行程或互動分頁。截圖不等於播放／聽審，未公開發布內部聲音檔案。 [Evidence / use](docs/validation/CLI61全音色试听_2026-10-29.md) |
 | R495 | CLI61 Skill candidate | CLI61候選Skill已通過靜態校驗及實際PowerShell循環／DF3 CUDA：完整2557440／1124160位元組PCM與原始碼及工程包重播一致；候選MuseTalk及正式切換仍另驗。 [Evidence / sync](docs/validation/CLI61Skill音色说明同步_2026-10-29.md) |
 | R496 | CLI61 Skill candidate | 103音色Skill說明同步已備妥並驗證：只變更community-materials說明，其餘92個已測試檔案相同；靜態及四類錯誤拒絕通過。新版啟用仍拒絕缺少候選MuseTalk；95正式檔案不變，未假稱已同步註冊。 [Evidence / sync](docs/validation/CLI61Skill音色说明同步_2026-10-29.md) |
+| R497 | CLI62 source / CLI61 candidate failure | 修復口型同步容量觀察與進度暫存檔原子重新命名的競爭；新增真實 FFmpeg 故障注入、完整 RGBA/PCM、錯誤傳播及超預算清理回歸。保留 CLI61 候選實際 MuseTalk 失敗，正式 Skill 仍 CLI59；新版本完整交付門檻待完成。[變更與證據](docs/validation/CLI62口型存储竞争修复_2026-10-29.md) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

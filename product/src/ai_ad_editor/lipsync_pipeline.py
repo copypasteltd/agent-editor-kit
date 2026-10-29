@@ -1,5 +1,5 @@
 """Owned, cancellable RGBA model pipeline with complete PCM and encoding proofs."""
-import contextlib,json,math,shutil,subprocess,time
+import contextlib,json,math,shutil,stat,subprocess,time
 from pathlib import Path
 from .errors import AppError
 from .local_lipsync import ENGINE,PROTOCOL,verify_adapter,error
@@ -8,6 +8,25 @@ from .media import ffmpeg_path,probe_media,MAX_INPUT_BYTES
 from .utils import atomic_write_json,run_process,sha256_file
 from .pipeline_diagnostics import Session
 from .native_audio_clock import cancel
+
+
+
+def storage_bytes(path):
+    """Observe one regular file; atomic renames may remove a scanned entry.
+
+    Only disappearance is tolerated. Permission and I/O failures remain visible.
+    This is a live budget observation, not an atomic directory snapshot.
+    """
+    try:
+        info=path.stat()
+    except FileNotFoundError:
+        return 0
+    return info.st_size if stat.S_ISREG(info.st_mode) else 0
+
+
+def workspace_bytes(work):
+    """Count immediate regular files without an is_file/stat race."""
+    return sum(storage_bytes(path) for path in work.iterdir())
 
 
 def validate_response(response,request):
@@ -110,7 +129,7 @@ def execute(root,job,plan,source,audio,adapter,*,timeout,cancel_file=None,progre
                 while any(p.poll()is None for p in processes):
                     remaining();diagnostic.observe()
                     if any(p.poll()not in (None,0) for p in processes):break
-                    if sum(p.stat().st_size for p in work.iterdir() if p.is_file())>plan['storage_budget_bytes'] or staged.exists() and staged.stat().st_size>MAX_INPUT_BYTES:raise error('OUTPUT_BUDGET','实际输出超过存储预算')
+                    if workspace_bytes(work)>plan['storage_budget_bytes'] or storage_bytes(staged)>MAX_INPUT_BYTES:raise error('OUTPUT_BUDGET','实际输出超过存储预算')
                     if progress:
                         with contextlib.suppress(OSError,ValueError,KeyError,TypeError):
                             frame=json.loads((work/'progress.json').read_bytes())['frames']

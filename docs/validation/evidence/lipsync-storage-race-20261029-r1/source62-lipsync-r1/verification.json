@@ -1,0 +1,6 @@
+{
+  "status": "failed",
+  "phase": "baseline-reproduction",
+  "cause": "Fixture renamed before first stat; is_file suppressed disappearance. Fixed injection to rename between first and second stat.",
+  "product_tests_not_run": true
+}

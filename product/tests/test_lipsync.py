@@ -190,6 +190,44 @@ class TransportTests(unittest.TestCase):
         self.assertEqual(result['recipe']['audio']['samples'],9648);self.assertEqual(result['recipe']['audio']['output_samples'],11520)
         self.assertTrue(all(p['exited'] and p['stdout_closed'] for p in result['cleanup']['processes']))
         self.assertFalse(stage.exists());self.assertFalse(list((self.root/'cache/managed-jobs').glob('job-*')))
+    def test_atomic_progress_rename_during_storage_scan_preserves_complete_transport(self):
+        actual_iterdir=Path.iterdir;actual_stat=Path.stat;renamed=[];observations=[]
+        def entries(path):
+            if path.name=='pipeline' and not renamed:
+                pending=path/'.progress.race.tmp';pending.write_bytes(b'{}')
+                yield pending
+            yield from actual_iterdir(path)
+        def observe(path,*args,**kwargs):
+            if path.name=='.progress.race.tmp' and not renamed:
+                observations.append(str(path))
+                if len(observations)==2:
+                    path.replace(path.with_name('progress.race.json'));renamed.append(str(path))
+            return actual_stat(path,*args,**kwargs)
+        with patch.object(Path,'iterdir',entries),patch.object(Path,'stat',observe):
+            stage,result=self.execute()
+        self.assertEqual(len(renamed),1)
+        self.assertTrue(result['rgba_roundtrip_verified'])
+        self.assertTrue(result['complete_PCM_roundtrip_verified'])
+        self.assertTrue(all(p['exited'] and p['stdout_closed'] for p in result['cleanup']['processes']))
+        self.assertFalse(stage.exists())
+        self.assertFalse(list((self.root/'cache/managed-jobs').glob('job-*')))
+
+    def test_storage_scan_counts_regular_files_and_keeps_io_errors_visible(self):
+        from ai_ad_editor.lipsync_pipeline import workspace_bytes,storage_bytes
+        work=self.base/'budget';work.mkdir();(work/'a').write_bytes(b'123')
+        nested=work/'nested';nested.mkdir();(nested/'b').write_bytes(b'45678')
+        self.assertEqual(workspace_bytes(work),3)
+        self.assertEqual(storage_bytes(work/'missing'),0)
+        for failure in (PermissionError('denied'),OSError('I/O failure')):
+            with patch.object(Path,'stat',side_effect=failure):
+                with self.assertRaises(type(failure)):storage_bytes(work/'a')
+
+    def test_storage_budget_still_rejects_and_reclaims_pipeline(self):
+        self.plan['storage_budget_bytes']=1
+        with self.assertRaises(AppError) as caught:self.execute()
+        self.assertEqual(caught.exception.code,'LIPSYNC_OUTPUT_BUDGET')
+        self.assertFalse(list((self.root/'cache/managed-jobs').glob('job-*')))
+
     def test_worker_failure_is_diagnosed_and_workspace_recovered(self):
         with self.assertRaisesRegex(AppError,'管道失败') as caught:self.execute('fail')
         self.assertEqual(caught.exception.diagnostics['status'],'stored');self.assertFalse(list((self.root/'cache/managed-jobs').glob('job-*')))

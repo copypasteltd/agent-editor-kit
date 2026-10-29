@@ -2068,6 +2068,7 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R510 | CLI63 source semantic | 语义索引/决策/任务/工程包/升级104项通过，零失败/错误/跳过，283应用与192测试文件冻结一致。源码回归不替代真实语义模型或独立Agent验收。[证据](docs/validation/evidence/job-enumeration-20261029-r1/source63-semantic-r1/verification.json) |
 | R511 | CLI63 actual CPU loop | 原创片段13.37→13.32秒/50ms重叠，主体PCM不变；完整2557440字节PCM三次重复及工程包配方重做一致。CPU DSP、无神经模型；未验收人类听审、true peak或自然无缝。[实际案例](docs/validation/evidence/job-enumeration-20261029-r1/actual-case-r1/verification.json) |
 | R512 | CLI63 actual MuseTalk CUDA | RTX3060实际133帧/67批，无CPU回退；母版/渲染全量RGBA及PCM、alpha/框外RGB、工程包音画重放与进程清理通过。内部未核验素材，不公开人物成片；无人类连续播放/听审/自然度接受。[细节](docs/validation/CLI63候选交付门禁_2026-10-29.md#新增实际通过结果) |
+| R513 | CLI63 actual DF3 CUDA | RTX3060实际4次模型前向、无CPU回退，完整1124160字节PCM工程包重放一致。音频前端仍CPU，无人类听审接受；真实模型控制器两项与CPU控制器三项均终态通过，406合同/新安装/Skill另验。[证据](docs/validation/evidence/job-enumeration-20261029-r1/source63-gpu-r1/verification.json) |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

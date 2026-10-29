@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "calls": [
+    {
+      "script": "run_source63_lipsync_case.py",
+      "exit_code": 0
+    },
+    {
+      "script": "run_source63_gpu_case.py",
+      "exit_code": 0
+    }
+  ],
+  "formal_activation": false,
+  "full_goal_closed": false
+}

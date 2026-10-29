@@ -1,5 +1,7 @@
 # agent editor kit
 
+源码58实际DF3 CUDA复核已通过：4次神经前向，完整1124160字节PCM工程重放一致；受控MSE改善12.25dB，无自然质量／人工听审结论。 [CUDA evidence](docs/validation/CLI58真实CUDA复核_2026-10-29.md)
+
 当前开发源码 **CLI0.1.58**：新增精确内容SHA256去重选材，修复Windows自有进程同步回收与补帧预处理超时映射。57／19／31／104项源码分组及3项超时专项分别通过，完整400项仍在运行。正式加载仍CLI56／local54／r55；CLI57候选安装398项出现1失败／1错误，未提升版本，原失败保留。[58实现与核验](docs/validation/CLI58开发核验_2026-10-29.md)。
 
 独立安装57第三类实际模型MuseTalk已通过CUDA与完整成片重放：67次UNet，原生133帧／25fps，成片160帧／30fps。自然口型质量与其余12类实际模型仍另验。[C73影片／来源／证据](docs/product/CASES.md#c73-installed57-musetalk)。
@@ -1149,8 +1151,8 @@ flowchart LR
 | F78 | 原生子进程继承预算 | 在预算上下文内，启动／等待／返回时检查外层期限和取消标记，中断时关闭自有Job并回收读取线程。 | `run_process / operation_budget` | 源码CLI55；15项控制回归通过；不承诺OS阻塞调用硬实时抢占。 |
 | F79 | 语义模型原生依赖隔离 | 工作进程固定自己的应用包后恢复模型Python的依赖搜索顺序，保留版本／模块路径／摘要检查，避免安装site覆盖模型NumPy／Pillow。 | `semantic / ad select / project upgrade-semantic` | CLI56源码／安装原生回归与实际CUDA案例通过；新实现须重新登记绑定，非任意环境兼容保证。 |
 | F80 | 15类原生工作进程依赖隔离 | 临时固定所属应用包后恢复模型Python依赖搜索顺序，拒绝预加载外部同名包，保留原版本／路径／摘要校验。 | 原生ASR／CTC／分割／抠像／跟踪／修复／生成／口型／补帧／降噪／分离等入口 | CLI57源码31项子进程回归通过；安装和实际模型另验，正式Skill仍CLI56。 |
-| F81 | 精确内容去重 / Exact-content deduplication / 精確內容去重 | 源码58：规范SHA256、全局联合分配、显式复用选项；非感知去重 | [规则与验证](docs/product/AD_CONTENT_UNIQUENESS.md) |
-| F82 | 自有进程同步回收 / Owned-process cleanup / 自有程序同步回收 | 源码58：持有成员句柄等待退出；独立作业互不影响；58安装另验 | [行为与证据](docs/product/OWNED_PROCESS_CLEANUP.md) |
+| F81 | 精确内容去重选材 | 规范SHA256内容分组、全局联合分配，支持显式ID去重或复用。 | ad select；不同ID相同文件；非感知去重 | 源码58选材／分镜57项通过；[规则与证据](docs/product/AD_CONTENT_UNIQUENESS.md)，58安装另验。 |
+| F82 | 自有原生进程同步回收 | 持有自有成员句柄并等待退出，独立Job互不影响，保留外层预算异常。 | Windows模型／工具子进程及补帧预处理超时 | 源码58控制19项、超时3项分别通过；[行为与证据](docs/product/OWNED_PROCESS_CLEANUP.md)。 |
 
 ## 支持的服务模块与依赖
 
@@ -1926,6 +1928,7 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R445 | CLI58精确内容去重 | 57项源码选材／分镜通过，含12项新增与随机图独立最优解比较；非感知去重 |
 | R446 | CLI58自有进程同步清理 | 修正后19项控制及3项超时专项分别通过；首次失败与旧实现20轮重现保留 |
 | R447 | CLI58入口与语义兼容 | 31项及104项分别通过，完整400项仍在运行；58未安装、正式Skill仍56 |
+| R448 | Source58 actual DF3 CUDA / 原生CUDA复核 | 4 forwards;complete1124160-byte PCM replay equal;controlled12.25dB MSE improvement;no natural-quality acceptance |
 
 ## 当前边界与开发方向
 

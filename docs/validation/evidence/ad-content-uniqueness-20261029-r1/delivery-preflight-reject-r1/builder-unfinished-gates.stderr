@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\docs\validation\build_source58_delivery.py", line 191, in <module>
+    main()
+    ~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\docs\validation\build_source58_delivery.py", line 48, in main
+    gates = [json.loads(p.read_bytes()) for p in gate_paths]
+                        ~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\pathlib\_abc.py", line 625, in read_bytes
+    with self.open(mode='rb') as f:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Python313\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\ad-content-uniqueness-20261029-r1\\source58-gpu-r1\\verification.json'

@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "scope": "delivery-driver-negative-checks-only",
+  "product_functional_tests": 0,
+  "neural_forwards": 0,
+  "source_used_as_installed_rejected": true,
+  "unfinished_GPU_gate_rejected_before_build": true,
+  "local56_install_tree_created": false,
+  "calls": [
+    {
+      "name": "builder-unfinished-gates",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "docs/validation/build_source58_delivery.py",
+        "--run",
+        "preflight-reject-r1"
+      ],
+      "exit_code": 1,
+      "script_sha256": "af9d43693e6d9b931166d326acc57578ec6096cedf1cf7bc501978edb6eb05c6"
+    },
+    {
+      "name": "installed-runner-source-reject",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "docs/validation/run_source58_installed_regressions.py",
+        "--group",
+        "bootstrap",
+        "--run",
+        "source-reject-r1",
+        "--installed",
+        "E:\\dev\\sandbox\\AI广告剪辑\\product\\src"
+      ],
+      "exit_code": 1,
+      "script_sha256": "35746a13d555962f895c0f7cab85d1e0368fc6b3c0da9b15c139cc1365675610"
+    }
+  ]
+}

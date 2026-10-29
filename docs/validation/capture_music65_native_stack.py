@@ -14,8 +14,9 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--run', required=True)
     parser.add_argument('--pid', type=int, required=True)
-    parser.add_argument('--script', choices=['probe_music65_reader.py', 'music_generation_worker.py'], required=True)
+    parser.add_argument('--script', choices=['probe_music65_reader.py', 'music_generation_worker.py', 'run.py'], required=True)
     parser.add_argument('--native-executable', type=Path, required=True)
+    parser.add_argument('--project', type=Path)
     args = parser.parse_args()
     assert args.run.isalnum() and args.pid > 0 and sys.dont_write_bytecode
     helper_path = ROOT / 'docs/validation/diagnose_music64_process.py'
@@ -26,10 +27,17 @@ def main():
     before = identity(args.pid)
     assert Path(before['executable']).resolve() == args.native_executable.resolve()
     queried = subprocess.run(['powershell.exe', '-NoProfile', '-NonInteractive', '-Command',
+        '[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false); '
         'Get-CimInstance Win32_Process -Filter "ProcessId=' + str(args.pid) + '" | Select-Object -ExpandProperty CommandLine'],
         cwd=ROOT, capture_output=True, timeout=30, creationflags=subprocess.CREATE_NO_WINDOW)
     command = queried.stdout.decode('utf-8', errors='replace')
     assert queried.returncode == 0 and args.script in command and '-B' in command and '-I' in command
+    if args.script == 'run.py':
+        expected = ROOT / 'local/agent-ffmpeg/v0.1.0-alpha.4-local.63/final-r1/installed/run.py'
+        assert args.project and args.project.resolve().is_relative_to((ROOT / 'local/agent-ffmpeg').resolve())
+        normalized = command.replace('\\', '/').casefold()
+        assert expected.as_posix().casefold() in normalized and 'music generate --project' in normalized
+        assert args.project.resolve().as_posix().casefold() in normalized
     assert identity(args.pid) == before
     tool = ROOT / 'local/agent-ffmpeg/music64-process-diagnostic-r1/py-spy.exe'
     assert hashlib.sha256(tool.read_bytes()).hexdigest() == helper.TOOL_PIN

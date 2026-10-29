@@ -1,0 +1,11 @@
+{
+  "status": "rejected-before-stack",
+  "pid": 35080,
+  "script": "run.py",
+  "reason": "Exact Unicode command-path ownership assertion failed after decoding Windows PowerShell stdout as UTF-8.",
+  "exit_code": 1,
+  "assertion": "expected.as_posix().casefold() in normalized and music generate --project in normalized",
+  "stack_captured": false,
+  "process_mutated": false,
+  "model_generation_accepted": false
+}

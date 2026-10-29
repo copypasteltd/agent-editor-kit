@@ -1,0 +1,20 @@
+test_boolean_size_is_invalid (__main__.main.<locals>.RecoveryCases.test_boolean_size_is_invalid) ... ok
+test_committed_cleanup_does_not_roll_back_user_metadata (__main__.main.<locals>.RecoveryCases.test_committed_cleanup_does_not_roll_back_user_metadata) ... ok
+test_duplicate_backup_is_invalid (__main__.main.<locals>.RecoveryCases.test_duplicate_backup_is_invalid) ... ok
+test_duplicate_destination_is_invalid (__main__.main.<locals>.RecoveryCases.test_duplicate_destination_is_invalid) ... ok
+test_interrupted_restore_retains_journal_and_can_retry (__main__.main.<locals>.RecoveryCases.test_interrupted_restore_retains_journal_and_can_retry) ... ok
+test_journal_cannot_be_a_restore_destination (__main__.main.<locals>.RecoveryCases.test_journal_cannot_be_a_restore_destination) ... ok
+test_late_missing_backup_does_not_partially_restore (__main__.main.<locals>.RecoveryCases.test_late_missing_backup_does_not_partially_restore) ... ok
+test_malformed_digest_is_invalid (__main__.main.<locals>.RecoveryCases.test_malformed_digest_is_invalid) ... ok
+test_media_destination_is_rejected (__main__.main.<locals>.RecoveryCases.test_media_destination_is_rejected) ... ok
+test_other_transaction_backup_is_rejected (__main__.main.<locals>.RecoveryCases.test_other_transaction_backup_is_rejected) ... ok
+test_parent_alias_is_rejected (__main__.main.<locals>.RecoveryCases.test_parent_alias_is_rejected) ... ok
+test_same_size_corruption_is_rejected_before_any_restore (__main__.main.<locals>.RecoveryCases.test_same_size_corruption_is_rejected_before_any_restore) ... ok
+test_size_mismatch_is_rejected_before_any_restore (__main__.main.<locals>.RecoveryCases.test_size_mismatch_is_rejected_before_any_restore) ... ok
+test_unsafe_committed_identity_is_rejected (__main__.main.<locals>.RecoveryCases.test_unsafe_committed_identity_is_rejected) ... ok
+test_valid_snapshot_restores_all_metadata_and_preserves_media (__main__.main.<locals>.RecoveryCases.test_valid_snapshot_restores_all_metadata_and_preserves_media) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 239.354s
+
+OK

@@ -3,7 +3,7 @@
 <!-- aek-cli65-current -->
 **CLI0.1.65 開發中：固定pread讀取與完整計時。** 原始碼配樂74／隔離33／控制26分別通過；兩套既有原生環境的微型BF16實際讀取通過。local63候選及未註冊Skill入口已核驗，真實GPU新生成繼續驗證。正式入口仍CLI0.1.63／local61／r58；完整相容與聽審未收口。 [Loading](docs/product/NEURAL_MUSIC_LOADING.md)
 
-原12項會話組有1項啟動失敗；記憶體觀測下的單項通過尚未確認原因。另外已重現兩個備份完整性缺陷，修復待完成。 [Round](docs/validation/CLI65配乐读取与计时_2026-10-30.md)
+原12項會話組有1項啟動失敗；記憶體觀測下的單項通過尚未確認原因。另外已重現兩個備份完整性缺陷；修復隔離候選15項通過，尚未合入。 [Round](docs/validation/CLI65配乐读取与计时_2026-10-30.md)
 <!-- /aek-cli65-current -->
 
 **r58統一Skill工具包已獨立驗收。** 161條目／160清單檔案／93 Skill檔案；中文與空格目錄解包、四包配置、獨立註冊、實際譜面與循環修復、完整ACES YUV／PCM／PNG及專案重播通過。未新增模型推理，不等於乾淨主機或自然品質驗收。
@@ -2184,6 +2184,8 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R568 | CLI65獨立安裝版配樂回歸 | 74通過，288應用模組與原始碼相同，載入實際安裝包，無原始碼回退；含37項請求／讀取檢查，不重複累計。無神經音樂生成。 [Proof](docs/validation/evidence/music-loading-20261030-r1/installed65-music-i1/verification.json) |
 | R569 | CLI65獨立安裝版原生隔離 | 33通過，實際載入獨立安裝包，原生依賴歸屬與拒絕外部應用檢查，無神經推理。 [Proof](docs/validation/evidence/music-loading-20261030-r1/installed65-bootstrap-i1/verification.json) |
 | R570 | CLI65獨立安裝版執行控制 | 26通過，實際載入獨立安裝包，進程樹、執行預算、清理檢查；音樂中途故障與完整443仍須另驗。 [Proof](docs/validation/evidence/music-loading-20261030-r1/installed65-control-i1/verification.json) |
+| R571 | 恢復前完整核驗的隔離候選 | 15項通過：全部備份先核驗大小／SHA／歸屬／重複路徑；已知損壞／末項缺失均零寫回，真實寫回中斷保留日誌並可重試。僅獨立候選，尚未合入產品或正式Skill。 [Proof](docs/validation/evidence/transaction-preflight-20261030-r1/candidate-r1/verification.json) |
+| R572 | CLI65執行中控制進程的唯讀採樣 | 建立時間／執行檔前後相同，採樣位於音樂工作進程等待迴圈；無區域變數。首次中文路徑編碼檢查拒絕記錄保留；明確UTF8後原歸屬檢查通過。不證明GPU生成或全部耗時原因。 [Proof](docs/validation/evidence/music-loading-20261030-r1/native-stack-controller2/verification.json) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

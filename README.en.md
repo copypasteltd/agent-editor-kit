@@ -3,7 +3,7 @@
 <!-- aek-cli65-current -->
 **CLI0.1.65 in development: pinned pread loading and complete timing.** Source music74 / isolation33 / control26 passed separately; tiny BF16 reads passed in two existing native environments. local63 candidate and unregistered Skill entry verified; actual new GPU generation under validation. Registered CLI0.1.63/local61/r58; full compatibility and listening remain open. [Loading](docs/product/NEURAL_MUSIC_LOADING.md)
 
-The original 12-check session group has one startup failure; a traced single pass has not established its cause. Two backup-integrity defects are reproduced and remain unfixed. [Round](docs/validation/CLI65配乐读取与计时_2026-10-30.md)
+The original 12-check session group has one startup failure; a traced single pass has not established its cause. Two backup-integrity defects are reproduced; an isolated repair candidate passed 15 checks and remains unintegrated. [Round](docs/validation/CLI65配乐读取与计时_2026-10-30.md)
 <!-- /aek-cli65-current -->
 
 **The r58 unified Skill kit passed independent acceptance.** 161 entries/160 inventory files/93 Skill files; Chinese/space extraction, four-pack setup, isolated registration, actual score and loop generation, full ACES YUV/PCM/PNG and project replay passed. No new neural inference; clean-host and natural-quality acceptance remain open.
@@ -2186,6 +2186,8 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R568 | CLI65 independently installed music regression | 74 passed against the installed package; all 288 modules match source, with no source fallback. Includes the 37 request/loader checks; no duplicate total or neural music generation. [Proof](docs/validation/evidence/music-loading-20261030-r1/installed65-music-i1/verification.json) |
 | R569 | CLI65 independently installed native isolation | 33 passed against the independently installed package: native dependency ownership and foreign application refusal. No neural inference. [Proof](docs/validation/evidence/music-loading-20261030-r1/installed65-bootstrap-i1/verification.json) |
 | R570 | CLI65 independently installed execution control | 26 passed against the independently installed package: process ownership, budgets and cleanup. Actual music faults and full443 remain separate. [Proof](docs/validation/evidence/music-loading-20261030-r1/installed65-control-i1/verification.json) |
+| R571 | Isolated recovery preflight candidate | 15 passed: preflight all backup sizes/digests/ownership/duplicates; known corruption or missing final backup causes zero restore writes; an interrupted actual restore retains its journal and retries. Isolated candidate; not integrated or registered. [Proof](docs/validation/evidence/transaction-preflight-20261030-r1/candidate-r1/verification.json) |
+| R572 | CLI65 read-only controller stack sample | Creation-time/executable identity matched before/after; sample captured the music-worker wait loop, without locals. Initial Unicode command-path guard refusal retained; explicit UTF8 passed the original ownership check. No GPU-generation or complete-duration acceptance. [Proof](docs/validation/evidence/music-loading-20261030-r1/native-stack-controller2/verification.json) |
 
 ### Development preview: C76 loop overlap repair(source CLI60)
 

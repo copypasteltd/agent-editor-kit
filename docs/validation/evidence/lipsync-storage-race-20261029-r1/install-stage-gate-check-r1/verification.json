@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "calls": [
+    {
+      "script": "run_source62_install_acceptance.py",
+      "exit_code": 2,
+      "response": {
+        "status": "pending",
+        "ready": false,
+        "missing": [
+          "installation-candidate-r1"
+        ],
+        "mutated": false
+      },
+      "sha256": "4064ad2752b0c5676db09954f2e8f28fb668c27c8e1553d7b4a05a5221edce9f"
+    },
+    {
+      "script": "stage_source62_skill.py",
+      "exit_code": 2,
+      "response": {
+        "status": "pending",
+        "ready": false,
+        "missing": [
+          "installation",
+          "source_case",
+          "installed_case",
+          "source62_semantic",
+          "source62_contracts",
+          "source62_gpu",
+          "source62_lipsync",
+          "installed62_bootstrap",
+          "installed62_control",
+          "installed62_selection",
+          "installed62_semantic",
+          "installed62_contracts",
+          "installed62_gpu",
+          "installed62_lipsync",
+          "source_loop",
+          "installed_loop"
+        ],
+        "mutated": false
+      },
+      "sha256": "459f5320beaf2f64a49a0abea95accbe4400838d49d6e4126537320c0d1cf279"
+    }
+  ],
+  "formal_cli": "0.1.59",
+  "protected_files": 95,
+  "registered_files_unchanged": true,
+  "no_candidate_or_stage_created": true,
+  "full_goal_closed": false
+}

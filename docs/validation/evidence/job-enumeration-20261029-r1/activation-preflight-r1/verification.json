@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "calls": [
+    {
+      "name": "dry-run",
+      "exit_code": 2,
+      "reply": {
+        "status": "pending",
+        "ready": false,
+        "missing": [
+          "candidate",
+          "staged_gpu",
+          "installed_gpu",
+          "installed_loop",
+          "installed63_semantic",
+          "installed63_contracts",
+          "installed63_lipsync",
+          "staged63_lipsync",
+          "skill_controller"
+        ],
+        "mutated": false,
+        "activated": false
+      }
+    },
+    {
+      "name": "apply-refusal",
+      "exit_code": 2,
+      "reply": {
+        "status": "pending",
+        "ready": false,
+        "missing": [
+          "candidate",
+          "staged_gpu",
+          "installed_gpu",
+          "installed_loop",
+          "installed63_semantic",
+          "installed63_contracts",
+          "installed63_lipsync",
+          "staged63_lipsync",
+          "skill_controller"
+        ],
+        "mutated": false,
+        "activated": false
+      }
+    }
+  ],
+  "formal_files_unchanged": 95,
+  "actual_atomic_replacement": true,
+  "actual_failed_replace_temp_cleanup": true,
+  "failed_replace_error": "PermissionError",
+  "script_sha256": "10d2638f06fad506f6aeee3e206d3e409b1f16b5e71dd4177856e7594c42d1ca",
+  "rollback_transition_executed": false,
+  "formal_activation": false,
+  "model_inference": false,
+  "full_goal_closed": false
+}

@@ -2072,6 +2072,8 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R514 | CLI63 full source contracts | 406项源码合同全部通过，零失败/错误/跳过；应用283模块与测试192文件冻结一致。安装和Skill另验。 [Evidence](docs/validation/evidence/job-enumeration-20261029-r1/source63-contracts-r1/verification.json) |
 | R515 | CLI63 pre-test voice documentation | 候选暂存前核对103个CLI61既有WAV哈希，93文件Skill静态校验通过，绑定前其余92文件相同；缺门禁实际拒绝且95正式文件不变。未重新推理、未经人工听审。 [Evidence](docs/validation/evidence/job-enumeration-20261029-r1/voice-preparation-r1/verification.json) |
 | R516 | CLI63 native installation | local61候选ZIP原生离线安装及1707载荷/283模块精确核对通过；不等于安装版406或正式Skill验收。 [Evidence](docs/validation/evidence/job-enumeration-20261029-r1/installation-candidate-r1/verification.json) |
+| R517 | CLI63 exact-tested-byte activation preparation | 正式切换脚本要求注册最终实测93文件，禁止测后文档覆盖；缺门禁时普通/--apply两种调用均实际返回pending/exit2，95正式文件不变；真实原子替换及失败临时文件清理通过，完整切换/回滚尚未执行。 [Evidence](docs/validation/evidence/job-enumeration-20261029-r1/activation-preflight-r1/verification.json) |
+| R518 | CLI63 installed regression groups | 安装版隔离启动31、循环37、进程控制26、选材57各组通过，源码/安装模块相同、冻结一致，分组零失败/错误/跳过；104语义、406完整合同与真实模型继续另验。 [Details](docs/validation/CLI63候选交付门禁_2026-10-29.md#cli63-本地候选安装) |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

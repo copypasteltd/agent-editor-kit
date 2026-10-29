@@ -1217,6 +1217,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | F81 | Exact-content selection deduplication | Canonical SHA256 groups with global assignment; explicit ID-only or reuse options. | ad select; byte-identical assets under different IDs; not perceptual deduplication | Source58 passed57 selection/storyboard tests; [rules and evidence](docs/product/AD_CONTENT_UNIQUENESS.md); installed58 remains unaccepted. |
 | F82 | Synchronous owned-process cleanup | Retain and wait owned process handles; independent jobs remain unaffected; preserve outer-budget exceptions. | Windows model/tool children and interpolation preprocessing deadlines | Source58 passed19 control and3 targeted timeout tests separately; [behavior and evidence](docs/product/OWNED_PROCESS_CLEANUP.md). |
 | F83 | Editable score and procedural effects(CLI59) | Beat/MIDI score and8 analytical instruments →48kHz stereo WAV,stems and editable package;4 electronic effects. | `music inspect-score/compose/effect` | [Implementation,workflow and limits](docs/product/MUSIC_SCORE.md);not neural text-to-music,available in registered CLI59. |
+| F84 | Loop overlap repair(source CLI60) | Sample-clock crossfade,two curves,editable recipe,inherited rights,cancel and transactional rollback;explicit shorter cycle. | `music repair-loop` | [Workflow and C76 audio](docs/product/MUSIC_LOOP.md);registered Skill remains59,no listening acceptance. |
 
 ## Supported service modules and dependencies
 
@@ -2015,6 +2016,14 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R466 | CLI59 installed400 terminal | All400 passed with zero failures/errors/skips;282 source/installed modules and tests frozen;[proof](docs/validation/evidence/music-score-20261029-r1/installed58-contracts-r1/verification.json) |
 | R467 | Actual unified CLI59 activation | Staged and actual C-discovered CUDA each ran4 forwards;full PCM matches source and project replay;one entry/17 modules/93 files,old backups retained;[workflow](docs/validation/CLI59统一Skill切换_2026-10-29.md) |
 | R468 | Independent r57 kit | 160 entries/159 inventory files;four-pack configuration,isolated registration,two renders and full YUV/PCM/PNG replay passed;initial newline-check failure retained,no new model inference;[proof](docs/validation/evidence/music-score-20261029-r1/formal-kit-r1/verification.json) |
+| R469 | CLI60 loop regression | 18 new loop and19 score tests passed;independent mix oracle,body identity,cancel/rollback,rights and package re-repair;[receipt](docs/validation/evidence/music-loop-20261029-r1/targeted-r1/verification.json) |
+| R470 | C76 actual loop repair | 13.37→13.32s,50ms overlap;complete2557440-byte PCM identical after package recipe replay;three-cycle before/after audio;[case](docs/product/MUSIC_LOOP.md).CPU,no neural forwards or listening acceptance |
+
+### Development preview: C76 loop overlap repair(source CLI60)
+
+![Measured before/after audio loop boundary](docs/assets/music-loop60-20261029-r1/actual.png)
+
+[Before: three cycles](docs/assets/music-loop60-20261029-r1/before.wav) · [After: three cycles](docs/assets/music-loop60-20261029-r1/after.wav) · [Editable recipe](docs/assets/music-loop60-20261029-r1/recipe.json) · [Editable project package](docs/assets/music-loop60-20261029-r1/package.zip). Each cycle becomes50ms shorter;the decoded PCM body is unchanged and complete repaired PCM matches after package recipe replay. This is an actual waveform plot,not a screen recording or human listening acceptance. Registered Skill remains59;[source60 workflow and limits](docs/product/MUSIC_LOOP.md),[verification scope](docs/validation/CLI60循环修复_2026-10-29.md).
 
 ## Current limits and development direction
 

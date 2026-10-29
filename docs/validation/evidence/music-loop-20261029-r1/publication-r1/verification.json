@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "preserved_R_rows": {
+    "README.md": 468,
+    "README.en.md": 468,
+    "README.zh-TW.md": 468
+  },
+  "new_R_rows": 470,
+  "G25_closure_unchanged": true,
+  "source_only": true,
+  "registered_cli": "0.1.59",
+  "files": {
+    "source.wav": {
+      "bytes": 2567084,
+      "sha256": "bc758dec8b8971e7648e594bf6951f74e635c3955ae60bf07de0c37e673fb25f"
+    },
+    "unit.wav": {
+      "bytes": 2557484,
+      "sha256": "72f15a8702c21f32d58f3d4c67d1bce87bd0a919225b4fb4212c30b68b0cf1a3"
+    },
+    "before.wav": {
+      "bytes": 7701198,
+      "sha256": "70e87df964104b5f6685d5b20940dbc254cce8dc98e6abbf22480a791ef6b133"
+    },
+    "after.wav": {
+      "bytes": 7672398,
+      "sha256": "984b058aca844a777ecbf88124030e7f92ebec0da8c6881ea15127351d8058b9"
+    },
+    "actual.png": {
+      "bytes": 21437,
+      "sha256": "9a6f4586d04c1a92e7cd2bc02ec6d25f00ee2914ef033c11638cbe7a84b09229"
+    },
+    "actual.gif": {
+      "bytes": 13029,
+      "sha256": "09843d06efcbfcd20c95d36820d4e1dd8da7ac1fff5d17e54016919ede61a52a"
+    },
+    "package.zip": {
+      "bytes": 16556561,
+      "sha256": "9821d091554944afdf3d12f0a7295448cf0009a7573219e42d03356a720b130d"
+    },
+    "recipe.json": {
+      "bytes": 217,
+      "sha256": "71e99445171502b3c81884278199dabea87fd446ead1b1a96c757c096196cd5e"
+    },
+    "SOURCE.txt": {
+      "bytes": 287,
+      "sha256": "0b85294ec5b63d2d87897bcc501e49eb57c861f22bd1e44f36a6e4b7d46483c9"
+    }
+  }
+}

@@ -122,6 +122,14 @@ def add_parser(subs, leaf):
         parser.add_argument('--new-asset-id', default=None)
         parser.add_argument('--stems', action='store_true')
         placement_parser(parser)
+    repair_loop = leaf(actions.add_parser('repair-loop', help='交叠修复循环接缝；明确缩短周期，不保证听感无缝'))
+    repair_loop.add_argument('--project', required=True)
+    repair_loop.add_argument('--asset-id', default=None)
+    repair_loop.add_argument('--input', default=None, help='本地可编辑loop recipe JSON，与源及处理选项互斥')
+    repair_loop.add_argument('--crossfade-ms', type=float, default=None)
+    repair_loop.add_argument('--curve', choices=['linear','raised-cosine'], default=None)
+    repair_loop.add_argument('--new-asset-id', default=None)
+    placement_parser(repair_loop)
     prepare = leaf(actions.add_parser('prepare', help='裁切或显式循环、增益、淡入淡出并保留源记录'))
     prepare.add_argument('--asset-id', required=True)
     prepare.add_argument('--duration-seconds', type=float, required=True)
@@ -439,6 +447,25 @@ def command(args, envelope):
             data = music_score.generate(root, project, payload, new_id=args.new_asset_id,
                                         stems=args.stems, placement=placement(args), dry_run=args.dry_run,
                                         command='music.'+args.action)
+    elif args.domain == 'music' and args.action == 'repair-loop':
+        from . import music_loop
+        if args.input:
+            if args.asset_id is not None or args.crossfade_ms is not None or args.curve is not None:
+                raise argument_error('Recipe input cannot be combined with source/processing options','input')
+            require_local_reference(args.input,field='input')
+            path=Path(args.input).expanduser().resolve()
+            if not path.is_file() or path.stat().st_size>65536:
+                raise argument_error('Loop recipe requires local UTF-8 JSON <=64KiB','input')
+            try:
+                options=music_loop.read_recipe(json.loads(path.read_text('utf-8-sig')))
+            except (ValueError,UnicodeError) as error:
+                raise argument_error('Invalid loop recipe JSON','input') from error
+        else:
+            if not args.asset_id:raise argument_error('Source asset or recipe is required','asset_id/input')
+            options=dict(asset_id=args.asset_id,crossfade_ms=100. if args.crossfade_ms is None else args.crossfade_ms,
+                         curve=args.curve or 'raised-cosine')
+        root,project=load_project(args.project)
+        data=music_loop.repair(root,project,**options,new_id=args.new_asset_id,placement=placement(args),dry_run=args.dry_run)
     else:
         root, project = load_project(args.project)
         common = dict(output=args.output, new_id=args.new_asset_id, placement=placement(args), dry_run=args.dry_run)
@@ -462,4 +489,4 @@ def command(args, envelope):
 COMMAND_KEYS = [('materials', a) for a in ('list', 'inspect', 'verify', 'ingest')] + [
     ('voice', 'list'), ('voice', 'synthesize'), ('translate', 'text'), ('translate', 'subtitles'),
     ('model-pack', 'list'), ('model-pack', 'verify'), ('music', 'prepare'), ('music', 'mix'),
-    ('music', 'inspect-score'), ('music', 'compose'), ('music', 'effect'), ('gpu', 'inspect')]
+    ('music', 'inspect-score'), ('music', 'compose'), ('music', 'effect'), ('music', 'repair-loop'), ('gpu', 'inspect')]

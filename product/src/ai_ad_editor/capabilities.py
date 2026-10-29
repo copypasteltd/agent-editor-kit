@@ -227,7 +227,7 @@ def build_capability_manifest() -> dict[str, Any]:
                            'glossary_is_not_constrained_decoding', 'output_and_text_rights_need_review']},
             'community_music': {
                 'status': 'implemented_with_limits', 'engine': 'community-audio-ffmpeg-v1',
-                'commands': ['music.prepare', 'music.mix', 'music.inspect-score', 'music.compose', 'music.effect'],
+                'commands': ['music.prepare', 'music.mix', 'music.inspect-score', 'music.compose', 'music.effect', 'music.repair-loop'],
                 'composition_engine': 'agent-editable-score-cpu-v1',
                 'features': ['explicit_source_asset_and_rights_parents', 'trim_and_opt_in_loop',
                              'gain_and_fade_in_out', 'speech_music_sidechain_ducking', 'preserved_original_stems',

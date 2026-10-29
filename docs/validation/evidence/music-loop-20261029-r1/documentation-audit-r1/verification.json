@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "reference": "f255162d8c7cf069134f4c8b697de4901cdf4532",
+  "readmes": {
+    "README.md": {
+      "preserved": 468,
+      "current": 470
+    },
+    "README.en.md": {
+      "preserved": 468,
+      "current": 470
+    },
+    "README.zh-TW.md": {
+      "preserved": 468,
+      "current": 470
+    }
+  },
+  "all_38_goal_closure_conditions_unchanged": true,
+  "actual_media_files": 9,
+  "formal_skill_files": 93,
+  "formal_cli": "0.1.59",
+  "formal_skill_unchanged": true,
+  "publication_first_attempt": {
+    "status": "failed-before-readme-write",
+    "reason": "Header beginning R was counted;469 lines versus468 numbered records",
+    "correction": "Match only R followed by numeric ID; existing copied media checked byte-identical"
+  },
+  "source_only": true
+}

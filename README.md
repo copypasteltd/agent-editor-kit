@@ -1217,6 +1217,7 @@ flowchart LR
 | F81 | 精确内容去重选材 | 规范SHA256内容分组、全局联合分配，支持显式ID去重或复用。 | ad select；不同ID相同文件；非感知去重 | 源码58选材／分镜57项通过；[规则与证据](docs/product/AD_CONTENT_UNIQUENESS.md)，58安装另验。 |
 | F82 | 自有原生进程同步回收 | 持有自有成员句柄并等待退出，独立Job互不影响，保留外层预算异常。 | Windows模型／工具子进程及补帧预处理超时 | 源码58控制19项、超时3项分别通过；[行为与证据](docs/product/OWNED_PROCESS_CLEANUP.md)。 |
 | F83 | 可编辑谱面与程序音效（正式CLI59） | 谱面拍点／MIDI音高／8解析乐器 → 48kHz双声道WAV、分轨和可编辑工程；4种电子音效。 | `music inspect-score/compose/effect` | [实际内容、命令、配器与限制](docs/product/MUSIC_SCORE.md)；不是神经生曲，正式Skill59已支持。 |
+| F84 | 循环接缝交叠修复（开发CLI60） | 样本时钟、双曲线、可编辑配方、权利继承、取消与事务回滚；周期明确缩短。 | `music repair-loop` | [流程与C76试听](docs/product/MUSIC_LOOP.md)；正式Skill仍59，未计自然听感验收。 |
 
 ## 支持的服务模块与依赖
 
@@ -2013,6 +2014,14 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R466 | CLI59安装400项终态 | 400通过，零失败／错误／跳过，281源码与安装模块及测试冻结一致；[证据](docs/validation/evidence/music-score-20261029-r1/installed58-contracts-r1/verification.json) |
 | R467 | CLI59统一Skill实际切换 | 候选及真实C盘入口CUDA分别4次前向；完整PCM与源码及工程重放相同，1入口／17模块／93文件，旧版备份保留；[流程](docs/validation/CLI59统一Skill切换_2026-10-29.md) |
 | R468 | r57独立工具包 | 160条目／159清单文件，四包配置、独立注册、两次渲染及完整YUV／PCM／PNG重放通过；首轮换行校验失败保留，无新增模型推理；[证据](docs/validation/evidence/music-score-20261029-r1/formal-kit-r1/verification.json) |
+| R469 | CLI60循环修复专项 | 18项新修复＋19项谱面回归全部通过；独立混合公式、完整中段、取消回滚、权利与工程包重做；[收据](docs/validation/evidence/music-loop-20261029-r1/targeted-r1/verification.json) |
+| R470 | C76实际音乐接缝 | 13.37→13.32秒，50ms交叠；完整2557440字节PCM在导入后配方重做一致，前三／后三循环可试听；[案例](docs/product/MUSIC_LOOP.md)。CPU，无神经推理或听审 |
+
+### 开发预览：C76 循环接缝修复（源码CLI60）
+
+![真实音频接缝前后波形](docs/assets/music-loop60-20261029-r1/actual.png)
+
+[修复前三循环](docs/assets/music-loop60-20261029-r1/before.wav) · [修复后三循环](docs/assets/music-loop60-20261029-r1/after.wav) · [可编辑配方](docs/assets/music-loop60-20261029-r1/recipe.json) · [可编辑工程包](docs/assets/music-loop60-20261029-r1/package.zip)。交叠50ms后每周期缩短50ms，中段PCM不变，工程包导入后重做完整PCM相同。图片是实际数据绘图，不是录屏；尚未人工听审。正式Skill仍59，使用开发源码60的方法见[命令与完整限制](docs/product/MUSIC_LOOP.md)及[本轮验收](docs/validation/CLI60循环修复_2026-10-29.md)。
 
 ## 当前边界与开发方向
 

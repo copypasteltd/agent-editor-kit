@@ -1,0 +1,218 @@
+[
+  {
+    "name": "version",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\scripts\\run_source_editor.py",
+      "version"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "init",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\scripts\\run_source_editor.py",
+      "project",
+      "init",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-loop60-case-r1\\project"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "ingest",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\scripts\\run_source_editor.py",
+      "media",
+      "ingest",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-loop60-case-r1\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-loop60-case-r1\\original-fragment.wav",
+      "--asset-id",
+      "original",
+      "--license-spdx",
+      "CC0-1.0",
+      "--verification-status",
+      "verified",
+      "--creator",
+      "Agent Editor Kit original C75 fixture",
+      "--evidence",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-loop60-case-r1\\SOURCE.txt"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "dry-run",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\scripts\\run_source_editor.py",
+      "music",
+      "repair-loop",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-loop60-case-r1\\project",
+      "--asset-id",
+      "original",
+      "--crossfade-ms",
+      "50",
+      "--dry-run"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "repair",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\scripts\\run_source_editor.py",
+      "music",
+      "repair-loop",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-loop60-case-r1\\project",
+      "--asset-id",
+      "original",
+      "--crossfade-ms",
+      "50",
+      "--new-asset-id",
+      "repaired",
+      "--apply",
+      "--track-id",
+      "track_audio_1"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "repeat-original",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\scripts\\run_source_editor.py",
+      "music",
+      "prepare",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-loop60-case-r1\\project",
+      "--asset-id",
+      "original",
+      "--duration-seconds",
+      "40.11",
+      "--loop",
+      "--new-asset-id",
+      "before_repeat"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "repeat-repaired",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\scripts\\run_source_editor.py",
+      "music",
+      "prepare",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-loop60-case-r1\\project",
+      "--asset-id",
+      "repaired",
+      "--duration-seconds",
+      "39.96",
+      "--loop",
+      "--new-asset-id",
+      "after_repeat"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "export",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\scripts\\run_source_editor.py",
+      "convert",
+      "export",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-loop60-case-r1\\project",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-loop60-case-r1\\editable-loop.zip",
+      "--target-format",
+      "package"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "import",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\scripts\\run_source_editor.py",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-loop60-case-r1\\editable-loop.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-loop60-case-r1\\replay"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "repair-replay",
+    "argv": [
+      "C:/Python313/python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\scripts\\run_source_editor.py",
+      "music",
+      "repair-loop",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-loop60-case-r1\\replay",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\music-loop60-case-r1\\replay\\assets\\music-loops\\loop_3baf75ce884746c426cafdff\\recipe.json",
+      "--new-asset-id",
+      "repaired_again"
+    ],
+    "exit_code": 0
+  }
+]

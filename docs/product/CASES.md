@@ -1427,3 +1427,8 @@ GIF为10fps预览，截图已查看；没有声称连续人工观看、听审、
 当前正式入口已为CLI59/local57。通过真实`C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor` PowerShell入口生成主音频、5分轨及音效，完整3072000字节PCM与源码相同；独立r57工具包重新配置与注册后亦实际生成相同PCM。安装400项最终通过。前面的候选等待描述保留为阶段记录；完整G25、自然音质、听审和语义匹配仍未关闭。
 
 [真实C盘入口配乐收据](../validation/evidence/music-score-20261029-r1/registered59-score-entry-r1/verification.json) · [独立r57实际配乐与ACES重放](../validation/evidence/music-score-20261029-r1/formal-kit-r1/verification.json) · [正式使用流程](../validation/CLI59统一Skill切换_2026-10-29.md)
+
+
+## C76 — source60 sample-clock loop repair
+
+[实际前后音频、波形、配方、工程包与明确边界](MUSIC_LOOP.md)。13.37秒原创解析配乐片段交叠50ms，周期13.32秒；完整PCM包重做一致。开发源码60限定；正式Skill59未包含。不是自然音乐或人工听审验收。

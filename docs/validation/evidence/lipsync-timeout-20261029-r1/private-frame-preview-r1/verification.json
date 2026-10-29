@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "contact_sheet": "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\local\\agent-ffmpeg\\native-worker-source61-lipsync-r1\\private-actual-frames.png",
+  "contact_sheet_sha256": "7eb749c546ffd28cf770ee4de70f8127807452158c1125887b70ccde0b1e38d4",
+  "exact_master_frames": 133,
+  "width": 512,
+  "height": 512,
+  "sampled_frames": [
+    0,
+    66,
+    132
+  ],
+  "frame_RGBA_sha256": {
+    "SOURCE": "4b712f19cde9e982204f882652d1df4af08138c70fd601a924856fa8d675d2eb",
+    "GENERATED frame 0": "8d19c6b7e5d33102bcdf14ba9f1a30e9013e6841e3a845b6403458153c18e009",
+    "GENERATED frame 66 / 2.64s": "39ed38bc75dbdba9a73d7a7a60e5c496e12b426b37e115290319982a7b8e4af4",
+    "GENERATED frame 132 / 5.28s": "e842ee1a559d17986d9b9b0c2898d15c018b0f350c85939041b73b21388b36aa"
+  },
+  "original_RGBA_sha256": "4b712f19cde9e982204f882652d1df4af08138c70fd601a924856fa8d675d2eb",
+  "master_RGBA_sha256": "6a8e8cb8b4832e76262c830ae31885606b2b860fbffc3a36397cc7252ac7afcf",
+  "rights_ledger_sha256": "a1c58a5db0536838634595aa721427c6856fc5e652e81352d11c0ca37b8094c1",
+  "media_scope": "private-internal-only",
+  "neural_forwards": 0,
+  "human_visual_review": false,
+  "continuous_playback": false,
+  "human_listening": false,
+  "natural_quality_accepted": false,
+  "public_media_published": false
+}

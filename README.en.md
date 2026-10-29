@@ -1,5 +1,7 @@
 # agent editor kit
 
+**Source CLI61 full403 service contracts passed,zero failures/errors/skips,app and tests frozen.Independent installation and registered Skill promotion require separate acceptance.** [Evidence](docs/validation/CLI61完整源码验收_2026-10-29.md)
+
 **Development status: source CLI0.1.61 fixes inconsistent operation timeout errors between lip-sync media preparation and model processing. Validation requires new terminal receipts. CLI60 installed contracts finished with 399 passes and 1 failure; promotion is blocked. The registered Skill remains CLI59/local57/r57.** [Fix and acceptance boundaries](docs/validation/CLI61口型超时修复_2026-10-29.md).
 
 **Current local version: CLI0.1.59 / local57 / r57 unified Skill kit.** One `$agent-ffmpeg-local-editor` entry,17 internal modules,93 files. Source and installed 31/19/57/104/400 groups passed separately. Staged and actual C-discovered CUDA denoising passed complete1124160-byte PCM package replay. Full CapCut parity remains incomplete.
@@ -2031,6 +2033,8 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R479 | CLI61 native delivery | Actual loop recipe/package replay passed;complete2557440-byte PCM matches CLI60 reference.Actual DF3 CUDA replay passed with complete1124160-byte PCM and12.25446dB controlled-noise MSE improvement. [Evidence](docs/validation/CLI61原生交付核验_2026-10-29.md) |
 | R480 | CLI61 native delivery | Actual MuseTalk CUDA:133 frames,67 UNet forwards,no CPU fallback.Original alpha/outside pixels,selected PCM,linked editable tracks,owned-child cleanup and complete encoded RGBA/PCM package replay passed.No natural lip-sync or listening acceptance. [Evidence](docs/validation/CLI61原生交付核验_2026-10-29.md) |
 | R481 | CLI61 native delivery | Build actually rejected missing403/real-case evidence;95 registered files unchanged,no candidate created.Windows path comparison failed in audit r1,preserved;corrected r2 passed. [Evidence](docs/validation/CLI61原生交付核验_2026-10-29.md) |
+| R482 | CLI61 full source contracts | Source CLI61 full403 service contracts passed,zero failures/errors/skips,app and tests frozen.Independent installation and registered Skill promotion require separate acceptance. [Evidence](docs/validation/CLI61完整源码验收_2026-10-29.md) |
+| R483 | CLI61 actual frame review / G24 | Actually inspected source/frame0/66/132:mouth shape changes,no obvious tearing in these samples,but the generated lower face is visibly softer than source.Private sampled-frame review only;no human playback,listening or natural-quality acceptance. [Details](docs/validation/CLI61口型抽帧目检_2026-10-29.md) |
 
 ### Development preview: C76 loop overlap repair(source CLI60)
 

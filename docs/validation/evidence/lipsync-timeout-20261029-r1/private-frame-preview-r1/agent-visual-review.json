@@ -1,0 +1,23 @@
+{
+  "status": "reviewed-with-limitations",
+  "reviewer": "Codex visual inspection",
+  "human_review": false,
+  "contact_sheet_sha256": "7eb749c546ffd28cf770ee4de70f8127807452158c1125887b70ccde0b1e38d4",
+  "source_and_actual_frames": [
+    0,
+    66,
+    132
+  ],
+  "observations": [
+    "Mouth shape differs between sampled generated frames.",
+    "Generated lower face is visibly softer than the source portrait.",
+    "No obvious image tear is visible in these three sampled frames."
+  ],
+  "natural_detail_preservation_accepted": false,
+  "natural_lip_sync_accepted": false,
+  "continuous_playback": false,
+  "audio_listening": false,
+  "public_media_published": false,
+  "rights_scope": "internal/unverified",
+  "next_action": "Review continuous playback and audio, then evaluate detail preservation on authorized natural-motion validation material; do not infer natural quality from transport hashes."
+}

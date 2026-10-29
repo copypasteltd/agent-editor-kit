@@ -1,5 +1,7 @@
 # agent editor kit
 
+**原始碼CLI61完整403項服務契約已通過，零失敗／錯誤／跳過，應用與測試凍結一致；獨立安裝及正式Skill升級仍須另驗。** [Evidence](docs/validation/CLI61完整源码验收_2026-10-29.md)
+
 **目前開發狀態：原始碼 CLI0.1.61 修復口型任務在媒體前處理與模型管道階段的逾時錯誤碼不一致；驗證以新終態收據為準。CLI60 安裝完整契約實際為 399 通過、1 失敗，禁止正式升級。正式註冊仍 CLI59／local57／r57。** [修復說明及驗收邊界](docs/validation/CLI61口型超时修复_2026-10-29.md)。
 
 **目前本地版本：CLI0.1.59 / local57 / r57統一Skill工具包。** 唯一入口 `$agent-ffmpeg-local-editor`，17內部模組、93檔案。原始碼與安裝版各31／19／57／104／400五組分別通過；候選與真實C盤入口實際CUDA降噪及完整1124160位元組PCM專案重播分別通過。完整剪映等價仍未完成。
@@ -2029,6 +2031,8 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R479 | CLI61 native delivery | 真實循環修復及專案封裝重做通過，完整2557440位元組PCM與CLI60參考相同；真實DF3 CUDA完整1124160位元組PCM專案重播通過，受控噪聲MSE改善12.25446dB。 [Evidence](docs/validation/CLI61原生交付核验_2026-10-29.md) |
 | R480 | CLI61 native delivery | 真實MuseTalk CUDA：133影格、67次UNet前向，無CPU回退；原alpha與區域外像素、選定PCM、關聯可編輯音畫、子行程回收及完整成片RGBA／PCM專案重播通過；不計自然口型或聽審。 [Evidence](docs/validation/CLI61原生交付核验_2026-10-29.md) |
 | R481 | CLI61 native delivery | 缺少完整403及真實案例證據時實際拒絕建置，95正式檔案不變、未建立候選。r1檢查腳本Windows路徑比較失敗保留，r2修正後通過。 [Evidence](docs/validation/CLI61原生交付核验_2026-10-29.md) |
+| R482 | CLI61 full source contracts | 原始碼CLI61完整403項服務契約已通過，零失敗／錯誤／跳過，應用與測試凍結一致；獨立安裝及正式Skill升級仍須另驗。 [Evidence](docs/validation/CLI61完整源码验收_2026-10-29.md) |
+| R483 | CLI61 actual frame review / G24 | 實際查看來源圖與第0／66／132影格：口形有變化，三張樣本未見明顯撕裂，但下半臉比來源圖明顯柔化。僅內部抽幀目檢，無人類播放／聽審或自然品質驗收。 [Details](docs/validation/CLI61口型抽帧目检_2026-10-29.md) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

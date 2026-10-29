@@ -2035,6 +2035,9 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R481 | CLI61 native delivery | Build actually rejected missing403/real-case evidence;95 registered files unchanged,no candidate created.Windows path comparison failed in audit r1,preserved;corrected r2 passed. [Evidence](docs/validation/CLI61原生交付核验_2026-10-29.md) |
 | R482 | CLI61 full source contracts | Source CLI61 full403 service contracts passed,zero failures/errors/skips,app and tests frozen.Independent installation and registered Skill promotion require separate acceptance. [Evidence](docs/validation/CLI61完整源码验收_2026-10-29.md) |
 | R483 | CLI61 actual frame review / G24 | Actually inspected source/frame0/66/132:mouth shape changes,no obvious tearing in these samples,but the generated lower face is visibly softer than source.Private sampled-frame review only;no human playback,listening or natural-quality acceptance. [Details](docs/validation/CLI61口型抽帧目检_2026-10-29.md) |
+| R484 | CLI61 native candidate | CLI61/local59 native ZIP built and independently installed;1707 payload files/283 modules/8 ICC and OCIO resources exact,actual version and capabilities passed. [Package / usage](docs/validation/CLI61独立安装交付_2026-10-29.md) |
+| R485 | CLI61 native candidate | Installed bootstrap31/loop-score37/control19/selection57 passed separately,zero failures/errors/skips,source/install/test hashes frozen.Semantic104 and full403 require separate terminal results;no duplicate aggregate. [Package / usage](docs/validation/CLI61独立安装交付_2026-10-29.md) |
+| R486 | CLI61 native candidate | Actual Skill staging and --apply activation requests rejected missing evidence;95 registered files unchanged.Promotion61 still requires installed403 and actual PowerShell loop/DF3/MuseTalk cases.The registered Skill remains59. [Package / usage](docs/validation/CLI61独立安装交付_2026-10-29.md) |
 
 ### Development preview: C76 loop overlap repair(source CLI60)
 

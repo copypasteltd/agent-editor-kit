@@ -2033,6 +2033,9 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R481 | CLI61 native delivery | 缺少完整403及真實案例證據時實際拒絕建置，95正式檔案不變、未建立候選。r1檢查腳本Windows路徑比較失敗保留，r2修正後通過。 [Evidence](docs/validation/CLI61原生交付核验_2026-10-29.md) |
 | R482 | CLI61 full source contracts | 原始碼CLI61完整403項服務契約已通過，零失敗／錯誤／跳過，應用與測試凍結一致；獨立安裝及正式Skill升級仍須另驗。 [Evidence](docs/validation/CLI61完整源码验收_2026-10-29.md) |
 | R483 | CLI61 actual frame review / G24 | 實際查看來源圖與第0／66／132影格：口形有變化，三張樣本未見明顯撕裂，但下半臉比來源圖明顯柔化。僅內部抽幀目檢，無人類播放／聽審或自然品質驗收。 [Details](docs/validation/CLI61口型抽帧目检_2026-10-29.md) |
+| R484 | CLI61 native candidate | CLI61/local59原生ZIP已建置並獨立安裝；1707載荷／283模組／8項ICC與OCIO資源一致，版本及能力查詢通過。 [Package / usage](docs/validation/CLI61独立安装交付_2026-10-29.md) |
+| R485 | CLI61 native candidate | 安裝31入口／37配樂／19控制／57選材分別通過，零失敗／錯誤／跳過，原始碼與安裝及測試凍結一致。語義104及完整403以獨立終態為準，不重複彙總。 [Package / usage](docs/validation/CLI61独立安装交付_2026-10-29.md) |
+| R486 | CLI61 native candidate | 缺證時實際要求建立Skill及--apply啟用均遭拒，95個正式檔案不變。CLI61啟用仍要求完整安裝403及實際PowerShell循環／DF3／MuseTalk；正式仍CLI59。 [Package / usage](docs/validation/CLI61独立安装交付_2026-10-29.md) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

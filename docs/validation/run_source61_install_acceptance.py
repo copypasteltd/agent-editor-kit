@@ -25,7 +25,7 @@ def main():
         if p.returncode:
             (out/'verification.json').write_text(json.dumps(dict(status='failed',calls=calls))+'\n',encoding='utf-8')
             return p.returncode
-    for name in ['run_source61_gpu_case.py','run_installed61_loop_case.py','run_source61_lipsync_case.py']:
+    for name in ['run_source61_gpu_case.py','run_installed61_loop_case.py','run_installed61_lipsync_case.py']:
         print(json.dumps(dict(phase=name,status='starting')),flush=True)
         p=subprocess.run([C,'-E','-B','-u','-X','utf8',str(ROOT/'docs/validation'/name),
             '--run','r1','--installed',installed],cwd=ROOT)

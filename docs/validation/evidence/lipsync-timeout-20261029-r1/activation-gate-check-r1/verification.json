@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "actual_activation_requested": true,
+  "actual_exit_code": 2,
+  "mutated": false,
+  "activated": false,
+  "protected_files_unchanged": 95,
+  "missing": [
+    "candidate",
+    "staged_gpu",
+    "installed_gpu",
+    "installed_loop",
+    "installed61_semantic",
+    "installed61_contracts",
+    "installed61_lipsync",
+    "staged61_lipsync"
+  ],
+  "formal_cli": "0.1.59",
+  "activation_runner_sha256": "43f3b047e2d95a98a5b8de486389bcb86defa964af9d9737298712c8abbe412c",
+  "installed403_still_required": true
+}

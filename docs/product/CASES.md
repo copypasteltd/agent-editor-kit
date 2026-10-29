@@ -1437,3 +1437,15 @@ GIF为10fps预览，截图已查看；没有声称连续人工观看、听审、
 ### C76 — independent installed60 replay
 
 [安装版实际音频、波形与完整PCM证据](../validation/CLI60独立安装交付_2026-10-29.md)。283安装模块与源码相同，循环完整PCM与源码及可编辑工程重做相同；独立实际DF3 CUDA回归亦通过。正式Skill仍59，未计自然听审或完整目标闭合。
+
+
+<a id="c77-editable-optical-pack"></a>
+## C77：8套可编辑复合光效内容包
+
+[逐项完整参数、真实MP4／GIF与工程包](OPTICAL_EFFECT_PACK.md) · [选型页](../assets/optical-pack-20261029-r1/index.html) · [模板ZIP](../content/effect-packs/optical-v1.zip)。
+
+8套MIT模板复用已有光学内核，各48帧／4秒／480×270实际RTX3060 OpenCL渲染；每套完整24883200字节RGBA及768000字节PCM工程包重放相同。当前真实C盘统一Skill59导入OP01后改选OP08，完整音画与安装63的OP08相同；没有把一套正式改选写成八套正式入口验收。
+
+![原始图与8套实际中间帧](../assets/optical-pack-20261029-r1/contact.png)
+
+样片为原创几何产品图与诊断双音，输入PNG／WAV为CC0。不是自然素材审美、真实品牌成片、人类听审、新神经模型或完整效果库验收。模板替换目标整条effects数组，需审阅原效果、原作者时钟与源像素尺度；完整406-r2及Skill63交付另验。

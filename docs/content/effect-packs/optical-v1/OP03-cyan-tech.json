@@ -1,0 +1,127 @@
+{
+  "id": "aek.optical.cyan-tech",
+  "version": "1.0.0",
+  "name": {
+    "zh": "青蓝科技",
+    "en": "Cyan tech"
+  },
+  "license_spdx": "MIT",
+  "author": "agent editor kit",
+  "variables": [
+    {
+      "name": "clip_id",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "middle_tick",
+      "type": "integer",
+      "min": 1,
+      "required": true
+    },
+    {
+      "name": "end_tick",
+      "type": "integer",
+      "min": 2,
+      "required": true
+    }
+  ],
+  "operations": [
+    {
+      "op": "update_clip",
+      "clip_id": "{{clip_id}}",
+      "patch": {
+        "effects": [
+          {
+            "type": "lens_flare",
+            "parameters": {
+              "intensity": 0.55,
+              "x": 0.2,
+              "y": 0.18,
+              "radius": 0.05,
+              "red": 0.08,
+              "green": 0.7,
+              "blue": 1,
+              "brightness": 0.6,
+              "streak": 1.5,
+              "streak_width": 0.004,
+              "halo": 0.2,
+              "ghosts": 3,
+              "ghost_spacing": 0.55,
+              "angle": -18
+            },
+            "keyframes": [
+              {
+                "property": "x",
+                "keyframes": [
+                  {
+                    "at_tick": 0,
+                    "value": -0.12,
+                    "interpolation": "ease_in_out"
+                  },
+                  {
+                    "at_tick": "{{end_tick}}",
+                    "value": 1.12,
+                    "interpolation": "ease_in_out"
+                  }
+                ]
+              },
+              {
+                "property": "intensity",
+                "keyframes": [
+                  {
+                    "at_tick": 0,
+                    "value": 0.12,
+                    "interpolation": "ease_in_out"
+                  },
+                  {
+                    "at_tick": "{{middle_tick}}",
+                    "value": 0.8,
+                    "interpolation": "ease_in_out"
+                  },
+                  {
+                    "at_tick": "{{end_tick}}",
+                    "value": 0.12,
+                    "interpolation": "ease_in_out"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "chromatic_aberration",
+            "parameters": {
+              "intensity": 0.35,
+              "red_shift": 2,
+              "blue_shift": -2,
+              "falloff": 1.5,
+              "edge": "clamp"
+            },
+            "keyframes": [
+              {
+                "property": "intensity",
+                "keyframes": [
+                  {
+                    "at_tick": 0,
+                    "value": 0.12,
+                    "interpolation": "ease_in_out"
+                  },
+                  {
+                    "at_tick": "{{middle_tick}}",
+                    "value": 0.4,
+                    "interpolation": "ease_in_out"
+                  },
+                  {
+                    "at_tick": "{{end_tick}}",
+                    "value": 0.12,
+                    "interpolation": "ease_in_out"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

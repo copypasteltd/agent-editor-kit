@@ -1,0 +1,79 @@
+{
+  "status": "real-template-GPU-and-package-replay-passed",
+  "version": "1.0.0",
+  "candidate_cli": "0.1.63",
+  "unchanged_registered_cli": "0.1.59",
+  "templates": 8,
+  "actual_registered_template_reselection": "OP01-to-OP08",
+  "complete_registered_candidate_RGBA_PCM_equal": true,
+  "frames_per_template": 48,
+  "duration_seconds": 4,
+  "width": 480,
+  "height": 270,
+  "actual_GPU": "NVIDIA GeForce RTX 3060 / OpenCL",
+  "neural_forwards": 0,
+  "source_proof_sha256": "2fd303aae36cbc5103b4c744bfc11282af5a11fa9fb06ae41883b617c7a57782",
+  "formal_proof_sha256": "cddab64acaa10b141db7813865d8149a904b93fdd8d853613dd52b9d0d66be88",
+  "GPU_cases": [
+    {
+      "id": "OP01",
+      "edited_optics": 48,
+      "edited_glow": 48,
+      "replay_same": true,
+      "owned_GPU_resources_closed": true
+    },
+    {
+      "id": "OP02",
+      "edited_optics": 48,
+      "edited_glow": 48,
+      "replay_same": true,
+      "owned_GPU_resources_closed": true
+    },
+    {
+      "id": "OP03",
+      "edited_optics": 96,
+      "edited_glow": 0,
+      "replay_same": true,
+      "owned_GPU_resources_closed": true
+    },
+    {
+      "id": "OP04",
+      "edited_optics": 48,
+      "edited_glow": 48,
+      "replay_same": true,
+      "owned_GPU_resources_closed": true
+    },
+    {
+      "id": "OP05",
+      "edited_optics": 48,
+      "edited_glow": 48,
+      "replay_same": true,
+      "owned_GPU_resources_closed": true
+    },
+    {
+      "id": "OP06",
+      "edited_optics": 96,
+      "edited_glow": 0,
+      "replay_same": true,
+      "owned_GPU_resources_closed": true
+    },
+    {
+      "id": "OP07",
+      "edited_optics": 48,
+      "edited_glow": 48,
+      "replay_same": true,
+      "owned_GPU_resources_closed": true
+    },
+    {
+      "id": "OP08",
+      "edited_optics": 48,
+      "edited_glow": 48,
+      "replay_same": true,
+      "owned_GPU_resources_closed": true
+    }
+  ],
+  "natural_footage_quality_accepted": false,
+  "human_listening_accepted": false,
+  "commercial_brand_result_accepted": false,
+  "full_goal_closed": false
+}

@@ -1,0 +1,84 @@
+{
+  "id": "aek.optical.pearl-soft",
+  "version": "1.0.0",
+  "name": {
+    "zh": "珍珠柔光",
+    "en": "Pearl soft"
+  },
+  "license_spdx": "MIT",
+  "author": "agent editor kit",
+  "variables": [
+    {
+      "name": "clip_id",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "middle_tick",
+      "type": "integer",
+      "min": 1,
+      "required": true
+    },
+    {
+      "name": "end_tick",
+      "type": "integer",
+      "min": 2,
+      "required": true
+    }
+  ],
+  "operations": [
+    {
+      "op": "update_clip",
+      "clip_id": "{{clip_id}}",
+      "patch": {
+        "effects": [
+          {
+            "type": "bloom",
+            "parameters": {
+              "intensity": 0.65,
+              "threshold": 0.52,
+              "knee": 0.15,
+              "radius": 5,
+              "gain": 0.85,
+              "red": 0.9,
+              "green": 0.95,
+              "blue": 1
+            },
+            "keyframes": []
+          },
+          {
+            "type": "light_leak",
+            "parameters": {
+              "intensity": 0.22,
+              "x": 0.2,
+              "y": 0.2,
+              "radius": 0.5,
+              "aspect": 1.6,
+              "red": 0.9,
+              "green": 0.95,
+              "blue": 1,
+              "brightness": 0.22
+            },
+            "keyframes": [
+              {
+                "property": "x",
+                "keyframes": [
+                  {
+                    "at_tick": 0,
+                    "value": -0.3,
+                    "interpolation": "ease_in_out"
+                  },
+                  {
+                    "at_tick": "{{end_tick}}",
+                    "value": 1.3,
+                    "interpolation": "ease_in_out"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

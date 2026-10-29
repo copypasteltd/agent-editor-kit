@@ -1,5 +1,11 @@
 # agent editor kit
 
+**Eight editable composite optical templates are available.** Each includes full parameters, actual MP4/GIF, original input and an editable project. All eight passed installed GPU/full-AV replay; registered Skill59 actually reselected OP08. [Preview / 完整选型](docs/product/OPTICAL_EFFECT_PACK.md)
+
+![Actual editable optical templates](docs/assets/optical-pack-20261029-r1/contact.png)
+
+**CLI63 installed regression recovery:** complete406-r1 ended without a terminal receipt and is recorded as interrupted. Original logs remain; a new full r2 run is active. Formal Skill stays CLI59/local57/r57. [Recovery](docs/validation/CLI63安装回归中断与恢复_2026-10-29.md)
+
 **Development status: source CLI0.1.63 passed all406 contracts and native-process fix checks. Native local61 candidate installed with exact1707 payloads/283 modules; installed regression continues. Existing103-voice audition guidance is prepared before candidate testing,not relabeled as new CLI63 inference. Formal Skill remains CLI59/local57/r57;the full goal is open.** [Delivery details](docs/validation/CLI63候选交付门禁_2026-10-29.md)
 
 **Historical source CLI61 full403 service contracts passed,zero failures/errors/skips,app and tests frozen.Independent installation and registered Skill promotion require separate acceptance.** [Evidence](docs/validation/CLI61完整源码验收_2026-10-29.md)
@@ -2080,6 +2086,8 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R520 | CLI63 installed semantic regression | All104 installed semantic/decision/job/package/upgrade regressions passed,zero failures/errors/skips,source/installed equal and frozen. Full406 and actual models remain separate;not independent Agent success-rate or real semantic-quality acceptance. [Evidence](docs/validation/evidence/job-enumeration-20261029-r1/installed63-semantic-r1/verification.json) |
 | R521 | CLI63 isolated file-transaction rollback | Four isolated E-drive transition failures checked,including all93 Skill files plus two metadata files changed before rollback. The full case performed192 actual atomic replacements and restored all95 original byte states;95 production files unchanged. Synthetic gates/CLI failure,no real C-drive entry,model inference or power-loss acceptance. [Evidence](docs/validation/CLI63Skill隔离回滚_2026-10-29.md) |
 | R522 | Second native Windows read-only preflight | Second Windows host read-only identity/metadata probe completed:RTX3080/10GiB,embedded Python3.13.14 x64. Default Python3.15,jsonschema missing,no FFmpeg/FFprobe on PATH;cv2 module exists. No remote install,inference or configuration change;not multi-device GPU or clean-host acceptance. [Evidence](docs/validation/第二台Windows原生环境预检_2026-10-29.md) |
+| R523 | CLI63 interrupted installation recovery | Original PIDs verified absent; five completed groups retained. Full406 reruns as r2; GPU/staged/formal promotion remain separate. Four isolated rollback cases passed for the r2 gate script; no new core feature or natural-quality acceptance. [Evidence](docs/validation/CLI63安装回归中断与恢复_2026-10-29.md) |
+| R524 | Optical template pack v1 | Eight4s/48-frame templates used RTX3060 OpenCL and passed full RGBA/PCM package replay. Actual C-discovered CLI59 OP08 reselection matches candidate63 completely. Original diagnostic study/tones; no natural-footage or listening acceptance, no eight new kernels. [Evidence](docs/product/OPTICAL_EFFECT_PACK.md) |
 
 ### Development preview: C76 loop overlap repair(source CLI60)
 

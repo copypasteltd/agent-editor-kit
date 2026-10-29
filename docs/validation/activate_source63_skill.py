@@ -58,7 +58,8 @@ def main():
         'installed_loop_tests':BASE/'installed63-loop-r1/verification.json'}
     for mode in ['source63', 'installed63']:
         for group in ['bootstrap', 'control', 'selection', 'semantic', 'contracts']:
-            gates[mode+'_'+group] = BASE/(mode+'-'+group+'-r1/verification.json')
+            run='r2' if mode=='installed63' and group=='contracts' else 'r1'
+            gates[mode+'_'+group] = BASE/(mode+'-'+group+'-'+run+'/verification.json')
     for mode in ['source63','installed63','staged63']:
         gates[mode+'_lipsync']=BASE/(mode+'-lipsync-cuda-r1/verification.json')
     gates['skill_controller']=BASE/'skill-controller-r1/verification.json'

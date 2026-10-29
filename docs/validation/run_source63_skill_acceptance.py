@@ -13,7 +13,7 @@ def main():
  stage=load(path);assert stage['status']=='unregistered-candidate' and stage['cli_version']=='0.1.63'
  assert stage['requires_installed406'] and stage['voice_auditions']['applied_before_candidate_tests']
  for p,h in stage['gates'].items():assert sha(Path(p))==h
- contract=load(BASE/'installed63-contracts-r1/verification.json')
+ contract=load(BASE/'installed63-contracts-r2/verification.json')
  assert contract['status']=='passed' and contract['tests']==406 and contract['frozen_equal']
  assert contract['failures']==contract['errors']==contract['skipped']==0
  assert all(sha(ROOT/p)==h for p,h in contract['file_hashes'].items())

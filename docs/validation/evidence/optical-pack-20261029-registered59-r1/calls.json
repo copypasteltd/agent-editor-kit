@@ -1,0 +1,50 @@
+[
+  {
+    "name": "version",
+    "exit_code": 0,
+    "stdout_bytes": 1168,
+    "stdout_sha256": "6f6f96d0d662a2d4e1df970c2e2a09f0ddad187a0f9b7a5f8e2e76c0e402961a"
+  },
+  {
+    "name": "import",
+    "exit_code": 0,
+    "stdout_bytes": 1563,
+    "stdout_sha256": "44f3177b099241723b5a861d1f66570ab937519925309ebd2862d6009027fa3b"
+  },
+  {
+    "name": "dry-run",
+    "exit_code": 0,
+    "stdout_bytes": 1098,
+    "stdout_sha256": "c1fda53ce5192f37a2729fa3f2064df0754a6a2047ff371a61112d1073b4bc79"
+  },
+  {
+    "name": "reselect-OP08",
+    "exit_code": 0,
+    "stdout_bytes": 1265,
+    "stdout_sha256": "cb7acd8bcac3cf69ec16682e75af4b8a3799a410751e9680f9a890b590c8c3eb"
+  },
+  {
+    "name": "validate",
+    "exit_code": 0,
+    "stdout_bytes": 1850,
+    "stdout_sha256": "b393843b8c824fa1eaa2bb79813c0baa940115c2f9781769b774026105b044be"
+  },
+  {
+    "name": "render",
+    "exit_code": 0,
+    "stdout_bytes": 187181,
+    "stdout_sha256": "292d15e8dab202f3e4d5cf7b7f924e55019a891d40bfa0e583f196f51caf4b04"
+  },
+  {
+    "name": "rgba",
+    "exit_code": 0,
+    "stdout_bytes": 24883200,
+    "stdout_sha256": "554f14acae3e1a4b6cc13117b6671d2d5ed26d5063bb500938dfbe037295960c"
+  },
+  {
+    "name": "pcm",
+    "exit_code": 0,
+    "stdout_bytes": 768000,
+    "stdout_sha256": "cb38077299f42c16daeea4c8e53e3f9bf15124fb1fc665dfe07e57d53c71d0d5"
+  }
+]

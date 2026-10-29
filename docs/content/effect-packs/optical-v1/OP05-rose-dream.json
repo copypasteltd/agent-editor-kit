@@ -1,0 +1,100 @@
+{
+  "id": "aek.optical.rose-dream",
+  "version": "1.0.0",
+  "name": {
+    "zh": "玫瑰梦境",
+    "en": "Rose dream"
+  },
+  "license_spdx": "MIT",
+  "author": "agent editor kit",
+  "variables": [
+    {
+      "name": "clip_id",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "middle_tick",
+      "type": "integer",
+      "min": 1,
+      "required": true
+    },
+    {
+      "name": "end_tick",
+      "type": "integer",
+      "min": 2,
+      "required": true
+    }
+  ],
+  "operations": [
+    {
+      "op": "update_clip",
+      "clip_id": "{{clip_id}}",
+      "patch": {
+        "effects": [
+          {
+            "type": "light_leak",
+            "parameters": {
+              "intensity": 0.52,
+              "x": 0.1,
+              "y": 0.2,
+              "radius": 0.38,
+              "aspect": 2.1,
+              "angle": 40,
+              "red": 1,
+              "green": 0.12,
+              "blue": 0.45,
+              "brightness": 0.4
+            },
+            "keyframes": [
+              {
+                "property": "x",
+                "keyframes": [
+                  {
+                    "at_tick": 0,
+                    "value": -0.2,
+                    "interpolation": "ease_in_out"
+                  },
+                  {
+                    "at_tick": "{{end_tick}}",
+                    "value": 1.1,
+                    "interpolation": "ease_in_out"
+                  }
+                ]
+              },
+              {
+                "property": "y",
+                "keyframes": [
+                  {
+                    "at_tick": 0,
+                    "value": -0.1,
+                    "interpolation": "ease_in_out"
+                  },
+                  {
+                    "at_tick": "{{end_tick}}",
+                    "value": 1.05,
+                    "interpolation": "ease_in_out"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "bloom",
+            "parameters": {
+              "intensity": 0.45,
+              "threshold": 0.5,
+              "knee": 0.2,
+              "radius": 6,
+              "gain": 0.65,
+              "red": 1,
+              "green": 0.6,
+              "blue": 0.8
+            },
+            "keyframes": []
+          }
+        ]
+      }
+    }
+  ]
+}

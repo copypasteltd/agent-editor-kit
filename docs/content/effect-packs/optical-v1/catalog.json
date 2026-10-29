@@ -1,0 +1,250 @@
+{
+  "format": "agent-optical-template-pack-v1",
+  "version": "1.0.0",
+  "minimum_core_version": "0.1.39",
+  "template_count": 8,
+  "core_changes": 0,
+  "external_models": 0,
+  "items": [
+    {
+      "id": "OP01",
+      "template_id": "aek.optical.warm-memory",
+      "version": "1.0.0",
+      "name_zh": "暖光回忆",
+      "name_en": "Warm memory",
+      "use_cases_zh": "文旅／复古产品",
+      "description_zh": "暖色椭圆漏光从左上移向右侧；高光产生暖红晕边。",
+      "description_en": "Moving amber light leak with warm highlight halation.",
+      "template": "OP01-warm-memory.json",
+      "sha256": "1b3867640fabfe4b2419281505ed0fd3e2182dff789c7583b96dcab36f0e303e",
+      "license_spdx": "MIT",
+      "effects": [
+        "light_leak",
+        "halation"
+      ],
+      "prerequisites": [
+        "float32-native-v1",
+        "explicit source/working/output signals",
+        "existing target clip; reviewed replacement of its full effects array",
+        "original author-clock middle_tick/end_tick; no automatic retiming"
+      ],
+      "reference_source_pixels": [
+        480,
+        270
+      ],
+      "reference_duration_ticks": 360000,
+      "automatic_scene_or_subject_analysis": false,
+      "natural_quality_accepted": false
+    },
+    {
+      "id": "OP02",
+      "template_id": "aek.optical.pearl-soft",
+      "version": "1.0.0",
+      "name_zh": "珍珠柔光",
+      "name_en": "Pearl soft",
+      "use_cases_zh": "珠宝／静物产品",
+      "description_zh": "中性偏冷高光柔化；低强度白色漏光缓缓移过。不是皮肤美颜。",
+      "description_en": "Soft neutral highlights and a faint moving white leak; no skin retouch.",
+      "template": "OP02-pearl-soft.json",
+      "sha256": "476db992606d83a2d481f2e815c37928bd76f5f73a0bc85de32cb829425ece38",
+      "license_spdx": "MIT",
+      "effects": [
+        "bloom",
+        "light_leak"
+      ],
+      "prerequisites": [
+        "float32-native-v1",
+        "explicit source/working/output signals",
+        "existing target clip; reviewed replacement of its full effects array",
+        "original author-clock middle_tick/end_tick; no automatic retiming"
+      ],
+      "reference_source_pixels": [
+        480,
+        270
+      ],
+      "reference_duration_ticks": 360000,
+      "automatic_scene_or_subject_analysis": false,
+      "natural_quality_accepted": false
+    },
+    {
+      "id": "OP03",
+      "template_id": "aek.optical.cyan-tech",
+      "version": "1.0.0",
+      "name_zh": "青蓝科技",
+      "name_en": "Cyan tech",
+      "use_cases_zh": "电子产品／科技发布",
+      "description_zh": "青蓝镜头星芒斜向扫过，红蓝通道小幅径向分离并在中段增强。",
+      "description_en": "Sweeping cyan flare with a small radial red/blue split peaking at mid-shot.",
+      "template": "OP03-cyan-tech.json",
+      "sha256": "b8e8aea3a388d620a58a18ea1aafeea2b44674a519a1f917ecc1001fdd162a0c",
+      "license_spdx": "MIT",
+      "effects": [
+        "lens_flare",
+        "chromatic_aberration"
+      ],
+      "prerequisites": [
+        "float32-native-v1",
+        "explicit source/working/output signals",
+        "existing target clip; reviewed replacement of its full effects array",
+        "original author-clock middle_tick/end_tick; no automatic retiming"
+      ],
+      "reference_source_pixels": [
+        480,
+        270
+      ],
+      "reference_duration_ticks": 360000,
+      "automatic_scene_or_subject_analysis": false,
+      "natural_quality_accepted": false
+    },
+    {
+      "id": "OP04",
+      "template_id": "aek.optical.gold-launch",
+      "version": "1.0.0",
+      "name_zh": "鎏金发布",
+      "name_en": "Gold launch",
+      "use_cases_zh": "新品发布／品牌片",
+      "description_zh": "金色横向长星芒由暗转亮再回落；叠加少量暖色高光扩散。",
+      "description_en": "A long golden flare rises and falls over gentle warm highlight bloom.",
+      "template": "OP04-gold-launch.json",
+      "sha256": "d6f40d37cfca9771e2fd10efe02acc6dac9e214b874b2f36785e9e5d91d6bf50",
+      "license_spdx": "MIT",
+      "effects": [
+        "lens_flare",
+        "bloom"
+      ],
+      "prerequisites": [
+        "float32-native-v1",
+        "explicit source/working/output signals",
+        "existing target clip; reviewed replacement of its full effects array",
+        "original author-clock middle_tick/end_tick; no automatic retiming"
+      ],
+      "reference_source_pixels": [
+        480,
+        270
+      ],
+      "reference_duration_ticks": 360000,
+      "automatic_scene_or_subject_analysis": false,
+      "natural_quality_accepted": false
+    },
+    {
+      "id": "OP05",
+      "template_id": "aek.optical.rose-dream",
+      "version": "1.0.0",
+      "name_zh": "玫瑰梦境",
+      "name_en": "Rose dream",
+      "use_cases_zh": "香氛／生活方式",
+      "description_zh": "玫瑰紫漏光对角流动，与偏粉高光扩散组成梦境氛围。",
+      "description_en": "Diagonal rose-purple light leak and pink-tinted bloom.",
+      "template": "OP05-rose-dream.json",
+      "sha256": "409a729166fa8c36cdb6d4247c69648eedb6c44c61b90b51e5f1e12dd5df53dc",
+      "license_spdx": "MIT",
+      "effects": [
+        "light_leak",
+        "bloom"
+      ],
+      "prerequisites": [
+        "float32-native-v1",
+        "explicit source/working/output signals",
+        "existing target clip; reviewed replacement of its full effects array",
+        "original author-clock middle_tick/end_tick; no automatic retiming"
+      ],
+      "reference_source_pixels": [
+        480,
+        270
+      ],
+      "reference_duration_ticks": 360000,
+      "automatic_scene_or_subject_analysis": false,
+      "natural_quality_accepted": false
+    },
+    {
+      "id": "OP06",
+      "template_id": "aek.optical.prism-pulse",
+      "version": "1.0.0",
+      "name_zh": "棱镜脉冲",
+      "name_en": "Prism pulse",
+      "use_cases_zh": "运动／节奏产品展示",
+      "description_zh": "红蓝径向分离在中段快速增强，配合冷白星芒脉冲。不是语义节拍检测。",
+      "description_en": "A timed radial RGB pulse and cool white flare; no automatic beat detection.",
+      "template": "OP06-prism-pulse.json",
+      "sha256": "90a890e9cd38a14cd79554736901228cccab8326af28f04f54cb6d273e86b91c",
+      "license_spdx": "MIT",
+      "effects": [
+        "chromatic_aberration",
+        "lens_flare"
+      ],
+      "prerequisites": [
+        "float32-native-v1",
+        "explicit source/working/output signals",
+        "existing target clip; reviewed replacement of its full effects array",
+        "original author-clock middle_tick/end_tick; no automatic retiming"
+      ],
+      "reference_source_pixels": [
+        480,
+        270
+      ],
+      "reference_duration_ticks": 360000,
+      "automatic_scene_or_subject_analysis": false,
+      "natural_quality_accepted": false
+    },
+    {
+      "id": "OP07",
+      "template_id": "aek.optical.silver-glass",
+      "version": "1.0.0",
+      "name_zh": "银色玻璃",
+      "name_en": "Silver glass",
+      "use_cases_zh": "玻璃器皿／极简品牌",
+      "description_zh": "细窄冷白横向星芒与柔和中性高光；亮点从右上移向左侧。",
+      "description_en": "A thin cool-white streak moves right to left above neutral bloom.",
+      "template": "OP07-silver-glass.json",
+      "sha256": "8d6f8f7f61c69f733f4b0e5038cd5516dd63d362601843ea886b1978fed170ea",
+      "license_spdx": "MIT",
+      "effects": [
+        "lens_flare",
+        "bloom"
+      ],
+      "prerequisites": [
+        "float32-native-v1",
+        "explicit source/working/output signals",
+        "existing target clip; reviewed replacement of its full effects array",
+        "original author-clock middle_tick/end_tick; no automatic retiming"
+      ],
+      "reference_source_pixels": [
+        480,
+        270
+      ],
+      "reference_duration_ticks": 360000,
+      "automatic_scene_or_subject_analysis": false,
+      "natural_quality_accepted": false
+    },
+    {
+      "id": "OP08",
+      "template_id": "aek.optical.sunset-halo",
+      "version": "1.0.0",
+      "name_zh": "落日光晕",
+      "name_en": "Sunset halo",
+      "use_cases_zh": "户外／旅行氛围",
+      "description_zh": "偏橙低角度圆光源缓缓下落，亮部叠加暖色边缘晕光。不是日光重打光。",
+      "description_en": "A low orange flare descends over warm highlight edges; no scene relighting.",
+      "template": "OP08-sunset-halo.json",
+      "sha256": "8a6190ace9dc16afa3eef83ab708b42d182f2687d3249bce268029c36961f121",
+      "license_spdx": "MIT",
+      "effects": [
+        "lens_flare",
+        "halation"
+      ],
+      "prerequisites": [
+        "float32-native-v1",
+        "explicit source/working/output signals",
+        "existing target clip; reviewed replacement of its full effects array",
+        "original author-clock middle_tick/end_tick; no automatic retiming"
+      ],
+      "reference_source_pixels": [
+        480,
+        270
+      ],
+      "reference_duration_ticks": 360000,
+      "automatic_scene_or_subject_analysis": false,
+      "natural_quality_accepted": false
+    }
+  ]
+}

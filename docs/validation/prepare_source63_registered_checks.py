@@ -19,6 +19,7 @@ for name,arg in [('loop','a'),('gpu','args'),('lipsync','args')]:
   text=text.replace("mode = 'staged63'","mode = 'registered63'").replace("mode='staged63'","mode='registered63'")
   text=text.replace("BASE/'staged-actual-case-r1/verification.json'","BASE/'registered-actual-case-r1/verification.json'")
  assert 'source61_voice_skill_overlay' not in text and 'installed61' not in text
+ text=text.replace('installed63-contracts-r1/verification.json','installed63-contracts-r2/verification.json')
  write(f'run_registered63_{name}_case.py',text)
 text=(DOC/'run_source61_registered_acceptance.py').read_text(encoding='utf-8')
 for old,new in [('lipsync-timeout-20261029-r1','job-enumeration-20261029-r1'),('CLI61','CLI63'),

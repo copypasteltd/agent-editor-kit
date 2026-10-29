@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-10-29T13:52:25.780953+00:00",
+  "recovery_pid_confirmed_live": 28192,
+  "calls": [
+    {
+      "name": "activation",
+      "exit_code": 2
+    },
+    {
+      "name": "documentation",
+      "exit_code": 2
+    }
+  ],
+  "README_rows": 523,
+  "previous_README_rows_preserved": 522,
+  "original_goal_rows_preserved": 38,
+  "formal_files_unchanged": 95,
+  "source": "0.1.63",
+  "candidate": "0.1.63/local61",
+  "formal": "0.1.59/local57/r57",
+  "formal_activation": false,
+  "full_installed_contracts_accepted": false,
+  "full_goal_closed": false,
+  "readmes": {
+    "README.md": "63e7b5979d36e449bfcb81b03586f008133fe5757ba210bb3e28c8a7a283060c",
+    "README.zh-TW.md": "f2057df9ffcf3c83e611b9f8da1ed1ccd4e82df67d875aa0f7357b3566df0dd2",
+    "README.en.md": "b20c7817a990015562e71d5d3aa22be0cec8e7ab56f9a8d30f38a6c4d439e14b"
+  }
+}

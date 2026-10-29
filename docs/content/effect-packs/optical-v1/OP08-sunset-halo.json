@@ -1,0 +1,88 @@
+{
+  "id": "aek.optical.sunset-halo",
+  "version": "1.0.0",
+  "name": {
+    "zh": "落日光晕",
+    "en": "Sunset halo"
+  },
+  "license_spdx": "MIT",
+  "author": "agent editor kit",
+  "variables": [
+    {
+      "name": "clip_id",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "middle_tick",
+      "type": "integer",
+      "min": 1,
+      "required": true
+    },
+    {
+      "name": "end_tick",
+      "type": "integer",
+      "min": 2,
+      "required": true
+    }
+  ],
+  "operations": [
+    {
+      "op": "update_clip",
+      "clip_id": "{{clip_id}}",
+      "patch": {
+        "effects": [
+          {
+            "type": "lens_flare",
+            "parameters": {
+              "intensity": 0.45,
+              "x": 0.85,
+              "y": 0.3,
+              "radius": 0.1,
+              "red": 1,
+              "green": 0.28,
+              "blue": 0.04,
+              "brightness": 0.5,
+              "streak": 0.3,
+              "streak_width": 0.01,
+              "halo": 0.6,
+              "ghosts": 4,
+              "ghost_spacing": 0.4
+            },
+            "keyframes": [
+              {
+                "property": "y",
+                "keyframes": [
+                  {
+                    "at_tick": 0,
+                    "value": 0.1,
+                    "interpolation": "ease_in_out"
+                  },
+                  {
+                    "at_tick": "{{end_tick}}",
+                    "value": 0.55,
+                    "interpolation": "ease_in_out"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "halation",
+            "parameters": {
+              "intensity": 0.6,
+              "threshold": 0.5,
+              "knee": 0.15,
+              "radius": 5,
+              "gain": 1.4,
+              "red": 1,
+              "green": 0.2,
+              "blue": 0.03
+            },
+            "keyframes": []
+          }
+        ]
+      }
+    }
+  ]
+}

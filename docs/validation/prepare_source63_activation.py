@@ -29,6 +29,9 @@ new="""    staging=load(stage.parents[1]/'STAGING.json')
 assert text.count(old)==1;text=text.replace(old,new)
 text=text.replace('documentation_overlay=documentation_overlay','voice_auditions=voice_auditions,post_test_document_changes=False')
 assert 'source63_voice_skill_overlay' not in text
+old="            gates[mode+'_'+group] = BASE/(mode+'-'+group+'-r1/verification.json')"
+new="            run='r2' if mode=='installed63' and group=='contracts' else 'r1'\n            gates[mode+'_'+group] = BASE/(mode+'-'+group+'-'+run+'/verification.json')"
+assert text.count(old)==1;text=text.replace(old,new)
 target=DOC/'activate_source63_skill.py';compile(text,str(target),'exec')
 if target.exists():assert target.read_text(encoding='utf-8')==text
 else:target.write_text(text,encoding='utf-8',newline='\n')

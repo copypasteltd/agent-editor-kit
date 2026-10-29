@@ -1,0 +1,93 @@
+{
+  "id": "aek.optical.gold-launch",
+  "version": "1.0.0",
+  "name": {
+    "zh": "鎏金发布",
+    "en": "Gold launch"
+  },
+  "license_spdx": "MIT",
+  "author": "agent editor kit",
+  "variables": [
+    {
+      "name": "clip_id",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "middle_tick",
+      "type": "integer",
+      "min": 1,
+      "required": true
+    },
+    {
+      "name": "end_tick",
+      "type": "integer",
+      "min": 2,
+      "required": true
+    }
+  ],
+  "operations": [
+    {
+      "op": "update_clip",
+      "clip_id": "{{clip_id}}",
+      "patch": {
+        "effects": [
+          {
+            "type": "lens_flare",
+            "parameters": {
+              "intensity": 0.6,
+              "x": 0.75,
+              "y": 0.28,
+              "radius": 0.06,
+              "red": 1,
+              "green": 0.65,
+              "blue": 0.18,
+              "brightness": 0.55,
+              "streak": 2.2,
+              "streak_width": 0.003,
+              "halo": 0.25,
+              "ghosts": 5,
+              "ghost_spacing": 0.48
+            },
+            "keyframes": [
+              {
+                "property": "intensity",
+                "keyframes": [
+                  {
+                    "at_tick": 0,
+                    "value": 0.05,
+                    "interpolation": "ease_in_out"
+                  },
+                  {
+                    "at_tick": "{{middle_tick}}",
+                    "value": 0.9,
+                    "interpolation": "ease_in_out"
+                  },
+                  {
+                    "at_tick": "{{end_tick}}",
+                    "value": 0.05,
+                    "interpolation": "ease_in_out"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "bloom",
+            "parameters": {
+              "intensity": 0.4,
+              "threshold": 0.6,
+              "knee": 0.15,
+              "radius": 4,
+              "gain": 0.7,
+              "red": 1,
+              "green": 0.8,
+              "blue": 0.45
+            },
+            "keyframes": []
+          }
+        ]
+      }
+    }
+  ]
+}

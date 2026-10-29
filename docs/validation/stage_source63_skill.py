@@ -20,9 +20,14 @@ def main():
         'voice_auditions':VOICE,
         'source_case':BASE/'actual-case-r1/verification.json',
         'installed_case':BASE/'installed-actual-case-r1/verification.json'}
+    optical_proof=ROOT/'docs/validation/evidence/optical-pack-publication-20261029-r1/verification.json'
+    optical_doc=ROOT/'docs/product/OPTICAL_EFFECT_PACK.md'
+    include_optical=optical_proof.is_file() and optical_doc.is_file()
+    if include_optical:paths['optical_content']=optical_proof
     for mode in ['source63','installed63']:
         for group in ['bootstrap','control','selection','semantic','contracts','gpu']:
-            paths[mode+'_'+group]=BASE/(mode+'-'+group+'-r1/verification.json')
+            run='r2' if mode=='installed63' and group=='contracts' else 'r1'
+            paths[mode+'_'+group]=BASE/(mode+'-'+group+'-'+run+'/verification.json')
         paths[mode+'_lipsync']=BASE/(mode+'-lipsync-cuda-r1/verification.json')
     paths['source_loop']=BASE/'source63-loop-r1/verification.json'
     paths['installed_loop']=BASE/'installed63-loop-r1/verification.json'
@@ -31,6 +36,15 @@ def main():
         print(json.dumps(dict(status='pending',ready=False,missing=missing,mutated=False)),flush=True)
         return 2
     reports={k:load(p) for k,p in paths.items()}
+    if include_optical:
+        optical=reports['optical_content']
+        assert optical['status']=='published-and-documented' and optical['templates']==8
+        assert optical['actual_registered_cli']=='0.1.59'
+        assert optical['registered_candidate_complete_RGBA_PCM_equal']
+        pack=ROOT/'docs/content/effect-packs/optical-v1.zip'
+        assert sha(pack)==optical['archive_sha256']
+        paths['optical_documentation']=optical_doc
+        paths['optical_archive']=pack
     assert reports['installation']['status']=='installed-and-byte-verified'
     installed=Path(reports['installation']['installed']).resolve()
     assert installed.is_relative_to((ROOT/'local/agent-ffmpeg/v0.1.0-alpha.4-local.61').resolve())
@@ -83,6 +97,28 @@ def main():
     text=text.replace(marker,'`'+release+'` / CLI `0.1.63`',1)
     text+='\nFor sample-clock loop overlap repair and actual before/after auditions, read [community music](references/community-materials.md#sample-clock-loop-overlap-repair-cli0163). Overlap explicitly shortens the cycle; numerical continuity is not listening approval.\n'
     p.write_text(text,encoding='utf-8')
+    if include_optical:
+        p=skill/'references/modules/template-library/module.md'
+        with p.open('a',encoding='utf-8') as f:f.write('''
+
+## Editable composite optical pack v1
+
+For an actual preview,full parameters and editable projects for OP01-OP08,read:
+https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/OPTICAL_EFFECT_PACK.md
+Eight MIT content templates reuse existing optical kernels;they are not eight
+new AI models. The real gallery lets a client select a template ID. Review that
+direction on the client's actual footage. Original studies are not natural-film
+quality acceptance. Current source evidence distinguishes installed CLI63's eight
+GPU/package cases from the historical registered CLI59 OP01-to-OP08 reselection.
+
+Read the template and existing clip before applying:it replaces the complete
+effects array. Preserve or explicitly merge existing effects after review. Supply
+the actual clip ID and original author-clock middle_tick/end_tick. Radii/shifts
+are source pixels;other resolutions,crops,retimes and durations need review.
+Use template apply --dry-run,then apply,validate,preview,render and export.
+Dry-run only substitutes variables;it does not establish final media quality.
+Use the actual MP4/GIF and stable ID for selection,not a fabricated preview.
+''')
     p=skill/'references/runtime.md';text=p.read_text(encoding='utf-8')
     text=text.replace('v0.1.0-alpha.4-local.57',release).replace('CLI 0.1.59','CLI 0.1.63')
     p.write_text(text,encoding='utf-8')
@@ -133,6 +169,8 @@ https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/MUSIC_LO
         public_entries=1,modules=17,files=93,live_skill_changed=False,activated=False,candidate_files=candidate,
         protected_files={str(p):pin for p,pin in guard.items()},
         voice_auditions=voice_provenance,
+        optical_content=dict(included_before_candidate_tests=include_optical,
+            templates=8 if include_optical else 0,post_test_Skill_changes=False),
         gates={str(p):sha(p) for p in paths.values()},requires_actual_PowerShell_loop_and_CUDA_before_activation=True,requires_installed406=True,requires_actual_installed_MuseTalk=True)
     save(home/'STAGING.json',report);print(json.dumps(report,ensure_ascii=False),flush=True);return 0
 

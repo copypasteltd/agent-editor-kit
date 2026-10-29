@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "actual_C_drive_Skill_entry": true,
+  "cli_version": "0.1.59",
+  "actual_template_reselection": "OP01-to-OP08",
+  "template_sha256": "8a6190ace9dc16afa3eef83ab708b42d182f2687d3249bce268029c36961f121",
+  "actual_GPU": {
+    "selection": "0.0",
+    "name": "NVIDIA GeForce RTX 3060",
+    "vendor": "NVIDIA Corporation",
+    "driver": "595.95",
+    "version": "OpenCL 3.0 CUDA",
+    "type": 4,
+    "double_fp_config": 63,
+    "global_memory_bytes": 12884377600,
+    "max_allocation_bytes": 3221094400
+  },
+  "edited_operations": {
+    "optics": 48,
+    "glow": 48,
+    "affine": 48,
+    "over": 48
+  },
+  "worker_and_shared_closed": true,
+  "runtime_CPU_fallback": false,
+  "formal_files_unchanged": 95,
+  "full_RGBA_bytes": 24883200,
+  "full_RGBA_sha256": "554f14acae3e1a4b6cc13117b6671d2d5ed26d5063bb500938dfbe037295960c",
+  "full_PCM_bytes": 768000,
+  "full_PCM_sha256": "cb38077299f42c16daeea4c8e53e3f9bf15124fb1fc665dfe07e57d53c71d0d5",
+  "comparison_to_all_eight_candidate_cases_pending": true,
+  "new_neural_forwards": 0,
+  "natural_quality_accepted": false,
+  "full_goal_closed": false
+}

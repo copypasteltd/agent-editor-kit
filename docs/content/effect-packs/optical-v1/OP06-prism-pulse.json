@@ -1,0 +1,113 @@
+{
+  "id": "aek.optical.prism-pulse",
+  "version": "1.0.0",
+  "name": {
+    "zh": "棱镜脉冲",
+    "en": "Prism pulse"
+  },
+  "license_spdx": "MIT",
+  "author": "agent editor kit",
+  "variables": [
+    {
+      "name": "clip_id",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "middle_tick",
+      "type": "integer",
+      "min": 1,
+      "required": true
+    },
+    {
+      "name": "end_tick",
+      "type": "integer",
+      "min": 2,
+      "required": true
+    }
+  ],
+  "operations": [
+    {
+      "op": "update_clip",
+      "clip_id": "{{clip_id}}",
+      "patch": {
+        "effects": [
+          {
+            "type": "chromatic_aberration",
+            "parameters": {
+              "intensity": 0.8,
+              "red_shift": 4,
+              "blue_shift": -4,
+              "x": 0.5,
+              "y": 0.5,
+              "falloff": 1,
+              "edge": "clamp"
+            },
+            "keyframes": [
+              {
+                "property": "intensity",
+                "keyframes": [
+                  {
+                    "at_tick": 0,
+                    "value": 0.05,
+                    "interpolation": "ease_in_out"
+                  },
+                  {
+                    "at_tick": "{{middle_tick}}",
+                    "value": 0.95,
+                    "interpolation": "ease_in_out"
+                  },
+                  {
+                    "at_tick": "{{end_tick}}",
+                    "value": 0.05,
+                    "interpolation": "ease_in_out"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "lens_flare",
+            "parameters": {
+              "intensity": 0.4,
+              "x": 0.6,
+              "y": 0.22,
+              "radius": 0.045,
+              "red": 0.75,
+              "green": 0.9,
+              "blue": 1,
+              "brightness": 0.4,
+              "streak": 1,
+              "streak_width": 0.004,
+              "halo": 0.12,
+              "ghosts": 2,
+              "ghost_spacing": 0.65
+            },
+            "keyframes": [
+              {
+                "property": "intensity",
+                "keyframes": [
+                  {
+                    "at_tick": 0,
+                    "value": 0.03,
+                    "interpolation": "ease_in_out"
+                  },
+                  {
+                    "at_tick": "{{middle_tick}}",
+                    "value": 0.65,
+                    "interpolation": "ease_in_out"
+                  },
+                  {
+                    "at_tick": "{{end_tick}}",
+                    "value": 0.03,
+                    "interpolation": "ease_in_out"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

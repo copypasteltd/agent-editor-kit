@@ -41,7 +41,7 @@ def main():
     assert args.skill==skill and skill.resolve()==(ROOT/'skills/agent-ffmpeg-local-editor').resolve()
     activation=load(BASE/'skill63-activation-r1/verification.json')
     assert activation['status']=='activated-and-entry-verified'
-    contracts=load(BASE/'installed63-contracts-r1/verification.json')
+    contracts=load(BASE/'installed63-contracts-r2/verification.json')
     assert contracts['status']=='passed' and contracts['tests']==406 and contracts['frozen_equal']
     assert Path(contracts['installed']).resolve()==installed
     assert sha(ROOT/'agent-ffmpeg-local-install-manifest.json')==activation['namespace_sha256']

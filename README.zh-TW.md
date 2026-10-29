@@ -1,5 +1,11 @@
 # agent editor kit
 
+**新增8套可編輯複合光效內容包。** 每套有完整參數、實際MP4／GIF、原圖與可編輯專案；8套安裝版GPU渲染及完整音畫專案重播通過，正式Skill59實際改選OP08通過。 [Preview / 完整选型](docs/product/OPTICAL_EFFECT_PACK.md)
+
+![Actual editable optical templates](docs/assets/optical-pack-20261029-r1/contact.png)
+
+**CLI63安裝回歸恢復：** 完整406-r1因程序退出且無終態記為中斷；保留原日誌，正在新r2目錄重跑。正式Skill仍CLI59/local57/r57。 [Recovery](docs/validation/CLI63安装回归中断与恢复_2026-10-29.md)
+
 **目前開發狀態：原始碼 CLI0.1.63 的406項完整合同及原生程序修復核驗通過；local61候選已原生安裝、1707載荷與283模組精確一致，安裝版回歸繼續。103音色預覽說明已準備在候選實測前寫入，未冒充CLI63重新生成。正式Skill仍CLI59/local57/r57，完整目標未完成。** [Delivery details](docs/validation/CLI63候选交付门禁_2026-10-29.md)
 
 **歷史原始碼CLI61完整403項服務契約已通過，零失敗／錯誤／跳過，應用與測試凍結一致；獨立安裝及正式Skill升級仍須另驗。** [Evidence](docs/validation/CLI61完整源码验收_2026-10-29.md)
@@ -2078,6 +2084,8 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R520 | CLI63 installed semantic regression | 104項安裝版語義/決策/任務/專案包/升級回歸全部通過，零失敗/錯誤/跳過，原始碼與安裝相同且凍結。406完整合同與真實模型仍另驗，非獨立Agent成功率或真實語義品質接受。 [Evidence](docs/validation/evidence/job-enumeration-20261029-r1/installed63-semantic-r1/verification.json) |
 | R521 | CLI63 isolated file-transaction rollback | E盤隔離驗證4類切換失敗；含全部93個Skill檔案及兩項中繼資料共95檔案全變後恢復，192次實際原子替換，95檔案原始位元組恢復且正式95檔案不變。門禁與CLI失敗均為合成夾具，無真實C盤入口、模型推理或斷電恢復驗收。 [Evidence](docs/validation/CLI63Skill隔离回滚_2026-10-29.md) |
 | R522 | Second native Windows read-only preflight | 第二台Windows唯讀身分/中繼資料檢查完成：RTX3080/10GiB、嵌入式Python3.13.14 x64；預設Python3.15，缺jsonschema，PATH無FFmpeg/FFprobe，cv2模組實際存在。無遠端安裝、模型推理或設定修改，不是多裝置GPU/乾淨主機驗收。 [Evidence](docs/validation/第二台Windows原生环境预检_2026-10-29.md) |
+| R523 | CLI63 interrupted installation recovery | 已確認原PID退出，保留五個已完成分組；完整406在新r2重跑，GPU／候選／正式切換另驗。r2門禁腳本四種隔離回滾通過；無新增內核或自然品質驗收。 [Evidence](docs/validation/CLI63安装回归中断与恢复_2026-10-29.md) |
+| R524 | Optical template pack v1 | 8套各48幀／4秒，RTX3060 OpenCL；全部RGBA／PCM專案重播相同，真實C盤CLI59改選OP08與候選63完整音畫相同。原創診斷圖／雙音，非自然素材審美或人類聽審；沒有8個新內核。 [Evidence](docs/product/OPTICAL_EFFECT_PACK.md) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

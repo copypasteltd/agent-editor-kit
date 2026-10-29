@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "scenario": "all93-skill-files-and-metadata",
+      "status": "passed",
+      "actual_atomic_writes": 192,
+      "restored_files": 95,
+      "error": "AssertionError(('version', b'Synthetic entry failure;no child process launched'))",
+      "synthetic_CLI_calls": 1,
+      "files_changed_before_entry_failure": 95,
+      "real_C_drive_touched": false,
+      "model_inference": false
+    }
+  ],
+  "synthetic_gate_inputs": true,
+  "synthetic_CLI_failure": true,
+  "actual_E_drive_file_replacements": true,
+  "actual_95_file_rollback": true,
+  "production_files_unchanged": 95,
+  "real_C_drive_discovery_tested": false,
+  "model_inference": false,
+  "formal_activation": false,
+  "script_sha256": "d0a926b9c6c8be70b1d68c1d0285b9f95f581a7956eda2d44fc3d13f52f64b66",
+  "full_goal_closed": false
+}

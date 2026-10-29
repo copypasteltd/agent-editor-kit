@@ -1,0 +1,38 @@
+{
+  "status": "installed-and-byte-verified",
+  "started_at_utc": "2026-10-29T00:36:04.335345+00:00",
+  "cli_version": "0.1.54",
+  "source_fallback": false,
+  "native_windows": true,
+  "virtualization": false,
+  "global_environment_install": false,
+  "network": false,
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.52\\final-r2\\installed",
+  "archive": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.52\\candidate-r1\\bundle.zip",
+  "archive_bytes": 305683350,
+  "archive_sha256": "2764845e8eebf773e180d8168e8f4b148cc56a7a7793052848365a582479ac9b",
+  "manifest_sha256": "sha256:7fe4059d8805b16f57609c2e3e68dbdcadfb41fca6bb80dd92178bb8ee40e260",
+  "product_wheel_sha256": "sha256:901dfa1f3a0d4e2d24e64df3f3cdbf28e6c205232c3e2138cd2dd79040a3b20a",
+  "source_file_count": 281,
+  "source_and_installed_equal": true,
+  "native_artifacts": {
+    "native_icc_manifest.json": "e1329395c4b156c80e870e570349d34d0f0c55ff896d28824a329a03eb0a3f8f",
+    "LITTLECMS_LICENSE.txt": "6dbd60437f8ef91d8de1f08ad75882547fd4931bfcc3566a0735f28db1484d31",
+    "avk_lcms_b0149bbc4fa977a2.dll": "b0149bbc4fa977a23faeddf3a006b9c04cd8e6748dd3a6f19d868828842c3350",
+    "native_ocio_manifest.json": "35de74936b689a955fbb953af369c680dcb91e69afb8897d3d59f6ed737d479b",
+    "native_ocio/LICENSE.txt": "8850b0c83cd41d26ad0e080861d47ee00afb685386a459a1cbe8c347555621a7",
+    "native_ocio/OpenColorIO_2_6.dll": "fdab9f2171bea9ec4d1b766534d50edaa95883e80767f72ce27fa646aeb13320",
+    "native_ocio/PyOpenColorIO.pyd": "7a51078f32a656fa147567c356a47cdadc7ca5ca29ef439a352b2f747af10593",
+    "native_ocio/THIRD-PARTY.md": "2e0df1b675fcd133b78360b4d40539518ea1c2081be68e91a456fb9db51c5009"
+  },
+  "exact_product_payload": {
+    "sha256": "sha256:901dfa1f3a0d4e2d24e64df3f3cdbf28e6c205232c3e2138cd2dd79040a3b20a",
+    "payload_files": 1705,
+    "payload_byte_exact": true
+  },
+  "capability_count": 90,
+  "registered_skill_unchanged": true,
+  "new_renders": 0,
+  "new_model_forwards": 0,
+  "finished_at_utc": "2026-10-29T00:37:08.125576+00:00"
+}

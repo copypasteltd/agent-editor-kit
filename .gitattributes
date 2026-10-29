@@ -1930,3 +1930,6 @@ product/src/ai_ad_editor/ad_storyboard.py -text whitespace=cr-at-eol
 product/src/ai_ad_editor/ad_storyboard_cli.py -text whitespace=cr-at-eol
 
 product/tests/test_ad_selection.py -text whitespace=cr-at-eol
+
+docs/validation/build_ad_selection_delivery.py text eol=lf
+docs/validation/test_ad_selection_delivery.py text eol=lf

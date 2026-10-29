@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "cli_version": "0.1.54",
+  "source_assets": 11,
+  "index_rows": 11,
+  "content_deduplicated_embedding_rows": 10,
+  "dimension": 768,
+  "actual_device": "NVIDIA GeForce RTX 3060",
+  "device": "cuda",
+  "model_forward_calls": 2,
+  "network": "disabled",
+  "raw_stdout_sha256": "57e7c69d2e549e3dd3f075d99a49e79456ffdc4b9c3a717ceb80830cac947ce6",
+  "scope": "index generation only; calibration, selection and rendered replay not yet accepted"
+}

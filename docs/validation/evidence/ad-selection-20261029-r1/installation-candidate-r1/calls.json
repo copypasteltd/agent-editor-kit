@@ -1,0 +1,66 @@
+[
+  {
+    "name": "wheel",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-B",
+      "-m",
+      "pip",
+      "wheel",
+      "--no-index",
+      "--no-deps",
+      "--no-build-isolation",
+      "--wheel-dir",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.52\\source-wheel-r1",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e2f47f11df65d9ac72741598cde8f4df1c317858ddae9836f0309b9bc5191356",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "bundle",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\offline\\build.py",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.52\\candidate-r1\\bundle",
+      "--product-wheel",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.52\\source-wheel-r1\\ai_ad_editor-0.1.54-py3-none-win_amd64.whl",
+      "--product-wheel-sha256",
+      "sha256:901dfa1f3a0d4e2d24e64df3f3cdbf28e6c205232c3e2138cd2dd79040a3b20a"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "9f083fafa72aa60c9ca7691d1954053aa8237686ebd6658d727cb5cb0d34ade0",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "install",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.52\\unpacked-r1\\install.py",
+      "--bundle",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.52\\unpacked-r1",
+      "--target",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.52\\final-r1\\installed",
+      "--manifest-sha256",
+      "sha256:7fe4059d8805b16f57609c2e3e68dbdcadfb41fca6bb80dd92178bb8ee40e260",
+      "--timeout-seconds",
+      "900"
+    ],
+    "exit_code": 2,
+    "stdout_sha256": "5f50ecd7541ef2f3c8450b8329b56ccc5195af5111cea4436ebc92b1f6a7b267",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

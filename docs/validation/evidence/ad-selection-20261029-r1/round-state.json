@@ -1,32 +1,29 @@
 {
-  "at_utc": "2026-10-29T00:18:38.373894+00:00",
+  "at_utc": "2026-10-29T00:40:28.168082+00:00",
   "goal": "active_not_complete",
   "source_cli": "0.1.54",
-  "installed_and_registered_cli": "0.1.53",
-  "last_confirmed_pushed_commit": "a1e1e0d19fe3bd230a456c554a486579f0b87174",
-  "implemented": [
-    "ad.select semantic service to editable plan",
-    "global distinct-asset maximum assignment",
-    "all-variant source/audio/rights gates",
-    "portable per-shot query/source/score receipts"
-  ],
-  "completed": {
-    "new_and_existing_storyboard_tests": 45,
-    "independent_oracle_random_graphs": 100,
-    "CLI53_r54_delivery": "committed/pushed; HEAD/origin/advertised remote identical;95 HEAD checkout files byte-equal",
-    "semantic_compatibility_tests": 104
+  "candidate_installed_cli": "0.1.54",
+  "registered_cli": "0.1.53",
+  "registered_kit": "r54",
+  "last_confirmed_pushed_commit": "525c68012bdf14faea737d95d51adc9f14a812f7",
+  "completed_this_round": {
+    "native_candidate_install": "installation-candidate-r2/verification.json",
+    "installed_selection_tests": 45,
+    "installed_modules_source_equal": 281,
+    "native_resources_equal": 8,
+    "GPU_index": "complete-r2/index-full.stdout",
+    "installed_semantic_tests": 104
   },
   "running": [
     {
-      "name": "native-source54-setup",
-      "session_id": 55571,
-      "pid": 32140
+      "name": "native-CUDA-calibration",
+      "session_id": 2016,
+      "pid": 24184
     }
   ],
   "pending": [
-    "Preserve initial9-image setup result; include original licensed brick/horse to restore11-image calibration scope under new index/profile IDs.",
-    "Actual GPU selection, two formats, complete RGB/PCM and editable replay.",
-    "Matching CLI54 offline installation, registered Skill and kit.",
-    "All38 original closure conditions, natural creative/semantic/audio quality and full product parity."
+    "Actual GPU semantic selection, two formats and complete RGB/PCM editable replay",
+    "Matching CLI54 registered Skill and formal kit",
+    "All38 original closure conditions; no full parity claim"
   ]
 }

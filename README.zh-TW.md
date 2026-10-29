@@ -1,5 +1,7 @@
 # agent editor kit
 
+**CLI54 完整候選包已原生離線安裝，尚未切換 Skill。** 已修復安裝驅動逾時參數，保留首次失敗；1705個Wheel載荷檔案、281個執行期模組及8個原生資源核驗一致。安裝版45項選材／分鏡專項通過；實際CUDA校準、選材與成片重放另驗。[安裝恢復與實際入口](docs/validation/CLI54安装恢复_2026-10-29.md)。
+
 **原始碼 CLI0.1.54：校準語義選材已接入廣告分鏡。** 新增 `ad select`，依所有變體的來源長度、明確原音及已核驗權利過濾候選，再聯合分配素材，產生可編輯計畫及逐鏡頭依據；45項原始碼測試通過，實際CUDA整條流程另驗。目前安裝與唯一Skill仍CLI53／r54。[方案與使用](docs/product/AD_SEMANTIC_SELECTION.md)。
 
 **目前本機 CLI0.1.53 / local.51 已安裝並註冊。** 原始碼與安裝版各自通過 18 項 ACES、46 項測量／Schema、373 項相容性回歸。唯一 `$agent-ffmpeg-local-editor` 維持 1 個入口／17 個模組／92 個檔案；[C67 實際註冊入口案例](docs/product/CASES.md#c67-registered-aces-timeline)已核驗完整視訊、音訊、預覽與專案包往返。[正式 r54 包](docs/skills/agent-editor-kit-community-unified-skill-r54.zip)已通過獨立解包、設定、註冊及完整音畫重放驗收。[使用與安裝流程](docs/releases/CLI_0.1.53_LOCAL.md)。
@@ -1792,6 +1794,10 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R381 | Final r54 unified Skill independent installation | 153 entries; 1 entry/17 modules/92 Skill files; independent extraction, configuration, registration and two complete renders; YUV/PCM/PNG replay equal | [raw](docs/validation/evidence/aces-delivery-20261029-r1/final-kit-r1/verification.json) | CPU ACES; no source fallback; live registration unchanged; public alpha.3 remains historical |
 | R382 | Source CLI54 semantic ad selection/controller | 45 selection/storyboard tests;100 random assignment graphs matched exhaustive oracle; actual CLI plans/builds and refusal paths tested | [raw](docs/validation/evidence/ad-selection-20261029-r1/tests-r1/verification.json) · [count](docs/validation/evidence/ad-selection-20261029-r1/tests-r1/test-count.json) | Includes service-mocked CLI unit tests; actual CUDA case separate; installed Skill remains53 |
 | R383 | Source CLI54 semantic compatibility | 104 tests passed across retrieval, decisions, jobs, packages and runtime upgrades; frozen source bytes unchanged | [raw](docs/validation/evidence/ad-selection-20261029-r1/compat-r1/verification.json) | Separate from45 new-selection/storyboard tests and actual GPU workflow; no full-product coverage claim |
+| R384 | CLI54 native offline installation recovery | First install rejected900s; corrected600s and independently extracted/installed the same hash-checked complete bundle;1705 wheel payload files exact,281 modules and8 native resources byte-equal | [failure](docs/validation/evidence/ad-selection-20261029-r1/installation-candidate-r1/install.stdout), [recovery](docs/validation/evidence/ad-selection-20261029-r1/installation-candidate-r2/verification.json) | Candidate CLI54 only; registered Skill remains53/r54; no model forward or render claimed |
+| R385 | Installed CLI54 selection/storyboard gate | 45 passed; zero failures/errors/skips; isolated -I -S -B process;281 installed/source modules frozen equal | [raw](docs/validation/evidence/ad-selection-20261029-r1/installed-selection-r1/verification.json) | Separate from45 source tests; semantic-service mocks in CLI plumbing tests are not actual GPU inference |
+| R386 | Source CLI54 actual CUDA image index | Native RTX3060 successfully indexed11 source records;10 content-deduplicated embeddings;768 dimensions;2 actual model forwards;network disabled | [raw and receipt](docs/validation/evidence/ad-selection-20261029-r1/gpu-index-completed-r1/verification.json) | Index only; familiar static images; not calibration/selection/render acceptance |
+| R387 | Installed CLI54 semantic compatibility | 104 passed;zero failures/errors/skips;isolated installed package only;281 modules frozen equal before/after | [raw](docs/validation/evidence/ad-selection-20261029-r1/installed-semantic-r1/verification.json) | Retrieval/decisions/jobs/packages/runtime relocation; separate from45 installed selection tests and actual GPU workflow |
 
 ## 當前邊界與開發方向
 

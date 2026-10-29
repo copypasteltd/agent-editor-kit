@@ -2056,6 +2056,7 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R500 | CLI62 serial delivery controller | 补齐基于现有Windows进程句柄的串行交付流程，不重启原验证任务。真实子进程观察/正常退出/不存在进程拒绝/句柄释放实测通过。完整控制器仍在等待MuseTalk，尚未完成新安装或Skill交付。[证据与边界](docs/validation/CLI62口型存储竞争修复_2026-10-29.md#串行交付控制与实际进程观察) |
 | R501 | CLI62 source semantic regression | 语义索引/决策/任务/工程包/升级104项回归通过，零失败/错误/跳过，283应用模块与192测试文件冻结一致。仅源码回归；安装版、真实模型和独立Agent自主任务另验，不替代406完整合同。[证据](docs/validation/CLI62口型存储竞争修复_2026-10-29.md#语义编辑源码回归) |
 | R502 | CLI62 actual CUDA / retained failure | 真实MuseTalk CUDA 133帧、67批、无CPU回退，完整RGBA/PCM工程包重放及清理通过。音乐循环/作曲37项出现1项原生进程枚举清理错误；保留失败，150个实际短进程观察未重现，不宣称已修复或晋升。[完整证据](docs/validation/CLI62口型存储竞争修复_2026-10-29.md#真实-musetalk-已通过音乐循环暴露新的进程清理失败) |
+| R503 | CLI62 actual DF3 / candidate stopped | DF3真实CUDA四次前向、无CPU回退，完整1124160字节PCM工程包重放一致。音乐组已失败，确认任务身份后停止剩余合同并保留interrupted；控制器实际拒绝，未构建安装/暂存/注册。原失败待定位修复。[证据](docs/validation/CLI62口型存储竞争修复_2026-10-29.md#df3-通过与本轮候选停止) |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

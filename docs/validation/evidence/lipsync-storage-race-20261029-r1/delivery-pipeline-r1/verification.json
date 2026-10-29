@@ -1,0 +1,12 @@
+{
+  "status": "failed",
+  "error": "AssertionError(('waiting-existing-contracts', 'interrupted'))",
+  "calls": [
+    {
+      "script": "run_source62_gpu_case.py",
+      "exit_code": 0
+    }
+  ],
+  "formal_activation": false,
+  "full_goal_closed": false
+}

@@ -2056,6 +2056,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R500 | CLI62 serial delivery controller | 補齊依既有Windows程序控制代碼串行交付的流程，不重啟原驗證任務。真實子程序觀察/正常退出/不存在程序拒絕/控制代碼釋放實測通過。完整控制器仍等待MuseTalk，尚未完成新安裝或Skill交付。[證據與邊界](docs/validation/CLI62口型存储竞争修复_2026-10-29.md#串行交付控制与实际进程观察) |
 | R501 | CLI62 source semantic regression | 語義索引/決策/任務/工程包/升級104項回歸通過，零失敗/錯誤/跳過，283應用模組與192測試檔案凍結一致。僅源碼回歸；安裝版、真實模型和獨立Agent自主任務另驗，不替代406完整合同。[證據](docs/validation/CLI62口型存储竞争修复_2026-10-29.md#语义编辑源码回归) |
 | R502 | CLI62 actual CUDA / retained failure | 真實MuseTalk CUDA 133幀、67批、無CPU回退，完整RGBA/PCM工程包重放與清理通過。音樂循環/作曲37項出現1項原生程序列舉清理錯誤；保留失敗，150個實際短程序觀察未重現，不宣稱已修復或晉升。[完整證據](docs/validation/CLI62口型存储竞争修复_2026-10-29.md#真实-musetalk-已通过音乐循环暴露新的进程清理失败) |
+| R503 | CLI62 actual DF3 / candidate stopped | DF3真實CUDA四次前向、無CPU回退，完整1124160位元組PCM工程包重放一致。音樂組已失敗，確認任務身分後停止剩餘合同並保留interrupted；控制器實際拒絕，未建置安裝/暫存/註冊。原失敗待定位修復。[證據](docs/validation/CLI62口型存储竞争修复_2026-10-29.md#df3-通过与本轮候选停止) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

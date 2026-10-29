@@ -190,3 +190,7 @@ These proofs establish transport/clock preservation, not natural lip quality.
 Current actual case, tests, source/output/GIF and known limits are linked from
 [C51](CASES.md#c51-native-lip-sync). Earlier failed acquisition/model/protocol
 attempts remain in [the evidence directory](../validation/evidence/native-lipsync-20261027-r1).
+
+### CLI0.1.61 operation timeout contract
+
+Media preparation and post-encoding checks consume the same remaining operation budget as the model pipeline. A subprocess `PROCESS_TIMEOUT` in these media steps is reported as operation `TIMEOUT` (exit code 8), retaining its original exception and diagnostic cause. Cancellation and unrelated subprocess errors are not reclassified. Native process-tree cleanup occurs before propagation. This fix is source-only pending new installed acceptance; see [evidence and boundaries](../validation/CLI61口型超时修复_2026-10-29.md).

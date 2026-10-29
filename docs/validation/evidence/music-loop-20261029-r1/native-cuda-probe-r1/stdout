@@ -1,0 +1,10 @@
+{"stage": "started", "seconds": 1.200009137392044e-06}
+{"stage": "numpy", "seconds": 7.733233600039966, "version": "2.4.6"}
+{"stage": "torch", "seconds": 15.942527100036386, "version": "2.13.0+cu130"}
+{"stage": "safetensors", "seconds": 15.945163100026548, "version": "0.8.0"}
+{"stage": "cuda-availability", "seconds": 15.962931100046262, "available": true}
+{"stage": "threads", "seconds": 15.963010500010569}
+{"stage": "interop", "seconds": 15.963027700025123}
+{"stage": "seed", "seconds": 16.26958870003}
+{"stage": "context", "seconds": 16.27056640002411, "device": "NVIDIA GeForce RTX 3060"}
+{"stage": "completed", "seconds": 16.270600100047886, "model_forwards": 0}

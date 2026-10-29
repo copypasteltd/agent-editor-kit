@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "actual_activation_requested": true,
+  "actual_exit_code": 2,
+  "mutated": false,
+  "activated": false,
+  "protected_files_unchanged": 95,
+  "missing": [
+    "candidate",
+    "staged_gpu",
+    "installed_loop",
+    "installed60_contracts"
+  ],
+  "formal_cli": "0.1.59",
+  "activation_runner_sha256": "f650ddb3f164f4ce706d38cbffe9e1476fa861b80e73e25892998fcb53cd19c9",
+  "installed400_still_required": true
+}

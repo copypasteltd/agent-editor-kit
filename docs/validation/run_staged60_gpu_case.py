@@ -142,8 +142,9 @@ def main():
             source_pcm_sha256 = sha(accepted_source)
             assert hashlib.sha256(after).hexdigest() == source_pcm_sha256, 'Installed full PCM differs from accepted source60 case'
         assert pins == {p.name: sha(p) for p in package.glob('*.py')} and sha(namespace) == namespace_pin
+        assert stage['candidate_files']=={p.relative_to(skill).as_posix():sha(p) for p in skill.rglob('*') if p.is_file()}
         assert source_pins == {p.name: sha(p) for p in source_package.glob('*.py')}
-        report = dict(status='passed', cli_version='0.1.60', actual_CUDA_model=True,actual_PowerShell_entry=True,candidate_registered=False,skill=str(skill),
+        report = dict(status='passed', cli_version='0.1.60', actual_CUDA_model=True,actual_PowerShell_entry=True,candidate_registered=False,candidate_files_unchanged=True,candidate_files=stage['candidate_files'],installed400_accepted=stage.get('installed400_accepted',True),skill=str(skill),
             installed=str(installed) if installed else None, loaded_package=str(package),
             source_fallback=False if installed else None, source_and_installed_equal=bool(installed),
             installed_actual_CUDA_case_accepted=bool(installed),

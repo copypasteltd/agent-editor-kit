@@ -200,6 +200,43 @@ class TransportTests(unittest.TestCase):
         with self.assertRaises(AppError) as caught:self.execute('wait',timeout=2)
         self.assertEqual(caught.exception.code,'TIMEOUT');self.assertLess(time.monotonic()-started,15)
         self.assertFalse(list((self.root/'cache/managed-jobs').glob('job-*')))
+    def test_preprocessing_timeout_normalizes_code_after_real_child_cleanup(self):
+        from ai_ad_editor.utils import run_process
+        actual=subprocess.Popen;children=[]
+        def start(*args,**kwargs):
+            p=actual(*args,**kwargs);children.append(p);return p
+        def slow_media(command,**kwargs):
+            return run_process([sys.executable,'-I','-B','-c','import time;time.sleep(30)'],
+                timeout=.2,cancel_file=kwargs.get('cancel_file'))
+        with patch('ai_ad_editor.lipsync_pipeline.run_process',side_effect=slow_media),patch('subprocess.Popen',side_effect=start):
+            with self.assertRaises(AppError) as caught:self.execute(timeout=60)
+        self.assertEqual(caught.exception.code,'TIMEOUT');self.assertEqual(caught.exception.exit_code,8)
+        self.assertFalse(caught.exception.retryable);self.assertIn('PROCESS_TIMEOUT',caught.exception.cause)
+        self.assertIsInstance(caught.exception.__cause__,AppError)
+        self.assertTrue(children);self.assertTrue(all(p.poll()is not None for p in children))
+        self.assertFalse(list((self.root/'cache/managed-jobs').glob('job-*')))
+    def test_deadline_after_worker_start_reclaims_actual_pipeline_children(self):
+        from types import SimpleNamespace
+        actual=subprocess.Popen;children=[];offset=[0]
+        clock=SimpleNamespace(monotonic=lambda:time.monotonic()+offset[0],sleep=time.sleep)
+        def start(command,*args,**kwargs):
+            p=actual(command,*args,**kwargs)
+            if any(str(v).endswith('worker.py') for v in command):
+                children.append(p);offset[0]=120
+            elif 'rawvideo' in command and 'pipe:1' in command:children.append(p)
+            return p
+        with patch('ai_ad_editor.lipsync_pipeline.time',clock),patch('subprocess.Popen',side_effect=start):
+            with self.assertRaises(AppError) as caught:self.execute('wait',timeout=60)
+        self.assertEqual(caught.exception.code,'TIMEOUT');self.assertEqual(len(children),2)
+        self.assertTrue(all(p.poll()is not None for p in children))
+        self.assertTrue(all(p.stdout is None or p.stdout.closed for p in children))
+        self.assertFalse(list((self.root/'cache/managed-jobs').glob('job-*')))
+    def test_preprocessing_non_timeout_errors_are_not_reclassified(self):
+        original=AppError('PROCESS_START_FAILED','fixture',exit_code=10)
+        with patch('ai_ad_editor.lipsync_pipeline.run_process',side_effect=original):
+            with self.assertRaises(AppError) as caught:self.execute()
+        self.assertIs(caught.exception,original)
+        self.assertFalse(list((self.root/'cache/managed-jobs').glob('job-*')))
     def test_cancel_marker_kills_owned_children(self):
         marker=self.base/'cancel';timer=threading.Timer(1,lambda:marker.write_text('cancel'));timer.start()
         try:

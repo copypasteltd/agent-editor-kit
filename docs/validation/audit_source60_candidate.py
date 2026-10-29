@@ -26,7 +26,7 @@ def main():
         data=load(BASE/name/'verification.json');assert data['status']=='passed'
         for file,pin in data.get('file_hashes',{}).items():assert sha(ROOT/file)==pin
     capabilities=load(BASE/'installation-candidate-r1/capabilities.stdout')
-    assert 'music.repair-loop' in capabilities['data']['capabilities']['ai']['community_music']['commands']
+    assert 'music.repair-loop' in capabilities['data']['capabilities']['community_music']['commands']
     assert all(sha(Path(p))==pin for p,pin in r['registered_skill_file_hashes'].items())
     namespace=load(ROOT/'agent-ffmpeg-local-install-manifest.json');assert namespace['cli_version']=='0.1.59'
     assert len(namespace['files'])==93
@@ -51,7 +51,7 @@ def main():
             if not target.startswith('http'):assert (p.parent/target.split('#')[0]).is_file(),target
     terminal=(BASE/'installed60-contracts-r1/verification.json').exists()
     if terminal:assert load(BASE/'installed60-contracts-r1/verification.json')['status']=='passed'
-    out=BASE/'candidate-audit-r1';out.mkdir(exist_ok=False)
+    out=BASE/'candidate-audit-r2';out.mkdir(exist_ok=False)
     report=dict(status='passed',candidate_cli='0.1.60',formal_cli='0.1.59',source_and_installed_modules=283,
         protected_files=95,formal_skill_files=93,formal_r57_unchanged=True,
         all_38_closure_conditions_unchanged=True,previous_R_rows_preserved=470,current_R_rows=475,

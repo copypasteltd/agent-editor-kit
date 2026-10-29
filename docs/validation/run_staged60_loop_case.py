@@ -27,7 +27,8 @@ def main():
     skill=a.skill.resolve()
     assert skill.is_relative_to((ROOT/'local/agent-ffmpeg').resolve())
     stage=load(skill.parents[1]/'STAGING.json')
-    assert stage['status']=='unregistered-candidate' and stage['cli_version']=='0.1.60'
+    assert stage['status'] in ('unregistered-candidate','unregistered-draft') and stage['cli_version']=='0.1.60'
+    if stage['status']=='unregistered-draft':assert stage['requires_installed400_before_activation']
     assert stage['candidate_files']=={p.relative_to(skill).as_posix():sha(p) for p in skill.rglob('*') if p.is_file()}
     assert installed.is_relative_to((ROOT/'local/agent-ffmpeg').resolve())
     gate=load(BASE/'installed60-loop-r1/verification.json')
@@ -100,8 +101,9 @@ def main():
         draw.text((25,452),'Shared plot scale; no audio normalization. Sample continuity is not listening acceptance.',fill='#aabed0')
         image.save(work/'actual.png');image.save(work/'actual.gif',save_all=True,duration=1500,loop=0)
         assert all(sha(ROOT/name)==pin for name,pin in gate['file_hashes'].items())
+        assert stage['candidate_files']=={p.relative_to(skill).as_posix():sha(p) for p in skill.rglob('*') if p.is_file()}
         assert all(sha(Path(name))==pin for name,pin in guard.items())
-        report=dict(status='passed',cli_version='0.1.60',source_only=False,source_fallback=False,actual_PowerShell_entry=True,candidate_registered=False,skill=str(skill),installed=str(installed),complete_source_installed_PCM_equal=True,
+        report=dict(status='passed',cli_version='0.1.60',source_only=False,source_fallback=False,actual_PowerShell_entry=True,candidate_registered=False,candidate_files_unchanged=True,candidate_files=stage['candidate_files'],installed400_accepted=stage.get('installed400_accepted',True),skill=str(skill),installed=str(installed),complete_source_installed_PCM_equal=True,
             statistics=stats,source_original_frames=len(data),repaired_cycle_frames=len(fixed),
             shortened_per_cycle_frames=2400,repeat_count=3,complete_repeated_PCM_equal=True,
             before_repeated_frames=1925280,after_repeated_frames=1918080,

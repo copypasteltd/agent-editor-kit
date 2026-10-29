@@ -1,0 +1,9 @@
+{
+  "status": "failed",
+  "stage": "capability-path-check",
+  "error": "KeyError: community_music",
+  "reason": "Audit used capabilities.ai.community_music; actual public node is capabilities.community_music",
+  "application_mutated": false,
+  "installed_functional_cases_invalidated": false,
+  "runner_sha256": "72abdd464dd1b8a364b81451dacbd311d69b821c0a597cd470ec75f9de5a1335"
+}

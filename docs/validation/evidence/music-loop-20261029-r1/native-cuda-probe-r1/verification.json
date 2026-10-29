@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "exit_code": 0,
+  "seconds": 69.06265620002523,
+  "model_forwards": 0,
+  "diagnostic_only": true,
+  "actual_enhancement_case_accepted": false,
+  "original_worker_restarted": false,
+  "stdout": "{\"stage\": \"started\", \"seconds\": 1.200009137392044e-06}\r\n{\"stage\": \"numpy\", \"seconds\": 7.733233600039966, \"version\": \"2.4.6\"}\r\n{\"stage\": \"torch\", \"seconds\": 15.942527100036386, \"version\": \"2.13.0+cu130\"}\r\n{\"stage\": \"safetensors\", \"seconds\": 15.945163100026548, \"version\": \"0.8.0\"}\r\n{\"stage\": \"cuda-availability\", \"seconds\": 15.962931100046262, \"available\": true}\r\n{\"stage\": \"threads\", \"seconds\": 15.963010500010569}\r\n{\"stage\": \"interop\", \"seconds\": 15.963027700025123}\r\n{\"stage\": \"seed\", \"seconds\": 16.26958870003}\r\n{\"stage\": \"context\", \"seconds\": 16.27056640002411, \"device\": \"NVIDIA GeForce RTX 3060\"}\r\n{\"stage\": \"completed\", \"seconds\": 16.270600100047886, \"model_forwards\": 0}\r\n",
+  "stderr": ""
+}

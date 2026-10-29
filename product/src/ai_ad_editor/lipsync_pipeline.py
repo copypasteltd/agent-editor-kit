@@ -65,7 +65,14 @@ def execute(root,job,plan,source,audio,adapter,*,timeout,cancel_file=None,progre
     if shutil.disk_usage(work).free<plan['estimated_workspace_bytes']+128*1024**2:raise error('DISK_BUDGET','可用磁盘不足保守工作空间估算')
     base=[str(ffmpeg),'-nostdin','-v','error','-protocol_whitelist','file,pipe']
     def tool(command):
-        r=run_process(command,timeout=remaining(),cancel_file=cancel_file)
+        try:
+            r=run_process(command,timeout=remaining(),cancel_file=cancel_file)
+        except AppError as exc:
+            # Each media command consumes the same operation deadline. The
+            # subprocess helper has already reclaimed its owned process tree.
+            if exc.code!='PROCESS_TIMEOUT':raise
+            raise AppError('TIMEOUT','口型同步超过完整时间预算',exit_code=8,
+                cause=f'{exc.code}: {exc.message}'+(f'; {exc.cause}' if exc.cause else '')) from exc
         if r.returncode:raise error('MEDIA_TOOL','本地口型媒体处理失败',stderr=r.stderr[-2500:])
         return r
     tool([*base,'-n','-i',audio['path'],'-map',f"0:{audio['stream_index']}",'-vn','-af',

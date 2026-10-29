@@ -1,5 +1,7 @@
 # agent editor kit
 
+**目前開發狀態：原始碼 CLI0.1.61 修復口型任務在媒體前處理與模型管道階段的逾時錯誤碼不一致；驗證以新終態收據為準。CLI60 安裝完整契約實際為 399 通過、1 失敗，禁止正式升級。正式註冊仍 CLI59／local57／r57。** [修復說明及驗收邊界](docs/validation/CLI61口型超时修复_2026-10-29.md)。
+
 **目前本地版本：CLI0.1.59 / local57 / r57統一Skill工具包。** 唯一入口 `$agent-ffmpeg-local-editor`，17內部模組、93檔案。原始碼與安裝版各31／19／57／104／400五組分別通過；候選與真實C盤入口實際CUDA降噪及完整1124160位元組PCM專案重播分別通過。完整剪映等價仍未完成。
 
 [简体中文](README.md) · [English](README.en.md) · [r57 Skill ZIP](docs/skills/agent-editor-kit-community-unified-skill-r57.zip) · [交付與流程](docs/validation/CLI59统一Skill切换_2026-10-29.md)
@@ -2019,8 +2021,14 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R471 | CLI60完整原始碼契約終態 | 400通過，零失敗／錯誤／跳過；283應用模組與192測試模組凍結一致；[收據](docs/validation/evidence/music-loop-20261029-r1/source60-contracts-r1/verification.json)。獨立安裝另驗 |
 | R472 | CLI60統一Skill交付攔截 | 缺少安裝與實際案例前置收據時實際回傳2，95個正式設定／Skill檔案不變且不產生候選；[證據](docs/validation/evidence/music-loop-20261029-r1/stage-gate-check-r1/verification.json)。正式Skill仍59 |
 | R473 | CLI60/local58獨立原生候選 | 已從ZIP解包安裝，1707載荷／283應用模組／8原生資源逐位元組核對，版本與能力查詢成功；[包位置、摘要與使用流程](docs/validation/CLI60独立安装交付_2026-10-29.md)。安裝功能回歸進行中，正式Skill仍59 |
+| R474 | CLI60獨立安裝功能回歸 | 安裝目錄實際31入口／37配樂／19控制／57選材／104語義分別通過，零失敗／錯誤／跳過，283模組與原始碼相同；正式Skill仍59，安裝400另驗 |
+| R475 | C76安裝版與實際CUDA | 循環完整2557440位元組PCM與原始碼及專案包重做相同；DF3實際4次CUDA前向，完整1124160位元組PCM與原始碼／重放相同；[安裝實測及音訊](docs/validation/CLI60独立安装交付_2026-10-29.md)。不計自然品質或聽審 |
+| R476 | CLI60安裝完整契約失敗及CLI61修復 | 400項：399通過、1失敗、0錯誤／跳過；前處理傳回PROCESS_TIMEOUT而任務契約預期TIMEOUT。原始碼統一任務級錯誤、保留原例外鏈，新增三項清理／錯誤傳播測試；[說明](docs/validation/CLI61口型超时修复_2026-10-29.md)。新測試終態另記，不啟用Skill |
+| R477 | CLI61 source timeout acceptance | 31項口型專項、31項隔離入口、37項循環／配樂分別通過；零失敗／錯誤／跳過，應用與測試凍結一致。403項完整契約另行執行，不計通過。95個正式檔案未變；CLI60草稿真實PowerShell循環及CUDA均通過，但不替代失敗的400項安裝回歸。 [Evidence](docs/validation/CLI61口型超时修复_2026-10-29.md) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
+
+[CLI60未註冊統一Skill草稿實測](docs/validation/CLI60统一Skill草稿验收_2026-10-29.md)：實際PowerShell循環修復與完整PCM專案重做已通過；正式啟用缺證拒絕已實測，95個正式檔案不變。正式Skill仍59，完整安裝400及C槽入口切換另驗。
 
 ![實際音訊接縫前後波形](docs/assets/music-loop60-20261029-r1/actual.png)
 

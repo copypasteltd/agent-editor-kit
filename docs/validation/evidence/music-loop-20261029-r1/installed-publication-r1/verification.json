@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "current_R_rows": 475,
+  "previous_R_rows_preserved": 473,
+  "files": {
+    "actual.wav": {
+      "bytes": 2557484,
+      "sha256": "72f15a8702c21f32d58f3d4c67d1bce87bd0a919225b4fb4212c30b68b0cf1a3"
+    },
+    "actual.png": {
+      "bytes": 21437,
+      "sha256": "9a6f4586d04c1a92e7cd2bc02ec6d25f00ee2914ef033c11638cbe7a84b09229"
+    },
+    "actual.gif": {
+      "bytes": 13029,
+      "sha256": "09843d06efcbfcd20c95d36820d4e1dd8da7ac1fff5d17e54016919ede61a52a"
+    }
+  },
+  "formal_cli": "0.1.59",
+  "candidate_cli": "0.1.60",
+  "actual_loop_PCM_bytes": 2557440,
+  "actual_CUDA_PCM_bytes": 1124160,
+  "natural_quality_accepted": false
+}

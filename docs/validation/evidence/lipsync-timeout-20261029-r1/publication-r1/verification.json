@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "source_cli": "0.1.61",
+  "installed_candidate_cli": "0.1.60",
+  "formal_cli": "0.1.59",
+  "terminal_groups": {
+    "lipsync": 31,
+    "bootstrap": 31,
+    "loop": 37
+  },
+  "installed60_contracts_status": "failed",
+  "source61_full_contracts_accepted": false,
+  "formal_skill_unchanged_files": 95,
+  "changed_source_modules": [
+    "__init__.py",
+    "lipsync_pipeline.py"
+  ],
+  "README_rows": 477,
+  "previous473_rows_preserved": true,
+  "all_goal_conditions_unchanged": true,
+  "full_goal_closed": false,
+  "file_hashes": {
+    "README.md": "07f6e62f0a3b515eeca5670301f33c62c2f8138a7d971dcd0c9abd6738489ede",
+    "README.zh-TW.md": "72a457252da5b81978c4936d663723d560f9b0e140e6938ba3126369cb122866",
+    "README.en.md": "d662164d3c12993032df1cbf0ba88090fa10d5283c0ad0d2fcb2997b483e290d",
+    "docs/validation/CLI61口型超时修复_2026-10-29.md": "fd39a2c8cfde8479a8eeb84cf2b63c9dba279fba3640ad3fb2b55fa290fe0a98",
+    "docs/product/LIP_SYNC.md": "7f455df08626d28b7345305242395007db888fb65926f6eb0a65c5bea473559d",
+    "docs/product/GOAL_GAPS_20261025.md": "0cb1f605eb55db387f89b201944353f109e62673bd50d52902ca6d6eb104189e"
+  }
+}

@@ -1,5 +1,7 @@
 # agent editor kit
 
+**Development status: source CLI0.1.61 fixes inconsistent operation timeout errors between lip-sync media preparation and model processing. Validation requires new terminal receipts. CLI60 installed contracts finished with 399 passes and 1 failure; promotion is blocked. The registered Skill remains CLI59/local57/r57.** [Fix and acceptance boundaries](docs/validation/CLI61口型超时修复_2026-10-29.md).
+
 **Current local version: CLI0.1.59 / local57 / r57 unified Skill kit.** One `$agent-ffmpeg-local-editor` entry,17 internal modules,93 files. Source and installed 31/19/57/104/400 groups passed separately. Staged and actual C-discovered CUDA denoising passed complete1124160-byte PCM package replay. Full CapCut parity remains incomplete.
 
 [简体中文](README.md) · [繁體中文](README.zh-TW.md) · [r57 Skill ZIP](docs/skills/agent-editor-kit-community-unified-skill-r57.zip) · [Delivery and workflow](docs/validation/CLI59统一Skill切换_2026-10-29.md)
@@ -2021,8 +2023,14 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R471 | CLI60 complete source contracts | 400 passed;zero failures/errors/skips;283 application and192 test modules frozen;[receipt](docs/validation/evidence/music-loop-20261029-r1/source60-contracts-r1/verification.json).Independent installation is separate |
 | R472 | CLI60 Skill delivery gate | Actual exit2 with missing install/case receipts;95 formal configuration/Skill files unchanged,no candidate generated;[proof](docs/validation/evidence/music-loop-20261029-r1/stage-gate-check-r1/verification.json).Registered Skill remains59 |
 | R473 | CLI60/local58 native candidate | Independently extracted/installed ZIP;1707 payloads,283 application modules and8 native resources byte-verified;version/capabilities succeeded;[local package,hashes and workflow](docs/validation/CLI60独立安装交付_2026-10-29.md).Installed functional checks ongoing,registered Skill remains59 |
+| R474 | CLI60 installed functional groups | Actual installed31 bootstrap/37 music/19 control/57 selection/104 semantic tests passed separately,zero failures/errors/skips,283 modules match source;registered Skill remains59,installed400 separate |
+| R475 | C76 installed and actual CUDA | Complete2557440-byte loop PCM matches source and package re-repair;DF3 actual4 CUDA forwards,complete1124160-byte PCM matches source/replay;[installed evidence and audio](docs/validation/CLI60独立安装交付_2026-10-29.md).No natural-quality or listening acceptance |
+| R476 | CLI60 installed failure and CLI61 timeout fix | 400 tests:399 passed,1 failed,0 errors/skips;preprocessing raised PROCESS_TIMEOUT instead of operation TIMEOUT.Source normalizes the operation error while retaining its cause,with three new cleanup/error-propagation tests;[details](docs/validation/CLI61口型超时修复_2026-10-29.md).New test results recorded separately;no Skill activation |
+| R477 | CLI61 source timeout acceptance | Lip-sync31,isolated bootstrap31,and loop/score37 passed separately,zero failures/errors/skips;app and tests frozen.403 full contracts run separately and are not counted as passed.95 registered files unchanged;CLI60 draft PowerShell loop and CUDA passed but do not replace the failed installed400 gate. [Evidence](docs/validation/CLI61口型超时修复_2026-10-29.md) |
 
 ### Development preview: C76 loop overlap repair(source CLI60)
+
+[CLI60 unregistered unified Skill evidence](docs/validation/CLI60统一Skill草稿验收_2026-10-29.md):actual PowerShell loop repair and complete-PCM package re-repair passed.Activation with missing receipts was actually rejected;95 formal files unchanged.Registered Skill remains59;installed400 and real C-drive activation are separate gates.
 
 ![Measured before/after audio loop boundary](docs/assets/music-loop60-20261029-r1/actual.png)
 

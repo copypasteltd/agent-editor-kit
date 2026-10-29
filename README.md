@@ -1,5 +1,7 @@
 # agent editor kit
 
+**当前开发状态：源码 CLI0.1.61 修复口型任务在媒体预处理与模型管道阶段的超时错误码不一致；验证以新终态收据为准。CLI60 安装完整契约实际为 399 通过、1 失败，禁止正式升级。正式注册仍 CLI59／local57／r57。** [修复说明与验收边界](docs/validation/CLI61口型超时修复_2026-10-29.md)。
+
 **当前本地版本：CLI0.1.59 / local57 / r57统一Skill工具包。** 唯一入口 `$agent-ffmpeg-local-editor`，17内部模块、93文件。源码与安装版各31／19／57／104／400五组分别通过；候选及真实C盘入口的实际CUDA降噪、完整1124160字节PCM工程重放分别通过。完整剪映等价仍未完成。
 
 [繁體中文](README.zh-TW.md) · [English](README.en.md) · [r57 Skill ZIP](docs/skills/agent-editor-kit-community-unified-skill-r57.zip) · [完整交付与流程](docs/validation/CLI59统一Skill切换_2026-10-29.md) · [500滤镜母图预览](docs/assets/looks-n002-20261024-r1/index.html)
@@ -2019,8 +2021,14 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R471 | CLI60完整源码契约终态 | 400通过，零失败／错误／跳过；283应用模块与192测试模块冻结一致；[收据](docs/validation/evidence/music-loop-20261029-r1/source60-contracts-r1/verification.json)。独立安装另验 |
 | R472 | CLI60统一Skill交付拦截 | 缺少安装与真实案例前置收据时实际返回2，95个正式配置／Skill文件不变且不生成候选；[证据](docs/validation/evidence/music-loop-20261029-r1/stage-gate-check-r1/verification.json)。正式Skill仍59 |
 | R473 | CLI60/local58独立原生候选 | 已从ZIP解包安装，1707载荷／283应用模块／8原生资源逐字节核对，版本和能力查询成功；[包位置、摘要与使用流程](docs/validation/CLI60独立安装交付_2026-10-29.md)。安装功能回归进行中，正式Skill仍59 |
+| R474 | CLI60独立安装功能回归 | 安装目录实际31入口／37配乐／19控制／57选材／104语义分别通过，零失败／错误／跳过，283模块与源码相同；正式Skill仍59，安装400另验 |
+| R475 | C76安装版与实际CUDA | 循环完整2557440字节PCM与源码及包重做相同；DF3实际4次CUDA前向，完整1124160字节PCM与源码／重放相同；[安装实测与音频](docs/validation/CLI60独立安装交付_2026-10-29.md)。不计自然质量或听审 |
+| R476 | CLI60安装完整契约失败与CLI61修复 | 400项：399通过、1失败、0错误／跳过；预处理返回PROCESS_TIMEOUT而任务契约期望TIMEOUT。源码统一任务级错误、保留原异常链，新增三项清理／错误传播测试；[说明](docs/validation/CLI61口型超时修复_2026-10-29.md)。新测试终态另记，不激活Skill |
+| R477 | CLI61 source timeout acceptance | 31项口型专项、31项隔离入口、37项循环／配乐分别通过；零失败／错误／跳过，应用与测试冻结一致。403项完整契约另行运行，不计通过。95个正式文件未变；CLI60草稿真实PowerShell循环及CUDA均通过，但不替代失败的400项安装回归。 [Evidence](docs/validation/CLI61口型超时修复_2026-10-29.md) |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
+
+[CLI60未注册统一Skill草稿实测](docs/validation/CLI60统一Skill草稿验收_2026-10-29.md)：真实PowerShell循环修复与完整PCM工程重做已通过；正式激活缺证拒绝已实测，95个正式文件不变。正式Skill仍59，完整安装400及C盘入口切换另验。
 
 ![真实音频接缝前后波形](docs/assets/music-loop60-20261029-r1/actual.png)
 

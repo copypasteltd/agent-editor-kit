@@ -1,5 +1,27 @@
 # agent editor kit
 
+**Current local version: CLI0.1.58 / local56 / r56 unified Skill kit.** One `$agent-ffmpeg-local-editor` entry,17 internal modules,93 files. Source and installed 31/19/57/104/400 groups passed separately. Staged and actual C-discovered CUDA denoising passed complete1124160-byte PCM package replay. Full CapCut parity remains incomplete.
+
+[简体中文](README.md) · [繁體中文](README.zh-TW.md) · [r56 Skill ZIP](docs/skills/agent-editor-kit-community-unified-skill-r56.zip) · [Delivery and workflow](docs/validation/CLI58统一Skill切换_2026-10-29.md)
+
+```powershell
+$skill = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor'
+& "$skill/scripts/run.ps1" version
+& "$skill/scripts/run.ps1" capabilities
+```
+
+Confirm version `0.1.58`;follow the [matching application installation](docs/validation/CLI58独立安装交付_2026-10-29.md),register media and rights,create a project,select and preview,render,and export an editable package. [Exact-content selection](docs/product/AD_CONTENT_UNIQUENESS.md) explains SHA256 deduplication,default inheritance,reuse and perceptual-duplicate limits.
+
+The r56 kit independently passed extraction into a Chinese/space path,four-model-pack configuration,isolated registration,and actual re-rendering. Complete589824-byte YUV and307200-byte PCM match the reference and project replay;PNG bytes also match. This kit check adds no model inference and is not natural-quality or clean-host acceptance.
+
+![Actual exact-content deduplication](docs/assets/ad-content58-20261029-r1/actual.gif)
+
+The detailed feature/service modules,500-filter previews,Skill modules and cases remain below;expand the preserved development history for earlier stages.
+
+<!-- aek-history-summary -->
+<details>
+<summary>Complete development history — all original content retained</summary>
+
 CLI58/local56 is independently installed with1705 exact payload files,281 modules and8 native resources. Installed31/19/57/104 groups passed separately. Actual CUDA PCM matches source;all120 content-case RGBA frames match source and package replay. Installed400 is running;the live Skill remains56/r55. [Local package / usage](docs/validation/CLI58独立安装交付_2026-10-29.md)
 
 Source CLI0.1.58 passed all400 service-contract tests with no failures,errors or skips and unchanged source/test hashes. The independent offline bundle is built and natively installed;installed acceptance and Skill activation remain separate. [400-test evidence](docs/validation/evidence/ad-content-uniqueness-20261029-r1/source58-contracts-r1/verification.json)
@@ -42,9 +64,6 @@ Installed CLI57 also passed actual RIFE:89 CUDA forwards,96/36 animation/VFR-alp
 
 ![Actual installed CLI57 RIFE slow motion](docs/assets/native-worker-rife57-20261029-r1/actual.gif)
 
-<!-- aek-history-summary -->
-<details>
-<summary>Complete development history — all original content retained</summary>
 
 **Local CLI56/local54 is installed and registered:one `$agent-ffmpeg-local-editor` entry,17modules,93files.**Source and installed1/15/45/104 groups each passed.Both actual CUDA cases passed full two-aspect RGB/non-silentPCM replay;source and installed decoded outputs also match byte for byte.The existing four voice/translation packs were reverified.The actual C-discovery full GPU case is still running;the new formal kit is a separate gate.[Delivery and usage](docs/validation/CLI56原生交付_2026-10-29.md).Earlier-version sections below are retained history;the current state is here at the top.
 
@@ -1946,6 +1965,9 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R453 | CLI58 installed actual DF3 CUDA | 4 forwards;1124160-byte complete PCM equal to source and editable package replay;controlled quality only |
 | R454 | CLI58 installed actual content case | All120 frames/27648000 RGBA bytes equal to source and package replay;explicit synthetic search,no semantic-quality acceptance |
 | R455 | CLI58 unified Skill rollout tooling | Prepared staged/registered PowerShell CUDA verification and backed-up activation;missing prerequisites actually rejected with95 protected files unchanged;not yet activated |
+| R456 | CLI58 installed400 terminal | All400 passed with zero failures/errors/skips;281 source/installed modules and tests frozen;[proof](docs/validation/evidence/ad-content-uniqueness-20261029-r1/installed58-contracts-r1/verification.json) |
+| R457 | Actual unified CLI58 activation | Staged and actual C-discovered CUDA each ran4 forwards;full PCM matches source and project replay;one entry/17 modules/93 files,old backups retained;[workflow](docs/validation/CLI58统一Skill切换_2026-10-29.md) |
+| R458 | Independent r56 kit | 159 entries/158 inventory files;four-pack configuration,isolated registration,two renders and full YUV/PCM/PNG replay passed;initial newline-check failure retained,no new model inference;[proof](docs/validation/evidence/ad-content-uniqueness-20261029-r1/formal-kit-r3/verification.json) |
 
 ## Current limits and development direction
 

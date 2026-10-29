@@ -1,5 +1,27 @@
 # agent editor kit
 
+**当前本地版本：CLI0.1.58 / local56 / r56统一Skill工具包。** 唯一入口 `$agent-ffmpeg-local-editor`，17内部模块、93文件。源码与安装版各31／19／57／104／400五组分别通过；候选及真实C盘入口的实际CUDA降噪、完整1124160字节PCM工程重放分别通过。完整剪映等价仍未完成。
+
+[繁體中文](README.zh-TW.md) · [English](README.en.md) · [r56 Skill ZIP](docs/skills/agent-editor-kit-community-unified-skill-r56.zip) · [完整交付与流程](docs/validation/CLI58统一Skill切换_2026-10-29.md) · [500滤镜母图预览](docs/assets/looks-n002-20261024-r1/index.html)
+
+```powershell
+$skill = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor'
+& "$skill/scripts/run.ps1" version
+& "$skill/scripts/run.ps1" capabilities
+```
+
+确认版本为 `0.1.58`；按[安装使用流程](docs/validation/CLI58独立安装交付_2026-10-29.md)准备匹配应用包及原生依赖，再登记素材与权利、建立工程、执行选材与预览、渲染并导出可编辑工程包。`unique_content`默认按精确SHA256去重；[选材规则与实际案例](docs/product/AD_CONTENT_UNIQUENESS.md)说明继承、复用、查询分配及感知重复边界。
+
+r56已在独立中文／空格目录解包、配置四个模型包、独立注册并实际重渲染；完整589824字节YUV、307200字节PCM与参考及工程包重放相同，PNG也逐字节相同。此工具包验收没有新增模型推理，不代替自然视听质量或干净机器验收。
+
+![Actual exact-content deduplication](docs/assets/ad-content58-20261029-r1/actual.gif)
+
+母图滤镜、功能／服务模块、Skill内部模块和完整案例说明均保留在下方；完整开发历史可展开查看。
+
+<!-- aek-history-summary -->
+<details>
+<summary>完整开发历史（保留全部原文，点击展开）</summary>
+
 CLI58／local56独立候选已原生安装：1705载荷、281模块及8原生资源一致；安装31／19／57／104分组分别通过。实际CUDA完整PCM与源码一致；去重成片120帧完整RGBA与源码及工程重放一致。安装400项继续运行，正式Skill仍56／r55。 [Local package / usage](docs/validation/CLI58独立安装交付_2026-10-29.md)
 
 源码CLI0.1.58完整400项服务契约已通过：零失败／错误／跳过，源码与测试冻结一致。独立离线包已构建并原生安装；安装版及正式Skill仍另验。 [400-test evidence](docs/validation/evidence/ad-content-uniqueness-20261029-r1/source58-contracts-r1/verification.json)
@@ -42,9 +64,6 @@ CLI57安装版第二类实际模型RIFE也已通过：89次CUDA前向、96／36�
 
 ![Actual installed CLI57 RIFE slow motion](docs/assets/native-worker-rife57-20261029-r1/actual.gif)
 
-<!-- aek-history-summary -->
-<details>
-<summary>完整开发历史（保留全部原文，点击展开）</summary>
 
 **当前本地 CLI56／local54 已安装并注册，唯一 `$agent-ffmpeg-local-editor` 保持1入口／17模块／93文件。** 源码与独立安装版各1／15／45／104四组通过，二者实际CUDA选材及两画幅完整RGB／非静音PCM重放均通过；安装版与源码输出也逐字节一致。四个原有配音／翻译模型包已重新核验。真实C盘入口的完整GPU案例仍在运行，新正式工具包另验。[实际交付与使用流程](docs/validation/CLI56原生交付_2026-10-29.md)。以下较早版本段落保留为历史记录，以顶部当前状态为准。
 
@@ -1944,6 +1963,9 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R453 | CLI58 installed actual DF3 CUDA | 4 forwards;1124160-byte complete PCM equal to source and editable package replay;controlled quality only |
 | R454 | CLI58 installed actual content case | All120 frames/27648000 RGBA bytes equal to source and package replay;explicit synthetic search,no semantic-quality acceptance |
 | R455 | CLI58统一Skill切换工具 | 已准备候选入口、实际PowerShell CUDA和真实C入口核验及带备份切换；缺少前置收据时实际拒绝且95个受保护文件不变；尚未激活 |
+| R456 | CLI58安装400项终态 | 400通过，零失败／错误／跳过，281源码与安装模块及测试冻结一致；[证据](docs/validation/evidence/ad-content-uniqueness-20261029-r1/installed58-contracts-r1/verification.json) |
+| R457 | CLI58统一Skill实际切换 | 候选及真实C盘入口CUDA分别4次前向；完整PCM与源码及工程重放相同，1入口／17模块／93文件，旧版备份保留；[流程](docs/validation/CLI58统一Skill切换_2026-10-29.md) |
+| R458 | r56独立工具包 | 159条目／158清单文件，四包配置、独立注册、两次渲染及完整YUV／PCM／PNG重放通过；首轮换行校验失败保留，无新增模型推理；[证据](docs/validation/evidence/ad-content-uniqueness-20261029-r1/formal-kit-r3/verification.json) |
 
 ## 当前边界与开发方向
 

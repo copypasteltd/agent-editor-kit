@@ -1,6 +1,6 @@
 # Installed-release runtime contract
 
-This namespace calls the locally installed `v0.1.0-alpha.4-local.54` / CLI 0.1.56
+This namespace calls the locally installed `v0.1.0-alpha.4-local.56` / CLI 0.1.58
 package using this Skill's `scripts/run.ps1`. Its 17 modules share the launcher.
 The editable Skill source stays on E:; Codex reads
 Windows directory junctions. `local/agent-ffmpeg/runtime.json` selects the native Python and installed path.
@@ -133,3 +133,5 @@ For actual native CUDA RIFE interpolation, CFR/VFR/PCM preservation, editable sl
 Native process waits under an operation budget now inherit ancestor deadlines and cancel markers. Interruption closes the owned Windows job/readers. This is cooperative control, not blocked-OS-call real-time preemption. Semantic implementation changes require explicit re-registration/reindexing; never hand-rebind old hashes.
 
 CLI56 pins its own application package, then restores the native model runtime dependency search order. Controller-bundled NumPy/Pillow must not silently replace the registered model runtime. Keep runtime/version/path fingerprint checks enabled; register fresh implementation bindings after code changes.
+
+CLI58 waits retained owned Windows process handles during cleanup; preprocessing tool deadlines map to pipeline TIMEOUT while outer budget interruptions retain their original meaning. Native model dependencies remain isolated. See complete failure and repair evidence in docs/product/OWNED_PROCESS_CLEANUP.md; do not classify a timed-out job as completed.

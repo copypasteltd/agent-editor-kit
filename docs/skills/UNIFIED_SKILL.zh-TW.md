@@ -2,11 +2,11 @@
 
 <!-- community-current -->
 
-**CLI0.1.56 / local54 / r55: one `$agent-ffmpeg-local-editor` entry,17 modules,93 Skill files.** Source,isolated installed and actual C-discovered CUDA ad cases passed separately. The final kit independently passed extraction/configuration/E-drive registration and complete ACES YUV/PCM/PNG replay,without changing live discovery. Four existing voice/translation packs were reverified.
+**CLI0.1.58 / local56 / r56: one `$agent-ffmpeg-local-editor` entry,17 modules,93 files.** Source and independently installed31/19/57/104/400 groups passed separately. Staged and actual C-discovered CUDA denoising passed full PCM replay. The r56 kit independently passed extraction,four-pack configuration,isolated registration and complete ACES YUV/PCM/PNG replay without changing live discovery. No new model inference is claimed for that kit check.
 
-[Download r55 kit](agent-editor-kit-community-unified-skill-r55.zip) · [Package SHA-256](community-unified-skill-package-0.1.56-r55.json) · [Actual installation and use](../validation/CLI56原生交付_2026-10-29.md) · [Independent proof](../validation/evidence/semantic-worker-isolation-20261029-r1/formal-kit-r1/verification.json) · [C70 videos/GIF](../product/CASES.md#c70-registered-semantic-selection)
+[Download r56 kit](agent-editor-kit-community-unified-skill-r56.zip) · [SHA-256](community-unified-skill-package-0.1.58-r56.json) · [Installation and use](../validation/CLI58独立安装交付_2026-10-29.md) · [Rollout proof](../validation/CLI58统一Skill切换_2026-10-29.md) · [Exact-content selection and C74 preview](../product/AD_CONTENT_UNIQUENESS.md)
 
-The kit contains instructions and launchers; the matching CLI56/local54 application bundle and existing model packs remain separate. Keep alpha.3 and older kits paired with their own runtimes. This is same-host native Windows acceptance,not clean-host or full product-parity certification.
+Pair this kit with the separate CLI58/local56 application bundle and existing model packs. It adds exact-SHA256 content deduplication,not perceptual duplicate detection. Same-host native Windows acceptance does not establish clean-host,natural-quality or full CapCut parity. Previous r55/runtime56 downloads remain immutable.
 
 <!-- /community-current -->
 

@@ -1,6 +1,6 @@
 # Calibrated semantic ad selection
 
-Use installed CLI0.1.56 or newer through this unified Skill launcher. Start
+Use installed CLI0.1.58 or newer through this unified Skill launcher. Start
 with `version` and `capabilities`; `ai.ad_storyboard` must include `ad.select`.
 This connects sampled visual retrieval to ordinary editable ad plans. The
 caller still supplies approved factual copy, intended audience, music and
@@ -25,7 +25,8 @@ The JSON input wraps the existing storyboard brief:
     "variants":[{"id":"vertical","canvas":{"width":1080,"height":1920},"duration_seconds":6}]
   },
   "queries":[{"id":"opening","text":"A cup of coffee on a table"}],
-  "unique_assets":true
+  "unique_assets":true,
+  "unique_content":true
 }
 ```
 
@@ -56,9 +57,13 @@ loading; a timed-out attempt is a failure, not a selection receipt.
 
 Selection filters current source hashes, verified rights status, required
 source audio and source length across every requested variant, then maximizes
-the quantized similarity sum globally. Default uniqueness is asset IDs, not
-content hashes: aliases with different IDs can still repeat the same picture.
-Use `unique_assets:false` only when deliberate reuse is appropriate.
+the quantized similarity sum globally. CLI58 groups exact source SHA256
+aliases before joint assignment, and reserves the content of fixed shots.
+`unique_content` defaults to `unique_assets` (normally true). Set
+`unique_content:false` with `unique_assets:true` for the old ID-only behavior;
+set both false for deliberate reuse. Both options require actual booleans.
+Missing or malformed SHA256 cannot silently fall back to asset IDs.
+This is exact file identity, not perceptual or cross-transcode deduplication.
 
 Inspect each shot's rationale receipt: original query, index/profile IDs,
 source hash/start, score, required duration and preview reference. Validate
@@ -78,3 +83,14 @@ https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/product/AD_SEMAN
 CLI55 inherits command budgets while waiting for native processes. Keep cold-load latency separate from neural inference time; preserve failures and use an explicit adequate budget, not a retuned acceptance threshold.
 
 CLI56 pins its own application package, then restores the native model runtime dependency search order. Controller-bundled NumPy/Pillow must not silently replace the registered model runtime. Keep runtime/version/path fingerprint checks enabled; register fresh implementation bindings after code changes.
+
+## Explain source selection to a client
+
+Inspect `uniqueness_group`, source SHA256 and the original preview reference.
+Show the actual selected source, crop and complete shot before approval.
+The C74 demonstration has real byte-identical aliases, default/ID-only
+selection, editable timelines and120-frame complete RGBA package replay:
+https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/validation/CLI58内容去重实测_2026-10-29.md
+Its search scores are explicitly synthetic; do not present it as model or
+natural-semantic accuracy. A low score, absent candidate or inadequate
+candidate limit cannot be repaired by inventing a preview or selection.

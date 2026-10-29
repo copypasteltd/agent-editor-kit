@@ -1,0 +1,371 @@
+[
+  {
+    "name": "configure",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\独立工具 包\\scripts\\activate_community_runtime.py",
+      "--installed",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.56\\final-r1\\installed",
+      "--packs",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-portable-r1\\模型 包",
+      "--voice-cuda-lib",
+      "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\lib",
+      "--translation-cuda-lib",
+      "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v12.4\\bin",
+      "--semantic-config",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\semantic-runtime.json",
+      "--verify-timeout-seconds",
+      "600"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "5728a3305208bfcac87f8091f7d86fe04fbcc438c810ab1ea9c51ab41eaf95b4"
+  },
+  {
+    "name": "register",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\独立工具 包\\register-agent-ffmpeg-local-skills.ps1",
+      "-SkillsDirectory",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\isolated-discovery",
+      "-ReceiptPath",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\ad-content-uniqueness-20261029-r1\\formal-kit-r3\\registration.json"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "57950314dd24dbe7ce7c1eaea5edbc4e498221db1b6ebfb689ba7199b962a818"
+  },
+  {
+    "name": "version",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "04b8fd07d2d6e2ec808e4cf098ad205e1ae9a49f5ccc9993dc63b57d0606b97e"
+  },
+  {
+    "name": "capabilities",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "capabilities"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "9594a7befd75dd901f4eda596359cb33bcc3035c03dfdffbbc38f59a589335af"
+  },
+  {
+    "name": "catalog",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "surface",
+      "ocio-configs",
+      "--config",
+      "aces-2.1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "a82232ae8ec07f382ddc5dfa06bd26cc206ee42197a6ca55a2879823cccb1a08"
+  },
+  {
+    "name": "import",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\aces-installed-20261029-r1\\editable-aces.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\project"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "1a986c2b3b1ab4eb6bfb497d3d0775426e077a3d5cad3b2270df8ab73c301c53"
+  },
+  {
+    "name": "validate",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\project"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "1e3e5f8eabaf325f45d5e38e964b6b04c9f93eb6eda62e6e0ca735bbf9520286"
+  },
+  {
+    "name": "render",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\project",
+      "--sequence-id",
+      "seq_main",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\project\\renders\\kit-aces.mkv"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "c5ad23138b08e1e106096c25b24e319462036af87273e223c84ae3a511f201fc"
+  },
+  {
+    "name": "frame",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "preview",
+      "frame",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\project",
+      "--frame",
+      "7",
+      "--height",
+      "128"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "23cf16ab3fbda85c4db9c1083202f6997f7e4403b36ab960b237d33fb3f1380b"
+  },
+  {
+    "name": "measure",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "surface",
+      "measure",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\project",
+      "--sequence-id",
+      "seq_main"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "89ef9d174a07e2b1066ca95998d20585a7f3219b1942a87bece7fc837067eb7d"
+  },
+  {
+    "name": "export",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "export",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\project",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\project\\exports\\kit-aces.zip",
+      "--target-format",
+      "package"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "b3f6de20aaf1a48b4df5d85cbe96ced24fa0c3db09c4df373efcea16d6068056"
+  },
+  {
+    "name": "reimport",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\project\\exports\\kit-aces.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\replay"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "b33b0e2f65046eeb09027902698afebb1539bfb271ac5fc98e8c37a001792240"
+  },
+  {
+    "name": "replay-render",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\replay",
+      "--sequence-id",
+      "seq_main",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\replay\\renders\\kit-aces.mkv"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "eeb56490b7f9b2ef29cdae1598028a43ab93d1d52f677bcd5de8cc0056e120e1"
+  },
+  {
+    "name": "render-yuv",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\project\\renders\\kit-aces.mkv",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-pix_fmt",
+      "yuv444p10le",
+      "-f",
+      "rawvideo",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "5e9677b44c14bc1a1d5975e6643970bc8c280f657482b85561107c0fb2dfd26c"
+  },
+  {
+    "name": "replay-yuv",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\replay\\renders\\kit-aces.mkv",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-pix_fmt",
+      "yuv444p10le",
+      "-f",
+      "rawvideo",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "5e9677b44c14bc1a1d5975e6643970bc8c280f657482b85561107c0fb2dfd26c"
+  },
+  {
+    "name": "reference-yuv",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\aces-installed-20261029-r1\\aces.mkv",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-pix_fmt",
+      "yuv444p10le",
+      "-f",
+      "rawvideo",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "5e9677b44c14bc1a1d5975e6643970bc8c280f657482b85561107c0fb2dfd26c"
+  },
+  {
+    "name": "render-pcm",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\project\\renders\\kit-aces.mkv",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "596acbf54e4ce41c7aacf795b3c33aa52efe253946348392a2e789c83e32f644"
+  },
+  {
+    "name": "replay-pcm",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\content58-independent-kit-r3\\replay\\renders\\kit-aces.mkv",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "596acbf54e4ce41c7aacf795b3c33aa52efe253946348392a2e789c83e32f644"
+  },
+  {
+    "name": "reference-pcm",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\aces-installed-20261029-r1\\aces.mkv",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "596acbf54e4ce41c7aacf795b3c33aa52efe253946348392a2e789c83e32f644"
+  }
+]

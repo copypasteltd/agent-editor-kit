@@ -1,5 +1,17 @@
 # 本机 GPU 扩展离线包与安装 / Native GPU extension delivery
 
+**当前正式本地入口为 CLI0.1.58 / local56**：仍为一个 `$agent-ffmpeg-local-editor`、17内部模块、93文件。源码与独立安装版各31／19／57／104／400五组分别通过；候选和真实C盘入口的DF3 CUDA及完整PCM工程重放也分别通过。该模型案例不代表其余模型或自然音质验收。
+
+应用包位于 `local/agent-ffmpeg/v0.1.0-alpha.4-local.56/candidate-r1/bundle.zip`，安装位于同版本 `final-r1/installed`。应用ZIP SHA-256为 `1a54301297080bc91cdc469179730585457431b0bb34755155a11b1084971834`。r56统一Skill工具包与此CLI58/local56配套，应用包和四个既有模型包另备；保留旧r55及其CLI56运行时。工具包独立解包／配置／注册／ACES完整音画重放的实际状态见[CLI58交付日志](../validation/CLI58统一Skill切换_2026-10-29.md)。
+
+English: The current registered local runtime is CLI58/local56: one Skill,17 modules,93 files. Source and installed 31/19/57/104/400 groups passed separately. The staged and actual C-discovered entry passed real CUDA denoising and full PCM package replay. Pair the r56 Skill kit with the matching CLI58 application; model packs are separate. Portable-kit acceptance is recorded in the linked log. Earlier sections are retained history.
+
+繁體：目前正式入口為CLI58/local56，維持一個Skill、17模組、93檔案。來源及安裝五組測試、候選與真實C盤入口CUDA及完整PCM重播分別通過。r56工具包需搭配CLI58應用包及另備的模型包；獨立工具包驗收詳見上述日誌。下方舊版說明保留為歷史。
+
+本机使用：`powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1 version`，确认 `cli_version` 为 `0.1.58` 后调用 `capabilities`。素材权利登记、选材请求、精确内容去重和真实预览见[选材说明](AD_CONTENT_UNIQUENESS.md)；运行、依赖和安装命令见[安装使用流程](../validation/CLI58独立安装交付_2026-10-29.md)。所有历史关闭条件仍保留，不以单个案例宣称完整剪映等价。
+
+以下为CLI56及更早阶段的历史记录，以本页顶部版本为准。
+
 **当前本机 CLI0.1.56／local54 已原生安装并注册**，1个统一Skill／17模块／93文件。源码及独立安装版各1／15／45／104分组通过，实际CUDA选材与两画幅完整音画重放分别通过；原四个配音／翻译模型包保持并重新核验。安装目录为 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.54/final-r1/installed`。[包摘要、实际入口和完整使用流程](../validation/CLI56原生交付_2026-10-29.md)。公开alpha.3与旧r54工具包保留，旧包匹配各自运行时；真实C盘入口CUDA／完整音画重放也已通过：[C70](CASES.md#c70-registered-semantic-selection)。新r55统一工具包需匹配此CLI56／local54运行包，独立工具包终态见上述交付日志。其他原生模型入口的依赖隔离问题见[已复现缺口](NATIVE_WORKER_BOOTSTRAP.md)，下一版处理。
 
 English: Native CLI56/local54 is installed and registered with one entry,17modules and93files.The existing four CPU/GPU voice/translation packs are retained.Source, installed and actual C-discovered CUDA cases passed separately;the new portable kit acceptance is recorded in the linked delivery log.

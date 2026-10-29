@@ -7,11 +7,12 @@ description: "Edit and generate local videos with agent editor kit: multitrack e
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.54` / CLI `0.1.56`.
+The current local runtime is `v0.1.0-alpha.4-local.56` / CLI `0.1.58`.
 For calibrated visual selection into editable ads, read
 [semantic ad selection](references/ad-selection.md). Inspect actual previews
-and per-shot receipts before client approval; asset-ID uniqueness does not
-exclude duplicate content aliases.
+and per-shot receipts before client approval. CLI58 defaults to exact-source
+SHA256 uniqueness; this excludes byte-identical aliases, not perceptually
+similar shots. The reference explains explicit reuse and actual previews.
 Native Float32 GPU operations now use bounded owned control pipes. Read
 [GPU execution](references/projection-gpu.md) for policy, actual operator counts,
 cancellation and process/thread/stream cleanup receipts.

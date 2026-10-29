@@ -1,0 +1,114 @@
+{
+  "status": "activated-and-entry-verified",
+  "cli_version": "0.1.58",
+  "release": "v0.1.0-alpha.4-local.56",
+  "public_entries": 1,
+  "modules": 17,
+  "skill_files": 93,
+  "discovery_unchanged": true,
+  "native_windows": true,
+  "virtual_environment": false,
+  "source_fallback": false,
+  "actual_C_drive_entry": true,
+  "calls": [
+    {
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "version"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "capabilities"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "gates": {
+    "installation": {
+      "path": "docs/validation/evidence/ad-content-uniqueness-20261029-r1/installation-candidate-r1/verification.json",
+      "sha256": "6f0fa97e958c1f90bcf6c9473ccaf88bcf6ecabf7f8e73370cf4ea90ffd20630"
+    },
+    "candidate": {
+      "path": "docs/validation/evidence/ad-content-uniqueness-20261029-r1/skill58-candidate-r1/verification.json",
+      "sha256": "331e67d67631675b69fbae6ff9582ac4a1428015d6a3d0f418d64c3f577cffb7"
+    },
+    "staged_gpu": {
+      "path": "docs/validation/evidence/ad-content-uniqueness-20261029-r1/staged58-gpu-r1/verification.json",
+      "sha256": "e8557cd87837970ca3155a37e56f97f22fa02091ea71410e5b96c62cc0a97979"
+    },
+    "source_gpu": {
+      "path": "docs/validation/evidence/ad-content-uniqueness-20261029-r1/source58-gpu-r1/verification.json",
+      "sha256": "183d148bcf25ec3c945cc7f0853f5c2a7c5565da3611a6ac1b4022038041ce75"
+    },
+    "installed_gpu": {
+      "path": "docs/validation/evidence/ad-content-uniqueness-20261029-r1/installed58-gpu-r1/verification.json",
+      "sha256": "a35baf0c4f991a0b088d7245b5d84a8546a3551dc7cd8192efd8ecaffa843e87"
+    },
+    "content": {
+      "path": "docs/validation/evidence/ad-content-uniqueness-20261029-r1/installed-content-case-r1/verification.json",
+      "sha256": "e469df5f6a7efcd93bac93634af6bf007c6a576a41b0faf1c5a7777f97461e71"
+    },
+    "content_parity": {
+      "path": "docs/validation/evidence/ad-content-uniqueness-20261029-r1/installed-content-source-parity-r1/verification.json",
+      "sha256": "c2838f97e418d1fb6ae5a98239f0390f09db32a83fe29c8ae1e2ba4a203c4b1b"
+    },
+    "source58_bootstrap": {
+      "path": "docs/validation/evidence/ad-content-uniqueness-20261029-r1/source58-bootstrap-r1/verification.json",
+      "sha256": "edde6bd7f3a09853063c47871bd2d72daf119bc188408aca62aff2d44f2fef69"
+    },
+    "source58_control": {
+      "path": "docs/validation/evidence/ad-content-uniqueness-20261029-r1/source58-control-r2/verification.json",
+      "sha256": "febf639bd6bb0a8f07bd637181695ac642008f130f0a8411058e05a21fe1ac03"
+    },
+    "source58_selection": {
+      "path": "docs/validation/evidence/ad-content-uniqueness-20261029-r1/source58-selection-r1/verification.json",
+      "sha256": "9088d69d5e30756f962b535f13b2f86dd16c24b329e5979d004e9f14f08db503"
+    },
+    "source58_semantic": {
+      "path": "docs/validation/evidence/ad-content-uniqueness-20261029-r1/source58-semantic-r1/verification.json",
+      "sha256": "6e3ef175d254adbe60e4937c02fac86b35b73d0d6320ee039f79c0adaca389cf"
+    },
+    "source58_contracts": {
+      "path": "docs/validation/evidence/ad-content-uniqueness-20261029-r1/source58-contracts-r1/verification.json",
+      "sha256": "9c6eacca8cd7804371a8ec05e2a361494e7572f72cfc6ca6f8219b4d29840da8"
+    },
+    "installed58_bootstrap": {
+      "path": "docs/validation/evidence/ad-content-uniqueness-20261029-r1/installed58-bootstrap-r1/verification.json",
+      "sha256": "f9c4009174f2db08831b94ed1bd662e8e2e24f3ce27993d887aafa678a3b4307"
+    },
+    "installed58_control": {
+      "path": "docs/validation/evidence/ad-content-uniqueness-20261029-r1/installed58-control-r1/verification.json",
+      "sha256": "a5f3c9beb7bee5246137d4e0e85c894aee5262c8da05639ed152fa87d834a485"
+    },
+    "installed58_selection": {
+      "path": "docs/validation/evidence/ad-content-uniqueness-20261029-r1/installed58-selection-r1/verification.json",
+      "sha256": "7dd1494544cb6a372993cf00db0911b028aefcaa94e1a4acd87aba58e8f77698"
+    },
+    "installed58_semantic": {
+      "path": "docs/validation/evidence/ad-content-uniqueness-20261029-r1/installed58-semantic-r1/verification.json",
+      "sha256": "3a757cf27d0f1048185ec0ef05edfd7999f105c23567e32c9831ccc7dd3d0de7"
+    },
+    "installed58_contracts": {
+      "path": "docs/validation/evidence/ad-content-uniqueness-20261029-r1/installed58-contracts-r1/verification.json",
+      "sha256": "44b7ee0dccfda196e56a12a48ad220e56c34411bbfe4f29ffeb089c542922275"
+    }
+  },
+  "namespace_sha256": "e83cf84b684b38b1cb96133da070a1b88052402ff0b55f321d5bec92adc80aab",
+  "runtime_sha256": "8a2e5743928fbde327b434353f89fce5583fa2f14863dcad2d94ceff975ea62c",
+  "registered_model_case_pending": true,
+  "natural_quality_accepted": false,
+  "full_product_goal_closed": false
+}

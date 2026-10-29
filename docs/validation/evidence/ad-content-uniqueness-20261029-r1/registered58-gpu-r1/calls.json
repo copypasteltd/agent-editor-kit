@@ -1,0 +1,261 @@
+[
+  {
+    "name": "version",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "fde67deaebb5938f1971f91824fac4e1f205bf45a4ddadbdda8bba4e2912a33e"
+  },
+  {
+    "name": "init",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "project",
+      "init",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-worker-registered58-gpu-r1\\project"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "c29e4e2b207262be5972440feb559f27ab678adf278ff65db37771dce981c092"
+  },
+  {
+    "name": "register-fresh",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "audio",
+      "enhancement-adapter",
+      "register",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-worker-registered58-gpu-r1\\project",
+      "--adapter-id",
+      "df3_local",
+      "--model-path",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\deepfilternet3-20261027",
+      "--executable",
+      "D:/dev/comfyui/ComfyUI_windows_portable_nvidia_0_30_0/ComfyUI_windows_portable/python_embeded/python.exe",
+      "--evidence",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\native-speech-enhancement-20261027-r1\\conversion.json",
+      "--license-spdx",
+      "MIT OR Apache-2.0",
+      "--creator",
+      "DeepFilterNet contributors",
+      "--threads",
+      "4",
+      "--segment-seconds",
+      "2",
+      "--overlap",
+      ".25"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "b0869dcb50f8fb939f23483cd95890dd6ae9a66614a98ee58b2825212583c047"
+  },
+  {
+    "name": "ingest",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "media",
+      "ingest",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-worker-registered58-gpu-r1\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\english-noisy.wav",
+      "--evidence",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\SOURCE.txt",
+      "--creator",
+      "LibriSpeech contributors",
+      "--license-spdx",
+      "CC-BY-4.0"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "d712bef7f4c578d67473b0ea8d1933562a0b56eb6f46513d0915dd82368fdfef"
+  },
+  {
+    "name": "enhance",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "audio",
+      "enhance",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-worker-registered58-gpu-r1\\project",
+      "--adapter-id",
+      "df3_local",
+      "--source-asset-id",
+      "asset_20261029054125_eb281148",
+      "--asset-id",
+      "native58_enhanced",
+      "--apply",
+      "--track-id",
+      "track_audio_1",
+      "--timeout-seconds",
+      "1800"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "e4019972681162d18d3f83c095ffdf95eda7c0b66883c48d00bac7fd69378353"
+  },
+  {
+    "name": "clean",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\english-clean.wav",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "a483eaaae2757449ba7364e99477a0ea67483c218abb422211d68f24d632e288"
+  },
+  {
+    "name": "noisy",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\assets\\native-speech-enhancement-20261027-r2\\english-noisy.wav",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "cea5329016f98148718309588c1418eecc6db4b3a59a5cc15776090adae4b9eb"
+  },
+  {
+    "name": "enhanced",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-worker-registered58-gpu-r1\\project\\assets\\derived\\native58_enhanced.wav",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "83354f670149b119a676c978e21a5a08b3e5a936bbcc1f33dd836cf42ddb2d12"
+  },
+  {
+    "name": "validate",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-worker-registered58-gpu-r1\\project"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "4e9d031cead2f3991b695683d0316daaf1abb137242c87d43ebcfb43f17117af"
+  },
+  {
+    "name": "export",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "export",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-worker-registered58-gpu-r1\\project",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-worker-registered58-gpu-r1\\project\\exports\\native58-audio.zip",
+      "--target-format",
+      "package"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "3425a63335fbb0458d7035a2c4602228ec29935a6d196e3ada61588eb7e36943"
+  },
+  {
+    "name": "import-replay",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-worker-registered58-gpu-r1\\project\\exports\\native58-audio.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-worker-registered58-gpu-r1\\replay"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "1c74423954e6bce65f1a8f38ae947adb6b1776a7149ff65ef00ac348e9500e6a"
+  },
+  {
+    "name": "replay",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\native-worker-registered58-gpu-r1\\replay\\assets\\derived\\native58_enhanced.wav",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "83354f670149b119a676c978e21a5a08b3e5a936bbcc1f33dd836cf42ddb2d12"
+  }
+]

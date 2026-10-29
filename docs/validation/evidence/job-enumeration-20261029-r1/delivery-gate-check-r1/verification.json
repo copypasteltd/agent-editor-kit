@@ -1,0 +1,90 @@
+{
+  "status": "passed",
+  "calls": [
+    {
+      "script": "build_source63_delivery.py",
+      "exit_code": 1,
+      "reply": {
+        "status": "rejected",
+        "reason": "missing acceptance gates",
+        "missing": [
+          "docs\\validation\\evidence\\job-enumeration-20261029-r1\\source63-semantic-r1\\verification.json",
+          "docs\\validation\\evidence\\job-enumeration-20261029-r1\\source63-contracts-r1\\verification.json",
+          "docs\\validation\\evidence\\job-enumeration-20261029-r1\\actual-case-r1\\verification.json",
+          "docs\\validation\\evidence\\job-enumeration-20261029-r1\\publication-r1\\verification.json",
+          "docs\\validation\\evidence\\job-enumeration-20261029-r1\\source63-gpu-r1\\verification.json",
+          "docs\\validation\\evidence\\job-enumeration-20261029-r1\\source63-lipsync-cuda-r1\\verification.json"
+        ],
+        "skill_activation": false
+      },
+      "sha256": "833d5c2ac17b736e00604c8f92977b9d54d597a6c770a23b1de01cf4ebe0bca7"
+    },
+    {
+      "script": "run_source63_install_acceptance.py",
+      "exit_code": 2,
+      "reply": {
+        "status": "pending",
+        "ready": false,
+        "missing": [
+          "installation-candidate-r1"
+        ],
+        "mutated": false
+      },
+      "sha256": "9f81cdc06877748cc7fd3c6e59a49eec062902a7289a18b24f2670587c17b012"
+    },
+    {
+      "script": "stage_source63_skill.py",
+      "exit_code": 2,
+      "reply": {
+        "status": "pending",
+        "ready": false,
+        "missing": [
+          "installation",
+          "source_case",
+          "installed_case",
+          "source63_semantic",
+          "source63_contracts",
+          "source63_gpu",
+          "source63_lipsync",
+          "installed63_bootstrap",
+          "installed63_control",
+          "installed63_selection",
+          "installed63_semantic",
+          "installed63_contracts",
+          "installed63_gpu",
+          "installed63_lipsync",
+          "installed_loop"
+        ],
+        "mutated": false
+      },
+      "sha256": "32cd7bb9d870fb4bbb1e612bb031edd35da4a2dcfbc33fd2d12debc61a6fe7a5"
+    },
+    {
+      "script": "run_source63_delivery_pipeline.py",
+      "exit_code": 2,
+      "reply": {
+        "status": "pending",
+        "ready": false,
+        "missing": [
+          "source",
+          "actual",
+          "cpu"
+        ],
+        "rejected": [],
+        "mutated": false
+      },
+      "sha256": "e256c6b054c127038548d19123d409247a2fb92c10945607fdb1653e64f58c0c"
+    }
+  ],
+  "actual_Windows_process_fail_fast": true,
+  "fixture_failure_synthetic": true,
+  "failed_task_detected_while_other_tasks_live": true,
+  "observer_handles_closed": true,
+  "fixture_children_exited": true,
+  "fail_fast_seconds": 5.074489899969194,
+  "observed_error": "AssertionError(('actual', 'failed'))",
+  "formal_files_unchanged": 95,
+  "formal_activation": false,
+  "model_inference": false,
+  "full_goal_closed": false
+}

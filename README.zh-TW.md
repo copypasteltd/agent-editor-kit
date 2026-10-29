@@ -2063,6 +2063,8 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R505 | CLI63 source cleanup fix | 有界重查不完整程序清單/ERROR_MORE_DATA，保留自有控制代碼，不放寬4096上限或權限錯誤，加入計數診斷與共用10秒截止時間。真實Windows子程序配合API邊界注入11項通過；CLI62基線拒絕相同不完整清單。其他交付另驗，未證實自然故障唯一根因。[實作與證據](docs/validation/CLI63原生进程清理_2026-10-29.md) |
 | R506 | CLI63 source consumers | 隔離啟動31項、控制26項、音樂/作曲37項分別通過，均零失敗/錯誤/跳過，原始碼與測試凍結一致。26控制已含11原生測試，不重複累計。保留CLI62音樂失敗；口型/完整合同/真實模型/安裝與Skill另驗。[證據](docs/validation/CLI63原生进程清理_2026-10-29.md#已完成的消费链回归) |
 | R507 | CLI63 source lip transport | 口型協議、真實FFmpeg/合成worker輸送、逾時/取消/回滾34項通過，零失敗/錯誤/跳過且凍結一致。406合同與本版本真實MuseTalk/DF3 CUDA另行執行；未宣稱模型或新安裝/Skill已通過。[證據](docs/validation/CLI63原生进程清理_2026-10-29.md#已完成的消费链回归) |
+| R508 | CLI63 gated delivery | 補齊local61建置/安裝驗收/單一Skill暫存與平行觀察控制器。四項缺材料呼叫實際拒絕；真實子程序模擬單任務失敗約5.074秒即停止後續交付，其餘任務仍存活，95正式檔案不變。真實完整交付仍執行中，未建置或註冊。[流程與證據](docs/validation/CLI63候选交付门禁_2026-10-29.md) |
+| R509 | CLI63 source selection | 選擇/廣告分鏡57項通過，零失敗/錯誤/跳過，283應用模組/192測試檔案凍結一致。僅原始碼回歸；真實模型、安裝版及獨立Agent自主選材另驗。[證據](docs/validation/evidence/job-enumeration-20261029-r1/source63-selection-r1/verification.json) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

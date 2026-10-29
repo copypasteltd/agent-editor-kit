@@ -1,0 +1,36 @@
+test_ctc_native_dependencies (test_native_worker_imports.NativeWorkerImportTests.test_ctc_native_dependencies) ... ok
+test_ctc_preloaded_foreign_rejected (test_native_worker_imports.NativeWorkerImportTests.test_ctc_preloaded_foreign_rejected) ... ok
+test_demucs_native_dependencies (test_native_worker_imports.NativeWorkerImportTests.test_demucs_native_dependencies) ... ok
+test_demucs_preloaded_foreign_rejected (test_native_worker_imports.NativeWorkerImportTests.test_demucs_preloaded_foreign_rejected) ... ok
+test_enhancement_native_dependencies (test_native_worker_imports.NativeWorkerImportTests.test_enhancement_native_dependencies) ... ok
+test_enhancement_preloaded_foreign_rejected (test_native_worker_imports.NativeWorkerImportTests.test_enhancement_preloaded_foreign_rejected) ... ok
+test_face_native_dependencies (test_native_worker_imports.NativeWorkerImportTests.test_face_native_dependencies) ... ok
+test_face_preloaded_foreign_rejected (test_native_worker_imports.NativeWorkerImportTests.test_face_preloaded_foreign_rejected) ... ok
+test_interpolation_native_dependencies (test_native_worker_imports.NativeWorkerImportTests.test_interpolation_native_dependencies) ... ok
+test_interpolation_preloaded_foreign_rejected (test_native_worker_imports.NativeWorkerImportTests.test_interpolation_preloaded_foreign_rejected) ... ok
+test_lama_native_dependencies (test_native_worker_imports.NativeWorkerImportTests.test_lama_native_dependencies) ... ok
+test_lama_preloaded_foreign_rejected (test_native_worker_imports.NativeWorkerImportTests.test_lama_preloaded_foreign_rejected) ... ok
+test_lipsync_native_dependencies (test_native_worker_imports.NativeWorkerImportTests.test_lipsync_native_dependencies) ... ok
+test_lipsync_preloaded_foreign_rejected (test_native_worker_imports.NativeWorkerImportTests.test_lipsync_preloaded_foreign_rejected) ... ok
+test_ocr_native_dependencies (test_native_worker_imports.NativeWorkerImportTests.test_ocr_native_dependencies) ... ok
+test_ocr_preloaded_foreign_rejected (test_native_worker_imports.NativeWorkerImportTests.test_ocr_preloaded_foreign_rejected) ... ok
+test_rvm_native_dependencies (test_native_worker_imports.NativeWorkerImportTests.test_rvm_native_dependencies) ... ok
+test_rvm_preloaded_foreign_rejected (test_native_worker_imports.NativeWorkerImportTests.test_rvm_preloaded_foreign_rejected) ... ok
+test_sam2_native_dependencies (test_native_worker_imports.NativeWorkerImportTests.test_sam2_native_dependencies) ... ok
+test_sam2_preloaded_foreign_rejected (test_native_worker_imports.NativeWorkerImportTests.test_sam2_preloaded_foreign_rejected) ... ok
+test_stem_separation_native_dependencies (test_native_worker_imports.NativeWorkerImportTests.test_stem_separation_native_dependencies) ... ok
+test_stem_separation_preloaded_foreign_rejected (test_native_worker_imports.NativeWorkerImportTests.test_stem_separation_preloaded_foreign_rejected) ... ok
+test_vace_native_dependencies (test_native_worker_imports.NativeWorkerImportTests.test_vace_native_dependencies) ... ok
+test_vace_preloaded_foreign_rejected (test_native_worker_imports.NativeWorkerImportTests.test_vace_preloaded_foreign_rejected) ... ok
+test_vace_session_native_dependencies (test_native_worker_imports.NativeWorkerImportTests.test_vace_session_native_dependencies) ... ok
+test_vace_session_preloaded_foreign_rejected (test_native_worker_imports.NativeWorkerImportTests.test_vace_session_preloaded_foreign_rejected) ... ok
+test_whisper_native_dependencies (test_native_worker_imports.NativeWorkerImportTests.test_whisper_native_dependencies) ... ok
+test_whisper_preloaded_foreign_rejected (test_native_worker_imports.NativeWorkerImportTests.test_whisper_preloaded_foreign_rejected) ... ok
+test_yolo_native_dependencies (test_native_worker_imports.NativeWorkerImportTests.test_yolo_native_dependencies) ... ok
+test_yolo_preloaded_foreign_rejected (test_native_worker_imports.NativeWorkerImportTests.test_yolo_preloaded_foreign_rejected) ... ok
+test_own_application_and_native_model_dependencies_do_not_shadow_each_other (test_semantic_worker_imports.SemanticWorkerImportTests.test_own_application_and_native_model_dependencies_do_not_shadow_each_other) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 6.346s
+
+OK

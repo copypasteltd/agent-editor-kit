@@ -1,0 +1,211 @@
+[
+  {
+    "name": "init",
+    "argv": [
+      "project",
+      "init",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\project"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "0194d3866be98ff1a403124cc1c6be2797e85285e26dfc05621a45db39ada77f"
+  },
+  {
+    "name": "ingest-picture",
+    "argv": [
+      "media",
+      "ingest",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\picture.png",
+      "--asset-id",
+      "picture",
+      "--license-spdx",
+      "CC0-1.0",
+      "--verification-status",
+      "verified",
+      "--creator",
+      "Agent Editor Kit diagnostic harness",
+      "--evidence",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\SOURCE.txt"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "9641991ded52e36711de46b77818f0bef4f56119c0f661f1dd7e6a003e53f7eb"
+  },
+  {
+    "name": "ingest-picture_alias",
+    "argv": [
+      "media",
+      "ingest",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\picture_alias.png",
+      "--asset-id",
+      "picture_alias",
+      "--license-spdx",
+      "CC0-1.0",
+      "--verification-status",
+      "verified",
+      "--creator",
+      "Agent Editor Kit diagnostic harness",
+      "--evidence",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\SOURCE.txt"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "d9ac9bcb978d64a6fd3043dae1853df26a0eb2ff60837bad14a1d623587759c3"
+  },
+  {
+    "name": "ingest-other",
+    "argv": [
+      "media",
+      "ingest",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\other.png",
+      "--asset-id",
+      "other",
+      "--license-spdx",
+      "CC0-1.0",
+      "--verification-status",
+      "verified",
+      "--creator",
+      "Agent Editor Kit diagnostic harness",
+      "--evidence",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\SOURCE.txt"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "5a299ba1689ba68e0abbc81ea9e08925138d0810e8164998dd234188f9b0f5bf"
+  },
+  {
+    "name": "ingest-font",
+    "argv": [
+      "media",
+      "ingest",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.56\\final-r1\\installed\\site\\ai_ad_editor\\material_data\\fonts\\noto-sans-sc-variable.ttf",
+      "--asset-id",
+      "font",
+      "--license-spdx",
+      "OFL-1.1",
+      "--verification-status",
+      "verified",
+      "--creator",
+      "Adobe; Google Noto",
+      "--evidence",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.56\\final-r1\\installed\\site\\ai_ad_editor\\material_data\\licenses\\google-notosanssc.txt"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "58673ff6a7b1ca7ce700684acbafe0d23068a48db14d59e2b6118852243d5296"
+  },
+  {
+    "name": "select-default-content",
+    "argv": [
+      "ad",
+      "select",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\project\\request.json",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\project\\validation\\default-content.json",
+      "--index-id",
+      "synthetic-fixture",
+      "--calibration-id",
+      "synthetic-cal"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "1c7e8d51daebfb538dfb2651749714a41137d4e3167ccc1717cb0bbb2562a042"
+  },
+  {
+    "name": "select-explicit-id-only",
+    "argv": [
+      "ad",
+      "select",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\project\\request.json",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\project\\validation\\explicit-id-only.json",
+      "--index-id",
+      "synthetic-fixture",
+      "--calibration-id",
+      "synthetic-cal"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "c4bde8ec0dd5c342b03571893495156edc0dcd359cefca7f8c4db20b9923aff2"
+  },
+  {
+    "name": "build",
+    "argv": [
+      "ad",
+      "build",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\project\\validation\\default-content.json"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "f79e83dd264704e74f53c74e82c1b060cefdd5317c07e94d7c806c6193211347"
+  },
+  {
+    "name": "render",
+    "argv": [
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\project",
+      "--sequence-id",
+      "ad_content_case_wide_sequence",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\project\\renders\\content.mp4"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "11a48648b0090990f892e5fb0a4492ca7b8c56d02cff231902a4412529494b0d"
+  },
+  {
+    "name": "export",
+    "argv": [
+      "convert",
+      "export",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\project",
+      "--target-format",
+      "package",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\project\\exports\\content.zip"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "b98f6448fd9c1c31e4bdea9e89e7d8940bd6a2b214140e9ad85610e6ffa391c7"
+  },
+  {
+    "name": "import",
+    "argv": [
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\project\\exports\\content.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\replay"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "8d748d190fc3e825224e8b9ed2de4dbb3c745fbea66a6a5613018efc8601c338"
+  },
+  {
+    "name": "replay",
+    "argv": [
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\replay",
+      "--sequence-id",
+      "ad_content_case_wide_sequence",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-content-installed58-r1\\replay\\renders\\content.mp4"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "72c1ae33a9654c894b4c201eb3070035bb0a90684bf328d9db8ad5d7e17120f0"
+  }
+]

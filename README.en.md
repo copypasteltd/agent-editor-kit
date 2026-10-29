@@ -1,12 +1,16 @@
 # agent editor kit
 
+CLI58/local56 is independently installed with1705 exact payload files,281 modules and8 native resources. Installed31/19/57/104 groups passed separately. Actual CUDA PCM matches source;all120 content-case RGBA frames match source and package replay. Installed400 is running;the live Skill remains56/r55. [Local package / usage](docs/validation/CLI58独立安装交付_2026-10-29.md)
+
+Source CLI0.1.58 passed all400 service-contract tests with no failures,errors or skips and unchanged source/test hashes. The independent offline bundle is built and natively installed;installed acceptance and Skill activation remain separate. [400-test evidence](docs/validation/evidence/ad-content-uniqueness-20261029-r1/source58-contracts-r1/verification.json)
+
 C74 verifies exact-content deduplication with actual media:two IDs share identical blue-image bytes;default selection picks amber then blue,while explicit ID-only selection allows both blue aliases. All120 frames replay identically after package import. Search responses are explicitly synthetic;this is not neural or semantic-quality acceptance. [C74 video / evidence](docs/validation/CLI58内容去重实测_2026-10-29.md)
 
 ![Actual source58 content deduplication](docs/assets/ad-content58-20261029-r1/actual.gif)
 
 Source58 actual DF3 CUDA verification passed:4 neural forwards and complete1124160-byte PCM package replay equality;12.25dB controlled-noise MSE improvement, without natural-quality or human-listening acceptance. [CUDA evidence](docs/validation/CLI58真实CUDA复核_2026-10-29.md)
 
-Development source is **CLI0.1.58**: exact-source SHA256 selection deduplication, synchronous owned Windows process cleanup, and interpolation preprocessing timeout mapping. Separate source groups passed 57 / 19 / 31 / 104 tests, plus 3 targeted timeout tests; the full 400-test run is pending. The registered Skill remains CLI56 / local54 / r55. Candidate57 failed its installed398 run (1 failure, 1 error) and has not been promoted. [Implementation and evidence](docs/validation/CLI58开发核验_2026-10-29.md).
+Development source is **CLI0.1.58**: exact-source SHA256 selection deduplication, synchronous owned Windows process cleanup, and interpolation preprocessing timeout mapping. Separate source groups passed 57 / 19 / 31 / 104 tests, plus 3 targeted timeout tests; the full400-test source run passed. The registered Skill remains CLI56 / local54 / r55. Candidate57 failed its installed398 run (1 failure, 1 error) and has not been promoted. [Implementation and evidence](docs/validation/CLI58开发核验_2026-10-29.md).
 
 Installed57 MuseTalk actual CUDA and complete rendered-media replay passed: 67 UNet calls; native133 frames at25fps, delivered160 frames at30fps. Natural lip-sync quality and12 other actual-model validations remain open. [C73 video / provenance / evidence](docs/product/CASES.md#c73-installed57-musetalk).
 
@@ -1936,6 +1940,11 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R447 | Source58 bootstrap and semantic compatibility | 31 and104 tests passed separately;full400 pending;58 not installed,registered Skill stays56 |
 | R448 | Source58 actual DF3 CUDA / 原生CUDA复核 | 4 forwards;complete1124160-byte PCM replay equal;controlled12.25dB MSE improvement;no natural-quality acceptance |
 | R449 | C74 actual content-dedup render / 精确内容去重实测 | Real aliases/default vs ID-only selection;120frames,27648000 RGBA bytes equal after package replay;explicit synthetic search,no neural inference |
+| R450 | CLI58 complete source contracts / 完整源码契约 | 400 tests passed;zero failures/errors/skips;source and tests frozen;independent installation still separate |
+| R451 | CLI58 independent native bundle / 独立原生包 | local56 ZIP and installation verified;1705 payload files,281 modules,8 native resources;live Skill stays56 |
+| R452 | CLI58 installed bootstrap/control/selection/semantic | 31/19/57/104 tests passed separately;zero failures/errors/skips;installed package only,source and tests frozen |
+| R453 | CLI58 installed actual DF3 CUDA | 4 forwards;1124160-byte complete PCM equal to source and editable package replay;controlled quality only |
+| R454 | CLI58 installed actual content case | All120 frames/27648000 RGBA bytes equal to source and package replay;explicit synthetic search,no semantic-quality acceptance |
 
 ## Current limits and development direction
 

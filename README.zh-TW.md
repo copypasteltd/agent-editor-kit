@@ -1,12 +1,16 @@
 # agent editor kit
 
+CLI58／local56獨立候選已原生安裝：1705載荷、281模組及8原生資源一致；安裝31／19／57／104分組分別通過。實際CUDA完整PCM與原始碼一致；去重成片120幀完整RGBA與原始碼及工程重放一致。安裝400項繼續執行，正式Skill仍56／r55。 [Local package / usage](docs/validation/CLI58独立安装交付_2026-10-29.md)
+
+原始碼CLI0.1.58完整400項服務契約已通過：零失敗／錯誤／跳過，原始碼與測試凍結一致。獨立離線套件已建置並原生安裝；安裝版及正式Skill仍另驗。 [400-test evidence](docs/validation/evidence/ad-content-uniqueness-20261029-r1/source58-contracts-r1/verification.json)
+
 C74精確內容去重已完成真實媒體閉環：兩個ID匯入同一藍圖，預設選擇琥珀圖與藍圖；明確僅ID策略允許兩個藍圖別名。120幀完整RGBA工程重放一致。檢索回應為明確合成資料，不計AI語義品質通過。 [C74 video / evidence](docs/validation/CLI58内容去重实测_2026-10-29.md)
 
 ![Actual source58 content deduplication](docs/assets/ad-content58-20261029-r1/actual.gif)
 
 原始碼58實際DF3 CUDA複核已通過：4次神經前向，完整1124160位元組PCM工程重放一致；受控MSE改善12.25dB，無自然品質／人工聽審結論。 [CUDA evidence](docs/validation/CLI58真实CUDA复核_2026-10-29.md)
 
-目前開發原始碼為 **CLI0.1.58**：新增精確內容SHA256選材去重，修正Windows自有程序同步回收及補幀前處理逾時映射。57／19／31／104項原始碼分組與3項逾時專項分別通過；完整400項仍執行中。正式載入仍CLI56／local54／r55；57候選安裝398項出現1失敗／1錯誤，未提升版本，失敗紀錄保留。[58實作與核驗](docs/validation/CLI58开发核验_2026-10-29.md)。
+目前開發原始碼為 **CLI0.1.58**：新增精確內容SHA256選材去重，修正Windows自有程序同步回收及補幀前處理逾時映射。57／19／31／104項原始碼分組與3項逾時專項分別通過；完整400項已通過。正式載入仍CLI56／local54／r55；57候選安裝398項出現1失敗／1錯誤，未提升版本，失敗紀錄保留。[58實作與核驗](docs/validation/CLI58开发核验_2026-10-29.md)。
 
 獨立安裝57第三類實際模型MuseTalk已通過CUDA及完整成片重放：67次UNet，原生133幀／25fps，成片160幀／30fps。自然口型品質及其餘12類實際模型仍另驗。[C73影片／來源／證據](docs/product/CASES.md#c73-installed57-musetalk)。
 
@@ -1934,6 +1938,11 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R447 | CLI58入口與語義相容 | 31項及104項分別通過，完整400項仍執行中；58未安裝、正式Skill仍56 |
 | R448 | 原始碼58實際DF3 CUDA | 4次前向、完整1124160位元組PCM工程重放一致；受控MSE改善12.25dB；自然品質未驗收 |
 | R449 | C74精確內容去重實測 | 真實別名素材／預設及僅ID選材對照；120幀、27648000位元組RGBA工程重放相同；明確合成檢索、無神經推理 |
+| R450 | CLI58 complete source contracts / 完整源码契约 | 400 tests passed;zero failures/errors/skips;source and tests frozen;independent installation still separate |
+| R451 | CLI58 independent native bundle / 独立原生包 | local56 ZIP and installation verified;1705 payload files,281 modules,8 native resources;live Skill stays56 |
+| R452 | CLI58 installed bootstrap/control/selection/semantic | 31/19/57/104 tests passed separately;zero failures/errors/skips;installed package only,source and tests frozen |
+| R453 | CLI58 installed actual DF3 CUDA | 4 forwards;1124160-byte complete PCM equal to source and editable package replay;controlled quality only |
+| R454 | CLI58 installed actual content case | All120 frames/27648000 RGBA bytes equal to source and package replay;explicit synthetic search,no semantic-quality acceptance |
 
 ## 當前邊界與開發方向
 

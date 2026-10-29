@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "scope": "skill-staging-prerequisite-rejection-only",
+  "product_functional_tests": 0,
+  "missing_installation_rejected_before_copy": true,
+  "registered_files_unchanged": 95,
+  "staged_skill_created": false,
+  "neural_forwards": 0,
+  "script_sha256": "51e9e1664891409defe83c17fd7a3c88023af59e1c44a459bd1a240f556c6731",
+  "argv": [
+    "C:\\Python313\\python.exe",
+    "-I",
+    "-B",
+    "-u",
+    "-X",
+    "utf8",
+    "docs/validation/stage_source58_skill.py",
+    "--run",
+    "prerequisite-reject-r1"
+  ],
+  "exit_code": 1
+}

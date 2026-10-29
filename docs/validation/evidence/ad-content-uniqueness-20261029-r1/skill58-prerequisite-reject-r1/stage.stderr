@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\docs\validation\stage_source58_skill.py", line 139, in <module>
+    main()
+    ~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\docs\validation\stage_source58_skill.py", line 27, in main
+    installation = load(BASE/('installation-candidate-'+args.installation_run)/'verification.json')
+  File "E:\dev\sandbox\AI广告剪辑\docs\validation\stage_source58_skill.py", line 17, in load
+    return json.loads(path.read_bytes())
+                      ~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\pathlib\_abc.py", line 625, in read_bytes
+    with self.open(mode='rb') as f:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "C:\Python313\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\ad-content-uniqueness-20261029-r1\\installation-candidate-r1\\verification.json'

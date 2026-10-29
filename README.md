@@ -1,12 +1,16 @@
 # agent editor kit
 
+CLI58／local56独立候选已原生安装：1705载荷、281模块及8原生资源一致；安装31／19／57／104分组分别通过。实际CUDA完整PCM与源码一致；去重成片120帧完整RGBA与源码及工程重放一致。安装400项继续运行，正式Skill仍56／r55。 [Local package / usage](docs/validation/CLI58独立安装交付_2026-10-29.md)
+
+源码CLI0.1.58完整400项服务契约已通过：零失败／错误／跳过，源码与测试冻结一致。独立离线包已构建并原生安装；安装版及正式Skill仍另验。 [400-test evidence](docs/validation/evidence/ad-content-uniqueness-20261029-r1/source58-contracts-r1/verification.json)
+
 C74 精确内容去重已完成真实媒体闭环：两个ID导入同一蓝图，默认选择琥珀图与蓝图；显式仅ID策略允许两个蓝图别名。120帧完整RGBA工程重放一致。检索响应是显式合成数据，不计AI语义质量通过。 [C74 video / evidence](docs/validation/CLI58内容去重实测_2026-10-29.md)
 
 ![Actual source58 content deduplication](docs/assets/ad-content58-20261029-r1/actual.gif)
 
 源码58实际DF3 CUDA复核已通过：4次神经前向，完整1124160字节PCM工程重放一致；受控MSE改善12.25dB，无自然质量／人工听审结论。 [CUDA evidence](docs/validation/CLI58真实CUDA复核_2026-10-29.md)
 
-当前开发源码 **CLI0.1.58**：新增精确内容SHA256去重选材，修复Windows自有进程同步回收与补帧预处理超时映射。57／19／31／104项源码分组及3项超时专项分别通过，完整400项仍在运行。正式加载仍CLI56／local54／r55；CLI57候选安装398项出现1失败／1错误，未提升版本，原失败保留。[58实现与核验](docs/validation/CLI58开发核验_2026-10-29.md)。
+当前开发源码 **CLI0.1.58**：新增精确内容SHA256去重选材，修复Windows自有进程同步回收与补帧预处理超时映射。57／19／31／104项源码分组及3项超时专项分别通过，完整400项已通过。正式加载仍CLI56／local54／r55；CLI57候选安装398项出现1失败／1错误，未提升版本，原失败保留。[58实现与核验](docs/validation/CLI58开发核验_2026-10-29.md)。
 
 独立安装57第三类实际模型MuseTalk已通过CUDA与完整成片重放：67次UNet，原生133帧／25fps，成片160帧／30fps。自然口型质量与其余12类实际模型仍另验。[C73影片／来源／证据](docs/product/CASES.md#c73-installed57-musetalk)。
 
@@ -1934,6 +1938,11 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R447 | CLI58入口与语义兼容 | 31项及104项分别通过，完整400项仍在运行；58未安装、正式Skill仍56 |
 | R448 | Source58 actual DF3 CUDA / 原生CUDA复核 | 4 forwards;complete1124160-byte PCM replay equal;controlled12.25dB MSE improvement;no natural-quality acceptance |
 | R449 | C74 actual content-dedup render / 精确内容去重实测 | Real aliases/default vs ID-only selection;120frames,27648000 RGBA bytes equal after package replay;explicit synthetic search,no neural inference |
+| R450 | CLI58 complete source contracts / 完整源码契约 | 400 tests passed;zero failures/errors/skips;source and tests frozen;independent installation still separate |
+| R451 | CLI58 independent native bundle / 独立原生包 | local56 ZIP and installation verified;1705 payload files,281 modules,8 native resources;live Skill stays56 |
+| R452 | CLI58 installed bootstrap/control/selection/semantic | 31/19/57/104 tests passed separately;zero failures/errors/skips;installed package only,source and tests frozen |
+| R453 | CLI58 installed actual DF3 CUDA | 4 forwards;1124160-byte complete PCM equal to source and editable package replay;controlled quality only |
+| R454 | CLI58 installed actual content case | All120 frames/27648000 RGBA bytes equal to source and package replay;explicit synthetic search,no semantic-quality acceptance |
 
 ## 当前边界与开发方向
 

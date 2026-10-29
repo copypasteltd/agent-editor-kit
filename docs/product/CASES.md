@@ -1329,3 +1329,28 @@ English: Real source CLI57 CUDA denoising retained the model runtime NumPy2.4.6,
 独立CLI57／local55安装重新登记相同DF3服务，实际RTX3060／FP32／4次神经前向，无CPU神经回退，NumPy2.4.6来自原生模型Python。完整1124160字节PCM的SHA256为 `83354f670149b119a676c978e21a5a08b3e5a936bbcc1f33dd836cf42ddb2d12`，与上述已通过源码案例及其工程导入重放相同；MSE改善12.25446dB。未复制一份相同音频冒充新素材，请使用上方实际WAV／波形选听；仍未人工听审或验收其余14类模型。
 
 [安装版实际模型与全部PCM比较证据](../validation/evidence/native-worker-bootstrap-20261029-r1/installed57-gpu-r1/verification.json) · [独立包与使用方法](../validation/CLI57独立安装交付_2026-10-29.md)。正式注册Skill仍为已验收56／r55。
+
+
+<a id="c72-installed57-rife"></a>
+
+## C72 · Installed CLI57 actual RIFE / 依赖修复后的原生CUDA补帧复核
+
+本例使用独立CLI57／local55包，新工程正式登记RIFE4.25并重新导入原有已授权素材。它验证本轮15入口依赖修复，**不是声称本轮才新增RIFE补帧能力**。RTX3060／FP32、原生NumPy2.4.6；动画69次、透明诊断20次实际神经前向，无神经CPU回退，没有模型下载或虚拟环境。
+
+![Actual installed CLI57 output](../assets/native-worker-rife57-20261029-r1/actual.gif)
+
+[本轮实际MP4](../assets/native-worker-rife57-20261029-r1/actual.mp4) · [截图](../assets/native-worker-rife57-20261029-r1/actual.png) · [完整来源／许可](../assets/native-worker-rife57-20261029-r1/SOURCE.txt) · [媒体与证据摘要](../assets/native-worker-rife57-20261029-r1/SOURCE.json) · [实际GPU验收](../validation/evidence/native-worker-bootstrap-20261029-r1/installed57-interpolation-r2/verification.json)
+
+前8秒为Sintel动画4倍慢动作，后段为CC0透明／VFR时钟诊断与合成测试音。GIF降至12FPS供快速预览，不能代替全帧数据验证、自然运动质量审看或听审。截图已实际查看，没有声称连续人工观看。
+
+| 编号 | 实际核验 | 结果 |
+| --- | --- | --- |
+| C72.1 | 24原始动画帧／4倍补帧 | 96帧／22118400字节RGBA；每4帧锚点与原始输入相同，完整输出与此前C52已验收基线相同 |
+| C72.2 | 12原始透明VFR帧／3倍补帧 | 36帧／3317760字节RGBA；每3帧原始锚点及全部PTS／时长核对，显式切镜保持，原立体声PCM相同 |
+| C72.3 | 关联可编辑轨道与工程包重放 | 两个生成master及原生补帧配方保留；实际成片完整RGBA与完整解码PCM逐字节相同 |
+| C72.4 | 正式入口与程序保持 | 281模块源码／安装冻结一致；原CLI56命名空间／运行配置未变；正式Skill仍56／r55 |
+| C72.5 | 首次验收脚本失败 | 复用了旧工程素材ID，产品在进入模型前返回INTERPOLATION_ASSET；现映射本次导入ID后独立r2通过。失败收据保留，不计作模型失败或通过 |
+
+Sintel片段版权Blender Foundation／durian.blender.org，CC BY3.0；沿用C52固定12–14秒片段、缩放与抽帧，动画不是真人实拍。透明诊断与测试音CC0，RIFE代码／模型MIT；原始出处及变换说明保留。没有人工连续运动／听觉质量验收；其余13类实际模型、HDR补帧、自然遮挡／快速运动、正式Skill切换及全部38组完整目标继续开放。
+
+[首轮脚本ID错误保留](../validation/evidence/native-worker-bootstrap-20261029-r1/installed57-interpolation-r1/verification.json) · [CLI57本地包与使用流程](../validation/CLI57独立安装交付_2026-10-29.md)。

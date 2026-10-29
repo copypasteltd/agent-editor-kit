@@ -23,6 +23,9 @@ $agentEditor = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/r
 
 源码CLI57已正式修复15类原生入口的依赖遮蔽，31项引导回归通过；更广服务契约与真实模型任务仍在核验。正式Skill继续使用CLI56／r55。 [Native worker diagnosis](docs/product/NATIVE_WORKER_BOOTSTRAP.md)
 
+CLI57安装版第二类实际模型RIFE也已通过：89次CUDA前向、96／36帧锚点与既有基线一致，完整音画工程重放相同。 [C72](docs/product/CASES.md#c72-installed57-rife)
+
+![Actual installed CLI57 RIFE slow motion](docs/assets/native-worker-rife57-20261029-r1/actual.gif)
 
 <!-- aek-history-summary -->
 <details>
@@ -1910,6 +1913,7 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R439 | Installed57 actual bootstrap regressions |31 tests passed;zero failures/errors/skips;isolated no-site interpreter loads installed package only;source/installed code and tests frozen | [raw](docs/validation/evidence/native-worker-bootstrap-20261029-r1/installed57-bootstrap-r1/verification.json) | Includes dependency priority/foreign-package rejection;not natural neural quality |
 | R440 | Installed57 actual CUDA denoising and complete source parity | Fresh DF3 binding;RTX3060/4forwards/nativeNumPy2.4.6;1124160 Float32 PCM bytes identical to source57 and package replay;controlled MSE improvement12.25446dB | [raw](docs/validation/evidence/native-worker-bootstrap-20261029-r1/installed57-gpu-r1/verification.json) · [C71 audio](docs/product/CASES.md#c71-source57-native-worker-gpu) | One actual model;other14 models,full installed contracts,liveSkill switch and natural listening separate |
 | R441 | Source57 complete native service-contract rerun |16 groups/398 tests;zero failures/errors/skips;source/tests frozen;existing native Python dependencies;original failed run preserved | [passed r2](docs/validation/evidence/native-worker-bootstrap-20261029-r1/source57-contracts-r2/verification.json) · [retained failed r1](docs/validation/evidence/native-worker-bootstrap-20261029-r1/source57-contracts-r1/verification.json) | Contract coverage,not all real-model or broad natural-quality acceptance;installed398 still running |
+| R442 | Installed57 actual RIFE CUDA / C72 |Fresh bindings and ingest IDs;69+20 actual CUDA forwards;nativeNumPy2.4.6;96 animation/36 VFR-alpha frames retain every original anchor and match accepted baseline;full movie RGBA/PCM package replay equal | [raw](docs/validation/evidence/native-worker-bootstrap-20261029-r1/installed57-interpolation-r2/verification.json) · [C72 MP4/GIF](docs/product/CASES.md#c72-installed57-rife) · [retained harness failure](docs/validation/evidence/native-worker-bootstrap-20261029-r1/installed57-interpolation-r1/verification.json) | Revalidation of installed dependency repair;not newly invented interpolation capability or natural-motion/all-model/Skill acceptance |
 
 ## 当前边界与开发方向
 

@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "commit": "edb3205e8b8fd8bafee1f65bf3350c5586ad5e0b",
+  "origin_main": "edb3205e8b8fd8bafee1f65bf3350c5586ad5e0b",
+  "advertised_remote": "edb3205e8b8fd8bafee1f65bf3350c5586ad5e0b",
+  "pushed": true,
+  "verified_driver_bytes": [
+    {
+      "path": "docs/validation/build_native_worker_delivery.py",
+      "sha256": "edfcd810f4ae502e756e36f0de52a76236a5d6b797f2a09cc893857ff8d96203"
+    },
+    {
+      "path": "docs/validation/run_native_worker_regressions.py",
+      "sha256": "da5c41435f4c73bf80f69fd77fec68450dc242db1b9be5fcea6f14bc76d17ac9"
+    },
+    {
+      "path": "docs/validation/run_native_worker_gpu_case.py",
+      "sha256": "1473fb0d553fb5bee2186eba7cc39935943384bbb8560ca66fe38e7934fb07d7"
+    }
+  ],
+  "source_cli": "0.1.57",
+  "installed_candidate": "0.1.57",
+  "registered_skill_cli": "0.1.56"
+}

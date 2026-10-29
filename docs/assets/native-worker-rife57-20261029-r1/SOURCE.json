@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "case": "C72",
+  "cli_version": "0.1.57",
+  "actual_neural_CUDA": true,
+  "model": "RIFE4.25",
+  "model_license": "MIT",
+  "source_license": "CC-BY-3.0 Sintel;CC0 diagnostic",
+  "actual_forwards": 89,
+  "evidence": "docs/validation/evidence/native-worker-bootstrap-20261029-r1/installed57-interpolation-r2/verification.json",
+  "evidence_sha256": "0434680f2d74539009851add01e3a41f11ff768feae46fcf082a8eb6fdafbbb2",
+  "files": [
+    {
+      "path": "docs/assets/native-worker-rife57-20261029-r1/actual.gif",
+      "bytes": 1903191,
+      "sha256": "26e22eeafcd6e94dea38a791b6f5eb5743b958cbb2cab4a2bfa9913c5ed54c99"
+    },
+    {
+      "path": "docs/assets/native-worker-rife57-20261029-r1/actual.mp4",
+      "bytes": 198558,
+      "sha256": "3fac7d1afe439f962dec7d865d4f6bd1305004d02e755adb44861c808d37af0c"
+    },
+    {
+      "path": "docs/assets/native-worker-rife57-20261029-r1/actual.png",
+      "bytes": 54768,
+      "sha256": "bab99ac4a279899eaae5d7b652768edfb8e116bb1747396e121dd53817c3a76e"
+    },
+    {
+      "path": "docs/assets/native-worker-rife57-20261029-r1/SOURCE.txt",
+      "bytes": 1215,
+      "sha256": "4e463d0871902eb53d22221bd4261c62ad6cd49ec849dc17100149f975f35a4a"
+    }
+  ],
+  "human_playback": false,
+  "natural_quality_accepted": false
+}

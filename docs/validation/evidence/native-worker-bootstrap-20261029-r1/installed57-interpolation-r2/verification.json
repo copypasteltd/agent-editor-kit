@@ -1,0 +1,164 @@
+{
+  "status": "passed",
+  "cli_version": "0.1.57",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.55\\final-r1\\installed",
+  "source_fallback": false,
+  "installed_only": true,
+  "actual_RIFE_CUDA": true,
+  "fresh_adapter_registered": true,
+  "synthetic_protocol_worker": false,
+  "checks": {
+    "natural": {
+      "frames": 96,
+      "complete_RGBA_bytes": 22118400,
+      "original_anchors_equal": true,
+      "complete_accepted_baseline_equal": true,
+      "actual_model_execution": {
+        "engine": "rife425-native-cuda-v1",
+        "device": "NVIDIA GeForce RTX 3060",
+        "precision": "float32",
+        "network": "disabled",
+        "CPU_fallback": false,
+        "versions": {
+          "torch": "2.13.0+cu130",
+          "numpy": "2.4.6",
+          "safetensors": "0.8.0"
+        },
+        "weight_reader": "safetensors-pread",
+        "model_loads": 1,
+        "load_seconds": 0.21915369998896495,
+        "CUDA_admission": {
+          "policy": "cuda-uuid-physical-and-torch-free-v1",
+          "stage": "interpolation-load",
+          "required_free_bytes": 1113063424,
+          "reservation": false,
+          "oom_guarantee": false,
+          "query_started_at_utc": "2026-10-29T03:54:10.988914+00:00",
+          "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+          "logical_device_index": 0,
+          "idle_cache_release": {
+            "scope": "current-worker",
+            "synchronized": true,
+            "empty_cache_called": true,
+            "completed": true,
+            "active_allocation_preserved": true,
+            "allocated_before_bytes": 0,
+            "reserved_before_bytes": 0,
+            "allocated_after_bytes": 0,
+            "reserved_after_bytes": 0,
+            "released_reserved_bytes": 0
+          },
+          "query_command": [
+            "C:\\Windows\\System32\\nvidia-smi.EXE",
+            "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+            "--query-gpu=uuid,memory.total,memory.free",
+            "--format=csv,noheader,nounits"
+          ],
+          "torch_free_bytes": 11799625728,
+          "torch_total_bytes": 12884377600,
+          "physical_free_bytes": 10684989440,
+          "physical_total_bytes": 12884901888,
+          "effective_free_bytes": 10684989440,
+          "query_finished_at_utc": "2026-10-29T03:54:11.152219+00:00",
+          "sample_seconds": 0.16329990001395345,
+          "status": "admitted"
+        },
+        "scale": 1.0,
+        "padded_raster": [
+          320,
+          192
+        ],
+        "padding": "replicate",
+        "flow_forwards": 69,
+        "generated_frames": 69,
+        "alpha_transport": "same-flow-mask-premultiplied-RGBA",
+        "time_queries": {
+          "1/4": 23,
+          "2/4": 23,
+          "3/4": 23
+        },
+        "cuda_peak_allocated_bytes": 78060544
+      }
+    },
+    "alpha": {
+      "frames": 36,
+      "complete_RGBA_bytes": 3317760,
+      "original_anchors_equal": true,
+      "complete_accepted_baseline_equal": true,
+      "actual_model_execution": {
+        "engine": "rife425-native-cuda-v1",
+        "device": "NVIDIA GeForce RTX 3060",
+        "precision": "float32",
+        "network": "disabled",
+        "CPU_fallback": false,
+        "versions": {
+          "torch": "2.13.0+cu130",
+          "numpy": "2.4.6",
+          "safetensors": "0.8.0"
+        },
+        "weight_reader": "safetensors-pread",
+        "model_loads": 1,
+        "load_seconds": 0.20081419998314232,
+        "CUDA_admission": {
+          "policy": "cuda-uuid-physical-and-torch-free-v1",
+          "stage": "interpolation-load",
+          "required_free_bytes": 1089470464,
+          "reservation": false,
+          "oom_guarantee": false,
+          "query_started_at_utc": "2026-10-29T03:54:25.024033+00:00",
+          "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+          "logical_device_index": 0,
+          "idle_cache_release": {
+            "scope": "current-worker",
+            "synchronized": true,
+            "empty_cache_called": true,
+            "completed": true,
+            "active_allocation_preserved": true,
+            "allocated_before_bytes": 0,
+            "reserved_before_bytes": 0,
+            "allocated_after_bytes": 0,
+            "reserved_after_bytes": 0,
+            "released_reserved_bytes": 0
+          },
+          "query_command": [
+            "C:\\Windows\\System32\\nvidia-smi.EXE",
+            "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+            "--query-gpu=uuid,memory.total,memory.free",
+            "--format=csv,noheader,nounits"
+          ],
+          "torch_free_bytes": 11799625728,
+          "torch_total_bytes": 12884377600,
+          "physical_free_bytes": 10684989440,
+          "physical_total_bytes": 12884901888,
+          "effective_free_bytes": 10684989440,
+          "query_finished_at_utc": "2026-10-29T03:54:25.168372+00:00",
+          "sample_seconds": 0.14434800000162795,
+          "status": "admitted"
+        },
+        "scale": 1.0,
+        "padded_raster": [
+          192,
+          128
+        ],
+        "padding": "replicate",
+        "flow_forwards": 20,
+        "generated_frames": 20,
+        "alpha_transport": "same-flow-mask-premultiplied-RGBA",
+        "time_queries": {
+          "1/3": 10,
+          "2/3": 10
+        },
+        "cuda_peak_allocated_bytes": 44735488
+      }
+    }
+  },
+  "full_rendered_RGBA_and_PCM_replay_equal": true,
+  "source_and_installed_281_modules_frozen_equal": true,
+  "registered56_skill_and_runtime_unchanged": true,
+  "licenses": "Sintel CC-BY-3.0;diagnostic CC0;RIFE MIT;original attribution retained",
+  "natural_quality_accepted": false,
+  "human_listening": false,
+  "continuous_human_playback": false,
+  "all15_models_accepted": false,
+  "live_skill_activation": false
+}

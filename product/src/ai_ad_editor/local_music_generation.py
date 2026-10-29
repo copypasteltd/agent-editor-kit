@@ -81,7 +81,8 @@ def settings(*, threads=4):
         raise argument_error('threads须为1..32整数')
     return dict(threads=threads, device='cuda:0', precision='bfloat16', sample_rate=RATE,
                 channels=2, sampler='euler', scheduler='simple', cfg=1.0, shift=3.0, flow_multiplier=1.0,
-                cpu_weight_offload=True, cpu_neural_inference=False)
+                cpu_weight_offload=True, cpu_neural_inference=False,
+                weight_read_backend='pread', dynamic_vram=False)
 
 
 def _ordinary(path):

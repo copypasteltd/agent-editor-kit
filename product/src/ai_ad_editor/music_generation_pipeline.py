@@ -18,6 +18,7 @@ from .pipeline_diagnostics import Session, _limited_json, SUMMARY_LIMIT
 from .utils import atomic_write_json, run_process, sha256_file
 
 PHASES = {'verifying-music-artifacts', 'admitting-music-text', 'loading-music-text', 'encoding-music-request',
+          'importing-music-runtime',
           'releasing-music-text', 'admitting-music-diffusion', 'loading-music-diffusion', 'generating-music',
           'releasing-music-diffusion', 'decoding-music-audio', 'encoding-music-audio'}
 
@@ -55,6 +56,28 @@ def validate_response(response, request):
         if any(response[k] is not False for k in ('padded', 'looped', 'resampled', 'normalized', 'service_started', 'shared_queue_touched')):
             raise ValueError('Output was changed or a shared service was used')
         model = response['model']
+        from .music_generation_model import validate_weight_reads
+        validate_weight_reads(model['local_weight_reads'])
+        if model['dynamic_vram'] is not False or model['elapsed_includes_runtime_import'] is not True:
+            raise ValueError('Static weight loading or complete elapsed clock missing')
+        from math import isfinite
+        timing_keys = {'runtime_import_seconds', 'text_checkpoint_load_seconds',
+                       'text_encode_seconds_including_device_load', 'text_load_and_encode_seconds',
+                       'diffusion_checkpoint_load_seconds', 'diffusion_sample_seconds_including_device_load',
+                       'diffusion_load_and_generate_seconds', 'vae_checkpoint_load_seconds',
+                       'vae_decode_seconds_including_device_load', 'vae_load_and_decode_seconds'}
+        if not isinstance(model['timings'], dict) or set(model['timings']) != timing_keys:
+            raise ValueError('Music stage clocks missing or unknown')
+        for name in timing_keys:
+            value = model['timings'][name]
+            if type(value) not in (int, float) or not isfinite(value) or value < 0:
+                raise ValueError('Music stage clock invalid: ' + name)
+        elapsed = model['elapsed_seconds']
+        measured = sum(model['timings'][name] for name in ('runtime_import_seconds',
+            'text_load_and_encode_seconds', 'diffusion_load_and_generate_seconds', 'vae_load_and_decode_seconds'))
+        if (type(elapsed) not in (int, float) or not isfinite(elapsed) or elapsed + 1e-6 < measured
+                or type(model['offline_cli_flag_supported']) is not bool):
+            raise ValueError('Music elapsed clock excludes a recorded stage')
         if model['neural_backend'] != 'cuda' or model['CPU_fallback'] is not False or model['forwards']['diffusion'] < generation['steps']:
             raise ValueError('CUDA diffusion was not observed')
         for label in ('text', 'vae', 'diffusion'):
@@ -68,7 +91,6 @@ def validate_response(response, request):
         for key in ('output_PCM_sha256', 'output_sha256'):
             if not re.fullmatch(r'sha256:[0-9a-f]{64}', response[key]):
                 raise ValueError('Output digest missing')
-        from math import isfinite
         if any(type(response[k]) not in (int, float) or not isfinite(response[k]) or response[k] <= 0 for k in ('output_peak', 'output_rms')):
             raise ValueError('Invalid or silent signal')
     except (ValueError, TypeError, KeyError) as exc:

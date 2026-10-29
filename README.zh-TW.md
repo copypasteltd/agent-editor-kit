@@ -1,8 +1,10 @@
 # agent editor kit
 
-<!-- aek-cli64-current -->
-**CLI0.1.64 開發中：真實GPU神經配樂及工程套件回放通過。** 10秒純音樂完成四階段CUDA、完整PCM和入軌；候選Skill的PowerShell入口也完成獨立安裝版工程套件回放。首次生成約66分鐘。完整431相容組仍有1項失敗，獨立安裝版新生成尚待驗收。正式入口：CLI0.1.63／local61／r58。 [Music](docs/product/NEURAL_MUSIC_GENERATION.md)
-<!-- /aek-cli64-current -->
+<!-- aek-cli65-current -->
+**CLI0.1.65 開發中：固定pread讀取與完整計時。** 原始碼配樂74／隔離33／控制26分別通過；兩套既有原生環境的微型BF16實際讀取通過。local63候選及未註冊Skill入口已核驗，真實GPU新生成繼續驗證。正式入口仍CLI0.1.63／local61／r58；完整相容與聽審未收口。 [Loading](docs/product/NEURAL_MUSIC_LOADING.md)
+
+原12項會話組有1項啟動失敗；記憶體觀測下的單項通過尚未確認原因。另外已重現兩個備份完整性缺陷，修復待完成。 [Round](docs/validation/CLI65配乐读取与计时_2026-10-30.md)
+<!-- /aek-cli65-current -->
 
 **r58統一Skill工具包已獨立驗收。** 161條目／160清單檔案／93 Skill檔案；中文與空格目錄解包、四包配置、獨立註冊、實際譜面與循環修復、完整ACES YUV／PCM／PNG及專案重播通過。未新增模型推理，不等於乾淨主機或自然品質驗收。
 
@@ -1283,6 +1285,7 @@ flowchart LR
 | F85 | 8套可編輯複合光效內容包 | OP01—OP08完整參數、作者時鐘動畫、實際MP4/GIF與可編輯專案；重用已有光學內核。 | `template apply` | [完整參數與樣片](docs/product/OPTICAL_EFFECT_PACK.md)；會替換完整effects陣列，須審閱既有效果；不是8個新算子。 |
 | F86 | N002母圖光效選型 | 同一N002、同一2秒時刻的8張實際PNG；頁面選擇輸出ID/版本/摘要，電腦與手機寬度互動/截圖已核驗。 | `preview frame; template apply` | [母圖預覽與選型](docs/product/OPTICAL_N002_PREVIEWS.md)；480×270參考，另有動態樣片；母圖權利與MIT模板分開，不增加500 LUT數量。 |
 | F87 | 原生GPU神經配樂（開發中） | 明確風格／歌詞請求、固定ACE-Step1.5 Turbo、CUDA前向證據、原生48kHz雙聲道Float32 WAV、生成配方與獨立音軌。 | `music generator-adapter; music inspect-generation; music generate` | [完整配樂介面、參數與邊界](docs/product/NEURAL_MUSIC_GENERATION.md)；CLI64開發介面；正式63暫不含。不是MIDI、樂器分軌或已驗收自然音質。 |
+| F88 | 神經配樂權重讀取與完整計時（開發中） | 四組件實際pread讀取記錄、靜態載入策略、匯入／checkpoint／生成分段計時；失敗不回退mmap或CPU神經推理。 | `music generator-adapter; music generate` | [CLI65使用邏輯和計時範圍](docs/product/NEURAL_MUSIC_LOADING.md)；自然品質與效能依真實任務分別驗收。 |
 
 ## 支持的服務模塊與依賴
 
@@ -2166,6 +2169,21 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R553 | CLI64候選Skill實際工程套件回放 | 實際未註冊PowerShell入口→獨立安裝64：母帶、配方、完整RGBA／PCM相同，94候選檔案與正式93檔案原樣，無原始碼回落；新模型前向0，不代表安裝版獨立生成或正式切換。 [Proof](docs/validation/evidence/music-generation-20261030-r1/installed-package-stage1/verification.json) |
 | R554 | CLI64原會話控制斷言複測通過 | 相同原始碼／測試位元組與20秒啟動、30秒控制時限，單項通過，狀態／停止斷言已執行；先前完整431組和單項失敗原樣保留，負載相關原因未定位。 [Proof](docs/validation/evidence/music-generation-20261030-r1/source64-session-control-r4/verification.json) |
 | R555 | ACE-Step另一原生核心介面探測 | D盤Python／Comfy0.31介面通過，580登記檔案涵蓋278實際匯入；模型前向0。探測器依實際參數啟用離線保護；產品64尚未適配此核心，未驗收其生成相容或速度。 [Proof](docs/validation/evidence/acestep15-admission-20261029-r1/native-interface-r6/verification.json) |
+| R556 | CLI65配樂請求與讀取邊界 | 37通過，包含12項新讀取與計時邊界；未載入音樂模型。 [Proof](docs/validation/evidence/music-loading-20261030-r1/source65-unit-r1/verification.json) |
+| R557 | CLI65原生工作進程隔離 | 33通過，原生依賴歸屬及拒絕外部應用；無神經推理。 [Proof](docs/validation/evidence/music-loading-20261030-r1/source65-bootstrap-r1/verification.json) |
+| R558 | CLI65執行控制回歸 | 26通過，原生進程樹、執行預算與清理；不代替新音樂中途故障驗證。 [Proof](docs/validation/evidence/music-loading-20261030-r1/source65-control-r1/verification.json) |
+| R559 | CLI65配樂相容回歸 | 74通過，零失敗／錯誤／跳過，原始碼凍結一致；包含前述37項，不重複累計。 [Proof](docs/validation/evidence/music-loading-20261030-r1/source65-music-r1/verification.json) |
+| R560 | CLI65既有E盤原生BF16讀取 | Torch2.14／safetensors0.8：四份微型BF16張量實際pread、數值及metadata相同，讀取器恢復。無音樂權重／前向。 [Proof](docs/validation/evidence/music-loading-20261030-r1/native-reader-r1/verification.json) |
+| R561 | CLI65既有D盤原生BF16讀取 | Torch2.13／safetensors0.8：相同微型BF16與metadata核驗通過；快取及新檔案在E盤。不是完整音樂核心相容驗收。 [Proof](docs/validation/evidence/music-loading-20261030-r1/native-reader-d1/verification.json) |
+| R562 | CLI65原生匯入堆疊觀察 | 原生進程建立時間／執行檔前後相符，採樣時位於Torch檔案讀取；不請求區域變數，不據單次採樣確認全部耗時原因。 [Proof](docs/validation/evidence/music-loading-20261030-r1/native-stack-reader1/verification.json) |
+| R563 | CLI65獨立候選構建與安裝 | local63候選離線安裝、version及288應用模組精確核驗通過；僅作後續實測，正式63／local61不變。 [Proof](docs/validation/evidence/music-loading-20261030-r1/candidate-r1/verification.json) |
+| R564 | CLI65統一Skill候選入口 | 94檔案／17模組正文與腳本、實際PowerShell version／help通過；尚未註冊為正式入口，本項無模型推理。 [Proof](docs/validation/evidence/music-loading-20261030-r1/skill-stage-r1/verification.json) |
+| R565 | CLI65原會話控制回歸（失敗） | 12項執行，1失敗、0錯誤、0跳過，狀態failed。原斷言與時限保留；20秒啟動等待仍失敗，狀態／停止斷言未到達。完整443不驗收，舊431失敗保留。 [Proof](docs/validation/evidence/music-loading-20261030-r1/source65-session-r1/verification.json) |
+| R566 | CLI65原啟動門檻的記憶體觀測 | 原斷言和20秒門檻的單項通過；CLI匯入1.062s、事務準備1.344s。全程31次真實fsync合計6.466s，並非全在準備階段；未重現整組失敗，不替代R565。 [Proof](docs/validation/evidence/music-loading-20261030-r1/session-startup-trace-r1/verification.json) |
+| R567 | CLI65恢復備份缺陷重現（未修復） | 兩個一次性工程確認：同長度損壞備份被恢復並刪除日誌；末項備份缺失時，前兩項已被寫回。僅重現，不是恢復驗收；G33修復待完成。 [Proof](docs/validation/evidence/music-loading-20261030-r1/recovery-integrity-r1/verification.json) |
+| R568 | CLI65獨立安裝版配樂回歸 | 74通過，288應用模組與原始碼相同，載入實際安裝包，無原始碼回退；含37項請求／讀取檢查，不重複累計。無神經音樂生成。 [Proof](docs/validation/evidence/music-loading-20261030-r1/installed65-music-i1/verification.json) |
+| R569 | CLI65獨立安裝版原生隔離 | 33通過，實際載入獨立安裝包，原生依賴歸屬與拒絕外部應用檢查，無神經推理。 [Proof](docs/validation/evidence/music-loading-20261030-r1/installed65-bootstrap-i1/verification.json) |
+| R570 | CLI65獨立安裝版執行控制 | 26通過，實際載入獨立安裝包，進程樹、執行預算、清理檢查；音樂中途故障與完整443仍須另驗。 [Proof](docs/validation/evidence/music-loading-20261030-r1/installed65-control-i1/verification.json) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

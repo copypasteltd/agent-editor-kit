@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "executable": "E:\\dev\\sandbox\\\u6a21\u578b\u914d\u4e50\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+  "fixture_only": true,
+  "model_loaded": false,
+  "music_generated": false,
+  "neural_forwards": 0,
+  "network_events": [],
+  "torch": "2.14.0+cu130",
+  "safetensors": "0.8.0",
+  "actual_BF16_tensor_values_equal": true,
+  "actual_metadata_equal": true,
+  "reader_restored": true,
+  "local_weight_reads": [
+    {
+      "file": "diffusion_model.safetensors",
+      "backend": "pread",
+      "opens": 1
+    },
+    {
+      "file": "language_model.safetensors",
+      "backend": "pread",
+      "opens": 1
+    },
+    {
+      "file": "text_encoder.safetensors",
+      "backend": "pread",
+      "opens": 1
+    },
+    {
+      "file": "vae.safetensors",
+      "backend": "pread",
+      "opens": 1
+    }
+  ],
+  "import_seconds": 313.91569940000045,
+  "model_helper_sha256": "85d0a5ed15c40334893ed7949d4626534e923266a466ad3bbb7ef0079e0f78c2",
+  "elapsed_seconds": 319.1194594999979
+}

@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "source_cli": "0.1.65",
+  "candidate": "v0.1.0-alpha.4-local.63",
+  "formal_cli": "0.1.63",
+  "README_rows": 570,
+  "previous_565_rows_retained": true,
+  "feature_rows": 88,
+  "original_session_group_failed": true,
+  "backup_defects_reproduced": 2,
+  "backup_defects_repaired": false,
+  "original_startup_deadline_preserved": true,
+  "actual65_generation_accepted": false,
+  "formal_activation": false,
+  "full_product_goal_closed": false,
+  "evidence": {
+    "session-startup-trace-r1": "d266db3c7eda528f13113ca674af978a8cdc54804fe7314793905a5b727f681c",
+    "recovery-integrity-r1": "b2bbaf0a9836f187d8ca3d30a7d0ab0b622b1b3dde86f0dc2a563a1b1dbd4c21",
+    "installed65-music-i1": "3914248e74881b7a0e21428414b04c055e135d0fb98c8fa85df940be4927a2d1",
+    "installed65-bootstrap-i1": "bad394c167d176db5f6c5836ede581cbb1932760715bd3e134fd38518161f98d",
+    "installed65-control-i1": "9a50f9b5a93ab651d1d809984cf3a8e0dfcceb156b13d1aa7e16198b2c2b805c"
+  },
+  "files": {
+    "README.md": "fd34701d594dc295929f316dc4fb83f1240e82bc232bb5011f12026f0e396f7d",
+    "README.zh-TW.md": "96761963c29f4c05d9e5146c4b226a869ae09f4232d6fbd53d39bff703e1917f",
+    "README.en.md": "52d0ec0f7e10146da0a6f75667ad9b76aaff88851e729755cd02930cc292fed2",
+    "docs/product/NEURAL_MUSIC_LOADING.md": "17cbd685498ce6e58f67554a84b07e6bc4a3662ecba2af955dc276b0acffa5b5",
+    "docs/validation/CLI65\u914d\u4e50\u8bfb\u53d6\u4e0e\u8ba1\u65f6_2026-10-30.md": "06d17b08a5ef4bc984cae9f1d821f8d26a378e645006f9fbbee1bef4543f49e9"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "README_rows": 565,
+  "previous_555_rows_retained": true,
+  "feature_rows": 88,
+  "evidence": {
+    "source65-unit-r1": "13144282216175aed08f5c55ecfc01505bc1b6f708b960424dc2fc0e5b6052a6",
+    "source65-music-r1": "705fe4b8d1b55ed46c15ef7b4247628ac78dc2368a2517be031febc909ce76e8",
+    "source65-bootstrap-r1": "f2134b4bebdea37656a696806aaf5543bfbb77c1aa421368ae9e49061b27d372",
+    "source65-control-r1": "31a31b0c347a7de850a40d28e69feb551e2968dccba6ab31429c068dd3a03727",
+    "native-reader-r1": "b7b1cfb547e57fbf7865b72f96bea9d1ff06dc59bb0a7ceaf493234246ca0981",
+    "native-reader-d1": "249165be09fe69eac316d4f67a3b218d6eecf7cf5302e0283388b207a37a4ebe",
+    "candidate-r1": "881428ecc485c3cdc5511d1e0609a9c2ebd2dc96b44a2b54dbc3ccf0d58cdd14",
+    "skill-stage-r1": "6d93b8262827d07012b606e4ddf4e7900da0252c1f6ede0862746333a7bd85cb",
+    "native-stack-reader1": "b38e53043a3b694611b49c7d1ace60c6f5e41603a229f234bc18d06b4faf0a26",
+    "source65-session-r1": "8a6b51bbe193e19630ec0059daa6ba4d63b06ab7e8a8fba3e6882ecc65d36aa9"
+  },
+  "files": {
+    "README.md": "90eca343ca47f5a16f97a2a1640e93d9f3c37a8e20048dbe671549d202beb1f9",
+    "README.zh-TW.md": "82edfc8815ad16c97cd51f0af8f70082574d8fabbc33e6fded27ee61271f3c18",
+    "README.en.md": "61064e2fda3a1da4af08c67339f4289812afb5e885ac9a21323fb8902939ac7b",
+    "docs/product/NEURAL_MUSIC_GENERATION.md": "5f76ee5a4db0a0acc994f707ca5596c2275447a50a6d5f919c4ba744b3e66b9a"
+  },
+  "source_cli": "0.1.65",
+  "candidate": "v0.1.0-alpha.4-local.63",
+  "formal_cli": "0.1.63",
+  "formal_activation": false,
+  "actual_music_generation_accepted": false,
+  "full_product_goal_closed": false
+}

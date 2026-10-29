@@ -131,3 +131,7 @@ $musicReplayProject = 'E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/my-music
 ```
 
 这条流程只使用工程包内既有音频和配方，模型前向为0。重新生成须重新登记外部模型／核心／Python并调用`music generate`。本轮安装回放通过不能代替独立安装版新生成、正式Skill切换、人类完整听审或具体输出权利结论。
+
+## CLI65读取与计时更新
+
+开发候选65固定四组件pread与静态加载策略，并将运行库导入纳入模型函数总时钟；实际命令、字段范围、新适配器登记、两套原生小型BF16核验及验收限制见[CLI65读取与完整计时手册](NEURAL_MUSIC_LOADING.md)。旧CLI64实测和失败收据原样保留；正式入口仍63。

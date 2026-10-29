@@ -1,8 +1,10 @@
 # agent editor kit
 
-<!-- aek-cli64-current -->
-**CLI0.1.64 开发中：真实GPU神经配乐及工程包回放通过。** 10秒纯音乐完成四阶段CUDA、完整PCM和入轨；候选Skill的PowerShell入口也完成独立安装版工程包回放。首次生成约66分钟。完整431兼容组仍有1项失败，独立安装版新生成尚待验收。正式入口：CLI0.1.63／local61／r58。 [Music](docs/product/NEURAL_MUSIC_GENERATION.md)
-<!-- /aek-cli64-current -->
+<!-- aek-cli65-current -->
+**CLI0.1.65 开发中：固定pread读取与完整计时。** 源码配乐74／隔离33／控制26分别通过；两套已有原生环境的微型BF16实际读取通过。local63候选及未注册Skill入口已核验，真实GPU新生成继续验证。正式入口仍CLI0.1.63／local61／r58；完整兼容与听审未收口。 [Loading](docs/product/NEURAL_MUSIC_LOADING.md)
+
+原12项会话组有1项启动失败；内存观测下的单项通过尚未确认原因。另外已复现两个备份完整性缺陷，修复待完成。 [Round](docs/validation/CLI65配乐读取与计时_2026-10-30.md)
+<!-- /aek-cli65-current -->
 
 **r58统一Skill工具包已独立验收。** 161条目／160清单文件／93 Skill文件；中文和空格目录解包、四包配置、独立注册、实际谱面与循环修复、完整ACES YUV／PCM／PNG及工程包重放通过。未新增模型推理，不等于干净主机或自然质量验收。
 
@@ -1283,6 +1285,7 @@ flowchart LR
 | F85 | 8套可编辑复合光效内容包 | OP01—OP08完整参数、作者时钟动画、实际MP4/GIF与可编辑工程；复用已有光学内核。 | `template apply` | [完整参数与样片](docs/product/OPTICAL_EFFECT_PACK.md)；会替换完整effects数组，需审阅既有效果；不是8个新算子。 |
 | F86 | N002母图光效选型 | 同一N002、同一2秒时刻的8张实际PNG；页面选择输出ID/版本/摘要，电脑与手机宽度交互/截图已核验。 | `preview frame; template apply` | [母图预览与选型](docs/product/OPTICAL_N002_PREVIEWS.md)；480×270参考，另有动态样片；母图权利与MIT模板分开，不增加500 LUT数量。 |
 | F87 | 原生GPU神经配乐（开发中） | 显式风格／歌词请求、固定ACE-Step1.5 Turbo、CUDA前向证据、原生48kHz双声道Float32 WAV、生成配方与独立音轨。 | `music generator-adapter; music inspect-generation; music generate` | [完整配乐接口、参数与边界](docs/product/NEURAL_MUSIC_GENERATION.md)；CLI64开发接口；正式63暂不含。不是MIDI、乐器分轨或已验收自然音质。 |
+| F88 | 神经配乐权重读取与完整计时（开发中） | 四组件实际pread读取记录、静态加载策略、导入／checkpoint／生成分段计时；失败不回退mmap或CPU神经推理。 | `music generator-adapter; music generate` | [CLI65使用逻辑和计时范围](docs/product/NEURAL_MUSIC_LOADING.md)；自然质量与性能按真实任务分别验收。 |
 
 ## 支持的服务模块与依赖
 
@@ -2166,6 +2169,21 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R553 | CLI64候选Skill实际工程包回放 | 实际未注册PowerShell入口→独立安装64：母带、配方、完整RGBA／PCM相同，94候选文件与正式93文件原样，无源码回落；新模型前向0，不代表安装版独立生成或正式切换。 [Proof](docs/validation/evidence/music-generation-20261030-r1/installed-package-stage1/verification.json) |
 | R554 | CLI64原会话控制断言复测通过 | 相同源码／测试字节与20秒启动、30秒控制时限，单项通过，状态／停止断言已执行；此前完整431组和单项失败原样保留，负载相关原因未定位。 [Proof](docs/validation/evidence/music-generation-20261030-r1/source64-session-control-r4/verification.json) |
 | R555 | ACE-Step另一原生核心接口探测 | D盘Python／Comfy0.31接口通过，580登记文件覆盖278实际导入；模型前向0。探测器按实际参数启用离线保护；产品64尚未适配此核心，未验收其生成兼容或速度。 [Proof](docs/validation/evidence/acestep15-admission-20261029-r1/native-interface-r6/verification.json) |
+| R556 | CLI65配乐请求与读取边界 | 37通过，包含12项新读取与计时边界；未加载音乐模型。 [Proof](docs/validation/evidence/music-loading-20261030-r1/source65-unit-r1/verification.json) |
+| R557 | CLI65原生工作进程隔离 | 33通过，原生依赖归属及拒绝外部应用；无神经推理。 [Proof](docs/validation/evidence/music-loading-20261030-r1/source65-bootstrap-r1/verification.json) |
+| R558 | CLI65执行控制回归 | 26通过，原生进程树、执行预算与清理；不代替新音乐中途故障验证。 [Proof](docs/validation/evidence/music-loading-20261030-r1/source65-control-r1/verification.json) |
+| R559 | CLI65配乐兼容回归 | 74通过，零失败／错误／跳过，源码冻结一致；包含前述37项，不重复累计。 [Proof](docs/validation/evidence/music-loading-20261030-r1/source65-music-r1/verification.json) |
+| R560 | CLI65已有E盘原生BF16读取 | Torch2.14／safetensors0.8：四份微型BF16张量实际pread、数值及metadata相同，读取器恢复。无音乐权重／前向。 [Proof](docs/validation/evidence/music-loading-20261030-r1/native-reader-r1/verification.json) |
+| R561 | CLI65已有D盘原生BF16读取 | Torch2.13／safetensors0.8：相同微型BF16与metadata核验通过；缓存及新文件在E盘。不是完整音乐核心兼容验收。 [Proof](docs/validation/evidence/music-loading-20261030-r1/native-reader-d1/verification.json) |
+| R562 | CLI65原生导入栈观察 | 原生进程创建时间／可执行文件前后匹配，采样时位于Torch文件读取；不请求局部变量，不据单次采样确认全部耗时原因。 [Proof](docs/validation/evidence/music-loading-20261030-r1/native-stack-reader1/verification.json) |
+| R563 | CLI65独立候选构建与安装 | local63候选离线安装、version及288应用模块精确核验通过；只作后续实测，正式63／local61不变。 [Proof](docs/validation/evidence/music-loading-20261030-r1/candidate-r1/verification.json) |
+| R564 | CLI65统一Skill候选入口 | 94文件／17模块正文与脚本、实际PowerShell version／help通过；尚未注册为正式入口，本项无模型推理。 [Proof](docs/validation/evidence/music-loading-20261030-r1/skill-stage-r1/verification.json) |
+| R565 | CLI65原会话控制回归（失败） | 12项执行，1失败、0错误、0跳过，状态failed。原断言与时限保留；20秒启动等待仍失败，状态／停止断言未到达。完整443不验收，旧431失败保留。 [Proof](docs/validation/evidence/music-loading-20261030-r1/source65-session-r1/verification.json) |
+| R566 | CLI65原启动门槛的内存观测 | 原断言和20秒门槛的单项通过；CLI导入1.062s、事务准备1.344s。全程31次真实fsync合计6.466s，并非全在准备阶段；未复现整组失败，不替代R565。 [Proof](docs/validation/evidence/music-loading-20261030-r1/session-startup-trace-r1/verification.json) |
+| R567 | CLI65恢复备份缺陷复现（未修复） | 两个一次性工程确认：同长度损坏备份被恢复并删除日志；末项备份缺失时，前两项已被写回。仅复现，不是恢复验收；G33修复待完成。 [Proof](docs/validation/evidence/music-loading-20261030-r1/recovery-integrity-r1/verification.json) |
+| R568 | CLI65独立安装版配乐回归 | 74通过，288应用模块与源码相同，加载实际安装包，无源码回落；含37项请求／读取检查，不重复累计。无神经音乐生成。 [Proof](docs/validation/evidence/music-loading-20261030-r1/installed65-music-i1/verification.json) |
+| R569 | CLI65独立安装版原生隔离 | 33通过，实际加载独立安装包，原生依赖归属与拒绝外部应用检查，无神经推理。 [Proof](docs/validation/evidence/music-loading-20261030-r1/installed65-bootstrap-i1/verification.json) |
+| R570 | CLI65独立安装版执行控制 | 26通过，实际加载独立安装包，进程树、执行预算、清理检查；音乐中途故障与完整443仍须另验。 [Proof](docs/validation/evidence/music-loading-20261030-r1/installed65-control-i1/verification.json) |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

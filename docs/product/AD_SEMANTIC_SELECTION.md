@@ -93,3 +93,9 @@ Invoke-AekSource ad build --project E:/video-work/demo `
 最终冻结源码已分别通过45项选材／分镜测试和104项语义检索／决策／任务／工程包／升级兼容测试。新控制器包含独立穷举参考的100组候选图、冲突重分配、无解拒绝、完整来源窗口、源音、摘要、权利、原查询绑定及 CLI 计划→实际提交检查。最终源码分组、实际CUDA索引／校准／选材／渲染和包重放的终态以 [原始证据](../validation/evidence/ad-selection-20261029-r1) 为准；正在运行的任务不视为已通过。
 
 繁體：本功能以實際校準語義檢索聯合選材，產生可編輯分鏡；目前為CLI54原始碼擴展，既有CLI53 Skill維持原版。English: Source CLI54 joins calibrated visual retrieval to editable storyboards with global candidate assignment and portable selection receipts. It does not establish whole-shot semantics or autonomous advertising quality.
+
+## 2026-10-29 原生校准与候选 Skill
+
+完整11来源／10内容去重图像的CUDA索引与校准已成功。校准20条正例全部正确接受，20条负例仍有1条误接受；5%为本次经验拟合，不是无误选保证，真实选材与成片闭环另验。原先缺brick／horse的失败设置未删除。
+
+[统一Skill候选](../validation/evidence/ad-selection-20261029-r1/skill-candidate-r1/verification.json)在E盘保持1入口／17模块／93文件，增加内部选材说明；格式检查、实际安装版version／capabilities通过，没有在这些检查中执行新GPU推理。正式注册仍为CLI53／r54。安装版真实选材／成片验收通过后再激活。

@@ -1,5 +1,7 @@
 # agent editor kit 文档 / Documentation
 
+2026-10-29 源码CLI55：[原生子进程继承预算修复](product/PROCESS_OPERATION_BUDGET.md)，15／45／104源码分组分别通过；CLI54实际选材超时失败保留，未激活54候选。55离线包与新完整11素材GPU流程另验，正式Skill仍53／r54；38项原关闭条件保持。
+
 2026-10-29 CLI54交付修复：[原生离线候选已安装](validation/CLI54安装恢复_2026-10-29.md)，281模块／8原生资源一致，45安装专项通过。已注册Skill仍CLI53／r54，真实CUDA闭环另验；原38项关闭条件保留。
 
 Source / 源码 / 原始碼 CLI0.1.54：[校准语义广告联合选材](product/AD_SEMANTIC_SELECTION.md)，45项源码测试通过；实际CUDA和安装／Skill另验。

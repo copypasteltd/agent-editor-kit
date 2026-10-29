@@ -1,5 +1,7 @@
 # agent editor kit
 
+**原始碼 CLI55：修復原生子程序繼承命令預算。** 等待期間檢查外層期限與取消檔案，關閉自有程序作業並回收讀取執行緒；15項控制、45項選材／分鏡、104項語義相容分組分別通過。CLI54實際選材逾時且未產生成片，失敗保留；CLI55新包與完整GPU流程另驗。正式Skill仍CLI53／r54。[行為、原生前後對照與邊界](docs/product/PROCESS_OPERATION_BUDGET.md)。
+
 **CLI54 完整候選包已原生離線安裝，尚未切換 Skill。** 已修復安裝驅動逾時參數，保留首次失敗；1705個Wheel載荷檔案、281個執行期模組及8個原生資源核驗一致。安裝版45項選材／分鏡專項通過；實際CUDA校準、選材與成片重放另驗。[安裝恢復與實際入口](docs/validation/CLI54安装恢复_2026-10-29.md)。
 
 **原始碼 CLI0.1.54：校準語義選材已接入廣告分鏡。** 新增 `ad select`，依所有變體的來源長度、明確原音及已核驗權利過濾候選，再聯合分配素材，產生可編輯計畫及逐鏡頭依據；45項原始碼測試通過，實際CUDA整條流程另驗。目前安裝與唯一Skill仍CLI53／r54。[方案與使用](docs/product/AD_SEMANTIC_SELECTION.md)。
@@ -1083,6 +1085,7 @@ flowchart LR
 | F75 | 編碼前後HDR光量與轉換收據 | 明確nit；實際作者RGB16輸入與解碼後原生RGB／YCbCr分別測量，MaxRGB／CIE Y、位置／時長、完整像素與時鐘摘要、全影格裁切帳本。 | `native_hdr_light_measurement; surface measure; surface measure-media; surface export; render` | CPU測量；不推斷顯示器、不自動寫SEI；原生曝光缺口／重疊不填補。 |
 | F76 | 原生 ACES 時間軸與顯示視圖 | 固定ACES1.3/2.0/2.1；AP1/D60場景輸入、曝光、正式SDR/PQ/HLG輸出、獨立觀看視圖、顯示線性縮圖與測量。 | `native_aces_display; surface ocio-configs; render; preview; surface measure` | 原始碼CLI53、CPU；不是自動相機IDT/AMF/LMT/GPU或實體監看；安裝Skill已53。 |
 | F77 | 校準語義廣告聯合選材 | 單批真實語義介面、所有變體來源範圍／原音／權利篩選、全域去重分配、可攜逐鏡頭依據與普通分鏡計畫。 | `ad select; ad build; ad revise` | 原始碼CLI54；45項測試通過，實際CUDA／安裝／Skill另驗；不證明整段語義或自然廣告品質。 |
+| F78 | 原生子程序繼承預算 | 在預算上下文內，啟動／等待／返回時檢查外層期限和取消標記，中斷時關閉自有Job並回收讀取執行緒。 | `run_process / operation_budget` | 原始碼CLI55；15項控制回歸通過；不承諾OS阻塞呼叫硬即時搶占。 |
 
 ## 支持的服務模塊與依賴
 
@@ -1798,6 +1801,13 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R385 | Installed CLI54 selection/storyboard gate | 45 passed; zero failures/errors/skips; isolated -I -S -B process;281 installed/source modules frozen equal | [raw](docs/validation/evidence/ad-selection-20261029-r1/installed-selection-r1/verification.json) | Separate from45 source tests; semantic-service mocks in CLI plumbing tests are not actual GPU inference |
 | R386 | Source CLI54 actual CUDA image index | Native RTX3060 successfully indexed11 source records;10 content-deduplicated embeddings;768 dimensions;2 actual model forwards;network disabled | [raw and receipt](docs/validation/evidence/ad-selection-20261029-r1/gpu-index-completed-r1/verification.json) | Index only; familiar static images; not calibration/selection/render acceptance |
 | R387 | Installed CLI54 semantic compatibility | 104 passed;zero failures/errors/skips;isolated installed package only;281 modules frozen equal before/after | [raw](docs/validation/evidence/ad-selection-20261029-r1/installed-semantic-r1/verification.json) | Retrieval/decisions/jobs/packages/runtime relocation; separate from45 installed selection tests and actual GPU workflow |
+| R388 | Source CLI54 actual CUDA calibration | Full11-source static corpus restored;20/20 correct positive acceptances,1/20 false accepted negatives;5% empirical false-accept fit;source frozen equal | [raw](docs/validation/evidence/ad-selection-20261029-r1/complete-r2/verification.json), [fit](docs/validation/evidence/ad-selection-20261029-r1/complete-r2/calibrate-full.stdout) | Familiar static images/10 classes;not independent natural-action or no-error acceptance;first failed setup preserved |
+| R389 | Unified CLI54 Skill candidate | E-drive unregistered candidate:1 entry,17 modules,93 files;Skill-format check and actual pinned installed version/capabilities calls passed | [raw](docs/validation/evidence/ad-selection-20261029-r1/skill-candidate-r1/verification.json) | Live registration remains CLI53/r54;zero new GPU forwards in these candidate checks;activation waits for installed actual case |
+| R390 | Actual source CLI54 ad selection failure | Native attempt ended PROCESS_TIMEOUT during dependency loading;no selected plan and no rendered output | [failure](docs/validation/evidence/ad-selection-20261029-r1/case-r2/terminal.json) | Failed case preserved;prior index/calibration and45/104 tests do not prove actual selection |
+| R391 | Inherited native-process budget defect and fix | Old0.2s outer budget allowed2.217s successful child completion;CLI55 same probe raised PROCESS_TIMEOUT at0.373s | [before](docs/validation/evidence/ad-selection-20261029-r1/nested-deadline-reproduction-r1/verification.json), [after](docs/validation/evidence/process-budget-20261029-r1/native-probe-r1/verification.json) | Cooperative checks;not hard real-time OS-call preemption |
+| R392 | Source CLI55 native process-control gate | 15 passed:4 new actual subprocess tests and11 existing integrity/control tests;owned PID/reader cleanup verified | [raw](docs/validation/evidence/process-budget-20261029-r1/deadline-r1/verification.json) | Source only;candidate installation/Skill acceptance separate |
+| R393 | Source CLI55 selection/storyboard compatibility | 45 passed;zero failures/errors/skips;281 source modules frozen equal | [raw](docs/validation/evidence/process-budget-20261029-r1/selection-r1/verification.json) | Separate fromCLI54 historical gates and actual GPU selection |
+| R394 | Source CLI55 semantic compatibility | 104 passed across retrieval/decisions/jobs/packages/upgrades;frozen source unchanged | [raw](docs/validation/evidence/process-budget-20261029-r1/semantic-r1/verification.json) | Re-registration/index/calibration required after implementation change;no manual hash rebinding |
 
 ## 當前邊界與開發方向
 

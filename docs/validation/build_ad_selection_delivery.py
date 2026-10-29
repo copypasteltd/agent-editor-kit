@@ -28,12 +28,17 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--run', required=True)
     parser.add_argument('--resume-from', help='Reuse a completed, hash-checked candidate build; never reuse an installation')
+    parser.add_argument('--cli-version', choices=('0.1.54', '0.1.55'), default='0.1.54')
+    parser.add_argument('--local-release', choices=('v0.1.0-alpha.4-local.52', 'v0.1.0-alpha.4-local.53'), default='v0.1.0-alpha.4-local.52')
+    parser.add_argument('--evidence-series', default='ad-selection-20261029-r1')
     args = parser.parse_args()
     assert args.run.replace('-', '').isalnum()
+    assert args.evidence_series.replace('-', '').isalnum()
+    assert (args.cli_version, args.local_release) in [('0.1.54', 'v0.1.0-alpha.4-local.52'), ('0.1.55', 'v0.1.0-alpha.4-local.53')]
     if args.resume_from:
         assert args.resume_from.replace('-', '').isalnum() and args.resume_from != args.run
-    base = ROOT/'local/agent-ffmpeg/v0.1.0-alpha.4-local.52'
-    evidence = ROOT/'docs/validation/evidence/ad-selection-20261029-r1'/('installation-candidate-'+args.run)
+    base = ROOT/'local/agent-ffmpeg'/args.local_release
+    evidence = ROOT/'docs/validation/evidence'/args.evidence_series/('installation-candidate-'+args.run)
     evidence.mkdir(parents=True, exist_ok=False)
     (evidence/'executed-generator.py').write_bytes(Path(__file__).read_bytes())
     source_before = {p.name: sha(p) for p in SOURCE.glob('*.py')}
@@ -44,7 +49,7 @@ def main():
         *[r['path'] for r in json.loads((SOURCE/'native_ocio_manifest.json').read_bytes())['files']]]
     native_before = {name: sha(SOURCE/name) for name in native_names}
     report = dict(status='running', started_at_utc=datetime.now(timezone.utc).isoformat(),
-        cli_version='0.1.54', source_fallback=False, native_windows=True, virtualization=False,
+        cli_version=args.cli_version, source_fallback=False, native_windows=True, virtualization=False,
         global_environment_install=False, network=False)
     calls = []
     def run(name, command, *, timeout=1800, json_output=True, env=None):
@@ -89,7 +94,7 @@ def main():
         assert len(wheels) == 1
         wheel = wheels[0]
         pin = 'sha256:'+sha(wheel)
-        checked = builder['validate_product_wheel'](wheel, '0.1.54',
+        checked = builder['validate_product_wheel'](wheel, args.cli_version,
             (ROOT/'product/pyproject.toml').read_text('utf-8'), SOURCE, pin)
         save(evidence/'product-wheel-verification.json', checked)
         bundle = base/('candidate-'+build_run)/'bundle'
@@ -130,7 +135,7 @@ def main():
         assert result['ok']
         prefix = [sys.executable, '-I', '-S', '-B', '-u', '-X', 'utf8', installed/'run.py']
         version = run('version', [*prefix, 'version'])
-        assert version['ok'] and version['data']['cli_version'] == '0.1.54'
+        assert version['ok'] and version['data']['cli_version'] == args.cli_version
         capabilities = run('capabilities', [*prefix, 'capabilities'])
         assert 'ad.select' in capabilities['data']['capabilities']['ai']['ad_storyboard']['commands']
         assert source_before == {p.name: sha(p) for p in SOURCE.glob('*.py')}

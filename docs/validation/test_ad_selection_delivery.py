@@ -17,11 +17,14 @@ def digest(path):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--installed', type=Path, required=True)
-    parser.add_argument('--group', choices=('selection', 'semantic'), required=True)
+    parser.add_argument('--group', choices=('deadline', 'selection', 'semantic'), required=True)
     parser.add_argument('--run', required=True)
+    parser.add_argument('--cli-version', choices=('0.1.54', '0.1.55'), default='0.1.54')
+    parser.add_argument('--evidence-series', default='ad-selection-20261029-r1')
     args = parser.parse_args()
     assert sys.flags.isolated and sys.flags.no_site and sys.dont_write_bytecode
     assert args.run.replace('-', '').isalnum()
+    assert args.evidence_series.replace('-', '').isalnum()
     scratch = ROOT/'local/tmp'
     scratch.mkdir(parents=True, exist_ok=True)
     os.environ['TEMP'] = os.environ['TMP'] = str(scratch)
@@ -32,10 +35,11 @@ def main():
     package = site/'ai_ad_editor'
     source = ROOT/'product/src/ai_ad_editor'
     tests = ROOT/'product/tests'
-    modules = (['test_ad_selection', 'test_ad_storyboard'] if args.group == 'selection' else
+    modules = (['test_process_operation_budget', 'test_execution_control'] if args.group == 'deadline' else
+               ['test_ad_selection', 'test_ad_storyboard'] if args.group == 'selection' else
         ['test_semantic', 'test_semantic_decisions', 'test_semantic_jobs',
          'test_semantic_package', 'test_semantic_upgrade'])
-    out = ROOT/'docs/validation/evidence/ad-selection-20261029-r1'/args.run
+    out = ROOT/'docs/validation/evidence'/args.evidence_series/args.run
     out.mkdir(parents=True, exist_ok=False)
     (out/'executed-runner.py').write_bytes(Path(__file__).read_bytes())
     observed = {p.name: digest(p) for p in source.glob('*.py')}
@@ -49,7 +53,7 @@ def main():
     sys.path[:0] = [str(site), str(tests)]
     assert all(Path(value).resolve() != source.parent.resolve() for value in sys.path if value)
     import ai_ad_editor
-    assert Path(ai_ad_editor.__file__).resolve().parent == package and ai_ad_editor.VERSION == '0.1.54'
+    assert Path(ai_ad_editor.__file__).resolve().parent == package and ai_ad_editor.VERSION == args.cli_version
     suite = unittest.defaultTestLoader.loadTestsFromNames(modules)
     with (out/'tests.txt').open('w', encoding='utf-8', newline='\n') as stream:
         result = unittest.TextTestRunner(stream=stream, verbosity=2).run(suite)

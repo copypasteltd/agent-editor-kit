@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "public_entries": 1,
+  "modules": 17,
+  "candidate_skill_files": 93,
+  "candidate_cli": "0.1.54",
+  "checks": [
+    {
+      "name": "version",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\local\\agent-ffmpeg\\ad-selection-skill-stage-r1\\skills\\agent-ffmpeg-local-editor\\scripts\\run.py",
+        "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\local\\agent-ffmpeg\\ad-selection-skill-stage-r1\\runtime-candidate.json",
+        "version"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "capabilities",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\local\\agent-ffmpeg\\ad-selection-skill-stage-r1\\skills\\agent-ffmpeg-local-editor\\scripts\\run.py",
+        "E:\\dev\\sandbox\\AI\u5e7f\u544a\u526a\u8f91\\local\\agent-ffmpeg\\ad-selection-skill-stage-r1\\runtime-candidate.json",
+        "capabilities"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "live_skill_unchanged": true,
+  "source_fallback": false,
+  "actual_new_GPU_forwards": 0,
+  "skill_creator_quick_validate": "Skill is valid! (separately executed)",
+  "requires_installed_actual_case_before_activation": true
+}

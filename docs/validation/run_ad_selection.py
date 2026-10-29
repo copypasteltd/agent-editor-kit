@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+import math
 import os
 import re
 from pathlib import Path
@@ -13,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[2]
 BASE = ROOT / 'docs/validation/evidence/ad-selection-20261029-r1'
 WORK = ROOT / 'local/agent-ffmpeg/ad-selection-20261029-r1'
 SOURCE = ROOT / 'product/src/ai_ad_editor'
+ACTIVE_EVIDENCE = None
 
 
 def load(path):
@@ -32,15 +34,29 @@ def frozen():
 
 
 def main():
-    global WORK
+    global WORK, BASE, ACTIVE_EVIDENCE
     parser = argparse.ArgumentParser()
     parser.add_argument('--phase', choices=('tests', 'compat', 'setup', 'complete', 'case'), required=True)
     parser.add_argument('--run', required=True)
+    parser.add_argument('--attempt', help='New case evidence identity; retains the same frozen project and queries')
+    parser.add_argument('--timeout-seconds', type=float, default=900)
+    parser.add_argument('--cli-version', choices=('0.1.54', '0.1.55'), default='0.1.54')
+    parser.add_argument('--full-corpus', action='store_true')
+    parser.add_argument('--evidence-series', default='ad-selection-20261029-r1')
     args = parser.parse_args()
     assert args.run.replace('-', '').isalnum()
+    assert args.evidence_series.replace('-', '').isalnum()
+    BASE = ROOT/'docs/validation/evidence'/args.evidence_series
+    adapter_id = 'source'+args.cli_version.rsplit('.', 1)[1]
+    index_name = 'visual'+args.cli_version.rsplit('.', 1)[1]
+    profile_name = 'accept'+args.cli_version.rsplit('.', 1)[1]+'cuda'
+    assert math.isfinite(args.timeout_seconds) and 0 < args.timeout_seconds <= 3600
+    if args.attempt:
+        assert args.phase == 'case' and args.attempt.replace('-', '').isalnum()
     WORK = ROOT / ('local/agent-ffmpeg/ad-selection-20261029-'+args.run)
-    out = BASE / (args.phase+'-'+args.run)
+    out = BASE / (args.phase+'-'+args.run+('-'+args.attempt if args.attempt else ''))
     out.mkdir(parents=True, exist_ok=False)
+    ACTIVE_EVIDENCE = out
     (out/'executed-runner.py').write_bytes(Path(__file__).read_bytes())
     before = frozen()
     save(out/'source-before.json', before)
@@ -49,7 +65,7 @@ def main():
         command = list(map(str, command))
         env = os.environ.copy()
         env['TEMP'] = env['TMP'] = str(ROOT/'local/tmp')
-        result = subprocess.run(command, cwd=ROOT, env=env, capture_output=True, timeout=1200,
+        result = subprocess.run(command, cwd=ROOT, env=env, capture_output=True, timeout=args.timeout_seconds+300,
                                 creationflags=subprocess.CREATE_NO_WINDOW)
         dest = (WORK if binary else out)/(name+('.raw' if binary else '.stdout'))
         dest.write_bytes(result.stdout)
@@ -61,10 +77,13 @@ def main():
         assert result.returncode == 0, (name, result.stdout[-1500:], result.stderr[-2000:])
         if cli:
             value = json.loads(result.stdout)
-            assert value['ok'] and value['provenance']['cli_version'] == '0.1.54'
+            assert value['ok'] and value['provenance']['cli_version'] == args.cli_version
             return value['data']
         return result.stdout
     def cli(name, *items):
+        items = list(items)
+        if '--timeout-seconds' in items:
+            items[items.index('--timeout-seconds')+1] = str(args.timeout_seconds)
         bootstrap = "import sys;sys.path.insert(0,'product/src');from ai_ad_editor.cli import main;raise SystemExit(main())"
         return run(name, [sys.executable, '-E', '-B', '-u', '-X', 'utf8', '-c', bootstrap, *items], cli=True)
     if args.phase in ('tests', 'compat'):
@@ -125,8 +144,12 @@ def main():
         save(WORK/'request.json', dict(brief=brief, queries=queries, unique_assets=True))
         save(out/'heldout-expected.json', dict(coffee='asset_b4', cat='asset_c2', camera='asset_a7',
             scope='Familiar static photographs; labels are not sent to the model or selection command.'))
-        cli('init', 'project', 'init', project, '--project-id', 'semantic_ad54')
-        images = load(ROOT/'docs/assets/semantic-20261025-r1/SOURCE.json')['assets']
+        cli('init', 'project', 'init', project, '--project-id', 'semantic_ad'+args.cli_version.rsplit('.', 1)[1])
+        image_evidence = ROOT/('docs/assets/semantic-package-20261025-r1/SOURCE.json' if args.full_corpus
+                               else 'docs/assets/semantic-20261025-r1/SOURCE.json')
+        images = load(image_evidence)['assets']
+        if args.full_corpus:
+            assert len([r for r in images if r['kind'] == 'image']) == 11
         for image in images:
             if image['kind'] != 'image':
                 continue
@@ -135,7 +158,7 @@ def main():
                 '--input', ROOT/image['path'], '--asset-id', image['asset_id'],
                 '--license-spdx', image['license_spdx'], '--creator', image['creator'],
                 '--source-url', (ROOT/image['path']).as_uri(), '--verification-status', 'verified',
-                '--evidence', ROOT/'docs/assets/semantic-20261025-r1/SOURCE.json')
+                '--evidence', image_evidence)
         font = SOURCE/'material_data/fonts/noto-sans-sc-variable.ttf'
         cli('font', 'media', 'ingest', '--project', project, '--input', font, '--asset-id', 'font',
             '--license-spdx', 'OFL-1.1', '--creator', 'Noto contributors', '--verification-status', 'verified',
@@ -149,18 +172,19 @@ def main():
             '--evidence', SOURCE/'material_data/catalog.json')
         previous = ROOT/'workspace/semantic-upgrade-20261025-installed-r2/restored'
         old = load(previous/'project.json')['extensions']['local_semantic']['adapters'][-1]
-        cli('register', 'semantic', 'adapter-register', '--project', project, '--adapter-id', 'source54',
+        cli('register', 'semantic', 'adapter-register', '--project', project, '--adapter-id', adapter_id,
             '--python-executable', old['python_executable'], '--model-path', old['model_path'],
             '--evidence', Path(old['model_path'])/'README.md', '--creator', 'Google SigLIP2',
             '--license-spdx', 'Apache-2.0', '--verification-status', 'verified', '--timeout-seconds', '900')
-        cli('index', 'semantic', 'index', '--project', project, '--adapter-id', 'source54',
-            '--index-id', 'visual54', '--all-visual-assets', '--device', 'cuda', '--timeout-seconds', '900')
+        cli('index', 'semantic', 'index', '--project', project, '--adapter-id', adapter_id,
+            '--index-id', index_name, '--all-visual-assets', '--device', 'cuda', '--timeout-seconds', '900')
         original = previous/'assets/semantic-calibration/2c838ad2abacb4bbf23fe872/dataset.json'
         shutil.copyfile(original, WORK/'calibration.json')
-        cli('calibrate', 'semantic', 'calibrate', '--project', project, '--index-id', 'visual54',
-            '--calibration-id', 'accept54cuda', '--input', WORK/'calibration.json', '--kind', 'image',
+        cli('calibrate', 'semantic', 'calibrate', '--project', project, '--index-id', index_name,
+            '--calibration-id', profile_name, '--input', WORK/'calibration.json', '--kind', 'image',
             '--device', 'cuda', '--timeout-seconds', '900')
-        report = dict(status='passed', source_cli='0.1.54', project=str(project),
+        report = dict(status='passed', source_cli=args.cli_version, project=str(project),
+                      index_id=index_name, calibration_id=profile_name, full_corpus=args.full_corpus,
                       calibration_source_sha256=sha(original), heldout_queries_sha256=sha(WORK/'request.json'),
                       native_device='cuda', new_index_and_calibration=True, downloads=False, virtualization=False)
     else:
@@ -169,22 +193,27 @@ def main():
             gate = BASE/('setup-'+args.run)/'verification.json'
         setup = load(gate)
         assert setup['status'] == 'passed'
+        assert sha(WORK/'request.json') == setup['heldout_queries_sha256']
         index_id, calibration_id = setup.get('index_id', 'visual54'), setup.get('calibration_id', 'accept54cuda')
         project = WORK/'project'
         original = (project/'project.json').read_bytes()
+        save(out/'project-before.json', dict(sha256=hashlib.sha256(original).hexdigest()))
+        plan_file = project/'validation'/('selected'+('-'+args.attempt if args.attempt else '')+'.json')
         dry = cli('select-dry', 'ad', 'select', '--project', project, '--input', WORK/'request.json',
-            '--output', project/'validation/selected.json', '--index-id', index_id,
-            '--calibration-id', calibration_id, '--kind', 'image', '--device', 'cuda', '--dry-run')
+            '--output', plan_file, '--index-id', index_id,
+            '--calibration-id', calibration_id, '--kind', 'image', '--device', 'cuda',
+            '--timeout-seconds', '900', '--dry-run')
         assert dry['selection_not_executed'] and dry['plan'] is None
         selected = cli('select', 'ad', 'select', '--project', project, '--input', WORK/'request.json',
-            '--output', project/'validation/selected.json', '--index-id', index_id,
+            '--output', plan_file, '--index-id', index_id,
             '--calibration-id', calibration_id, '--kind', 'image', '--device', 'cuda', '--timeout-seconds', '900')
         assert (project/'project.json').read_bytes() == original
-        expected = load(BASE/('setup-'+args.run)/'heldout-expected.json')
+        expected_record = load(BASE/('setup-'+args.run)/'heldout-expected.json')
+        expected = {q['id']: expected_record[q['id']] for q in load(WORK/'request.json')['queries']}
         actual = {row['shot_id']: row['asset_id'] for row in selected['selection']['selected']}
         save(out/'actual-selection.json', actual)
-        assert all(actual[k] == expected[k] for k in actual), (actual, expected)
-        cli('build', 'ad', 'build', '--project', project, '--input', project/'validation/selected.json')
+        assert actual == expected, (actual, expected)
+        cli('build', 'ad', 'build', '--project', project, '--input', plan_file)
         movies = {}
         for variant in ('wide', 'vertical'):
             movie = project/('renders/'+variant+'.mp4')
@@ -193,7 +222,7 @@ def main():
             movies[variant] = movie
         package = project/'exports/editable.zip'
         cli('export', 'convert', 'export', '--project', project, '--output', package, '--target-format', 'package')
-        replay = WORK/'replay'
+        replay = WORK/('replay'+('-'+args.attempt if args.attempt else ''))
         cli('import', 'convert', 'import', '--input', package, '--output', replay)
         replay_movie = replay/'renders/wide.mp4'
         cli('replay', 'render', '--project', replay, '--sequence-id', 'ad_visualdemo_wide_sequence', '--output', replay_movie)
@@ -205,7 +234,7 @@ def main():
         rgb, pcm = stream('original-rgb', movies['wide']), stream('original-pcm', movies['wide'], True)
         assert rgb == stream('replay-rgb', replay_movie) and pcm == stream('replay-pcm', replay_movie, True)
         assert len(rgb) == 320*180*3*90 and len(pcm) > 0
-        report = dict(status='passed', source_cli='0.1.54', actual_GPU_semantic_search=True,
+        report = dict(status='passed', source_cli=args.cli_version, actual_GPU_semantic_search=True,
             selection=actual, renders=3, full_RGB_bytes=len(rgb), full_PCM_bytes=len(pcm),
             full_project_replay_equal=True, project_unchanged_by_selection=True,
             natural_motion_quality_accepted=False, independent_agent_benchmark=False)
@@ -216,4 +245,9 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except BaseException as exc:
+        if ACTIVE_EVIDENCE is not None:
+            save(ACTIVE_EVIDENCE/'terminal-failure.json', dict(status='failed', error=repr(exc)))
+        raise

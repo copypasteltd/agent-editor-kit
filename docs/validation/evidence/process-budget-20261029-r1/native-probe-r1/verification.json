@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "outer_budget_seconds": 0.2,
+  "child_timeout_seconds": 10,
+  "elapsed_seconds": 0.3731460000271909,
+  "error": {
+    "code": "PROCESS_TIMEOUT",
+    "message": "\u4efb\u52a1\u5df2\u8d85\u65f6",
+    "path": null,
+    "retryable": true
+  },
+  "child_completed": false,
+  "source_utils_sha256": "6be05b9d022e94e402fa456b18c97a1855cd6992645e6cb35e9952d050f84788",
+  "runtime": "source CLI55",
+  "scope": "cooperative native control; not OS-blocked-call real-time guarantee"
+}

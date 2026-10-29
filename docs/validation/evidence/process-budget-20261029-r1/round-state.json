@@ -1,0 +1,36 @@
+{
+  "at_utc": "2026-10-29T01:20:05.446592+00:00",
+  "goal": "active_not_complete",
+  "source_cli": "0.1.55",
+  "registered_cli": "0.1.53",
+  "registered_release": "v0.1.0-alpha.4-local.51",
+  "registered_kit": "r54",
+  "last_confirmed_pushed_commit": "18ae6c74d03057e29ab51e2f4058299069f7c3e3",
+  "completed_source_gates": {
+    "deadline": 15,
+    "selection": 45,
+    "semantic": 104
+  },
+  "source_runtime_files": 281,
+  "live_handles": {
+    "native55_build_install": 59774,
+    "native55_full_setup": 21677,
+    "scoped_diff_check": 11399
+  },
+  "source55_native_setup_work": "local/agent-ffmpeg/ad-selection-20261029-r3",
+  "source55_setup_ids": {
+    "adapter": "source55",
+    "index": "visual55",
+    "calibration": "accept55cuda"
+  },
+  "failed_previous_case": "../ad-selection-20261029-r1/case-r2/terminal.json",
+  "unactivated_54_candidate_skill": "local/agent-ffmpeg/ad-selection-skill-stage-r1/skills/agent-ffmpeg-local-editor",
+  "do_not_restart_live_handles": true,
+  "pending": [
+    "Poll55build; install isolated55 deadline/selection/semantic groups using generic test_ad_selection_delivery --cli-version0.1.55 --evidence-series process-budget-20261029-r1.",
+    "Poll fresh11-source setup55; then run_ad_selection --phase case --run r3 --cli-version0.1.55 --evidence-series process-budget-20261029-r1 --timeout-seconds1800.",
+    "Prepare real installed55 case using proper explicit runtime upgrade (old19source54 bindings invalid after utils change); no hand rebinding.",
+    "Rebase unified Skill candidate to55 only after matching installed tests and actualcase; preserve4offlineGPUmodelpacks and prior releases.",
+    "All38 original G closure rows remain open; no full parity or natural quality claim."
+  ]
+}

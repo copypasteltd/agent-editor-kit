@@ -1,0 +1,26 @@
+{
+  "at_utc": "2026-10-29T00:49:11.756294+00:00",
+  "goal": "active_not_complete",
+  "completed": {
+    "candidate_install": "installation-candidate-r2/verification.json",
+    "installed_selection_tests": 45,
+    "installed_semantic_tests": 104,
+    "actual_GPU_full_index_and_calibration": "complete-r2/verification.json"
+  },
+  "live_handles": {
+    "source_case": 60875,
+    "scoped_commit_and_auto_push": 65867
+  },
+  "source_case_pid": 23980,
+  "candidate_installed": "local/agent-ffmpeg/v0.1.0-alpha.4-local.52/final-r2/installed",
+  "registered_skill": "CLI53/local51/r54 remains unchanged",
+  "do_not_restart_live_jobs": true,
+  "calibration_scope": "11 source records;10 unique image embeddings;40 calibration text queries;20 correct positive acceptances;1/20 false accepted negatives;5% empirical fit only",
+  "pending": [
+    "Inspect actual source case terminal. Do not tune heldout labels/thresholds.",
+    "Actual installed GPU case after explicit project upgrade-semantic; then stage/activate/register unified Skill54 and new kit.",
+    "Preserve all38 original G closure rows; no full parity declaration.",
+    "Verify scoped commit remote; preserve actual source/installed tests as separate groups."
+  ],
+  "prepared_not_executed": "docs/validation/run_ad_selection_installed.py --installed local/agent-ffmpeg/v0.1.0-alpha.4-local.52/final-r2/installed --run r1 (invoke python -I -S -B)"
+}

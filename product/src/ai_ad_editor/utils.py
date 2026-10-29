@@ -305,6 +305,8 @@ def run_process(
     cwd: Path | None = None,
     cancel_file: Path | None = None,
 ) -> subprocess.CompletedProcess[str]:
+    from .execution_control import checkpoint
+    checkpoint(force=True)
     command = list(args)
     if cancel_file is not None and cancel_file.exists():
         raise AppError("CANCELLED", "任务在启动前已被取消", exit_code=8, path=str(cancel_file), retryable=False)
@@ -352,6 +354,11 @@ def run_process(
             reader.join(timeout=5)
 
         while reader.is_alive():
+            try:
+                checkpoint()
+            except BaseException:
+                stop_process()
+                raise
             if cancel_file is not None and cancel_file.exists():
                 stop_process()
                 raise AppError("CANCELLED", "任务已取消，临时产物将被清理", exit_code=8, path=str(cancel_file), retryable=False, cause=result.get("stderr", "")[-2000:])
@@ -363,6 +370,7 @@ def run_process(
                 # Closing our owned job ends those descendants before joining.
                 job.close()
             reader.join(timeout=0.1)
+        checkpoint(force=True)
         return subprocess.CompletedProcess(command, process.returncode, result.get("stdout", ""), result.get("stderr", ""))
     except OSError as exc:
         raise AppError("PROCESS_START_FAILED", f"无法启动子进程: {command[0]}", exit_code=10, cause=str(exc)) from exc

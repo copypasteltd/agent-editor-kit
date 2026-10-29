@@ -1933,3 +1933,10 @@ product/tests/test_ad_selection.py -text whitespace=cr-at-eol
 
 docs/validation/build_ad_selection_delivery.py text eol=lf
 docs/validation/test_ad_selection_delivery.py text eol=lf
+
+docs/validation/run_ad_selection_installed.py text eol=lf
+docs/validation/stage_ad_selection_skill.py text eol=lf
+
+docs/validation/evidence/process-budget-20261029-r1/** -text -whitespace
+docs/validation/test_process_budget_delivery.py text eol=lf
+product/tests/test_process_operation_budget.py text eol=lf

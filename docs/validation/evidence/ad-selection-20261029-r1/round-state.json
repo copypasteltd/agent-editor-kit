@@ -5,7 +5,7 @@
   "candidate_installed_cli": "0.1.54",
   "registered_cli": "0.1.53",
   "registered_kit": "r54",
-  "last_confirmed_pushed_commit": "525c68012bdf14faea737d95d51adc9f14a812f7",
+  "last_confirmed_pushed_commit": "18ae6c74d03057e29ab51e2f4058299069f7c3e3",
   "completed_this_round": {
     "native_candidate_install": "installation-candidate-r2/verification.json",
     "installed_selection_tests": 45,
@@ -14,16 +14,13 @@
     "GPU_index": "complete-r2/index-full.stdout",
     "installed_semantic_tests": 104
   },
-  "running": [
-    {
-      "name": "native-CUDA-calibration",
-      "session_id": 2016,
-      "pid": 24184
-    }
-  ],
+  "running": [],
   "pending": [
     "Actual GPU semantic selection, two formats and complete RGB/PCM editable replay",
     "Matching CLI54 registered Skill and formal kit",
     "All38 original closure conditions; no full parity claim"
-  ]
+  ],
+  "status": "historical-CLI54-superseded-by-source55",
+  "superseded_by": "../process-budget-20261029-r1/round-state.json",
+  "actual_selection_case": "failed PROCESS_TIMEOUT; case-r2/terminal.json"
 }

@@ -1,0 +1,9 @@
+{
+  "status": "failed",
+  "driver_exit_code": 1,
+  "command_exit_code": 2,
+  "failed_call": "calibrate",
+  "code": "ARGUMENT_INVALID",
+  "reason": "Original calibration expected brick/horse assets absent from initial nine-image index; original data not narrowed or relabelled",
+  "actual_cuda_index_completed": true
+}

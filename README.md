@@ -1,5 +1,7 @@
 # agent editor kit
 
+**当前本地 CLI56／local54 已安装并注册，唯一 `$agent-ffmpeg-local-editor` 保持1入口／17模块／93文件。** 源码与独立安装版各1／15／45／104四组通过，二者实际CUDA选材及两画幅完整RGB／非静音PCM重放均通过；安装版与源码输出也逐字节一致。四个原有配音／翻译模型包已重新核验。真实C盘入口的完整GPU案例仍在运行，新正式工具包另验。[实际交付与使用流程](docs/validation/CLI56原生交付_2026-10-29.md)。以下较早版本段落保留为历史记录，以顶部当前状态为准。
+
 **CLI56 源码实际CUDA选材与两画幅完整音画重放已通过。** 重新建立11来源索引／校准，3条固定查询与预期标签一致；横竖版各90帧，导出／导入后完整RGB与非静音PCM分别相同。[C69影片、GIF与截图](docs/product/CASES.md#c69-source56-semantic-selection)。安装版实际GPU任务正在运行，正式Skill仍53／r54。
 
 ![Actual CLI56 source selection](docs/assets/ad-selection-source56-20261029-r1/wide.gif)
@@ -1104,6 +1106,7 @@ flowchart LR
 | F76 | 原生 ACES 时间线与显示视图 | 固定ACES1.3/2.0/2.1；AP1/D60场景输入、曝光、正式SDR/PQ/HLG输出、独立观看视图、显示线性缩图与测量。 | `native_aces_display; surface ocio-configs; render; preview; surface measure` | 源码CLI53、CPU；不是自动相机IDT/AMF/LMT/GPU或物理监看；安装Skill已53。 |
 | F77 | 校准语义广告联合选材 | 单批真实语义接口、全变体来源窗口／源音／权利筛选、全局去重分配、可移植逐镜头依据和普通分镜计划。 | `ad select; ad build; ad revise` | 源码CLI54；45项测试通过，实际CUDA／安装／Skill另验；不证明整段语义或自然广告质量。 |
 | F78 | 原生子进程继承预算 | 在预算上下文内，启动／等待／返回时检查外层期限和取消标记，中断时关闭自有Job并回收读取线程。 | `run_process / operation_budget` | 源码CLI55；15项控制回归通过；不承诺OS阻塞调用硬实时抢占。 |
+| F79 | 语义模型原生依赖隔离 | 工作进程固定自己的应用包后恢复模型Python的依赖搜索顺序，保留版本／模块路径／摘要检查，避免安装site覆盖模型NumPy／Pillow。 | `semantic / ad select / project upgrade-semantic` | CLI56源码／安装原生回归与实际CUDA案例通过；新实现须重新登记绑定，非任意环境兼容保证。 |
 
 ## 支持的服务模块与依赖
 
@@ -1855,6 +1858,10 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R421 | Source CLI56 actual GPU selection and complete replay | All3 labels matched;4renders;wide/vertical90frames;fullRGB and finite non-silentPCM equal after project replay | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/case-r5/verification.json) | Familiar static scope;not actual installed/registered acceptance or independent Agent benchmark |
 | R422 | CLI56 actual demo media | Two unchanged source movies,twoGIFs,twoPNG frames,source/rights metadata;vertical PNG inspected | [media](docs/assets/ad-selection-source56-20261029-r1/SOURCE.json) | Technical contain layout,not natural ad aesthetic or continuous listening acceptance |
 | R423 | Installed56 validation workspace collision preserved and driver repaired | Historical CLI55 work basename collision stopped before CLI/model execution;new workspaces include explicit CLI version;actual attempt r2 uses a new folder | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/installed-case-r1/preparation-failure.json) | Preparation failure retained;actual r2 result separately required |
+| R424 | Actual isolated installed CLI56 GPU selection/replay | All3 frozen labels matched;4renders;both90frames;fullRGB and finite non-silentPCM replay equal;no source fallback | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/installed-case-r2/verification.json) | Familiar static corpus;registered entry and natural-quality acceptance remain separate |
+| R425 | Actual installed native dependency and source/render parity | NumPy2.4.6/Pillow12.3.0 loaded from registered native model runtime;versions/paths match;complete RGB/PCM byte equal to source for both variants | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/installed-native-parity-r1/verification.json) | Exact observed runtime;not arbitrary host/dependency compatibility |
+| R426 | Unified56 positive pin | All source/installed1/15/45/104 gates plus actual GPU cases verified;1entry/17modules/93files pinned to native56/local54 | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/skill-pin-r1/verification.json) | Pin receipt alone is not activation or registered-case acceptance |
+| R427 | CLI56 activation and actual C discovery registration | Four existing CPU/GPU voice/translation packs integrity-verified;native runtime configured;single C junction/preflight verified;93Skill files | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/activation-r1/activation-and-registration.json) | Registration passed;full registered GPU case still running;no new voice/translation forwards in activation |
 
 ## 当前边界与开发方向
 

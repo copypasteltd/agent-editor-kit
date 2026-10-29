@@ -2,13 +2,9 @@
 
 <!-- community-current -->
 
-**CLI0.1.52 / local.50 / r53 kit · 1 Skill / 17 modules / 91 files.**
+**Current CLI56/local54 is installed and registered:1entry/17modules/93files.**Source and installed1/15/45/104 groups and actual CUDA/full audiovisual replay passed;four existing model packs are retained.Registered full-GPU and the new formal kit are separate gates.
 
-[Verified small kit](agent-editor-kit-community-unified-skill-r53.zip) · [SHA256 / inventory](community-unified-skill-package-0.1.52-r53.json)
-
-The registered unified Skill now uses CLI52: GPU luminance shoulder and OKLab chroma search, with signal conversion and ICC on CPU. Separate source and installed 70-test and 352-test groups passed. C64 exercised real registered-Skill GPU rendering, previews and complete video/audio editable-package replay.
-
-[GPU colour workflow](../product/GPU_GAMUT.md)
+[CLI56 delivery and usage](../validation/CLI56原生交付_2026-10-29.md) · [Calibrated ad selection](../../skills/agent-ffmpeg-local-editor/references/ad-selection.md)
 
 <!-- /community-current -->
 
@@ -84,3 +80,18 @@ Historical CLI0.1.23:[4K text and reusable native byte coverage](../product/FLOA
 CLI0.1.24:[native Float32 GPU workflow](../product/FLOAT_GPU.md). Explicit geometry/normal composition/text colors/word selection;owned worker cleanup;CPU glyph rasterization and remaining operators retained. Full original target conditions remain open.
 
 CLI0.1.25: [global/interval Float32 grading](../product/FLOAT_ADJUSTMENTS.md); one selected root, authored clocks, explicit local LUT dependencies; CPU effects with compatible GPU composition. One Skill /17 modules /72 files.
+
+
+## Historical current block / 历史区块
+
+<!-- historical-community-current -->
+
+**CLI0.1.52 / local.50 / r53 kit · 1 Skill / 17 modules / 91 files.**
+
+[Verified small kit](agent-editor-kit-community-unified-skill-r53.zip) · [SHA256 / inventory](community-unified-skill-package-0.1.52-r53.json)
+
+The registered unified Skill now uses CLI52: GPU luminance shoulder and OKLab chroma search, with signal conversion and ICC on CPU. Separate source and installed 70-test and 352-test groups passed. C64 exercised real registered-Skill GPU rendering, previews and complete video/audio editable-package replay.
+
+[GPU colour workflow](../product/GPU_GAMUT.md)
+
+<!-- /historical-community-current -->

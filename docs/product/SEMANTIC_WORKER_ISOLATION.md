@@ -36,3 +36,10 @@ CLI55第二套E盘原生环境实际案例已终态通过，完整音画与D盘�
 | F04 | 检索／决策／任务／包／显式升级 | [104项通过](../validation/evidence/semantic-worker-isolation-20261029-r1/semantic-r1/verification.json) |
 
 四组分别零失败／错误／跳过，281模块和各自测试文件前后冻结一致。新CLI56/local54完整离线包与新完整11素材注册／索引／校准任务正在运行。源码测试通过不代表安装版实际模型或最终注册Skill已验收；CLI55安装失败仍保持失败，不重写其包或校准摘要。
+
+
+## CLI56 当前实际安装与注册
+
+安装版1／15／45／104四组分别通过，且独立原生GPU案例已通过，实际NumPy2.4.6／Pillow12.3.0来自注册模型Python而非控制器site。两个画幅的完整RGB及PCM与源码案例逐字节一致：[真实依赖／像素对照](../validation/evidence/semantic-worker-isolation-20261029-r1/installed-native-parity-r1/verification.json)。
+
+正向固定、原四个配音／翻译模型包完整性核验、local54激活和真实C盘入口注册已经完成：[当前交付](../validation/CLI56原生交付_2026-10-29.md)。C盘入口完整CUDA案例仍在执行，新r55工具包另行独立验收。前文等待状态为当时的阶段记录；CLI55真实失败保留，38项完整目标和自然质量要求继续开放。

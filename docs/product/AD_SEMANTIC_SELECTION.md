@@ -1,5 +1,32 @@
 # 校准语义选材 → 可编辑广告分镜
 
+## 当前 CLI56 / local54：实际统一入口
+
+CLI56已经原生离线安装并注册为唯一 `$agent-ffmpeg-local-editor`（1入口／17模块／93文件）。源码与安装版分别通过1项原生引导、15项预算控制、45项选材／分镜、104项语义兼容；两者实际CUDA三镜头选材、横竖版四次渲染及完整RGB／PCM工程重放均已通过。[安装与运行证据](../validation/CLI56原生交付_2026-10-29.md)。真实C盘入口完整GPU案例和新正式工具包仍独立验收。
+
+以下为已经注册的真实入口；项目路径、字体／音乐资产、索引和校准ID必须替换成自己的已登记内容。此示例不代替素材登记、索引构建和校准。
+
+```powershell
+$agentEditor = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1'
+& $agentEditor version
+& $agentEditor capabilities
+& $agentEditor ad select --project E:/video-work/demo `
+  --input E:/video-work/demo/selection.json `
+  --output E:/video-work/demo/validation/selected.json `
+  --index-id visual-v1 --calibration-id accepted-cuda `
+  --kind image --device cuda --limit 20 --timeout-seconds 1800 --dry-run
+# 先检查dry-run，再运行同一条命令并去掉 --dry-run；只有实际选材成功才产生计划。
+& $agentEditor ad build --project E:/video-work/demo `
+  --input E:/video-work/demo/validation/selected.json
+& $agentEditor validate --project E:/video-work/demo
+```
+
+随后按build响应中的实际sequence ID逐变体预览／渲染，再导出可编辑工程包、导入新路径并复核。不要把示例ID或源码案例的绑定直接套给自己的库；实现发生变化时使用显式 `project upgrade-semantic`，保留旧记录，不手工改摘要或复用不匹配的设备校准。完整请求及S01–S14规则见下方；默认仍只去重资产ID，不保证不同ID的同内容去重。
+
+繁體：目前CLI56已原生安裝並註冊一個統一入口；原始碼與安裝版實際CUDA案例分別通過。English: CLI56 is natively installed and registered through one unified Skill. Source and installed CUDA selection/replay cases passed separately; acceptance through the live discovery entry and the new portable kit is tracked independently.
+
+## CLI54 首次实现与交付历史（原文保留）
+
 完整CLI54候选已独立离线安装，281模块／8原生资源字节一致，45项安装专项通过；[安装恢复](../validation/CLI54安装恢复_2026-10-29.md)。唯一已注册Skill仍为CLI53／r54，实际CUDA闭环另验。
 
 源码 CLI **0.1.54** 新增 `ad select`。当前已安装的 CLI53／r54 Skill 保持原版本；新版离线安装、统一 Skill 同步及广泛回归另行验收，不能向 CLI53 入口发送此命令。该功能推进 G26／G27／G35，原38项关闭条件继续保留。

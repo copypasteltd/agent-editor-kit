@@ -1,13 +1,17 @@
 ---
 name: agent-ffmpeg-local-editor
-description: "Edit and generate local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, native CUDA speech denoising, frame interpolation/slow motion and lip sync, tracking, explicit PQ/HLG HDR and native ACES display/view transforms, verified HDR10 static metadata, D50/D60 white adaptation, native RGB ICC profiles and SDR previews, seeded GPU particles, editable GPU flare/light leaks/chromatic split and highlight Bloom/Halation, GPU text/image/first-last generation with reusable model sessions, semantic search, voice/translation, subtitle dubbing, music/SFX and quality checks. Also use for ads, reference remakes, long-to-short clips and screen demos."
+description: "Edit and generate local videos with agent editor kit: multitrack editing, keyframes, 500 filter previews, native CUDA speech denoising, frame interpolation/slow motion and lip sync, tracking, explicit PQ/HLG HDR and native ACES display/view transforms, verified HDR10 static metadata, D50/D60 white adaptation, native RGB ICC profiles and SDR previews, seeded GPU particles, editable GPU flare/light leaks/chromatic split and highlight Bloom/Halation, GPU text/image/first-last generation with reusable model sessions, calibrated semantic ad selection, semantic search, voice/translation, subtitle dubbing, music/SFX and quality checks. Also use for ads, reference remakes, long-to-short clips and screen demos."
 ---
 
 # agent editor kit / unified local Skill
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.51` / CLI `0.1.53`.
+The current local runtime is `v0.1.0-alpha.4-local.54` / CLI `0.1.56`.
+For calibrated visual selection into editable ads, read
+[semantic ad selection](references/ad-selection.md). Inspect actual previews
+and per-shot receipts before client approval; asset-ID uniqueness does not
+exclude duplicate content aliases.
 Native Float32 GPU operations now use bounded owned control pipes. Read
 [GPU execution](references/projection-gpu.md) for policy, actual operator counts,
 cancellation and process/thread/stream cleanup receipts.

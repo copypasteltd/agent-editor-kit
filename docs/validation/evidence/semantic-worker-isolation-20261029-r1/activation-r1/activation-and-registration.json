@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "cli_version": "0.1.56",
+  "activation": {
+    "status": "configured",
+    "release": "v0.1.0-alpha.4-local.54",
+    "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.54\\final-r1\\installed",
+    "community_config": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\community-runtime.json",
+    "verified_packs": [
+      "kokoro-zh-en-int8",
+      "opus-zh-en-cpu-int8",
+      "kokoro-zh-en-cuda13",
+      "opus-zh-en-cuda12-int8"
+    ],
+    "previous_config_preserved": true,
+    "native_windows": true,
+    "network": false,
+    "virtual_environment": false,
+    "evidence": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\activations\\20261029T023954227611Z",
+    "semantic_config": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\semantic-runtime.json",
+    "verify_timeout_seconds": 600
+  },
+  "registration": {
+    "status": "registered",
+    "registration_mode": "single",
+    "registered_at_utc": "2026-10-29T02:41:12.5041057Z",
+    "skill_count": 1,
+    "module_count": 17,
+    "release": "v0.1.0-alpha.4-local.54",
+    "namespace_manifest_sha256": "0d32d7cf0b0e7964a7ffad38a02c0e61ec9e450ea08475f79433f07a829552bc",
+    "launcher_preflight_verified": true,
+    "registered_cli_version": "0.1.56",
+    "name": "agent-ffmpeg-local-editor",
+    "canonical_directory": "E:\\dev\\sandbox\\AI广告剪辑\\skills\\agent-ffmpeg-local-editor",
+    "registration_directory": "C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor",
+    "discovery_directory": "C:\\Users\\carzy\\.codex\\skills",
+    "runtime_directory": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.54\\final-r1\\installed",
+    "created_entry": false,
+    "retired_junction_count": 0,
+    "retired_junctions": [],
+    "original_specialist_sources_preserved": true
+  },
+  "public_entries": 1,
+  "modules": 17,
+  "skill_files": 93,
+  "source_fallback": false,
+  "verified_model_packs": 4,
+  "actual_registered_GPU_case_accepted": false,
+  "formal_kit_accepted": false
+}

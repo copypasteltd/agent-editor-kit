@@ -1,8 +1,14 @@
 # 本机 GPU 扩展离线包与安装 / Native GPU extension delivery
 
+**当前本机 CLI0.1.56／local54 已原生安装并注册**，1个统一Skill／17模块／93文件。源码及独立安装版各1／15／45／104分组通过，实际CUDA选材与两画幅完整音画重放分别通过；原四个配音／翻译模型包保持并重新核验。安装目录为 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.54/final-r1/installed`。[包摘要、实际入口和完整使用流程](../validation/CLI56原生交付_2026-10-29.md)。公开alpha.3与旧r54工具包保留，旧包匹配各自运行时；新正式工具包需独立验收。
+
+English: Native CLI56/local54 is installed and registered with one entry,17modules and93files.The existing four CPU/GPU voice/translation packs are retained.Source and installed actual semantic cases passed;registered full-GPU and new formal-kit acceptance are recorded separately in the linked delivery log.
+
+繁體：目前CLI56／local54已原生安裝並註冊，四個既有模型套件保留；來源及安裝版實際語義案例通過，註冊入口完整GPU與新正式工具包驗收另列。較早版本段落保留為歷史紀錄。
+
 [使用手册](COMMUNITY_MATERIALS.md) · [繁體中文](COMMUNITY_MATERIALS.zh-TW.md) · [English](COMMUNITY_MATERIALS.en.md)
 
-当前本机版本是 **`v0.1.0-alpha.4-local.51` / CLI 0.1.53**，正式安装在 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.51/final-r2/installed/`。这是本地构建和验收记录；公开 GitHub Release 仍是 alpha.3 / CLI 0.1.2，原附件、标签和摘要不覆盖。
+此前本机版本是 **`v0.1.0-alpha.4-local.51` / CLI 0.1.53**，正式安装在 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.51/final-r2/installed/`。这是本地构建和验收记录；公开 GitHub Release 仍是 alpha.3 / CLI 0.1.2，原附件、标签和摘要不覆盖。
 
 The current build is installed locally. Public alpha.3 downloads remain unchanged and do not contain the new voice, translation, material or GPU commands. The updated Skill kit must be paired with this matching local runtime bundle.
 

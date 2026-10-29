@@ -1,6 +1,6 @@
 # Installed-release runtime contract
 
-This namespace calls the locally installed `v0.1.0-alpha.4-local.51` / CLI 0.1.53
+This namespace calls the locally installed `v0.1.0-alpha.4-local.54` / CLI 0.1.56
 package using this Skill's `scripts/run.ps1`. Its 17 modules share the launcher.
 The editable Skill source stays on E:; Codex reads
 Windows directory junctions. `local/agent-ffmpeg/runtime.json` selects the native Python and installed path.
@@ -129,3 +129,7 @@ rights, semantics, natural listening, phonetic timing and lip sync remain open.
 Read [ad-storyboard.md](ad-storyboard.md) for `ad storyboard/build/revise`, complete same-language GPU voice batches, separate editable tracks and exact selected-shot changes. Plans bind actual project/media bytes; preview each variant and retain quality/rights review.
 
 For actual native CUDA RIFE interpolation, CFR/VFR/PCM preservation, editable slow motion and client previews, read [neural interpolation](neural-interpolation.md). Keep cut/naturalness/HDR acceptance boundaries explicit.
+
+Native process waits under an operation budget now inherit ancestor deadlines and cancel markers. Interruption closes the owned Windows job/readers. This is cooperative control, not blocked-OS-call real-time preemption. Semantic implementation changes require explicit re-registration/reindexing; never hand-rebind old hashes.
+
+CLI56 pins its own application package, then restores the native model runtime dependency search order. Controller-bundled NumPy/Pillow must not silently replace the registered model runtime. Keep runtime/version/path fingerprint checks enabled; register fresh implementation bindings after code changes.

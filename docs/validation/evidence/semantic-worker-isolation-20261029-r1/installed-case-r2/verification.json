@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "cli_version": "0.1.56",
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.54\\final-r1\\installed",
+  "source_fallback": false,
+  "actual_GPU_semantic_search": true,
+  "selection": {
+    "coffee": "asset_b4",
+    "cat": "asset_c2",
+    "camera": "asset_a7"
+  },
+  "renders": 4,
+  "variants": {
+    "wide": {
+      "width": 320,
+      "height": 180,
+      "frames": 90,
+      "fps": 30,
+      "full_RGB_bytes": 15552000,
+      "full_PCM_bytes": 1155072,
+      "RGB_sha256": "51a6473e80c748fa1bf902fda7d13b26b6e0018dfff80209fa9cc19dc285c7f1",
+      "PCM_sha256": "bc81f7b5f48be2545b3fb8feb378bc5ff9adb94a83c4ea2938d58dc47d3b7a32",
+      "replay_equal": true,
+      "finite_non_silent_PCM": true
+    },
+    "vertical": {
+      "width": 180,
+      "height": 320,
+      "frames": 90,
+      "fps": 30,
+      "full_RGB_bytes": 15552000,
+      "full_PCM_bytes": 1155072,
+      "RGB_sha256": "04a708356df0a2ee6d445a73732d61517916dea02b8efb11429aa587e39f6106",
+      "PCM_sha256": "bc81f7b5f48be2545b3fb8feb378bc5ff9adb94a83c4ea2938d58dc47d3b7a32",
+      "replay_equal": true,
+      "finite_non_silent_PCM": true
+    }
+  },
+  "full_RGB_bytes": 15552000,
+  "full_PCM_bytes": 1155072,
+  "full_project_replay_equal": true,
+  "project_unchanged_by_selection": true,
+  "frozen_equal": true,
+  "registered_skill_unchanged": true,
+  "actual_PowerShell_entry": false,
+  "non_silent_finite_PCM": true,
+  "natural_motion_quality_accepted": false,
+  "independent_agent_benchmark": false
+}

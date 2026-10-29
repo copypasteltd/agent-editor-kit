@@ -1,0 +1,706 @@
+{
+  "format": "agent-ffmpeg-local-skills-v2",
+  "status": "reviewed",
+  "registration_mode": "single",
+  "release": "v0.1.0-alpha.4-local.51",
+  "manifest_sha256": "sha256:9fcf7db46f825b14469293591f35b8f65c1089f7f6fb38a50712db4da54acf30",
+  "runtime_config": "local/agent-ffmpeg/runtime.json",
+  "skill_count": 1,
+  "module_count": 17,
+  "look_count": 500,
+  "look_catalog_version": "2.0.0",
+  "skills": [
+    {
+      "name": "agent-ffmpeg-local-editor",
+      "purpose_zh": "唯一入口：17内部模块、真实CUDA对白降噪/神经补帧/口型、GPU视频生成/会话、原生跟踪、HDR/Float32合成、500滤镜、语义检索、字幕配音与四轨分离",
+      "skill_md_sha256": "b86a271fb0ffe60bd6721b5f9a4e0a743fd96df9cd619395bdc2914e197979a5"
+    }
+  ],
+  "modules": [
+    {
+      "id": "K01",
+      "key": "editor",
+      "purpose_zh": "总入口：计划、项目创建与交付",
+      "purpose_en": "Editing and delivery entrypoint",
+      "reference": "references/modules/editor/module.md",
+      "previous_skill": "agent-ffmpeg-local-editor",
+      "previous_skill_md_sha256": "c8a5fe829ab73f826ea4c568afefae1e074dcf64e234e73c4a19a2f16902d344"
+    },
+    {
+      "id": "K02",
+      "key": "timeline",
+      "purpose_zh": "时间线、关键帧、运镜、转场、嵌套",
+      "purpose_en": "Timeline, keys and motion",
+      "reference": "references/modules/timeline/module.md",
+      "previous_skill": "agent-ffmpeg-local-timeline",
+      "previous_skill_md_sha256": "bd482280a9ba3b2b5eff6ec8f7190e0867961759f374ff305c4d9e5e442376ab"
+    },
+    {
+      "id": "K03",
+      "key": "quality",
+      "purpose_zh": "成片、像素、蒙版、Scope 与证据核验",
+      "purpose_en": "Output and pixel review",
+      "reference": "references/modules/quality/module.md",
+      "previous_skill": "agent-ffmpeg-local-quality",
+      "previous_skill_md_sha256": "708b99f4aad6a4cd65b4c3c09aebb7ef248877481c63f8148f633e9078716a0e"
+    },
+    {
+      "id": "K04",
+      "key": "project-ops",
+      "purpose_zh": "快照、恢复、重链和队列",
+      "purpose_en": "Project operations, recovery and queues",
+      "reference": "references/modules/project-ops/module.md",
+      "previous_skill": "agent-ffmpeg-local-project-ops",
+      "previous_skill_md_sha256": "1e9cc5431a56004733f6684a88ffc57f26cfabf74ecdc4acbc7646c342acd54f"
+    },
+    {
+      "id": "K05",
+      "key": "local-policy",
+      "purpose_zh": "离线运行与远程引用审计",
+      "purpose_en": "Local execution policy",
+      "reference": "references/modules/local-policy/module.md",
+      "previous_skill": "agent-ffmpeg-local-local-policy",
+      "previous_skill_md_sha256": "2909a538b0ff0826d396d131ded42940867f3f2b257d49b1fd4fdee472d11f1a"
+    },
+    {
+      "id": "K06",
+      "key": "rights-ledger",
+      "purpose_zh": "素材、字体、模型与模板权利台账",
+      "purpose_en": "Media and model rights evidence",
+      "reference": "references/modules/rights-ledger/module.md",
+      "previous_skill": "agent-ffmpeg-local-rights-ledger",
+      "previous_skill_md_sha256": "07f20a9b43930b49f217416ca702d2d797854d0f958e9f4809f8d43e61d19c24"
+    },
+    {
+      "id": "K07",
+      "key": "local-models",
+      "purpose_zh": "显式登记并运行已有离线模型",
+      "purpose_en": "Existing offline model registration",
+      "reference": "references/modules/local-models/module.md",
+      "previous_skill": "agent-ffmpeg-local-local-models",
+      "previous_skill_md_sha256": "198b654ed9d1903dc2464816f8ad4220df9e17fe0141634eeed83d28a23b29a3"
+    },
+    {
+      "id": "K08",
+      "key": "video-understand",
+      "purpose_zh": "镜头、静音、帧证据与转写",
+      "purpose_en": "Scene/silence and video evidence",
+      "reference": "references/modules/video-understand/module.md",
+      "previous_skill": "agent-ffmpeg-local-video-understand",
+      "previous_skill_md_sha256": "d3ccd302a9277fc6876d4f5074f6ee54950544171fe4777adc1caee0b21fb312"
+    },
+    {
+      "id": "K09",
+      "key": "template-library",
+      "purpose_zh": "模板变量、素材索引和片段组复用",
+      "purpose_en": "Templates and reusable fragments",
+      "reference": "references/modules/template-library/module.md",
+      "previous_skill": "agent-ffmpeg-local-template-library",
+      "previous_skill_md_sha256": "c7aeed858ed7e8f66f6543b23aeaece36ba37e26fa4497f61f41dad2648f4c4a"
+    },
+    {
+      "id": "K10",
+      "key": "long-to-short",
+      "purpose_zh": "长视频、课程和口播转短片",
+      "purpose_en": "Long video to short clips",
+      "reference": "references/modules/long-to-short/module.md",
+      "previous_skill": "agent-ffmpeg-local-long-to-short",
+      "previous_skill_md_sha256": "6bc37c18217ca81f7873ce21bdc220c81336b0e7c40bf36148251af5641af4fb"
+    },
+    {
+      "id": "K11",
+      "key": "screen-demo",
+      "purpose_zh": "录屏锚点、缩放与产品演示",
+      "purpose_en": "Screen demos and camera anchors",
+      "reference": "references/modules/screen-demo/module.md",
+      "previous_skill": "agent-ffmpeg-local-screen-demo",
+      "previous_skill_md_sha256": "bbc465395c24c9c25a8a0dce231e22611e213aeb2412fdb5fa4e274e984cab1a"
+    },
+    {
+      "id": "K12",
+      "key": "reference-remake",
+      "purpose_zh": "参考片结构复刻与原创素材替换",
+      "purpose_en": "Reference pacing/layout remake",
+      "reference": "references/modules/reference-remake/module.md",
+      "previous_skill": "agent-ffmpeg-local-reference-remake",
+      "previous_skill_md_sha256": "385bddaa7e0598cdeadd7caffd80247aae7ac90f931b750a3db1f712ec6eca3d"
+    },
+    {
+      "id": "K13",
+      "key": "ffmpeg",
+      "purpose_zh": "本地 FFmpeg 格式和媒体处理",
+      "purpose_en": "Native media tools",
+      "reference": "references/modules/ffmpeg/module.md",
+      "previous_skill": "agent-ffmpeg-local-ffmpeg",
+      "previous_skill_md_sha256": "eb40aafd7ad10f82e8b6970449d3b4639129e5d692f7e900fe36f58c88c73f5d"
+    },
+    {
+      "id": "K14",
+      "key": "video-edit",
+      "purpose_zh": "修剪、拼接、变速与压缩",
+      "purpose_en": "General video-edit workflows",
+      "reference": "references/modules/video-edit/module.md",
+      "previous_skill": "agent-ffmpeg-local-video-edit",
+      "previous_skill_md_sha256": "8bd3dd336652d57832fa4883bb9cb1e93831725ee5059134c81a7562b2efd7e8"
+    },
+    {
+      "id": "K15",
+      "key": "ad-creative",
+      "purpose_zh": "广告文案、Hook 和创意变体",
+      "purpose_en": "Ad creative and variants",
+      "reference": "references/modules/ad-creative/module.md",
+      "previous_skill": "agent-ffmpeg-local-ad-creative",
+      "previous_skill_md_sha256": "24a6aec0a66ed3469802c86582af27322d8626f3dc674447c7ca9eb9b11b952f"
+    },
+    {
+      "id": "K16",
+      "key": "video-content-strategist",
+      "purpose_zh": "内容定位、脚本与渠道策略",
+      "purpose_en": "Video content strategy",
+      "reference": "references/modules/video-content-strategist/module.md",
+      "previous_skill": "agent-ffmpeg-local-video-content-strategist",
+      "previous_skill_md_sha256": "c5ca8ed4986f94938789c239422f1ae94df6fec276c740bbde22d5cfb7fc419f"
+    },
+    {
+      "id": "K17",
+      "key": "campaign-analytics",
+      "purpose_zh": "依据本地数据分析投放与变体",
+      "purpose_en": "Supplied campaign-data analysis",
+      "reference": "references/modules/campaign-analytics/module.md",
+      "previous_skill": "agent-ffmpeg-local-campaign-analytics",
+      "previous_skill_md_sha256": "da31e25b3e641f80367075cdb4e72be99be2c89c332556d8ba58ec419fffd46b"
+    }
+  ],
+  "files": [
+    {
+      "path": "skills/agent-ffmpeg-local-editor/agents/openai.yaml",
+      "bytes": 286,
+      "sha256": "82450df375698bb3be3c9a477849b9814ad3d3792f763f703d512e7d9b90cc48"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/assets/motion-packs/contact-sheet.png",
+      "bytes": 223319,
+      "sha256": "4aacd418361443b3068387e612d1d6e6084d3606c505f758d275f9efa0a3c8a0"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/LICENSE",
+      "bytes": 1085,
+      "sha256": "8f8f9ec9872f0a6d24e6fc101b10e63406af52e63f8e6214288a7d38c9d08c38"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/aces-display.md",
+      "bytes": 3837,
+      "sha256": "9de6ff9963eeab750fcdd755d1c001fb6dc6dcce7799823972dfc15280cbcae9"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/ad-storyboard.md",
+      "bytes": 3815,
+      "sha256": "14be2680eac977ff24860aa3b8a99b04cfd9b7f67077d219fae1b025003022d1"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/audio-stems.md",
+      "bytes": 2743,
+      "sha256": "1c5735e863fa9af531514d92eeb8922f4cc74f5e899d317d3bf863ddff4cb3b9"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/chromatic-adaptation.md",
+      "bytes": 2514,
+      "sha256": "d6282851dcb522164093563040cc35ae75f0de56a8a4e8206c916c3e5eb462a5"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/client-look-selection.md",
+      "bytes": 4767,
+      "sha256": "9c224b82dad0e949326b958a4111dca4a19a1b8f733752fd01faf53db82bb7ff"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/community-materials.md",
+      "bytes": 5559,
+      "sha256": "e64c863a3ebc161885fb829d6eea9b1dc79590429aef15e79bb36aa3296129b2"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/ctc-alignment.md",
+      "bytes": 2310,
+      "sha256": "1c15d49d42793bdfb01aecd56d95bff063fa35112f69f6aa9f5643af0ea692f2"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/float-adjustments.md",
+      "bytes": 3414,
+      "sha256": "7f2d8936dbc26898e53d4e6eac410fa896644dd794b2130e1214b3e13906723d"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/float-text.md",
+      "bytes": 3342,
+      "sha256": "262187cc89c68f6b984c76aa1ed199ddcdd9bf4e2baeb801c7132e822f2f6e04"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/float-tracking.md",
+      "bytes": 15237,
+      "sha256": "b4999c5ae0490a7496b076097b57a3b7670a20bc598a05c151c8afd9f39cca22"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/float-transitions.md",
+      "bytes": 4238,
+      "sha256": "4d46f3628a2ad81167768bebd894127d2261a41bb03c8e75d82466b316f7a248"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/gpu-gamut.md",
+      "bytes": 2494,
+      "sha256": "85e4fbf8be7d6fdcb92878ddd0aa572746a5ec6e38d19c0c4d5296e8bd579655"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/hdr-display.md",
+      "bytes": 3171,
+      "sha256": "b8e702a4edfdf3843ba7b30f7fc4794c6a1f701a853148e48e5f3daa23f94fe4"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/hdr-measurement.md",
+      "bytes": 8332,
+      "sha256": "22196e9e8d34093c6e4718253d5d2e1de82d6bacf6a9de747b0de400b7807f41"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/hdr-media-measurement.md",
+      "bytes": 2097,
+      "sha256": "07d32f90c0be73287e3492e889caf68c5732e73818612575202591f65c31f5ac"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/hdr-metadata.md",
+      "bytes": 1623,
+      "sha256": "3fa7d08bb730a94993dcb5e02ac8d7440bf501d2d33bc8077686a577abd29491"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/highlight-glow.md",
+      "bytes": 4530,
+      "sha256": "6ddb537be286019edab3199cf3d0e9f879b878e5f19417a54a2cf15542bd40d3"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/hlg-black-level.md",
+      "bytes": 2654,
+      "sha256": "7ff6aee71c828b304562df64f33d430ff80e6ba448bd58f4f5627fc7bc64ab86"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/icc-output.md",
+      "bytes": 3360,
+      "sha256": "f0f7ae5188ce4e692db51dc4c310823c2b16b6e771ae1fefd0869aae369a9938"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/icc-profiles.md",
+      "bytes": 3727,
+      "sha256": "d215b65b19020a4a180bb245467fb658e7b6f8cc20ba49da37d955e1f73564a3"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/job-recovery.md",
+      "bytes": 3838,
+      "sha256": "9afab3e277ae4455935ab05d830e8d1c599771c73d571a09f04343d253e48094"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/lip-sync.md",
+      "bytes": 3491,
+      "sha256": "0cdae76b324daba64bfa31934b569c850d2265fa8fd17bf4bff30d45b113ba0d"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/looks.md",
+      "bytes": 4670,
+      "sha256": "2d1372a65afc434271048f4421b60cea6a115bf9685b5bcaf4703f8458af11a6"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/model-sessions.md",
+      "bytes": 3615,
+      "sha256": "69069e06550657a946333a6a9884ae20c52f175c4eb29fea26c14b3175337478"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/module.md",
+      "bytes": 1251,
+      "sha256": "b17fba23ce3d3dbdeb21a9c197d465bd4cdbf0a5358b65fdf9ec332f264d914c"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/agents/openai.yaml",
+      "bytes": 233,
+      "sha256": "5eb800b7dc15a26e98dda06a0599897f21fe51cf7d6035d0692508d52934ad15"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/LICENSE",
+      "bytes": 1072,
+      "sha256": "a20126646f93d32a8989c3cf4772d59194f405034f7babe7daebeac22b8ab151"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/references/creative-frameworks.md",
+      "bytes": 10046,
+      "sha256": "f45bb278e6b5f6e44498dfc52f46d23b785bc0b662e0743b873b02daf3842a0d"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/references/platform-specs.md",
+      "bytes": 6568,
+      "sha256": "c8369e4c2a2e7517da2b8c511193b193dd6d008dfccac946cd739d3a19f9b4b5"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/scripts/ad_copy_validator.py",
+      "bytes": 18209,
+      "sha256": "9e33e1aec4c040b6a334ec3eaf179877a580b2feaef52b2bf2a721adc0aa6c53"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ad-creative/references/upstream/workflow.md",
+      "bytes": 11656,
+      "sha256": "a246751f9b62bf478ddf0e0d8326f8f00a8c67fe9bfb1045dd311be50130915b"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/module.md",
+      "bytes": 976,
+      "sha256": "f28f24ebd8e2d9d05773a75690caeb9c4dff9307c1e3b0c1ba3f0a2e1e0376f9"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/agents/openai.yaml",
+      "bytes": 246,
+      "sha256": "1c3f47e151b72e3bac8151ea22058acde737e9ca74377551d5928e696585dd52"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/assets/ab_test_template.md",
+      "bytes": 3640,
+      "sha256": "a3b1529104389ddfab4e92357f61102d353a4585038bd611353aff2c5e3fa720"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/assets/campaign_report_template.md",
+      "bytes": 4024,
+      "sha256": "448ef109e333b351b0fbc2b2a087352d6abc89d125620585e6518b6aa91e631c"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/assets/channel_comparison_template.md",
+      "bytes": 4974,
+      "sha256": "5c6b30fccafa570192907ad7ff83f1d4b16b83519ab06ceccadbfa195fae69ba"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/assets/expected_output.json",
+      "bytes": 3865,
+      "sha256": "5214cc084d57938e4b92ba592305355597e9f2298c76520ace8d46d4a325c4d7"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/assets/sample_campaign_data.json",
+      "bytes": 4730,
+      "sha256": "6e8604e35126d012d34272e9de8094a1f69e9f21b9ab2c1054ee0c52ab061156"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/LICENSE",
+      "bytes": 1072,
+      "sha256": "a20126646f93d32a8989c3cf4772d59194f405034f7babe7daebeac22b8ab151"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/references/attribution-models-guide.md",
+      "bytes": 9598,
+      "sha256": "7909ca8534cf68bab00c1f2e2035fa3b6b0dbfd6fb94da2db88948b8616058e5"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/references/campaign-metrics-benchmarks.md",
+      "bytes": 8991,
+      "sha256": "5f83037ed8d13db1febfa5490ad3f21698043057ad859a70c323912091e30cd7"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/references/funnel-optimization-framework.md",
+      "bytes": 10949,
+      "sha256": "9a95040212cf0df227ec40079da50db34b909b7f4ca7ad5c3711a6d0f517d612"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/scripts/attribution_analyzer.py",
+      "bytes": 12499,
+      "sha256": "cc01b84dcd0d2d0659dbb4603ea8499a129d43c38ea5bcf727d12399af74f3e5"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/scripts/campaign_roi_calculator.py",
+      "bytes": 18172,
+      "sha256": "503809b68fc7754cc903e633dbcc8da87d147e8b61160f1b399c445cb94f5782"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/scripts/funnel_analyzer.py",
+      "bytes": 10902,
+      "sha256": "c9d31b4142512aa31e5965ebe7d6222893e78b19f653fbcc3f404e4122fe0463"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/campaign-analytics/references/upstream/workflow.md",
+      "bytes": 8783,
+      "sha256": "ad2367f6f7a9807976f5ade0c56b8332b667fe96a5634532091dc73d08df88a5"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/editor/module.md",
+      "bytes": 1164,
+      "sha256": "e2c637de687fa1c5e1203a9256af9d97f4dba82e9c795ecd88b9d4f62140ad87"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ffmpeg/module.md",
+      "bytes": 964,
+      "sha256": "e0318cf1530dc78007cf42412d82f70e15aa8f16bbd93080ed39957c2c349039"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ffmpeg/references/upstream/agents/openai.yaml",
+      "bytes": 223,
+      "sha256": "46523706ec3796ad723136cc22cab866560c4837de44e022393e752f3a30835a"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ffmpeg/references/upstream/LICENSE",
+      "bytes": 34523,
+      "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ffmpeg/references/upstream/reference.md",
+      "bytes": 4845,
+      "sha256": "750659d2c3d0c3571c4437895e9f7940e09d5debccf400f59a0ca0ae779960f4"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/ffmpeg/references/upstream/workflow.md",
+      "bytes": 13906,
+      "sha256": "7e7d5c5d4d42cd383b5811840721be7b11a7e213c33dfdbd927ee576f3f79757"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/local-models/module.md",
+      "bytes": 2737,
+      "sha256": "61019a0a968fb6fedeebc06c5d5b3a6d3b5790c46815531017737db4aaa6c401"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/local-policy/module.md",
+      "bytes": 562,
+      "sha256": "8609b553745050fb2cfd683b4a005efaccb7d9980f7569bcf26f0c441cb6922b"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/long-to-short/module.md",
+      "bytes": 662,
+      "sha256": "a33c44e0a8bbf4a6b24157778a529cba98295b82cd943c02358abcb250eca0d8"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/project-ops/module.md",
+      "bytes": 1236,
+      "sha256": "131299dd4545224349b96fe18163655cd50d2f86d41ee0f313e90791c498e1f0"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/quality/module.md",
+      "bytes": 1598,
+      "sha256": "6aba9eb9e43a87602798c1df502cc6992287c0963bd1d42d5fc81bdfe9758ab7"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/reference-remake/module.md",
+      "bytes": 643,
+      "sha256": "2d104be2522df2053fd8037d379f36b3177707da5f702679cc37f46abf92faec"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/rights-ledger/module.md",
+      "bytes": 777,
+      "sha256": "4ef1ec27a9db42d018e10a9635be01bb208a897051b218c7f7a4e31729f79343"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/screen-demo/module.md",
+      "bytes": 934,
+      "sha256": "befcfec2e6826917117ebff621433530ffecc738be5e38dfb756ac4cf41267f5"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/template-library/module.md",
+      "bytes": 649,
+      "sha256": "8975560bf80d56934dd2061a27e42181e5ad0ab8ed258c8eed080320fb1c9b1f"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/timeline/module.md",
+      "bytes": 2488,
+      "sha256": "f25c1ebc26bcc17a6d9825abec6b2aff42dbfd40f45482bdaef2bbaccd69e948"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-content-strategist/module.md",
+      "bytes": 882,
+      "sha256": "fabb47181169d2acbe44b7036b74c3448824cac7516e824c5824be577b909ab8"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-content-strategist/references/upstream/agents/openai.yaml",
+      "bytes": 259,
+      "sha256": "b74f612c445e8a4e2131e53aaf559dc2487d6c8b2b0078e2118bf109b9f7d919"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-content-strategist/references/upstream/LICENSE",
+      "bytes": 1072,
+      "sha256": "a20126646f93d32a8989c3cf4772d59194f405034f7babe7daebeac22b8ab151"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-content-strategist/references/upstream/workflow.md",
+      "bytes": 11974,
+      "sha256": "6410439fb3505954dac38adb82f2b0601edbc790775e62741f2892f7ca080bea"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-edit/module.md",
+      "bytes": 873,
+      "sha256": "17848982a48cbe2e848187ff10fc2e420ec438b5b3311ce8657e7e437258373a"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-edit/references/upstream/agents/openai.yaml",
+      "bytes": 231,
+      "sha256": "5bf3dd4472ad6157f54fc6b24c36bd11d8c850f363f9f157cc8a40bde3594bbf"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-edit/references/upstream/LICENSE",
+      "bytes": 34523,
+      "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-edit/references/upstream/references/operations.md",
+      "bytes": 9188,
+      "sha256": "2463a5298822520657e9c63d6bb1caaf4c99cf769d479737a0e078cb538e525b"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-edit/references/upstream/workflow.md",
+      "bytes": 3589,
+      "sha256": "a49b64fc5ad50778ccaf92b568b1a57dbb86c53a076dd7031519798de15ad340"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/modules/video-understand/module.md",
+      "bytes": 1518,
+      "sha256": "d29178556c5821786ce809f089051beea3ce7a91591f838d233b2a37d814ecf0"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/motion-packs.md",
+      "bytes": 4871,
+      "sha256": "017cf8cc285ec4be2c79adeb3d451f3b2c36f6e742f74d251b2121a2fdb359f4"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/native-capture.md",
+      "bytes": 1608,
+      "sha256": "53ea706e02c0d4e3871d86101a921e92335acd8d18c4e2afa7bf7302a69954e4"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/neural-interpolation.md",
+      "bytes": 4365,
+      "sha256": "4d2c755371292c85a45d831631ed149245327ba028ce8b159608cb2a333bae05"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/oklab-gamut.md",
+      "bytes": 2829,
+      "sha256": "066a891d4fdbe1b0138e107f3f32ea147436d31f580d869b2d052414eec64c4a"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/optical-effects.md",
+      "bytes": 4835,
+      "sha256": "86237dfc8b7dc01258def859d543d3738b0aaf0140e5cea2791fe8f750527095"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/procedural-particles.md",
+      "bytes": 7186,
+      "sha256": "3d34f9f4f292528cc046999617179e09c763cc86426840211cd6521a8864b084"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/projection-gpu.md",
+      "bytes": 8577,
+      "sha256": "b16f619df9cb6374214d708a686800402d3d317f8284759a4d79fc116e1d7b81"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/runtime.md",
+      "bytes": 8242,
+      "sha256": "0bde56464816c5e913caa350292c4f2bba4531376b394826a36c87dc8e892baa"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/semantic-package.md",
+      "bytes": 3924,
+      "sha256": "ff9595354efe7a5bc5ba13fbecc84509359e0dca61c3b9964ef04d486eb5a551"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/semantic-retrieval.md",
+      "bytes": 11796,
+      "sha256": "8d4b01ec53ebca82f9c7306311f0fe7e35389beb572e9b0c1c1c9a8de205d83d"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/speech-enhancement.md",
+      "bytes": 3036,
+      "sha256": "4bfd1eaf8561936538ee719a89323c4b4def4c60f9fbe4cc48136d3d5f5d7c81"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/subtitle-dubbing.md",
+      "bytes": 5154,
+      "sha256": "3eaf0c890b551cf0c7f9052a4988cd9fc82416629ed28b78eb78e2df3a341f81"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/references/video-generation.md",
+      "bytes": 2680,
+      "sha256": "d64b3c6b1c6761a5f3a465ac7f4f9297bd99f9cfafd0230d101af259a2712f7c"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/scripts/look_gallery.py",
+      "bytes": 6717,
+      "sha256": "445d2e0bc429dd8cc91e5347cbab6e11b7f10a54a1a9e6ff6246eeecbbb48cbf"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/scripts/run.ps1",
+      "bytes": 916,
+      "sha256": "e2c3f94ebce8da8bb114e444d7285606d9fe88b1323433e94d6d90f13d5c1ccb"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/scripts/run.py",
+      "bytes": 2296,
+      "sha256": "2f80c3d90eb8844c5360487076afe3c414ff0c607b4bf1c9e1e5d2f944f11cf9"
+    },
+    {
+      "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
+      "bytes": 17660,
+      "sha256": "b86a271fb0ffe60bd6721b5f9a4e0a743fd96df9cd619395bdc2914e197979a5"
+    }
+  ],
+  "retired_skills": [
+    {
+      "name": "agent-ffmpeg-local-timeline",
+      "skill_md_sha256": "bd482280a9ba3b2b5eff6ec8f7190e0867961759f374ff305c4d9e5e442376ab"
+    },
+    {
+      "name": "agent-ffmpeg-local-quality",
+      "skill_md_sha256": "708b99f4aad6a4cd65b4c3c09aebb7ef248877481c63f8148f633e9078716a0e"
+    },
+    {
+      "name": "agent-ffmpeg-local-project-ops",
+      "skill_md_sha256": "1e9cc5431a56004733f6684a88ffc57f26cfabf74ecdc4acbc7646c342acd54f"
+    },
+    {
+      "name": "agent-ffmpeg-local-local-policy",
+      "skill_md_sha256": "2909a538b0ff0826d396d131ded42940867f3f2b257d49b1fd4fdee472d11f1a"
+    },
+    {
+      "name": "agent-ffmpeg-local-rights-ledger",
+      "skill_md_sha256": "07f20a9b43930b49f217416ca702d2d797854d0f958e9f4809f8d43e61d19c24"
+    },
+    {
+      "name": "agent-ffmpeg-local-local-models",
+      "skill_md_sha256": "198b654ed9d1903dc2464816f8ad4220df9e17fe0141634eeed83d28a23b29a3"
+    },
+    {
+      "name": "agent-ffmpeg-local-video-understand",
+      "skill_md_sha256": "d3ccd302a9277fc6876d4f5074f6ee54950544171fe4777adc1caee0b21fb312"
+    },
+    {
+      "name": "agent-ffmpeg-local-template-library",
+      "skill_md_sha256": "c7aeed858ed7e8f66f6543b23aeaece36ba37e26fa4497f61f41dad2648f4c4a"
+    },
+    {
+      "name": "agent-ffmpeg-local-long-to-short",
+      "skill_md_sha256": "6bc37c18217ca81f7873ce21bdc220c81336b0e7c40bf36148251af5641af4fb"
+    },
+    {
+      "name": "agent-ffmpeg-local-screen-demo",
+      "skill_md_sha256": "bbc465395c24c9c25a8a0dce231e22611e213aeb2412fdb5fa4e274e984cab1a"
+    },
+    {
+      "name": "agent-ffmpeg-local-reference-remake",
+      "skill_md_sha256": "385bddaa7e0598cdeadd7caffd80247aae7ac90f931b750a3db1f712ec6eca3d"
+    },
+    {
+      "name": "agent-ffmpeg-local-ffmpeg",
+      "skill_md_sha256": "eb40aafd7ad10f82e8b6970449d3b4639129e5d692f7e900fe36f58c88c73f5d"
+    },
+    {
+      "name": "agent-ffmpeg-local-video-edit",
+      "skill_md_sha256": "8bd3dd336652d57832fa4883bb9cb1e93831725ee5059134c81a7562b2efd7e8"
+    },
+    {
+      "name": "agent-ffmpeg-local-ad-creative",
+      "skill_md_sha256": "24a6aec0a66ed3469802c86582af27322d8626f3dc674447c7ca9eb9b11b952f"
+    },
+    {
+      "name": "agent-ffmpeg-local-video-content-strategist",
+      "skill_md_sha256": "c5ca8ed4986f94938789c239422f1ae94df6fec276c740bbde22d5cfb7fc419f"
+    },
+    {
+      "name": "agent-ffmpeg-local-campaign-analytics",
+      "skill_md_sha256": "da31e25b3e641f80367075cdb4e72be99be2c89c332556d8ba58ec419fffd46b"
+    }
+  ],
+  "cli_version": "0.1.53",
+  "material_count": 359,
+  "named_voice_count": 103,
+  "optional_model_pack_count": 4
+}

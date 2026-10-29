@@ -2,13 +2,9 @@
 
 <!-- community-current -->
 
-**CLI0.1.52 / local.50 / r53 kit · 1 Skill / 17 modules / 91 files.**
+**当前 CLI56／local54 已安装并注册：1个入口／17模块／93文件。** 源码与安装版各1／15／45／104分组及实际CUDA选材／完整音画重放通过；四个原模型包保留。真实C盘入口GPU案例和新正式工具包另验。
 
-[Verified small kit](agent-editor-kit-community-unified-skill-r53.zip) · [SHA256 / inventory](community-unified-skill-package-0.1.52-r53.json)
-
-本地统一Skill已升级CLI52：GPU执行亮度肩部与OKLab缩色度，信号转换与ICC仍由CPU处理。源码与安装版各70项专项、各352项兼容分别通过；C64由实际注册入口完成GPU成片/预览及完整音画工程包重放。
-
-[GPU colour workflow](../product/GPU_GAMUT.md)
+[CLI56 delivery and usage](../validation/CLI56原生交付_2026-10-29.md) · [Calibrated ad selection](../../skills/agent-ffmpeg-local-editor/references/ad-selection.md)
 
 <!-- /community-current -->
 
@@ -105,3 +101,18 @@ Historical CLI0.1.23:[4K text and reusable native byte coverage](../product/FLOA
 CLI0.1.24:[native Float32 GPU workflow](../product/FLOAT_GPU.md). Explicit geometry/normal composition/text colors/word selection;owned worker cleanup;CPU glyph rasterization and remaining operators retained. Full original target conditions remain open.
 
 CLI0.1.25: [global/interval Float32 grading](../product/FLOAT_ADJUSTMENTS.md); one selected root, authored clocks, explicit local LUT dependencies; CPU effects with compatible GPU composition. One Skill /17 modules /72 files.
+
+
+## Historical current block / 历史区块
+
+<!-- historical-community-current -->
+
+**CLI0.1.52 / local.50 / r53 kit · 1 Skill / 17 modules / 91 files.**
+
+[Verified small kit](agent-editor-kit-community-unified-skill-r53.zip) · [SHA256 / inventory](community-unified-skill-package-0.1.52-r53.json)
+
+本地统一Skill已升级CLI52：GPU执行亮度肩部与OKLab缩色度，信号转换与ICC仍由CPU处理。源码与安装版各70项专项、各352项兼容分别通过；C64由实际注册入口完成GPU成片/预览及完整音画工程包重放。
+
+[GPU colour workflow](../product/GPU_GAMUT.md)
+
+<!-- /historical-community-current -->

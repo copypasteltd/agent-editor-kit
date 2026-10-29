@@ -1,0 +1,60 @@
+{
+  "status": "pinned-not-activated",
+  "cli_version": "0.1.56",
+  "public_entries": 1,
+  "modules": 17,
+  "skill_files": 93,
+  "activated": false,
+  "source_fallback": false,
+  "namespace_manifest_sha256": "0d32d7cf0b0e7964a7ffad38a02c0e61ec9e450ea08475f79433f07a829552bc",
+  "gates": {
+    "installation": {
+      "path": "docs/validation/evidence/semantic-worker-isolation-20261029-r1/installation-candidate-r1/verification.json",
+      "sha256": "c935eebf71aba193e7a90d0d8d77dbcae5092eb073bcd7d2545546b6bc8fd0c9"
+    },
+    "candidate": {
+      "path": "docs/validation/evidence/semantic-worker-isolation-20261029-r1/skill-candidate-r1/verification.json",
+      "sha256": "c5abf3157b33f0fd8b6d4e74377dcde524a1b1e3406d4959973488c3aeff4961"
+    },
+    "source_case": {
+      "path": "docs/validation/evidence/semantic-worker-isolation-20261029-r1/case-r5/verification.json",
+      "sha256": "88d3bbe363e74da4239776f64f045602302549bfc383b648836f592f50b26fb0"
+    },
+    "installed_case": {
+      "path": "docs/validation/evidence/semantic-worker-isolation-20261029-r1/installed-case-r2/verification.json",
+      "sha256": "d4df5b6a05643b92c67dbc0e44011e25fe4ba1ff0ae9cb25080e23d4600c7bc7"
+    },
+    "source_deadline": {
+      "path": "docs/validation/evidence/semantic-worker-isolation-20261029-r1/deadline-r1/verification.json",
+      "sha256": "7b575a15d9b2e2bc6194e6fd22aa0945e2cfe9c6f44f9542f25be9f6585768e6"
+    },
+    "installed_deadline": {
+      "path": "docs/validation/evidence/semantic-worker-isolation-20261029-r1/installed-deadline-r1/verification.json",
+      "sha256": "b9dcb75fbc655308039f473127211796120f5d485ec77168dea2f33c5d4f6532"
+    },
+    "source_selection": {
+      "path": "docs/validation/evidence/semantic-worker-isolation-20261029-r1/selection-r1/verification.json",
+      "sha256": "a02352e88392d14af91d5338ce320cfae2b6fbca0f0af30c791b0992a35fb491"
+    },
+    "installed_selection": {
+      "path": "docs/validation/evidence/semantic-worker-isolation-20261029-r1/installed-selection-r1/verification.json",
+      "sha256": "5c46f0ad76d98a1d4d2407f022fd7a569f99eb07b95437743fc1e914fda98507"
+    },
+    "source_semantic": {
+      "path": "docs/validation/evidence/semantic-worker-isolation-20261029-r1/semantic-r1/verification.json",
+      "sha256": "5c5c504747ed80a1c2694edd6419c1f0920fa9347f7503e418a9469b2536dc5f"
+    },
+    "installed_semantic": {
+      "path": "docs/validation/evidence/semantic-worker-isolation-20261029-r1/installed-semantic-r1/verification.json",
+      "sha256": "ffc562fcb372cd302ce6047fc6fae9862736ca6904d43e7dbc964be60e0bf896"
+    },
+    "source_bootstrap": {
+      "path": "docs/validation/evidence/semantic-worker-isolation-20261029-r1/bootstrap-r1/verification.json",
+      "sha256": "b0706bbf486014f1feffc4a3a0462e3bdfc25d11033bb2becac53df603fa198a"
+    },
+    "installed_bootstrap": {
+      "path": "docs/validation/evidence/semantic-worker-isolation-20261029-r1/installed-bootstrap-r1/verification.json",
+      "sha256": "bbbd718ea27126cdf93c7d48046f16bb2eafeed72436a5ac9eb5af74c795d16b"
+    }
+  }
+}

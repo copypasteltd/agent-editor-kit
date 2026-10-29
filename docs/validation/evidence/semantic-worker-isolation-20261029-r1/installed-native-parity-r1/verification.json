@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "cli_version": "0.1.56",
+  "actual_native_model_runtime_kept": true,
+  "version_and_module_paths_match_registered_profile": true,
+  "controller_site_does_not_shadow_numpy_pillow": true,
+  "installed_owned_implementation_files": 19,
+  "actual_device": "NVIDIA GeForce RTX 3060",
+  "versions": {
+    "torch": "2.13.0+cu130",
+    "transformers": "5.14.1",
+    "numpy": "2.4.6",
+    "PIL": "12.3.0",
+    "tokenizers": "0.22.2",
+    "safetensors": "0.8.0",
+    "siglip": "bundled-with-transformers",
+    "python": "3.13.14"
+  },
+  "module_paths": {
+    "torch": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\torch\\__init__.py",
+    "transformers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\__init__.py",
+    "numpy": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\numpy\\__init__.py",
+    "PIL": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\PIL\\__init__.py",
+    "tokenizers": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\tokenizers\\__init__.py",
+    "safetensors": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\safetensors\\__init__.py",
+    "siglip": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\transformers\\models\\siglip\\modeling_siglip.py"
+  },
+  "source_installed_complete_streams": {
+    "wide": {
+      "rgb": {
+        "bytes": 15552000,
+        "sha256": "51a6473e80c748fa1bf902fda7d13b26b6e0018dfff80209fa9cc19dc285c7f1",
+        "source_installed_byte_equal": true
+      },
+      "pcm": {
+        "bytes": 1155072,
+        "sha256": "bc81f7b5f48be2545b3fb8feb378bc5ff9adb94a83c4ea2938d58dc47d3b7a32",
+        "source_installed_byte_equal": true
+      }
+    },
+    "vertical": {
+      "rgb": {
+        "bytes": 15552000,
+        "sha256": "04a708356df0a2ee6d445a73732d61517916dea02b8efb11429aa587e39f6106",
+        "source_installed_byte_equal": true
+      },
+      "pcm": {
+        "bytes": 1155072,
+        "sha256": "bc81f7b5f48be2545b3fb8feb378bc5ff9adb94a83c4ea2938d58dc47d3b7a32",
+        "source_installed_byte_equal": true
+      }
+    }
+  },
+  "model_forward_calls": 1,
+  "natural_quality_accepted": false
+}

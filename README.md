@@ -2076,6 +2076,7 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R518 | CLI63 installed regression groups | 安装版隔离启动31、循环37、进程控制26、选材57各组通过，源码/安装模块相同、冻结一致，分组零失败/错误/跳过；104语义、406完整合同与真实模型继续另验。 [Details](docs/validation/CLI63候选交付门禁_2026-10-29.md#cli63-本地候选安装) |
 | R519 | CLI63 registered-entry and final-kit preparation | 正式C盘入口循环/DF3/MuseTalk复核与r58工具包独立解包流程已准备；未激活时复核和构建均实际拒绝/exit2，95正式文件不变。仅编译及拒绝检查，不是实际正式入口模型或工具包通过；循环功能手册同步CLI63候选边界。 [Evidence](docs/validation/evidence/job-enumeration-20261029-r1/registered-preflight-r1/verification.json) |
 | R520 | CLI63 installed semantic regression | 104项安装版语义/决策/任务/工程包/升级回归全部通过，零失败/错误/跳过，源码与安装相同且冻结。406完整合同和真实模型仍另验，非独立Agent成功率或真实语义质量接受。 [Evidence](docs/validation/evidence/job-enumeration-20261029-r1/installed63-semantic-r1/verification.json) |
+| R521 | CLI63 isolated file-transaction rollback | E盘隔离验证4类切换失败；含全部93个Skill文件及两项元数据共95文件全变后恢复，192次实际原子替换，95文件原始字节恢复且正式95文件不变。门禁与CLI失败均为合成夹具，无真实C盘入口、模型推理或断电恢复验收。 [Evidence](docs/validation/CLI63Skill隔离回滚_2026-10-29.md) |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

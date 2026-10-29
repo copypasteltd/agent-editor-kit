@@ -1,0 +1,44 @@
+{
+  "at_utc": "2026-10-29T01:54:05.904975+00:00",
+  "goal": "active_not_complete",
+  "source_cli": "0.1.55",
+  "candidate_installed_cli": "0.1.55",
+  "source_groups": {
+    "deadline": 15,
+    "selection": 45,
+    "semantic": 104
+  },
+  "installed_groups": {
+    "deadline": 15,
+    "selection": 45,
+    "semantic": 104
+  },
+  "registered_skill": "CLI53/local51/r54;1entry/17modules/92files",
+  "candidate_skill": "CLI55/local53;1entry/17modules/93files;unregistered",
+  "verified_pushed_core_commit": "cf0d9a0f5c0309bd304f16d3ef8e78a4dfaf4c6f",
+  "source55_full11_setup_r3": {
+    "status": "passed",
+    "source_cli": "0.1.55",
+    "project": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\ad-selection-20261029-r3\\project",
+    "index_id": "visual55",
+    "calibration_id": "accept55cuda",
+    "full_corpus": true,
+    "calibration_source_sha256": "fd492a66daabea06da2823b68775bf7a51c8ccb43ac583df8566d53b393d0621",
+    "heldout_queries_sha256": "2ebec2691107529a174e110ed4a817887a8fe8497392ab5f25df982cbb5475ed",
+    "native_device": "cuda",
+    "new_index_and_calibration": true,
+    "downloads": false,
+    "virtualization": false,
+    "frozen_equal": true
+  },
+  "live_handles": {
+    "source55_actual_case_r3": 36038,
+    "independent_native_environment_setup_r4": 46532
+  },
+  "next": [
+    "Await actual source55 case terminal without restarting live work.",
+    "Run isolated installed55 actual GPU case after source55 full case passes.",
+    "Activate unified55 Skill only after actual delivery acceptance; retain four offline model packs.",
+    "Preserve all38 original goal closure conditions and all published artifacts."
+  ]
+}

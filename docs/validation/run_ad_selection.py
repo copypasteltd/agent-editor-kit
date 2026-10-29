@@ -43,6 +43,8 @@ def main():
     parser.add_argument('--cli-version', choices=('0.1.54', '0.1.55'), default='0.1.54')
     parser.add_argument('--full-corpus', action='store_true')
     parser.add_argument('--evidence-series', default='ad-selection-20261029-r1')
+    parser.add_argument('--python-executable', type=Path, help='Explicit existing native model runtime; registration attests all dependencies')
+    parser.add_argument('--model-path', type=Path, help='Explicit local model; defaults to the existing pinned model')
     args = parser.parse_args()
     assert args.run.replace('-', '').isalnum()
     assert args.evidence_series.replace('-', '').isalnum()
@@ -172,9 +174,11 @@ def main():
             '--evidence', SOURCE/'material_data/catalog.json')
         previous = ROOT/'workspace/semantic-upgrade-20261025-installed-r2/restored'
         old = load(previous/'project.json')['extensions']['local_semantic']['adapters'][-1]
+        model_python = args.python_executable or Path(old['python_executable'])
+        model_path = args.model_path or Path(old['model_path'])
         cli('register', 'semantic', 'adapter-register', '--project', project, '--adapter-id', adapter_id,
-            '--python-executable', old['python_executable'], '--model-path', old['model_path'],
-            '--evidence', Path(old['model_path'])/'README.md', '--creator', 'Google SigLIP2',
+            '--python-executable', model_python, '--model-path', model_path,
+            '--evidence', model_path/'README.md', '--creator', 'Google SigLIP2',
             '--license-spdx', 'Apache-2.0', '--verification-status', 'verified', '--timeout-seconds', '900')
         cli('index', 'semantic', 'index', '--project', project, '--adapter-id', adapter_id,
             '--index-id', index_name, '--all-visual-assets', '--device', 'cuda', '--timeout-seconds', '900')
@@ -185,6 +189,7 @@ def main():
             '--device', 'cuda', '--timeout-seconds', '900')
         report = dict(status='passed', source_cli=args.cli_version, project=str(project),
                       index_id=index_name, calibration_id=profile_name, full_corpus=args.full_corpus,
+                      runtime_python=str(model_python), model_path=str(model_path),
                       calibration_source_sha256=sha(original), heldout_queries_sha256=sha(WORK/'request.json'),
                       native_device='cuda', new_index_and_calibration=True, downloads=False, virtualization=False)
     else:
@@ -224,19 +229,39 @@ def main():
         cli('export', 'convert', 'export', '--project', project, '--output', package, '--target-format', 'package')
         replay = WORK/('replay'+('-'+args.attempt if args.attempt else ''))
         cli('import', 'convert', 'import', '--input', package, '--output', replay)
-        replay_movie = replay/'renders/wide.mp4'
-        cli('replay', 'render', '--project', replay, '--sequence-id', 'ad_visualdemo_wide_sequence', '--output', replay_movie)
         ffmpeg = shutil.which('ffmpeg')
-        assert ffmpeg
+        ffprobe = shutil.which('ffprobe')
+        assert ffmpeg and ffprobe
         def stream(name, path, audio=False):
             tail = ['-map','0:a:0','-vn','-c:a','pcm_f32le','-f','f32le'] if audio else ['-map','0:v:0','-an','-pix_fmt','rgb24','-f','rawvideo']
             return run(name, [ffmpeg,'-nostdin','-v','error','-i',path,*tail,'pipe:1'], binary=True)
-        rgb, pcm = stream('original-rgb', movies['wide']), stream('original-pcm', movies['wide'], True)
-        assert rgb == stream('replay-rgb', replay_movie) and pcm == stream('replay-pcm', replay_movie, True)
-        assert len(rgb) == 320*180*3*90 and len(pcm) > 0
+        from array import array
+        from fractions import Fraction
+        variant_proofs = {}
+        for variant, dimensions in [('wide', (320, 180)), ('vertical', (180, 320))]:
+            replay_movie = replay/('renders/'+variant+'.mp4')
+            cli('replay-'+variant, 'render', '--project', replay,
+                '--sequence-id', 'ad_visualdemo_'+variant+'_sequence', '--output', replay_movie)
+            for label, path in [('original', movies[variant]), ('replay', replay_movie)]:
+                probe = json.loads(run(variant+'-'+label+'-probe', [ffprobe, '-v', 'error',
+                    '-count_frames', '-select_streams', 'v:0', '-show_entries',
+                    'stream=width,height,nb_read_frames,r_frame_rate', '-of', 'json', path]))['streams'][0]
+                assert (probe['width'], probe['height']) == dimensions
+                assert int(probe['nb_read_frames']) == 90 and Fraction(probe['r_frame_rate']) == 30
+            rgb = stream(variant+'-original-rgb', movies[variant])
+            pcm = stream(variant+'-original-pcm', movies[variant], True)
+            assert rgb == stream(variant+'-replay-rgb', replay_movie)
+            assert pcm == stream(variant+'-replay-pcm', replay_movie, True)
+            assert len(rgb) == dimensions[0]*dimensions[1]*3*90 and len(pcm) > 0
+            samples = array('f', pcm)
+            assert all(math.isfinite(s) for s in samples) and any(s != 0. for s in samples)
+            variant_proofs[variant] = dict(width=dimensions[0], height=dimensions[1], frames=90, fps=30,
+                full_RGB_bytes=len(rgb), full_PCM_bytes=len(pcm), RGB_sha256=hashlib.sha256(rgb).hexdigest(),
+                PCM_sha256=hashlib.sha256(pcm).hexdigest(), replay_equal=True, finite_non_silent_PCM=True)
         report = dict(status='passed', source_cli=args.cli_version, actual_GPU_semantic_search=True,
-            selection=actual, renders=3, full_RGB_bytes=len(rgb), full_PCM_bytes=len(pcm),
+            selection=actual, renders=4, full_RGB_bytes=len(rgb), full_PCM_bytes=len(pcm), variants=variant_proofs,
             full_project_replay_equal=True, project_unchanged_by_selection=True,
+            non_silent_finite_PCM=True,
             natural_motion_quality_accepted=False, independent_agent_benchmark=False)
     report['frozen_equal'] = before == frozen()
     assert report['frozen_equal']

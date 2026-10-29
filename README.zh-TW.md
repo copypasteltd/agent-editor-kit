@@ -1,5 +1,7 @@
 # agent editor kit
 
+**目前 CLI55 完整候選已原生離線安裝，原始碼與安裝版各自通過15／45／104分組核驗。** 281模組／8原生資源一致；新統一Skill候選維持1入口／17模組／93檔案，實際PowerShell入口已核驗，但尚未啟用。完整11素材的GPU註冊／索引／校準、實際選材與音畫重放繼續獨立驗收。正式入口仍CLI53／r54。[候選包、摘要與實際使用入口](docs/validation/CLI55原生交付_2026-10-29.md)。
+
 **原始碼 CLI55：修復原生子程序繼承命令預算。** 等待期間檢查外層期限與取消檔案，關閉自有程序作業並回收讀取執行緒；15項控制、45項選材／分鏡、104項語義相容分組分別通過。CLI54實際選材逾時且未產生成片，失敗保留；CLI55新包與完整GPU流程另驗。正式Skill仍CLI53／r54。[行為、原生前後對照與邊界](docs/product/PROCESS_OPERATION_BUDGET.md)。
 
 **CLI54 完整候選包已原生離線安裝，尚未切換 Skill。** 已修復安裝驅動逾時參數，保留首次失敗；1705個Wheel載荷檔案、281個執行期模組及8個原生資源核驗一致。安裝版45項選材／分鏡專項通過；實際CUDA校準、選材與成片重放另驗。[安裝恢復與實際入口](docs/validation/CLI54安装恢复_2026-10-29.md)。
@@ -1808,6 +1810,11 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R392 | Source CLI55 native process-control gate | 15 passed:4 new actual subprocess tests and11 existing integrity/control tests;owned PID/reader cleanup verified | [raw](docs/validation/evidence/process-budget-20261029-r1/deadline-r1/verification.json) | Source only;candidate installation/Skill acceptance separate |
 | R393 | Source CLI55 selection/storyboard compatibility | 45 passed;zero failures/errors/skips;281 source modules frozen equal | [raw](docs/validation/evidence/process-budget-20261029-r1/selection-r1/verification.json) | Separate fromCLI54 historical gates and actual GPU selection |
 | R394 | Source CLI55 semantic compatibility | 104 passed across retrieval/decisions/jobs/packages/upgrades;frozen source unchanged | [raw](docs/validation/evidence/process-budget-20261029-r1/semantic-r1/verification.json) | Re-registration/index/calibration required after implementation change;no manual hash rebinding |
+| R395 | CLI55 complete native offline candidate | Fresh1705-file wheel payload exact;complete ZIP independently extracted/installed;281 modules and8 native resources byte-equal;90 capability groups | [receipt](docs/validation/evidence/process-budget-20261029-r1/installation-candidate-r1/verification.json), [entry](docs/validation/CLI55原生交付_2026-10-29.md) | Candidate local53,not registered;no new GPU forward/render claimed by installation |
+| R396 | Installed CLI55 process controls | 15 passed;zero failures/errors/skips;-I -S -B installed-only process;281 modules frozen equal | [raw](docs/validation/evidence/process-budget-20261029-r1/installed-deadline-r1/verification.json) |4 real native-process regressions plus11 existing controls;separate from source15 |
+| R397 | Installed CLI55 selection/storyboard compatibility | 45 passed;zero failures/errors/skips;installed-only;source/installed bytes frozen equal | [raw](docs/validation/evidence/process-budget-20261029-r1/installed-selection-r1/verification.json) | Includes mocked semantic-service CLI plumbing;not actual GPU selection acceptance |
+| R398 | Installed CLI55 semantic compatibility | 104 passed;zero failures/errors/skips;independent isolated installed package;281 modules frozen equal | [raw](docs/validation/evidence/process-budget-20261029-r1/installed-semantic-r1/verification.json) | Retrieval/decisions/jobs/packages/upgrades;actual new-runtime GPU flow remains separate |
+| R399 | Unified CLI55 candidate actual PowerShell entry | Skill format valid;actual run.ps1→pinned installed version/capabilities passed;1 entry/17 modules/93 files;live namespace/runtime unchanged | [raw](docs/validation/evidence/process-budget-20261029-r1/skill-candidate-r1/verification.json) | Candidate unregistered;zero model forwards in these2 checks;live Skill remains53/r54 |
 
 ## 當前邊界與開發方向
 

@@ -93,17 +93,28 @@ def sha(path):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--run', required=True)
+    parser.add_argument('--cli-version', choices=('0.1.54', '0.1.55'), default='0.1.54')
+    parser.add_argument('--evidence-series', default='ad-selection-20261029-r1')
+    parser.add_argument('--installation-run', default='r2')
     args = parser.parse_args()
     assert args.run.replace('-', '').isalnum()
+    assert args.evidence_series.replace('-', '').isalnum() and args.installation_run.replace('-', '').isalnum()
+    base = ROOT/'docs/validation/evidence'/args.evidence_series
     namespace = ROOT/'agent-ffmpeg-local-install-manifest.json'
     original = namespace.read_bytes()
     manifest = json.loads(original)
     assert manifest['cli_version'] == '0.1.53' and manifest['skill_count'] == 1
     assert manifest['module_count'] == 17 and len(manifest['files']) == 92
-    installation = json.loads((BASE/'installation-candidate-r2/verification.json').read_bytes())
+    installation = json.loads((base/('installation-candidate-'+args.installation_run)/'verification.json').read_bytes())
     assert installation['status'] == 'installed-and-byte-verified' and installation['source_file_count'] == 281
-    for group, count in [('selection', 45), ('semantic', 104)]:
-        gate = json.loads((BASE/('installed-'+group+'-r1')/'verification.json').read_bytes())
+    assert installation['cli_version'] == args.cli_version
+    release = Path(installation['installed']).parent.parent.name
+    assert release == ('v0.1.0-alpha.4-local.53' if args.cli_version == '0.1.55' else 'v0.1.0-alpha.4-local.52')
+    groups = [('selection', 45), ('semantic', 104)]
+    if args.cli_version == '0.1.55':
+        groups.append(('deadline', 15))
+    for group, count in groups:
+        gate = json.loads((base/('installed-'+group+'-r1')/'verification.json').read_bytes())
         assert gate['status'] == 'passed' and gate['tests'] == count and gate['frozen_equal']
         assert Path(gate['installed']).resolve() == Path(installation['installed']).resolve()
     stage = ROOT/'local/agent-ffmpeg'/('ad-selection-skill-stage-'+args.run)
@@ -120,26 +131,32 @@ def main():
     skill = stage/'skills/agent-ffmpeg-local-editor'
     for relative in ('SKILL.md', 'references/runtime.md'):
         path = skill/relative
-        text = path.read_text('utf-8').replace('local.51', 'local.52').replace('0.1.53', '0.1.54')
+        text = path.read_text('utf-8').replace('v0.1.0-alpha.4-local.51', release).replace('0.1.53', args.cli_version)
         if relative == 'SKILL.md':
             text = text.replace('semantic search, voice/translation', 'calibrated semantic ad selection, semantic search, voice/translation', 1)
             needle = 'Native Float32 GPU operations'
             assert needle in text
             text = text.replace(needle, 'For calibrated visual selection into editable ads, read\n[semantic ad selection](references/ad-selection.md). Inspect actual previews\nand per-shot receipts before client approval; asset-ID uniqueness does not\nexclude duplicate content aliases.\n'+needle, 1)
         path.write_text(text, encoding='utf-8', newline='\n')
-    (skill/'references/ad-selection.md').write_text(REFERENCE, encoding='utf-8', newline='\n')
+        if relative == 'references/runtime.md' and args.cli_version == '0.1.55':
+            with path.open('a', encoding='utf-8', newline='\n') as stream:
+                stream.write('\nNative process waits under an operation budget now inherit ancestor deadlines and cancel markers. Interruption closes the owned Windows job/readers. This is cooperative control, not blocked-OS-call real-time preemption. Semantic implementation changes require explicit re-registration/reindexing; never hand-rebind old hashes.\n')
+    reference = REFERENCE
+    if args.cli_version == '0.1.55':
+        reference += '\nCLI55 inherits command budgets while waiting for native processes. Keep cold-load latency separate from neural inference time; preserve failures and use an explicit adequate budget, not a retuned acceptance threshold.\n'
+    (skill/'references/ad-selection.md').write_text(reference, encoding='utf-8', newline='\n')
     path = skill/'scripts/run.py'
     text = path.read_text('utf-8')
     text, count = re.subn(r"^MANIFEST = '[^']+'$", 'MANIFEST = '+repr(installation['manifest_sha256']), text, count=1, flags=re.M)
     assert count == 1
-    text, count = re.subn(r"^RELEASE = '[^']+'$", "RELEASE = 'v0.1.0-alpha.4-local.52'", text, count=1, flags=re.M)
+    text, count = re.subn(r"^RELEASE = '[^']+'$", 'RELEASE = '+repr(release), text, count=1, flags=re.M)
     assert count == 1
     path.write_text(text, encoding='utf-8', newline='\n')
     files = [p for p in skill.rglob('*') if p.is_file()]
     assert len(files) == 93 and sum(p.name == 'SKILL.md' for p in files) == 1
     assert namespace.read_bytes() == original
     assert all(sha(ROOT/r['path']) == r['sha256'] for r in manifest['files'])
-    report = dict(status='unregistered-candidate', cli_version='0.1.54', skill=str(skill),
+    report = dict(status='unregistered-candidate', cli_version=args.cli_version, skill=str(skill),
         live_skill_changed=False, source_fallback=False, public_entries=1, modules=17,
         files=93, runtime_manifest_sha256=installation['manifest_sha256'],
         requires_actual_installed_case_before_activation=True)

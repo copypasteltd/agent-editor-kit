@@ -1,0 +1,11 @@
+{"name": "version", "status": "passed"}
+{"name": "init", "status": "passed"}
+{"name": "ingest", "status": "passed"}
+{"name": "dry-run", "status": "passed"}
+{"name": "repair", "status": "passed"}
+{"name": "repeat-original", "status": "passed"}
+{"name": "repeat-repaired", "status": "passed"}
+{"name": "export", "status": "passed"}
+{"name": "import", "status": "passed"}
+{"name": "repair-replay", "status": "passed"}
+{"status": "passed", "cli_version": "0.1.61", "source_only": true, "source_fallback": false, "source_original_frames": 641760, "repaired_cycle_frames": 639360, "shortened_per_cycle_frames": 2400, "repeat_count": 3, "complete_repeated_PCM_equal": true, "before_repeated_frames": 1925280, "after_repeated_frames": 1918080, "complete_repaired_PCM_bytes": 2557440, "complete_repaired_PCM_sha256": "5ef874d97415455650ed207bed5e8239a9628b440f41c17ef1ca037058f41ac1", "complete_package_recipe_repair_PCM_equal": true, "unprocessed_body_PCM_equal": true, "human_listening": false, "natural_music_seamlessness_accepted": false, "model_forwards": 0, "original_media_license": "CC0-1.0", "registered_skill_cli": "0.1.59", "registered_skill_unchanged": true, "frozen_equal": true}

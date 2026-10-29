@@ -2025,6 +2025,10 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R475 | C76安裝版與實際CUDA | 循環完整2557440位元組PCM與原始碼及專案包重做相同；DF3實際4次CUDA前向，完整1124160位元組PCM與原始碼／重放相同；[安裝實測及音訊](docs/validation/CLI60独立安装交付_2026-10-29.md)。不計自然品質或聽審 |
 | R476 | CLI60安裝完整契約失敗及CLI61修復 | 400項：399通過、1失敗、0錯誤／跳過；前處理傳回PROCESS_TIMEOUT而任務契約預期TIMEOUT。原始碼統一任務級錯誤、保留原例外鏈，新增三項清理／錯誤傳播測試；[說明](docs/validation/CLI61口型超时修复_2026-10-29.md)。新測試終態另記，不啟用Skill |
 | R477 | CLI61 source timeout acceptance | 31項口型專項、31項隔離入口、37項循環／配樂分別通過；零失敗／錯誤／跳過，應用與測試凍結一致。403項完整契約另行執行，不計通過。95個正式檔案未變；CLI60草稿真實PowerShell循環及CUDA均通過，但不替代失敗的400項安裝回歸。 [Evidence](docs/validation/CLI61口型超时修复_2026-10-29.md) |
+| R478 | CLI61 native delivery | 控制19／選材57／語義104分別通過，零失敗／錯誤／跳過，應用和測試凍結一致。 [Evidence](docs/validation/CLI61原生交付核验_2026-10-29.md) |
+| R479 | CLI61 native delivery | 真實循環修復及專案封裝重做通過，完整2557440位元組PCM與CLI60參考相同；真實DF3 CUDA完整1124160位元組PCM專案重播通過，受控噪聲MSE改善12.25446dB。 [Evidence](docs/validation/CLI61原生交付核验_2026-10-29.md) |
+| R480 | CLI61 native delivery | 真實MuseTalk CUDA：133影格、67次UNet前向，無CPU回退；原alpha與區域外像素、選定PCM、關聯可編輯音畫、子行程回收及完整成片RGBA／PCM專案重播通過；不計自然口型或聽審。 [Evidence](docs/validation/CLI61原生交付核验_2026-10-29.md) |
+| R481 | CLI61 native delivery | 缺少完整403及真實案例證據時實際拒絕建置，95正式檔案不變、未建立候選。r1檢查腳本Windows路徑比較失敗保留，r2修正後通過。 [Evidence](docs/validation/CLI61原生交付核验_2026-10-29.md) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

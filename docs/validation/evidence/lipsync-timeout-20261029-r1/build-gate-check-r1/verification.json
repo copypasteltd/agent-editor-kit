@@ -1,0 +1,18 @@
+{
+  "status": "failed",
+  "scope": "audit-path-comparison",
+  "actual_build_rejected": true,
+  "reason": "Audit expected POSIX separators; Windows builder reported native backslashes. No product build or activation occurred.",
+  "rejection": {
+    "status": "rejected",
+    "reason": "missing acceptance gates",
+    "missing": [
+      "docs\\validation\\evidence\\lipsync-timeout-20261029-r1\\source61-semantic-r1\\verification.json",
+      "docs\\validation\\evidence\\lipsync-timeout-20261029-r1\\source61-contracts-r1\\verification.json",
+      "docs\\validation\\evidence\\lipsync-timeout-20261029-r1\\actual-case-r1\\verification.json",
+      "docs\\validation\\evidence\\lipsync-timeout-20261029-r1\\source61-gpu-r1\\verification.json",
+      "docs\\validation\\evidence\\lipsync-timeout-20261029-r1\\source61-lipsync-cuda-r1\\verification.json"
+    ],
+    "skill_activation": false
+  }
+}

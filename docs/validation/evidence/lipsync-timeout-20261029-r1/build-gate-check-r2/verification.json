@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "actual_build_rejected": true,
+  "actual_exit_code": 1,
+  "missing": [
+    "docs\\validation\\evidence\\lipsync-timeout-20261029-r1\\source61-contracts-r1\\verification.json",
+    "docs\\validation\\evidence\\lipsync-timeout-20261029-r1\\actual-case-r1\\verification.json",
+    "docs\\validation\\evidence\\lipsync-timeout-20261029-r1\\source61-gpu-r1\\verification.json",
+    "docs\\validation\\evidence\\lipsync-timeout-20261029-r1\\source61-lipsync-cuda-r1\\verification.json"
+  ],
+  "protected_files_unchanged": 95,
+  "no_candidate_created": true,
+  "formal_skill_cli": "0.1.59",
+  "new_candidate_cli": "0.1.61",
+  "formal_skill_activation": false,
+  "builder_sha256": "56a0966b43a964806a9e192b8c5329c40784e1eee8729efdb9543aa6a5663f6b"
+}

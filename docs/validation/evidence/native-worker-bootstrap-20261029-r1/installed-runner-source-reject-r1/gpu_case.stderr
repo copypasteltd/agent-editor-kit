@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\docs\validation\run_native_worker_gpu_case.py", line 148, in <module>
+    main()
+    ~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\docs\validation\run_native_worker_gpu_case.py", line 40, in main
+    assert installed.is_relative_to((ROOT/'local/agent-ffmpeg').resolve())
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

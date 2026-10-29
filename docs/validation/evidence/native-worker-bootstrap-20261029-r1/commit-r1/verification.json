@@ -1,0 +1,80 @@
+{
+  "status": "passed",
+  "commit": "3fa9454da863d78b3668f0534c74c5feaf65844e",
+  "origin_main": "3fa9454da863d78b3668f0534c74c5feaf65844e",
+  "advertised_remote": "3fa9454da863d78b3668f0534c74c5feaf65844e",
+  "source_files": [
+    {
+      "path": "product/src/ai_ad_editor/enhancement_worker.py",
+      "sha256": "4d15837f54375a99742cd7c9f4effbfe18a1292115422a7c8d75e0a2b0928d0d"
+    },
+    {
+      "path": "product/src/ai_ad_editor/interpolation_worker.py",
+      "sha256": "624ac6dcfe722722a221c8ecf12bd1ac7d3d326e4f5861d204eb8376fccf8c8e"
+    },
+    {
+      "path": "product/src/ai_ad_editor/lama_worker.py",
+      "sha256": "d2216b4bccb3193e592bf35dc86b587248ceef90e4cd055c42558aca80f04e4d"
+    },
+    {
+      "path": "product/src/ai_ad_editor/lipsync_worker.py",
+      "sha256": "00cf268a6daee101160270cebb0811be65c428a3d00d3bd7528de9847c5a1953"
+    },
+    {
+      "path": "product/src/ai_ad_editor/sam2_worker.py",
+      "sha256": "c8242c1f7741346ebf11497e29ffe8ff628ed34e3c64d28029bddcca0cf4f5e2"
+    },
+    {
+      "path": "product/src/ai_ad_editor/vace_worker.py",
+      "sha256": "80e8de8009d4e386b7bdca89a75c102ff814421981cfa4676a64a46a24ac9e2d"
+    },
+    {
+      "path": "product/src/ai_ad_editor/rvm_worker.py",
+      "sha256": "cb7d802c62bf4c18557fcd5faeefa41cb77b2e752f352b6fb80c517314e36e17"
+    },
+    {
+      "path": "product/src/ai_ad_editor/face_worker.py",
+      "sha256": "4d28c2879cf851b4064b80f445a6651a5c857767a20f4a5973079b8da8447da3"
+    },
+    {
+      "path": "product/src/ai_ad_editor/ocr_worker.py",
+      "sha256": "bd4a679a64ccf03cd25752b1f9f45edaf6dd1b470a90e148775867f750d12ab9"
+    },
+    {
+      "path": "product/src/ai_ad_editor/yolo_worker.py",
+      "sha256": "47a3a6fa12ab99d81172b5e05414764e802f2898e2ea7792f96c9700d42a57ae"
+    },
+    {
+      "path": "product/src/ai_ad_editor/demucs_worker.py",
+      "sha256": "93625243d8b5542d04c5d26e748c3f66c8c07a052f124aa72bae013a062e1f29"
+    },
+    {
+      "path": "product/src/ai_ad_editor/ctc_worker.py",
+      "sha256": "f601598c15513b7a5f612c9f088d68f0509dbc7b54473325e109a055826b80ac"
+    },
+    {
+      "path": "product/src/ai_ad_editor/vace_session_worker.py",
+      "sha256": "111e35f1eb0b8f1557126d0771ce42b0ff84c4f72bda2908d76e6f407bb27fa4"
+    },
+    {
+      "path": "product/src/ai_ad_editor/stem_separation_worker.py",
+      "sha256": "eeddd9b2f7ac4425ccbeba96005fcf442aacc31c3121c1793d1cdd9b18094422"
+    },
+    {
+      "path": "product/src/ai_ad_editor/whisper_worker.py",
+      "sha256": "5f2e3224e81ed250dfadb44ab362a92cccb9ca9821052e64fe821610a827a131"
+    },
+    {
+      "path": "product/src/ai_ad_editor/__init__.py",
+      "sha256": "74982de1b9a007edc6f918fcf33432cfee215fe8c4bb3d238c035b6407ad14ec"
+    },
+    {
+      "path": "product/pyproject.toml",
+      "sha256": "fc24131426c26a4bf338983d470041e4b6ea28e534dd61d6622a2107a735ca56"
+    }
+  ],
+  "source_file_count": 17,
+  "pushed": true,
+  "skill_cli_version": "0.1.56",
+  "source_cli_version": "0.1.57"
+}

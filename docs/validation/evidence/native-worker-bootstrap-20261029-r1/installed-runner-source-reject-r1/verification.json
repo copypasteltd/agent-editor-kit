@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "checks": 2,
+  "source_directory_rejected": true,
+  "no_installed_test_or_model_execution": true,
+  "checks_detail": [
+    {
+      "runner": "docs\\validation\\run_native_worker_regressions.py",
+      "runner_sha256": "da5c41435f4c73bf80f69fd77fec68450dc242db1b9be5fcea6f14bc76d17ac9",
+      "argv": [
+        "C:/Python313/python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\run_native_worker_regressions.py",
+        "--group",
+        "bootstrap",
+        "--run",
+        "reject-source-r1",
+        "--installed",
+        "E:\\dev\\sandbox\\AI广告剪辑\\product"
+      ],
+      "exit_code": 1,
+      "rejected": true
+    },
+    {
+      "runner": "docs\\validation\\run_native_worker_gpu_case.py",
+      "runner_sha256": "44e2bd56f6e700a30f892875c24a7c200a92ff1c440f86bf8287d2f34b39d590",
+      "argv": [
+        "C:/Python313/python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\run_native_worker_gpu_case.py",
+        "--run",
+        "reject-source-r1",
+        "--installed",
+        "E:\\dev\\sandbox\\AI广告剪辑\\product"
+      ],
+      "exit_code": 1,
+      "rejected": true
+    }
+  ]
+}

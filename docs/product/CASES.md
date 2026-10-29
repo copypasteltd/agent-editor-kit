@@ -1322,3 +1322,10 @@ English: The actual C-discovered unified Skill completed CUDA selection, four re
 原始英语为LibriSpeech dev-clean/1272/128104/1272-128104-0000，LibriSpeech／LibriVox contributors，语料由Vassil Panayotov等提供，CC BY4.0；原16kHz显式上采样至48kHz，不是真实全频带采集。模型为DeepFilterNet3（MIT OR Apache-2.0）。原始来源和变换说明保留在SOURCE文件。没有连续人工听审、自然噪声广泛质量或其余14类模型验收；不构成完整剪映等价结论。
 
 English: Real source CLI57 CUDA denoising retained the model runtime NumPy2.4.6,improved the controlled-noise MSE by12.25dB,and preserved complete PCM through editable-package replay. Other-model,installed57 and natural-listening acceptance remain separate.
+
+
+### C71 安装版CLI57复核补充
+
+独立CLI57／local55安装重新登记相同DF3服务，实际RTX3060／FP32／4次神经前向，无CPU神经回退，NumPy2.4.6来自原生模型Python。完整1124160字节PCM的SHA256为 `83354f670149b119a676c978e21a5a08b3e5a936bbcc1f33dd836cf42ddb2d12`，与上述已通过源码案例及其工程导入重放相同；MSE改善12.25446dB。未复制一份相同音频冒充新素材，请使用上方实际WAV／波形选听；仍未人工听审或验收其余14类模型。
+
+[安装版实际模型与全部PCM比较证据](../validation/evidence/native-worker-bootstrap-20261029-r1/installed57-gpu-r1/verification.json) · [独立包与使用方法](../validation/CLI57独立安装交付_2026-10-29.md)。正式注册Skill仍为已验收56／r55。

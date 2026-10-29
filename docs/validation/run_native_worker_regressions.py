@@ -1,4 +1,4 @@
-"""Frozen source CLI57 bootstrap or native-service contract regressions."""
+"""Frozen source or independently installed CLI57 native-service regressions."""
 import argparse
 import hashlib
 import json
@@ -26,13 +26,22 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--group', choices=GROUPS, required=True)
     parser.add_argument('--run', required=True)
+    parser.add_argument('--installed', type=Path, help='Independently installed candidate; no source fallback')
     args = parser.parse_args()
     assert args.run.replace('-', '').isalnum() and sys.dont_write_bytecode
     if args.group == 'bootstrap':
         assert sys.flags.isolated and sys.flags.no_site
-    package, tests = ROOT/'product/src/ai_ad_editor', ROOT/'product/tests'
+    source, tests = ROOT/'product/src/ai_ad_editor', ROOT/'product/tests'
+    installed = args.installed.resolve() if args.installed else None
+    if installed:
+        assert installed.is_relative_to((ROOT/'local/agent-ffmpeg').resolve())
+        assert (installed/'run.py').is_file()
+    package = installed/'site/ai_ad_editor' if installed else source
+    assert package.is_dir()
+    source_pins = {p.name: sha(p) for p in source.glob('*.py')}
+    assert source_pins == {p.name: sha(p) for p in package.glob('*.py')}
     out = ROOT/'docs/validation/evidence/native-worker-bootstrap-20261029-r1'/(
-        'source57-'+args.group+'-'+args.run)
+        ('installed57-' if installed else 'source57-')+args.group+'-'+args.run)
     out.mkdir(parents=True, exist_ok=False)
     shutil.copyfile(Path(__file__), out/'executed-runner.py')
     files = [*package.glob('*.py'), *(tests/(name+'.py') for name in GROUPS[args.group])]
@@ -40,6 +49,8 @@ def main():
     assert len(list(package.glob('*.py'))) == 281
     sys.path.insert(0, str(package.parent))
     sys.path.insert(0, str(tests))
+    if installed:
+        assert all(Path(value).resolve() != source.parent.resolve() for value in sys.path if value)
     import ai_ad_editor
     assert Path(ai_ad_editor.__file__).resolve() == package/'__init__.py'
     assert ai_ad_editor.VERSION == '0.1.57'
@@ -72,14 +83,20 @@ def main():
         assert count == 31
     with (out/'tests.stderr').open('w', encoding='utf-8', newline='\n') as stream:
         result = unittest.TextTestRunner(stream=stream, verbosity=2).run(suite)
-    frozen = pins == {name: sha(ROOT/name) for name in pins}
+    frozen = (pins == {name: sha(ROOT/name) for name in pins}
+              and source_pins == {p.name: sha(p) for p in source.glob('*.py')}
+              == {p.name: sha(p) for p in package.glob('*.py')})
     report = dict(status='passed' if result.wasSuccessful() and frozen and not result.skipped else 'failed',
         group=args.group, cli_version=ai_ad_editor.VERSION, tests=result.testsRun,
         failures=len(result.failures), errors=len(result.errors), skipped=len(result.skipped),
-        source_package=str(package), frozen_equal=frozen, file_hashes=pins,
+        loaded_package=str(package), source_package=str(source),
+        installed=str(installed) if installed else None, source_fallback=False if installed else None,
+        source_and_installed_equal=bool(installed and frozen),
+        frozen_equal=frozen, file_hashes=pins,
         runtime_root=runtime['root'],
         interpreter=sys.executable, isolated_child_dependencies=child_dependencies,
         neural_quality_accepted=False, installed57_accepted=False,
+        installed_contract_group_accepted=bool(installed and result.wasSuccessful() and frozen and not result.skipped),
         isolated_bootstrap=bool(sys.flags.isolated and sys.flags.no_site))
     (out/'verification.json').write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n',
                                        encoding='utf-8', newline='\n')

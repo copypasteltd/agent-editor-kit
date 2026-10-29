@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "path": "README.md",
+      "before_sha256": "150097384603f465c5307ac213c79b6fc842506c9ef84dd86405e5091e194c93",
+      "after_sha256": "99f99cd03508233dd011aa73bead7012d4687674b3820aee7853d02d09d45ca8",
+      "old_rows": 437,
+      "new_rows": 441,
+      "all_old_rows_preserved": true
+    },
+    {
+      "path": "README.en.md",
+      "before_sha256": "2fb5dbb26f455cd50e0a94535c55bd56c2c5ab5400db3023f7c4ca63ce6ccbfd",
+      "after_sha256": "468a056411d4eee410891c6804a9c5931afc2ca0d15ca94ec3bc3766d1cb7927",
+      "old_rows": 437,
+      "new_rows": 441,
+      "all_old_rows_preserved": true
+    },
+    {
+      "path": "README.zh-TW.md",
+      "before_sha256": "a7cf85c1929f60cd486cca7366bbb27bd6d4dd4546e8ebf3668f1fd4bdbfcd5b",
+      "after_sha256": "3336596f9e50fcf25ddaa6eaf9d3ad7fb71c11e19e5295c926816aa496efd0d6",
+      "old_rows": 437,
+      "new_rows": 441,
+      "all_old_rows_preserved": true
+    }
+  ]
+}

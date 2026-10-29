@@ -1,4 +1,4 @@
-"""Actual source CLI57 CUDA denoising with fresh binding and full-PCM package replay."""
+"""Actual source or installed CLI57 CUDA denoising and full-PCM package replay."""
 import argparse
 from array import array
 import hashlib
@@ -30,23 +30,33 @@ def save(path, value):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--run', required=True)
+    parser.add_argument('--installed', type=Path, help='Independent candidate, without source fallback')
     args = parser.parse_args()
     assert args.run.replace('-', '').isalnum()
     assert load(BASE/'source57-bootstrap-r1/verification.json')['status'] == 'passed'
-    out = BASE/('source57-gpu-'+args.run)
-    work = ROOT/'local/agent-ffmpeg'/('native-worker-source57-gpu-'+args.run)
+    installed = args.installed.resolve() if args.installed else None
+    mode = 'installed57' if installed else 'source57'
+    if installed:
+        assert installed.is_relative_to((ROOT/'local/agent-ffmpeg').resolve())
+        gate = load(BASE/('installed57-bootstrap-'+args.run)/'verification.json')
+        assert gate['status'] == 'passed' and gate['source_and_installed_equal']
+    out = BASE/(mode+'-gpu-'+args.run)
+    work = ROOT/'local/agent-ffmpeg'/('native-worker-'+mode+'-gpu-'+args.run)
     out.mkdir(exist_ok=False)
     work.mkdir(exist_ok=False)
     shutil.copyfile(Path(__file__), out/'executed-runner.py')
-    package = ROOT/'product/src/ai_ad_editor'
+    source_package = ROOT/'product/src/ai_ad_editor'
+    source_pins = {p.name: sha(p) for p in source_package.glob('*.py')}
+    package = installed/'site/ai_ad_editor' if installed else source_package
     pins = {p.name: sha(p) for p in package.glob('*.py')}
-    assert len(pins) == 281
+    assert len(pins) == 281 and pins == source_pins
     namespace = ROOT/'agent-ffmpeg-local-install-manifest.json'
     namespace_pin = sha(namespace)
     project, replay = work/'project', work/'replay'
     code = ('import sys;sys.path.insert(0,'+repr(str(package.parent))+
             ');from ai_ad_editor.cli import main;raise SystemExit(main())')
-    prefix = [sys.executable, '-E', '-B', '-u', '-X', 'utf8', '-c', code]
+    prefix = ([sys.executable, '-I', '-S', '-B', '-u', '-X', 'utf8', str(installed/'run.py')]
+              if installed else [sys.executable, '-E', '-B', '-u', '-X', 'utf8', '-c', code])
     calls = []
 
     def run(name, argv, *, binary=False):
@@ -115,8 +125,23 @@ def main():
         replay_asset = next(a for a in load(replay/'project.json')['assets'] if a['id'] == 'native57_enhanced')
         assert sha(output) == sha(replay/replay_asset['uri'])
         assert after == pcm('replay', replay/replay_asset['uri'])
+        source_pcm_sha256 = None
+        if installed:
+            accepted_source = ROOT/'local/agent-ffmpeg/native-worker-source57-gpu-r1/enhanced.raw'
+            source_result = load(BASE/'source57-gpu-r1/verification.json')
+            assert source_result['status'] == 'passed' and source_result['actual_CUDA_model']
+            assert accepted_source.stat().st_size == source_result['complete_PCM_bytes']
+            source_pcm_sha256 = sha(accepted_source)
+            assert hashlib.sha256(after).hexdigest() == source_pcm_sha256, 'Installed full PCM differs from accepted source57 case'
         assert pins == {p.name: sha(p) for p in package.glob('*.py')} and sha(namespace) == namespace_pin
+        assert source_pins == {p.name: sha(p) for p in source_package.glob('*.py')}
         report = dict(status='passed', cli_version='0.1.57', actual_CUDA_model=True,
+            installed=str(installed) if installed else None, loaded_package=str(package),
+            source_fallback=False if installed else None, source_and_installed_equal=bool(installed),
+            installed_actual_CUDA_case_accepted=bool(installed),
+            complete_PCM_sha256=hashlib.sha256(after).hexdigest(),
+            accepted_source_PCM_sha256=source_pcm_sha256,
+            complete_source_installed_PCM_equal=bool(installed and source_pcm_sha256),
             fresh_adapter_registered=True, native_model=model, native_numpy_version=model['versions']['numpy'],
             code_files=281, frozen_equal=True, installed_skill_unchanged=True, complete_PCM_bytes=len(after),
             complete_PCM_replay_equal=True, source_and_model_licenses_retained=True,

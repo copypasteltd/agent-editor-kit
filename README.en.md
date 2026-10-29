@@ -1,8 +1,10 @@
 # agent editor kit
 
-**Source CLI61 full403 service contracts passed,zero failures/errors/skips,app and tests frozen.Independent installation and registered Skill promotion require separate acceptance.** [Evidence](docs/validation/CLI61完整源码验收_2026-10-29.md)
+**Development status: source CLI0.1.63 adds bounded process-list requery and count diagnostics;11 native-process tests passed, further gates run separately. Preserve the CLI62 music failure and interrupted contracts; no new installation promoted. Formal Skill remains CLI59/local57/r57.** [Implementation and limits](docs/validation/CLI63原生进程清理_2026-10-29.md)
 
-**Development status: source CLI0.1.61 fixes inconsistent operation timeout errors between lip-sync media preparation and model processing. Validation requires new terminal receipts. CLI60 installed contracts finished with 399 passes and 1 failure; promotion is blocked. The registered Skill remains CLI59/local57/r57.** [Fix and acceptance boundaries](docs/validation/CLI61口型超时修复_2026-10-29.md).
+**Historical source CLI61 full403 service contracts passed,zero failures/errors/skips,app and tests frozen.Independent installation and registered Skill promotion require separate acceptance.** [Evidence](docs/validation/CLI61完整源码验收_2026-10-29.md)
+
+**Historical development status (CLI61): source CLI0.1.61 fixes inconsistent operation timeout errors between lip-sync media preparation and model processing. Validation requires new terminal receipts. CLI60 installed contracts finished with 399 passes and 1 failure; promotion is blocked. The registered Skill remains CLI59/local57/r57.** [Fix and acceptance boundaries](docs/validation/CLI61口型超时修复_2026-10-29.md).
 
 **Current local version: CLI0.1.59 / local57 / r57 unified Skill kit.** One `$agent-ffmpeg-local-editor` entry,17 internal modules,93 files. Source and installed 31/19/57/104/400 groups passed separately. Staged and actual C-discovered CUDA denoising passed complete1124160-byte PCM package replay. Full CapCut parity remains incomplete.
 
@@ -2060,6 +2062,8 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R502 | CLI62 actual CUDA / retained failure | Actual MuseTalk CUDA:133 frames/67 batches, no CPU fallback; complete RGBA/PCM package replay and cleanup passed. The37 music loop/score tests produced1 native-process enumeration cleanup error. Preserve it;150 actual short-child observations did not reproduce it and do not prove a fix or promotion. [Evidence](docs/validation/CLI62口型存储竞争修复_2026-10-29.md#真实-musetalk-已通过音乐循环暴露新的进程清理失败) |
 | R503 | CLI62 actual DF3 / candidate stopped | Actual DF3 CUDA:4 forwards/no CPU fallback, full1124160-byte PCM package replay equal. Following the confirmed music failure, stop the identity-verified remaining contract task and preserve interrupted evidence. The controller actually refused it; no build/staging/registration. Cleanup failure remains unresolved. [Evidence](docs/validation/CLI62口型存储竞争修复_2026-10-29.md#df3-通过与本轮候选停止) |
 | R504 | CLI62 cleanup diagnosis | Repeat the original score case10 times with native snapshot observation:10 passed,39 real snapshots and no incomplete lists or fabricated counts. Non-reproduction only; the original37-test failure remains unresolved and delivery stays rejected. [Evidence](docs/validation/evidence/lipsync-storage-race-20261029-r1/score-cleanup-probe-r1/verification.json) |
+| R505 | CLI63 source cleanup fix | Bounded incomplete-list/ERROR_MORE_DATA requery retains owned handles, preserves4096 limits/API errors and shares a10s deadline with diagnostic counts.11 real Windows child-process tests with injected API boundaries passed; CLI62 rejects the same incomplete-list fixture. Other gates remain separate; no unique natural-failure cause claimed. [Implementation/evidence](docs/validation/CLI63原生进程清理_2026-10-29.md) |
+| R506 | CLI63 source consumers | Isolated bootstrap31,control26 and music loop/score37 passed separately,zero failures/errors/skips with frozen sources/tests. Control26 includes native11; do not double-count. Preserve CLI62 failure; lip/full contracts/real models/installation/Skill require separate acceptance. [Evidence](docs/validation/CLI63原生进程清理_2026-10-29.md#已完成的消费链回归) |
 
 ### Development preview: C76 loop overlap repair(source CLI60)
 

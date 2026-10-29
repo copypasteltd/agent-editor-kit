@@ -1,0 +1,14 @@
+test_close_requeries_more_data_without_hiding_other_API_errors (test_native_process_job.NativeProcessJobTests.test_close_requeries_more_data_without_hiding_other_API_errors) ... ok
+test_close_requeries_one_incomplete_snapshot_and_waits_actual_writer (test_native_process_job.NativeProcessJobTests.test_close_requeries_one_incomplete_snapshot_and_waits_actual_writer) ... ok
+test_close_waits_actual_file_writer_in_twenty_independent_jobs (test_native_process_job.NativeProcessJobTests.test_close_waits_actual_file_writer_in_twenty_independent_jobs) ... ok
+test_close_waits_descendant_after_its_parent_already_exited (test_native_process_job.NativeProcessJobTests.test_close_waits_descendant_after_its_parent_already_exited) ... ok
+test_closing_one_job_preserves_the_other_owned_job (test_native_process_job.NativeProcessJobTests.test_closing_one_job_preserves_the_other_owned_job) ... ok
+test_empty_and_already_completed_jobs_close_idempotently (test_native_process_job.NativeProcessJobTests.test_empty_and_already_completed_jobs_close_idempotently) ... ok
+test_incomplete_snapshot_retries_are_bounded_and_do_not_claim_success (test_native_process_job.NativeProcessJobTests.test_incomplete_snapshot_retries_are_bounded_and_do_not_claim_success) ... ok
+test_process_list_limit_remains_4096_with_count_diagnostics (test_native_process_job.NativeProcessJobTests.test_process_list_limit_remains_4096_with_count_diagnostics) ... ok
+test_query_access_denied_is_not_retried_or_hidden (test_native_process_job.NativeProcessJobTests.test_query_access_denied_is_not_retried_or_hidden) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 5.643s
+
+OK

@@ -1,0 +1,20 @@
+test_close_requeries_one_incomplete_snapshot_and_waits_actual_writer (test_native_process_job.NativeProcessJobTests.test_close_requeries_one_incomplete_snapshot_and_waits_actual_writer) ... ERROR
+
+======================================================================
+ERROR: test_close_requeries_one_incomplete_snapshot_and_waits_actual_writer (test_native_process_job.NativeProcessJobTests.test_close_requeries_one_incomplete_snapshot_and_waits_actual_writer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\product\tests\test_native_process_job.py", line 127, in test_close_requeries_one_incomplete_snapshot_and_waits_actual_writer
+    job.close()
+    ~~~~~~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\native_process_job.py", line 174, in close
+    retain_owned_process_handles()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\dev\sandbox\AI广告剪辑\product\src\ai_ad_editor\native_process_job.py", line 151, in retain_owned_process_handles
+    raise OSError('Owned process enumeration exceeds cleanup budget')
+OSError: Owned process enumeration exceeds cleanup budget
+
+----------------------------------------------------------------------
+Ran 1 test in 0.173s
+
+FAILED (errors=1)

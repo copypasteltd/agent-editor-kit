@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "version": "0.1.63",
+  "tests": 9,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "actual_Windows_children": true,
+  "API_snapshot_injection": true,
+  "original_natural_failure_reproduced": false,
+  "formal_activation": false,
+  "file_hashes": {
+    "product/src/ai_ad_editor/native_process_job.py": "a502b0ad03bc41e6065312389638742e505242fe05ec5dd61d7796545b8a4a20",
+    "product/tests/test_native_process_job.py": "61274be65e62d957b100aa39f93bce798c152ef672b15f53b6308ce173961320"
+  }
+}

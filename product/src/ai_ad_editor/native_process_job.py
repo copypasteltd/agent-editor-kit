@@ -142,51 +142,77 @@ class NativeProcessJob:
                     raise ctypes.WinError(ctypes.get_last_error())
                 return information.ActiveProcesses
 
-            def retain_owned_process_handles():
-                information = self.ProcessIds()
-                if not kernel.QueryInformationJobObject(handle, 3, ctypes.byref(information),
-                                                       ctypes.sizeof(information), None):
-                    raise ctypes.WinError(ctypes.get_last_error())
-                if information.Count > 4096 or information.Assigned > information.Count:
-                    raise OSError('Owned process enumeration exceeds cleanup budget')
-                for pid in information.Ids[:information.Count]:
-                    if pid in retained:
-                        continue
-                    process_handle = kernel.OpenProcess(0x00101000, False, pid)
-                    if not process_handle:
-                        if ctypes.get_last_error() == 87:  # PID already disappeared.
-                            continue
-                        raise ctypes.WinError(ctypes.get_last_error())
-                    belongs = self.BOOL()
-                    try:
-                        if not kernel.IsProcessInJob(process_handle, handle, ctypes.byref(belongs)):
-                            raise ctypes.WinError(ctypes.get_last_error())
-                        if belongs.value:
-                            retained[pid] = process_handle
-                            process_handle = None
-                    finally:
-                        if process_handle:
-                            kernel.CloseHandle(process_handle)
+            deadline = time.monotonic() + 10
 
+            def retain_owned_process_handles():
+                # A live job can change while its ID list is being observed.
+                # Preserve returned handles before retrying an incomplete list;
+                # never treat a partial list as complete ownership evidence.
+                assigned = count = last_error = 0
+                for attempt in range(32):
+                    information = self.ProcessIds()
+                    ok = kernel.QueryInformationJobObject(handle, 3, ctypes.byref(information),
+                                                           ctypes.sizeof(information), None)
+                    if not ok:
+                        last_error = ctypes.get_last_error()
+                        if last_error != 234:  # ERROR_MORE_DATA only.
+                            raise ctypes.WinError(last_error)
+                    else:
+                        assigned, count = int(information.Assigned), int(information.Count)
+                        if count > 4096 or assigned > 4096:
+                            raise OSError('Owned process enumeration exceeds cleanup budget '
+                                          f'(assigned={assigned}, count={count}, limit=4096)')
+                        if count > assigned:
+                            raise OSError('Invalid owned process enumeration '
+                                          f'(assigned={assigned}, count={count})')
+                        for pid in information.Ids[:count]:
+                            if pid in retained:
+                                continue
+                            if len(retained) >= 4096:
+                                raise OSError('Retained owned process handles exceed cleanup budget '
+                                              '(limit=4096)')
+                            process_handle = kernel.OpenProcess(0x00101000, False, pid)
+                            if not process_handle:
+                                if ctypes.get_last_error() == 87:  # PID already disappeared.
+                                    continue
+                                raise ctypes.WinError(ctypes.get_last_error())
+                            belongs = self.BOOL()
+                            try:
+                                if not kernel.IsProcessInJob(process_handle, handle, ctypes.byref(belongs)):
+                                    raise ctypes.WinError(ctypes.get_last_error())
+                                if belongs.value:
+                                    retained[pid] = process_handle
+                                    process_handle = None
+                            finally:
+                                if process_handle:
+                                    kernel.CloseHandle(process_handle)
+                        if count == assigned:
+                            return
+                    if attempt == 31 or time.monotonic() >= deadline:
+                        break
+                    time.sleep(.005)
+                raise OSError('Owned process enumeration did not stabilize '
+                              f'(assigned={assigned}, count={count}, attempts={attempt+1}, '
+                              f'last_error={last_error})')
+
+            # Keep kernel handles before terminating. Accounting can reach
+            # zero before a descendant's process object is signaled.
+            retain_owned_process_handles()
             if active():
-                # Keep kernel handles before terminating. Accounting can reach
-                # zero before a descendant's process object is signaled.
-                retain_owned_process_handles()
                 if not kernel.TerminateJobObject(handle, 1):
                     raise ctypes.WinError(ctypes.get_last_error())
-                deadline = time.monotonic() + 10
-                retain_owned_process_handles()
-                for process in self._processes:
-                    process.wait(timeout=max(0., deadline-time.monotonic()))
-                retain_owned_process_handles()
-                for process_handle in retained.values():
-                    milliseconds = max(0, int((deadline-time.monotonic())*1000))
-                    if kernel.WaitForSingleObject(process_handle, milliseconds) != 0:
-                        raise OSError('Owned descendant process did not signal termination')
-                while active():
-                    if time.monotonic() >= deadline:
-                        raise OSError('Owned native process tree did not exit within cleanup budget')
-                    time.sleep(.005)
+            retain_owned_process_handles()
+            for process in self._processes:
+                process.wait(timeout=max(0., deadline-time.monotonic()))
+            retain_owned_process_handles()
+            for process_handle in retained.values():
+                milliseconds = max(0, int((deadline-time.monotonic())*1000))
+                if kernel.WaitForSingleObject(process_handle, milliseconds) != 0:
+                    raise OSError('Owned descendant process did not signal termination')
+            while active():
+                if time.monotonic() >= deadline:
+                    raise OSError('Owned native process tree did not exit within cleanup budget')
+                time.sleep(.005)
         finally:
             for process_handle in retained.values():
                 kernel.CloseHandle(process_handle)

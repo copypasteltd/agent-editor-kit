@@ -1409,3 +1409,14 @@ GIF为10fps预览，截图已查看；没有声称连续人工观看、听审、
 完整3072000字节原始PCM在导出／导入后重新合成逐字节相同。实际成片为320×180／30fps／480帧，完整110592000字节RGBA和6144000字节解码Float32 PCM与工程包重放相同。成片画面是实际测得波形及谱面诊断图，不是GUI截图或神经视频。PNG已目检，无连续视听／听审结论；AAC成片不声称与原16bit母带无损相同。
 
 引擎对用户输入默认保持unverified／internal，不自动确认商用权利；本例明确的CC0来源说明不泛化到其他输入。正式注册仍CLI58，源码59的新安装／Skill交付、自然质量及G25完整范围继续开放。[接口与限制](MUSIC_SCORE.md) · [核验记录](../validation/CLI59谱面合成_2026-10-29.md) · [原始实测收据](../validation/evidence/music-score-20261029-r1/actual-case-r1/verification.json)
+
+
+### C75安装候选复核（CLI59/local57）
+
+独立离线安装入口重新生成16秒／5分轨和4类音效，完整3072000字节原PCM与源码相同；导入后重新合成相同。全部480帧／110592000字节RGBA和6144000字节解码Float32 PCM与源码及包重放相同，无源码回落。r1因验收脚本变量名冲突在最终目录检查失败，保留记录；修复脚本后r2重新完整执行通过，应用源码未改。
+
+[安装版真实WAV](../assets/music-score59-installed-20261029-r1/actual.wav) · [安装版真实MP4](../assets/music-score59-installed-20261029-r1/actual.mp4) · [来源与文件摘要](../assets/music-score59-installed-20261029-r1/SOURCE.json) · [完整安装版收据](../validation/evidence/music-score-20261029-r1/installed59-score-case-r2/verification.json)
+
+![Actual installed59 measured waveform and authored score](../assets/music-score59-installed-20261029-r1/actual.gif)
+
+这是实测波形／谱面诊断图和真实音频，不是GUI录制。另行完成实际PowerShell单入口Skill候选生成，完整PCM也与源码相同。正式注册仍58，安装400及正式切换继续开放；不计人类听审或神经音乐验收。

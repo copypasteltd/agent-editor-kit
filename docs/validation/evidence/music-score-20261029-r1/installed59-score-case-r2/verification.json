@@ -1,0 +1,112 @@
+{
+  "complete_source_installed_PCM_equal": true,
+  "complete_source_installed_AV_equal": true,
+  "status": "passed",
+  "cli_version": "0.1.59",
+  "source_only": false,
+  "source_fallback": false,
+  "installed": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.57\\final-r1\\installed",
+  "neural_model": false,
+  "actual_model_forwards": 0,
+  "device": "cpu",
+  "audio": {
+    "engine": "agent-editable-score-cpu-v1",
+    "device": "cpu",
+    "neural_model": false,
+    "model_forwards": 0,
+    "sample_rate": 48000,
+    "channels": 2,
+    "frames": 768000,
+    "duration_seconds": 16.0,
+    "PCM_sha256": "8cfe8b80ecf837dbdc0343c3d673f479c53eff3f64cdae1036c8f271cb1644d2",
+    "PCM_bytes": 3072000,
+    "pre_limiter_peak": 0.16195189352322126,
+    "over_unit_pre_limiter_samples": 0,
+    "limiter": "none",
+    "sample_peak": 0.161956787109375,
+    "true_peak_accepted": false,
+    "rms": 0.041960141627585046,
+    "nonzero_samples": 1504868,
+    "stems": {
+      "bass": {
+        "file": "stem-00.wav",
+        "sha256": "sha256:6d6af0be4446f7cf6357c9cbf614dbd3cc0e9f67e412086467f16f157d5cdb4d"
+      },
+      "harmony": {
+        "file": "stem-01.wav",
+        "sha256": "sha256:4e564866b0b659ea0a3a52994d36db3f858fca9afe18941995beac08d52b9640"
+      },
+      "hat": {
+        "file": "stem-02.wav",
+        "sha256": "sha256:674013062845f56996ee47e6a6336068a491b979420e14868667ff4143073f01"
+      },
+      "kick": {
+        "file": "stem-03.wav",
+        "sha256": "sha256:8cb5246d86652a670219daf42018a1b9039f770ee8f6beaceef85d9c13e4c36e"
+      },
+      "lead": {
+        "file": "stem-04.wav",
+        "sha256": "sha256:f558745236ac580f73eb21d111da93c8e7842a810ba23370e119e061f0e4ed00"
+      }
+    },
+    "render_seconds": 0.37471839995123446,
+    "note_samples": 3939840
+  },
+  "effects": {
+    "whoosh": {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r2\\project\\assets\\music-scores\\whoosh\\master.wav",
+      "sha256": "sha256:ec6ba5c0be105d4e50134de27f6c54a00d1c7fe80b0628b327df09bb6e78a6f8"
+    },
+    "riser": {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r2\\project\\assets\\music-scores\\riser\\master.wav",
+      "sha256": "sha256:ee574b941a03790b4f26f10ace16470e12310c27d8c2549fb650400817b8783a"
+    },
+    "impact": {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r2\\project\\assets\\music-scores\\impact\\master.wav",
+      "sha256": "sha256:f00ad98d4e8a2410290e42e7c150dd7f00452b670c2c538580c76a1da6fef680"
+    },
+    "chime": {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r2\\project\\assets\\music-scores\\chime\\master.wav",
+      "sha256": "sha256:618aa360a87a21198c6ca4e630e1e3be7395d54a52e67601af6d8c3278fbb1b5"
+    }
+  },
+  "complete_original_PCM_bytes": 3072000,
+  "complete_recomposition_PCM_equal": true,
+  "complete_rendered_AV_replay_equal": true,
+  "decoded": {
+    "original_rgba": {
+      "bytes": 110592000,
+      "sha256": "4a8d6a02e7336e2377a8f4551e7a2050715af9a263ad99c3c30231b0b73d6d30"
+    },
+    "original_pcm": {
+      "bytes": 6144000,
+      "sha256": "f5b35a2cb816b3628e733f2bdbfb70b0892ee14c89a71463bf8163c65ee50f33"
+    },
+    "replay_rgba": {
+      "bytes": 110592000,
+      "sha256": "4a8d6a02e7336e2377a8f4551e7a2050715af9a263ad99c3c30231b0b73d6d30"
+    },
+    "replay_pcm": {
+      "bytes": 6144000,
+      "sha256": "f5b35a2cb816b3628e733f2bdbfb70b0892ee14c89a71463bf8163c65ee50f33"
+    }
+  },
+  "source_frozen_equal": true,
+  "registered_skill_unchanged": true,
+  "registered_skill_cli": "0.1.58",
+  "inspected_and_dry_run_readonly": true,
+  "original_score_and_fixture_media": "CC0-1.0",
+  "product_rights_remain_unverified_by_default": true,
+  "human_listening": false,
+  "neural_music_accepted": false,
+  "full_product_goal_closed": false,
+  "artifacts": {
+    "wav": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r2\\project\\assets\\music-scores\\score_demo\\master.wav",
+    "movie": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r2\\project\\renders\\score.mp4",
+    "png": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r2\\actual.png",
+    "gif": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r2\\actual.gif",
+    "editable_package": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r2\\editable-score.zip",
+    "score": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r2\\original-score.json",
+    "source": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r2\\SOURCE.txt"
+  }
+}

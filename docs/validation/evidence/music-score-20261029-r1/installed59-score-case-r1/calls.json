@@ -1,0 +1,443 @@
+[
+  {
+    "name": "version",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.57\\final-r1\\installed\\run.py",
+      "version"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "init",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.57\\final-r1\\installed\\run.py",
+      "project",
+      "init",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\project"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "inspect",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.57\\final-r1\\installed\\run.py",
+      "music",
+      "inspect-score",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\original-score.json"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "dry-run",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.57\\final-r1\\installed\\run.py",
+      "music",
+      "compose",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\original-score.json",
+      "--new-asset-id",
+      "score_demo",
+      "--stems",
+      "--dry-run"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "compose",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.57\\final-r1\\installed\\run.py",
+      "music",
+      "compose",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\original-score.json",
+      "--new-asset-id",
+      "score_demo",
+      "--stems",
+      "--apply",
+      "--track-id",
+      "track_audio_1"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "effect-whoosh",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.57\\final-r1\\installed\\run.py",
+      "music",
+      "effect",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\project",
+      "--preset",
+      "whoosh",
+      "--duration-seconds",
+      "2",
+      "--new-asset-id",
+      "whoosh"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "effect-riser",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.57\\final-r1\\installed\\run.py",
+      "music",
+      "effect",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\project",
+      "--preset",
+      "riser",
+      "--duration-seconds",
+      "2",
+      "--new-asset-id",
+      "riser"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "effect-impact",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.57\\final-r1\\installed\\run.py",
+      "music",
+      "effect",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\project",
+      "--preset",
+      "impact",
+      "--duration-seconds",
+      "2",
+      "--new-asset-id",
+      "impact"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "effect-chime",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.57\\final-r1\\installed\\run.py",
+      "music",
+      "effect",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\project",
+      "--preset",
+      "chime",
+      "--duration-seconds",
+      "2",
+      "--new-asset-id",
+      "chime"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "ingest-scope",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.57\\final-r1\\installed\\run.py",
+      "media",
+      "ingest",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\actual.png",
+      "--asset-id",
+      "scope",
+      "--license-spdx",
+      "CC0-1.0",
+      "--verification-status",
+      "verified",
+      "--creator",
+      "Agent Editor Kit original fixture",
+      "--evidence",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\SOURCE.txt"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "timeline",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.57\\final-r1\\installed\\run.py",
+      "timeline",
+      "compose",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\timeline.json"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "render",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.57\\final-r1\\installed\\run.py",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\project",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\project\\renders\\score.mp4"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "export",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.57\\final-r1\\installed\\run.py",
+      "convert",
+      "export",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\project",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\editable-score.zip",
+      "--target-format",
+      "package"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "import",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.57\\final-r1\\installed\\run.py",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\editable-score.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\replay"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "recompose",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.57\\final-r1\\installed\\run.py",
+      "music",
+      "compose",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\replay",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\replay\\assets\\music-scores\\score_demo\\score.json",
+      "--new-asset-id",
+      "recomposed"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "replay",
+    "argv": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.57\\final-r1\\installed\\run.py",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\replay",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\replay\\renders\\score.mp4"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "original-rgba",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-n",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\project\\renders\\score.mp4",
+      "-an",
+      "-pix_fmt",
+      "rgba",
+      "-f",
+      "rawvideo",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\original.rgba"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "original-pcm",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-n",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\project\\renders\\score.mp4",
+      "-vn",
+      "-acodec",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\original.pcm"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "replay-rgba",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-n",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\replay\\renders\\score.mp4",
+      "-an",
+      "-pix_fmt",
+      "rgba",
+      "-f",
+      "rawvideo",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\replay.rgba"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "replay-pcm",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-n",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\replay\\renders\\score.mp4",
+      "-vn",
+      "-acodec",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\replay.pcm"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "gif",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-n",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\project\\renders\\score.mp4",
+      "-vf",
+      "fps=4,scale=480:-1",
+      "-an",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\installed59-score-case-r1\\actual.gif"
+    ],
+    "exit_code": 0
+  }
+]

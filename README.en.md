@@ -1,5 +1,11 @@
 # agent editor kit
 
+**CLI59 installed candidate passed complete music/AV replay**:all16s/5-track PCM,480 frames and decoded soundtrack match source and portable replay. Actual CUDA denoising also matches complete source PCM across4 forwards. The unregistered single-entry Skill generated music through its real PowerShell entry. Installed400 continues;registered Skill remains CLI58. [Usage and limits](docs/validation/CLI59独立安装交付_2026-10-29.md).
+
+
+**CLI59/local57 is natively installed as an offline candidate**:1706 exact payload files,282 application modules and8 native resources. Installed31 bootstrap/19 score/19 control/57 selection/104 semantic tests passed separately. The unregistered single-entry Skill generated complete PCM matching source; installed400 and complete-case acceptance remain separate. The registered Skill stays CLI58. [Installed usage](docs/validation/CLI59独立安装交付_2026-10-29.md).
+
+
 **CLI59 source update: all400 service contracts passed; all19 formal control regressions passed after atomic publication of the PID test marker.** The original failed receipt is retained. Independent CLI59 installation and Skill delivery remain pending; the registered entry is CLI58. [Evidence](docs/validation/CLI59谱面合成_2026-10-29.md).
 
 
@@ -1981,6 +1987,10 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R459 | CLI59 score core and transactions | Targeted19/bootstrap31/selection57/semantic104 passed separately;initial device-field error retained and fixed;[evidence and scope](docs/validation/CLI59谱面合成_2026-10-29.md) |
 | R460 | C75 actual source audio and movie |16s/5 stems/4 distinct effects;complete3072000-byte PCM recomposition and110592000-byte RGBA/6144000-byte Float32 PCM replay match;no neural inference or listening acceptance;[case](docs/product/CASES.md#c75-source59-editable-score) |
 | R461 | CLI59 delivery boundaries | One empty-PID-marker error in19 control tests;atomic-publication fixture prototype passed4 tests without changing formal tests;400 contracts running,installed Skill remains58;older manual version banners synchronized |
+| R462 | CLI59/local57 native candidate |1706 exact payload files/282 modules/8 native resources;separate31 bootstrap/19 score/19 control/57 selection/104 semantic passes;registered Skill stays58 |
+| R463 | C75 installed full music replay | Retained r1 harness-variable failure;r2 fully rerun passed;all3072000 original PCM/110592000 RGBA/6144000 decoded PCM bytes match source and portable replay;no listening acceptance |
+| R464 | Actual source/installed CLI59 CUDA |4 DF3 forwards each,complete1124160-byte PCM matches source and replay;12.25dB controlled-noise MSE improvement,not natural quality;source report count corrected by separate audit |
+| R465 | Single-entry Skill59 candidate |1 entry/17 modules/93 files;static validation and actual PowerShell score,5 stems,effect,readonly preflight passed;complete PCM matches source;unregistered,installed400 pending |
 
 ## Current limits and development direction
 

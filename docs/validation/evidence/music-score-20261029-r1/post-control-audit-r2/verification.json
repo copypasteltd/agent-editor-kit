@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "all_application_modules_unchanged": true,
+  "only_changed_test": "product/tests/test_process_operation_budget.py",
+  "formal_fixture_ast_equals_validated_prototype": true,
+  "byte_equal": false,
+  "difference": "one literal split into two adjacent literals",
+  "prototype_sha256": "860a38973f2891cb6e71f119a2baf84c1f20be6a169366296ed13a2dfb9eed71",
+  "formal_sha256": "3d88c5774fd4495f081d91e33c57a6329f21fe275e1cd3a8b1dc44d9ef53149a",
+  "groups": {
+    "source59-bootstrap-r1": {
+      "tests": 31,
+      "receipt_sha256": "e6fff33b645b64d8dd690db23e001c479f39dfa44cb22dbc9ef7a6b3991e4ca2",
+      "changed_since_test": [
+        "product/tests/test_process_operation_budget.py"
+      ]
+    },
+    "source59-selection-r1": {
+      "tests": 57,
+      "receipt_sha256": "d64c5779fa1fff2b40d55d48abda7de218642df0b3ebd2f7844a8ff16d075a51",
+      "changed_since_test": [
+        "product/tests/test_process_operation_budget.py"
+      ]
+    },
+    "source59-semantic-r1": {
+      "tests": 104,
+      "receipt_sha256": "545d136eff2e45e80726146c47afbd6b76fbc4c912eba99190a5f0a2cf0a4a0c",
+      "changed_since_test": [
+        "product/tests/test_process_operation_budget.py"
+      ]
+    },
+    "source59-contracts-r1": {
+      "tests": 400,
+      "receipt_sha256": "d82218ce89f70957b9ef7ffce08d092daf3a0d3b9119efe0eb9a32772ed5a961",
+      "changed_since_test": [
+        "product/tests/test_process_operation_budget.py"
+      ]
+    },
+    "source59-control-r2": {
+      "tests": 19,
+      "receipt_sha256": "d6ea7b310e5af3ee8d4c7bea66f8a3cae18c08bec3ac7a21c513a5f40e6e0c0b",
+      "changed_since_test": []
+    }
+  },
+  "changes": {
+    "product/tests/test_process_operation_budget.py": {
+      "before": "b8fd3846c16140f9d01f5b171d5a4f5f45c3ba95abe287c6723490eb3cd475b9",
+      "current": "3d88c5774fd4495f081d91e33c57a6329f21fe275e1cd3a8b1dc44d9ef53149a"
+    }
+  },
+  "registered_cli": "0.1.58",
+  "source_cli": "0.1.59",
+  "installed59_accepted": false
+}

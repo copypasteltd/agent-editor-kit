@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "scope": "metadata-correction-only-no-new-inference",
+  "original_receipt_sha256": "636f0d458a4f16370abc50418bac2386ad7e7de88e91203f6fac0c23eabf045a",
+  "executed_runner_sha256": "ed4c2403c59741a98bd4e894e8fd9d4352b348fac02ca40b2cad80a19f35be90",
+  "original_code_files_field": 281,
+  "actual_asserted_module_count": 282,
+  "reason": "inherited hardcoded report counter; actual before/after pins enforce282 modules",
+  "original_receipt_preserved": true,
+  "actual_CUDA_model": true,
+  "complete_PCM_replay_equal": true,
+  "current_driver_uses_actual_pin_count": true
+}

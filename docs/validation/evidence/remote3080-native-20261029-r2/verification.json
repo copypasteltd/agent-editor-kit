@@ -1,0 +1,70 @@
+{
+  "status": "read-only-inventory-completed",
+  "captured_utc": "2026-10-29T13:13:40.846826+00:00",
+  "device_alias": "remote-RTX3080",
+  "identity_matched": true,
+  "inventory": {
+    "os": "Microsoft Windows 10 专业工作站版",
+    "os_version": "10.0.17763",
+    "manufacturer": "Supermicro",
+    "model": "Super Server",
+    "runtime": {
+      "version": [
+        3,
+        13,
+        14
+      ],
+      "bits": 64,
+      "machine": "AMD64",
+      "packages": {
+        "numpy": "2.5.3",
+        "Pillow": "12.3.0",
+        "jsonschema": null,
+        "opencv-python": null,
+        "torch": "2.14.0+cu130",
+        "torchaudio": "2.11.0+cu130",
+        "transformers": "5.17.0",
+        "onnxruntime": "1.31.0",
+        "onnxruntime-gpu": null
+      },
+      "modules": {
+        "numpy": true,
+        "PIL": true,
+        "jsonschema": false,
+        "cv2": true,
+        "torch": true,
+        "onnxruntime": true
+      }
+    },
+    "gpu": [
+      "NVIDIA GeForce RTX 3080, 10240, 4530, 6, 617.42"
+    ],
+    "drives": [
+      {
+        "Name": "C",
+        "Free": 600281128960,
+        "Used": 399277084672
+      },
+      {
+        "Name": "D",
+        "Free": 73461760,
+        "Used": 27201536
+      }
+    ],
+    "ffmpeg_on_PATH": []
+  },
+  "system_default_python_315_previously_observed": true,
+  "cp313_embedded_metadata_compatible": true,
+  "native_installation_executed": false,
+  "clean_host_accepted": false,
+  "actual_CUDA_inference": false,
+  "explicit_remote_configuration_changes": false,
+  "explicit_remote_file_writes": false,
+  "remote_process_started_except_readonly_probes": false,
+  "desktop_input": false,
+  "browser_tabs_opened": 0,
+  "private_desktop_published": false,
+  "source_cli": "0.1.63",
+  "formal_skill_cli": "0.1.59",
+  "full_goal_closed": false
+}

@@ -22,13 +22,22 @@ def save(path, value):
 
 
 def main():
+    global BASE
     parser = argparse.ArgumentParser()
     parser.add_argument('--run', required=True)
+    parser.add_argument('--stage-run', default='r2')
+    parser.add_argument('--cli-version', choices=('0.1.55', '0.1.56'), default='0.1.55')
+    parser.add_argument('--evidence-series', default='process-budget-20261029-r1')
     args = parser.parse_args()
     assert args.run.replace('-', '').isalnum()
+    assert args.stage_run.replace('-', '').isalnum() and args.evidence_series.replace('-', '').isalnum()
+    BASE = ROOT/'docs/validation/evidence'/args.evidence_series
     installation = load(BASE/'installation-candidate-r1/verification.json')
-    assert installation['status'] == 'installed-and-byte-verified' and installation['cli_version'] == '0.1.55'
-    for group, count in [('deadline', 15), ('selection', 45), ('semantic', 104)]:
+    assert installation['status'] == 'installed-and-byte-verified' and installation['cli_version'] == args.cli_version
+    groups = [('deadline', 15), ('selection', 45), ('semantic', 104)]
+    if args.cli_version == '0.1.56':
+        groups.append(('bootstrap', 1))
+    for group, count in groups:
         gate = load(BASE/('installed-'+group+'-r1')/'verification.json')
         assert gate['status'] == 'passed' and gate['tests'] == count and gate['frozen_equal']
         assert gate['installed'] == installation['installed']
@@ -39,12 +48,12 @@ def main():
     assert live['cli_version'] == '0.1.53' and len(live['files']) == 92
     discovery = Path('C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor')
     assert discovery.resolve() == (ROOT/'skills/agent-ffmpeg-local-editor').resolve()
-    home = ROOT/'local/agent-ffmpeg/ad-selection-skill-stage-r2'
+    home = ROOT/'local/agent-ffmpeg'/('ad-selection-skill-stage-'+args.stage_run)
     skill = home/'skills/agent-ffmpeg-local-editor'
     files = {p.relative_to(skill).as_posix(): sha(p) for p in skill.rglob('*') if p.is_file()}
     assert len(files) == 93 and sum(Path(n).name == 'SKILL.md' for n in files) == 1
     config = load(runtime)
-    config.update(release='v0.1.0-alpha.4-local.53', installed_directory=installation['installed'],
+    config.update(release=Path(installation['installed']).parent.parent.name, installed_directory=installation['installed'],
         manifest_sha256=installation['manifest_sha256'], launcher_sha256=sha(Path(installation['installed'])/'run.py'))
     config_path = home/'local/agent-ffmpeg/runtime.json'
     assert not config_path.exists()
@@ -65,14 +74,14 @@ def main():
         save(out/'calls.json', calls)
         assert result.returncode == 0, (command, result.stdout[-1000:], result.stderr[-1000:])
         value = json.loads(result.stdout)
-        assert value['ok'] and value['provenance']['cli_version'] == '0.1.55'
+        assert value['ok'] and value['provenance']['cli_version'] == args.cli_version
         if command == 'capabilities':
             assert 'ad.select' in value['data']['capabilities']['ai']['ad_storyboard']['commands']
     assert files == {p.relative_to(skill).as_posix(): sha(p) for p in skill.rglob('*') if p.is_file()}
     assert sha(namespace) == namespace_pin and sha(runtime) == runtime_pin
     assert all(sha(ROOT/r['path']) == r['sha256'] for r in live['files'])
     assert discovery.resolve() == (ROOT/'skills/agent-ffmpeg-local-editor').resolve()
-    report = dict(status='passed', cli_version='0.1.55', actual_PowerShell_entry=True,
+    report = dict(status='passed', cli_version=args.cli_version, actual_PowerShell_entry=True,
         candidate_registered=False, live_skill_changed=False, source_fallback=False,
         public_entries=1, modules=17, files=93, calls=2, actual_GPU_forwards=0,
         namespace_sha256=namespace_pin, live_runtime_sha256=runtime_pin,

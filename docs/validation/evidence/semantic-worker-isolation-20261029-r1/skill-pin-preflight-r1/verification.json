@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "cli_version": "0.1.56",
+  "scope": "missing-actual-source-and-installed-cases-refuses-apply",
+  "argv": [
+    "C:\\Python313\\python.exe",
+    "-E",
+    "-B",
+    "-u",
+    "-X",
+    "utf8",
+    "docs\\validation\\pin_ad_selection_skill.py",
+    "--cli-version",
+    "0.1.56",
+    "--evidence-series",
+    "semantic-worker-isolation-20261029-r1",
+    "--source-run",
+    "r5",
+    "--installed-run",
+    "r1",
+    "--stage-run",
+    "r3",
+    "--apply",
+    "--run",
+    "missing-case-must-not-pin-r1"
+  ],
+  "exit_code": 2,
+  "gate_result": {
+    "status": "pending",
+    "ready": false,
+    "missing": [
+      "source_case",
+      "installed_case"
+    ],
+    "mutated": false,
+    "activated": false
+  },
+  "namespace_runtime_and_all92_live_files_unchanged": true,
+  "no_pin_directory_created": true,
+  "activated": false,
+  "positive_pin_accepted": false
+}

@@ -93,7 +93,7 @@ def sha(path):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--run', required=True)
-    parser.add_argument('--cli-version', choices=('0.1.54', '0.1.55'), default='0.1.54')
+    parser.add_argument('--cli-version', choices=('0.1.54', '0.1.55', '0.1.56'), default='0.1.54')
     parser.add_argument('--evidence-series', default='ad-selection-20261029-r1')
     parser.add_argument('--installation-run', default='r2')
     args = parser.parse_args()
@@ -109,10 +109,13 @@ def main():
     assert installation['status'] == 'installed-and-byte-verified' and installation['source_file_count'] == 281
     assert installation['cli_version'] == args.cli_version
     release = Path(installation['installed']).parent.parent.name
-    assert release == ('v0.1.0-alpha.4-local.53' if args.cli_version == '0.1.55' else 'v0.1.0-alpha.4-local.52')
+    assert release == {'0.1.54':'v0.1.0-alpha.4-local.52', '0.1.55':'v0.1.0-alpha.4-local.53',
+                       '0.1.56':'v0.1.0-alpha.4-local.54'}[args.cli_version]
     groups = [('selection', 45), ('semantic', 104)]
-    if args.cli_version == '0.1.55':
+    if args.cli_version in ('0.1.55', '0.1.56'):
         groups.append(('deadline', 15))
+    if args.cli_version == '0.1.56':
+        groups.append(('bootstrap', 1))
     for group, count in groups:
         gate = json.loads((base/('installed-'+group+'-r1')/'verification.json').read_bytes())
         assert gate['status'] == 'passed' and gate['tests'] == count and gate['frozen_equal']
@@ -138,12 +141,18 @@ def main():
             assert needle in text
             text = text.replace(needle, 'For calibrated visual selection into editable ads, read\n[semantic ad selection](references/ad-selection.md). Inspect actual previews\nand per-shot receipts before client approval; asset-ID uniqueness does not\nexclude duplicate content aliases.\n'+needle, 1)
         path.write_text(text, encoding='utf-8', newline='\n')
-        if relative == 'references/runtime.md' and args.cli_version == '0.1.55':
+        if relative == 'references/runtime.md' and args.cli_version in ('0.1.55', '0.1.56'):
             with path.open('a', encoding='utf-8', newline='\n') as stream:
                 stream.write('\nNative process waits under an operation budget now inherit ancestor deadlines and cancel markers. Interruption closes the owned Windows job/readers. This is cooperative control, not blocked-OS-call real-time preemption. Semantic implementation changes require explicit re-registration/reindexing; never hand-rebind old hashes.\n')
     reference = REFERENCE
-    if args.cli_version == '0.1.55':
+    if args.cli_version in ('0.1.55', '0.1.56'):
         reference += '\nCLI55 inherits command budgets while waiting for native processes. Keep cold-load latency separate from neural inference time; preserve failures and use an explicit adequate budget, not a retuned acceptance threshold.\n'
+    if args.cli_version == '0.1.56':
+        reference = reference.replace('Use installed CLI0.1.54 or newer', 'Use installed CLI0.1.56 or newer')
+        note = '\nCLI56 pins its own application package, then restores the native model runtime dependency search order. Controller-bundled NumPy/Pillow must not silently replace the registered model runtime. Keep runtime/version/path fingerprint checks enabled; register fresh implementation bindings after code changes.\n'
+        reference += note
+        with (skill/'references/runtime.md').open('a', encoding='utf-8', newline='\n') as stream:
+            stream.write(note)
     (skill/'references/ad-selection.md').write_text(reference, encoding='utf-8', newline='\n')
     path = skill/'scripts/run.py'
     text = path.read_text('utf-8')

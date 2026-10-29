@@ -1,0 +1,32 @@
+{
+  "at_utc": "2026-10-29T02:25:34.818810+00:00",
+  "goal": "active_not_complete",
+  "source_cli": "0.1.56",
+  "candidate_installed_cli": "0.1.56",
+  "source_groups": {
+    "bootstrap": 1,
+    "deadline": 15,
+    "selection": 45,
+    "semantic": 104
+  },
+  "installed_groups": {
+    "bootstrap": 1,
+    "deadline": 15,
+    "selection": 45,
+    "semantic": 104
+  },
+  "installed": "local/agent-ffmpeg/v0.1.0-alpha.4-local.54/final-r1/installed",
+  "registered_skill": "CLI53/local51/r54;1entry/17modules/92files",
+  "candidate_skill": "ad-selection-skill-stage-r3;CLI56;1entry/17modules/93files;actualPSmetadata2calls passed,0model forwards,unregistered",
+  "live_handles": {
+    "source56_full11_setup_r5": 6482
+  },
+  "verified_remote_core_commit": "063d6f469f3fe7fa86e28e8ef8350011bc5854f3",
+  "next": [
+    "Poll same setup6482;run source56 case r5 after setup terminal success.",
+    "After source case success run installed56 actual case r1 with -I -S -B and source-runr5.",
+    "Check/pin with --cli-version0.1.56 --stage-runr3 --source-runr5 --evidence-seriessemantic-worker-isolation-20261029-r1 only after actual cases pass.",
+    "activate_ad_selection_delivery.py prepared,not positive-executed;preserve4modelpacks;run actual C registered-entry case and independently verify formal kit afterward.",
+    "CLI55 install failure/old candidates/releases remain immutable;all38 goal closure rows retained."
+  ]
+}

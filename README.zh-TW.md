@@ -1,5 +1,9 @@
 # agent editor kit
 
+**CLI56 獨立安裝版1／15／45／104四組均已通過。** 新統一Skill候選維持1入口／17模組／93檔案，實際PowerShell入口已核驗；這些中繼資料檢查沒有模型推理，候選仍未註冊，正式入口維持53／r54。[完整交付紀錄與使用流程](docs/validation/CLI56原生交付_2026-10-29.md)。
+
+**CLI56 完整候選已原生離線安裝。** 1705載荷精確，281模組／8原生資源一致；安裝版1項引導回歸、15項程序控制、45項選材／分鏡已通過，安裝版104項語義相容及完整11素材GPU流程繼續執行。正式Skill仍53／r54。[本地套件、摘要與實際入口](docs/validation/CLI56原生交付_2026-10-29.md)。
+
 **原始碼 CLI56 已修復語義工作程序依賴遮蔽。** 僅在固定自身應用套件時暫時置頂應用路徑，隨後恢復模型環境的依賴搜尋順序，保留版本／路徑指紋檢查。1項實際原生引導回歸、15項程序控制、45項選材／分鏡、104項語義相容分別通過；完整新套件與11素材GPU流程正在執行，安裝版及正式Skill尚未驗收。正式入口仍53／r54。[根因、修復與證據](docs/product/SEMANTIC_WORKER_ISOLATION.md)。
 
 **CLI55 安裝版實際GPU驗收發現依賴遮蔽問題，尚未通過。** 模型環境原本的NumPy／Pillow被應用安裝site中的不同版本覆蓋，指紋檢查回傳SEMANTIC_RUNTIME_CHANGED；沒有安裝版成片。已保留原始失敗並以獨立原生程序重現根因，正在修復；正式Skill維持53／r54。[問題、證據與修復路徑](docs/product/SEMANTIC_WORKER_ISOLATION.md)。
@@ -1836,6 +1840,13 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R410 | Source CLI56 selection/storyboard compatibility | 45 passed;zero failures/errors/skips;281 modules frozen | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/selection-r1/verification.json) | Mocked retrieval contract is separate from actual new-version inference |
 | R411 | Source CLI56 semantic compatibility | 104 passed;zero failures/errors/skips;281 modules frozen | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/semantic-r1/verification.json) | Index/calibration/native installation and formal Skill separately accepted |
 | R412 | Source CLI55 second native-runtime actual case | E environment passed same3 frozen labels;4renders;both90frames;fullRGB/non-silentPCM replay equal | [raw](docs/validation/evidence/process-budget-20261029-r1/case-r4/verification.json) | Same host and familiar static corpus;not installed55 acceptance or independent Agent benchmark |
+| R413 | Native CLI56 full bundle and independent installation | 1705 exact payload files;281 modules/8 native artifacts match;version/capabilities passed;90 groups | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/installation-candidate-r1/verification.json) | Candidate installation;not registered Skill or actual GPU case acceptance |
+| R414 | Installed CLI56 native bootstrap regression | 1 passed;isolated installed worker copied into collision fixture;own application/native model dependency both retained | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/installed-bootstrap-r1/verification.json) | Bootstrap mechanism only;real installed inference separate |
+| R415 | Installed CLI56 process control | 15 passed;zero failures/errors/skips;281 modules frozen;no source fallback | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/installed-deadline-r1/verification.json) | Cooperative deadline/cancel control,not hard real-time |
+| R416 | Installed CLI56 selection/storyboard compatibility | 45 passed;zero failures/errors/skips;isolated installed-only package;281 modules frozen | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/installed-selection-r1/verification.json) | Unit compatibility does not replace actual GPU selection and replay |
+| R417 | Installed CLI56 semantic compatibility | 104 passed;zero failures/errors/skips;isolated installed-only package;281 modules frozen | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/installed-semantic-r1/verification.json) | Actual source/installed/registered GPU cases remain separate |
+| R418 | Unified CLI56 candidate actual PowerShell entry | version/capabilities passed;1entry/17modules/93files;pinned installed56;live namespace/runtime/92files unchanged | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/skill-candidate-r1/verification.json) | Two metadata calls,zero model forwards;candidate unregistered |
+| R419 | Unified CLI56 explicit apply refuses missing actual cases | pending/source_case+installed_case;exit2;no pin directory;namespace/runtime/all92 live files unchanged | [raw](docs/validation/evidence/semantic-worker-isolation-20261029-r1/skill-pin-preflight-r1/verification.json) | Refusal path only;positive pin/activation/registration remain open |
 
 ## 當前邊界與開發方向
 

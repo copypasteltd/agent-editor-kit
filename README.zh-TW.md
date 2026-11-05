@@ -1,7 +1,8 @@
 # agent editor kit
 
 <!-- aek-cli65-current -->
-**開發狀態2026-11-06：CLI0.1.66的18項完整交付工具契約通過；r4原始碼全套實際發現4,114項，原生背景監督與子程序已獨立確認存活，仍執行中、無終態；最新日誌已出現2項用例ERROR，不能視為通過，原因仍待完整結果確認。** 正式入口保持CLI0.1.63／local61／r58；CLI66候選尚未建置。原4,110項r2中斷保留。新工具包、實際配樂故障、正式升級／回滾及公開發行仍須實際驗收；工具契約不代表模型或媒體品質通過。[完整未完成內容](docs/product/UNFINISHED_20261106.md) · [本批流程](docs/product/DELIVERY66_HANDOFF.md)
+**開發狀態2026-11-06：CLI0.1.66的18項完整交付工具契約通過；r4原始碼全套實際發現4,114項，原生背景監督與子程序已獨立確認存活，仍執行中、無終態；最新日誌已出現2項用例ERROR及1項FAIL，不能視為通過，原因仍待完整結果確認。** 正式入口保持CLI0.1.63／local61／r58；CLI66候選尚未建置。原4,110項r2中斷保留。新工具包、實際配樂故障、正式升級／回滾及公開發行仍須實際驗收；工具契約不代表模型或媒體品質通過。[完整未完成內容](docs/product/UNFINISHED_20261106.md) · [本批流程](docs/product/DELIVERY66_HANDOFF.md)
+修正草稿已獨立保存：修復受控診斷夾具、更新歷史目錄預期，並補音樂進度型別／欄位／讀取失敗處理與五項新用例。尚未合入或執行，不修改執行中的凍結程式碼。 [Candidate / 候选](docs/product/DELIVERY66_R5_CANDIDATE.md)
 <!-- /aek-cli65-current -->
 
 **r58統一Skill工具包已獨立驗收。** 161條目／160清單檔案／93 Skill檔案；中文與空格目錄解包、四包配置、獨立註冊、實際譜面與循環修復、完整ACES YUV／PCM／PNG及專案重播通過。未新增模型推理，不等於乾淨主機或自然品質驗收。
@@ -2199,6 +2200,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R580 | 完整剩餘範圍與交付工具核驗（2026-11-06） | 凍結546個產品／用例／依賴檔案、6工具及95正式檔案一致；18項工具契約通過、0失敗／錯誤／略過。原生原始碼全套發現4,114項並執行中，無終態；正式63與原G01—G38關閉條件保持。未新增正式啟用或模型品質驗收。 [Review](docs/validation/evidence/status-review-20261106-r1/review-r2/verification.json) · [18 contracts](docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r2/verification.json) |
 | R581 | README stage alignment / 2026-11-06 | 三語版本階段與音色狀態對齊；歷史快照明確標示，M02／S14更新為103項實際WAV，F45補充現況；原F01—F89及R01—R580逐行保留。僅文件／唯讀檢查，無新增模型、媒體驗收或正式升級。 [Record](docs/validation/evidence/delivery66-handoff-20261106-r1/documentation-r1/verification.json) |
 | R582 | CLI66完整迴歸唯讀檢查點／2026-11-06 | 原生監督與子程序實際存活；日誌中的進度大小／異常欄位兩項用例報ERROR，無終態，根因未確認。未另啟測試、未改凍結原始碼／正式入口；完整未完成範圍與交付阻塞已同步。 [Checkpoint](docs/validation/evidence/delivery66-handoff-20261106-r1/remaining-r3/observation.json) |
+| R583 | CLI66 isolated correction draft / 2026-11-06 | 修正草稿已獨立保存：修復受控診斷夾具、更新歷史目錄預期，並補音樂進度型別／欄位／讀取失敗處理與五項新用例。尚未合入或執行，不修改執行中的凍結程式碼。 [Live record](docs/validation/evidence/delivery66-handoff-20261106-r1/correction-draft-r1/observation.json) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

@@ -1,0 +1,51 @@
+{
+  "status": "passed-static-draft-and-file-integrity-review",
+  "observed_at_utc": "2026-11-05T23:54:52.806788+00:00",
+  "candidate_files": 5,
+  "candidate_python_syntax_valid": true,
+  "new_test_methods_written": [
+    "test_missing_and_malformed_progress_keep_bounded_diagnostics",
+    "test_nonobject_unhashable_and_wrong_typed_progress_is_invalid",
+    "test_nonordinary_progress_returns_unavailable_without_consuming_it",
+    "test_unprepared_music_progress_is_explicit",
+    "test_valid_progress_forwards_only_approved_fields"
+  ],
+  "original_test_names_retained": true,
+  "current_frozen_files_equal": {
+    "file_hashes": 546,
+    "delivery_tool_files": 6,
+    "formal_guard": 95
+  },
+  "readmes": {
+    "README.md": {
+      "sha256": "2b27a0b49c55d78a2765853bf4ad8be68550bafa2bc611c19c9805c17dc4aee4",
+      "prior_RF_rows_preserved": true,
+      "numbered_R_rows": 583,
+      "functional_F_rows": 89
+    },
+    "README.zh-TW.md": {
+      "sha256": "0735cc407101f718ae3169a68de41b2743312504d9c73a34c3e9b7aab9df2fa2",
+      "prior_RF_rows_preserved": true,
+      "numbered_R_rows": 583,
+      "functional_F_rows": 89
+    },
+    "README.en.md": {
+      "sha256": "850fb04724cc273dda1c8daf318a33882cdc174cc49868added5709fc35a4e73",
+      "prior_RF_rows_preserved": true,
+      "numbered_R_rows": 583,
+      "functional_F_rows": 89
+    }
+  },
+  "remaining_goal_groups": 38,
+  "observed_errors": 2,
+  "observed_failures": 1,
+  "functional_tests_started": false,
+  "model_forwards": 0,
+  "candidate_applied": false,
+  "candidate_batch_finalized": false,
+  "formal_activation": false,
+  "terminal_product_test_result": false,
+  "source_cli": "0.1.66",
+  "formal_cli": "0.1.63",
+  "full_product_goal_closed": false
+}

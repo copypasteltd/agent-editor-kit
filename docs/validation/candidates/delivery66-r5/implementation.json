@@ -1,0 +1,51 @@
+{
+  "status": "draft-awaiting-entire-r4-result",
+  "source_cli": "0.1.66",
+  "formal_cli": "0.1.63",
+  "base_freeze": "docs/validation/evidence/delivery66-20261106-r1/freeze-r4/verification.json",
+  "files": [
+    {
+      "path": "product/src/ai_ad_editor/music_generation_pipeline.py",
+      "base_sha256": "090c20dbeb4ed251a9e0ad9b02d24be3e399b713061e7db6d385eba49436df08",
+      "candidate_sha256": "5dbae91ec9628642ab89fe5d57de7ed97e70f11ff39dd84ec0d856a4a67eabf0",
+      "bytes": 13052
+    },
+    {
+      "path": "product/tests/test_delivery.py",
+      "base_sha256": "36fd9235cb777d8f6db33b3f0439454ce4b04a49c81a37dbedb1e8d9e24f3775",
+      "candidate_sha256": "c36399ae18d4fd786175f29c61f67067410dc67ef6de64efd8348483b905508b",
+      "bytes": 24376
+    },
+    {
+      "path": "product/tests/test_effect_automation.py",
+      "base_sha256": "c85267c95ffe4e13878d291493b6e51faf74a02c205a964a24e0fb4958bb8952",
+      "candidate_sha256": "860177ad6dae0f51160828b736c4b69f4f9675950138cee5e5350cea582eb48b",
+      "bytes": 17374
+    },
+    {
+      "path": "product/tests/test_selective_hsl.py",
+      "base_sha256": "e3a4e2cedf045f91ae45b9312c8ede7037d15e925fdecee7ab296baa86ba8787",
+      "candidate_sha256": "deba97f4d7c8239c3606597c50faf9f3a0461399ab1f62c76d8ebf06387b2c69",
+      "bytes": 22579
+    },
+    {
+      "path": "product/tests/test_spatial_automation.py",
+      "base_sha256": "5653e4a8a06efe8eb6c96dd54eb6dbe3672b11f1d0a0789ac9abbb2d88ff623f",
+      "candidate_sha256": "2f827615f17e1b7188b97e11ee968b8769bb827394abcff6250e70eab78773a5",
+      "bytes": 22828
+    }
+  ],
+  "original_product_and_tests_modified": false,
+  "formal_activation": false,
+  "functional_tests_started": false,
+  "code_completed_before_batch_tests": false,
+  "observed_failure_status": "two ERROR and one FAIL so far; no terminal report",
+  "changes": [
+    "Prepare both diagnostic test fixtures through the real controlled Directory API.",
+    "Update three exact effect catalog expectations to documented 0.11.0 / 51; retain numeric-channel and pixel assertions.",
+    "Validate progress phase type before set membership; reject non-object JSON; forward only approved fields.",
+    "Return bounded unavailable diagnostics for nonordinary/inaccessible progress instead of masking business failures.",
+    "Five meaningful real-file contract methods cover malformed progress, field injection, primitive JSON, nonordinary paths and unprepared sessions; no model mock claimed as inference."
+  ],
+  "next_step": "Wait for authoritative r4 terminal output, incorporate every additional failure, then complete and apply the whole correction batch before any regression."
+}

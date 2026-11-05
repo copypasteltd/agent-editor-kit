@@ -1,7 +1,8 @@
 # agent editor kit
 
 <!-- aek-cli65-current -->
-**开发状态2026-11-06：CLI0.1.66的18项完整交付工具契约通过；r4源码全套实际发现4,114项，原生后台监督与子进程已独立确认存活，仍运行、无终态；最新日志已出现2项用例ERROR，不能按通过处理，原因尚待完整结果确认。** 正式入口保持CLI0.1.63／local61／r58；CLI66候选尚未构建。原4,110项r2中断保留。新工具包、真实配乐故障、正式升级／回滚和公开发行仍须实际验收；工具契约不代表模型或媒体质量通过。[完整未完成内容](docs/product/UNFINISHED_20261106.md) · [本批流程](docs/product/DELIVERY66_HANDOFF.md)
+**开发状态2026-11-06：CLI0.1.66的18项完整交付工具契约通过；r4源码全套实际发现4,114项，原生后台监督与子进程已独立确认存活，仍运行、无终态；最新日志已出现2项用例ERROR及1项FAIL，不能按通过处理，原因尚待完整结果确认。** 正式入口保持CLI0.1.63／local61／r58；CLI66候选尚未构建。原4,110项r2中断保留。新工具包、真实配乐故障、正式升级／回滚和公开发行仍须实际验收；工具契约不代表模型或媒体质量通过。[完整未完成内容](docs/product/UNFINISHED_20261106.md) · [本批流程](docs/product/DELIVERY66_HANDOFF.md)
+修正草稿已单独保存：修复受控诊断夹具、更新历史目录预期，并补音乐进度类型／字段／读取失败处理及五项新用例。尚未合入或执行，不修改运行中的冻结代码。 [Candidate / 候选](docs/product/DELIVERY66_R5_CANDIDATE.md)
 <!-- /aek-cli65-current -->
 
 **r58统一Skill工具包已独立验收。** 161条目／160清单文件／93 Skill文件；中文和空格目录解包、四包配置、独立注册、实际谱面与循环修复、完整ACES YUV／PCM／PNG及工程包重放通过。未新增模型推理，不等于干净主机或自然质量验收。
@@ -2199,6 +2200,7 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R580 | 完整剩余范围与交付工具核验（2026-11-06） | 冻结546个产品／用例／依赖文件、6工具及95正式文件一致；18项工具契约通过、0失败／错误／跳过。原生源码全套发现4,114项并运行，无终态；正式63与原G01—G38关闭条件保持。未新增正式激活或模型质量验收。 [Review](docs/validation/evidence/status-review-20261106-r1/review-r2/verification.json) · [18 contracts](docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r2/verification.json) |
 | R581 | README stage alignment / 2026-11-06 | 三语版本阶段与音色状态对齐；历史快照明确标注，M02／S14更新为103项实际WAV，F45补充现状；原F01—F89及R01—R580逐行保留。仅文档／只读检查，无新增模型、媒体验收或正式升级。 [Record](docs/validation/evidence/delivery66-handoff-20261106-r1/documentation-r1/verification.json) |
 | R582 | CLI66完整回归只读检查点／2026-11-06 | 原生监督与子进程实际存活；日志中的进度大小／异常字段两项用例报ERROR，无终态，根因未确认。未另启测试、未改冻结源码／正式入口；完整未完成范围与交付阻塞已同步。 [Checkpoint](docs/validation/evidence/delivery66-handoff-20261106-r1/remaining-r3/observation.json) |
+| R583 | CLI66 isolated correction draft / 2026-11-06 | 修正草稿已单独保存：修复受控诊断夹具、更新历史目录预期，并补音乐进度类型／字段／读取失败处理及五项新用例。尚未合入或执行，不修改运行中的冻结代码。 [Live record](docs/validation/evidence/delivery66-handoff-20261106-r1/correction-draft-r1/observation.json) |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

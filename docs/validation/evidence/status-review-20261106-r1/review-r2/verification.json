@@ -1,0 +1,62 @@
+{
+  "status": "reviewed-source-regression-running",
+  "observed_at_utc": "2026-11-05T23:11:10.645696+00:00",
+  "base_commit": "23cba1b1c3ac25fb105a8eedc5779512bb21426f",
+  "source_cli": "0.1.66",
+  "source_modules": 289,
+  "formal_cli": "0.1.63",
+  "formal_release": "v0.1.0-alpha.4-local.61",
+  "formal_skill_kit": "r58",
+  "candidate66_built": false,
+  "public_release_rechecked_online": false,
+  "open_goal_groups": 38,
+  "complete_call_chain_audit": false,
+  "freeze_run": "r4",
+  "freeze_sha256": "0f0177ea4441b3b92bd5a79355d6d01da1595ada46bddccf6d950d3ad1bc4e3f",
+  "source_and_dependency_files_equal": 546,
+  "delivery_tool_files_equal": 6,
+  "formal_files_equal": 95,
+  "contracts": {
+    "tests": 18,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "fixture_only": true,
+    "receipt_sha256": "0a94f18c530ebb71f1d3373568dbe9db7396bf38241e616c939ccdd7c44aa827"
+  },
+  "source_discovered_tests": 4114,
+  "source_terminal_result": false,
+  "native_supervisor_and_child_confirmed_live": true,
+  "native_observation_sha256": "8c7a6815cd256bcd581194bf824e5226d54f28429f032956d01ef6f867a14fe6",
+  "old_r2_status": "interrupted",
+  "old_r2_discovered_tests": 4110,
+  "readme_history": {
+    "README.md": {
+      "historical_rows_preserved": 668,
+      "new_row": "R580",
+      "sha256": "17aff20a74b337c264e7043c8440bae53017b0abeceece5d89158853e0ac8ab4"
+    },
+    "README.zh-TW.md": {
+      "historical_rows_preserved": 668,
+      "new_row": "R580",
+      "sha256": "a6a7e504b6519e53da6008f217b14d1eb174fc51c72317adf36482b4fb67c2c3"
+    },
+    "README.en.md": {
+      "historical_rows_preserved": 668,
+      "new_row": "R580",
+      "sha256": "472755844c76187a94aaa8a0df9577e7a0f156c703a4a1d11fa55372a92de39a"
+    }
+  },
+  "original_goals_sha256": "36347a3c5599ec4e4850b13c6cd98f726847f4142f96863fadf6f26b4f27e755",
+  "files": {
+    "README.md": "17aff20a74b337c264e7043c8440bae53017b0abeceece5d89158853e0ac8ab4",
+    "README.zh-TW.md": "a6a7e504b6519e53da6008f217b14d1eb174fc51c72317adf36482b4fb67c2c3",
+    "README.en.md": "472755844c76187a94aaa8a0df9577e7a0f156c703a4a1d11fa55372a92de39a",
+    "docs/product/UNFINISHED_20261106.md": "d42de0e8a175d6eec38f79d3f075450263c0be7476569432fefa48bb58abb74f",
+    "docs/product/DELIVERY66_HANDOFF.md": "a2e2373fc85bb6b2326cc3a84f18feb2c204977f0cfc9503dd61a31dc6061c67"
+  },
+  "formal_activation": false,
+  "full_product_goal_closed": false,
+  "virtualization": false,
+  "browser_tabs_opened": 0
+}

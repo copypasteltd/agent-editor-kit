@@ -137,3 +137,6 @@ $musicReplayProject = 'E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/my-music
 ## CLI65读取与计时更新
 
 开发候选65固定四组件pread与静态加载策略，并将运行库导入纳入模型函数总时钟；实际命令、字段范围、新适配器登记、两套原生小型BF16核验及验收限制见[CLI65读取与完整计时手册](NEURAL_MUSIC_LOADING.md)。旧CLI64实测和失败收据原样保留；正式入口仍63。
+# CLI66文件错误补充（开发，2026-11-06）
+
+源码66在生成期间遇到输出路径被其他写入占用时返回`MUSIC_GENERATION_OUTPUT_CONFLICT`，其他文件操作错误返回`MUSIC_GENERATION_IO_FAILED`；保留原错误类型，次级报告清理错误不掩盖它。工程事务负责恢复，不能覆盖并发写入的外来文件。新增CLI／事务用例使用明确模拟工作进程；真实CUDA取消／超时／提交冲突须由独立故障工具另验，代码完成不代表正式63已升级。[集中代码与验收流程](DELIVERY66_HANDOFF.md)。

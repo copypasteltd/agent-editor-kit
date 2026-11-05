@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "cli_version": "0.1.66",
+  "tests": 17,
+  "discovered_tests": 17,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "elapsed_seconds": 0.7148372999999992,
+  "delivery_tools_frozen_equal": true,
+  "product_and_formal_unchanged": true,
+  "delivery_tool_files": {
+    "docs/validation/delivery66.py": "aef260bfedb0c91f880dda819c9b498915234e5551bca52111d7715027f41fcd",
+    "docs/validation/run_delivery66_native.py": "d459479a89cea1a62dbd19006b5ec6d93c1b0ccd15888b58a95f2c12d4e82020",
+    "docs/validation/delivery66_handoff.py": "f9a601da20511c9e1aa5cef3d6961da5932bbdd09011efa4f9faa1e835d3d82a",
+    "docs/validation/delivery66_music_faults.py": "dc4d8059c6db9fe83ee56dee222c460dcfd44dc716fb24d92963dc3a1351ffea",
+    "docs/validation/publish_delivery66.py": "00dc2ac49c519c832b11578b18a664fb605aa4b70c3ddfadc744a3632e7623c0",
+    "docs/validation/test_delivery66_handoff.py": "739605550e6f482e7f36f2317f2315c64776765ffc12e3929115508c74649dcc"
+  },
+  "model_inference": false,
+  "actual_registration": false,
+  "formal_activation": false,
+  "fixture_only": true
+}

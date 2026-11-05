@@ -54,6 +54,7 @@ def formal_guard():
 def unchanged(freeze):
     assert pins() == freeze['file_hashes'], 'Frozen product or tests changed'
     assert all(sha(ROOT / name) == pin for name, pin in freeze['formal_guard'].items()), 'Formal entry changed'
+    assert all(sha(ROOT / name) == pin for name, pin in freeze.get('delivery_tool_files', {}).items()), 'Frozen delivery tools changed'
 
 
 def proof(action, run):
@@ -92,10 +93,18 @@ def freeze_code(args):
     for name in pins():
         if name.endswith('.py'):
             compile((ROOT / name).read_bytes(), name, 'exec')
+    tool_names = ('delivery66.py', 'run_delivery66_native.py', 'delivery66_handoff.py',
+                  'delivery66_music_faults.py', 'publish_delivery66.py', 'test_delivery66_handoff.py')
+    tools = {}
+    for name in tool_names:
+        path = ROOT / 'docs/validation' / name
+        compile(path.read_bytes(), str(path), 'exec')
+        tools[path.relative_to(ROOT).as_posix()] = sha(path)
     # The third-party DF3 NotImplemented branches guard invalid enum values;
     # its three declared configurations already have implementations.
     save(out / 'verification.json', dict(status='frozen', cli_version=VERSION, file_hashes=pins(),
-        formal_guard=formal_guard(), implementation_units=['T01', 'T02', 'T03', 'T04', 'T05', 'T06'],
+        formal_guard=formal_guard(), delivery_tool_files=tools,
+        implementation_units=['T01', 'T02', 'T03', 'T04', 'T05', 'T06', 'H01', 'H02', 'H03', 'H04', 'H05', 'H06', 'H07'],
         code_completed_before_tests=True, functional_tests_started=False, model_forwards=0))
     print('All delivery66 code frozen before functional tests.', flush=True)
 
@@ -227,7 +236,9 @@ def stage(args, freeze):
         and any(isinstance(t, ast.Name) and t.id == 'REFERENCE' for t in n.targets))
     (folder / 'references/neural-music.md').write_text(reference.replace('0.1.65', VERSION) +
         '\nHistorical actual CUDA generation was verified on CLI65. Confirm the actual CLI66 receipts '
-        'before describing new-version inference as accepted.\n', encoding='utf-8', newline='\n')
+        'before describing new-version inference as accepted. CLI66 reports concurrent output occupation as '
+        '`MUSIC_GENERATION_OUTPUT_CONFLICT` and other filesystem failures as `MUSIC_GENERATION_IO_FAILED`; '
+        'inspect the transaction outcome, preserve foreign files and use a fresh asset ID for a deliberate retry.\n', encoding='utf-8', newline='\n')
     (folder / 'references/delivery.md').write_bytes((ROOT / 'docs/product/DELIVERY_CONTROLLER.md').read_bytes())
     launcher = folder / 'scripts/run.py'
     text = launcher.read_text(encoding='utf-8')
@@ -305,9 +316,6 @@ def package(args, freeze):
         complete_rendered_RGBA_PCM_equal=True, decoded=decoded, generation_cli=VERSION,
         new_model_forwards=0, human_listening=False, natural_quality_accepted=False,
         media_published=False, preview_canvas=[320, 568], project_package=str(archive)))
-
-
-"""Insert into the round runner only after the frozen r1 suite terminates."""
 
 
 def music(args, freeze):
@@ -450,8 +458,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('action', choices=('freeze', 'tests', 'build', 'stage', 'music', 'package', 'descriptor'))
     parser.add_argument('--run', required=True)
-    parser.add_argument('--freeze-run', default='r1')
-    parser.add_argument('--tests-run', default='r1')
+    parser.add_argument('--freeze-run', default='r4')
+    parser.add_argument('--tests-run', default='r4')
     parser.add_argument('--candidate-run', default='r1')
     parser.add_argument('--stage-run', default='r1')
     parser.add_argument('--package-run', default='r1')

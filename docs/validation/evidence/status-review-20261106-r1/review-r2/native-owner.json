@@ -1,0 +1,22 @@
+{
+  "supervisor": {
+    "pid": 7124,
+    "creation_filetime": 134383935876323644,
+    "executable": "C:\\Python313\\python.exe"
+  },
+  "spawned_at_utc": "2026-11-05T23:06:27.639200+00:00",
+  "command": [
+    "C:\\Python313\\python.exe",
+    "-E",
+    "-B",
+    "-u",
+    "-X",
+    "utf8",
+    "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\run_delivery66_native.py",
+    "supervise",
+    "--run",
+    "r4",
+    "--freeze-run",
+    "r4"
+  ]
+}

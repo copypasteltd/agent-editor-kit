@@ -1,7 +1,7 @@
 # agent editor kit
 
 <!-- aek-cli65-current -->
-**開發狀態2026-11-06：原始碼CLI0.1.66已合入完整交付修正並凍結r2，設定完整的4,110項原始碼回歸執行中，尚無終態。** 正式入口仍CLI0.1.63／local61／r58。首輪4,101項因明確缺少測試依賴設定而中斷，8處跳過原樣保留。新版增加五類交付門檻、實際CUDA配樂／完整PCM證據綁定、完整恢復預檢及15個測試檔案的安裝路徑修正；尚未正式切換。[整批修正](docs/product/DELIVERY66_CORRECTION.md) · [全部剩餘範圍](docs/product/UNFINISHED_20261106.md)
+**開發狀態2026-11-06：CLI0.1.66的18項完整交付工具契約通過；r4原始碼全套實際發現4,114項，原生背景監督與子程序已獨立確認存活，仍執行中、無終態。** 正式入口保持CLI0.1.63／local61／r58；CLI66候選尚未建置。原4,110項r2中斷保留。新工具包、實際配樂故障、正式升級／回滾及公開發行仍須實際驗收；工具契約不代表模型或媒體品質通過。[完整未完成內容](docs/product/UNFINISHED_20261106.md) · [本批流程](docs/product/DELIVERY66_HANDOFF.md)
 <!-- /aek-cli65-current -->
 
 **r58統一Skill工具包已獨立驗收。** 161條目／160清單檔案／93 Skill檔案；中文與空格目錄解包、四包配置、獨立註冊、實際譜面與循環修復、完整ACES YUV／PCM／PNG及專案重播通過。未新增模型推理，不等於乾淨主機或自然品質驗收。
@@ -2191,6 +2191,8 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R576 | 完整4101項回歸已啟動，尚無終態 | 保留原用例、斷言與時間門檻，執行完整原始碼測試集；本記錄僅為啟動檢查點，不計通過數。已展開38組差距及新版6項交付缺口；正式Skill仍CLI63。 [Record](docs/product/DELIVERY66_IMPLEMENTATION.md) |
 | R577 | 整批交付修正已合入66並凍結 | 五類獨立證據與應用／Skill／WAV／請求／專案摘要綁定；前向裝置及PCM檢查；錯誤輸入、缺失備份及中斷後使用者修改保護；補能力查詢。整批完成後凍結，功能驗收待定。 [Record](docs/product/DELIVERY66_CORRECTION.md) |
 | R578 | 完整回歸設定修正與首輪中斷保留 | 原4,101項保留8處跳過及中斷終態；明確核驗Rubber Band／Node／HTML依賴，15個測試檔案綁定實際所選套件。新4,110項完整回歸已啟動，原斷言與20秒門檻保留；未計通過數。 [Record](docs/product/DELIVERY66_CORRECTION.md) |
+| R579 | 交付後半程整批程式碼與第二輪中斷記錄 | r2主程序／工作階段確認缺失且無完整總結，日誌與凍結保留；補齊原生背景監督、配樂結構化檔案錯誤、單Skill獨立安裝／重播、三類實際故障工具、升級／回滾和新發行附件。程式碼完成，集中核驗待執行，未新增推理或正式升級。 [Record](docs/product/DELIVERY66_HANDOFF.md) |
+| R580 | 完整剩餘範圍與交付工具核驗（2026-11-06） | 凍結546個產品／用例／依賴檔案、6工具及95正式檔案一致；18項工具契約通過、0失敗／錯誤／略過。原生原始碼全套發現4,114項並執行中，無終態；正式63與原G01—G38關閉條件保持。未新增正式啟用或模型品質驗收。 [Review](docs/validation/evidence/status-review-20261106-r1/review-r2/verification.json) · [18 contracts](docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r2/verification.json) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

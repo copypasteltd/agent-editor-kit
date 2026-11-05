@@ -1,7 +1,7 @@
 # agent editor kit
 
 <!-- aek-cli65-current -->
-**开发状态2026-11-06：源码CLI0.1.66已合入完整交付修正并冻结r2，配置完整的4,110项源码回归运行中，尚无终态。** 正式入口仍CLI0.1.63／local61／r58。初轮4,101项因明确缺少测试依赖配置而中断，8处跳过原样保留。新版增加五类交付门禁、实际CUDA配乐／完整PCM证据绑定、完整恢复预检及15个测试文件的安装路径修正；尚未正式切换。[整批修正](docs/product/DELIVERY66_CORRECTION.md) · [全部剩余范围](docs/product/UNFINISHED_20261106.md)
+**开发状态2026-11-06：CLI0.1.66的18项完整交付工具契约通过；r4源码全套实际发现4,114项，原生后台监督与子进程已独立确认存活，仍运行、无终态。** 正式入口保持CLI0.1.63／local61／r58；CLI66候选尚未构建。原4,110项r2中断保留。新工具包、真实配乐故障、正式升级／回滚和公开发行仍须实际验收；工具契约不代表模型或媒体质量通过。[完整未完成内容](docs/product/UNFINISHED_20261106.md) · [本批流程](docs/product/DELIVERY66_HANDOFF.md)
 <!-- /aek-cli65-current -->
 
 **r58统一Skill工具包已独立验收。** 161条目／160清单文件／93 Skill文件；中文和空格目录解包、四包配置、独立注册、实际谱面与循环修复、完整ACES YUV／PCM／PNG及工程包重放通过。未新增模型推理，不等于干净主机或自然质量验收。
@@ -2191,6 +2191,8 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R576 | 完整4101项回归已启动，尚无终态 | 保持原用例、断言与时间门槛，执行完整源码测试集；本记录仅为启动检查点，不计通过数。已展开38组差距及新版6项交付缺口；正式Skill仍CLI63。 [Record](docs/product/DELIVERY66_IMPLEMENTATION.md) |
 | R577 | 整批交付修正已合入66并冻结 | 五类独立证据与应用／Skill／WAV／请求／工程摘要绑定；前向设备及PCM检查；坏输入、缺失备份和中断后用户修改保护；补能力查询。整批完成后冻结，功能验收待定。 [Record](docs/product/DELIVERY66_CORRECTION.md) |
 | R578 | 完整回归配置修正与初轮中断保留 | 原4,101项保留8处跳过及中断终态；显式核验Rubber Band／Node／HTML依赖，15个测试文件绑定实际所选包。新4,110项完整回归已启动，原断言与20秒门槛保留；未计通过数。 [Record](docs/product/DELIVERY66_CORRECTION.md) |
+| R579 | 交付后半程整批代码与第二轮中断记录 | r2主进程／会话确认缺失且无完整总结，日志与冻结保持；补齐原生后台监督、配乐结构化文件错误、单Skill独立安装／重放、三类实际故障工具、升级／回滚和新发行附件。代码完成，集中核验待执行，未新增推理或正式升级。 [Record](docs/product/DELIVERY66_HANDOFF.md) |
+| R580 | 完整剩余范围与交付工具核验（2026-11-06） | 冻结546个产品／用例／依赖文件、6工具及95正式文件一致；18项工具契约通过、0失败／错误／跳过。原生源码全套发现4,114项并运行，无终态；正式63与原G01—G38关闭条件保持。未新增正式激活或模型质量验收。 [Review](docs/validation/evidence/status-review-20261106-r1/review-r2/verification.json) · [18 contracts](docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r2/verification.json) |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

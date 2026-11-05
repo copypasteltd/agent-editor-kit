@@ -1,4 +1,5 @@
 """Project-aware neural music, explicit adapters and editable generation recipes."""
+import contextlib
 import copy
 import json
 import math
@@ -202,6 +203,15 @@ def generate_command(args):
                 _operation(root, operation, dict(command='music.generate', status='succeeded', report=str(report_path), created_at=now_iso()))
                 _progress(args, operation, 'completed', 'music.generate', 100, '实际CUDA音乐及完整PCM入轨已核验')
                 return _envelope('music.generate', args, data=report, warnings=warnings, operation_id=operation)
+        except OSError as exc:
+            with contextlib.suppress(OSError):
+                report_path.unlink(missing_ok=True)
+            conflict = isinstance(exc, FileExistsError)
+            raise error('OUTPUT_CONFLICT' if conflict else 'IO_FAILED',
+                '音乐输出路径已被占用，保留已有文件并恢复工程事务' if conflict
+                else '音乐生成文件操作失败，恢复工程事务并保留原始错误类型',
+                cause=type(exc).__name__, output_asset_id=args.new_asset_id) from exc
         except BaseException:
-            report_path.unlink(missing_ok=True)
+            with contextlib.suppress(OSError):
+                report_path.unlink(missing_ok=True)
             raise

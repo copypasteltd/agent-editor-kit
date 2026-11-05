@@ -1,4 +1,5 @@
 from __future__ import annotations
+from package_under_test import IMPORT_ROOT
 
 import contextlib
 import io
@@ -231,7 +232,7 @@ code=main(sys.argv[2:])
 assert 'numpy' not in sys.modules
 sys.exit(code)
 '''
-        result = subprocess.run([sys.executable, '-I', '-B', '-X', 'utf8', '-c', program, str(Path(__file__).resolve().parents[1]/'src'),
+        result = subprocess.run([sys.executable, '-I', '-B', '-X', 'utf8', '-c', program, str(IMPORT_ROOT),
                                  'quality', 'mask', '--project', str(self.root), '--asset-id', 'mask'], capture_output=True, text=True, encoding='utf-8')
         self.assertEqual(result.returncode, 0, result.stderr+result.stdout)
         self.assertTrue(json.loads(result.stdout)['data']['ok'])

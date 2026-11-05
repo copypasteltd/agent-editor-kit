@@ -26,6 +26,18 @@ def build_capability_manifest() -> dict[str, Any]:
         "engine": {"id": ENGINE_ID, "version": VERSION, "runtime": "python+ffmpeg-local", "network": "disabled"},
         "ffmpeg": {"version": ffmpeg_version()},
         "capabilities": {
+            'verified_skill_delivery': {
+                'status': 'implemented_with_limits', 'protocol': 'agent-editor-skill-delivery-v2',
+                'commands': ['delivery.inspect', 'delivery.activate', 'delivery.recover', 'delivery.rollback'],
+                'scope': ['one_public_Skill', '17_internal_modules', 'runtime_configuration', 'registration_manifest'],
+                'required_gates': ['source-tests', 'installed-tests', 'package-replay', 'skill-entry', 'native-music'],
+                'features': ['exact_application_and_Skill_byte_pins', 'actual_CUDA_music_required',
+                    'complete_backup_preflight', 'native_lock', 'durable_backups', 'explicit_recovery_and_rollback',
+                    'preserve_foreign_user_changes', 'bounded_JSON_and_file_reads', 'dry_run_restore_preflight'],
+                'limits': {'files': 512, 'file_bytes': 33554432, 'total_bytes': 134217728},
+                'network': False, 'source_fallback': False,
+                'unsupported': ['multi_file_atomic_replacement', 'automatic_model_downloads',
+                    'clean_host_acceptance', 'automatic_natural_quality_acceptance', 'full_G34_G38_parity']},
             'native_speech_enhancement': {
                 'status':'implemented_with_limits','protocol':'agent-native-speech-enhancement-v1','engine':'deepfilternet3-native-cuda-v1',
                 'commands':['audio.enhancement-adapter.register','audio.enhancement-adapter.list','audio.enhancement-adapter.inspect','audio.enhance'],

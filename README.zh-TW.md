@@ -1,7 +1,7 @@
 # agent editor kit
 
 <!-- aek-cli65-current -->
-**開發狀態2026-11-06：原始碼CLI0.1.66已完成整批程式凍結，完整4,101項回歸進行中，尚無終態。** 正式入口仍CLI0.1.63／local61／r58。恢復預檢已合入原始碼；交付控制器、並行耐久備份與配樂讀取變更尚未完成整輪驗收。此前CLI65真實10秒CUDA配樂成功屬歷史版本證據。[本輪實作與驗證順序](docs/product/DELIVERY66_IMPLEMENTATION.md) · [完整38組差距](docs/product/UNFINISHED_20261106.md)
+**開發狀態2026-11-06：原始碼CLI0.1.66已合入完整交付修正並凍結r2，設定完整的4,110項原始碼回歸執行中，尚無終態。** 正式入口仍CLI0.1.63／local61／r58。首輪4,101項因明確缺少測試依賴設定而中斷，8處跳過原樣保留。新版增加五類交付門檻、實際CUDA配樂／完整PCM證據綁定、完整恢復預檢及15個測試檔案的安裝路徑修正；尚未正式切換。[整批修正](docs/product/DELIVERY66_CORRECTION.md) · [全部剩餘範圍](docs/product/UNFINISHED_20261106.md)
 <!-- /aek-cli65-current -->
 
 **r58統一Skill工具包已獨立驗收。** 161條目／160清單檔案／93 Skill檔案；中文與空格目錄解包、四包配置、獨立註冊、實際譜面與循環修復、完整ACES YUV／PCM／PNG及專案重播通過。未新增模型推理，不等於乾淨主機或自然品質驗收。
@@ -1284,6 +1284,7 @@ flowchart LR
 | F86 | N002母圖光效選型 | 同一N002、同一2秒時刻的8張實際PNG；頁面選擇輸出ID/版本/摘要，電腦與手機寬度互動/截圖已核驗。 | `preview frame; template apply` | [母圖預覽與選型](docs/product/OPTICAL_N002_PREVIEWS.md)；480×270參考，另有動態樣片；母圖權利與MIT模板分開，不增加500 LUT數量。 |
 | F87 | 原生GPU神經配樂（開發中） | 明確風格／歌詞請求、固定ACE-Step1.5 Turbo、CUDA前向證據、原生48kHz雙聲道Float32 WAV、生成配方與獨立音軌。 | `music generator-adapter; music inspect-generation; music generate` | [完整配樂介面、參數與邊界](docs/product/NEURAL_MUSIC_GENERATION.md)；CLI64開發介面；正式63暫不含。不是MIDI、樂器分軌或已驗收自然音質。 |
 | F88 | 神經配樂權重讀取與完整計時（開發中） | 四組件實際pread讀取記錄、靜態載入策略、匯入／checkpoint／生成分段計時；失敗不回退mmap或CPU神經推理。 | `music generator-adapter; music generate` | [CLI65使用邏輯和計時範圍](docs/product/NEURAL_MUSIC_LOADING.md)；自然品質與效能依真實任務分別驗收。 |
+| F89 | 正式Skill交付控制（開發66） | 候選檢查、切換、完整備份預檢、恢復、回滾；五類證據及應用／Skill位元組綁定。正式63尚無此命令，新版驗收中。 | `delivery inspect/activate/recover/rollback` | [流程與邊界](docs/product/DELIVERY_CONTROLLER.md) |
 
 ## 支持的服務模塊與依賴
 
@@ -2188,6 +2189,8 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R574 | 完整未完成範圍靜態複核（2026-11-06） | 對照G01—G38、目前原始碼／安裝清單和歷史收據展開剩餘實作、品質及交付條件；恢復15項僅隔離候選，原12組1失敗保留。本項不是新功能測試，也未啟動自動開發。 [Record](docs/product/UNFINISHED_20261106.md) |
 | R575 | CLI66整批實作並凍結 | 恢復完整預檢合入產品；有界並行耐久備份；配樂進度有限讀取；通用交付切換／恢復／回滾及整輪工具。T01—T06全部寫完後凍結，尚未通過功能驗收。 [Record](docs/product/DELIVERY66_IMPLEMENTATION.md) |
 | R576 | 完整4101項回歸已啟動，尚無終態 | 保留原用例、斷言與時間門檻，執行完整原始碼測試集；本記錄僅為啟動檢查點，不計通過數。已展開38組差距及新版6項交付缺口；正式Skill仍CLI63。 [Record](docs/product/DELIVERY66_IMPLEMENTATION.md) |
+| R577 | 整批交付修正已合入66並凍結 | 五類獨立證據與應用／Skill／WAV／請求／專案摘要綁定；前向裝置及PCM檢查；錯誤輸入、缺失備份及中斷後使用者修改保護；補能力查詢。整批完成後凍結，功能驗收待定。 [Record](docs/product/DELIVERY66_CORRECTION.md) |
+| R578 | 完整回歸設定修正與首輪中斷保留 | 原4,101項保留8處跳過及中斷終態；明確核驗Rubber Band／Node／HTML依賴，15個測試檔案綁定實際所選套件。新4,110項完整回歸已啟動，原斷言與20秒門檻保留；未計通過數。 [Record](docs/product/DELIVERY66_CORRECTION.md) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

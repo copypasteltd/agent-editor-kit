@@ -3,6 +3,7 @@
 Protocol workers are explicitly synthetic; real GPU acceptance is separate.
 """
 from __future__ import annotations
+from package_under_test import IMPORT_ROOT
 
 import copy
 import hashlib
@@ -103,7 +104,7 @@ class NativeGenerationTests(unittest.TestCase):
     def setUp(self):
         fixture.NativeVaceTests.setUp(self)
         # Execute this test's selected source/installed package in the child.
-        source = str(Path(__file__).resolve().parents[1]/'src')
+        source = str(IMPORT_ROOT)
         self.worker.write_text(self.worker.read_text('utf8').replace(repr(source),
             repr(str(Path(generation.__file__).resolve().parent.parent))), encoding='utf8')
         self.first = self.base/'first.png'; self.last = self.base/'last.png'

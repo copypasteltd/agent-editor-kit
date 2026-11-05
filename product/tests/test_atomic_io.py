@@ -1,5 +1,6 @@
 """Real Windows atomic replacement against shared and non-delete-shared readers."""
 from __future__ import annotations
+from package_under_test import IMPORT_ROOT
 
 import json
 from pathlib import Path
@@ -40,7 +41,7 @@ class AtomicIoTests(unittest.TestCase):
 
     def test_other_process_keeps_old_snapshot_while_new_reads_see_replacements(self):
         child = "import sys;sys.path.insert(0,sys.argv[2]);from pathlib import Path;from ai_ad_editor.utils import shared_binary_reader;\nwith shared_binary_reader(Path(sys.argv[1])) as stream:\n print('ready',flush=True);sys.stdin.readline();print(stream.read().decode('utf-8'),flush=True)"
-        process = subprocess.Popen([sys.executable,'-I','-B','-c',child,str(self.path),str(Path(__file__).resolve().parents[1]/'src')],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,encoding='utf-8')
+        process = subprocess.Popen([sys.executable,'-I','-B','-c',child,str(self.path),str(IMPORT_ROOT)],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,encoding='utf-8')
         try:
             self.assertEqual(process.stdout.readline().strip(),'ready')
             for frame in range(2,22):

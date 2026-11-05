@@ -1,4 +1,5 @@
 from __future__ import annotations
+from package_under_test import IMPORT_ROOT
 
 import contextlib
 import io
@@ -424,7 +425,7 @@ class P0CliTests(unittest.TestCase):
                 "    time.sleep(2.5)\n"
             )
             child_env = os.environ.copy()
-            child_env["PYTHONPATH"] = str(ROOT / "product" / "src")
+            child_env["PYTHONPATH"] = str(IMPORT_ROOT)
             child = subprocess.Popen(
                 [sys.executable, "-X", "utf8", "-c", script],
                 env=child_env,
@@ -469,7 +470,7 @@ class P0CliTests(unittest.TestCase):
                 "    time.sleep(2.5)\n"
             )
             child_env = os.environ.copy()
-            child_env["PYTHONPATH"] = str(ROOT / "product" / "src")
+            child_env["PYTHONPATH"] = str(IMPORT_ROOT)
             child = subprocess.Popen([sys.executable, "-X", "utf8", "-c", script], env=child_env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             try:
                 deadline = time.monotonic() + 3.0
@@ -1739,7 +1740,7 @@ print(json.dumps({
             project = workspace / "广告项目🎬"
             self.assertEqual(invoke("project", "init", str(project))[0], 0)
             env = os.environ.copy()
-            env["PYTHONPATH"] = str(ROOT / "product" / "src")
+            env["PYTHONPATH"] = str(IMPORT_ROOT)
             env["PYTHONUTF8"] = "0"
             env["PYTHONIOENCODING"] = "ascii:strict"
             completed = subprocess.run(

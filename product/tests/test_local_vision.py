@@ -1,4 +1,5 @@
 from __future__ import annotations
+from package_under_test import IMPORT_ROOT
 
 import contextlib
 import copy
@@ -266,7 +267,7 @@ class NativeVisionTests(unittest.TestCase):
         self.assertEqual(json.loads((self.root/'models/visual-adapters.json').read_bytes()),json.loads(expected))
 
     def test_native_worker_network_guard_rejects_socket_connect(self):
-        worker=Path(__file__).parents[1]/'src/ai_ad_editor/yolo_worker.py'
+        worker=(IMPORT_ROOT / 'ai_ad_editor/yolo_worker.py')
         program='import runpy,socket\ne=[]\nm=runpy.run_path('+repr(str(worker))+')\nm["install_network_guard"](e)\ntry: socket.create_connection(("127.0.0.1",9),timeout=.1)\nexcept RuntimeError: pass\nelse: raise AssertionError("network not blocked")\nassert e\n'
         value=BASE_RUN([sys.executable,'-I','-B','-X','utf8','-c',program],capture_output=True,text=True)
         self.assertEqual(value.returncode,0,value.stderr)

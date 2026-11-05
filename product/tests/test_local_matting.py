@@ -1,4 +1,5 @@
 from __future__ import annotations
+from package_under_test import IMPORT_ROOT
 
 import contextlib
 import copy
@@ -132,7 +133,7 @@ class NativeMattingTests(unittest.TestCase):
         self.evidence = self.base / 'evidence.json'
         atomic_write_json(self.evidence, {'usage': 'internal synthetic test only'})
         self.worker = self.base / 'mock_worker.py'
-        self.worker.write_text(MOCK_WORKER.replace('PRODUCT_SOURCE', repr(str(Path(__file__).resolve().parents[1] / 'src'))).replace('NUMPY_SOURCE', repr(str(Path(np.__file__).resolve().parent.parent))), encoding='utf-8')
+        self.worker.write_text(MOCK_WORKER.replace('PRODUCT_SOURCE', repr(str(IMPORT_ROOT))).replace('NUMPY_SOURCE', repr(str(Path(np.__file__).resolve().parent.parent))), encoding='utf-8')
         self.source = self.base / 'source.mov'
         frame = np.zeros((48, 64, 4), np.uint8)
         frame[:, :, :3] = [200, 40, 30]
@@ -431,7 +432,7 @@ class NativeMattingTests(unittest.TestCase):
         self.assertTrue(inspected['data']['verification']['ok'])
 
     def test_worker_network_guard_blocks_lookup_in_isolated_process(self):
-        code = "import sys;sys.path.insert(0," + repr(str(Path(__file__).resolve().parents[1] / 'src')) + ");from ai_ad_editor.rvm_worker import install_network_guard;events=[];install_network_guard(events);import socket\ntry: socket.getaddrinfo('localhost',80)\nexcept RuntimeError: print(events[0])\nelse: raise RuntimeError('network guard failed')"
+        code = "import sys;sys.path.insert(0," + repr(str(IMPORT_ROOT)) + ");from ai_ad_editor.rvm_worker import install_network_guard;events=[];install_network_guard(events);import socket\ntry: socket.getaddrinfo('localhost',80)\nexcept RuntimeError: print(events[0])\nelse: raise RuntimeError('network guard failed')"
         result = subprocess.run([sys.executable, '-I', '-B', '-c', code], capture_output=True, text=True, check=True)
         self.assertIn('socket.getaddrinfo', result.stdout)
 

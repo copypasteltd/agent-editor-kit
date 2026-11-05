@@ -1,4 +1,5 @@
 from __future__ import annotations
+from package_under_test import IMPORT_ROOT
 
 import copy
 import io
@@ -210,7 +211,7 @@ class NativeInpaintingTests(unittest.TestCase):
         with zipfile.ZipFile(self.model, 'w') as z:
             z.writestr('archive/code/__torch__.py', '# protocol fixture only; not an inference model')
             z.writestr('archive/constants.pkl', b'protocol fixture')
-        self.worker.write_text(MOCK_WORKER.replace('PRODUCT_SOURCE', repr(str(Path(__file__).resolve().parents[1] / 'src'))).replace('NUMPY_SOURCE', repr(str(Path(np.__file__).resolve().parent.parent))), encoding='utf-8')
+        self.worker.write_text(MOCK_WORKER.replace('PRODUCT_SOURCE', repr(str(IMPORT_ROOT))).replace('NUMPY_SOURCE', repr(str(Path(np.__file__).resolve().parent.parent))), encoding='utf-8')
         self.mask = self.base / 'mask.png'
         mask = np.zeros((48, 64, 4), np.uint8); mask[16:32, 24:40, 3] = 255
         Image.fromarray(mask).save(self.mask)

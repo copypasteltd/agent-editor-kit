@@ -1,4 +1,5 @@
 from __future__ import annotations
+from package_under_test import IMPORT_ROOT
 
 import array
 import contextlib
@@ -324,7 +325,7 @@ class AsrTextAndProtocolTests(unittest.TestCase):
             self.assertEqual(report.read_bytes(), baseline)
 
     def test_native_python_guard_blocks_network_without_a_connection(self) -> None:
-        worker = Path(__file__).resolve().parents[1] / "src/ai_ad_editor/whisper_worker.py"
+        worker = (IMPORT_ROOT / 'ai_ad_editor/whisper_worker.py')
         script = "import runpy,socket; m=runpy.run_path(" + repr(str(worker)) + "); events=[]; m['install_network_guard'](events);\ntry: socket.getaddrinfo('invalid.example',443)\nexcept RuntimeError: pass\nelse: raise AssertionError('network guard failed')\nassert events == ['socket.getaddrinfo']"
         result = run_process([sys.executable, "-I", "-B", "-X", "utf8", "-c", script], timeout=30)
         self.assertEqual(result.returncode, 0, result.stderr)

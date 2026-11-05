@@ -1,4 +1,5 @@
 from __future__ import annotations
+from package_under_test import IMPORT_ROOT
 
 import contextlib
 import copy
@@ -288,7 +289,7 @@ sys.path.insert(0,sys.argv[1])
 sys.path.insert(1,sys.argv[2])
 from ai_ad_editor.cli import main
 raise SystemExit(main(sys.argv[3:]))'''
-        command = [sys.executable, '-I', '-B', '-X', 'utf8', '-c', program, str(Path(__file__).resolve().parents[1]/'src'),
+        command = [sys.executable, '-I', '-B', '-X', 'utf8', '-c', program, str(IMPORT_ROOT),
             str(Path(jsonschema.__file__).resolve().parent.parent),
             'media', 'mask-edit', '--project', str(self.root), '--asset-id', 'mask', '--derived-asset-id', 'pure', '--edits', str(self.edits_path)]
         result = subprocess.run(command, capture_output=True, timeout=60)

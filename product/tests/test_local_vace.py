@@ -1,5 +1,6 @@
 """Joint-window behavior and real FFmpeg protocol tests; fixtures are not model quality evidence."""
 from __future__ import annotations
+from package_under_test import IMPORT_ROOT
 
 import copy
 import hashlib
@@ -389,7 +390,7 @@ class NativeVaceTests(unittest.TestCase):
     def setUp(self):
         base_fixture.NativeMattingTests.setUp(self)
         self.model=self.base/'vace';create_protocol_model(self.model)
-        self.worker.write_text(MOCK_WORKER.replace('PRODUCT_SOURCE',repr(str(Path(__file__).resolve().parents[1]/'src'))).replace('NUMPY_SOURCE',repr(str(Path(np.__file__).resolve().parent.parent))),encoding='utf-8')
+        self.worker.write_text(MOCK_WORKER.replace('PRODUCT_SOURCE',repr(str(IMPORT_ROOT))).replace('NUMPY_SOURCE',repr(str(Path(np.__file__).resolve().parent.parent))),encoding='utf-8')
         self.mask=self.base/'mask.png';pixels=np.zeros((48,64,4),np.uint8);pixels[16:32,24:40,3]=255;Image.fromarray(pixels).save(self.mask)
         self.mask_id=self.ingest(self.mask)
         self.options=['--project',str(self.root),'--adapter-id','vace','--engine',VACE_ENGINE,'--model-path',str(self.model),'--executable',sys.executable,'--evidence',str(self.evidence),'--device','cuda']

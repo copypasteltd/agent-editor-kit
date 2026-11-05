@@ -1,12 +1,13 @@
 """Face contract/geometry boundaries; real model/media checks live in smoke receipts."""
 from __future__ import annotations
+from package_under_test import IMPORT_ROOT
 import copy
 from pathlib import Path
 import sys
 import unittest
 from unittest import mock
 
-sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'src'))
+sys.path.insert(0,str(IMPORT_ROOT))
 from ai_ad_editor.face_geometry import FaceAssociation,controls,validate_face
 from ai_ad_editor.face_landmarks import FaceModels
 from ai_ad_editor import local_face as face

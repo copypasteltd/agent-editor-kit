@@ -1,8 +1,9 @@
 """Independent analytic and preservation checks for the numerical kernel."""
+from package_under_test import IMPORT_ROOT
 import unittest
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+sys.path.insert(0, str(IMPORT_ROOT))
 import numpy as np
 from ai_ad_editor.repair_blend import harmonize_region
 
@@ -101,7 +102,7 @@ for mode in ['direct','harmonic']:
  validate_blend_report({'empty_mask_frames':8,'mask_pixels':0,'blend':new_blend_report(options)},options,width=64,height=48,frames=8)
 assert 'numpy' not in sys.modules
 print('host planning without numpy succeeded')
-""".replace('PRODUCT_SOURCE',repr(str(Path(__file__).resolve().parents[1]/'src')))
+""".replace('PRODUCT_SOURCE',repr(str(IMPORT_ROOT)))
         result=subprocess.run([sys.executable,'-I','-B','-X','utf8','-c',code],capture_output=True,text=True,encoding='utf-8',timeout=30)
         self.assertEqual(result.returncode,0,result.stderr)
         self.assertIn('without numpy succeeded',result.stdout)

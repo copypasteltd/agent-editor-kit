@@ -1,5 +1,6 @@
 """Exercise the actual DOM bridge parser in a bounded native Node process."""
 from __future__ import annotations
+from package_under_test import IMPORT_ROOT
 
 import json
 from pathlib import Path
@@ -8,7 +9,7 @@ import subprocess
 import unittest
 
 
-BRIDGE = Path(__file__).resolve().parents[1] / 'src/ai_ad_editor/html_template_dom.mjs'
+BRIDGE = (IMPORT_ROOT / 'ai_ad_editor/html_template_dom.mjs')
 NODE = shutil.which('node')
 PROBE = r'''
 import assert from 'node:assert/strict';

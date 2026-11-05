@@ -1,4 +1,5 @@
 from __future__ import annotations
+from package_under_test import IMPORT_ROOT
 
 import array
 import contextlib
@@ -357,13 +358,13 @@ class NativeSeparationTests(unittest.TestCase):
         self.assertFalse((self.root / 'models/audio-adapters.json').exists())
 
     def test_worker_network_guard_rejects_dns_in_isolated_python(self):
-        worker = Path(__file__).resolve().parents[1] / 'src/ai_ad_editor/demucs_worker.py'
+        worker = (IMPORT_ROOT / 'ai_ad_editor/demucs_worker.py')
         script = "import runpy,sys,socket; ns=runpy.run_path(sys.argv[1]); events=[]; ns['install_network_guard'](events)\ntry: socket.getaddrinfo('invalid.example',443)\nexcept RuntimeError: pass\nelse: raise AssertionError('network guard failed')\nassert events == ['socket.getaddrinfo']"
         result = subprocess.run([sys.executable, '-I', '-B', '-c', script, str(worker)], capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stderr)
 
     def test_worker_bad_protocol_returns_structured_failure_without_loading_model(self):
-        worker = Path(__file__).resolve().parents[1] / 'src/ai_ad_editor/demucs_worker.py'
+        worker = (IMPORT_ROOT / 'ai_ad_editor/demucs_worker.py')
         response = self.base / 'failure.json'; request = self.base / 'request.json'
         atomic_write_json(request, {'protocol': 'invalid', 'network': 'disabled', 'response': str(response)})
         result = subprocess.run([sys.executable, '-I', '-B', str(worker), str(request)], capture_output=True, text=True)

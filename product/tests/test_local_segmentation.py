@@ -1,4 +1,5 @@
 from __future__ import annotations
+from package_under_test import IMPORT_ROOT
 
 import copy
 import io
@@ -156,7 +157,7 @@ class NativeSegmentationTests(unittest.TestCase):
         (self.model / 'model.safetensors').write_bytes(b'protocol fixture, not an inference checkpoint')
         self.options = ['--project', str(self.root), '--adapter-id', 'sam2', '--engine', SEGMENTATION_ENGINE, '--model-path', str(self.model), '--executable', sys.executable, '--evidence', str(self.evidence), '--device', 'cpu']
         self.prompts = self.base / 'prompts.json'; atomic_write_json(self.prompts, prompt_fixture())
-        self.worker.write_text(MOCK_WORKER.replace('PRODUCT_SOURCE', repr(str(Path(__file__).resolve().parents[1] / 'src'))).replace('NUMPY_SOURCE', repr(str(Path(np.__file__).resolve().parent.parent))), encoding='utf-8')
+        self.worker.write_text(MOCK_WORKER.replace('PRODUCT_SOURCE', repr(str(IMPORT_ROOT))).replace('NUMPY_SOURCE', repr(str(Path(np.__file__).resolve().parent.parent))), encoding='utf-8')
 
     def options_for_matting(self):
         return ['media', 'matting', '--project', str(self.root), '--asset-id', self.asset_id, '--adapter-id', 'sam2', '--derived-asset-id', 'cutout', '--prompts', str(self.prompts), '--apply', '--track-id', 'track_video_1', '--audio-track-id', 'track_audio_1']

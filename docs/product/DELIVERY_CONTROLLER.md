@@ -1,6 +1,6 @@
-# Verified local delivery / CLI0.1.66
+# Local delivery candidate / CLI0.1.66
 
-Use the installed `delivery` commands for a reviewed single-Skill update.
+The registered CLI63 does not provide these commands. After CLI66 candidate installation and acceptance, use its installed `delivery` commands for a reviewed single-Skill update.
 `--workspace` is the existing agent editor kit checkout; `--descriptor` points
 to the locally prepared candidate description. No models or dependencies are
 downloaded, no virtual environment starts, and existing release archives stay intact.
@@ -14,9 +14,9 @@ downloaded, no virtual environment starts, and existing release archives stay in
 ```
 
 The descriptor pins the current formal files, staged Skill/configuration,
-installation application files, offline archive and four independent gates:
+installation application files, offline archive and five independent gates:
 source tests, installed tests, full music project replay and the actual staged
-PowerShell entry. A gate must match the candidate CLI/application bytes. Keep
+PowerShell entry, plus actual CUDA music on this exact application and Skill. A gate must match the candidate CLI/application bytes. Keep
 the evidence paths; a descriptor is an input to validation, not proof by itself.
 
 Activation holds a native file lock, writes durable backups and a recovery
@@ -41,3 +41,5 @@ natural quality, clean-host installation and full CapCut parity are separate gat
 简体：交付控制器先核对完整候选与证据，再备份、切换、验证；中断使用recover，已成功升级可显式rollback。完整备份预检失败时保留现场。正式入口升级成功前继续使用原版。
 
 繁體：交付控制器先核對完整候選與證據，再備份、切換、驗證；中斷使用recover，已成功升級可明確rollback。完整備份預檢失敗時保留現場。正式入口升級成功前繼續使用原版。
+
+The v2 descriptor requires separate source, installed, replay, Skill-entry and native-music receipts. Replay uses the newly generated candidate audio. Music receipts bind every application/Skill file, request and master WAV, all four actual CUDA forward devices, full PCM, placement and cleanup. Synthetic protocol fixtures do not establish model execution. Malformed fields, missing backups, Windows aliases, nonfinite JSON and foreign user changes reject before restoration. Recover/rollback dry runs inspect all backups. v1 descriptors/journals are not silently reinterpreted.

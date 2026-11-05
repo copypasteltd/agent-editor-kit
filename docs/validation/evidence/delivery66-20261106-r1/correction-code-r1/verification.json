@@ -1,0 +1,39 @@
+{
+  "status": "complete-correction-code-not-tested",
+  "cli_version": "0.1.66",
+  "original_suite_unchanged": true,
+  "formal_activation": false,
+  "functional_tests_executed": false,
+  "items": [
+    "C01",
+    "C02",
+    "C03",
+    "C04"
+  ],
+  "mapping": {
+    "delivery.py": "product/src/ai_ad_editor/delivery.py",
+    "capabilities.py": "product/src/ai_ad_editor/capabilities.py",
+    "test_delivery.py": "product/tests/test_delivery.py",
+    "runner.py": "docs/validation/delivery66.py",
+    "DELIVERY_CONTROLLER.md": "docs/product/DELIVERY_CONTROLLER.md"
+  },
+  "predecessor": {
+    "product/src/ai_ad_editor/delivery.py": "2eaacd2a59bfc86baddbc957436afccab2af7fa8eb62fd1c8715f7fa5b39d551",
+    "product/src/ai_ad_editor/capabilities.py": "29c1ffdd1db638427af5d162ed344571353d3e86faabc28ff4098d74f0fc7954",
+    "product/tests/test_delivery.py": "945b13ba67b71d9b53015eea7b1083f8997bf3965e62b693319520c7454e8618",
+    "docs/validation/delivery66.py": "137ddb117ae8c85c50a0754c9e36525050b4f382c9603c806d364b6be3ea5670",
+    "docs/product/DELIVERY_CONTROLLER.md": "76424b372144f83d64c2bca5110892ad3735ad7deb02aa8a04f36587583ecff7"
+  },
+  "files": {
+    "delivery.py": "f1e855835b5345e7b0bb7db7d00597c2f531aacc143c77e26dc21c8bd409d242",
+    "capabilities.py": "da09ab59fa8bf1787527c7bfa25ac92b304bd9b15360f84f01be3117f51cd651",
+    "test_delivery.py": "36fd9235cb777d8f6db33b3f0439454ce4b04a49c81a37dbedb1e8d9e24f3775",
+    "runner.py": "f74255a35dc57cc29367c65768f2dc4293b2baa6c93ecfbb803481da7275089a",
+    "DELIVERY_CONTROLLER.md": "026476a85170caa55e6380b572d8721a8f5c285cab582f32ce143695fe0c9298"
+  },
+  "support_files": {
+    "extra_tests.py": "a2bb99b25773f0150bfaf268491a830d270d34af62b01746e145b21f32516538",
+    "round_additions.py": "b147e7e8086691828c631f162a762a5ed523ee80d9ef5293677f568aadaf5391"
+  },
+  "preparer_sha256": "a8e79a612095cd0169846f590fbc6b7b0d133a18e719fb5c1273c159df85bb44"
+}

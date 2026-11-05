@@ -1,5 +1,7 @@
 # 原生 GPU 神经配乐（CLI64）
 
+> 2026-11-06状态补录：未注册候选Skill实际调用安装版65的10秒CUDA生成已经成功，完整PCM／入轨／退出核验通过；本次仅复核历史收据和现有音频摘要，未重新生成或听审。正式入口仍63，65工程包重放和完整兼容未验收。[当前全部未完成内容](UNFINISHED_20261106.md) · [实际65终态](../validation/evidence/music-loading-20261030-r1/actual-stage1/verification.json)。下方64/65启动阶段说明保留为历史，按具体版本阅读。
+
 开发中的 ACE-Step 1.5 Turbo 接入通过现有原生 ComfyUI 核心直接执行，不启动 GUI、HTTP 服务或共享队列。正式注册入口目前仍为 CLI0.1.63；本页的新增命令须由 CLI0.1.64 执行。真实推理、安装与正式 Skill 的验收状态分别记录，不能从接口或单元测试通过推断后续步骤已经完成。
 
 目前 local62 已独立离线构建并安装，[288应用模块与源码精确一致](../validation/evidence/music-generation-20261030-r1/candidate-r1/verification.json)；[94文件统一Skill候选](../validation/evidence/music-generation-20261030-r1/skill-stage-r1/verification.json)的正文与实际PowerShell version／help通过，但尚未正式注册。[源码首个真实GPU生成](../validation/evidence/music-generation-20261030-r1/actual-piano4/verification.json)和[候选PowerShell入口的安装版工程包回放](../validation/evidence/music-generation-20261030-r1/installed-package-stage1/verification.json)已通过。此前1800秒预算超时的[失败记录](../validation/evidence/music-generation-20261030-r1/actual-piano3/verification.json)保留。独立安装版的新生成和完整回归尚待验收。完整开发与验收状态见[本轮记录](../validation/CLI64原生神经配乐_2026-10-30.md)。

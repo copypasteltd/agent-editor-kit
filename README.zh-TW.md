@@ -1,14 +1,14 @@
 # agent editor kit
 
 <!-- aek-cli65-current -->
-**開發狀態2026-11-06：CLI0.1.66的18項完整交付工具契約通過；r4原始碼全套實際發現4,114項，原生背景監督與子程序已獨立確認存活，仍執行中、無終態。** 正式入口保持CLI0.1.63／local61／r58；CLI66候選尚未建置。原4,110項r2中斷保留。新工具包、實際配樂故障、正式升級／回滾及公開發行仍須實際驗收；工具契約不代表模型或媒體品質通過。[完整未完成內容](docs/product/UNFINISHED_20261106.md) · [本批流程](docs/product/DELIVERY66_HANDOFF.md)
+**開發狀態2026-11-06：CLI0.1.66的18項完整交付工具契約通過；r4原始碼全套實際發現4,114項，原生背景監督與子程序已獨立確認存活，仍執行中、無終態；最新日誌已出現2項用例ERROR，不能視為通過，原因仍待完整結果確認。** 正式入口保持CLI0.1.63／local61／r58；CLI66候選尚未建置。原4,110項r2中斷保留。新工具包、實際配樂故障、正式升級／回滾及公開發行仍須實際驗收；工具契約不代表模型或媒體品質通過。[完整未完成內容](docs/product/UNFINISHED_20261106.md) · [本批流程](docs/product/DELIVERY66_HANDOFF.md)
 <!-- /aek-cli65-current -->
 
 **r58統一Skill工具包已獨立驗收。** 161條目／160清單檔案／93 Skill檔案；中文與空格目錄解包、四包配置、獨立註冊、實際譜面與循環修復、完整ACES YUV／PCM／PNG及專案重播通過。未新增模型推理，不等於乾淨主機或自然品質驗收。
 
 [r58 Skill ZIP](docs/skills/agent-editor-kit-community-unified-skill-r58.zip) · [SHA256](docs/skills/community-unified-skill-package-0.1.63-r58.json) · [使用流程 / Workflow](docs/validation/CLI63统一Skill切换_2026-10-29.md)
 
-**目前正式本地版本：CLI0.1.63 / local61。** 唯一入口 `$agent-ffmpeg-local-editor`，17內部模組、93檔案。原始碼與安裝版分別31／37／26／57／104／406組通過；候選與真實C盤入口CPU循環修復、DF3及MuseTalk CUDA與完整音畫專案重播分別通過。r58工具包已獨立驗收，公開Release維持alpha.3／CLI0.1.2；完整剪映等價未完成。
+**目前正式本地版本：CLI0.1.63 / local61。** 唯一入口 `$agent-ffmpeg-local-editor`，17內部模組、93檔案。原始碼與安裝版分別31／37／26／57／104／406組通過；候選與真實C盤入口CPU循環修復、DF3及MuseTalk CUDA與完整音畫專案重播分別通過。r58工具包已獨立驗收，公開發行記錄最後確認alpha.3／CLI0.1.2，本次未線上複核；完整剪映等價未完成。
 
 [简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [CLI63 workflow](docs/validation/CLI63统一Skill切换_2026-10-29.md) · [500 look previews](docs/assets/looks-n002-20261024-r1/index.html) · [103 voice auditions](docs/validation/CLI61全音色试听_2026-10-29.md) · [8 editable optical templates](docs/product/OPTICAL_EFFECT_PACK.md) · [Actual optical gallery](docs/assets/optical-pack-20261029-r1/index.html) · [Browser screenshots and checks](docs/validation/光效选型页实测_2026-10-29.md) · [N002 original-image previews](docs/product/OPTICAL_N002_PREVIEWS.md) · [N002 selection gallery](docs/assets/optical-n002-20261029-r1/index.html)
 
@@ -2198,6 +2198,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R579 | 交付後半程整批程式碼與第二輪中斷記錄 | r2主程序／工作階段確認缺失且無完整總結，日誌與凍結保留；補齊原生背景監督、配樂結構化檔案錯誤、單Skill獨立安裝／重播、三類實際故障工具、升級／回滾和新發行附件。程式碼完成，集中核驗待執行，未新增推理或正式升級。 [Record](docs/product/DELIVERY66_HANDOFF.md) |
 | R580 | 完整剩餘範圍與交付工具核驗（2026-11-06） | 凍結546個產品／用例／依賴檔案、6工具及95正式檔案一致；18項工具契約通過、0失敗／錯誤／略過。原生原始碼全套發現4,114項並執行中，無終態；正式63與原G01—G38關閉條件保持。未新增正式啟用或模型品質驗收。 [Review](docs/validation/evidence/status-review-20261106-r1/review-r2/verification.json) · [18 contracts](docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r2/verification.json) |
 | R581 | README stage alignment / 2026-11-06 | 三語版本階段與音色狀態對齊；歷史快照明確標示，M02／S14更新為103項實際WAV，F45補充現況；原F01—F89及R01—R580逐行保留。僅文件／唯讀檢查，無新增模型、媒體驗收或正式升級。 [Record](docs/validation/evidence/delivery66-handoff-20261106-r1/documentation-r1/verification.json) |
+| R582 | CLI66完整迴歸唯讀檢查點／2026-11-06 | 原生監督與子程序實際存活；日誌中的進度大小／異常欄位兩項用例報ERROR，無終態，根因未確認。未另啟測試、未改凍結原始碼／正式入口；完整未完成範圍與交付阻塞已同步。 [Checkpoint](docs/validation/evidence/delivery66-handoff-20261106-r1/remaining-r3/observation.json) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

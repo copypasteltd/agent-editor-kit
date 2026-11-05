@@ -1,0 +1,47 @@
+{
+  "status": "passed-documentation-and-live-error-record-audit",
+  "observed_at_utc": "2026-11-05T23:43:18.571715+00:00",
+  "files": {
+    "README.md": {
+      "sha256": "1ee8373602c414a32c5350692b0a5291c3b963dca8bcdcb341b28b2af31db580",
+      "all_prior_RF_rows_retained": true,
+      "numbered_R_rows": 582,
+      "functional_F_rows": 89
+    },
+    "README.zh-TW.md": {
+      "sha256": "f8b6e8562f5ecb344d4cf9c81ac9d29bf30ca9a12dfc3c4d51dd36d40692969f",
+      "all_prior_RF_rows_retained": true,
+      "numbered_R_rows": 582,
+      "functional_F_rows": 89
+    },
+    "README.en.md": {
+      "sha256": "9ec8da985869f2e86ed06b1aedb4795b6c632fdf9218900abd0f4fe5c51d887a",
+      "all_prior_RF_rows_retained": true,
+      "numbered_R_rows": 582,
+      "functional_F_rows": 89
+    },
+    "docs/product/UNFINISHED_20261106.md": {
+      "sha256": "0634287a0c6bb2ea7fabcd3df4b2d27727b5ece074c304766d06a9d7e211512e",
+      "all_prior_RF_rows_retained": true
+    },
+    "docs/product/DELIVERY66_HANDOFF.md": {
+      "sha256": "e33b42ab8f4bed1287819ca50a4fac2e76509195903eee7eca13552a428b3ac2",
+      "all_prior_RF_rows_retained": true
+    }
+  },
+  "frozen_files_equal": {
+    "file_hashes": 546,
+    "delivery_tool_files": 6,
+    "formal_guard": 95
+  },
+  "remaining_G_groups": 38,
+  "observed_test_ERROR_rows": 2,
+  "root_causes_confirmed": false,
+  "terminal_test_result": false,
+  "new_tests_started": false,
+  "product_code_changed": false,
+  "formal_activation": false,
+  "source_cli": "0.1.66",
+  "formal_cli": "0.1.63",
+  "full_product_goal_closed": false
+}

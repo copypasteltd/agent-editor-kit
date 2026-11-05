@@ -1,0 +1,58 @@
+{
+  "status": "read-only-live-observation-with-errors",
+  "observed_at_utc": "2026-11-05T23:42:46.454981+00:00",
+  "source_cli": "0.1.66",
+  "formal_cli": "0.1.63",
+  "source_run": "r4",
+  "discovered_tests": 4114,
+  "observed_completed_ok_rows": 642,
+  "observed_error_rows": [
+    "test_oversized_progress_is_not_loaded_as_unbounded_json (test_delivery.BoundedMusicProgressTests.test_oversized_progress_is_not_loaded_as_unbounded_json) ... ERROR",
+    "test_unknown_phase_and_invalid_clock_are_not_forwarded (test_delivery.BoundedMusicProgressTests.test_unknown_phase_and_invalid_clock_are_not_forwarded) ... ERROR"
+  ],
+  "log_sha256": "624f67ff41aa1cb4d0be61b14d22212303ae5f8765b3b870fb41de4c0399cab8",
+  "log_bytes": 103080,
+  "native_state": {
+    "state": {
+      "status": "running",
+      "started_at_utc": "2026-11-05T23:06:27.770449+00:00",
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\delivery66.py",
+        "tests",
+        "--run",
+        "r4",
+        "--freeze-run",
+        "r4"
+      ],
+      "supervisor": {
+        "pid": 7124,
+        "creation_filetime": 134383935876323644,
+        "executable": "C:\\Python313\\python.exe"
+      },
+      "result": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\delivery66-20261106-r1\\source-all-r4\\verification.json",
+      "runner_sha256": "40bf79f471bd71e23c182aed5931573bdf24392dce443904dcb692f8c0d0633f",
+      "original_test_selection": "whole-discovery",
+      "child": {
+        "pid": 26952,
+        "creation_filetime": 134383935877777703,
+        "executable": "C:\\Python313\\python.exe"
+      }
+    },
+    "supervisor_live": true,
+    "child_live": true,
+    "result_present": false,
+    "observed_at_utc": "2026-11-05T23:42:46.415508+00:00"
+  },
+  "terminal_receipt_present": false,
+  "terminal_result_claimed": false,
+  "new_tests_started": false,
+  "product_code_changed": false,
+  "formal_activation": false,
+  "root_causes_confirmed": false
+}

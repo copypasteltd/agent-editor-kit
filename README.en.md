@@ -35,6 +35,8 @@ Confirm the version, check dependencies, create a project and register authorize
 <details>
 <summary>Complete development history — all original content retained</summary>
 
+This section preserves delivery snapshots at their original execution stages, including work that was then running or unregistered. Use the version at the top of this page and the [current CLI63 workflow](docs/validation/CLI63统一Skill切换_2026-10-29.md) for the registered entry.
+
 **Eight real optical stills are now available on the original N002 image.** The same input/time and stable template IDs support client selection for portrait/interior footage; these templates are separate from the500 LUT count. [Actual N002 previews](docs/product/OPTICAL_N002_PREVIEWS.md) · [N002 selection gallery](docs/assets/optical-n002-20261029-r1/index.html)
 
 ![Actual N002 optical comparison](docs/assets/optical-n002-20261029-r1/contact.png)
@@ -52,15 +54,15 @@ Confirm the version, check dependencies, create a project and register authorize
 
 ![Actual editable optical templates](docs/assets/optical-pack-20261029-r1/contact.png)
 
-**CLI63 installed regression recovery:** complete406-r1 ended without a terminal receipt and is recorded as interrupted. Original logs remain; a new full r2 run is active. Formal Skill stays CLI59/local57/r57. [Recovery](docs/validation/CLI63安装回归中断与恢复_2026-10-29.md)
+**Historical CLI63 installed regression recovery:** complete406-r1 ended without a terminal receipt and is recorded as interrupted. Original logs remain; a new full r2 run is active. Formal Skill stays CLI59/local57/r57. [Recovery](docs/validation/CLI63安装回归中断与恢复_2026-10-29.md)
 
-**Development status: source CLI0.1.63 passed all406 contracts and native-process fix checks. Native local61 candidate installed with exact1707 payloads/283 modules; installed regression continues. Existing103-voice audition guidance is prepared before candidate testing,not relabeled as new CLI63 inference. Formal Skill remains CLI59/local57/r57;the full goal is open.** [Delivery details](docs/validation/CLI63候选交付门禁_2026-10-29.md)
+**Historical CLI63 candidate status: source CLI0.1.63 passed all406 contracts and native-process fix checks. Native local61 candidate installed with exact1707 payloads/283 modules; installed regression continues. Existing103-voice audition guidance is prepared before candidate testing,not relabeled as new CLI63 inference. Formal Skill remains CLI59/local57/r57;the full goal is open.** [Delivery details](docs/validation/CLI63候选交付门禁_2026-10-29.md)
 
 **Historical source CLI61 full403 service contracts passed,zero failures/errors/skips,app and tests frozen.Independent installation and registered Skill promotion require separate acceptance.** [Evidence](docs/validation/CLI61完整源码验收_2026-10-29.md)
 
 **Historical development status (CLI61): source CLI0.1.61 fixes inconsistent operation timeout errors between lip-sync media preparation and model processing. Validation requires new terminal receipts. CLI60 installed contracts finished with 399 passes and 1 failure; promotion is blocked. The registered Skill remains CLI59/local57/r57.** [Fix and acceptance boundaries](docs/validation/CLI61口型超时修复_2026-10-29.md).
 
-**Current local version: CLI0.1.59 / local57 / r57 unified Skill kit.** One `$agent-ffmpeg-local-editor` entry,17 internal modules,93 files. Source and installed 31/19/57/104/400 groups passed separately. Staged and actual C-discovered CUDA denoising passed complete1124160-byte PCM package replay. Full CapCut parity remains incomplete.
+**Historical local version: CLI0.1.59 / local57 / r57 unified Skill kit.** One `$agent-ffmpeg-local-editor` entry,17 internal modules,93 files. Source and installed 31/19/57/104/400 groups passed separately. Staged and actual C-discovered CUDA denoising passed complete1124160-byte PCM package replay. Full CapCut parity remains incomplete.
 
 [简体中文](README.md) · [繁體中文](README.zh-TW.md) · [r57 Skill ZIP](docs/skills/agent-editor-kit-community-unified-skill-r57.zip) · [Delivery and workflow](docs/validation/CLI59统一Skill切换_2026-10-29.md)
 
@@ -70,7 +72,7 @@ $skill = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor'
 & "$skill/scripts/run.ps1" capabilities
 ```
 
-Confirm version `0.1.59`;follow the [matching application installation](docs/validation/CLI59独立安装交付_2026-10-29.md),register media and rights,create a project,select and preview,render,and export an editable package. [Exact-content selection](docs/product/AD_CONTENT_UNIQUENESS.md) explains SHA256 deduplication,default inheritance,reuse and perceptual-duplicate limits.
+The historical CLI59 workflow requires version `0.1.59`;follow the [matching application installation](docs/validation/CLI59独立安装交付_2026-10-29.md),register media and rights,create a project,select and preview,render,and export an editable package. [Exact-content selection](docs/product/AD_CONTENT_UNIQUENESS.md) explains SHA256 deduplication,default inheritance,reuse and perceptual-duplicate limits.
 
 The r57 kit independently passed extraction into a Chinese/space path,four-model-pack configuration,isolated registration,and actual re-rendering. Complete589824-byte YUV and307200-byte PCM match the reference and project replay;PNG bytes also match. This kit check adds no model inference and is not natural-quality or clean-host acceptance.
 
@@ -101,7 +103,7 @@ New local103-voice audition workflow:listen by language/voice ID and confirm bef
 
 ![Actual source59 score audition](docs/assets/music-score59-20261029-r1/actual.gif)
 
-**Current local version: CLI0.1.58 / local56 / r56 unified Skill kit.** One `$agent-ffmpeg-local-editor` entry,17 internal modules,93 files. Source and installed 31/19/57/104/400 groups passed separately. Staged and actual C-discovered CUDA denoising passed complete1124160-byte PCM package replay. Full CapCut parity remains incomplete.
+**Historical local version: CLI0.1.58 / local56 / r56 unified Skill kit.** One `$agent-ffmpeg-local-editor` entry,17 internal modules,93 files. Source and installed 31/19/57/104/400 groups passed separately. Staged and actual C-discovered CUDA denoising passed complete1124160-byte PCM package replay. Full CapCut parity remains incomplete.
 
 [简体中文](README.md) · [繁體中文](README.zh-TW.md) · [r56 Skill ZIP](docs/skills/agent-editor-kit-community-unified-skill-r56.zip) · [Delivery and workflow](docs/validation/CLI58统一Skill切换_2026-10-29.md)
 
@@ -111,7 +113,7 @@ $skill = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor'
 & "$skill/scripts/run.ps1" capabilities
 ```
 
-Confirm version `0.1.58`;follow the [matching application installation](docs/validation/CLI58独立安装交付_2026-10-29.md),register media and rights,create a project,select and preview,render,and export an editable package. [Exact-content selection](docs/product/AD_CONTENT_UNIQUENESS.md) explains SHA256 deduplication,default inheritance,reuse and perceptual-duplicate limits.
+The historical CLI58 workflow requires version `0.1.58`;follow the [matching application installation](docs/validation/CLI58独立安装交付_2026-10-29.md),register media and rights,create a project,select and preview,render,and export an editable package. [Exact-content selection](docs/product/AD_CONTENT_UNIQUENESS.md) explains SHA256 deduplication,default inheritance,reuse and perceptual-duplicate limits.
 
 The r56 kit independently passed extraction into a Chinese/space path,four-model-pack configuration,isolated registration,and actual re-rendering. Complete589824-byte YUV and307200-byte PCM match the reference and project replay;PNG bytes also match. This kit check adds no model inference and is not natural-quality or clean-host acceptance.
 
@@ -141,7 +143,7 @@ The CLI57/local55 offline candidate is independently installed:1705 payload file
 
 Source and independently installed CLI57 passed actual CUDA denoising,with12.25dB controlled-noise MSE improvement and identical complete PCM.Source398 rerun passed;the original test-environment failure is retained. [C71 actual audio / waveforms](docs/product/CASES.md#c71-source57-native-worker-gpu)
 
-## Current workflow and verification
+## Historical CLI56 workflow and verification
 
 These commands use this machine’s registered installation. A new host needs the matching application bundle and native dependencies described in the delivery log. Register assets/rights,model,index and device calibration;dry-run,select,build,preview/render each variant,then verify editable-package replay.
 
@@ -199,7 +201,7 @@ Candidate-stage history: the unified Skill candidate passed seven actual CLI53 c
 
 ![Actual registered CLI53 ACES technical viewing copy](docs/assets/aces-registered-20261029-r1/preview.gif)
 
-Verify the current CLI53 entry before editing. Enumerate the actual ACES configuration, display and view names; follow the linked workflow for an editable project:
+Historical CLI53 entry check: Enumerate the actual ACES configuration, display and view names; follow the linked workflow for an editable project:
 
 ```powershell
 $aekSkill = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1'
@@ -221,7 +223,7 @@ The installed package separately passed **18 ACES + 46 metering/Schema tests**. 
 
 Development reporting: every round ends with numbered completed-work and pending-work tables, including verification evidence and remaining limits. See the [reporting convention](docs/DEVELOPMENT_REPORTING.md).
 
-**Public release: v0.1.0-alpha.3 prerelease · CLI 0.1.2 · 500 looks · 17 historical separate Skills.** Downloads provide a complete runtime ZIP, Agent kit, optional gallery and checksums. The verified runtime bytes are unchanged; portable installation and a runnable example are added. Complete Jianying/CapCut parity remains an unaccepted development target.
+**Recorded public release (historical): v0.1.0-alpha.3 prerelease · CLI 0.1.2 · 500 looks · 17 historical separate Skills.** Downloads provide a complete runtime ZIP, Agent kit, optional gallery and checksums. The verified runtime bytes are unchanged; portable installation and a runnable example are added. Complete Jianying/CapCut parity remains an unaccepted development target.
 
 This page includes functional modules, services/dependencies, installation/usage, Skill inputs/outputs, real cases and verification. Long raw acceptance logs remain archived; practical feature descriptions and case access are restored here.
 
@@ -290,7 +292,7 @@ Source-specific62/62 passes; compatibility initially passes351/352, then the doc
 
 <!-- native-hdr-media-history -->
 
-Historical CLI50 delivery; current CLI51 is described above.
+Historical CLI50 delivery and subsequent CLI51 snapshot; the registered version is stated at the top.
 
 **CLI0.1.50 / alpha.4-local.48 / r51 kit · 1 Skill / 17 modules / 89 files.**
 
@@ -892,7 +894,7 @@ Direct use of an unavailable old installation still fails integrity checks. CLI 
 | Extension | Actual implementation | Limits |
 |---|---|---|
 | M01 / F44 | 44 BGM, 85 jingles, 228 unique SFX, 2 OFL Noto fonts | Source licenses/attribution remain separate; no stock subscription |
-| M02 / F45 | Chinese/English speech, 103 named voices, text files/speed/WAV | At least seven voices actually generated; no human listening acceptance, cloning or universal voice-quality approval |
+| M02 / F45 | Chinese/English speech, 103 named voices, text files/speed/WAV | Actual WAVs exist for all 103 voices: 100 Chinese and three English; see the [audition workflow](docs/validation/CLI61全音色试听_2026-10-29.md). Human listening, naturalness and output rights remain unaccepted |
 | M03 / F46 | Offline bidirectional translation, bilingual SRT, glossary | Cue order/milliseconds retained; translation and pronunciation need review |
 | G01 / F47 | CUDA voice/translation, auto/cpu/cuda, free-VRAM preflight | RTX 3060 tested; strict CUDA and explicit CPU fallback; optional NVIDIA runtime terms |
 | M04–M05 / F48 | Real BGM trim/loop/fades, speech/music mix and ducking | Preserved stems; no composition or automatic seam repair |
@@ -1113,7 +1115,7 @@ The new package retains GPU speech/translation and all 359 resources. See the [c
 
 ```powershell
 $avkPython = 'C:/Python313/python.exe'
-$avkHome = 'E:/tools/agent-editor-kit-unified'
+$avkHome = 'E:/video-tools/skill-kit-r58'
 $avkArchive = 'E:/Downloads/agent-editor-kit-v0.1.0-alpha.3-cp313-win_amd64.zip'
 Expand-Archive -LiteralPath 'E:/Downloads/agent-editor-kit-unified-skill-r1.zip' -DestinationPath $avkHome
 Set-Location $avkHome
@@ -1193,6 +1195,8 @@ The implementation is **Python CLI + Agent Project schema + FFmpeg**, with an ex
 ## Functional modules and actual support boundaries
 
 IDs locate documentation groups with dependencies/overlap; they are not 43 independent kernels or a completion score. The table describes behavior, commands and limits. The [complete machine capability manual](docs/product/CAPABILITIES.en.md) retains every field.
+
+**F45 voice status update (2026-11-06):** the independently installed CLI61 produced actual WAVs for all 103 voices (100 Chinese, three English), with complete PCM project replay. F45 below preserves its earlier seven-voice evidence floor. Use the [local audition workflow](docs/validation/CLI61全音色试听_2026-10-29.md) for selection. Human listening, naturalness, emotion/dialects and output rights remain unaccepted; this documentation update generated no new audio.
 
 | ID | Module | Behavior and input → output | Entry | Dependency/limit |
 |---|---|---|---|---|
@@ -1305,7 +1309,7 @@ IDs locate documentation groups with dependencies/overlap; they are not 43 indep
 | S11 | Rights and interchange | Local evidence and file exchange | Ledger/policy/package hashes/loss reports without invoking a proprietary editor. | `rights / policy / convert` | Does not grant commercial rights to third-party media/models. |
 | S12 | Creative and campaign assistance | Agent task guidance | Uses supplied business information and data to produce scripts/suggestions/analysis. | `$agent-ffmpeg-local-editor` / K01–K17 | No ad-account integration, buying or automatic data collection. |
 | S13 | Bundled community resources | Offline catalog | 359 source/license-pinned music/jingle/SFX/font files | `materials list/inspect/verify/ingest` | Per-resource rights; no commercial stock subscription |
-| S14 | Local speech/translation | Native model workers | Four optional pinned CPU/CUDA packs; 103 voice mappings and OPUS text/subtitles | `voice / translate / model-pack` | At least seven distinct voices have real outputs; complete 103-voice auditions and human acceptance remain open |
+| S14 | Local speech/translation | Native model workers | Four optional pinned CPU/CUDA packs; 103 voice mappings and OPUS text/subtitles | `voice / translate / model-pack` | Actual WAVs exist for all 103 voices: 100 Chinese and three English; see the [audition workflow](docs/validation/CLI61全音色试听_2026-10-29.md). Human listening, naturalness and output rights remain unaccepted |
 | S15 | Music preparation, score and loop repair | Native FFmpeg + CPU DSP | Explicit trim/loop/fades, independent stems, ducking, editable score synthesis and sample overlap repair. | `music prepare/mix/compose/repair-loop` | Score synthesis and overlap use CPU DSP. Neural music generation is separate; verify shortened timing, auditions and rights. |
 | S16 | GPU compatibility | Existing native OpenCL ICD / NVIDIA model libraries | Graph projection; independent Float32 affine/normal over/text/words/particles/optics/highlight-glow; off/prefer/require and model auto/cpu/cuda; actual probes/budgets/cleanup | `render --projection-acceleration; gpu inspect; --device` | RTX3060 tested; glyphs, other effects and transitions remain CPU. System-library licenses are separate. |
 | S17 | Native Windows capture | FFmpeg gdigrab / DirectShow | Explicit source/device IDs, finite duration, full decode and asset registration | `capture devices/record` | Actual CPU/GPU window test; camera/microphone/AV sync pending |
@@ -1392,7 +1396,7 @@ Sources/licenses: Striped Purple 49 + t3mujinpack 51 (MIT), Natron 267 (CC BY-SA
 **Client workflow:** show the original plus 3–6 relevant actual samples, identifying number, name, stable ID, strength, color change and license. Clients can filter/export candidates or give numbers. Render selected strengths on the actual target media, record final ID/strength/clip-or-global scope, then dry-run/apply. The split slider changes the original comparison region and does not simulate strength.
 
 ```powershell
-$avkHome = 'E:/tools/agent-editor-kit-unified'
+$avkHome = 'E:/video-tools/skill-kit-r58'
 $avk = Join-Path $avkHome 'skills/agent-ffmpeg-local-editor/scripts/run.ps1'
 $aekGallery = Join-Path $avkHome 'skills/agent-ffmpeg-local-editor/scripts/look_gallery.py'
 & 'C:/Python313/python.exe' -I -S -B -X utf8 $aekGallery --query '黑白' --limit 6
@@ -1422,7 +1426,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-This host currently uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.47/final-r1/installed/`, CLI 0.1.49. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
+This host formally uses `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.61/final-r1/installed/`, CLI 0.1.63. The public alpha.3 downloads above retain CLI 0.1.2 and their matching historical manual. The one entry, scripts and 17 task modules live in `skills/agent-ffmpeg-local-editor/`; Codex registers only that directory junction. Re-register after relocation; unrelated conflicting directories are preserved.
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1440,7 +1444,7 @@ The Skill launcher checks the installation receipt and launcher hash, then invok
 ## Commands and project structure: start to delivery
 
 ```powershell
-$avkHome = 'E:/tools/agent-editor-kit-unified'
+$avkHome = 'E:/video-tools/skill-kit-r58'
 $avk = Join-Path $avkHome 'skills/agent-ffmpeg-local-editor/scripts/run.ps1'
 $aekProject = 'E:/video-work/first-ad'
 & $avk project init $aekProject --name 'First ad'
@@ -2195,6 +2199,7 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R578 | Whole-suite configuration fixed; first interruption retained | Retains eight observed skips and the interrupted original run. Explicit Rubber Band/Node/HTML preflight and15 test-file package bindings precede the new whole4,110 run. Original assertions and20s deadline stay; no passing total claimed. [Record](docs/product/DELIVERY66_CORRECTION.md) |
 | R579 | Complete handoff code and second interrupted run retained | Confirms the r2 owner/session are absent without a whole-suite summary; preserves log/freeze. Implements native supervision, structured music file errors, fresh single-Skill install/replay, three actual-fault harnesses, activation/rollback and new release attachments. Code complete; concentrated verification pending, no new inference or formal upgrade. [Record](docs/product/DELIVERY66_HANDOFF.md) |
 | R580 | Remaining scope and handoff verification (2026-11-06) | Pins match for 546 product/test/dependency files, six tools and 95 formal files. All 18 tool contracts passed, zero failures/errors/skips. Whole-source discovery found 4,114 tests, running without a terminal result. Formal63 and G01–G38 closure conditions remain; no new formal activation or model-quality acceptance. [Review](docs/validation/evidence/status-review-20261106-r1/review-r2/verification.json) · [18 contracts](docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r2/verification.json) |
+| R581 | README stage alignment / 2026-11-06 | Aligned three-language version stages and voice status. Historical snapshots are labeled; M02/S14 now identify all 103 actual WAVs and F45 has a current supplement. Original F01–F89 and R01–R580 rows remain byte-for-text unchanged. Documentation/read-only checks only; no new model, media-quality or formal activation acceptance. [Record](docs/validation/evidence/delivery66-handoff-20261106-r1/documentation-r1/verification.json) |
 
 ### Development preview: C76 loop overlap repair(source CLI60)
 
@@ -2208,7 +2213,7 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 
 The deliverable is an offline, editable and auditable Agent CLI workflow with explicit contracts. Openly licensed asset/template ecosystems, agreed AI/beauty/layout features, complete color processing, actual quality for supported draft profiles, broad natural-media acceptance and long-form resource performance remain open. Consumer GUI, accounts, cloud collaboration and arbitrary lossless private-draft interchange are outside current core acceptance.
 
-[The complete-goal assessment](docs/product/GOAL_GAPS_20261025.md) updates every G01–G38 against CLI 0.1.13. A single Skill, 500 looks/previews, 359 resources, GPU speech/translation, joint subtitle dubbing, stems/recovery and controlled word activity timing are delivered. Natural audiovisual quality, complex combinations, advanced AI, content/templates, autonomous Agent tasks, long-job reliability and a newer public release remain open. R67–R72 retain separate real scopes and limits; no overall completion percentage is established. The [2026-10-24 assessment](docs/product/GOAL_GAPS_20261024.md) is historical.
+[Current unfinished work](docs/product/UNFINISHED_20261106.md) distinguishes source CLI66 from registered63; the [original closure conditions](docs/product/GOAL_GAPS_20261025.md) preserve all G01–G38. A single Skill, 500 looks/previews, 359 resources, GPU speech/translation, joint subtitle dubbing, stems/recovery and controlled word activity timing are delivered. Natural audiovisual quality, complex combinations, advanced AI, content/templates, autonomous Agent tasks, long-job reliability and a newer public release remain open. R67–R72 retain separate real scopes and limits; no overall completion percentage is established. The [2026-10-24 assessment](docs/product/GOAL_GAPS_20261024.md) is historical.
 
 Exact audio-channel relationship protection and native capture remain delivered within their documented scope. Extremely short-window pitch, natural-speech alignment, actual camera/microphone recording and AV synchronization remain unaccepted. CLI 0.1.5 introduced limited visual semantic retrieval; neither the 500 looks nor the current 75 declarations establish an overall completion percentage.
 

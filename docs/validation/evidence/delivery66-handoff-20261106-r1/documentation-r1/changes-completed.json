@@ -1,0 +1,75 @@
+{
+  "status": "complete-document-batch-awaiting-audit",
+  "files": {
+    "README.md": {
+      "before_sha256": "17aff20a74b337c264e7043c8440bae53017b0abeceece5d89158853e0ac8ab4",
+      "after_sha256": "4642dcb7b29fa6869aa36edf214de3851fe8581044a9bffb2e193c055bed1604",
+      "historical_RF_rows_preserved": 669,
+      "changes": {
+        "**CLI63安装回归恢复：**": 1,
+        "**当前开发状态：源码 CLI0.1.63": 1,
+        "**当前本地版本：CLI0.1.59": 1,
+        "确认版本为 `0.1.59`": 1,
+        "**当前本地版本：CLI0.1.58": 1,
+        "确认版本为 `0.1.58`": 1,
+        "当前开发源码 **CLI0.1.58**": 1,
+        "当前本机 CLI56／local54": 1,
+        "## 当前使用流程与核验": 1,
+        "**当前本地 CLI56／local54": 1,
+        "**当前 CLI55": 1,
+        "CLI53 当前入口快速核实": 1,
+        "**公开发行版本：": 1
+      }
+    },
+    "README.zh-TW.md": {
+      "before_sha256": "a6a7e504b6519e53da6008f217b14d1eb174fc51c72317adf36482b4fb67c2c3",
+      "after_sha256": "394b758d9b5322ea0da201acd573d9032d735ed96ad2363b4eef55da60a1bdd3",
+      "historical_RF_rows_preserved": 669,
+      "changes": {
+        "**CLI63安裝回歸恢復：**": 1,
+        "**目前開發狀態：原始碼 CLI0.1.63": 1,
+        "**目前本地版本：CLI0.1.59": 1,
+        "確認版本為 `0.1.59`": 1,
+        "**目前本地版本：CLI0.1.58": 1,
+        "確認版本為 `0.1.58`": 1,
+        "目前開發原始碼為 **CLI0.1.58**": 1,
+        "## 目前使用流程與核驗": 1,
+        "**目前本地 CLI56／local54": 1,
+        "**目前 CLI55": 1,
+        "**目前本機 CLI0.1.53": 1,
+        "CLI53 目前入口快速核實": 1,
+        "**公開發行版本：": 1
+      }
+    },
+    "README.en.md": {
+      "before_sha256": "472755844c76187a94aaa8a0df9577e7a0f156c703a4a1d11fa55372a92de39a",
+      "after_sha256": "7fc4d96e2c19ae2dab4e0fc515fca695eafbaf9af34b1e85c5bc571e550c640a",
+      "historical_RF_rows_preserved": 669,
+      "changes": {
+        "**CLI63 installed regression recovery:**": 1,
+        "**Development status: source CLI0.1.63": 1,
+        "**Current local version: CLI0.1.59": 1,
+        "Confirm version `0.1.59`": 1,
+        "**Current local version: CLI0.1.58": 1,
+        "Confirm version `0.1.58`": 1,
+        "## Current workflow and verification": 1,
+        "**Public release:": 1
+      }
+    }
+  },
+  "unfinished_sha256": "3f811c1ba9f6d3f7964d2a789c322291cad6b421ca74eb3edc22005a156bd869",
+  "voice_receipt": "docs\\validation\\evidence\\voice-auditions-20261029-r1\\r2\\verification.json",
+  "voice_receipt_sha256": "d97c236f479bc36ebc8e8b7f8d6d022e847acad05c43bb1634e2063de94a22e6",
+  "new_model_inference": false,
+  "formal_activation": false,
+  "files_completed": {
+    "README.md": "3c890509cb979fe4d9ce38a056670659cb6823465f767373ee95845cfcf62319",
+    "README.zh-TW.md": "10a611e583c5af6eb0ac995cf300037137276687d8c4506c766b0307e16de562",
+    "README.en.md": "c224b07b3a8d8514b0a646792c9b7f069ff137021be09b118a1d8d721ca5bf5a",
+    "docs/local/INSTALLATION.md": "cffca4d0e776c021508be0adad0495c28ed4585d99885316a2267881c258b323",
+    "docs/product/UNFINISHED_20261106.md": "3f811c1ba9f6d3f7964d2a789c322291cad6b421ca74eb3edc22005a156bd869"
+  },
+  "current_installation_cli": "0.1.63",
+  "current_installation_manifest": "sha256:65e94e4ed549d065175a31b891f7890fc4e23cece74733710a21629b8f06bdca",
+  "historical_reinstall_commands_separated": true
+}

@@ -2,13 +2,32 @@
 
 <!-- community-current -->
 
+**正式本地版本：CLI0.1.63 / local61 / r58 · 1 Skill / 17 internal modules / 93 files.**
+
+[r58统一Skill ZIP](../skills/agent-editor-kit-community-unified-skill-r58.zip) · [工具包SHA256与清单](../skills/community-unified-skill-package-0.1.63-r58.json) · [正式注册、安装与完整使用流程](../validation/CLI63统一Skill切换_2026-10-29.md)
+
+正式入口`$agent-ffmpeg-local-editor`调用已安装CLI63，不回落源码。当前绑定为`E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.61/final-r1/installed/`；运行配置为仓库`local/agent-ffmpeg/runtime.json`。源码CLI66及其完整回归是开发阶段，新候选、新工具包和正式升级尚未验收。
+
+CLI63已完成独立安装及正式入口的循环修复、DF3／MuseTalk CUDA和完整音画工程包重放。103音色实际WAV来自CLI61历史生成，供[本地试听选型](../validation/CLI61全音色试听_2026-10-29.md)，没有冒充CLI63重新生成或人类听审。r58工具包、应用ZIP、Python／FFmpeg、驱动与模型分别准备；工具包不包含全部运行环境。完整38组目标、自然质量、干净主机及跨机器验收仍开放。
+
+The registered runtime is CLI0.1.63/local61/r58. Source CLI66 is still under whole-suite acceptance. Use the single registered Skill and the matching application; preserve the historical alpha.3 downloads for reproducing their original scope.
+
+<!-- /community-current -->
+
+<details>
+<summary>CLI59／r57安装说明历史快照 / Historical installation snapshot</summary>
+
+
+
 **CLI0.1.59 / local57 / r57 · 1 Skill / 17 internal modules / 93 files.**
 
 [Verified r57 kit](../skills/agent-editor-kit-community-unified-skill-r57.zip) · [SHA256 / inventory](../skills/community-unified-skill-package-0.1.59-r57.json) · [当前注册、安装和完整使用流程](../validation/CLI59统一Skill切换_2026-10-29.md)
 
 正式入口`$agent-ffmpeg-local-editor`固定调用已安装CLI59，不回落源码。8类解析音色、4类程序音效、分轨及可编辑谱面已通过实际C盘入口完整PCM核验；源码与安装31／19控制／57／104／400和独立配乐19分别通过。独立r57解包／四包配置／注册后的实际配乐及完整ACES音画重放亦通过。它不是神经音乐；GPU降噪不等于GPU生曲，四包配置不等于全部配音／翻译重新推理，完整38组目标仍开放。按原K01–K17路由，保留500滤镜母图预览。
 
-<!-- /community-current -->
+
+
+</details>
 
 **当前注册方式：1 个 `$agent-ffmpeg-local-editor` 入口，17 项内部模块。** 本机已从原 17 个入口迁移；[统一 kit、新目录安装与迁移说明](../skills/UNIFIED_SKILL.md)。新注册回执见[实际核验](../validation/evidence/unified-skill-20261024-r1/verification.json)。下方保留原 alpha.3 内核安装和当时 17 个入口的历史核验，不代表当前仍注册 17 个 Skill。
 
@@ -83,7 +102,7 @@ $avkProject = 'E:/dev/sandbox/AI广告剪辑/workspace/my-ad'
 Agent 同时检查退出码、`ok`、`status`、`errors`、`warnings` 与 `artifacts`。音轨须显式编排。`render --publish` 只做本地权利门禁，不上传平台。完整参数和两条渲染路径的边界见[发行版使用手册](../releases/v0.1.0-alpha.3/USAGE.md)；新命名空间以本页及当前 Skill 正文为准。
 Check exit codes and all structured result fields. Author audio explicitly. `--publish` gates local rights without uploading. Consult the release manual for command/renderer contracts, applying the new Skill names below.
 
-## 17 个入口 / Skill catalog
+## 历史17个拆分入口 / Historical split-Skill catalog
 
 | # | 新调用名 / New invocation | 用途 / Purpose | 旧名后缀 / Legacy suffix |
 |---|---|---|---|
@@ -105,11 +124,44 @@ Check exit codes and all structured result fields. Author audio explicitly. `--p
 | 16 | [`$agent-ffmpeg-local-video-content-strategist`](../../skills/agent-ffmpeg-local-video-content-strategist/SKILL.md) | 内容策略 / Content strategy | `video-content-strategist` |
 | 17 | [`$agent-ffmpeg-local-campaign-analytics`](../../skills/agent-ffmpeg-local-campaign-analytics/SKILL.md) | 本地数据分析 / Supplied campaign data | `campaign-analytics` |
 
-旧调用为 `$video-cut-旧名后缀`，仍保留以复现已有任务。新前缀的 `local-policy`、`local-models` 保留其领域后缀，因此名称含两次 `local`。三个营销 Skill 提供方案指导，两个通用媒体 Skill 也可直接使用已有 FFmpeg；项目命令统一用安装版。
+本表是旧拆分源目录的历史映射，不再逐项注册；当前仅使用统一Skill内部K01–K17模块。旧调用为 `$video-cut-旧名后缀`，仍保留以复现已有任务。新前缀的 `local-policy`、`local-models` 保留其领域后缀，因此名称含两次 `local`。三个营销 Skill 提供方案指导，两个通用媒体 Skill 也可直接使用已有 FFmpeg；项目命令统一用安装版。
 Legacy calls remain available separately for reproducibility. Marketing Skills are advisory, and the generic media Skills can use native FFmpeg. The 17 new registrations are not 17 newly implemented rendering engines or additional bundled AI models.
 
 新命名空间在本次 `main` 更新中提供；已公开的 `v0.1.0-alpha.1-skills.zip` 仍是当时的 17 个 `video-cut-` 入口，未覆盖发布附件。上游工作流和许可随相应新 Skill 的 `references/upstream/` 保留；[第三方通知](../releases/v0.1.0-alpha.3/THIRD_PARTY.md)继续适用。
 The new namespace is supplied by this main-branch update. Published release assets retain their original legacy names and hashes. Credited upstream references and their licenses are retained.
+
+## 当前重新安装与注册 / Current installation and registration
+
+本机已有可用绑定时，直接使用上方入口。新路径安装须选择**匹配CLI63的应用包和r58工具包**；公开alpha.3运行包是CLI0.1.2，不能与r58清单混装。另一台干净主机尚未完成验收。
+
+1. 核对应用ZIP和工具包摘要，再分别解包到新的E盘目录。本机CLI63应用ZIP为`E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.61/candidate-r1/bundle.zip`，305698303字节，SHA256为`c9151896fe28de8446adfe35633b18956e3e390bac0ccaa038f713be233e9727`。它尚不是新公开Release附件。
+2. 使用包内原生安装器安装到新路径，保持全程离线；已有CPython3.13 x64、FFmpeg／ffprobe，模型功能另需匹配的本地模型包和原生依赖。
+3. 在解包后的r58工具包根目录配置模型，再注册唯一入口。CUDA配音／翻译按`activate_community_runtime.py --help`显式设置`--voice-cuda-lib`和`--translation-cuda-lib`，使用实际已有库目录；没有隐式下载。
+
+```powershell
+$python = 'C:/Python313/python.exe'
+$bundle = 'E:/video-tools/application-bundle-cli63'
+$installed = 'E:/video-tools/application-installed-cli63'
+& $python -E -B -X utf8 "$bundle/install.py" --bundle $bundle --target $installed `
+  --manifest-sha256 'sha256:65e94e4ed549d065175a31b891f7890fc4e23cece74733710a21629b8f06bdca'
+Set-Location 'E:/video-tools/skill-kit-r58'
+& $python -E -B -X utf8 ./scripts/activate_community_runtime.py `
+  --installed $installed --packs 'E:/video-tools/model-packs'
+./register-agent-ffmpeg-local-skills.ps1
+$entry = './skills/agent-ffmpeg-local-editor/scripts/run.ps1'
+& $entry version # 0.1.63
+& $entry doctor
+& $entry capabilities
+```
+
+目录是示例，须替换为实际解包及模型位置。配置器会核对安装回执、Skill清单和模型摘要；注册器遵循`CODEX_HOME/skills`，未设置则使用当前用户`.codex/skills`，保留同名无关目录。移动仓库后重新建立实际路径绑定，不删除用户工程，也不静默切回源码。
+
+These paths are examples. Verify both archives, install the matching CLI63 application, configure existing local model packs, then register one Skill. Native Python/FFmpeg/drivers/models are separate dependencies. The older commands below reproduce a historical release and are not the current install or upgrade workflow.
+
+<details>
+<summary>旧alpha.3重装命令历史原文 / Historical alpha.3 reinstall commands</summary>
+
+以下仅用于复现当时的内核与拆分Skill；当前安装请使用上方CLI63／r58流程。
 
 ## 重新安装与注册 / Install on another checkout
 
@@ -127,6 +179,9 @@ Installation verifies the pinned ZIP/manifest and runs its wheel-only installer.
 
 移动整个项目后需重新安装运行绑定，并重新注册到当前检出。已有安装和配置不会自动覆盖；先保留工程和回执，选择新的安装目录或手工归档旧安装、`runtime.json`。不要删除源码或用户工程来修复环境；不要重新下载缺失模型作为隐式修复。
 After relocation, recreate the machine-specific installation binding and registration. Existing installations/configs are preserved. Archive or select fresh destinations deliberately while keeping projects and receipts. No automatic uninstall or background downloader is provided.
+
+
+</details>
 
 ## 首版历史实测 / Historical alpha.1 verification
 

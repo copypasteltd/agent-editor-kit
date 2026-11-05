@@ -35,6 +35,8 @@ $entry = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1
 <details>
 <summary>完整開發歷史（保留全部原文，點擊展開）</summary>
 
+本節保留歷史交付快照，包含當時仍執行中或未升級的狀態；每條僅代表所屬版本的執行時點。目前正式入口與開發狀態以本頁頂部為準，現用流程見[CLI63統一Skill使用](docs/validation/CLI63统一Skill切换_2026-10-29.md)。
+
 **N002母圖也已補齊8套實際光效靜幀。** 同一母圖、同一時刻與明確模板ID，方便客戶比較人物與室內鏡頭的方向；與500套LUT數量分開。 [Actual N002 previews](docs/product/OPTICAL_N002_PREVIEWS.md) · [N002 selection gallery](docs/assets/optical-n002-20261029-r1/index.html)
 
 ![Actual N002 optical comparison](docs/assets/optical-n002-20261029-r1/contact.png)
@@ -52,15 +54,15 @@ $entry = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1
 
 ![Actual editable optical templates](docs/assets/optical-pack-20261029-r1/contact.png)
 
-**CLI63安裝回歸恢復：** 完整406-r1因程序退出且無終態記為中斷；保留原日誌，正在新r2目錄重跑。正式Skill仍CLI59/local57/r57。 [Recovery](docs/validation/CLI63安装回归中断与恢复_2026-10-29.md)
+**歷史階段：CLI63安裝回歸恢復。** 完整406-r1因程序退出且無終態記為中斷；保留原日誌，正在新r2目錄重跑。正式Skill仍CLI59/local57/r57。 [Recovery](docs/validation/CLI63安装回归中断与恢复_2026-10-29.md)
 
-**目前開發狀態：原始碼 CLI0.1.63 的406項完整合同及原生程序修復核驗通過；local61候選已原生安裝、1707載荷與283模組精確一致，安裝版回歸繼續。103音色預覽說明已準備在候選實測前寫入，未冒充CLI63重新生成。正式Skill仍CLI59/local57/r57，完整目標未完成。** [Delivery details](docs/validation/CLI63候选交付门禁_2026-10-29.md)
+**歷史開發狀態（CLI63候選階段）：原始碼 CLI0.1.63 的406項完整合同及原生程序修復核驗通過；local61候選已原生安裝、1707載荷與283模組精確一致，安裝版回歸繼續。103音色預覽說明已準備在候選實測前寫入，未冒充CLI63重新生成。正式Skill仍CLI59/local57/r57，完整目標未完成。** [Delivery details](docs/validation/CLI63候选交付门禁_2026-10-29.md)
 
 **歷史原始碼CLI61完整403項服務契約已通過，零失敗／錯誤／跳過，應用與測試凍結一致；獨立安裝及正式Skill升級仍須另驗。** [Evidence](docs/validation/CLI61完整源码验收_2026-10-29.md)
 
 **歷史開發狀態（CLI61）：原始碼 CLI0.1.61 修復口型任務在媒體前處理與模型管道階段的逾時錯誤碼不一致；驗證以新終態收據為準。CLI60 安裝完整契約實際為 399 通過、1 失敗，禁止正式升級。正式註冊仍 CLI59／local57／r57。** [修復說明及驗收邊界](docs/validation/CLI61口型超时修复_2026-10-29.md)。
 
-**目前本地版本：CLI0.1.59 / local57 / r57統一Skill工具包。** 唯一入口 `$agent-ffmpeg-local-editor`，17內部模組、93檔案。原始碼與安裝版各31／19／57／104／400五組分別通過；候選與真實C盤入口實際CUDA降噪及完整1124160位元組PCM專案重播分別通過。完整剪映等價仍未完成。
+**歷史本地版本：CLI0.1.59 / local57 / r57統一Skill工具包。** 唯一入口 `$agent-ffmpeg-local-editor`，17內部模組、93檔案。原始碼與安裝版各31／19／57／104／400五組分別通過；候選與真實C盤入口實際CUDA降噪及完整1124160位元組PCM專案重播分別通過。完整剪映等價仍未完成。
 
 [简体中文](README.md) · [English](README.en.md) · [r57 Skill ZIP](docs/skills/agent-editor-kit-community-unified-skill-r57.zip) · [交付與流程](docs/validation/CLI59统一Skill切换_2026-10-29.md)
 
@@ -70,7 +72,7 @@ $skill = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor'
 & "$skill/scripts/run.ps1" capabilities
 ```
 
-確認版本為 `0.1.59`；依[安裝使用流程](docs/validation/CLI59独立安装交付_2026-10-29.md)準備配套應用與原生依賴，再登記素材及權利、建立專案、選材與預覽、渲染並匯出可編輯專案包。[選材規則與實際案例](docs/product/AD_CONTENT_UNIQUENESS.md)說明精確SHA256去重、預設繼承、重用及感知重複邊界。
+歷史CLI59流程要求版本為 `0.1.59`；依[安裝使用流程](docs/validation/CLI59独立安装交付_2026-10-29.md)準備配套應用與原生依賴，再登記素材及權利、建立專案、選材與預覽、渲染並匯出可編輯專案包。[選材規則與實際案例](docs/product/AD_CONTENT_UNIQUENESS.md)說明精確SHA256去重、預設繼承、重用及感知重複邊界。
 
 r57已在獨立中文／空格目錄解包、配置四個模型套件、獨立註冊並實際重渲染；完整589824位元組YUV、307200位元組PCM與參考及專案重播相同，PNG亦逐位元組相同。此工具包驗收未新增模型推理，不代替自然視聽品質或乾淨機器驗收。
 
@@ -101,7 +103,7 @@ r57已在獨立中文／空格目錄解包、配置四個模型套件、獨立�
 
 ![Actual source59 score audition](docs/assets/music-score59-20261029-r1/actual.gif)
 
-**目前本地版本：CLI0.1.58 / local56 / r56統一Skill工具包。** 唯一入口 `$agent-ffmpeg-local-editor`，17內部模組、93檔案。原始碼與安裝版各31／19／57／104／400五組分別通過；候選與真實C盤入口實際CUDA降噪及完整1124160位元組PCM專案重播分別通過。完整剪映等價仍未完成。
+**歷史本地版本：CLI0.1.58 / local56 / r56統一Skill工具包。** 唯一入口 `$agent-ffmpeg-local-editor`，17內部模組、93檔案。原始碼與安裝版各31／19／57／104／400五組分別通過；候選與真實C盤入口實際CUDA降噪及完整1124160位元組PCM專案重播分別通過。完整剪映等價仍未完成。
 
 [简体中文](README.md) · [English](README.en.md) · [r56 Skill ZIP](docs/skills/agent-editor-kit-community-unified-skill-r56.zip) · [交付與流程](docs/validation/CLI58统一Skill切换_2026-10-29.md)
 
@@ -111,7 +113,7 @@ $skill = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor'
 & "$skill/scripts/run.ps1" capabilities
 ```
 
-確認版本為 `0.1.58`；依[安裝使用流程](docs/validation/CLI58独立安装交付_2026-10-29.md)準備配套應用與原生依賴，再登記素材及權利、建立專案、選材與預覽、渲染並匯出可編輯專案包。[選材規則與實際案例](docs/product/AD_CONTENT_UNIQUENESS.md)說明精確SHA256去重、預設繼承、重用及感知重複邊界。
+歷史CLI58流程要求版本為 `0.1.58`；依[安裝使用流程](docs/validation/CLI58独立安装交付_2026-10-29.md)準備配套應用與原生依賴，再登記素材及權利、建立專案、選材與預覽、渲染並匯出可編輯專案包。[選材規則與實際案例](docs/product/AD_CONTENT_UNIQUENESS.md)說明精確SHA256去重、預設繼承、重用及感知重複邊界。
 
 r56已在獨立中文／空格目錄解包、配置四個模型套件、獨立註冊並實際重渲染；完整589824位元組YUV、307200位元組PCM與參考及專案重播相同，PNG亦逐位元組相同。此工具包驗收未新增模型推理，不代替自然視聽品質或乾淨機器驗收。
 
@@ -130,18 +132,18 @@ C74精確內容去重已完成真實媒體閉環：兩個ID匯入同一藍圖，
 
 原始碼58實際DF3 CUDA複核已通過：4次神經前向，完整1124160位元組PCM工程重放一致；受控MSE改善12.25dB，無自然品質／人工聽審結論。 [CUDA evidence](docs/validation/CLI58真实CUDA复核_2026-10-29.md)
 
-目前開發原始碼為 **CLI0.1.58**：新增精確內容SHA256選材去重，修正Windows自有程序同步回收及補幀前處理逾時映射。57／19／31／104項原始碼分組與3項逾時專項分別通過；完整400項已通過。正式載入仍CLI56／local54／r55；57候選安裝398項出現1失敗／1錯誤，未提升版本，失敗紀錄保留。[58實作與核驗](docs/validation/CLI58开发核验_2026-10-29.md)。
+歷史開發原始碼為 **CLI0.1.58**：新增精確內容SHA256選材去重，修正Windows自有程序同步回收及補幀前處理逾時映射。57／19／31／104項原始碼分組與3項逾時專項分別通過；完整400項已通過。正式載入仍CLI56／local54／r55；57候選安裝398項出現1失敗／1錯誤，未提升版本，失敗紀錄保留。[58實作與核驗](docs/validation/CLI58开发核验_2026-10-29.md)。
 
 獨立安裝57第三類實際模型MuseTalk已通過CUDA及完整成片重放：67次UNet，原生133幀／25fps，成片160幀／30fps。自然口型品質及其餘12類實際模型仍另驗。[C73影片／來源／證據](docs/product/CASES.md#c73-installed57-musetalk)。
 
 
-目前本機CLI56／local54已安裝並註冊為唯一 `$agent-ffmpeg-local-editor`：1入口／17模組／93檔案。原始碼、獨立安裝與實際C盤入口的CUDA選材及兩畫幅完整音畫專案重播分別通過；四個原配音／翻譯套件已重新核驗。r55工具包獨立解壓／配置／註冊及完整ACES音畫重播已通過。
+歷史階段本機CLI56／local54已安裝並註冊為唯一 `$agent-ffmpeg-local-editor`：1入口／17模組／93檔案。原始碼、獨立安裝與實際C盤入口的CUDA選材及兩畫幅完整音畫專案重播分別通過；四個原配音／翻譯套件已重新核驗。r55工具包獨立解壓／配置／註冊及完整ACES音畫重播已通過。
 
 CLI57／local55獨立離線候選已安裝：1705載荷、281模組及8原生資源一致；原始碼398項、安裝31項回歸及安裝版實際CUDA降噪／完整PCM與原始碼、專案重播一致均已通過。安裝398項仍在執行，正式Skill維持CLI56／r55。 [CLI57 delivery / usage](docs/validation/CLI57独立安装交付_2026-10-29.md)
 
 CLI57原始碼及獨立安裝版實際CUDA降噪均已通過，受控噪聲MSE改善12.25dB；完整PCM逐字節一致。398項原始碼重跑已通過，首輪測試環境失敗紀錄保留。 [C71 actual audio / waveforms](docs/product/CASES.md#c71-source57-native-worker-gpu)
 
-## 目前使用流程與核驗
+## CLI56歷史使用流程與核驗
 
 以下命令使用本機已註冊安裝；新機器請先依交付紀錄準備相符應用套件與原生依賴。選材前登記素材／權利、模型、索引及裝置校準，dry-run後實際選材，再構建分鏡、逐變體預覽／渲染及專案重播。
 
@@ -163,7 +165,7 @@ CLI57安裝版第二類實際模型RIFE亦已通過：89次CUDA前向、96／36�
 ![Actual installed CLI57 RIFE slow motion](docs/assets/native-worker-rife57-20261029-r1/actual.gif)
 
 
-**目前本地 CLI56／local54 已安裝並註冊，唯一 `$agent-ffmpeg-local-editor` 維持1入口／17模組／93檔案。** 原始碼與獨立安裝版各1／15／45／104四組通過，兩者實際CUDA選材及兩畫幅完整RGB／非靜音PCM重播均通過；安裝版與原始碼輸出亦逐位元組一致。四個原有配音／翻譯模型套件已重新核驗。實際C盤入口的完整GPU案例仍在執行，新正式工具包另驗。[實際交付與使用流程](docs/validation/CLI56原生交付_2026-10-29.md)。以下較早版本段落保留為歷史紀錄，以頂部目前狀態為準。
+**歷史階段本地 CLI56／local54 已安裝並註冊，唯一 `$agent-ffmpeg-local-editor` 維持1入口／17模組／93檔案。** 原始碼與獨立安裝版各1／15／45／104四組通過，兩者實際CUDA選材及兩畫幅完整RGB／非靜音PCM重播均通過；安裝版與原始碼輸出亦逐位元組一致。四個原有配音／翻譯模型套件已重新核驗。實際C盤入口的完整GPU案例仍在執行，新正式工具包另驗。[實際交付與使用流程](docs/validation/CLI56原生交付_2026-10-29.md)。以下較早版本段落保留為歷史紀錄，以頂部目前狀態為準。
 
 **CLI56 原始碼實際CUDA選材與兩畫幅完整音畫重播已通過。** 重新建立11來源索引／校準，3條固定查詢與預期標籤一致；橫直版各90幀，匯出／匯入後完整RGB與非靜音PCM分別相同。[C69影片、GIF與截圖](docs/product/CASES.md#c69-source56-semantic-selection)。安裝版實際GPU任務正在執行，正式Skill仍53／r54。
 
@@ -181,7 +183,7 @@ CLI57安裝版第二類實際模型RIFE亦已通過：89次CUDA前向、96／36�
 
 ![Actual source CLI55 semantic selection](docs/assets/ad-selection-source55-20261029-r1/wide.gif)
 
-**目前 CLI55 完整候選已原生離線安裝，原始碼與安裝版各自通過15／45／104分組核驗。** 281模組／8原生資源一致；新統一Skill候選維持1入口／17模組／93檔案，實際PowerShell入口已核驗，但尚未啟用。完整11素材的GPU註冊／索引／校準、實際選材與音畫重放繼續獨立驗收。正式入口仍CLI53／r54。[候選包、摘要與實際使用入口](docs/validation/CLI55原生交付_2026-10-29.md)。
+**歷史階段 CLI55 完整候選已原生離線安裝，原始碼與安裝版各自通過15／45／104分組核驗。** 281模組／8原生資源一致；新統一Skill候選維持1入口／17模組／93檔案，實際PowerShell入口已核驗，但尚未啟用。完整11素材的GPU註冊／索引／校準、實際選材與音畫重放繼續獨立驗收。正式入口仍CLI53／r54。[候選包、摘要與實際使用入口](docs/validation/CLI55原生交付_2026-10-29.md)。
 
 **原始碼 CLI55：修復原生子程序繼承命令預算。** 等待期間檢查外層期限與取消檔案，關閉自有程序作業並回收讀取執行緒；15項控制、45項選材／分鏡、104項語義相容分組分別通過。CLI54實際選材逾時且未產生成片，失敗保留；CLI55新包與完整GPU流程另驗。正式Skill仍CLI53／r54。[行為、原生前後對照與邊界](docs/product/PROCESS_OPERATION_BUDGET.md)。
 
@@ -189,7 +191,7 @@ CLI57安裝版第二類實際模型RIFE亦已通過：89次CUDA前向、96／36�
 
 **原始碼 CLI0.1.54：校準語義選材已接入廣告分鏡。** 新增 `ad select`，依所有變體的來源長度、明確原音及已核驗權利過濾候選，再聯合分配素材，產生可編輯計畫及逐鏡頭依據；45項原始碼測試通過，實際CUDA整條流程另驗。目前安裝與唯一Skill仍CLI53／r54。[方案與使用](docs/product/AD_SEMANTIC_SELECTION.md)。
 
-**目前本機 CLI0.1.53 / local.51 已安裝並註冊。** 原始碼與安裝版各自通過 18 項 ACES、46 項測量／Schema、373 項相容性回歸。唯一 `$agent-ffmpeg-local-editor` 維持 1 個入口／17 個模組／92 個檔案；[C67 實際註冊入口案例](docs/product/CASES.md#c67-registered-aces-timeline)已核驗完整視訊、音訊、預覽與專案包往返。[正式 r54 包](docs/skills/agent-editor-kit-community-unified-skill-r54.zip)已通過獨立解包、設定、註冊及完整音畫重放驗收。[使用與安裝流程](docs/releases/CLI_0.1.53_LOCAL.md)。
+**歷史階段本機 CLI0.1.53 / local.51 已安裝並註冊。** 原始碼與安裝版各自通過 18 項 ACES、46 項測量／Schema、373 項相容性回歸。唯一 `$agent-ffmpeg-local-editor` 維持 1 個入口／17 個模組／92 個檔案；[C67 實際註冊入口案例](docs/product/CASES.md#c67-registered-aces-timeline)已核驗完整視訊、音訊、預覽與專案包往返。[正式 r54 包](docs/skills/agent-editor-kit-community-unified-skill-r54.zip)已通過獨立解包、設定、註冊及完整音畫重放驗收。[使用與安裝流程](docs/releases/CLI_0.1.53_LOCAL.md)。
 
 候選階段歷史核驗：新版統一 Skill 候選入口已實際通過 7 次 CLI53 呼叫（含原生設定、PNG16 預覽和逐幀測量），維持 1 個入口／17 個模組／92 個檔案；原註冊入口與設定未改變。兩組相容性現已通過，正式入口已升級。
 
@@ -199,7 +201,7 @@ CLI57安裝版第二類實際模型RIFE亦已通過：89次CUDA前向、96／36�
 
 ![Actual registered CLI53 ACES technical viewing copy](docs/assets/aces-registered-20261029-r1/preview.gif)
 
-CLI53 目前入口快速核實（使用 ACES 前先列舉實際設定／顯示／視圖；完整專案流程見上方使用文件）：
+CLI53 歷史入口快速核實（使用 ACES 前先列舉實際設定／顯示／視圖；完整專案流程見上方使用文件）：
 
 ```powershell
 $aekSkill = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1'
@@ -221,7 +223,7 @@ $aekSkill = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.
 
 開發輪次彙報：每輪結束均提供編號完成項與待辦表，列明驗證依據及未完成邊界，見[彙報規範](docs/DEVELOPMENT_REPORTING.md)。
 
-**公開發行版本：v0.1.0-alpha.3 預發布版 · CLI 0.1.2 · 500 套風格 · 17 個歷史拆分 Skill。** 提供完整運行 ZIP、Agent kit、可選圖冊及校驗摘要。運行內核保持原已驗包位元組；新增可移植安裝和可執行示例。完整剪映等價仍是開發目標，尚未驗收。
+**已留存的公開發行紀錄：v0.1.0-alpha.3 預發布版 · CLI 0.1.2 · 500 套風格 · 17 個歷史拆分 Skill。** 提供完整運行 ZIP、Agent kit、可選圖冊及校驗摘要。運行內核保持原已驗包位元組；新增可移植安裝和可執行示例。完整剪映等價仍是開發目標，尚未驗收。
 
 本頁包含完整功能模塊、服務與依賴、安裝與使用邏輯、Skill 輸入輸出、真實案例和核驗表。長篇原始驗收日志繼續留檔，功能說明與案例入口恢復到首頁。
 
@@ -290,7 +292,7 @@ Historical source/candidate stage; superseded by the installed workflow above.
 
 <!-- native-hdr-media-history -->
 
-Historical CLI50 delivery; current CLI51 is described above.
+歷史CLI50交付與CLI51後續快照；目前正式版本以頁首為準。
 
 **CLI0.1.50 / alpha.4-local.48 / r51 kit · 1 Skill / 17 modules / 89 files.**
 
@@ -892,7 +894,7 @@ CPU/CUDA: 80 decisions each preserved before/after; three known errors retained.
 | 擴充套件編號 | 已實現 | 邊界 |
 |---|---|---|
 | M01 / F44 | 44 首 BGM、85 個短樂、228 個獨立音效、2 個 OFL Noto 字型 | 分別保留來源/許可，不是商業素材訂閱庫 |
-| M02 / F45 | 中英配音、103 具名音色、文字檔案/語速/WAV | 至少 7 個音色有真實生成，未完成人類聽審，不克隆、不宣稱全音色聽審 |
+| M02 / F45 | 中英配音、103 具名音色、文字檔案/語速/WAV | 全部103音色已有實際WAV：中文100／英文3，詳見[試聽流程](docs/validation/CLI61全音色试听_2026-10-29.md)；人類聽審、自然度與輸出權利仍未驗收 |
 | M03 / F46 | 本地雙向翻譯、雙語 SRT、顯式術語表 | cue 順序/毫秒保留，語義/發音仍需校對 |
 | G01 / F47 | CUDA 配音/翻譯、auto/cpu/cuda、視訊記憶體預檢 | RTX 3060 實測，嚴格 CUDA/CPU 回退分明，NVIDIA 依賴許可另列 |
 | M04–M05 / F48 | 真實 BGM 擷取/迴圈/淡入淡出、配音混合和閃避 | 保留原分軌，不代表作曲或自動接縫修復 |
@@ -1113,7 +1115,7 @@ C19 六張卡片各 2 秒，實際 12 秒/360 影格 MP4 和 60 影格 GIF，保
 
 ```powershell
 $avkPython = 'C:/Python313/python.exe'
-$avkHome = 'E:/tools/agent-editor-kit-unified'
+$avkHome = 'E:/video-tools/skill-kit-r58'
 $avkArchive = 'E:/Downloads/agent-editor-kit-v0.1.0-alpha.3-cp313-win_amd64.zip'
 Expand-Archive -LiteralPath 'E:/Downloads/agent-editor-kit-unified-skill-r1.zip' -DestinationPath $avkHome
 Set-Location $avkHome
@@ -1193,6 +1195,8 @@ flowchart LR
 ## 功能模組與實際支援邊界
 
 編號用於定位文件；各模塊有依賴與交叉，不是“43 個獨立內核”或完成率。下表直接寫明行為、入口與限制；[完整機器能力清單及每項契約](docs/product/CAPABILITIES.zh-TW.md)保留全部字段。
+
+**F45音色狀態補充（2026-11-06）：** 已有CLI61獨立安裝版實際產生的全部103音色WAV及完整PCM專案重播，中文100／英文3。下表F45保留早期「至少7個」證據下限；完整樣音可依[本機試聽流程](docs/validation/CLI61全音色试听_2026-10-29.md)選型。人類完整聽審、自然度、情緒／方言及輸出權利仍未驗收，本次未重新產生聲音。
 
 | 編號 | 功能模塊 | 具體行為與輸入 → 輸出 | 入口 | 依賴/邊界 |
 |---|---|---|---|---|
@@ -1305,7 +1309,7 @@ flowchart LR
 | S11 | 權利與交換服務 | 本地證據與文件交換 | 臺賬/策略/包雜湊/損失報告，不調用專有編輯器。 | `rights / policy / convert` | 不自動授予第三方素材/模型商業權利。 |
 | S12 | 創意與運營支持 | Agent 任務指導 | 依賴調用方提供業務資訊與資料，產出腳本/建議/分析。 | `$agent-ffmpeg-local-editor` / K01–K17 | 不包含廣告平臺賬號接入、投放或自動采集資料。 |
 | S13 | 內建社群素材服務 | 離線目錄 | 359 項有來源/許可的 BGM、短樂、音效、字型 | `materials list/inspect/verify/ingest` | 逐項權利，不是商業素材訂閱庫 |
-| S14 | 本地配音/翻譯 | 原生模型 worker | 4 個可選 CPU/CUDA 包，103 音色對映和 OPUS 文字/字幕 | `voice / translate / model-pack` | 累計至少 7 個不同音色有真實輸出；103 音色完整試聽及人工驗收未完成 |
+| S14 | 本地配音/翻譯 | 原生模型 worker | 4 個可選 CPU/CUDA 包，103 音色對映和 OPUS 文字/字幕 | `voice / translate / model-pack` | 全部103音色已有實際WAV：中文100／英文3，詳見[試聽流程](docs/validation/CLI61全音色试听_2026-10-29.md)；人類聽審、自然度與輸出權利仍未驗收 |
 | S15 | 配樂準備、譜面與循環修復 | 原生FFmpeg + CPU DSP | 明確截取/循環/淡變、獨立分軌、閃避；可編輯譜面合成與樣本交疊修復。 | `music prepare/mix/compose/repair-loop` | 譜面與交疊為CPU DSP；不是神經音樂生成，週期縮短與試聽/權利須核對。 |
 | S16 | GPU相容服務 | 既有原生OpenCL ICD / NVIDIA模型庫 | 圖投影及獨立Float32仿射/一般疊加/字色/逐詞/粒子/光學/高光擴散；off/prefer/require，模型auto/cpu/cuda；實際探測/預算/清理 | `render --projection-acceleration; gpu inspect; --device` | RTX3060實測；字形/其他效果/轉場等CPU，系統庫授權另列。 |
 | S17 | 原生 Windows 擷取 | FFmpeg gdigrab / DirectShow | 明確來源、裝置 ID、有限時長、完整解碼與素材登記 | `capture devices/record` | 真實視窗 CPU/GPU 已驗；攝影機/麥克風/同步未驗 |
@@ -1392,7 +1396,7 @@ flowchart LR
 **面向客戶的流程：** Agent 先展示原圖 + 3–6 套符合需求的實際樣例，並寫清編號、名稱、穩定 ID、強度、色彩變化與許可；客戶可在選型頁篩選並導出候選，或直接報編號。Agent 再對真實目標素材生成選定強度預覽，記錄最終 ID、強度與片段/全局作用域，再 dry-run/apply。對照滑桿只改變原圖顯示區域，不模擬濾鏡強度。
 
 ```powershell
-$avkHome = 'E:/tools/agent-editor-kit-unified'
+$avkHome = 'E:/video-tools/skill-kit-r58'
 $avk = Join-Path $avkHome 'skills/agent-ffmpeg-local-editor/scripts/run.ps1'
 $aekGallery = Join-Path $avkHome 'skills/agent-ffmpeg-local-editor/scripts/look_gallery.py'
 & 'C:/Python313/python.exe' -I -S -B -X utf8 $aekGallery --query '黑白' --limit 6
@@ -1422,7 +1426,7 @@ $avkManifest = (Get-Content ./version.json -Raw | ConvertFrom-Json).manifest_sha
 & $avkPython -I -S -B -X utf8 E:/tools/aek-alpha3-installed/run.py doctor
 ```
 
-本機目前安裝到 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.47/final-r1/installed/`，CLI 0.1.49；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
+本機正式安裝位於 `E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/v0.1.0-alpha.4-local.61/final-r1/installed/`，CLI 0.1.63；上方的公開 alpha.3 下載包保留 CLI 0.1.2 及對應舊手冊。唯一入口正文/腳本及 17 項模組位於 `skills/agent-ffmpeg-local-editor/`，Codex 僅註冊該目錄的聯接。移動倉庫後重新登記；註冊腳本保護同名無關目錄。
 
 ```powershell
 Set-Location 'E:/dev/sandbox/AI广告剪辑'
@@ -1440,7 +1444,7 @@ Skill 啟動器驗證本地安裝回執與 launcher 雜湊，再以 `-I -S` 調�
 ## 從零到交付的命令與工程結構
 
 ```powershell
-$avkHome = 'E:/tools/agent-editor-kit-unified'
+$avkHome = 'E:/video-tools/skill-kit-r58'
 $avk = Join-Path $avkHome 'skills/agent-ffmpeg-local-editor/scripts/run.ps1'
 $aekProject = 'E:/video-work/first-ad'
 & $avk project init $aekProject --name 'First ad'
@@ -2193,6 +2197,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R578 | 完整回歸設定修正與首輪中斷保留 | 原4,101項保留8處跳過及中斷終態；明確核驗Rubber Band／Node／HTML依賴，15個測試檔案綁定實際所選套件。新4,110項完整回歸已啟動，原斷言與20秒門檻保留；未計通過數。 [Record](docs/product/DELIVERY66_CORRECTION.md) |
 | R579 | 交付後半程整批程式碼與第二輪中斷記錄 | r2主程序／工作階段確認缺失且無完整總結，日誌與凍結保留；補齊原生背景監督、配樂結構化檔案錯誤、單Skill獨立安裝／重播、三類實際故障工具、升級／回滾和新發行附件。程式碼完成，集中核驗待執行，未新增推理或正式升級。 [Record](docs/product/DELIVERY66_HANDOFF.md) |
 | R580 | 完整剩餘範圍與交付工具核驗（2026-11-06） | 凍結546個產品／用例／依賴檔案、6工具及95正式檔案一致；18項工具契約通過、0失敗／錯誤／略過。原生原始碼全套發現4,114項並執行中，無終態；正式63與原G01—G38關閉條件保持。未新增正式啟用或模型品質驗收。 [Review](docs/validation/evidence/status-review-20261106-r1/review-r2/verification.json) · [18 contracts](docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r2/verification.json) |
+| R581 | README stage alignment / 2026-11-06 | 三語版本階段與音色狀態對齊；歷史快照明確標示，M02／S14更新為103項實際WAV，F45補充現況；原F01—F89及R01—R580逐行保留。僅文件／唯讀檢查，無新增模型、媒體驗收或正式升級。 [Record](docs/validation/evidence/delivery66-handoff-20261106-r1/documentation-r1/verification.json) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 
@@ -2206,7 +2211,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 
 當前可交付的是有明確契約、離線可運行、可編輯、可復查的 Agent CLI 閉環。完整開源素材/模板生態、約定的 AI 特效/美顏/排版、完整色彩管線、指定草稿版本的真實轉換品質、廣泛自然視聽和長片資源性能仍需開發與驗收。消費級 GUI、賬號、云協作及任意私有版本無損轉換不屬於當前內核收口門檻。
 
-[目前完整目標差距表](docs/product/GOAL_GAPS_20261025.md)按 CLI 0.1.23 更新全部 G01–G38。單一 Skill、500 風格/預覽、359 資源、GPU 配音/翻譯、字幕配音聯合流程、四軌/恢復及受控詞活動邊界已交付；自然視聽、複雜組合、進階 AI、內容範本、Agent 自主任務、長片可靠性和新版公開包仍開放。R67–R72 分別記錄真實執行及限制，不給出總體完成率。[2026-10-24 評估](docs/product/GOAL_GAPS_20261024.md)是歷史快照。
+[目前未完成內容](docs/product/UNFINISHED_20261106.md)記錄CLI66開發與正式63狀態；[原目標關閉條件](docs/product/GOAL_GAPS_20261025.md)保留全部G01–G38。單一 Skill、500 風格/預覽、359 資源、GPU 配音/翻譯、字幕配音聯合流程、四軌/恢復及受控詞活動邊界已交付；自然視聽、複雜組合、進階 AI、內容範本、Agent 自主任務、長片可靠性和新版公開包仍開放。R67–R72 分別記錄真實執行及限制，不給出總體完成率。[2026-10-24 評估](docs/product/GOAL_GAPS_20261024.md)是歷史快照。
 
 
 

@@ -1,7 +1,7 @@
 # agent editor kit
 
 <!-- aek-cli65-current -->
-**2026-11-06状态核对：源码CLI0.1.65／验证候选local63；正式入口仍CLI0.1.63／local61／r58。** 候选Skill调用安装65的真实10秒CUDA音乐已成功，完整PCM／入轨／退出通过；65工程包重放、完整443、听审和正式切换未验收。恢复修复15项仅隔离候选，原会话12项仍有1失败。 [未完成内容详解](docs/product/UNFINISHED_20261106.md)
+**开发状态2026-11-06：源码CLI0.1.66已完成整批代码冻结，完整4,101项回归进行中，尚无终态。** 正式入口仍CLI0.1.63／local61／r58。恢复预检已合入源码；交付控制器、并行耐久备份与配乐读取改动尚未完成整轮验收。此前CLI65真实10秒CUDA配乐成功属于历史版本证据。[本轮实现与验证顺序](docs/product/DELIVERY66_IMPLEMENTATION.md) · [完整38组差距](docs/product/UNFINISHED_20261106.md)
 <!-- /aek-cli65-current -->
 
 **r58统一Skill工具包已独立验收。** 161条目／160清单文件／93 Skill文件；中文和空格目录解包、四包配置、独立注册、实际谱面与循环修复、完整ACES YUV／PCM／PNG及工程包重放通过。未新增模型推理，不等于干净主机或自然质量验收。
@@ -2186,6 +2186,8 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R572 | CLI65运行中控制进程的只读采样 | 创建时间／可执行文件前后相同，采样位于音乐工作进程等待循环；无局部变量。首次中文路径编码检查拒绝记录保留；显式UTF8后原归属检查通过。不证明GPU生成或全部耗时原因。 [Proof](docs/validation/evidence/music-loading-20261030-r1/native-stack-controller2/verification.json) |
 | R573 | CLI65历史配乐终态补录（2026-10-30执行，11-06核查） | 候选Skill实际调用安装65的10秒CUDA音乐已成功；四组件pread、完整PCM、入轨和退出通过。核对原WAV／288源码摘要；本次未新生成或试听，65包重放／正式注册未完成。 [Record](docs/validation/evidence/music-loading-20261030-r1/actual-stage1/verification.json) |
 | R574 | 完整未完成范围静态复核（2026-11-06） | 对照G01—G38、当前源码／安装清单和历史收据展开剩余实现、质量及交付条件；恢复15项仅隔离候选，原12组1失败保留。本项不是新功能测试，也未启动自动开发。 [Record](docs/product/UNFINISHED_20261106.md) |
+| R575 | CLI66整批实现并冻结 | 恢复完整预检合入产品；有界并行耐久备份；配乐进度有限读取；通用交付切换／恢复／回滚及整轮工具。T01—T06全部写完后冻结，尚未通过功能验收。 [Record](docs/product/DELIVERY66_IMPLEMENTATION.md) |
+| R576 | 完整4101项回归已启动，尚无终态 | 保持原用例、断言与时间门槛，执行完整源码测试集；本记录仅为启动检查点，不计通过数。已展开38组差距及新版6项交付缺口；正式Skill仍CLI63。 [Record](docs/product/DELIVERY66_IMPLEMENTATION.md) |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

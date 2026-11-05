@@ -136,7 +136,7 @@ def execute(root, job, adapter, generation, *, storage_budget_bytes, timeout, ca
                     if workspace_bytes(work) > storage_budget_bytes:
                         raise error('STORAGE', '神经音乐工作目录超过实际存储预算')
                     with contextlib.suppress(OSError, ValueError, KeyError, TypeError):
-                        info = json.loads((work / 'progress.json').read_bytes())
+                        info = diagnostic.read_progress()
                         value = (info['phase'], info['done'], info['total'])
                         if value != last and value[0] in PHASES and type(value[1]) is int and type(value[2]) is int and 0 <= value[1] <= value[2] and value[2] > 0:
                             progress(*value)

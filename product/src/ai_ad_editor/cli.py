@@ -1322,6 +1322,8 @@ def build_parser() -> argparse.ArgumentParser:
     add_semantic_parser(subs, _leaf_common)
     from .dubbing_cli import add_parser as add_dubbing_parser
     add_dubbing_parser(subs, _leaf_common)
+    from .delivery import add_parser as add_delivery_parser
+    add_delivery_parser(subs, _leaf_common)
     return parser
 
 
@@ -7419,6 +7421,8 @@ from .motion_pack_cli import command as motion_pack_command
 COMMANDS[('motion', 'pack')] = lambda args: motion_pack_command(args, _envelope, _operation)
 from .procedural_cli import command as command_vfx
 COMMANDS.update({('vfx',action):command_vfx for action in ('list','inspect','apply','update','show','animate','animation-properties')})
+from .delivery import command as delivery_command
+COMMANDS.update({('delivery', action): delivery_command for action in ('inspect', 'activate', 'recover', 'rollback')})
 
 
 def main(argv: list[str] | None = None) -> int:

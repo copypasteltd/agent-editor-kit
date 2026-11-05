@@ -1,7 +1,7 @@
 # agent editor kit
 
 <!-- aek-cli65-current -->
-**Status reviewed 2026-11-06: source CLI0.1.65 / validation candidate local63; registered CLI0.1.63/local61/r58.** Actual 10s CUDA music through the staged Skill and installed65 passed complete PCM, placement and cleanup. CLI65 package replay, full443, listening and formal activation remain open. The 15-check recovery repair is unintegrated; the original 12-check session group retains one failure. [Remaining scope](docs/product/UNFINISHED_20261106.md)
+**Development status 2026-11-06: source CLI0.1.66 implementation batch is frozen; the complete 4,101-test suite is running without a terminal result.** Registered entry remains CLI0.1.63/local61/r58. Recovery preflight is integrated in source; delivery control, concurrent durable backups and music progress changes await whole-round acceptance. Actual CLI65 CUDA music is historical evidence for that version. [Batch and validation order](docs/product/DELIVERY66_IMPLEMENTATION.md) · [Original remaining scope](docs/product/UNFINISHED_20261106.md)
 <!-- /aek-cli65-current -->
 
 **The r58 unified Skill kit passed independent acceptance.** 161 entries/160 inventory files/93 Skill files; Chinese/space extraction, four-pack setup, isolated registration, actual score and loop generation, full ACES YUV/PCM/PNG and project replay passed. No new neural inference; clean-host and natural-quality acceptance remain open.
@@ -2188,6 +2188,8 @@ R31 records the public GitHub prerelease and actual download/hash verification o
 | R572 | CLI65 read-only controller stack sample | Creation-time/executable identity matched before/after; sample captured the music-worker wait loop, without locals. Initial Unicode command-path guard refusal retained; explicit UTF8 passed the original ownership check. No GPU-generation or complete-duration acceptance. [Proof](docs/validation/evidence/music-loading-20261030-r1/native-stack-controller2/verification.json) |
 | R573 | CLI65 historical music completion (run 2026-10-30; reviewed 11-06) | Installed65, invoked through its staged Skill, completed 10s CUDA music: four pread components, complete PCM, track placement and cleanup passed. Existing WAV/288 source hashes checked; no new generation/listening. CLI65 package replay and formal registration remain open. [Record](docs/validation/evidence/music-loading-20261030-r1/actual-stage1/verification.json) |
 | R574 | Static review of the remaining scope (2026-11-06) | Reconciles G01–G38 with current source/install records and historical receipts, separating implementation, quality and delivery gaps. The 15-check repair is unintegrated; the original session-group failure remains. No new functional testing or automatic development. [Record](docs/product/UNFINISHED_20261106.md) |
+| R575 | CLI66 complete implementation batch frozen | Integrates recovery preflight, bounded concurrent durable backups, bounded music progress, generic activation/recovery/rollback and whole-round tooling. T01–T06 completed before freeze; functional acceptance is pending. [Record](docs/product/DELIVERY66_IMPLEMENTATION.md) |
+| R576 | Whole 4101-test suite started; no terminal result | Runs the whole source suite with original assertions and deadlines. This is a start checkpoint, not a passing result. Documents all38 scope gaps and six delivery gaps; registered Skill stays CLI63. [Record](docs/product/DELIVERY66_IMPLEMENTATION.md) |
 
 ### Development preview: C76 loop overlap repair(source CLI60)
 

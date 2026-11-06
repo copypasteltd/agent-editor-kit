@@ -1,0 +1,62 @@
+{
+  "status": "static-and-documentation-review-passed",
+  "observed_at_utc": "2026-11-06T04:05:59.625513+00:00",
+  "parent": "63d865a8988209bab050aac95f8f2aa925be909f",
+  "candidate_files": 6,
+  "candidate_applied": false,
+  "candidate_functions_executed": false,
+  "functional_tests_started": false,
+  "new_tool_tests_written": 6,
+  "new_tool_suite_planned": 37,
+  "readmes": [
+    {
+      "path": "README.md",
+      "old_F": 90,
+      "old_R": 592,
+      "new_F": 90,
+      "new_R": 593,
+      "all_old_rows_equal": true
+    },
+    {
+      "path": "README.zh-TW.md",
+      "old_F": 90,
+      "old_R": 592,
+      "new_F": 90,
+      "new_R": 593,
+      "all_old_rows_equal": true
+    },
+    {
+      "path": "README.en.md",
+      "old_F": 90,
+      "old_R": 592,
+      "new_F": 90,
+      "new_R": 593,
+      "all_old_rows_equal": true
+    }
+  ],
+  "local_links_checked": 62,
+  "broken_local_links": [],
+  "frozen_equal": {
+    "file_hashes": true,
+    "delivery_tool_files": true,
+    "formal_guard": true
+  },
+  "frozen_counts": {
+    "file_hashes": 546,
+    "delivery_tool_files": 7,
+    "formal_guard": 95
+  },
+  "original_G01_G38_preserved": true,
+  "original_post_commit_hook_preserved": true,
+  "supervisor_live": true,
+  "child_live": true,
+  "product_suite_terminal": false,
+  "live_issue_events": {
+    "failure": 3,
+    "error": 1
+  },
+  "source_cli": "0.1.66",
+  "formal_cli": "0.1.63",
+  "formal_activation": false,
+  "release_created": false
+}

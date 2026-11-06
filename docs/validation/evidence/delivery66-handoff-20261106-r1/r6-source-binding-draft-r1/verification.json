@@ -1,0 +1,45 @@
+{
+  "status": "static-review-passed-not-functionally-tested",
+  "observed_at_utc": "2026-11-06T04:00:39.858717+00:00",
+  "candidate_code_files": 6,
+  "code_syntax_valid": true,
+  "application_modules_reviewed": 289,
+  "current_unresolved_global_names": [
+    {
+      "file": "product\\src\\ai_ad_editor\\enhancement_pipeline.py",
+      "scope": "module.AudioDiagnosticSession.read_progress",
+      "name": "AppError"
+    }
+  ],
+  "candidate_overlay_unresolved_global_names": [],
+  "existing_handoff_test_methods": 31,
+  "existing_handoff_assertions_preserved": true,
+  "existing_method_fixture_changes": [
+    "test_publishing_rejects_an_unreviewed_extra_attachment"
+  ],
+  "new_handoff_test_methods": [
+    "test_release_source_binding_covers_public_roles_and_rejects_missing_or_private_rows",
+    "test_release_source_capture_and_frozen_tools_reject_byte_drift",
+    "test_reviewed_source_commit_accepts_actual_git_line_normalization",
+    "test_reviewed_source_commit_rejects_an_omitted_bound_file",
+    "test_reviewed_source_commit_rejects_each_uncommitted_public_surface",
+    "test_reviewed_source_rejects_raw_drift_when_git_clean_object_is_equal"
+  ],
+  "planned_handoff_test_methods": 37,
+  "product_test_methods_added": 0,
+  "all_original_r6_candidate_hashes_unchanged": true,
+  "frozen_equal": {
+    "file_hashes": true,
+    "delivery_tool_files": true,
+    "formal_guard": true
+  },
+  "frozen_counts": {
+    "file_hashes": 546,
+    "delivery_tool_files": 7,
+    "formal_guard": 95
+  },
+  "candidate_applied": false,
+  "candidate_functions_executed": false,
+  "functional_tests_started": false,
+  "formal_activation": false
+}

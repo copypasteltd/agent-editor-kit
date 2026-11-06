@@ -1,0 +1,42 @@
+{
+  "status": "documentation-synchronized",
+  "observed_at_utc": "2026-11-06T04:03:42.026229+00:00",
+  "readmes": [
+    {
+      "path": "README.md",
+      "before_sha256": "1f725be99d9e241cac693792d411673d5ffaff574ad0757a42b5fb3cf3320e3b",
+      "after_sha256": "b11d5a71d56b32223a1b3e3f70ddd35ab9ea12d5e5ab76f4401ae17148fff5cb",
+      "prior_F_rows": 90,
+      "prior_R_rows": 592,
+      "current_F_rows": 90,
+      "current_R_rows": 593,
+      "all_prior_numbered_rows_preserved": true,
+      "new_status_and_R593_only": true
+    },
+    {
+      "path": "README.zh-TW.md",
+      "before_sha256": "52d29b659463661b60b19943a2e928db5580f36cddd5f43c770fa967bc0d080f",
+      "after_sha256": "90a57ae5ce17836d3a3fc3917ba63fb511da0f13bea973a60f1b9efddbc7c879",
+      "prior_F_rows": 90,
+      "prior_R_rows": 592,
+      "current_F_rows": 90,
+      "current_R_rows": 593,
+      "all_prior_numbered_rows_preserved": true,
+      "new_status_and_R593_only": true
+    },
+    {
+      "path": "README.en.md",
+      "before_sha256": "7929166149e954c9772455b2bf2d437e08b60cac10e0e2fef40e13666186d7f7",
+      "after_sha256": "0b050c5afb1171ba4968f24c2ab5cedb6c67230575b12512431b6af867a32711",
+      "prior_F_rows": 90,
+      "prior_R_rows": 592,
+      "current_F_rows": 90,
+      "current_R_rows": 593,
+      "all_prior_numbered_rows_preserved": true,
+      "new_status_and_R593_only": true
+    }
+  ],
+  "candidate_applied": false,
+  "functional_tests_started": false,
+  "formal_activation": false
+}

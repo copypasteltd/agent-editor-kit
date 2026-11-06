@@ -1,7 +1,7 @@
 # agent editor kit
 
 <!-- aek-cli65-current -->
-**r5執行中新異常檢查點：** 即時日誌記錄Unicode啟動、兩個專案鎖子程序及音訊診斷分支共4個問題事件，尚無整輪終態。下一批3檔案候選已寫齊：明確綁定受測應用、保留實際ASCII管道與原鎖門檻、補AppError匯入；124個原測試方法與1,371處斷言條件不變。候選未套用／執行，原凍結整套繼續。[原因、程式與證據](docs/product/DELIVERY66_R6_CANDIDATE.md)
+**下一批r6候選已補齊6個程式檔案：** 保留Unicode／專案鎖／音訊異常修正，新增產品凍結、7交付工具、正式Skill／註冊清單與三語README的發佈提交綁定。全部289應用模組的候選靜態名稱檢查無未綁定項；新增6項工具契約，下一輪計畫37項，尚未執行。目前r5完整回歸繼續，4個問題事件並非最終統計；原124用例／1,371斷言與鎖門檻保留，候選未套用／執行。[原因與候選](docs/product/DELIVERY66_R6_CANDIDATE.md) · [發佈綁定範圍](docs/product/DELIVERY66_RELEASE_BINDING.md)
 
 **開發狀態2026-11-06：CLI0.1.66已一次完成並套用20檔案修正，凍結r5；31項完整交付工具契約通過，零失敗／錯誤／跳過。** 應用與bare-worker兩組實際隔離依賴預檢通過；未篩選產品全套實際發現4,124項，仍執行中、無終態，發現數不可當作通過數。原r4完整4,114項為10失敗／15錯誤／0跳過，25條完整堆疊與r2中斷均保留。[完整未完成內容](docs/product/UNFINISHED_20261106.md) · [原r4結果](docs/product/DELIVERY66_R4_RESULTS.md)
 
@@ -2219,6 +2219,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R590 | 完整修正與集中交付核驗 / 2026-11-06 | 20程式檔案一次寫齊、備份、套用並凍結r5，546產品／用例／依賴、7工具、95正式檔案一致；完整31工具契約全通過，零失敗／錯誤／跳過。兩組實際隔離依賴通過，產品全套實際發現4,124項仍執行中、無終態；未建置66包或正式升級。 [31項結果](docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r4/verification.json) · [實際觀察](docs/validation/evidence/delivery66-handoff-20261106-r1/correction-batch-review-r1/verification.json) |
 | R591 | 基礎設定與三語流程 / 2026-11-06 | --base-only毋須模型包並保留舊設定備份；拒絕矛盾參數／錯誤安裝摘要，原--packs驗包維持。4項實際檔案／CLI契約已包含在31項中，不重複加計。三語30段PowerShell原生解析0錯誤；摘要佔位，獨立新包註冊／媒體重播尚待執行。 [範圍](docs/product/DELIVERY66_R5_CANDIDATE.md) · [語法結果](docs/validation/evidence/delivery66-handoff-20261106-r1/quickstart-syntax-r2/verification.json) |
 | R592 | 原生子程序與音訊異常草稿 / 2026-11-06 | r5執行中4事件快照：Unicode模組找不到應用、兩個鎖子程序未就緒與音訊except漏AppError匯入。3檔案候選綁定實際source／installed根、執行真正__main__、明確ASCII／strict前提、保留3秒鎖等待／5秒清理並記錄有界stderr；124用例方法／1,371斷言條件不變。10應用模組靜態名稱檢查無漏項；未執行候選，原546／7／95凍結不變。 [說明](docs/product/DELIVERY66_R6_CANDIDATE.md) · [實際觀察與靜態收據](docs/validation/evidence/delivery66-handoff-20261106-r1/r5-live-correction-draft-r1/verification.json) |
+| R593 | 發佈提交涵蓋與全模組靜態檢查 / 2026-11-06 | 原提交門禁僅涵蓋546產品／測試／依賴，未含7工具、正式Skill／註冊與三語README。6檔案下一批候選補v2鎖、五類完整角色、原始位元組與Git clean雙重核對、機器設定排除及基礎安裝先行說明；新增6契約，原31方法／斷言保留，計畫37項未執行。全部289應用模組候選靜態無未綁定名稱，546／7／95凍結一致。 [範圍](docs/product/DELIVERY66_RELEASE_BINDING.md) · [靜態收據](docs/validation/evidence/delivery66-handoff-20261106-r1/r6-source-binding-draft-r1/verification.json) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

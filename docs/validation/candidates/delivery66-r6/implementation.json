@@ -22,6 +22,24 @@
       "base_sha256": "b71202fa7620ef849204e80a59304a8c575384a8d4961c1dae097b0abd701737",
       "candidate_sha256": "ffa863c237937a2d8c1de5a52f58ff69077360474f7046dd09badb527084d972",
       "bytes": 10755
+    },
+    {
+      "path": "docs/validation/delivery66_handoff.py",
+      "base_sha256": "745c7f2ed0e9b0ad05deadbceaf94e649bcce9317c1f9fa82f240c0356014de2",
+      "candidate_sha256": "a8b78354887174b2d12480c5fcce08bb305164eafb1a1f7702f8f74c773e3415",
+      "bytes": 54149
+    },
+    {
+      "path": "docs/validation/publish_delivery66.py",
+      "base_sha256": "44ae4313db07280e3d42f9d5d717c3ae8e3be6b1efaa983cdcda665230575fef",
+      "candidate_sha256": "f8c02d5e296e38cd749b7ffbe661b64d422d0181122f00a79bef0c05f3d55ca9",
+      "bytes": 17019
+    },
+    {
+      "path": "docs/validation/test_delivery66_handoff.py",
+      "base_sha256": "d75d33d2df2e01bbf86dcd66da17de737fc7d6d73e8673af5943d9398207ffb7",
+      "candidate_sha256": "a7d97bead658e7f9b196bc541983031fda4b49e12f2fa426a39674505c8993b2",
+      "bytes": 33899
     }
   ],
   "candidate_applied": false,
@@ -42,12 +60,28 @@
     "Run the actual package __main__ through runpy with alter_sys=True and preserve Unicode request ID, real FFmpeg ingest, progress, file and lock assertions.",
     "Actually establish ASCII/strict stdout and stderr before invoking the real CLI so the adversarial UTF-8 contract remains effective when Python ignores encoding environment variables.",
     "Preserve three-second lock deadlines, five-second owned-child cleanup and the Unicode thirty-second timeout; retain bounded child stderr in lock failures.",
-    "Import the actual AppError caught by audio progress diagnostics; the r5 live traceback directly records the missing name in the nonordinary-file branch. Preserve original unavailable state and code assertions."
+    "Import the actual AppError caught by audio progress diagnostics; the r5 live traceback directly records the missing name in the nonordinary-file branch. Preserve original unavailable state and code assertions.",
+    "Bind accepted product/test/dependency files, all seven frozen delivery tools, accepted public Skill/registration files and all three README entries to exact current bytes and the reviewed Git commit.",
+    "Reject incomplete or overlapping source roles and machine-local runtime configuration in public source bindings. Preserve Git clean normalization and separately reject raw-byte drift.",
+    "Add six complete delivery contracts, including real native Git commits, normalized line endings, uncommitted tool/Skill/registration/documentation, missing committed files and frozen tool drift; no candidate tests have run.",
+    "Generate basic-first three-language release notes consistent with optional AI model installation."
   ],
   "next_step": "Keep collecting the complete r5 result; finish all new corrections before applying a complete next batch and running centralized contracts and unfiltered product regression.",
   "observed_r5_issues": {
     "unicode_module_import_failure": 1,
     "lock_children_not_ready_failures": 2,
     "audio_diagnostic_missing_AppError_error": 1
-  }
+  },
+  "updated_at_utc": "2026-11-06T04:00:39.858717+00:00",
+  "new_handoff_test_methods": 6,
+  "planned_handoff_test_methods": 37,
+  "release_lock_format": "agent-editor-reviewed-release-v2",
+  "release_source_roles": [
+    "product",
+    "delivery_tools",
+    "skill",
+    "registration",
+    "documentation"
+  ],
+  "machine_local_runtime_config_in_source": false
 }

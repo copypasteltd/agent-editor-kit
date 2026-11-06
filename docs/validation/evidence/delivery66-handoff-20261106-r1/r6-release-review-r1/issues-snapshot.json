@@ -1,0 +1,29 @@
+[
+  {
+    "event": "result-created"
+  },
+  {
+    "event": "failure",
+    "test_id": "test_cli.P0CliTests.test_cli_unicode_paths_and_progress_use_utf8_pipes",
+    "tests_started": 351,
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_cli.py\", line 1803, in test_cli_unicode_paths_and_progress_use_utf8_pipes\n    self.assertEqual(completed.returncode, 0, completed.stderr.decode(\"utf-8\"))\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 1 != 0 : E:\\dev\\sandbox\\\\u6a21\\u578b\\u914d\\u4e50\\ComfyUI_windows_portable\\python_embeded\\python.exe: No module named ai_ad_editor\r\n\n"
+  },
+  {
+    "event": "failure",
+    "test_id": "test_cli.P0CliTests.test_project_write_lock_rejects_competing_mutation_and_releases",
+    "tests_started": 436,
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_cli.py\", line 491, in test_project_write_lock_rejects_competing_mutation_and_releases\n    self.assertTrue(ready.exists(), \"child did not acquire project lock\")\n    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: False is not true : child did not acquire project lock\n"
+  },
+  {
+    "event": "failure",
+    "test_id": "test_cli.P0CliTests.test_queue_cancel_acknowledges_while_project_lock_is_held",
+    "tests_started": 440,
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_cli.py\", line 531, in test_queue_cancel_acknowledges_while_project_lock_is_held\n    self.assertTrue(ready.exists(), \"child did not acquire project lock\")\n    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: False is not true : child did not acquire project lock\n"
+  },
+  {
+    "event": "error",
+    "test_id": "test_delivery.BoundedAudioProgressTests.test_audio_progress_read_failures_keep_bounded_diagnostic_states",
+    "tests_started": 604,
+    "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\enhancement_pipeline.py\", line 19, in read_progress\n    value,metadata=_limited_json(self.prepared_directory,'progress.json',SUMMARY_LIMIT)\n                   ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\pipeline_diagnostics.py\", line 461, in _limited_json\n    raw, metadata = directory.read(name, limit)\n                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\pipeline_diagnostics.py\", line 167, in read\n    with self.open(name) as (stream, info):\n         ~~~~~~~~~^^^^^^\n  File \"contextlib.py\", line 141, in __enter__\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\pipeline_diagnostics.py\", line 134, in open\n    raise fault('DIAGNOSTIC_FILE_INVALID')\nai_ad_editor.errors.AppError: 本地管道诊断不可用或未通过边界核验\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_delivery.py\", line 495, in test_audio_progress_read_failures_keep_bounded_diagnostic_states\n    self.assertEqual(session.read_progress(), dict(state='unavailable', code='DIAGNOSTIC_FILE_INVALID'))\n                     ~~~~~~~~~~~~~~~~~~~~~^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\enhancement_pipeline.py\", line 20, in read_progress\n    except (OSError,AppError) as exc:\n                    ^^^^^^^^\nNameError: name 'AppError' is not defined. Did you mean: 'EOFError'?\n"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "status": "static-gap-confirmed-candidate-files-prepared",
+  "observed_at_utc": "2026-11-06T03:53:17.439795+00:00",
+  "frozen_product_files": 546,
+  "separately_frozen_delivery_tools": {
+    "docs/validation/delivery66.py": "70cf349a23ebc4a731de112f2c532979a9d6a0e32ebf15e47758e5d997d3304b",
+    "docs/validation/run_delivery66_native.py": "453a3e9744aba4d0a2584e7ee9437042ea10086a04627d06104c806dbd700801",
+    "docs/validation/delivery66_handoff.py": "745c7f2ed0e9b0ad05deadbceaf94e649bcce9317c1f9fa82f240c0356014de2",
+    "docs/validation/delivery66_music_faults.py": "dc4d8059c6db9fe83ee56dee222c460dcfd44dc716fb24d92963dc3a1351ffea",
+    "docs/validation/publish_delivery66.py": "44ae4313db07280e3d42f9d5d717c3ae8e3be6b1efaa983cdcda665230575fef",
+    "docs/validation/test_delivery66_handoff.py": "d75d33d2df2e01bbf86dcd66da17de737fc7d6d73e8673af5943d9398207ffb7",
+    "scripts/activate_community_runtime.py": "ae862745ca127604bcc26ffe2e71504eec7a64a07c8372edf430b34d534429ec"
+  },
+  "source_commit_binding_includes_delivery_tools": false,
+  "source_commit_binding_includes_skill": false,
+  "source_commit_binding_includes_readmes": false,
+  "new_candidate_base_files": {
+    "docs/validation/delivery66_handoff.py": "745c7f2ed0e9b0ad05deadbceaf94e649bcce9317c1f9fa82f240c0356014de2",
+    "docs/validation/publish_delivery66.py": "44ae4313db07280e3d42f9d5d717c3ae8e3be6b1efaa983cdcda665230575fef",
+    "docs/validation/test_delivery66_handoff.py": "d75d33d2df2e01bbf86dcd66da17de737fc7d6d73e8673af5943d9398207ffb7"
+  },
+  "candidate_applied": false,
+  "functional_tests_started": false,
+  "formal_activation": false
+}

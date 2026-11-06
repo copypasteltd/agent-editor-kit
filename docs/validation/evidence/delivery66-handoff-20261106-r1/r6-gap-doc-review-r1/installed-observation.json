@@ -1,0 +1,41 @@
+{
+  "state": {
+    "status": "running",
+    "started_at_utc": "2026-11-06T07:13:29.285249+00:00",
+    "command": [
+      "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\delivery66.py",
+      "tests",
+      "--run",
+      "r6",
+      "--freeze-run",
+      "r6",
+      "--installed",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\candidate-r1\\installed"
+    ],
+    "supervisor": {
+      "pid": 4908,
+      "creation_filetime": 134384228091380872,
+      "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+    },
+    "result": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\delivery66-20261106-r1\\installed-all-r6\\verification.json",
+    "runner_sha256": "e568f908ce008b674676e42c91c02656ec238f434ab815cd118b31daa8da462e",
+    "original_test_selection": "whole-discovery",
+    "child": {
+      "pid": 5880,
+      "creation_filetime": 134384228092908524,
+      "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+    }
+  },
+  "actual_live": {
+    "supervisor": true,
+    "child": true
+  },
+  "accepted": false,
+  "observed_at_utc": "2026-11-06T07:24:57.628695+00:00"
+}

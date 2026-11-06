@@ -1,0 +1,177 @@
+{
+  "status": "passed",
+  "observed_at_utc": "2026-11-06T08:11:41.178250+00:00",
+  "review": "current unfinished-scope detail",
+  "base_commit": "ad92df791e98394e1de21d286c4734dc5d13e3f3",
+  "source_cli": "0.1.66",
+  "source_tests": 4124,
+  "source_failures": 0,
+  "source_errors": 0,
+  "source_skipped": 0,
+  "source_exit_code": 0,
+  "source_result_sha256": "82013fc30ff00613060d8dc0a23663e9b94d28dcd4413b2a5262f970f4ed52d3",
+  "candidate_cli": "0.1.66",
+  "candidate_installed": true,
+  "application_modules_equal": 289,
+  "source_fallback": false,
+  "formal_cli": "0.1.63",
+  "formal_skill_count": 1,
+  "formal_module_count": 17,
+  "installed_suite": "running",
+  "installed_supervisor_live": true,
+  "installed_child_live": true,
+  "installed_terminal_present": false,
+  "installed_observation_utc": "2026-11-06T08:11:40.446558+00:00",
+  "observer_live": true,
+  "frozen_groups": {
+    "file_hashes": {
+      "files": 546,
+      "changed": []
+    },
+    "formal_guard": {
+      "files": 95,
+      "changed": []
+    },
+    "delivery_tool_files": {
+      "files": 8,
+      "changed": []
+    },
+    "packaging_source_files": {
+      "files": 69,
+      "changed": []
+    }
+  },
+  "observer_pinned_inputs_unchanged": 726,
+  "historical_readme_rows": {
+    "README.md": {
+      "preserved_rows": 692,
+      "current_rows": 693,
+      "original_rows_unchanged": true
+    },
+    "README.zh-TW.md": {
+      "preserved_rows": 692,
+      "current_rows": 693,
+      "original_rows_unchanged": true
+    },
+    "README.en.md": {
+      "preserved_rows": 692,
+      "current_rows": 693,
+      "original_rows_unchanged": true
+    }
+  },
+  "original_goal_sha256": "36347a3c5599ec4e4850b13c6cd98f726847f4142f96863fadf6f26b4f27e755",
+  "detailed_goal_groups": [
+    "G01",
+    "G02",
+    "G03",
+    "G04",
+    "G05",
+    "G06",
+    "G07",
+    "G08",
+    "G09",
+    "G10",
+    "G11",
+    "G12",
+    "G13",
+    "G14",
+    "G15",
+    "G16",
+    "G17",
+    "G18",
+    "G19",
+    "G20",
+    "G21",
+    "G22",
+    "G23",
+    "G24",
+    "G25",
+    "G26",
+    "G27",
+    "G28",
+    "G29",
+    "G30",
+    "G31",
+    "G32",
+    "G33",
+    "G34",
+    "G35",
+    "G36",
+    "G37",
+    "G38"
+  ],
+  "current_delivery_tasks": [
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "P07",
+    "P08",
+    "P09"
+  ],
+  "validated_new_link_count": 12,
+  "new_links": [
+    {
+      "from": "docs/product/UNFINISHED_DETAIL_20261106.md",
+      "target": "DELIVERY66_R6_SOURCE_ACCEPTANCE.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_DETAIL_20261106.md",
+      "target": "CROSS_MACHINE63_BASELINE.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_DETAIL_20261106.md",
+      "target": "CROSS_MACHINE66_UPGRADE.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_DETAIL_20261106.md",
+      "target": "NEURAL_MUSIC_GENERATION.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_DETAIL_20261106.md",
+      "target": "GOAL_GAPS_20261025.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_DETAIL_20261106.md",
+      "target": "UNFINISHED_20261106.md"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/product/UNFINISHED_DETAIL_20261106.md"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/product/UNFINISHED_DETAIL_20261106.md"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/product/UNFINISHED_DETAIL_20261106.md"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/product/UNFINISHED_DETAIL_20261106.md"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/product/UNFINISHED_DETAIL_20261106.md"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/product/UNFINISHED_DETAIL_20261106.md"
+    }
+  ],
+  "new_functional_tests": 0,
+  "new_model_inferences": 0,
+  "new_remote_actions": 0,
+  "formal_activation": false,
+  "release_created": false,
+  "full_goal_closed": false,
+  "documents": {
+    "docs/product/UNFINISHED_DETAIL_20261106.md": "6ba4820d74d334b3b4fab3aa5820e3de1252db899c6e1872ac6ab54967ccf81d",
+    "README.md": "6d880d9665306f9da284f8866ce97113648cecb4f7ed3fd56eb7b4bc6544bdae",
+    "README.zh-TW.md": "06b7c96c2dd1a73a2a2ac53fa595f11f89110cac6a2101487720e55879831674",
+    "README.en.md": "3a6319dcc3ff3504326fd3d2740911ee382d2d6906646774fe86a0128ff5ad3d"
+  }
+}

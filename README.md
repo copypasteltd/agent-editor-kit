@@ -1,6 +1,8 @@
 # agent editor kit
 
 <!-- aek-cli65-current -->
+**未完成内容逐项展开（2026-11-06）：** [9项当前交付工作、原G01—G38的实现／质量／性能／生态差距与完成条件](docs/product/UNFINISHED_DETAIL_20261106.md)。源码完整通过、候选安装、正式入口和公开发行分别记录；[本次只读复核](docs/validation/evidence/status-review-20261106-r3/review-r1/verification.json)不增加功能测试数，原目标继续开放。
+
 **开发状态2026-11-06：CLI0.1.66原r6源码整套已完整通过：4,124项、0失败／0错误／0跳过、退出码0。** 已按同一冻结实际离线构建并安装66候选，289应用模块精确一致；安装版同一整套已启动、尚无终态。[完整结果与候选](docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md) · [完整未完成内容](docs/product/UNFINISHED_20261106.md)
 
 **原r5完整终态：4,124项、4失败／1错误／0跳过、退出码1。** 五条完整堆栈已保留，原监督和测试进程均已退出后才应用新批。原r4的4,114项／10失败／15错误及r2中断继续保留。[r5终态与五条异常](docs/validation/evidence/delivery66-handoff-20261106-r1/r5-terminal-review-r1/verification.json) · [原r4结果](docs/product/DELIVERY66_R4_RESULTS.md)
@@ -2236,6 +2238,7 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R600 | 2026-11-06：CLI66源码整套通过、离线候选安装与安装版整套启动 | [完整结果](docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md)；[源码4,124项终态](docs/validation/evidence/delivery66-20261106-r1/source-all-r6/verification.json)；[候选安装](docs/validation/evidence/delivery66-20261106-r1/candidate-r1/verification.json) | 原r6完整4,124项全部通过，0失败／错误／跳过、退出码0，原监督及子进程均退出。冻结546／8／69／95不变；23个规范代码目标按已验收字节提交。实际原生离线构建并安装66，289应用模块一致、无源码回退；原生安装版同一整套已启动、尚无终态。43工具契约独立保留不相加；正式63及全部G01—G38不变，实际66模型／媒体／故障／正式升级和发行仍待 |
 | R601 | 2026-11-06：源码终态后的完整未完成范围更正 | [38组差距及12项交付问题](docs/product/UNFINISHED_20261106.md)；[源码与候选终态](docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md) | 将恢复预检、20秒会话、源码绑定与构建来源明确改为源码已通过／候选已安装；安装版、正式63、新版模型／媒体／故障／跨机及公开发行继续开放。历史690条F／R编号逐行保留，原G01—G38文件未改；仅文档更正，不增加功能测试数 |
 | R602 | 2026-11-06：66跨机器升级／回滚完整验证批次写齐并冻结 | [完整流程与门槛](docs/product/CROSS_MACHINE66_UPGRADE.md)；[五脚本冻结](docs/validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-code-phase-r1/verification.json)；[静态检查](docs/validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-static-review-r1/verification.json) | 五脚本先写齐：新包离线安装、真实--base-only、原注册器冲突保护、受管隔离63→66→63→66及四次完整媒体重放；原63包／配置和全局注册保护。原生PowerShell三命令语法0错误、长度7860／6040／7204均低于10000。仅代码与静态检查完成，未联系第二台／未功能执行；须本机安装整套及66便携实装通过才运行，不算GPU／干净主机／通用交付控制器／G34验收；正式63不变 |
+| R603 | 2026-11-06：逐项展开当前未完成内容 | [9项交付与38组详细差距](docs/product/UNFINISHED_DETAIL_20261106.md)；[只读复核及冻结保护](docs/validation/evidence/status-review-20261106-r3/review-r1/verification.json) | 复核源码r6完整4,124项通过、66独立候选289模块及正式63／17模块；原安装版真实进程仍存活、无终态。分别说明缺实现、质量／组合、GPU性能、素材模板、Agent自主任务和正式交付；保留全部历史F／R行和原G文件。仅文档与状态复核，无新增功能测试／模型／跨机执行／正式切换／公开发行，不计算完整目标百分比 |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

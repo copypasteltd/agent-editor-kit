@@ -45,6 +45,12 @@
       "base_sha256": "67aca9303fa283bdd2186906a441fbd1378a62e98dbd069fd984b864dc90ee5a",
       "candidate_sha256": "d11a36bffbe925ecf53ffe83dfbb6e4161c4439b4b44c2bff44cb4701354d8ba",
       "bytes": 12170
+    },
+    {
+      "path": "docs/validation/delivery66_handoff.py",
+      "base_sha256": "5db3c3bf42609d30633bb53c8e94fd43cd59db10b10efba71930f969515e9c13",
+      "candidate_sha256": "69c8e07733e884d76ce74ef5fc1c0e7d0ba84e8cbb5cd473da7db37f8514b0b7",
+      "bytes": 45156
     }
   ],
   "original_product_and_tests_modified": false,
@@ -60,9 +66,39 @@
     "Five meaningful real-file contract methods cover malformed progress, field injection, primitive JSON, nonordinary paths and unprepared sessions; no model mock claimed as inference.",
     "Read the existing native Windows default gh credential after explicit environment tokens and before the legacy Git helper; do not store secrets or authenticate through UI.",
     "Six unexecuted handoff methods cover explicit precedence, native gh/legacy fallback, UTF8/UTF16 secret formats, malformed/oversized secret silence and validation without credential reads or publishing.",
-    "Two existing native gh credentials returned official repository GET 200 and write/admin permission metadata; this read-only preflight is not execution of the candidate functions or release publication."
+    "Two existing native gh credentials returned official repository GET 200 and write/admin permission metadata; this read-only preflight is not execution of the candidate functions or release publication.",
+    "Expand all three generated quickstarts with digest/extraction, offline installation, required CPU and optional GPU pack setup, explicit CUDA directories, one Skill registration, actual asset IDs, client look preview, edit/voice/translation/render/package replay and upgrade boundaries. Statically rendered review drafts have explicit manifest placeholders and execute no candidate functions or CLI commands."
   ],
   "next_step": "Wait for authoritative r4 terminal output, incorporate every additional failure, then complete and apply the whole correction batch before any regression.",
   "new_product_test_methods_written": 5,
-  "new_handoff_test_methods_written": 6
+  "new_handoff_test_methods_written": 6,
+  "quickstart_drafts": [
+    {
+      "path": "docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.md",
+      "sha256": "a652a7318291a09ccce7c59e85db9a87ebaf338f5b8a226392e92df6b7fdcb5c",
+      "language": "zh",
+      "manifest_placeholder": true,
+      "candidate_function_executed": false,
+      "commands_executed": false,
+      "preview_links_point_to_current_source": true
+    },
+    {
+      "path": "docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.zh-TW.md",
+      "sha256": "801b8b57ee62baa463cb4558cf2f37edf2b7c6372457895afbf8d66efd150c64",
+      "language": "zh-TW",
+      "manifest_placeholder": true,
+      "candidate_function_executed": false,
+      "commands_executed": false,
+      "preview_links_point_to_current_source": true
+    },
+    {
+      "path": "docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.en.md",
+      "sha256": "242f4953d31610a6e97ee87d48a4c71263e12f7419408c4258d29531a3809e3a",
+      "language": "en",
+      "manifest_placeholder": true,
+      "candidate_function_executed": false,
+      "commands_executed": false,
+      "preview_links_point_to_current_source": true
+    }
+  ]
 }

@@ -1,0 +1,92 @@
+{
+  "status": "passed-static-draft-and-file-integrity-review",
+  "observed_at_utc": "2026-11-06T00:54:41.862872+00:00",
+  "candidate_files": 8,
+  "candidate_python_syntax_valid": true,
+  "new_product_methods_written": [
+    "test_missing_and_malformed_progress_keep_bounded_diagnostics",
+    "test_nonobject_unhashable_and_wrong_typed_progress_is_invalid",
+    "test_nonordinary_progress_returns_unavailable_without_consuming_it",
+    "test_unprepared_music_progress_is_explicit",
+    "test_valid_progress_forwards_only_approved_fields"
+  ],
+  "new_handoff_methods_written": [
+    "test_explicit_publishing_token_never_opens_credential_stores",
+    "test_legacy_helper_remains_available_without_native_gh_credential",
+    "test_local_only_validation_never_reads_credentials_or_publishes",
+    "test_malformed_or_oversized_stored_credentials_are_not_logged",
+    "test_native_gh_store_decodes_utf8_and_utf16_token_formats",
+    "test_native_gh_store_precedes_unusable_legacy_git_credential"
+  ],
+  "original_test_names_retained": true,
+  "current_frozen_files_equal": {
+    "file_hashes": 546,
+    "delivery_tool_files": 6,
+    "formal_guard": 95
+  },
+  "readmes": {
+    "README.md": {
+      "sha256": "8be67a3b1f4afd2c1a1a9d3d8acda6c7a2fc7391868c3756d0caac20364458e0",
+      "prior_RF_rows_preserved": true,
+      "R_rows": 586,
+      "F_rows": 89
+    },
+    "README.zh-TW.md": {
+      "sha256": "70a0cd6a5193482d32e27bc3dd399f57f5c9d515c2e64e9200c8fe1782c220dd",
+      "prior_RF_rows_preserved": true,
+      "R_rows": 586,
+      "F_rows": 89
+    },
+    "README.en.md": {
+      "sha256": "a1b7a99d704f5e8bf7e26ebf5934b9f9822f5b24c76b7f530c762b3745644cca",
+      "prior_RF_rows_preserved": true,
+      "R_rows": 586,
+      "F_rows": 89
+    }
+  },
+  "quickstart_drafts": [
+    {
+      "path": "docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.md",
+      "sha256": "a652a7318291a09ccce7c59e85db9a87ebaf338f5b8a226392e92df6b7fdcb5c",
+      "language": "zh",
+      "manifest_placeholder": true,
+      "candidate_function_executed": false,
+      "commands_executed": false,
+      "preview_links_point_to_current_source": true
+    },
+    {
+      "path": "docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.zh-TW.md",
+      "sha256": "801b8b57ee62baa463cb4558cf2f37edf2b7c6372457895afbf8d66efd150c64",
+      "language": "zh-TW",
+      "manifest_placeholder": true,
+      "candidate_function_executed": false,
+      "commands_executed": false,
+      "preview_links_point_to_current_source": true
+    },
+    {
+      "path": "docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.en.md",
+      "sha256": "242f4953d31610a6e97ee87d48a4c71263e12f7419408c4258d29531a3809e3a",
+      "language": "en",
+      "manifest_placeholder": true,
+      "candidate_function_executed": false,
+      "commands_executed": false,
+      "preview_links_point_to_current_source": true
+    }
+  ],
+  "quickstart_powerShell_blocks_parsed": 27,
+  "quickstart_preview_links_resolved": 15,
+  "quickstart_rendering": "AST literal substitution, no module import or candidate function execution",
+  "original_38_group_document_unchanged": true,
+  "observed_r4_errors": 2,
+  "observed_r4_failures": 1,
+  "r4_terminal_result_present": false,
+  "candidate_functional_tests_started": false,
+  "candidate_applied": false,
+  "candidate_batch_finalized": false,
+  "formal_activation": false,
+  "model_forwards": 0,
+  "public_release_created": false,
+  "source_cli": "0.1.66",
+  "formal_cli": "0.1.63",
+  "full_product_goal_closed": false
+}

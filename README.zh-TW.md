@@ -4,6 +4,7 @@
 **開發狀態2026-11-06：CLI0.1.66的18項完整交付工具契約通過；r4原始碼全套實際發現4,114項，原生背景監督與子程序已獨立確認存活，仍執行中、無終態；最新日誌已出現2項用例ERROR及1項FAIL，不能視為通過，原因仍待完整結果確認。** 正式入口保持CLI0.1.63／local61／r58；CLI66候選尚未建置。原4,110項r2中斷保留。新工具包、實際配樂故障、正式升級／回滾及公開發行仍須實際驗收；工具契約不代表模型或媒體品質通過。[完整未完成內容](docs/product/UNFINISHED_20261106.md) · [本批流程](docs/product/DELIVERY66_HANDOFF.md)
 修正草稿已獨立保存：修復受控診斷夾具、更新歷史目錄預期，並補音樂進度型別／欄位／讀取失敗處理與五項新用例。尚未合入或執行，不修改執行中的凍結程式碼。 [Candidate / 候选](docs/product/DELIVERY66_R5_CANDIDATE.md)
 發佈身份複核取得新結果：兩條既有原生gh憑據分別讀取倉庫均回傳200及寫入／管理權限；先前403來自另一預設Git身份。隔離草稿已補原生憑據路徑與六項交付契約方法，尚未合入或測試，未建立Release。 [Actual access / 實際紀錄](docs/validation/evidence/delivery66-handoff-20261106-r1/release-identity-r1/verification.json)
+隔離批次另補完整三語使用流程，涵蓋安裝、必需／可選模型包、GPU設定、客戶濾鏡選擇、音軌編排、算圖及專案重播。[繁體草稿](docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.zh-TW.md)尚未執行CLI66流程，安裝摘要為明確佔位符。
 <!-- /aek-cli65-current -->
 
 **r58統一Skill工具包已獨立驗收。** 161條目／160清單檔案／93 Skill檔案；中文與空格目錄解包、四包配置、獨立註冊、實際譜面與循環修復、完整ACES YUV／PCM／PNG及專案重播通過。未新增模型推理，不等於乾淨主機或自然品質驗收。
@@ -2204,6 +2205,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R583 | CLI66 isolated correction draft / 2026-11-06 | 修正草稿已獨立保存：修復受控診斷夾具、更新歷史目錄預期，並補音樂進度型別／欄位／讀取失敗處理與五項新用例。尚未合入或執行，不修改執行中的凍結程式碼。 [Live record](docs/validation/evidence/delivery66-handoff-20261106-r1/correction-draft-r1/observation.json) |
 | R584 | Read-only release preflight / 2026-11-06 | 官方API匿名讀取200確認只有alpha.3；目前HTTPS憑據請求403，SSH標籤查詢成功且alpha.4尚不存在。兩條舊發行工作流程為active，未觸發。未建立標籤、上傳附件或發佈新版。 [Record](docs/validation/evidence/delivery66-handoff-20261106-r1/release-preflight-r2/verification.json) · [Workflow state](docs/validation/evidence/delivery66-handoff-20261106-r1/actions-preflight-r1/verification.json) |
 | R585 | Existing native gh identity / 2026-11-06 | 兩條既有原生gh憑據分別讀取官方倉庫介面均回傳200及寫入／管理權限；未保存秘密、修改憑據或發佈附件。隔離候選新增發佈路徑與六項未執行契約，目前凍結工具不變。 [Record](docs/validation/evidence/delivery66-handoff-20261106-r1/release-identity-r1/verification.json) · [Draft](docs/product/DELIVERY66_R5_CANDIDATE.md) |
+| R586 | Complete three-language workflow draft / 2026-11-06 | 擴寫三語快速開始生成器及3份可審閱草稿，涵蓋摘要／解壓縮、離線安裝、兩個CPU必需包／兩個GPU可選包、獨立CUDA目錄、單Skill、濾鏡套用、音軌、算圖及專案重播。僅AST靜態生成，摘要為明確佔位符，未執行候選函數或CLI66流程。 [Draft](docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.zh-TW.md) · [Scope](docs/product/DELIVERY66_R5_CANDIDATE.md) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

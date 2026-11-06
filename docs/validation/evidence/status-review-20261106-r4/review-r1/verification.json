@@ -1,0 +1,215 @@
+{
+  "status": "passed",
+  "observed_at_utc": "2026-11-06T09:18:31.551026+00:00",
+  "review": "detailed unfinished scope and customer workflows",
+  "base_commit": "a2eeb1f8dd59f0d4c7ecd911f8dbb021f307accd",
+  "source_cli": "0.1.66",
+  "source_tests": 4124,
+  "source_failures": 0,
+  "source_errors": 0,
+  "source_skipped": 0,
+  "source_exit_code": 0,
+  "source_result_sha256": "82013fc30ff00613060d8dc0a23663e9b94d28dcd4413b2a5262f970f4ed52d3",
+  "candidate_cli": "0.1.66",
+  "candidate_installed": true,
+  "application_modules_equal": 289,
+  "source_fallback": false,
+  "formal_cli": "0.1.63",
+  "formal_skill_count": 1,
+  "formal_module_count": 17,
+  "installed_suite": "running",
+  "installed_supervisor_live": true,
+  "installed_child_live": true,
+  "installed_terminal_present": false,
+  "installed_observation_utc": "2026-11-06T09:18:31.504413+00:00",
+  "observer_live": true,
+  "frozen_groups": {
+    "file_hashes": {
+      "files": 546,
+      "changed": []
+    },
+    "formal_guard": {
+      "files": 95,
+      "changed": []
+    },
+    "delivery_tool_files": {
+      "files": 8,
+      "changed": []
+    },
+    "packaging_source_files": {
+      "files": 69,
+      "changed": []
+    }
+  },
+  "observer_pinned_inputs_unchanged": 726,
+  "historical_readme_rows": {
+    "README.md": {
+      "preserved_rows": 694,
+      "current_rows": 695,
+      "original_rows_unchanged": true
+    },
+    "README.zh-TW.md": {
+      "preserved_rows": 694,
+      "current_rows": 695,
+      "original_rows_unchanged": true
+    },
+    "README.en.md": {
+      "preserved_rows": 694,
+      "current_rows": 695,
+      "original_rows_unchanged": true
+    }
+  },
+  "original_goal_sha256": "36347a3c5599ec4e4850b13c6cd98f726847f4142f96863fadf6f26b4f27e755",
+  "detailed_goal_groups": [
+    "G01",
+    "G02",
+    "G03",
+    "G04",
+    "G05",
+    "G06",
+    "G07",
+    "G08",
+    "G09",
+    "G10",
+    "G11",
+    "G12",
+    "G13",
+    "G14",
+    "G15",
+    "G16",
+    "G17",
+    "G18",
+    "G19",
+    "G20",
+    "G21",
+    "G22",
+    "G23",
+    "G24",
+    "G25",
+    "G26",
+    "G27",
+    "G28",
+    "G29",
+    "G30",
+    "G31",
+    "G32",
+    "G33",
+    "G34",
+    "G35",
+    "G36",
+    "G37",
+    "G38"
+  ],
+  "current_delivery_tasks": [
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "P07",
+    "P08",
+    "P09"
+  ],
+  "customer_workflows": [
+    "U01",
+    "U02",
+    "U03",
+    "U04",
+    "U05",
+    "U06"
+  ],
+  "validated_new_link_count": 19,
+  "new_links": [
+    {
+      "from": "docs/product/UNFINISHED_DETAIL_20261106.md",
+      "target": "../validation/evidence/status-review-20261106-r4/review-r1/verification.json"
+    },
+    {
+      "from": "docs/product/UNFINISHED_DETAIL_20261106.md",
+      "target": "DELIVERY66_R6_SOURCE_ACCEPTANCE.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_DETAIL_20261106.md",
+      "target": "CROSS_MACHINE63_BASELINE.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_DETAIL_20261106.md",
+      "target": "CROSS_MACHINE66_UPGRADE.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_DETAIL_20261106.md",
+      "target": "NEURAL_MUSIC_GENERATION.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_DETAIL_20261106.md",
+      "target": "GOAL_GAPS_20261025.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_DETAIL_20261106.md",
+      "target": "UNFINISHED_20261106.md"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/product/UNFINISHED_DETAIL_20261106.md"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/validation/evidence/status-review-20261106-r4/review-r1/verification.json"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/product/UNFINISHED_DETAIL_20261106.md"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/validation/evidence/status-review-20261106-r4/review-r1/verification.json"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/product/UNFINISHED_DETAIL_20261106.md"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/validation/evidence/status-review-20261106-r4/review-r1/verification.json"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/product/UNFINISHED_DETAIL_20261106.md"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/validation/evidence/status-review-20261106-r4/review-r1/verification.json"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/product/UNFINISHED_DETAIL_20261106.md"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/validation/evidence/status-review-20261106-r4/review-r1/verification.json"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/product/UNFINISHED_DETAIL_20261106.md"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/validation/evidence/status-review-20261106-r4/review-r1/verification.json"
+    }
+  ],
+  "controller_contracts_fixture_only": true,
+  "review_checker_adjustment": "Source-only null fallback handled as not applicable; installed false assertion unchanged",
+  "new_functional_tests": 0,
+  "new_model_inferences": 0,
+  "new_remote_actions": 0,
+  "formal_activation": false,
+  "release_created": false,
+  "full_goal_closed": false,
+  "documents": {
+    "docs/product/UNFINISHED_DETAIL_20261106.md": "3273fd514f1766faef7f4a7e14afd18b40782b4a15a61a07537354ad7400f63c",
+    "README.md": "44c6d50d9a132ed5b4f85c85def6d8caf88f73d9af973dfdb0636ff133715d5b",
+    "README.zh-TW.md": "c05540f26cedde325b6aae7640ed07841001f837fdc7d2aaf497acd986f4969b",
+    "README.en.md": "468ce525e6430b5e97cb6f9c3f5708283c0b3fcd09f6293b4cb79aaaa9655eff"
+  }
+}

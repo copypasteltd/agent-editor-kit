@@ -1,7 +1,7 @@
 # agent editor kit
 
 <!-- aek-cli65-current -->
-**未完成内容逐项展开（2026-11-06）：** [9项当前交付工作、原G01—G38的实现／质量／性能／生态差距与完成条件](docs/product/UNFINISHED_DETAIL_20261106.md)。源码完整通过、候选安装、正式入口和公开发行分别记录；[本次只读复核](docs/validation/evidence/status-review-20261106-r3/review-r1/verification.json)不增加功能测试数，原目标继续开放。
+**未完成内容逐项展开（2026-11-06）：** [9项当前交付工作、原G01—G38的实现／质量／性能／生态差距与完成条件](docs/product/UNFINISHED_DETAIL_20261106.md)。源码完整通过、候选安装、正式入口和公开发行分别记录；[本次只读复核](docs/validation/evidence/status-review-20261106-r4/review-r1/verification.json)不增加功能测试数，原目标继续开放。
 
 **开发状态2026-11-06：CLI0.1.66原r6源码整套已完整通过：4,124项、0失败／0错误／0跳过、退出码0。** 已按同一冻结实际离线构建并安装66候选，289应用模块精确一致；安装版同一整套已启动、尚无终态。[完整结果与候选](docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md) · [完整未完成内容](docs/product/UNFINISHED_20261106.md)
 
@@ -2240,6 +2240,7 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R602 | 2026-11-06：66跨机器升级／回滚完整验证批次写齐并冻结 | [完整流程与门槛](docs/product/CROSS_MACHINE66_UPGRADE.md)；[五脚本冻结](docs/validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-code-phase-r1/verification.json)；[静态检查](docs/validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-static-review-r1/verification.json) | 五脚本先写齐：新包离线安装、真实--base-only、原注册器冲突保护、受管隔离63→66→63→66及四次完整媒体重放；原63包／配置和全局注册保护。原生PowerShell三命令语法0错误、长度7860／6040／7204均低于10000。仅代码与静态检查完成，未联系第二台／未功能执行；须本机安装整套及66便携实装通过才运行，不算GPU／干净主机／通用交付控制器／G34验收；正式63不变 |
 | R603 | 2026-11-06：逐项展开当前未完成内容 | [9项交付与38组详细差距](docs/product/UNFINISHED_DETAIL_20261106.md)；[只读复核及冻结保护](docs/validation/evidence/status-review-20261106-r3/review-r1/verification.json) | 复核源码r6完整4,124项通过、66独立候选289模块及正式63／17模块；原安装版真实进程仍存活、无终态。分别说明缺实现、质量／组合、GPU性能、素材模板、Agent自主任务和正式交付；保留全部历史F／R行和原G文件。仅文档与状态复核，无新增功能测试／模型／跨机执行／正式切换／公开发行，不计算完整目标百分比 |
 | R604 | 2026-11-06：66跨机一次性衔接执行器完整实现与集中契约检查 | [流程与使用](docs/product/CROSS_MACHINE66_UPGRADE.md)；[代码冻结](docs/validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-controller-code-phase-r1/verification.json)；[17项契约](docs/validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-controller-contracts-r1/verification.json)；[本轮保护复核](docs/validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-controller-review-r1/verification.json) | 全批代码先写齐再冻结／集中检查；17项全部通过，0失败／错误／跳过。包含原门槛、当前设备截图摘要、一次start、本地原句柄等待、原远端身份观察、传输关闭、四次完整媒体／母机参考／MP4摘要和有界私密检查后原子写入证据。仅原生协议夹具，无远端调用／模型／新产品测试；原安装整套仍运行，正式63及全部G01—G38不变 |
+| R605 | 2026-11-06：未完成范围及客户任务差距复核 | [9项交付、38组原目标与6类客户任务](docs/product/UNFINISHED_DETAIL_20261106.md)；[只读状态与保护核对](docs/validation/evidence/status-review-20261106-r4/review-r1/verification.json) | 展开需补实现、自然质量／复杂组合及正式交付差距；同步跨机控制器17项协议夹具已通过、实际远程未执行。源码4,124项通过，安装版结论以收据时点为准，正式仍63。保留全部历史F／R行；文档与只读复核，无新增产品测试／模型／远程执行／正式切换／发行，不计算整体完成率 |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

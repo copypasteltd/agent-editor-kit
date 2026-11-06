@@ -1,0 +1,53 @@
+{
+  "status": "draft-code-completed-awaiting-r5-terminal-and-all-new-findings",
+  "created_at_utc": "2026-11-06T03:22:35.690155+00:00",
+  "source_cli": "0.1.66",
+  "formal_cli": "0.1.63",
+  "base_freeze": "docs/validation/evidence/delivery66-20261106-r1/freeze-r5/verification.json",
+  "files": [
+    {
+      "path": "product/tests/package_under_test.py",
+      "base_sha256": "a18597a3fa8c7f081d9155a3bc27033c7af422b4060d3c3e534888ee570a60f1",
+      "candidate_sha256": "84ee9c0197388e998070089f8e8196b6ec9f30012d0216704d4843a5321b93f3",
+      "bytes": 2101
+    },
+    {
+      "path": "product/tests/test_cli.py",
+      "base_sha256": "c7c277898964a1e87bbc4dbdf498ecca00978dd45d68540ee1b9f5bc98021264",
+      "candidate_sha256": "0431069b7544939dceb2674d7127ec81c97cc5cf610bb8d125e5e7552c2283af",
+      "bytes": 321310
+    },
+    {
+      "path": "product/src/ai_ad_editor/enhancement_pipeline.py",
+      "base_sha256": "b71202fa7620ef849204e80a59304a8c575384a8d4961c1dae097b0abd701737",
+      "candidate_sha256": "ffa863c237937a2d8c1de5a52f58ff69077360474f7046dd09badb527084d972",
+      "bytes": 10755
+    }
+  ],
+  "candidate_applied": false,
+  "functional_tests_started": false,
+  "source_frozen_bytes_modified": false,
+  "formal_activation": false,
+  "new_product_test_methods": 0,
+  "existing_assertion_conditions_preserved": true,
+  "existing_test_names_preserved": true,
+  "lock_deadline_seconds": 3.0,
+  "lock_child_stop_deadline_seconds": 5.0,
+  "unicode_timeout_seconds": 30,
+  "unicode_ascii_stdio_precondition_explicit": true,
+  "child_package_identity_checked": true,
+  "subprocess_errors_read_limit_bytes": 8192,
+  "changes": [
+    "Bind the exact selected source/installed package explicitly for the existing Unicode module entry and two real lock-child scripts; do not depend on PYTHONPATH or change the embedded interpreter.",
+    "Run the actual package __main__ through runpy with alter_sys=True and preserve Unicode request ID, real FFmpeg ingest, progress, file and lock assertions.",
+    "Actually establish ASCII/strict stdout and stderr before invoking the real CLI so the adversarial UTF-8 contract remains effective when Python ignores encoding environment variables.",
+    "Preserve three-second lock deadlines, five-second owned-child cleanup and the Unicode thirty-second timeout; retain bounded child stderr in lock failures.",
+    "Import the actual AppError caught by audio progress diagnostics; the r5 live traceback directly records the missing name in the nonordinary-file branch. Preserve original unavailable state and code assertions."
+  ],
+  "next_step": "Keep collecting the complete r5 result; finish all new corrections before applying a complete next batch and running centralized contracts and unfiltered product regression.",
+  "observed_r5_issues": {
+    "unicode_module_import_failure": 1,
+    "lock_children_not_ready_failures": 2,
+    "audio_diagnostic_missing_AppError_error": 1
+  }
+}

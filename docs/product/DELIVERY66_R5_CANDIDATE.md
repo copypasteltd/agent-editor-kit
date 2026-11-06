@@ -40,3 +40,5 @@
 下一步须等完整产品终态，再构建离线候选、安装版完整回归、新版CUDA配乐、配方／整段RGBA与PCM重放、真实取消／超时／提交冲突、唯一Skill正式升级／显式回滚／重激活，以及匹配源提交的新发行。G01—G38关闭条件继续保留。
 
 此前7／8／9／15文件是历史静态快照，分别保留在correction-draft-r2、correction-draft-r3、dependency-preflight-draft-r1及lazy-startup-draft-r1；其中130模块图遗漏模块初始化函数，不能替代本轮最终堆栈或实际测试。[原r4完整结果](DELIVERY66_R4_RESULTS.md) · [完整未完成内容](UNFINISHED_20261106.md) · [集中执行顺序](DELIVERY66_HANDOFF.md)。
+
+当前r5即时日志已记录4个新问题事件；下一批3文件修正显式绑定实际source／installed包，保留ASCII对抗管道、原锁等待／清理门槛和全部断言，并补音频AppError导入。当前冻结仍完整保留，候选未应用／执行，待r5终态后一次补齐所有发现。[新批完整说明及证据](DELIVERY66_R6_CANDIDATE.md)。

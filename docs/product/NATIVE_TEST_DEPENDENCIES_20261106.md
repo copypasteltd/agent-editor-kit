@@ -20,3 +20,5 @@
 [当前集中核验](../validation/evidence/delivery66-handoff-20261106-r1/correction-batch-review-r1/verification.json) · [应用隔离profile](../validation/evidence/delivery66-20261106-r1/source-all-r5/native-isolated-dependencies.json) · [bare-worker profile](../validation/evidence/delivery66-20261106-r1/source-all-r5/native-bare-worker-dependencies.json) · [实际依赖总清单](../validation/evidence/delivery66-20261106-r1/source-all-r5/native-dependencies.json) · [31项终态](../validation/evidence/delivery66-handoff-20261106-r1/contracts-r4/verification.json)。
 
 原r4已完成4,114项，10失败／15错误／0跳过，记录永久保留。[原结果及归因置信边界](DELIVERY66_R4_RESULTS.md) · [20文件范围](DELIVERY66_R5_CANDIDATE.md) · [完整未完成内容](UNFINISHED_20261106.md) · [后续执行顺序](DELIVERY66_HANDOFF.md)。G01—G38仍保留原关闭条件。
+
+当前r5即时日志已记录4个新问题事件；下一批3文件修正显式绑定实际source／installed包，保留ASCII对抗管道、原锁等待／清理门槛和全部断言，并补音频AppError导入。当前冻结仍完整保留，候选未应用／执行，待r5终态后一次补齐所有发现。[新批完整说明及证据](DELIVERY66_R6_CANDIDATE.md)。

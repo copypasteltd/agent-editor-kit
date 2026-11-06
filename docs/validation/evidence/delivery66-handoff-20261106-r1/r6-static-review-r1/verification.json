@@ -1,0 +1,25 @@
+{
+  "status": "passed-static-only",
+  "observed_at_utc": "2026-11-06T03:30:55.632292+00:00",
+  "candidate_code_files": 3,
+  "candidate_code_syntax_valid": true,
+  "changed_existing_test_methods": [
+    "test_project_write_lock_rejects_competing_mutation_and_releases",
+    "test_queue_cancel_acknowledges_while_project_lock_is_held",
+    "test_cli_unicode_paths_and_progress_use_utf8_pipes"
+  ],
+  "other_original_cli_test_method_ASTs_unchanged": 121,
+  "product_module_AST_change": "only missing AppError import",
+  "local_document_links_checked": 86,
+  "broken_links": [],
+  "original_goal_bytes_unchanged": true,
+  "source_product_files_unchanged": 546,
+  "source_tools_unchanged": 7,
+  "formal_files_unchanged": 95,
+  "candidate_applied": false,
+  "candidate_functions_executed": false,
+  "new_product_tests_executed": 0,
+  "formal_activation": false,
+  "release_created": false,
+  "full_product_goal_closed": false
+}

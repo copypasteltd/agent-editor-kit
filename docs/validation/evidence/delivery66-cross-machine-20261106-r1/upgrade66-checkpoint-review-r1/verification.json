@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "observed_at_utc": "2026-11-06T07:49:02.876158+00:00",
+  "source_tests": 4124,
+  "source_failures": 0,
+  "source_errors": 0,
+  "source_skipped": 0,
+  "source_exit_code": 0,
+  "candidate_installed": true,
+  "application_modules_equal": 289,
+  "installed_accepted": false,
+  "installed_suite": "r6-running",
+  "frozen": {
+    "file_hashes": {
+      "files": 546,
+      "changed": []
+    },
+    "formal_guard": {
+      "files": 95,
+      "changed": []
+    },
+    "delivery_tool_files": {
+      "files": 8,
+      "changed": []
+    },
+    "packaging_source_files": {
+      "files": 69,
+      "changed": []
+    }
+  },
+  "operational_code_files": 5,
+  "complete_batch_frozen": true,
+  "static_review_passed": true,
+  "readme_history": {
+    "README.md": {
+      "historical_rows": 691,
+      "unchanged": true,
+      "added": "R602"
+    },
+    "README.zh-TW.md": {
+      "historical_rows": 691,
+      "unchanged": true,
+      "added": "R602"
+    },
+    "README.en.md": {
+      "historical_rows": 691,
+      "unchanged": true,
+      "added": "R602"
+    }
+  },
+  "links_checked": 17,
+  "remote_contacted": false,
+  "application_tests_executed": 0,
+  "model_forwards": 0,
+  "formal_cli": "0.1.63",
+  "formal_activation": false,
+  "release_created": false,
+  "full_goal_closed": false
+}

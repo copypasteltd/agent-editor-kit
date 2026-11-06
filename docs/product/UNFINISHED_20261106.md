@@ -6,6 +6,8 @@
 
 **历史快照说明：** 下文标注“早前”“原r4／r5”及启动时的观察均按原日期保留；当前状态以最新终态、版本表与B／C／G表为准。
 
+**66跨机器后续批次：** 五脚本已完整写齐并冻结；原生PowerShell语法与传输长度静态检查通过。尚未联系第二台或执行新功能验证，须先通过本机安装整套及66工具包实装；计划以原注册器及显式受管联接迁移验证63→66→63→66，不冒充通用delivery控制器。[完整流程](CROSS_MACHINE66_UPGRADE.md)。
+
 **最新跨机器进展：正式CLI63已在第二台原生Windows实际离线安装、中文空格路径和单Skill隔离注册，完整60帧RGBA／非静音PCM、视频时钟及母素材摘要与本机一致，原r58清单160文件未改。** 这是66升级／回滚的旧版CPU基线，仍缺66安装／GPU／升级回滚及干净主机。原r5五项在当前仍运行的r6中均已实际为ok，属于原4124项子集，不新增计数。[完整操作与边界](CROSS_MACHINE63_BASELINE.md) · [第二台真实终态](../validation/evidence/delivery66-cross-machine-20261106-r1/baseline-remote-r2/verification.json)。
 
 **早前只读复核：2026-11-06 12:34（Asia/Taipei）。** 已通过实际发现的C盘Skill入口执行`version`，确认正式安装仍为CLI0.1.63；r5监督及子进程的创建时间、映像均核实存活，尚无终态。当前问题日志快照为4个failure、1个error，不能据此推断其余用例全部通过。9文件候选摘要与清单一致，原546产品／用例／依赖、7交付工具、95正式文件全部保持原冻结字节。本次没有运行新功能测试、推理或切换正式安装。[本次复核收据](../validation/evidence/status-review-20261106-r2/review-r1/verification.json) · [实际入口版本](../validation/evidence/status-review-20261106-r2/review-r1/formal-skill-version.json) · [完整进程观察](../validation/evidence/status-review-20261106-r2/review-r1/regression-status.json)。

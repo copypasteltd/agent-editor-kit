@@ -1,0 +1,48 @@
+{
+  "status": "read-only-existing-publishing-identity-check",
+  "observed_at_utc": "2026-11-06T00:26:29.722956+00:00",
+  "requests": [
+    {
+      "credential_source": "existing-native-gh-store",
+      "target": "gh:github.com:",
+      "method": "GET",
+      "endpoint": "https://api.github.com/repos/copypasteltd/agent-editor-kit",
+      "status": "repository-access-read",
+      "http_status": 200,
+      "repository": "copypasteltd/agent-editor-kit",
+      "permissions": {
+        "admin": true,
+        "maintain": true,
+        "push": true,
+        "triage": true,
+        "pull": true
+      },
+      "oauth_scopes": "gist, read:org, repo"
+    },
+    {
+      "credential_source": "existing-native-gh-store",
+      "target": "gh:github.com:Tonscriptions",
+      "method": "GET",
+      "endpoint": "https://api.github.com/repos/copypasteltd/agent-editor-kit",
+      "status": "repository-access-read",
+      "http_status": 200,
+      "repository": "copypasteltd/agent-editor-kit",
+      "permissions": {
+        "admin": true,
+        "maintain": true,
+        "push": true,
+        "triage": true,
+        "pull": true
+      },
+      "oauth_scopes": "gist, read:org, repo"
+    }
+  ],
+  "browser_control_attempts": 2,
+  "browser_control_status": "native-pipe-unavailable",
+  "browser_tabs_opened": 0,
+  "mutating_remote_operations": 0,
+  "credential_values_persisted": false,
+  "credentials_modified": false,
+  "source_cli": "0.1.66",
+  "formal_cli": "0.1.63"
+}

@@ -33,6 +33,18 @@
       "base_sha256": "5653e4a8a06efe8eb6c96dd54eb6dbe3672b11f1d0a0789ac9abbb2d88ff623f",
       "candidate_sha256": "2f827615f17e1b7188b97e11ee968b8769bb827394abcff6250e70eab78773a5",
       "bytes": 22828
+    },
+    {
+      "path": "docs/validation/publish_delivery66.py",
+      "base_sha256": "7a8a772ad27ef513cfede56cfbaacb5ed66cd7c989e073a99ac0bbefe2838288",
+      "candidate_sha256": "44ae4313db07280e3d42f9d5d717c3ae8e3be6b1efaa983cdcda665230575fef",
+      "bytes": 16442
+    },
+    {
+      "path": "docs/validation/test_delivery66_handoff.py",
+      "base_sha256": "67aca9303fa283bdd2186906a441fbd1378a62e98dbd069fd984b864dc90ee5a",
+      "candidate_sha256": "d11a36bffbe925ecf53ffe83dfbb6e4161c4439b4b44c2bff44cb4701354d8ba",
+      "bytes": 12170
     }
   ],
   "original_product_and_tests_modified": false,
@@ -45,7 +57,12 @@
     "Update three exact effect catalog expectations to documented 0.11.0 / 51; retain numeric-channel and pixel assertions.",
     "Validate progress phase type before set membership; reject non-object JSON; forward only approved fields.",
     "Return bounded unavailable diagnostics for nonordinary/inaccessible progress instead of masking business failures.",
-    "Five meaningful real-file contract methods cover malformed progress, field injection, primitive JSON, nonordinary paths and unprepared sessions; no model mock claimed as inference."
+    "Five meaningful real-file contract methods cover malformed progress, field injection, primitive JSON, nonordinary paths and unprepared sessions; no model mock claimed as inference.",
+    "Read the existing native Windows default gh credential after explicit environment tokens and before the legacy Git helper; do not store secrets or authenticate through UI.",
+    "Six unexecuted handoff methods cover explicit precedence, native gh/legacy fallback, UTF8/UTF16 secret formats, malformed/oversized secret silence and validation without credential reads or publishing.",
+    "Two existing native gh credentials returned official repository GET 200 and write/admin permission metadata; this read-only preflight is not execution of the candidate functions or release publication."
   ],
-  "next_step": "Wait for authoritative r4 terminal output, incorporate every additional failure, then complete and apply the whole correction batch before any regression."
+  "next_step": "Wait for authoritative r4 terminal output, incorporate every additional failure, then complete and apply the whole correction batch before any regression.",
+  "new_product_test_methods_written": 5,
+  "new_handoff_test_methods_written": 6
 }

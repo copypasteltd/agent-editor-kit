@@ -10,16 +10,22 @@ from .native_process_job import NativeProcessJob
 from .native_audio_clock import cancel
 from .utils import atomic_write_json,run_process,sha256_file
 from .pipeline_diagnostics import Session,_limited_json,SUMMARY_LIMIT
+from .errors import AppError
 
 
 class AudioDiagnosticSession(Session):
     def read_progress(self):
-        value,metadata=_limited_json(self.prepared_directory,'progress.json',SUMMARY_LIMIT)
-        if not isinstance(value,dict):return metadata
+        if self.prepared_directory is None:return dict(state='not_prepared')
+        try:
+            value,metadata=_limited_json(self.prepared_directory,'progress.json',SUMMARY_LIMIT)
+        except (OSError,AppError) as exc:
+            return dict(state='unavailable',code=getattr(exc,'code','DIAGNOSTIC_PROGRESS_UNAVAILABLE'))
+        if not isinstance(value,dict):
+            return metadata if metadata.get('state')!='read' else dict(state='invalid_audio_progress')
         phase=value.get('phase');done=value.get('done');total=value.get('total');pid=value.get('worker_pid')
         phases={'indexing-native-audio-clock','decoding-native-clock','resampling-to-model-clock','loading-fixed-deepfilternet3',
             'neural-enhancement','resampling-to-native-clock','encoding-lossless-native-audio'}
-        if (phase not in phases or type(done)is not int or type(total)is not int or not 0<=done<=total<=65536
+        if (type(phase)is not str or phase not in phases or type(done)is not int or type(total)is not int or not 0<=done<=total<=65536
                 or total<1 or type(pid)is not int or pid<1):return dict(state='invalid_audio_progress')
         return dict(state='read',phase=phase,segments_done=done,segments_total=total,worker_pid=pid)
 

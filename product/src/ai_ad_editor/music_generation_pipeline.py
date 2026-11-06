@@ -9,6 +9,7 @@ import time
 
 from .artifact_locks import artifact_entry
 from .enhancement_pipeline import workspace_bytes
+from .errors import AppError
 from .lipsync_plan import digest
 from .local_music_generation import PROTOCOL, error, prepare_request, recipe, verify_adapter
 from .media import ffmpeg_path, ffprobe_path, probe_media
@@ -31,14 +32,21 @@ class MusicDiagnosticSession(Session):
             self.literals = (*self.literals, lyrics)
 
     def read_progress(self):
-        value, metadata = _limited_json(self.prepared_directory, 'progress.json', SUMMARY_LIMIT)
+        if self.prepared_directory is None:
+            return dict(state='not_prepared')
+        try:
+            value, metadata = _limited_json(self.prepared_directory, 'progress.json', SUMMARY_LIMIT)
+        except (OSError, AppError) as exc:
+            return dict(state='unavailable', code=getattr(exc, 'code', 'DIAGNOSTIC_PROGRESS_UNAVAILABLE'))
         if not isinstance(value, dict):
-            return metadata
-        if (value.get('phase') not in PHASES or type(value.get('done')) is not int or type(value.get('total')) is not int
+            return metadata if metadata.get('state') != 'read' else dict(state='invalid_music_progress')
+        if (type(value.get('phase')) is not str or value['phase'] not in PHASES
+                or type(value.get('done')) is not int or type(value.get('total')) is not int
                 or not 0 <= value['done'] <= value['total'] <= 65536 or value['total'] < 1
                 or type(value.get('worker_pid')) is not int or value['worker_pid'] < 1):
             return dict(state='invalid_music_progress')
-        return dict(state='read', **value)
+        # Worker progress is untrusted diagnostic input, never public response fields.
+        return dict(state='read', **{key: value[key] for key in ('phase', 'done', 'total', 'worker_pid')})
 
 
 def validate_response(response, request):

@@ -7,7 +7,6 @@ author-clock integration are specific to agent editor kit.
 """
 from __future__ import annotations
 import math
-import numpy as np
 from .errors import AppError
 
 PROTOCOL = 'linear-premultiplied-float32-transitions-v1'
@@ -44,6 +43,7 @@ def resolve(config):
 
 
 def smooth(e0, e1, x):
+    import numpy as np
     t = np.clip((x - e0) / (e1 - e0), 0., 1.)
     return t * t * (3. - 2. * t)
 
@@ -51,12 +51,14 @@ def smooth(e0, e1, x):
 def noise(x, y):
     # Pinned FFmpeg formula, evaluated explicitly in binary32. Its sinf is
     # platform dependent; no cross-libm / integer-xfade bit parity is claimed.
+    import numpy as np
     r = np.sin(np.asarray(x, np.float32) * np.float32(12.9898)
                + np.asarray(y, np.float32) * np.float32(78.233)) * np.float32(43758.545)
     return (r - np.floor(r)).astype(np.float64)
 
 
 def premultiply(value):
+    import numpy as np
     value = value.astype(np.float64)
     value[:, :3] *= value[:, 3:4]
     return value
@@ -68,6 +70,7 @@ def mix(a, b, weight):
 
 def _matte(like, rgba):
     """Generated mattes carry no source provenance in private trace lanes."""
+    import numpy as np
     value = np.zeros(like.shape[-1], np.float64)
     value[:4] = rgba
     return value
@@ -75,7 +78,9 @@ def _matte(like, rgba):
 
 def _tile(kind, a, b, x, y, w, h, p, cut_fraction, fetch, progress):
     """Return premultiplied binary64 samples. p is outgoing coverage."""
+    import numpy as np
     def weighted(weight):
+        import numpy as np
         return mix(a, b, np.asarray(weight).reshape(-1, 1))
     if kind == 'fade':
         return weighted(p)
@@ -191,6 +196,7 @@ def transition_rgba(outgoing, incoming, progress, *, config=None, kind='fade', c
     require visible RGB 0..1; other patterns retain finite extended RGB.
     The memory quota is an allocation estimate, not total process RSS.
     """
+    import numpy as np
     kind = resolve(config if config is not None else {'type': kind})
     if cancel is not None and not callable(cancel):
         raise error('ARGUMENT', '取消回调无效')
@@ -241,6 +247,7 @@ def transition_rgba(outgoing, incoming, progress, *, config=None, kind='fade', c
         return premultiply(flat[which][y*w+x])
     blur_row = None
     def forward_blur(row, size):
+        import numpy as np
         values = premultiply(row)
         sums = np.empty((w+1, 4), np.float64)
         sums[0] = 0.

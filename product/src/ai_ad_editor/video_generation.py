@@ -14,8 +14,6 @@ import json
 from pathlib import Path
 import time
 
-import numpy as np
-from PIL import Image, ImageOps
 
 from .errors import AppError, argument_error
 from .local_vace import normalize_generation, buffer_budget
@@ -70,6 +68,7 @@ def configuration(*, mode, width, height, frames, fps, image_fit, sampling, stor
 
 
 def image_reference(root, asset):
+    from PIL import Image
     if not asset or asset.get('kind') != 'image':
         raise argument_error('首尾帧须为已登记的本地image资产', 'first-asset-id/last-asset-id')
     path = resolve_local_path(root, asset['uri'], field='generation.image')
@@ -93,6 +92,8 @@ def image_reference(root, asset):
 
 
 def prepared_image(path, config):
+    import numpy as np
+    from PIL import Image, ImageOps
     with Image.open(path) as opened:
         image = ImageOps.exif_transpose(opened).convert('RGBA')
         # Transparent input is explicitly flattened on black. Generated video
@@ -110,6 +111,7 @@ def prepared_image(path, config):
 
 
 def condition_frame(index, config, endpoints):
+    import numpy as np
     width, height = config['width'], config['height']
     image = endpoints.get('first') if index == 0 else endpoints.get('last') if index == config['frames'] - 1 else None
     known = image is not None

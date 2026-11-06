@@ -9,7 +9,6 @@ import math
 import re
 import struct
 
-import numpy as np
 
 from .errors import AppError
 
@@ -140,6 +139,7 @@ def uniform(seed, emitter, particle):
 
 
 def _linear(hex_color):
+    import numpy as np
     value = np.array([int(hex_color[i:i+2], 16) / 255 for i in (1, 3, 5)], np.float32)
     return np.where(value <= .04045, value / np.float32(12.92),
                     ((value + np.float32(.055)) / np.float32(1.055))**np.float32(2.4))
@@ -155,6 +155,7 @@ def bounds(row, width, height):
 
 def tile_index(scene, size, *, cancel=None):
     """CSR tile lists retain emitter/birth order, with a finite kernel budget."""
+    import numpy as np
     poll = cancel or (lambda: None); w, h = size
     cols, rows = math.ceil(w/TILE), math.ceil(h/TILE)
     bins = [[] for _ in range(cols*rows)]; visits = 0
@@ -174,6 +175,7 @@ def tile_index(scene, size, *, cancel=None):
 
 
 def validate_scene(scene, tiles, size):
+    import numpy as np
     if (not isinstance(scene, np.ndarray) or scene.dtype != np.float32 or not scene.flags.c_contiguous
             or scene.ndim != 2 or scene.shape[1] != 13 or not 1 <= len(scene) <= MAX_ACTIVE
             or not np.isfinite(scene).all() or np.max(np.abs(scene)) > 1e9
@@ -213,6 +215,7 @@ class ParticleSource:
         return max(0, min(self.frames - 1, index))
 
     def scene(self, frame):
+        import numpy as np
         if type(frame) is not int or not 0 <= frame < self.frames:
             raise fail('FRAME', '粒子源帧索引越界')
         self.poll(); at = Fraction(frame, 1) / self.fps; particles = []
@@ -256,6 +259,7 @@ class ParticleSource:
         return np.asarray(particles, np.float32).reshape(-1, 13)
 
     def frame(self, index, *, gpu=None, max_working_bytes=768*1024**2):
+        import numpy as np
         self.poll()
         if type(max_working_bytes) is not int or max_working_bytes <= 0:
             raise fail('BUDGET', '粒子工作区配额必须为正整数字节')

@@ -1,0 +1,22 @@
+{
+  "supervisor": {
+    "pid": 35736,
+    "creation_filetime": 134384152183786341,
+    "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+  },
+  "spawned_at_utc": "2026-11-06T05:06:58.397914+00:00",
+  "command": [
+    "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+    "-E",
+    "-B",
+    "-u",
+    "-X",
+    "utf8",
+    "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\run_delivery66_native.py",
+    "supervise",
+    "--run",
+    "r6",
+    "--freeze-run",
+    "r6"
+  ]
+}

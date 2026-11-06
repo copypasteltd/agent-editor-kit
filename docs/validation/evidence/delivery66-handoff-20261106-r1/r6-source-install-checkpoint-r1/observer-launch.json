@@ -1,0 +1,23 @@
+{
+  "created_at_utc": "2026-11-06T07:04:29.613945+00:00",
+  "observer_sha256": "35c0d933e0468b22d6ae47231000653914792c7897ef35fe5e5e053a474b1b2a",
+  "native_sha256": "453a3e9744aba4d0a2584e7ee9437042ea10086a04627d06104c806dbd700801",
+  "round_sha256": "e568f908ce008b674676e42c91c02656ec238f434ab815cd118b31daa8da462e",
+  "source_supervisor": {
+    "pid": 35736,
+    "creation_filetime": 134384152183786341,
+    "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+  },
+  "source_child": {
+    "pid": 38592,
+    "creation_filetime": 134384152185639172,
+    "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+  },
+  "commands_after_full_source_pass": [
+    "build66-r1",
+    "start-installed-whole-r6"
+  ],
+  "source_or_installed_test_restart": false,
+  "formal_activation": false,
+  "release_created": false
+}

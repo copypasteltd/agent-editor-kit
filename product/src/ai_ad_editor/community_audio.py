@@ -6,7 +6,6 @@ import wave
 from pathlib import Path
 from typing import Any
 
-import numpy as np
 
 from .errors import AppError, argument_error
 from .material_project import commit_asset, new_asset_id
@@ -50,6 +49,7 @@ def output_path(root: Path, output: str | None, aid: str) -> Path:
 
 
 def pcm_stats(path: Path) -> dict[str, Any]:
+    import numpy as np
     with wave.open(str(path), 'rb') as wav:
         assert wav.getsampwidth() == 2
         channels, rate, frames = wav.getnchannels(), wav.getframerate(), wav.getnframes()

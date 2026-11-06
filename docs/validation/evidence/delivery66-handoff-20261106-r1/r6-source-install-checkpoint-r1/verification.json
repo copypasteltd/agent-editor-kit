@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "observed_at_utc": "2026-11-06T07:17:35.685051+00:00",
+  "source_cli": "0.1.66",
+  "source_tests": 4124,
+  "source_failures": 0,
+  "source_errors": 0,
+  "source_skipped": 0,
+  "source_exit_code": 0,
+  "source_result_sha256": "82013fc30ff00613060d8dc0a23663e9b94d28dcd4413b2a5262f970f4ed52d3",
+  "original_source_processes_exited": true,
+  "original_assertions_preserved": true,
+  "candidate_cli": "0.1.66",
+  "candidate_installed": true,
+  "application_modules_equal": 289,
+  "archive_sha256": "36b2970f92d24393e6ae6b77636f43b89bea6c3a201aaa164889148feb2d0786",
+  "manifest_sha256": "sha256:1da7f0a678ea678f49af6d9b847dfd8912b11ede04aad22f8d87ee247ee1117a",
+  "installed_whole_suite": "running",
+  "installed_accepted": false,
+  "installed_actual_processes_live": {
+    "supervisor": true,
+    "child": true
+  },
+  "formal_cli": "0.1.63",
+  "formal_activation": false,
+  "release_created": false,
+  "full_goal_closed": false,
+  "frozen": {
+    "file_hashes": {
+      "files": 546,
+      "changed": []
+    },
+    "formal_guard": {
+      "files": 95,
+      "changed": []
+    },
+    "delivery_tool_files": {
+      "files": 8,
+      "changed": []
+    },
+    "packaging_source_files": {
+      "files": 69,
+      "changed": []
+    }
+  },
+  "canonical_code_files": 23,
+  "readme_history": {
+    "README.md": {
+      "previous_rows": 689,
+      "unchanged": true,
+      "added": "R600"
+    },
+    "README.zh-TW.md": {
+      "previous_rows": 689,
+      "unchanged": true,
+      "added": "R600"
+    },
+    "README.en.md": {
+      "previous_rows": 689,
+      "unchanged": true,
+      "added": "R600"
+    }
+  },
+  "original_goal_sha256": "36347a3c5599ec4e4850b13c6cd98f726847f4142f96863fadf6f26b4f27e755",
+  "new_model_forwards": 0,
+  "human_listening": false,
+  "natural_quality_accepted": false,
+  "virtualization": false
+}

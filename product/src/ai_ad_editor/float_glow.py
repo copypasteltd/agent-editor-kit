@@ -6,7 +6,6 @@ image highlights; they do not claim a physical lens or film-stock simulation.
 from dataclasses import dataclass
 import math
 
-import numpy as np
 
 from .errors import AppError
 from .float_color_signal import ColorSignal, _rgb_to_xyz
@@ -121,6 +120,7 @@ def admit_neighborhood(pixels, radius):
 
 
 def highlight(values, v, coefficients):
+    import numpy as np
     rgb = np.maximum(values[:, :3].astype(np.float64), 0.)
     luminance = (rgb[:, 0] * coefficients[0] + rgb[:, 1] * coefficients[1]) + rgb[:, 2] * coefficients[2]
     contribution = np.maximum(luminance - v['threshold'], 0.)
@@ -133,6 +133,7 @@ def highlight(values, v, coefficients):
 
 
 def _blur_axis(source, weights, norm, axis, edge, tile, poll):
+    import numpy as np
     h, w = source.shape[:2]
     flat = source.reshape(-1, 4)
     output = np.empty_like(source)
@@ -156,6 +157,7 @@ def _blur_axis(source, weights, norm, axis, edge, tile, poll):
 
 def apply_glow(surface, plan, author_tick, *, working_signal, retained_table_bytes=0,
                max_working_bytes=MAX_WORKING_BYTES, tile_pixels=16384, cancel=None, gpu=None):
+    import numpy as np
     if cancel is not None and not callable(cancel):
         raise error('ARGUMENT', '取消回调须可调用')
     def poll():

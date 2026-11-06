@@ -102,7 +102,7 @@ class SelectiveCase(unittest.TestCase):
 class SelectiveContractTests(SelectiveCase):
     def test_discovery_separates_real_hsl_kernel_from_native_command_channels(self):
         item=get_effect('selective_hsl');self.assertEqual(len(item['keyframe_parameters']),25)
-        self.assertEqual(effect_catalog()['count'],46);self.assertEqual(effect_catalog()['catalog_version'],'0.9.0')
+        self.assertEqual(effect_catalog()['count'],51);self.assertEqual(effect_catalog()['catalog_version'],'0.11.0')
         manifest=build_capability_manifest()['capabilities']['effects'];self.assertEqual(manifest['selective_hsl']['numeric_channels'],25)
         self.assertEqual(manifest['numeric_effect_automation']['numeric_channels'],34)
         self.assertEqual(len(manifest['numeric_effect_automation']['effects']),10)

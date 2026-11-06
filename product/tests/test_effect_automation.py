@@ -54,7 +54,7 @@ class EffectAutomationContractTests(EffectAutomationCase):
         self.assertEqual(sum(len(get_effect(n)['keyframe_parameters']) for n in names), 19)
         self.assertTrue(all(get_effect(n)['keyframable'] for n in names))
         self.assertNotIn('preserve_luma', get_effect('color_wheel')['keyframe_parameters'])
-        self.assertEqual(effect_catalog()['catalog_version'], '0.9.0')
+        self.assertEqual(effect_catalog()['catalog_version'], '0.11.0')
         self.assertTrue(get_effect('rgb_curves')['keyframable'])
 
     def test_alias_prefix_and_top_level_precedence(self):

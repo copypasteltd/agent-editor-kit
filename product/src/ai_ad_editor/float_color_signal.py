@@ -15,7 +15,6 @@ OETF constants, including their small discontinuity, not a hidden 'gamma'.
 """
 from __future__ import annotations
 from dataclasses import dataclass
-import numpy as np
 from .errors import AppError
 
 PROTOCOL='explicit-D65-relative-RGB-float32-v1'
@@ -44,6 +43,7 @@ class ColorSignal:
             raise error('SIGNAL','须明确选择相对RGB传递解释；禁止由色彩标签猜测')
 
 def _rgb_to_xyz(primaries,white_xy=None):
+    import numpy as np
     from .float_chromatic import white_for_primaries,xyz_white
     coordinates=np.array(PRIMARIES[primaries],dtype=np.float64)
     x,y=coordinates[:,0],coordinates[:,1]
@@ -53,6 +53,7 @@ def _rgb_to_xyz(primaries,white_xy=None):
     return columns*scales
 
 def _to_linear(values,transfer):
+    import numpy as np
     if transfer=='linear':return values
     absolute=np.abs(values);sign=np.sign(values)
     if transfer=='srgb':
@@ -64,6 +65,7 @@ def _to_linear(values,transfer):
     return sign*absolute**(2.2 if transfer=='gamma22' else 2.4)
 
 def _from_linear(values,transfer):
+    import numpy as np
     if transfer=='linear':return values
     absolute=np.abs(values);sign=np.sign(values)
     if transfer=='srgb':
@@ -83,6 +85,7 @@ def convert_rgba(source,source_signal,target_signal,*,tile_pixels=65536,
     negative or above one. Relative white is 1; matching physical white/nits is
     a caller contract and is not inferred or managed here.
     """
+    import numpy as np
     if not isinstance(source_signal,ColorSignal) or not isinstance(target_signal,ColorSignal):
         raise error('SIGNAL','输入与输出必须提供明确ColorSignal')
     from .float_hdr import HDR_TRANSFERS, has_luminance, to_linear, from_linear, domain

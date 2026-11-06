@@ -3,7 +3,6 @@ from dataclasses import dataclass
 import json
 import math
 
-import numpy as np
 
 from .errors import AppError
 from .float_color_signal import ColorSignal
@@ -83,6 +82,7 @@ def validate_optics(effect,*,duration_tick=None):
 
 def _sample_channel(source,x,y,channel,edge):
     """Bilinear premultiplied channel/coverage; hidden RGB contributes nothing."""
+    import numpy as np
     h,w=source.shape[:2]
     if edge=='clamp':x=np.clip(x,0,w-1);y=np.clip(y,0,h-1)
     else:x=np.clip(x,-2,w+1);y=np.clip(y,-2,h+1)
@@ -99,6 +99,7 @@ def _sample_channel(source,x,y,channel,edge):
     return color
 
 def cpu_tile(source,start,stop,kind,v,ghosts,edge):
+    import numpy as np
     h,w=source.shape[:2];index=np.arange(start,stop,dtype=np.int64)
     xx=index%w;yy=index//w;short=min(w,h)
     dx=(xx+.5-v['x']*w)/short;dy=(yy+.5-v['y']*h)/short
@@ -134,6 +135,7 @@ def cpu_tile(source,start,stop,kind,v,ghosts,edge):
 
 def apply_optics(surface,plan,author_tick,*,working_signal,retained_table_bytes=0,
                  max_working_bytes=MAX_WORKING_BYTES,tile_pixels=16384,cancel=None,gpu=None):
+    import numpy as np
     if cancel is not None and not callable(cancel):raise error('ARGUMENT','取消回调须可调用')
     def poll():
         if cancel and cancel():raise AppError('RENDER_CANCELLED','光学效果已取消',exit_code=6)

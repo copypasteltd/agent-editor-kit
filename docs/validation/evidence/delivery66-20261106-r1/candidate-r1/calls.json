@@ -1,0 +1,79 @@
+[
+  {
+    "name": "wheel",
+    "argv": [
+      "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+      "-I",
+      "-B",
+      "-m",
+      "pip",
+      "wheel",
+      "--no-index",
+      "--no-deps",
+      "--no-build-isolation",
+      "--wheel-dir",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\candidate-r1\\product-wheel",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 73.68414180000036
+  },
+  {
+    "name": "bundle",
+    "argv": [
+      "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\offline\\build.py",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\candidate-r1\\bundle",
+      "--product-wheel",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\candidate-r1\\product-wheel\\ai_ad_editor-0.1.66-py3-none-win_amd64.whl",
+      "--product-wheel-sha256",
+      "sha256:2259c73e5ff3cf734eabc91b8e0afc8a8b513b49930fb6e065dfbc3be6525b5e"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 33.58856690000175
+  },
+  {
+    "name": "install",
+    "argv": [
+      "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\candidate-r1\\bundle\\install.py",
+      "--bundle",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\candidate-r1\\bundle",
+      "--target",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\candidate-r1\\installed",
+      "--manifest-sha256",
+      "sha256:1da7f0a678ea678f49af6d9b847dfd8912b11ede04aad22f8d87ee247ee1117a",
+      "--timeout-seconds",
+      "600"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 18.392182200001116
+  },
+  {
+    "name": "version",
+    "argv": [
+      "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\candidate-r1\\installed\\run.py",
+      "version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 3.0261270999981207
+  }
+]

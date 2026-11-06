@@ -113,8 +113,8 @@ class SpatialCase(unittest.TestCase):
 
 class SpatialContractTests(SpatialCase):
     def test_catalog_and_manifest_advertise_exactly_fourteen_new_channels(self):
-        self.assertEqual(effect_catalog()['count'],46)
-        self.assertEqual(effect_catalog()['catalog_version'],'0.9.0')
+        self.assertEqual(effect_catalog()['count'],51)
+        self.assertEqual(effect_catalog()['catalog_version'],'0.11.0')
         for kind,props in CHANNELS.items():self.assertEqual(set(get_effect(kind)['keyframe_parameters']),set(props))
         manifest=build_capability_manifest()['capabilities']['effects']
         self.assertEqual(manifest['numeric_effect_automation']['numeric_channels'],34)

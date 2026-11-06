@@ -13,6 +13,7 @@ import unittest
 import wave
 from pathlib import Path
 from unittest.mock import patch
+from package_under_test import utf8_script_command
 
 from ai_ad_editor.cli import main
 from ai_ad_editor.errors import AppError
@@ -299,7 +300,7 @@ class LocalTtsTests(unittest.TestCase):
 
     def test_python_network_guard_blocks_connection_before_network_io(self) -> None:
         script = "from ai_ad_editor.soulx_worker import install_network_guard; import socket; events=[]; install_network_guard(events)\ntry:\n socket.create_connection(('127.0.0.1',9),timeout=0.1)\nexcept RuntimeError as e:\n print(str(e)); print(events)\nelse:\n raise SystemExit(3)"
-        result = subprocess.run([sys.executable, "-X", "utf8", "-c", script], capture_output=True, text=True)
+        result = subprocess.run(utf8_script_command(script), capture_output=True, text=True, encoding="utf-8")
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("TTS_NETWORK_DISABLED", result.stdout)
         self.assertIn("socket.getaddrinfo", result.stdout)

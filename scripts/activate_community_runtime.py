@@ -32,18 +32,24 @@ def write_json(path, value):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--installed', type=Path, required=True)
-    parser.add_argument('--packs', type=Path, required=True)
+    mode = parser.add_mutually_exclusive_group(required=True)
+    mode.add_argument('--packs', type=Path)
+    mode.add_argument('--base-only', action='store_true',
+                      help='configure basic editing without voice, translation or semantic model bindings')
     parser.add_argument('--voice-cuda-lib', type=Path)
     parser.add_argument('--translation-cuda-lib', type=Path)
     parser.add_argument('--semantic-config', type=Path, help='existing local semantic-model profile; preserve a prior profile when omitted')
     parser.add_argument('--verify-timeout-seconds', type=int, default=600,
                         help='per-model-pack integrity verification deadline, 1..3600 seconds (default600)')
     args = parser.parse_args()
+    if args.base_only and any((args.voice_cuda_lib, args.translation_cuda_lib, args.semantic_config)):
+        parser.error('--base-only cannot be combined with model or CUDA profile arguments')
     if not 1 <= args.verify_timeout_seconds <= 3600:
         parser.error('--verify-timeout-seconds must be within1..3600')
     if sys.platform != 'win32' or sys.version_info[:2] != (3, 13) or sys.prefix != sys.base_prefix or platform.machine().lower() not in {'amd64', 'x86_64'}:
         raise ValueError('Use native Windows CPython 3.13 x64')
-    installed, packs = args.installed.resolve(strict=True), args.packs.resolve(strict=True)
+    installed = args.installed.resolve(strict=True)
+    packs = args.packs.resolve(strict=True) if args.packs is not None else None
     manifest = json.loads((ROOT / 'agent-ffmpeg-local-install-manifest.json').read_bytes())
     receipt = json.loads((installed / 'receipt.json').read_bytes())
     if receipt['manifest_sha256'] != manifest['manifest_sha256']:
@@ -57,7 +63,8 @@ def main():
     evidence.mkdir(parents=True, exist_ok=False)
     prefix = [sys.executable, '-I', '-S', '-B', '-u', '-X', 'utf8', str(installed / 'run.py')]
     verified = []
-    for ident in ('kokoro-zh-en-int8', 'opus-zh-en-cpu-int8', 'kokoro-zh-en-cuda13', 'opus-zh-en-cuda12-int8'):
+    identifiers = () if args.base_only else ('kokoro-zh-en-int8', 'opus-zh-en-cpu-int8', 'kokoro-zh-en-cuda13', 'opus-zh-en-cuda12-int8')
+    for ident in identifiers:
         pack = packs / ident
         if not pack.is_dir() and ident in {'kokoro-zh-en-cuda13', 'opus-zh-en-cuda12-int8'}:
             continue
@@ -81,9 +88,9 @@ def main():
             raise ValueError('Model verification failed; earlier runtime configuration is preserved')
         verified.append(ident)
     config = {}
-    for task, cpu, gpu, library in [
+    for task, cpu, gpu, library in ([] if args.base_only else [
         ('voice', 'kokoro-zh-en-int8', 'kokoro-zh-en-cuda13', args.voice_cuda_lib),
-        ('translation', 'opus-zh-en-cpu-int8', 'opus-zh-en-cuda12-int8', args.translation_cuda_lib)]:
+        ('translation', 'opus-zh-en-cpu-int8', 'opus-zh-en-cuda12-int8', args.translation_cuda_lib)]):
         config[task] = dict(cpu_pack=str(packs / cpu))
         if gpu in verified:
             config[task]['gpu_pack'] = str(packs / gpu)
@@ -95,7 +102,7 @@ def main():
     directory = ROOT / 'local/agent-ffmpeg'
     runtime_path, community_path = directory / 'runtime.json', directory / 'community-runtime.json'
     semantic_config = args.semantic_config
-    if semantic_config is None and runtime_path.exists():
+    if semantic_config is None and runtime_path.exists() and not args.base_only:
         previous_runtime = json.loads(runtime_path.read_bytes())
         if previous_runtime.get('semantic_config'):
             semantic_config = Path(previous_runtime['semantic_config'])
@@ -121,6 +128,9 @@ def main():
     report = dict(status='configured', release=runtime['release'], installed=str(installed),
                   community_config=str(community_path), verified_packs=verified, previous_config_preserved=True,
                   native_windows=True, network=False, virtual_environment=False, evidence=str(evidence))
+    report['configuration_mode'] = 'base-only' if args.base_only else 'models'
+    report['model_configuration_requested'] = not args.base_only
+    report['model_verification_performed'] = bool(verified)
     report['semantic_config'] = str(semantic_config) if semantic_config else None
     report['verify_timeout_seconds'] = args.verify_timeout_seconds
     write_json(evidence / 'verification.json', report)

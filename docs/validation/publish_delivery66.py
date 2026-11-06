@@ -44,7 +44,7 @@ def validate_files(directory):
     directory = handoff.local(directory)
     lock_path = directory / 'release-lock.json'
     lock = handoff.load(lock_path)
-    handoff.require(lock.get('format') == 'agent-editor-reviewed-release-v1'
+    handoff.require(lock.get('format') == handoff.RELEASE_LOCK_FORMAT
         and lock.get('repository') == REPOSITORY and lock.get('tag') == handoff.TAG
         and lock.get('cli_version') == handoff.VERSION and lock.get('runtime_release') == handoff.RELEASE
         and lock.get('public_model_media_included') is False, 'Wrong release scope')
@@ -78,6 +78,7 @@ def validate_files(directory):
     handoff.require(handoff.sha(descriptor) == lock['descriptor_sha256'], 'Reviewed descriptor changed')
     spec = handoff.load(descriptor)
     pins = spec['application_files']
+    reviewed_source(lock, spec)
     for role, row in lock['gates'].items():
         evidence = handoff.load(row['path'])
         handoff.require(evidence['application_files'] == pins, 'Final gate used another application')
@@ -93,9 +94,21 @@ def validate_files(directory):
     skill_pins = {row['path']: row['sha256'] for row in spec['files'] if row['path'].startswith(handoff.SKILL)}
     for role, row in spec['gates'].items():
         core._gate(handoff.ROOT, role, row, handoff.VERSION, pins, skill_pins)
-    for name, pin in lock['frozen_source'].items():
-        handoff.require(handoff.sha(handoff.local(handoff.ROOT / name)) == pin, 'Frozen release source changed')
     return lock
+
+
+def reviewed_source(lock, spec=None):
+    handoff.require(lock.get('format') == handoff.RELEASE_LOCK_FORMAT, 'Wrong reviewed release source format')
+    descriptor = handoff.local(lock['descriptor'], root=handoff.ROOT)
+    handoff.require(handoff.sha(descriptor) == lock['descriptor_sha256'], 'Reviewed descriptor changed')
+    if spec is None:
+        spec = handoff.load(descriptor)
+    files = handoff.release_source_files(lock.get('source_binding'), lock.get('frozen_source'),
+                                        spec.get('files'), lock.get('frozen_packaging_sources'))
+    for name, pin in files.items():
+        handoff.require(handoff.sha(handoff.local(handoff.ROOT / name, root=handoff.ROOT)) == pin,
+                        'Reviewed release source changed: ' + name)
+    return files
 
 
 def bind_commit(lock, commit):
@@ -106,7 +119,7 @@ def bind_commit(lock, commit):
         'Release must use this repository main and its exact current commit')
     # Git attributes may normalize line endings. Compare Git's clean object IDs
     # while separately retaining the exact installed/frozen byte SHA256 above.
-    names = sorted(lock['frozen_source'])
+    names = sorted(reviewed_source(lock))
     committed = {}
     for start in range(0, len(names), 48):
         raw = git('ls-tree', '-r', '-z', commit, '--', *names[start:start + 48])
@@ -116,7 +129,7 @@ def bind_commit(lock, commit):
                 mode, kind, oid = metadata.split()
                 handoff.require(mode == b'100644' and kind == b'blob', 'Release source is not a regular Git file')
                 committed[name.decode('utf-8')] = oid.decode()
-    handoff.require(set(committed) == set(names), 'Source commit omits frozen implementation files')
+    handoff.require(set(committed) == set(names), 'Source commit omits reviewed release files')
     handoff.require(all('\n' not in name and '\r' not in name and '"' not in name for name in names), 'Unsupported Git source path')
     clean_ids = git('hash-object', '--stdin-paths', input=('\n'.join(names) + '\n').encode('utf-8')).decode().splitlines()
     handoff.require(len(clean_ids) == len(names), 'Git source object count differs')
@@ -124,8 +137,63 @@ def bind_commit(lock, commit):
         handoff.require(clean == committed[name], 'Source commit differs from the accepted implementation: ' + name)
 
 
+def stored_github_token(raw):
+    """Decode only GitHub token text, without logging a native secret blob."""
+    if not isinstance(raw, bytes) or not 0 < len(raw) <= 16384:
+        return None
+    for encoding in ('utf-8', 'utf-16-le'):
+        try:
+            value = raw.decode(encoding).strip('\x00\r\n ')
+        except UnicodeError:
+            continue
+        if re.fullmatch(r'(?:gh[pousr]_|github_pat_)[A-Za-z0-9_]{10,512}', value):
+            return value
+    return None
+
+
+def native_gh_credential():
+    """Read the existing default gh entry on native Windows; never sign in."""
+    if os.name != 'nt':
+        return None
+    import ctypes
+    from ctypes import wintypes
+
+    class NativeCredential(ctypes.Structure):
+        _fields_ = [('Flags', wintypes.DWORD), ('Type', wintypes.DWORD),
+            ('TargetName', wintypes.LPWSTR), ('Comment', wintypes.LPWSTR),
+            ('LastWritten', wintypes.FILETIME), ('CredentialBlobSize', wintypes.DWORD),
+            ('CredentialBlob', ctypes.POINTER(ctypes.c_ubyte)), ('Persist', wintypes.DWORD),
+            ('AttributeCount', wintypes.DWORD), ('Attributes', ctypes.c_void_p),
+            ('TargetAlias', wintypes.LPWSTR), ('UserName', wintypes.LPWSTR)]
+
+    try:
+        api = ctypes.WinDLL('Advapi32.dll', use_last_error=True)
+        api.CredReadW.argtypes = [wintypes.LPCWSTR, wintypes.DWORD, wintypes.DWORD,
+                                 ctypes.POINTER(ctypes.POINTER(NativeCredential))]
+        api.CredReadW.restype = wintypes.BOOL
+        api.CredFree.argtypes = [ctypes.c_void_p]
+        api.CredFree.restype = None
+        pointer = ctypes.POINTER(NativeCredential)()
+        if not api.CredReadW('gh:github.com:', 1, 0, ctypes.byref(pointer)):
+            return None
+        try:
+            size = pointer.contents.CredentialBlobSize
+            if not 0 < size <= 16384 or not pointer.contents.CredentialBlob:
+                return None
+            return stored_github_token(ctypes.string_at(pointer.contents.CredentialBlob, size))
+        finally:
+            api.CredFree(pointer)
+    except (AttributeError, OSError, ValueError):
+        return None
+
+
 def credential():
     token = os.environ.get('GITHUB_TOKEN') or os.environ.get('GH_TOKEN')
+    if token:
+        return token
+    # gh and Git Credential Manager can belong to different GitHub identities.
+    # Prefer the existing native gh entry before the legacy default Git helper.
+    token = native_gh_credential()
     if token:
         return token
     # Capture only inside this process; never print or persist credential output.

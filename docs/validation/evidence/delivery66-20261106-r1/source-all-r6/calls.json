@@ -1,0 +1,54 @@
+[
+  {
+    "name": "native-isolated-imports",
+    "argv": [
+      "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+      "-I",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "-c",
+      "\nimport importlib.metadata, json, sys\nfrom pathlib import Path\nscope = sys.argv[2]\nassert scope in {'application', 'bare-worker'}\napplication_file = application_version = None\nif scope == 'application':\n    sys.path.insert(0, sys.argv[1])\n    import ai_ad_editor\n    application_file = str(Path(ai_ad_editor.__file__).resolve())\n    application_version = ai_ad_editor.VERSION\nimport cv2\nimport numpy\nimport PIL\nimport jsonschema\nmodules = {}\nfor name, module, distribution in [('numpy', numpy, 'numpy'), ('PIL', PIL, 'Pillow'),\n                                  ('cv2', cv2, None), ('jsonschema', jsonschema, 'jsonschema')]:\n    directory = Path(module.__file__).resolve().parent\n    binaries = sorted(directory.rglob('*.pyd')) + sorted(directory.rglob('*.dll'))\n    if name == 'numpy':\n        binaries += sorted((directory.parent / 'numpy.libs').glob('*.dll'))\n    if name == 'PIL':\n        binaries += sorted((directory.parent / 'pillow.libs').glob('*.dll'))\n    version = importlib.metadata.version(distribution) if distribution else module.__version__\n    modules[name] = dict(version=version, file=str(Path(module.__file__).resolve()),\n                         binaries=[str(path.resolve()) for path in binaries])\nprint(json.dumps(dict(python=sys.executable, isolated=sys.flags.isolated,\n    dependency_scope=scope, application_file=application_file,\n    application_version=application_version, modules=modules)))\n",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\src",
+      "application"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 3.2814750999968965
+  },
+  {
+    "name": "native-bare-worker-imports",
+    "argv": [
+      "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+      "-I",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "-c",
+      "\nimport importlib.metadata, json, sys\nfrom pathlib import Path\nscope = sys.argv[2]\nassert scope in {'application', 'bare-worker'}\napplication_file = application_version = None\nif scope == 'application':\n    sys.path.insert(0, sys.argv[1])\n    import ai_ad_editor\n    application_file = str(Path(ai_ad_editor.__file__).resolve())\n    application_version = ai_ad_editor.VERSION\nimport cv2\nimport numpy\nimport PIL\nimport jsonschema\nmodules = {}\nfor name, module, distribution in [('numpy', numpy, 'numpy'), ('PIL', PIL, 'Pillow'),\n                                  ('cv2', cv2, None), ('jsonschema', jsonschema, 'jsonschema')]:\n    directory = Path(module.__file__).resolve().parent\n    binaries = sorted(directory.rglob('*.pyd')) + sorted(directory.rglob('*.dll'))\n    if name == 'numpy':\n        binaries += sorted((directory.parent / 'numpy.libs').glob('*.dll'))\n    if name == 'PIL':\n        binaries += sorted((directory.parent / 'pillow.libs').glob('*.dll'))\n    version = importlib.metadata.version(distribution) if distribution else module.__version__\n    modules[name] = dict(version=version, file=str(Path(module.__file__).resolve()),\n                         binaries=[str(path.resolve()) for path in binaries])\nprint(json.dumps(dict(python=sys.executable, isolated=sys.flags.isolated,\n    dependency_scope=scope, application_file=application_file,\n    application_version=application_version, modules=modules)))\n",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\src",
+      "bare-worker"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6684876999970584
+  },
+  {
+    "name": "native-audio-version",
+    "argv": [
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\rubberband-offline-probe-20261017\\native\\rubberband-4.0.0-gpl-executable-windows\\rubberband.exe",
+      "--version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.042895900001894915
+  },
+  {
+    "name": "native-node-version",
+    "argv": [
+      "D:\\Program Files\\nodejs\\node.exe",
+      "--version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06163939999896684
+  }
+]

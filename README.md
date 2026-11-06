@@ -1,11 +1,11 @@
 # agent editor kit
 
 <!-- aek-cli65-current -->
-**开发状态2026-11-06：CLI0.1.66的9文件完整修正已整批应用并冻结r6，43项交付工具契约全部通过，零失败／错误／跳过。** 新的未过滤产品整套实际发现4,124项，仍运行、无终态；发现数不等于通过数。[本批执行与完整证据](docs/product/DELIVERY66_R6_EXECUTION.md) · [完整未完成内容](docs/product/UNFINISHED_20261106.md)
+**开发状态2026-11-06：CLI0.1.66原r6源码整套已完整通过：4,124项、0失败／0错误／0跳过、退出码0。** 已按同一冻结实际离线构建并安装66候选，289应用模块精确一致；安装版同一整套已启动、尚无终态。[完整结果与候选](docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md) · [完整未完成内容](docs/product/UNFINISHED_20261106.md)
 
 **原r5完整终态：4,124项、4失败／1错误／0跳过、退出码1。** 五条完整堆栈已保留，原监督和测试进程均已退出后才应用新批。原r4的4,114项／10失败／15错误及r2中断继续保留。[r5终态与五条异常](docs/validation/evidence/delivery66-handoff-20261106-r1/r5-terminal-review-r1/verification.json) · [原r4结果](docs/product/DELIVERY66_R4_RESULTS.md)
 
-**正式入口仍CLI0.1.63／local61／r58，唯一`$agent-ffmpeg-local-editor`、17内部模块。** 新66安装包、真实66CUDA音乐／故障、完整工程／配方重放、独立安装注册、正式升级回滚和alpha.4发行仍待门禁；43项工具检查是fixture验证，不冒充模型、媒体质量或完整剪映等价。
+**正式入口仍CLI0.1.63／local61／r58，唯一`$agent-ffmpeg-local-editor`、17内部模块。** 新66候选已独立安装，安装版整套、真实66CUDA音乐／故障、完整工程／配方重放、新工具包实装、正式升级回滚和alpha.4发行仍待验收。43项工具契约为独立fixture组，不与4,124产品项相加，也不代表完整剪映等价。
 
 r6冻结546项产品／用例／依赖、8交付工具、69构建来源和95正式文件，另绑定官方Skill校验器摘要。两组实际隔离依赖各36文件，总依赖43个去重文件通过；不累加为独立覆盖。全部本批代码先完成、应用、冻结，再集中执行工具与未过滤产品整套。
 
@@ -13,7 +13,7 @@ r6冻结546项产品／用例／依赖、8交付工具、69构建来源和95正�
 
 三语快速开始涵盖离线安装、`--base-only`基础配置、可选模型／GPU、单Skill、真实ID、客户滤镜预览、音轨、渲染／质检及工程包重放。基础剪辑不要求模型包；`--packs`仍验包。摘要占位和新包完整流程尚待真实安装填实。[简体草稿](docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.md) · [集中交付顺序](docs/product/DELIVERY66_HANDOFF.md)
 本轮仓库检查点提供候选代码副本和真实验证证据；本地应用源码的正式提交仍待完整产品回归通过。
-最新整套观察：原r5的Unicode、两项工程锁、音频诊断及TTS断网共五项均已实际为ok，是仍运行的4,124项子集；完整源码及新安装版终态仍待。[五项实际记录](docs/validation/evidence/delivery66-cross-machine-20261106-r1/baseline-round-r2/source-original-cases.json)。
+最新整套终态：原r5的Unicode、两项工程锁、音频诊断及TTS断网共五项，已在完整r6的4,124项中全部通过，不另计数；正式升级仍需安装版及后续交付验收。[源码终态](docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md)。
 
 **第二台原生Windows的正式63版CPU基线已通过。** 实际离线安装、中文空格目录、一个Skill隔离注册及工程包重放，完整60帧RGBA、非静音PCM、视频时钟和母素材摘要与本机一致，原r58清单160文件未改。它是66升级／回滚的旧版对照；66新配置器、GPU、干净主机及正式升级仍另验。[完整操作与限制](docs/product/CROSS_MACHINE63_BASELINE.md) · [第二台实际结果](docs/validation/evidence/delivery66-cross-machine-20261106-r1/baseline-remote-r2/verification.json) · [实际MP4](docs/assets/cross-machine63-20261106-r1/second-host.mp4)。
 
@@ -2233,6 +2233,7 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R597 | 2026-11-06：r5完整终态、r6整批应用与集中验证 | [执行记录](docs/product/DELIVERY66_R6_EXECUTION.md)；[43项实际结果](docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r5/verification.json)；[新整套启动](docs/validation/evidence/delivery66-handoff-20261106-r1/r6-centralized-start-r1/verification.json) | r5完整4,124项为4失败／1错误／0跳过，进程均退出；9文件完成后一次应用并冻结546／8／69／95及校验器。43项工具整套全部通过，零失败／错误／跳过，fixture-only；新未过滤产品整套实际发现4,124项仍运行、无终态。两实际依赖profile通过，正式入口仍63，无新安装／模型／注册／发行；不关闭G01—G38 |
 | R598 | 2026-11-06：完整回归中间结果与后续交付预检 | [实际收据](docs/validation/evidence/delivery66-handoff-20261106-r1/r6-downstream-preflight-r1/verification.json)；[说明](docs/product/DELIVERY66_DOWNSTREAM_PREFLIGHT.md) | 原r5异常中的Unicode、两项锁、音频诊断共4项在仍运行的r6整套中为ok，TTS尚未执行到；非整套终态。原生构建后端、既有运行时／权重元数据、许可、磁盘及标签预检完成，历史65归档尺寸符合应用解包预算；没有新66构建／推理／注册／发行，全部冻结及正式63不变，不追加功能测试数 |
 | R599 | 2026-11-06：第二台原生Windows正式63版CPU安装与完整媒体基线 | [实际流程／原失败](docs/product/CROSS_MACHINE63_BASELINE.md)；[第二台终态](docs/validation/evidence/delivery66-cross-machine-20261106-r1/baseline-remote-r2/verification.json)；[GIF／MP4](docs/assets/cross-machine63-20261106-r1/SOURCE.md) | 五脚本先完成并冻结再集中执行。r1启动长度失败及现场保留；r2真实离线8wheel／283应用模块、中文空格安装、1 Skill／17模块、原160归档文件未改；全部60帧RGBA／完整非静音PCM、视频时钟及母素材与本机一致。启动观察超时后查询原任务，已passed并退出，未重启，临时服务已关闭。CPU旧版基线，不算66／GPU／干净主机／听审／完整G34验收。原r5五项在运行r6中均ok，不另计用例数；完整源码／安装及发行仍待 |
+| R600 | 2026-11-06：CLI66源码整套通过、离线候选安装与安装版整套启动 | [完整结果](docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md)；[源码4,124项终态](docs/validation/evidence/delivery66-20261106-r1/source-all-r6/verification.json)；[候选安装](docs/validation/evidence/delivery66-20261106-r1/candidate-r1/verification.json) | 原r6完整4,124项全部通过，0失败／错误／跳过、退出码0，原监督及子进程均退出。冻结546／8／69／95不变；23个规范代码目标按已验收字节提交。实际原生离线构建并安装66，289应用模块一致、无源码回退；原生安装版同一整套已启动、尚无终态。43工具契约独立保留不相加；正式63及全部G01—G38不变，实际66模型／媒体／故障／正式升级和发行仍待 |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

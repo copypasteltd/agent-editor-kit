@@ -1,5 +1,5 @@
 from __future__ import annotations
-from package_under_test import IMPORT_ROOT
+from package_under_test import IMPORT_ROOT, module_command, utf8_script_command
 
 import contextlib
 import io
@@ -43,6 +43,58 @@ class P0CliTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         configure_local_runtime()
+
+    def dependency_free_commands(self, requests):
+        import jsonschema
+        program = r'''import builtins,contextlib,io,json,sys
+forbidden={'numpy','PIL','torch'}
+original=builtins.__import__
+def guarded(name,*args,**kwargs):
+    if name.split('.')[0] in forbidden:
+        raise ImportError('media/model dependency deliberately unavailable: '+name)
+    return original(name,*args,**kwargs)
+builtins.__import__=guarded
+sys.path.insert(0,sys.argv[1])
+sys.path.insert(1,sys.argv[2])
+from ai_ad_editor.cli import main
+rows=[]
+for argv in json.loads(sys.argv[3]):
+    output=io.StringIO()
+    with contextlib.redirect_stdout(output):
+        try:code=main(argv)
+        except SystemExit as exc:code=exc.code
+    assert code==0,(argv,code,output.getvalue())
+    rows.append(dict(argv=argv,code=code,stdout=output.getvalue()))
+loaded=sorted(forbidden.intersection(sys.modules))
+assert not loaded,loaded
+print(json.dumps(dict(results=rows,forbidden_modules_loaded=loaded)))
+'''
+        result = subprocess.run([sys.executable, '-I', '-B', '-X', 'utf8', '-c', program,
+            str(IMPORT_ROOT), str(Path(jsonschema.__file__).resolve().parent.parent),
+            json.dumps(requests)], capture_output=True, text=True, encoding='utf-8', timeout=60)
+        self.assertEqual(result.returncode, 0, result.stderr + result.stdout)
+        response = json.loads(result.stdout)
+        self.assertEqual(response['forbidden_modules_loaded'], [])
+        return response['results']
+
+    def test_version_and_capability_queries_do_not_load_media_or_model_libraries(self):
+        rows = self.dependency_free_commands([['version'], ['capabilities']])
+        version, capabilities = [json.loads(row['stdout']) for row in rows]
+        self.assertTrue(version['ok'])
+        self.assertTrue(capabilities['ok'])
+        self.assertEqual(version['provenance']['cli_version'],
+                         capabilities['data']['engine']['version'])
+        self.assertEqual(capabilities['data']['engine']['network'], 'disabled')
+        self.assertIn('native_neural_interpolation', capabilities['data']['capabilities'])
+        self.assertIn('verified_skill_delivery', capabilities['data']['capabilities'])
+
+    def test_feature_help_is_available_without_numpy_pillow_or_torch(self):
+        rows = self.dependency_free_commands([
+            ['media', 'generate', '--help'], ['vfx', '--help'], ['music', '--help']])
+        for row, expected in zip(rows, ['--frames', 'animation-properties', 'generator-adapter']):
+            with self.subTest(argv=row['argv']):
+                self.assertEqual(row['code'], 0)
+                self.assertIn(expected, row['stdout'])
 
     def make_media(self, directory: Path, name: str = "fixture.mp4") -> Path:
         target = directory / name
@@ -425,18 +477,21 @@ class P0CliTests(unittest.TestCase):
                 "    time.sleep(2.5)\n"
             )
             child_env = os.environ.copy()
-            child_env["PYTHONPATH"] = str(IMPORT_ROOT)
-            child = subprocess.Popen(
-                [sys.executable, "-X", "utf8", "-c", script],
-                env=child_env,
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.DEVNULL,
-            )
+            child_error_path = workspace / "lock-child.stderr"
+            with child_error_path.open("xb") as child_error_stream:
+                child = subprocess.Popen(
+                    utf8_script_command(script),
+                    env=child_env,
+                    stdout=subprocess.DEVNULL,
+                    stderr=child_error_stream,
+                )
             try:
                 deadline = time.monotonic() + 3.0
                 while not ready.exists() and time.monotonic() < deadline:
                     time.sleep(0.05)
-                self.assertTrue(ready.exists(), "child did not acquire project lock")
+                with child_error_path.open("rb") as child_error_stream:
+                    child_error = child_error_stream.read(8192).decode("utf-8", errors="replace")
+                self.assertTrue(ready.exists(), "child did not acquire project lock: " + child_error)
                 code, rejected = invoke("media", "ingest", "--project", str(project), "--input", str(source))
                 self.assertEqual(code, 6, rejected)
                 self.assertEqual(rejected["errors"][0]["code"], "PROJECT_WRITE_LOCKED")
@@ -470,13 +525,17 @@ class P0CliTests(unittest.TestCase):
                 "    time.sleep(2.5)\n"
             )
             child_env = os.environ.copy()
-            child_env["PYTHONPATH"] = str(IMPORT_ROOT)
-            child = subprocess.Popen([sys.executable, "-X", "utf8", "-c", script], env=child_env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            child_error_path = workspace / "lock-child.stderr"
+            with child_error_path.open("xb") as child_error_stream:
+                child = subprocess.Popen(utf8_script_command(script), env=child_env,
+                    stdout=subprocess.DEVNULL, stderr=child_error_stream)
             try:
                 deadline = time.monotonic() + 3.0
                 while not ready.exists() and time.monotonic() < deadline:
                     time.sleep(0.05)
-                self.assertTrue(ready.exists(), "child did not acquire project lock")
+                with child_error_path.open("rb") as child_error_stream:
+                    child_error = child_error_stream.read(8192).decode("utf-8", errors="replace")
+                self.assertTrue(ready.exists(), "child did not acquire project lock: " + child_error)
                 code, requested = invoke("queue", "cancel", "--project", str(project), "--job-id", "locked-job")
                 self.assertEqual(code, 0, requested)
                 self.assertTrue(requested["data"]["acknowledged"])
@@ -1740,12 +1799,12 @@ print(json.dumps({
             project = workspace / "广告项目🎬"
             self.assertEqual(invoke("project", "init", str(project))[0], 0)
             env = os.environ.copy()
-            env["PYTHONPATH"] = str(IMPORT_ROOT)
             env["PYTHONUTF8"] = "0"
             env["PYTHONIOENCODING"] = "ascii:strict"
             completed = subprocess.run(
-                [sys.executable, "-m", "ai_ad_editor", "media", "ingest", "--project", str(project),
-                 "--input", str(source), "--progress", "jsonl", "--request-id", "请求_中文路径🎬"],
+                module_command("media", "ingest", "--project", str(project),
+                    "--input", str(source), "--progress", "jsonl", "--request-id", "请求_中文路径🎬",
+                    force_ascii_stdio=True),
                 env=env, capture_output=True, timeout=30,
             )
             self.assertEqual(completed.returncode, 0, completed.stderr.decode("utf-8"))

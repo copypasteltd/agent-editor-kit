@@ -10,7 +10,6 @@ import json
 import math
 import re
 
-import numpy as np
 
 from .errors import AppError
 from .float_color_signal import ColorSignal, convert_rgba
@@ -32,6 +31,7 @@ def error(kind, message):
 
 
 def number(value, low=None, high=None):
+    import numpy as np
     if isinstance(value,(bool,np.bool_)) or not isinstance(value,(int,float,np.integer,np.floating)):
         raise error('ARGUMENT','曲线坐标和强度须为有限数字')
     try: value = float(value)
@@ -195,6 +195,7 @@ def author_value(keys, tick):
 
 def coefficients(points, method):
     """O(n) natural-spline solve or shape-preserving weighted harmonic slopes."""
+    import numpy as np
     p = np.asarray(points,np.float64); x,y = p[:,0],p[:,1]; n = len(p)
     if n==1: return x,y,np.empty((0,4),np.float64)
     with np.errstate(over='ignore',divide='ignore',invalid='ignore'):
@@ -225,6 +226,7 @@ def coefficients(points, method):
 
 
 def evaluate(values, compiled):
+    import numpy as np
     x,y,c = compiled
     if len(x)==1: return np.full(values.shape,y[0],np.float64)
     q = np.clip(values,x[0],x[-1]); index = np.clip(np.searchsorted(x,q,side='right')-1,0,len(c)-1)
@@ -239,6 +241,7 @@ def evaluate(values, compiled):
 
 def apply_curves(surface, plan, author_tick, *, working_signal, tile_pixels=65536,
                  retained_table_bytes=0, max_working_bytes=MAX_WORKING_BYTES, cancel=None):
+    import numpy as np
     def poll():
         if cancel and cancel(): raise AppError('RENDER_CANCELLED','浮点曲线已取消',exit_code=6)
     poll()
@@ -283,3 +286,11 @@ def apply_curves(surface, plan, author_tick, *, working_signal, tile_pixels=6553
         'mix_domain':'linear-working-straight-RGB','alpha':'input-bits-preserved','integer_intermediate':False,
         'estimated_working_bytes':estimate,'estimated_bytes_are_peak_RSS':False,
         'actual_tile_pixels_limit':actual_tile,'natural_quality_accepted':False,'HDR_accepted':False}
+
+
+def __getattr__(name):
+    """Retain explicit NumPy inspection without loading it for CLI catalogs."""
+    if name == 'np':
+        import numpy as np
+        return np
+    raise AttributeError(f'module {__name__!r} has no attribute {name!r}')

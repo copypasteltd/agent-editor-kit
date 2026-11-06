@@ -1,0 +1,66 @@
+{
+  "observed_at_utc": "2026-11-06T04:48:05.389907+00:00",
+  "candidate_files": {
+    "product/tests/package_under_test.py": "84ee9c0197388e998070089f8e8196b6ec9f30012d0216704d4843a5321b93f3",
+    "product/tests/test_cli.py": "0431069b7544939dceb2674d7127ec81c97cc5cf610bb8d125e5e7552c2283af",
+    "product/src/ai_ad_editor/enhancement_pipeline.py": "ffa863c237937a2d8c1de5a52f58ff69077360474f7046dd09badb527084d972",
+    "docs/validation/delivery66_handoff.py": "62a957bb903a90532a39e989e194f5b79e777691f76dc978c25f1980a2ea4e19",
+    "docs/validation/publish_delivery66.py": "f39c335be898d469ef6aecf34b5363167694af4eec5cbda4faf714029430d22e",
+    "docs/validation/test_delivery66_handoff.py": "dad8b16a5dc89f22d34650756d928428f3c1e6ee57f9e4da848450e50141d1e3",
+    "scripts/package_community_skill.py": "1f56ba8829c1cace1d36be1d333b91e81603885b70752c1ad4169762cadea75b",
+    "docs/validation/delivery66.py": "7a694c09d0d3bfdc16b3bd7a9941b93e1300aaf6e881680d6b57adaae522ded0",
+    "product/tests/test_local_tts.py": "4a13e0ab7cadbbf3dbc383fe9c0ee1bab28f1b762f5b6382d57498f377868bb8"
+  },
+  "unfrozen_legacy_reference": {
+    "path": "docs/validation/prepare_music65_skill.py",
+    "sha256": "70163cb73580745a1ceaee3e8e6a6c4a5f06df4a733bfd9873ad46f3fafb03b4",
+    "reference_characters": 5535
+  },
+  "native_validator": {
+    "path": "C:\\Users\\carzy\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+    "sha256": "6068513d924ed3559e186dfcdead7439129828dcf402167fd925c06dffbf2806",
+    "bytes": 4376
+  },
+  "guide_headers": {
+    "COMMUNITY_LOCAL_DELIVERY.md": [
+      "# 本机 GPU 扩展离线包与安装 / Native GPU extension delivery",
+      "",
+      "**当前正式本地版本为CLI0.1.59 / local57，单入口Skill为`$agent-ffmpeg-local-editor`，17内部模块／93文件。** 源码与安装31／19控制／57／104／400分别通过，另有配乐19专项；真实C盘入口的配乐完整PCM与实际CUDA完整PCM均通过。新配乐为CPU解析合成，不是神经音乐。全部38组原产品目标继续保留。",
+      "",
+      "应用ZIP：`local/agent-ffmpeg/v0.1.0-alpha.4-local.57/candidate-r1/bundle.zip`，305692864字节，SHA256 `d89e49ebbc996ac960db0cbe5852578d48ecc24032791042fe9dd65235ec9eef`；安装：同版本`final-r1/installed`。r57统一Skill工具包配套此CLI59/local57应用，四个既有模型包另备，旧r56及CLI58不覆盖。工具包独立验收状态以仓库README顶部和正式工具包收据为准。",
+      "",
+      "[CLI59安装文件与完整命令](../validation/CLI59独立安装交付_2026-10-29.md) · [实际注册切换与使用流程](../validation/CLI59统一Skill切换_2026-10-29.md) · [可编辑谱面／音效与C75](MUSIC_SCORE.md)",
+      ""
+    ],
+    "COMMUNITY_MATERIALS.md": [
+      "# 开源素材、配音、翻译、配乐与 GPU 使用手册",
+      "",
+      "Current registered runtime / 当前正式入口 / 目前正式入口：**CLI0.1.59 / local57**，r57配套单入口Skill。新增解析谱面配乐与4类程序音效；[完整流程、实际C盘入口及边界](../validation/CLI59统一Skill切换_2026-10-29.md)。以下原版素材／配音／翻译基线及CLI58段落保留为历史，不代表本轮重新推理所有任务。",
+      "",
+      "",
+      "当前运行版本为 **CLI0.1.58 / `v0.1.0-alpha.4-local.56` / r56 kit**，使用[匹配的本地应用包及统一Skill流程](COMMUNITY_LOCAL_DELIVERY.md)。本页素材／配音／翻译／GPU专项实测基线仍为 **CLI0.1.3 / local.1**，本轮四个模型包仅重新配置校验，没有重新推理全部这些任务；CLI58实际DF3 CUDA、精确去重、ACES及安装回归分别见[交付证据](../validation/CLI58统一Skill切换_2026-10-29.md)。公开alpha.3 / CLI0.1.2旧附件保持，不含本地全部新命令。仍只注册 `$agent-ffmpeg-local-editor`，17内部模块。r56压缩包内本手册是打包时的历史快照，当前版本及配套以包内COMMUNITY_LOCAL_DELIVERY和本仓库最新入口为准。",
+      "",
+      "## 能力与交付层级"
+    ],
+    "COMMUNITY_MATERIALS.en.md": [
+      "# Community materials, voice, translation, music and GPU workflow",
+      "",
+      "Current registered runtime / 当前正式入口 / 目前正式入口：**CLI0.1.59 / local57**，r57配套单入口Skill。新增解析谱面配乐与4类程序音效；[完整流程、实际C盘入口及边界](../validation/CLI59统一Skill切换_2026-10-29.md)。以下原版素材／配音／翻译基线及CLI58段落保留为历史，不代表本轮重新推理所有任务。",
+      "",
+      "",
+      "The current runtime is **CLI0.1.58 / `v0.1.0-alpha.4-local.56` / r56 kit**, paired with the [matching application and unified Skill workflow](COMMUNITY_LOCAL_DELIVERY.md). This page preserves materials/voice/translation/GPU evidence from **CLI0.1.3 / local.1**. Four model packs were reconfigured and verified this round;their inference tasks were not all rerun. CLI58 actual DF3 CUDA,exact-content selection,ACES and installation checks are recorded separately in the [delivery evidence](../validation/CLI58统一Skill切换_2026-10-29.md). Public alpha.3/CLI0.1.2 attachments remain unchanged and lack these newer local commands. Invoke one `$agent-ffmpeg-local-editor` with17 internal modules. The copy of this manual inside r56 is a historical packaging snapshot;use its COMMUNITY_LOCAL_DELIVERY and the current repository entry for version pairing.",
+      "",
+      "| ID | Module | Implemented | Limits |"
+    ],
+    "COMMUNITY_MATERIALS.zh-TW.md": [
+      "# 開源素材、配音、翻譯、配樂與 GPU 使用手冊",
+      "",
+      "Current registered runtime / 当前正式入口 / 目前正式入口：**CLI0.1.59 / local57**，r57配套单入口Skill。新增解析谱面配乐与4类程序音效；[完整流程、实际C盘入口及边界](../validation/CLI59统一Skill切换_2026-10-29.md)。以下原版素材／配音／翻译基线及CLI58段落保留为历史，不代表本轮重新推理所有任务。",
+      "",
+      "",
+      "目前執行版本為 **CLI0.1.58 / `v0.1.0-alpha.4-local.56` / r56 kit**，使用[配套本地應用包與統一Skill流程](COMMUNITY_LOCAL_DELIVERY.md)。本頁素材／配音／翻譯／GPU專項實測基線仍為 **CLI0.1.3 / local.1**，本輪四個模型套件僅重新配置核驗，沒有重新推理全部任務；CLI58實際DF3 CUDA、精確去重、ACES及安裝回歸分別見[交付證據](../validation/CLI58统一Skill切换_2026-10-29.md)。公開alpha.3 / CLI0.1.2舊附件保持，不含本地全部新命令。仍只註冊 `$agent-ffmpeg-local-editor`，17內部模組。r56壓縮包內本手冊為打包時歷史快照，目前版本及配套以包內COMMUNITY_LOCAL_DELIVERY與本倉庫最新入口為準。",
+      "",
+      "## 能力與交付層級"
+    ]
+  }
+}

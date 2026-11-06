@@ -1,0 +1,47 @@
+{
+  "status": "four-guides-current-layer-restored-history-preserved",
+  "files": [
+    {
+      "path": "docs/product/COMMUNITY_LOCAL_DELIVERY.md",
+      "before_sha256": "ff05230b857259f3d3cf5f50ca7ee25b2f5d185307012c4b70d42f1ec5dc8fab",
+      "after_sha256": "6c1b7696e5bad2b4589a43bce347073dafc9d595e8c6530f89edbac2f441590b",
+      "historical_body_preserved": true,
+      "historical_body_sha256": "e47c17d3afa4df4eedb1cb7ccefee17dffc3ae0f0036dae621c1ee243530d432",
+      "formal_cli": "0.1.63",
+      "candidate_cli": "0.1.65",
+      "development_cli": "0.1.66"
+    },
+    {
+      "path": "docs/product/COMMUNITY_MATERIALS.md",
+      "before_sha256": "cbac341f598287d5a0995f19ec67a456ddb3c6649e7edb7cf842a203eceeabe6",
+      "after_sha256": "0f86be45242ccf8de52bf4b0b6eb8681ab32ca8ce5206c90f6f2b1c884d24e10",
+      "historical_body_preserved": true,
+      "historical_body_sha256": "a0e4ca3830509d0531263cf66849f5e3e0f12fc37c1bae5d9bbcea9c9a8a1dfb",
+      "formal_cli": "0.1.63",
+      "candidate_cli": "0.1.65",
+      "development_cli": "0.1.66"
+    },
+    {
+      "path": "docs/product/COMMUNITY_MATERIALS.en.md",
+      "before_sha256": "ac3c050bfdec9dd126b67b3f9cc4dafeaff655285850d6f88c42ae8b6ac1361c",
+      "after_sha256": "34b07e3963cd83e4cacce87ec87fc28ad413796519c3bcff773024577b02c392",
+      "historical_body_preserved": true,
+      "historical_body_sha256": "4d2907e0a34ef1e14f8acc8a506011589009907e741839dbf42b08fa43e45a5d",
+      "formal_cli": "0.1.63",
+      "candidate_cli": "0.1.65",
+      "development_cli": "0.1.66"
+    },
+    {
+      "path": "docs/product/COMMUNITY_MATERIALS.zh-TW.md",
+      "before_sha256": "47d63914cb4607276389b4d8a8ca06d761888d8253069031f056bc8031588101",
+      "after_sha256": "26e0b9c7d9aa84e24cffb5d53ecf5df9d73f23a3df81a2e8f4140c50777f8d64",
+      "historical_body_preserved": true,
+      "historical_body_sha256": "d9b159ac4720971ccd866d64818a12df5954145b5fbd7e87ce825adfbf5eb016",
+      "formal_cli": "0.1.63",
+      "candidate_cli": "0.1.65",
+      "development_cli": "0.1.66"
+    }
+  ],
+  "new_functional_tests": false,
+  "formal_activation": false
+}

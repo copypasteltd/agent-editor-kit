@@ -251,7 +251,8 @@ class HandoffContracts(unittest.TestCase):
         context = dict(freeze=dict(status='frozen', cli_version=handoff.VERSION,
             file_hashes={name: handoff.sha(home / name) for name in product},
             delivery_tool_files={name: handoff.sha(home / name) for name in handoff.SOURCE_TOOLS},
-            packaging_source_files={name: handoff.sha(home / name) for name in packaging_names}),
+            packaging_source_files={name: handoff.sha(home / name) for name in packaging_names},
+            skill_validator=round_runner.skill_validator_pin()),
             spec=dict(files=[dict(path=name, sha256=handoff.sha(home / name))
                              for name in (*skill, handoff.MANIFEST, handoff.CONFIG)]))
         return home, context, self.release_source_lock(home, context)
@@ -423,6 +424,12 @@ class HandoffContracts(unittest.TestCase):
             self.assertEqual(inventory['documentation_source_ref'], handoff.TAG)
             guides = b'\n'.join(zipped.read(name) for name in zipped.namelist() if name.startswith('docs/'))
             self.assertIn(('/blob/' + handoff.TAG + '/').encode(), guides)
+            for guide in ('COMMUNITY_LOCAL_DELIVERY.md', 'COMMUNITY_MATERIALS.md',
+                          'COMMUNITY_MATERIALS.en.md', 'COMMUNITY_MATERIALS.zh-TW.md'):
+                current = zipped.read('docs/product/' + guide).decode('utf-8').split('\n\n', 2)[1]
+                self.assertIn('CLI' + handoff.VERSION, current)
+                self.assertIn(handoff.RELEASE, current)
+            self.assertEqual(report['packaging_source_files'], expected)
 
     def test_packager_rejects_invalid_documentation_refs_before_outputs(self):
         source = self.package_stage_fixture(self.root)
@@ -502,6 +509,19 @@ class HandoffContracts(unittest.TestCase):
             finally:
                 path.write_bytes(original)
                 self.release_source_lock(home, context)
+
+    def test_changed_skill_validator_rejects_staging_before_any_output(self):
+        validator = self.root / 'validator.py'
+        validator.write_bytes(b'# Explicit source-pin fixture; never executed.\n')
+        pin = handoff.sha(validator)
+        with (patch.object(round_runner, 'SKILL_VALIDATOR', validator),
+              patch.object(round_runner, 'SKILL_VALIDATOR_SHA256', pin)):
+            frozen = dict(skill_validator=round_runner.skill_validator_pin())
+            validator.write_bytes(b'# Changed validator must not authorize staged Skill files.\n')
+            with (patch.object(round_runner, 'proof') as begin,
+                  self.assertRaisesRegex(ValueError, 'validator differs')):
+                round_runner.stage(SimpleNamespace(run='fixture'), frozen)
+            begin.assert_not_called()
 
     def dependency_fixture(self):
         package = self.root / 'site/ai_ad_editor'

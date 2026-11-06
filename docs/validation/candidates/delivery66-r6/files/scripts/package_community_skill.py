@@ -80,6 +80,19 @@ def main():
     for name in PACKAGE_GUIDES:
         path = ROOT / 'docs/product' / name
         files[path.relative_to(ROOT).as_posix()] = path.read_bytes()
+    # Repository guides record the formal machine state at their evidence date.
+    # Put this archive's actual target first without relabelling old evidence.
+    for name in ('COMMUNITY_LOCAL_DELIVERY.md', 'COMMUNITY_MATERIALS.md',
+                 'COMMUNITY_MATERIALS.en.md', 'COMMUNITY_MATERIALS.zh-TW.md'):
+        key = 'docs/product/' + name
+        title, separator, body = files[key].decode('utf-8').partition('\n')
+        context = ('\n\n> Kit target / 本包目标 / 本包目標: **CLI' + manifest['cli_version']
+            + ' / ' + manifest['release'] + '**.\n'
+            '> Use KIT-FILES.json and the included QUICKSTART files for this archive. '
+            'Dated repository/local-machine observations below retain their original versions.\n'
+            '> 本包安装配对以KIT-FILES.json及包内QUICKSTART为准；下方日期段保留打包前本机实测版本。\n'
+            '> 本包安裝配對以KIT-FILES.json及包內QUICKSTART為準；下方日期段保留打包前本機實測版本。\n\n')
+        files[key] = (title + context + body).encode('utf-8')
     # Keep the Skill inventory byte-identical; externalize only documentation
     # links to evidence/media that is intentionally outside the small kit.
     for name in list(files):

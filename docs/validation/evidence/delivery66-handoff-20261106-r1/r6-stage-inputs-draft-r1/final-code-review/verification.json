@@ -1,0 +1,33 @@
+{
+  "status": "complete-candidate-static-review-passed-not-executed",
+  "observed_at_utc": "2026-11-06T04:56:56.330151+00:00",
+  "candidate_files": 9,
+  "candidate_sha256": {
+    "product/tests/package_under_test.py": "84ee9c0197388e998070089f8e8196b6ec9f30012d0216704d4843a5321b93f3",
+    "product/tests/test_cli.py": "0431069b7544939dceb2674d7127ec81c97cc5cf610bb8d125e5e7552c2283af",
+    "product/src/ai_ad_editor/enhancement_pipeline.py": "ffa863c237937a2d8c1de5a52f58ff69077360474f7046dd09badb527084d972",
+    "docs/validation/delivery66_handoff.py": "9d34d055c3ff365e5af9f03f466df0cfae78c8d11386ad096c73bdcf83aac771",
+    "docs/validation/publish_delivery66.py": "f39c335be898d469ef6aecf34b5363167694af4eec5cbda4faf714029430d22e",
+    "docs/validation/test_delivery66_handoff.py": "74022c8458c52889d24de7c71ff1e0292401d6ce3cdd2c4254d170ae14376d13",
+    "scripts/package_community_skill.py": "1df1049ce02c62d1c26813f935cdb12c12c5798e94bad93f3956da30691a178b",
+    "docs/validation/delivery66.py": "970f2b2c492012b1f5069557d085a270115022f0d0fa2d746829cb6f20cb5579",
+    "product/tests/test_local_tts.py": "4a13e0ab7cadbbf3dbc383fe9c0ee1bab28f1b762f5b6382d57498f377868bb8"
+  },
+  "application_modules": 289,
+  "static_overlay_modules": 297,
+  "unresolved_global_names": [],
+  "original_tool_methods": 31,
+  "planned_tool_methods": 43,
+  "original_assertion_calls_preserved": true,
+  "packaged_target_guides": 4,
+  "original_frozen_counts": {
+    "file_hashes": 546,
+    "delivery_tool_files": 7,
+    "formal_guard": 95
+  },
+  "original_frozen_equal": true,
+  "candidate_applied": false,
+  "candidate_functions_executed": false,
+  "new_functional_tests": false,
+  "formal_activation": false
+}

@@ -284,6 +284,8 @@ def source_unchanged(freeze):
             'Frozen packaging input scope is incomplete')
     for name, pin in packaging.items():
         require(sha(local(ROOT / name)) == pin, 'Frozen packaging input changed: ' + name)
+    require(freeze.get('skill_validator') == round_runner.skill_validator_pin(),
+            'Frozen native Skill validator changed')
 
 
 def guards_equal(guards):

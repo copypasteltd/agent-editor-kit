@@ -1,5 +1,37 @@
 # 开源素材、配音、翻译、配乐与 GPU 使用手册
 
+**当前正式入口：CLI0.1.63 / local61 / r58，唯一Skill `$agent-ffmpeg-local-editor`，17内部模块。** 版本及应用摘要见[本机安装说明](COMMUNITY_LOCAL_DELIVERY.md)；本次实际入口查询见[原始输出](../validation/evidence/status-review-20261106-r2/review-r1/formal-skill-version.json)。以下“当前能力”与折叠区的早期实测基线分开阅读。
+
+| 编号 | 当前正式能力及使用逻辑 | 实际证据与边界 |
+| --- | --- | --- |
+| U01 | 359个素材：44 BGM、85短乐、228音效、2字体；先`materials list/inspect`再导入 | 逐项保留来源、许可和摘要；不是完整行业视频／图片／贴纸库 |
+| U02 | 中英103具名音色，先`voice list`选择，再显式合成并试听 | 全103实际WAV来自CLI61候选，[试听证据及选型](../validation/CLI61全音色试听_2026-10-29.md)；不冒充本轮或CLI63重新生成／人类全部听审 |
+| U03 | 中英翻译、双语字幕与可编辑配音音轨 | [字幕配音流程](SUBTITLE_DUBBING.md)；翻译语义、自然韵律及口型接受分别记录 |
+| U04 | 解析谱面合成、8类音色、4类程序音效及分轨 | [谱面接口](MUSIC_SCORE.md)；这是CPU解析合成；神经生曲尚未进入正式63 |
+| U05 | 采样时钟循环交叠修复、配方与独立音轨 | [循环修复](MUSIC_LOOP.md)；交叠明确缩短循环周期，数值连续不等于自然听感通过 |
+| U06 | 已配置配音／翻译的`auto`优先GPU，严格GPU失败应如实报错 | 各任务所需模型和CUDA运行库分别配置；GPU并不代表全部处理阶段或更快冷启动 |
+| U07 | 500滤镜及N002逐项真实预览，可生成客户候选图 | [客户选型操作](../../skills/agent-ffmpeg-local-editor/references/client-look-selection.md)；母图预览不冒充客户素材或其他强度 |
+| U08 | 单一Skill调用已校验安装版，检查结果后预览、渲染、质检和工程包重放 | [实际63交付及用法](../validation/CLI63统一Skill切换_2026-10-29.md)；不静默回退源码 |
+
+先查询实际入口，再按具体任务读取相应内部模块：
+
+```powershell
+$aekEntry = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1'
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File $aekEntry version
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File $aekEntry doctor
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File $aekEntry capabilities
+```
+
+保留原素材、原音轨、模型／许可记录和客户选择。模型只使用已显式登记的本地依赖，不隐式下载。103音色、500滤镜和机器检查通过数不替代完整试听、自然视频或客户接受。
+
+CLI65候选已真实生成神经音乐；CLI66正在整批开发／回归，均不能当成正式63已有能力。[神经音乐实现及限制](NEURAL_MUSIC_GENERATION.md) · [当前交付门禁](DELIVERY66_HANDOFF.md) · [完整未完成内容](UNFINISHED_20261106.md)。
+
+[English](COMMUNITY_MATERIALS.en.md) · [繁體中文](COMMUNITY_MATERIALS.zh-TW.md)。下方完整保留旧版命令与当时结果；早期“只生成3音色”“无循环修复”“无生曲”等只适用于对应历史基线，不覆盖上表的后续结果。
+
+<details>
+<summary>Historical editions / 历史版本 / 歷史版本（完整保留）</summary>
+
+
 Current registered runtime / 当前正式入口 / 目前正式入口：**CLI0.1.59 / local57**，r57配套单入口Skill。新增解析谱面配乐与4类程序音效；[完整流程、实际C盘入口及边界](../validation/CLI59统一Skill切换_2026-10-29.md)。以下原版素材／配音／翻译基线及CLI58段落保留为历史，不代表本轮重新推理所有任务。
 
 
@@ -100,3 +132,5 @@ OPUS 原始归档许可为 CC-BY-4.0；与部分 Hugging Face card 的 Apache �
 实际案例保留 12 秒、360×640、30fps、360 帧、独立音轨、SC 字幕与 TC 标题、滤镜、音效和 `.aevpkg.zip` 往返工程。原始配音/混音文件在本地交付目录；未确认发布权利的声音不随公共 README 再分发。公共页面展示由已验证开源资源制作的无配音演示和 GIF，完整本地成片及机器响应另见实测路径。
 
 CPU 专项 46 条实际命令、GPU 专项 15 条实际命令；不与历史回归合并计数。字幕逆序和重叠、毫秒时间、三音色、UTF-8 文本/语速、缺失/篡改/额外模型文件与严格 CUDA/CPU 回退分别检查。人类听审和语义接受尚未完成，亦未实现完整剪映等价。
+
+</details>

@@ -1,7 +1,7 @@
 # agent editor kit
 
 <!-- aek-cli65-current -->
-**下一批r6候選現為9個程式檔案：** 已寫齊69項工具包建置來源凍結、六類發佈提交綁定及固定發行標籤的文件外鏈；交付工具下一批為8項。新增TTS斷網用例的明確套件綁定，原15方法／斷言保留；19處直接原生Python子程序已靜態複核。全部289應用模組候選無靜態未綁定名稱，工具整套計畫42項尚未執行。目前r5整套繼續，5個問題事件檢查點並非最終統計；原546／7／95凍結保持，候選未套用／執行。[完整候選](docs/product/DELIVERY66_R6_CANDIDATE.md) · [建置來源與新增問題](docs/product/DELIVERY66_PACKAGING_PROVENANCE.md)
+**下一批r6候選仍為9個程式檔案：** 已補齊神經配樂Skill說明的凍結輸入、官方校驗器摘要及包內手冊目標版本；四份安裝／素材手冊恢復目前CLI63狀態並完整保留歷史。下一輪工具整套現為43項，尚未執行；目前r5完整產品回歸繼續，原546／7／95凍結保持，正式入口仍CLI0.1.63。[候選生成輸入及使用邏輯](docs/product/DELIVERY66_STAGE_INPUTS.md) · [完整未完成內容](docs/product/UNFINISHED_20261106.md)
 
 **開發狀態2026-11-06：CLI0.1.66已一次完成並套用20檔案修正，凍結r5；31項完整交付工具契約通過，零失敗／錯誤／跳過。** 應用與bare-worker兩組實際隔離依賴預檢通過；未篩選產品全套實際發現4,124項，仍執行中、無終態，發現數不可當作通過數。原r4完整4,114項為10失敗／15錯誤／0跳過，25條完整堆疊與r2中斷均保留。[完整未完成內容](docs/product/UNFINISHED_20261106.md) · [原r4結果](docs/product/DELIVERY66_R4_RESULTS.md)
 
@@ -2222,6 +2222,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R593 | 發佈提交涵蓋與全模組靜態檢查 / 2026-11-06 | 原提交門禁僅涵蓋546產品／測試／依賴，未含7工具、正式Skill／註冊與三語README。6檔案下一批候選補v2鎖、五類完整角色、原始位元組與Git clean雙重核對、機器設定排除及基礎安裝先行說明；新增6契約，原31方法／斷言保留，計畫37項未執行。全部289應用模組候選靜態無未綁定名稱，546／7／95凍結一致。 [範圍](docs/product/DELIVERY66_RELEASE_BINDING.md) · [靜態收據](docs/validation/evidence/delivery66-handoff-20261106-r1/r6-source-binding-draft-r1/verification.json) |
 | R594 | 建置來源凍結與TTS子程序候選 / 2026-11-06 | 原69項打包來源有68項未在r5凍結。9檔案候選保留62份手冊及輸入路徑，補69來源凍結、8工具、六類提交綁定與ZIP→便攜實裝→正式入口→發行鎖傳遞；新文件外鏈固定標籤。新增5契約後工具整套計畫42項未執行。TTS斷網子程序找不到套件的第5事件已記錄，15方法／斷言不變，19處直接子程序複核；9檔案語法與289模組靜態通過，原546／7／95不變。 [實作](docs/product/DELIVERY66_PACKAGING_PROVENANCE.md) · [靜態收據](docs/validation/evidence/delivery66-handoff-20261106-r1/r6-packaging-inputs-draft-r1/verification.json) |
 | R595 | 2026-11-06：完整目標未完成內容複核 | [38組差距、12項交付阻塞及階段順序](docs/product/UNFINISHED_20261106.md)；[唯讀證據](docs/validation/evidence/status-review-20261106-r2/review-r1/verification.json) | 實際發現入口仍CLI0.1.63，開發66；r5真實程序存活、無終態，目前4失敗／1錯誤事件；9檔案候選未套用、42工具項未執行；原546／7／95凍結相同。缺少實作、品質／組合驗收及正式交付分別說明，無新增功能測試／模型／註冊／發行，不計算完成百分比 |
+| R596 | 2026-11-06：Skill生成輸入與工具包手冊版本補齊 | [完整實作與邊界](docs/product/DELIVERY66_STAGE_INPUTS.md)；[最終候選靜態證據](docs/validation/evidence/delivery66-handoff-20261106-r1/r6-stage-inputs-draft-r1/final-code-review/verification.json) | 神經配樂說明納入凍結工具，官方校驗器固定摘要並在輸出前拒絕變化；4手冊恢復正式63／候選65／開發66及完整歷史，包內入口先顯示實際清單版本。原31方法／斷言保留，下一輪43項未執行；289應用模組候選靜態無未綁定名稱，51連結與4段原生PowerShell語法通過；原546／7／95凍結保持，候選未套用／功能執行／註冊／發行 |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

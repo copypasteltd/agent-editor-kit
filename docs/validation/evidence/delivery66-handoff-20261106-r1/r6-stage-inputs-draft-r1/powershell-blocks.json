@@ -1,0 +1,22 @@
+[
+  {
+    "document": "COMMUNITY_LOCAL_DELIVERY.md",
+    "index": 0,
+    "script": "$aekEntry = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1'\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File $aekEntry version\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File $aekEntry doctor\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File $aekEntry capabilities"
+  },
+  {
+    "document": "COMMUNITY_MATERIALS.md",
+    "index": 0,
+    "script": "$aekEntry = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1'\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File $aekEntry version\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File $aekEntry doctor\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File $aekEntry capabilities"
+  },
+  {
+    "document": "COMMUNITY_MATERIALS.en.md",
+    "index": 0,
+    "script": "$aekEntry = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1'\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File $aekEntry version\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File $aekEntry doctor\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File $aekEntry capabilities"
+  },
+  {
+    "document": "COMMUNITY_MATERIALS.zh-TW.md",
+    "index": 0,
+    "script": "$aekEntry = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1'\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File $aekEntry version\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File $aekEntry doctor\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File $aekEntry capabilities"
+  }
+]

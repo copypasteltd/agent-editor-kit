@@ -16,7 +16,7 @@
 
 release-lock仍为agent-editor-reviewed-release-v2，source_binding升级为agent-editor-release-source-v2。源码提交比较保留原始SHA-256与Git clean对象双重检查。69来源记录不会把同一工具重复计算为两个独立发布文件。
 
-本批再增加5项工具契约：原生打包来源及标签、非法引用在输出前拒绝、缺失／读取中变化来源在写出前拒绝、构建门禁在创建目录前拒绝、未提交的注册助手／LICENSE／手册拒绝。原31方法与断言保留；加前批6项后下一轮计划42项，全部候选新增检查尚未执行。
+本批再增加5项工具契约：原生打包来源及标签、非法引用在输出前拒绝、缺失／读取中变化来源在写出前拒绝、构建门禁在创建目录前拒绝、未提交的注册助手／LICENSE／手册拒绝。原31方法与断言保留；加前批6项及后续校验器1项后下一轮计划43项，全部候选新增检查尚未执行。
 
 ## r5新增断网用例失败
 
@@ -30,6 +30,8 @@ r5在tests_started=2362时记录test_python_network_guard_blocks_connection_befo
 
 9候选文件语法通过；覆盖候选的289应用模块及候选工具／用例无静态未绑定名称。原r5的546产品／用例／依赖、7工具、95正式文件仍一致。实时问题检查点为4失败事件／1错误事件，原整套尚无终态；它不是最终失败统计。
 
-继续原整轮，收齐全部问题后一次补全、应用并冻结新批，集中执行42项工具整套及未过滤源码／安装整套，再推进真实CUDA音乐、故障、媒体包、正式切换／回滚及新发行。完整G01—G38不变。
+继续原整轮，收齐全部问题后一次补全、应用并冻结新批，集中执行43项工具整套及未过滤源码／安装整套，再推进真实CUDA音乐、故障、媒体包、正式切换／回滚及新发行。完整G01—G38不变。
 
 [9文件摘要](../validation/candidates/delivery66-r6/implementation.json) · [原69来源及68未冻结项](../validation/evidence/delivery66-handoff-20261106-r1/r6-packaging-inputs-draft-r1/before.json) · [19处子进程AST记录](../validation/evidence/delivery66-handoff-20261106-r1/r6-packaging-inputs-draft-r1/child-launch-audit.json) · [5问题事件快照](../validation/evidence/delivery66-handoff-20261106-r1/r6-packaging-inputs-draft-r1/observed-issues.json) · [静态及原冻结收据](../validation/evidence/delivery66-handoff-20261106-r1/r6-packaging-inputs-draft-r1/verification.json) · [提交绑定说明](DELIVERY66_RELEASE_BINDING.md)。
+
+后续[Skill生成输入修正](DELIVERY66_STAGE_INPUTS.md)保持69项构建来源和62份手册清单，更新其中4份手册当前段并完整保留历史。

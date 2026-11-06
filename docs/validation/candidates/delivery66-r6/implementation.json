@@ -26,8 +26,8 @@
     {
       "path": "docs/validation/delivery66_handoff.py",
       "base_sha256": "745c7f2ed0e9b0ad05deadbceaf94e649bcce9317c1f9fa82f240c0356014de2",
-      "candidate_sha256": "62a957bb903a90532a39e989e194f5b79e777691f76dc978c25f1980a2ea4e19",
-      "bytes": 57048
+      "candidate_sha256": "9d34d055c3ff365e5af9f03f466df0cfae78c8d11386ad096c73bdcf83aac771",
+      "bytes": 56405
     },
     {
       "path": "docs/validation/publish_delivery66.py",
@@ -38,20 +38,20 @@
     {
       "path": "docs/validation/test_delivery66_handoff.py",
       "base_sha256": "d75d33d2df2e01bbf86dcd66da17de737fc7d6d73e8673af5943d9398207ffb7",
-      "candidate_sha256": "dad8b16a5dc89f22d34650756d928428f3c1e6ee57f9e4da848450e50141d1e3",
-      "bytes": 41065
+      "candidate_sha256": "74022c8458c52889d24de7c71ff1e0292401d6ce3cdd2c4254d170ae14376d13",
+      "bytes": 42414
     },
     {
       "path": "scripts/package_community_skill.py",
       "base_sha256": "ac09d998a35396e3250f4e368642b1b636b4ecfb6e6f7b0be74c25cb9d5cbc6f",
-      "candidate_sha256": "1f56ba8829c1cace1d36be1d333b91e81603885b70752c1ad4169762cadea75b",
-      "bytes": 8480
+      "candidate_sha256": "1df1049ce02c62d1c26813f935cdb12c12c5798e94bad93f3956da30691a178b",
+      "bytes": 9575
     },
     {
       "path": "docs/validation/delivery66.py",
       "base_sha256": "70cf349a23ebc4a731de112f2c532979a9d6a0e32ebf15e47758e5d997d3304b",
-      "candidate_sha256": "7a694c09d0d3bfdc16b3bd7a9941b93e1300aaf6e881680d6b57adaae522ded0",
-      "bytes": 38004
+      "candidate_sha256": "970f2b2c492012b1f5069557d085a270115022f0d0fa2d746829cb6f20cb5579",
+      "bytes": 44340
     },
     {
       "path": "product/tests/test_local_tts.py",
@@ -79,14 +79,17 @@
     "Actually establish ASCII/strict stdout and stderr before invoking the real CLI so the adversarial UTF-8 contract remains effective when Python ignores encoding environment variables.",
     "Preserve three-second lock deadlines, five-second owned-child cleanup and the Unicode thirty-second timeout; retain bounded child stderr in lock failures.",
     "Import the actual AppError caught by audio progress diagnostics; the r5 live traceback directly records the missing name in the nonordinary-file branch. Preserve original unavailable state and code assertions.",
-    "Bind accepted product/test/dependency files, all seven frozen delivery tools, accepted public Skill/registration files and all three README entries to exact current bytes and the reviewed Git commit.",
+    "Bind accepted product/test/dependency files, all eight frozen delivery tools, accepted public Skill/registration files and all three README entries to exact current bytes and the reviewed Git commit.",
     "Reject incomplete or overlapping source roles and machine-local runtime configuration in public source bindings. Preserve Git clean normalization and separately reject raw-byte drift.",
     "Add six complete delivery contracts, including real native Git commits, normalized line endings, uncommitted tool/Skill/registration/documentation, missing committed files and frozen tool drift; no candidate tests have run.",
     "Generate basic-first three-language release notes consistent with optional AI model installation.",
     "Freeze all 69 actual packaging inputs and carry their exact hashes through base/final KIT inventories, fresh portable acceptance, formal activation and reviewed release commit binding.",
     "Preserve all 62 original guide inputs; source ref validation pins newly externalized documentation links to the immutable release tag.",
     "Add five complete contracts for native packaging provenance, invalid refs, missing/changing source inputs, pre-output kit rejection and uncommitted helpers/license/guides.",
-    "Bind the existing TTS network-guard subprocess to the exact selected source/installed package; preserve the real socket guard script and all assertions. Review all 19 direct native Python subprocess launches."
+    "Bind the existing TTS network-guard subprocess to the exact selected source/installed package; preserve the real socket guard script and all assertions. Review all 19 direct native Python subprocess launches.",
+    "Embed the complete neural music Skill reference in the frozen delivery runner; remove runtime reads of the unfrozen legacy preparation script and pin its documentation URL to the release tag.",
+    "Bind the actual native official Skill validator to reviewed bytes before freeze and stage; record the same pin in the freeze and staging receipt and reject changed tools before creating stage outputs.",
+    "Prepend the archive actual CLI/release target to the four packaged entry guides; keep the source formal-state snapshots and all historical evidence unchanged. Extend the existing native packaging contract to verify the target in all four shipped guides."
   ],
   "next_step": "Keep collecting the complete r5 result; finish all new corrections before applying a complete next batch and running centralized contracts and unfiltered product regression.",
   "observed_r5_issues": {
@@ -95,9 +98,9 @@
     "audio_diagnostic_missing_AppError_error": 1,
     "tts_network_guard_child_import_failure": 1
   },
-  "updated_at_utc": "2026-11-06T04:24:08.114147+00:00",
-  "new_handoff_test_methods": 11,
-  "planned_handoff_test_methods": 42,
+  "updated_at_utc": "2026-11-06T04:56:18.992390+00:00",
+  "new_handoff_test_methods": 12,
+  "planned_handoff_test_methods": 43,
   "release_lock_format": "agent-editor-reviewed-release-v2",
   "release_source_roles": [
     "product",
@@ -112,5 +115,11 @@
   "packaging_input_files": 69,
   "packaging_guide_files": 62,
   "planned_frozen_delivery_tools": 8,
-  "immutable_documentation_ref": "v0.1.0-alpha.4"
+  "immutable_documentation_ref": "v0.1.0-alpha.4",
+  "legacy_skill_reference_runtime_dependency": false,
+  "skill_reference_embedded_in_frozen_tool": true,
+  "native_skill_validator": {
+    "path": "C:\\Users\\carzy\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+    "sha256": "6068513d924ed3559e186dfcdead7439129828dcf402167fd925c06dffbf2806"
+  }
 }

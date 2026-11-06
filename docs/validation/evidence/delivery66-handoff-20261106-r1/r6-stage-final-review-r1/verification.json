@@ -1,0 +1,23 @@
+{
+  "status": "scoped-stage-candidate-review-passed",
+  "observed_at_utc": "2026-11-06T04:59:02.833251+00:00",
+  "base_commit": "498587f9b4ab34c0682bd1e4e42f885545b296a3",
+  "candidate_files": 9,
+  "planned_tool_methods": 43,
+  "local_links_checked": 143,
+  "missing_links": [],
+  "historical_readme_rows_preserved": true,
+  "readme_F": 90,
+  "readme_R": 596,
+  "regression_live": true,
+  "regression_terminal_report": false,
+  "regression_issue_events": {
+    "failure": 4,
+    "error": 1
+  },
+  "candidate_applied": false,
+  "candidate_functions_executed": false,
+  "new_functional_tests": false,
+  "formal_activation": false,
+  "release_created": false
+}

@@ -1,5 +1,37 @@
 # 開源素材、配音、翻譯、配樂與 GPU 使用手冊
 
+**目前正式入口：CLI0.1.63 / local61 / r58，唯一Skill `$agent-ffmpeg-local-editor`，17內部模組。** 版本與應用摘要見[本機安裝說明](COMMUNITY_LOCAL_DELIVERY.md)；本次實際入口查詢見[原始輸出](../validation/evidence/status-review-20261106-r2/review-r1/formal-skill-version.json)。下方較早手冊完整保留為當時實測基線。
+
+| 編號 | 目前正式能力及使用邏輯 | 實際證據與邊界 |
+| --- | --- | --- |
+| U01 | 359個素材：44 BGM、85短樂、228音效、2字體；先查詢／檢查再匯入 | 逐項保留來源、授權與摘要；不是完整產業影片／圖片／貼紙庫 |
+| U02 | 中英103具名音色，先`voice list`選擇，再明確合成與試聽 | 全103實際WAV來自CLI61候選，[試聽證據及選型](../validation/CLI61全音色试听_2026-10-29.md)；不是本輪或CLI63重新生成／全部人工聽審 |
+| U03 | 中英翻譯、雙語字幕與可編輯配音軌 | [字幕配音流程](SUBTITLE_DUBBING.md)；語意、自然韻律與口型接受分別記錄 |
+| U04 | 解析譜面合成、8類音色、4類程序音效及分軌 | [譜面介面](MUSIC_SCORE.md)；這是CPU解析合成，神經生曲尚未進入正式63 |
+| U05 | 採樣時鐘循環交疊修復、配方與獨立音軌 | [循環修復](MUSIC_LOOP.md)；交疊明確縮短週期，數值連續不代表自然聽感通過 |
+| U06 | 已設定配音／翻譯的`auto`優先GPU，嚴格GPU失敗如實回報 | 各任務的模型與CUDA執行庫分別設定；不代表所有階段用GPU或冷啟動更快 |
+| U07 | 500濾鏡及N002逐項真實預覽，可建立客戶候選圖 | [客戶選型操作](../../skills/agent-ffmpeg-local-editor/references/client-look-selection.md)；母圖預覽不冒充客戶素材或其他強度 |
+| U08 | 單一Skill使用已校驗安裝版，依序預覽、渲染、品檢及工程包重播 | [實際63交付與用法](../validation/CLI63统一Skill切换_2026-10-29.md)；不靜默回退原始碼 |
+
+先查詢實際入口，再按任務讀取對應內部模組：
+
+```powershell
+$aekEntry = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1'
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File $aekEntry version
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File $aekEntry doctor
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File $aekEntry capabilities
+```
+
+保留原素材、原音軌、模型／授權記錄和客戶選擇。模型使用已明確登記的本機依賴，不隱式下載。音色／濾鏡數量及機器檢查不取代完整試聽、自然影片品質或客戶接受。
+
+CLI65候選已真實生成神經音樂；CLI66仍在整批開發／回歸，均不視為正式63已有能力。[神經音樂實作與限制](NEURAL_MUSIC_GENERATION.md) · [目前交付門禁](DELIVERY66_HANDOFF.md) · [完整未完成內容](UNFINISHED_20261106.md)。
+
+[简体中文](COMMUNITY_MATERIALS.md) · [English](COMMUNITY_MATERIALS.en.md)。早期「只生成3音色」「無循環修復」「無生曲」等僅適用於其歷史基線，不覆蓋上表後續成果。
+
+<details>
+<summary>Historical editions / 历史版本 / 歷史版本（完整保留）</summary>
+
+
 Current registered runtime / 当前正式入口 / 目前正式入口：**CLI0.1.59 / local57**，r57配套单入口Skill。新增解析谱面配乐与4类程序音效；[完整流程、实际C盘入口及边界](../validation/CLI59统一Skill切换_2026-10-29.md)。以下原版素材／配音／翻译基线及CLI58段落保留为历史，不代表本轮重新推理所有任务。
 
 
@@ -100,3 +132,5 @@ OPUS 原始歸檔許可為 CC-BY-4.0；與部分 Hugging Face card 的 Apache �
 實際案例保留 12 秒、360×640、30fps、360 幀、獨立音軌、SC 字幕與 TC 標題、濾鏡、音效和 `.aevpkg.zip` 往返工程。原始配音/混音檔案在本地交付目錄；未確認釋出權利的聲音不隨公共 README 再分發。公共頁面展示由已驗證開源資源製作的無配音演示和 GIF，完整本地成片及機器響應另見實測路徑。
 
 CPU 專項 46 條實際命令、GPU 專項 15 條實際命令；不與歷史迴歸合併計數。字幕逆序和重疊、毫秒時間、三音色、UTF-8 文字/語速、缺失/篡改/額外模型檔案與嚴格 CUDA/CPU 回退分別檢查。人類聽審和語義接受尚未完成，亦未實現完整剪映等價。
+
+</details>

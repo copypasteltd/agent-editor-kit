@@ -1,0 +1,31 @@
+{
+  "status": "syntax-assertions-doc-links-and-source-freeze-reviewed",
+  "observed_at_utc": "2026-11-06T04:52:03.092980+00:00",
+  "candidate_files": 9,
+  "candidate_digests_match": true,
+  "candidate_syntax_valid": true,
+  "planned_handoff_methods": 43,
+  "original_handoff_methods": 31,
+  "original_handoff_assertion_calls_preserved": true,
+  "legacy_skill_reference_runtime_dependency": false,
+  "native_validator": {
+    "path": "C:\\Users\\carzy\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+    "sha256": "6068513d924ed3559e186dfcdead7439129828dcf402167fd925c06dffbf2806"
+  },
+  "reference_pinned_to_release_tag": true,
+  "current_guides": 4,
+  "current_guide_local_links_checked": 51,
+  "missing_links": [],
+  "powershell_blocks_pending_parse": 4,
+  "original_source_freeze_counts": {
+    "file_hashes": 546,
+    "delivery_tool_files": 7,
+    "formal_guard": 95
+  },
+  "original_source_freeze_equal": true,
+  "candidate_applied": false,
+  "candidate_functions_executed": false,
+  "new_functional_tests": false,
+  "formal_activation": false,
+  "pyflakes_available": false
+}

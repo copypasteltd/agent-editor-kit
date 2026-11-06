@@ -1,6 +1,5 @@
 """Code-first delivery66: freeze, whole-suite checks, offline install, replay, stage."""
 import argparse
-import ast
 import copy
 import hashlib
 import json
@@ -20,11 +19,20 @@ LOCAL = ROOT / 'local/agent-ffmpeg/delivery66'
 SOURCE = ROOT / 'product/src/ai_ad_editor'
 VERSION = '0.1.66'
 RELEASE = 'v0.1.0-alpha.4-local.64'
+SKILL_VALIDATOR = Path('C:/Users/carzy/.codex/skills/.system/skill-creator/scripts/quick_validate.py')
+SKILL_VALIDATOR_SHA256 = '6068513d924ed3559e186dfcdead7439129828dcf402167fd925c06dffbf2806'
+NEURAL_MUSIC_REFERENCE = "# Native neural music / CLI@CLI_VERSION@\n\nUse this for local original instrumental music or explicit singing requests.\n`music compose` remains the separate CPU score synthesizer. `music generate`\nuses ACE-Step1.5 Turbo through an existing native ComfyUI core, without a GUI,\nHTTP service, shared queue, Docker or WSL. Keep one public Skill entry.\n\nThe application bundle does not include the 10 GB model pack or the external\nnative Torch/ComfyUI environment. Register the four pinned safetensors and\nthat existing environment explicitly; do not substitute YuE2, a quantized\ncheckpoint or an online service. Model and native-core declarations/limits:\nhttps://github.com/copypasteltd/agent-editor-kit/blob/v0.1.0-alpha.4/docs/product/NEURAL_MUSIC_GENERATION.md\nThe local pack contains diffusion_model.safetensors, text_encoder.safetensors,\nlanguage_model.safetensors and vae.safetensors with the exact built-in hashes.\n\nUse the exact CLI@CLI_VERSION@ launcher in this Skill. The registration evidence and\nlicense reference must be local files. URLs in the source declaration are\nresearch metadata, not runtime license arguments. Complete model, interpreter,\nComfyUI source/resource and implementation checks precede execution. Cold\nintegrity reads can take minutes and are distinct from GPU inference time.\n\n```powershell\n& $avk music generator-adapter register --project $project --adapter-id ace15 `\n  --model-path $models --runtime-root $core --executable $nativePython --evidence $evidence\n& $avk music generator-adapter inspect --project $project --adapter-id ace15\n& $avk music inspect-generation --input $request\n& $avk music generate --project $project --adapter-id ace15 --input $request `\n  --new-asset-id music01 --dry-run\n& $avk music generate --project $project --adapter-id ace15 --input $request `\n  --new-asset-id music01\n```\n\nRequest JSON uses format `agent-neural-music-v1`, prompt, explicit instrumental,\nlyrics, duration_seconds, bpm, language, keyscale, timesignature, seed, steps and\ngenerate_audio_codes. Keep the client's original prompt and lyrics. Prompt is\n1..4000 characters; lyrics at most 12000. Instrumental requires empty lyrics;\nsinging requires nonempty lyrics and an explicit language. Schema support for\nlanguages is not acceptance of pronunciation or exact lyric delivery.\n\nDuration accepts 10..600 seconds in 0.04 second increments. Only an actual observed\nrange/device is a tested range; do not promise long-song quality from this bound.\nDefault 8 steps uses Euler/simple/CFG1/flow shift3/multiplier1. BPM 10..300, signature\n2/3/4/6, key names such as D minor, nonnegative 63 bit seed. Set\ngenerate_audio_codes explicitly when changing the language-model path.\n\nText, optional language-model, diffusion and VAE forwards must actually execute\non CUDA 0. CPU weight offload is allowed; CPU neural inference fallback is not.\nThe exact output is 48 kHz stereo Float32 WAV: no padding, looping, resampling,\nnormalization or cropping to pretend that the requested duration was generated.\nCheck the model forward counts/devices, native samples and full PCM roundtrip.\n\nThe generator registers a static loading policy and selects the native safetensors\npread backend for all four pinned components. Unsupported backends fail;\nnever retry with mmap, pickle or CPU neural inference. Read local_weight_reads\nfor actual file/backend/open observations. The runtime parser must declare\nthe required flags; optional frontend --offline is used only if declared.\nWorker network blocking and offline environment settings remain mandatory.\n\nModel elapsed_seconds now includes runtime imports. Review the separate\nruntime_import_seconds, checkpoint loading and generation/decode timings.\nGeneration timings can include device transfers; they are not GPU kernel time.\nAn earlier adapter pins earlier implementation/settings bytes: re-register\nexplicitly with a new adapter ID after upgrading. Existing audio and recipes\nremain reusable; do not silently rewrite the old registration or original WAV.\n\nListen to the complete local WAV before selecting it for a client. Preserve the\nasset ID, request, model/runtime hashes, seed and actual sample count. Show real\nauditions; a waveform card is not listening or music-quality acceptance. Review\nphrasing, instrumentation, structure, lyric delivery and level separately.\nGenerated rights remain unverified/internal until explicitly reviewed; model\nlicense declarations do not automatically approve an individual output.\n\nAfter selection, use --apply --track-id TRACK for an unlocked independent audio\ntrack; inspect overlaps first. The saved source.music_generation recipe is an\neditable request/provenance record, not MIDI, stems or editable musical notes.\nUse --recipe-asset-id music01 --new-asset-id music02 to rerun its original\nrequest with the same model/runtime bytes; edit a new JSON for a new request.\nSeeds do not guarantee identical bytes across devices or library versions.\n\nSet --cancel-file, --timeout-seconds and --storage-budget-mib as needed. The\ndefault 1800 second budget covers the worker/output checks after command preflight.\nKeep original assets and snapshots; a new result uses a new ID. On failure,\ninspect the bounded redacted diagnostic and verify process cleanup before retry.\nExport a project package and replay the whole WAV/recipe/encoded AV. The package\nretains external model pins; it does not silently bundle or download the models.\nNatural listening, broad singing/language/style quality, clean-host setup and\ncomplete CapCut equivalence remain separate acceptance work.\n"
 
 
 def sha(path):
     with Path(path).open('rb') as stream:
         return hashlib.file_digest(stream, 'sha256').hexdigest()
+
+
+def skill_validator_pin():
+    if not SKILL_VALIDATOR.is_file() or sha(SKILL_VALIDATOR) != SKILL_VALIDATOR_SHA256:
+        raise ValueError('Native Skill validator differs from the reviewed implementation')
+    return dict(path=str(SKILL_VALIDATOR), sha256=SKILL_VALIDATOR_SHA256)
 
 
 def load(path):
@@ -71,6 +79,7 @@ def unchanged(freeze):
     assert all(sha(ROOT / name) == pin for name, pin in freeze['formal_guard'].items()), 'Formal entry changed'
     assert all(sha(ROOT / name) == pin for name, pin in freeze.get('delivery_tool_files', {}).items()), 'Frozen delivery tools changed'
     assert packaging_sources() == freeze.get('packaging_source_files'), 'Frozen packaging inputs changed'
+    assert freeze.get('skill_validator') == skill_validator_pin(), 'Frozen native Skill validator changed'
 
 
 def proof(action, run):
@@ -213,6 +222,7 @@ def dependency_probe_files(record, package):
 
 
 def freeze_code(args):
+    validator = skill_validator_pin()
     out = proof('freeze', args.run)
     for name in pins():
         if name.endswith('.py'):
@@ -234,6 +244,7 @@ def freeze_code(args):
     # its three declared configurations already have implementations.
     save(out / 'verification.json', dict(status='frozen', cli_version=VERSION, file_hashes=pins(),
         formal_guard=formal_guard(), delivery_tool_files=tools, packaging_source_files=packaging_sources(),
+        skill_validator=validator,
         implementation_units=['T01', 'T02', 'T03', 'T04', 'T05', 'T06', 'H01', 'H02', 'H03', 'H04', 'H05', 'H06', 'H07', 'H08', 'H09'],
         code_completed_before_tests=True, functional_tests_started=False, model_forwards=0))
     print('All delivery66 code frozen before functional tests.', flush=True)
@@ -362,6 +373,8 @@ def build(args, freeze):
 
 
 def stage(args, freeze):
+    validator_pin = skill_validator_pin()
+    assert freeze.get('skill_validator') == validator_pin, 'Skill validator differs from source freeze'
     out = proof('skill-entry', args.run)
     candidate = load(BASE / ('candidate-' + args.candidate_run) / 'verification.json')
     installed = Path(candidate['installed'])
@@ -380,10 +393,8 @@ def stage(args, freeze):
         '[neural music](references/neural-music.md). For verified upgrades, interrupted activation '
         'recovery and rollback, read [delivery](references/delivery.md).\n')
     entry.write_text(text, encoding='utf-8', newline='\n')
-    old = (ROOT / 'docs/validation/prepare_music65_skill.py').read_text(encoding='utf-8')
-    reference = next(ast.literal_eval(n.value) for n in ast.parse(old).body if isinstance(n, ast.Assign)
-        and any(isinstance(t, ast.Name) and t.id == 'REFERENCE' for t in n.targets))
-    (folder / 'references/neural-music.md').write_text(reference.replace('0.1.65', VERSION) +
+    reference = NEURAL_MUSIC_REFERENCE.replace('@CLI_VERSION@', VERSION).replace('@CLI_SHORT@', VERSION.rsplit('.', 1)[-1])
+    (folder / 'references/neural-music.md').write_text(reference +
         '\nHistorical actual CUDA generation was verified on CLI65. Confirm the actual CLI66 receipts '
         'before describing new-version inference as accepted. CLI66 reports concurrent output occupation as '
         '`MUSIC_GENERATION_OUTPUT_CONFLICT` and other filesystem failures as `MUSIC_GENERATION_IO_FAILED`; '
@@ -405,8 +416,8 @@ def stage(args, freeze):
     manifest.update(release=RELEASE, cli_version=VERSION, manifest_sha256=candidate['manifest_sha256'], files=files)
     manifest['skills'][0]['skill_md_sha256'] = sha(entry)
     save(home / 'agent-ffmpeg-local-install-manifest.json', manifest)
-    validator = Path('C:/Users/carzy/.codex/skills/.system/skill-creator/scripts/quick_validate.py')
-    call(out, 'frontmatter', [sys.executable, '-E', '-B', '-X', 'utf8', validator, folder])
+    call(out, 'frontmatter', [sys.executable, '-E', '-B', '-X', 'utf8', SKILL_VALIDATOR, folder])
+    assert skill_validator_pin() == validator_pin, 'Native Skill validator changed during validation'
     prefix = ['powershell.exe', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', folder / 'scripts/run.ps1']
     call(out, 'version', [*prefix, 'version'], cli=True)
     call(out, 'delivery-help', [*prefix, 'delivery', '--help'])
@@ -416,7 +427,7 @@ def stage(args, freeze):
     save(out / 'verification.json', dict(status='passed', cli_version=VERSION, home=str(home),
         actual_PowerShell_entry=True, source_fallback=False, files=files, formal_activation=False,
         application_files=candidate['application_files'], skill_files={row['path']: row['sha256'] for row in files},
-        natural_quality_accepted=False, model_forwards=0))
+        frontmatter_validator=validator_pin, natural_quality_accepted=False, model_forwards=0))
 
 
 def package(args, freeze):

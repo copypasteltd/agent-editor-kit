@@ -1,5 +1,37 @@
 # Community materials, voice, translation, music and GPU workflow
 
+**Formal entry: CLI0.1.63 / local61 / r58, one `$agent-ffmpeg-local-editor` Skill with 17 internal modules.** Use the [installation/version pairing](COMMUNITY_LOCAL_DELIVERY.md) and [actual discovered-entry output](../validation/evidence/status-review-20261106-r2/review-r1/formal-skill-version.json). The collapsed earlier manual remains dated evidence.
+
+| ID | Current formal capability and workflow | Evidence and limits |
+| --- | --- | --- |
+| U01 | 359 assets: 44 BGM, 85 jingles, 228 SFX and two fonts; inspect before ingest | Per-file source, license and digest; not a complete video/image/sticker catalog |
+| U02 | 103 named Chinese/English voices; select, synthesize explicitly and audition | All 103 actual WAVs came from the CLI61 candidate: [auditions](../validation/CLI61全音色试听_2026-10-29.md); not new CLI63 inference or completed human listening |
+| U03 | Chinese/English translation, bilingual subtitles and editable dubbing tracks | [Dubbing workflow](SUBTITLE_DUBBING.md); semantic acceptance, phrasing and lip sync remain separate |
+| U04 | Analytical score synthesis, eight timbres, four procedural SFX and stems | [Score API](MUSIC_SCORE.md); CPU synthesis; neural generation is not formally delivered in CLI63 |
+| U05 | Sample-clock overlap loop repair, recipe and independent track | [Loop repair](MUSIC_LOOP.md); overlap explicitly shortens the cycle; numeric continuity is not listening acceptance |
+| U06 | Configured voice/translation `auto` prefers GPU; strict GPU failures stay visible | Configure each model and CUDA runtime explicitly; cold startup and other processing stages may remain CPU or slower |
+| U07 | 500 looks with actual N002 previews and client shortlist support | [Client selection](../../skills/agent-ffmpeg-local-editor/references/client-look-selection.md); do not label a master-image preview as client footage or a different strength |
+| U08 | One Skill uses its verified installation, then preview/render/check/package replay | [Actual CLI63 delivery](../validation/CLI63统一Skill切换_2026-10-29.md); no silent source fallback |
+
+Inspect the discovered entry, then read the internal module needed for the task:
+
+```powershell
+$aekEntry = 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run.ps1'
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File $aekEntry version
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File $aekEntry doctor
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File $aekEntry capabilities
+```
+
+Preserve originals, source audio, model/license records and the client's choice. Models use explicitly registered local dependencies. Actual output counts and machine checks do not establish full listening, natural-video quality or client acceptance.
+
+CLI65 has actual candidate neural music evidence. CLI66 remains batch development/regression; neither is the formal CLI63 entry. See [neural music](NEURAL_MUSIC_GENERATION.md), [delivery gates](DELIVERY66_HANDOFF.md) and [unfinished scope](UNFINISHED_20261106.md).
+
+[简体中文](COMMUNITY_MATERIALS.md) · [繁體中文](COMMUNITY_MATERIALS.zh-TW.md). Earlier statements about three generated voices, absent loop repair or absent generation apply to their historical baseline and do not replace the later results above.
+
+<details>
+<summary>Historical editions / 历史版本 / 歷史版本（完整保留）</summary>
+
+
 Current registered runtime / 当前正式入口 / 目前正式入口：**CLI0.1.59 / local57**，r57配套单入口Skill。新增解析谱面配乐与4类程序音效；[完整流程、实际C盘入口及边界](../validation/CLI59统一Skill切换_2026-10-29.md)。以下原版素材／配音／翻译基线及CLI58段落保留为历史，不代表本轮重新推理所有任务。
 
 
@@ -96,3 +128,5 @@ Original OPUS archives carry CC-BY-4.0. Where a model card has a conflicting Apa
 The actual edit is 12 s, 360×640, 30 fps, 360 decoded frames, with separate audio, SC captions, TC title, look/SFX and editable-package round trip. Speech/mixes remain in the local delivery folder while publication rights are unresolved. Public examples use verified open resources without redistributing those generated voices. The full local output and JSON response paths remain in the evidence.
 
 CPU: 46 actual commands; GPU: 15 actual commands, separate from historical regression totals. Tests include three voices, UTF-8 input/speed, unordered/overlapping millisecond cues, corrupt/missing/extra pack files, strict CUDA and explicit CPU fallback. Human listening, semantic approval and complete CapCut parity remain open.
+
+</details>

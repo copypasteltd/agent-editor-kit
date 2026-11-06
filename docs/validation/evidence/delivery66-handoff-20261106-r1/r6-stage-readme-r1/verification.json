@@ -1,0 +1,33 @@
+{
+  "status": "three-language-current-state-synchronized",
+  "readmes": [
+    {
+      "path": "README.md",
+      "before_sha256": "67d12c9c57198cdde35a6b098b602a21bbcf4c899b5efd78df95453ddce498f6",
+      "after_sha256": "5745748d3a098839a20a5b4b3f0f23b5dce4170bcefdbdb87c19e24f0f5b1729",
+      "historical_rows_preserved": true,
+      "F": 90,
+      "R": 596
+    },
+    {
+      "path": "README.zh-TW.md",
+      "before_sha256": "ea1af769b3bb3679ee05c30ce80519441371e6966fbb48b5ff06d42b274884ba",
+      "after_sha256": "4771484822c922445d248322c01d32e302d5e20e34afbbbda1900cda164dddc0",
+      "historical_rows_preserved": true,
+      "F": 90,
+      "R": 596
+    },
+    {
+      "path": "README.en.md",
+      "before_sha256": "b8bee818e67b4fcb45218eebea5b35d03f9c0771f8b799364c0f897e8404b914",
+      "after_sha256": "3dd353f3626ada712ab93e280c955f87ad7af1b193d9d294bf9806e35e757357",
+      "historical_rows_preserved": true,
+      "F": 90,
+      "R": 596
+    }
+  ],
+  "planned_tool_suite": 43,
+  "candidate_applied": false,
+  "new_functional_tests": false,
+  "formal_activation": false
+}

@@ -1,0 +1,22 @@
+test_contract_receipt_is_bound_to_the_frozen_driver (test_portrait67_delivery.DeliveryAdmissionTests.test_contract_receipt_is_bound_to_the_frozen_driver) ... ok
+test_installed_source_fallback_is_rejected (test_portrait67_delivery.DeliveryAdmissionTests.test_installed_source_fallback_is_rejected) ... ok
+test_old_version_and_weakened_assertions_are_rejected (test_portrait67_delivery.DeliveryAdmissionTests.test_old_version_and_weakened_assertions_are_rejected) ... ok
+test_partial_or_skipped_suite_cannot_authorize_delivery (test_portrait67_delivery.DeliveryAdmissionTests.test_partial_or_skipped_suite_cannot_authorize_delivery) ... ok
+test_portrait_faults_and_no_fallback_are_required (test_portrait67_delivery.DeliveryAdmissionTests.test_portrait_faults_and_no_fallback_are_required) ... ok
+test_running_source_is_not_a_terminal (test_portrait67_delivery.DeliveryAdmissionTests.test_running_source_is_not_a_terminal) ... ok
+test_skill_tamper_and_missing_new_file_are_rejected (test_portrait67_delivery.DeliveryAdmissionTests.test_skill_tamper_and_missing_new_file_are_rejected) ... ok
+test_synthetic_contracts_cannot_replace_real_portrait_terminal (test_portrait67_delivery.DeliveryAdmissionTests.test_synthetic_contracts_cannot_replace_real_portrait_terminal) ... ok
+test_tampered_application_or_archive_is_rejected (test_portrait67_delivery.DeliveryAdmissionTests.test_tampered_application_or_archive_is_rejected) ... ok
+test_an_extra_audio_track_is_not_silently_ignored (portrait67_existing_av_contracts.MediaContentContracts.test_an_extra_audio_track_is_not_silently_ignored) ... ok
+test_complete_non_silent_stereo_with_codec_padding (portrait67_existing_av_contracts.MediaContentContracts.test_complete_non_silent_stereo_with_codec_padding) ... ok
+test_matching_duration_text_does_not_hide_wrong_video_clock (portrait67_existing_av_contracts.MediaContentContracts.test_matching_duration_text_does_not_hide_wrong_video_clock) ... ok
+test_missing_last_video_frame_is_rejected (portrait67_existing_av_contracts.MediaContentContracts.test_missing_last_video_frame_is_rejected) ... ok
+test_nan_and_infinite_samples_cannot_pass_a_digest_check (portrait67_existing_av_contracts.MediaContentContracts.test_nan_and_infinite_samples_cannot_pass_a_digest_check) ... ok
+test_original_audio_only_project_cannot_satisfy_AV_acceptance (portrait67_existing_av_contracts.MediaContentContracts.test_original_audio_only_project_cannot_satisfy_AV_acceptance) ... ok
+test_silence_truncation_and_excess_padding_are_rejected (portrait67_existing_av_contracts.MediaContentContracts.test_silence_truncation_and_excess_padding_are_rejected) ... ok
+test_wrong_audio_clock_is_rejected (portrait67_existing_av_contracts.MediaContentContracts.test_wrong_audio_clock_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 3.419s
+
+OK

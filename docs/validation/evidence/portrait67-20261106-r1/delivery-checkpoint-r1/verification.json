@@ -1,0 +1,93 @@
+{
+  "status": "passed",
+  "observed_at_utc": "2026-11-06T14:25:21.958472+00:00",
+  "base_commit": "392bde78d94d711fc33ec7229235a36f5ebcb102",
+  "review_kind": "complete-delivery-tool-batch-and-verified-live-prerequisite",
+  "source_worktree_cli": "0.1.67",
+  "formal_cli": "0.1.66",
+  "formal_skill_files_unchanged": 95,
+  "frozen_product_files": 554,
+  "frozen_packaging_sources": 69,
+  "frozen_delivery_tools": 12,
+  "frozen_equal": true,
+  "delivery_contracts": {
+    "tests": 17,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "fixture_only": true,
+    "model_forwards": 0
+  },
+  "historical_portrait_contracts": 30,
+  "test_counts_combined": false,
+  "source_suite": {
+    "status": "running",
+    "discovered_tests": 4154,
+    "identity": {
+      "pid": 36544,
+      "creation_filetime": 134384459743255972,
+      "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+    },
+    "confirmed_live_at_observation": true,
+    "terminal_present": false,
+    "restarted": false
+  },
+  "prerequisite_chain": {
+    "identity": {
+      "pid": 1556,
+      "creation_filetime": 134384465739429876,
+      "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+    },
+    "confirmed_live_at_observation": true,
+    "status": "waiting-existing-source"
+  },
+  "delivery_chain": {
+    "identity": {
+      "pid": 2520,
+      "creation_filetime": 134384483753193077,
+      "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+    },
+    "confirmed_live_at_observation": true,
+    "status": "waiting-existing-prerequisite"
+  },
+  "installed_suite_started": false,
+  "actual_GPU_portrait_executed": false,
+  "actual_CLI67_music_executed": false,
+  "formal_activation_changed": false,
+  "public_release_overwritten": false,
+  "historical_readme_rows": {
+    "README.md": {
+      "preserved_rows": 702,
+      "current_rows": 703,
+      "all_prior_rows_verbatim": true
+    },
+    "README.zh-TW.md": {
+      "preserved_rows": 702,
+      "current_rows": 703,
+      "all_prior_rows_verbatim": true
+    },
+    "README.en.md": {
+      "preserved_rows": 702,
+      "current_rows": 703,
+      "all_prior_rows_verbatim": true
+    }
+  },
+  "original_goal_unchanged": true,
+  "checked_current_local_links": 47,
+  "missing_current_local_links": 0,
+  "scope_files": 18,
+  "documents": {
+    "README.md": "18fae0390624536c2b55856445f35f522324c0c306f95c14a5e89a1c943001dd",
+    "README.zh-TW.md": "4f3f4a340acfa67cf557c959f3a15a2a0ace45d39f2f1112fe0cfbdef923534c",
+    "README.en.md": "20c839d6ba3cdcef5a6e8fc17a43ce51db8174b64f1a5cb5b544682d2a873d6f",
+    "docs/product/PORTRAIT67_DELIVERY.md": "026e85c4bfa692c6d916be60c1be11b52983461bc239633fed4d8cd1655a2554",
+    "docs/product/PORTRAIT67_DEVELOPMENT.md": "09baa6dcab73c726f2a85a07904a91ae2064080e939288af980466240fa8b5cd",
+    "docs/product/UNFINISHED_DETAIL_20261106.md": "f00548556b15c906299a0c5157a4cb45bc556d7e4e61958879ac20db1be4f48b"
+  },
+  "validation_tools_committed": true,
+  "unaccepted_product_code_committed": false,
+  "exact_configured_secret_scan_passed": true,
+  "private_configuration_copied": false,
+  "neural_media_published": false,
+  "full_goal_closed": false
+}

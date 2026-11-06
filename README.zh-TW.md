@@ -1,6 +1,6 @@
 # agent editor kit
 
-**CLI67開發批已凍結，集中驗收進行中（2026-11-06）：** 本批程式、實際案例及故障程序已寫齊；554項產品／用例／依賴凍結後，30項人像契約通過，屬於合成檢查。原生原始碼整套已發現4,154項，尚無終態；接續程序綁定原程序，前序通過後才構建、驗安裝版與實際GPU。正式入口仍CLI66。[本批實作、證據與待辦](docs/product/PORTRAIT67_DEVELOPMENT.md)。
+**CLI67交付驗證批已寫齊並凍結（2026-11-06）：** 實際音樂、完整音畫、故障、便攜安裝及66→67→66→67回滾驗證程序已完成；12項工具凍結後，17項夾具檢查全部通過，非模型實測。人像30項合成契約另記；原生原始碼4,154項仍在原程序中執行，安裝／實際GPU／正式升級尚未開始。交付接續已綁定既有程序，前序通過後才繼續。正式仍CLI66，alpha.4不覆蓋。[本輪完成與10項交付門檻](docs/product/PORTRAIT67_DELIVERY.md) · [完整剩餘工作](docs/product/UNFINISHED_DETAIL_20261106.md)。
 
 **最新未完成狀態複核（2026-11-06）：** 正式入口仍為CLI66／alpha.4；本地開發工作區CLI67的人像分區程式尚未驗收、安裝或切換。完整剩餘工作按G01—G38展開，並列出本批7項待交付門檻；CLI66的4,124項通過不轉記為CLI67通過。[詳細清單](docs/product/UNFINISHED_DETAIL_20261106.md) · [靜態複核記錄](docs/validation/evidence/status-review-20261106-r9/review-r1/verification.json)。
 
@@ -2256,6 +2256,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R610 | 2026-11-06：alpha.4匿名重新下載、獨立原生實裝、實際單Skill與完整媒體重播 | [實際流程與MP4／GIF](docs/product/PUBLIC_RELEASE66_ACCEPTANCE.md)；[先寫齊凍結](docs/validation/evidence/delivery66-public-20261106-r1/code-phase-r1/verification.json)；[實際終態](docs/validation/evidence/delivery66-public-20261106-r1/r1/verification.json)；[保護複核](docs/validation/evidence/status-review-20261106-r8/review-r1/verification.json) | 7附件新位元組與來源鎖一致，289模組新安裝、基礎設定、隔離1入口／17模組與實際PowerShell入口通過；60影格RGBA、完整48kHz立體聲PCM、時鐘與母素材專案重播一致。原正式95檔案／設定／發現目標未變，79份原命令輸出保留且不公開原始PCM串流；原執行退出碼0。新增程式診斷MP4／GIF及一張截圖目檢，未驗自然品質／聽審／乾淨主機／跨機GPU；原699歷史編號逐字保留 |
 | R611 | 2026-11-06：未完成範圍與CLI67開發邊界複核 | [詳細差距及7項本批門檻](docs/product/UNFINISHED_DETAIL_20261106.md)；[靜態保護複核](docs/validation/evidence/status-review-20261106-r9/review-r1/verification.json) | 核對原G01—G38、13組待補實作、10組品質與6組效能／遷移工作；本地CLI67人像分區尚無測試終態、可用包或正式Skill切換。正式CLI66及原700歷史編號保留；本次沒有產品測試、模型推論或新增功能驗收，完整目標繼續開放 |
 | R612 | 2026-11-06：CLI67人像分區整批開發、凍結及集中契約 | [本批開發與門檻](docs/product/PORTRAIT67_DEVELOPMENT.md)；[凍結](docs/validation/evidence/portrait67-20261106-r1/freeze-r1/verification.json)；[30項契約](docs/validation/evidence/portrait67-20261106-r1/contracts-r1/verification.json) | 新區域／保護／配方／管道程式與實際案例先寫齊再凍結；30項合成處理器契約0失敗／錯誤／跳過，非GPU實測。原始碼整套發現4,154項仍在執行，安裝／實際GPU／正式交付待驗；未重啟原程序，正式95檔案及原701歷史編號保留，完整目標開放 |
+| R613 | 2026-11-06：CLI67同版交付批完整程式、凍結與集中工具檢查 | [交付批與待辦](docs/product/PORTRAIT67_DELIVERY.md)；[12項工具凍結](docs/validation/evidence/portrait67-20261106-r1/delivery-code-phase-r1/verification.json)；[17項結果](docs/validation/evidence/portrait67-20261106-r1/delivery-contracts-r1/verification.json) | 音樂／完整音畫／三故障／描述／r60工具包／便攜／95→96檔案升級回滾程序先寫齊再集中檢查；9項新准入與8項原音畫規則0失敗／錯誤／跳過，模型前向0。原4,154項原始碼回歸繼續，安裝和實際GPU尚未開始；新接續綁定原1556程序，不重啟。正式66、原95檔案、alpha.4及原702條編號行保持，完整目標開放 |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

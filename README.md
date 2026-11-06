@@ -1,6 +1,6 @@
 # agent editor kit
 
-**CLI67开发批已冻结，集中验收进行中（2026-11-06）：** 本批代码、真实案例及故障程序已写齐；554项产品／用例／依赖冻结后，30项人像契约通过，属于合成检查。原生源码整套已发现4,154项，尚无终态；接续程序绑定原进程，前序通过后才构建、验安装版和真实GPU。正式入口仍CLI66。[本批实现、证据与待办](docs/product/PORTRAIT67_DEVELOPMENT.md)。
+**CLI67交付验证批已写齐并冻结（2026-11-06）：** 真实音乐、完整音画、故障、便携安装及66→67→66→67回滚验证程序已完成；12项工具冻结后，17项夹具检查全部通过，非模型实测。人像30项合成契约另记；原生源码4,154项仍在原进程中运行，安装／实际GPU／正式升级尚未开始。交付接续已绑定既有进程，前序通过后才继续。正式仍CLI66，alpha.4不覆盖。[本轮完成与10项交付门槛](docs/product/PORTRAIT67_DELIVERY.md) · [完整剩余工作](docs/product/UNFINISHED_DETAIL_20261106.md)。
 
 **最新未完成状态复核（2026-11-06）：** 正式入口仍为CLI66／alpha.4；本地开发工作区CLI67的人像分区代码尚未验收、安装或切换。完整剩余工作按G01—G38展开，并列出本批7项待交付门槛；CLI66的4,124项通过不转记为CLI67通过。[详细清单](docs/product/UNFINISHED_DETAIL_20261106.md) · [静态复核记录](docs/validation/evidence/status-review-20261106-r9/review-r1/verification.json)。
 
@@ -2256,6 +2256,7 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R610 | 2026-11-06：alpha.4匿名重下载、独立原生实装、真实单Skill与完整媒体重放 | [实际流程与MP4／GIF](docs/product/PUBLIC_RELEASE66_ACCEPTANCE.md)；[先写齐冻结](docs/validation/evidence/delivery66-public-20261106-r1/code-phase-r1/verification.json)；[实际终态](docs/validation/evidence/delivery66-public-20261106-r1/r1/verification.json)；[保护复核](docs/validation/evidence/status-review-20261106-r8/review-r1/verification.json) | 7附件新字节与来源锁一致，289模块新安装、基础配置、隔离1入口／17模块及实际PowerShell入口通过；60帧RGBA、完整48kHz立体声PCM、时钟和母素材包重放一致。原正式95文件／配置／发现目标未变，79份原命令输出保留且不公开原始PCM流；原执行退出码0。新增程序诊断MP4／GIF及一张截图目检，未验自然质量／听审／干净主机／跨机GPU；原699历史编号逐字保留 |
 | R611 | 2026-11-06：未完成范围与CLI67开发边界复核 | [详细差距及7项本批门槛](docs/product/UNFINISHED_DETAIL_20261106.md)；[静态保护复核](docs/validation/evidence/status-review-20261106-r9/review-r1/verification.json) | 核对原G01—G38、13组待补实现、10组质量与6组性能／迁移工作；本地CLI67人像分区尚无测试终态、可用包或正式Skill切换。正式CLI66及原700历史编号保留；本次没有产品测试、模型推理或新增功能验收，完整目标继续开放 |
 | R612 | 2026-11-06：CLI67人像分区整批开发、冻结及集中契约 | [本批开发与门槛](docs/product/PORTRAIT67_DEVELOPMENT.md)；[冻结](docs/validation/evidence/portrait67-20261106-r1/freeze-r1/verification.json)；[30项契约](docs/validation/evidence/portrait67-20261106-r1/contracts-r1/verification.json) | 新区域／保护／配方／管道代码及真实案例先写齐再冻结；30项合成处理器契约0失败／错误／跳过，非GPU实测。源码整套发现4,154项仍在执行，安装／真实GPU／正式交付待验；未重启原进程，正式95文件及原701历史编号保留，完整目标开放 |
+| R613 | 2026-11-06：CLI67同版交付批完整代码、冻结与集中工具检查 | [交付批及待办](docs/product/PORTRAIT67_DELIVERY.md)；[12项工具冻结](docs/validation/evidence/portrait67-20261106-r1/delivery-code-phase-r1/verification.json)；[17项结果](docs/validation/evidence/portrait67-20261106-r1/delivery-contracts-r1/verification.json) | 音乐／完整音画／三故障／描述／r60工具包／便携／95→96文件升级回滚程序先写齐再集中检查；9项新准入和8项原音画规则0失败／错误／跳过，模型前向0。原4,154项源码回归继续，安装和真实GPU尚未开始；新接续绑定原1556进程，不重启。正式66、原95文件、alpha.4和原702条编号行保持，完整目标开放 |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

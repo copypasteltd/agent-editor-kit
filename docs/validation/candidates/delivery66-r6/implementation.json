@@ -26,20 +26,38 @@
     {
       "path": "docs/validation/delivery66_handoff.py",
       "base_sha256": "745c7f2ed0e9b0ad05deadbceaf94e649bcce9317c1f9fa82f240c0356014de2",
-      "candidate_sha256": "a8b78354887174b2d12480c5fcce08bb305164eafb1a1f7702f8f74c773e3415",
-      "bytes": 54149
+      "candidate_sha256": "62a957bb903a90532a39e989e194f5b79e777691f76dc978c25f1980a2ea4e19",
+      "bytes": 57048
     },
     {
       "path": "docs/validation/publish_delivery66.py",
       "base_sha256": "44ae4313db07280e3d42f9d5d717c3ae8e3be6b1efaa983cdcda665230575fef",
-      "candidate_sha256": "f8c02d5e296e38cd749b7ffbe661b64d422d0181122f00a79bef0c05f3d55ca9",
-      "bytes": 17019
+      "candidate_sha256": "f39c335be898d469ef6aecf34b5363167694af4eec5cbda4faf714029430d22e",
+      "bytes": 17097
     },
     {
       "path": "docs/validation/test_delivery66_handoff.py",
       "base_sha256": "d75d33d2df2e01bbf86dcd66da17de737fc7d6d73e8673af5943d9398207ffb7",
-      "candidate_sha256": "a7d97bead658e7f9b196bc541983031fda4b49e12f2fa426a39674505c8993b2",
-      "bytes": 33899
+      "candidate_sha256": "dad8b16a5dc89f22d34650756d928428f3c1e6ee57f9e4da848450e50141d1e3",
+      "bytes": 41065
+    },
+    {
+      "path": "scripts/package_community_skill.py",
+      "base_sha256": "ac09d998a35396e3250f4e368642b1b636b4ecfb6e6f7b0be74c25cb9d5cbc6f",
+      "candidate_sha256": "1f56ba8829c1cace1d36be1d333b91e81603885b70752c1ad4169762cadea75b",
+      "bytes": 8480
+    },
+    {
+      "path": "docs/validation/delivery66.py",
+      "base_sha256": "70cf349a23ebc4a731de112f2c532979a9d6a0e32ebf15e47758e5d997d3304b",
+      "candidate_sha256": "7a694c09d0d3bfdc16b3bd7a9941b93e1300aaf6e881680d6b57adaae522ded0",
+      "bytes": 38004
+    },
+    {
+      "path": "product/tests/test_local_tts.py",
+      "base_sha256": "36b086aa6c621d779b951d9e2232be071cc80de3d94862b4e9370b6d3af392a8",
+      "candidate_sha256": "4a13e0ab7cadbbf3dbc383fe9c0ee1bab28f1b762f5b6382d57498f377868bb8",
+      "bytes": 19719
     }
   ],
   "candidate_applied": false,
@@ -64,24 +82,35 @@
     "Bind accepted product/test/dependency files, all seven frozen delivery tools, accepted public Skill/registration files and all three README entries to exact current bytes and the reviewed Git commit.",
     "Reject incomplete or overlapping source roles and machine-local runtime configuration in public source bindings. Preserve Git clean normalization and separately reject raw-byte drift.",
     "Add six complete delivery contracts, including real native Git commits, normalized line endings, uncommitted tool/Skill/registration/documentation, missing committed files and frozen tool drift; no candidate tests have run.",
-    "Generate basic-first three-language release notes consistent with optional AI model installation."
+    "Generate basic-first three-language release notes consistent with optional AI model installation.",
+    "Freeze all 69 actual packaging inputs and carry their exact hashes through base/final KIT inventories, fresh portable acceptance, formal activation and reviewed release commit binding.",
+    "Preserve all 62 original guide inputs; source ref validation pins newly externalized documentation links to the immutable release tag.",
+    "Add five complete contracts for native packaging provenance, invalid refs, missing/changing source inputs, pre-output kit rejection and uncommitted helpers/license/guides.",
+    "Bind the existing TTS network-guard subprocess to the exact selected source/installed package; preserve the real socket guard script and all assertions. Review all 19 direct native Python subprocess launches."
   ],
   "next_step": "Keep collecting the complete r5 result; finish all new corrections before applying a complete next batch and running centralized contracts and unfiltered product regression.",
   "observed_r5_issues": {
     "unicode_module_import_failure": 1,
     "lock_children_not_ready_failures": 2,
-    "audio_diagnostic_missing_AppError_error": 1
+    "audio_diagnostic_missing_AppError_error": 1,
+    "tts_network_guard_child_import_failure": 1
   },
-  "updated_at_utc": "2026-11-06T04:00:39.858717+00:00",
-  "new_handoff_test_methods": 6,
-  "planned_handoff_test_methods": 37,
+  "updated_at_utc": "2026-11-06T04:24:08.114147+00:00",
+  "new_handoff_test_methods": 11,
+  "planned_handoff_test_methods": 42,
   "release_lock_format": "agent-editor-reviewed-release-v2",
   "release_source_roles": [
     "product",
     "delivery_tools",
+    "packaging",
     "skill",
     "registration",
     "documentation"
   ],
-  "machine_local_runtime_config_in_source": false
+  "machine_local_runtime_config_in_source": false,
+  "source_binding_format": "agent-editor-release-source-v2",
+  "packaging_input_files": 69,
+  "packaging_guide_files": 62,
+  "planned_frozen_delivery_tools": 8,
+  "immutable_documentation_ref": "v0.1.0-alpha.4"
 }

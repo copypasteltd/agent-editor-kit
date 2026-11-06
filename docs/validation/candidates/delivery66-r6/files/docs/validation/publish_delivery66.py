@@ -103,7 +103,8 @@ def reviewed_source(lock, spec=None):
     handoff.require(handoff.sha(descriptor) == lock['descriptor_sha256'], 'Reviewed descriptor changed')
     if spec is None:
         spec = handoff.load(descriptor)
-    files = handoff.release_source_files(lock.get('source_binding'), lock.get('frozen_source'), spec.get('files'))
+    files = handoff.release_source_files(lock.get('source_binding'), lock.get('frozen_source'),
+                                        spec.get('files'), lock.get('frozen_packaging_sources'))
     for name, pin in files.items():
         handoff.require(handoff.sha(handoff.local(handoff.ROOT / name, root=handoff.ROOT)) == pin,
                         'Reviewed release source changed: ' + name)

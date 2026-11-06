@@ -1,0 +1,104 @@
+{
+  "status": "read-only-status-and-gap-review",
+  "observed_at_utc": "2026-11-06T04:34:32.715530+00:00",
+  "source_cli": "0.1.66",
+  "formal_cli": "0.1.63",
+  "base_commit": "403217eea707e0aaf42b4cdfcee849bf4a7e9aa5",
+  "goal_groups": [
+    "G01",
+    "G02",
+    "G03",
+    "G04",
+    "G05",
+    "G06",
+    "G07",
+    "G08",
+    "G09",
+    "G10",
+    "G11",
+    "G12",
+    "G13",
+    "G14",
+    "G15",
+    "G16",
+    "G17",
+    "G18",
+    "G19",
+    "G20",
+    "G21",
+    "G22",
+    "G23",
+    "G24",
+    "G25",
+    "G26",
+    "G27",
+    "G28",
+    "G29",
+    "G30",
+    "G31",
+    "G32",
+    "G33",
+    "G34",
+    "G35",
+    "G36",
+    "G37",
+    "G38"
+  ],
+  "original_goal_unchanged": true,
+  "frozen_equal": {
+    "file_hashes": {
+      "files": 546,
+      "unchanged": true
+    },
+    "delivery_tool_files": {
+      "files": 7,
+      "unchanged": true
+    },
+    "formal_guard": {
+      "files": 95,
+      "unchanged": true
+    }
+  },
+  "candidate_files": 9,
+  "candidate_raw_digests_match_manifest": true,
+  "candidate_syntax_valid": true,
+  "candidate_applied": false,
+  "candidate_functions_executed": false,
+  "planned_tool_suite": 42,
+  "new_functional_tests_run": false,
+  "new_model_inference": false,
+  "readmes": [
+    {
+      "path": "README.md",
+      "historical_rows_preserved": true,
+      "F": 90,
+      "R": 594,
+      "sha256": "e914def98a0a9e8d540dc0770ae676025b29f87e3243e705db9fb76bc966422c"
+    },
+    {
+      "path": "README.zh-TW.md",
+      "historical_rows_preserved": true,
+      "F": 90,
+      "R": 594,
+      "sha256": "1fbe938c982373bac38c7560e4a20fbf9c9ff435f4b5290a43f82dcaf8d04a51"
+    },
+    {
+      "path": "README.en.md",
+      "historical_rows_preserved": true,
+      "F": 90,
+      "R": 594,
+      "sha256": "0f9b3ce0f5c3f943bba26d58aefc359c84c52ac67404f8cdf1432a5d7b0a3dda"
+    }
+  ],
+  "regression_live": true,
+  "regression_result_present": false,
+  "regression_issue_events_snapshot": {
+    "failure": 4,
+    "error": 1
+  },
+  "whole_discovered_tests": 4124,
+  "whole_tests_passed_claimed": false,
+  "formal_activation": false,
+  "release_created": false,
+  "assessment_scope": "original documented G01-G38, delivery blockers, code/evidence/installed-version distinction; not complete call-graph or current competitor audit"
+}

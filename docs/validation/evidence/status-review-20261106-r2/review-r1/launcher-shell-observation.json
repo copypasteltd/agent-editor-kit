@@ -1,0 +1,10 @@
+{
+  "legacy_shell": "powershell.exe",
+  "exit_code": 1,
+  "stderr": "& : File C:\\Users\\carzy\\.codex\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1 cannot be loaded because running script\r\ns is disabled on this system. For more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?Lin\r\nkID=135170.\r\nAt line:1 char:3\r\n+ & 'C:/Users/carzy/.codex/skills/agent-ffmpeg-local-editor/scripts/run ...\r\n+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : SecurityError: (:) [], PSSecurityException\r\n    + FullyQualifiedErrorId : UnauthorizedAccess\r\n",
+  "actual_host": "C:\\Users\\carzy\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+  "actual_host_exit_code": 0,
+  "runtime_entered_on_legacy_shell": false,
+  "policy_changed": false,
+  "functional_test": false
+}

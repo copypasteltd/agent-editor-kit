@@ -20,6 +20,7 @@ import subprocess
 import sys
 import time
 import zipfile
+import delivery66 as round_runner
 
 ROOT = Path(__file__).resolve().parents[2]
 ROUND = ROOT / 'docs/validation/evidence/delivery66-20261106-r1'
@@ -30,13 +31,14 @@ SKILL = 'skills/agent-ffmpeg-local-editor/'
 CONFIG, MANIFEST = 'local/agent-ffmpeg/runtime.json', 'agent-ffmpeg-local-install-manifest.json'
 RESERVED = {'con', 'prn', 'aux', 'nul', *(f'com{i}' for i in range(1, 10)), *(f'lpt{i}' for i in range(1, 10))}
 RELEASE_LOCK_FORMAT = 'agent-editor-reviewed-release-v2'
-SOURCE_BINDING_FORMAT = 'agent-editor-release-source-v1'
+SOURCE_BINDING_FORMAT = 'agent-editor-release-source-v2'
 SOURCE_READMES = ('README.md', 'README.zh-TW.md', 'README.en.md')
 SOURCE_TOOLS = frozenset((
     'docs/validation/delivery66.py', 'docs/validation/run_delivery66_native.py',
     'docs/validation/delivery66_handoff.py', 'docs/validation/delivery66_music_faults.py',
     'docs/validation/publish_delivery66.py', 'docs/validation/test_delivery66_handoff.py',
     'scripts/activate_community_runtime.py',
+    'scripts/package_community_skill.py',
 ))
 
 
@@ -106,19 +108,25 @@ def member(name):
     return path
 
 
-def release_source_files(binding, frozen_source, formal_files):
+def release_source_files(binding, frozen_source, formal_files, frozen_packaging):
     """Validate the complete public source scope, excluding machine-local config."""
     require(isinstance(binding, dict) and binding.get('format') == SOURCE_BINDING_FORMAT
             and binding.get('local_runtime_config_committed') is False,
             'Reviewed release source binding is missing or invalid')
     groups = binding.get('groups')
     require(isinstance(groups, dict)
-            and set(groups) == {'product', 'delivery_tools', 'skill', 'registration', 'documentation'}
+            and set(groups) == {'product', 'delivery_tools', 'packaging', 'skill', 'registration', 'documentation'}
             and all(isinstance(rows, dict) and rows for rows in groups.values()),
             'Reviewed release source roles are incomplete')
     require(isinstance(frozen_source, dict) and frozen_source
             and groups['product'] == frozen_source, 'Reviewed product source differs from its freeze')
     require(set(groups['delivery_tools']) == SOURCE_TOOLS, 'Reviewed delivery tool scope is incomplete')
+    require(isinstance(frozen_packaging, dict)
+            and set(frozen_packaging) == set(round_runner.packaging_source_names())
+            and groups['packaging'] == {name: pin for name, pin in frozen_packaging.items() if name not in SOURCE_TOOLS}
+            and all(frozen_packaging[name] == groups['delivery_tools'][name]
+                    for name in frozen_packaging.keys() & SOURCE_TOOLS),
+            'Reviewed packaging source scope is incomplete or inconsistent')
     require(set(groups['documentation']) == set(SOURCE_READMES), 'Three reviewed README entries are required')
     require(isinstance(formal_files, list) and 4 <= len(formal_files) <= 512,
             'Reviewed formal source inventory is missing')
@@ -156,10 +164,11 @@ def capture_release_source(context):
     public = {row['path']: row['sha256'] for row in formal if row['path'] != CONFIG}
     binding = dict(format=SOURCE_BINDING_FORMAT, local_runtime_config_committed=False, groups=dict(
         product=dict(freeze['file_hashes']), delivery_tools=dict(freeze['delivery_tool_files']),
+        packaging={name: pin for name, pin in freeze['packaging_source_files'].items() if name not in SOURCE_TOOLS},
         skill={name: pin for name, pin in public.items() if name.startswith(SKILL)},
         registration={name: pin for name, pin in public.items() if name == MANIFEST},
         documentation={name: sha(local(ROOT / name, root=ROOT)) for name in SOURCE_READMES}))
-    for name, pin in release_source_files(binding, freeze['file_hashes'], formal).items():
+    for name, pin in release_source_files(binding, freeze['file_hashes'], formal, freeze['packaging_source_files']).items():
         require(sha(local(ROOT / name, root=ROOT)) == pin, 'Reviewed release source changed: ' + name)
     return binding
 
@@ -270,6 +279,11 @@ def source_unchanged(freeze):
     require(isinstance(tools, dict) and set(tools) == SOURCE_TOOLS, 'Frozen delivery tool scope is incomplete')
     for name, pin in tools.items():
         require(sha(local(ROOT / name)) == pin, 'Frozen delivery tool changed: ' + name)
+    packaging = freeze.get('packaging_source_files')
+    require(isinstance(packaging, dict) and set(packaging) == set(round_runner.packaging_source_names()),
+            'Frozen packaging input scope is incomplete')
+    for name, pin in packaging.items():
+        require(sha(local(ROOT / name)) == pin, 'Frozen packaging input changed: ' + name)
 
 
 def guards_equal(guards):
@@ -334,6 +348,9 @@ def accepted(kind, run, context):
     require(value.get('status') == 'passed' and value.get('cli_version') == VERSION
             and value.get('application_files') == context['candidate']['application_files']
             and value.get('skill_files') == context['staged']['skill_files'], 'Missing matching acceptance: ' + kind)
+    if kind in {'portable-kit', 'formal-entry'}:
+        require(value.get('packaging_source_files') == context['freeze']['packaging_source_files']
+                and value.get('documentation_source_ref') == TAG, 'Accepted packaging inputs or documentation ref differ')
     return value
 
 
@@ -503,12 +520,19 @@ def kit(args):
     work = local(LOCAL / ('kit-' + args.run))
     require(not work.exists(), 'Preserve earlier kit outputs')
     work.mkdir(parents=True)
-    execute(out, 'base-packager', [sys.executable, '-E', '-B', '-u', '-X', 'utf8',
+    base_report = json.loads(execute(out, 'base-packager', [sys.executable, '-E', '-B', '-u', '-X', 'utf8',
         ROOT / 'scripts/package_community_skill.py', '--output', work / 'base',
-        '--skill-source', context['home'], '--archive-name', 'base.zip'])
+        '--skill-source', context['home'], '--archive-name', 'base.zip', '--source-ref', TAG]))
+    packaging = context['freeze']['packaging_source_files']
+    require(base_report.get('packaging_source_files') == {name: pin for name, pin in packaging.items()
+            if name != 'docs/product/DELIVERY_CONTROLLER.md'}
+            and base_report.get('documentation_source_ref') == TAG, 'Base packager inputs or documentation ref differ')
     content = {}
     with zipfile.ZipFile(work / 'base/base.zip') as zipped:
         archive_plan(zipped)
+        base_inventory = decode(zipped.read('KIT-FILES.json'))
+        require(base_inventory.get('packaging_source_files') == base_report['packaging_source_files']
+                and base_inventory.get('documentation_source_ref') == TAG, 'Base ZIP provenance differs from its receipt')
         for name in zipped.namelist():
             if name != 'KIT-FILES.json':
                 content[name] = zipped.read(name)
@@ -516,6 +540,7 @@ def kit(args):
         content['QUICKSTART' + suffix + '.md'] = quickstart(context, language).encode('utf-8')
     content['docs/product/DELIVERY_CONTROLLER.md'] = (ROOT / 'docs/product/DELIVERY_CONTROLLER.md').read_bytes()
     inventory = dict(format='agent-community-single-skill-v1', release=RELEASE, cli_version=VERSION,
+        packaging_source_files=packaging, documentation_source_ref=TAG,
         skill_count=1, module_count=17, files=[dict(path=name, bytes=len(data),
         sha256=hashlib.sha256(data).hexdigest()) for name, data in sorted(content.items())])
     content['KIT-FILES.json'] = encoded(inventory)
@@ -531,6 +556,7 @@ def kit(args):
     save(out / 'verification.json', dict(status='built-not-yet-independently-accepted', cli_version=VERSION,
         archive=str(destination), archive_sha256=sha(destination), entries=len(content),
         application_files=context['candidate']['application_files'], skill_files=context['staged']['skill_files'],
+        packaging_source_files=packaging, documentation_source_ref=TAG,
         actual_registered_entry_tested=False, formal_activation=False))
 
 
@@ -562,12 +588,16 @@ def verify_kit(args):
     context['args'] = args
     built = load(report_path('kit', args.kit_run))
     require(built['cli_version'] == VERSION and sha(local(built['archive'])) == built['archive_sha256'], 'Kit archive changed')
+    require(built.get('packaging_source_files') == context['freeze']['packaging_source_files']
+            and built.get('documentation_source_ref') == TAG, 'Built kit source provenance changed')
     out = begin('portable-kit', args.run)
     work = local(LOCAL / ('portable-' + args.run))
     require(not work.exists(), 'Preserve earlier portable verification')
     work.mkdir(parents=True)
     home = work / '工具包 中文 spaces'
-    extract(built['archive'], home, skill=True)
+    extracted = extract(built['archive'], home, skill=True)
+    require(extracted.get('packaging_source_files') == built['packaging_source_files']
+            and extracted.get('documentation_source_ref') == TAG, 'Extracted kit source provenance differs')
     require(load(home / MANIFEST)['files'] == load(context['home'] / MANIFEST)['files'], 'Kit changed Skill inventory')
     bundle = work / 'application-bundle'
     extract(context['candidate']['archive'], bundle)
@@ -604,6 +634,7 @@ def verify_kit(args):
     save(out / 'verification.json', dict(status='passed', cli_version=VERSION,
         application_files=context['candidate']['application_files'], skill_files=context['staged']['skill_files'],
         kit_archive=built['archive'], kit_sha256=built['archive_sha256'], fresh_offline_install=True,
+        packaging_source_files=built['packaging_source_files'], documentation_source_ref=TAG,
         independent_registration=True, actual_PowerShell_entry=True, source_fallback=False,
         actual_base_only_configuration=True, optional_model_packs_required=False,
         complete_RGBA_PCM_replay=True, replay=result, clean_host=False, cross_machine=False,
@@ -649,6 +680,7 @@ def activate(args):
         source_unchanged(context['freeze'])
         save(out / 'verification.json', dict(status='passed', cli_version=VERSION,
             application_files=context['candidate']['application_files'], skill_files=context['staged']['skill_files'],
+            packaging_source_files=context['freeze']['packaging_source_files'], documentation_source_ref=TAG,
             actual_C_drive_discovery=True, actual_PowerShell_entry=True, source_fallback=False,
             explicit_rollback_byte_equal=True, previous_delivery_id=first['delivery_id'],
             delivery_id=second['delivery_id'], complete_RGBA_PCM_replay=True, replay=result,
@@ -709,7 +741,8 @@ def assets(args):
              [('formal-entry', args.formal_run), ('portable-kit', args.kit_verify_run), ('music-faults', args.faults_run)]}
     lock = dict(format=RELEASE_LOCK_FORMAT, repository='copypasteltd/agent-editor-kit', tag=TAG,
         runtime_release=RELEASE, cli_version=VERSION, assets=rows, gates=gates,
-        frozen_source=context['freeze']['file_hashes'], source_binding=source_binding, descriptor=str(context['descriptor']),
+        frozen_source=context['freeze']['file_hashes'], frozen_packaging_sources=context['freeze']['packaging_source_files'],
+        source_binding=source_binding, descriptor=str(context['descriptor']),
         descriptor_sha256=sha(context['descriptor']), formal_delivery_id=formal['delivery_id'],
         public_model_media_included=False, created_at_utc=datetime.now(timezone.utc).isoformat())
     save(directory / 'release-lock.json', lock)

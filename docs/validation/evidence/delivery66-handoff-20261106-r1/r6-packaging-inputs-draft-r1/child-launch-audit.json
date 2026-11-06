@@ -1,0 +1,268 @@
+[
+  {
+    "file": "test_artifact_locks.py",
+    "line": 66,
+    "scope": "test_other_process_can_read_but_cannot_write_while_locked",
+    "command": "[sys.executable, '-I', '-B', '-c', child, str(self.path)]",
+    "code_expression": "\"from pathlib import Path;import sys;p=Path(sys.argv[1]);assert p.read_bytes();\\ntry:p.write_bytes(b'changed')\\nexcept PermissionError:print('readable-write-blocked')\\nelse:raise SystemExit(9)\"",
+    "package_binding_signals": {
+      "sys.path": false,
+      "IMPORT_ROOT": false,
+      "__file__": false,
+      "run_path": false,
+      "ai_ad_editor": false
+    }
+  },
+  {
+    "file": "test_atomic_io.py",
+    "line": 44,
+    "scope": "test_other_process_keeps_old_snapshot_while_new_reads_see_replacements",
+    "command": "[sys.executable, '-I', '-B', '-c', child, str(self.path), str(IMPORT_ROOT)]",
+    "code_expression": "\"import sys;sys.path.insert(0,sys.argv[2]);from pathlib import Path;from ai_ad_editor.utils import shared_binary_reader;\\nwith shared_binary_reader(Path(sys.argv[1])) as stream:\\n print('ready',flush=True);sys.stdin.readline();print(stream.read().decode('utf-8'),flush=True)\"",
+    "package_binding_signals": {
+      "sys.path": true,
+      "IMPORT_ROOT": false,
+      "__file__": false,
+      "run_path": false,
+      "ai_ad_editor": true
+    }
+  },
+  {
+    "file": "test_cli.py",
+    "line": 72,
+    "scope": "dependency_free_commands",
+    "command": "[sys.executable, '-I', '-B', '-X', 'utf8', '-c', program, str(IMPORT_ROOT), str(Path(jsonschema.__file__).resolve().parent.parent), json.dumps(requests)]",
+    "code_expression": "\"import builtins,contextlib,io,json,sys\\nforbidden={'numpy','PIL','torch'}\\noriginal=builtins.__import__\\ndef guarded(name,*args,**kwargs):\\n    if name.split('.')[0] in forbidden:\\n        raise ImportError('media/model dependency deliberately unavailable: '+name)\\n    return original(name,*args,**kwargs)\\nbuiltins.__import__=guarded\\nsys.path.insert(0,sys.argv[1])\\nsys.path.insert(1,sys.argv[2])\\nfrom ai_ad_editor.cli import main\\nrows=[]\\nfor argv in json.loads(sys.argv[3]):\\n    output=io.StringIO()\\n    with contextlib.redirect_stdout(output):\\n        try:code=main(argv)\\n        except SystemExit as exc:code=exc.code\\n    assert code==0,(argv,code,output.getvalue())\\n    rows.append(dict(argv=argv,code=code,stdout=output.getvalue()))\\nloaded=sorted(forbidden.intersection(sys.modules))\\nassert not loaded,loaded\\nprint(json.dumps(dict(results=rows,forbidden_modules_loaded=loaded)))\\n\"",
+    "package_binding_signals": {
+      "sys.path": true,
+      "IMPORT_ROOT": false,
+      "__file__": false,
+      "run_path": false,
+      "ai_ad_editor": true
+    }
+  },
+  {
+    "file": "test_cli.py",
+    "line": 481,
+    "scope": "test_project_write_lock_rejects_competing_mutation_and_releases",
+    "command": "[sys.executable, '-X', 'utf8', '-c', script]",
+    "code_expression": "f\"import time\\nfrom pathlib import Path\\nfrom ai_ad_editor.project import project_write_lock\\nproject = Path({str(project)!r})\\nready = Path({str(ready)!r})\\nwith project_write_lock(project):\\n    ready.write_text('ready', encoding='utf-8')\\n    time.sleep(2.5)\\n\"",
+    "package_binding_signals": {
+      "sys.path": false,
+      "IMPORT_ROOT": false,
+      "__file__": false,
+      "run_path": false,
+      "ai_ad_editor": true
+    }
+  },
+  {
+    "file": "test_cli.py",
+    "line": 526,
+    "scope": "test_queue_cancel_acknowledges_while_project_lock_is_held",
+    "command": "[sys.executable, '-X', 'utf8', '-c', script]",
+    "code_expression": "f\"import time\\nfrom pathlib import Path\\nfrom ai_ad_editor.project import project_write_lock\\nproject = Path({str(project)!r})\\nready = Path({str(ready)!r})\\nwith project_write_lock(project):\\n    ready.write_text('ready', encoding='utf-8')\\n    time.sleep(2.5)\\n\"",
+    "package_binding_signals": {
+      "sys.path": false,
+      "IMPORT_ROOT": false,
+      "__file__": false,
+      "run_path": false,
+      "ai_ad_editor": true
+    }
+  },
+  {
+    "file": "test_cli.py",
+    "line": 1798,
+    "scope": "test_cli_unicode_paths_and_progress_use_utf8_pipes",
+    "command": "[sys.executable, '-m', 'ai_ad_editor', 'media', 'ingest', '--project', str(project), '--input', str(source), '--progress', 'jsonl', '--request-id', '请求_中文路径🎬']",
+    "code_expression": "",
+    "package_binding_signals": {
+      "sys.path": false,
+      "IMPORT_ROOT": false,
+      "__file__": false,
+      "run_path": false,
+      "ai_ad_editor": false
+    }
+  },
+  {
+    "file": "test_float_gpu_control.py",
+    "line": 80,
+    "scope": "launch",
+    "command": "[sys.executable, '-I', '-S', '-B', '-u', '-X', 'utf8', '-c', bootstrap]",
+    "code_expression": "'import sys;sys.path[:0]=' + repr(paths) + ';' + body",
+    "package_binding_signals": {
+      "sys.path": true,
+      "IMPORT_ROOT": false,
+      "__file__": false,
+      "run_path": false,
+      "ai_ad_editor": false
+    }
+  },
+  {
+    "file": "test_job_recovery.py",
+    "line": 120,
+    "scope": "test_hard_owner_exit_ends_its_tree_without_taskkill",
+    "command": "[sys.executable, '-E', '-B', str(owner_script), package, *self.tree_command()]",
+    "code_expression": "",
+    "package_binding_signals": {
+      "sys.path": false,
+      "IMPORT_ROOT": false,
+      "__file__": false,
+      "run_path": false,
+      "ai_ad_editor": false
+    }
+  },
+  {
+    "file": "test_local_matting.py",
+    "line": 436,
+    "scope": "test_worker_network_guard_blocks_lookup_in_isolated_process",
+    "command": "[sys.executable, '-I', '-B', '-c', code]",
+    "code_expression": "'import sys;sys.path.insert(0,' + repr(str(IMPORT_ROOT)) + \");from ai_ad_editor.rvm_worker import install_network_guard;events=[];install_network_guard(events);import socket\\ntry: socket.getaddrinfo('localhost',80)\\nexcept RuntimeError: print(events[0])\\nelse: raise RuntimeError('network guard failed')\"",
+    "package_binding_signals": {
+      "sys.path": true,
+      "IMPORT_ROOT": true,
+      "__file__": false,
+      "run_path": false,
+      "ai_ad_editor": true
+    }
+  },
+  {
+    "file": "test_local_separation.py",
+    "line": 363,
+    "scope": "test_worker_network_guard_rejects_dns_in_isolated_python",
+    "command": "[sys.executable, '-I', '-B', '-c', script, str(worker)]",
+    "code_expression": "\"import runpy,sys,socket; ns=runpy.run_path(sys.argv[1]); events=[]; ns['install_network_guard'](events)\\ntry: socket.getaddrinfo('invalid.example',443)\\nexcept RuntimeError: pass\\nelse: raise AssertionError('network guard failed')\\nassert events == ['socket.getaddrinfo']\"",
+    "package_binding_signals": {
+      "sys.path": false,
+      "IMPORT_ROOT": false,
+      "__file__": false,
+      "run_path": true,
+      "ai_ad_editor": false
+    }
+  },
+  {
+    "file": "test_local_separation.py",
+    "line": 370,
+    "scope": "test_worker_bad_protocol_returns_structured_failure_without_loading_model",
+    "command": "[sys.executable, '-I', '-B', str(worker), str(request)]",
+    "code_expression": "",
+    "package_binding_signals": {
+      "sys.path": false,
+      "IMPORT_ROOT": false,
+      "__file__": false,
+      "run_path": false,
+      "ai_ad_editor": false
+    }
+  },
+  {
+    "file": "test_local_tts.py",
+    "line": 302,
+    "scope": "test_python_network_guard_blocks_connection_before_network_io",
+    "command": "[sys.executable, '-X', 'utf8', '-c', script]",
+    "code_expression": "\"from ai_ad_editor.soulx_worker import install_network_guard; import socket; events=[]; install_network_guard(events)\\ntry:\\n socket.create_connection(('127.0.0.1',9),timeout=0.1)\\nexcept RuntimeError as e:\\n print(str(e)); print(events)\\nelse:\\n raise SystemExit(3)\"",
+    "package_binding_signals": {
+      "sys.path": false,
+      "IMPORT_ROOT": false,
+      "__file__": false,
+      "run_path": false,
+      "ai_ad_editor": true
+    }
+  },
+  {
+    "file": "test_mask_review.py",
+    "line": 235,
+    "scope": "test_real_cli_mask_review_runs_when_numpy_import_is_blocked",
+    "command": "[sys.executable, '-I', '-B', '-X', 'utf8', '-c', program, str(IMPORT_ROOT), 'quality', 'mask', '--project', str(self.root), '--asset-id', 'mask']",
+    "code_expression": "\"import builtins,sys\\noriginal=builtins.__import__\\ndef guarded(name,*args,**kwargs):\\n    if name.split('.')[0]=='numpy': raise ImportError('NumPy deliberately unavailable')\\n    return original(name,*args,**kwargs)\\nbuiltins.__import__=guarded\\nsys.path.insert(0,sys.argv[1])\\nfrom ai_ad_editor.cli import main\\ncode=main(sys.argv[2:])\\nassert 'numpy' not in sys.modules\\nsys.exit(code)\\n\"",
+    "package_binding_signals": {
+      "sys.path": true,
+      "IMPORT_ROOT": false,
+      "__file__": false,
+      "run_path": false,
+      "ai_ad_editor": true
+    }
+  },
+  {
+    "file": "test_native_process_job.py",
+    "line": 33,
+    "scope": "start",
+    "command": "[sys.executable, '-I', '-S', '-B', '-c', code]",
+    "code_expression": "code",
+    "package_binding_signals": {
+      "sys.path": false,
+      "IMPORT_ROOT": false,
+      "__file__": false,
+      "run_path": false,
+      "ai_ad_editor": false
+    }
+  },
+  {
+    "file": "test_native_worker_imports.py",
+    "line": 61,
+    "scope": "probe",
+    "command": "[sys.executable, '-I', '-S', '-B', '-u', '-X', 'utf8', '-c', code]",
+    "code_expression": "'import runpy,sys;sys.path.insert(0,' + repr(str(native_site)) + ');' + ('import ai_ad_editor;' if preloaded_foreign else '') + 'sys.argv=[' + repr(str(worker)) + ',' + repr(str(request)) + '];' + 'runpy.run_path(' + repr(str(worker)) + \",run_name='__main__')\"",
+    "package_binding_signals": {
+      "sys.path": true,
+      "IMPORT_ROOT": false,
+      "__file__": false,
+      "run_path": true,
+      "ai_ad_editor": true
+    }
+  },
+  {
+    "file": "test_pipeline_diagnostics.py",
+    "line": 108,
+    "scope": "test_running_child_is_never_reported_as_completed",
+    "command": "[sys.executable, '-I', '-B', '-c', 'import time;time.sleep(30)']",
+    "code_expression": "'import time;time.sleep(30)'",
+    "package_binding_signals": {
+      "sys.path": false,
+      "IMPORT_ROOT": false,
+      "__file__": false,
+      "run_path": false,
+      "ai_ad_editor": false
+    }
+  },
+  {
+    "file": "test_pipeline_diagnostics.py",
+    "line": 125,
+    "scope": "test_simultaneous_native_exits_are_a_set_not_a_root_cause",
+    "command": "[sys.executable, '-I', '-B', '-c', 'raise SystemExit(23)']",
+    "code_expression": "'raise SystemExit(23)'",
+    "package_binding_signals": {
+      "sys.path": false,
+      "IMPORT_ROOT": false,
+      "__file__": false,
+      "run_path": false,
+      "ai_ad_editor": false
+    }
+  },
+  {
+    "file": "test_repair_blend.py",
+    "line": 106,
+    "scope": "test_cli_planning_and_report_validation_do_not_require_host_numpy",
+    "command": "[sys.executable, '-I', '-B', '-X', 'utf8', '-c', code]",
+    "code_expression": "\"\\nimport sys,importlib.abc\\nsys.path.insert(0,PRODUCT_SOURCE)\\nclass Block(importlib.abc.MetaPathFinder):\\n def find_spec(self,fullname,path=None,target=None):\\n  if fullname=='numpy' or fullname.startswith('numpy.'):raise ModuleNotFoundError('NumPy deliberately unavailable in host')\\nsys.meta_path.insert(0,Block())\\nfrom ai_ad_editor.cli import build_parser\\nfrom ai_ad_editor.local_inpainting import normalize_options\\nfrom ai_ad_editor.repair_blend import blend_budget_plan,new_blend_report,validate_blend_report\\nbuild_parser()\\nfor mode in ['direct','harmonic']:\\n options=normalize_options(blend_mode=mode)\\n plan=blend_budget_plan(64,48,options,512*1024**2)\\n assert plan['mode']==mode\\n validate_blend_report({'empty_mask_frames':8,'mask_pixels':0,'blend':new_blend_report(options)},options,width=64,height=48,frames=8)\\nassert 'numpy' not in sys.modules\\nprint('host planning without numpy succeeded')\\n\".replace('PRODUCT_SOURCE', repr(str(IMPORT_ROOT)))",
+    "package_binding_signals": {
+      "sys.path": true,
+      "IMPORT_ROOT": true,
+      "__file__": false,
+      "run_path": false,
+      "ai_ad_editor": true
+    }
+  },
+  {
+    "file": "test_semantic_worker_imports.py",
+    "line": 44,
+    "scope": "test_own_application_and_native_model_dependencies_do_not_shadow_each_other",
+    "command": "[sys.executable, '-I', '-S', '-B', '-u', '-X', 'utf8', '-c', code]",
+    "code_expression": "'import runpy,sys;sys.path.insert(0,' + repr(str(native_site)) + ');runpy.run_path(' + repr(str(worker)) + \",run_name='__main__')\"",
+    "package_binding_signals": {
+      "sys.path": true,
+      "IMPORT_ROOT": false,
+      "__file__": false,
+      "run_path": true,
+      "ai_ad_editor": false
+    }
+  }
+]

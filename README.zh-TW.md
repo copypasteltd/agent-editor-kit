@@ -1,7 +1,7 @@
 # agent editor kit
 
 <!-- aek-cli65-current -->
-**下一批r6候選已補齊6個程式檔案：** 保留Unicode／專案鎖／音訊異常修正，新增產品凍結、7交付工具、正式Skill／註冊清單與三語README的發佈提交綁定。全部289應用模組的候選靜態名稱檢查無未綁定項；新增6項工具契約，下一輪計畫37項，尚未執行。目前r5完整回歸繼續，4個問題事件並非最終統計；原124用例／1,371斷言與鎖門檻保留，候選未套用／執行。[原因與候選](docs/product/DELIVERY66_R6_CANDIDATE.md) · [發佈綁定範圍](docs/product/DELIVERY66_RELEASE_BINDING.md)
+**下一批r6候選現為9個程式檔案：** 已寫齊69項工具包建置來源凍結、六類發佈提交綁定及固定發行標籤的文件外鏈；交付工具下一批為8項。新增TTS斷網用例的明確套件綁定，原15方法／斷言保留；19處直接原生Python子程序已靜態複核。全部289應用模組候選無靜態未綁定名稱，工具整套計畫42項尚未執行。目前r5整套繼續，5個問題事件檢查點並非最終統計；原546／7／95凍結保持，候選未套用／執行。[完整候選](docs/product/DELIVERY66_R6_CANDIDATE.md) · [建置來源與新增問題](docs/product/DELIVERY66_PACKAGING_PROVENANCE.md)
 
 **開發狀態2026-11-06：CLI0.1.66已一次完成並套用20檔案修正，凍結r5；31項完整交付工具契約通過，零失敗／錯誤／跳過。** 應用與bare-worker兩組實際隔離依賴預檢通過；未篩選產品全套實際發現4,124項，仍執行中、無終態，發現數不可當作通過數。原r4完整4,114項為10失敗／15錯誤／0跳過，25條完整堆疊與r2中斷均保留。[完整未完成內容](docs/product/UNFINISHED_20261106.md) · [原r4結果](docs/product/DELIVERY66_R4_RESULTS.md)
 
@@ -2220,6 +2220,8 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R591 | 基礎設定與三語流程 / 2026-11-06 | --base-only毋須模型包並保留舊設定備份；拒絕矛盾參數／錯誤安裝摘要，原--packs驗包維持。4項實際檔案／CLI契約已包含在31項中，不重複加計。三語30段PowerShell原生解析0錯誤；摘要佔位，獨立新包註冊／媒體重播尚待執行。 [範圍](docs/product/DELIVERY66_R5_CANDIDATE.md) · [語法結果](docs/validation/evidence/delivery66-handoff-20261106-r1/quickstart-syntax-r2/verification.json) |
 | R592 | 原生子程序與音訊異常草稿 / 2026-11-06 | r5執行中4事件快照：Unicode模組找不到應用、兩個鎖子程序未就緒與音訊except漏AppError匯入。3檔案候選綁定實際source／installed根、執行真正__main__、明確ASCII／strict前提、保留3秒鎖等待／5秒清理並記錄有界stderr；124用例方法／1,371斷言條件不變。10應用模組靜態名稱檢查無漏項；未執行候選，原546／7／95凍結不變。 [說明](docs/product/DELIVERY66_R6_CANDIDATE.md) · [實際觀察與靜態收據](docs/validation/evidence/delivery66-handoff-20261106-r1/r5-live-correction-draft-r1/verification.json) |
 | R593 | 發佈提交涵蓋與全模組靜態檢查 / 2026-11-06 | 原提交門禁僅涵蓋546產品／測試／依賴，未含7工具、正式Skill／註冊與三語README。6檔案下一批候選補v2鎖、五類完整角色、原始位元組與Git clean雙重核對、機器設定排除及基礎安裝先行說明；新增6契約，原31方法／斷言保留，計畫37項未執行。全部289應用模組候選靜態無未綁定名稱，546／7／95凍結一致。 [範圍](docs/product/DELIVERY66_RELEASE_BINDING.md) · [靜態收據](docs/validation/evidence/delivery66-handoff-20261106-r1/r6-source-binding-draft-r1/verification.json) |
+| R594 | 建置來源凍結與TTS子程序候選 / 2026-11-06 | 原69項打包來源有68項未在r5凍結。9檔案候選保留62份手冊及輸入路徑，補69來源凍結、8工具、六類提交綁定與ZIP→便攜實裝→正式入口→發行鎖傳遞；新文件外鏈固定標籤。新增5契約後工具整套計畫42項未執行。TTS斷網子程序找不到套件的第5事件已記錄，15方法／斷言不變，19處直接子程序複核；9檔案語法與289模組靜態通過，原546／7／95不變。 [實作](docs/product/DELIVERY66_PACKAGING_PROVENANCE.md) · [靜態收據](docs/validation/evidence/delivery66-handoff-20261106-r1/r6-packaging-inputs-draft-r1/verification.json) |
+| R595 | 2026-11-06：完整目標未完成內容複核 | [38組差距、12項交付阻塞及階段順序](docs/product/UNFINISHED_20261106.md)；[唯讀證據](docs/validation/evidence/status-review-20261106-r2/review-r1/verification.json) | 實際發現入口仍CLI0.1.63，開發66；r5真實程序存活、無終態，目前4失敗／1錯誤事件；9檔案候選未套用、42工具項未執行；原546／7／95凍結相同。缺少實作、品質／組合驗收及正式交付分別說明，無新增功能測試／模型／註冊／發行，不計算完成百分比 |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

@@ -1,0 +1,42 @@
+{
+  "status": "three-language-documentation-synchronized",
+  "observed_at_utc": "2026-11-06T04:28:10.127496+00:00",
+  "readmes": [
+    {
+      "path": "README.md",
+      "before_sha256": "b11d5a71d56b32223a1b3e3f70ddd35ab9ea12d5e5ab76f4401ae17148fff5cb",
+      "after_sha256": "e914def98a0a9e8d540dc0770ae676025b29f87e3243e705db9fb76bc966422c",
+      "prior_F": 90,
+      "prior_R": 593,
+      "current_F": 90,
+      "current_R": 594,
+      "all_prior_numbered_rows_preserved": true
+    },
+    {
+      "path": "README.zh-TW.md",
+      "before_sha256": "90a57ae5ce17836d3a3fc3917ba63fb511da0f13bea973a60f1b9efddbc7c879",
+      "after_sha256": "1fbe938c982373bac38c7560e4a20fbf9c9ff435f4b5290a43f82dcaf8d04a51",
+      "prior_F": 90,
+      "prior_R": 593,
+      "current_F": 90,
+      "current_R": 594,
+      "all_prior_numbered_rows_preserved": true
+    },
+    {
+      "path": "README.en.md",
+      "before_sha256": "0b050c5afb1171ba4968f24c2ab5cedb6c67230575b12512431b6af867a32711",
+      "after_sha256": "0f9b3ce0f5c3f943bba26d58aefc359c84c52ac67404f8cdf1432a5d7b0a3dda",
+      "prior_F": 90,
+      "prior_R": 593,
+      "current_F": 90,
+      "current_R": 594,
+      "all_prior_numbered_rows_preserved": true
+    }
+  ],
+  "candidate_files": 9,
+  "planned_tool_suite": 42,
+  "candidate_applied": false,
+  "candidate_functions_executed": false,
+  "functional_tests_started": false,
+  "formal_activation": false
+}

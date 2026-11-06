@@ -239,7 +239,8 @@ class HandoffContracts(unittest.TestCase):
         home.mkdir()
         product = ('product/src/ai_ad_editor/__init__.py', 'product/tests/test_fixture.py')
         skill = (handoff.SKILL + 'SKILL.md', handoff.SKILL + 'scripts/run.ps1')
-        names = [*product, *sorted(handoff.SOURCE_TOOLS), *skill, handoff.MANIFEST,
+        packaging_names = round_runner.packaging_source_names()
+        names = [*product, *sorted(handoff.SOURCE_TOOLS), *packaging_names, *skill, handoff.MANIFEST,
                  handoff.CONFIG, *handoff.SOURCE_READMES]
         for name in names:
             path = home / name
@@ -247,8 +248,10 @@ class HandoffContracts(unittest.TestCase):
             path.write_bytes(('# Explicit source-binding fixture; never executed: ' + name + '\r\n').encode())
         (home / '.gitattributes').write_bytes(
             b'*.py text eol=lf\n*.md text eol=lf\n*.ps1 text eol=lf\n*.json text eol=lf\n')
-        context = dict(freeze=dict(file_hashes={name: handoff.sha(home / name) for name in product},
-            delivery_tool_files={name: handoff.sha(home / name) for name in handoff.SOURCE_TOOLS}),
+        context = dict(freeze=dict(status='frozen', cli_version=handoff.VERSION,
+            file_hashes={name: handoff.sha(home / name) for name in product},
+            delivery_tool_files={name: handoff.sha(home / name) for name in handoff.SOURCE_TOOLS},
+            packaging_source_files={name: handoff.sha(home / name) for name in packaging_names}),
             spec=dict(files=[dict(path=name, sha256=handoff.sha(home / name))
                              for name in (*skill, handoff.MANIFEST, handoff.CONFIG)]))
         return home, context, self.release_source_lock(home, context)
@@ -259,7 +262,8 @@ class HandoffContracts(unittest.TestCase):
         descriptor = home / 'docs/validation/reviewed-descriptor.json'
         handoff.save(descriptor, context['spec'])
         return dict(format=handoff.RELEASE_LOCK_FORMAT, frozen_source=context['freeze']['file_hashes'],
-                    source_binding=binding, descriptor=str(descriptor), descriptor_sha256=handoff.sha(descriptor))
+                    source_binding=binding, frozen_packaging_sources=context['freeze']['packaging_source_files'],
+                    descriptor=str(descriptor), descriptor_sha256=handoff.sha(descriptor))
 
     @contextmanager
     def release_git_environment(self, home):
@@ -287,10 +291,10 @@ class HandoffContracts(unittest.TestCase):
     def test_release_source_binding_covers_public_roles_and_rejects_missing_or_private_rows(self):
         home, context, lock = self.release_source_fixture()
         binding = lock['source_binding']
-        files = handoff.release_source_files(binding, lock['frozen_source'], context['spec']['files'])
+        files = handoff.release_source_files(binding, lock['frozen_source'], context['spec']['files'], context['freeze']['packaging_source_files'])
         self.assertEqual(set(files), set(context['freeze']['file_hashes']) | handoff.SOURCE_TOOLS
             | {row['path'] for row in context['spec']['files'] if row['path'] != handoff.CONFIG}
-            | set(handoff.SOURCE_READMES))
+            | set(handoff.SOURCE_READMES) | set(context['freeze']['packaging_source_files']))
         self.assertNotIn(handoff.CONFIG, files)
         self.assertFalse(binding['local_runtime_config_committed'])
         for role, rows in binding['groups'].items():
@@ -298,21 +302,21 @@ class HandoffContracts(unittest.TestCase):
                 changed = copy.deepcopy(binding)
                 del changed['groups'][role][name]
                 with self.subTest(role=role, omitted=name), self.assertRaises(ValueError):
-                    handoff.release_source_files(changed, lock['frozen_source'], context['spec']['files'])
+                    handoff.release_source_files(changed, lock['frozen_source'], context['spec']['files'], context['freeze']['packaging_source_files'])
         changed = copy.deepcopy(binding)
         changed['format'] = 'agent-editor-release-source-legacy'
         with self.assertRaises(ValueError):
-            handoff.release_source_files(changed, lock['frozen_source'], context['spec']['files'])
+            handoff.release_source_files(changed, lock['frozen_source'], context['spec']['files'], context['freeze']['packaging_source_files'])
         changed = copy.deepcopy(binding)
         changed['local_runtime_config_committed'] = True
         with self.assertRaises(ValueError):
-            handoff.release_source_files(changed, lock['frozen_source'], context['spec']['files'])
+            handoff.release_source_files(changed, lock['frozen_source'], context['spec']['files'], context['freeze']['packaging_source_files'])
         for name in (handoff.CONFIG, handoff.SKILL + 'SKILL.md'):
             changed = copy.deepcopy(binding)
             frozen = dict(lock['frozen_source'], **{name: handoff.sha(home / name)})
             changed['groups']['product'] = frozen
             with self.subTest(injected=name), self.assertRaises(ValueError):
-                handoff.release_source_files(changed, frozen, context['spec']['files'])
+                handoff.release_source_files(changed, frozen, context['spec']['files'], context['freeze']['packaging_source_files'])
 
     def test_release_source_capture_and_frozen_tools_reject_byte_drift(self):
         home, context, lock = self.release_source_fixture()
@@ -383,6 +387,121 @@ class HandoffContracts(unittest.TestCase):
             self.assertEqual(before, after)
             with self.assertRaisesRegex(ValueError, 'Reviewed release source changed'):
                 publisher.bind_commit(lock, commit)
+
+    def package_stage_fixture(self, home):
+        source = home / 'staged'
+        skill = source / handoff.SKILL / 'SKILL.md'
+        skill.parent.mkdir(parents=True)
+        skill.write_bytes(b'# Explicit packaging fixture; never registered or executed.\n')
+        handoff.save(source / handoff.MANIFEST, dict(release=handoff.RELEASE, cli_version=handoff.VERSION,
+            skill_count=1, module_count=17, files=[dict(path=handoff.SKILL + 'SKILL.md',
+            bytes=skill.stat().st_size, sha256=handoff.sha(skill))]))
+        return source
+
+    def package_native_fixture(self, source, output, ref):
+        environment = dict(os.environ, TEMP=str(self.root), TMP=str(self.root), TMPDIR=str(self.root),
+                           PYTHONDONTWRITEBYTECODE='1')
+        return subprocess.run([round_runner.sys.executable, '-E', '-B', '-u', '-X', 'utf8',
+            str(handoff.ROOT / 'scripts/package_community_skill.py'), '--output', str(output),
+            '--skill-source', str(source), '--archive-name', 'fixture.zip', '--source-ref', ref],
+            cwd=handoff.ROOT, env=environment, capture_output=True, text=True, encoding='utf-8',
+            timeout=60, creationflags=subprocess.CREATE_NO_WINDOW)
+
+    def test_native_packager_records_source_inputs_and_immutable_documentation_ref(self):
+        source = self.package_stage_fixture(self.root)
+        result = self.package_native_fixture(source, self.root / 'native-package', handoff.TAG)
+        self.assertEqual(result.returncode, 0, result.stderr + result.stdout)
+        report = json.loads(result.stdout)
+        expected = {name: pin for name, pin in round_runner.packaging_sources().items()
+                    if name != 'docs/product/DELIVERY_CONTROLLER.md'}
+        self.assertEqual(report['packaging_source_files'], expected)
+        self.assertEqual(report['documentation_source_ref'], handoff.TAG)
+        self.assertNotIn(handoff.CONFIG, expected)
+        with zipfile.ZipFile(report['archive']) as zipped:
+            inventory = handoff.decode(zipped.read('KIT-FILES.json'))
+            self.assertEqual(inventory['packaging_source_files'], expected)
+            self.assertEqual(inventory['documentation_source_ref'], handoff.TAG)
+            guides = b'\n'.join(zipped.read(name) for name in zipped.namelist() if name.startswith('docs/'))
+            self.assertIn(('/blob/' + handoff.TAG + '/').encode(), guides)
+
+    def test_packager_rejects_invalid_documentation_refs_before_outputs(self):
+        source = self.package_stage_fixture(self.root)
+        for index, ref in enumerate(('../escape', 'other/branch', 'v0.1.0-alpha.4/../main', 'https://invalid/', '')):
+            output = self.root / ('invalid-ref-' + str(index))
+            with self.subTest(ref=ref):
+                result = self.package_native_fixture(source, output, ref)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn('Use main, a full reviewed commit or a release tag', result.stderr)
+                self.assertFalse(output.exists())
+
+    def test_packager_missing_or_changing_sources_fail_before_output_publication(self):
+        script = handoff.ROOT / 'scripts/package_community_skill.py'
+        for mode in ('missing', 'changed'):
+            with self.subTest(mode=mode):
+                home = self.root / mode
+                home.mkdir()
+                namespace = round_runner.runpy.run_path(str(script), run_name='packaging_fault_contract')
+                globals_ = namespace['main'].__globals__
+                globals_['ROOT'] = home
+                for name in namespace['source_names']():
+                    path = home / name
+                    path.parent.mkdir(parents=True, exist_ok=True)
+                    path.write_bytes(b'# Explicit input-corpus fixture; helpers are never executed.\n')
+                source = self.package_stage_fixture(home)
+                guide = home / 'docs/product' / namespace['PACKAGE_GUIDES'][0]
+                output = home / 'output'
+                argv = [str(script), '--output', str(output), '--skill-source', str(source),
+                        '--archive-name', 'fixture.zip', '--source-ref', handoff.TAG]
+                if mode == 'missing':
+                    guide.unlink()
+                    with patch.object(round_runner.sys, 'argv', argv):
+                        with self.assertRaises(OSError):
+                            namespace['main']()
+                else:
+                    original = namespace['source_inventory']
+                    calls = []
+                    def observed_inputs():
+                        pins = original()
+                        calls.append(pins)
+                        if len(calls) == 1:
+                            guide.write_bytes(b'# Changed while packaging was reading its declared inputs.\n')
+                        return pins
+                    with (patch.object(round_runner.sys, 'argv', argv),
+                          patch.dict(globals_, source_inventory=observed_inputs),
+                          self.assertRaisesRegex(ValueError, 'changed before output publication')):
+                        namespace['main']()
+                    self.assertEqual(len(calls), 2)
+                self.assertFalse(output.exists())
+
+    def test_changed_packaging_input_rejects_kit_before_creating_outputs(self):
+        home, context, lock = self.release_source_fixture()
+        guide = home / 'docs/product/DELIVERY_CONTROLLER.md'
+        guide.write_bytes(guide.read_bytes() + b'# Unfrozen documentation edit\n')
+        args = SimpleNamespace(freeze_run='fixture', tests_run='fixture', run='fixture')
+        with (patch.object(handoff, 'ROOT', home),
+              patch.object(handoff, 'load', return_value=context['freeze']),
+              patch.object(handoff, 'begin') as begin,
+              self.assertRaisesRegex(ValueError, 'Frozen packaging input changed')):
+            handoff.kit(args)
+        begin.assert_not_called()
+
+    def test_reviewed_commit_rejects_uncommitted_packaging_helpers_license_and_guides(self):
+        home, context, lock = self.release_source_fixture()
+        commit = self.commit_release_source_fixture(home, lock)
+        for name in ('register-agent-ffmpeg-local-skills.ps1', 'scripts/install_community_pack.py',
+                     'LICENSE', 'docs/product/COMMUNITY_LOCAL_DELIVERY.md', 'docs/product/DELIVERY_CONTROLLER.md'):
+            path, original = home / name, (home / name).read_bytes()
+            try:
+                path.write_bytes(original + b'# Accepted packaging input not present in the source commit\n')
+                changed = copy.deepcopy(context)
+                changed['freeze']['packaging_source_files'][name] = handoff.sha(path)
+                updated = self.release_source_lock(home, changed)
+                with (self.subTest(uncommitted=name), self.release_git_environment(home),
+                      self.assertRaisesRegex(ValueError, 'Source commit differs')):
+                    publisher.bind_commit(updated, commit)
+            finally:
+                path.write_bytes(original)
+                self.release_source_lock(home, context)
 
     def dependency_fixture(self):
         package = self.root / 'site/ai_ad_editor'

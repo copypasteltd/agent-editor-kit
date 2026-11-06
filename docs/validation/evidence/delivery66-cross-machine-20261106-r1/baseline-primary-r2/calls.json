@@ -1,0 +1,436 @@
+[
+  {
+    "name": "version",
+    "command": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.61\\final-r1\\installed\\run.py",
+      "version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.3200262999998813
+  },
+  {
+    "name": "make-video",
+    "command": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+      "-nostdin",
+      "-v",
+      "error",
+      "-f",
+      "lavfi",
+      "-i",
+      "testsrc2=size=320x180:rate=30:duration=2",
+      "-an",
+      "-c:v",
+      "libx264",
+      "-threads",
+      "2",
+      "-pix_fmt",
+      "yuv420p",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\pattern.mp4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1580165000013949
+  },
+  {
+    "name": "make-audio",
+    "command": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+      "-nostdin",
+      "-v",
+      "error",
+      "-f",
+      "lavfi",
+      "-i",
+      "sine=frequency=440:sample_rate=48000:duration=2",
+      "-ac",
+      "2",
+      "-c:a",
+      "pcm_f32le",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\tone.wav"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06658629999947152
+  },
+  {
+    "name": "init",
+    "command": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.61\\final-r1\\installed\\run.py",
+      "project",
+      "init",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\project",
+      "--name",
+      "Two native Windows baseline"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.982843600002525
+  },
+  {
+    "name": "ingest-video",
+    "command": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.61\\final-r1\\installed\\run.py",
+      "media",
+      "ingest",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\pattern.mp4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.3244978999973682
+  },
+  {
+    "name": "ingest-audio",
+    "command": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.61\\final-r1\\installed\\run.py",
+      "media",
+      "ingest",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\tone.wav"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.157897100001719
+  },
+  {
+    "name": "compose",
+    "command": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.61\\final-r1\\installed\\run.py",
+      "timeline",
+      "compose",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\project",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\changes.json"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.599956400001247
+  },
+  {
+    "name": "look",
+    "command": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.61\\final-r1\\installed\\run.py",
+      "look",
+      "apply",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\project",
+      "--id",
+      "t3-kodak-gold-200",
+      "--global",
+      "--strength",
+      "0.65"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.42596489999778
+  },
+  {
+    "name": "validate",
+    "command": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.61\\final-r1\\installed\\run.py",
+      "validate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\project"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.371795099999872
+  },
+  {
+    "name": "render",
+    "command": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.61\\final-r1\\installed\\run.py",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\project",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\project\\renders\\baseline.mp4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 4.7330619000022125
+  },
+  {
+    "name": "original-RGBA",
+    "command": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\project\\renders\\baseline.mp4",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-pix_fmt",
+      "rgba",
+      "-f",
+      "hash",
+      "-hash",
+      "sha256",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.13028990000020713
+  },
+  {
+    "name": "original-PCM",
+    "command": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\project\\renders\\baseline.mp4",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "hash",
+      "-hash",
+      "sha256",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06435910000072909
+  },
+  {
+    "name": "original-PCM-samples",
+    "command": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\project\\renders\\baseline.mp4",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07733329999973648
+  },
+  {
+    "name": "original-probe",
+    "command": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.exe",
+      "-v",
+      "error",
+      "-count_frames",
+      "-show_streams",
+      "-show_format",
+      "-of",
+      "json",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\project\\renders\\baseline.mp4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07564869999987422
+  },
+  {
+    "name": "export",
+    "command": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.61\\final-r1\\installed\\run.py",
+      "convert",
+      "export",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\project",
+      "--target-format",
+      "package",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\baseline.aevpkg.zip"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.2739892000026884
+  },
+  {
+    "name": "import",
+    "command": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.61\\final-r1\\installed\\run.py",
+      "convert",
+      "import",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\baseline.aevpkg.zip",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\restored"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.0244428000005428
+  },
+  {
+    "name": "replay-render",
+    "command": [
+      "C:\\Python313\\python.exe",
+      "-I",
+      "-S",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.61\\final-r1\\installed\\run.py",
+      "render",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\restored",
+      "--output",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\restored\\renders\\baseline.mp4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 4.7131494999994175
+  },
+  {
+    "name": "restored-RGBA",
+    "command": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\restored\\renders\\baseline.mp4",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-pix_fmt",
+      "rgba",
+      "-f",
+      "hash",
+      "-hash",
+      "sha256",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.10994990000108373
+  },
+  {
+    "name": "restored-PCM",
+    "command": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\restored\\renders\\baseline.mp4",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "hash",
+      "-hash",
+      "sha256",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06409569999959785
+  },
+  {
+    "name": "restored-PCM-samples",
+    "command": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\restored\\renders\\baseline.mp4",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.06336430000010296
+  },
+  {
+    "name": "restored-probe",
+    "command": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.exe",
+      "-v",
+      "error",
+      "-count_frames",
+      "-show_streams",
+      "-show_format",
+      "-of",
+      "json",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\cross-machine63-20261106-r2\\primary\\restored\\renders\\baseline.mp4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07318730000042706
+  }
+]

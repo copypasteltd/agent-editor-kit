@@ -1,0 +1,38 @@
+{
+  "status": "complete-operational-code-frozen-before-functional-validation",
+  "files": [
+    {
+      "path": "docs/validation/cross_machine63_20261106_r2/case.py",
+      "bytes": 12214,
+      "sha256": "2f3f449eb9fe1438963014122b26a87adc8f5d22e38963d958ae8fd81790f3ea"
+    },
+    {
+      "path": "docs/validation/cross_machine63_20261106_r2/remote_baseline.py",
+      "bytes": 8681,
+      "sha256": "3918af6eb6c70daffc36c19e59000920bfe999e98ba6dd3c413f85cdc3957907"
+    },
+    {
+      "path": "docs/validation/cross_machine63_20261106_r2/remote_control.py",
+      "bytes": 11116,
+      "sha256": "3a2e3c19061a16867a481bd85ff1eebb0a118dfa2dc1c4c4c41e2df2ce7cee93"
+    },
+    {
+      "path": "docs/validation/cross_machine63_20261106_r2/transfer_server.py",
+      "bytes": 2768,
+      "sha256": "475c04f65e688614d8a838ba0c94b2b0907a87a28035c221f3292a10c81d8071"
+    },
+    {
+      "path": "docs/validation/cross_machine63_20261106_r2/prepare_transfer.py",
+      "bytes": 5034,
+      "sha256": "982dc8a1a394635f34536e333c824c16a7f42f6e84a529bf5e43c9f17e348780"
+    }
+  ],
+  "operational_run": "cross-machine63-20261106-r2",
+  "observed_at_utc": "2026-11-06T06:25:01.477045+00:00",
+  "cli_version": "0.1.63",
+  "cli66_accepted": false,
+  "formal_files_modified": false,
+  "functional_tests_executed": false,
+  "model_inference": false,
+  "docker_wsl_vm_used": false
+}

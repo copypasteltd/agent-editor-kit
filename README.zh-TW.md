@@ -13,7 +13,11 @@ r6凍結546項產品／用例／依賴、8交付工具、69建置來源和95正�
 
 三語快速開始涵蓋離線安裝、`--base-only`基礎設定、可選模型／GPU、單Skill、實際ID、客戶濾鏡預覽、音軌、算圖／品管及專案包重播。基礎剪輯不要求模型包；`--packs`仍驗包。摘要佔位和新包完整流程尚待實際安裝填實。[繁體草稿](docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.zh-TW.md) · [集中交付順序](docs/product/DELIVERY66_HANDOFF.md)
 本輪倉庫檢查點提供候選程式副本及實際驗證證據；本機應用原始碼的正式提交仍待完整產品回歸通過。
-最新唯讀預檢：原Unicode、兩項工程鎖和音訊診斷4項在目前整套中已實際為ok；TTS斷網及完整終態仍待。原生建置與後續輸入可用，未切換正式安裝。[證據與邊界](docs/product/DELIVERY66_DOWNSTREAM_PREFLIGHT.md)。
+最新整套觀察：原r5的Unicode、兩項工程鎖、音訊診斷及TTS斷網共五項均已實際為ok，是仍執行的4,124項子集；完整原始碼與新安裝版終態仍待。[五項實際記錄](docs/validation/evidence/delivery66-cross-machine-20261106-r1/baseline-round-r2/source-original-cases.json)。
+
+**第二台原生Windows的正式63版CPU基線已通過。** 實際離線安裝、中文空格目錄、一個Skill隔離註冊及專案包重播，完整60影格RGBA、非靜音PCM、影片時鐘與母素材摘要和本機一致，原r58清單160檔案未改。它是66升級／回滾的舊版對照；66新設定器、GPU、乾淨主機及正式升級仍另驗。[完整操作與限制](docs/product/CROSS_MACHINE63_BASELINE.md) · [第二台實際結果](docs/validation/evidence/delivery66-cross-machine-20261106-r1/baseline-remote-r2/verification.json) · [實際MP4](docs/assets/cross-machine63-20261106-r1/second-host.mp4)。
+
+![本機與第二台Windows實際輸出對照](docs/assets/cross-machine63-20261106-r1/comparison.gif)
 <!-- /aek-cli65-current -->
 
 **r58統一Skill工具包已獨立驗收。** 161條目／160清單檔案／93 Skill檔案；中文與空格目錄解包、四包配置、獨立註冊、實際譜面與循環修復、完整ACES YUV／PCM／PNG及專案重播通過。未新增模型推理，不等於乾淨主機或自然品質驗收。
@@ -2228,6 +2232,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R596 | 2026-11-06：Skill生成輸入與工具包手冊版本補齊 | [完整實作與邊界](docs/product/DELIVERY66_STAGE_INPUTS.md)；[最終候選靜態證據](docs/validation/evidence/delivery66-handoff-20261106-r1/r6-stage-inputs-draft-r1/final-code-review/verification.json) | 神經配樂說明納入凍結工具，官方校驗器固定摘要並在輸出前拒絕變化；4手冊恢復正式63／候選65／開發66及完整歷史，包內入口先顯示實際清單版本。原31方法／斷言保留，下一輪43項未執行；289應用模組候選靜態無未綁定名稱，51連結與4段原生PowerShell語法通過；原546／7／95凍結保持，候選未套用／功能執行／註冊／發行 |
 | R597 | 2026-11-06：r5完整終態、r6整批套用與集中驗證 | [執行記錄](docs/product/DELIVERY66_R6_EXECUTION.md)；[43項實際結果](docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r5/verification.json)；[新整套啟動](docs/validation/evidence/delivery66-handoff-20261106-r1/r6-centralized-start-r1/verification.json) | r5完整4,124項為4失敗／1錯誤／0跳過，程序均退出；9檔案完成後一次套用並凍結546／8／69／95與校驗器。43項工具整套全部通過，零失敗／錯誤／跳過，fixture-only；新未篩選產品整套實際發現4,124項仍執行中、無終態。兩實際依賴profile通過，正式入口仍63，無新安裝／模型／註冊／發行；不關閉G01—G38 |
 | R598 | 2026-11-06：完整回歸中間結果與後續交付預檢 | [實際收據](docs/validation/evidence/delivery66-handoff-20261106-r1/r6-downstream-preflight-r1/verification.json)；[說明](docs/product/DELIVERY66_DOWNSTREAM_PREFLIGHT.md) | 原r5異常中的Unicode、兩項鎖、音訊診斷共4項在仍執行的r6整套中為ok，TTS尚未執行到；非整套終態。原生建置後端、既有執行環境／權重中繼資料、授權、磁碟及標籤預檢完成，歷史65歸檔尺寸符合應用解包預算；沒有新66建置／推論／註冊／發行，全部凍結及正式63不變，不追加功能測試數 |
+| R599 | 2026-11-06：第二台原生Windows正式63版CPU安裝與完整媒體基線 | [實際流程／原失敗](docs/product/CROSS_MACHINE63_BASELINE.md)；[第二台終態](docs/validation/evidence/delivery66-cross-machine-20261106-r1/baseline-remote-r2/verification.json)；[GIF／MP4](docs/assets/cross-machine63-20261106-r1/SOURCE.md) | 五腳本先完成並凍結再集中執行。r1啟動長度失敗與現場保留；r2實際離線8wheel／283應用模組、中文空格安裝、1 Skill／17模組、原160歸檔檔案未改；全部60影格RGBA／完整非靜音PCM、影片時鐘及母素材與本機一致。啟動觀察逾時後查詢原任務，已passed並退出，未重啟，臨時服務已關閉。CPU舊版基線，不算66／GPU／乾淨主機／聽審／完整G34驗收。原r5五項在執行r6中均ok，不另計用例數；完整原始碼／安裝及發行仍待 |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

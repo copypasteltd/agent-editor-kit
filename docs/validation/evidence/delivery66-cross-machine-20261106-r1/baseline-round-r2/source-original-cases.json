@@ -1,0 +1,35 @@
+{
+  "status": "original-five-cases-ok-within-running-whole-suite",
+  "cases": [
+    {
+      "test_method": "test_cli_unicode_paths_and_progress_use_utf8_pipes",
+      "actual_original_suite_line": "test_cli_unicode_paths_and_progress_use_utf8_pipes (test_cli.P0CliTests.test_cli_unicode_paths_and_progress_use_utf8_pipes) ... ok",
+      "status": "ok-within-still-running-r6"
+    },
+    {
+      "test_method": "test_project_write_lock_rejects_competing_mutation_and_releases",
+      "actual_original_suite_line": "test_project_write_lock_rejects_competing_mutation_and_releases (test_cli.P0CliTests.test_project_write_lock_rejects_competing_mutation_and_releases) ... ok",
+      "status": "ok-within-still-running-r6"
+    },
+    {
+      "test_method": "test_queue_cancel_acknowledges_while_project_lock_is_held",
+      "actual_original_suite_line": "test_queue_cancel_acknowledges_while_project_lock_is_held (test_cli.P0CliTests.test_queue_cancel_acknowledges_while_project_lock_is_held) ... ok",
+      "status": "ok-within-still-running-r6"
+    },
+    {
+      "test_method": "test_audio_progress_read_failures_keep_bounded_diagnostic_states",
+      "actual_original_suite_line": "test_audio_progress_read_failures_keep_bounded_diagnostic_states (test_delivery.BoundedAudioProgressTests.test_audio_progress_read_failures_keep_bounded_diagnostic_states) ... ok",
+      "status": "ok-within-still-running-r6"
+    },
+    {
+      "test_method": "test_python_network_guard_blocks_connection_before_network_io",
+      "actual_original_suite_line": "test_python_network_guard_blocks_connection_before_network_io (test_local_tts.LocalTtsTests.test_python_network_guard_blocks_connection_before_network_io) ... ok",
+      "status": "ok-within-still-running-r6"
+    }
+  ],
+  "whole_suite_terminal": false,
+  "subset_of_discovered": 4124,
+  "new_test_invocation": false,
+  "source_log_snapshot_sha256": "84ab03cdbfe2cbe73340c4cff22b103419d5e08a29b4a3670519767b6cc1f7e7",
+  "observed_at_utc": "2026-11-06T06:37:47.084733+00:00"
+}

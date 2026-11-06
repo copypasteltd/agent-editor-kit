@@ -1,0 +1,16 @@
+{
+  "status": "failed-before-remote-install",
+  "native_error": "FileNotFoundError: [WinError 206] filename or extension too long",
+  "remote_root_exists": false,
+  "matching_native_jobs": [],
+  "actual_remote_probe": {
+    "root_exists": false,
+    "matching_jobs": [],
+    "observed_at_utc": "2026-11-06T06:20:50.1041471Z"
+  },
+  "local_transfer_server_exited": true,
+  "application_install_started": false,
+  "model_inference": false,
+  "cli66_accepted": false,
+  "next_batch": "complete-five-file-r2-with-short-pinned-bootstrap"
+}

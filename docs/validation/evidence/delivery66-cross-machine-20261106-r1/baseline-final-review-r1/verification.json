@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "observed_at_utc": "2026-11-06T06:46:09.230434+00:00",
+  "readme": {
+    "README.md": {
+      "historical_rows_preserved": 688,
+      "F": 90,
+      "R": 599
+    },
+    "README.zh-TW.md": {
+      "historical_rows_preserved": 688,
+      "F": 90,
+      "R": 599
+    },
+    "README.en.md": {
+      "historical_rows_preserved": 688,
+      "F": 90,
+      "R": 599
+    }
+  },
+  "checked_links": 78,
+  "missing_links": 0,
+  "frozen": {
+    "file_hashes": {
+      "files": 546,
+      "changed": []
+    },
+    "formal_guard": {
+      "files": 95,
+      "changed": []
+    },
+    "delivery_tool_files": {
+      "files": 8,
+      "changed": []
+    },
+    "packaging_source_files": {
+      "files": 69,
+      "changed": []
+    }
+  },
+  "official_validator_unchanged": true,
+  "original_38_goal_file_unchanged": true,
+  "all_38_current_groups_preserved": true,
+  "frozen_operational_code_files": 10,
+  "pinned_case_files": 120,
+  "pinned_media_files": 7,
+  "public_files_secret_scanned": 153,
+  "sensitive_matches": 0,
+  "actual_remote_cli63_passed": true,
+  "clean_host": false,
+  "cli66_accepted": false,
+  "source_whole_suite_terminal": false,
+  "formal_activation": false,
+  "release_created": false,
+  "full_goal_closed": false
+}

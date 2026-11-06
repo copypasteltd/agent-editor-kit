@@ -1,0 +1,85 @@
+{
+  "status": "passed",
+  "review_kind": "completed-contracts-and-verified-live-wait",
+  "observed_at_utc": "2026-11-06T13:56:00.849716+00:00",
+  "base_commit": "759021590ee6b71c54319569e9d900be93b03080",
+  "source_worktree_cli": "0.1.67",
+  "formal_cli": "0.1.66",
+  "portrait_code_frozen": true,
+  "frozen_product_files": 554,
+  "frozen_tools": 6,
+  "frozen_packaging_sources": 69,
+  "frozen_equal": true,
+  "contract_tests": {
+    "tests": 30,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "synthetic_processors_only": true,
+    "GPU_inference": false
+  },
+  "source_suite": {
+    "status": "running",
+    "discovered_tests_reported_by_original_process": 4154,
+    "identity": {
+      "pid": 36544,
+      "creation_filetime": 134384459743255972,
+      "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+    },
+    "confirmed_live_at_observation": true,
+    "terminal_present": false,
+    "restarted": false
+  },
+  "chain": {
+    "status": "waiting-existing-source",
+    "identity": {
+      "pid": 1556,
+      "creation_filetime": 134384465739429876,
+      "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+    },
+    "confirmed_live_at_observation": true,
+    "formal_activation": false,
+    "next_steps": [
+      "build",
+      "stage",
+      "installed-all",
+      "native-case"
+    ]
+  },
+  "installed_suite_started": false,
+  "actual_GPU_portrait_executed": false,
+  "formal_activation_changed": false,
+  "formal_skill_files_unchanged": 95,
+  "historical_readme_rows": {
+    "README.md": {
+      "preserved_rows": 701,
+      "current_rows": 702,
+      "all_prior_rows_verbatim": true
+    },
+    "README.zh-TW.md": {
+      "preserved_rows": 701,
+      "current_rows": 702,
+      "all_prior_rows_verbatim": true
+    },
+    "README.en.md": {
+      "preserved_rows": 701,
+      "current_rows": 702,
+      "all_prior_rows_verbatim": true
+    }
+  },
+  "original_goal_unchanged": true,
+  "checked_current_local_links": 33,
+  "missing_current_local_links": 0,
+  "documents": {
+    "README.md": "f8eb4c9c4a11884097297d17ef624456e16963843f7a3719b2ec31bf2c828c14",
+    "README.zh-TW.md": "f9182601d2d03cdb589a13f9cd5a00a011a5b38475633a5332a6788668d244a4",
+    "README.en.md": "78e7b4ad6d1c751d1e44148ba138f0de958bd356feaa15ffd066f2fcbbd62fef",
+    "docs/product/UNFINISHED_DETAIL_20261106.md": "ee3156bc045efb979d24edc1924d3e85c4e7cc225d72dbdce3313339e1840a11",
+    "docs/product/PORTRAIT67_DEVELOPMENT.md": "bf9ddbba2a0cbfe36abd808b71031b7bab4727f566b8fab17389c427bc875f59"
+  },
+  "scope_files": 10,
+  "exact_configured_secret_scan_passed": true,
+  "private_configuration_copied": false,
+  "product_code_committed": false,
+  "full_goal_closed": false
+}

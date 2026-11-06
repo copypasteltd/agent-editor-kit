@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "observed_at_utc": "2026-11-06T14:53:21.245940+00:00",
+  "freeze_sha256": "4c5f47ab1788d2b2b441acf7b3aba4eecb2398dbf1b2d5fa7dec014c07695b2d",
+  "frozen_inputs_unchanged": true,
+  "public_api_contracts": {
+    "tests": 15,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "successful": true
+  },
+  "unicode_default_corpora": [
+    {
+      "name": "GraphemeBreakTest-17.0.0",
+      "cases": 766,
+      "passed": 766,
+      "failed": 0,
+      "skipped": 0,
+      "excluded": 0,
+      "input_sha256": "e2d134d2c52919bace503ebb6a551c1855fe1a1faec18478c78fff254a1793ec",
+      "failed_lines": [],
+      "examples": []
+    },
+    {
+      "name": "LineBreakTest-17.0.0",
+      "cases": 19338,
+      "passed": 19338,
+      "failed": 0,
+      "skipped": 0,
+      "excluded": 0,
+      "input_sha256": "e69884e0dde6a8724873f885d68c52dc14518abf9ae4ca9e2283b8773db3b752",
+      "failed_lines": [],
+      "examples": []
+    }
+  ],
+  "product_cli_tested": false,
+  "installed_skill_modified": false,
+  "dependency_installation": false,
+  "neural_model_forwards": 0,
+  "gpu_used": false,
+  "typography_renderer_integrated": false,
+  "full_bidi_implemented": false,
+  "goal_closed": false,
+  "portrait67_guard": {
+    "freeze_sha256": "d8c6ccf3fd740ffc0063034e2a765d88b47e26f9d77c41d6a3a75a9446bd71a3",
+    "product_test_dependency_count": 554,
+    "delivery_tool_count": 6,
+    "packaging_source_count": 69,
+    "unchanged": true
+  }
+}

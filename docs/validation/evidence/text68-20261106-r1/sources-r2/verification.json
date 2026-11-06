@@ -1,0 +1,102 @@
+{
+  "status": "downloaded-for-code-review",
+  "observed_at_utc": "2026-11-06T14:39:41.832352+00:00",
+  "sources": [
+    {
+      "path": "upstream/unicode17/auxiliary/GraphemeBreakProperty.txt",
+      "url": "https://www.unicode.org/Public/17.0.0/ucd/auxiliary/GraphemeBreakProperty.txt",
+      "bytes": 99377,
+      "sha256": "d6b51d1d2ae5c33b451b7ed994b48f1f4dc62b2272a5831e7fd418514a6bae89"
+    },
+    {
+      "path": "upstream/unicode17/auxiliary/GraphemeBreakTest.txt",
+      "url": "https://www.unicode.org/Public/17.0.0/ucd/auxiliary/GraphemeBreakTest.txt",
+      "bytes": 126570,
+      "sha256": "e2d134d2c52919bace503ebb6a551c1855fe1a1faec18478c78fff254a1793ec"
+    },
+    {
+      "path": "upstream/unicode17/auxiliary/LineBreakTest.txt",
+      "url": "https://www.unicode.org/Public/17.0.0/ucd/auxiliary/LineBreakTest.txt",
+      "bytes": 3166819,
+      "sha256": "e69884e0dde6a8724873f885d68c52dc14518abf9ae4ca9e2283b8773db3b752"
+    },
+    {
+      "path": "upstream/unicode17/LineBreak.txt",
+      "url": "https://www.unicode.org/Public/17.0.0/ucd/LineBreak.txt",
+      "bytes": 263180,
+      "sha256": "e6a18fa91f8f6a6f8e534b1d3f128c21ada45bfe152eb6b1bcc5e15fd8ac92e6"
+    },
+    {
+      "path": "upstream/unicode17/DerivedCoreProperties.txt",
+      "url": "https://www.unicode.org/Public/17.0.0/ucd/DerivedCoreProperties.txt",
+      "bytes": 1134783,
+      "sha256": "24c7fed1195c482faaefd5c1e7eb821c5ee1fb6de07ecdbaa64b56a99da22c08"
+    },
+    {
+      "path": "upstream/unicode17/UnicodeData.txt",
+      "url": "https://www.unicode.org/Public/17.0.0/ucd/UnicodeData.txt",
+      "bytes": 2198209,
+      "sha256": "2e1efc1dcb59c575eedf5ccae60f95229f706ee6d031835247d843c11d96470c"
+    },
+    {
+      "path": "upstream/unicode17/EastAsianWidth.txt",
+      "url": "https://www.unicode.org/Public/17.0.0/ucd/EastAsianWidth.txt",
+      "bytes": 201595,
+      "sha256": "ea7ce50f3444a050333448dffef1cadd9325af55cbb764b4a2280faf52170a33"
+    },
+    {
+      "path": "upstream/unicode17/extracted/DerivedBidiClass.txt",
+      "url": "https://www.unicode.org/Public/17.0.0/ucd/extracted/DerivedBidiClass.txt",
+      "bytes": 173433,
+      "sha256": "4867b4b7f0731ed1bfcd34cc6251211ff1542541fce0734b6fbda139ee80b3a4"
+    },
+    {
+      "path": "upstream/unicode17/emoji/emoji-data.txt",
+      "url": "https://www.unicode.org/Public/17.0.0/ucd/emoji/emoji-data.txt",
+      "bytes": 107324,
+      "sha256": "2cb2bb9455cda83e8481541ecf5b6dfda66a3bb89efa3fa7c5297eccf607b72b"
+    },
+    {
+      "path": "upstream/unicode17/unicode-license.txt",
+      "url": "https://www.unicode.org/license.txt",
+      "bytes": 1995,
+      "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+    },
+    {
+      "path": "upstream/unicode17/UAX29-47.html",
+      "url": "https://www.unicode.org/reports/tr29/tr29-47.html",
+      "bytes": 138801,
+      "sha256": "130d4e0d3f9da41bf9ad84bf580b3b92edc83886457cbc5a53b432761fd2c6ed"
+    },
+    {
+      "path": "upstream/unicode17/UAX14-55.html",
+      "url": "https://www.unicode.org/reports/tr14/tr14-55.html",
+      "bytes": 226953,
+      "sha256": "dfa75adac235aaaf49320c955fbf48ef96acb16823ed4fb7ee8079b15b058582"
+    },
+    {
+      "path": "upstream/unicode17/UAX9-51.html",
+      "url": "https://www.unicode.org/reports/tr9/tr9-51.html",
+      "bytes": 187487,
+      "sha256": "25ebbc5bc05ec302677ace0e3118e454e12da5e1e7ebec386aabd6e585c8cebe"
+    },
+    {
+      "path": "upstream/uniseg-0.10.1-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/80/6c/9eb6d93ad8b9ac96cba13e6d2f419c316d8fdb91013e12dd478a99501699/uniseg-0.10.1-py3-none-any.whl",
+      "bytes": 8179942,
+      "sha256": "74fe3f7b4ee46bbd703a70ea1e5cd28e04f63eee5af9a10388d93316c554e358"
+    }
+  ],
+  "uniseg_source_version": "0.10.1",
+  "uniseg_original_Unicode_version": "16.0.0",
+  "target_Unicode_version": "17.0.0",
+  "licenses": [
+    "MIT",
+    "Unicode-3.0"
+  ],
+  "downloaded_code_executed": false,
+  "package_installed": false,
+  "virtual_environment": false,
+  "current_portrait_batch_modified": false,
+  "functional_tests_started": false
+}

@@ -1,0 +1,127 @@
+{
+  "status": "passed",
+  "observed_at_utc": "2026-11-06T15:01:30.556762+00:00",
+  "base_commit": "2edf4a72c02bfaf1ce534d38ee56ad99e25fa050",
+  "review_kind": "isolated-complete-text-foundation-batch",
+  "isolated_candidate_files": 16,
+  "candidate_unicode_version": "17.0.0",
+  "candidate_cli_version": null,
+  "candidate_phase_files": 19,
+  "code_completed_before_tests": true,
+  "frozen_text_inputs_unchanged": true,
+  "interface_contracts": {
+    "tests": 15,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "successful": true
+  },
+  "official_default_corpora": [
+    {
+      "name": "GraphemeBreakTest-17.0.0",
+      "cases": 766,
+      "passed": 766,
+      "failed": 0,
+      "skipped": 0,
+      "excluded": 0,
+      "input_sha256": "e2d134d2c52919bace503ebb6a551c1855fe1a1faec18478c78fff254a1793ec"
+    },
+    {
+      "name": "LineBreakTest-17.0.0",
+      "cases": 19338,
+      "passed": 19338,
+      "failed": 0,
+      "skipped": 0,
+      "excluded": 0,
+      "input_sha256": "e69884e0dde6a8724873f885d68c52dc14518abf9ae4ca9e2283b8773db3b752"
+    }
+  ],
+  "test_counts_combined": false,
+  "tested_with_native_isolated_python": true,
+  "current_product_cli": "0.1.67",
+  "formal_cli": "0.1.66",
+  "formal_skill_files_unchanged": 95,
+  "formal_activation_changed": false,
+  "actual_text_renderer_integration": false,
+  "full_bidi_or_shaping_claimed": false,
+  "model_forwards": 0,
+  "gpu_used": false,
+  "portrait_product_pins": 554,
+  "portrait_tool_pins": 6,
+  "portrait_packaging_pins": 69,
+  "portrait_frozen_equal": true,
+  "source_suite": {
+    "status": "running",
+    "discovered_tests": 4154,
+    "identity": {
+      "pid": 36544,
+      "creation_filetime": 134384459743255972,
+      "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+    },
+    "confirmed_live_at_observation": true,
+    "terminal_present": false,
+    "restarted": false,
+    "observed_completed_test_lines": 1793,
+    "last_log_line": "test_partial_ducking_bus_rejects_but_complete_sequence_keeps_processing (test_fragments.FragmentTests.test_partial_ducking_bus_rejects_but_complete_sequence_keeps_processing) ... "
+  },
+  "prerequisite_chain": {
+    "identity": {
+      "pid": 1556,
+      "creation_filetime": 134384465739429876,
+      "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+    },
+    "confirmed_live_at_observation": true
+  },
+  "delivery_chain": {
+    "identity": {
+      "pid": 2520,
+      "creation_filetime": 134384483753193077,
+      "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+    },
+    "confirmed_live_at_observation": true,
+    "status": "waiting-existing-prerequisite"
+  },
+  "installed_suite_started": false,
+  "actual_GPU_portrait_executed": false,
+  "historical_readme_rows": {
+    "README.md": {
+      "preserved_rows": 703,
+      "current_rows": 704,
+      "all_prior_rows_verbatim": true
+    },
+    "README.zh-TW.md": {
+      "preserved_rows": 703,
+      "current_rows": 704,
+      "all_prior_rows_verbatim": true
+    },
+    "README.en.md": {
+      "preserved_rows": 703,
+      "current_rows": 704,
+      "all_prior_rows_verbatim": true
+    }
+  },
+  "original_goal_unchanged": true,
+  "checked_current_local_links": 42,
+  "missing_current_local_links": 0,
+  "sources_rights": [
+    "MIT",
+    "Unicode-3.0"
+  ],
+  "annex_html_redistributed": false,
+  "source_acquisition_not_counted_as_functional_test": true,
+  "public_release_overwritten": false,
+  "neural_media_published": false,
+  "unaccepted_portrait_product_code_committed": false,
+  "scope_files": 29,
+  "documents": {
+    "README.md": "056713c0e8264a9ba8bee100afb3ccdcfa5922590d5f6a2d72e4df1547b564d9",
+    "README.zh-TW.md": "3aab8790a2db79a5ac6cbabf3d693b3e679f500abaf34eb3882ba5d213f4326d",
+    "README.en.md": "32f649bf1eee5ff4f931e8a88b79b301d55e959dcbe6499f65cc9ef6b1b72e6f",
+    "docs/product/TEXT68_UNICODE_FOUNDATION.md": "089fbaa2e8c3565fd9c551d2e1cce1fd3cb9e6c6fff2e5fd60eb0233f0e1b012",
+    "docs/product/UNFINISHED_DETAIL_20261106.md": "2897080363db1a8144e9cbc18e559c6f00ffdfaf280369d85ce8612516a87919"
+  },
+  "exact_configured_secret_scan_passed": true,
+  "private_configuration_copied": false,
+  "outside_scope_staging_unchanged": true,
+  "full_goal_closed": false
+}

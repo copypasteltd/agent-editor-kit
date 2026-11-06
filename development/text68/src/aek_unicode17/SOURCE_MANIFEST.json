@@ -1,0 +1,34 @@
+{
+  "annex_html_redistributed": false,
+  "changes": [
+    "Relative imports; standalone namespace",
+    "All property lookups use pinned Unicode 17 data",
+    "UAX14 rev55 HH class and LB12a/LB20a/LB21/LB21a changes",
+    "No host unicodedata, regex, network, subprocess or optional package dependency"
+  ],
+  "original_algorithm_sha256": {
+    "breaking.py": "3053b2e2567596fe0df02dbc67b24b66a9968fa6c6f4696edd317183756cd12a",
+    "graphemecluster.py": "147e2c08a0e9528868333897256141451214fc28a638b2ff4ebd3f0c06597268",
+    "linebreak.py": "2bd20d7e5b9df28439df9302d09ffa426db9fa0f1f37183f9ac23fcbc9f3a475",
+    "unicodeproperty.py": "cac922339bc32d05db898ba1fed48f48f04a00799be4df62221b4966cb34b5c4"
+  },
+  "product67_modified": false,
+  "property_data_sha256": "2e0546830d663e2297cc3dd9c35f4856e834ad6d7ae8c3f8bee585ca0c548ea2",
+  "tests_started": false,
+  "ucd_sources": {
+    "DerivedCoreProperties.txt": "24c7fed1195c482faaefd5c1e7eb821c5ee1fb6de07ecdbaa64b56a99da22c08",
+    "EastAsianWidth.txt": "ea7ce50f3444a050333448dffef1cadd9325af55cbb764b4a2280faf52170a33",
+    "LineBreak.txt": "e6a18fa91f8f6a6f8e534b1d3f128c21ada45bfe152eb6b1bcc5e15fd8ac92e6",
+    "UnicodeData.txt": "2e1efc1dcb59c575eedf5ccae60f95229f706ee6d031835247d843c11d96470c",
+    "auxiliary/GraphemeBreakProperty.txt": "d6b51d1d2ae5c33b451b7ed994b48f1f4dc62b2272a5831e7fd418514a6bae89",
+    "auxiliary/GraphemeBreakTest.txt": "e2d134d2c52919bace503ebb6a551c1855fe1a1faec18478c78fff254a1793ec",
+    "auxiliary/LineBreakTest.txt": "e69884e0dde6a8724873f885d68c52dc14518abf9ae4ca9e2283b8773db3b752",
+    "emoji/emoji-data.txt": "2cb2bb9455cda83e8481541ecf5b6dfda66a3bb89efa3fa7c5297eccf607b72b",
+    "extracted/DerivedBidiClass.txt": "4867b4b7f0731ed1bfcd34cc6251211ff1542541fce0734b6fbda139ee80b3a4",
+    "unicode-license.txt": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+  },
+  "unicode_version": "17.0.0",
+  "upstream_unicode_version": "16.0.0",
+  "upstream_uniseg": "0.10.1",
+  "upstream_wheel_sha256": "74fe3f7b4ee46bbd703a70ea1e5cd28e04f63eee5af9a10388d93316c554e358"
+}

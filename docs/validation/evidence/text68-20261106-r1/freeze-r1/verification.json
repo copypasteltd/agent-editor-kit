@@ -1,0 +1,37 @@
+{
+  "status": "frozen-before-collective-tests",
+  "observed_at_utc": "2026-11-06T14:52:37.774022+00:00",
+  "unicode_version": "17.0.0",
+  "file_hashes": {
+    "development/text68/src/aek_unicode17/__init__.py": "64d8a838ae52824bd5380ca46384c50ad2ecea041394cbae75f434339e3d59e6",
+    "development/text68/src/aek_unicode17/_vendor/__init__.py": "0e223934ea8a3db0f7ee982501a003f326fde19acb6f0b4cd9d2a17882dd8a8b",
+    "development/text68/src/aek_unicode17/_vendor/breaking.py": "c35007f6f19f245100042e146d9ffafb99261313f483921f4f859c92f6c49864",
+    "development/text68/src/aek_unicode17/_vendor/db.py": "8e0c8f44861427d2c200cc50dfe534169e60bb1cdc4b7acd61ebd4bedb364b5a",
+    "development/text68/src/aek_unicode17/_vendor/derived.py": "8c8d57e0de5928ed67f00fcee1a92a571fad11e433bcf373581d3ed4cba842db",
+    "development/text68/src/aek_unicode17/_vendor/emoji.py": "cd579b45874c4eae60b5dce43f505101112a300a500a3872d3a11f9ecf1995ec",
+    "development/text68/src/aek_unicode17/_vendor/graphemecluster.py": "768ce9d62ee1082dbe182fb6b510ba442becf223ec6e7392fb00559178c75db1",
+    "development/text68/src/aek_unicode17/_vendor/linebreak.py": "5620f2ac95a4dc068cb1418309699d108b607bd046ed5877af6953ef3ff6ef3b",
+    "development/text68/src/aek_unicode17/_vendor/unicodedatawrapper.py": "e5c093f552d45d4cb97fde9c0a51e2b67b77ef6ebfd779e3770d124cd9d76791",
+    "development/text68/src/aek_unicode17/_vendor/unicodeproperty.py": "d0e6dbe0f13cf37b6a9bb300c9f157644dd2b94edfdaaa442c38affb41c1c0cd",
+    "development/text68/src/aek_unicode17/core.py": "5df22f3067b5651dd973252e5eed40e72806f2a2d88bd370d7b657300dc9c010",
+    "development/text68/src/aek_unicode17/data/unicode17.json": "2e0546830d663e2297cc3dd9c35f4856e834ad6d7ae8c3f8bee585ca0c548ea2",
+    "development/text68/src/aek_unicode17/LICENSE_UNICODE.txt": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+    "development/text68/src/aek_unicode17/LICENSE_UNISEG.txt": "0c0ddab80a905b027143e7befa117c7bab53f7f3f606e8d20cf1a78a79472062",
+    "development/text68/src/aek_unicode17/SOURCE_MANIFEST.json": "f3130a7cd1379ae02418792ad7cb17d34957bfd9553cbef9ac34445243aa899c",
+    "development/text68/tests/test_text68.py": "a1d4eb620268c681b62dd95df2a63883ee832c0aed888fcaa8bb891c08f1eb69",
+    "docs/validation/validate_text68.py": "d2febf3087e6a0b3717348e0e2bb167f00190753a0f775aecd3e18eb425ed030",
+    "docs/validation/build_text68_candidate.py": "353ddd472401452a1e7fb83feb8f0963260636681a0d575784788cd5f2912941",
+    "docs/validation/prepare_text68_sources.py": "87ea01b87d7a769c4e59fb7de838175e3823cebbcb3cbe843ce2a2e07b8ed1fa"
+  },
+  "product67_modified": false,
+  "installed_skill_modified": false,
+  "goal_closed": false,
+  "tests_started": false,
+  "portrait67_guard": {
+    "freeze_sha256": "d8c6ccf3fd740ffc0063034e2a765d88b47e26f9d77c41d6a3a75a9446bd71a3",
+    "product_test_dependency_count": 554,
+    "delivery_tool_count": 6,
+    "packaging_source_count": 69,
+    "unchanged": true
+  }
+}

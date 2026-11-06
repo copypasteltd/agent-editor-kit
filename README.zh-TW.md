@@ -1,5 +1,7 @@
 # agent editor kit
 
+**文字基礎獨立開發批已通過（2026-11-06）：** 固定Unicode 17分字／換行、無損原文折行、UTF-16位置與精確逐字時鐘程式已寫齊並凍結；15項介面檢查、官方766條分字及19,338條換行用例分別全部通過，0失敗／跳過／排除。程式位於`development/text68/`，尚未接入正式字幕渲染或Skill；完整塑形、RTL視覺高亮、動態版式與實際多語成片仍待。CLI67原驗收繼續，正式仍CLI66。[實作、介面、證據與待辦](docs/product/TEXT68_UNICODE_FOUNDATION.md)。
+
 **CLI67交付驗證批已寫齊並凍結（2026-11-06）：** 實際音樂、完整音畫、故障、便攜安裝及66→67→66→67回滾驗證程序已完成；12項工具凍結後，17項夾具檢查全部通過，非模型實測。人像30項合成契約另記；原生原始碼4,154項仍在原程序中執行，安裝／實際GPU／正式升級尚未開始。交付接續已綁定既有程序，前序通過後才繼續。正式仍CLI66，alpha.4不覆蓋。[本輪完成與10項交付門檻](docs/product/PORTRAIT67_DELIVERY.md) · [完整剩餘工作](docs/product/UNFINISHED_DETAIL_20261106.md)。
 
 **最新未完成狀態複核（2026-11-06）：** 正式入口仍為CLI66／alpha.4；本地開發工作區CLI67的人像分區程式尚未驗收、安裝或切換。完整剩餘工作按G01—G38展開，並列出本批7項待交付門檻；CLI66的4,124項通過不轉記為CLI67通過。[詳細清單](docs/product/UNFINISHED_DETAIL_20261106.md) · [靜態複核記錄](docs/validation/evidence/status-review-20261106-r9/review-r1/verification.json)。
@@ -2257,6 +2259,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R611 | 2026-11-06：未完成範圍與CLI67開發邊界複核 | [詳細差距及7項本批門檻](docs/product/UNFINISHED_DETAIL_20261106.md)；[靜態保護複核](docs/validation/evidence/status-review-20261106-r9/review-r1/verification.json) | 核對原G01—G38、13組待補實作、10組品質與6組效能／遷移工作；本地CLI67人像分區尚無測試終態、可用包或正式Skill切換。正式CLI66及原700歷史編號保留；本次沒有產品測試、模型推論或新增功能驗收，完整目標繼續開放 |
 | R612 | 2026-11-06：CLI67人像分區整批開發、凍結及集中契約 | [本批開發與門檻](docs/product/PORTRAIT67_DEVELOPMENT.md)；[凍結](docs/validation/evidence/portrait67-20261106-r1/freeze-r1/verification.json)；[30項契約](docs/validation/evidence/portrait67-20261106-r1/contracts-r1/verification.json) | 新區域／保護／配方／管道程式與實際案例先寫齊再凍結；30項合成處理器契約0失敗／錯誤／跳過，非GPU實測。原始碼整套發現4,154項仍在執行，安裝／實際GPU／正式交付待驗；未重啟原程序，正式95檔案及原701歷史編號保留，完整目標開放 |
 | R613 | 2026-11-06：CLI67同版交付批完整程式、凍結與集中工具檢查 | [交付批與待辦](docs/product/PORTRAIT67_DELIVERY.md)；[12項工具凍結](docs/validation/evidence/portrait67-20261106-r1/delivery-code-phase-r1/verification.json)；[17項結果](docs/validation/evidence/portrait67-20261106-r1/delivery-contracts-r1/verification.json) | 音樂／完整音畫／三故障／描述／r60工具包／便攜／95→96檔案升級回滾程序先寫齊再集中檢查；9項新准入與8項原音畫規則0失敗／錯誤／跳過，模型前向0。原4,154項原始碼回歸繼續，安裝和實際GPU尚未開始；新接續綁定原1556程序，不重啟。正式66、原95檔案、alpha.4及原702條編號行保持，完整目標開放 |
+| R614 | 2026-11-06：獨立Unicode 17文字基礎核心整批完成、凍結與集中測試 | [實作與待辦](docs/product/TEXT68_UNICODE_FOUNDATION.md)；[整批凍結](docs/validation/evidence/text68-20261106-r1/freeze-r1/verification.json)；[完整結果](docs/validation/evidence/text68-20261106-r1/tests-r1/verification.json) | 7類固定屬性、字素／換行、無損範圍折行、UTF-16、首段方向和精確逐字時鐘已實作；15介面、766分字、19,338換行分別全通過，0失敗／跳過／排除。不依賴主機Unicode版本，不與產品回歸相加。未接入渲染／正式Skill，完整Bidi／塑形／自然成片仍待；原CLI67凍結、正式66、alpha.4及703條歷史行保持，G13與完整目標開放 |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

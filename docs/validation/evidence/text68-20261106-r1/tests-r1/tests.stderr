@@ -1,0 +1,20 @@
+test_cjk_punctuation_and_glue_word_joiner (test_text68.Text68Contracts.test_cjk_punctuation_and_glue_word_joiner) ... ok
+test_default_linebreaks_and_egc_tailoring_have_distinct_profiles (test_text68.Text68Contracts.test_default_linebreaks_and_egc_tailoring_have_distinct_profiles) ... ok
+test_explicit_whitespace_policy_only_trims_ascii_line_ends (test_text68.Text68Contracts.test_explicit_whitespace_policy_only_trims_ascii_line_ends) ... ok
+test_flags_combining_emoji_hangul_indic_prepend_exact_ranges (test_text68.Text68Contracts.test_flags_combining_emoji_hangul_indic_prepend_exact_ranges) ... ok
+test_hard_separators_crlf_and_trailing_empty_line (test_text68.Text68Contracts.test_hard_separators_crlf_and_trailing_empty_line) ... ok
+test_invalid_text_and_offsets_fail_before_measurement (test_text68.Text68Contracts.test_invalid_text_and_offsets_fail_before_measurement) ... ok
+test_nonmonotonic_whole_run_measure_is_not_prefix_estimation (test_text68.Text68Contracts.test_nonmonotonic_whole_run_measure_is_not_prefix_estimation) ... ok
+test_overflow_rejection_and_measurement_failures_are_explicit (test_text68.Text68Contracts.test_overflow_rejection_and_measurement_failures_are_explicit) ... ok
+test_paragraph_base_direction_ignores_isolates_and_later_paragraphs (test_text68.Text68Contracts.test_paragraph_base_direction_ignores_isolates_and_later_paragraphs) ... ok
+test_rational_reveal_plan_matches_independent_fraction_oracle (test_text68.Text68Contracts.test_rational_reveal_plan_matches_independent_fraction_oracle) ... ok
+test_resource_budgets_stop_instead_of_silent_partial_layout (test_text68.Text68Contracts.test_resource_budgets_stop_instead_of_silent_partial_layout) ... ok
+test_reveal_integer_validation_and_empty_source (test_text68.Text68Contracts.test_reveal_integer_validation_and_empty_source) ... ok
+test_scalar_utf16_roundtrip_and_half_surrogate_rejection (test_text68.Text68Contracts.test_scalar_utf16_roundtrip_and_half_surrogate_rejection) ... ok
+test_unicode17_new_characters_do_not_depend_on_host_ucd (test_text68.Text68Contracts.test_unicode17_new_characters_do_not_depend_on_host_ucd) ... ok
+test_wrap_lossless_offsets_no_normalization_and_no_nbsp_trimming (test_text68.Text68Contracts.test_wrap_lossless_offsets_no_normalization_and_no_nbsp_trimming) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.173s
+
+OK

@@ -2,8 +2,8 @@
   "format": "agent-ffmpeg-local-skills-v2",
   "status": "reviewed",
   "registration_mode": "single",
-  "release": "v0.1.0-alpha.4-local.64",
-  "manifest_sha256": "sha256:1da7f0a678ea678f49af6d9b847dfd8912b11ede04aad22f8d87ee247ee1117a",
+  "release": "v1.0.0",
+  "manifest_sha256": "sha256:8946cc2eedfab5b4f7c8f536b5277e3c6a636a0e700754a3cf25c76bfba9d0cd",
   "runtime_config": "local/agent-ffmpeg/runtime.json",
   "skill_count": 1,
   "module_count": 17,
@@ -13,7 +13,7 @@
     {
       "name": "agent-ffmpeg-local-editor",
       "purpose_zh": "唯一入口：17内部模块、真实CUDA对白降噪/神经补帧/口型、GPU视频生成/会话、原生跟踪、HDR/Float32合成、500滤镜、语义检索、字幕配音与四轨分离",
-      "skill_md_sha256": "25db1826c5376ce00c7673fb7c1da52142e31fe96dacdab02b0d0ef5cd62ec84"
+      "skill_md_sha256": "a6864cc2bfc21ddc62721a6656f6091e2847049a23ed26dfb3034ae2650ed350"
     }
   ],
   "modules": [
@@ -618,6 +618,11 @@
       "sha256": "4bfd1eaf8561936538ee719a89323c4b4def4c60f9fbe4cc48136d3d5f5d7c81"
     },
     {
+      "path": "skills/agent-ffmpeg-local-editor/references/stable-release.md",
+      "bytes": 7286,
+      "sha256": "8355d4d73dd67d05e56cb5c7c4dd595569cf10cea750ed773d2c4907adba1e8e"
+    },
+    {
       "path": "skills/agent-ffmpeg-local-editor/references/subtitle-dubbing.md",
       "bytes": 5154,
       "sha256": "3eaf0c890b551cf0c7f9052a4988cd9fc82416629ed28b78eb78e2df3a341f81"
@@ -639,13 +644,13 @@
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/scripts/run.py",
-      "bytes": 2296,
-      "sha256": "d1e93b72e3891adbd6347a9132bbecb69df1165fae32a10c262e95859af42de8"
+      "bytes": 2279,
+      "sha256": "00c2068e1ac78008e103af07cb264bcbf61c27e96cd2585aef2b6d6f303ef90f"
     },
     {
       "path": "skills/agent-ffmpeg-local-editor/SKILL.md",
-      "bytes": 18579,
-      "sha256": "25db1826c5376ce00c7673fb7c1da52142e31fe96dacdab02b0d0ef5cd62ec84"
+      "bytes": 18911,
+      "sha256": "a6864cc2bfc21ddc62721a6656f6091e2847049a23ed26dfb3034ae2650ed350"
     }
   ],
   "retired_skills": [
@@ -717,5 +722,7 @@
   "cli_version": "0.1.66",
   "material_count": 359,
   "named_voice_count": 103,
-  "optional_model_pack_count": 4
+  "optional_model_pack_count": 4,
+  "distribution_version": "v1.0.0",
+  "skill_revision": "r60"
 }

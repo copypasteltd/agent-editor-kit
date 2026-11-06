@@ -1,0 +1,10 @@
+{
+  "status": "failed-preserved",
+  "phase": "Skill configuration before rendering",
+  "reason": "documentation-link rewriting changed an inventory-pinned Skill reference",
+  "product_install_passed": true,
+  "bad_manifest_rejected": true,
+  "formal_activation": false,
+  "public_release": false,
+  "fix": "preserve all skills/ payload bytes; externalize only shipped documentation"
+}

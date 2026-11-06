@@ -8,8 +8,8 @@ from pathlib import Path
 import subprocess
 import sys
 
-MANIFEST = 'sha256:1da7f0a678ea678f49af6d9b847dfd8912b11ede04aad22f8d87ee247ee1117a'
-RELEASE = 'v0.1.0-alpha.4-local.64'
+MANIFEST = 'sha256:8946cc2eedfab5b4f7c8f536b5277e3c6a636a0e700754a3cf25c76bfba9d0cd'
+RELEASE = 'v1.0.0'
 
 
 def launch():

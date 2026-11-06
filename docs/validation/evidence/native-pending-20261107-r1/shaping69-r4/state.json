@@ -1,0 +1,139 @@
+{
+  "status": "passed",
+  "created_at_utc": "2026-11-06T17:01:54.743191+00:00",
+  "heartbeat_at_utc": "2026-11-06T17:03:38.986866+00:00",
+  "profile": "shaping69",
+  "run": "r4",
+  "supervisor_identity": {
+    "pid": 12892,
+    "creation_filetime": 134384581143557296,
+    "executable": "C:\\Python313\\python.exe"
+  },
+  "native_windows": true,
+  "virtualization": false,
+  "terminal_session_required": false,
+  "formal_activation": false,
+  "full_goal_closed": false,
+  "input_pins": {
+    "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\run_native_pending_batches.py": "525b2896c0995ed02aa148758f9b6d26f5d7b919287d0a40c4c401ff0cc6c964",
+    "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\run_delivery66_native.py": "453a3e9744aba4d0a2584e7ee9437042ea10086a04627d06104c806dbd700801"
+  },
+  "plan": [
+    {
+      "name": "build",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\build_shaping69.py",
+        "--run",
+        "r4",
+        "--freeze-run",
+        "r3",
+        "--source-run",
+        "r3"
+      ],
+      "deadline": 2400,
+      "terminal": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\shaping69-20261107-r1\\build-r4\\verification.json",
+      "expected_status": "built-not-yet-functionally-validated"
+    },
+    {
+      "name": "tests",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\validate_shaping69.py",
+        "tests",
+        "--run",
+        "r2",
+        "--freeze-run",
+        "r3",
+        "--build-run",
+        "r4"
+      ],
+      "deadline": 14400,
+      "terminal": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\shaping69-20261107-r1\\tests-r2\\verification.json"
+    },
+    {
+      "name": "case",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\shaping69_case.py",
+        "--run",
+        "r2",
+        "--freeze-run",
+        "r3",
+        "--build-run",
+        "r4",
+        "--tests-run",
+        "r2",
+        "--ffmpeg",
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+        "--ffprobe",
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.exe"
+      ],
+      "deadline": 3600,
+      "terminal": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\shaping69-20261107-r1\\case-r2\\verification.json"
+    }
+  ],
+  "steps": [
+    {
+      "name": "build",
+      "identity": {
+        "pid": 39304,
+        "creation_filetime": 134384581187107812,
+        "executable": "C:\\Python313\\python.exe"
+      },
+      "started_at_utc": "2026-11-06T17:01:59.992531+00:00",
+      "status": "passed",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-06T17:03:01.604848+00:00",
+      "elapsed_seconds": 54.75499729999865,
+      "terminal_present": true,
+      "terminal_sha256": "47aa5e8afaaadd34faf9fee0357c08ce11bab807d46c0ad344869dee18234651"
+    },
+    {
+      "name": "tests",
+      "identity": {
+        "pid": 15528,
+        "creation_filetime": 134384581822310612,
+        "executable": "C:\\Python313\\python.exe"
+      },
+      "started_at_utc": "2026-11-06T17:03:02.897577+00:00",
+      "status": "passed",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-06T17:03:21.286547+00:00",
+      "elapsed_seconds": 18.058137500003795,
+      "terminal_present": true,
+      "terminal_sha256": "46fa1e147f5c51ee7acc83a75513f68e87a863d3f2e87d9a10ca4c0b6d979b43"
+    },
+    {
+      "name": "case",
+      "identity": {
+        "pid": 40948,
+        "creation_filetime": 134384582013783521,
+        "executable": "C:\\Python313\\python.exe"
+      },
+      "started_at_utc": "2026-11-06T17:03:21.476304+00:00",
+      "status": "passed",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-06T17:03:38.682302+00:00",
+      "elapsed_seconds": 17.156990900009987,
+      "terminal_present": true,
+      "terminal_sha256": "3931b08e7d4700cdae37e56d50cdccd05e431a547f61aa11af7af91d3e38de57"
+    }
+  ],
+  "finished_at_utc": "2026-11-06T17:03:38.986853+00:00"
+}

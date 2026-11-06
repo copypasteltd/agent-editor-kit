@@ -1,0 +1,24 @@
+{
+  "status": "built-not-yet-functionally-validated",
+  "started_at_utc": "2026-11-06T16:55:09.752969+00:00",
+  "observed_at_utc": "2026-11-06T16:57:05.511408+00:00",
+  "exit_code": 0,
+  "freeze_sha256": "6b00b8894dcdee9974a202750af228e1502e28238e62c23d2604ecf3dfe6942b",
+  "runtime": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\shaping69-native-20261107-r3\\runtime",
+  "archive": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\shaping69-native-20261107-r3\\aek-shaping69-windows-x64.zip",
+  "archive_sha256": "0a2c2f25ffd8fba384ade9ad58d292cccdf03c6de41a8af956510709956bbb63",
+  "payload_files": 42,
+  "native_binary_sha256": "cee35f3de432613c72d3270027fa74ad514e3d54c34ab7ac2c2c2efe99784228",
+  "compiler": {
+    "path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\Hostx64\\x64\\cl.exe",
+    "sha256": "16dc9ef37913c6e6cb07495dc7d304a09f859849cf157a39d284baaeb64b1a1e",
+    "static_crt": true
+  },
+  "compiled_units": 27,
+  "no_packages_installed": true,
+  "no_virtualization": true,
+  "temporary_directory": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\shaping69-native-20261107-r3\\build\\tmp",
+  "native_library_loaded": false,
+  "formal_skill_modified": false,
+  "full_goal_closed": false
+}

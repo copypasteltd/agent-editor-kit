@@ -1,0 +1,126 @@
+{
+  "status": "stopped",
+  "created_at_utc": "2026-11-06T16:54:43.828101+00:00",
+  "heartbeat_at_utc": "2026-11-06T16:57:35.261845+00:00",
+  "profile": "shaping69",
+  "run": "r3",
+  "supervisor_identity": {
+    "pid": 35220,
+    "creation_filetime": 134384576810413299,
+    "executable": "C:\\Python313\\python.exe"
+  },
+  "native_windows": true,
+  "virtualization": false,
+  "terminal_session_required": false,
+  "formal_activation": false,
+  "full_goal_closed": false,
+  "input_pins": {
+    "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\run_native_pending_batches.py": "525b2896c0995ed02aa148758f9b6d26f5d7b919287d0a40c4c401ff0cc6c964",
+    "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\run_delivery66_native.py": "453a3e9744aba4d0a2584e7ee9437042ea10086a04627d06104c806dbd700801"
+  },
+  "plan": [
+    {
+      "name": "build",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\build_shaping69.py",
+        "--run",
+        "r3",
+        "--freeze-run",
+        "r2",
+        "--source-run",
+        "r3"
+      ],
+      "deadline": 2400,
+      "terminal": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\shaping69-20261107-r1\\build-r3\\verification.json",
+      "expected_status": "built-not-yet-functionally-validated"
+    },
+    {
+      "name": "tests",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\validate_shaping69.py",
+        "tests",
+        "--run",
+        "r1",
+        "--freeze-run",
+        "r2",
+        "--build-run",
+        "r3"
+      ],
+      "deadline": 14400,
+      "terminal": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\shaping69-20261107-r1\\tests-r1\\verification.json"
+    },
+    {
+      "name": "case",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\shaping69_case.py",
+        "--run",
+        "r1",
+        "--freeze-run",
+        "r2",
+        "--build-run",
+        "r3",
+        "--tests-run",
+        "r1",
+        "--ffmpeg",
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.exe",
+        "--ffprobe",
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.exe"
+      ],
+      "deadline": 3600,
+      "terminal": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\shaping69-20261107-r1\\case-r1\\verification.json"
+    }
+  ],
+  "steps": [
+    {
+      "name": "build",
+      "identity": {
+        "pid": 14232,
+        "creation_filetime": 134384576843404880,
+        "executable": "C:\\Python313\\python.exe"
+      },
+      "started_at_utc": "2026-11-06T16:54:45.767495+00:00",
+      "status": "passed",
+      "exit_code": 0,
+      "finished_at_utc": "2026-11-06T16:57:08.004422+00:00",
+      "elapsed_seconds": 137.56158999999752,
+      "terminal_present": true,
+      "terminal_sha256": "e64e6d38bfad6907a3bfb56bdf0ddad4c8e614f26c81fc3124e82e42fe665767"
+    },
+    {
+      "name": "tests",
+      "identity": {
+        "pid": 27964,
+        "creation_filetime": 134384578286829499,
+        "executable": "C:\\Python313\\python.exe"
+      },
+      "started_at_utc": "2026-11-06T16:57:08.865210+00:00",
+      "status": "failed",
+      "exit_code": 1,
+      "finished_at_utc": "2026-11-06T16:57:34.963500+00:00",
+      "elapsed_seconds": 26.09414220000326,
+      "terminal_present": true,
+      "terminal_sha256": "4cd520fdabb76839ef5cea1a6c2c9adaaee261b8cbea5218a0f1d23ab61c4fac"
+    }
+  ],
+  "error": "RuntimeError('Gate failed or lacks a passed terminal; no retry: tests')",
+  "finished_at_utc": "2026-11-06T16:57:35.261832+00:00",
+  "still_live_children": []
+}

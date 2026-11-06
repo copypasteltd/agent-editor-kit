@@ -1,0 +1,172 @@
+{
+  "observed_at_utc": "2026-11-06T17:17:33.502503+00:00",
+  "batches": [
+    {
+      "profile": "portrait67",
+      "run": "r2",
+      "state_sha256": "542e3b05b79c28aa31509d05b84e75ef88083d0c2130da90b34bc25115f2ace5",
+      "recorded_status": "running",
+      "expected_supervisor": {
+        "pid": 25144,
+        "creation_filetime": 134384576809631384,
+        "executable": "C:\\Python313\\python.exe"
+      },
+      "actual_supervisor": {
+        "pid": 25144,
+        "creation_filetime": 134384576809631384,
+        "executable": "C:\\Python313\\python.exe"
+      },
+      "same_live_supervisor": true,
+      "heartbeat_at_utc": "2026-11-06T17:17:31.425293+00:00",
+      "steps": [
+        {
+          "name": "source",
+          "expected": {
+            "pid": 17988,
+            "creation_filetime": 134384577004598897,
+            "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+          },
+          "actual": {
+            "pid": 17988,
+            "creation_filetime": 134384577004598897,
+            "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+          },
+          "same_live_process": true,
+          "recorded_status": "running",
+          "exit_code": null
+        },
+        {
+          "name": "prerequisite",
+          "expected": {
+            "pid": 34432,
+            "creation_filetime": 134384577074782324,
+            "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+          },
+          "actual": {
+            "pid": 34432,
+            "creation_filetime": 134384577074782324,
+            "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+          },
+          "same_live_process": true,
+          "recorded_status": "running",
+          "exit_code": null
+        },
+        {
+          "name": "delivery",
+          "expected": {
+            "pid": 29672,
+            "creation_filetime": 134384577100660654,
+            "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+          },
+          "actual": {
+            "pid": 29672,
+            "creation_filetime": 134384577100660654,
+            "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+          },
+          "same_live_process": true,
+          "recorded_status": "running",
+          "exit_code": null
+        }
+      ]
+    },
+    {
+      "profile": "shaping69",
+      "run": "r3",
+      "state_sha256": "478bd4e8fb75e00a42c1cfe63d02e16380f3163ae982cef459170fb3e05bbd0d",
+      "recorded_status": "stopped",
+      "expected_supervisor": {
+        "pid": 35220,
+        "creation_filetime": 134384576810413299,
+        "executable": "C:\\Python313\\python.exe"
+      },
+      "actual_supervisor": null,
+      "same_live_supervisor": false,
+      "heartbeat_at_utc": "2026-11-06T16:57:35.261845+00:00",
+      "steps": [
+        {
+          "name": "build",
+          "expected": {
+            "pid": 14232,
+            "creation_filetime": 134384576843404880,
+            "executable": "C:\\Python313\\python.exe"
+          },
+          "actual": null,
+          "same_live_process": false,
+          "recorded_status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "tests",
+          "expected": {
+            "pid": 27964,
+            "creation_filetime": 134384578286829499,
+            "executable": "C:\\Python313\\python.exe"
+          },
+          "actual": null,
+          "same_live_process": false,
+          "recorded_status": "failed",
+          "exit_code": 1
+        }
+      ]
+    },
+    {
+      "profile": "shaping69",
+      "run": "r4",
+      "state_sha256": "86f2041c2b480e78d7591c4c8a80d5972b3fb410aea61e432eff9dda75db7396",
+      "recorded_status": "passed",
+      "expected_supervisor": {
+        "pid": 12892,
+        "creation_filetime": 134384581143557296,
+        "executable": "C:\\Python313\\python.exe"
+      },
+      "actual_supervisor": null,
+      "same_live_supervisor": false,
+      "heartbeat_at_utc": "2026-11-06T17:03:38.986866+00:00",
+      "steps": [
+        {
+          "name": "build",
+          "expected": {
+            "pid": 39304,
+            "creation_filetime": 134384581187107812,
+            "executable": "C:\\Python313\\python.exe"
+          },
+          "actual": null,
+          "same_live_process": false,
+          "recorded_status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "tests",
+          "expected": {
+            "pid": 15528,
+            "creation_filetime": 134384581822310612,
+            "executable": "C:\\Python313\\python.exe"
+          },
+          "actual": null,
+          "same_live_process": false,
+          "recorded_status": "passed",
+          "exit_code": 0
+        },
+        {
+          "name": "case",
+          "expected": {
+            "pid": 40948,
+            "creation_filetime": 134384582013783521,
+            "executable": "C:\\Python313\\python.exe"
+          },
+          "actual": null,
+          "same_live_process": false,
+          "recorded_status": "passed",
+          "exit_code": 0
+        }
+      ]
+    }
+  ],
+  "portrait_source_terminal_present": false,
+  "portrait_source_log_last_lines": [
+    "test_empty_graph_and_muted_master_have_exact_silence (test_audio_routing.NamedAudioRoutingTests.test_empty_graph_and_muted_master_have_exact_silence) ... ok",
+    "test_explicit_default_routes_preserve_float_sum_and_author_project (test_audio_routing.NamedAudioRoutingTests.test_explicit_default_routes_preserve_float_sum_and_author_project) ... ok",
+    "test_external_exports_explicitly_report_unmapped_audio_routing (test_audio_routing.NamedAudioRoutingTests.test_external_exports_explicitly_report_unmapped_audio_routing) ... "
+  ],
+  "original_missing_processes_restarted_only_after_identity_verified_missing": true
+}

@@ -1,0 +1,2472 @@
+{
+  "status": "passed",
+  "observed_at_utc": "2026-11-06T17:03:35.441242+00:00",
+  "freeze_sha256": "35525a804f7a686525c24136e0031d26e9a6c9042f58ab047480ef2985c9a8ef",
+  "native_versions": {
+    "sheenbidi": "3.0.0",
+    "harfbuzz": "15.1.0",
+    "freetype": "2.15.0"
+  },
+  "source_text": "Agent editor kit\n中文排版 / العربية 123\nעברית שלום 42 (AEK)\nनमस्ते — ffi — Á",
+  "source_text_author": "Agent editor kit contributors; authored for this case",
+  "source_text_license": "MIT",
+  "font_licenses": {
+    "latin": "OFL-1.1",
+    "arabic": "OFL-1.1",
+    "hebrew": "OFL-1.1",
+    "devanagari": "OFL-1.1",
+    "cjk": "OFL-1.1"
+  },
+  "target": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\shaping69-case-20261107-r2",
+  "width": 497,
+  "height": 492,
+  "encoded_frames": 36,
+  "master_fps": "8/1",
+  "master_duration_seconds": "4.5",
+  "full_36_frame_RGBA_exact": true,
+  "all_frame_hashes": [
+    "beb0c5eacb289da02977ca42faeb47baed31a42e66b99003e1a516c49161abe4",
+    "6b4a29d942f798e005f890da95ad671dbb1fe16a1362444506cc0609f4c31c82",
+    "57391fd23045e95e1c118e784a648f969868bb9f263d2ac9d31131f844107758",
+    "9d3f282feb7d530ea8d6c7d4f13f386678bb6931c4e59122d6738ca09dfeb5af",
+    "2f938107678b5659b2b4fcc8e79f01ba3aa3e5d9327a7c01d66d519673a6b2dc",
+    "a770f2303387aa33d091d2ff6074c00cadaacc8d1c04f6b9e2eb440e13b947bb",
+    "d0393b91dd4f6a0f5580cf9f152817aab12dae10fa1719ed6eb956503b231d1b",
+    "0dc2ed5db11ad50f4b203ba69144c3f62ba97eb69716bac771ac2f7c9924c3a5",
+    "daecba6a9c00e098367950d919a239f9bae2a0c0706e691f70bdbba73f11a5c1",
+    "e79697dc80b54470c7f8a6aa79986947fe8d5950c8d1f26b6fe99d4b383e9f19",
+    "8b0a8773b9d5dd7f49edb94c1bf8343ec0ff7851cd822efc536e1783286dff29",
+    "beb0c5eacb289da02977ca42faeb47baed31a42e66b99003e1a516c49161abe4",
+    "6b4a29d942f798e005f890da95ad671dbb1fe16a1362444506cc0609f4c31c82",
+    "57391fd23045e95e1c118e784a648f969868bb9f263d2ac9d31131f844107758",
+    "9d3f282feb7d530ea8d6c7d4f13f386678bb6931c4e59122d6738ca09dfeb5af",
+    "2f938107678b5659b2b4fcc8e79f01ba3aa3e5d9327a7c01d66d519673a6b2dc",
+    "a770f2303387aa33d091d2ff6074c00cadaacc8d1c04f6b9e2eb440e13b947bb",
+    "d0393b91dd4f6a0f5580cf9f152817aab12dae10fa1719ed6eb956503b231d1b",
+    "636f0c3b830e2f4755797c7b6fd30c2485f669f1deb89041080309ff68d3943d",
+    "ffe0e2a7fb8c6280559b4b97f7ed1c0a6bb38b5cbe9f5dee59b64f41fecc5168",
+    "56f84179240a630721e7abdd6fe87c66bbfb4796e3a602be1678057d2575980a",
+    "3a706b2b5996c60db54a811c30c3a022546354d6a21fb143e68a46f84e493467",
+    "cdf065e1aa86dfab9fcfaabd3b6e59e16bff7c5010a9df15c739dccd6671ee8e",
+    "aa5462c39fc0af02ee650e8dfd048ec1f9cba725934ec164d1b326355a31ca2c",
+    "07a22763dd9b8a4c59d5ab1ba52630553a0a88d02fb04392611a87ab96cd77bd",
+    "16075a9bd33a0b9a312c61d76210f469a680d13b3ba0c922a335beb745729115",
+    "81633da45cd49f539f901bb0501517eda50385396c353d0fede92c80abf303f4",
+    "89710529c7e3f89d969b3e17cb12028e58ec3141d1ad96a0fc4ba1bce4b5ce84",
+    "3095ed0b1b5b062d64852e65d6f386d8c94c8288cf1b842f5fa91ff4f016dfc1",
+    "19d7065af1def9a96f61aa0f1524d06dbb2a3370f4ee3d50089c58243ca4d04d",
+    "8eacbcaf908ebe33f5fe893e2e7fa961f9ca196d3c3d5881f03adcb1f26fa93f",
+    "9eeec6ff5ad753182823e8bd49a1b0f4b7cb25356976726cc250f758ad5a5b4a",
+    "d1f05e478523246d8e2e2fec590fe3bded9aeff837790ff18fd7ce4248e5b8db",
+    "212eb4ce8028f1cdb654e3032a59e52c1f94273be363b89d16ef2071d58a9a33",
+    "2b0aa4782d7c53bcf86d5c933c6520542ff455e85036dab2d6ac254009732e76",
+    "c1755c1abdd42e9e020df124c3c43580fd7ddf56f58cafbef033338df5657864"
+  ],
+  "actual_selection_frames": [
+    {
+      "frame": 0,
+      "requested": [
+        [
+          0,
+          5
+        ]
+      ],
+      "selected_pixels": 1590,
+      "alpha_equal": true,
+      "outside_selection_RGBA_equal": true,
+      "clusters": [
+        {
+          "line": 0,
+          "source_start": 0,
+          "source_end": 1,
+          "requested": [
+            [
+              0,
+              1
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 0,
+          "advance_right": 1929,
+          "glyph_indexes": [
+            0
+          ]
+        },
+        {
+          "line": 0,
+          "source_start": 1,
+          "source_end": 2,
+          "requested": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 1929,
+          "advance_right": 3444,
+          "glyph_indexes": [
+            1
+          ]
+        },
+        {
+          "line": 0,
+          "source_start": 2,
+          "source_end": 3,
+          "requested": [
+            [
+              2,
+              3
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 3444,
+          "advance_right": 4951,
+          "glyph_indexes": [
+            2
+          ]
+        },
+        {
+          "line": 0,
+          "source_start": 3,
+          "source_end": 4,
+          "requested": [
+            [
+              3,
+              4
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 4951,
+          "advance_right": 6767,
+          "glyph_indexes": [
+            3
+          ]
+        },
+        {
+          "line": 0,
+          "source_start": 4,
+          "source_end": 5,
+          "requested": [
+            [
+              4,
+              5
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 6767,
+          "advance_right": 7758,
+          "glyph_indexes": [
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 1,
+      "requested": [
+        [
+          17,
+          21
+        ]
+      ],
+      "selected_pixels": 1622,
+      "alpha_equal": true,
+      "outside_selection_RGBA_equal": true,
+      "clusters": [
+        {
+          "line": 1,
+          "source_start": 17,
+          "source_end": 18,
+          "requested": [
+            [
+              17,
+              18
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 0,
+          "advance_right": 2816,
+          "glyph_indexes": [
+            0
+          ]
+        },
+        {
+          "line": 1,
+          "source_start": 18,
+          "source_end": 19,
+          "requested": [
+            [
+              18,
+              19
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 2816,
+          "advance_right": 5632,
+          "glyph_indexes": [
+            1
+          ]
+        },
+        {
+          "line": 1,
+          "source_start": 19,
+          "source_end": 20,
+          "requested": [
+            [
+              19,
+              20
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 5632,
+          "advance_right": 8448,
+          "glyph_indexes": [
+            2
+          ]
+        },
+        {
+          "line": 1,
+          "source_start": 20,
+          "source_end": 21,
+          "requested": [
+            [
+              20,
+              21
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 8448,
+          "advance_right": 11264,
+          "glyph_indexes": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "requested": [
+        [
+          24,
+          31
+        ]
+      ],
+      "selected_pixels": 1301,
+      "alpha_equal": true,
+      "outside_selection_RGBA_equal": true,
+      "clusters": [
+        {
+          "line": 1,
+          "source_start": 30,
+          "source_end": 31,
+          "requested": [
+            [
+              30,
+              31
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 18993,
+          "advance_right": 20362,
+          "glyph_indexes": [
+            11,
+            12
+          ]
+        },
+        {
+          "line": 1,
+          "source_start": 29,
+          "source_end": 30,
+          "requested": [
+            [
+              29,
+              30
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 20362,
+          "advance_right": 21412,
+          "glyph_indexes": [
+            13,
+            14
+          ]
+        },
+        {
+          "line": 1,
+          "source_start": 28,
+          "source_end": 29,
+          "requested": [
+            [
+              28,
+              29
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 21412,
+          "advance_right": 22170,
+          "glyph_indexes": [
+            15,
+            16
+          ]
+        },
+        {
+          "line": 1,
+          "source_start": 27,
+          "source_end": 28,
+          "requested": [
+            [
+              27,
+              28
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 22170,
+          "advance_right": 23201,
+          "glyph_indexes": [
+            17
+          ]
+        },
+        {
+          "line": 1,
+          "source_start": 26,
+          "source_end": 27,
+          "requested": [
+            [
+              26,
+              27
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 23201,
+          "advance_right": 24668,
+          "glyph_indexes": [
+            18
+          ]
+        },
+        {
+          "line": 1,
+          "source_start": 25,
+          "source_end": 26,
+          "requested": [
+            [
+              25,
+              26
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 24668,
+          "advance_right": 25400,
+          "glyph_indexes": [
+            19
+          ]
+        },
+        {
+          "line": 1,
+          "source_start": 24,
+          "source_end": 25,
+          "requested": [
+            [
+              24,
+              25
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 25400,
+          "advance_right": 26070,
+          "glyph_indexes": [
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "requested": [
+        [
+          32,
+          35
+        ]
+      ],
+      "selected_pixels": 840,
+      "alpha_equal": true,
+      "outside_selection_RGBA_equal": true,
+      "clusters": [
+        {
+          "line": 1,
+          "source_start": 32,
+          "source_end": 33,
+          "requested": [
+            [
+              32,
+              33
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 13539,
+          "advance_right": 15113,
+          "glyph_indexes": [
+            7
+          ]
+        },
+        {
+          "line": 1,
+          "source_start": 33,
+          "source_end": 34,
+          "requested": [
+            [
+              33,
+              34
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 15113,
+          "advance_right": 16687,
+          "glyph_indexes": [
+            8
+          ]
+        },
+        {
+          "line": 1,
+          "source_start": 34,
+          "source_end": 35,
+          "requested": [
+            [
+              34,
+              35
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 16687,
+          "advance_right": 18261,
+          "glyph_indexes": [
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "requested": [
+        [
+          36,
+          41
+        ]
+      ],
+      "selected_pixels": 1200,
+      "alpha_equal": true,
+      "outside_selection_RGBA_equal": true,
+      "clusters": [
+        {
+          "line": 2,
+          "source_start": 40,
+          "source_end": 41,
+          "requested": [
+            [
+              40,
+              41
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 19274,
+          "advance_right": 21203,
+          "glyph_indexes": [
+            14
+          ]
+        },
+        {
+          "line": 2,
+          "source_start": 39,
+          "source_end": 40,
+          "requested": [
+            [
+              39,
+              40
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 21203,
+          "advance_right": 21978,
+          "glyph_indexes": [
+            15
+          ]
+        },
+        {
+          "line": 2,
+          "source_start": 38,
+          "source_end": 39,
+          "requested": [
+            [
+              38,
+              39
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 21978,
+          "advance_right": 23451,
+          "glyph_indexes": [
+            16
+          ]
+        },
+        {
+          "line": 2,
+          "source_start": 37,
+          "source_end": 38,
+          "requested": [
+            [
+              37,
+              38
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 23451,
+          "advance_right": 24992,
+          "glyph_indexes": [
+            17
+          ]
+        },
+        {
+          "line": 2,
+          "source_start": 36,
+          "source_end": 37,
+          "requested": [
+            [
+              36,
+              37
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 24992,
+          "advance_right": 26662,
+          "glyph_indexes": [
+            18
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "requested": [
+        [
+          42,
+          46
+        ]
+      ],
+      "selected_pixels": 1212,
+      "alpha_equal": true,
+      "outside_selection_RGBA_equal": true,
+      "clusters": [
+        {
+          "line": 2,
+          "source_start": 45,
+          "source_end": 46,
+          "requested": [
+            [
+              45,
+              46
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 12270,
+          "advance_right": 14196,
+          "glyph_indexes": [
+            9
+          ]
+        },
+        {
+          "line": 2,
+          "source_start": 44,
+          "source_end": 45,
+          "requested": [
+            [
+              44,
+              45
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 14196,
+          "advance_right": 15016,
+          "glyph_indexes": [
+            10
+          ]
+        },
+        {
+          "line": 2,
+          "source_start": 43,
+          "source_end": 44,
+          "requested": [
+            [
+              43,
+              44
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 15016,
+          "advance_right": 16486,
+          "glyph_indexes": [
+            11
+          ]
+        },
+        {
+          "line": 2,
+          "source_start": 42,
+          "source_end": 43,
+          "requested": [
+            [
+              42,
+              43
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 16486,
+          "advance_right": 18542,
+          "glyph_indexes": [
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "requested": [
+        [
+          47,
+          49
+        ]
+      ],
+      "selected_pixels": 632,
+      "alpha_equal": true,
+      "outside_selection_RGBA_equal": true,
+      "clusters": [
+        {
+          "line": 2,
+          "source_start": 47,
+          "source_end": 48,
+          "requested": [
+            [
+              47,
+              48
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 8390,
+          "advance_right": 9964,
+          "glyph_indexes": [
+            6
+          ]
+        },
+        {
+          "line": 2,
+          "source_start": 48,
+          "source_end": 49,
+          "requested": [
+            [
+              48,
+              49
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 9964,
+          "advance_right": 11538,
+          "glyph_indexes": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "requested": [
+        [
+          51,
+          54
+        ]
+      ],
+      "selected_pixels": 1160,
+      "alpha_equal": true,
+      "outside_selection_RGBA_equal": true,
+      "clusters": [
+        {
+          "line": 2,
+          "source_start": 51,
+          "source_end": 52,
+          "requested": [
+            [
+              51,
+              52
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 974,
+          "advance_right": 2959,
+          "glyph_indexes": [
+            1
+          ]
+        },
+        {
+          "line": 2,
+          "source_start": 52,
+          "source_end": 53,
+          "requested": [
+            [
+              52,
+              53
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 2959,
+          "advance_right": 4713,
+          "glyph_indexes": [
+            2
+          ]
+        },
+        {
+          "line": 2,
+          "source_start": 53,
+          "source_end": 54,
+          "requested": [
+            [
+              53,
+              54
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 4713,
+          "advance_right": 6684,
+          "glyph_indexes": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 8,
+      "requested": [
+        [
+          56,
+          62
+        ]
+      ],
+      "selected_pixels": 1328,
+      "alpha_equal": true,
+      "outside_selection_RGBA_equal": true,
+      "clusters": [
+        {
+          "line": 3,
+          "source_start": 56,
+          "source_end": 57,
+          "requested": [
+            [
+              56,
+              57
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 0,
+          "advance_right": 1563,
+          "glyph_indexes": [
+            0
+          ]
+        },
+        {
+          "line": 3,
+          "source_start": 57,
+          "source_end": 58,
+          "requested": [
+            [
+              57,
+              58
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 1563,
+          "advance_right": 3247,
+          "glyph_indexes": [
+            1
+          ]
+        },
+        {
+          "line": 3,
+          "source_start": 58,
+          "source_end": 60,
+          "requested": [
+            [
+              58,
+              60
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 3247,
+          "advance_right": 4342,
+          "glyph_indexes": [
+            2
+          ]
+        },
+        {
+          "line": 3,
+          "source_start": 60,
+          "source_end": 62,
+          "requested": [
+            [
+              60,
+              62
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 4342,
+          "advance_right": 5947,
+          "glyph_indexes": [
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 9,
+      "requested": [
+        [
+          65,
+          68
+        ]
+      ],
+      "selected_pixels": 685,
+      "alpha_equal": true,
+      "outside_selection_RGBA_equal": true,
+      "clusters": [
+        {
+          "line": 3,
+          "source_start": 65,
+          "source_end": 68,
+          "requested": [
+            [
+              65,
+              68
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 10227,
+          "advance_right": 13049,
+          "glyph_indexes": [
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "requested": [
+        [
+          71,
+          73
+        ]
+      ],
+      "selected_pixels": 398,
+      "alpha_equal": true,
+      "outside_selection_RGBA_equal": true,
+      "clusters": [
+        {
+          "line": 3,
+          "source_start": 71,
+          "source_end": 73,
+          "requested": [
+            [
+              71,
+              73
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 17329,
+          "advance_right": 19314,
+          "glyph_indexes": [
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 11,
+      "requested": [
+        [
+          0,
+          5
+        ]
+      ],
+      "selected_pixels": 1590,
+      "alpha_equal": true,
+      "outside_selection_RGBA_equal": true,
+      "clusters": [
+        {
+          "line": 0,
+          "source_start": 0,
+          "source_end": 1,
+          "requested": [
+            [
+              0,
+              1
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 0,
+          "advance_right": 1929,
+          "glyph_indexes": [
+            0
+          ]
+        },
+        {
+          "line": 0,
+          "source_start": 1,
+          "source_end": 2,
+          "requested": [
+            [
+              1,
+              2
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 1929,
+          "advance_right": 3444,
+          "glyph_indexes": [
+            1
+          ]
+        },
+        {
+          "line": 0,
+          "source_start": 2,
+          "source_end": 3,
+          "requested": [
+            [
+              2,
+              3
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 3444,
+          "advance_right": 4951,
+          "glyph_indexes": [
+            2
+          ]
+        },
+        {
+          "line": 0,
+          "source_start": 3,
+          "source_end": 4,
+          "requested": [
+            [
+              3,
+              4
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 4951,
+          "advance_right": 6767,
+          "glyph_indexes": [
+            3
+          ]
+        },
+        {
+          "line": 0,
+          "source_start": 4,
+          "source_end": 5,
+          "requested": [
+            [
+              4,
+              5
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 6767,
+          "advance_right": 7758,
+          "glyph_indexes": [
+            4
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 12,
+      "requested": [
+        [
+          17,
+          21
+        ]
+      ],
+      "selected_pixels": 1622,
+      "alpha_equal": true,
+      "outside_selection_RGBA_equal": true,
+      "clusters": [
+        {
+          "line": 1,
+          "source_start": 17,
+          "source_end": 18,
+          "requested": [
+            [
+              17,
+              18
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 0,
+          "advance_right": 2816,
+          "glyph_indexes": [
+            0
+          ]
+        },
+        {
+          "line": 1,
+          "source_start": 18,
+          "source_end": 19,
+          "requested": [
+            [
+              18,
+              19
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 2816,
+          "advance_right": 5632,
+          "glyph_indexes": [
+            1
+          ]
+        },
+        {
+          "line": 1,
+          "source_start": 19,
+          "source_end": 20,
+          "requested": [
+            [
+              19,
+              20
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 5632,
+          "advance_right": 8448,
+          "glyph_indexes": [
+            2
+          ]
+        },
+        {
+          "line": 1,
+          "source_start": 20,
+          "source_end": 21,
+          "requested": [
+            [
+              20,
+              21
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 8448,
+          "advance_right": 11264,
+          "glyph_indexes": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 13,
+      "requested": [
+        [
+          24,
+          31
+        ]
+      ],
+      "selected_pixels": 1301,
+      "alpha_equal": true,
+      "outside_selection_RGBA_equal": true,
+      "clusters": [
+        {
+          "line": 1,
+          "source_start": 30,
+          "source_end": 31,
+          "requested": [
+            [
+              30,
+              31
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 18993,
+          "advance_right": 20362,
+          "glyph_indexes": [
+            11,
+            12
+          ]
+        },
+        {
+          "line": 1,
+          "source_start": 29,
+          "source_end": 30,
+          "requested": [
+            [
+              29,
+              30
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 20362,
+          "advance_right": 21412,
+          "glyph_indexes": [
+            13,
+            14
+          ]
+        },
+        {
+          "line": 1,
+          "source_start": 28,
+          "source_end": 29,
+          "requested": [
+            [
+              28,
+              29
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 21412,
+          "advance_right": 22170,
+          "glyph_indexes": [
+            15,
+            16
+          ]
+        },
+        {
+          "line": 1,
+          "source_start": 27,
+          "source_end": 28,
+          "requested": [
+            [
+              27,
+              28
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 22170,
+          "advance_right": 23201,
+          "glyph_indexes": [
+            17
+          ]
+        },
+        {
+          "line": 1,
+          "source_start": 26,
+          "source_end": 27,
+          "requested": [
+            [
+              26,
+              27
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 23201,
+          "advance_right": 24668,
+          "glyph_indexes": [
+            18
+          ]
+        },
+        {
+          "line": 1,
+          "source_start": 25,
+          "source_end": 26,
+          "requested": [
+            [
+              25,
+              26
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 24668,
+          "advance_right": 25400,
+          "glyph_indexes": [
+            19
+          ]
+        },
+        {
+          "line": 1,
+          "source_start": 24,
+          "source_end": 25,
+          "requested": [
+            [
+              24,
+              25
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 25400,
+          "advance_right": 26070,
+          "glyph_indexes": [
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 14,
+      "requested": [
+        [
+          32,
+          35
+        ]
+      ],
+      "selected_pixels": 840,
+      "alpha_equal": true,
+      "outside_selection_RGBA_equal": true,
+      "clusters": [
+        {
+          "line": 1,
+          "source_start": 32,
+          "source_end": 33,
+          "requested": [
+            [
+              32,
+              33
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 13539,
+          "advance_right": 15113,
+          "glyph_indexes": [
+            7
+          ]
+        },
+        {
+          "line": 1,
+          "source_start": 33,
+          "source_end": 34,
+          "requested": [
+            [
+              33,
+              34
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 15113,
+          "advance_right": 16687,
+          "glyph_indexes": [
+            8
+          ]
+        },
+        {
+          "line": 1,
+          "source_start": 34,
+          "source_end": 35,
+          "requested": [
+            [
+              34,
+              35
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 16687,
+          "advance_right": 18261,
+          "glyph_indexes": [
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 15,
+      "requested": [
+        [
+          36,
+          41
+        ]
+      ],
+      "selected_pixels": 1200,
+      "alpha_equal": true,
+      "outside_selection_RGBA_equal": true,
+      "clusters": [
+        {
+          "line": 2,
+          "source_start": 40,
+          "source_end": 41,
+          "requested": [
+            [
+              40,
+              41
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 19274,
+          "advance_right": 21203,
+          "glyph_indexes": [
+            14
+          ]
+        },
+        {
+          "line": 2,
+          "source_start": 39,
+          "source_end": 40,
+          "requested": [
+            [
+              39,
+              40
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 21203,
+          "advance_right": 21978,
+          "glyph_indexes": [
+            15
+          ]
+        },
+        {
+          "line": 2,
+          "source_start": 38,
+          "source_end": 39,
+          "requested": [
+            [
+              38,
+              39
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 21978,
+          "advance_right": 23451,
+          "glyph_indexes": [
+            16
+          ]
+        },
+        {
+          "line": 2,
+          "source_start": 37,
+          "source_end": 38,
+          "requested": [
+            [
+              37,
+              38
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 23451,
+          "advance_right": 24992,
+          "glyph_indexes": [
+            17
+          ]
+        },
+        {
+          "line": 2,
+          "source_start": 36,
+          "source_end": 37,
+          "requested": [
+            [
+              36,
+              37
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 24992,
+          "advance_right": 26662,
+          "glyph_indexes": [
+            18
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 16,
+      "requested": [
+        [
+          42,
+          46
+        ]
+      ],
+      "selected_pixels": 1212,
+      "alpha_equal": true,
+      "outside_selection_RGBA_equal": true,
+      "clusters": [
+        {
+          "line": 2,
+          "source_start": 45,
+          "source_end": 46,
+          "requested": [
+            [
+              45,
+              46
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 12270,
+          "advance_right": 14196,
+          "glyph_indexes": [
+            9
+          ]
+        },
+        {
+          "line": 2,
+          "source_start": 44,
+          "source_end": 45,
+          "requested": [
+            [
+              44,
+              45
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 14196,
+          "advance_right": 15016,
+          "glyph_indexes": [
+            10
+          ]
+        },
+        {
+          "line": 2,
+          "source_start": 43,
+          "source_end": 44,
+          "requested": [
+            [
+              43,
+              44
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 15016,
+          "advance_right": 16486,
+          "glyph_indexes": [
+            11
+          ]
+        },
+        {
+          "line": 2,
+          "source_start": 42,
+          "source_end": 43,
+          "requested": [
+            [
+              42,
+              43
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 16486,
+          "advance_right": 18542,
+          "glyph_indexes": [
+            12
+          ]
+        }
+      ]
+    },
+    {
+      "frame": 17,
+      "requested": [
+        [
+          47,
+          49
+        ]
+      ],
+      "selected_pixels": 632,
+      "alpha_equal": true,
+      "outside_selection_RGBA_equal": true,
+      "clusters": [
+        {
+          "line": 2,
+          "source_start": 47,
+          "source_end": 48,
+          "requested": [
+            [
+              47,
+              48
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 8390,
+          "advance_right": 9964,
+          "glyph_indexes": [
+            6
+          ]
+        },
+        {
+          "line": 2,
+          "source_start": 48,
+          "source_end": 49,
+          "requested": [
+            [
+              48,
+              49
+            ]
+          ],
+          "expanded": false,
+          "caret_source": "complete-cluster",
+          "intervals": [
+            [
+              null,
+              null
+            ]
+          ],
+          "advance_left": 9964,
+          "advance_right": 11538,
+          "glyph_indexes": [
+            7
+          ]
+        }
+      ]
+    }
+  ],
+  "actual_reveal_frames": [
+    {
+      "frame": 18,
+      "source_end": 0,
+      "no_hidden_suffix_glyphs": true,
+      "fixed_full_layout_anchors": true,
+      "paragraph_bases": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "frame": 19,
+      "source_end": 4,
+      "no_hidden_suffix_glyphs": true,
+      "fixed_full_layout_anchors": true,
+      "paragraph_bases": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "frame": 20,
+      "source_end": 8,
+      "no_hidden_suffix_glyphs": true,
+      "fixed_full_layout_anchors": true,
+      "paragraph_bases": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "frame": 21,
+      "source_end": 12,
+      "no_hidden_suffix_glyphs": true,
+      "fixed_full_layout_anchors": true,
+      "paragraph_bases": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "frame": 22,
+      "source_end": 16,
+      "no_hidden_suffix_glyphs": true,
+      "fixed_full_layout_anchors": true,
+      "paragraph_bases": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "frame": 23,
+      "source_end": 20,
+      "no_hidden_suffix_glyphs": true,
+      "fixed_full_layout_anchors": true,
+      "paragraph_bases": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "frame": 24,
+      "source_end": 24,
+      "no_hidden_suffix_glyphs": true,
+      "fixed_full_layout_anchors": true,
+      "paragraph_bases": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "frame": 25,
+      "source_end": 28,
+      "no_hidden_suffix_glyphs": true,
+      "fixed_full_layout_anchors": true,
+      "paragraph_bases": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "frame": 26,
+      "source_end": 32,
+      "no_hidden_suffix_glyphs": true,
+      "fixed_full_layout_anchors": true,
+      "paragraph_bases": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "frame": 27,
+      "source_end": 36,
+      "no_hidden_suffix_glyphs": true,
+      "fixed_full_layout_anchors": true,
+      "paragraph_bases": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "frame": 28,
+      "source_end": 40,
+      "no_hidden_suffix_glyphs": true,
+      "fixed_full_layout_anchors": true,
+      "paragraph_bases": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "frame": 29,
+      "source_end": 44,
+      "no_hidden_suffix_glyphs": true,
+      "fixed_full_layout_anchors": true,
+      "paragraph_bases": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "frame": 30,
+      "source_end": 48,
+      "no_hidden_suffix_glyphs": true,
+      "fixed_full_layout_anchors": true,
+      "paragraph_bases": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "frame": 31,
+      "source_end": 52,
+      "no_hidden_suffix_glyphs": true,
+      "fixed_full_layout_anchors": true,
+      "paragraph_bases": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "frame": 32,
+      "source_end": 56,
+      "no_hidden_suffix_glyphs": true,
+      "fixed_full_layout_anchors": true,
+      "paragraph_bases": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "frame": 33,
+      "source_end": 63,
+      "no_hidden_suffix_glyphs": true,
+      "fixed_full_layout_anchors": true,
+      "paragraph_bases": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "frame": 34,
+      "source_end": 67,
+      "no_hidden_suffix_glyphs": true,
+      "fixed_full_layout_anchors": true,
+      "paragraph_bases": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "frame": 35,
+      "source_end": 73,
+      "no_hidden_suffix_glyphs": true,
+      "fixed_full_layout_anchors": true,
+      "paragraph_bases": [
+        0,
+        0,
+        1,
+        0
+      ]
+    }
+  ],
+  "portable_source_fallback": false,
+  "portable_archive_payload_verified": true,
+  "portable_render_PNG_exact": true,
+  "actual_media_probes": {
+    "master.mov": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "qtrle",
+          "codec_long_name": "QuickTime Animation (RLE) video",
+          "codec_type": "video",
+          "codec_tag_string": "rle ",
+          "codec_tag": "0x20656c72",
+          "width": 497,
+          "height": 492,
+          "coded_width": 497,
+          "coded_height": 492,
+          "has_b_frames": 0,
+          "pix_fmt": "argb",
+          "level": -99,
+          "field_order": "progressive",
+          "refs": 1,
+          "id": "0x1",
+          "r_frame_rate": "8/1",
+          "avg_frame_rate": "8/1",
+          "time_base": "1/16384",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 73728,
+          "duration": "4.500000",
+          "bit_rate": "580592",
+          "nb_frames": "36",
+          "nb_read_frames": "36",
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "handler_name": "VideoHandler",
+            "vendor_id": "FFMP",
+            "encoder": "Lavc62.28.100 qtrle"
+          }
+        }
+      ],
+      "format": {
+        "filename": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\shaping69-case-20261107-r2\\master.mov",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "4.500000",
+        "size": "327481",
+        "bit_rate": "582188",
+        "probe_score": 100,
+        "tags": {
+          "major_brand": "qt  ",
+          "minor_version": "512",
+          "compatible_brands": "qt  ",
+          "encoder": "Lavf62.12.100"
+        }
+      }
+    },
+    "actual.mp4": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "mime_codec_string": "avc1.640016",
+          "width": 498,
+          "height": 492,
+          "coded_width": 512,
+          "coded_height": 496,
+          "has_b_frames": 2,
+          "pix_fmt": "yuv420p",
+          "level": 22,
+          "chroma_location": "left",
+          "field_order": "progressive",
+          "refs": 4,
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "8/1",
+          "avg_frame_rate": "8/1",
+          "time_base": "1/16384",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 73728,
+          "duration": "4.500000",
+          "bit_rate": "105792",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "36",
+          "nb_read_frames": "36",
+          "extradata_size": 47,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "encoder": "Lavc62.28.100 libx264"
+          }
+        }
+      ],
+      "format": {
+        "filename": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\shaping69-case-20261107-r2\\actual.mp4",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "4.500000",
+        "size": "60780",
+        "bit_rate": "108053",
+        "probe_score": 100,
+        "tags": {
+          "major_brand": "isom",
+          "minor_version": "512",
+          "compatible_brands": "isomiso2avc1mp41",
+          "encoder": "Lavf62.12.100"
+        }
+      }
+    },
+    "actual.gif": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "gif",
+          "codec_long_name": "CompuServe GIF (Graphics Interchange Format)",
+          "codec_type": "video",
+          "codec_tag_string": "[0][0][0][0]",
+          "codec_tag": "0x0000",
+          "width": 497,
+          "height": 492,
+          "coded_width": 497,
+          "coded_height": 492,
+          "has_b_frames": 0,
+          "pix_fmt": "bgra",
+          "level": -99,
+          "refs": 1,
+          "r_frame_rate": "8/1",
+          "avg_frame_rate": "25/3",
+          "time_base": "1/100",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 451,
+          "duration": "4.510000",
+          "nb_frames": "36",
+          "nb_read_frames": "36",
+          "disposition": {
+            "default": 0,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          }
+        }
+      ],
+      "format": {
+        "filename": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\shaping69-case-20261107-r2\\actual.gif",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "gif",
+        "format_long_name": "CompuServe Graphics Interchange Format (GIF)",
+        "start_time": "0.000000",
+        "duration": "4.510000",
+        "size": "72420",
+        "bit_rate": "128461",
+        "probe_score": 100
+      }
+    }
+  },
+  "ffmpeg_sha256": "d1e2a156261ecc675081943197a85f08f2868784a0af499171ede89353edad31",
+  "ffprobe_sha256": "70872c3ffbc43d0b2c570f9837f54d6e9a832f4ca25463e9735b6a3ec0621478",
+  "artifacts": {
+    "normal.png": {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\shaping69-case-20261107-r2\\normal.png",
+      "sha256": "70b06f4e05e8a49a1cc027e6e5178e5a794f067c28f4bb8766b7f9ebcd3237a7",
+      "bytes": 20089
+    },
+    "highlight.png": {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\shaping69-case-20261107-r2\\highlight.png",
+      "sha256": "c942920d762e631b732911a556788807384f7eaf63baf3efe3e46352c6223c7c",
+      "bytes": 20136
+    },
+    "master.mov": {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\shaping69-case-20261107-r2\\master.mov",
+      "sha256": "ef016a483acec1da6ae04201a6d113f433a6a0f4db565ae121e899eb4ac56093",
+      "bytes": 327481
+    },
+    "actual.mp4": {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\shaping69-case-20261107-r2\\actual.mp4",
+      "sha256": "aefbafa0aed5690949f286e410e942387524313ba59eb19afb301fb478d7d4e0",
+      "bytes": 60780
+    },
+    "actual.gif": {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\shaping69-case-20261107-r2\\actual.gif",
+      "sha256": "618e72b3b16a7d594f42750d0464adbff97a259436b1a74fddc0ade129db7fba",
+      "bytes": 72420
+    },
+    "plan.json": {
+      "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\shaping69-case-20261107-r2\\plan.json",
+      "sha256": "fafa974d6126262f0ca08196fb3239f00c510c3d81179a913b0641a0ccdb52a3",
+      "bytes": 42833
+    }
+  },
+  "audio_present": false,
+  "human_listening": false,
+  "continuous_playback_review": false,
+  "still_image_review": false,
+  "model_forwards": 0,
+  "GPU_used": false,
+  "product_integrated": false,
+  "formal_skill_modified": false,
+  "full_goal_closed": false
+}

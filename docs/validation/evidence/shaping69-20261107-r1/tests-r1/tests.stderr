@@ -1,0 +1,45 @@
+test_actual_cli_inspect_render_and_unknown_field (test_shaping69.NativeTypography.test_actual_cli_inspect_render_and_unknown_field) ... ok
+test_arabic_joining_uses_real_context (test_shaping69.NativeTypography.test_arabic_joining_uses_real_context) ... FAIL
+test_arabic_lam_alef_is_actual_ligature (test_shaping69.NativeTypography.test_arabic_lam_alef_is_actual_ligature) ... FAIL
+test_atomic_file_race_preserves_external_writer (test_shaping69.NativeTypography.test_atomic_file_race_preserves_external_writer) ... ok
+test_devanagari_cjk_and_marks_use_explicit_fonts (test_shaping69.NativeTypography.test_devanagari_cjk_and_marks_use_explicit_fonts) ... ok
+test_fixture_real_gsub_and_unequal_gdef_positions (test_shaping69.NativeTypography.test_fixture_real_gsub_and_unequal_gdef_positions) ... ok
+test_json_unknown_duplicate_nonfinite_and_existing_output (test_shaping69.NativeTypography.test_json_unknown_duplicate_nonfinite_and_existing_output) ... ok
+test_limits_fail_explicitly (test_shaping69.NativeTypography.test_limits_fail_explicitly) ... ok
+test_line_l1_whitespace_reset (test_shaping69.NativeTypography.test_line_l1_whitespace_reset) ... ok
+test_mandatory_line_separator_keeps_paragraph_base (test_shaping69.NativeTypography.test_mandatory_line_separator_keeps_paragraph_base) ... ok
+test_missing_carets_reject_or_report_explicit_cluster_expansion (test_shaping69.NativeTypography.test_missing_carets_reject_or_report_explicit_cluster_expansion) ... ok
+test_missing_glyph_never_uses_system_fallback (test_shaping69.NativeTypography.test_missing_glyph_never_uses_system_fallback) ... ok
+test_mixed_direction_independent_visual_order (test_shaping69.NativeTypography.test_mixed_direction_independent_visual_order) ... ok
+test_mixed_selection_preserves_all_alpha_and_unselected_rgb (test_shaping69.NativeTypography.test_mixed_selection_preserves_all_alpha_and_unselected_rgb) ... ok
+test_native_digest_and_scalar_bounds (test_shaping69.NativeTypography.test_native_digest_and_scalar_bounds) ... ok
+test_partial_ligature_uses_actual_gdef_not_equal_subdivision (test_shaping69.NativeTypography.test_partial_ligature_uses_actual_gdef_not_equal_subdivision) ... ok
+test_render_directory_race_preserves_foreign_files (test_shaping69.NativeTypography.test_render_directory_race_preserves_foreign_files) ... ok
+test_reveal_rejects_combining_or_crlf_split (test_shaping69.NativeTypography.test_reveal_rejects_combining_or_crlf_split) ... ok
+test_reveal_reshapes_without_hidden_suffix_and_keeps_rtl_anchor (test_shaping69.NativeTypography.test_reveal_reshapes_without_hidden_suffix_and_keeps_rtl_anchor) ... ok
+test_rtl_mirroring_is_shaped_not_logical_swapping (test_shaping69.NativeTypography.test_rtl_mirroring_is_shaped_not_logical_swapping) ... ok
+test_source_wrap_preserves_crlf_and_blank_lines (test_shaping69.NativeTypography.test_source_wrap_preserves_crlf_and_blank_lines) ... ok
+test_variation_digest_and_closed_font_lifecycle (test_shaping69.NativeTypography.test_variation_digest_and_closed_font_lifecycle) ... ok
+
+======================================================================
+FAIL: test_arabic_joining_uses_real_context (test_shaping69.NativeTypography.test_arabic_joining_uses_real_context)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\development\shaping69\tests\test_shaping69.py", line 58, in test_arabic_joining_uses_real_context
+    self.assertEqual(len(joined['glyphs']), 2)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 4 != 2
+
+======================================================================
+FAIL: test_arabic_lam_alef_is_actual_ligature (test_shaping69.NativeTypography.test_arabic_lam_alef_is_actual_ligature)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\dev\sandbox\AI广告剪辑\development\shaping69\tests\test_shaping69.py", line 64, in test_arabic_lam_alef_is_actual_ligature
+    self.assertEqual(len(result['glyphs']), 1)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 1
+
+----------------------------------------------------------------------
+Ran 22 tests in 2.218s
+
+FAILED (failures=2)

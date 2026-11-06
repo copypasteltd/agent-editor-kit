@@ -1,0 +1,84 @@
+{
+  "status": "passed",
+  "observed_at_utc": "2026-11-06T17:09:49.353894+00:00",
+  "case_sha256": "3931b08e7d4700cdae37e56d50cdccd05e431a547f61aa11af7af91d3e38de57",
+  "source_text_author": "Agent editor kit contributors; authored for this case",
+  "source_text_license": "MIT",
+  "font_licenses": {
+    "latin": "OFL-1.1",
+    "arabic": "OFL-1.1",
+    "hebrew": "OFL-1.1",
+    "devanagari": "OFL-1.1",
+    "cjk": "OFL-1.1"
+  },
+  "public_source_is_authored_text": true,
+  "user_portrait_or_private_audio_published": false,
+  "assets": {
+    "actual.gif": {
+      "sha256": "618e72b3b16a7d594f42750d0464adbff97a259436b1a74fddc0ade129db7fba",
+      "bytes": 72420
+    },
+    "actual.mp4": {
+      "sha256": "aefbafa0aed5690949f286e410e942387524313ba59eb19afb301fb478d7d4e0",
+      "bytes": 60780
+    },
+    "highlight.png": {
+      "sha256": "c942920d762e631b732911a556788807384f7eaf63baf3efe3e46352c6223c7c",
+      "bytes": 20136
+    },
+    "master.mov": {
+      "sha256": "ef016a483acec1da6ae04201a6d113f433a6a0f4db565ae121e899eb4ac56093",
+      "bytes": 327481
+    },
+    "normal.png": {
+      "sha256": "70b06f4e05e8a49a1cc027e6e5178e5a794f067c28f4bb8766b7f9ebcd3237a7",
+      "bytes": 20089
+    },
+    "plan.json": {
+      "sha256": "fafa974d6126262f0ca08196fb3239f00c510c3d81179a913b0641a0ccdb52a3",
+      "bytes": 42833
+    },
+    "preview.png": {
+      "sha256": "ad68ee67d936e6cdc55cd97f6a3e2f967de52c42544c378866f7b9591c9f6f15",
+      "bytes": 23822
+    }
+  },
+  "still_image_review": {
+    "actual_viewed_frames": [
+      {
+        "frame": 4,
+        "sha256": "ad68ee67d936e6cdc55cd97f6a3e2f967de52c42544c378866f7b9591c9f6f15"
+      },
+      {
+        "frame": 27,
+        "sha256": "afdf7820b5b9178325c41a6fa3ba271b8a3fe148e09508b21c247feafbf0aa02"
+      },
+      {
+        "frame": 35,
+        "sha256": "209f76ff0d01faa8173369ee405ca9d9be009c82b6e161788d7f6cd9e432a87d"
+      }
+    ],
+    "observation": "No obvious clipping, overlap or overflow in these three frames; not native-speaker language acceptance"
+  },
+  "encoded_frames": 36,
+  "master_fps": "8/1",
+  "duration_seconds": "4.5",
+  "master_size": [
+    497,
+    492
+  ],
+  "h264_size": [
+    498,
+    492
+  ],
+  "full_36_frame_RGBA_exact": true,
+  "portable_archive_replay_PNG_exact": true,
+  "continuous_playback_review": false,
+  "audio_present": false,
+  "human_listening": false,
+  "model_forwards": 0,
+  "GPU_used": false,
+  "product_integrated": false,
+  "formal_skill_modified": false,
+  "full_goal_closed": false
+}

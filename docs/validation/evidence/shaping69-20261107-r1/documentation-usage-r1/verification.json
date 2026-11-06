@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "observed_at_utc": "2026-11-06T17:14:49.659321+00:00",
+  "execution": "actual documented PowerShell workflow, only fresh output name changed",
+  "exit_code": 0,
+  "executable": "C:/Users/carzy/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe",
+  "source_document_sha256": "5efad23e9589c28c9b7f2abfa7e85773ce355d27a172b98de124dfdba18d0230",
+  "script_sha256": "05f99b011911cfa205b188b069c837bb332a64bd6d131312e7aa4bb8f0dd6ac6",
+  "responses": [
+    {
+      "ok": true,
+      "status": "passed",
+      "artifact": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\doc-text-preview-20261107-r1\\plan.json",
+      "glyphs": 69,
+      "formal_product_integrated": false
+    },
+    {
+      "ok": true,
+      "status": "passed",
+      "artifact": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\doc-text-preview-20261107-r1\\render01\\actual.png",
+      "verification": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\doc-text-preview-20261107-r1\\render01\\verification.json",
+      "width": 497,
+      "height": 492,
+      "formal_product_integrated": false
+    }
+  ],
+  "formal_skill_modified": false,
+  "product_integrated": false
+}

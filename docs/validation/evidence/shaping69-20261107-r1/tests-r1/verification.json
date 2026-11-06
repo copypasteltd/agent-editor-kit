@@ -1,0 +1,56 @@
+{
+  "status": "failed",
+  "observed_at_utc": "2026-11-06T16:57:32.421966+00:00",
+  "freeze_sha256": "6b00b8894dcdee9974a202750af228e1502e28238e62c23d2604ecf3dfe6942b",
+  "build_archive_sha256": "0a2c2f25ffd8fba384ade9ad58d292cccdf03c6de41a8af956510709956bbb63",
+  "actual_engine_versions": {
+    "sheenbidi": "3.0.0",
+    "harfbuzz": "15.1.0",
+    "freetype": "2.15.0"
+  },
+  "code_completed_before_build_and_tests": true,
+  "actual_font_contracts": {
+    "tests": 22,
+    "failures": 2,
+    "errors": 0,
+    "skipped": 0
+  },
+  "official_UAX9_corpora": [
+    {
+      "name": "BidiCharacterTest.txt",
+      "rows": 91707,
+      "executed_direction_cases": 91707,
+      "passed": 91707,
+      "failed": 0,
+      "excluded": 0,
+      "skipped": 0,
+      "input_sha256": "a3e6e905ab5afbe318a96df5401d0372a04cd73ef139ab5e3cf0ae241c255488",
+      "scope": "single-paragraph/single-line UAX9 through L2; rendering L3/L4 tested separately"
+    },
+    {
+      "name": "BidiTest.txt",
+      "rows": 490846,
+      "executed_direction_cases": 770241,
+      "passed": 770241,
+      "failed": 0,
+      "excluded": 0,
+      "skipped": 0,
+      "input_sha256": "888bdfc8090652272d1f859cdb00ae659e2dc6c26740be61ef1d03998a687620",
+      "scope": "single-paragraph/single-line UAX9 through L2; rendering L3/L4 tested separately"
+    }
+  ],
+  "conformance_cases_filtered": false,
+  "test_groups_combined": false,
+  "frozen_inputs_unchanged": true,
+  "portrait_guard": {
+    "file_hashes": 554,
+    "formal_guard": 97,
+    "delivery_tool_files": 6,
+    "packaging_source_files": 69
+  },
+  "product_integrated": false,
+  "formal_skill_modified": false,
+  "gpu_used": false,
+  "neural_model_forwards": 0,
+  "full_goal_closed": false
+}

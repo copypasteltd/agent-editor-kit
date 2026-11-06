@@ -1,5 +1,9 @@
 # 当前未完成内容详解（2026-11-06）
 
+**最新正式终态：CLI0.1.66／local64／r59，唯一Skill、17模块、95文件。** 三类真实音乐故障、本机通用控制器升级→逐字节回滚63→再次升级66及实际C盘发现入口完整音画已通过。[正式验收](DELIVERY66_FORMAL_ACCEPTANCE.md) · [三个真实故障](DELIVERY66_ACTUAL_FAULTS.md) · [当前逐项剩余内容](UNFINISHED_DETAIL_20261106.md)。匹配alpha.4公开发行和原G01—G38完整范围仍开放。
+
+**以下保留较早18:20状态及当时待办作为历史快照；当前状态以上方与详细清单为准。**
+
 **最新终态（2026-11-06，Asia/Taipei）：原r6源码与安装版分别完整4,124项通过，0失败／错误／跳过、退出码0；289应用模块一致，无源码回退。候选CLI66真实CUDA配乐、r2完整音画工程、r59便携实装及18:20第二台CPU63→66→63→66均已通过。** 真实故障仍在运行，正式Skill仍CLI63／local61／r58；旧r5／r4及更早快照保留。[安装终态](DELIVERY66_R6_INSTALLED_ACCEPTANCE.md) · [真实音乐／工程／便携](DELIVERY66_R6_MUSIC_AV_PORTABLE_ACCEPTANCE.md) · [第二台结果](CROSS_MACHINE66_RESULTS.md) · [逐项详细差距](UNFINISHED_DETAIL_20261106.md)。
 
 本文按既定开源、面向Agent的CLI编辑内核和原G01—G38范围，区分尚缺实现、已有代码待集成交付、已有功能待质量／组合／跨机器验收。日期采用Asia/Taipei；依据本地代码、安装清单、手册和真实收据，没有重新调查当前剪映版本或人工视听验收。

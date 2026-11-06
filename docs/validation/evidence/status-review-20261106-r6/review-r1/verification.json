@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "observed_at_utc": "2026-11-06T11:07:06.720364+00:00",
+  "base_commit": "7db6b5576b9bac9b89ff7ec970d912913e322554",
+  "source_cli": "0.1.66",
+  "formal_cli": "0.1.66",
+  "formal_release": "v0.1.0-alpha.4-local.64",
+  "formal_skill_files": 95,
+  "formal_modules": 17,
+  "formal_skill_count": 1,
+  "formal_activation": true,
+  "explicit_rollback_old95_byte_equal": true,
+  "actual_C_drive_discovery": true,
+  "complete_formal_RGBA_PCM_replay": true,
+  "all_three_actual_faults_passed": true,
+  "actual_handoff_and_formal_processes_exited": true,
+  "original_product_tests_rerun": 0,
+  "original_source_and_installed_4124_passes_reused_separately": true,
+  "frozen_groups": {
+    "file_hashes": {
+      "files": 546,
+      "changed": []
+    },
+    "delivery_tool_files": {
+      "files": 8,
+      "changed": []
+    },
+    "packaging_source_files": {
+      "files": 69,
+      "changed": []
+    }
+  },
+  "original_AV_helpers_unchanged": true,
+  "official_skill_validator_unchanged": true,
+  "original_G01_G38_unchanged": true,
+  "historical_readme_rows": {
+    "README.md": {
+      "preserved_rows": 697,
+      "current_rows": 698,
+      "original_rows_unchanged": true
+    },
+    "README.zh-TW.md": {
+      "preserved_rows": 697,
+      "current_rows": 698,
+      "original_rows_unchanged": true
+    },
+    "README.en.md": {
+      "preserved_rows": 697,
+      "current_rows": 698,
+      "original_rows_unchanged": true
+    }
+  },
+  "checked_current_local_links": 164,
+  "missing_current_local_links": [],
+  "documents": {
+    "README.md": "fa096bd8e01b152c1f62a1f4ab82fff2f30e5097f9d725b8f2d9195fe1b2bc36",
+    "README.zh-TW.md": "1cc5afb89605d9b5e666ddf26399a335cdf24fa9e115758ddc27553a38f5656e",
+    "README.en.md": "04e1ff59567453593948d973b6d27ddf1726039291b424b5210f11bed0c767be",
+    "docs/product/UNFINISHED_DETAIL_20261106.md": "0661bfe02b5a5487e1c495a7f08d1ffb09207fe2939079b7f3b65f492f4b2539",
+    "docs/product/UNFINISHED_20261106.md": "02dbf4729680e5b52c256e9dc6b266ea9713776200d7c4b571beca0b88e10939",
+    "docs/product/DELIVERY66_HANDOFF.md": "df9c7ae1b348a7928559547ae6c3053ce2cfb867882c4cc20edebbd56f7ee55b",
+    "docs/product/DELIVERY66_R6_MUSIC_AV_PORTABLE_ACCEPTANCE.md": "82d85951dab150f059a20fc94751c263cd1f062c1a4abf6b4ab073288257a679",
+    "docs/product/DELIVERY66_ACTUAL_FAULTS.md": "8d019e624fcbc988b97123c7ec51cbbf687c448e83c43b41f97f442806d8814f",
+    "docs/product/DELIVERY66_FORMAL_ACCEPTANCE.md": "8febcfe7cd2b76d73e37299cefdd8defed2dbe90aabfc205e361c8873bb7b69f"
+  },
+  "local_release_assets_ready": true,
+  "release_lock_sha256": "8b16bbf8e4047cc9a255644a8aa50fe267deb6aa1f65035a3237ae976e5d0bbd",
+  "release_created": false,
+  "publication_attempted": false,
+  "exact_configured_secret_scan_passed": true,
+  "private_configuration_copied": false,
+  "internal_audio_or_movie_published": false,
+  "full_goal_closed": false
+}

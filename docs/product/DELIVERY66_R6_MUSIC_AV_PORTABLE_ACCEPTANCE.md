@@ -1,5 +1,7 @@
 # CLI66：真实GPU配乐、完整音画工程与便携包验收
 
+**后续实际终态已取得：** [三个真实故障](DELIVERY66_ACTUAL_FAULTS.md)及[本机正式66升级／回滚／实际C盘入口](DELIVERY66_FORMAL_ACCEPTANCE.md)均通过。下文保留各阶段原时点的边界；当前正式为CLI66／local64／r59，公开发行仍待。
+
 2026-11-06，Asia/Taipei。本页记录r6安装版完整回归之后的实际结果，不改写原失败，不关闭G01—G38。源码和安装版各自4,124项完整通过的证据见[安装验收](DELIVERY66_R6_INSTALLED_ACCEPTANCE.md)，不能与下述8项工具契约或其他测试组累加。
 
 ## 已实际通过

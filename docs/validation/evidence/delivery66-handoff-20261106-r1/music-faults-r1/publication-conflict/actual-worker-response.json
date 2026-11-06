@@ -1,0 +1,179 @@
+{
+  "protocol": "agent-native-music-generation-v1",
+  "status": "succeeded",
+  "network": "disabled",
+  "blocked_network_events": [],
+  "request_sha256": "sha256:bc337bf880b62e9ddf9cd5b113e35c3356d6c9ebf60d0c247d426d110086f28f",
+  "adapter_sha256": "sha256:21936dc9bab8efca0a3b5585a00d7b00100e4d499e8565b7c4ae2faff2670566",
+  "sample_rate": 48000,
+  "channels": 2,
+  "samples": 480000,
+  "output_bytes": 3840000,
+  "output_PCM_sha256": "sha256:90b6eddc68799d3ed6882358b6ea9685c100cbaee6664db3eda33b7ccf7eaa62",
+  "output_sha256": "sha256:dbe4b13c061a7ca0533a63b3f3cae37d99e9cd1c622c4bd2e575ab22062f9a77",
+  "output_wav_bytes": 3840092,
+  "output_peak": 0.26904296875,
+  "output_rms": 0.01766310948446342,
+  "model": {
+    "engine": "acestep15-native-cuda-v1",
+    "neural_backend": "cuda",
+    "CPU_fallback": false,
+    "local_weight_reads": [
+      {
+        "file": "language_model.safetensors",
+        "backend": "pread",
+        "opens": 1
+      },
+      {
+        "file": "text_encoder.safetensors",
+        "backend": "pread",
+        "opens": 1
+      },
+      {
+        "file": "diffusion_model.safetensors",
+        "backend": "pread",
+        "opens": 1
+      },
+      {
+        "file": "vae.safetensors",
+        "backend": "pread",
+        "opens": 1
+      }
+    ],
+    "dynamic_vram": false,
+    "offline_cli_flag_supported": false,
+    "elapsed_includes_runtime_import": true,
+    "cpu_weight_offload": true,
+    "forwards": {
+      "text": 2,
+      "language_model": 50,
+      "diffusion": 8,
+      "vae": 1
+    },
+    "forward_output_devices": {
+      "text": [
+        "cuda:0"
+      ],
+      "language_model": [
+        "cuda:0"
+      ],
+      "diffusion": [
+        "cuda:0"
+      ],
+      "vae": [
+        "cuda:0"
+      ]
+    },
+    "text_admission": {
+      "policy": "cuda-uuid-physical-and-torch-free-v1",
+      "stage": "music-text",
+      "required_free_bytes": 7247757312,
+      "reservation": false,
+      "oom_guarantee": false,
+      "query_started_at_utc": "2026-11-06T10:47:23.057025+00:00",
+      "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+      "logical_device_index": 0,
+      "idle_cache_release": {
+        "scope": "current-worker",
+        "synchronized": true,
+        "empty_cache_called": true,
+        "completed": true,
+        "active_allocation_preserved": true,
+        "allocated_before_bytes": 0,
+        "reserved_before_bytes": 0,
+        "allocated_after_bytes": 0,
+        "reserved_after_bytes": 0,
+        "released_reserved_bytes": 0
+      },
+      "query_command": [
+        "C:\\Windows\\System32\\nvidia-smi.EXE",
+        "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+        "--query-gpu=uuid,memory.total,memory.free",
+        "--format=csv,noheader,nounits"
+      ],
+      "torch_free_bytes": 11799625728,
+      "torch_total_bytes": 12884377600,
+      "physical_free_bytes": 10162798592,
+      "physical_total_bytes": 12884901888,
+      "effective_free_bytes": 10162798592,
+      "query_finished_at_utc": "2026-11-06T10:47:23.184139+00:00",
+      "sample_seconds": 0.1271072000017739,
+      "status": "admitted"
+    },
+    "diffusion_admission": {
+      "policy": "cuda-uuid-physical-and-torch-free-v1",
+      "stage": "music-diffusion",
+      "required_free_bytes": 7247757312,
+      "reservation": false,
+      "oom_guarantee": false,
+      "query_started_at_utc": "2026-11-06T10:47:51.471178+00:00",
+      "device_uuid": "GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+      "logical_device_index": 0,
+      "idle_cache_release": {
+        "scope": "current-worker",
+        "synchronized": true,
+        "empty_cache_called": true,
+        "completed": true,
+        "active_allocation_preserved": true,
+        "allocated_before_bytes": 8519680,
+        "reserved_before_bytes": 20971520,
+        "allocated_after_bytes": 8519680,
+        "reserved_after_bytes": 20971520,
+        "released_reserved_bytes": 0
+      },
+      "query_command": [
+        "C:\\Windows\\System32\\nvidia-smi.EXE",
+        "--id=GPU-c101fc79-ced0-9579-92ab-a20c8dcd8a21",
+        "--query-gpu=uuid,memory.total,memory.free",
+        "--format=csv,noheader,nounits"
+      ],
+      "torch_free_bytes": 11743002624,
+      "torch_total_bytes": 12884377600,
+      "physical_free_bytes": 10169090048,
+      "physical_total_bytes": 12884901888,
+      "effective_free_bytes": 10169090048,
+      "query_finished_at_utc": "2026-11-06T10:47:51.534935+00:00",
+      "sample_seconds": 0.06375980000302661,
+      "status": "admitted"
+    },
+    "device": "NVIDIA GeForce RTX 3060",
+    "torch": "2.13.0+cu130",
+    "cuda": "13.0",
+    "runtime_packages": {
+      "numpy": "2.4.6",
+      "safetensors": "0.8.0",
+      "torchaudio": "2.11.0+cu130",
+      "transformers": "5.14.1"
+    },
+    "peak_allocated_bytes": 4956033536,
+    "peak_reserved_bytes": 4993318912,
+    "timings": {
+      "runtime_import_seconds": 104.34868339999957,
+      "text_checkpoint_load_seconds": 6.355368900003668,
+      "text_load_and_encode_seconds": 27.989986400003545,
+      "text_encode_seconds_including_device_load": 21.602383999997983,
+      "diffusion_checkpoint_load_seconds": 91.79784449999715,
+      "diffusion_load_and_generate_seconds": 118.03180520000024,
+      "diffusion_sample_seconds_including_device_load": 26.233511600003112,
+      "vae_checkpoint_load_seconds": 10.099403700005496,
+      "vae_load_and_decode_seconds": 12.251974300001166,
+      "vae_decode_seconds_including_device_load": 2.1524867999978596
+    },
+    "elapsed_seconds": 264.3851399999985,
+    "sample_rate": 48000,
+    "channels": 2,
+    "samples": 480000,
+    "service_started": false,
+    "shared_queue_touched": false,
+    "natural_quality_accepted": false
+  },
+  "estimated_storage_bytes": 78628864,
+  "padded": false,
+  "looped": false,
+  "resampled": false,
+  "normalized": false,
+  "service_started": false,
+  "shared_queue_touched": false,
+  "natural_quality_accepted": false,
+  "elapsed_seconds": 295.1317765999993
+}

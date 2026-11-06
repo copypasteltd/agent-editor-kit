@@ -7,7 +7,7 @@ description: "Edit and generate local videos with agent editor kit: multitrack e
 
 One public entry, 17 internal task modules. Select the relevant references below;
 do not load every module or invoke separately registered specialist Skills.
-The current local runtime is `v0.1.0-alpha.4-local.61` / CLI `0.1.63`.
+The current local runtime is `v0.1.0-alpha.4-local.64` / CLI `0.1.66`.
 For calibrated visual selection into editable ads, read
 [semantic ad selection](references/ad-selection.md). Inspect actual previews
 and per-shot receipts before client approval. CLI58 defaults to exact-source
@@ -240,3 +240,5 @@ For native Float32 source-following markers/labels, actual mask/alpha visibility
 - Close unused browser tabs after any separately used browser operation.
 
 For sample-clock loop overlap repair and actual before/after auditions, read [community music](references/community-materials.md#sample-clock-loop-overlap-repair-cli0163). Overlap explicitly shortens the cycle; numerical continuity is not listening approval.
+
+For local CUDA neural music, requests, real audition evidence and limitations, read [neural music](references/neural-music.md). For verified upgrades, interrupted activation recovery and rollback, read [delivery](references/delivery.md).

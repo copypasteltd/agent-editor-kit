@@ -13,8 +13,8 @@
     {
       "path": "product/tests/test_delivery.py",
       "base_sha256": "36fd9235cb777d8f6db33b3f0439454ce4b04a49c81a37dbedb1e8d9e24f3775",
-      "candidate_sha256": "c36399ae18d4fd786175f29c61f67067410dc67ef6de64efd8348483b905508b",
-      "bytes": 24376
+      "candidate_sha256": "1b9120162c2b7a6b63c441a695273dd3cc06ab7f269ccf8c4aeeea16c4044a76",
+      "bytes": 27061
     },
     {
       "path": "product/tests/test_effect_automation.py",
@@ -57,13 +57,49 @@
       "base_sha256": "40bf79f471bd71e23c182aed5931573bdf24392dce443904dcb692f8c0d0633f",
       "candidate_sha256": "832f2df152c7a9027fce0e7a3ea7457c14692a87c3542baf6c568ea414689157",
       "bytes": 35186
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_transitions.py",
+      "base_sha256": "7de54ec6bd9497c8b9363707262d3b267cceb30576f61bb56747ebae137dd758",
+      "candidate_sha256": "41573722b13273a63a27f0112d66702072d73db2d7a99e917121ff5ca66b85a6",
+      "bytes": 14688
+    },
+    {
+      "path": "product/src/ai_ad_editor/community_audio.py",
+      "base_sha256": "b22b1714e164f0e400b7d53f978e0d0e36b83b519f827cd235826d29a037116a",
+      "candidate_sha256": "6a450a0c29ac0d9662a9fb75fb00eacd39bfea2b53887aad7f146ab9d3b073f9",
+      "bytes": 12402
+    },
+    {
+      "path": "product/src/ai_ad_editor/video_generation.py",
+      "base_sha256": "007325db940fc3951d9203ea89d24e2de27b64357ce9b13e109c7dc882a1c991",
+      "candidate_sha256": "3b7c7d857244916132aaaee38efd3e2297cbb4121bb8a2b819d5ca53f51e2b79",
+      "bytes": 15685
+    },
+    {
+      "path": "product/src/ai_ad_editor/procedural_particles.py",
+      "base_sha256": "386a2b146997a82ff6065bd599d69ddc602d714e1cfc19157e27807327a55009",
+      "candidate_sha256": "237c3e38c9e188c7f674e19be7752740e1287244466519c9876fd04f404a9604",
+      "bytes": 17762
+    },
+    {
+      "path": "product/src/ai_ad_editor/enhancement_pipeline.py",
+      "base_sha256": "32a9a5ff28c4b005e65b9f51ec2ce0f4c473d8c961f7a13f70271ab025101aae",
+      "candidate_sha256": "b71202fa7620ef849204e80a59304a8c575384a8d4961c1dae097b0abd701737",
+      "bytes": 10726
+    },
+    {
+      "path": "product/tests/test_cli.py",
+      "base_sha256": "c2b361a3c4da50378280878fdfffb1fd26d6136d7b2cfed460e4a983f191bfec",
+      "candidate_sha256": "c7c277898964a1e87bbc4dbdf498ecca00978dd45d68540ee1b9f5bc98021264",
+      "bytes": 320761
     }
   ],
   "original_product_and_tests_modified": false,
   "formal_activation": false,
   "functional_tests_started": false,
   "code_completed_before_batch_tests": false,
-  "observed_failure_status": "Original r4 is running without a terminal receipt; observed failures now include lip-sync. Log-line counts include subtests and are not final result statistics.",
+  "observed_failure_status": "r4 remains live without terminal statistics; observed issues include music diagnostic fixtures, catalog, lip-sync and two lightweight mask CLI cases. Await all final tracebacks.",
   "changes": [
     "Prepare both diagnostic test fixtures through the real controlled Directory API.",
     "Update three exact effect catalog expectations to documented 0.11.0 / 51; retain numeric-channel and pixel assertions.",
@@ -77,10 +113,15 @@
     "Preflight the actual isolated native Python imports for NumPy, Pillow, OpenCV and jsonschema before whole-suite discovery; bind application/Python identity, supported core versions and dependency file hashes.",
     "Persist every error, failure and failing subtest to an append-only flushed issue journal without fail-fast, filtering, skipping or altering the complete unittest result.",
     "Three unexecuted handoff methods cover absent OpenCV/incompatible versions, wrong application/interpreter/isolation, and live errors/subtests while subsequent tests still execute.",
-    "Read-only dependency discovery found the original C Python lacks OpenCV, and its isolated mode cannot discover NumPy/Pillow; an existing native E Python discovers all four dependencies. No interpreter/site-packages was modified; actual import preflight awaits the finalized batch."
+    "Read-only dependency discovery found the original C Python lacks OpenCV, and its isolated mode cannot discover NumPy/Pillow; an existing native E Python discovers all four dependencies. No interpreter/site-packages was modified; actual import preflight awaits the finalized batch.",
+    "Four eager CLI paths imported NumPy/Pillow through transitions, community audio, video generation and procedural particles. Move these imports into their actual computational functions; preserve all numerical/validation ASTs and public catalogs.",
+    "Two additional unexecuted native-CLI contracts cover version/capability queries and feature help with NumPy/Pillow/Torch imports explicitly blocked; retain both original actual mask-edit/mask-review cases unchanged.",
+    "Apply the same bounded diagnostic treatment to AudioDiagnosticSession: type-check phase before membership, reject non-object progress, retain segment-clock output, and handle unavailable/nonordinary/unprepared reads without losing failure evidence.",
+    "Three additional unexecuted real-file audio progress contracts cover approved segment-clock fields, malformed/unhashable values and bounded unreadable/unprepared progress states.",
+    "Static overlay import graph reaches 130 CLI modules with no eager NumPy/Pillow/Torch path; this is static evidence only, not execution or final root-cause proof for the two observed mask-command failures."
   ],
   "next_step": "Wait for authoritative r4 terminal output, incorporate every additional failure, then complete and apply the whole correction batch before any regression.",
-  "new_product_test_methods_written": 5,
+  "new_product_test_methods_written": 10,
   "new_handoff_test_methods_written": 9,
   "quickstart_drafts": [
     {

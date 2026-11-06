@@ -445,3 +445,51 @@ class BoundedMusicProgressTests(unittest.TestCase):
         self.addCleanup(temporary.cleanup)
         session = MusicDiagnosticSession(Path(temporary.name), {}, {})
         self.assertEqual(session.read_progress(), dict(state='not_prepared'))
+
+
+class BoundedAudioProgressTests(unittest.TestCase):
+    def session(self, *, prepare=True):
+        from ai_ad_editor.enhancement_pipeline import AudioDiagnosticSession
+        temporary = tempfile.TemporaryDirectory(dir=configure_local_runtime()['temp'])
+        self.addCleanup(temporary.cleanup)
+        root = Path(temporary.name)
+        session = AudioDiagnosticSession(root, {}, {})
+        if prepare:session.prepare(root, {})
+        return root, session
+
+    def test_audio_progress_preserves_segment_clock_and_approved_fields_only(self):
+        root, session = self.session()
+        payload = dict(phase='neural-enhancement', done=2, total=8, worker_pid=123)
+        (root / 'progress.json').write_bytes(encoded({**payload, 'state': 'forged',
+            'private_path': 'E:/private/customer.wav'}))
+        self.assertEqual(session.read_progress(), dict(state='read', phase='neural-enhancement',
+            segments_done=2, segments_total=8, worker_pid=123))
+
+    def test_audio_progress_rejects_nonobjects_unhashable_phases_and_invalid_clocks(self):
+        root, session = self.session()
+        valid = dict(phase='neural-enhancement', done=2, total=8, worker_pid=123)
+        values = [None, [], 'text', 1, True]
+        values += [{**valid, **change} for change in (
+            dict(phase=[]), dict(phase={}), dict(phase=None), dict(phase='unknown'),
+            dict(done=True), dict(done=1.5), dict(done=-1), dict(done=9),
+            dict(total=True), dict(total=0), dict(total=65537), dict(worker_pid=True), dict(worker_pid=0))]
+        for value in values:
+            with self.subTest(value=value):
+                (root / 'progress.json').write_bytes(encoded(value))
+                self.assertEqual(session.read_progress(), dict(state='invalid_audio_progress'))
+
+    def test_audio_progress_read_failures_keep_bounded_diagnostic_states(self):
+        root, session = self.session(prepare=False)
+        self.assertEqual(session.read_progress(), dict(state='not_prepared'))
+        session.prepare(root, {})
+        progress = root / 'progress.json'
+        self.assertEqual(session.read_progress()['state'], 'missing')
+        for raw in (b'{', b'\xff', b'{"phase":"neural-enhancement","phase":"forged"}'):
+            with self.subTest(raw=raw):
+                progress.write_bytes(raw)
+                self.assertEqual(session.read_progress()['state'], 'invalid_json')
+        progress.write_bytes(b' ' * (2 * 1024**2))
+        self.assertNotEqual(session.read_progress()['state'], 'read')
+        progress.unlink()
+        progress.mkdir()
+        self.assertEqual(session.read_progress(), dict(state='unavailable', code='DIAGNOSTIC_FILE_INVALID'))

@@ -6,6 +6,7 @@
 發佈身份複核取得新結果：兩條既有原生gh憑據分別讀取倉庫均回傳200及寫入／管理權限；先前403來自另一預設Git身份。隔離草稿已補原生憑據路徑與六項交付契約方法，尚未合入或測試，未建立Release。 [Actual access / 實際紀錄](docs/validation/evidence/delivery66-handoff-20261106-r1/release-identity-r1/verification.json)
 隔離批次另補完整三語使用流程，涵蓋安裝、必需／可選模型包、GPU設定、客戶濾鏡選擇、音軌編排、算圖及專案重播。[繁體草稿](docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.zh-TW.md)尚未執行CLI66流程，安裝摘要為明確佔位符。
 新增隔離依賴預檢與即時錯誤日誌草稿：開跑前核對原生隔離子程序的NumPy／Pillow／OpenCV／jsonschema，執行時即時保存錯誤／失敗／子測試堆疊並繼續整套。原C盤解譯器缺OpenCV且隔離模式找不到NumPy／Pillow；既有E盤原生解譯器能發現依賴，尚待真正匯入預檢。 [範圍與證據](docs/product/NATIVE_TEST_DEPENDENCIES_20261106.md)
+輕量CLI與診斷修正草稿已擴至15個程式碼檔案：轉場、社群音訊、影片生成及粒子改為實際計算時載入數值／影像庫；音訊增強診斷同步處理畸形進度。新增5項產品方法仍未執行，目前共10項新產品方法與9項新交付方法，不合併計為通過數。 [修正範圍](docs/product/DELIVERY66_R5_CANDIDATE.md)
 <!-- /aek-cli65-current -->
 
 **r58統一Skill工具包已獨立驗收。** 161條目／160清單檔案／93 Skill檔案；中文與空格目錄解包、四包配置、獨立註冊、實際譜面與循環修復、完整ACES YUV／PCM／PNG及專案重播通過。未新增模型推理，不等於乾淨主機或自然品質驗收。
@@ -2208,6 +2209,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R585 | Existing native gh identity / 2026-11-06 | 兩條既有原生gh憑據分別讀取官方倉庫介面均回傳200及寫入／管理權限；未保存秘密、修改憑據或發佈附件。隔離候選新增發佈路徑與六項未執行契約，目前凍結工具不變。 [Record](docs/validation/evidence/delivery66-handoff-20261106-r1/release-identity-r1/verification.json) · [Draft](docs/product/DELIVERY66_R5_CANDIDATE.md) |
 | R586 | Complete three-language workflow draft / 2026-11-06 | 擴寫三語快速開始生成器及3份可審閱草稿，涵蓋摘要／解壓縮、離線安裝、兩個CPU必需包／兩個GPU可選包、獨立CUDA目錄、單Skill、濾鏡套用、音軌、算圖及專案重播。僅AST靜態生成，摘要為明確佔位符，未執行候選函數或CLI66流程。 [Draft](docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.zh-TW.md) · [Scope](docs/product/DELIVERY66_R5_CANDIDATE.md) |
 | R587 | Native test dependency and live-failure draft / 2026-11-06 | 唯讀發現C盤測試解譯器缺OpenCV，隔離子程序也找不到NumPy／Pillow；既有E盤原生Python能發現所需庫。隔離草稿新增匯入／應用身份／版本／位元組預檢、即時完整錯誤日誌與3項未執行契約方法。原r4繼續，9檔案草稿未合入／測試，無新增模型或正式升級。 [Details](docs/product/NATIVE_TEST_DEPENDENCIES_20261106.md) · [Static evidence](docs/validation/evidence/delivery66-handoff-20261106-r1/dependency-preflight-draft-r1/verification.json) |
+| R588 | Lightweight CLI and audio diagnostic draft / 2026-11-06 | 原r4新增兩項輕量蒙版CLI失敗；靜態定位四條提前載入NumPy／Pillow的路徑。草稿改為計算時匯入，數值／校驗AST不變，並補版本／能力／說明兩項原生CLI方法；音訊增強進度另補三項實際檔案方法。15檔案候選未合入／執行，原整套繼續。 [Scope](docs/product/DELIVERY66_R5_CANDIDATE.md) · [Static evidence](docs/validation/evidence/delivery66-handoff-20261106-r1/lazy-startup-draft-r1/verification.json) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

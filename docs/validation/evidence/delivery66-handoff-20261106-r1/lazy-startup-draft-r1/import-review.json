@@ -1,0 +1,63 @@
+{
+  "before": {
+    "reachable_modules": 130,
+    "eager_heavy_paths": [
+      [
+        "cli",
+        "capabilities",
+        "float_transitions",
+        "numpy"
+      ],
+      [
+        "cli",
+        "generation_cli",
+        "video_generation",
+        "numpy"
+      ],
+      [
+        "cli",
+        "generation_cli",
+        "video_generation",
+        "PIL"
+      ],
+      [
+        "cli",
+        "community_cli",
+        "community_audio",
+        "numpy"
+      ],
+      [
+        "cli",
+        "procedural_cli",
+        "procedural_particles",
+        "numpy"
+      ]
+    ]
+  },
+  "after": {
+    "reachable_modules": 130,
+    "eager_heavy_paths": []
+  },
+  "affected_module_chains": 4,
+  "numeric_ast": [
+    {
+      "module": "float_transitions",
+      "nonimport_ast_identical": true
+    },
+    {
+      "module": "community_audio",
+      "nonimport_ast_identical": true
+    },
+    {
+      "module": "video_generation",
+      "nonimport_ast_identical": true
+    },
+    {
+      "module": "procedural_particles",
+      "nonimport_ast_identical": true
+    }
+  ],
+  "candidate_functions_executed": false,
+  "static_only": true,
+  "dynamic_parser_handlers_not_proved": true
+}

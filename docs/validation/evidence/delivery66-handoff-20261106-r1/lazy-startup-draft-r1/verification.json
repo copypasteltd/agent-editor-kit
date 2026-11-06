@@ -1,0 +1,161 @@
+{
+  "status": "passed-static-draft-and-file-integrity-review",
+  "observed_at_utc": "2026-11-06T01:46:32.631198+00:00",
+  "parent_commit": "1d84b6a78255de7d21ba102edfd58d5c36146513",
+  "candidate_code_files": 15,
+  "candidate_files": [
+    {
+      "path": "product/src/ai_ad_editor/music_generation_pipeline.py",
+      "candidate_sha256": "5dbae91ec9628642ab89fe5d57de7ed97e70f11ff39dd84ec0d856a4a67eabf0",
+      "base_sha256": "090c20dbeb4ed251a9e0ad9b02d24be3e399b713061e7db6d385eba49436df08"
+    },
+    {
+      "path": "product/tests/test_delivery.py",
+      "candidate_sha256": "1b9120162c2b7a6b63c441a695273dd3cc06ab7f269ccf8c4aeeea16c4044a76",
+      "base_sha256": "36fd9235cb777d8f6db33b3f0439454ce4b04a49c81a37dbedb1e8d9e24f3775"
+    },
+    {
+      "path": "product/tests/test_effect_automation.py",
+      "candidate_sha256": "860177ad6dae0f51160828b736c4b69f4f9675950138cee5e5350cea582eb48b",
+      "base_sha256": "c85267c95ffe4e13878d291493b6e51faf74a02c205a964a24e0fb4958bb8952"
+    },
+    {
+      "path": "product/tests/test_selective_hsl.py",
+      "candidate_sha256": "deba97f4d7c8239c3606597c50faf9f3a0461399ab1f62c76d8ebf06387b2c69",
+      "base_sha256": "e3a4e2cedf045f91ae45b9312c8ede7037d15e925fdecee7ab296baa86ba8787"
+    },
+    {
+      "path": "product/tests/test_spatial_automation.py",
+      "candidate_sha256": "2f827615f17e1b7188b97e11ee968b8769bb827394abcff6250e70eab78773a5",
+      "base_sha256": "5653e4a8a06efe8eb6c96dd54eb6dbe3672b11f1d0a0789ac9abbb2d88ff623f"
+    },
+    {
+      "path": "docs/validation/publish_delivery66.py",
+      "candidate_sha256": "44ae4313db07280e3d42f9d5d717c3ae8e3be6b1efaa983cdcda665230575fef",
+      "base_sha256": "7a8a772ad27ef513cfede56cfbaacb5ed66cd7c989e073a99ac0bbefe2838288"
+    },
+    {
+      "path": "docs/validation/test_delivery66_handoff.py",
+      "candidate_sha256": "b799edd19f7299c0bb40140bd40bd4db57435b62dd924547279664840fe24043",
+      "base_sha256": "67aca9303fa283bdd2186906a441fbd1378a62e98dbd069fd984b864dc90ee5a"
+    },
+    {
+      "path": "docs/validation/delivery66_handoff.py",
+      "candidate_sha256": "69c8e07733e884d76ce74ef5fc1c0e7d0ba84e8cbb5cd473da7db37f8514b0b7",
+      "base_sha256": "5db3c3bf42609d30633bb53c8e94fd43cd59db10b10efba71930f969515e9c13"
+    },
+    {
+      "path": "docs/validation/delivery66.py",
+      "candidate_sha256": "832f2df152c7a9027fce0e7a3ea7457c14692a87c3542baf6c568ea414689157",
+      "base_sha256": "40bf79f471bd71e23c182aed5931573bdf24392dce443904dcb692f8c0d0633f"
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_transitions.py",
+      "candidate_sha256": "41573722b13273a63a27f0112d66702072d73db2d7a99e917121ff5ca66b85a6",
+      "base_sha256": "7de54ec6bd9497c8b9363707262d3b267cceb30576f61bb56747ebae137dd758"
+    },
+    {
+      "path": "product/src/ai_ad_editor/community_audio.py",
+      "candidate_sha256": "6a450a0c29ac0d9662a9fb75fb00eacd39bfea2b53887aad7f146ab9d3b073f9",
+      "base_sha256": "b22b1714e164f0e400b7d53f978e0d0e36b83b519f827cd235826d29a037116a"
+    },
+    {
+      "path": "product/src/ai_ad_editor/video_generation.py",
+      "candidate_sha256": "3b7c7d857244916132aaaee38efd3e2297cbb4121bb8a2b819d5ca53f51e2b79",
+      "base_sha256": "007325db940fc3951d9203ea89d24e2de27b64357ce9b13e109c7dc882a1c991"
+    },
+    {
+      "path": "product/src/ai_ad_editor/procedural_particles.py",
+      "candidate_sha256": "237c3e38c9e188c7f674e19be7752740e1287244466519c9876fd04f404a9604",
+      "base_sha256": "386a2b146997a82ff6065bd599d69ddc602d714e1cfc19157e27807327a55009"
+    },
+    {
+      "path": "product/src/ai_ad_editor/enhancement_pipeline.py",
+      "candidate_sha256": "b71202fa7620ef849204e80a59304a8c575384a8d4961c1dae097b0abd701737",
+      "base_sha256": "32a9a5ff28c4b005e65b9f51ec2ce0f4c473d8c961f7a13f70271ab025101aae"
+    },
+    {
+      "path": "product/tests/test_cli.py",
+      "candidate_sha256": "c7c277898964a1e87bbc4dbdf498ecca00978dd45d68540ee1b9f5bc98021264",
+      "base_sha256": "c2b361a3c4da50378280878fdfffb1fd26d6136d7b2cfed460e4a983f191bfec"
+    }
+  ],
+  "candidate_python_syntax_valid": true,
+  "new_product_methods_written": [
+    "product/tests/test_delivery.py:BoundedAudioProgressTests.test_audio_progress_preserves_segment_clock_and_approved_fields_only",
+    "product/tests/test_delivery.py:BoundedAudioProgressTests.test_audio_progress_read_failures_keep_bounded_diagnostic_states",
+    "product/tests/test_delivery.py:BoundedAudioProgressTests.test_audio_progress_rejects_nonobjects_unhashable_phases_and_invalid_clocks",
+    "product/tests/test_delivery.py:BoundedMusicProgressTests.test_missing_and_malformed_progress_keep_bounded_diagnostics",
+    "product/tests/test_delivery.py:BoundedMusicProgressTests.test_nonobject_unhashable_and_wrong_typed_progress_is_invalid",
+    "product/tests/test_delivery.py:BoundedMusicProgressTests.test_nonordinary_progress_returns_unavailable_without_consuming_it",
+    "product/tests/test_delivery.py:BoundedMusicProgressTests.test_unprepared_music_progress_is_explicit",
+    "product/tests/test_delivery.py:BoundedMusicProgressTests.test_valid_progress_forwards_only_approved_fields",
+    "product/tests/test_cli.py:P0CliTests.test_feature_help_is_available_without_numpy_pillow_or_torch",
+    "product/tests/test_cli.py:P0CliTests.test_version_and_capability_queries_do_not_load_media_or_model_libraries"
+  ],
+  "new_handoff_methods_written": [
+    "docs/validation/test_delivery66_handoff.py:HandoffContracts.test_explicit_publishing_token_never_opens_credential_stores",
+    "docs/validation/test_delivery66_handoff.py:HandoffContracts.test_isolated_dependency_preflight_rejects_another_application_or_python",
+    "docs/validation/test_delivery66_handoff.py:HandoffContracts.test_isolated_dependency_preflight_requires_opencv_and_compatible_core_versions",
+    "docs/validation/test_delivery66_handoff.py:HandoffContracts.test_legacy_helper_remains_available_without_native_gh_credential",
+    "docs/validation/test_delivery66_handoff.py:HandoffContracts.test_live_issue_journal_preserves_subtests_and_continues_the_whole_suite",
+    "docs/validation/test_delivery66_handoff.py:HandoffContracts.test_local_only_validation_never_reads_credentials_or_publishes",
+    "docs/validation/test_delivery66_handoff.py:HandoffContracts.test_malformed_or_oversized_stored_credentials_are_not_logged",
+    "docs/validation/test_delivery66_handoff.py:HandoffContracts.test_native_gh_store_decodes_utf8_and_utf16_token_formats",
+    "docs/validation/test_delivery66_handoff.py:HandoffContracts.test_native_gh_store_precedes_unusable_legacy_git_credential"
+  ],
+  "original_test_names_retained": true,
+  "handoff_methods_after_application": 27,
+  "current_frozen_files_equal": {
+    "file_hashes": 546,
+    "delivery_tool_files": 6,
+    "formal_guard": 95
+  },
+  "readmes": {
+    "README.md": {
+      "sha256": "9410ec65af00e544acf08d0cb8db0e2f4b5230ab37e0030eed8c9520a60d7096",
+      "prior_RF_rows_preserved": true,
+      "R_rows": 588,
+      "F_rows": 89
+    },
+    "README.zh-TW.md": {
+      "sha256": "0599764a224511b4635a55b9d794766ff63c14c84432325b396e16b657c3ffe8",
+      "prior_RF_rows_preserved": true,
+      "R_rows": 588,
+      "F_rows": 89
+    },
+    "README.en.md": {
+      "sha256": "64c2bfd605f9af2120d5387943e71c66b53b7b7fc5ac84fea10d2db295ce9551",
+      "prior_RF_rows_preserved": true,
+      "R_rows": 588,
+      "F_rows": 89
+    }
+  },
+  "import_review": {
+    "path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\delivery66-handoff-20261106-r1\\lazy-startup-draft-r1\\import-review.json",
+    "sha256": "883edcf14fa70bbcc80b5d8307c92c5832e0d4edce07d75afbfdb451794ba097",
+    "affected_module_chains": 4,
+    "before_eager_heavy_imports": 5,
+    "after_eager_heavy_imports": 0,
+    "reachable_modules": 130,
+    "nonimport_ast_identical_modules": 4
+  },
+  "observed_error_log_lines": 14,
+  "observed_failure_log_lines": 7,
+  "counts_include_subtests_and_are_not_final": true,
+  "r4_terminal_result_present": false,
+  "r4_supervisor_live": true,
+  "r4_child_live": true,
+  "candidate_functional_tests_started": false,
+  "candidate_functions_executed": false,
+  "candidate_applied": false,
+  "candidate_batch_finalized": false,
+  "formal_activation": false,
+  "model_forwards": 0,
+  "public_release_created": false,
+  "source_cli": "0.1.66",
+  "formal_cli": "0.1.63",
+  "original_38_group_document_sha256": "36347a3c5599ec4e4850b13c6cd98f726847f4142f96863fadf6f26b4f27e755",
+  "original_38_group_document_git_diff_empty": true,
+  "full_product_goal_closed": false
+}

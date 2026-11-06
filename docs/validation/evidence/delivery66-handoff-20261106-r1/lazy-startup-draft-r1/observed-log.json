@@ -1,0 +1,40 @@
+{
+  "path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\delivery66-20261106-r1\\source-all-r4\\tests.stderr",
+  "prefix_bytes": 502560,
+  "prefix_sha256": "08ec9f4c73888d36f64bc3d5596ddc04f4197e595e5495506225627f8a341b1a",
+  "error_lines": [
+    "test_oversized_progress_is_not_loaded_as_unbounded_json (test_delivery.BoundedMusicProgressTests.test_oversized_progress_is_not_loaded_as_unbounded_json) ... ERROR",
+    "test_unknown_phase_and_invalid_clock_are_not_forwarded (test_delivery.BoundedMusicProgressTests.test_unknown_phase_and_invalid_clock_are_not_forwarded) ... ERROR",
+    "test_array_budget_rejects_before_neural_batch (test_lipsync.PixelTests.test_array_budget_rejects_before_neural_batch) ... ERROR",
+    "test_feather_stays_inside_explicit_box (test_lipsync.PixelTests.test_feather_stays_inside_explicit_box) ... ERROR",
+    "test_fractional_and_hidden_alpha_and_outside_box_are_bit_exact (test_lipsync.PixelTests.test_fractional_and_hidden_alpha_and_outside_box_are_bit_exact) ... ERROR",
+    "test_invalid_neural_batch_and_semantic_mask_rejected (test_lipsync.PixelTests.test_invalid_neural_batch_and_semantic_mask_rejected) ... ERROR",
+    "test_mask_top_protects_upper_face_with_no_feather (test_lipsync.PixelTests.test_mask_top_protects_upper_face_with_no_feather) ... ERROR",
+    "test_partial_pipe_reads_produce_the_same_complete_frames (test_lipsync.PixelTests.test_partial_pipe_reads_produce_the_same_complete_frames) ... ERROR",
+    "test_semantic_zero_mask_is_identity_even_when_prediction_changes (test_lipsync.PixelTests.test_semantic_zero_mask_is_identity_even_when_prediction_changes) ... ERROR",
+    "test_short_write_rejected (test_lipsync.PixelTests.test_short_write_rejected) ... ERROR",
+    "  test_truncated_and_extra_frames_rejected (test_lipsync.PixelTests.test_truncated_and_extra_frames_rejected) (size=61439) ... ERROR",
+    "  test_truncated_and_extra_frames_rejected (test_lipsync.PixelTests.test_truncated_and_extra_frames_rejected) (size=61441) ... ERROR",
+    "test_atomic_progress_rename_during_storage_scan_preserves_complete_transport (test_lipsync.TransportTests.test_atomic_progress_rename_during_storage_scan_preserves_complete_transport) ... ERROR",
+    "test_complete_actual_qtrle_and_float_pcm_transport_and_cleanup (test_lipsync.TransportTests.test_complete_actual_qtrle_and_float_pcm_transport_and_cleanup) ... ERROR"
+  ],
+  "failure_lines": [
+    "test_catalog_advertises_exact_numeric_channels_and_static_boolean (test_effect_automation.EffectAutomationContractTests.test_catalog_advertises_exact_numeric_channels_and_static_boolean) ... FAIL",
+    "test_actual_transport_registers_two_editable_linked_tracks_and_rerun_plan (test_lipsync.CLITests.test_actual_transport_registers_two_editable_linked_tracks_and_rerun_plan) ... FAIL",
+    "test_validation_failure_after_publication_rolls_back_asset_and_metadata (test_lipsync.CLITests.test_validation_failure_after_publication_rolls_back_asset_and_metadata) ... FAIL",
+    "test_forged_alpha_response_is_rejected (test_lipsync.TransportTests.test_forged_alpha_response_is_rejected) ... FAIL",
+    "test_timeout_kills_owned_children (test_lipsync.TransportTests.test_timeout_kills_owned_children) ... FAIL",
+    "test_native_host_cli_runs_without_numpy_pillow_or_torch (test_mask_edit.MaskEditCliTests.test_native_host_cli_runs_without_numpy_pillow_or_torch) ... FAIL",
+    "test_real_cli_mask_review_runs_when_numpy_import_is_blocked (test_mask_review.MaskReviewCliTests.test_real_cli_mask_review_runs_when_numpy_import_is_blocked) ... FAIL"
+  ],
+  "tail": [
+    "test_all_transition_types_keep_child_pixels_under_reverse_nonlinear_parent (test_nested_transitions.NestedTransitionCliTests.test_all_transition_types_keep_child_pixels_under_reverse_nonlinear_parent) ... ok",
+    "test_child_render_warnings_remain_visible_with_their_sequence_scope (test_nested_transitions.NestedTransitionCliTests.test_child_render_warnings_remain_visible_with_their_sequence_scope) ... ok",
+    "test_child_transparency_survives_native_surface_before_parent_background (test_nested_transitions.NestedTransitionCliTests.test_child_transparency_survives_native_surface_before_parent_background) ... ok",
+    "test_combined_surface_budget_rejects_before_render_job (test_nested_transitions.NestedTransitionCliTests.test_combined_surface_budget_rejects_before_render_job) ... ok",
+    "test_forward_audio_uses_independent_source_windows_and_authored_envelopes (test_nested_transitions.NestedTransitionCliTests.test_forward_audio_uses_independent_source_windows_and_authored_envelopes) ... ok",
+    "test_grandparent_reverse_keeps_nested_surface_scope_and_child_clock (test_nested_transitions.NestedTransitionCliTests.test_grandparent_reverse_keeps_nested_surface_scope_and_child_clock) ... "
+  ],
+  "counts_include_subtests": true,
+  "terminal_result_present": false
+}

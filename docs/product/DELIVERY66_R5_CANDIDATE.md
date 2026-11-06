@@ -15,12 +15,14 @@
 | U07 | 发布器在显式环境令牌之后读取既有原生gh默认凭据，再回落到Git凭据助手 | 两条实际已有gh凭据已分别通过官方仓库读取200及权限检查；候选新增函数尚未执行，不能把预检当作修正工具验收 |
 | U08 | 六项发布契约方法覆盖显式选择优先、gh／旧助手回落、UTF8／UTF16格式、无效／超限秘密不输出及仅校验时不读凭据／不发布 | 全部只写入候选；没有执行测试、注册、发布或模型推理，等待整轮结束后与其他修正一并验证 |
 | U09 | 扩写三语快速开始生成器：附件摘要／解包、离线安装、两个必需CPU包和两个可选GPU包、分别配置CUDA目录、单Skill注册、真实ID、滤镜选型／应用、音轨编排、渲染、工程包重放及升级限制 | 通过AST静态替换生成三份可审阅手册；不导入候选模块、不调用候选函数、不执行CLI。安装摘要为明确占位符，实际安装／媒体流程仍待整批验收 |
-
 | U10 | 在整轮发现前以实际原生Python的隔离子进程导入NumPy、Pillow、OpenCV和jsonschema，检查应用／解释器身份、支持版本及原生依赖字节 | 原C解释器依赖发现不齐；计划使用既有E盘原生Python，不修改任何共享解释器或依赖。真正导入预检尚未执行 |
 | U11 | 完整回归即时保存错误、失败和失败子测试的完整堆栈，刷盘后继续整套；原unittest结果和最终统计保留 | 当前r4仍等结束才汇总完整堆栈；新日志功能只在草稿，不改运行中的代码，不提前停止或过滤 |
 | U12 | 三项新增交付契约方法覆盖缺OpenCV／不兼容版本、错误应用／解释器／隔离状态，以及真实文件日志在后续测试前可读且保留子测试结果 | 仅写入；内部刻意失败的微型用例用于未来验证日志行为，不冒充产品通过数。集中契约计划为27项，尚未执行 |
+| U13 | 四个模块按实际计算位置导入NumPy／Pillow，保持转场／粒子／生成算法、配方、目录与校验逻辑 | 覆盖CLI→capabilities→float_transitions、CLI→community_cli→community_audio、CLI→generation_cli→video_generation、CLI→procedural_cli→procedural_particles；移除／恢复导入后的数值AST一致，未执行候选 |
+| U14 | 两项新增原生CLI契约在显式禁止NumPy／Pillow／Torch导入时运行版本／能力查询及三类帮助；原两项实际蒙版用例不变 | 当前r4仅观察到两项蒙版CLI失败，完整堆栈尚待结束；新方法未执行，不把静态路径当作最终根因 |
+| U15 | 音频增强诊断补相位类型、非对象进度、有界读取失败和未准备状态，并保持原segment时钟和字段白名单 | 同类静态发现，未声称r4已有对应失败；三项新真实文件方法尚未运行，诊断不改变音频推理或PCM |
 
-草稿共9个代码文件：1个产品模块、4个既有产品测试模块，以及发布器、交付契约模块、交付工具和整轮运行器。另有3份带占位摘要的手册预览。新增产品用例方法5项、交付工具方法9项，两组不合并为测试通过数。逐文件原摘要、草稿摘要、变更理由见[实现清单](../validation/candidates/delivery66-r5/implementation.json)，代码位于同目录的files/。当前冻结产品、测试、6个交付工具及95个正式文件均须保持原字节。
+草稿共15个代码文件：6个产品模块、5个既有产品测试模块，以及发布器、交付契约模块、交付工具和整轮运行器。另有3份带占位摘要的手册预览。新增产品用例方法10项、交付工具方法9项，两组不合并为测试通过数。逐文件原摘要、草稿摘要、变更理由见[实现清单](../validation/candidates/delivery66-r5/implementation.json)，代码位于同目录的files/。当前冻结产品、测试、6个交付工具及95个正式文件均须保持原字节。
 
 后续仍要等待原整轮终态、合并所有新增发现、完成整批代码、源码及安装版回归，之后才执行实际CUDA配乐、工程包／配方重放、真实故障、唯一Skill升级／回滚和新发行。所有G01—G38关闭条件继续保留。
 
@@ -34,4 +36,6 @@
 
 此前8文件草稿及3份手册已完成静态完整性复核；三语共27个PowerShell代码段由原生解析器检查，语法错误为0，15个预览文档链接均可解析。未执行其中命令或候选函数；源码全套仍无终态，正式入口仍63。[当前静态复核](../validation/evidence/delivery66-handoff-20261106-r1/correction-draft-r3/verification.json) · [原生PowerShell语法结果](../validation/evidence/delivery66-handoff-20261106-r1/correction-draft-r3/powershell-syntax.json)。
 
-新增依赖／日志草稿说明见[原生测试依赖与即时错误记录](NATIVE_TEST_DEPENDENCIES_20261106.md)。当前9文件的语法、原用例保留和冻结字节检查见[静态收据](../validation/evidence/delivery66-handoff-20261106-r1/dependency-preflight-draft-r1/verification.json)，未执行任何候选函数或新方法。
+新增依赖／日志草稿说明见[原生测试依赖与即时错误记录](NATIVE_TEST_DEPENDENCIES_20261106.md)。此前9文件的语法、原用例保留和冻结字节检查见[静态收据](../validation/evidence/delivery66-handoff-20261106-r1/dependency-preflight-draft-r1/verification.json)，未执行任何候选函数或新方法。
+
+当前15文件草稿的完整语法、原用例保留、四模块数值AST一致及130模块启动导入图见[静态收据](../validation/evidence/delivery66-handoff-20261106-r1/lazy-startup-draft-r1/verification.json)。导入图没有提前加载NumPy／Pillow／Torch的路径，但未调用候选模块或函数；实际命令和像素／音频结果仍待整批回归。

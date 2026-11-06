@@ -1,0 +1,13 @@
+{
+  "roots": [
+    "cli module",
+    "cli.build_parser",
+    "capabilities.build_capability_manifest"
+  ],
+  "reachable_modules": 145,
+  "expanded_local_function_scopes": 49,
+  "eager_heavy_paths": [],
+  "static_only": true,
+  "candidate_functions_executed": false,
+  "first_simple_graph_missed_module_initializer_calls": true
+}

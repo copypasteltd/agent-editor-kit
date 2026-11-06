@@ -27,7 +27,15 @@ $installed = "E:/video-tools/application-installed"
 & $python -I -S -B -X utf8 "$installed/run.py" doctor
 ```
 
-3. 配置统一Skill使用的模型包。当前配置器要求PACKS目录中已有 `kokoro-zh-en-int8` 与 `opus-zh-en-cpu-int8` 两个CPU包；`kokoro-zh-en-cuda13` 与 `opus-zh-en-cuda12-int8` 是可选GPU包。这些是解包目录，不是ZIP文件。配置器逐包验证后才写入绑定。
+3. 配置基础剪辑模式，将统一Skill绑定到上述安装目录。时间线、滤镜、字幕、预览和渲染可直接使用；配音、翻译和语义模型按下一段另行配置。配置器先备份旧配置，再建立基础绑定并清除旧机器模型路径。
+
+```powershell
+& $python -E -B -X utf8 "$kit/scripts/activate_community_runtime.py" --installed $installed --base-only
+```
+
+可选模型：需要配音／翻译时，先准备已校验的 `kokoro-zh-en-int8` 与 `opus-zh-en-cpu-int8` 两个CPU包；`kokoro-zh-en-cuda13` 与 `opus-zh-en-cuda12-int8` 为可选GPU包。PACKS指向包含这四种解包目录的父目录；配置器要求两个CPU包，并逐包验证后写入模型绑定。本次两个ZIP未包含这些模型包；来源、许可、预期摘要与复现工具见下方链接。
+
+[Model catalog and pinned manifests](https://github.com/copypasteltd/agent-editor-kit/blob/main/product/src/ai_ad_editor/material_data/model-packs.json) · [CPU pack builder](https://github.com/copypasteltd/agent-editor-kit/blob/main/scripts/build_community_model_pack.py) · [GPU pack builder](https://github.com/copypasteltd/agent-editor-kit/blob/main/scripts/build_community_gpu_packs.py) · [Offline pack installer](https://github.com/copypasteltd/agent-editor-kit/blob/main/scripts/install_community_pack.py)
 
 ```powershell
 $packs = "E:/video-tools/model-packs"

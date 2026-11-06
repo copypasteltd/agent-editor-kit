@@ -1,0 +1,26 @@
+{
+  "status": "failed",
+  "cli_version": "0.1.66",
+  "tests": null,
+  "expected_tests": 31,
+  "exit_code": 1,
+  "elapsed_seconds": 0.42256780000025174,
+  "freeze_run": "r5",
+  "delivery_tools_frozen_equal": true,
+  "model_inference": false,
+  "actual_registration": false,
+  "formal_activation": false,
+  "fixture_only": true,
+  "command": [
+    "E:/dev/sandbox/模型配乐/ComfyUI_windows_portable/python_embeded/python.exe",
+    "-E",
+    "-B",
+    "-u",
+    "-X",
+    "utf8",
+    "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\test_delivery66_handoff.py"
+  ],
+  "observed_at_utc": "2026-11-06T02:55:40.086214+00:00",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "9d3684ae59ce901d2f45923c76b13ee12df541afe24fcb4f52c9dbe9e07adda8"
+}

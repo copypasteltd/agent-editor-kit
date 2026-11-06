@@ -1,0 +1,207 @@
+{
+  "source_log": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\delivery66-20261106-r1\\source-all-r4\\tests.stderr",
+  "source_log_sha256": "fa1b66d019e5b80ea2bcfd77d35964f2725687810cbc8b536237e092bda09ca2",
+  "failures": [
+    {
+      "number": 1,
+      "title": "ERROR: test_oversized_progress_is_not_loaded_as_unbounded_json (test_delivery.BoundedMusicProgressTests.test_oversized_progress_is_not_loaded_as_unbounded_json)",
+      "classification": "test-fixture",
+      "root_cause_directly_recorded": true,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_delivery.py\", line 382, in test_oversized_progress_is_not_loaded_as_unbounded_json\n    value = session.read_progress()\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\music_generation_pipeline.py\", line 34, in read_progress\n    value, metadata = _limited_json(self.prepared_directory, 'progress.json', SUMMARY_LIMIT)\n                      ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\pipeline_diagnostics.py\", line 461, in _limited_json\n    raw, metadata = directory.read(name, limit)\n                    ^^^^^^^^^^^^^^\nAttributeError: 'WindowsPath' object has no attribute 'read'\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 2,
+      "title": "ERROR: test_unknown_phase_and_invalid_clock_are_not_forwarded (test_delivery.BoundedMusicProgressTests.test_unknown_phase_and_invalid_clock_are_not_forwarded)",
+      "classification": "test-fixture",
+      "root_cause_directly_recorded": true,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_delivery.py\", line 395, in test_unknown_phase_and_invalid_clock_are_not_forwarded\n    self.assertEqual(session.read_progress()['state'], 'invalid_music_progress')\n                     ~~~~~~~~~~~~~~~~~~~~~^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\music_generation_pipeline.py\", line 34, in read_progress\n    value, metadata = _limited_json(self.prepared_directory, 'progress.json', SUMMARY_LIMIT)\n                      ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\pipeline_diagnostics.py\", line 461, in _limited_json\n    raw, metadata = directory.read(name, limit)\n                    ^^^^^^^^^^^^^^\nAttributeError: 'WindowsPath' object has no attribute 'read'\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 3,
+      "title": "ERROR: test_array_budget_rejects_before_neural_batch (test_lipsync.PixelTests.test_array_budget_rejects_before_neural_batch)",
+      "classification": "missing-host-opencv",
+      "root_cause_directly_recorded": true,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 72, in test_array_budget_rejects_before_neural_batch\n    with self.assertRaisesRegex(ValueError,'BUDGET'):self.run_frames(budget=1,model=Never())\n                                                     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 38, in run_frames\n    metrics=process_frames(source,destination,width=64,height=48,frames=frames,boxes=box(),options=options or planning.options(mask_top=0,feather_pixels=0),predictor=model or Model(),batch_size=2,budget=budget)\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\lipsync_frames.py\", line 13, in process_frames\n    import cv2\nModuleNotFoundError: No module named 'cv2'\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 4,
+      "title": "ERROR: test_feather_stays_inside_explicit_box (test_lipsync.PixelTests.test_feather_stays_inside_explicit_box)",
+      "classification": "missing-host-opencv",
+      "root_cause_directly_recorded": true,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 61, in test_feather_stays_inside_explicit_box\n    original,result,_=self.run_frames(options=planning.options(mask_top=.5,feather_pixels=3))\n                      ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 38, in run_frames\n    metrics=process_frames(source,destination,width=64,height=48,frames=frames,boxes=box(),options=options or planning.options(mask_top=0,feather_pixels=0),predictor=model or Model(),batch_size=2,budget=budget)\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\lipsync_frames.py\", line 13, in process_frames\n    import cv2\nModuleNotFoundError: No module named 'cv2'\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 5,
+      "title": "ERROR: test_fractional_and_hidden_alpha_and_outside_box_are_bit_exact (test_lipsync.PixelTests.test_fractional_and_hidden_alpha_and_outside_box_are_bit_exact)",
+      "classification": "missing-host-opencv",
+      "root_cause_directly_recorded": true,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 43, in test_fractional_and_hidden_alpha_and_outside_box_are_bit_exact\n    original,result,m=self.run_frames(alpha=alpha)\n                      ~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 38, in run_frames\n    metrics=process_frames(source,destination,width=64,height=48,frames=frames,boxes=box(),options=options or planning.options(mask_top=0,feather_pixels=0),predictor=model or Model(),batch_size=2,budget=budget)\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\lipsync_frames.py\", line 13, in process_frames\n    import cv2\nModuleNotFoundError: No module named 'cv2'\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 6,
+      "title": "ERROR: test_invalid_neural_batch_and_semantic_mask_rejected (test_lipsync.PixelTests.test_invalid_neural_batch_and_semantic_mask_rejected)",
+      "classification": "missing-host-opencv",
+      "root_cause_directly_recorded": true,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 77, in test_invalid_neural_batch_and_semantic_mask_rejected\n    with self.assertRaisesRegex(ValueError,'FRAME_CONTRACT'):self.run_frames(model=Bad())\n                                                             ~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 38, in run_frames\n    metrics=process_frames(source,destination,width=64,height=48,frames=frames,boxes=box(),options=options or planning.options(mask_top=0,feather_pixels=0),predictor=model or Model(),batch_size=2,budget=budget)\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\lipsync_frames.py\", line 13, in process_frames\n    import cv2\nModuleNotFoundError: No module named 'cv2'\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 7,
+      "title": "ERROR: test_mask_top_protects_upper_face_with_no_feather (test_lipsync.PixelTests.test_mask_top_protects_upper_face_with_no_feather)",
+      "classification": "missing-host-opencv",
+      "root_cause_directly_recorded": true,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 57, in test_mask_top_protects_upper_face_with_no_feather\n    original,result,m=self.run_frames(options=planning.options(mask_top=.5,feather_pixels=0))\n                      ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 38, in run_frames\n    metrics=process_frames(source,destination,width=64,height=48,frames=frames,boxes=box(),options=options or planning.options(mask_top=0,feather_pixels=0),predictor=model or Model(),batch_size=2,budget=budget)\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\lipsync_frames.py\", line 13, in process_frames\n    import cv2\nModuleNotFoundError: No module named 'cv2'\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 8,
+      "title": "ERROR: test_partial_pipe_reads_produce_the_same_complete_frames (test_lipsync.PixelTests.test_partial_pipe_reads_produce_the_same_complete_frames)",
+      "classification": "missing-host-opencv",
+      "root_cause_directly_recorded": true,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 90, in test_partial_pipe_reads_produce_the_same_complete_frames\n    original,expected,_=self.run_frames();sink=io.BytesIO()\n                        ~~~~~~~~~~~~~~~^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 38, in run_frames\n    metrics=process_frames(source,destination,width=64,height=48,frames=frames,boxes=box(),options=options or planning.options(mask_top=0,feather_pixels=0),predictor=model or Model(),batch_size=2,budget=budget)\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\lipsync_frames.py\", line 13, in process_frames\n    import cv2\nModuleNotFoundError: No module named 'cv2'\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 9,
+      "title": "ERROR: test_semantic_zero_mask_is_identity_even_when_prediction_changes (test_lipsync.PixelTests.test_semantic_zero_mask_is_identity_even_when_prediction_changes)",
+      "classification": "missing-host-opencv",
+      "root_cause_directly_recorded": true,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 54, in test_semantic_zero_mask_is_identity_even_when_prediction_changes\n    a,b,m=self.run_frames(model=Zero());np.testing.assert_array_equal(a,b);self.assertEqual(m['changed_RGB_pixels'],0)\n          ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 38, in run_frames\n    metrics=process_frames(source,destination,width=64,height=48,frames=frames,boxes=box(),options=options or planning.options(mask_top=0,feather_pixels=0),predictor=model or Model(),batch_size=2,budget=budget)\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\lipsync_frames.py\", line 13, in process_frames\n    import cv2\nModuleNotFoundError: No module named 'cv2'\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 10,
+      "title": "ERROR: test_short_write_rejected (test_lipsync.PixelTests.test_short_write_rejected)",
+      "classification": "missing-host-opencv",
+      "root_cause_directly_recorded": true,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 85, in test_short_write_rejected\n    with self.assertRaisesRegex(ValueError,'SHORT_OUTPUT_WRITE'):self.run_frames(sink=Short())\n                                                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 38, in run_frames\n    metrics=process_frames(source,destination,width=64,height=48,frames=frames,boxes=box(),options=options or planning.options(mask_top=0,feather_pixels=0),predictor=model or Model(),batch_size=2,budget=budget)\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\lipsync_frames.py\", line 13, in process_frames\n    import cv2\nModuleNotFoundError: No module named 'cv2'\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 11,
+      "title": "ERROR: test_truncated_and_extra_frames_rejected (test_lipsync.PixelTests.test_truncated_and_extra_frames_rejected) (size=61439)",
+      "classification": "missing-host-opencv",
+      "root_cause_directly_recorded": true,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 67, in test_truncated_and_extra_frames_rejected\n    with self.subTest(size=len(raw)),self.assertRaisesRegex(ValueError,'SOURCE_(TRUNCATED|EXTRA)'):self.run_frames(raw=raw)\n                                                                                                   ~~~~~~~~~~~~~~~^^^^^^^^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 38, in run_frames\n    metrics=process_frames(source,destination,width=64,height=48,frames=frames,boxes=box(),options=options or planning.options(mask_top=0,feather_pixels=0),predictor=model or Model(),batch_size=2,budget=budget)\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\lipsync_frames.py\", line 13, in process_frames\n    import cv2\nModuleNotFoundError: No module named 'cv2'\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 12,
+      "title": "ERROR: test_truncated_and_extra_frames_rejected (test_lipsync.PixelTests.test_truncated_and_extra_frames_rejected) (size=61441)",
+      "classification": "missing-host-opencv",
+      "root_cause_directly_recorded": true,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 67, in test_truncated_and_extra_frames_rejected\n    with self.subTest(size=len(raw)),self.assertRaisesRegex(ValueError,'SOURCE_(TRUNCATED|EXTRA)'):self.run_frames(raw=raw)\n                                                                                                   ~~~~~~~~~~~~~~~^^^^^^^^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 38, in run_frames\n    metrics=process_frames(source,destination,width=64,height=48,frames=frames,boxes=box(),options=options or planning.options(mask_top=0,feather_pixels=0),predictor=model or Model(),batch_size=2,budget=budget)\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\lipsync_frames.py\", line 13, in process_frames\n    import cv2\nModuleNotFoundError: No module named 'cv2'\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 13,
+      "title": "ERROR: test_atomic_progress_rename_during_storage_scan_preserves_complete_transport (test_lipsync.TransportTests.test_atomic_progress_rename_during_storage_scan_preserves_complete_transport)",
+      "classification": "isolated-worker-or-dependent-pipeline",
+      "root_cause_directly_recorded": false,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 207, in test_atomic_progress_rename_during_storage_scan_preserves_complete_transport\n    stage,result=self.execute()\n                 ~~~~~~~~~~~~^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 187, in execute\n    return execute(self.root,job,self.plan,self.source,self.audio,self.adapter,timeout=timeout,cancel_file=marker)\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\lipsync_pipeline.py\", line 138, in execute\n    if any(p.poll()!=0 for p in processes):raise AppError('LIPSYNC_PIPELINE_FAILED','原生口型同步管道失败',exit_code=6,cause=diagnostic.failure_text())\n                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nai_ad_editor.errors.AppError: 原生口型同步管道失败\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 14,
+      "title": "ERROR: test_complete_actual_qtrle_and_float_pcm_transport_and_cleanup (test_lipsync.TransportTests.test_complete_actual_qtrle_and_float_pcm_transport_and_cleanup)",
+      "classification": "isolated-worker-or-dependent-pipeline",
+      "root_cause_directly_recorded": false,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 189, in test_complete_actual_qtrle_and_float_pcm_transport_and_cleanup\n    stage,result=self.execute();self.assertTrue(result['rgba_roundtrip_verified']);self.assertTrue(result['complete_PCM_roundtrip_verified'])\n                 ~~~~~~~~~~~~^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 187, in execute\n    return execute(self.root,job,self.plan,self.source,self.audio,self.adapter,timeout=timeout,cancel_file=marker)\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\lipsync_pipeline.py\", line 138, in execute\n    if any(p.poll()!=0 for p in processes):raise AppError('LIPSYNC_PIPELINE_FAILED','原生口型同步管道失败',exit_code=6,cause=diagnostic.failure_text())\n                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nai_ad_editor.errors.AppError: 原生口型同步管道失败\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 15,
+      "title": "ERROR: test_actual_worker_bypass_complete_PCM_clock_and_owned_cleanup (test_speech_enhancement.NativeTransportTests.test_actual_worker_bypass_complete_PCM_clock_and_owned_cleanup)",
+      "classification": "isolated-worker-or-dependent-pipeline",
+      "root_cause_directly_recorded": false,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_speech_enhancement.py\", line 169, in test_actual_worker_bypass_complete_PCM_clock_and_owned_cleanup\n    staged,result=self.execute(job)\n                  ~~~~~~~~~~~~^^^^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_speech_enhancement.py\", line 166, in execute\n    opts.update(kw);return execute(self.root,job,self.source,self.adapter(),**opts)\n                           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\enhancement_pipeline.py\", line 108, in execute\n    if process.returncode:raise error('WORKER_FAILED','增强工作进程失败',response=response)\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nai_ad_editor.errors.AppError: 增强工作进程失败\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 16,
+      "title": "FAIL: test_catalog_advertises_exact_numeric_channels_and_static_boolean (test_effect_automation.EffectAutomationContractTests.test_catalog_advertises_exact_numeric_channels_and_static_boolean)",
+      "classification": "stale-catalog-assertion",
+      "root_cause_directly_recorded": true,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_effect_automation.py\", line 57, in test_catalog_advertises_exact_numeric_channels_and_static_boolean\n    self.assertEqual(effect_catalog()['catalog_version'], '0.9.0')\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: '0.11.0' != '0.9.0'\n- 0.11.0\n?   ^^\n+ 0.9.0\n?   ^\n\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 17,
+      "title": "FAIL: test_actual_transport_registers_two_editable_linked_tracks_and_rerun_plan (test_lipsync.CLITests.test_actual_transport_registers_two_editable_linked_tracks_and_rerun_plan)",
+      "classification": "isolated-worker-or-dependent-pipeline",
+      "root_cause_directly_recorded": true,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 324, in test_actual_transport_registers_two_editable_linked_tracks_and_rerun_plan\n    self.assertEqual(code,0,value);clips=value['data']['clips'];self.assertEqual(len(clips),2)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\nAssertionError: 6 != 0 : {'ok': False, 'command': 'lipsync.generate', 'request_id': 'req_20261106010022_80f7c0b6', 'operation_id': 'op_20261106010019_83fb90fd', 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'LIPSYNC_PIPELINE_FAILED', 'message': '原生口型同步管道失败', 'path': None, 'retryable': False, 'cause': '<unavailable-failure-text>\\n[vost#0:0/rawvideo @ 000001f6d331b440] Error submitting a packet to the muxer: Broken pipe\\r\\n    Last message repeated 1 times\\r\\n[out#0/rawvideo @ 000001f6d33282c0] Error muxing a packet\\r\\n[out#0/rawvideo @ 000001f6d33282c0] Task finished with error code: -32 (Broken pipe)\\r\\n[out#0/rawvideo @ 000001f6d33282c0] Terminating thread with return code -32 (Broken pipe)\\r\\n[out#0/rawvideo @ 000001f6d33282c0] Error writing trailer: Broken pipe\\r\\n[out#0/rawvideo @ 000001f6d33282c0] Error closing file: Broken pipe\\r\\n\\nTraceback (most recent call last):\\r\\n  File \"<redacted-local-path>\", line 7, in <module>\\r\\n    import numpy as np\\r\\nModuleNotFoundError: No module named \\'numpy\\'\\r\\n\\n', 'operation_id': 'op_20261106010019_83fb90fd', 'diagnostics': {'protocol': 'agent-native-pipeline-diagnostic-v1', 'status': 'stored', 'diagnostic_id': 'diag_a673e0aaaf8e465087e69c7ff580cd3a', 'manifest': 'renders/diagnostics/pipelines/diag_a673e0aaaf8e465087e69c7ff580cd3a/manifest.json', 'manifest_sha256': 'sha256:9aea1acc2cca56cc1fb3686afafdd43487ab2c4421aef1d7bad8c7887ddf46e3', 'warnings': []}}], 'provenance': {'cli_version': '0.1.66', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-11-06T01:00:22.927286Z', 'finished_at': '2026-11-06T01:00:22.927295Z', 'network': 'disabled'}}\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 18,
+      "title": "FAIL: test_validation_failure_after_publication_rolls_back_asset_and_metadata (test_lipsync.CLITests.test_validation_failure_after_publication_rolls_back_asset_and_metadata)",
+      "classification": "isolated-worker-or-dependent-pipeline",
+      "root_cause_directly_recorded": true,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 336, in test_validation_failure_after_publication_rolls_back_asset_and_metadata\n    self.assertEqual(code,2,value);self.assertEqual(before,self.metadata());self.assertFalse((self.root/'assets/derived/generated.mov').exists())\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\nAssertionError: 6 != 2 : {'ok': False, 'command': 'lipsync.generate', 'request_id': 'req_20261106010057_5a059b79', 'operation_id': 'op_20261106010055_d89d2c42', 'status': 'failed', 'data': {}, 'artifacts': [], 'warnings': [], 'errors': [{'code': 'LIPSYNC_PIPELINE_FAILED', 'message': '原生口型同步管道失败', 'path': None, 'retryable': False, 'cause': '<unavailable-failure-text>\\n[vost#0:0/rawvideo @ 00000275a166b440] Error submitting a packet to the muxer: Broken pipe\\r\\n    Last message repeated 1 times\\r\\n[out#0/rawvideo @ 00000275a16782c0] Error muxing a packet\\r\\n[out#0/rawvideo @ 00000275a16782c0] Task finished with error code: -32 (Broken pipe)\\r\\n[out#0/rawvideo @ 00000275a16782c0] Terminating thread with return code -32 (Broken pipe)\\r\\n[out#0/rawvideo @ 00000275a16782c0] Error writing trailer: Broken pipe\\r\\n[out#0/rawvideo @ 00000275a16782c0] Error closing file: Broken pipe\\r\\n\\nTraceback (most recent call last):\\r\\n  File \"<redacted-local-path>\", line 7, in <module>\\r\\n    import numpy as np\\r\\nModuleNotFoundError: No module named \\'numpy\\'\\r\\n\\n', 'operation_id': 'op_20261106010055_d89d2c42', 'diagnostics': {'protocol': 'agent-native-pipeline-diagnostic-v1', 'status': 'stored', 'diagnostic_id': 'diag_340f77b6dead487da1dae7ccd401e694', 'manifest': 'renders/diagnostics/pipelines/diag_340f77b6dead487da1dae7ccd401e694/manifest.json', 'manifest_sha256': 'sha256:4039a3658987c441787f97e2ed5092a1b2abcf2ffc9308cdb749f92acc369399', 'warnings': []}}], 'provenance': {'cli_version': '0.1.66', 'schema_version': '0.1.0', 'engine_version': 'ffmpeg-local', 'started_at': '2026-11-06T01:00:57.222502Z', 'finished_at': '2026-11-06T01:00:57.222509Z', 'network': 'disabled'}}\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 19,
+      "title": "FAIL: test_forged_alpha_response_is_rejected (test_lipsync.TransportTests.test_forged_alpha_response_is_rejected)",
+      "classification": "isolated-worker-or-dependent-pipeline",
+      "root_cause_directly_recorded": false,
+      "traceback": "ai_ad_editor.errors.AppError: 原生口型同步管道失败\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 235, in test_forged_alpha_response_is_rejected\n    with self.assertRaisesRegex(AppError,'协议校验'):self.execute('bad')\n         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^\nAssertionError: \"协议校验\" does not match \"原生口型同步管道失败\"\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 20,
+      "title": "FAIL: test_timeout_kills_owned_children (test_lipsync.TransportTests.test_timeout_kills_owned_children)",
+      "classification": "isolated-worker-or-dependent-pipeline",
+      "root_cause_directly_recorded": false,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_lipsync.py\", line 239, in test_timeout_kills_owned_children\n    self.assertEqual(caught.exception.code,'TIMEOUT');self.assertLess(time.monotonic()-started,15)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 'LIPSYNC_PIPELINE_FAILED' != 'TIMEOUT'\n- LIPSYNC_PIPELINE_FAILED\n+ TIMEOUT\n\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 21,
+      "title": "FAIL: test_native_host_cli_runs_without_numpy_pillow_or_torch (test_mask_edit.MaskEditCliTests.test_native_host_cli_runs_without_numpy_pillow_or_torch)",
+      "classification": "eager-cli-import",
+      "root_cause_directly_recorded": true,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_mask_edit.py\", line 296, in test_native_host_cli_runs_without_numpy_pillow_or_torch\n    self.assertEqual(result.returncode, 0, result.stdout.decode('utf-8')+result.stderr.decode('utf-8'))\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 1 != 0 : Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    from ai_ad_editor.cli import main\n  File \"<string>\", line 5, in guarded\n    return original(name,*args,**kwargs)\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\cli.py\", line 62, in <module>\n    from .capabilities import build_capability_manifest\n  File \"<string>\", line 5, in guarded\n    return original(name,*args,**kwargs)\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\capabilities.py\", line 6, in <module>\n    from .effects import EFFECT_CATALOG_VERSION, effect_catalog\n  File \"<string>\", line 5, in guarded\n    return original(name,*args,**kwargs)\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\effects.py\", line 262, in <module>\n    _EFFECTS += _optical_catalog()\n                ~~~~~~~~~~~~~~~~^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\effects.py\", line 248, in _optical_catalog\n    from .float_optics import SPECS,ALIASES,PROTOCOL\n  File \"<string>\", line 5, in guarded\n    return original(name,*args,**kwargs)\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_optics.py\", line 6, in <module>\n    import numpy as np\n  File \"<string>\", line 4, in guarded\n    if name.split('.')[0] in {'numpy','PIL','torch'}: raise ImportError('optional modules deliberately unavailable')\n                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nImportError: optional modules deliberately unavailable\n\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 22,
+      "title": "FAIL: test_real_cli_mask_review_runs_when_numpy_import_is_blocked (test_mask_review.MaskReviewCliTests.test_real_cli_mask_review_runs_when_numpy_import_is_blocked)",
+      "classification": "eager-cli-import",
+      "root_cause_directly_recorded": true,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_mask_review.py\", line 237, in test_real_cli_mask_review_runs_when_numpy_import_is_blocked\n    self.assertEqual(result.returncode, 0, result.stderr+result.stdout)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 1 != 0 : Traceback (most recent call last):\n  File \"<string>\", line 8, in <module>\n    from ai_ad_editor.cli import main\n  File \"<string>\", line 5, in guarded\n    return original(name,*args,**kwargs)\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\cli.py\", line 62, in <module>\n    from .capabilities import build_capability_manifest\n  File \"<string>\", line 5, in guarded\n    return original(name,*args,**kwargs)\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\capabilities.py\", line 6, in <module>\n    from .effects import EFFECT_CATALOG_VERSION, effect_catalog\n  File \"<string>\", line 5, in guarded\n    return original(name,*args,**kwargs)\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\effects.py\", line 262, in <module>\n    _EFFECTS += _optical_catalog()\n                ~~~~~~~~~~~~~~~~^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\effects.py\", line 248, in _optical_catalog\n    from .float_optics import SPECS,ALIASES,PROTOCOL\n  File \"<string>\", line 5, in guarded\n    return original(name,*args,**kwargs)\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_optics.py\", line 6, in <module>\n    import numpy as np\n  File \"<string>\", line 4, in guarded\n    if name.split('.')[0]=='numpy': raise ImportError('NumPy deliberately unavailable')\n                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nImportError: NumPy deliberately unavailable\n\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 23,
+      "title": "FAIL: test_cli_planning_and_report_validation_do_not_require_host_numpy (test_repair_blend.HarmonizeTests.test_cli_planning_and_report_validation_do_not_require_host_numpy)",
+      "classification": "eager-cli-import",
+      "root_cause_directly_recorded": true,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_repair_blend.py\", line 107, in test_cli_planning_and_report_validation_do_not_require_host_numpy\n    self.assertEqual(result.returncode,0,result.stderr)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 1 != 0 : Traceback (most recent call last):\n  File \"<string>\", line 8, in <module>\n    from ai_ad_editor.cli import build_parser\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\cli.py\", line 62, in <module>\n    from .capabilities import build_capability_manifest\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\capabilities.py\", line 6, in <module>\n    from .effects import EFFECT_CATALOG_VERSION, effect_catalog\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\effects.py\", line 262, in <module>\n    _EFFECTS += _optical_catalog()\n                ~~~~~~~~~~~~~~~~^^\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\effects.py\", line 248, in _optical_catalog\n    from .float_optics import SPECS,ALIASES,PROTOCOL\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor\\float_optics.py\", line 6, in <module>\n    import numpy as np\n  File \"<string>\", line 6, in find_spec\n    if fullname=='numpy' or fullname.startswith('numpy.'):raise ModuleNotFoundError('NumPy deliberately unavailable in host')\n                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: NumPy deliberately unavailable in host\n\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 24,
+      "title": "FAIL: test_discovery_separates_real_hsl_kernel_from_native_command_channels (test_selective_hsl.SelectiveContractTests.test_discovery_separates_real_hsl_kernel_from_native_command_channels)",
+      "classification": "stale-catalog-assertion",
+      "root_cause_directly_recorded": true,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_selective_hsl.py\", line 105, in test_discovery_separates_real_hsl_kernel_from_native_command_channels\n    self.assertEqual(effect_catalog()['count'],46);self.assertEqual(effect_catalog()['catalog_version'],'0.9.0')\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 51 != 46\n\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    },
+    {
+      "number": 25,
+      "title": "FAIL: test_catalog_and_manifest_advertise_exactly_fourteen_new_channels (test_spatial_automation.SpatialContractTests.test_catalog_and_manifest_advertise_exactly_fourteen_new_channels)",
+      "classification": "stale-catalog-assertion",
+      "root_cause_directly_recorded": true,
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\dev\\sandbox\\AI广告剪辑\\product\\tests\\test_spatial_automation.py\", line 116, in test_catalog_and_manifest_advertise_exactly_fourteen_new_channels\n    self.assertEqual(effect_catalog()['count'],46)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 51 != 46\n\n----------------------------------------------------------------------\nRan 4114 tests in 12051.879s\n\nFAILED (failures=10, errors=15)\n",
+      "next_state": "correction-written-awaiting-whole-regression"
+    }
+  ],
+  "unresolved_causes_require_next_full_regression": true
+}

@@ -1,0 +1,36 @@
+{
+  "status": "failed",
+  "started_at_utc": "2026-11-05T23:06:27.770449+00:00",
+  "command": [
+    "C:\\Python313\\python.exe",
+    "-E",
+    "-B",
+    "-u",
+    "-X",
+    "utf8",
+    "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\delivery66.py",
+    "tests",
+    "--run",
+    "r4",
+    "--freeze-run",
+    "r4"
+  ],
+  "supervisor": {
+    "pid": 7124,
+    "creation_filetime": 134383935876323644,
+    "executable": "C:\\Python313\\python.exe"
+  },
+  "result": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\delivery66-20261106-r1\\source-all-r4\\verification.json",
+  "runner_sha256": "40bf79f471bd71e23c182aed5931573bdf24392dce443904dcb692f8c0d0633f",
+  "original_test_selection": "whole-discovery",
+  "child": {
+    "pid": 26952,
+    "creation_filetime": 134383935877777703,
+    "executable": "C:\\Python313\\python.exe"
+  },
+  "exit_code": 1,
+  "finished_at_utc": "2026-11-06T02:28:46.994135+00:00",
+  "elapsed_seconds": 12139.217725899998,
+  "terminal_result_present": true,
+  "terminal_result_sha256": "cc775e4393cd787eb31d23a4835a223585dd5c6bd6da98605a925f6c61ec4f0e"
+}

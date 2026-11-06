@@ -1,21 +1,22 @@
-# 原生测试依赖与即时错误记录草稿
+# 原生完整回归的依赖与即时错误记录
 
-2026-11-06，Asia/Taipei。属于CLI66下一批隔离修正，尚未合入、安装或执行新契约；正式Skill仍CLI0.1.63／local61／r58。当前r4整套由原进程继续，未过滤／重启。本文不是新模型推理或自然质量验收。
+2026-11-06，Asia/Taipei。20文件修正已一次写齐、备份并应用，r5冻结后集中检查。31项交付契约全通过；两组实际隔离依赖预检通过，产品整套实际发现4,124项，仍运行、无终态。正式Skill仍CLI0.1.63／local61／r58。没有修改共享解释器、._pth或安装包，没有创建虚拟环境，也没有Docker／WSL。
 
-| 编号 | 实际发现或已写草稿 | 边界／待办 |
+| 编号 | 原问题／已完成代码 | 实际结果与限制 |
 | --- | --- | --- |
-| N01 | C:/Python313/python.exe正常模式能发现用户目录NumPy2.4.2及Pillow12.1.0，但找不到cv2；实际`-I`模式也找不到NumPy／Pillow／cv2 | 为importlib发现／发行元数据查询，不是导入成功或最终异常根因。口型像素路径函数实际导入cv2；合成协议worker使用`-I`，所以控制器可见用户库不足以保证子进程可用 |
-| N02 | 现有E盘原生Python3.13.14在`-I`下能发现NumPy2.5.3、Pillow12.3.0、OpenCV5.0.0.93和jsonschema4.26.0 | 路径为E:/dev/sandbox/模型配乐/ComfyUI_windows_portable/python_embeded/python.exe；只查发现和发行元数据，未导入cv2或运行测试。未修改该解释器、._pth或共享库，未创建虚拟环境 |
-| N03 | 隔离整轮运行器先实际导入四项依赖，再核对应用文件／CLI版本／解释器／隔离状态、支持版本及原生扩展字节 | 真正的预检尚未执行。应用离线包内固定NumPy2.4.2／Pillow12.1.0与现有E解释器基础版本不同，后续源码及安装组分别记录实际来源与摘要；不宣称整个依赖环境字节相同 |
-| N04 | 新LiveRegressionResult在每次错误／失败／失败子测试时立即写完整堆栈并刷盘，继续未过滤整套；保留unittest最终汇总 | 当前r4仍使用原运行器，不能因此获得新日志。没有提前停止、跳过或改门槛；新行为尚未动态核验 |
-| N05 | 三项新增交付契约方法检查缺依赖／不兼容版本、错误应用／解释器／隔离状态，及完整堆栈在后续用例前可读且结果未丢失 | 全部仅代码草稿。含故意错误／失败的微型内层用例，未来用于核验日志，不能计作产品功能通过；完整交付组计划27项，尚未执行 |
-| N06 | 当前15个代码候选及3份手册维持隔离；产品546项冻结文件、6个现用工具及95个正式文件须保持原字节 | 先等r4最终堆栈、补齐所有发现并一次完成代码，再合入／冻结r5，集中契约和源码全套；后续安装／实际音乐／故障／Skill切换／发布顺序不变 |
-| N07 | 原r4又观察到两个无NumPy／Pillow／Torch的蒙版CLI用例失败；静态图找到四条提前加载路径 | 尚无最终堆栈；可确认加载机制，但不替代整轮原因判定。下一批保持原用例和断言 |
-| N08 | 四模块仅移动数值／图像导入至计算函数；剔除导入后的算法AST与原版相同，静态可达130模块的启动图无重依赖路径 | 没有导入或执行候选，不宣称实际蒙版、能力查询、帮助或数学输出已通过 |
-| N09 | 音频增强进度补同类有界处理；新增两项CLI和三项真实文件产品方法 | 三个音频方法为静态同类发现的预期验证，当前未观察对应r4错误；产品新增10项、交付新增9项，分组核验 |
+| N01 | 原C测试Python缺OpenCV；其隔离模式看不到用户目录NumPy／Pillow | 原r4最终10条cv2异常、2条CLI明确缺NumPy；另外5个关联传输结果没有直接cause，不能扩大归因 |
+| N02 | 使用既有E:/dev/sandbox/模型配乐/ComfyUI_windows_portable/python_embeded/python.exe | 原生解释器，无新安装、共享依赖改写或虚拟化；实际导入通过，不再只是发现元数据 |
+| N03 | 应用profile实际-I导入并核对CLI0.1.66及准确应用路径 | NumPy2.5.3、Pillow12.3.0、OpenCV模块5.0.0、jsonschema4.26.0，实际来源均独立记录 |
+| N04 | bare-worker不注入应用目录，独立-I导入相同4依赖 | 实际通过，application_file/version均无值；防止控制器可用但隔离worker不可用 |
+| N05 | 锁定解释器、模块入口、嵌套PYD／DLL和随附库 | 每profile36文件；加Rubber Band／Node／Chromium等实际工具后43文件。结束时再次逐字节核对 |
+| N06 | 即时刷盘完整堆栈、失败子测试及有界AppError.code/cause/hint，继续全部用例 | 日志契约通过；不改变结果／门槛、不fail-fast、不跳过。故意失败的内层5项不算产品通过 |
+| N07 | 8模块按计算需要加载NumPy／Pillow | 原3项轻量CLI失败来自effects初始化目录；扩大静态图145模块／49函数作用域，0提前重依赖路径。静态图不替代实际CLI |
+| N08 | 音乐与音频增强畸形进度有界诊断；原测试夹具和3个目录预期修正 | 新增10项产品方法进入完整4,124项；没有逐模块提前测试或放宽原数值／像素断言 |
+| N09 | 完整交付契约31项，新增13项 | 实际全部通过，零失败／错误／跳过；仅工具／文件／CLI夹具，不算真实模型推理或正式注册 |
+| N10 | 嵌入式Python不自动加入交付脚本目录 | contracts-r3启动前失败，无发现数；仅显式加入交付工具目录后完整31项通过，不注入产品路径、不改共享Python |
 
-静态实现未调用候选函数或测试方法。当前测试发现4,114项，下一批产品新增方法10项；交付工具新增9项与产品发现数分开，不作通过数相加。日志错误行含子测试，最终计数以终态收据为准。
+应用离线包固定NumPy2.4.2／Pillow12.1.0，源码本轮所用既有环境版本不同。后续安装全套仍须分别记录实际应用来源与依赖字节，不能宣称源码与安装环境完全相同，也不能用源测试替代安装验收。
 
-[静态收据](../validation/evidence/delivery66-handoff-20261106-r1/dependency-preflight-draft-r1/verification.json) · [候选范围](DELIVERY66_R5_CANDIDATE.md) · [完整未完成内容](UNFINISHED_20261106.md) · [交付顺序](DELIVERY66_HANDOFF.md)。原G01—G38仍全部保留。
+[当前集中核验](../validation/evidence/delivery66-handoff-20261106-r1/correction-batch-review-r1/verification.json) · [应用隔离profile](../validation/evidence/delivery66-20261106-r1/source-all-r5/native-isolated-dependencies.json) · [bare-worker profile](../validation/evidence/delivery66-20261106-r1/source-all-r5/native-bare-worker-dependencies.json) · [实际依赖总清单](../validation/evidence/delivery66-20261106-r1/source-all-r5/native-dependencies.json) · [31项终态](../validation/evidence/delivery66-handoff-20261106-r1/contracts-r4/verification.json)。
 
-新增按需加载及音频诊断的[当前15文件静态证据](../validation/evidence/delivery66-handoff-20261106-r1/lazy-startup-draft-r1/verification.json)保留原546／6／95冻结边界。
+原r4已完成4,114项，10失败／15错误／0跳过，记录永久保留。[原结果及归因置信边界](DELIVERY66_R4_RESULTS.md) · [20文件范围](DELIVERY66_R5_CANDIDATE.md) · [完整未完成内容](UNFINISHED_20261106.md) · [后续执行顺序](DELIVERY66_HANDOFF.md)。G01—G38仍保留原关闭条件。

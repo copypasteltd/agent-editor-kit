@@ -1,41 +1,42 @@
-# CLI66整轮结果待汇总期间的隔离修正候选
+# CLI66完整修正批次与集中核验
 
-2026-11-06，Asia/Taipei。当前r4源码全套仍由原生监督执行，发现4,114项；日志已观察到进度诊断、目录断言和口型相关的多项错误／失败，无最终统计。正式入口保持CLI0.1.63／local61／r58。
+2026-11-06，Asia/Taipei。原r4已完成4,114项：10失败、15错误、0跳过，完整结果及25条堆栈均保留。全部修正代码一次写齐后，20个目标文件已备份、预检并写入；r5冻结546个产品／用例／依赖文件、7个工具和95个正式文件。正式入口仍CLI0.1.63／local61／r58。
 
-本页记录下一批代码草稿，不是已合入、已安装或已验收功能。先保留当前整轮所有结果，再一次补完全部发现项、合入并冻结修正，然后集中回归；草稿期间未启动逐模块测试。
+当前仓库检查点提供files/下完整候选副本和证据，本地20个目标文件已应用；应用源码提交待完整产品回归通过。
 
-| 编号 | 候选中的完整代码 | 证据与边界 |
+当前31项完整交付工具契约已实际通过，零失败／错误／跳过。两组真实隔离导入均通过；未过滤产品全套r5实际发现4,124项，仍在运行，没有通过终态。下表“代码已完成”不等于新版安装、模型推理或正式交付已经通过。
+
+| 编号 | 已完成代码 | 当前验证及保留边界 |
 | --- | --- | --- |
-| U01 | 两项诊断用例通过真实Session.prepare建立受控Directory，保留原用例名称及拒绝断言 | 静态调用链显示旧夹具直接赋Path，但有界读取要求Directory.read；两项ERROR最终堆栈仍待整轮输出 |
-| U02 | 三个测试文件的特效目录精确预期更新为0.11.0／51项 | 当前产品及CLI用例已是该版本；保留原数值通道、布尔限制、独立像素参考及误差门槛。仅一项当前已报FAIL，另外两处为同类静态发现，不宣称执行过 |
-| U03 | 音乐进度先验证phase为字符串，再执行白名单查找；非对象JSON明确为无效 | 避免列表／对象等异常字段触发类型错误；不放宽done／total／worker_pid类型及范围 |
-| U04 | 只返回phase、done、total和worker_pid四个核准字段 | 忽略伪造state、私有路径和未知额外字段；保持有效工作进度协议 |
-| U05 | 未准备状态、非普通文件／受控读取失败返回明确且有界的诊断状态 | 诊断失败不取代原业务错误；仍使用现有受控文件读取，未放宽软链接／重解析点等保护 |
-| U06 | 五项新增真实文件契约方法覆盖字段注入、错误类型、非对象JSON、损坏数据、非普通路径及未准备状态 | 只写入草稿，尚未执行；没有模型推理、自然质量或正式Skill验收 |
-| U07 | 发布器在显式环境令牌之后读取既有原生gh默认凭据，再回落到Git凭据助手 | 两条实际已有gh凭据已分别通过官方仓库读取200及权限检查；候选新增函数尚未执行，不能把预检当作修正工具验收 |
-| U08 | 六项发布契约方法覆盖显式选择优先、gh／旧助手回落、UTF8／UTF16格式、无效／超限秘密不输出及仅校验时不读凭据／不发布 | 全部只写入候选；没有执行测试、注册、发布或模型推理，等待整轮结束后与其他修正一并验证 |
-| U09 | 扩写三语快速开始生成器：附件摘要／解包、离线安装、两个必需CPU包和两个可选GPU包、分别配置CUDA目录、单Skill注册、真实ID、滤镜选型／应用、音轨编排、渲染、工程包重放及升级限制 | 通过AST静态替换生成三份可审阅手册；不导入候选模块、不调用候选函数、不执行CLI。安装摘要为明确占位符，实际安装／媒体流程仍待整批验收 |
-| U10 | 在整轮发现前以实际原生Python的隔离子进程导入NumPy、Pillow、OpenCV和jsonschema，检查应用／解释器身份、支持版本及原生依赖字节 | 原C解释器依赖发现不齐；计划使用既有E盘原生Python，不修改任何共享解释器或依赖。真正导入预检尚未执行 |
-| U11 | 完整回归即时保存错误、失败和失败子测试的完整堆栈，刷盘后继续整套；原unittest结果和最终统计保留 | 当前r4仍等结束才汇总完整堆栈；新日志功能只在草稿，不改运行中的代码，不提前停止或过滤 |
-| U12 | 三项新增交付契约方法覆盖缺OpenCV／不兼容版本、错误应用／解释器／隔离状态，以及真实文件日志在后续测试前可读且保留子测试结果 | 仅写入；内部刻意失败的微型用例用于未来验证日志行为，不冒充产品通过数。集中契约计划为27项，尚未执行 |
-| U13 | 四个模块按实际计算位置导入NumPy／Pillow，保持转场／粒子／生成算法、配方、目录与校验逻辑 | 覆盖CLI→capabilities→float_transitions、CLI→community_cli→community_audio、CLI→generation_cli→video_generation、CLI→procedural_cli→procedural_particles；移除／恢复导入后的数值AST一致，未执行候选 |
-| U14 | 两项新增原生CLI契约在显式禁止NumPy／Pillow／Torch导入时运行版本／能力查询及三类帮助；原两项实际蒙版用例不变 | 当前r4仅观察到两项蒙版CLI失败，完整堆栈尚待结束；新方法未执行，不把静态路径当作最终根因 |
-| U15 | 音频增强诊断补相位类型、非对象进度、有界读取失败和未准备状态，并保持原segment时钟和字段白名单 | 同类静态发现，未声称r4已有对应失败；三项新真实文件方法尚未运行，诊断不改变音频推理或PCM |
+| U01 | 两个诊断夹具改用真实Session.prepare建立受控Directory | 原r4堆栈已证实Path.read错误；保留原用例及拒绝断言，产品r5待终态 |
+| U02 | 三个目录精确预期更新为既有0.11.0／51 | 原r4三项失败均已确认；数值通道、布尔限制、像素参考和误差阈值不变 |
+| U03 | 音乐phase先验字符串再查白名单，非对象JSON明确无效 | 新产品方法5项进入完整r5，不冒充模型推理 |
+| U04 | 音乐仅转发phase／done／total／worker_pid四个核准字段 | 不接受伪造state、私有路径和未知字段 |
+| U05 | 未准备、非普通文件、有界读取失败保留明确诊断状态 | 原受控Directory读取及重解析保护不放宽，不替代原业务错误 |
+| U06 | 5项真实文件音乐进度方法覆盖注入、畸形、非对象、损坏和不可用 | 计入4,124产品发现数；未拿静态编译当作功能通过 |
+| U07 | 显式令牌→已有原生gh默认凭据→Git助手的发布身份顺序 | 已有真实只读仓库权限证据；31项契约验证选择，不等于公开附件上传 |
+| U08 | 6项发布契约覆盖优先级、回落、UTF8／UTF16、超限秘密及只校验模式 | 已在完整31项交付组通过；不读取或输出真实秘密，不创建发行 |
+| U09 | 三语快速开始覆盖摘要、离线安装、基础配置、可选模型／CUDA、单Skill、选型、音轨、渲染和工程包 | 当前30段PowerShell原生语法0错误；摘要仍占位，命令流程尚待新包独立验收 |
+| U10 | 整轮前实际导入NumPy／Pillow／OpenCV／jsonschema，锁定应用、解释器、版本及原生字节 | 应用profile已实际通过；依赖版本与安装包内固定版本分别记录 |
+| U11 | 错误／失败／子测试即时完整堆栈刷盘，后续用例继续执行 | 真实文件契约通过；保留原unittest全部断言、最终统计及退出码 |
+| U12 | 3项依赖／日志契约覆盖缺库、错版本、错应用／解释器／隔离及即时子测试 | 已在31项交付组通过；内层故意失败的5个用例不算产品通过数 |
+| U13 | 转场／社区音频／视频生成／粒子4模块在计算位置加载NumPy／Pillow | 剔除导入后的数值／校验AST一致；实际算法和CLI由整套回归验证 |
+| U14 | 新增2项实际原生CLI方法，显式禁NumPy／Pillow／Torch时执行版本、能力及3类帮助 | 原蒙版／修复3项失败用例保留；新增2项计入产品全套，尚无整轮终态 |
+| U15 | 音频增强进度同类有界处理，保留segment时钟及字段白名单；新增3项真实文件方法 | 为静态同类修正，不声称原r4已有对应进度缺陷 |
+| U16 | 递归锁定模块PYD／DLL及NumPy／Pillow随附库 | 实际依赖profile各36文件，合并外部工具后43文件；测试结束须仍一致 |
+| U17 | 应用与不注入应用目录的bare-worker分别实际隔离导入并拒绝公共文件变更 | 两profile已通过，防止控制器可导入而隔离worker缺库 |
+| U18 | 最终r4动态堆栈发现的光学／辉光／颜色信号／曲线4模块延后加载 | 保留数值AST和float_curves.np检查接口；扩展静态图145模块／49函数作用域，0提前重依赖路径；实际仍待全套 |
+| U19 | --base-only基础配置不需模型包；备份旧配置、清除外机模型路径、拒绝矛盾参数 | 4项新增真实文件／CLI交付契约全部通过；既有--packs仍强制安装版验包 |
+| U20 | 便携验收调用真实基础配置器后再注册／音画重放；错误日志附有界AppError代码／cause／hint | 日志契约通过；新包尚未构建，独立便携验收、真实模型及正式注册仍待执行 |
 
-草稿共15个代码文件：6个产品模块、5个既有产品测试模块，以及发布器、交付契约模块、交付工具和整轮运行器。另有3份带占位摘要的手册预览。新增产品用例方法10项、交付工具方法9项，两组不合并为测试通过数。逐文件原摘要、草稿摘要、变更理由见[实现清单](../validation/candidates/delivery66-r5/implementation.json)，代码位于同目录的files/。当前冻结产品、测试、6个交付工具及95个正式文件均须保持原字节。
+20个文件为10个产品模块、5个原产品测试文件、5个交付／配置工具。新增产品方法10项，新增交付方法13项，交付完整组31项；两组不合并为通过数。完整逐文件原／候选摘要见[实现清单](../validation/candidates/delivery66-r5/implementation.json)，完整备份保存在E盘local/agent-ffmpeg/delivery66-correction-apply-r1/backups。
 
-后续仍要等待原整轮终态、合并所有新增发现、完成整批代码、源码及安装版回归，之后才执行实际CUDA配乐、工程包／配方重放、真实故障、唯一Skill升级／回滚和新发行。所有G01—G38关闭条件继续保留。
+第一次交付组启动未发现任何用例：既有嵌入式原生Python不自动把脚本目录加入sys.path，导致找不到同目录交付工具。未修改解释器、._pth或产品代码；显式加入交付工具目录后重跑完整31项通过。该启动失败保留为contracts-r3，不计产品回归失败或通过。
 
-[本次实际运行观察](../validation/evidence/delivery66-handoff-20261106-r1/correction-draft-r1/observation.json) · [完整交付顺序](DELIVERY66_HANDOFF.md) · [完整未完成内容](UNFINISHED_20261106.md)。
+[20文件实际写入](../validation/evidence/delivery66-handoff-20261106-r1/correction-application-r1/verification.json) · [r5完整冻结](../validation/evidence/delivery66-20261106-r1/freeze-r5/verification.json) · [31项完整交付结果](../validation/evidence/delivery66-handoff-20261106-r1/contracts-r4/verification.json) · [31项原日志](../validation/evidence/delivery66-handoff-20261106-r1/contracts-r4/tests.stderr) · [实际依赖和运行观察](../validation/evidence/delivery66-handoff-20261106-r1/correction-batch-review-r1/verification.json) · [30段原生语法检查](../validation/evidence/delivery66-handoff-20261106-r1/quickstart-syntax-r2/verification.json)。
 
-[已有gh凭据官方接口只读验证](../validation/evidence/delivery66-handoff-20261106-r1/release-identity-r1/verification.json)。
+[简体流程草稿](../validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.md) · [繁體流程草稿](../validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.zh-TW.md) · [English workflow draft](../validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.en.md)。草稿明确保留BUILD_MANIFEST_REQUIRED，不可当作已发行包摘要。
 
-此前7文件检查点通过语法、原用例名称保留、摘要及三语README旧编号行保留检查；546个冻结文件、6个当前工具和95个正式文件当时均相同。该历史静态复核不覆盖后加的快速开始生成器，也不表示新方法已执行。[原7文件静态复核](../validation/evidence/delivery66-handoff-20261106-r1/correction-draft-r2/verification.json)。
+下一步须等完整产品终态，再构建离线候选、安装版完整回归、新版CUDA配乐、配方／整段RGBA与PCM重放、真实取消／超时／提交冲突、唯一Skill正式升级／显式回滚／重激活，以及匹配源提交的新发行。G01—G38关闭条件继续保留。
 
-[简体流程草稿](../validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.md) · [繁體流程草稿](../validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.zh-TW.md) · [English workflow draft](../validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.en.md)。
-
-此前8文件草稿及3份手册已完成静态完整性复核；三语共27个PowerShell代码段由原生解析器检查，语法错误为0，15个预览文档链接均可解析。未执行其中命令或候选函数；源码全套仍无终态，正式入口仍63。[当前静态复核](../validation/evidence/delivery66-handoff-20261106-r1/correction-draft-r3/verification.json) · [原生PowerShell语法结果](../validation/evidence/delivery66-handoff-20261106-r1/correction-draft-r3/powershell-syntax.json)。
-
-新增依赖／日志草稿说明见[原生测试依赖与即时错误记录](NATIVE_TEST_DEPENDENCIES_20261106.md)。此前9文件的语法、原用例保留和冻结字节检查见[静态收据](../validation/evidence/delivery66-handoff-20261106-r1/dependency-preflight-draft-r1/verification.json)，未执行任何候选函数或新方法。
-
-当前15文件草稿的完整语法、原用例保留、四模块数值AST一致及130模块启动导入图见[静态收据](../validation/evidence/delivery66-handoff-20261106-r1/lazy-startup-draft-r1/verification.json)。导入图没有提前加载NumPy／Pillow／Torch的路径，但未调用候选模块或函数；实际命令和像素／音频结果仍待整批回归。
+此前7／8／9／15文件是历史静态快照，分别保留在correction-draft-r2、correction-draft-r3、dependency-preflight-draft-r1及lazy-startup-draft-r1；其中130模块图遗漏模块初始化函数，不能替代本轮最终堆栈或实际测试。[原r4完整结果](DELIVERY66_R4_RESULTS.md) · [完整未完成内容](UNFINISHED_20261106.md) · [集中执行顺序](DELIVERY66_HANDOFF.md)。

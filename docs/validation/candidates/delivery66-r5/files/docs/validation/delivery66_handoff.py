@@ -269,49 +269,52 @@ def accepted(kind, run, context):
 def quickstart(context, language):
     manifest = context['candidate']['manifest_sha256']
     text = {
-        'zh': {
-            'intro': '原生Windows CPython3.13 x64应用；唯一公开入口为 `$agent-ffmpeg-local-editor`，包含17个内部模块。应用ZIP不包含Python、FFmpeg／ffprobe、驱动、模型权重或完整音乐运行库。先准备本机依赖；不使用Docker、WSL或虚拟环境。',
-            'download': '1. 下载本次Release的两个ZIP、SHA256SUMS.txt及本语言快速开始到同一目录。把下面的路径改为实际路径。逐项比较计算摘要与清单，全部匹配后解包到新目录；后续安装器还会校验应用内部清单。',
-            'install': '2. 离线安装应用。目标目录必须是新路径。此步骤不下载模型；模型尚未准备时，可先通过安装版入口执行version／doctor及基础剪辑命令。',
-            'models': '3. 配置统一Skill使用的模型包。当前配置器要求PACKS目录中已有 `kokoro-zh-en-int8` 与 `opus-zh-en-cpu-int8` 两个CPU包；`kokoro-zh-en-cuda13` 与 `opus-zh-en-cuda12-int8` 是可选GPU包。这些是解包目录，不是ZIP文件。配置器逐包验证后才写入绑定。',
-            'gpu': '若使用GPU包，将配置命令替换为下面的形式，并填写对应的实际DLL目录。配音与翻译的CUDA版本要求不同；不要把两个目录混写。后续使用 `--device auto` 优先选择配置的GPU，并检查返回的实际设备／provider及CPU回落说明。',
-            'register': '4. 注册唯一Skill并检查实际安装版本。已有同名入口且指向其他位置时，注册器会保留并拒绝替换；升级请先阅读随包交付说明，不手工删除不明目录。Agent外层只需指定 `$agent-ffmpeg-local-editor`。',
-            'edit': '5. 创建工程并导入自己的授权素材。下例中的视频、图片、字幕、配音文本和changes.json必须实际存在。读取导入返回的 `data.asset.id`，再依据schema及帮助编写changes.json；不能照抄旧案例的随机ID。视频和音频轨须分别编排，先预览实际滤镜候选并记录客户选择，再合成时间线。',
-            'voice': '可选配音／翻译示例会真实运行模型，需先准备输入文件、模型包与配置，并使用新的asset ID。完整音频、发音、翻译语义和时长仍需复核。生成后用真实音频资产ID编写voice-changes.json，将声音显式编入音轨，再执行下面最后一条compose；翻译字幕也须按目标轨道编排。',
-            'replay': '6. 验证、预览、渲染并检查实际成片，再导出可编辑工程包。导入使用新的目标目录；重新渲染后分别检查画面、完整音轨、时钟及配方。JSON的ok／status／errors／warnings／artifacts与进程退出码需要同时检查，质量检查不能代替完整播放及听审。',
-            'music': '神经音乐是额外能力，需要显式登记已有本地适配器、原生运行库和权重；上述四包不能替代音乐模型。先阅读[神经音乐说明](skills/agent-ffmpeg-local-editor/references/neural-music.md)。普通谱面合成、循环修复和神经生曲的含义不同。',
-            'links': '[Skill详情与17模块](skills/agent-ffmpeg-local-editor/SKILL.md) · [滤镜客户选型](skills/agent-ffmpeg-local-editor/references/client-look-selection.md) · [配音／翻译／音频](skills/agent-ffmpeg-local-editor/references/community-materials.md) · [升级、恢复及回滚](docs/product/DELIVERY_CONTROLLER.md)',
-            'limits': '发布成片前补充素材／模型／声音用途的权利证据，并执行rights check。render的--publish仅执行本地权利门禁，不上传平台。模型生成内容仍须逐项审查；本包不附未审核模型音频。同机新目录验收不等于干净主机或跨机器通过，完整剪映等价及原G01—G38条件继续开放。',
-        },
-        'zh-TW': {
-            'intro': '原生Windows CPython3.13 x64應用；唯一公開入口為 `$agent-ffmpeg-local-editor`，包含17個內部模組。應用ZIP不包含Python、FFmpeg／ffprobe、驅動、模型權重或完整音樂執行庫。先準備本機依賴；不使用Docker、WSL或虛擬環境。',
-            'download': '1. 下載本次Release的兩個ZIP、SHA256SUMS.txt及本語言快速開始至同一目錄。將以下路徑改為實際路徑。逐項比較計算摘要與清單，全部相符後解壓縮至新目錄；後續安裝器還會核對應用內部清單。',
-            'install': '2. 離線安裝應用。目標目錄必須是新路徑。此步驟不下載模型；模型尚未準備時，可先透過安裝版入口執行version／doctor及基礎剪輯命令。',
-            'models': '3. 設定統一Skill使用的模型包。目前設定器要求PACKS目錄中已有 `kokoro-zh-en-int8` 與 `opus-zh-en-cpu-int8` 兩個CPU包；`kokoro-zh-en-cuda13` 與 `opus-zh-en-cuda12-int8` 是可選GPU包。這些是解壓縮目錄，不是ZIP檔案。設定器逐包驗證後才寫入綁定。',
-            'gpu': '若使用GPU包，將設定命令替換為以下形式，並填入對應的實際DLL目錄。配音與翻譯的CUDA版本要求不同；不要混用兩個目錄。後續使用 `--device auto` 優先選擇設定的GPU，並檢查回傳的實際裝置／provider及CPU回落說明。',
-            'register': '4. 註冊唯一Skill並檢查實際安裝版本。已有同名入口且指向其他位置時，註冊器會保留並拒絕替換；升級請先閱讀隨包交付說明，不手動刪除不明目錄。Agent外層只需指定 `$agent-ffmpeg-local-editor`。',
-            'edit': '5. 建立專案並匯入自己的授權素材。以下影片、圖片、字幕、配音文字和changes.json必須實際存在。讀取匯入回傳的 `data.asset.id`，再依schema及說明編寫changes.json；不能照抄舊案例的隨機ID。影片與音訊軌須分別編排，先預覽實際濾鏡候選並記錄客戶選擇，再合成時間線。',
-            'voice': '可選配音／翻譯範例會實際執行模型，須先準備輸入檔案、模型包與設定，並使用新的asset ID。完整音訊、發音、翻譯語意與時長仍須複核。生成後用實際音訊資產ID編寫voice-changes.json，將聲音明確編入音軌，再執行以下最後一條compose；翻譯字幕也須依目標軌道編排。',
-            'replay': '6. 驗證、預覽、算圖並檢查實際成片，再匯出可編輯專案包。匯入使用新的目標目錄；重新算圖後分別檢查畫面、完整音軌、時鐘與配方。JSON的ok／status／errors／warnings／artifacts與程序結束碼需要同時檢查，品質檢查不能代替完整播放及聽審。',
-            'music': '神經音樂是額外能力，需要明確登記既有本機適配器、原生執行庫與權重；上述四包不能替代音樂模型。先閱讀[神經音樂說明](skills/agent-ffmpeg-local-editor/references/neural-music.md)。一般譜面合成、循環修復與神經生曲的含義不同。',
-            'links': '[Skill詳情與17模組](skills/agent-ffmpeg-local-editor/SKILL.md) · [濾鏡客戶選型](skills/agent-ffmpeg-local-editor/references/client-look-selection.md) · [配音／翻譯／音訊](skills/agent-ffmpeg-local-editor/references/community-materials.md) · [升級、恢復及回滾](docs/product/DELIVERY_CONTROLLER.md)',
-            'limits': '發佈成片前補充素材／模型／聲音用途的權利證據，並執行rights check。render的--publish僅執行本機權利門檻，不上傳平台。模型生成內容仍須逐項審查；本包不附未審核模型音訊。同機新目錄驗收不等於乾淨主機或跨機器通過，完整剪映等價及原G01—G38條件繼續開放。',
-        },
-        'en': {
-            'intro': 'Native Windows CPython3.13 x64 application. The only public entry is `$agent-ffmpeg-local-editor`, with 17 internal modules. Python, FFmpeg/ffprobe, drivers, model weights and the complete music runtime are separate local dependencies. Do not use Docker, WSL or virtual environments.',
-            'download': '1. Download both ZIPs, SHA256SUMS.txt and this quickstart from the same release into one directory. Replace the example paths. Compare each computed digest with the checksum list before extracting into new directories; the installer also checks the internal application inventory.',
-            'install': '2. Install the application offline into a new target. This does not download models. Before model setup, the installed entry can already run version/doctor and basic editing commands.',
-            'models': '3. Configure the unified Skill model packs. The current configurator requires extracted `kokoro-zh-en-int8` and `opus-zh-en-cpu-int8` CPU directories under PACKS. `kokoro-zh-en-cuda13` and `opus-zh-en-cuda12-int8` are optional GPU directories. Supply extracted directories, not ZIPs; each pack is verified before configuration is written.',
-            'gpu': 'For GPU packs, replace the configuration command with the following and provide the actual matching DLL directories. Speech and translation require different CUDA versions. Use `--device auto` to prefer the configured GPU, and inspect the actual device/provider and any reported CPU fallback.',
-            'register': '4. Register the one Skill and inspect the actual installed version. A same-name entry pointing elsewhere is preserved and registration refuses to replace it. For upgrades, read the shipped delivery guide rather than deleting an unknown directory. Select `$agent-ffmpeg-local-editor` from the outer Agent.',
-            'edit': '5. Create a project and ingest your authorized media. The example video, still, subtitles, narration text and changes.json must exist. Read the returned `data.asset.id`, then author changes.json using the schema and command help; never copy a random asset ID from an old case. Author video and audio tracks separately, preview real look candidates and record client choices before composing.',
-            'voice': 'The optional speech/translation examples perform actual inference. Prepare their inputs, model packs and configuration first, and use a new asset ID. Review complete audio, pronunciation, translation meaning and duration. Then author voice-changes.json with the actual audio asset ID and an explicit audio track before the final compose command below; place translated subtitles on their intended track too.',
-            'replay': '6. Validate, preview, render and inspect the encoded movie, then export an editable project package. Import into a new directory and re-render; check images, complete audio, clocks and recipes separately. Inspect exit codes and JSON ok/status/errors/warnings/artifacts together. Automated quality checks do not replace continuous playback or listening.',
-            'music': 'Neural music additionally needs an explicitly registered existing local adapter, native runtime and weights; the four packs above do not supply that model. Read [neural music](skills/agent-ffmpeg-local-editor/references/neural-music.md). Editable score synthesis, loop repair and neural generation are separate operations.',
-            'links': '[Skill and 17 modules](skills/agent-ffmpeg-local-editor/SKILL.md) · [Client look selection](skills/agent-ffmpeg-local-editor/references/client-look-selection.md) · [Speech, translation and audio](skills/agent-ffmpeg-local-editor/references/community-materials.md) · [Upgrade, recovery and rollback](docs/product/DELIVERY_CONTROLLER.md)',
-            'limits': 'Before publishing media, add source/model/voice-use rights evidence and run rights check. render --publish is a local rights gate, not an upload. Review generated content individually; these attachments exclude unreviewed model audio. A new directory on the same host does not establish clean-host or cross-machine acceptance. Full CapCut parity and all original G01–G38 conditions remain open.',
-        },
-    }[language]
+    "zh": {
+        "intro": "原生Windows CPython3.13 x64应用；唯一公开入口为 `$agent-ffmpeg-local-editor`，包含17个内部模块。应用ZIP不包含Python、FFmpeg／ffprobe、驱动、模型权重或完整音乐运行库。先准备本机依赖；不使用Docker、WSL或虚拟环境。",
+        "download": "1. 下载本次Release的两个ZIP、SHA256SUMS.txt及本语言快速开始到同一目录。把下面的路径改为实际路径。逐项比较计算摘要与清单，全部匹配后解包到新目录；后续安装器还会校验应用内部清单。",
+        "install": "2. 离线安装应用。目标目录必须是新路径。此步骤不下载模型；模型尚未准备时，可先通过安装版入口执行version／doctor及基础剪辑命令。",
+        "models": "3. 配置基础剪辑模式，将统一Skill绑定到上述安装目录。时间线、滤镜、字幕、预览和渲染可直接使用；配音、翻译和语义模型按下一段另行配置。配置器先备份旧配置，再建立基础绑定并清除旧机器模型路径。",
+        "gpu": "若使用GPU包，将配置命令替换为下面的形式，并填写对应的实际DLL目录。配音与翻译的CUDA版本要求不同；不要把两个目录混写。后续使用 `--device auto` 优先选择配置的GPU，并检查返回的实际设备／provider及CPU回落说明。",
+        "register": "4. 注册唯一Skill并检查实际安装版本。已有同名入口且指向其他位置时，注册器会保留并拒绝替换；升级请先阅读随包交付说明，不手工删除不明目录。Agent外层只需指定 `$agent-ffmpeg-local-editor`。",
+        "edit": "5. 创建工程并导入自己的授权素材。下例中的视频、图片、字幕、配音文本和changes.json必须实际存在。读取导入返回的 `data.asset.id`，再依据schema及帮助编写changes.json；不能照抄旧案例的随机ID。视频和音频轨须分别编排，先预览实际滤镜候选并记录客户选择，再合成时间线。",
+        "voice": "可选配音／翻译示例会真实运行模型，需先准备输入文件、模型包与配置，并使用新的asset ID。完整音频、发音、翻译语义和时长仍需复核。生成后用真实音频资产ID编写voice-changes.json，将声音显式编入音轨，再执行下面最后一条compose；翻译字幕也须按目标轨道编排。",
+        "replay": "6. 验证、预览、渲染并检查实际成片，再导出可编辑工程包。导入使用新的目标目录；重新渲染后分别检查画面、完整音轨、时钟及配方。JSON的ok／status／errors／warnings／artifacts与进程退出码需要同时检查，质量检查不能代替完整播放及听审。",
+        "music": "神经音乐是额外能力，需要显式登记已有本地适配器、原生运行库和权重；上述四包不能替代音乐模型。先阅读[神经音乐说明](skills/agent-ffmpeg-local-editor/references/neural-music.md)。普通谱面合成、循环修复和神经生曲的含义不同。",
+        "links": "[Skill详情与17模块](skills/agent-ffmpeg-local-editor/SKILL.md) · [滤镜客户选型](skills/agent-ffmpeg-local-editor/references/client-look-selection.md) · [配音／翻译／音频](skills/agent-ffmpeg-local-editor/references/community-materials.md) · [升级、恢复及回滚](docs/product/DELIVERY_CONTROLLER.md)",
+        "limits": "发布成片前补充素材／模型／声音用途的权利证据，并执行rights check。render的--publish仅执行本地权利门禁，不上传平台。模型生成内容仍须逐项审查；本包不附未审核模型音频。同机新目录验收不等于干净主机或跨机器通过，完整剪映等价及原G01—G38条件继续开放。",
+        "packs": "可选模型：需要配音／翻译时，先准备已校验的 `kokoro-zh-en-int8` 与 `opus-zh-en-cpu-int8` 两个CPU包；`kokoro-zh-en-cuda13` 与 `opus-zh-en-cuda12-int8` 为可选GPU包。PACKS指向包含这四种解包目录的父目录；配置器要求两个CPU包，并逐包验证后写入模型绑定。本次两个ZIP未包含这些模型包；来源、许可、预期摘要与复现工具见下方链接。\n\n[Model catalog and pinned manifests](https://github.com/copypasteltd/agent-editor-kit/blob/main/product/src/ai_ad_editor/material_data/model-packs.json) · [CPU pack builder](https://github.com/copypasteltd/agent-editor-kit/blob/main/scripts/build_community_model_pack.py) · [GPU pack builder](https://github.com/copypasteltd/agent-editor-kit/blob/main/scripts/build_community_gpu_packs.py) · [Offline pack installer](https://github.com/copypasteltd/agent-editor-kit/blob/main/scripts/install_community_pack.py)"
+    },
+    "zh-TW": {
+        "intro": "原生Windows CPython3.13 x64應用；唯一公開入口為 `$agent-ffmpeg-local-editor`，包含17個內部模組。應用ZIP不包含Python、FFmpeg／ffprobe、驅動、模型權重或完整音樂執行庫。先準備本機依賴；不使用Docker、WSL或虛擬環境。",
+        "download": "1. 下載本次Release的兩個ZIP、SHA256SUMS.txt及本語言快速開始至同一目錄。將以下路徑改為實際路徑。逐項比較計算摘要與清單，全部相符後解壓縮至新目錄；後續安裝器還會核對應用內部清單。",
+        "install": "2. 離線安裝應用。目標目錄必須是新路徑。此步驟不下載模型；模型尚未準備時，可先透過安裝版入口執行version／doctor及基礎剪輯命令。",
+        "models": "3. 設定基礎剪輯模式，將統一Skill綁定到上述安裝目錄。時間線、濾鏡、字幕、預覽與算圖可直接使用；配音、翻譯與語意模型按下一段另行設定。設定器先備份舊設定，再建立基礎綁定並清除舊機器模型路徑。",
+        "gpu": "若使用GPU包，將設定命令替換為以下形式，並填入對應的實際DLL目錄。配音與翻譯的CUDA版本要求不同；不要混用兩個目錄。後續使用 `--device auto` 優先選擇設定的GPU，並檢查回傳的實際裝置／provider及CPU回落說明。",
+        "register": "4. 註冊唯一Skill並檢查實際安裝版本。已有同名入口且指向其他位置時，註冊器會保留並拒絕替換；升級請先閱讀隨包交付說明，不手動刪除不明目錄。Agent外層只需指定 `$agent-ffmpeg-local-editor`。",
+        "edit": "5. 建立專案並匯入自己的授權素材。以下影片、圖片、字幕、配音文字和changes.json必須實際存在。讀取匯入回傳的 `data.asset.id`，再依schema及說明編寫changes.json；不能照抄舊案例的隨機ID。影片與音訊軌須分別編排，先預覽實際濾鏡候選並記錄客戶選擇，再合成時間線。",
+        "voice": "可選配音／翻譯範例會實際執行模型，須先準備輸入檔案、模型包與設定，並使用新的asset ID。完整音訊、發音、翻譯語意與時長仍須複核。生成後用實際音訊資產ID編寫voice-changes.json，將聲音明確編入音軌，再執行以下最後一條compose；翻譯字幕也須依目標軌道編排。",
+        "replay": "6. 驗證、預覽、算圖並檢查實際成片，再匯出可編輯專案包。匯入使用新的目標目錄；重新算圖後分別檢查畫面、完整音軌、時鐘與配方。JSON的ok／status／errors／warnings／artifacts與程序結束碼需要同時檢查，品質檢查不能代替完整播放及聽審。",
+        "music": "神經音樂是額外能力，需要明確登記既有本機適配器、原生執行庫與權重；上述四包不能替代音樂模型。先閱讀[神經音樂說明](skills/agent-ffmpeg-local-editor/references/neural-music.md)。一般譜面合成、循環修復與神經生曲的含義不同。",
+        "links": "[Skill詳情與17模組](skills/agent-ffmpeg-local-editor/SKILL.md) · [濾鏡客戶選型](skills/agent-ffmpeg-local-editor/references/client-look-selection.md) · [配音／翻譯／音訊](skills/agent-ffmpeg-local-editor/references/community-materials.md) · [升級、恢復及回滾](docs/product/DELIVERY_CONTROLLER.md)",
+        "limits": "發佈成片前補充素材／模型／聲音用途的權利證據，並執行rights check。render的--publish僅執行本機權利門檻，不上傳平台。模型生成內容仍須逐項審查；本包不附未審核模型音訊。同機新目錄驗收不等於乾淨主機或跨機器通過，完整剪映等價及原G01—G38條件繼續開放。",
+        "packs": "選用模型：需要配音／翻譯時，先準備已核對的 `kokoro-zh-en-int8` 與 `opus-zh-en-cpu-int8` 兩個CPU套件；`kokoro-zh-en-cuda13` 與 `opus-zh-en-cuda12-int8` 為選用GPU套件。PACKS指向包含這四種解壓目錄的父目錄；設定器要求兩個CPU套件，逐一驗證後才寫入模型綁定。本次兩個ZIP未包含這些模型套件；來源、授權、預期摘要與重現工具見下方連結。\n\n[Model catalog and pinned manifests](https://github.com/copypasteltd/agent-editor-kit/blob/main/product/src/ai_ad_editor/material_data/model-packs.json) · [CPU pack builder](https://github.com/copypasteltd/agent-editor-kit/blob/main/scripts/build_community_model_pack.py) · [GPU pack builder](https://github.com/copypasteltd/agent-editor-kit/blob/main/scripts/build_community_gpu_packs.py) · [Offline pack installer](https://github.com/copypasteltd/agent-editor-kit/blob/main/scripts/install_community_pack.py)"
+    },
+    "en": {
+        "intro": "Native Windows CPython3.13 x64 application. The only public entry is `$agent-ffmpeg-local-editor`, with 17 internal modules. Python, FFmpeg/ffprobe, drivers, model weights and the complete music runtime are separate local dependencies. Do not use Docker, WSL or virtual environments.",
+        "download": "1. Download both ZIPs, SHA256SUMS.txt and this quickstart from the same release into one directory. Replace the example paths. Compare each computed digest with the checksum list before extracting into new directories; the installer also checks the internal application inventory.",
+        "install": "2. Install the application offline into a new target. This does not download models. Before model setup, the installed entry can already run version/doctor and basic editing commands.",
+        "models": "3. Configure basic editing by binding the unified Skill to the installation above. Timeline editing, filters, captions, previews and rendering are available through this entry. Configure voice, translation and semantic models separately below. The configurator backs up previous settings and creates a basic binding without inherited machine model paths.",
+        "gpu": "For GPU packs, replace the configuration command with the following and provide the actual matching DLL directories. Speech and translation require different CUDA versions. Use `--device auto` to prefer the configured GPU, and inspect the actual device/provider and any reported CPU fallback.",
+        "register": "4. Register the one Skill and inspect the actual installed version. A same-name entry pointing elsewhere is preserved and registration refuses to replace it. For upgrades, read the shipped delivery guide rather than deleting an unknown directory. Select `$agent-ffmpeg-local-editor` from the outer Agent.",
+        "edit": "5. Create a project and ingest your authorized media. The example video, still, subtitles, narration text and changes.json must exist. Read the returned `data.asset.id`, then author changes.json using the schema and command help; never copy a random asset ID from an old case. Author video and audio tracks separately, preview real look candidates and record client choices before composing.",
+        "voice": "The optional speech/translation examples perform actual inference. Prepare their inputs, model packs and configuration first, and use a new asset ID. Review complete audio, pronunciation, translation meaning and duration. Then author voice-changes.json with the actual audio asset ID and an explicit audio track before the final compose command below; place translated subtitles on their intended track too.",
+        "replay": "6. Validate, preview, render and inspect the encoded movie, then export an editable project package. Import into a new directory and re-render; check images, complete audio, clocks and recipes separately. Inspect exit codes and JSON ok/status/errors/warnings/artifacts together. Automated quality checks do not replace continuous playback or listening.",
+        "music": "Neural music additionally needs an explicitly registered existing local adapter, native runtime and weights; the four packs above do not supply that model. Read [neural music](skills/agent-ffmpeg-local-editor/references/neural-music.md). Editable score synthesis, loop repair and neural generation are separate operations.",
+        "links": "[Skill and 17 modules](skills/agent-ffmpeg-local-editor/SKILL.md) · [Client look selection](skills/agent-ffmpeg-local-editor/references/client-look-selection.md) · [Speech, translation and audio](skills/agent-ffmpeg-local-editor/references/community-materials.md) · [Upgrade, recovery and rollback](docs/product/DELIVERY_CONTROLLER.md)",
+        "limits": "Before publishing media, add source/model/voice-use rights evidence and run rights check. render --publish is a local rights gate, not an upload. Review generated content individually; these attachments exclude unreviewed model audio. A new directory on the same host does not establish clean-host or cross-machine acceptance. Full CapCut parity and all original G01–G38 conditions remain open.",
+        "packs": "Optional models: prepare verified `kokoro-zh-en-int8` and `opus-zh-en-cpu-int8` CPU packs before enabling voice/translation. `kokoro-zh-en-cuda13` and `opus-zh-en-cuda12-int8` are optional GPU packs. PACKS is the parent of these extracted pack directories. Model configuration requires both CPU packs and verifies each selected pack before binding it. The two release ZIPs do not contain these packs; use the source, license, digest and reproduction links below.\n\n[Model catalog and pinned manifests](https://github.com/copypasteltd/agent-editor-kit/blob/main/product/src/ai_ad_editor/material_data/model-packs.json) · [CPU pack builder](https://github.com/copypasteltd/agent-editor-kit/blob/main/scripts/build_community_model_pack.py) · [GPU pack builder](https://github.com/copypasteltd/agent-editor-kit/blob/main/scripts/build_community_gpu_packs.py) · [Offline pack installer](https://github.com/copypasteltd/agent-editor-kit/blob/main/scripts/install_community_pack.py)"
+    }
+}[language]
     return f'''# agent editor kit / CLI{VERSION}
 
 {text['intro']}
@@ -340,6 +343,12 @@ $installed = "E:/video-tools/application-installed"
 ```
 
 {text['models']}
+
+```powershell
+& $python -E -B -X utf8 "$kit/scripts/activate_community_runtime.py" --installed $installed --base-only
+```
+
+{text['packs']}
 
 ```powershell
 $packs = "E:/video-tools/model-packs"
@@ -497,9 +506,16 @@ def verify_kit(args):
         '--manifest-sha256', context['candidate']['manifest_sha256'], '--timeout-seconds', '600'])
     require({p.name: sha(p) for p in (installed / 'site/ai_ad_editor').glob('*.py')}
             == context['candidate']['application_files'], 'Fresh portable application differs')
-    configuration = copy.deepcopy(load(context['home'] / CONFIG))
-    configuration.update(installed_directory=str(installed), launcher_sha256=sha(installed / 'run.py'))
-    save(home / CONFIG, configuration)
+    configuration = json.loads(execute(out, 'portable-basic-configuration',
+        [sys.executable, '-E', '-B', '-u', '-X', 'utf8',
+         home / 'scripts/activate_community_runtime.py', '--installed', installed, '--base-only']))
+    require(configuration.get('configuration_mode') == 'base-only'
+            and configuration.get('verified_packs') == []
+            and configuration.get('model_verification_performed') is False,
+            'Portable basic editing configuration unexpectedly requires models')
+    require(load(home / CONFIG)['installed_directory'] == str(installed)
+            and load(home / 'local/agent-ffmpeg/community-runtime.json') == {},
+            'Portable basic configuration retained foreign machine model paths')
     discovery = work / 'isolated-discovery'
     execute(out, 'portable-register', ['powershell.exe', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File',
         home / 'register-agent-ffmpeg-local-skills.ps1', '-SkillsDirectory', discovery,
@@ -518,6 +534,7 @@ def verify_kit(args):
         application_files=context['candidate']['application_files'], skill_files=context['staged']['skill_files'],
         kit_archive=built['archive'], kit_sha256=built['archive_sha256'], fresh_offline_install=True,
         independent_registration=True, actual_PowerShell_entry=True, source_fallback=False,
+        actual_base_only_configuration=True, optional_model_packs_required=False,
         complete_RGBA_PCM_replay=True, replay=result, clean_host=False, cross_machine=False,
         formal_activation=False, human_listening=False, natural_quality_accepted=False))
 

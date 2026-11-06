@@ -1,0 +1,138 @@
+{
+  "status": "all-correction-code-applied-before-new-functional-tests",
+  "observed_at_utc": "2026-11-06T02:49:46.280074+00:00",
+  "code_files": 20,
+  "files": [
+    {
+      "path": "product/src/ai_ad_editor/music_generation_pipeline.py",
+      "base_sha256": "090c20dbeb4ed251a9e0ad9b02d24be3e399b713061e7db6d385eba49436df08",
+      "candidate_sha256": "5dbae91ec9628642ab89fe5d57de7ed97e70f11ff39dd84ec0d856a4a67eabf0",
+      "bytes": 13052
+    },
+    {
+      "path": "product/tests/test_delivery.py",
+      "base_sha256": "36fd9235cb777d8f6db33b3f0439454ce4b04a49c81a37dbedb1e8d9e24f3775",
+      "candidate_sha256": "1b9120162c2b7a6b63c441a695273dd3cc06ab7f269ccf8c4aeeea16c4044a76",
+      "bytes": 27061
+    },
+    {
+      "path": "product/tests/test_effect_automation.py",
+      "base_sha256": "c85267c95ffe4e13878d291493b6e51faf74a02c205a964a24e0fb4958bb8952",
+      "candidate_sha256": "860177ad6dae0f51160828b736c4b69f4f9675950138cee5e5350cea582eb48b",
+      "bytes": 17374
+    },
+    {
+      "path": "product/tests/test_selective_hsl.py",
+      "base_sha256": "e3a4e2cedf045f91ae45b9312c8ede7037d15e925fdecee7ab296baa86ba8787",
+      "candidate_sha256": "deba97f4d7c8239c3606597c50faf9f3a0461399ab1f62c76d8ebf06387b2c69",
+      "bytes": 22579
+    },
+    {
+      "path": "product/tests/test_spatial_automation.py",
+      "base_sha256": "5653e4a8a06efe8eb6c96dd54eb6dbe3672b11f1d0a0789ac9abbb2d88ff623f",
+      "candidate_sha256": "2f827615f17e1b7188b97e11ee968b8769bb827394abcff6250e70eab78773a5",
+      "bytes": 22828
+    },
+    {
+      "path": "docs/validation/publish_delivery66.py",
+      "base_sha256": "7a8a772ad27ef513cfede56cfbaacb5ed66cd7c989e073a99ac0bbefe2838288",
+      "candidate_sha256": "44ae4313db07280e3d42f9d5d717c3ae8e3be6b1efaa983cdcda665230575fef",
+      "bytes": 16442
+    },
+    {
+      "path": "docs/validation/test_delivery66_handoff.py",
+      "base_sha256": "67aca9303fa283bdd2186906a441fbd1378a62e98dbd069fd984b864dc90ee5a",
+      "candidate_sha256": "d75d33d2df2e01bbf86dcd66da17de737fc7d6d73e8673af5943d9398207ffb7",
+      "bytes": 24558
+    },
+    {
+      "path": "docs/validation/delivery66_handoff.py",
+      "base_sha256": "5db3c3bf42609d30633bb53c8e94fd43cd59db10b10efba71930f969515e9c13",
+      "candidate_sha256": "745c7f2ed0e9b0ad05deadbceaf94e649bcce9317c1f9fa82f240c0356014de2",
+      "bytes": 49315
+    },
+    {
+      "path": "docs/validation/delivery66.py",
+      "base_sha256": "40bf79f471bd71e23c182aed5931573bdf24392dce443904dcb692f8c0d0633f",
+      "candidate_sha256": "70cf349a23ebc4a731de112f2c532979a9d6a0e32ebf15e47758e5d997d3304b",
+      "bytes": 37041
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_transitions.py",
+      "base_sha256": "7de54ec6bd9497c8b9363707262d3b267cceb30576f61bb56747ebae137dd758",
+      "candidate_sha256": "41573722b13273a63a27f0112d66702072d73db2d7a99e917121ff5ca66b85a6",
+      "bytes": 14688
+    },
+    {
+      "path": "product/src/ai_ad_editor/community_audio.py",
+      "base_sha256": "b22b1714e164f0e400b7d53f978e0d0e36b83b519f827cd235826d29a037116a",
+      "candidate_sha256": "6a450a0c29ac0d9662a9fb75fb00eacd39bfea2b53887aad7f146ab9d3b073f9",
+      "bytes": 12402
+    },
+    {
+      "path": "product/src/ai_ad_editor/video_generation.py",
+      "base_sha256": "007325db940fc3951d9203ea89d24e2de27b64357ce9b13e109c7dc882a1c991",
+      "candidate_sha256": "3b7c7d857244916132aaaee38efd3e2297cbb4121bb8a2b819d5ca53f51e2b79",
+      "bytes": 15685
+    },
+    {
+      "path": "product/src/ai_ad_editor/procedural_particles.py",
+      "base_sha256": "386a2b146997a82ff6065bd599d69ddc602d714e1cfc19157e27807327a55009",
+      "candidate_sha256": "237c3e38c9e188c7f674e19be7752740e1287244466519c9876fd04f404a9604",
+      "bytes": 17762
+    },
+    {
+      "path": "product/src/ai_ad_editor/enhancement_pipeline.py",
+      "base_sha256": "32a9a5ff28c4b005e65b9f51ec2ce0f4c473d8c961f7a13f70271ab025101aae",
+      "candidate_sha256": "b71202fa7620ef849204e80a59304a8c575384a8d4961c1dae097b0abd701737",
+      "bytes": 10726
+    },
+    {
+      "path": "product/tests/test_cli.py",
+      "base_sha256": "c2b361a3c4da50378280878fdfffb1fd26d6136d7b2cfed460e4a983f191bfec",
+      "candidate_sha256": "c7c277898964a1e87bbc4dbdf498ecca00978dd45d68540ee1b9f5bc98021264",
+      "bytes": 320761
+    },
+    {
+      "path": "scripts/activate_community_runtime.py",
+      "base_sha256": "8ff5dfc6be98080bf3fd5c8136cf6d292b6be1692a68ce86211343a58c716e83",
+      "candidate_sha256": "ae862745ca127604bcc26ffe2e71504eec7a64a07c8372edf430b34d534429ec",
+      "bytes": 8404
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_optics.py",
+      "base_sha256": "0e8ffedb07f18304961494f289fdfe2f293a4abb92ed098014b36580b0c274a6",
+      "candidate_sha256": "2f1f0a045d03499172ef8774c36ae44348f159fe0115ebb18e2cd7b745157727",
+      "bytes": 10709
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_glow.py",
+      "base_sha256": "e2541e639984aee370a19831ed72ba3d067e724331e9b06457ec1ec9f0843af0",
+      "candidate_sha256": "b176616e20b7842f2f9686da500faea18ba7bf15c84946efa5c49b5b435218de",
+      "bytes": 12108
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_color_signal.py",
+      "base_sha256": "62f4bf0ada897af57edc3d1c8c44728a7dad0161ea28803663f84e9531182b93",
+      "candidate_sha256": "fd1ae7139ed39260c2e94da41aa1ad30eabb0cc2451189a7a27e42372ea28e25",
+      "bytes": 11406
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_curves.py",
+      "base_sha256": "74c5c70d04208127e53cba3e888879a4e1704e63517ec08785258faca3684923",
+      "candidate_sha256": "d6b8c4da696794763cfda3d36cf7108b941845ce1fefb0d49568f87417b3606a",
+      "bytes": 16367
+    }
+  ],
+  "backups": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66-correction-apply-r1\\backups",
+  "r4_terminal_result_sha256": "cc775e4393cd787eb31d23a4835a223585dd5c6bd6da98605a925f6c61ec4f0e",
+  "old_test_processes_both_exited": true,
+  "formal_files_unchanged": 95,
+  "all_original_base_hashes_preflighted": true,
+  "all_backups_written_before_replacements": true,
+  "new_functional_tests_started": false,
+  "formal_activation": false,
+  "source_cli": "0.1.66",
+  "formal_cli": "0.1.63",
+  "full_product_goal_closed": false
+}

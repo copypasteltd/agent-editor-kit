@@ -1,0 +1,136 @@
+{
+  "status": "centralized-tool-contracts-passed-product-suite-running",
+  "observed_at_utc": "2026-11-06T02:58:54.205429+00:00",
+  "source_cli": "0.1.66",
+  "formal_cli": "0.1.63",
+  "code_files": 20,
+  "product_files_frozen": 546,
+  "delivery_tools_frozen": 7,
+  "formal_files_unchanged": 95,
+  "all_frozen_bytes_equal": true,
+  "tool_contracts": {
+    "run": "contracts-r4",
+    "tests": 31,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "prior_tool_launch_attempt": {
+    "run": "contracts-r3",
+    "tests": null,
+    "cause": "embedded interpreter does not automatically put the delivery-tool script directory on sys.path",
+    "code_changed": false
+  },
+  "source_observation": {
+    "state": {
+      "status": "running",
+      "started_at_utc": "2026-11-06T02:57:30.734523+00:00",
+      "command": [
+        "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\delivery66.py",
+        "tests",
+        "--run",
+        "r5",
+        "--freeze-run",
+        "r5"
+      ],
+      "supervisor": {
+        "pid": 3860,
+        "creation_filetime": 134384074506106997,
+        "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+      },
+      "result": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\delivery66-20261106-r1\\source-all-r5\\verification.json",
+      "runner_sha256": "70cf349a23ebc4a731de112f2c532979a9d6a0e32ebf15e47758e5d997d3304b",
+      "original_test_selection": "whole-discovery",
+      "child": {
+        "pid": 38572,
+        "creation_filetime": 134384074507391471,
+        "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+      }
+    },
+    "supervisor_live": true,
+    "child_live": true,
+    "result_present": false,
+    "observed_at_utc": "2026-11-06T02:58:54.018597+00:00"
+  },
+  "actual_discovered_tests": 4124,
+  "dependency_profiles": {
+    "native-isolated-dependencies": {
+      "status": "ready",
+      "dependency_scope": "application",
+      "modules": {
+        "numpy": {
+          "version": "2.5.3",
+          "file": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\numpy\\__init__.py",
+          "binaries": 21
+        },
+        "PIL": {
+          "version": "12.3.0",
+          "file": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\PIL\\__init__.py",
+          "binaries": 8
+        },
+        "cv2": {
+          "version": "5.0.0",
+          "file": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\cv2\\__init__.py",
+          "binaries": 2
+        },
+        "jsonschema": {
+          "version": "4.26.0",
+          "file": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\jsonschema\\__init__.py",
+          "binaries": 0
+        }
+      },
+      "files": 36,
+      "sha256": "e2790327153e80d4398211f401f0a777183c0071b79b7483c2d20d71041c941b"
+    },
+    "native-bare-worker-dependencies": {
+      "status": "ready",
+      "dependency_scope": "bare-worker",
+      "modules": {
+        "numpy": {
+          "version": "2.5.3",
+          "file": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\numpy\\__init__.py",
+          "binaries": 21
+        },
+        "PIL": {
+          "version": "12.3.0",
+          "file": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\PIL\\__init__.py",
+          "binaries": 8
+        },
+        "cv2": {
+          "version": "5.0.0",
+          "file": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\cv2\\__init__.py",
+          "binaries": 2
+        },
+        "jsonschema": {
+          "version": "4.26.0",
+          "file": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\Lib\\site-packages\\jsonschema\\__init__.py",
+          "binaries": 0
+        }
+      },
+      "files": 36,
+      "sha256": "7361595cb02f29fdcd556f1e162a9ffe5b3a696e27d1ebac0556f90e6e5b7eeb"
+    },
+    "native-dependencies": {
+      "status": "ready",
+      "dependency_scope": null,
+      "modules": {},
+      "files": 43,
+      "sha256": "b0c3f7d521e39fff3f9286e3212582ac11af11dc245f3a3a86d36c4564c40bfc"
+    }
+  },
+  "quickstart_syntax": {
+    "status": "passed",
+    "blocks": 30,
+    "syntax_errors": 0,
+    "commands_executed": false
+  },
+  "formal_activation": false,
+  "release_published": false,
+  "full_product_goal_closed": false
+}

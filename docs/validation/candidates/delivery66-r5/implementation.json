@@ -1,5 +1,5 @@
 {
-  "status": "draft-awaiting-entire-r4-result",
+  "status": "applied-frozen-tool-contracts-passed-product-suite-running",
   "source_cli": "0.1.66",
   "formal_cli": "0.1.63",
   "base_freeze": "docs/validation/evidence/delivery66-20261106-r1/freeze-r4/verification.json",
@@ -43,20 +43,20 @@
     {
       "path": "docs/validation/test_delivery66_handoff.py",
       "base_sha256": "67aca9303fa283bdd2186906a441fbd1378a62e98dbd069fd984b864dc90ee5a",
-      "candidate_sha256": "b799edd19f7299c0bb40140bd40bd4db57435b62dd924547279664840fe24043",
-      "bytes": 16456
+      "candidate_sha256": "d75d33d2df2e01bbf86dcd66da17de737fc7d6d73e8673af5943d9398207ffb7",
+      "bytes": 24558
     },
     {
       "path": "docs/validation/delivery66_handoff.py",
       "base_sha256": "5db3c3bf42609d30633bb53c8e94fd43cd59db10b10efba71930f969515e9c13",
-      "candidate_sha256": "69c8e07733e884d76ce74ef5fc1c0e7d0ba84e8cbb5cd473da7db37f8514b0b7",
-      "bytes": 45156
+      "candidate_sha256": "745c7f2ed0e9b0ad05deadbceaf94e649bcce9317c1f9fa82f240c0356014de2",
+      "bytes": 49315
     },
     {
       "path": "docs/validation/delivery66.py",
       "base_sha256": "40bf79f471bd71e23c182aed5931573bdf24392dce443904dcb692f8c0d0633f",
-      "candidate_sha256": "832f2df152c7a9027fce0e7a3ea7457c14692a87c3542baf6c568ea414689157",
-      "bytes": 35186
+      "candidate_sha256": "70cf349a23ebc4a731de112f2c532979a9d6a0e32ebf15e47758e5d997d3304b",
+      "bytes": 37041
     },
     {
       "path": "product/src/ai_ad_editor/float_transitions.py",
@@ -93,13 +93,43 @@
       "base_sha256": "c2b361a3c4da50378280878fdfffb1fd26d6136d7b2cfed460e4a983f191bfec",
       "candidate_sha256": "c7c277898964a1e87bbc4dbdf498ecca00978dd45d68540ee1b9f5bc98021264",
       "bytes": 320761
+    },
+    {
+      "path": "scripts/activate_community_runtime.py",
+      "base_sha256": "8ff5dfc6be98080bf3fd5c8136cf6d292b6be1692a68ce86211343a58c716e83",
+      "candidate_sha256": "ae862745ca127604bcc26ffe2e71504eec7a64a07c8372edf430b34d534429ec",
+      "bytes": 8404
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_optics.py",
+      "base_sha256": "0e8ffedb07f18304961494f289fdfe2f293a4abb92ed098014b36580b0c274a6",
+      "candidate_sha256": "2f1f0a045d03499172ef8774c36ae44348f159fe0115ebb18e2cd7b745157727",
+      "bytes": 10709
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_glow.py",
+      "base_sha256": "e2541e639984aee370a19831ed72ba3d067e724331e9b06457ec1ec9f0843af0",
+      "candidate_sha256": "b176616e20b7842f2f9686da500faea18ba7bf15c84946efa5c49b5b435218de",
+      "bytes": 12108
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_color_signal.py",
+      "base_sha256": "62f4bf0ada897af57edc3d1c8c44728a7dad0161ea28803663f84e9531182b93",
+      "candidate_sha256": "fd1ae7139ed39260c2e94da41aa1ad30eabb0cc2451189a7a27e42372ea28e25",
+      "bytes": 11406
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_curves.py",
+      "base_sha256": "74c5c70d04208127e53cba3e888879a4e1704e63517ec08785258faca3684923",
+      "candidate_sha256": "d6b8c4da696794763cfda3d36cf7108b941845ce1fefb0d49568f87417b3606a",
+      "bytes": 16367
     }
   ],
-  "original_product_and_tests_modified": false,
+  "original_product_and_tests_modified": true,
   "formal_activation": false,
-  "functional_tests_started": false,
-  "code_completed_before_batch_tests": false,
-  "observed_failure_status": "r4 remains live without terminal statistics; observed issues include music diagnostic fixtures, catalog, lip-sync and two lightweight mask CLI cases. Await all final tracebacks.",
+  "functional_tests_started": true,
+  "code_completed_before_batch_tests": true,
+  "observed_failure_status": "Original r4 completed all4114:10 failures,15 errors,0 skips; all20 correction files applied and frozen r5;31 handoff contracts passed;actual4124 product regression still running.",
   "changes": [
     "Prepare both diagnostic test fixtures through the real controlled Directory API.",
     "Update three exact effect catalog expectations to documented 0.11.0 / 51; retain numeric-channel and pixel assertions.",
@@ -118,15 +148,21 @@
     "Two additional unexecuted native-CLI contracts cover version/capability queries and feature help with NumPy/Pillow/Torch imports explicitly blocked; retain both original actual mask-edit/mask-review cases unchanged.",
     "Apply the same bounded diagnostic treatment to AudioDiagnosticSession: type-check phase before membership, reject non-object progress, retain segment-clock output, and handle unavailable/nonordinary/unprepared reads without losing failure evidence.",
     "Three additional unexecuted real-file audio progress contracts cover approved segment-clock fields, malformed/unhashable values and bounded unreadable/unprepared progress states.",
-    "Static overlay import graph reaches 130 CLI modules with no eager NumPy/Pillow/Torch path; this is static evidence only, not execution or final root-cause proof for the two observed mask-command failures."
+    "Static overlay import graph reaches 130 CLI modules with no eager NumPy/Pillow/Torch path; this is static evidence only, not execution or final root-cause proof for the two observed mask-command failures.",
+    "Include every nested module PYD and DLL, plus NumPy/Pillow companion-library directories, in the actual isolated dependency inventory. Existing dependency contracts now also bind representative nested-extension and companion-DLL fixture bytes; no binary is loaded by those fixtures.",
+    "Preflight and hash two separate actual isolated import profiles: the explicit application overlay and a bare native worker with no application path injected. Preserve each profile independently and reject inconsistent shared file hashes; the existing contracts cover profile separation and reject injected application identity.",
+    "Add explicit --base-only configuration for first-time basic editing, with no model pack requirement or inherited machine model paths. Preserve prior configuration bytes as backups, reject model/CUDA arguments in basic mode, and retain the full existing --packs verification path.",
+    "Final r4 tracebacks identify the effects module initialization calls that the first static graph did not expand. Defer NumPy in optical/glow kernels, explicit color signals and curves; preserve all original non-import numerical ASTs and retain the explicit float_curves.np inspection hook used by existing allocation guards.",
+    "The independent portable acceptance now invokes the real basic configurator before registration and full RGBA/PCM replay. Four additional native file/CLI contracts cover base configuration and backups, incompatible flags, mismatched install identity and mandatory verification in model mode. The three-language workflows explain basic-first usage, optional packs and source/builder/installer links.",
+    "Live error records also retain bounded structured AppError code/cause/hint, since five original pipeline tracebacks did not display the worker cause. The existing real-file journal contract covers this without changing unittest results."
   ],
-  "next_step": "Wait for authoritative r4 terminal output, incorporate every additional failure, then complete and apply the whole correction batch before any regression.",
+  "next_step": "Preserve the complete r5 run and frozen bytes; after its authoritative terminal, finish any batch-wide corrections or proceed to offline build and whole installed regression, actual CUDA music, media/recipe replay, real faults, one-Skill activation/rollback and a matching new release.",
   "new_product_test_methods_written": 10,
-  "new_handoff_test_methods_written": 9,
+  "new_handoff_test_methods_written": 13,
   "quickstart_drafts": [
     {
       "path": "docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.md",
-      "sha256": "a652a7318291a09ccce7c59e85db9a87ebaf338f5b8a226392e92df6b7fdcb5c",
+      "sha256": "a5dee8527f9bdc3a4a26d9de71cabc451dafb53fd5808dd1da68b8fdfbb7c357",
       "language": "zh",
       "manifest_placeholder": true,
       "candidate_function_executed": false,
@@ -135,7 +171,7 @@
     },
     {
       "path": "docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.zh-TW.md",
-      "sha256": "801b8b57ee62baa463cb4558cf2f37edf2b7c6372457895afbf8d66efd150c64",
+      "sha256": "eeff687f0ce800c7a6cfd267a11fb2878359286d87038bcff3320d9921851158",
       "language": "zh-TW",
       "manifest_placeholder": true,
       "candidate_function_executed": false,
@@ -144,7 +180,7 @@
     },
     {
       "path": "docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.en.md",
-      "sha256": "242f4953d31610a6e97ee87d48a4c71263e12f7419408c4258d29531a3809e3a",
+      "sha256": "0ed12d3b27be21b693eafae640343493a0fe179b0c017618d8adc33de21862e4",
       "language": "en",
       "manifest_placeholder": true,
       "candidate_function_executed": false,
@@ -152,12 +188,32 @@
       "preview_links_point_to_current_source": true
     }
   ],
-  "new_handoff_test_methods_total_after_application": 27,
+  "new_handoff_test_methods_total_after_application": 31,
   "next_test_native_python": {
     "path": "E:/dev/sandbox/模型配乐/ComfyUI_windows_portable/python_embeded/python.exe",
     "existing_native_runtime": true,
     "interpreter_or_packages_modified": false,
-    "metadata_discovery_only": true,
-    "actual_import_preflight_pending": true
-  }
+    "metadata_discovery_only": false,
+    "actual_import_preflight_pending": false,
+    "actual_import_preflight_passed": true
+  },
+  "latest_static_receipt_is_historical_snapshot": "docs/validation/evidence/delivery66-handoff-20261106-r1/lazy-startup-draft-r1/verification.json",
+  "candidate_applied": true,
+  "candidate_completed_at_utc": "2026-11-06T02:47:38.786064+00:00",
+  "application_receipt": "docs/validation/evidence/delivery66-handoff-20261106-r1/correction-application-r1/verification.json",
+  "source_freeze_run": "r5",
+  "source_tests_run": "r5",
+  "actual_product_discovered_tests": 4124,
+  "handoff_contracts": {
+    "run": "contracts-r4",
+    "tests": 31,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "actual_dependency_profiles_passed": [
+    "application",
+    "bare-worker"
+  ],
+  "changes_describe_code_written_before_application": true
 }

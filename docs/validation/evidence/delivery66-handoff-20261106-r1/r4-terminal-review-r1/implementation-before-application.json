@@ -1,0 +1,202 @@
+{
+  "status": "implementation-complete-before-application",
+  "source_cli": "0.1.66",
+  "formal_cli": "0.1.63",
+  "base_freeze": "docs/validation/evidence/delivery66-20261106-r1/freeze-r4/verification.json",
+  "files": [
+    {
+      "path": "product/src/ai_ad_editor/music_generation_pipeline.py",
+      "base_sha256": "090c20dbeb4ed251a9e0ad9b02d24be3e399b713061e7db6d385eba49436df08",
+      "candidate_sha256": "5dbae91ec9628642ab89fe5d57de7ed97e70f11ff39dd84ec0d856a4a67eabf0",
+      "bytes": 13052
+    },
+    {
+      "path": "product/tests/test_delivery.py",
+      "base_sha256": "36fd9235cb777d8f6db33b3f0439454ce4b04a49c81a37dbedb1e8d9e24f3775",
+      "candidate_sha256": "1b9120162c2b7a6b63c441a695273dd3cc06ab7f269ccf8c4aeeea16c4044a76",
+      "bytes": 27061
+    },
+    {
+      "path": "product/tests/test_effect_automation.py",
+      "base_sha256": "c85267c95ffe4e13878d291493b6e51faf74a02c205a964a24e0fb4958bb8952",
+      "candidate_sha256": "860177ad6dae0f51160828b736c4b69f4f9675950138cee5e5350cea582eb48b",
+      "bytes": 17374
+    },
+    {
+      "path": "product/tests/test_selective_hsl.py",
+      "base_sha256": "e3a4e2cedf045f91ae45b9312c8ede7037d15e925fdecee7ab296baa86ba8787",
+      "candidate_sha256": "deba97f4d7c8239c3606597c50faf9f3a0461399ab1f62c76d8ebf06387b2c69",
+      "bytes": 22579
+    },
+    {
+      "path": "product/tests/test_spatial_automation.py",
+      "base_sha256": "5653e4a8a06efe8eb6c96dd54eb6dbe3672b11f1d0a0789ac9abbb2d88ff623f",
+      "candidate_sha256": "2f827615f17e1b7188b97e11ee968b8769bb827394abcff6250e70eab78773a5",
+      "bytes": 22828
+    },
+    {
+      "path": "docs/validation/publish_delivery66.py",
+      "base_sha256": "7a8a772ad27ef513cfede56cfbaacb5ed66cd7c989e073a99ac0bbefe2838288",
+      "candidate_sha256": "44ae4313db07280e3d42f9d5d717c3ae8e3be6b1efaa983cdcda665230575fef",
+      "bytes": 16442
+    },
+    {
+      "path": "docs/validation/test_delivery66_handoff.py",
+      "base_sha256": "67aca9303fa283bdd2186906a441fbd1378a62e98dbd069fd984b864dc90ee5a",
+      "candidate_sha256": "d75d33d2df2e01bbf86dcd66da17de737fc7d6d73e8673af5943d9398207ffb7",
+      "bytes": 24558
+    },
+    {
+      "path": "docs/validation/delivery66_handoff.py",
+      "base_sha256": "5db3c3bf42609d30633bb53c8e94fd43cd59db10b10efba71930f969515e9c13",
+      "candidate_sha256": "745c7f2ed0e9b0ad05deadbceaf94e649bcce9317c1f9fa82f240c0356014de2",
+      "bytes": 49315
+    },
+    {
+      "path": "docs/validation/delivery66.py",
+      "base_sha256": "40bf79f471bd71e23c182aed5931573bdf24392dce443904dcb692f8c0d0633f",
+      "candidate_sha256": "70cf349a23ebc4a731de112f2c532979a9d6a0e32ebf15e47758e5d997d3304b",
+      "bytes": 37041
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_transitions.py",
+      "base_sha256": "7de54ec6bd9497c8b9363707262d3b267cceb30576f61bb56747ebae137dd758",
+      "candidate_sha256": "41573722b13273a63a27f0112d66702072d73db2d7a99e917121ff5ca66b85a6",
+      "bytes": 14688
+    },
+    {
+      "path": "product/src/ai_ad_editor/community_audio.py",
+      "base_sha256": "b22b1714e164f0e400b7d53f978e0d0e36b83b519f827cd235826d29a037116a",
+      "candidate_sha256": "6a450a0c29ac0d9662a9fb75fb00eacd39bfea2b53887aad7f146ab9d3b073f9",
+      "bytes": 12402
+    },
+    {
+      "path": "product/src/ai_ad_editor/video_generation.py",
+      "base_sha256": "007325db940fc3951d9203ea89d24e2de27b64357ce9b13e109c7dc882a1c991",
+      "candidate_sha256": "3b7c7d857244916132aaaee38efd3e2297cbb4121bb8a2b819d5ca53f51e2b79",
+      "bytes": 15685
+    },
+    {
+      "path": "product/src/ai_ad_editor/procedural_particles.py",
+      "base_sha256": "386a2b146997a82ff6065bd599d69ddc602d714e1cfc19157e27807327a55009",
+      "candidate_sha256": "237c3e38c9e188c7f674e19be7752740e1287244466519c9876fd04f404a9604",
+      "bytes": 17762
+    },
+    {
+      "path": "product/src/ai_ad_editor/enhancement_pipeline.py",
+      "base_sha256": "32a9a5ff28c4b005e65b9f51ec2ce0f4c473d8c961f7a13f70271ab025101aae",
+      "candidate_sha256": "b71202fa7620ef849204e80a59304a8c575384a8d4961c1dae097b0abd701737",
+      "bytes": 10726
+    },
+    {
+      "path": "product/tests/test_cli.py",
+      "base_sha256": "c2b361a3c4da50378280878fdfffb1fd26d6136d7b2cfed460e4a983f191bfec",
+      "candidate_sha256": "c7c277898964a1e87bbc4dbdf498ecca00978dd45d68540ee1b9f5bc98021264",
+      "bytes": 320761
+    },
+    {
+      "path": "scripts/activate_community_runtime.py",
+      "base_sha256": "8ff5dfc6be98080bf3fd5c8136cf6d292b6be1692a68ce86211343a58c716e83",
+      "candidate_sha256": "ae862745ca127604bcc26ffe2e71504eec7a64a07c8372edf430b34d534429ec",
+      "bytes": 8404
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_optics.py",
+      "base_sha256": "0e8ffedb07f18304961494f289fdfe2f293a4abb92ed098014b36580b0c274a6",
+      "candidate_sha256": "2f1f0a045d03499172ef8774c36ae44348f159fe0115ebb18e2cd7b745157727",
+      "bytes": 10709
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_glow.py",
+      "base_sha256": "e2541e639984aee370a19831ed72ba3d067e724331e9b06457ec1ec9f0843af0",
+      "candidate_sha256": "b176616e20b7842f2f9686da500faea18ba7bf15c84946efa5c49b5b435218de",
+      "bytes": 12108
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_color_signal.py",
+      "base_sha256": "62f4bf0ada897af57edc3d1c8c44728a7dad0161ea28803663f84e9531182b93",
+      "candidate_sha256": "fd1ae7139ed39260c2e94da41aa1ad30eabb0cc2451189a7a27e42372ea28e25",
+      "bytes": 11406
+    },
+    {
+      "path": "product/src/ai_ad_editor/float_curves.py",
+      "base_sha256": "74c5c70d04208127e53cba3e888879a4e1704e63517ec08785258faca3684923",
+      "candidate_sha256": "d6b8c4da696794763cfda3d36cf7108b941845ce1fefb0d49568f87417b3606a",
+      "bytes": 16367
+    }
+  ],
+  "original_product_and_tests_modified": false,
+  "formal_activation": false,
+  "functional_tests_started": false,
+  "code_completed_before_batch_tests": true,
+  "observed_failure_status": "r4 completed all4114:10 failures,15 errors,0 skips; original freeze matched. Candidate remains unexecuted until application/freeze.",
+  "changes": [
+    "Prepare both diagnostic test fixtures through the real controlled Directory API.",
+    "Update three exact effect catalog expectations to documented 0.11.0 / 51; retain numeric-channel and pixel assertions.",
+    "Validate progress phase type before set membership; reject non-object JSON; forward only approved fields.",
+    "Return bounded unavailable diagnostics for nonordinary/inaccessible progress instead of masking business failures.",
+    "Five meaningful real-file contract methods cover malformed progress, field injection, primitive JSON, nonordinary paths and unprepared sessions; no model mock claimed as inference.",
+    "Read the existing native Windows default gh credential after explicit environment tokens and before the legacy Git helper; do not store secrets or authenticate through UI.",
+    "Six unexecuted handoff methods cover explicit precedence, native gh/legacy fallback, UTF8/UTF16 secret formats, malformed/oversized secret silence and validation without credential reads or publishing.",
+    "Two existing native gh credentials returned official repository GET 200 and write/admin permission metadata; this read-only preflight is not execution of the candidate functions or release publication.",
+    "Expand all three generated quickstarts with digest/extraction, offline installation, required CPU and optional GPU pack setup, explicit CUDA directories, one Skill registration, actual asset IDs, client look preview, edit/voice/translation/render/package replay and upgrade boundaries. Statically rendered review drafts have explicit manifest placeholders and execute no candidate functions or CLI commands.",
+    "Preflight the actual isolated native Python imports for NumPy, Pillow, OpenCV and jsonschema before whole-suite discovery; bind application/Python identity, supported core versions and dependency file hashes.",
+    "Persist every error, failure and failing subtest to an append-only flushed issue journal without fail-fast, filtering, skipping or altering the complete unittest result.",
+    "Three unexecuted handoff methods cover absent OpenCV/incompatible versions, wrong application/interpreter/isolation, and live errors/subtests while subsequent tests still execute.",
+    "Read-only dependency discovery found the original C Python lacks OpenCV, and its isolated mode cannot discover NumPy/Pillow; an existing native E Python discovers all four dependencies. No interpreter/site-packages was modified; actual import preflight awaits the finalized batch.",
+    "Four eager CLI paths imported NumPy/Pillow through transitions, community audio, video generation and procedural particles. Move these imports into their actual computational functions; preserve all numerical/validation ASTs and public catalogs.",
+    "Two additional unexecuted native-CLI contracts cover version/capability queries and feature help with NumPy/Pillow/Torch imports explicitly blocked; retain both original actual mask-edit/mask-review cases unchanged.",
+    "Apply the same bounded diagnostic treatment to AudioDiagnosticSession: type-check phase before membership, reject non-object progress, retain segment-clock output, and handle unavailable/nonordinary/unprepared reads without losing failure evidence.",
+    "Three additional unexecuted real-file audio progress contracts cover approved segment-clock fields, malformed/unhashable values and bounded unreadable/unprepared progress states.",
+    "Static overlay import graph reaches 130 CLI modules with no eager NumPy/Pillow/Torch path; this is static evidence only, not execution or final root-cause proof for the two observed mask-command failures.",
+    "Include every nested module PYD and DLL, plus NumPy/Pillow companion-library directories, in the actual isolated dependency inventory. Existing dependency contracts now also bind representative nested-extension and companion-DLL fixture bytes; no binary is loaded by those fixtures.",
+    "Preflight and hash two separate actual isolated import profiles: the explicit application overlay and a bare native worker with no application path injected. Preserve each profile independently and reject inconsistent shared file hashes; the existing contracts cover profile separation and reject injected application identity.",
+    "Add explicit --base-only configuration for first-time basic editing, with no model pack requirement or inherited machine model paths. Preserve prior configuration bytes as backups, reject model/CUDA arguments in basic mode, and retain the full existing --packs verification path.",
+    "Final r4 tracebacks identify the effects module initialization calls that the first static graph did not expand. Defer NumPy in optical/glow kernels, explicit color signals and curves; preserve all original non-import numerical ASTs and retain the explicit float_curves.np inspection hook used by existing allocation guards.",
+    "The independent portable acceptance now invokes the real basic configurator before registration and full RGBA/PCM replay. Four additional native file/CLI contracts cover base configuration and backups, incompatible flags, mismatched install identity and mandatory verification in model mode. The three-language workflows explain basic-first usage, optional packs and source/builder/installer links.",
+    "Live error records also retain bounded structured AppError code/cause/hint, since five original pipeline tracebacks did not display the worker cause. The existing real-file journal contract covers this without changing unittest results."
+  ],
+  "next_step": "Apply all20 files after verified terminal and base guards; freeze the complete batch, run all31 handoff contracts, then unfiltered whole product regression with actual isolated dependency preflights.",
+  "new_product_test_methods_written": 10,
+  "new_handoff_test_methods_written": 13,
+  "quickstart_drafts": [
+    {
+      "path": "docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.md",
+      "sha256": "a5dee8527f9bdc3a4a26d9de71cabc451dafb53fd5808dd1da68b8fdfbb7c357",
+      "language": "zh",
+      "manifest_placeholder": true,
+      "candidate_function_executed": false,
+      "commands_executed": false,
+      "preview_links_point_to_current_source": true
+    },
+    {
+      "path": "docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.zh-TW.md",
+      "sha256": "eeff687f0ce800c7a6cfd267a11fb2878359286d87038bcff3320d9921851158",
+      "language": "zh-TW",
+      "manifest_placeholder": true,
+      "candidate_function_executed": false,
+      "commands_executed": false,
+      "preview_links_point_to_current_source": true
+    },
+    {
+      "path": "docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.en.md",
+      "sha256": "0ed12d3b27be21b693eafae640343493a0fe179b0c017618d8adc33de21862e4",
+      "language": "en",
+      "manifest_placeholder": true,
+      "candidate_function_executed": false,
+      "commands_executed": false,
+      "preview_links_point_to_current_source": true
+    }
+  ],
+  "new_handoff_test_methods_total_after_application": 31,
+  "next_test_native_python": {
+    "path": "E:/dev/sandbox/模型配乐/ComfyUI_windows_portable/python_embeded/python.exe",
+    "existing_native_runtime": true,
+    "interpreter_or_packages_modified": false,
+    "metadata_discovery_only": true,
+    "actual_import_preflight_pending": true
+  },
+  "latest_static_receipt_is_historical_snapshot": "docs/validation/evidence/delivery66-handoff-20261106-r1/lazy-startup-draft-r1/verification.json",
+  "candidate_applied": false,
+  "candidate_completed_at_utc": "2026-11-06T02:47:38.786064+00:00"
+}

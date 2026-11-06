@@ -1,12 +1,14 @@
 # agent editor kit
 
 <!-- aek-cli65-current -->
-**开发状态2026-11-06：CLI0.1.66的18项完整交付工具契约通过；r4源码全套实际发现4,114项，原生后台监督与子进程已独立确认存活，仍运行、无终态；日志已出现进度诊断、目录断言和口型相关的多项错误／失败，尚无最终统计，不能按通过处理。** 正式入口保持CLI0.1.63／local61／r58；CLI66候选尚未构建。原4,110项r2中断保留。新工具包、真实配乐故障、正式升级／回滚和公开发行仍须实际验收；工具契约不代表模型或媒体质量通过。[完整未完成内容](docs/product/UNFINISHED_20261106.md) · [本批流程](docs/product/DELIVERY66_HANDOFF.md)
-修正草稿已单独保存：修复受控诊断夹具、更新历史目录预期，并补音乐进度类型／字段／读取失败处理及五项新用例。尚未合入或执行，不修改运行中的冻结代码。 [Candidate / 候选](docs/product/DELIVERY66_R5_CANDIDATE.md)
-发布身份复核取得新结果：两条已有原生gh凭据分别读取仓库均返回200及写入／管理权限；此前403来自另一默认Git身份。隔离草稿已补原生凭据路径与六项交付契约方法，尚未合入或测试，未创建Release。 [Actual access / 实际记录](docs/validation/evidence/delivery66-handoff-20261106-r1/release-identity-r1/verification.json)
-隔离批次另补完整三语使用流程，覆盖安装、必需／可选模型包、GPU配置、客户滤镜选择、音轨编排、渲染及工程包重放。[简体草稿](docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.md)尚未执行CLI66流程，安装摘要为明确占位符。
-新增隔离依赖预检和即时错误日志草稿：开跑前核对原生隔离子进程的NumPy／Pillow／OpenCV／jsonschema，运行中即时保存错误／失败／子测试堆栈并继续整套。原C盘解释器缺OpenCV且隔离模式找不到NumPy／Pillow；现有E盘原生解释器能发现依赖，尚待真正导入预检。 [范围与证据](docs/product/NATIVE_TEST_DEPENDENCIES_20261106.md)
-轻量CLI与诊断修正草稿已扩至15个代码文件：转场、社区音频、视频生成和粒子改为实际计算时加载数值／图像库；音频增强诊断同步处理畸形进度。新增5项产品方法仍未执行，当前共10项新产品方法与9项新交付方法，不合并计为通过数。 [修正范围](docs/product/DELIVERY66_R5_CANDIDATE.md)
+**开发状态2026-11-06：CLI0.1.66已一次完成并应用20文件修正，冻结r5；31项完整交付工具契约通过，零失败／错误／跳过。** 应用及bare-worker两组实际隔离依赖预检通过；未过滤产品全套实际发现4,124项，仍运行、无终态，发现数不能当作通过数。原r4完整4,114项为10失败／15错误／0跳过，25条完整堆栈和r2中断均保留。[完整未完成内容](docs/product/UNFINISHED_20261106.md) · [原r4结果](docs/product/DELIVERY66_R4_RESULTS.md)
+
+**正式入口仍CLI0.1.63／local61／r58，唯一`$agent-ffmpeg-local-editor`、17内部模块。** 新CLI66安装包尚未构建，真实66CUDA配乐、完整工程／配方重放、真实故障、独立安装／注册、正式升级／回滚及alpha.4发布均待门禁通过；工具契约不等于模型、媒体质量或完整剪映等价。
+
+本批修正涵盖音乐／音频增强异常进度、真实受控目录夹具、3处目录预期、8模块数值／图像库按需加载、两profile依赖字节核对、即时完整错误与AppError原因记录、原生gh发布身份选择。原数值／像素断言和原失败用例保留。[20文件范围与验证](docs/product/DELIVERY66_R5_CANDIDATE.md) · [31项终态](docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r4/verification.json)
+
+三语快速开始已补齐摘要／离线安装、`--base-only`基础配置、可选模型与GPU、单Skill注册、真实ID、客户滤镜预览、音轨、渲染／质检及工程包重放。基础剪辑无需先装模型包；`--packs`仍强制验包。30段PowerShell原生语法0错误，摘要仍明确占位，完整新包流程尚待实际执行。[简体草稿](docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.md) · [集中交付顺序](docs/product/DELIVERY66_HANDOFF.md)
+本轮仓库检查点提供可审阅的候选代码副本和验证证据；本地应用源码的正式提交待完整产品回归通过。
 <!-- /aek-cli65-current -->
 
 **r58统一Skill工具包已独立验收。** 161条目／160清单文件／93 Skill文件；中文和空格目录解包、四包配置、独立注册、实际谱面与循环修复、完整ACES YUV／PCM／PNG及工程包重放通过。未新增模型推理，不等于干净主机或自然质量验收。
@@ -1294,6 +1296,7 @@ flowchart LR
 | F87 | 原生GPU神经配乐（开发中） | 显式风格／歌词请求、固定ACE-Step1.5 Turbo、CUDA前向证据、原生48kHz双声道Float32 WAV、生成配方与独立音轨。 | `music generator-adapter; music inspect-generation; music generate` | [完整配乐接口、参数与边界](docs/product/NEURAL_MUSIC_GENERATION.md)；CLI64开发接口；正式63暂不含。不是MIDI、乐器分轨或已验收自然音质。 |
 | F88 | 神经配乐权重读取与完整计时（开发中） | 四组件实际pread读取记录、静态加载策略、导入／checkpoint／生成分段计时；失败不回退mmap或CPU神经推理。 | `music generator-adapter; music generate` | [CLI65使用逻辑和计时范围](docs/product/NEURAL_MUSIC_LOADING.md)；自然质量与性能按真实任务分别验收。 |
 | F89 | 正式Skill交付控制（开发66） | 候选检查、切换、完整备份预检、恢复、回滚；五类证据及应用／Skill字节绑定。正式63尚无此命令，新版验收中。 | `delivery inspect/activate/recover/rollback` | [流程与边界](docs/product/DELIVERY_CONTROLLER.md) |
+| F90 | 基础安装独立配置（开发66） | 无模型基础配置、旧配置备份／外机路径清除、矛盾参数及安装身份拒绝；4项真实文件／CLI工具契约通过，新工具包待实装。 | `scripts/activate_community_runtime.py --base-only` | [基础流程与边界](docs/product/DELIVERY66_R5_CANDIDATE.md) |
 
 ## 支持的服务模块与依赖
 
@@ -2210,6 +2213,9 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R586 | Complete three-language workflow draft / 2026-11-06 | 扩写三语快速开始生成器及3份可审阅草稿，涵盖摘要／解包、离线安装、两个CPU必需包／两个GPU可选包、独立CUDA目录、单Skill、滤镜应用、音轨、渲染及包重放。仅AST静态生成，摘要为明确占位符，未执行候选函数或CLI66流程。 [Draft](docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.md) · [Scope](docs/product/DELIVERY66_R5_CANDIDATE.md) |
 | R587 | Native test dependency and live-failure draft / 2026-11-06 | 只读发现C盘测试解释器缺OpenCV，隔离子进程也找不到NumPy／Pillow；现有E盘原生Python能发现所需库。隔离草稿新增导入／应用身份／版本／字节预检、即时完整错误日志及3项未执行契约方法。原r4继续，9文件草稿未合入／测试，无新增模型或正式升级。 [Details](docs/product/NATIVE_TEST_DEPENDENCIES_20261106.md) · [Static evidence](docs/validation/evidence/delivery66-handoff-20261106-r1/dependency-preflight-draft-r1/verification.json) |
 | R588 | Lightweight CLI and audio diagnostic draft / 2026-11-06 | 原r4新增两项轻量蒙版CLI失败；静态定位四条提前加载NumPy／Pillow的路径。草稿改为计算时导入，数值／校验AST不变，并补版本／能力／帮助两项原生CLI方法；音频增强进度另补三项真实文件方法。15文件候选未合入／执行，原整套继续。 [Scope](docs/product/DELIVERY66_R5_CANDIDATE.md) · [Static evidence](docs/validation/evidence/delivery66-handoff-20261106-r1/lazy-startup-draft-r1/verification.json) |
+| R589 | 原r4完整回归终态 / 2026-11-06 | 全部4,114项执行完：10失败、15错误、0跳过，冻结546／6／95一致；25条堆栈完整保留，包含夹具、缺依赖、旧目录预期和轻量CLI导入。12项模型会话ok属于原整套子集，不额外计通过。 [结果与归因](docs/product/DELIVERY66_R4_RESULTS.md) · [原终态](docs/validation/evidence/delivery66-20261106-r1/source-all-r4/verification.json) |
+| R590 | 完整修正与集中交付核验 / 2026-11-06 | 20代码文件一次写齐、备份、应用并冻结r5，546产品／用例／依赖、7工具、95正式文件一致；完整31工具契约全通过，零失败／错误／跳过。两组实际隔离依赖通过，产品全套实际发现4,124项仍运行，无终态；未构建66包或正式升级。 [31项结果](docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r4/verification.json) · [实际观察](docs/validation/evidence/delivery66-handoff-20261106-r1/correction-batch-review-r1/verification.json) |
+| R591 | 基础配置及三语流程 / 2026-11-06 | --base-only不需模型包并保留旧配置备份；矛盾参数／错误安装摘要拒绝，原--packs验包保持。4项真实文件／CLI契约已包含在31项中，不重复加计。三语30段PowerShell原生解析0错误；摘要占位，独立新包注册／媒体重放尚待执行。 [范围](docs/product/DELIVERY66_R5_CANDIDATE.md) · [语法结果](docs/validation/evidence/delivery66-handoff-20261106-r1/quickstart-syntax-r2/verification.json) |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

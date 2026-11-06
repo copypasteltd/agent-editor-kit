@@ -101,6 +101,15 @@ class LiveRegressionResult(unittest.TextTestResult):
     def issue(self, kind, test, err):
         row = dict(event=kind, test_id=test.id(), tests_started=self.testsRun,
                    traceback=self._exc_info_to_string(err, test))
+        if type(err[1]).__module__ == 'ai_ad_editor.errors':
+            details = {}
+            for name, limit in [('code', 256), ('cause', 65536), ('hint', 8192)]:
+                value = getattr(err[1], name, None)
+                if type(value) is str:
+                    details[name] = value[:limit]
+                    if len(value) > limit:
+                        details[name + '_truncated'] = True
+            row['application_error'] = details
         with self.event_path.open('a', encoding='utf-8', newline='\n') as stream:
             stream.write(json.dumps(row, ensure_ascii=False) + '\n')
             stream.flush()
@@ -124,8 +133,14 @@ class LiveRegressionResult(unittest.TextTestResult):
 NATIVE_TEST_IMPORTS = r'''
 import importlib.metadata, json, sys
 from pathlib import Path
-sys.path.insert(0, sys.argv[1])
-import ai_ad_editor
+scope = sys.argv[2]
+assert scope in {'application', 'bare-worker'}
+application_file = application_version = None
+if scope == 'application':
+    sys.path.insert(0, sys.argv[1])
+    import ai_ad_editor
+    application_file = str(Path(ai_ad_editor.__file__).resolve())
+    application_version = ai_ad_editor.VERSION
 import cv2
 import numpy
 import PIL
@@ -134,9 +149,8 @@ modules = {}
 for name, module, distribution in [('numpy', numpy, 'numpy'), ('PIL', PIL, 'Pillow'),
                                   ('cv2', cv2, None), ('jsonschema', jsonschema, 'jsonschema')]:
     directory = Path(module.__file__).resolve().parent
-    binaries = sorted(directory.glob('*.pyd'))
+    binaries = sorted(directory.rglob('*.pyd')) + sorted(directory.rglob('*.dll'))
     if name == 'numpy':
-        binaries += sorted((directory / '_core').glob('*.pyd'))
         binaries += sorted((directory.parent / 'numpy.libs').glob('*.dll'))
     if name == 'PIL':
         binaries += sorted((directory.parent / 'pillow.libs').glob('*.dll'))
@@ -144,8 +158,8 @@ for name, module, distribution in [('numpy', numpy, 'numpy'), ('PIL', PIL, 'Pill
     modules[name] = dict(version=version, file=str(Path(module.__file__).resolve()),
                          binaries=[str(path.resolve()) for path in binaries])
 print(json.dumps(dict(python=sys.executable, isolated=sys.flags.isolated,
-    application_file=str(Path(ai_ad_editor.__file__).resolve()),
-    application_version=ai_ad_editor.VERSION, modules=modules)))
+    dependency_scope=scope, application_file=application_file,
+    application_version=application_version, modules=modules)))
 '''
 
 
@@ -153,8 +167,13 @@ def dependency_probe_files(record, package):
     """Reject unavailable isolated-worker imports before starting the full suite."""
     assert record.get('isolated') == 1, 'Native dependency probe was not isolated'
     assert Path(record['python']).resolve() == Path(sys.executable).resolve(), 'Native dependency probe used another Python'
-    assert (record.get('application_version') == VERSION
-            and Path(record['application_file']).resolve() == package / '__init__.py'), 'Native dependency probe imported another application'
+    scope = 'application' if package is not None else 'bare-worker'
+    assert record.get('dependency_scope') == scope, 'Wrong native dependency scope'
+    if package is None:
+        assert record.get('application_file') is None and record.get('application_version') is None, 'Native worker dependency probe injected an application'
+    else:
+        assert (record.get('application_version') == VERSION
+                and Path(record['application_file']).resolve() == package / '__init__.py'), 'Native dependency probe imported another application'
     modules = record.get('modules')
     assert isinstance(modules, dict) and set(modules) == {'numpy', 'PIL', 'cv2', 'jsonschema'}, 'Native isolated dependencies are incomplete'
     bounds = {'numpy': ((2, 4, 2), (3,)), 'PIL': ((12, 1), (13,)),
@@ -189,6 +208,9 @@ def freeze_code(args):
         path = ROOT / 'docs/validation' / name
         compile(path.read_bytes(), str(path), 'exec')
         tools[path.relative_to(ROOT).as_posix()] = sha(path)
+    path = ROOT / 'scripts/activate_community_runtime.py'
+    compile(path.read_bytes(), str(path), 'exec')
+    tools[path.relative_to(ROOT).as_posix()] = sha(path)
     # The third-party DF3 NotImplemented branches guard invalid enum values;
     # its three declared configurations already have implementations.
     save(out / 'verification.json', dict(status='frozen', cli_version=VERSION, file_hashes=pins(),
@@ -203,10 +225,18 @@ def configure_test_dependencies(args, out, package):
     # Check their actual native imports, including OpenCV, before discovery.
     probe = json.loads(call(out, 'native-isolated-imports',
         [sys.executable, '-I', '-B', '-u', '-X', 'utf8', '-c', NATIVE_TEST_IMPORTS,
-         str(package.parent)], timeout=180))
+         str(package.parent), 'application'], timeout=180))
     expected = dependency_probe_files(probe, package)
     save(out / 'native-isolated-dependencies.json', dict(status='ready', **probe,
         files=expected, model_forwards=0, test_methods_executed=0))
+    worker = json.loads(call(out, 'native-bare-worker-imports',
+        [sys.executable, '-I', '-B', '-u', '-X', 'utf8', '-c', NATIVE_TEST_IMPORTS,
+         str(package.parent), 'bare-worker'], timeout=180))
+    worker_files = dependency_probe_files(worker, None)
+    assert all(expected[name] == pin for name, pin in worker_files.items() if name in expected), 'Native dependencies changed between import profiles'
+    expected.update(worker_files)
+    save(out / 'native-bare-worker-dependencies.json', dict(status='ready', **worker,
+        files=worker_files, application_overlay=False, model_forwards=0, test_methods_executed=0))
     binary = args.rubberband.resolve(strict=True)
     audio = [binary, binary.with_name('COPYING.txt'), binary.with_name('sndfile.dll')]
     assert all(path.is_file() for path in audio), 'Existing native Rubber Band binary, DLL and license required'

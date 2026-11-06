@@ -27,7 +27,15 @@ $installed = "E:/video-tools/application-installed"
 & $python -I -S -B -X utf8 "$installed/run.py" doctor
 ```
 
-3. Configure the unified Skill model packs. The current configurator requires extracted `kokoro-zh-en-int8` and `opus-zh-en-cpu-int8` CPU directories under PACKS. `kokoro-zh-en-cuda13` and `opus-zh-en-cuda12-int8` are optional GPU directories. Supply extracted directories, not ZIPs; each pack is verified before configuration is written.
+3. Configure basic editing by binding the unified Skill to the installation above. Timeline editing, filters, captions, previews and rendering are available through this entry. Configure voice, translation and semantic models separately below. The configurator backs up previous settings and creates a basic binding without inherited machine model paths.
+
+```powershell
+& $python -E -B -X utf8 "$kit/scripts/activate_community_runtime.py" --installed $installed --base-only
+```
+
+Optional models: prepare verified `kokoro-zh-en-int8` and `opus-zh-en-cpu-int8` CPU packs before enabling voice/translation. `kokoro-zh-en-cuda13` and `opus-zh-en-cuda12-int8` are optional GPU packs. PACKS is the parent of these extracted pack directories. Model configuration requires both CPU packs and verifies each selected pack before binding it. The two release ZIPs do not contain these packs; use the source, license, digest and reproduction links below.
+
+[Model catalog and pinned manifests](https://github.com/copypasteltd/agent-editor-kit/blob/main/product/src/ai_ad_editor/material_data/model-packs.json) · [CPU pack builder](https://github.com/copypasteltd/agent-editor-kit/blob/main/scripts/build_community_model_pack.py) · [GPU pack builder](https://github.com/copypasteltd/agent-editor-kit/blob/main/scripts/build_community_gpu_packs.py) · [Offline pack installer](https://github.com/copypasteltd/agent-editor-kit/blob/main/scripts/install_community_pack.py)
 
 ```powershell
 $packs = "E:/video-tools/model-packs"

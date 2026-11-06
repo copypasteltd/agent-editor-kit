@@ -7,6 +7,7 @@ import json
 import os
 from pathlib import Path
 import stat
+import subprocess
 import tempfile
 from types import SimpleNamespace
 import unittest
@@ -243,7 +244,13 @@ class HandoffContracts(unittest.TestCase):
             path = self.root / (name + '.py')
             path.write_bytes(b'# Not imported or used for media processing.\n')
             modules[name] = dict(version=version, file=str(path), binaries=[])
-        record = dict(python=round_runner.sys.executable, isolated=1,
+        for name, relative in [('numpy', 'numpy-native/linalg/sample.pyd'),
+                               ('cv2', 'cv2-native/videoio.dll')]:
+            binary = self.root / relative
+            binary.parent.mkdir(parents=True)
+            binary.write_bytes(b'Explicit inventory fixture; never loaded.\n')
+            modules[name]['binaries'].append(str(binary))
+        record = dict(python=round_runner.sys.executable, isolated=1, dependency_scope='application',
             application_file=str(package / '__init__.py'),
             application_version=round_runner.VERSION, modules=modules)
         return package, record
@@ -252,7 +259,17 @@ class HandoffContracts(unittest.TestCase):
         package, record = self.dependency_fixture()
         pins = round_runner.dependency_probe_files(record, package)
         self.assertIn(str(Path(round_runner.sys.executable).resolve()), pins)
-        self.assertEqual(len(pins), 5)
+        self.assertEqual(len(pins), 7)
+        for name in ('numpy', 'cv2'):
+            binary = Path(record['modules'][name]['binaries'][0])
+            self.assertEqual(pins[str(binary.resolve())], round_runner.sha(binary))
+        bare = dict(record, dependency_scope='bare-worker', application_file=None,
+                    application_version=None)
+        self.assertEqual(round_runner.dependency_probe_files(bare, None), pins)
+        with self.assertRaisesRegex(AssertionError, 'injected an application'):
+            round_runner.dependency_probe_files(dict(bare, application_file=record['application_file']), None)
+        with self.assertRaisesRegex(AssertionError, 'scope'):
+            round_runner.dependency_probe_files(bare, package)
         missing = copy.deepcopy(record)
         del missing['modules']['cv2']
         with self.assertRaisesRegex(AssertionError, 'incomplete'):
@@ -276,10 +293,14 @@ class HandoffContracts(unittest.TestCase):
     def test_live_issue_journal_preserves_subtests_and_continues_the_whole_suite(self):
         journal = self.root / 'issues.jsonl'
         observed = []
+        with patch.object(round_runner.sys, 'path',
+                          [str(handoff.ROOT / 'product/src'), *round_runner.sys.path]):
+            from ai_ad_editor.errors import AppError
 
         class DeliberateProblems(unittest.TestCase):
             def error(self):
-                raise RuntimeError('fixture primary error')
+                raise AppError('FIXTURE_WORKER_FAILED', 'fixture primary error',
+                               cause='fixture missing dependency details')
 
             def failure(self):
                 self.fail('fixture primary assertion')
@@ -310,6 +331,107 @@ class HandoffContracts(unittest.TestCase):
         self.assertFalse(result.wasSuccessful())
         self.assertEqual(len(observed), 5)
         self.assertTrue(all(row['traceback'] and row['test_id'] for row in observed[1:]))
+        self.assertEqual(observed[1]['application_error'],
+            dict(code='FIXTURE_WORKER_FAILED', cause='fixture missing dependency details'))
+
+    def basic_configuration_fixture(self):
+        home = self.root / 'configuration-kit'
+        script = home / 'scripts/activate_community_runtime.py'
+        script.parent.mkdir(parents=True)
+        script.write_bytes((handoff.ROOT / 'scripts/activate_community_runtime.py').read_bytes())
+        skill = home / 'skills/agent-ffmpeg-local-editor/SKILL.md'
+        skill.parent.mkdir(parents=True)
+        skill.write_bytes(b'# Explicit configurator inventory fixture only.\n')
+        expected = 'sha256:' + '0' * 64
+        manifest = dict(release=handoff.RELEASE, manifest_sha256=expected,
+            files=[dict(path=skill.relative_to(home).as_posix(), sha256=handoff.sha(skill))])
+        (home / 'agent-ffmpeg-local-install-manifest.json').write_bytes(handoff.encoded(manifest))
+        installed = self.root / 'basic-installed'
+        installed.mkdir()
+        (installed / 'receipt.json').write_bytes(handoff.encoded(dict(manifest_sha256=expected)))
+        # This is a rejecting CLI fixture, never a model inference implementation.
+        (installed / 'run.py').write_text(
+            'from pathlib import Path\n'
+            'Path(__file__).with_name("model-verification-called").write_text("called")\n'
+            'print(\'{"ok": false}\')\n'
+            'raise SystemExit(7)\n', encoding='utf-8')
+        directory = home / 'local/agent-ffmpeg'
+        directory.mkdir(parents=True)
+        previous = {
+            'runtime.json': handoff.encoded(dict(release='prior',
+                semantic_config=str(self.root / 'missing-foreign-machine/profile.json'))),
+            'community-runtime.json': b'{"voice":{"cpu_pack":"E:/foreign-machine/voice"}}\n'}
+        for name, raw in previous.items():
+            (directory / name).write_bytes(raw)
+        return home, installed, previous
+
+    def configure_fixture(self, home, installed, options):
+        environment = dict(os.environ, TEMP=str(self.root), TMP=str(self.root),
+                           TMPDIR=str(self.root), PYTHONDONTWRITEBYTECODE='1')
+        return subprocess.run([round_runner.sys.executable, '-E', '-B', '-u', '-X', 'utf8',
+            str(home / 'scripts/activate_community_runtime.py'), '--installed', str(installed),
+            *map(str, options)], cwd=handoff.ROOT, env=environment,
+            capture_output=True, text=True, encoding='utf-8', timeout=60,
+            creationflags=subprocess.CREATE_NO_WINDOW)
+
+    def test_base_only_native_configuration_backs_up_and_replaces_foreign_model_paths(self):
+        home, installed, previous = self.basic_configuration_fixture()
+        result = self.configure_fixture(home, installed, ['--base-only'])
+        self.assertEqual(result.returncode, 0, result.stderr + result.stdout)
+        report = json.loads(result.stdout)
+        self.assertEqual(report['status'], 'configured')
+        self.assertEqual(report['configuration_mode'], 'base-only')
+        self.assertEqual(report['verified_packs'], [])
+        self.assertFalse(report['model_configuration_requested'])
+        self.assertFalse(report['model_verification_performed'])
+        configuration = handoff.load(home / 'local/agent-ffmpeg/runtime.json')
+        self.assertEqual(configuration['installed_directory'], str(installed.resolve()))
+        self.assertEqual(configuration['launcher_sha256'], handoff.sha(installed / 'run.py'))
+        self.assertNotIn('semantic_config', configuration)
+        self.assertEqual(handoff.load(home / 'local/agent-ffmpeg/community-runtime.json'), {})
+        evidence = Path(report['evidence'])
+        for name, raw in previous.items():
+            self.assertEqual((evidence / ('previous-' + name)).read_bytes(), raw)
+        self.assertFalse(list(evidence.glob('*.stdout.json')))
+        self.assertFalse((installed / 'model-verification-called').exists())
+
+    def test_basic_configuration_rejects_ambiguous_or_model_specific_arguments_before_writes(self):
+        home, installed, previous = self.basic_configuration_fixture()
+        cases = [[], ['--base-only', '--packs', self.root],
+            ['--base-only', '--voice-cuda-lib', self.root],
+            ['--base-only', '--translation-cuda-lib', self.root],
+            ['--base-only', '--semantic-config', self.root / 'profile.json']]
+        for options in cases:
+            with self.subTest(options=options):
+                result = self.configure_fixture(home, installed, options)
+                self.assertEqual(result.returncode, 2, result.stderr + result.stdout)
+                for name, raw in previous.items():
+                    self.assertEqual((home / 'local/agent-ffmpeg' / name).read_bytes(), raw)
+        self.assertFalse((home / 'local/agent-ffmpeg/activations').exists())
+        self.assertFalse((installed / 'model-verification-called').exists())
+
+    def test_base_only_configuration_rejects_an_unmatched_installation_before_writes(self):
+        home, installed, previous = self.basic_configuration_fixture()
+        (installed / 'receipt.json').write_bytes(handoff.encoded(
+            dict(manifest_sha256='sha256:' + '1' * 64)))
+        result = self.configure_fixture(home, installed, ['--base-only'])
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('does not match this reviewed Skill kit', result.stderr)
+        for name, raw in previous.items():
+            self.assertEqual((home / 'local/agent-ffmpeg' / name).read_bytes(), raw)
+        self.assertFalse((installed / 'model-verification-called').exists())
+
+    def test_model_configuration_still_requires_installed_pack_verification(self):
+        home, installed, previous = self.basic_configuration_fixture()
+        packs = self.root / 'empty-packs'
+        packs.mkdir()
+        result = self.configure_fixture(home, installed, ['--packs', packs])
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('Model verification failed', result.stderr)
+        self.assertTrue((installed / 'model-verification-called').exists())
+        for name, raw in previous.items():
+            self.assertEqual((home / 'local/agent-ffmpeg' / name).read_bytes(), raw)
+
 
 
 if __name__ == '__main__':

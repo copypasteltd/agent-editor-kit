@@ -1,8 +1,8 @@
 # CLI66交付后半程与原生完整回归
 
-2026-11-06，Asia/Taipei。正式入口仍CLI0.1.63／local61／r58。本批完成代码后再集中核验；代码存在不代表新安装、真实配乐故障、正式切换或公开发行已经通过。
+2026-11-06，Asia/Taipei。正式入口仍CLI0.1.63／local61／r58。完整修正20文件已一次写齐、备份、应用并冻结r5；产品及依赖546文件、交付工具7文件、原正式文件95项。31项完整交付契约通过，零失败／错误／跳过；应用和bare-worker实际隔离预检通过。产品全套实际发现4,124项，仍运行、无终态。
 
-原配置完整的4,110项源码r2回归已中断：工具会话75402不可用，原主进程22948及对应运行命令已确认不存在，原日志没有终态总结。中断原因和退出码未知，不按通过或完整失败计数，没有根据历史父子PID清理其他程序。[原始中断收据](../validation/evidence/delivery66-20261106-r1/source-all-r2/verification.json)保留日志摘要、原冻结及观察状态。
+原r4已完整执行4,114项，10失败／15错误／0跳过，原冻结一致；原r2的4,110项中断及初轮8处跳过仍保留。r4中的12项会话用例均ok，属于原整套子集。新代码、31项工具检查及依赖预检均不等于新版安装、实际模型／媒体、正式切换或发行已通过。
 
 | 编号 | 本批完整代码 | 核验边界 |
 | --- | --- | --- |
@@ -14,46 +14,64 @@
 | H06 | 五类原门禁＋便携包＋实际故障后，正式升级→显式回滚→再次升级→实际发现入口重放 | 失败尝试回滚，保留备份；不能以版本查询代替实际媒体验收 |
 | H07 | 生成应用ZIP、唯一Skill ZIP、三语快速开始、发布说明与SHA256清单；匹配源提交后新建alpha.4 | 公开下载不含未审核模型音频；不覆盖既有标签或附件，缺发布凭据时保留本地可审阅成果 |
 
-本批后续证据放在`docs/validation/evidence/delivery66-handoff-20261106-r1/`；新临时、安装和模型任务输出放在E盘`local/agent-ffmpeg/delivery66-handoff/`。全程原生Windows，不运行Docker、WSL、虚拟环境或浏览器。
+[原r4完整结果与25条异常归因](DELIVERY66_R4_RESULTS.md) · [20文件完整修正](DELIVERY66_R5_CANDIDATE.md) · [31项真实工具结果](../validation/evidence/delivery66-handoff-20261106-r1/contracts-r4/verification.json) · [当前运行观察](../validation/evidence/delivery66-handoff-20261106-r1/correction-batch-review-r1/verification.json)。历史17／18项工具组与各个草稿静态快照保留，不和当前31项相加。
 
-首组17项契约为历史结果。修复失效Git路径并补入第18项用例后，r4冻结版本的完整18项契约实际通过，零失败／错误／跳过；产品与正式文件不变。这是模拟／文件安全／原生Git检查，不包含模型推理、注册或正式激活。原生监督随后启动未过滤源码全套，实际发现4,114项，独立工具调用确认监督与子进程身份存活；目前没有终态，不能计为通过。[18项结果](../validation/evidence/delivery66-handoff-20261106-r1/contracts-r2/verification.json) · [不可变观察记录](../validation/evidence/status-review-20261106-r1/review-r2/verification.json)。r3仅为此前快照，没有启动产品全套。
-
-最新只读检查点：r4原生监督与子进程仍实际存活，日志已有配乐进度大小／异常字段两项用例ERROR，尚无最终统计或异常根因。保持冻结字节，待整轮汇总后一次修正全部问题再集中核验；不把运行中当通过。[观察记录](../validation/evidence/delivery66-handoff-20261106-r1/remaining-r3/observation.json)。
-
-后续观察已增至2项ERROR及1项FAIL；[下一批隔离修正草稿](DELIVERY66_R5_CANDIDATE.md)不改变r4冻结实现，尚未测试或合入。待整轮结果汇总再一次完成全部修正和集中核验。
+本批后续证据在docs/validation/evidence/delivery66-handoff-20261106-r1/；原／新源码及安装整套在docs/validation/evidence/delivery66-20261106-r1/。全部新临时、安装和模型任务输出保存在E盘local/agent-ffmpeg/下。全程原生Windows，无Docker、WSL、虚拟环境或浏览器交互。
 
 ## 集中执行顺序
 
-先完成并冻结全部本批实现及必要用例，再执行整轮回归。每次使用新的run编号，不覆盖旧证据。下面列出计划编号；对应前置收据不存在或不通过时，后续命令拒绝执行。
+先完成全部本批代码再集中测试；以下是当前r5批次的复现顺序，已经存在的收据不可覆盖，不要再次启动同编号。发现问题后等整套结果汇总，再一次补完所有修正，另用新freeze／run编号。
+
+既有E盘原生嵌入式Python不会自动把交付脚本目录加入sys.path。显式只加入该工具目录可运行工具间导入，不改解释器／._pth，不将产品源码注入正式Skill。首次未设置该目录的contracts-r3在发现测试前失败；同批无代码修改，完整contracts-r4通过31项。
 
 ```powershell
-$python = 'C:/Python313/python.exe'
-& $python -E -B -u -X utf8 docs/validation/delivery66.py freeze --run r4
-& $python -E -B -u -X utf8 docs/validation/test_delivery66_handoff.py
-& $python -E -B -u -X utf8 docs/validation/run_delivery66_native.py start --run r4 --freeze-run r4
-& $python -E -B -u -X utf8 docs/validation/run_delivery66_native.py status --run r4 --freeze-run r4
+$python = 'E:/dev/sandbox/模型配乐/ComfyUI_windows_portable/python_embeded/python.exe'
+$toolBootstrap = 'import sys,runpy;from pathlib import Path;p=Path(sys.argv[1]).resolve();sys.path.insert(0,str(p.parent));sys.argv=sys.argv[1:];runpy.run_path(str(p),run_name="__main__")'
+function Invoke-AekDeliveryTool {
+    param([string]$Script, [string[]]$ToolArguments)
+    & $python -E -B -u -X utf8 -c $toolBootstrap $Script @ToolArguments
+    if ($LASTEXITCODE -ne 0) { throw "Delivery tool failed: $Script" }
+}
+Invoke-AekDeliveryTool -Script 'docs/validation/delivery66.py' -ToolArguments @('freeze', '--run', 'r5')
+Invoke-AekDeliveryTool -Script 'docs/validation/test_delivery66_handoff.py'
+Invoke-AekDeliveryTool -Script 'docs/validation/run_delivery66_native.py' -ToolArguments @('start', '--run', 'r5', '--freeze-run', 'r5')
+Invoke-AekDeliveryTool -Script 'docs/validation/run_delivery66_native.py' -ToolArguments @('status', '--run', 'r5', '--freeze-run', 'r5')
 ```
 
-源码全套真正通过后，使用原工具`delivery66.py build`离线构建安装；再以同一监督工具的`--installed`执行安装版全套。传入明确的`--freeze-run r4 --tests-run r4`，应用字节必须与冻结相符。随后依次执行原工具的`stage`、`music`、`package`、`descriptor`；实际音乐使用新的66输出，不复用65成功来代替。
+完整源码终态真正通过后，才按相同冻结构建离线候选。每条命令显式传入`--freeze-run r5 --tests-run r5`，不要沿用工具的历史默认r4。下方r1为后半程计划编号；若已有目录，选择新编号并在所有后续引用中统一。
 
 ```powershell
-& $python -E -B -u -X utf8 docs/validation/delivery66_handoff.py kit --run r1
-& $python -E -B -u -X utf8 docs/validation/delivery66_handoff.py verify-kit --run r1
-& $python -E -B -u -X utf8 docs/validation/delivery66_music_faults.py --run r1
-& $python -E -B -u -X utf8 docs/validation/delivery66_handoff.py activate --run r1
-& $python -E -B -u -X utf8 docs/validation/delivery66_handoff.py assets --run r1
+Invoke-AekDeliveryTool -Script 'docs/validation/delivery66.py' -ToolArguments @('build', '--run', 'r1', '--freeze-run', 'r5', '--tests-run', 'r5')
+$installed = Join-Path (Get-Location) 'local/agent-ffmpeg/delivery66/candidate-r1/installed'
+Invoke-AekDeliveryTool -Script 'docs/validation/run_delivery66_native.py' -ToolArguments @('start', '--installed', $installed, '--run', 'r5', '--freeze-run', 'r5')
+Invoke-AekDeliveryTool -Script 'docs/validation/run_delivery66_native.py' -ToolArguments @('status', '--installed', $installed, '--run', 'r5', '--freeze-run', 'r5')
 ```
 
-后半程默认引用r4冻结／r4源码和安装回归，其他候选、Skill、音乐、工程包及描述默认为r1；若实际执行采用别的编号，须通过对应`--*-run`显式选择。`kit`仅构建；`verify-kit`才实际独立安装和播放数据重放。`activate`要求便携包和三类真实故障全部通过，且不会省略原源码／安装／工程／Skill／真实CUDA音乐五类门禁。
+安装版完整回归通过后依次stage、music、package、descriptor。实际music必须来自66新安装和新输出，不使用65旧成功代替；应用和bare-worker依赖分别按实际来源报告。
 
-`assets`只准备可审阅本地发布附件。发布前先提交并普通推送对应源码与三语README，用完整提交ID调用`publish_delivery66.py --assets PATH --source-commit COMMIT --run r1`做校验；另加`--publish`才创建新标签／草稿、上传匹配附件并发布。授权凭据仅留在内存，拒绝认证重定向，不写入日志；任何既有不同标签、附件或发行记录均保留。
+```powershell
+$roundPins = @('--run', 'r1', '--freeze-run', 'r5', '--tests-run', 'r5')
+Invoke-AekDeliveryTool -Script 'docs/validation/delivery66.py' -ToolArguments (@('stage') + $roundPins)
+Invoke-AekDeliveryTool -Script 'docs/validation/delivery66.py' -ToolArguments (@('music') + $roundPins)
+Invoke-AekDeliveryTool -Script 'docs/validation/delivery66.py' -ToolArguments (@('package') + $roundPins)
+Invoke-AekDeliveryTool -Script 'docs/validation/delivery66.py' -ToolArguments (@('descriptor') + $roundPins)
+Invoke-AekDeliveryTool -Script 'docs/validation/delivery66_handoff.py' -ToolArguments (@('kit') + $roundPins)
+Invoke-AekDeliveryTool -Script 'docs/validation/delivery66_handoff.py' -ToolArguments (@('verify-kit') + $roundPins)
+Invoke-AekDeliveryTool -Script 'docs/validation/delivery66_music_faults.py' -ToolArguments $roundPins
+Invoke-AekDeliveryTool -Script 'docs/validation/delivery66_handoff.py' -ToolArguments (@('activate') + $roundPins)
+Invoke-AekDeliveryTool -Script 'docs/validation/delivery66_handoff.py' -ToolArguments (@('assets') + $roundPins)
+```
 
-## 能力与原范围
+kit只是构建。verify-kit才在独立中文／空格路径用真实安装器安装，调用真实`--base-only`配置器后注册一个Skill，再通过PowerShell入口重放全部RGBA／PCM／母音频和配方。基础剪辑不需要预先安装四个模型包；可选--packs路径仍验证完整包，模型／CUDA配置另外执行。这是同机独立路径验收，不是第二台／干净主机。
 
-神经配乐命令`music generate`仍须登记显式本地适配器，输出仍为内部未核验，完整听审、自然质量、权利、性能、长曲及更多曲风分别验收。应用ZIP不包含Python、FFmpeg、驱动、全部模型或完整音乐运行库。当前工具不使原G01—G38自动关闭，也不把同机隔离路径等同跨机器。
+activate仍须源码／安装／工程／Skill／真实CUDA音乐五类原门禁、独立便携验收和取消／超时／提交冲突三个真实模型故障全部通过，再进行正式升级、显式回滚、重激活和实际发现入口媒体验收。正式文件变更失败时保留可恢复现场，不靠version查询代替媒体验收。
 
-本批状态见README顶部与新增编号记录；早期r2“运行中”为历史阶段，以上中断记录替代其当前状态。[完整未完成清单](UNFINISHED_20261106.md) · [原目标](GOAL_GAPS_20261025.md)。
+assets只准备可审阅本地附件。随后提交并普通推送完全匹配的源码与三语README，再将真实完整源提交ID及附件目录传给publish_delivery66.py先校验；加--publish才新建alpha.4。发布器使用显式环境身份→既有原生gh→旧Git助手；秘密仅在内存，禁止认证重定向。既有标签、附件和发行记录不可覆盖。
 
-后续r4日志又出现口型相关异常；只读依赖发现显示C测试Python缺OpenCV，且隔离子进程看不到NumPy／Pillow。下一批已形成依赖预检和即时完整错误日志草稿，计划采用已有E盘原生Python，实际导入／完整回归均待整批完成后执行。原监督继续，不修改当前冻结文件，不以日志行计数代替终态。[详情与范围](NATIVE_TEST_DEPENDENCIES_20261106.md)。
+## 使用流程及未关闭范围
 
-另两项轻量蒙版CLI失败已纳入同批静态分析：四条提前加载NumPy／Pillow路径改为计算时导入，并补音频增强进度的同类异常处理。当前15文件隔离候选新增10项产品方法／9项交付方法，仍未合入、冻结或执行；当前r4继续全部用例。[候选和边界](DELIVERY66_R5_CANDIDATE.md)。
+三份快速开始含实际安装、基础配置、可选模型来源／构建／离线安装、分别CUDA目录、唯一Skill、真实asset/clip ID、客户滤镜预览、音轨、预览／渲染／质检及工程包重放。目前仍是占位摘要草稿；独立安装通过后才填入真实摘要和附件。30段原生PowerShell语法0错误只证明可解析，不证明各流程执行通过。
+
+应用ZIP不包含原生Python、FFmpeg、驱动、全部模型和整个外部音乐运行库。实际配乐仍是internal/unverified；完整听审、自然质量、长曲／演唱／更多曲风、资源性能及发布权利分别验收。没有用本轮31项工具测试关闭G01—G38，也没有把同机隔离路径等同跨机器。
+
+[完整未完成清单](UNFINISHED_20261106.md) · [原38组目标](GOAL_GAPS_20261025.md) · [原生依赖与日志](NATIVE_TEST_DEPENDENCIES_20261106.md)。

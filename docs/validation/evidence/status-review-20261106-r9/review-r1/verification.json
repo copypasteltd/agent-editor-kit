@@ -1,0 +1,183 @@
+{
+  "status": "passed",
+  "review_kind": "static-documentation-and-historical-evidence",
+  "observed_at_utc": "2026-11-06T13:23:46.519060+00:00",
+  "base_commit": "7007ec5ebd7d44e9281a3ff02c889d42dc800c67",
+  "source_worktree_cli": "0.1.67",
+  "formal_cli": "0.1.66",
+  "formal_release": "v0.1.0-alpha.4-local.64",
+  "formal_skill_count": 1,
+  "formal_modules": 17,
+  "formal_files": 95,
+  "formal_activation_changed": false,
+  "formal_files_unchanged": true,
+  "protected_files": 499,
+  "protected_files_unchanged": true,
+  "original_goal_unchanged": true,
+  "historical_readme_rows": {
+    "README.md": {
+      "preserved_numbered_rows": 700,
+      "current_numbered_rows": 701,
+      "all_prior_rows_verbatim": true,
+      "new_row": "R611"
+    },
+    "README.zh-TW.md": {
+      "preserved_numbered_rows": 700,
+      "current_numbered_rows": 701,
+      "all_prior_rows_verbatim": true,
+      "new_row": "R611"
+    },
+    "README.en.md": {
+      "preserved_numbered_rows": 700,
+      "current_numbered_rows": 701,
+      "all_prior_rows_verbatim": true,
+      "new_row": "R611"
+    }
+  },
+  "inventories": {
+    "G": {
+      "count": 38,
+      "ids": [
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G07",
+        "G08",
+        "G09",
+        "G10",
+        "G11",
+        "G12",
+        "G13",
+        "G14",
+        "G15",
+        "G16",
+        "G17",
+        "G18",
+        "G19",
+        "G20",
+        "G21",
+        "G22",
+        "G23",
+        "G24",
+        "G25",
+        "G26",
+        "G27",
+        "G28",
+        "G29",
+        "G30",
+        "G31",
+        "G32",
+        "G33",
+        "G34",
+        "G35",
+        "G36",
+        "G37",
+        "G38"
+      ]
+    },
+    "I": {
+      "count": 13,
+      "ids": [
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06",
+        "I07",
+        "I08",
+        "I09",
+        "I10",
+        "I11",
+        "I12",
+        "I13"
+      ]
+    },
+    "Q": {
+      "count": 10,
+      "ids": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ]
+    },
+    "N": {
+      "count": 6,
+      "ids": [
+        "N01",
+        "N02",
+        "N03",
+        "N04",
+        "N05",
+        "N06"
+      ]
+    }
+  },
+  "pending_CLI67_gates": [
+    "D67-01",
+    "D67-02",
+    "D67-03",
+    "D67-04",
+    "D67-05",
+    "D67-06",
+    "D67-07"
+  ],
+  "CLI67_acceptance": "not-executed",
+  "CLI67_batch_execution_driver_missing": true,
+  "CLI67_formal_activation": false,
+  "product_suites_rerun": 0,
+  "new_model_inference": false,
+  "new_functional_acceptance": false,
+  "historical_CLI66_suites": {
+    "source": {
+      "path": "docs/validation/evidence/delivery66-20261106-r1/source-all-r6/verification.json",
+      "sha256": "82013fc30ff00613060d8dc0a23663e9b94d28dcd4413b2a5262f970f4ed52d3",
+      "cli_version": "0.1.66",
+      "tests": 4124,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rerun_in_this_review": false
+    },
+    "installed": {
+      "path": "docs/validation/evidence/delivery66-20261106-r1/installed-all-r6/verification.json",
+      "sha256": "071ac016a71531654f4525955b5d5b77849d08bab084d07544822d3622c534ec",
+      "cli_version": "0.1.66",
+      "tests": 4124,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rerun_in_this_review": false
+    }
+  },
+  "historical_public_download_acceptance": {
+    "path": "docs/validation/evidence/delivery66-public-20261106-r1/r1/verification.json",
+    "sha256": "ade45c2ba02a90f6ca019a7d26bee5576987dae6ef0f215b85f1de2b73440633",
+    "status": "passed",
+    "rerun_in_this_review": false
+  },
+  "documents": {
+    "README.md": "55e2556ffb3a6a53cce452a9620aa77cf66cbd58a6cfca2e094e712dc8727634",
+    "README.zh-TW.md": "7b74d80a4fb134fdd70e4d33c7d1af2604ede4efd4fa26eeffa18c7f179add7f",
+    "README.en.md": "f84803851e8efbf803e524c7bf21c40e33a8cf630241cd9cd3e398c24deb9bc1",
+    "docs/product/UNFINISHED_DETAIL_20261106.md": "60442268cf2de06a538d47e46ae11aa873b2b2667695ee920542415f48cf060b",
+    "docs/product/PORTRAIT_REGIONS.md": "d9121e2240b77a75b013cc7971ac3ed6556a7573d0f4e724a4a6443ebfc28504",
+    "docs/product/PORTRAIT_REGIONS_SKILL.md": "1afb0f5e280e22c5c10645539bfd2abb19df7a97e04583f06ce386a25d7d2783"
+  },
+  "exact_configured_secret_scan_passed": true,
+  "private_configuration_copied": false,
+  "full_goal_closed": false,
+  "checked_current_local_links": 24,
+  "missing_current_local_links": 0,
+  "scope_files": 7
+}

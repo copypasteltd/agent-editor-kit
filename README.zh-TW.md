@@ -1,5 +1,7 @@
 # agent editor kit
 
+**最新未完成狀態複核（2026-11-06）：** 正式入口仍為CLI66／alpha.4；本地開發工作區CLI67的人像分區程式尚未驗收、安裝或切換。完整剩餘工作按G01—G38展開，並列出本批7項待交付門檻；CLI66的4,124項通過不轉記為CLI67通過。[詳細清單](docs/product/UNFINISHED_DETAIL_20261106.md) · [靜態複核記錄](docs/validation/evidence/status-review-20261106-r9/review-r1/verification.json)。
+
 **公開下載實際閉環已通過（2026-11-06）：** alpha.4的7附件匿名重新下載摘要一致；新目錄原生安裝289模組、`--base-only`、隔離單Skill註冊及實際PowerShell入口通過。完整60影格RGBA／48kHz立體聲PCM／時鐘／母素材與專案重播一致，原正式入口及凍結程式未變。[實際案例與MP4／GIF](docs/product/PUBLIC_RELEASE66_ACCEPTANCE.md) · [完整收據](docs/validation/evidence/delivery66-public-20261106-r1/r1/verification.json)。僅程式圖案／純音診斷及一張截圖目檢；乾淨主機／跨機GPU、模型自然品質、完整播放與聽審仍待。
 
 **目前公開版本：[v0.1.0-alpha.4](https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.4)（2026-11-06 19:22，Asia/Taipei）。** CLI0.1.66／local64／r59，原始碼提交`2eb9130c45fa446b1f328df777a0a3624d681990`，應用包、唯一Skill工具包、三語快速開始、發行說明與SHA256清單共7附件已公開。匿名官方API與遠端tag複核通過，附件大小／摘要與來源鎖一致；[本版使用流程](docs/releases/v0.1.0-alpha.4/README.md)。[詳細剩餘工作](docs/product/UNFINISHED_DETAIL_20261106.md)已補實作包、歷史失敗關閉條件與推進順序。公開下載後新目錄實裝已通過；乾淨主機／跨機GPU、自然品質及完整剪映等價仍待。
@@ -2250,6 +2252,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R608 | 2026-11-06：三類實際模型故障與唯一正式Skill66升級／精確回滾／實際入口 | [實際故障](docs/product/DELIVERY66_ACTUAL_FAULTS.md)；[正式驗收與使用](docs/product/DELIVERY66_FORMAL_ACCEPTANCE.md)；[目前詳細未完成](docs/product/UNFINISHED_DETAIL_20261106.md)；[正式交付複核](docs/validation/evidence/status-review-20261106-r6/review-r1/verification.json) | 實際取消／逾時／完整CUDA後目標衝突三類通過，原工作程序自行退出、資料／外部檔案保護、無失敗素材及受管清理通過。原通用控制器正式66→63回滾全部舊95檔案→66，實際C盤發現入口完整RGBA／PCM／母WAV／配方通過。正式CLI66/local64/r59，95檔案／17模組；未發行alpha.4、未驗完整自然品質或完整目標，原697歷史編號逐字保留 |
 | R609 | 2026-11-06：alpha.4公開終態複核與未完成內容細化 | [公開版本與使用](docs/releases/v0.1.0-alpha.4/README.md)；[原發行終態](docs/validation/evidence/delivery66-handoff-20261106-r1/publication-r2/verification.json)；[匿名API／保護複核](docs/validation/evidence/status-review-20261106-r7/review-r1/verification.json)；[詳細差距與實作包](docs/product/UNFINISHED_DETAIL_20261106.md) | 原發行程序已退出，alpha.4於19:22公開，提交2eb9130與遠端tag一致，7附件SHA256／大小與來源鎖一致；修正過期未發行狀態，展開I01—I13、Q01—Q10、N01—N06與W01—W05。未重跑產品用例或推論，未重新下載實裝／聽審，完整目標未關閉；原698歷史編號逐字保留 |
 | R610 | 2026-11-06：alpha.4匿名重新下載、獨立原生實裝、實際單Skill與完整媒體重播 | [實際流程與MP4／GIF](docs/product/PUBLIC_RELEASE66_ACCEPTANCE.md)；[先寫齊凍結](docs/validation/evidence/delivery66-public-20261106-r1/code-phase-r1/verification.json)；[實際終態](docs/validation/evidence/delivery66-public-20261106-r1/r1/verification.json)；[保護複核](docs/validation/evidence/status-review-20261106-r8/review-r1/verification.json) | 7附件新位元組與來源鎖一致，289模組新安裝、基礎設定、隔離1入口／17模組與實際PowerShell入口通過；60影格RGBA、完整48kHz立體聲PCM、時鐘與母素材專案重播一致。原正式95檔案／設定／發現目標未變，79份原命令輸出保留且不公開原始PCM串流；原執行退出碼0。新增程式診斷MP4／GIF及一張截圖目檢，未驗自然品質／聽審／乾淨主機／跨機GPU；原699歷史編號逐字保留 |
+| R611 | 2026-11-06：未完成範圍與CLI67開發邊界複核 | [詳細差距及7項本批門檻](docs/product/UNFINISHED_DETAIL_20261106.md)；[靜態保護複核](docs/validation/evidence/status-review-20261106-r9/review-r1/verification.json) | 核對原G01—G38、13組待補實作、10組品質與6組效能／遷移工作；本地CLI67人像分區尚無測試終態、可用包或正式Skill切換。正式CLI66及原700歷史編號保留；本次沒有產品測試、模型推論或新增功能驗收，完整目標繼續開放 |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

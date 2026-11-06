@@ -1,5 +1,5 @@
 {
-  "status": "draft-code-completed-awaiting-r5-terminal-and-all-new-findings",
+  "status": "applied-frozen-r6-tool-contracts-passed-product-whole-running",
   "created_at_utc": "2026-11-06T03:22:35.690155+00:00",
   "source_cli": "0.1.66",
   "formal_cli": "0.1.63",
@@ -50,8 +50,8 @@
     {
       "path": "docs/validation/delivery66.py",
       "base_sha256": "70cf349a23ebc4a731de112f2c532979a9d6a0e32ebf15e47758e5d997d3304b",
-      "candidate_sha256": "970f2b2c492012b1f5069557d085a270115022f0d0fa2d746829cb6f20cb5579",
-      "bytes": 44340
+      "candidate_sha256": "e568f908ce008b674676e42c91c02656ec238f434ab815cd118b31daa8da462e",
+      "bytes": 44347
     },
     {
       "path": "product/tests/test_local_tts.py",
@@ -60,9 +60,9 @@
       "bytes": 19719
     }
   ],
-  "candidate_applied": false,
-  "functional_tests_started": false,
-  "source_frozen_bytes_modified": false,
+  "candidate_applied": true,
+  "functional_tests_started": true,
+  "source_frozen_bytes_modified": true,
   "formal_activation": false,
   "new_product_test_methods": 0,
   "existing_assertion_conditions_preserved": true,
@@ -91,14 +91,14 @@
     "Bind the actual native official Skill validator to reviewed bytes before freeze and stage; record the same pin in the freeze and staging receipt and reject changed tools before creating stage outputs.",
     "Prepend the archive actual CLI/release target to the four packaged entry guides; keep the source formal-state snapshots and all historical evidence unchanged. Extend the existing native packaging contract to verify the target in all four shipped guides."
   ],
-  "next_step": "Keep collecting the complete r5 result; finish all new corrections before applying a complete next batch and running centralized contracts and unfiltered product regression.",
+  "next_step": "Collect the complete frozen r6 product result. If failures remain, complete every correction in the next batch before centralized validation. After a full pass, validate the offline installation, installed whole suite, actual CLI66 CUDA music and faults, complete media/recipe replay, portable registration, formal upgrade/rollback and release gates.",
   "observed_r5_issues": {
     "unicode_module_import_failure": 1,
     "lock_children_not_ready_failures": 2,
     "audio_diagnostic_missing_AppError_error": 1,
     "tts_network_guard_child_import_failure": 1
   },
-  "updated_at_utc": "2026-11-06T04:56:18.992390+00:00",
+  "updated_at_utc": "2026-11-06T05:12:08.911774+00:00",
   "new_handoff_test_methods": 12,
   "planned_handoff_test_methods": 43,
   "release_lock_format": "agent-editor-reviewed-release-v2",
@@ -121,5 +121,24 @@
   "native_skill_validator": {
     "path": "C:\\Users\\carzy\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
     "sha256": "6068513d924ed3559e186dfcdead7439129828dcf402167fd925c06dffbf2806"
+  },
+  "r5_terminal": {
+    "tests": 4124,
+    "failures": 4,
+    "errors": 1,
+    "skipped": 0,
+    "exit_code": 1
+  },
+  "application_backup": "local/agent-ffmpeg/delivery66-r6-complete-apply-r1",
+  "implementation_units_complete_through": "H10",
+  "active_freeze": "r6",
+  "validation_state": {
+    "tool_suite": "passed",
+    "tool_tests": 43,
+    "tool_failures": 0,
+    "tool_errors": 0,
+    "tool_skipped": 0,
+    "source_suite": "running",
+    "source_discovered_tests": 4124
   }
 }

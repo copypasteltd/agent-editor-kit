@@ -1,0 +1,78 @@
+{
+  "status": "complete-batch-applied-before-functional-tests",
+  "observed_at_utc": "2026-11-06T05:05:21.697056+00:00",
+  "source_cli": "0.1.66",
+  "formal_cli": "0.1.63",
+  "files": [
+    {
+      "path": "product/tests/package_under_test.py",
+      "base_sha256": "a18597a3fa8c7f081d9155a3bc27033c7af422b4060d3c3e534888ee570a60f1",
+      "candidate_sha256": "84ee9c0197388e998070089f8e8196b6ec9f30012d0216704d4843a5321b93f3",
+      "bytes": 2101
+    },
+    {
+      "path": "product/tests/test_cli.py",
+      "base_sha256": "c7c277898964a1e87bbc4dbdf498ecca00978dd45d68540ee1b9f5bc98021264",
+      "candidate_sha256": "0431069b7544939dceb2674d7127ec81c97cc5cf610bb8d125e5e7552c2283af",
+      "bytes": 321310
+    },
+    {
+      "path": "product/src/ai_ad_editor/enhancement_pipeline.py",
+      "base_sha256": "b71202fa7620ef849204e80a59304a8c575384a8d4961c1dae097b0abd701737",
+      "candidate_sha256": "ffa863c237937a2d8c1de5a52f58ff69077360474f7046dd09badb527084d972",
+      "bytes": 10755
+    },
+    {
+      "path": "docs/validation/delivery66_handoff.py",
+      "base_sha256": "745c7f2ed0e9b0ad05deadbceaf94e649bcce9317c1f9fa82f240c0356014de2",
+      "candidate_sha256": "9d34d055c3ff365e5af9f03f466df0cfae78c8d11386ad096c73bdcf83aac771",
+      "bytes": 56405
+    },
+    {
+      "path": "docs/validation/publish_delivery66.py",
+      "base_sha256": "44ae4313db07280e3d42f9d5d717c3ae8e3be6b1efaa983cdcda665230575fef",
+      "candidate_sha256": "f39c335be898d469ef6aecf34b5363167694af4eec5cbda4faf714029430d22e",
+      "bytes": 17097
+    },
+    {
+      "path": "docs/validation/test_delivery66_handoff.py",
+      "base_sha256": "d75d33d2df2e01bbf86dcd66da17de737fc7d6d73e8673af5943d9398207ffb7",
+      "candidate_sha256": "74022c8458c52889d24de7c71ff1e0292401d6ce3cdd2c4254d170ae14376d13",
+      "bytes": 42414
+    },
+    {
+      "path": "scripts/package_community_skill.py",
+      "base_sha256": "ac09d998a35396e3250f4e368642b1b636b4ecfb6e6f7b0be74c25cb9d5cbc6f",
+      "candidate_sha256": "1df1049ce02c62d1c26813f935cdb12c12c5798e94bad93f3956da30691a178b",
+      "bytes": 9575
+    },
+    {
+      "path": "docs/validation/delivery66.py",
+      "base_sha256": "70cf349a23ebc4a731de112f2c532979a9d6a0e32ebf15e47758e5d997d3304b",
+      "candidate_sha256": "e568f908ce008b674676e42c91c02656ec238f434ab815cd118b31daa8da462e",
+      "bytes": 44347
+    },
+    {
+      "path": "product/tests/test_local_tts.py",
+      "base_sha256": "36b086aa6c621d779b951d9e2232be071cc80de3d94862b4e9370b6d3af392a8",
+      "candidate_sha256": "4a13e0ab7cadbbf3dbc383fe9c0ee1bab28f1b762f5b6382d57498f377868bb8",
+      "bytes": 19719
+    }
+  ],
+  "backup": "local/agent-ffmpeg/delivery66-r6-complete-apply-r1",
+  "original_formal_files": 95,
+  "original_formal_files_unchanged": true,
+  "previous_suite_terminal": {
+    "tests": 4124,
+    "failures": 4,
+    "errors": 1,
+    "skipped": 0,
+    "exit_code": 1
+  },
+  "code_completed_before_tests": true,
+  "functional_tests_started": false,
+  "planned_tool_suite": 43,
+  "new_product_methods": 0,
+  "formal_activation": false,
+  "release_created": false
+}

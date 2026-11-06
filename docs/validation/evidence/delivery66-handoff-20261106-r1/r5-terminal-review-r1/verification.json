@@ -1,0 +1,48 @@
+{
+  "status": "whole-source-r5-terminal-failed-reviewed",
+  "observed_at_utc": "2026-11-06T05:04:32.913164+00:00",
+  "cli_version": "0.1.66",
+  "tests": 4124,
+  "discovered_tests": 4124,
+  "failures": 4,
+  "errors": 1,
+  "skipped": 0,
+  "exit_code": 1,
+  "supervisor_live": false,
+  "child_live": false,
+  "frozen_equal": true,
+  "frozen_counts": {
+    "file_hashes": 546,
+    "delivery_tool_files": 7,
+    "formal_guard": 95
+  },
+  "all_terminal_issues_covered_by_completed_candidate": true,
+  "candidate_files": 9,
+  "planned_tool_suite": 43,
+  "original_failures_preserved": true,
+  "files": {
+    "verification.json": {
+      "path": "docs/validation/evidence/delivery66-20261106-r1/source-all-r5/verification.json",
+      "sha256": "0f91f1337cde9df71ecf939954ae0efee6a3c2d2a7ca4889632a3b8623bf4876",
+      "bytes": 73425
+    },
+    "tests.stderr": {
+      "path": "docs/validation/evidence/delivery66-20261106-r1/source-all-r5/tests.stderr",
+      "sha256": "5d0aaa3158b712a83f201c37f4e9087b8e91daf36c44fa0899857f70e1cd87bc",
+      "bytes": 686283
+    },
+    "issues.jsonl": {
+      "path": "docs/validation/evidence/delivery66-20261106-r1/source-all-r5/issues.jsonl",
+      "sha256": "1637ed2dd756b335b7971dfb61d7c51c52aa77ad45372972798b7f228e126415",
+      "bytes": 4528
+    },
+    "executed-runner.py": {
+      "path": "docs/validation/evidence/delivery66-20261106-r1/source-all-r5/executed-runner.py",
+      "sha256": "70cf349a23ebc4a731de112f2c532979a9d6a0e32ebf15e47758e5d997d3304b",
+      "bytes": 37041
+    }
+  },
+  "formal_cli": "0.1.63",
+  "formal_activation": false,
+  "release_created": false
+}

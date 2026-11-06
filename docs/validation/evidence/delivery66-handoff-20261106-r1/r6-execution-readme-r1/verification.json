@@ -1,0 +1,34 @@
+{
+  "status": "three-language-execution-status-synchronized",
+  "readmes": [
+    {
+      "path": "README.md",
+      "old_sha256": "5745748d3a098839a20a5b4b3f0f23b5dce4170bcefdbdb87c19e24f0f5b1729",
+      "new_sha256": "a809f591d14bb80df5cd148fc29134ef896648ca3067c5f219dc52b0682ccefe",
+      "historical_numbered_rows_preserved": true,
+      "F": 90,
+      "R": 597
+    },
+    {
+      "path": "README.zh-TW.md",
+      "old_sha256": "4771484822c922445d248322c01d32e302d5e20e34afbbbda1900cda164dddc0",
+      "new_sha256": "5cf0c644c20bc4b52a61784ef8f0e68c66e7e796b3a4cd85d91a580da1aa5869",
+      "historical_numbered_rows_preserved": true,
+      "F": 90,
+      "R": 597
+    },
+    {
+      "path": "README.en.md",
+      "old_sha256": "3dd353f3626ada712ab93e280c955f87ad7af1b193d9d294bf9806e35e757357",
+      "new_sha256": "e5278c0688eab476f749d0db671dccf4e153f87820bda430fdfc14f18a4d96ff",
+      "historical_numbered_rows_preserved": true,
+      "F": 90,
+      "R": 597
+    }
+  ],
+  "r5_terminal": "failed",
+  "r6_tools": "passed43",
+  "r6_product": "running",
+  "formal_activation": false,
+  "release_created": false
+}

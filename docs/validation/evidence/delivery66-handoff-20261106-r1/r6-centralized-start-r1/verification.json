@@ -1,0 +1,69 @@
+{
+  "status": "complete-r6-frozen-centralized-validation-running",
+  "observed_at_utc": "2026-11-06T05:09:41.181096+00:00",
+  "source_cli": "0.1.66",
+  "formal_cli": "0.1.63",
+  "previous_r5_terminal": {
+    "tests": 4124,
+    "failures": 4,
+    "errors": 1,
+    "skipped": 0,
+    "exit_code": 1
+  },
+  "applied_batch_files": 9,
+  "code_completed_before_tests": true,
+  "tool_suite": {
+    "status": "passed",
+    "tests": 43,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "fixture_only": true,
+    "model_inference": false,
+    "formal_activation": false
+  },
+  "source_suite": {
+    "status": "running",
+    "discovered_tests": 4124,
+    "supervisor": {
+      "pid": 35736,
+      "creation_filetime": 134384152183786341,
+      "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+    },
+    "child": {
+      "pid": 38592,
+      "creation_filetime": 134384152185639172,
+      "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+    },
+    "terminal_result_present": false,
+    "issue_events_snapshot": 0
+  },
+  "freeze_counts": {
+    "file_hashes": 546,
+    "delivery_tool_files": 8,
+    "packaging_source_files": 69,
+    "formal_guard": 95
+  },
+  "freeze_equal": true,
+  "dependency_profiles": {
+    "native-isolated-dependencies.json": {
+      "status": "ready",
+      "files": 36,
+      "source_sha256": "e2790327153e80d4398211f401f0a777183c0071b79b7483c2d20d71041c941b"
+    },
+    "native-bare-worker-dependencies.json": {
+      "status": "ready",
+      "files": 36,
+      "source_sha256": "7361595cb02f29fdcd556f1e162a9ffe5b3a696e27d1ebac0556f90e6e5b7eeb"
+    },
+    "native-dependencies.json": {
+      "status": "ready",
+      "files": 43,
+      "source_sha256": "b0c3f7d521e39fff3f9286e3212582ac11af11dc245f3a3a86d36c4564c40bfc"
+    }
+  },
+  "source_fallback": false,
+  "formal_activation": false,
+  "release_created": false,
+  "full_product_goal_closed": false
+}

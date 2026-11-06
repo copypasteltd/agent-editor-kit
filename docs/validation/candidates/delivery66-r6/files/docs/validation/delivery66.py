@@ -245,7 +245,7 @@ def freeze_code(args):
     save(out / 'verification.json', dict(status='frozen', cli_version=VERSION, file_hashes=pins(),
         formal_guard=formal_guard(), delivery_tool_files=tools, packaging_source_files=packaging_sources(),
         skill_validator=validator,
-        implementation_units=['T01', 'T02', 'T03', 'T04', 'T05', 'T06', 'H01', 'H02', 'H03', 'H04', 'H05', 'H06', 'H07', 'H08', 'H09'],
+        implementation_units=['T01', 'T02', 'T03', 'T04', 'T05', 'T06', 'H01', 'H02', 'H03', 'H04', 'H05', 'H06', 'H07', 'H08', 'H09', 'H10'],
         code_completed_before_tests=True, functional_tests_started=False, model_forwards=0))
     print('All delivery66 code frozen before functional tests.', flush=True)
 

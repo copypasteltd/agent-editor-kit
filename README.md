@@ -1,16 +1,18 @@
 # agent editor kit
 
 <!-- aek-cli65-current -->
-**下一批r6候选仍为9个代码文件：** 已补齐神经配乐Skill说明的冻结输入、官方校验器摘要和包内手册目标版本；四份安装／素材手册恢复当前CLI63状态并完整保留历史。下一轮工具整套现为43项，尚未执行；当前r5完整产品回归继续，原546／7／95冻结保持，正式入口仍CLI0.1.63。[候选生成输入及使用逻辑](docs/product/DELIVERY66_STAGE_INPUTS.md) · [完整未完成内容](docs/product/UNFINISHED_20261106.md)
+**开发状态2026-11-06：CLI0.1.66的9文件完整修正已整批应用并冻结r6，43项交付工具契约全部通过，零失败／错误／跳过。** 新的未过滤产品整套实际发现4,124项，仍运行、无终态；发现数不等于通过数。[本批执行与完整证据](docs/product/DELIVERY66_R6_EXECUTION.md) · [完整未完成内容](docs/product/UNFINISHED_20261106.md)
 
-**开发状态2026-11-06：CLI0.1.66已一次完成并应用20文件修正，冻结r5；31项完整交付工具契约通过，零失败／错误／跳过。** 应用及bare-worker两组实际隔离依赖预检通过；未过滤产品全套实际发现4,124项，仍运行、无终态，发现数不能当作通过数。原r4完整4,114项为10失败／15错误／0跳过，25条完整堆栈和r2中断均保留。[完整未完成内容](docs/product/UNFINISHED_20261106.md) · [原r4结果](docs/product/DELIVERY66_R4_RESULTS.md)
+**原r5完整终态：4,124项、4失败／1错误／0跳过、退出码1。** 五条完整堆栈已保留，原监督和测试进程均已退出后才应用新批。原r4的4,114项／10失败／15错误及r2中断继续保留。[r5终态与五条异常](docs/validation/evidence/delivery66-handoff-20261106-r1/r5-terminal-review-r1/verification.json) · [原r4结果](docs/product/DELIVERY66_R4_RESULTS.md)
 
-**正式入口仍CLI0.1.63／local61／r58，唯一`$agent-ffmpeg-local-editor`、17内部模块。** 新CLI66安装包尚未构建，真实66CUDA配乐、完整工程／配方重放、真实故障、独立安装／注册、正式升级／回滚及alpha.4发布均待门禁通过；工具契约不等于模型、媒体质量或完整剪映等价。
+**正式入口仍CLI0.1.63／local61／r58，唯一`$agent-ffmpeg-local-editor`、17内部模块。** 新66安装包、真实66CUDA音乐／故障、完整工程／配方重放、独立安装注册、正式升级回滚和alpha.4发行仍待门禁；43项工具检查是fixture验证，不冒充模型、媒体质量或完整剪映等价。
 
-本批修正涵盖音乐／音频增强异常进度、真实受控目录夹具、3处目录预期、8模块数值／图像库按需加载、两profile依赖字节核对、即时完整错误与AppError原因记录、原生gh发布身份选择。原数值／像素断言和原失败用例保留。[20文件范围与验证](docs/product/DELIVERY66_R5_CANDIDATE.md) · [31项终态](docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r4/verification.json)
+r6冻结546项产品／用例／依赖、8交付工具、69构建来源和95正式文件，另绑定官方Skill校验器摘要。两组实际隔离依赖各36文件，总依赖43个去重文件通过；不累加为独立覆盖。全部本批代码先完成、应用、冻结，再集中执行工具与未过滤产品整套。
 
-三语快速开始已补齐摘要／离线安装、`--base-only`基础配置、可选模型与GPU、单Skill注册、真实ID、客户滤镜预览、音轨、渲染／质检及工程包重放。基础剪辑无需先装模型包；`--packs`仍强制验包。30段PowerShell原生语法0错误，摘要仍明确占位，完整新包流程尚待实际执行。[简体草稿](docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.md) · [集中交付顺序](docs/product/DELIVERY66_HANDOFF.md)
-本轮仓库检查点提供可审阅的候选代码副本和验证证据；本地应用源码的正式提交待完整产品回归通过。
+原20文件修正涵盖音乐／增强诊断、受控目录夹具、目录预期、8模块按需加载、依赖profile、即时堆栈及原生gh身份。新9文件补齐原生子进程包绑定、AppError导入、提交与构建来源、固定版本文档、Skill说明／校验器及包内目标版本；原数值／像素／Unicode／锁／断网断言保留。[20文件历史范围](docs/product/DELIVERY66_R5_CANDIDATE.md) · [9文件完整范围](docs/product/DELIVERY66_R6_CANDIDATE.md) · [43项实际终态](docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r5/verification.json)
+
+三语快速开始涵盖离线安装、`--base-only`基础配置、可选模型／GPU、单Skill、真实ID、客户滤镜预览、音轨、渲染／质检及工程包重放。基础剪辑不要求模型包；`--packs`仍验包。摘要占位和新包完整流程尚待真实安装填实。[简体草稿](docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.md) · [集中交付顺序](docs/product/DELIVERY66_HANDOFF.md)
+本轮仓库检查点提供候选代码副本和真实验证证据；本地应用源码的正式提交仍待完整产品回归通过。
 <!-- /aek-cli65-current -->
 
 **r58统一Skill工具包已独立验收。** 161条目／160清单文件／93 Skill文件；中文和空格目录解包、四包配置、独立注册、实际谱面与循环修复、完整ACES YUV／PCM／PNG及工程包重放通过。未新增模型推理，不等于干净主机或自然质量验收。
@@ -2223,6 +2225,7 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R594 | 构建来源冻结与TTS子进程候选 / 2026-11-06 | 原69项打包来源有68项未在r5冻结。9文件候选保留62份手册及输入路径，补69来源冻结、8工具、六类提交绑定和ZIP→便携实装→正式入口→发行锁传递；新文档外链固定标签。新增5契约后工具整套计划42项未执行。TTS断网子进程找不到包的第5事件已记录，15方法／断言不变，19处直接子进程复核；9文件语法和289模块静态通过，原546／7／95不变。 [实现](docs/product/DELIVERY66_PACKAGING_PROVENANCE.md) · [静态收据](docs/validation/evidence/delivery66-handoff-20261106-r1/r6-packaging-inputs-draft-r1/verification.json) |
 | R595 | 2026-11-06：完整目标未完成内容复核 | [38组差距、12项交付阻塞及阶段顺序](docs/product/UNFINISHED_20261106.md)；[只读证据](docs/validation/evidence/status-review-20261106-r2/review-r1/verification.json) | 实际发现入口仍CLI0.1.63，开发66；r5真实进程存活、无终态，当前4失败／1错误事件；9文件候选未应用、42工具项未执行；原546／7／95冻结相同。缺少实现、质量／组合验收和正式交付分别说明，无新增功能测试／模型／注册／发行，不计算完成百分比 |
 | R596 | 2026-11-06：Skill生成输入与工具包手册版本补齐 | [完整实现与边界](docs/product/DELIVERY66_STAGE_INPUTS.md)；[最终候选静态证据](docs/validation/evidence/delivery66-handoff-20261106-r1/r6-stage-inputs-draft-r1/final-code-review/verification.json) | 神经配乐说明纳入冻结工具，官方校验器固定摘要并在输出前拒绝变化；4手册恢复正式63／候选65／开发66及完整历史，包内入口先显示实际清单版本。原31方法／断言保留，下一轮43项未执行；289应用模块候选静态无未绑定名称，51链接与4段原生PowerShell语法通过；原546／7／95冻结保持，候选未应用／功能执行／注册／发行 |
+| R597 | 2026-11-06：r5完整终态、r6整批应用与集中验证 | [执行记录](docs/product/DELIVERY66_R6_EXECUTION.md)；[43项实际结果](docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r5/verification.json)；[新整套启动](docs/validation/evidence/delivery66-handoff-20261106-r1/r6-centralized-start-r1/verification.json) | r5完整4,124项为4失败／1错误／0跳过，进程均退出；9文件完成后一次应用并冻结546／8／69／95及校验器。43项工具整套全部通过，零失败／错误／跳过，fixture-only；新未过滤产品整套实际发现4,124项仍运行、无终态。两实际依赖profile通过，正式入口仍63，无新安装／模型／注册／发行；不关闭G01—G38 |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

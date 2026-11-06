@@ -1,0 +1,43 @@
+{
+  "state": {
+    "status": "failed",
+    "started_at_utc": "2026-11-06T02:57:30.734523+00:00",
+    "command": [
+      "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+      "-E",
+      "-B",
+      "-u",
+      "-X",
+      "utf8",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\delivery66.py",
+      "tests",
+      "--run",
+      "r5",
+      "--freeze-run",
+      "r5"
+    ],
+    "supervisor": {
+      "pid": 3860,
+      "creation_filetime": 134384074506106997,
+      "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+    },
+    "result": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\delivery66-20261106-r1\\source-all-r5\\verification.json",
+    "runner_sha256": "70cf349a23ebc4a731de112f2c532979a9d6a0e32ebf15e47758e5d997d3304b",
+    "original_test_selection": "whole-discovery",
+    "child": {
+      "pid": 38572,
+      "creation_filetime": 134384074507391471,
+      "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+    },
+    "exit_code": 1,
+    "finished_at_utc": "2026-11-06T05:03:35.568180+00:00",
+    "elapsed_seconds": 7564.830545800001,
+    "terminal_result_present": true,
+    "terminal_result_sha256": "0f91f1337cde9df71ecf939954ae0efee6a3c2d2a7ca4889632a3b8623bf4876"
+  },
+  "supervisor_live": false,
+  "child_live": false,
+  "result_present": true,
+  "observed_at_utc": "2026-11-06T05:04:32.718996+00:00",
+  "terminal_result_sha256": "0f91f1337cde9df71ecf939954ae0efee6a3c2d2a7ca4889632a3b8623bf4876"
+}

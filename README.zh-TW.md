@@ -1,16 +1,18 @@
 # agent editor kit
 
 <!-- aek-cli65-current -->
-**下一批r6候選仍為9個程式檔案：** 已補齊神經配樂Skill說明的凍結輸入、官方校驗器摘要及包內手冊目標版本；四份安裝／素材手冊恢復目前CLI63狀態並完整保留歷史。下一輪工具整套現為43項，尚未執行；目前r5完整產品回歸繼續，原546／7／95凍結保持，正式入口仍CLI0.1.63。[候選生成輸入及使用邏輯](docs/product/DELIVERY66_STAGE_INPUTS.md) · [完整未完成內容](docs/product/UNFINISHED_20261106.md)
+**開發狀態2026-11-06：CLI0.1.66的9檔案完整修正已整批套用並凍結r6，43項交付工具契約全部通過，零失敗／錯誤／跳過。** 新的未篩選產品整套實際發現4,124項，仍執行中、無終態；發現數不等於通過數。[本批執行與完整證據](docs/product/DELIVERY66_R6_EXECUTION.md) · [完整未完成內容](docs/product/UNFINISHED_20261106.md)
 
-**開發狀態2026-11-06：CLI0.1.66已一次完成並套用20檔案修正，凍結r5；31項完整交付工具契約通過，零失敗／錯誤／跳過。** 應用與bare-worker兩組實際隔離依賴預檢通過；未篩選產品全套實際發現4,124項，仍執行中、無終態，發現數不可當作通過數。原r4完整4,114項為10失敗／15錯誤／0跳過，25條完整堆疊與r2中斷均保留。[完整未完成內容](docs/product/UNFINISHED_20261106.md) · [原r4結果](docs/product/DELIVERY66_R4_RESULTS.md)
+**原r5完整終態：4,124項、4失敗／1錯誤／0跳過、退出碼1。** 五條完整堆疊已保留，原監督與測試程序均退出後才套用新批。原r4的4,114項／10失敗／15錯誤與r2中斷繼續保留。[r5終態與五條異常](docs/validation/evidence/delivery66-handoff-20261106-r1/r5-terminal-review-r1/verification.json) · [原r4結果](docs/product/DELIVERY66_R4_RESULTS.md)
 
-**正式入口仍CLI0.1.63／local61／r58，唯一`$agent-ffmpeg-local-editor`、17內部模組。** 新CLI66安裝包尚未建置，實際66CUDA配樂、完整專案／配方重播、真實故障、獨立安裝／註冊、正式升級／回滾與alpha.4發佈皆待驗收；工具契約不等於模型、媒體品質或完整剪映等價。
+**正式入口仍CLI0.1.63／local61／r58，唯一`$agent-ffmpeg-local-editor`、17內部模組。** 新66安裝包、實際66CUDA音樂／故障、完整專案／配方重播、獨立安裝註冊、正式升級回滾與alpha.4發行仍待門禁；43項工具檢查為fixture驗證，不冒充模型、媒體品質或完整剪映等價。
 
-本批涵蓋音樂／音訊增強異常進度、實際受控目錄夾具、3處目錄預期、8模組數值／影像庫按需載入、兩profile依賴位元組核對、即時完整錯誤與AppError原因記錄、原生gh發佈身份選擇。原數值／像素斷言及原失敗用例保留。[20檔案範圍與驗證](docs/product/DELIVERY66_R5_CANDIDATE.md) · [31項終態](docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r4/verification.json)
+r6凍結546項產品／用例／依賴、8交付工具、69建置來源和95正式檔案，另綁定官方Skill校驗器摘要。兩組實際隔離依賴各36檔案，總依賴43個去重檔案通過；不累加為獨立覆蓋。全部本批程式先完成、套用、凍結，再集中執行工具與未篩選產品整套。
 
-三語快速開始涵蓋摘要／離線安裝、`--base-only`基礎設定、可選模型與GPU、單Skill註冊、實際ID、客戶濾鏡預覽、音軌、算圖／品管與專案包重播。基礎剪輯毋須先裝模型包；`--packs`仍強制驗包。30段PowerShell原生語法0錯誤，摘要仍明確佔位，完整新包流程尚待實際執行。[繁體草稿](docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.zh-TW.md) · [集中交付順序](docs/product/DELIVERY66_HANDOFF.md)
-本輪倉庫檢查點提供可審閱的候選程式副本與驗證證據；本機應用原始碼的正式提交待完整產品回歸通過。
+原20檔案修正涵蓋音樂／增強診斷、受控目錄夾具、目錄預期、8模組按需載入、依賴profile、即時堆疊及原生gh身份。新9檔案補齊原生子程序包綁定、AppError匯入、提交與建置來源、固定版本文件、Skill說明／校驗器及包內目標版本；原數值／像素／Unicode／鎖／斷網斷言保留。[20檔案歷史範圍](docs/product/DELIVERY66_R5_CANDIDATE.md) · [9檔案完整範圍](docs/product/DELIVERY66_R6_CANDIDATE.md) · [43項實際終態](docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r5/verification.json)
+
+三語快速開始涵蓋離線安裝、`--base-only`基礎設定、可選模型／GPU、單Skill、實際ID、客戶濾鏡預覽、音軌、算圖／品管及專案包重播。基礎剪輯不要求模型包；`--packs`仍驗包。摘要佔位和新包完整流程尚待實際安裝填實。[繁體草稿](docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.zh-TW.md) · [集中交付順序](docs/product/DELIVERY66_HANDOFF.md)
+本輪倉庫檢查點提供候選程式副本及實際驗證證據；本機應用原始碼的正式提交仍待完整產品回歸通過。
 <!-- /aek-cli65-current -->
 
 **r58統一Skill工具包已獨立驗收。** 161條目／160清單檔案／93 Skill檔案；中文與空格目錄解包、四包配置、獨立註冊、實際譜面與循環修復、完整ACES YUV／PCM／PNG及專案重播通過。未新增模型推理，不等於乾淨主機或自然品質驗收。
@@ -2223,6 +2225,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R594 | 建置來源凍結與TTS子程序候選 / 2026-11-06 | 原69項打包來源有68項未在r5凍結。9檔案候選保留62份手冊及輸入路徑，補69來源凍結、8工具、六類提交綁定與ZIP→便攜實裝→正式入口→發行鎖傳遞；新文件外鏈固定標籤。新增5契約後工具整套計畫42項未執行。TTS斷網子程序找不到套件的第5事件已記錄，15方法／斷言不變，19處直接子程序複核；9檔案語法與289模組靜態通過，原546／7／95不變。 [實作](docs/product/DELIVERY66_PACKAGING_PROVENANCE.md) · [靜態收據](docs/validation/evidence/delivery66-handoff-20261106-r1/r6-packaging-inputs-draft-r1/verification.json) |
 | R595 | 2026-11-06：完整目標未完成內容複核 | [38組差距、12項交付阻塞及階段順序](docs/product/UNFINISHED_20261106.md)；[唯讀證據](docs/validation/evidence/status-review-20261106-r2/review-r1/verification.json) | 實際發現入口仍CLI0.1.63，開發66；r5真實程序存活、無終態，目前4失敗／1錯誤事件；9檔案候選未套用、42工具項未執行；原546／7／95凍結相同。缺少實作、品質／組合驗收及正式交付分別說明，無新增功能測試／模型／註冊／發行，不計算完成百分比 |
 | R596 | 2026-11-06：Skill生成輸入與工具包手冊版本補齊 | [完整實作與邊界](docs/product/DELIVERY66_STAGE_INPUTS.md)；[最終候選靜態證據](docs/validation/evidence/delivery66-handoff-20261106-r1/r6-stage-inputs-draft-r1/final-code-review/verification.json) | 神經配樂說明納入凍結工具，官方校驗器固定摘要並在輸出前拒絕變化；4手冊恢復正式63／候選65／開發66及完整歷史，包內入口先顯示實際清單版本。原31方法／斷言保留，下一輪43項未執行；289應用模組候選靜態無未綁定名稱，51連結與4段原生PowerShell語法通過；原546／7／95凍結保持，候選未套用／功能執行／註冊／發行 |
+| R597 | 2026-11-06：r5完整終態、r6整批套用與集中驗證 | [執行記錄](docs/product/DELIVERY66_R6_EXECUTION.md)；[43項實際結果](docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r5/verification.json)；[新整套啟動](docs/validation/evidence/delivery66-handoff-20261106-r1/r6-centralized-start-r1/verification.json) | r5完整4,124項為4失敗／1錯誤／0跳過，程序均退出；9檔案完成後一次套用並凍結546／8／69／95與校驗器。43項工具整套全部通過，零失敗／錯誤／跳過，fixture-only；新未篩選產品整套實際發現4,124項仍執行中、無終態。兩實際依賴profile通過，正式入口仍63，無新安裝／模型／註冊／發行；不關閉G01—G38 |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

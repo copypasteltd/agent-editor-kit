@@ -1,0 +1,53 @@
+{
+  "status": "reviewed-not-terminal",
+  "observed_at_utc": "2026-11-06T05:21:13.556386+00:00",
+  "branch": "main",
+  "head": "32537849a2476e4d49b9adb9adceed236737901a",
+  "source_cli": "0.1.66",
+  "formal_cli": "0.1.63",
+  "freeze_run": "r6",
+  "frozen_product_files": 546,
+  "frozen_delivery_tools": 8,
+  "frozen_packaging_sources": 69,
+  "protected_formal_files": 95,
+  "all_frozen_bytes_equal": true,
+  "official_validator_equal": true,
+  "original_goal_bytes_equal": true,
+  "original_hook_bytes_equal": true,
+  "readmes": {
+    "README.md": {
+      "historical_rows_preserved": 686,
+      "functional_rows": 90,
+      "review_rows": 597,
+      "sha256": "a809f591d14bb80df5cd148fc29134ef896648ca3067c5f219dc52b0682ccefe"
+    },
+    "README.zh-TW.md": {
+      "historical_rows_preserved": 686,
+      "functional_rows": 90,
+      "review_rows": 597,
+      "sha256": "5cf0c644c20bc4b52a61784ef8f0e68c66e7e796b3a4cd85d91a580da1aa5869"
+    },
+    "README.en.md": {
+      "historical_rows_preserved": 686,
+      "functional_rows": 90,
+      "review_rows": 597,
+      "sha256": "8ffb42b8dc54452d912138d23b9dd192a2eb41e4f64c83761e4cc729d0250525"
+    }
+  },
+  "checked_links": 139,
+  "missing_links": [],
+  "tool_contracts": {
+    "tests": 43,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "fixture_only": true
+  },
+  "product_tests_discovered": 4124,
+  "product_terminal": false,
+  "product_issue_events_snapshot": 0,
+  "formal_activation": false,
+  "release_created": false,
+  "whole_goal_closed": false,
+  "new_functional_test_invocation": false
+}

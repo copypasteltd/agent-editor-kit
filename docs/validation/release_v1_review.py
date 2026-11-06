@@ -106,6 +106,7 @@ def review(phase):
     scope += [p.relative_to(r.ROOT).as_posix() for p in (r.ROOT / 'docs/validation').glob('release_v1*.py')]
     # Publish receipts, not large raw subprocess streams or machine-local configuration.
     scope += [p.relative_to(r.ROOT).as_posix() for p in r.EVIDENCE.glob('*/verification.json')]
+    scope += [p.relative_to(r.ROOT).as_posix() for p in r.EVIDENCE.glob('*/*.source.py')]
     scope += ['docs/product/STABLE_V1_SCOPE.md']
     # Remove files whose Git clean object already matches HEAD (follow-up commit).
     ordered = sorted(set(scope))

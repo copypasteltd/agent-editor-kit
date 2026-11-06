@@ -20,6 +20,25 @@
 
 ## 從下載到交付的完整流程
 
+<details>
+<summary>備用：使用GitHub官方API匿名下載附件</summary>
+
+網頁附件連線重置時可用；下載後繼續核對SHA256並執行下方安裝流程。
+
+```powershell
+$downloads = "E:/video-tools/downloads"
+New-Item -ItemType Directory -Path $downloads -Force | Out-Null
+$aekRelease = Invoke-RestMethod -Uri "https://api.github.com/repos/copypasteltd/agent-editor-kit/releases/tags/v1.0.0"
+foreach ($aekAsset in $aekRelease.assets) {
+    & curl.exe --fail --location --retry 3 --connect-timeout 20 `
+      --header "Accept: application/octet-stream" `
+      --output (Join-Path $downloads $aekAsset.name) $aekAsset.url
+    if ($LASTEXITCODE -ne 0) { throw "Download failed: $($aekAsset.name)" }
+}
+```
+
+</details>
+
 原生Windows CPython3.13 x64應用；唯一公開入口為 `$agent-ffmpeg-local-editor`，包含17個內部模組。應用ZIP不包含Python、FFmpeg／ffprobe、驅動、模型權重或完整音樂執行庫。先準備本機依賴；不使用Docker、WSL或虛擬環境。
 
 1. 下載本次Release的兩個ZIP、SHA256SUMS.txt及本語言快速開始至同一目錄。將以下路徑改為實際路徑。逐項比較計算摘要與清單，全部相符後解壓縮至新目錄；後續安裝器還會核對應用內部清單。
@@ -512,8 +531,8 @@ $agent-ffmpeg-local-editor 对实际输出、manifest 和 Scope 复核，分别�
 
 | 編號 | 內容 | 結果與證據 |
 |---|---|---|
-| R618 | v1.0.0正式分發建置及三語文件整理 | [建置](../../../docs/validation/evidence/release-v1-20261107/build-r1/verification.json) · [本輪原生安裝、實際Skill與完整影音重放](../../../docs/validation/evidence/release-v1-20261107/local-r1/verification.json)。核心原始碼/安裝版各4,124項屬歷史驗收，以本版完整應用位元組綁定沿用；不計為本輪新跑8,248項 |
-| R619 | 正式公開發行 | [發行收據](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/validation/evidence/release-v1-20261107/publication-r1/verification.json)；新標籤、新附件、non-prerelease；既有alpha不覆寫 |
+| R618 | v1.0.0正式分發建置及三語文件整理 | [建置](../../../docs/validation/evidence/release-v1-20261107/build-r1/verification.json) · [本輪原生安裝、實際Skill與完整影音重放](../../../docs/validation/evidence/release-v1-20261107/local-r1/verification.json) · [178個倉庫檔案連結複核](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/validation/evidence/release-v1-20261107/public-source-links-r1/verification.json)。核心原始碼/安裝版各4,124項屬歷史驗收，以本版完整應用位元組綁定沿用；不計為本輪新跑8,248項 |
+| R619 | 正式公開發行 | [發行收據](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/validation/evidence/release-v1-20261107/publication-r1/verification.json)；新標籤、新附件、non-prerelease；既有alpha不覆寫  · 2026-11-07 05:27 +08:00 |
 | R620 | 正式下載獨立複核 | [匿名下載、7附件摘要、新目錄原生安裝及實際單Skill完整重放](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/validation/evidence/release-v1-20261107/public-download-r1/verification.json)。同機新目錄不等於乾淨主機或新GPU/模型品質驗收 |
 
 原先707條F/R記錄保存在[可瀏覽歷史README](../../../docs/history/readme-before-v1.0.0/README.zh-TW.md)，另有[原始位元組快照](../../../docs/history/readme-before-v1.0.0/README.zh-TW.md.original.txt)及[三語原始編號行](../../../docs/history/readme-before-v1.0.0/numbered-rows.json)。本頁完整保留功能表、案例與服務說明；歷史狀態不再排列於目前安裝流程之前。新實測繼續追加編號，歷史失敗不刪除、不轉記。

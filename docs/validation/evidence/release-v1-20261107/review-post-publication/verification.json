@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "phase": "post-publication",
+  "distribution_version": "v1.0.0",
+  "cli_version": "0.1.66",
+  "three_language_counts": {
+    "README.md": {
+      "lines": 551,
+      "function_rows": 90,
+      "modules": 17
+    },
+    "README.zh-TW.md": {
+      "lines": 551,
+      "function_rows": 90,
+      "modules": 17
+    },
+    "README.en.md": {
+      "lines": 553,
+      "function_rows": 90,
+      "modules": 17
+    }
+  },
+  "historical_rows_preserved_each": 707,
+  "original_goal_unchanged": true,
+  "unaccepted_source_worktree_preserved": true,
+  "candidate_CLI67_committed": false,
+  "scope_files": 17,
+  "exact_secret_scan_files": 17,
+  "current_manual_local_links_resolve": true,
+  "whole_goal_complete": false
+}

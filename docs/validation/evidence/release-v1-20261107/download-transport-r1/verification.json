@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "assets": 7,
+  "transport": "native curl, official public GitHub asset API",
+  "authorization_header_provided": false,
+  "third_party_proxy_used": false,
+  "TLS_verification_disabled": false,
+  "all_asset_hashes_equal": true,
+  "original_browser_route_interruption_preserved": true,
+  "receipts": [
+    {
+      "receipt": "agent-editor-kit-v1.0.0-cp313-win_amd64.zip-1794000879559185300.exit.json",
+      "exit_code": 0,
+      "elapsed_seconds": 34.300594599999386
+    },
+    {
+      "receipt": "agent-editor-kit-v1.0.0-unified-skill-r60.zip-1794000916527977500.exit.json",
+      "exit_code": 0,
+      "elapsed_seconds": 1.5797910000001139
+    },
+    {
+      "receipt": "QUICKSTART.en.md-1794000918123548400.exit.json",
+      "exit_code": 0,
+      "elapsed_seconds": 1.1047107999993386
+    },
+    {
+      "receipt": "QUICKSTART.md-1794000919262471600.exit.json",
+      "exit_code": 0,
+      "elapsed_seconds": 1.2596752999997989
+    },
+    {
+      "receipt": "QUICKSTART.zh-TW.md-1794000920559986100.exit.json",
+      "exit_code": 0,
+      "elapsed_seconds": 1.0788566000001083
+    },
+    {
+      "receipt": "RELEASE-NOTES.md-1794000921662831100.exit.json",
+      "exit_code": 0,
+      "elapsed_seconds": 1.300737499999741
+    },
+    {
+      "receipt": "SHA256SUMS.txt-1794000922982050100.exit.json",
+      "exit_code": 0,
+      "elapsed_seconds": 1.5386895999999979
+    }
+  ]
+}

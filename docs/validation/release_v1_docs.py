@@ -5,6 +5,7 @@ import json
 import posixpath
 import re
 import sys
+from datetime import datetime, timedelta, timezone
 from urllib.parse import quote, unquote
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -219,6 +220,18 @@ The software license does not automatically license media, fonts, models, voices
             '\n以下功能及案例保留各自證據日期；舊案例的CLI編號是實際執行版本，不表示本輪重新執行。正式1.0.0的安裝及呼叫以前述流程和R618–R620為準。\n\n',
             '\nCapabilities and cases below retain their evidence dates. Older CLI identifiers describe actual historical runs, not tests repeated for this release. Use the installation workflow above and R618–R620 for v1.0.0.\n\n'][i]
         checks = new_checks[i]
+        source_label = ('178个仓库文件链接复核', '178個倉庫檔案連結複核', '178 committed repository targets')[i]
+        marker = '(docs/validation/evidence/release-v1-20261107/local-r1/verification.json)'
+        checks = checks.replace(marker, marker + ' · [' + source_label + '](' + BASE +
+            '/blob/main/docs/validation/evidence/release-v1-20261107/public-source-links-r1/verification.json)')
+        publication = ROOT / 'docs/validation/evidence/release-v1-20261107/publication-r1/verification.json'
+        if publication.exists():
+            record = json.loads(publication.read_bytes())
+            published_time = datetime.fromisoformat(record['published_at'].replace('Z', '+00:00')).astimezone(
+                timezone(timedelta(hours=8))).strftime('%Y-%m-%d %H:%M +08:00')
+            lines = checks.splitlines()
+            checks = '\n'.join(line.rstrip().removesuffix('|') + ' · ' + published_time + ' |'
+                if line.startswith('| R619 |') else line for line in lines) + '\n'
         # The tag predates its own public-download receipt. Link these two
         # post-publication records to main; never retag published source.
         for receipt in ('publication-r1/verification.json', 'public-download-r1/verification.json'):
@@ -229,7 +242,32 @@ The software license does not automatically license media, fonts, models, voices
             '## 本版新安裝與專案重放的實際輸出\n\n程式圖案及獨立測試音經真實安裝版剪輯、LUT與專案包重放；2秒、60幀、完整立體聲對照。此例核驗分發/渲染鏈路，真實素材及AI案例見後方完整案例表。\n\n',
             '## Actual output from this release’s fresh installation and replay\n\nA generated test pattern and independent diagnostic tone pass through the installed editor, LUT and editable package replay: two seconds, 60 frames and full stereo comparison. This checks distribution/rendering; real-resource and AI cases are documented in the complete case tables below.\n\n'][i]
         demo += '![v1.0.0 actual installed output, silent diagnostic GIF](docs/assets/release-v1-20261107/actual.gif)\n\n[MP4](docs/assets/release-v1-20261107/actual.mp4) · [PNG](docs/assets/release-v1-20261107/preview.png) · [Input video](docs/assets/release-v1-20261107/input-pattern.mp4) · [Input WAV](docs/assets/release-v1-20261107/input-tone.wav) · [Editable project](docs/assets/release-v1-20261107/editable.aevpkg.zip) · [Source and notices](docs/assets/release-v1-20261107/SOURCE_AND_LICENSES.md)\n\n'
-        rendered = intro[i] + quick_root.split('\n', 2)[2] + '\n' + scope_note + demo + functions + skill_cases + checks
+        api_title = ('备用：使用GitHub官方API匿名下载附件', '備用：使用GitHub官方API匿名下載附件',
+                     'Alternative: download anonymously through the official GitHub asset API')[i]
+        api_note = ('网页附件连接重置时可用；下载后继续核对SHA256并执行下方安装流程。',
+                    '網頁附件連線重置時可用；下載後繼續核對SHA256並執行下方安裝流程。',
+                    'Use this when the web download connection fails. Verify SHA256 and continue with the installation steps below.')[i]
+        api_example = '''<details>
+<summary>''' + api_title + '''</summary>
+
+''' + api_note + '''
+
+```powershell
+$downloads = "E:/video-tools/downloads"
+New-Item -ItemType Directory -Path $downloads -Force | Out-Null
+$aekRelease = Invoke-RestMethod -Uri "https://api.github.com/repos/copypasteltd/agent-editor-kit/releases/tags/v1.0.0"
+foreach ($aekAsset in $aekRelease.assets) {
+    & curl.exe --fail --location --retry 3 --connect-timeout 20 `
+      --header "Accept: application/octet-stream" `
+      --output (Join-Path $downloads $aekAsset.name) $aekAsset.url
+    if ($LASTEXITCODE -ne 0) { throw "Download failed: $($aekAsset.name)" }
+}
+```
+
+</details>
+
+'''
+        rendered = intro[i] + api_example + quick_root.split('\n', 2)[2] + '\n' + scope_note + demo + functions + skill_cases + checks
         write(ROOT / name, rendered)
         write(RELEASE / name, relocate(rendered, '../../../'))
     write(HISTORY / 'numbered-rows.json', json.dumps(history, ensure_ascii=False, indent=2) + '\n')

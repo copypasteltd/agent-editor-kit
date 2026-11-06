@@ -20,6 +20,25 @@ Use native Windows x64 with an existing CPython3.13 x64 and FFmpeg/ffprobe. Basi
 
 ## Complete download-to-delivery workflow
 
+<details>
+<summary>Alternative: download anonymously through the official GitHub asset API</summary>
+
+Use this when the web download connection fails. Verify SHA256 and continue with the installation steps below.
+
+```powershell
+$downloads = "E:/video-tools/downloads"
+New-Item -ItemType Directory -Path $downloads -Force | Out-Null
+$aekRelease = Invoke-RestMethod -Uri "https://api.github.com/repos/copypasteltd/agent-editor-kit/releases/tags/v1.0.0"
+foreach ($aekAsset in $aekRelease.assets) {
+    & curl.exe --fail --location --retry 3 --connect-timeout 20 `
+      --header "Accept: application/octet-stream" `
+      --output (Join-Path $downloads $aekAsset.name) $aekAsset.url
+    if ($LASTEXITCODE -ne 0) { throw "Download failed: $($aekAsset.name)" }
+}
+```
+
+</details>
+
 Native Windows CPython3.13 x64 application. The only public entry is `$agent-ffmpeg-local-editor`, with 17 internal modules. Python, FFmpeg/ffprobe, drivers, model weights and the complete music runtime are separate local dependencies. Do not use Docker, WSL or virtual environments.
 
 1. Download both ZIPs, SHA256SUMS.txt and this quickstart from the same release into one directory. Replace the example paths. Compare each computed digest with the checksum list before extracting into new directories; the installer also checks the internal application inventory.
@@ -514,8 +533,8 @@ Dated actual keyframe/camera/mask/title/transition/audio composition:
 
 | ID | Work | Results and evidence |
 |---|---|---|
-| R618 | v1.0.0 distribution rebuild and complete trilingual documentation | [Build](../../../docs/validation/evidence/release-v1-20261107/build-r1/verification.json) · [This release's native install, real Skill and whole-media replay](../../../docs/validation/evidence/release-v1-20261107/local-r1/verification.json). The 4,124 source and 4,124 installed engine tests are historical acceptance, reused through exact application byte binding; they are not 8,248 newly executed tests |
-| R619 | Public stable publication | [Publication receipt](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/validation/evidence/release-v1-20261107/publication-r1/verification.json); new tag/assets, non-prerelease; existing alphas preserved |
+| R618 | v1.0.0 distribution rebuild and complete trilingual documentation | [Build](../../../docs/validation/evidence/release-v1-20261107/build-r1/verification.json) · [This release's native install, real Skill and whole-media replay](../../../docs/validation/evidence/release-v1-20261107/local-r1/verification.json) · [178 committed repository targets](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/validation/evidence/release-v1-20261107/public-source-links-r1/verification.json). The 4,124 source and 4,124 installed engine tests are historical acceptance, reused through exact application byte binding; they are not 8,248 newly executed tests |
+| R619 | Public stable publication | [Publication receipt](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/validation/evidence/release-v1-20261107/publication-r1/verification.json); new tag/assets, non-prerelease; existing alphas preserved  · 2026-11-07 05:27 +08:00 |
 | R620 | Independent public download verification | [Anonymous download, all seven hashes, new native install and actual single-Skill whole-media replay](https://github.com/copypasteltd/agent-editor-kit/blob/main/docs/validation/evidence/release-v1-20261107/public-download-r1/verification.json). A fresh directory on this host is not a clean-host, new-GPU or model-quality acceptance |
 
 All 707 prior F/R records remain in the [browsable historical README](../../../docs/history/readme-before-v1.0.0/README.en.md), with an [exact original byte snapshot](../../../docs/history/readme-before-v1.0.0/README.en.md.original.txt) and [original trilingual numbered rows](../../../docs/history/readme-before-v1.0.0/numbered-rows.json). Functional tables, services and cases remain in this manual. Dated development status no longer precedes current installation instructions. New observations append IDs without deleting old failures or reassigning test results.

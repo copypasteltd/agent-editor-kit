@@ -503,7 +503,8 @@ def api(method, url, body=None, file=None, *, token=None, missing=False):
     def request(data):
         try:
             with opener.open(urllib.request.Request(url, data=data, headers=headers, method=method), timeout=600) as response:
-                return json.loads(response.read(8 * 1024**2))
+                raw = response.read(8 * 1024**2)
+                return json.loads(raw) if raw else None
         except urllib.error.HTTPError as exc:
             if missing and exc.code == 404:
                 return None
@@ -531,19 +532,31 @@ def publish(commit):
     token = publisher.credential()
     base = 'https://api.github.com/repos/' + REPO
     old = api('GET', base + '/releases/tags/v0.1.0-alpha.4')
-    save(WORK / 'old-alpha4-before.json', old)
+    if not (WORK / 'old-alpha4-before.json').exists():
+        save(WORK / 'old-alpha4-before.json', old)
     tag = api('GET', base + '/git/ref/tags/' + TAG, token=token, missing=True)
     if tag is None:
         tag = api('POST', base + '/git/refs', dict(ref='refs/tags/' + TAG, sha=commit), token=token)
     assert tag['object']['type'] == 'commit' and tag['object']['sha'] == commit
     marker = '<!-- agent-editor-kit-stable-source:' + commit + ';lock:' + sha(WORK / 'release-lock.json') + ' -->'
     release = api('GET', base + '/releases/tags/' + TAG, token=token, missing=True)
+    # GitHub's tag endpoint can hide a draft even from its publisher. Enumerate
+    # authenticated drafts and bind by our exact source/lock marker before POST.
+    owned_drafts = []
+    if release is None:
+        listed = api('GET', base + '/releases?per_page=100', token=token)
+        owned_drafts = [row for row in listed if row['tag_name'] == TAG
+                        and row['draft'] and marker in row.get('body', '')]
+        if owned_drafts:
+            release = max(owned_drafts, key=lambda row: (len(row['assets']), -row['id']))
     if release is None:
         release = api('POST', base + '/releases', dict(tag_name=TAG, target_commitish=commit,
             name='agent editor kit v1.0.0 — first stable native Agent CLI release',
             draft=True, prerelease=False, make_latest='false',
             body=(assets / 'RELEASE-NOTES.md').read_text(encoding='utf-8') + '\n' + marker), token=token)
     assert marker in release['body'], 'Preserve an existing release owned by another source lock'
+    save(WORK / 'pending-release-identity.json', dict(release_id=release['id'], tag=TAG,
+        source_commit=commit, lock_sha256=sha(WORK / 'release-lock.json')))
     expected = {row['name']: row for row in lock['assets']}
     existing = {row['name']: row for row in release['assets']}
     assert set(existing) <= set(expected)
@@ -561,9 +574,18 @@ def publish(commit):
         release = api('PATCH', base + '/releases/' + str(release['id']),
                       dict(draft=False, prerelease=False, make_latest='true'), token=token)
     assert not release['draft'] and not release['prerelease']
+    removed = []
+    for duplicate in owned_drafts:
+        if duplicate['id'] == release['id']:
+            continue
+        current = api('GET', base + '/releases/' + str(duplicate['id']), token=token)
+        assert current['draft'] and current['tag_name'] == TAG and marker in current.get('body', '')
+        api('DELETE', base + '/releases/' + str(current['id']), token=token)
+        removed.append(current['id'])
     result = dict(status='published', distribution_version=TAG, cli_version=VERSION,
         source_commit=commit, release_id=release['id'], url=release['html_url'],
         published_at=release['published_at'], prerelease=False, draft=False,
+        discarded_own_duplicate_drafts=removed, publication_controller_sha256=sha(Path(__file__)),
         assets=[dict(name=row['name'], bytes=row['size'], sha256=row['digest'],
                      download_url=row['browser_download_url']) for row in release['assets']])
     save(EVIDENCE / 'publication-r1/verification.json', result)
@@ -580,13 +602,45 @@ def public_accept():
     tag = api('GET', base + '/git/ref/tags/' + TAG)
     assert tag['object']['sha'] == published['source_commit']
     assert {row['name'] for row in release['assets']} == {row['name'] for row in lock['assets']}
+    remote_assets = {row['name']: row for row in release['assets']}
     folder = WORK / 'public-download'
-    folder.mkdir()
+    folder.mkdir(exist_ok=True)
     for row in published['assets']:
-        request = urllib.request.Request(row['download_url'], headers={'User-Agent': 'agent-editor-kit-public-acceptance'})
         target = folder / row['name']
-        with urllib.request.urlopen(request, timeout=600) as response, target.open('xb') as stream:
-            shutil.copyfileobj(response, stream, 1024**2)
+        if target.exists():
+            assert sha(target) == row['sha256'].removeprefix('sha256:') and target.stat().st_size == row['bytes']
+            print('Reused independently verified download: ' + row['name'], flush=True)
+            continue
+        for attempt in range(1, 5):
+            pending = target.with_name(target.name + '.part-' + str(time.time_ns()))
+            try:
+                # Both endpoints are public. The official asset API avoids a
+                # failing github.com web route on this host, without credentials.
+                uri = remote_assets[row['name']]['url']
+                assert uri.startswith(base + '/releases/assets/')
+                curl = Path('C:/Windows/System32/curl.exe')
+                if curl.is_file():
+                    call(EVIDENCE / 'download-transport-r1', row['name'] + '-' + str(time.time_ns()),
+                         [curl, '--fail', '--location', '--http1.1', '--silent', '--show-error',
+                          '--connect-timeout', '20', '--max-time', '600', '--retry', '2',
+                          '--retry-delay', '3', '--header', 'Accept: application/octet-stream',
+                          '--output', pending, uri], timeout=660)
+                else:
+                    request = urllib.request.Request(uri, headers={'Accept': 'application/octet-stream',
+                        'User-Agent': 'agent-editor-kit-public-acceptance', 'Cache-Control': 'no-cache'})
+                    with urllib.request.urlopen(request, timeout=60) as response, pending.open('xb') as stream:
+                        shutil.copyfileobj(response, stream, 1024**2)
+                assert sha(pending) == row['sha256'].removeprefix('sha256:') and pending.stat().st_size == row['bytes'], 'Public artifact bytes differ'
+                os.replace(pending, target)
+                break
+            except (urllib.error.URLError, ConnectionError, TimeoutError) as exc:
+                save(WORK / ('download-network-' + row['name'] + '-' + str(attempt) + '.json'),
+                     dict(status='network-interrupted-preserved', error_type=type(exc).__name__,
+                          asset=row['name'], partial_bytes=pending.stat().st_size if pending.exists() else 0))
+                print('Transient public download interruption; retry ' + str(attempt) + ': ' + row['name'], flush=True)
+                if attempt == 4:
+                    raise
+                time.sleep(min(attempt * 3, 9))
         assert sha(target) == row['sha256'].removeprefix('sha256:') and target.stat().st_size == row['bytes']
         print('Anonymous redownload verified: ' + row['name'], flush=True)
     accept('public-r1', folder)
@@ -597,6 +651,8 @@ def public_accept():
         public_url=release['html_url'], anonymous_redownload_assets=len(lock['assets']),
         all_download_hashes_equal=True, latest_stable=True, source_commit=published['source_commit'],
         old_alpha4_unchanged=True, fresh_install_and_actual_single_skill_replay=True,
+        public_download_transport='anonymous official GitHub asset API, Accept: application/octet-stream',
+        download_controller_sha256=sha(Path(__file__)),
         clean_host=False, models_executed=False, whole_CapCut_parity=False))
 
 

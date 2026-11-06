@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "observed_at_utc": "2026-11-06T11:27:16.908663+00:00",
+  "release_api_url": "https://api.github.com/repos/copypasteltd/agent-editor-kit/releases/tags/v0.1.0-alpha.4",
+  "tag": "v0.1.0-alpha.4",
+  "release_url": "https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.4",
+  "draft": false,
+  "prerelease": true,
+  "published_at": "2026-11-06T11:22:05Z",
+  "source_commit": "2eb9130c45fa446b1f328df777a0a3624d681990",
+  "anonymous_api": true,
+  "remote_assets_digest_and_size_match": true,
+  "assets": [
+    {
+      "name": "agent-editor-kit-community-unified-skill-r59.zip",
+      "bytes": 798393,
+      "digest": "sha256:02528ab7cc05d9195e7107fc51e2fe845a0935649dc0b7568b36b805950bda96",
+      "state": "uploaded"
+    },
+    {
+      "name": "agent-editor-kit-v0.1.0-alpha.4-cp313-win_amd64.zip",
+      "bytes": 305730971,
+      "digest": "sha256:36b2970f92d24393e6ae6b77636f43b89bea6c3a201aaa164889148feb2d0786",
+      "state": "uploaded"
+    },
+    {
+      "name": "QUICKSTART.en.md",
+      "bytes": 8678,
+      "digest": "sha256:a24bb94d68079a37efd5c2cb4ee84246e44d297caa41908eaceca5a90ac8b0ca",
+      "state": "uploaded"
+    },
+    {
+      "name": "QUICKSTART.md",
+      "bytes": 8272,
+      "digest": "sha256:cf9bd5c907aabd02c7f999d291acd2eec584a1a89688e73a7d93b1b9888d88ac",
+      "state": "uploaded"
+    },
+    {
+      "name": "QUICKSTART.zh-TW.md",
+      "bytes": 8269,
+      "digest": "sha256:614e8ec9f31f73c331b35724d47abcb5b4a6bbe55c97cf0dbbea2a2f5c5a454b",
+      "state": "uploaded"
+    },
+    {
+      "name": "RELEASE-NOTES.md",
+      "bytes": 1336,
+      "digest": "sha256:741c6668e3d02f323c7d539b80027eca9e0a48ac902327a8da06ba83e293bdc5",
+      "state": "uploaded"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "bytes": 565,
+      "digest": "sha256:acde009dc5a0642946f8918688e8dc87bd1186863e6bbc9271a9972a7e1063f7",
+      "state": "uploaded"
+    }
+  ],
+  "tag_ref": "2eb9130c45fa446b1f328df777a0a3624d681990\trefs/tags/v0.1.0-alpha.4",
+  "main_ref_before_documentation": "2eb9130c45fa446b1f328df777a0a3624d681990\trefs/heads/main",
+  "asset_redownload_and_install_this_review": false,
+  "original_product_tests_rerun": 0,
+  "full_goal_closed": false
+}

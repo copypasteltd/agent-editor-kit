@@ -1,6 +1,6 @@
 # 当前未完成内容详解（2026-11-06）
 
-**最新正式终态：CLI0.1.66／local64／r59，唯一Skill、17模块、95文件。** 三类真实音乐故障、本机通用控制器升级→逐字节回滚63→再次升级66及实际C盘发现入口完整音画已通过。[正式验收](DELIVERY66_FORMAL_ACCEPTANCE.md) · [三个真实故障](DELIVERY66_ACTUAL_FAULTS.md) · [当前逐项剩余内容](UNFINISHED_DETAIL_20261106.md)。匹配alpha.4公开发行和原G01—G38完整范围仍开放。
+**最新正式终态：CLI0.1.66／local64／r59，唯一Skill、17模块、95文件。** 三类真实音乐故障、本机通用控制器升级→逐字节回滚63→再次升级66及实际C盘发现入口完整音画已通过。[正式验收](DELIVERY66_FORMAL_ACCEPTANCE.md) · [三个真实故障](DELIVERY66_ACTUAL_FAULTS.md) · [当前逐项剩余内容](UNFINISHED_DETAIL_20261106.md)。alpha.4已于2026-11-06 19:22:05（Asia/Taipei）公开，19:27匿名官方API复核7附件摘要／大小一致；[本版下载与流程](../releases/v0.1.0-alpha.4/README.md)。公开下载实装、干净主机／跨机GPU与原G01—G38完整范围仍开放。
 
 **以下保留较早18:20状态及当时待办作为历史快照；当前状态以上方与详细清单为准。**
 

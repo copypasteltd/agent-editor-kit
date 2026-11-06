@@ -1,20 +1,22 @@
 # agent editor kit
 
+**目前公開版本：[v0.1.0-alpha.4](https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.4)（2026-11-06 19:22，Asia/Taipei）。** CLI0.1.66／local64／r59，原始碼提交`2eb9130c45fa446b1f328df777a0a3624d681990`，應用包、唯一Skill工具包、三語快速開始、發行說明與SHA256清單共7附件已公開。匿名官方API與遠端tag複核通過，附件大小／摘要與來源鎖一致；[本版使用流程](docs/releases/v0.1.0-alpha.4/README.md)。[詳細剩餘工作](docs/product/UNFINISHED_DETAIL_20261106.md)已補實作包、歷史失敗關閉條件與推進順序。公開下載後重裝、乾淨主機／跨機GPU、自然品質及完整剪映等價仍待；本輪僅核對證據及更新文件。
+
 <!-- aek-cli65-current -->
-**目前未完成內容詳解（2026-11-06）：** [原G01—G38、13組明確待補實作、10組品質／歷史失敗、6組效能／遷移工作及逐項完成條件](docs/product/UNFINISHED_DETAIL_20261106.md)。實際CLI66音樂／音畫／便攜安裝與第二台CPU升級已通過；正式入口、自然品質與公開發行分別記錄。[本次證據複核](docs/validation/evidence/status-review-20261106-r6/review-r1/verification.json)，原目標繼續開放。
+**目前未完成內容詳解（2026-11-06）：** [原G01—G38、13組明確待補實作、10組品質／歷史失敗、6組效能／遷移工作及逐項完成條件](docs/product/UNFINISHED_DETAIL_20261106.md)。實際CLI66音樂／音畫／便攜安裝與第二台CPU升級已通過；本版正式Skill與公開發行已完成；自然品質與完整目標分別記錄。[本次證據複核](docs/validation/evidence/status-review-20261106-r6/review-r1/verification.json)，原目標繼續開放。
 
 **開發狀態2026-11-06 17:24：CLI0.1.66原r6原始碼與安裝版各自完整通過4,124項，均為0失敗／0錯誤／0跳過、退出碼0。** 原安裝監督／測試程序均已退出，289應用模組精確一致、無原始碼回退；候選單Skill實際PowerShell入口已通過。[安裝終態與候選Skill](docs/product/DELIVERY66_R6_INSTALLED_ACCEPTANCE.md)。[完整結果與候選](docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md) · [完整未完成內容](docs/product/UNFINISHED_20261106.md)
 
 **原r5完整終態：4,124項、4失敗／1錯誤／0跳過、退出碼1。** 五條完整堆疊已保留，原監督與測試程序均退出後才套用新批。原r4的4,114項／10失敗／15錯誤與r2中斷繼續保留。[r5終態與五條異常](docs/validation/evidence/delivery66-handoff-20261106-r1/r5-terminal-review-r1/verification.json) · [原r4結果](docs/product/DELIVERY66_R4_RESULTS.md)
 
-**正式本地入口已升級CLI0.1.66／local64／r59，唯一`$agent-ffmpeg-local-editor`、17內部模組、95檔案。** 三類實際模型故障、通用控制器正式66→63精確回滾→66、實際C盤發現入口及完整RGBA／PCM／母音訊／配方重播均通過。[正式驗收與使用](docs/product/DELIVERY66_FORMAL_ACCEPTANCE.md) · [取消／逾時／目標衝突](docs/product/DELIVERY66_ACTUAL_FAULTS.md)。GPU生曲、r59便攜與第二台CPU循環已有獨立實測；自然品質、全部進階功能、乾淨主機／跨機GPU與alpha.4公開發行仍待。
+**正式本地入口已升級CLI0.1.66／local64／r59，唯一`$agent-ffmpeg-local-editor`、17內部模組、95檔案。** 三類實際模型故障、通用控制器正式66→63精確回滾→66、實際C盤發現入口及完整RGBA／PCM／母音訊／配方重播均通過。[正式驗收與使用](docs/product/DELIVERY66_FORMAL_ACCEPTANCE.md) · [取消／逾時／目標衝突](docs/product/DELIVERY66_ACTUAL_FAULTS.md)。GPU生曲、r59便攜與第二台CPU循環已有獨立實測；alpha.4已公開；自然品質、全部進階功能與乾淨主機／跨機GPU仍待。
 
 r6凍結546項產品／用例／依賴、8交付工具、69建置來源和95正式檔案，另綁定官方Skill校驗器摘要。兩組實際隔離依賴各36檔案，總依賴43個去重檔案通過；不累加為獨立覆蓋。全部本批程式先完成、套用、凍結，再集中執行工具與未篩選產品整套。
 
 原20檔案修正涵蓋音樂／增強診斷、受控目錄夾具、目錄預期、8模組按需載入、依賴profile、即時堆疊及原生gh身份。新9檔案補齊原生子程序包綁定、AppError匯入、提交與建置來源、固定版本文件、Skill說明／校驗器及包內目標版本；原數值／像素／Unicode／鎖／斷網斷言保留。[20檔案歷史範圍](docs/product/DELIVERY66_R5_CANDIDATE.md) · [9檔案完整範圍](docs/product/DELIVERY66_R6_CANDIDATE.md) · [43項實際終態](docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r5/verification.json)
 
-三語快速開始涵蓋離線安裝、`--base-only`基礎設定、可選模型／GPU、單Skill、實際ID、客戶濾鏡預覽、音軌、算圖／品管及專案重播。r59便攜包已實際基礎安裝與完整媒體重播；新公開版本的最終摘要及附件仍待正式發行門檻。[繁體草稿](docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.zh-TW.md) · [實際銜接與r2參數](docs/product/DELIVERY66_HANDOFF.md)
-本批實際模型／專案／便攜／第二台CPU、三類實際故障及正式入口升級回滾均有完整收據；原空畫面拒絕保留。匹配公開發行與原G01—G38完整功能／品質／效能繼續開放。
+三語快速開始涵蓋離線安裝、`--base-only`基礎設定、可選模型／GPU、單Skill、實際ID、客戶濾鏡預覽、音軌、算圖／品管及專案重播。r59便攜包已實際基礎安裝與完整媒體重播；本版最終摘要與7附件已正式公開，詳見頂部版本流程。[繁體草稿](docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.zh-TW.md) · [實際銜接與r2參數](docs/product/DELIVERY66_HANDOFF.md)
+本批實際模型／專案／便攜／第二台CPU、三類實際故障及正式入口升級回滾均有完整收據；原空畫面拒絕保留。本版匹配公開發行已完成；原G01—G38完整功能／品質／效能繼續開放。
 最新整套終態：原r5的Unicode、兩項專案鎖、音訊診斷及TTS斷網共五項，已在完整r6的4,124項中全部通過，不另計數。
 
 **第二台原生Windows的CPU63→66→63→66已實際通過。** 離線安裝、`--base-only`設定、一個隔離Skill及四次完整60影格RGBA／非靜音PCM／時鐘／母素材對照通過；原檔案／設定與全域註冊／PATH未改，臨時傳輸連接埠關閉。[實際四階段結果與MP4](docs/product/CROSS_MACHINE66_RESULTS.md)。這是顯式隔離升級路徑，GPU、乾淨主機和通用正式交付控制器另驗。[歷史63基線](docs/product/CROSS_MACHINE63_BASELINE.md) · [63基線MP4](docs/assets/cross-machine63-20261106-r1/second-host.mp4)。
@@ -2244,6 +2246,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R606 | 2026-11-06：CLI66原安裝r6完整通過與候選Skill入口 | [實際終態與使用](docs/product/DELIVERY66_R6_INSTALLED_ACCEPTANCE.md)；[安裝4,124項](docs/validation/evidence/delivery66-20261106-r1/installed-all-r6/verification.json)；[本輪來源與保護核對](docs/validation/evidence/delivery66-handoff-20261106-r1/r6-installed-acceptance-r1/verification.json) | 原安裝整套4,124項、0失敗／錯誤／跳過、退出碼0；原程序均退出，289應用模組與凍結原始碼一致、無原始碼回退，原斷言保留。候選95檔案／17內部模組、實際PowerShell入口通過。原始碼與安裝分別計數，正式仍63；實際66音樂已進入執行，尚不計推理／自然品質／故障／工具包／跨機／正式切換／發行通過 |
 | R607 | 2026-11-06：CLI66實際CUDA音樂、完整音畫／便攜與第二台CPU升級；細化剩餘內容 | [音樂／AV／便攜實際證據](docs/product/DELIVERY66_R6_MUSIC_AV_PORTABLE_ACCEPTANCE.md)；[第二台四階段](docs/product/CROSS_MACHINE66_RESULTS.md)；[逐項未完成](docs/product/UNFINISHED_DETAIL_20261106.md)；[保護與狀態複核](docs/validation/evidence/status-review-20261106-r5/review-r2/verification.json) | 候選實際10秒CUDA生曲、母WAV／配方／全部300影格RGBA與PCM重播、r59獨立基礎安裝通過；第二台CPU63→66→63→66及四次完整媒體、原檔案保護通過。原音訊空畫面拒絕保留；三AV檔案先寫齊凍結後8契約通過，17遠端協議另計。取消通過，逾時／衝突未終態；正式仍63，未發行alpha.4，未驗自然品質／乾淨主機／跨機GPU／完整目標；原696條歷史編號逐字保留 |
 | R608 | 2026-11-06：三類實際模型故障與唯一正式Skill66升級／精確回滾／實際入口 | [實際故障](docs/product/DELIVERY66_ACTUAL_FAULTS.md)；[正式驗收與使用](docs/product/DELIVERY66_FORMAL_ACCEPTANCE.md)；[目前詳細未完成](docs/product/UNFINISHED_DETAIL_20261106.md)；[正式交付複核](docs/validation/evidence/status-review-20261106-r6/review-r1/verification.json) | 實際取消／逾時／完整CUDA後目標衝突三類通過，原工作程序自行退出、資料／外部檔案保護、無失敗素材及受管清理通過。原通用控制器正式66→63回滾全部舊95檔案→66，實際C盤發現入口完整RGBA／PCM／母WAV／配方通過。正式CLI66/local64/r59，95檔案／17模組；未發行alpha.4、未驗完整自然品質或完整目標，原697歷史編號逐字保留 |
+| R609 | 2026-11-06：alpha.4公開終態複核與未完成內容細化 | [公開版本與使用](docs/releases/v0.1.0-alpha.4/README.md)；[原發行終態](docs/validation/evidence/delivery66-handoff-20261106-r1/publication-r2/verification.json)；[匿名API／保護複核](docs/validation/evidence/status-review-20261106-r7/review-r1/verification.json)；[詳細差距與實作包](docs/product/UNFINISHED_DETAIL_20261106.md) | 原發行程序已退出，alpha.4於19:22公開，提交2eb9130與遠端tag一致，7附件SHA256／大小與來源鎖一致；修正過期未發行狀態，展開I01—I13、Q01—Q10、N01—N06與W01—W05。未重跑產品用例或推論，未重新下載實裝／聽審，完整目標未關閉；原698歷史編號逐字保留 |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

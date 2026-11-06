@@ -1,5 +1,7 @@
 # agent editor kit
 
+**当前未完成内容已逐项展开（2026-11-06状态复核）。** 实际发现入口仍为CLI0.1.66／local64／r59；CLI67原4,154项源码回归仍运行、尚无完整终态。独立Unicode 17文字基础已验收，但未接入正式渲染；新增shaping69仅4个开发文件，整批、编译、测试、实际预览与交付均未完成，不是CLI69。详见[实现／质量／交付及38组原目标](docs/product/UNFINISHED_DETAIL_20261106.md)与[本次实际状态证据](docs/validation/evidence/status-review-20261106-r10/review-r1/verification.json)。本次没有新增功能通过数；alpha.4发布、500滤镜母图、103音色WAV与统一Skill的已完成记录保留。
+
 **文字基础独立开发批已通过（2026-11-06）：** 固定Unicode 17分字／换行、无损原文折行、UTF-16位置与精确逐字时钟代码已写齐并冻结；15项接口检查、官方766条分字及19,338条换行用例分别全部通过，0失败／跳过／排除。代码位于`development/text68/`，尚未接入正式字幕渲染或Skill；完整塑形、RTL视觉高亮、动态版式与实际多语成片仍待。CLI67原验收继续，正式仍CLI66。[实现、接口、证据与待办](docs/product/TEXT68_UNICODE_FOUNDATION.md)。
 
 **CLI67交付验证批已写齐并冻结（2026-11-06）：** 真实音乐、完整音画、故障、便携安装及66→67→66→67回滚验证程序已完成；12项工具冻结后，17项夹具检查全部通过，非模型实测。人像30项合成契约另记；原生源码4,154项仍在原进程中运行，安装／实际GPU／正式升级尚未开始。交付接续已绑定既有进程，前序通过后才继续。正式仍CLI66，alpha.4不覆盖。[本轮完成与10项交付门槛](docs/product/PORTRAIT67_DELIVERY.md) · [完整剩余工作](docs/product/UNFINISHED_DETAIL_20261106.md)。
@@ -2260,6 +2262,7 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R612 | 2026-11-06：CLI67人像分区整批开发、冻结及集中契约 | [本批开发与门槛](docs/product/PORTRAIT67_DEVELOPMENT.md)；[冻结](docs/validation/evidence/portrait67-20261106-r1/freeze-r1/verification.json)；[30项契约](docs/validation/evidence/portrait67-20261106-r1/contracts-r1/verification.json) | 新区域／保护／配方／管道代码及真实案例先写齐再冻结；30项合成处理器契约0失败／错误／跳过，非GPU实测。源码整套发现4,154项仍在执行，安装／真实GPU／正式交付待验；未重启原进程，正式95文件及原701历史编号保留，完整目标开放 |
 | R613 | 2026-11-06：CLI67同版交付批完整代码、冻结与集中工具检查 | [交付批及待办](docs/product/PORTRAIT67_DELIVERY.md)；[12项工具冻结](docs/validation/evidence/portrait67-20261106-r1/delivery-code-phase-r1/verification.json)；[17项结果](docs/validation/evidence/portrait67-20261106-r1/delivery-contracts-r1/verification.json) | 音乐／完整音画／三故障／描述／r60工具包／便携／95→96文件升级回滚程序先写齐再集中检查；9项新准入和8项原音画规则0失败／错误／跳过，模型前向0。原4,154项源码回归继续，安装和真实GPU尚未开始；新接续绑定原1556进程，不重启。正式66、原95文件、alpha.4和原702条编号行保持，完整目标开放 |
 | R614 | 2026-11-06：独立Unicode 17文字基础内核整批完成、冻结与集中测试 | [实现与待办](docs/product/TEXT68_UNICODE_FOUNDATION.md)；[整批冻结](docs/validation/evidence/text68-20261106-r1/freeze-r1/verification.json)；[完整结果](docs/validation/evidence/text68-20261106-r1/tests-r1/verification.json) | 7类固定属性、字素／换行、无损范围折行、UTF-16、首段方向和精确逐字时钟已实现；15接口、766分字、19,338换行分别全通过，0失败／跳过／排除。不依赖主机Unicode版本，不与产品回归相加。未接入渲染／正式Skill，完整Bidi／塑形／自然成片仍待；原CLI67冻结、正式66、alpha.4及703条历史行保持，G13与完整目标开放 |
+| R615 | 2026-11-06：当前未完成内容逐项状态复核 | [完整缺口／工作包／优先级](docs/product/UNFINISHED_DETAIL_20261106.md)；[实际入口与原进程证据](docs/validation/evidence/status-review-20261106-r10/review-r1/verification.json) | 正式C盘发现入口实际返回CLI66；CLI67原回归仍运行、尚无终态。文字基础独立验收保持，shaping69仅4个未编译／未测试开发文件；明确源码／安装／真实GPU／工程／Skill交付门槛。保留每种语言704条历史编号行及原G01—G38；本轮无新功能验收、模型前向或发布变更 |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

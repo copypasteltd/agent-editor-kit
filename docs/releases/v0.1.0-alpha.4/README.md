@@ -18,7 +18,7 @@
 
 源码与独立安装各自完整4,124项通过，原断言保留、安装无源码回退。已验证实际CUDA短配乐、母音频／配方与完整音画工程重放、r59同机便携基础安装、第二台CPU63→66→63→66、本机通用正式升级／逐字节回滚／再次升级，以及真实模型取消／超时／输出冲突。这些测试组分别记录，不合并计数，不代表完整剪映功能或自然视听质量。
 
-本版原始发布程序已完成7附件上传及远端摘要核对；19:27匿名官方API和远端tag复核通过。尚未从公开下载地址重新下载这两个ZIP后执行全新安装／注册／成片重放；不是干净主机、跨机GPU、全依赖迁移或完整Agent自主任务验收。完整G01—G38继续开放。
+本版原始发布程序已完成7附件上传及远端摘要核对；19:27匿名官方API和远端tag复核通过。现已从公开地址重新下载全部7附件，实际完成新目录安装、隔离单Skill注册、真实PowerShell入口和完整60帧RGBA／PCM／时钟／母素材重放；[实际案例、MP4／GIF及证据](../../product/PUBLIC_RELEASE66_ACCEPTANCE.md)。这是同机既有依赖，不是干净主机、跨机GPU、全依赖迁移或完整Agent自主任务验收。完整G01—G38继续开放。
 
 [功能模块与服务说明](../../product/CAPABILITIES.md) · [繁體功能說明](../../product/CAPABILITIES.zh-TW.md) · [English capabilities](../../product/CAPABILITIES.en.md) · [单Skill与17内部模块](../../skills/UNIFIED_SKILL.md) · [完整案例与媒体](../../product/CASES.md) · [详细待办与完成条件](../../product/UNFINISHED_DETAIL_20261106.md)。
 

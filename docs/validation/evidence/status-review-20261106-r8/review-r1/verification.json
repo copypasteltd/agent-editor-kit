@@ -1,0 +1,85 @@
+{
+  "status": "passed",
+  "observed_at_utc": "2026-11-06T11:59:24.145496+00:00",
+  "base_commit": "2ae438290fc6f0c34ffc617a5d06dd7c95b5836a",
+  "immutable_release_source_commit": "2eb9130c45fa446b1f328df777a0a3624d681990",
+  "cli_version": "0.1.66",
+  "skill_release": "r59",
+  "actual_public_download_install_replay_passed": true,
+  "original_execution_exit_code": 0,
+  "original_execution_process_exited": true,
+  "downloaded_assets": 7,
+  "application_modules": 289,
+  "complete_RGBA_PCM_clock_and_masters_equal": true,
+  "decoded_video_frames": 60,
+  "decoded_PCM_samples_per_channel": 96256,
+  "retained_command_files": 79,
+  "raw_PCM_streams_published": false,
+  "formal_activation_changed": false,
+  "original_product_suites_rerun": 0,
+  "new_model_inference": false,
+  "clean_host": false,
+  "cross_machine": false,
+  "new_human_listening": false,
+  "natural_quality_accepted": false,
+  "static_still_review_only": true,
+  "code_complete_before_tests": true,
+  "code_phase_sha256": "48dd14e31ed31b18fee067009e7fcc01e8ec27828e1b3f4d5ad7c460d7d978fe",
+  "actual_terminal_sha256": "ade45c2ba02a90f6ca019a7d26bee5576987dae6ef0f215b85f1de2b73440633",
+  "original_protected_groups": {
+    "product": {
+      "files": 546,
+      "changed": []
+    },
+    "delivery_tools": {
+      "files": 8,
+      "changed": []
+    },
+    "skill": {
+      "files": 95,
+      "changed": []
+    },
+    "registration": {
+      "files": 1,
+      "changed": []
+    },
+    "packaging": {
+      "files": 69,
+      "changed": []
+    }
+  },
+  "original_G01_G38_unchanged": true,
+  "historical_readme_rows": {
+    "README.md": {
+      "preserved_rows": 699,
+      "current_rows": 700,
+      "old_rows_byte_for_byte_as_text": true
+    },
+    "README.zh-TW.md": {
+      "preserved_rows": 699,
+      "current_rows": 700,
+      "old_rows_byte_for_byte_as_text": true
+    },
+    "README.en.md": {
+      "preserved_rows": 699,
+      "current_rows": 700,
+      "old_rows_byte_for_byte_as_text": true
+    }
+  },
+  "documents": {
+    "README.md": "cb40c0c5c8eb7e2add9fed7efd661dc663463adc9d5e612dda9cdf5b80f71751",
+    "README.zh-TW.md": "77053d763522e6d34dca8e38072f5907fbeb52de59ac783fc2ffa59de8c3b303",
+    "README.en.md": "dbd54a4b559d3c6d3c316a062b9c03dcb4f27433073e5f4c2efb4eca43650fc3",
+    "docs/product/UNFINISHED_DETAIL_20261106.md": "cf512e22b438b6402ef4ffc1acccd3363f064dc8ece352314ff274f731ac7634",
+    "docs/product/UNFINISHED_20261106.md": "f7eb663c8c7db386304c44a8ef5a2d038227aba4dc931cb76a90db18dc2c043a",
+    "docs/product/PUBLIC_RELEASE66_ACCEPTANCE.md": "3b3438ec614dabcd488571a3f4c2a99e942c649cb2d12a65d55f00bd4fde7919",
+    "docs/releases/v0.1.0-alpha.4/README.md": "27b1fd9b65e9917ff97868dacdf2e494fcc81a14c4cbd2cd9e63d7dbc41800cc"
+  },
+  "current_links_checked": 128,
+  "missing_current_links": [],
+  "exact_configured_secret_scan_passed": true,
+  "private_configuration_copied": false,
+  "internal_model_audio_or_movie_published": false,
+  "scope_files": 101,
+  "full_goal_closed": false
+}

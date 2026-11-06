@@ -1,0 +1,72 @@
+{
+  "format": "agent-editor-public-install-diagnostic-v1",
+  "cli_version": "0.1.66",
+  "source": "Native FFmpeg testsrc2 and 440Hz sine authored by the public acceptance case",
+  "generated_media_license": "CC0-1.0",
+  "source_video": {
+    "width": 320,
+    "height": 180,
+    "fps": 30,
+    "frames": 60,
+    "seconds": 2
+  },
+  "result_video": {
+    "width": 320,
+    "height": 180,
+    "fps": 30,
+    "frames": 60,
+    "seconds": 2,
+    "stereo_sample_rate": 48000
+  },
+  "left": "original procedural source",
+  "right": "actual public-install output with t3-kodak-gold-200 strength0.65",
+  "complete_product_replay_checked": true,
+  "comparison_media": {
+    "comparison": {
+      "width": 640,
+      "height": 180,
+      "frames": 60,
+      "fps": "30/1",
+      "duration": "2.005000"
+    },
+    "gif": {
+      "width": 640,
+      "height": 180,
+      "frames": 20,
+      "fps": "10/1",
+      "duration": "2.000000"
+    }
+  },
+  "artifacts": [
+    {
+      "path": "docs/assets/public-release66-20261106-r1/r1/source.mp4",
+      "bytes": 61866,
+      "sha256": "4d8b70cba46f4f3d7c465f175e235f175a39dac1a7d8cd409c3e841a1d4e75e5"
+    },
+    {
+      "path": "docs/assets/public-release66-20261106-r1/r1/actual.mp4",
+      "bytes": 131807,
+      "sha256": "273ccb54c829a6feec6c5ef51a8fdc05cb127d05bc7540b2c004ff38a098f9d2"
+    },
+    {
+      "path": "docs/assets/public-release66-20261106-r1/r1/comparison.mp4",
+      "bytes": 143621,
+      "sha256": "0577ca5db12ddba6fe64db5a2952baa92677c1f0cbd7619722bf4d985b26fd88"
+    },
+    {
+      "path": "docs/assets/public-release66-20261106-r1/r1/comparison.gif",
+      "bytes": 472668,
+      "sha256": "58395bf3ec9b5bc802d28759da172acbbf105eb9e6c2f8066037779832c1e9b9"
+    },
+    {
+      "path": "docs/assets/public-release66-20261106-r1/r1/comparison.png",
+      "bytes": 49495,
+      "sha256": "bf566f2a892fe03bec5ff411b45ad4296a670991d6260eca17850efcc04bc003"
+    }
+  ],
+  "screenshot_time_seconds": 0.5,
+  "model_inference": false,
+  "human_listening": false,
+  "continuous_playback_accepted": false,
+  "natural_quality_accepted": false
+}

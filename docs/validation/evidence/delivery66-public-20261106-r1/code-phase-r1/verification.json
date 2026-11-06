@@ -1,0 +1,48 @@
+{
+  "status": "code-complete-frozen",
+  "observed_at_utc": "2026-11-06T11:48:11.391533+00:00",
+  "worktree_head": "2ae438290fc6f0c34ffc617a5d06dd7c95b5836a",
+  "release_source_commit": "2eb9130c45fa446b1f328df777a0a3624d681990",
+  "functional_tests_started": false,
+  "code_batch_complete": true,
+  "files": {
+    "delivery66_public_roundtrip.py": "c0f45beeb6e070f8bba8f2a9f5b6018d05a4e4e2570462e4c0df8b3aa274e026",
+    "delivery66_handoff.py": "9d34d055c3ff365e5af9f03f466df0cfae78c8d11386ad096c73bdcf83aac771",
+    "delivery66.py": "e568f908ce008b674676e42c91c02656ec238f434ab815cd118b31daa8da462e",
+    "cross_machine66_20261106_r1/case.py": "1f46e8829f565240c7d1b920f3caf38784e62c9bbd63a27cb51286b45543d246"
+  },
+  "original_frozen_groups": {
+    "product": {
+      "files": 546,
+      "changed": []
+    },
+    "delivery_tools": {
+      "files": 8,
+      "changed": []
+    },
+    "skill": {
+      "files": 95,
+      "changed": []
+    },
+    "registration": {
+      "files": 1,
+      "changed": []
+    },
+    "packaging": {
+      "files": 69,
+      "changed": []
+    }
+  },
+  "scope": [
+    "anonymous download and SHA256 of all7 assets",
+    "fresh native offline installation",
+    "base-only configuration",
+    "isolated single Skill registration and actual PowerShell entry",
+    "complete60-frame RGBA/stereo PCM/clock/master replay",
+    "actual source/result MP4 and comparison GIF",
+    "preserve global formal Skill and runtime"
+  ],
+  "new_product_code": false,
+  "new_model_inference": false,
+  "full_goal_closed": false
+}

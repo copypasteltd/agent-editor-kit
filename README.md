@@ -1,21 +1,21 @@
 # agent editor kit
 
 <!-- aek-cli65-current -->
-**未完成内容逐项展开（2026-11-06）：** [9项当前交付工作、原G01—G38的实现／质量／性能／生态差距与完成条件](docs/product/UNFINISHED_DETAIL_20261106.md)。源码完整通过、候选安装、正式入口和公开发行分别记录；[本次只读复核](docs/validation/evidence/status-review-20261106-r4/review-r1/verification.json)不增加功能测试数，原目标继续开放。
+**未完成内容逐项展开（2026-11-06）：** [9项交付跟踪（安装整套已完成）、原G01—G38的实现／质量／性能／生态差距与完成条件](docs/product/UNFINISHED_DETAIL_20261106.md)。源码完整通过、候选安装、正式入口和公开发行分别记录；[本次只读复核](docs/validation/evidence/status-review-20261106-r4/review-r1/verification.json)不增加功能测试数，原目标继续开放。
 
-**开发状态2026-11-06：CLI0.1.66原r6源码整套已完整通过：4,124项、0失败／0错误／0跳过、退出码0。** 已按同一冻结实际离线构建并安装66候选，289应用模块精确一致；安装版同一整套已启动、尚无终态。[完整结果与候选](docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md) · [完整未完成内容](docs/product/UNFINISHED_20261106.md)
+**开发状态2026-11-06 17:24：CLI0.1.66原r6源码与安装版分别完整通过4,124项，均为0失败／0错误／0跳过、退出码0。** 原安装监督／测试进程均已退出，289应用模块精确一致、无源码回退；候选单Skill实际PowerShell入口已通过。[安装终态与候选Skill](docs/product/DELIVERY66_R6_INSTALLED_ACCEPTANCE.md)。[完整结果与候选](docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md) · [完整未完成内容](docs/product/UNFINISHED_20261106.md)
 
 **原r5完整终态：4,124项、4失败／1错误／0跳过、退出码1。** 五条完整堆栈已保留，原监督和测试进程均已退出后才应用新批。原r4的4,114项／10失败／15错误及r2中断继续保留。[r5终态与五条异常](docs/validation/evidence/delivery66-handoff-20261106-r1/r5-terminal-review-r1/verification.json) · [原r4结果](docs/product/DELIVERY66_R4_RESULTS.md)
 
-**正式入口仍CLI0.1.63／local61／r58，唯一`$agent-ffmpeg-local-editor`、17内部模块。** 新66候选已独立安装，安装版整套、真实66CUDA音乐／故障、完整工程／配方重放、新工具包实装、正式升级回滚和alpha.4发行仍待验收。43项工具契约为独立fixture组，不与4,124产品项相加，也不代表完整剪映等价。
+**正式入口仍CLI0.1.63／local61／r58，唯一`$agent-ffmpeg-local-editor`、17内部模块。** 新66候选安装整套及候选入口已通过；真实66CUDA音乐／故障、完整工程／配方重放、新工具包实装、正式升级回滚和alpha.4发行仍待验收。43项工具契约为独立fixture组，不与4,124产品项相加，也不代表完整剪映等价。
 
 r6冻结546项产品／用例／依赖、8交付工具、69构建来源和95正式文件，另绑定官方Skill校验器摘要。两组实际隔离依赖各36文件，总依赖43个去重文件通过；不累加为独立覆盖。全部本批代码先完成、应用、冻结，再集中执行工具与未过滤产品整套。
 
 原20文件修正涵盖音乐／增强诊断、受控目录夹具、目录预期、8模块按需加载、依赖profile、即时堆栈及原生gh身份。新9文件补齐原生子进程包绑定、AppError导入、提交与构建来源、固定版本文档、Skill说明／校验器及包内目标版本；原数值／像素／Unicode／锁／断网断言保留。[20文件历史范围](docs/product/DELIVERY66_R5_CANDIDATE.md) · [9文件完整范围](docs/product/DELIVERY66_R6_CANDIDATE.md) · [43项实际终态](docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r5/verification.json)
 
 三语快速开始涵盖离线安装、`--base-only`基础配置、可选模型／GPU、单Skill、真实ID、客户滤镜预览、音轨、渲染／质检及工程包重放。基础剪辑不要求模型包；`--packs`仍验包。摘要占位和新包完整流程尚待真实安装填实。[简体草稿](docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.md) · [集中交付顺序](docs/product/DELIVERY66_HANDOFF.md)
-本轮仓库检查点提供候选代码副本和真实验证证据；本地应用源码的正式提交仍待完整产品回归通过。
-最新整套终态：原r5的Unicode、两项工程锁、音频诊断及TTS断网共五项，已在完整r6的4,124项中全部通过，不另计数；正式升级仍需安装版及后续交付验收。[源码终态](docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md)。
+本轮保留源码及安装完整终态、实际候选入口与来源摘要；正式Skill切换和公开发行仍待后续实际门槛。
+最新整套终态：原r5的Unicode、两项工程锁、音频诊断及TTS断网共五项，已在完整r6的4,124项中全部通过，不另计数；正式升级仍需后续实际模型、工程、工具包、故障和切换验收。[源码终态](docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md)。
 
 **第二台原生Windows的正式63版CPU基线已通过。** 实际离线安装、中文空格目录、一个Skill隔离注册及工程包重放，完整60帧RGBA、非静音PCM、视频时钟和母素材摘要与本机一致，原r58清单160文件未改。它是66升级／回滚的旧版对照；66新配置器、GPU、干净主机及正式升级仍另验。[完整操作与限制](docs/product/CROSS_MACHINE63_BASELINE.md) · [第二台实际结果](docs/validation/evidence/delivery66-cross-machine-20261106-r1/baseline-remote-r2/verification.json) · [实际MP4](docs/assets/cross-machine63-20261106-r1/second-host.mp4)。
 
@@ -2241,6 +2241,7 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R603 | 2026-11-06：逐项展开当前未完成内容 | [9项交付与38组详细差距](docs/product/UNFINISHED_DETAIL_20261106.md)；[只读复核及冻结保护](docs/validation/evidence/status-review-20261106-r3/review-r1/verification.json) | 复核源码r6完整4,124项通过、66独立候选289模块及正式63／17模块；原安装版真实进程仍存活、无终态。分别说明缺实现、质量／组合、GPU性能、素材模板、Agent自主任务和正式交付；保留全部历史F／R行和原G文件。仅文档与状态复核，无新增功能测试／模型／跨机执行／正式切换／公开发行，不计算完整目标百分比 |
 | R604 | 2026-11-06：66跨机一次性衔接执行器完整实现与集中契约检查 | [流程与使用](docs/product/CROSS_MACHINE66_UPGRADE.md)；[代码冻结](docs/validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-controller-code-phase-r1/verification.json)；[17项契约](docs/validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-controller-contracts-r1/verification.json)；[本轮保护复核](docs/validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-controller-review-r1/verification.json) | 全批代码先写齐再冻结／集中检查；17项全部通过，0失败／错误／跳过。包含原门槛、当前设备截图摘要、一次start、本地原句柄等待、原远端身份观察、传输关闭、四次完整媒体／母机参考／MP4摘要和有界私密检查后原子写入证据。仅原生协议夹具，无远端调用／模型／新产品测试；原安装整套仍运行，正式63及全部G01—G38不变 |
 | R605 | 2026-11-06：未完成范围及客户任务差距复核 | [9项交付、38组原目标与6类客户任务](docs/product/UNFINISHED_DETAIL_20261106.md)；[只读状态与保护核对](docs/validation/evidence/status-review-20261106-r4/review-r1/verification.json) | 展开需补实现、自然质量／复杂组合及正式交付差距；同步跨机控制器17项协议夹具已通过、实际远程未执行。源码4,124项通过，安装版结论以收据时点为准，正式仍63。保留全部历史F／R行；文档与只读复核，无新增产品测试／模型／远程执行／正式切换／发行，不计算整体完成率 |
+| R606 | 2026-11-06：CLI66原安装r6完整通过与候选Skill入口 | [实际终态与使用](docs/product/DELIVERY66_R6_INSTALLED_ACCEPTANCE.md)；[安装4,124项](docs/validation/evidence/delivery66-20261106-r1/installed-all-r6/verification.json)；[本轮来源与保护核对](docs/validation/evidence/delivery66-handoff-20261106-r1/r6-installed-acceptance-r1/verification.json) | 原安装整套4,124项、0失败／错误／跳过、退出码0；原进程均已退出，289应用模块与冻结源码一致、无源码回退，原断言保留。候选95文件／17内部模块、实际PowerShell入口通过。源码与安装分别计数，正式仍63；实际66配乐已进入执行，尚不计推理／自然质量／故障／工具包／跨机／正式切换／发行通过 |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

@@ -1,0 +1,59 @@
+[
+  {
+    "name": "frontmatter",
+    "argv": [
+      "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+      "-E",
+      "-B",
+      "-X",
+      "utf8",
+      "C:\\Users\\carzy\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\stage-r1\\skills\\agent-ffmpeg-local-editor"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.1426958999945782
+  },
+  {
+    "name": "version",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\stage-r1\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 3.265650300003472
+  },
+  {
+    "name": "delivery-help",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\stage-r1\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "delivery",
+      "--help"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.9311221999960253
+  },
+  {
+    "name": "capabilities",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\stage-r1\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "capabilities"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.9906091000011656
+  }
+]

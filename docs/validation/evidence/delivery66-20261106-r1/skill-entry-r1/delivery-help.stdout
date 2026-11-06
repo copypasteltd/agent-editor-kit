@@ -1,0 +1,7 @@
+usage: ai-ad-editor delivery [-h] {inspect,activate,recover,rollback} ...
+
+positional arguments:
+  {inspect,activate,recover,rollback}
+
+options:
+  -h, --help            show this help message and exit

@@ -1,0 +1,616 @@
+{
+  "status": "passed",
+  "observed_at_utc": "2026-11-06T09:35:11.846820+00:00",
+  "base_commit": "2c85dc170305be1eeaccad25d9e6ac97ced60054",
+  "previous_goal_turn": "progress: documented full remaining scope and pushed scoped update",
+  "source_cli": "0.1.66",
+  "suites": {
+    "source": {
+      "tests": 4124,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "verification_sha256": "82013fc30ff00613060d8dc0a23663e9b94d28dcd4413b2a5262f970f4ed52d3",
+      "native_dependency_files": 43,
+      "original_assertions_preserved": true,
+      "loaded_package": "E:\\dev\\sandbox\\AI广告剪辑\\product\\src\\ai_ad_editor",
+      "source_fallback": null,
+      "native_elapsed_seconds": 7421.183156000003,
+      "runner_elapsed_seconds": 7408.8834078
+    },
+    "installed": {
+      "tests": 4124,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "verification_sha256": "071ac016a71531654f4525955b5d5b77849d08bab084d07544822d3622c534ec",
+      "native_dependency_files": 75,
+      "original_assertions_preserved": true,
+      "loaded_package": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\candidate-r1\\installed\\site\\ai_ad_editor",
+      "source_fallback": false,
+      "native_elapsed_seconds": 7882.042663,
+      "runner_elapsed_seconds": 7863.206294699998
+    }
+  },
+  "whole_suites_counted_separately": true,
+  "installed_tests_newly_completed": 4124,
+  "application_modules_equal": 289,
+  "candidate_archive_sha256": "36b2970f92d24393e6ae6b77636f43b89bea6c3a201aaa164889148feb2d0786",
+  "candidate_manifest_sha256": "sha256:1da7f0a678ea678f49af6d9b847dfd8912b11ede04aad22f8d87ee247ee1117a",
+  "candidate_actual_PowerShell_entry": true,
+  "candidate_skill_files": 95,
+  "candidate_skill_modules": 17,
+  "formal_cli": "0.1.63",
+  "frozen_groups": {
+    "file_hashes": {
+      "files": 546,
+      "changed": []
+    },
+    "formal_guard": {
+      "files": 95,
+      "changed": []
+    },
+    "delivery_tool_files": {
+      "files": 8,
+      "changed": []
+    },
+    "packaging_source_files": {
+      "files": 69,
+      "changed": []
+    }
+  },
+  "observer_pinned_inputs_unchanged": 726,
+  "handoff_phase": "music-r1",
+  "handoff_observer_live": true,
+  "handoff_child_live": true,
+  "historical_readme_rows": {
+    "README.md": {
+      "preserved_rows": 695,
+      "current_rows": 696,
+      "original_rows_unchanged": true
+    },
+    "README.zh-TW.md": {
+      "preserved_rows": 695,
+      "current_rows": 696,
+      "original_rows_unchanged": true
+    },
+    "README.en.md": {
+      "preserved_rows": 695,
+      "current_rows": 696,
+      "original_rows_unchanged": true
+    }
+  },
+  "original_goal_sha256": "36347a3c5599ec4e4850b13c6cd98f726847f4142f96863fadf6f26b4f27e755",
+  "all_frozen_source_files_match_HEAD": true,
+  "source_binding_files": 546,
+  "validated_links": 127,
+  "links": [
+    {
+      "from": "README.md",
+      "target": "docs/product/UNFINISHED_DETAIL_20261106.md"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/validation/evidence/status-review-20261106-r4/review-r1/verification.json"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/product/DELIVERY66_R6_INSTALLED_ACCEPTANCE.md"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/product/UNFINISHED_20261106.md"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/validation/evidence/delivery66-handoff-20261106-r1/r5-terminal-review-r1/verification.json"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/product/DELIVERY66_R4_RESULTS.md"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/product/DELIVERY66_R5_CANDIDATE.md"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/product/DELIVERY66_R6_CANDIDATE.md"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r5/verification.json"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.md"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/product/DELIVERY66_HANDOFF.md"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/product/CROSS_MACHINE63_BASELINE.md"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/validation/evidence/delivery66-cross-machine-20261106-r1/baseline-remote-r2/verification.json"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/assets/cross-machine63-20261106-r1/second-host.mp4"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/assets/cross-machine63-20261106-r1/comparison.gif"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/product/DELIVERY66_R6_INSTALLED_ACCEPTANCE.md"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/validation/evidence/delivery66-20261106-r1/installed-all-r6/verification.json"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/validation/evidence/delivery66-handoff-20261106-r1/r6-installed-acceptance-r1/verification.json"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/product/UNFINISHED_DETAIL_20261106.md"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/validation/evidence/status-review-20261106-r4/review-r1/verification.json"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/product/DELIVERY66_R6_INSTALLED_ACCEPTANCE.md"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/product/UNFINISHED_20261106.md"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/validation/evidence/delivery66-handoff-20261106-r1/r5-terminal-review-r1/verification.json"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/product/DELIVERY66_R4_RESULTS.md"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/product/DELIVERY66_R5_CANDIDATE.md"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/product/DELIVERY66_R6_CANDIDATE.md"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r5/verification.json"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.zh-TW.md"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/product/DELIVERY66_HANDOFF.md"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/product/CROSS_MACHINE63_BASELINE.md"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/validation/evidence/delivery66-cross-machine-20261106-r1/baseline-remote-r2/verification.json"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/assets/cross-machine63-20261106-r1/second-host.mp4"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/assets/cross-machine63-20261106-r1/comparison.gif"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/product/DELIVERY66_R6_INSTALLED_ACCEPTANCE.md"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/validation/evidence/delivery66-20261106-r1/installed-all-r6/verification.json"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/validation/evidence/delivery66-handoff-20261106-r1/r6-installed-acceptance-r1/verification.json"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/product/UNFINISHED_DETAIL_20261106.md"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/validation/evidence/status-review-20261106-r4/review-r1/verification.json"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/product/DELIVERY66_R6_INSTALLED_ACCEPTANCE.md"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/product/UNFINISHED_20261106.md"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/validation/evidence/delivery66-handoff-20261106-r1/r5-terminal-review-r1/verification.json"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/product/DELIVERY66_R4_RESULTS.md"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/product/DELIVERY66_R5_CANDIDATE.md"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/product/DELIVERY66_R6_CANDIDATE.md"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r5/verification.json"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.en.md"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/product/DELIVERY66_HANDOFF.md"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/product/CROSS_MACHINE63_BASELINE.md"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/validation/evidence/delivery66-cross-machine-20261106-r1/baseline-remote-r2/verification.json"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/assets/cross-machine63-20261106-r1/second-host.mp4"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/assets/cross-machine63-20261106-r1/comparison.gif"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/product/DELIVERY66_R6_INSTALLED_ACCEPTANCE.md"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/validation/evidence/delivery66-20261106-r1/installed-all-r6/verification.json"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/validation/evidence/delivery66-handoff-20261106-r1/r6-installed-acceptance-r1/verification.json"
+    },
+    {
+      "from": "docs/product/DELIVERY66_R6_INSTALLED_ACCEPTANCE.md",
+      "target": "../validation/evidence/delivery66-20261106-r1/installed-all-r6/verification.json"
+    },
+    {
+      "from": "docs/product/DELIVERY66_R6_INSTALLED_ACCEPTANCE.md",
+      "target": "../validation/evidence/delivery66-20261106-r1/installed-all-r6/tests.stderr"
+    },
+    {
+      "from": "docs/product/DELIVERY66_R6_INSTALLED_ACCEPTANCE.md",
+      "target": "../validation/evidence/delivery66-20261106-r1/native-installed-all-r6/state.json"
+    },
+    {
+      "from": "docs/product/DELIVERY66_R6_INSTALLED_ACCEPTANCE.md",
+      "target": "../validation/evidence/delivery66-20261106-r1/source-all-r6/verification.json"
+    },
+    {
+      "from": "docs/product/DELIVERY66_R6_INSTALLED_ACCEPTANCE.md",
+      "target": "../validation/evidence/delivery66-20261106-r1/skill-entry-r1/verification.json"
+    },
+    {
+      "from": "docs/product/DELIVERY66_R6_INSTALLED_ACCEPTANCE.md",
+      "target": "../validation/evidence/delivery66-20261106-r1/candidate-r1/verification.json"
+    },
+    {
+      "from": "docs/product/DELIVERY66_R6_INSTALLED_ACCEPTANCE.md",
+      "target": "../validation/evidence/delivery66-handoff-20261106-r1/r6-installed-acceptance-r1/verification.json"
+    },
+    {
+      "from": "docs/product/DELIVERY66_R6_INSTALLED_ACCEPTANCE.md",
+      "target": "UNFINISHED_DETAIL_20261106.md"
+    },
+    {
+      "from": "docs/product/DELIVERY66_R6_INSTALLED_ACCEPTANCE.md",
+      "target": "DELIVERY66_HANDOFF.md"
+    },
+    {
+      "from": "docs/product/DELIVERY66_R6_INSTALLED_ACCEPTANCE.md",
+      "target": "GOAL_GAPS_20261025.md"
+    },
+    {
+      "from": "docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md",
+      "target": "DELIVERY66_R6_INSTALLED_ACCEPTANCE.md"
+    },
+    {
+      "from": "docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md",
+      "target": "../validation/evidence/delivery66-20261106-r1/source-all-r6/verification.json"
+    },
+    {
+      "from": "docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md",
+      "target": "../validation/evidence/delivery66-20261106-r1/source-all-r6/tests.stderr"
+    },
+    {
+      "from": "docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md",
+      "target": "../validation/evidence/delivery66-20261106-r1/native-source-all-r6/state.json"
+    },
+    {
+      "from": "docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md",
+      "target": "../validation/evidence/delivery66-20261106-r1/candidate-r1/verification.json"
+    },
+    {
+      "from": "docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md",
+      "target": "../validation/evidence/delivery66-handoff-20261106-r1/r6-source-install-checkpoint-r1/verification.json"
+    },
+    {
+      "from": "docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md",
+      "target": "../validation/evidence/delivery66-handoff-20261106-r1/r6-source-install-checkpoint-r1/installed-live-observation.json"
+    },
+    {
+      "from": "docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md",
+      "target": "DELIVERY66_R6_EXECUTION.md"
+    },
+    {
+      "from": "docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md",
+      "target": "UNFINISHED_20261106.md"
+    },
+    {
+      "from": "docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md",
+      "target": "GOAL_GAPS_20261025.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_DETAIL_20261106.md",
+      "target": "../validation/evidence/status-review-20261106-r4/review-r1/verification.json"
+    },
+    {
+      "from": "docs/product/UNFINISHED_DETAIL_20261106.md",
+      "target": "DELIVERY66_R6_SOURCE_ACCEPTANCE.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_DETAIL_20261106.md",
+      "target": "DELIVERY66_R6_INSTALLED_ACCEPTANCE.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_DETAIL_20261106.md",
+      "target": "CROSS_MACHINE63_BASELINE.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_DETAIL_20261106.md",
+      "target": "CROSS_MACHINE66_UPGRADE.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_DETAIL_20261106.md",
+      "target": "DELIVERY66_R6_INSTALLED_ACCEPTANCE.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_DETAIL_20261106.md",
+      "target": "NEURAL_MUSIC_GENERATION.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_DETAIL_20261106.md",
+      "target": "GOAL_GAPS_20261025.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_DETAIL_20261106.md",
+      "target": "UNFINISHED_20261106.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "DELIVERY66_R6_SOURCE_ACCEPTANCE.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "DELIVERY66_R6_INSTALLED_ACCEPTANCE.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "CROSS_MACHINE66_UPGRADE.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "CROSS_MACHINE63_BASELINE.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "../validation/evidence/delivery66-cross-machine-20261106-r1/baseline-remote-r2/verification.json"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "../validation/evidence/status-review-20261106-r2/review-r1/verification.json"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "../validation/evidence/status-review-20261106-r2/review-r1/formal-skill-version.json"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "../validation/evidence/status-review-20261106-r2/review-r1/regression-status.json"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "../validation/evidence/status-review-20261106-r2/review-r1/launcher-shell-observation.json"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "DELIVERY66_R6_EXECUTION.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "DELIVERY66_DOWNSTREAM_PREFLIGHT.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "DELIVERY66_R6_CANDIDATE.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "DELIVERY66_R6_EXECUTION.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "DELIVERY66_R4_RESULTS.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "DELIVERY66_R5_CANDIDATE.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "../validation/evidence/delivery66-handoff-20261106-r1/contracts-r4/verification.json"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "../validation/evidence/delivery66-handoff-20261106-r1/correction-batch-review-r1/verification.json"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "DELIVERY66_HANDOFF.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "RELEASE66_PREFLIGHT.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "../validation/evidence/music-loading-20261030-r1/actual-stage1/verification.json"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "../validation/evidence/music-loading-20261030-r1/actual-stage1/calls.json"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "../validation/evidence/music-loading-20261030-r1/candidate-r1/verification.json"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "DELIVERY66_IMPLEMENTATION.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "DELIVERY_CONTROLLER.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "../validation/evidence/music-loading-20261030-r1/recovery-integrity-r1/verification.json"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "../validation/evidence/transaction-preflight-20261030-r1/candidate-r1/verification.json"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "../validation/evidence/music-loading-20261030-r1/source65-session-r1/verification.json"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "../validation/evidence/music-generation-20261030-r1/source64-contracts-r1/verification.json"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "ACES_TIMELINE.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "FLOAT_GPU.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "OPTICAL_EFFECT_PACK.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "NEURAL_MUSIC_GENERATION.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "../validation/evidence/status-review-20261106-r1/review-r1/verification.json"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "../validation/evidence/delivery66-20261106-r1/freeze-r6/verification.json"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "../validation/evidence/delivery66-20261106-r1/freeze-r5/verification.json"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "GOAL_GAPS_20261025.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "DELIVERY66_CORRECTION.md"
+    },
+    {
+      "from": "docs/product/UNFINISHED_20261106.md",
+      "target": "NATIVE_TEST_DEPENDENCIES_20261106.md"
+    }
+  ],
+  "documents": {
+    "README.md": "07c8b8fcec74c2253b70fb85898497f47e9fb3df45334998ffff18023735d111",
+    "README.zh-TW.md": "3c0291047078b08dcba3844ccb54b03fbfec4ae601a483609ad17fab1c258d4c",
+    "README.en.md": "be1827cb2706abd03405405a3af0d500a01c8ef477a7fa015ad9402ca8301939",
+    "docs/product/DELIVERY66_R6_INSTALLED_ACCEPTANCE.md": "598950bf7182b42a4c9d5f977937603a95087e306b3cf595b9552ae01cbe25af",
+    "docs/product/DELIVERY66_R6_SOURCE_ACCEPTANCE.md": "3e061d842f6793bd6a44d9a721361dd44763e53789c52a59b75ac79fbee086ee",
+    "docs/product/UNFINISHED_DETAIL_20261106.md": "564b01048d3b7ec3185526cb53e01f46f64585f1b821ba2e28d2f2d76dfc945c",
+    "docs/product/UNFINISHED_20261106.md": "db74dc2325ab12accd50a462991f5eb9569341ca50b96a1ae3c798fd316e9b47"
+  },
+  "new_application_code": false,
+  "new_model_inference_success_claimed": false,
+  "new_remote_actions": 0,
+  "formal_activation": false,
+  "release_created": false,
+  "full_goal_closed": false,
+  "human_listening": false,
+  "natural_quality_accepted": false
+}

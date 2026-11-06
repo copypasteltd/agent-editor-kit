@@ -1,0 +1,97 @@
+{
+  "status": "readonly-preflight-ready-not-delivery-accepted",
+  "observed_at_utc": "2026-11-06T05:32:30.506030+00:00",
+  "source_cli": "0.1.66",
+  "formal_cli": "0.1.63",
+  "native_build_backend": {
+    "pip": "26.2.1",
+    "setuptools": "84.0.0",
+    "PyYAML": "6.0.3",
+    "native_bdist_wheel": true
+  },
+  "native_music_paths": {
+    "runtime_root": {
+      "path": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\ComfyUI",
+      "exists": true
+    },
+    "executable": {
+      "path": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+      "exists": true
+    }
+  },
+  "model_file_metadata": [
+    {
+      "name": "diffusion_model.safetensors",
+      "bytes": 4787825604
+    },
+    {
+      "name": "language_model.safetensors",
+      "bytes": 3708523360
+    },
+    {
+      "name": "text_encoder.safetensors",
+      "bytes": 1191588248
+    },
+    {
+      "name": "vae.safetensors",
+      "bytes": 337431732
+    }
+  ],
+  "model_hashes_revalidated": false,
+  "model_inference_started": false,
+  "interface_record_sha256": "78e4d2c29a61eba242d0b1710f52807c48c60d785d54f0e6d69f47c89dd4ae55",
+  "notice_record_sha256": {
+    "verification.json": "8b2465d92a14aa1119ae36e7730b715d6193506aa614e16170663dd9d82dc4ad",
+    "Apache-2.0.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  "reference_archive_metadata": {
+    "path": "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\v0.1.0-alpha.4-local.63\\candidate-r1\\bundle.zip",
+    "reference_cli": "0.1.65",
+    "archive_bytes": 305720389,
+    "members": 56,
+    "largest_member_bytes": 286224335,
+    "total_uncompressed_bytes": 306291384,
+    "crc_revalidated": false,
+    "archive_sha256_revalidated": false,
+    "within_application_extraction_budgets": true
+  },
+  "free_disk_bytes": {
+    "E:/": 602995310592,
+    "C:/": 38382551040
+  },
+  "release_tag": "v0.1.0-alpha.4",
+  "tag_exists": false,
+  "all_frozen_bytes_equal": true,
+  "prior_r5_cases_in_actual_running_r6": [
+    {
+      "test_method": "test_cli_unicode_paths_and_progress_use_utf8_pipes",
+      "current_full_suite_line": "test_cli_unicode_paths_and_progress_use_utf8_pipes (test_cli.P0CliTests.test_cli_unicode_paths_and_progress_use_utf8_pipes) ... ok",
+      "status": "ok-within-running-suite"
+    },
+    {
+      "test_method": "test_project_write_lock_rejects_competing_mutation_and_releases",
+      "current_full_suite_line": "test_project_write_lock_rejects_competing_mutation_and_releases (test_cli.P0CliTests.test_project_write_lock_rejects_competing_mutation_and_releases) ... ok",
+      "status": "ok-within-running-suite"
+    },
+    {
+      "test_method": "test_queue_cancel_acknowledges_while_project_lock_is_held",
+      "current_full_suite_line": "test_queue_cancel_acknowledges_while_project_lock_is_held (test_cli.P0CliTests.test_queue_cancel_acknowledges_while_project_lock_is_held) ... ok",
+      "status": "ok-within-running-suite"
+    },
+    {
+      "test_method": "test_audio_progress_read_failures_keep_bounded_diagnostic_states",
+      "current_full_suite_line": "test_audio_progress_read_failures_keep_bounded_diagnostic_states (test_delivery.BoundedAudioProgressTests.test_audio_progress_read_failures_keep_bounded_diagnostic_states) ... ok",
+      "status": "ok-within-running-suite"
+    },
+    {
+      "test_method": "test_python_network_guard_blocks_connection_before_network_io",
+      "current_full_suite_line": null,
+      "status": "not-yet-complete"
+    }
+  ],
+  "product_test_terminal": false,
+  "issue_events_snapshot": 0,
+  "formal_activation": false,
+  "release_created": false,
+  "full_goal_closed": false
+}

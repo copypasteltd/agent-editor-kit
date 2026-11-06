@@ -1,0 +1,49 @@
+{
+  "status": "reviewed-not-terminal",
+  "observed_at_utc": "2026-11-06T05:41:27.861817+00:00",
+  "source_cli": "0.1.66",
+  "formal_cli": "0.1.63",
+  "all_frozen_bytes_equal": true,
+  "original_goal_bytes_equal": true,
+  "frozen_counts": [
+    546,
+    8,
+    69,
+    95
+  ],
+  "prior_r5_cases_ok_within_running_suite": 4,
+  "reader_receipt": {
+    "path": "docs/validation/evidence/music-loading-20261030-r1/native-reader-d1/verification.json",
+    "sha256": "249165be09fe69eac316d4f67a3b218d6eecf7cf5302e0283388b207a37a4ebe",
+    "matching_current_helper": true,
+    "matching_native_interpreter": true,
+    "historical": true
+  },
+  "readmes": {
+    "README.md": {
+      "previous_rows_preserved": 687,
+      "functional_rows": 90,
+      "review_rows": 598
+    },
+    "README.zh-TW.md": {
+      "previous_rows_preserved": 687,
+      "functional_rows": 90,
+      "review_rows": 598
+    },
+    "README.en.md": {
+      "previous_rows_preserved": 687,
+      "functional_rows": 90,
+      "review_rows": 598
+    }
+  },
+  "checked_links": 75,
+  "missing_links": 0,
+  "product_tests_discovered": 4124,
+  "product_test_terminal": false,
+  "issue_events_snapshot": 0,
+  "new_product_code": false,
+  "new_functional_test_invocation": false,
+  "formal_activation": false,
+  "release_created": false,
+  "full_goal_closed": false
+}

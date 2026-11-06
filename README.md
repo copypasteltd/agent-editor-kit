@@ -13,6 +13,7 @@ r6冻结546项产品／用例／依赖、8交付工具、69构建来源和95正�
 
 三语快速开始涵盖离线安装、`--base-only`基础配置、可选模型／GPU、单Skill、真实ID、客户滤镜预览、音轨、渲染／质检及工程包重放。基础剪辑不要求模型包；`--packs`仍验包。摘要占位和新包完整流程尚待真实安装填实。[简体草稿](docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.md) · [集中交付顺序](docs/product/DELIVERY66_HANDOFF.md)
 本轮仓库检查点提供候选代码副本和真实验证证据；本地应用源码的正式提交仍待完整产品回归通过。
+最新只读预检：原Unicode、两项工程锁和音频诊断4项在当前整套中已实际为ok；TTS断网及完整终态仍待。原生构建与后续输入可用，未切换正式安装。[证据与边界](docs/product/DELIVERY66_DOWNSTREAM_PREFLIGHT.md)。
 <!-- /aek-cli65-current -->
 
 **r58统一Skill工具包已独立验收。** 161条目／160清单文件／93 Skill文件；中文和空格目录解包、四包配置、独立注册、实际谱面与循环修复、完整ACES YUV／PCM／PNG及工程包重放通过。未新增模型推理，不等于干净主机或自然质量验收。
@@ -2226,6 +2227,7 @@ R31 记录已经公开的 GitHub 预发布和 10 个附件的实际下载哈希�
 | R595 | 2026-11-06：完整目标未完成内容复核 | [38组差距、12项交付阻塞及阶段顺序](docs/product/UNFINISHED_20261106.md)；[只读证据](docs/validation/evidence/status-review-20261106-r2/review-r1/verification.json) | 实际发现入口仍CLI0.1.63，开发66；r5真实进程存活、无终态，当前4失败／1错误事件；9文件候选未应用、42工具项未执行；原546／7／95冻结相同。缺少实现、质量／组合验收和正式交付分别说明，无新增功能测试／模型／注册／发行，不计算完成百分比 |
 | R596 | 2026-11-06：Skill生成输入与工具包手册版本补齐 | [完整实现与边界](docs/product/DELIVERY66_STAGE_INPUTS.md)；[最终候选静态证据](docs/validation/evidence/delivery66-handoff-20261106-r1/r6-stage-inputs-draft-r1/final-code-review/verification.json) | 神经配乐说明纳入冻结工具，官方校验器固定摘要并在输出前拒绝变化；4手册恢复正式63／候选65／开发66及完整历史，包内入口先显示实际清单版本。原31方法／断言保留，下一轮43项未执行；289应用模块候选静态无未绑定名称，51链接与4段原生PowerShell语法通过；原546／7／95冻结保持，候选未应用／功能执行／注册／发行 |
 | R597 | 2026-11-06：r5完整终态、r6整批应用与集中验证 | [执行记录](docs/product/DELIVERY66_R6_EXECUTION.md)；[43项实际结果](docs/validation/evidence/delivery66-handoff-20261106-r1/contracts-r5/verification.json)；[新整套启动](docs/validation/evidence/delivery66-handoff-20261106-r1/r6-centralized-start-r1/verification.json) | r5完整4,124项为4失败／1错误／0跳过，进程均退出；9文件完成后一次应用并冻结546／8／69／95及校验器。43项工具整套全部通过，零失败／错误／跳过，fixture-only；新未过滤产品整套实际发现4,124项仍运行、无终态。两实际依赖profile通过，正式入口仍63，无新安装／模型／注册／发行；不关闭G01—G38 |
+| R598 | 2026-11-06：完整回归中间结果与后续交付预检 | [实际收据](docs/validation/evidence/delivery66-handoff-20261106-r1/r6-downstream-preflight-r1/verification.json)；[说明](docs/product/DELIVERY66_DOWNSTREAM_PREFLIGHT.md) | 原r5异常中的Unicode、两项锁、音频诊断共4项在仍运行的r6整套中为ok，TTS尚未执行到；非整套终态。原生构建后端、既有运行时／权重元数据、许可、磁盘及标签预检完成，历史65归档尺寸符合应用解包预算；没有新66构建／推理／注册／发行，全部冻结及正式63不变，不追加功能测试数 |
 
 ### 开发预览：C76 循环接缝修复（源码CLI60）
 

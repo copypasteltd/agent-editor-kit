@@ -2,6 +2,8 @@
 
 2026-11-06，Asia/Taipei。本批五个操作脚本已经全部写齐，集中完成静态检查后冻结；没有联系第二台机器，也没有执行新版跨机器功能验证。原r6源码完整4,124项通过；本机66安装版整套仍在原进程中运行。正式入口仍CLI0.1.63／local61／r58。
 
+后续衔接执行器及其契约用例现已整批完成并另行冻结；17项原生解释器契约检查全部通过，0失败／错误／跳过。它串起已有五脚本的门槛、一次启动、实际进程观察、传输关闭和四次媒体证据回收；本次仍未联系第二台，也未启动新66远程任务。[代码冻结](../validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-controller-code-phase-r1/verification.json) · [17项实际契约结果](../validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-controller-contracts-r1/verification.json)。
+
 ## 本批完成的代码及其状态
 
 | 编号 | 脚本 | 完整实现内容 | 当前结果 |
@@ -65,6 +67,46 @@ $qa = 'E:/dev/sandbox/AI广告剪辑/local/agent-ffmpeg/cross-machine66-20261106
 随后启动同目录的临时传输服务，通过`remote_control.py start`只启动一次原生任务，继续查询同一个所有权及实际进程身份，最后取回证据。启动观察超时不代表任务失败，不能因此重复start或改用新目录掩盖原结果。确认输入已下载并校验后关闭临时服务；本批实际输出通过前不制作新演示或宣称迁移成功。
 
 `remote_control.py`内部复用[remote-4090 Skill](C:/Users/carzy/.codex/skills/remote-4090/SKILL.md)的既有原生设备锁及Windows-MCP客户端；设备凭据、临时传输地址和原始桌面观察只保存在被忽略的本地执行目录，不加入公开文档或Git提交。
+
+## 衔接执行器与集中契约检查
+
+[continue_controller.py](../validation/cross_machine66_20261106_r1/continue_controller.py)是一次性、有时限的执行工具。它不接管原安装整套、不重复准备已存在的primary／parcels，也不安装新MCP服务。执行前仍须原源码和安装版各4,124项完整通过、实际66便携包通过，并已有六份摘要锁定的parcels。
+
+本次17项检查使用明确标注的协议夹具与E盘临时目录，覆盖实际存活优先于表面终态、错误所有权／解释器／进程身份、观察超时后原句柄、无终态退出、缺下载证明、锁屏／过期预检、路径逃逸、私密内容拦截、完整四次回放与母机参考绑定、返回MP4摘要及既有证据保护。它们不启动远端、不生成模型结果，不与产品4,124项或原43项工具契约相加。
+
+| 编号 | 执行器行为 | 可证明的边界 |
+| --- | --- | --- |
+| C01 | 读取正式remote-4090客户端生成的900秒内状态记录，核对主机、输入桌面和Agent实际查看的截图摘要 | `ready`本身不足以证明已解锁；截图仅保留在本地私有运行记录，不公开桌面 |
+| C02 | 重验原源码／安装／便携门槛、六个传输角色及本批冻结代码／契约摘要 | 不以文件存在或17项夹具代替真实主流程通过 |
+| C03 | 临时服务仅服务已锁定文件和指定设备；只调用一次远端start | start观察失败后只查询原所有权，不换编号重启；本地客户端仍存活时不并发新RPC |
+| C04 | 按创建时间、映像和所有权观察同一个实际远端进程 | 实际存活时，即使出现表面passed收据，也继续观察；缺终态不算通过 |
+| C05 | 输入下载并校验后关闭本次服务并确认其实际进程退出 | 不终止远端已有GPU任务，不更改全局注册或系统配置 |
+| C06 | 收齐63→66→63→66四次真实回放，逐次对照各版本母机参考、60帧／完整PCM、时钟和返回MP4摘要 | 不要求63与66的图像跨版本相等；本批只验CPU及显式隔离注册迁移 |
+| C07 | 有界返回、拒绝目录重解析／路径逃逸／私密材料，完整写入暂存目录后一次改名发布 | 已存在的公开证据拒绝覆盖；失败日志保留在私有目录供复核 |
+
+门槛真正通过后，先通过Skill客户端取得当前设备状态：
+
+```powershell
+[Console]::OutputEncoding = New-Object System.Text.UTF8Encoding($false)
+$OutputEncoding = [Console]::OutputEncoding
+$python = 'E:/dev/sandbox/模型配乐/ComfyUI_windows_portable/python_embeded/python.exe'
+$remoteClient = 'C:/Users/carzy/.codex/skills/remote-4090/scripts/windows_mcp.py'
+$statusLines = & $python -E -B -u -X utf8 $remoteClient --timeout 55 --network-mode direct status
+if ($LASTEXITCODE -ne 0) { throw 'Inspect the retained device status before proceeding.' }
+$deviceStatus = $statusLines[-1] | ConvertFrom-Json
+$deviceSummary = Join-Path $deviceStatus.output 'summary.json'
+$screenPath = @($deviceStatus.calls | Where-Object { $_.name -eq 'Screenshot' })[0].images[0]
+```
+
+Agent随后须用图像查看工具实际检查`$screenPath`，并核对本次设备探针；这是[remote-4090 Skill](C:/Users/carzy/.codex/skills/remote-4090/SKILL.md)已有的状态／截图步骤。确认后按实际截图计算摘要，在预检仍有效时执行：
+
+```powershell
+$screenSha256 = (Get-FileHash -LiteralPath $screenPath -Algorithm SHA256).Hash.ToLowerInvariant()
+& $python -E -B -u -X utf8 'docs/validation/cross_machine66_20261106_r1/continue_controller.py' --preflight $deviceSummary --reviewed-screenshot-sha256 $screenSha256
+if ($LASTEXITCODE -ne 0) { throw 'Inspect the original owned run and retained logs; do not repeat start.' }
+```
+
+执行器状态在`local/agent-ffmpeg/cross-machine66-controller-20261106-r1/state.json`；只有全部实际条件满足，才将远端原始收据、四段MP4和允许的日志写入`docs/validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-remote-r1/`。该目录目前尚未生成；脚本、契约通过或命令示例均不表示远端实测完成。
 
 ## 保留的完整目标边界
 

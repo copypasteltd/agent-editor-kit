@@ -1,0 +1,24 @@
+{
+  "status": "code-complete-frozen",
+  "observed_at_utc": "2026-11-06T08:30:49.490014+00:00",
+  "code_completed_before_contract_tests": true,
+  "files": {
+    "docs/validation/cross_machine66_20261106_r1/continue_controller.py": "0f6f08bdde354ee1dee903543d7c3e61bd27a9824af91fd4be66689bd73a35cf",
+    "docs/validation/cross_machine66_20261106_r1/test_continue_controller.py": "3900ee188baa92c8c0c08b7a4a77b334e953db231ef4a3168891c99f4b62f257"
+  },
+  "implementation_units": [
+    "same local client handle before next device RPC",
+    "no blind remote restart after observation timeout",
+    "fresh device and explicitly reviewed screenshot gate",
+    "original source/install/portable/parcels gates",
+    "bounded one-client transfer lifecycle",
+    "four actual registration/media receipts and pinned primary references",
+    "owned path/size/secret checks and atomic evidence publication",
+    "contract fixtures isolated on E drive"
+  ],
+  "contract_tests_started": false,
+  "remote_actions": 0,
+  "new_product_tests": 0,
+  "formal_activation": false,
+  "full_goal_closed": false
+}

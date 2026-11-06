@@ -1,0 +1,186 @@
+{
+  "status": "passed",
+  "observed_at_utc": "2026-11-06T08:38:31.802313+00:00",
+  "base_commit": "742b1ecf643cc5e8389aaa1be494d73b212bdf2f",
+  "source_tests": 4124,
+  "source_failures": 0,
+  "source_errors": 0,
+  "source_skipped": 0,
+  "source_exit_code": 0,
+  "installed_suite": "running",
+  "installed_terminal_present": false,
+  "installed_supervisor_live": true,
+  "installed_child_live": true,
+  "installed_observation_utc": "2026-11-06T08:37:34.012098+00:00",
+  "formal_cli": "0.1.63",
+  "frozen_groups": {
+    "file_hashes": {
+      "files": 546,
+      "changed": []
+    },
+    "formal_guard": {
+      "files": 95,
+      "changed": []
+    },
+    "delivery_tool_files": {
+      "files": 8,
+      "changed": []
+    },
+    "packaging_source_files": {
+      "files": 69,
+      "changed": []
+    }
+  },
+  "original_handoff_observer_live": true,
+  "original_handoff_inputs_unchanged": 726,
+  "historical_readme_rows": {
+    "README.md": {
+      "preserved_rows": 693,
+      "current_rows": 694,
+      "original_rows_unchanged": true
+    },
+    "README.zh-TW.md": {
+      "preserved_rows": 693,
+      "current_rows": 694,
+      "original_rows_unchanged": true
+    },
+    "README.en.md": {
+      "preserved_rows": 693,
+      "current_rows": 694,
+      "original_rows_unchanged": true
+    }
+  },
+  "documents": {
+    "docs/validation/cross_machine66_20261106_r1/continue_controller.py": "0f6f08bdde354ee1dee903543d7c3e61bd27a9824af91fd4be66689bd73a35cf",
+    "docs/validation/cross_machine66_20261106_r1/test_continue_controller.py": "3900ee188baa92c8c0c08b7a4a77b334e953db231ef4a3168891c99f4b62f257",
+    "docs/product/CROSS_MACHINE66_UPGRADE.md": "56af17792a3e033cc550b385a4ae54037953e71ef9e648669df7c45c52f38c69",
+    "README.md": "647539cb5e36911f5106ca0da58e37dc8eb2da6d589bbe3d57ea1ed0fa097467",
+    "README.zh-TW.md": "ad27036d8252235943c638297ddf957de611a91c5f5df50946d2d5379dffa6e7",
+    "README.en.md": "940ffc76a742b666ca72c7506e605fa45f813469d59ce8ca4210d92f2191e0f2"
+  },
+  "controller_contract_tests": 17,
+  "controller_contract_failures": 0,
+  "controller_contract_errors": 0,
+  "controller_contract_skipped": 0,
+  "controller_code_phase_sha256": "63cbbfdc32fc567c1870be73d83173159c1373720966e510537ac78a55ef3593",
+  "controller_contracts_sha256": "9ea59f867821e3b615aea4a9e576662dc7144f4dcdf7de8375e3934cdcd342ee",
+  "native_powershell_fences": 3,
+  "native_powershell_parse_errors": 0,
+  "new_link_count": 21,
+  "links": [
+    {
+      "from": "README.md",
+      "target": "docs/product/CROSS_MACHINE66_UPGRADE.md",
+      "type": "file"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-controller-code-phase-r1/verification.json",
+      "type": "file"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-controller-contracts-r1/verification.json",
+      "type": "file"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/product/CROSS_MACHINE66_UPGRADE.md",
+      "type": "file"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-controller-code-phase-r1/verification.json",
+      "type": "file"
+    },
+    {
+      "from": "README.zh-TW.md",
+      "target": "docs/validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-controller-contracts-r1/verification.json",
+      "type": "file"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/product/CROSS_MACHINE66_UPGRADE.md",
+      "type": "file"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-controller-code-phase-r1/verification.json",
+      "type": "file"
+    },
+    {
+      "from": "README.en.md",
+      "target": "docs/validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-controller-contracts-r1/verification.json",
+      "type": "file"
+    },
+    {
+      "from": "docs/product/CROSS_MACHINE66_UPGRADE.md",
+      "target": "../validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-controller-code-phase-r1/verification.json",
+      "type": "file"
+    },
+    {
+      "from": "docs/product/CROSS_MACHINE66_UPGRADE.md",
+      "target": "../validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-controller-contracts-r1/verification.json",
+      "type": "file"
+    },
+    {
+      "from": "docs/product/CROSS_MACHINE66_UPGRADE.md",
+      "target": "../validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-code-phase-r1/verification.json",
+      "type": "file"
+    },
+    {
+      "from": "docs/product/CROSS_MACHINE66_UPGRADE.md",
+      "target": "../validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-static-review-r1/verification.json",
+      "type": "file"
+    },
+    {
+      "from": "docs/product/CROSS_MACHINE66_UPGRADE.md",
+      "target": "../validation/cross_machine66_20261106_r1/",
+      "type": "directory"
+    },
+    {
+      "from": "docs/product/CROSS_MACHINE66_UPGRADE.md",
+      "target": "DELIVERY66_HANDOFF.md",
+      "type": "file"
+    },
+    {
+      "from": "docs/product/CROSS_MACHINE66_UPGRADE.md",
+      "target": "C:/Users/carzy/.codex/skills/remote-4090/SKILL.md",
+      "type": "file"
+    },
+    {
+      "from": "docs/product/CROSS_MACHINE66_UPGRADE.md",
+      "target": "../validation/cross_machine66_20261106_r1/continue_controller.py",
+      "type": "file"
+    },
+    {
+      "from": "docs/product/CROSS_MACHINE66_UPGRADE.md",
+      "target": "C:/Users/carzy/.codex/skills/remote-4090/SKILL.md",
+      "type": "file"
+    },
+    {
+      "from": "docs/product/CROSS_MACHINE66_UPGRADE.md",
+      "target": "DELIVERY66_R6_SOURCE_ACCEPTANCE.md",
+      "type": "file"
+    },
+    {
+      "from": "docs/product/CROSS_MACHINE66_UPGRADE.md",
+      "target": "CROSS_MACHINE63_BASELINE.md",
+      "type": "file"
+    },
+    {
+      "from": "docs/product/CROSS_MACHINE66_UPGRADE.md",
+      "target": "UNFINISHED_20261106.md",
+      "type": "file"
+    }
+  ],
+  "link_checker_adjustment": "Existing documentation directory links accepted as directory targets; no product/test input changed",
+  "new_functional_tests": 0,
+  "new_model_inferences": 0,
+  "new_remote_actions": 0,
+  "controller_started": false,
+  "formal_activation": false,
+  "release_created": false,
+  "full_G34_accepted": false,
+  "full_goal_closed": false
+}

@@ -1,0 +1,22 @@
+test_absent_launch_is_bootstrap_pending (aek_controller_contracts.ControllerContracts.test_absent_launch_is_bootstrap_pending) ... ok
+test_allowed_roles (aek_controller_contracts.ControllerContracts.test_allowed_roles) ... ok
+test_client_observation_waits_same_handle_before_another_rpc (aek_controller_contracts.ControllerContracts.test_client_observation_waits_same_handle_before_another_rpc) ... ok
+test_dead_without_terminal_is_not_success (aek_controller_contracts.ControllerContracts.test_dead_without_terminal_is_not_success) ... ok
+test_escape_and_private_roles_rejected (aek_controller_contracts.ControllerContracts.test_escape_and_private_roles_rejected) ... ok
+test_exact_dead_passed_terminal (aek_controller_contracts.ControllerContracts.test_exact_dead_passed_terminal) ... ok
+test_failure_dominates_passed_state (aek_controller_contracts.ControllerContracts.test_failure_dominates_passed_state) ... ok
+test_foreign_or_malformed_identity_rejected (aek_controller_contracts.ControllerContracts.test_foreign_or_malformed_identity_rejected) ... ok
+test_live_client_budget_expiry_is_not_a_retryable_remote_observation (aek_controller_contracts.ControllerContracts.test_live_client_budget_expiry_is_not_a_retryable_remote_observation) ... ok
+test_live_without_identity_rejected (aek_controller_contracts.ControllerContracts.test_live_without_identity_rejected) ... ok
+test_nonboolean_status_flags_rejected (aek_controller_contracts.ControllerContracts.test_nonboolean_status_flags_rejected) ... ok
+test_passed_without_downloads_rejected (aek_controller_contracts.ControllerContracts.test_passed_without_downloads_rejected) ... ok
+test_preflight_requires_fresh_owned_host_and_exact_reviewed_image (aek_controller_contracts.ControllerContracts.test_preflight_requires_fresh_owned_host_and_exact_reviewed_image) ... ok
+test_public_return_preserves_existing_evidence (aek_controller_contracts.ControllerContracts.test_public_return_preserves_existing_evidence) ... ok
+test_public_return_rejects_private_material_before_publishing (aek_controller_contracts.ControllerContracts.test_public_return_rejects_private_material_before_publishing) ... ok
+test_returned_movie_and_all_four_replays_are_required (aek_controller_contracts.ControllerContracts.test_returned_movie_and_all_four_replays_are_required) ... ok
+test_running_process_dominates_apparent_terminal (aek_controller_contracts.ControllerContracts.test_running_process_dominates_apparent_terminal) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.232s
+
+OK

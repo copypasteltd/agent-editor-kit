@@ -1,0 +1,22 @@
+{
+  "status": "read-only-workflows-listed",
+  "http_status": 200,
+  "observed_at_utc": "2026-11-06T00:05:07.612118+00:00",
+  "workflows": [
+    {
+      "id": 394693017,
+      "name": "Publish first verified Agent Video Kit release",
+      "path": ".github/workflows/first-release.yml",
+      "state": "active",
+      "html_url": "https://github.com/copypasteltd/agent-editor-kit/blob/main/.github/workflows/first-release.yml"
+    },
+    {
+      "id": 395098368,
+      "name": "Publish agent editor kit alpha.3",
+      "path": ".github/workflows/release-alpha3.yml",
+      "state": "active",
+      "html_url": "https://github.com/copypasteltd/agent-editor-kit/blob/main/.github/workflows/release-alpha3.yml"
+    }
+  ],
+  "mutating_operations": 0
+}

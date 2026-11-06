@@ -1,0 +1,49 @@
+{
+  "status": "passed-release-record-and-documentation-audit",
+  "observed_at_utc": "2026-11-06T00:08:53.479186+00:00",
+  "readmes": {
+    "README.md": {
+      "sha256": "674716d035ebd1f4ca298568f9bcaa146e34b91652937bd3cca512a284d91101",
+      "prior_RF_rows_retained": true
+    },
+    "README.zh-TW.md": {
+      "sha256": "b8b598d8ddfce87d8cb48bbfd4cfa336552be0c6d3b3e8e70377e6c792c650d8",
+      "prior_RF_rows_retained": true
+    },
+    "README.en.md": {
+      "sha256": "a197d64f37e60591172b1436a27ce831033f2197e670e892bf7991a7885de8d4",
+      "prior_RF_rows_retained": true
+    },
+    "docs/product/UNFINISHED_20261106.md": {
+      "sha256": "989457cb8e3a51e1251416d5086c4c0013b52334c568ea72b644a1dbc4b05763",
+      "prior_RF_rows_retained": true
+    }
+  },
+  "numbered_R_rows": 584,
+  "functional_F_rows": 89,
+  "frozen_files_equal": {
+    "file_hashes": 546,
+    "delivery_tool_files": 6,
+    "formal_guard": 95
+  },
+  "candidate_files_unchanged": 5,
+  "api_authenticated_status": 403,
+  "api_anonymous_status": 200,
+  "public_release": "v0.1.0-alpha.3",
+  "release_created": false,
+  "workflow_triggered": false,
+  "credential_values_persisted": false,
+  "source_run": "r4",
+  "native_supervisor_and_child_live": true,
+  "whole_run_terminal": false,
+  "observed_problem_rows": [
+    "test_oversized_progress_is_not_loaded_as_unbounded_json (test_delivery.BoundedMusicProgressTests.test_oversized_progress_is_not_loaded_as_unbounded_json) ... ERROR",
+    "test_unknown_phase_and_invalid_clock_are_not_forwarded (test_delivery.BoundedMusicProgressTests.test_unknown_phase_and_invalid_clock_are_not_forwarded) ... ERROR",
+    "test_catalog_advertises_exact_numeric_channels_and_static_boolean (test_effect_automation.EffectAutomationContractTests.test_catalog_advertises_exact_numeric_channels_and_static_boolean) ... FAIL"
+  ],
+  "observed_completed_ok_rows": 1104,
+  "new_product_tests": false,
+  "product_code_changed": false,
+  "formal_activation": false,
+  "full_product_goal_closed": false
+}

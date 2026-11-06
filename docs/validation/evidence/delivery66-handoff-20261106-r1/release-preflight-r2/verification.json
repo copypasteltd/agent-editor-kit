@@ -1,0 +1,51 @@
+{
+  "observed_at_utc": "2026-11-06T00:01:21.900748+00:00",
+  "status": "read-only-api-access-diagnosed",
+  "credential_source": "native-Git-credential-helper",
+  "requests": [
+    {
+      "authenticated": true,
+      "method": "GET",
+      "endpoint": "https://api.github.com/repos/copypasteltd/agent-editor-kit/releases?per_page=1",
+      "http_status": 403,
+      "rate_limit": {
+        "X-RateLimit-Limit": null,
+        "X-RateLimit-Remaining": null,
+        "X-RateLimit-Reset": null,
+        "X-GitHub-Request-Id": "0C86:2467B7:21E00B:372989:6AED18D1"
+      },
+      "status": "api-error",
+      "message": "Sorry. Your account was suspended",
+      "documentation_url": "https://docs.github.com/rest"
+    },
+    {
+      "authenticated": false,
+      "method": "GET",
+      "endpoint": "https://api.github.com/repos/copypasteltd/agent-editor-kit/releases?per_page=100",
+      "http_status": 200,
+      "rate_limit": {
+        "X-RateLimit-Limit": "60",
+        "X-RateLimit-Remaining": "36",
+        "X-RateLimit-Reset": "1793923346",
+        "X-GitHub-Request-Id": "0C87:2B9134:202A12:356D48:6AED18D1"
+      },
+      "status": "release-list-read",
+      "releases": [
+        {
+          "tag_name": "v0.1.0-alpha.3",
+          "name": "agent editor kit v0.1.0-alpha.3 — Agent CLI + 500 looks",
+          "draft": false,
+          "prerelease": true,
+          "published_at": "2026-10-24T12:52:48Z",
+          "html_url": "https://github.com/copypasteltd/agent-editor-kit/releases/tag/v0.1.0-alpha.3",
+          "target_commitish": "ba3598afff8a8a8fb01ae6cddf2606005703d3a6"
+        }
+      ],
+      "pagination_complete": true
+    }
+  ],
+  "mutating_operations": 0,
+  "credential_values_persisted": false,
+  "source_cli": "0.1.66",
+  "formal_cli": "0.1.63"
+}

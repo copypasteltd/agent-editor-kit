@@ -9,7 +9,7 @@
 
 [r58 Skill ZIP](docs/skills/agent-editor-kit-community-unified-skill-r58.zip) · [SHA256](docs/skills/community-unified-skill-package-0.1.63-r58.json) · [使用流程 / Workflow](docs/validation/CLI63统一Skill切换_2026-10-29.md)
 
-**目前正式本地版本：CLI0.1.63 / local61。** 唯一入口 `$agent-ffmpeg-local-editor`，17內部模組、93檔案。原始碼與安裝版分別31／37／26／57／104／406組通過；候選與真實C盤入口CPU循環修復、DF3及MuseTalk CUDA與完整音畫專案重播分別通過。r58工具包已獨立驗收，公開發行記錄最後確認alpha.3／CLI0.1.2，本次未線上複核；完整剪映等價未完成。
+**目前正式本地版本：CLI0.1.63 / local61。** 唯一入口 `$agent-ffmpeg-local-editor`，17內部模組、93檔案。原始碼與安裝版分別31／37／26／57／104／406組通過；候選與真實C盤入口CPU循環修復、DF3及MuseTalk CUDA與完整音畫專案重播分別通過。r58工具包已獨立驗收，2026-11-06官方API確認公開仍為alpha.3，其已記錄CLI版本為0.1.2；完整剪映等價未完成。
 
 [简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [CLI63 workflow](docs/validation/CLI63统一Skill切换_2026-10-29.md) · [500 look previews](docs/assets/looks-n002-20261024-r1/index.html) · [103 voice auditions](docs/validation/CLI61全音色试听_2026-10-29.md) · [8 editable optical templates](docs/product/OPTICAL_EFFECT_PACK.md) · [Actual optical gallery](docs/assets/optical-pack-20261029-r1/index.html) · [Browser screenshots and checks](docs/validation/光效选型页实测_2026-10-29.md) · [N002 original-image previews](docs/product/OPTICAL_N002_PREVIEWS.md) · [N002 selection gallery](docs/assets/optical-n002-20261029-r1/index.html)
 
@@ -2201,6 +2201,7 @@ R31 記錄已經公開的 GitHub 預發布和 10 個附件的實際下載雜湊�
 | R581 | README stage alignment / 2026-11-06 | 三語版本階段與音色狀態對齊；歷史快照明確標示，M02／S14更新為103項實際WAV，F45補充現況；原F01—F89及R01—R580逐行保留。僅文件／唯讀檢查，無新增模型、媒體驗收或正式升級。 [Record](docs/validation/evidence/delivery66-handoff-20261106-r1/documentation-r1/verification.json) |
 | R582 | CLI66完整迴歸唯讀檢查點／2026-11-06 | 原生監督與子程序實際存活；日誌中的進度大小／異常欄位兩項用例報ERROR，無終態，根因未確認。未另啟測試、未改凍結原始碼／正式入口；完整未完成範圍與交付阻塞已同步。 [Checkpoint](docs/validation/evidence/delivery66-handoff-20261106-r1/remaining-r3/observation.json) |
 | R583 | CLI66 isolated correction draft / 2026-11-06 | 修正草稿已獨立保存：修復受控診斷夾具、更新歷史目錄預期，並補音樂進度型別／欄位／讀取失敗處理與五項新用例。尚未合入或執行，不修改執行中的凍結程式碼。 [Live record](docs/validation/evidence/delivery66-handoff-20261106-r1/correction-draft-r1/observation.json) |
+| R584 | Read-only release preflight / 2026-11-06 | 官方API匿名讀取200確認只有alpha.3；目前HTTPS憑據請求403，SSH標籤查詢成功且alpha.4尚不存在。兩條舊發行工作流程為active，未觸發。未建立標籤、上傳附件或發佈新版。 [Record](docs/validation/evidence/delivery66-handoff-20261106-r1/release-preflight-r2/verification.json) · [Workflow state](docs/validation/evidence/delivery66-handoff-20261106-r1/actions-preflight-r1/verification.json) |
 
 ### 開發預覽：C76 循環接縫修復（原始碼CLI60）
 

@@ -1,0 +1,46 @@
+{
+  "C_nonisolated": {
+    "python": "C:/Python313/python.exe",
+    "mode": "-E",
+    "numpy": "2.4.2",
+    "Pillow": "12.1.0",
+    "cv2_found": false,
+    "metadata_discovery_only": true
+  },
+  "C_isolated": {
+    "python": "C:/Python313/python.exe",
+    "mode": "-I",
+    "numpy_found": false,
+    "PIL_found": false,
+    "cv2_found": false,
+    "metadata_discovery_only": true
+  },
+  "E_isolated": {
+    "python": "E:/dev/sandbox/模型配乐/ComfyUI_windows_portable/python_embeded/python.exe",
+    "version": "3.13.14",
+    "mode": "-I",
+    "modules_found": [
+      "numpy",
+      "PIL",
+      "cv2",
+      "jsonschema",
+      "pip",
+      "setuptools"
+    ],
+    "versions": {
+      "numpy": "2.5.3",
+      "Pillow": "12.3.0",
+      "opencv-python": "5.0.0.93",
+      "opencv-python-headless": "5.0.0.93",
+      "jsonschema": "4.26.0",
+      "pip": "26.2.1",
+      "setuptools": "84.0.0"
+    },
+    "metadata_discovery_only": true
+  },
+  "actual_library_imports_executed": false,
+  "test_methods_executed": 0,
+  "native_python_or_packages_changed": false,
+  "virtual_environment_created": false,
+  "collected_from": "actual read-only importlib spec/distribution queries in this turn; no candidate module imported"
+}

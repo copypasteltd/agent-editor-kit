@@ -43,21 +43,27 @@
     {
       "path": "docs/validation/test_delivery66_handoff.py",
       "base_sha256": "67aca9303fa283bdd2186906a441fbd1378a62e98dbd069fd984b864dc90ee5a",
-      "candidate_sha256": "d11a36bffbe925ecf53ffe83dfbb6e4161c4439b4b44c2bff44cb4701354d8ba",
-      "bytes": 12170
+      "candidate_sha256": "b799edd19f7299c0bb40140bd40bd4db57435b62dd924547279664840fe24043",
+      "bytes": 16456
     },
     {
       "path": "docs/validation/delivery66_handoff.py",
       "base_sha256": "5db3c3bf42609d30633bb53c8e94fd43cd59db10b10efba71930f969515e9c13",
       "candidate_sha256": "69c8e07733e884d76ce74ef5fc1c0e7d0ba84e8cbb5cd473da7db37f8514b0b7",
       "bytes": 45156
+    },
+    {
+      "path": "docs/validation/delivery66.py",
+      "base_sha256": "40bf79f471bd71e23c182aed5931573bdf24392dce443904dcb692f8c0d0633f",
+      "candidate_sha256": "832f2df152c7a9027fce0e7a3ea7457c14692a87c3542baf6c568ea414689157",
+      "bytes": 35186
     }
   ],
   "original_product_and_tests_modified": false,
   "formal_activation": false,
   "functional_tests_started": false,
   "code_completed_before_batch_tests": false,
-  "observed_failure_status": "two ERROR and one FAIL so far; no terminal report",
+  "observed_failure_status": "Original r4 is running without a terminal receipt; observed failures now include lip-sync. Log-line counts include subtests and are not final result statistics.",
   "changes": [
     "Prepare both diagnostic test fixtures through the real controlled Directory API.",
     "Update three exact effect catalog expectations to documented 0.11.0 / 51; retain numeric-channel and pixel assertions.",
@@ -67,11 +73,15 @@
     "Read the existing native Windows default gh credential after explicit environment tokens and before the legacy Git helper; do not store secrets or authenticate through UI.",
     "Six unexecuted handoff methods cover explicit precedence, native gh/legacy fallback, UTF8/UTF16 secret formats, malformed/oversized secret silence and validation without credential reads or publishing.",
     "Two existing native gh credentials returned official repository GET 200 and write/admin permission metadata; this read-only preflight is not execution of the candidate functions or release publication.",
-    "Expand all three generated quickstarts with digest/extraction, offline installation, required CPU and optional GPU pack setup, explicit CUDA directories, one Skill registration, actual asset IDs, client look preview, edit/voice/translation/render/package replay and upgrade boundaries. Statically rendered review drafts have explicit manifest placeholders and execute no candidate functions or CLI commands."
+    "Expand all three generated quickstarts with digest/extraction, offline installation, required CPU and optional GPU pack setup, explicit CUDA directories, one Skill registration, actual asset IDs, client look preview, edit/voice/translation/render/package replay and upgrade boundaries. Statically rendered review drafts have explicit manifest placeholders and execute no candidate functions or CLI commands.",
+    "Preflight the actual isolated native Python imports for NumPy, Pillow, OpenCV and jsonschema before whole-suite discovery; bind application/Python identity, supported core versions and dependency file hashes.",
+    "Persist every error, failure and failing subtest to an append-only flushed issue journal without fail-fast, filtering, skipping or altering the complete unittest result.",
+    "Three unexecuted handoff methods cover absent OpenCV/incompatible versions, wrong application/interpreter/isolation, and live errors/subtests while subsequent tests still execute.",
+    "Read-only dependency discovery found the original C Python lacks OpenCV, and its isolated mode cannot discover NumPy/Pillow; an existing native E Python discovers all four dependencies. No interpreter/site-packages was modified; actual import preflight awaits the finalized batch."
   ],
   "next_step": "Wait for authoritative r4 terminal output, incorporate every additional failure, then complete and apply the whole correction batch before any regression.",
   "new_product_test_methods_written": 5,
-  "new_handoff_test_methods_written": 6,
+  "new_handoff_test_methods_written": 9,
   "quickstart_drafts": [
     {
       "path": "docs/validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.md",
@@ -100,5 +110,13 @@
       "commands_executed": false,
       "preview_links_point_to_current_source": true
     }
-  ]
+  ],
+  "new_handoff_test_methods_total_after_application": 27,
+  "next_test_native_python": {
+    "path": "E:/dev/sandbox/模型配乐/ComfyUI_windows_portable/python_embeded/python.exe",
+    "existing_native_runtime": true,
+    "interpreter_or_packages_modified": false,
+    "metadata_discovery_only": true,
+    "actual_import_preflight_pending": true
+  }
 }

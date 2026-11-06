@@ -1,6 +1,6 @@
 # CLI66整轮结果待汇总期间的隔离修正候选
 
-2026-11-06，Asia/Taipei。当前r4源码全套仍由原生监督执行，发现4,114项；最新观察包含2项ERROR和1项FAIL，无终态。正式入口保持CLI0.1.63／local61／r58。
+2026-11-06，Asia/Taipei。当前r4源码全套仍由原生监督执行，发现4,114项；日志已观察到进度诊断、目录断言和口型相关的多项错误／失败，无最终统计。正式入口保持CLI0.1.63／local61／r58。
 
 本页记录下一批代码草稿，不是已合入、已安装或已验收功能。先保留当前整轮所有结果，再一次补完全部发现项、合入并冻结修正，然后集中回归；草稿期间未启动逐模块测试。
 
@@ -16,7 +16,11 @@
 | U08 | 六项发布契约方法覆盖显式选择优先、gh／旧助手回落、UTF8／UTF16格式、无效／超限秘密不输出及仅校验时不读凭据／不发布 | 全部只写入候选；没有执行测试、注册、发布或模型推理，等待整轮结束后与其他修正一并验证 |
 | U09 | 扩写三语快速开始生成器：附件摘要／解包、离线安装、两个必需CPU包和两个可选GPU包、分别配置CUDA目录、单Skill注册、真实ID、滤镜选型／应用、音轨编排、渲染、工程包重放及升级限制 | 通过AST静态替换生成三份可审阅手册；不导入候选模块、不调用候选函数、不执行CLI。安装摘要为明确占位符，实际安装／媒体流程仍待整批验收 |
 
-草稿共8个代码文件：1个产品模块、4个既有产品测试模块，以及发布器、交付契约模块和交付工具。另有3份带占位摘要的手册预览。新增产品用例方法5项、交付工具方法6项，两组不合并为测试通过数。逐文件原摘要、草稿摘要、变更理由见[实现清单](../validation/candidates/delivery66-r5/implementation.json)，代码位于同目录的files/。当前冻结产品、测试、6个交付工具及95个正式文件均须保持原字节。
+| U10 | 在整轮发现前以实际原生Python的隔离子进程导入NumPy、Pillow、OpenCV和jsonschema，检查应用／解释器身份、支持版本及原生依赖字节 | 原C解释器依赖发现不齐；计划使用既有E盘原生Python，不修改任何共享解释器或依赖。真正导入预检尚未执行 |
+| U11 | 完整回归即时保存错误、失败和失败子测试的完整堆栈，刷盘后继续整套；原unittest结果和最终统计保留 | 当前r4仍等结束才汇总完整堆栈；新日志功能只在草稿，不改运行中的代码，不提前停止或过滤 |
+| U12 | 三项新增交付契约方法覆盖缺OpenCV／不兼容版本、错误应用／解释器／隔离状态，以及真实文件日志在后续测试前可读且保留子测试结果 | 仅写入；内部刻意失败的微型用例用于未来验证日志行为，不冒充产品通过数。集中契约计划为27项，尚未执行 |
+
+草稿共9个代码文件：1个产品模块、4个既有产品测试模块，以及发布器、交付契约模块、交付工具和整轮运行器。另有3份带占位摘要的手册预览。新增产品用例方法5项、交付工具方法9项，两组不合并为测试通过数。逐文件原摘要、草稿摘要、变更理由见[实现清单](../validation/candidates/delivery66-r5/implementation.json)，代码位于同目录的files/。当前冻结产品、测试、6个交付工具及95个正式文件均须保持原字节。
 
 后续仍要等待原整轮终态、合并所有新增发现、完成整批代码、源码及安装版回归，之后才执行实际CUDA配乐、工程包／配方重放、真实故障、唯一Skill升级／回滚和新发行。所有G01—G38关闭条件继续保留。
 
@@ -28,4 +32,6 @@
 
 [简体流程草稿](../validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.md) · [繁體流程草稿](../validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.zh-TW.md) · [English workflow draft](../validation/candidates/delivery66-r5/quickstart-drafts/QUICKSTART.en.md)。
 
-当前8文件草稿及3份手册已完成静态完整性复核；三语共27个PowerShell代码段由原生解析器检查，语法错误为0，15个预览文档链接均可解析。未执行其中命令或候选函数；源码全套仍无终态，正式入口仍63。[当前静态复核](../validation/evidence/delivery66-handoff-20261106-r1/correction-draft-r3/verification.json) · [原生PowerShell语法结果](../validation/evidence/delivery66-handoff-20261106-r1/correction-draft-r3/powershell-syntax.json)。
+此前8文件草稿及3份手册已完成静态完整性复核；三语共27个PowerShell代码段由原生解析器检查，语法错误为0，15个预览文档链接均可解析。未执行其中命令或候选函数；源码全套仍无终态，正式入口仍63。[当前静态复核](../validation/evidence/delivery66-handoff-20261106-r1/correction-draft-r3/verification.json) · [原生PowerShell语法结果](../validation/evidence/delivery66-handoff-20261106-r1/correction-draft-r3/powershell-syntax.json)。
+
+新增依赖／日志草稿说明见[原生测试依赖与即时错误记录](NATIVE_TEST_DEPENDENCIES_20261106.md)。当前9文件的语法、原用例保留和冻结字节检查见[静态收据](../validation/evidence/delivery66-handoff-20261106-r1/dependency-preflight-draft-r1/verification.json)，未执行任何候选函数或新方法。

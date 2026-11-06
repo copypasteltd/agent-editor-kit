@@ -1,0 +1,122 @@
+{
+  "status": "passed-static-draft-and-file-integrity-review",
+  "observed_at_utc": "2026-11-06T01:19:48.101701+00:00",
+  "parent_commit": "f3fa6b1aade0aac6a80a3b65be84d880312fdd37",
+  "candidate_code_files": 9,
+  "candidate_files": [
+    {
+      "path": "product/src/ai_ad_editor/music_generation_pipeline.py",
+      "candidate_sha256": "5dbae91ec9628642ab89fe5d57de7ed97e70f11ff39dd84ec0d856a4a67eabf0",
+      "base_sha256": "090c20dbeb4ed251a9e0ad9b02d24be3e399b713061e7db6d385eba49436df08"
+    },
+    {
+      "path": "product/tests/test_delivery.py",
+      "candidate_sha256": "c36399ae18d4fd786175f29c61f67067410dc67ef6de64efd8348483b905508b",
+      "base_sha256": "36fd9235cb777d8f6db33b3f0439454ce4b04a49c81a37dbedb1e8d9e24f3775"
+    },
+    {
+      "path": "product/tests/test_effect_automation.py",
+      "candidate_sha256": "860177ad6dae0f51160828b736c4b69f4f9675950138cee5e5350cea582eb48b",
+      "base_sha256": "c85267c95ffe4e13878d291493b6e51faf74a02c205a964a24e0fb4958bb8952"
+    },
+    {
+      "path": "product/tests/test_selective_hsl.py",
+      "candidate_sha256": "deba97f4d7c8239c3606597c50faf9f3a0461399ab1f62c76d8ebf06387b2c69",
+      "base_sha256": "e3a4e2cedf045f91ae45b9312c8ede7037d15e925fdecee7ab296baa86ba8787"
+    },
+    {
+      "path": "product/tests/test_spatial_automation.py",
+      "candidate_sha256": "2f827615f17e1b7188b97e11ee968b8769bb827394abcff6250e70eab78773a5",
+      "base_sha256": "5653e4a8a06efe8eb6c96dd54eb6dbe3672b11f1d0a0789ac9abbb2d88ff623f"
+    },
+    {
+      "path": "docs/validation/publish_delivery66.py",
+      "candidate_sha256": "44ae4313db07280e3d42f9d5d717c3ae8e3be6b1efaa983cdcda665230575fef",
+      "base_sha256": "7a8a772ad27ef513cfede56cfbaacb5ed66cd7c989e073a99ac0bbefe2838288"
+    },
+    {
+      "path": "docs/validation/test_delivery66_handoff.py",
+      "candidate_sha256": "b799edd19f7299c0bb40140bd40bd4db57435b62dd924547279664840fe24043",
+      "base_sha256": "67aca9303fa283bdd2186906a441fbd1378a62e98dbd069fd984b864dc90ee5a"
+    },
+    {
+      "path": "docs/validation/delivery66_handoff.py",
+      "candidate_sha256": "69c8e07733e884d76ce74ef5fc1c0e7d0ba84e8cbb5cd473da7db37f8514b0b7",
+      "base_sha256": "5db3c3bf42609d30633bb53c8e94fd43cd59db10b10efba71930f969515e9c13"
+    },
+    {
+      "path": "docs/validation/delivery66.py",
+      "candidate_sha256": "832f2df152c7a9027fce0e7a3ea7457c14692a87c3542baf6c568ea414689157",
+      "base_sha256": "40bf79f471bd71e23c182aed5931573bdf24392dce443904dcb692f8c0d0633f"
+    }
+  ],
+  "candidate_python_syntax_valid": true,
+  "new_product_methods_written": [
+    "test_missing_and_malformed_progress_keep_bounded_diagnostics",
+    "test_nonobject_unhashable_and_wrong_typed_progress_is_invalid",
+    "test_nonordinary_progress_returns_unavailable_without_consuming_it",
+    "test_unprepared_music_progress_is_explicit",
+    "test_valid_progress_forwards_only_approved_fields"
+  ],
+  "new_handoff_methods_written": [
+    "test_explicit_publishing_token_never_opens_credential_stores",
+    "test_isolated_dependency_preflight_rejects_another_application_or_python",
+    "test_isolated_dependency_preflight_requires_opencv_and_compatible_core_versions",
+    "test_legacy_helper_remains_available_without_native_gh_credential",
+    "test_live_issue_journal_preserves_subtests_and_continues_the_whole_suite",
+    "test_local_only_validation_never_reads_credentials_or_publishes",
+    "test_malformed_or_oversized_stored_credentials_are_not_logged",
+    "test_native_gh_store_decodes_utf8_and_utf16_token_formats",
+    "test_native_gh_store_precedes_unusable_legacy_git_credential"
+  ],
+  "original_test_names_retained": true,
+  "handoff_methods_after_application": 27,
+  "current_frozen_files_equal": {
+    "file_hashes": 546,
+    "delivery_tool_files": 6,
+    "formal_guard": 95
+  },
+  "readmes": {
+    "README.md": {
+      "sha256": "1eae9712eb203e52bc3d6d0477755fbf9566e8b381ca06b921db8bfcd5255bbf",
+      "prior_RF_rows_preserved": true,
+      "R_rows": 587,
+      "F_rows": 89
+    },
+    "README.zh-TW.md": {
+      "sha256": "5b8a5a116090c41855454558df8c2f6f6d65e94a032bf69787772ce9b85eb51f",
+      "prior_RF_rows_preserved": true,
+      "R_rows": 587,
+      "F_rows": 89
+    },
+    "README.en.md": {
+      "sha256": "329a38941dc86ada0ae609d7d7311ccd39e7fae56881403750a07369495046c2",
+      "prior_RF_rows_preserved": true,
+      "R_rows": 587,
+      "F_rows": 89
+    }
+  },
+  "dependency_discovery": {
+    "path": "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\delivery66-handoff-20261106-r1\\dependency-preflight-draft-r1\\dependency-discovery.json",
+    "sha256": "39d2a1a9d2002f4f25ea4af634a16599212b2af6637b9a86ae464704e956a5f5",
+    "actual_import_preflight_pending": true
+  },
+  "observed_error_log_lines": 14,
+  "observed_failure_log_lines": 5,
+  "counts_include_subtests_and_are_not_final": true,
+  "r4_terminal_result_present": false,
+  "r4_supervisor_live": true,
+  "r4_child_live": true,
+  "candidate_functional_tests_started": false,
+  "candidate_functions_executed": false,
+  "candidate_applied": false,
+  "candidate_batch_finalized": false,
+  "formal_activation": false,
+  "model_forwards": 0,
+  "public_release_created": false,
+  "source_cli": "0.1.66",
+  "formal_cli": "0.1.63",
+  "original_38_group_document_sha256": "36347a3c5599ec4e4850b13c6cd98f726847f4142f96863fadf6f26b4f27e755",
+  "original_38_group_document_git_diff_empty": true,
+  "full_product_goal_closed": false
+}

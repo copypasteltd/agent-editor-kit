@@ -13,6 +13,7 @@ import unittest
 from unittest.mock import patch
 import zipfile
 
+import delivery66 as round_runner
 import delivery66_handoff as handoff
 import publish_delivery66 as publisher
 from run_delivery66_native import process_identity, same_process
@@ -231,6 +232,84 @@ class HandoffContracts(unittest.TestCase):
         credential.assert_not_called()
         publish.assert_not_called()
         self.assertEqual(save.call_args.args[1]['status'], 'validated-not-published')
+
+    def dependency_fixture(self):
+        package = self.root / 'site/ai_ad_editor'
+        package.mkdir(parents=True)
+        (package / '__init__.py').write_bytes(b'# Explicit dependency-protocol fixture only.\n')
+        modules = {}
+        for name, version in [('numpy', '2.4.2'), ('PIL', '12.1.0'),
+                              ('cv2', '5.0.0.93'), ('jsonschema', '4.26.0')]:
+            path = self.root / (name + '.py')
+            path.write_bytes(b'# Not imported or used for media processing.\n')
+            modules[name] = dict(version=version, file=str(path), binaries=[])
+        record = dict(python=round_runner.sys.executable, isolated=1,
+            application_file=str(package / '__init__.py'),
+            application_version=round_runner.VERSION, modules=modules)
+        return package, record
+
+    def test_isolated_dependency_preflight_requires_opencv_and_compatible_core_versions(self):
+        package, record = self.dependency_fixture()
+        pins = round_runner.dependency_probe_files(record, package)
+        self.assertIn(str(Path(round_runner.sys.executable).resolve()), pins)
+        self.assertEqual(len(pins), 5)
+        missing = copy.deepcopy(record)
+        del missing['modules']['cv2']
+        with self.assertRaisesRegex(AssertionError, 'incomplete'):
+            round_runner.dependency_probe_files(missing, package)
+        for name, version in [('numpy', '2.4.1'), ('PIL', '13.0.0'),
+                              ('cv2', '3.4.0'), ('jsonschema', '4.25.0')]:
+            altered = copy.deepcopy(record)
+            altered['modules'][name]['version'] = version
+            with self.subTest(dependency=name), self.assertRaisesRegex(AssertionError, 'Incompatible'):
+                round_runner.dependency_probe_files(altered, package)
+
+    def test_isolated_dependency_preflight_rejects_another_application_or_python(self):
+        package, record = self.dependency_fixture()
+        for changes, reason in [({'isolated': 0}, 'not isolated'),
+                                ({'python': str(self.root / 'other-python.exe')}, 'another Python'),
+                                ({'application_version': '0.1.63'}, 'another application'),
+                                ({'application_file': str(self.root / 'other/__init__.py')}, 'another application')]:
+            with self.subTest(changes=changes), self.assertRaisesRegex(AssertionError, reason):
+                round_runner.dependency_probe_files(dict(record, **changes), package)
+
+    def test_live_issue_journal_preserves_subtests_and_continues_the_whole_suite(self):
+        journal = self.root / 'issues.jsonl'
+        observed = []
+
+        class DeliberateProblems(unittest.TestCase):
+            def error(self):
+                raise RuntimeError('fixture primary error')
+
+            def failure(self):
+                self.fail('fixture primary assertion')
+
+            def subtest_failure(self):
+                with self.subTest(kind='assertion'):
+                    self.fail('fixture subtest assertion')
+
+            def subtest_error(self):
+                with self.subTest(kind='exception'):
+                    raise ValueError('fixture subtest error')
+
+            def later_test(self):
+                rows = [json.loads(line) for line in journal.read_text(encoding='utf-8').splitlines()]
+                observed.extend(rows)
+                self.assertEqual([row['event'] for row in rows],
+                    ['result-created', 'error', 'failure', 'subtest-failure', 'subtest-error'])
+
+        suite = unittest.TestSuite(DeliberateProblems(name) for name in
+            ['error', 'failure', 'subtest_failure', 'subtest_error', 'later_test'])
+        result = unittest.TextTestRunner(stream=io.StringIO(), verbosity=2,
+            resultclass=lambda *a, **kw: round_runner.LiveRegressionResult(
+                *a, event_path=journal, **kw)).run(suite)
+        self.assertEqual(result.testsRun, 5)
+        self.assertEqual(len(result.errors), 2)
+        self.assertEqual(len(result.failures), 2)
+        self.assertEqual(result.skipped, [])
+        self.assertFalse(result.wasSuccessful())
+        self.assertEqual(len(observed), 5)
+        self.assertTrue(all(row['traceback'] and row['test_id'] for row in observed[1:]))
 
 
 if __name__ == '__main__':

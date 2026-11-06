@@ -1,0 +1,337 @@
+{
+  "calls": [
+    {
+      "name": "make-diagnostic-video",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-f",
+        "lavfi",
+        "-i",
+        "testsrc2=size=320x568:rate=30:duration=10",
+        "-an",
+        "-c:v",
+        "libx264",
+        "-threads",
+        "2",
+        "-pix_fmt",
+        "yuv420p",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\procedural-video.mp4"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.0107337000008556
+    },
+    {
+      "name": "ingest-diagnostic-video",
+      "argv": [
+        "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\candidate-r1\\installed\\run.py",
+        "media",
+        "ingest",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\original",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\procedural-video.mp4"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.4587816999992356
+    },
+    {
+      "name": "compose-diagnostic-video",
+      "argv": [
+        "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\candidate-r1\\installed\\run.py",
+        "timeline",
+        "compose",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\original",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\video-track.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.4274437999993097
+    },
+    {
+      "name": "validate-authored-project",
+      "argv": [
+        "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\candidate-r1\\installed\\run.py",
+        "validate",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\original"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.4815744000006816
+    },
+    {
+      "name": "export",
+      "argv": [
+        "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\candidate-r1\\installed\\run.py",
+        "convert",
+        "export",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\original",
+        "--target-format",
+        "package",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\music.aevpkg.zip"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.2088694000049145
+    },
+    {
+      "name": "import",
+      "argv": [
+        "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\candidate-r1\\installed\\run.py",
+        "convert",
+        "import",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\music.aevpkg.zip",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\restored"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.199881499996991
+    },
+    {
+      "name": "original-render",
+      "argv": [
+        "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\candidate-r1\\installed\\run.py",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\original",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\original\\renders\\music.mp4"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 6.730716700003541
+    },
+    {
+      "name": "original-RGBA",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\original\\renders\\music.mp4",
+        "-map",
+        "0:v:0",
+        "-an",
+        "-pix_fmt",
+        "rgba",
+        "-f",
+        "hash",
+        "-hash",
+        "sha256",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.5094418000007863
+    },
+    {
+      "name": "original-PCM",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\original\\renders\\music.mp4",
+        "-map",
+        "0:a:0",
+        "-vn",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "hash",
+        "-hash",
+        "sha256",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.3207652999990387
+    },
+    {
+      "name": "original-probe",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.EXE",
+        "-v",
+        "error",
+        "-count_frames",
+        "-show_streams",
+        "-show_format",
+        "-of",
+        "json",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\original\\renders\\music.mp4"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.3515486000032979
+    },
+    {
+      "name": "original-PCM-samples",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\original\\renders\\music.mp4",
+        "-map",
+        "0:a:0",
+        "-vn",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.13331109999853652
+    },
+    {
+      "name": "restored-render",
+      "argv": [
+        "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\candidate-r1\\installed\\run.py",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\restored",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\restored\\renders\\music.mp4"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 11.102253199998813
+    },
+    {
+      "name": "restored-RGBA",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\restored\\renders\\music.mp4",
+        "-map",
+        "0:v:0",
+        "-an",
+        "-pix_fmt",
+        "rgba",
+        "-f",
+        "hash",
+        "-hash",
+        "sha256",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.0124494999981835
+    },
+    {
+      "name": "restored-PCM",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\restored\\renders\\music.mp4",
+        "-map",
+        "0:a:0",
+        "-vn",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "hash",
+        "-hash",
+        "sha256",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.21107240000128513
+    },
+    {
+      "name": "restored-probe",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffprobe.EXE",
+        "-v",
+        "error",
+        "-count_frames",
+        "-show_streams",
+        "-show_format",
+        "-of",
+        "json",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\restored\\renders\\music.mp4"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.5075328000020818
+    },
+    {
+      "name": "restored-PCM-samples",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\restored\\renders\\music.mp4",
+        "-map",
+        "0:a:0",
+        "-vn",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "f32le",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.22161429999687243
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "status": "code-complete-frozen",
+  "observed_at_utc": "2026-11-06T10:08:44.003727+00:00",
+  "cli_version": "0.1.66",
+  "code_completed_before_functional_validation": true,
+  "files": {
+    "delivery66_av_replay.py": "11158f3b7ff4f7dd2f53767c2a08a89f683f9c6616638c155ba01529b877a7c9",
+    "test_delivery66_av_replay.py": "8747378d27739c439a2a9324581ff5681c297a381eb46f625269626e8073b6a4",
+    "continue_delivery66_handoff.py": "80948232d3746f1bb1297f70ad88ce743de1d58ac07a47e2b21dc3803b263b20"
+  },
+  "retained_inputs": {
+    "docs/validation/evidence/delivery66-20261106-r1/freeze-r6/verification.json": "6e5c6257a6435e45c9c980b4efbd60a20bc0d70b44204a6a74abde80554da3f8",
+    "docs/validation/evidence/delivery66-20261106-r1/source-all-r6/verification.json": "82013fc30ff00613060d8dc0a23663e9b94d28dcd4413b2a5262f970f4ed52d3",
+    "docs/validation/evidence/delivery66-20261106-r1/installed-all-r6/verification.json": "071ac016a71531654f4525955b5d5b77849d08bab084d07544822d3622c534ec",
+    "docs/validation/evidence/delivery66-20261106-r1/candidate-r1/verification.json": "a0f3f3f6000f1fabb93528a8b8b89e5491171017dbefe2a35f121e2d1e112b00",
+    "docs/validation/evidence/delivery66-20261106-r1/skill-entry-r1/verification.json": "e6a239318249dbb5a1254cd5cd66d7d8d6166d14aa6d940a51b1e16d1531bc65",
+    "docs/validation/evidence/delivery66-20261106-r1/native-music-r1/verification.json": "5abd512e64902ea92e4cdb296b86d5da10a99815bc201ddbe4e4880a1bec6df5",
+    "docs/validation/evidence/delivery66-20261106-r1/package-replay-r1/original-render.stdout": "aa16b3cbcada179e63f5765e543faed44d727bbedfeae96f2ca83aa02ef5a7cc",
+    "docs/validation/evidence/delivery66-20261106-r1/package-replay-r1/calls.json": "2237c931afc98c711b6a3dd210634413c9786b92b7f9a1f48e9aa1f5e8cdd25f",
+    "local/agent-ffmpeg/delivery66/r6-installed-handoff-observer-r1/state.json": "7d5fc41ab5014f0e4f147f1a2c116fb004a382593b02a47db65cfa710ca3ea27",
+    "local/agent-ffmpeg/delivery66/r6-installed-handoff-observer-r1/package-r1.result.json": "0483c77c21449501a665e95ef2d5503243337105952b9c5c66d89d83d57afb4b"
+  },
+  "original_frozen_groups": {
+    "file_hashes": {
+      "files": 546,
+      "changed": []
+    },
+    "delivery_tool_files": {
+      "files": 8,
+      "changed": []
+    },
+    "packaging_source_files": {
+      "files": 69,
+      "changed": []
+    },
+    "formal_guard": {
+      "files": 95,
+      "changed": []
+    }
+  },
+  "new_product_code": false,
+  "original_eight_delivery_tools_changed": false,
+  "original_regressions_restarted": false,
+  "original_music_regenerated": false,
+  "functional_tests_executed": false,
+  "declared_media_contracts": 8,
+  "actual_AV_replay_pending": true,
+  "formal_activation": false,
+  "release_created": false,
+  "full_goal_closed": false
+}

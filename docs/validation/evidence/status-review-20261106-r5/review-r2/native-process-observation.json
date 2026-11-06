@@ -1,0 +1,45 @@
+{
+  "handoff": {
+    "phase": "music-faults-r1",
+    "observed_at_utc": "2026-11-06T10:47:52.274309+00:00",
+    "observer": {
+      "pid": 30252,
+      "creation_filetime": 134384333476454217,
+      "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+    },
+    "observer_live": true,
+    "child": {
+      "pid": 12328,
+      "creation_filetime": 134384335394880303,
+      "executable": "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+    },
+    "child_live": true
+  },
+  "completed_fault_cases": {
+    "cancel": {
+      "verification_sha256": "51699cb42f5cbaadcefaff94c43f5ed76a6da03878e4cec484da2e089ec03493",
+      "error_codes": [
+        "CANCELLED"
+      ],
+      "elapsed_seconds": 790.0024856999953,
+      "worker_exited_before_harness_cleanup": true,
+      "metadata_unchanged": true,
+      "managed_workspace_cleaned": true
+    },
+    "timeout": {
+      "verification_sha256": "08d163092771ca844fd7a83d6882d220346fe895095dd3f076830f00aa805d64",
+      "error_codes": [
+        "MUSIC_GENERATION_TIMEOUT"
+      ],
+      "elapsed_seconds": 462.2815455000018,
+      "worker_exited_before_harness_cleanup": true,
+      "metadata_unchanged": true,
+      "managed_workspace_cleaned": true
+    }
+  },
+  "remote_controller_exited": true,
+  "owned_transfer_exited": true,
+  "owned_port": 8672,
+  "owned_port_closed": true,
+  "browser_tabs_opened": 0
+}

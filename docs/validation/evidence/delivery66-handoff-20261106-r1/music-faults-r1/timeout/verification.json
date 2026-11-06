@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "case": "timeout",
+  "exit_code": 6,
+  "error_codes": [
+    "MUSIC_GENERATION_TIMEOUT"
+  ],
+  "worker_identity": {
+    "pid": 36692,
+    "creation_filetime": 134384352791808026,
+    "executable": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+  },
+  "elapsed_seconds": 462.2815455000018,
+  "progress_history": [
+    {
+      "phase": "verifying-music-artifacts",
+      "done": 0,
+      "total": 1
+    }
+  ],
+  "diffusion_callback_observed": false,
+  "worker_exited_before_harness_cleanup": true,
+  "metadata_unchanged": true,
+  "failed_asset_not_registered": true,
+  "managed_workspace_cleaned": true,
+  "foreign_output_preserved": false,
+  "model_functions_mocked": false,
+  "product_code_patched": false
+}

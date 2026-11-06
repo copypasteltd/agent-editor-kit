@@ -1,0 +1,13 @@
+test_an_extra_audio_track_is_not_silently_ignored (__main__.MediaContentContracts.test_an_extra_audio_track_is_not_silently_ignored) ... ok
+test_complete_non_silent_stereo_with_codec_padding (__main__.MediaContentContracts.test_complete_non_silent_stereo_with_codec_padding) ... ok
+test_matching_duration_text_does_not_hide_wrong_video_clock (__main__.MediaContentContracts.test_matching_duration_text_does_not_hide_wrong_video_clock) ... ok
+test_missing_last_video_frame_is_rejected (__main__.MediaContentContracts.test_missing_last_video_frame_is_rejected) ... ok
+test_nan_and_infinite_samples_cannot_pass_a_digest_check (__main__.MediaContentContracts.test_nan_and_infinite_samples_cannot_pass_a_digest_check) ... ok
+test_original_audio_only_project_cannot_satisfy_AV_acceptance (__main__.MediaContentContracts.test_original_audio_only_project_cannot_satisfy_AV_acceptance) ... ok
+test_silence_truncation_and_excess_padding_are_rejected (__main__.MediaContentContracts.test_silence_truncation_and_excess_padding_are_rejected) ... ok
+test_wrong_audio_clock_is_rejected (__main__.MediaContentContracts.test_wrong_audio_clock_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.658s
+
+OK

@@ -1,6 +1,6 @@
 # CLI66交付后半程与原生完整回归
 
-2026-11-06，Asia/Taipei。正式入口仍CLI0.1.63／local61／r58。原r5完整4,124项为4失败／1错误／0跳过，两个实际进程均已退出；9文件修正已一次应用并冻结r6：546产品／用例／依赖、8工具、69构建来源及95正式文件。完整43项工具契约已实际通过，零失败／错误／跳过；两组实际隔离依赖通过。新的未过滤产品整套实际发现4,124项，仍运行、无终态。[本批执行证据](DELIVERY66_R6_EXECUTION.md)。
+2026-11-06，Asia/Taipei。正式入口仍CLI0.1.63／local61／r58。原r6源码与安装分别完整4,124项通过、0失败／错误／跳过、退出码0；候选CLI66真实CUDA配乐、r2完整音画工程、r59便携安装和第二台CPU63→66→63→66均已通过。真实故障、正式发现入口与发行仍按各自实际终态验收。[安装终态](DELIVERY66_R6_INSTALLED_ACCEPTANCE.md) · [音乐／音画／便携终态](DELIVERY66_R6_MUSIC_AV_PORTABLE_ACCEPTANCE.md) · [第二台结果](CROSS_MACHINE66_RESULTS.md)。原546产品／用例／依赖、8工具、69构建来源及95正式文件继续保持r6字节。
 
 原r4已完整执行4,114项，10失败／15错误／0跳过，原冻结一致；原r2的4,110项中断及初轮8处跳过仍保留。r4中的12项会话用例均ok，属于原整套子集。新代码、43项工具检查及依赖预检均不等于新版安装、实际模型／媒体、正式切换或发行已通过。
 
@@ -50,22 +50,25 @@ Invoke-AekDeliveryTool -Script 'docs/validation/run_delivery66_native.py' -ToolA
 Invoke-AekDeliveryTool -Script 'docs/validation/run_delivery66_native.py' -ToolArguments @('status', '--installed', $installed, '--run', 'r6', '--freeze-run', 'r6')
 ```
 
-安装版完整回归通过后依次stage、music、package、descriptor。实际music必须来自66新安装和新输出，不使用65旧成功代替；应用和bare-worker依赖分别按实际来源报告。
+安装版完整回归通过后，stage-r1与music-r1已经完成。原package-replay-r1将纯音乐工程当作视频渲染，实际以VIDEO_TRACK_EMPTY拒绝；失败日志完整保留，不重跑、不修改产品空画面保护。三个替代验收／衔接文件先写齐冻结，8项独立AV契约通过后，用r2在派生工程添加合法画面并完成全部媒体重放；原生曲工程未变。
+
+以下明确展示实际采用的编号关系；已存在的目录只读取收据，不重复执行。原r6的8个工具保持冻结，AV helper独立固定摘要。后续所有门槛统一指定`--package-run r2`，避免误读保留的失败r1。
 
 ```powershell
 $roundPins = @('--run', 'r1', '--freeze-run', 'r6', '--tests-run', 'r6')
 Invoke-AekDeliveryTool -Script 'docs/validation/delivery66.py' -ToolArguments (@('stage') + $roundPins)
 Invoke-AekDeliveryTool -Script 'docs/validation/delivery66.py' -ToolArguments (@('music') + $roundPins)
-Invoke-AekDeliveryTool -Script 'docs/validation/delivery66.py' -ToolArguments (@('package') + $roundPins)
-Invoke-AekDeliveryTool -Script 'docs/validation/delivery66.py' -ToolArguments (@('descriptor') + $roundPins)
-Invoke-AekDeliveryTool -Script 'docs/validation/delivery66_handoff.py' -ToolArguments (@('kit') + $roundPins)
-Invoke-AekDeliveryTool -Script 'docs/validation/delivery66_handoff.py' -ToolArguments (@('verify-kit') + $roundPins)
-Invoke-AekDeliveryTool -Script 'docs/validation/delivery66_music_faults.py' -ToolArguments $roundPins
-Invoke-AekDeliveryTool -Script 'docs/validation/delivery66_handoff.py' -ToolArguments (@('activate') + $roundPins)
-Invoke-AekDeliveryTool -Script 'docs/validation/delivery66_handoff.py' -ToolArguments (@('assets') + $roundPins)
+Invoke-AekDeliveryTool -Script 'docs/validation/delivery66_av_replay.py' -ToolArguments @('--run', 'r2', '--freeze-run', 'r6', '--tests-run', 'r6')
+$handoffPins = $roundPins + @('--package-run', 'r2')
+Invoke-AekDeliveryTool -Script 'docs/validation/delivery66.py' -ToolArguments (@('descriptor') + $handoffPins)
+Invoke-AekDeliveryTool -Script 'docs/validation/delivery66_handoff.py' -ToolArguments (@('kit') + $handoffPins)
+Invoke-AekDeliveryTool -Script 'docs/validation/delivery66_handoff.py' -ToolArguments (@('verify-kit') + $handoffPins)
+Invoke-AekDeliveryTool -Script 'docs/validation/delivery66_music_faults.py' -ToolArguments $handoffPins
+Invoke-AekDeliveryTool -Script 'docs/validation/delivery66_handoff.py' -ToolArguments (@('activate') + $handoffPins)
+Invoke-AekDeliveryTool -Script 'docs/validation/delivery66_handoff.py' -ToolArguments (@('assets') + $handoffPins)
 ```
 
-kit只是构建。verify-kit才在独立中文／空格路径用真实安装器安装，调用真实`--base-only`配置器后注册一个Skill，再通过PowerShell入口重放全部RGBA／PCM／母音频和配方。基础剪辑不需要预先安装四个模型包；可选--packs路径仍验证完整包，模型／CUDA配置另外执行。这是同机独立路径验收，不是第二台／干净主机。
+kit只是构建；r59的verify-kit已实际在独立中文／空格路径用真实安装器安装，调用真实`--base-only`配置器后注册一个Skill，再通过PowerShell入口重放全部RGBA／PCM／母音频和配方。基础剪辑不需要预先安装四个模型包；可选--packs路径仍验证完整包，模型／CUDA配置另外执行。这是同机独立路径验收；另有第二台CPU升级结果，二者均不冒充干净主机。
 
 activate仍须源码／安装／工程／Skill／真实CUDA音乐五类原门禁、独立便携验收和取消／超时／提交冲突三个真实模型故障全部通过，再进行正式升级、显式回滚、重激活和实际发现入口媒体验收。正式文件变更失败时保留可恢复现场，不靠version查询代替媒体验收。
 
@@ -79,4 +82,4 @@ assets只准备可审阅本地附件。随后提交并普通推送完全匹配�
 
 [完整未完成清单](UNFINISHED_20261106.md) · [原38组目标](GOAL_GAPS_20261025.md) · [原生依赖与日志](NATIVE_TEST_DEPENDENCIES_20261106.md)。
 
-原r5完整终态保留5条问题堆栈；9文件已应用并冻结r6，43项工具整套通过。当前未过滤产品整套仍运行；CLI／音频／TTS原断言和门槛不放宽。源码、工具、构建来源及正式文件保持r6冻结，实际模型／安装／注册／发行后续另验。[执行记录](DELIVERY66_R6_EXECUTION.md)。
+原r5完整终态保留5条问题堆栈；9文件已应用并冻结r6，43项工具整套及源码／安装各自4,124项完整通过。CLI／音频／TTS原断言和门槛未放宽。三个AV修正文件另行先写齐冻结再验证8项契约，未改原产品和8工具。已通过的真实模型／音画／便携／跨机CPU结果与仍待的故障／正式入口／发行分别记录。[当前完整差距](UNFINISHED_DETAIL_20261106.md)。

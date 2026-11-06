@@ -1,0 +1,29 @@
+{
+  "root": {
+    "pid": 35572,
+    "creation_filetime": 134384349365972305,
+    "executable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+  },
+  "command": [
+    "powershell.exe",
+    "-NoProfile",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\stage-r1\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+    "music",
+    "generate",
+    "--project",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66-handoff\\faults-r1\\timeout\\project",
+    "--adapter-id",
+    "ace15",
+    "--input",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\music-r1\\request.json",
+    "--new-asset-id",
+    "fault_timeout",
+    "--cancel-file",
+    "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66-handoff\\faults-r1\\timeout\\cancel.marker",
+    "--timeout-seconds",
+    "120"
+  ]
+}

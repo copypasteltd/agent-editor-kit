@@ -1,8 +1,10 @@
 # CLI66第二台原生Windows升级与回滚验证
 
-2026-11-06，Asia/Taipei。本批五个操作脚本已经全部写齐，集中完成静态检查后冻结；没有联系第二台机器，也没有执行新版跨机器功能验证。原r6源码完整4,124项通过；本机66安装版整套仍在原进程中运行。正式入口仍CLI0.1.63／local61／r58。
+**最新实际终态：2026-11-06 18:20，Asia/Taipei，第二台原生Windows的CPU63→66→63→66已通过。** 离线安装、`--base-only`、四次完整RGBA／PCM／时钟／母素材检查及原文件保护通过；传输进程退出且端口关闭。[完整结果及实际MP4](CROSS_MACHINE66_RESULTS.md)。这是显式受管隔离联接迁移，非通用正式控制器、GPU或干净主机验收。本机正式入口仍CLI63。
 
-后续衔接执行器及其契约用例现已整批完成并另行冻结；17项原生解释器契约检查全部通过，0失败／错误／跳过。它串起已有五脚本的门槛、一次启动、实际进程观察、传输关闭和四次媒体证据回收；本次仍未联系第二台，也未启动新66远程任务。[代码冻结](../validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-controller-code-phase-r1/verification.json) · [17项实际契约结果](../validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-controller-contracts-r1/verification.json)。
+以下保留**本批代码冻结时的历史快照与执行约束**。当时五个操作脚本全部写齐、静态检查后冻结，尚未联系第二台；原r6源码完整4,124项通过，本机安装版尚在运行。该快照的“未执行”不能代替上方已经取得的实际终态。
+
+后续衔接执行器及其契约用例整批完成并另行冻结；17项原生解释器契约检查全部通过，0失败／错误／跳过。它串起已有五脚本的门槛、一次启动、实际进程观察、传输关闭和四次媒体证据回收；该代码检查时尚未执行远程任务，随后才取得上方真实CPU终态。[代码冻结](../validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-controller-code-phase-r1/verification.json) · [17项实际契约结果](../validation/evidence/delivery66-cross-machine-20261106-r1/upgrade66-controller-contracts-r1/verification.json)。
 
 ## 本批完成的代码及其状态
 

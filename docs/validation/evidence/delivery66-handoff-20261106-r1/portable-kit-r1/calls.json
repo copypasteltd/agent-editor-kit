@@ -1,0 +1,171 @@
+{
+  "calls": [
+    {
+      "name": "portable-install",
+      "argv": [
+        "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66-handoff\\portable-r1\\application-bundle\\install.py",
+        "--bundle",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66-handoff\\portable-r1\\application-bundle",
+        "--target",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66-handoff\\portable-r1\\application-installed",
+        "--manifest-sha256",
+        "sha256:1da7f0a678ea678f49af6d9b847dfd8912b11ede04aad22f8d87ee247ee1117a",
+        "--timeout-seconds",
+        "600"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 41.8787622000018
+    },
+    {
+      "name": "portable-basic-configuration",
+      "argv": [
+        "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66-handoff\\portable-r1\\工具包 中文 spaces\\scripts\\activate_community_runtime.py",
+        "--installed",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66-handoff\\portable-r1\\application-installed",
+        "--base-only"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.0970874999984517
+    },
+    {
+      "name": "portable-register",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66-handoff\\portable-r1\\工具包 中文 spaces\\register-agent-ffmpeg-local-skills.ps1",
+        "-SkillsDirectory",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66-handoff\\portable-r1\\isolated-discovery",
+        "-ReceiptPath",
+        "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\delivery66-handoff-20261106-r1\\portable-kit-r1\\registration.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 4.9533736999947
+    },
+    {
+      "name": "portable-version",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66-handoff\\portable-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "version"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 4.500907100002223
+    },
+    {
+      "name": "portable-capabilities",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66-handoff\\portable-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "capabilities"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.023818500005291
+    },
+    {
+      "name": "portable-import",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66-handoff\\portable-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "convert",
+        "import",
+        "--input",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\package-r2\\music.aevpkg.zip",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66-handoff\\portable-r1\\portable-project"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.6942043000017293
+    },
+    {
+      "name": "portable-render",
+      "argv": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66-handoff\\portable-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+        "render",
+        "--project",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66-handoff\\portable-r1\\portable-project",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66-handoff\\portable-r1\\portable-project\\renders\\handoff.mp4"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 6.01000280000153
+    },
+    {
+      "name": "portable-RGBA",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66-handoff\\portable-r1\\portable-project\\renders\\handoff.mp4",
+        "-map",
+        "0:v:0",
+        "-an",
+        "-pix_fmt",
+        "rgba",
+        "-f",
+        "hash",
+        "-hash",
+        "sha256",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.793800999999803
+    },
+    {
+      "name": "portable-PCM",
+      "argv": [
+        "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+        "-nostdin",
+        "-v",
+        "error",
+        "-i",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66-handoff\\portable-r1\\portable-project\\renders\\handoff.mp4",
+        "-map",
+        "0:a:0",
+        "-vn",
+        "-c:a",
+        "pcm_f32le",
+        "-f",
+        "hash",
+        "-hash",
+        "sha256",
+        "pipe:1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0937296999982209
+    }
+  ]
+}

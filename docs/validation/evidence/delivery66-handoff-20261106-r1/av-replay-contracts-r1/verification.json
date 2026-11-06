@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "observed_at_utc": "2026-11-06T10:08:54.128271+00:00",
+  "tests": 8,
+  "discovered_tests": 8,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "fixture_only": true,
+  "new_model_forwards": 0,
+  "remote_actions": 0,
+  "code_phase_sha256": "52508b8b1e0b67842bb0a89d62f6b9333d391f5cda66a4935369e41f3a05711a",
+  "code_files": {
+    "delivery66_av_replay.py": "11158f3b7ff4f7dd2f53767c2a08a89f683f9c6616638c155ba01529b877a7c9",
+    "test_delivery66_av_replay.py": "8747378d27739c439a2a9324581ff5681c297a381eb46f625269626e8073b6a4",
+    "continue_delivery66_handoff.py": "80948232d3746f1bb1297f70ad88ce743de1d58ac07a47e2b21dc3803b263b20"
+  }
+}

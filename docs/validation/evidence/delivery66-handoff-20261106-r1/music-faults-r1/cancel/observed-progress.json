@@ -1,0 +1,54 @@
+{
+  "worker": {
+    "pid": 15176,
+    "creation_filetime": 134384339870373956,
+    "executable": "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\python.exe"
+  },
+  "history": [
+    {
+      "phase": "verifying-music-artifacts",
+      "done": 0,
+      "total": 1
+    },
+    {
+      "phase": "importing-music-runtime",
+      "done": 0,
+      "total": 1
+    },
+    {
+      "phase": "admitting-music-text",
+      "done": 0,
+      "total": 1
+    },
+    {
+      "phase": "loading-music-text",
+      "done": 0,
+      "total": 1
+    },
+    {
+      "phase": "encoding-music-request",
+      "done": 0,
+      "total": 1
+    },
+    {
+      "phase": "releasing-music-text",
+      "done": 0,
+      "total": 1
+    },
+    {
+      "phase": "admitting-music-diffusion",
+      "done": 0,
+      "total": 1
+    },
+    {
+      "phase": "loading-music-diffusion",
+      "done": 0,
+      "total": 1
+    },
+    {
+      "phase": "generating-music",
+      "done": 1,
+      "total": 8
+    }
+  ]
+}

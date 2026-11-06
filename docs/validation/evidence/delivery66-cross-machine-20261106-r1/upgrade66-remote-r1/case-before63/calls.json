@@ -1,0 +1,152 @@
+[
+  {
+    "name": "registered-version",
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\dev\\agent-editor-kit-upgrade-20261106-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 3.7351806999649853
+  },
+  {
+    "name": "import",
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\dev\\agent-editor-kit-upgrade-20261106-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "convert",
+      "import",
+      "--input",
+      "C:\\dev\\agent-editor-kit-validation-20261106-r2\\downloads\\baseline.aevpkg.zip",
+      "--output",
+      "C:\\dev\\agent-editor-kit-upgrade-20261106-r1\\case-before63\\imported"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 3.2051504000555724
+  },
+  {
+    "name": "validate",
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\dev\\agent-editor-kit-upgrade-20261106-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "validate",
+      "--project",
+      "C:\\dev\\agent-editor-kit-upgrade-20261106-r1\\case-before63\\imported"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 3.6574981999583542
+  },
+  {
+    "name": "render",
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "C:\\dev\\agent-editor-kit-upgrade-20261106-r1\\isolated-discovery\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "render",
+      "--project",
+      "C:\\dev\\agent-editor-kit-upgrade-20261106-r1\\case-before63\\imported",
+      "--output",
+      "C:\\dev\\agent-editor-kit-upgrade-20261106-r1\\case-before63\\imported\\renders\\cross-host.mp4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 8.921166999964043
+  },
+  {
+    "name": "actual-RGBA",
+    "command": [
+      "C:\\dev\\agent-editor-kit-validation-20261106-r2\\tools\\ffmpeg.exe",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "C:\\dev\\agent-editor-kit-upgrade-20261106-r1\\case-before63\\imported\\renders\\cross-host.mp4",
+      "-map",
+      "0:v:0",
+      "-an",
+      "-pix_fmt",
+      "rgba",
+      "-f",
+      "hash",
+      "-hash",
+      "sha256",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.2657833999255672
+  },
+  {
+    "name": "actual-PCM",
+    "command": [
+      "C:\\dev\\agent-editor-kit-validation-20261106-r2\\tools\\ffmpeg.exe",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "C:\\dev\\agent-editor-kit-upgrade-20261106-r1\\case-before63\\imported\\renders\\cross-host.mp4",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "hash",
+      "-hash",
+      "sha256",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.15199980000033975
+  },
+  {
+    "name": "actual-PCM-samples",
+    "command": [
+      "C:\\dev\\agent-editor-kit-validation-20261106-r2\\tools\\ffmpeg.exe",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "C:\\dev\\agent-editor-kit-upgrade-20261106-r1\\case-before63\\imported\\renders\\cross-host.mp4",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.14518729993142188
+  },
+  {
+    "name": "actual-probe",
+    "command": [
+      "C:\\dev\\agent-editor-kit-validation-20261106-r2\\tools\\ffprobe.exe",
+      "-v",
+      "error",
+      "-count_frames",
+      "-show_streams",
+      "-show_format",
+      "-of",
+      "json",
+      "C:\\dev\\agent-editor-kit-upgrade-20261106-r1\\case-before63\\imported\\renders\\cross-host.mp4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.14839679992292076
+  }
+]

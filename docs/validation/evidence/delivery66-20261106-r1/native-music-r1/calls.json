@@ -1,0 +1,163 @@
+[
+  {
+    "name": "version",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\stage-r1\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.330836300003284
+  },
+  {
+    "name": "init",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\stage-r1\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "project",
+      "init",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\music-r1\\project"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.0352784999995492
+  },
+  {
+    "name": "register",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\stage-r1\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "music",
+      "generator-adapter",
+      "register",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\music-r1\\project",
+      "--adapter-id",
+      "ace15",
+      "--model-path",
+      "E:\\dev\\sandbox\\AI广告剪辑\\product\\.runtime\\models\\acestep15-20261029",
+      "--runtime-root",
+      "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\ComfyUI",
+      "--executable",
+      "D:\\dev\\comfyui\\ComfyUI_windows_portable_nvidia_0_30_0\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+      "--evidence",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\acestep15-admission-20261029-r1\\notices-r2\\verification.json",
+      "--creator",
+      "ACE-Step / Comfy-Org; existing native ComfyUI core",
+      "--license-spdx",
+      "Apache-2.0 AND GPL-3.0-only",
+      "--license-url",
+      "E:\\dev\\sandbox\\AI广告剪辑\\docs\\validation\\evidence\\acestep15-admission-20261029-r1\\notices-r2\\Apache-2.0.txt",
+      "--threads",
+      "4"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 270.0886446000004
+  },
+  {
+    "name": "inspect",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\stage-r1\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "music",
+      "inspect-generation",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\music-r1\\request.json"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.9964575999983936
+  },
+  {
+    "name": "dry-run",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\stage-r1\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "music",
+      "generate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\music-r1\\project",
+      "--adapter-id",
+      "ace15",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\music-r1\\request.json",
+      "--new-asset-id",
+      "piano66",
+      "--apply",
+      "--track-id",
+      "track_audio_1",
+      "--dry-run"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 145.5624142000015
+  },
+  {
+    "name": "generate",
+    "argv": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\stage-r1\\skills\\agent-ffmpeg-local-editor\\scripts\\run.ps1",
+      "music",
+      "generate",
+      "--project",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\music-r1\\project",
+      "--adapter-id",
+      "ace15",
+      "--input",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\music-r1\\request.json",
+      "--new-asset-id",
+      "piano66",
+      "--apply",
+      "--track-id",
+      "track_audio_1",
+      "--timeout-seconds",
+      "3600"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 848.9309323999987
+  },
+  {
+    "name": "independent-full-PCM",
+    "argv": [
+      "C:\\Users\\carzy\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1-full_build\\bin\\ffmpeg.EXE",
+      "-nostdin",
+      "-v",
+      "error",
+      "-i",
+      "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\music-r1\\project\\assets\\derived\\piano66.wav",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "hash",
+      "-hash",
+      "sha256",
+      "pipe:1"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.08758579999994254
+  }
+]

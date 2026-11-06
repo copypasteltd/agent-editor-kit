@@ -1,0 +1,11 @@
+{
+  "status": "failed",
+  "observed_at_utc": "2026-11-06T10:47:34.655927+00:00",
+  "failure_category": "metadata-review-UTF8-only-assumption",
+  "failure": "Six native Windows registration logs contain non-UTF8 text; preserve the original bytes and classify native encoding explicitly",
+  "product_code_changed": false,
+  "original_product_test_result_changed": false,
+  "formal_activation": false,
+  "release_created": false,
+  "full_goal_closed": false
+}

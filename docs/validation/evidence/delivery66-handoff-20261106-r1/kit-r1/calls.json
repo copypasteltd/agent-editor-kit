@@ -1,0 +1,26 @@
+{
+  "calls": [
+    {
+      "name": "base-packager",
+      "argv": [
+        "E:\\dev\\sandbox\\模型配乐\\ComfyUI_windows_portable\\python_embeded\\python.exe",
+        "-E",
+        "-B",
+        "-u",
+        "-X",
+        "utf8",
+        "E:\\dev\\sandbox\\AI广告剪辑\\scripts\\package_community_skill.py",
+        "--output",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66-handoff\\kit-r1\\base",
+        "--skill-source",
+        "E:\\dev\\sandbox\\AI广告剪辑\\local\\agent-ffmpeg\\delivery66\\stage-r1",
+        "--archive-name",
+        "base.zip",
+        "--source-ref",
+        "v0.1.0-alpha.4"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 7.3909798999957275
+    }
+  ]
+}

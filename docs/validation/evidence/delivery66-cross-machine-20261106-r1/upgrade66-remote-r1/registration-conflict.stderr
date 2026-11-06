@@ -1,0 +1,9 @@
+Existing unrelated Skill is preserved: C:\dev\agent-editor-kit-upgrade-20261106-r1\isolated-discovery\agent-ffmpeg-loca
+l-editor
+所在位置 C:\dev\agent-editor-kit-upgrade-20261106-r1\工具包 中文 spaces\scripts\register_unified_skill.ps1:54 字符: 9
++         throw "Existing unrelated Skill is preserved: $Path"
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Existing unrela...eg-local-editor:String) [], RuntimeException
+    + FullyQualifiedErrorId : Existing unrelated Skill is preserved: C:\dev\agent-editor-kit-upgrade-20261106-r1\isola 
+   ted-discovery\agent-ffmpeg-local-editor
+ 
